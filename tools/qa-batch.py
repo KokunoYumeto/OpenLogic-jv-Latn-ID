@@ -143,6 +143,15 @@ for u in units:
         zero_type_defect=r'\equivrep{f}{}\neq 0_\Rat'
         assert math_source.count(zero_type_defect)==1
         math_source=math_source.replace(zero_type_defect,r'\equivrep{f}{}\neq 0_\Real')
+    # OLPL-001: the defined-material-conditional branch closes an outer
+    # parenthesis which the frozen source never opens. Restore the pair.
+    if u['unit_id']=='OLP-0058':
+        conditional_parenthesis_defect=r'$\lnot !A \lor !B)$'
+        assert math_source.count(conditional_parenthesis_defect)==1
+        math_source=math_source.replace(
+            conditional_parenthesis_defect,
+            r'$(\lnot !A \lor !B)$',
+        )
     checks={'paragraph_count':len(ac)==len(tc),'protected_commands':protected(protected_source)==protected(t),'math_sequence':math(math_source)==math(t),'token_sequence':tokens(a)==tokens(t),'environment_sequence':re.findall(r'\\(?:begin|end)\{[^}]+\}',a)==re.findall(r'\\(?:begin|end)\{[^}]+\}',t),'unicode_clean':'\ufffd' not in t and not re.search(r'[\uA980-\uA9DF]',t),'no_placeholder':not re.search(r'\b(?:TODO|TBD|TRANSLATE_ME)\b',t)}
     command_source=a
     if u['unit_id']=='OLP-0034':

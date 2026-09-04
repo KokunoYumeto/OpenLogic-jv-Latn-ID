@@ -1,0 +1,149 @@
+% Part: first-order-logic
+% Chapter: syntax-and-semantics
+% Section: formation-sequences
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pl}{syn}{fseq}
+
+\olsection{Urutan Pambentukan}
+
+Nemtokake !!{formula}s nganggo definisi induktif, lan teknik
+gegandhengane kanggo mbuktekake sipat !!{formula}s kanthi induksi,
+iku pendekatan kang endah lan efisien. Nanging, kita uga kadhangkala
+perlu nggatekake pendekatan saka ngisor menyang ndhuwur, tahap demi
+tahap, kanggo mbangun !!{formula}s. Ing kene kita nindakake iki nganggo
+gagasan \emph{urutan pambentukan}.
+
+\begin{defn}[Urutan pambentukan kanggo formula]
+\ollabel{defn:fseq-frm}
+Urutan winates $\tuple{!A_0,\dotsc,!A_n}$ saka rerangken simbol ing
+basa~$\Lang L_0$ diarani \emph{urutan pambentukan} kanggo $!A$ yen
+$!A \ident !A_n$ lan kanggo kabeh $i \leq n$, $!A_i$ iku formula
+atomik utawa ana $j,k < i$ kang ndadekake salah siji saka perkara iki
+lumaku:
+\begin{enumerate}
+    \tagitem{prvNot}{$!A_i \ident \lnot !A_j$.}{}%
+    \tagitem{prvAnd}{$!A_i \ident (!A_j \land !A_k)$.}{}%
+    \tagitem{prvOr}{$!A_i \ident (!A_j \lor !A_k)$.}{}%
+    \tagitem{prvIf}{$!A_i \ident (!A_j \lif !A_k)$.}{}%
+    \tagitem{prvIff}{$!A_i \ident (!A_j \liff !A_k)$.}{}%
+\end{enumerate}
+\end{defn}
+
+\begin{ex}
+\[
+\tuple{
+    \Obj p_0,
+    \Obj p_1,
+    (\Obj p_1 \land \Obj p_0),
+    \lnot (\Obj p_1 \land \Obj p_0)
+}
+\]
+iku urutan pambentukan saka
+$\lnot (\Obj p_1 \land \Obj p_0)$, semono uga
+\[
+\tuple{
+    \Obj p_0,
+    \Obj p_1,
+    \Obj p_0,
+    (\Obj p_1 \land \Obj p_0),
+    (\Obj p_0 \lif \Obj p_1),
+    \lnot (\Obj p_1 \land \Obj p_0)
+}.
+\]
+%
+Kaya kang katon saka tuladha kapindho, urutan pambentukan bisa ngemot
+``sampah'': formula kang mubazir utawa ora melu mbangun asil.
+\end{ex}
+
+\begin{prop}
+\ollabel{prop:formed}
+Saben !!{formula}~$!A$ ing~$\Frm[L_0]$ duwe urutan pambentukan.
+\end{prop}
+
+\begin{proof}
+Upamakna $!A$ iku atomik. Banjur urutan~$\tuple{!A}$ minangka urutan
+pambentukan kanggo~$!A$.
+%
+Saiki upamakna $!B$ lan~$!C$ duwe urutan pambentukan
+$\tuple{!B_0,\dotsc,!B_n}$ lan $\tuple{!C_0,\dotsc,!C_m}$
+miturut urutane.
+%
+\begin{enumerate}
+  \tagitem{prvNot}{Yen $!A \ident \lnot !B$,
+      mula $\tuple{!B_0,\dotsc,!B_n,\lnot !B_n}$
+      iku urutan pambentukan kanggo~$!A$.}{}
+  \tagitem{prvAnd}{Yen $!A \ident (!B \land !C)$,
+      mula $\tuple{!B_0,\dotsc,!B_n,!C_0,\dotsc,!C_m,(!B_n \land !C_m)}$
+      iku urutan pambentukan kanggo~$!A$.}{}
+  \tagitem{prvOr}{Yen $!A \ident (!B \lor !C)$,
+      mula $\tuple{!B_0,\dotsc,!B_n,!C_0,\dotsc,!C_m,(!B_n \lor !C_m)}$
+      iku urutan pambentukan kanggo~$!A$.}{}
+  \tagitem{prvIf}{Yen $!A \ident (!B \lif !C)$,
+      mula $\tuple{!B_0,\dotsc,!B_n,!C_0,\dotsc,!C_m,(!B_n \lif !C_m)}$
+      iku urutan pambentukan kanggo~$!A$.}{}
+  \tagitem{prvIff}{Yen $!A \ident (!B \liff !C)$,
+      mula $\tuple{!B_0,\dotsc,!B_n,!C_0,\dotsc,!C_m,(!B_n \liff !C_m)}$
+      iku urutan pambentukan kanggo~$!A$.}{}
+\end{enumerate}
+Miturut asas induksi ing !!{formula}s, saben !!{formula} duwe urutan
+pambentukan.
+\end{proof}
+
+Kita uga bisa mbuktekake walikane. Iki wigati amarga nuduhake yen rong
+cara kita kanggo nemtokake formula iku ekuivalen: kalorone menehi asil
+kang padha. Iki uga ateges kita bisa mbuktekake teorema ngenani formula
+nganggo induksi lumrah ing dawa urutan pambentukan.
+
+\begin{lem}
+\ollabel{lem:fseq-init}
+Upamakna $\tuple{!A_0,\dotsc,!A_n}$ iku urutan pambentukan kanggo~$!A_n$,
+lan $k \leq n$. Banjur $\tuple{!A_0,\dotsc,!A_k}$ iku urutan
+pambentukan kanggo~$!A_k$.
+\end{lem}
+
+\begin{proof}
+Latihan.
+\end{proof}
+
+\begin{thm}
+\ollabel{thm:fseq-frm-equiv}
+$\Frm[L_0]$ iku himpunan kabeh rerangken simbol ing basa~$\Lang L_0$
+kang duwe urutan pambentukan.
+\end{thm}
+
+\begin{proof}
+$F$ dadi himpunan kabeh rerangken simbol ing basa~$\Lang L_0$ kang
+duwe urutan pambentukan. Ing \olref[pl][syn][fseq]{prop:formed} kita
+wis weruh yen $\Frm[L_0] \subseteq F$, mula saiki kita mbuktekake
+walikane.
+
+Upamakna $!A$ duwe urutan pambentukan $\tuple{!A_0,\dotsc,!A_n}$.
+Kita mbuktekake yen $!A \in \Frm[L_0]$ kanthi induksi kuwat ing~$n$.
+Hipotesis induksi kita yaiku saben rerangken simbol kang duwe urutan
+pambentukan dawa $m < n$ kalebu ing~$\Frm[L_0]$. Miturut definisi
+urutan pambentukan, $!A_n$ iku atomik utawa mesthi ana $j,k < n$ kang
+ndadekake salah siji saka perkara iki lumaku:
+\begin{enumerate}
+    \tagitem{prvNot}{$!A_n \ident \lnot !A_j$.}{}%
+    \tagitem{prvAnd}{$!A_n \ident (!A_j \land !A_k)$.}{}%
+    \tagitem{prvOr}{$!A_n \ident (!A_j \lor !A_k)$.}{}%
+    \tagitem{prvIf}{$!A_n \ident (!A_j \lif !A_k)$.}{}%
+    \tagitem{prvIff}{$!A_n \ident (!A_j \liff !A_k)$.}{}%
+\end{enumerate}
+Saiki kita nalar miturut kasus. Yen $!A_n$ atomik, mula
+$!A_n \in \Frm[L_0]$. Dene upamakna $!A \equiv
+(!A_j \land !A_k)$. Miturut \olref[pl][syn][fseq]{lem:fseq-init},
+$\tuple{!A_0,\dotsc,!A_j}$ lan $\tuple{!A_0,\dotsc,!A_k}$ iku
+urutan pambentukan kanggo $!A_j$ lan~$!A_k$ miturut urutane. Amarga
+kalorone iku suburutan wiwitan sejati saka urutan pambentukan
+kanggo~$!A$, dawane kalorone kurang saka~$n$. Mula miturut hipotesis
+induksi, $!A_j$ lan~$!A_k$ kalebu ing~$\Frm[L_0]$, dadi miturut
+definisi !!a{formula}, $(!A_j \land !A_k)$ uga kalebu. Kasus liyane
+nduweni penalaran kang padha.
+\end{proof}
+
+\end{document}

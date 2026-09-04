@@ -1,0 +1,200 @@
+% Part: propositional-logic
+% Chapter: syntax-and-semantics
+% Section: valuations-sat
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pl}{syn}{val}
+
+\olsection{\usetoken{P}{valuation} lan Panyukupan}
+
+\begin{defn}[!!^{valuation}s]
+$\{\True, \False\}$ dadi himpunan rong nilai kabeneran, ``bener'' lan
+``salah''. \emph{!!{valuation}} kanggo $\Lang{L_0}$ yaiku
+fungsi~$\pAssign{v}$ kang masangake $\True$ utawa $\False$ marang
+!!{propositional variable}s ing basa kasebut, yaiku $\pAssign{v} \colon
+\PVar \to \{\True, \False \}$.
+\end{defn}
+
+\begin{defn}
+  Yen diwenehi !!a{valuation}~$\pAssign{v}$, temtokna fungsi evaluasi
+  $\pValue{v} \colon \Frm[L_0] \to \{\True, \False \}$ kanthi induktif:
+  \begin{align*}
+    \iftag{prvFalse}{\pValue{v}(\lfalse) & = \False; \\}{}
+    \iftag{prvTrue}{\pValue{v}(\ltrue) & = \True; \\}{}
+    \pValue{v}(\Obj p_n) & = \pAssign{v}(\Obj p_n); \\
+    \iftag{prvNot}{\pValue{v}(\lnot !A) & = \begin{cases}
+        \True & \text{yen } \pValue{v}(!A) = \False;\\
+        \False & \text{yen ora.}
+      \end{cases} \\ }{}
+    \iftag{prvAnd}{\pValue{v}(!A \land !B) & = \begin{cases}
+        \True &
+        \text{yen $\pValue{v}(!A) = \True$ lan $\pValue{v}(!B) = \True$;}\\
+        \False &
+        \text{yen $\pValue{v}(!A) = \False$ utawa $\pValue{v}(!B) = \False$}.
+      \end{cases}\\}{}
+    \iftag{prvOr}{\pValue{v}(!A \lor !B) & = \begin{cases}
+        \True &
+        \text{yen $\pValue{v}(!A) = \True$ utawa $\pValue{v}(!B) = \True$;}\\
+        \False &
+        \text{yen $\pValue{v}(!A) = \False$ lan $\pValue{v}(!B) = \False$}.
+      \end{cases}\\}{}
+    \iftag{prvIf}{\pValue{v}(!A \lif !B) & = \begin{cases}
+        \True &
+        \text{yen $\pValue{v}(!A) = \False$ utawa $\pValue{v}(!B) = \True$;}\\
+        \False &
+        \text{yen $\pValue{v}(!A) = \True$ lan $\pValue{v}(!B) = \False$}.
+      \end{cases}\\}{}
+    \iftag{prvIff}{\pValue{v}(!A \liff !B) & = \begin{cases}
+        \True &
+        \text{yen $\pValue{v}(!A) = \pValue{v}(!B)$;}\\
+        \False &
+        \text{yen $\pValue{v}(!A) \neq \pValue{v}(!B)$}.
+      \end{cases}}{}
+\end{align*}
+\end{defn}
+
+\begin{explain}
+Klausa-klausa kasebut cocog karo tabel kabeneran iki:
+\begin{center}
+\iftag{prvNot}{
+  \begin{tabular}{|c||c|} \hline
+    $!A$ & $ \lnot !A$ \\
+    \hline \hline
+    $\True$ & $\False$ \\
+    $\False$ & $\True$ \\
+    \hline
+  \end{tabular}
+}{}
+\iftag{prvAnd}{
+  \begin{tabular}{|cc||c|} \hline
+    $!A$ & $!B$ & $!A \land !B$ \\
+    \hline \hline
+    $\True$ & $\True$ & $\True$ \\
+    $\True$ & $\False$ & $\False$ \\
+    $\False$ & $\True$ & $\False$ \\
+    $\False$ & $\False$ & $\False$ \\
+    \hline
+  \end{tabular}
+}{}
+\iftag{prvOr}{
+  \begin{tabular}{|cc||c|} \hline
+    $!A$ & $!B$ & $!A \lor !B$ \\
+    \hline \hline
+    $\True$ & $\True$ & $\True$ \\
+    $\True$ & $\False$ & $\True$ \\
+    $\False$ & $\True$ & $\True$ \\
+    $\False$ & $\False$ & $\False$ \\
+    \hline
+  \end{tabular}
+}{}%
+\iftag{notprvNot,notprvAnd,notprvOr,notprvIf}{}{\\[1em]}
+\iftag{prvIf}{
+  \begin{tabular}{|cc||c|} \hline
+    $!A$ & $!B$ & $!A \lif !B$ \\
+    \hline \hline
+    $\True$ & $\True$ & $\True$ \\
+    $\True$ & $\False$ & $\False$ \\
+    $\False$ & $\True$ & $\True$ \\
+    $\False$ & $\False$ & $\True$ \\
+    \hline
+  \end{tabular}
+}{}
+\iftag{prvIff}{
+  \begin{tabular}{|cc||c|} \hline
+    $!A$ & $!B$ & $!A \liff !B$ \\
+    \hline \hline
+    $\True$ & $\True$ & $\True$ \\
+    $\True$ & $\False$ & $\False$ \\
+    $\False$ & $\True$ & $\False$ \\
+    $\False$ & $\False$ & $\True$ \\
+    \hline
+  \end{tabular}
+}{}
+\end{center}
+\end{explain}
+
+\begin{prob}
+Gatekna yen ing $\Lang{L_0}$ ditambahake konektif ternèr
+$\diamondsuit$ kanthi evaluasi kang diwenehake dening
+\begin{gather*}
+  \pValue{v}(\diamondsuit( !A , !B , !C ) ) = \begin{cases}
+    \pValue{v}( !B ) &
+    \text{yen $\pValue{v}(!A) = \True$;}\\
+    \pValue{v}( !C ) &
+    \text{yen $\pValue{v}(!A) = \False $}.
+  \end{cases}
+\end{gather*}
+Tulisen tabel kabeneran kanggo konektif iki.
+\end{prob}
+
+\begin{thm}[Penentuan Lokal]
+\ollabel{thm:LocalDetermination} Upamakna $\pAssign{v_1}$ lan
+$\pAssign{v_2}$ iku !!{valuation}s kang menehi nilai padha marang
+!!{propositional
+variable}s kang muncul ing $!A$, yaiku
+$\pAssign{v_1}(\Obj p_n) = \pAssign{v_2}(\Obj p_n)$ saben $\Obj p_n$
+muncul ing sawijining !!{formula}~$!A$. Banjur $\pValue{v_1}$ lan
+$\pValue{v_2}$ uga menehi nilai padha marang~$!A$, yaiku
+$\pValue{v_1}(!A) = \pValue{v_2}(!A)$.
+\end{thm}
+
+\begin{proof}
+Kanthi induksi ing $!A$.
+\end{proof}
+
+\begin{defn}[Panyukupan]
+\ollabel{defn:satisfaction} Kita bisa nemtokake kanthi induktif gagasan
+  \emph{panyukupan !!a{formula}~$!A$ dening
+  !!a{valuation}~$\pAssign{v}$}, $\pSat{v}{!A}$, kaya mangkene.
+  (Kita nulis $\pSat/{v}{!A}$ kanthi teges ``ora $\pSat{v}{!A}$.'' )
+\begin{enumerate}
+\tagitem{prvFalse}{%
+  \indcase{!A}{\lfalse}{$\pSat/{v}{\indfrm}$.}}{}
+
+\tagitem{prvTrue}{%
+  \indcase{!A}{\ltrue}{$\pSat{v}{\indfrm}$.}}{}
+
+\item \indcase{!A}{\Obj p_i}{$\pSat{v}{\indfrm}$
+  yen lan mung yen $\pAssign{v}(\Obj p_i) = \True$.}
+
+\tagitem{prvNot}{%
+  \indcase{!A}{\lnot !B}{$\pSat{v}{\indfrm}$ yen lan mung yen
+    $\pSat/{v}{!B}$.}}{}
+
+\tagitem{prvAnd}{%
+  \indcase{!A}{(!B \land !C)}{$\pSat{v}{\indfrm}$ yen lan mung yen
+    $\pSat{v}{!B}$ lan $\pSat{v}{!C}$.}}{}
+
+\tagitem{prvOr}{%
+  \indcase{!A}{(!B \lor !C)}{$\pSat{v}{\indfrm}$ yen lan mung yen
+    $\pSat{v}{!B}$ utawa $\pSat{v}{!C}$ (utawa kalorone).}}{}
+
+\tagitem{prvIf}{%
+  \indcase{!A}{(!B \lif !C)}{$\pSat{v}{\indfrm}$ yen lan mung yen
+    $\pSat/{v}{!B}$ utawa $\pSat{v}{!C}$ (utawa kalorone).}}{}
+
+\tagitem{prvIff}{%
+  \indcase{!A}{(!B \liff !C)}{$\pSat{v}{\indfrm}$ yen lan mung yen
+    $\pSat{v}{!B}$ lan $\pSat{v}{!C}$ kalorone, utawa $\pSat{v}{!B}$
+    lan $\pSat{v}{!C}$ kalorone ora lumaku.}}{}
+\end{enumerate}
+Yen $\Gamma$ iku himpunan !!{formula}s, $\pSat{v}{\Gamma}$ yen lan mung
+yen $\pSat{v}{!A}$ kanggo saben~$!A \in \Gamma$.
+\end{defn}
+
+\begin{prop}\ollabel{prop:sat-value}
+  $\pSat{v}{!A}$ yen lan mung yen $\pValue{v}(!A) = \True$.
+\end{prop}
+
+\begin{proof}
+  Kanthi induksi ing~$!A$.
+\end{proof}
+
+\begin{prob}
+  Buktekna \olref[pl][syn][val]{prop:sat-value}
+\end{prob}
+
+\end{document}

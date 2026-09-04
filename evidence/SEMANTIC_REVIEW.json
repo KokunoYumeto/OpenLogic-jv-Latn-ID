@@ -2,7 +2,7 @@
   "schema": "jv-semantic-review/1",
   "reviewer": "Codex, same author; no independent or human review claimed",
   "date": "2026-09-05",
-  "scope": "All 627 translated paragraph blocks in OLP-0001 through OLP-0054; 283 unchanged formal/structural blocks classified separately. OLSIZ-001 through OLSIZ-010 remain adopted in the affected Size-of-Sets targets; the proposed OLSIZ-011 remains retracted after exact-byte inspection. Paragraph analysis normalizes CRLF/LF; exact full-file hashes remain raw-byte hashes.",
+  "scope": "All 726 translated paragraph blocks in OLP-0001 through OLP-0062; 342 unchanged formal/structural blocks classified separately. OLSIZ-001 through OLSIZ-010 and OLPL-001 are applied in their affected targets; the proposed OLSIZ-011 remains retracted after exact-byte inspection. Paragraph analysis normalizes CRLF/LF; exact full-file hashes remain raw-byte hashes.",
   "method": "Direct source-to-target reading, quantifier/negation/biconditional checks, mathematical-context checks, and selected reverse paraphrases. Automated structure checks are separate.",
   "unit_reviews": [
     {
@@ -466,6 +466,73 @@
       "reverse_sample": "For A contained in B contained in C with A equinumerous to C, close C minus B under a bijection f from C to A. Apply f on that closure and the identity elsewhere; the result bijects C with B. Applying this sandwich lemma to the images of the two injections, then composing with g inverse, produces a bijection from A to B.",
       "source_sha256": "88534a3f2be736a704ab31343e45933edb9712fa5b4411eb102c0f4a12d656e9",
       "translation_sha256": "ca8a09ce5d3ef2dab1bfc73cf9d7248cf5cf39d10bbed167ec78eba8244e96f4"
+    },
+    {
+      "unit_id": "OLP-0055",
+      "status": "pass",
+      "checks": "Compared the part title, both editorial paragraphs, all seven imports and the FOL tag boundary directly. The first chapter's intentionally rudimentary scope, omitted proofs, reuse of first-order proof and completeness material, exclusion of predicates/terms/quantifiers, substitution of valuations for structures, and planned truth-functional-completeness expansion are all retained.",
+      "reverse_sample": "This part presents classical propositional logic. It first supplies definitions and results, then reuses first-order proof-system and completeness chapters with the FOL tag false so their predicate, term and quantifier material is omitted and structures are replaced by valuations.",
+      "source_sha256": "1af59702eeba2337e42385ae40315eb7761ca569b0991f0afe69ad74bd5258aa",
+      "translation_sha256": "a3b0158af5dc43f11f446c64f3449f00d357b10ecc595028c1be1905cf48a744"
+    },
+    {
+      "unit_id": "OLP-0056",
+      "status": "pass",
+      "checks": "Compared the chapter title, editorial purpose and all six syntax-and-semantics imports. The text still identifies itself as a very short definitional summary and calls for a gentler, example-rich introduction to induction on formulas.",
+      "reverse_sample": "The chapter gives a quick summary of definitions and imports the introduction, formulas, preliminaries, formation sequences, valuations with satisfaction, and semantic notions exactly once.",
+      "source_sha256": "d99022091f0fa2b689b3a3e845c3908dd45c8a9c36c74f3d9c589d17d629f805",
+      "translation_sha256": "2e3790b7c9cc8ef49d694c1563cb78bf08bdc8f3d7bc1939eea0d99312401032"
+    },
+    {
+      "unit_id": "OLP-0057",
+      "status": "pass",
+      "checks": "Compared all four exposition blocks and all 28 mathematical spans. The five connectives, two truth values, truth-function restriction, excluded modal/epistemic/temporal and many-valued concerns, disputed status of English conditionals, primitive-choice alternatives, inductive formation and unique readability, valuation semantics, recursive satisfaction, tautology, entailment and joint satisfiability are all distinguished and preserved.",
+      "reverse_sample": "A valuation assigns true or false to each propositional variable and thereby fixes every formula's value. Satisfaction is defined inductively from the formula's structure; tautology quantifies over all valuations, entailment over every valuation satisfying the premises, and satisfiability requires one valuation satisfying all formulas together.",
+      "source_sha256": "3040499782b5cc91adab39a5ba93031d4daf6d05ad084e97937d6f84ebed432c",
+      "translation_sha256": "f69fa05e7359e5b13eba8b1bcb136c039366cf036b759ac564e4d2cdb53938b0"
+    },
+    {
+      "unit_id": "OLP-0058",
+      "status": "pass",
+      "checks": "Compared the language inventory, every tag-controlled primitive and defined connective, alternate-symbol note, inductive formula definition, two-stage explanation blocks, all seven abbreviation clauses, outer-parenthesis convention and string-level syntactic-identity definition. All 94 mathematical spans, 39 localization tokens, tags and environments are retained. OLPL-001 restores the single missing opening parenthesis in the source's not-A-or-B material-conditional branch and identifies that bounded repair inside the same list item.",
+      "reverse_sample": "Formulas are the least inductively generated set containing the atomic formulas and closed under the selected connectives. Defined symbols abbreviate formulas over the primitive basis. Syntactic identity compares equal-length symbol strings position by position. The corrected conditional abbreviation is the parenthesized disjunction of not A with B.",
+      "source_sha256": "f05ab9c5e23b362dbee9f6063f096f52ebc9e7f97b29acc9c07f18788f1f8f48",
+      "translation_sha256": "4970549092af228a0eaab6c3b16092aaaa67f3de2c7e39c1ed6d8df1eb587c11",
+      "source_audit_ids": [
+        "OLPL-001"
+      ]
+    },
+    {
+      "unit_id": "OLP-0059",
+      "status": "pass",
+      "checks": "Compared the induction theorem and proof, balanced-parenthesis and no-proper-prefix propositions, unique-readability alternatives and proof, uniform and simultaneous substitution definitions, all five substitution exercises, and the final induction-definition prompt. Every premise direction, variable index, connective case, 67 mathematical spans, label and reference is preserved.",
+      "reverse_sample": "Any property holding of all atomic formulas and preserved by every active formation clause holds of all formulas. No formula is a proper initial segment of another formula, supporting unique parsing. Uniform substitution replaces each occurrence of one propositional variable, while simultaneous substitution replaces the listed variables together.",
+      "source_sha256": "32b55f3fdc69170d1c4856c5abd86e8845d1d4993b8e649a0501475ad0c5a9dc",
+      "translation_sha256": "613ea29d6507a9a5cddc76cc6373dbfe8223b14fb7d698a2e67f3be9b2b62c8b"
+    },
+    {
+      "unit_id": "OLP-0060",
+      "status": "pass",
+      "checks": "Compared the bottom-up motivation, exact finite-sequence definition, both examples including permitted junk, construction theorem and all connective cases, initial-subsequence lemma, converse theorem and strong-induction proof. All indices, inequalities, concatenated sequences, 75 mathematical spans, labels and cross-references are retained.",
+      "reverse_sample": "A formation sequence ends in A and each entry is atomic or is built from earlier entries by an active connective. Every inductively generated formula has such a sequence, and strong induction on sequence length proves conversely that every string with a formation sequence is a formula.",
+      "source_sha256": "fff70555c1ef515d9092e72c91496aa898f74e4dd41e4cadc82f49a30c5850f5",
+      "translation_sha256": "95b73d0939e578f0f020806ca164791fdd4438ab457119c17bfa00847716b12c"
+    },
+    {
+      "unit_id": "OLP-0061",
+      "status": "pass",
+      "checks": "Compared the two-valued valuation definition, every recursive evaluation clause, all five truth tables, ternary-connective exercise, local-determination theorem, recursive satisfaction clauses for formulas and sets, and the satisfaction/value equivalence. All 121 mathematical spans, truth-table cells, connective cases, labels and references are retained; and/or conditions and both sides of each iff were checked directly.",
+      "reverse_sample": "A valuation maps propositional variables to true or false, and the evaluation function extends it recursively through the connectives. Formula satisfaction matches evaluation to true. Satisfaction of a set requires satisfaction of every member, and a formula's value depends only on variables occurring in it.",
+      "source_sha256": "9f0b5ecd5a8462ab5d970546602a1a0b0e46e5908c6a0f46369f93543583f882",
+      "translation_sha256": "328884b438baf6cf3be610bade5136e1dc0bf5277f6c4cc52207a39a9976a789"
+    },
+    {
+      "unit_id": "OLP-0062",
+      "status": "pass",
+      "checks": "Compared all five semantic definitions, four classification exercises, five elementary semantic facts, the unsatisfiability equivalence and semantic deduction theorem with every proof prompt. All 38 mathematical spans, quantifier scopes, set operations, labels and references are retained. Formula satisfiability, set satisfiability, tautology, contingency and semantic entailment remain pairwise distinct.",
+      "reverse_sample": "A formula is satisfiable when some valuation satisfies it, a tautology when every valuation does, and contingent when satisfiable but not tautological. Gamma entails A when every valuation satisfying Gamma also satisfies A. This is equivalent to Gamma together with not-A being unsatisfiable, and the semantic deduction theorem moves A between premises and a conditional conclusion.",
+      "source_sha256": "992456e01aa355799eabea11dc7d2a49a5f1a0f0ebeef05d36f86603c0f06d39",
+      "translation_sha256": "3e8631ab02694f26e81448be1fede41cfaddd397b2457cfc19f7f48334e1267b"
     }
   ],
   "unresolved_language_uncertainties": [
@@ -475,9 +542,10 @@
     "Relation, graph and tree terminology includes explicitly provisional borrowings and descriptive coinages, including finitely branching; no native mathematical attestation is invented.",
     "Function terminology is provisionally adapted or specialized. Native fungsi evidence is purpose/use sense only, not a mathematical definition; English controls all technical meaning.",
     "Dedekind-infinity, closure, algebra, induction, recursion and isomorphism terms are controlled provisional adaptations; definitions and formulas, not the Javanese canon, remain their mathematical authority.",
-    "The two Dedekind quotations are translated from the frozen English OpenLogic wording; the cited historical source is preserved, and no fresh claim of consultation with the German original is made."
+    "The two Dedekind quotations are translated from the frozen English OpenLogic wording; the cited historical source is preserved, and no fresh claim of consultation with the German original is made.",
+    "Propositional-connective, valuation, satisfaction, consequence and syntax terminology is provisional controlled adaptation or transparent description; the preserved formation and truth clauses, not the Javanese canon, remain the formal authority."
   ],
-  "build_and_visual_review": "The 36-page introduction/sets/relations/functions reader is accepted and published as v0.1.2. OLP-0049 through OLP-0054 are source-complete and reviewed here but are not yet integrated into a later full-reader build.",
+  "build_and_visual_review": "The 36-page introduction/sets/relations/functions reader is accepted and published as v0.1.2. OLP-0049 through OLP-0062 are source-complete and reviewed here but are not yet integrated into a later full-reader build.",
   "superseded_unit_reviews": [
     {
       "unit_id": "OLP-0021",

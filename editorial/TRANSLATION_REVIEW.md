@@ -9,8 +9,8 @@ a concrete review question.
 Coverage is partial and follows the translated corpus. The metadata record at
 the start of the JSONL states the exact current range. Choices remain open to
 asynchronous correction and never block translation or publication.
-At the 54-file checkpoint the log contains 78 terminology or provenance
-decisions and 36 difficult translation or source decisions.
+At the 62-file checkpoint the log contains 87 terminology or provenance
+decisions and 37 difficult translation or source decisions.
 
 The first terminology entries are explicitly marked retrospective backfill.
 They were reconstructed from the existing term ledger and exact current files;
@@ -27,7 +27,7 @@ Full canon PDFs and dictionary responses remain private research copies.
 Short passage metadata and hashes are in evidence/CANON_PASSAGES.jsonl.
 Source defects and their reader-facing treatment are also summarized in
 ERRATA.md.
-The ten applied OLSIZ-20260904 findings have exact machine records in
-evidence/SOURCE_CORRECTIONS.jsonl. The proposed OLSIZ-011 finding was retracted;
+The ten applied OLSIZ-20260904 findings and OLPL-001 have exact machine records
+in evidence/SOURCE_CORRECTIONS.jsonl. The proposed OLSIZ-011 finding was retracted;
 evidence/SOURCE_AUDIT_RETRACTIONS.jsonl records the exact bytes, artifact hashes,
 and the fact that no corresponding correction remains in the localized body.

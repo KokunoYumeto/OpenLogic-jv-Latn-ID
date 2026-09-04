@@ -1,0 +1,120 @@
+% Part: propositional-logic
+% Chapter: propositional-logic
+% Section: preliminaries
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pl}{syn}{pre}
+
+\olsection{Prasyarat}
+
+\begin{thm}[\emph{Asas induksi ing !!{formula}s}]
+  \ollabel{thm:induction}  
+  Yen sawijining sipat~$P$ lumaku kanggo kabeh !!{formula}s atomik lan
+  nduweni kahanan kaya mangkene
+  \begin{enumerate}
+    \tagitem{prvNot}{sipat iku lumaku kanggo $\lnot !A$ saben sipat iku
+      lumaku kanggo~$!A$;}{}
+    \tagitem{prvAnd}{sipat iku lumaku kanggo $(!A \land !B)$
+      saben sipat iku lumaku kanggo $!A$ lan~$!B$;}{}
+    \tagitem{prvOr}{sipat iku lumaku kanggo $(!A \lor !B)$
+      saben sipat iku lumaku kanggo $!A$ lan~$!B$;}{}
+    \tagitem{prvIf}{sipat iku lumaku kanggo $(!A \lif !B)$
+      saben sipat iku lumaku kanggo $!A$ lan~$!B$;}{}
+    \tagitem{prvIff}{sipat iku lumaku kanggo $(!A \liff !B)$
+      saben sipat iku lumaku kanggo $!A$ lan~$!B$;}{}
+  \end{enumerate}
+  mula $P$ lumaku kanggo kabeh !!{formula}s.
+\end{thm}
+
+\begin{proof}
+  $S$ dadi koleksi kabeh !!{formula}s kang nduweni sipat~$P$. Cetha yen
+  $S \subseteq \Frm[L_0]$. $S$~nyukupi kabeh syarat ing
+  \olref[fml]{defn:formulas}: himpunan iki ngemot kabeh !!{formula}s atomik lan
+  katutup marang !!{operator}s. $\Frm[L_0]$ iku kelas paling cilik kang
+  kaya mangkono, mula $\Frm[L_0] \subseteq S$. Dadi $\Frm[L_0] = S$, lan
+  saben formula nduweni sipat~$P$.
+\end{proof}
+
+\begin{prop}\ollabel{prop:balanced}
+   Saben !!{formula} ing~$\Frm[L_0]$ iku \emph{imbang}, yaiku duwe
+   tandha kurung kiwa lan tengen kang padha cacahe.
+\end{prop}
+
+\begin{prob}
+Buktekna \olref[pl][syn][pre]{prop:balanced}
+\end{prob}
+
+\begin{prop} \ollabel{prop:noinit}
+Ora ana perangan wiwitan sejati saka !!a{formula} kang uga dadi
+!!a{formula}.
+\end{prop}
+
+\begin{prob}
+  Buktekna \olref[pl][syn][pre]{prop:noinit}
+\end{prob}
+
+\begin{prop}[Bisa Kawaca kanthi Unik]
+Saben !!{formula}~$!A$ ing $ \Frm[L_0]$ duwe persis siji uraian
+minangka salah siji wujud ing ngisor iki
+\begin{enumerate}
+\tagitem{prvFalse}{$\lfalse$.}{}
+
+\tagitem{prvTrue}{$\ltrue$.}{}
+
+\item $\Obj p_n$ kanggo sawijining $\Obj p_n \in  \PVar$.
+  
+\tagitem{prvNot}{$\lnot !B$ kanggo sawijining !!{formula}~$!B$.}{}
+
+\tagitem{prvAnd}{$(!B \land !C)$ kanggo sawijining !!{formula}s $!B$ lan~$!C$.}{}
+
+\tagitem{prvOr}{$(!B \lor !C)$ kanggo sawijining !!{formula}s $!B$ lan~$!C$.}{}
+
+\tagitem{prvIf}{$(!B \lif !C)$ kanggo sawijining !!{formula}s $!B$ lan~$!C$.}{}
+
+\tagitem{prvIff}{$(!B \liff !C)$ kanggo sawijining !!{formula}s $!B$ lan~$!C$.}{}
+\end{enumerate}
+Kajaba iku, uraian iki \emph{unik}.
+\end{prop}
+
+\begin{proof}
+Kanthi induksi ing $!A$. Tuladhane, upamakna $!A$ duwe rong wacan kang
+beda minangka $(!B \lif !C)$ lan $(!B' \lif !C')$. Banjur $!B$ lan
+$!B'$ kudu padha (yen ora, salah sijine bakal dadi perangan wiwitan
+sejati saka liyane); mula yen rong wacan $!A$ iku beda, panyebabe
+mesthi $!C$ lan $!C'$ dadi rong wacan kang beda saka rerangken simbol
+kang padha. Iki mokal miturut hipotesis induktif.
+\end{proof}
+
+
+\begin{defn}[Substitusi Seragam]
+Yen $!A$ lan $!B$ iku !!{formula}s, lan $\Obj p_i$ iku !!{propositional
+variable}, mula $\Subst{!A}{!B}{\Obj p_i}$ nglambangake asil ngganti
+saben kedadeyan $\Obj p_i$ nganggo sawijining kedadeyan $!B$ ing $!A$;
+semono uga, substitusi bebarengan saka $\Obj p_1$, \dots,~$\Obj p_n$ dening
+!!{formula}s $!B_1$, \dots,~$!B_n$ dilambangake kanthi
+$\SSubst{!A}{\subst{!B_1}{\Obj p_1},\dots,\subst{!B_n}{\Obj p_n}}$.
+\end{defn}
+
+\begin{prob} Kanggo saben limang !!{formula}s ing ngisor iki, temtokna apa
+ !!{formula} kasebut bisa ditulis minangka substitusi \( \Subst{!A}{!B}{\Obj p_i} \)
+ nalika \( !A \) iku (i) \( \Obj p_0 \); (ii) \( ( \lnot \Obj p_0 \land \Obj
+ p_1) \); lan (iii) \( ( ( \lnot \Obj p_0 \lif \Obj p_1 ) \land \Obj
+ p_2 ) \). Ing saben kasus, temtokna substitusi kang cocog.
+  \begin{enumerate}
+    \item \( \Obj p_1 \) 
+    \item \( ( \lnot \Obj p_0 \land \Obj p_0 ) \)
+    \item \( ( ( \Obj p_0 \lor \Obj p_1 ) \land \Obj p_2 )  \)
+    \item \( \lnot ( ( \Obj p_0 \lif \Obj p_1 ) \land \Obj p_2 ) \)
+    \item \( (( \lnot ( \Obj p_0 \lif \Obj p_1 ) \lif ( \Obj p_0 \lor \Obj p_1 )) \land \lnot ( \Obj p_0 \land \Obj p_1 )) \)
+  \end{enumerate}
+\end{prob}
+
+\begin{prob}
+Wenehana definisi $\Subst{!A}{!B}{p}$ kang kaku sacara matematis
+kanthi induksi.
+\end{prob}
+
+\end{document}

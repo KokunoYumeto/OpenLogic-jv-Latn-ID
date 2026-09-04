@@ -1,0 +1,186 @@
+% Part: propositional-logic
+% Chapter: syntax-and-semantics
+% Section: formulas
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pl}{syn}{fml}
+
+\olsection{\usetoken{P}{formula} Proposisional}
+
+!!^{formula}s logika proposisional dibangun saka
+\emph{!!{propositional
+    variable}s}\iftag{prvFalse}{\iftag{prvTrue}{,}{ lan} konstanta
+  proposisional~$\lfalse$ kanggo kasalahan}{}\iftag{prvTrue}{\iftag{prvFalse}{
+    lan}{} konstanta proposisional~$\ltrue$ kanggo kabeneran}{} nganggo
+  \emph{konektif logis}.
+
+\begin{enumerate}
+\item !!^a{denumerable} himpunan~$\PVar$ saka !!{propositional variable}s $\Obj p_0$,
+  $\Obj p_1$, \dots
+\tagitem{prvFalse}{Konstanta proposisional kanggo !!{falsity}~$\lfalse$.}{}
+\tagitem{prvTrue}{Konstanta proposisional kanggo !!{truth}~$\ltrue$.}{}
+\item Konektif logis:
+  \startycommalist
+  \iftag{prvNot}{\ycomma $\lnot$ (negasi)}{}%
+  \iftag{prvAnd}{\ycomma $\land$ (konjungsi)}{}%
+  \iftag{prvOr}{\ycomma $\lor$ (disjungsi)}{}%
+  \iftag{prvIf}{\ycomma $\lif$ (!!{conditional})}{}%
+  \iftag{prvIff}{\ycomma $\liff$ (!!{biconditional})}{}%
+\item Tandha wacan: (, ), lan koma.
+\end{enumerate}
+
+Basa logika proposisional iki dilambangake kanthi $\Lang L_0$.
+
+\iftag{defNot,defOr,defAnd,defIf,defIff,defTrue,defFalse,defEx,defAll}{%
+Saliyane konektif primitif kang ditepungake ing ndhuwur, kita uga
+nggunakake simbol-simbol kang \emph{ditetepake} iki:
+\startycommalist
+  \iftag{defNot}{\ycomma $\lnot$ (negasi)}{}%
+  \iftag{defAnd}{\ycomma $\land$ (konjungsi)}{}%
+  \iftag{defOr}{\ycomma $\lor$ (disjungsi)}{}%
+  \iftag{defIf}{\ycomma $\lif$ (!!{conditional})}{}%
+  \iftag{defIff}{\ycomma $\liff$ (!!{biconditional})}{}%
+  \iftag{defFalse}{\ycomma $\lfalse$ (!!{falsity})}{}%
+  \iftag{defTrue}{\ycomma $\ltrue$ (!!{truth})}}{}.
+
+\begin{tagblock}{defNot,defOr,defAnd,defIf,defIff,defTrue,defFalse,defEx,defAll}
+\begin{explain}
+Simbol kang ditetepake dudu perangan resmi saka basa, nanging
+ditepungake minangka cekakan informal: simbol iki ndadekake kita bisa
+nyekakake formula kang bakal dadi dawa banget yen kita mung nggunakake
+simbol primitif. Iki mesthi dadi kauntungan. Nanging, kauntungan kang
+luwih gedhe yaiku bukti dadi luwih cekak. Yen sawijining simbol iku
+primitif, simbol kasebut kudu ditangani dhewe ing bukti. Mula, saya
+akeh simbol primitif, saya dawa bukti kita.
+\end{explain}
+\end{tagblock}
+
+% Alternate symbols
+
+\begin{intro}
+Mbokmenawa sampeyan wis kulina karo istilah lan simbol kang beda saka
+kang digunakake ing ndhuwur. Buku teks logika (lan guru) lumrahe
+nggunakake $\sim$, $\neg$, lan~!\ kanggo ``negasi'', sarta $\wedge$,
+$\cdot$, lan $\&$ kanggo ``konjungsi''. Simbol kang umum digunakake
+kanggo ``kondisional'' utawa ``implikasi'' yaiku $\rightarrow$,
+$\Rightarrow$, lan $\supset$.
+\iftag{prvIff,defIff}{Simbol kanggo ``bikondisional'', ``bi-implikasi'',
+  utawa ``ekuivalensi (material)'' yaiku $\leftrightarrow$,
+  $\Leftrightarrow$, lan $\equiv$.}{}
+\iftag{prvFalse,defFalse}{Simbol $\lfalse$ duwe maneka jeneng,
+  yaiku ``kasalahan'', ``falsum'', ``absurditas'', utawa ``ngisor''.}{}
+\iftag{prvTrue,defTrue}{Simbol $\ltrue$ duwe maneka jeneng,
+  yaiku ``kabeneran'', ``verum'', utawa ``ndhuwur''.}{}
+\end{intro}
+
+\begin{defn}[Formula]
+\ollabel{defn:formulas}
+Himpunan~$\Frm[L_0]$ saka \emph{!!{formula}s} logika proposisional
+ditemtokake kanthi induktif kaya mangkene:
+\begin{enumerate}
+\tagitem{prvFalse}{$\lfalse$ iku !!{formula} atomik.}{}
+
+\tagitem{prvTrue}{$\ltrue$ iku !!{formula} atomik.}{}
+
+\item Saben !!{propositional variable}~$\Obj p_i$ iku !!{formula}
+  atomik.
+
+\tagitem{prvNot}{Yen $!A$ iku !!a{formula}, mula $\lnot !A$ iku
+  !!a{formula}.}{}
+
+\tagitem{prvAnd}{Yen $!A$ lan $!B$ iku !!{formula}s, mula $(!A \land
+  !B)$ iku !!a{formula}.}{}
+
+\tagitem{prvOr}{Yen $!A$ lan $!B$ iku !!{formula}s, mula $(!A \lor !B)$
+  iku !!a{formula}.}{}
+
+\tagitem{prvIf}{Yen $!A$ lan $!B$ iku !!{formula}s, mula $(!A \lif !B)$
+  iku !!a{formula}.}{}
+
+\tagitem{prvIff}{Yen $!A$ lan $!B$ iku !!{formula}s, mula $(!A \liff !B)$
+  iku !!a{formula}.}{}
+
+\tagitem{limitClause}{Ora ana bab liyane kang dadi !!a{formula}.}{}
+\end{enumerate}
+\end{defn}
+
+\begin{explain}
+Definisi !!{formula}s iki minangka \emph{definisi induktif}.
+Pokoke, kita mbangun himpunan !!{formula}s liwat tahap kang tanpa
+wates cacahe. Ing tahap wiwitan, kita netepake kabeh formula atomik
+dadi formula; iki cocog karo sawetara kasus kapisan ing definisi,
+yaiku kasus kanggo
+\iftag{prvTrue}{$\ltrue$, }{}%
+\iftag{prvFalse}{$\lfalse$, }{}%
+$\Obj p_i$. Mula, ``!!{formula} atomik'' ateges saben !!{formula}
+kanthi wujud iki.
+
+Kasus liyane ing definisi menehi aturan kanggo mbangun !!{formula}s
+anyar saka !!{formula}s kang wis dibangun. Ing tahap kapindho, kita
+bisa nggunakake aturan kasebut kanggo mbangun !!{formula}s saka
+!!{formula}s atomik. Ing tahap katelu, kita mbangun formula anyar saka
+formula atomik lan formula kang diasilake ing tahap kapindho, banjur
+sateruse. !!{formula} yaiku apa wae kang pungkasane dibangun ing
+sawijining tahap kaya mangkono, lan ora ana liyane.
+\end{explain}
+
+Nalika nulis formula $(!B \ast !C)$ kang dibangun saka $!B$, $!C$
+nganggo konektif rong-papan~$\ast$, kita kerep ngilangake pasangan
+tandha kurung paling njaba lan mung nulis~$!B \ast !C$.
+
+\begin{tagblock}{defNot,defOr,defAnd,defIf,defIff,defTrue,defFalse,defEx,defAll}
+\begin{defn}
+Formula kang dibangun nganggo operator kang ditetepake kudu dimangerteni
+kaya mangkene:
+
+\begin{tagenumerate}{defTrue,defFalse,defNot,defOr,defAnd,defIf,defIff,defEx,defAll}
+
+\tagitem{defTrue}{$\ltrue$ nyekakake
+  \iftag{prvFalse}{$\lnot\lfalse$}{$(!A \lor \lnot !A)$ kanggo sawijining
+    !!{formula} atomik~$!A$ kang tetep}.}{}
+
+\tagitem{defFalse}{$\lfalse$ nyekakake
+  \iftag{prvTrue}{$\lnot\ltrue$}{$(!A \land \lnot !A)$ kanggo sawijining
+    !!{formula} atomik~$!A$ kang tetep}.}{}
+
+\tagitem{defNot}{$\lnot !A$ nyekakake $!A \lif \lfalse$.}{}
+
+\tagitem{defOr}{$!A \lor !B$ nyekakake
+  \iftag{prvAnd}{$\lnot(\lnot !A \land \lnot !B)$}{$\lnot !A \lif
+    !B$}.}{}
+
+\tagitem{defAnd}{$!A \land !B$ nyekakake
+  \iftag{prvOr}{$\lnot(\lnot !A \lor \lnot !B)$}{$\lnot (!A \lif
+    \lnot !B)$}.}{}
+
+\tagitem{defIf}{$!A \lif !B$ nyekakake
+  \iftag{prvOr}{$(\lnot !A \lor !B)$}{$\lnot (!A \land \lnot !B)$}.
+  Cathetan koreksi sumber OLPL-001: cabang kapisan ing sumber Inggris
+  ora duwe tandha kurung buka; pasangan kurunge dibalekake.}{}
+
+\tagitem{defIff}{$!A \liff !B$ nyekakake $(!A \lif !B) \land (!B
+  \lif !A)$.}{}
+\end{tagenumerate}
+\end{defn}
+\end{tagblock}
+
+\begin{defn}[Identitas sintaktis]
+Simbol $\ident$ mratelakake identitas sintaktis antarane rerangken
+simbol, yaiku $!A \ident !B$ yen lan mung yen $!A$ lan $!B$ iku
+rerangken simbol kang dawane padha lan ngemot simbol kang padha ing
+saben papan.
+\end{defn}
+
+Ing sisih loro simbol $\ident$ bisa ana rerangken kang diasilake kanthi
+konkatenasi. Tuladhane, $!A \ident (!B \lor !C)$ ateges: rerangken
+simbol~$!A$ padha karo rerangken kang diasilake kanthi ngrangkep tandha
+kurung buka, rerangken $!B$, simbol $\lor$, rerangken~$!C$, lan tandha
+kurung tutup, miturut urutan iki. Yen iki kadadeyan, kita ngerti yen
+simbol kapisan $!A$ iku tandha kurung buka, $!A$ ngemot $!B$ minangka
+subrerangken (wiwit saka simbol kapindho), subrerangken kasebut banjur
+ditututi $\lor$, lan sateruse.
+
+\end{document}

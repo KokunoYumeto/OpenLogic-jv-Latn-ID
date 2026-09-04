@@ -1,11 +1,11 @@
 {
   "schema": "jv-batch-qa/1",
-  "utc": "2026-09-04T22:17:01.250086+00:00",
-  "checked_units": 54,
-  "structural_pass_units": 54,
+  "utc": "2026-09-04T22:44:08.894466+00:00",
+  "checked_units": 62,
+  "structural_pass_units": 62,
   "total_units": 722,
-  "segments": 910,
-  "translated_segments": 627,
+  "segments": 1068,
+  "translated_segments": 726,
   "units": [
     {
       "unit_id": "OLP-0001",
@@ -1194,10 +1194,186 @@
       "source_math_count": 78,
       "target_math_count": 78,
       "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0055",
+      "source_path": "content/propositional-logic/propositional-logic.tex",
+      "source_sha256": "1af59702eeba2337e42385ae40315eb7761ca569b0991f0afe69ad74bd5258aa",
+      "translation_sha256": "a3b0158af5dc43f11f446c64f3449f00d357b10ecc595028c1be1905cf48a744",
+      "translation_bytes": 1449,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 17,
+      "target_paragraphs": 17,
+      "source_math_count": 2,
+      "target_math_count": 2,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0056",
+      "source_path": "content/propositional-logic/syntax-and-semantics/syntax-and-semantics.tex",
+      "source_sha256": "d99022091f0fa2b689b3a3e845c3908dd45c8a9c36c74f3d9c589d17d629f805",
+      "translation_sha256": "2e3790b7c9cc8ef49d694c1563cb78bf08bdc8f3d7bc1939eea0d99312401032",
+      "translation_bytes": 605,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 13,
+      "target_paragraphs": 13,
+      "source_math_count": 0,
+      "target_math_count": 0,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0057",
+      "source_path": "content/propositional-logic/syntax-and-semantics/introduction.tex",
+      "source_sha256": "3040499782b5cc91adab39a5ba93031d4daf6d05ad084e97937d6f84ebed432c",
+      "translation_sha256": "f69fa05e7359e5b13eba8b1bcb136c039366cf036b759ac564e4d2cdb53938b0",
+      "translation_bytes": 4389,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 10,
+      "target_paragraphs": 10,
+      "source_math_count": 28,
+      "target_math_count": 28,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0058",
+      "source_path": "content/propositional-logic/syntax-and-semantics/formulas.tex",
+      "source_sha256": "f05ab9c5e23b362dbee9f6063f096f52ebc9e7f97b29acc9c07f18788f1f8f48",
+      "translation_sha256": "4970549092af228a0eaab6c3b16092aaaa67f3de2c7e39c1ed6d8df1eb587c11",
+      "translation_bytes": 7311,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 36,
+      "target_paragraphs": 36,
+      "source_math_count": 94,
+      "target_math_count": 94,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0059",
+      "source_path": "content/propositional-logic/syntax-and-semantics/preliminaries.tex",
+      "source_sha256": "32b55f3fdc69170d1c4856c5abd86e8845d1d4993b8e649a0501475ad0c5a9dc",
+      "translation_sha256": "613ea29d6507a9a5cddc76cc6373dbfe8223b14fb7d698a2e67f3be9b2b62c8b",
+      "translation_bytes": 4386,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 24,
+      "target_paragraphs": 24,
+      "source_math_count": 67,
+      "target_math_count": 67,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0060",
+      "source_path": "content/propositional-logic/syntax-and-semantics/formation-sequences.tex",
+      "source_sha256": "fff70555c1ef515d9092e72c91496aa898f74e4dd41e4cadc82f49a30c5850f5",
+      "translation_sha256": "95b73d0939e578f0f020806ca164791fdd4438ab457119c17bfa00847716b12c",
+      "translation_bytes": 5267,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 17,
+      "target_paragraphs": 17,
+      "source_math_count": 75,
+      "target_math_count": 75,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0061",
+      "source_path": "content/propositional-logic/syntax-and-semantics/valuations-sat.tex",
+      "source_sha256": "9f0b5ecd5a8462ab5d970546602a1a0b0e46e5908c6a0f46369f93543583f882",
+      "translation_sha256": "328884b438baf6cf3be610bade5136e1dc0bf5277f6c4cc52207a39a9976a789",
+      "translation_bytes": 6217,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 23,
+      "target_paragraphs": 23,
+      "source_math_count": 121,
+      "target_math_count": 121,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0062",
+      "source_path": "content/propositional-logic/syntax-and-semantics/semantic-notions.tex",
+      "source_sha256": "992456e01aa355799eabea11dc7d2a49a5f1a0f0ebeef05d36f86603c0f06d39",
+      "translation_sha256": "3e8631ab02694f26e81448be1fede41cfaddd397b2457cfc19f7f48334e1267b",
+      "translation_bytes": 3070,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 18,
+      "target_paragraphs": 18,
+      "source_math_count": 38,
+      "target_math_count": 38,
+      "status": "structural_pass"
     }
   ],
   "failures": 0,
-  "semantic_reviewed_units": 54,
+  "semantic_reviewed_units": 62,
   "build": "see BUILD_SETS.json",
   "release_ready": false
 }

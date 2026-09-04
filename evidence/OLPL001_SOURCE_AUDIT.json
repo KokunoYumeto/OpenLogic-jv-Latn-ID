@@ -1,0 +1,25 @@
+{
+  "schema": "jv-local-source-audit/1",
+  "audit_id": "OLPL-20260905",
+  "date": "2026-09-05",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "status": "confirmed_single_bounded_typographic_defect",
+  "finding": {
+    "finding_id": "OLPL-001",
+    "unit_id": "OLP-0058",
+    "path": "content/propositional-logic/syntax-and-semantics/formulas.tex",
+    "source_sha256": "f05ab9c5e23b362dbee9f6063f096f52ebc9e7f97b29acc9c07f18788f1f8f48",
+    "locator": "line 159",
+    "observed": "$\\lnot !A \\lor !B)$",
+    "finding": "The material-conditional abbreviation closes an outer parenthesis which it never opens.",
+    "controlling_evidence": [
+      "The same file's binary-connective formation clauses enclose compound formulas in a matched outer parenthesis pair.",
+      "The branch is intended to abbreviate the disjunction of not-A with B, and the unmatched delimiter is a presentation error rather than an alternate logical definition."
+    ],
+    "bounded_repair": {
+      "removed": "$\\lnot !A \\lor !B)$",
+      "added": "$(\\lnot !A \\lor !B)$"
+    }
+  },
+  "source_policy": "Keep frozen English bytes and manifest hash unchanged; repair only the localized body and identify the repair in an adjacent Javanese note."
+}

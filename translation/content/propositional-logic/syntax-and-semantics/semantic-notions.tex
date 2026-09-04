@@ -1,0 +1,97 @@
+% Part: propositional-logic
+% Chapter: syntax-and-semantics
+% Section: semantic-notions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pl}{syn}{sem}
+
+\olsection{Gagasan Semantis}
+
+Kita nemtokake gagasan-gagasan semantis iki:
+
+\begin{defn} 
+\begin{enumerate}
+\item !!^a{formula}~$!A$ \emph{bisa dicukupi} yen kanggo sawijining
+  $\pAssign{v}$, $\pSat{v}{!A}$; formula iku \emph{ora bisa dicukupi}
+  yen ora ana $\pAssign{v}$ kang ndadekake $\pSat{v}{!A}$;
+\item !!^a{formula}~$!A$ iku \emph{tautologi} yen $\pSat{v}{!A}$ kanggo
+  kabeh !!{valuation}s~$\pAssign{v}$;
+\item !!^a{formula}~$!A$ iku \emph{kontingen} yen bisa dicukupi nanging
+  dudu tautologi;
+\item Yen $\Gamma$ iku himpunan !!{formula}s, $\Gamma \Entails !A$
+  (``$\Gamma$ ngakibatake $!A$ kanthi semantis'') yen lan mung yen
+  $\pSat{v}{!A}$ kanggo saben !!{valuation}~$\pAssign{v}$ kang
+  ndadekake $\pSat{v}{\Gamma}$.
+\item Yen $\Gamma$ iku himpunan !!{formula}s, $\Gamma$
+  \emph{bisa dicukupi} yen ana !!a{valuation}~$\pAssign{v}$ kang
+  ndadekake $\pSat{v}{\Gamma}$, lan yen ora ana, $\Gamma$
+  \emph{ora bisa dicukupi}.
+\end{enumerate} 
+\end{defn}
+
+\begin{prob} 
+ Kanggo saben papat !!{formula}s ing ngisor iki, temtokna apa formula
+ iku (a)~bisa dicukupi, (b)~tautologi, lan (c)~kontingen.
+\begin{enumerate}
+  \item \( ( \Obj p_0 \lif ( \lnot \Obj p_1 \lif \lnot \Obj p_0 ) ) \).
+  \item \( ( ( \Obj p_0 \land \lnot \Obj p_1 ) \lif ( \lnot \Obj p_0 \land \Obj p_2 )) \liff ( ( \Obj p_2 \lif \Obj p_0 ) \lif ( \Obj p_0 \lif \Obj p_1 )) \).
+  \item \( ( \Obj p_0 \liff \Obj p_1 ) \lif ( \Obj p_2 \liff \lnot \Obj p_1 ) \).
+  \item \( (( \Obj p_0 \liff ( \lnot \Obj p_1 \land \Obj p_2 )) \lor ( \Obj p_2 \lif ( \Obj p_0 \liff \Obj p_1 ))) \).
+\end{enumerate}
+\end{prob}
+
+\begin{prop}
+\ollabel{prop:semanticalfacts} 
+\begin{enumerate} 
+\item $!A$ iku tautologi yen lan mung yen
+  $\emptyset \Entails !A$; 
+\item Yen $\Gamma \Entails !A$ lan $\Gamma \Entails !A \lif !B$, mula
+  $\Gamma \Entails !B$;
+\item Yen $\Gamma$ bisa dicukupi, saben subhimpunan winates saka
+  $\Gamma$ uga bisa dicukupi; 
+\item \ollabel{def:monotonicity} Monotonisitas: yen $\Gamma \subseteq \Delta$
+  lan $\Gamma \Entails !A$, mula uga $\Delta \Entails !A$;
+\item \ollabel{def:Cut} Transitivitas: yen $\Gamma \Entails !A$ lan
+  $\Delta \cup \{ !A\} \Entails !B$, mula $\Gamma \cup \Delta \Entails
+  !B$.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+Latihan.
+\end{proof}
+
+\begin{prob}
+Buktekna \olref[pl][syn][sem]{prop:semanticalfacts}
+\end{prob}
+
+\begin{prop}\ollabel{prop:entails-unsat}
+  $\Gamma \Entails !A$ yen lan mung yen $\Gamma \cup \{\lnot !A\}$
+  ora bisa dicukupi.
+\end{prop}
+
+\begin{proof}
+Latihan.
+\end{proof}
+
+\begin{prob}
+Buktekna \olref[pl][syn][sem]{prop:entails-unsat}
+\end{prob}
+
+\begin{thm}[Teorema Deduksi Semantis]
+  \ollabel{thm:sem-deduction} $\Gamma \Entails !A \lif !B$ yen lan mung
+  yen $\Gamma \cup \{!A\} \Entails !B$.
+\end{thm}
+
+\begin{proof}
+Latihan.
+\end{proof}
+
+\begin{prob}
+Buktekna \olref[pl][syn][sem]{thm:sem-deduction}
+\end{prob}
+
+\end{document}

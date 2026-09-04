@@ -1,0 +1,82 @@
+% Part: propositional-logic
+% Chapter: syntax-and-semantics
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pl}{syn}{int}
+
+\olsection{Pambuka}
+
+Logika proposisional ngrembug !!{formula}s kang dibangun saka
+!!{propositional variable}s kanthi konektif proposisional
+$\lnot$, $\land$, $\lor$, $\lif$, lan $\liff$. Miturut pangerten
+lumrah, !!a{propositional variable}~$p$ makili ukara utawa proposisi
+kang bener utawa salah. Saben ``nilai kabeneran'' saka
+!!{propositional variable} ing !!a{formula} wis ditemtokake, nilai
+kabeneran saben !!{formula}s kang dibentuk saka variabel-variabel iku
+nganggo konektif proposisional uga wis ditemtokake. Kita kandha yen
+logika proposisional iku \emph{fungsional tumrap kabeneran}, amarga
+semantike diwenehake dening fungsi-fungsi saka nilai kabeneran. Mligine,
+ing logika proposisional kita ora nggatekake penentuan luwih lanjut
+ngenani kabeneran lan kasalahan, upamane apa sawijining bab mesthi
+bener lan ora mung bener kanthi kontingen, apa sawijining bab
+dikenal bener, utawa apa sawijining bab bener saiki lan dudu biyen
+utawa mbesuk. Kita mung nggatekake rong nilai kabeneran, yaiku bener
+($\True$) lan salah ($\False$), mula ora ngrembug kamungkinan yen
+sawijining pratelan ora bener lan ora salah, utawa mung setengah bener.
+Kita uga mung nggatekake konektif kang ndadekake nilai kabeneran
+!!a{formula} kang dibangun saka konektif kasebut ditemtokake kanthi
+jangkep dening nilai kabeneran perangan-perangane (lan dudu, umpamane,
+dening maknane). Mligine, isih dadi pasulayan apa nilai kabeneran
+kondisional ing basa Inggris iku fungsional tumrap kabeneran ing
+teges iki. Kondisional material~$\lif$ pancen mangkono; logika liyane
+ngrembug kondisional kang ora fungsional tumrap kabeneran.
+
+Kanggo ngembangake teori lan metateori logika proposisional kang
+fungsional tumrap kabeneran, kita kudu nemtokake luwih dhisik
+sintaksis lan semantik ekspresine. Kita bakal njlentrehake salah siji
+cara mbangun !!{formula}s saka !!{propositional variable}s nganggo
+konektif. Definisi alternatif uga bisa digawe. Sistem liyane bisa
+milih simbol kang beda, milih himpunan konektif primitif kang beda,
+lan nggunakake tandha kurung kanthi cara kang beda (utawa malah ora
+nggunakake babar pisan, kaya ing notasi kang diarani notasi Polandia).
+Nanging, kabeh pendekatan mau padha-padha nggunakake aturan pambentukan
+kanggo nemtokake himpunan !!{formula}s kanthi \emph{induktif}. Yen
+ditindakake kanthi bener, saben ekspresi pokoke mung bisa kawangun
+nganggo siji cara miturut aturan pambentukan. Definisi induktif kang
+ngasilake ekspresi kang \emph{bisa kawaca kanthi unik} ndadekake kita
+bisa menehi makna marang ekspresi kasebut kanthi metodhe kang padha---
+yaiku definisi induktif.
+
+Menehi makna marang ekspresi iku wewengkone semantik. Konsep utama ing
+semantik logika proposisional yaiku panyukupan ing !!a{valuation}.
+!!^a{valuation}~$\pAssign{v}$ masangake nilai kabeneran $\True$,
+$\False$ marang !!{propositional variable}s. Saben !!{valuation}
+nemtokake nilai kabeneran $\pValue{v}(!A)$ kanggo saben
+!!{formula}~$!A$. !!^a{formula} dicukupi ing !!a{valuation}~$\pAssign{v}$
+yen lan mung yen $\pValue{v}(!A) = \True$---iki ditulis
+$\pSat{v}{!A}$. Relasi iki uga bisa ditemtokake kanthi induksi ing
+struktur~$!A$, yaiku nganggo fungsi kabeneran saka konektif logis
+kanggo nemtokake, umpamane, panyukupan $!A \land !B$ adhedhasar
+panyukupan (utawa ora dicukupe) $!A$ lan~$!B$.
+
+Adhedhasar relasi panyukupan $\pSat{v}{!A}$ kanggo ukara, kita banjur
+bisa nemtokake gagasan semantis dhasar yaiku tautologi, akibat
+semantis, lan bisa dicukupi. !!^a{formula} iku tautologi,
+$\Entails !A$, yen saben !!{valuation} nyukupi formula kasebut, yaiku
+$\pValue{v}(!A) = \True$ kanggo saben~$\pAssign{v}$. Formula iku dadi
+akibat semantis saka sawijining himpunan !!{formula}s,
+$\Gamma \Entails !A$, yen saben !!{valuation} kang nyukupi kabeh
+!!{formula}s ing~$\Gamma$ uga nyukupi~$!A$. Lan sawijining himpunan
+!!{formula}s bisa dicukupi yen ana !!{valuation} kang nyukupi kabeh
+!!{formula}s ing himpunan iku bebarengan. Amarga !!{formula}s
+ditemtokake kanthi induktif, lan panyukupan sabanjure uga ditemtokake
+kanthi induksi ing struktur !!{formula}s, kita bisa nggunakake induksi
+kanggo mbuktekake sipat-sipat semantik lan nggayutake gagasan-gagasan
+semantis kang wis ditemtokake.
+
+
+\end{document}
