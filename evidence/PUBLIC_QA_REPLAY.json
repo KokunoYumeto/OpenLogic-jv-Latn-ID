@@ -1,7 +1,7 @@
 {
   "schema": "jv-public-qa-replay/1",
-  "utc": "2026-09-04T21:28:35.478180+00:00",
-  "fresh_directory": "work/public-qa-replay-v011",
+  "utc": "2026-09-04T21:47:01.358446+00:00",
+  "fresh_directory": "work/public-qa-replay-v012",
   "script": "tools/qa-batch.py",
   "script_sha256": "de7fbff081ea2e8d17dca2df26adf65679aa921f17adcf26371337eb618c35cf",
   "process_exit_code": 0,

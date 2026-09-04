@@ -1,8 +1,9 @@
 upstream/** -text
-evidence/** -text
 translation/** text eol=lf
 edition/** text eol=lf
 editorial/** text eol=lf
 *.json text eol=lf
 *.jsonl text eol=lf
 *.md text eol=lf
+evidence/** -text
+tools/qa-batch.py -text

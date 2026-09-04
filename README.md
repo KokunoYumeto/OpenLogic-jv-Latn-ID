@@ -3,12 +3,12 @@
 Terjemahan OpenLogic nganggo basa Jawa aksara Latin (jv-Latn-ID).
 Ragam utama yaiku ngoko tinulis kanggo andharan akademik.
 
-**Isih digarap: 48 saka 722 berkas sumber wis diterjemahake.**
-Bab himpunan, relasi, lan fungsi wis rampung ditulis. Wacan telung bab
-kang dirancang ngemot pambuka lan 24 berkas sumber saka checkpoint 26.
+**Isih digarap: potret sumber ngemot 48 saka 722 berkas kang wis diterjemahake.**
+Bab himpunan, relasi, lan fungsi wis rampung ditulis. Pambangunan PDF telung bab
+iki didhukung 26 berkas sumber, lan 24 unit sumber dimuat ing wacane.
 PDF saiki ana 36 kaca lan wis lulus pambangunan kang dijaga, pamriksan visual
 kabeh kaca, sarta pambangunan baleni kang padha persis saben bit. PDF iki
-diterbitake minangka [v0.1.1](https://github.com/KokunoYumeto/OpenLogic-jv-Latn-ID/releases/tag/v0.1.1).
+diterbitake minangka [v0.1.2](https://github.com/KokunoYumeto/OpenLogic-jv-Latn-ID/releases/tag/v0.1.2).
 Patbelas berkas
 bab gedhene himpunan lan wolung berkas bab aritmetisasi uga wis rampung
 diterjemahake, durung kalebu wacan telung bab iki.
@@ -50,7 +50,7 @@ originals and are not included for public redistribution.
 
 The source and this adaptation use CC BY 4.0, subject to original
 component exceptions. Preserve upstream/LICENSE.md and other notices.
-Release v0.1.1 contains the verified 36-page reader, the corresponding
-48-unit source snapshot, machine-readable QA evidence, and checksums. Its PDF
-bytes are unchanged from v0.1.0; v0.1.1 repairs the public OLP-0048 command
-sequence replay and supersedes that earlier evidence bundle.
+Release v0.1.2 contains the verified 36-page reader, the corresponding
+48-unit source snapshot, machine-readable QA evidence, and checksums. It
+repairs the public hash graph and states the 48-source, 26-supporting-source,
+and 24-reader-unit scopes explicitly.

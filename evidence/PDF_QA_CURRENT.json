@@ -1,21 +1,28 @@
 {
-  "schema": "jv-current-reader-pdf-qa/1",
-  "candidate": "current audited three-chapter reader",
+  "schema": "jv-reader-scopefix-pdf-qa/1",
+  "candidate": "scope-explicit three-chapter reader",
   "pdf": {
-    "path": "work/tex-sets-current/jv-sets.pdf",
-    "bytes": 390977,
-    "sha256": "ddffcdbec711909a6ea53d1e79b34d85665b236e77429c805efbd1f1e70e8089",
+    "path": "work/tex-sets-scopefix/jv-sets.pdf",
+    "bytes": 390958,
+    "sha256": "ec410dadb74fd9cc64ea077b9d854592acb221ecb63c6cbb0364b067fdfefb4d",
     "pages": 36
   },
   "build_receipt": {
-    "file": "work/BUILD_SETS_attempt-022.json",
-    "sha256": "bc9a8b6d0b7678baa4c04bf945e270fddbf7b2361c5909a78e0c57d2988faa01",
+    "file": "work/BUILD_SETS_attempt-024.json",
+    "bytes": 1199,
+    "sha256": "97be5b7f55a7e04cf72aa6f6820e017fbfff7b1f2ea5aaeab7e3b07f42c5bf9f",
     "log_checks": {
       "undefined_references": 0,
       "missing_characters": 0,
       "overfull_boxes": 0,
       "errors": 0
     }
+  },
+  "scope_text": {
+    "translated_source_snapshot": "48/722",
+    "source_units_supporting_build": 26,
+    "reader_source_units": 24,
+    "old_ambiguous_claim_absent": true
   },
   "extraction_checks": {
     "empty_text_pages": [
@@ -29,240 +36,11 @@
   "render": {
     "dpi": 150,
     "rendered_pages": 36,
-    "page_files": [
-      {
-        "file": "work/render-sets-current/page-01.png",
-        "bytes": 120172,
-        "sha256": "9484ebf41aa5f4ed7429f6b72cef9df732ebbb74c80e59e53796106b17e95ae7"
-      },
-      {
-        "file": "work/render-sets-current/page-02.png",
-        "bytes": 8887,
-        "sha256": "7a0f2a24d31bc5d30938c9d83bcb0be50782a3342a9336740824c79c2424d3c9"
-      },
-      {
-        "file": "work/render-sets-current/page-03.png",
-        "bytes": 189644,
-        "sha256": "5be3da35ab83290b94236c9e6cb918bb824de00f3a3fceede73a3a72be51a007"
-      },
-      {
-        "file": "work/render-sets-current/page-04.png",
-        "bytes": 122682,
-        "sha256": "2f57ac19bcd1612de50cdfded1ee8a2afcb904f8f8c4b3fdd08599eb8091ced2"
-      },
-      {
-        "file": "work/render-sets-current/page-05.png",
-        "bytes": 301764,
-        "sha256": "3c73d40df934831271b85cb59d53a780f7bf9298aeffdc718d3162d02ab8ed52"
-      },
-      {
-        "file": "work/render-sets-current/page-06.png",
-        "bytes": 413267,
-        "sha256": "fd5cddc6a443f7440ca170298964d7bc089bb6acd2d82f4c19d6a026a06a81c6"
-      },
-      {
-        "file": "work/render-sets-current/page-07.png",
-        "bytes": 310639,
-        "sha256": "9dbe8bc1bcb4b2ec4d9c068992ff9894df7b5dab0225c2b935060f0313a8efa0"
-      },
-      {
-        "file": "work/render-sets-current/page-08.png",
-        "bytes": 297740,
-        "sha256": "ca2585cdc75f57ed66b63c086cb7d8cea65cf2f36897b94de705d22b6e9ddc9c"
-      },
-      {
-        "file": "work/render-sets-current/page-09.png",
-        "bytes": 299675,
-        "sha256": "1575a79e6517e4ad222ed16994bd70bdb82c6494adab4f580f41e67035558f5c"
-      },
-      {
-        "file": "work/render-sets-current/page-10.png",
-        "bytes": 225588,
-        "sha256": "25a913fd63b25eeed3e37fac9c0612fbf07e1f6582ab0a5bcd80437799800062"
-      },
-      {
-        "file": "work/render-sets-current/page-11.png",
-        "bytes": 354454,
-        "sha256": "0bda58225e7cfd9ec77ee6ca9f283d973b3a549f6a8a76960a1d723dcaf6664d"
-      },
-      {
-        "file": "work/render-sets-current/page-12.png",
-        "bytes": 393739,
-        "sha256": "dca8adac6e292c5ebeb709c339f1788a3dadfe7cde0c62c4d97b2c771af6af91"
-      },
-      {
-        "file": "work/render-sets-current/page-13.png",
-        "bytes": 155886,
-        "sha256": "d67ab3e9204eca0177ff156a4f7d3d9086526e0451a4cbecc63a6e783ca2f32b"
-      },
-      {
-        "file": "work/render-sets-current/page-14.png",
-        "bytes": 299801,
-        "sha256": "bc4d26aecd1f8c6225fbd43efdd7ce3b37ea9ee54f39484ab1065f552fc817ba"
-      },
-      {
-        "file": "work/render-sets-current/page-15.png",
-        "bytes": 377044,
-        "sha256": "094553222e8be68d8984965559c1a8c3438539743574d3c11d6be93dd8878f09"
-      },
-      {
-        "file": "work/render-sets-current/page-16.png",
-        "bytes": 423020,
-        "sha256": "618f19f8cc8856abb8b861d30bd920516a67d27eb00b79a280602c56964bfe83"
-      },
-      {
-        "file": "work/render-sets-current/page-17.png",
-        "bytes": 377905,
-        "sha256": "e1888e9bd3bbcc42e883e897944e075ceadc674cf5bfd286a7e90ea84ce382c1"
-      },
-      {
-        "file": "work/render-sets-current/page-18.png",
-        "bytes": 424048,
-        "sha256": "dc9d60d0cb903ffa711aa0a219c1218f2ee984997d9a1052abc0d94a0f41afd8"
-      },
-      {
-        "file": "work/render-sets-current/page-19.png",
-        "bytes": 383632,
-        "sha256": "7d33fc2d213c8d90690356a53611faca48bebd95d8257f59befe3c890287aaee"
-      },
-      {
-        "file": "work/render-sets-current/page-20.png",
-        "bytes": 297753,
-        "sha256": "5d0abf6db62e448d81c3966347b90540da76ea574501477b11a53c5c1566299a"
-      },
-      {
-        "file": "work/render-sets-current/page-21.png",
-        "bytes": 370823,
-        "sha256": "ec180fe9cc7e69467753e848928e963d90f40a2862f63e503391dde1f682f41b"
-      },
-      {
-        "file": "work/render-sets-current/page-22.png",
-        "bytes": 405249,
-        "sha256": "fa874b26ddbe9a8ebf59bd82fc358e034264ee5aee62e76d5e2c79986a77f82b"
-      },
-      {
-        "file": "work/render-sets-current/page-23.png",
-        "bytes": 57397,
-        "sha256": "aa2b87336d2f55f56c1037f70853627e750b38dd02fdfb57a62cf6a2dfb24751"
-      },
-      {
-        "file": "work/render-sets-current/page-24.png",
-        "bytes": 257369,
-        "sha256": "1de414e413f0338cb90ab725a6394b7e8546ba92a2c6d96b22370ed428ced615"
-      },
-      {
-        "file": "work/render-sets-current/page-25.png",
-        "bytes": 429759,
-        "sha256": "cb93ca7c7b9466c5258287554a08647135b678c5c66f75f237cdef9f3a0c441a"
-      },
-      {
-        "file": "work/render-sets-current/page-26.png",
-        "bytes": 280391,
-        "sha256": "4ef63cc5271e67449f1466ca0504c3ec5fb96f9c07cccb8ac1f907c123d7ad9f"
-      },
-      {
-        "file": "work/render-sets-current/page-27.png",
-        "bytes": 314169,
-        "sha256": "40f8b1deefca18d7e2fc28c949b6ab4049a0f4ea0b8d2cdcb5f6631dc5058fd1"
-      },
-      {
-        "file": "work/render-sets-current/page-28.png",
-        "bytes": 434508,
-        "sha256": "91f6a7253107bcaf8bd78360a4683d3f0bc004d3fe3e0c2a19ef2b7c210988d7"
-      },
-      {
-        "file": "work/render-sets-current/page-29.png",
-        "bytes": 447067,
-        "sha256": "868aff507c975d4857c7221571836ec3aad9dbddae5d7fc214bf637b74ada841"
-      },
-      {
-        "file": "work/render-sets-current/page-30.png",
-        "bytes": 386798,
-        "sha256": "492755ba7f06a7d7dea281cbcd64267f807dd37e37bb6fb172e49c278278fb0a"
-      },
-      {
-        "file": "work/render-sets-current/page-31.png",
-        "bytes": 328730,
-        "sha256": "20db849080dab4492af323e723d19abbc06176a07b50e958449fc5f1637cdc5b"
-      },
-      {
-        "file": "work/render-sets-current/page-32.png",
-        "bytes": 42853,
-        "sha256": "61bb76be651e492d5469301d4ba747de069135f8c67344798455ffb089bef5d3"
-      },
-      {
-        "file": "work/render-sets-current/page-33.png",
-        "bytes": 408747,
-        "sha256": "2ce38712da93f631e42170bbc91ef00a59614a4f98a779f4cbd7a2c1c86f115a"
-      },
-      {
-        "file": "work/render-sets-current/page-34.png",
-        "bytes": 527186,
-        "sha256": "65fa0cd7cb2c9a98156f9b0a428ee4306bc671f93600ef06f0195ec7638d4ba8"
-      },
-      {
-        "file": "work/render-sets-current/page-35.png",
-        "bytes": 92215,
-        "sha256": "2717a9a34558a3469b4612690d8c892f19c1e1e28531911dd0a8e66c98737404"
-      },
-      {
-        "file": "work/render-sets-current/page-36.png",
-        "bytes": 31213,
-        "sha256": "27ebd1ab572a2aee8e1e375cf60763c3b1c30be68a699be57f06995a069bf797"
-      }
+    "prior_accepted_render": "work/render-sets-current",
+    "pixel_changed_pages": [
+      1
     ],
-    "contact_files": [
-      {
-        "file": "work/render-sets-current/contact-01.png",
-        "bytes": 422843,
-        "sha256": "60fffb61d3187a59e686f6545ac785b9007c56b98630347d6c0e2d47c69ace5b"
-      },
-      {
-        "file": "work/render-sets-current/contact-02.png",
-        "bytes": 1275509,
-        "sha256": "99afc262f16ccfde59c405e7641e6645dbcd7afc486d54b6911123c4204f3443"
-      },
-      {
-        "file": "work/render-sets-current/contact-03.png",
-        "bytes": 1214018,
-        "sha256": "f6a14ab2b06780e0274ce57bd634f135052d89525f23a21b07c6475addc01981"
-      },
-      {
-        "file": "work/render-sets-current/contact-04.png",
-        "bytes": 1222237,
-        "sha256": "1db8adf49d3e9ea8de172588b2954a3d11d5961e011d225d071191a9e88d731d"
-      },
-      {
-        "file": "work/render-sets-current/contact-05.png",
-        "bytes": 1420286,
-        "sha256": "a78ea2a5f922c7d2714a57ce6ac7af1df333c6f2f34473fc5489da013f030829"
-      },
-      {
-        "file": "work/render-sets-current/contact-06.png",
-        "bytes": 1016379,
-        "sha256": "9aa0142bd1bd3598e1929a67d6507af81e5ddeaa080696ba438ffeb2be60dd65"
-      },
-      {
-        "file": "work/render-sets-current/contact-07.png",
-        "bytes": 1410067,
-        "sha256": "2295d56eefc446fda7914dd0ac6d2badc41999761380a5d4ca2ebab4efee0ded"
-      },
-      {
-        "file": "work/render-sets-current/contact-08.png",
-        "bytes": 1119830,
-        "sha256": "6f54dd29829851f469507867b0affafc44d1f3ebf62977a4a19697e1de70f85b"
-      },
-      {
-        "file": "work/render-sets-current/contact-09.png",
-        "bytes": 1064734,
-        "sha256": "9066d872bce5f2e0ba2b3c2c71638c0510c3ec8107dee5d3aa6fd8031754a9f6"
-      }
-    ]
-  },
-  "visual_review": {
-    "status": "pass",
-    "reviewed_pages": [
-      1,
+    "pixel_identical_pages": [
       2,
       3,
       4,
@@ -299,26 +77,216 @@
       35,
       36
     ],
+    "page_files": [
+      {
+        "file": "work/render-sets-scopefix/page-01.png",
+        "bytes": 131378,
+        "sha256": "da60bfa98a7a2126e433eeacaebdbad3b19d18c7be3ffa4820532d29631a6b01"
+      },
+      {
+        "file": "work/render-sets-scopefix/page-02.png",
+        "bytes": 8887,
+        "sha256": "7a0f2a24d31bc5d30938c9d83bcb0be50782a3342a9336740824c79c2424d3c9"
+      },
+      {
+        "file": "work/render-sets-scopefix/page-03.png",
+        "bytes": 189644,
+        "sha256": "5be3da35ab83290b94236c9e6cb918bb824de00f3a3fceede73a3a72be51a007"
+      },
+      {
+        "file": "work/render-sets-scopefix/page-04.png",
+        "bytes": 122682,
+        "sha256": "2f57ac19bcd1612de50cdfded1ee8a2afcb904f8f8c4b3fdd08599eb8091ced2"
+      },
+      {
+        "file": "work/render-sets-scopefix/page-05.png",
+        "bytes": 301764,
+        "sha256": "3c73d40df934831271b85cb59d53a780f7bf9298aeffdc718d3162d02ab8ed52"
+      },
+      {
+        "file": "work/render-sets-scopefix/page-06.png",
+        "bytes": 413267,
+        "sha256": "fd5cddc6a443f7440ca170298964d7bc089bb6acd2d82f4c19d6a026a06a81c6"
+      },
+      {
+        "file": "work/render-sets-scopefix/page-07.png",
+        "bytes": 310639,
+        "sha256": "9dbe8bc1bcb4b2ec4d9c068992ff9894df7b5dab0225c2b935060f0313a8efa0"
+      },
+      {
+        "file": "work/render-sets-scopefix/page-08.png",
+        "bytes": 297740,
+        "sha256": "ca2585cdc75f57ed66b63c086cb7d8cea65cf2f36897b94de705d22b6e9ddc9c"
+      },
+      {
+        "file": "work/render-sets-scopefix/page-09.png",
+        "bytes": 299675,
+        "sha256": "1575a79e6517e4ad222ed16994bd70bdb82c6494adab4f580f41e67035558f5c"
+      },
+      {
+        "file": "work/render-sets-scopefix/page-10.png",
+        "bytes": 225588,
+        "sha256": "25a913fd63b25eeed3e37fac9c0612fbf07e1f6582ab0a5bcd80437799800062"
+      },
+      {
+        "file": "work/render-sets-scopefix/page-11.png",
+        "bytes": 354454,
+        "sha256": "0bda58225e7cfd9ec77ee6ca9f283d973b3a549f6a8a76960a1d723dcaf6664d"
+      },
+      {
+        "file": "work/render-sets-scopefix/page-12.png",
+        "bytes": 393739,
+        "sha256": "dca8adac6e292c5ebeb709c339f1788a3dadfe7cde0c62c4d97b2c771af6af91"
+      },
+      {
+        "file": "work/render-sets-scopefix/page-13.png",
+        "bytes": 155886,
+        "sha256": "d67ab3e9204eca0177ff156a4f7d3d9086526e0451a4cbecc63a6e783ca2f32b"
+      },
+      {
+        "file": "work/render-sets-scopefix/page-14.png",
+        "bytes": 299801,
+        "sha256": "bc4d26aecd1f8c6225fbd43efdd7ce3b37ea9ee54f39484ab1065f552fc817ba"
+      },
+      {
+        "file": "work/render-sets-scopefix/page-15.png",
+        "bytes": 377044,
+        "sha256": "094553222e8be68d8984965559c1a8c3438539743574d3c11d6be93dd8878f09"
+      },
+      {
+        "file": "work/render-sets-scopefix/page-16.png",
+        "bytes": 423020,
+        "sha256": "618f19f8cc8856abb8b861d30bd920516a67d27eb00b79a280602c56964bfe83"
+      },
+      {
+        "file": "work/render-sets-scopefix/page-17.png",
+        "bytes": 377905,
+        "sha256": "e1888e9bd3bbcc42e883e897944e075ceadc674cf5bfd286a7e90ea84ce382c1"
+      },
+      {
+        "file": "work/render-sets-scopefix/page-18.png",
+        "bytes": 424048,
+        "sha256": "dc9d60d0cb903ffa711aa0a219c1218f2ee984997d9a1052abc0d94a0f41afd8"
+      },
+      {
+        "file": "work/render-sets-scopefix/page-19.png",
+        "bytes": 383632,
+        "sha256": "7d33fc2d213c8d90690356a53611faca48bebd95d8257f59befe3c890287aaee"
+      },
+      {
+        "file": "work/render-sets-scopefix/page-20.png",
+        "bytes": 297753,
+        "sha256": "5d0abf6db62e448d81c3966347b90540da76ea574501477b11a53c5c1566299a"
+      },
+      {
+        "file": "work/render-sets-scopefix/page-21.png",
+        "bytes": 370823,
+        "sha256": "ec180fe9cc7e69467753e848928e963d90f40a2862f63e503391dde1f682f41b"
+      },
+      {
+        "file": "work/render-sets-scopefix/page-22.png",
+        "bytes": 405249,
+        "sha256": "fa874b26ddbe9a8ebf59bd82fc358e034264ee5aee62e76d5e2c79986a77f82b"
+      },
+      {
+        "file": "work/render-sets-scopefix/page-23.png",
+        "bytes": 57397,
+        "sha256": "aa2b87336d2f55f56c1037f70853627e750b38dd02fdfb57a62cf6a2dfb24751"
+      },
+      {
+        "file": "work/render-sets-scopefix/page-24.png",
+        "bytes": 257369,
+        "sha256": "1de414e413f0338cb90ab725a6394b7e8546ba92a2c6d96b22370ed428ced615"
+      },
+      {
+        "file": "work/render-sets-scopefix/page-25.png",
+        "bytes": 429759,
+        "sha256": "cb93ca7c7b9466c5258287554a08647135b678c5c66f75f237cdef9f3a0c441a"
+      },
+      {
+        "file": "work/render-sets-scopefix/page-26.png",
+        "bytes": 280391,
+        "sha256": "4ef63cc5271e67449f1466ca0504c3ec5fb96f9c07cccb8ac1f907c123d7ad9f"
+      },
+      {
+        "file": "work/render-sets-scopefix/page-27.png",
+        "bytes": 314169,
+        "sha256": "40f8b1deefca18d7e2fc28c949b6ab4049a0f4ea0b8d2cdcb5f6631dc5058fd1"
+      },
+      {
+        "file": "work/render-sets-scopefix/page-28.png",
+        "bytes": 434508,
+        "sha256": "91f6a7253107bcaf8bd78360a4683d3f0bc004d3fe3e0c2a19ef2b7c210988d7"
+      },
+      {
+        "file": "work/render-sets-scopefix/page-29.png",
+        "bytes": 447067,
+        "sha256": "868aff507c975d4857c7221571836ec3aad9dbddae5d7fc214bf637b74ada841"
+      },
+      {
+        "file": "work/render-sets-scopefix/page-30.png",
+        "bytes": 386798,
+        "sha256": "492755ba7f06a7d7dea281cbcd64267f807dd37e37bb6fb172e49c278278fb0a"
+      },
+      {
+        "file": "work/render-sets-scopefix/page-31.png",
+        "bytes": 328730,
+        "sha256": "20db849080dab4492af323e723d19abbc06176a07b50e958449fc5f1637cdc5b"
+      },
+      {
+        "file": "work/render-sets-scopefix/page-32.png",
+        "bytes": 42853,
+        "sha256": "61bb76be651e492d5469301d4ba747de069135f8c67344798455ffb089bef5d3"
+      },
+      {
+        "file": "work/render-sets-scopefix/page-33.png",
+        "bytes": 408747,
+        "sha256": "2ce38712da93f631e42170bbc91ef00a59614a4f98a779f4cbd7a2c1c86f115a"
+      },
+      {
+        "file": "work/render-sets-scopefix/page-34.png",
+        "bytes": 527186,
+        "sha256": "65fa0cd7cb2c9a98156f9b0a428ee4306bc671f93600ef06f0195ec7638d4ba8"
+      },
+      {
+        "file": "work/render-sets-scopefix/page-35.png",
+        "bytes": 92215,
+        "sha256": "2717a9a34558a3469b4612690d8c892f19c1e1e28531911dd0a8e66c98737404"
+      },
+      {
+        "file": "work/render-sets-scopefix/page-36.png",
+        "bytes": 31213,
+        "sha256": "27ebd1ab572a2aee8e1e375cf60763c3b1c30be68a699be57f06995a069bf797"
+      }
+    ],
+    "contact_file": {
+      "file": "work/render-sets-scopefix/contact-pages-01-04.png",
+      "bytes": 164582,
+      "sha256": "5f3dbbadc7d4cd753d9320921b358887d07ee0b230688bae77eb319456dedaa0"
+    }
+  },
+  "visual_review": {
+    "status": "pass",
+    "reviewed_pages": [
+      1
+    ],
     "notes": [
-      "Cover, intentional blank page 2, about page, and contents page render cleanly.",
-      "All chapter text, mathematical notation, proof-end marks, cross-references, and diagrams are contained and legible without overlap or clipping.",
-      "Function-section source-audit corrections and their adjacent localized notes are readable and correctly placed.",
-      "The three-page source-and-notation errata, including the OLSIZ-011 retraction, render cleanly.",
-      "Bibliography pages render cleanly; sparse chapter-transition and terminal pages are intentional."
+      "Page 1 was inspected at full rendered size; the 48/722 source snapshot, 26 supporting source units, and 24 reader source units are distinct, legible, and unclipped.",
+      "Pages 2 through 36 are pixel-identical to the previously accepted all-page render."
     ]
   },
   "reproducibility": {
     "status": "pass",
-    "receipt": "work/BUILD_SETS_attempt-023.json",
-    "receipt_bytes": 1530,
-    "receipt_sha256": "a81230df52c037130e6307277b90cc5b695af4534ca647afc1d9d515dcb9410e",
-    "reference_pdf": "work/tex-sets-current/jv-sets.pdf",
-    "replay_pdf": "work/tex-sets-currentreplay/jv-sets.pdf",
-    "pdf_bytes": 390977,
-    "reference_sha256": "ddffcdbec711909a6ea53d1e79b34d85665b236e77429c805efbd1f1e70e8089",
-    "replay_sha256": "ddffcdbec711909a6ea53d1e79b34d85665b236e77429c805efbd1f1e70e8089",
+    "receipt": "work/BUILD_SETS_attempt-025.json",
+    "receipt_bytes": 1529,
+    "receipt_sha256": "d80dbbaf4abbdb9bf03382769fa9125fce8235492cde4417fcd8a14aaba88a98",
+    "reference_pdf": "work/tex-sets-scopefix/jv-sets.pdf",
+    "replay_pdf": "work/tex-sets-scopereplay/jv-sets.pdf",
+    "pdf_bytes": 390958,
+    "reference_sha256": "ec410dadb74fd9cc64ea077b9d854592acb221ecb63c6cbb0364b067fdfefb4d",
+    "replay_sha256": "ec410dadb74fd9cc64ea077b9d854592acb221ecb63c6cbb0364b067fdfefb4d",
     "identical": true,
-    "fresh_build_directory": "tex-sets-currentreplay",
+    "fresh_build_directory": "tex-sets-scopereplay",
     "compared_while_mutex_held": true,
     "log_checks": {
       "undefined_references": 0,

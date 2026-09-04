@@ -1,0 +1,85 @@
+{
+  "schema": "jv-public-hash-graph-qa/1",
+  "utc": "2026-09-04T21:50:00.074006+00:00",
+  "prospective_parent_commit": "fc0268f80c5d37778227fb6b170a0f41a3dfe55d",
+  "representation": {
+    "evidence_attribute": "-text at final precedence",
+    "qa_script_attribute": "-text at final precedence",
+    "evidence_git_blobs_equal_state_bytes": true
+  },
+  "checks": {
+    "source_manifest_to_upstream": {
+      "links": 722,
+      "status": "pass"
+    },
+    "batch_to_source_and_translation": {
+      "units": 48,
+      "status": "pass"
+    },
+    "semantic_to_source_and_translation": {
+      "units": 48,
+      "status": "pass"
+    },
+    "segments_to_semantic_review": {
+      "links": 829,
+      "status": "pass"
+    },
+    "corrections_to_batch_and_semantic": {
+      "records": 10,
+      "status": "pass"
+    },
+    "corrections_to_source_and_translation": {
+      "records": 10,
+      "status": "pass"
+    },
+    "retraction_to_source_and_translation": {
+      "records": 1,
+      "status": "pass"
+    },
+    "public_replay_to_script_and_olp0048_receipt": {
+      "links": 2,
+      "status": "pass"
+    },
+    "segment_to_canon_excerpt": {
+      "links": 2270,
+      "status": "pass"
+    },
+    "review_log_to_canon_excerpt": {
+      "links": 152,
+      "status": "pass"
+    },
+    "release_qa_public_cross_file_links": {
+      "links": 9,
+      "status": "pass"
+    }
+  },
+  "aggregate_public_blob_sha256": {
+    "tools/qa-batch.py": "de7fbff081ea2e8d17dca2df26adf65679aa921f17adcf26371337eb618c35cf",
+    "editorial/TRANSLATION_REVIEW_LOG.jsonl": "6fd481bb1b2a894d71c961e4751565886596dd601fd192da8e1155d5024a0eee",
+    "evidence/BATCH_QA.json": "45c87bb6cf084b00eab34eebc3cf3f1be175357acd017af8a90a586bb2fef83f",
+    "evidence/CANON_PASSAGES.jsonl": "aeed84f8ffebf06447249b809bb2f95666a5c2d03d6610f84d4cf054027f21cd",
+    "evidence/OLP0048_COMMAND_REPLAY.json": "209c089ac6ce792e1869bff6cdb460ca4838e0de0a740770e57fd311ddee2bd2",
+    "evidence/PUBLIC_QA_REPLAY.json": "d5ace899a56b5365748f9d66cf2671095bef2c303a4bca7d8323acd5a4ec5abf",
+    "evidence/SEGMENT_CANON_USE.jsonl": "b545e4e31c42f8dacb4b480875005aa3bc59674ab5f20df59434b9ed26a131cb",
+    "evidence/SEMANTIC_REVIEW.json": "22b489446b9522259574b2b512722e5fe5b26a9aa2fb073e21b1c5761543d4f8",
+    "evidence/SOURCE_CORRECTIONS.jsonl": "5c418b816f4b196140742d9aa29490a0340c22a8665a85dfb0a6c7a7e034bac8"
+  },
+  "external_or_private_hashes_not_treated_as_public_cross_file_links": [
+    "canon original/extraction/render artifacts",
+    "guarded build receipts and rendered PDF pages",
+    "manager audit FINDINGS/REVIEW/retraction artifacts",
+    "state checkpoint and release PDF",
+    "release-QA link to the source-ZIP working-byte representation of editorial/TRANSLATION_REVIEW_LOG.jsonl"
+  ],
+  "immutable_v0.1.1_source_zip": {
+    "sha256": "f14cae954efd5212426090bfc4850bfde142db63f134e42e11ae71e2fe500c08",
+    "preserved": true,
+    "core_hash_graph_self_resolving": false,
+    "mismatch": {
+      "declared_batch_qa_sha256": "dcadf7244167dbed31921731d76376da639c59ce5d1544b962d913fb07a99b80",
+      "actual_batch_qa_sha256": "45c87bb6cf084b00eab34eebc3cf3f1be175357acd017af8a90a586bb2fef83f"
+    },
+    "disposition": "Publish a later corrected source/QA bundle; do not delete or alter v0.1.1 assets."
+  },
+  "status": "pass for prospective public Git index"
+}

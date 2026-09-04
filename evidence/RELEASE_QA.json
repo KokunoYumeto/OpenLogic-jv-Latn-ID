@@ -1,6 +1,6 @@
 {
-  "schema": "jv-tranche-release-qa/3",
-  "tag": "v0.1.1",
+  "schema": "jv-tranche-release-qa/5",
+  "tag": "v0.1.2",
   "language": "jv-Latn-ID",
   "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
   "scope": "Introduction and complete sets, relations, and functions reader",
@@ -10,26 +10,32 @@
   "total_source_units": 722,
   "translated_segments": 569,
   "structural_or_formal_segments": 260,
+  "frontmatter_scope_statement": {
+    "translated_source_snapshot": "48/722",
+    "source_units_supporting_build": 26,
+    "reader_source_units": 24,
+    "old_ambiguous_26_of_722_claim_absent": true
+  },
   "pdf": {
     "pages": 36,
-    "bytes": 390977,
-    "sha256": "ddffcdbec711909a6ea53d1e79b34d85665b236e77429c805efbd1f1e70e8089"
+    "bytes": 390958,
+    "sha256": "ec410dadb74fd9cc64ea077b9d854592acb221ecb63c6cbb0364b067fdfefb4d"
   },
   "checkpoint": {
     "file": "CHECKPOINT-0048.json",
     "sha256": "0787bb8dc4759837b1f1746172ba1ed29c57b125e330fccfbcd3f2957fbec2b3"
   },
   "build_receipt": {
-    "file": "BUILD_SETS_attempt-023.json",
-    "bytes": 1530,
-    "sha256": "a81230df52c037130e6307277b90cc5b695af4534ca647afc1d9d515dcb9410e",
+    "file": "BUILD_SETS_attempt-025.json",
+    "bytes": 1529,
+    "sha256": "d80dbbaf4abbdb9bf03382769fa9125fce8235492cde4417fcd8a14aaba88a98",
     "mutex": "Global\\InterlanguageTeXSlotV1",
     "passes": [
       {
         "pass": 1,
         "kind": "tex",
         "exit_code": 0,
-        "seconds": 4.58,
+        "seconds": 4.78,
         "captured_active_processes": 0
       },
       {
@@ -43,14 +49,14 @@
         "pass": 3,
         "kind": "tex",
         "exit_code": 0,
-        "seconds": 4.65,
+        "seconds": 5.18,
         "captured_active_processes": 0
       },
       {
         "pass": 4,
         "kind": "tex",
         "exit_code": 0,
-        "seconds": 5.1,
+        "seconds": 5.95,
         "captured_active_processes": 0
       }
     ],
@@ -61,62 +67,24 @@
       "errors": 0
     },
     "reproducibility": {
-      "reference_sha256": "ddffcdbec711909a6ea53d1e79b34d85665b236e77429c805efbd1f1e70e8089",
-      "replay_sha256": "ddffcdbec711909a6ea53d1e79b34d85665b236e77429c805efbd1f1e70e8089",
+      "reference_sha256": "ec410dadb74fd9cc64ea077b9d854592acb221ecb63c6cbb0364b067fdfefb4d",
+      "replay_sha256": "ec410dadb74fd9cc64ea077b9d854592acb221ecb63c6cbb0364b067fdfefb4d",
       "identical": true,
-      "fresh_build_directory": "tex-sets-currentreplay",
+      "fresh_build_directory": "tex-sets-scopereplay",
       "compared_while_mutex_held": true
     }
   },
   "pdf_qa": {
     "file": "evidence/PDF_QA_CURRENT.json",
-    "sha256": "32b8bf297104156e41e88a0ec643e73c988f030c85f9b98d13bd68cce9c72a78",
+    "sha256": "bdae8ba0c51de20f175345a250a6d3f6d967a321c983589ca4dba0a8609dcf5f",
     "visual_review": {
       "status": "pass",
       "reviewed_pages": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20,
-        21,
-        22,
-        23,
-        24,
-        25,
-        26,
-        27,
-        28,
-        29,
-        30,
-        31,
-        32,
-        33,
-        34,
-        35,
-        36
+        1
       ],
       "notes": [
-        "Cover, intentional blank page 2, about page, and contents page render cleanly.",
-        "All chapter text, mathematical notation, proof-end marks, cross-references, and diagrams are contained and legible without overlap or clipping.",
-        "Function-section source-audit corrections and their adjacent localized notes are readable and correctly placed.",
-        "The three-page source-and-notation errata, including the OLSIZ-011 retraction, render cleanly.",
-        "Bibliography pages render cleanly; sparse chapter-transition and terminal pages are intentional."
+        "Page 1 was inspected at full rendered size; the 48/722 source snapshot, 26 supporting source units, and 24 reader source units are distinct, legible, and unclipped.",
+        "Pages 2 through 36 are pixel-identical to the previously accepted all-page render."
       ]
     },
     "extraction_checks": {
@@ -132,7 +100,7 @@
   "structural_qa": {
     "batch_qa_sha256": "45c87bb6cf084b00eab34eebc3cf3f1be175357acd017af8a90a586bb2fef83f",
     "public_replay_file": "evidence/PUBLIC_QA_REPLAY.json",
-    "public_replay_sha256": "8cb2bf5ebad1f432e2cdd549b86c320601fc31d8d3b2b8239001e790fc0296cb",
+    "public_replay_sha256": "d5ace899a56b5365748f9d66cf2671095bef2c303a4bca7d8323acd5a4ec5abf",
     "olp0048_command_replay_sha256": "209c089ac6ce792e1869bff6cdb460ca4838e0de0a740770e57fd311ddee2bd2",
     "olp0048_source_command_count": 277,
     "olp0048_translation_command_count": 277,
@@ -164,7 +132,7 @@
     ],
     "findings_sha256": "9b6e836c8432eb75d331913983603796d6557da6ec3ad71b846b2a248374cd07",
     "review_sha256": "26913176baacbda5ae8a47bcc82ccf0366b0763313e6eeeb45df59e64249a1f9",
-    "corrections_sha256": "c77cb0265d8e364d3cd51b8583521db133249188bb8aa13e346d97f24b5bc27e",
+    "corrections_sha256": "5c418b816f4b196140742d9aa29490a0340c22a8665a85dfb0a6c7a7e034bac8",
     "retracted_false_positive": "OLSIZ-011",
     "retraction_artifact_sha256": "b495d66165f3c7f0b32d61b0b106c402badcc6e4e6a130442734c8f883dd5adc",
     "tombstone_sha256": "b1b9f8ad296bc8d718a17514cdb91c61a8c1ea537a1231604f862551406b35bf",
