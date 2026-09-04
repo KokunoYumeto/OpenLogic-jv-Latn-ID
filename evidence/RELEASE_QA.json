@@ -1,0 +1,160 @@
+{
+  "schema": "jv-tranche-release-qa/2",
+  "tag": "v0.1.0",
+  "language": "jv-Latn-ID",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "scope": "Introduction and complete sets, relations, and functions reader",
+  "reader_source_units": 24,
+  "translated_source_units_supporting_reader": 26,
+  "translated_source_units_in_source_snapshot": 48,
+  "total_source_units": 722,
+  "translated_segments": 569,
+  "structural_or_formal_segments": 260,
+  "pdf": {
+    "pages": 36,
+    "bytes": 390977,
+    "sha256": "ddffcdbec711909a6ea53d1e79b34d85665b236e77429c805efbd1f1e70e8089"
+  },
+  "checkpoint": {
+    "file": "CHECKPOINT-0048.json",
+    "sha256": "0787bb8dc4759837b1f1746172ba1ed29c57b125e330fccfbcd3f2957fbec2b3"
+  },
+  "build_receipt": {
+    "file": "BUILD_SETS_attempt-023.json",
+    "bytes": 1530,
+    "sha256": "a81230df52c037130e6307277b90cc5b695af4534ca647afc1d9d515dcb9410e",
+    "mutex": "Global\\InterlanguageTeXSlotV1",
+    "passes": [
+      {
+        "pass": 1,
+        "kind": "tex",
+        "exit_code": 0,
+        "seconds": 4.58,
+        "captured_active_processes": 0
+      },
+      {
+        "pass": 2,
+        "kind": "bib",
+        "exit_code": 0,
+        "seconds": 0.34,
+        "captured_active_processes": 0
+      },
+      {
+        "pass": 3,
+        "kind": "tex",
+        "exit_code": 0,
+        "seconds": 4.65,
+        "captured_active_processes": 0
+      },
+      {
+        "pass": 4,
+        "kind": "tex",
+        "exit_code": 0,
+        "seconds": 5.1,
+        "captured_active_processes": 0
+      }
+    ],
+    "log_checks": {
+      "undefined_references": 0,
+      "missing_characters": 0,
+      "overfull_boxes": 0,
+      "errors": 0
+    },
+    "reproducibility": {
+      "reference_sha256": "ddffcdbec711909a6ea53d1e79b34d85665b236e77429c805efbd1f1e70e8089",
+      "replay_sha256": "ddffcdbec711909a6ea53d1e79b34d85665b236e77429c805efbd1f1e70e8089",
+      "identical": true,
+      "fresh_build_directory": "tex-sets-currentreplay",
+      "compared_while_mutex_held": true
+    }
+  },
+  "pdf_qa": {
+    "file": "evidence/PDF_QA_CURRENT.json",
+    "sha256": "32b8bf297104156e41e88a0ec643e73c988f030c85f9b98d13bd68cce9c72a78",
+    "visual_review": {
+      "status": "pass",
+      "reviewed_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36
+      ],
+      "notes": [
+        "Cover, intentional blank page 2, about page, and contents page render cleanly.",
+        "All chapter text, mathematical notation, proof-end marks, cross-references, and diagrams are contained and legible without overlap or clipping.",
+        "Function-section source-audit corrections and their adjacent localized notes are readable and correctly placed.",
+        "The three-page source-and-notation errata, including the OLSIZ-011 retraction, render cleanly.",
+        "Bibliography pages render cleanly; sparse chapter-transition and terminal pages are intentional."
+      ]
+    },
+    "extraction_checks": {
+      "empty_text_pages": [
+        2
+      ],
+      "residual_english_crossrefs": [],
+      "unresolved_markers": false,
+      "replacement_character": false,
+      "javanese_figure_references": 16
+    }
+  },
+  "source_audit": {
+    "audit_id": "OLSIZ-20260904",
+    "applied_findings": [
+      "OLSIZ-001",
+      "OLSIZ-002",
+      "OLSIZ-003",
+      "OLSIZ-004",
+      "OLSIZ-005",
+      "OLSIZ-006",
+      "OLSIZ-007",
+      "OLSIZ-008",
+      "OLSIZ-009",
+      "OLSIZ-010"
+    ],
+    "findings_sha256": "9b6e836c8432eb75d331913983603796d6557da6ec3ad71b846b2a248374cd07",
+    "review_sha256": "26913176baacbda5ae8a47bcc82ccf0366b0763313e6eeeb45df59e64249a1f9",
+    "corrections_sha256": "c77cb0265d8e364d3cd51b8583521db133249188bb8aa13e346d97f24b5bc27e",
+    "retracted_false_positive": "OLSIZ-011",
+    "retraction_artifact_sha256": "b495d66165f3c7f0b32d61b0b106c402badcc6e4e6a130442734c8f883dd5adc",
+    "tombstone_sha256": "b1b9f8ad296bc8d718a17514cdb91c61a8c1ea537a1231604f862551406b35bf",
+    "retraction_record_sha256": "e968dd2a1ee33af7685f4a0e140061a2f9aaae7254457b4fb978170211a3f7fa"
+  },
+  "same_author_semantic_review": true,
+  "native_or_independent_review_claimed": false,
+  "machine_authored_translation_disclosed": true,
+  "full_edition_complete": false,
+  "scoped_release_ready": true,
+  "source_errata": "editorial/ERRATA.md; reader notes in edition/jv-errata.tex"
+}
