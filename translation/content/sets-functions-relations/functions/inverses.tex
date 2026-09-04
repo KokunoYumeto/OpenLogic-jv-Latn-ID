@@ -1,0 +1,182 @@
+% Part: sets-functions-relations
+% Chapter: functions
+% Section: inverses
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{fun}{inv}
+\olsection{Invers Fungsi}
+
+\begin{explain}
+Kita nganggep fungsi minangka pemetaan. Mula, pitakon kang lumrah
+ngenani fungsi yaiku apa pemetaan iku bisa "diwalik". Upamane,
+fungsi panerus $f(x) = x + 1$ bisa diwalik,
+ing pangerten yen fungsi $g(y) = y - 1$ "mbalekake" asil saka $f$.
+
+Nanging kita kudu ngati-ati. Sanajan definisi~$g$ nemtokake
+fungsi $\Int \to \Int$, definisi iku ora nemtokake \emph{fungsi} $\Nat
+\to \Nat$, amarga $g(0) \notin \Nat$. Dadi, sanajan ing kasus prasaja,
+durung mesthi cetha apa sawijining fungsi bisa diwalik; iki bisa
+gumantung marang domain lan kodomaine.
+
+Pangerten invers fungsi ndadekake gagasan iki luwih tliti.
+\end{explain}
+
+\begin{defn}
+Fungsi $g \colon B \to A$ iku \emph{invers} saka fungsi $f
+\colon A \to B$ yen $f(g(y)) = y$ lan $g(f(x)) = x$ kanggo kabeh $x \in A$
+lan $y \in B$.
+\end{defn}
+
+Yen $f$ duwe invers~$g$, kita kerep nulis $f^{-1}$ kanggo ngganti~$g$.
+
+\begin{explain}
+Saiki kita bakal nemtokake kapan fungsi duwe invers. Calon kang trep
+kanggo invers saka $f\colon A \to B$ yaiku $g\colon B \to A$ kang
+"ditetepake kanthi"
+\[
+g(y) = \text{$x$ "tunggal" kang nyukupi $f(x) = y$.}
+\]
+Nanging tandha petik ing "ditetepake kanthi" lan "tunggal" nuduhake
+yen iki durung dadi definisi. Paling ora, cara iki ora mesthi lumaku
+ing kabeh kasus. Supaya definisi iki nemtokake
+fungsi, kudu ana siji lan mung siji~$x$ kang nyukupi $f(x) =
+y$; asil saka~$g$ kudu ditemtokake kanthi tunggal. Kajaba iku, asil
+kudu ditemtokake kanggo saben $y \in B$. Yen ana $x_1$ lan $x_2 \in
+A$ kanthi $x_1 \neq x_2$ nanging $f(x_1) = f(x_2)$, mula $g(y)$ ora bakal
+ditemtokake kanthi tunggal kanggo $y = f(x_1) = f(x_2)$. Lan yen ora ana~$x$
+babar pisan kang nyukupi $f(x) = y$, mula $g(y)$ ora ditemtokake babar pisan.
+Kanthi tembung liya, supaya $g$ bisa ditetepake, $f$~kudu !!{injective} lan
+!!{surjective}.
+
+Ayo dirembug sethithik mbaka sethithik. Pitakon mau dipara dadi loro:
+yen diwenehi fungsi~$f\colon A \to B$, kapan ana fungsi $g\colon B \to A$
+saengga $g(f(x)) = x$? Fungsi $g$ kang kaya mangkono "mbalekake" asil saka $f$,
+lan diarani \emph{invers kiwa} saka~$f$. Kapindho, kapan ana
+fungsi $h\colon B \to A$ saengga $f(h(y)) = y$? Fungsi $h$ kang kaya mangkono
+diarani \emph{invers tengen} saka~$f$; $f$ "mbalekake" asil saka~$h$.
+\end{explain}
+
+\begin{prop}
+Yen A ora kosong lan $f\colon A \to B$ iku !!{injective}, mula ana \emph{invers
+kiwa}~$g\colon B \to A$ saka~$f$ saengga $g(f(x)) = x$ kanggo kabeh $x
+\in A$.
+Cathetan koreksi sumber OLFUN-001: sumber Inggris ora nyebut sarat
+domain ora kosong kang digunakake ing bukti. Sarat umum kang pas yaiku
+A ora kosong utawa B kosong; injeksi kosong menyang himpunan ora
+kosong ora duwe invers kiwa.
+\end{prop}
+
+\begin{proof}
+Upamakna A ora kosong lan $f\colon A \to B$ iku !!{injective}.
+Gatekna sawijining $y \in B$.
+Yen $y \in \ran{f}$, ana $x \in A$ saengga $f(x) = y$. Amarga
+$f$ iku !!{injective}, mung ana siji~$x \in A$ kang kaya mangkono. Banjur kita bisa
+netepake $g(y) = x$, yaiku $g(y)$ iku $x \in A$ "tunggal" kang nyukupi $f(x)
+= y$. Yen $y \notin \ran{f}$, kita bisa metakake menyang sembarang~$a \in A$.
+Dadi, kita bisa milih $a \in A$ lan netepake $g\colon B \to A$ kanthi:
+\[
+g(y) = \begin{cases}
+    x & \text{yen $f(x) = y$}\\
+    a & \text{yen $y \notin \ran{f}$.}
+\end{cases}
+\]
+Fungsi iki ditetepake kanggo kabeh $y \in B$, amarga kanggo saben $y \in \ran{f}$
+ana persis siji $x \in A$ kang nyukupi $f(x) = y$. Miturut definisi, yen
+$y = f(x)$, mula $g(y) = x$, yaiku $g(f(x)) = x$.
+\end{proof}
+
+\begin{prob}
+Tuduhna yen $f\colon A \to B$ duwe invers kiwa~$g$, mula $f$~iku
+!!{injective}.
+\end{prob}
+
+\begin{prop}
+    Yen $f\colon A \to B$ iku !!{surjective}, mula ana
+    \emph{invers tengen}~$h\colon B \to A$ saka~$f$ saengga $f(h(y)) =
+    y$ kanggo kabeh~$y \in B$.
+\end{prop}
+
+\begin{proof}
+Upamakna $f\colon A \to B$ iku !!{surjective}. Gatekna sawijining $y \in
+B$. Amarga $f$~iku !!{surjective}, ana $x_y \in A$ kanthi $f(x_y)
+= y$. Banjur kita bisa netepake $h(y) = x_y$, yaiku kanggo saben $y \in B$
+kita milih $x \in A$ saengga $f(x) = y$; amarga $f$~iku !!{surjective},
+mesthi ana paling ora siji kang bisa dipilih.\footnote{Amarga $f$ iku
+!!{surjective}, kanggo saben~$y \in B$ himpunan $\Setabs{x}{f(x) = y}$
+ora kosong. Definisi~$h$ mbutuhake kita milih siji $x$
+saka saben himpunan iki. Yen iki mesthi bisa ditindakake, sejatine ora
+cetha; kamungkinan kanggo nggawe pilihan-pilihan iki dianggep minangka aksioma.
+Kanthi tembung liya, proposisi iki nggunakake kang diarani Aksioma
+Pilihan, prakara kang bakal \oliflabeldef{sth:choice::chap}{dirembug maneh ing \olref[sth][choice][]{chap}}{diliwati tanpa rembug jero}.
+Nanging ing akeh kasus tartamtu, upamane nalika $A = \Nat$ utawa winates, utawa nalika $f$ iku !!{bijective},
+Aksioma Pilihan ora dibutuhake. (Ing kasus mligi nalika $f$ iku !!{bijective}, kanggo saben $y \in B$ himpunan
+$\Setabs{x}{f(x) = y}$ duwe persis siji !!{element}, mula ora perlu milih.)}
+Miturut definisi, yen $x = h(y)$,
+mula $f(x) = y$, yaiku kanggo saben $y \in B$, $f(h(y)) = y$.
+\end{proof}
+
+\begin{prob}
+Tuduhna yen $f\colon A \to B$ duwe invers tengen~$h$, mula $f$~iku
+!!{surjective}.
+\end{prob}
+
+\begin{explain}
+  Kanthi nggabungake gagasan ing bukti sadurunge, saiki kita oleh asil yen saben
+  !!{bijection} duwe invers, yaiku ana sawijining fungsi
+  kang dadi invers kiwa lan uga invers tengen saka~$f$.
+\end{explain}
+
+\begin{prop}\ollabel{prop:bijection-inverse}
+Yen $f\colon A \to B$ iku !!{bijective}, ana
+fungsi~$f^{-1}\colon B \to A$ saengga kanggo kabeh $x \in A$,
+$f^{-1}(f(x)) = x$ lan kanggo kabeh $y \in B$, $f(f^{-1}(y)) = y$.
+\end{prop}
+
+\begin{proof}
+Minangka latihan.
+\end{proof}
+
+\begin{prob}
+Buktekna \olref[sfr][fun][inv]{prop:bijection-inverse}. Kanggo iku, kudu
+netepake~$f^{-1}$, nuduhake yen iku fungsi, lan nuduhake yen iku
+invers saka~$f$, yaiku $f^{-1}(f(x)) = x$ lan $f(f^{-1}(y)) = y$ kanggo
+kabeh $x \in A$ lan $y \in B$.
+\end{prob}
+
+\begin{explain}
+Ana cara kang rada luwih umum kanggo nemokake invers. Ing
+\olref[kin]{sec} wis kita deleng yen saben fungsi $f$ nuwuhake !!a{surjection} $f'
+\colon A \to \ran{f}$ kanthi netepake $f'(x) = f(x)$ kanggo kabeh $x \in A$.
+Cetha yen $f$~iku !!{injective}, mula $f'$~iku !!{bijective}, saengga
+duwe invers tunggal miturut \olref{prop:bijection-inverse}. Kanthi
+panganggone notasi kang rada longgar, kadhangkala invers saka $f'$
+mung diarani "invers saka~$f$".
+\end{explain}
+
+\begin{prop}\ollabel{prop:left-right}%
+  Tuduhna yen $f\colon A \to B$ duwe invers kiwa~$g$ lan invers
+  tengen~$h$, mula $h = g$.
+\end{prop}
+
+\begin{proof}
+  Minangka latihan.
+\end{proof}
+
+\begin{prob}
+  Buktekna \olref[sfr][fun][inv]{prop:left-right}.
+\end{prob}
+
+\begin{prop}\ollabel{prop:inverse-unique}
+Saben fungsi~$f$ duwe paling akeh siji invers.
+\end{prop}
+
+\begin{proof}
+  Upamakna $g$ lan $h$ loro-lorone invers saka~$f$. Mula, mligine,
+  $g$~iku invers kiwa saka~$f$ lan $h$~iku invers tengen. Miturut
+  \olref{prop:left-right}, $g = h$.
+\end{proof}
+
+\end{document}

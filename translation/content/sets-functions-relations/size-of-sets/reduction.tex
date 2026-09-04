@@ -1,0 +1,137 @@
+% Part:sets-functions-relations
+% Chapter: sets
+% Section: reduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{siz}{red}
+
+\olsection{Reduksi}
+
+\begin{editorial}
+  Bagean iki mbuktekake sipat ora bisa didhaptar kanthi reduksi,
+  cocog karo asil ing \olref[nen]{sec}. Versi alternatif kang rada luwih
+  ringkes, cocog karo asil ing \olref[nen-alt]{sec}, diwenehake ing
+  \olref[red-alt]{sec}.
+\end{editorial}
+
+Kita wis nuduhake yen $\Pow{\PosInt}$ iku !!{nonenumerable} nganggo
+argumen diagonalisasi. Sadurunge, kita wis duwe bukti yen $\Bin^\omega$,
+himpunan kabeh rerangken tanpa wates saka $0$ lan $1$, iku !!{nonenumerable}.
+Ana cara liya kanggo mbuktekake yen $\Pow{\PosInt}$ iku !!{nonenumerable}:
+tuduhna yen \emph{yen $\Pow{\PosInt}$ iku !!{enumerable}, mula $\Bin^\omega$
+  uga !!{enumerable}}. Amarga kita ngerti yen $\Bin^\omega$ ora
+!!{enumerable}, $\Pow{\PosInt}$ uga ora bisa mangkono. Iki diarani
+\emph{ngreduksi} sawijining masalah menyang masalah liyane. Ing kene,
+masalah ngenumerasi $\Bin^\omega$ kita reduksi menyang masalah ngenumerasi
+$\Pow{\PosInt}$. Solusi kanggo masalah kang pungkasan, yaiku enumerasi
+$\Pow{\PosInt}$, bakal ngasilake solusi kanggo masalah kapisan, yaiku
+enumerasi $\Bin^\omega$.
+
+Kepriye carane ngreduksi masalah ngenumerasi himpunan~$B$ menyang
+masalah ngenumerasi himpunan~$A$? Kita menehi cara kanggo ngowahi enumerasi
+saka~$A$ dadi enumerasi saka~$B$. Cara kang paling gampang yaiku netepake
+fungsi !!a{surjective} $f\colon A \to B$. Yen $x_1$, $x_2$,
+\dots{} ngenumerasi~$A$, mula $f(x_1)$, $f(x_2)$, \dots{}
+ngenumerasi~$B$. Ing kasus iki, kita nggoleki fungsi surjektif
+$f\colon \Pow{\PosInt} \to \Bin^\omega$.
+
+\begin{prob}
+Tuduhna yen ana fungsi !!{injective} $g\colon B \to A$, lan
+$B$~iku !!{nonenumerable}, mula~$A$ uga mangkono. Tuduhna carane
+nggunakake~$g$ kanggo ngowahi enumerasi saka~$A$ dadi enumerasi saka~$B$.
+\end{prob}
+
+\begin{proof}[Bukti {\olref[nen]{thm:nonenum-pownat}} kanthi reduksi]
+Upamakna $\Pow{\PosInt}$ iku !!{enumerable}, mula ana
+enumerasi $Z_{1}$, $Z_{2}$, $Z_{3}$, \dots
+
+Tetepna fungsi $f \colon \Pow{\PosInt} \to \Bin^\omega$ kanthi netepake
+$f(Z)$ dadi rerangken $s_{k}$ saengga $s_{k}(n) = 1$ yen lan mung yen $n \in Z$,
+lan $s_k(n) = 0$ yen ora mangkono. Iki cetha netepake sawijining fungsi,
+amarga yen $Z \subseteq \PosInt$, saben $n \in \PosInt$ mesthi
+!!a{element} saka $Z$ utawa dudu anggotane. Upamane, himpunan $2\PosInt = \{2,
+4, 6, \dots\}$ saka wilangan genep positif dipetakake menyang rerangken
+$010101\dots$, himpunan kosong dipetakake menyang $0000\dots$, lan
+himpunan $\PosInt$ dhewe menyang $1111\dots$.
+
+Fungsi iki uga !!{surjective}: saben rerangken $0$ lan $1$ cocog
+karo sawijining himpunan wilangan wutuh positif, yaiku himpunan kang
+anggotane wilangan kang nuduhake posisi rerangken kang isine~$1$.
+Kanthi luwih pas, upamakna $s \in \Bin^\omega$. Tetepna $Z
+\subseteq \PosInt$ kanthi:
+\[
+Z = \Setabs{n \in \PosInt}{s(n) = 1}
+\]
+Dadi $f(Z) = s$, kaya kang bisa dipriksa saka definisi~$f$.
+
+Saiki gatekna dhaptar
+\[
+f(Z_1), f(Z_2), f(Z_3), \dots
+\]
+Amarga $f$ iku !!{surjective}, saben anggota $\Bin^\omega$ mesthi
+katon minangka nilai~$f$ kanggo sawijining argumen, mula mesthi
+katon ing dhaptar. Dadi dhaptar iki ngenumerasi kabeh~$\Bin^\omega$.
+
+Mula yen $\Pow{\PosInt}$ iku !!{enumerable}, $\Bin^\omega$ mesthi
+!!{enumerable}. Nanging $\Bin^\omega$ iku !!{nonenumerable}
+(\olref[nen]{thm:nonenum-bin-omega}). Dadi $\Pow{\PosInt}$ iku
+!!{nonenumerable}.
+\end{proof}
+
+\begin{explain}
+Arah reduksi gampang mbingungake.
+Upamane, fungsi !!a{surjective} $g \colon \Bin^\omega \to B$
+\emph{ora} mbuktekake yen $B$ iku !!{nonenumerable}. (Gatekna $g
+\colon \Bin^\omega \to \Bin$ kang ditetepake dening $g(s) = s(1)$,
+yaiku fungsi kang metakake rerangken $0$ lan $1$ menyang !!{element} kapisane.
+Fungsi iki !!{surjective}, amarga ana rerangken kang diwiwiti $0$ lan
+ana kang diwiwiti $1$. Nanging $\Bin$ winates.) Gatekna uga yen fungsi~$f$
+kudu !!{surjective}; yen ora, argumen iki ora lumaku:
+$f(x_1)$, $f(x_2)$, \dots{} ora mesthi ngemot
+kabeh !!{element}s saka~$B$. Upamane,
+\[
+h(n) = \underbrace{000\dots0}_{\text{$n$ wilangan $0$}}
+\]
+netepake fungsi $h\colon \PosInt \to
+\Bin^\omega$, nanging $\PosInt$ iku !!{enumerable}.
+\end{explain}
+
+\begin{prob}
+Tuduhna yen himpunan kabeh \emph{himpunan saka} pasangan wilangan wutuh positif
+iku !!{nonenumerable} nganggo argumen reduksi.
+\end{prob}
+
+\begin{prob}\label{sfr:siz:red:prob:nat-nat}
+  Tuduhna yen himpunan~$X$ saka kabeh fungsi $f\colon \Nat \to \Nat$
+  iku !!{nonenumerable} nganggo argumen reduksi. (Pituduh: wenehana fungsi
+  surjektif saka $X$ menyang~$\Bin^\omega$.)
+\end{prob}
+
+\begin{prob}
+Tuduhna yen $\Nat^\omega$, himpunan rerangken tanpa wates saka
+wilangan natural, iku !!{nonenumerable} nganggo argumen reduksi.
+\end{prob}
+
+\begin{prob}
+Upamakna $P$ himpunan fungsi saka himpunan wilangan wutuh positif
+menyang himpunan $\{0\}$, lan $Q$ himpunan fungsi \emph{parsial}
+saka himpunan wilangan wutuh positif menyang himpunan $\{0\}$.
+Tuduhna yen $P$~iku !!{enumerable} lan $Q$~ora. (Pituduh: reduksinen
+masalah ngenumerasi $\Bin^\omega$ menyang ngenumerasi~$Q$.)
+\end{prob}
+
+\begin{prob}
+Upamakna $S$ himpunan kabeh fungsi !!{surjective} saka himpunan
+wilangan wutuh positif menyang himpunan \{0,1\}, yaiku $S$ ngemot kabeh
+!!{surjective}~$f\colon \PosInt \to \Bin$. Tuduhna yen $S$ iku
+!!{nonenumerable}.
+\end{prob}
+
+\begin{prob}
+Tuduhna yen himpunan~$\Real$ saka kabeh wilangan real iku !!{nonenumerable}.
+\end{prob}
+
+\end{document}

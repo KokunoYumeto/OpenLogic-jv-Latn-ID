@@ -1,0 +1,137 @@
+% Part: sets-functions-relations
+% Chapter: relations
+% Section: relations-as-sets
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{rel}{set}
+\olsection{Relasi minangka Himpunan}
+
+\begin{explain}
+Ing \olref[sfr][set][imp]{sec}, kita nyebut sawetara himpunan
+wigati: $\Nat$, $\Int$, $\Rat$, $\Real$. Mesthine kita eling
+sawetara relasi kang narik kawigaten ing antarane !!{element}s
+saka sawetara himpunan iki. Tuladhane, saben himpunan kasebut
+duwe \emph{relasi tatanan} kang wis lumrah banget.
+Uga ana relasi \emph{padha karo}, kang mung diduweni saben objek
+marang awake dhewe lan ora marang liyane.
+Ana luwih akeh relasi kang narik kawigaten kang bakal kita temoni,
+lan luwih akeh maneh relasi kang bisa ana. Nanging sadurunge
+ngrembug iku, kita bakal miwiti kanthi nuduhake yen relasi bisa
+dianggep minangka jinis himpunan khusus.
+
+Kanggo iki, elinga rong bab saka \olref[sfr][set][pai]{sec}.
+Kapisan, elinga gagasan \emph{pasangan urut}: kanthi ana $a$ lan $b$,
+kita bisa mbentuk~$\tuple{a, b}$. Ing kene urutan anggota
+\emph{pancen} wigati. Mula yen $a \neq b$,
+banjur $\tuple{a, b} \neq \tuple{b, a}$.
+(Bandhingna karo pasangan tanpa urutan, yaiku himpunan kang
+anggotane $2$, kanthi $\{a, b\}=\{b, a\}$.)
+Kapindho, elinga gagasan \emph{produk Kartesius}:
+yen $A$ lan $B$ iku himpunan, kita bisa mbentuk~$A \times B$,
+himpunan kabeh pasangan $\tuple{x, y}$ kanthi $x \in A$
+lan $y \in B$. Mligine, $A^{2}= A \times A$ iku
+himpunan kabeh pasangan urut saka~$A$.
+
+Saiki kita ngrembug relasi tartamtu ing sawijining himpunan:
+relasi-$<$ ing himpunan~$\Nat$ saka wilangan natural.
+Gatekna himpunan kabeh pasangan wilangan $\tuple{n, m}$
+kanthi $n<m$, yaiku,
+\[
+  R=\Setabs{\tuple{n, m}}{n, m \in \Nat \text{ lan } n<m}.
+\]
+Ana gayutan kang raket antarane $n$ kurang saka $m$ lan
+pasangan $\tuple{n, m}$ dadi anggota $R$, yaiku:
+\[
+      n<m\text{ yen lan mung yen }\tuple{n, m} \in R.
+\]
+Tanpa kelangan informasi, kita bisa nganggep himpunan $R$
+\emph{minangka} relasi-$<$ ing $\Nat$.
+
+Kanthi cara kang padha, kita bisa mbentuk subhimpunan saka
+$\Nat^{2}$ kanggo saben relasi antarane wilangan.
+Kosok baline, kanggo saben himpunan pasangan wilangan
+$S \subseteq \Nat^{2}$, ana relasi wilangan kang cocog:
+yaiku relasi kang diduweni $n$ marang $m$ yen lan mung yen
+$\tuple{n, m} \in S$. Iki mbenerake definisi ing ngisor iki:
+\end{explain}
+
+\begin{defn}[Relasi biner]
+\emph{Relasi biner} ing himpunan $A$ yaiku subhimpunan
+saka~$A^{2}$. Yen $R\subseteq A^{2}$ iku relasi biner
+ing~$A$ lan $x, y \in A$, kadhangkala kita nulis
+$Rxy$ (utawa $xRy$) kanggo $\tuple{x, y} \in R$.
+\end{defn}
+
+\begin{ex}
+  \ollabel{relations}
+Himpunan $\Nat^{2}$ saka pasangan wilangan natural bisa
+ditata ing matriks rong dimensi kaya mangkene:
+\[
+  \begin{array}{ccccc}
+  \mathbf{\tuple{ 0,0 }} & \tuple{ 0,1 } &
+    \tuple{ 0,2 } & \tuple{ 0,3 } & \ldots\\
+  \tuple{ 1,0 } & \mathbf{\tuple{ 1,1 }} &
+    \tuple{ 1,2 } & \tuple{ 1,3 } & \ldots\\
+  \tuple{ 2,0 } & \tuple{ 2,1 } &
+    \mathbf{\tuple{ 2,2 }} & \tuple{ 2,3 } & \ldots\\
+  \tuple{ 3,0 } & \tuple{ 3,1 } & \tuple{ 3,2 } &
+    \mathbf{\tuple{ 3,3 }} & \ldots\\
+  \vdots & \vdots & \vdots & \vdots & \mathbf{\ddots}
+  \end{array}
+\]
+Diagonal ing kene dicithak kandel, amarga subhimpunan saka
+$\Nat^2$ kang ngemot pasangan ing diagonal, yaiku,
+\[
+  \{\tuple{0,0 }, \tuple{ 1,1 }, \tuple{ 2,2 }, \dots\},
+  \]
+iku \emph{relasi identitas ing}~$\Nat$.
+(Amarga relasi identitas kerep digunakake, kita netepake
+$\Id{A}=\Setabs{\tuple{ x,x }}{x \in A}$ kanggo saben himpunan $A$.)
+Subhimpunan kabeh pasangan kang ana ing sadhuwure diagonal, yaiku,
+\[
+  L = \{\tuple{ 0,1 },\tuple{ 0,2 },\ldots,\tuple{ 1,2 },
+  \tuple{ 1,3 }, \dots, \tuple{ 2,3 }, \tuple{ 2,4 },\ldots\},
+\]
+iku relasi \emph{kurang saka}, yaiku $Lnm$ yen lan mung yen $n<m$.
+Subhimpunan pasangan kang ana ing sangisore diagonal, yaiku,
+\[
+  G=\{ \tuple{ 1,0 },\tuple{ 2,0 },\tuple{
+    2,1 }, \tuple{ 3,0 },\tuple{ 3,1 },\tuple{ 3,2 }, \dots\},
+\]
+iku relasi \emph{luwih saka}, yaiku $Gnm$ yen lan mung yen $n>m$.
+Gabungan $L$ karo $I$, kang bisa kita jenengi $K=L\cup I$,
+iku relasi \emph{kurang saka utawa padha karo}:
+$Knm$ yen lan mung yen $n \le m$.
+Semono uga, $H=G \cup I$ iku \emph{relasi luwih saka
+utawa padha karo}. Relasi $L$, $G$, $K$, lan $H$ iki
+jinis relasi khusus kang diarani \emph{tatanan}.
+$L$ lan $G$ duwe sipat yen ora ana wilangan kang nduweni
+relasi $L$ utawa $G$ marang awake dhewe
+(yaiku, kanggo kabeh $n$, ora $Lnn$ lan ora $Gnn$).
+Relasi kang duwe sipat iki diarani \emph{irrefleksif};
+yen relasi kasebut uga tatanan, diarani \emph{tatanan ketat}.
+\end{ex}
+
+\begin{explain}
+Sanajan tatanan lan identitas iku relasi kang wigati lan lumrah,
+kudu ditegesake yen miturut definisi kita, \emph{saben}
+subhimpunan saka $A^{2}$ iku relasi ing~$A$,
+ora preduli sepira ora lumrah utawa katon digawe-gawe.
+Mligine, $\emptyset$ iku relasi ing saben himpunan
+(\emph{relasi kosong}, kang ora diduweni pasangan anggota apa wae),
+lan $A^{2}$~dhewe uga relasi ing~$A$
+(kang diduweni saben pasangan), diarani \emph{relasi universal}.
+Nanging bab kaya
+$E=\Setabs{\tuple{n, m}}{n>5 \text{ utawa } m \times n \ge 34}$
+uga dianggep relasi.
+\end{explain}
+
+\begin{prob}
+  Dhaptarna !!{element}s relasi $\subseteq$ ing himpunan
+  $\Pow{\{a, b, c\}}$.
+\end{prob}
+
+\end{document}

@@ -1,0 +1,57 @@
+\documentclass[11pt,openany,a4paper]{memoir}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathpazo}
+\usepackage{microtype}
+\newcommand{\olpath}{../upstream}
+\input{\olpath/sty/open-logic.sty}
+\input{jv-localization.sty}
+\setlrmarginsandblock{28mm}{28mm}{*}
+\setulmarginsandblock{25mm}{28mm}{*}
+\checkandfixthelayout
+\linespread{1.05}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\tolerance=2000
+\emergencystretch=5em
+% Keep each exercise at its original position using the default prob environment.
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+\hypersetup{pdftitle={OpenLogic: Himpunan, Relasi, lan Fungsi - Basa Jawa},pdfauthor={Open Logic Project; Codex translation},pdflang={jv-Latn-ID}}
+\begin{document}
+\begin{titlingpage}
+\raggedright
+{\sffamily\Large OpenLogic \par}
+\vspace{18mm}
+{\sffamily\bfseries\Huge Himpunan, Relasi, lan Fungsi\par}
+\vspace{6mm}
+{\Large Basa Jawa, aksara Latin\par}
+\vspace{18mm}
+{\large Telung bab kapisan: dhasar himpunan, Paradoks Russell,
+relasi, tatanan, graf, wit, lan fungsi.\par}
+\vfill
+Terjemahan mesin adhedhasar Open Logic Project.
+Bab himpunan, relasi, lan fungsi wis diterjemahake kabeh; edhisi jangkep isih digarap.
+Sumber kang wis diterjemahake: 26 saka 722 berkas.
+Wacan iki ngemot pambuka lan telung bab saka 24 berkas sumber.
+\par\medskip
+Sumber Inggris: OpenLogicProject/OpenLogic, revisi
+\texttt{9620cc73f9c8e0ad003c514a5d3748f29611c4c0}.
+\par\medskip
+Karya asli lan terjemahan iki nganggo
+\href{https://creativecommons.org/licenses/by/4.0/}{Creative Commons Attribution 4.0}.
+Hak lan atribusi komponen asli tetep ditrapake.
+Terjemahan iki ora nuduhake panyengkuyung saka Open Logic Project.
+\end{titlingpage}
+\pagestyle{plain}
+\input{../translation/content/open-logic-about.tex}
+\clearpage
+\tableofcontents*
+\olimport[../translation/content/sets-functions-relations/sets]{sets}
+\olimport[../translation/content/sets-functions-relations/relations]{relations-complete}
+\olimport[../translation/content/sets-functions-relations/functions]{functions}
+\input{jv-errata.tex}
+\bibliographystyle{natbib-oup}
+\bibliography{open-logic}
+\end{document}

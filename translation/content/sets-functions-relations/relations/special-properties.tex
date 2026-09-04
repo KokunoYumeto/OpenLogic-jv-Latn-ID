@@ -1,0 +1,92 @@
+% Part: sets-functions-relations
+% Chapter: relations
+% Section: special-properties
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{rel}{prp}
+\olsection{Sipat Khusus Relasi}
+
+\begin{intro}
+Sawetara jinis relasi kerep banget ditemoni nganti diwenehi
+jeneng khusus. Tuladhane, $\le$ lan~$\subseteq$
+nggayutake anggotane domain dhewe-dhewe
+(umpamane, $\Nat$ kanggo~$\le$ lan
+$\Pow{A}$ kanggo~$\subseteq$) kanthi cara kang padha.
+Kanggo nemtokake kanthi persis ing ngendi relasi kasebut
+padha lan ing ngendi bedane, kita nggolongake relasi
+miturut sawetara sipat khusus kang bisa diduweni.
+Pranyata sawetara sipat khusus iki (utawa gabungane)
+wigati banget: tatanan lan relasi ekuivalensi.
+\end{intro}
+
+\begin{defn}[Refleksivitas]
+Relasi $R \subseteq A^2$ iku \emph{refleksif} yen lan mung yen,
+kanggo saben $x \in A$, $Rxx$.
+\end{defn}
+
+\begin{defn}[Transitivitas]
+Relasi $R \subseteq A^2$ iku \emph{transitif} yen lan mung yen,
+saben $Rxy$ lan $Ryz$, banjur uga $Rxz$.
+\end{defn}
+
+\begin{defn}[Simetri]
+Relasi~$R \subseteq A^2$ iku \emph{simetris} yen lan mung yen,
+saben $Rxy$, banjur uga~$Ryx$.
+\end{defn}
+
+\begin{defn}[Antisimetri]
+Relasi~$R \subseteq A^2$ iku \emph{antisimetris} yen lan mung yen,
+saben $Rxy$ lan $Ryx$ bebarengan, mula $x=y$
+(utawa, kanthi tembung liya: yen $x\neq y$,
+mula $\lnot Rxy$ utawa $\lnot Ryx$).
+\end{defn}
+
+\begin{explain}
+Ing relasi simetris, $Rxy$ lan $Ryx$ tansah lumaku
+bebarengan, utawa loro-lorone ora lumaku.
+Ing relasi antisimetris, siji-sijine cara supaya $Rxy$
+lan $Ryx$ lumaku bebarengan yaiku yen $x = y$.
+Gatekna yen iki ora \emph{mbutuhake} $Rxy$ lan $Ryx$
+lumaku nalika $x = y$, nanging mung ora ngalangi.
+Mula relasi antisimetris bisa refleksif, nanging ora
+saben relasi antisimetris iku refleksif.
+Uga gatekna yen antisimetris lan mung ora simetris iku
+syarat kang beda. Nyatane, relasi bisa simetris lan
+antisimetris bebarengan (tuladhane, relasi identitas).
+\end{explain}
+
+\begin{defn}[Koneksitas]
+Relasi $R \subseteq A^2$ iku \emph{koneks} yen kanggo kabeh
+$x,y\in A$, yen $x \neq y$, mula $Rxy$ utawa~$Ryx$.
+\end{defn}
+
+\begin{prob}
+Wenehana tuladha relasi kang (a) refleksif lan simetris
+nanging ora transitif, (b) refleksif lan antisimetris,
+(c) antisimetris, transitif, nanging ora refleksif, lan
+(d) refleksif, simetris, lan transitif.
+Aja nganggo relasi ing wilangan utawa himpunan.
+\end{prob}
+
+\begin{defn}[Irrefleksivitas]
+Relasi $R \subseteq A^2$ diarani \emph{irrefleksif}
+yen, kanggo kabeh $x \in A$, ora $Rxx$.
+\end{defn}
+
+\begin{defn}[Asimetri]
+Relasi $R \subseteq A^2$ diarani \emph{asimetris}
+yen ora ana pasangan $x,y\in A$ kang ndadekake
+$Rxy$ lan~$Ryx$ lumaku bebarengan.
+\end{defn}
+
+Gatekna yen $A \neq \emptyset$, mula ora ana relasi
+irrefleksif ing~$A$ kang refleksif, lan saben relasi
+asimetris ing~$A$ uga antisimetris.
+Nanging, ana $R \subseteq A^2$ kang ora refleksif lan
+uga ora irrefleksif, lan ana relasi antisimetris
+kang ora asimetris.
+
+\end{document}

@@ -1,0 +1,94 @@
+% Javanese text layer; Babel's English backend is used only for package compatibility.
+% All displayed captions and token forms used in this tranche are overridden.
+\setlocalecaption{english}{theorem}{Teorema}
+\setlocalecaption{english}{example}{Tuladha}
+\setlocalecaption{english}{definition}{Definisi}
+\setlocalecaption{english}{lemma}{Lema}
+\setlocalecaption{english}{proposition}{Proposisi}
+\setlocalecaption{english}{corollary}{Korolari}
+\setlocalecaption{english}{problem}{Soal}
+\setlocalecaption{english}{problems}{Soal}
+\setlocalecaption{english}{remark}{Cathetan}
+\setlocalecaption{english}{note}{Cathetan}
+\setlocalecaption{english}{axiom}{Aksioma}
+\setlocalecaption{english}{case}{Kasus}
+\setlocalecaption{english}{convention}{Konvensi}
+\settexttoken{element}{anggota}{anggota}[Anggota][Anggota]
+\definetoken{a}{element}{salah siji}
+\definetoken{A}{element}{Salah siji}
+\settexttoken{formula}{formula}{formula}[Formula][Formula]
+\settexttoken{derivation}{derivasi}{derivasi}[Derivasi][Derivasi]
+\definetoken{a}{formula}{salah siji}
+\definetoken{A}{formula}{Salah siji}
+\definetoken{a}{derivation}{salah siji}
+\definetoken{A}{derivation}{Salah siji}
+\settexttoken{surjective}{surjektif}{surjektif}[Surjektif][Surjektif]
+\settexttoken{injective}{injektif}{injektif}[Injektif][Injektif]
+\settexttoken{bijective}{bijektif}{bijektif}[Bijektif][Bijektif]
+\definetoken{a}{surjective}{}
+\definetoken{A}{surjective}{}
+\definetoken{a}{injective}{}
+\definetoken{A}{injective}{}
+\definetoken{a}{bijective}{}
+\definetoken{A}{bijective}{}
+\settexttoken{surjection}{surjeksi}{surjeksi}[Surjeksi][Surjeksi]
+\settexttoken{injection}{injeksi}{injeksi}[Injeksi][Injeksi]
+\settexttoken{bijection}{bijeksi}{bijeksi}[Bijeksi][Bijeksi]
+\definetoken{a}{surjection}{salah siji}
+\definetoken{A}{surjection}{Salah siji}
+\definetoken{a}{injection}{salah siji}
+\definetoken{A}{injection}{Salah siji}
+\definetoken{a}{bijection}{salah siji}
+\definetoken{A}{bijection}{Salah siji}
+\addto\captionsenglish{%
+  \renewcommand{\contentsname}{Isine}
+  \renewcommand{\chaptername}{Bab}
+  \renewcommand{\partname}{Perangan}
+  \renewcommand{\figurename}{Gambar}
+  \renewcommand{\tablename}{Tabel}
+  \renewcommand{\proofname}{Bukti}
+  \renewcommand{\bibname}{Kapustakan}
+}
+\addto\extrasenglish{%
+  \Crefname{thm}{Teorema}{Teorema}
+  \Crefname{ex}{Tuladha}{Tuladha}
+  \Crefname{defn}{Definisi}{Definisi}
+  \Crefname{lem}{Lema}{Lema}
+  \Crefname{prop}{Proposisi}{Proposisi}
+  \Crefname{prob}{Soal}{Soal}
+  \Crefname{rem}{Cathetan}{Cathetan}
+  \Crefname{cor}{Korolari}{Korolari}
+  \Crefname{axiom}{Aksioma}{Aksioma}
+  \Crefname{note}{Cathetan}{Cathetan}
+  \Crefname{case}{Kasus}{Kasus}
+  \Crefname{conv}{Konvensi}{Konvensi}
+  \Crefname{figure}{Gambar}{Gambar}
+  \Crefname{table}{Tabel}{Tabel}
+  \Crefname{section}{Perangan}{Perangan}
+  \Crefname{chapter}{Bab}{Bab}
+  \Crefname{page}{kaca}{kaca}
+}
+\newcommand{\JvReferenceName}[2]{\crefname{#1}{#2}{#2}\Crefname{#1}{#2}{#2}}
+\AtBeginDocument{%
+  \JvReferenceName{thm}{Teorema}
+  \JvReferenceName{ex}{Tuladha}
+  \JvReferenceName{defn}{Definisi}
+  \JvReferenceName{lem}{Lema}
+  \JvReferenceName{prop}{Proposisi}
+  \JvReferenceName{prob}{Soal}
+  \JvReferenceName{rem}{Cathetan}
+  \JvReferenceName{cor}{Korolari}
+  \JvReferenceName{axiom}{Aksioma}
+  \JvReferenceName{note}{Cathetan}
+  \JvReferenceName{case}{Kasus}
+  \JvReferenceName{conv}{Konvensi}
+  \JvReferenceName{figure}{Gambar}
+  \JvReferenceName{table}{Tabel}
+  \JvReferenceName{section}{Perangan}
+  \JvReferenceName{chapter}{Bab}
+  \JvReferenceName{page}{kaca}
+  \renewcommand{\crefpairconjunction}{ lan }
+  \renewcommand{\crefmiddleconjunction}{, }
+  \renewcommand{\creflastconjunction}{, lan }
+  \renewcommand{\crefrangeconjunction}{ nganti }
+}

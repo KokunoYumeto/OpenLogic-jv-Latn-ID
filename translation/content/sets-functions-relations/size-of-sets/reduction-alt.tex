@@ -1,0 +1,139 @@
+% Part:sets-functions-relations
+% Chapter: size-of-sets
+% Section: reduction-alt
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{siz}{red-alt}
+
+\olsection{Reduksi}
+
+\begin{editorial}
+  Bagean iki mbuktekake sipat ora bisa didhaptar kanthi reduksi,
+  cocog karo asil ing \olref[nen-alt]{sec}. Versi alternatif
+  kang rada luwih rinci, cocog karo asil ing \olref[nen]{sec},
+  diwenehake ing \olref[red]{sec}.
+\end{editorial}
+
+Kita wis mbuktekake yen $\Bin^\omega$ iku !!{nonenumerable} nganggo
+argumen diagonalisasi. Argumen diagonalisasi kang padha digunakake
+kanggo nuduhake yen $\Pow{\Nat}$ iku !!{nonenumerable}.
+Nanging ana cara liya kanggo mbuktekake yen $\Pow{\Nat}$ iku !!{nonenumerable}:
+tuduhna yen \emph{yen $\Pow{\Nat}$ iku !!{enumerable}, mula $\Bin^\omega$
+uga !!{enumerable}}. Amarga kita ngerti yen $\Bin^\omega$
+iku !!{nonenumerable}, mula $\Pow{\Nat}$ uga mangkono.
+
+Iki diarani \emph{ngreduksi} sawijining masalah menyang masalah liyane.
+Ing kene, masalah ngenumerasi $\Bin^\omega$ kita reduksi menyang
+masalah ngenumerasi $\Pow{\Nat}$. Solusi kanggo masalah kang pungkasan,
+yaiku enumerasi $\Pow{\Nat}$, bakal ngasilake solusi
+kanggo masalah kapisan, yaiku enumerasi $\Bin^\omega$.
+
+Kanggo ngreduksi masalah ngenumerasi himpunan~$B$ menyang masalah ngenumerasi
+himpunan~$A$, kita menehi cara ngowahi enumerasi saka~$A$
+dadi enumerasi saka~$B$. Cara kang paling gampang yaiku netepake
+!!a{surjection} $f\colon A \to B$. Yen $x_1$, $x_2$, \dots{}
+ngenumerasi~$A$, mula $f(x_1)$, $f(x_2)$, \dots{} ngenumerasi~$B$.
+Ing kasus iki, kita nggoleki !!a{surjection} $f\colon \Pow{\Nat}
+\to \Bin^\omega$.
+
+\begin{prob}
+Tuduhna yen ana fungsi !!{injective} $g\colon B \to A$, lan
+$B$~iku !!{nonenumerable}, mula~$A$ uga mangkono. Tuduhna carane
+nggunakake~$g$ kanggo ngowahi enumerasi saka~$A$ dadi enumerasi saka~$B$.
+\end{prob}
+
+\begin{proof}[Bukti {\olref[nen-alt]{thm:nonenum-pownat}} kanthi reduksi]
+Kanggo reduksi, upamakna $\Pow{\Nat}$ iku !!{enumerable}, mula
+ana enumerasi $N_{1}$, $N_{2}$, $N_{3}$, \dots
+
+Tetepna fungsi $f \colon \Pow{\Nat} \to \Bin^\omega$ kanthi netepake
+$f(N)$ dadi rerangken $s_{k}$ saengga $s_{k}(n) = 1$ yen lan mung yen $n \in N$,
+lan $s_k(n) = 0$ yen ora mangkono.
+
+Iki cetha netepake sawijining fungsi, amarga yen $N \subseteq \Nat$,
+saben $n \in \Nat$ mesthi !!a{element} saka $N$ utawa dudu anggotane.
+Upamane, himpunan $2\Nat = \Setabs{2n}{n \in \Nat} = \{0,2, 4, 6,
+\dots\}$ saka wilangan natural genep dipetakake menyang rerangken $1010101\dots$;
+$\emptyset$ dipetakake menyang $0000\dots$; $\Nat$ dipetakake menyang
+$1111\dots$.
+
+Fungsi iki uga !!{surjective}: saben rerangken $0$ lan $1$ cocog
+karo sawijining himpunan wilangan natural, yaiku himpunan kang
+anggotane wilangan natural kang nuduhake posisi rerangken kang isine~$1$.
+Kanthi luwih pas, yen $s \in \Bin^\omega$, tetepna $N
+\subseteq \Nat$ kanthi:
+\[
+N = \Setabs{n \in \Nat}{s(n) = 1}
+\]
+Dadi $f(N) = s$, kaya kang bisa dipriksa saka definisi~$f$.
+
+Saiki gatekna dhaptar
+\[
+f(N_1), f(N_2), f(N_3), \dots
+\]
+Amarga $f$ iku !!{surjective}, saben anggota $\Bin^\omega$ mesthi
+katon minangka nilai~$f$ kanggo sawijining argumen, mula mesthi
+katon ing dhaptar. Dadi dhaptar iki ngenumerasi kabeh~$\Bin^\omega$.
+
+Mula yen $\Pow{\Nat}$ iku !!{enumerable}, $\Bin^\omega$ mesthi
+!!{enumerable}. Nanging $\Bin^\omega$ iku !!{nonenumerable}
+(\olref[nen-alt]{thm:nonenum-bin-omega}). Dadi $\Pow{\Nat}$ iku
+!!{nonenumerable}.
+\end{proof}
+
+%\begin{explain}
+%Arah reduksi gampang mbingungake.
+%Upamane, fungsi !!a{surjective} $g \colon \Bin^\omega \to X$
+%\emph{ora} mbuktekake yen $X$ iku !!{nonenumerable}. (Gatekna $g
+%\colon \Bin^\omega \to \Bin$ kang ditetepake dening $g(s) = s(1)$,
+%yaiku fungsi kang metakake rerangken $0$ lan $1$ menyang !!{element} kapisane.
+%Fungsi iki surjektif, amarga ana rerangken kang diwiwiti $0$ lan
+%ana kang diwiwiti $1$. Nanging $\Bin$ winates.) Gatekna uga yen fungsi $f$
+%kudu surjektif; yen ora, argumen iki ora lumaku:
+%$f(x_1)$, $f(x_2)$, \dots{} ora mesthi ngemot
+%kabeh !!{element}s saka~$Y$. Upamane, $h\colon \Nat \to
+%\Bin^\omega$ kang ditetepake dening
+%\[
+%h(n) = \underbrace{000\dots0}_{\text{$n$ wilangan $0$}}
+%\]
+%iku fungsi, nanging $\Nat$ iku !!{enumerable}.
+%\end{explain}
+
+\begin{prob}\label{sfr:siz:red:prob:nat-nat}
+  Tuduhna yen himpunan~$X$ saka kabeh fungsi $f\colon \Nat \to \Nat$
+  iku !!{nonenumerable} nganggo argumen reduksi. (Pituduh: wenehana fungsi
+  surjektif saka $X$ menyang~$\Bin^\omega$.)
+\end{prob}
+
+\begin{prob}
+Tuduhna yen himpunan kabeh \emph{himpunan saka} pasangan wilangan natural,
+yaiku $\Pow{\Nat \times \Nat}$, iku !!{nonenumerable} nganggo argumen
+reduksi.
+\end{prob}
+
+\begin{prob}
+Tuduhna yen $\Nat^\omega$, himpunan rerangken tanpa wates saka wilangan
+natural, iku !!{nonenumerable} nganggo argumen reduksi.
+\end{prob}
+
+%\begin{prob}
+%Upamakna $P$ himpunan fungsi saka $\Nat$ menyang himpunan $\{0\}$, lan $Q$ himpunan fungsi \emph{parsial}
+%saka himpunan wilangan wutuh positif menyang himpunan $\{0\}$. Tuduhna
+%yen $P$~iku !!{enumerable} lan $Q$~ora. (Pituduh: reduksinen masalah
+%ngenumerasi $\Bin^\omega$ menyang ngenumerasi~$Q$.)
+%\end{prob}
+
+\begin{prob}
+Upamakna $S$ himpunan kabeh !!{surjection}s saka $\Nat$ menyang himpunan
+$\{0,1\}$, yaiku $S$ ngemot kabeh !!{surjection}s~$f \colon \Nat
+\to \Bin$. Tuduhna yen $S$ iku !!{nonenumerable}.
+\end{prob}
+
+\begin{prob}
+Tuduhna yen himpunan~$\Real$ saka kabeh wilangan real iku !!{nonenumerable}.
+\end{prob}
+
+\end{document}

@@ -1,0 +1,115 @@
+% Part:sets-functions-relations
+% Chapter: size-of-sets
+% Section: pairing
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{siz}{pai}
+\olsection{Fungsi Pasangan lan Kode}
+
+\begin{explain}
+Metodhe zig-zag Cantor ndadekake enumerabilitas $\Nat^n$ katon cetha.
+Nanging saiki gatekna larikan kang nggambarake $\Nat^2$. Kanthi ngetutake
+garis zig-zag lan ngetung posisine, kita bisa mriksa
+yen $\tuple{1,2}$ digandhengake karo wilangan~$7$. Nanging bakal
+luwih becik yen iki bisa dietung kanthi luwih langsung. Tegese, bakal
+migunani yen ana \emph{invers} enumerasi zig-zag,
+$g\colon \Nat^2 \to \Nat$, saengga
+\[
+g(\tuple{0,0}) = 0, \;
+g(\tuple{0,1}) = 1, \;
+g(\tuple{1,0}) = 2, \; \dots,
+g(\tuple{1,2}) = 7, \; \dots
+\]
+Iki bakal ngidini kita ngetung kanthi pas ing ngendi $\tuple{n, m}$ katon
+ing enumerasi.
+
+Sejatine, $g$ bisa langsung ditetepake kanthi rong pangamatan. Kapisan:
+yen baris kaping $n$ lan kolom kaping $m$ ngemot nilai~$v$, mula
+baris kaping $(n+1)$ lan kolom kaping $(m-1)$ ngemot nilai $v + 1$.
+Kapindho: baris kapisan enumerasi ngemot wilangan segitiga,
+wiwit $0$, $1$, $3$, $6$, lan sateruse. Wilangan segitiga kaping $k$
+yaiku gunggung wilangan natural kang $< k$, kang bisa dietung kanthi
+$k(k+1)/2$. Kanthi nggabungake rong pangamatan iki, gatekna
+fungsi:
+\[
+  g(n,m) = \frac{(n+m+1)(n+m)}{2} + n
+\]
+Kita kerep mung nulis $g(n, m)$ tinimbang $g(\tuple{n, m})$ supaya
+luwih gampang diwaca. Rumus iki njaluk kita nemtokake wilangan segitiga
+kaping $(n+m)^\text{}$ dhisik, banjur nambah $n$.
+Rumus iki ngisi larikan persis kaya kang dikarepake. Mligine,
+pasangan $\tuple{1, 2}$ dipetakake menyang $\frac{4 \times 3}{2} +
+1 = 7$.
+
+Fungsi $g$ iki \emph{invers} enumerasi sawijining himpunan pasangan.
+Fungsi kaya mangkono diarani \emph{fungsi pasangan}.
+\end{explain}
+
+\begin{defn}[Fungsi pasangan]
+  Fungsi $f\colon A \times B \to \Nat$ iku \emph{fungsi pasangan}
+  aritmetis yen $f$ injektif. Kita uga nyebut $f$
+  \emph{ngodeake} $A \times B$, lan $f(x,y)$ iku
+  \emph{kode} kanggo $\tuple{x,y}$.
+\end{defn}
+
+\begin{explain}
+Fungsi pasangan bisa digunakake kanggo ngodeake, upamane, pasangan wilangan
+natural. Kanthi tembung liya, saben \emph{pasangan} anggota bisa diwakili
+nganggo \emph{siji} wilangan. Kanthi invers fungsi pasangan,
+kita bisa \emph{ngudhari kode} wilangan iku, yaiku nemtokake
+pasangan kang diwakili.
+\end{explain}
+
+\begin{prob}
+Wenehana enumerasi himpunan kabeh wilangan rasional kang ora negatif.
+\end{prob}
+
+\begin{prob}
+Tuduhna yen $\Rat$ iku !!{enumerable}. Elinga yen saben wilangan rasional
+bisa ditulis minangka pecahan $z/m$ kanthi $z \in \Int$, $m \in \Nat^+$.
+\end{prob}
+
+\begin{prob}
+Tetepna enumerasi $\Bin^*$.
+\end{prob}
+
+\begin{prob}
+Elinga saka kuliah pambuka logika yen saben tabel kabeneran
+ngandharake fungsi kabeneran. Kanthi tembung liya, fungsi kabeneran
+yaiku kabeh fungsi saka $\Bin^k \to \Bin$ kanggo sawijining~$k$.
+Buktekna yen himpunan kabeh fungsi kabeneran bisa didhaptar.
+\end{prob}
+
+\begin{prob}
+Tuduhna yen himpunan kabeh subhimpunan winates saka sembarang
+himpunan tanpa wates kang !!{enumerable} iku !!{enumerable}.
+\end{prob}
+
+\begin{prob}
+Subhimpunan $\Nat$ diarani \emph{kowinates} yen lan mung yen dadi
+komplemen sawijining himpunan winates $\Nat$; yaiku $A \subseteq \Nat$
+kowinates yen lan mung yen $\Nat\setminus A$ winates. Upamakna $I$ himpunan kang
+!!{element}sne persis kabeh subhimpunan winates lan kowinates saka $\Nat$.
+Tuduhna yen $I$ iku !!{enumerable}.
+\end{prob}
+
+\begin{prob}
+Tuduhna yen gabungan kang !!{enumerable} saka himpunan-himpunan kang !!{enumerable}
+iku !!{enumerable}. Tegese, yen $A_1$, $A_2$, \dots{} iku himpunan,
+lan saben $A_i$ iku !!{enumerable}, mula gabungan $\bigcup_{i=1}^\infty
+A_i$ saka kabeh himpunan mau uga !!{enumerable}. [Cathetan: iki angel!]
+\end{prob}
+
+\begin{prob}
+Upamakna $f \colon A \times B \to \Nat$ sembarang fungsi pasangan.
+Tuduhna yen invers saka $f$ iku enumerasi $A \times B$.
+\end{prob}
+
+\begin{prob}
+Temtokna fungsi kang ngodeake $\Nat^3$.
+\end{prob}
+
+\end{document}

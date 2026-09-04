@@ -1,0 +1,108 @@
+% Part: sets-functions-relations
+% Chapter: sets
+% Section: subsets
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{set}{sub}
+\olsection{Subhimpunan lan Himpunan Pangkat}
+
+\begin{explain}
+Kita bakal kerep mbandhingake himpunan. Salah siji pambandhing kang
+cetha yaiku: \emph{kabeh kang ana ing siji himpunan uga ana ing
+himpunan liyane}. Kahanan iki cukup wigati, mula kita perlu
+ngenalake notasi anyar.
+\end{explain}
+
+\begin{defn}[Subhimpunan]
+Yen saben !!{element} himpunan $A$ uga !!a{element} saka~$B$,
+mula kita nyebut $A$ minangka \emph{subhimpunan} saka~$B$, lan
+nulis $A \subseteq B$. Yen $A$ dudu subhimpunan saka~$B$, kita
+nulis $A \not\subseteq B$.
+Yen $A \subseteq B$ nanging $A \neq B$, kita nulis $A \subsetneq B$
+lan nyebut $A$ minangka \emph{subhimpunan sejati} saka $B$.
+\end{defn}
+
+\begin{ex}
+Saben himpunan iku subhimpunan saka awake dhewe, lan $\emptyset$
+iku subhimpunan saka saben himpunan. Himpunan wilangan natural genep
+iku subhimpunan saka himpunan wilangan natural.
+Uga, $\{ a, b \} \subseteq \{ a, b, c \}$. Nanging
+$\{ a, b, e\}$ dudu subhimpunan saka $\{ a, b, c \}$.
+\end{ex}
+
+\begin{ex}
+Wilangan $2$ iku !!{element} himpunan wilangan wutuh, dene
+himpunan wilangan genep iku subhimpunan saka himpunan wilangan
+wutuh. Nanging, sawijining himpunan bisa \emph{bebarengan} dadi
+!!a{element} lan subhimpunan saka himpunan liyane, tuladhane
+$\{0\} \in \{0, \{0\}\}$ lan uga $\{0\} \subseteq \{0,
+\{0\}\}$.
+\end{ex}
+
+Ekstensionalitas menehi patokan pepadhan kanggo himpunan:
+$A = B$ yen lan mung yen saben !!{element} saka~$A$ uga
+!!a{element} saka~$B$ lan kosok baline. Definisi "subhimpunan"
+nemtokake $A \subseteq B$ persis minangka separo kapisan saka
+patokan iki: saben !!{element} saka~$A$ uga !!a{element} saka~$B$.
+Mesthi wae definisi iki uga lumaku yen $A$ lan $B$ diijolake:
+yaiku, $B \subseteq A$ yen lan mung yen saben !!{element}
+saka~$B$ uga !!a{element} saka~$A$. Iki persis perangan
+"kosok baline" ing ekstensionalitas. Kanthi tembung liya,
+ekstensionalitas nduweni akibat yen himpunan-himpunan iku padha
+yen lan mung yen siji lan sijine padha dadi subhimpunan.
+
+\begin{prop}
+$A = B$ yen lan mung yen $A \subseteq B$ lan $B \subseteq A$.
+\end{prop}
+
+Saiki uga wektu kang trep kanggo ngenalake sawetara notasi
+tambahan kang migunani. Nalika nemtokake kapan $A$ iku subhimpunan
+saka~$B$, kita nyebut "saben !!{element} saka~$A$ iku \dots,"
+lan ngisi "$\dots$" nganggo "!!a{element} saka $B$".
+Nanging \emph{wangun} ukara iki kerep banget digunakake, mula
+bakal migunani yen kita ngenalake notasi formal kanggo wangun iki.
+
+\begin{defn}\ollabel{forallxina}
+$(\forall x \in A)\phi$ minangka cekakan saka $\forall x(x \in A \lif
+\phi)$. Semono uga, $(\exists x \in A)\phi$ minangka cekakan saka
+$\exists x(x\in A \land \phi)$.
+\end{defn}
+
+Kanthi notasi iki, kita bisa nyatakake yen $A \subseteq B$ yen lan
+mung yen $(\forall x \in A)x \in B$.
+
+Saiki kita ngrembug jinis himpunan tartamtu: himpunan kabeh
+subhimpunan saka sawijining himpunan.
+
+\begin{defn}[Himpunan Pangkat]
+Himpunan kang ngemot kabeh subhimpunan saka himpunan~$A$ diarani
+\emph{himpunan pangkat saka}~$A$, ditulis $\Pow{A}$.
+  \[
+    \Pow{A} = \Setabs{B}{B \subseteq A}
+  \]
+\end{defn}
+
+\begin{ex}
+Apa wae kabeh subhimpunan kang bisa digawe saka $\{ a, b, c \}$?
+Yaiku: $\emptyset$, $\{a \}$, $\{b\}$, $\{c\}$, $\{a, b\}$,
+$\{a, c\}$, $\{b,c\}$, $\{a, b, c\}$.
+Himpunan kabeh subhimpunan iki yaiku $\Pow{\{a,b,c\}}$:
+\[
+\Pow{\{ a, b, c \}} = \{\emptyset, \{a \}, \{b\}, \{c\}, \{a, b\},
+\{b, c\}, \{a, c\}, \{a, b, c\}\}
+\]
+\end{ex}
+
+\begin{prob}
+Dhaptarna kabeh subhimpunan saka $\{a, b, c, d\}$.
+\end{prob}
+
+\begin{prob}
+Tuduhna yen $A$ duwe $n$ !!{element}s, mula $\Pow{A}$ duwe
+$2^n$ !!{element}s.
+\end{prob}
+
+\end{document}

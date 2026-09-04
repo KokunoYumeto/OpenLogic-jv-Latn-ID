@@ -1,0 +1,188 @@
+% Part: sets-functions-relations
+% Chapter: sets
+% Section: unions-and-intersections
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{set}{uni}
+\olsection{Gabungan lan Irisan}
+
+\begin{explain}
+Ing \olref[sfr][set][bas]{sec}, kita ngenalake definisi himpunan
+kanthi abstraksi, yaiku definisi awujud $\Setabs{x}{\phi(x)}$.
+Ing kene kita nggunakake sawijining sipat~$\phi$, lan sipat iki
+bisa nyebut himpunan kang wis ditetepake sadurunge. Tuladhane,
+yen $A$ lan~$B$ iku himpunan, himpunan
+$\Setabs{x}{x \in A \lor x \in B}$ ngemot kabeh objek kang
+dadi !!{element}s saka $A$ utawa~$B$, yaiku himpunan kang
+nggabungake !!{element}s saka $A$ lan~$B$. Iki bisa digambarake
+kaya ing \olref{fig:union}, kanthi dhaerah kang disorot nuduhake
+!!{element}s loro himpunan $A$ lan~$B$ bebarengan.
+
+\begin{figure}
+  \olasset{assets/diagrams/union.tikz}
+  \caption{Gabungan $A \cup B$ saka rong himpunan yaiku himpunan
+   !!{element}s saka $A$ bebarengan karo anggota saka~$B$.}
+  \ollabel{fig:union}
+\end{figure}
+
+Operasi tumrap himpunan iki---nggabungake himpunan---migunani banget
+lan kerep digunakake, mula kita menehi jeneng formal lan lambang.
+\end{explain}
+
+\begin{defn}[Gabungan]
+\emph{Gabungan} rong himpunan $A$ lan $B$, ditulis $A \cup B$,
+yaiku himpunan kabeh bab kang dadi !!{element}s saka $A$,
+$B$, utawa loro-lorone.
+\[
+A \cup B = \Setabs{x}{x \in A \lor x \in B}
+\]
+\end{defn}
+
+\begin{ex}
+Amarga cacah pangulangan !!{element}s ora dadi prakara,
+gabungan rong himpunan kang duwe !!a{element} kang padha
+mung ngemot !!{element} kasebut sapisan, tuladhane
+$\{ a, b, c\} \cup \{ a, 0, 1\} = \{a, b, c, 0, 1\}$.
+
+Gabungan himpunan lan salah siji subhimpunane iku persis himpunan
+kang luwih gedhe: $\{a,b, c \} \cup \{a \} = \{a, b, c\}$.
+
+Gabungan himpunan karo himpunan kosong padha karo himpunan kasebut:
+$\{a,b, c \} \cup \emptyset = \{a, b, c \}$.
+\end{ex}
+
+\begin{prob}
+Buktekna yen $A \subseteq B$, mula $A \cup B = B$.
+\end{prob}
+
+\begin{explain}
+Kita uga bisa ngrembug operasi kang "dual" karo gabungan.
+Operasi iki mbentuk himpunan kabeh !!{element}s kang dadi
+!!{element}s saka~$A$ lan uga !!{element}s saka~$B$.
+Operasi iki diarani \emph{irisan}, lan bisa digambarake kaya
+ing \olref{fig:intersection}.
+\begin{figure}
+  \olasset{assets/diagrams/intersection.tikz}
+  \caption{Irisan $A \cap B$ saka rong himpunan yaiku himpunan
+    !!{element}s kang padha-padha diduweni loro himpunan kasebut.}
+  \ollabel{fig:intersection}
+\end{figure}
+\end{explain}
+
+\begin{defn}[Irisan]
+\emph{Irisan} rong himpunan $A$ lan $B$, ditulis $A \cap B$,
+yaiku himpunan kabeh bab kang dadi !!{element}s saka $A$ lan~$B$
+bebarengan.
+\[
+A \cap B = \Setabs{x}{x \in A \land x \in B}
+\]
+Rong himpunan diarani \emph{pisah} yen irisane kosong.
+Tegese, loro himpunan iku ora duwe !!{element}s kang padha.
+\end{defn}
+
+\begin{ex}
+Yen rong himpunan ora duwe !!{element}s kang padha, irisane kosong:
+$\{ a, b, c\} \cap \{ 0, 1\} = \emptyset$.
+
+Yen rong himpunan duwe !!{element}s kang padha, irisane yaiku
+himpunan kabeh anggota kang padha mau:
+$\{a, b, c \} \cap \{a, b, d \} = \{a, b\}$.
+
+Irisan himpunan karo salah siji subhimpunane iku persis
+himpunan kang luwih cilik:
+$\{a, b, c\} \cap \{a, b\} = \{a, b\}$.
+
+Irisan saben himpunan karo himpunan kosong iku kosong:
+$\{a, b, c \}\cap \emptyset = \emptyset$.
+\end{ex}
+
+\begin{prob}
+Buktekna kanthi tliti miturut paugeran matematis yen $A \subseteq B$,
+mula $A \cap B = A$.
+\end{prob}
+
+\begin{explain}
+Kita uga bisa mbentuk gabungan utawa irisan luwih saka rong
+himpunan. Cara kang prasaja lan trep kanggo ngrembug iki kanthi
+umum yaiku mangkene: umpamakna kabeh himpunan kang arep digabungake
+(utawa dijupuk irisane) diklumpukake dadi siji himpunan.
+Gabungan kabeh himpunan wiwitan banjur bisa ditemtokake minangka
+himpunan kabeh objek kang kalebu ing paling ora siji
+!!{element} himpunan kasebut, lan irisane minangka himpunan kabeh
+objek kang kalebu ing saben !!{element} himpunan kasebut.
+\end{explain}
+
+\begin{defn}
+Yen $A$ iku himpunan kang ngemot himpunan-himpunan,
+mula $\bigcup A$ yaiku himpunan !!{element}s saka
+!!{element}sne~$A$:
+\begin{align*}
+\bigcup A & = \Setabs{x}{x \text{ kalebu ing !!a{element} saka } A},
+\text{ yaiku,}\\
+& = \Setabs{x}{\text{ana } B \in A
+  \text{ kang ndadekake } x \in B}
+\end{align*}
+\end{defn}
+
+\begin{defn}
+Yen $A$ iku himpunan kang ngemot himpunan-himpunan,
+mula $\bigcap A$ yaiku himpunan objek kang padha-padha diduweni
+kabeh anggota~$A$:
+\begin{align*}
+\bigcap A & = \Setabs{x}{x \text{ kalebu ing saben !!{element} saka } A},
+\text{ yaiku,}\\
+ & = \Setabs{x}{\text{kanggo kabeh } B \in A, x \in B}
+\end{align*}
+\end{defn}
+
+\begin{ex}
+Umpamakna $A = \{ \{ a, b \}, \{ a, d, e \}, \{ a, d \} \}$.
+Mula $\bigcup A = \{ a, b, d, e \}$ lan $\bigcap A = \{ a \}$.
+\end{ex}
+\begin{prob}
+	Tuduhna yen $A$ iku himpunan lan $A \in B$, mula $A \subseteq \bigcup B$.
+\end{prob}
+
+Bab kang padha uga bisa ditindakake kanggo urutan himpunan $A_1$, $A_2$, \dots
+\begin{align*}
+\bigcup_i A_i & = \Setabs{x}{x \text{ kalebu ing salah siji } A_i}\\
+\bigcap_i A_i & = \Setabs{x}{x \text{ kalebu ing saben } A_i}.
+\end{align*}
+
+Yen ana \emph{indeks} himpunan, yaiku sawijining himpunan $I$
+kang ndadekake kita ngrembug $A_i$ kanggo saben $i \in I$,
+kita uga bisa nganggo cekakan iki:
+\begin{align*}
+	\bigcup_{i \in I} A_i & = \bigcup \Setabs{A_i }{i \in I}\\
+	\bigcap_{i \in I} A_i & = \bigcap\Setabs{A_i}{i \in I}
+\end{align*}
+
+Pungkasane, kita bisa ngrembug himpunan kabeh !!{element}s
+ing~$A$ kang ora ana ing~$B$. Iki bisa digambarake kaya
+ing \olref{difference}.
+
+\begin{figure}
+  \olasset{assets/diagrams/difference.tikz}
+  \caption{Selisih $A \setminus B$ saka rong himpunan yaiku
+    himpunan !!{element}s saka~$A$ kang ora uga dadi
+    !!{element}s saka~$B$.}
+  \ollabel{difference}
+\end{figure}
+
+\begin{defn}[Selisih]
+\emph{Selisih himpunan}~$A \setminus B$ yaiku himpunan kabeh
+!!{element}s saka $A$ kang ora uga dadi !!{element}s saka~$B$,
+yaiku,
+\[
+A\setminus B = \Setabs{x}{x\in A \text{ lan } x \notin B}.
+\]
+\end{defn}
+
+\begin{prob}
+	Buktekna yen $A \subsetneq B$, mula $B \setminus A \neq \emptyset$.
+\end{prob}
+
+\end{document}

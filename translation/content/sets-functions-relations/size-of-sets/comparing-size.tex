@@ -1,0 +1,154 @@
+% Part:sets-functions-relations
+% Chapter: size-of-sets
+% Section: comparing-sizes
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{siz}{car}
+
+\olsection{Himpunan kang Beda Gedhene, lan Teorema Cantor}
+
+\begin{explain}
+Kita wis menehi andharan kang pas babagan gagasan yen rong himpunan
+padha gedhene. Kita uga bisa menehi andharan kang pas babagan gagasan
+yen sawijining himpunan luwih cilik tinimbang liyane. Definisi
+"luwih cilik tinimbang (utawa padha cacahe)" mbutuhake,
+dudu !!a{bijection} antarane himpunan, nanging !!a{injection}
+saka himpunan kapisan menyang kapindho. Yen fungsi kaya mangkono ana,
+gedhene himpunan kapisan kurang saka utawa padha karo gedhene himpunan
+kapindho. Kanthi intuisi, !!a{injection} saka sawijining himpunan menyang
+liyane njamin yen cacah !!{element}s ing jangkauan fungsi paling ora
+padha karo ing domain, amarga ora ana rong !!{element}s saka domain
+kang dipetakake menyang !!{element} jangkauan kang padha.
+\end{explain}
+
+\begin{defn}
+$A$ \emph{ora luwih gedhe tinimbang}~$B$, ditulis $\cardle{A}{B}$,
+yen lan mung yen ana !!a{injection} $f \colon A \to B$.
+\end{defn}
+
+Cetha yen relasi iki refleksif lan transitif, nanging ora simetris
+(iki dadi gladhen). Kita uga bisa ngenalake gagasan kang
+ngandharake yen sawijining himpunan luwih cilik kanthi teges ketat
+tinimbang liyane.
+
+\begin{defn}
+$A$ \emph{luwih cilik tinimbang}~$B$, ditulis $\cardless{A}{B}$,
+yen lan mung yen ana !!a{injection}~$f\colon A \to B$ nanging ora ana
+!!{bijection}~$g\colon A \to B$, yaiku $\cardle{A}{B}$ lan $\cardneq{A}{B}$.
+\end{defn}
+
+Cetha yen relasi iki irrefleksif lan transitif.
+(Iki dadi gladhen.) Nganggo notasi iki, kita bisa ngandharake
+yen himpunan $A$ iku !!{enumerable} yen lan mung yen $\cardle{A}{\Nat}$,
+lan $A$ iku !!{nonenumerable} yen lan mung yen $\cardless{\Nat}{A}$.
+Mula kita bisa ngandharake maneh
+\oliflabeldef{sfr:siz:nen-alt:thm:nonenum-pownat}{%
+\olref[sfr][siz][nen-alt]{thm:nonenum-pownat}
+minangka pangamatan yen
+$\cardless{\Nat}{\Pow{\Nat}}$}{%
+\olref[sfr][siz][nen]{thm:nonenum-pownat}
+minangka pangamatan yen $\cardless{\PosInt}{\Pow{\PosInt}}$}.
+Sejatine, \citet{Cantor1892} mbuktekake yen asil pungkasan iki
+\emph{lumaku kanthi umum}:
+
+\begin{thm}[Cantor]\ollabel{thm:cantor}
+$\cardless{A}{\Pow{A}}$, kanggo saben himpunan $A$.
+\end{thm}
+
+\begin{proof}
+Pemetaan $f(x) = \{x\}$ iku !!a{injection} $f \colon A \to \Pow{A}$,
+amarga yen $x \neq y$, mula $\{x\} \neq \{y\}$ miturut ekstensionalitas,
+saengga $f(x) \neq f(y)$. Dadi $\cardle{A}{\Pow{A}}$.
+
+\begin{editorial}
+Kita menehi bukti kang rinci yen \olref[nen]{sec} ana ing wacan;
+yen ora, diwenehake bukti kang luwih ringkes, cocog karo \olref[nen-alt]{sec}.
+\end{editorial}
+
+\oliflabeldef{sfr:siz:nen:sec}{%
+  Saiki kita bakal nuduhake yen ora bisa ana fungsi !!a{surjective}~$g\colon A \to
+  \Pow{A}$, luwih-luwih kang !!a{bijective}, mula
+  $\cardneq{A}{\Pow{A}}$. Upamakna $g\colon A \to \Pow{A}$.
+  Amarga $g$ total, saben $x \in A$ dipetakake menyang subhimpunan $g(x)
+  \subseteq A$. Kita bisa nuduhake yen $g$ ora bisa surjektif.
+  Carane yaiku netepake subhimpunan~$\overline{A} \subseteq A$
+  kang, miturut definisine, ora bisa ana ing jangkauan~$g$. Tetepna
+  \[
+  \overline{A} = \Setabs{x \in A}{x \notin g(x)}.
+  \]
+  Amarga $g(x)$ ditetepake kanggo kabeh $x \in A$, cetha yen $\overline{A}$
+  iku subhimpunan~$A$ kang ditetepake kanthi becik. Nanging himpunan iki
+  ora bisa ana ing jangkauan~$g$. Upamakna $x \in A$ sembarang;
+  kita bakal nuduhake yen $\overline{A} \neq g(x)$.
+  Yen $x \in g(x)$, mula ora nyukupi $x \notin g(x)$, dadi
+  miturut definisi~$\overline{A}$, kita duwe $x \notin
+  \overline{A}$. Yen $x \in \overline{A}$, kudu nyukupi
+  sipat kang netepake~$\overline{A}$, yaiku $x \in A$ lan $x \notin
+  g(x)$. Amarga $x$ sembarang, iki nuduhake yen kanggo saben $x \in
+  \overline{A}$, $x \in g(x)$ yen lan mung yen $x \notin \overline{A}$,
+  mula $g(x) \neq \overline{A}$. Kanthi tembung liya, $\overline{A}$
+  ora bisa ana ing jangkauan~$g$, kang mbantah anggepan yen~$g$
+  surjektif.}{Isih kudu dituduhake yen $\cardneq{A}{\Pow{A}}$.
+  Kanggo bukti kanthi kontradiksi, upamakna $\cardeq{A}{\Pow{A}}$,
+  yaiku ana !!{bijection} $g \colon A \to \Pow{A}$. Saiki gatekna:
+  \[
+    D = \Setabs{x \in A}{x \notin g(x)}
+  \]
+  Gatekna yen $D \subseteq A$, mula $D \in \Pow{A}$. Amarga $g$
+  iku !!a{bijection}, ana $y \in A$ saengga $g(y) = D$.
+  Nanging saiki kita duwe:
+  \[
+    y \in g(y) \text{ yen lan mung yen } y \in D \text{ yen lan mung yen } y \notin g(y).
+  \]
+  Iki kontradiksi; mula $\cardneq{A}{\Pow{A}}$.}{}
+\end{proof}
+
+\begin{explain}
+\oliflabeldef{sfr:siz:nen:thm:nonenum-pownat}{Mbandhingake bukti
+  \olref{thm:cantor} karo bukti \olref[nen]{thm:nonenum-pownat}
+  bisa menehi pangerten. Ing kana kita nuduhake yen kanggo saben dhaptar
+  $Z_1$, $Z_2$, \dots, saka subhimpunan~$\PosInt$, kita bisa mbangun
+  himpunan wilangan~$\overline{Z}$ kang mesthi ora ana ing dhaptar.
+  Himpunan iku mesthi ora ana ing dhaptar amarga kanggo saben $n \in
+  \PosInt$, $n \in Z_n$ yen lan mung yen $n \notin \overline{Z}$.
+  Kanthi mangkono, mesthi ana wilangan kang dadi !!a{element} saka siji
+  ing antarane $Z_n$ lan $\overline{Z}$ nanging dudu anggota liyane.
+  Ing kene kita nggunakake gagasan kang padha, nanging indeks~$n$
+  saiki dadi !!{element}s saka~$A$, dudu saka~$\PosInt$.
+  Himpunan $\overline{A}$ ditetepake supaya beda karo~$g(x)$
+  kanggo saben $x \in A$, amarga $x \in g(x)$ yen lan mung yen
+  $x \notin \overline{A}$. Maneh, mesthi ana !!a{element} saka~$A$
+  kang dadi !!a{element} saka siji ing antarane $g(x)$ lan $\overline{A}$
+  nanging dudu anggota liyane. Kaya $\overline{Z}$ kang ora bisa ana
+  ing dhaptar $Z_1$, $Z_2$, \dots, $\overline{A}$ uga ora bisa
+  ana ing jangkauan~$g$.}{}
+
+\oliflabeldef{sfr:siz:nen-alt:thm:nonenum-pownat}{Mbandhingake bukti
+  \olref{thm:cantor} karo bukti \olref[nen-alt]{thm:nonenum-pownat}
+  bisa menehi pangerten. Ing kana kita nuduhake yen kanggo saben dhaptar
+  $N_0$, $N_1$, $N_2$, \dots, saka subhimpunan~$\Nat$, kita bisa mbangun
+  himpunan wilangan~$D$ kang mesthi ora ana ing dhaptar.
+  Himpunan iku mesthi ora ana ing dhaptar amarga $n \in N_n$
+  yen lan mung yen $n \notin D$, kanggo saben $n \in \Nat$.
+  Ing kene kita nggunakake gagasan kang padha, nanging indeks~$n$
+  saiki dadi !!{element}s saka~$A$, dudu saka~$\Nat$.
+  Himpunan $D$ ditetepake supaya beda karo~$g(x)$ kanggo saben $x
+  \in A$, amarga $x \in g(x)$ yen lan mung yen $x \notin D$.}{}
+
+Bukti iki uga migunani yen dibandhingake karo bukti Paradoks Russell,
+\olref[sfr][set][rus]{thm:russells-paradox}. Pancen, Teorema Cantor
+dadi inspirasi kanggo paradokse Russell.
+\end{explain}
+
+\begin{prob}
+  Tuduhna yen ora bisa ana !!a{injection} $g\colon \Pow{A} \to
+  A$, kanggo saben himpunan~$A$. Pituduh: upamakna $g\colon \Pow{A} \to A$
+  iku !!{injective}. Gatekna $D = \Setabs{g(B)}{B \subseteq A \text{ lan
+  } g(B) \notin B}$. Upamakna $x = g(D)$. Gunakna kasunyatan
+  yen $g$ iku !!{injective} kanggo ngolehake kontradiksi.
+\end{prob}
+
+\end{document}

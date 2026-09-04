@@ -1,0 +1,278 @@
+% Part:sets-functions-relations
+% Chapter: size-of-sets
+% Section: enumerations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{siz}{enm}
+
+\olsection{Enumerasi lan Himpunan kang \usetoken{S}{enumerable}}
+
+\begin{editorial}
+  Perangan iki ngrembug enumerasi himpunan, kang ditetepake minangka
+  surjeksi saka $\PosInt$. Andharane diwenehake alon-alon kanggo pamaca
+  kang durung akeh sinau matematika. Versi alternatif kang luwih ringkes
+  ana ing \olref[enm-alt]{sec}, kang netepake enumerasi
+  kanthi cara beda: minangka bijeksi karo $\Nat$ utawa perangan wiwitane.
+\end{editorial}
+
+\begin{explain}
+Kita wis menehi tuladha himpunan kanthi ndhaptar !!{element}s.
+Saiki ayo dirembug kanthi luwih umum kepriye lan kapan kita bisa
+ndhaptar !!{element}s sawijining himpunan, sanajan himpunan iku tanpa wates.
+\end{explain}
+
+\begin{defn}[Enumerasi, kanthi informal]
+Kanthi informal, \emph{enumerasi} sawijining himpunan~$A$ yaiku dhaptar
+(kang bisa tanpa wates) !!{element}s saka~$A$ saengga saben !!{element} saka $A$
+katon ing dhaptar ing sawijining posisi winates. Yen $A$ duwe
+enumerasi, mula $A$ diarani \emph{!!{enumerable}}.
+\end{defn}
+
+\begin{explain}
+Sawetara bab ngenani enumerasi:
+\begin{enumerate}
+\item Mung dhaptar kang duwe wiwitan lan saben !!{element}
+  saliyane kang kapisan duwe siji !!{element} kang langsung
+  ndhisiki kang kita anggep enumerasi. Kanthi tembung liya,
+  mung ana anggota kanthi cacah winates ing antarane !!{element} kapisan
+  lan saben !!{element} liyane. Mligine, iki ateges saben
+  !!{element} enumerasi duwe posisi winates: !!{element} kapisan
+  ing posisi~$1$, kapindho ing posisi~$2$, lan sateruse.
+\item Himpunan~$A$ kang padha bisa duwe enumerasi beda
+  miturut urutan muncule !!{element}s: $4$, $1$,
+  $25$, $16$,~$9$ padha-padha ngenumerasi himpunan limang
+  wilangan kuadrat kapisan kaya $1$, $4$, $9$, $16$,~$25$.
+\item Enumerasi kang mbaleni anggota tetep enumerasi: $1$, $1$, $2$,
+  $2$, $3$, $3$,~\dots{} ngenumerasi himpunan kang padha karo $1$, $2$,
+  $3$,~\dots{}.
+\item Urutan lan pangulangan \emph{pancen} wigati nalika kita nemtokake
+  sawijining enumerasi: wilangan wutuh positif bisa dienumerasi wiwit
+  $1$, $2$, $3$, $1$, \dots{}, nanging polane luwih gampang katon
+  yen dienumerasi kanthi cara lumrah $1$, $2$, $3$, $4$,~\dots
+\item Enumerasi kudu duwe wiwitan: \dots, $3$, $2$, $1$ dudu
+  enumerasi wilangan wutuh positif amarga ora duwe !!{element}
+  kapisan. Kanggo mangerteni iki saka definisi informal,
+  takona: "wilangan 76 katon ing posisi pira ing dhaptar?"
+\item Iki dudu enumerasi wilangan wutuh positif:
+  $1$, $3$, $5$, \dots, $2$, $4$, $6$, \dots\@ Masalahe yaiku
+  wilangan genep ana ing posisi $\infty + 1$, $\infty + 2$, $\infty +
+  3$, dudu ing posisi winates.
+\item Himpunan kosong bisa didhaptar: enumerasine yaiku dhaptar kosong!{}
+\end{enumerate}
+\end{explain}
+
+\begin{prop}
+  Yen $A$ duwe enumerasi, mula duwe enumerasi tanpa
+  pangulangan.
+\end{prop}
+
+\begin{proof}
+  Upamakna $A$ duwe enumerasi $x_1$, $x_2$, \dots{} kang saben
+  $x_i$ iku !!{element} saka~$A$. Pangulangan bisa dibuwang saka
+  enumerasi kanthi mbuwang !!{element}s kang dibaleni. Upamane,
+  enumerasi mau bisa diowahi dadi dhaptar anyar kang ngemot $x_i$ yen
+  iku !!a{element} saka~$A$ kang durung ana ing antarane $x_1$, \dots,
+  $x_{i-1}$, utawa mbuwang $x_i$ saka dhaptar yen wis ana ing antarane
+  $x_1$, \dots,~$x_{i-1}$.
+\end{proof}
+
+Argumen pungkasan nuduhake yen kanggo mangerteni
+enumerasi lan himpunan kang !!{enumerable} kanthi becik sarta mbuktekake sipate,
+kita mbutuhake definisi kang luwih tliti. Definisi ing ngisor iki nyukupi kabutuhan iku.
+
+\begin{defn}[Enumerasi, kanthi formal]
+\emph{Enumerasi} sawijining himpunan $A \neq \emptyset$ yaiku sembarang
+fungsi !!{surjective} $f \colon \PosInt \to A$.
+\end{defn}
+
+\begin{explain}
+Ayo kita priksa yen definisi formal lan definisi informal kang nggunakake
+dhaptar kang bisa tanpa wates iku ekuivalen. Kapisan, saben fungsi
+!!{surjective} saka $\PosInt$ menyang himpunan~$A$ ngenumerasi~$A$.
+Fungsi iku nemtokake enumerasi miturut definisi informal ing ndhuwur:
+dhaptar $f(1)$, $f(2)$, $f(3)$, \dots. Amarga $f$ iku !!{surjective},
+saben !!{element} saka~$A$ mesthi dadi nilai~$f(n)$ kanggo
+sawijining~$n \in \PosInt$. Mula, saben !!{element} saka $A$ katon
+ing posisi winates ing dhaptar. Amarga fungsi iku bisa wae ora
+!!{injective}, dhaptare bisa ngemot pangulangan, nanging iki ditampa,
+kaya kang wis diterangake ing ndhuwur.
+
+Kosok baline, yen diwenehi dhaptar kang ngenumerasi kabeh !!{element}s
+saka~$A$, kita bisa netepake fungsi !!a{surjective} $f\colon \PosInt \to A$
+kanthi netepake $f(n)$ minangka !!{element} kaping $n$ ing dhaptar,
+utawa !!{element} pungkasan yen !!{element} kaping $n$ ora ana.
+Siji-sijine kasus nalika cara iki ora ngasilake fungsi !!a{surjective}
+yaiku nalika $A$ kosong, mula dhaptare uga kosong. Dadi, saben dhaptar
+kang ora kosong nemtokake fungsi !!a{surjective} $f\colon \PosInt \to A$.
+\end{explain}
+
+\begin{defn}
+  \ollabel{defn:enumerable}
+  Himpunan~$A$ iku !!{enumerable} yen lan mung yen kosong utawa duwe enumerasi.
+\end{defn}
+
+\begin{ex}
+Fungsi kang ngenumerasi wilangan wutuh positif ($\PosInt$) yaiku
+fungsi identitas kang diwenehake dening $f(n) = n$. Fungsi kang ngenumerasi
+wilangan natural $\Nat$ yaiku fungsi $g(n) = n - 1$.
+\end{ex}
+
+\begin{ex}
+Fungsi $f\colon \PosInt \to \PosInt$ lan $g \colon \PosInt \to
+\PosInt$ kang diwenehake dening
+\begin{align*}
+f(n) & = 2n \text{ lan}\\
+g(n) & = 2n - 1
+\end{align*}
+ngenumerasi wilangan wutuh positif genep lan wilangan wutuh positif ganjil,
+kanthi runtut. Nanging loro-lorone dudu enumerasi
+$\PosInt$, amarga loro-lorone ora !!{surjective}.
+\end{ex}
+
+\begin{prob}
+Tetepna enumerasi wilangan kuadrat positif $1$, $4$, $9$, $16$, \dots
+\end{prob}
+
+\begin{ex}
+Fungsi $f(n) = (-1)^{n} \lceil \frac{(n-1)}{2}\rceil$ (kanthi
+$\lceil x \rceil$ nuduhake fungsi \emph{pambunderan munggah}, kang mbunderake
+$x$ munggah menyang wilangan wutuh paling cedhak) ngenumerasi himpunan
+wilangan wutuh~$\Int$. Gatekna kepriye $f$ ngasilake nilai-nilai $\Int$
+kanthi "mlumpat" bolak-balik antarane wilangan wutuh positif lan negatif:
+\[
+\begin{array}{c c c c c c c c}
+f(1) & f(2) & f(3) & f(4) & f(5) & f(6) & f(7) & \dots \\ \\
+- \lceil \tfrac{0}{2} \rceil & \lceil \tfrac{1}{2}\rceil & - \lceil \tfrac{2}{2} \rceil & \lceil \tfrac{3}{2} \rceil & - \lceil \tfrac{4}{2} \rceil  & \lceil \tfrac{5}{2}
+\rceil & - \lceil \tfrac{6}{2} \rceil & \dots \\ \\
+0 & 1 & -1 & 2 & -2 & 3 & \dots
+\end{array}
+\]
+Kita uga bisa nganggep $f$ ditetepake miturut kasus kaya mangkene:
+\[
+f(n) = \begin{cases}
+  0 & \text{yen $n = 1$}\\
+  n/2 & \text{yen $n$ genep}\\
+  -(n-1)/2 & \text{yen $n$ ganjil lan $>1$}
+  \end{cases}
+\]
+\end{ex}
+
+\begin{prob}
+  Tuduhna yen $A$ lan $B$ iku !!{enumerable}, mula $A \cup B$ uga mangkono.
+  Kanggo iku, upamakna ana fungsi !!{surjective} $f\colon \PosInt \to
+  A$ lan $g\colon \PosInt \to B$, banjur tetepna fungsi !!a{surjective}
+  $h\colon \PosInt \to A \cup B$ lan buktekna yen fungsi iku
+  !!{surjective}. Uga gatekna kasus nalika $A$ utawa~$B = \emptyset$.
+\end{prob}
+
+\begin{prob}
+  Tuduhna yen $B \subseteq A$ lan $A$ iku !!{enumerable}, mula~$B$ uga mangkono.
+  Kanggo iku, upamakna ana fungsi !!a{surjective} $f\colon \PosInt \to
+  A$. Tetepna fungsi !!a{surjective} $g\colon \PosInt \to B$ lan buktekna
+  yen fungsi iku !!{surjective}. Apa kang kedadeyan yen $B = \emptyset$?
+\end{prob}
+
+\begin{prob}
+  Kanthi induksi tumrap $n$, tuduhna yen $A_1$, $A_2$, \dots, $A_n$ kabeh
+  !!{enumerable}, mula $A_1 \cup \dots \cup A_n$ uga mangkono. Kita oleh nggunakake
+  asil yen rong himpunan $A$ lan~$B$ iku !!{enumerable}, mula~$A \cup
+  B$ uga mangkono.
+\end{prob}
+
+Sanajan nalika ndhaptar !!{element}s himpunan katon luwih lumrah
+miwiti saka !!{element} kaping $1$, ahli matematika seneng
+nggunakake wilangan natural~$\Nat$ kanggo ngetung.
+Dheweke nyebut !!{element}s dhaptar kaping $0$, kaping $1$, kaping $2$, lan sateruse.
+Kanthi mangkono, kita bisa netepake enumerasi minangka
+fungsi !!a{surjective} saka $\Nat$ menyang~$A$.
+Mesthi wae, definisi loro iku ekuivalen.
+
+\begin{prop}\ollabel{prop:enum-shift}
+  Ana !!a{surjection} $f\colon \PosInt \to A$ yen lan mung yen ana
+  !!a{surjection} $g\colon \Nat \to A$.
+\end{prop}
+
+\begin{proof}
+  Yen diwenehi !!a{surjection} $f\colon \PosInt \to A$, kita bisa netepake $g(n) =
+  f(n+1)$ kanggo kabeh $n \in \Nat$. Gampang dideleng yen $g\colon \Nat
+  \to A$ iku !!{surjective}. Kosok baline, yen diwenehi !!a{surjection} $g\colon
+  \Nat \to A$, tetepna $f(n) = g(n-1)$.
+\end{proof}
+
+Saka iki kita oleh asil:
+
+\begin{cor}\ollabel{cor:enum-nat}
+Himpunan $A$ iku !!{enumerable} yen lan mung yen kosong utawa ana
+fungsi !!a{surjective} $f\colon \Nat \to A$.
+\end{cor}
+
+Ing ndhuwur kita wis ngrembug yen dhaptar !!{element}s himpunan~$A$ bisa
+diowahi dadi dhaptar tanpa pangulangan. Iki uga lumaku tumrap
+enumerasi, nanging rada luwih angel dirumusake lan dibuktekake kanthi tliti.
+Saben fungsi $f\colon \PosInt \to A$ kudu ditetepake kanggo kabeh $n \in
+\PosInt$. Yen cacah !!{element}s ing~$A$ mung winates, cetha yen ora bisa
+ana fungsi kang ditetepake ing !!{element}s saka~$\PosInt$ kang cacahe tanpa wates,
+nggayuh kabeh !!{element}s saka~$A$ minangka nilai, nanging ora nate
+nggayuh nilai kang padha kaping pindho. Ing kasus iku, yaiku
+nalika dhaptar tanpa pangulangan winates, kita kudu milih domain
+liyane kanggo~$f$, kang cacah !!{element}s mung winates.
+Tanpa pangulangan ateges $f$ kudu !!{injective}. Amarga uga
+!!{surjective}, kita nggoleki !!a{bijection} antarane sawijining
+himpunan winates $\{1, \dots, n\}$ utawa $\PosInt$ lan~$A$.
+
+\begin{prop}\ollabel{prop:enum-bij}
+Yen $f\colon \PosInt \to A$ iku !!{surjective}, yaiku enumerasi
+saka~$A$, ana !!a{bijection} $g\colon Z \to A$ kanthi $Z$
+yaiku~$\PosInt$ utawa $\{1, \dots, n\}$ kanggo sawijining~$n \in \PosInt$.
+\end{prop}
+
+\begin{proof}
+  Kita netepake fungsi $g$ kanthi rekursif: tetepna $g(1) = f(1)$. Yen $g(i)$
+  wis ditetepake, tetepna $g(i+1)$ minangka nilai kapisan saka $f(1)$,
+  $f(2)$, \dots{} kang durung ana ing antarane $g(1)$, \dots, $g(i)$, yen ana.
+  Yen $A$ mung duwe $n$ !!{element}s, mula $g(1)$, \dots, $g(n)$ kabeh
+  ditetepake, saengga kita wis netepake fungsi $g\colon \{1, \dots, n\}
+  \to A$. Yen cacah !!{element}s ing $A$ tanpa wates, mula kanggo saben $i$
+  mesthi ana !!a{element} saka~$A$ ing enumerasi $f(1)$, $f(2)$,
+  \dots, kang durung ana ing antarane $g(1)$, \dots, $g(i)$. Ing kasus
+  iki kita wis netepake fungsi $g\colon \PosInt \to A$.
+
+  Fungsi $g$ iku !!{surjective}, amarga saben anggota saka~$A$ ana
+  ing antarane $f(1)$, $f(2)$, \dots{} (amarga $f$ iku !!{surjective}) lan
+  pungkasane bakal dadi nilai~$g(i)$ kanggo sawijining~$i$. Fungsi iki uga
+  !!{injective}, amarga yen ana $j < i$ saengga $g(j) = g(i)$,
+  mula $g(i)$ wis ana ing antarane $g(1)$, \dots, $g(i-1)$, kang
+  nalisir cara kita netepake~$g$.
+\end{proof}
+
+\begin{cor}\ollabel{cor:enum-nat-bij}
+Himpunan $A$ iku !!{enumerable} yen lan mung yen kosong utawa ana !!a{bijection}
+$f\colon N \to A$ kanthi $N = \Nat$ utawa $N = \{0, \dots, n\}$ kanggo
+sawijining $n \in \Nat$.
+\end{cor}
+
+\begin{proof}
+$A$ iku !!{enumerable} yen lan mung yen $A$ kosong utawa ana fungsi !!a{surjective}
+$f\colon \PosInt \to A$. Miturut \olref{prop:enum-bij}, sarat pungkasan iku
+lumaku yen lan mung yen ana fungsi !!a{bijective}~$f\colon Z \to A$ kanthi $Z =
+\PosInt$ utawa $Z = \{1, \dots, n\}$ kanggo sawijining $n \in \PosInt$. Kanthi
+argumen kang padha karo bukti \olref{prop:enum-shift}, sarat iku sabanjure
+lumaku yen lan mung yen ana !!a{bijection} $g\colon N \to A$ kanthi
+$N = \Nat$ utawa $N = \{0, \dots, n-1\}$.
+\end{proof}
+
+\begin{prob}
+  Miturut \olref[sfr][siz][enm]{defn:enumerable}, himpunan $A$
+  bisa didhaptar yen lan mung yen $A = \emptyset$ utawa ana fungsi !!a{surjective} $f\colon
+  \PosInt \to A$. Uga bisa netepake "himpunan kang !!{enumerable}"
+  kanthi tliti: himpunan bisa didhaptar yen lan mung yen ana fungsi !!a{injective}
+  $g\colon A \to \PosInt$. Tuduhna yen definisi loro iku
+  ekuivalen, yaiku ana fungsi !!a{injective}
+  $g\colon A \to \PosInt$ yen lan mung yen $A = \emptyset$ utawa ana
+  fungsi !!a{surjective} $f\colon \PosInt \to A$.
+\end{prob}
+
+\end{document}

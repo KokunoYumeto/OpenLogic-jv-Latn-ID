@@ -1,0 +1,216 @@
+% Part:sets-functions-relations
+% Chapter: size-of-sets
+% Section: non-enumerability
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{siz}{nen}
+
+\olsection{Himpunan kang \printtoken{S}{nonenumerable}}
+
+\begin{editorial}
+  Bagean iki mbuktekake yen $\Bin^\omega$ lan
+  $\Pow{\PosInt}$ ora bisa didhaptar, nganggo definisi ing \olref[enm]{sec}.
+  Bagean iki dirancang supaya rada luwih dhasar lan luwih rinci
+  tinimbang versi ing \olref[enm-alt]{sec}
+\end{editorial}
+
+Sawetara himpunan, kayata himpunan $\PosInt$ saka wilangan wutuh positif,
+iku tanpa wates. Nganti saiki kita wis weruh tuladha himpunan tanpa wates
+kang kabeh !!{enumerable}. Nanging, ana uga himpunan tanpa wates
+kang ora duwe sipat iki. Himpunan kaya mangkono diarani \emph{!!{nonenumerable}}.
+
+Kapisan, anane himpunan kang !!{nonenumerable} bisa uga wis nggumunake.
+Kanggo saben himpunan~$A$ kang !!{enumerable}, ana
+fungsi !!a{surjective} $f \colon \PosInt \to A$. Yen sawijining himpunan
+!!{nonenumerable}, ora ana fungsi kaya mangkono. Tegese, ora ana fungsi
+kang metakake !!{element}s saka~$\PosInt$ kang cacahe tanpa wates menyang~$A$
+lan bisa nyakup kabeh~$A$. Dadi ana !!{element}s saka~$A$ kang
+"luwih akeh" tinimbang wilangan wutuh positif kang cacahe tanpa wates.
+
+Kepriye carane mbuktekake yen sawijining himpunan !!{nonenumerable}?
+Kudu dituduhake yen ora bisa ana fungsi surjektif kaya mangkono.
+Iki padha karo nuduhake yen anggota~$A$ ora bisa dienumerasi ing dhaptar
+tanpa wates kang lumaku menyang siji arah. Cara kang paling becik yaiku
+nuduhake yen saben dhaptar !!{element}s saka~$A$ mesthi ora ngemot paling
+ora siji anggota, utawa ora ana fungsi $f\colon \PosInt \to A$ kang
+!!{surjective}. Iki bisa ditindakake nganggo \emph{metodhe diagonal} Cantor.
+Saka dhaptar !!{element}s saka~$A$, upamane $x_1$, $x_2$, \dots,
+kita mbangun anggota~$A$ liyane kang, amarga cara anggone dibangun,
+ora mungkin ana ing dhaptar mau.
+
+Tuladha kapisan yaiku himpunan~$\Bin^\omega$ saka kabeh rerangken
+tanpa wates kang ora ana sela lan dumadi saka $0$ lan $1$.
+
+\begin{thm}
+\ollabel{thm:nonenum-bin-omega}
+$\Bin^\omega$~iku !!{nonenumerable}.
+\end{thm}
+
+\begin{proof}
+Kanggo mbuktekake kanthi kontradiksi, upamakna $\Bin^\omega$ iku
+!!{enumerable}, yaiku ana dhaptar $s_{1}$, $s_{2}$,
+$s_{3}$, $s_{4}$, \dots{} saka kabeh !!{element}s ing~$\Bin^\omega$.
+Saben $s_i$ dhewe iku rerangken tanpa wates saka $0$ lan~$1$.
+Anggota kaping $j$ saka rerangken kaping $i$ ing dhaptar iki kita sebut
+$s_i(j)$. Dadi rerangken kaping $i$, yaiku~$s_i$, iku
+\[
+s_i(1), s_i(2), s_i(3), \dots
+\]
+
+Dhaptar iki, bebarengan karo anggota saben rerangken $s_i$,
+bisa ditata dadi larikan:
+\[
+\begin{array}{c|c|c|c|c|c}
+& 1 & 2 & 3 & 4 & \dots \\\hline
+1 & \mathbf{s_{1}(1)} & s_{1}(2) & s_{1}(3) & s_1(4) & \dots \\\hline
+2 & s_{2}(1)& \mathbf{s_{2}(2)} & s_2(3) & s_2(4) & \dots \\\hline
+3 & s_{3}(1)& s_{3}(2) & \mathbf{s_3(3)} & s_3(4) & \dots \\\hline
+4 & s_{4}(1)& s_{4}(2) & s_4(3) & \mathbf{s_4(4)} & \dots \\\hline
+\vdots & \vdots & \vdots & \vdots & \vdots & \mathbf{\ddots}
+\end{array}
+\]
+Label ing sisih kiwa nuduhake nomer rerangken ing dhaptar
+$s_1$, $s_2$, \dots; nomer ing sisih ndhuwur menehi label marang
+!!{element}s saben rerangken. Upamane, $s_{1}(1)$ iku jeneng
+kanggo wilangan, yaiku $0$ utawa~$1$, kang dadi !!{element} kapisan
+ing rerangken $s_{1}$, lan sateruse.
+
+Saiki kita mbangun rerangken tanpa wates $\overline{s}$ saka $0$ lan
+$1$ kang ora mungkin ana ing dhaptar iki. Definisi
+$\overline{s}$ bakal gumantung marang dhaptar $s_1$, $s_2$, \dots.
+Saben dhaptar tanpa wates saka rerangken tanpa wates $0$ lan $1$
+ngasilake rerangken tanpa wates~$\overline{s}$ kang mesthi ora katon
+ing dhaptar mau.
+
+Kanggo netepake $\overline{s}$, kita nemtokake kabeh !!{element}sne,
+yaiku nemtokake $\overline{s}(n)$ kanggo kabeh $n \in \PosInt$.
+Carane yaiku maca diagonal larikan ndhuwur saka ndhuwur mudhun
+(mula diarani "metodhe diagonal"), banjur ngganti saben $1$
+dadi $0$ lan saben $0$ dadi~$1$. Kanthi luwih abstrak,
+$\overline{s}(n)$ ditetepake dadi $0$ utawa $1$ miturut apa
+!!{element} kaping $n$ ing diagonal, yaiku $s_n(n)$, iku $1$ utawa $0$.
+\[
+\overline{s}(n) =
+\begin{cases}
+1 & \text{yen $s_{n}(n) = 0$}\\
+0 & \text{yen $s_{n}(n) = 1$}.
+\end{cases}
+\]
+Yen luwih seneng rumus tinimbang definisi kanthi kasus,
+kita uga bisa netepake $\overline{s}(n) = 1 - s_n(n)$.
+
+Cetha yen $\overline{s}$ iku rerangken tanpa wates saka $0$ lan
+$1$, amarga rerangken iki mung mbalikke saben $0$ lan $1$
+kang katon ing diagonal larikan. Dadi $\overline{s}$
+iku !!a{element} saka~$\Bin^\omega$. Nanging rerangken iki ora bisa
+ana ing dhaptar $s_1$, $s_2$, \dots{} Yagene?
+
+Rerangken iki ora bisa padha karo rerangken kapisan $s_1$,
+amarga beda karo $s_1$ ing !!{element} kapisan. Apa wae $s_1(1)$,
+kita netepake $\overline{s}(1)$ dadi walikane. Rerangken iki uga
+ora bisa padha karo rerangken kapindho, amarga $\overline{s}$ beda karo
+$s_2$ ing anggota kapindho: yen $s_2(2)$ iku $0$,
+$\overline{s}(2)$ iku $1$, lan kosok baline. Mangkono sateruse.
+
+Kanthi luwih pas: yen $\overline{s}$ ana ing dhaptar, mesthi ana
+$k$ saengga $\overline{s} = s_{k}$. Rong rerangken padha
+yen lan mung yen padha ing saben posisi, yaiku kanggo saben~$n$,
+$\overline{s}(n) = s_{k}(n)$. Mligine, kanthi njupuk $n = k$,
+kudu kelakon $\overline{s}(k) = s_{k}(k)$. $s_k(k)$ iku
+$0$ utawa~$1$. Yen iku $0$, mula $\overline{s}(k)$ kudu~$1$,
+miturut cara kita netepake $\overline{s}$. Nanging yen $s_k(k) = 1$,
+maneh miturut cara kita netepake $\overline{s}$, $\overline{s}(k) = 0$.
+Ing loro-lorone kasus, $\overline{s}(k) \neq s_{k}(k)$.
+
+Kita miwiti kanthi nganggep ana dhaptar !!{element}s saka
+$\Bin^\omega$, yaiku $s_1$, $s_2$, \dots{} Saka dhaptar iki kita
+mbangun rerangken~$\overline{s}$ kang kabukten ora bisa ana ing dhaptar.
+Nanging rerangken iki mesthi dumadi saka $0$ lan $1$ yen kabeh $s_i$
+iku rerangken saka $0$ lan $1$, yaiku $\overline{s} \in
+\Bin^\omega$. Iki mligine nuduhake yen ora bisa ana dhaptar
+\emph{kabeh} !!{element}s saka~$\Bin^\omega$, amarga saka saben
+dhaptar kaya mangkono kita bisa mbangun rerangken~$\overline{s}$
+kang mesthi ora ana ing dhaptar. Mula anggepan yen ana dhaptar
+kabeh rerangken ing~$\Bin^\omega$ nuwuhake kontradiksi.
+\end{proof}
+
+\begin{explain}
+Cara pambuktian iki diarani "diagonalisasi" amarga nggunakake diagonal
+larikan kanggo netepake~$\overline{s}$. Diagonalisasi ora kudu
+nggunakake larikan: kanthi gagasan kang padha, kita bisa nuduhake
+yen himpunan ora !!{enumerable} sanajan ora ana larikan
+lan ora ana diagonal kang nyata.
+\end{explain}
+
+\begin{thm}
+\ollabel{thm:nonenum-pownat}
+$\Pow{\PosInt}$ ora !!{enumerable}.
+\end{thm}
+
+\begin{proof}
+Kita nggunakake cara kang padha, yaiku nuduhake yen kanggo saben dhaptar
+subhimpunan saka~$\PosInt$, ana subhimpunan $\PosInt$ kang ora bisa ana
+ing dhaptar. Upamakna ana dhaptar subhimpunan saka~$\PosInt$:
+\[
+Z_{1}, Z_{2}, Z_{3}, \dots
+\]
+Saiki kita netepake himpunan $\overline{Z}$ saengga kanggo saben $n \in \PosInt$,
+$n \in \overline{Z}$ yen lan mung yen $n \notin Z_{n}$:
+\[
+\overline{Z} = \Setabs{n \in \PosInt}{n \notin Z_n}
+\]
+Cetha yen $\overline{Z}$ iku himpunan wilangan wutuh positif, amarga
+saben~$Z_n$ dianggep mangkono, mula $\overline{Z} \in
+\Pow{\PosInt}$. Nanging $\overline{Z}$ ora bisa ana ing dhaptar.
+Kanggo nuduhake iki, kita bakal mbuktekake yen kanggo saben $k \in \PosInt$,
+$\overline{Z} \neq Z_k$.
+
+Mula upamakna $k \in \PosInt$ sembarang. Kita wis netepake $\overline{Z}$
+saengga kanggo saben $n \in \PosInt$, $n \in \overline{Z}$ yen lan mung yen
+$n \notin Z_n$. Mligine, kanthi njupuk $n=k$, $k \in \overline{Z}$
+yen lan mung yen $k \notin Z_k$. Nanging iki nuduhake
+yen $\overline{Z} \neq Z_k$, amarga $k$ iku !!a{element} saka siji
+himpunan nanging dudu anggota himpunan liyane. Dadi $\overline{Z}$ lan $Z_k$
+duwe !!{element}s kang beda. Amarga $k$ sembarang, $\overline{Z}$
+ora ana ing dhaptar $Z_1$, $Z_2$, \dots
+\end{proof}
+
+\begin{explain}
+Bukti sadurunge ora nyebut diagonal, nanging kita bisa nganggep
+ana diagonal yen nggambarake kaya mangkene: bayangna himpunan
+$Z_1$, $Z_2$, \dots, ditulis ing larikan, kanthi saben
+!!{element}~$j \in Z_i$ ditulis ing kolom kaping~$j$. Upamakna
+papat himpunan kapisan ing dhaptar yaiku $\{1,2,3,\dots\}$, $\{2, 4, 6, \dots\}$,
+$\{1,2,5\}$, lan $\{3,4,5,\dots\}$. Dadi wiwitan larikan:
+\[
+\begin{array}{r@{}rrrrrrr}
+  Z_1 = \{ & \mathbf{1}, & 2, & 3, & 4, & 5, & 6, & \dots\}\\
+  Z_2 = \{ &  & \mathbf{2}, &  & 4, &  & 6, & \dots\}\\
+  Z_3 = \{ & 1, & 2, &  &  & 5\phantom{,} &  & \}\\
+  Z_4 = \{ &  &  & 3, & \mathbf{4}, & 5, & 6, & \dots\}\\
+  \vdots & & & & & \ddots
+\end{array}
+\]
+Banjur $\overline{Z}$ iku himpunan kang diolehake kanthi ngetutake diagonal
+mudhun, ora nglebokake wilangan kang katon ing diagonal, lan nglebokake
+$j$ yen ana sela ing baris lan kolom kaping $j$.
+Ing tuladha ndhuwur, kita ora nglebokake $1$ lan $2$, nglebokake~$3$,
+ora nglebokake~$4$, lan sateruse.
+\end{explain}
+
+\begin{prob}
+Tuduhna yen $\Pow{\Nat}$ iku !!{nonenumerable} nganggo argumen diagonal.
+\end{prob}
+
+\begin{prob}\label{sfr:siz:nen:prob:f-posint}
+Tuduhna yen himpunan fungsi $f \colon \PosInt \to \PosInt$ iku
+!!{nonenumerable} nganggo argumen diagonal kang eksplisit. Tegese,
+tuduhna yen $f_1$, $f_2$, \dots, iku dhaptar fungsi lan saben $f_i\colon
+\PosInt \to \PosInt$, mula ana $\overline{f}\colon \PosInt \to
+\PosInt$ kang ora ana ing dhaptar iki.
+\end{prob}
+
+\end{document}

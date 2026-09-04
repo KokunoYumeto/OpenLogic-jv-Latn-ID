@@ -1,0 +1,187 @@
+% Part: sets-functions-relations
+% Chapter: functions
+% Section: basics
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{fun}{bas}
+\olsection{Dhasar}
+
+\begin{explain}
+\emph{Fungsi} yaiku pemetaan kang ngirim saben !!{element}
+saka sawijining himpunan menyang !!{element} tartamtu
+ing himpunan (liyane) kang wis ditemtokake.
+Tuladhane, operasi nambah~$1$ nemtokake fungsi:
+saben wilangan~$n$ dipetakake menyang siji-sijine
+wilangan~$n+1$.
+
+Kanthi luwih umum, fungsi bisa nampa pasangan,
+tupel telu, lan sapanunggalane minangka masukan
+lan menehi sawijining asil. Akeh fungsi wis kita
+kenal saka aritmetika dhasar. Tuladhane, panambahan
+lan ping-pingan iku fungsi. Fungsi kasebut nampa
+rong wilangan lan menehi wilangan katelu.
+
+Ing teges matematis lan abstrak iki, fungsi iku
+\emph{kothak ireng}: kang wigati mung asil apa
+kang dipasangake karo masukan apa, dudu
+metodhe kanggo ngetung asile.
+\end{explain}
+
+\begin{defn}[Fungsi]
+\emph{Fungsi} $f \colon A \to B$ yaiku pemetaan
+saben !!{element} saka~$A$ menyang
+salah siji !!{element} saka~$B$.
+
+Kita nyebut $A$ minangka \emph{domain} saka~$f$
+lan $B$ minangka \emph{kodomain} saka~$f$.
+!!{element}s saka~$A$ diarani masukan utawa
+\emph{argumen} saka~$f$, lan !!{element}
+saka~$B$ kang dipasangake karo argumen~$x$
+dening~$f$ diarani \emph{nilai~$f$}
+kanggo argumen~$x$, ditulis~$f(x)$.
+
+\emph{Jangkauan} $\ran{f}$ saka~$f$ yaiku
+subhimpunan kodomain kang ngemot nilai-nilai~$f$
+kanggo sawijining argumen;
+$\ran{f} =\Setabs{f(x)}{x \in A}$.
+\end{defn}
+
+Diagram ing \olref{fig:function} bisa mbiyantu
+ngerteni fungsi. Elips ing sisih kiwa makili
+\emph{domain} fungsi; elips ing sisih tengen
+makili \emph{kodomain} fungsi; lan panah
+nuduhake saka \emph{argumen} ing domain
+menyang \emph{nilai} kang cocog ing kodomain.
+
+\begin{figure}
+  \olasset{assets/diagrams/function.tikz}
+  \caption{Fungsi yaiku pemetaan saben !!{element}
+    saka siji himpunan menyang !!a{element}
+    saka himpunan liyane. Panah nuduhake
+    saka argumen ing domain menyang nilai
+    kang cocog ing kodomain.}
+  \ollabel{fig:function}
+\end{figure}
+
+\begin{ex}
+Ping-pingan nampa pasangan wilangan natural
+minangka masukan lan metakake menyang wilangan
+natural minangka asil, mula saka
+$\Nat \times \Nat$ (domain) menyang $\Nat$ (kodomain).
+Pranyata jangkauane uga $\Nat$,
+amarga saben $n \in \Nat$ iku $n \times 1$.
+\end{ex}
+
+\begin{ex}
+Ping-pingan iku fungsi amarga masangake saben
+masukan---saben pasangan wilangan natural---
+karo siji asil: $\times \colon \Nat^2 \to\Nat$.
+Dene metakake wilangan natural~$n$
+menyang wilangan real~$x$ kang ndadekake
+$x^2 = n$ dudu fungsi, amarga saben
+wilangan wutuh positif~$n$ duwe rong
+oyod kuadrat: $\sqrt{n}$ lan~$-\sqrt{n}$.
+Pemetaan iki bisa digawe fungsi kanthi
+mulihake oyod kuadrat utama kang ora negatif:
+$\sqrt{\phantom{X}} \colon\Nat \to \Real$.
+Cathetan koreksi sumber OLFUN-002: tembung Inggris "positive"
+ora trep ing nol, amarga domain wilangan natural kalebu nol.
+\end{ex}
+
+\begin{ex}
+Relasi kang masangake saben siswa ing sawijining
+kelas karo biji pungkasane iku fungsi---
+ora ana siswa kang bisa oleh rong biji pungkasan
+kang beda ing kelas kang padha.
+Relasi kang masangake saben siswa ing sawijining
+kelas karo wong tuwane dudu fungsi:
+siswa bisa ora duwe wong tuwa, duwe loro,
+utawa luwih saka loro.
+\end{ex}
+
+\begin{explain}
+Kita bisa nemtokake fungsi kanthi nyatakake
+kanthi tliti apa nilai fungsi kanggo saben
+argumen kang bisa ana. Cara-carane bisa
+kanthi menehi rumus, njlentrehake metodhe
+kanggo ngetung nilai, utawa ndhaptar
+nilai kanggo saben argumen.
+Kanthi cara apa wae fungsi ditemtokake,
+kita kudu mesthekake yen kanggo saben
+argumen kita nemtokake siji, lan mung siji, nilai.
+\end{explain}
+
+
+\begin{ex}
+Umpamakna $f \colon \Nat \to \Nat$
+ditetepake supaya $f(x) = x+1$.
+Definisi iki netepake $f$ minangka fungsi
+kang nampa wilangan natural lan menehi
+wilangan natural minangka asil.
+Definisi iki nerangake yen kanggo wilangan
+natural~$x$, $f$ menehi paneruse~$x+1$.
+Ing kasus iki, kodomain $\Nat$ dudu
+jangkauan~$f$, amarga wilangan natural~$0$
+dudu panerus saka wilangan natural apa wae.
+Jangkauan~$f$ yaiku himpunan kabeh
+wilangan wutuh positif, $\Int^{+}$.
+\end{ex}
+
+\begin{ex}\ollabel{examplefunext}
+Umpamakna $g \colon \Nat \to \Nat$
+ditetepake supaya $g(x) = x+2-1$.
+Iki nerangake yen $g$ iku fungsi kang
+nampa wilangan natural lan menehi
+wilangan natural minangka asil.
+Kanggo wilangan natural~$x$, $g$ bakal
+menehi pandhisik saka panerus saka
+paneruse~$x$, yaiku $x+1$.
+Cathetan koreksi sumber OLFUN-003: sumber Inggris ngganti jeneng
+masukan ing tengah ukara; terjemahan iki nggunakake siji jeneng kanthi ajeg.
+\end{ex}
+
+\begin{explain}
+Kita lagi wae ngrembug rong fungsi,
+$f$ lan $g$, kanthi \emph{definisi}
+kang beda. Nanging kalorone iku
+\emph{fungsi kang padha}.
+Amarga kanggo saben wilangan natural~$n$,
+kita duwe $f(n) = n+1 = n+2-1 =g(n)$.
+Kanthi tembung liya: definisi kanggo $f$
+lan~$g$ netepake pemetaan kang padha
+nganggo persamaan kang beda.
+Mula kanthi ora langsung kita nggunakake
+prinsip ekstensionalitas kanggo fungsi,
+\[
+  \text{yen }\forall x\, f(x) = g(x)\text{, mula }f = g
+\]
+angger $f$ lan~$g$ duwe domain lan
+kodomain kang padha.
+\end{explain}
+
+\begin{ex}
+Kita uga bisa nemtokake fungsi miturut
+kasus-kasus. Tuladhane, kita bisa
+nemtokake $h \colon \Nat \to \Nat$ kanthi
+\[
+h(x) =
+\begin{cases}
+  \frac{x}{2} & \text{yen $x$ genep} \\
+  \frac{x+1}{2} & \text{yen $x$ ganjil.}
+\end{cases}
+\]
+Amarga saben wilangan natural iku genep
+utawa ganjil, asil fungsi iki tansah
+wilangan natural.
+Elinga yen fungsi ditemtokake miturut kasus,
+saben masukan kang bisa ana kudu
+kalebu ing persis siji kasus.
+Kadhangkala iki mbutuhake bukti yen
+kasus-kasus kasebut nyakup kabeh
+lan ora ana kang tumpang tindih.
+\end{ex}
+
+\end{document}

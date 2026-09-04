@@ -1,0 +1,114 @@
+% Part:sets-functions-relations
+% Chapter: size-of-sets
+% Section: pairing-alt
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{siz}{pai-alt}
+
+\olsection{Fungsi Pasangan Alternatif}
+
+\begin{explain}
+Ana enumerasi $\Nat^2$ liyane kang inverse luwih gampang ditemokake.
+Iki salah sijine. Tinimbang nggambarake enumerasi ing larikan,
+wiwitana saka dhaptar wilangan wutuh positif kang digandhengake karo
+papan-papan kang wiwitane kosong. Bayangna papan-papan iki diisi
+pasangan $\tuple{n,m}$ kanthi runtut kaya mangkene.
+Wiwit saka pasangan kang anggota kapisane~$0$, yaiku pasangan
+$\tuple{0,m}$, lebokna pasangan kapisan, yaiku $\tuple{0,0}$, ing papan
+kosong kapisan, banjur langkahana siji papan kosong, lebokna pasangan kapindho,
+yaiku $\tuple{0,2}$, ing papan kosong sabanjure, langkahana siji maneh,
+lan sateruse. Wiwitan enumerasi kang durung jangkep saiki katon mangkene:
+\[\small
+\begin{array}{@{}c c c c c c c c c c c@{}}
+\mathbf 1 & \mathbf 2 & \mathbf 3 & \mathbf 4 & \mathbf 5 & \mathbf 6 & \mathbf 7 & \mathbf 8 & \mathbf 9 & \mathbf{10} & \dots \\ \\
+\tuple{0,0} &  & \tuple{0,1} &  & \tuple{0,2} &  & \tuple{0,3} & & \tuple{0,4} &  & \dots \\
+\end{array}
+\]
+Baleni cara iki nganggo pasangan $\tuple{1,m}$ ing papan kang isih
+kosong, kanthi nglangkahi siji papan kosong saben arep ngisi:
+\[\small
+\begin{array}{@{}c c c c c c c c c c c@{}}
+\mathbf 1 & \mathbf 2 & \mathbf 3 & \mathbf 4 & \mathbf 5 & \mathbf 6 & \mathbf 7 & \mathbf 8 & \mathbf 9 & \mathbf{10} & \dots \\ \\
+\tuple{0,0} & \tuple{1,0} & \tuple{0,1} &  & \tuple{0,2} & \tuple{1,1} &
+\tuple{0,3} & & \tuple{0,4} &  \tuple{1,2} & \dots \\
+\end{array}
+\]
+Lebokna pasangan $\tuple{2,m}$, $\tuple{2,m}$, lan sateruse kanthi cara kang padha.
+Mula wiwitan enumerasi kang wis jangkep kaya mangkene:
+\[\small
+\begin{array}{@{}cc c c c c c c c c c@{}}
+\mathbf 1 & \mathbf 2 & \mathbf 3 & \mathbf 4 & \mathbf 5 & \mathbf 6 & \mathbf 7 & \mathbf 8 & \mathbf 9 & \mathbf{10} & \dots \\ \\
+\tuple{0,0} & \tuple{1,0} & \tuple{0,1} & \tuple{2,0}  & \tuple{0,2} &
+\tuple{1,1} & \tuple{0,3} & \tuple{3,0}  & \tuple{0,4} &  \tuple{1,2} & \dots \\
+\end{array}
+\]
+Yen kothak ing larikan ndhuwur diwenehi nomer miturut enumerasi iki,
+ora bakal katon garis zig-zag kang rapi, nanging susunan:
+\[
+\begin{array}{ c | c | c | c | c | c | c | c }
+& \mathbf 0 & \mathbf 1 & \mathbf 2 & \mathbf 3 & \mathbf 4 & \mathbf 5 & \dots \\
+\hline
+\mathbf 0 & 1 & 3 & 5 & 7 & 9 & 11 & \dots \\
+\hline
+\mathbf 1 & 2 & 6 & 10 & 14 & 18 & \dots & \dots \\
+\hline
+\mathbf 2 & 4 & 12 & 20 & 28 & \dots & \dots & \dots \\
+\hline
+\mathbf 3 & 8 & 24 & 40 & \dots & \dots & \dots & \dots \\
+\hline
+\mathbf 4 & 16 & 48 & \dots & \dots & \dots & \dots & \dots \\
+\hline
+\mathbf 5 & 32 & \dots & \dots & \dots & \dots & \dots & \dots \\
+\hline
+\vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \ddots\\
+\end{array}
+\]
+Katon yen pasangan ing baris~$0$ ana ing posisi ganjil
+ing enumerasi, yaiku pasangan $\tuple{0,m}$ ana ing posisi $2m+1$.
+Pasangan ing baris kapindho, $\tuple{1,m}$, ana ing posisi kang nomere
+kaping pindho wilangan ganjil, yaiku $2 \cdot (2m+1)$.
+Pasangan ing baris katelu, $\tuple{2,m}$, ana ing posisi kang nomere
+kaping papat wilangan ganjil, $4 \cdot (2m+1)$, lan sateruse.
+Faktor saka $(2m+1)$ kanggo saben baris, $1$, $2$, $4$, $8$, \dots,
+iku persis rambang-rambang saka~$2$:
+$1= 2^0$, $2 = 2^1$, $4 = 2^2$, $8 = 2^3$, \dots\@ Malah,
+eksponen kang cocog tansah anggota kapisan pasangan kang dirembug.
+Mula kanggo pasangan $\tuple{n,m}$ faktore yaiku $2^n$.
+Saka iki kita oleh rumus umum $2^n \cdot (2m+1)$. Nanging iki
+pemetaan pasangan menyang wilangan wutuh \emph{positif}, yaiku $\tuple{0,0}$
+duwe posisi~$1$. Yen arep miwiti ing posisi~$0$, asile kudu dikurangi~$1$.
+Mula kita oleh:
+\end{explain}
+
+\begin{ex}
+Fungsi $h\colon \Nat^2 \to \Nat$ kang diwenehake dening
+\[
+h(n,m) = 2^n (2m+1) - 1
+\]
+iku fungsi pasangan kanggo himpunan pasangan wilangan natural~$\Nat^2$.
+\end{ex}
+
+\begin{explain}
+Mula, ing enumerasi $\Nat^2$ kang kapindho, pasangan
+$\tuple{0,0}$ duwe kode $h(0,0) = 2^0(2\cdot 0+1) - 1 = 0$;
+$\tuple{1,2}$ duwe kode $2^{1} \cdot (2 \cdot 2 + 1) - 1 = 2
+\cdot 5 - 1 = 9$; $\tuple{2,6}$ duwe kode $2^{2} \cdot (2
+\cdot 6 + 1) - 1 = 51$.
+\end{explain}
+
+Kadhangkala wis cukup yen pasangan wilangan natural~$\Nat^2$ dikodeake
+tanpa mbutuhake pangodean surjektif. Invers pangodean kaya mangkono
+mung fungsi parsial.
+
+\begin{ex}
+Fungsi $j\colon \Nat^2 \to \Nat^+$ kang diwenehake dening
+\[
+j(n,m) = 2^n3^m
+\]
+iku fungsi !!a{injective} $\Nat^2 \to \Nat$.
+\end{ex}
+
+\end{document}

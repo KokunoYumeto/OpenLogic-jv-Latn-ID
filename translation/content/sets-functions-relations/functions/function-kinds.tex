@@ -1,0 +1,150 @@
+% Part: sets-functions-relations
+% Chapter: functions
+% Section: kinds
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{fun}{kin}
+\olsection{Jinis-jinis Fungsi}
+
+\begin{explain}
+Bakal migunani yen kita ngenalake panggolongan
+kanggo sawetara jinis fungsi kang paling
+kerep kita temoni.
+
+Kanggo miwiti, kita bisa ngrembug fungsi
+kang nduweni sipat yen saben anggota
+kodomain iku nilai saka fungsi kasebut.
+Fungsi kaya iki diarani !!{surjective},
+lan bisa digambarake kaya ing \olref{fig:surjective}.
+
+\begin{figure}
+  \olasset{assets/diagrams/surjective.tikz}
+  \caption{Fungsi !!^a{surjective} nduweni
+    saben !!{element} kodomain minangka nilai.}
+  \ollabel{fig:surjective}
+\end{figure}
+\end{explain}
+
+\begin{defn}[Fungsi !!^{surjective}]
+Fungsi $f \colon A \rightarrow B$ iku
+\emph{!!{surjective}} yen lan mung yen
+$B$ uga jangkauan~$f$, yaiku kanggo
+saben $y \in B$ ana paling ora siji
+$x \in A$ kang ndadekake~$f(x) = y$,
+utawa kanthi lambang:
+\[
+  (\forall y \in B)(\exists x \in A)f(x) = y.
+\]
+Kita nyebut fungsi kaya iki
+!!a{surjection} saka $A$ menyang $B$.
+\end{defn}
+
+\begin{explain}
+Yen arep nuduhake yen $f$ iku
+!!a{surjection}, kita kudu nuduhake
+yen saben objek ing kodomain $f$
+iku nilai $f(x)$ kanggo sawijining
+masukan $x$.
+
+Gatekna yen saben fungsi \emph{nuwuhake}
+!!a{surjection}.
+Amarga, kanggo fungsi $f \colon A \to B$,
+tetepna $f' \colon A \to \ran{f}$
+kanthi $f'(x) = f(x)$.
+Amarga $\ran{f}$ \emph{ditetepake}
+minangka $\Setabs{f(x) \in B}{x \in A}$,
+fungsi $f'$ iki mesthi
+!!a{surjection}
+\end{explain}
+
+\begin{explain}
+Saben fungsi metakake saben masukan
+kang bisa ana menyang siji asil.
+Nanging uga ana fungsi kang ora
+nate metakake masukan beda
+menyang asil kang padha.
+Fungsi kaya iki diarani !!{injective},
+lan bisa digambarake kaya ing \olref{fig:injective}.
+\begin{figure}
+  \olasset{assets/diagrams/injective.tikz}
+  \caption{Fungsi !!^a{injective} ora nate
+    metakake rong argumen kang beda
+    menyang nilai kang padha.}
+  \ollabel{fig:injective}
+\end{figure}
+\end{explain}
+
+\begin{defn}[Fungsi !!^{injective}]
+Fungsi $f \colon A \rightarrow B$ iku
+\emph{!!{injective}} yen lan mung yen
+kanggo saben $y \in B$ ana paling akeh
+siji $x \in A$ kang ndadekake~$f(x) = y$.
+Kita nyebut fungsi kaya iki
+!!a{injection} saka $A$ menyang~$B$.
+\end{defn}
+
+\begin{explain}
+Yen arep nuduhake yen $f$ iku
+!!a{injection}, kita kudu nuduhake
+yen kanggo saben !!{element}s $x$ lan $y$
+saka domain $f$, yen $f(x)=f(y)$,
+mula $x=y$.
+\end{explain}
+
+\begin{ex}
+Fungsi konstan $f\colon \Nat \to \Nat$
+kang ditemtokake kanthi $f(x) = 1$
+iku ora !!{injective} lan ora !!{surjective}.
+
+Fungsi identitas $f\colon \Nat \to \Nat$
+kang ditemtokake kanthi $f(x) = x$
+iku !!{injective} lan !!{surjective}.
+
+Fungsi panerus $f \colon \Nat \to \Nat$
+kang ditemtokake kanthi $f(x) = x+1$
+iku !!{injective} nanging ora !!{surjective}.
+
+Fungsi $f \colon \Nat \to \Nat$
+kang ditemtokake kanthi:
+\[
+  f(x) =
+  \begin{cases}
+    \frac{x}{2} & \text{yen $x$ genep} \\
+    \frac{x+1}{2} & \text{yen $x$ ganjil.}
+  \end{cases}
+\]
+iku !!{surjective}, nanging ora !!{injective}.
+\end{ex}
+
+\begin{explain}
+Asring kita arep ngrembug fungsi
+kang !!{injective} lan !!{surjective}
+bebarengan. Fungsi kaya iki diarani
+!!{bijective}. Wujude kaya fungsi
+ing \olref{fig:bijective}.
+!!^{bijection}s kadhangkala uga diarani
+\emph{korespondensi siji-menyang-siji},
+amarga masangake anggota kodomain
+karo anggota domain kanthi tunggal.
+\begin{figure}
+  \olasset{assets/diagrams/bijective.tikz}
+  \caption{Fungsi !!^a{bijective} masangake
+    anggota kodomain karo anggota
+    domain kanthi tunggal.}
+  \ollabel{fig:bijective}
+\end{figure}
+\end{explain}
+
+\begin{defn}[!!^{bijection}]
+Fungsi $f \colon A \to B$ iku
+\emph{!!{bijective}} yen lan mung yen
+!!{surjective} lan !!{injective}.
+Kita nyebut fungsi kaya iki
+!!a{bijection} saka $A$ menyang~$B$
+(utawa antarane $A$ lan~$B$).
+\end{defn}
+
+\end{document}

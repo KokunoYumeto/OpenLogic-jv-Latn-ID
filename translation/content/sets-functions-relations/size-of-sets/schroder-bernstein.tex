@@ -1,0 +1,51 @@
+% Part:sets-functions-relations
+% Chapter: sets
+% Section: schroder-bernstein
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{siz}{sb}
+
+\olsection{Gagasan Gedhene Himpunan, lan Schr\"oder-Bernstein}
+
+\begin{explain}
+Ana gagasan intuisi mangkene: yen $A$ ora luwih gedhe tinimbang $B$ lan $B$
+ora luwih gedhe tinimbang $A$, mula $A$ lan $B$ padha cacahe.
+Satemene, yen gagasan iki \emph{kleru}, kita bakal angel mbenerake
+anggepan yen definisi padha cacahe ana gandhengane karo mbandhingake
+"gedhene" himpunan!{} Nanging untunge gagasan intuisi iki bener.
+Iki dibuktekake dening Teorema Schr\"oder-Bernstein.
+\end{explain}
+
+\begin{thm}[Schr\"oder-Bernstein]
+	\ollabel{thm:schroder-bernstein}
+	Yen $\cardle{A}{B}$ lan $\cardle{B}{A}$,
+	mula $\cardeq{A}{B}$.
+\end{thm}
+
+\begin{explain}
+Kanthi tembung liya, yen ana !!a{injection} saka $A$ menyang~$B$, lan
+!!a{injection} saka $B$ menyang~$A$, mula ana !!a{bijection} saka $A$
+menyang~$B$.
+
+Nanging asil iki pancen rada \emph{angel} dibuktekake.
+Sanajan Cantor kang ngandharake asil iki, wong liya kang
+mbuktekake.\footnote{Babagan sejarahe luwih lanjut, delengen upamane
+\citet[kaca~165--6]{Potter2004}.}
+\oliflabeldef{sfr:cardinals:card-sb:sec}{Kita lagi bakal bisa
+\emph{mbuktekake} Schr\"oder-Bernstein ing
+\olref[sfr][cardinals][card-sb]{sec}.}{}%
+Saiki kita bisa (lan kudu) nampa asil iki dhisik tanpa bukti.
+
+Untunge, Schr\"oder-Bernstein iku \emph{bener}, lan mbenerake anggepan
+yen relasi kang wis ditetepake, yaiku $\cardeq{A}{B}$ lan $\cardle{A}{B}$,
+ana gandhengane karo "gedhene". Kajaba iku, Schr\"oder-Bernstein
+banget \emph{migunani}. Kadhangkala angel nemokake !!a{bijection}
+antarane rong himpunan kang padha cacahe. Teorema Schr\"oder-Bernstein
+ngidini kita mecah pambandhingan dadi rong arah, saengga mung perlu
+nemokake !!a{injection} saka himpunan kapisan menyang kapindho,
+lan kosok baline.
+\end{explain}
+\end{document}

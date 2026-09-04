@@ -1,0 +1,80 @@
+% Part: sets-functions-relations
+% Chapter: relations
+% Section: operations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{rel}{ops}
+\olsection{Operasi tumrap Relasi}
+
+Asring migunani yen ngowahi utawa nggabungake relasi.
+Ing \olref[sfr][rel][ord]{prop:stricttopartial},
+kita ngrembug \emph{gabungan} relasi, kang mung
+gabungan rong relasi nalika dianggep himpunan pasangan.
+Semono uga, ing \olref[sfr][rel][ord]{prop:partialtostrict},
+kita ngrembug selisih relatif relasi.
+Ing ngisor iki ana sawetara operasi liyane
+kang bisa ditindakake tumrap relasi.
+
+\begin{defn}\ollabel{relationoperations}
+Umpamakna $R$ lan $S$ iku relasi, lan $A$ iku himpunan apa wae.
+
+\emph{Invers} saka $R$ yaiku
+$R^{-1} = \Setabs{\tuple{y, x}}{\tuple{x,y} \in R}$.
+
+\emph{Produk relatif} saka $R$ lan $S$ yaiku
+$(R \mid S) =\{\tuple{x, z} : \exists y(Rxy \land Syz)\}$.
+
+\emph{Watesan} saka $R$ ing $A$ yaiku
+$\funrestrictionto{R}{A}= R\cap A^2$.
+
+\emph{Aplikasi} saka $R$ marang $A$ yaiku
+$\funimage{R}{A} = \{y :( \exists x \in A)Rxy\}$
+\end{defn}
+
+\begin{ex}
+Umpamakna $S \subseteq \Int^2$ iku relasi panerus
+ing~$\Int$, yaiku
+$S = \Setabs{\tuple{x, y} \in \Int^2}{x + 1 = y}$,
+mula $Sxy$ yen lan mung yen $x + 1 = y$.
+
+$S^{-1}$ iku relasi pandhisik ing $\Int$, yaiku
+$\Setabs{\tuple{x,y}\in\Int^2}{x -1 =y}$.
+
+$S\mid S$ yaiku
+$ \Setabs{\tuple{x,y}\in\Int^2}{x + 2 =y}$
+
+$\funrestrictionto{S}{\Nat}$ iku relasi panerus ing~$\Nat$.
+
+$\funimage{S}{\{1,2,3\}}$ yaiku $\{2, 3, 4\}$.
+\end{ex}
+
+\begin{defn}[Tutupan transitif]Umpamakna $R \subseteq A^2$ iku relasi biner.
+
+\emph{Tutupan transitif} saka~$R$ yaiku
+$R^+ = \bigcup_{0 < n \in\Nat} R^n$,
+kanthi definisi rekursif $R^1 = R$ lan
+$R^{n+1} = R^n\mid R$.
+
+\emph{Tutupan refleksif transitif} saka $R$ yaiku
+$R^* = R^+ \cup\Id{A}$.
+\end{defn}
+
+\begin{ex}
+Jupuk relasi panerus $S \subseteq \Int^2$.
+$S^2xy$ yen lan mung yen $x + 2 =y$,
+$S^3xy$ yen lan mung yen $x + 3 = y$,
+lan sapanunggalane.
+Mula $S^+xy$ yen lan mung yen $x + n = y$
+kanggo sawijining $n \geq 1$.
+Kanthi tembung liya, $S^+xy$ yen lan mung yen
+$x < y$, lan $S^*xy$ yen lan mung yen $x \le y$.
+\end{ex}
+
+\begin{prob}
+Tuduhna yen tutupan transitif saka $R$ pancen transitif.
+\end{prob}
+
+\end{document}

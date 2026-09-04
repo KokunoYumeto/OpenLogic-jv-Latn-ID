@@ -1,0 +1,101 @@
+% Part: sets-functions-relations
+% Chapter: relations
+% Section: equivalence-relations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{rel}{eqv}
+
+\olsection{Relasi Ekuivalensi}
+
+Relasi identitas ing sawijining himpunan iku refleksif, simetris,
+lan transitif. Relasi~$R$ kang duwe telung sipat iki kerep
+banget ditemoni.
+
+\begin{defn}[Relasi ekuivalensi]
+Relasi $R \subseteq A^2$ kang refleksif, simetris,
+lan transitif diarani \emph{relasi ekuivalensi}.
+!!^{element}s $x$ lan $y$ saka~$A$ diarani
+\emph{ekuivalen tumrap $R$} yen~$Rxy$.
+\end{defn}
+
+Relasi ekuivalensi nuwuhake gagasan \emph{kelas ekuivalensi}.
+Relasi ekuivalensi "merang" domain dadi bageyan-bageyan
+partisi kang beda. Ing saben bageyan, kabeh objek gegayutan
+siji lan sijine; lan ora ana objek saka bageyan beda kang
+gegayutan siji lan sijine. Kadhangkala migunani yen
+ngrembug bageyan-bageyan iki kanthi \emph{langsung}.
+Kanggo iku, kita ngenalake definisi iki:
+
+\begin{defn}\ollabel{def:equivalenceclass}
+Umpamakna $R \subseteq A^2$ iku relasi ekuivalensi.
+Kanggo saben $x \in A$, \emph{kelas ekuivalensi} saka $x$
+ing~$A$ yaiku himpunan
+$\equivrep{x}{R}= \Setabs{y \in A}{Rxy}$.
+\emph{Kuosien} saka $A$ tumrap~$R$ yaiku
+$\equivclass{A}{R} = \Setabs{\equivrep{x}{R}}{x \in A}$,
+yaiku himpunan kelas-kelas ekuivalensi iki.
+\end{defn}
+
+Asil sabanjure mbenerake definisi kelas ekuivalensi kanthi
+mbuktekake yen kelas-kelas ekuivalensi pancen bageyan-bageyan
+partisi saka~$A$:
+
+\begin{prop}
+Yen $R \subseteq A^2$ iku relasi ekuivalensi,
+mula $Rxy$ yen lan mung yen
+$\equivrep{x}{R} = \equivrep{y}{R}$.
+\end{prop}
+
+\begin{proof}
+Kanggo arah kiwa menyang tengen, umpamakna $Rxy$,
+lan tetepna $z \in\equivrep{x}{R}$.
+Miturut definisi, banjur $Rxz$.
+Amarga $R$ iku relasi ekuivalensi, mula $Ryz$.
+(Kanthi luwih rinci: amarga $Rxy$ lan~$R$ simetris,
+kita oleh $Ryx$, lan amarga $Rxz$ lan~$R$ transitif,
+kita oleh~$Ryz$.) Mula $z \in \equivrep{y}{R}$.
+Kanthi umum, $\equivrep{x}{R} \subseteq \equivrep{y}{R}$.
+Nanging kanthi cara kang persis padha,
+$\equivrep{y}{R} \subseteq \equivrep{x}{R}$.
+Mula $\equivrep{x}{R} =\equivrep{y}{R}$,
+miturut ekstensionalitas.
+
+Kanggo arah tengen menyang kiwa, umpamakna
+$\equivrep{x}{R} =\equivrep{y}{R}$.
+Amarga $R$ refleksif, $Ryy$, mula
+$y \in\equivrep{y}{R}$. Dadi uga
+$y \in \equivrep{x}{R}$, amarga anggepan yen
+$\equivrep{x}{R} = \equivrep{y}{R}$.
+Mula $Rxy$.
+\end{proof}
+
+\begin{ex}
+Tuladha relasi ekuivalensi kang becik asale saka aritmetika modular.
+Kanggo saben $a$, $b$, lan $n \in \PosInt$,
+kita nyebut $a \equiv_n b$ yen lan mung yen
+mbagi $a$ nganggo~$n$ menehi sisa kang padha
+karo mbagi $b$ nganggo~$n$.
+(Kanthi lambang: $a \equiv_n b$ yen lan mung yen
+ana $k \in\Int$ kang ndadekake $a - b = kn$.)
+Saiki, $\equiv_n$ iku relasi ekuivalensi kanggo saben~$n$.
+Lan ana persis $n$ kelas ekuivalensi beda kang kawangun
+dening~$\equiv_n$; yaiku, $\equivclass{\Nat}{\equiv_n}$
+duwe $n$ !!{element}s.
+Kelas-kelas iki yaiku: himpunan wilangan kang bisa dibagi $n$
+tanpa sisa, yaiku $\equivrep{0}{\equiv_n}$;
+himpunan wilangan kang dibagi $n$ menehi sisa~$1$,
+yaiku $\equivrep{1}{\equiv_n}$; \ldots;
+lan himpunan wilangan kang dibagi~$n$ menehi sisa~$n-1$,
+yaiku~$\equivrep{n-1}{\equiv_n}$.
+\end{ex}
+
+\begin{prob}
+Tuduhna yen $\equiv_n$ iku relasi ekuivalensi kanggo saben
+$n \in\PosInt$, lan yen $\equivclass{\Nat}{\equiv_n}$
+duwe persis $n$ anggota.
+\end{prob}
+
+\end{document}

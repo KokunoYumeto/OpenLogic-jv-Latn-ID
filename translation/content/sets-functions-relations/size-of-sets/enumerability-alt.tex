@@ -1,0 +1,136 @@
+% Part:sets-functions-relations
+% Chapter: size-of-sets
+% Section: enumerations-alt
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{siz}{enm-alt}
+
+\olsection{Enumerasi lan Himpunan kang \usetoken{S}{enumerable}}
+
+\begin{editorial}
+  Bagean iki netepake enumerasi minangka bijeksi karo (perangan wiwitan)
+  $\Nat$, kaya kang ditindakake ing teori himpunan. Mula definisine
+  rada beda karo ing \olref[enm]{sec}, lan mbaleni kabeh
+  tuladha ing kana. Bagean iki uga rada luwih ringkes tinimbang
+  bagean mau.
+\end{editorial}
+
+Himpunan winates bisa ditemtokake mung kanthi ngenumerasi
+!!{element}sne. Iki kang ditindakake nalika netepake himpunan kaya mangkene:
+\[
+  A = \{a_1, a_2, \ldots, a_n\}.
+\]
+Yen !!{element}s $a_1$, \dots, $a_n$ kabeh beda,
+iki menehi !!a{bijection} antarane $A$ lan $n$ wilangan natural
+kapisan, yaiku $0$, \dots, $n-1$. Kosok baline, amarga saben
+himpunan winates mung duwe !!{element}s kang cacahe winates,
+saben himpunan winates bisa digawe korespondensi kaya mangkono.
+Kanthi tembung liya, yen $A$ winates, ana
+!!a{bijection} antarane $A$ lan $\{0, \dots, n-1\}$,
+kanthi $n$ minangka cacah !!{element}s saka~$A$.
+
+Yen kita ngakoni jinis himpunan tanpa wates tartamtu, kita uga
+ngakoni yen sawetara himpunan tanpa wates bisa dienumerasi.
+Iki bisa ditegesi kanthi pas: himpunan tanpa wates dienumerasi
+dening !!a{bijection} antarane himpunan iku lan kabeh~$\Nat$.
+
+\begin{defn}[Enumerasi, miturut teori himpunan]
+\emph{Enumerasi} himpunan $A$ iku !!a{bijection} kang jangkauane
+$A$ lan domaine himpunan wiwitan wilangan natural $\{0,
+1, \ldots, n\}$ {utawa} kabeh himpunan wilangan natural~$\Nat$.
+\end{defn}
+
+\begin{explain}
+Panganggone tembung \emph{enumerasi} iki duwe dhasar intuisi.
+Ngandharake yen kita wis ngenumerasi himpunan $A$ ateges
+ana !!a{bijection} $f$ kang ngidini kita ngetung anggota
+himpunan $A$ siji-siji. Anggota kaping $0$ yaiku $f(0)$,
+anggota kapisan $f(1)$, \ldots anggota kaping $n$ yaiku $f(n)$\ldots.
+\footnote{Pancen, kita ngetung wiwit $0$. Mesthi wae kita uga
+bisa miwiti saka~$1$. Ora bakal ana bedane kang wigati.
+Kita mung kudu ngganti~$\Nat$ nganggo~$\PosInt$.}
+Dhasar gagasan iki bisa luwih cetha kanthi tambahan:
+\end{explain}
+
+\begin{defn}
+  \ollabel{defn:enumerable}
+  Himpunan~$A$ iku !!{enumerable} yen lan mung yen $A = \emptyset$
+  utawa ana enumerasi saka~$A$. Kita nyebut $A$ iku !!{nonenumerable}
+  yen lan mung yen $A$ ora !!{enumerable}.
+\end{defn}
+
+\begin{explain}
+Dadi himpunan iku !!{enumerable} yen lan mung yen kosong utawa kita
+bisa nggunakake enumerasi kanggo ngetung !!{element}sne siji-siji.
+\end{explain}
+
+\begin{ex}
+Fungsi kang ngenumerasi wilangan natural yaiku fungsi identitas
+$\Id{\Nat} \colon \Nat \to \Nat$ kang diwenehake dening $\Id{\Nat}(n) = n$.
+Fungsi kang ngenumerasi wilangan natural \emph{positif}, yaiku $\Nat^+ =
+\Nat \setminus \{0\}$, yaiku fungsi $g(n) = n + 1$,
+utawa fungsi panerus.
+\end{ex}
+
+\begin{prob}
+Tuduhna yen himpunan $A$ iku !!{enumerable} yen lan mung yen $A = \emptyset$
+utawa ana !!a{surjection} $f\colon \Nat \to A$. Tuduhna yen $A$
+iku !!{enumerable} yen lan mung yen ana !!a{injection} $g\colon A \to \Nat$.
+\end{prob}
+
+\begin{ex}
+Fungsi $f\colon \Nat \to \Nat$ lan $g \colon \Nat \to \Nat$
+kang diwenehake dening
+\begin{align*}
+  f(n) & = 2n \text{ lan}\\
+  g(n) & = 2n+1
+\end{align*}
+ngenumerasi wilangan natural genep lan wilangan natural ganjil.
+Nanging loro-lorone ora !!{surjective}, mula loro-lorone dudu
+enumerasi saka $\Nat$.
+\end{ex}
+
+\begin{prob}
+Tetepna enumerasi wilangan kuadrat $1$, $4$, $9$, $16$, \dots
+\end{prob}
+
+\begin{ex}
+Upamakna $\lceil x \rceil$ iku \emph{fungsi pambunderan munggah},
+kang mbunderake $x$ munggah menyang wilangan wutuh kang paling cedhak.
+Mula fungsi $f \colon \Nat \to \Int$ kang diwenehake dening:
+\[
+  f(n) = (-1)^{n} \left\lceil\tfrac{n}{2}\right\rceil
+\]
+ngenumerasi himpunan wilangan
+wutuh~$\Int$ kaya mangkene:
+\[
+\begin{array}{c c c c c c c c}
+f(0) & f(1) & f(2) & f(3) & f(4) & f(5) & f(6) & \dots \\ \\
+\big\lceil \tfrac{0}{2} \big\rceil & -\big\lceil \tfrac{1}{2}\big\rceil &  \big\lceil \tfrac{2}{2} \big\rceil & -\big\lceil \tfrac{3}{2} \big\rceil & \big\lceil \tfrac{4}{2} \big\rceil  & -\big\lceil \tfrac{5}{2}\big\rceil & \big\lceil \tfrac{6}{2} \big\rceil & \dots \\ \\
+0 & -1 & 1 & -2 & 2 & -3 & 3& \dots
+\end{array}
+\]
+Gatekna carane $f$ ngasilake nilai ing $\Int$ kanthi "mlumpat"
+genti-genten antarane wilangan wutuh positif lan negatif.
+Kita uga bisa nganggep $f$ ditetepake kanthi kasus kaya mangkene:
+\[
+f(n) = \begin{cases}
+  \frac{n}{2} & \text{yen $n$ genep}\\
+  -\frac{n+1}{2} & \text{yen $n$ ganjil}
+  \end{cases}
+\]
+\end{ex}
+
+\begin{prob}
+Tuduhna yen $A$ lan $B$ iku !!{enumerable}, mula $A \cup B$ uga mangkono.
+\end{prob}
+
+\begin{prob}
+Tuduhna kanthi induksi tumrap $n$ yen $A_1$, $A_2$, \dots, $A_n$ kabeh
+!!{enumerable}, mula $A_1 \cup \dots \cup A_n$ uga mangkono.
+\end{prob}
+
+\end{document}

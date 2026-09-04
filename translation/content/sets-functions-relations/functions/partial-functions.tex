@@ -1,0 +1,74 @@
+% Part: sets-functions-relations
+% Chapter: functions
+% Section: partial-functions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+
+\begin{document}
+
+\olfileid{sfr}{fun}{par}
+
+\olsection{Fungsi Parsial}
+
+\begin{explain}
+Kadhangkala migunani yen definisi fungsi dilonggari, saengga
+ora kudu ditetepake asile kanggo kabeh
+masukan kang bisa diwenehake. Pemetaan kaya mangkono diarani \emph{fungsi parsial}.
+\end{explain}
+
+\begin{defn}
+\emph{Fungsi parsial} $f \colon A \pto B$ yaiku pemetaan kang
+masangake saben !!{element} saka~$A$ karo paling akeh siji !!{element} saka~$B$.
+Yen $f$ masangake sawijining anggota saka~$B$ karo $x \in A$, kita nyebut $f(x)$
+\emph{ditetepake}, lan yen ora, \emph{ora ditetepake}. Yen $f(x)$ ditetepake,
+kita nulis $f(x) \fdefined$; yen ora, $f(x) \fundefined$.
+\emph{Domain} fungsi parsial~$f$ yaiku subhimpunan saka~$A$ kang
+ing kono fungsi iku ditetepake, yaiku $\dom{f} = \Setabs{x \in A}{f(x) \fdefined}$.
+\end{defn}
+
+\begin{ex}
+Saben fungsi $f\colon A \to B$ uga fungsi parsial. Fungsi parsial
+kang ditetepake ing kabeh~$A$, yaiku kang nganti saiki
+mung diarani fungsi, uga diarani fungsi \emph{total}.
+\end{ex}
+
+\begin{ex}
+Fungsi parsial $f \colon \Real \pto \Real$ kang diwenehake dening $f(x) = 1/x$
+ora ditetepake kanggo $x = 0$, lan ditetepake ing kabeh papan liyane.
+\end{ex}
+
+\begin{prob}
+Yen diwenehi $f\colon A \pto B$, tetepna fungsi parsial $g\colon B \pto
+A$ kanthi: kanggo saben $y \in B$, yen ana $x \in A$ tunggal kang nyukupi
+$f(x) = y$, mula $g(y) = x$; yen ora, $g(y) \fundefined$. Tuduhna yen
+$f$ injektif, mula $g(f(x)) = x$ kanggo kabeh $x \in \dom{f}$, lan
+$f(g(y)) = y$ kanggo kabeh $y \in \ran{f}$.
+\end{prob}
+
+\begin{defn}[Graf fungsi parsial]
+Upamakna $f\colon A \pto B$ sawijining fungsi parsial. \emph{Graf} saka~$f$
+yaiku relasi $R_f \subseteq A \times B$ kang ditetepake kanthi
+\[
+R_f = \Setabs{\tuple{x,y}}{f(x) = y}.
+\]
+\end{defn}
+
+\begin{prop}
+Upamakna $R \subseteq A \times B$ duwe sipat: saben ana $Rxy$
+lan $Rxy'$, mula $y = y'$. Banjur $R$ iku graf fungsi parsial
+$f\colon A \pto B$ kang ditetepake kanthi: yen ana $y$ saengga
+$Rxy$, mula $f(x) = y$; yen ora, $f(x) \fundefined$. Yen $R$ uga
+\emph{serial}, yaiku kanggo saben $x \in A$ ana $y \in B$ saengga
+$Rxy$, mula $f$ iku total.
+\end{prop}
+
+\begin{proof}
+Upamakna ana $y$ saengga $Rxy$. Yen ana $y'
+\neq y$ liyane saengga $Rxy'$, sarat tumrap $R$ bakal
+dilanggar. Mula, yen ana $y$ saengga $Rxy$, $y$ iku
+tunggal, saengga $f$ ditetepake kanthi becik. Cetha yen $R_f = R$ lan $f$
+total yen~$R$ serial.
+\end{proof}
+
+\end{document}

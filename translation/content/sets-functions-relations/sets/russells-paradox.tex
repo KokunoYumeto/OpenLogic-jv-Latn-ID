@@ -1,0 +1,102 @@
+% Part: sets-functions-relations
+% Chapter: sets
+% Section: russells-paradox
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+
+\begin{document}
+
+\olfileid{sfr}{set}{rus}
+\olsection{Paradoks Russell}
+
+Ekstensionalitas mbenerake notasi $\Setabs{x}{\phi(x)}$ kanggo
+\emph{himpunan kasebut} kang ngemot kabeh $x$ kang ndadekake~$\phi(x)$.
+Nanging, kang \emph{tenan} dibenerake dening ekstensionalitas
+mung gagasan iki: \emph{yen} ana himpunan kang anggotane kabeh
+lan mung objek kang nduweni sipat $\phi$, \emph{mula} himpunan
+kaya mangkono mung ana siji. Kanthi tembung liya: sawise netepake
+sawijining~$\phi$, himpunan $\Setabs{x}{\phi(x)}$ iku tunggal,
+\emph{yen ana}.
+
+Nanging pratelan mawa syarat iki wigati!{} Ora saben sipat
+bisa digunakake kanggo \emph{komprehensi}. Tegese, ana sipat
+kang \emph{ora} nemtokake himpunan. Yen kabeh sipat nemtokake
+himpunan, kita bakal nemoni kontradiksi kang cetha.
+Tuladha kang paling misuwur yaiku Paradoks Russell.
+
+Himpunan bisa dadi !!{element}s saka himpunan liyane---tuladhane,
+himpunan pangkat saka himpunan~$A$ dumadi saka himpunan-himpunan.
+Mula ana tegese yen kita takon utawa nliti apa sawijining
+himpunan iku !!a{element} saka himpunan liyane.
+Apa himpunan bisa dadi anggota awake dhewe? Katone ora ana
+apa-apa ing gagasan himpunan kang ngalangi iki.
+Tuladhane, yen \emph{kabeh} himpunan mbentuk kumpulan objek,
+kita bisa ngira yen kabeh mau bisa diklumpukake dadi siji
+himpunan---himpunan kabeh himpunan. Lan himpunan kasebut,
+amarga dhewe uga himpunan, bakal dadi !!a{element}
+saka himpunan kabeh himpunan.
+
+Paradoks Russell tuwuh nalika kita ngrembug sipat ora duwe
+awake dhewe minangka !!a{element}, yaiku \emph{ora dadi anggota
+awake dhewe}. Kepriye yen kita nganggep ana himpunan kabeh
+himpunan kang ora duwe awake dhewe minangka !!a{element}?
+Apa
+\[
+R = \Setabs{x}{x \notin x}
+\]
+ana? Pranyata kita bisa mbuktekake yen himpunan iki ora ana.
+
+\begin{thm}[Paradoks Russell]\ollabel{thm:russells-paradox}
+	Ora ana himpunan $R = \Setabs{x}{x \notin x}$.
+\end{thm}
+
+\begin{proof}
+Yen $R = \Setabs{x}{x \notin x}$ ana, mula
+$R \in R$ yen lan mung yen $R \notin R$, kang arupa kontradiksi.
+\end{proof}
+
+\begin{tagblock}{novice}
+\begin{explain}
+Ayo nlusuri bukti iki kanthi luwih alon. Yen $R$ ana,
+pitakon apa $R \in R$ utawa ora iku ana tegese.
+Umpamakna pancen $R \in R$. $R$~wis ditetepake minangka
+himpunan kabeh himpunan kang ora dadi !!{element}s saka
+awake dhewe. Mula, yen $R \in R$, $R$ dhewe ora duwe
+sipat kang digunakake kanggo nemtokake $R$.
+Nanging mung himpunan kang duwe sipat iki kang ana ing~$R$,
+mula $R$ ora bisa dadi !!a{element} saka~$R$,
+yaiku $R \notin R$. Nanging $R$ ora bisa bebarengan dadi
+lan ora dadi !!a{element} saka~$R$, mula kita oleh kontradiksi.
+
+Amarga anggepan yen $R \in R$ nuwuhake kontradiksi,
+kita oleh $R \notin R$. Nanging iki uga nuwuhake kontradiksi!{}
+Amarga yen $R\notin R$, $R$ dhewe pancen duwe sipat kang
+digunakake kanggo nemtokake $R$, mula $R$ bakal dadi
+!!a{element} saka $R$, kaya kabeh himpunan liyane kang
+ora dadi anggota awake dhewe.
+Lan maneh, ora bisa bebarengan ora dadi lan dadi
+!!a{element} saka~$R$.
+\end{explain}
+\end{tagblock}
+
+\begin{digress}
+Kepriye carane mbangun teori himpunan kang ora kena Paradoks
+Russell, yaiku kang ora nggawe pratelan \emph{ora konsisten}
+yen $R = \Setabs{x}{x \notin x}$ ana?
+Kita kudu netepake aksioma kang menehi syarat kanthi tliti banget
+kanggo nyatakake kapan himpunan ana (lan kapan ora ana).
+
+Teori himpunan kang digarisake ing bab iki ora nindakake iku.
+Teori iki \emph{pancen naif}. Teori iki mung nerangake yen
+himpunan manut ekstensionalitas lan yen kita duwe sawetara
+himpunan, kita bisa mbentuk gabungan, irisan, lan sapanunggalane.
+Teori himpunan bisa dikembangake kanthi luwih tliti miturut
+paugeran matematis tinimbang iki.
+\oliflabeldef{cumul:::part}{Andharan kanthi tliti kasebut diwenehake
+ing Perangan \olref[cumul][][]{part}. Saiki kita bakal nerusake
+kanthi cara naif, lan kanthi ngati-ati ngupaya nyingkiri kontradiksi.}{}
+\end{digress}
+
+
+\end{document}

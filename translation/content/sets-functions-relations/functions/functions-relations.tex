@@ -1,0 +1,108 @@
+% Part: sets-functions-relations
+% Chapter: functions
+% Section: functions-relations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+
+\begin{document}
+
+\olfileid{sfr}{fun}{rel}
+
+\olsection{Fungsi minangka Relasi}
+
+\begin{explain}
+Fungsi kang metakake !!{element}s saka~$A$ menyang !!{element}s saka~$B$
+cetha nemtokake relasi antarane $A$ lan~$B$, yaiku relasi
+kang dumadi antarane $x$ lan $y$ yen lan mung yen $f(x) = y$. Malah,
+yen kita kepengin nyuda cacah jinis bahan dhasar matematika, upamane,
+kita bisa \emph{nganggep padha} fungsi~$f$ lan relasi iki,
+yaiku himpunan pasangan. Iki banjur nuwuhake pitakon:
+relasi endi wae kang nemtokake fungsi kanthi cara iki?
+\end{explain}
+
+\begin{defn}[Graf fungsi] Upamakna $f\colon A \to B$ sawijining fungsi.
+\emph{Graf} saka~$f$ yaiku relasi $R_f \subseteq A \times B$
+kang ditetepake kanthi
+\[
+R_f = \Setabs{\tuple{x,y}}{f(x) = y}.
+\]
+\end{defn}
+
+\begin{explain}
+Adhedhasar ekstensionalitas, graf sawijining fungsi ditemtokake kanthi tunggal.
+Kajaba iku, ekstensionalitas tumrap himpunan langsung mbenerake
+prinsip ekstensionalitas fungsi kang sadurunge dianggep lumaku:
+yen $f$ lan~$g$ duwe domain lan kodomain kang padha,
+fungsi loro iku padha yen kabeh nilaie padha.
+
+Semono uga, yen sawijining relasi iku "fungsional", relasi iku graf sawijining fungsi.
+\end{explain}
+
+\begin{prop}\ollabel{prop:graph-function}
+Upamakna $R \subseteq A \times B$ nduweni sipat:
+\begin{enumerate}
+\item Yen $Rxy$ lan $Rxz$, mula $y = z$; lan
+\item kanggo saben $x \in A$ ana $y \in B$ saengga $\tuple{x,
+y} \in R$.
+\end{enumerate}
+Banjur $R$ iku graf fungsi $f\colon A \to B$ kang ditetepake kanthi
+$f(x) = y$ yen lan mung yen $Rxy$.
+\end{prop}
+
+\begin{proof}
+Upamakna ana $y$ saengga $Rxy$. Yen ana $z \neq
+y$ liyane saengga $Rxz$, sarat tumrap~$R$ bakal dilanggar. Mula, yen
+ana $y$ saengga $Rxy$, $y$ iki tunggal, saengga $f$
+ditetepake kanthi becik. Cetha yen $R_f = R$.
+\end{proof}
+
+\begin{explain}
+Saben fungsi $f\colon A \to B$ duwe graf, yaiku relasi kang kaemot ing $A
+\times B$ lan ditetepake dening $f(x) = y$. Cathetan koreksi sumber
+OLFUN-004: iki relasi antarane A lan B, dudu relasi ing himpunan
+produk A lan B miturut definisi relasi biner ing buku iki. Kosok baline, saben relasi~$R
+\subseteq A \times B$ kang nduweni sipat ing
+\olref{prop:graph-function} iku graf sawijining fungsi~$f \colon A \to
+B$. Amarga sesambungan kang raket antarane fungsi lan grafe iki,
+kita bisa nganggep sawijining fungsi minangka grafe. Kanthi tembung
+liya, fungsi bisa dianggep padha karo relasi tartamtu, yaiku
+himpunan tupel tartamtu. \oliflabeldef{sfr:rel:ref:sec}{Nanging, gatekna
+yen maksud "nganggep padha" iki kaya ing
+\olref[sfr][rel][ref]{sec}: iki dudu pratelan ngenani metafisika
+fungsi, nanging pangamatan yen \emph{nganggep}
+fungsi minangka himpunan tartamtu iku migunani. Salah siji sebabe
+yaiku saiki k}{K}ita bisa nindakake operasi ing
+fungsi kang padha karo operasi ing relasi (delengen
+\olref[sfr][rel][ops]{sec}). Mligine:
+\end{explain}
+
+\begin{defn}\ollabel{defn:funimage}
+Upamakna $f \colon A \to B$ sawijining fungsi kanthi $C\subseteq A$.
+
+\emph{Watesan} saka~$f$ ing~$C$ yaiku
+fungsi~$\funrestrictionto{f}{C}\colon C \to B$ kang ditetepake kanthi
+$(\funrestrictionto{f}{C})(x) = f(x)$ kanggo kabeh $x \in C$. Kanthi tembung
+liya, $\funrestrictionto{f}{C} = \Setabs{\tuple{x, y} \in R_f}{x \in
+C}$.
+
+\emph{Aplikasi} saka~$f$ tumrap~$C$ yaiku $\funimage{f}{C} =
+\Setabs{f(x)}{x \in C}$. Iki uga diarani \emph{citra} saka~$C$
+dening~$f$.
+\end{defn}
+
+\begin{explain}
+Saka definisi iki bisa didudut yen $\ran{f} =
+\funimage{f}{\dom{f}}$, kanggo saben fungsi~$f$.
+\oliflabeldef{sfr:rel:ops:sec}{Pangerten iki analog karo
+definisi ing \olref[sfr][rel][ops]{sec} lan anggone kita
+nganggep fungsi padha karo relasi, nanging ora persis padha:
+watesan fungsi ing kene mung nyaring koordinat masukan, dene
+watesan relasi ing kana nyaring loro koordinat. Iki koreksi
+andharan sumber OLFUN-005. Rong operasi liyane,
+yaiku invers lan produk relatif, mbutuhake katrangan luwih jangkep.
+Katrangan iku bakal diwenehake ing \olref[inv]{sec} lan
+\olref[cmp]{sec}.}{}
+\end{explain}
+
+\end{document}

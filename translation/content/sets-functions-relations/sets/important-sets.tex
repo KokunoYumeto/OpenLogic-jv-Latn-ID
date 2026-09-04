@@ -1,0 +1,73 @@
+% Part: sets-functions-relations
+% Chapter: sets
+% Section: important-sets
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{set}{imp}
+\olsection{Sawetara Himpunan Wigati}
+
+\begin{ex}
+Umume kita bakal ngrembug himpunan kang !!{element}sne arupa
+objek matematis. Ana papat himpunan kaya mangkono kang cukup
+wigati nganti diwenehi jeneng khusus:
+\begin{multline*}
+    \Nat = \{0, 1, 2, 3, \ldots\} \\
+    \shoveright{\text{himpunan wilangan natural}}\\
+    \shoveleft{\Int = \{\ldots, -2, -1, 0, 1, 2, \ldots\}} \\
+    \shoveright{\text{himpunan wilangan wutuh}}\\
+    \shoveleft{\Rat = \Setabs{\nicefrac{m}{n}}{m, n \in \Int\text{ lan }n \neq 0}}\\
+    \shoveright{\text{himpunan wilangan rasional}}\\
+    \shoveleft{\Real = (-\infty, \infty)}\\
+    \text{himpunan wilangan real (kontinuum)}
+\end{multline*}
+Kabeh iki himpunan \emph{tanpa wates}, yaiku saben himpunan
+duwe !!{element}s kang cacahe tanpa wates.
+
+Nalika pindhah saka himpunan siji menyang sabanjure ing dhaptar iki,
+kita nambah \emph{luwih akeh} wilangan ing pasadhiyan kita.
+Mesthine cetha yen $\Nat \subseteq \Int
+\subseteq \Rat \subseteq \Real$: saben wilangan natural iku
+wilangan wutuh; saben wilangan wutuh iku rasional; lan saben
+wilangan rasional iku real. Semono uga, mesthine cetha yen
+$\Nat \subsetneq \Int \subsetneq
+\Rat$, amarga $-1$ iku wilangan wutuh nanging dudu wilangan natural,
+lan $\nicefrac{1}{2}$ iku rasional nanging dudu wilangan wutuh.
+Kang kurang cetha yaiku $\Rat \subsetneq \Real$, yaiku ana
+wilangan real kang ora rasional\oliflabeldef{sfr:arith:real:realline}{,
+nanging bab iki bakal dirembug maneh ing \olref[arith][real]{realline}}{}.
+
+Kadhangkala kita uga nganggo himpunan wilangan wutuh positif
+$\PosInt = \{1,2, 3, \dots\}$ lan himpunan kang mung ngemot
+rong wilangan natural kapisan $\Bin = \{0, 1\}$.
+\end{ex}
+
+\begin{tagblock}{compsci}
+\begin{ex}[Rerangken]
+Tuladha liyane kang narik kawigaten yaiku himpunan $A^{*}$ saka
+\emph{rerangken winates} ing alfabet $A$: saben urutan winates
+anggota~$A$ iku rerangken ing $A$. Kita nglebokake
+\emph{rerangken kosong $\Lambda$} ing antarane rerangken ing~$A$,
+kanggo saben alfabet~$A$. Tuladhane,
+\begin{multline*}
+\Bin^*
+=\{\Lambda,0,1,00,01,10,11,\\
+000,001,010,011,100,101,110,111,0000,\ldots\}.
+\end{multline*}
+Yen $x=x_{1}\ldots x_{n}\in A^{*}$ iku rerangken kang dumadi
+saka $n$ "aksara" saka $A$, mula kita nyebut \emph{dawane}
+rerangken kasebut~$n$ lan nulis $\len{x}=n$.
+\end{ex}
+\end{tagblock}
+
+\begin{ex}[Urutan tanpa wates]
+Kanggo saben himpunan $A$, kita uga bisa ngrembug himpunan~$A^\omega$
+saka urutan tanpa wates kang ngemot !!{element}s saka~$A$.
+Urutan tanpa wates $a_1a_2a_3a_4\dots$ dumadi saka dhaptar
+objek kang tanpa wates ing siji arah, lan saben objek iku
+!!a{element} saka~$A$.
+\end{ex}
+
+\end{document}

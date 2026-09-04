@@ -1,0 +1,126 @@
+% Part:sets-functions-relations
+% Chapter: size-of-sets
+% Section: zig-zag
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{siz}{zigzag}
+
+\olsection{Metodhe Zig-Zag Cantor}
+
+\begin{explain}
+Kita wis ngrembug sawetara enumerasi kang "gampang". Saiki kita bakal
+ngrembug kang rada luwih angel. Gatekna himpunan pasangan wilangan
+natural\oliflabeldef{sfr:set:pai:sec}{, kang wis ditetepake ing
+\olref[set][pai]{sec} kanthi:}{ kang ditetepake kanthi:}
+\[
+\Nat \times \Nat = \Setabs{\tuple{n,m}}{n,m \in \Nat}
+\]
+Pasangan urut iki bisa ditata dadi \emph{larikan rong dimensi}, kaya mangkene:
+\[
+\begin{array}{ c | c | c | c | c | c}
+& \mathbf 0 & \mathbf 1 & \mathbf 2 & \mathbf 3 & \dots \\
+\hline
+\mathbf 0 & \tuple{0,0} & \tuple{0,1} & \tuple{0,2} & \tuple{0,3} & \dots \\
+\hline
+\mathbf 1 & \tuple{1,0} & \tuple{1,1} & \tuple{1,2} & \tuple{1,3} & \dots \\
+\hline
+\mathbf 2 & \tuple{2,0} & \tuple{2,1} & \tuple{2,2} & \tuple{2,3} & \dots \\
+\hline
+\mathbf 3 & \tuple{3,0} & \tuple{3,1} & \tuple{3,2} & \tuple{3,3} & \dots \\
+\hline
+\vdots & \vdots & \vdots & \vdots & \vdots & \ddots\\
+\end{array}
+\]
+Cetha yen saben pasangan urut ing $\Nat \times \Nat$ katon
+persis sapisan ing larikan iki. Mligine, $\tuple{n,m}$ katon ing
+baris kaping $n$ lan kolom kaping $m$. Nanging kepriye carane nata
+anggota larikan iki dadi dhaptar "siji dimensi"? Pola ing larikan ngisor iki
+nuduhake salah siji cara, sanajan mesthi ana akeh cara liyane:
+\[
+\begin{array}{ c | c | c | c | c | c | c}
+& \mathbf 0 & \mathbf 1 & \mathbf 2 & \mathbf 3 & \mathbf 4 &\dots \\
+\hline
+\mathbf 0 & 0  & 1& 3 & 6& 10 &\ldots \\
+\hline
+\mathbf 1 &2 & 4& 7 & 11 & \dots &\ldots \\
+\hline
+\mathbf 2 & 5 & 8 & 12 & \ldots & \dots&\ldots \\
+\hline
+\mathbf 3 & 9 & 13 & \ldots & \ldots & \dots & \ldots \\
+\hline
+\mathbf 4 & 14 & \ldots & \ldots & \ldots & \dots & \ldots \\
+\hline
+\vdots & \vdots & \vdots & \vdots & \vdots&\ldots & \ddots\\
+\end{array}
+\]\noindent
+Pola iki diarani \emph{metodhe zig-zag Cantor}. Pola iki ngenumerasi
+$\Nat \times \Nat$ kanthi:
+\[
+\tuple{0,0}, \tuple{0,1}, \tuple{1,0}, \tuple{0,2}, \tuple{1,1},
+\tuple{2,0}, \tuple{0,3}, \tuple{1,2}, \tuple{2,1}, \tuple{3,0}, \dots
+\]
+Iki mbuktekake asil ing ngisor:
+\end{explain}
+
+\begin{prop}\ollabel{natsquaredenumerable}
+$\Nat \times \Nat$ iku !!{enumerable}.
+\end{prop}
+
+\begin{proof}
+Tetepna $f \colon \Nat \to \Nat\times\Nat$ kang metakake saben $k \in \Nat$
+menyang tupel $\tuple{n,m} \in \Nat \times \Nat$ saengga $k$ iku nilai
+ing baris kaping $n$ lan kolom kaping $m$ ing larikan zig-zag Cantor.
+\end{proof}
+
+\begin{explain}
+Cara iki uga bisa digeneralisasi kanthi becik. Upamane, cara iki bisa
+digunakake kanggo ngenumerasi himpunan tupel telu wilangan natural, yaiku:
+\[
+\Nat \times \Nat \times \Nat = \Setabs{\tuple{n,m,k}}{n,m,k \in \Nat}
+\]
+Kita nganggep $\Nat \times \Nat \times \Nat$ minangka produk
+Kartesius saka $\Nat \times \Nat$ karo $\Nat$, yaiku
+\[
+\Nat^3 = (\Nat \times \Nat) \times \Nat =
+\Setabs{\tuple{\tuple{n,m},k}}{n, m, k
+  \in \Nat }
+\]
+mula $\Nat^3$ bisa dienumerasi nganggo larikan kanthi menehi label
+enumerasi $\Nat$ ing siji sumbu, lan enumerasi
+$\Nat^2$ ing sumbu liyane:
+\[
+\begin{array}{ c | c | c | c | c | c}
+& \mathbf 0 & \mathbf 1 & \mathbf 2 & \mathbf 3 & \dots \\
+\hline
+\mathbf{\tuple{0,0}} & \tuple{0,0,0} & \tuple{0,0,1} & \tuple{0,0,2} & \tuple{0,0,3} & \dots \\
+\hline
+\mathbf{\tuple{0,1}} & \tuple{0,1,0} & \tuple{0,1,1} & \tuple{0,1,2} & \tuple{0,1,3} & \dots \\
+\hline
+\mathbf{\tuple{1,0}} & \tuple{1,0,0} & \tuple{1,0,1} & \tuple{1,0,2} & \tuple{1,0,3} & \dots \\
+\hline
+\mathbf{\tuple{0,2}} & \tuple{0,2,0} & \tuple{0,2,1} & \tuple{0,2,2} & \tuple{0,2,3} & \dots\\
+\hline
+\vdots & \vdots & \vdots & \vdots & \vdots & \ddots \\
+\end{array}
+\]
+Mula, kanthi nggunakake cara kaya metodhe zig-zag Cantor, kita uga bisa
+ngolehake enumerasi~$\Nat^3$. Kita bisa nerusake cara iki kanggo
+ngolehake enumerasi $\Nat^n$ tumrap saben wilangan natural $n$. Dadi:
+\end{explain}
+
+\begin{prop}
+$\Nat^n$ iku !!{enumerable}, kanggo saben $n \in \Nat$.
+\end{prop}
+
+\begin{prob}\label{sfr:siz:zigzag:prob:posint-n}
+Tuduhna yen $(\PosInt)^n$ iku !!{enumerable}, kanggo saben $n \in \Nat$.
+\end{prob}
+
+\begin{prob}\label{sfr:siz:zigzag:prob:posint-star}
+  Tuduhna yen $(\PosInt)^*$ iku !!{enumerable}. Kita oleh nggunakake \cref{sfr:siz:zigzag:prob:posint-n}.
+\end{prob}
+
+\end{document}

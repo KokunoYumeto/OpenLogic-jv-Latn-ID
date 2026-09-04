@@ -1,0 +1,167 @@
+% Part:sets-functions-relations
+% Chapter: size-of-sets
+% Section: non-enumerability-alt
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{siz}{nen-alt}
+
+\olsection{Himpunan kang \printtoken{S}{nonenumerable}}
+
+\begin{editorial}
+  Bagean iki mbuktekake yen $\Bin^\omega$ lan
+  $\Pow{\Nat}$ ora bisa didhaptar, nganggo definisi ing \olref[enm-alt]{sec},
+  yaiku mbutuhake bijeksi karo~$\Nat$, dudu surjeksi saka
+  $\PosInt$.
+\end{editorial}
+
+\begin{explain}
+Himpunan $\Nat$ saka wilangan natural iku tanpa wates.
+Himpunan iki uga cetha !!{enumerable}. Nanging kasunyatan kang
+nggumunake yaiku anane himpunan kang \emph{!!{nonenumerable}},
+yaiku himpunan kang ora !!{enumerable}
+(delengen \olref[sfr][siz][enm-alt]{defn:enumerable}).
+
+Iki bisa uga nggumunake. Ngandharake yen $A$ iku
+!!{nonenumerable} ateges \emph{ora ana} !!{bijection} $f
+\colon \Nat \to A$, yaiku ora ana fungsi kang metakake
+!!{element}s saka~$\Nat$ kang cacahe tanpa wates menyang~$A$
+lan nyakup kabeh~$A$. Dadi yen $A$ iku !!{nonenumerable},
+!!{element}s saka~$A$ "luwih akeh" tinimbang wilangan natural.
+
+Kanggo mbuktekake yen himpunan iku !!{nonenumerable}, kudu dituduhake
+yen ora bisa ana !!{bijection} kang cocog. Cara kang paling becik
+yaiku nuduhake yen saben upaya ngenumerasi !!{element}s saka~$A$
+mesthi ora ngemot paling ora siji !!{element}. Iki nuduhake yen
+ora ana fungsi $f\colon \Nat \to A$ kang !!{surjective}.
+Cara umum kanggo mbuktekake iki yaiku nganggo \emph{metodhe diagonal} Cantor.
+Saka dhaptar !!{element}s saka $A$, upamane $x_1$, $x_2$, \dots,
+kita mbangun !!{element} saka~$A$ liyane kang, amarga cara anggone
+dibangun, ora mungkin ana ing dhaptar mau.
+
+Nanging kabeh iki luwih gampang dimangerteni nganggo tuladha.
+Tuladha kapisan yaiku himpunan~$\Bin^\omega$ saka kabeh rerangken
+tanpa wates saka $0$ lan $1$. (Lambang "$\Bin$" nuduhake biner,
+lan bisa dianggep minangka himpunan rong anggota
+$\{0,1\}$.)\oliflabeldef{sfr:card-arithmetic:card-opps:sec}{\footnote{Kanthi
+luwih pas, kita kudu netepake yen $\Bin^\omega$ iku himpunan kabeh
+rerangken-$\omega$ saka $0$ lan $1$, yaiku himpunan
+$\funfromto{\omega}{\{0,1\}}$. Nanging tegese iki lagi bakal
+cetha ing \olref[sfr][card-arithmetic][card-opps]{sec}.}{} Nanging
+andharan kang rada longgar iki saiki kudune ora
+nuwuhake bingung.}
+\end{explain}
+
+\begin{thm}
+\ollabel{thm:nonenum-bin-omega}
+$\Bin^\omega$~iku !!{nonenumerable}.
+\end{thm}
+
+\begin{proof}
+Gatekna sembarang enumerasi subhimpunan saka $\Bin^\omega$.
+Dadi ana dhaptar $s_{0}$, $s_{1}$, $s_{2}$, \dots{}
+kanthi saben $s_n$ minangka rerangken tanpa wates saka $0$ lan~$1$.
+Upamakna $s_n(m)$ iku digit kaping $m$ saka rerangken kaping $n$
+ing dhaptar iki. Saiki dhaptar iki bisa dianggep minangka larikan,
+kanthi $s_n(m)$ ing baris kaping $n$ lan kolom kaping $m$:
+\[
+\begin{array}{c|c|c|c|c|c}
+& 0 & 1 & 2 & 3 & \dots \\\hline
+0 & \mathbf{s_{0}(0)} & s_{0}(1) & s_{0}(2) & s_0(3) & \dots \\\hline
+1 & s_{1}(0)& \mathbf{s_{1}(1)} & s_1(2) & s_1(3) & \dots \\\hline
+2 & s_{2}(0)& s_{2}(1) & \mathbf{s_2(2)} & s_2(3) & \dots \\\hline
+3 & s_{3}(0)& s_{3}(1) & s_3(2) & \mathbf{s_3(3)} & \dots \\\hline
+\vdots & \vdots & \vdots & \vdots & \vdots & \mathbf{\ddots}
+\end{array}
+\]
+Saiki kita bakal mbangun rerangken tanpa wates $d$ saka $0$ lan $1$
+kang ora ana ing dhaptar iki. Carane yaiku nemtokake saben anggotane,
+yaiku nemtokake $d(n)$ kanggo kabeh $n \in \Nat$.
+Kanthi intuisi, kita maca diagonal larikan ndhuwur saka ndhuwur mudhun
+(mula diarani "metodhe diagonal"), banjur ngganti saben $1$ dadi $0$
+lan saben $0$ dadi~$1$. Rong ukara iki mbenerake salah-tulis indeks
+lan bit kapindho ing sumber Inggris; larikan lan rumus sumber dhewe
+nuduhake teges kang bener. Kanthi luwih abstrak, $d(n)$ ditetepake dadi
+$0$ utawa $1$ miturut apa !!{element} kaping $n$ ing diagonal,
+yaiku $s_n(n)$, iku $1$ utawa $0$, yaiku:
+\[
+d(n) =
+\begin{cases}
+1 & \text{yen $s_{n}(n) = 0$}\\
+0 & \text{yen $s_{n}(n) = 1$}
+\end{cases}
+\]
+Cetha yen $d \in \Bin^\omega$, amarga iki rerangken tanpa wates
+saka $0$ lan $1$. Nanging $d$ dibangun saengga $d(n) \neq s_n(n)$
+kanggo saben $n \in \Nat$. Tegese, $d$ beda karo $s_n$
+ing anggota kaping $n$. Mula $d \neq s_n$ kanggo saben $n\in \Nat$.
+Dadi $d$ ora bisa ana ing dhaptar
+$s_0$, $s_1$, $s_2$,
+\dots
+
+Kita wis nuduhake yen sembarang enumerasi sawijining subhimpunan
+saka $\Bin^\omega$ mesthi ora ngemot sawijining !!{element} saka $\Bin^\omega$.
+Dadi ora ana enumerasi himpunan $\Bin^\omega$, yaiku $\Bin^\omega$
+iku !!{nonenumerable}.
+\end{proof}
+
+\begin{explain}
+Cara pambuktian iki diarani "diagonalisasi" amarga nggunakake diagonal
+larikan kanggo netepake~$d$. Nanging diagonalisasi ora kudu
+nggunakake larikan. Kita bisa nuduhake yen sawijining himpunan
+iku !!{nonenumerable} nganggo gagasan kang padha, sanajan ora ana larikan
+utawa diagonal kang nyata. Asil ing ngisor nuduhake carane.
+\end{explain}
+
+\begin{thm}
+\ollabel{thm:nonenum-pownat}
+$\Pow{\Nat}$ ora !!{enumerable}.
+\end{thm}
+
+\begin{proof}
+Kita nggunakake cara kang padha, yaiku nuduhake yen saben dhaptar
+subhimpunan saka~$\Nat$ mesthi ora ngemot sawijining subhimpunan $\Nat$.
+Upamakna ana dhaptar $N_0, N_1, N_2, \ldots$ saka subhimpunan $\Nat$.
+Kita netepake himpunan $D$ kanthi: $n \in D$ yen lan mung yen $n \notin N_{n}$:
+\[
+D = \Setabs{n \in \Nat}{n \notin N_n}
+\]
+Cetha yen $D\subseteq \Nat$. Nanging $D$ ora bisa ana ing dhaptar.
+Miturut cara pambangune, $n \in D$ yen lan mung yen $n\notin N_n$,
+saengga $D \neq N_n$ kanggo saben $n \in \Nat$.
+\end{proof}
+
+\begin{explain}
+Bukti sadurunge ora nyebut diagonal. Nanging kita bisa nganggep
+ana diagonal yen nggambarake kaya mangkene: bayangna himpunan
+$N_0$, $N_1$, \dots, ditulis ing larikan. Kita nulis $N_n$ ing
+baris kaping $n$ kanthi nulis $m$ ing kolom kaping $m$
+yen lan mung yen $m \in N_n$. Upamane, papat himpunan kapisan
+ing dhaptar yaiku $\{0,1,2,\dots\}$, $\{1, 3, 5, \dots\}$, $\{0,1,4\}$,
+lan $\{2,3,4,\dots\}$; mula wiwitan larikan:
+\[
+\begin{array}{r@{}rrrrrrr}
+  N_0 = \{ & \mathbf{0}, & 1, & 2, & & & & \dots\}\\
+  N_1 = \{ &  & \mathbf{1}, &  & 3, &  & 5, & \dots\}\\
+  N_2 = \{ & 0, & 1, &  &  & 4\phantom{,} &  & \}\\
+  N_3 = \{ &  &  & 2, & \mathbf{3}, & 4, & & \dots\}\\
+  &\vdots & & & & & & \ddots\phantom{\}}
+  \end{array}
+\]
+Dadi $D$ iku himpunan kang diolehake kanthi ngetutake diagonal mudhun,
+kanthi netepake $n \in D$ yen lan mung yen $n$ \emph{ora} ana ing diagonal.
+Ing tuladha ndhuwur, kita ora nglebokake $0$ lan $1$, nglebokake~$2$,
+ora nglebokake~$3$, lan sateruse.
+\end{explain}
+
+\begin{prob}
+Tuduhna yen himpunan kabeh fungsi $f \colon \Nat \to \Nat$
+iku !!{nonenumerable} nganggo argumen diagonal kang eksplisit. Tegese,
+tuduhna yen $f_1$, $f_2$, \dots, iku dhaptar fungsi lan saben $f_i\colon
+\Nat \to \Nat$, mula ana $g \colon \Nat \to
+\Nat$ kang ora ana ing dhaptar iki.
+\end{prob}
+
+\end{document}

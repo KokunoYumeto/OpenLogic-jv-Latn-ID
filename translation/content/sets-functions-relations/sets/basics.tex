@@ -1,0 +1,105 @@
+% Part: sets-functions-relations
+% Chapter: sets
+% Section: basics
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{set}{bas}
+\olsection{Ekstensionalitas}
+
+\emph{Himpunan} yaiku kumpulan objek kang dianggep {minangka} siji
+objek. Objek-objek kang mbentuk himpunan kasebut diarani \emph{unsur}
+utawa \emph{anggota} himpunan. Yen $x$ iku !!a{element} himpunan~$A$,
+kita nulis $x \in A$; yen ora, kita nulis $x \notin A$.
+Himpunan kang ora duwe !!{element}s diarani himpunan \emph{kosong}
+lan dilambangake nganggo~"$\emptyset$".
+
+\begin{explain}
+Ora dadi prakara kepriye kita \emph{nemtokake} himpunan kasebut,
+kepriye kita \emph{ngurutake} !!{element}sne, utawa malah \emph{kaping
+pira} kita ngetung !!{element}sne. Kang wigati mung apa wae
+!!{element}sne. Bab iki kita rumusake ing prinsip ing ngisor iki.
+\end{explain}
+
+\begin{defn}[Ekstensionalitas]
+  Yen $A$ lan $B$ iku himpunan, mula $A = B$ yen lan mung yen
+  saben !!{element} saka~$A$ uga !!a{element} saka~$B$, lan
+  kosok baline.
+\end{defn}
+
+Ekstensionalitas mbenerake panganggone sawetara notasi. Umume, yen
+kita duwe objek $a_{1}$, \dots, $a_{n}$, mula $\{a_{1}, \dots, a_{n}\}$
+yaiku \emph{himpunan kasebut} kang !!{element}sne yaiku
+$a_1, \ldots, a_n$. Kita negesake tembung "\emph{himpunan kasebut}",
+amarga ekstensionalitas nerangake yen himpunan kaya mangkono mung
+bisa ana \emph{siji}. Ekstensionalitas uga mbenerake pratelan iki:
+  \[
+    \{a, a, b\} = \{a, b\} = \{b,a\}.
+  \]
+Iki nuduhake yen, nalika ngrembug himpunan, kita ora nggatekake
+urutane !!{element}s utawa kaping pira anggota kasebut disebutake.
+
+\begin{tagblock}{novice}
+\begin{ex}
+Yen duwe sawenehing objek, objek kasebut bisa diklumpukake dadi
+himpunan. Tuladhane, himpunan sedulure Richard ngemot siji wong,
+lan bisa ditulis $S=\{\textrm{Ruth}\}$.
+Himpunan wilangan wutuh positif kang kurang saka $4$ yaiku
+$\{1, 2, 3\}$, nanging uga bisa ditulis $\{3, 2, 1\}$ utawa malah
+$\{1, 2, 1, 2, 3\}$. Miturut ekstensionalitas, kabeh mau himpunan
+kang padha. Amarga saben !!{element} saka $\{1, 2, 3\}$ uga
+!!a{element} saka $\{3, 2, 1\}$ (lan saka $\{1,
+2, 1, 2, 3\}$), lan kosok baline.
+\end{ex}
+\end{tagblock}
+
+Asring kita nemtokake himpunan lumantar sawijining sipat kang
+diduweni bebarengan dening !!{element}sne. Kanggo iku kita nganggo
+notasi cekak iki: $\Setabs{x}{\phi(x)}$, kanthi $\phi(x)$
+nglambangake sipat kang kudu diduweni~$x$ supaya bisa kalebu
+ing antarane !!{element}s himpunan kasebut.
+
+\begin{tagblock}{novice}
+\begin{ex}
+Ing tuladha kita, $S$ uga bisa ditemtokake minangka
+\[
+S = \Setabs{x}{x \text{ iku sedulure Richard}}.
+\]
+\end{ex}
+\end{tagblock}
+
+\begin{tagblock}{math}
+\begin{ex}
+Wilangan diarani \emph{sampurna} yen lan mung yen padha karo
+gunggunge pembagi sejatine (yaiku, wilangan kang mbagi nganti entek
+nanging ora padha karo wilangan kasebut). Tuladhane, $6$ iku
+sampurna amarga pembagi sejatine yaiku $1$, $2$, lan~$3$, lan
+$6 = 1 + 2 + 3$. Nyatane, $6$ iku siji-sijine wilangan wutuh
+positif kang kurang saka $10$ lan sampurna. Mula, kanthi
+ekstensionalitas, kita bisa nyatakake:
+\[
+	\{6\} = \Setabs{x}{x\text{ iku sampurna lan }0 \leq x \leq 10}
+\]
+Notasi ing sisih tengen diwaca "himpunan kabeh $x$ kang ndadekake
+$x$ sampurna lan $0 \leq x \leq 10$". Pepadhan iki negesake yen,
+nalika ngrembug himpunan, kita ora nggatekake carane himpunan kasebut
+ditemtokake. Kanthi luwih umum, ekstensionalitas njamin yen tansah
+mung ana siji himpunan kabeh $x$ kang ndadekake $\phi(x)$.
+Mula, ekstensionalitas mbenerake anggone nyebut
+$\Setabs{x}{\phi(x)}$ minangka \emph{himpunan kasebut} kang ngemot
+kabeh $x$ kang ndadekake~$\phi(x)$.
+\end{ex}
+\end{tagblock}
+
+Ekstensionalitas menehi cara kanggo nuduhake yen himpunan iku padha:
+kanggo nuduhake $A = B$, tuduhna yen saben $x \in A$ uga $x \in B$,
+lan saben $y \in B$ uga $y \in A$.
+
+\begin{prob}
+Buktekna yen himpunan kosong paling akeh ana siji, yaiku tuduhna
+yen $A$ lan $B$ iku himpunan tanpa !!{element}s, mula $A = B$.
+\end{prob}
+
+\end{document}

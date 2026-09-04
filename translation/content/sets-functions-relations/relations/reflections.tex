@@ -1,0 +1,87 @@
+% Part: sets-functions-relations
+% Chapter: relations
+% Section: reflections
+%
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{rel}{ref}
+\olsection{Pamawas Filosofis}
+
+Ing \olref[set]{sec}, kita nemtokake relasi minangka himpunan
+tartamtu. Kita perlu mandheg sedhela lan ngajokake pitakon
+filosofis: apa kang \emph{ditindakake} dening definisi kaya iki?
+Banget anggone mangu-mangu yen kita arep nyatakake manawa kita
+wis \emph{nemokake} kasunyatan identitas metafisis; tuladhane,
+yen relasi tatanan ing $\Nat$ \emph{pranyata} iku himpunan
+$R=  \Setabs{\tuple{n,m}}{n, m \in \Nat\text{ lan }
+n < m}$ kang kita tetepake ing \olref[set]{sec}.
+Ana telung alesan kanggo mangu-mangu iki.
+
+Kapisan: ing \olref[set][pai]{wienerkuratowski}, kita netepake
+$\tuple{a, b} =\{\{a\}, \{a, b\}\}$.
+Saiki gatekna definisi alternatif
+$\lVert a,b\rVert = \{\{b\}, \{a, b\}\} = \tuple{b,a}$.
+Yen $a \neq b$, mula $\tuple{a, b} \neq \lVert a,b\rVert$.
+Nanging kita uga bisa nggunakake $\lVert a,b\rVert$ minangka
+definisi pasangan urut, tinimbang $\tuple{a,b}$.
+Kaloro definisi padha-padha bisa digunakake kanthi becik.
+Mula saiki ana rong calon kang padha apike kanggo "dadi"
+relasi tatanan ing wilangan natural, yaiku:
+\begin{align*}
+		R &= \Setabs{\tuple{n,m}}{n, m \in \Nat \text{ lan }n < m}\\
+		S &= \Setabs{\lVert n,m\rVert}{n, m \in \Nat \text{ lan }n < m}.
+\end{align*}
+Amarga $R \neq S$, miturut ekstensionalitas cetha yen ora
+bisa \emph{loro-lorone} padha karo relasi tatanan ing~$\Nat$.
+Nanging mung dadi pilihan sawenang-wenang, lan rada ngisin-isini,
+yen ngaku manawa $R$, dudu $S$ (utawa kosok baline),
+pancen \emph{iku} relasi tatanan minangka kasunyatan.
+(Iki tuladha prasaja banget saka argumen nglawan reduksionisme
+teori himpunan kang digawe misuwur dening Benacerraf ing
+\citeyear{Benacerraf1965}. Kita bakal bali ngrembug kaping pirang-pirang.)
+
+Kapindho: yen kita nganggep \emph{saben} relasi kudu
+diidentifikasi karo himpunan, mula relasi kaanggotaan himpunan
+dhewe, $\in$, kudune sawijining himpunan tartamtu.
+Malah kudune himpunan $\Setabs{\tuple{x,y}}{x \in y}$.
+Nanging apa himpunan iki ana? Kanthi ana Paradoks Russell,
+pratelan yen himpunan kaya iki ana dudu prakara prasaja.
+Nyatane, \oliflabeldef{cumul:::part}{teori himpunan kang kita
+kembangake ing \olref[cumul][][]{part} bakal
+\emph{nolak} anane himpunan iki.\footnote{Kanggo ndhisiki andharan,
+iki alesane. Kanggo bukti kanthi kontradiksi, umpamakna
+$I =\Setabs{\tuple{x,y}}{x \in y}$ ana.
+Mula $\bigcup \bigcup I$ iku himpunan universal,
+kang nalisir \olref[sfr][z][sep]{thm:NoUniversalSet}.}}{teori himpunan
+bisa dikembangake kanthi tliti minangka teori aksiomatis,
+lan teori kasebut pancen bakal nolak anane himpunan iki.}
+Mula, sanajan sawetara relasi bisa dianggep himpunan,
+relasi kaanggotaan himpunan kudu dadi kasus khusus.
+
+Katelu: nalika "ngidentifikasi" relasi karo himpunan,
+kita nyebut yen kita kena nulis $Rxy$ kanggo
+$\tuple{x,y} \in R$. Iki trep, angger relasi kaanggotaan,
+"$\in$", dianggep \emph{minangka} predikat.
+Nanging yen "$\in$" dianggep nglambangake sawijining jinis
+himpunan, ukara "$\tuple{x,y} \in R$" mung dumadi saka
+telung istilah tunggal kang nglambangake himpunan:
+"$\tuple{x,y}$", "$\in$", lan "$R$".
+Dhaptar jeneng kaya iki ora luwih bisa ngandharake proposisi
+tinimbang rerangken tanpa teges: "cangkir wadhah pulpen meja".
+Maneh, sanajan sawetara relasi bisa dianggep himpunan,
+relasi kaanggotaan himpunan kudu dadi kasus khusus.
+(Iki nggabungake versi prasaja saka paradoks konsep
+\emph{jaran} Frege lan sawijining bantahan misuwur
+kang tau diajokake Wittgenstein marang Russell.)
+
+Dadi, apa akibat saka kabeh iki? Ora ana kang \emph{luput}
+yen kita nyebut relasi ing wilangan minangka himpunan.
+Kita mung kudu ngerteni maksud nalika pratelan kasebut digawe.
+Kita ora nyatakake kasunyatan identitas metafisis.
+Kita mung nyathet yen, ing konteks tartamtu, kita bisa
+(lan bakal) \emph{nganggep} relasi (tartamtu) minangka
+himpunan tartamtu.
+
+\end{document}

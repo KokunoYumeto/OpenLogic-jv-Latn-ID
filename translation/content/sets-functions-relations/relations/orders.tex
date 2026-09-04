@@ -1,0 +1,206 @@
+% Part: sets-functions-relations
+% Chapter: relations
+% Section: orders
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{rel}{ord}
+\olsection{Tatanan}
+
+\begin{explain}
+Akeh pambandhing kita nggambarake objek minangka
+"kurang saka", "padha karo", utawa "luwih saka" objek
+liyane ing sawijining babagan. Iki nggunakake relasi
+\emph{tatanan}. Nanging ana maneka jinis relasi tatanan.
+Tuladhane, sawetara mbutuhake saben rong objek bisa
+dibandhingake, dene liyane ora.
+Sawetara nyakup identitas (kaya~$\le$), lan sawetara
+ora nyakup (kaya~$<$).
+Panggolongan bakal migunani ing kene.
+\end{explain}
+
+\begin{defn}[Pratatanan]
+Relasi kang refleksif lan transitif diarani \emph{pratatanan}.
+\end{defn}
+
+\begin{defn}[Tatanan parsial]
+Pratatanan kang uga antisimetris diarani \emph{tatanan parsial}.
+\end{defn}
+
+\begin{defn}[Tatanan linear]\ollabel{def:linearorder}
+Tatanan parsial kang uga koneks diarani
+\emph{tatanan total} utawa \emph{tatanan linear}.
+\end{defn}
+
+\begin{ex}
+Saben tatanan linear uga tatanan parsial, lan saben
+tatanan parsial uga pratatanan, nanging kosok baline
+ora lumaku. Relasi universal ing~$A$ iku pratatanan,
+amarga refleksif lan transitif. Nanging yen $A$ duwe
+luwih saka siji !!{element}, relasi universal ora
+antisimetris, mula dudu tatanan parsial.
+\end{ex}
+
+\begin{ex}
+Gatekna relasi \emph{ora luwih dawa tinimbang}
+$\preccurlyeq$ ing~$\Bin^*$:
+$x \preccurlyeq y$ yen lan mung yen
+$\len{x} \le \len{y}$.
+Iki pratatanan (refleksif lan transitif), malah uga
+koneks, nanging dudu tatanan parsial amarga ora
+antisimetris. Tuladhane, $01\preccurlyeq 10$ lan
+$10 \preccurlyeq 01$, nanging $01 \neq 10$.
+\end{ex}
+
+\begin{ex}
+Tatanan parsial kang wigati yaiku relasi $\subseteq$
+ing himpunan kang ngemot himpunan-himpunan.
+Umume iki dudu tatanan linear, amarga yen $a \neq b$
+lan kita ngrembug
+$\Pow{\{a, b\}} = \{\emptyset, \{a\}, \{b\}, \{a,b\}\}$,
+kita weruh yen $\{a\} \nsubseteq \{b\}$,
+$\{a\} \neq \{b\}$, lan $\{b\}\nsubseteq \{a\}$.
+\end{ex}
+
+\begin{ex}
+Relasi \emph{bisa mbagi tanpa sisa} menehi tatanan
+parsial kang dudu tatanan linear.
+Kanggo wilangan wutuh $n$ lan~$m$,
+kita nulis $n \mid m$ kanggo nyatakake yen $n$
+mbagi $m$ tanpa sisa, yaiku yen lan mung yen
+ana wilangan wutuh~$k$ kang ndadekake $m = kn$.
+Ing~$\Nat$, iki tatanan parsial nanging dudu
+tatanan linear: tuladhane, $2 \nmid 3$ lan uga
+$3 \nmid2$. Yen dianggep relasi ing $\Int$,
+relasi bisa mbagi mung pratatanan amarga ora
+antisimetris: $1 \mid -1$ lan $-1 \mid 1$,
+nanging $1 \neq -1$.
+\end{ex}
+
+\begin{ex}
+Relasi \emph{ekstensi} ing himpunan urutan~$A^*$
+yaiku mangkene: $s \sqsubseteq s'$ yen lan mung yen
+$s = \emptyseq$ (urutan kosong), $s = s'$,
+utawa $s = \tuple{s_1, \dots, s_n}$ lan
+$s' =\tuple{s_1, \dots, s_n, s_{n+1}, \dots, s_m}$.
+Yen $s \sqsubseteq s'$, kita uga nyebut $s$
+minangka \emph{perangan wiwitan} saka~$s'$.
+Relasi ekstensi ing $A^*$ iku tatanan parsial
+nanging dudu tatanan linear, tuladhane yen
+$a \neq b$, mula $ab \not\sqsubseteq ba$ lan
+$ba \not\sqsubseteq ab$.
+\end{ex}
+
+\begin{defn}[Tatanan ketat]
+\emph{Tatanan ketat} yaiku relasi kang irrefleksif,
+asimetris, lan transitif.
+\end{defn}
+
+\begin{defn}[Tatanan linear ketat]\ollabel{def:strictlinearorder}
+Tatanan ketat kang uga koneks diarani
+\emph{tatanan total ketat} utawa \emph{tatanan linear ketat}.
+\end{defn}
+
+\begin{ex}
+$\le$ iku tatanan linear kang cocog karo
+tatanan linear ketat~$<$.
+$\subseteq$ iku tatanan parsial kang cocog karo
+tatanan ketat~$\subsetneq$.
+\end{ex}
+
+Saben tatanan ketat $R$ ing~$A$ bisa diowahi dadi
+tatanan parsial kanthi nambah diagonal $\Id{A}$,
+yaiku nambah kabeh pasangan~$\tuple{x,x}$.
+(Iki diarani \emph{tutupan refleksif} saka~$R$.)
+Kosok baline, saka tatanan parsial kita bisa oleh
+tatanan ketat kanthi mbuwang~$\Id{A}$.
+Rong asil sabanjure njlentrehake iki kanthi persis.
+
+\begin{prop}\ollabel{prop:stricttopartial}
+Yen $R$ iku tatanan ketat ing~$A$,
+mula $R^+ = R \cup \Id{A}$ iku tatanan parsial.
+Kajaba iku, yen $R$ iku tatanan linear ketat,
+mula $R^+$ iku tatanan linear.
+\end{prop}
+
+\begin{proof}
+Umpamakna $R$ iku tatanan ketat, yaiku
+$R \subseteq A^2$ lan $R$ irrefleksif,
+asimetris, lan transitif.
+Tetepna $R^+ = R \cup \Id{A}$.
+Kita kudu nuduhake yen $R^+$ refleksif,
+antisimetris, lan transitif.
+
+$R^+$ cetha refleksif, amarga
+$\tuple{x, x} \in \Id{A} \subseteq R^+$
+kanggo kabeh $x \in A$.
+
+Kanggo nuduhake yen $R^+$ antisimetris,
+umpamakna kanggo bukti kanthi kontradiksi yen
+$R^+xy$ lan $R^+yx$ nanging $x \neq y$.
+Amarga $\tuple{x,y} \in R \cup \Id{A}$,
+nanging $\tuple{x, y} \notin \Id{A}$,
+kita kudu duwe $\tuple{x, y} \in R$, yaiku $Rxy$.
+Semono uga,~$Ryx$.
+Nanging iki nalisir anggepan yen $R$ asimetris.
+
+Kanggo mbuktekake transitivitas, umpamakna
+$R^+xy$ lan $R^+yz$.
+Yen $\tuple{x, y} \in R$ lan $\tuple{y,z} \in R$
+loro-lorone lumaku, mula $\tuple{x, z} \in R$
+amarga $R$~transitif.
+Yen ora, mula $\tuple{x, y} \in\Id{A}$,
+yaiku $x = y$, utawa $\tuple{y, z} \in \Id{A}$,
+yaiku $y = z$.
+Ing kasus kapisan, kita duwe $R^+yz$ miturut
+anggepan lan $x = y$, mula $R^+xz$.
+Semono uga ing kasus kapindho.
+Ing saben kasus, $R^+xz$, mula $R^+$
+uga transitif.
+
+Tumrap pratelan "kajaba iku", umpamakna $R$
+uga koneks. Mula kanggo kabeh $x \neq y$,
+$Rxy$ utawa~$Ryx$, yaiku
+$\tuple{x, y} \in R$ utawa $\tuple{y, x} \in R$.
+Amarga $R \subseteq R^+$, iki tetep lumaku
+tumrap $R^+$, mula $R^+$ uga koneks.
+\end{proof}
+
+\begin{prop}\ollabel{prop:partialtostrict}
+Yen $R$ iku tatanan parsial ing~$A$,
+mula $R^- = R \setminus \Id{A}$ iku tatanan ketat.
+Kajaba iku, yen $R$ iku tatanan linear,
+mula $R^-$ iku tatanan linear ketat.
+\end{prop}
+
+\begin{proof}
+Iki ditinggalake minangka latihan.
+\end{proof}
+
+\begin{prob}
+Wenehana bukti kanggo \olref[sfr][rel][ord]{prop:partialtostrict}.
+\end{prob}
+
+Asil prasaja ing ngisor iki nuduhake yen
+tatanan linear ketat nduweni sipat kang
+padha karo ekstensionalitas:
+
+\begin{prop}\ollabel{prop:extensionality-strictlinearorders}
+Yen $<$ iku tatanan linear ketat ing $A$, mula:
+\[
+  (\forall a, b \in A)((\forall x \in A)(x < a \liff x < b) \lif a = b).
+\]
+\end{prop}
+
+\begin{proof}
+Umpamakna $(\forall x \in A)(x < a \liff x < b)$.
+Yen $a < b$, mula $a <a$,
+kang nalisir kasunyatan yen $<$ irrefleksif;
+mula $a \nless b$.
+Kanthi cara kang persis padha, $b \nless a$.
+Mula $a = b$, amarga $<$ koneks.
+\end{proof}
+
+\end{document}

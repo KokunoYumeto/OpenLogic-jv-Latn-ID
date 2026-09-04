@@ -1,0 +1,88 @@
+% Part: sets-functions-relations
+% Chapter: arithmetization
+% Section: From N to Z
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+
+\begin{document}
+
+\olfileid{sfr}{arith}{int}
+\olsection{Saka $\Nat$ menyang $\Int$}
+
+Ana rong pangamatan dhasar:
+	\begin{enumerate}
+		\item Saben wilangan wutuh bisa ditulis kanthi wujud $n - m$, kanthi $n, m \in\Nat$.
+		\item Informasi kang dikodeake ing ekspresi $n - m$ uga bisa dikodeake kanthi pasangan urut $\tuple{n, m}$.
+	\end{enumerate}
+Kita wis ngerti yen pasangan urut wilangan natural iku !!{element}s saka $\Nat^2$. Kita uga nganggep yen kita wis mangerteni $\Nat$. Mula ana usul naif adhedhasar rong pangamatan mau: \emph{ayo nganggep wilangan wutuh minangka pasangan urut wilangan natural}.
+
+Sejatine usul iki naif banget. Mesthi wae kita kepengin $0- 2 = 4 - 6$. Nanging cetha yen $\tuple{0, 2 }\neq \tuple{4, 6}$. Dadi kita ora bisa mung nyebut $\Nat^2$ minangka himpunan wilangan wutuh.
+
+Kanthi nggeneralisasi masalah sadurunge, kang dikarepake yaiku:
+	$$a - b = c - d \text{ yen lan mung yen }a + d = c + b$$
+(Cetha yen iki carane wilangan wutuh \emph{kudune} tumindak: cukup tambahna $b$ lan $d$ ing loro-lorone sisih.) Cara gampang kanggo njamin tumindak iki yaiku netepake relasi ekuivalensi antarane pasangan urut, yaiku $\Intequiv$, kaya mangkene:
+$$\tuple{ a, b } \Intequiv \tuple{c, d}\text{ yen lan mung yen }a + d = c + b$$
+Saiki kita kudu nuduhake yen iki relasi ekuivalensi.
+\begin{prop} $\Intequiv$ iku relasi ekuivalensi.
+\end{prop}
+	\begin{proof}
+	Kita kudu nuduhake yen $\Intequiv$ iku refleksif, simetris, lan transitif.
+
+	\emph{Refleksif:} Cetha yen $\tuple{a, b} \Intequiv \tuple{a, b}$, amarga $a + b = b + a$.
+
+	\emph{Simetris:} Upamakna $\tuple{a, b} \Intequiv \tuple{c, d}$, mula $a + d = c + b$. Banjur $c + b = a + d$, saengga $\tuple{c, d} \Intequiv \tuple{a, b}$.
+
+	\emph{Transitif:} Upamakna $\tuple{a, b} \Intequiv \tuple{c, d}\Intequiv \tuple{m, n}$. Mula $a + d = c + b$ lan $c + n = m + d$. Dadi $a + d + c + n = c + b + m + d$, mula $a + n = m + b$. Dadi $\tuple{a, b } \Intequiv \tuple{m, n}$.
+\end{proof}
+
+Saiki relasi ekuivalensi iki bisa digunakake kanggo njupuk kelas-kelas ekuivalensi:
+
+\begin{defn}
+		Wilangan wutuh yaiku kelas-kelas ekuivalensi pasangan urut wilangan natural miturut $\Intequiv$; yaiku $\Int = \equivclass{\Nat^2}{\Intequiv}$.
+\end{defn}
+
+Definisi stipulatif iki bisa nuwuhake akeh reaksi \emph{filosofis} kang beda. Nanging sadurunge ngrembug reaksi kasebut, prayoga yen kita nerusake dhisik sawetara prakara teknis.
+
+Sawise netepake apa iku wilangan wutuh, kita kudu netepake fungsi lan relasi dhasar ing wilangan kasebut. Ayo nulis $\equivrep{m, n}{\Intequiv}$ kanggo kelas ekuivalensi miturut $\Intequiv$ kang duwe $\tuple{m, n}$ minangka !!a{element}.\footnote{Cathetan: yen nggunakake notasi kang dikenalake ing \olref[sfr][rel][eqv]{def:equivalenceclass}, kita bakal nulis $\equivrep{\tuple{m,n}}{\Intequiv}$ kanggo perkara kang padha. Nanging notasi iku rada luwih angel diwaca.} Tegese:
+	$$\equivrep{m, n}{\Intequiv} = \Setabs{\tuple{a, b} \in \Nat^2}{\tuple{a, b}\Intequiv \tuple{m, n}}$$
+Saiki kita menehi sawetara definisi:
+	\begin{align*}
+		\equivrep{a, b}{\Intequiv} + \equivrep{c, d}{\Intequiv} &= \equivrep{a + c, b + d}{\Intequiv}\\
+		\equivrep{a, b}{\Intequiv} \times \equivrep{c, d}{\Intequiv} &= \equivrep{a c + b  d, a  d + b c}{\Intequiv}\\
+		\equivrep{a, b}{\Intequiv} \leq \equivrep{c, d}{\Intequiv} &\text{ yen lan mung yen }a + d \leq b + c
+	\end{align*}
+(Kaya kang lumrah, "$ab$" digunakake kanggo ngganti "$(a \times b)$", supaya aksioma luwih gampang diwaca.) Saiki kita kudu mesthekake yen definisi-definisi iki tumindak kaya kang \emph{kudune}. Njlentrehake tegese iki lan mriksa kabeh kanthi rinci rada ngrepotake; rinciane dipindhah menyang \olref[check]{sec}. Nanging asil ringkese: kabeh lumaku kanthi becik!
+
+Isih ana siji prakara pungkasan. Kita wis mbangun wilangan wutuh nganggo
+wilangan natural. Nanging iki ateges wilangan natural \emph{dudu
+wilangan wutuh kasebut dhewe}. Kita bakal mbahas teges filosofise
+ing \olref[ref]{sec}. Nanging saka sisih teknis, kita mbutuhake cara
+kanggo nganggep wilangan natural \emph{minangka} wilangan wutuh.
+Gagasane gampang: kanggo saben $n \in \Nat$, kita netepake
+$n_\Int = \equivrep{n, 0}{\Intequiv}$. Kita kudu mesthekake yen
+definisi iki tumindak kanthi becik, yaiku kanggo saben $m, n
+\in \Nat$
+\begin{align*}
+	(m + n)_\Int &= m_\Int + n_\Int\\
+	(m \times n)_\Int &= m_\Int \times n_\Int\\
+	m \leq n &\liff m_\Int \leq n_\Int
+\end{align*}
+Nanging kabeh iki cukup gampang. Upamane, kanggo nuduhake yen
+sarat kapindho lumaku, kita bisa nggunakake tumindake wilangan natural
+lan mikir kaya mangkene:
+%\begin{proof}
+%	Nganggo tumindake wilangan natural, cetha:
+	\begin{align*}
+%		(m + n)_\Int  = \equivrep{m + n, 0}{\Intequiv} = \equivrep{m + n, 0 + 0}{\Intequiv} = \equivrep{m, 0}{\Intequiv} + \equivrep{n, 0}{\Intequiv} = m_\Int + n_\Int\\
+		(m \times n)_\Int  &= \equivrep{m \times n, 0}{\Intequiv} \\
+		&= \equivrep{m \times n + 0 \times 0, m \times 0 + 0 \times n}{\Intequiv} \\
+		&= \equivrep{m, 0}{\Intequiv} \times \equivrep{n, 0}{\Intequiv} \\
+		&= m_\Int \times n_\Int
+	\end{align*}
+%\end{proof}
+Kita pasrahake minangka gladhen kanggo mesthekake yen rong sarat liyane lumaku.
+\begin{prob}
+	Tuduhna yen $(m + n)_\Int = m_\Int + n_\Int$ lan $m \leq n \liff m_\Int \leq n_\Int$, kanggo saben $m, n \in \Nat$.
+\end{prob}
+\end{document}

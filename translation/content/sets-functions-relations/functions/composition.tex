@@ -1,0 +1,67 @@
+% Part: sets-functions-relations
+% Chapter: functions
+% Section: composition
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{fun}{cmp}
+\olsection{Komposisi Fungsi}
+
+\begin{explain}
+\oliflabeldef{sfr:fun:inv:sec}{Ing \olref[inv]{sec} wis kita deleng yen
+invers~$f^{-1}$ saka !!a{bijection}~$f$ iku uga fungsi. Operasi
+liyane ing fungsi yaiku komposisi: k}{K}ita bisa netepake fungsi
+anyar kanthi nyusun rong fungsi, $f$ lan~$g$, yaiku kanthi ngetrapake
+$f$ dhisik banjur~$g$. Mesthi wae, iki mung bisa ditindakake yen
+jangkauan lan domaine trep, yaiku jangkauan saka~$f$ kudu subhimpunan
+saka domain~$g$. \oliflabeldef{sfr:rel:ops:sec}{Operasi ing
+fungsi iki salaras karo operasi produk relatif ing
+relasi saka \olref[rel][ops]{sec}.}{}
+
+Diagram bisa mbantu njlentrehake gagasan komposisi. Ing
+\olref{fig:composition}, kita nggambarake rong fungsi $f \colon A \to B$
+lan $g \colon B \to C$ sarta komposisine~$(\comp{f}{g})$. Fungsi
+$(\comp{f}{g}) \colon A \to C$ masangake saben !!{element} saka~$A$
+karo !!a{element} saka~$C$. Kanggo nemtokake !!{element} saka~$C$
+kang dadi pasangane !!a{element} saka $A$, carane mangkene: yen diwenehi masukan $x \in
+A$, fungsi $f$ ditrapake dhisik tumrap~$x$, kang ngasilake $f(x)
+= y \in B$, banjur fungsi $g$ ditrapake tumrap~$y$, kang ngasilake
+$g(f(x)) = g(y) = z \in C$.
+\begin{figure}
+  \olasset[2\olphotowidth]{assets/diagrams/composition.tikz}
+  \caption{Komposisi $g \circ f$ saka rong fungsi $f$ lan~$g$.}
+  \ollabel{fig:composition}
+\end{figure}
+\end{explain}
+
+\begin{defn}[Komposisi]
+Upamakna $f\colon A \to B$ lan $g\colon B \to C$ iku fungsi.
+\emph{Komposisi} saka $f$ karo~$g$ yaiku $\comp{f}{g} \colon A \to C$,
+kanthi $(\comp{f}{g})(x) = g(f(x))$.
+\end{defn}
+
+\begin{ex}
+Gatekna fungsi $f(x) = x + 1$ lan $g(x) = 2x$. Amarga
+$(\comp{f}{g})(x) = g(f(x))$, kanggo saben masukan~$x$ kita kudu njupuk
+paneruse dhisik, banjur asil mau dipingake loro. Dadi, komposisine
+ditetepake kanthi $(\comp{f}{g})(x) = 2(x+1)$.
+\end{ex}
+
+\begin{prob}
+Tuduhna yen $f \colon A \to B$ lan $g \colon B \to C$ loro-lorone
+!!{injective}, mula $\comp{f}{g}\colon A \to C$ iku !!{injective}.
+\end{prob}
+
+\begin{prob}
+Tuduhna yen $f \colon A \to B$ lan $g \colon B \to C$ loro-lorone
+!!{surjective}, mula $\comp{f}{g}\colon A \to C$ iku !!{surjective}.
+\end{prob}
+
+\begin{prob}
+Upamakna $f \colon A \to B$ lan $g \colon B \to C$. Tuduhna yen graf
+saka $\comp{f}{g}$ yaiku $R_f \mid R_g$.
+\end{prob}
+
+\end{document}

@@ -1,0 +1,110 @@
+% Part:sets-functions-relations
+% Chapter: size-of-sets
+% Section: equinumerous-sets
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{siz}{equ}
+
+\olsection{Padha Cacahe}
+
+Kita duwe gagasan intuisi babagan "gedhene" himpunan, kang lumaku kanthi
+becik kanggo himpunan winates. Nanging kepriye yen himpunane tanpa wates?
+Yen arep nemokake cara formal kanggo mbandhingake gedhene rong himpunan
+kang gedhene \emph{sembarang}, prayoga miwiti kanthi netepake kapan
+rong himpunan padha gedhene. Frege ngandharake:
+\begin{quote}
+  Yen sawijining pelayan arep mesthekake yen cacah peso kang ditata ing meja
+  persis padha karo cacah piring, dheweke ora perlu ngetung loro-lorone.
+  Cukup nyelehake siji peso ing sisih tengen saben piring, saengga saben
+  peso ing meja ana ing sisih tengen sawijining piring. Kanthi mangkono,
+  piring lan peso digandhengake siji karo sijine kanthi tunggal,
+  lan kanthi sesambungan papan kang padha. \citep[\S70]{Frege1884}
+\end{quote}
+Gagasan ing pethikan iki bisa diandharake nganggo definisi formal:
+
+\begin{defn}\ollabel{comparisondef}
+  $A$ \emph{padha cacahe} karo $B$, ditulis $\cardeq{A}{B}$,
+  yen lan mung yen ana !!a{bijection} $f \colon A \to B$.
+\end{defn}
+
+\begin{prop}\ollabel{equinumerosityisequi}
+Padha cacahe iku relasi ekuivalensi.
+\end{prop}
+
+\begin{proof}
+Kita kudu nuduhake yen relasi padha cacahe iku refleksif, simetris,
+lan transitif. Upamakna $A, B$, lan $C$ himpunan.
+
+\emph{Refleksif.} Pemetaan identitas $\Id{A} \colon A \to A$, kanthi
+$\Id{A} (x) = x$ kanggo kabeh $x \in A$, iku !!a{bijection}.
+Dadi $\cardeq{A}{A}$.
+
+\emph{Simetris.} Upamakna $\cardeq{A}{B}$, yaiku ana
+!!a{bijection} $f\colon A \to B$. Amarga $f$ iku !!{bijective},
+inverse $f^{-1}$ ana lan uga !!{bijective}. Mula,
+$f^{-1}\colon B \to A$ iku !!a{bijection}, dadi $\cardeq{B}{A}$.
+
+\emph{Transitif.} Upamakna $\cardeq{A}{B}$ lan $\cardeq{B}{C}$,
+yaiku ana !!{bijection}s $f\colon A \to B$ lan $g\colon B \to
+C$. Mula komposisi $\comp{f}{g}\colon A \to C$ iku !!{bijective},
+saengga $\cardeq{A}{C}$.
+\end{proof}
+
+\begin{prop}
+Yen $\cardeq{A}{B}$, mula $A$ iku !!{enumerable}
+yen lan mung yen $B$ uga mangkono.
+\end{prop}
+
+\begin{editorial}
+Bukti ing ngisor nggunakake \olref[enm]{defn:enumerable} yen
+\olref[enm]{sec} kalebu ing wacan, lan \olref[enm-alt]{defn:enumerable}
+yen ora.
+\end{editorial}
+
+\begin{proof}
+Upamakna $\cardeq{A}{B}$, mula ana !!{bijection} $f \colon A
+\to B$, lan upamakna $A$ iku !!{enumerable}.
+\oliflabeldef{sfr:siz:enm:defn:enumerable}{
+  Dadi $A = \emptyset$ utawa ana fungsi !!a{surjective}
+  $g\colon \PosInt \to A$. Yen $A = \emptyset$, mula $B = \emptyset$
+  uga; yen ora, ana !!a{element}~$y \in B$ nanging ora ana $x \in
+  A$ kanthi $g(x) = y$. Nanging yen $g\colon \PosInt \to A$
+  iku !!{surjective}, mula $\comp{g}{f} \colon \PosInt \to B$
+  iku !!{surjective}. Kanggo mriksa iki, upamakna $y \in B$. Amarga $f$
+  iku !!{surjective}, ana $x \in A$ saengga $f(x) = y$. Amarga
+  $g$ iku !!{surjective}, ana $n \in \PosInt$ saengga $g(n) =
+  x$. Mula,
+\[
+(\comp{g}{f})(n) = f(g(n)) = f(x) = y
+\]
+dadi $\comp{g}{f}$ iku !!{surjective}. Kita oleh yen $\comp{g}{f}$
+iku enumerasi saka~$B$, mula $B$~iku !!{enumerable}.}
+{
+  Dadi $A  = \emptyset$ utawa ana !!a{bijection}~$g$ kang
+  jangkauane $A$ lan domaine $\Nat$ utawa rerangken wiwitan
+  wilangan natural. Yen $A = \emptyset$, mula $B =
+  \emptyset$ uga; yen ora, ana~$y \in B$ nanging ora ana $x
+  \in A$ saengga $g(x) = y$. Mula upamakna ana
+  !!{bijection}~$g$ mau. Dadi $\comp{g}{f}$ iku !!a{bijection} kanthi
+  jangkauan~$B$ lan domain kang padha karo domaine~$g$, yaiku $\Nat$ utawa
+  perangan wiwitane, saengga $B$ iku !!{enumerable}.}
+
+Yen $B$ iku !!{enumerable}, kita bisa nuduhake yen $A$ iku !!{enumerable}
+kanthi mbaleni argumen nganggo !!{bijection} $f^{-1}\colon B \to A$
+kanggo ngganti~$f$.
+\end{proof}
+
+\begin{prob}
+Tuduhna yen $\cardeq{A}{C}$ lan $\cardeq{B}{D}$, sarta $A \cap B =
+C \cap D = \emptyset$, mula $\cardeq{A \cup B}{C \cup D}$.
+\end{prob}
+
+\begin{prob}
+Tuduhna yen $A$ tanpa wates lan !!{enumerable}, mula
+$\cardeq{A}{\Nat}$.
+\end{prob}
+
+\end{document}

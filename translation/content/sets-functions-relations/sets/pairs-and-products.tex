@@ -1,0 +1,143 @@
+% Part: sets-functions-relations
+% Chapter: sets
+% Section: pairs-and-products
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{set}{pai}
+\olsection{Pasangan, Tupel, Produk Kartesius}
+
+\begin{explain}
+Saka ekstensionalitas bisa didudut yen anggota himpunan ora
+duwe urutan. Mula, yen arep nggambarake urutan, kita nganggo
+\emph{pasangan urut} $\tuple{x, y}$. Ing pasangan tanpa urutan
+$\{x, y\}$, urutan ora wigati: $\{x, y\} = \{y, x\}$.
+Ing pasangan urut, urutan iku wigati: yen $x
+\neq y$, mula $\tuple{x, y} \neq \tuple{y, x}$.
+
+Kepriye kudune kita ngerteni pasangan urut ing teori himpunan?
+Kang wigati, kita arep njaga gagasan yen pasangan urut iku padha
+yen lan mung yen anggota kapisane padha lan anggota kapindhone
+uga padha, yaiku:
+\[
+  \tuple{a, b}= \tuple{c, d}\text{ yen lan mung yen }a = c \text{ lan }b=d.
+\]
+Pasangan urut bisa ditemtokake ing teori himpunan nganggo
+definisi Wiener--Kuratowski.
+\end{explain}
+
+\begin{defn}[Pasangan urut]\ollabel{wienerkuratowski}
+	$\tuple{a, b} = \{\{a\}, \{a, b\}\}$.
+\end{defn}
+
+\begin{prob}
+	Kanthi nggunakake \olref[sfr][set][pai]{wienerkuratowski},
+	buktekna yen $\tuple{a,b}= \tuple{c, d}$ yen lan mung yen
+	$a = c$ lan $b=d$.
+\end{prob}
+
+\begin{explain}
+Sawise netepake definisi pasangan urut, kita bisa nggunakake
+kanggo nemtokake himpunan liyane. Tuladhane, kadhangkala kita
+uga mbutuhake urutan luwih saka rong objek, kayata
+\emph{tupel telu} $\tuple{x, y, z}$,
+\emph{tupel papat} $\tuple{x, y, z, u}$, lan sateruse.
+Tupel telu bisa dianggep pasangan urut khusus kang anggota
+kapisane dhewe arupa pasangan urut:
+$\tuple{x, y, z}$ yaiku $\tuple{\tuple{x, y},z}$.
+Semono uga kanggo tupel papat: $\tuple{x,y,z,u}$ yaiku
+$\tuple{\tuple{\tuple{x,y},z},u}$, lan sateruse.
+Kanthi umum, kita nyebut \emph{tupel-$n$ urut}
+$\tuple{x_1, \dots, x_n}$.
+
+Sawetara himpunan pasangan urut, utawa tupel-$n$ urut liyane,
+bakal migunani.
+\end{explain}
+
+\begin{defn}[Produk Kartesius]
+Kanggo himpunan $A$ lan $B$, \emph{produk Kartesius}
+$A \times B$ ditemtokake kanthi
+\[
+  A \times B = \Setabs{\tuple{x, y}}{x \in A \text{ lan } y \in B}.
+\]
+\end{defn}
+
+\begin{ex}
+Yen $A = \{0, 1\}$ lan $B = \{1, a, b\}$, mula produke yaiku
+\[
+A \times B = \{ \tuple{0, 1}, \tuple{0, a}, \tuple{0, b},
+    \tuple{1, 1}, \tuple{1, a}, \tuple{1, b} \}.
+\]
+\end{ex}
+
+\begin{ex}
+Yen $A$ iku himpunan, produk $A$ karo awake dhewe,
+$A \times A$, uga ditulis~$A^2$. Iki himpunan
+\emph{kabeh} pasangan $\tuple{x, y}$ kanthi $x, y \in A$.
+Himpunan kabeh tupel telu $\tuple{x, y, z}$ yaiku $A^3$,
+lan sateruse. Kita bisa menehi definisi rekursif:
+\begin{align*}
+  A^1 & = A\\
+  A^{k+1} & = A^k \times A
+\end{align*}
+\end{ex}
+
+\begin{prob}
+Dhaptarna kabeh !!{element}s saka $\{1, 2, 3\}^3$.
+\end{prob}
+
+\begin{prop}\ollabel{cardnmprod}
+Yen $A$ duwe $n$ !!{element}s lan $B$ duwe $m$ !!{element}s,
+mula $A\times B$ duwe $n\cdot m$ anggota.
+\end{prop}
+
+\begin{proof}
+Kanggo saben !!{element}~$x$ ing~$A$, ana $m$ !!{element}s
+awujud $\tuple{x, y} \in A \times B$.
+Tetepna $B_x = \Setabs{\tuple{x, y}}{y\in B}$.
+Amarga saben $x_1 \neq x_2$ ndadekake
+$\tuple{x_1, y} \neq\tuple{x_2, y}$, mula
+$B_{x_1} \cap B_{x_2} = \emptyset$.
+Nanging yen $A = \{x_1,\dots, x_n\}$, mula
+$A \times B = B_{x_1} \cup \dots \cup B_{x_n}$,
+saengga duwe $n\cdot m$ !!{element}s.
+
+Kanggo nggambarake iki, tatanen !!{element}s saka~$A \times B$
+ing larik lan kolom:
+\[
+\begin{array}{rcccc}
+  B_{x_1} = & \{\tuple{x_1, y_1} & \tuple{x_1, y_2} & \dots & \tuple{x_1, y_m}\}\\
+  B_{x_2} = & \{\tuple{x_2, y_1} & \tuple{x_2, y_2} & \dots & \tuple{x_2, y_m}\}\\
+  \vdots & & \vdots\\
+  B_{x_n} = & \{\tuple{x_n, y_1} & \tuple{x_n, y_2} & \dots & \tuple{x_n, y_m}\}
+\end{array}
+\]
+Amarga kabeh $x_i$ beda-beda lan kabeh $y_j$ beda-beda,
+ora ana rong pasangan ing tatanan iki kang padha,
+lan cacahe kabeh pasangan yaiku $n\cdot m$.
+\end{proof}
+
+\begin{prob}
+Tuduhna, kanthi induksi tumrap~$k$, yen kanggo kabeh $k \ge 1$,
+yen $A$ duwe $n$ !!{element}s, mula $A^k$ duwe
+$n^k$ !!{element}s.
+\end{prob}
+
+\begin{ex}
+Yen $A$ iku himpunan, \emph{tembung} ing~$A$ yaiku saben
+urutan !!{element}s saka~$A$. Urutan bisa dianggep
+tupel-$n$ kang ngemot !!{element}s saka~$A$.
+Tuladhane, yen $A = \{a, b, c\}$, urutan "$bac$" bisa
+dianggep minangka tupel telu~$\tuple{b, a, c}$.
+Tembung, yaiku urutan lambang, wigati banget ing ilmu komputer.
+Miturut konvensi, !!{element}s saka~$A$ dianggep urutan
+dawane~$1$, lan $\emptyset$ minangka urutan dawane~$0$.
+Mula himpunan \emph{kabeh} tembung ing~$A$ yaiku
+\[
+A^* = \{\emptyset\} \cup A \cup A^2 \cup A^3 \cup \dots
+\]
+\end{ex}
+
+\end{document}
