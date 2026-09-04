@@ -1,0 +1,106 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{infinite}{card-sb}
+
+\olsection{Lampiran: Mbuktekake Schr\"oder--Bernstein}
+
+Sadurunge ninggalake teori himpunan naif, ana siji bukti naif
+(nanging canggih!) pungkasan kang kudu digatekake. Iki bukti Teorema
+Schr\"oder--Bernstein (\olref[sfr][siz][sb]{thm:schroder-bernstein}):
+yen $\cardle{A}{B}$ lan $\cardle{B}{A}$ mula $\cardeq{A}{B}$; yaiku,
+yen ana !!{injection}s $f \colon A \to B$ lan $g \colon B \to A$, mula
+ana !!a{bijection} $h \colon A \to B$.
+
+Ing bab iki, kita manut gagasan Dedekind ngenani \emph{tutupan}.
+Dedekind pancen menehi bukti Schr\"oder--Bernstein kang endah kanthi
+gagasan iki, lan bukti iku bakal diandharake ing kene. Bukti iki manut
+raket marang \citet[kaca~157--8]{Potter2004}, yen pamaca kepengin cara
+kang rada beda nanging pokoke padha. Nelusuri Google sethithik uga
+bakal nggawe pamaca yakin yen iki teorema---rada kaya ora rasionale
+$\sqrt{2}$---kang nduweni \emph{akeh} bukti menarik lan beda.
+
+Kanthi notasi kang padha karo
+\olref[sfr][infinite][dedekind]{Closure}, temtokna
+\[
+\Closureofunder{f}{B} = \bigcap \Setabs{X}{B \subseteq X
+\text{ lan $X$ iku $f$-katutup}}
+\]
+kanggo saben himpunan $B$ lan fungsi~$f$. Kanthi definisi iki,
+$\Closureofunder{f}{B}$ iku himpunan $f$-katutup paling cilik kang
+ngemot~$B$, ing teges iki:
+
+\begin{lem}\ollabel{Closureprops}
+	Kanggo saben fungsi $f$, lan saben $B$:
+	\begin{enumerate}
+		\item\ollabel{Closurehaselem} $B \subseteq \Closureofunder{f}{B}$; lan
+		\item\ollabel{Closureclosed} $\Closureofunder{f}{B}$ iku $f$-katutup; lan
+		\item\ollabel{Closuresmallest} yen $X$ iku $f$-katutup lan $B
+		\subseteq X$, mula $\Closureofunder{f}{B} \subseteq X$.
+	\end{enumerate}
+\end{lem}
+
+\begin{proof}
+Persis kaya ing \olref[sfr][infinite][dedekind]{closureproperties}.
+\end{proof}
+
+Kita mbutuhake siji kasunyatan pungkasan kanggo nggayuh
+Schr\"oder--Bernstein:
+
+\begin{prop}\ollabel{sbhelper}
+Yen $A \subseteq B \subseteq C$ lan $A \approx C$, mula $\cardeq{\cardeq{A}{B}}{C}$.
+\end{prop}
+
+\begin{proof}
+Yen diwenehi !!a{bijection} $f \colon C \to A$, jupuken $F =
+\Closureofunder{f}{C \setminus B}$ lan temtokna fungsi $g$ kanthi
+domain $C$ kaya mangkene:
+\[
+	g(x) =
+	\begin{cases}
+			f(x) &\text{yen $x \in F$}\\
+			x & \text{yen ora}
+	\end{cases}
+\]
+Kita bakal nuduhake yen $g$ iku !!a{bijection} saka $C \to B$. Saka
+kene bakal ndherek yen $\comp{f^{-1}}{g} \colon A \to B$ iku
+!!a{bijection}, lan bukti rampung.
+
+Kapisan, kita kandha yen $x \in F$ nanging $y\notin F$, mula $g(x) \neq
+g(y)$. Kanggo bukti kanthi kontradiksi, upamakna kosok baline, saengga
+$y = g(y) = g(x) = f(x)$. Amarga $x \in F$ lan $F$ iku $f$-katutup
+miturut \olref{Closureprops}, kita duwe $y = f(x) \in F$, sawijining
+kontradiksi.
+
+Saiki upamakna $g(x) = g(y)$. Miturut andharan ing ndhuwur, $x \in F$
+yen lan mung yen $y \in F$. Yen $x, y \in F$, mula $f(x) = g (x) =
+g(y) = f(y)$, dadi $x = y$ amarga $f$ iku !!a{bijection}. Yen $x, y
+\notin F$, mula $x = g(x) = g(y) = y$. Dadi $g$ iku !!a{injection}.
+
+Isih kudu dituduhake yen $\ran{g} = B$. Dadi, jupuken $x \in B
+\subseteq C$. Yen $x \notin F$, mula $g(x) = x$. Yen $x \in F$,
+mula $x = f(y)$ kanggo sawatara $y \in F$, amarga yen ora,
+$F \setminus \{x\}$ bakal dadi $f$-katutup lan ngemot $C\setminus B$,
+kang mokal miturut \olref{Closureprops}; saiki $g(y) = f(y) = x$.
+\end{proof}
+
+Pungkasane, iki bukti asil utama. Elinga yen kanggo fungsi $h$ lan
+himpunan $D$, kita netepake $\funimage{h}{D} = \Setabs{h(x)}{x
+\in D}$.
+
+\begin{proof}[Bukti Schr\"oder--Bernstein] Jupuken $f \colon A \to B$
+lan $g \colon B \to A$ minangka !!{injection}s. Amarga
+$\funimage{f}{A} \subseteq B$, kita duwe
+$\funimage{g}{\funimage{f}{A}} \subseteq g[B] \subseteq A$. Uga,
+$\comp{f}{g} \colon A \to \funimage{g}{\funimage{f}{A}}$ iku
+!!{injection} amarga $g$ lan $f$ kalorone injeksi; lan pancen
+$\comp{f}{g}$ iku !!a{bijection}, mung saka cara kita nemtokake
+kodomaine. Dadi $\cardeq{\funimage{g}{\funimage{f}{A}}}{A}$, lan mula
+miturut \olref{sbhelper} ana !!a{bijection} $h \colon A \to
+\funimage{g}{B}$. Kajaba iku, $g^{-1}$ iku !!a{bijection}
+$\funimage{g}{B} \to B$. Dadi $\comp{h}{g^{-1}} \colon A \to B$ iku
+!!a{bijection}.
+\end{proof}
+
+\end{document}

@@ -1,0 +1,83 @@
+% Part: sets-functions-relations
+% Chapter: infinite
+% Section: dedekind-induction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{infinite}{induction}
+\olsection[Induksi Aritmetis]{Aljabar Dedekind lan Induksi Aritmetis}
+
+Bab kang wigati saiki, aljabar Dedekind---malah, \emph{saben} aljabar
+Dedekind---bisa dadi sulih kanggo wilangan natural. Iki amarga dudutan
+prasaja iki:
+
+\begin{thm}[Induksi aritmetis]\ollabel{thm:dedinfiniteinduction}
+Upamakna $N, s, o$ mbentuk aljabar Dedekind. Banjur kanggo saben
+himpunan $X$:
+	\begin{center}
+		yen $o \in X$ lan $(\forall {n} \in N \cap X){s}({n}) \in X$, {mula} $N \subseteq X$.
+	\end{center}
+\end{thm}
+
+\begin{proof}
+Miturut definisi aljabar Dedekind, $N = \closureofunder{s}{o}$.
+Saiki yen ${o} \in X$ lan $(\forall {n} \in N)(n \in X \lif
+{s}({n}) \in X)$, mula $N = \closureofunder{s}{o} \subseteq X$.
+\end{proof}
+
+Amarga induksi iku ciri mligi wilangan natural, pokoke mangkene. Saka
+saben himpunan kang tanpa wates miturut Dedekind, kita bisa mbentuk
+aljabar Dedekind lan nggunakake aljabar iku minangka sulih kanggo
+wilangan natural.
+
+Pancen, \olref{thm:dedinfiniteinduction} ngrumusake induksi nganggo
+istilah \emph{teori himpunan}. Nanging asas iki gampang ditulis nganggo
+istilah kang bisa uga luwih kulina:
+
+\begin{cor}\ollabel{natinductionschema}
+Upamakna $N, s, o$ mbentuk aljabar Dedekind. Banjur kanggo saben formula
+$\phi(x)$, kang bisa duwe paramèter:
+\begin{center}
+	yen $\phi(o)$ lan $(\forall {n} \in N)(\phi(n)\lif
+	\phi({s}({n})))$, {mula} $(\forall n \in N)\phi(n)$
+\end{center}
+\end{cor}
+
+\begin{proof}
+Jupuken $X = \Setabs{n \in N}{\phi(n)}$, banjur gunakna
+\olref{thm:dedinfiniteinduction}
+\end{proof}
+
+Ing asil iki, kita nyebut formula kang ``duwe paramèter''. Tegese,
+kanthi kasar, kanggo saben obyek $c_1, \ldots, c_k$, kita bisa nggarap
+$\phi(x, c_1, \ldots, c_k)$. Kanthi luwih pas, asil kasebut bisa
+diandharake tanpa nyebut ``paramèter'' kaya mangkene. Kanggo saben
+formula $\phi(x, v_1, \ldots, v_k)$, kang kabeh variabel bebane wis
+dituduhake, kita duwe:
+	\begin{align*}
+			\forall v_1 \ldots \forall v_k((&\phi(o, v_1,\ldots, v_k) \land {}\\
+			&	(\forall x \in N)(\phi(x,v_1, \ldots, v_k) \lif \phi(s(x), v_1,\ldots, v_k))) \lif {}\\
+			&\hspace{3em} (\forall x \in N)\phi(x, v_1,\ldots, v_k))
+	\end{align*}
+Cetha yen ukara ``duwe paramèter'' ndadekake bab iki luwih gampang
+diwaca. (Ing \olref[sth][][]{part}, piranti iki bakal kerep banget
+digunakake.)
+
+Bali menyang aljabar Dedekind: saka saben aljabar Dedekind, kita uga
+bisa nemtokake fungsi aritmetis lumrah kanggo panggunggungan,
+ping-pingan, lan eksponensiasi. Nanging iki ora prasaja lan mbutuhake
+teknik \emph{definisi rekursif}. Teknik iku bakal ditepungake lan
+dibenerake adoh mengko ing konteks kang luwih umum. (Pamaca kang
+seneng bisa bali menyang iki sawise \olref[sth][ord-arithmetic][]{chap},
+utawa maca cara liyane, kayata \citealt[kaca~95--8]{Potter2004}.) Nanging,
+yen $N, s, o$ mbentuk aljabar Dedekind, pungkasane kita bakal bisa
+netepake:
+\begin{align*}
+	{a} + {o} &= {a} & & & {a} \times {o} &= {o} & & & {a}^{o} &= s(o)\\
+{a} + {s}({b}) &= {s}({a}+{b}) &&& {a} \times {s}({b}) &= ({a}\times {b}) + {a}  & & & {a}^{{s}({b})} &= {a}^{b} \times {a}
+\end{align*}
+lan nuduhake yen fungsi-fungsi iki tumindak kaya kang dikarepake.
+
+\end{document}

@@ -1,11 +1,11 @@
 {
   "schema": "jv-batch-qa/1",
-  "utc": "2026-09-04T21:21:48.628844+00:00",
-  "checked_units": 48,
-  "structural_pass_units": 48,
+  "utc": "2026-09-04T22:17:01.250086+00:00",
+  "checked_units": 54,
+  "structural_pass_units": 54,
   "total_units": 722,
-  "segments": 829,
-  "translated_segments": 569,
+  "segments": 910,
+  "translated_segments": 627,
   "units": [
     {
       "unit_id": "OLP-0001",
@@ -1062,10 +1062,142 @@
       "source_math_count": 130,
       "target_math_count": 130,
       "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0049",
+      "source_path": "content/sets-functions-relations/infinite/infinite.tex",
+      "source_sha256": "6ea6bff5ac4f128338bfa6b1cb5b7c8bed6121210257e06f6aaa7b27d5cc4bbb",
+      "translation_sha256": "590cc7cc70015e6d4e4af4872c81d0a5f74665eae7020dcc29ec23a8bb3ac627",
+      "translation_bytes": 460,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 7,
+      "target_paragraphs": 7,
+      "source_math_count": 0,
+      "target_math_count": 0,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0050",
+      "source_path": "content/sets-functions-relations/infinite/hilberts-hotel.tex",
+      "source_sha256": "e9a73caefcc496d7074251a3ac15f66fd577415bd3a531dd23f79375502ee0ed",
+      "translation_sha256": "b225d2e3c8e0035355aa3b054fb49e899d796c7f135a4ecb2b1c8f70ae41c212",
+      "translation_bytes": 2539,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 7,
+      "target_paragraphs": 7,
+      "source_math_count": 12,
+      "target_math_count": 12,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0051",
+      "source_path": "content/sets-functions-relations/infinite/dedekind-algebra.tex",
+      "source_sha256": "9cee716bb8cb3bfd507ed5c17bbd4477d05995af6f8f8d411087793bdaa86036",
+      "translation_sha256": "567111ed52d840a511a84108fd9eccd4ea6f6c24804125bc5e61fa55984329f3",
+      "translation_bytes": 5211,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 20,
+      "target_paragraphs": 20,
+      "source_math_count": 83,
+      "target_math_count": 83,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0052",
+      "source_path": "content/sets-functions-relations/infinite/dedekind-induction.tex",
+      "source_sha256": "ea5f6c80d70abca6f5598de3e221c2f60524c40cbf533ae8a5336d5bb7186537",
+      "translation_sha256": "1d72a74dd465bbbb306f39a77e039bf1f5fedd9d5b462c817cacc37fb5746dac",
+      "translation_bytes": 3354,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 14,
+      "target_paragraphs": 14,
+      "source_math_count": 21,
+      "target_math_count": 21,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0053",
+      "source_path": "content/sets-functions-relations/infinite/dedekinds-proof.tex",
+      "source_sha256": "a7c41cebb6b7b0e2bed0d187777be4ba69fecdb17baa070975a0ca5c5c55b8bf",
+      "translation_sha256": "e211e01cd1a4f72c118e72aa5b50eada3ccdb25e74476c17f70990d75c968453",
+      "translation_bytes": 5764,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 15,
+      "target_paragraphs": 15,
+      "source_math_count": 13,
+      "target_math_count": 13,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0054",
+      "source_path": "content/sets-functions-relations/infinite/card-sb.tex",
+      "source_sha256": "88534a3f2be736a704ab31343e45933edb9712fa5b4411eb102c0f4a12d656e9",
+      "translation_sha256": "ca8a09ce5d3ef2dab1bfc73cf9d7248cf5cf39d10bbed167ec78eba8244e96f4",
+      "translation_bytes": 4246,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 18,
+      "target_paragraphs": 18,
+      "source_math_count": 78,
+      "target_math_count": 78,
+      "status": "structural_pass"
     }
   ],
   "failures": 0,
-  "semantic_reviewed_units": 48,
+  "semantic_reviewed_units": 54,
   "build": "see BUILD_SETS.json",
   "release_ready": false
 }

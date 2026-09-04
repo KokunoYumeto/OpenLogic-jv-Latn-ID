@@ -1,0 +1,131 @@
+% Part: sets-functions-relations
+% Chapter: infinite
+% Section: dedekind
+%
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{infinite}{dedekind}
+\olsection{Aljabar Dedekind}
+
+Kita ora mung kepengin wilangan natural iku tanpa wates; kita uga
+kepengin wilangan mau nduweni sipat-sipat (aljabaris) tartamtu: kudu
+tumindak kanthi becik ing panggunggungan, ping-pingan, lan sapiturute.
+
+Gagasan Dedekind yaiku nganggep gagasan \emph{fungsi panerus} minangka
+dhasar, banjur menehi ciri marang wilangan liwat sipat-sipat iki:
+\begin{enumerate}
+	\item Ana wilangan, $0$, kang dudu panerus saka wilangan apa wae
+	\\yaiku, $0 \notin \ran{s}$
+	\\yaiku, $\forall x\ s(x) \neq 0$
+	\item Wilangan-wilangan kang beda nduweni panerus kang beda
+	\\yaiku, $s$ iku !!a{injection}
+	\\yaiku, $\forall x \forall y (s(x) = s(y) \lif x = y)$
+	\item\ollabel{repeatedapplication} Saben wilangan dipikolehi saka
+	$0$ kanthi ngetrapake fungsi panerus bola-bali.
+\end{enumerate}
+Rong sarat kapisan gampang ditangani nganggo logika tataran kapisan
+(delengen ing ndhuwur). Nanging \olref{repeatedapplication} ora bisa
+ditangani mung nganggo logika tataran kapisan. Pamawas anyar Dedekind
+yaiku ngrumusake maneh sarat \olref{repeatedapplication} kanthi teori
+himpunan kaya mangkene:
+\begin{enumerate}
+	\item[3$'$.] Wilangan natural iku himpunan paling cilik kang
+	\emph{katutup marang fungsi panerus}: yaiku, yen $s$ ditrapake
+	marang sembarang !!{element} saka himpunan iku, kita oleh
+	!!{element} liyane saka himpunan iku.
+\end{enumerate}
+Nanging iki kudu diandharake alon-alon.
+
+\begin{defn}\ollabel{Closure}
+	Kanggo saben fungsi $f$, himpunan $X$ iku $f$-\emph{katutup}
+	{yen lan mung yen} $(\forall x \in X)f(x) \in X$. Saiki, kanggo
+	saben $o$, temtokna:
+	$$\closureofunder{f}{o} = \bigcap\Setabs{X}{o \in X\text{ lan }X
+	\text{ iku $f$-katutup}}$$
+\end{defn}
+
+Dadi $\closureofunder{f}{o}$ iku irisan kabeh himpunan $f$-katutup
+kang duwe $o$ minangka !!a{element}. Miturut pangira-ira, mula,
+$\closureofunder{f}{o}$ iku himpunan $f$-katutup \emph{paling cilik}
+kang duwe $o$ minangka !!a{element}. Asil sabanjure iki njlentrehake
+gagasan mau kanthi pas;
+\begin{lem}\ollabel{closureproperties}
+	Kanggo saben fungsi $f$ lan saben $o \in A$:
+	\begin{enumerate}
+		\item\ollabel{closurehaselem} $o \in \closureofunder{f}{o}$; lan
+		\item\ollabel{closureclosed} $\closureofunder{f}{o}$ iku $f$-katutup; lan
+		\item\ollabel{closuresmallest} yen $X$ iku $f$-katutup lan $o \in
+		X$, mula $\closureofunder{f}{o} \subseteq X$
+	\end{enumerate}
+\end{lem}
+
+\begin{proof}
+Gatekna yen paling ora ana siji himpunan $f$-katutup kang duwe $o$
+minangka !!a{element}, yaiku $\ran{f}\cup \{o\}$. Mula
+$\closureofunder{f}{o}$, yaiku irisan saka \emph{kabeh} himpunan kaya
+mangkono, ana. Saiki kita kudu mriksa
+\olref{closurehaselem}--\olref{closuresmallest}.
+
+Tumrap \olref{closurehaselem}: $o \in \closureofunder{f}{o}$ amarga
+iki irisan saka himpunan-himpunan kang kabeh duwe $o$ minangka
+!!a{element}.
+
+Tumrap \olref{closureclosed}: upamakna $x \in \closureofunder{f}{o}$.
+Dadi yen $o \in X$ lan $X$ iku $f$-katutup, mula $x \in X$, lan saiki
+$f(x) \in X$ amarga $X$ iku $f$-katutup. Mula
+$f(x) \in \closureofunder{f}{o}$.
+
+Tumrap \olref{closuresmallest}: kanthi umum, yen $X \in C$ mula
+$\bigcap C \subseteq X$.
+\end{proof}
+
+Kanthi iki, kita bisa kandha:
+
+\begin{defn}
+\emph{Aljabar Dedekind} yaiku himpunan $A$ bebarengan karo fungsi $f
+\colon A \to A$ lan sawatara $o \in A$ saengga:
+	\begin{enumerate}
+		\item \ollabel{ded:proper} $o \notin \ran{f}$
+		\item \ollabel{ded:injection} $f$ iku !!a{injection}
+		\item \ollabel{ded:closure} $A = \closureofunder{f}{o}$
+	\end{enumerate}
+\end{defn}
+
+Amarga $A = \closureofunder{f}{o}$, asil sadurunge ngandhani yen $A$
+iku himpunan $f$-katutup paling cilik kang duwe $o$ minangka
+!!a{element}. Cetha yen aljabar Dedekind iku tanpa wates miturut
+Dedekind; gatekna klausa \olref{ded:proper} lan
+\olref{ded:injection} ing definisi. Nanging kasunyatan kang luwih narik
+kawigaten yaiku saben himpunan kang tanpa wates miturut Dedekind bisa
+didadekake aljabar Dedekind.
+
+\begin{thm}\ollabel{thm:DedekindInfiniteAlgebra}
+Yen ana himpunan kang tanpa wates miturut Dedekind, mula ana aljabar
+Dedekind.
+\end{thm}
+
+\begin{proof}
+Jupuken $D$ tanpa wates miturut Dedekind. Dadi ana injeksi $g \colon D \to
+D$ lan unsur $o  \in D \setminus \ran{g}$. Saiki jupuken $A =
+\closureofunder{g}{o}$; miturut \olref{closureproperties}, $A$ ana lan
+$o \in A$. Jupuken $f = \funrestrictionto{g}{A}$. Kita bakal nuduhake
+yen $A, f, o$ mbentuk aljabar Dedekind.
+
+Tumrap \olref{ded:proper}: $o \notin \ran{g}$ lan $\ran{f}
+\subseteq \ran{g}$, mula $o\notin \ran{f}$.
+
+Tumrap \olref{ded:injection}: $g$ iku injeksi ing $D$; mula $f
+\subseteq g$ uga mesthi injeksi.
+
+Tumrap \olref{ded:closure}: miturut \olref{closureproperties}, $A$
+iku $g$-katutup; luwih-luwih, $A$ iku $f$-katutup. Mula
+$\closureofunder{f}{o} \subseteq A$ miturut \olref{closureproperties}.
+Amarga $\closureofunder{f}{o}$ uga $f$-katutup lan $f =
+\funrestrictionto{g}{A}$, mula $\closureofunder{f}{o}$ iku
+$g$-katutup. Dadi $A \subseteq \closureofunder{f}{o}$ miturut
+\olref{closureproperties}.
+\end{proof}
+
+\end{document}

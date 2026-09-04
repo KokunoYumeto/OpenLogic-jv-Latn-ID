@@ -50,6 +50,21 @@ for u in units:
     if u['unit_id']=='OLP-0037':
         assert protected_source.count(r'\citet[pp.~165--6]{Potter2004}')==1
         protected_source=protected_source.replace(r'\citet[pp.~165--6]{Potter2004}',r'\citet[kaca~165--6]{Potter2004}')
+    if u['unit_id']=='OLP-0052':
+        assert protected_source.count(r'\citealt[pp.~95--8]{Potter2004}')==1
+        protected_source=protected_source.replace(r'\citealt[pp.~95--8]{Potter2004}',r'\citealt[kaca~95--8]{Potter2004}')
+    if u['unit_id']=='OLP-0053':
+        locator_translations={
+            r'\citeyear[Theorems'+'\n'+r'132--3]{Dedekind1888}':r'\citeyear[Teorema'+'\n'+r'132--3]{Dedekind1888}',
+            r'\citep[preface]{Dedekind1888}':r'\citep[pambuka]{Dedekind1888}',
+            r'\citet[p.~23]{Potter2004}':r'\citet[kaca~23]{Potter2004}',
+        }
+        for english,javanese in locator_translations.items():
+            assert protected_source.count(english)==1
+            protected_source=protected_source.replace(english,javanese)
+    if u['unit_id']=='OLP-0054':
+        assert protected_source.count(r'\citet[pp.~157--8]{Potter2004}')==1
+        protected_source=protected_source.replace(r'\citet[pp.~157--8]{Potter2004}',r'\citet[kaca~157--8]{Potter2004}')
     ac=chunks(a);tc=chunks(t)
     math_source=a
     # OLFUN-003: the frozen prose switches from input n to x. The target
@@ -170,6 +185,12 @@ for u in units:
     if u['unit_id']=='OLP-0041':
         assert command_source.count(r'na\"ive')==1
         command_source=command_source.replace(r'na\"ive','naive')
+    if u['unit_id']=='OLP-0053':
+        assert command_source.count(r'na\"iv')==4
+        command_source=command_source.replace(r'na\"iv','naiv')
+    if u['unit_id']=='OLP-0054':
+        assert command_source.count(r'na\"iv')==2
+        command_source=command_source.replace(r'na\"iv','naiv')
     checks['all_command_sequence']=re.findall(r'\\[A-Za-z@]+|\\[^A-Za-z@]',command_source)==re.findall(r'\\[A-Za-z@]+|\\[^A-Za-z@]',t)
     row={'unit_id':u['unit_id'],'source_path':u['source_path'],'source_sha256':sha(b),'translation_sha256':sha(tb),'translation_bytes':len(tb),'checks':checks,'source_paragraphs':len(ac),'target_paragraphs':len(tc),'source_math_count':len(math(a)),'target_math_count':len(math(t)),'status':'structural_pass' if all(checks.values()) else 'defect'}
     rows.append(row)
@@ -203,6 +224,11 @@ for u in units:
             if 'rambang' in tm[0].lower():consulted+=['JV-P018']
             if 'gunggung' in tm[0].lower():consulted+=['JV-P017']
         if not same and u['unit_id'] in ['OLP-0045','OLP-0046','OLP-0047','OLP-0048'] and 'potongan' in tm[0].lower():consulted+=['JV-P021','JV-P006']
+        if not same and u['unit_id'] in ['OLP-0049','OLP-0050','OLP-0051','OLP-0052','OLP-0053','OLP-0054']:
+            if 'wilangan' in tm[0].lower():consulted+=['JV-P013']
+            if 'cacah' in tm[0].lower():consulted+=['JV-P014']
+            if 'ping-pingan' in tm[0].lower():consulted+=['JV-P015']
+            if 'jinis' in tm[0].lower():consulted+=['JV-P020']
         consulted=list(dict.fromkeys(consulted))
         seg={'segment_id':u['unit_id']+f'-P{i:03d}','unit_id':u['unit_id'],'source_path':u['source_path'],'source_line_start':a.count('\n',0,am.start())+1,'source_line_end':a.count('\n',0,am.end())+1,'translation_line_start':t.count('\n',0,tm.start())+1,'translation_line_end':t.count('\n',0,tm.end())+1,'source_segment_sha256':sha(am[0].encode()),'translation_segment_sha256':sha(tm[0].encode()),'classification':'unchanged_structural_or_formal' if same else 'translated','passage_ids':consulted,'passage_hashes':{p:passages[p]['excerpt_sha256'] for p in consulted},'consultation_note':'Source identifiers, imports, environments or nonlinguistic structure; no translated prose.' if same else 'Consulted during English-to-Javanese authorship for register, spelling and listed lexical decisions; canon is not mathematical authority.','semantic_review':'pending'}
         seg['segment_hash_representation']='UTF-8 with LF-normalized line endings; whole-file source and translation hashes remain raw-byte hashes'

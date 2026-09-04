@@ -1,8 +1,8 @@
 {
   "schema": "jv-semantic-review/1",
   "reviewer": "Codex, same author; no independent or human review claimed",
-  "date": "2026-09-04",
-  "scope": "All 569 translated paragraph blocks in OLP-0001 through OLP-0048; 260 unchanged formal/structural blocks classified separately. OLSIZ-001 through OLSIZ-010 are adopted in the affected Size-of-Sets targets; the proposed OLSIZ-011 was retracted after exact-byte inspection. Paragraph analysis normalizes CRLF/LF; exact full-file hashes remain raw-byte hashes.",
+  "date": "2026-09-05",
+  "scope": "All 627 translated paragraph blocks in OLP-0001 through OLP-0054; 283 unchanged formal/structural blocks classified separately. OLSIZ-001 through OLSIZ-010 remain adopted in the affected Size-of-Sets targets; the proposed OLSIZ-011 remains retracted after exact-byte inspection. Paragraph analysis normalizes CRLF/LF; exact full-file hashes remain raw-byte hashes.",
   "method": "Direct source-to-target reading, quantifier/negation/biconditional checks, mathematical-context checks, and selected reverse paraphrases. Automated structure checks are separate.",
   "unit_reviews": [
     {
@@ -418,6 +418,54 @@
       "reverse_sample": "Model a real by a Cauchy sequence of rationals, identifying two sequences when their pointwise difference tends to zero. Constant sequences embed rationals; pointwise arithmetic and eventual positivity define the ordered quotient field. For completeness, rational upper and lower bounds are bisected into decreasing and increasing Cauchy sequences whose difference tends to zero; their common class is an upper bound and every smaller class fails to be one.",
       "source_sha256": "35d0a39913340eadcab7fb9d7742b56aef0d0f29868cd65eeca9dc53694e8ac2",
       "translation_sha256": "22572f5a494ea558fc9cc0cc9b14e0c19a7b509d1cfd64e4d73fcf5a8826e5c5"
+    },
+    {
+      "unit_id": "OLP-0049",
+      "status": "pass",
+      "checks": "Compared the chapter title, source attribution and all five imports directly. The wrapper introduces infinite sets and imports each section exactly once; no reader content is duplicated or omitted.",
+      "reverse_sample": "This chapter on infinite sets comes from Tim Button's Open Set Theory and consists of Hilbert's Hotel, Dedekind algebras, induction, Dedekind's purported existence proof, and the Schröder--Bernstein appendix.",
+      "source_sha256": "6ea6bff5ac4f128338bfa6b1cb5b7c8bed6121210257e06f6aaa7b27d5cc4bbb",
+      "translation_sha256": "590cc7cc70015e6d4e4af4872c81d0a5f74665eae7020dcc29ec23a8bb3ac627"
+    },
+    {
+      "unit_id": "OLP-0050",
+      "status": "pass",
+      "checks": "Compared all seven paragraph blocks, the full historical quotation, room-shift diagram, publication locator and definition. Finite versus infinite room counts, exactly one guest per room, the shift to the next room, the proper-subset condition, injection direction, omitted point o and range exclusion are all retained. The translated quotation remains explicitly identified as the book's translation.",
+      "reverse_sample": "Hilbert's hotel frees room 1 by moving each current guest from room n to room n+1. A set A is Dedekind infinite exactly when A injects into a proper subset of itself, equivalently when an injective self-map misses some o in A.",
+      "source_sha256": "e9a73caefcc496d7074251a3ac15f66fd577415bd3a531dd23f79375502ee0ed",
+      "translation_sha256": "b225d2e3c8e0035355aa3b054fb49e899d796c7f135a4ecb2b1c8f70ae41c212"
+    },
+    {
+      "unit_id": "OLP-0051",
+      "status": "pass",
+      "checks": "Compared all twenty paragraph blocks: the three successor properties; first-order limitation; set-theoretic reformulation; closure definition; all three closure-lemma clauses and proof; Dedekind-algebra definition; and construction from an arbitrary Dedekind-infinite set. Every quantifier, subset direction, range condition, restriction, label and cross-reference is retained across 83 mathematical spans. The final two inclusions establish equality of A with the f-closure of o.",
+      "reverse_sample": "The f-closure of o is the intersection of all f-closed sets containing o, so it contains o, is f-closed, and is contained in every such set. From an injective self-map g missing o, restrict g to the g-closure of o; this restriction and carrier satisfy all three clauses of a Dedekind algebra.",
+      "source_sha256": "9cee716bb8cb3bfd507ed5c17bbd4477d05995af6f8f8d411087793bdaa86036",
+      "translation_sha256": "567111ed52d840a511a84108fd9eccd4ea6f6c24804125bc5e61fa55984329f3"
+    },
+    {
+      "unit_id": "OLP-0052",
+      "status": "pass",
+      "checks": "Compared all fourteen paragraph blocks: set-theoretic induction, its proof from least closure, the parameterized formula schema, the explicit universal closure of free variables, and recursive clauses for addition, multiplication and exponentiation. All 21 mathematical spans, formula order, labels, references and the localized page locator are preserved. The prose distinguishes the immediately proved induction principle from the later recursive-definition theorem.",
+      "reverse_sample": "If a set contains o and is closed under the successor operation on N, it contains the whole Dedekind algebra N. Taking the subset of N satisfying a formula yields the parameterized induction schema. Recursive definition later supplies the usual arithmetic operations.",
+      "source_sha256": "ea5f6c80d70abca6f5598de3e221c2f60524c40cbf533ae8a5336d5bb7186537",
+      "translation_sha256": "1d72a74dd465bbbb306f39a77e039bf1f5fedd9d5b462c817cacc37fb5746dac"
+    },
+    {
+      "unit_id": "OLP-0053",
+      "status": "pass",
+      "checks": "Compared all fifteen paragraph blocks, both translated Dedekind quotations, all four philosophical transitions and the technical objection. The chapter claims only a surrogate structure conditional on a Dedekind-infinite set, not a metaphysical identification or existence proof. Isomorphism, embedding, logicism, possible thoughts, plurality-versus-set gap, Russell's paradox, citations and footnote are retained. Four source-only diaeresis commands disappear only with the translated word naif; three visible citation locators are localized by exact asserted substitutions.",
+      "reverse_sample": "Any Dedekind algebra has the mathematical structure wanted of the natural numbers, but this does not identify which objects numbers are. Dedekind's argument may yield infinitely many possible thoughts, yet it does not establish that their totality forms one set. Naive set construction therefore still needs general existence principles that avoid Russell's paradox.",
+      "source_sha256": "a7c41cebb6b7b0e2bed0d187777be4ba69fecdb17baa070975a0ca5c5c55b8bf",
+      "translation_sha256": "e211e01cd1a4f72c118e72aa5b50eada3ccdb25e74476c17f70990d75c968453"
+    },
+    {
+      "unit_id": "OLP-0054",
+      "status": "pass",
+      "checks": "Compared all eighteen paragraph blocks: theorem restatement; generalized closure definition and lemma; sandwich proposition; piecewise map g; injectivity split; surjectivity onto B; and final composition proof. All 78 mathematical spans, thirteen localization tokens, conditions, subset directions, image sets, inverses, labels and references are retained. The nested cardeq source expression visibly yields A approximately B approximately C and remains unchanged. Two source-only diaeresis commands disappear only with naif; the visible Potter page locator is localized exactly.",
+      "reverse_sample": "For A contained in B contained in C with A equinumerous to C, close C minus B under a bijection f from C to A. Apply f on that closure and the identity elsewhere; the result bijects C with B. Applying this sandwich lemma to the images of the two injections, then composing with g inverse, produces a bijection from A to B.",
+      "source_sha256": "88534a3f2be736a704ab31343e45933edb9712fa5b4411eb102c0f4a12d656e9",
+      "translation_sha256": "ca8a09ce5d3ef2dab1bfc73cf9d7248cf5cf39d10bbed167ec78eba8244e96f4"
     }
   ],
   "unresolved_language_uncertainties": [
@@ -425,9 +473,11 @@
     "Winates/tanpa wates means finite/infinite in this chapter; distinguish finitude from boundedness in later order/analysis topics.",
     "No independent native-language review claimed; absence is not a release hold.",
     "Relation, graph and tree terminology includes explicitly provisional borrowings and descriptive coinages, including finitely branching; no native mathematical attestation is invented.",
-    "Function terminology is provisionally adapted or specialized. Native fungsi evidence is purpose/use sense only, not a mathematical definition; English controls all technical meaning."
+    "Function terminology is provisionally adapted or specialized. Native fungsi evidence is purpose/use sense only, not a mathematical definition; English controls all technical meaning.",
+    "Dedekind-infinity, closure, algebra, induction, recursion and isomorphism terms are controlled provisional adaptations; definitions and formulas, not the Javanese canon, remain their mathematical authority.",
+    "The two Dedekind quotations are translated from the frozen English OpenLogic wording; the cited historical source is preserved, and no fresh claim of consultation with the German original is made."
   ],
-  "build_and_visual_review": "Not yet established; first guarded attempt found occupied mutex and started no TeX process.",
+  "build_and_visual_review": "The 36-page introduction/sets/relations/functions reader is accepted and published as v0.1.2. OLP-0049 through OLP-0054 are source-complete and reviewed here but are not yet integrated into a later full-reader build.",
   "superseded_unit_reviews": [
     {
       "unit_id": "OLP-0021",
