@@ -1,0 +1,66 @@
+% Part: first-order-logic
+% Chapter: proof-systems
+% Section: seqeunt-calculus
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{prf}{seq}}
+      {\olfileid{pl}{prf}{seq}}
+
+\olsection{Kalkulus Sekuen}
+
+Nalika akeh sistem !!{derivation} nggarap susunan !!{sentence}s,
+kalkulus sekuen nggarap \emph{sekuen}. Sekuen yaiku ekspresi kanthi
+wujud
+\[
+!A_1, \dots, !A_m \Sequent !B_1, \dots, !B_m,
+\]
+yaiku pasangan urutan !!{sentence}s kang dipisahake dening simbol
+sekuen~$\Sequent$. Salah siji urutan bisa kosong. !!^a{derivation} ing
+kalkulus sekuen iku wit sekuen; sekuen paling ndhuwur nduweni wujud
+khusus (diarani ``sekuen wiwitan'' utawa ``aksioma''), lan saben sekuen
+liyane ndherek sekuen kang persis ana ing ndhuwure nganggo salah siji
+aturan inferensi. Aturan inferensi bisa ngowahi !!{sentence}s ing
+sekuen (nambah, mbusak, utawa nata maneh ing sisih kiwa utawa tengen),
+utawa ngenalake !!{formula} kompleks ing kesimpulan aturan. Tuladhane,
+aturan $\LeftR{\land}$ ngidini inferensi saka $!A,
+\Gamma \Sequent \Delta$ menyang $!A \land !B, \Gamma \Sequent \Delta$, lan
+$\RightR{\lif}$ ngidini inferensi saka $!A, \Gamma \Sequent
+\Delta, !B$ menyang $\Gamma \Sequent \Delta, !A \lif !B$, kanggo saben
+$\Gamma$, $\Delta$, $!A$, lan~$!B$. (Mligine, $\Gamma$ lan~$\Delta$
+bisa kosong.)
+
+Relasi $\Proves$ adhedhasar kalkulus sekuen ditemtokake kaya mangkene:
+$\Gamma \Proves !A$ yen lan mung yen ana sawijining urutan $\Gamma_0$
+saengga saben $!A$ ing $\Gamma_0$ kalebu ing~$\Gamma$ lan ana
+!!{derivation} kang oyode ngemot sekuen~$\Gamma_0 \Sequent !A$.
+$!A$ iku teorema ing kalkulus sekuen yen sekuen~$\Sequent !A$ duwe
+!!a{derivation}. Tuladhane, iki !!a{derivation} kang nuduhake yen
+$\Proves (!A \land !B) \lif !A$:
+\begin{prooftree}
+  \Axiom$!A \fCenter !A$
+  \RightLabel{\LeftR{\land}}
+  \UnaryInf$!A \land !B \fCenter !A$
+  \RightLabel{\RightR{\lif}}
+  \UnaryInf$\fCenter (!A \land !B) \lif !A$
+\end{prooftree}
+
+Himpunan $\Gamma$ ora konsisten ing kalkulus sekuen yen ana
+!!a{derivation} saka $\Gamma_0 \Sequent$ (saben $!A \in \Gamma_0$
+kalebu ing~$\Gamma$ lan sisih tengen sekuen kosong). Kanthi nggunakake
+aturan \RightR{\Weakening}, saben !!{sentence} bisa !!{derive}d saka
+himpunan kang ora konsisten.
+
+Kalkulus sekuen ditemokake ing taun 1930-an dening Gerhard Gentzen.
+Amarga rancangane sistematis lan simetris, kalkulus iki dadi formalisme
+kang migunani banget kanggo ngembangake teori !!{derivation}s. Golek
+!!{derivation}s ing kalkulus sekuen cukup gampang, nanging
+!!{derivation}s iki kerep angel diwaca lan gegayutane karo bukti
+kadhangkala ora gampang katon. Nanging, kalkulus iki kabukten dadi
+pendekatan kang endah banget kanggo sistem !!{derivation}, lan akeh
+logika duwe sistem kalkulus sekuen.
+
+\end{document}

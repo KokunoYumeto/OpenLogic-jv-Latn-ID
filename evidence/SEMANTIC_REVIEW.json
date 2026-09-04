@@ -2,7 +2,7 @@
   "schema": "jv-semantic-review/1",
   "reviewer": "Codex, same author; no independent or human review claimed",
   "date": "2026-09-05",
-  "scope": "All 726 translated paragraph blocks in OLP-0001 through OLP-0062; 342 unchanged formal/structural blocks classified separately. OLSIZ-001 through OLSIZ-010 and OLPL-001 are applied in their affected targets; the proposed OLSIZ-011 remains retracted after exact-byte inspection. Paragraph analysis normalizes CRLF/LF; exact full-file hashes remain raw-byte hashes.",
+  "scope": "All 757 translated paragraph blocks in OLP-0001 through OLP-0068; 378 unchanged formal/structural blocks classified separately. OLSIZ-001 through OLSIZ-010 and OLPL-001 through OLPL-003 are applied in their affected targets; the proposed OLSIZ-011 remains retracted after exact-byte inspection. Paragraph analysis normalizes CRLF/LF; exact full-file hashes remain raw-byte hashes.",
   "method": "Direct source-to-target reading, quantifier/negation/biconditional checks, mathematical-context checks, and selected reverse paraphrases. Automated structure checks are separate.",
   "unit_reviews": [
     {
@@ -533,6 +533,58 @@
       "reverse_sample": "A formula is satisfiable when some valuation satisfies it, a tautology when every valuation does, and contingent when satisfiable but not tautological. Gamma entails A when every valuation satisfying Gamma also satisfies A. This is equivalent to Gamma together with not-A being unsatisfiable, and the semantic deduction theorem moves A between premises and a conditional conclusion.",
       "source_sha256": "992456e01aa355799eabea11dc7d2a49a5f1a0f0ebeef05d36f86603c0f06d39",
       "translation_sha256": "3e8631ab02694f26e81448be1fede41cfaddd397b2457cfc19f7f48334e1267b"
+    },
+    {
+      "unit_id": "OLP-0063",
+      "status": "pass",
+      "checks": "Compared both tag-controlled chapter identities, the editorial reuse instruction and all five imports. The wrapper remains shared between first-order and propositional settings and imports each proof-system survey exactly once.",
+      "reverse_sample": "This shared chapter collects general material on derivation systems. A textbook can combine its introduction with the survey for the particular system introduced next.",
+      "source_sha256": "09977f6410bc57fcedf4428c2212ccf67b2bf0bf574413c4e2fdcf4de6cccab7",
+      "translation_sha256": "dba7f725b68964e3f83e9d8fee7dac858e6cde2133a7fe7fdb862deab4ea1894"
+    },
+    {
+      "unit_id": "OLP-0064",
+      "status": "pass",
+      "checks": "Compared all seven expository blocks, both displayed theorem/entailment equivalences and all 17 mathematical spans. Finite mechanically checkable syntactic derivations, axiomatic sequences, tree alternatives, theoremhood and derivability, soundness as the only-if direction, completeness as the converse, Gödel's historical claim, and consistency as the syntactic counterpart of satisfiability are all retained without reversing an implication.",
+      "reverse_sample": "A derivation system supplies finite syntactic certificates for theoremhood and derivability. Soundness requires derivability to guarantee semantic consequence; completeness requires every valid consequence to be derivable. Inconsistency means arbitrary derivability, and in the intended classical setting consistency coincides with satisfiability.",
+      "source_sha256": "148266281cc87fcd3e454249b9f6c42a117a9aed0733cc5a5f2e954ffd60bb58",
+      "translation_sha256": "567a76545f163fd86fea2647b24ab4c1d5a0d4f6a5d896ab3c52bd123895402c"
+    },
+    {
+      "unit_id": "OLP-0065",
+      "status": "pass",
+      "checks": "Compared the sequent shape, empty-side allowance, tree/initial-sequent definition, both sample inference rules, derivability and theoremhood criteria, complete proof tree, inconsistency criterion and historical assessment. All 31 mathematical spans, left/right directions, sequence containment condition, empty succedent and inference labels are preserved.",
+      "reverse_sample": "A sequent pairs two possibly empty sentence sequences. A sequent-calculus derivation is a tree beginning with initial sequents and applying inference rules downward. Gamma proves A when a finite sequence from Gamma occurs to the left of A at the root; an empty right side witnesses inconsistency.",
+      "source_sha256": "5448a91da184ef1d41e40ec2d56b74db63d49412d8b96b3f2a39a101b0191bad",
+      "translation_sha256": "679ff2e63a6d8fb726085dfdea9f64a10fbae06a3c70bb8a09ff38ea3a6cda51"
+    },
+    {
+      "unit_id": "OLP-0066",
+      "status": "pass",
+      "checks": "Compared all natural-inference examples, introduction/elimination correspondences, assumption-tree explanation, discharge mechanism, derivability/theoremhood clauses, complete conditional proof, inconsistency clause and historical paragraph. All 24 mathematical spans, discharge labels and tokens are retained; discharged and undischarged assumptions remain distinct.",
+      "reverse_sample": "Natural deduction mirrors proof by cases, indirect proof and conditional proof. Some leaf assumptions are discharged by later inferences; the undischarged leaves must belong to Gamma. A theorem has a derivation with every assumption discharged, while inconsistency is derivability of falsity.",
+      "source_sha256": "77b5d31c7b63f657e0d5492d83810bfdc21af0169a9b38ccd5302e0e4cdefdfe",
+      "translation_sha256": "f5213c50fe8ca2a688b6a789113de6c558138e651b24f377bf744f382455d188"
+    },
+    {
+      "unit_id": "OLP-0067",
+      "status": "pass",
+      "checks": "Compared the signed-formula definition, downward-branching construction, all rule examples, branch-closure condition, finite-premise refutation criterion, complete tableau, inconsistency criterion, history, automation discussion, model read-off condition and sequent-calculus relation. All 21 mathematical spans and every tree command are retained after two bounded source repairs. OLPL-002 gives the false-conjunction rule the conjunction connective as its rule argument; OLPL-003 relabels the two children of the true-conjunction parent with the true-conjunction rule.",
+      "reverse_sample": "A tableau branches downward through signed formulas. It is closed when every branch contains both truth signs for one formula. Gamma proves A when false A together with true signs for finitely many Gamma members has a closed tableau. A saturated open branch can instead describe a satisfying structure.",
+      "source_sha256": "8c9db50bcbc7a4aa757b8d57796b2e51df04b1cabb61f46756a79f72a1780b8f",
+      "translation_sha256": "fee2c7294897cbcfaf087985b9c265c17872b02a6ff37f791347c3ee2f9d0b5d",
+      "source_audit_ids": [
+        "OLPL-002",
+        "OLPL-003"
+      ]
+    },
+    {
+      "unit_id": "OLP-0068",
+      "status": "pass",
+      "checks": "Compared all three justification cases, axiom-schema explanation, connective examples, single-axiom possibility, modus-ponens condition, derivability/theoremhood definition, three-line derivation and its instantiation check, inconsistency consequence and full historical assessment. All 44 mathematical spans, formula roles, line references and premise order are preserved.",
+      "reverse_sample": "An axiomatic derivation is a sentence sequence in which each line is an axiom, a member of the premise set, or justified by an inference rule. Modus ponens licenses B from A and A implies B. A theorem uses no premise-set lines, and a complete system derives every formula from inconsistency once falsity implies each formula.",
+      "source_sha256": "b9637a6a1cee29ebba2f8d2cdf238d4567d8ec4b7995607abcb0ee1aef0570b9",
+      "translation_sha256": "2b3bb3f0f41f039f73ffc78d56907a8b4142629a97d7d7c24c112b5a78b9e21c"
     }
   ],
   "unresolved_language_uncertainties": [
@@ -543,9 +595,10 @@
     "Function terminology is provisionally adapted or specialized. Native fungsi evidence is purpose/use sense only, not a mathematical definition; English controls all technical meaning.",
     "Dedekind-infinity, closure, algebra, induction, recursion and isomorphism terms are controlled provisional adaptations; definitions and formulas, not the Javanese canon, remain their mathematical authority.",
     "The two Dedekind quotations are translated from the frozen English OpenLogic wording; the cited historical source is preserved, and no fresh claim of consultation with the German original is made.",
-    "Propositional-connective, valuation, satisfaction, consequence and syntax terminology is provisional controlled adaptation or transparent description; the preserved formation and truth clauses, not the Javanese canon, remain the formal authority."
+    "Propositional-connective, valuation, satisfaction, consequence and syntax terminology is provisional controlled adaptation or transparent description; the preserved formation and truth clauses, not the Javanese canon, remain the formal authority.",
+    "Proof-system, soundness, sequent, discharge and tableau terminology is provisional controlled adaptation or transparent description; the preserved rules, derivation trees and iff directions, not the Javanese canon, remain the formal authority."
   ],
-  "build_and_visual_review": "The 36-page introduction/sets/relations/functions reader is accepted and published as v0.1.2. OLP-0049 through OLP-0062 are source-complete and reviewed here but are not yet integrated into a later full-reader build.",
+  "build_and_visual_review": "The 36-page introduction/sets/relations/functions reader is accepted and published as v0.1.2. OLP-0049 through OLP-0068 are source-complete and reviewed here but are not yet integrated into a later full-reader build.",
   "superseded_unit_reviews": [
     {
       "unit_id": "OLP-0021",

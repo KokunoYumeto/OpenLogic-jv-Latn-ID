@@ -1,0 +1,97 @@
+% Part: first-order-logic
+% Chapter: proof-systems
+% Section: tableaux
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{prf}{tab}}
+      {\olfileid{pl}{prf}{tab}}
+
+\olsection{\usetoken{P}{tableau}}
+
+Nalika akeh sistem !!{derivation} nggarap susunan !!{sentence}s,
+!!{tableau}s nggarap !!{signed formula}s. !!^a{signed formula} yaiku
+pasangan kang dumadi saka tandha nilai kabeneran ($\True$ utawa
+$\False$) lan !!a{sentence}
+\[
+\sFmla{\True}{!A} \text{ utawa } \sFmla{\False}{!A}.
+\]
+!!^a{tableau} dumadi saka !!{signed formula}s kang disusun dadi wit
+kang nyabang mudhun. Tableau diwiwiti nganggo sawetara
+\emph{asumsi}, banjur diterusake dening !!{signed formula}s kang
+diasilake saka salah siji !!{signed formula}s ing ndhuwure kanthi
+ngetrapake salah siji aturan inferensi. Saben aturan ngidini kita
+nambahake siji utawa luwih !!{signed formula}s ing pucuk sawijining
+cabang, utawa rong !!{signed formula}s jejer---ing kasus iki, cabang
+pecah dadi loro, lan rong !!{signed
+  formula}s kang ditambahake dadi pucuk rong cabang kasebut.
+
+Aturan kang ditrapake marang !!{signed formula} kompleks ngasilake
+tambahan !!{signed formula}s kang dadi sub-!!{formula}s langsung.
+Aturan kasebut teka minangka pasangan, siji kanggo saben tandha.
+Tuladhane, aturan $\TRule{\True}{\land}$ ditrapake marang
+$\sFmla{\True}{!A \land !B}$ lan ngidini loro !!{signed formula}s,
+$\sFmla{\True}{!A}$ lan~$\sFmla{\True}{!B}$, ditambahake ing pucuk
+saben cabang kang ngemot $\sFmla{\True}{!A \land !B}$, dene aturan
+$\TRule{\False}{\land}$ ngidini sawijining cabang dipecah kanthi
+nambahake $\sFmla{\False}{!A}$ lan $\sFmla{\False}{!B}$ kanthi jejer.
+Cathetan koreksi sumber OLPL-002: jeneng aturan ing sumber Inggris
+ngemot formula wutuh; jeneng iki dibalekake dadi aturan konjungsi
+mawa tandha salah.
+!!^a{tableau} katutup yen saben cabange ngemot pasangan
+!!{signed formula}s kang cocog, yaiku $\sFmla{\True}{!A}$ lan
+$\sFmla{\False}{!A}$.
+
+Relasi $\Proves$ adhedhasar !!{tableau}s ditemtokake kaya mangkene:
+$\Gamma \Proves !A$ yen lan mung yen ana himpunan winates
+$\Gamma_0 = \{!B_1, \dots, !B_n\} \subseteq \Gamma$ saengga ana
+!!{tableau} katutup kanggo asumsi
+\[
+\{\sFmla{\False}{!A}, \sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\} 
+\]
+Tuladhane, iki !!{tableau} katutup kang nuduhake yen $\Proves
+(!A \land !B) \lif !A$:
+\begin{oltableau}
+  [\sFmla{\False}{(\formula{A} \land \formula{B}) \lif \formula{A}}, just = \TAss
+    [\sFmla{\True}{\formula{A} \land \formula{B}}, just = {\TRule{\False}{\lif}[1]}
+      [\sFmla{\False}{\formula{A}}, just = {\TRule{\False}{\lif}[1]}
+        [\sFmla{\True}{\formula{A}}, just = {\TRule{\True}{\land}[2]}
+          [\sFmla{\True}{\formula{B}}, just = {\TRule{\True}{\land}[2]}, close]
+        ]
+      ]
+    ]
+  ]
+\end{oltableau}
+Cathetan koreksi sumber OLPL-003: rong label ekspansi konjungsi ing
+sumber Inggris nyebut implikasi mawa tandha bener; label kasebut
+dibalekake dadi konjungsi mawa tandha bener, cocog karo formula ing
+larik induke.
+
+Himpunan $\Gamma$ ora konsisten ing kalkulus !!{tableau} yen ana
+!!{tableau} katutup kanggo asumsi
+\[
+\{\sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\} 
+\]
+kanggo sawijining $!B_i \in \Gamma$.
+
+!!^{tableau}s ditemokake ing taun 1950-an kanthi mandhiri dening Evert
+Beth lan Jaakko Hintikka, banjur disederhanakake lan dipopulerake dening
+Raymond Smullyan. Tableau gampang banget digunakake, amarga mbangun
+!!a{tableau} iku prosedur kang sistematis banget. Amarga sipate kang
+sistematis, !!{tableau}s uga gampang ditindakake nganggo komputer.
+Nanging, !!a{tableau} kerep angel diwaca lan gegayutane karo bukti
+kadhangkala ora gampang katon. Pendekatan iki uga cukup umum, lan akeh
+logika duwe sistem !!{tableau}. !!^{tableau}s uga mbiyantu kita nemokake
+!!{structure}s kang nyukupi (himpunan) !!{sentence}s kang diwenehake:
+yen himpunan iku bisa dicukupi, himpunan iku ora bakal duwe
+!!{tableau} katutup, yaiku saben !!{tableau} bakal duwe cabang kang
+bukak. !!{structure} kang nyukupi bisa ``diwaca'' saka cabang bukak,
+angger saben aturan kang bisa ditrapake wis ditrapake ing cabang kasebut.
+Uga ana gegayutan kang raket banget karo kalkulus sekuen: pokoke,
+!!{tableau} katutup iku !!{derivation} kalkulus sekuen kang dipadhetake
+lan ditulis kuwalik saka ndhuwur menyang ngisor.
+
+\end{document}

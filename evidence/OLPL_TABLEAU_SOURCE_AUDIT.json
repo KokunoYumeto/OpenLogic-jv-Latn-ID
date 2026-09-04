@@ -1,0 +1,45 @@
+{
+  "schema": "jv-local-source-audit/1",
+  "audit_id": "OLPL-TABLEAU-20260905",
+  "date": "2026-09-05",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "status": "confirmed_two_bounded_rule-label_defects",
+  "source": {
+    "unit_id": "OLP-0067",
+    "path": "content/first-order-logic/proof-systems/tableaux.tex",
+    "bytes": 3914,
+    "sha256": "8c9db50bcbc7a4aa757b8d57796b2e51df04b1cabb61f46756a79f72a1780b8f"
+  },
+  "findings": [
+    {
+      "finding_id": "OLPL-002",
+      "locator": "line 38",
+      "observed": "\\TRule{\\False}{!A \\land !B}",
+      "finding": "The false-conjunction rule name receives the entire formula as its connective argument.",
+      "controlling_evidence": [
+        "The immediately preceding true-conjunction rule is named with the conjunction connective alone.",
+        "Every other false-conjunction rule name in the frozen corpus found by exact search uses \\TRule{\\False}{\\land}."
+      ],
+      "bounded_repair": {
+        "removed": "\\TRule{\\False}{!A \\land !B}",
+        "added": "\\TRule{\\False}{\\land}"
+      }
+    },
+    {
+      "finding_id": "OLPL-003",
+      "locator": "lines 57-58",
+      "occurrences": 2,
+      "observed": "\\TRule{\\True}{\\lif}[2]",
+      "finding": "The example labels both children of a true conjunction as true-implication expansions.",
+      "controlling_evidence": [
+        "The parent on line 2 of the displayed tableau is the signed formula true (A and B).",
+        "Its two children are true A and true B, exactly the outputs of the true-conjunction rule described in the preceding paragraph."
+      ],
+      "bounded_repair": {
+        "removed": "\\TRule{\\True}{\\lif}[2]",
+        "added": "\\TRule{\\True}{\\land}[2]"
+      }
+    }
+  ],
+  "source_policy": "Keep frozen English bytes and manifest hash unchanged; repair only the localized rule names and identify both repairs in adjacent Javanese notes."
+}

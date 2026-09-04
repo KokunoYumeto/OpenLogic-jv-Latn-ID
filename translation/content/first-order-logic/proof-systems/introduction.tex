@@ -1,0 +1,99 @@
+% Part: first-order-logic
+% Chapter: proof-systems
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{prf}{int}}
+      {\olfileid{pl}{prf}{int}}
+
+\olsection{Pambuka}
+
+Logika lumrahe duwe semantik lan sistem !!a{derivation}. Semantik
+ngrembug konsep kayata kabeneran, bisa dicukupi, validitas, lan akibat
+semantis. Tujuwane sistem !!{derivation} yaiku menehi metodhe kang
+murni sintaktis kanggo netepake akibat semantis lan validitas. Sistem
+kasebut murni sintaktis ing teges yen !!{derivation} ing sistem kaya
+mangkono iku obyek sintaktis winates, lumrahe urutan (utawa susunan
+winates liyane) saka !!{sentence}s utawa !!{formula}s. Sistem
+!!{derivation} kang becik nduweni sipat yen saben urutan utawa susunan
+!!{sentence}s utawa !!{formula}s kang diwenehake bisa dipriksa kanthi
+mekanis apa ``bener''.
+
+Sistem !!{derivation} kang paling prasaja (lan paling dhisik saka sisi
+sejarah) kanggo logika tataran kapisan iku \emph{aksiomatik}. Urutan
+!!{formula}s dianggep minangka !!a{derivation} ing sistem kaya mangkono
+yen saben !!{formula} ing jerone kalebu sawijining himpunan ``aksioma''
+kang tetep, utawa ndherek saka !!{formula}s sadurunge ing urutan
+nganggo salah siji saka sawetara ``aturan inferensi'' kang tetep---lan
+bisa dipriksa kanthi mekanis apa !!a{formula} iku aksioma lan apa
+formula kasebut kanthi bener ndherek !!{formula}s liyane nganggo salah siji
+aturan inferensi. Sistem !!{derivation} aksiomatik gampang dijlentrehake---
+lan uga gampang ditangani saka sisi metateori---nanging !!{derivation}s
+ing jerone angel diwaca lan dimangerteni, uga angel digawe.
+
+Sistem !!{derivation} liyane wis dikembangake supaya luwih gampang
+mbangun !!{derivation}s utawa luwih gampang mangerteni !!{derivation}s
+sawise rampung. Tuladhane yaiku deduksi natural, wit kabeneran kang uga
+diarani bukti tableau, lan kalkulus sekuen. Sawetara sistem
+!!{derivation} dirancang mligi kanthi nggatekake mekanisasi; upamane,
+metodhe resolusi gampang ditindakake ing piranti alus (nanging
+!!{derivation}s-e pokoke mokal dimangerteni). Umume sistem
+!!{derivation} liyane iki nggambarake !!{derivation}s minangka wit
+!!{formula}s lan dudu urutan. Kanthi mangkono, luwih gampang katon
+perangan !!a{derivation} endi gumantung marang perangan liyane kang endi.
+
+Mula, kanggo sawijining logika, kayata logika tataran kapisan, sistem
+!!{derivation} kang beda-beda bakal menehi jlentrehan kang beda ngenani
+apa tegese !!a{sentence} dadi \emph{teorema} lan apa tegese
+!!a{sentence} bisa !!{derivable} saka sawetara ukara liyane. Apa wae
+carane (liwat !!{derivation}s aksiomatik, deduksi natural,
+!!{derivation}s sekuen, wit kabeneran, utawa refutasi resolusi), kita
+ngarepake relasi kasebut cocog karo gagasan semantis validitas lan
+akibat semantis. Kita nulis $\Proves !A$ kanggo ``$!A$~iku teorema''
+lan ``$\Gamma \Proves !A$'' kanggo ``$!A$~bisa !!{derivable}
+saka~$\Gamma$.'' Kepriye wae $\Proves$~ditemtokake, kita ngarepake
+simbol iku cocog karo $\Entails$, yaiku:
+\begin{enumerate}
+\item $\Proves !A$ yen lan mung yen $\Entails !A$
+\item $\Gamma \Proves !A$ yen lan mung yen $\Gamma \Entails !A$
+\end{enumerate}
+Arah ``mung yen'' ing ndhuwur diarani \emph{kasahihan}.
+!!^a{derivation} sistem iku sah yen !!{derivability} njamin akibat
+semantis (utawa validitas). Saben sistem !!{derivation} kang patut
+kudu sah; sistem !!{derivation} kang ora sah ora migunani babar pisan.
+Awit kabeh tujuwane !!a{derivation} yaiku menehi jaminan sintaktis
+tumrap validitas utawa akibat semantis. Kita bakal mbuktekake kasahihan
+kanggo sistem !!{derivation} kang disajekake.
+
+Arah walikan, yaiku ``yen'', uga wigati: arah iki diarani
+\emph{kelengkapan}. Sistem !!{derivation} kang jangkep cukup kuwat
+kanggo nuduhake yen $!A$~iku teorema saben $!A$~valid, lan yen
+$\Gamma \Proves !A$ saben $\Gamma \Entails !A$. Kelengkapan luwih angel
+ditetepake, lan sawetara logika ora duwe sistem !!{derivation} kang
+jangkep. Logika tataran kapisan duwe. Kurt G\"odel dadi wong kapisan
+kang mbuktekake kelengkapan kanggo !!a{derivation} sistem logika
+tataran kapisan ing disertasine taun 1929.
+
+Konsep liyane kang gegayutan karo sistem !!{derivation} yaiku
+\emph{konsistensi}. Himpunan !!{sentence}s diarani ora konsisten yen
+apa wae bisa !!{derive}d saka himpunan iku, lan diarani konsisten yen
+ora mangkono. Ora konsisten iku pasangan sintaktis saka ora bisa
+dicukupi: kaya himpunan kang ora bisa dicukupi, himpunan !!{sentence}s
+kang ora konsisten ora dadi teori kang becik, amarga cacat kanthi
+dhasar. Himpunan !!{sentence}s kang konsisten durung mesthi bener utawa
+migunani, nanging saora-orane wis ngliwati ambang paling cilik kanggo
+piguna logis. Kanggo sistem !!{derivation} kang beda, definisi mligi
+ngenani konsistensi himpunan !!{sentence}s bisa beda, nanging kaya
+$\Proves$, kita ngarepake konsistensi cocog karo pasangan semantise,
+yaiku bisa dicukupi. Kita ngarepake tansah lumaku yen $\Gamma$
+konsisten yen lan mung yen bisa dicukupi. Ing kene, arah ``mung yen''
+padha karo kelengkapan (konsistensi njamin bisa dicukupi), lan arah
+``yen'' padha karo kasahihan (bisa dicukupi njamin konsistensi).
+Nyatane, kanggo logika klasik tataran kapisan, rong versi kasahihan lan
+kelengkapan iki padha ekuivalen.
+
+\end{document}

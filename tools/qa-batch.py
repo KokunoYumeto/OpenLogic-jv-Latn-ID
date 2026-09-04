@@ -152,6 +152,15 @@ for u in units:
             conditional_parenthesis_defect,
             r'$(\lnot !A \lor !B)$',
         )
+    # OLPL-002: the frozen tableau overview gives the false-conjunction
+    # rule a full formula as its connective argument. Restore the rule name.
+    if u['unit_id']=='OLP-0067':
+        false_conjunction_rule_defect=r'$\TRule{\False}{!A \land !B}$'
+        assert math_source.count(false_conjunction_rule_defect)==1
+        math_source=math_source.replace(
+            false_conjunction_rule_defect,
+            r'$\TRule{\False}{\land}$',
+        )
     checks={'paragraph_count':len(ac)==len(tc),'protected_commands':protected(protected_source)==protected(t),'math_sequence':math(math_source)==math(t),'token_sequence':tokens(a)==tokens(t),'environment_sequence':re.findall(r'\\(?:begin|end)\{[^}]+\}',a)==re.findall(r'\\(?:begin|end)\{[^}]+\}',t),'unicode_clean':'\ufffd' not in t and not re.search(r'[\uA980-\uA9DF]',t),'no_placeholder':not re.search(r'\b(?:TODO|TBD|TRANSLATE_ME)\b',t)}
     command_source=a
     if u['unit_id']=='OLP-0034':
@@ -200,6 +209,16 @@ for u in units:
     if u['unit_id']=='OLP-0054':
         assert command_source.count(r'na\"iv')==2
         command_source=command_source.replace(r'na\"iv','naiv')
+    # OLPL-003: the closed tableau expands a true conjunction on line 2,
+    # but both frozen rule labels say true implication. Normalize only those
+    # two labels for exact command comparison.
+    if u['unit_id']=='OLP-0067':
+        tableau_label_defect=r'\TRule{\True}{\lif}[2]'
+        assert command_source.count(tableau_label_defect)==2
+        command_source=command_source.replace(
+            tableau_label_defect,
+            r'\TRule{\True}{\land}[2]',
+        )
     checks['all_command_sequence']=re.findall(r'\\[A-Za-z@]+|\\[^A-Za-z@]',command_source)==re.findall(r'\\[A-Za-z@]+|\\[^A-Za-z@]',t)
     row={'unit_id':u['unit_id'],'source_path':u['source_path'],'source_sha256':sha(b),'translation_sha256':sha(tb),'translation_bytes':len(tb),'checks':checks,'source_paragraphs':len(ac),'target_paragraphs':len(tc),'source_math_count':len(math(a)),'target_math_count':len(math(t)),'status':'structural_pass' if all(checks.values()) else 'defect'}
     rows.append(row)

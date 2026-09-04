@@ -1,11 +1,11 @@
 {
   "schema": "jv-batch-qa/1",
-  "utc": "2026-09-04T22:44:08.894466+00:00",
-  "checked_units": 62,
-  "structural_pass_units": 62,
+  "utc": "2026-09-04T22:57:38.093278+00:00",
+  "checked_units": 68,
+  "structural_pass_units": 68,
   "total_units": 722,
-  "segments": 1068,
-  "translated_segments": 726,
+  "segments": 1135,
+  "translated_segments": 757,
   "units": [
     {
       "unit_id": "OLP-0001",
@@ -1370,10 +1370,142 @@
       "source_math_count": 38,
       "target_math_count": 38,
       "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0063",
+      "source_path": "content/first-order-logic/proof-systems/proof-systems.tex",
+      "source_sha256": "09977f6410bc57fcedf4428c2212ccf67b2bf0bf574413c4e2fdcf4de6cccab7",
+      "translation_sha256": "dba7f725b68964e3f83e9d8fee7dac858e6cde2133a7fe7fdb862deab4ea1894",
+      "translation_bytes": 694,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 12,
+      "target_paragraphs": 12,
+      "source_math_count": 0,
+      "target_math_count": 0,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0064",
+      "source_path": "content/first-order-logic/proof-systems/introduction.tex",
+      "source_sha256": "148266281cc87fcd3e454249b9f6c42a117a9aed0733cc5a5f2e954ffd60bb58",
+      "translation_sha256": "567a76545f163fd86fea2647b24ab4c1d5a0d4f6a5d896ab3c52bd123895402c",
+      "translation_bytes": 5279,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 12,
+      "target_paragraphs": 12,
+      "source_math_count": 17,
+      "target_math_count": 17,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0065",
+      "source_path": "content/first-order-logic/proof-systems/sequent-calculus.tex",
+      "source_sha256": "5448a91da184ef1d41e40ec2d56b74db63d49412d8b96b3f2a39a101b0191bad",
+      "translation_sha256": "679ff2e63a6d8fb726085dfdea9f64a10fbae06a3c70bb8a09ff38ea3a6cda51",
+      "translation_bytes": 2802,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 10,
+      "target_paragraphs": 10,
+      "source_math_count": 31,
+      "target_math_count": 31,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0066",
+      "source_path": "content/first-order-logic/proof-systems/natural-deduction.tex",
+      "source_sha256": "77b5d31c7b63f657e0d5492d83810bfdc21af0169a9b38ccd5302e0e4cdefdfe",
+      "translation_sha256": "f5213c50fe8ca2a688b6a789113de6c558138e651b24f377bf744f382455d188",
+      "translation_bytes": 4293,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 11,
+      "target_paragraphs": 11,
+      "source_math_count": 24,
+      "target_math_count": 24,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0067",
+      "source_path": "content/first-order-logic/proof-systems/tableaux.tex",
+      "source_sha256": "8c9db50bcbc7a4aa757b8d57796b2e51df04b1cabb61f46756a79f72a1780b8f",
+      "translation_sha256": "fee2c7294897cbcfaf087985b9c265c17872b02a6ff37f791347c3ee2f9d0b5d",
+      "translation_bytes": 4342,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 11,
+      "target_paragraphs": 11,
+      "source_math_count": 21,
+      "target_math_count": 21,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0068",
+      "source_path": "content/first-order-logic/proof-systems/axiomatic-deduction.tex",
+      "source_sha256": "b9637a6a1cee29ebba2f8d2cdf238d4567d8ec4b7995607abcb0ee1aef0570b9",
+      "translation_sha256": "2b3bb3f0f41f039f73ffc78d56907a8b4142629a97d7d7c24c112b5a78b9e21c",
+      "translation_bytes": 4065,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 11,
+      "target_paragraphs": 11,
+      "source_math_count": 44,
+      "target_math_count": 44,
+      "status": "structural_pass"
     }
   ],
   "failures": 0,
-  "semantic_reviewed_units": 62,
+  "semantic_reviewed_units": 68,
   "build": "see BUILD_SETS.json",
   "release_ready": false
 }

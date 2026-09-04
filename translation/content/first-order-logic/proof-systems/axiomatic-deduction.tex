@@ -1,0 +1,87 @@
+% Part: first-order-logic
+% Chapter: proof-systems
+% Section: axiomatic-deduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{prf}{axd}}
+      {\olfileid{pl}{prf}{axd}}
+
+\olsection{\usetoken{P}{derivation} Aksiomatik}
+
+!!{derivation}s aksiomatik iku sistem !!{derivation} logis kang paling
+tuwa lan paling prasaja. !!{derivation}s ing sistem iki mung arupa
+urutan !!{sentence}s. Urutan !!{sentence}s dianggep minangka
+!!{derivation} kang bener yen saben !!{sentence}~$!A$ ing jerone
+nyukupi salah siji syarat iki:
+\begin{enumerate}
+\item $!A$ iku aksioma, utawa
+\item $!A$ iku !!a{element} saka himpunan~$\Gamma$ saka !!{sentence}s
+  kang diwenehake, utawa
+\item $!A$ dibenerake dening aturan inferensi.
+\end{enumerate}
+Supaya dadi aksioma, $!A$ kudu duwe wujud salah siji saka sawetara
+skema !!{sentence} kang tetep. Ana akeh himpunan skema aksioma kang
+menehi sistem !!{derivation} kang nyukupi (sah lan jangkep) kanggo
+logika tataran kapisan. Sawetara ditata miturut konektif kang diatur,
+upamane skema
+\[
+!A \lif (!B \lif !A) \qquad !B \lif (!B \lor !C) \qquad (!B \land !C) \lif !B
+\]
+iku aksioma kang umum kanggo ngatur $\lif$, $\lor$, lan~$\land$.
+Sawetara sistem aksioma ngupaya cacah aksioma kang paling sithik.
+Gumantung marang konektif kang dianggep primitif, kita malah bisa
+nemokake sistem aksioma kang mung dumadi saka siji aksioma.
+
+Aturan inferensi iku pratelan kondisional kang menehi syarat cukup
+supaya !!a{sentence} ing !!a{derivation} bisa dibenerake. Modus ponens
+iku salah siji aturan kaya mangkono kang umum banget: aturan iki kandha
+yen $!A$ lan $!A \lif !B$ wis dibenerake, mula $!B$ uga dibenerake. Iki
+ateges larik ing !!a{derivation} kang ngemot !!{sentence}~$!B$
+dibenerake, angger $!A$ lan $!A \lif !B$ kalorone (kanggo sawijining
+!!{sentence}~$!A$) muncul ing !!{derivation} sadurunge~$!B$.
+
+Relasi $\Proves$ adhedhasar !!{derivation}s aksiomatik ditemtokake kaya
+mangkene: $\Gamma \Proves !A$ yen lan mung yen ana !!a{derivation}
+kang nduweni !!{sentence}~$!A$ minangka formula pungkasan (lan
+$\Gamma$ dianggep minangka himpunan !!{sentence}s ing !!{derivation}
+iku kang dibenerake dening~(2) ing ndhuwur). $!A$ iku teorema yen~$!A$
+duwe !!a{derivation} nalika~$\Gamma$ kosong, yaiku saben !!{sentence}
+ing !!{derivation} dibenerake dening (1) utawa~(3). Tuladhane, iki
+!!a{derivation} kang nuduhake yen $\Proves
+!A  \lif (!B \lif (!B \lor !A))$:
+\begin{derivation}
+  1. & $!B \lif (!B \lor !A)$ \\
+  2. & $(!B \lif (!B \lor !A)) \lif (!A  \lif (!B \lif (!B \lor !A)))$\\
+  3. & $!A  \lif (!B \lif (!B \lor !A))$
+\end{derivation}
+!!{sentence} ing larik~1 nduweni wujud aksioma $!A \lif (!A
+\lor !B)$ (kanthi peran $!A$ lan $!B$ diijolake). Ukara ing larik~2
+nduweni wujud aksioma $!A \lif (!B \lif !A)$. Mula, rong larik kasebut
+dibenerake. Larik~3 dibenerake dening modus ponens: yen dicekakake
+minangka $!D$, larik~2 duwe wujud $!C \lif !D$, kanthi $!C$ yaiku
+$!B \lif (!B \lor !A)$, yaiku larik~1.
+
+Himpunan $\Gamma$ ora konsisten yen $\Gamma \Proves \lfalse$. Sistem
+aksioma kang jangkep uga bakal mbuktekake yen $\lfalse \lif !A$ kanggo
+saben~$!A$, mula yen $\Gamma$ ora konsisten, $\Gamma \Proves !A$
+kanggo saben~$!A$.
+
+Sistem !!{derivation}s aksiomatik kanggo logika sepisanan diwenehake
+dening Gottlob Frege ing \emph{Begriffsschrift} taun 1879, kang amarga
+iku kerep dianggep minangka karya kapisan logika modern. Sistem iki
+dadi sampurna ing \emph{Principia Mathematica} anggitane Alfred North
+Whitehead lan Bertrand Russell lan liwat pakaryane David Hilbert lan
+para muride ing taun 1920-an. Mula sistem kasebut kerep diarani
+``sistem Frege'' utawa ``sistem Hilbert''. Sistem iki luwes banget
+amarga nemokake sistem aksiomatik kanggo sawijining logika kerep
+gampang. Amarga !!{derivation}s duwe struktur kang prasaja banget lan
+mung siji utawa rong aturan inferensi, mbuktekake bab-bab
+\emph{ngenani} derivasi kasebut uga cukup gampang. Nanging, sistem iki
+angel banget digunakake ing praktik, yaiku angel nemokake lan nulis
+bukti.
+
+\end{document}

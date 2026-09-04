@@ -1,0 +1,86 @@
+% Part: first-order-logic
+% Chapter: proof-systems
+% Section: natural-deduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{prf}{ntd}}
+      {\olfileid{pl}{prf}{ntd}}
+
+\olsection{Deduksi Natural}
+
+Deduksi natural iku sistem !!a{derivation} kang dirancang kanggo
+nyerupani penalaran nyata (mligine jinis penalaran tertata kang
+digunakake matematikawan). Penalaran nyata lumaku nganggo sawetara
+pola ``natural''. Tuladhane, bukti miturut kasus ngidini kita netepake
+kesimpulan adhedhasar premis disjungtif, yaiku kanthi netepake yen
+kesimpulan ndherek saka saben disjung. Bukti ora langsung ngidini kita
+netepake kesimpulan kanthi nuduhake yen negasine nuwuhake kontradiksi.
+Bukti kondisional netepake pratelan kondisional ``yen \dots mula
+\dots'' kanthi nuduhake yen konsekuen ndherek anteseden. Deduksi
+natural iku formalisasi sawetara inferensi natural iki. Saben konektif
+logis lan kuantor duwe rong aturan, yaiku aturan introduksi lan
+eliminasi, lan saben aturan cocog karo sawijining pola inferensi
+natural. Tuladhane, $\Intro{\lif}$ cocog karo bukti kondisional, lan
+$\Elim{\lor}$ karo bukti miturut kasus. Salah siji aturan kang mligi
+prasaja yaiku $\Elim{\land}$, kang ngidini inferensi saka $!A \land !B$
+menyang~$!A$ (utawa $!B$).
+
+Salah siji ciri kang mbedakake deduksi natural saka sistem
+!!{derivation} liyane yaiku panganggone asumsi. !!^a{derivation} ing
+deduksi natural iku wit !!{formula}s. Ana siji !!{formula} ing oyod wit
+!!{formula}s, lan ``godhong'' wit iku !!{formula}s kang dadi dhasar
+derivasi kesimpulan. Ing deduksi natural, sawetara !!{formula}s godhong
+duwe peran ing njero !!{derivation}, nanging wis ``entek digunakake''
+nalika !!{derivation} tekan kesimpulan. Iki cocog karo laku ing
+penalaran nyata, yaiku ngenalake hipotesis kang mung lumaku sedhela.
+Tuladhane, ing bukti miturut kasus, kita nganggep saben disjung bener;
+ing bukti kondisional, kita nganggep anteseden bener; ing bukti ora
+langsung, kita nganggep negasi saka kesimpulan bener. Cara ngenalake
+asumsi hipotetis banjur nyingkirake asumsi iku kanggo netepake tahap
+antara dadi ciri khas deduksi natural. Formula ing godhong
+!!{derivation} deduksi natural diarani asumsi, lan sawetara aturan
+inferensi bisa ``!!{discharge}'' asumsi kasebut. Tuladhane, yen kita
+duwe !!a{derivation} saka~$!B$ adhedhasar sawetara asumsi kang
+ngemot~$!A$, aturan $\Intro{\lif}$ ngidini kita nyimpulake~$!A \lif !B$
+lan mbubarake saben asumsi kanthi wujud~$!A$. (Kanggo nyathet asumsi
+endi kang dibubarake ing inferensi endi, kita menehi angka minangka
+label kanggo inferensi lan asumsi kang dibubarake.) Asumsi kang isih
+!!{undischarged} ing pungkasan !!{derivation} bebarengan cukup kanggo
+njamin kabeneran kesimpulan, mula !!a{derivation} netepake yen asumsi
+!!{undischarged} kasebut ngakibatake kesimpulane kanthi semantis.
+
+Relasi $\Gamma \Proves !A$ adhedhasar deduksi natural lumaku yen lan
+mung yen ana !!a{derivation} kang nduweni $!A$~minangka !!{sentence}
+pungkasan ing wit, lan saben godhong kang !!{undischarged} kalebu
+ing~$\Gamma$. $!A$~iku teorema ing deduksi natural yen lan mung yen ana
+!!a{derivation} kang nduweni $!A$~minangka !!{sentence} pungkasan lan
+kabeh asumsi wis !!{discharged}. Tuladhane, iki !!a{derivation} kang
+nuduhake yen $\Proves (!A \land !B) \lif !A$:
+\begin{prooftree}
+  \AxiomC{$\Discharge{!A \land !B}{1}$}
+  \RightLabel{\Elim{\land}}
+  \UnaryInfC{$!A$}
+  \DischargeRule{\Intro{\lif}}{1}
+  \UnaryInfC{$(!A \land !B) \lif !A$}
+\end{prooftree}
+Label~$1$ nuduhake yen asumsi $!A \land !B$ wis !!{discharged} ing
+inferensi \Intro{\lif}.
+  
+Himpunan~$\Gamma$ ora konsisten yen lan mung yen
+$\Gamma \Proves \lfalse$ ing deduksi natural. Aturan \FalseInt{}
+ndadekake saben !!{sentence} bisa !!{derive}d saka himpunan kang ora
+konsisten.
+
+Sistem deduksi natural dikembangake dening Gerhard Gentzen lan
+Stanis\l{}aw Ja\'skowski ing taun 1930-an, banjur dikembangake maneh
+dening Dag Prawitz lan Frederic Fitch. Amarga inferensine nyerupani
+metodhe bukti natural, sistem iki disenengi para filsuf. Versi kang
+dikembangake Fitch kerep digunakake ing buku teks logika pambuka. Ing
+filsafat logika, aturan deduksi natural kadhangkala dianggep menehi
+makna operator logis (``semantik teoretis-bukti'').
+
+\end{document}
