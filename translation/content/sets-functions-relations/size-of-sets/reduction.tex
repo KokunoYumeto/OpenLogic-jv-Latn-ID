@@ -49,8 +49,9 @@ Upamakna $\Pow{\PosInt}$ iku !!{enumerable}, mula ana
 enumerasi $Z_{1}$, $Z_{2}$, $Z_{3}$, \dots
 
 Tetepna fungsi $f \colon \Pow{\PosInt} \to \Bin^\omega$ kanthi netepake
-$f(Z)$ dadi rerangken $s_{k}$ saengga $s_{k}(n) = 1$ yen lan mung yen $n \in Z$,
-lan $s_k(n) = 0$ yen ora mangkono. Iki cetha netepake sawijining fungsi,
+$f(Z)$ dadi rerangken $s$ saengga $s(n) = 1$ yen lan mung yen $n \in Z$,
+lan $s(n) = 0$ yen ora mangkono. Jeneng metuane diseragamake amarga
+indeks k ing sumber Inggris ora kaiket (OLSIZ-004). Iki cetha netepake sawijining fungsi,
 amarga yen $Z \subseteq \PosInt$, saben $n \in \PosInt$ mesthi
 !!a{element} saka $Z$ utawa dudu anggotane. Upamane, himpunan $2\PosInt = \{2,
 4, 6, \dots\}$ saka wilangan genep positif dipetakake menyang rerangken
@@ -93,10 +94,12 @@ kudu !!{surjective}; yen ora, argumen iki ora lumaku:
 $f(x_1)$, $f(x_2)$, \dots{} ora mesthi ngemot
 kabeh !!{element}s saka~$B$. Upamane,
 \[
-h(n) = \underbrace{000\dots0}_{\text{$n$ wilangan $0$}}
+h(n) = \underbrace{00\dots0}_{\text{$n$ wilangan $0$}}111\dots
 \]
 netepake fungsi $h\colon \PosInt \to
-\Bin^\omega$, nanging $\PosInt$ iku !!{enumerable}.
+\Bin^\omega$, nanging $\PosInt$ iku !!{enumerable}. Buntut siji tanpa
+wates ndadekake saben nilai kalebu kodomain; sumber Inggris mung
+nampilake string nol winates (OLSIZ-005).
 \end{explain}
 
 \begin{prob}

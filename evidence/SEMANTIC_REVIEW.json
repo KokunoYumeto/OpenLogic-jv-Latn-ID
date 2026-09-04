@@ -2,7 +2,7 @@
   "schema": "jv-semantic-review/1",
   "reviewer": "Codex, same author; no independent or human review claimed",
   "date": "2026-09-04",
-  "scope": "All 569 translated paragraph blocks in OLP-0001 through OLP-0048; 260 unchanged formal/structural blocks classified separately. Paragraph analysis normalizes CRLF/LF; exact full-file hashes remain raw-byte hashes.",
+  "scope": "All 569 translated paragraph blocks in OLP-0001 through OLP-0048; 260 unchanged formal/structural blocks classified separately. OLSIZ-001 through OLSIZ-010 are adopted in the affected Size-of-Sets targets; the proposed OLSIZ-011 was retracted after exact-byte inspection. Paragraph analysis normalizes CRLF/LF; exact full-file hashes remain raw-byte hashes.",
   "method": "Direct source-to-target reading, quantifier/negation/biconditional checks, mathematical-context checks, and selected reverse paraphrases. Automated structure checks are separate.",
   "unit_reviews": [
     {
@@ -236,10 +236,13 @@
     {
       "unit_id": "OLP-0029",
       "status": "pass",
-      "checks": "All seven informal-list qualifications, empty list, duplicate-removal proof, positive-integer surjection definition and finite-list padding retained. Positive/natural shift, parity and alternating integer examples, all union/subset/induction exercises, recursively selecting first unseen values, finite/infinite bijection domains and injection characterization retained. At most finite position never becomes computability. Ceiling rendered descriptively; formulas/tokens/command sequence preserved. Both directions and empty-set cases checked.",
-      "reverse_sample": "Enumerable means empty or having a surjection from positive integers, equivalently from natural numbers. Repeated values are allowed. Removing repeats produces a bijection with a finite initial segment or all natural numbers; the required finite/infinite domain distinction is preserved.",
+      "checks": "Recompared the complete enumeration section after OLSIZ-001. The alternating-integer table now includes -3 under f(7), as required by the unchanged formula row and the displayed piecewise definition. An adjacent localized note identifies the correction. Definitions, empty-set cases, recursive duplicate removal, shift equivalence and all exercises remain semantically unchanged.",
+      "reverse_sample": "The formula gives f(7)=-3, and the repaired final row now displays that value in the matching column. Enumerable still means empty or the range of a positive-integer enumeration.",
       "source_sha256": "bf6be35c0e393cb6e1d227f8e9024df4216792e663f23beb7277045487acfa67",
-      "translation_sha256": "f500e112b0b2f1e30f9da7b919b451d77676b0043d1ecca5d06b49c46ccb8fdc"
+      "translation_sha256": "8072a19e227b50388b976d5adae4bab74948eabf8604755805d3531a341a0ab0",
+      "source_audit_ids": [
+        "OLSIZ-001"
+      ]
     },
     {
       "unit_id": "OLP-0030",
@@ -252,18 +255,24 @@
     {
       "unit_id": "OLP-0031",
       "status": "pass",
-      "checks": "Compared all explanation, definition and nine exercises. Pairing remains injective, not silently strengthened to bijective. All rational sign/domain conditions, finite subsets, cofinite iff, countable union and encoding questions retained. The English ordinal suffix inside math becomes preceding kaping with an empty text exponent, preserving the command/formula skeleton. Source triangular-sum inconsistency, missing subset word, inverse-domain qualification and choice dependence are explicitly recorded in editorial/ERRATA.md for later reader integration.",
-      "reverse_sample": "The diagonal pairing code is ((n+m+1)(n+m))/2+n. An arithmetic pairing function injects a product into natural numbers. Codes distinguish pairs. Cofinite means its complement in natural numbers is finite. A nonsurjective pairing inverse is only defined on its range; this is an explicit editorial qualification of the source exercise.",
+      "checks": "Recompared the complete pairing section after OLSIZ-002. Cofinite is now stated as the complement in natural numbers of a finite subset there, exactly matching the following Nat-minus-A criterion. The localized note carries the shared finding ID. The pairing formula, injectivity definition, rational and finite-subset exercises, inverse qualification and Choice disclosure are unchanged.",
+      "reverse_sample": "A subset of natural numbers is cofinite exactly when its complement within the natural numbers is finite. The arithmetic pairing map remains an injection into natural numbers.",
       "source_sha256": "fb6cc1176e91e56cea5f5b9708723c59191813f8fe256aac8ed0457a0119a9bf",
-      "translation_sha256": "f81e8dd22ec703e8001e37218d68aae3a5a30e3f47f3648b3ee8187e8ec0ff47"
+      "translation_sha256": "b766c4a116aba8a91e807ea82a9078112fa9cd0196247fa4af114ae689f61804",
+      "source_audit_ids": [
+        "OLSIZ-002"
+      ]
     },
     {
       "unit_id": "OLP-0032",
       "status": "pass",
-      "checks": "Compared full files including four arrays. Odd-position filling, successive powers of two, positive-to-zero-based subtraction, all three calculated examples, prime-power encoding and final injectivity token retained. Numerical powers use the actually consulted dictionary sense rambang. The two incorrect source prose pairs remain aligned and are explicitly corrected in ERRATA.md; tables and general formula agree. No unsupported surjectivity imposed on the final encoding.",
-      "reverse_sample": "Each positive integer is uniquely a power of two times an odd number, so h(n,m)=2^n(2m+1)-1 gives a natural-number code. The simpler code 2^n 3^m is injective but not onto, and its inverse is partial.",
+      "checks": "Recompared all prose, four arrays and encoding formulas after OLSIZ-003. The successive family list now says (2,m), (3,m), and onward, agreeing with the immediately following table. The correction note is adjacent. The earlier independently logged (0,1) repair, power-of-two construction, subtraction by one, examples and prime-power injection remain intact.",
+      "reverse_sample": "Successive rows are filled by the families (2,m), (3,m), and onward. The final formula h(n,m)=2^n(2m+1)-1 still codes every natural-number pair.",
       "source_sha256": "c26b4e0da9e2e0b0ec839470ddd1d0d5eb1b3d3922d3b6986c9a795f34328797",
-      "translation_sha256": "722777b172808d6519d599aa9f9d1dc2b4a08ecaa4130baa731ba46bd1f0d5ce"
+      "translation_sha256": "46e6270ae27da3d4542a414e763b1ac9c32015d373737a74fabf79f3c6ffc1d7",
+      "source_audit_ids": [
+        "OLSIZ-003"
+      ]
     },
     {
       "unit_id": "OLP-0033",
@@ -276,26 +285,36 @@
     {
       "unit_id": "OLP-0034",
       "status": "pass",
-      "checks": "Compared all prose, characteristic-sequence construction, surjectivity proof, direction counterexample, and seven exercises. Reduction transfers an enumeration of A to B through a surjection A to B, or an injection B to A; directions remain explicit. Total versus partial maps to a singleton and the surjective-function subset are distinct. Source finite-zero-string/codomain mismatch and unbound sequence-name subscript are recorded in ERRATA.md.",
-      "reverse_sample": "An enumeration of the positive-integer powerset would enumerate all infinite binary sequences by mapping each set to its membership sequence. Every binary sequence has a corresponding subset, so this map is onto and gives a contradiction. A surjection in the reverse direction would not suffice.",
+      "checks": "Recompared the full reduction section after OLSIZ-004 and OLSIZ-005. The characteristic output has the single bound name s throughout. The counterexample h(n) now consists of n zeros followed by an infinite tail of ones, so every output belongs to the infinite-binary-sequence codomain while the map still cannot be surjective. Both corrections are identified adjacent to their bodies; all reduction directions and exercises remain.",
+      "reverse_sample": "A subset maps to its characteristic sequence s. The illustrative h maps n to an actual infinite binary sequence with n leading zeros and ones thereafter; it misses many codomain members.",
       "source_sha256": "0d6d2e3280698668b837cef6dcf3134b86d2a4b48831ae516e6e33e42898c79a",
-      "translation_sha256": "da5ce91b2f16727ee30556fd5850afeb7f7595934ef7f5ed582b85a4e31d1a20"
+      "translation_sha256": "11ff639ead636b6bf93c911baac161f576aabc515613b2a043d27eddd769c38f",
+      "source_audit_ids": [
+        "OLSIZ-004",
+        "OLSIZ-005"
+      ]
     },
     {
       "unit_id": "OLP-0035",
       "status": "pass",
-      "checks": "Compared Frege quotation and exact citation, definition by bijection, reflexivity/symmetry/transitivity proofs, both conditional proof branches, both directions of enumerable iff, and both exercises. Composition order and domain/range distinctions match English. The two erroneous g(x) occurrences in source empty-set arguments remain aligned and are explicitly corrected to f(x) in ERRATA.md.",
-      "reverse_sample": "Two sets have the same cardinality when a bijection connects them. Identity, inverse and composition establish equivalence properties. Composing an enumeration with that bijection transfers enumerability in either direction, including the empty-set case.",
+      "checks": "Recompared the Frege citation, cardinality definition, equivalence proofs and both conditional enumeration branches after OLSIZ-006. In each empty-set branch, the bijection in scope is now correctly named f, twice. Both localized repairs carry the shared ID. The enumeration g is introduced only in the nonempty branch, and all composition directions and exercises remain unchanged.",
+      "reverse_sample": "If A is empty and f is a bijection from A to B, then B must be empty; otherwise a y in B would have no x in A with f(x)=y. The later enumeration g has a different domain.",
       "source_sha256": "025a3fc368d6873825effcb07631913762edbf2d3f9a0711d57dcd9575361251",
-      "translation_sha256": "57db81ffc4e6dd2a9576893dc4a448697e2be10fa4dc9e0e9d4a3ca895932473"
+      "translation_sha256": "d98271ec9b67b12c13f379e3c616b0fa86312a5ee043621000d0243f8541f66d",
+      "source_audit_ids": [
+        "OLSIZ-006"
+      ]
     },
     {
       "unit_id": "OLP-0036",
       "status": "pass",
-      "checks": "Compared definitions of cardinal at-most and strict-less, singleton injection, both conditional Cantor proofs, both subsequent comparisons and final injection impossibility exercise. All membership signs, iff connectives, domains and token flags match the source. Detailed-proof quantifier typo and background choice qualification are explained in ERRATA.md without silent formula replacement. The concise proof works also for the empty set.",
-      "reverse_sample": "A singleton map injects A into its powerset. For any map g from A to the powerset, the set of x not belonging to g(x) differs from every value of g, so no surjection exists. Thus A is strictly smaller. The argument uses neither a listing nor a choice of representatives.",
+      "checks": "Recompared both Cantor proof branches, cardinal comparisons and the final exercise after OLSIZ-007. The detailed proof now quantifies its concluding mismatch over every x in A, as required to exclude the diagonal subset from the whole range. The adjacent note names the finding. The diagonal definition, both membership cases, empty-set coverage and separate Choice qualification remain.",
+      "reverse_sample": "For every x in A, x belongs to g(x) exactly when it does not belong to the diagonal subset, so g(x) differs from that subset for every possible input.",
       "source_sha256": "075810b1cf1c8b54266518523d4665d3deae4a4937f4e19a66a09cc0e1aaebf7",
-      "translation_sha256": "29262eb1afdee4e1ac1b0de806ebefae5ae365316e5c66d3bca2fe66ea2e1bb4"
+      "translation_sha256": "68eef3a8a3adb8167bb1d919e8bc8bb7e2d6f109801f2fea8360a0674dc0bbab",
+      "source_audit_ids": [
+        "OLSIZ-007"
+      ]
     },
     {
       "unit_id": "OLP-0037",
@@ -316,18 +335,25 @@
     {
       "unit_id": "OLP-0039",
       "status": "pass",
-      "checks": "Compared the full editorial frame, both diagonal theorems/proofs, both arrays, conditional footnote and final function exercise. The target corrects the prose index order for s_n(m) to the mth digit of the nth string and flips 0 to 1 in the second instruction, as the unchanged array and case formula require. Both repairs are adjacent and logged in ERRATA.md. No diagonal quantifier, iff or membership direction changed.",
-      "reverse_sample": "Given any natural-number-indexed list of infinite binary strings, flip the nth bit of the nth string to obtain a missing string. Given any list of subsets of natural numbers, include n exactly when it is absent from the nth subset; the resulting set differs from every listed set.",
+      "checks": "Recompared both diagonal theorems, arrays, case formulas, conditional footnote and exercise after OLSIZ-008 and OLSIZ-009. The prose calls s_n(m) the mth digit of the nth string and states both complementary bit flips. Both localized notes are adjacent; no diagonal quantifier, membership direction or table control sequence changed. A later proposed OLSIZ-011 table-rule finding was retracted after exact-byte inspection confirmed the original three-backslash sequence is already correct.",
+      "reverse_sample": "The entry s_n(m) sits in row n and column m. Flipping each diagonal bit gives the omitted string. The unchanged table already has a row break followed immediately by a genuine hline command.",
       "source_sha256": "a075f6c63879101314fb20fa493acfb38d78ff24095bb55914f2af4527e1ad3e",
-      "translation_sha256": "9c6bc529d9d5996c93d780629e30fd2a531793f0ce59c8233e7d81a58140820c"
+      "translation_sha256": "5af7c817395540e2fc9137f8960a116d4822026b391797d65c80c974ef9967c1",
+      "source_audit_ids": [
+        "OLSIZ-008",
+        "OLSIZ-009"
+      ]
     },
     {
       "unit_id": "OLP-0040",
       "status": "pass",
-      "checks": "Compared all active prose, characteristic-sequence proof, reduction direction and five active exercises. Commented source material remains commented and translated, preserving command/formula structure. The map from subsets to binary strings is onto and transfers a hypothetical enumeration. The source N_1 indexing and unbound s_k are explicitly documented, with intended meaning fixed by unchanged membership formulas.",
-      "reverse_sample": "A hypothetical enumeration of the powerset of natural numbers would, through characteristic binary strings, enumerate every infinite binary sequence. Since diagonalization rules that out, the powerset is non-enumerable.",
+      "checks": "Recompared all active prose, the characteristic-sequence reduction, commented material and five exercises after OLSIZ-010. The characteristic output now has the single bound name s throughout, and the adjacent note carries the shared ID. The independently recorded harmless N_1 index shift, surjectivity argument, examples and reduction direction remain unchanged.",
+      "reverse_sample": "Each subset N maps to the uniquely determined characteristic string s, where s(n)=1 exactly for members of N. This surjection transfers a hypothetical enumeration to all infinite binary strings.",
       "source_sha256": "f7717d8394048096cf7a65bc87a1a1ed15861cdfb8c7edb23429d5256d954d11",
-      "translation_sha256": "7e018404fc1d73030784bb0dbf38af2dbad9bb9770349d79f08d87fdd5aa39f4"
+      "translation_sha256": "cc259462e3d7671ced74c079fffeb6172abf0c42a12658e819c40dcb53dab3bb",
+      "source_audit_ids": [
+        "OLSIZ-010"
+      ]
     },
     {
       "unit_id": "OLP-0041",
@@ -435,6 +461,83 @@
       "reverse_sample": "A left inverse undoes f after f is applied; a right inverse is undone by f. A bijection has a unique two-sided inverse. In general a right-inverse existence argument uses Choice. The empty injection into a nonempty set has no left inverse.",
       "source_sha256": "96e36d8cd8dc4ec0e73e9507147ecfe33d7e4f368ecf46de92efb423a7d409c1",
       "translation_sha256": "2265b9cc146bce6284b8ea41e17ed4a81ee3d9e4c384c9d2a57e907d520ae875"
+    },
+    {
+      "unit_id": "OLP-0029",
+      "status": "pass",
+      "checks": "All seven informal-list qualifications, empty list, duplicate-removal proof, positive-integer surjection definition and finite-list padding retained. Positive/natural shift, parity and alternating integer examples, all union/subset/induction exercises, recursively selecting first unseen values, finite/infinite bijection domains and injection characterization retained. At most finite position never becomes computability. Ceiling rendered descriptively; formulas/tokens/command sequence preserved. Both directions and empty-set cases checked.",
+      "reverse_sample": "Enumerable means empty or having a surjection from positive integers, equivalently from natural numbers. Repeated values are allowed. Removing repeats produces a bijection with a finite initial segment or all natural numbers; the required finite/infinite domain distinction is preserved.",
+      "source_sha256": "bf6be35c0e393cb6e1d227f8e9024df4216792e663f23beb7277045487acfa67",
+      "translation_sha256": "f500e112b0b2f1e30f9da7b919b451d77676b0043d1ecca5d06b49c46ccb8fdc"
+    },
+    {
+      "unit_id": "OLP-0031",
+      "status": "pass",
+      "checks": "Compared all explanation, definition and nine exercises. Pairing remains injective, not silently strengthened to bijective. All rational sign/domain conditions, finite subsets, cofinite iff, countable union and encoding questions retained. The English ordinal suffix inside math becomes preceding kaping with an empty text exponent, preserving the command/formula skeleton. Source triangular-sum inconsistency, missing subset word, inverse-domain qualification and choice dependence are explicitly recorded in editorial/ERRATA.md for later reader integration.",
+      "reverse_sample": "The diagonal pairing code is ((n+m+1)(n+m))/2+n. An arithmetic pairing function injects a product into natural numbers. Codes distinguish pairs. Cofinite means its complement in natural numbers is finite. A nonsurjective pairing inverse is only defined on its range; this is an explicit editorial qualification of the source exercise.",
+      "source_sha256": "fb6cc1176e91e56cea5f5b9708723c59191813f8fe256aac8ed0457a0119a9bf",
+      "translation_sha256": "f81e8dd22ec703e8001e37218d68aae3a5a30e3f47f3648b3ee8187e8ec0ff47"
+    },
+    {
+      "unit_id": "OLP-0032",
+      "status": "pass",
+      "checks": "Compared full files including four arrays. Odd-position filling, successive powers of two, positive-to-zero-based subtraction, all three calculated examples, prime-power encoding and final injectivity token retained. Numerical powers use the actually consulted dictionary sense rambang. The two incorrect source prose pairs remain aligned and are explicitly corrected in ERRATA.md; tables and general formula agree. No unsupported surjectivity imposed on the final encoding.",
+      "reverse_sample": "Each positive integer is uniquely a power of two times an odd number, so h(n,m)=2^n(2m+1)-1 gives a natural-number code. The simpler code 2^n 3^m is injective but not onto, and its inverse is partial.",
+      "source_sha256": "c26b4e0da9e2e0b0ec839470ddd1d0d5eb1b3d3922d3b6986c9a795f34328797",
+      "translation_sha256": "722777b172808d6519d599aa9f9d1dc2b4a08ecaa4130baa731ba46bd1f0d5ce"
+    },
+    {
+      "unit_id": "OLP-0034",
+      "status": "pass",
+      "checks": "Compared all prose, characteristic-sequence construction, surjectivity proof, direction counterexample, and seven exercises. Reduction transfers an enumeration of A to B through a surjection A to B, or an injection B to A; directions remain explicit. Total versus partial maps to a singleton and the surjective-function subset are distinct. Source finite-zero-string/codomain mismatch and unbound sequence-name subscript are recorded in ERRATA.md.",
+      "reverse_sample": "An enumeration of the positive-integer powerset would enumerate all infinite binary sequences by mapping each set to its membership sequence. Every binary sequence has a corresponding subset, so this map is onto and gives a contradiction. A surjection in the reverse direction would not suffice.",
+      "source_sha256": "0d6d2e3280698668b837cef6dcf3134b86d2a4b48831ae516e6e33e42898c79a",
+      "translation_sha256": "da5ce91b2f16727ee30556fd5850afeb7f7595934ef7f5ed582b85a4e31d1a20"
+    },
+    {
+      "unit_id": "OLP-0035",
+      "status": "pass",
+      "checks": "Compared Frege quotation and exact citation, definition by bijection, reflexivity/symmetry/transitivity proofs, both conditional proof branches, both directions of enumerable iff, and both exercises. Composition order and domain/range distinctions match English. The two erroneous g(x) occurrences in source empty-set arguments remain aligned and are explicitly corrected to f(x) in ERRATA.md.",
+      "reverse_sample": "Two sets have the same cardinality when a bijection connects them. Identity, inverse and composition establish equivalence properties. Composing an enumeration with that bijection transfers enumerability in either direction, including the empty-set case.",
+      "source_sha256": "025a3fc368d6873825effcb07631913762edbf2d3f9a0711d57dcd9575361251",
+      "translation_sha256": "57db81ffc4e6dd2a9576893dc4a448697e2be10fa4dc9e0e9d4a3ca895932473"
+    },
+    {
+      "unit_id": "OLP-0036",
+      "status": "pass",
+      "checks": "Compared definitions of cardinal at-most and strict-less, singleton injection, both conditional Cantor proofs, both subsequent comparisons and final injection impossibility exercise. All membership signs, iff connectives, domains and token flags match the source. Detailed-proof quantifier typo and background choice qualification are explained in ERRATA.md without silent formula replacement. The concise proof works also for the empty set.",
+      "reverse_sample": "A singleton map injects A into its powerset. For any map g from A to the powerset, the set of x not belonging to g(x) differs from every value of g, so no surjection exists. Thus A is strictly smaller. The argument uses neither a listing nor a choice of representatives.",
+      "source_sha256": "075810b1cf1c8b54266518523d4665d3deae4a4937f4e19a66a09cc0e1aaebf7",
+      "translation_sha256": "29262eb1afdee4e1ac1b0de806ebefae5ae365316e5c66d3bca2fe66ea2e1bb4"
+    },
+    {
+      "unit_id": "OLP-0039",
+      "status": "pass",
+      "checks": "Compared the full editorial frame, both diagonal theorems/proofs, both arrays, conditional footnote and final function exercise. The target corrects the prose index order for s_n(m) to the mth digit of the nth string and flips 0 to 1 in the second instruction, as the unchanged array and case formula require. Both repairs are adjacent and logged in ERRATA.md. No diagonal quantifier, iff or membership direction changed.",
+      "reverse_sample": "Given any natural-number-indexed list of infinite binary strings, flip the nth bit of the nth string to obtain a missing string. Given any list of subsets of natural numbers, include n exactly when it is absent from the nth subset; the resulting set differs from every listed set.",
+      "source_sha256": "a075f6c63879101314fb20fa493acfb38d78ff24095bb55914f2af4527e1ad3e",
+      "translation_sha256": "9c6bc529d9d5996c93d780629e30fd2a531793f0ce59c8233e7d81a58140820c"
+    },
+    {
+      "unit_id": "OLP-0040",
+      "status": "pass",
+      "checks": "Compared all active prose, characteristic-sequence proof, reduction direction and five active exercises. Commented source material remains commented and translated, preserving command/formula structure. The map from subsets to binary strings is onto and transfers a hypothetical enumeration. The source N_1 indexing and unbound s_k are explicitly documented, with intended meaning fixed by unchanged membership formulas.",
+      "reverse_sample": "A hypothetical enumeration of the powerset of natural numbers would, through characteristic binary strings, enumerate every infinite binary sequence. Since diagonalization rules that out, the powerset is non-enumerable.",
+      "source_sha256": "f7717d8394048096cf7a65bc87a1a1ed15861cdfb8c7edb23429d5256d954d11",
+      "translation_sha256": "7e018404fc1d73030784bb0dbf38af2dbad9bb9770349d79f08d87fdd5aa39f4"
+    },
+    {
+      "unit_id": "OLP-0039",
+      "status": "pass",
+      "checks": "Recompared both diagonal theorems, arrays, case formulas, conditional footnote and exercise after OLSIZ-008, OLSIZ-009 and the supplemental OLSIZ-011. The prose calls s_n(m) the mth digit of the nth string and states both complementary bit flips. Each of the first five array rows uses an explicit row break followed by a genuine hline control sequence. All three localized notes are adjacent; no diagonal quantifier or membership direction changed.",
+      "reverse_sample": "The entry s_n(m) sits in row n and column m. Flipping each diagonal bit gives the omitted string, and the table contains five explicit horizontal rules after its first five rows.",
+      "source_sha256": "a075f6c63879101314fb20fa493acfb38d78ff24095bb55914f2af4527e1ad3e",
+      "translation_sha256": "cc393dc83b2121107ee231757ab81588a825c484921dfcf87b663528e33ef9e3",
+      "source_audit_ids": [
+        "OLSIZ-008",
+        "OLSIZ-009",
+        "OLSIZ-011"
+      ]
     }
   ]
 }

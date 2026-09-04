@@ -33,6 +33,8 @@ That complete reader is not yet built.
 The first 48 files have exact source-aligned paragraph records,
 actual consulted canon passages, formula/token/link/label checks,
 and same-author semantic comparisons with reverse paraphrases.
+Applied source-audit corrections and retracted findings have separate
+machine-readable evidence records, including exact source and target hashes.
 These checks do not replace native review, which has not been claimed.
 Provisional technical borrowing is disclosed rather than presented as
 attested Javanese mathematical usage.

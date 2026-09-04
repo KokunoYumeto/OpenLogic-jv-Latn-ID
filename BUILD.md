@@ -29,8 +29,8 @@ order. The reader applies Javanese captions and token forms; editorial/ERRATA.md
 and edition/jv-errata.tex distinguish source corrections from aligned text.
 
 Evidence under evidence/ records exact source and translation hashes, paragraph
-alignment, short canon passages, terminology decisions and same-author semantic
-reviews. Canon original PDFs and full dictionary responses are private
+alignment, short canon passages, terminology decisions, same-author semantic
+reviews, applied source corrections, and audit retractions. Canon original PDFs and full dictionary responses are private
 consultation copies and are not part of this repository. Original book titles,
 personal names used for scholarly attribution, citations, URLs, source-code
 identifiers and mathematical notation are intentional language exceptions.
