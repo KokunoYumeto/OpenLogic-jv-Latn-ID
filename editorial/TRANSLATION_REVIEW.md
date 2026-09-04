@@ -9,7 +9,7 @@ a concrete review question.
 Coverage is partial and follows the translated corpus. The metadata record at
 the start of the JSONL states the exact current range. Choices remain open to
 asynchronous correction and never block translation or publication.
-At the 68-file checkpoint the log contains 96 terminology or provenance
+At the 74-file checkpoint the log contains 100 terminology or provenance
 decisions and 39 difficult translation or source decisions.
 
 The first terminology entries are explicitly marked retrospective backfill.

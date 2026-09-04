@@ -1,0 +1,122 @@
+% Part: first-order-logic
+% Chapter: sequent-calculus
+% Section: derivations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{seq}{der}}
+      {\olfileid{pl}{seq}{der}}
+
+\olsection{\usetoken{P}{derivation}}
+
+\begin{explain}
+Kita wis nerangake wujude sekuen wiwitan lan wis menehi aturan
+inferensi. !!^{derivation}s ing kalkulus sekuen dibangkitake kanthi
+induktif saka rong perkara iku: saben !!{derivation} dadi sekuen
+wiwitan dhewe, utawa dumadi saka siji utawa rong !!{derivation}s kang
+diterusake dening sawijining inferensi.
+\end{explain}
+
+\begin{defn}[$\Log{LK}$ !!{derivation}]
+\emph{$\Log{LK}$-!!{derivation}} saka sekuen~$S$ yaiku wit winates
+saka sekuen kang nyukupi syarat-syarat iki:
+\begin{enumerate}
+\item Sekuen-sekuen paling dhuwur ing wit iku sekuen wiwitan.
+\item Sekuen paling ngisor ing wit iku~$S$.
+\item Saben sekuen ing wit kejaba $S$ iku premis saka panrapan aturan
+  inferensi kang bener, lan kesimpulane mapan langsung ing sangisore
+  sekuen kasebut ing wit.
+\end{enumerate}
+Banjur kita ngarani $S$ \emph{sekuen-pungkasan} saka !!{derivation}
+lan kandha yen $S$ \emph{bisa !!{derivable} ing $\Log{LK}$} (utawa
+$\Log{LK}$-!!{derivable}).
+\end{defn}
+
+\begin{ex}
+Saben sekuen wiwitan, upamane $!C \Sequent !C$, iku
+!!a{derivation}. Kita bisa ngasilake !!{derivation} anyar saka iki
+kanthi ngetrapake, umpamane, aturan $\LeftR{\Weakening}$,
+\begin{prooftree}
+\Axiom$ \Gamma \fCenter \Delta $
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$ !A, \Gamma \fCenter \Delta$
+\end{prooftree}
+Nanging, aturan kasebut dimaksudake umum: $!A$ ing aturan bisa diganti
+nganggo sembarang !!{sentence}, upamane uga nganggo~$!D$. Yen premis
+cocog karo sekuen wiwitan $!C \Sequent !C$, iki ateges $\Gamma$ lan
+$\Delta$ kalorone mung~$!C$, mula kesimpulane dadi $!D, !C \Sequent
+!C$. Dadi, iki !!a{derivation}:
+\begin{prooftree}
+\Axiom$ !C \fCenter !C $
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$ !D, !C \fCenter !C$
+\end{prooftree}
+Saiki kita bisa ngetrapake aturan liyane, upamane
+$\LeftR{\Exchange}$, kang ngidini kita ngijolake rong !!{sentence}s ing
+sisih kiwa. Dadi, iki uga !!{derivation} kang bener:
+\begin{prooftree}
+\Axiom$ !C \fCenter !C $
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$ !D, !C \fCenter !C$
+\RightLabel{\LeftR{\Exchange}}
+\UnaryInf$ !C, !D \fCenter !C$
+\end{prooftree}
+Ing panrapan aturan iki, kang diwenehake kanthi wujud
+\begin{prooftree}
+\Axiom$ \Gamma, !A, !B, \Pi \fCenter \Delta $
+\RightLabel{\LeftR{\Exchange}}
+\UnaryInf$ \Gamma, !B, !A, \Pi \fCenter \Delta,$
+\end{prooftree}
+$\Gamma$ lan $\Pi$ kalorone kosong, $\Delta$ yaiku $!C$, lan peran
+$!A$ lan $!B$ dilakoni dening $!D$ lan~$!C$, kanthi urut. Kanthi cara
+kang meh padha, kita uga bisa weruh yen
+\begin{prooftree}
+\Axiom$ !D \fCenter !D $
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$ !C, !D \fCenter !D$
+\end{prooftree}
+iku !!a{derivation}. Saiki rong !!{derivation}s iki bisa dijupuk lan
+digabungake nganggo $\RightR{\land}$. Aturan kasebut yaiku
+\begin{prooftree}
+\Axiom$\Gamma \fCenter \Delta, !A$
+\Axiom$ \Gamma \fCenter \Delta, !B$
+\RightLabel{\RightR{\land}}
+\BinaryInf$ \Gamma \fCenter \Delta, !A \land !B $
+\end{prooftree}
+Ing kasus iki, premis kudu cocog karo sekuen pungkasan saka
+!!{derivation}s kang mungkasi premis. Iki ateges $\Gamma$ yaiku
+$!C, !D$, $\Delta$ kosong, $!A$ yaiku $!C$, lan $!B$ yaiku $!D$. Mula,
+yen inferensine bener, kesimpulane yaiku $!C, !D \Sequent !C
+\land !D$.
+\begin{prooftree}
+\Axiom$ !C \fCenter !C $
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$ !D, !C \fCenter !C$
+\RightLabel{\LeftR{\Exchange}}
+\UnaryInf$ !C, !D \fCenter !C$
+\Axiom$ !D \fCenter !D $
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$ !C, !D \fCenter !D$
+\RightLabel{\RightR{\land}}
+\BinaryInf$ !C, !D \fCenter !C \land !D $
+\end{prooftree}
+Mesthi wae, kita uga bisa ngowahi urutan premis, mula $!A$
+dadi $!D$ lan $!B$ dadi~$!C$.
+\begin{prooftree}
+\Axiom$ !D \fCenter !D $
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$ !C, !D \fCenter !D$
+\Axiom$ !C \fCenter !C $
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$ !D, !C \fCenter !C$
+\RightLabel{\LeftR{\Exchange}}
+\UnaryInf$ !C, !D \fCenter !C$
+\RightLabel{\RightR{\land}}
+\BinaryInf$ !C, !D \fCenter !D \land !C $
+\end{prooftree}
+\end{ex}
+
+\end{document}

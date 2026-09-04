@@ -1,0 +1,75 @@
+% Part: first-order-logic
+% Chapter: sequent-calculus
+% Section: rules-and-proofs
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{seq}{rul}}
+      {\olfileid{pl}{seq}{rul}}
+
+\olsection{Aturan lan \usetoken{P}{derivation}}
+
+Kanggo andharan sabanjure, anggepen $\Gamma, \Delta, \Pi, \Lambda$
+makili urutan winates saka !!{sentence}s.
+
+\begin{defn}[Sekuen]
+\emph{Sekuen} yaiku ekspresi kanthi wujud
+\[
+\Gamma \Sequent \Delta
+\]
+ing ngendi $\Gamma$ lan $\Delta$ iku urutan winates (bisa uga kosong)
+saka !!{sentence}s ing basa $\Lang L$. $\Gamma$ diarani
+\emph{anteseden}, dene $\Delta$ diarani \emph{sukseden}.
+\end{defn}
+
+\begin{explain}
+Gagasan intuitif ing walike sekuen yaiku: yen kabeh !!{sentence}s ing
+anteseden bener, saora-orane salah siji saka !!{sentence}s ing sukseden
+bener. Yaiku, yen $\Gamma = \tuple{!A_1, \dots, !A_m}$ lan
+$\Delta = \tuple{!B_1, \dots, !B_n}$, mula $\Gamma \Sequent \Delta$
+bener yen lan mung yen
+\[
+(!A_1 \land \cdots \land !A_m) \lif (!B_1 \lor \cdots \lor
+!B_n)
+\]
+bener. Ana rong kasus mligi: nalika $\Gamma$ kosong lan nalika
+$\Delta$~kosong. Nalika $\Gamma$ kosong, yaiku $m = 0$, $\quad
+\Sequent \Delta$ bener yen lan mung yen $!B_1 \lor \dots \lor !B_n$
+bener. Nalika $\Delta$ kosong, yaiku $n = 0$, $\Gamma \Sequent \quad$
+bener yen lan mung yen $\lnot(!A_1 \land \dots \land !A_m)$ bener.
+Kita ngarani sekuen valid yen lan mung yen !!{sentence} kang cocog
+iku valid.
+\end{explain}
+
+Yen $\Gamma$ iku urutan !!{sentence}s, kita nulis $\Gamma, !A$ kanggo
+asil nambahake $!A$ ing pucuk tengen~$\Gamma$ (lan $!A, \Gamma$
+kanggo asil nambahake $!A$ ing pucuk kiwa~$\Gamma$). Yen $\Delta$ uga
+urutan !!{sentence}s, mula $\Gamma, \Delta$ iku sambungan rong urutan
+kasebut.
+
+\begin{defn}[Sekuen Wiwitan]
+\emph{Sekuen wiwitan} yaiku sekuen
+\iftag{prvFalse,prvTrue}{kanthi salah siji wujud iki:
+  \begin{enumerate}
+    \item $!A \Sequent !A$
+    \tagitem{prvTrue}{$\quad \Sequent \ltrue$}{}
+    \tagitem{prvFalse}{$\lfalse \Sequent \quad$}{}
+  \end{enumerate}}
+{kanthi wujud $!A \Sequent !A$} kanggo saben !!{sentence} $!A$ ing basa kasebut.
+\end{defn}
+
+!!^{derivation}s ing kalkulus sekuen iku wit-wit sekuen tartamtu.
+Sekuen paling dhuwur yaiku sekuen wiwitan, lan yen sawijining sekuen
+mapan ing sangisore siji utawa rong sekuen liyane, sekuen iku kudu
+ndherek kanthi bener miturut aturan inferensi. Aturan kanggo
+$\Log{LK}$ dipérang dadi rong jinis utama: aturan \emph{logis} lan
+aturan \emph{struktural}. Aturan logis dijenengi miturut !!{main
+  operator} saka !!{sentence} kang ngemot $!A$ lan/utawa $!B$ ing
+sekuen ngisor. Saben aturan duwe rong versi, siji kanggo nginferensi
+sekuen kanthi !!{sentence} kang ngemot !!{operator} ing sisih kiwa,
+lan siji maneh kanthi !!{sentence} kasebut ing sisih tengen.
+
+\end{document}

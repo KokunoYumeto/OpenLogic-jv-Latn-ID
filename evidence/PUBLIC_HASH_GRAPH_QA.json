@@ -1,7 +1,7 @@
 {
   "schema": "jv-public-hash-graph-qa/2",
-  "utc": "2026-09-04T23:03:30.958364+00:00",
-  "prospective_parent_commit": "0ab486d8528be1474d9af3352cde03d605fe5f13",
+  "utc": "2026-09-04T23:16:18.286651+00:00",
+  "prospective_parent_commit": "d0b444ac1cb1e7d497226a73021ed0f79a6cc0b0",
   "representation": {
     "evidence_attribute": "-text at final precedence",
     "qa_script_attribute": "-text at final precedence",
@@ -9,10 +9,10 @@
     "expert_review_log": "Git LF projection; internal metadata binds exact raw evidence bytes"
   },
   "current_corpus": {
-    "translated_units": 68,
-    "translated_segments": 757,
-    "structural_or_formal_segments": 378,
-    "term_decisions": 96,
+    "translated_units": 74,
+    "translated_segments": 789,
+    "structural_or_formal_segments": 431,
+    "term_decisions": 100,
     "canon_passages": 21
   },
   "checks": {
@@ -21,19 +21,19 @@
       "status": "pass"
     },
     "batch_to_source_and_translation": {
-      "units": 68,
+      "units": 74,
       "status": "pass"
     },
     "semantic_to_source_and_translation": {
-      "units": 68,
+      "units": 74,
       "status": "pass"
     },
     "segments_to_semantic_review": {
-      "links": 1135,
+      "links": 1220,
       "status": "pass"
     },
     "translated_segments_with_canon": {
-      "links": 757,
+      "links": 789,
       "status": "pass"
     },
     "corrections_to_current_batch_and_semantic": {
@@ -53,11 +53,11 @@
       "status": "pass"
     },
     "segment_to_canon_excerpt": {
-      "links": 2844,
+      "links": 2914,
       "status": "pass"
     },
     "review_log_to_canon_excerpt": {
-      "links": 243,
+      "links": 261,
       "status": "pass"
     },
     "sealed_v0.1.2_internal_links": {
@@ -67,13 +67,13 @@
   },
   "aggregate_public_blob_sha256": {
     "tools/qa-batch.py": "7e74d041d195a3d8d77a360fea4a35691f501787472b1e97a39c5155dd82194b",
-    "editorial/TRANSLATION_REVIEW_LOG.jsonl": "729bc45eb7e1277438b55734162a7495c11dc007edf2c3bdd53441a65d9503b2",
-    "evidence/BATCH_QA.json": "9ee087d430eae1fa2215f960064e993b997c9f87552a99597ea2cd71e4f8d9a7",
-    "evidence/PUBLIC_QA_REPLAY.json": "46ca709f88b3712064c77358a7a65b3cacf3632b719687b6e55fe666ad393cc3",
-    "evidence/SEGMENT_CANON_USE.jsonl": "6915d989f94f7a463f0740c73ab7ca5f91a8afbf529ce804b55526854fb7e095",
-    "evidence/SEMANTIC_REVIEW.json": "b8ffa508be17c85e0ba8e98668038b94c16ae62301aecb17ea5263d7573babaf",
-    "evidence/SOURCE_CORRECTIONS.jsonl": "c02a9175725c6fbe1d59dd73e3f07ecdccef28a28157c6688641c40d5790ef7c",
-    "evidence/TERM_DECISIONS.jsonl": "5d1eeda2b7ab040cda13f8438af758a2569429bc64c7794f56600505e536b7ed"
+    "editorial/TRANSLATION_REVIEW_LOG.jsonl": "d6b34502714786df17b5225f06ef19aee0e61d45558679a8a663a0eb67eec3ff",
+    "evidence/BATCH_QA.json": "05d2bbf0c18ae77157a8bb2a0cafef0e10d1841adbad1eaa8878d4f7a73ec006",
+    "evidence/PUBLIC_QA_REPLAY.json": "7cdedacbdadcf79585ef13269a7dc18b6a5c08fa298f266139c7f3a9f5405b4b",
+    "evidence/SEGMENT_CANON_USE.jsonl": "cd72674b685ed0f8a914843c804e862a4d717fbb334d534c492293b6db62b48b",
+    "evidence/SEMANTIC_REVIEW.json": "03e91c3b1b5f30b2670a27a14ee56599f5a565408a788c49e2edde48722f3480",
+    "evidence/SOURCE_CORRECTIONS.jsonl": "434ddac6811f5b1621d9d0268ca947a1e7716f5943102ff083627f2fe31f9922",
+    "evidence/TERM_DECISIONS.jsonl": "42c086e2443fb79404d3b94f6ba57d44dd7160648969962cece3d95b22a3c32f"
   },
   "sealed_release": {
     "tag": "v0.1.2",

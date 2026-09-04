@@ -2,7 +2,7 @@
   "schema": "jv-semantic-review/1",
   "reviewer": "Codex, same author; no independent or human review claimed",
   "date": "2026-09-05",
-  "scope": "All 757 translated paragraph blocks in OLP-0001 through OLP-0068; 378 unchanged formal/structural blocks classified separately. OLSIZ-001 through OLSIZ-010 and OLPL-001 through OLPL-003 are applied in their affected targets; the proposed OLSIZ-011 remains retracted after exact-byte inspection. Paragraph analysis normalizes CRLF/LF; exact full-file hashes remain raw-byte hashes.",
+  "scope": "All 789 translated paragraph blocks in OLP-0001 through OLP-0074; 431 unchanged formal/structural blocks classified separately. OLSIZ-001 through OLSIZ-010 and OLPL-001 through OLPL-003 are applied in their affected targets; the proposed OLSIZ-011 remains retracted after exact-byte inspection. Paragraph analysis normalizes CRLF/LF; exact full-file hashes remain raw-byte hashes.",
   "method": "Direct source-to-target reading, quantifier/negation/biconditional checks, mathematical-context checks, and selected reverse paraphrases. Automated structure checks are separate.",
   "unit_reviews": [
     {
@@ -585,6 +585,54 @@
       "reverse_sample": "An axiomatic derivation is a sentence sequence in which each line is an axiom, a member of the premise set, or justified by an inference rule. Modus ponens licenses B from A and A implies B. A theorem uses no premise-set lines, and a complete system derives every formula from inconsistency once falsity implies each formula.",
       "source_sha256": "b9637a6a1cee29ebba2f8d2cdf238d4567d8ec4b7995607abcb0ee1aef0570b9",
       "translation_sha256": "2b3bb3f0f41f039f73ffc78d56907a8b4142629a97d7d7c24c112b5a78b9e21c"
+    },
+    {
+      "unit_id": "OLP-0069",
+      "status": "pass",
+      "checks": "Compared both tag-controlled chapter identities, the editorial scope statement, every conditional import and the final hook. The wrapper still selects the first-order or propositional chapter identity, includes quantifier and identity material only under FOL, and imports every sequent-calculus section exactly once.",
+      "reverse_sample": "This chapter presents Gentzen's classical LK. The prfLK tag controls proof-system material, while the FOL tag adds quantifier and identity sections to the common propositional sequence.",
+      "source_sha256": "f7e79d7b3f181c61d3defb24c630db20ceaf12a3ec237c9b0a2ab1f7855494fb",
+      "translation_sha256": "147233cbed9b55976bd6464ad272412551d2041e74784a5b5ad0478a13dc1f17"
+    },
+    {
+      "unit_id": "OLP-0070",
+      "status": "pass",
+      "checks": "Compared the four sequence metavariables, sequent definition, antecedent/succedent roles, conjunctive-to-disjunctive semantic reading, both empty-side cases, concatenation conventions, every initial-sequent variant and the logical/structural rule distinction. All 38 mathematical spans and every side direction are preserved.",
+      "reverse_sample": "A sequent has finite, possibly empty antecedent and succedent sequences. It is read as the conjunction of the antecedent implying the disjunction of the succedent; an empty antecedent leaves a disjunction and an empty succedent negates the antecedent conjunction. Derivations begin with initial sequents and apply logical or structural rules downward.",
+      "source_sha256": "73a554964d7a3fc35a116f63e658340a8c89f9915c3f27e23f7ebd762df35859",
+      "translation_sha256": "42953a74c8670102b70a4899fd5c49c3ae572fc029cf5e1307247953249c0a9e"
+    },
+    {
+      "unit_id": "OLP-0071",
+      "status": "pass",
+      "checks": "Compared every displayed negation, conjunction, disjunction and conditional rule. All 27 mathematical spans, one- versus two-premise arities, left/right rule labels, contexts and principal formulas are byte-sequence equivalent to the frozen source.",
+      "reverse_sample": "The propositional LK rules introduce each connective on either side of a sequent. Conjunction has two alternative one-premise left rules and a two-premise right rule; disjunction has the converse branching pattern; implication moves its antecedent across the turnstile on the right and combines two contexts on the left.",
+      "source_sha256": "0bf253cf8afedca1478fb820770b04ab708dbe8cfd3344377a0d14ae91889276",
+      "translation_sha256": "67fd6d881ed81b23ed6a623497299cc7e48bbacf0451d0ebcff320eccb94091d"
+    },
+    {
+      "unit_id": "OLP-0072",
+      "status": "pass",
+      "checks": "Compared all four quantifier rules, the closed-term restrictions, both eigenvariable conditions, the historical terminology footnote, substitution notation, the partial-replacement example, the prohibited universal inference and both unsound derivation trees. All 47 mathematical spans, constants, terms, bound variables and starred rule labels are preserved.",
+      "reverse_sample": "Left universal and right existential instantiate with a closed term. Right universal and left existential use a fresh constant absent from the lower sequent. This eigenvariable condition blocks a derivation from an existential claim to the corresponding universal claim, which is not valid.",
+      "source_sha256": "e0047087b88b91ba65c23a76f7c8f230c4161785f4d83f07d14461341b66d90e",
+      "translation_sha256": "8e4dc82586cd78a6a953a4aaffcd824fc4e943a4e4c39cfe463d7edf706695d8"
+    },
+    {
+      "unit_id": "OLP-0073",
+      "status": "pass",
+      "checks": "Compared the motivation for rearranging contexts and every displayed weakening, contraction, exchange and cut rule. All 13 mathematical spans, left/right directions, duplicated formulas, context orders, rule arities and the double-line convention are preserved.",
+      "reverse_sample": "Weakening adds a formula, contraction merges duplicates, and exchange swaps adjacent formulas on either side. Repeated structural steps may be shown by double lines. Cut combines a derivation ending with A on the right and one beginning with A on the left, removing A in the combined conclusion.",
+      "source_sha256": "5c13d5312a8b2287b54d67d2fadc6247ba499bd9b6a71255ea04891307689b06",
+      "translation_sha256": "36d7445a82ae86544f5c0815c4223ad34ec3cde3a6a65d871c20cddb4c4eca86"
+    },
+    {
+      "unit_id": "OLP-0074",
+      "status": "pass",
+      "checks": "Compared the inductive construction of derivations, all three finite-tree conditions, the end-sequent and derivability clauses, and every substitution step in the worked weakening/exchange/conjunction example. All 66 mathematical spans, inference labels, empty contexts, premise orderings and both final conjunction orders are preserved.",
+      "reverse_sample": "An LK derivation is a finite sequent tree whose top nodes are initial sequents, bottom node is the end-sequent, and every other node is a premise of a correct inference immediately below it. The example builds C,D sequent C-and-D from two initial sequents and shows that reversing the two premises yields D-and-C.",
+      "source_sha256": "25897d850b211443621f31a1166f443c1e00c6bcbf13002bc1b9281ca4300371",
+      "translation_sha256": "fee3c2806d75fdf59ae04de5737813db354420dcf98bfde62a67344443a31db2"
     }
   ],
   "unresolved_language_uncertainties": [
@@ -596,9 +644,10 @@
     "Dedekind-infinity, closure, algebra, induction, recursion and isomorphism terms are controlled provisional adaptations; definitions and formulas, not the Javanese canon, remain their mathematical authority.",
     "The two Dedekind quotations are translated from the frozen English OpenLogic wording; the cited historical source is preserved, and no fresh claim of consultation with the German original is made.",
     "Propositional-connective, valuation, satisfaction, consequence and syntax terminology is provisional controlled adaptation or transparent description; the preserved formation and truth clauses, not the Javanese canon, remain the formal authority.",
-    "Proof-system, soundness, sequent, discharge and tableau terminology is provisional controlled adaptation or transparent description; the preserved rules, derivation trees and iff directions, not the Javanese canon, remain the formal authority."
+    "Proof-system, soundness, sequent, discharge and tableau terminology is provisional controlled adaptation or transparent description; the preserved rules, derivation trees and iff directions, not the Javanese canon, remain the formal authority.",
+    "Antecedent, succedent, eigenvariable and structural-rule terminology is provisional borrowing or transparent description; the preserved side conditions and inference trees, not the Javanese canon, remain the formal authority."
   ],
-  "build_and_visual_review": "The 36-page introduction/sets/relations/functions reader is accepted and published as v0.1.2. OLP-0049 through OLP-0068 are source-complete and reviewed here but are not yet integrated into a later full-reader build.",
+  "build_and_visual_review": "The 36-page introduction/sets/relations/functions reader is accepted and published as v0.1.2. OLP-0049 through OLP-0074 are source-complete and reviewed here but are not yet integrated into a later full-reader build.",
   "superseded_unit_reviews": [
     {
       "unit_id": "OLP-0021",

@@ -1,0 +1,81 @@
+% Part: first-order-logic
+% Chapter: sequent-calculus
+% Section: structural-rules
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{seq}{srl}}
+      {\olfileid{pl}{seq}{srl}}
+
+\olsection{Aturan Struktural}
+
+Kita uga mbutuhake sawetara aturan kang ngidini kita nata maneh
+!!{sentence}s ing sisih kiwa lan tengen sekuen. Amarga aturan logis
+nuntut supaya !!{sentence}s ing premis kang kena aturan kasebut mapan
+ing pucuk kiwa utawa pucuk tengen, kita mbutuhake aturan “pertukaran”
+kang ngidini kita mindhah !!{sentence}s menyang panggonan kang pas.
+Kadhangkala uga wigati supaya bisa nggabungake rong !!{sentence}s kang
+padha dadi siji, lan nambahake !!a{sentence} ing salah siji sisih.
+
+\subsection{Pelemahan}
+
+\begin{defish}
+\Axiom$ \Gamma \fCenter \Delta $
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$ !A, \Gamma \fCenter \Delta$
+\DisplayProof
+\hfill
+\Axiom$ \Gamma \fCenter \Delta$
+\RightLabel{\RightR{\Weakening}}
+\UnaryInf$ \Gamma \fCenter \Delta, !A$
+\DisplayProof
+\end{defish}
+
+\subsection{Kontraksi}
+
+\begin{defish}
+\Axiom$ !A, !A, \Gamma \fCenter \Delta $
+\RightLabel{\LeftR{\Contraction}}
+\UnaryInf$ !A, \Gamma \fCenter \Delta$
+\DisplayProof
+\hfill
+\Axiom$ \Gamma \fCenter \Delta, !A, !A$
+\RightLabel{\RightR{\Contraction}}
+\UnaryInf$ \Gamma \fCenter \Delta, !A$
+\DisplayProof
+\end{defish}
+
+\subsection{Pertukaran}
+
+\begin{defish}
+\Axiom$ \Gamma, !A, !B, \Pi \fCenter \Delta $
+\RightLabel{\LeftR{\Exchange}}
+\UnaryInf$ \Gamma, !B, !A, \Pi \fCenter \Delta$
+\DisplayProof
+\hfill
+\Axiom$ \Gamma \fCenter \Delta, !A, !B, \Lambda$
+\RightLabel{\RightR{\Exchange}}
+\UnaryInf$ \Gamma \fCenter \Delta, !B, !A, \Lambda$
+\DisplayProof
+\end{defish}
+
+Rerangken inferensi pelemahan, kontraksi, lan pertukaran kerep
+dituduhake nganggo garis inferensi rangkep.
+
+Aturan sabanjure, kang diarani “potong,” sejatine ora dibutuhake
+kanthi mutlak, nanging nggampangake banget panganggone maneh lan
+panggabungan !!{derivation}s.
+\begin{defish}
+\[
+\Axiom$ \Gamma \fCenter \Delta, !A$
+\Axiom$ !A, \Pi \fCenter \Lambda $
+\RightLabel{\Cut}
+\BinaryInf$ \Gamma, \Pi \fCenter \Delta, \Lambda$
+\DisplayProof
+\]
+\end{defish}
+
+\end{document}

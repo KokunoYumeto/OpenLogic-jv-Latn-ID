@@ -1,11 +1,11 @@
 {
   "schema": "jv-batch-qa/1",
-  "utc": "2026-09-04T22:57:38.093278+00:00",
-  "checked_units": 68,
-  "structural_pass_units": 68,
+  "utc": "2026-09-04T23:14:26.278898+00:00",
+  "checked_units": 74,
+  "structural_pass_units": 74,
   "total_units": 722,
-  "segments": 1135,
-  "translated_segments": 757,
+  "segments": 1220,
+  "translated_segments": 789,
   "units": [
     {
       "unit_id": "OLP-0001",
@@ -1502,10 +1502,142 @@
       "source_math_count": 44,
       "target_math_count": 44,
       "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0069",
+      "source_path": "content/first-order-logic/sequent-calculus/sequent-calculus.tex",
+      "source_sha256": "f7e79d7b3f181c61d3defb24c630db20ceaf12a3ec237c9b0a2ab1f7855494fb",
+      "translation_sha256": "147233cbed9b55976bd6464ad272412551d2041e74784a5b5ad0478a13dc1f17",
+      "translation_bytes": 1099,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 20,
+      "target_paragraphs": 20,
+      "source_math_count": 0,
+      "target_math_count": 0,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0070",
+      "source_path": "content/first-order-logic/sequent-calculus/rules-and-proofs.tex",
+      "source_sha256": "73a554964d7a3fc35a116f63e658340a8c89f9915c3f27e23f7ebd762df35859",
+      "translation_sha256": "42953a74c8670102b70a4899fd5c49c3ae572fc029cf5e1307247953249c0a9e",
+      "translation_bytes": 2828,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 12,
+      "target_paragraphs": 12,
+      "source_math_count": 38,
+      "target_math_count": 38,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0071",
+      "source_path": "content/first-order-logic/sequent-calculus/propositional-rules.tex",
+      "source_sha256": "0bf253cf8afedca1478fb820770b04ab708dbe8cfd3344377a0d14ae91889276",
+      "translation_sha256": "67fd6d881ed81b23ed6a623497299cc7e48bbacf0451d0ebcff320eccb94091d",
+      "translation_bytes": 2033,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 14,
+      "target_paragraphs": 14,
+      "source_math_count": 27,
+      "target_math_count": 27,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0072",
+      "source_path": "content/first-order-logic/sequent-calculus/quantifier-rules.tex",
+      "source_sha256": "e0047087b88b91ba65c23a76f7c8f230c4161785f4d83f07d14461341b66d90e",
+      "translation_sha256": "8e4dc82586cd78a6a953a4aaffcd824fc4e943a4e4c39cfe463d7edf706695d8",
+      "translation_bytes": 3814,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 15,
+      "target_paragraphs": 15,
+      "source_math_count": 47,
+      "target_math_count": 47,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0073",
+      "source_path": "content/first-order-logic/sequent-calculus/structural-rules.tex",
+      "source_sha256": "5c13d5312a8b2287b54d67d2fadc6247ba499bd9b6a71255ea04891307689b06",
+      "translation_sha256": "36d7445a82ae86544f5c0815c4223ad34ec3cde3a6a65d871c20cddb4c4eca86",
+      "translation_bytes": 2190,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 15,
+      "target_paragraphs": 15,
+      "source_math_count": 13,
+      "target_math_count": 13,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0074",
+      "source_path": "content/first-order-logic/sequent-calculus/derivations.tex",
+      "source_sha256": "25897d850b211443621f31a1166f443c1e00c6bcbf13002bc1b9281ca4300371",
+      "translation_sha256": "fee3c2806d75fdf59ae04de5737813db354420dcf98bfde62a67344443a31db2",
+      "translation_bytes": 4246,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 9,
+      "target_paragraphs": 9,
+      "source_math_count": 66,
+      "target_math_count": 66,
+      "status": "structural_pass"
     }
   ],
   "failures": 0,
-  "semantic_reviewed_units": 68,
+  "semantic_reviewed_units": 74,
   "build": "see BUILD_SETS.json",
   "release_ready": false
 }

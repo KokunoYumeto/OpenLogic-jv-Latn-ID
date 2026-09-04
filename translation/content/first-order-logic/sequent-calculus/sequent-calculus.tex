@@ -1,0 +1,57 @@
+% Part: first-order-logic
+% Chapter: sequent-calculus
+
+\documentclass[../../../include/open-logic-chapter]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olchapter{fol}{seq}{Kalkulus Sekuen}}
+      {\olchapter{pl}{seq}{Kalkulus Sekuen}}
+
+\begin{editorial}
+  Bab iki nyajekake kalkulus sekuen baku LK anggitane Gentzen kanggo
+  logika klasik tataran kapisan. Bab iki isih mbutuhake luwih akeh
+  tuladha lan gladhen. Kanggo ngemot utawa nyingkirake materi kang
+  gegayutan karo kalkulus sekuen minangka sistem bukti, gunakna tag
+  “prfLK”.
+\end{editorial}
+
+\olimport{rules-and-proofs}
+
+\olimport{propositional-rules}
+
+\iftag{FOL}{%
+  \olimport{quantifier-rules}
+}{}
+
+\olimport{structural-rules}
+
+\olimport{derivations}
+
+\olimport{proving-things}
+
+\iftag{FOL}{%
+  \olimport{proving-things-quant}
+}{}
+
+\olimport{proof-theoretic-notions}
+
+\olimport{provability-consistency}
+
+\olimport{provability-propositional}
+
+\iftag{FOL}{%
+  \olimport{provability-quantifiers}
+}{}
+
+\olimport{soundness}
+
+\iftag{FOL}{%
+  \olimport{identity}
+  \olimport{soundness-identity}
+}{}
+
+\OLEndChapterHook
+
+\end{document}
