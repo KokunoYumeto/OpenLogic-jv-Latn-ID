@@ -1,0 +1,210 @@
+% Part: sets-functions-relations
+% Chapter: arithmetization
+% Section: checking-details
+%
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+
+\begin{document}
+
+\olfileid{sfr}{arith}{check}
+\olsection{Ring lan Lapangan Katata}
+
+Sajrone bab iki, kita ngaku yen definisi-definisi tartamtu tumindak
+``kaya kang kudune''. Ing lampiran teknis iki, kita bakal njlentrehake
+apa kang dimaksud lan menehi gambaran bukti yen definisi-definisi iku
+pancen tumindak ``kanthi bener''.
+
+Ing \olref[int]{sec}, kita netepake panambahan lan ping-pingan ing $\Int$.
+Kita kepengin nuduhake yen operasi kang wis ditetepake iki menehi struktur
+kang ``dikarepake'' marang $\Int$. Mligine, struktur kasebut yaiku ring
+komutatif.
+
+\begin{defn}
+	\emph{Ring komutatif} yaiku himpunan $S$ kang dilengkapi unsur tartamtu
+	$0$ lan $1$ sarta operasi $+$ lan $\times$, kang nyukupi wolung rumus iki:
+	\begin{align*}
+		\emph{Asosiativitas}&&a + (b+ c) & = (a + b) + c \\
+		&& (a \times b) \times c & = a \times (b\times c)\\
+		\emph{Komutativitas}&&a + b &= b+ a  \\
+		&&  a \times b&= b\times a\\
+		\emph{Identitas}&&a + 0 &= a \\
+		&& a \times 1 &= a\\
+		\emph{Invers Aditif}&&(\exists b\in S)0&=a + b\\
+		\emph{Distributivitas}&&a \times (b+ c ) &= (a \times b) + (a \times c)
+	\end{align*}
+	Kanthi implisit, kabeh variabel ing rumus iki kaiket dening kuantor
+	universal kang diwatesi ing $S$. Gatekna uga yen unsur $0$ lan~$1$ ing
+	kene ora kudu dadi wilangan natural kang jenenge padha.
+\end{defn}
+
+Dadi, kanggo mriksa yen wilangan wutuh mbentuk ring komutatif, kita mung
+perlu mriksa yen wolung sarat iki kacukupan. Ora ana sarat kang {angel}
+kanggo dibuktekake, nanging pamriksane rada ngrepotake. Minangka tuladha,
+iki cara mbuktekake \emph{Asosiativitas} kanggo panambahan:
+
+\begin{proof}
+Tetepna $i, j, k \in \Int$. Dadi ana $a_1, b_1, a_2, b_2, a_3, b_3 \in
+\Nat$ saengga $i = \equivrep{a_1, b_1}{}$ lan $j =
+\equivrep{a_2,b_2}{}$ lan $k = \equivrep{a_3, b_3}{}$. (Supaya gampang
+diwaca, kita nulis ``$\equivrep{x, y}{}$'' minangka ganti
+``$\equivrep{x, y}{\Intequiv}$''; iki bakal ditindakake ing saindhenging
+perangan iki.) Saiki:
+\begin{align*}
+	i + (j + k) &= \equivrep{a_1, b_1}{}+(\equivrep{a_2, b_2}{} + \equivrep{a_3, b_3}{}) \\
+	&= \equivrep{a_1,  b_1}{} + \equivrep{a_2+a_3, b_2+b_3}{}\\
+	&= \equivrep{a_1 + (a_2 + a_3), b_1 + (b_2 + b_3)}{}\\
+	&= \equivrep{(a_1 + a_2) + a_3, (b_1 + b_2) + b_3}{}\\
+	&= \equivrep{a_1 + a_2, b_1 + b_2}{} + \equivrep{a_3, b_3}{}\\
+	&= (\equivrep{a_1, b_1}{} + \equivrep{a_2, b_2}{}) + \equivrep{a_3, b_3}{}\\
+	&= (i+j) + k
+\end{align*}
+kanthi nggunakake tumindake panambahan ing $\Nat$ kanthi bebas.
+\end{proof}
+
+Kanthi cara kang padha, iki bukti \emph{Invers Aditif}:
+
+\begin{proof}
+Tetepna $i \in \Int$, mula $i = \equivrep{a,b}{}$ kanggo sawatara $a,b \in
+\Nat$. Netepna $j = \equivrep{b,a}{} \in \Int$. Kanthi nggunakake tumindake
+wilangan natural, $(a+b) + 0 = 0 + (a+b)$, mula $\tuple{a+b, b+a}
+\sim_\Int \tuple{0,0}$ miturut definisi, lan mulane
+$\equivrep{a+b, b+a}{} = \equivrep{0, 0}{} = 0_\Int$. Dadi saiki $i + j =
+\equivrep{a,b}{}+\equivrep{b,a}{}=\equivrep{a+b, b+a}{}= \equivrep{0,
+0}{} = 0_\Int$.
+\end{proof}
+
+Lan iki bukti \emph{Distributivitas}:
+
+\begin{proof}
+Kaya ing ndhuwur, tetepna $i = \equivrep{a_1, b_1}{}$ lan $j =
+\equivrep{a_2,b_2}{}$ lan $k = \equivrep{a_3, b_3}{}$. Saiki:
+\begin{align*}
+	i \times (j + k)
+	&= \equivrep{a_1, b_1}{} \times (\equivrep{a_2,b_2}{} + \equivrep{a_3, b_3}{})\\
+	&= \equivrep{a_1, b_1}{} \times \equivrep{a_2 + a_3,b_2+b_3}{}\\
+	&= \equivrep{a_1  (a_2 + a_3) + b_1  (b_2+b_3), a_1  (b_2 + b_3) + b_1 (a_2 + a_3)}{}\\
+	&= \equivrep{a_1 a_2 + a_1a_3 + b_1 b_2+b_1b_3, a_1 b_2 + a_1b_3 + a_2b_1 + a_3b_1}{}\\
+%		&= \equivrep{a_1 a_2 + b_1b_2 + a_1a_3 + b_1 b_2+b_1b_3, a_1 b_2 + a_1b_3 + a_2b_1 + a_3b_1}{}\\
+	&= \equivrep{a_1a_2 + b_1b_2, a_1b_2 + a_2b_1}{} + \equivrep{a_1a_3 + b_1b_3, a_1b_3 + a_3b_1}{}\\
+	&= (\equivrep{a_1, b_1}{} \times \equivrep{a_2,b_2}{}) + (\equivrep{a_1, b_1}{} \times  \equivrep{a_3, b_3}{})\\
+	&= (i \times j) + (i \times k)
+\end{align*}
+\end{proof}
+
+Kita pasrahake limang sarat liyane minangka gladhen. Sawise iku rampung,
+kita wis nuduhake yen $\Int$ mbentuk ring komutatif, yaiku panambahan lan
+ping-pingan kang ditetepake tumindak kaya kang kudune.
+
+\begin{prob}
+Buktekna yen $\Int$ iku ring komutatif.
+\end{prob}
+
+Nanging tugas kita durung rampung. Saliyane netepake panambahan lan
+ping-pingan ing $\Int$, kita uga netepake relasi tatanan $\leq$, lan kudu
+mriksa yen relasi iki tumindak kaya kang kudune. Kanthi luwih rinci, kita
+kudu nuduhake yen $\Int$ mbentuk ring \emph{katata}.\footnote{Elinga saka
+	\olref[sfr][rel][ord]{def:linearorder} yen tatanan total iku relasi kang
+	refleksif, transitif, antisimetris, lan koneks. Ing konteks relasi tatanan,
+	koneksitas kadhangkala diarani \emph{trikotomi}, amarga kanggo saben $a$
+	lan $b$ kita duwe $a \leq b \lor a = b \lor a \geq b$.}
+
+\begin{defn}
+\emph{Ring katata} yaiku ring komutatif kang uga dilengkapi relasi
+tatanan total $\leq$, saengga:
+\begin{align*}
+	a \leq b &\lif a + c \leq b + c\\
+	(a \leq b \land 0 \leq c) &\lif a \times c \leq b \times c
+\end{align*}
+\end{defn}
+
+\begin{prob}
+Buktekna yen $\Int$ iku ring katata.
+\end{prob}
+
+Kaya sadurunge, nuduhake yen $\Int$ kang dibangun iki dadi ring katata
+iku ngrepotake nanging lumrah. Pamriksane dipasrahake marang pamaca.
+
+Iki ngrampungake prakara wilangan wutuh. Nanging saiki kita kudu nuduhake
+prakara kang meh padha tumrap wilangan rasional. Mligine, kita kudu nuduhake
+yen wilangan rasional mbentuk \emph{lapangan} katata miturut definisi
+$+$, $\times$, lan $\leq$ kang wis diwenehake:
+\begin{defn}\ollabel{orderedfield}
+\emph{Lapangan katata} yaiku ring katata kang uga nyukupi:
+\begin{align*}
+	\emph{Invers Multiplikatif}& & (\forall a \in S \setminus \{0\})(\exists b \in S) a\times b& = 1
+\end{align*}
+\end{defn}
+
+Sawise nuduhake yen $\Int$ mbentuk ring katata, nuduhake yen $\Rat$
+mbentuk lapangan katata iku gampang nanging ngrepotake.
+
+\begin{prob}
+Buktekna yen $\Rat$ iku lapangan katata.
+\end{prob}
+
+Sawise ngrampungake wilangan wutuh lan rasional, mung wilangan real kang
+isih kudu dirampungake. Mligine, kita kudu nuduhake yen $\Real$ mbentuk
+lapangan katata kang \emph{jangkep}, yaiku lapangan katata kanthi Sipat
+Kajangkepan. \olref[cuts]{realcompleteness} wis netepake yen $\Real$
+nduweni Sipat Kajangkepan. Nanging kita isih kudu nindakake pamriksa kang
+ngrepotake kanggo nuduhake yen $\Real$ iku lapangan katata. Cathetan
+koreksi sumber OLP-0047: ukara Inggris ngilangi tembung sawisé ``the
+(tedious)'`; terjemahan iki mulihake gagasan pamriksa kang dibutuhake.
+
+Sadurunge langsung nindakake gladhen \emph{kasebut} kang ngrepotake, kita
+kudu mriksa sawetara prakara kang luwih ``langsung''. Umpamane, kita butuh
+jaminan yen $\alpha + \beta$ kang ditetepake iki pancen dadi
+\emph{potongan} kanggo sembarang potongan $\alpha$ lan $\beta$. Iki buktine:
+
+\begin{proof}
+Amarga $\alpha$ lan $\beta$ kalorone potongan, $\alpha + \beta = \Setabs{p
++ q}{p \in \alpha \land q \in \beta}$ iku subhimpunan murni kang ora
+kosong saka $\Rat$. Saiki upamakna $x < p + q$ kanggo sawatara $p \in
+\alpha$ lan $q \in \beta$. Banjur $x - p < q$, mula $x - p \in \beta$,
+lan $x = p + (x - p) \in \alpha + \beta$. Dadi $\alpha + \beta$ iku
+segmen wiwitan saka $\Rat$. Pungkasan, kanggo sembarang $p + q \in \alpha
++ \beta$, amarga $\alpha$ lan $\beta$ kalorone potongan, ana $p_1 \in
+\alpha$ lan $q_1 \in \beta$ saengga $p < p_1$ lan $q < q_1$; mula $p + q
+< p_1 + q_1 \in \alpha + \beta$; dadi $\alpha + \beta$ ora duwe maksimum.
+\end{proof}
+
+Kanthi upaya kang padha, kita bisa mriksa yen $\alpha - \beta$,
+$\alpha \times \beta$, lan $\alpha \div \beta$ iku potongan (kanggo kasus
+pungkasan, kejaba nalika $\beta$ iku potongan nol). Nanging iki uga mung
+dipasrahake marang pamaca. Cathetan sumber OLP-0047: rumus pangurangan lan
+pambagian kang dirujuk ing kene mung ana minangka komentar kang dipateni
+ing perangan potongan; gladhen iki nganggep definisi kang dimaksud mau.
+
+\begin{prob}
+Buktekna yen $\Real$ iku lapangan katata.
+\end{prob}
+
+Nanging isih ana prakara cilik kang kudu dirapekake. Ing
+\olref[cuts]{sec}, kita ngusulake yen $\sqrt{2} =
+\Setabs{p \in \Rat}{p < 0 \text{ utawa }p^2 < 2}$. Nanging kita pancen
+kudu nuduhake yen himpunan iki \emph{potongan}. Iki buktine:
+
+\begin{proof}
+Cetha yen iki segmen wiwitan murni kang ora kosong saka wilangan rasional;
+dadi cukup nuduhake yen ora duwe maksimum. Mligine, cukup nuduhake yen
+nalika $p$ iku wilangan rasional positif kanthi $p^2 < 2$ lan $q =
+\frac{2p+2}{p+2}$, kita duwe $p < q$ lan $q^2 < 2$. Kanggo ndeleng yen
+$p < q$, gatekna:
+\begin{align*}
+	p^2 &< 2\\
+	p^2 + 2p &< 2 + 2p\\
+	p(p + 2) &< 2 + 2p\\
+	p &< \tfrac{2+2p}{p+2} = q
+\end{align*}
+Kanggo ndeleng yen $q^2 < 2$, gatekna:
+\begin{align*}
+	p^2 &< 2\\
+	2p^2 + 4p + 2 &< p^2 + 4p+ 4\\
+	4p^2 + 8p + 4 &< 2(p^2 + 4p + 4)\\
+	(2p+2)^2 & <2(p+2)^2\\
+	\tfrac{(2p+2)^2}{(p+2)^2} &< 2\\
+	q^2 &< 2
+\end{align*}
+\end{proof}
+\end{document}

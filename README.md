@@ -3,12 +3,13 @@
 Terjemahan OpenLogic nganggo basa Jawa aksara Latin (jv-Latn-ID).
 Ragam utama yaiku ngoko tinulis kanggo andharan akademik.
 
-**Isih digarap: 42 saka 722 berkas sumber wis diterjemahake.**
+**Isih digarap: 48 saka 722 berkas sumber wis diterjemahake.**
 Bab himpunan, relasi, lan fungsi wis rampung ditulis. Wacan telung bab
 kang dirancang ngemot pambuka lan 24 berkas sumber saka checkpoint 26.
 PDF 33 kaca sadurunge wis dipriksa tata letake, nanging koreksi audit sumber
-ing bab fungsi mbutuhake pambangunan lan pamriksan visual anyar. Nembelas berkas
-bab gedhene himpunan uga wis diterjemahake, durung kalebu wacan telung bab iki.
+ing bab fungsi mbutuhake pambangunan lan pamriksan visual anyar. Patbelas berkas
+bab gedhene himpunan lan wolung berkas bab aritmetisasi uga wis rampung
+diterjemahake, durung kalebu wacan telung bab iki.
 Edhisi jangkep tetep dadi ancas, kalebu kabeh isi ing njaba
 alur wacan baku.
 
@@ -29,7 +30,7 @@ The ordinary upstream graph reaches 642 units; the full edition must
 account coherently for all 722 without duplicating alternative wrappers.
 That complete reader is not yet built.
 
-The first 42 files have exact source-aligned paragraph records,
+The first 48 files have exact source-aligned paragraph records,
 actual consulted canon passages, formula/token/link/label checks,
 and same-author semantic comparisons with reverse paraphrases.
 These checks do not replace native review, which has not been claimed.

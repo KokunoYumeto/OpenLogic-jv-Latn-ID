@@ -1,11 +1,11 @@
 {
   "schema": "jv-batch-qa/1",
-  "utc": "2026-09-04T17:25:48.524803+00:00",
-  "checked_units": 42,
-  "structural_pass_units": 42,
+  "utc": "2026-09-04T18:43:37.318977+00:00",
+  "checked_units": 48,
+  "structural_pass_units": 48,
   "total_units": 722,
-  "segments": 727,
-  "translated_segments": 488,
+  "segments": 829,
+  "translated_segments": 569,
   "units": [
     {
       "unit_id": "OLP-0001",
@@ -930,10 +930,142 @@
       "source_math_count": 51,
       "target_math_count": 51,
       "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0043",
+      "source_path": "content/sets-functions-relations/arithmetization/rationals.tex",
+      "source_sha256": "7140495368042fcbc55907e6ee568c5bc8b7066e44a01a50cbf4202acebe71d2",
+      "translation_sha256": "13fc10116f29b795e812ba33cac569f68b0ea58ef1104f7e8324cb22e752ca89",
+      "translation_bytes": 3618,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 9,
+      "target_paragraphs": 9,
+      "source_math_count": 30,
+      "target_math_count": 30,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0044",
+      "source_path": "content/sets-functions-relations/arithmetization/reals.tex",
+      "source_sha256": "3df30161417b836178ff701aa3d778b9ec7c1ba8e3a8a54f98b5584a7960f453",
+      "translation_sha256": "0d6121c3c4c5fef9ac72099b65f21f5bd76a470099aaeb11d295b7c7f6196eb7",
+      "translation_bytes": 5033,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 14,
+      "target_paragraphs": 14,
+      "source_math_count": 43,
+      "target_math_count": 43,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0045",
+      "source_path": "content/sets-functions-relations/arithmetization/cuts.tex",
+      "source_sha256": "e7cb1029bcb0f0f1ac677c005af8d4e6a10df84bfff50c7483447b972324b44c",
+      "translation_sha256": "d6e6809b30b06bb95ff294ba31ff55dd45bfdf9978323f463444332e7ae95c9c",
+      "translation_bytes": 6253,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 12,
+      "target_paragraphs": 12,
+      "source_math_count": 73,
+      "target_math_count": 73,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0046",
+      "source_path": "content/sets-functions-relations/arithmetization/reflections.tex",
+      "source_sha256": "01032be342b6892c970733acf0b553216c39c5e864c0378d25fea8c5eaa11ead",
+      "translation_sha256": "3c725866bac41c3a019848970cbbfbd6fc75f6738081ed4878204594944aef9a",
+      "translation_bytes": 5469,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 15,
+      "target_paragraphs": 15,
+      "source_math_count": 4,
+      "target_math_count": 4,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0047",
+      "source_path": "content/sets-functions-relations/arithmetization/checking-details.tex",
+      "source_sha256": "d791c146f159c8e43368c12cd1a10e61a53f501baf9f3d2c606c7bd589c0ae01",
+      "translation_sha256": "bbfdea1bc3e7bec400d976a6c006b494a9a53e9772607c6148d02171c076e025",
+      "translation_bytes": 8987,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 28,
+      "target_paragraphs": 28,
+      "source_math_count": 93,
+      "target_math_count": 93,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0048",
+      "source_path": "content/sets-functions-relations/arithmetization/cauchy.tex",
+      "source_sha256": "35d0a39913340eadcab7fb9d7742b56aef0d0f29868cd65eeca9dc53694e8ac2",
+      "translation_sha256": "22572f5a494ea558fc9cc0cc9b14e0c19a7b509d1cfd64e4d73fcf5a8826e5c5",
+      "translation_bytes": 12034,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 24,
+      "target_paragraphs": 24,
+      "source_math_count": 130,
+      "target_math_count": 130,
+      "status": "structural_pass"
     }
   ],
   "failures": 0,
-  "semantic_reviewed_units": 42,
+  "semantic_reviewed_units": 48,
   "build": "see BUILD_SETS.json",
   "release_ready": false
 }

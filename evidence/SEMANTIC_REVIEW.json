@@ -2,7 +2,7 @@
   "schema": "jv-semantic-review/1",
   "reviewer": "Codex, same author; no independent or human review claimed",
   "date": "2026-09-04",
-  "scope": "All 488 translated paragraph blocks in OLP-0001 through OLP-0042; 239 unchanged formal/structural blocks classified separately. Paragraph analysis normalizes CRLF/LF; exact full-file hashes remain raw-byte hashes.",
+  "scope": "All 569 translated paragraph blocks in OLP-0001 through OLP-0048; 260 unchanged formal/structural blocks classified separately. Paragraph analysis normalizes CRLF/LF; exact full-file hashes remain raw-byte hashes.",
   "method": "Direct source-to-target reading, quantifier/negation/biconditional checks, mathematical-context checks, and selected reverse paraphrases. Automated structure checks are separate.",
   "unit_reviews": [
     {
@@ -344,6 +344,54 @@
       "reverse_sample": "Represent an integer a-b by a pair (a,b), identifying pairs when a+d=c+b. The resulting equivalence classes form the integers. Addition, multiplication and order are defined on representatives and must be independent of them. The map n to the class of (n,0) preserves addition, multiplication and order.",
       "source_sha256": "f93b142146b9527128437355d7e3922204eede2ca9c75a941d3c09a9a848ce77",
       "translation_sha256": "971412b9e97a2cfd6b3f4b358178ad9fb73642c1a308d0b9b18d6293d288cfdc"
+    },
+    {
+      "unit_id": "OLP-0043",
+      "status": "pass",
+      "checks": "Compared all five translated paragraph blocks: section title; motivation from integer pairs and the cross-multiplication equivalence relation; exercise and quotient definition; arithmetic/order definitions; integer embedding and final exercise. All 30 mathematical spans, identifiers, references and the element token are retained. The sole source reversal from r-s to s-r follows the controlling preceding sentence and displayed definition and is disclosed adjacent to the formula and in both errata files.",
+      "reverse_sample": "Construct each rational as an equivalence class of integer pairs with nonzero second coordinate, identifying (a,b) and (c,d) when ad=bc. Define addition and multiplication on representatives. Say r is at most s when s-r has a representative with nonnegative numerator and positive denominator. Embed integer i as the class of (i,1), preserving arithmetic and order.",
+      "source_sha256": "7140495368042fcbc55907e6ee568c5bc8b7066e44a01a50cbf4202acebe71d2",
+      "translation_sha256": "13fc10116f29b795e812ba33cac569f68b0ea58ef1104f7e8324cb22e752ca89"
+    },
+    {
+      "unit_id": "OLP-0044",
+      "status": "pass",
+      "checks": "Compared all ten translated paragraph blocks: real/rational contrast and ordered-field cross-reference; Cantor and irrationality setup; theorem; reductio proof; geometric descent diagram and explanation; parity proof; historical aside; least-upper-bound formulation of completeness; the rational counterexample; and the concluding continuum metaphor. All 43 mathematical spans, citation, label, cross-references, TikZ commands and plural element token are retained. The stray source less-than sign is omitted and disclosed. The inactive source comment about square-root notation is translated for alignment and separately corrected in the errata.",
+      "reverse_sample": "The real line extends the rationals by satisfying the least-upper-bound property. Square root of two is irrational: either a geometric descent or the usual even-numerator/even-denominator contradiction rules out a reduced rational fraction. The rational set below square root of two has upper bounds but no least rational upper bound, motivating a gap-free real continuum.",
+      "source_sha256": "3df30161417b836178ff701aa3d778b9ec7c1ba8e3a8a54f98b5584a7960f453",
+      "translation_sha256": "0d6121c3c4c5fef9ac72099b65f21f5bd76a470099aaeb11d295b7c7f6196eb7"
+    },
+    {
+      "unit_id": "OLP-0045",
+      "status": "pass",
+      "checks": "Compared all ten translated paragraph blocks: cut motivation; lower-half identification; the three-clause cut definition; square-root cut; inclusion order and fully quantified completeness statement; theorem; union proof with all three cut conditions and leastness; no-gap explanation; rational embedding; and arithmetic/sign cases. All 73 mathematical spans, label, cross-reference, environments, inactive formulas and text conditions are retained. The first proof bullet now derives existence of a member from nonemptiness rather than the unrelated upper-bound premise; the correction is disclosed adjacent and in both errata files.",
+      "reverse_sample": "A real is represented by a nonempty proper initial segment of the rationals with no greatest element. Inclusion orders these cuts. For any nonempty upper-bounded set of cuts, its union is itself a cut, contains every member of the family, and lies inside every other upper bound, so it is the least upper bound. Rational p embeds as the cut of rationals below p; arithmetic is then defined on cuts.",
+      "source_sha256": "e7cb1029bcb0f0f1ac677c005af8d4e6a10df84bfff50c7483447b972324b44c",
+      "translation_sha256": "d6e6809b30b06bb95ff294ba31ff55dd45bfdf9978323f463444332e7ae95c9c"
+    },
+    {
+      "unit_id": "OLP-0046",
+      "status": "pass",
+      "checks": "Compared all eleven translated paragraph blocks, including the conceptual value of completeness and Dedekind construction, three reservations about rigor and metaphysical identity, alternative ordered-pair constructions and the Benacerraf citation, the nonidentity of natural and constructed integer zero, the weaker treat-as/embed conclusion, the closing qualification, and all inactive explanatory comments. All 12 mathematical spans, cross-references, citation, ellipsis command and emphasis sequence are retained. The central contrast between numbers literally being sets and being representable as sets is explicit.",
+      "reverse_sample": "The constructions establish coherent complete ordered fields and put analysis on a rigorous basis, but set encodings alone need not add rigor or reveal what numbers metaphysically are. Alternative pair encodings yield different set objects, and constructed integer zero is not literally natural zero. Naive set theory therefore lets us treat numbers as sets and embed their theories, while the philosophical significance needs further argument.",
+      "source_sha256": "01032be342b6892c970733acf0b553216c39c5e864c0378d25fea8c5eaa11ead",
+      "translation_sha256": "3c725866bac41c3a019848970cbbfbd6fc75f6738081ed4878204594944aef9a"
+    },
+    {
+      "unit_id": "OLP-0047",
+      "status": "pass",
+      "checks": "Compared all 26 translated paragraph blocks: the eight commutative-ring laws; representative proofs of additive associativity, additive inverses and distributivity; the remaining exercise; total-order/trichotomy footnote and ordered-ring laws; ordered-field inverse law and exercises; completeness cross-reference; cut-addition proof; the intended subtraction/division checks; and the no-maximum proof for the square-root cut. All 93 mathematical spans, 28 paragraph blocks, labels, references, environments, commented formulas and formula order are retained. Six linguistic axiom labels inside align environments are translated under an exact QA normalization. The omitted noun and inactive subtraction/division definitions are disclosed adjacent and in both errata files.",
+      "reverse_sample": "The constructed integers satisfy the commutative-ring axioms and the compatible total-order laws; adding multiplicative inverses for every nonzero element gives the ordered-field condition for the rationals. The real cuts must also form an ordered field and satisfy completeness. Cut addition is shown to be a nonempty proper initial segment with no maximum, and an explicit rational improvement proves the square-root cut has no greatest member.",
+      "source_sha256": "d791c146f159c8e43368c12cd1a10e61a53f501baf9f3d2c606c7bd589c0ae01",
+      "translation_sha256": "bbfdea1bc3e7bec400d976a6c006b494a9a53e9772607c6148d02171c076e025"
+    },
+    {
+      "unit_id": "OLP-0048",
+      "status": "pass",
+      "checks": "Compared all 19 translated paragraph blocks: historical attribution; decimal-function encoding; rational approximations and alternating counterexample; epsilon definition and example; equivalence of Cauchy sequences modulo a difference tending to zero; quotient construction and constant rational embedding; arithmetic and positivity/order; ordered-field theorem/exercise; and the full bisection proof sketch of completeness. All 130 mathematical spans, identifiers, label/reference/citation commands, cases, inactive order formula, footnotes and element token are retained. Exact QA normalizes only the source's rational-zero type error. Four grammar slips, equivalence-relation/class confusion, quotient shorthand and the unproved Archimedean dependency are disclosed adjacent and in both errata files.",
+      "reverse_sample": "Model a real by a Cauchy sequence of rationals, identifying two sequences when their pointwise difference tends to zero. Constant sequences embed rationals; pointwise arithmetic and eventual positivity define the ordered quotient field. For completeness, rational upper and lower bounds are bisected into decreasing and increasing Cauchy sequences whose difference tends to zero; their common class is an upper bound and every smaller class fails to be one.",
+      "source_sha256": "35d0a39913340eadcab7fb9d7742b56aef0d0f29868cd65eeca9dc53694e8ac2",
+      "translation_sha256": "22572f5a494ea558fc9cc0cc9b14e0c19a7b509d1cfd64e4d73fcf5a8826e5c5"
     }
   ],
   "unresolved_language_uncertainties": [

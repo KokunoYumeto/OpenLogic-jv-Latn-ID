@@ -1,0 +1,78 @@
+% Part: sets-functions-relations
+% Chapter: arithmetization
+% Section: rationals
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{arith}{rat}
+\olsection{Saka $\Int$ menyang $\Rat$}
+
+Kita lagi wae weruh carane mbangun wilangan wutuh saka wilangan
+natural kanthi nggunakake sawatara teori himpunan naif. Saiki kita
+bakal weruh carane mbangun wilangan rasional saka wilangan wutuh
+kanthi cara kang meh padha. Pangamatan wiwitan yaiku:
+\begin{enumerate}
+	\item Saben wilangan rasional bisa ditulis kanthi wujud $\nicefrac{i}{j}$,
+	kanthi $i$ lan $j$ loro-lorone wilangan wutuh nanging $j$ ora nol.
+	\item Informasi kang dikodeake ing ekspresi $\nicefrac{i}{j}$
+	uga bisa dikodeake kanthi pasangan urut $\tuple{ i, j}$.
+\end{enumerate}
+Cara kang cetha yaiku nganggep wilangan rasional \emph{minangka}
+pasangan urut kang dijupuk saka $\Int \times (\Int \setminus \{0_\Int\})$.
+Nanging kaya sadurunge, cara iki rada naif banget, amarga kita kepengin
+$\nicefrac{3}{2} = \nicefrac{6}{4}$, kamangka $\tuple{ 3, 2}\neq \tuple{ 6,
+4}$. Luwih umum, kita kepengin sarat iki:
+\[
+	\nicefrac{a}{b} = \nicefrac{c}{d} \text{ yen lan mung yen } a \times d = b \times c
+\]
+Kanggo ngolehake iki, kita netepake {relasi ekuivalensi} ing $\Int \times
+(\Int \setminus \{0_\Int\})$ kaya mangkene:
+\[
+	\tuple{ a, b }\Ratequiv \tuple{ c, d} \text{ yen lan mung yen }a \times d = b \times c
+\]
+Kita kudu mriksa yen iki relasi ekuivalensi. Iki meh padha banget karo
+kasus $\Intequiv$, mula kita pasrahake minangka gladhen.
+\begin{prob}
+Tuduhna yen $\Ratequiv$ iku relasi ekuivalensi.
+\end{prob}
+Nanging relasi iki marakake kita bisa menehi definisi iki:
+\begin{defn}
+Wilangan rasional yaiku kelas-kelas ekuivalensi miturut $\Ratequiv$ saka
+pasangan wilangan wutuh (kang unsur kapindhone ora nol). Tegese, $\Rat =
+\equivclass{(\Int \times (\Int\setminus \{0_\Int\}))}{\Ratequiv}$.
+\end{defn}
+
+Kaya tumrap wilangan wutuh, kita uga kepengin netepake sawetara operasi
+dhasar. Yen $\equivrep{i,j}{\Ratequiv}$ iku kelas ekuivalensi miturut
+$\Ratequiv$ kang duwe $\tuple{i, j}$ minangka !!a{element}, kita netepake:
+\begin{align*}
+	\equivrep{a, b}{\Ratequiv} + \equivrep{c, d}{\Ratequiv} &= \equivrep{ad + bc,  bd}{\Ratequiv}\\
+	\equivrep{a, b}{\Ratequiv} \times \equivrep{c, d}{\Ratequiv} &= \equivrep{a  c, b d}{\Ratequiv}.
+\intertext{Kanggo netepake $r \leq s$ ing wilangan rasional iki, kita nggunakake
+kasunyatan yen $r \le s$ yen lan mung yen $s - r$ ora negatif, yaiku $s - r$
+bisa ditulis minangka $\nicefrac{i}{j}$ kanthi $i$ ora negatif lan $j$~positif:}
+	\equivrep{a, b}{\Ratequiv} \leq \equivrep{c, d}{\Ratequiv} &\text{ yen lan mung yen }
+	\equivrep{c, d}{\Ratequiv} - \equivrep{a, b}{\Ratequiv} =
+	\equivrep{i_\Int, j_\Int}{\Ratequiv}
+\end{align*}
+kanggo sawatara $i \in \Nat$ lan $0 \neq j \in \Nat$.
+Cathetan koreksi sumber OLP-0043: ing ukara sadurunge, sumber Inggris
+sapisan mbalikke urutan suku ing bedane; terjemahan iki manut urutan
+kang bener ing rumus.
+
+Banjur kita kudu mriksa yen definisi-definisi iki tumindak kaya kang
+\emph{kudune}; lan rinciane dipindhah menyang \olref[check]{sec}. Nanging
+pancen mangkono!{} Pungkasan, kita kepengin cara kanggo nganggep wilangan
+wutuh \emph{minangka} wilangan rasional; mula kanggo saben $i \in \Int$,
+kita netepake $i_\Rat = \equivrep{i, 1_\Int}{\Ratequiv}$. Maneh, kita
+mriksa yen kabeh iki tumindak kanthi bener ing \olref[check]{sec}.
+
+\begin{prob}
+Tuduhna yen $(i + j)_\Rat = i_\Rat+ j_\Rat$ lan $(i \times j)_\Rat =
+i_\Rat \times j_\Rat$ lan $i \leq j \liff i_\Rat \leq j_\Rat$, kanggo saben
+$i, j \in \Int$.
+\end{prob}
+
+\end{document}

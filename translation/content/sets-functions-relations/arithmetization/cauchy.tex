@@ -1,0 +1,247 @@
+% Part: sets-functions-relations
+% Chapter: arithmetization
+% Section: cauchy
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{arith}{cauchy}
+
+\olsection{Lampiran: Wilangan Real minangka Rerangken Cauchy}
+
+Ing \olref[cuts]{sec}, kita mbangun wilangan real minangka potongan
+Dedekind. Ing perangan iki, kita njlentrehake pambangunan alternatif.
+Pambangunan iki adhedhasar definisi Cauchy tumrap apa kang saiki diarani
+rerangken Cauchy; nanging panganggone definisi iki kanggo \emph{mbangun}
+wilangan real asale saka panulis abad kaping 19 liyane, mligine Weierstrass,
+Heine, M\'{e}ray, lan Cantor. (Kanggo sejarah kang becik, delengen
+\citeauthor{OConnorRobertson:RN} \citeyear{OConnorRobertson:RN}.)
+
+Sadurunge tekan abad kaping 19, prayoga yen kita nggatekake Simon Stevin
+(1548--1620). Ringkese, Stevin mangerteni yen saben wilangan real bisa
+dipikirake liwat ekspansi desimale. Mula malah wilangan irasional kaya
+$\sqrt{2}$ duwe ekspansi desimal kang becik, kang diwiwiti:
+\[
+	1.41421356237\ldots
+\]
+Gampang banget nggambarake ekspansi desimal ing teori himpunan: cukup
+anggepen minangka fungsi $d \colon \Nat \to \Nat$, kanthi $d(n)$ dadi
+panggonan desimal kaping $n$ kang digatekake. Banjur perlu owah-owahan
+sethithik kanggo nangani bagean wilangan real sadurunge tandha desimal
+(ing kene mung $1$). Uga perlu owah-owahan liyane, yaiku relasi
+ekuivalensi, kanggo njamin yen, umpamane, $0.999\ldots = 1$. Nanging
+ora angel menehi pambangunan wilangan real kang ketat babar pisan
+kanthi cara Stevin ing teori himpunan.
+
+Stevin dudu punjering rembugan kita. (Kanggo katrangan luwih akeh bab
+Stevin, delengen \citealt{KatzKatz2012}.) Nanging ana gagasan kang raket.
+Tinimbang langsung nganggep ekspansi desimal $\sqrt{2}$, kita bisa
+nggatekake \emph{rerangken} panyedhakan rasional marang $\sqrt{2}$ kang
+saya tliti, nganggo ekspansi kang saya cetha:
+\[
+1, 1.4, 1.414, 1.4142, 1.41421,\ldots
+\]
+Gagasan yen wilangan real bisa dipikirake liwat ``panyedhakan kang saya
+becik'' dadi dhasar kanggo rerangken wawasan liyane (padha karo pangamatan
+kang digunakake nalika mbangun $\Rat$ saka $\Int$, utawa $\Int$ saka
+$\Nat$). Wawasan dhasare yaiku:
+\begin{enumerate}
+	\item Saben wilangan real bisa ditulis minangka ekspansi desimal
+	(kang bisa tanpa wates).
+	\item Informasi kang dikodeake ekspansi desimal (kang bisa tanpa wates)
+	uga bisa dikodeake kanthi rerangken wilangan rasional.
+	\item Rerangken wilangan rasional bisa dipikirake minangka fungsi saka
+	$\Nat$ menyang $\Rat$; cukup netepna $f(n)$ minangka wilangan rasional
+	kaping $n$ ing rerangken kasebut.
+\end{enumerate}
+Mesthi wae, ora \emph{sembarang} fungsi saka $\Nat$ menyang $\Rat$ menehi
+wilangan real. Umpamane, gatekna fungsi iki:
+\[
+	f(n) =\begin{cases}
+			1 & \text{yen }n\text{ ganjil}\\
+			0 &\text{yen }n\text{ genep}
+		\end{cases}
+\]
+Inti masalahe yaiku rerangken $0,1,0,1,0,1,0,\ldots$ katon ora
+``nyedhaki'' wilangan real apa wae. Dadi, supaya rerangken kang digatekake
+pancen nyedhaki sawenehing wilangan real, kita kudu matesi kawigaten mung
+ing rerangken kang duwe \emph{limit}.
+
+Kita wis nemoni gagasan limit ing \olref[his][set][limits]{sec}. Nanging
+kita ora bisa nggunakake definisi kang \emph{persis padha} karo definisi
+ing kono. Ekspresi ``$(\forall \epsilon>0)$'' ing kono kanthi meneng-meneng
+nggunakake kuantifikasi ing wilangan real; lan kita nggatekake limit fungsi
+ing wilangan real. Dadi nggunakake definisi kasebut ateges wis nganggep
+wilangan real cumawis, kamangka wilangan iku persis kang arep
+\emph{dibangun}. Untunge, kita bisa nggunakake gagasan limit kang raket.
+\begin{defn}\ollabel{def:CauchySequence}
+  Fungsi $f: \Nat \to \Rat$ diarani \emph{rerangken Cauchy} yen lan mung
+  yen kanggo saben $\epsilon \in \Rat$ kang positif, kita duwe $(\exists
+  \ell \in \Nat)(\forall m, n > \ell)|f(m) - f(n)| < \epsilon$.
+\end{defn}
+
+Gagasan umum limit isih padha: yen kita kepengin tingkat katliten tartamtu
+(kang diukur nganggo~$\epsilon$), ana ``wilayah'' kang kudu dideleng, yaiku
+sembarang masukan luwih gedhe tinimbang~$\ell$. Gampang dingerteni yen
+rerangken $1$, $1.4$, $1.414$, $1.4142$, $1.41421$\ldots{} duwe limit: yen
+kita kepengin nyedhaki $\sqrt{2}$ kanthi kasalahan kurang saka
+$\nicefrac{1}{10^{n}}$, cukup delengen sembarang entri sawise entri kaping
+$n$.
+
+Gagasan kang katon cetha yaiku nyebut wilangan real \emph{iku} sembarang
+rerangken Cauchy. Nanging kaya ing pambangunan $\Int$ lan $\Rat$, iki
+naif banget: kanggo saben wilangan real, ana akeh rerangken Cauchy beda kang
+nuduhake wilangan real kasebut. Cara prasaja kanggo ndeleng iki kaya
+mangkene. Yen diwenehi rerangken Cauchy~$f$, netepna $g$ minangka fungsi
+kang persis padha karo~$f$, kejaba $g(0)\neq f(0)$. Amarga rerangken loro
+iku padha ing saben panggonan sawise wilangan kapisan, pungkasane kita
+kepengin kandha yen rerangken mau duwe limit kang padha miturut teges ing
+\olref{def:CauchySequence}, mula kudu dianggep ``netepake'' wilangan real
+kang padha. Dadi, rerangken Cauchy loro iki kudu dianggep wilangan real
+kang padha. Cathetan koreksi sumber OLP-0048: terjemahan iki mulihake
+tembung panyambung kang ilang ing ukara Inggris ``way to see this as follows''.
+
+Mula kita maneh kudu netepake relasi ekuivalensi ing rerangken Cauchy lan
+ngenali wilangan real karo kelas-kelas ekuivalensi. Kaping pisan, kita
+mbutuhake gagasan fungsi kang nyedhaki $0$ ing limit. Kanggo sembarang
+fungsi $h : \Nat \to \Rat$, kandhanana yen \emph{$h$ nyedhaki $0$} yen lan
+mung yen kanggo saben $\epsilon \in \Rat$ kang positif kita duwe $(\exists
+\ell \in \Nat)(\forall n > \ell)|h(n)| < \epsilon$.\footnote{Bandhingna
+iki karo definisi $\lim_{x \mathord{\rightarrow}\infty}f(x) = 0$ ing
+\olref[his][set][limits]{sec}.} Sabanjure, yen $f$ lan $g$ iku fungsi
+$\Nat \to \Rat$, netepna $(f-g)(n) = f(n) - g(n)$. Saiki netepna:
+\[
+	f \Realequiv g \text{ yen lan mung yen $(f-g)$ nyedhaki $0$}.
+\]
+Kita kudu mriksa yen $\Realequiv$ iku relasi ekuivalensi; lan pancen iya.
+Banjur, yen dikarepake, kita bisa netepake wilangan real minangka
+kelas-kelas ekuivalensi miturut $\Realequiv$ saka kabeh rerangken Cauchy
+saka $\Nat \to \Rat$. Cathetan koreksi sumber OLP-0048: ukara Inggris
+sadurunge definisi salah nyebut ``equivalence relations''; obyek kang
+nggambarake wilangan real yaiku kelas ekuivalensi.
+
+\begin{prob}
+Netepna $f(n) = 0$ kanggo saben $n$. Netepna $g(n) = \frac{1}{(n+1)^2}$.
+Tuduhna yen kalorone rerangken Cauchy, lan yen limit fungsi kalorone
+yaiku $0$, saengga uga $f \sim_\Real g$.
+\end{prob}
+
+Sawise iku, kaya lumrahe kita nulis $\equivrep{f}{\Realequiv}$ kanggo
+kelas ekuivalensi kang duwe $f$ minangka !!a{element}. Nanging supaya
+gampang diwaca, sabanjure kita ngilangi subskrip lan mung nulis
+$\equivrep{f}{}$. Kita uga netepake yen kanggo saben $q \in \Rat$, kita
+duwe $q_{\Real} = \equivrep{c_{q}}{}$, kanthi $c_{q}$ minangka fungsi
+konstan $c_q(n) = q$ kanggo kabeh $n \in \Nat$. Banjur kita netepake
+relasi lan operasi dhasar ing wilangan real, umpamane:
+\begin{align*}
+	\equivrep{f}{} + \equivrep{g}{} &= 	\equivrep{(f + g)}{} \\
+	\equivrep{f}{} \times 	\equivrep{g}{} &= \equivrep{(f \times g)}{}
+\end{align*}
+kanthi $(f + g)(n) = f(n) + g(n)$ lan $(f \times g)(n) = f(n) \times
+g(n)$. Mesthi wae, kita uga kudu mriksa yen $(f + g)$, $(f-g)$, lan
+$(f\times g)$ iku rerangken Cauchy nalika $f$ lan $g$ rerangken Cauchy;
+lan pancen iya, dene buktine dipasrahake marang pamaca.
+
+Pungkasan, kita netepake gagasan tatanan. Kandhanana yen
+$\equivrep{f}{}$ iku \emph{positif} yen lan mung yen
+$\equivrep{f}{}\neq 0_\Real$ lan $(\exists \ell \in \Nat)(\forall n >
+\ell)0 < f(n)$. Banjur kandhanana yen $\equivrep{f}{} < \equivrep{g}{}$
+yen lan mung yen $\equivrep{(g - f)}{}$ positif. Kita kudu mriksa yen iki
+ditetepake kanthi becik, yaiku ora gumantung marang pilihan fungsi
+``wakil'' saka kelas ekuivalensi. Cathetan koreksi sumber OLP-0048:
+syarat positif ing sumber nulis nol rasional, nanging kelas kasebut
+wilangan real; terjemahan nggunakake nol real kaya ukara sabanjure.
+%\begin{align*}
+%	\equivrep{f}{} \leq \equivrep{g}{} \text{ yen lan mung yen }&\equivrep{f}{} = \equivrep{g}{} \text{ utawa }\\
+%	&(\exists \ell \in \Nat)(\forall n \in \Nat)(\ell < n \lif f(n) \leq g(n))
+%\end{align*}
+Sawise pamriksa iki, cukup gampang nuduhake yen definisi kasebut menehi
+sipat aljabar kang bener, yaiku:
+\begin{thm}\ollabel{thm:cauchyorderedfield}
+Rerangken-rerangken Cauchy mbentuk lapangan katata. Ing pratelan iki,
+kang mbentuk lapangan yaiku kelas-kelas ekuivalensine; rerangken dhewe
+digunakake minangka wakil.
+\end{thm}
+
+\begin{proof}
+Gladhen.
+\end{proof}
+
+\begin{prob}
+Buktekna yen rerangken-rerangken Cauchy mbentuk lapangan katata, kanthi
+teges kelas ekuivalensi kaya kang diterangake ing ndhuwur.
+\end{prob}
+
+Luwih angel mbuktekake yen wilangan real kang dibangun kanthi cara iki
+nduweni Sipat Kajangkepan, mula kita bakal menehi buktine.
+
+\begin{thm}
+Saben himpunan rerangken Cauchy kang ora kosong lan duwe wates ndhuwur
+mesthi duwe wates ndhuwur paling cilik. Tatanan lan wates ing pratelan
+iki ditrapake liwat kelas ekuivalensi rerangken kasebut.
+\end{thm}
+
+\begin{proof}[Gambaran bukti] Upamakna $S$ iku sembarang himpunan rerangken
+Cauchy kang ora kosong lan duwe wates ndhuwur. Dadi ana $p \in \Rat$
+saengga $p_{\Real}$ dadi wates ndhuwur kanggo $S$. Jupuken $r \in S$;
+banjur ana $q \in \Rat$ saengga $q_{\Real} < r$. Dadi yen wates ndhuwur
+paling cilik kanggo $S$ ana, wates iku dumunung ing antarane $q_\Real$ lan
+$p_\Real$, kalebu loro-lorone. Cathetan sumber OLP-0048: langkah iki
+nggunakake kasunyatan Archimedes yen kelas real bisa diwatesi saka ndhuwur
+lan ngisor dening salinan rasional; kasunyatan iku durung dibuktekake ing
+perangan iki.
+
+Kita bakal saya nyedhaki wates ndhuwur paling cilik kanthi nyedhaki bebarengan
+saka ngisor lan ndhuwur. Mligine, kita netepake rong fungsi $f, g \colon
+\Nat \to \Rat$, kanthi ancas $f$ nyedhaki wates kasebut saka ndhuwur lan
+$g$ nyedhaki wates kasebut\ saka ngisor. Kita miwiti kanthi netepake:
+\begin{align*}
+	f(0) &= p \\
+	g(0) &= q
+\end{align*}
+Banjur, kanthi $a_n = \frac{f(n) + g(n)}{2}$, netepna:\footnote{Iki
+definisi rekursif. Nanging kita \emph{durung} menehi alesan kanggo
+nganggep definisi rekursif bisa digunakake.}
+\begin{align*}
+	f(n+1) &=
+	\begin{cases}
+		a_n &\text{yen }(\forall h \in S)\equivrep{h}{} \leq (a_n)_\Real\\
+		f(n)&\text{yen ora}
+	\end{cases}\\
+	g(n+1) &=
+	\begin{cases}
+		a_n &\text{yen }(\exists h \in S)\equivrep{h}{} \geq (a_n)_\Real\\
+		g(n) &\text{yen ora}
+	\end{cases}
+\end{align*}
+$f$ lan $g$ kalorone rerangken Cauchy. (Iki bisa dipriksa kanthi cukup
+gampang, nanging dipasrahake minangka gladhen.) Gatekna yen fungsi $(f-g)$
+nyedhaki $0$, amarga bedane $f$ lan $g$ dadi separo ing saben langkah.
+Mula $\equivrep{f}{} = \equivrep{g}{}$.
+
+Kaping pisan kita nuduhake yen $\equivrep{f}{}$ iku wates ndhuwur kanggo
+$S$, yaiku\ $(\forall h \in S)\equivrep{h}{} \leq \equivrep{f}{}$.
+(Kita bakal nggunakake \olref{thm:cauchyorderedfield} nalika dibutuhake.)
+Jupuken $h \in S$ lan upamakna, kanggo bukti kanthi kontradiksi, yen
+$\equivrep{f}{} < \equivrep{h}{}$, mula $0_\Real <
+\equivrep{(h-f)}{}$. Amarga $f$ iku rerangken Cauchy kang mudhun kanthi
+monoton, ana $n \in \Nat$ saengga $\equivrep{(c_{f(n)} - f)}{} <
+\equivrep{(h-f)}{}$. Dadi:
+\[
+	(f(n))_\Real = \equivrep{c_{f(n)}}{} < \equivrep{f}{} + \equivrep{(h-f)}{} = \equivrep{h}{},
+\]
+kang kosok balen karo kasunyatan yen miturut pambangunan,
+$\equivrep{h}{} \leq (f(n))_\Real$.
+
+Sabanjure kita nuduhake yen $\equivrep{f}{} = \equivrep{g}{}$ iku wates
+ndhuwur \emph{paling cilik} kanggo $S$. Dadi jupuken sembarang rerangken
+Cauchy $j$ lan upamakna $\equivrep{j}{} < \equivrep{g}{}$. Kanthi nalar
+kaya ing ndhuwur lan nggunakake kasunyatan yen $g$ \emph{munggah} kanthi
+monoton, ana $n \in \Nat$ saengga $\equivrep{j}{} < (g(n))_\Real$.
+Nanging miturut pambangunan ana $h \in S$ saengga $(g(n))_\Real \leq
+\equivrep{h}{}$, mula $\equivrep{j}{} < \equivrep{h}{}$ lan mulane
+$\equivrep{j}{}$ dudu wates ndhuwur kanggo $S$.
+\end{proof}
+
+\end{document}
