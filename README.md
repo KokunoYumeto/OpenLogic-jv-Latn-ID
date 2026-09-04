@@ -8,7 +8,7 @@ Bab himpunan, relasi, lan fungsi wis rampung ditulis. Wacan telung bab
 kang dirancang ngemot pambuka lan 24 berkas sumber saka checkpoint 26.
 PDF saiki ana 36 kaca lan wis lulus pambangunan kang dijaga, pamriksan visual
 kabeh kaca, sarta pambangunan baleni kang padha persis saben bit. PDF iki
-diterbitake minangka [v0.1.0](https://github.com/KokunoYumeto/OpenLogic-jv-Latn-ID/releases/tag/v0.1.0).
+diterbitake minangka [v0.1.1](https://github.com/KokunoYumeto/OpenLogic-jv-Latn-ID/releases/tag/v0.1.1).
 Patbelas berkas
 bab gedhene himpunan lan wolung berkas bab aritmetisasi uga wis rampung
 diterjemahake, durung kalebu wacan telung bab iki.
@@ -50,5 +50,7 @@ originals and are not included for public redistribution.
 
 The source and this adaptation use CC BY 4.0, subject to original
 component exceptions. Preserve upstream/LICENSE.md and other notices.
-Release v0.1.0 contains the verified 36-page reader, the corresponding
-48-unit source snapshot, machine-readable QA evidence, and checksums.
+Release v0.1.1 contains the verified 36-page reader, the corresponding
+48-unit source snapshot, machine-readable QA evidence, and checksums. Its PDF
+bytes are unchanged from v0.1.0; v0.1.1 repairs the public OLP-0048 command
+sequence replay and supersedes that earlier evidence bundle.

@@ -1,6 +1,6 @@
 {
-  "schema": "jv-tranche-release-qa/2",
-  "tag": "v0.1.0",
+  "schema": "jv-tranche-release-qa/3",
+  "tag": "v0.1.1",
   "language": "jv-Latn-ID",
   "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
   "scope": "Introduction and complete sets, relations, and functions reader",
@@ -128,6 +128,25 @@
       "replacement_character": false,
       "javanese_figure_references": 16
     }
+  },
+  "structural_qa": {
+    "batch_qa_sha256": "45c87bb6cf084b00eab34eebc3cf3f1be175357acd017af8a90a586bb2fef83f",
+    "public_replay_file": "evidence/PUBLIC_QA_REPLAY.json",
+    "public_replay_sha256": "8cb2bf5ebad1f432e2cdd549b86c320601fc31d8d3b2b8239001e790fc0296cb",
+    "olp0048_command_replay_sha256": "209c089ac6ce792e1869bff6cdb460ca4838e0de0a740770e57fd311ddee2bd2",
+    "olp0048_source_command_count": 277,
+    "olp0048_translation_command_count": 277,
+    "olp0048_command_mismatches": 0
+  },
+  "canon_evidence": {
+    "passages_sha256": "aeed84f8ffebf06447249b809bb2f95666a5c2d03d6610f84d4cf054027f21cd",
+    "term_decisions_sha256": "c18aa262f159f54b271545e6c1cc7ea6bac0fe546422ff157d6dc86a1c041ab5",
+    "review_log_sha256": "d159ae7c586b5ee893f56d498fa9ce3a5b6b4db25b5004fe22f7e2af4b24ca16",
+    "corrections_file": "evidence/CANON_EVIDENCE_CORRECTIONS.jsonl",
+    "corrections_sha256": "cde74d37151892ea5a1927c93e50f3ad7a578b1048e7965111d019f730274480",
+    "corrected_passage": "JV-P003",
+    "corrected_excerpt_sha256": "d59fc2103b44bc41aea2195e1ece60d55fe00b08e164bec94ca6e1026128fe7b",
+    "translation_body_changed": false
   },
   "source_audit": {
     "audit_id": "OLSIZ-20260904",

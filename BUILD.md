@@ -41,5 +41,11 @@ The pp. citation locator in OLP-0037 is localized as kaca while retaining its
 page numbers and citation key. Paragraph and segment-hash analysis normalizes
 CRLF/LF line endings; whole-file hashes always describe the original bytes.
 
+Run `python tools/qa-batch.py` from the repository root to replay the structural
+and alignment evidence against the checked-out bytes. Confirmed source repairs
+are normalized only at their exact asserted source strings. In OLP-0048 this
+includes the complete `\equivrep{f}{}\neq 0_\Rat` expression before command
+sequence comparison, matching its audited `0_\Real` target correction.
+
 The build produces a searchable visual PDF, without a claim of PDF/UA tagging,
 screen-reader certification, synthesized audio, or native-language review.

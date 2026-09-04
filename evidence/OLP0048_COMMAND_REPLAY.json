@@ -1,0 +1,28 @@
+{
+  "schema": "jv-olp0048-command-replay/1",
+  "utc": "2026-09-04T21:22:34.874779+00:00",
+  "unit_id": "OLP-0048",
+  "source_path": "content/sets-functions-relations/arithmetization/cauchy.tex",
+  "source_sha256": "35d0a39913340eadcab7fb9d7742b56aef0d0f29868cd65eeca9dc53694e8ac2",
+  "translation_sha256": "22572f5a494ea558fc9cc0cc9b14e0c19a7b509d1cfd64e4d73fcf5a8826e5c5",
+  "normalizations": [
+    {
+      "kind": "lexical_typesetting",
+      "source": "na\\\"{i}ve",
+      "target": "naive",
+      "asserted_occurrences": 1
+    },
+    {
+      "kind": "audited_source_correction",
+      "audit_context": "real equivalence class compared with real zero",
+      "source": "\\equivrep{f}{}\\neq 0_\\Rat",
+      "target": "\\equivrep{f}{}\\neq 0_\\Real",
+      "asserted_occurrences": 1
+    }
+  ],
+  "source_command_count": 277,
+  "translation_command_count": 277,
+  "command_sequence_sha256": "a6d13f2115852e6ab46861424dcd226aec0ea5bd5c3a9e0e666f2cae0f43c305",
+  "mismatch_count": 0,
+  "all_command_sequence": true
+}
