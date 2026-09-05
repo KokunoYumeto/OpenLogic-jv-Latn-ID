@@ -2,7 +2,7 @@
   "schema": "jv-semantic-review/1",
   "reviewer": "Codex, same author; no independent or human review claimed",
   "date": "2026-09-05",
-  "scope": "All 888 translated paragraph blocks in OLP-0001 through OLP-0083; 478 unchanged formal/structural blocks classified separately. OLSIZ-001 through OLSIZ-010 and OLPL-001 through OLPL-007 are applied in their affected targets; the proposed OLSIZ-011 remains retracted after exact-byte inspection. Paragraph analysis normalizes CRLF/LF; exact full-file hashes remain raw-byte hashes.",
+  "scope": "All 944 translated paragraph blocks in OLP-0001 through OLP-0090; 534 unchanged formal/structural blocks classified separately. OLSIZ-001 through OLSIZ-010 and OLPL-001 through OLPL-012 are applied in their affected targets; the proposed OLSIZ-011 remains retracted after exact-byte inspection. Paragraph analysis normalizes CRLF/LF; exact full-file hashes remain raw-byte hashes.",
   "method": "Direct source-to-target reading, quantifier/negation/biconditional checks, mathematical-context checks, and selected reverse paraphrases. Automated structure checks are separate.",
   "unit_reviews": [
     {
@@ -715,6 +715,75 @@
       "reverse_sample": "Reflexive equality sequents are valid for closed terms. If an equality inference replaces t1 by t2, truth of t1 equals t2 makes their values identical; moving through the auxiliary assignment and extensionality transfers satisfaction from A(t1) to A(t2), so the rule preserves validity.",
       "source_sha256": "0cc6d3e92d57d3070076ce2daa13aa85c6da6ac3cfb2b5d56df87bb7fef4fac3",
       "translation_sha256": "11b6b0be93079ea999d9b7a2c1f39ff4b0aa025c386a76e11a796cefd4333222"
+    },
+    {
+      "unit_id": "OLP-0084",
+      "status": "pass",
+      "checks": "Compared the tag-controlled propositional and first-order chapter titles, editorial scope and every import in the natural-deduction driver. The chapter order from rules through propositional and quantifier metatheory, soundness and identity is unchanged.",
+      "reverse_sample": "This driver presents a Gentzen/Prawitz natural-deduction chapter and conditionally includes the first-order quantifier and identity material under the same tags and in the same order as the source.",
+      "source_sha256": "c53bed3aa593285a104c9e4c1c40a08efadb3b58094119043baa7a27b8a652e7",
+      "translation_sha256": "4d72bd7b0bb45dc7f466421c936e0a08dafc88fc3f7f7757297dba012a32f6be"
+    },
+    {
+      "unit_id": "OLP-0085",
+      "status": "pass",
+      "checks": "Compared assumption discharge by negation, implication, disjunction and existential rules; the definition of assumptions; sentence-tree node types; premise/conclusion terminology; paired introduction and elimination rules; labels; and the conditional operator sentence. OLPL-008 changes only the erroneous node noun from sequents to sentences.",
+      "reverse_sample": "A natural-deduction derivation is a tree of sentences beginning with assumptions. Correct inference rules connect its sentence nodes, each operator has introduction and elimination rules, and selected labeled assumptions may be discharged.",
+      "source_sha256": "e6e8bed6816bd64ac24342fd4d591ca0e7c1ddf82fc056b452aa87c45d810506",
+      "translation_sha256": "9737415434b500f77edaa603bf4d39e5b5349fc469c024d4b9149c4924a27dc9",
+      "source_audit_ids": [
+        "OLPL-008"
+      ]
+    },
+    {
+      "unit_id": "OLP-0086",
+      "status": "pass",
+      "checks": "Compared every displayed propositional introduction and elimination rule, including premise arity, branch order, discharge labels, falsum rules and conclusion formulas. The final explanation still distinguishes negation introduction from the classical falsehood rule and treats discharge as permission, including zero matching assumptions.",
+      "reverse_sample": "The propositional rules introduce or eliminate conjunction, disjunction, implication and negation. Falsum licenses arbitrary conclusions, the classical rule concludes A after falsum under not-A, and a permitted discharge may discharge no assumptions.",
+      "source_sha256": "5a85acea130c096719ef92c9513ab18a27380a22972eb859d55db92600932846",
+      "translation_sha256": "f1611534c3b53502cf6fd0a211dc4fff56d00791a61e6cbde25530033cfd19c6"
+    },
+    {
+      "unit_id": "OLP-0087",
+      "status": "pass",
+      "checks": "Compared all four quantifier rules, closed-term restrictions, both rule-specific eigenvariable conditions, the historical footnote, substitution notation, the partial replacement example, the invalid derivation without freshness and the sentencehood consequence. OLPL-009 replaces only the contradictory blanket premise restriction with the detailed conditions already stated above it.",
+      "reverse_sample": "Universal elimination and existential introduction substitute a closed term. Universal introduction uses a constant absent from the conclusion and open assumptions; existential elimination also keeps it out of the existential premise and final conclusion while allowing it in the discharged A(a) assumption.",
+      "source_sha256": "eb6d95a24fce278404457d9169c033645853aab7e1c22dd4ca1fec9595068313",
+      "translation_sha256": "979a2225226b518223cce43dcb9e14958977d453ebb792a5b64a63f74cfcdca5",
+      "source_audit_ids": [
+        "OLPL-009"
+      ]
+    },
+    {
+      "unit_id": "OLP-0088",
+      "status": "pass",
+      "checks": "Compared the inductive account and formal definition of a derivation, its top and bottom nodes, correct-rule condition, undischarged assumptions and both provability notations. The worked conjunction and implication trees retain every formula, branch, discharge label and the zero-discharge example.",
+      "reverse_sample": "A derivation of A from Gamma is a finite sentence tree whose upper nodes are Gamma assumptions or are discharged, whose root is A, and whose steps are correct rules. A is derivable from Gamma when such a tree exists; a theorem has every assumption discharged.",
+      "source_sha256": "f238e4c13bb97940ff82f8016aed565b9388d475721f9b6ff132166bf628aa5e",
+      "translation_sha256": "c42aae1c058f784e58c617c4905713ff0ecc1078e3243e0c3eec7fd597e47e87"
+    },
+    {
+      "unit_id": "OLP-0089",
+      "status": "pass",
+      "checks": "Compared all stages of the three propositional proof constructions, including bottom-up and top-down choices, branch assumptions, all discharge labels, negation and falsum steps, and the three exercise sets. All 166 mathematical spans are preserved. OLPL-010 restores the negation-elimination label fixed by the partial tree and rule definition; OLPL-011 restores the rightmost branch direction.",
+      "reverse_sample": "Worked derivations first build a conditional projection, then prove a nested conditional by disjunction elimination and independent branch reasoning. A final classical example uses the falsehood rule to derive excluded middle after ordinary introduction and elimination rules cannot start the proof.",
+      "source_sha256": "d39069643439c576cb5813ef635725ac09ef83257571e380b92dfa223a801ecc",
+      "translation_sha256": "ad562a558dae1511d0a0294a227c4dcef8998f0bbd3f62286a1605a30ebf757f",
+      "source_audit_ids": [
+        "OLPL-010",
+        "OLPL-011"
+      ]
+    },
+    {
+      "unit_id": "OLP-0090",
+      "status": "pass",
+      "checks": "Compared the eigenvariable-first proof strategy and every stage of the three quantified derivations. The existential and universal rules retain their constants, formulas, dependencies, discharge labels and order; the final exercise groups and classical-rule qualification are unchanged. All 101 mathematical spans and every proof-tree command are preserved after the bounded OLPL-012 formula repair.",
+      "reverse_sample": "Quantified proof search handles eigenvariable-sensitive rules early. The examples derive not-every-A from some-not-A, compose an existential conjunction with a universal conditional, and derive not-every-A from a conditional existential consequence plus its negation, while checking all constant dependencies.",
+      "source_sha256": "962c30713b222744c165ce87f7cb8ab11d18d0e805d8d386900bfe8e8104f63f",
+      "translation_sha256": "8ff08199096e9191e399be37aedb60a24f42156c7ab27402cdedf59b958f7786",
+      "source_audit_ids": [
+        "OLPL-012"
+      ]
     }
   ],
   "unresolved_language_uncertainties": [
@@ -729,9 +798,10 @@
     "Proof-system, soundness, sequent, discharge and tableau terminology is provisional controlled adaptation or transparent description; the preserved rules, derivation trees and iff directions, not the Javanese canon, remain the formal authority.",
     "Antecedent, succedent, eigenvariable and structural-rule terminology is provisional borrowing or transparent description; the preserved side conditions and inference trees, not the Javanese canon, remain the formal authority.",
     "Proof-theoretic, provability, compactness and strong-generalization terminology is provisional borrowing or transparent description; the preserved finite-witness definitions and inference trees remain the formal authority.",
-    "Soundness, sequent satisfaction, contrapositive, identity and substitutability terminology is provisional specialization, borrowing or transparent description; the preserved definitions, inference rules and semantic cases remain the formal authority."
+    "Soundness, sequent satisfaction, contrapositive, identity and substitutability terminology is provisional specialization, borrowing or transparent description; the preserved definitions, inference rules and semantic cases remain the formal authority.",
+    "Natural-deduction, falsum, introduction/elimination, eigenvariable and proof-search terminology remains provisional adaptation or transparent description; the preserved inference rules, side conditions and proof trees remain the formal authority."
   ],
-  "build_and_visual_review": "The 36-page introduction/sets/relations/functions reader is accepted and published as v0.1.2. OLP-0049 through OLP-0083 are source-complete and reviewed here but are not yet integrated into a later full-reader build.",
+  "build_and_visual_review": "The 36-page introduction/sets/relations/functions reader is accepted and published as v0.1.2. OLP-0049 through OLP-0090 are source-complete and reviewed here but are not yet integrated into a later full-reader build.",
   "superseded_unit_reviews": [
     {
       "unit_id": "OLP-0021",

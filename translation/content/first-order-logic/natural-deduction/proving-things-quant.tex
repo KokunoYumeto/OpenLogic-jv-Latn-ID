@@ -1,0 +1,258 @@
+% Part: first-order-logic
+% Chapter: natural-deduction
+% Section: proving-things-quant
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{ntd}{prq}
+
+\olsection{\usetoken{P}{derivation} kanthi Kuantor}
+
+\begin{ex}
+Nalika nangani kuantor, kita kudu mesthekake supaya ora nerak syarat
+eigenvariabel, lan kadhangkala iki mbutuhake kita ngowahi urutan
+panrapan inferensi tartamtu. Umume, luwih gampang yen kita nyoba
+nangani luwih dhisik aturan kang kena syarat eigenvariabel
+(aturan-aturan iki bakal ana ing sisih ngisor bukti kang wis rampung).
+
+Ayo ndeleng carane menehi !!a{derivation} saka !!{formula}
+$\lexists[x][\lnot !A(x)] \lif \lnot \lforall[x][!A(x)]$.
+Kaya lumrahe, kita miwiti kanthi nulis
+\begin{prooftree}
+\AxiomC{}
+\UnaryInfC{$\lexists[x][\lnot !A(x)]\lif \lnot \lforall[x][!A(x)]$}
+\end{prooftree}
+Kita miwiti kanthi nulis apa kang dibutuhake kanggo mbenerake langkah
+pungkasan nganggo aturan \Intro{\lif}.
+\begin{prooftree}
+\AxiomC{$\Discharge{\lexists[x][\lnot !A(x)]}{1}$}
+\DeduceC{$\lnot \lforall[x][!A(x)]$}
+\DischargeRule{\Intro{\lif}}{1}
+\UnaryInfC{$\lexists[x][\lnot !A(x)]\lif \lnot \lforall[x][!A(x)]$}
+\end{prooftree}
+Amarga ora ana aturan cetha kang bisa ditrapake marang $\lnot
+\lforall[x][!A(x)]$, kita bakal nata !!{derivation} supaya bisa
+nggunakake aturan \Elim{\lexists}. Ing kene kita kudu nggatekake
+syarat eigenvariabel lan milih konstanta kang ora muncul ing
+$\lexists[x][\lnot !A(x)]$ utawa ing asumsi apa wae kang dadi
+gantungane. Cathetan koreksi sumber OLPL-012: formula Inggris ing
+ukara iki ngilangake negasi kang ana ing asumsi eksistensial lan saben
+wit ing tuladha; wujud kang dibalekake nduweni himpunan konstanta kang
+padha, mula syarat kesegaran ora owah. (Nanging, amarga ora ana
+!!{constant}s kang muncul, pilihan apa wae bisa digunakake.)
+\begin{prooftree}
+\AxiomC{$\Discharge{\lexists[x][\lnot !A(x)]}{1}$}
+\AxiomC{$\Discharge{\lnot !A(a)}{2}$}
+\DeduceC{$\lnot \lforall[x][!A(x)]$}
+\DischargeRule{\Elim{\lexists}}{2}
+\BinaryInfC{$\lnot \lforall[x][!A(x)]$}
+\DischargeRule{\Intro{\lif}}{1}
+\UnaryInfC{$\lexists[x][\lnot !A(x)] \lif \lnot \lforall[x][!A(x)]$}
+\end{prooftree}
+Kanggo ngasilake $\lnot \lforall[x][!A(x)]$, kita bakal nyoba
+nggunakake aturan \Intro{\lnot}: iki mbutuhake kita ngasilake
+kontradiksi, bisa uga kanthi nggunakake $\lforall[x][!A(x)]$ minangka
+asumsi tambahan. Mesthi wae, kontradiksi iki bisa nyakup asumsi
+$\lnot !A(a)$ kang bakal dibubarake dening inferensi
+\Elim{\lexists}. Kita bisa nata bukti kaya mangkene:
+\begin{prooftree}
+\AxiomC{$\Discharge{\lexists[x][\lnot !A(x)]}{1}$}
+\AxiomC{$\Discharge{\lnot !A(a)}{2}, \Discharge{\lforall[x][!A(x)]}{3}$}
+\DeduceC{$\lfalse$}
+\DischargeRule{\Intro{\lnot}}{3}
+\UnaryInfC{$\lnot \lforall[x][!A(x)]$}
+\DischargeRule{\Elim{\lexists}}{2}
+\BinaryInfC{$\lnot \lforall[x][!A(x)]$}
+\DischargeRule{\Intro{\lif}}{1}
+\UnaryInfC{$\lexists[x][\lnot !A(x)]\lif \lnot \lforall[x][!A(x)]$}
+\end{prooftree}
+Katone kita wis meh ngasilake kontradiksi. Aturan kang paling gampang
+ditrapake yaiku \Elim{\lforall}, kang ora nduweni syarat
+eigenvariabel. Amarga kita bisa nggunakake sembarang term kanggo
+ngganti $x$ kang dikuantifikasi universal, paling trep yen kita terus
+nggunakake~$a$ supaya bisa nggayuh kontradiksi.
+\begin{prooftree}
+\AxiomC{$\Discharge{\lexists[x][\lnot !A(x)]}{1}$}
+\AxiomC{$\Discharge{\lnot !A(a)}{2}$}
+\AxiomC{$\Discharge{\lforall[x][!A(x)]}{3}$}
+\RightLabel{\Elim{\lforall}}
+\UnaryInfC{$!A(a)$}
+\RightLabel{\Elim{\lnot}}
+\BinaryInfC{$\lfalse$}
+\DischargeRule{\Intro{\lnot}}{3}
+\UnaryInfC{$\lnot \lforall[x][!A(x)]$}
+\DischargeRule{\Elim{\lexists}}{2}
+\BinaryInfC{$\lnot \lforall[x][!A(x)]$}
+\DischargeRule{\Intro{\lif}}{1}
+\UnaryInfC{$\lexists[x][\lnot !A(x)]\lif \lnot \lforall[x][!A(x)]$}
+\end{prooftree}
+
+Ing tahap iki, mligine nalika nangani kuantor, kita kudu mriksa maneh
+supaya syarat eigenvariabel ora dilanggar. Amarga siji-sijine aturan
+kang kita trapake lan kena syarat eigenvariabel yaiku
+\Elim{\exists}, lan eigenvariabel~$a$ ora muncul ing asumsi apa wae
+kang dadi gantungane, iki !!{derivation} kang bener.
+\end{ex}
+
+\begin{ex}
+Kadhangkala kita bisa ngasilake !!a{formula} saka !!{formula}s liyane.
+Ing kasus iki bisa ana asumsi kang durung dibubarake. Mula kita kudu
+nyathet asumsi-asumsi kasebut uga ancas pungkasane.
+
+Ayo ndeleng carane menehi !!a{derivation} saka !!{formula}
+$\lexists[x][!C(x,b)]$ adhedhasar asumsi $\lexists[x][(!A(x)
+\land !B(x))]$ lan $\lforall[x][(!B(x) \lif !C(x,b))]$.
+Kaya lumrahe, kita nulis kesimpulan ing sisih ngisor.
+\begin{prooftree}
+\AxiomC{}
+\UnaryInfC{$\lexists[x][!C(x,b)]$}
+\end{prooftree}
+
+Kita duwe rong premis kang bisa digunakake. Kanggo nggunakake premis
+kapisan, yaiku nyoba nemokake !!a{derivation} saka
+$\lexists[x][!C(x, b)]$ adhedhasar $\lexists[x][(!A(x)
+  \land !B(x))]$, kita bakal nggunakake aturan \Elim{\lexists}.
+Amarga aturan kasebut nduweni syarat eigenvariabel, kita bakal
+ngetrapake aturan iku luwih dhisik. Asile mangkene:
+\begin{prooftree}
+\AxiomC{$\lexists[x][(!A(x) \land !B(x))]$}
+\AxiomC{$\Discharge{!A(a) \land !B(a)}{1}$}
+\DeduceC{$\lexists[x][!C(x,b)]$}
+\DischargeRule{\Elim{\lexists}}{1}
+\BinaryInfC{$\lexists[x][!C(x,b)]$}
+\end{prooftree}
+Rong asumsi kang kita gunakake padha-padha ngemot~$!B$. Ing tahap iki
+bisa migunani yen \Elim{\land} ditrapake kanggo misahake~$!B(a)$.
+\begin{prooftree}
+\AxiomC{$\lexists[x][(!A(x) \land !B(x)])$}
+\AxiomC{$\Discharge{!A(a)
+\land !B(a)}{1}$}
+\RightLabel{\Elim{\land}}
+\UnaryInfC{$!B(a)$}
+\DeduceC{$\lexists[x][!C(x,b)]$}
+\DischargeRule{\Elim{\lexists}}{1}
+\BinaryInfC{$\lexists[x][!C(x,b)]$}
+\end{prooftree}
+
+Asumsi kapindho kang bisa digunakake yaiku~$\lforall[x][(!B(x) \lif
+  !C(x,b))]$. Amarga ora ana syarat eigenvariabel, kita bisa
+ngganti $x$ nganggo !!{constant}~$a$ liwat \Elim{\lforall} kanggo
+ngasilake $!B(a) \lif !C(a, b)$. Saiki kita duwe $!B(a) \lif !C(a,b)$
+lan $!B(a)$. Langkah sabanjure yaiku panrapan langsung saka aturan
+\Elim{\lif}.
+\begin{prooftree}
+\AxiomC{$\lexists[x][(!A(x) \land !B(x))]$}
+\AxiomC{$\lforall[x][(!B(x) \lif !C(x,b))]$}
+\RightLabel{\Elim{\lforall}}
+\UnaryInfC{$!B(a) \lif !C(a,b)$}
+\AxiomC{$\Discharge{!A(a)
+\land !B(a)}{1}$}
+\RightLabel{\Elim{\land}}
+\UnaryInfC{$!B(a)$}
+\RightLabel{\Elim{\lif}}
+\BinaryInfC{$!C(a,b)$}
+\DeduceC{$\lexists[x][!C(x,b)]$}
+\DischargeRule{\Elim{\lexists}}{1}
+\insertBetweenHyps{\hspace{-5em}}
+\BinaryInfC{$\lexists[x][!C(x,b)]$}
+\end{prooftree}
+Wis cedhak banget!{} Siji panrapan \Intro{\lexists} maneh lan kita
+wis nggayuh ancas.
+\begin{prooftree}
+\AxiomC{$\lexists[x][(!A(x) \land !B(x))]$}
+\AxiomC{$\lforall[x][(!B(x) \lif !C(x,b))]$}
+\RightLabel{\Elim{\lforall}}
+\UnaryInfC{$!B(a) \lif !C(a,b)$}
+\AxiomC{$\Discharge{!A(a)
+\land !B(a)}{1}$}
+\RightLabel{\Elim{\land}}
+\UnaryInfC{$!B(a)$}
+\RightLabel{\Elim{\lif}}
+\BinaryInfC{$!C(a,b)$}
+\RightLabel{\Intro{\lexists}}
+\UnaryInfC{$\lexists[x][!C(x,b)]$}
+\DischargeRule{\Elim{\lexists}}{1}
+\insertBetweenHyps{\hspace{-5em}}
+\BinaryInfC{$\lexists[x][!C(x,b)]$}
+\end{prooftree}
+Amarga ing saben langkah kita wis mesthekake supaya syarat
+eigenvariabel ora dilanggar, kita bisa yakin yen iki !!{derivation}
+kang bener.
+\end{ex}
+
+\begin{ex}
+Wènèhana !!a{derivation} saka !!{formula}
+$\lnot\lforall[x][!A(x)]$ adhedhasar asumsi $\lforall[x][!A(x)]
+\lif \lexists[y][!B(y)]$ lan $\lnot\lexists[y][!B(y)]$.
+Kaya lumrahe, kita nulis !!{formula} sasaran ing sisih ngisor.
+\begin{prooftree}
+\AxiomC{}
+\UnaryInfC{$\lnot\lforall[x][!A(x)]$}
+\end{prooftree}
+Larik pungkasan !!{derivation} iku negasi, mula ayo nyoba nggunakake
+\Intro{\lnot}. Iki mbutuhake kita nemokake cara kanggo !!{derive}
+kontradiksi.
+\begin{prooftree}
+\AxiomC{$\Discharge{\lforall[x][!A(x)]}{1}$}
+\DeduceC{$\lfalse$}
+\DischargeRule{\Intro{\lnot}}{1}
+\UnaryInfC{$\lnot\lforall[x][!A(x)]$}
+\end{prooftree}
+Nganti kene kabeh lumaku becik. Kita bisa nggunakake \Elim{\lforall},
+nanging durung cetha apa aturan iku bakal mbantu nggayuh ancas.
+Mula, ayo nggunakake salah siji asumsi kita.
+$\lforall[x][!A(x)] \lif \lexists[y][!B(y)]$ bebarengan karo
+$\lforall[x][!A(x)]$ ngidini kita nggunakake aturan \Elim{\lif}.
+\begin{prooftree}
+\AxiomC{$\lforall[x][!A(x)] \lif \lexists[y][!B(y)]$}
+\AxiomC{$\Discharge{\lforall[x][!A(x)]}{1}$}
+\RightLabel{\Elim{\lif}}
+\BinaryInfC{$\lexists[y][!B(y)]$}
+\DeduceC{$\lfalse$}
+\DischargeRule{\Intro{\lnot}}{1}
+\UnaryInfC{$\lnot\lforall[x][!A(x)]$}
+\end{prooftree}
+Saiki isih ana siji asumsi pungkasan kang bisa digunakake, lan
+katone asumsi iki bakal mbantu kita nggayuh kontradiksi liwat
+\Elim{\lnot}.
+\begin{prooftree}
+\AxiomC{$\lnot\lexists[y][!B(y)]$}
+\AxiomC{$\lforall[x][!A(x)] \lif \lexists[y][!B(y)]$}
+\AxiomC{$\Discharge{\lforall[x][!A(x)]}{1}$}
+\RightLabel{\Elim{\lif}}
+\BinaryInfC{$\lexists[y][!B(y)]$}
+\RightLabel{\Elim{\lnot}}
+\BinaryInfC{$\lfalse$}
+\DischargeRule{\Intro{\lnot}}{1}
+\UnaryInfC{$\lnot\lforall[x][!A(x)]$}
+\end{prooftree}
+\end{ex}
+
+\begin{prob}
+Wènèhana !!{derivation}s kang nuduhake prakara-prakara iki:
+\begin{enumerate}
+\item $\Proves (\lforall[x][!A(x)] \land \lforall[y][!B(y)]) \lif
+\lforall[z][(!A(z) \land !B(z))]$.
+\item $\Proves (\lexists[x][!A(x)] \lor \lexists[y][!B(y)]) \lif
+\lexists[z][(!A(z) \lor !B(z))]$.
+\item $\lforall[x][(!A(x) \lif !B)] \Proves \lexists[y][!A(y)] \lif !B$.
+\item $\lforall[x][\lnot !A(x)] \Proves \lnot\lexists[x][!A(x)]$.
+\item $\Proves \lnot\lexists[x][!A(x)] \lif \lforall[x][\lnot !A(x)]$.
+\item $\Proves \lnot\lexists[x][\lforall[y][((!A(x,y) \lif \lnot
+!A(y,y)) \land (\lnot !A(y,y) \lif !A(x,y)))]]$.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+Wènèhana !!{derivation}s kang nuduhake prakara-prakara iki:
+\begin{enumerate}
+\item $\Proves \lnot\lforall[x][!A(x)] \lif \lexists[x][\lnot!A(x)]$.
+\item $(\lforall[x][!A(x)] \lif !B) \Proves \lexists[y][(!A(y) \lif !B)]$.
+\item $\Proves \lexists[x][(!A(x) \lif \lforall[y][!A(y)])]$.
+\end{enumerate}
+(Kabeh iki mbutuhake aturan~$\FalseCl$.)
+\end{prob}
+
+\end{document}

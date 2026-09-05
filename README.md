@@ -3,18 +3,20 @@
 Terjemahan OpenLogic nganggo basa Jawa aksara Latin (jv-Latn-ID).
 Ragam utama yaiku ngoko tinulis kanggo andharan akademik.
 
-**Isih digarap: sumber saiki ngemot 83 saka 722 berkas kang wis diterjemahake.**
+**Isih digarap: sumber saiki ngemot 90 saka 722 berkas kang wis diterjemahake.**
 Bab himpunan, relasi, fungsi, himpunan tanpa wates, sintaksis-semantik
-logika proposisional, ringkesan sistem derivasi, lan dhasar kalkulus
-sekuen nganti kasahihan lan identitas wis rampung ditulis.
+logika proposisional, ringkesan sistem derivasi, kalkulus sekuen
+nganti kasahihan lan identitas, sarta dhasar deduksi natural lan
+tuladha pambuktèn nganti kuantor wis rampung ditulis.
 Pambangunan PDF telung bab kang wis diterbitake didhukung 26 berkas sumber,
 lan 24 unit sumber dimuat ing wacane.
 PDF saiki ana 36 kaca lan wis lulus pambangunan kang dijaga, pamriksan visual
 kabeh kaca, sarta pambangunan baleni kang padha persis saben bit. PDF iki
 diterbitake minangka [v0.1.2](https://github.com/KokunoYumeto/OpenLogic-jv-Latn-ID/releases/tag/v0.1.2).
-Potret sumber rilis v0.1.2 ngemot 48 unit. Telung puluh lima unit bab himpunan tanpa
-wates, sintaksis-semantik proposisional, ringkesan sistem derivasi, lan dhasar kalkulus sekuen kang sabanjure wis rampung
-diterjemahake nanging durung kalebu PDF mau.
+Potret sumber rilis v0.1.2 ngemot 48 unit. Patang puluh loro unit bab himpunan tanpa
+wates, sintaksis-semantik proposisional, ringkesan sistem derivasi, kalkulus sekuen,
+lan dhasar deduksi natural kang sabanjure wis rampung diterjemahake nanging durung
+kalebu PDF mau.
 Edhisi jangkep tetep dadi ancas, kalebu kabeh isi ing njaba
 alur wacan baku.
 
@@ -28,14 +30,18 @@ No endorsement by the upstream project or independent native review is claimed.
 - translation/ contains only source units actually translated, preserving original paths.
 - edition/ contains the reader driver, localized captions/tokens, and explicit errata.
 - editorial/ records the academic register, source clarifications, and an
-  expert-facing terminology and difficult-decision review log.
+  expert-facing terminology and difficult-decision review log, full index,
+  and priority review view.
+- evidence/ includes the machine decision index and a one-row-per-tracked-
+  occurrence CSV; final PDF page fields are bound after the next accepted
+  reader pagination.
 
 Source and translation coverage are separate from reader coverage.
 The ordinary upstream graph reaches 642 units; the full edition must
 account coherently for all 722 without duplicating alternative wrappers.
 That complete reader is not yet built.
 
-The first 83 files have exact source-aligned paragraph records,
+The first 90 files have exact source-aligned paragraph records,
 actual consulted canon passages, formula/token/link/label checks,
 and same-author semantic comparisons with reverse paraphrases.
 Applied source-audit corrections and retracted findings have separate

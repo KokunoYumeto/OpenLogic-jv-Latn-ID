@@ -1,0 +1,116 @@
+{
+  "schema": "jv-local-source-audit/1",
+  "audit_id": "OLPL-NATURAL-DEDUCTION-20260905",
+  "date": "2026-09-05",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "status": "confirmed_five_bounded_natural-deduction_defects",
+  "sources": [
+    {
+      "unit_id": "OLP-0085",
+      "path": "content/first-order-logic/natural-deduction/rules-and-proofs.tex",
+      "bytes": 2061,
+      "sha256": "e6e8bed6816bd64ac24342fd4d591ca0e7c1ddf82fc056b452aa87c45d810506"
+    },
+    {
+      "unit_id": "OLP-0087",
+      "path": "content/first-order-logic/natural-deduction/quantifier-rules.tex",
+      "bytes": 4001,
+      "sha256": "eb6d95a24fce278404457d9169c033645853aab7e1c22dd4ca1fec9595068313"
+    },
+    {
+      "unit_id": "OLP-0089",
+      "path": "content/first-order-logic/natural-deduction/proving-things.tex",
+      "bytes": 11062,
+      "sha256": "d39069643439c576cb5813ef635725ac09ef83257571e380b92dfa223a801ecc"
+    },
+    {
+      "unit_id": "OLP-0090",
+      "path": "content/first-order-logic/natural-deduction/proving-things-quant.tex",
+      "bytes": 9548,
+      "sha256": "962c30713b222744c165ce87f7cb8ab11d18d0e805d8d386900bfe8e8104f63f"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "OLPL-008",
+      "unit_id": "OLP-0085",
+      "locator": "lines 31-36",
+      "observed": "A sentence is said to stand below one, two, or three other sequents in a tree that the same paragraph defines as a tree of sentences.",
+      "finding": "The node-type noun switches from sentences to sequents inside the natural-deduction derivation definition.",
+      "controlling_evidence": [
+        "Lines 31-32 expressly define natural-deduction derivations as trees of sentences whose topmost sentences are assumptions.",
+        "Lines 34-36 call the upper and lower nodes of each inference sentences and identify them as premises and conclusion.",
+        "No sequent is introduced as a node type anywhere in this natural-deduction definition."
+      ],
+      "bounded_repair": {
+        "removed": "one, two, or three other sequents",
+        "added": "one, two, or three other sentences"
+      }
+    },
+    {
+      "finding_id": "OLPL-009",
+      "unit_id": "OLP-0087",
+      "locator": "lines 58-61",
+      "observed": "The summary says that an eigenvariable occurs neither in the premises nor in any undischarged assumption for universal introduction or existential elimination.",
+      "finding": "The blanket exclusion from the premises contradicts both displayed rules and the precise side conditions immediately above.",
+      "controlling_evidence": [
+        "The displayed universal-introduction rule necessarily has premise A(a); its detailed condition excludes a from the universal conclusion and undischarged assumptions, not from that premise.",
+        "The displayed existential-elimination subderivation necessarily begins with the discharged assumption A(a); lines 52-56 expressly exempt those assumptions while excluding a from the existential premise, conclusion and other undischarged assumptions.",
+        "The two rules therefore require distinct occurrence checks and cannot be summarized as excluding the eigenvariable from every premise."
+      ],
+      "bounded_repair": {
+        "removed": "the blanket phrase 'neither occur in the premises'",
+        "added": "the rule-specific conclusion, existential-premise and undischarged-assumption restrictions stated immediately above"
+      }
+    },
+    {
+      "finding_id": "OLPL-010",
+      "unit_id": "OLP-0089",
+      "locator": "lines 129-136",
+      "observed": "\\RightLabel{\\Intro{\\lfalse}} labels the inference from \\lnot !A and !A to \\lfalse.",
+      "finding": "The completed proof tree labels a negation-elimination inference as falsehood introduction.",
+      "controlling_evidence": [
+        "Lines 116-126 describe the same two premises and label the corresponding partial-tree inference \\Elim{\\lnot}.",
+        "The propositional rule definition derives falsum from \\lnot !A and !A under the label \\Elim{\\lnot}.",
+        "Lines 127-128 then invoke \\FalseInt only for the separate step from falsum to !B."
+      ],
+      "bounded_repair": {
+        "removed": "\\RightLabel{\\Intro{\\lfalse}}",
+        "added": "\\RightLabel{\\Elim{\\lnot}}"
+      }
+    },
+    {
+      "finding_id": "OLPL-011",
+      "unit_id": "OLP-0089",
+      "locator": "lines 116-119",
+      "observed": "The second missing subderivation, from !A and !B, is said to be on the left.",
+      "finding": "The prose gives the wrong side for the second branch.",
+      "controlling_evidence": [
+        "In the displayed tree immediately above, the \\lnot !A and !A subderivation is the middle branch and the !B with !A subderivation is the rightmost branch.",
+        "Line 149 begins the discussion of that same subderivation with 'the rightmost branch.'",
+        "The leftmost branch is occupied by the disjunction assumption used as the major premise of disjunction elimination."
+      ],
+      "bounded_repair": {
+        "removed": "on the left",
+        "added": "on the right"
+      }
+    },
+    {
+      "finding_id": "OLPL-012",
+      "unit_id": "OLP-0090",
+      "locator": "lines 35-40",
+      "observed": "The eigenvariable discussion names the relevant premise as \\lexists[x][!A(x)], omitting the negation present in the standing assumption.",
+      "finding": "The prose cites the wrong existential formula while setting up existential elimination.",
+      "controlling_evidence": [
+        "The requested implication has antecedent \\lexists[x][\\lnot !A(x)].",
+        "Every partial and completed proof tree uses \\lexists[x][\\lnot !A(x)] as the major premise of existential elimination.",
+        "Restoring the negation does not change the set of constants in the formula, so the freshness conclusion remains the same."
+      ],
+      "bounded_repair": {
+        "removed": "$\\lexists[x][!A(x)]$",
+        "added": "$\\lexists[x][\\lnot !A(x)]$"
+      }
+    }
+  ],
+  "source_policy": "Keep frozen English bytes and manifest hashes unchanged; repair only the five localized node-type, eigenvariable-summary, rule-label, branch-direction and omitted-negation defects, with an adjacent Javanese provenance note for each."
+}

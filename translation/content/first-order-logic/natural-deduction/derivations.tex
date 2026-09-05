@@ -1,0 +1,109 @@
+% Part: first-order-logic
+% Chapter: natural-deduction
+% Section: derivations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{ntd}{der}}
+      {\olfileid{pl}{ntd}{der}}
+
+\olsection{\usetoken{P}{derivation}}
+
+\begin{explain}
+Kita wis nerangake apa kang diarani asumsi, lan wis menehi aturan
+inferensi. !!^{derivation}s ing deduksi natural dibangkitake kanthi
+induktif saka perkara-perkara kasebut: saben !!{derivation} dadi
+asumsi dhewe, utawa dumadi saka siji, loro, utawa telung
+!!{derivation}s kang diterusake dening inferensi kang bener.
+\end{explain}
+
+\begin{defn}[!!^{derivation}]
+\Article{derivation} \emph{!!{derivation}} saka !!a{sentence}~$!A$
+adhedhasar asumsi~$\Gamma$ yaiku wit winates saka !!{sentence}s kang
+nyukupi syarat-syarat iki:
+\begin{enumerate}
+\item !!{sentence}s paling dhuwur ing wit kalebu ing $\Gamma$ utawa
+  !!{discharged} dening sawijining inferensi ing wit.
+\item !!{sentence} paling ngisor ing wit yaiku~$!A$.
+\item Saben !!{sentence} ing wit kajaba ukara~$!A$ ing sisih ngisor
+  iku premis saka panrapan aturan inferensi kang bener, lan
+  kesimpulan aturan iku mapan langsung ing sangisore !!{sentence}
+  kasebut ing wit.
+\end{enumerate}
+Banjur kita ngarani $!A$ \emph{kesimpulan} saka !!{derivation}
+kasebut lan $\Gamma$ minangka asumsi kang !!{undischarged}.
+
+Yen ana !!a{derivation} saka $!A$ adhedhasar~$\Gamma$, kita kandha yen
+$!A$ \emph{!!{derivable}} saka~$\Gamma$, utawa kanthi simbol:
+$\Gamma \Proves !A$. Yen ana !!a{derivation} saka~$!A$ kang saben
+asumsine wis !!{discharged}, kita nulis~$\Proves !A$.
+\end{defn}
+
+\begin{ex}
+Saben asumsi dhewe iku !!a{derivation}. Dadi, tuladhane, $!A$ dhewe
+iku !!a{derivation}, lan $!B$ dhewe uga. Kita bisa ngasilake
+!!{derivation} anyar saka loro iku kanthi ngetrapake, umpamane, aturan
+$\Intro{\land}$,
+\begin{prooftree}
+\AxiomC{$!A$}
+\AxiomC{$!B$}
+\RightLabel{\Intro{\land}}
+\BinaryInfC{$!A \land !B$}
+\end{prooftree}
+Aturan kasebut dimaksudake umum: $!A$ lan~$!B$ ing aturan iku bisa
+diganti nganggo sembarang !!{sentence}s, tuladhane $!C$ lan~$!D$.
+Banjur kesimpulane dadi $!C \land !D$, mula
+\begin{prooftree}
+\AxiomC{$!C$}
+\AxiomC{$!D$}
+\RightLabel{\Intro{\land}}
+\BinaryInfC{$!C \land !D$}
+\end{prooftree}
+iku !!{derivation} kang bener. Mesthi wae, kita uga bisa ngijolake
+asumsine, saengga $!D$ dadi~$!A$ lan $!C$ dadi~$!B$. Dadi,
+\begin{prooftree}
+\AxiomC{$!D$}
+\AxiomC{$!C$}
+\RightLabel{\Intro{\land}}
+\BinaryInfC{$!D \land !C$}
+\end{prooftree}
+uga !!{derivation} kang bener.
+
+Saiki kita bisa ngetrapake aturan liyane, umpamane $\Intro{\lif}$,
+kang ngidini kita nyimpulake kondisional lan ngidini kita
+!!{discharge} sembarang asumsi kang padha karo anteseden kondisional
+kasebut. Mula, loro
+!!{derivation}s iki padha-padha bener:
+\begin{prooftree}
+\AxiomC{$\Discharge{!C}{1}$}
+\AxiomC{$!D$}
+\RightLabel{\Intro{\land}}
+\BinaryInfC{$!C \land !D$}
+\DischargeRule{\Intro{\lif}}{1}
+\UnaryInfC{$!C \lif (!C \land !D)$}
+\DisplayProof\bottomAlignProof
+\AxiomC{$!C$}
+\AxiomC{$\Discharge{!D}{1}$}
+\RightLabel{\Intro{\land}}
+\BinaryInfC{$!C \land !D$}
+\DischargeRule{\Intro{\lif}}{1}
+\UnaryInfC{$!D \lif (!C \land !D)$}
+\end{prooftree}
+Loro iku, kanthi urut, nuduhake yen $!D \Proves !C \lif (!C \land !D)$
+lan $!C \Proves !D \lif (!C \land !D)$.
+
+Elinga yen mbubarake asumsi iku idin, dudu kuwajiban: kita ora kudu
+mbubarake asumsine. Mligine, kita bisa ngetrapake aturan sanajan
+asumsi kasebut ora ana ing !!{derivation}. Tuladha iki sah, sanajan
+ora ana asumsi~$!A$ kang arep !!{discharged}:
+\begin{prooftree}
+  \AxiomC{$!B$}
+  \DischargeRule{\Intro{\lif}}{1}
+  \UnaryInfC{$!A \lif !B$}
+\end{prooftree}
+\end{ex}
+
+\end{document}

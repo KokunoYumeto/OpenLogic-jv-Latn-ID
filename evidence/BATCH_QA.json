@@ -1,11 +1,11 @@
 {
   "schema": "jv-batch-qa/1",
-  "utc": "2026-09-05T03:08:22.656665+00:00",
-  "checked_units": 83,
-  "structural_pass_units": 83,
+  "utc": "2026-09-05T11:45:05.258309+00:00",
+  "checked_units": 90,
+  "structural_pass_units": 90,
   "total_units": 722,
-  "segments": 1366,
-  "translated_segments": 888,
+  "segments": 1478,
+  "translated_segments": 944,
   "units": [
     {
       "unit_id": "OLP-0001",
@@ -1832,10 +1832,164 @@
       "source_math_count": 29,
       "target_math_count": 29,
       "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0084",
+      "source_path": "content/first-order-logic/natural-deduction/natural-deduction.tex",
+      "source_sha256": "c53bed3aa593285a104c9e4c1c40a08efadb3b58094119043baa7a27b8a652e7",
+      "translation_sha256": "4d72bd7b0bb45dc7f466421c936e0a08dafc88fc3f7f7757297dba012a32f6be",
+      "translation_bytes": 979,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 20,
+      "target_paragraphs": 20,
+      "source_math_count": 0,
+      "target_math_count": 0,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0085",
+      "source_path": "content/first-order-logic/natural-deduction/rules-and-proofs.tex",
+      "source_sha256": "e6e8bed6816bd64ac24342fd4d591ca0e7c1ddf82fc056b452aa87c45d810506",
+      "translation_sha256": "9737415434b500f77edaa603bf4d39e5b5349fc469c024d4b9149c4924a27dc9",
+      "translation_bytes": 2229,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 11,
+      "target_paragraphs": 11,
+      "source_math_count": 6,
+      "target_math_count": 6,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0086",
+      "source_path": "content/first-order-logic/natural-deduction/propositional-rules.tex",
+      "source_sha256": "5a85acea130c096719ef92c9513ab18a27380a22972eb859d55db92600932846",
+      "translation_sha256": "f1611534c3b53502cf6fd0a211dc4fff56d00791a61e6cbde25530033cfd19c6",
+      "translation_bytes": 2402,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 18,
+      "target_paragraphs": 18,
+      "source_math_count": 48,
+      "target_math_count": 48,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0087",
+      "source_path": "content/first-order-logic/natural-deduction/quantifier-rules.tex",
+      "source_sha256": "eb6d95a24fce278404457d9169c033645853aab7e1c22dd4ca1fec9595068313",
+      "translation_sha256": "979a2225226b518223cce43dcb9e14958977d453ebb792a5b64a63f74cfcdca5",
+      "translation_bytes": 4353,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 16,
+      "target_paragraphs": 16,
+      "source_math_count": 57,
+      "target_math_count": 57,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0088",
+      "source_path": "content/first-order-logic/natural-deduction/derivations.tex",
+      "source_sha256": "f238e4c13bb97940ff82f8016aed565b9388d475721f9b6ff132166bf628aa5e",
+      "translation_sha256": "c42aae1c058f784e58c617c4905713ff0ecc1078e3243e0c3eec7fd597e47e87",
+      "translation_bytes": 3682,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 12,
+      "target_paragraphs": 12,
+      "source_math_count": 49,
+      "target_math_count": 49,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0089",
+      "source_path": "content/first-order-logic/natural-deduction/proving-things.tex",
+      "source_sha256": "d39069643439c576cb5813ef635725ac09ef83257571e380b92dfa223a801ecc",
+      "translation_sha256": "ad562a558dae1511d0a0294a227c4dcef8998f0bbd3f62286a1605a30ebf757f",
+      "translation_bytes": 11656,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 19,
+      "target_paragraphs": 19,
+      "source_math_count": 166,
+      "target_math_count": 166,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0090",
+      "source_path": "content/first-order-logic/natural-deduction/proving-things-quant.tex",
+      "source_sha256": "962c30713b222744c165ce87f7cb8ab11d18d0e805d8d386900bfe8e8104f63f",
+      "translation_sha256": "8ff08199096e9191e399be37aedb60a24f42156c7ab27402cdedf59b958f7786",
+      "translation_bytes": 9896,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 16,
+      "target_paragraphs": 16,
+      "source_math_count": 101,
+      "target_math_count": 101,
+      "status": "structural_pass"
     }
   ],
   "failures": 0,
-  "semantic_reviewed_units": 83,
+  "semantic_reviewed_units": 90,
   "build": "see BUILD_SETS.json",
   "release_ready": false
 }

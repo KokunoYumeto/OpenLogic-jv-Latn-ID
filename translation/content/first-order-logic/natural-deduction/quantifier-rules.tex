@@ -1,0 +1,116 @@
+% Part: first-order-logic
+% Chapter: natural-deduction
+% Section: quantifier-rules
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{ntd}{qrl}
+
+\olsection{Aturan Kuantor}
+
+\subsection{Aturan kanggo $\lforall$}
+
+\begin{defish}
+\AxiomC{$!A(a)$}
+\RightLabel{\Intro{\lforall}}
+\UnaryInfC{$\lforall[x][\Atom{!A}{x}]$}
+\DisplayProof
+\hfill
+\AxiomC{$\lforall[x][\Atom{!A}{x}]$}
+\RightLabel{\Elim{\lforall}}
+\UnaryInfC{$!A(t)$}
+\DisplayProof
+\end{defish}
+
+Ing aturan kanggo~$\lforall$, $t$ iku term tertutup (term kang ora
+ngemot variabel), lan $a$~iku !!a{constant} kang ora muncul ing
+kesimpulan~$\lforall[x][!A(x)]$, utawa ing sembarang asumsi kang
+!!{undischarged} ing !!{derivation} kang mungkasi nganggo
+premis~$!A(a)$. Kita ngarani $a$ \emph{eigenvariabel} saka inferensi
+\Intro{\lforall}.\footnote{Kita nggunakake istilah ``eigenvariabel''
+senajan $a$ ing aturan ndhuwur iku konstanta. Iki amarga alasan
+sajarah.}
+
+\subsection{Aturan kanggo $\lexists$}
+
+\begin{defish}
+\AxiomC{$\Atom{!A}{t}$}
+\RightLabel{\Intro{\lexists}}
+\UnaryInfC{$\lexists[x][\Atom{!A}{x}]$}
+\DisplayProof
+\hfill
+\AxiomC{$\lexists[x][\Atom{!A}{x}]$}
+\AxiomC{[$\Atom{!A}{a}$]$^n$}
+\DeduceC{$!C$}
+\DischargeRule{\Elim{\lexists}}{n}
+\BinaryInfC{$!C$}
+\DisplayProof
+\end{defish}
+
+Maneh, $t$ iku term tertutup, lan $a$ iku !!a{constant} kang ora
+muncul ing premis $\lexists[x][!A(x)]$, ing kesimpulan~$!C$, utawa ing
+sembarang asumsi kang !!{undischarged} ing !!{derivation}s kang
+mungkasi nganggo premis loro mau (kajaba asumsi $!A(a)$). Kita
+ngarani $a$ \emph{eigenvariabel} saka inferensi \Elim{\lexists}.
+
+Syarat yen eigenvariabel ora muncul ing kesimpulan utawa asumsi kang
+!!{undischarged} ing !!{derivation}s premis kanggo inferensi
+\Intro{\lforall}, lan ora muncul ing premis eksistensial, kesimpulan,
+utawa asumsi kaya mangkono kanggo inferensi \Elim{\lexists}, diarani
+\emph{syarat eigenvariabel}. Cathetan koreksi sumber OLPL-009:
+ringkesan Inggris nyebut kabeh premis, sanajan premis universal lan
+asumsi kang dibubarake mesthi ngemot eigenvariabel; rumusan ing kene
+ngetutake syarat rinci kang diwenehake langsung ing ndhuwur.
+
+\begin{explain}
+Elinga konvensi yen $!A$ iku !!a{formula} kanthi !!{variable}~$x$
+bebas, kita nuduhake iki kanthi nulis~$!A(x)$. Ing konteks kang padha,
+$!A(t)$ banjur minangka cekakan saka~$\Subst{!A}{t}{x}$. Dadi, kita
+uga bisa nulis aturan $\Intro\lexists$ minangka:
+\begin{prooftree}
+\AxiomC{$\Subst{!A}{t}{x}$}
+\RightLabel{\Intro{\lexists}}
+\UnaryInfC{$\lexists[x][!A]$}
+\end{prooftree}
+Gatekna yen $t$ bisa wae wis muncul ing~$!A$; tuladhane, $!A$~bisa
+awujud~$\Atom{\Obj P}{t,x}$. Mula, nginferensi
+$\lexists[x][\Atom{\Obj P}{t,x}]$ saka~$\Atom{\Obj P}{t,t}$ iku
+panrapan $\Intro\lexists$ kang bener---kita kena ``ngganti'' siji
+utawa luwih, lan ora kudu kabeh, kedadeyane~$t$ ing premis nganggo
+!!{variable}~$x$ kang kaiket. Nanging, syarat eigenvariabel ing
+$\Intro\lforall$ lan~$\Elim\lexists$ mbutuhake supaya !!{constant}~$a$
+ora muncul ing~$!A$. Mula, kita ora bisa kanthi bener nginferensi
+$\lforall[x][\Atom{\Obj P}{a,x}]$ saka $\Atom{\Obj P}{a,a}$
+nganggo~$\Intro\lforall$.
+\end{explain}
+
+\begin{explain}
+Ing \Intro{\lexists} lan \Elim{\lforall} ora ana watesan tambahan,
+lan term tertutup~$t$ bisa dipilih sawenang-wenang, mula kita ora
+perlu nguwatirake syarat liyane. Nanging, ing aturan
+\Elim{\lexists} lan \Intro{\lforall}, syarat eigenvariabel mbutuhake
+supaya !!{constant}~$a$ ora muncul ing panggonan kang dilarang ing
+kesimpulan, premis eksistensial, utawa asumsi kang !!{undischarged},
+miturut aturan sing cocog. Syarat iki perlu kanggo njamin yen sistem
+iku sah, yaiku sistem mung !!{derive}s !!{sentence}s saka asumsi kang
+!!{undischarged} nalika ukara kasebut pancen ndherek saka asumsi mau.
+Tanpa syarat iki, inferensi iki bakal diidinake:
+\begin{prooftree}
+  \AxiomC{$\lexists[x][!A(x)]$}
+  \AxiomC{$\Discharge{!A(a)}{1}$}
+  \RightLabel{*\Intro{\lforall}}
+  \UnaryInfC{$\lforall[x][!A(x)]$}
+  \RightLabel{\Elim{\lexists}}
+  \BinaryInfC{$\lforall[x][!A(x)]$}
+\end{prooftree}
+Nanging, $\lexists[x][!A(x)] \Entails/ \lforall[x][!A(x)]$.
+
+Amarga aturan eliminasi kanggo kuantor mung ngidini substitusi term
+tertutup kanggo !!{variable}s, saben !!{formula} kang bisa diasilake
+saka sawijining himpunan !!{sentence}s mesthi uga !!a{sentence}.
+\end{explain}
+
+
+\end{document}

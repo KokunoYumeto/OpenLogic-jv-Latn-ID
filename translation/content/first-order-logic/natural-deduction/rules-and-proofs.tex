@@ -1,0 +1,54 @@
+% Part: first-order-logic
+% Chapter: natural-deduction
+% Section: rules-and-proofs
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{ntd}{rul}}
+      {\olfileid{pl}{ntd}{rul}}
+
+\olsection{Aturan lan \usetoken{P}{derivation}}
+
+\begin{explain}
+Sistem deduksi natural dimaksudake supaya cedhak karo penalaran ora
+formal kang digunakake ing bukti matématika (mula rada ``natural'').
+Bukti deduksi natural diwiwiti nganggo asumsi. Banjur aturan inferensi
+ditrapake. Asumsi ``!!{discharged}'' dening aturan inferensi
+\Intro{\lnot}, \Intro{\lif}, \iftag{FOL}{\Elim{\lor} lan
+  \Elim{\lexists}}{lan \Elim{\lor}}, lan label asumsi kang
+!!{discharged} diselehake ing sandhing inferensi supaya cetha.
+\end{explain}
+
+\begin{defn}[Asumsi]
+\emph{Asumsi} yaiku sembarang !!{sentence}
+ing posisi paling dhuwur ing sembarang cabang.
+\end{defn}
+
+!!^{derivation}s ing deduksi natural iku wit-wit !!{sentence}s
+tartamtu: !!{sentence}s kang paling dhuwur iku asumsi, lan yen
+!!a{sentence} mapan ing sangisore siji, loro, utawa telung ukara
+liyane, ukara iku kudu ndherek kanthi bener miturut aturan
+inferensi. Cathetan koreksi sumber OLPL-008: teks Inggris nyebut simpul
+ing ndhuwur minangka sekuen, nanging definisi iki kanthi cetha
+netepake kabeh simpul minangka ukara. !!{sentence}s ing sisih ndhuwur
+inferensi diarani \emph{premis}, dene !!{sentence} ing sangisore
+diarani \emph{kesimpulan} inferensi. Aturan-aturan iku awujud pasangan:
+saben !!{operator} duwe aturan introduksi lan aturan eliminasi.
+Aturan kasebut ngenalake !!a{operator} ing kesimpulan utawa ngilangi
+!!a{operator} saka premis aturan. Sawetara aturan ngidini asumsi
+kanthi jinis tartamtu kanggo \emph{!!{discharged}}. Kanggo nuduhake
+asumsi endi kang !!{discharged} dening inferensi endi, kita uga menehi
+label marang asumsi lan inferensi. Iki dituduhake kanthi nulis asumsi
+minangka ``$\Discharge{!A}{n}$.''
+
+% Only include this sentence is on of \land, lor, lif or lnot is defined.
+
+\iftag{notprvNot,notprvAnd,notprvOr,notprvIf}{}%
+	{Wis lumrah nimbang aturan kanggo kabeh !!{operator}s, yaiku $\land$, $\lor$, $\lif$, $\lnot$, lan $\lfalse$, sanajan sawetara operator kasebut ditetepake.}
+
+
+
+\end{document}

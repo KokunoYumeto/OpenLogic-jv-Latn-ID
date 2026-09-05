@@ -1,0 +1,321 @@
+% Part: first-order-logic
+% Chapter: natural-deduction
+% Section: proving-things
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{ntd}{pro}}
+      {\olfileid{pl}{ntd}{pro}}
+
+\olsection{Tuladha \usetoken{P}{derivation}}
+
+\begin{ex}
+Ayo menehi !!a{derivation} saka !!{sentence} $(!A \land !B) \lif !A$.
+
+Kita miwiti kanthi nulis kesimpulan kang dikarepake ing sisih ngisor
+!!{derivation}.
+\begin{prooftree}
+\AxiomC{}
+\UnaryInfC{$(!A\land !B) \lif !A$}
+\end{prooftree}
+
+Sabanjure, kita kudu nemtokake jinis inferensi apa kang bisa ngasilake
+!!a{sentence} kanthi wujud iki. !!{main operator} saka kesimpulan iku
+$\lif$, mula kita bakal nyoba nggayuh kesimpulan nganggo aturan
+\Intro{\lif}. Becik yen asumsi kang digunakake lan label aturan
+inferensi ditulis sairing lumakune pambuktèn, supaya ing pungkasan
+bukti gampang dipriksa apa kabeh asumsi wis !!{discharged}.
+\begin{prooftree}
+\AxiomC{$\Discharge{!A \land !B}{1}$}
+\DeduceC{$!A$}
+\DischargeRule{\Intro{\lif}}{1}
+\UnaryInfC{$(!A\land !B) \lif !A$}
+\end{prooftree}
+
+Saiki kita kudu ngisi langkah-langkah saka asumsi $!A \land !B$
+menyang $!A$. Amarga mung ana siji konektif kang kudu ditangani, yaiku
+$\land$, kita kudu nggunakake aturan eliminasi $\land$. Kanthi mangkono
+kita entuk bukti iki:
+\begin{prooftree}
+\AxiomC{$\Discharge{!A \land !B}{1}$}
+\RightLabel{\Elim{\land}}
+\UnaryInfC{$!A$}
+\DischargeRule{\Intro{\lif}}{1}
+\UnaryInfC{$(!A\land !B) \lif !A$}
+\end{prooftree}
+Saiki kita duwe !!{derivation} kang bener saka $(!A \land
+!B) \lif !A$.
+\end{ex}
+
+\begin{ex}
+Saiki ayo menehi !!a{derivation} saka $(\lnot !A \lor !B)
+\lif (!A \lif !B)$.
+
+Kita miwiti kanthi nulis kesimpulan kang dikarepake ing sisih ngisor
+!!{derivation}.
+\begin{prooftree}
+\AxiomC{}
+\UnaryInfC{$(\lnot !A \lor !B) \lif (!A \lif !B)$}
+\end{prooftree}
+Kanggo nemokake aturan logis kang bisa menehi kesimpulan iki, kita
+ndeleng konektif logis ing kesimpulan: $\lnot$, $\lor$, lan $\lif$.
+Saiki kita mung nggatekake kedadeyan kapisan saka $\lif$, amarga iku
+!!{main operator} saka !!{sentence} pungkasan, dene $\lnot$, $\lor$,
+lan kedadeyan kapindho saka $\lif$ ana ing jangkauan konektif liyane,
+mula bakal ditangani mengko. Dadi, kita miwiti nganggo aturan
+\Intro{\lif}. Panrapan kang bener kudu awujud mangkene:
+\begin{prooftree}
+\AxiomC{$\Discharge{\lnot !A \lor !B}{1}$}
+\DeduceC{$!A \lif !B$}
+\DischargeRule{\Intro{\lif}}{1}
+\UnaryInfC{$(\lnot !A \lor !B) \lif (!A \lif !B)$}
+\end{prooftree}
+Iki menehi rong pilihan kanggo nerusake. Kita bisa terus makarya saka
+ngisor menyang ndhuwur lan nggolèki panrapan aturan \Intro{\lif}
+liyane, utawa makarya saka ndhuwur menyang ngisor lan ngetrapake
+aturan \Elim{\lor}. Ayo ngetrapake pilihan kapindho. Kita bakal
+nggunakake asumsi $\lnot !A \lor !B$ minangka premis paling kiwa saka
+\Elim{\lor}. Kanggo panrapan \Elim{\lor} kang bener, premis loro
+liyane kudu padha karo kesimpulan $!A \lif !B$, nanging saben premis
+bisa diasilake kanthi urut saka asumsi liyane, yaiku salah siji saka
+rong disjung ing $\lnot !A \lor !B$. Mula !!{derivation} kita bakal
+awujud mangkene:
+\begin{prooftree}
+\AxiomC{$\Discharge{\lnot !A \lor !B}{1}$}
+\AxiomC{$\Discharge{\lnot !A}{2}$}
+\DeduceC{$!A \lif !B$}
+\AxiomC{$\Discharge{!B}{2}$}
+\DeduceC{$!A \lif !B$}
+\DischargeRule{\Elim{\lor}}{2}
+\TrinaryInfC{$!A \lif !B$}
+\DischargeRule{\Intro{\lif}}{1}
+\UnaryInfC{$(\lnot !A \lor !B) \lif (!A \lif !B)$}
+\end{prooftree}
+
+Ing saben cabang loro ing sisih tengen, kita arep !!{derive} $!A
+\lif !B$, kang paling becik ditindakake nganggo \Intro{\lif}.
+\begin{prooftree}
+\AxiomC{$\Discharge{\lnot !A \lor !B}{1}$}
+\AxiomC{$\Discharge{\lnot !A}{2}, \Discharge{!A}{3}$}
+\DeduceC{$!B$}
+\DischargeRule{\Intro{\lif}}{3}
+\UnaryInfC{$!A \lif !B$}
+\AxiomC{$\Discharge{!B}{2}, \Discharge{!A}{4}$}
+\DeduceC{$!B$}
+\DischargeRule{\Intro{\lif}}{4}
+\UnaryInfC{$!A \lif !B$}
+\DischargeRule{\Elim{\lor}}{2}
+\TrinaryInfC{$!A \lif !B$}
+\DischargeRule{\Intro{\lif}}{1}
+\UnaryInfC{$(\lnot !A \lor !B) \lif (!A \lif !B)$}
+\end{prooftree}
+
+Kanggo rong bagean !!{derivation} kang isih kosong, kita mbutuhake
+!!{derivation}s saka $!B$ adhedhasar $\lnot !A$ lan $!A$ ing cabang
+tengah, lan adhedhasar $!A$ lan $!B$ ing cabang tengen. Cathetan
+koreksi sumber OLPL-011: teks Inggris nyebut cabang kapindho iki
+minangka cabang kiwa, nanging wit lan paragraf sabanjure kanthi cetha
+ndunungake ing sisih tengen. Ayo luwih dhisik njupuk cabang tengah.
+$\lnot !A$ lan $!A$ iku rong premis saka \Elim{\lnot}:
+\begin{prooftree}
+\AxiomC{$\Discharge{\lnot !A}{2}$}
+\AxiomC{$\Discharge{!A}{3}$}
+\RightLabel{\Elim{\lnot}}
+\BinaryInfC{$\lfalse$}
+\DeduceC{$!B$}
+\end{prooftree}
+Kanthi nggunakake \FalseInt, kita bisa ngasilake $!B$ minangka
+kesimpulan lan ngrampungake cabang iki.
+\begin{prooftree}
+\AxiomC{$\Discharge{\lnot !A \lor !B}{1}$}
+\AxiomC{$\Discharge{\lnot !A}{2}$}
+\AxiomC{$\Discharge{!A}{3}$}
+\RightLabel{\Elim{\lnot}}
+\BinaryInfC{$\lfalse$}
+\RightLabel{\FalseInt}
+\UnaryInfC{$!B$}
+\DischargeRule{\Intro{\lif}}{3}
+\UnaryInfC{$!A \lif !B$}
+\AxiomC{$\Discharge{!B}{2}, \Discharge{!A}{4}$}
+\DeduceC{$!B$}
+\DischargeRule{\Intro{\lif}}{4}
+\UnaryInfC{$!A \lif !B$}
+\DischargeRule{\Elim{\lor}}{2}
+\TrinaryInfC{$!A \lif !B$}
+\DischargeRule{\Intro{\lif}}{1}
+\UnaryInfC{$(\lnot !A \lor !B) \lif (!A \lif !B)$}
+\end{prooftree}
+Cathetan koreksi sumber OLPL-010: label ing wit Inggris ngarani
+langkah saka negasi lan ukara menyang kontradiksi minangka introduksi
+falsum, nanging wit parsial sadurunge lan aturan kang ditetepake
+ngenali langkah iki minangka eliminasi negasi.
+
+Saiki ayo ndeleng cabang paling tengen. Ing kene kudu dielingi yen
+definisi !!{derivation} \emph{ngidini asumsi dibubarake}, nanging
+\emph{ora meksa} asumsi kasebut dibubarake. Kanthi tembung liya, yen
+kita bisa ngasilake $!B$ saka salah siji asumsi $!A$ lan $!B$ tanpa
+nggunakake liyane, iku ora dadi masalah. Lan kanggo !!{derive} $!B$
+saka~$!B$ iku gampang: $!B$ dhewe wis dadi !!a{derivation} kaya
+mangkono, tanpa mbutuhake inferensi. Dadi, kita cukup mbusak
+asumsi~$!A$.
+\begin{prooftree}
+\AxiomC{$\Discharge{\lnot !A \lor !B}{1}$}
+\AxiomC{$\Discharge{\lnot !A}{2}$}
+\AxiomC{$\Discharge{!A}{3}$}
+\RightLabel{\Elim{\lnot}}
+\BinaryInfC{$\lfalse$}
+\RightLabel{\FalseInt}
+\UnaryInfC{$!B$}
+\DischargeRule{\Intro{\lif}}{3}
+\UnaryInfC{$!A \lif !B$}
+\AxiomC{$\Discharge{!B}{2}$}
+\RightLabel{\Intro{\lif}}
+\UnaryInfC{$!A \lif !B$}
+\DischargeRule{\Elim{\lor}}{2}
+\TrinaryInfC{$!A \lif !B$}
+\DischargeRule{\Intro{\lif}}{1}
+\UnaryInfC{$(\lnot !A \lor !B) \lif (!A \lif !B)$}
+\end{prooftree}
+Gatekna yen ing !!{derivation} kang wis rampung, inferensi
+\Intro{\lif} paling tengen sejatine ora mbubarake asumsi apa wae.
+\end{ex}
+
+\begin{ex}
+Nganti saiki kita durung mbutuhake aturan \FalseCl{}. Aturan iki
+mligi amarga ngidini kita mbubarake asumsi kang dudu
+sub-!!{formula} saka kesimpulan aturan kasebut. Aturan iki raket
+sesambungane karo aturan \FalseInt{}. Malah, aturan \FalseInt{} iku
+kasus mligi saka aturan \FalseCl{}---ana logika kang diarani
+``logika intuisionistik'' kang mung ngidini \FalseInt{}. Aturan
+\FalseCl{} dadi upaya pungkasan nalika ora ana cara liyane kang bisa
+ditindakake. Tuladhane, upamana kita arep !!{derive} $!A \lor \lnot
+!A$. Strategi lumrahe yaiku nyoba !!{derive} $!A \lor \lnot !A$
+nganggo $\Intro{\lor}$. Nanging iki mbutuhake supaya kita !!{derive}
+$!A$ utawa $\lnot !A$ tanpa asumsi, lan prakara iki ora bisa
+ditindakake. \FalseCl{} bisa nulungi!
+\begin{prooftree}
+  \AxiomC{$\Discharge{\lnot(!A \lor \lnot !A)}{1}$}
+  \DeduceC{$\lfalse$}
+  \DischargeRule{\FalseCl}{1}
+  \UnaryInfC{$!A \lor \lnot !A$}
+\end{prooftree}
+Saiki kita nggolèki !!a{derivation} saka $\lfalse$ adhedhasar
+$\lnot(!A \lor \lnot !A)$. Amarga $\lfalse$ iku kesimpulan saka
+$\Elim{\lnot}$, kita bisa nyoba aturan kasebut:
+\begin{prooftree}
+  \AxiomC{$\Discharge{\lnot(!A \lor \lnot !A)}{1}$}
+  \DeduceC{$\lnot !A$}
+  \AxiomC{$\Discharge{\lnot(!A \lor \lnot !A)}{1}$}
+  \DeduceC{$!A$}
+  \RightLabel{\Elim{\lnot}}
+  \BinaryInfC{$\lfalse$}
+  \DischargeRule{\FalseCl}{1}
+  \UnaryInfC{$!A \lor \lnot !A$}
+\end{prooftree}
+Strategi kanggo nemokake !!a{derivation} saka~$\lnot !A$ mbutuhake
+panrapan~$\Intro{\lnot}$:
+\begin{prooftree}
+  \AxiomC{$\Discharge{\lnot(!A \lor \lnot !A)}{1}, \Discharge{!A}{2}$}
+  \DeduceC{$\lfalse$}
+  \DischargeRule{\Intro{\lnot}}{2}
+  \UnaryInfC{$\lnot !A$}
+  \AxiomC{$\Discharge{\lnot(!A \lor \lnot !A)}{1}$}
+  \DeduceC{$!A$}
+  \RightLabel{\Elim{\lnot}}
+  \BinaryInfC{$\lfalse$}
+  \DischargeRule{\FalseCl}{1}
+  \UnaryInfC{$!A \lor \lnot !A$}
+\end{prooftree}
+Ing kene, kita bisa ngasilake $\lfalse$ kanthi gampang kanthi
+ngetrapake $\Elim{\lnot}$ marang asumsi $\lnot(!A \lor \lnot !A)$ lan
+$!A \lor \lnot !A$, kang ndherek saka asumsi anyar $!A$
+liwat~$\Intro{\lor}$:
+\begin{prooftree}
+  \AxiomC{$\Discharge{\lnot(!A \lor \lnot !A)}{1}$}
+  \AxiomC{$\Discharge{!A}{2}$}
+  \RightLabel{\Intro{\lor}}
+  \UnaryInfC{$!A \lor \lnot !A$}
+  \RightLabel{\Elim{\lnot}}
+  \BinaryInfC{$\lfalse$}
+  \DischargeRule{\Intro{\lnot}}{2}
+  \UnaryInfC{$\lnot !A$}
+  \AxiomC{$\Discharge{\lnot(!A \lor \lnot !A)}{1}$}
+  \DeduceC{$!A$}
+  \RightLabel{\Elim{\lnot}}
+  \BinaryInfC{$\lfalse$}
+  \DischargeRule{\FalseCl}{1}
+  \UnaryInfC{$!A \lor \lnot !A$}
+\end{prooftree}
+Ing sisih tengen kita nggunakake strategi kang padha, kajaba $!A$
+diasilake liwat~\FalseCl:
+\begin{prooftree}
+  \AxiomC{$\Discharge{\lnot(!A \lor \lnot !A)}{1}$}
+  \AxiomC{$\Discharge{!A}{2}$}
+  \RightLabel{\Intro{\lor}}
+  \UnaryInfC{$!A \lor \lnot !A$}
+  \RightLabel{\Elim{\lnot}}
+  \BinaryInfC{$\lfalse$}
+  \DischargeRule{\Intro{\lnot}}{2}
+  \UnaryInfC{$\lnot !A$}
+  \AxiomC{$\Discharge{\lnot(!A \lor \lnot !A)}{1}$}
+  \AxiomC{$\Discharge{\lnot !A}{3}$}
+  \RightLabel{\Intro{\lor}}
+  \UnaryInfC{$!A \lor \lnot !A$}
+  \RightLabel{\Elim{\lnot}}
+  \BinaryInfC{$\lfalse$}
+  \DischargeRule{\FalseCl}{3}
+  \UnaryInfC{$!A$}
+  \RightLabel{\Elim{\lnot}}
+  \BinaryInfC{$\lfalse$}
+  \DischargeRule{\FalseCl}{1}
+  \UnaryInfC{$!A \lor \lnot !A$}
+\end{prooftree}
+\end{ex}
+
+\begin{prob}
+Wènèhana !!{derivation}s kang nuduhake prakara-prakara iki:
+\begin{enumerate}
+\item $!A \land (!B \land !C) \Proves (!A \land !B) \land !C$.
+\item $!A \lor (!B \lor !C) \Proves (!A \lor !B) \lor !C$.
+\item $!A \lif (!B \lif !C) \Proves !B \lif (!A \lif !C)$.
+\item $!A \Proves \lnot\lnot !A$.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+Wènèhana !!{derivation}s kang nuduhake prakara-prakara iki:
+\begin{enumerate}
+\item $(!A \lor !B) \lif !C \Proves !A \lif !C$.
+\item $(!A \lif !C) \land (!B \lif !C) \Proves (!A \lor !B) \lif !C$.
+\item $\Proves \lnot(!A \land \lnot !A)$.
+\item $!B \lif !A \Proves \lnot !A \lif \lnot !B$.
+\item $\Proves (!A \lif \lnot !A) \lif \lnot !A$.
+\item $\Proves \lnot(!A \lif !B) \lif \lnot !B$.
+\item $!A \lif !C \Proves \lnot (!A \land \lnot !C)$.
+\item $!A \land \lnot !C \Proves \lnot (!A \lif !C)$.
+\item $!A \lor !B, \lnot !B \Proves !A$.
+\item $\lnot !A \lor \lnot !B \Proves \lnot(!A \land !B)$.
+\item $\Proves (\lnot !A \land \lnot !B) \lif\lnot(!A \lor !B)$.
+\item $\Proves \lnot(!A \lor !B) \lif (\lnot !A \land \lnot !B)$.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+Wènèhana !!{derivation}s kang nuduhake prakara-prakara iki:
+\begin{enumerate}
+\item $\lnot(!A \lif !B) \Proves !A$.
+\item $\lnot(!A \land !B) \Proves \lnot !A \lor \lnot !B$.
+\item $!A \lif !B \Proves \lnot !A \lor !B$.
+\item $\Proves \lnot \lnot !A \lif !A$.
+\item $!A \lif !B, \lnot !A \lif !B \Proves !B$.
+\item $(!A \land !B) \lif !C \Proves (!A \lif !C) \lor (!B \lif !C)$.
+\item $(!A \lif !B) \lif !A \Proves !A$.
+\item $\Proves (!A \lif !B) \lor (!B \lif !C)$.
+\end{enumerate}
+(Kabeh iki mbutuhake aturan~$\FalseCl$.)
+\end{prob}
+
+\end{document}
