@@ -2,7 +2,7 @@
 
 These decisions most benefit from expert attention. Review is useful but does not block the source-faithful translation lane.
 
-Coverage: OLP-0001 through OLP-0111; 111 of 722 frozen source units. Reader-page bindings remain pending until a future pagination containing each occurrence is accepted.
+Coverage: OLP-0001 through OLP-0118; 118 of 722 frozen source units. Reader-page bindings remain pending until a future pagination containing each occurrence is accepted.
 
 | ID | Priority | Kind | Source | Chosen rendering | Confidence | Expert question |
 |---|---|---|---|---|---|---|
@@ -75,5 +75,8 @@ Coverage: OLP-0001 through OLP-0111; 111 of 722 frozen source units. Reader-page
 | JV-D057 | high | source_correction | OLPL-021: the symmetry explanation calls line 3 A(s_2), although its stated substitution makes that line A(s_1) | Use A(s_1) for line 3, following A(x)=x=s_1; retain A(s_2) for the derived symmetric conclusion. | medium | Does the repaired instance track the substitution variable and distinguish line 3 from the conclusion? |
 | JV-D058 | high | source_correction | OLPL-022: the transitivity explanation identifies line 2 by the rule metavariable equality that actually denotes line 3 | Name line 2 as s_1=s_2, following A(x)=s_1=x and the displayed tableau; keep t_1=s_2 and t_2=s_3 for line 3. | medium | Does the repaired formula preserve both the rule metavariable assignment and the distinct substitution instance on line 2? |
 | JV-D059 | high | source_correction | OLPL-023: the soundness case for true identity gives its added result an arbitrary schematic sign | Use the true sign fixed by the named rule, its two true premises and the satisfaction proof; leave the false case separate. | medium | Does the repaired sign make the result match the exact identity rule whose satisfiability is established? |
+| JV-D060 | high | source_correction | OLPL-024: the inference-rule explanation drops the formula marker from its indexed derivation step | Restore !A_i, following the finite-sequence definition immediately above and every indexed formula in the later expansion. | medium | Does the restored marker make the explanatory step agree with the exact formula-metavariable notation used throughout the section? |
+| JV-D061 | high | source_correction | OLPL-025: the transitivity proof drops the marker from B_i and calls every inherited justification the same rule | Restore !B_i and say it inherits the same justification basis, which may be axiomhood, premise membership or an inference rule. | medium | Does the repaired sentence cover exactly the three justification cases enumerated immediately before the concatenated derivation? |
+| JV-D062 | high | source_correction | OLPL-026: the compactness proof enumerates only modus ponens although the FOL build also admits QR | Refer to any allowed inference rule, since shrinking Gamma preserves the quantified rules freshness restrictions as well as modus ponens. | medium | Does the broader rule phrase make the proof valid for both chapter tags without changing its finite-premise argument? |
 
 Exact hashes, spans, authorities, alternatives and occurrences are in `DECISIONS.json`.

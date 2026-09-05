@@ -2,7 +2,7 @@
   "schema": "jv-semantic-review/1",
   "reviewer": "Codex, same author; no independent or human review claimed",
   "date": "2026-09-05",
-  "scope": "All 1,163 translated paragraph blocks in OLP-0001 through OLP-0111; 663 unchanged formal/structural blocks classified separately. OLSIZ-001 through OLSIZ-010 and OLPL-001 through OLPL-023 are applied in their affected targets; the proposed OLSIZ-011 remains retracted after exact-byte inspection. Paragraph analysis normalizes CRLF/LF; exact full-file hashes remain raw-byte hashes.",
+  "scope": "All 1,210 translated paragraph blocks in OLP-0001 through OLP-0118; 711 unchanged formal/structural blocks classified separately. OLSIZ-001 through OLSIZ-010 and OLPL-001 through OLPL-026 are applied in their affected targets; the proposed OLSIZ-011 remains retracted after exact-byte inspection. Paragraph analysis normalizes CRLF/LF; exact full-file hashes remain raw-byte hashes.",
   "method": "Direct source-to-target reading, quantifier/negation/biconditional checks, mathematical-context checks, and selected reverse paraphrases. Automated structure checks are separate.",
   "unit_reviews": [
     {
@@ -981,6 +981,69 @@
       "source_audit_ids": [
         "OLPL-023"
       ]
+    },
+    {
+      "unit_id": "OLP-0112",
+      "status": "pass",
+      "checks": "Compared both FOL and propositional chapter identifiers, the editorial tag explanation, every conditional and unconditional section import, and the end hook. The translated driver preserves the exact import order and the distinction between quantified and unquantified builds.",
+      "reverse_sample": "The chapter treats every connective and quantifier as primitive except the biconditional. With the FOL tag it imports the quantified axiom, derivation, provability and identity sections; otherwise it omits them.",
+      "source_sha256": "82b05cdab523aa9e7581b305adc4b065f01cb042bced407a85e776e0f3895382",
+      "translation_sha256": "2fc4aab4b5b1767feda85d189c15f8e0528f201e658f5d0fcd7be135ae6b8f35"
+    },
+    {
+      "unit_id": "OLP-0113",
+      "status": "pass",
+      "checks": "Compared the finite-sequence definition, its three alternatives, the general definition of an inference rule, both trivial examples, modus ponens, the indexed expansion, derivability and theoremhood. OLPL-024 restores only the missing formula marker on the explanatory A_i step.",
+      "reverse_sample": "An axiomatic derivation is a finite formula sequence whose steps are premises, axiom instances or consequences of earlier steps under an allowed rule. With modus ponens, B and B-implies-A license A.",
+      "source_sha256": "8b5cf02fabe434821d3a74db8fa803d25c772e38254c391edf03186b3dc23257",
+      "translation_sha256": "fd69f59ae2f8298f974c137d105bb6d0924c386812afdbfbc36d5d2e1fe80ab1",
+      "source_audit_ids": [
+        "OLPL-024"
+      ]
+    },
+    {
+      "unit_id": "OLP-0114",
+      "status": "pass",
+      "checks": "Compared all fourteen propositional axiom schemas, their labels, formula letters and connective order, plus the definition and abbreviation of modus ponens. Every displayed schema is unchanged.",
+      "reverse_sample": "The propositional basis consists of fourteen labeled axiom forms for conjunction, disjunction, implication, negation, truth and falsity, with modus ponens as the inference rule.",
+      "source_sha256": "c6332d0af2635bb1c79d1f0e418f26472cdf1022ed23818ca51e9e1226889810",
+      "translation_sha256": "391dd92f7ca7f745b624fe2dd73dd9935549808c03f32b3fe0a086a2493befef"
+    },
+    {
+      "unit_id": "OLP-0115",
+      "status": "pass",
+      "checks": "Compared both quantifier axiom schemas, the closed-term restriction, both quantifier inference rules, each freshness condition and the QR abbreviation. Quantifier direction, bound variables and side conditions are preserved exactly.",
+      "reverse_sample": "Universal instantiation and existential introduction are axioms for any closed term. QR generalizes the consequent or existentially generalizes the antecedent when the auxiliary constant occurs in neither Gamma nor B.",
+      "source_sha256": "fa0af48f98b58f2c7b5df8aa80cf2e4981936e237594ddce342e826bbca2ddc8",
+      "translation_sha256": "31bb2519069e0324482478de61a16019af97d1f066fcdaf571e7be7f7ab7469e"
+    },
+    {
+      "unit_id": "OLP-0116",
+      "status": "pass",
+      "checks": "Compared all three worked derivations, every axiom substitution, formula line and MP citation, the explanation of Hyp, the chain proposition and its concatenation proof, and all three exercises. The introductory MP premises and conclusion retain source order.",
+      "reverse_sample": "The examples derive a disjunctive implication and identity, then derive A-implies-C from A-implies-B and B-implies-C. The chain proof concatenates the two premise derivations before appending the displayed MP steps.",
+      "source_sha256": "23ad39fb3af69f934bb4410a53b692e1e589e5a12ecb757a219ee3e5dc4c6a56",
+      "translation_sha256": "b7ab7eb612689e5a75812e83ce0c4d49ceeed8c4f104671cdf1c9dc6dfef2a3a"
+    },
+    {
+      "unit_id": "OLP-0117",
+      "status": "pass",
+      "checks": "Compared the complete quantified example: both conjunction eliminations, both universal instances, both uses of the chain proposition, the conjunction-introduction axiom instance, two MP applications and final QR.",
+      "reverse_sample": "From the conjunction of two universal claims, instantiate both at a fresh constant, combine the instances, and apply QR to derive the universal conjunction.",
+      "source_sha256": "f0e9a893cec5f94f8d48ae6e7ca2c46ad04726c98a03fa33487c9a5c263d0c10",
+      "translation_sha256": "abcfa46493e1b2f0f70784ebc574abee51b789f277a2ab3e50b6d198c4342a0e"
+    },
+    {
+      "unit_id": "OLP-0118",
+      "status": "pass",
+      "checks": "Compared derivability, theoremhood and consistency; reflexivity, monotonicity, transitivity and compactness; both tagged exercises; every finite sequence and premise-set relation. OLPL-025 restores the formula marker and inherited justification basis; OLPL-026 makes the compactness proof cover every inference rule admitted by the FOL build.",
+      "reverse_sample": "A formula is derivable when a finite axiomatic derivation from Gamma ends with it. The relation is reflexive, monotone, transitive and compact; in the FOL build the compactness proof also permits the quantified rules.",
+      "source_sha256": "0afb9df4b5f0f5c1e892cf411d126f45acce94cfbdc9087e4bd37cb851cc370b",
+      "translation_sha256": "0ca2a2fb77aa7eb886852f19eeaf64733c7be4fba3dcc9c1421041ddb928f33c",
+      "source_audit_ids": [
+        "OLPL-025",
+        "OLPL-026"
+      ]
     }
   ],
   "unresolved_language_uncertainties": [
@@ -999,9 +1062,10 @@
     "Natural-deduction, falsum, introduction/elimination, eigenvariable and proof-search terminology remains provisional adaptation or transparent description; the preserved inference rules, side conditions and proof trees remain the formal authority.",
     "The natural-deduction metatheory reuses the established provisional logic and proof-theory vocabulary. Exact definitions, inference rules, semantic conditions and proof trees remain the formal authority pending independent expert language review.",
     "The tableau foundations reuse the established provisional logic and proof-theory vocabulary, adding an ordinary descriptive term for checkmarks. Exact signed rules, branch structure, freshness conditions and closure pairs remain the formal authority pending independent expert language review.",
-    "The tableau metatheory reuses the established provisional proof-theory, satisfaction and identity vocabulary, adding ordinary descriptive forms for prerequisites and rule results. Exact signed formulas, rule directions, substitutions, line references and model-satisfaction conditions remain the formal authority pending independent expert language review."
+    "The tableau metatheory reuses the established provisional proof-theory, satisfaction and identity vocabulary, adding ordinary descriptive forms for prerequisites and rule results. Exact signed formulas, rule directions, substitutions, line references and model-satisfaction conditions remain the formal authority pending independent expert language review.",
+    "The axiomatic foundations reuse established provisional derivation, proof-theory, consistency and quantifier vocabulary, adding ordinary forms for a derivation sequence, axiom instance and Hyp label. Exact axiom schemas, rule directions, freshness restrictions and derivation lines remain the formal authority pending independent expert language review."
   ],
-  "build_and_visual_review": "The 36-page introduction/sets/relations/functions reader is accepted and published as v0.1.2. OLP-0049 through OLP-0111 are source-complete and reviewed here but are not yet integrated into a later full-reader build.",
+  "build_and_visual_review": "The 36-page introduction/sets/relations/functions reader is accepted and published as v0.1.2. OLP-0049 through OLP-0118 are source-complete and reviewed here but are not yet integrated into a later full-reader build.",
   "superseded_unit_reviews": [
     {
       "unit_id": "OLP-0021",

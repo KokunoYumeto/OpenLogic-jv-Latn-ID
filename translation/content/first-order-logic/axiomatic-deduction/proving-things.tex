@@ -1,0 +1,135 @@
+% Part: first-order-logic
+% Chapter: axiomatic-deduction
+% Section: proving-things
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{axd}{pro}}
+      {\olfileid{pl}{axd}{pro}}
+
+\olsection{Conto \usetoken{P}{derivation}}
+
+
+\begin{ex}
+Upamana kita arep mbuktekake $(\lnot !D \lor !E) \lif (!D \lif
+!E)$. Cetha yen iki dudu conto saka aksioma apa wae, mula kita kudu
+nggunakake aturan \MP{} kanggo !!{derive} formula iku. Siji-sijine
+aturan kita yaiku~MP, kang, yen diwenehi $!A$ lan $!A \lif !B$,
+ngidini kita mbenerake~$!B$. Salah siji strategi yaiku nggunakake
+\olref[prp]{ax:lor3} kanthi $!A$ minangka $\lnot !D$, $!B$ minangka
+$!E$, lan $!C$ minangka $!D \lif !E$, yaiku conto
+\[
+(\lnot !D \lif (!D \lif !E)) \lif ((!E \lif (!D \lif !E)) \lif ((\lnot
+!D \lor !E) \lif (!D \lif !E))).
+\]
+Apa alesane? Rong aplikasi MP ngasilake bagean pungkasan, yaiku formula
+kang kita karepake. Lan kita gampang weruh yen $\lnot !D \lif (!D \lif
+!E)$ iku conto saka \olref[prp]{ax:lnot2}, dene $!E \lif (!D \lif !E)$
+iku conto saka \olref[prp]{ax:lif1}. Dadi, !!{derivation} kita yaiku:
+\begin{derivation}
+  1. &  $\lnot !D \lif (!D \lif !E)$ & \olref[prp]{ax:lnot2} \\
+  2. & $(\lnot !D \lif (!D \lif !E)) \lif {}$\\
+  &\qquad $((!E \lif (!D \lif !E)) \lif ((\lnot !D \lor !E) \lif (!D \lif !E)))$ & \olref[prp]{ax:lor3}\\
+  3. & $(!E \lif (!D \lif !E)) \lif ((\lnot !D \lor !E) \lif (!D \lif !E))$ & 1, 2, \MP\\
+  4. & $!E \lif (!D \lif !E)$ & \olref[prp]{ax:lif1}\\
+  5. & $(\lnot !D \lor !E) \lif (!D \lif !E)$ & 3, 4, \MP
+\end{derivation}
+\end{ex}
+
+\begin{ex}\ollabel{ex:identity}
+Ayo kita nyoba golek !!a{derivation} saka $!D \lif !D$. Formula iku
+dudu conto aksioma, mula kita kudu nggunakake \MP{} kanggo
+!!{derive} formula kasebut. \olref[prp]{ax:lif1} iku aksioma kanthi
+wujud~$!A \lif !B$ kang bisa dikenani~\MP. Mesthi wae, supaya migunani,
+$!B$ kang dibenerake \MP{} minangka langkah kang bener ing kasus iki
+kudu padha karo~$!D \lif !D$, amarga iki kang arep kita !!{derive}.
+Iki ateges $!A$ uga kudu padha karo $!D$; mula kita bisa nimbang conto
+\olref[prp]{ax:lif1} iki:
+\[
+!D \lif (!D \lif !D)
+\]
+Kanggo ngetrapake \MP, kita uga kudu mbenerake premis kapindho kang
+cocog, yaiku~$!A$. Nanging ing kasus kita, premis iku bakal dadi~$!D$,
+lan kita ora bakal bisa !!{derive}~$!D$ dhewe. Mula kita mbutuhake
+strategi liyane.
+
+Aksioma liyane kang mung ngemot~$\lif$ yaiku
+\olref[prp]{ax:lif2}, yaiku
+\[
+(!A \lif (!B \lif !C)) \lif ((!A \lif !B) \lif (!A \lif !C))
+\]
+Kita bisa nggayuh kondisional tersarang kang pungkasan kanthi
+ngetrapake \MP{} kaping pindho. Iki maneh ateges kita kepengin conto
+saka \olref[prp]{ax:lif2} kang $!A \lif !C$-ne yaiku $!D \lif !D$,
+!!{formula} kang dadi ancas kita. Mula, $!A$ lan $!C$ mesthi padha
+karo~$!D$. Kepiye carane milih~$!B$ supaya $!A \lif (!B \lif !C)$
+lan $!A \lif !B$, yaiku ing kasus kita $!D \lif (!B \lif !D)$ lan
+$!D \lif !B$, uga bisa !!{derivable}? Formula kapisan wis dadi conto
+saka \olref[prp]{ax:lif1}, apa wae kang dipilih dadi $!B$. Lan
+$!D \lif !B$ bakal dadi conto liyane saka \olref[prp]{ax:lif1} yen
+$!B$ yaiku $(!D \lif !D)$. Dadi, !!{derivation} kita yaiku:
+\begin{derivation}
+  1. & $!D \lif ((!D \lif !D) \lif !D)$ & \olref[prp]{ax:lif1}\\
+  2. & $(!D \lif ((!D \lif !D) \lif !D)) \lif {}$\\
+  & \qquad $((!D \lif (!D \lif !D)) \lif (!D \lif !D))$ & \olref[prp]{ax:lif2}\\
+  3. & $(!D \lif (!D \lif !D)) \lif (!D \lif !D)$ & 1, 2, \MP\\
+  4. & $!D \lif (!D \lif !D)$ & \olref[prp]{ax:lif1}\\
+  5. & $!D \lif !D$ & 3, 4, \MP
+\end{derivation}
+\end{ex}
+
+\begin{ex}\ollabel{ex:chain}
+Kadhangkala kita arep nuduhake yen ana !!a{derivation} saka sawijining
+!!{formula} saka !!{formula}s liyane~$\Gamma$. Upamane, ayo nuduhake
+yen kita bisa !!{derive} $!A \lif !C$ saka $\Gamma = \{!A \lif !B,
+!B \lif !C\}$.
+\begin{derivation}
+  1. & $!A \lif !B$ & \Hyp\\
+  2. & $!B \lif !C$ & \Hyp\\
+  3. & $(!B \lif !C) \lif (!A \lif (!B \lif !C))$ & \olref[prp]{ax:lif1} \\
+  4. & $!A \lif (!B \lif !C)$ & 2, 3, \MP\\
+  5. & $(!A \lif (!B \lif !C)) \lif {}$\\
+  & \qquad $((!A \lif !B) \lif (!A \lif !C))$ & \olref[prp]{ax:lif2}\\
+  6. & $((!A \lif !B) \lif (!A \lif !C))$ & 4, 5, \MP\\
+  7. & $!A \lif !C$ & 1, 6, \MP
+\end{derivation}
+Larik-larik kanthi label ``\Hyp'' (kanggo ``hipotesis'') nuduhake yen
+!!{formula} ing larik kasebut iku !!a{element} saka~$\Gamma$.
+\end{ex}
+
+\begin{prop}
+  \ollabel{prop:chain} Yen $\Gamma \Proves !A \lif !B$ lan $\Gamma
+  \Proves !B \lif !C$, mula $\Gamma \Proves !A \lif !C$
+\end{prop}
+
+\begin{proof}
+  Upamana $\Gamma \Proves !A \lif !B$ lan $\Gamma \Proves !B \lif
+  !C$. Banjur ana !!a{derivation} saka $!A \lif !B$ saka~$\Gamma$,
+  lan uga ana !!a{derivation} saka~$!B \lif !C$ saka~$\Gamma$.
+  Gabungna dadi siji !!{derivation} kanthi nggandhengake loro rerangken
+  kasebut. Saiki tambahana larik 3--7 saka !!{derivation} ing conto
+  sadurunge. Iki !!a{derivation} saka $!A \lif !C$---yaiku larik
+  pungkasan ing !!{derivation} anyar---saka~$\Gamma$. Gatekna yen
+  kabeneran larik 4 lan~7 tetep lumaku yen rujukan marang nomer
+  larik~1 diganti nganggo rujukan marang larik pungkasan ing
+  !!{derivation} saka~$!A \lif !B$, lan rujukan marang nomer larik~2
+  diganti nganggo rujukan marang larik pungkasan ing !!{derivation}
+  saka~$!B \lif !C$.
+\end{proof}
+
+\begin{prob} 
+Nuduhna yen pratelan-pratelan iki lumaku kanthi menehi !!{derivation}s
+saka aksioma:
+\begin{enumerate} 
+\item $(!A \land !B) \lif (!B \land !A)$
+\item $((!A \land !B) \lif !C) \lif (!A \lif (!B \lif !C))$
+\item $\lnot(!A \lor !B) \lif \lnot !A$
+\end{enumerate} 
+\end{prob}
+
+
+
+\end{document}

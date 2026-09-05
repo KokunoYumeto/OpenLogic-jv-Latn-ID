@@ -1,7 +1,7 @@
 {
   "schema": "jv-public-hash-graph-qa/2",
-  "utc": "2026-09-05T17:05:58.081798+00:00",
-  "prospective_parent_commit": "10fd9d139706da4c2295d76d1b1dfa36fa3c8a36",
+  "utc": "2026-09-05T17:28:13.503777+00:00",
+  "prospective_parent_commit": "b56a17886523b275a35525c106bb1932fe99e757",
   "representation": {
     "evidence_attribute": "-text at final precedence",
     "qa_script_attribute": "-text at final precedence",
@@ -9,10 +9,10 @@
     "expert_review_log": "Git LF projection; internal metadata binds exact raw evidence bytes"
   },
   "current_corpus": {
-    "translated_units": 111,
-    "translated_segments": 1163,
-    "structural_or_formal_segments": 663,
-    "term_decisions": 113,
+    "translated_units": 118,
+    "translated_segments": 1210,
+    "structural_or_formal_segments": 711,
+    "term_decisions": 115,
     "canon_passages": 21
   },
   "checks": {
@@ -21,27 +21,27 @@
       "status": "pass"
     },
     "batch_to_source_and_translation": {
-      "units": 111,
+      "units": 118,
       "status": "pass"
     },
     "semantic_to_source_and_translation": {
-      "units": 111,
+      "units": 118,
       "status": "pass"
     },
     "segments_to_semantic_review": {
-      "links": 1826,
+      "links": 1921,
       "status": "pass"
     },
     "translated_segments_with_canon": {
-      "links": 1163,
+      "links": 1210,
       "status": "pass"
     },
     "corrections_to_current_batch_and_semantic": {
-      "records": 33,
+      "records": 36,
       "status": "pass"
     },
     "corrections_to_source_and_translation": {
-      "records": 33,
+      "records": 36,
       "status": "pass"
     },
     "retraction_to_source_and_translation": {
@@ -53,21 +53,21 @@
       "status": "pass"
     },
     "segment_to_canon_excerpt": {
-      "links": 3794,
+      "links": 3909,
       "status": "pass"
     },
     "review_log_to_canon_excerpt": {
-      "links": 299,
+      "links": 304,
       "status": "pass"
     },
     "review_views_to_machine_log": {
-      "decisions": 172,
-      "occurrences": 371,
+      "decisions": 177,
+      "occurrences": 379,
       "status": "pass"
     },
     "canonical_decision_contract": {
-      "decisions": 172,
-      "occurrences": 419,
+      "decisions": 177,
+      "occurrences": 430,
       "status": "pass"
     },
     "sealed_v0.1.2_internal_links": {
@@ -76,27 +76,28 @@
     }
   },
   "aggregate_public_blob_sha256": {
-    "tools/qa-batch.py": "a349839c273f92a80ba259731cac6e109f9ac8862594f90449a0542b01baa510",
-    "tools/build-review-views.py": "944ddff5be2577df3b6d768e142de987d10c3dd5b6cb69ce47e48f02c80b7b79",
-    "tools/build-translation-decisions.py": "bdc1c67f4962d94fb488d5900d07f1ab0860c5e7c6c4b39ee451c4658575b196",
-    "editorial/TRANSLATION_REVIEW_INDEX.md": "e9de6f3015cd533f5b1c74cbc5f63aa37358ae3bbdec3dd5e2e7bcf75181de6b",
-    "editorial/TRANSLATION_REVIEW_LOG.jsonl": "d859db88d1f514885c6e91cec876fc3edfac495948d1528f05ea880fe142b5d3",
-    "editorial/TRANSLATION_REVIEW_PRIORITY.md": "8d830832db6b6040c397090e5a820a1d989c7784e3438d6d779af3a35501e2b2",
-    "evidence/BATCH_QA.json": "6f35823e060a631500b70ac5eef9fbf8c1e04c768c8a5e6f8c075079f91c0cea",
+    "tools/qa-batch.py": "9eb949586b046e7f47ea0bd502eac23efe2adb940276828eb51cbb253babbf0e",
+    "tools/build-review-views.py": "35ea2177db66f9f4eb50505b022151d5799fa91cd0a47f0a9c88dceb548d264a",
+    "tools/build-translation-decisions.py": "6c860cb4ac90a4e69d3c3088e62834ac548bfbdc92a9e4015166c3160e2a25a9",
+    "editorial/TRANSLATION_REVIEW_INDEX.md": "47a230295150328b5969a58cc4d75ed6fab81d64cd517d64852eed598c47a326",
+    "editorial/TRANSLATION_REVIEW_LOG.jsonl": "b7d8de4ff3b6d739219ebe64045374e35d5a9b7c9ed659e2fd655582de0e1d6b",
+    "editorial/TRANSLATION_REVIEW_PRIORITY.md": "9a87de3f123a39db1168e6fcaf06263b752308ddebb21fbe954a9a87a909f12b",
+    "evidence/BATCH_QA.json": "7e1eee546f8b045bb4392c3dff3660ff6a1664e9ce9b748e44b261c3485e52cc",
     "evidence/OLPL_TABLEAUX_METATHEORY_SOURCE_AUDIT.json": "819712412a43cacf9ccfc9320402e82a781150b622a9d28987b6455d5e8f7d7a",
-    "evidence/PUBLIC_QA_REPLAY.json": "2b08d6f42a40a16979e0b83c71b637297a671dd226fc39eceff48766d6f8b326",
-    "evidence/SEGMENT_CANON_USE.jsonl": "eebf7c13824294b6af96e0133ea033ea89f8bca931eaadcff2d9f101e48e1a08",
-    "evidence/SEMANTIC_REVIEW.json": "78fbc94edc8f6653a8dacd53ff852c8af37f48ec290865e1df4f52004c466472",
-    "evidence/SOURCE_CORRECTIONS.jsonl": "f46ddfab8a4e2199f7174d86bd48d6dc6b6177786e490a7999d2f163ff858920",
-    "evidence/TERM_DECISIONS.jsonl": "4b0bdebb90faf7817bfa9b4780dd30c1ba9f68760184dd7e4c34f3b37c69eb1c",
-    "evidence/TRANSLATION_REVIEW_INDEX.json": "572edc10435e0cfea7f80fd2486ada23c5af0f8a66f9f62ec1c6cf697ef58c29",
-    "evidence/TRANSLATION_REVIEW_OCCURRENCES.csv": "c22b20937f705636ac3a2ba1586a18311b72143cf05b8651867ee5843cae2ef3",
-    "translation-decisions/DECISION_OCCURRENCES.csv": "a5f678687220d7075b499239c7c971fc05299c02a0f1127a2b8d0542d18eebed",
-    "translation-decisions/DECISIONS.json": "c104c26c99d8be2caac5606f5da8ec9d8dbeec87d133167689e0f5a85de0c31e",
-    "translation-decisions/PRIORITY_REVIEW.md": "fe1734e531a52ca5f2c35c63bbe661eb59de5b1084b6054874a13abf498e7777",
+    "evidence/OLPL_AXIOMATIC_FOUNDATIONS_SOURCE_AUDIT.json": "8cf974b6af0a96541a4257eca22a945b078a9efe2e5bf3b6eec0dc63a137ec4b",
+    "evidence/PUBLIC_QA_REPLAY.json": "e9f7ce82e90ea16a278b5fbb99a2a27a9f36701330f508c53b4ca49f0cc6d21b",
+    "evidence/SEGMENT_CANON_USE.jsonl": "905fe9e784204a014f692dacac76d8f1a0aace5fe8a95c6002032704ebfe4763",
+    "evidence/SEMANTIC_REVIEW.json": "48ab676e864250e74d4856bbf730250ee806f678fff9fe84a6c0ecff92d1b393",
+    "evidence/SOURCE_CORRECTIONS.jsonl": "d7cfe0cbab91a2a3ca3bbb1402135b0602c9cf2d3a8414a9e01e2235674a9f05",
+    "evidence/TERM_DECISIONS.jsonl": "14c17e3f0bf53cdb09e39bb61c1206f804224fe080213bb480b5c211323648cb",
+    "evidence/TRANSLATION_REVIEW_INDEX.json": "00afa61fbd934399e492231a8580611a1f4897452e32988f52ff83e71767235e",
+    "evidence/TRANSLATION_REVIEW_OCCURRENCES.csv": "1118f46d77250fda30355fdc5d102a5001f1ad40ed96d46749b1ab27f555f491",
+    "translation-decisions/DECISION_OCCURRENCES.csv": "9340527ed32093d4fb7e585463da6f9d4711f517e846f15206f5aa6652b9a15a",
+    "translation-decisions/DECISIONS.json": "ae9b56d94e094b1e872308488681e99565834ec4c41917d1228ab584bfeb7024",
+    "translation-decisions/PRIORITY_REVIEW.md": "44cb6a319808ed6ce64982ffc12fe6d6d1278d009292710e160a82b390a1f9e4",
     "translation-decisions/START_HERE.md": "885ab9949bf148ef4f17f17fb4befe1d9db12846d5aac81ed3d4c667dab987ab",
-    "translation-decisions/TRANSLATION_DECISIONS_FULL.md": "c8b727989d31251b37464c9e2f82d1cfac95e53695cbfe885326c16956245004",
-    "translation-decisions/TRANSLATION_DECISION_QA.json": "8651ef306096909c96de241c7c54c22baea62abf89ce621d33d3ff831d9e56af",
+    "translation-decisions/TRANSLATION_DECISIONS_FULL.md": "1b03373bce7a94b11c18f8c432cae7bcbf5bcb8c34be3ca1cd3ccd62563f1cef",
+    "translation-decisions/TRANSLATION_DECISION_QA.json": "5c1fb6e8a8f3228d0a464c59021ad482f2539ae463a13c96ad1bfcf8886ccd2b",
     "translation-decisions/translation-decision.schema.json": "50e7fa407b62c711f92f8b93be591d3b4a6e1c4adb1386c398bb5f76844d9f90"
   },
   "sealed_release": {

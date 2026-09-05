@@ -1,0 +1,33 @@
+% Part: first-order-logic
+% Chapter: axiomatic-deduction
+% Section: axioms-rules-quantifiers
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{axd}{qua}
+
+\olsection{Aksioma lan Aturan kanggo Kuantor}
+
+\begin{defn}[Aksioma kanggo kuantor]
+\emph{Aksioma} kang ngatur kuantor yaiku kabeh conto saka wujud iki:
+\begin{align}
+\ollabel{ax:q1} & \lforall[x][!B] \lif !B(t), \\
+\ollabel{ax:q2} & !B(t) \lif \lexists[x][!B].
+\end{align}
+kanggo saben term tertutup~$t$.
+\end{defn}
+
+\begin{defn}[Aturan kanggo kuantor]
+\item Yen $!B \lif !A(a)$ wis muncul ing !!{derivation} lan $a$ ora
+  muncul ing~$\Gamma$ utawa~$!B$, mula $!B \lif
+  \lforall[x][!A(x)]$ dadi langkah inferensi kang bener.
+\item Yen $!A(a) \lif !B$ wis muncul ing !!{derivation} lan $a$ ora
+  muncul ing~$\Gamma$ utawa~$!B$, mula $\lexists[x][!A(x)] \lif
+  !B$ dadi langkah inferensi kang bener.
+\end{defn}
+
+Kita bakal nyingkat salah siji saka aturan iki dadi ``\QR.''
+
+\end{document}

@@ -1,0 +1,78 @@
+{
+  "schema": "jv-local-source-audit/1",
+  "audit_id": "OLPL-AXIOMATIC-FOUNDATIONS-20260905",
+  "date": "2026-09-05",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "status": "confirmed_three_bounded_axiomatic_foundations_defects",
+  "sources": [
+    {
+      "unit_id": "OLP-0113",
+      "path": "content/first-order-logic/axiomatic-deduction/rules-and-proofs.tex",
+      "bytes": 3572,
+      "sha256": "8b5cf02fabe434821d3a74db8fa803d25c772e38254c391edf03186b3dc23257"
+    },
+    {
+      "unit_id": "OLP-0118",
+      "path": "content/first-order-logic/axiomatic-deduction/proof-theoretic-notions.tex",
+      "bytes": 4266,
+      "sha256": "0afb9df4b5f0f5c1e892cf411d126f45acce94cfbdc9087e4bd37cb851cc370b"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "OLPL-024",
+      "unit_id": "OLP-0113",
+      "locator": "lines 37-41, especially line 40",
+      "observed": "The explanation calls a derivation step A_i, without the formula-metavariable marker used by this source's notation.",
+      "finding": "The missing marker makes this one occurrence inconsistent with the immediately preceding definition and every subsequent indexed formula in the section.",
+      "controlling_evidence": [
+        "The definition on lines 25-33 introduces every step as !A_i.",
+        "The expanded modus-ponens definition on lines 68-81 consistently uses !A_i, !A_j and !A_k.",
+        "The omitted marker is confined to the single explanatory occurrence on line 40."
+      ],
+      "bounded_repair": {
+        "removed": "$A_i$",
+        "added": "$!A_i$"
+      }
+    },
+    {
+      "finding_id": "OLPL-025",
+      "unit_id": "OLP-0118",
+      "locator": "lines 69-83, especially line 82",
+      "observed": "The final sentence of the transitivity proof writes B_i = !A without the formula marker and says every copied occurrence is justified by the same rule as !A_k.",
+      "finding": "The formula marker is dropped, and 'same rule' is too narrow because the preceding sentence allows !A_k to be an axiom, a member of Gamma, or a result of an inference rule.",
+      "controlling_evidence": [
+        "The earlier occurrence on line 73 and the displayed concatenated derivation use !B_i.",
+        "Lines 75-77 explicitly distinguish three possible bases for !A_k: axiomhood, premise membership, and an inference rule.",
+        "The concatenation argument needs the copied occurrence of !A to inherit whichever of those three bases justified !A_k."
+      ],
+      "bounded_repair": {
+        "removed": [
+          "$B_i = !A$",
+          "the same rule which justifies !A_k = !A"
+        ],
+        "added": [
+          "$!B_i = !A$",
+          "the same basis which justifies !A_k = !A"
+        ]
+      }
+    },
+    {
+      "finding_id": "OLPL-026",
+      "unit_id": "OLP-0118",
+      "locator": "lines 122-130, especially lines 126-127",
+      "observed": "The compactness proof says that every non-axiom, non-premise step follows from earlier formulas by modus ponens.",
+      "finding": "That enumeration omits the quantifier rules admitted by the FOL version of the same tagged chapter, so the proof as written only covers its propositional build.",
+      "controlling_evidence": [
+        "OLP-0112 conditionally imports the quantifier-axiom and rule section whenever the FOL tag is active.",
+        "OLP-0115 defines two quantifier inference rules and abbreviates either one as QR.",
+        "The compactness argument remains valid for every allowed inference rule because restricting Gamma to Gamma_0 preserves the stated freshness conditions."
+      ],
+      "bounded_repair": {
+        "removed": "follows from previous formulas by modus ponens",
+        "added": "follows from previous formulas by one of the allowed inference rules"
+      }
+    }
+  ],
+  "source_policy": "Keep all frozen English bytes and manifest hashes unchanged; apply only the three bounded formula-marker, justification-basis and inference-rule-scope repairs in the localized files, each with an adjacent Javanese provenance note."
+}

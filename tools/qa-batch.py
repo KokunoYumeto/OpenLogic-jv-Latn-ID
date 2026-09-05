@@ -290,6 +290,26 @@ for u in units:
         identity_sign_repair=r'\sFmla{\True}{!A(t_2)}'
         assert math_source.count(identity_sign_defect)==1
         math_source=math_source.replace(identity_sign_defect,identity_sign_repair)
+    # OLPL-024: the frozen prose drops the formula-metavariable marker
+    # from the derivation step A_i. The surrounding definition uses !A_i.
+    if u['unit_id']=='OLP-0113':
+        missing_formula_marker=r'$A_i$'
+        repaired_formula_marker=r'$!A_i$'
+        assert math_source.count(missing_formula_marker)==1
+        math_source=math_source.replace(
+            missing_formula_marker,
+            repaired_formula_marker,
+        )
+    # OLPL-025: the frozen transitivity proof likewise drops the marker
+    # from B_i in the equality naming the copied occurrence of !A.
+    if u['unit_id']=='OLP-0118':
+        missing_formula_marker=r'$B_i = !A$'
+        repaired_formula_marker=r'$!B_i = !A$'
+        assert math_source.count(missing_formula_marker)==1
+        math_source=math_source.replace(
+            missing_formula_marker,
+            repaired_formula_marker,
+        )
     checks={'paragraph_count':len(ac)==len(tc),'protected_commands':protected(protected_source)==protected(t),'math_sequence':math(math_source)==math(t),'token_sequence':tokens(a)==tokens(t),'environment_sequence':re.findall(r'\\(?:begin|end)\{[^}]+\}',a)==re.findall(r'\\(?:begin|end)\{[^}]+\}',t),'unicode_clean':'\ufffd' not in t and not re.search(r'[\uA980-\uA9DF]',t),'no_placeholder':not re.search(r'\b(?:TODO|TBD|TRANSLATE_ME)\b',t)}
     command_source=a
     if u['unit_id']=='OLP-0034':

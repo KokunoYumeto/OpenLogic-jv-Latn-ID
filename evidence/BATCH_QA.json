@@ -1,11 +1,11 @@
 {
   "schema": "jv-batch-qa/1",
-  "utc": "2026-09-05T16:59:19.043548+00:00",
-  "checked_units": 111,
-  "structural_pass_units": 111,
+  "utc": "2026-09-05T17:22:41.242884+00:00",
+  "checked_units": 118,
+  "structural_pass_units": 118,
   "total_units": 722,
-  "segments": 1826,
-  "translated_segments": 1163,
+  "segments": 1921,
+  "translated_segments": 1210,
   "units": [
     {
       "unit_id": "OLP-0001",
@@ -2448,10 +2448,164 @@
       "source_math_count": 27,
       "target_math_count": 27,
       "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0112",
+      "source_path": "content/first-order-logic/axiomatic-deduction/axiomatic-deduction.tex",
+      "source_sha256": "82b05cdab523aa9e7581b305adc4b065f01cb042bced407a85e776e0f3895382",
+      "translation_sha256": "2fc4aab4b5b1767feda85d189c15f8e0528f201e658f5d0fcd7be135ae6b8f35",
+      "translation_bytes": 1185,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 20,
+      "target_paragraphs": 20,
+      "source_math_count": 1,
+      "target_math_count": 1,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0113",
+      "source_path": "content/first-order-logic/axiomatic-deduction/rules-and-proofs.tex",
+      "source_sha256": "8b5cf02fabe434821d3a74db8fa803d25c772e38254c391edf03186b3dc23257",
+      "translation_sha256": "fd69f59ae2f8298f974c137d105bb6d0924c386812afdbfbc36d5d2e1fe80ab1",
+      "translation_bytes": 4057,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 13,
+      "target_paragraphs": 13,
+      "source_math_count": 57,
+      "target_math_count": 57,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0114",
+      "source_path": "content/first-order-logic/axiomatic-deduction/axioms-rules-propositional.tex",
+      "source_sha256": "c6332d0af2635bb1c79d1f0e418f26472cdf1022ed23818ca51e9e1226889810",
+      "translation_sha256": "391dd92f7ca7f745b624fe2dd73dd9935549808c03f32b3fe0a086a2493befef",
+      "translation_bytes": 1484,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 9,
+      "target_paragraphs": 9,
+      "source_math_count": 5,
+      "target_math_count": 5,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0115",
+      "source_path": "content/first-order-logic/axiomatic-deduction/axioms-rules-quantifiers.tex",
+      "source_sha256": "fa0af48f98b58f2c7b5df8aa80cf2e4981936e237594ddce342e826bbca2ddc8",
+      "translation_sha256": "31bb2519069e0324482478de61a16019af97d1f066fcdaf571e7be7f7ab7469e",
+      "translation_bytes": 990,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 9,
+      "target_paragraphs": 9,
+      "source_math_count": 12,
+      "target_math_count": 12,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0116",
+      "source_path": "content/first-order-logic/axiomatic-deduction/proving-things.tex",
+      "source_sha256": "23ad39fb3af69f934bb4410a53b692e1e589e5a12ecb757a219ee3e5dc4c6a56",
+      "translation_sha256": "b7ab7eb612689e5a75812e83ce0c4d49ceeed8c4f104671cdf1c9dc6dfef2a3a",
+      "translation_bytes": 5619,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 13,
+      "target_paragraphs": 13,
+      "source_math_count": 79,
+      "target_math_count": 79,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0117",
+      "source_path": "content/first-order-logic/axiomatic-deduction/proving-things-quant.tex",
+      "source_sha256": "f0e9a893cec5f94f8d48ae6e7ca2c46ad04726c98a03fa33487c9a5c263d0c10",
+      "translation_sha256": "abcfa46493e1b2f0f70784ebc574abee51b789f277a2ab3e50b6d198c4342a0e",
+      "translation_bytes": 1550,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 8,
+      "target_paragraphs": 8,
+      "source_math_count": 2,
+      "target_math_count": 2,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0118",
+      "source_path": "content/first-order-logic/axiomatic-deduction/proof-theoretic-notions.tex",
+      "source_sha256": "0afb9df4b5f0f5c1e892cf411d126f45acce94cfbdc9087e4bd37cb851cc370b",
+      "translation_sha256": "0ca2a2fb77aa7eb886852f19eeaf64733c7be4fba3dcc9c1421041ddb928f33c",
+      "translation_bytes": 4917,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 23,
+      "target_paragraphs": 23,
+      "source_math_count": 70,
+      "target_math_count": 70,
+      "status": "structural_pass"
     }
   ],
   "failures": 0,
-  "semantic_reviewed_units": 111,
+  "semantic_reviewed_units": 118,
   "build": "see BUILD_SETS.json",
   "release_ready": false
 }

@@ -1,6 +1,6 @@
 # Priority translation decisions for expert review
 
-Coverage: OLP-0001 through OLP-0111; 111 of 722 frozen source units.
+Coverage: OLP-0001 through OLP-0118; 118 of 722 frozen source units.
 
 P1 contains every difficult semantic or source decision. P2 contains provisional specialized wording without direct concept-usage or lexical-semantics attestation. These priorities request review and do not block translation.
 
@@ -77,5 +77,8 @@ Final PDF pages are intentionally blank until a later reader pagination is accep
 | JV-D057 | P1-source-or-semantic-review | difficult_translation_or_source_decision | OLP-0110 | Use A(s_1) for line 3, following A(x)=x=s_1; retain A(s_2) for the derived symmetric conclusion. | contemporaneous_source_audit | Does the repaired instance track the substitution variable and distinguish line 3 from the conclusion? |
 | JV-D058 | P1-source-or-semantic-review | difficult_translation_or_source_decision | OLP-0110 | Name line 2 as s_1=s_2, following A(x)=s_1=x and the displayed tableau; keep t_1=s_2 and t_2=s_3 for line 3. | contemporaneous_source_audit | Does the repaired formula preserve both the rule metavariable assignment and the distinct substitution instance on line 2? |
 | JV-D059 | P1-source-or-semantic-review | difficult_translation_or_source_decision | OLP-0111 | Use the true sign fixed by the named rule, its two true premises and the satisfaction proof; leave the false case separate. | contemporaneous_source_audit | Does the repaired sign make the result match the exact identity rule whose satisfiability is established? |
+| JV-D060 | P1-source-or-semantic-review | difficult_translation_or_source_decision | OLP-0113 | Restore !A_i, following the finite-sequence definition immediately above and every indexed formula in the later expansion. | contemporaneous_source_audit | Does the restored marker make the explanatory step agree with the exact formula-metavariable notation used throughout the section? |
+| JV-D061 | P1-source-or-semantic-review | difficult_translation_or_source_decision | OLP-0118 | Restore !B_i and say it inherits the same justification basis, which may be axiomhood, premise membership or an inference rule. | contemporaneous_source_audit | Does the repaired sentence cover exactly the three justification cases enumerated immediately before the concatenated derivation? |
+| JV-D062 | P1-source-or-semantic-review | difficult_translation_or_source_decision | OLP-0118 | Refer to any allowed inference rule, since shrinking Gamma preserves the quantified rules freshness restrictions as well as modus ponens. | contemporaneous_source_audit | Does the broader rule phrase make the proof valid for both chapter tags without changing its finite-premise argument? |
 
 Exact source and target lines, alternatives, rationales, authorities, confidence and machine hashes remain in TRANSLATION_REVIEW_LOG.jsonl; the occurrence projection is ../evidence/TRANSLATION_REVIEW_OCCURRENCES.csv.

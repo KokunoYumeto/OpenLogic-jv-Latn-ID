@@ -3,20 +3,20 @@
 Terjemahan OpenLogic nganggo basa Jawa aksara Latin (jv-Latn-ID).
 Ragam utama yaiku ngoko tinulis kanggo andharan akademik.
 
-**Isih digarap: sumber saiki ngemot 111 saka 722 berkas kang wis diterjemahake.**
+**Isih digarap: sumber saiki ngemot 118 saka 722 berkas kang wis diterjemahake.**
 Bab himpunan, relasi, fungsi, himpunan tanpa wates, sintaksis-semantik
 logika proposisional, ringkesan sistem derivasi, kalkulus sekuen
 nganti kasahihan lan identitas, deduksi natural nganti konsep
-teoretis-bukti, sarta tableaux nganti kasahihan mawa identitas wis
-rampung ditulis.
+teoretis-bukti, tableaux nganti kasahihan mawa identitas, sarta dhasar
+deduksi aksiomatik nganti gagasan teoretis-bukti wis rampung ditulis.
 Pambangunan PDF telung bab kang wis diterbitake didhukung 26 berkas sumber,
 lan 24 unit sumber dimuat ing wacane.
 PDF saiki ana 36 kaca lan wis lulus pambangunan kang dijaga, pamriksan visual
 kabeh kaca, sarta pambangunan baleni kang padha persis saben bit. PDF iki
 diterbitake minangka [v0.1.2](https://github.com/KokunoYumeto/OpenLogic-jv-Latn-ID/releases/tag/v0.1.2).
-Potret sumber rilis v0.1.2 ngemot 48 unit. 63 unit bab himpunan tanpa
+Potret sumber rilis v0.1.2 ngemot 48 unit. 70 unit bab himpunan tanpa
 wates, sintaksis-semantik proposisional, ringkesan sistem derivasi, kalkulus sekuen,
-dhasar deduksi natural, lan tableaux kang sabanjure wis rampung diterjemahake nanging durung
+dhasar deduksi natural, tableaux, lan deduksi aksiomatik kang sabanjure wis rampung diterjemahake nanging durung
 kalebu PDF mau.
 Edhisi jangkep tetep dadi ancas, kalebu kabeh isi ing njaba
 alur wacan baku.
@@ -44,7 +44,7 @@ The ordinary upstream graph reaches 642 units; the full edition must
 account coherently for all 722 without duplicating alternative wrappers.
 That complete reader is not yet built.
 
-The first 111 files have exact source-aligned paragraph records,
+The first 118 files have exact source-aligned paragraph records,
 actual consulted canon passages, formula/token/link/label checks,
 and same-author semantic comparisons with reverse paraphrases.
 Applied source-audit corrections and retracted findings have separate

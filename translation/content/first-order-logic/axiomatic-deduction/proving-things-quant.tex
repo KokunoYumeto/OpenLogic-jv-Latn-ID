@@ -1,0 +1,36 @@
+% Part: first-order-logic 
+% Chapter: axiomatic-deduction 
+% Section: proving-things-quant
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{axd}{prq}
+
+\olsection{\usetoken{P}{derivation} mawa Kuantor}
+
+\begin{ex}
+Ayo kita menehi !!a{derivation} saka $(\lforall[x][!A(x)] \land
+\lforall[y][!B(y)]) \lif \lforall[x][(!A(x) \land !B(x))]$.
+
+Kaping pisan, gatekna yen
+\begin{align*}
+  (\lforall[x][!A(x)] \land \lforall[y][!B(y)]) & \lif \lforall[x][!A(x)]\\
+  \intertext{iku conto saka \olref[prp]{ax:land1}, lan}
+  \lforall[x][!A(x)] & \lif !A(a) \\
+  \intertext{conto saka \olref[qua]{ax:q1}. Mula, miturut \olref[pro]{prop:chain}, kita ngerti yen}
+  (\lforall[x][!A(x)] \land \lforall[y][!B(y)]) & \lif !A(a) \\
+  \intertext{bisa !!{derivable}. Semono uga, amarga}
+  (\lforall[x][!A(x)] \land \lforall[y][!B(y)]) & \lif \lforall[y][!B(y)] \qquad\text{lan}\\
+    \lforall[y][!B(y)] & \lif !B(a)\\
+    \intertext{iku conto saka \olref[prp]{ax:land2} lan \olref[qua]{ax:q1}, miturut urutane,}
+    (\lforall[x][!A(x)] \land \lforall[y][!B(y)]) & \lif !B(a)\\
+    \intertext{bisa diderivasi miturut \olref[pro]{prop:chain}. Kanthi nggunakake conto kang trep saka \olref[prp]{ax:land3} lan rong aplikasi~\MP, kita weruh yen}
+    (\lforall[x][!A(x)] \land \lforall[y][!B(y)]) & \lif (!A(a) \land !B(a))\\
+    \intertext{bisa diderivasi. Saiki kita bisa ngetrapake \QR{} kanggo entuk}
+(\lforall[x][!A(x)] \land \lforall[y][!B(y)]) & \lif \lforall[x][(!A(x) \land !B(x))].
+\end{align*}
+\end{ex}
+
+\end{document}

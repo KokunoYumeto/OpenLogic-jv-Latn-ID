@@ -1,0 +1,101 @@
+% Part: first-order-logic 
+% Chapter: axiomatic-deduction 
+% Section: rules-and-proofs
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{axd}{rul}}
+      {\olfileid{pl}{axd}{rul}}
+
+\olsection{Aturan lan \usetoken{P}{derivation}}
+
+\begin{explain}
+  !!{derivation}s aksiomatik mbokmenawa dadi sistem !!{derivation}
+  kang paling prasaja kanggo logika. !!^a{derivation} mung sawijining
+  rerangken !!{formula}s. Supaya dianggep !!a{derivation}, saben
+  !!{formula} ing rerangken kasebut kudu dadi conto sawijining
+  aksioma, utawa kudu ndherek saka siji utawa luwih !!{formula}s kang
+  ndhisiki ing rerangken miturut sawijining aturan inferensi.
+  !!^a{derivation} !!{derive}s !!{formula} kang pungkasan.
+\end{explain}
+
+\begin{defn}[!!^{derivability}]
+Yen $\Gamma$ iku himpunan !!{formula}s saka $\Lang L$, mula
+\emph{!!{derivation}} saka~$\Gamma$ yaiku rerangken winates
+$!A_1$, \dots,~$!A_n$ saka !!{formula}s, ing ngendi kanggo saben
+$i \le n$ salah siji saka perkara iki lumaku:
+\begin{enumerate}
+\item $!A_i \in \Gamma$; utawa
+\item $!A_i$ iku aksioma; utawa
+\item $!A_i$ ndherek saka sawijining $!A_j$ (lan $!A_k$) kanthi
+  $j < i$ (lan $k < i$) miturut aturan inferensi.
+\end{enumerate}
+\end{defn}
+
+Apa kang dianggep minangka !!{derivation} kang bener gumantung marang
+aturan inferensi endi kang diidini (lan mesthi wae apa kang dianggep
+aksioma). Aturan inferensi iku pratelan yen-banjur kang ngandhani yen,
+ing syarat tartamtu, sawijining langkah~$!A_i$ ing !!a{derivation}
+iku langkah inferensi kang bener. Cathetan koreksi sumber OLPL-024:
+sumber Inggris ngilangake tandha metavariabel formula saka langkah
+kang lagi dirembug, sanadyan definisi sadurunge lan kabeh sebutan
+sabanjure nggunakake tandha kasebut; tandha iku dibalekake ing kene.
+
+\begin{defn}[Aturan inferensi]
+\emph{Aturan inferensi} menehi syarat cukup kanggo apa kang dianggep
+langkah inferensi kang bener ing !!a{derivation} saka~$\Gamma$.
+\end{defn}
+
+Upamane, amarga saben rerangken siji-unsur $!A$ kanthi $!A \in \Gamma$
+kanthi langsung dianggep !!a{derivation}, pratelan iki bisa dadi aturan
+inferensi kang prasaja banget:
+\begin{quote}
+  Yen $!A \in \Gamma$, mula $!A$ mesthi dadi langkah inferensi kang
+  bener ing saben !!{derivation} saka~$\Gamma$.
+\end{quote}
+Semono uga, yen $!A$ iku salah siji aksioma, $!A$ dhewe dadi
+!!a{derivation}, mula pratelan iki uga dadi aturan inferensi:
+\begin{quote}
+  Yen $!A$ iku aksioma, mula $!A$ dadi langkah inferensi kang bener.
+\end{quote}
+Bab iki dadi luwih narik kawigaten yen aturan inferensi nggunakake
+!!{formula}s kang muncul sadurunge langkah kang ditimbang. Aturan iki
+diarani \emph{modus ponens:}
+\begin{quote}
+  Yen $!B \lif !A$ lan $!B$ muncul luwih dhuwur ing !!{derivation},
+  mula~$!A$ dadi langkah inferensi kang bener.
+\end{quote}
+Yen iki siji-sijine aturan inferensi, mula definisi !!{derivation} ing
+ndhuwur padha karo iki: $!A_1$, \dots,~$!A_n$ iku !!a{derivation}
+yen lan mung yen kanggo saben $i \le n$ salah siji saka perkara iki
+lumaku:
+\begin{enumerate}
+\item $!A_i \in \Gamma$; utawa
+\item $!A_i$ iku aksioma; utawa
+\item kanggo sawijining $j < i$, $!A_j$ yaiku $!B \lif !A_i$, lan
+  kanggo sawijining $k < i$, $!A_k$ yaiku~$!B$.
+\end{enumerate}
+Klausa pungkasan nyebut yen $!A_i$ ndherek saka~$!A_j$ ($!B \lif
+!A_i$) lan $!A_k$ ($!B$) miturut modus ponens. Yen kita bisa mlaku
+saka $1$ nganti~$n$, lan saben wektu kita nemokake !!a{formula}~$!A_i$
+kang kalebu ing~$\Gamma$, dadi aksioma, utawa diarani langkah inferensi
+kang bener dening aturan inferensi, mula kabeh rerangken dianggep
+!!{derivation} kang bener.
+
+\begin{defn}[!!^{derivability}]
+!!{formula}~$!A$ \emph{bisa !!{derivable}} saka $\Gamma$, ditulis
+$\Gamma \Proves !A$, yen ana !!a{derivation} saka $\Gamma$ kang
+pungkasan ing $!A$.
+\end{defn}
+
+\begin{defn}[Teorema]
+!!^a{formula}~$!A$ iku \emph{teorema} yen ana !!a{derivation}
+saka himpunan kosong kang ngasilake~$!A$. Kita nulis $\Proves !A$
+yen $!A$ iku teorema, lan $\Proves/ !A$ yen dudu teorema.
+\end{defn}
+
+
+\end{document}

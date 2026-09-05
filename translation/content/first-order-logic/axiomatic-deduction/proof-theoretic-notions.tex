@@ -1,0 +1,145 @@
+% Part: first-order-logic
+% Chapter: axiomatic-deduction
+% Section: proof-theoretic-notions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{axd}{ptn}}
+      {\olfileid{pl}{axd}{ptn}}
+
+\olsection{Gagasan Teoretis-Bukti}
+
+\begin{explain}
+Kaya nalika kita nemtokake sawetara gagasan semantis wigati
+(\iftag{FOL}{validitas}{tautologi}, akibat, lan bisa dicukupi), saiki
+kita nemtokake \emph{gagasan teoretis-bukti} kang cocog. Gagasan iki
+ora ditemtokake kanthi nggunakake panyukupan !!{sentence}s ing
+!!{structure}s, nanging kanthi nggunakake !!{derivability} utawa
+!!{nonderivability} formula-formula tartamtu. Panemuan yen gagasan
+kasebut padha iku panemuan wigati. Kasunyatan manawa padha dadi isi
+\emph{teorema kasahihan} lan \emph{teorema kelengkapan}.
+\end{explain}
+
+\begin{defn}[!!^{derivability}]
+!!^a{formula}~$!A$ \emph{bisa !!{derivable}} saka $\Gamma$, ditulis
+$\Gamma \Proves !A$, yen ana !!a{derivation} saka~$\Gamma$ kang
+pungkasan ing~$!A$.
+\end{defn}
+
+\begin{defn}[Teorema]
+!!^a{formula}~$!A$ iku \emph{teorema} yen ana !!a{derivation} saka
+himpunan kosong kang ngasilake $!A$. Kita nulis $\Proves !A$ yen $!A$
+iku teorema, lan $\Proves/ !A$ yen dudu teorema.
+\end{defn}
+
+\begin{defn}[Konsistensi]
+Himpunan !!{formula}s $\Gamma$ iku \emph{konsisten} yen lan mung yen
+$\Gamma\Proves/ \lfalse$; yen ora, himpunan iku \emph{ora konsisten}.
+\end{defn}
+
+\begin{prop}[Refleksivitas]
+\ollabel{prop:reflexivity}
+Yen $!A \in \Gamma$, mula $\Gamma \Proves !A$.
+\end{prop}
+
+\begin{proof}
+  !!{formula}~$!A$ dhewe dadi !!a{derivation} saka~$!A$ saka~$\Gamma$.
+\end{proof}
+
+\begin{prop}[Monotonisitas]
+\ollabel{prop:monotonicity}
+Yen $\Gamma \subseteq \Delta$ lan $\Gamma \Proves !A$, mula $\Delta
+\Proves !A$.
+\end{prop}
+
+\begin{proof}
+Saben !!{derivation} saka $!A$ saka $\Gamma$ uga dadi !!a{derivation}
+saka $!A$ saka~$\Delta$.
+\end{proof}
+
+\begin{prop}[Transitivitas]
+\ollabel{prop:transitivity}
+Yen $\Gamma \Proves !A$ lan $\{!A\} \cup \Delta \Proves
+!B$, mula $\Gamma \cup \Delta \Proves !B$.
+\end{prop}
+
+\begin{proof}
+  Upamana $\{!A\} \cup \Delta \Proves !B$. Banjur ana
+  !!a{derivation} $!B_1$, \dots, $!B_l = !B$ saka~$\{!A\} \cup
+  \Delta$. Sawetara langkah ing !!{derivation} kasebut bener amarga
+  sawijining aturan nuduhake larik sadurunge~$!B_i = !A$. Miturut
+  hipotesis, ana !!a{derivation} saka~$!A$ saka~$\Gamma$, yaiku
+  !!a{derivation}~$!A_1$, \dots, $!A_k = !A$ kang saben $!A_i$ dadi
+  aksioma, !!a{element} saka~$\Gamma$, utawa bener miturut aturan
+  inferensi. Saiki gatekna rerangken
+  \[
+  !A_1, \dots, !A_k = !A, !B_1, \dots, !B_l = !B.
+  \]
+  Iki !!{derivation} kang bener saka~$!B$ saka $\Gamma \cup \Delta$
+  amarga saben $!B_i = !A$ saiki dibenerake kanthi dhasar kang padha
+  karo kang mbenerake~$!A_k = !A$. Cathetan koreksi sumber OLPL-025:
+  sumber Inggris ngilangake tandha metavariabel formula saka sebutan
+  kapindho lan nyebut kabeh dhasar kabeneran minangka aturan, sanadyan
+  ukara sadurunge mbedakake aksioma, unsur premis, lan aturan; wujud
+  formula lan dhasar umum kasebut dibalekake ing kene.
+\end{proof}
+
+Gatekna yen iki mligine ateges: yen $\Gamma \Proves !A$ lan $!A
+\Proves !B$, mula $\Gamma \Proves !B$. Uga ndherek yen $!A_1,
+\dots, !A_n \Proves !B$ lan $\Gamma \Proves !A_i$ kanggo saben~$i$,
+mula $\Gamma \Proves !B$.
+
+\begin{prop}
+\ollabel{prop:incons}
+$\Gamma$ ora konsisten yen lan mung yen $\Gamma \Proves !A$ kanggo
+saben~$!A$.
+\end{prop}
+
+\begin{proof}
+Gladhen.
+\end{proof}
+
+\tagprob{FOL}
+\begin{prob}
+Buktekna \olref[fol][axd][ptn]{prop:incons}.
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+Buktekna \olref[pl][axd][ptn]{prop:incons}.
+\end{prob}
+\tagendprob
+
+\begin{prop}[Kekompakan]
+  \ollabel{prop:proves-compact}
+  \begin{enumerate}
+  \item Yen $\Gamma \Proves !A$, mula ana subhimpunan winates
+    $\Gamma_0 \subseteq \Gamma$ saengga $\Gamma_0 \Proves !A$.
+  \item Yen saben subhimpunan winates saka~$\Gamma$ konsisten,
+    mula $\Gamma$ konsisten.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+    \item Yen $\Gamma \Proves !A$, mula ana rerangken winates
+      !!{formula}s $!A_1$, \dots,~$!A_n$ saengga $!A \ident !A_n$
+      lan saben $!A_i$ iku aksioma logis, !!a{element} saka~$\Gamma$,
+      utawa ndherek saka !!{formula}s sadurunge miturut salah siji
+      aturan inferensi kang diidini. Jupuken $\Gamma_0$ minangka
+      $!A_i$ kang kalebu ing~$\Gamma$. Banjur !!{derivation} kasebut
+      uga dadi !!a{derivation} saka~$\Gamma_0$, mula $\Gamma_0
+      \Proves !A$. Cathetan koreksi sumber OLPL-026: bukti Inggris
+      mung nyebut modus ponens ing alternatif pungkasan, sanadyan versi
+      FOL bab iki uga ngidini aturan kuantor; sebutan umum marang aturan
+      inferensi kang diidini njaga bukti kanggo loro tag.
+    \item Iki kontraposisi saka~(1) kanggo kasus mligi $!A
+      \ident \lfalse$.
+\end{enumerate}
+\end{proof}
+
+\end{document}
