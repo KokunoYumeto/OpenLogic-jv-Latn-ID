@@ -2,7 +2,7 @@
   "schema": "jv-semantic-review/1",
   "reviewer": "Codex, same author; no independent or human review claimed",
   "date": "2026-09-05",
-  "scope": "All 944 translated paragraph blocks in OLP-0001 through OLP-0090; 534 unchanged formal/structural blocks classified separately. OLSIZ-001 through OLSIZ-010 and OLPL-001 through OLPL-012 are applied in their affected targets; the proposed OLSIZ-011 remains retracted after exact-byte inspection. Paragraph analysis normalizes CRLF/LF; exact full-file hashes remain raw-byte hashes.",
+  "scope": "All 1,031 translated paragraph blocks in OLP-0001 through OLP-0097; 572 unchanged formal/structural blocks classified separately. OLSIZ-001 through OLSIZ-010 and OLPL-001 through OLPL-012 are applied in their affected targets; the proposed OLSIZ-011 remains retracted after exact-byte inspection. Paragraph analysis normalizes CRLF/LF; exact full-file hashes remain raw-byte hashes.",
   "method": "Direct source-to-target reading, quantifier/negation/biconditional checks, mathematical-context checks, and selected reverse paraphrases. Automated structure checks are separate.",
   "unit_reviews": [
     {
@@ -784,6 +784,62 @@
       "source_audit_ids": [
         "OLPL-012"
       ]
+    },
+    {
+      "unit_id": "OLP-0091",
+      "status": "pass",
+      "checks": "Compared the semantic/proof-theoretic contrast, theorem and derivability notations, discharged-assumption criterion, consistency definition, reflexivity, monotonicity, transitivity construction, finite-premise abbreviation, three inconsistency equivalents and both compactness clauses. Every formula, discharge label, tag and cross-reference is preserved.",
+      "reverse_sample": "Natural-deduction proof-theoretic notions use derivations rather than models. A theorem discharges all assumptions, Gamma proves A when all open assumptions lie in Gamma, and inconsistency means deriving falsum. The resulting relation is reflexive, monotone, transitive and compact.",
+      "source_sha256": "12ae1ea4a864b9a42e5fb6addcfc552bb4b74c1ba2cadced427593e4ca52f8e3",
+      "translation_sha256": "b195149af5ff76768f850fffe6122e680b7a1cf8a97caa46ba8e420994de197a"
+    },
+    {
+      "unit_id": "OLP-0092",
+      "status": "pass",
+      "checks": "Compared all four provability/consistency propositions and both directions of the inconsistency characterization. The five displayed trees retain their premise sets, delta labels, negation steps, classical falsehood step, discharge numbers and conclusions.",
+      "reverse_sample": "A derivation of A can be combined with inconsistency after adding A to derive falsum from Gamma. Gamma proves A exactly when adding not-A is inconsistent; an explicit not-A in Gamma therefore produces inconsistency, and inconsistency of both extensions makes Gamma inconsistent.",
+      "source_sha256": "90f40aecedac9a8f2760b9976de0c6eac71c1b1e90911c4a30ce029a2d9e13c6",
+      "translation_sha256": "8ee85303dc47b24a4d47e32b69198ee874bd7c46b43ffd39558455d6f10fedc1"
+    },
+    {
+      "unit_id": "OLP-0093",
+      "status": "pass",
+      "checks": "Compared every conjunction, disjunction and implication provability claim, including modus ponens, both injections, the three-assumption falsum derivation and optional zero-discharge use of implication introduction. All branch order, rule labels and formulas are exact.",
+      "reverse_sample": "Natural deduction proves conjunction projection and pairing, shows that a disjunction together with both negated disjuncts is inconsistent, introduces either disjunct, applies modus ponens, and derives a conditional from either a negated antecedent or its consequent.",
+      "source_sha256": "afb2c635bfea260b7ab2bc413c04f13ac8be807849baf90716dd54f89b29558a",
+      "translation_sha256": "0a8c7481b3998217295f81c6aa58d47b82e47eee15b79d8413f06b8086e70b35"
+    },
+    {
+      "unit_id": "OLP-0094",
+      "status": "pass",
+      "checks": "Compared strong generalization, its two freshness exclusions and eigenvariable justification, plus existential introduction and universal elimination. The tag-controlled items and both proof trees retain their terms, variables, quantifiers and rule labels.",
+      "reverse_sample": "If a fresh constant c occurs in neither Gamma nor A(x), a derivation of A(c) generalizes to every x A(x). A closed instance also yields an existential claim, while a universal claim yields each closed instance.",
+      "source_sha256": "589113c86043ad1152eb1f67bef6340f846cb51929e2d3f26294450516da247c",
+      "translation_sha256": "8d3bfdf805f5bf6041d8c166529cdb251ad5d7e3b8c8a9014221b98518169fef"
+    },
+    {
+      "unit_id": "OLP-0095",
+      "status": "pass",
+      "checks": "Compared the three stated consequences of soundness and the complete induction on inference count. The base case, every supplied unary case, the supplied conjunction-introduction and implication-elimination cases, all exercise cases, the first-order freshness argument, and both corollaries preserve their assumption sets, satisfaction polarities, formulas, tags and exact references.",
+      "reverse_sample": "Soundness is proved by induction on a natural-deduction tree: open assumptions semantically entail each derived conclusion. The proof checks representative introduction and elimination rules, handles universal introduction by changing a fresh constant's interpretation, and concludes that theorems are valid and satisfiable sets are consistent.",
+      "source_sha256": "8b90318e1a2ed38568fb61cd5529d496cdfd17f322fd9c731a194e2d08e0a4b9",
+      "translation_sha256": "59d182196f45614a75d34a584c4187958c3430a25a6c33f9ea8d27aeaf07d99a"
+    },
+    {
+      "unit_id": "OLP-0096",
+      "status": "pass",
+      "checks": "Compared reflexive identity introduction, both directions of identity elimination, the closed-term restriction, Leibniz substitutability, the symmetry/transitivity exercise, the backwards uniqueness proof and both final exercises. Every equality orientation, quantifier, branch, assumption and discharge marker is preserved.",
+      "reverse_sample": "Identity rules derive t=t without assumptions and replace either of two identical closed terms inside a formula. The examples state Leibniz's law and build a uniqueness consequence from an existential claim by existential elimination, conjunction elimination and identity substitution.",
+      "source_sha256": "2f301d8fc8aa78831e17b9d14042c97218795d400a350b0726be3776eed17575",
+      "translation_sha256": "9b162c1234a16fc51584d5a62f3cb70ce92cfb7ba4f3c608ac512c764290ecec"
+    },
+    {
+      "unit_id": "OLP-0097",
+      "status": "pass",
+      "checks": "Compared soundness of reflexive identity introduction and the identity-elimination induction case. The two premise derivations, union of open assumptions, equality of denotations, arbitrary assignment, substitution chain and extensionality reference are all unchanged.",
+      "reverse_sample": "Closed reflexive identities are valid. If t1=t2 and A(t1) follow from two groups of open assumptions, equal denotations and the formula substitution lemma make A(t2) follow from their union, so identity elimination preserves soundness.",
+      "source_sha256": "426ee50b639d92c730c70912bfda4fdf34c99e0e33097dc253cb196a01af7e7d",
+      "translation_sha256": "52c487e6b3056448af77b8c362bff1c95eaa37a0ad70d2459ac5b91f707244b6"
     }
   ],
   "unresolved_language_uncertainties": [
@@ -799,9 +855,10 @@
     "Antecedent, succedent, eigenvariable and structural-rule terminology is provisional borrowing or transparent description; the preserved side conditions and inference trees, not the Javanese canon, remain the formal authority.",
     "Proof-theoretic, provability, compactness and strong-generalization terminology is provisional borrowing or transparent description; the preserved finite-witness definitions and inference trees remain the formal authority.",
     "Soundness, sequent satisfaction, contrapositive, identity and substitutability terminology is provisional specialization, borrowing or transparent description; the preserved definitions, inference rules and semantic cases remain the formal authority.",
-    "Natural-deduction, falsum, introduction/elimination, eigenvariable and proof-search terminology remains provisional adaptation or transparent description; the preserved inference rules, side conditions and proof trees remain the formal authority."
+    "Natural-deduction, falsum, introduction/elimination, eigenvariable and proof-search terminology remains provisional adaptation or transparent description; the preserved inference rules, side conditions and proof trees remain the formal authority.",
+    "The natural-deduction metatheory reuses the established provisional logic and proof-theory vocabulary. Exact definitions, inference rules, semantic conditions and proof trees remain the formal authority pending independent expert language review."
   ],
-  "build_and_visual_review": "The 36-page introduction/sets/relations/functions reader is accepted and published as v0.1.2. OLP-0049 through OLP-0090 are source-complete and reviewed here but are not yet integrated into a later full-reader build.",
+  "build_and_visual_review": "The 36-page introduction/sets/relations/functions reader is accepted and published as v0.1.2. OLP-0049 through OLP-0097 are source-complete and reviewed here but are not yet integrated into a later full-reader build.",
   "superseded_unit_reviews": [
     {
       "unit_id": "OLP-0021",

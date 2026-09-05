@@ -1,0 +1,125 @@
+% Part: first-order-logic
+% Chapter: natural-deduction
+% Section: identity
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{ntd}{ide}
+
+\olsection{\usetoken{P}{derivation} mawa \usetoken{S}{identity}}
+
+!!^{derivation}s mawa !!{identity} mbutuhake aturan inferensi tambahan.
+
+\begin{defish}
+\AxiomC{}
+\RightLabel{\Intro{\eq}}
+\UnaryInfC{$\eq[t][t]$}
+\DisplayProof
+\hfill
+\begin{tabular}{r}
+\AxiomC{$\eq[t_1][t_2]$}
+\AxiomC{$!A(t_1)$}
+\RightLabel{\Elim{\eq}}
+\BinaryInfC{$!A(t_2)$}
+\DisplayProof
+\\[3ex]
+\AxiomC{$\eq[t_1][t_2]$}
+\AxiomC{$!A(t_2)$}
+\RightLabel{\Elim{\eq}}
+\BinaryInfC{$!A(t_1)$}
+\DisplayProof
+\end{tabular}
+\end{defish}
+
+Ing aturan-aturan ing ndhuwur, $t$, $t_1$, lan $t_2$ iku term-term
+tertutup. Aturan \Intro{\eq} ngidini kita !!{derive} sembarang
+pratelan identitas awujud $\eq[t][t]$ langsung, tanpa asumsi.
+
+\begin{ex}
+Yen $s$ lan $t$ iku term-term tertutup, mula $!A(s), \eq[s][t]
+\Proves !A(t)$:
+\begin{prooftree}
+\AxiomC{$\eq[s][t]$}
+\AxiomC{$!A(s)$}
+\RightLabel{$\Elim{\eq}$}
+\BinaryInfC{$!A(t)$}
+\end{prooftree}
+Iki bisa wae wis dikenal minangka ``prinsip substitutabilitas
+samubarang kang identik,'' utawa Hukum Leibniz.
+\end{ex}
+
+\begin{prob}
+Buktekna yen $=$ iku simetris lan transitif, yaiku wenehana
+!!{derivation}s saka $\lforall[x][\lforall[y][(\eq[x][y] \lif
+    \eq[y][x])]]$ lan $\lforall[x][\lforall[y][\lforall[z]((\eq[x][y]
+    \land \eq[y][z]) \lif \eq[x][z])]]$
+\end{prob}
+
+\begin{ex}
+Kita !!{derive} !!{sentence}
+\begin{align*}
+& \lforall[x][\lforall[y][((!A(x) \land !A(y)) \lif \eq[x][y])]]
+\intertext{saka !!{sentence}}
+& \lexists[x][\lforall[y][(!A(y) \lif \eq[y][x])]]
+\end{align*}
+Kita ngembangake !!{derivation} iki saka mburi:
+\begin{prooftree}
+\AxiomC{$\lexists[x][\lforall[y][(!A(y) \lif \eq[y][x])]]
+\quad \Discharge{!A(a) \land !A(b)}{1}$}
+\DeduceC{$\eq[a][b]$}
+\DischargeRule{\Intro{\lif}}{1}
+\UnaryInfC{$((!A(a) \land !A(b)) \lif \eq[a][b])$}
+\RightLabel{\Intro{\lforall}}
+\UnaryInfC{$\lforall[y][((!A(a) \land !A(y)) \lif \eq[a][y])]$}
+\RightLabel{\Intro{\lforall}}
+\UnaryInfC{$\lforall[x][\lforall[y][((!A(x) \land !A(y)) \lif \eq[x][y])]]$}
+\end{prooftree}
+Saiki kita kudu nggunakake asumsi utama: amarga iku !!{formula}
+eksistensial, kita nggunakake \Elim{\lexists} kanggo !!{derive}
+kesimpulan penengah $\eq[a][b]$.
+\begin{prooftree}
+\AxiomC{$\lexists[x][\lforall[y][(!A(y) \lif \eq[y][x])]]$}
+\AxiomC{$\Discharge{\lforall[y][(!A(y) \lif \eq[y][c]])}{2}$}
+\noLine
+\UnaryInfC{$\Discharge{!A(a) \land !A(b)}{1}$}
+\DeduceC{$\eq[a][b]$}
+\DischargeRule{\Elim{\lexists}}{2}
+\BinaryInfC{$\eq[a][b]$}
+\DischargeRule{\Intro{\lif}}{1}
+\UnaryInfC{$((!A(a) \land !A(b)) \lif \eq[a][b])$}
+\RightLabel{\Intro{\lforall}}
+\UnaryInfC{$\lforall[y][((!A(a) \land !A(y)) \lif \eq[a][y])]$}
+\RightLabel{\Intro{\lforall}}
+\UnaryInfC{$\lforall[x][\lforall[y][((!A(x) \land !A(y)) \lif \eq[x][y])]]$}
+\end{prooftree}
+Sub-!!{derivation} ing sisih tengen ndhuwur dirampungake kanthi
+nggunakake asumsi-asumsine kanggo nuduhake $\eq[a][c]$ lan
+$\eq[b][c]$. Iki mbutuhake loro !!{derivation}s kang kapisah.
+!!{derivation} kanggo $\eq[a][c]$ yaiku:
+\begin{prooftree}
+\AxiomC{$\Discharge{\lforall[y][(!A(y) \lif \eq[y][c]])}{2}$}
+\RightLabel{\Elim{\lforall}}
+\UnaryInfC{$!A(a) \lif \eq[a][c]$}
+\AxiomC{$\Discharge{!A(a) \land !A(b)}{1}$}
+\RightLabel{\Elim{\land}}
+\UnaryInfC{$!A(a)$}
+\RightLabel{\Elim{\lif}}
+\BinaryInfC{$\eq[a][c]$}
+\end{prooftree}
+Saka $\eq[a][c]$ lan $\eq[b][c]$, kita !!{derive} $\eq[a][b]$
+kanthi \Elim{\eq}.
+\end{ex}
+
+\begin{prob}
+Wenehana !!{derivation}s saka !!{formula}s iki:
+\begin{enumerate}
+\item $\lforall[x][\lforall[y][((\eq[x][y] \land !A(x)) \lif !A(y))]]$
+\item $\lexists[x][!A(x)] \land \lforall[y][\lforall[z][((!A(y) \land
+    !A(z)) \lif \eq[y][z])]] \lif \lexists[x][(!A(x) \land
+  \lforall[y][(!A(y) \lif \eq[y][x])])]$
+\end{enumerate}
+\end{prob}
+
+\end{document}

@@ -1,0 +1,135 @@
+% Part: first-order-logic
+% Chapter: natural-deduction
+% Section: provability-propositional
+
+% pamriksan sipat-sipat provabilitas kang dibutuhake kanggo himpunan
+% konsisten maksimal ing bab kelengkapan.
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{ntd}{ppr}}
+      {\olfileid{pl}{ntd}{ppr}}
+
+\olsection{\usetoken{S}{derivability} lan Konektif Proposisional}
+
+\begin{explain}
+  Kita netepake yen relasi !!{derivability}~$\Proves$ saka deduksi
+  natural cukup kuwat kanggo netepake sawetara kasunyatan dhasar kang
+  ngemot konektif proposisional, kayata $!A \land !B \Proves !A$ lan
+  $!A, !A \lif !B \Proves !B$ (modus ponens). Kasunyatan kasebut
+  dibutuhake ing bukti teorema kelengkapan.
+\end{explain}
+
+\begin{prop}\ollabel{prop:provability-land}
+  \begin{enumerate}
+  \item \ollabel{prop:provability-land-left} $!A \land !B \Proves !A$
+    lan $!A \land !B \Proves !B$ kalorone lumaku.
+  \item \ollabel{prop:provability-land-right} $!A, !B \Proves !A \land !B$.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+  \item Kita bisa !!{derive} kalorone:
+    \begin{prooftree}
+      \AxiomC{$!A \land !B$}
+      \RightLabel{\Elim{\land}}
+      \UnaryInfC{$!A$}
+      \DisplayProof\qquad\bottomAlignProof
+      \AxiomC{$!A \land !B$}
+      \RightLabel{\Elim{\land}}
+      \UnaryInfC{$!B$}
+    \end{prooftree}
+  \item Kita bisa !!{derive}:
+    \begin{prooftree}
+      \AxiomC{$!A$}
+      \AxiomC{$!B$}
+      \RightLabel{\Intro{\land}}
+      \BinaryInfC{$!A \land !B$}
+    \end{prooftree}
+  \end{enumerate}
+\end{proof}
+
+
+\begin{prop}\ollabel{prop:provability-lor}
+  \begin{enumerate}
+  \item $!A \lor !B, \lnot !A, \lnot !B$ ora konsisten.
+  \item $!A \Proves !A \lor !B$ lan $!B \Proves !A \lor !B$
+    kalorone lumaku.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+  \item Gatekna !!{derivation} iki:
+    \begin{prooftree}
+      \AxiomC{$!A \lor !B$}
+      \AxiomC{$\lnot !A$}
+      \AxiomC{$\Discharge{!A}{1}$}
+      \RightLabel{\Elim{\lnot}}
+      \BinaryInfC{$\lfalse$}
+      \AxiomC{$\lnot !B$}
+      \AxiomC{$\Discharge{!B}{1}$}
+      \RightLabel{\Elim{\lnot}}
+      \BinaryInfC{$\lfalse$}
+      \DischargeRule{\Elim{\lor}}{1}
+      \TrinaryInfC{$\lfalse$}
+    \end{prooftree}
+    Iki !!a{derivation} saka~$\lfalse$ adhedhasar asumsi
+    !!{undischarged} $!A \lor !B$, $\lnot !A$, lan $\lnot !B$.
+  \item Kita bisa !!{derive} kalorone:
+    \begin{prooftree}
+      \AxiomC{$!A$}
+      \RightLabel{\Intro{\lor}}
+      \UnaryInfC{$!A \lor !B$}
+      \DisplayProof\qquad\bottomAlignProof
+      \AxiomC{$!B$}
+      \RightLabel{\Intro{\lor}}
+      \UnaryInfC{$!A \lor !B$}
+    \end{prooftree}
+  \end{enumerate}
+\end{proof}
+
+\begin{prop}\ollabel{prop:provability-lif}
+  \begin{enumerate}
+  \item \ollabel{prop:provability-lif-left} $!A, !A \lif !B \Proves !B$.
+  \item \ollabel{prop:provability-lif-right}
+    $\lnot !A \Proves !A \lif !B$ lan $!B \Proves !A \lif !B$
+    kalorone lumaku.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+  \item Kita bisa !!{derive}:
+    \begin{prooftree}
+      \AxiomC{$!A \lif !B$}
+      \AxiomC{$!A$}
+      \RightLabel{\Elim{\lif}}
+      \BinaryInfC{$!B$}
+    \end{prooftree}
+
+  \item Iki dituduhake dening loro !!{derivation}s iki:
+    \begin{prooftree}
+      \AxiomC{$\lnot !A$}
+      \AxiomC{$\Discharge{!A}{1}$}
+      \RightLabel{\Elim{\lnot}}
+      \BinaryInfC{$\lfalse$}
+      \RightLabel{\FalseInt}
+      \UnaryInfC{$!B$}
+      \DischargeRule{\Intro{\lif}}{1}
+      \UnaryInfC{$!A \lif !B$}
+      \DisplayProof\qquad\bottomAlignProof
+      \AxiomC{$!B$}
+      \RightLabel{\Intro{\lif}}
+      \UnaryInfC{$!A \lif !B$}
+    \end{prooftree}
+    Gatekna yen $\Intro{\lif}$ bisa, nanging ora kudu,
+    !!{discharge} asumsi~$!A$.
+  \end{enumerate}
+\end{proof}
+
+\end{document}

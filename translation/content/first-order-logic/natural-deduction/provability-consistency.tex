@@ -1,0 +1,133 @@
+% Part: first-order-logic
+% Chapter: natural-deduction
+% Section: provability-consistency
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{ntd}{prv}}
+      {\olfileid{pl}{ntd}{prv}}
+
+\olsection{\usetoken{S}{derivability} lan Konsistensi}
+
+Saiki kita bakal netepake sawetara sipat relasi !!{derivability}.
+Sipat kasebut narik kawigaten dhewe-dhewe, nanging saben sipat bakal
+duwe peran ing bukti teorema kelengkapan.
+
+\begin{prop}\ollabel{prop:provability-contr}
+  Yen $\Gamma \Proves !A$ lan $\Gamma \cup \{!A\}$ ora konsisten,
+  mula $\Gamma$ ora konsisten.
+\end{prop}
+
+\begin{proof}
+Ayo !!{derivation} saka~$!A$ adhedhasar~$\Gamma$ dijenengi~$\delta_1$,
+lan !!{derivation} saka~$\lfalse$ adhedhasar $\Gamma \cup \{!A\}$
+dijenengi~$\delta_2$. Banjur kita bisa !!{derive}:
+\begin{prooftree}
+\AxiomC{$\Gamma, \Discharge{!A}{1}$}
+\RightLabel{$\delta_2$}
+\DeduceC{$\lfalse$}
+\DischargeRule{\Intro{\lnot}}{1}
+\UnaryInfC{$\lnot !A$}
+\AxiomC{$\Gamma$}
+\RightLabel{$\delta_1$}
+\DeduceC{$!A$}
+\RightLabel{\Elim{\lnot}}
+\BinaryInfC{$\lfalse$}
+\end{prooftree}
+Ing !!{derivation} anyar iki, asumsi~$!A$ wis !!{discharged}, mula iki
+!!a{derivation} adhedhasar~$\Gamma$.
+\end{proof}
+
+\begin{prop}
+\ollabel{prop:prov-incons}
+$\Gamma \Proves !A$ yen lan mung yen $\Gamma \cup \{\lnot !A\}$ ora
+konsisten.
+\end{prop}
+
+\begin{proof}
+Sepisan, upamana $\Gamma \Proves !A$, yaiku ana
+!!a{derivation}~$\delta_0$ saka~$!A$ adhedhasar asumsi
+!!{undischarged}~$\Gamma$. Kita entuk !!a{derivation} saka $\lfalse$
+adhedhasar $\Gamma \cup \{\lnot !A\}$ kaya mangkene:
+\begin{prooftree}
+  \AxiomC{$\lnot !A$}
+  \AxiomC{$\Gamma$}
+  \RightLabel{$\delta_0$}
+  \DeduceC{$!A$}
+  \RightLabel{\Elim{\lnot}}
+  \BinaryInfC{$\lfalse$}
+\end{prooftree}
+
+Saiki upamana $\Gamma \cup \{\lnot !A\}$ ora konsisten, lan ayo
+$\delta_1$ dadi !!{derivation} kang cocog saka~$\lfalse$ adhedhasar
+asumsi !!{undischarged} ing~$\Gamma \cup \{\lnot !A\}$. Kita entuk
+!!a{derivation} saka~$!A$ adhedhasar $\Gamma$ wae kanthi
+nggunakake~$\FalseCl$:
+\begin{prooftree}
+  \AxiomC{$\Gamma, \Discharge{\lnot !A}{1}$}
+  \RightLabel{$\delta_1$}
+  \DeduceC{$\lfalse$}
+  \RightLabel{\FalseCl}
+  \DischargeRule{\FalseCl}{1}
+  \UnaryInfC{$!A$}
+\end{prooftree}
+\end{proof}
+
+\begin{prob}
+Buktekna yen $\Gamma \Proves \lnot !A$ yen lan mung yen $\Gamma \cup
+\{!A\}$ ora konsisten.
+\end{prob}
+
+\begin{prop}\ollabel{prop:explicit-inc}
+  Yen $\Gamma \Proves !A$ lan $\lnot !A \in \Gamma$, mula $\Gamma$
+  ora konsisten.
+\end{prop}
+
+\begin{proof}
+  Upamana $\Gamma \Proves !A$ lan $\lnot !A \in \Gamma$. Banjur ana
+  !!a{derivation}~$\delta$ saka~$!A$ adhedhasar~$\Gamma$. Gatekna
+  aplikasi prasaja aturan $\Elim{\lnot}$ iki:
+  \begin{prooftree}
+    \AxiomC{$\lnot !A$}
+    \AxiomC{$\Gamma$}
+    \RightLabel{$\delta$}
+    \DeduceC{$!A$}
+    \RightLabel{\Elim{\lnot}}
+    \BinaryInfC{$\lfalse$}
+  \end{prooftree}
+  Amarga $\lnot !A \in \Gamma$, kabeh asumsi !!{undischarged} kalebu
+  ing~$\Gamma$, mula iki nuduhake yen $\Gamma \Proves \lfalse$.
+\end{proof}
+
+\begin{prop}\ollabel{prop:provability-exhaustive}
+  Yen $\Gamma \cup \{!A\}$ lan $\Gamma \cup \{\lnot !A\}$ kalorone
+  ora konsisten, mula $\Gamma$ ora konsisten.
+\end{prop}
+
+\begin{proof}
+Ana !!{derivation}s $\delta_1$ lan $\delta_2$ saka~$\lfalse$ adhedhasar
+  $\Gamma \cup \{ !A \}$ lan saka $\lfalse$ adhedhasar $\Gamma \cup
+  \{ \lnot !A \}$, miturut urutane. Banjur kita bisa !!{derive}
+\begin{prooftree}
+\AxiomC{$\Gamma, \Discharge{\lnot !A}{2}$}
+\RightLabel{$\delta_2$}
+\DeduceC{$\lfalse$}
+\DischargeRule{\Intro{\lnot}}{2}
+\UnaryInfC{$\lnot \lnot !A$}
+\AxiomC{$\Gamma, \Discharge{!A}{1}$}
+\RightLabel{$\delta_1$}
+\DeduceC{$\lfalse$}
+\DischargeRule{\Intro{\lnot}}{1}
+\UnaryInfC{$\lnot !A$}
+\RightLabel{\Elim{\lnot}}
+\BinaryInfC{$\lfalse$}
+\end{prooftree}
+Amarga asumsi $!A$ lan $\lnot !A$ wis !!{discharged}, iki
+!!a{derivation} saka~$\lfalse$ adhedhasar~$\Gamma$ wae. Mula $\Gamma$
+ora konsisten.
+\end{proof}
+
+\end{document}

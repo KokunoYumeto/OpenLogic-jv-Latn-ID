@@ -1,0 +1,164 @@
+% Part: first-order-logic
+% Chapter: natural-deduction
+% Section: proof-theoretic-notions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{ntd}{ptn}}
+      {\olfileid{pl}{ntd}{ptn}}
+
+\olsection{Gagasan Teoretis-Bukti}
+
+\begin{editorial}
+Bagean iki nglumpukake definisi relasi provabilitas lan konsistensi
+kanggo deduksi natural.
+\end{editorial}
+
+\begin{explain}
+Kaya nalika kita nemtokake sawetara gagasan semantis wigati
+(validitas, akibat, lan bisa dicukupi), saiki kita nemtokake
+\emph{gagasan teoretis-bukti} kang cocog. Gagasan iki ora ditemtokake
+kanthi nggunakake panyukupan !!{sentence}s ing !!{structure}s, nanging
+kanthi nggunakake !!{derivability} utawa !!{nonderivability}
+!!{sentence}s tartamtu saka ukara-ukara liyane. Panemuan yen
+gagasan-gagasan kasebut padha iku panemuan wigati. Kasunyatan manawa
+gagasan kasebut padha dadi isi \emph{teorema kasahihan} lan
+\emph{teorema kelengkapan}.
+\end{explain}
+
+
+\begin{defn}[Teorema]
+!!{sentence}~$!A$ iku \emph{teorema} yen ana !!a{derivation}
+saka~$!A$ ing deduksi natural kang kabeh asumsine wis
+!!{discharged}. Kita nulis $\Proves !A$ yen $!A$ iku teorema, lan
+$\Proves/ !A$ yen dudu teorema.
+\end{defn}
+
+\begin{defn}[!!^{derivability}]
+!!^a{sentence} $!A$ \emph{bisa !!{derivable} saka} himpunan
+!!{sentence}s~$\Gamma$, ditulis $\Gamma \Proves !A$, yen ana
+!!{derivation} kang kesimpulane~$!A$ lan saben asumsine wis
+!!{discharged} utawa kalebu ing~$\Gamma$. Yen $!A$ ora bisa
+!!{derivable} saka $\Gamma$, kita nulis $\Gamma \Proves/ !A$.
+\end{defn}
+
+\begin{defn}[Konsistensi]
+Himpunan !!{sentence}s~$\Gamma$ iku \emph{ora konsisten} yen lan mung
+yen $\Gamma \Proves \lfalse$. Yen ora mangkono tumrap $\Gamma$, yaiku
+yen $\Gamma \Proves/ \lfalse$, kita ngarani himpunan iku
+\emph{konsisten}.
+\end{defn}
+
+\begin{prop}[Refleksivitas]
+\ollabel{prop:reflexivity}
+Yen $!A \in \Gamma$, mula $\Gamma \Proves !A$.
+\end{prop}
+
+\begin{proof}
+Asumsi $!A$ dhewe iku !!a{derivation} saka~$!A$ kang saben asumsi
+!!{undischarged}, yaiku $!A$, kalebu ing~$\Gamma$.
+\end{proof}
+
+
+\begin{prop}[Monotonisitas]
+\ollabel{prop:monotonicity}
+Yen $\Gamma \subseteq \Delta$ lan $\Gamma \Proves !A$, mula $\Delta
+\Proves !A$.
+\end{prop}
+
+\begin{proof}
+Saben !!{derivation} saka $!A$ adhedhasar $\Gamma$ uga dadi
+!!a{derivation} saka $!A$ adhedhasar~$\Delta$.
+\end{proof}
+
+\begin{prop}[Transitivitas]
+\ollabel{prop:transitivity}
+Yen $\Gamma \Proves !A$ lan $\{!A\} \cup \Delta \Proves
+!B$, mula $\Gamma \cup \Delta \Proves !B$.
+\end{prop}
+
+\begin{proof}
+Yen $\Gamma \Proves !A$, ana !!a{derivation}~$\delta_0$ saka~$!A$
+kanthi kabeh asumsi !!{undischarged} kalebu ing~$\Gamma$. Yen
+$\{!A\} \cup \Delta \Proves !B$, mula ana
+!!a{derivation}~$\delta_1$ saka~$!B$ kanthi kabeh asumsi
+!!{undischarged} kalebu ing~$\{!A\} \cup \Delta$. Saiki gatekna:
+\begin{prooftree}
+  \AxiomC{$\Delta, \Discharge{!A}{1}$}
+  \RightLabel{$\delta_1$}
+  \DeduceC{$!B$}
+  \DischargeRule{\Intro{\lif}}{1}
+  \UnaryInfC{$!A \lif !B$}
+  \AxiomC{$\Gamma$}
+  \RightLabel{$\delta_0$}
+  \DeduceC{$!A$}
+  \RightLabel{\Elim{\lif}}
+  \BinaryInfC{$!B$}
+\end{prooftree}
+Saiki kabeh asumsi !!{undischarged} kalebu ing $\Gamma \cup \Delta$,
+mula iki nuduhake $\Gamma \cup \Delta \Proves !B$.
+\end{proof}
+
+Yen $\Gamma = \{!A_1, !A_2, \ldots, !A_k\}$ iku himpunan winates,
+kita bisa nggunakake notasi ringkes $!A_1,!A_2,\ldots,!A_k \Proves
+!B$ kanggo $\Gamma \Proves !B$; mligine, $!A \Proves !B$ ateges
+$\{!A\} \Proves !B$.
+
+Gatekna yen $\Gamma \Proves !A$ lan $!A \Proves !B$, mula $\Gamma
+\Proves !B$. Uga ndherek yen $!A_1, \dots, !A_n \Proves !B$ lan
+$\Gamma \Proves !A_i$ kanggo saben~$i$, mula $\Gamma \Proves !B$.
+
+\begin{prop}
+\ollabel{prop:incons}
+Pratelan-pratelan iki ekuivalen.
+    \begin{enumerate}
+      \item \( \Gamma \) ora konsisten.
+      \item \( \Gamma \Proves {!A} \) kanggo saben !!{sentence}~\( {!A} \).
+      \item \( \Gamma \Proves {!A} \) lan \( \Gamma \Proves \lnot {!A} \) kanggo sawijining !!{sentence}~\( {!A} \).
+    \end{enumerate}
+\end{prop}
+
+\begin{proof}
+Gladhen.
+\end{proof}
+
+\tagprob{FOL}
+\begin{prob}
+Buktekna \olref[fol][ntd][ptn]{prop:incons}
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+Buktekna \olref[pl][ntd][ptn]{prop:incons}
+\end{prob}
+\tagendprob
+
+\begin{prop}[Kekompakan]
+  \ollabel{prop:proves-compact}
+  \begin{enumerate}
+  \item Yen $\Gamma \Proves !A$, mula ana subhimpunan winates
+    $\Gamma_0 \subseteq \Gamma$ saengga $\Gamma_0 \Proves !A$.
+  \item Yen saben subhimpunan winates saka~$\Gamma$ konsisten,
+    mula $\Gamma$ konsisten.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+    \item Yen $\Gamma \Proves !A$, mula ana
+      !!a{derivation}~$\delta$ saka~$!A$ adhedhasar~$\Gamma$. Ayo
+      $\Gamma_0$ dadi himpunan asumsi !!{undischarged} ing~$\delta$.
+      Amarga saben !!{derivation} iku winates, $\Gamma_0$ mung bisa
+      ngemot !!{sentence}s kanthi cacah winates. Dadi, $\delta$ iku
+      !!a{derivation} saka~$!A$ adhedhasar sawijining $\Gamma_0
+      \subseteq \Gamma$ kang winates.
+    \item Iki kontrapositif saka (1) kanggo kasus khusus $!A \ident
+      \lfalse$.
+  \end{enumerate}
+\end{proof}
+
+\end{document}

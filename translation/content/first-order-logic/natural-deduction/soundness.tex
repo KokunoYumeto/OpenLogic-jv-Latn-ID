@@ -1,0 +1,324 @@
+% Part: first-order-logic
+% Chapter: natural-deduction
+% Section: soundness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{ntd}{sou}}
+      {\olfileid{pl}{ntd}{sou}}
+
+\olsection{Kasahihan}
+
+\begin{explain}
+Sistem !!^a{derivation}, kayata deduksi natural, iku \emph{sah} yen
+ora bisa !!{derive} bab kang sejatine ora ndherek. Mula kasahihan iku
+sawijining sipat aman kang dijamin kanggo sistem
+!!{derivation}. Gumantung marang sipat teoretis-bukti kang dirembug,
+kita kepengin ngerti, upamane, yen
+\begin{enumerate}
+\item saben !!{derivable} !!{sentence} iku
+  \iftag{FOL}{valid}{tautologi};
+\item yen !!a{sentence} bisa !!{derivable} saka ukara-ukara liyane,
+  ukara iku uga dadi akibate;
+\item yen sawijining himpunan !!{sentence}s ora konsisten, himpunan
+  iku ora bisa dicukupi.
+\end{enumerate}
+Iki sipat-sipat wigati saka sistem !!a{derivation}. Yen salah sijine
+ora lumaku, sistem !!{derivation} kasebut cacad---sistem iku bakal
+!!{derive} kakehan. Mula, netepake kasahihan sistem !!{derivation}
+iku wigati banget.
+\end{explain}
+
+\begin{thm}[Kasahihan]
+\ollabel{thm:soundness}
+Yen $!A$ bisa !!{derivable} saka asumsi !!{undischarged} $\Gamma$,
+mula $\Gamma \Entails !A$.
+\end{thm}
+
+\begin{proof}
+Ayo $\delta$ dadi !!a{derivation} saka $!A$. Kita lumaku kanthi
+induksi ing cacah inferensi ing~$\delta$.
+
+Kanggo basis induksi, kita nuduhake pratelan iki nalika cacah
+inferensi yaiku~$0$. Ing kasus iki, $\delta$ mung dumadi saka siji
+!!{sentence}~$!A$, yaiku sawijining asumsi. Asumsi kasebut
+!!{undischarged}, amarga asumsi mung bisa !!{discharged} dening
+inferensi, nanging ora ana inferensi. Dadi, saben
+\iftag{FOL}{!!{structure}~$\Struct{M}$}{!!{valuation}~$\pAssign{v}$}
+kang nyukupi kabeh asumsi !!{undischarged} ing bukti kasebut uga
+nyukupi~$!A$.
+
+Saiki kanggo langkah induktif. Upamana $\delta$ ngemot~$n$ inferensi.
+Premis siji utawa luwih saka inferensi paling ngisor iku !!{derive}d
+nganggo sub-!!{derivation}s kang saben-sabene ngemot inferensi kurang
+saka~$n$. Kita nganggep hipotesis induksi: premis-premis saka
+inferensi paling ngisor ndherek saka asumsi !!{undischarged} ing
+sub-!!{derivation}s kang mungkasi ing premis kasebut. Kita kudu
+nuduhake yen kesimpulan~$!A$ ndherek saka asumsi !!{undischarged} ing
+kabeh bukti.
+
+Kita mbedakake kasus adhedhasar jinis inferensi paling ngisor. Sepisan,
+kita nimbang inferensi-inferensi kang mung duwe siji premis.
+
+\begin{enumerate}
+\item Upamana inferensi pungkasan iku \Intro{\lnot}:
+  !!{derivation} kasebut awujud
+  \begin{prooftree}
+    \AxiomC{$\Gamma, \Discharge{!A}{n}$}
+    \RightLabel{$\delta_1$}
+    \DeduceC{$\lfalse$}
+    \DischargeRule{\Intro{\lnot}}{n}
+    \UnaryInfC{$\lnot !A$}
+  \end{prooftree}
+  Miturut hipotesis induksi, $\lfalse$ ndherek saka asumsi
+  !!{undischarged} $\Gamma \cup \{!A\}$ ing~$\delta_1$. Nimbang
+  \iftag{FOL}{!!a{structure}~$\Struct{M}$}{!!a{valuation}~$\pAssign{v}$}.
+  Kita kudu nuduhake yen, yen
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$, mula
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\lnot !A}$. Kanggo reductio,
+  upamana $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$, nanging
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{\lnot !A}$, yaiku
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$. Iki bakal ateges yen
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma \cup \{!A\}}$. Iki
+  mbantah hipotesis induksi kita. Dadi,
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\lnot !A}$.
+
+\item Inferensi pungkasan iku \Elim{\land}: Ana rong varian: $!A$
+  utawa $!B$ bisa diturunake saka premis $!A \land !B$. Nimbang kasus
+  kapisan. !!{derivation}~$\delta$ katon kaya mangkene:
+  \begin{prooftree}
+    \AxiomC{$\Gamma$}
+    \RightLabel{$\delta_1$}
+    \DeduceC{$!A \land !B$}
+    \RightLabel{\Elim{\land}}
+    \UnaryInfC{$!A$}
+  \end{prooftree}
+  Miturut hipotesis induksi, $!A \land !B$ ndherek saka asumsi
+  !!{undischarged}~$\Gamma$ ing~$\delta_1$. Nimbang
+  !!a{structure}~\iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$}. Kita kudu
+  nuduhake yen, yen $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$, mula
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$. Upamana
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$. Miturut hipotesis induksi
+  kita ($\Gamma \Entails !A \land !B$), kita ngerti yen
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A \land !B}$. Miturut definisi,
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A \land !B}$ yen lan mung yen
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$ lan
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!B}$. (Kasus nalika $!B$
+  diturunake saka $!A \land !B$ ditangani kanthi cara kang padha.)
+
+\item Inferensi pungkasan iku \Intro{\lor}: Ana rong varian: $!A
+  \lor !B$ bisa diturunake saka premis~$!A$ utawa premis~$!B$.
+  Nimbang kasus kapisan. !!{derivation} kasebut awujud
+  \begin{prooftree}
+    \AxiomC{$\Gamma$}
+    \RightLabel{$\delta_1$}
+    \DeduceC{$!A$}
+    \RightLabel{\Intro{\lor}}
+    \UnaryInfC{$!A \lor !B$}
+  \end{prooftree}
+  Miturut hipotesis induksi, $!A$ ndherek saka asumsi
+  !!{undischarged}~$\Gamma$ ing~$\delta_1$. Nimbang
+  \iftag{FOL}{!!a{structure}~$\Struct{M}$}{!!a{valuation}~$\pAssign{v}$}.
+  Kita kudu nuduhake yen, yen
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$, mula
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A \lor !B}$. Upamana
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$; banjur
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$ amarga $\Gamma \Entails !A$
+  (hipotesis induksi). Mula uga mesthi
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A \lor !B}$. (Kasus nalika $!A
+  \lor !B$ diturunake saka~$!B$ ditangani kanthi cara kang padha.)
+
+\item Inferensi pungkasan iku \Intro{\lif}: $!A \lif !B$
+  diturunake saka subbukti kang duwe asumsi~$!A$ lan kesimpulan~$!B$,
+  yaiku
+  \begin{prooftree}
+    \AxiomC{$\Gamma, \Discharge{!A}{n}$}
+    \RightLabel{$\delta_1$}
+    \DeduceC{$!B$}
+    \DischargeRule{\Intro{\lif}}{n}
+    \UnaryInfC{$!A \lif !B$}
+  \end{prooftree}
+  Miturut hipotesis induksi, $!B$ ndherek saka asumsi
+  !!{undischarged} ing~$\delta_1$, yaiku $\Gamma \cup \{!A\}
+  \Entails !B$. Nimbang
+  \iftag{FOL}{!!a{structure}~$\Struct{M}$}{!!a{valuation}~$\pAssign{v}$}.
+  Asumsi !!{undischarged} ing~$\delta$ mung $\Gamma$, amarga $!A$ wis
+  dibubarake ing inferensi pungkasan. Dadi kita kudu nuduhake yen
+  $\Gamma \Entails !A \lif !B$. Kanggo reductio, upamana kanggo
+  sawijining
+  \iftag{FOL}{!!{structure}~$\Struct{M}$}{!!{valuation}~$\pAssign{v}$},
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$ nanging
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!A \lif !B}$. Dadi,
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$ lan
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!B}$. Nanging miturut hipotesis,
+  $!B$ iku akibat saka $\Gamma \cup \{!A\}$, yaiku
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!B}$, kang dadi kontradiksi. Mula,
+  $\Gamma \Entails !A \lif !B$.
+
+\item Inferensi pungkasan iku \FalseInt: Ing kene, $\delta$
+  mungkasi nganggo
+  \begin{prooftree}
+    \AxiomC{$\Gamma$}
+    \RightLabel{$\delta_1$}
+    \DeduceC{$\lfalse$}
+    \RightLabel{\FalseInt}
+    \UnaryInfC{$!A$}
+  \end{prooftree}
+  Miturut hipotesis induksi, $\Gamma \Entails \lfalse$. Kita kudu
+  nuduhake yen $\Gamma \Entails !A$. Upamana ora; banjur kanggo
+  sawijining~$\iftag{FOL}{\Struct{M}}{\pAssign{v}}$ kita duwe
+    $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$ lan
+    $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!A}$. Nanging kita tansah duwe
+    $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{\lfalse}$, mula iki bakal ateges
+    yen $\Gamma \Entails/ \lfalse$, kang mbantah hipotesis induksi.
+
+\item Inferensi pungkasan iku \FalseCl: Gladhen.
+
+\iftag{FOL}{
+\item Inferensi pungkasan iku \Intro{\lforall}: Banjur $\delta$
+  awujud
+  \begin{prooftree}
+    \AxiomC{$\Gamma$}
+    \RightLabel{$\delta_1$}
+    \DeduceC{$!A(a)$}
+    \RightLabel{\Intro{\lforall}}
+    \UnaryInfC{$\lforall[x][!A(x)]$}
+  \end{prooftree}
+  Miturut hipotesis induksi, premis $!A(a)$ iku akibat saka asumsi
+  !!{undischarged} $\Gamma$. Nimbang sawijining struktur,
+  $\Struct{M}$, kang $\Sat{M}{\Gamma}$. Kita kudu nuduhake yen
+  $\Sat{M}{\lforall[x][!A(x)]}$. Amarga $\lforall[x][!A(x)]$ iku
+  !!a{sentence}, iki ateges kita kudu nuduhake yen kanggo saben
+  penetapan variabel~$s$, $\Sat{M}{!A(x)}[s]$
+  (\olref[syn][ass]{prop:sat-quant}). Amarga $\Gamma$ mung dumadi saka
+  ukara, $\Sat{M}{!B}[s]$ kanggo kabeh $!B \in \Gamma$ miturut
+  \olref[syn][sat]{defn:satisfaction}. Ayo $\Struct{M'}$ padha karo
+  $\Struct{M}$ kajaba $\Assign{a}{M'} = s(x)$. Amarga $a$ ora muncul
+  ing~$\Gamma$, $\Sat{M'}{\Gamma}$ miturut
+  \olref[syn][ext]{cor:extensionality-sent}. Amarga $\Gamma \Entails
+  !A(a)$, $\Sat{M'}{!A(a)}$. Amarga $!A(a)$ iku !!a{sentence},
+  $\Sat{M'}{!A(a)}[s]$ miturut
+  \olref[syn][ass]{prop:sentence-sat-true}. $\Sat{M'}{!A(x)}[s]$ yen
+  lan mung yen $\Sat{M'}{!A(a)}$ miturut
+  \olref[syn][ext]{prop:ext-formulas} (elinga yen $!A(a)$ mung
+  $\Subst{!A(x)}{a}{x}$). Dadi, $\Sat{M'}{!A(x)}[s]$. Amarga $a$ ora
+  muncul ing~$!A(x)$, miturut
+  \olref[syn][ext]{prop:extensionality}, $\Sat{M}{!A(x)}[s]$. Nanging
+  $s$ iku penetapan variabel sawenang-wenang, mula
+  $\Sat{M}{\lforall[x][!A(x)]}$.
+
+\item Inferensi pungkasan iku \Intro{\lexists}: Gladhen.
+
+\item Inferensi pungkasan iku \Elim{\forall}: Gladhen.
+}{}
+\end{enumerate}
+
+Saiki ayo nimbang inferensi-inferensi kang bisa duwe sawetara premis:
+\Elim{\lor}, \Intro{\land},
+\iftag{FOL}{\Elim{\lif}, lan \Elim{\lexists}}{lan \Elim{\lif}}.
+\begin{enumerate}
+
+\item Inferensi pungkasan iku \Intro{\land}. $!A \land !B$
+  diturunake saka premis $!A$ lan $!B$, lan $\delta$ awujud
+  \begin{prooftree}
+    \AxiomC{$\Gamma_1$}
+    \RightLabel{$\delta_1$}
+    \DeduceC{$!A$}
+    \AxiomC{$\Gamma_2$}
+    \RightLabel{$\delta_2$}
+    \DeduceC{$!B$}
+    \RightLabel{\Intro{\land}}
+    \BinaryInfC{$!A \land !B$}
+  \end{prooftree}
+  Miturut hipotesis induksi, $!A$ ndherek saka asumsi
+  !!{undischarged}~$\Gamma_1$ ing~$\delta_1$, lan $!B$ ndherek saka
+  asumsi !!{undischarged}~$\Gamma_2$ ing~$\delta_2$. Asumsi
+  !!{undischarged} ing~$\delta$ yaiku $\Gamma_1 \cup \Gamma_2$, mula
+  kita kudu nuduhake yen $\Gamma_1 \cup \Gamma_2 \Entails !A \land
+  !B$. Nimbang
+  \iftag{FOL}{!!a{structure}~$\Struct{M}$}{!!a{valuation}~$\pAssign{v}$}
+  kanthi $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma_1 \cup \Gamma_2}$.
+  Amarga $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma_1}$, mesthi
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$ awit $\Gamma_1 \Entails !A$,
+  lan amarga $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma_2}$,
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!B}$ awit $\Gamma_2 \Entails !B$.
+  Kalorone bebarengan menehi
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A \land !B}$.
+
+\item Inferensi pungkasan iku \Elim{\lor}: Gladhen.
+
+\item Inferensi pungkasan iku \Elim{\lif}. $!B$ diturunake saka
+  premis $!A \lif !B$ lan~$!A$. !!{derivation}~$\delta$ katon kaya
+  mangkene:
+  \begin{prooftree}
+    \AxiomC{$\Gamma_1$}
+    \RightLabel{$\delta_1$}
+    \DeduceC{$!A \lif !B$}
+    \AxiomC{$\Gamma_2$}
+    \RightLabel{$\delta_2$}
+    \DeduceC{$!A$}
+    \RightLabel{\Elim{\lif}}
+    \BinaryInfC{$!B$}
+  \end{prooftree}
+  Miturut hipotesis induksi, $!A \lif !B$ ndherek saka asumsi
+  !!{undischarged}~$\Gamma_1$ ing~$\delta_1$, lan $!A$ ndherek saka
+  asumsi !!{undischarged}~$\Gamma_2$ ing~$\delta_2$. Nimbang
+  \iftag{FOL}{!!a{structure}~$\Struct{M}$}{!!a{valuation}~$\pAssign{v}$}.
+  Kita kudu nuduhake yen, yen
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma_1 \cup \Gamma_2}$, mula
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!B}$. Upamana
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma_1 \cup \Gamma_2}$. Amarga
+  $\Gamma_1 \Entails !A \lif !B$,
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A \lif !B}$. Amarga $\Gamma_2
+  \Entails !A$, kita duwe $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$.
+  Iki ateges $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!B}$ (amarga yen
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!B}$, awit
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$, kita bakal duwe
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!A \lif !B}$, kang mbantah
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A \lif !B}$).
+
+\item Inferensi pungkasan iku \Elim{\lnot}: Gladhen.
+
+\tagitem{FOL}{Inferensi pungkasan iku \Elim{\lexists}: Gladhen.}{}
+\end{enumerate}
+\end{proof}
+
+\tagprob{FOL}
+\begin{prob}
+Jangkepana bukti \olref[fol][ntd][sou]{thm:soundness}.
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+Jangkepana bukti \olref[pl][ntd][sou]{thm:soundness}.
+\end{prob}
+\tagendprob
+
+\begin{cor}
+\ollabel{cor:weak-soundness}
+Yen $\Proves !A$, mula $!A$ iku \iftag{FOL}{valid}{tautologi}.
+\end{cor}
+
+\begin{cor}
+\ollabel{cor:consistency-soundness}
+Yen $\Gamma$ bisa dicukupi, mula himpunan iku konsisten.
+\end{cor}
+
+\begin{proof}
+Kita mbuktekake kontraposisine. Upamana $\Gamma$ ora konsisten.
+Banjur $\Gamma \Proves \lfalse$, yaiku ana !!a{derivation} saka
+$\lfalse$ adhedhasar asumsi !!{undischarged} ing~$\Gamma$. Miturut
+\olref{thm:soundness}, saben
+\iftag{FOL}{!!{structure}~$\Struct{M}$}{!!{valuation}~$\pAssign{v}$}
+kang nyukupi $\Gamma$ mesthi nyukupi $\lfalse$. Amarga
+$\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{\lfalse}$ kanggo saben
+\iftag{FOL}{!!{structure}~$\Struct{M}$}{!!{valuation}~$\pAssign{v}$},
+ora ana \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} kang bisa nyukupi
+$\Gamma$, yaiku $\Gamma$ ora bisa dicukupi.
+\end{proof}
+
+\end{document}

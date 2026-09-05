@@ -1,6 +1,6 @@
 # Translation decision index
 
-Coverage: OLP-0001 through OLP-0090; 90 of 722 frozen source units.
+Coverage: OLP-0001 through OLP-0097; 97 of 722 frozen source units.
 
 This readable index contains every current terminology, provenance and difficult translation decision. The ID links each row to the complete machine record.
 

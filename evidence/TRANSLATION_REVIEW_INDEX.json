@@ -1,13 +1,13 @@
 {
   "schema": "jv-translation-review-index/1",
-  "generated_utc": "2026-09-05T11:45:05.841781+00:00",
+  "generated_utc": "2026-09-05T16:01:53.329615+00:00",
   "locale": "jv-Latn-ID",
   "script": "Latn",
-  "coverage": "OLP-0001 through OLP-0090; 90 of 722 frozen source units",
+  "coverage": "OLP-0001 through OLP-0097; 97 of 722 frozen source units",
   "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
   "source_log": {
     "path": "editorial/TRANSLATION_REVIEW_LOG.jsonl",
-    "sha256": "af6b5e9afce052bed81a7aa304e786451295e1d8ec0cf7c08651c5ef133f3773",
+    "sha256": "ff0c416056b8b5dfc65185670593554e1690a9d6bdd2c5924ab8d5ddbc13799f",
     "hash_representation": "UTF-8 with LF-normalized line endings (Git blob)"
   },
   "pagination": {
@@ -144,7 +144,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -207,7 +207,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -270,7 +270,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -332,7 +332,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -387,7 +387,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -442,7 +442,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -496,7 +496,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -548,7 +548,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -601,7 +601,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -656,7 +656,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -725,7 +725,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -803,7 +803,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -858,7 +858,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -913,7 +913,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -986,7 +986,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -1059,7 +1059,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -1132,7 +1132,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -1205,7 +1205,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -1278,7 +1278,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -1351,7 +1351,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -1423,7 +1423,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -1492,7 +1492,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -1573,7 +1573,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -1663,7 +1663,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -1753,7 +1753,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -1852,7 +1852,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -1950,7 +1950,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -2041,7 +2041,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -2141,7 +2141,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -2257,7 +2257,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -2351,7 +2351,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -2449,7 +2449,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -2565,7 +2565,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -2735,7 +2735,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -2869,7 +2869,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -3003,7 +3003,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -3057,7 +3057,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -3165,7 +3165,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -3245,7 +3245,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -3415,7 +3415,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -3547,7 +3547,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -3651,7 +3651,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -3783,7 +3783,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -3933,7 +3933,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -4037,7 +4037,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -4140,7 +4140,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -4241,7 +4241,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -4369,7 +4369,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -4431,7 +4431,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -4555,7 +4555,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -4644,7 +4644,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -4794,7 +4794,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -4891,7 +4891,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -5004,7 +5004,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -5092,7 +5092,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -5215,7 +5215,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -5303,7 +5303,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -5366,7 +5366,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -5447,7 +5447,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -5510,7 +5510,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -5573,7 +5573,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -5716,7 +5716,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -5795,7 +5795,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -5884,7 +5884,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -5955,7 +5955,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -6042,7 +6042,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -6131,7 +6131,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -6290,7 +6290,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -6361,7 +6361,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -6464,7 +6464,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -6561,7 +6561,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -6638,7 +6638,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -6717,7 +6717,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -6784,7 +6784,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -6907,7 +6907,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -6996,7 +6996,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -7118,7 +7118,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -7250,7 +7250,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -7372,7 +7372,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -7514,7 +7514,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -7664,7 +7664,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -7812,7 +7812,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -7926,7 +7926,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -8055,7 +8055,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -8161,7 +8161,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -8275,7 +8275,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -8319,7 +8319,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -8467,7 +8467,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -8605,7 +8605,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -8719,7 +8719,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -8843,7 +8843,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -8999,7 +8999,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -9107,7 +9107,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -9244,7 +9244,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -9384,7 +9384,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -9429,7 +9429,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -9525,7 +9525,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -9639,7 +9639,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -9797,7 +9797,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -9919,7 +9919,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -10057,7 +10057,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -10131,7 +10131,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -10178,7 +10178,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -10214,7 +10214,9 @@
           "found": false,
           "searched_units": [
             "OLP-0081",
-            "OLP-0083"
+            "OLP-0083",
+            "OLP-0095",
+            "OLP-0097"
           ]
         },
         {
@@ -10333,7 +10335,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -10369,7 +10371,9 @@
           "found": false,
           "searched_units": [
             "OLP-0082",
-            "OLP-0083"
+            "OLP-0083",
+            "OLP-0096",
+            "OLP-0097"
           ]
         }
       ],
@@ -10454,7 +10458,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -10499,7 +10503,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -10517,7 +10521,11 @@
           "found": false,
           "searched_units": [
             "OLP-0086",
-            "OLP-0089"
+            "OLP-0089",
+            "OLP-0091",
+            "OLP-0092",
+            "OLP-0093",
+            "OLP-0095"
           ]
         },
         {
@@ -10525,7 +10533,11 @@
           "found": false,
           "searched_units": [
             "OLP-0086",
-            "OLP-0089"
+            "OLP-0089",
+            "OLP-0091",
+            "OLP-0092",
+            "OLP-0093",
+            "OLP-0095"
           ]
         },
         {
@@ -10533,7 +10545,11 @@
           "found": false,
           "searched_units": [
             "OLP-0086",
-            "OLP-0089"
+            "OLP-0089",
+            "OLP-0091",
+            "OLP-0092",
+            "OLP-0093",
+            "OLP-0095"
           ]
         },
         {
@@ -10570,7 +10586,11 @@
           "found": false,
           "searched_units": [
             "OLP-0086",
-            "OLP-0089"
+            "OLP-0089",
+            "OLP-0091",
+            "OLP-0092",
+            "OLP-0093",
+            "OLP-0095"
           ]
         },
         {
@@ -10635,7 +10655,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -10747,7 +10767,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {
@@ -10801,7 +10821,7 @@
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
         "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "7790323d5695b5174a0f7db9581e383913396ede609245b76955e884e304bfce"
+        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
       }
     },
     {

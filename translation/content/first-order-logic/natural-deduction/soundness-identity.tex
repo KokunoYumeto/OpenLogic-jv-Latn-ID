@@ -1,0 +1,49 @@
+% Part: first-order-logic
+% Chapter: natural-deduction
+% Section: soundness-identity
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{ntd}{sid}
+
+\olsection{Kasahihan mawa \usetoken{S}{identity}}
+
+\begin{prop}
+Deduksi natural mawa aturan kanggo $\eq$ iku sah.
+\end{prop}
+
+\begin{proof}
+Saben !!{formula} awujud $\eq[t][t]$ iku valid, amarga kanggo saben
+!!{structure}~$\Struct M$, $\Sat{M}{\eq[t][t]}$. (Cathet yen kita
+nganggep term $t$ iku tertutup, yaiku ora ngemot variabel, mula
+penetapan variabel ora relevan).
+
+Upamana inferensi pungkasan ing !!a{derivation} iku \Elim{\eq},
+yaiku !!{derivation} kasebut awujud:
+\begin{prooftree}
+  \AxiomC{$\Gamma_1$}
+  \RightLabel{$\delta_1$}
+  \DeduceC{$\eq[t_1][t_2]$}
+  \AxiomC{$\Gamma_2$}
+  \RightLabel{$\delta_2$}
+  \DeduceC{$!A(t_1)$}
+  \RightLabel{\Elim{\eq}}
+  \BinaryInfC{$!A(t_2)$}
+\end{prooftree}
+Premis $\eq[t_1][t_2]$ lan $!A(t_1)$ miturut urutane !!{derive}d
+saka asumsi !!{undischarged}~$\Gamma_1$ lan $\Gamma_2$. Kita arep
+nuduhake yen $!A(t_2)$ ndherek saka $\Gamma_1 \cup \Gamma_2$. Nimbang
+!!a{structure}~$\Struct{M}$ kanthi $\Sat{M}{\Gamma_1 \cup
+  \Gamma_2}$. Miturut hipotesis induksi, $\Sat{M}{!A(t_1)}$ lan
+$\Sat{M}{\eq[t_1][t_2]}$. Mula, $\Value{t_1}{M} = \Value{t_2}{M}$.
+Ayo $s$ dadi sembarang penetapan variabel, lan $m = \Value{t_1}{M} =
+\Value{t_2}{M}$. Miturut
+\olref[fol][syn][ext]{prop:ext-formulas}, $\Sat{M}{!A(t_1)}[s]$ yen
+lan mung yen $\Sat{M}{!A(x)}[\Subst{s}{m}{x}]$ yen lan mung yen
+$\Sat{M}{!A(t_2)}[s]$. Amarga $\Sat{M}{!A(t_1)}$, kita duwe
+$\Sat{M}{!A(t_2)}$.
+\end{proof}
+
+\end{document}

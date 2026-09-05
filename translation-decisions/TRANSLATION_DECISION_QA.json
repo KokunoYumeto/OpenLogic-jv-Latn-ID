@@ -1,0 +1,89 @@
+{
+  "schema": "openlogic-translation-decision-qa/1.0.0",
+  "generated_utc": "2026-09-05T16:01:54.641738+00:00",
+  "status": "PASS",
+  "normative_schema": {
+    "path": "translation-decision.schema.json",
+    "canonical_uri": "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-translations/811091d54be4989918864732073279a588340e6f/catalogue/translation-decisions/translation-decision.schema.json",
+    "bytes": 10787,
+    "sha256": "50e7fa407b62c711f92f8b93be591d3b4a6e1c4adb1386c398bb5f76844d9f90",
+    "expected_sha256": "50e7fa407b62c711f92f8b93be591d3b4a6e1c4adb1386c398bb5f76844d9f90",
+    "draft": "2020-12",
+    "schema_validation": "PASS"
+  },
+  "edition": {
+    "language_tag": "jv-Latn-ID",
+    "script": "Latn",
+    "coverage": "partial-97/722"
+  },
+  "counts": {
+    "decisions": 157,
+    "terminology": 102,
+    "source_corrections": 55,
+    "priority": 56,
+    "occurrences": 381,
+    "unique_decision_ids": 157,
+    "unique_occurrence_ids": 381
+  },
+  "checks": {
+    "schema_instance": "PASS",
+    "unique_decision_ids": "PASS",
+    "unique_occurrence_ids": "PASS",
+    "source_target_paths_exist": "PASS",
+    "source_target_hashes_match": "PASS",
+    "line_and_byte_spans_resolve": "PASS",
+    "reader_pages_never_guessed": "PASS",
+    "markdown_csv_json_counts_agree": "PASS"
+  },
+  "provenance": {
+    "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+    "public_checkpoint_commit": "37aa9c7e3b6539df4e4c375dd0f55180b2482ec8",
+    "legacy_review_log": {
+      "path_or_uri": "editorial/TRANSLATION_REVIEW_LOG.jsonl",
+      "bytes": 541431,
+      "sha256": "ff0c416056b8b5dfc65185670593554e1690a9d6bdd2c5924ab8d5ddbc13799f"
+    },
+    "term_ledger": {
+      "path_or_uri": "evidence/TERM_DECISIONS.jsonl",
+      "bytes": 54883,
+      "sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e"
+    },
+    "batch_qa": {
+      "path_or_uri": "evidence/BATCH_QA.json",
+      "bytes": 80386,
+      "sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+    }
+  },
+  "generated_artifacts": [
+    {
+      "path_or_uri": "START_HERE.md",
+      "bytes": 1102,
+      "sha256": "885ab9949bf148ef4f17f17fb4befe1d9db12846d5aac81ed3d4c667dab987ab"
+    },
+    {
+      "path_or_uri": "TRANSLATION_DECISIONS_FULL.md",
+      "bytes": 60785,
+      "sha256": "9251b2188dc3da2ff8c1557b0d2dd107244cb53ef1470284df401de84be1847b"
+    },
+    {
+      "path_or_uri": "PRIORITY_REVIEW.md",
+      "bytes": 19742,
+      "sha256": "32c7a7779798debecec74cd76f18c39339449e63f9fcde3a0bfd776283b593ac"
+    },
+    {
+      "path_or_uri": "DECISION_OCCURRENCES.csv",
+      "bytes": 133635,
+      "sha256": "fb92d311cccb4c34666f21c74226240ab3b89e2d0e646f0818b769ea0053c98b"
+    },
+    {
+      "path_or_uri": "DECISIONS.json",
+      "bytes": 1993450,
+      "sha256": "cad3e678ee344f4cc8a72dac72262b95802b731f7453c82e6c4a753be84cf3c8"
+    },
+    {
+      "path_or_uri": "translation-decision.schema.json",
+      "bytes": 10787,
+      "sha256": "50e7fa407b62c711f92f8b93be591d3b4a6e1c4adb1386c398bb5f76844d9f90"
+    }
+  ]
+}

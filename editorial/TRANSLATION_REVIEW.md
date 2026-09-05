@@ -14,10 +14,16 @@ evidence/TRANSLATION_REVIEW_OCCURRENCES.csv. Its printed/PDF page columns stay
 blank until the next accepted reader pagination; the sealed v0.1.2 release
 predates these review projections.
 
+The canonical cross-edition contract is in `translation-decisions/`:
+`DECISIONS.json` is schema validated, `TRANSLATION_DECISIONS_FULL.md` and
+`PRIORITY_REVIEW.md` are its human views, and `DECISION_OCCURRENCES.csv`
+binds each recorded occurrence to exact source and target line, byte, and
+file-hash locators. `TRANSLATION_DECISION_QA.json` checks their agreement.
+
 Coverage is partial and follows the translated corpus. The metadata record at
 the start of the JSONL states the exact current range. Choices remain open to
 asynchronous correction and never block translation or publication.
-At the 90-file checkpoint the log contains 109 terminology or provenance
+At the 97-file checkpoint the log contains 109 terminology or provenance
 decisions and 48 difficult translation or source decisions.
 
 The first terminology entries are explicitly marked retrospective backfill.
