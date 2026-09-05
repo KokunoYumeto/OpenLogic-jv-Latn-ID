@@ -2,7 +2,7 @@
   "schema": "jv-semantic-review/1",
   "reviewer": "Codex, same author; no independent or human review claimed",
   "date": "2026-09-05",
-  "scope": "All 789 translated paragraph blocks in OLP-0001 through OLP-0074; 431 unchanged formal/structural blocks classified separately. OLSIZ-001 through OLSIZ-010 and OLPL-001 through OLPL-003 are applied in their affected targets; the proposed OLSIZ-011 remains retracted after exact-byte inspection. Paragraph analysis normalizes CRLF/LF; exact full-file hashes remain raw-byte hashes.",
+  "scope": "All 856 translated paragraph blocks in OLP-0001 through OLP-0080; 462 unchanged formal/structural blocks classified separately. OLSIZ-001 through OLSIZ-010 and OLPL-001 through OLPL-005 are applied in their affected targets; the proposed OLSIZ-011 remains retracted after exact-byte inspection. Paragraph analysis normalizes CRLF/LF; exact full-file hashes remain raw-byte hashes.",
   "method": "Direct source-to-target reading, quantifier/negation/biconditional checks, mathematical-context checks, and selected reverse paraphrases. Automated structure checks are separate.",
   "unit_reviews": [
     {
@@ -633,6 +633,60 @@
       "reverse_sample": "An LK derivation is a finite sequent tree whose top nodes are initial sequents, bottom node is the end-sequent, and every other node is a premise of a correct inference immediately below it. The example builds C,D sequent C-and-D from two initial sequents and shows that reversing the two premises yields D-and-C.",
       "source_sha256": "25897d850b211443621f31a1166f443c1e00c6bcbf13002bc1b9281ca4300371",
       "translation_sha256": "fee3c2806d75fdf59ae04de5737813db354420dcf98bfde62a67344443a31db2"
+    },
+    {
+      "unit_id": "OLP-0075",
+      "status": "pass",
+      "checks": "Compared all four worked proof searches and all three exercise groups. The conjunction example selects the derivable left-conjunction premise; the conditional example delays branching and closes both disjunctive branches; the De Morgan example retains the failed left-conjunction path before the successful left-disjunction path; excluded middle uses right contraction to preserve a copy. All 140 mathematical spans, rule labels, structural steps, empty succedents and exercise formulas are preserved after the bounded OLPL-004 prose repair.",
+      "reverse_sample": "To construct an LK proof, place the desired end-sequent at the bottom and work upward toward initial sequents. Principal connectives suggest candidate rules, but a locally legal choice can lead to a dead branch. The excluded-middle example shows why contraction may duplicate the target while searching upward.",
+      "source_sha256": "8c94fddc6d2f4c5faee64e84c1216e1c1ca096719b5528ea4faff753b906d303",
+      "translation_sha256": "dfead5f68fbc8fecda36ba653b073be222ce632797de568169dedce9e33cdb73",
+      "source_audit_ids": [
+        "OLPL-004"
+      ]
+    },
+    {
+      "unit_id": "OLP-0076",
+      "status": "pass",
+      "checks": "Compared the complete quantified derivation, its planning discussion, all eigenvariable-order constraints and both exercise groups. The same constant is selected for existential and universal steps to reach the initial sequent, the eigenvariable-bound rule is placed low enough, and the finished tree is checked against its lower sequent. All 35 mathematical spans and every rule label are preserved.",
+      "reverse_sample": "For the quantified De Morgan sequent, plan for the initial sequent A(a) sequent A(a), apply the eigenvariable-constrained existential-left step early, move both negations, then instantiate the universal formula with the same a. The final check confirms that a is absent from the lower sequent of the constrained rule.",
+      "source_sha256": "d2e7eba11801753dfd9c57c6be6d45df5c11de57843c3f689dbee7636419aa99",
+      "translation_sha256": "de325235131f0d35144235296cc66b99621f2df42a6ffdf5a7edfb6c7039e7c7"
+    },
+    {
+      "unit_id": "OLP-0077",
+      "status": "pass",
+      "checks": "Compared the editorial scope, proof-theoretic explanation, theorem and derivability definitions, structural invariance of finite premise sequences, consistency definition, reflexivity, monotonicity, transitivity by Cut, explosion criterion and both compactness clauses. All 99 mathematical spans, set inclusions, labels and proof trees are preserved after OLPL-005 corrects the chapter name in the editorial note.",
+      "reverse_sample": "Gamma proves A when a finite subset of Gamma can be ordered into an LK antecedent deriving A. Structural rules make repetition and order immaterial. Inconsistency is a finite empty-succedent derivation. Reflexivity, monotonicity and Cut yield the standard consequence properties, and both derivability and consistency are compact by definition.",
+      "source_sha256": "91c07ed071c2f9c18d3f10665b163b35dcc8636e7e0f27b4586aa9df63177a53",
+      "translation_sha256": "f49c8f53668c69af91098708b8c87a82224eb25eeea75812462e41c871a931d0",
+      "source_audit_ids": [
+        "OLPL-005"
+      ]
+    },
+    {
+      "unit_id": "OLP-0078",
+      "status": "pass",
+      "checks": "Compared all four consistency propositions and their Cut constructions. A derivable A together with inconsistency after adding A makes Gamma inconsistent; derivability of A is equivalent to inconsistency after adding not-A; explicit derivability plus a negated member gives inconsistency; and inconsistency of both A-extensions exhausts the cases. All 79 mathematical spans, finite subsets, negation directions and proof-tree conclusions are preserved.",
+      "reverse_sample": "Cut transfers finite inconsistency witnesses back to Gamma. In particular, Gamma proves A exactly when adding not-A makes it inconsistent. If both adding A and adding not-A are inconsistent, turn the first witness into a derivation of not-A and cut it against the second.",
+      "source_sha256": "a44d3cb4dadd224e943e0ea4d3d81529c6e108e7eecbcf9b1cb7d3632e4a150a",
+      "translation_sha256": "f56a68c82c13e650d7200ebb7065a947df3cc4ef6714bc8a8421d930ff524f37"
+    },
+    {
+      "unit_id": "OLP-0079",
+      "status": "pass",
+      "checks": "Compared every propositional provability claim and displayed derivation: conjunction projections and pairing, disjunction inconsistency and injections, modus ponens, and the two sufficient conditions for a conditional. All 50 mathematical spans, proposition labels, double-line structural abbreviations and left/right connective rules are preserved.",
+      "reverse_sample": "LK derives each conjunct from a conjunction and derives the conjunction from both premises. A disjunction with both negated disjuncts is inconsistent, while either disjunct derives the disjunction. Implication supports modus ponens, and either not-A or B derives A implies B.",
+      "source_sha256": "b9a23c15949d620b4783f3d1629b9e41315defac417dea12dd75118342b9d36c",
+      "translation_sha256": "6aa8cb725e36d53a11512eef22c566cc5b2676df94bb190da202d4ac3463b4f9"
+    },
+    {
+      "unit_id": "OLP-0080",
+      "status": "pass",
+      "checks": "Compared strong generalization, its constant-freshness hypotheses, the finite-subset proof and both tagged quantifier provability facts. All 23 mathematical spans, tag-controlled items, existential-right and universal-left trees, and eigenvariable justification are preserved.",
+      "reverse_sample": "If a constant c occurs neither in Gamma nor in A(x), a derivation of A(c) can be extended by universal-right to derive every x A(x). Independently, any instance A(t) derives its existential generalization, and a universal statement derives each instance.",
+      "source_sha256": "30d343a6b09d234683fff540afec999650f2cf4afd9ce751138b8f3b93f2fe6a",
+      "translation_sha256": "5c41d33ad801a8a01d213ca64b597650a804b438ef51f4837273a22ca110f09d"
     }
   ],
   "unresolved_language_uncertainties": [
@@ -645,9 +699,10 @@
     "The two Dedekind quotations are translated from the frozen English OpenLogic wording; the cited historical source is preserved, and no fresh claim of consultation with the German original is made.",
     "Propositional-connective, valuation, satisfaction, consequence and syntax terminology is provisional controlled adaptation or transparent description; the preserved formation and truth clauses, not the Javanese canon, remain the formal authority.",
     "Proof-system, soundness, sequent, discharge and tableau terminology is provisional controlled adaptation or transparent description; the preserved rules, derivation trees and iff directions, not the Javanese canon, remain the formal authority.",
-    "Antecedent, succedent, eigenvariable and structural-rule terminology is provisional borrowing or transparent description; the preserved side conditions and inference trees, not the Javanese canon, remain the formal authority."
+    "Antecedent, succedent, eigenvariable and structural-rule terminology is provisional borrowing or transparent description; the preserved side conditions and inference trees, not the Javanese canon, remain the formal authority.",
+    "Proof-theoretic, provability, compactness and strong-generalization terminology is provisional borrowing or transparent description; the preserved finite-witness definitions and inference trees remain the formal authority."
   ],
-  "build_and_visual_review": "The 36-page introduction/sets/relations/functions reader is accepted and published as v0.1.2. OLP-0049 through OLP-0074 are source-complete and reviewed here but are not yet integrated into a later full-reader build.",
+  "build_and_visual_review": "The 36-page introduction/sets/relations/functions reader is accepted and published as v0.1.2. OLP-0049 through OLP-0080 are source-complete and reviewed here but are not yet integrated into a later full-reader build.",
   "superseded_unit_reviews": [
     {
       "unit_id": "OLP-0021",

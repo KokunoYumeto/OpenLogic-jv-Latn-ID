@@ -1,11 +1,11 @@
 {
   "schema": "jv-batch-qa/1",
-  "utc": "2026-09-04T23:14:26.278898+00:00",
-  "checked_units": 74,
-  "structural_pass_units": 74,
+  "utc": "2026-09-05T02:14:26.524447+00:00",
+  "checked_units": 80,
+  "structural_pass_units": 80,
   "total_units": 722,
-  "segments": 1220,
-  "translated_segments": 789,
+  "segments": 1318,
+  "translated_segments": 856,
   "units": [
     {
       "unit_id": "OLP-0001",
@@ -1634,10 +1634,142 @@
       "source_math_count": 66,
       "target_math_count": 66,
       "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0075",
+      "source_path": "content/first-order-logic/sequent-calculus/proving-things.tex",
+      "source_sha256": "8c94fddc6d2f4c5faee64e84c1216e1c1ca096719b5528ea4faff753b906d303",
+      "translation_sha256": "dfead5f68fbc8fecda36ba653b073be222ce632797de568169dedce9e33cdb73",
+      "translation_bytes": 12483,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 21,
+      "target_paragraphs": 21,
+      "source_math_count": 140,
+      "target_math_count": 140,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0076",
+      "source_path": "content/first-order-logic/sequent-calculus/proving-things-quant.tex",
+      "source_sha256": "d2e7eba11801753dfd9c57c6be6d45df5c11de57843c3f689dbee7636419aa99",
+      "translation_sha256": "de325235131f0d35144235296cc66b99621f2df42a6ffdf5a7edfb6c7039e7c7",
+      "translation_bytes": 4368,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 11,
+      "target_paragraphs": 11,
+      "source_math_count": 35,
+      "target_math_count": 35,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0077",
+      "source_path": "content/first-order-logic/sequent-calculus/proof-theoretic-notions.tex",
+      "source_sha256": "91c07ed071c2f9c18d3f10665b163b35dcc8636e7e0f27b4586aa9df63177a53",
+      "translation_sha256": "f49c8f53668c69af91098708b8c87a82224eb25eeea75812462e41c871a931d0",
+      "translation_bytes": 6239,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 24,
+      "target_paragraphs": 24,
+      "source_math_count": 99,
+      "target_math_count": 99,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0078",
+      "source_path": "content/first-order-logic/sequent-calculus/provability-consistency.tex",
+      "source_sha256": "a44d3cb4dadd224e943e0ea4d3d81529c6e108e7eecbcf9b1cb7d3632e4a150a",
+      "translation_sha256": "f56a68c82c13e650d7200ebb7065a947df3cc4ef6714bc8a8421d930ff524f37",
+      "translation_bytes": 4015,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 18,
+      "target_paragraphs": 18,
+      "source_math_count": 79,
+      "target_math_count": 79,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0079",
+      "source_path": "content/first-order-logic/sequent-calculus/provability-propositional.tex",
+      "source_sha256": "b9a23c15949d620b4783f3d1629b9e41315defac417dea12dd75118342b9d36c",
+      "translation_sha256": "6aa8cb725e36d53a11512eef22c566cc5b2676df94bb190da202d4ac3463b4f9",
+      "translation_bytes": 4521,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 14,
+      "target_paragraphs": 14,
+      "source_math_count": 50,
+      "target_math_count": 50,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0080",
+      "source_path": "content/first-order-logic/sequent-calculus/provability-quantifiers.tex",
+      "source_sha256": "30d343a6b09d234683fff540afec999650f2cf4afd9ce751138b8f3b93f2fe6a",
+      "translation_sha256": "5c41d33ad801a8a01d213ca64b597650a804b438ef51f4837273a22ca110f09d",
+      "translation_bytes": 1792,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 10,
+      "target_paragraphs": 10,
+      "source_math_count": 23,
+      "target_math_count": 23,
+      "status": "structural_pass"
     }
   ],
   "failures": 0,
-  "semantic_reviewed_units": 74,
+  "semantic_reviewed_units": 80,
   "build": "see BUILD_SETS.json",
   "release_ready": false
 }

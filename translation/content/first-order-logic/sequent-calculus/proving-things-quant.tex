@@ -1,0 +1,108 @@
+% Part: first-order-logic
+% Chapter: sequent-calculus
+% Section: proving-things-quant
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{seq}{prq}
+
+\olsection{\usetoken{P}{derivation} kanthi Kuantor}
+
+\begin{ex}
+Wenehana $\Log{LK}$-!!{derivation} kanggo sekuen $\lexists[x][\lnot !A(x)]
+\Sequent \lnot \lforall[x][!A(x)]$.
+
+Nalika nggarap kuantor, kita kudu ngati-ati supaya ora nerak syarat
+eigenvariabel, lan kadhangkala iki mbutuhake kita nyoba-nyoba urutan
+panrapan inferensi tartamtu. Lumrahe luwih gampang yen aturan kang
+kaiket syarat eigenvariabel ditangani luwih dhisik (aturan iku bakal
+mapan luwih ngisor ing bukti kang wis rampung). Becike kita uga nyawang
+sawetara langkah ing ngarep lan ngira-ira wujude sekuen wiwitan. Ing
+kasus iki, wujude kudu kaya $!A(a) \Sequent !A(a)$. Iki ateges nalika
+“mbalikke” aturan kuantor, kita kudu milih term kang padha---kang bakal
+dijenengi $a$---kanggo aturan $\lforall$ lan $\lexists$. Yen kita
+milih term kang beda kanggo saben aturan, pungkasane kita bakal entuk
+wujud kaya $!A(a) \Sequent !A(b)$, kang mesthi ora bisa diderivasi.
+
+Kaya lumrahe, kita miwiti kanthi nulis
+\begin{prooftree}
+\AxiomC{}
+\UnaryInf$\lexists[x][\lnot !A(x)] \fCenter \lnot \lforall[x][!A(x)]$
+\end{prooftree}
+Kita bisa ngetrapake aturan \LeftR{\exists} utawa aturan
+\RightR{\lnot}. Amarga aturan \LeftR{\exists} kaiket syarat
+eigenvariabel, becike aturan iki ditangani luwih dhisik, mula kita
+bakal nindakake iku.
+\begin{prooftree}
+\AxiomC{}
+\UnaryInf$ \lnot !A(a) \fCenter \lnot \lforall[x][!A(x)]$
+\RightLabel{\LeftR{\lexists}}
+\UnaryInf$ \lexists[x][\lnot !A(x)] \fCenter \lnot \lforall[x][!A(x)]$
+\end{prooftree}
+Kanthi ngetrapake aturan \LeftR{\lnot} lan \RightR{\lnot} kanthi
+mbalikke, kita entuk
+\begin{prooftree}
+\AxiomC{}
+\UnaryInf$\lforall[x][!A(x)] \fCenter !A(a)$
+\RightLabel{\LeftR{\lnot}}
+\UnaryInf$\lnot !A(a), \lforall[x][!A(x)] \fCenter $
+\RightLabel{\LeftR{\Exchange}}
+\UnaryInf$\lforall[x][!A(x)], \lnot !A(a) \fCenter $
+\RightLabel{\RightR{\lnot}}
+\UnaryInf$ \lnot !A(a) \fCenter \lnot \lforall[x] !A(x)$
+\RightLabel{\LeftR{\lexists}}
+\UnaryInf$ \lexists[x] \lnot !A(x) \fCenter \lnot \lforall[x] !A(x)$
+\end{prooftree}
+Ing tahap iki, pilihan siji-sijine yaiku ngetrapake aturan
+\LeftR{\forall}. Amarga aturan iki ora kaiket watesan eigenvariabel,
+kita aman. Elinga, kita ngupaya ngasilake sekuen wiwitan (kanthi wujud
+$!A(a) \Sequent !A(a)$), mula nalika aturan ditrapake, kita kudu milih
+$a$ minangka argumen kanggo $!A$.
+\begin{prooftree}
+\Axiom$!A(a) \fCenter !A(a)$
+\RightLabel{\LeftR{\lforall}}
+\UnaryInf$\lforall[x][!A(x)] \fCenter !A(a)$
+\RightLabel{\LeftR{\lnot}}
+\UnaryInf$\lnot !A(a), \lforall[x][!A(x)] \fCenter $
+\RightLabel{\LeftR{\Exchange}}
+\UnaryInf$\lforall[x][!A(x)], \lnot !A(a) \fCenter $
+\RightLabel{\RightR{\lnot}}
+\UnaryInf$ \lnot !A(a) \fCenter \lnot \lforall[x][!A(x)]$
+\RightLabel{\LeftR{\lexists}}
+\UnaryInf$ \lexists[x][ \lnot !A(x)] \fCenter \lnot \lforall[x][!A(x)]$
+\end{prooftree}
+Ing tahap iki wigati, mligine nalika nggarap kuantor, kanggo mriksa
+maneh yen syarat eigenvariabel ora diterak. Amarga aturan siji-sijine
+kang ditrapake lan kaiket syarat eigenvariabel yaiku
+\LeftR{\exists}, lan eigenvariabel~$a$ ora muncul ing sekuen ngisore
+(sekuen-pungkasan), mula iki !!{derivation} kang bener.
+\end{ex}
+
+\begin{prob}
+Wenehana !!{derivation}s kanggo sekuen-sekuen iki:
+\begin{enumerate}
+\item $\Sequent (\lforall[x][!A(x)] \land \lforall[y][!B(y)]) \lif
+\lforall[z][(!A(z) \land !B(z))]$.
+\item $\Sequent (\lexists[x][!A(x)] \lor \lexists[y][!B(y)]) \lif
+\lexists[z][(!A(z) \lor !B(z))]$.
+\item $\lforall[x][(!A(x) \lif !B)] \Sequent \lexists[y][!A(y)] \lif !B$.
+\item $\lforall[x][\lnot !A(x)] \Sequent \lnot\lexists[x][!A(x)]$.
+\item $\Sequent \lnot\lexists[x][!A(x)] \lif \lforall[x][\lnot !A(x)]$.
+\item $\Sequent \lnot\lexists[x][\lforall[y][((!A(x,y) \lif \lnot
+!A(y,y)) \land (\lnot !A(y,y) \lif !A(x,y)))]]$.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+Wenehana !!{derivation}s kanggo sekuen-sekuen iki:
+\begin{enumerate}
+\item $\Sequent \lnot\lforall[x][!A(x)] \lif \lexists[x][\lnot!A(x)]$.
+\item $(\lforall[x][!A(x)] \lif !B) \Sequent \lexists[y][(!A(y) \lif !B)]$.
+\item $\Sequent \lexists[x][(!A(x) \lif \lforall[y][!A(y)])]$.
+\end{enumerate}
+(Kabeh iki mbutuhake aturan~$\RightR{\Contraction}$.)
+\end{prob}
+
+\end{document}

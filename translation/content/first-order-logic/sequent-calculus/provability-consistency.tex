@@ -1,0 +1,131 @@
+% Part: first-order-logic
+% Chapter: sequent-calculus
+% Section: provability-consistency
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{seq}{prv}}
+      {\olfileid{pl}{seq}{prv}}
+
+\olsection{\usetoken{S}{derivability} lan Konsistensi}
+
+Saiki kita bakal netepake sawetara sipat relasi !!{derivability}.
+Sipat kasebut narik kawigaten dhewe-dhewe, nanging saben sipat bakal
+duwe peran ing bukti teorema kelengkapan.
+
+\begin{prop}\ollabel{prop:provability-contr}
+  Yen $\Gamma \Proves !A$ lan $\Gamma \cup \{!A\}$ ora konsisten,
+  mula $\Gamma$ ora konsisten.
+\end{prop}
+
+\begin{proof}
+Ana $\Gamma_0$ lan $\Gamma_1 \subseteq \Gamma$ kang winates saengga
+$\Log{LK}$ !!{derive}s $\Gamma_0 \Sequent !A$ lan $!A, \Gamma_1
+\Sequent \quad$. Ayo $\Log{LK}$-!!{derivation} saka $\Gamma_0 \Sequent
+!A$ dijenengi~$\pi_0$ lan $\Log{LK}$-!!{derivation} saka $\Gamma_1, !A
+\Sequent \quad$ dijenengi~$\pi_1$. Banjur kita bisa !!{derive}
+\begin{prooftree}
+\AxiomC{}
+\RightLabel{$\pi_0$}
+\Deduce$ \Gamma_0 \fCenter !A $
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$!A, \Gamma_1 \fCenter $
+\RightLabel{\Cut}
+\BinaryInf$ \Gamma_0,\Gamma_1 \fCenter $
+\end{prooftree}
+
+Amarga $\Gamma_0 \subseteq \Gamma$ lan $\Gamma_1 \subseteq \Gamma$,
+$\Gamma_0 \cup \Gamma_1 \subseteq \Gamma$, mula $\Gamma$~ora
+konsisten.
+\end{proof}
+
+\begin{prop}
+\ollabel{prop:prov-incons}
+$\Gamma \Proves !A$ yen lan mung yen $\Gamma \cup \{\lnot !A\}$ ora
+konsisten.
+\end{prop}
+
+\begin{proof}
+Sepisan, upamana $\Gamma \Proves !A$, yaiku ana
+!!a{derivation}~$\pi_0$ saka $\Gamma \Sequent !A$. Kanthi nambahake
+aturan $\LeftR{\lnot}$, kita entuk !!a{derivation} saka~$\lnot !A,
+\Gamma \Sequent \quad$, yaiku $\Gamma \cup \{\lnot !A\}$ ora
+konsisten.
+
+Yen $\Gamma \cup \{\lnot !A\}$ ora konsisten, ana
+!!a{derivation}~$\pi_1$ saka $\lnot !A, \Gamma \Sequent \quad$.
+Iki !!a{derivation} saka $\Gamma \Sequent !A$:
+\begin{prooftree}
+  \Axiom$!A \fCenter !A$
+  \RightLabel{\RightR{\lnot}}
+  \UnaryInf$\fCenter !A, \lnot !A$
+  \AxiomC{}
+  \RightLabel{$\pi_1$}
+  \Deduce$\lnot !A, \Gamma \fCenter$
+  \RightLabel{\Cut}
+  \BinaryInf$\Gamma \fCenter !A$
+\end{prooftree}
+\end{proof}
+
+\begin{prob}
+Buktekna yen $\Gamma \Proves \lnot !A$ yen lan mung yen $\Gamma \cup
+\{!A\}$ ora konsisten.
+\end{prob}
+
+\begin{prop}\ollabel{prop:explicit-inc}
+  Yen $\Gamma \Proves !A$ lan $\lnot !A \in \Gamma$, mula $\Gamma$
+  ora konsisten.
+\end{prop}
+
+\begin{proof}
+  Upamana $\Gamma \Proves !A$ lan $\lnot !A \in \Gamma$. Banjur ana
+  !!a{derivation}~$\pi$ saka sekuen $\Gamma_0 \Sequent !A$. Sekuen
+  $\lnot !A, \Gamma_0 \Sequent \quad$ uga bisa !!{derivable}:
+  \begin{prooftree}
+    \AxiomC{}
+    \RightLabel{$\pi$}
+    \Deduce$\Gamma_0 \fCenter !A$
+    \Axiom$!A \fCenter !A$
+    \RightLabel{\LeftR{\lnot}}
+    \UnaryInf$\lnot !A, !A \fCenter$
+    \RightLabel{\LeftR{\Exchange}}
+    \UnaryInf$!A, \lnot !A \fCenter$
+    \RightLabel{\Cut}
+    \BinaryInf$\Gamma_0, \lnot !A \fCenter$
+  \end{prooftree}
+  Amarga $\lnot !A \in \Gamma$ lan $\Gamma_0 \subseteq \Gamma$, iki
+  nuduhake yen $\Gamma$ ora konsisten.
+\end{proof}
+
+\begin{prop}\ollabel{prop:provability-exhaustive}
+  Yen $\Gamma \cup \{!A\}$ lan $\Gamma \cup \{\lnot !A\}$ kalorone
+  ora konsisten, mula $\Gamma$ ora konsisten.
+\end{prop}
+
+\begin{proof}
+Ana himpunan winates $\Gamma_0 \subseteq \Gamma$ lan $\Gamma_1
+\subseteq \Gamma$, sarta $\Log{LK}$-!!{derivation}s $\pi_0$ lan
+$\pi_1$ saka $!A, \Gamma_0 \Sequent \quad$ lan $\lnot !A, \Gamma_1
+\Sequent \quad$, kanthi urut. Banjur kita bisa !!{derive}
+\begin{prooftree}
+\AxiomC{}
+\RightLabel{$\pi_0$}
+\Deduce$ !A, \Gamma_0 \fCenter $
+\RightLabel{\RightR{\lnot}}
+\UnaryInf$ \Gamma_0 \fCenter \lnot !A$
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\lnot !A, \Gamma_1 \fCenter  $
+\RightLabel{\Cut}
+\BinaryInf$ \Gamma_0, \Gamma_1 \fCenter $
+\end{prooftree}
+Amarga $\Gamma_0 \subseteq \Gamma$ lan $\Gamma_1 \subseteq \Gamma$,
+$\Gamma_0 \cup \Gamma_1 \subseteq \Gamma$. Mula $\Gamma$ ora
+konsisten.
+\end{proof}
+
+\end{document}

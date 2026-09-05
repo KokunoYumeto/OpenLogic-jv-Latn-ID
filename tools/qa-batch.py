@@ -161,6 +161,19 @@ for u in units:
             false_conjunction_rule_defect,
             r'$\TRule{\False}{\land}$',
         )
+    # OLPL-004: two prose examples in the frozen proof-search discussion
+    # omit the negation on the second disjunct, unlike the end-sequent and
+    # every immediately adjacent proof tree.
+    if u['unit_id']=='OLP-0075':
+        proof_search_repairs={
+            '$!A,\n\\lnot !A \\lor !B \\Sequent \\quad$':
+                '$!A, \\lnot !A \\lor \\lnot !B \\Sequent \\quad$',
+            '$!B, \\lnot !A\n\\lor !B \\Sequent \\quad$':
+                '$!B, \\lnot !A \\lor \\lnot !B \\Sequent \\quad$',
+        }
+        for wrong,right in proof_search_repairs.items():
+            assert math_source.count(wrong)==1
+            math_source=math_source.replace(wrong,right)
     checks={'paragraph_count':len(ac)==len(tc),'protected_commands':protected(protected_source)==protected(t),'math_sequence':math(math_source)==math(t),'token_sequence':tokens(a)==tokens(t),'environment_sequence':re.findall(r'\\(?:begin|end)\{[^}]+\}',a)==re.findall(r'\\(?:begin|end)\{[^}]+\}',t),'unicode_clean':'\ufffd' not in t and not re.search(r'[\uA980-\uA9DF]',t),'no_placeholder':not re.search(r'\b(?:TODO|TBD|TRANSLATE_ME)\b',t)}
     command_source=a
     if u['unit_id']=='OLP-0034':
@@ -219,6 +232,16 @@ for u in units:
             tableau_label_defect,
             r'\TRule{\True}{\land}[2]',
         )
+    if u['unit_id']=='OLP-0075':
+        proof_search_repairs={
+            '$!A,\n\\lnot !A \\lor !B \\Sequent \\quad$':
+                '$!A, \\lnot !A \\lor \\lnot !B \\Sequent \\quad$',
+            '$!B, \\lnot !A\n\\lor !B \\Sequent \\quad$':
+                '$!B, \\lnot !A \\lor \\lnot !B \\Sequent \\quad$',
+        }
+        for wrong,right in proof_search_repairs.items():
+            assert command_source.count(wrong)==1
+            command_source=command_source.replace(wrong,right)
     checks['all_command_sequence']=re.findall(r'\\[A-Za-z@]+|\\[^A-Za-z@]',command_source)==re.findall(r'\\[A-Za-z@]+|\\[^A-Za-z@]',t)
     row={'unit_id':u['unit_id'],'source_path':u['source_path'],'source_sha256':sha(b),'translation_sha256':sha(tb),'translation_bytes':len(tb),'checks':checks,'source_paragraphs':len(ac),'target_paragraphs':len(tc),'source_math_count':len(math(a)),'target_math_count':len(math(t)),'status':'structural_pass' if all(checks.values()) else 'defect'}
     rows.append(row)

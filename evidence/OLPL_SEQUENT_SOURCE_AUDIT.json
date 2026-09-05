@@ -1,0 +1,60 @@
+{
+  "schema": "jv-local-source-audit/1",
+  "audit_id": "OLPL-SEQUENT-20260905",
+  "date": "2026-09-05",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "status": "confirmed_two_bounded_sequent-chapter_defects",
+  "sources": [
+    {
+      "unit_id": "OLP-0075",
+      "path": "content/first-order-logic/sequent-calculus/proving-things.tex",
+      "bytes": 12407,
+      "sha256": "8c94fddc6d2f4c5faee64e84c1216e1c1ca096719b5528ea4faff753b906d303"
+    },
+    {
+      "unit_id": "OLP-0077",
+      "path": "content/first-order-logic/sequent-calculus/proof-theoretic-notions.tex",
+      "bytes": 5914,
+      "sha256": "91c07ed071c2f9c18d3f10665b163b35dcc8636e7e0f27b4586aa9df63177a53"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "OLPL-004",
+      "unit_id": "OLP-0075",
+      "locator": "lines 177-180",
+      "observed": [
+        "$!A, \\lnot !A \\lor !B \\Sequent \\quad$",
+        "$!B, \\lnot !A \\lor !B \\Sequent \\quad$"
+      ],
+      "finding": "Two prose candidates in the De Morgan proof search omit the negation on the second disjunct.",
+      "controlling_evidence": [
+        "The requested end-sequent on lines 155-156 has antecedent \\lnot !A \\lor \\lnot !B.",
+        "The proof tree immediately following the prose uses \\lnot !A \\lor \\lnot !B in both candidate contexts.",
+        "The next failed branch and the eventual correct derivation both require the negated second disjunct."
+      ],
+      "bounded_repair": {
+        "occurrences": 2,
+        "removed": "\\lnot !A \\lor !B",
+        "added": "\\lnot !A \\lor \\lnot !B"
+      }
+    },
+    {
+      "finding_id": "OLPL-005",
+      "unit_id": "OLP-0077",
+      "locator": "lines 9-11",
+      "observed": "This section collects the definitions of the provability relation and consistency for natural deduction.",
+      "finding": "The editorial note identifies the section as natural deduction although the file belongs to the sequent-calculus chapter.",
+      "controlling_evidence": [
+        "The source path and both tag-controlled file identifiers place the section in the sequent-calculus chapter.",
+        "The section defines provability using LK derivations of sequents and proves transitivity using Cut.",
+        "The parallel natural-deduction chapter has its own separate proof-theoretic-notions file."
+      ],
+      "bounded_repair": {
+        "removed": "for natural deduction",
+        "added": "for the sequent calculus"
+      }
+    }
+  ],
+  "source_policy": "Keep frozen English bytes and manifest hashes unchanged; repair only the localized prose and identify both repairs in adjacent Javanese notes."
+}

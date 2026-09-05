@@ -1,0 +1,174 @@
+% Part: first-order-logic
+% Chapter: sequent-calculus
+% Section: proof-theoretic-notions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\begin{editorial}
+  Bagean iki nglumpukake definisi relasi provabilitas lan konsistensi
+  kanggo kalkulus sekuen. Cathetan koreksi sumber OLPL-005: editorial
+  Inggris nyebut deduksi natural, nanging identitas berkas, notasi,
+  lan kabeh derivasi ing bagian iki mratelakake kalkulus sekuen.
+\end{editorial}
+
+\iftag{FOL}
+      {\olfileid{fol}{seq}{ptn}}
+      {\olfileid{pl}{seq}{ptn}}
+
+\olsection{Gagasan Teoretis-Bukti}
+
+\begin{explain}
+Kaya nalika nemtokake sawetara gagasan semantis wigati (validitas,
+akibat, lan bisa dicukupi), saiki kita nemtokake \emph{gagasan
+teoretis-bukti} kang cocog. Gagasan iki ora ditemtokake kanthi
+nggunakake panyukupan !!{sentence}s ing !!{structure}s, nanging kanthi
+nggunakake !!{derivability} utawa !!{nonderivability} sekuen-sekuen
+tartamtu. Panemuan yen gagasan-gagasan kasebut padha iku panemuan
+wigati. Kasunyatan manawa gagasan kasebut padha dadi isi
+\emph{teorema kasahihan} lan \emph{teorema kelengkapan}.
+\end{explain}
+
+\begin{defn}[Teorema]
+!!^a{sentence}~$!A$ iku \emph{teorema} yen ana !!a{derivation}
+ing~$\Log{LK}$ saka sekuen $\quad \Sequent !A$. Kita nulis $\Proves
+!A$ yen $!A$ iku teorema, lan $\Proves/ !A$ yen dudu teorema.
+\end{defn}
+
+\begin{defn}[!!^{derivability}]
+!!^a{sentence}~$!A$ \emph{bisa !!{derivable} saka} himpunan
+!!{sentence}s~$\Gamma$, ditulis $\Gamma \Proves !A$, yen lan mung yen
+ana himpunan bagean winates~$\Gamma_0 \subseteq \Gamma$ lan urutan
+$\Gamma_0'$ saka !!{sentence}s ing~$\Gamma_0$ saengga $\Log{LK}$
+!!{derive}s $\Gamma_0' \Sequent !A$. Yen $!A$ ora bisa !!{derivable}
+saka $\Gamma$, kita nulis $\Gamma \Proves/ !A$.
+\end{defn}
+
+Amarga aturan kontraksi, pelemahan, lan pertukaran, urutan lan cacah
+!!{sentence}s ing~$\Gamma_0'$ ora wigati: yen sekuen $\Gamma_0'
+\Sequent !A$ bisa !!{derivable}, mula semono uga $\Gamma_0'' \Sequent
+!A$ kanggo saben $\Gamma_0''$ kang ngemot
+!!{sentence}s kang padha karo~$\Gamma_0'$. Tuladhane, yen $\Gamma_0 =
+\{!B, !C\}$, mula $\Gamma_0' = \tuple{!B, !B, !C}$ lan
+$\Gamma_0'' = \tuple{!C, !C, !B}$ kalorone iku urutan kang mung ngemot
+!!{sentence}s ing~$\Gamma_0$. Yen sekuen kang ngemot salah sijine bisa
+!!{derivable}, sekuen kang ngemot sijine uga bisa, upamane:
+\begin{prooftree}
+  \AxiomC{}
+  \Deduce$!B, !B, !C \fCenter !A$
+  \RightLabel{\LeftR{\Contraction}}
+  \UnaryInf$!B, !C \fCenter !A$
+  \RightLabel{\LeftR{\Exchange}}
+  \UnaryInf$!C, !B \fCenter !A$
+  \RightLabel{\LeftR{\Weakening}}
+  \UnaryInf$!C, !C, !B \fCenter !A$
+\end{prooftree}
+Wiwit saiki, yen $\Gamma_0$ iku himpunan winates saka !!{sentence}s,
+kita bakal ngarani $\Gamma_0 \Sequent !A$ sembarang sekuen kang
+antesedene arupa urutan !!{sentence}s ing~$\Gamma_0$, lan meneng-meneng
+nglebokake kontraksi, pertukaran, lan pelemahan yen perlu.
+
+\begin{defn}[Konsistensi]
+Himpunan ukara~$\Gamma$ iku \emph{ora konsisten} yen lan mung yen ana
+himpunan bagean winates~$\Gamma_0 \subseteq \Gamma$ saengga
+$\Log{LK}$ !!{derive}s $\Gamma_0 \Sequent \quad$. Yen $\Gamma$ ora
+kalebu ora konsisten, yaiku yen kanggo saben $\Gamma_0 \subseteq
+\Gamma$ kang winates, $\Log{LK}$ ora !!{derive} $\Gamma_0 \Sequent
+\quad$, kita ngarani himpunan iku \emph{konsisten}.
+\end{defn}
+
+\begin{prop}[Refleksivitas]
+\ollabel{prop:reflexivity}
+Yen $!A \in \Gamma$, mula $\Gamma \Proves !A$.
+\end{prop}
+
+\begin{proof}
+Sekuen wiwitan $!A \Sequent !A$ bisa !!{derivable}, lan $\{!A\}
+\subseteq \Gamma$.
+\end{proof}
+  
+\begin{prop}[Monotonisitas]
+\ollabel{prop:monotonicity}
+Yen $\Gamma \subseteq \Delta$ lan $\Gamma \Proves !A$, mula $\Delta
+\Proves !A$.
+\end{prop}
+
+\begin{proof}
+Upamana $\Gamma \Proves !A$, yaiku ana $\Gamma_0 \subseteq \Gamma$
+kang winates saengga $\Gamma_0 \Sequent !A$ bisa !!{derivable}.
+Amarga $\Gamma \subseteq \Delta$, $\Gamma_0$ uga dadi himpunan bagean
+winates saka~$\Delta$. Dadi, !!{derivation} saka $\Gamma_0 \Sequent
+!A$ uga nuduhake $\Delta \Proves !A$.
+\end{proof}
+
+\begin{prop}[Transitivitas]
+\ollabel{prop:transitivity}
+Yen $\Gamma \Proves !A$ lan $\{!A\} \cup \Delta \Proves
+!B$, mula $\Gamma \cup \Delta \Proves !B$.
+\end{prop}
+
+\begin{proof}
+Yen $\Gamma \Proves !A$, ana $\Gamma_0 \subseteq \Gamma$ kang winates
+lan !!a{derivation}~$\pi_0$ saka $\Gamma_0 \Sequent !A$. Yen
+$\{!A\} \cup \Delta \Proves !B$, mula kanggo sawijining himpunan
+bagean winates $\Delta_0 \subseteq \Delta$, ana
+!!a{derivation}~$\pi_1$ saka $!A, \Delta_0 \Sequent !B$. Gatekna
+!!{derivation} iki:
+\begin{prooftree}
+  \AxiomC{}
+  \RightLabel{$\pi_0$}
+  \Deduce$\Gamma_0 \fCenter !A$
+  \AxiomC{}
+  \RightLabel{$\pi_1$}
+  \Deduce$!A, \Delta_0 \fCenter !B$
+  \RightLabel{\Cut}
+  \BinaryInf$\Gamma_0, \Delta_0 \fCenter !B$
+\end{prooftree}
+Amarga $\Gamma_0 \cup \Delta_0 \subseteq \Gamma \cup \Delta$, iki
+nuduhake $\Gamma \cup \Delta \Proves !B$.
+\end{proof}
+
+Gatekna yen iki mligi ateges: yen $\Gamma \Proves !A$ lan $!A
+\Proves !B$, mula $\Gamma \Proves !B$. Uga ndherek yen $!A_1,
+\dots, !A_n \Proves !B$ lan $\Gamma \Proves !A_i$ kanggo saben~$i$,
+mula $\Gamma \Proves !B$.
+
+\begin{prop}
+\ollabel{prop:incons}
+$\Gamma$ ora konsisten yen lan mung yen $\Gamma \Proves {!A}$ kanggo
+saben ukara~$!A$.
+\end{prop}
+
+\begin{proof}
+Gladhen.
+\end{proof}
+
+\begin{prob}
+Buktekna \olref[fol][seq][ptn]{prop:incons}
+\end{prob}
+
+\begin{prop}[Kekompakan]
+  \ollabel{prop:proves-compact}
+  \begin{enumerate}
+  \item Yen $\Gamma \Proves !A$, mula ana himpunan bagean winates
+    $\Gamma_0 \subseteq \Gamma$ saengga $\Gamma_0 \Proves !A$.
+  \item Yen saben himpunan bagean winates saka~$\Gamma$ konsisten,
+    mula $\Gamma$ konsisten.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+    \item Yen $\Gamma \Proves !A$, mula ana himpunan bagean winates
+      $\Gamma_0 \subseteq \Gamma$ saengga sekuen $\Gamma_0
+      \Sequent !A$ nduweni !!a{derivation}. Akibate, $\Gamma_0
+      \Proves !A$.
+    \item Yen $\Gamma$ ora konsisten, ana himpunan bagean
+      winates~$\Gamma_0 \subseteq \Gamma$ saengga $\Log{LK}$
+      !!{derive}s $\Gamma_0 \Sequent \quad$. Nanging banjur $\Gamma_0$
+      iku himpunan bagean winates saka~$\Gamma$ kang ora konsisten.
+  \end{enumerate}
+\end{proof}
+
+\end{document}
