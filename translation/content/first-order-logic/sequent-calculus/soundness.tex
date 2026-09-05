@@ -1,0 +1,417 @@
+% Part: first-order-logic
+% Chapter: sequent-calculus
+% Section: soundness.tex
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{seq}{sou}}
+      {\olfileid{pl}{seq}{sou}}
+
+\olsection{Kasahihan}
+
+\begin{explain}
+Sistem !!^a{derivation}, kayata kalkulus sekuen, iku \emph{sah}
+yen ora bisa !!{derive} prakara kang ora bener-bener lumaku. Mula
+kasahihan iku jinis sipat keamanan kang dijamin kanggo sistem
+!!{derivation}. Gumantung marang sipat teoretis-bukti kang dirembug,
+kita arep ngerti, contone, yen
+\begin{enumerate}
+\item saben $!A$ kang !!{derivable} iku \iftag{FOL}{valid}{tautologi};
+\item yen !!a{sentence} bisa !!{derivable} saka sawetara liyane, ukara
+  kasebut uga dadi akibat saka ukara-ukara mau;
+\item yen sawijining himpunan !!{sentence}s ora konsisten, himpunan iku
+  ora bisa dicukupi.
+\end{enumerate}
+Iki sipat-sipat wigati saka sistem !!a{derivation}. Yen ana salah siji
+kang ora lumaku, sistem !!{derivation} iku cacat---sistem kasebut bakal
+!!{derive} kakakehan. Mula, netepake kasahihan sawijining sistem
+!!{derivation} iku wigati banget.
+
+Amarga kabeh sipat teoretis-bukti iki ditemtokake liwat
+!!{derivability} ing kalkulus sekuen tumrap sekuen-sekuen tartamtu,
+mbuktekake (1)--(3) ing ndhuwur mbutuhake bukti ngenani sipat semantis
+saka sekuen kang !!{derivable}. Kaping pisan kita bakal netepake apa
+tegese sekuen kang \emph{valid}, banjur nuduhake yen saben sekuen kang
+!!{derivable} iku valid. Sawise iku, (1)--(3) dadi korolari saka asil
+iki.
+\end{explain}
+
+\begin{defn}
+\iftag{FOL}{!!^a{structure}~$\Struct
+  M$}{!!^a{valuation}~$\pAssign{v}$} \emph{nyukupi} sekuen
+$\Gamma \Sequent \Delta$ yen lan mung yen
+$\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!A}$ kanggo sawetara $!A \in \Gamma$
+utawa $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$ kanggo sawetara $!A \in
+\Delta$.
+
+Sekuen iku \emph{valid} yen lan mung yen saben
+\iftag{FOL}{!!{structure}~$\Struct M$}{!!{valuation}~$\pAssign{v}$}
+nyukupi sekuen kasebut.
+\end{defn}
+
+\begin{thm}[Kasahihan]
+\ollabel{thm:sequent-soundness} Yen $\Log{LK}$ !!{derive}s $\Theta
+\Sequent \Xi$, mula $\Theta \Sequent \Xi$ iku valid.
+\end{thm}
+
+\begin{proof}
+Ayo $\pi$ dadi !!a{derivation} saka $\Theta \Sequent \Xi$. Kita
+nerusake kanthi induksi marang cacah inferensi~$n$ ing~$\pi$.
+
+Yen cacah inferensine~$0$, mula $\pi$ mung dumadi saka sekuen
+wiwitan. Saben sekuen wiwitan $!A \Sequent !A$ mesthi valid, amarga
+kanggo saben \iftag{FOL}{$\Struct M$}{$\pAssign{v}$}, salah siji
+$\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!A}$ utawa
+$\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$.
+
+Yen cacah inferensine luwih saka~0, kita mbedakake kasus miturut jinis
+inferensi kang paling ngisor. Miturut hipotesis induksi, kita bisa
+nganggep premis-premis inferensi kasebut valid, amarga cacah inferensi
+ing !!{derivation} saben premis luwih cilik tinimbang~$n$.
+
+Kaping pisan, kita nimbang inferensi-inferensi kang mung duwe siji
+premis.
+\begin{enumerate}
+\item Inferensi pungkasan iku pelemahan. Banjur $\Theta \Sequent \Xi$
+  iku $!A, \Gamma \Sequent \Delta$ (yen inferensi pungkasan
+  \LeftR{\Weakening}) utawa $\Gamma \Sequent \Delta, !A$ (yen
+  inferensi pungkasan \RightR{\Weakening}), lan !!{derivation} kasebut
+  mungkasi nganggo salah siji
+  \begin{prooftree}
+    \AxiomC{}
+    \Deduce$\Gamma \fCenter \Delta$
+    \RightLabel{\LeftR{\Weakening}}
+    \UnaryInf$!A, \Gamma \fCenter \Delta$
+    \DisplayProof\qquad\bottomAlignProof
+    \AxiomC{}
+    \Deduce$\Gamma \fCenter \Delta$
+    \RightLabel{\RightR{\Weakening}}
+    \UnaryInf$\Gamma \fCenter \Delta, !A$
+  \end{prooftree}
+  Miturut hipotesis induksi, $\Gamma \Sequent \Delta$ iku valid, yaiku
+  kanggo saben
+  \iftag{FOL}{!!{structure}~$\Struct{M}$}{!!{valuation}~$\pAssign{v}$},
+  salah siji ana $!C \in \Gamma$ saengga
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$ utawa ana $!C \in \Delta$
+  saengga $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$.
+  
+  Yen $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$ kanggo sawetara $!C \in
+  \Gamma$, mula $!C \in \Theta$ uga amarga $\Theta = !A, \Gamma$, dadi
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$ kanggo sawetara $!C \in
+  \Theta$. Semono uga, yen
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$ kanggo sawetara $!C \in
+  \Delta$, amarga $!C \in \Xi$, mula
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$ kanggo sawetara $!C \in \Xi$.
+  Akibate, $\Theta \Sequent \Xi$ iku valid.
+\item Inferensi pungkasan iku \LeftR{\lnot}: Banjur premis inferensi
+  pungkasan iku $\Gamma \Sequent \Delta, !A$ lan kesimpulane
+  $\lnot !A, \Gamma \Sequent \Delta$, yaiku !!{derivation} kasebut
+  mungkasi nganggo
+  \begin{prooftree}
+    \AxiomC{}
+    \Deduce$\Gamma \fCenter \Delta, !A$
+    \RightLabel{\LeftR{\lnot}}
+    \UnaryInf$\lnot !A, \Gamma \fCenter \Delta$
+  \end{prooftree}
+  lan $\Theta = \lnot !A, \Gamma$, dene $\Xi = \Delta$.
+
+  Hipotesis induksi ngandhani yen $\Gamma \Sequent \Delta, !A$ iku
+  valid, yaiku kanggo saben \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$},
+  salah siji (a) kanggo sawetara $!C \in \Gamma$,
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$, utawa (b) kanggo sawetara
+  $!C \in \Delta$, $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$, utawa (c)
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$. Kita arep nuduhake yen $\Theta
+  \Sequent \Xi$ uga valid. Ayo \iftag{FOL}{$\Struct{M}$ dadi
+    !!a{structure}}{$\pAssign{v}$ dadi !!a{valuation}}. Yen (a)
+  lumaku, mula ana $!C \in \Gamma$ saengga
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$, nanging $!C \in \Theta$ uga.
+  Yen (b) lumaku, ana $!C \in \Delta$ saengga
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$, nanging $!C \in \Xi$ uga.
+  Pungkasan, yen $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$, mula
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{\lnot !A}$. Amarga $\lnot !A \in
+  \Theta$, ana $!C \in \Theta$ saengga
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$. Akibate, $\Theta \Sequent
+  \Xi$ iku valid.
+\item Inferensi pungkasan iku \RightR{\lnot}: Gladhen.
+\item Inferensi pungkasan iku \LeftR{\land}: Ana rong varian: $!A
+  \land !B$ bisa diinferensi ing sisih kiwa saka $!A$ utawa saka $!B$
+  ing sisih kiwa premis. Ing kasus kapisan, $\pi$ mungkasi nganggo
+  \begin{prooftree}
+    \AxiomC{}
+    \Deduce$!A, \Gamma \fCenter \Delta$
+    \RightLabel{\LeftR{\land}}
+    \UnaryInf$!A \land !B, \Gamma \fCenter \Delta$
+  \end{prooftree}
+  lan $\Theta = !A \land !B, \Gamma$, dene $\Xi = \Delta$. Nimbang
+  \iftag{FOL}{!!a{structure}~$\Struct
+    M$}{!!a{valuation}~$\pAssign{v}$}. Amarga miturut hipotesis
+  induksi, $!A, \Gamma \Sequent \Delta$ iku valid, mula (a)
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!A}$, (b)
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$ kanggo sawetara $!C \in
+  \Gamma$, utawa (c)~$\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$ kanggo
+  sawetara $!C \in \Delta$. Ing kasus (a),
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!A \land !B}$, mula ana $!C \in
+  \Theta$ (yaiku $!A \land !B$) saengga
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$. Ing kasus (b), ana $!C \in
+  \Gamma$ saengga $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$, lan $!C \in
+  \Theta$ uga. Ing kasus (c), ana $!C \in \Delta$ saengga
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$, lan $!C \in \Xi$ uga amarga
+  $\Xi = \Delta$. Dadi ing saben kasus,
+  \iftag{FOL}{$\Struct M$}{$\pAssign{v}$} nyukupi $!A \land !B,
+  \Gamma \Sequent \Delta$. Amarga
+  \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} dipilih sawenang-wenang,
+  $!A \land !B, \Gamma \Sequent \Delta$ iku valid. Cathetan koreksi
+  sumber OLPL-006: ukara Inggris nyebut sekuen premis dhewe minangka
+  kesimpulan pungkasan, nanging struktur lan kabeh langkah ing paragraf
+  iki netepake kesimpulan konjungsi kang dibalekake ing kene. Kasus nalika
+  $!A \land !B$ diinferensi saka $!B$ ditangani kanthi cara padha,
+  kanthi ngganti $!A$ dadi $!B$.
+\item Inferensi pungkasan iku \RightR{\lor}: Ana rong varian: $!A
+  \lor !B$ bisa diinferensi ing sisih tengen saka $!A$ utawa saka $!B$
+  ing sisih tengen premis. Ing kasus kapisan, $\pi$ mungkasi nganggo
+  \begin{prooftree}
+    \AxiomC{}
+    \Deduce$\Gamma \fCenter \Delta, !A$
+    \RightLabel{\RightR{\lor}}
+    \UnaryInf$\Gamma \fCenter \Delta, !A \lor !B$
+  \end{prooftree}
+  Saiki $\Theta = \Gamma$ lan $\Xi = \Delta, !A \lor !B$. Nimbang
+  \iftag{FOL}{!!a{structure}~$\Struct{M}$}{!!a{valuation}~$\pAssign{v}$}.
+  Amarga $\Gamma \Sequent \Delta, !A$ iku valid, mula (a)
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$, (b)
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$ kanggo sawetara $!C \in
+  \Gamma$, utawa (c)~$\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$ kanggo
+  sawetara $!C \in \Delta$. Ing kasus (a),
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A \lor !B}$. Ing kasus (b), ana
+  $!C \in \Gamma$ saengga
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$. Ing kasus (c), ana $!C \in
+  \Delta$ saengga $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$. Dadi ing saben
+  kasus, \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} nyukupi $\Gamma
+  \Sequent \Delta, !A \lor !B$, yaiku $\Theta \Sequent \Xi$. Amarga
+  \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} dipilih sawenang-wenang,
+  $\Theta \Sequent \Xi$ iku valid. Kasus nalika $!A \lor !B$
+  diinferensi saka $!B$ ditangani kanthi cara padha, kanthi ngganti
+  $!A$ dadi $!B$.
+\item Inferensi pungkasan iku \RightR{\lif}: Banjur $\pi$ mungkasi
+  nganggo
+  \begin{prooftree}
+    \AxiomC{}
+    \Deduce$!A, \Gamma \fCenter \Delta, !B$
+    \RightLabel{\RightR{\lif}}
+    \UnaryInf$\Gamma \fCenter \Delta, !A \lif !B$
+  \end{prooftree}
+  Maneh, hipotesis induksi nyebut yen premis iku valid; kita arep
+  nuduhake yen kesimpulane uga valid. Ayo
+  \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} dipilih sawenang-wenang.
+  Amarga $!A, \Gamma \Sequent \Delta, !B$ iku valid, paling ora salah
+  siji kasus iki lumaku: (a)
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!A}$, (b)
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!B}$, (c)
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$ kanggo sawetara~$~!C \in
+  \Gamma$, utawa (d) $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$ kanggo
+  sawetara $!C \in \Delta$. Ing kasus (a) lan (b),
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A \lif !B}$, mula ana $!C \in
+  \Delta, !A \lif !B$ saengga
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$. Ing kasus (c), kanggo sawetara
+  $!C \in \Gamma$, $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$. Ing kasus
+  (d), kanggo sawetara $!C \in \Delta$,
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$. Ing saben kasus,
+  \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} nyukupi $\Gamma \Sequent
+  \Delta, !A \lif !B$. Amarga
+  \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} dipilih sawenang-wenang,
+  $\Gamma \Sequent \Delta, !A \lif !B$ iku valid. \iftag{FOL}{%
+\item Inferensi pungkasan iku \LeftR{\lforall}: Banjur ana
+  !!a{formula}~$!A(x)$ lan term tertutup~$t$ saengga $\pi$ mungkasi
+  nganggo
+  \begin{prooftree}
+    \AxiomC{}
+    \Deduce$!A(t), \Gamma \fCenter \Delta$
+    \RightLabel{\LeftR{\lforall}}
+    \UnaryInf$\lforall[x][!A(x)], \Gamma \fCenter \Delta$
+  \end{prooftree}
+  Kita arep nuduhake yen kesimpulan $\lforall[x][!A(x)], \Gamma
+  \Sequent \Delta$ iku valid. Nimbang !!a{structure}~$\Struct M$.
+  Amarga premis $!A(t), \Gamma \Sequent \Delta$ iku valid, mula (a)
+  $\Sat/{M}{!A(t)}$, (b) $\Sat/{M}{!C}$ kanggo sawetara $!C \in
+  \Gamma$, utawa (c)~$\Sat{M}{!C}$ kanggo sawetara $!C \in \Delta$.
+  Ing kasus (a), miturut
+  \olref[syn][sem]{prop:quant-terms}, yen
+  $\Sat{M}{\lforall[x][!A(x)]}$, mula $\Sat{M}{!A(t)}$. Amarga
+  $\Sat/{M}{!A(t)}$, mula $\Sat/{M}{\lforall[x][!A(x)]}$. Ing kasus
+  (b) lan (c), $\Struct{M}$ uga nyukupi $\lforall[x][!A(x)], \Gamma
+  \Sequent \Delta$. Amarga $\Struct M$ dipilih sawenang-wenang,
+  $\lforall[x][!A(x)], \Gamma \Sequent \Delta$ iku valid.
+\item Inferensi pungkasan iku \RightR{\lexists}: Gladhen.
+\item Inferensi pungkasan iku \RightR{\lforall}: Banjur ana
+  !!a{formula}~$!A(x)$ lan !!a{constant}~$a$ saengga $\pi$ mungkasi
+  nganggo
+  \begin{prooftree}
+    \AxiomC{}
+    \Deduce$\Gamma \fCenter \Delta, !A(a)$
+    \RightLabel{\RightR{\lforall}}
+    \UnaryInf$\Gamma \fCenter \Delta, \lforall[x][!A(x)]$
+  \end{prooftree}
+  ing ngendi syarat eigenvariabel dicukupi, yaiku $a$ ora muncul ing
+  $!A(x)$, $\Gamma$, utawa $\Delta$. Miturut hipotesis induksi,
+  premis inferensi pungkasan iku valid. Kita kudu nuduhake yen
+  kesimpulane uga valid, yaiku kanggo saben
+  !!{structure}~$\Struct M$, (a)
+  $\Sat{M}{\lforall[x][!A(x)]}$, (b) $\Sat/{M}{!C}$ kanggo sawetara
+  $!C \in \Gamma$, utawa (c)~$\Sat{M}{!C}$ kanggo sawetara $!C \in
+  \Delta$.
+
+  Upamana $\Struct{M}$ sawijining !!{structure} kang dipilih
+  sawenang-wenang. Yen (b) utawa (c) lumaku, bukti kita rampung, mula
+  upamana loro-lorone ora lumaku: kanggo kabeh $!C \in \Gamma$,
+  $\Sat{M}{!C}$, lan kanggo kabeh $!C \in \Delta$,
+  $\Sat/{M}{!C}$. Kita kudu nuduhake yen (a) lumaku, yaiku
+  $\Sat{M}{\lforall[x][!A(x)]}$. Miturut
+  \olref[syn][ass]{prop:sat-quant}, cukup kanggo nuduhake yen
+  $\Sat{M}{!A(x)}[s]$ kanggo kabeh penetapan variabel~$s$. Mula ayo
+  $s$ dadi penetapan variabel kang dipilih sawenang-wenang. Nimbang
+  struktur~$\Struct{M'}$ kang padha karo~$\Struct{M}$ kajaba
+  $\Assign{a}{M'} = s(x)$. Miturut
+  \olref[syn][ext]{cor:extensionality-sent}, kanggo saben $!C \in
+  \Gamma$, $\Sat{M'}{!C}$ amarga $a$ ora muncul ing~$\Gamma$, lan
+  kanggo saben $!C \in \Delta$, $\Sat/{M'}{!C}$. Nanging premis
+  kasebut valid, mula $\Sat{M'}{!A(a)}$. Miturut
+  \olref[syn][ass]{prop:sentence-sat-true},
+  $\Sat{M'}{!A(a)}[s]$, amarga $!A(a)$ iku ukara. Saiki
+  $\varAssign{s}{s}{x}$ lan $s(x) = \Value{a}{M'}[s]$, amarga kita
+  wis netepake $\Struct{M'}$ kanthi cara iki. Mula
+  \olref[syn][ext]{prop:ext-formulas} bisa ditrapake, lan kita entuk
+  $\Sat{M'}{!A(x)}[s]$. Amarga $a$ ora muncul ing~$!A(x)$, miturut
+  \olref[syn][ext]{prop:extensionality}, $\Sat{M}{!A(x)}[s]$. Amarga
+  $s$ dipilih sawenang-wenang, kita wis ngrampungake bukti yen
+  $\Sat{M}{!A(x)}[s]$ kanggo kabeh penetapan variabel.
+\item Inferensi pungkasan iku \LeftR{\lexists}: Gladhen.
+}{}
+\end{enumerate}
+Saiki ayo nimbang inferensi-inferensi kang bisa duwe rong premis.
+\begin{enumerate}
+\item Inferensi pungkasan iku potong: banjur $\pi$ mungkasi nganggo
+  \begin{prooftree}
+    \AxiomC{}
+    \Deduce$\Gamma \fCenter \Delta, !A$
+    \AxiomC{}
+    \Deduce$!A, \Pi \fCenter \Lambda$
+    \RightLabel{\Cut}
+    \BinaryInf$\Gamma, \Pi \fCenter \Delta, \Lambda$
+  \end{prooftree}
+  Ayo \iftag{FOL}{$\Struct{M}$ dadi !!a{structure}}{$\pAssign{v}$ dadi
+    !!a{valuation}}. Miturut hipotesis induksi, premis loro mau valid,
+  mula \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} nyukupi premis loro
+  mau. Kita mbedakake rong kasus: (a)
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!A}$ lan (b)
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$. Ing kasus (a), supaya
+  \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} nyukupi premis kiwa, kudu
+  nyukupi $\Gamma \Sequent \Delta$. Nanging banjur uga nyukupi
+  kesimpulane. Ing kasus (b), supaya
+  \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} nyukupi premis tengen, kudu
+  nyukupi $\Pi \Sequent \Lambda$. Cathetan koreksi sumber OLPL-007:
+  formula Inggris nggunakake prabédan himpunan ing kene, nanging
+  premis tengen ing wit lan argumentasi validitas mbutuhake sekuen iki.
+  Maneh, \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} nyukupi kesimpulane.
+\item Inferensi pungkasan iku \RightR{\land}. Banjur $\pi$ mungkasi
+  nganggo
+  \begin{prooftree}
+    \AxiomC{}
+    \Deduce$\Gamma \fCenter \Delta, !A$
+    \AxiomC{}
+    \Deduce$\Gamma \fCenter \Delta, !B$
+    \RightLabel{\RightR{\land}}
+    \BinaryInf$\Gamma \fCenter \Delta, !A \land !B$
+  \end{prooftree}
+  Nimbang \iftag{FOL}{!!a{structure}~$\Struct
+    M$}{!!a{valuation}~$\pAssign{v}$}. Yen
+  \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} nyukupi $\Gamma \Sequent
+  \Delta$, bukti kita rampung. Mula upamana ora nyukupi sekuen
+  kasebut. Amarga $\Gamma \fCenter \Delta, !A$ valid miturut
+  hipotesis induksi, $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$. Semono uga,
+  amarga $\Gamma \Sequent \Delta, !B$ iku valid,
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!B}$. Nanging banjur
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A \land !B}$.
+\item Inferensi pungkasan iku \LeftR{\lor}: Gladhen.
+\item Inferensi pungkasan iku \LeftR{\lif}. Banjur $\pi$ mungkasi
+  nganggo
+  \begin{prooftree}
+    \AxiomC{}
+    \Deduce$\Gamma \fCenter \Delta, !A$
+    \AxiomC{}
+    \Deduce$!B, \Pi \fCenter \Lambda$
+    \RightLabel{\LeftR{\lif}}
+    \BinaryInf$!A \lif !B, \Gamma, \Pi \fCenter \Delta, \Lambda$
+  \end{prooftree}
+  Maneh, nimbang
+  \iftag{FOL}{!!a{structure}~$\Struct{M}$}{!!a{valuation}~$\pAssign{v}$}
+  lan upamana \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} ora nyukupi
+  $\Gamma, \Pi \Sequent \Delta, \Lambda$. Kita kudu nuduhake yen
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!A \lif !B}$. Yen
+  \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} ora nyukupi $\Gamma, \Pi
+  \Sequent \Delta, \Lambda$, struktur utawa valuasi kasebut ora
+  nyukupi $\Gamma \Sequent \Delta$ lan uga ora nyukupi $\Pi \Sequent
+  \Lambda$.
+  Amarga $\Gamma \Sequent \Delta, !A$ iku valid, kita duwe
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$. Amarga $!B, \Pi \Sequent
+  \Lambda$ iku valid, kita duwe
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!B}$. Nanging banjur
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!A \lif !B}$, yaiku apa kang arep
+  kita tuduhake.
+\end{enumerate}
+\end{proof}
+
+\tagprob{FOL}
+\begin{prob}
+Jangkepana bukti \olref[fol][seq][sou]{thm:sequent-soundness}.
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+Jangkepana bukti \olref[pl][seq][sou]{thm:sequent-soundness}.
+\end{prob}
+\tagendprob
+
+\begin{cor}
+\ollabel{cor:weak-soundness}
+Yen $\Proves !A$, mula $!A$ iku \iftag{FOL}{valid}{tautologi}.
+\end{cor}
+
+\begin{cor}
+\ollabel{cor:entailment-soundness}
+Yen $\Gamma \Proves !A$, mula $\Gamma \Entails !A$.
+\end{cor}
+
+\begin{proof}
+Yen $\Gamma \Proves !A$, mula kanggo sawetara himpunan bagean winates
+$\Gamma_0 \subseteq \Gamma$, ana !!a{derivation} saka $\Gamma_0
+\Sequent !A$. Miturut \olref{thm:sequent-soundness}, saben
+\iftag{FOL}{!!{structure}~$\Struct{M}$}{!!{valuation}~$\pAssign{v}$}
+nggawe sawetara $!B \in \Gamma_0$ salah utawa nggawe $!A$ bener. Mula,
+yen $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$, banjur uga
+$\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$.
+\end{proof}
+
+\begin{cor}
+\ollabel{cor:consistency-soundness}
+Yen $\Gamma$ bisa dicukupi, mula himpunan iku konsisten.
+\end{cor}
+
+\begin{proof}
+Kita mbuktekake kontraposisine. Upamana $\Gamma$ ora konsisten. Banjur
+ana $\Gamma_0 \subseteq \Gamma$ kang winates lan !!a{derivation} saka
+$\Gamma_0 \Sequent \quad$. Miturut
+\olref{thm:sequent-soundness}, $\Gamma_0 \Sequent \quad$ iku valid.
+Tegese, kanggo saben
+\iftag{FOL}{!!{structure}~$\Struct{M}$}{!!{valuation}~$\pAssign{v}$},
+ana $!C \in \Gamma_0$ saengga
+$\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$, lan amarga $\Gamma_0
+\subseteq \Gamma$, $!C$ iku uga ana ing~$\Gamma$. Mula, ora ana
+\iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} kang nyukupi~$\Gamma$, dadi
+$\Gamma$ ora bisa dicukupi.
+\end{proof}
+
+\end{document}

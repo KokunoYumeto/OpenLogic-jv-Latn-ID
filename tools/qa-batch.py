@@ -174,6 +174,27 @@ for u in units:
         for wrong,right in proof_search_repairs.items():
             assert math_source.count(wrong)==1
             math_source=math_source.replace(wrong,right)
+    # OLPL-006 and OLPL-007: the frozen soundness proof concludes its
+    # left-conjunction case with the premise rather than the displayed
+    # conclusion, then prints set difference where the Cut argument
+    # requires its displayed right-premise sequent.
+    if u['unit_id']=='OLP-0081':
+        conjunction_conclusion_defect=(
+            'arbitrary, $\\Gamma \\Sequent \\Delta$ is valid.  The case where'
+        )
+        conjunction_conclusion_repair=(
+            'arbitrary, $!A \\land !B, \\Gamma \\Sequent \\Delta$ is valid.  '
+            'The case where'
+        )
+        cut_sequent_defect=r'$\Pi \setminus \Lambda$'
+        cut_sequent_repair=r'$\Pi \Sequent \Lambda$'
+        assert math_source.count(conjunction_conclusion_defect)==1
+        assert math_source.count(cut_sequent_defect)==1
+        math_source=math_source.replace(
+            conjunction_conclusion_defect,
+            conjunction_conclusion_repair,
+        )
+        math_source=math_source.replace(cut_sequent_defect,cut_sequent_repair)
     checks={'paragraph_count':len(ac)==len(tc),'protected_commands':protected(protected_source)==protected(t),'math_sequence':math(math_source)==math(t),'token_sequence':tokens(a)==tokens(t),'environment_sequence':re.findall(r'\\(?:begin|end)\{[^}]+\}',a)==re.findall(r'\\(?:begin|end)\{[^}]+\}',t),'unicode_clean':'\ufffd' not in t and not re.search(r'[\uA980-\uA9DF]',t),'no_placeholder':not re.search(r'\b(?:TODO|TBD|TRANSLATE_ME)\b',t)}
     command_source=a
     if u['unit_id']=='OLP-0034':
@@ -242,6 +263,26 @@ for u in units:
         for wrong,right in proof_search_repairs.items():
             assert command_source.count(wrong)==1
             command_source=command_source.replace(wrong,right)
+    if u['unit_id']=='OLP-0081':
+        conjunction_conclusion_defect=(
+            'arbitrary, $\\Gamma \\Sequent \\Delta$ is valid.  The case where'
+        )
+        conjunction_conclusion_repair=(
+            'arbitrary, $!A \\land !B, \\Gamma \\Sequent \\Delta$ is valid.  '
+            'The case where'
+        )
+        cut_sequent_defect=r'$\Pi \setminus \Lambda$'
+        cut_sequent_repair=r'$\Pi \Sequent \Lambda$'
+        assert command_source.count(conjunction_conclusion_defect)==1
+        assert command_source.count(cut_sequent_defect)==1
+        command_source=command_source.replace(
+            conjunction_conclusion_defect,
+            conjunction_conclusion_repair,
+        )
+        command_source=command_source.replace(
+            cut_sequent_defect,
+            cut_sequent_repair,
+        )
     checks['all_command_sequence']=re.findall(r'\\[A-Za-z@]+|\\[^A-Za-z@]',command_source)==re.findall(r'\\[A-Za-z@]+|\\[^A-Za-z@]',t)
     row={'unit_id':u['unit_id'],'source_path':u['source_path'],'source_sha256':sha(b),'translation_sha256':sha(tb),'translation_bytes':len(tb),'checks':checks,'source_paragraphs':len(ac),'target_paragraphs':len(tc),'source_math_count':len(math(a)),'target_math_count':len(math(t)),'status':'structural_pass' if all(checks.values()) else 'defect'}
     rows.append(row)

@@ -1,0 +1,50 @@
+{
+  "schema": "jv-local-source-audit/1",
+  "audit_id": "OLPL-SOUNDNESS-20260905",
+  "date": "2026-09-05",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "status": "confirmed_two_bounded_soundness-proof_defects",
+  "sources": [
+    {
+      "unit_id": "OLP-0081",
+      "path": "content/first-order-logic/sequent-calculus/soundness.tex",
+      "bytes": 17663,
+      "sha256": "4de487cafc9d685844abb2c0b29c7b51debeb30a9b1129c7a2fa8c13ae48b151"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "OLPL-006",
+      "unit_id": "OLP-0081",
+      "locator": "lines 154-159",
+      "observed": "Since the structure or valuation was arbitrary, $\\Gamma \\Sequent \\Delta$ is valid.",
+      "finding": "The left-conjunction case concludes that its premise is valid instead of the displayed conclusion.",
+      "controlling_evidence": [
+        "The case sets \\Theta to !A \\land !B, \\Gamma and \\Xi to \\Delta.",
+        "The immediately preceding sentence proves that the arbitrary structure or valuation satisfies !A \\land !B, \\Gamma \\Sequent \\Delta.",
+        "The induction hypothesis already supplied validity of the premise !A, \\Gamma \\Sequent \\Delta; the purpose of the case is to prove validity of its conclusion."
+      ],
+      "bounded_repair": {
+        "removed": "$\\Gamma \\Sequent \\Delta$",
+        "added": "$!A \\land !B, \\Gamma \\Sequent \\Delta$"
+      }
+    },
+    {
+      "finding_id": "OLPL-007",
+      "unit_id": "OLP-0081",
+      "locator": "lines 282-289",
+      "observed": "In case (b), in order for the structure or valuation to satisfy the right premise, it must satisfy $\\Pi \\setminus \\Lambda$.",
+      "finding": "The Cut case prints set difference where its displayed right premise requires a sequent.",
+      "controlling_evidence": [
+        "The displayed right premise is !A, \\Pi \\Sequent \\Lambda.",
+        "In case (b), !A is true, so satisfaction of that premise requires exactly the semantic condition expressed by \\Pi \\Sequent \\Lambda.",
+        "The Cut conclusion combines \\Gamma, \\Pi on the left and \\Delta, \\Lambda on the right; set difference has no role in this argument."
+      ],
+      "bounded_repair": {
+        "removed": "$\\Pi \\setminus \\Lambda$",
+        "added": "$\\Pi \\Sequent \\Lambda$"
+      }
+    }
+  ],
+  "source_policy": "Keep frozen English bytes and manifest hashes unchanged; repair only the two localized formulas and identify both repairs in adjacent Javanese prose."
+}

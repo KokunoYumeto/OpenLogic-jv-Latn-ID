@@ -2,7 +2,7 @@
   "schema": "jv-semantic-review/1",
   "reviewer": "Codex, same author; no independent or human review claimed",
   "date": "2026-09-05",
-  "scope": "All 856 translated paragraph blocks in OLP-0001 through OLP-0080; 462 unchanged formal/structural blocks classified separately. OLSIZ-001 through OLSIZ-010 and OLPL-001 through OLPL-005 are applied in their affected targets; the proposed OLSIZ-011 remains retracted after exact-byte inspection. Paragraph analysis normalizes CRLF/LF; exact full-file hashes remain raw-byte hashes.",
+  "scope": "All 888 translated paragraph blocks in OLP-0001 through OLP-0083; 478 unchanged formal/structural blocks classified separately. OLSIZ-001 through OLSIZ-010 and OLPL-001 through OLPL-007 are applied in their affected targets; the proposed OLSIZ-011 remains retracted after exact-byte inspection. Paragraph analysis normalizes CRLF/LF; exact full-file hashes remain raw-byte hashes.",
   "method": "Direct source-to-target reading, quantifier/negation/biconditional checks, mathematical-context checks, and selected reverse paraphrases. Automated structure checks are separate.",
   "unit_reviews": [
     {
@@ -687,6 +687,34 @@
       "reverse_sample": "If a constant c occurs neither in Gamma nor in A(x), a derivation of A(c) can be extended by universal-right to derive every x A(x). Independently, any instance A(t) derives its existential generalization, and a universal statement derives each instance.",
       "source_sha256": "30d343a6b09d234683fff540afec999650f2cf4afd9ce751138b8f3b93f2fe6a",
       "translation_sha256": "5c41d33ad801a8a01d213ca64b597650a804b438ef51f4837273a22ca110f09d"
+    },
+    {
+      "unit_id": "OLP-0081",
+      "status": "pass",
+      "checks": "Compared the sequent-validity definition, soundness theorem and the complete induction on inference count. The base case, weakening, left negation, left conjunction, right disjunction, right implication, universal-left, universal-right, Cut, right conjunction and left implication cases preserve the required true/false antecedent and succedent alternatives. The omitted rule cases remain exercises. Both soundness corollaries and the contraposition from inconsistency to unsatisfiability retain their finite-subset reasoning. All 321 mathematical spans, rule labels, eigenvariable conditions and semantic references are preserved after the bounded OLPL-006 and OLPL-007 formula repairs.",
+      "reverse_sample": "A sequent is valid when every structure or valuation either falsifies an antecedent member or satisfies a succedent member. Induction over an LK derivation shows that initial sequents and every inference preserve this condition. Thus derivability implies semantic consequence, and satisfiability implies consistency.",
+      "source_sha256": "4de487cafc9d685844abb2c0b29c7b51debeb30a9b1129c7a2fa8c13ae48b151",
+      "translation_sha256": "771a51a29c7c8e79971b8cc699bda691fb4b64543e1c9c9d64b611e0a7f7da4a",
+      "source_audit_ids": [
+        "OLPL-006",
+        "OLPL-007"
+      ]
+    },
+    {
+      "unit_id": "OLP-0082",
+      "status": "pass",
+      "checks": "Compared both equality replacement rules, the reflexive closed-term initial sequent, the displayed substitutability derivation, the symmetry and transitivity derivations, the formula choices explained below them and both quantified exercises. All 36 mathematical spans, rule directions, structural steps and closed-term restrictions are preserved.",
+      "reverse_sample": "Equality adds reflexive initial sequents for closed terms and permits either-direction replacement of one equal closed term by the other inside a formula. These rules derive Leibniz substitutability and prove symmetry and transitivity of equality in LK.",
+      "source_sha256": "0f9d6d0731f2a74f568d49545bfeeff9373aea71d188973549054823f240f23d",
+      "translation_sha256": "f3a7ae0378a6bb0aba9ccc8a96db830e6ba3006d56bc45dee830ba5536d1d1fc"
+    },
+    {
+      "unit_id": "OLP-0083",
+      "status": "pass",
+      "checks": "Compared the identity-soundness proposition, validity of reflexive initial sequents and the semantic preservation proof for an equality inference. The proof keeps the closed-term restriction, premise and conclusion direction, arbitrary structure, auxiliary variable assignment, two extensionality steps and sentence-satisfaction references. All 29 mathematical spans and every reference target are preserved.",
+      "reverse_sample": "Reflexive equality sequents are valid for closed terms. If an equality inference replaces t1 by t2, truth of t1 equals t2 makes their values identical; moving through the auxiliary assignment and extensionality transfers satisfaction from A(t1) to A(t2), so the rule preserves validity.",
+      "source_sha256": "0cc6d3e92d57d3070076ce2daa13aa85c6da6ac3cfb2b5d56df87bb7fef4fac3",
+      "translation_sha256": "11b6b0be93079ea999d9b7a2c1f39ff4b0aa025c386a76e11a796cefd4333222"
     }
   ],
   "unresolved_language_uncertainties": [
@@ -700,9 +728,10 @@
     "Propositional-connective, valuation, satisfaction, consequence and syntax terminology is provisional controlled adaptation or transparent description; the preserved formation and truth clauses, not the Javanese canon, remain the formal authority.",
     "Proof-system, soundness, sequent, discharge and tableau terminology is provisional controlled adaptation or transparent description; the preserved rules, derivation trees and iff directions, not the Javanese canon, remain the formal authority.",
     "Antecedent, succedent, eigenvariable and structural-rule terminology is provisional borrowing or transparent description; the preserved side conditions and inference trees, not the Javanese canon, remain the formal authority.",
-    "Proof-theoretic, provability, compactness and strong-generalization terminology is provisional borrowing or transparent description; the preserved finite-witness definitions and inference trees remain the formal authority."
+    "Proof-theoretic, provability, compactness and strong-generalization terminology is provisional borrowing or transparent description; the preserved finite-witness definitions and inference trees remain the formal authority.",
+    "Soundness, sequent satisfaction, contrapositive, identity and substitutability terminology is provisional specialization, borrowing or transparent description; the preserved definitions, inference rules and semantic cases remain the formal authority."
   ],
-  "build_and_visual_review": "The 36-page introduction/sets/relations/functions reader is accepted and published as v0.1.2. OLP-0049 through OLP-0080 are source-complete and reviewed here but are not yet integrated into a later full-reader build.",
+  "build_and_visual_review": "The 36-page introduction/sets/relations/functions reader is accepted and published as v0.1.2. OLP-0049 through OLP-0083 are source-complete and reviewed here but are not yet integrated into a later full-reader build.",
   "superseded_unit_reviews": [
     {
       "unit_id": "OLP-0021",

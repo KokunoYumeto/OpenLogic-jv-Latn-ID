@@ -1,11 +1,11 @@
 {
   "schema": "jv-batch-qa/1",
-  "utc": "2026-09-05T02:14:26.524447+00:00",
-  "checked_units": 80,
-  "structural_pass_units": 80,
+  "utc": "2026-09-05T03:08:22.656665+00:00",
+  "checked_units": 83,
+  "structural_pass_units": 83,
   "total_units": 722,
-  "segments": 1318,
-  "translated_segments": 856,
+  "segments": 1366,
+  "translated_segments": 888,
   "units": [
     {
       "unit_id": "OLP-0001",
@@ -1766,10 +1766,76 @@
       "source_math_count": 23,
       "target_math_count": 23,
       "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0081",
+      "source_path": "content/first-order-logic/sequent-calculus/soundness.tex",
+      "source_sha256": "4de487cafc9d685844abb2c0b29c7b51debeb30a9b1129c7a2fa8c13ae48b151",
+      "translation_sha256": "771a51a29c7c8e79971b8cc699bda691fb4b64543e1c9c9d64b611e0a7f7da4a",
+      "translation_bytes": 18606,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 25,
+      "target_paragraphs": 25,
+      "source_math_count": 321,
+      "target_math_count": 321,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0082",
+      "source_path": "content/first-order-logic/sequent-calculus/identity.tex",
+      "source_sha256": "0f9d6d0731f2a74f568d49545bfeeff9373aea71d188973549054823f240f23d",
+      "translation_sha256": "f3a7ae0378a6bb0aba9ccc8a96db830e6ba3006d56bc45dee830ba5536d1d1fc",
+      "translation_bytes": 2414,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 13,
+      "target_paragraphs": 13,
+      "source_math_count": 36,
+      "target_math_count": 36,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0083",
+      "source_path": "content/first-order-logic/sequent-calculus/soundness-identity.tex",
+      "source_sha256": "0cc6d3e92d57d3070076ce2daa13aa85c6da6ac3cfb2b5d56df87bb7fef4fac3",
+      "translation_sha256": "11b6b0be93079ea999d9b7a2c1f39ff4b0aa025c386a76e11a796cefd4333222",
+      "translation_bytes": 1813,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 10,
+      "target_paragraphs": 10,
+      "source_math_count": 29,
+      "target_math_count": 29,
+      "status": "structural_pass"
     }
   ],
   "failures": 0,
-  "semantic_reviewed_units": 80,
+  "semantic_reviewed_units": 83,
   "build": "see BUILD_SETS.json",
   "release_ready": false
 }
