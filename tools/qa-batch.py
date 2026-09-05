@@ -206,6 +206,22 @@ for u in units:
             quantified_premise_defect,
             quantified_premise_repair,
         )
+    # OLPL-015: one tableau exercise places a comma-separated pair of
+    # sentences inside a single signed-formula argument. Split it into the
+    # two true signed formulas required by the definition and closure goal.
+    if u['unit_id']=='OLP-0103':
+        signed_formula_list_defect=(
+            r'$\sFmla{\True}{!A \lor !B, \lnot !B}, \sFmla{\False}{!A}$'
+        )
+        signed_formula_list_repair=(
+            r'$\sFmla{\True}{!A \lor !B}, \sFmla{\True}{\lnot !B}, '
+            r'\sFmla{\False}{!A}$'
+        )
+        assert math_source.count(signed_formula_list_defect)==1
+        math_source=math_source.replace(
+            signed_formula_list_defect,
+            signed_formula_list_repair,
+        )
     checks={'paragraph_count':len(ac)==len(tc),'protected_commands':protected(protected_source)==protected(t),'math_sequence':math(math_source)==math(t),'token_sequence':tokens(a)==tokens(t),'environment_sequence':re.findall(r'\\(?:begin|end)\{[^}]+\}',a)==re.findall(r'\\(?:begin|end)\{[^}]+\}',t),'unicode_clean':'\ufffd' not in t and not re.search(r'[\uA980-\uA9DF]',t),'no_placeholder':not re.search(r'\b(?:TODO|TBD|TRANSLATE_ME)\b',t)}
     command_source=a
     if u['unit_id']=='OLP-0034':
@@ -313,6 +329,19 @@ for u in units:
         command_source=command_source.replace(
             quantified_premise_defect,
             quantified_premise_repair,
+        )
+    if u['unit_id']=='OLP-0103':
+        signed_formula_list_defect=(
+            r'$\sFmla{\True}{!A \lor !B, \lnot !B}, \sFmla{\False}{!A}$'
+        )
+        signed_formula_list_repair=(
+            r'$\sFmla{\True}{!A \lor !B}, \sFmla{\True}{\lnot !B}, '
+            r'\sFmla{\False}{!A}$'
+        )
+        assert command_source.count(signed_formula_list_defect)==1
+        command_source=command_source.replace(
+            signed_formula_list_defect,
+            signed_formula_list_repair,
         )
     checks['all_command_sequence']=re.findall(r'\\[A-Za-z@]+|\\[^A-Za-z@]',command_source)==re.findall(r'\\[A-Za-z@]+|\\[^A-Za-z@]',t)
     row={'unit_id':u['unit_id'],'source_path':u['source_path'],'source_sha256':sha(b),'translation_sha256':sha(tb),'translation_bytes':len(tb),'checks':checks,'source_paragraphs':len(ac),'target_paragraphs':len(tc),'source_math_count':len(math(a)),'target_math_count':len(math(t)),'status':'structural_pass' if all(checks.values()) else 'defect'}

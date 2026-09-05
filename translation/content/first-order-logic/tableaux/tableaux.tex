@@ -1,0 +1,56 @@
+% Part: first-order-logic
+% Chapter: tableaux
+
+\documentclass[../../../include/open-logic-chapter]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olchapter{fol}{tab}{Tableau}}
+      {\olchapter{pl}{tab}{Tableau}}
+
+\begin{editorial}
+Bab iki nyuguhake sistem tableau analitik mawa tandha.
+  
+Kanggo nglebokake utawa nyingkirake materi kang magepokan karo
+tableau minangka sistem bukti, gunakna tag ``prfTab''. Cathetan
+koreksi sumber OLPL-013: teks Inggris nyebut deduksi natural, nanging
+jeneng bab, isi, lan tag prfTab kabeh nemtokake tableau.
+\end{editorial}
+
+\olimport{rules-and-proofs}
+
+\olimport{propositional-rules}
+
+\iftag{FOL}{%
+  \olimport{quantifier-rules}
+}{}
+
+\olimport{derivations}
+
+\olimport{proving-things}
+
+\iftag{FOL}{%
+  \olimport{proving-things-quant}
+}{}
+
+\olimport{proof-theoretic-notions}
+
+\olimport{provability-consistency}
+
+\olimport{provability-propositional}
+
+\iftag{FOL}{%
+  \olimport{provability-quantifiers}
+}{}
+
+\olimport{soundness}
+
+\iftag{FOL}{%
+  \olimport{identity}
+  \olimport{soundness-identity}
+}{}
+
+\OLEndChapterHook
+
+\end{document}

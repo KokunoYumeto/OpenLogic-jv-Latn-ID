@@ -1,0 +1,116 @@
+% Part: first-order-logic
+% Chapter: tableaux
+% Section: quantifier-rules
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{tab}{qrl}
+
+\olsection{Aturan Kuantor}
+
+\subsection{Aturan kanggo $\lforall$}
+
+\begin{defish}
+\AxiomC{\sFmla{\True}{\lforall[x][!A(x)]}}
+\RightLabel{\TRule{\True}{\forall}}
+\UnaryInfC{\sFmla{\True}{!A(t)}}
+\DisplayProof
+\hfill
+\AxiomC{\sFmla{\False}{\lforall[x][!A(x)]}}
+\RightLabel{\TRule{\False}{\lforall}}
+\UnaryInfC{\sFmla{\False}{!A(a)}}
+\DisplayProof
+\end{defish}
+
+Ing \TRule{\True}{\lforall}, $t$ yaiku term tertutup (yaiku, kang
+ora ngemot variabel). Ing \TRule{\False}{\lforall}, $a$~yaiku
+!!a{constant} kang ora kena muncul ing endi wae ing cabang ing
+sadhuwure aturan \TRule{\False}{\lforall}. Kita ngarani $a$
+\emph{eigenvariabel} saka inferensi \TRule{\False}{\forall}.
+\footnote{Kita nggunakake istilah ``eigenvariabel'' sanajan $a$ ing
+aturan ndhuwur iku !!a{constant}. Iki ana amarga sebab sajarah.}
+
+\subsection{Aturan kanggo $\lexists$}
+
+\begin{defish}
+\AxiomC{\sFmla{\True}{\lexists[x][!A(x)]}}
+\RightLabel{\TRule{\True}{\lexists}}
+\UnaryInfC{\sFmla{\True}{!A(a)}}
+\DisplayProof
+\hfill
+\AxiomC{\sFmla{\False}{\lexists[x][!A(x)]}}
+\RightLabel{\TRule{\False}{\lexists}}
+\UnaryInfC{\sFmla{\False}{!A(t)}}
+\DisplayProof
+\end{defish}
+
+Maneh, $t$~yaiku term tertutup, lan $a$~yaiku !!a{constant} kang ora
+muncul ing cabang ing sadhuwure aturan~\TRule{\True}{\lexists}. Kita
+ngarani $a$ \emph{eigenvariabel} saka inferensi
+\TRule{\True}{\lexists}.
+
+Syarat manawa eigenvariabel ora muncul ing cabang ing sadhuwure
+inferensi \TRule{\False}{\lforall} utawa \TRule{\True}{\lexists}
+diarani \emph{syarat eigenvariabel}.
+
+\begin{explain}
+Elinga konvensi manawa nalika $!A$ iku !!a{formula} kanthi
+!!{variable}~$x$ bebas, kita nuduhake prakara iki kanthi nulis~$!A(x)$.
+Ing konteks kang padha, $!A(t)$ banjur dadi cekakan kanggo
+~$\Subst{!A}{t}{x}$. Dadi, aturan \TRule{\False}{\lexists} uga bisa
+ditulis kaya mangkene:
+\begin{prooftree}
+  \AxiomC{\sFmla{\False}{\lexists[x][!A]}}
+  \RightLabel{\TRule{\False}{\lexists}}
+  \UnaryInfC{\sFmla{\False}{\Subst{!A}{t}{x}}}
+\end{prooftree}
+Gatekna yen $t$ bisa wis muncul ing~$!A$, tuladhane $!A$ bisa
+awujud~$\Atom{\Obj P}{t,x}$. Mula, nyimpulake
+$\sFmla{\False}{\Atom{\Obj P}{t,t}}$ saka
+~$ \sFmla{\False}{\lexists[x][\Atom{\Obj P}{t,x}]}$ iku panrapan
+aturan~\TRule{\False}{\lexists} kang bener. Nanging, syarat
+eigenvariabel ing \TRule{\False}{\lforall} lan
+~\TRule{\True}{\lexists} nuntut supaya !!{constant}~$a$ ora muncul
+ing~$!A$. Dadi, kita ora bisa nyimpulake kanthi bener
+$\sFmla{\False}{\Atom{\Obj P}{a,a}}$ saka
+$\sFmla{\False}{\lforall[x][\Atom{\Obj P}{a,x}]}$ nganggo
+~$\TRule{\False}{\lforall}$.
+\end{explain}
+
+\begin{explain}
+Ing \TRule{\True}{\lforall} lan \TRule{\False}{\lexists}, ora ana
+watesan eigenvariabel tumrap pilihan term tertutup~$t$. Ing sisih
+liyane, ing aturan \TRule{\True}{\lexists} lan
+\TRule{\False}{\lforall}, syarat eigenvariabel nuntut supaya
+!!{constant}~$a$ ora muncul ing endi wae ing cabang ing sadhuwure
+inferensi kang gegayutan. Cathetan koreksi sumber OLPL-014: teks
+Inggris ngarani t tanpa watesan, sanajan definisi aturan ing ndhuwur
+mbatesi t dadi term tertutup; kang ora ana yaiku watesan
+eigenvariabel. Syarat iki perlu kanggo mesthekake yen sistem iku sah.
+Tanpa syarat iki, ing ngisor iki mesthine dadi !!{tableau} katutup
+kanggo $\lexists[x][\formula{A}(x)] \lif
+\lforall[x][\formula{A}(x)]$:
+\begin{center}
+\begin{tableau}{}
+  [\sFmla{\False}{\lexists[x][\formula{A}(x)] \lif \lforall[x][\formula{A}(x)]}, just=\TAss
+    [\sFmla{\True}{\lexists[x][\formula{A}(x)]},
+      just={\TRule{\False}{\lif}[1]}
+      [\sFmla{\False}{\lforall[x][\formula{A}(x)]},
+        just={\TRule{\False}{\lif}[1]}
+        [\sFmla{\True}{\formula{A}(a)},
+          just={\TRule{\True}{\lexists}[2]}
+          [\sFmla{\False}{\formula{A}(a)},
+            just={\TRule{\False}{\lforall}[3]}, close]
+        ]
+      ]
+    ]
+  ]
+\end{tableau}
+\end{center}
+Nanging, $\lexists[x][\formula{A}(x)] \lif
+\lforall[x][\formula{A}(x)]$ iku ora valid.
+\end{explain}
+
+\end{document}

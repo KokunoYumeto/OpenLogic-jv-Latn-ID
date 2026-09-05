@@ -21,7 +21,7 @@ PRIORITY = OUT / "PRIORITY_REVIEW.md"
 CSV = OUT / "DECISION_OCCURRENCES.csv"
 START = OUT / "START_HERE.md"
 QA = OUT / "TRANSLATION_DECISION_QA.json"
-COMMIT = "37aa9c7e3b6539df4e4c375dd0f55180b2482ec8"
+COMMIT = "23e7e1cdb096dbaa6c39a2b3d13d455cdb068d6e"
 SOURCE_REVISION = "9620cc73f9c8e0ad003c514a5d3748f29611c4c0"
 SCHEMA_URI = (
     "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-translations/"
@@ -150,7 +150,7 @@ edition = {
 records = [json.loads(value) for value in LOG.read_text(encoding="utf-8-sig").splitlines() if value.strip()]
 metadata, legacy = records[0], records[1:]
 assert metadata["record_type"] == "metadata"
-assert len(legacy) == 157
+assert len(legacy) == 162
 assert len({row["decision_id"] for row in legacy}) == len(legacy)
 passages = {
     row["passage_id"]: row
@@ -265,6 +265,9 @@ audit_files = {
     "OLPL-010": "evidence/OLPL_NATURAL_DEDUCTION_SOURCE_AUDIT.json",
     "OLPL-011": "evidence/OLPL_NATURAL_DEDUCTION_SOURCE_AUDIT.json",
     "OLPL-012": "evidence/OLPL_NATURAL_DEDUCTION_SOURCE_AUDIT.json",
+    "OLPL-013": "evidence/OLPL_TABLEAUX_FOUNDATIONS_SOURCE_AUDIT.json",
+    "OLPL-014": "evidence/OLPL_TABLEAUX_FOUNDATIONS_SOURCE_AUDIT.json",
+    "OLPL-015": "evidence/OLPL_TABLEAUX_FOUNDATIONS_SOURCE_AUDIT.json",
 }
 
 
@@ -586,7 +589,7 @@ machine = {
         "doi": None,
         "source_revision": SOURCE_REVISION,
         "coverage_state": "partial",
-        "source_units": 97,
+        "source_units": 104,
         "reader_units": 24,
     },
     "generated_utc": datetime.datetime.now(datetime.timezone.utc).isoformat(),
@@ -618,7 +621,7 @@ def markdown(title: str, selected: list[dict], intro: str) -> str:
         "",
         intro,
         "",
-        "Coverage: OLP-0001 through OLP-0097; 97 of 722 frozen source units. Reader-page bindings remain pending until a future pagination containing each occurrence is accepted.",
+        "Coverage: OLP-0001 through OLP-0104; 104 of 722 frozen source units. Reader-page bindings remain pending until a future pagination containing each occurrence is accepted.",
         "",
         "| ID | Priority | Kind | Source | Chosen rendering | Confidence | Expert question |",
         "|---|---|---|---|---|---|---|",
@@ -772,7 +775,7 @@ qa = {
         "draft": "2020-12",
         "schema_validation": "PASS",
     },
-    "edition": {"language_tag": "jv-Latn-ID", "script": "Latn", "coverage": "partial-97/722"},
+    "edition": {"language_tag": "jv-Latn-ID", "script": "Latn", "coverage": "partial-104/722"},
     "counts": {
         "decisions": len(decisions),
         "terminology": sum(value["record_kind"] == "terminology" for value in decisions),

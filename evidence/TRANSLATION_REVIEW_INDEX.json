@@ -1,13 +1,13 @@
 {
   "schema": "jv-translation-review-index/1",
-  "generated_utc": "2026-09-05T16:01:53.329615+00:00",
+  "generated_utc": "2026-09-05T16:31:44.573617+00:00",
   "locale": "jv-Latn-ID",
   "script": "Latn",
-  "coverage": "OLP-0001 through OLP-0097; 97 of 722 frozen source units",
+  "coverage": "OLP-0001 through OLP-0104; 104 of 722 frozen source units",
   "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
   "source_log": {
     "path": "editorial/TRANSLATION_REVIEW_LOG.jsonl",
-    "sha256": "ff0c416056b8b5dfc65185670593554e1690a9d6bdd2c5924ab8d5ddbc13799f",
+    "sha256": "0e4ca771869a16c2b768927c32d1cedb5571d4d307d6ec24c0d36bec6166704e",
     "hash_representation": "UTF-8 with LF-normalized line endings (Git blob)"
   },
   "pagination": {
@@ -20,11 +20,11 @@
     "P2-specialized-language-review": "Current logic and proof-theory terminology (JV-T079 onward) that is provisional and lacks direct concept-usage or lexical-semantics attestation."
   },
   "counts": {
-    "decisions": 157,
-    "terminology_decisions": 109,
-    "difficult_decisions": 48,
-    "priority_decisions": 56,
-    "tracked_occurrences": 344
+    "decisions": 162,
+    "terminology_decisions": 111,
+    "difficult_decisions": 51,
+    "priority_decisions": 60,
+    "tracked_occurrences": 353
   },
   "priority_decision_ids": [
     "JV-T080",
@@ -35,6 +35,7 @@
     "JV-T093",
     "JV-T094",
     "JV-T108",
+    "JV-T110",
     "JV-D001",
     "JV-D002",
     "JV-D003",
@@ -82,7 +83,10 @@
     "JV-D045",
     "JV-D046",
     "JV-D047",
-    "JV-D048"
+    "JV-D048",
+    "JV-D049",
+    "JV-D050",
+    "JV-D051"
   ],
   "decisions": [
     {
@@ -143,8 +147,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -206,8 +210,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -269,8 +273,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -331,8 +335,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -386,8 +390,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -441,8 +445,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -495,8 +499,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -547,8 +551,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -600,8 +604,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -655,8 +659,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -724,8 +728,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -802,8 +806,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -857,8 +861,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -912,8 +916,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -985,8 +989,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -1058,8 +1062,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -1131,8 +1135,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -1204,8 +1208,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -1277,8 +1281,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -1350,8 +1354,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -1422,8 +1426,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -1491,8 +1495,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -1572,8 +1576,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -1662,8 +1666,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -1752,8 +1756,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -1851,8 +1855,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -1949,8 +1953,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -2040,8 +2044,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -2140,8 +2144,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -2256,8 +2260,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -2350,8 +2354,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -2448,8 +2452,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -2564,8 +2568,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -2734,8 +2738,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -2868,8 +2872,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -3002,8 +3006,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -3056,8 +3060,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -3164,8 +3168,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -3244,8 +3248,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -3414,8 +3418,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -3546,8 +3550,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -3650,8 +3654,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -3782,8 +3786,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -3932,8 +3936,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -4036,8 +4040,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -4139,8 +4143,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -4240,8 +4244,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -4368,8 +4372,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -4430,8 +4434,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -4554,8 +4558,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -4643,8 +4647,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -4793,8 +4797,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -4890,8 +4894,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -5003,8 +5007,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -5091,8 +5095,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -5214,8 +5218,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -5302,8 +5306,8 @@
       ],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -5365,8 +5369,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -5446,8 +5450,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -5509,8 +5513,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -5572,8 +5576,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -5715,8 +5719,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -5794,8 +5798,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -5883,8 +5887,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -5954,8 +5958,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -6041,8 +6045,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -6130,8 +6134,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -6289,8 +6293,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -6360,8 +6364,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -6463,8 +6467,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -6560,8 +6564,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -6637,8 +6641,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -6716,8 +6720,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -6783,8 +6787,8 @@
       ],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -6906,8 +6910,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -6995,8 +6999,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -7117,8 +7121,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -7249,8 +7253,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -7371,8 +7375,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -7513,8 +7517,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -7663,8 +7667,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -7811,8 +7815,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -7925,8 +7929,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -8054,8 +8058,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -8160,8 +8164,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -8274,8 +8278,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -8318,8 +8322,8 @@
       ],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -8466,8 +8470,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -8604,8 +8608,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -8718,8 +8722,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -8842,8 +8846,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -8998,8 +9002,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -9106,8 +9110,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -9243,8 +9247,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -9383,8 +9387,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -9428,8 +9432,8 @@
       ],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -9524,8 +9528,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -9638,8 +9642,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -9796,8 +9800,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -9918,8 +9922,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -10056,8 +10060,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -10130,8 +10134,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -10177,8 +10181,8 @@
       ],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -10334,8 +10338,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -10457,8 +10461,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -10502,8 +10506,8 @@
       ],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -10654,8 +10658,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -10766,8 +10770,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -10820,8 +10824,172 @@
       ],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e",
-        "current_translation_coverage_sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
+      }
+    },
+    {
+      "record_type": "terminology_decision",
+      "decision_id": "JV-T110",
+      "history": "contemporaneous",
+      "english_term_or_issue": "checkmark; remains unchecked; every open branch",
+      "chosen_javanese": "tandha centhang; durung diwenehi tandha centhang; saben cabang bukak",
+      "chosen_sense_and_constraints": "Use ordinary marking and branch vocabulary rather than a new technical borrowing. OLP-0103 explains that a checkmark is only a construction aid and may be added after the corresponding rule has been applied in every open branch containing the signed formula.",
+      "status": "provisional_descriptive_tableau_construction_vocabulary",
+      "open_to_correction": true,
+      "source_locations": [
+        {
+          "searched_term": "checkmark",
+          "found": true,
+          "unit_id": "OLP-0103",
+          "path": "upstream/content/first-order-logic/tableaux/proving-things.tex",
+          "line": 40,
+          "matched_text": "checkmark",
+          "raw_file_sha256": "6940ff2f8466cfb9dc740a4e7aa2cf9551c9a3d3304aa8ebe93217d11e451e90"
+        },
+        {
+          "searched_term": "remains unchecked",
+          "found": true,
+          "unit_id": "OLP-0103",
+          "path": "upstream/content/first-order-logic/tableaux/proving-things.tex",
+          "line": 302,
+          "matched_text": "remains unchecked",
+          "raw_file_sha256": "6940ff2f8466cfb9dc740a4e7aa2cf9551c9a3d3304aa8ebe93217d11e451e90"
+        },
+        {
+          "searched_term": "every open branch",
+          "found": true,
+          "unit_id": "OLP-0103",
+          "path": "upstream/content/first-order-logic/tableaux/proving-things.tex",
+          "line": 43,
+          "matched_text": "every open branch",
+          "raw_file_sha256": "6940ff2f8466cfb9dc740a4e7aa2cf9551c9a3d3304aa8ebe93217d11e451e90"
+        }
+      ],
+      "target_locations": [
+        {
+          "searched_term": "tandha centhang",
+          "found": true,
+          "unit_id": "OLP-0103",
+          "path": "translation/content/first-order-logic/tableaux/proving-things.tex",
+          "line": 40,
+          "matched_text": "tandha centhang",
+          "raw_file_sha256": "3f9f89c5005b832044384ffe491023d448c1e614c634ecc1f8f25c93eb7ee85f"
+        },
+        {
+          "searched_term": "durung diwenehi tandha centhang",
+          "found": true,
+          "unit_id": "OLP-0103",
+          "path": "translation/content/first-order-logic/tableaux/proving-things.tex",
+          "line": 303,
+          "matched_text": "durung diwenehi tandha centhang",
+          "raw_file_sha256": "3f9f89c5005b832044384ffe491023d448c1e614c634ecc1f8f25c93eb7ee85f"
+        },
+        {
+          "searched_term": "saben cabang bukak",
+          "found": true,
+          "unit_id": "OLP-0103",
+          "path": "translation/content/first-order-logic/tableaux/proving-things.tex",
+          "line": 43,
+          "matched_text": "saben cabang bukak",
+          "raw_file_sha256": "3f9f89c5005b832044384ffe491023d448c1e614c634ecc1f8f25c93eb7ee85f"
+        }
+      ],
+      "actual_authorities_checked": [
+        {
+          "passage_id": "JV-P002",
+          "source_id": "JV-C001",
+          "authority_title": "Dumadine Jagad sajrone Teks Widya Kirana (Tintingan Filsafat)",
+          "evidence_role": "academic_prose_register",
+          "consulted_scope": "Observed explanatory ngoko morphology/lexicon: yaiku, kang, iki, nggunakake, njlentrehake. Register classification is editorial inference from prose, not a quoted author label.",
+          "excerpt_sha256": "8ceb908a98c7b6119a7b28cd9c2ddbfd47a2a3f4d72df2a5366aa9e0ac88e10e"
+        },
+        {
+          "passage_id": "JV-P005",
+          "source_id": "JV-C002",
+          "authority_title": "Pedoman Umum Ejaan Bahasa Jawa Huruf Latin yang Disempurnakan, Edisi Revisi",
+          "evidence_role": "orthography",
+          "consulted_scope": "Preserve distinct digraph spelling (dhasar, padha, etc.); PDF is imposed two-up and printed pages are nonsequential.",
+          "excerpt_sha256": "4b7165a4bd3a10f9e41f7bf326087832bcb50482fb3447d6589b766b8d583404"
+        },
+        {
+          "passage_id": "JV-P006",
+          "source_id": "JV-C002",
+          "authority_title": "Pedoman Umum Ejaan Bahasa Jawa Huruf Latin yang Disempurnakan, Edisi Revisi",
+          "evidence_role": "borrowing_policy",
+          "consulted_scope": "Established adapted spellings are retained; foreign suffixes absorbed with whole words. Supports controlled provisional borrowing, not attestation of himpunan or ekstensionalitas.",
+          "excerpt_sha256": "7902184510d01a3d274ffcafd8b1fa9568728bc51bffccdca30faf9104be6d83"
+        },
+        {
+          "passage_id": "JV-P008",
+          "source_id": "JV-C004",
+          "authority_title": "Kamus Bahasa Jawa-Indonesia digital",
+          "evidence_role": "general_lexeme",
+          "consulted_scope": "Distinguishes proof/evidence homonym from food/eating and bakti homonyms. Formal derivation sense not established by dictionary alone.",
+          "excerpt_sha256": "c3e95f26eac8eb65394ea070054aac0fb1c9308cce24e72c19b7b5ae4305ffe2"
+        }
+      ],
+      "not_found_or_scope_limit": "No specialized Javanese mathematical attestation is claimed; the listed evidence supports only the roles and scopes stated.",
+      "alternatives_for_review": [
+        "tandha priksa; wis diproses; saben pang bukak"
+      ],
+      "uncertainty": "medium_to_high: provisional technical wording; mathematical sense is fixed but Javanese wording may change",
+      "precise_review_question": "For formal written Javanese, is “tandha centhang; durung diwenehi tandha centhang; saben cabang bukak” clear and idiomatic for the constrained sense “checkmark; remains unchecked; every open branch”, or should one of these be preferred: tandha priksa; wis diproses; saben pang bukak?",
+      "source_audit_ids": [],
+      "retrospective_basis": {
+        "ledger_record_date": "2026-09-05",
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
+      }
+    },
+    {
+      "record_type": "terminology_decision",
+      "decision_id": "JV-T111",
+      "history": "contemporaneous",
+      "english_term_or_issue": "source repairs in the tableau foundations: proof-system name, closed-term qualification, signed-formula list",
+      "chosen_javanese": "jeneng sistem bukti, watesan term tertutup, lan dhaptar formula mawa tandha dibalekake",
+      "chosen_sense_and_constraints": "The frozen OLP-0098 driver calls prfTab material natural deduction; OLP-0101 denies restrictions on terms immediately after requiring closed terms; and OLP-0103 places two premises inside one signed-formula argument. Apply only the readings fixed by the chapter path, displayed rules, definition and parallel exercises; preserve frozen English bytes and record adjacent identifiers.",
+      "status": "confirmed_local_source_corrections",
+      "open_to_correction": true,
+      "source_locations": [
+        {
+          "searched_term": "proof-system name, closed-term qualification, signed-formula list",
+          "found": false,
+          "searched_units": [
+            "OLP-0098",
+            "OLP-0101",
+            "OLP-0103"
+          ]
+        }
+      ],
+      "target_locations": [
+        {
+          "searched_term": "jeneng sistem bukti, watesan term tertutup, lan dhaptar formula mawa tandha dibalekake",
+          "found": false,
+          "searched_units": [
+            "OLP-0098",
+            "OLP-0101",
+            "OLP-0103"
+          ]
+        }
+      ],
+      "actual_authorities_checked": [],
+      "not_found_or_scope_limit": "Listed attestations support the stated lexical scope; extension to the formal mathematical sense remains controlled by English.",
+      "alternatives_for_review": [
+        "retain the three inconsistent source readings",
+        "silently repair without adjacent identifiers"
+      ],
+      "uncertainty": "low_for_source_finding_or_general_lexeme; formal Javanese usage remains reviewable",
+      "precise_review_question": "For formal written Javanese, is “jeneng sistem bukti, watesan term tertutup, lan dhaptar formula mawa tandha dibalekake” clear and idiomatic for the constrained sense “source repairs in the tableau foundations: proof-system name, closed-term qualification, signed-formula list”, or should one of these be preferred: retain the three inconsistent source readings, silently repair without adjacent identifiers?",
+      "source_audit_ids": [
+        "OLPL-013",
+        "OLPL-014",
+        "OLPL-015"
+      ],
+      "retrospective_basis": {
+        "ledger_record_date": "2026-09-05",
+        "term_ledger_sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c",
+        "current_translation_coverage_sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
       }
     },
     {
@@ -10850,7 +11018,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": 8,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -10895,7 +11063,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": 5,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -10940,7 +11108,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": 6,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -10984,7 +11152,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": 7,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -11028,7 +11196,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": 10,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -11079,7 +11247,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": 10,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -11130,7 +11298,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": 11,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -11182,7 +11350,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": null,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -11233,7 +11401,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": null,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -11285,7 +11453,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": 19,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -11329,7 +11497,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": 19,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -11380,7 +11548,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": 19,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -11424,7 +11592,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": 19,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -11468,7 +11636,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": 20,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -11519,7 +11687,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": 22,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -11563,7 +11731,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": 23,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -11614,7 +11782,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": 23,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -11665,7 +11833,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": 24,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -11716,7 +11884,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": 25,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -11767,7 +11935,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": 25,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -11811,7 +11979,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": 26,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -11855,7 +12023,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": 27,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -11907,7 +12075,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": 28,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -11958,7 +12126,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": 29,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -12003,7 +12171,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": 30,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -12048,7 +12216,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": 30,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -12093,7 +12261,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": 31,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -12138,7 +12306,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": null,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -12183,7 +12351,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": 32,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -12228,7 +12396,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": 32,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -12273,7 +12441,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": 34,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -12318,7 +12486,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": 34,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -12363,7 +12531,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": 34,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -12408,7 +12576,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": 34,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -12453,7 +12621,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": 34,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -12498,7 +12666,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": 18,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -12550,7 +12718,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": 38,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -12601,7 +12769,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": 39,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -12652,7 +12820,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": 39,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -12703,7 +12871,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": 40,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -12754,7 +12922,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": 41,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -12805,7 +12973,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": 42,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -12856,7 +13024,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": 42,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -12907,7 +13075,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": 43,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -12958,7 +13126,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": 44,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -13009,7 +13177,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": 45,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -13060,7 +13228,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": 45,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -13111,7 +13279,7 @@
         {
           "path": "editorial/ERRATA.md",
           "line": 46,
-          "raw_file_sha256": "c7a3d7b81dafa1f902cc48debb6af0b9af3d128e20c7ac782a3ef55bd3a176fe"
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
         }
       ],
       "actual_authorities_checked": [
@@ -13135,6 +13303,159 @@
       "uncertainty": "low on the identified mathematical reading; medium on the most idiomatic Javanese explanation",
       "open_to_correction": true,
       "precise_review_question": "Does the restored negation make the eigenvariable discussion agree with the proof while preserving the same freshness result?"
+    },
+    {
+      "record_type": "difficult_translation_or_source_decision",
+      "decision_id": "JV-D049",
+      "history": "contemporaneous_source_audit",
+      "unit_id": "OLP-0098",
+      "issue": "OLPL-013: the tableau chapter driver says its prfTab tag controls natural-deduction material",
+      "chosen_wording_or_reading": "Name tableaux as the proof system, following the chapter path, tag name and thirteen imported tableau sections.",
+      "source_location": {
+        "unit_id": "OLP-0098",
+        "path": "upstream/content/first-order-logic/tableaux/tableaux.tex",
+        "line": 15,
+        "matched_text": "material relevant to natural deduction as a",
+        "raw_file_sha256": "1c6e7018e63cae3440e85d537303288261afd422b9e13bc455b99c2d206aa1b6"
+      },
+      "target_locations": [
+        {
+          "unit_id": "OLP-0098",
+          "path": "translation/content/first-order-logic/tableaux/tableaux.tex",
+          "line": 15,
+          "line_end": 19,
+          "segment_id": "OLP-0098-P006",
+          "raw_file_sha256": "569538f64d8f5bb2fd7f074c2d1a0d8e4fe6e1fc0e1aef3f152042a0d927d148"
+        },
+        {
+          "path": "editorial/ERRATA.md",
+          "line": 47,
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
+        }
+      ],
+      "actual_authorities_checked": [
+        {
+          "authority": "Frozen English source at declared revision",
+          "role": "semantic and defect identity"
+        },
+        {
+          "authority": "OLPL-TABLEAUX-FOUNDATIONS-20260905",
+          "review_sha256": "013a0d87daa2d3aae2691ca17daa12ed4f9190f74e3737cf722f725f0a736ba1"
+        }
+      ],
+      "source_audit_ids": [
+        "OLPL-013"
+      ],
+      "javanese_canon_status": "Not a Javanese-canon inference; mathematical meaning comes from the English formulas, definitions and finite checks. Wording remains reviewable.",
+      "alternatives_for_review": [
+        "Retain the wrong natural-deduction name",
+        "remove the editorial guidance."
+      ],
+      "uncertainty": "low on the identified mathematical reading; medium on the most idiomatic Javanese explanation",
+      "open_to_correction": true,
+      "precise_review_question": "Does the repaired guidance now identify the tag-controlled proof system without changing its scope?"
+    },
+    {
+      "record_type": "difficult_translation_or_source_decision",
+      "decision_id": "JV-D050",
+      "history": "contemporaneous_source_audit",
+      "unit_id": "OLP-0101",
+      "issue": "OLPL-014: the quantifier explanation denies any restriction on terms after requiring closed terms",
+      "chosen_wording_or_reading": "State that there is no eigenvariable restriction on the choice of a closed term, retaining both the closure requirement and the intended contrast with fresh-constant rules.",
+      "source_location": {
+        "unit_id": "OLP-0101",
+        "path": "upstream/content/first-order-logic/tableaux/quantifier-rules.tex",
+        "line": 80,
+        "matched_text": "there are no restrictions on the term~$t$",
+        "raw_file_sha256": "682b3f1de2569dc63657243b83a3daa8966cc1786fa44d5d2fa34da2658e2bb0"
+      },
+      "target_locations": [
+        {
+          "unit_id": "OLP-0101",
+          "path": "translation/content/first-order-logic/tableaux/quantifier-rules.tex",
+          "line": 82,
+          "line_end": 114,
+          "segment_id": "OLP-0101-P014",
+          "raw_file_sha256": "912b7b4f76fdcf6af107b9271aa2b3661c35fed14a56657d9366e60118cc5cfc"
+        },
+        {
+          "path": "editorial/ERRATA.md",
+          "line": 48,
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
+        }
+      ],
+      "actual_authorities_checked": [
+        {
+          "authority": "Frozen English source at declared revision",
+          "role": "semantic and defect identity"
+        },
+        {
+          "authority": "OLPL-TABLEAUX-FOUNDATIONS-20260905",
+          "review_sha256": "013a0d87daa2d3aae2691ca17daa12ed4f9190f74e3737cf722f725f0a736ba1"
+        }
+      ],
+      "source_audit_ids": [
+        "OLPL-014"
+      ],
+      "javanese_canon_status": "Not a Javanese-canon inference; mathematical meaning comes from the English formulas, definitions and finite checks. Wording remains reviewable.",
+      "alternatives_for_review": [
+        "Retain the unrestricted-term contradiction",
+        "silently add a different restriction."
+      ],
+      "uncertainty": "low on the identified mathematical reading; medium on the most idiomatic Javanese explanation",
+      "open_to_correction": true,
+      "precise_review_question": "Does the qualification clearly preserve arbitrary choice among closed terms while distinguishing the eigenvariable rules?"
+    },
+    {
+      "record_type": "difficult_translation_or_source_decision",
+      "decision_id": "JV-D051",
+      "history": "contemporaneous_source_audit",
+      "unit_id": "OLP-0103",
+      "issue": "OLPL-015: an exercise places A-or-B and not-B inside one true signed-formula argument",
+      "chosen_wording_or_reading": "Split the two sentences into separate true signed formulas, following the definition, parallel exercises and intended closure.",
+      "source_location": {
+        "unit_id": "OLP-0103",
+        "path": "upstream/content/first-order-logic/tableaux/proving-things.tex",
+        "line": 439,
+        "matched_text": "\\sFmla{\\True}{!A \\lor !B, \\lnot !B}, \\sFmla{\\False}{!A}",
+        "raw_file_sha256": "6940ff2f8466cfb9dc740a4e7aa2cf9551c9a3d3304aa8ebe93217d11e451e90"
+      },
+      "target_locations": [
+        {
+          "unit_id": "OLP-0103",
+          "path": "translation/content/first-order-logic/tableaux/proving-things.tex",
+          "line": 431,
+          "line_end": 451,
+          "segment_id": "OLP-0103-P016",
+          "raw_file_sha256": "3f9f89c5005b832044384ffe491023d448c1e614c634ecc1f8f25c93eb7ee85f"
+        },
+        {
+          "path": "editorial/ERRATA.md",
+          "line": 49,
+          "raw_file_sha256": "f5d4f6c07c476b35c8c31ab539380077dea78defcbb0c473e43f3d99ac4d0a37"
+        }
+      ],
+      "actual_authorities_checked": [
+        {
+          "authority": "Frozen English source at declared revision",
+          "role": "semantic and defect identity"
+        },
+        {
+          "authority": "OLPL-TABLEAUX-FOUNDATIONS-20260905",
+          "review_sha256": "013a0d87daa2d3aae2691ca17daa12ed4f9190f74e3737cf722f725f0a736ba1"
+        }
+      ],
+      "source_audit_ids": [
+        "OLPL-015"
+      ],
+      "javanese_canon_status": "Not a Javanese-canon inference; mathematical meaning comes from the English formulas, definitions and finite checks. Wording remains reviewable.",
+      "alternatives_for_review": [
+        "Treat a comma-separated list as one sentence",
+        "silently drop not-B."
+      ],
+      "uncertainty": "low on the identified mathematical reading; medium on the most idiomatic Javanese explanation",
+      "open_to_correction": true,
+      "precise_review_question": "Does the repaired exercise now present three well-formed signed assumptions with the intended signs?"
     }
   ],
   "occurrences": [
@@ -18595,6 +18916,72 @@
       "expert_question": "For formal written Javanese, is “makarya saka ngisor menyang ndhuwur; makarya saka ndhuwur menyang ngisor; cabang” clear and idiomatic for the constrained sense “work from the bottom up; work from the top down; branch”, or should one of these be preferred: panelusuran saka ancas; pambangunan saka asumsi; pang?"
     },
     {
+      "decision_id": "JV-T110",
+      "record_type": "terminology_decision",
+      "occurrence_index": 1,
+      "unit_id": "OLP-0103",
+      "section": "first-order-logic/tableaux/proving-things",
+      "source_path": "upstream/content/first-order-logic/tableaux/proving-things.tex",
+      "source_line": 40,
+      "target_path": "translation/content/first-order-logic/tableaux/proving-things.tex",
+      "target_line_start": 40,
+      "target_line_end": 40,
+      "segment_id": "",
+      "script": "Latn",
+      "locale": "jv-Latn-ID",
+      "chosen_rendering": "tandha centhang; durung diwenehi tandha centhang; saben cabang bukak",
+      "decision_status": "provisional_descriptive_tableau_construction_vocabulary",
+      "review_priority": "P2-specialized-language-review",
+      "accepted_reader_release": "",
+      "accepted_pdf_page": "",
+      "page_binding_status": "pending_next_accepted_reader_pagination",
+      "expert_question": "For formal written Javanese, is “tandha centhang; durung diwenehi tandha centhang; saben cabang bukak” clear and idiomatic for the constrained sense “checkmark; remains unchecked; every open branch”, or should one of these be preferred: tandha priksa; wis diproses; saben pang bukak?"
+    },
+    {
+      "decision_id": "JV-T110",
+      "record_type": "terminology_decision",
+      "occurrence_index": 2,
+      "unit_id": "OLP-0103",
+      "section": "first-order-logic/tableaux/proving-things",
+      "source_path": "upstream/content/first-order-logic/tableaux/proving-things.tex",
+      "source_line": 302,
+      "target_path": "translation/content/first-order-logic/tableaux/proving-things.tex",
+      "target_line_start": 303,
+      "target_line_end": 303,
+      "segment_id": "",
+      "script": "Latn",
+      "locale": "jv-Latn-ID",
+      "chosen_rendering": "tandha centhang; durung diwenehi tandha centhang; saben cabang bukak",
+      "decision_status": "provisional_descriptive_tableau_construction_vocabulary",
+      "review_priority": "P2-specialized-language-review",
+      "accepted_reader_release": "",
+      "accepted_pdf_page": "",
+      "page_binding_status": "pending_next_accepted_reader_pagination",
+      "expert_question": "For formal written Javanese, is “tandha centhang; durung diwenehi tandha centhang; saben cabang bukak” clear and idiomatic for the constrained sense “checkmark; remains unchecked; every open branch”, or should one of these be preferred: tandha priksa; wis diproses; saben pang bukak?"
+    },
+    {
+      "decision_id": "JV-T110",
+      "record_type": "terminology_decision",
+      "occurrence_index": 3,
+      "unit_id": "OLP-0103",
+      "section": "first-order-logic/tableaux/proving-things",
+      "source_path": "upstream/content/first-order-logic/tableaux/proving-things.tex",
+      "source_line": 43,
+      "target_path": "translation/content/first-order-logic/tableaux/proving-things.tex",
+      "target_line_start": 43,
+      "target_line_end": 43,
+      "segment_id": "",
+      "script": "Latn",
+      "locale": "jv-Latn-ID",
+      "chosen_rendering": "tandha centhang; durung diwenehi tandha centhang; saben cabang bukak",
+      "decision_status": "provisional_descriptive_tableau_construction_vocabulary",
+      "review_priority": "P2-specialized-language-review",
+      "accepted_reader_release": "",
+      "accepted_pdf_page": "",
+      "page_binding_status": "pending_next_accepted_reader_pagination",
+      "expert_question": "For formal written Javanese, is “tandha centhang; durung diwenehi tandha centhang; saben cabang bukak” clear and idiomatic for the constrained sense “checkmark; remains unchecked; every open branch”, or should one of these be preferred: tandha priksa; wis diproses; saben pang bukak?"
+    },
+    {
       "decision_id": "JV-D001",
       "record_type": "difficult_translation_or_source_decision",
       "occurrence_index": 1,
@@ -20705,6 +21092,138 @@
       "accepted_pdf_page": "",
       "page_binding_status": "not_a_reader_body_occurrence",
       "expert_question": "Does the restored negation make the eigenvariable discussion agree with the proof while preserving the same freshness result?"
+    },
+    {
+      "decision_id": "JV-D049",
+      "record_type": "difficult_translation_or_source_decision",
+      "occurrence_index": 1,
+      "unit_id": "OLP-0098",
+      "section": "first-order-logic/tableaux/tableaux",
+      "source_path": "upstream/content/first-order-logic/tableaux/tableaux.tex",
+      "source_line": 15,
+      "target_path": "translation/content/first-order-logic/tableaux/tableaux.tex",
+      "target_line_start": 15,
+      "target_line_end": 19,
+      "segment_id": "OLP-0098-P006",
+      "script": "Latn",
+      "locale": "jv-Latn-ID",
+      "chosen_rendering": "Name tableaux as the proof system, following the chapter path, tag name and thirteen imported tableau sections.",
+      "decision_status": "contemporaneous_source_audit",
+      "review_priority": "P1-source-or-semantic-review",
+      "accepted_reader_release": "",
+      "accepted_pdf_page": "",
+      "page_binding_status": "pending_next_accepted_reader_pagination",
+      "expert_question": "Does the repaired guidance now identify the tag-controlled proof system without changing its scope?"
+    },
+    {
+      "decision_id": "JV-D049",
+      "record_type": "difficult_translation_or_source_decision",
+      "occurrence_index": 2,
+      "unit_id": "OLP-0098",
+      "section": "editorial/ERRATA.md",
+      "source_path": "upstream/content/first-order-logic/tableaux/tableaux.tex",
+      "source_line": 15,
+      "target_path": "editorial/ERRATA.md",
+      "target_line_start": 47,
+      "target_line_end": 47,
+      "segment_id": "",
+      "script": "Latn",
+      "locale": "jv-Latn-ID",
+      "chosen_rendering": "Name tableaux as the proof system, following the chapter path, tag name and thirteen imported tableau sections.",
+      "decision_status": "contemporaneous_source_audit",
+      "review_priority": "P1-source-or-semantic-review",
+      "accepted_reader_release": "",
+      "accepted_pdf_page": "",
+      "page_binding_status": "not_a_reader_body_occurrence",
+      "expert_question": "Does the repaired guidance now identify the tag-controlled proof system without changing its scope?"
+    },
+    {
+      "decision_id": "JV-D050",
+      "record_type": "difficult_translation_or_source_decision",
+      "occurrence_index": 1,
+      "unit_id": "OLP-0101",
+      "section": "first-order-logic/tableaux/quantifier-rules",
+      "source_path": "upstream/content/first-order-logic/tableaux/quantifier-rules.tex",
+      "source_line": 80,
+      "target_path": "translation/content/first-order-logic/tableaux/quantifier-rules.tex",
+      "target_line_start": 82,
+      "target_line_end": 114,
+      "segment_id": "OLP-0101-P014",
+      "script": "Latn",
+      "locale": "jv-Latn-ID",
+      "chosen_rendering": "State that there is no eigenvariable restriction on the choice of a closed term, retaining both the closure requirement and the intended contrast with fresh-constant rules.",
+      "decision_status": "contemporaneous_source_audit",
+      "review_priority": "P1-source-or-semantic-review",
+      "accepted_reader_release": "",
+      "accepted_pdf_page": "",
+      "page_binding_status": "pending_next_accepted_reader_pagination",
+      "expert_question": "Does the qualification clearly preserve arbitrary choice among closed terms while distinguishing the eigenvariable rules?"
+    },
+    {
+      "decision_id": "JV-D050",
+      "record_type": "difficult_translation_or_source_decision",
+      "occurrence_index": 2,
+      "unit_id": "OLP-0101",
+      "section": "editorial/ERRATA.md",
+      "source_path": "upstream/content/first-order-logic/tableaux/quantifier-rules.tex",
+      "source_line": 80,
+      "target_path": "editorial/ERRATA.md",
+      "target_line_start": 48,
+      "target_line_end": 48,
+      "segment_id": "",
+      "script": "Latn",
+      "locale": "jv-Latn-ID",
+      "chosen_rendering": "State that there is no eigenvariable restriction on the choice of a closed term, retaining both the closure requirement and the intended contrast with fresh-constant rules.",
+      "decision_status": "contemporaneous_source_audit",
+      "review_priority": "P1-source-or-semantic-review",
+      "accepted_reader_release": "",
+      "accepted_pdf_page": "",
+      "page_binding_status": "not_a_reader_body_occurrence",
+      "expert_question": "Does the qualification clearly preserve arbitrary choice among closed terms while distinguishing the eigenvariable rules?"
+    },
+    {
+      "decision_id": "JV-D051",
+      "record_type": "difficult_translation_or_source_decision",
+      "occurrence_index": 1,
+      "unit_id": "OLP-0103",
+      "section": "first-order-logic/tableaux/proving-things",
+      "source_path": "upstream/content/first-order-logic/tableaux/proving-things.tex",
+      "source_line": 439,
+      "target_path": "translation/content/first-order-logic/tableaux/proving-things.tex",
+      "target_line_start": 431,
+      "target_line_end": 451,
+      "segment_id": "OLP-0103-P016",
+      "script": "Latn",
+      "locale": "jv-Latn-ID",
+      "chosen_rendering": "Split the two sentences into separate true signed formulas, following the definition, parallel exercises and intended closure.",
+      "decision_status": "contemporaneous_source_audit",
+      "review_priority": "P1-source-or-semantic-review",
+      "accepted_reader_release": "",
+      "accepted_pdf_page": "",
+      "page_binding_status": "pending_next_accepted_reader_pagination",
+      "expert_question": "Does the repaired exercise now present three well-formed signed assumptions with the intended signs?"
+    },
+    {
+      "decision_id": "JV-D051",
+      "record_type": "difficult_translation_or_source_decision",
+      "occurrence_index": 2,
+      "unit_id": "OLP-0103",
+      "section": "editorial/ERRATA.md",
+      "source_path": "upstream/content/first-order-logic/tableaux/proving-things.tex",
+      "source_line": 439,
+      "target_path": "editorial/ERRATA.md",
+      "target_line_start": 49,
+      "target_line_end": 49,
+      "segment_id": "",
+      "script": "Latn",
+      "locale": "jv-Latn-ID",
+      "chosen_rendering": "Split the two sentences into separate true signed formulas, following the definition, parallel exercises and intended closure.",
+      "decision_status": "contemporaneous_source_audit",
+      "review_priority": "P1-source-or-semantic-review",
+      "accepted_reader_release": "",
+      "accepted_pdf_page": "",
+      "page_binding_status": "not_a_reader_body_occurrence",
+      "expert_question": "Does the repaired exercise now present three well-formed signed assumptions with the intended signs?"
     }
   ]
 }

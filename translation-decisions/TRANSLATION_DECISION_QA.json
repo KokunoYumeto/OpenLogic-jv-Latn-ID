@@ -1,6 +1,6 @@
 {
   "schema": "openlogic-translation-decision-qa/1.0.0",
-  "generated_utc": "2026-09-05T16:01:54.641738+00:00",
+  "generated_utc": "2026-09-05T16:31:46.836900+00:00",
   "status": "PASS",
   "normative_schema": {
     "path": "translation-decision.schema.json",
@@ -14,16 +14,16 @@
   "edition": {
     "language_tag": "jv-Latn-ID",
     "script": "Latn",
-    "coverage": "partial-97/722"
+    "coverage": "partial-104/722"
   },
   "counts": {
-    "decisions": 157,
-    "terminology": 102,
-    "source_corrections": 55,
-    "priority": 56,
-    "occurrences": 381,
-    "unique_decision_ids": 157,
-    "unique_occurrence_ids": 381
+    "decisions": 162,
+    "terminology": 103,
+    "source_corrections": 59,
+    "priority": 60,
+    "occurrences": 393,
+    "unique_decision_ids": 162,
+    "unique_occurrence_ids": 393
   },
   "checks": {
     "schema_instance": "PASS",
@@ -37,21 +37,21 @@
   },
   "provenance": {
     "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
-    "public_checkpoint_commit": "37aa9c7e3b6539df4e4c375dd0f55180b2482ec8",
+    "public_checkpoint_commit": "23e7e1cdb096dbaa6c39a2b3d13d455cdb068d6e",
     "legacy_review_log": {
       "path_or_uri": "editorial/TRANSLATION_REVIEW_LOG.jsonl",
-      "bytes": 541431,
-      "sha256": "ff0c416056b8b5dfc65185670593554e1690a9d6bdd2c5924ab8d5ddbc13799f"
+      "bytes": 554933,
+      "sha256": "0e4ca771869a16c2b768927c32d1cedb5571d4d307d6ec24c0d36bec6166704e"
     },
     "term_ledger": {
       "path_or_uri": "evidence/TERM_DECISIONS.jsonl",
-      "bytes": 54883,
-      "sha256": "64f4333b374cc5ce616d5c97e1bd120a8b5c73648133b95ad440577e9e104f9e"
+      "bytes": 56334,
+      "sha256": "5b1b32480c60c894d8c125d4ffdbf0d840aeaaf0779ebecdca9d57320bbcd29c"
     },
     "batch_qa": {
       "path_or_uri": "evidence/BATCH_QA.json",
-      "bytes": 80386,
-      "sha256": "ad1ad7dea2edd103124798a6fd435fc4ae8bdf378e0c99ffca0b2e2a1dfa8eff"
+      "bytes": 86114,
+      "sha256": "163abf16b599a456d081a44840239419fbe9745be5e67c9617fc851f6e569ba0"
     }
   },
   "generated_artifacts": [
@@ -62,23 +62,23 @@
     },
     {
       "path_or_uri": "TRANSLATION_DECISIONS_FULL.md",
-      "bytes": 60785,
-      "sha256": "9251b2188dc3da2ff8c1557b0d2dd107244cb53ef1470284df401de84be1847b"
+      "bytes": 63081,
+      "sha256": "a66a3d6a05c893d19784cd10fa708c8e903c7ede4453cb8d432ce276aa65b42b"
     },
     {
       "path_or_uri": "PRIORITY_REVIEW.md",
-      "bytes": 19742,
-      "sha256": "32c7a7779798debecec74cd76f18c39339449e63f9fcde3a0bfd776283b593ac"
+      "bytes": 21371,
+      "sha256": "c9bc8b3c1b418ff19a560fd2bc33285a6549487cdb3f97f2c8c65570f6161e12"
     },
     {
       "path_or_uri": "DECISION_OCCURRENCES.csv",
-      "bytes": 133635,
-      "sha256": "fb92d311cccb4c34666f21c74226240ab3b89e2d0e646f0818b769ea0053c98b"
+      "bytes": 137624,
+      "sha256": "03d0b729481b64c993c9886e31e5a4c81864de982bf8c3d5cd60cef524301d7c"
     },
     {
       "path_or_uri": "DECISIONS.json",
-      "bytes": 1993450,
-      "sha256": "cad3e678ee344f4cc8a72dac72262b95802b731f7453c82e6c4a753be84cf3c8"
+      "bytes": 2061960,
+      "sha256": "746c5d78b796e51882de03950330f77c1a5f062e68b6ab051e984a89676d9ba3"
     },
     {
       "path_or_uri": "translation-decision.schema.json",

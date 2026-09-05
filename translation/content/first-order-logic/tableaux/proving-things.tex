@@ -1,0 +1,467 @@
+% Part: first-order-logic
+% Chapter: tableaux
+% Section: proving-things
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{tab}{pro}}
+      {\olfileid{pl}{tab}{pro}}
+
+\olsection{Tuladha \usetoken{P}{tableau}}
+
+\begin{ex}
+Ayo nggoleki !!{tableau} katutup kanggo !!{sentence} $(!A \land !B) \lif !A$.
+
+Kita miwiti kanthi nulis asumsi kang cocog ing pucuk
+!!{tableau}.
+\begin{oltableau}
+  [\sFmla{\False}{(\formula{A} \land \formula{B}) \lif \formula{A}},
+    just = \TAss]
+\end{oltableau}
+
+Mung ana siji asumsi, mula mung ana siji !!{signed formula} kang bisa
+dikenani aturan. (Kanggo saben !!{signed formula}, mesthi ana paling
+akeh siji aturan kang bisa ditrapake: yaiku aturan kanggo tandha lan
+!!{main operator} saka !!{sentence} kang cocog.) Ing kasus iki, kita
+kudu ngetrapake $\TRule{\False}{\lif}$.
+\begin{oltableau}
+  [\sFmla{\False}{(\formula{A} \land \formula{B}) \lif \formula{A}},
+    checked, just = \TAss
+    [\sFmla{\True}{\formula{A} \land \formula{B}},
+      just={\TRule{\False}{\lif}[1]}
+      [\sFmla{\False}{\formula{A}}, just={\TRule{\False}{\lif}[1]}]
+    ]
+  ]
+\end{oltableau}
+Kanggo nglacak !!{signed formula}s kang wis dikenani aturan kang
+cocog, kita nulis tandha centhang ing jejere ukara. Nanging,
+\emph{mung} tulisen tandha centhang yen aturan wis ditrapake ing kabeh
+cabang bukak. Sawise aturan kang cocog wis ditrapake marang
+!!a{signed formula} ing saben cabang bukak, kita ora perlu bali lan ngetrapake
+aturan iku maneh. Ing kasus iki, mung ana siji cabang, mula aturan
+mung kudu ditrapake sapisan. (Tandha centhang mung piranti kanggo
+nggampangake pambangunan tableau lan dudu bagean resmi saka sintaksis
+tableau.)
+
+Ana siji !!{signed formula} anyar kang bisa dikenani aturan, yaiku
+$\sFmla{\True}{!A \land !B}$ ing larik~$2$. Panrapan aturan
+$\TRule{\True}{\land}$ ngasilake:
+\begin{oltableau}
+  [\sFmla{\False}{(\formula{A} \land \formula{B}) \lif \formula{A}},
+    checked, just = \TAss
+    [\sFmla{\True}{\formula{A} \land \formula{B}},
+      just={\TRule{\False}{\lif}[1]}, checked
+      [\sFmla{\False}{\formula{A}}, just={\TRule{\False}{\lif}[1]}
+        [\sFmla{\True}{\formula{A}}, just={\TRule{\True}{\land}[2]}
+          [\sFmla{\True}{\formula{B}}, just={\TRule{\True}{\land}[2]}, close
+          ]
+        ]
+      ]
+    ]
+  ]
+\end{oltableau}
+Amarga cabang saiki ngemot $\sFmla{\True}{!A}$ (ing larik~$4$) lan
+$\sFmla{\False}{!A}$ (ing larik~$3$), cabang iku katutup. Amarga iki
+cabang siji-sijine, !!{tableau} iku katutup. Kita wis nemokake
+!!{tableau} katutup kanggo~$(!A \land !B) \lif !A$.
+\end{ex}
+
+\begin{ex}
+Saiki ayo nggoleki !!{tableau} katutup kanggo $(\lnot !A \lor !B) \lif (!A
+\lif !B)$.
+
+Kita miwiti nganggo asumsi kang cocog:
+\begin{oltableau}
+  [\sFmla{\False}{(\lnot \formula{A} \lor \formula{B}) \lif
+      (\formula{A} \lif \formula{B})}, just=\TAss]
+\end{oltableau}
+Siji !!{signed formula} ing !!{tableau} iki nduweni !!{main operator}~$\lif$
+lan tandha~$\False$, mula kita ngetrapake aturan $\TRule{\False}{\lif}$
+kanggo ngasilake:
+\begin{oltableau}
+  [\sFmla{\False}{(\lnot \formula{A} \lor \formula{B})
+      \lif (\formula{A} \lif \formula{B})}, just=\TAss, checked
+    [\sFmla{\True}{\lnot \formula{A} \lor \formula{B}},
+      just={\TRule{\False}{\lif}[1]}
+      [\sFmla{\False}{(\formula{A} \lif \formula{B})},
+        just={\TRule{\False}{\lif}[1]}
+      ]
+    ]
+  ]
+\end{oltableau}
+Saiki kita bisa milih ngetrapake~$\TRule{\True}{\lor}$ marang
+larik~$2$ utawa $\TRule{\False}{\lif}$ marang larik~$3$. Urutan kang
+dipilih sejatine ora wigati, angger aturan kang cocog kanggo saben
+!!{signed formula} ditrapake ing saben cabang. Ayo milih kang kapisan.
+Aturan $\TRule{\True}{\lor}$ ngidini !!{tableau} nyabang, lan rong
+kesimpulan aturan dadi !!{signed formula}s anyar kang ditambahake ing
+rong cabang anyar. Asile yaiku:
+\begin{oltableau}
+  [\sFmla{\False}{(\lnot \formula{A} \lor \formula{B}) \lif
+      (\formula{A} \lif \formula{B})}, just=\TAss, checked
+    [\sFmla{\True}{\lnot \formula{A} \lor \formula{B}},
+      just={\TRule{\False}{\lif}[1]}, checked
+      [\sFmla{\False}{(\formula{A} \lif \formula{B})},
+        just={\TRule{\False}{\lif}[1]}
+        [\sFmla{\True}{\lnot \formula{A}}, just={\TRule{\True}{\lor}[2]}]
+        [\sFmla{\True}{\formula{B}}, just={\TRule{\True}{\lor}[2]}]
+      ]
+    ]
+  ]
+\end{oltableau}
+Kita durung ngetrapake aturan $\TRule{\False}{\lif}$ marang larik~$3$;
+saiki ayo ditindakake. Kanggo ngirit wektu, aturan iku ditrapake ing
+rong cabang. Elinga yen kita mung nulis tandha centhang ing jejere
+!!a{signed formula} yen aturan kang cocog wis ditrapake ing saben
+cabang bukak. Mula luwih becik ngetrapake aturan ing pucuk saben
+cabang kang ngemot !!{signed formula} kang dikenani aturan. Kanthi
+mangkono, kita ora kudu bali menyang !!{signed formula} iku ing sisih
+ngisor saka maneka cabang.
+\begin{oltableau}
+  [\sFmla{\False}{(\lnot \formula{A} \lor \formula{B}) \lif
+      (\formula{A} \lif \formula{B})}, just=\TAss, checked
+    [\sFmla{\True}{\lnot \formula{A} \lor \formula{B}},
+      just={\TRule{\False}{\lif}[1]}, checked
+      [\sFmla{\False}{(\formula{A} \lif \formula{B})},
+        just={\TRule{\False}{\lif}[1]}, checked
+        [\sFmla{\True}{\lnot \formula{A}}, just={\TRule{\True}{\lor}[2]}
+          [\sFmla{\True}{\formula{A}}, just={\TRule{\False}{\lif}[3]}
+            [\sFmla{\False}{\formula{B}}, just={\TRule{\False}{\lif}[3]}]
+          ]
+        ]
+        [\sFmla{\True}{\formula{B}}, just={\TRule{\True}{\lor}[2]}
+          [\sFmla{\True}{\formula{A}}, just={\TRule{\False}{\lif}[3]}
+            [\sFmla{\False}{\formula{B}}, just={\TRule{\False}{\lif}[3]}, close]
+          ]
+        ]
+      ]
+    ]
+  ]
+\end{oltableau}
+Cabang tengen saiki katutup. Ing cabang kiwa, aturan
+$\TRule{\True}{\lnot}$ isih bisa ditrapake marang larik~$4$. Iki
+ngasilake~$\sFmla{\False}{!A}$ lan nutup cabang kiwa:
+\begin{oltableau}
+  [\sFmla{\False}{(\lnot \formula{A} \lor \formula{B}) \lif
+      (\formula{A} \lif \formula{B})}, just=\TAss, checked
+    [\sFmla{\True}{\lnot \formula{A} \lor \formula{B}},
+      just={\TRule{\False}{\lif}[1]}, checked
+      [\sFmla{\False}{(\formula{A} \lif \formula{B})},
+        just={\TRule{\False}{\lif}[1]}, checked
+        [\sFmla{\True}{\lnot \formula{A}}, just={\TRule{\True}{\lor}[2]}
+          [\sFmla{\True}{\formula{A}}, just={\TRule{\False}{\lif}[3]}
+            [\sFmla{\False}{\formula{B}}, just={\TRule{\False}{\lif}[3]}
+              [\sFmla{\False}{\formula{A}},
+                just={\TRule{\True}{\lnot}[4]}, close]
+            ]
+          ]
+        ]
+        [\sFmla{\True}{\formula{B}}, just={\TRule{\True}{\lor}[2]}
+          [\sFmla{\True}{\formula{A}}, just={\TRule{\False}{\lif}[3]}
+            [\sFmla{\False}{\formula{B}},
+              just={\TRule{\False}{\lif}[3]}, close]
+          ]
+        ]
+      ]
+    ]
+  ]
+\end{oltableau}
+\end{ex}
+
+\begin{ex}
+Kita bisa menehi !!{tableau}s kanggo sembarang cacah !!{signed formula}s
+minangka asumsi. Kerep uga perlu ngetrapake luwih saka siji aturan
+kang ngidini panyabangan; lan umume !!a{tableau} bisa nduweni sembarang
+cacah cabang. Tuladhane, gatekna !!a{tableau} kanggo
+$\{\sFmla{\True}{!A \lor (!B \land !C)}, \sFmla{\False}{(!A \lor !B) \land (!A
+  \lor !C)}\}$. Kita miwiti kanthi ngetrapake $\TRule{\True}{\lor}$
+marang asumsi kapisan:
+\begin{oltableau}
+  [\sFmla{\True}{\formula{A} \lor (\formula{B} \land \formula{C})},
+    just=\TAss, checked
+    [\sFmla{\False}{(\formula{A} \lor \formula{B}) \land
+        (\formula{A} \lor \formula{C})}, just=\TAss
+      [\sFmla{\True}{\formula{A}}, just={\TRule{\True}{\lor}[1]}]
+      [\sFmla{\True}{\formula{B} \land \formula{C}},
+        just={\TRule{\True}{\lor}[1]}]
+    ]
+  ]
+\end{oltableau}
+Saiki kita bisa ngetrapake aturan $\TRule{\False}{\land}$ marang
+larik~$2$. Iki ditindakake bebarengan ing rong cabang, mula kita bisa
+menehi tandha centhang marang larik~$2$:
+\begin{oltableau}
+  [\sFmla{\True}{\formula{A} \lor (\formula{B} \land \formula{C})},
+    just=\TAss, checked
+    [\sFmla{\False}{(\formula{A} \lor \formula{B}) \land
+        (\formula{A} \lor \formula{C})}, just=\TAss, checked
+      [\sFmla{\True}{\formula{A}}, just={\TRule{\True}{\lor}[1]}
+        [\sFmla{\False}{\formula{A} \lor \formula{B}},
+          just={\TRule{\False}{\land}[2]}]
+        [\sFmla{\False}{\formula{A} \lor \formula{C}},
+          just={\TRule{\False}{\land}[2]}]
+      ]
+      [\sFmla{\True}{\formula{B} \land \formula{C}},
+        just={\TRule{\True}{\lor}[1]}
+        [\sFmla{\False}{\formula{A} \lor \formula{B}},
+          just={\TRule{\False}{\land}[2]}]
+        [\sFmla{\False}{\formula{A} \lor \formula{C}},
+          just={\TRule{\False}{\land}[2]}]
+      ]
+    ]
+  ]
+\end{oltableau}
+Saiki kita bisa ngetrapake $\TRule{\False}{\lor}$ marang kabeh cabang
+kang ngemot $!A \lor !B$:
+\begin{oltableau}
+  [\sFmla{\True}{\formula{A} \lor (\formula{B} \land \formula{C})},
+    just=\TAss, checked
+    [\sFmla{\False}{(\formula{A} \lor \formula{B}) \land
+        (\formula{A} \lor \formula{C})}, just=\TAss, checked
+      [\sFmla{\True}{\formula{A}}, just={\TRule{\True}{\lor}[1]}
+        [\sFmla{\False}{\formula{A} \lor \formula{B}},
+          just={\TRule{\False}{\land}[2]}, checked
+          [\sFmla{\False}{\formula{A}}, just={\TRule{\False}{\lor}[4]}
+            [\sFmla{\False}{\formula{B}},
+              just={\TRule{\False}{\lor}[4]}, close]
+          ]
+        ]
+        [\sFmla{\False}{\formula{A} \lor \formula{C}},
+          just={\TRule{\False}{\land}[2]}]
+      ]
+      [\sFmla{\True}{\formula{B} \land \formula{C}},
+        just={\TRule{\True}{\lor}[1]}
+        [\sFmla{\False}{\formula{A} \lor \formula{B}},
+          just={\TRule{\False}{\land}[2]}, checked
+          [\sFmla{\False}{\formula{A}}, just={\TRule{\False}{\lor}[4]}
+            [\sFmla{\False}{\formula{B}},
+              just={\TRule{\False}{\lor}[4]}]
+          ]
+        ]
+        [\sFmla{\False}{\formula{A} \lor \formula{C}},
+          just={\TRule{\False}{\land}[2]}]
+      ]
+    ]
+  ]
+\end{oltableau}
+Cabang paling kiwa saiki katutup. Saiki ayo ngetrapake
+$\TRule{\False}{\lor}$ marang $!A \lor !C$:
+\begin{oltableau}
+  [\sFmla{\True}{\formula{A} \lor (\formula{B} \land \formula{C})},
+    just=\TAss, checked
+    [\sFmla{\False}{(\formula{A} \lor \formula{B}) \land
+        (\formula{A} \lor \formula{C})}, just=\TAss, checked
+      [\sFmla{\True}{\formula{A}}, just={\TRule{\True}{\lor}[1]}
+        [\sFmla{\False}{\formula{A} \lor \formula{B}},
+          just={\TRule{\False}{\land}[2]}, checked
+          [\sFmla{\False}{\formula{A}},
+            just={\TRule{\False}{\lor}[4]}
+            [\sFmla{\False}{\formula{B}},
+              just={\TRule{\False}{\lor}[4]}, close]
+          ]
+        ]
+        [\sFmla{\False}{\formula{A} \lor \formula{C}},
+          just={\TRule{\False}{\land}[2]}, checked
+          [\sFmla{\False}{\formula{A}},
+            just={\TRule{\False}{\lor}[4]}, move by=2
+            [\sFmla{\False}{\formula{C}},
+              just={\TRule{\False}{\lor}[4]}, close]
+          ]
+        ]
+      ]
+      [\sFmla{\True}{\formula{B} \land \formula{C}},
+        just={\TRule{\True}{\lor}[1]}
+        [\sFmla{\False}{\formula{A} \lor \formula{B}},
+          just={\TRule{\False}{\land}[2]}, checked
+          [\sFmla{\False}{\formula{A}},
+            just={\TRule{\False}{\lor}[4]}
+            [\sFmla{\False}{\formula{B}},
+              just={\TRule{\False}{\lor}[4]}
+            ]
+          ]
+        ]
+        [\sFmla{\False}{\formula{A} \lor \formula{C}},
+          just={\TRule{\False}{\land}[2]}, checked
+          [\sFmla{\False}{\formula{A}},
+            just={\TRule{\False}{\lor}[4]}, move by=2
+            [\sFmla{\False}{\formula{C}},
+              just={\TRule{\False}{\lor}[4]}]
+          ]
+        ]
+      ]
+    ]
+  ]
+\end{oltableau}
+Gatekna yen asil panrapan $\TRule{\False}{\lor}$ kang kapindho
+dipindhah menyang ngisor supaya luwih cetha. Ing kasus iki pamindhahan
+iku sejatine ora perlu, amarga alesane mesthi padha.
+
+Isih ana rong cabang bukak, lan $\sFmla{\True}{!B \land !C}$ ing
+larik~$3$ durung diwenehi tandha centhang. Kita ngetrapake
+$\TRule{\True}{\land}$ marang formula iku kanggo ngasilake
+!!{tableau} katutup:
+\begin{oltableau}
+  [\sFmla{\True}{\formula{A} \lor (\formula{B} \land \formula{C})},
+    just=\TAss, checked
+    [\sFmla{\False}{(\formula{A} \lor \formula{B}) \land
+        (\formula{A} \lor \formula{C})}, just=\TAss, checked
+      [\sFmla{\True}{\formula{A}}, just={\TRule{\True}{\lor}[1]}
+        [\sFmla{\False}{\formula{A} \lor \formula{B}},
+          just={\TRule{\False}{\land}[2]}, checked
+          [\sFmla{\False}{\formula{A}},
+            just={\TRule{\False}{\lor}[4]}
+            [\sFmla{\False}{\formula{B}},
+              just={\TRule{\False}{\lor}[4]}, close]
+          ]
+        ]
+        [\sFmla{\False}{\formula{A} \lor \formula{C}},
+          just={\TRule{\False}{\land}[2]}, checked
+          [\sFmla{\False}{\formula{A}},
+            just={\TRule{\False}{\lor}[4]}
+            [\sFmla{\False}{\formula{C}},
+              just={\TRule{\False}{\lor}[4]}, close]
+          ]
+        ]
+      ]
+      [\sFmla{\True}{\formula{B} \land \formula{C}},
+        just={\TRule{\True}{\lor}[1]}, checked
+        [\sFmla{\False}{\formula{A} \lor \formula{B}},
+          just={\TRule{\False}{\land}[2]}, checked
+          [\sFmla{\False}{\formula{A}},
+            just={\TRule{\False}{\lor}[4]}
+            [\sFmla{\False}{\formula{B}},
+              just={\TRule{\False}{\lor}[4]}
+              [\sFmla{\True}{\formula{B}},
+                just={\TRule{\True}{\land}[3]}
+                [\sFmla{\True}{\formula{C}},
+                  just={\TRule{\True}{\land}[3]},close
+                ]
+              ]
+            ]
+          ]
+        ]
+        [\sFmla{\False}{\formula{A} \lor \formula{C}},
+          just={\TRule{\False}{\land}[2]}, checked
+          [\sFmla{\False}{\formula{A}},
+            just={\TRule{\False}{\lor}[4]}
+            [\sFmla{\False}{\formula{C}},
+              just={\TRule{\False}{\lor}[4]}
+              [\sFmla{\True}{\formula{B}},
+                just={\TRule{\True}{\land}[3]}
+                [\sFmla{\True}{\formula{C}},
+                  just={\TRule{\True}{\land}[3]},close
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+\end{oltableau}
+
+Kanggo mbandhingake, ing ngisor iki !!{tableau} katutup kanggo
+himpunan asumsi kang padha, nanging aturan ditrapake kanthi urutan
+kang beda:
+\begin{oltableau}
+  [\sFmla{\True}{\formula{A} \lor (\formula{B} \land \formula{C})},
+    just=\TAss, checked
+    [\sFmla{\False}{(\formula{A} \lor \formula{B}) \land
+        (\formula{A} \lor \formula{C})}, just=\TAss, checked
+      [\sFmla{\False}{\formula{A} \lor \formula{B}},
+        just={\TRule{\False}{\land}[2]}, checked
+        [\sFmla{\False}{\formula{A}},
+          just={\TRule{\False}{\lor}[3]}
+          [\sFmla{\False}{\formula{B}},
+            just={\TRule{\False}{\lor}[3]}
+            [\sFmla{\True}{\formula{A}},
+              just={\TRule{\True}{\lor}[1]},close
+            ]
+            [\sFmla{\True}{\formula{B} \land \formula{C}},
+              just={\TRule{\True}{\lor}[1]}, checked
+              [\sFmla{\True}{\formula{B}},
+                just={\TRule{\True}{\land}[6]}
+                [\sFmla{\True}{\formula{C}},
+                  just={\TRule{\True}{\land}[6]},close
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+      [\sFmla{\False}{\formula{A} \lor \formula{C}},
+        just={\TRule{\False}{\land}[2]}, checked
+        [\sFmla{\False}{\formula{A}},
+          just={\TRule{\False}{\lor}[3]}
+          [\sFmla{\False}{\formula{C}},
+            just={\TRule{\False}{\lor}[3]}
+            [\sFmla{\True}{\formula{A}},
+              just={\TRule{\True}{\lor}[1]},close
+            ]
+            [\sFmla{\True}{\formula{B} \land \formula{C}},
+              just={\TRule{\True}{\lor}[1]}, checked
+              [\sFmla{\True}{\formula{B}},
+                just={\TRule{\True}{\land}[6]}
+                [\sFmla{\True}{\formula{C}},
+                  just={\TRule{\True}{\land}[6]},close
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+\end{oltableau}
+\end{ex}
+
+\begin{prob}
+Wenehana !!{tableau}s katutup kanggo perkara-perkara iki:
+\begin{enumerate}
+\item $\sFmla{\True}{!A \land (!B \land !C)}, \sFmla{\False}{(!A \land !B) \land !C}$.
+\item $\sFmla{\True}{!A \lor (!B \lor !C)}, \sFmla{\False}{(!A \lor !B) \lor !C}$.
+\item $\sFmla{\True}{!A \lif (!B \lif !C)}, \sFmla{\False}{!B \lif (!A \lif !C)}$.
+\item $\sFmla{\True}{!A}, \sFmla{\False}{\lnot\lnot !A}$.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+Wenehana !!{tableau}s katutup kanggo perkara-perkara iki. Cathetan
+koreksi sumber OLPL-015: butir kaping sanga ngemot rong ukara mawa
+tandha bener, nanging sumber Inggris nyelehake koma lan ukara kapindho
+ing argumen siji; argumen kasebut dipisah supaya cocog karo definisi
+formula mawa tandha lan ancas panutupan.
+\begin{enumerate}
+\item $\sFmla{\True}{(!A \lor !B) \lif !C}, \sFmla{\False}{!A \lif !C}$.
+\item $\sFmla{\True}{(!A \lif !C) \land (!B \lif !C)}, \sFmla{\False}{(!A \lor !B) \lif !C}$.
+\item $\sFmla{\False}{\lnot(!A \land \lnot !A)}$.
+\item $\sFmla{\True}{!B \lif !A}, \sFmla{\False}{\lnot !A \lif \lnot !B}$.
+\item $\sFmla{\False}{(!A \lif \lnot !A) \lif \lnot !A}$.
+\item $\sFmla{\False}{\lnot(!A \lif !B) \lif \lnot !B}$.
+\item $\sFmla{\True}{!A \lif !C}, \sFmla{\False}{\lnot (!A \land \lnot !C)}$.
+\item $\sFmla{\True}{!A \land \lnot !C}, \sFmla{\False}{\lnot (!A \lif !C)}$.
+\item $\sFmla{\True}{!A \lor !B}, \sFmla{\True}{\lnot !B}, \sFmla{\False}{!A}$.
+\item $\sFmla{\True}{\lnot !A \lor \lnot !B}, \sFmla{\False}{\lnot(!A \land !B)}$.
+\item $\sFmla{\False}{(\lnot !A \land \lnot !B) \lif\lnot(!A \lor !B)}$.
+\item $\sFmla{\False}{\lnot(!A \lor !B) \lif (\lnot !A \land \lnot !B)}$.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+Wenehana !!{tableau}s katutup kanggo perkara-perkara iki:
+\begin{enumerate}
+\item $\sFmla{\True}{\lnot(!A \lif !B)}, \sFmla{\False}{!A}$.
+\item $\sFmla{\True}{\lnot(!A \land !B)}, \sFmla{\False}{\lnot !A \lor \lnot !B}$.
+\item $\sFmla{\True}{!A \lif !B}, \sFmla{\False}{\lnot !A \lor !B}$.
+\item $\sFmla{\False}{\lnot \lnot !A \lif !A}$.
+\item $\sFmla{\True}{!A \lif !B}, \sFmla{\True}{\lnot !A \lif !B}, \sFmla{\False}{!B}$.
+\item $\sFmla{\True}{(!A \land !B) \lif !C}, \sFmla{\False}{(!A \lif !C) \lor (!B \lif !C)}$.
+\item $\sFmla{\True}{(!A \lif !B) \lif !A}, \sFmla{\False}{!A}$.
+\item $\sFmla{\False}{(!A \lif !B) \lor (!B \lif !C)}$.
+\end{enumerate}
+\end{prob}
+
+\end{document}

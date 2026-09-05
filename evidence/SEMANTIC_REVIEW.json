@@ -2,7 +2,7 @@
   "schema": "jv-semantic-review/1",
   "reviewer": "Codex, same author; no independent or human review claimed",
   "date": "2026-09-05",
-  "scope": "All 1,031 translated paragraph blocks in OLP-0001 through OLP-0097; 572 unchanged formal/structural blocks classified separately. OLSIZ-001 through OLSIZ-010 and OLPL-001 through OLPL-012 are applied in their affected targets; the proposed OLSIZ-011 remains retracted after exact-byte inspection. Paragraph analysis normalizes CRLF/LF; exact full-file hashes remain raw-byte hashes.",
+  "scope": "All 1,081 translated paragraph blocks in OLP-0001 through OLP-0104; 628 unchanged formal/structural blocks classified separately. OLSIZ-001 through OLSIZ-010 and OLPL-001 through OLPL-015 are applied in their affected targets; the proposed OLSIZ-011 remains retracted after exact-byte inspection. Paragraph analysis normalizes CRLF/LF; exact full-file hashes remain raw-byte hashes.",
   "method": "Direct source-to-target reading, quantifier/negation/biconditional checks, mathematical-context checks, and selected reverse paraphrases. Automated structure checks are separate.",
   "unit_reviews": [
     {
@@ -840,6 +840,71 @@
       "reverse_sample": "Closed reflexive identities are valid. If t1=t2 and A(t1) follow from two groups of open assumptions, equal denotations and the formula substitution lemma make A(t2) follow from their union, so identity elimination preserves soundness.",
       "source_sha256": "426ee50b639d92c730c70912bfda4fdf34c99e0e33097dc253cb196a01af7e7d",
       "translation_sha256": "52c487e6b3056448af77b8c362bff1c95eaa37a0ad70d2459ac5b91f707244b6"
+    },
+    {
+      "unit_id": "OLP-0098",
+      "status": "pass",
+      "checks": "Compared both tag-controlled chapter identifiers, all thirteen imports, the FOL-only quantifier and identity boundaries, the end hook and the editorial tag guidance. OLPL-013 corrects only the proof-system name fixed by the chapter path and prfTab tag.",
+      "reverse_sample": "This chapter presents signed analytic tableaux. The prfTab tag controls tableau material, with quantifier and identity sections included only for the first-order build.",
+      "source_sha256": "1c6e7018e63cae3440e85d537303288261afd422b9e13bc455b99c2d206aa1b6",
+      "translation_sha256": "569538f64d8f5bb2fd7f074c2d1a0d8e4fe6e1fc0e1aef3f152042a0d927d148",
+      "source_audit_ids": [
+        "OLPL-013"
+      ]
+    },
+    {
+      "unit_id": "OLP-0099",
+      "status": "pass",
+      "checks": "Compared the signed-formula pair definition, true and false signs, assumptions, one rule per sign and main operator, downward branching, nonlocal rule application, branch closure, joint-possibility reading, and the false-root definition of a closed tableau for a sentence.",
+      "reverse_sample": "A tableau is a downward tree of truth-signed sentences. Each expansion uses a formula above it on the same branch; opposite signs for one sentence close a branch, and a closed false-root tableau rules out every way for its root sentence to be false.",
+      "source_sha256": "312d16775a4a86acf5772c8d02db03233101014ef0ee9a77e3c39b5ca6815a8c",
+      "translation_sha256": "6ce9a16e5e07fec8655999ba4bdbcc63edb9de0dab2aa98dd538ecbf73de2608"
+    },
+    {
+      "unit_id": "OLP-0100",
+      "status": "pass",
+      "checks": "Compared both signed rules for negation, conjunction, disjunction and implication, including every branching versus same-branch output. The Cut rule retains its arbitrary signed split, admissibility claim and use for combining tableaux.",
+      "reverse_sample": "The propositional tableau rules expand a signed compound according to its truth conditions. Cut may split every branch into true A and false A, although any closable assumption set also has a closed cut-free tableau.",
+      "source_sha256": "dcf0dc5fbdbfd79a7cf8c4b07a3d3d51aedc9ac424416d205ee5a8fd0877a8f4",
+      "translation_sha256": "0ef7770885cf2586956a2fc42fddf79b73ae56fb0715bf8c9ffbb8d80234494e"
+    },
+    {
+      "unit_id": "OLP-0101",
+      "status": "pass",
+      "checks": "Compared all four quantifier rules, the closed-term restrictions, both fresh-constant eigenvariable conditions, the historical footnote, the substitution convention, the P(t,x) counterexample, and the invalid existential-to-universal countertableau. OLPL-014 narrows only the contradictory unrestricted-term sentence to absence of eigenvariable restrictions on closed terms.",
+      "reverse_sample": "True universals and false existentials may be instantiated with any closed term. True existentials and false universals require a fresh constant absent above the inference; dropping that condition would make an invalid existential-to-universal implication close.",
+      "source_sha256": "682b3f1de2569dc63657243b83a3daa8966cc1786fa44d5d2fa34da2658e2bb0",
+      "translation_sha256": "912b7b4f76fdcf6af107b9271aa2b3661c35fed14a56657d9366e60118cc5cfc",
+      "source_audit_ids": [
+        "OLPL-014"
+      ]
+    },
+    {
+      "unit_id": "OLP-0102",
+      "status": "pass",
+      "checks": "Compared the inductive generation account, finite-tree definition, ordered assumption stem, correct same-branch rule application, open and closed branch criteria, and the complete true-conjunction/true-negation example with all line references and closure signs.",
+      "reverse_sample": "A tableau begins with one or more signed assumptions and grows by correct rule applications on branches. It is closed exactly when every branch contains a true and false occurrence of the same sentence.",
+      "source_sha256": "2cb9a2b6c144eb8b53c4a4d9c52daab60bcd3491dbc909cdd5ccf42300fe5452",
+      "translation_sha256": "3a418b815208e0c29b7cb25eaeec1d7e97d78ee5eb65cab05d5e8e18c8077477"
+    },
+    {
+      "unit_id": "OLP-0103",
+      "status": "pass",
+      "checks": "Compared all three propositional constructions: false implication then true conjunction; the two-branch implication example; and the four-branch multi-assumption example in both expansion orders. Checkmark scope, rule reuse on every open branch, moved display nodes, all closure witnesses and twenty-four exercise items were checked. OLPL-015 splits only the malformed two-sentence signed argument in exercise 9.",
+      "reverse_sample": "A checkmark records that a signed formula has been expanded on every open branch where it occurs. Expansion order may vary, but each open branch must eventually receive the applicable rules; opposite signs then close all branches.",
+      "source_sha256": "6940ff2f8466cfb9dc740a4e7aa2cf9551c9a3d3304aa8ebe93217d11e451e90",
+      "translation_sha256": "3f9f89c5005b832044384ffe491023d448c1e614c634ecc1f8f25c93eb7ee85f",
+      "source_audit_ids": [
+        "OLPL-015"
+      ]
+    },
+    {
+      "unit_id": "OLP-0104",
+      "status": "pass",
+      "checks": "Compared the three quantified constructions, including eigenvariable-first ordering, fresh a/b/c choices, repeatable unrestricted instantiation, withheld checkmarks, delayed splitting, all parent-line labels and closure pairs. Every quantifier, term, predicate arity and nine exercise formulas is preserved.",
+      "reverse_sample": "Quantified tableaux normally apply fresh-constant rules first. Rules that instantiate with any closed term may need repeated use and remain unchecked; choosing terms already on the branch often produces the matching signed instances needed for closure.",
+      "source_sha256": "253a81c3ef645fee728f66e385a86459773fa5d6a82e73740cb55497c598c234",
+      "translation_sha256": "9d8cc334f08da81fbbb289015f37b8d53bd53e7f1cb327037370dfe29be08d83"
     }
   ],
   "unresolved_language_uncertainties": [
@@ -856,9 +921,10 @@
     "Proof-theoretic, provability, compactness and strong-generalization terminology is provisional borrowing or transparent description; the preserved finite-witness definitions and inference trees remain the formal authority.",
     "Soundness, sequent satisfaction, contrapositive, identity and substitutability terminology is provisional specialization, borrowing or transparent description; the preserved definitions, inference rules and semantic cases remain the formal authority.",
     "Natural-deduction, falsum, introduction/elimination, eigenvariable and proof-search terminology remains provisional adaptation or transparent description; the preserved inference rules, side conditions and proof trees remain the formal authority.",
-    "The natural-deduction metatheory reuses the established provisional logic and proof-theory vocabulary. Exact definitions, inference rules, semantic conditions and proof trees remain the formal authority pending independent expert language review."
+    "The natural-deduction metatheory reuses the established provisional logic and proof-theory vocabulary. Exact definitions, inference rules, semantic conditions and proof trees remain the formal authority pending independent expert language review.",
+    "The tableau foundations reuse the established provisional logic and proof-theory vocabulary, adding an ordinary descriptive term for checkmarks. Exact signed rules, branch structure, freshness conditions and closure pairs remain the formal authority pending independent expert language review."
   ],
-  "build_and_visual_review": "The 36-page introduction/sets/relations/functions reader is accepted and published as v0.1.2. OLP-0049 through OLP-0097 are source-complete and reviewed here but are not yet integrated into a later full-reader build.",
+  "build_and_visual_review": "The 36-page introduction/sets/relations/functions reader is accepted and published as v0.1.2. OLP-0049 through OLP-0104 are source-complete and reviewed here but are not yet integrated into a later full-reader build.",
   "superseded_unit_reviews": [
     {
       "unit_id": "OLP-0021",

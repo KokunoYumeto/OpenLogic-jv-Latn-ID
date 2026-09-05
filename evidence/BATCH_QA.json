@@ -1,11 +1,11 @@
 {
   "schema": "jv-batch-qa/1",
-  "utc": "2026-09-05T16:01:45.505626+00:00",
-  "checked_units": 97,
-  "structural_pass_units": 97,
+  "utc": "2026-09-05T16:25:19.474893+00:00",
+  "checked_units": 104,
+  "structural_pass_units": 104,
   "total_units": 722,
-  "segments": 1603,
-  "translated_segments": 1031,
+  "segments": 1709,
+  "translated_segments": 1081,
   "units": [
     {
       "unit_id": "OLP-0001",
@@ -2140,10 +2140,164 @@
       "source_math_count": 30,
       "target_math_count": 30,
       "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0098",
+      "source_path": "content/first-order-logic/tableaux/tableaux.tex",
+      "source_sha256": "1c6e7018e63cae3440e85d537303288261afd422b9e13bc455b99c2d206aa1b6",
+      "translation_sha256": "569538f64d8f5bb2fd7f074c2d1a0d8e4fe6e1fc0e1aef3f152042a0d927d148",
+      "translation_bytes": 1072,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 20,
+      "target_paragraphs": 20,
+      "source_math_count": 0,
+      "target_math_count": 0,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0099",
+      "source_path": "content/first-order-logic/tableaux/rules-and-proofs.tex",
+      "source_sha256": "312d16775a4a86acf5772c8d02db03233101014ef0ee9a77e3c39b5ca6815a8c",
+      "translation_sha256": "6ce9a16e5e07fec8655999ba4bdbcc63edb9de0dab2aa98dd538ecbf73de2608",
+      "translation_bytes": 2537,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 12,
+      "target_paragraphs": 12,
+      "source_math_count": 19,
+      "target_math_count": 19,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0100",
+      "source_path": "content/first-order-logic/tableaux/propositional-rules.tex",
+      "source_sha256": "dcf0dc5fbdbfd79a7cf8c4b07a3d3d51aedc9ac424416d205ee5a8fd0877a8f4",
+      "translation_sha256": "0ef7770885cf2586956a2fc42fddf79b73ae56fb0715bf8c9ffbb8d80234494e",
+      "translation_bytes": 2334,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 17,
+      "target_paragraphs": 17,
+      "source_math_count": 10,
+      "target_math_count": 10,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0101",
+      "source_path": "content/first-order-logic/tableaux/quantifier-rules.tex",
+      "source_sha256": "682b3f1de2569dc63657243b83a3daa8966cc1786fa44d5d2fa34da2658e2bb0",
+      "translation_sha256": "912b7b4f76fdcf6af107b9271aa2b3661c35fed14a56657d9366e60118cc5cfc",
+      "translation_bytes": 4123,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 15,
+      "target_paragraphs": 15,
+      "source_math_count": 29,
+      "target_math_count": 29,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0102",
+      "source_path": "content/first-order-logic/tableaux/derivations.tex",
+      "source_sha256": "2cb9a2b6c144eb8b53c4a4d9c52daab60bcd3491dbc909cdd5ccf42300fe5452",
+      "translation_sha256": "3a418b815208e0c29b7cb25eaeec1d7e97d78ee5eb65cab05d5e8e18c8077477",
+      "translation_bytes": 3910,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 11,
+      "target_paragraphs": 11,
+      "source_math_count": 22,
+      "target_math_count": 22,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0103",
+      "source_path": "content/first-order-logic/tableaux/proving-things.tex",
+      "source_sha256": "6940ff2f8466cfb9dc740a4e7aa2cf9551c9a3d3304aa8ebe93217d11e451e90",
+      "translation_sha256": "3f9f89c5005b832044384ffe491023d448c1e614c634ecc1f8f25c93eb7ee85f",
+      "translation_bytes": 18588,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 18,
+      "target_paragraphs": 18,
+      "source_math_count": 61,
+      "target_math_count": 61,
+      "status": "structural_pass"
+    },
+    {
+      "unit_id": "OLP-0104",
+      "source_path": "content/first-order-logic/tableaux/proving-things-quant.tex",
+      "source_sha256": "253a81c3ef645fee728f66e385a86459773fa5d6a82e73740cb55497c598c234",
+      "translation_sha256": "9d8cc334f08da81fbbb289015f37b8d53bd53e7f1cb327037370dfe29be08d83",
+      "translation_bytes": 13483,
+      "checks": {
+        "paragraph_count": true,
+        "protected_commands": true,
+        "math_sequence": true,
+        "token_sequence": true,
+        "environment_sequence": true,
+        "unicode_clean": true,
+        "no_placeholder": true,
+        "all_command_sequence": true
+      },
+      "source_paragraphs": 13,
+      "target_paragraphs": 13,
+      "source_math_count": 53,
+      "target_math_count": 53,
+      "status": "structural_pass"
     }
   ],
   "failures": 0,
-  "semantic_reviewed_units": 97,
+  "semantic_reviewed_units": 104,
   "build": "see BUILD_SETS.json",
   "release_ready": false
 }

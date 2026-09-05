@@ -1,0 +1,61 @@
+% Part: first-order-logic
+% Chapter: tableaux
+% Section: rules-and-proofs
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{tab}{rul}}
+      {\olfileid{pl}{tab}{rul}}
+
+\olsection{Aturan lan \usetoken{P}{tableau}}
+
+!!^a{tableau} yaiku pamriksa sistematis tumrap kabeh cara kang bisa
+ndadekake !!a{sentence} bener utawa salah ing !!a{structure}. Unsur
+pambangun tableau yaiku !!{signed formula}s: !!{sentence}s bebarengan
+karo ``tandha'' nilai kabeneran, yaiku salah siji saka $\True$
+utawa~$\False$. !!{formula}s iki disusun dadi wit (kang tuwuh
+mudhun).
+
+\begin{defn}
+  \emph{!!{signed formula}} yaiku pasangan kang dumadi saka nilai
+  kabeneran lan !!a{sentence}, yaiku salah siji saka:
+  \[
+  \sFmla{\True}{!A} \text{ utawa } \sFmla{\False}{!A}.
+  \]
+\end{defn}
+
+Miturut intuisi, $\sFmla{\True}{!A}$ bisa diwaca minangka ``$!A$
+bisa wae bener'' lan $\sFmla{\False}{!A}$ minangka ``$!A$ bisa wae
+salah'' (ing sawijining !!{structure}).
+
+Saben !!{signed formula} ing wit iku salah siji saka \emph{asumsi}
+(kang didhaptar ing pucuk wit), utawa diasilake saka
+!!a{signed formula} ing ndhuwure liwat salah siji saka sawetara aturan inferensi.
+Ana rong aturan kanggo saben !!{main operator} kang bisa diduweni
+!!{formula} sadurunge, siji kanggo tandha~$\True$ lan siji kanggo
+tandha~$\False$. Sawetara aturan ngidini wit nyabang, dene liyane mung
+nambahake !!{signed formula}s menyang sawijining cabang. Sawijining
+aturan bisa (lan kerep kudu) ditrapake dudu marang !!{signed formula}
+kang langsung ana sadurunge, nanging marang sembarang
+!!{signed formula} ing cabang saka oyod nganti panggonan aturan iku ditrapake.
+
+Sawijining cabang \emph{katutup} yen ngemot $\sFmla{\True}{!A}$ lan
+$\sFmla{\False}{!A}$ bebarengan. !!{tableau} katutup yen saben
+cabange katutup. Miturut interpretasi intuisi mau, saben cabang
+nggambarake sawijining kamungkinan bebarengan, nanging
+$\sFmla{\True}{!A}$ lan $\sFmla{\False}{!A}$ ora bisa kelakon
+bebarengan. Kanthi tembung liya, yen cabang katutup, kamungkinan kang
+digambarake wis kasisih. Mligine, iki ateges !!{tableau} katutup
+nyingkirake kabeh kamungkinan kanggo bebarengan ndadekake saben asumsi
+awujud $\sFmla{\True}{!A}$ bener lan saben asumsi awujud
+$\sFmla{\False}{!A}$ salah.
+
+!!{tableau} katutup \emph{kanggo $!A$} yaiku !!{tableau} katutup
+kanthi oyod~$\sFmla{\False}{!A}$. Yen ana !!{tableau} katutup kaya
+mangkono, kabeh kamungkinan yen~$!A$ salah wis kasisih; yaiku, $!A$
+kudu bener ing saben !!{structure}.
+
+\end{document}

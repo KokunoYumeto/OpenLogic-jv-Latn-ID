@@ -1,0 +1,97 @@
+% Part: first-order-logic
+% Chapter: tableaux
+% Section: derivations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{tab}{der}}
+      {\olfileid{pl}{tab}{der}}
+
+\olsection{\usetoken{P}{tableau}}
+
+\begin{explain}
+Kita wis nerangake apa iku asumsi lan wis menehi aturan inferensi.
+!!^{tableau}s diasilake kanthi induktif saka unsur-unsur iki: saben
+!!{tableau} iku salah siji saka cabang tunggal kang dumadi saka siji
+utawa luwih asumsi, utawa diasilake saka !!a{tableau} kanthi
+ngetrapake salah siji aturan inferensi ing sawijining cabang.
+\end{explain}
+
+\begin{defn}[!!^{tableau}]
+!!^a{tableau} kanggo asumsi $\sFmla{S_1}{!A_1}$, \dots,
+$\sFmla{S_n}{!A_n}$ (kanthi saben $S_i$ iku salah siji saka $\True$
+utawa~$\False$) yaiku wit winates saka !!{signed formula}s kang
+nyukupi syarat-syarat iki:
+\begin{enumerate}
+\item $n$ !!{signed formula}s paling dhuwur ing wit yaiku
+  $\sFmla{S_i}{!A_i}$, siji ana ing sangisore liyane.
+\item Saben !!{signed formula} ing wit kang dudu salah siji saka
+  asumsi diasilake saka panrapan aturan inferensi kang bener marang
+  !!a{signed formula} ing cabang ing sadhuwure.
+\end{enumerate}
+Sawijining cabang saka !!a{tableau} iku \emph{katutup} yen lan mung
+yen ngemot $\sFmla{\True}{!A}$ lan~$\sFmla{\False}{!A}$ bebarengan,
+lan \emph{bukak} yen ora mangkono. !!^a{tableau} kang saben cabange
+katutup diarani \emph{!!{tableau} katutup} (kanggo himpunan
+asumsine). Yen !!a{tableau} ora katutup, yaiku yen ngemot saora-orane
+siji cabang bukak, tableau kasebut \emph{bukak}.
+\end{defn}
+
+\begin{ex}
+  Saben himpunan asumsi dhewe wis dadi !!a{tableau}, nanging umume
+  ora katutup. (Temenan, tableau kasebut katutup mung yen asumsi wis
+  ngemot pasangan !!{signed formula}s $\sFmla{\True}{!A}$
+  lan~$\sFmla{\False}{!A}$.)
+
+  Saka !!a{tableau} (bukak utawa katutup), kita bisa ngasilake tableau
+  anyar kang luwih gedhe kanthi ngetrapake salah siji aturan inferensi
+  marang !!a{signed formula}~$!A$ ing jerone. Aturan kasebut bakal
+  nambahake siji utawa luwih !!{signed formula}s ing pucuk saben
+  cabang kang ngemot kedadeyan~$!A$ kang dikenani aturan.
+
+  Tuladhane, gatekna asumsi $\sFmla{\True}{!A \land \lnot !A}$. Ing
+  ngisor iki !!{tableau} (bukak) kang mung dumadi saka asumsi iku:
+  \begin{center}
+    \begin{tableau}{}
+      [\sFmla{\True}{\formula{A} \land \lnot \formula{A}}, just=\TAss]
+    \end{tableau}{}
+  \end{center}
+  Kita ngasilake !!{tableau} anyar kanthi ngetrapake aturan
+  $\TRule{\True}{\land}$ marang asumsi. Aturan iku ngidini kita
+  nambahake rong larik anyar ing !!{tableau},
+  $\sFmla{\True}{!A}$ lan $\sFmla{\True}{\lnot !A}$:
+  \begin{center}
+    \begin{tableau}{}
+      [\sFmla{\True}{\formula{A} \land \lnot \formula{A}}, just=\TAss
+        [\sFmla{\True}{\formula{A}}, just={\TRule{\True}{\land}[1]},
+          [\sFmla{\True}{\lnot \formula{A}}, just={\TRule{\True}{\land}[1]}
+          ]
+        ]
+      ]
+    \end{tableau}{}
+  \end{center}
+  Nalika nulis !!{tableau}s, kita nyathet aturan kang wis ditrapake
+  ing sisih tengen (tuladhane, $\TRule{\True}{\land} 1$ ateges
+  !!{signed formula} ing larik iku diasilake saka panrapan aturan
+  $\TRule{\True}{\land}$ marang !!{signed formula} ing larik~$1$).
+  !!{tableau} anyar iki saiki ngemot !!{signed formula}s tambahan,
+  nanging mung siji ($\sFmla{\True}{\lnot !A}$) kang isih bisa
+  dikenani aturan (ing kasus iki, aturan $\TRule{\True}{\lnot}$).
+  Panrapan iku ngasilake !!{tableau} katutup iki:
+  \begin{center}
+    \begin{tableau}{}
+      [\sFmla{\True}{\formula{A} \land \lnot \formula{A}}, just=\TAss
+        [\sFmla{\True}{\formula{A}}, just={\TRule{\True}{\land}[1]}
+          [\sFmla{\True}{\lnot \formula{A}}, just={\TRule{\True}{\land}[1]}
+            [\sFmla{\False}{\formula{A}}, just={\TRule{\True}{\lnot}[3]}, close]
+          ]
+        ]
+      ]
+    \end{tableau}{}
+  \end{center}
+\end{ex}
+
+\end{document}

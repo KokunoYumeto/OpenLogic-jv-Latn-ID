@@ -1,0 +1,349 @@
+% Part: first-order-logic
+% Chapter: tableaux
+% Section: proving-things-quant
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{tab}{prq}
+
+\olsection{\usetoken{P}{tableau} kanthi Kuantor}
+
+\begin{ex}
+Nalika nangani kuantor, kita kudu mesthekake supaya ora nerak syarat
+eigenvariabel, lan kadhangkala iki mbutuhake kita nyoba-nyoba urutan
+panrapan inferensi tartamtu. Umume, luwih gampang yen aturan kang kena
+syarat eigenvariabel ditangani luwih dhisik (aturan iku bakal ana ing
+sisih luwih dhuwur ing !!{tableau} kang wis rampung).
+
+Ayo ndeleng carane menehi !!a{tableau} kanggo !!{sentence}
+$\lexists[x][\lnot !A(x)] \lif \lnot \lforall[x][!A(x)]$.
+Kaya lumrahe, kita miwiti kanthi nyathet asumsi,
+\begin{oltableau}
+[\sFmla{\False}{\lexists[x][\lnot \formula{A}(x)]\lif \lnot
+    \lforall[x][\formula{A}(x)]}, just=\TAss]
+\end{oltableau}
+Amarga !!{main operator} iku $\lif$, kita ngetrapake
+$\TRule{\False}{\lif}$:
+\begin{oltableau}
+[\sFmla{\False}{\lexists[x][\lnot \formula{A}(x)]\lif \lnot
+    \lforall[x][\formula{A}(x)]}, just=\TAss, checked
+  [\sFmla{\True}{\lexists[x][\lnot \formula{A}(x)]},
+    just={\TRule{\False}{\lif}[1]}
+    [\sFmla{\False}{\lnot\lforall[x][\formula{A}(x)]},
+      just={\TRule{\False}{\lif}[1]}]
+  ]
+]
+\end{oltableau}
+Larik sabanjure kang kudu ditangani yaiku~$2$. Kita nggunakake
+$\TRule{\True}{\lexists}$. Iki mbutuhake !!{constant} anyar; amarga
+durung ana !!{constant}s kang muncul, kita bisa milih sembarang
+konstanta, upamane~$a$.
+\begin{oltableau}
+[\sFmla{\False}{\lexists[x][\lnot \formula{A}(x)]\lif \lnot
+    \lforall[x][\formula{A}(x)]}, just=\TAss, checked
+  [\sFmla{\True}{\lexists[x][\lnot \formula{A}(x)]},
+    just={\TRule{\False}{\lif}[1]}, checked
+    [\sFmla{\False}{\lnot\lforall[x][\formula{A}(x)]},
+      just={\TRule{\False}{\lif}[1]}
+      [\sFmla{\True}{\lnot\formula{A}(a)}, just={\TRule{\True}{\lexists}[2]}]
+    ]
+  ]
+]
+\end{oltableau}
+Saiki kita ngetrapake $\TRule{\False}{\lnot}$ marang larik~$3$:
+\begin{oltableau}
+[\sFmla{\False}{\lexists[x][\lnot \formula{A}(x)]\lif \lnot
+    \lforall[x][\formula{A}(x)]}, just=\TAss, checked
+  [\sFmla{\True}{\lexists[x][\lnot \formula{A}(x)]},
+    just={\TRule{\False}{\lif}[1]}, checked
+    [\sFmla{\False}{\lnot\lforall[x][\formula{A}(x)]},
+      just={\TRule{\False}{\lif}[1]}, checked
+      [\sFmla{\True}{\lnot\formula{A}(a)}, just={\TRule{\True}{\lexists}[2]}
+        [\sFmla{\True}{\lforall[x][\formula{A}(x)]},
+          just = {\TRule{\False}{\lnot}[3]}
+        ]
+      ]
+    ]
+  ]
+]
+\end{oltableau}
+Kita ngasilake !!{tableau} katutup kanthi ngetrapake
+$\TRule{\True}{\lnot}$ marang larik~$4$, banjur
+$\TRule{\True}{\lforall}$ marang larik~$5$.
+\begin{oltableau}
+[\sFmla{\False}{\lexists[x][\lnot \formula{A}(x)]\lif \lnot
+    \lforall[x][\formula{A}(x)]}, just=\TAss, checked
+  [\sFmla{\True}{\lexists[x][\lnot \formula{A}(x)]},
+    just={\TRule{\False}{\lif}[1]}, checked
+    [\sFmla{\False}{\lnot\lforall[x][\formula{A}(x)]},
+      just={\TRule{\False}{\lif}[1]}, checked
+      [\sFmla{\True}{\lnot\formula{A}(a)}, just={\TRule{\True}{\lexists}[2]}
+        [\sFmla{\True}{\lforall[x][\formula{A}(x)]},
+          just = {\TRule{\False}{\lnot}[3]}
+          [\sFmla{\False}{\formula{A}(a)}, just={\TRule{\True}{\lnot}[4]}
+            [\sFmla{\True}{\formula{A}(a)},
+              just={\TRule{\True}{\lforall}[5]}, close
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+]
+\end{oltableau}
+\end{ex}
+
+\begin{ex}
+Ayo ndeleng carane menehi !!a{tableau} kanggo himpunan
+\[
+\sFmla{\False}{\lexists[x][!C(x,b)]},
+\sFmla{\True}{\lexists[x][(!A(x) \land !B(x))]},
+\sFmla{\True}{\lforall[x][(!B(x) \lif !C(x,b))]}.
+\]
+Kaya lumrahe, kita miwiti nganggo asumsi:
+\begin{oltableau}
+  [\sFmla{\False}{\lexists[x][\formula{C}(x,b)]}, just=\TAss
+    [\sFmla{\True}{\lexists[x][(\formula{A}(x) \land \formula{B}(x))]},
+      just=\TAss
+      [\sFmla{\True}{\lforall[x][(\formula{B}(x) \lif \formula{C}(x,b))]},
+        just=\TAss]
+    ]
+  ]
+\end{oltableau}
+Kita kudu tansah ngetrapake aturan kang duwe syarat eigenvariabel luwih
+dhisik; ing kasus iki yaiku $\TRule{\True}{\lexists}$ marang
+larik~$2$. Amarga asumsi ngemot !!{constant}~$b$, kita kudu nggunakake
+konstanta liyane; ayo milih~$a$ maneh.
+\begin{oltableau}
+  [\sFmla{\False}{\lexists[x][\formula{C}(x,b)]}, just=\TAss
+    [\sFmla{\True}{\lexists[x][(\formula{A}(x) \land \formula{B}(x))]},
+      just=\TAss, checked
+      [\sFmla{\True}{\lforall[x][(\formula{B}(x) \lif \formula{C}(x,b))]},
+        just=\TAss
+        [\sFmla{\True}{\formula{A}(a) \land \formula{B}(a)},
+          just={\TRule{\True}{\lexists}[2]}]
+      ]
+    ]
+  ]
+\end{oltableau}
+Yen saiki kita ngetrapake $\TRule{\False}{\lexists}$ marang larik~$1$
+utawa $\TRule{\True}{\lforall}$ marang larik~$3$, kita kudu nemtokake
+term~$t$ kang bakal disubstitusikake kanggo~$x$. Amarga aturan-aturan
+iki ora duwe syarat eigenvariabel, kita bisa milih sembarang term. Ing
+sawetara kasus, aturan kasebut malah kudu ditrapake ping pirang-pirang
+nganggo $t$ kang beda. Nanging minangka pathokan umum, luwih migunani
+milih salah siji term kang wis muncul ing !!{tableau}---ing kasus iki,
+$a$ lan~$b$---lan ing kasus iki kita bisa ngira yen $a$ luwih gampang
+ngasilake cabang katutup.
+\begin{oltableau}
+  [\sFmla{\False}{\lexists[x][\formula{C}(x,b)]}, just=\TAss
+    [\sFmla{\True}{\lexists[x][(\formula{A}(x) \land \formula{B}(x))]},
+      just=\TAss, checked
+      [\sFmla{\True}{\lforall[x][(\formula{B}(x) \lif \formula{C}(x,b))]}, just=\TAss
+        [\sFmla{\True}{\formula{A}(a) \land \formula{B}(a)}, just={\TRule{\True}{\lexists}[2]}
+          [\sFmla{\False}{\formula{C}(a,b)}, just={\TRule{\False}{\lexists}[1]}
+            [\sFmla{\True}{\formula{B}(a) \lif \formula{C}(a,b)},
+              just={\TRule{\True}{\lforall}[3]}
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+\end{oltableau}
+Kita ora menehi tandha centhang marang !!{signed formula}s ing larik
+$1$ lan $3$, amarga bisa uga kudu digunakake maneh. Saiki terapna
+$\TRule{\True}{\land}$ marang larik~$4$:
+\begin{oltableau}
+  [\sFmla{\False}{\lexists[x][\formula{C}(x,b)]}, just=\TAss
+    [\sFmla{\True}{\lexists[x][(\formula{A}(x) \land \formula{B}(x))]},
+      just=\TAss, checked
+      [\sFmla{\True}{\lforall[x][(\formula{B}(x) \lif \formula{C}(x,b))]}, just=\TAss
+        [\sFmla{\True}{\formula{A}(a) \land \formula{B}(a)},
+          just={\TRule{\True}{\lexists}[2]}, checked
+          [\sFmla{\False}{\formula{C}(a,b)}, just={\TRule{\False}{\lexists}[1]}
+            [\sFmla{\True}{\formula{B}(a) \lif \formula{C}(a,b)},
+              just={\TRule{\True}{\lforall}[3]}
+              [\sFmla{\True}{\formula{A}(a)}, just={\TRule{\True}{\land}[4]}
+                [\sFmla{\True}{\formula{B}(a)}, just={\TRule{\True}{\land}[4]}
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+\end{oltableau}
+Yen saiki kita ngetrapake $\TRule{\True}{\lif}$ marang larik~$6$,
+!!{tableau} iku katutup:
+\begin{oltableau}
+  [\sFmla{\False}{\lexists[x][\formula{C}(x,b)]}, just=\TAss
+    [\sFmla{\True}{\lexists[x][(\formula{A}(x) \land \formula{B}(x))]},
+      just=\TAss, checked
+      [\sFmla{\True}{\lforall[x][(\formula{B}(x) \lif \formula{C}(x,b))]},
+        just=\TAss
+        [\sFmla{\True}{\formula{A}(a) \land \formula{B}(a)},
+          just={\TRule{\True}{\lexists}[2]}, checked
+          [\sFmla{\False}{\formula{C}(a,b)},
+            just={\TRule{\False}{\lexists}[1]}
+            [\sFmla{\True}{\formula{B}(a) \lif \formula{C}(a,b)},
+              just={\TRule{\True}{\lforall}[3]}, checked
+              [\sFmla{\True}{\formula{A}(a)},
+                just={\TRule{\True}{\land}[4]}
+                [\sFmla{\True}{\formula{B}(a)},
+                  just={\TRule{\True}{\land}[4]}
+                  [\sFmla{\False}{\formula{B}(a)},
+                    just={\TRule{\True}{\lif}[6]},close
+                  ]
+                  [\sFmla{\True}{\formula{C}(a,b)},
+                    just={\TRule{\True}{\lif}[6]},close
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+\end{oltableau}
+
+
+\end{ex}
+
+\begin{ex}
+Kita mbangun !!a{tableau} kanggo himpunan
+\[
+\sFmla{\True}{\lforall[x][!A(x)]}, \sFmla{\True}{\lforall[x][!A(x)] 
+  \lif \lexists[y][!B(y)]}, \sFmla{\True}{\lnot\lexists[y][!B(y)]}.
+\]
+Kaya lumrahe, kita nulis asumsi:
+\begin{oltableau}
+  [\sFmla{\True}{\lforall[x][\formula{A}(x)]}, just=\TAss
+    [\sFmla{\True}{\lforall[x][\formula{A}(x)] \lif
+        \lexists[y][\formula{B}(y)]}, just=\TAss
+      [\sFmla{\True}{\lnot\lexists[y][\formula{B}(y)]}, just=\TAss
+      ]
+    ]
+  ]
+\end{oltableau}
+Kita miwiti kanthi ngetrapake aturan $\TRule{\True}{\lnot}$ marang
+larik~$3$. Konsekuensi saka pathokan ``tansah terapna aturan kang
+duwe syarat eigenvariabel luwih dhisik'' yaiku ``tundhaa panrapan
+aturan kuantor tanpa syarat eigenvariabel nganti dibutuhake.'' Uga
+tundhaa aturan kang ngasilake panyabangan.
+\begin{oltableau}
+  [\sFmla{\True}{\lforall[x][\formula{A}(x)]}, just=\TAss
+    [\sFmla{\True}{\lforall[x][\formula{A}(x)] \lif
+        \lexists[y][\formula{B}(y)]}, just=\TAss
+      [\sFmla{\True}{\lnot\lexists[y][\formula{B}(y)]}, just=\TAss, checked
+        [\sFmla{\False}{\lexists[y][\formula{B}(y)]}, just={\TRule{\True}{\lnot}[3]}]
+      ]
+    ]
+  ]
+\end{oltableau}
+Larik anyar~$4$ mbutuhake $\TRule{\False}{\lexists}$, yaiku aturan
+kuantor tanpa syarat eigenvariabel. Mula aturan iki ditundha lan kita
+milih nggunakake $\TRule{\True}{\lif}$ marang larik~$2$.
+\begin{oltableau}
+  [\sFmla{\True}{\lforall[x][\formula{A}(x)]}, just=\TAss
+    [\sFmla{\True}{\lforall[x][\formula{A}(x)] \lif
+        \lexists[y][\formula{B}(y)]}, just=\TAss, checked
+      [\sFmla{\True}{\lnot\lexists[y][\formula{B}(y)]}, just=\TAss, checked
+        [\sFmla{\False}{\lexists[y][\formula{B}(y)]},
+          just={\TRule{\True}{\lnot}[3]},
+          [\sFmla{\False}{\lforall[x][\formula{A}(x)]}, just={\TRule{\True}{\lif}[2]}]
+          [\sFmla{\True}{\lexists[y][\formula{B}(y)]}, just={\TRule{\True}{\lif}[2]}]
+        ]
+      ]
+    ]
+  ]
+\end{oltableau}
+Rong !!{signed formula}s anyar mbutuhake aturan kang duwe syarat
+eigenvariabel, mula aturan-aturan iku kudu ditrapake sabanjure:
+\begin{oltableau}
+  [\sFmla{\True}{\lforall[x][\formula{A}(x)]}, just=\TAss
+    [\sFmla{\True}{\lforall[x][\formula{A}(x)] \lif
+        \lexists[y][\formula{B}(y)]}, just=\TAss, checked
+      [\sFmla{\True}{\lnot\lexists[y][\formula{B}(y)]}, just=\TAss, checked
+        [\sFmla{\False}{\lexists[y][\formula{B}(y)]},
+          just={\TRule{\True}{\lnot}[3]}
+          [\sFmla{\False}{\lforall[x][\formula{A}(x)]}, just={\TRule{\True}{\lif}[2]},checked
+            [\sFmla{\False}{\formula{A}(b)}, just={\TRule{\False}{\lforall}[5]}]
+          ]
+          [\sFmla{\True}{\lexists[y][\formula{B}(y)]}, just={\TRule{\True}{\lif}[2]},checked
+            [\sFmla{\True}{\formula{B}(c)}, just={\TRule{\True}{\lexists}[5]}]
+          ]
+        ]
+      ]
+    ]
+  ]
+\end{oltableau}
+Kanggo nutup cabang-cabang kasebut, kita kudu nggunakake
+!!{signed formula}s ing larik $1$ lan~$3$. Aturan kang cocog
+(\TRule{\True}{\lforall} lan \TRule{\False}{\lexists}) ora duwe
+syarat eigenvariabel, mula kita bebas milih term kang trep. Ing kasus
+iki, terme yaiku $b$ lan~$c$, miturut urutane.
+\begin{oltableau}
+  [\sFmla{\True}{\lforall[x][\formula{A}(x)]}, just=\TAss
+    [\sFmla{\True}{\lforall[x][\formula{A}(x)] \lif
+        \lexists[y][\formula{B}(y)]}, just=\TAss, checked
+      [\sFmla{\True}{\lnot\lexists[y][\formula{B}(y)]}, just=\TAss, checked
+        [\sFmla{\False}{\lexists[y][\formula{B}(y)]},
+          just={\TRule{\True}{\lnot}[3]}
+          [\sFmla{\False}{\lforall[x][\formula{A}(x)]},
+            just={\TRule{\True}{\lif}[2]},checked
+            [\sFmla{\False}{\formula{A}(b)},
+              just={\TRule{\False}{\lforall}[5]}
+              [\sFmla{\True}{\formula{A}(b)},
+                just={\TRule{\True}{\lforall}[1]},close
+              ]
+            ]
+          ]
+          [\sFmla{\True}{\lexists[y][\formula{B}(y)]},
+            just={\TRule{\True}{\lif}[2]},checked
+            [\sFmla{\True}{\formula{B}(c)},
+              just={\TRule{\True}{\lexists}[5]}
+              [\sFmla{\False}{\formula{B}(c)},
+                just={\TRule{\False}{\lexists}[4]},close
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+\end{oltableau}
+\end{ex}
+
+\begin{prob}
+Wenehana !!{tableau}s katutup kanggo perkara-perkara iki:
+\begin{enumerate}
+\item $\sFmla{\False}{(\lforall[x][!A(x)] \land \lforall[y][!B(y)])
+\lif \lforall[z][(!A(z) \land !B(z))]}$.
+\item $\sFmla{\False}{(\lexists[x][!A(x)] \lor \lexists[y][!B(y)])
+\lif \lexists[z][(!A(z) \lor !B(z))]}$.
+\item $\sFmla{\True}{\lforall[x][(!A(x) \lif !B)]},
+\sFmla{\False}{\lexists[y][!A(y)] \lif !B}$.
+\item $\sFmla{\True}{\lforall[x][\lnot !A(x)]},
+\sFmla{\False}{\lnot\lexists[x][!A(x)]}$.
+\item $\sFmla{\False}{\lnot\lexists[x][!A(x)] \lif \lforall[x][\lnot
+!A(x)]}$.
+\item $\sFmla{\False}{\lnot\lexists[x][\lforall[y][((!A(x,y) \lif
+\lnot !A(y,y)) \land (\lnot !A(y,y) \lif !A(x,y)))]]}$.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+Wenehana !!{tableau}s katutup kanggo perkara-perkara iki:
+\begin{enumerate}
+\item $\sFmla{\False}{\lnot\lforall[x][!A(x)] \lif \lexists[x][\lnot!A(x)]}$.
+\item $\sFmla{\True}{(\lforall[x][!A(x)] \lif !B)}, \sFmla{\False}{\lexists[y][(!A(y) \lif !B)]}$.
+\item $\sFmla{\False}{\lexists[x][(!A(x) \lif \lforall[y][!A(y)])]}$.
+\end{enumerate}
+\end{prob}
+
+\end{document}

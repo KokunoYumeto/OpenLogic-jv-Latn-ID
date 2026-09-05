@@ -1,0 +1,78 @@
+{
+  "schema": "jv-local-source-audit/1",
+  "audit_id": "OLPL-TABLEAUX-FOUNDATIONS-20260905",
+  "date": "2026-09-05",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "status": "confirmed_three_bounded_tableau_foundation_defects",
+  "sources": [
+    {
+      "unit_id": "OLP-0098",
+      "path": "content/first-order-logic/tableaux/tableaux.tex",
+      "bytes": 926,
+      "sha256": "1c6e7018e63cae3440e85d537303288261afd422b9e13bc455b99c2d206aa1b6"
+    },
+    {
+      "unit_id": "OLP-0101",
+      "path": "content/first-order-logic/tableaux/quantifier-rules.tex",
+      "bytes": 3850,
+      "sha256": "682b3f1de2569dc63657243b83a3daa8966cc1786fa44d5d2fa34da2658e2bb0"
+    },
+    {
+      "unit_id": "OLP-0103",
+      "path": "content/first-order-logic/tableaux/proving-things.tex",
+      "bytes": 18225,
+      "sha256": "6940ff2f8466cfb9dc740a4e7aa2cf9551c9a3d3304aa8ebe93217d11e451e90"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "OLPL-013",
+      "unit_id": "OLP-0098",
+      "locator": "lines 15-17",
+      "observed": "The chapter editorial note says the prfTab tag controls material relevant to natural deduction as a proof system.",
+      "finding": "The tableau chapter driver names the wrong proof system in its tag guidance.",
+      "controlling_evidence": [
+        "The source path and both tag-controlled chapter identifiers place the file in the tableaux chapter.",
+        "The prfTab tag name and all thirteen imports select tableau rules, derivations and metatheory.",
+        "Natural deduction has its own chapter driver and separate prfND tag."
+      ],
+      "bounded_repair": {
+        "removed": "material relevant to natural deduction as a proof system",
+        "added": "material relevant to tableaux as a proof system"
+      }
+    },
+    {
+      "finding_id": "OLPL-014",
+      "unit_id": "OLP-0101",
+      "locator": "lines 80-85",
+      "observed": "The explanation says there are no restrictions on the term t in the true-universal and false-existential rules.",
+      "finding": "The unrestricted-term statement contradicts the closed-term restriction stated with both quantifier rules.",
+      "controlling_evidence": [
+        "Lines 26-27 expressly require t to be a closed term for the true-universal rule.",
+        "Lines 45-46 repeat that t is a closed term for the false-existential rule.",
+        "The contrast intended by lines 80-85 is with the eigenvariable condition: any closed term may be chosen, while the other two rules require a fresh constant."
+      ],
+      "bounded_repair": {
+        "removed": "there are no restrictions on the term t",
+        "added": "there are no eigenvariable restrictions on the choice of the closed term t"
+      }
+    },
+    {
+      "finding_id": "OLPL-015",
+      "unit_id": "OLP-0103",
+      "locator": "line 439",
+      "observed": "\\sFmla{\\True}{!A \\lor !B, \\lnot !B}, \\sFmla{\\False}{!A}",
+      "finding": "The exercise places two comma-separated sentences inside one signed-formula argument.",
+      "controlling_evidence": [
+        "OLP-0099 defines a signed formula as a pair of one truth value and one sentence.",
+        "The corresponding natural-deduction and sequent-calculus exercises use A or B and not-B as two premises.",
+        "The intended tableau closes by combining true A-or-B, true not-B and false A, so both first premises require their own true sign."
+      ],
+      "bounded_repair": {
+        "removed": "\\sFmla{\\True}{!A \\lor !B, \\lnot !B}, \\sFmla{\\False}{!A}",
+        "added": "\\sFmla{\\True}{!A \\lor !B}, \\sFmla{\\True}{\\lnot !B}, \\sFmla{\\False}{!A}"
+      }
+    }
+  ],
+  "source_policy": "Keep frozen English bytes and manifest hashes unchanged; repair only the localized proof-system name, closed-term qualification and malformed signed-formula list, with one adjacent Javanese provenance note for each finding."
+}
