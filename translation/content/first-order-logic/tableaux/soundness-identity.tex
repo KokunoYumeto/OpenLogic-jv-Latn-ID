@@ -1,0 +1,51 @@
+% Part: first-order-logic
+% Chapter: tableaux
+% Section: soundness-identity
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{tab}{sid}
+
+\olsection{Kasahihan mawa \usetoken{S}{identity}}
+
+\begin{prop}
+!!^{tableau}s mawa aturan kanggo identitas iku sah: ora ana
+!!{tableau} katutup kang bisa dicukupi.
+\end{prop}
+
+\begin{proof}
+Kaya sadurunge, kita mung kudu nuduhake yen, yen !!a{tableau} nduweni
+cabang kang bisa dicukupi, cabang asil aplikasi salah siji aturan
+kanggo~$\eq$ uga bisa dicukupi. Ayo $\Gamma$ dadi himpunan
+!!{formula}s mawa tandha ing cabang kasebut, lan ayo $\Struct{M}$ dadi
+!!a{structure} kang nyukupi~$\Gamma$.
+
+Upamana cabang diambakake nganggo~$\eq$, yaiku kanthi nambahake
+!!{formula} mawa tandha~$\sFmla{\True}{\eq[t][t]}$. Mesthi wae,
+$\Sat{M}{\eq[t][t]}$, mula $\Struct{M}$ uga nyukupi $\Gamma \cup
+\{\sFmla{\True}{\eq[t][t]}\}$.
+
+Yen cabang diambakake nganggo $\TRule{\True}{\eq}$, kita nambahake
+!!{formula} mawa tandha~$\sFmla{\True}{!A(t_2)}$, nanging $\Gamma$ ngemot
+$\sFmla{\True}{\eq[t_1][t_2]}$ lan $\sFmla{\True}{!A(t_1)}$
+kalorone. Mula kita duwe $\Sat{M}{\eq[t_1][t_2]}$ lan
+$\Sat{M}{!A(t_1)}$. Ayo $s$ dadi penetapan variabel kanthi
+$s(x) = \Value{t_1}{M}$. Miturut
+\olref[syn][ass]{prop:sentence-sat-true}, $\Sat{M}{!A(t_1)}[s]$.
+Amarga $\varAssign{s}{s}{x}$, miturut
+\olref[syn][ext]{prop:ext-formulas}, $\Sat{M}{!A(x)}[s]$. Amarga
+$\Sat{M}{\eq[t_1][t_2]}$, kita duwe
+$\Value{t_1}{M} = \Value{t_2}{M}$, mula $s(x) = \Value{t_2}{M}$.
+Kanthi ngetrapake \olref[syn][ext]{prop:ext-formulas} maneh, kita uga
+duwe $\Sat{M}{!A(t_2)}[s]$. Miturut
+\olref[syn][ass]{prop:sentence-sat-true}, $\Sat{M}{!A(t_2)}$. Kasus
+$\TRule{\False}{\eq}$ ditangani kanthi cara kang padha. Cathetan
+koreksi sumber OLPL-023: kasus aturan benar-identitas ing sumber
+nggunakake tandha skematis kanggo formula asil, nanging jeneng aturan,
+loro premis lan kabeh argumentasi netepake tandha bener kang
+dibalekake ing kene; kasus tandha salah dirembug dhewe sawise iku.
+\end{proof}
+
+\end{document}

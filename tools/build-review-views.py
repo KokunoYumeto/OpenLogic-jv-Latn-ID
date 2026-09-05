@@ -41,7 +41,7 @@ records = [
 metadata = records[0]
 decisions = records[1:]
 assert metadata["record_type"] == "metadata"
-assert len(decisions) == 162
+assert len(decisions) == 172
 assert len({row["decision_id"] for row in decisions}) == len(decisions)
 
 

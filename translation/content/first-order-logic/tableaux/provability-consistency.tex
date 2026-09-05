@@ -1,0 +1,165 @@
+% Part: first-order-logic
+% Chapter: tableaux
+% Section: provability-consistency
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{tab}{prv}}
+      {\olfileid{pl}{tab}{prv}}
+
+\olsection{\usetoken{S}{derivability} lan Konsistensi}
+
+Saiki kita bakal netepake sawetara sipat relasi !!{derivability}.
+Sipat kasebut narik kawigaten dhewe-dhewe, nanging saben sipat bakal
+duwe peran ing bukti teorema kelengkapan.
+
+\begin{prop}\ollabel{prop:provability-contr}
+  Yen $\Gamma \Proves !A$ lan $\Gamma \cup \{!A\}$ ora konsisten,
+  mula $\Gamma$ ora konsisten.
+\end{prop}
+
+\begin{proof}
+Ana $\Gamma_0 = \{!B_1, \dots, !B_n\}$ lan $\Gamma_1
+  =\{!C_1, \dots, !C_m\} \subseteq \Gamma$ kang winates saengga
+  \begin{align*}
+    \{\sFmla{\False}{!A}, &
+    \sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\} \\
+    \{\sFmla{\True}{!A}, &
+    \sFmla{\True}{!C_1}, \dots, \sFmla{\True}{!C_m}\}
+  \end{align*}
+  nduweni !!{tableau}s katutup. Kanthi nggunakake aturan \Cut{}
+  marang $!A$, kita bisa nggabungake loro tableau kasebut dadi siji
+  !!{tableau} katutup kang nuduhake yen $\Gamma_0 \cup \Gamma_1$ ora
+  konsisten. Amarga $\Gamma_0 \subseteq \Gamma$ lan $\Gamma_1
+  \subseteq \Gamma$, kita duwe $\Gamma_0 \cup \Gamma_1 \subseteq
+  \Gamma$, mula $\Gamma$ ora konsisten. Cathetan koreksi sumber
+  OLPL-017: sumber Inggris menehi indeks pungkasan kang padha karo
+  dhaptar kapisan marang dhaptar kapindho, nanging kabeh panganggone
+  sabanjure menehi indeks pungkasan dhewe; indeks kapindho iku kang
+  dibalekake ing kene.
+\end{proof}
+
+\begin{prop}
+\ollabel{prop:prov-incons}
+$\Gamma \Proves !A$ yen lan mung yen $\Gamma \cup \{\lnot !A\}$ ora
+konsisten.
+\end{prop}
+
+\begin{proof}
+Sepisan, upamana $\Gamma \Proves !A$, yaiku ana
+!!{tableau} katutup kanggo
+\[
+\{\sFmla{\False}{!A},
+\sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\}
+\]
+Kanthi nggunakake aturan $\TRule{\True}{\lnot}$, tableau iki bisa
+dadi !!{tableau} katutup kanggo
+\[
+\{\sFmla{\True}{\lnot !A},
+\sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\}.
+\]
+
+Kosok baline, yen ana !!{tableau} katutup kanggo himpunan kang
+pungkasan mau, kita bisa ngowahi dadi !!{tableau} katutup kanggo
+himpunan kapisan kanthi mbusak saben formula kang diasilake saka
+\TRule{\True}{\lnot} kang ditrapake marang asumsi kapisan
+$\sFmla{\True}{\lnot !A}$, uga mbusak asumsi kasebut, banjur nambahake
+asumsi $\sFmla{\False}{!A}$. Sebab, yen sadurunge sawijining cabang
+katutup amarga ngemot kesimpulan \TRule{\True}{\lnot} kang ditrapake
+marang $\sFmla{\True}{\lnot !A}$, yaiku $\sFmla{\False}{!A}$, cabang
+kang cocog ing !!{tableau} anyar uga katutup. Yen sawijining cabang
+ing tableau lawas katutup amarga ngemot asumsi
+$\sFmla{\True}{\lnot !A}$ uga $\sFmla{\False}{\lnot !A}$, kita bisa
+ngowahi dadi cabang katutup kanthi ngetrapake
+$\TRule{\False}{\lnot}$ marang $\sFmla{\False}{\lnot !A}$ kanggo
+entuk $\sFmla{\True}{!A}$. Iki nutup cabang amarga kita nambahake
+$\sFmla{\False}{!A}$ minangka asumsi.
+\end{proof}
+
+\begin{prob}
+Buktekna yen $\Gamma \Proves \lnot !A$ yen lan mung yen $\Gamma \cup
+\{!A\}$ ora konsisten.
+\end{prob}
+
+\begin{prop}\ollabel{prop:explicit-inc}
+  Yen $\Gamma \Proves !A$ lan $\lnot !A \in \Gamma$, mula $\Gamma$
+  ora konsisten.
+\end{prop}
+
+\begin{proof}
+  Upamana $\Gamma \Proves !A$ lan $\lnot !A \in \Gamma$. Mula ana
+  $!B_1$, \dots, $!B_n \in \Gamma$ saengga
+  \[
+  \{\sFmla{\False}{!A}, \sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\}
+  \]
+  nduweni tableau katutup. Gantinen asumsi
+  \sFmla{\False}{!A} nganggo \sFmla{\True}{\lnot !A}, banjur
+  lebokna kesimpulan saka \TRule{\True}{\lnot} kang ditrapake marang
+  \sFmla{\True}{\lnot !A} sawise asumsi-asumsi. Saben !!{sentence}
+  ing !!{tableau} kang kabenerake kanthi nuduhake larik~$1$ ing
+  !!{tableau} lawas saiki kabenerake kanthi nuduhake larik~$n+2$.
+  Dadi, yen !!{tableau} lawas katutup, tableau anyar uga katutup.
+  Tableau anyar nuduhake yen $\Gamma$ ora konsisten, amarga kabeh
+  asumsine kalebu ing~$\Gamma$. Cathetan koreksi sumber OLPL-018:
+  sumber Inggris nyebut formula kesimpulan minangka formula kang
+  dikenani aturan benar-negasi, sanadyan asumsi pangganti lan aturan
+  kasebut mbutuhake formula benar-negasi; kesimpulan iku mapan sawise
+  kabeh asumsi, saengga aplikasi lan nomer larik kang dibalekake ing
+  kene ditemtokake kanthi tunggal.
+\end{proof}
+
+\begin{prop}\ollabel{prop:provability-exhaustive}
+  Yen $\Gamma \cup \{!A\}$ lan $\Gamma \cup \{\lnot !A\}$ kalorone
+  ora konsisten, mula $\Gamma$ ora konsisten.
+\end{prop}
+
+\begin{proof}
+  Yen ana $!B_1$, \dots, $!B_n \in \Gamma$ lan $!C_1$, \dots,
+  $!C_m \in \Gamma$ saengga
+  \begin{align*}
+    \{\sFmla{\True}{!A}, &
+    \sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\} \text{ lan}\\
+    \{\sFmla{\True}{\lnot !A}, &
+    \sFmla{\True}{!C_1}, \dots, \sFmla{\True}{!C_m}\}
+  \end{align*}
+  kalorone nduweni !!{tableau}s katutup, kita bisa mbangun siji
+  !!{tableau} gabungan kang nuduhake yen $\Gamma$ ora konsisten.
+  Gunakna $\sFmla{\True}{!B_1}$, \dots,
+  $\sFmla{\True}{!B_n}$ bebarengan karo $\sFmla{\True}{!C_1}$,
+  \dots, $\sFmla{\True}{!C_m}$ minangka asumsi, banjur terapna aturan
+  \Cut{}. Iki ngasilake rong cabang: siji diwiwiti nganggo
+  $\sFmla{\True}{!A}$ lan sijine nganggo $\sFmla{\False}{!A}$.
+  
+  Ing sisih kiwa, tambahana bagean saka !!{tableau} kapisan kang ana
+  ing sangisore asumsi-asumsine. Ing kene, saben aplikasi aturan tetep
+  bener, amarga kabeh asumsi !!{tableau} kapisan, kalebu
+  $\sFmla{\True}{!A}$, wis cumawis. Mula, saben cabang ing sangisore
+  $\sFmla{\True}{!A}$ katutup.
+  
+  Ing sisih tengen, tambahana bagean saka !!{tableau} kapindho kang
+  ana ing sangisore asumsine, kanthi mbusak asil saka saben aplikasi
+  $\TRule{\True}{\lnot}$ marang $\sFmla{\True}{\lnot !A}$.
+  Kesimpulan $\TRule{\True}{\lnot}$ kang ditrapake marang
+  $\sFmla{\True}{\lnot !A}$ yaiku $\sFmla{\False}{!A}$, kang tetep
+  cumawis amarga dadi kesimpulan aturan \Cut{} ing sisih tengen
+  !!{tableau} gabungan.
+
+  Yen sawijining cabang ing tableau kapindho katutup amarga ngemot
+  asumsi $\sFmla{\True}{\lnot !A}$ (kang wis ora muncul minangka
+  asumsi ing !!{tableau} gabungan) uga $\sFmla{\False}{\lnot !A}$,
+  kita bisa ngetrapake $\TRule{\False}{\lnot}$ marang
+  $\sFmla{\False}{\lnot !A}$ kanggo entuk $\sFmla{\True}{!A}$. Saiki
+  cabang kang cocog ing !!{tableau} gabungan uga katutup, amarga ngemot
+  kesimpulan sisih tengen saka aturan \Cut{}, yaiku
+  $\sFmla{\False}{!A}$. Yen sawijining cabang ing !!{tableau}
+  kapindho katutup amarga alesan liyane, cabang kang cocog ing
+  !!{tableau} gabungan uga katutup, amarga saben !!{signed formula}s
+  saliyane $\sFmla{\True}{\lnot !A}$ kang muncul ing cabang
+  !!{tableau} lawas kapindho uga muncul ing cabang kang cocog ing
+  !!{tableau} gabungan.
+  \end{proof}
+
+\end{document}

@@ -21,7 +21,7 @@ PRIORITY = OUT / "PRIORITY_REVIEW.md"
 CSV = OUT / "DECISION_OCCURRENCES.csv"
 START = OUT / "START_HERE.md"
 QA = OUT / "TRANSLATION_DECISION_QA.json"
-COMMIT = "23e7e1cdb096dbaa6c39a2b3d13d455cdb068d6e"
+COMMIT = "10fd9d139706da4c2295d76d1b1dfa36fa3c8a36"
 SOURCE_REVISION = "9620cc73f9c8e0ad003c514a5d3748f29611c4c0"
 SCHEMA_URI = (
     "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-translations/"
@@ -150,7 +150,7 @@ edition = {
 records = [json.loads(value) for value in LOG.read_text(encoding="utf-8-sig").splitlines() if value.strip()]
 metadata, legacy = records[0], records[1:]
 assert metadata["record_type"] == "metadata"
-assert len(legacy) == 162
+assert len(legacy) == 172
 assert len({row["decision_id"] for row in legacy}) == len(legacy)
 passages = {
     row["passage_id"]: row
@@ -268,6 +268,14 @@ audit_files = {
     "OLPL-013": "evidence/OLPL_TABLEAUX_FOUNDATIONS_SOURCE_AUDIT.json",
     "OLPL-014": "evidence/OLPL_TABLEAUX_FOUNDATIONS_SOURCE_AUDIT.json",
     "OLPL-015": "evidence/OLPL_TABLEAUX_FOUNDATIONS_SOURCE_AUDIT.json",
+    "OLPL-016": "evidence/OLPL_TABLEAUX_METATHEORY_SOURCE_AUDIT.json",
+    "OLPL-017": "evidence/OLPL_TABLEAUX_METATHEORY_SOURCE_AUDIT.json",
+    "OLPL-018": "evidence/OLPL_TABLEAUX_METATHEORY_SOURCE_AUDIT.json",
+    "OLPL-019": "evidence/OLPL_TABLEAUX_METATHEORY_SOURCE_AUDIT.json",
+    "OLPL-020": "evidence/OLPL_TABLEAUX_METATHEORY_SOURCE_AUDIT.json",
+    "OLPL-021": "evidence/OLPL_TABLEAUX_METATHEORY_SOURCE_AUDIT.json",
+    "OLPL-022": "evidence/OLPL_TABLEAUX_METATHEORY_SOURCE_AUDIT.json",
+    "OLPL-023": "evidence/OLPL_TABLEAUX_METATHEORY_SOURCE_AUDIT.json",
 }
 
 
@@ -589,7 +597,7 @@ machine = {
         "doi": None,
         "source_revision": SOURCE_REVISION,
         "coverage_state": "partial",
-        "source_units": 104,
+        "source_units": 111,
         "reader_units": 24,
     },
     "generated_utc": datetime.datetime.now(datetime.timezone.utc).isoformat(),
@@ -621,7 +629,7 @@ def markdown(title: str, selected: list[dict], intro: str) -> str:
         "",
         intro,
         "",
-        "Coverage: OLP-0001 through OLP-0104; 104 of 722 frozen source units. Reader-page bindings remain pending until a future pagination containing each occurrence is accepted.",
+        "Coverage: OLP-0001 through OLP-0111; 111 of 722 frozen source units. Reader-page bindings remain pending until a future pagination containing each occurrence is accepted.",
         "",
         "| ID | Priority | Kind | Source | Chosen rendering | Confidence | Expert question |",
         "|---|---|---|---|---|---|---|",
@@ -775,7 +783,7 @@ qa = {
         "draft": "2020-12",
         "schema_validation": "PASS",
     },
-    "edition": {"language_tag": "jv-Latn-ID", "script": "Latn", "coverage": "partial-104/722"},
+    "edition": {"language_tag": "jv-Latn-ID", "script": "Latn", "coverage": "partial-111/722"},
     "counts": {
         "decisions": len(decisions),
         "terminology": sum(value["record_kind"] == "terminology" for value in decisions),

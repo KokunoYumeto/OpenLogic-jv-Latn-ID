@@ -1,0 +1,186 @@
+% Part: first-order-logic
+% Chapter: tableaux
+% Section: provability-propositional
+
+% pamriksan sipat-sipat provabilitas kang dibutuhake kanggo himpunan
+% konsisten maksimal ing bab kelengkapan.
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{tab}{ppr}}
+      {\olfileid{pl}{tab}{ppr}}
+
+\olsection{\usetoken{S}{derivability} lan Konektif Proposisional}
+
+\begin{explain}
+  Kita netepake yen relasi !!{derivability}~$\Proves$ saka tableaux
+  cukup kuwat kanggo netepake sawetara kasunyatan dhasar kang ngemot
+  konektif proposisional, kayata $!A \land !B \Proves !A$ lan $!A, !A
+  \lif !B \Proves !B$ (modus ponens). Kasunyatan kasebut dibutuhake
+  ing bukti teorema kelengkapan.
+\end{explain}
+
+\begin{prop}\ollabel{prop:provability-land}
+  \begin{enumerate}
+  \item \ollabel{prop:provability-land-left} $!A \land !B \Proves
+    !A$ lan $!A \land !B \Proves !B$ kalorone lumaku.
+  \item \ollabel{prop:provability-land-right} $!A, !B \Proves !A \land
+    !B$.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+  \item Himpunan $\{\sFmla{\False}{!A}, \sFmla{\True}{!A \land !B}\}$
+    lan $\{\sFmla{\False}{!B}, \sFmla{\True}{!A \land !B}\}$
+    kalorone nduweni !!{tableau}s katutup:
+    \begin{oltableau}{}
+      [\sFmla{\False}{\formula{A}}, just=\TAss
+        [\sFmla{\True}{\formula{A} \land \formula{B}}, just=\TAss
+          [\sFmla{\True}{\formula{A}},just={\TRule{\True}{\land}[2]}
+            [\sFmla{\True}{\formula{B}},just={\TRule{\True}{\land}[2]}, close
+            ]
+          ]
+        ]
+      ]
+    \end{oltableau}
+    \begin{oltableau}{}
+      [\sFmla{\False}{\formula{B}}, just=\TAss
+        [\sFmla{\True}{\formula{A} \land \formula{B}}, just=\TAss
+          [\sFmla{\True}{\formula{A}},just={\TRule{\True}{\land}[2]}
+            [\sFmla{\True}{\formula{B}},just={\TRule{\True}{\land}[2]}, close
+            ]
+          ]
+        ]
+      ]
+    \end{oltableau}
+    Cathetan koreksi sumber OLPL-019: patang simpul asil konjungsi ing
+    sumber Inggris nyelehake formula ing argumen tandha lan ora menehi
+    argumen formula kapindho. Rong tableau ing kene mulihake wangun
+    loro-argumen kang digunakake dening definisi lan kabeh simpul
+    tableau liyane.
+    \item Iki !!{tableau} katutup kanggo $\{\sFmla{\True}{!A},
+      \sFmla{\True}{!B}, \sFmla{\False}{!A \land !B}\}$:
+      \begin{oltableau}
+        [\sFmla{\False}{\formula{A} \land \formula{B}}, just = \TAss
+          [\sFmla{\True}{\formula{A}}, just = \TAss
+            [\sFmla{\True}{\formula{B}}, just=\TAss
+              [\sFmla{\False}{\formula{A}}, just = {\TRule{\False}{\land}[1]}, close]
+              [\sFmla{\False}{\formula{B}}, just = {\TRule{\False}{\land}[1]}, close]
+            ]
+          ]
+        ]
+      \end{oltableau}     
+  \end{enumerate}
+\end{proof}
+
+\begin{prop}\ollabel{prop:provability-lor}
+  \begin{enumerate}
+  \item $\{!A \lor !B, \lnot !A, \lnot !B\}$ ora konsisten.
+  \item $!A \Proves !A \lor !B$ lan $!B \Proves !A \lor !B$
+    kalorone lumaku.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+  \item Kita menehi !!{tableau} katutup kanggo
+    $\{\sFmla{\True}{!A \lor !B}, \sFmla{\True}{\lnot !A},
+    \sFmla{\True}{\lnot !B}\}$:
+    \begin{oltableau}
+      [\sFmla{\True}{\formula{A} \lor \formula{B}}, just = \TAss
+        [\sFmla{\True}{\lnot \formula{A}}, just = \TAss
+          [\sFmla{\True}{\lnot \formula{B}}, just = \TAss
+            [\sFmla{\False}{\formula{A}}, just = {\TRule{\True}{\lnot}[2]}
+              [\sFmla{\False}{\formula{B}}, just = {\TRule{\True}{\lnot}[3]}
+                [\sFmla{\True}{\formula{A}}, just = {\TRule{\True}{\lor}[1]}, close]
+                [\sFmla{\True}{\formula{B}}, just = {\TRule{\True}{\lor}[1]}, close]
+              ]
+            ]
+          ]
+        ]
+      ]
+    \end{oltableau}
+  \item Himpunan $\{\sFmla{\False}{!A \lor !B}, \sFmla{\True}{!A}\}$
+    lan $\{\sFmla{\False}{!A \lor !B}, \sFmla{\True}{!B}\}$
+    kalorone nduweni !!{tableau}s katutup:
+    \begin{oltableau}{}
+      [\sFmla{\False}{\formula{A} \lor \formula{B}}, just=\TAss
+        [\sFmla{\True}{\formula{A}}, just=\TAss
+          [\sFmla{\False}{\formula{A}},just={\TRule{\False}{\lor}[1]}
+            [\sFmla{\False}{\formula{B}},just={\TRule{\False}{\lor}[1]}, close
+            ]
+          ]
+        ]
+      ]
+    \end{oltableau}
+    \begin{oltableau}{}
+      [\sFmla{\False}{\formula{A} \lor \formula{B}}, just=\TAss
+        [\sFmla{\True}{\formula{B}}, just=\TAss
+          [\sFmla{\False}{\formula{A}},just={\TRule{\False}{\lor}[1]}
+            [\sFmla{\False}{\formula{B}},just={\TRule{\False}{\lor}[1]}, close
+            ]
+          ]
+        ]
+      ]
+    \end{oltableau}
+    Cathetan koreksi sumber OLPL-019 uga ditrapake ing kene: patang
+    simpul asil disjungsi kang salah wujud dipulihake dadi formula
+    mawa tandha kang duwe rong argumen.
+  \end{enumerate}
+\end{proof}
+
+\begin{prop}\ollabel{prop:provability-lif}
+  \begin{enumerate}
+  \item \ollabel{prop:provability-lif-left} $!A, !A \lif !B \Proves !B$.
+  \item \ollabel{prop:provability-lif-right}
+    $\lnot !A \Proves !A \lif !B$ lan $!B \Proves !A \lif !B$
+    kalorone lumaku.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+    \item $\{\sFmla{\False}{!B}, \sFmla{\True}{!A \lif !B},
+      \sFmla{\True}{!A}\}$ nduweni !!{tableau} katutup:
+      \begin{oltableau}
+        [\sFmla{\False}{\formula{B}}, just=\TAss
+          [\sFmla{\True}{\formula{A} \lif \formula{B}}, just=\TAss
+            [\sFmla{\True}{\formula{A}}, just=\TAss
+              [\sFmla{\False}{\formula{A}}, just = {\TRule{\True}{\lif}[2]}, close]
+              [\sFmla{\True}{\formula{B}}, just = {\TRule{\True}{\lif}[2]}, close]
+            ]
+          ]
+        ]
+      \end{oltableau}
+    \item Himpunan $\{\sFmla{\False}{!A \lif !B},
+      \sFmla{\True}{\lnot !A}\}$ lan $\{\sFmla{\False}{!A \lif !B},
+      \sFmla{\True}{!B}\}$ kalorone nduweni !!{tableau}s katutup:
+      \begin{oltableau}
+        [\sFmla{\False}{\formula{A} \lif \formula{B}}, just = \TAss
+          [\sFmla{\True}{\lnot \formula{A}}, just = \TAss
+            [\sFmla{\True}{\formula{A}}, just = {\TRule{\False}{\lif}[1]}
+              [\sFmla{\False}{\formula{B}}, just = {\TRule{\False}{\lif}[1]}
+                [\sFmla{\False}{\formula{A}}, just = {\TRule{\True}{\lnot}[2]}, close]
+              ]
+            ]
+          ]
+        ]
+      \end{oltableau}
+      \begin{oltableau}
+        [\sFmla{\False}{\formula{A} \lif \formula{B}}, just = \TAss
+          [\sFmla{\True}{\formula{B}}, just = \TAss
+            [\sFmla{\True}{\formula{A}}, just = {\TRule{\False}{\lif}[1]}
+              [\sFmla{\False}{\formula{B}}, just = {\TRule{\False}{\lif}[1]},close
+              ]
+            ]
+          ]
+        ]
+      \end{oltableau}
+  \end{enumerate}
+\end{proof}
+
+\end{document}

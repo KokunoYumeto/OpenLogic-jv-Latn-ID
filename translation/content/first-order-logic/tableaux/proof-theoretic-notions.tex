@@ -1,0 +1,199 @@
+% Part: first-order-logic
+% Chapter: tableaux
+% Section: proof-theoretic-notions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{tab}{ptn}}
+      {\olfileid{pl}{tab}{ptn}}
+      
+\olsection{Gagasan Teoretis-Bukti}
+
+\begin{editorial}
+Bagean iki nglumpukake definisi relasi provabilitas lan konsistensi
+kanggo tableaux.
+\end{editorial}
+
+\begin{explain}
+Kaya nalika kita nemtokake sawetara gagasan semantis wigati
+(validitas, akibat, lan bisa dicukupi), saiki kita nemtokake
+\emph{gagasan teoretis-bukti} kang cocog. Gagasan iki ora ditemtokake
+kanthi nggunakake panyukupan !!{sentence}s ing !!{structure}s, nanging
+kanthi nggunakake anane !!{tableau} katutup tartamtu. Panemuan yen
+gagasan-gagasan kasebut padha iku panemuan wigati. Kasunyatan manawa
+gagasan kasebut padha dadi isi \emph{teorema kasahihan} lan
+\emph{teorema kelengkapan}.
+\end{explain}
+
+
+\begin{defn}[Teorema]
+!!{sentence}~$!A$ iku \emph{teorema} yen ana !!{tableau} katutup
+kanggo~$\sFmla{\False}{!A}$. Kita nulis $\Proves !A$ yen $!A$
+iku teorema, lan $\Proves/ !A$ yen dudu teorema.
+\end{defn}
+
+\begin{defn}[!!^{derivability}]
+!!^a{sentence} $!A$ \emph{bisa !!{derivable} saka} himpunan
+!!{sentence}s~$\Gamma$, ditulis $\Gamma \Proves !A$, yen lan mung yen
+ana himpunan winates $\{!B_1, \dots, !B_n\} \subseteq \Gamma$
+lan !!{tableau} katutup kanggo himpunan
+\[
+\{
+  \sFmla{\False}{!A},
+  \sFmla{\True}{!B_1}, \dots,
+  \sFmla{\True}{!B_n}
+  \}.
+\]
+Yen $!A$ ora bisa !!{derivable} saka $\Gamma$, kita nulis $\Gamma
+\Proves/ !A$.
+\end{defn}
+
+\begin{defn}[Konsistensi]
+Himpunan !!{sentence}s~$\Gamma$ iku \emph{ora konsisten} yen lan mung
+yen ana himpunan winates $\{!B_1, \dots, !B_n\} \subseteq \Gamma$
+lan !!{tableau} katutup kanggo himpunan
+\[
+\{
+  \sFmla{\True}{!B_1}, \dots,
+  \sFmla{\True}{!B_n}  
+  \}.
+\]
+Yen $\Gamma$ dudu himpunan kang ora konsisten, kita ngarani himpunan iku
+\emph{konsisten}.
+\end{defn}
+
+\begin{prop}[Refleksivitas]
+\ollabel{prop:reflexivity}
+Yen $!A \in \Gamma$, mula $\Gamma \Proves !A$.
+\end{prop}
+
+\begin{proof}
+Yen $!A \in \Gamma$, $\{!A\}$ iku subhimpunan winates saka~$\Gamma$,
+lan !!{tableau}
+\begin{oltableau}
+  [\sFmla{\False}{\formula{A}}, just = \TAss
+    [\sFmla{\True}{\formula{A}}, just = \TAss,close]
+  ]
+\end{oltableau}
+iku katutup.
+\end{proof}
+  
+
+\begin{prop}[Monotonisitas]
+\ollabel{prop:monotonicity}
+Yen $\Gamma \subseteq \Delta$ lan $\Gamma \Proves !A$, mula $\Delta
+\Proves !A$.
+\end{prop}
+
+\begin{proof}
+Saben subhimpunan winates saka~$\Gamma$ uga dadi subhimpunan winates
+saka~$\Delta$.
+\end{proof}
+
+\begin{prop}[Transitivitas]
+\ollabel{prop:transitivity}
+Yen $\Gamma \Proves !A$ lan $\{!A\} \cup
+\Delta \Proves !B$, mula $\Gamma \cup \Delta \Proves !B$.
+\end{prop}
+
+\begin{proof}
+Yen $\{!A\} \cup \Delta \Proves !B$, mula ana subhimpunan winates
+$\Delta_0 = \{!C_1, \dots, !C_n\} \subseteq \Delta$ saengga
+\begin{align*}
+\{\sFmla{\False}{!B}, & \sFmla{\True}{!A}, \sFmla{\True}{!C_1},
+\dots, \sFmla{\True}{!C_n}\}
+\intertext{nduweni !!{tableau} katutup. Yen $\Gamma \Proves !A$,
+  mula ana $!D_1$, \dots, $!D_m \in \Gamma$ saengga}
+\{\sFmla{\False}{!A}, & \sFmla{\True}{!D_1},
+\dots, \sFmla{\True}{!D_m}\}
+\end{align*}
+nduweni !!{tableau} katutup. Cathetan koreksi sumber OLPL-016: sumber
+Inggris menehi tandha subhimpunan marang dhaptar ukara tanpa kurung
+kurawal; definisi sadurunge mbutuhake saben ukara kasebut kalebu ing
+himpunan premis, kaya kang ditulis ing kene.
+
+Saiki gatekna !!{tableau} kanthi asumsi
+\[
+\sFmla{\False}{!B},
+\sFmla{\True}{!C_1}, \dots, \sFmla{\True}{!C_n},
+\sFmla{\True}{!D_1}, \dots, \sFmla{\True}{!D_m}.
+\]
+Terapna aturan \Cut{} marang~$!A$. Iki ngasilake rong cabang: siji
+ngemot $\sFmla{\True}{!A}$, lan sijine ngemot
+$\sFmla{\False}{!A}$. Mula, ing cabang kapisan, kabeh
+\[
+\{\sFmla{\False}{!B}, \sFmla{\True}{!A},
+\sFmla{\True}{!C_1}, \dots, \sFmla{\True}{!C_n}\}
+\]
+wis cumawis. Amarga ana !!{tableau} katutup kanggo asumsi-asumsi iki,
+kita bisa nggandhengake tableau iku ing cabang kasebut; saben cabang
+kang ngliwati $\sFmla{\True}{!A}$ bakal katutup. Ing cabang liyane,
+kabeh
+\[
+\{\sFmla{\False}{!A}, \sFmla{\True}{!D_1}, \dots,
+\sFmla{\True}{!D_m}\}
+\]
+wis cumawis, mula kita uga bisa njangkepi sisih liyane kanggo entuk
+!!{tableau} katutup. Iki nuduhake $\Gamma \cup \Delta \Proves !B$.
+\end{proof}
+
+Gatekna yen iki mligine ateges: yen $\Gamma \Proves !A$ lan $!A
+\Proves !B$, mula $\Gamma \Proves !B$. Uga ndherek yen $!A_1,
+\dots, !A_n \Proves !B$ lan $\Gamma \Proves !A_i$ kanggo saben~$i$,
+mula $\Gamma \Proves !B$.
+
+\begin{prop}
+\ollabel{prop:incons}
+$\Gamma$ ora konsisten yen lan mung yen $\Gamma \Proves !A$ kanggo
+saben !!{sentence}~$!A$.
+\end{prop}
+
+\begin{proof}
+Gladhen.
+\end{proof}
+
+\tagprob{FOL}
+\begin{prob}
+Buktekna \olref[fol][tab][ptn]{prop:incons}
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+Buktekna \olref[pl][tab][ptn]{prop:incons}
+\end{prob}
+\tagendprob
+
+\begin{prop}[Kekompakan]
+  \ollabel{prop:proves-compact}
+  \begin{enumerate}
+  \item Yen $\Gamma \Proves !A$, mula ana subhimpunan winates
+    $\Gamma_0 \subseteq \Gamma$ saengga $\Gamma_0 \Proves !A$.
+  \item Yen saben subhimpunan winates saka~$\Gamma$ konsisten,
+    mula $\Gamma$ konsisten.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+    \item Yen $\Gamma \Proves !A$, mula ana subhimpunan winates
+      $\Gamma_0 = \{!B_1, \dots, !B_n\}$ lan !!{tableau} katutup
+      kanggo
+      \[
+      \{\sFmla{\False}{!A}, \sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\}
+      \]
+      !!{tableau} iki uga nuduhake $\Gamma_0 \Proves !A$.
+    \item Yen $\Gamma$ ora konsisten, mula kanggo sawijining
+      subhimpunan winates $\Gamma_0 = \{!B_1, \dots, !B_n\}$ ana
+      !!{tableau} katutup kanggo
+      \[
+      \{\sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\}
+      \]
+      !!{tableau} katutup iki nuduhake yen $\Gamma_0$ ora konsisten.
+  \end{enumerate}
+\end{proof}
+
+\end{document}

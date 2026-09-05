@@ -222,6 +222,74 @@ for u in units:
             signed_formula_list_defect,
             signed_formula_list_repair,
         )
+    # OLPL-016: the frozen transitivity proof applies a subset sign to
+    # individual premise sentences rather than saying that they belong to
+    # Gamma. The surrounding finite-set definition fixes the intended type.
+    if u['unit_id']=='OLP-0105':
+        premise_membership_defect=r'$!D_m \subseteq \Gamma$'
+        premise_membership_repair=r'$!D_m \in \Gamma$'
+        assert math_source.count(premise_membership_defect)==1
+        math_source=math_source.replace(
+            premise_membership_defect,
+            premise_membership_repair,
+        )
+    # OLPL-017 and OLPL-018: the second finite premise set ends at C_m,
+    # and true-negation is applied to the newly substituted true not-A
+    # assumption, yielding false A.
+    if u['unit_id']=='OLP-0106':
+        second_index_defect=r'\{!C_1, \dots, !C_n\} \subseteq \Gamma'
+        second_index_repair=r'\{!C_1, \dots, !C_m\} \subseteq \Gamma'
+        explicit_premise_defect=r'\TRule{\True}{\lnot} applied to \sFmla{\False}{!A}'
+        explicit_premise_repair=r'\TRule{\True}{\lnot} applied to \sFmla{\True}{\lnot !A}'
+        assert math_source.count(second_index_defect)==1
+        assert math_source.count(explicit_premise_defect)==1
+        assert math_source.count(r'line~$n+1$')==1
+        math_source=math_source.replace(second_index_defect,second_index_repair)
+        math_source=math_source.replace(explicit_premise_defect,explicit_premise_repair)
+        math_source=math_source.replace(r'line~$n+1$',r'line~$n+2$')
+    # OLPL-020: both quantified rule cases switch from schematic B in
+    # their premises to schematic A in their conclusions and arguments.
+    # The rule shape and every subsequent line require A throughout.
+    if u['unit_id']=='OLP-0109':
+        quantified_repairs={
+            r'\sFmla{\True}{\lforall[x][!B(x)]}':
+                r'\sFmla{\True}{\lforall[x][!A(x)]}',
+            r'\sFmla{\False}{\lforall[x][!B(x)]}':
+                r'\sFmla{\False}{\lforall[x][!A(x)]}',
+            r'\Sat/{M}{\lforall[x][!B(x)]}':
+                r'\Sat/{M}{\lforall[x][!A(x)]}',
+            r'\Sat/{M}{!B(x)}[s]':
+                r'\Sat/{M}{!A(x)}[s]',
+        }
+        expected_counts=[1,1,2,1]
+        for (wrong,right),expected in zip(quantified_repairs.items(),expected_counts):
+            assert math_source.count(wrong)==expected
+            math_source=math_source.replace(wrong,right)
+    # OLPL-021 and OLPL-022: the symmetry explanation needs A(s_1) as
+    # the second premise, and the transitivity explanation's line 2 is
+    # s_1=s_2 rather than the metavariable equality naming line 3.
+    if u['unit_id']=='OLP-0110':
+        symmetry_defect=(
+            r'Line~$3$ is the second one, of the form '
+            r'$\sFmla{\True}{!A(s_2)}$'
+        )
+        symmetry_repair=(
+            r'Line~$3$ is the second one, of the form '
+            r'$\sFmla{\True}{!A(s_1)}$'
+        )
+        transitivity_defect=r'$\eq[t_1][t_2]$ (i.e., line~$2$)'
+        transitivity_repair=r'$\eq[s_1][s_2]$ (i.e., line~$2$)'
+        assert math_source.count(symmetry_defect)==1
+        assert math_source.count(transitivity_defect)==1
+        math_source=math_source.replace(symmetry_defect,symmetry_repair)
+        math_source=math_source.replace(transitivity_defect,transitivity_repair)
+    # OLPL-023: the true-identity rule case has true premises and proves
+    # satisfaction of A(t_2), so its newly added signed formula is true.
+    if u['unit_id']=='OLP-0111':
+        identity_sign_defect=r'\sFmla{S}{!A(t_2)}'
+        identity_sign_repair=r'\sFmla{\True}{!A(t_2)}'
+        assert math_source.count(identity_sign_defect)==1
+        math_source=math_source.replace(identity_sign_defect,identity_sign_repair)
     checks={'paragraph_count':len(ac)==len(tc),'protected_commands':protected(protected_source)==protected(t),'math_sequence':math(math_source)==math(t),'token_sequence':tokens(a)==tokens(t),'environment_sequence':re.findall(r'\\(?:begin|end)\{[^}]+\}',a)==re.findall(r'\\(?:begin|end)\{[^}]+\}',t),'unicode_clean':'\ufffd' not in t and not re.search(r'[\uA980-\uA9DF]',t),'no_placeholder':not re.search(r'\b(?:TODO|TBD|TRANSLATE_ME)\b',t)}
     command_source=a
     if u['unit_id']=='OLP-0034':
@@ -342,6 +410,30 @@ for u in units:
         command_source=command_source.replace(
             signed_formula_list_defect,
             signed_formula_list_repair,
+        )
+    if u['unit_id']=='OLP-0105':
+        premise_membership_defect=r'$!D_m \subseteq \Gamma$'
+        premise_membership_repair=r'$!D_m \in \Gamma$'
+        assert command_source.count(premise_membership_defect)==1
+        command_source=command_source.replace(
+            premise_membership_defect,
+            premise_membership_repair,
+        )
+    if u['unit_id']=='OLP-0106':
+        explicit_premise_defect=r'\TRule{\True}{\lnot} applied to \sFmla{\False}{!A}'
+        explicit_premise_repair=r'\TRule{\True}{\lnot} applied to \sFmla{\True}{\lnot !A}'
+        stray_control_space='such that \\\n'
+        assert command_source.count(explicit_premise_defect)==1
+        assert command_source.count(stray_control_space)==1
+        command_source=command_source.replace(explicit_premise_defect,explicit_premise_repair)
+        command_source=command_source.replace(stray_control_space,'such that \n')
+    if u['unit_id']=='OLP-0111':
+        identity_sign_defect=r'\sFmla{S}{!A(t_2)}'
+        identity_sign_repair=r'\sFmla{\True}{!A(t_2)}'
+        assert command_source.count(identity_sign_defect)==1
+        command_source=command_source.replace(
+            identity_sign_defect,
+            identity_sign_repair,
         )
     checks['all_command_sequence']=re.findall(r'\\[A-Za-z@]+|\\[^A-Za-z@]',command_source)==re.findall(r'\\[A-Za-z@]+|\\[^A-Za-z@]',t)
     row={'unit_id':u['unit_id'],'source_path':u['source_path'],'source_sha256':sha(b),'translation_sha256':sha(tb),'translation_bytes':len(tb),'checks':checks,'source_paragraphs':len(ac),'target_paragraphs':len(tc),'source_math_count':len(math(a)),'target_math_count':len(math(t)),'status':'structural_pass' if all(checks.values()) else 'defect'}

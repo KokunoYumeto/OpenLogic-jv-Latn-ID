@@ -1,0 +1,254 @@
+% Part: first-order-logic
+% Chapter: tableaux
+% Section: soundness.tex
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{tab}{sou}}
+      {\olfileid{pl}{tab}{sou}}
+      
+\olsection{Kasahihan}
+
+\begin{explain}
+Sistem !!^a{derivation}, kayata tableaux, iku \emph{sah} yen ora bisa
+!!{derive} bab kang sejatine ora lumaku. Mula kasahihan iku sawijining
+sipat aman kang dijamin kanggo sistem !!{derivation}. Gumantung marang
+sipat teoretis-bukti kang dirembug, kita kepengin ngerti, upamane, yen
+\begin{enumerate}
+\item saben !!{derivable}~$!A$ iku \iftag{FOL}{valid}{tautologi};
+\item yen !!a{sentence} bisa !!{derivable} saka ukara-ukara liyane,
+  ukara iku uga dadi akibate;
+\item yen sawijining himpunan !!{sentence}s ora konsisten, himpunan
+  iku ora bisa dicukupi.
+\end{enumerate}
+Iki sipat-sipat wigati saka sistem !!a{derivation}. Yen salah sijine
+ora lumaku, sistem !!{derivation} kasebut cacad---sistem iku bakal
+!!{derive} kakehan. Mula, netepake kasahihan sistem !!a{derivation}
+iku wigati banget.
+
+Amarga kabeh sipat teoretis-bukti iki ditemtokake liwat !!{tableau}s
+katutup kanthi sawijining wujud, mbuktekake (1)--(3) ing ndhuwur
+mbutuhake bukti ngenani sipat semantis !!{tableau}s katutup. Kaping
+pisan kita bakal netepake apa tegese !!a{signed
+  formula} dicukupi ing sawijining struktur, banjur nuduhake yen, yen
+!!{tableau} katutup,
+ora ana struktur kang nyukupi kabeh asumsine. Sawise iku, (1)--(3)
+dadi korolari saka asil iki.
+\end{explain}
+
+\begin{defn}
+\iftag{FOL}{!!^a{structure}}{!!^a{valuation}}~$\iftag{FOL}{\Struct{M}}{\pAssign{v}}$
+\emph{nyukupi} !!a{signed formula} $\sFmla{\True}{!A}$ yen lan mung
+yen $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$, lan nyukupi
+$\sFmla{\False}{!A}$ yen lan mung yen
+$\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!A}$. $\iftag{FOL}{\Struct{M}}{\pAssign{v}}$
+nyukupi himpunan !!{signed formula}s~$\Gamma$ yen lan mung yen nyukupi
+saben $\sFmla{S}{!A} \in \Gamma$. $\Gamma$~iku \emph{bisa dicukupi}
+yen ana \iftag{FOL}{!!a{structure}}{!!a{valuation}} kang nyukupi
+himpunan iku, lan \emph{ora bisa dicukupi} yen ora ana.
+\end{defn}
+
+\begin{thm}[Kasahihan]
+  \ollabel{thm:tableau-soundness}
+  Yen $\Gamma$ nduweni !!{tableau} katutup, $\Gamma$ ora bisa dicukupi.
+\end{thm}
+
+\begin{proof}
+Ayo kita ngarani sawijining cabang saka !!a{tableau} bisa dicukupi yen
+lan mung yen himpunan !!{signed formula}s ing cabang iku bisa dicukupi,
+lan ayo kita ngarani !!a{tableau} bisa dicukupi yen ngemot paling ora
+siji cabang kang bisa dicukupi.
+
+Kita nuduhake pratelan iki: ngambakake !!{tableau} kang bisa dicukupi
+nganggo salah siji aturan inferensi mesthi ngasilake !!{tableau} kang
+bisa dicukupi. Iki bakal mbuktekake teorema: saben !!{tableau} katutup
+diasilake kanthi ngetrapake aturan inferensi marang !!{tableau} kang
+mung dumadi saka asumsi-asumsi saka~$\Gamma$. Dadi, yen $\Gamma$ bisa
+dicukupi, saben !!{tableau} kanggo himpunan iku uga bisa dicukupi.
+Nanging !!{tableau} katutup cetha ora bisa dicukupi: saben cabang
+ngemot $\sFmla{\True}{!A}$ uga $\sFmla{\False}{!A}$, lan ora ana
+struktur kang bisa nyukupi lan ora nyukupi~$!A$ bebarengan.
+
+Upamana kita duwe !!{tableau} kang bisa dicukupi, yaiku !!a{tableau}
+kanthi paling ora siji cabang kang bisa dicukupi. Ngetrapake aturan
+inferensi bisa nambahake !!{signed formula}s ing sawijining cabang
+utawa mecah cabang dadi loro. Yen !!{tableau} nduweni cabang kang bisa
+dicukupi lan cabang iku ora diambakake dening aplikasi aturan kang
+dirembug, cabang kasebut tetep bisa dicukupi ing !!{tableau} kang wis
+  diambakake; mula tableau kang wis diambakake bisa dicukupi. Dadi,
+kita mung kudu nimbang kasus nalika aturan ditrapake marang cabang
+kang bisa dicukupi.
+
+Ayo $\Gamma$ dadi himpunan !!{signed formula}s ing cabang kasebut,
+lan ayo $\sFmla{S}{!A} \in \Gamma$ dadi !!{signed formula} kang
+dikenani aturan. Yen aturan kasebut ora mecah cabang, kita kudu
+nuduhake yen cabang kang wis diambakake, yaiku $\Gamma$ bebarengan
+karo kesimpulan aturan, isih bisa dicukupi. Yen aturan mecah cabang,
+kita kudu nuduhake yen paling ora salah siji saka rong cabang asil
+bisa dicukupi.
+  
+Kaping pisan, kita nimbang inferensi-inferensi kang ora mecah cabang.
+\begin{enumerate}
+\item Cabang diambakake kanthi ngetrapake $\TRule{\True}{\lnot}$
+  marang $\sFmla{\True}{\lnot !B} \in \Gamma$. Banjur cabang kang wis
+  diambakake ngemot !!{signed formula}s $\Gamma \cup
+  \{\sFmla{\False}{!B}\}$. Upamana
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$. Mligine,
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\lnot !B}$. Mula,
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!B}$, yaiku
+  $\iftag{FOL}{\Struct{M}}{\pAssign{v}}$ nyukupi
+  $\sFmla{\False}{!B}$.
+\item Cabang diambakake kanthi ngetrapake $\TRule{\False}{\lnot}$
+  marang $\sFmla{\False}{\lnot !B} \in \Gamma$: Gladhen.
+\item Cabang diambakake kanthi ngetrapake $\TRule{\True}{\land}$
+  marang $\sFmla{\True}{!B \land !C} \in \Gamma$, kang ngasilake
+  rong !!{signed formula}s anyar ing cabang: $\sFmla{\True}{!B}$ lan
+  $\sFmla{\True}{!C}$. Upamana
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$, mligine
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!B \land !C}$. Banjur
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!B}$ lan
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$. Iki ateges
+  $\iftag{FOL}{\Struct{M}}{\pAssign{v}}$ nyukupi
+  $\sFmla{\True}{!B}$ lan $\sFmla{\True}{!C}$ kalorone.
+\item Cabang diambakake kanthi ngetrapake $\TRule{\False}{\lor}$
+  marang $\sFmla{\False}{!B \lor !C} \in \Gamma$: Gladhen.
+\item Cabang diambakake kanthi ngetrapake $\TRule{\False}{\lif}$
+  marang $\sFmla{\False}{!B \lif !C} \in \Gamma$: Iki ngasilake
+  rong !!{signed formula}s anyar ing cabang: $\sFmla{\True}{!B}$ lan
+  $\sFmla{\False}{!C}$. Upamana
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$, mligine
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!B \lif !C}$. Banjur
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!B}$ lan
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$. Iki ateges
+  $\iftag{FOL}{\Struct{M}}{\pAssign{v}}$ nyukupi
+  $\sFmla{\True}{!B}$ lan $\sFmla{\False}{!C}$ kalorone.
+
+\iftag{FOL}{%
+\item Cabang diambakake kanthi ngetrapake $\TRule{\True}{\lforall}$
+  marang $\sFmla{\True}{\lforall[x][!A(x)]} \in \Gamma$: Iki
+  ngasilake !!{signed formula} anyar~$\sFmla{\True}{!A(t)}$ ing
+  cabang. Upamana $\Sat{M}{\Gamma}$, mligine
+  $\Sat{M}{\lforall[x][!A(x)]}$. Miturut
+  \olref[syn][sem]{prop:quant-terms}, $\Sat{M}{!A(t)}$. Mula,
+  $\Struct{M}$ nyukupi $\sFmla{\True}{!A(t)}$. Cathetan koreksi sumber
+  OLPL-020: premis aturan Inggris nggunakake huruf formula kang beda
+  saka asil lan kabeh argumentasi; wangun aturan umum netepake huruf
+  formula kang dibalekake ing kene.
+
+\item Cabang diambakake kanthi ngetrapake $\TRule{\False}{\lforall}$
+  marang $\sFmla{\False}{\lforall[x][!A(x)]} \in \Gamma$: Iki
+  ngasilake !!{signed formula} anyar~$\sFmla{\False}{!A(a)}$, ing
+  ngendi $a$ iku !!a{constant} kang ora muncul ing~$\Gamma$. Amarga
+  $\Gamma$ bisa dicukupi, ana $\Struct{M}$ saengga
+  $\Sat{M}{\Gamma}$, mligine
+  $\Sat/{M}{\lforall[x][!A(x)]}$. Kita kudu nuduhake yen $\Gamma \cup
+  \{\sFmla{\False}{!A(a)}\}$ bisa dicukupi. Kanggo nindakake iki,
+  kita nemtokake $\Struct{M'}$ kang trep kaya mangkene. Cathetan
+  koreksi sumber OLPL-020 uga ditrapake ing kene: papat sebutan huruf
+  formula liyane ing premis lan pratelan semantis dibalekake supaya
+  cocog karo asil aturan lan kabeh langkah sabanjure.
+
+  Miturut \olref[syn][ass]{prop:sat-quant},
+  $\Sat/{M}{\lforall[x][!A(x)]}$ yen lan mung yen kanggo sawijining
+  $s$, $\Sat/{M}{!A(x)}[s]$. Saiki ayo $\Struct{M'}$ padha karo
+  $\Struct{M}$, kajaba $\Assign{a}{M'} = s(x)$. Miturut
+  \olref[syn][ext]{cor:extensionality-sent}, kanggo saben
+  $\sFmla{\True}{!C} \in \Gamma$, $\Sat{M'}{!C}$, lan kanggo saben
+  $\sFmla{\False}{!C} \in \Gamma$, $\Sat/{M'}{!C}$, amarga $a$ ora
+  muncul ing~$\Gamma$.
+
+  Miturut \olref[syn][ext]{prop:extensionality},
+  $\Sat/{M'}{!A(x)}[s]$. Miturut
+  \olref[syn][ext]{prop:ext-formulas}, $\Sat/{M'}{!A(a)}[s]$. Amarga
+  $!A(a)$ iku !!a{sentence}, miturut
+  \olref[syn][ass]{prop:sentence-sat-true}, $\Sat/{M'}{!A(a)}$, yaiku
+  $\Struct{M'}$ nyukupi $\sFmla{\False}{!A(a)}$.
+\item Cabang diambakake kanthi ngetrapake $\TRule{\True}{\lexists}$
+  marang $\sFmla{\True}{\lexists[x][!B(x)]} \in \Gamma$: Gladhen.
+\item Cabang diambakake kanthi ngetrapake $\TRule{\False}{\lexists}$
+  marang $\sFmla{\False}{\lexists[x][!B(x)]} \in \Gamma$: Gladhen.}{}
+\end{enumerate}
+Saiki ayo nimbang inferensi-inferensi kang mecah cabang.
+\begin{enumerate}
+\item Cabang diambakake kanthi ngetrapake $\TRule{\False}{\land}$
+  marang $\sFmla{\False}{!B \land !C} \in \Gamma$, kang ngasilake
+  rong cabang: cabang kiwa nerusake liwat $\sFmla{\False}{!B}$, lan
+  cabang tengen liwat $\sFmla{\False}{!C}$. Upamana
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$, mligine
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!B \land !C}$. Banjur
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!B}$ utawa
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$. Ing kasus kapisan,
+  $\iftag{FOL}{\Struct{M}}{\pAssign{v}}$ nyukupi
+  $\sFmla{\False}{!B}$, yaiku $\iftag{FOL}{\Struct{M}}{\pAssign{v}}$
+  nyukupi formula-formula ing cabang kiwa. Ing kasus kapindho,
+  $\iftag{FOL}{\Struct{M}}{\pAssign{v}}$ nyukupi
+  $\sFmla{\False}{!C}$, yaiku $\iftag{FOL}{\Struct{M}}{\pAssign{v}}$
+  nyukupi formula-formula ing cabang tengen.
+\item Cabang diambakake kanthi ngetrapake $\TRule{\True}{\lor}$
+  marang $\sFmla{\True}{!B \lor !C} \in \Gamma$: Gladhen.
+\item Cabang diambakake kanthi ngetrapake $\TRule{\True}{\lif}$
+  marang $\sFmla{\True}{!B \lif !C} \in \Gamma$: Gladhen.
+\item Cabang diambakake nganggo \Cut: Iki ngasilake rong cabang,
+  siji ngemot $\sFmla{\True}{!B}$ lan sijine ngemot
+  $\sFmla{\False}{!B}$. Amarga
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$ lan salah siji
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!B}$ utawa
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!B}$,
+  $\iftag{FOL}{\Struct{M}}{\pAssign{v}}$ nyukupi cabang kiwa utawa
+  cabang tengen.
+\end{enumerate}
+\end{proof}
+
+\tagprob{FOL}
+\begin{prob}
+Jangkepana bukti \olref[fol][tab][sou]{thm:tableau-soundness}.
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+Jangkepana bukti \olref[pl][tab][sou]{thm:tableau-soundness}.
+\end{prob}
+\tagendprob
+
+\begin{cor}
+\ollabel{cor:weak-soundness}
+Yen $\Proves !A$, mula $!A$ iku \iftag{FOL}{valid}{tautologi}.
+\end{cor}
+
+\begin{cor}
+\ollabel{cor:entailment-soundness}
+Yen $\Gamma \Proves !A$, mula $\Gamma \Entails !A$.
+\end{cor}
+
+\begin{proof}
+  Yen $\Gamma \Proves !A$, mula kanggo sawetara $!B_1$, \dots,
+  $!B_n \in \Gamma$, himpunan $\{\sFmla{\False}{!A},
+  \sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\}$ nduweni
+  !!{tableau} katutup. Miturut
+  \olref{thm:tableau-soundness}, saben
+  \iftag{FOL}{!!{structure}}{!!{valuation}}~$\iftag{FOL}{\Struct{M}}{\pAssign{v}}$
+  nggawe sawetara $!B_i$ salah utawa nggawe $!A$ bener. Mula, yen
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$, banjur uga
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$.
+\end{proof}
+
+\begin{cor}
+\ollabel{cor:consistency-soundness}
+Yen $\Gamma$ bisa dicukupi, mula himpunan iku konsisten.
+\end{cor}
+
+\begin{proof}
+Kita mbuktekake kontraposisine. Upamana $\Gamma$ ora konsisten. Banjur
+ana $!B_1$, \dots, $!B_n \in \Gamma$ lan !!{tableau} katutup kanggo
+$\{\sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\}$. Miturut
+\olref{thm:tableau-soundness}, ora ana
+$\iftag{FOL}{\Struct{M}}{\pAssign{v}}$ saengga
+$\iftag{FOL}{\Sat{M}}{\pSat{v}}{!B_i}$ kanggo kabeh $i=1$, \dots,~$n$.
+Nanging banjur $\Gamma$ ora bisa dicukupi.
+\end{proof}
+
+\end{document}
