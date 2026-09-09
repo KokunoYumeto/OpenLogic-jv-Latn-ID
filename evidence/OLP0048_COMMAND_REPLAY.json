@@ -1,10 +1,10 @@
 {
   "schema": "jv-olp0048-command-replay/1",
-  "utc": "2026-09-04T21:22:34.874779+00:00",
+  "utc": "2026-09-09T19:09:07.524047+00:00",
   "unit_id": "OLP-0048",
   "source_path": "content/sets-functions-relations/arithmetization/cauchy.tex",
   "source_sha256": "35d0a39913340eadcab7fb9d7742b56aef0d0f29868cd65eeca9dc53694e8ac2",
-  "translation_sha256": "22572f5a494ea558fc9cc0cc9b14e0c19a7b509d1cfd64e4d73fcf5a8826e5c5",
+  "translation_sha256": "ff6d00843e9309706efa27bdcb1de165abfaf352ec570b78a7c867c1c515692b",
   "normalizations": [
     {
       "kind": "lexical_typesetting",

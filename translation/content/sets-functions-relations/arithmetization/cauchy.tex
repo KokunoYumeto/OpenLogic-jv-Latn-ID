@@ -31,14 +31,14 @@ panggonan desimal kaping $n$ kang digatekake. Banjur perlu owah-owahan
 sethithik kanggo nangani bagean wilangan real sadurunge tandha desimal
 (ing kene mung $1$). Uga perlu owah-owahan liyane, yaiku relasi
 ekuivalensi, kanggo njamin yen, umpamane, $0.999\ldots = 1$. Nanging
-ora angel menehi pambangunan wilangan real kang ketat babar pisan
+ora angel menehi pambangunan wilangan real kang tliti babar pisan
 kanthi cara Stevin ing teori himpunan.
 
 Stevin dudu punjering rembugan kita. (Kanggo katrangan luwih akeh bab
 Stevin, delengen \citealt{KatzKatz2012}.) Nanging ana gagasan kang raket.
 Tinimbang langsung nganggep ekspansi desimal $\sqrt{2}$, kita bisa
 nggatekake \emph{rerangken} panyedhakan rasional marang $\sqrt{2}$ kang
-saya tliti, nganggo ekspansi kang saya cetha:
+saya tliti, nganggo ekspansi kang saya tliti:
 \[
 1, 1.4, 1.414, 1.4142, 1.41421,\ldots
 \]
@@ -65,8 +65,8 @@ wilangan real. Umpamane, gatekna fungsi iki:
 \]
 Inti masalahe yaiku rerangken $0,1,0,1,0,1,0,\ldots$ katon ora
 ``nyedhaki'' wilangan real apa wae. Dadi, supaya rerangken kang digatekake
-pancen nyedhaki sawenehing wilangan real, kita kudu matesi kawigaten mung
-ing rerangken kang duwe \emph{limit}.
+pancen nyedhaki sawenehing wilangan real, kita mung kudu nggatekake
+rerangken kang duwe \emph{limit}.
 
 Kita wis nemoni gagasan limit ing \olref[his][set][limits]{sec}. Nanging
 kita ora bisa nggunakake definisi kang \emph{persis padha} karo definisi
@@ -91,16 +91,19 @@ $n$.
 
 Gagasan kang katon cetha yaiku nyebut wilangan real \emph{iku} sembarang
 rerangken Cauchy. Nanging kaya ing pambangunan $\Int$ lan $\Rat$, iki
-naif banget: kanggo saben wilangan real, ana akeh rerangken Cauchy beda kang
-nuduhake wilangan real kasebut. Cara prasaja kanggo ndeleng iki kaya
+naif banget: saben wilangan real bisa dituduhake dening akeh rerangken
+Cauchy kang beda-beda. Cara prasaja kanggo ndeleng iki kaya
 mangkene. Yen diwenehi rerangken Cauchy~$f$, netepna $g$ minangka fungsi
 kang persis padha karo~$f$, kejaba $g(0)\neq f(0)$. Amarga rerangken loro
-iku padha ing saben panggonan sawise wilangan kapisan, pungkasane kita
+iku padha ing kabeh indeks sawise indeks kapisan, pungkasane kita
 kepengin kandha yen rerangken mau duwe limit kang padha miturut teges ing
 \olref{def:CauchySequence}, mula kudu dianggep ``netepake'' wilangan real
 kang padha. Dadi, rerangken Cauchy loro iki kudu dianggep wilangan real
-kang padha. Cathetan koreksi sumber OLP-0048: terjemahan iki mulihake
-tembung panyambung kang ilang ing ukara Inggris ``way to see this as follows''.
+kang padha. Cathetan koreksi sumber OLP-0048: patang frasa Inggris
+ngandhut tembung ganda utawa tembung panyambung kang ilang, yaiku ``can be
+equally be encoded'', ``a simple way to see this as follows'', ``define we
+a notion'', lan ``hone on in''. Terjemahan iki mung nindakake pambeneran
+gramatikal kang paling sithik tanpa ngowahi pratelan matematise (JV-D031).
 
 Mula kita maneh kudu netepake relasi ekuivalensi ing rerangken Cauchy lan
 ngenali wilangan real karo kelas-kelas ekuivalensi. Kaping pisan, kita
@@ -119,7 +122,7 @@ Banjur, yen dikarepake, kita bisa netepake wilangan real minangka
 kelas-kelas ekuivalensi miturut $\Realequiv$ saka kabeh rerangken Cauchy
 saka $\Nat \to \Rat$. Cathetan koreksi sumber OLP-0048: ukara Inggris
 sadurunge definisi salah nyebut ``equivalence relations''; obyek kang
-nggambarake wilangan real yaiku kelas ekuivalensi.
+nggambarake wilangan real yaiku kelas ekuivalensi (JV-D032).
 
 \begin{prob}
 Netepna $f(n) = 0$ kanggo saben $n$. Netepna $g(n) = \frac{1}{(n+1)^2}$.
@@ -151,7 +154,8 @@ yen lan mung yen $\equivrep{(g - f)}{}$ positif. Kita kudu mriksa yen iki
 ditetepake kanthi becik, yaiku ora gumantung marang pilihan fungsi
 ``wakil'' saka kelas ekuivalensi. Cathetan koreksi sumber OLP-0048:
 syarat positif ing sumber nulis nol rasional, nanging kelas kasebut
-wilangan real; terjemahan nggunakake nol real kaya ukara sabanjure.
+wilangan real; terjemahan nggunakake nol real kaya ukara sabanjure
+(JV-D033).
 %\begin{align*}
 %	\equivrep{f}{} \leq \equivrep{g}{} \text{ yen lan mung yen }&\equivrep{f}{} = \equivrep{g}{} \text{ utawa }\\
 %	&(\exists \ell \in \Nat)(\forall n \in \Nat)(\ell < n \lif f(n) \leq g(n))
@@ -161,7 +165,7 @@ sipat aljabar kang bener, yaiku:
 \begin{thm}\ollabel{thm:cauchyorderedfield}
 Rerangken-rerangken Cauchy mbentuk lapangan katata. Ing pratelan iki,
 kang mbentuk lapangan yaiku kelas-kelas ekuivalensine; rerangken dhewe
-digunakake minangka wakil.
+digunakake minangka wakil (JV-D034).
 \end{thm}
 
 \begin{proof}
@@ -179,7 +183,7 @@ nduweni Sipat Kajangkepan, mula kita bakal menehi buktine.
 \begin{thm}
 Saben himpunan rerangken Cauchy kang ora kosong lan duwe wates ndhuwur
 mesthi duwe wates ndhuwur paling cilik. Tatanan lan wates ing pratelan
-iki ditrapake liwat kelas ekuivalensi rerangken kasebut.
+iki ditrapake liwat kelas ekuivalensi rerangken kasebut (JV-D034).
 \end{thm}
 
 \begin{proof}[Gambaran bukti] Upamakna $S$ iku sembarang himpunan rerangken
@@ -188,12 +192,12 @@ saengga $p_{\Real}$ dadi wates ndhuwur kanggo $S$. Jupuken $r \in S$;
 banjur ana $q \in \Rat$ saengga $q_{\Real} < r$. Dadi yen wates ndhuwur
 paling cilik kanggo $S$ ana, wates iku dumunung ing antarane $q_\Real$ lan
 $p_\Real$, kalebu loro-lorone. Cathetan sumber OLP-0048: langkah iki
-nggunakake kasunyatan Archimedes yen kelas real bisa diwatesi saka ndhuwur
-lan ngisor dening salinan rasional; kasunyatan iku durung dibuktekake ing
-perangan iki.
+nggunakake sipat Archimedean kang durung dibuktekake ing perangan iki:
+saben kelas real ana ing ngisor sawenehing salinan rasional lan ing
+ndhuwur sawenehing salinan rasional (JV-D035).
 
-Kita bakal saya nyedhaki wates ndhuwur paling cilik kanthi nyedhaki bebarengan
-saka ngisor lan ndhuwur. Mligine, kita netepake rong fungsi $f, g \colon
+Kita bakal saya nyedhaki wates ndhuwur paling cilik bebarengan saka ngisor
+lan ndhuwur. Mligine, kita netepake rong fungsi $f, g \colon
 \Nat \to \Rat$, kanthi ancas $f$ nyedhaki wates kasebut saka ndhuwur lan
 $g$ nyedhaki wates kasebut\ saka ngisor. Kita miwiti kanthi netepake:
 \begin{align*}
@@ -231,7 +235,7 @@ monoton, ana $n \in \Nat$ saengga $\equivrep{(c_{f(n)} - f)}{} <
 \[
 	(f(n))_\Real = \equivrep{c_{f(n)}}{} < \equivrep{f}{} + \equivrep{(h-f)}{} = \equivrep{h}{},
 \]
-kang kosok balen karo kasunyatan yen miturut pambangunan,
+Iki kontradiksi karo kasunyatan yen miturut pambangunan,
 $\equivrep{h}{} \leq (f(n))_\Real$.
 
 Sabanjure kita nuduhake yen $\equivrep{f}{} = \equivrep{g}{}$ iku wates

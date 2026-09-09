@@ -1,7 +1,7 @@
 {
   "schema": "jv-public-hash-graph-qa/2",
-  "utc": "2026-09-05T17:28:13.503777+00:00",
-  "prospective_parent_commit": "b56a17886523b275a35525c106bb1932fe99e757",
+  "utc": "2026-09-09T19:09:49.932613+00:00",
+  "prospective_parent_commit": "bf8172c7585986612b181aa5d5a6d72fea90f108",
   "representation": {
     "evidence_attribute": "-text at final precedence",
     "qa_script_attribute": "-text at final precedence",
@@ -13,7 +13,7 @@
     "translated_segments": 1210,
     "structural_or_formal_segments": 711,
     "term_decisions": 115,
-    "canon_passages": 21
+    "canon_passages": 39
   },
   "checks": {
     "source_manifest_to_upstream": {
@@ -53,21 +53,21 @@
       "status": "pass"
     },
     "segment_to_canon_excerpt": {
-      "links": 3909,
+      "links": 4499,
       "status": "pass"
     },
     "review_log_to_canon_excerpt": {
-      "links": 304,
+      "links": 565,
       "status": "pass"
     },
     "review_views_to_machine_log": {
-      "decisions": 177,
-      "occurrences": 379,
+      "decisions": 179,
+      "occurrences": 383,
       "status": "pass"
     },
     "canonical_decision_contract": {
-      "decisions": 177,
-      "occurrences": 430,
+      "decisions": 179,
+      "occurrences": 435,
       "status": "pass"
     },
     "sealed_v0.1.2_internal_links": {
@@ -76,28 +76,28 @@
     }
   },
   "aggregate_public_blob_sha256": {
-    "tools/qa-batch.py": "9eb949586b046e7f47ea0bd502eac23efe2adb940276828eb51cbb253babbf0e",
-    "tools/build-review-views.py": "35ea2177db66f9f4eb50505b022151d5799fa91cd0a47f0a9c88dceb548d264a",
-    "tools/build-translation-decisions.py": "6c860cb4ac90a4e69d3c3088e62834ac548bfbdc92a9e4015166c3160e2a25a9",
-    "editorial/TRANSLATION_REVIEW_INDEX.md": "47a230295150328b5969a58cc4d75ed6fab81d64cd517d64852eed598c47a326",
-    "editorial/TRANSLATION_REVIEW_LOG.jsonl": "b7d8de4ff3b6d739219ebe64045374e35d5a9b7c9ed659e2fd655582de0e1d6b",
-    "editorial/TRANSLATION_REVIEW_PRIORITY.md": "9a87de3f123a39db1168e6fcaf06263b752308ddebb21fbe954a9a87a909f12b",
-    "evidence/BATCH_QA.json": "7e1eee546f8b045bb4392c3dff3660ff6a1664e9ce9b748e44b261c3485e52cc",
+    "tools/qa-batch.py": "63dfad9db80942a174dba90f1b321bccedf36f2ea9572d82253c6b5654a05a02",
+    "tools/build-review-views.py": "507c26eef0409d0425f7b7685320d8ee716380107d62df26052cd88fa4d47e88",
+    "tools/build-translation-decisions.py": "62ccef2ac3ed656bdfd3332c1040db81ceee4e2bd5b30ad51f69d20a82559af7",
+    "editorial/TRANSLATION_REVIEW_INDEX.md": "f4b0430880b51b221e493cbec15e10814ee2bfbaa7acc8a4c7ba46c316947ae7",
+    "editorial/TRANSLATION_REVIEW_LOG.jsonl": "7be239f7187f7e3de96a5dfe48df4c8cb08fba96eb4eae7cc3d301e631d0a17d",
+    "editorial/TRANSLATION_REVIEW_PRIORITY.md": "1aff0f72a81eb3e34636bd4d05b05b79a94252204e1af5bd2b39dd3bd2d6555b",
+    "evidence/BATCH_QA.json": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470",
     "evidence/OLPL_TABLEAUX_METATHEORY_SOURCE_AUDIT.json": "819712412a43cacf9ccfc9320402e82a781150b622a9d28987b6455d5e8f7d7a",
     "evidence/OLPL_AXIOMATIC_FOUNDATIONS_SOURCE_AUDIT.json": "8cf974b6af0a96541a4257eca22a945b078a9efe2e5bf3b6eec0dc63a137ec4b",
-    "evidence/PUBLIC_QA_REPLAY.json": "e9f7ce82e90ea16a278b5fbb99a2a27a9f36701330f508c53b4ca49f0cc6d21b",
-    "evidence/SEGMENT_CANON_USE.jsonl": "905fe9e784204a014f692dacac76d8f1a0aace5fe8a95c6002032704ebfe4763",
-    "evidence/SEMANTIC_REVIEW.json": "48ab676e864250e74d4856bbf730250ee806f678fff9fe84a6c0ecff92d1b393",
-    "evidence/SOURCE_CORRECTIONS.jsonl": "d7cfe0cbab91a2a3ca3bbb1402135b0602c9cf2d3a8414a9e01e2235674a9f05",
-    "evidence/TERM_DECISIONS.jsonl": "14c17e3f0bf53cdb09e39bb61c1206f804224fe080213bb480b5c211323648cb",
-    "evidence/TRANSLATION_REVIEW_INDEX.json": "00afa61fbd934399e492231a8580611a1f4897452e32988f52ff83e71767235e",
-    "evidence/TRANSLATION_REVIEW_OCCURRENCES.csv": "1118f46d77250fda30355fdc5d102a5001f1ad40ed96d46749b1ab27f555f491",
-    "translation-decisions/DECISION_OCCURRENCES.csv": "9340527ed32093d4fb7e585463da6f9d4711f517e846f15206f5aa6652b9a15a",
-    "translation-decisions/DECISIONS.json": "ae9b56d94e094b1e872308488681e99565834ec4c41917d1228ab584bfeb7024",
-    "translation-decisions/PRIORITY_REVIEW.md": "44cb6a319808ed6ce64982ffc12fe6d6d1278d009292710e160a82b390a1f9e4",
+    "evidence/PUBLIC_QA_REPLAY.json": "a97a5af0cafe6bcff9760ebf1b4f62e6ff1d868f69f8eba7943e8bf85b5f31bd",
+    "evidence/SEGMENT_CANON_USE.jsonl": "4cd0122e25e6b7d996b2217535e88e9a9fbb8b89f6c89ea2fc05608d613e7c04",
+    "evidence/SEMANTIC_REVIEW.json": "5911344145a866f9ca0b8a2639670ede21329c72563196579e49dd31a9be17ed",
+    "evidence/SOURCE_CORRECTIONS.jsonl": "44562c3cda2f59b7f25c1282f27ed04d5c6d435e63b4a69ad4391de987dc95fb",
+    "evidence/TERM_DECISIONS.jsonl": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
+    "evidence/TRANSLATION_REVIEW_INDEX.json": "e4bf7ec95b7aebe9f938adefbba14674f5a91a5beb8570114b6487e3d31e1e91",
+    "evidence/TRANSLATION_REVIEW_OCCURRENCES.csv": "4711841d044d63dbaeeefdcb234fadefab5082306ff29ccea11f0b07d3117f94",
+    "translation-decisions/DECISION_OCCURRENCES.csv": "309618ba731eb02ae40b5e5dad86dd6b8fc2932ed2e184f5b1d01e29557bf78e",
+    "translation-decisions/DECISIONS.json": "c9bb590d5229f9d80abbb726ffdf378d7d2d23b51575c2d7087a5ec02b48cabc",
+    "translation-decisions/PRIORITY_REVIEW.md": "0845a98137f4c0f417da735def0b86b6d3618c4bf52bc8bd2dfad0da7bd47a2d",
     "translation-decisions/START_HERE.md": "885ab9949bf148ef4f17f17fb4befe1d9db12846d5aac81ed3d4c667dab987ab",
-    "translation-decisions/TRANSLATION_DECISIONS_FULL.md": "1b03373bce7a94b11c18f8c432cae7bcbf5bcb8c34be3ca1cd3ccd62563f1cef",
-    "translation-decisions/TRANSLATION_DECISION_QA.json": "5c1fb6e8a8f3228d0a464c59021ad482f2539ae463a13c96ad1bfcf8886ccd2b",
+    "translation-decisions/TRANSLATION_DECISIONS_FULL.md": "fbb06a313c5382983a68241ccf4ce9ec11a7488fa1b7f23f9176bda2c3ddd781",
+    "translation-decisions/TRANSLATION_DECISION_QA.json": "4eacc3f16bb03c0138624df983ee9cf44819a86612d47788ed4c3b3c3440d134",
     "translation-decisions/translation-decision.schema.json": "50e7fa407b62c711f92f8b93be591d3b4a6e1c4adb1386c398bb5f76844d9f90"
   },
   "sealed_release": {

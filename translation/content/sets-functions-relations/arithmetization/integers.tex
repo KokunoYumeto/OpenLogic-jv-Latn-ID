@@ -15,13 +15,13 @@ Ana rong pangamatan dhasar:
 		\item Saben wilangan wutuh bisa ditulis kanthi wujud $n - m$, kanthi $n, m \in\Nat$.
 		\item Informasi kang dikodeake ing ekspresi $n - m$ uga bisa dikodeake kanthi pasangan urut $\tuple{n, m}$.
 	\end{enumerate}
-Kita wis ngerti yen pasangan urut wilangan natural iku !!{element}s saka $\Nat^2$. Kita uga nganggep yen kita wis mangerteni $\Nat$. Mula ana usul naif adhedhasar rong pangamatan mau: \emph{ayo nganggep wilangan wutuh minangka pasangan urut wilangan natural}.
+Kita wis ngerti yen pasangan urut wilangan natural iku !!{element}s saka $\Nat^2$. Kita uga nganggep yen kita wis mangerteni $\Nat$. Mula ana usul naif adhedhasar rong pangamatan mau: \emph{kita anggep wilangan wutuh minangka pasangan urut wilangan natural}.
 
 Sejatine usul iki naif banget. Mesthi wae kita kepengin $0- 2 = 4 - 6$. Nanging cetha yen $\tuple{0, 2 }\neq \tuple{4, 6}$. Dadi kita ora bisa mung nyebut $\Nat^2$ minangka himpunan wilangan wutuh.
 
 Kanthi nggeneralisasi masalah sadurunge, kang dikarepake yaiku:
 	$$a - b = c - d \text{ yen lan mung yen }a + d = c + b$$
-(Cetha yen iki carane wilangan wutuh \emph{kudune} tumindak: cukup tambahna $b$ lan $d$ ing loro-lorone sisih.) Cara gampang kanggo njamin tumindak iki yaiku netepake relasi ekuivalensi antarane pasangan urut, yaiku $\Intequiv$, kaya mangkene:
+(Cetha yen iki carane wilangan wutuh \emph{kudune} tumindak: cukup tambahna $b$ lan $d$ ing loro sisih.) Cara gampang kanggo njamin tumindak iki yaiku netepake relasi ekuivalensi antarane pasangan urut, yaiku $\Intequiv$, kaya mangkene:
 $$\tuple{ a, b } \Intequiv \tuple{c, d}\text{ yen lan mung yen }a + d = c + b$$
 Saiki kita kudu nuduhake yen iki relasi ekuivalensi.
 \begin{prop} $\Intequiv$ iku relasi ekuivalensi.
@@ -36,15 +36,15 @@ Saiki kita kudu nuduhake yen iki relasi ekuivalensi.
 	\emph{Transitif:} Upamakna $\tuple{a, b} \Intequiv \tuple{c, d}\Intequiv \tuple{m, n}$. Mula $a + d = c + b$ lan $c + n = m + d$. Dadi $a + d + c + n = c + b + m + d$, mula $a + n = m + b$. Dadi $\tuple{a, b } \Intequiv \tuple{m, n}$.
 \end{proof}
 
-Saiki relasi ekuivalensi iki bisa digunakake kanggo njupuk kelas-kelas ekuivalensi:
+Saiki relasi ekuivalensi iki bisa digunakake kanggo mbentuk kelas-kelas ekuivalensi:
 
 \begin{defn}
-		Wilangan wutuh yaiku kelas-kelas ekuivalensi pasangan urut wilangan natural miturut $\Intequiv$; yaiku $\Int = \equivclass{\Nat^2}{\Intequiv}$.
+		Wilangan wutuh yaiku kelas-kelas ekuivalensi saka pasangan urut wilangan natural miturut $\Intequiv$; yaiku $\Int = \equivclass{\Nat^2}{\Intequiv}$.
 \end{defn}
 
 Definisi stipulatif iki bisa nuwuhake akeh reaksi \emph{filosofis} kang beda. Nanging sadurunge ngrembug reaksi kasebut, prayoga yen kita nerusake dhisik sawetara prakara teknis.
 
-Sawise netepake apa iku wilangan wutuh, kita kudu netepake fungsi lan relasi dhasar ing wilangan kasebut. Ayo nulis $\equivrep{m, n}{\Intequiv}$ kanggo kelas ekuivalensi miturut $\Intequiv$ kang duwe $\tuple{m, n}$ minangka !!a{element}.\footnote{Cathetan: yen nggunakake notasi kang dikenalake ing \olref[sfr][rel][eqv]{def:equivalenceclass}, kita bakal nulis $\equivrep{\tuple{m,n}}{\Intequiv}$ kanggo perkara kang padha. Nanging notasi iku rada luwih angel diwaca.} Tegese:
+Sawise netepake apa iku wilangan wutuh, kita kudu netepake fungsi lan relasi dhasar ing wilangan kasebut. Tulis $\equivrep{m, n}{\Intequiv}$ kanggo kelas ekuivalensi miturut $\Intequiv$ kang ngemot $\tuple{m, n}$ minangka !!a{element}.\footnote{Cathetan: yen nggunakake notasi kang dikenalake ing \olref[sfr][rel][eqv]{def:equivalenceclass}, kita bakal nulis $\equivrep{\tuple{m,n}}{\Intequiv}$ kanggo perkara kang padha. Nanging notasi iku rada luwih angel diwaca.} Tegese:
 	$$\equivrep{m, n}{\Intequiv} = \Setabs{\tuple{a, b} \in \Nat^2}{\tuple{a, b}\Intequiv \tuple{m, n}}$$
 Saiki kita menehi sawetara definisi:
 	\begin{align*}
@@ -52,7 +52,7 @@ Saiki kita menehi sawetara definisi:
 		\equivrep{a, b}{\Intequiv} \times \equivrep{c, d}{\Intequiv} &= \equivrep{a c + b  d, a  d + b c}{\Intequiv}\\
 		\equivrep{a, b}{\Intequiv} \leq \equivrep{c, d}{\Intequiv} &\text{ yen lan mung yen }a + d \leq b + c
 	\end{align*}
-(Kaya kang lumrah, "$ab$" digunakake kanggo ngganti "$(a \times b)$", supaya aksioma luwih gampang diwaca.) Saiki kita kudu mesthekake yen definisi-definisi iki tumindak kaya kang \emph{kudune}. Njlentrehake tegese iki lan mriksa kabeh kanthi rinci rada ngrepotake; rinciane dipindhah menyang \olref[check]{sec}. Nanging asil ringkese: kabeh lumaku kanthi becik!
+(Kaya kang lumrah, ``$ab$'' digunakake kanggo ngganti ``$(a \times b)$'', supaya aksioma luwih gampang diwaca.) Saiki kita kudu mesthekake yen definisi kasebut tumindak kaya kang \emph{kudune}. Njlentrehake tegese iki lan mriksa kabeh kanthi rinci rada ngrepotake; rinciane dipindhah menyang \olref[check]{sec}. Nanging asil ringkese: kabeh lumaku kanthi becik!
 
 Isih ana siji prakara pungkasan. Kita wis mbangun wilangan wutuh nganggo
 wilangan natural. Nanging iki ateges wilangan natural \emph{dudu

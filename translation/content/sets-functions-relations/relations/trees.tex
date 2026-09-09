@@ -39,16 +39,16 @@ Iki gambar sawijining wit (winates):
 Simpul paling ngisor~$r$ iku oyod.
 Saben simpul saliyane $r$ duwe persis siji simpul induk
 langsung ing sangisore. Kita bisa nganggep relasi
-kang diduweni simpul~$x$ marang simpul~$y$ yen
+antarane simpul~$x$ lan simpul~$y$---yen
 $y$ bisa digayuh saka~$x$ kanthi ngetutake rusuk
-munggah, minangka $x$ dadi \emph{leluhur} saka~$y$.
+munggah---minangka pratelan yen $x$ iku \emph{leluhur} saka~$y$.
 
 Relasi leluhur ing wit iku tatanan parsial ketat.
 Iki dadi dhasar definisi miturut teori himpunan.
 Kanggo nyatakake, kita mbutuhake rong konsep.
 \emph{Anggota paling cilik} ing himpunan~$A$
 kang ditata parsial dening~$\le$ yaiku
-!!a{element} $x \in A$ kang ndadekake
+!!a{element} $x \in A$ kanthi sipat yen
 kanggo kabeh $y \in A$ kita duwe~$x \le y$.
 Himpunan \emph{katata kanthi becik} dening~$\le$
 yen saben subhimpunane kang ora kosong duwe
@@ -56,7 +56,7 @@ anggota paling cilik.
 
 \begin{defn}[Wit]
 \emph{Wit} yaiku pasangan $T = \tuple{A, \le}$
-kang ndadekake $A$ iku himpunan lan $\le$
+kanthi syarat yen $A$ iku himpunan lan $\le$
 iku tatanan parsial ing~$A$ kanthi siji-sijine
 anggota paling cilik $r \in A$
 (diarani \emph{oyod}), lan kanggo kabeh $x \in A$,
@@ -67,7 +67,7 @@ katata kanthi becik dening~$\le$.
 \begin{defn}[Panerus]
 Umpamakna $T = \tuple{A, \le}$ iku wit.
 Yen $x,y \in A$, $x < y$, lan ora ana
-$z \in A$ kang ndadekake $x < z < y$,
+$z \in A$ kanthi $x < z < y$,
 mula kita nyebut $y$ minangka \emph{panerus} saka~$x$.
 \end{defn}
 
@@ -103,26 +103,26 @@ yen $A$ iku himpunan tanpa wates, lan
 \emph{winates} yen ora mangkono.
 Yen $T$ nduweni sipat saben $x \in A$
 mung duwe panerus kang cacahe winates,
-mula kita nyebut $T$ \emph{winates cacah paneruse ing saben simpul}.
+mula kita nyebut $T$ \emph{nyabang winates}.
 \end{defn}
 
 \begin{defn}[Pang]
 Kanggo wit $T = \tuple{A, \le}$, \emph{pang} saka~$T$
 yaiku rantai maksimal ing~$T$, yaiku himpunan
-$B \subseteq A$ kang ndadekake kanggo saben
+$B \subseteq A$ kanthi sipat yen kanggo saben
 $x, y \in B$, $x \le y$ utawa $y \le x$,
 lan kanggo saben $z \in X \setminus B$
-ana $u \in B$ kang ndadekake
-ora $z \le u$ lan ora $u \le z$.
+ana $u \in B$ kanthi $z \le u$ lan $u \le z$
+loro-lorone ora lumaku.
 %
 Kita nganggo $[T]$ kanggo nglambangake
 himpunan kabeh pang saka $T$.
 \end{defn}
 
 \begin{ex}
-Tuladha klasik wit kang winates cacah paneruse ing saben simpul yaiku
+Tuladha klasik wit kang nyabang winates yaiku
 \emph{wit biner tanpa wates} saka urutan winates
-kang ngemot $0$ lan~$1$, kadhangkala
+kang unsur-unsure $0$ utawa~$1$, kadhangkala
 dilambangake $\{0,1\}^*$ utawa~$\Bin^*$,
 ditata nganggo relasi ekstensi $\sqsubseteq$
 (tuladhane, $101 \sqsubseteq 101101$).
@@ -138,7 +138,7 @@ Oyode yaiku urutan kosong $\emptyseq$.
 Kanthi rada luwih umum, himpunan urutan winates
 wilangan natural~$\Nat^*$ kanthi relasi
 ekstensi~$\sqsubseteq$ uga wit.
-Cetha yen wit iki ora winates cacah paneruse ing saben simpul:
+Cetha yen wit iki ora nyabang winates:
 saben $s \in \Nat^*$ duwe panerus~$sn$
 kang cacahe tanpa wates, siji kanggo saben
 $n \in \Nat$.
@@ -153,7 +153,7 @@ subwit winates saka~$\Nat^*$.
 
 \begin{prop}[Lema K\H{o}nig]
 Yen $T = \tuple{A,\le}$ iku wit tanpa wates
-kang winates cacah paneruse ing saben simpul, mula $T$
+kang nyabang winates, mula $T$
 duwe pang tanpa wates.
 \end{prop}
 

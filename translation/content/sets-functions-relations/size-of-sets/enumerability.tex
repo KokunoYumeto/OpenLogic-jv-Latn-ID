@@ -26,7 +26,7 @@ ndhaptar !!{element}s sawijining himpunan, sanajan himpunan iku tanpa wates.
 
 \begin{defn}[Enumerasi, kanthi informal]
 Kanthi informal, \emph{enumerasi} sawijining himpunan~$A$ yaiku dhaptar
-(kang bisa tanpa wates) !!{element}s saka~$A$ saengga saben !!{element} saka $A$
+(kang bisa tanpa wates) !!{element}s saka~$A$ kanthi sipat saben !!{element} saka $A$
 katon ing dhaptar ing sawijining posisi winates. Yen $A$ duwe
 enumerasi, mula $A$ diarani \emph{!!{enumerable}}.
 \end{defn}
@@ -34,9 +34,9 @@ enumerasi, mula $A$ diarani \emph{!!{enumerable}}.
 \begin{explain}
 Sawetara bab ngenani enumerasi:
 \begin{enumerate}
-\item Mung dhaptar kang duwe wiwitan lan saben !!{element}
-  saliyane kang kapisan duwe siji !!{element} kang langsung
-  ndhisiki kang kita anggep enumerasi. Kanthi tembung liya,
+\item Kita mung nganggep sawijining dhaptar minangka enumerasi yen
+  dhaptar iku duwe wiwitan lan saben !!{element} saliyane kang kapisan
+  duwe siji !!{element} kang langsung ndhisiki. Kanthi tembung liya,
   mung ana anggota kanthi cacah winates ing antarane !!{element} kapisan
   lan saben !!{element} liyane. Mligine, iki ateges saben
   !!{element} enumerasi duwe posisi winates: !!{element} kapisan
@@ -73,9 +73,9 @@ Sawetara bab ngenani enumerasi:
   Upamakna $A$ duwe enumerasi $x_1$, $x_2$, \dots{} kang saben
   $x_i$ iku !!{element} saka~$A$. Pangulangan bisa dibuwang saka
   enumerasi kanthi mbuwang !!{element}s kang dibaleni. Upamane,
-  enumerasi mau bisa diowahi dadi dhaptar anyar kang ngemot $x_i$ yen
+  enumerasi mau bisa diowahi dadi dhaptar anyar: $x_i$ didhaptar yen
   iku !!a{element} saka~$A$ kang durung ana ing antarane $x_1$, \dots,
-  $x_{i-1}$, utawa mbuwang $x_i$ saka dhaptar yen wis ana ing antarane
+  $x_{i-1}$, lan $x_i$ dibuwang saka dhaptar yen wis ana ing antarane
   $x_1$, \dots,~$x_{i-1}$.
 \end{proof}
 
@@ -128,7 +128,7 @@ f(n) & = 2n \text{ lan}\\
 g(n) & = 2n - 1
 \end{align*}
 ngenumerasi wilangan wutuh positif genep lan wilangan wutuh positif ganjil,
-kanthi runtut. Nanging loro-lorone dudu enumerasi
+miturut urutane. Nanging loro-lorone dudu enumerasi
 $\PosInt$, amarga loro-lorone ora !!{surjective}.
 \end{ex}
 
@@ -229,7 +229,7 @@ himpunan winates $\{1, \dots, n\}$ utawa $\PosInt$ lan~$A$.
 \begin{prop}\ollabel{prop:enum-bij}
 Yen $f\colon \PosInt \to A$ iku !!{surjective}, yaiku enumerasi
 saka~$A$, ana !!a{bijection} $g\colon Z \to A$ kanthi $Z$
-yaiku~$\PosInt$ utawa $\{1, \dots, n\}$ kanggo sawijining~$n \in \PosInt$.
+iku~$\PosInt$ utawa $\{1, \dots, n\}$ kanggo sawijining~$n \in \PosInt$.
 \end{prop}
 
 \begin{proof}
@@ -246,7 +246,7 @@ yaiku~$\PosInt$ utawa $\{1, \dots, n\}$ kanggo sawijining~$n \in \PosInt$.
   Fungsi $g$ iku !!{surjective}, amarga saben anggota saka~$A$ ana
   ing antarane $f(1)$, $f(2)$, \dots{} (amarga $f$ iku !!{surjective}) lan
   pungkasane bakal dadi nilai~$g(i)$ kanggo sawijining~$i$. Fungsi iki uga
-  !!{injective}, amarga yen ana $j < i$ saengga $g(j) = g(i)$,
+  !!{injective}, amarga yen ana $j < i$ kanthi $g(j) = g(i)$,
   mula $g(i)$ wis ana ing antarane $g(1)$, \dots, $g(i-1)$, kang
   nalisir cara kita netepake~$g$.
 \end{proof}
@@ -270,8 +270,9 @@ $N = \Nat$ utawa $N = \{0, \dots, n-1\}$.
 \begin{prob}
   Miturut \olref[sfr][siz][enm]{defn:enumerable}, himpunan $A$
   bisa didhaptar yen lan mung yen $A = \emptyset$ utawa ana fungsi !!a{surjective} $f\colon
-  \PosInt \to A$. Uga bisa netepake "himpunan kang !!{enumerable}"
-  kanthi tliti: himpunan bisa didhaptar yen lan mung yen ana fungsi !!a{injective}
+  \PosInt \to A$. Istilah "himpunan kang !!{enumerable}", yaiku
+  "himpunan kang bisa didhaptar", uga bisa ditetepake kanthi tliti mangkene:
+  himpunan bisa didhaptar yen lan mung yen ana fungsi !!a{injective}
   $g\colon A \to \PosInt$. Tuduhna yen definisi loro iku
   ekuivalen, yaiku ana fungsi !!a{injective}
   $g\colon A \to \PosInt$ yen lan mung yen $A = \emptyset$ utawa ana

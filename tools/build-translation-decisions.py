@@ -21,7 +21,7 @@ PRIORITY = OUT / "PRIORITY_REVIEW.md"
 CSV = OUT / "DECISION_OCCURRENCES.csv"
 START = OUT / "START_HERE.md"
 QA = OUT / "TRANSLATION_DECISION_QA.json"
-COMMIT = "b56a17886523b275a35525c106bb1932fe99e757"
+COMMIT = "bf8172c7585986612b181aa5d5a6d72fea90f108"
 SOURCE_REVISION = "9620cc73f9c8e0ad003c514a5d3748f29611c4c0"
 SCHEMA_URI = (
     "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-translations/"
@@ -150,7 +150,7 @@ edition = {
 records = [json.loads(value) for value in LOG.read_text(encoding="utf-8-sig").splitlines() if value.strip()]
 metadata, legacy = records[0], records[1:]
 assert metadata["record_type"] == "metadata"
-assert len(legacy) == 177
+assert len(legacy) == 179
 assert len({row["decision_id"] for row in legacy}) == len(legacy)
 passages = {
     row["passage_id"]: row

@@ -16,7 +16,7 @@ garis zig-zag lan ngetung posisine, kita bisa mriksa
 yen $\tuple{1,2}$ digandhengake karo wilangan~$7$. Nanging bakal
 luwih becik yen iki bisa dietung kanthi luwih langsung. Tegese, bakal
 migunani yen ana \emph{invers} enumerasi zig-zag,
-$g\colon \Nat^2 \to \Nat$, saengga
+$g\colon \Nat^2 \to \Nat$, kang nyukupi
 \[
 g(\tuple{0,0}) = 0, \;
 g(\tuple{0,1}) = 1, \;
@@ -31,7 +31,7 @@ yen baris kaping $n$ lan kolom kaping $m$ ngemot nilai~$v$, mula
 baris kaping $(n+1)$ lan kolom kaping $(m-1)$ ngemot nilai $v + 1$.
 Kapindho: baris kapisan enumerasi ngemot wilangan segitiga,
 wiwit $0$, $1$, $3$, $6$, lan sateruse. Wilangan segitiga kaping $k$
-yaiku gunggung wilangan natural kang $< k$, kang bisa dietung kanthi
+yaiku gunggung wilangan natural kang $\leq k$, kang bisa dietung kanthi
 $k(k+1)/2$. Kanthi nggabungake rong pangamatan iki, gatekna
 fungsi:
 \[
@@ -43,6 +43,8 @@ kaping $(n+m)^\text{}$ dhisik, banjur nambah $n$.
 Rumus iki ngisi larikan persis kaya kang dikarepake. Mligine,
 pasangan $\tuple{1, 2}$ dipetakake menyang $\frac{4 \times 3}{2} +
 1 = 7$.
+Wates ora-luwih-saka iki dibenerake supaya cocog karo urutan lan rumuse;
+sumber Inggris nggunakake wates ketat (JV-D010).
 
 Fungsi $g$ iki \emph{invers} enumerasi sawijining himpunan pasangan.
 Fungsi kaya mangkono diarani \emph{fungsi pasangan}.
@@ -98,15 +100,22 @@ subhimpunan kang ilang saka sumber Inggris (OLSIZ-002).
 \end{prob}
 
 \begin{prob}
-Tuduhna yen gabungan kang !!{enumerable} saka himpunan-himpunan kang !!{enumerable}
+Kanthi nganggep Asas Pilihan kanggo kulawarga kang indeksine bisa didhaptar,
+tuduhna yen gabungan kang !!{enumerable} saka himpunan-himpunan kang !!{enumerable}
 iku !!{enumerable}. Tegese, yen $A_1$, $A_2$, \dots{} iku himpunan,
 lan saben $A_i$ iku !!{enumerable}, mula gabungan $\bigcup_{i=1}^\infty
 A_i$ saka kabeh himpunan mau uga !!{enumerable}. [Cathetan: iki angel!]
+Pangangkep iki dibutuhake kanggo kulawarga sembarang; pratelan umum iki
+ora dadi teorema ZF tanpa wangun pilihan kasebut (JV-D013).
 \end{prob}
 
 \begin{prob}
 Upamakna $f \colon A \times B \to \Nat$ sembarang fungsi pasangan.
-Tuduhna yen invers saka $f$ iku enumerasi $A \times B$.
+Tuduhna yen kanthi ngetrapake invers saka $f$ marang saben nilai ing enumerasi
+citrane, kita oleh enumerasi $A \times B$; yen prodhuk iki kosong, gunakna
+kasus himpunan kosong. Pangowahan iki dibutuhake amarga invers fungsi pasangan
+kang mung injektif ditetepake ing citrane, dudu kudu ing kabeh wilangan natural
+(JV-D012).
 \end{prob}
 
 \begin{prob}

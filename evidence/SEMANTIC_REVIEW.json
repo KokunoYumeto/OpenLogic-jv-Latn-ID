@@ -8,26 +8,26 @@
     {
       "unit_id": "OLP-0001",
       "status": "pass",
-      "checks": "Audience and intermediate prerequisite preserved; unfinished upstream status and planned features retained; attribution license rights and project links preserved.",
-      "reverse_sample": "This is an open-source collaborative textbook of formal metalogic and methods for an intermediate audience; despite the non-specialist audience, mathematical rigor remains.",
+      "checks": "Audience and intermediate prerequisite preserved; rigorous is rendered without adding a mathematical-rule condition; unfinished upstream status, planned additions, contribution link, attribution-license rights, and project link are retained.",
+      "reverse_sample": "This open-source collaborative textbook treats formal metalogic and formal methods from the intermediate level for readers whose main background is outside mathematics, especially philosophy and computer science; its exposition remains careful.",
       "source_sha256": "f1212d77679b9080a2cbf1ba03f9b71f0993db10b1b28464c423652f95b5fd33",
-      "translation_sha256": "85526ca61d37a3a6a66ad783cb35e77e732f6a3ad417c36c9b2200509229d106"
+      "translation_sha256": "60432029ef53a22c9aca63e0a6fae63e02ac50b99dd37a3820cf076b6af166ca"
     },
     {
       "unit_id": "OLP-0002",
       "status": "pass",
-      "checks": "Warning about raw complete-build editorial presentation retained, as are primitive-operator cases, draft material and course-specific exclusion. Driver paths untouched.",
-      "reverse_sample": "This raw collection includes draft material; course PDFs use the project's configuration mechanisms to select and present it.",
+      "checks": "Editorial warning, absence of presentation planning, unsuitable raw PDF, build mechanisms, primitive-operator cases, exercises, draft material, course exclusion, sample builds, driver source, and derived-textbook sources are retained. Both URLs and all driver paths are unchanged.",
+      "reverse_sample": "This file loads every project component without planning its presentation, so this raw PDF should not be used for teaching or study. OpenLogic can generate course-ready texts, omit selected proof cases as exercises, and exclude draft sections; sample builds and driver sources show how.",
       "source_sha256": "c0399669611ed01993ceb58beba2458d7a7b48102089d3a521ccb4c6d4624baa",
-      "translation_sha256": "11440cc469cfc2b1d02c632a8939eb1bb8f01ec964adf8282e688a5bcc2e69b1"
+      "translation_sha256": "4061e0c36acd3e3419f8d7383feec4390e0f546640555ccbb4e23d5f473d1fd0"
     },
     {
       "unit_id": "OLP-0003",
       "status": "pass",
-      "checks": "Naive set theory, Button attribution, number systems and infinity retained; those topics remain unnecessary for logical parts.",
-      "reverse_sample": "The part introduces elementary naive set theory and also covers number-system construction and infinity through Open Set Theory.",
+      "checks": "Naive set theory, Button attribution, number-system construction, infinity, and their non-requirement for the logical parts are retained. The introduction now unambiguously modifies the fundamentals of naive set theory rather than calling the introduction itself basic.",
+      "reverse_sample": "This part introduces the fundamentals of naive set theory and, by including Tim Button's Open Set Theory, also covers constructing number systems and infinity; those topics are unnecessary for OLP's logical parts.",
       "source_sha256": "f5eb4b8801890604b79298e46a8327f34ca3bb9ed673d798ec3436d349f22926",
-      "translation_sha256": "d16ba8577497a986f68e7e390b8b3ddda02a725bae62aad33e0a726db61d543c"
+      "translation_sha256": "11de9c3c31b4521efd14835b80aa15aaa9b1e7437370a58f726ee5c6c5e99a0c"
     },
     {
       "unit_id": "OLP-0004",
@@ -40,11 +40,11 @@
     {
       "unit_id": "OLP-0005",
       "status": "pass",
-      "checks": "Collection treated as one object; empty set; both directions of extensionality; order/multiplicity irrelevance; Richard/Ruth proper names; perfect-number example; at-most-one empty set retained. Source existential overstatement is followed by OLP-0010 correction, not silently rewritten.",
+      "checks": "Collection treated as one object; empty set; both directions of extensionality; order/multiplicity irrelevance; Richard/Ruth proper names; perfect-number example; and at-most-one empty set retained. The definite-description explanation now expresses uniqueness explicitly. Proper divisor is defined descriptively, and the set-builder readings use a property clause rather than a causal clause. Source existential overstatement is followed by OLP-0010 correction and is not silently rewritten.",
       "reverse_sample": "A and B are equal exactly when every member of A belongs to B and conversely. To prove equality, prove inclusion in each direction.",
-      "notes": "Native possessive repaired from anggota-e to anggotane while retaining token identity. Source prose uses less than 10 while display uses 0<=x<=10; both unchanged, with same example result.",
+      "notes": "Native possessive remains represented through the element token. The unsupported pembagi sejati calque was replaced by the exact condition: a number divides without remainder and is not the number itself. Source prose uses less than 10 while the display uses 0<=x<=10; both remain unchanged, with the same example result.",
       "source_sha256": "232ff51f51e74fcfee836650f3c597b54bf10ba5363c648a0c05fe8222e4a865",
-      "translation_sha256": "286ae2b34806efbcfc6163777624e1115c15c2497251e8b462b93bd86e86c9f9"
+      "translation_sha256": "da3e222053ccb9c5d5ca24dd8b76149872c18c75bc9cc4c5631499e9c1daf9ca"
     },
     {
       "unit_id": "OLP-0006",
@@ -65,29 +65,29 @@
     {
       "unit_id": "OLP-0008",
       "status": "pass",
-      "checks": "Union uses inclusive OR; intersection uses AND; disjoint means empty intersection. Indexed union existential vs intersection universal distinction and directional set difference preserved. Figure captions and every exercise translated.",
+      "checks": "Union uses inclusive OR; intersection uses AND; disjoint means empty intersection. Indexed union existential versus intersection universal distinction and directional set difference are preserved. The rigorous-proof instruction no longer adds a mathematical-rule condition; existential and indexing clauses no longer use causal wording; set difference now says directly that the retained A-elements are not members of B. Figure captions and every exercise remain translated.",
       "reverse_sample": "The union of a family collects objects belonging to at least one member-set; its intersection collects objects belonging to every member-set. A minus B keeps precisely the A members absent from B.",
-      "notes": "Automated check fixed to handle nested token braces within prose-only text fields; displayed quantifiers reviewed semantically rather than discarded.",
+      "notes": "Automated checks handle nested token braces within prose-only text fields; displayed quantifiers were reviewed semantically rather than discarded. All repairs preserve the source math and glossary-token sequences.",
       "source_sha256": "e556ac6add69b1e6d41123eb05be4adb15f2dc120a3782a721caeab42dbc4529",
-      "translation_sha256": "948bd842a4a9aa2a64153326afb26639b422dfc2aab58a854f6d25d9f4aca4da"
+      "translation_sha256": "f412e5e330baeaef67c83dcd6e217506a602e7be0a8bed25a721ea21205a1763"
     },
     {
       "unit_id": "OLP-0009",
       "status": "pass",
-      "checks": "Order significance, Wiener-Kuratowski definition, left-associated tuples, Cartesian product, counting proof by disjoint rows, induction exercise, and words convention retained.",
+      "checks": "Order significance, Wiener-Kuratowski definition, left-associated tuples, Cartesian product, counting proof by disjoint rows, induction exercise, and words convention are retained. The counting proof now states unequal first coordinates as an explicit condition rather than saying they cause unequal pairs.",
       "reverse_sample": "An ordered pair agrees with another exactly when their first and second coordinates agree respectively. A times B has n times m members if A and B have n and m members.",
-      "notes": "Source models length-zero word by empty set and earlier section names empty string Lambda. Both conventions retained; no undocumented identification added.",
+      "notes": "Source models the length-zero word by the empty set while the earlier section names the empty string Lambda. Both source conventions remain; no undocumented identification was added. The conditional prose repair leaves every formula unchanged.",
       "source_sha256": "935f1e0e90dc783a1d5cb3298a38aa8df49af8b424e7282b27dc2ab4e9d85610",
-      "translation_sha256": "fa816fc2b1c094a5a0f429bcf8289e8522020b6fafbf33b78581c2d2aca9df6c"
+      "translation_sha256": "839033e76855294b68a94ed64e89d52121e59ab2a33bcb0088f88f5c260c16fa"
     },
     {
       "unit_id": "OLP-0010",
       "status": "pass",
-      "checks": "Uniqueness conditional on existence explicit; unrestricted comprehension rejected; Russell contradiction both branches preserved; need for existence axioms and conditional later-part reference retained.",
+      "checks": "Uniqueness conditional on existence is explicit; unrestricted comprehension is rejected; both branches of the Russell contradiction, the need for existence axioms, and the conditional later-part reference are retained. The opening set-builder description now says all and only, carries uniqueness explicitly, and uses property rather than causal wording. The later rigor sentence no longer adds a mathematical-rule criterion.",
       "reverse_sample": "Extensionality yields uniqueness only if the set exists. Assuming R contains precisely sets not containing themselves forces R in R exactly when R not in R.",
-      "notes": "Removed one redundant mathematical R token introduced for an explicit subject; restored exact mathematical-span count without changing meaning.",
+      "notes": "The earlier redundant mathematical R token remains absent, preserving the exact mathematical-span count. The two new prose repairs do not change formulas, glossary tokens, or the two contradiction branches.",
       "source_sha256": "aa8e94675f56112d8952b81d17968545b54c33393bfc466745edcaca30f4453a",
-      "translation_sha256": "d915c7ef109727cc547504d43c31de56416d6cf20edf0718a2f5cd33453c0ec0"
+      "translation_sha256": "777fb2f20bca220dba0fce08b1a0e3d0e14ce49841a20a2df21dee2bc0a6d871"
     },
     {
       "unit_id": "OLP-0011",
@@ -100,195 +100,230 @@
     {
       "unit_id": "OLP-0012",
       "status": "pass",
-      "checks": "Relational representation by ordered-pair sets; binary relation domain; identity and order matrix; strict versus non-strict; empty/universal relations; exercise all preserved. Source undefined I in K/L example documented in reader errata.",
+      "checks": "Relational representation by ordered-pair sets; binary relation domain; identity and order matrix; strict versus non-strict; empty/universal relations; and the exercise are all preserved. Relation-bearing prose now states that a relation holds between objects, or that its set representation contains ordered pairs. The unordered-pair reminder now says a set has two members rather than that its member is 2. Source undefined I in the K/L example remains documented in reader errata.",
       "reverse_sample": "A binary relation on A is any subset of A squared. Relation E may be arbitrary; its being unnatural does not disqualify it.",
       "source_sha256": "2a67c6fb4846155e8e7cd8172fd1fb8214db96d508ceae5d70dec95d5dfcc1ff",
-      "translation_sha256": "996d70e422fda72c1bfe1d39dbcfc92520c849b97ccdf76af8b05e05d2b2b3ee"
+      "translation_sha256": "f2f9cc33cbbf6addea399fe84636a82a13b8b7f8b2b1e2a2f7f3a72b700dec8a"
     },
     {
       "unit_id": "OLP-0013",
       "status": "pass",
-      "checks": "All three philosophical objections preserved: alternative pair encodings, nonexistence of universal membership set, and predicate versus singular-term distinction. Conditional footnote, source citation and horse paradox preserved. Nonsense noun string translated without adding a predicate.",
+      "checks": "All three philosophical objections preserved: alternative pair encodings, nonexistence of the universal membership set, and the predicate versus singular-term distinction. The manager-identified impersonal sentence was revised to give kita an explicit subject while retaining extreme doubt about asserting metaphysical identity. Expression is now distinguished from sentence in the singular-term argument, the Russell-paradox premise uses an in-light-of construction, and the conclusion says directly that the mathematical convention is not wrong. Conditional footnote, source citation and horse paradox preserved. Nonsense noun string translated without adding a predicate.",
       "reverse_sample": "Treating some relations as sets in a mathematical context does not assert a metaphysical identity fact.",
       "source_sha256": "75047e8806a58c0a0c07ae2e55554d9ad2affb9d5297b1d5585ebe0b2f3de651",
-      "translation_sha256": "3e7793c2bdd724dfe1b6d939ccc2cc213d3a2fbed897f2d74f9ccd60a77dd203"
+      "translation_sha256": "ee1ccb0b9ec26830cf52ee3faf459a3d913a25e5e7a7cfcc6a1bcdc9eb87aa0a",
+      "revision_reason": "Independent canon revalidation: clarified the subject and force of the extreme-doubt sentence, preserved expression versus sentence, made the Russell-paradox premise idiomatic, and stated the concluding permissibility claim directly; the remaining wording was directly reaffirmed as source-defined and provisional."
     },
     {
       "unit_id": "OLP-0014",
       "status": "pass",
-      "checks": "Every quantified property and all four exercise combinations retained. Anti-symmetry is not asymmetry or merely lack of symmetry. Nonempty-domain condition retained.",
+      "checks": "Every quantified property and all four exercise combinations retained. Transitivity, symmetry, and antisymmetry now use explicit conditional clauses instead of quantificational saben; irreflexivity places negation on the relation claim, and asymmetry states for every pair that both directions never hold together. The explanation explicitly says antisymmetry does not require diagonal pairs but permits them. Anti-symmetry is not asymmetry or merely lack of symmetry. Nonempty-domain condition retained.",
       "reverse_sample": "A relation may be both symmetric and anti-symmetric. Irreflexivity forbids every diagonal pair; failure of reflexivity alone does not.",
       "source_sha256": "006f2ea0d65e5069ef1509de94dd35a477ea835c19962da22f4bef48caffbee7",
-      "translation_sha256": "a429ff097627cb643ce9ff5a8c6208774197310499fce2898e431733593415c0"
+      "translation_sha256": "c31eeaa1831bd80f76f34b1ba6d3d671bb6b007619f23d4e1957b79bfb95909b",
+      "revision_reason": "Independent canon revalidation: repaired conditional scope in three relation-property definitions, made the antisymmetry explanation's modal subject explicit, and clarified irreflexive and asymmetric quantification."
     },
     {
       "unit_id": "OLP-0015",
       "status": "pass",
-      "checks": "Equivalence requires all three properties. Class/quotient definitions, both proof directions including symmetry/transitivity/reflexivity, modular remainder examples and n classes retained. Source loose partitions wording rendered as parts of a partition.",
+      "checks": "Equivalence requires all three properties. Class and quotient definitions, both proof directions including symmetry, transitivity, reflexivity, and extensionality, modular remainder examples, and exactly n classes retained. Vindicates now says the result shows the definition is apt rather than correcting it. The modular example uses the attested dipara and turah forms and an explicit kanthi equality condition. Source loose partitions wording remains rendered as parts of a partition.",
       "reverse_sample": "Rxy exactly when the equivalence classes of x and y agree. Modulo n on natural numbers gives n classes.",
       "source_sha256": "d9531aa5cd774c12090fbd5c9fb289181e93cf7e9a96ecf7d4fd3fcdf5d250c7",
-      "translation_sha256": "4d6c7a7655b849cfff6b9a1ff1f5ae5c285fb3eac574352ba87be1dc1b4ea8e3"
+      "translation_sha256": "1abc8b84002087a7a0cacd8812839d523592d316f3e5801e3a916ae94418ae03",
+      "revision_reason": "Independent canon revalidation: removed the false corrects-definition sense, adopted verified Javanese division and remainder forms, and replaced a causal such-that clause in the modular characterization."
     },
     {
       "unit_id": "OLP-0016",
       "status": "pass",
-      "checks": "Preorder/partial/linear hierarchy; connected non-antisymmetric length example; divisibility on N vs Z; prefix order; strict definitions; diagonal addition/removal proofs and exercise; extensionality property retained.",
+      "checks": "Preorder, partial-order, and linear-order hierarchy; connected non-antisymmetric length example; divisibility on natural numbers versus integers; extension order; strict definitions; diagonal addition and removal propositions, proof and exercise; and the extensionality-like property retained. Divisibility is now named by the nominal paran tanpa turah, n divides m is expressed directly as n mbagi m tanpa turah, and the existential multiplier uses a kanthi condition.",
       "reverse_sample": "Adding the diagonal to a strict order gives a partial order; deleting it from a partial order gives a strict order, with connectedness retained.",
       "source_sha256": "79593789022fef31c0609b9c94856e2aef5cd5e88e92864e782bb6e6e5f4bce4",
-      "translation_sha256": "ed186341e68120595422008bca45a08f292eb31b1a29d8910f717ad637610ea6"
+      "translation_sha256": "74a529e59115fdf71aa891f146bfe0ff0669ad8c728e10fbc42ad076a5fb434c",
+      "revision_reason": "Independent canon revalidation: repaired the category-changing divisibility paraphrase with verified Javanese arithmetic wording and removed its causal existential clause."
     },
     {
       "unit_id": "OLP-0017",
       "status": "pass",
-      "checks": "Directed graph includes explicit carrier, so isolated vertex differentiates diagrams with same edge relation. TikZ node/edge syntax and embedded formula prose preserved; English vertices retained solely as explicitly labeled foreign morphology from source.",
+      "checks": "Directed graph includes an explicit carrier, so an isolated vertex differentiates diagrams with the same edge relation. The manager-identified only-difference sentence now uses an equative yaiku clause rather than a conditional mung yen. TikZ node and edge syntax and embedded formula prose preserved; English vertices is retained solely as explicitly labeled foreign morphology from the source.",
       "reverse_sample": "The graph is the pair of a vertex set and a relation on it. Same edges do not determine the graph if isolated vertices differ.",
       "source_sha256": "dec624ef4e71903b72a9f0b5fcc6a15a2e0f897f9ebe881dd9c9e21333aeee75",
-      "translation_sha256": "7ae7257d4e31c62a64a45aaa31e7878c961a8c6c0bcef29914378f861975632b"
+      "translation_sha256": "ab5eb8545d6376fa53f41b90004483652352c581dee02a014a8728939ab9f215",
+      "revision_reason": "Independent canon revalidation: restored the equative force of the sentence identifying the sole difference between a bare relation and a graph."
     },
     {
       "unit_id": "OLP-0018",
       "status": "pass",
-      "checks": "Tree partial order, least element/well-order definitions, immediate successors, at-most-one predecessor proof, maximal chain, finite/infinite branching and Konig lemma preserved. Replaced ambiguous finite-branch phrase with explicit per-node finite successor count. Source unbound X in branch definition retained and explicitly corrected to A in reader errata.",
+      "checks": "Tree partial order, least-element and well-order definitions, immediate successors, the at-most-one-predecessor proof, maximal chains, finite and infinite carriers, and both Konig lemmas are preserved. Manager-identified causal readings in three defining conditions were replaced by explicit property or condition clauses. Ancestor roles now follow x-to-y reachability directly. The binary-tree example now says that sequence entries are 0 or 1 rather than implying that every sequence contains both symbols. The coined term nyabang winates is immediately fixed by the per-node finite-successor definition and is recorded as provisional without claimed canon attestation. The frozen source's unbound X in the branch definition remains exact in the aligned translation; the reader errata identifies A as the intended carrier.",
       "reverse_sample": "Every node of a finitely branching tree has finitely many immediate successors, even when branches are infinite. Every infinite finitely branching tree has an infinite branch.",
       "source_sha256": "a158f1ce5b84c8c3f681dd6347b22491d1b67a91e110138b9cb6833e3d9dc23c",
-      "translation_sha256": "243acfc8524dba62ea1cd9aed1ed3533a3235645f841a506e9b17e12fb7aafdb"
+      "translation_sha256": "e7428fd4f7b53fc88fb46d40128150dc3d36e6ab9cee7346fe726e71eec3e745",
+      "revision_reason": "Independent canon revalidation: repaired the manager-identified causal readings in formal conditions, made ancestor direction explicit, corrected the binary-sequence membership description, and replaced an unstable paraphrase with the locally defined provisional term nyabang winates."
     },
     {
       "unit_id": "OLP-0019",
       "status": "pass",
-      "checks": "Inverse swaps coordinates; relative product R then S; restriction to A squared; image existential; powers and transitive/reflexive-transitive closure definitions; integer successor example preserved. R+ locally differs from preceding order chapter and is explicitly clarified.",
+      "checks": "Inverse swaps coordinates; relative product composes R then S through the displayed middle element; restriction intersects R with A squared; application collects exactly the related outputs; powers and transitive and reflexive-transitive closures are preserved. The integer successor example derives predecessor, two-step successor, natural-number restriction, finite-set image, strict order, and non-strict order exactly. Every specialist operation term remains source-defined and provisional because the canon has no relation-algebra witness. The reader errata explicitly distinguishes this section's transitive R-plus from the reflexive R-plus in OLP-0016.",
       "reverse_sample": "The transitive closure unites positive-length chains; the reflexive-transitive closure also adds the identity relation.",
       "source_sha256": "73c8bdb301aca93f687a06a045533d75d30088ae711f5e1dfd577b7864f8d3d5",
-      "translation_sha256": "d19bc39eee26c371133727af56f563249554bbde6b87cd35466da4ce52888eb4"
+      "translation_sha256": "d19bc39eee26c371133727af56f563249554bbde6b87cd35466da4ce52888eb4",
+      "revision_reason": "Independent canon revalidation deliberately reaffirmed the exact formulas and prose while bounding the unattested relation-operation terms as reversible source-defined choices."
     },
     {
       "unit_id": "OLP-0020",
       "status": "pass",
-      "checks": "Function chapter title and all six active imports/order retained, along with the commented alternative import.",
+      "checks": "The Function chapter title and all six active imports remain in source order, with the commented isomorphic-functions alternative, chapter identifiers, and hook exact. Fungsi is present in general scholarly canon, while its mathematical mapping sense remains explicitly source-defined and provisional until the imported definitions fix it.",
       "reverse_sample": "Fungsi introduces the function chapter.",
       "source_sha256": "d68bba27e593df2c17e2dc93b34256d829361b04134b4a962b997d5f4a230a59",
-      "translation_sha256": "60904b3ed60abbf3d8c0973ff17b05c30b022c88d93fa351a1b59118101ffac1"
+      "translation_sha256": "60904b3ed60abbf3d8c0973ff17b05c30b022c88d93fa351a1b59118101ffac1",
+      "revision_reason": "Independent canon revalidation deliberately reaffirmed the single localized chapter title and verified the wrapper's complete import structure."
     },
     {
       "unit_id": "OLP-0021",
       "status": "pass",
-      "checks": "Recompared the complete changed file after shared audit OLFUN-20260904. All original examples, formulas and quantifiers remain. The selector on all natural numbers now says nonnegative principal square root (OLFUN-002), while the preceding correct two-root claim remains limited to positive integers. The later prose consistently names input x instead of the source n/x switch (OLFUN-003). Both corrections are disclosed adjacent to the target text. Three earlier recovered-canon multiplication revisions remain unchanged.",
+      "checks": "Recompared the complete file after shared audit OLFUN-20260904. The function definition, domain/codomain/range distinctions, diagram, arithmetic and classroom examples, extensionality condition, and exhaustive exclusive case definition retain their formulas and quantifiers. Purposive or causal wording in three defining equations was replaced by explicit formula or property clauses, both diagram arrows now point from arguments to values directly, and the extensionality proviso is stated as a condition. The selector on all natural numbers says nonnegative principal square root (OLFUN-002), while the correct two-root claim remains limited to positive integers. The later prose consistently names input x instead of the frozen n/x switch (OLFUN-003). Both source departures remain critical formal-preservation exceptions, are disclosed beside the target text and in the reader errata, and are not treated as ordinary source parity.",
       "reverse_sample": "A function supplies exactly one output for every input. The square-root selector on natural numbers returns the principal nonnegative root, including zero. The successor example uses x consistently; its value is x+1.",
       "source_sha256": "d1fa0923e303fc49a88d4e476c319d6e91a8088de44c232dcfba5878325faea3",
-      "translation_sha256": "87892fca02e6526cc70ee50a9902c888b646b360078f03c3caebf4296e0228a6"
+      "translation_sha256": "1ee741287f284bfe27cd6196b58fa278a559d259f35238e031e5db520da02a7c",
+      "revision_reason": "Independent canon revalidation repaired defining-clause and arrow prose while retaining OLFUN-002 and OLFUN-003 as explicit, source-audited critical formal exceptions."
     },
     {
       "unit_id": "OLP-0022",
       "status": "pass",
-      "checks": "At least one versus at most one preimage distinguished. Every function induces a surjection onto its range. Constant, identity, successor and parity examples, bijection and all three captions retained. Locale maps original token keys/flags to Javanese adjective and noun forms.",
+      "checks": "At least one versus at most one preimage remains distinct, and both manager-identified causal equation clauses now use direct kanthi conditions. Every function induces a surjection onto its range. The general function explanation now says each input has one unique output, while injectivity separately prohibits distinct inputs sharing an output. Constant, identity, successor and parity examples, the bijection definition, and all three figures remain exact. The bijection prose and caption use the already defined one-to-one expression rather than the unstable kanthi tunggal phrase. Locale token keys and flags still select Javanese adjective and noun forms.",
       "reverse_sample": "A surjection hits each codomain member; an injection never merges distinct inputs; a bijection satisfies both conditions.",
       "source_sha256": "4d30902b7c66720afabb8b079294106a685aefba0dc02ca10d9921bb554db0ac",
-      "translation_sha256": "4085869284b6539bbe773dee86475063f8c4f7a6019d4501660c919cf7a32d1b"
+      "translation_sha256": "7e58764068d536b324eb4fe34317e2a231d27420bf9515569ed27b1630f94252",
+      "revision_reason": "Independent canon revalidation repaired both causal preimage conditions, made per-input uniqueness explicit, and stabilized the one-to-one bijection explanation."
     },
     {
       "unit_id": "OLP-0023",
       "status": "pass",
-      "checks": "Recompared all definitions, proof and conditional branches after OLFUN-004/005. The graph remains exactly the displayed subset of A times B. The prose now calls it a relation between A and B contained in that product, consistent with the project relation definition. Function restriction retains only pairs whose input lies in C and is explicitly described as analogous to, but distinct from, the earlier two-coordinate restriction. Source finding IDs are adjacent; no formula changed.",
-      "reverse_sample": "A function graph is a relation between its input and output sets, contained in their Cartesian product. Restricting a function changes its domain to C while retaining outputs in B; it is not generally the homogeneous relation restriction by C squared.",
+      "checks": "Recompared every definition, proof, and conditional branch after the central audit. The extensionality paragraph now says that set extensionality shows the implicit function principle to be sound and states pointwise agreement for every argument. Equation conditions in the graph proposition and proof are noncausal, uniqueness is explicit, and the last paragraph correctly refers to two notions. OLFUN-004 still replaces the source's relation-on-A-times-B wording with a relation between A and B contained in that product. OLFUN-005 still distinguishes domain-only function restriction from the earlier two-coordinate relation restriction. Both departures remain visible critical exceptions with adjacent finding IDs; no formula changed.",
+      "reverse_sample": "A function graph is a relation between its input and output sets, contained in their Cartesian product. Equal functions with common domain and codomain agree at every argument. Restricting a function changes its domain to C while retaining outputs in B; it is not generally the homogeneous relation restriction by C squared.",
       "source_sha256": "e2e46c0270c44b6f54861a4565f3829b1b5f91a7f72dca84046361e5abf622c3",
-      "translation_sha256": "5a9c54c58e47144f5e721ee3bfe0193ae8f0ec1edd81852117244aba4365afbc"
+      "translation_sha256": "6f7180e1dc9a046958ac8c58bcac62f2dbcd24bc48cfa2fe6f95f64981d48bdc",
+      "source_audit_ids": [
+        "OLFUN-004",
+        "OLFUN-005"
+      ],
+      "revision_reason": "Central-audit repair of vindicate, pointwise-agreement, equation-condition, uniqueness, and plural-reference wording; confirmed source corrections remain critical formal exceptions."
     },
     {
       "unit_id": "OLP-0024",
       "status": "pass",
-      "checks": "Recompared all inverse definitions, both existence arguments, Choice footnote, exercises and uniqueness results after OLFUN-001. The translated proposition and proof now assume A nonempty, exactly supporting the chosen fallback a. An adjacent note states the exact general condition, A nonempty or B empty, and the empty-to-nonempty counterexample. All source formulas and the right-inverse Choice disclosure remain.",
-      "reverse_sample": "For nonempty A, an injection A to B has a left inverse by mapping values outside its range to a fixed member of A. More generally this works exactly when A is nonempty or B is empty. Surjections have right inverses subject to the stated Choice principle.",
+      "checks": "Recompared every inverse definition, both existence arguments, the Choice footnote, exercises, bijection result, and uniqueness proof after the central audit. Both undo metaphors now explicitly say that the second function recovers the first function's input, and equation requirements are marked as conditions rather than causes. The translated left-inverse proposition and proof retain the OLFUN-001 simple correction A nonempty, exactly supporting the chosen fallback a. Its adjacent note states the exact general condition, A nonempty or B empty, and the empty-to-nonempty counterexample. This source departure remains a visible critical exception. All formulas and the right-inverse Choice disclosure remain.",
+      "reverse_sample": "A left inverse recovers an input after the original function is applied; a right inverse is recovered from by the original function. For nonempty A, an injection A to B has a left inverse by mapping values outside its range to a fixed member of A. More generally this works exactly when A is nonempty or B is empty. Surjections have right inverses subject to the stated Choice principle.",
       "source_sha256": "96e36d8cd8dc4ec0e73e9507147ecfe33d7e4f368ecf46de92efb423a7d409c1",
-      "translation_sha256": "b380483105d82f296d51b071adfd7de416b6b3991dc6125febb8b7a96209750b"
+      "translation_sha256": "3fefb19bce8c17efafa0ff7cb99080878837d45c5635e6d1bdf44c3bcab469f1",
+      "source_audit_ids": [
+        "OLFUN-001"
+      ],
+      "revision_reason": "Central-audit repair of the inverse-cancellation metaphor and equation-condition wording; the confirmed left-inverse source correction remains a critical explicit exception."
     },
     {
       "unit_id": "OLP-0025",
       "status": "pass",
-      "checks": "Composition order first f then g preserved in prose, diagram caption, definition and numeric example. Range/domain compatibility and injection/surjection/graph exercises unchanged in meaning. Conditional capitalization joins correctly.",
+      "checks": "Recompared and deliberately reaffirmed every language-bearing choice after the central audit. Composition order first f then g is explicit in the introductory prose, diagram walk-through and caption, definition, and numeric example. The range of f is required to lie inside the domain of g. The injection, surjection, and graph exercises preserve their hypotheses and conclusions, including the relative-product order. Conditional capitalization joins correctly; no target change was required.",
       "reverse_sample": "For f then g, the value is g(f(x)), so composing successor with doubling gives twice x plus two.",
       "source_sha256": "1733e9f6b7f1009f7d36cb47b3f11ec8cccc28ef173a379e4d69c3de352fcf28",
-      "translation_sha256": "54d6ef1e7a3f7987ae279d12a733e0f1e3077f1e5cc833e63e22555ec5a6d2fb"
+      "translation_sha256": "54d6ef1e7a3f7987ae279d12a733e0f1e3077f1e5cc833e63e22555ec5a6d2fb",
+      "revision_reason": "Central-audit choice-level reaffirmation after exact composition-order and carrier comparison; no target wording defect found."
     },
     {
       "unit_id": "OLP-0026",
       "status": "pass",
-      "checks": "At most one output rather than exactly one; defined/undefined symbols and actual domain retained. Total functions, reciprocal exception, partial inverse exercise, graph and seriality condition/proof all compared directly.",
-      "reverse_sample": "A partial function may have no value at an input. Its domain comprises the inputs where it is defined. A functional relation gives a total function precisely when every ambient input is related to an output.",
+      "checks": "Recompared every language-bearing choice after the central audit. At most one output rather than exactly one, defined and undefined symbols, and the actual domain are retained; the assignment sentence explicitly calls the B-member the result for x while preserving source math-span order. The total-function explanation now quantifies over every input in A, and the reciprocal example quantifies over every real input other than zero rather than using a spatial everywhere phrase. The partial-inverse exercise makes its unique-preimage condition explicit. The relation proposition now expresses the universal functionality condition as an ordinary if-condition; its existence, seriality, and proof witness clauses are noncausal, and the proof states the unique value as siji-sijine. Graph, totality, and seriality conclusions remain exact.",
+      "reverse_sample": "A partial function may have no value at an input. Its domain comprises exactly the inputs where it is defined, and it is total when defined at every input in A. The reciprocal is defined at every real input except zero. A functional relation gives a total function precisely when every ambient input is related to an output.",
       "source_sha256": "0f638e25ad1f565b9256846fb8b293c03663072b69a2adc5f2cfea1e94d00933",
-      "translation_sha256": "d2e70e1dfb1707391147ae9f8c4ece6a394ad841762ef609de99683916d444aa"
+      "translation_sha256": "49038bf27a586585bef46f084354134d28d08bc70abb1a5048f7965d9ed4a661",
+      "revision_reason": "Central-audit repair of the everywhere-else input scope and universal conditional, plus adjacent direction, uniqueness, and witness-condition wording."
     },
     {
       "unit_id": "OLP-0027",
       "status": "pass",
-      "checks": "All thirteen active section imports retained in source order. Both editorial blocks translated, including attribution and distinct surjective/list versus bijective alternative definitions. This wrapper is not yet imported into the three-chapter reader.",
+      "checks": "Recompared the three language-bearing choices and all structural blocks after the central audit. All thirteen active section imports remain in source order. The first editorial block separately states enumeration, countability, and uncountability, then distinguishes elementary lists or surjections from positive integers from the abstract bijections with natural numbers. The second block preserves Tim Button's attribution, Open Set Theory use, greater abstraction, and the exact bijection-with-Nat-or-an-initial-segment versus list-or-surjective-range contrast. Gedhene Himpunan and the countability family remain explicitly high-uncertainty source-defined wording because no Javanese foundations witness attests their cardinal senses. No target change was required; this wrapper is not yet imported into the three-chapter reader.",
       "reverse_sample": "The chapter includes elementary enumerations as lists or surjections from positive integers, and explicitly attributed more abstract alternatives using bijections with natural numbers or an initial segment.",
       "source_sha256": "bce6978871cb87871f8fbae0d51c9e260ba26c6c63ebefaad30d83c89ad1eae0",
-      "translation_sha256": "3b3de050993a9755e890ddc162a7106d83462db5c1973b45f20a2b4045abf372"
+      "translation_sha256": "3b3de050993a9755e890ddc162a7106d83462db5c1973b45f20a2b4045abf372",
+      "revision_reason": "Central-audit choice-level reaffirmation with cardinal and countability terminology retained only as high-uncertainty source-defined wording."
     },
     {
       "unit_id": "OLP-0028",
       "status": "pass",
-      "checks": "Cantor motivation, actual-infinity historical framing, distinct finite-set example and non-enumerable infinite-set conclusion translated directly. No old textbook zero convention imported.",
+      "checks": "Recompared all three language-bearing choices after the central audit. Cantor's 1870s set-theory motivation, making actual infinity palatable, the medieval attribution, treatment of set size, the distinct three-versus-two finite example, and the negative answer for equal infinite sizes are retained. The next paragraph separately states that every finite set is listable, some infinite sets are listable by infinite lists, and some infinite sets are not enumerable. Tanpa wates kang nyata remains explicitly high-uncertainty source-defined historical terminology because no preserved Javanese foundations witness attests actual infinity. No old textbook zero convention is imported and no target change was required.",
       "reverse_sample": "Finite sets can be listed; some infinite sets also have infinite lists. Cantor shows some infinite sets cannot be listed.",
       "source_sha256": "bb5010906c4b4b95ef652f372efc49c44ca9feebbca1e50fecbb29b3ff6ce8aa",
-      "translation_sha256": "992889080962cfdab64a8dd20c332f706976ac0196b014b655dc984b602f6aff"
+      "translation_sha256": "992889080962cfdab64a8dd20c332f706976ac0196b014b655dc984b602f6aff",
+      "revision_reason": "Central-audit choice-level reaffirmation with actual-infinity wording retained only as high-uncertainty source-defined historical terminology."
     },
     {
       "unit_id": "OLP-0029",
       "status": "pass",
-      "checks": "Recompared the complete enumeration section after OLSIZ-001. The alternating-integer table now includes -3 under f(7), as required by the unchanged formula row and the displayed piecewise definition. An adjacent localized note identifies the correction. Definitions, empty-set cases, recursive duplicate removal, shift equivalence and all exercises remain semantically unchanged.",
-      "reverse_sample": "The formula gives f(7)=-3, and the repaired final row now displays that value in the matching column. Enumerable still means empty or the range of a positive-integer enumeration.",
+      "checks": "Recompared all thirty-one language-bearing choices and every structural block after the central audit. The informal definition requires every member at a finite position, the formal definition is a surjection from positive integers for a nonempty set, and enumerable separately includes the empty set. Repetition remains permitted; duplicate removal, the positive-to-natural shift, finite-or-infinite bijection domains, and the injection characterization keep both directions and all empty cases. Repaired the list-property condition, first qualification, duplicate-removal procedure, respectively pairing, domain clause, equality witness, and explicit equivalence between the tokenized enumerable label and bisa didhaptar. The alternating-integer table retains the OLSIZ-001 correction: -3 appears under f(7), as required by both the formula row and the piecewise definition, with an adjacent localized source note. Ceiling remains a disclosed source-defined descriptive term and no computability condition is added.",
+      "reverse_sample": "A set is enumerable when it is empty or is the range of a positive-integer enumeration, equivalently a natural-number surjection or a bijection from a finite initial segment or the whole natural numbers. Repetitions are permitted but can be removed. The two displayed parity functions map, in order, to the even and odd positive integers. The formula gives f(7)=-3, and the corrected table shows it.",
       "source_sha256": "bf6be35c0e393cb6e1d227f8e9024df4216792e663f23beb7277045487acfa67",
-      "translation_sha256": "8072a19e227b50388b976d5adae4bab74948eabf8604755805d3531a341a0ab0",
+      "translation_sha256": "7ee24ef09ea9da6731c04dd850372de684915dad9b601c143c928e84f58d2cd7",
       "source_audit_ids": [
         "OLSIZ-001"
-      ]
+      ],
+      "revision_reason": "Central-audit repair of the respectively pairing and enumerable-term identity, plus adjacent property, list, proof, and domain constructions; OLSIZ-001 retained as an explicit critical source exception."
     },
     {
       "unit_id": "OLP-0030",
       "status": "pass",
-      "checks": "Compared complete English and Javanese files. Every array, diagonal order, row/column coordinate, nested-pair interpretation of triples, natural exponent quantifier and both positive-integer exercises retained. The proof defines the enumerating map in the same direction. No computability condition added.",
-      "reverse_sample": "The diagonal order lists every natural-number pair once. Replacing one axis with that enumeration lists triples, and iterating gives finite powers. The exercises separately ask about positive-integer powers and finite sequences.",
+      "checks": "Recompared all eight language-bearing choices and every structural block after the central audit. Both grids, the diagonal numbering order, row and column coordinates, the function from each natural-number label to its unique ordered pair, the nested-pair interpretation of triples, both axis enumerations, the universal natural exponent and both positive-integer exercises remain exact. The avoidable English-shaped enumeration verb was replaced by menehi enumerasi tumrap, while larikan rong dimensi remains explicitly high-uncertainty source-defined wording controlled by the displayed grids. The proof's k-at-row-n-column-m clause is now a direct property rather than a causal result. No computability condition is added.",
+      "reverse_sample": "The zig-zag order lists every pair of natural numbers once, and f sends each grid label k to the pair in that cell. Treating a triple as a pair whose first coordinate is itself a pair gives an enumeration of natural triples; iteration gives every finite natural power. The exercises separately ask for positive-integer powers and all finite positive-integer sequences.",
       "source_sha256": "514c709d325dd5496ee321828b0c4a0e7eea089a58d3f2ecde05128b9e7daf26",
-      "translation_sha256": "065410457b5ec0326bebf53e65f941005759a574e4a54bc53944637c8e6b6794"
+      "translation_sha256": "418602702c77088c76d38d4aea7e08869eed23fc19dd23076b678ad86c6a2cf5",
+      "revision_reason": "Central-audit repair of an avoidable English-shaped enumeration verb and the proof's causal property clause, with the grid descriptor retained only as high-uncertainty source-defined wording."
     },
     {
       "unit_id": "OLP-0031",
       "status": "pass",
-      "checks": "Recompared the complete pairing section after OLSIZ-002. Cofinite is now stated as the complement in natural numbers of a finite subset there, exactly matching the following Nat-minus-A criterion. The localized note carries the shared finding ID. The pairing formula, injectivity definition, rational and finite-subset exercises, inverse qualification and Choice disclosure are unchanged.",
-      "reverse_sample": "A subset of natural numbers is cofinite exactly when its complement within the natural numbers is finite. The arithmetic pairing map remains an injection into natural numbers.",
+      "checks": "Recompared all fifteen language-bearing choices and every structural block after the central audit. The diagonal pairing values, row-to-row observation, corrected inclusive triangular sum, k(k+1)/2 formula, explicit pairing code, injective pairing definition and encode/decode explanation remain aligned. The inverse's displayed values are introduced as direct properties. Rational, binary-string, truth-function, finite-subset and Nat-cubed exercises preserve their scopes. OLSIZ-002 remains a critical disclosed repair of the malformed cofinite definition. The countable-union exercise now states the needed choice assumption for an arbitrary indexed family. The final exercise now composes an enumeration of the encoding range with the inverse and handles the empty product, rather than falsely calling the partial inverse of every injective pairing function itself an enumeration.",
+      "reverse_sample": "The formula assigns each natural pair a unique natural code, so a pairing function is an injection into the natural numbers and its inverse decodes values in its range. A subset of the natural numbers is cofinite exactly when its complement there is finite. Countable unions require the stated choice assumption for an arbitrary family. An enumeration of an encoding range followed by decoding enumerates the original product, with the empty product handled separately.",
       "source_sha256": "fb6cc1176e91e56cea5f5b9708723c59191813f8fe256aac8ed0457a0119a9bf",
-      "translation_sha256": "b766c4a116aba8a91e807ea82a9078112fa9cd0196247fa4af114ae689f61804",
+      "translation_sha256": "c4cb552e9976a83cf02c6d4084829f369ed0fc5e9508e88d9c01dd1d633d150b",
       "source_audit_ids": [
         "OLSIZ-002"
-      ]
+      ],
+      "additional_source_decision_ids": [
+        "JV-D010",
+        "JV-D012",
+        "JV-D013"
+      ],
+      "revision_reason": "Central-audit OLSIZ-002 repair retained; three already recorded source defects were applied in-body, and the inverse property clause was made noncausal."
     },
     {
       "unit_id": "OLP-0032",
       "status": "pass",
-      "checks": "Recompared all prose, four arrays and encoding formulas after OLSIZ-003. The successive family list now says (2,m), (3,m), and onward, agreeing with the immediately following table. The correction note is adjacent. The earlier independently logged (0,1) repair, power-of-two construction, subtraction by one, examples and prime-power injection remain intact.",
-      "reverse_sample": "Successive rows are filled by the families (2,m), (3,m), and onward. The final formula h(n,m)=2^n(2m+1)-1 still codes every natural-number pair.",
+      "checks": "Recompared all six language-bearing choices, four arrays and every structural block after the central audit. The first filling pass now correctly calls (0,1), rather than (0,2), the second pair, agreeing with the first table; the adjacent JV-D014 note identifies the frozen defect. The successive-family sentence retains OLSIZ-003 by changing the repeated second (2,m) to (3,m), again matching the following table and carrying a distinct adjacent note. Odd positions, row factors, powers of two, subtraction by one, h's three worked codes, and the prime-power injection retain every value. The final prose explicitly distinguishes a bijective enumeration code from a nonsurjective injection whose inverse is only partial.",
+      "reverse_sample": "Fill the first empty positions with (0,0), (0,1), and onward, then the remaining positions with the rows (1,m), (2,m), (3,m), and onward. This yields h(n,m)=2^n(2m+1)-1 and codes every natural pair. The separate prime-power map is injective but need not be surjective, so its inverse is partial.",
       "source_sha256": "c26b4e0da9e2e0b0ec839470ddd1d0d5eb1b3d3922d3b6986c9a795f34328797",
-      "translation_sha256": "46e6270ae27da3d4542a414e763b1ac9c32015d373737a74fabf79f3c6ffc1d7",
+      "translation_sha256": "b249f0cc1a4df5973ef315b21c9f9b60e9adfd22e27e46a7212b8972c9c1e037",
       "source_audit_ids": [
         "OLSIZ-003"
-      ]
+      ],
+      "additional_source_decision_ids": [
+        "JV-D014"
+      ],
+      "revision_reason": "Applied the previously claimed but missing table-controlled (0,1) correction and retained the distinct OLSIZ-003 successive-family repair with unambiguous adjacent notes."
     },
     {
       "unit_id": "OLP-0033",
       "status": "pass",
-      "checks": "Direct comparison of all 22 translated paragraph blocks with frozen English, plus full formulas and two arrays. Binary-sequence indexing starts at positive integers. The constructed complement depends on the proposed list and differs from its kth row at position k; no single sequence independent of the list is claimed. Both case conditions retain their nested mathematics. Set diagonal membership uses iff and excludes the kth set by its kth element. Both exercises retained. Introductory source overgeneralization about empty enumerable sets is explicitly qualified in editorial/ERRATA.md; both proved target sets are nonempty.",
+      "checks": "Direct comparison of all 22 language-bearing blocks with the frozen English, plus every formula and both arrays. JV-D015 is now applied in the reader body: the positive-integer-surjection claim is restricted to nonempty enumerable sets, and the adjacent sentence explains the empty-set exception. P007 needs no duplicate qualification because it only contrasts infinite sets. Binary-sequence indexing starts at positive integers; the complement depends on the proposed list and differs from its kth row at coordinate k. Both case conditions retain their nested mathematics. Set-diagonal membership remains a biconditional and excludes the kth set by membership of k. Both exercises retain their original carriers and scopes.",
       "reverse_sample": "For any proposed list of infinite binary sequences, flip its diagonal bits. The resulting sequence belongs to the same space yet differs from each listed sequence at a specified position. For a proposed list of subsets of positive integers, the set of n absent from its nth subset is itself a subset, but differs from every listed subset. Thus neither space can be enumerated.",
       "source_sha256": "4471def29c2da48dcb01635adf692cd0bc89cb6885636db149f4b2d86ff4e9fa",
-      "translation_sha256": "a39f69758ce2d4a2593a44b1de33f8baf40bbc2328342b81b119c87655431f38"
+      "translation_sha256": "3eb57413d30ec183aa680a1848f326f76c37ad2b57bd89c1f85fbf125e374adb"
     },
     {
       "unit_id": "OLP-0034",
       "status": "pass",
-      "checks": "Recompared the full reduction section after OLSIZ-004 and OLSIZ-005. The characteristic output has the single bound name s throughout. The counterexample h(n) now consists of n zeros followed by an infinite tail of ones, so every output belongs to the infinite-binary-sequence codomain while the map still cannot be surjective. Both corrections are identified adjacent to their bodies; all reduction directions and exercises remain.",
+      "checks": "Recompared all seventeen language-bearing blocks and every formula against the frozen reduction section. The operational direction is explicit: a surjection A to B turns an enumeration of A into one of B, so the problem for B reduces to the problem for A. OLSIZ-004/JV-D017 uses one bound characteristic-sequence name s throughout. OLSIZ-005/JV-D016 maps n to n leading zeros followed by an infinite tail of ones, so every output lies in the infinite-binary-sequence codomain while the map remains nonsurjective. Both corrections are identified beside their bodies. Avoidable ngenumerasi forms were replaced consistently; all five exercise carriers, hypotheses, hints and conclusions remain.",
       "reverse_sample": "A subset maps to its characteristic sequence s. The illustrative h maps n to an actual infinite binary sequence with n leading zeros and ones thereafter; it misses many codomain members.",
       "source_sha256": "0d6d2e3280698668b837cef6dcf3134b86d2a4b48831ae516e6e33e42898c79a",
-      "translation_sha256": "11ff639ead636b6bf93c911baac161f576aabc515613b2a043d27eddd769c38f",
+      "translation_sha256": "778d68f2e54a0968cb1d115ad2e36db47e36e8326578d930bc7242ea83c9dd8b",
       "source_audit_ids": [
         "OLSIZ-004",
         "OLSIZ-005"
@@ -297,10 +332,10 @@
     {
       "unit_id": "OLP-0035",
       "status": "pass",
-      "checks": "Recompared the Frege citation, cardinality definition, equivalence proofs and both conditional enumeration branches after OLSIZ-006. In each empty-set branch, the bijection in scope is now correctly named f, twice. Both localized repairs carry the shared ID. The enumeration g is introduced only in the nonempty branch, and all composition directions and exercises remain unchanged.",
+      "checks": "Recompared all fourteen language-bearing blocks, the Frege citation, the bijection definition, the reflexive/symmetric/transitive proof, both conditional enumeration branches, and every formula. OLSIZ-006/JV-D018 uses the in-scope bijection f in both empty-set contradictions; each branch now explicitly supposes a y in B and states that empty A supplies no x mapping to it. The enumeration g is introduced only in the corresponding nonempty branch. The inverse and composition directions, conditional-definition references, biconditional conclusion, disjoint-union exercise, and infinite-enumerable exercise remain exact.",
       "reverse_sample": "If A is empty and f is a bijection from A to B, then B must be empty; otherwise a y in B would have no x in A with f(x)=y. The later enumeration g has a different domain.",
       "source_sha256": "025a3fc368d6873825effcb07631913762edbf2d3f9a0711d57dcd9575361251",
-      "translation_sha256": "d98271ec9b67b12c13f379e3c616b0fa86312a5ee043621000d0243f8541f66d",
+      "translation_sha256": "9121eaef4b2fe8b23d2d28d6f8c40004e2e892f1a0332e61f53198f45d4cf5f7",
       "source_audit_ids": [
         "OLSIZ-006"
       ]
@@ -308,10 +343,10 @@
     {
       "unit_id": "OLP-0036",
       "status": "pass",
-      "checks": "Recompared both Cantor proof branches, cardinal comparisons and the final exercise after OLSIZ-007. The detailed proof now quantifies its concluding mismatch over every x in A, as required to exclude the diagonal subset from the whole range. The adjacent note names the finding. The diagonal definition, both membership cases, empty-set coverage and separate Choice qualification remain.",
+      "checks": "Recompared all fourteen language-bearing blocks, both Cantor proof branches, every cardinal comparison, conditional reference and the final exercise. JV-D020 is now stated in the reader body: the unrestricted equivalence between A being non-enumerable and Nat being strictly smaller than A is explicitly made under the Axiom of Choice, with the bare-ZF limitation beside it. OLSIZ-007/JV-D019 quantifies the detailed proof's concluding mismatch over every x in A and cites the defining biconditional, as required to exclude the diagonal subset from the whole range. The singleton injection, both diagonal constructions, empty-A coverage, all labels, citations and exercise scopes remain exact.",
       "reverse_sample": "For every x in A, x belongs to g(x) exactly when it does not belong to the diagonal subset, so g(x) differs from that subset for every possible input.",
       "source_sha256": "075810b1cf1c8b54266518523d4665d3deae4a4937f4e19a66a09cc0e1aaebf7",
-      "translation_sha256": "68eef3a8a3adb8167bb1d919e8bc8bb7e2d6f109801f2fea8360a0674dc0bbab",
+      "translation_sha256": "9afebad50c2e83e9f580894083bcfd2efd30e3886f505b971e573b7e86daf683",
       "source_audit_ids": [
         "OLSIZ-007"
       ]
@@ -319,26 +354,26 @@
     {
       "unit_id": "OLP-0037",
       "status": "pass",
-      "checks": "Compared all six translated paragraph blocks after recognizing source CRLF line endings. Two injections imply a bijection; no false claim that a proof is supplied here. Conditional reference to the later actual proof, complete historical footnote and all repeated proper-name accents preserved. Only the pp. locator word becomes kaca; page numbers and Potter2004 citation key unchanged.",
+      "checks": "Compared all six language-bearing blocks after recognizing the frozen source's CRLF line endings. The intuitive statement, theorem, and prose expansion all preserve two opposite injections and the resulting bijection. No proof is falsely claimed here: the text says the result is difficult, attributes its statement to Cantor and proof to others, conditionally points to the later proof, and requires provisional acceptance meanwhile. The historical footnote and every proper-name accent remain. Only the pp. locator word becomes kaca; pages 165--6 and the Potter2004 key are unchanged.",
       "reverse_sample": "If A injects into B and B injects into A, the sets are equinumerous. The chapter states the theorem and points to its later proof; finding two injections can be easier than directly finding a bijection.",
       "source_sha256": "7b99b3e032e24e425383734ce80ad9a5cc37d018c09205e02f37b927d50bb56a",
-      "translation_sha256": "b278714383f437b218a5d49603907afaef992b768a2348a5442b0995c8bc7508"
+      "translation_sha256": "ea63530cc787cd933b0bd01a2f9f31c69a64fb2bd63d816450b16420f9a8a17b"
     },
     {
       "unit_id": "OLP-0038",
       "status": "pass",
-      "checks": "Compared every active paragraph, both definitions, examples, cases formula, footnote and four exercises. The alternative definition uses a bijection from all natural numbers or a finite initial segment and separately admits the empty set. Even and odd enumerations are bijections onto their own ranges, not onto all natural numbers. The source opening grammar and finite-bound convention are recorded in ERRATA.md.",
-      "reverse_sample": "A set is enumerable when empty or bijective with a finite initial segment of natural numbers or with all natural numbers. This is equivalent to injection into natural numbers and, for nonempty sets, surjection from natural numbers.",
+      "checks": "Recompared all fifteen language-bearing blocks, both definitions, every example, the cases formula, footnote and four exercises. The alternative definition uses a bijection from all natural numbers or a finite initial segment and separately admits the empty set. The surjection and injection characterizations retain their directions. Even and odd functions enumerate their respective ranges and are not surjective onto all natural numbers. Active and passive English-shaped enumeration verbs were replaced by menehi or diwenehi enumerasi tumrap, the parity pairing now says miturut urutane, and the hopping metaphor uses proper TeX quotation marks. The frozen opening grammar and change from the n-element domain {0,...,n-1} to the independently parameterized initial domain {0,...,n} remain disclosed in ERRATA.md.",
+      "reverse_sample": "A set is enumerable when empty or when it has a bijection from a finite initial segment of natural numbers or from all natural numbers. This is equivalent to an injection into the natural numbers and to either emptiness or a surjection from the natural numbers.",
       "source_sha256": "9a9060e57403586c0f8a81353c1d9c81049869e486b4dc032fbf32542023ba8f",
-      "translation_sha256": "c21d6658fcfec26f5253e0cd207c4c2e0091481bd34c9cab1a7d696c44a9e387"
+      "translation_sha256": "8cb385c837244692476fc5738c75666068f917d6a0db715a528eb5c8f86f7175"
     },
     {
       "unit_id": "OLP-0039",
       "status": "pass",
-      "checks": "Recompared both diagonal theorems, arrays, case formulas, conditional footnote and exercise after OLSIZ-008 and OLSIZ-009. The prose calls s_n(m) the mth digit of the nth string and states both complementary bit flips. Both localized notes are adjacent; no diagonal quantifier, membership direction or table control sequence changed. A later proposed OLSIZ-011 table-rule finding was retracted after exact-byte inspection confirmed the original three-backslash sequence is already correct.",
-      "reverse_sample": "The entry s_n(m) sits in row n and column m. Flipping each diagonal bit gives the omitted string. The unchanged table already has a row break followed immediately by a genuine hline command.",
+      "checks": "Recompared all fourteen language-bearing blocks, both diagonal theorems, both arrays, case formulas, conditional footnote and exercise after OLSIZ-008 and OLSIZ-009. The prose calls s_n(m) the mth digit of the nth string and states both complementary bit flips. Both localized notes remain adjacent. The introductory list strategy now avoids an English-shaped enumeration verb, quoted pedagogical expressions use TeX quotation marks, the conditional future phrase is idiomatic, the powerset proof explicitly says a subset of Nat, and the illustrative array has a complete introductory clause. No diagonal quantifier, membership direction or table control sequence changed. The proposed OLSIZ-011 table-rule finding remains retracted after exact-byte inspection confirmed all five original three-backslash row-break-plus-hline sequences are correct.",
+      "reverse_sample": "The entry s_n(m) sits in row n and column m. Complementing every diagonal bit constructs a binary sequence outside any proposed list. The subset D contains n exactly when N_n omits n, so D differs from every N_n. The unchanged table control sequences remain valid.",
       "source_sha256": "a075f6c63879101314fb20fa493acfb38d78ff24095bb55914f2af4527e1ad3e",
-      "translation_sha256": "5af7c817395540e2fc9137f8960a116d4822026b391797d65c80c974ef9967c1",
+      "translation_sha256": "f75ec674d4b3a70dee16a63640463d75fed9ae38c717dfa00aa2fbb451d0d2d5",
       "source_audit_ids": [
         "OLSIZ-008",
         "OLSIZ-009"
@@ -347,10 +382,10 @@
     {
       "unit_id": "OLP-0040",
       "status": "pass",
-      "checks": "Recompared all active prose, the characteristic-sequence reduction, commented material and five exercises after OLSIZ-010. The characteristic output now has the single bound name s throughout, and the adjacent note carries the shared ID. The independently recorded harmless N_1 index shift, surjectivity argument, examples and reduction direction remain unchanged.",
-      "reverse_sample": "Each subset N maps to the uniquely determined characteristic string s, where s(n)=1 exactly for members of N. This surjection transfers a hypothetical enumeration to all infinite binary strings.",
+      "checks": "Recompared all nineteen language-bearing blocks, including both inactive commented passages, the characteristic-sequence reduction and five active exercises. The reduction direction remains operationally explicit: transform an enumeration of A into one of B with a surjection A to B. The proof retains the harmless N_1 indexing shift. OLSIZ-010 gives the characteristic output the single bound name s throughout, and the adjacent note retains the shared ID. Active English-shaped enumeration verbs were replaced by direct enumerasi tumrap constructions, the characteristic-sequence prose now says the output name asile, the binary-string description states that its entries come from 0 and 1, and the definition of S now expresses exact constitution rather than mere inclusion. Commented material remains inactive and aligned.",
+      "reverse_sample": "Each subset N maps to the uniquely determined characteristic string s, where s(n)=1 exactly when n belongs to N. This surjection transforms a hypothetical enumeration of Pow(Nat), indexed harmlessly from one, into an enumeration covering every infinite binary sequence.",
       "source_sha256": "f7717d8394048096cf7a65bc87a1a1ed15861cdfb8c7edb23429d5256d954d11",
-      "translation_sha256": "cc259462e3d7671ced74c079fffeb6172abf0c42a12658e819c40dcb53dab3bb",
+      "translation_sha256": "a604f82401f72a5c80e1acecebe2e6d86da3f1d0c78d4a3fefa7eac06d9a9a61",
       "source_audit_ids": [
         "OLSIZ-010"
       ]
@@ -358,71 +393,71 @@
     {
       "unit_id": "OLP-0041",
       "status": "pass",
-      "checks": "Chapter title, Button/Open Set Theory attribution and all seven ordered imports retained. Arithmetization is explicitly scoped to construction of number systems in naive set theory. The source diaeresis command in naive becomes ordinary translated spelling through one asserted lexical-typesetting exception.",
+      "checks": "Recompared both language-bearing blocks and every formal block. The chapter title, Tim Button/Open Set Theory attribution and all seven ordered imports remain exact. Aritmetisasi is explicitly scoped to construction of multiple number systems in naive set theory; maneka sistem now expresses the plurality without an avoidable repeated noun. The source diaeresis command in naive becomes ordinary translated spelling through one asserted lexical-typesetting exception.",
       "reverse_sample": "This chapter constructs number systems within naive set theory and imports sections on integers, rationals, reals, cuts, reflections, detail checking and Cauchy sequences.",
       "source_sha256": "66101685650a7c53c6bdd3913ec5211699b0c747857882953e3413ef5f305331",
-      "translation_sha256": "64e8c174bac39ba12979a1d8627983bb9118a224ee2803609c98cc70bc590371"
+      "translation_sha256": "162de6caa661980792bcf14da2249af525c8b06c31a5e1ecd4d2279eb3b1d033"
     },
     {
       "unit_id": "OLP-0042",
       "status": "pass",
-      "checks": "Compared all 15 translated paragraph blocks, including the two observations, equivalence definition, full reflexive/symmetric/transitive proof, quotient definition, representative footnote, addition/multiplication/order definitions, natural-number embedding, verification calculation and exercise. Every equation and composition of representatives is unchanged. Text inside the three iff displays is translated without altering symbols. Two source diaeresis commands in naive have an exact asserted lexical exception.",
+      "checks": "Recompared all twelve language-bearing construction groups and every formal block, including the two observations, equivalence definition, full reflexive/symmetric/transitive proof, quotient definition, representative footnote, addition/multiplication/order definitions, natural-number embedding, verification calculation and exercise. The reader now uses a scholarly inclusive imperative instead of conversational ayo, removes a redundant paired-side expression, says equivalence classes are formed and are classes of ordered pairs, describes the representative class as containing its pair, and uses proper TeX quotation marks around notation. Every equation and composition of representatives is unchanged. Text inside the three iff displays is translated without altering symbols. Two source diaeresis commands in naive remain an exact lexical exception.",
       "reverse_sample": "Represent an integer a-b by a pair (a,b), identifying pairs when a+d=c+b. The resulting equivalence classes form the integers. Addition, multiplication and order are defined on representatives and must be independent of them. The map n to the class of (n,0) preserves addition, multiplication and order.",
       "source_sha256": "f93b142146b9527128437355d7e3922204eede2ca9c75a941d3c09a9a848ce77",
-      "translation_sha256": "971412b9e97a2cfd6b3f4b358178ad9fb73642c1a308d0b9b18d6293d288cfdc"
+      "translation_sha256": "abeda666842c588c5d4c1f8d3a303f57018a40145dfbf28e314dfe414cf00e32"
     },
     {
       "unit_id": "OLP-0043",
       "status": "pass",
-      "checks": "Compared all five translated paragraph blocks: section title; motivation from integer pairs and the cross-multiplication equivalence relation; exercise and quotient definition; arithmetic/order definitions; integer embedding and final exercise. All 30 mathematical spans, identifiers, references and the element token are retained. The sole source reversal from r-s to s-r follows the controlling preceding sentence and displayed definition and is disclosed adjacent to the formula and in both errata files.",
+      "checks": "Recompared all five translated paragraph blocks after the canon audit: section title; motivation from integer pairs and the cross-multiplication equivalence relation; exercise and quotient definition; arithmetic/order definitions; integer embedding and final exercise. All 30 mathematical spans, identifiers, references and the element token are retained. The representative is explicitly described as an equivalence class containing its pair. The sole source reversal from r-s to s-r follows the controlling preceding sentence and displayed definition and is disclosed as JV-D024 adjacent to the formula and in both errata files.",
       "reverse_sample": "Construct each rational as an equivalence class of integer pairs with nonzero second coordinate, identifying (a,b) and (c,d) when ad=bc. Define addition and multiplication on representatives. Say r is at most s when s-r has a representative with nonnegative numerator and positive denominator. Embed integer i as the class of (i,1), preserving arithmetic and order.",
       "source_sha256": "7140495368042fcbc55907e6ee568c5bc8b7066e44a01a50cbf4202acebe71d2",
-      "translation_sha256": "13fc10116f29b795e812ba33cac569f68b0ea58ef1104f7e8324cb22e752ca89"
+      "translation_sha256": "486504cf56c9bfedb80bceab5ab4e162bb28b8b11f0283be29d52f3cb3f2aead"
     },
     {
       "unit_id": "OLP-0044",
       "status": "pass",
-      "checks": "Compared all ten translated paragraph blocks: real/rational contrast and ordered-field cross-reference; Cantor and irrationality setup; theorem; reductio proof; geometric descent diagram and explanation; parity proof; historical aside; least-upper-bound formulation of completeness; the rational counterexample; and the concluding continuum metaphor. All 43 mathematical spans, citation, label, cross-references, TikZ commands and plural element token are retained. The stray source less-than sign is omitted and disclosed. The inactive source comment about square-root notation is translated for alignment and separately corrected in the errata.",
+      "checks": "Recompared all ten translated paragraph blocks after the canon audit: real/rational contrast and ordered-field cross-reference; Cantor and irrationality setup; theorem; reductio proof; geometric descent diagram and explanation; parity proof; historical aside; least-upper-bound formulation of completeness; the rational counterexample; and the concluding continuum metaphor. All 43 mathematical spans, citation, label, cross-references, TikZ commands and plural element token are retained. Both proof endpoints now use kontradiksi rather than the semantically wrong reversal phrase. The stray source less-than sign is omitted and disclosed as JV-D025. The inactive source comment about square-root notation remains inactive and translated for alignment, while JV-D026 is recorded in the errata and review log.",
       "reverse_sample": "The real line extends the rationals by satisfying the least-upper-bound property. Square root of two is irrational: either a geometric descent or the usual even-numerator/even-denominator contradiction rules out a reduced rational fraction. The rational set below square root of two has upper bounds but no least rational upper bound, motivating a gap-free real continuum.",
       "source_sha256": "3df30161417b836178ff701aa3d778b9ec7c1ba8e3a8a54f98b5584a7960f453",
-      "translation_sha256": "0d6121c3c4c5fef9ac72099b65f21f5bd76a470099aaeb11d295b7c7f6196eb7"
+      "translation_sha256": "5bd0eaf0d08bb88b271a0a214af8a149018cd6ff16c91bc477a5e62a4ee50e37"
     },
     {
       "unit_id": "OLP-0045",
       "status": "pass",
-      "checks": "Compared all ten translated paragraph blocks: cut motivation; lower-half identification; the three-clause cut definition; square-root cut; inclusion order and fully quantified completeness statement; theorem; union proof with all three cut conditions and leastness; no-gap explanation; rational embedding; and arithmetic/sign cases. All 73 mathematical spans, label, cross-reference, environments, inactive formulas and text conditions are retained. The first proof bullet now derives existence of a member from nonemptiness rather than the unrelated upper-bound premise; the correction is disclosed adjacent and in both errata files.",
+      "checks": "Recompared all ten translated paragraph blocks after the canon audit: cut motivation; lower-half identification; the three-clause cut definition; square-root cut; inclusion order and fully quantified completeness statement; theorem; union proof with all three cut conditions and leastness; no-gap explanation; rational embedding; and arithmetic/sign cases. All 73 mathematical spans, label, cross-reference, environments, inactive formulas and text conditions are retained. The cut definition now uses the established perangan wiwitan sejati and anggota vocabulary. The first proof bullet derives existence of a member from nonemptiness, uses the upper bound only for properness, and states unambiguously that the chosen rational lies in no member cut; the correction is disclosed as JV-D027 adjacent and in both errata files.",
       "reverse_sample": "A real is represented by a nonempty proper initial segment of the rationals with no greatest element. Inclusion orders these cuts. For any nonempty upper-bounded set of cuts, its union is itself a cut, contains every member of the family, and lies inside every other upper bound, so it is the least upper bound. Rational p embeds as the cut of rationals below p; arithmetic is then defined on cuts.",
       "source_sha256": "e7cb1029bcb0f0f1ac677c005af8d4e6a10df84bfff50c7483447b972324b44c",
-      "translation_sha256": "d6e6809b30b06bb95ff294ba31ff55dd45bfdf9978323f463444332e7ae95c9c"
+      "translation_sha256": "572f2dcd89b8e591891c41d0f98eff822e0d23a5a5a6bfd8c31d474b6cba67a6"
     },
     {
       "unit_id": "OLP-0046",
       "status": "pass",
-      "checks": "Compared all eleven translated paragraph blocks, including the conceptual value of completeness and Dedekind construction, three reservations about rigor and metaphysical identity, alternative ordered-pair constructions and the Benacerraf citation, the nonidentity of natural and constructed integer zero, the weaker treat-as/embed conclusion, the closing qualification, and all inactive explanatory comments. All 12 mathematical spans, cross-references, citation, ellipsis command and emphasis sequence are retained. The central contrast between numbers literally being sets and being representable as sets is explicit.",
+      "checks": "Recompared all eleven translated paragraph blocks after the canon audit, including the conceptual value of completeness and Dedekind construction, three reservations about rigor and metaphysical identity, alternative ordered-pair constructions and the Benacerraf citation, the nonidentity of natural and constructed integer zero, the weaker treat-as/embed conclusion, the closing qualification, and all inactive explanatory comments. All 12 mathematical spans, cross-references, citation, ellipsis command and emphasis sequence are retained. The manager-identified gegayuhan mistranslation is repaired to asil in both the achievement and reservation clauses. Rigor is rendered consistently by tliti and katliten, and JV-D028's evaluative odd remains aneh rather than numerical parity language. The central contrast between numbers literally being sets and being representable as sets remains explicit.",
       "reverse_sample": "The constructions establish coherent complete ordered fields and put analysis on a rigorous basis, but set encodings alone need not add rigor or reveal what numbers metaphysically are. Alternative pair encodings yield different set objects, and constructed integer zero is not literally natural zero. Naive set theory therefore lets us treat numbers as sets and embed their theories, while the philosophical significance needs further argument.",
       "source_sha256": "01032be342b6892c970733acf0b553216c39c5e864c0378d25fea8c5eaa11ead",
-      "translation_sha256": "3c725866bac41c3a019848970cbbfbd6fc75f6738081ed4878204594944aef9a"
+      "translation_sha256": "0b17062739572c494f6e9695f0a9e67f2c60a1bb724c991aec21c58a55e10d5d"
     },
     {
       "unit_id": "OLP-0047",
       "status": "pass",
-      "checks": "Compared all 26 translated paragraph blocks: the eight commutative-ring laws; representative proofs of additive associativity, additive inverses and distributivity; the remaining exercise; total-order/trichotomy footnote and ordered-ring laws; ordered-field inverse law and exercises; completeness cross-reference; cut-addition proof; the intended subtraction/division checks; and the no-maximum proof for the square-root cut. All 93 mathematical spans, 28 paragraph blocks, labels, references, environments, commented formulas and formula order are retained. Six linguistic axiom labels inside align environments are translated under an exact QA normalization. The omitted noun and inactive subtraction/division definitions are disclosed adjacent and in both errata files.",
-      "reverse_sample": "The constructed integers satisfy the commutative-ring axioms and the compatible total-order laws; adding multiplicative inverses for every nonzero element gives the ordered-field condition for the rationals. The real cuts must also form an ordered field and satisfy completeness. Cut addition is shown to be a nonempty proper initial segment with no maximum, and an explicit rational improvement proves the square-root cut has no greatest member.",
+      "checks": "Recompared all 26 translated paragraph blocks after the canon audit: the eight commutative-ring laws; representative proofs of additive associativity, additive inverses and distributivity; the remaining exercise; total-order/trichotomy footnote and ordered-ring laws; ordered-field inverse law and exercises; completeness cross-reference; cut-addition proof; the intended subtraction/division checks; and the no-greatest-member proof for the square-root cut. All 93 mathematical spans, 28 paragraph blocks, labels, references, environments, commented formulas and formula order are retained. Six linguistic axiom labels inside align environments remain translated under an exact QA normalization. Initial-segment and greatest-member vocabulary now agrees with the defining cut terminology. The source's omitted checking noun is restored and disclosed as JV-D029; its assignment of checks to inactive subtraction and division definitions is disclosed as JV-D030, both adjacent and in both errata files.",
+      "reverse_sample": "The constructed integers satisfy the commutative-ring axioms and the compatible total-order laws; adding multiplicative inverses for every nonzero element gives the ordered-field condition for the rationals. The real cuts must also form an ordered field and satisfy completeness. Cut addition is shown to be a nonempty proper initial segment with no greatest member, and an explicit rational improvement proves the square-root cut has no greatest member.",
       "source_sha256": "d791c146f159c8e43368c12cd1a10e61a53f501baf9f3d2c606c7bd589c0ae01",
-      "translation_sha256": "bbfdea1bc3e7bec400d976a6c006b494a9a53e9772607c6148d02171c076e025"
+      "translation_sha256": "0369c2fb0752d1221b226df38ac1349232f38c378a7c0a1ef70c4dc84bec730e"
     },
     {
       "unit_id": "OLP-0048",
       "status": "pass",
-      "checks": "Compared all 19 translated paragraph blocks: historical attribution; decimal-function encoding; rational approximations and alternating counterexample; epsilon definition and example; equivalence of Cauchy sequences modulo a difference tending to zero; quotient construction and constant rational embedding; arithmetic and positivity/order; ordered-field theorem/exercise; and the full bisection proof sketch of completeness. All 130 mathematical spans, identifiers, label/reference/citation commands, cases, inactive order formula, footnotes and element token are retained. Exact QA normalizes only the source's rational-zero type error. Four grammar slips, equivalence-relation/class confusion, quotient shorthand and the unproved Archimedean dependency are disclosed adjacent and in both errata files.",
+      "checks": "Recompared all 19 translated paragraph blocks after the canon audit: historical attribution; decimal-function encoding; rational approximations and alternating counterexample; epsilon definition and example; equivalence of Cauchy sequences modulo a difference tending to zero; quotient construction and constant rational embedding; arithmetic and positivity/order; ordered-field theorem/exercise; and the full bisection proof sketch of completeness. All 130 mathematical spans, identifiers, label/reference/citation commands, cases, inactive order formula, footnotes and element token are retained. Exact QA normalizes only the source's rational-zero type error. JV-D031 identifies the four minimal grammar repairs; JV-D032 replaces equivalence relations by the quotient's equivalence classes; JV-D033 uses type-correct real zero; JV-D034 states beside both theorems that field elements and ordered objects are quotient classes represented by Cauchy sequences; and JV-D035 identifies the unproved Archimedean dependency before the unchanged bisection argument. Rigorous and precise prose now uses tliti consistently, the limiting-sequence explanation identifies agreement after the first index, and the reductio endpoint says kontradiksi rather than reverse or contrast.",
       "reverse_sample": "Model a real by a Cauchy sequence of rationals, identifying two sequences when their pointwise difference tends to zero. Constant sequences embed rationals; pointwise arithmetic and eventual positivity define the ordered quotient field. For completeness, rational upper and lower bounds are bisected into decreasing and increasing Cauchy sequences whose difference tends to zero; their common class is an upper bound and every smaller class fails to be one.",
       "source_sha256": "35d0a39913340eadcab7fb9d7742b56aef0d0f29868cd65eeca9dc53694e8ac2",
-      "translation_sha256": "22572f5a494ea558fc9cc0cc9b14e0c19a7b509d1cfd64e4d73fcf5a8826e5c5"
+      "translation_sha256": "ff6d00843e9309706efa27bdcb1de165abfaf352ec570b78a7c867c1c515692b"
     },
     {
       "unit_id": "OLP-0049",
       "status": "pass",
-      "checks": "Compared the chapter title, source attribution and all five imports directly. The wrapper introduces infinite sets and imports each section exactly once; no reader content is duplicated or omitted.",
+      "checks": "Recompared the chapter title, source attribution and all five imports after the canon audit. The wrapper introduces infinite sets, attributes the chapter to Tim Button's Open Set Theory, and imports Hilbert's Hotel, Dedekind algebra, induction, Dedekind's proof and the cardinality appendix exactly once and in source order. The general boundlessness sense of tanpa wates has canon support; its set-theoretic specialization remains source-defined and provisional.",
       "reverse_sample": "This chapter on infinite sets comes from Tim Button's Open Set Theory and consists of Hilbert's Hotel, Dedekind algebras, induction, Dedekind's purported existence proof, and the Schröder--Bernstein appendix.",
       "source_sha256": "6ea6bff5ac4f128338bfa6b1cb5b7c8bed6121210257e06f6aaa7b27d5cc4bbb",
       "translation_sha256": "590cc7cc70015e6d4e4af4872c81d0a5f74665eae7020dcc29ec23a8bb3ac627"
@@ -430,7 +465,7 @@
     {
       "unit_id": "OLP-0050",
       "status": "pass",
-      "checks": "Compared all seven paragraph blocks, the full historical quotation, room-shift diagram, publication locator and definition. Finite versus infinite room counts, exactly one guest per room, the shift to the next room, the proper-subset condition, injection direction, omitted point o and range exclusion are all retained. The translated quotation remains explicitly identified as the book's translation.",
+      "checks": "Recompared all four language-bearing construction groups and three formal-only blocks after the canon audit, including the full historical quotation, room-shift diagram, publication locator and definition. Finite versus infinite room counts, exactly one guest per room, the move from room n to room n+1, the newly freed room 1, the proper-subset condition, injection direction, omitted point o and range exclusion are all retained. Hilbert's 1924 lecture, Dedekind's 1888 definition, the stated anachronism and the book's responsibility for the translated quotation remain explicit. The source's local 'must be characterize' grammar is read minimally as 'must characterize' without changing its claim.",
       "reverse_sample": "Hilbert's hotel frees room 1 by moving each current guest from room n to room n+1. A set A is Dedekind infinite exactly when A injects into a proper subset of itself, equivalently when an injective self-map misses some o in A.",
       "source_sha256": "e9a73caefcc496d7074251a3ac15f66fd577415bd3a531dd23f79375502ee0ed",
       "translation_sha256": "b225d2e3c8e0035355aa3b054fb49e899d796c7f135a4ecb2b1c8f70ae41c212"
@@ -438,34 +473,34 @@
     {
       "unit_id": "OLP-0051",
       "status": "pass",
-      "checks": "Compared all twenty paragraph blocks: the three successor properties; first-order limitation; set-theoretic reformulation; closure definition; all three closure-lemma clauses and proof; Dedekind-algebra definition; and construction from an arbitrary Dedekind-infinite set. Every quantifier, subset direction, range condition, restriction, label and cross-reference is retained across 83 mathematical spans. The final two inclusions establish equality of A with the f-closure of o.",
+      "checks": "Recompared all seventeen language-bearing construction groups and three formal-only blocks after the canon audit: the three successor properties; first-order limitation; set-theoretic reformulation; closure definition; all three closure-lemma clauses and proof; Dedekind-algebra definition; and construction from an arbitrary Dedekind-infinite set. Every source mathematical span, quantifier, subset direction, range condition, restriction, label and cross-reference is retained. JV-D063 repairs the source's undefined carrier in the closure lemma by stating that f maps A to A and o belongs to A; this is the scope required for ran(f) union {o} to be f-closed. The opening avoids a repeated gagasan, breakthrough is stated as a crucial step, intuitive is no longer rendered as conjectural guessing, and the proof's initial D receives the needed relative clause. The final two inclusions establish equality of A with the f-closure of o.",
       "reverse_sample": "The f-closure of o is the intersection of all f-closed sets containing o, so it contains o, is f-closed, and is contained in every such set. From an injective self-map g missing o, restrict g to the g-closure of o; this restriction and carrier satisfy all three clauses of a Dedekind algebra.",
       "source_sha256": "9cee716bb8cb3bfd507ed5c17bbd4477d05995af6f8f8d411087793bdaa86036",
-      "translation_sha256": "567111ed52d840a511a84108fd9eccd4ea6f6c24804125bc5e61fa55984329f3"
+      "translation_sha256": "fec6eaf0e2f34ea817d769d7a717003ce9c59d5a9355954b304a817ddd0031aa"
     },
     {
       "unit_id": "OLP-0052",
       "status": "pass",
-      "checks": "Compared all fourteen paragraph blocks: set-theoretic induction, its proof from least closure, the parameterized formula schema, the explicit universal closure of free variables, and recursive clauses for addition, multiplication and exponentiation. All 21 mathematical spans, formula order, labels, references and the localized page locator are preserved. The prose distinguishes the immediately proved induction principle from the later recursive-definition theorem.",
+      "checks": "Re-reviewed all fourteen paragraph blocks against the frozen source and central audit: set-theoretic induction, its proof from least closure, the parameterized formula schema, the explicit universal closure of free variables, and recursive clauses for addition, multiplication and exponentiation. Corrected variabel bebane to variabel bebas, aligned addition with panambahan, and tightened four academic transitions. Direct Unicode inspection confirms four valid U+00E8 occurrences in paramèter and zero U+FFFD replacement characters, disproving the audit's encoding-corruption premise without changing the valid word. All 21 mathematical spans, formula order, labels, references and the localized page locator remain preserved. The prose distinguishes the immediately proved induction principle from the later recursive-definition theorem.",
       "reverse_sample": "If a set contains o and is closed under the successor operation on N, it contains the whole Dedekind algebra N. Taking the subset of N satisfying a formula yields the parameterized induction schema. Recursive definition later supplies the usual arithmetic operations.",
       "source_sha256": "ea5f6c80d70abca6f5598de3e221c2f60524c40cbf533ae8a5336d5bb7186537",
-      "translation_sha256": "1d72a74dd465bbbb306f39a77e039bf1f5fedd9d5b462c817cacc37fb5746dac"
+      "translation_sha256": "c3143b9c50bf9bf08c9a953d56254ba17bdf28632f5195d3ffc6b442968a9d88"
     },
     {
       "unit_id": "OLP-0053",
       "status": "pass",
-      "checks": "Compared all fifteen paragraph blocks, both translated Dedekind quotations, all four philosophical transitions and the technical objection. The chapter claims only a surrogate structure conditional on a Dedekind-infinite set, not a metaphysical identification or existence proof. Isomorphism, embedding, logicism, possible thoughts, plurality-versus-set gap, Russell's paradox, citations and footnote are retained. Four source-only diaeresis commands disappear only with the translated word naif; three visible citation locators are localized by exact asserted substitutions.",
+      "checks": "Re-reviewed all fifteen paragraph blocks, both translated Dedekind quotations, all four philosophical transitions and the technical objection against the frozen source and central audit. The chapter claims only a surrogate structure conditional on a Dedekind-infinite set, not a metaphysical identification or existence proof. Replaced the audit-identified vacancy sense lowongan with kekurangan for the gap in Dedekind's argument, distinguished explicit construction from mere clarity, aligned rigorous with tliti, normalized pangamatan, and tightened the stipulation, stalled-project and closing transitions. Isomorphism, embedding, logicism, possible thoughts, plurality-versus-set gap, Russell's paradox, citations and footnote remain intact. Four source-only diaeresis commands disappear only with the translated word naif; three visible citation locators are localized by exact asserted substitutions.",
       "reverse_sample": "Any Dedekind algebra has the mathematical structure wanted of the natural numbers, but this does not identify which objects numbers are. Dedekind's argument may yield infinitely many possible thoughts, yet it does not establish that their totality forms one set. Naive set construction therefore still needs general existence principles that avoid Russell's paradox.",
       "source_sha256": "a7c41cebb6b7b0e2bed0d187777be4ba69fecdb17baa070975a0ca5c5c55b8bf",
-      "translation_sha256": "e211e01cd1a4f72c118e72aa5b50eada3ccdb25e74476c17f70990d75c968453"
+      "translation_sha256": "afe09550df41686fd521cb34c43040c33715969e88157db965b591ecf586376d"
     },
     {
       "unit_id": "OLP-0054",
       "status": "pass",
-      "checks": "Compared all eighteen paragraph blocks: theorem restatement; generalized closure definition and lemma; sandwich proposition; piecewise map g; injectivity split; surjectivity onto B; and final composition proof. All 78 mathematical spans, thirteen localization tokens, conditions, subset directions, image sets, inverses, labels and references are retained. The nested cardeq source expression visibly yields A approximately B approximately C and remains unchanged. Two source-only diaeresis commands disappear only with naif; the visible Potter page locator is localized exactly.",
+      "checks": "Re-reviewed all eighteen paragraph blocks against the frozen source and central audit: theorem restatement; generalized closure definition and lemma; sandwich proposition; piecewise map g; injectivity split; surjectivity onto B; and final composition proof. JV-D064 now discloses that the generalized closure claims require a self-map on a carrier containing the generator set and verifies that the later C-to-A bijection satisfies this because A is a subset of C. The central critical formula finding is rejected by the declared two-argument cardeq macro: the nested source expression expands to the intended chain A approximately B approximately C, exactly as the complete proof establishes. The Potter comparison, square-root irrationality phrase, definition imperatives, proof-goal transition and reductio claim were tightened. All 78 mathematical spans, thirteen localization tokens, conditions, subset directions, image sets, inverses, labels and references remain intact. Two source-only diaeresis commands disappear only with naif; the visible Potter page locator is localized exactly.",
       "reverse_sample": "For A contained in B contained in C with A equinumerous to C, close C minus B under a bijection f from C to A. Apply f on that closure and the identity elsewhere; the result bijects C with B. Applying this sandwich lemma to the images of the two injections, then composing with g inverse, produces a bijection from A to B.",
       "source_sha256": "88534a3f2be736a704ab31343e45933edb9712fa5b4411eb102c0f4a12d656e9",
-      "translation_sha256": "ca8a09ce5d3ef2dab1bfc73cf9d7248cf5cf39d10bbed167ec78eba8244e96f4"
+      "translation_sha256": "7889e66adad2b5f9047372462cb303a7af6bb151ff4e6f25a305101de0fef77d"
     },
     {
       "unit_id": "OLP-0055",

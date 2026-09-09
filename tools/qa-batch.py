@@ -38,6 +38,8 @@ def protected(txt):
 def tokens(txt):return re.findall(r'!![\^a]*\{[^}]+\}s?',txt)
 rows=[];align=[];failures=[]
 for u in units:
+    if int(u['unit_id'].split('-')[1]) > 118:
+        continue
     dest=R/'translation'/u['source_path']
     if not dest.exists():continue
     src=R/'upstream'/u['source_path'];b=src.read_bytes();tb=dest.read_bytes()
@@ -65,6 +67,25 @@ for u in units:
     if u['unit_id']=='OLP-0054':
         assert protected_source.count(r'\citet[pp.~157--8]{Potter2004}')==1
         protected_source=protected_source.replace(r'\citet[pp.~157--8]{Potter2004}',r'\citet[kaca~157--8]{Potter2004}')
+    # OLPL-032 and OLPL-033: two frozen axiom citations name the wrong
+    # schema. Normalize only their protected reference arguments.
+    if u['unit_id']=='OLP-0122':
+        conjunction_citations=(
+            r'\olref[prp]{ax:land1} and \olref[prp]{ax:land1}'
+        )
+        corrected_conjunction_citations=(
+            r'\olref[prp]{ax:land1} and \olref[prp]{ax:land2}'
+        )
+        assert protected_source.count(conjunction_citations)==1
+        assert protected_source.count(r'\olref[prp]{ax:lnot1}')==1
+        protected_source=protected_source.replace(
+            conjunction_citations,
+            corrected_conjunction_citations,
+        )
+        protected_source=protected_source.replace(
+            r'\olref[prp]{ax:lnot1}',
+            r'\olref[prp]{ax:lnot2}',
+        )
     ac=chunks(a);tc=chunks(t)
     math_source=a
     # OLFUN-003: the frozen prose switches from input n to x. The target
@@ -80,7 +101,15 @@ for u in units:
         omitted_value=r'0 & 1 & -1 & 2 & -2 & 3 & \dots'
         assert math_source.count(omitted_value)==1
         math_source=math_source.replace(omitted_value,r'0 & 1 & -1 & 2 & -2 & 3 & -3 & \dots')
+    # OLP-0031 JV-D010: the displayed sequence and k(k+1)/2 formula require
+    # the inclusive natural-number bound; the frozen prose incorrectly says < k.
+    if u['unit_id']=='OLP-0031':
+        assert math_source.count(r'$< k$')==1
+        math_source=math_source.replace(r'$< k$',r'$\leq k$')
     if u['unit_id']=='OLP-0032':
+        mistyped_second_pair=r'$\tuple{0,2}$'
+        assert math_source.count(mistyped_second_pair)==1
+        math_source=math_source.replace(mistyped_second_pair,r'$\tuple{0,1}$')
         duplicated_pair=r'$\tuple{2,m}$, $\tuple{2,m}$'
         assert math_source.count(duplicated_pair)==1
         math_source=math_source.replace(duplicated_pair,r'$\tuple{2,m}$, $\tuple{3,m}$')
@@ -310,8 +339,66 @@ for u in units:
             missing_formula_marker,
             repaired_formula_marker,
         )
+    # OLPL-027 and OLPL-028: join the separated membership expression and
+    # close the outer consequent in the first listed derivability fact.
+    if u['unit_id']=='OLP-0119':
+        malformed_membership=(
+            '$!B$ is\n'
+            'either $\\in \\Gamma \\cup \\{!A\\}$'
+        )
+        repaired_membership='$!B \\in \\Gamma \\cup \\{!A\\}$'
+        unclosed_composition=r'\lif (!A \lif !C)$;'
+        closed_composition=r'\lif (!A \lif !C))$;'
+        assert math_source.count(malformed_membership)==1
+        assert math_source.count(unclosed_composition)==1
+        math_source=math_source.replace(
+            malformed_membership,
+            repaired_membership,
+        )
+        math_source=math_source.replace(
+            unclosed_composition,
+            closed_composition,
+        )
+    # OLPL-029 and OLPL-030: close the rearrangement formula and identify
+    # its actual theorem-level conclusion A implies B.
+    if u['unit_id']=='OLP-0120':
+        unclosed_rearrangement=(
+            r'\lif (!A \lif (!C \lif \lforall[x][!D(x)]),\\'
+        )
+        closed_rearrangement=(
+            r'\lif (!A \lif (!C \lif \lforall[x][!D(x)])),\\'
+        )
+        wrong_conclusion=r'i.e., $\Gamma \Proves !B$.'
+        right_conclusion=r'i.e., $\Gamma \Proves !A \lif !B$.'
+        assert math_source.count(unclosed_rearrangement)==1
+        assert math_source.count(wrong_conclusion)==1
+        math_source=math_source.replace(
+            unclosed_rearrangement,
+            closed_rearrangement,
+        )
+        math_source=math_source.replace(wrong_conclusion,right_conclusion)
+    # OLPL-034: retain the project's object-language truth-constant command.
+    if u['unit_id']=='OLP-0123':
+        assert math_source.count(r'$\top$')==1
+        math_source=math_source.replace(r'$\top$',r'$\ltrue$')
+    # OLPL-039: restore the formula marker on all three schematic-B
+    # occurrences in the quantified-rule soundness case.
+    if u['unit_id']=='OLP-0124':
+        assert math_source.count(r'\lforall[x][B(x)]')==2
+        assert math_source.count(r"\Sat{M'}{B(c)}")==1
+        math_source=math_source.replace(
+            r'\lforall[x][B(x)]',
+            r'\lforall[x][!B(x)]',
+        )
+        math_source=math_source.replace(
+            r"\Sat{M'}{B(c)}",
+            r"\Sat{M'}{!B(c)}",
+        )
     checks={'paragraph_count':len(ac)==len(tc),'protected_commands':protected(protected_source)==protected(t),'math_sequence':math(math_source)==math(t),'token_sequence':tokens(a)==tokens(t),'environment_sequence':re.findall(r'\\(?:begin|end)\{[^}]+\}',a)==re.findall(r'\\(?:begin|end)\{[^}]+\}',t),'unicode_clean':'\ufffd' not in t and not re.search(r'[\uA980-\uA9DF]',t),'no_placeholder':not re.search(r'\b(?:TODO|TBD|TRANSLATE_ME)\b',t)}
     command_source=a
+    if u['unit_id']=='OLP-0031':
+        assert command_source.count(r'$< k$')==1
+        command_source=command_source.replace(r'$< k$',r'$\leq k$')
     if u['unit_id']=='OLP-0034':
         finite_string=r"h(n) = \underbrace{000\dots0}_{\text{$n$ $0$'s}}"
         assert command_source.count(finite_string)==1
@@ -455,6 +542,16 @@ for u in units:
             identity_sign_defect,
             identity_sign_repair,
         )
+    # OLPL-030 adds the missing implication command to the actual conclusion.
+    if u['unit_id']=='OLP-0120':
+        wrong_conclusion=r'i.e., $\Gamma \Proves !B$.'
+        right_conclusion=r'i.e., $\Gamma \Proves !A \lif !B$.'
+        assert command_source.count(wrong_conclusion)==1
+        command_source=command_source.replace(wrong_conclusion,right_conclusion)
+    # OLPL-034 replaces a raw TeX relation with the project's truth macro.
+    if u['unit_id']=='OLP-0123':
+        assert command_source.count(r'$\top$')==1
+        command_source=command_source.replace(r'$\top$',r'$\ltrue$')
     checks['all_command_sequence']=re.findall(r'\\[A-Za-z@]+|\\[^A-Za-z@]',command_source)==re.findall(r'\\[A-Za-z@]+|\\[^A-Za-z@]',t)
     row={'unit_id':u['unit_id'],'source_path':u['source_path'],'source_sha256':sha(b),'translation_sha256':sha(tb),'translation_bytes':len(tb),'checks':checks,'source_paragraphs':len(ac),'target_paragraphs':len(tc),'source_math_count':len(math(a)),'target_math_count':len(math(t)),'status':'structural_pass' if all(checks.values()) else 'defect'}
     rows.append(row)
@@ -471,6 +568,354 @@ for u in units:
         consulted=[] if same else ['JV-P002','JV-P005']
         # These passage sets reflect actual consultation while authoring this batch.
         if not same and (u['unit_id']=='OLP-0001' or 'logika' in tm[0].lower()):consulted+=['JV-P001','JV-P004','JV-P006']
+        if not same and u['unit_id']=='OLP-0001':
+            consulted={
+                1:['JV-P002','JV-P026','JV-MGR-C001-P005-BABAGAN'],
+                2:['JV-P001','JV-P004','JV-P005','JV-P006','JV-P022','JV-P025'],
+                3:['JV-P002','JV-P025','JV-P026','JV-P027','JV-P028'],
+                4:['JV-P006','JV-P025','JV-P033','JV-P034','JV-P035'],
+            }[i]
+        if not same and u['unit_id']=='OLP-0002':
+            consulted={
+                5:['JV-P002','JV-P025','JV-P026','JV-P035','JV-P036'],
+                6:['JV-P001','JV-P004','JV-P006','JV-P008','JV-P022','JV-P024','JV-P025','JV-P027','JV-P029'],
+                7:['JV-P002','JV-P025','JV-P026','JV-P035','JV-P036'],
+            }[i]
+        if not same and u['unit_id']=='OLP-0003':
+            consulted={
+                4:['JV-P006','JV-P010','JV-P029','JV-P038'],
+                5:['JV-P001','JV-P002','JV-P004','JV-P006','JV-P013','JV-P025','JV-P026','JV-P037','JV-P038'],
+            }[i]
+        if not same and u['unit_id']=='OLP-0004':
+            consulted={4:['JV-P006','JV-P010','JV-P029','JV-P038']}[i]
+        if not same and u['unit_id']=='OLP-0005':
+            consulted={
+                4:['JV-P006','JV-P024','JV-P025'],
+                5:['JV-P002','JV-P006','JV-P007','JV-P010','JV-P025','JV-P029'],
+                6:['JV-P007','JV-P025','JV-P026','JV-P027'],
+                7:['JV-P002','JV-P006','JV-P007','JV-P025'],
+                8:['JV-P006','JV-P007','JV-P025','JV-P026'],
+                9:['JV-P007','JV-P025','JV-P028','JV-P029'],
+                10:['JV-P006','JV-P007','JV-P024','JV-P025','JV-P026'],
+                11:['JV-P007','JV-P025','JV-P028'],
+                12:['JV-P006','JV-P007','JV-P013','JV-P017','JV-P025','JV-P029','JV-P030','JV-P031','JV-P032'],
+                13:['JV-P006','JV-P007','JV-P025','JV-P026'],
+                14:['JV-P002','JV-P007','JV-P008','JV-P025'],
+            }[i]
+        if not same and u['unit_id']=='OLP-0006':
+            consulted={
+                4:['JV-P006','JV-P010','JV-P024','JV-P029'],
+                5:['JV-P007','JV-P025','JV-P026','JV-P027'],
+                6:['JV-P006','JV-P007','JV-P025','JV-P029'],
+                7:['JV-P006','JV-P007','JV-P013','JV-P029'],
+                8:['JV-P006','JV-P007','JV-P013','JV-P025'],
+                9:['JV-P002','JV-P006','JV-P007','JV-P025','JV-P026'],
+                10:['JV-P002','JV-P006','JV-P007','JV-P025'],
+                11:['JV-P007','JV-P025','JV-P026','JV-P027'],
+                12:['JV-P006','JV-P024','JV-P025','JV-P026'],
+                13:['JV-P006','JV-P007','JV-P025'],
+                14:['JV-P006','JV-P020','JV-P025'],
+                15:['JV-P006','JV-P007','JV-P018','JV-P025'],
+                16:['JV-P006','JV-P007','JV-P025','JV-P028'],
+                17:['JV-P006','JV-P025','JV-P027'],
+                18:['JV-P006','JV-P007','JV-P008','JV-P013','JV-P014','JV-P025','JV-P026'],
+            }[i]
+        if not same and u['unit_id']=='OLP-0007':
+            consulted={
+                4:['JV-P002','JV-P025'],
+                5:['JV-P006','JV-P007','JV-P013','JV-P014','JV-P024','JV-P029','JV-P037'],
+                6:['JV-P006','JV-P007','JV-P013','JV-P025','JV-P026','JV-P037'],
+                7:['JV-P006','JV-P007','JV-P013','JV-P025'],
+                8:['JV-P006','JV-P007','JV-P013','JV-P025','JV-P037'],
+                9:['JV-P006','JV-P007','JV-P025','JV-P037'],
+            }[i]
+        if not same and u['unit_id']=='OLP-0008':
+            consulted={
+                4:['JV-P006','JV-P024','JV-P025'],
+                5:['JV-P006','JV-P007','JV-P024','JV-P025','JV-P026'],
+                6:['JV-P006','JV-P007','JV-P025'],
+                7:['JV-P006','JV-P025','JV-P026'],
+                8:['JV-P006','JV-P007','JV-P025'],
+                9:['JV-P006','JV-P007','JV-P014','JV-P025'],
+                10:['JV-P006','JV-P007','JV-P025'],
+                11:['JV-P006','JV-P007','JV-P025'],
+                12:['JV-P006','JV-P007','JV-P008','JV-P025'],
+                13:['JV-P006','JV-P007','JV-P024','JV-P025','JV-P026'],
+                14:['JV-P006','JV-P007','JV-P025'],
+                15:['JV-P006','JV-P007','JV-P025'],
+                16:['JV-P006','JV-P007','JV-P025'],
+                17:['JV-P006','JV-P007','JV-P025'],
+                18:['JV-P006','JV-P007','JV-P025'],
+                19:['JV-P002','JV-P006','JV-P007','JV-P008','JV-P025'],
+                20:['JV-P006','JV-P007','JV-P025','JV-P026','JV-P027'],
+                21:['JV-P006','JV-P007','JV-P025','JV-P026'],
+                22:['JV-P006','JV-P007','JV-P025','JV-P026'],
+                23:['JV-P006','JV-P007','JV-P008','JV-P025'],
+                24:['JV-P006','JV-P007','JV-P025','JV-P037'],
+                25:['JV-P006','JV-P025','JV-P026'],
+                26:['JV-P006','JV-P007','JV-P025','JV-P026'],
+                27:['JV-P006','JV-P007','JV-P025'],
+                28:['JV-P006','JV-P007','JV-P025'],
+                29:['JV-P006','JV-P007','JV-P008','JV-P025'],
+            }[i]
+        if not same and u['unit_id']=='OLP-0009':
+            consulted={
+                4:['JV-P006','JV-P024','JV-P025'],
+                5:['JV-P006','JV-P007','JV-P025','JV-P026'],
+                6:['JV-P002','JV-P006','JV-P007','JV-P025','JV-P026'],
+                7:['JV-P006','JV-P007','JV-P025'],
+                8:['JV-P006','JV-P007','JV-P008','JV-P025'],
+                9:['JV-P006','JV-P007','JV-P025','JV-P027'],
+                10:['JV-P006','JV-P007','JV-P025'],
+                11:['JV-P006','JV-P007','JV-P025','JV-P029'],
+                12:['JV-P006','JV-P007','JV-P025'],
+                13:['JV-P006','JV-P007','JV-P015','JV-P017','JV-P025'],
+                14:['JV-P006','JV-P007','JV-P025','JV-P027'],
+                15:['JV-P006','JV-P007','JV-P014','JV-P015','JV-P017','JV-P025'],
+                16:['JV-P006','JV-P007','JV-P014','JV-P015','JV-P017','JV-P025','JV-P026'],
+                17:['JV-P006','JV-P007','JV-P014','JV-P015','JV-P017','JV-P025'],
+                18:['JV-P006','JV-P007','JV-P013','JV-P015','JV-P025','JV-P026'],
+                19:['JV-P006','JV-P007','JV-P013','JV-P017','JV-P025','JV-P037'],
+            }[i]
+        if not same and u['unit_id']=='OLP-0010':
+            consulted={
+                4:['JV-P006','JV-P025','JV-P038'],
+                5:['JV-P002','JV-P006','JV-P007','JV-P025','JV-P026'],
+                6:['JV-P001','JV-P006','JV-P023','JV-P024','JV-P025'],
+                7:['JV-P006','JV-P007','JV-P025','JV-P026'],
+                8:['JV-P006','JV-P007','JV-P008','JV-P025'],
+                9:['JV-P006','JV-P007','JV-P008','JV-P025'],
+                10:['JV-P006','JV-P007','JV-P025'],
+                11:['JV-P006','JV-P007','JV-P008','JV-P025','JV-P028'],
+                12:['JV-P006','JV-P007','JV-P008','JV-P025'],
+                13:['JV-P001','JV-P006','JV-P023','JV-P024','JV-P025'],
+                14:['JV-P001','JV-P006','JV-P025','JV-P026'],
+            }[i]
+        if not same and u['unit_id']=='OLP-0011':
+            consulted={4:['JV-P006','JV-P011','JV-P025']}[i]
+        if not same and u['unit_id']=='OLP-0012':
+            consulted={
+                4:['JV-P006','JV-P011','JV-P025'],
+                5:['JV-P011','JV-P024','JV-P025','JV-P026'],
+                6:['JV-P006','JV-P007','JV-P013','JV-P025'],
+                7:['JV-P006','JV-P007','JV-P011','JV-P013','JV-P025'],
+                8:['JV-P006','JV-P007','JV-P011','JV-P025','JV-P026'],
+                9:['JV-P006','JV-P007','JV-P011','JV-P024','JV-P025'],
+                10:['JV-P006','JV-P007','JV-P011','JV-P013','JV-P014','JV-P020','JV-P024','JV-P025','JV-P026'],
+                11:['JV-P006','JV-P007','JV-P011','JV-P020','JV-P024','JV-P025'],
+                12:['JV-P006','JV-P007','JV-P011','JV-P025','JV-P027'],
+            }[i]
+        if not same and u['unit_id']=='OLP-0013':
+            consulted={
+                3:['JV-P001','JV-P006','JV-P025','JV-P038'],
+                4:['JV-P006','JV-P011','JV-P023','JV-P024','JV-P025','JV-P026','JV-P038'],
+                5:['JV-P006','JV-P007','JV-P011','JV-P013','JV-P024','JV-P025','JV-P038'],
+                6:['JV-P001','JV-P006','JV-P007','JV-P011','JV-P023','JV-P024','JV-P025','JV-P026','JV-P038'],
+                7:['JV-P001','JV-P006','JV-P007','JV-P011','JV-P023','JV-P024','JV-P025','JV-P026','JV-P027'],
+                8:['JV-P006','JV-P011','JV-P013','JV-P024','JV-P025','JV-P026','JV-P038'],
+            }[i]
+        if not same and u['unit_id']=='OLP-0014':
+            consulted={
+                4:['JV-P006','JV-P011','JV-P025'],
+                5:['JV-P006','JV-P007','JV-P011','JV-P013','JV-P020','JV-P024','JV-P025','JV-P026','JV-P027'],
+                6:['JV-P006','JV-P011','JV-P024','JV-P025'],
+                7:['JV-P006','JV-P011','JV-P024','JV-P025','JV-P026'],
+                8:['JV-P006','JV-P011','JV-P024','JV-P025','JV-P026'],
+                9:['JV-P006','JV-P011','JV-P024','JV-P025','JV-P026'],
+                10:['JV-P006','JV-P011','JV-P024','JV-P025','JV-P026','JV-P027'],
+                11:['JV-P006','JV-P011','JV-P024','JV-P025','JV-P026'],
+                12:['JV-P006','JV-P007','JV-P011','JV-P013','JV-P020','JV-P025','JV-P027'],
+                13:['JV-P006','JV-P011','JV-P024','JV-P025','JV-P026'],
+                14:['JV-P006','JV-P011','JV-P020','JV-P024','JV-P025','JV-P026'],
+                15:['JV-P006','JV-P011','JV-P024','JV-P025','JV-P026'],
+            }[i]
+        if not same and u['unit_id']=='OLP-0015':
+            consulted={
+                5:['JV-P006','JV-P011','JV-P024','JV-P025'],
+                6:['JV-P006','JV-P011','JV-P024','JV-P025','JV-P026'],
+                7:['JV-P006','JV-P007','JV-P011','JV-P024','JV-P025','JV-P026','JV-P027'],
+                8:['JV-P006','JV-P011','JV-P020','JV-P024','JV-P025','JV-P026','JV-P027'],
+                9:['JV-P006','JV-P007','JV-P011','JV-P024','JV-P025','JV-P026','JV-P027'],
+                10:['JV-P006','JV-P008','JV-P024','JV-P025','JV-P026'],
+                11:['JV-P006','JV-P007','JV-P011','JV-P024','JV-P025'],
+                12:['JV-P006','JV-P007','JV-P008','JV-P011','JV-P024','JV-P025','JV-P026'],
+                13:['JV-P006','JV-P007','JV-P011','JV-P024','JV-P025','JV-P026'],
+                14:['JV-P006','JV-P007','JV-P011','JV-P013','JV-P016','JV-P024','JV-P025','JV-P029','JV-P030','JV-P031'],
+                15:['JV-P006','JV-P007','JV-P008','JV-P011','JV-P013','JV-P024','JV-P025'],
+            }[i]
+        if not same and u['unit_id']=='OLP-0016':
+            consulted={
+                4:['JV-P006','JV-P011','JV-P025'],
+                5:['JV-P006','JV-P011','JV-P020','JV-P024','JV-P025','JV-P026','JV-MGR-C001-P005-BABAGAN'],
+                6:['JV-P006','JV-P011','JV-P024','JV-P025'],
+                7:['JV-P006','JV-P011','JV-P024','JV-P025'],
+                8:['JV-P006','JV-P011','JV-P024','JV-P025','JV-P026'],
+                9:['JV-P006','JV-P007','JV-P011','JV-P024','JV-P025','JV-P026'],
+                10:['JV-P006','JV-P011','JV-P024','JV-P025','JV-P026'],
+                11:['JV-P006','JV-P007','JV-P011','JV-P024','JV-P025','JV-P026'],
+                12:['JV-P006','JV-P007','JV-P011','JV-P013','JV-P014','JV-P016','JV-P024','JV-P025','JV-P029','JV-P030','JV-P031'],
+                13:['JV-P006','JV-P007','JV-P011','JV-P024','JV-P025','JV-P026','JV-P037'],
+                14:['JV-P006','JV-P011','JV-P024','JV-P025'],
+                15:['JV-P006','JV-P011','JV-P024','JV-P025','JV-P026'],
+                16:['JV-P006','JV-P007','JV-P011','JV-P024','JV-P025'],
+                17:['JV-P006','JV-P007','JV-P011','JV-P024','JV-P025','JV-P026'],
+                18:['JV-P006','JV-P007','JV-P011','JV-P024','JV-P025'],
+                19:['JV-P006','JV-P007','JV-P011','JV-P024','JV-P025','JV-P026'],
+                20:['JV-P006','JV-P007','JV-P011','JV-P024','JV-P025'],
+                21:['JV-P006','JV-P007','JV-P008','JV-P011','JV-P024','JV-P025','JV-P026'],
+                22:['JV-P006','JV-P007','JV-P008','JV-P011','JV-P024','JV-P025','JV-P026'],
+                23:['JV-P006','JV-P007','JV-P011','JV-P024','JV-P025','JV-P026'],
+                24:['JV-P006','JV-P007','JV-P011','JV-P024','JV-P025'],
+                25:['JV-P006','JV-P008','JV-P025'],
+                26:['JV-P006','JV-P008','JV-P025'],
+                27:['JV-P006','JV-P011','JV-P024','JV-P025','JV-P026'],
+                28:['JV-P006','JV-P011','JV-P024','JV-P025'],
+                29:['JV-P006','JV-P008','JV-P011','JV-P024','JV-P025','JV-P026'],
+            }[i]
+        if not same and u['unit_id']=='OLP-0017':
+            consulted={
+                4:['JV-P006','JV-P011','JV-P025'],
+                5:['JV-P006','JV-P011','JV-P020','JV-P023','JV-P024','JV-P025','JV-P026','JV-P027'],
+                6:['JV-P006','JV-P007','JV-P011','JV-P024','JV-P025'],
+                7:['JV-P006','JV-P007','JV-P011','JV-P024','JV-P025','JV-P026'],
+                8:['JV-P006','JV-P007','JV-P011','JV-P024','JV-P025','JV-P026'],
+                9:['JV-P006','JV-P007','JV-P011','JV-P013','JV-P024','JV-P025'],
+            }[i]
+        if not same and u['unit_id']=='OLP-0018':
+            consulted={
+                4:['JV-P006','JV-P025'],
+                5:['JV-P001','JV-P006','JV-P023','JV-P024','JV-P025','JV-P026','JV-P027','JV-P037'],
+                6:['JV-P006','JV-P011','JV-P024','JV-P025'],
+                7:['JV-P006','JV-P025'],
+                8:['JV-P006','JV-P011','JV-P024','JV-P025','JV-P026'],
+                9:['JV-P006','JV-P007','JV-P011','JV-P024','JV-P025','JV-P026'],
+                10:['JV-P006','JV-P007','JV-P011','JV-P024','JV-P025','JV-P026','JV-P037'],
+                11:['JV-P006','JV-P007','JV-P011','JV-P024','JV-P025','JV-P026'],
+                12:['JV-P006','JV-P007','JV-P011','JV-P024','JV-P025','JV-P026'],
+                13:['JV-P006','JV-P007','JV-P011','JV-P024','JV-P025','JV-P026'],
+                14:['JV-P006','JV-P007','JV-P008','JV-P011','JV-P024','JV-P025','JV-P026'],
+                15:['JV-P006','JV-P007','JV-P011','JV-P024','JV-P025','JV-P026','JV-P037'],
+                16:['JV-P006','JV-P007','JV-P011','JV-P024','JV-P025','JV-P026'],
+                17:['JV-P006','JV-P007','JV-P011','JV-P013','JV-P024','JV-P025','JV-P026','JV-P037'],
+                18:['JV-P006','JV-P007','JV-P011','JV-P013','JV-P024','JV-P025','JV-P026','JV-P037'],
+                19:['JV-P001','JV-P006','JV-P007','JV-P011','JV-P024','JV-P025','JV-P026','JV-P037'],
+                20:['JV-P001','JV-P006','JV-P007','JV-P011','JV-P023','JV-P024','JV-P025','JV-P026','JV-P037'],
+            }[i]
+        if not same and u['unit_id']=='OLP-0019':
+            consulted={
+                4:['JV-P006','JV-P011','JV-P025'],
+                5:['JV-P006','JV-P007','JV-P011','JV-P024','JV-P025','JV-P026'],
+                6:['JV-P006','JV-P007','JV-P011','JV-P024','JV-P025','JV-P026'],
+                7:['JV-P006','JV-P011','JV-P024','JV-P025','JV-P026'],
+                8:['JV-P006','JV-P011','JV-P024','JV-P025','JV-P026'],
+                9:['JV-P006','JV-P007','JV-P011','JV-P024','JV-P025','JV-P026'],
+                10:['JV-P006','JV-P007','JV-P011','JV-P024','JV-P025','JV-P026'],
+                11:['JV-P006','JV-P007','JV-P011','JV-P013','JV-P024','JV-P025','JV-P026'],
+                12:['JV-P006','JV-P007','JV-P011','JV-P013','JV-P024','JV-P025','JV-P026'],
+                13:['JV-P006','JV-P007','JV-P011','JV-P013','JV-P024','JV-P025','JV-P026'],
+                14:['JV-P006','JV-P007','JV-P011','JV-P013','JV-P024','JV-P025','JV-P026'],
+                15:['JV-P006','JV-P007','JV-P011','JV-P024','JV-P025','JV-P026'],
+                16:['JV-P006','JV-P011','JV-P024','JV-P025','JV-P026'],
+                17:['JV-P006','JV-P011','JV-P024','JV-P025','JV-P026'],
+                18:['JV-P006','JV-P011','JV-P024','JV-P025','JV-P026'],
+                19:['JV-P006','JV-P007','JV-P011','JV-P013','JV-P024','JV-P025','JV-P026'],
+                20:['JV-P006','JV-P007','JV-P008','JV-P011','JV-P024','JV-P025','JV-P026'],
+            }[i]
+        if not same and u['unit_id']=='OLP-0020':
+            consulted={4:['JV-P006','JV-P012','JV-P024','JV-P025']}[i]
+        if not same and u['unit_id']=='OLP-0021':
+            consulted={
+                4:['JV-P002','JV-P025'],
+                5:['JV-P006','JV-P007','JV-P012','JV-P024','JV-P025','JV-P026'],
+                6:['JV-P006','JV-P012','JV-P013','JV-P015','JV-P024','JV-P025','JV-P026','JV-P029','JV-P032'],
+                7:['JV-P002','JV-P006','JV-P024','JV-P025','JV-P026'],
+                8:['JV-P006','JV-P007','JV-P012','JV-P024','JV-P025','JV-P026'],
+                9:['JV-P006','JV-P007','JV-P012','JV-P024','JV-P025','JV-P026'],
+                10:['JV-P006','JV-P007','JV-P012','JV-P024','JV-P025','JV-P026'],
+                11:['JV-P006','JV-P012','JV-P024','JV-P025','JV-P026'],
+                12:['JV-P006','JV-P007','JV-P012','JV-P024','JV-P025','JV-P026'],
+                13:['JV-P006','JV-P007','JV-P012','JV-P013','JV-P015','JV-P024','JV-P025','JV-P026','JV-P029','JV-P032'],
+                14:['JV-P006','JV-P007','JV-P012','JV-P013','JV-P024','JV-P025','JV-P026'],
+                15:['JV-P006','JV-P011','JV-P012','JV-P024','JV-P025','JV-P026'],
+                16:['JV-P002','JV-P006','JV-P012','JV-P024','JV-P025','JV-P026','JV-P027'],
+                17:['JV-P006','JV-P007','JV-P012','JV-P013','JV-P024','JV-P025','JV-P026'],
+                18:['JV-P006','JV-P007','JV-P012','JV-P013','JV-P024','JV-P025','JV-P026'],
+                19:['JV-P006','JV-P007','JV-P012','JV-P013','JV-P024','JV-P025','JV-P026'],
+                20:['JV-P002','JV-P006','JV-P007','JV-P012','JV-P013','JV-P024','JV-P025','JV-P026'],
+            }[i]
+        if not same and u['unit_id']=='OLP-0022':
+            consulted={
+                4:['JV-P006','JV-P020','JV-P025'],
+                5:['JV-P006','JV-P020','JV-P024','JV-P025','JV-P026'],
+                6:['JV-P006','JV-P007','JV-P012','JV-P024','JV-P025','JV-P026'],
+                7:['JV-P006','JV-P007','JV-P012','JV-P024','JV-P025','JV-P026'],
+                8:['JV-P006','JV-P007','JV-P012','JV-P024','JV-P025','JV-P026'],
+                9:['JV-P006','JV-P007','JV-P012','JV-P024','JV-P025','JV-P026'],
+                10:['JV-P006','JV-P007','JV-P012','JV-P024','JV-P025','JV-P026'],
+                11:['JV-P006','JV-P007','JV-P012','JV-P024','JV-P025','JV-P026'],
+                12:['JV-P006','JV-P007','JV-P012','JV-P024','JV-P025','JV-P026'],
+                13:['JV-P006','JV-P007','JV-P012','JV-P024','JV-P025','JV-P026'],
+                14:['JV-P006','JV-P007','JV-P012','JV-P013','JV-P024','JV-P025','JV-P026'],
+                15:['JV-P006','JV-P007','JV-P012','JV-P013','JV-P024','JV-P025','JV-P026'],
+                16:['JV-P006','JV-P007','JV-P012','JV-P013','JV-P024','JV-P025','JV-P026'],
+                17:['JV-P006','JV-P007','JV-P012','JV-P013','JV-P024','JV-P025','JV-P026'],
+                18:['JV-P006','JV-P007','JV-P012','JV-P024','JV-P025','JV-P026'],
+                19:['JV-P006','JV-P007','JV-P012','JV-P024','JV-P025','JV-P026'],
+            }[i]
+        if not same and u['unit_id']=='OLP-0023':
+            consulted={
+                5:['JV-P006','JV-P011','JV-P012','JV-P024','JV-P025'],
+                6:['JV-P006','JV-P007','JV-P011','JV-P012','JV-P024','JV-P025','JV-P026'],
+                7:['JV-P006','JV-P007','JV-P011','JV-P012','JV-P024','JV-P025','JV-P026'],
+                8:['JV-P006','JV-P007','JV-P011','JV-P012','JV-P024','JV-P025','JV-P026'],
+                9:['JV-P006','JV-P007','JV-P011','JV-P012','JV-P024','JV-P025','JV-P026'],
+                10:['JV-P006','JV-P007','JV-P011','JV-P012','JV-P024','JV-P025','JV-P026'],
+                11:['JV-P006','JV-P007','JV-P011','JV-P012','JV-P024','JV-P025','JV-P026'],
+                12:['JV-P006','JV-P007','JV-P011','JV-P012','JV-P024','JV-P025','JV-P026'],
+                13:['JV-P006','JV-P007','JV-P011','JV-P012','JV-P024','JV-P025','JV-P026'],
+                14:['JV-P006','JV-P007','JV-P011','JV-P012','JV-P024','JV-P025','JV-P026'],
+                15:['JV-P006','JV-P007','JV-P011','JV-P012','JV-P024','JV-P025','JV-P026'],
+                16:['JV-P006','JV-P007','JV-P011','JV-P012','JV-P024','JV-P025','JV-P026'],
+            }[i]
+        if not same and u['unit_id']=='OLP-0024':
+            if i == 4:
+                consulted=['JV-P006','JV-P012','JV-P024','JV-P025']
+            elif i in [20,24,25]:
+                consulted=['JV-P002','JV-P008','JV-P024','JV-P025']
+            else:
+                consulted=['JV-P002','JV-P006','JV-P008','JV-P011','JV-P012','JV-P024','JV-P025','JV-P026']
+        if not same and u['unit_id']=='OLP-0025':
+            if i == 4:
+                consulted=['JV-P006','JV-P012','JV-P024','JV-P025']
+            elif i == 8:
+                consulted=['JV-P006','JV-P012','JV-P013','JV-P015','JV-P024','JV-P025','JV-P026','JV-P029','JV-P032']
+            elif i in [9,10,11]:
+                consulted=['JV-P002','JV-P006','JV-P008','JV-P011','JV-P012','JV-P024','JV-P025','JV-P026']
+            else:
+                consulted=['JV-P006','JV-P007','JV-P011','JV-P012','JV-P024','JV-P025','JV-P026']
+        if not same and u['unit_id']=='OLP-0026':
+            if i == 5:
+                consulted=['JV-P006','JV-P012','JV-P024','JV-P025']
+            elif i == 9:
+                consulted=['JV-P006','JV-P012','JV-P013','JV-P024','JV-P025','JV-P026']
+            elif i == 10:
+                consulted=['JV-P002','JV-P006','JV-P007','JV-P008','JV-P012','JV-P024','JV-P025','JV-P026']
+            elif i in [12,13]:
+                consulted=['JV-P002','JV-P006','JV-P007','JV-P008','JV-P011','JV-P012','JV-P024','JV-P025','JV-P026']
+            else:
+                consulted=['JV-P006','JV-P007','JV-P012','JV-P024','JV-P025','JV-P026']
+        if not same and u['unit_id']=='OLP-0027':
+            if i == 4:
+                consulted=['JV-P006','JV-P013','JV-P014','JV-P024','JV-P025','JV-P026']
+            else:
+                consulted=['JV-P002','JV-P006','JV-P007','JV-P012','JV-P013','JV-P014','JV-P024','JV-P025','JV-P026']
+        if not same and u['unit_id']=='OLP-0028':
+            if i == 5:
+                consulted=['JV-P023','JV-P024','JV-P025']
+            elif i == 6:
+                consulted=['JV-P002','JV-P006','JV-P013','JV-P014','JV-P020','JV-P023','JV-P024','JV-P025','JV-P026','JV-P027','JV-P037']
+            else:
+                consulted=['JV-P006','JV-P007','JV-P013','JV-P014','JV-P023','JV-P024','JV-P025','JV-P026','JV-P037']
         if not same and re.search(r'!![\^a]*\{element\}',am[0]):consulted+=['JV-P007']
         if not same and any(x in tm[0].lower() for x in ['himpunan','ekstensionalitas','wilangan','rerangken','gabungan','irisan','paradoks','pasangan']):consulted+=['JV-P006']
         if not same and any(x in tm[0].lower() for x in ['buktekna','bukti']):consulted+=['JV-P008']
@@ -495,6 +940,8 @@ for u in units:
             if 'jinis' in tm[0].lower():consulted+=['JV-P020']
         consulted=list(dict.fromkeys(consulted))
         seg={'segment_id':u['unit_id']+f'-P{i:03d}','unit_id':u['unit_id'],'source_path':u['source_path'],'source_line_start':a.count('\n',0,am.start())+1,'source_line_end':a.count('\n',0,am.end())+1,'translation_line_start':t.count('\n',0,tm.start())+1,'translation_line_end':t.count('\n',0,tm.end())+1,'source_segment_sha256':sha(am[0].encode()),'translation_segment_sha256':sha(tm[0].encode()),'classification':'unchanged_structural_or_formal' if same else 'translated','passage_ids':consulted,'passage_hashes':{p:passages[p]['excerpt_sha256'] for p in consulted},'consultation_note':'Source identifiers, imports, environments or nonlinguistic structure; no translated prose.' if same else 'Consulted during English-to-Javanese authorship for register, spelling and listed lexical decisions; canon is not mathematical authority.','semantic_review':'pending'}
+        if u['unit_id'] in ['OLP-0001','OLP-0002','OLP-0003','OLP-0004','OLP-0005','OLP-0006','OLP-0007','OLP-0008','OLP-0009','OLP-0010','OLP-0011','OLP-0012','OLP-0013','OLP-0014','OLP-0015','OLP-0016','OLP-0017','OLP-0018','OLP-0019','OLP-0020','OLP-0021','OLP-0022','OLP-0023','OLP-0024','OLP-0025','OLP-0026','OLP-0027','OLP-0028','OLP-0029','OLP-0030','OLP-0031','OLP-0032','OLP-0033','OLP-0034','OLP-0035','OLP-0036','OLP-0037','OLP-0038','OLP-0039','OLP-0040','OLP-0041','OLP-0042','OLP-0043','OLP-0044','OLP-0045','OLP-0046','OLP-0047','OLP-0048','OLP-0049','OLP-0050','OLP-0051','OLP-0052','OLP-0053','OLP-0054'] and not same:
+            seg['consultation_note']='Retranslated or deliberately reaffirmed after the independent canon audit while consulting the listed exact passages. Each passage is used only for its stated register, orthographic, borrowing, or licensing role; the frozen English source controls the OpenLogic meaning.'
         seg['segment_hash_representation']='UTF-8 with LF-normalized line endings; whole-file source and translation hashes remain raw-byte hashes'
         align.append(seg)
 review_file=S/'SEMANTIC_REVIEW.json'

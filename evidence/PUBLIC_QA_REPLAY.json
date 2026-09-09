@@ -1,9 +1,9 @@
 {
   "schema": "jv-public-qa-replay/1",
-  "utc": "2026-09-05T17:26:53.862259+00:00",
-  "fresh_directory": "work/public-qa-replay-0118-final",
+  "utc": "2026-09-09T19:09:37.320380+00:00",
+  "fresh_directory": "work/public-qa-replay-0054-r3",
   "script": "tools/qa-batch.py",
-  "script_sha256": "9eb949586b046e7f47ea0bd502eac23efe2adb940276828eb51cbb253babbf0e",
+  "script_sha256": "63dfad9db80942a174dba90f1b321bccedf36f2ea9572d82253c6b5654a05a02",
   "process_exit_code": 0,
   "checked_units": 118,
   "structural_pass_units": 118,
@@ -14,7 +14,7 @@
   "olp0048_all_command_sequence": true,
   "olp0048_command_replay": {
     "file": "evidence/OLP0048_COMMAND_REPLAY.json",
-    "sha256": "209c089ac6ce792e1869bff6cdb460ca4838e0de0a740770e57fd311ddee2bd2",
+    "sha256": "593c1b0cb92e5e249f9f414fd71c26d4125279551d63e824c8a2d8b8988b5781",
     "source_commands": 277,
     "translation_commands": 277,
     "mismatches": 0

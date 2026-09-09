@@ -13,7 +13,8 @@
 Kita nganggep fungsi minangka pemetaan. Mula, pitakon kang lumrah
 ngenani fungsi yaiku apa pemetaan iku bisa "diwalik". Upamane,
 fungsi panerus $f(x) = x + 1$ bisa diwalik,
-ing pangerten yen fungsi $g(y) = y - 1$ "mbalekake" asil saka $f$.
+ing pangerten yen fungsi $g(y) = y - 1$ ngasilake maneh input
+fungsi~$f$ saka asile.
 
 Nanging kita kudu ngati-ati. Sanajan definisi~$g$ nemtokake
 fungsi $\Int \to \Int$, definisi iku ora nemtokake \emph{fungsi} $\Nat
@@ -53,15 +54,17 @@ Kanthi tembung liya, supaya $g$ bisa ditetepake, $f$~kudu !!{injective} lan
 
 Ayo dirembug sethithik mbaka sethithik. Pitakon mau dipara dadi loro:
 yen diwenehi fungsi~$f\colon A \to B$, kapan ana fungsi $g\colon B \to A$
-saengga $g(f(x)) = x$? Fungsi $g$ kang kaya mangkono "mbalekake" asil saka $f$,
+kanthi $g(f(x)) = x$? Fungsi $g$ kang kaya mangkono ngasilake maneh
+input fungsi~$f$,
 lan diarani \emph{invers kiwa} saka~$f$. Kapindho, kapan ana
-fungsi $h\colon B \to A$ saengga $f(h(y)) = y$? Fungsi $h$ kang kaya mangkono
-diarani \emph{invers tengen} saka~$f$; $f$ "mbalekake" asil saka~$h$.
+fungsi $h\colon B \to A$ kanthi $f(h(y)) = y$? Fungsi $h$ kang kaya mangkono
+diarani \emph{invers tengen} saka~$f$; $f$ ngasilake maneh input
+fungsi~$h$.
 \end{explain}
 
 \begin{prop}
 Yen A ora kosong lan $f\colon A \to B$ iku !!{injective}, mula ana \emph{invers
-kiwa}~$g\colon B \to A$ saka~$f$ saengga $g(f(x)) = x$ kanggo kabeh $x
+kiwa}~$g\colon B \to A$ saka~$f$ kanthi $g(f(x)) = x$ kanggo kabeh $x
 \in A$.
 Cathetan koreksi sumber OLFUN-001: sumber Inggris ora nyebut sarat
 domain ora kosong kang digunakake ing bukti. Sarat umum kang pas yaiku
@@ -72,7 +75,7 @@ kosong ora duwe invers kiwa.
 \begin{proof}
 Upamakna A ora kosong lan $f\colon A \to B$ iku !!{injective}.
 Gatekna sawijining $y \in B$.
-Yen $y \in \ran{f}$, ana $x \in A$ saengga $f(x) = y$. Amarga
+Yen $y \in \ran{f}$, ana $x \in A$ kanthi $f(x) = y$. Amarga
 $f$ iku !!{injective}, mung ana siji~$x \in A$ kang kaya mangkono. Banjur kita bisa
 netepake $g(y) = x$, yaiku $g(y)$ iku $x \in A$ "tunggal" kang nyukupi $f(x)
 = y$. Yen $y \notin \ran{f}$, kita bisa metakake menyang sembarang~$a \in A$.
@@ -95,7 +98,7 @@ Tuduhna yen $f\colon A \to B$ duwe invers kiwa~$g$, mula $f$~iku
 
 \begin{prop}
     Yen $f\colon A \to B$ iku !!{surjective}, mula ana
-    \emph{invers tengen}~$h\colon B \to A$ saka~$f$ saengga $f(h(y)) =
+    \emph{invers tengen}~$h\colon B \to A$ saka~$f$ kanthi $f(h(y)) =
     y$ kanggo kabeh~$y \in B$.
 \end{prop}
 
@@ -103,7 +106,7 @@ Tuduhna yen $f\colon A \to B$ duwe invers kiwa~$g$, mula $f$~iku
 Upamakna $f\colon A \to B$ iku !!{surjective}. Gatekna sawijining $y \in
 B$. Amarga $f$~iku !!{surjective}, ana $x_y \in A$ kanthi $f(x_y)
 = y$. Banjur kita bisa netepake $h(y) = x_y$, yaiku kanggo saben $y \in B$
-kita milih $x \in A$ saengga $f(x) = y$; amarga $f$~iku !!{surjective},
+kita milih $x \in A$ kanthi $f(x) = y$; amarga $f$~iku !!{surjective},
 mesthi ana paling ora siji kang bisa dipilih.\footnote{Amarga $f$ iku
 !!{surjective}, kanggo saben~$y \in B$ himpunan $\Setabs{x}{f(x) = y}$
 ora kosong. Definisi~$h$ mbutuhake kita milih siji $x$
@@ -131,7 +134,7 @@ Tuduhna yen $f\colon A \to B$ duwe invers tengen~$h$, mula $f$~iku
 
 \begin{prop}\ollabel{prop:bijection-inverse}
 Yen $f\colon A \to B$ iku !!{bijective}, ana
-fungsi~$f^{-1}\colon B \to A$ saengga kanggo kabeh $x \in A$,
+fungsi~$f^{-1}\colon B \to A$ kanthi sipat yen kanggo kabeh $x \in A$,
 $f^{-1}(f(x)) = x$ lan kanggo kabeh $y \in B$, $f(f^{-1}(y)) = y$.
 \end{prop}
 

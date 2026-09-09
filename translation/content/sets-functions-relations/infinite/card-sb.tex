@@ -15,14 +15,15 @@ ana !!a{bijection} $h \colon A \to B$.
 
 Ing bab iki, kita manut gagasan Dedekind ngenani \emph{tutupan}.
 Dedekind pancen menehi bukti Schr\"oder--Bernstein kang endah kanthi
-gagasan iki, lan bukti iku bakal diandharake ing kene. Bukti iki manut
-raket marang \citet[kaca~157--8]{Potter2004}, yen pamaca kepengin cara
-kang rada beda nanging pokoke padha. Nelusuri Google sethithik uga
-bakal nggawe pamaca yakin yen iki teorema---rada kaya ora rasionale
-$\sqrt{2}$---kang nduweni \emph{akeh} bukti menarik lan beda.
+gagasan iki, lan bukti iku bakal diandharake ing kene. Bukti iki
+ngetutake \citet[kaca~157--8]{Potter2004} kanthi raket; ing kono pamaca
+bisa nemokake andharan kang rada beda nanging pokoke padha. Nelusuri
+Google sethithik uga bakal ngyakinake pamaca yen iki teorema---rada kaya
+kasunyatan yen $\sqrt{2}$ iku irasional---kang nduweni \emph{akeh}
+bukti menarik lan beda.
 
 Kanthi notasi kang padha karo
-\olref[sfr][infinite][dedekind]{Closure}, temtokna
+\olref[sfr][infinite][dedekind]{Closure}, netepna
 \[
 \Closureofunder{f}{B} = \bigcap \Setabs{X}{B \subseteq X
 \text{ lan $X$ iku $f$-katutup}}
@@ -40,12 +41,17 @@ ngemot~$B$, ing teges iki:
 		\subseteq X$, mula $\Closureofunder{f}{B} \subseteq X$.
 	\end{enumerate}
 \end{lem}
+Cathetan koreksi sumber OLP-0054: definisi lan lema iki mbutuhake f
+dadi swafungsi ing sawijining himpunan lan B dadi subhimpunane.
+Panganggone ing bukti ngisor nyukupi watesan kasebut amarga A dadi
+subhimpunan C, mula bijeksi f saka C menyang A uga bisa dianggep
+swafungsi ing C (JV-D064).
 
 \begin{proof}
 Persis kaya ing \olref[sfr][infinite][dedekind]{closureproperties}.
 \end{proof}
 
-Kita mbutuhake siji kasunyatan pungkasan kanggo nggayuh
+Kita mbutuhake siji kasunyatan pungkasan kanggo mbuktekake
 Schr\"oder--Bernstein:
 
 \begin{prop}\ollabel{sbhelper}
@@ -54,7 +60,7 @@ Yen $A \subseteq B \subseteq C$ lan $A \approx C$, mula $\cardeq{\cardeq{A}{B}}{
 
 \begin{proof}
 Yen diwenehi !!a{bijection} $f \colon C \to A$, jupuken $F =
-\Closureofunder{f}{C \setminus B}$ lan temtokna fungsi $g$ kanthi
+\Closureofunder{f}{C \setminus B}$ lan netepna fungsi $g$ kanthi
 domain $C$ kaya mangkene:
 \[
 	g(x) =
@@ -67,8 +73,8 @@ Kita bakal nuduhake yen $g$ iku !!a{bijection} saka $C \to B$. Saka
 kene bakal ndherek yen $\comp{f^{-1}}{g} \colon A \to B$ iku
 !!a{bijection}, lan bukti rampung.
 
-Kapisan, kita kandha yen $x \in F$ nanging $y\notin F$, mula $g(x) \neq
-g(y)$. Kanggo bukti kanthi kontradiksi, upamakna kosok baline, saengga
+Kapisan, kita negesake yen $x \in F$ nanging $y\notin F$, mula $g(x) \neq
+g(y)$. Kanggo bukti kanthi kontradiksi, upamakna ora mangkono, saengga
 $y = g(y) = g(x) = f(x)$. Amarga $x \in F$ lan $F$ iku $f$-katutup
 miturut \olref{Closureprops}, kita duwe $y = f(x) \in F$, sawijining
 kontradiksi.

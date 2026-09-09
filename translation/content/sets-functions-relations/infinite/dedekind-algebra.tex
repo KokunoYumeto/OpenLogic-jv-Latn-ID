@@ -13,7 +13,7 @@ Kita ora mung kepengin wilangan natural iku tanpa wates; kita uga
 kepengin wilangan mau nduweni sipat-sipat (aljabaris) tartamtu: kudu
 tumindak kanthi becik ing panggunggungan, ping-pingan, lan sapiturute.
 
-Gagasan Dedekind yaiku nganggep gagasan \emph{fungsi panerus} minangka
+Gagasan Dedekind yaiku nganggep \emph{fungsi panerus} minangka
 dhasar, banjur menehi ciri marang wilangan liwat sipat-sipat iki:
 \begin{enumerate}
 	\item Ana wilangan, $0$, kang dudu panerus saka wilangan apa wae
@@ -27,7 +27,7 @@ dhasar, banjur menehi ciri marang wilangan liwat sipat-sipat iki:
 \end{enumerate}
 Rong sarat kapisan gampang ditangani nganggo logika tataran kapisan
 (delengen ing ndhuwur). Nanging \olref{repeatedapplication} ora bisa
-ditangani mung nganggo logika tataran kapisan. Pamawas anyar Dedekind
+ditangani mung nganggo logika tataran kapisan. Langkah wigati Dedekind
 yaiku ngrumusake maneh sarat \olref{repeatedapplication} kanthi teori
 himpunan kaya mangkene:
 \begin{enumerate}
@@ -41,24 +41,28 @@ Nanging iki kudu diandharake alon-alon.
 \begin{defn}\ollabel{Closure}
 	Kanggo saben fungsi $f$, himpunan $X$ iku $f$-\emph{katutup}
 	{yen lan mung yen} $(\forall x \in X)f(x) \in X$. Saiki, kanggo
-	saben $o$, temtokna:
+	saben $o$, netepna:
 	$$\closureofunder{f}{o} = \bigcap\Setabs{X}{o \in X\text{ lan }X
 	\text{ iku $f$-katutup}}$$
 \end{defn}
 
 Dadi $\closureofunder{f}{o}$ iku irisan kabeh himpunan $f$-katutup
-kang duwe $o$ minangka !!a{element}. Miturut pangira-ira, mula,
+kang duwe $o$ minangka !!a{element}. Miturut intuisi,
 $\closureofunder{f}{o}$ iku himpunan $f$-katutup \emph{paling cilik}
-kang duwe $o$ minangka !!a{element}. Asil sabanjure iki njlentrehake
-gagasan mau kanthi pas;
+kang duwe $o$ minangka !!a{element}. Asil sabanjure njlentrehake
+gagasan intuisi kasebut kanthi tliti:
 \begin{lem}\ollabel{closureproperties}
-	Kanggo saben fungsi $f$ lan saben $o \in A$:
+	Kanggo saben himpunan A, saben fungsi $f$ saka A menyang A, lan saben
+	$o \in A$:
 	\begin{enumerate}
 		\item\ollabel{closurehaselem} $o \in \closureofunder{f}{o}$; lan
 		\item\ollabel{closureclosed} $\closureofunder{f}{o}$ iku $f$-katutup; lan
 		\item\ollabel{closuresmallest} yen $X$ iku $f$-katutup lan $o \in
 		X$, mula $\closureofunder{f}{o} \subseteq X$
 	\end{enumerate}
+	Cathetan koreksi sumber OLP-0051: sumber ora nemtokake A lan ora
+	nyebutake yen f kudu dadi fungsi saka A menyang A, sanadyan watesan
+	iki dibutuhake dening bukti ing ngisor iki (JV-D063).
 \end{lem}
 
 \begin{proof}
@@ -107,7 +111,7 @@ Dedekind.
 \end{thm}
 
 \begin{proof}
-Jupuken $D$ tanpa wates miturut Dedekind. Dadi ana injeksi $g \colon D \to
+Jupuken $D$ kang tanpa wates miturut Dedekind. Dadi ana injeksi $g \colon D \to
 D$ lan unsur $o  \in D \setminus \ran{g}$. Saiki jupuken $A =
 \closureofunder{g}{o}$; miturut \olref{closureproperties}, $A$ ana lan
 $o \in A$. Jupuken $f = \funrestrictionto{g}{A}$. Kita bakal nuduhake
