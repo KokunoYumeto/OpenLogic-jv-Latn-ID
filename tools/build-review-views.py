@@ -41,11 +41,13 @@ records = [
 metadata = records[0]
 decisions = records[1:]
 assert metadata["record_type"] == "metadata"
-assert len(decisions) == 179
+assert len(decisions) == 180
 assert len({row["decision_id"] for row in decisions}) == len(decisions)
 
 
 def priority(row: dict) -> str:
+    if row.get("review_priority") == "high":
+        return "P1-source-or-semantic-review"
     if row["record_type"] == "difficult_translation_or_source_decision":
         return "P1-source-or-semantic-review"
     status = row.get("status", "")
@@ -276,6 +278,9 @@ machine = {
         "difficult_decisions": sum(
             row["record_type"] == "difficult_translation_or_source_decision"
             for row in decisions
+        ),
+        "syntax_decisions": sum(
+            row["record_type"] == "syntax_decision" for row in decisions
         ),
         "priority_decisions": len(priority_records),
         "tracked_occurrences": len(occurrences),

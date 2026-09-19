@@ -21,7 +21,7 @@ PRIORITY = OUT / "PRIORITY_REVIEW.md"
 CSV = OUT / "DECISION_OCCURRENCES.csv"
 START = OUT / "START_HERE.md"
 QA = OUT / "TRANSLATION_DECISION_QA.json"
-COMMIT = "bf8172c7585986612b181aa5d5a6d72fea90f108"
+COMMIT = "2c5fdc78114e735a7ed8c3da1be9df7d1e8b36cc"
 SOURCE_REVISION = "9620cc73f9c8e0ad003c514a5d3748f29611c4c0"
 SCHEMA_URI = (
     "https://raw.githubusercontent.com/KokunoYumeto/OpenLogic-translations/"
@@ -150,7 +150,7 @@ edition = {
 records = [json.loads(value) for value in LOG.read_text(encoding="utf-8-sig").splitlines() if value.strip()]
 metadata, legacy = records[0], records[1:]
 assert metadata["record_type"] == "metadata"
-assert len(legacy) == 179
+assert len(legacy) == 180
 assert len({row["decision_id"] for row in legacy}) == len(legacy)
 passages = {
     row["passage_id"]: row
@@ -174,6 +174,8 @@ corrections_by_finding = {row["finding_id"]: row for row in correction_rows}
 
 
 def record_priority(row: dict) -> str:
+    if row.get("review_priority"):
+        return row["review_priority"]
     if row["record_type"] == "difficult_translation_or_source_decision":
         return "high"
     status = row.get("status", "")
@@ -283,7 +285,10 @@ audit_files = {
 
 
 def evidence_refs(row: dict) -> list[dict]:
-    refs = [artifact("evidence/TERM_DECISIONS.jsonl", REPO / "evidence" / "TERM_DECISIONS.jsonl")]
+    if row["record_type"] == "syntax_decision":
+        refs = [artifact("editorial/TRANSLATION_REVIEW_LOG.jsonl", LOG)]
+    else:
+        refs = [artifact("evidence/TERM_DECISIONS.jsonl", REPO / "evidence" / "TERM_DECISIONS.jsonl")]
     for audit_id in row.get("source_audit_ids", []):
         rel = audit_files.get(audit_id)
         if rel and artifact(rel, REPO / rel) not in refs:
@@ -543,6 +548,11 @@ def paired_occurrences(row: dict, source_term: str, intended_sense: str) -> list
 decisions = []
 for row in legacy:
     terminology = row["record_type"] == "terminology_decision"
+    record_kind = row.get("record_kind") or (
+        "source_correction"
+        if (not terminology or row.get("source_audit_ids"))
+        else "terminology"
+    )
     source_term = row.get("english_term_or_issue") or row.get("issue")
     chosen = row.get("chosen_javanese") or row.get("chosen_wording_or_reading")
     intended = row.get("chosen_sense_and_constraints") or row.get("issue")
@@ -552,25 +562,21 @@ for row in legacy:
     alternatives = [
         {
             "rendering": value,
-            "disposition": "viable_alternative" if terminology else "rejected",
-            "reason": "Listed for expert comparison; the current rendering remains reversible." if terminology else "Rejected because it would retain or conceal the identified source defect.",
+            "disposition": row.get("alternative_disposition") or ("viable_alternative" if terminology else "rejected"),
+            "reason": row.get("alternative_reason") or ("Listed for expert comparison; the current rendering remains reversible." if terminology else "Rejected because it would retain or conceal the identified source defect."),
         }
         for value in row.get("alternatives_for_review", [])
         if value.strip()
     ]
     conf = confidence(row)
-    provisional = "provisional" in row.get("status", "") or conf != "high" or row.get("open_to_correction", False)
+    provisional = row.get("provisional", "provisional" in row.get("status", "") or conf != "high" or row.get("open_to_correction", False))
     question = row.get("precise_review_question")
     priority = record_priority(row)
     decisions.append(
         {
             "decision_id": row["decision_id"],
             "supersedes": [],
-            "record_kind": (
-                "source_correction"
-                if (not terminology or row.get("source_audit_ids"))
-                else "terminology"
-            ),
+            "record_kind": record_kind,
             "recording_mode": recording_mode(row),
             "recorded_utc": metadata["generated_utc"],
             "edition": edition,

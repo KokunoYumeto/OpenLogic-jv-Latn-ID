@@ -1,13 +1,13 @@
 {
   "schema": "jv-translation-review-index/1",
-  "generated_utc": "2026-09-09T19:03:35.920677+00:00",
+  "generated_utc": "2026-09-19T17:30:01.913753+00:00",
   "locale": "jv-Latn-ID",
   "script": "Latn",
   "coverage": "OLP-0001 through OLP-0118; 118 of 722 frozen source units",
   "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
   "source_log": {
     "path": "editorial/TRANSLATION_REVIEW_LOG.jsonl",
-    "sha256": "7be239f7187f7e3de96a5dfe48df4c8cb08fba96eb4eae7cc3d301e631d0a17d",
+    "sha256": "84086c35ff1d1bb615812a9aed9627d1311dca2805fde7dfb9248092348f770c",
     "hash_representation": "UTF-8 with LF-normalized line endings (Git blob)"
   },
   "pagination": {
@@ -20,14 +20,15 @@
     "P2-specialized-language-review": "Current logic and proof-theory terminology (JV-T079 onward) that is provisional and lacks direct concept-usage or lexical-semantics attestation."
   },
   "counts": {
-    "decisions": 179,
+    "decisions": 180,
     "terminology_decisions": 115,
     "difficult_decisions": 64,
-    "priority_decisions": 74,
-    "tracked_occurrences": 383
+    "syntax_decisions": 1,
+    "priority_decisions": 75,
+    "tracked_occurrences": 384
   },
   "priority_decision_ids": [
-    "JV-T080",
+    "JV-T081",
     "JV-T082",
     "JV-T083",
     "JV-T085",
@@ -100,7 +101,8 @@
     "JV-D061",
     "JV-D062",
     "JV-D063",
-    "JV-D064"
+    "JV-D064",
+    "JV-S001"
   ],
   "decisions": [
     {
@@ -161,8 +163,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -224,8 +226,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -319,8 +321,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-07",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -381,8 +383,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -444,8 +446,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-07",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -515,8 +517,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-07",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -577,8 +579,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-07",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -637,8 +639,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-07",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -698,8 +700,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-07",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -753,8 +755,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -822,8 +824,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -900,8 +902,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -971,8 +973,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-07",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -1034,8 +1036,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-07",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -1131,8 +1133,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-08",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -1272,8 +1274,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-07",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -1361,8 +1363,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-07",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -1458,8 +1460,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-07",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -1547,8 +1549,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-07",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -1670,8 +1672,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-07",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -1758,8 +1760,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-07",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -1841,8 +1843,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-07",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -1960,8 +1962,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-07",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -2082,8 +2084,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-07",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -2204,8 +2206,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-07",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -2327,8 +2329,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-07",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -2449,8 +2451,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-07",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -2572,8 +2574,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-08",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -2712,8 +2714,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-07",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -2868,8 +2870,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-08",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -2986,8 +2988,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-07",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -3124,8 +3126,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-08",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -3272,8 +3274,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-07",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -3466,8 +3468,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-07",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -3632,8 +3634,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-07",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -3798,8 +3800,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-07",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -3900,8 +3902,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-07",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -4048,8 +4050,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-07",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -4160,8 +4162,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-07",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -4362,8 +4364,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-07",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -4534,8 +4536,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-07",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -4670,8 +4672,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-07",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -4834,8 +4836,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-07",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -5016,8 +5018,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-07",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -5120,8 +5122,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -5279,8 +5281,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-07",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -5288,8 +5290,8 @@
       "decision_id": "JV-T047",
       "history": "retrospective_backfill_2026-09-04",
       "english_term_or_issue": "numerical power; power set; algebraic or logical term",
-      "chosen_javanese": "rambang (numerical alternative); himpunan pangkat (retained); technical term undecided",
-      "chosen_sense_and_constraints": "Rambang directly attests equal-factor numerical powers, not powersets. Keep prior himpunan pangkat decision. Suku entry lacks an explicit algebraic/logical-term definition. Recovered rambang original HTML itself flattens its displayed example to 43; never use that as mathematical evidence.",
+      "chosen_javanese": "rambang (numerical alternative); himpunan pangkat (retained); term (provisional technical borrowing)",
+      "chosen_sense_and_constraints": "Rambang directly attests equal-factor numerical powers, not powersets. Keep prior himpunan pangkat decision. The dictionary's suku entry lacks an algebraic or logical sense, so OLP-0055 and the formal-logic chapters use the international stem term as an explicitly provisional borrowing; exact formation rules, not the canon, control its technical meaning. Recovered rambang original HTML itself flattens its displayed example to 43; never use that as mathematical evidence.",
       "status": "mixed_attestation_with_scope_limits",
       "open_to_correction": true,
       "source_locations": [
@@ -5337,7 +5339,7 @@
           ]
         },
         {
-          "searched_term": "technical term undecided",
+          "searched_term": "term",
           "found": false,
           "searched_units": [
             "OLP-0007",
@@ -5376,12 +5378,12 @@
         "pangkat; power set; suku"
       ],
       "uncertainty": "medium_to_high: provisional technical wording; mathematical sense is fixed but Javanese wording may change",
-      "precise_review_question": "For formal written Javanese, is “rambang (numerical alternative); himpunan pangkat (retained); technical term undecided” clear and idiomatic for the constrained sense “numerical power; power set; algebraic or logical term”, or should one of these be preferred: pangkat; power set; suku?",
+      "precise_review_question": "For formal written Javanese, is “rambang (numerical alternative); himpunan pangkat (retained); term (provisional technical borrowing)” clear and idiomatic for the constrained sense “numerical power; power set; algebraic or logical term”, or should one of these be preferred: pangkat; power set; suku?",
       "source_audit_ids": [],
       "retrospective_basis": {
-        "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "ledger_record_date": "2026-09-09",
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -5532,8 +5534,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-08",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -5618,8 +5620,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-08",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -5790,8 +5792,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-07",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -5903,8 +5905,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-07",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -6069,8 +6071,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-07",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -6190,8 +6192,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-07",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -6351,8 +6353,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-08",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -6495,8 +6497,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-08",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -6674,8 +6676,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-08",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -6762,8 +6764,8 @@
       ],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-07",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -6857,8 +6859,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-08",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -7010,8 +7012,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-08",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -7073,8 +7075,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-08",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -7152,8 +7154,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-08",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -7319,8 +7321,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-08",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -7414,8 +7416,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-08",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -7543,8 +7545,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-08",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -7638,8 +7640,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-08",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -7765,8 +7767,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-08",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -7886,8 +7888,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-08",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -8077,8 +8079,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-08",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -8180,8 +8182,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-08",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -8323,8 +8325,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-08",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -8460,8 +8462,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-08",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -8585,8 +8587,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-08",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -8704,8 +8706,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-08",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -8771,8 +8773,8 @@
       ],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-04",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -8934,8 +8936,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-08",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -9087,8 +9089,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-08",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -9273,8 +9275,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-08",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -9461,8 +9463,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-08",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -9471,8 +9473,8 @@
       "history": "contemporaneous",
       "english_term_or_issue": "propositional logic; propositional variable; propositional or logical connective",
       "chosen_javanese": "logika proposisional; variabel proposisional; konektif proposisional utawa logis",
-      "chosen_sense_and_constraints": "Retain the directly attested logika stem and adapt the international technical modifiers under the documented orthographic policy. OLP-0057 and OLP-0058 define variables and the full connective inventory; the canon does not attest these compounds.",
-      "status": "provisional_adapted_technical_borrowing",
+      "chosen_sense_and_constraints": "Logika is directly attested in scholarly Javanese and the official orthographic table supports logika and logis. Proposisional, variabel proposisional and konektif remain provisional adapted technical expressions. OLP-0057 states their roles and preserves all five connective symbols; OLP-0058 supplies the exact formation clauses, so no canon passage is treated as formal-logic authority.",
+      "status": "revalidated_provisional_adapted_technical_borrowing",
       "open_to_correction": true,
       "source_locations": [
         {
@@ -9511,7 +9513,7 @@
           "path": "translation/content/propositional-logic/propositional-logic.tex",
           "line": 7,
           "matched_text": "Logika Proposisional",
-          "raw_file_sha256": "a3b0158af5dc43f11f446c64f3449f00d357b10ecc595028c1be1905cf48a744"
+          "raw_file_sha256": "fc20546c3819bee0f98617e3ed63b2a830c797b552b5c7e36222c96e06094e53"
         },
         {
           "searched_term": "variabel proposisional",
@@ -9582,9 +9584,9 @@
       "precise_review_question": "For formal written Javanese, is “logika proposisional; variabel proposisional; konektif proposisional utawa logis” clear and idiomatic for the constrained sense “propositional logic; propositional variable; propositional or logical connective”, or should one of these be preferred: logika ukara; peubah proposisional; operator logis?",
       "source_audit_ids": [],
       "retrospective_basis": {
-        "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "ledger_record_date": "2026-09-09",
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -9593,8 +9595,8 @@
       "history": "contemporaneous",
       "english_term_or_issue": "negation; conjunction; disjunction; material conditional; biconditional",
       "chosen_javanese": "negasi; konjungsi; disjungsi; kondisional material; bikondisional",
-      "chosen_sense_and_constraints": "Use recognizable adapted labels while preserving every connective symbol and truth clause. OLP-0058 and OLP-0061, rather than canon, determine the five exact operations.",
-      "status": "provisional_adapted_technical_borrowing",
+      "chosen_sense_and_constraints": "Logika is directly attested and the canon supports controlled borrowing and academic exposition, but none of the five complete connective names is attested as a mathematical-logic term. OLP-0058 preserves each symbol, formation clause and primitive-basis abbreviation exactly; OLP-0061 supplies the truth clauses. The English and Latin aliases bottom, top, falsum and verum are retained only as explicitly attributed source-language names with Javanese glosses, not claimed as conventional Javanese terminology.",
+      "status": "revalidated_provisional_adapted_technical_borrowing",
       "open_to_correction": true,
       "source_locations": [
         {
@@ -9649,27 +9651,27 @@
           "found": true,
           "unit_id": "OLP-0058",
           "path": "translation/content/propositional-logic/syntax-and-semantics/formulas.tex",
-          "line": 27,
+          "line": 28,
           "matched_text": "negasi",
-          "raw_file_sha256": "4970549092af228a0eaab6c3b16092aaaa67f3de2c7e39c1ed6d8df1eb587c11"
+          "raw_file_sha256": "06170578ee7451f257d92a43abc7034a1cd7d7a834eca98bf40afb7811805a32"
         },
         {
           "searched_term": "konjungsi",
           "found": true,
           "unit_id": "OLP-0058",
           "path": "translation/content/propositional-logic/syntax-and-semantics/formulas.tex",
-          "line": 28,
+          "line": 29,
           "matched_text": "konjungsi",
-          "raw_file_sha256": "4970549092af228a0eaab6c3b16092aaaa67f3de2c7e39c1ed6d8df1eb587c11"
+          "raw_file_sha256": "06170578ee7451f257d92a43abc7034a1cd7d7a834eca98bf40afb7811805a32"
         },
         {
           "searched_term": "disjungsi",
           "found": true,
           "unit_id": "OLP-0058",
           "path": "translation/content/propositional-logic/syntax-and-semantics/formulas.tex",
-          "line": 29,
+          "line": 30,
           "matched_text": "disjungsi",
-          "raw_file_sha256": "4970549092af228a0eaab6c3b16092aaaa67f3de2c7e39c1ed6d8df1eb587c11"
+          "raw_file_sha256": "06170578ee7451f257d92a43abc7034a1cd7d7a834eca98bf40afb7811805a32"
         },
         {
           "searched_term": "kondisional material",
@@ -9678,19 +9680,27 @@
           "path": "translation/content/propositional-logic/syntax-and-semantics/introduction.tex",
           "line": 35,
           "matched_text": "Kondisional material",
-          "raw_file_sha256": "f69fa05e7359e5b13eba8b1bcb136c039366cf036b759ac564e4d2cdb53938b0"
+          "raw_file_sha256": "ebccab56ac6150820abc6807c57bfb908b48a98c549858e239a06b84dfaac063"
         },
         {
           "searched_term": "bikondisional",
           "found": true,
           "unit_id": "OLP-0058",
           "path": "translation/content/propositional-logic/syntax-and-semantics/formulas.tex",
-          "line": 70,
+          "line": 71,
           "matched_text": "bikondisional",
-          "raw_file_sha256": "4970549092af228a0eaab6c3b16092aaaa67f3de2c7e39c1ed6d8df1eb587c11"
+          "raw_file_sha256": "06170578ee7451f257d92a43abc7034a1cd7d7a834eca98bf40afb7811805a32"
         }
       ],
       "actual_authorities_checked": [
+        {
+          "passage_id": "JV-P001",
+          "source_id": "JV-C001",
+          "authority_title": "Dumadine Jagad sajrone Teks Widya Kirana (Tintingan Filsafat)",
+          "evidence_role": "concept_usage",
+          "consulted_scope": "Attests logika and logika formal in Javanese scholarly prose; not a source for mathematical theorems.",
+          "excerpt_sha256": "a96a75d7b7a9e95faabd2bb99d738d454e1e92fdc87ee2fa7291d85f52ed0583"
+        },
         {
           "passage_id": "JV-P002",
           "source_id": "JV-C001",
@@ -9698,6 +9708,14 @@
           "evidence_role": "academic_prose_register",
           "consulted_scope": "Observed explanatory ngoko morphology/lexicon: yaiku, kang, iki, nggunakake, njlentrehake. Register classification is editorial inference from prose, not a quoted author label.",
           "excerpt_sha256": "8ceb908a98c7b6119a7b28cd9c2ddbfd47a2a3f4d72df2a5366aa9e0ac88e10e"
+        },
+        {
+          "passage_id": "JV-P004",
+          "source_id": "JV-C002",
+          "authority_title": "Pedoman Umum Ejaan Bahasa Jawa Huruf Latin yang Disempurnakan, Edisi Revisi",
+          "evidence_role": "orthographic_borrowing",
+          "consulted_scope": "Visual table maps logic/logica to logika and logisch/logical to logis. Supports adapted forms, not every advanced technical sense.",
+          "excerpt_sha256": "0c6b1289623685a2b2b415b80d993b13cf0c6fe08993cdf15f35c96a5f58dcac"
         },
         {
           "passage_id": "JV-P005",
@@ -9714,6 +9732,38 @@
           "evidence_role": "borrowing_policy",
           "consulted_scope": "Established adapted spellings are retained; foreign suffixes absorbed with whole words. Supports controlled provisional borrowing, not attestation of himpunan or ekstensionalitas.",
           "excerpt_sha256": "7902184510d01a3d274ffcafd8b1fa9568728bc51bffccdca30faf9104be6d83"
+        },
+        {
+          "passage_id": "JV-P023",
+          "source_id": "JV-C006",
+          "authority_title": "Sesambungan Sintagmatik sajrone Jenenge Bocah kang Lair Taun 2010-2015 ing Kecamatan Saradan Kabupaten Madiun (Tintingan Semantik)",
+          "evidence_role": "scholarly_semantics_register",
+          "consulted_scope": "Directly attests logika semantik and an academic explanatory clause; it does not establish formal model-theoretic semantics.",
+          "excerpt_sha256": "fb72f2334e0ac365ec2fd46f10c72dcc1cdb4802f26c390933d9ff1654642166"
+        },
+        {
+          "passage_id": "JV-P024",
+          "source_id": "JV-C006",
+          "authority_title": "Sesambungan Sintagmatik sajrone Jenenge Bocah kang Lair Taun 2010-2015 ing Kecamatan Saradan Kabupaten Madiun (Tintingan Semantik)",
+          "evidence_role": "scholarly_equivalence_and_context_register",
+          "consulted_scope": "Attests ekuivalensi, fungsi, konteks, and semantik in continuous Javanese scholarly prose. Exact mathematical senses remain controlled by the English source and formal notation.",
+          "excerpt_sha256": "e45ca86745091c52fb75bd309cc387694ce0d651846e3b540bf20aac0c499b1e"
+        },
+        {
+          "passage_id": "JV-P025",
+          "source_id": "JV-C006",
+          "authority_title": "Sesambungan Sintagmatik sajrone Jenenge Bocah kang Lair Taun 2010-2015 ing Kecamatan Saradan Kabupaten Madiun (Tintingan Semantik)",
+          "evidence_role": "scholarly_methodological_register",
+          "consulted_scope": "Attests extended impersonal academic definition prose and the sequence sistematis, faktual, lan akurat. It supports prose register and rigorous-description wording, not a new mathematical claim.",
+          "excerpt_sha256": "2d19b175c3e72f126582c884a7cf09d829e71c0849c98ad0d6f3aedc0b2b7261"
+        },
+        {
+          "passage_id": "JV-P026",
+          "source_id": "JV-C006",
+          "authority_title": "Sesambungan Sintagmatik sajrone Jenenge Bocah kang Lair Taun 2010-2015 ing Kecamatan Saradan Kabupaten Madiun (Tintingan Semantik)",
+          "evidence_role": "scholarly_expository_register",
+          "consulted_scope": "Attests impersonal evidential phrasing, andharan, digunakake, and nuduhake in scholarly prose.",
+          "excerpt_sha256": "98376559ecb4bd83499943848dd2a8096605b7799f66dfacd861dab8e4ebbea6"
         }
       ],
       "not_found_or_scope_limit": "No specialized Javanese mathematical attestation is claimed; the listed evidence supports only the roles and scopes stated.",
@@ -9724,9 +9774,9 @@
       "precise_review_question": "For formal written Javanese, is “negasi; konjungsi; disjungsi; kondisional material; bikondisional” clear and idiomatic for the constrained sense “negation; conjunction; disjunction; material conditional; biconditional”, or should one of these be preferred: panyelakan; panggandhengan; pamisahan; implikasi; ekuivalensi?",
       "source_audit_ids": [],
       "retrospective_basis": {
-        "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "ledger_record_date": "2026-09-10",
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -9735,8 +9785,8 @@
       "history": "contemporaneous",
       "english_term_or_issue": "syntax; semantics; primitive or defined symbol; atomic formula; syntactic identity",
       "chosen_javanese": "sintaksis; semantik; simbol primitif utawa kang ditetepake; formula atomik; identitas sintaktis",
-      "chosen_sense_and_constraints": "Adapt the scholarly stems and state the defined-symbol contrast descriptively. The inductive formation clauses and exact string-equality definition in OLP-0058 control the technical meanings.",
-      "status": "provisional_borrowing_and_descriptive_rendering",
+      "chosen_sense_and_constraints": "Semantik is directly attested in sustained Javanese scholarly linguistics, and the orthographic canon supports controlled adaptation of foreign stems. Sintaksis and the complete formal compounds are not attested there, so they remain explicitly provisional. The inductive formation clauses and exact string-equality definition in OLP-0058 control the technical meanings.",
+      "status": "revalidated_provisional_borrowing_and_descriptive_rendering",
       "open_to_correction": true,
       "source_locations": [
         {
@@ -9793,7 +9843,7 @@
           "path": "translation/content/propositional-logic/syntax-and-semantics/syntax-and-semantics.tex",
           "line": 8,
           "matched_text": "Sintaksis",
-          "raw_file_sha256": "2e3790b7c9cc8ef49d694c1563cb78bf08bdc8f3d7bc1939eea0d99312401032"
+          "raw_file_sha256": "ce735d663973faee2e495ef4eae2537bfe4cd2f1bec9ac7b1ec3720681acedaa"
         },
         {
           "searched_term": "semantik",
@@ -9802,7 +9852,7 @@
           "path": "translation/content/propositional-logic/syntax-and-semantics/syntax-and-semantics.tex",
           "line": 8,
           "matched_text": "Semantik",
-          "raw_file_sha256": "2e3790b7c9cc8ef49d694c1563cb78bf08bdc8f3d7bc1939eea0d99312401032"
+          "raw_file_sha256": "ce735d663973faee2e495ef4eae2537bfe4cd2f1bec9ac7b1ec3720681acedaa"
         },
         {
           "searched_term": "simbol primitif utawa kang ditetepake",
@@ -9818,29 +9868,21 @@
           "found": true,
           "unit_id": "OLP-0058",
           "path": "translation/content/propositional-logic/syntax-and-semantics/formulas.tex",
-          "line": 113,
+          "line": 117,
           "matched_text": "formula atomik",
-          "raw_file_sha256": "4970549092af228a0eaab6c3b16092aaaa67f3de2c7e39c1ed6d8df1eb587c11"
+          "raw_file_sha256": "06170578ee7451f257d92a43abc7034a1cd7d7a834eca98bf40afb7811805a32"
         },
         {
           "searched_term": "identitas sintaktis",
           "found": true,
           "unit_id": "OLP-0058",
           "path": "translation/content/propositional-logic/syntax-and-semantics/formulas.tex",
-          "line": 170,
+          "line": 173,
           "matched_text": "Identitas sintaktis",
-          "raw_file_sha256": "4970549092af228a0eaab6c3b16092aaaa67f3de2c7e39c1ed6d8df1eb587c11"
+          "raw_file_sha256": "06170578ee7451f257d92a43abc7034a1cd7d7a834eca98bf40afb7811805a32"
         }
       ],
       "actual_authorities_checked": [
-        {
-          "passage_id": "JV-P001",
-          "source_id": "JV-C001",
-          "authority_title": "Dumadine Jagad sajrone Teks Widya Kirana (Tintingan Filsafat)",
-          "evidence_role": "concept_usage",
-          "consulted_scope": "Attests logika and logika formal in Javanese scholarly prose; not a source for mathematical theorems.",
-          "excerpt_sha256": "a96a75d7b7a9e95faabd2bb99d738d454e1e92fdc87ee2fa7291d85f52ed0583"
-        },
         {
           "passage_id": "JV-P002",
           "source_id": "JV-C001",
@@ -9864,6 +9906,30 @@
           "evidence_role": "borrowing_policy",
           "consulted_scope": "Established adapted spellings are retained; foreign suffixes absorbed with whole words. Supports controlled provisional borrowing, not attestation of himpunan or ekstensionalitas.",
           "excerpt_sha256": "7902184510d01a3d274ffcafd8b1fa9568728bc51bffccdca30faf9104be6d83"
+        },
+        {
+          "passage_id": "JV-P023",
+          "source_id": "JV-C006",
+          "authority_title": "Sesambungan Sintagmatik sajrone Jenenge Bocah kang Lair Taun 2010-2015 ing Kecamatan Saradan Kabupaten Madiun (Tintingan Semantik)",
+          "evidence_role": "scholarly_semantics_register",
+          "consulted_scope": "Directly attests logika semantik and an academic explanatory clause; it does not establish formal model-theoretic semantics.",
+          "excerpt_sha256": "fb72f2334e0ac365ec2fd46f10c72dcc1cdb4802f26c390933d9ff1654642166"
+        },
+        {
+          "passage_id": "JV-P024",
+          "source_id": "JV-C006",
+          "authority_title": "Sesambungan Sintagmatik sajrone Jenenge Bocah kang Lair Taun 2010-2015 ing Kecamatan Saradan Kabupaten Madiun (Tintingan Semantik)",
+          "evidence_role": "scholarly_equivalence_and_context_register",
+          "consulted_scope": "Attests ekuivalensi, fungsi, konteks, and semantik in continuous Javanese scholarly prose. Exact mathematical senses remain controlled by the English source and formal notation.",
+          "excerpt_sha256": "e45ca86745091c52fb75bd309cc387694ce0d651846e3b540bf20aac0c499b1e"
+        },
+        {
+          "passage_id": "JV-P025",
+          "source_id": "JV-C006",
+          "authority_title": "Sesambungan Sintagmatik sajrone Jenenge Bocah kang Lair Taun 2010-2015 ing Kecamatan Saradan Kabupaten Madiun (Tintingan Semantik)",
+          "evidence_role": "scholarly_methodological_register",
+          "consulted_scope": "Attests extended impersonal academic definition prose and the sequence sistematis, faktual, lan akurat. It supports prose register and rigorous-description wording, not a new mathematical claim.",
+          "excerpt_sha256": "2d19b175c3e72f126582c884a7cf09d829e71c0849c98ad0d6f3aedc0b2b7261"
         }
       ],
       "not_found_or_scope_limit": "No specialized Javanese mathematical attestation is claimed; the listed evidence supports only the roles and scopes stated.",
@@ -9874,9 +9940,9 @@
       "precise_review_question": "For formal written Javanese, is “sintaksis; semantik; simbol primitif utawa kang ditetepake; formula atomik; identitas sintaktis” clear and idiomatic for the constrained sense “syntax; semantics; primitive or defined symbol; atomic formula; syntactic identity”, or should one of these be preferred: tata-wangun; teges; simbol dhasar; formula dhasar; pepadhan sintaktis?",
       "source_audit_ids": [],
       "retrospective_basis": {
-        "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "ledger_record_date": "2026-09-09",
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -9885,8 +9951,8 @@
       "history": "contemporaneous",
       "english_term_or_issue": "truth-functional; truth value; valuation; evaluation function",
       "chosen_javanese": "fungsional tumrap kabeneran; nilai kabeneran; valuasi; fungsi evaluasi",
-      "chosen_sense_and_constraints": "General truth and function evidence supports only the component vocabulary. OLP-0057 and OLP-0061 explicitly define two truth values, valuations on propositional variables and the inductive evaluation function; no formal semantic attestation is claimed.",
-      "status": "provisional_specialization_and_borrowing",
+      "chosen_sense_and_constraints": "The canon directly supplies general truth vocabulary, fungsi in nonmathematical and scholarly contexts, semantik, academic exposition and controlled borrowing. These roles support only the components and register. OLP-0057 explicitly restricts truth functionality to dependence on component truth values and excludes modal, epistemic, temporal and many-valued questions; OLP-0061 defines valuations and evaluation recursively. The four formal expressions remain provisional.",
+      "status": "revalidated_provisional_specialization_and_borrowing",
       "open_to_correction": true,
       "source_locations": [
         {
@@ -9930,11 +9996,11 @@
         {
           "searched_term": "fungsional tumrap kabeneran",
           "found": true,
-          "unit_id": "OLP-0057",
-          "path": "translation/content/propositional-logic/syntax-and-semantics/introduction.tex",
+          "unit_id": "OLP-0055",
+          "path": "translation/content/propositional-logic/propositional-logic.tex",
           "line": 21,
           "matched_text": "fungsional tumrap kabeneran",
-          "raw_file_sha256": "f69fa05e7359e5b13eba8b1bcb136c039366cf036b759ac564e4d2cdb53938b0"
+          "raw_file_sha256": "fc20546c3819bee0f98617e3ed63b2a830c797b552b5c7e36222c96e06094e53"
         },
         {
           "searched_term": "nilai kabeneran",
@@ -9943,16 +10009,16 @@
           "path": "translation/content/propositional-logic/syntax-and-semantics/introduction.tex",
           "line": 17,
           "matched_text": "nilai kabeneran",
-          "raw_file_sha256": "f69fa05e7359e5b13eba8b1bcb136c039366cf036b759ac564e4d2cdb53938b0"
+          "raw_file_sha256": "ebccab56ac6150820abc6807c57bfb908b48a98c549858e239a06b84dfaac063"
         },
         {
           "searched_term": "valuasi",
           "found": true,
-          "unit_id": "OLP-0061",
-          "path": "translation/content/propositional-logic/syntax-and-semantics/valuations-sat.tex",
-          "line": 22,
+          "unit_id": "OLP-0057",
+          "path": "translation/content/propositional-logic/syntax-and-semantics/introduction.tex",
+          "line": 60,
           "matched_text": "valuasi",
-          "raw_file_sha256": "328884b438baf6cf3be610bade5136e1dc0bf5277f6c4cc52207a39a9976a789"
+          "raw_file_sha256": "ebccab56ac6150820abc6807c57bfb908b48a98c549858e239a06b84dfaac063"
         },
         {
           "searched_term": "fungsi evaluasi",
@@ -9982,14 +10048,6 @@
           "excerpt_sha256": "d59fc2103b44bc41aea2195e1ece60d55fe00b08e164bec94ca6e1026128fe7b"
         },
         {
-          "passage_id": "JV-P005",
-          "source_id": "JV-C002",
-          "authority_title": "Pedoman Umum Ejaan Bahasa Jawa Huruf Latin yang Disempurnakan, Edisi Revisi",
-          "evidence_role": "orthography",
-          "consulted_scope": "Preserve distinct digraph spelling (dhasar, padha, etc.); PDF is imposed two-up and printed pages are nonsequential.",
-          "excerpt_sha256": "4b7165a4bd3a10f9e41f7bf326087832bcb50482fb3447d6589b766b8d583404"
-        },
-        {
           "passage_id": "JV-P006",
           "source_id": "JV-C002",
           "authority_title": "Pedoman Umum Ejaan Bahasa Jawa Huruf Latin yang Disempurnakan, Edisi Revisi",
@@ -10012,6 +10070,38 @@
           "evidence_role": "general_lexeme_not_mathematical_function",
           "consulted_scope": "Fungsi occurs in native scholarly prose with purpose/use sense. Mathematical function, uniqueness of values and domain/codomain are separately defined directly from OLP-0021; no formal-function attestation inferred.",
           "excerpt_sha256": "b0fc93a9100eb457cd98cfd6a584fe76bb80dbc9edc128f268c012d719c800a6"
+        },
+        {
+          "passage_id": "JV-P023",
+          "source_id": "JV-C006",
+          "authority_title": "Sesambungan Sintagmatik sajrone Jenenge Bocah kang Lair Taun 2010-2015 ing Kecamatan Saradan Kabupaten Madiun (Tintingan Semantik)",
+          "evidence_role": "scholarly_semantics_register",
+          "consulted_scope": "Directly attests logika semantik and an academic explanatory clause; it does not establish formal model-theoretic semantics.",
+          "excerpt_sha256": "fb72f2334e0ac365ec2fd46f10c72dcc1cdb4802f26c390933d9ff1654642166"
+        },
+        {
+          "passage_id": "JV-P024",
+          "source_id": "JV-C006",
+          "authority_title": "Sesambungan Sintagmatik sajrone Jenenge Bocah kang Lair Taun 2010-2015 ing Kecamatan Saradan Kabupaten Madiun (Tintingan Semantik)",
+          "evidence_role": "scholarly_equivalence_and_context_register",
+          "consulted_scope": "Attests ekuivalensi, fungsi, konteks, and semantik in continuous Javanese scholarly prose. Exact mathematical senses remain controlled by the English source and formal notation.",
+          "excerpt_sha256": "e45ca86745091c52fb75bd309cc387694ce0d651846e3b540bf20aac0c499b1e"
+        },
+        {
+          "passage_id": "JV-P025",
+          "source_id": "JV-C006",
+          "authority_title": "Sesambungan Sintagmatik sajrone Jenenge Bocah kang Lair Taun 2010-2015 ing Kecamatan Saradan Kabupaten Madiun (Tintingan Semantik)",
+          "evidence_role": "scholarly_methodological_register",
+          "consulted_scope": "Attests extended impersonal academic definition prose and the sequence sistematis, faktual, lan akurat. It supports prose register and rigorous-description wording, not a new mathematical claim.",
+          "excerpt_sha256": "2d19b175c3e72f126582c884a7cf09d829e71c0849c98ad0d6f3aedc0b2b7261"
+        },
+        {
+          "passage_id": "JV-P026",
+          "source_id": "JV-C006",
+          "authority_title": "Sesambungan Sintagmatik sajrone Jenenge Bocah kang Lair Taun 2010-2015 ing Kecamatan Saradan Kabupaten Madiun (Tintingan Semantik)",
+          "evidence_role": "scholarly_expository_register",
+          "consulted_scope": "Attests impersonal evidential phrasing, andharan, digunakake, and nuduhake in scholarly prose.",
+          "excerpt_sha256": "98376559ecb4bd83499943848dd2a8096605b7799f66dfacd861dab8e4ebbea6"
         }
       ],
       "not_found_or_scope_limit": "No specialized Javanese mathematical attestation is claimed; the listed evidence supports only the roles and scopes stated.",
@@ -10022,9 +10112,9 @@
       "precise_review_question": "For formal written Javanese, is “fungsional tumrap kabeneran; nilai kabeneran; valuasi; fungsi evaluasi” clear and idiomatic for the constrained sense “truth-functional; truth value; valuation; evaluation function”, or should one of these be preferred: gumantung mung marang kabeneran; nilai bener-salah; pambiji; fungsi panilaian?",
       "source_audit_ids": [],
       "retrospective_basis": {
-        "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "ledger_record_date": "2026-09-09",
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -10033,8 +10123,8 @@
       "history": "contemporaneous",
       "english_term_or_issue": "satisfaction; satisfiable; unsatisfiable",
       "chosen_javanese": "panyukupan; bisa dicukupi; ora bisa dicukupi",
-      "chosen_sense_and_constraints": "Use a transparent nyukupi construction already present in the translation for satisfaction of conditions. The recursive clauses and existential or universal valuation conditions in OLP-0061 and OLP-0062 fix the formal senses.",
-      "status": "provisional_descriptive_specialization",
+      "chosen_sense_and_constraints": "Nyukupi has only an ordinary fulfill-or-meet reading in the checked language evidence; no model-theoretic attestation is claimed. OLP-0057 now states the technical relation with the valuation as subject and the formula as object, and OLP-0061 fixes it by exact recursive clauses and the equivalence with truth value True. OLP-0062 fixes satisfiable and unsatisfiable by existential valuation conditions, so the transparent specialization remains explicit and reversible.",
+      "status": "revalidated_provisional_descriptive_specialization",
       "open_to_correction": true,
       "source_locations": [
         {
@@ -10073,16 +10163,16 @@
           "path": "translation/content/propositional-logic/syntax-and-semantics/introduction.tex",
           "line": 55,
           "matched_text": "panyukupan",
-          "raw_file_sha256": "f69fa05e7359e5b13eba8b1bcb136c039366cf036b759ac564e4d2cdb53938b0"
+          "raw_file_sha256": "ebccab56ac6150820abc6807c57bfb908b48a98c549858e239a06b84dfaac063"
         },
         {
           "searched_term": "bisa dicukupi",
           "found": true,
           "unit_id": "OLP-0057",
           "path": "translation/content/propositional-logic/syntax-and-semantics/introduction.tex",
-          "line": 68,
+          "line": 69,
           "matched_text": "bisa dicukupi",
-          "raw_file_sha256": "f69fa05e7359e5b13eba8b1bcb136c039366cf036b759ac564e4d2cdb53938b0"
+          "raw_file_sha256": "ebccab56ac6150820abc6807c57bfb908b48a98c549858e239a06b84dfaac063"
         },
         {
           "searched_term": "ora bisa dicukupi",
@@ -10112,20 +10202,36 @@
           "excerpt_sha256": "d59fc2103b44bc41aea2195e1ece60d55fe00b08e164bec94ca6e1026128fe7b"
         },
         {
-          "passage_id": "JV-P005",
-          "source_id": "JV-C002",
-          "authority_title": "Pedoman Umum Ejaan Bahasa Jawa Huruf Latin yang Disempurnakan, Edisi Revisi",
-          "evidence_role": "orthography",
-          "consulted_scope": "Preserve distinct digraph spelling (dhasar, padha, etc.); PDF is imposed two-up and printed pages are nonsequential.",
-          "excerpt_sha256": "4b7165a4bd3a10f9e41f7bf326087832bcb50482fb3447d6589b766b8d583404"
-        },
-        {
           "passage_id": "JV-P009",
           "source_id": "JV-C004",
           "authority_title": "Kamus Bahasa Jawa-Indonesia digital",
           "evidence_role": "general_lexeme",
           "consulted_scope": "General correctness/truth senses; formal truth to be defined by English original.",
           "excerpt_sha256": "de4144430167bb629f263abc1c1871ac9bfcbb38995286da5079bfd0dc766fb4"
+        },
+        {
+          "passage_id": "JV-P023",
+          "source_id": "JV-C006",
+          "authority_title": "Sesambungan Sintagmatik sajrone Jenenge Bocah kang Lair Taun 2010-2015 ing Kecamatan Saradan Kabupaten Madiun (Tintingan Semantik)",
+          "evidence_role": "scholarly_semantics_register",
+          "consulted_scope": "Directly attests logika semantik and an academic explanatory clause; it does not establish formal model-theoretic semantics.",
+          "excerpt_sha256": "fb72f2334e0ac365ec2fd46f10c72dcc1cdb4802f26c390933d9ff1654642166"
+        },
+        {
+          "passage_id": "JV-P025",
+          "source_id": "JV-C006",
+          "authority_title": "Sesambungan Sintagmatik sajrone Jenenge Bocah kang Lair Taun 2010-2015 ing Kecamatan Saradan Kabupaten Madiun (Tintingan Semantik)",
+          "evidence_role": "scholarly_methodological_register",
+          "consulted_scope": "Attests extended impersonal academic definition prose and the sequence sistematis, faktual, lan akurat. It supports prose register and rigorous-description wording, not a new mathematical claim.",
+          "excerpt_sha256": "2d19b175c3e72f126582c884a7cf09d829e71c0849c98ad0d6f3aedc0b2b7261"
+        },
+        {
+          "passage_id": "JV-P026",
+          "source_id": "JV-C006",
+          "authority_title": "Sesambungan Sintagmatik sajrone Jenenge Bocah kang Lair Taun 2010-2015 ing Kecamatan Saradan Kabupaten Madiun (Tintingan Semantik)",
+          "evidence_role": "scholarly_expository_register",
+          "consulted_scope": "Attests impersonal evidential phrasing, andharan, digunakake, and nuduhake in scholarly prose.",
+          "excerpt_sha256": "98376559ecb4bd83499943848dd2a8096605b7799f66dfacd861dab8e4ebbea6"
         }
       ],
       "not_found_or_scope_limit": "No specialized Javanese mathematical attestation is claimed; the listed evidence supports only the roles and scopes stated.",
@@ -10136,9 +10242,9 @@
       "precise_review_question": "For formal written Javanese, is “panyukupan; bisa dicukupi; ora bisa dicukupi” clear and idiomatic for the constrained sense “satisfaction; satisfiable; unsatisfiable”, or should one of these be preferred: pemenuhan; bisa dipenuhi; mustahil dipenuhi?",
       "source_audit_ids": [],
       "retrospective_basis": {
-        "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "ledger_record_date": "2026-09-09",
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -10147,8 +10253,8 @@
       "history": "contemporaneous",
       "english_term_or_issue": "tautology; semantic entailment or consequence; contingent",
       "chosen_javanese": "tautologi; akibat semantis; kontingen",
-      "chosen_sense_and_constraints": "Use adapted international labels for tautology and contingency and a descriptive consequence phrase for entailment. OLP-0062 defines each through valuations and satisfaction; the canon supports register and truth vocabulary only.",
-      "status": "provisional_borrowing_and_descriptive_rendering",
+      "chosen_sense_and_constraints": "The canon supports scholarly logika and semantik, general truth vocabulary, academic prose and controlled borrowing; it does not attest these complete formal notions. OLP-0057 distinguishes their quantifier patterns, and OLP-0062 defines tautology, entailment, satisfiability and contingency through valuations and satisfaction. The adapted labels and descriptive consequence phrase therefore remain provisional and source-controlled.",
+      "status": "revalidated_provisional_borrowing_and_descriptive_rendering",
       "open_to_correction": true,
       "source_locations": [
         {
@@ -10184,18 +10290,18 @@
           "found": true,
           "unit_id": "OLP-0057",
           "path": "translation/content/propositional-logic/syntax-and-semantics/introduction.tex",
-          "line": 67,
+          "line": 68,
           "matched_text": "tautologi",
-          "raw_file_sha256": "f69fa05e7359e5b13eba8b1bcb136c039366cf036b759ac564e4d2cdb53938b0"
+          "raw_file_sha256": "ebccab56ac6150820abc6807c57bfb908b48a98c549858e239a06b84dfaac063"
         },
         {
           "searched_term": "akibat semantis",
           "found": true,
           "unit_id": "OLP-0057",
           "path": "translation/content/propositional-logic/syntax-and-semantics/introduction.tex",
-          "line": 67,
+          "line": 68,
           "matched_text": "akibat semantis",
-          "raw_file_sha256": "f69fa05e7359e5b13eba8b1bcb136c039366cf036b759ac564e4d2cdb53938b0"
+          "raw_file_sha256": "ebccab56ac6150820abc6807c57bfb908b48a98c549858e239a06b84dfaac063"
         },
         {
           "searched_term": "kontingen",
@@ -10204,7 +10310,7 @@
           "path": "translation/content/propositional-logic/syntax-and-semantics/introduction.tex",
           "line": 25,
           "matched_text": "kontingen",
-          "raw_file_sha256": "f69fa05e7359e5b13eba8b1bcb136c039366cf036b759ac564e4d2cdb53938b0"
+          "raw_file_sha256": "ebccab56ac6150820abc6807c57bfb908b48a98c549858e239a06b84dfaac063"
         }
       ],
       "actual_authorities_checked": [
@@ -10233,14 +10339,6 @@
           "excerpt_sha256": "d59fc2103b44bc41aea2195e1ece60d55fe00b08e164bec94ca6e1026128fe7b"
         },
         {
-          "passage_id": "JV-P005",
-          "source_id": "JV-C002",
-          "authority_title": "Pedoman Umum Ejaan Bahasa Jawa Huruf Latin yang Disempurnakan, Edisi Revisi",
-          "evidence_role": "orthography",
-          "consulted_scope": "Preserve distinct digraph spelling (dhasar, padha, etc.); PDF is imposed two-up and printed pages are nonsequential.",
-          "excerpt_sha256": "4b7165a4bd3a10f9e41f7bf326087832bcb50482fb3447d6589b766b8d583404"
-        },
-        {
           "passage_id": "JV-P006",
           "source_id": "JV-C002",
           "authority_title": "Pedoman Umum Ejaan Bahasa Jawa Huruf Latin yang Disempurnakan, Edisi Revisi",
@@ -10255,6 +10353,30 @@
           "evidence_role": "general_lexeme",
           "consulted_scope": "General correctness/truth senses; formal truth to be defined by English original.",
           "excerpt_sha256": "de4144430167bb629f263abc1c1871ac9bfcbb38995286da5079bfd0dc766fb4"
+        },
+        {
+          "passage_id": "JV-P023",
+          "source_id": "JV-C006",
+          "authority_title": "Sesambungan Sintagmatik sajrone Jenenge Bocah kang Lair Taun 2010-2015 ing Kecamatan Saradan Kabupaten Madiun (Tintingan Semantik)",
+          "evidence_role": "scholarly_semantics_register",
+          "consulted_scope": "Directly attests logika semantik and an academic explanatory clause; it does not establish formal model-theoretic semantics.",
+          "excerpt_sha256": "fb72f2334e0ac365ec2fd46f10c72dcc1cdb4802f26c390933d9ff1654642166"
+        },
+        {
+          "passage_id": "JV-P025",
+          "source_id": "JV-C006",
+          "authority_title": "Sesambungan Sintagmatik sajrone Jenenge Bocah kang Lair Taun 2010-2015 ing Kecamatan Saradan Kabupaten Madiun (Tintingan Semantik)",
+          "evidence_role": "scholarly_methodological_register",
+          "consulted_scope": "Attests extended impersonal academic definition prose and the sequence sistematis, faktual, lan akurat. It supports prose register and rigorous-description wording, not a new mathematical claim.",
+          "excerpt_sha256": "2d19b175c3e72f126582c884a7cf09d829e71c0849c98ad0d6f3aedc0b2b7261"
+        },
+        {
+          "passage_id": "JV-P026",
+          "source_id": "JV-C006",
+          "authority_title": "Sesambungan Sintagmatik sajrone Jenenge Bocah kang Lair Taun 2010-2015 ing Kecamatan Saradan Kabupaten Madiun (Tintingan Semantik)",
+          "evidence_role": "scholarly_expository_register",
+          "consulted_scope": "Attests impersonal evidential phrasing, andharan, digunakake, and nuduhake in scholarly prose.",
+          "excerpt_sha256": "98376559ecb4bd83499943848dd2a8096605b7799f66dfacd861dab8e4ebbea6"
         }
       ],
       "not_found_or_scope_limit": "No specialized Javanese mathematical attestation is claimed; the listed evidence supports only the roles and scopes stated.",
@@ -10265,9 +10387,9 @@
       "precise_review_question": "For formal written Javanese, is “tautologi; akibat semantis; kontingen” clear and idiomatic for the constrained sense “tautology; semantic entailment or consequence; contingent”, or should one of these be preferred: formula mesthi bener; konsekuensi semantis; gumantung kahanan?",
       "source_audit_ids": [],
       "retrospective_basis": {
-        "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "ledger_record_date": "2026-09-09",
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -10275,9 +10397,9 @@
       "decision_id": "JV-T085",
       "history": "contemporaneous",
       "english_term_or_issue": "formation sequence; unique readability; parsing",
-      "chosen_javanese": "urutan pambentukan; bisa kawaca kanthi unik; uraian",
-      "chosen_sense_and_constraints": "Prefer transparent phrases and retain the already established urutan distinction. OLP-0059 and OLP-0060 give the precise unique-decomposition and finite-sequence criteria.",
-      "status": "provisional_descriptive_rendering",
+      "chosen_javanese": "urutan pambentukan; mung bisa diwaca kanthi siji cara; uraian",
+      "chosen_sense_and_constraints": "Use transparent descriptive phrases in academic prose. OLP-0057 replaces the awkward bisa kawaca kanthi unik with mung bisa diwaca kanthi siji cara while preserving the claim that a properly formed expression has essentially one formation. OLP-0059 and OLP-0060 give the exact finite-sequence and unique-decomposition criteria; parsing terminology remains provisional.",
+      "status": "revalidated_provisional_descriptive_rendering",
       "open_to_correction": true,
       "source_locations": [
         {
@@ -10319,13 +10441,13 @@
           "raw_file_sha256": "95b73d0939e578f0f020806ca164791fdd4438ab457119c17bfa00847716b12c"
         },
         {
-          "searched_term": "bisa kawaca kanthi unik",
+          "searched_term": "mung bisa diwaca kanthi siji cara",
           "found": true,
           "unit_id": "OLP-0057",
           "path": "translation/content/propositional-logic/syntax-and-semantics/introduction.tex",
           "line": 50,
-          "matched_text": "bisa kawaca kanthi unik",
-          "raw_file_sha256": "f69fa05e7359e5b13eba8b1bcb136c039366cf036b759ac564e4d2cdb53938b0"
+          "matched_text": "mung bisa diwaca kanthi siji cara",
+          "raw_file_sha256": "ebccab56ac6150820abc6807c57bfb908b48a98c549858e239a06b84dfaac063"
         },
         {
           "searched_term": "uraian",
@@ -10361,6 +10483,30 @@
           "evidence_role": "borrowing_policy",
           "consulted_scope": "Established adapted spellings are retained; foreign suffixes absorbed with whole words. Supports controlled provisional borrowing, not attestation of himpunan or ekstensionalitas.",
           "excerpt_sha256": "7902184510d01a3d274ffcafd8b1fa9568728bc51bffccdca30faf9104be6d83"
+        },
+        {
+          "passage_id": "JV-P025",
+          "source_id": "JV-C006",
+          "authority_title": "Sesambungan Sintagmatik sajrone Jenenge Bocah kang Lair Taun 2010-2015 ing Kecamatan Saradan Kabupaten Madiun (Tintingan Semantik)",
+          "evidence_role": "scholarly_methodological_register",
+          "consulted_scope": "Attests extended impersonal academic definition prose and the sequence sistematis, faktual, lan akurat. It supports prose register and rigorous-description wording, not a new mathematical claim.",
+          "excerpt_sha256": "2d19b175c3e72f126582c884a7cf09d829e71c0849c98ad0d6f3aedc0b2b7261"
+        },
+        {
+          "passage_id": "JV-P026",
+          "source_id": "JV-C006",
+          "authority_title": "Sesambungan Sintagmatik sajrone Jenenge Bocah kang Lair Taun 2010-2015 ing Kecamatan Saradan Kabupaten Madiun (Tintingan Semantik)",
+          "evidence_role": "scholarly_expository_register",
+          "consulted_scope": "Attests impersonal evidential phrasing, andharan, digunakake, and nuduhake in scholarly prose.",
+          "excerpt_sha256": "98376559ecb4bd83499943848dd2a8096605b7799f66dfacd861dab8e4ebbea6"
+        },
+        {
+          "passage_id": "JV-P027",
+          "source_id": "JV-C006",
+          "authority_title": "Sesambungan Sintagmatik sajrone Jenenge Bocah kang Lair Taun 2010-2015 ing Kecamatan Saradan Kabupaten Madiun (Tintingan Semantik)",
+          "evidence_role": "scholarly_enumeration_register",
+          "consulted_scope": "Attests a numbered technical enumeration using yaiku and parenthetical terms in continuous Javanese academic prose. It is linguistic theory, not mathematical logic evidence.",
+          "excerpt_sha256": "dd14ed2336f1c4be26589338cf4ad78bc4c20b4abe57edca0dfae15244aa83cc"
         }
       ],
       "not_found_or_scope_limit": "No specialized Javanese mathematical attestation is claimed; the listed evidence supports only the roles and scopes stated.",
@@ -10368,12 +10514,12 @@
         "rerangken pambentukan; kawacanan tunggal; pamarsingan"
       ],
       "uncertainty": "medium_to_high: provisional technical wording; mathematical sense is fixed but Javanese wording may change",
-      "precise_review_question": "For formal written Javanese, is “urutan pambentukan; bisa kawaca kanthi unik; uraian” clear and idiomatic for the constrained sense “formation sequence; unique readability; parsing”, or should one of these be preferred: rerangken pambentukan; kawacanan tunggal; pamarsingan?",
+      "precise_review_question": "For formal written Javanese, is “urutan pambentukan; mung bisa diwaca kanthi siji cara; uraian” clear and idiomatic for the constrained sense “formation sequence; unique readability; parsing”, or should one of these be preferred: rerangken pambentukan; kawacanan tunggal; pamarsingan?",
       "source_audit_ids": [],
       "retrospective_basis": {
-        "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "ledger_record_date": "2026-09-09",
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -10486,8 +10632,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -10530,8 +10676,8 @@
       ],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -10678,8 +10824,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -10816,8 +10962,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -10930,8 +11076,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -11054,8 +11200,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -11210,8 +11356,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -11318,8 +11464,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -11455,8 +11601,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -11595,8 +11741,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -11640,8 +11786,8 @@
       ],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -11736,8 +11882,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -11850,8 +11996,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -12008,8 +12154,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -12130,8 +12276,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -12268,8 +12414,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -12342,8 +12488,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -12389,8 +12535,8 @@
       ],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -12546,8 +12692,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -12669,8 +12815,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -12714,8 +12860,8 @@
       ],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -12866,8 +13012,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -12978,8 +13124,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -13032,8 +13178,8 @@
       ],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -13146,8 +13292,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -13196,8 +13342,8 @@
       ],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -13310,8 +13456,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -13371,8 +13517,8 @@
       ],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -13561,8 +13707,8 @@
       "source_audit_ids": [],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -13609,8 +13755,8 @@
       ],
       "retrospective_basis": {
         "ledger_record_date": "2026-09-05",
-        "term_ledger_sha256": "8e7b1636742f0065c87e7aed72b97eeb2d3e13d6a4252af0b9cb93553caf4533",
-        "current_translation_coverage_sha256": "614b8684714d8c9b6aaedc6c601f96bc0b7b520aa19f3be3b92fc5e69cc16470"
+        "term_ledger_sha256": "8f1513a527b71a72cc32c51f171c562a744dd7868fbee18f0a0afe452609aab4",
+        "current_translation_coverage_sha256": "b013f00cce4eaeebf831368e9853df53f913aaf05f6860cfff5088fc520cb6b2"
       }
     },
     {
@@ -15331,10 +15477,10 @@
         {
           "unit_id": "OLP-0058",
           "path": "translation/content/propositional-logic/syntax-and-semantics/formulas.tex",
-          "line": 159,
-          "line_end": 162,
+          "line": 162,
+          "line_end": 165,
           "segment_id": "OLP-0058-P032",
-          "raw_file_sha256": "4970549092af228a0eaab6c3b16092aaaa67f3de2c7e39c1ed6d8df1eb587c11"
+          "raw_file_sha256": "06170578ee7451f257d92a43abc7034a1cd7d7a834eca98bf40afb7811805a32"
         },
         {
           "path": "editorial/ERRATA.md",
@@ -16732,6 +16878,88 @@
       "uncertainty": "low on the identified mathematical reading; medium on the most idiomatic Javanese explanation",
       "open_to_correction": true,
       "precise_review_question": "Does the disclosed self-map scope validate all three closure properties and the later sandwich construction?"
+    },
+    {
+      "record_type": "syntax_decision",
+      "record_kind": "syntax",
+      "decision_id": "JV-S001",
+      "history": "retrospective_later_revalidation_after_OLP0052_repair",
+      "review_priority": "high",
+      "unit_id": "OLP-0052",
+      "english_term_or_issue": "having parameters / free variables are all displayed",
+      "issue": "The parameter shorthand must preserve the distinction among parameter objects, displayed free variables and their outer universal closure.",
+      "chosen_wording_or_reading": "duwe paramèter / kabeh variabel bebas ing formula kasebut wis dituduhake",
+      "chosen_sense_and_constraints": "Having parameters means working with phi(x,c1,...,ck); explicitly, all free variables v1 through vk are displayed before the formula universally closes them outside the induction implication.",
+      "source_location": {
+        "unit_id": "OLP-0052",
+        "path": "upstream/content/sets-functions-relations/infinite/dedekind-induction.tex",
+        "line": 51,
+        "matched_text": "In this result, we spoke of a formula",
+        "raw_file_sha256": "ea5f6c80d70abca6f5598de3e221c2f60524c40cbf533ae8a5336d5bb7186537"
+      },
+      "target_locations": [
+        {
+          "unit_id": "OLP-0052",
+          "path": "translation/content/sets-functions-relations/infinite/dedekind-induction.tex",
+          "line": 53,
+          "line_end": 66,
+          "segment_id": "OLP-0052-P012",
+          "raw_file_sha256": "c3143b9c50bf9bf08c9a953d56254ba17bdf28632f5195d3ffc6b442968a9d88"
+        }
+      ],
+      "actual_authorities_checked": [
+        {
+          "passage_id": "JV-P024",
+          "source_id": "JV-C006",
+          "authority_title": "Sesambungan Sintagmatik sajrone Jenenge Bocah kang Lair Taun 2010-2015 ing Kecamatan Saradan Kabupaten Madiun (Tintingan Semantik)",
+          "evidence_role": "scholarly_equivalence_and_context_register",
+          "consulted_scope": "Attests ekuivalensi, fungsi, konteks, and semantik in continuous Javanese scholarly prose. Exact mathematical senses remain controlled by the English source and formal notation.",
+          "excerpt_sha256": "e45ca86745091c52fb75bd309cc387694ce0d651846e3b540bf20aac0c499b1e"
+        },
+        {
+          "passage_id": "JV-P002",
+          "source_id": "JV-C001",
+          "authority_title": "Dumadine Jagad sajrone Teks Widya Kirana (Tintingan Filsafat)",
+          "evidence_role": "academic_prose_register",
+          "consulted_scope": "Observed explanatory ngoko morphology/lexicon: yaiku, kang, iki, nggunakake, njlentrehake. Register classification is editorial inference from prose, not a quoted author label.",
+          "excerpt_sha256": "8ceb908a98c7b6119a7b28cd9c2ddbfd47a2a3f4d72df2a5366aa9e0ac88e10e"
+        },
+        {
+          "passage_id": "JV-P026",
+          "source_id": "JV-C006",
+          "authority_title": "Sesambungan Sintagmatik sajrone Jenenge Bocah kang Lair Taun 2010-2015 ing Kecamatan Saradan Kabupaten Madiun (Tintingan Semantik)",
+          "evidence_role": "scholarly_expository_register",
+          "consulted_scope": "Attests impersonal evidential phrasing, andharan, digunakake, and nuduhake in scholarly prose.",
+          "excerpt_sha256": "98376559ecb4bd83499943848dd2a8096605b7799f66dfacd861dab8e4ebbea6"
+        },
+        {
+          "passage_id": "JV-P006",
+          "source_id": "JV-C002",
+          "authority_title": "Pedoman Umum Ejaan Bahasa Jawa Huruf Latin yang Disempurnakan, Edisi Revisi",
+          "evidence_role": "borrowing_policy",
+          "consulted_scope": "Established adapted spellings are retained; foreign suffixes absorbed with whole words. Supports controlled provisional borrowing, not attestation of himpunan or ekstensionalitas.",
+          "excerpt_sha256": "7902184510d01a3d274ffcafd8b1fa9568728bc51bffccdca30faf9104be6d83"
+        },
+        {
+          "passage_id": "JV-P005",
+          "source_id": "JV-C002",
+          "authority_title": "Pedoman Umum Ejaan Bahasa Jawa Huruf Latin yang Disempurnakan, Edisi Revisi",
+          "evidence_role": "orthography",
+          "consulted_scope": "Preserve distinct digraph spelling (dhasar, padha, etc.); PDF is imposed two-up and printed pages are nonsequential.",
+          "excerpt_sha256": "4b7165a4bd3a10f9e41f7bf326087832bcb50482fb3447d6589b766b8d583404"
+        }
+      ],
+      "not_found_or_scope_limit": "JV-P024 supports bebas only in linguistic free variation; JV-P006 supports controlled borrowing in principle; the other passages support academic register or orthography. None directly attests the formal compounds variabel bebas or paramèter.",
+      "alternatives_for_review": [
+        "variabel bebane",
+        "replace the valid spelling paramèter because of a nonexistent encoding defect"
+      ],
+      "alternative_disposition": "rejected",
+      "alternative_reason": "The first form does not identify free variables, and the second contradicts direct UTF-8 inspection of four U+00E8 occurrences with no U+FFFD.",
+      "uncertainty": "medium: the exact mathematical roles are fixed by the displayed source formulas, while both specialist Javanese expressions remain provisional",
+      "provisional": true,
+      "open_to_correction": true,
+      "precise_review_question": "Are variabel bebas and paramèter the clearest formal-written Javanese terms for the displayed free variables and parameter shorthand in this formula schema?"
     }
   ],
   "occurrences": [
@@ -18993,13 +19221,13 @@
       "segment_id": "",
       "script": "Latn",
       "locale": "jv-Latn-ID",
-      "chosen_rendering": "rambang (numerical alternative); himpunan pangkat (retained); technical term undecided",
+      "chosen_rendering": "rambang (numerical alternative); himpunan pangkat (retained); term (provisional technical borrowing)",
       "decision_status": "mixed_attestation_with_scope_limits",
       "review_priority": "tracked",
       "accepted_reader_release": "",
       "accepted_pdf_page": "",
       "page_binding_status": "pending_next_accepted_reader_pagination",
-      "expert_question": "For formal written Javanese, is “rambang (numerical alternative); himpunan pangkat (retained); technical term undecided” clear and idiomatic for the constrained sense “numerical power; power set; algebraic or logical term”, or should one of these be preferred: pangkat; power set; suku?"
+      "expert_question": "For formal written Javanese, is “rambang (numerical alternative); himpunan pangkat (retained); term (provisional technical borrowing)” clear and idiomatic for the constrained sense “numerical power; power set; algebraic or logical term”, or should one of these be preferred: pangkat; power set; suku?"
     },
     {
       "decision_id": "JV-T048",
@@ -20468,7 +20696,7 @@
       "script": "Latn",
       "locale": "jv-Latn-ID",
       "chosen_rendering": "logika proposisional; variabel proposisional; konektif proposisional utawa logis",
-      "decision_status": "provisional_adapted_technical_borrowing",
+      "decision_status": "revalidated_provisional_adapted_technical_borrowing",
       "review_priority": "tracked",
       "accepted_reader_release": "",
       "accepted_pdf_page": "",
@@ -20484,14 +20712,14 @@
       "source_path": "upstream/content/propositional-logic/syntax-and-semantics/formulas.tex",
       "source_line": 27,
       "target_path": "translation/content/propositional-logic/syntax-and-semantics/formulas.tex",
-      "target_line_start": 27,
-      "target_line_end": 27,
+      "target_line_start": 28,
+      "target_line_end": 28,
       "segment_id": "",
       "script": "Latn",
       "locale": "jv-Latn-ID",
       "chosen_rendering": "negasi; konjungsi; disjungsi; kondisional material; bikondisional",
-      "decision_status": "provisional_adapted_technical_borrowing",
-      "review_priority": "P2-specialized-language-review",
+      "decision_status": "revalidated_provisional_adapted_technical_borrowing",
+      "review_priority": "tracked",
       "accepted_reader_release": "",
       "accepted_pdf_page": "",
       "page_binding_status": "pending_next_accepted_reader_pagination",
@@ -20506,14 +20734,14 @@
       "source_path": "upstream/content/propositional-logic/syntax-and-semantics/formulas.tex",
       "source_line": 28,
       "target_path": "translation/content/propositional-logic/syntax-and-semantics/formulas.tex",
-      "target_line_start": 28,
-      "target_line_end": 28,
+      "target_line_start": 29,
+      "target_line_end": 29,
       "segment_id": "",
       "script": "Latn",
       "locale": "jv-Latn-ID",
       "chosen_rendering": "negasi; konjungsi; disjungsi; kondisional material; bikondisional",
-      "decision_status": "provisional_adapted_technical_borrowing",
-      "review_priority": "P2-specialized-language-review",
+      "decision_status": "revalidated_provisional_adapted_technical_borrowing",
+      "review_priority": "tracked",
       "accepted_reader_release": "",
       "accepted_pdf_page": "",
       "page_binding_status": "pending_next_accepted_reader_pagination",
@@ -20528,14 +20756,14 @@
       "source_path": "upstream/content/propositional-logic/syntax-and-semantics/formulas.tex",
       "source_line": 29,
       "target_path": "translation/content/propositional-logic/syntax-and-semantics/formulas.tex",
-      "target_line_start": 29,
-      "target_line_end": 29,
+      "target_line_start": 30,
+      "target_line_end": 30,
       "segment_id": "",
       "script": "Latn",
       "locale": "jv-Latn-ID",
       "chosen_rendering": "negasi; konjungsi; disjungsi; kondisional material; bikondisional",
-      "decision_status": "provisional_adapted_technical_borrowing",
-      "review_priority": "P2-specialized-language-review",
+      "decision_status": "revalidated_provisional_adapted_technical_borrowing",
+      "review_priority": "tracked",
       "accepted_reader_release": "",
       "accepted_pdf_page": "",
       "page_binding_status": "pending_next_accepted_reader_pagination",
@@ -20556,8 +20784,8 @@
       "script": "Latn",
       "locale": "jv-Latn-ID",
       "chosen_rendering": "negasi; konjungsi; disjungsi; kondisional material; bikondisional",
-      "decision_status": "provisional_adapted_technical_borrowing",
-      "review_priority": "P2-specialized-language-review",
+      "decision_status": "revalidated_provisional_adapted_technical_borrowing",
+      "review_priority": "tracked",
       "accepted_reader_release": "",
       "accepted_pdf_page": "",
       "page_binding_status": "pending_next_accepted_reader_pagination",
@@ -20572,14 +20800,14 @@
       "source_path": "upstream/content/propositional-logic/syntax-and-semantics/formulas.tex",
       "source_line": 31,
       "target_path": "translation/content/propositional-logic/syntax-and-semantics/formulas.tex",
-      "target_line_start": 70,
-      "target_line_end": 70,
+      "target_line_start": 71,
+      "target_line_end": 71,
       "segment_id": "",
       "script": "Latn",
       "locale": "jv-Latn-ID",
       "chosen_rendering": "negasi; konjungsi; disjungsi; kondisional material; bikondisional",
-      "decision_status": "provisional_adapted_technical_borrowing",
-      "review_priority": "P2-specialized-language-review",
+      "decision_status": "revalidated_provisional_adapted_technical_borrowing",
+      "review_priority": "tracked",
       "accepted_reader_release": "",
       "accepted_pdf_page": "",
       "page_binding_status": "pending_next_accepted_reader_pagination",
@@ -20600,8 +20828,8 @@
       "script": "Latn",
       "locale": "jv-Latn-ID",
       "chosen_rendering": "sintaksis; semantik; simbol primitif utawa kang ditetepake; formula atomik; identitas sintaktis",
-      "decision_status": "provisional_borrowing_and_descriptive_rendering",
-      "review_priority": "tracked",
+      "decision_status": "revalidated_provisional_borrowing_and_descriptive_rendering",
+      "review_priority": "P2-specialized-language-review",
       "accepted_reader_release": "",
       "accepted_pdf_page": "",
       "page_binding_status": "pending_next_accepted_reader_pagination",
@@ -20622,8 +20850,8 @@
       "script": "Latn",
       "locale": "jv-Latn-ID",
       "chosen_rendering": "sintaksis; semantik; simbol primitif utawa kang ditetepake; formula atomik; identitas sintaktis",
-      "decision_status": "provisional_borrowing_and_descriptive_rendering",
-      "review_priority": "tracked",
+      "decision_status": "revalidated_provisional_borrowing_and_descriptive_rendering",
+      "review_priority": "P2-specialized-language-review",
       "accepted_reader_release": "",
       "accepted_pdf_page": "",
       "page_binding_status": "pending_next_accepted_reader_pagination",
@@ -20638,14 +20866,14 @@
       "source_path": "upstream/content/propositional-logic/syntax-and-semantics/formulas.tex",
       "source_line": 113,
       "target_path": "translation/content/propositional-logic/syntax-and-semantics/formulas.tex",
-      "target_line_start": 113,
-      "target_line_end": 113,
+      "target_line_start": 117,
+      "target_line_end": 117,
       "segment_id": "",
       "script": "Latn",
       "locale": "jv-Latn-ID",
       "chosen_rendering": "sintaksis; semantik; simbol primitif utawa kang ditetepake; formula atomik; identitas sintaktis",
-      "decision_status": "provisional_borrowing_and_descriptive_rendering",
-      "review_priority": "tracked",
+      "decision_status": "revalidated_provisional_borrowing_and_descriptive_rendering",
+      "review_priority": "P2-specialized-language-review",
       "accepted_reader_release": "",
       "accepted_pdf_page": "",
       "page_binding_status": "pending_next_accepted_reader_pagination",
@@ -20660,14 +20888,14 @@
       "source_path": "upstream/content/propositional-logic/syntax-and-semantics/formulas.tex",
       "source_line": 167,
       "target_path": "translation/content/propositional-logic/syntax-and-semantics/formulas.tex",
-      "target_line_start": 170,
-      "target_line_end": 170,
+      "target_line_start": 173,
+      "target_line_end": 173,
       "segment_id": "",
       "script": "Latn",
       "locale": "jv-Latn-ID",
       "chosen_rendering": "sintaksis; semantik; simbol primitif utawa kang ditetepake; formula atomik; identitas sintaktis",
-      "decision_status": "provisional_borrowing_and_descriptive_rendering",
-      "review_priority": "tracked",
+      "decision_status": "revalidated_provisional_borrowing_and_descriptive_rendering",
+      "review_priority": "P2-specialized-language-review",
       "accepted_reader_release": "",
       "accepted_pdf_page": "",
       "page_binding_status": "pending_next_accepted_reader_pagination",
@@ -20677,18 +20905,18 @@
       "decision_id": "JV-T082",
       "record_type": "terminology_decision",
       "occurrence_index": 1,
-      "unit_id": "OLP-0057",
-      "section": "propositional-logic/syntax-and-semantics/introduction",
+      "unit_id": "OLP-0055",
+      "section": "propositional-logic/propositional-logic",
       "source_path": "upstream/content/propositional-logic/propositional-logic.tex",
       "source_line": 22,
-      "target_path": "translation/content/propositional-logic/syntax-and-semantics/introduction.tex",
+      "target_path": "translation/content/propositional-logic/propositional-logic.tex",
       "target_line_start": 21,
       "target_line_end": 21,
       "segment_id": "",
       "script": "Latn",
       "locale": "jv-Latn-ID",
       "chosen_rendering": "fungsional tumrap kabeneran; nilai kabeneran; valuasi; fungsi evaluasi",
-      "decision_status": "provisional_specialization_and_borrowing",
+      "decision_status": "revalidated_provisional_specialization_and_borrowing",
       "review_priority": "P2-specialized-language-review",
       "accepted_reader_release": "",
       "accepted_pdf_page": "",
@@ -20710,7 +20938,7 @@
       "script": "Latn",
       "locale": "jv-Latn-ID",
       "chosen_rendering": "fungsional tumrap kabeneran; nilai kabeneran; valuasi; fungsi evaluasi",
-      "decision_status": "provisional_specialization_and_borrowing",
+      "decision_status": "revalidated_provisional_specialization_and_borrowing",
       "review_priority": "P2-specialized-language-review",
       "accepted_reader_release": "",
       "accepted_pdf_page": "",
@@ -20721,18 +20949,18 @@
       "decision_id": "JV-T082",
       "record_type": "terminology_decision",
       "occurrence_index": 3,
-      "unit_id": "OLP-0061",
-      "section": "propositional-logic/syntax-and-semantics/valuations-sat",
+      "unit_id": "OLP-0057",
+      "section": "propositional-logic/syntax-and-semantics/introduction",
       "source_path": "upstream/content/propositional-logic/propositional-logic.tex",
       "source_line": 18,
-      "target_path": "translation/content/propositional-logic/syntax-and-semantics/valuations-sat.tex",
-      "target_line_start": 22,
-      "target_line_end": 22,
+      "target_path": "translation/content/propositional-logic/syntax-and-semantics/introduction.tex",
+      "target_line_start": 60,
+      "target_line_end": 60,
       "segment_id": "",
       "script": "Latn",
       "locale": "jv-Latn-ID",
       "chosen_rendering": "fungsional tumrap kabeneran; nilai kabeneran; valuasi; fungsi evaluasi",
-      "decision_status": "provisional_specialization_and_borrowing",
+      "decision_status": "revalidated_provisional_specialization_and_borrowing",
       "review_priority": "P2-specialized-language-review",
       "accepted_reader_release": "",
       "accepted_pdf_page": "",
@@ -20754,7 +20982,7 @@
       "script": "Latn",
       "locale": "jv-Latn-ID",
       "chosen_rendering": "fungsional tumrap kabeneran; nilai kabeneran; valuasi; fungsi evaluasi",
-      "decision_status": "provisional_specialization_and_borrowing",
+      "decision_status": "revalidated_provisional_specialization_and_borrowing",
       "review_priority": "P2-specialized-language-review",
       "accepted_reader_release": "",
       "accepted_pdf_page": "",
@@ -20776,7 +21004,7 @@
       "script": "Latn",
       "locale": "jv-Latn-ID",
       "chosen_rendering": "panyukupan; bisa dicukupi; ora bisa dicukupi",
-      "decision_status": "provisional_descriptive_specialization",
+      "decision_status": "revalidated_provisional_descriptive_specialization",
       "review_priority": "P2-specialized-language-review",
       "accepted_reader_release": "",
       "accepted_pdf_page": "",
@@ -20792,13 +21020,13 @@
       "source_path": "upstream/content/propositional-logic/syntax-and-semantics/introduction.tex",
       "source_line": 71,
       "target_path": "translation/content/propositional-logic/syntax-and-semantics/introduction.tex",
-      "target_line_start": 68,
-      "target_line_end": 68,
+      "target_line_start": 69,
+      "target_line_end": 69,
       "segment_id": "",
       "script": "Latn",
       "locale": "jv-Latn-ID",
       "chosen_rendering": "panyukupan; bisa dicukupi; ora bisa dicukupi",
-      "decision_status": "provisional_descriptive_specialization",
+      "decision_status": "revalidated_provisional_descriptive_specialization",
       "review_priority": "P2-specialized-language-review",
       "accepted_reader_release": "",
       "accepted_pdf_page": "",
@@ -20820,7 +21048,7 @@
       "script": "Latn",
       "locale": "jv-Latn-ID",
       "chosen_rendering": "panyukupan; bisa dicukupi; ora bisa dicukupi",
-      "decision_status": "provisional_descriptive_specialization",
+      "decision_status": "revalidated_provisional_descriptive_specialization",
       "review_priority": "P2-specialized-language-review",
       "accepted_reader_release": "",
       "accepted_pdf_page": "",
@@ -20836,13 +21064,13 @@
       "source_path": "upstream/content/propositional-logic/syntax-and-semantics/introduction.tex",
       "source_line": 65,
       "target_path": "translation/content/propositional-logic/syntax-and-semantics/introduction.tex",
-      "target_line_start": 67,
-      "target_line_end": 67,
+      "target_line_start": 68,
+      "target_line_end": 68,
       "segment_id": "",
       "script": "Latn",
       "locale": "jv-Latn-ID",
       "chosen_rendering": "tautologi; akibat semantis; kontingen",
-      "decision_status": "provisional_borrowing_and_descriptive_rendering",
+      "decision_status": "revalidated_provisional_borrowing_and_descriptive_rendering",
       "review_priority": "tracked",
       "accepted_reader_release": "",
       "accepted_pdf_page": "",
@@ -20858,13 +21086,13 @@
       "source_path": "upstream/content/propositional-logic/syntax-and-semantics/introduction.tex",
       "source_line": 24,
       "target_path": "translation/content/propositional-logic/syntax-and-semantics/introduction.tex",
-      "target_line_start": 67,
-      "target_line_end": 67,
+      "target_line_start": 68,
+      "target_line_end": 68,
       "segment_id": "",
       "script": "Latn",
       "locale": "jv-Latn-ID",
       "chosen_rendering": "tautologi; akibat semantis; kontingen",
-      "decision_status": "provisional_borrowing_and_descriptive_rendering",
+      "decision_status": "revalidated_provisional_borrowing_and_descriptive_rendering",
       "review_priority": "tracked",
       "accepted_reader_release": "",
       "accepted_pdf_page": "",
@@ -20886,7 +21114,7 @@
       "script": "Latn",
       "locale": "jv-Latn-ID",
       "chosen_rendering": "tautologi; akibat semantis; kontingen",
-      "decision_status": "provisional_borrowing_and_descriptive_rendering",
+      "decision_status": "revalidated_provisional_borrowing_and_descriptive_rendering",
       "review_priority": "tracked",
       "accepted_reader_release": "",
       "accepted_pdf_page": "",
@@ -20907,13 +21135,13 @@
       "segment_id": "",
       "script": "Latn",
       "locale": "jv-Latn-ID",
-      "chosen_rendering": "urutan pambentukan; bisa kawaca kanthi unik; uraian",
-      "decision_status": "provisional_descriptive_rendering",
+      "chosen_rendering": "urutan pambentukan; mung bisa diwaca kanthi siji cara; uraian",
+      "decision_status": "revalidated_provisional_descriptive_rendering",
       "review_priority": "P2-specialized-language-review",
       "accepted_reader_release": "",
       "accepted_pdf_page": "",
       "page_binding_status": "pending_next_accepted_reader_pagination",
-      "expert_question": "For formal written Javanese, is “urutan pambentukan; bisa kawaca kanthi unik; uraian” clear and idiomatic for the constrained sense “formation sequence; unique readability; parsing”, or should one of these be preferred: rerangken pambentukan; kawacanan tunggal; pamarsingan?"
+      "expert_question": "For formal written Javanese, is “urutan pambentukan; mung bisa diwaca kanthi siji cara; uraian” clear and idiomatic for the constrained sense “formation sequence; unique readability; parsing”, or should one of these be preferred: rerangken pambentukan; kawacanan tunggal; pamarsingan?"
     },
     {
       "decision_id": "JV-T085",
@@ -20929,13 +21157,13 @@
       "segment_id": "",
       "script": "Latn",
       "locale": "jv-Latn-ID",
-      "chosen_rendering": "urutan pambentukan; bisa kawaca kanthi unik; uraian",
-      "decision_status": "provisional_descriptive_rendering",
+      "chosen_rendering": "urutan pambentukan; mung bisa diwaca kanthi siji cara; uraian",
+      "decision_status": "revalidated_provisional_descriptive_rendering",
       "review_priority": "P2-specialized-language-review",
       "accepted_reader_release": "",
       "accepted_pdf_page": "",
       "page_binding_status": "pending_next_accepted_reader_pagination",
-      "expert_question": "For formal written Javanese, is “urutan pambentukan; bisa kawaca kanthi unik; uraian” clear and idiomatic for the constrained sense “formation sequence; unique readability; parsing”, or should one of these be preferred: rerangken pambentukan; kawacanan tunggal; pamarsingan?"
+      "expert_question": "For formal written Javanese, is “urutan pambentukan; mung bisa diwaca kanthi siji cara; uraian” clear and idiomatic for the constrained sense “formation sequence; unique readability; parsing”, or should one of these be preferred: rerangken pambentukan; kawacanan tunggal; pamarsingan?"
     },
     {
       "decision_id": "JV-T085",
@@ -20951,13 +21179,13 @@
       "segment_id": "",
       "script": "Latn",
       "locale": "jv-Latn-ID",
-      "chosen_rendering": "urutan pambentukan; bisa kawaca kanthi unik; uraian",
-      "decision_status": "provisional_descriptive_rendering",
+      "chosen_rendering": "urutan pambentukan; mung bisa diwaca kanthi siji cara; uraian",
+      "decision_status": "revalidated_provisional_descriptive_rendering",
       "review_priority": "P2-specialized-language-review",
       "accepted_reader_release": "",
       "accepted_pdf_page": "",
       "page_binding_status": "pending_next_accepted_reader_pagination",
-      "expert_question": "For formal written Javanese, is “urutan pambentukan; bisa kawaca kanthi unik; uraian” clear and idiomatic for the constrained sense “formation sequence; unique readability; parsing”, or should one of these be preferred: rerangken pambentukan; kawacanan tunggal; pamarsingan?"
+      "expert_question": "For formal written Javanese, is “urutan pambentukan; mung bisa diwaca kanthi siji cara; uraian” clear and idiomatic for the constrained sense “formation sequence; unique readability; parsing”, or should one of these be preferred: rerangken pambentukan; kawacanan tunggal; pamarsingan?"
     },
     {
       "decision_id": "JV-T086",
@@ -23938,8 +24166,8 @@
       "source_path": "upstream/content/propositional-logic/syntax-and-semantics/formulas.tex",
       "source_line": 159,
       "target_path": "translation/content/propositional-logic/syntax-and-semantics/formulas.tex",
-      "target_line_start": 159,
-      "target_line_end": 162,
+      "target_line_start": 162,
+      "target_line_end": 165,
       "segment_id": "OLP-0058-P032",
       "script": "Latn",
       "locale": "jv-Latn-ID",
@@ -25160,6 +25388,28 @@
       "accepted_pdf_page": "",
       "page_binding_status": "not_a_reader_body_occurrence",
       "expert_question": "Does the disclosed self-map scope validate all three closure properties and the later sandwich construction?"
+    },
+    {
+      "decision_id": "JV-S001",
+      "record_type": "syntax_decision",
+      "occurrence_index": 1,
+      "unit_id": "OLP-0052",
+      "section": "sets-functions-relations/infinite/dedekind-induction",
+      "source_path": "upstream/content/sets-functions-relations/infinite/dedekind-induction.tex",
+      "source_line": 51,
+      "target_path": "translation/content/sets-functions-relations/infinite/dedekind-induction.tex",
+      "target_line_start": 53,
+      "target_line_end": 66,
+      "segment_id": "OLP-0052-P012",
+      "script": "Latn",
+      "locale": "jv-Latn-ID",
+      "chosen_rendering": "duwe paramèter / kabeh variabel bebas ing formula kasebut wis dituduhake",
+      "decision_status": "retrospective_later_revalidation_after_OLP0052_repair",
+      "review_priority": "P1-source-or-semantic-review",
+      "accepted_reader_release": "",
+      "accepted_pdf_page": "",
+      "page_binding_status": "pending_next_accepted_reader_pagination",
+      "expert_question": "Are variabel bebas and paramèter the clearest formal-written Javanese terms for the displayed free variables and parameter shorthand in this formula schema?"
     }
   ]
 }

@@ -10,7 +10,7 @@
 
 \olsection{\usetoken{P}{formula} Proposisional}
 
-!!^{formula}s logika proposisional dibangun saka
+!!^{formula}s logika proposisional kawangun saka
 \emph{!!{propositional
     variable}s}\iftag{prvFalse}{\iftag{prvTrue}{,}{ lan} konstanta
   proposisional~$\lfalse$ kanggo kasalahan}{}\iftag{prvTrue}{\iftag{prvFalse}{
@@ -18,7 +18,8 @@
   \emph{konektif logis}.
 
 \begin{enumerate}
-\item !!^a{denumerable} himpunan~$\PVar$ saka !!{propositional variable}s $\Obj p_0$,
+\item Himpunan~$\PVar$ kang !!^a{denumerable} lan dumadi saka
+  !!{propositional variable}s $\Obj p_0$,
   $\Obj p_1$, \dots
 \tagitem{prvFalse}{Konstanta proposisional kanggo !!{falsity}~$\lfalse$.}{}
 \tagitem{prvTrue}{Konstanta proposisional kanggo !!{truth}~$\ltrue$.}{}
@@ -49,11 +50,11 @@ nggunakake simbol-simbol kang \emph{ditetepake} iki:
 \begin{tagblock}{defNot,defOr,defAnd,defIf,defIff,defTrue,defFalse,defEx,defAll}
 \begin{explain}
 Simbol kang ditetepake dudu perangan resmi saka basa, nanging
-ditepungake minangka cekakan informal: simbol iki ndadekake kita bisa
-nyekakake formula kang bakal dadi dawa banget yen kita mung nggunakake
-simbol primitif. Iki mesthi dadi kauntungan. Nanging, kauntungan kang
-luwih gedhe yaiku bukti dadi luwih cekak. Yen sawijining simbol iku
-primitif, simbol kasebut kudu ditangani dhewe ing bukti. Mula, saya
+ditepungake minangka cekakan ora resmi: simbol kasebut ndadekake kita bisa
+nyekakake formula kang bakal dadi dawa banget yen mung nggunakake
+simbol primitif. Iki cetha migunani. Nanging, paedahe kang luwih gedhe
+yaiku bukti dadi luwih cekak. Yen sawijining simbol iku primitif, simbol
+kasebut kudu ditangani kanthi kapisah ing bukti. Mula, saya
 akeh simbol primitif, saya dawa bukti kita.
 \end{explain}
 \end{tagblock}
@@ -61,7 +62,7 @@ akeh simbol primitif, saya dawa bukti kita.
 % Alternate symbols
 
 \begin{intro}
-Mbokmenawa sampeyan wis kulina karo istilah lan simbol kang beda saka
+Mbokmenawa pamaca wis kulina karo istilah lan simbol kang beda saka
 kang digunakake ing ndhuwur. Buku teks logika (lan guru) lumrahe
 nggunakake $\sim$, $\neg$, lan~!\ kanggo ``negasi'', sarta $\wedge$,
 $\cdot$, lan $\&$ kanggo ``konjungsi''. Simbol kang umum digunakake
@@ -70,10 +71,12 @@ $\Rightarrow$, lan $\supset$.
 \iftag{prvIff,defIff}{Simbol kanggo ``bikondisional'', ``bi-implikasi'',
   utawa ``ekuivalensi (material)'' yaiku $\leftrightarrow$,
   $\Leftrightarrow$, lan $\equiv$.}{}
-\iftag{prvFalse,defFalse}{Simbol $\lfalse$ duwe maneka jeneng,
-  yaiku ``kasalahan'', ``falsum'', ``absurditas'', utawa ``ngisor''.}{}
-\iftag{prvTrue,defTrue}{Simbol $\ltrue$ duwe maneka jeneng,
-  yaiku ``kabeneran'', ``verum'', utawa ``ndhuwur''.}{}
+\iftag{prvFalse,defFalse}{Ing pustaka logika basa Inggris, simbol
+  $\lfalse$ duwe maneka jeneng: ``falsity'' (kasalahan), ``falsum''
+  (istilah Latin), ``absurdity'' (absurditas), utawa ``bottom'' (ngisor).}{}
+\iftag{prvTrue,defTrue}{Ing pustaka logika basa Inggris, simbol
+  $\ltrue$ duwe maneka jeneng: ``truth'' (kabeneran), ``verum'' (istilah
+  Latin), utawa ``top'' (ndhuwur).}{}
 \end{intro}
 
 \begin{defn}[Formula]
@@ -103,15 +106,15 @@ ditemtokake kanthi induktif kaya mangkene:
 \tagitem{prvIff}{Yen $!A$ lan $!B$ iku !!{formula}s, mula $(!A \liff !B)$
   iku !!a{formula}.}{}
 
-\tagitem{limitClause}{Ora ana bab liyane kang dadi !!a{formula}.}{}
+\tagitem{limitClause}{Ora ana ekspresi liyane kang kalebu !!a{formula}.}{}
 \end{enumerate}
 \end{defn}
 
 \begin{explain}
 Definisi !!{formula}s iki minangka \emph{definisi induktif}.
-Pokoke, kita mbangun himpunan !!{formula}s liwat tahap kang tanpa
-wates cacahe. Ing tahap wiwitan, kita netepake kabeh formula atomik
-dadi formula; iki cocog karo sawetara kasus kapisan ing definisi,
+Sacara pokok, kita mbangun himpunan !!{formula}s lumantar tahap-tahap
+kang cacahe tanpa wates. Ing tahap wiwitan, kita netepake yen kabeh
+formula atomik iku formula; iki cocog karo sawetara kasus kapisan ing definisi,
 yaiku kasus kanggo
 \iftag{prvTrue}{$\ltrue$, }{}%
 \iftag{prvFalse}{$\lfalse$, }{}%
@@ -119,21 +122,21 @@ $\Obj p_i$. Mula, ``!!{formula} atomik'' ateges saben !!{formula}
 kanthi wujud iki.
 
 Kasus liyane ing definisi menehi aturan kanggo mbangun !!{formula}s
-anyar saka !!{formula}s kang wis dibangun. Ing tahap kapindho, kita
+anyar saka !!{formula}s kang wis kawangun. Ing tahap kapindho, kita
 bisa nggunakake aturan kasebut kanggo mbangun !!{formula}s saka
 !!{formula}s atomik. Ing tahap katelu, kita mbangun formula anyar saka
-formula atomik lan formula kang diasilake ing tahap kapindho, banjur
-sateruse. !!{formula} yaiku apa wae kang pungkasane dibangun ing
+formula atomik lan formula kang kawangun ing tahap kapindho, banjur
+sateruse. !!{formula} yaiku ekspresi apa wae kang pungkasane kawangun ing
 sawijining tahap kaya mangkono, lan ora ana liyane.
 \end{explain}
 
-Nalika nulis formula $(!B \ast !C)$ kang dibangun saka $!B$, $!C$
+Nalika nulis formula $(!B \ast !C)$ kang kawangun saka $!B$, $!C$
 nganggo konektif rong-papan~$\ast$, kita kerep ngilangake pasangan
 tandha kurung paling njaba lan mung nulis~$!B \ast !C$.
 
 \begin{tagblock}{defNot,defOr,defAnd,defIf,defIff,defTrue,defFalse,defEx,defAll}
 \begin{defn}
-Formula kang dibangun nganggo operator kang ditetepake kudu dimangerteni
+Formula kang kawangun nganggo operator kang ditetepake kudu dimangerteni
 kaya mangkene:
 
 \begin{tagenumerate}{defTrue,defFalse,defNot,defOr,defAnd,defIf,defIff,defEx,defAll}
@@ -174,13 +177,13 @@ rerangken simbol kang dawane padha lan ngemot simbol kang padha ing
 saben papan.
 \end{defn}
 
-Ing sisih loro simbol $\ident$ bisa ana rerangken kang diasilake kanthi
-konkatenasi. Tuladhane, $!A \ident (!B \lor !C)$ ateges: rerangken
-simbol~$!A$ padha karo rerangken kang diasilake kanthi ngrangkep tandha
+Simbol $\ident$ bisa diapit dening rerangken kang kawangun kanthi
+nyambungake rerangken utawa simbol siji sawise sijine. Tuladhane,
+$!A \ident (!B \lor !C)$ ateges: rerangken simbol~$!A$ padha karo
+rerangken kang kawangun kanthi nyambungake, miturut urutan iki, tandha
 kurung buka, rerangken $!B$, simbol $\lor$, rerangken~$!C$, lan tandha
-kurung tutup, miturut urutan iki. Yen iki kadadeyan, kita ngerti yen
-simbol kapisan $!A$ iku tandha kurung buka, $!A$ ngemot $!B$ minangka
-subrerangken (wiwit saka simbol kapindho), subrerangken kasebut banjur
-ditututi $\lor$, lan sateruse.
+kurung tutup. Yen mangkono, kita ngerti yen simbol kapisan $!A$ iku
+tandha kurung buka, $!A$ ngemot $!B$ minangka subrerangken (wiwit saka
+simbol kapindho), sawise subrerangken kasebut ana $\lor$, lan sateruse.
 
 \end{document}

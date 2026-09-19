@@ -508,7 +508,7 @@
       "checks": "Compared the part title, both editorial paragraphs, all seven imports and the FOL tag boundary directly. The first chapter's intentionally rudimentary scope, omitted proofs, reuse of first-order proof and completeness material, exclusion of predicates/terms/quantifiers, substitution of valuations for structures, and planned truth-functional-completeness expansion are all retained.",
       "reverse_sample": "This part presents classical propositional logic. It first supplies definitions and results, then reuses first-order proof-system and completeness chapters with the FOL tag false so their predicate, term and quantifier material is omitted and structures are replaced by valuations.",
       "source_sha256": "1af59702eeba2337e42385ae40315eb7761ca569b0991f0afe69ad74bd5258aa",
-      "translation_sha256": "a3b0158af5dc43f11f446c64f3449f00d357b10ecc595028c1be1905cf48a744"
+      "translation_sha256": "fc20546c3819bee0f98617e3ed63b2a830c797b552b5c7e36222c96e06094e53"
     },
     {
       "unit_id": "OLP-0056",
@@ -516,23 +516,23 @@
       "checks": "Compared the chapter title, editorial purpose and all six syntax-and-semantics imports. The text still identifies itself as a very short definitional summary and calls for a gentler, example-rich introduction to induction on formulas.",
       "reverse_sample": "The chapter gives a quick summary of definitions and imports the introduction, formulas, preliminaries, formation sequences, valuations with satisfaction, and semantic notions exactly once.",
       "source_sha256": "d99022091f0fa2b689b3a3e845c3908dd45c8a9c36c74f3d9c589d17d629f805",
-      "translation_sha256": "2e3790b7c9cc8ef49d694c1563cb78bf08bdc8f3d7bc1939eea0d99312401032"
+      "translation_sha256": "ce735d663973faee2e495ef4eae2537bfe4cd2f1bec9ac7b1ec3720681acedaa"
     },
     {
       "unit_id": "OLP-0057",
       "status": "pass",
-      "checks": "Compared all four exposition blocks and all 28 mathematical spans. The five connectives, two truth values, truth-function restriction, excluded modal/epistemic/temporal and many-valued concerns, disputed status of English conditionals, primitive-choice alternatives, inductive formation and unique readability, valuation semantics, recursive satisfaction, tautology, entailment and joint satisfiability are all distinguished and preserved.",
+      "checks": "Compared all four exposition blocks and all 28 mathematical spans. The five connectives, two truth values, truth-function restriction, excluded modal/epistemic/temporal and many-valued concerns, disputed status of English conditionals, primitive-choice alternatives, inductive formation and unique readability, valuation semantics, recursive satisfaction, tautology, entailment and joint satisfiability are all distinguished and preserved. The conditional truth-value dependency, one-reading formulation, valuation-to-formula satisfaction relation and shared satisfiability witness are now explicit.",
       "reverse_sample": "A valuation assigns true or false to each propositional variable and thereby fixes every formula's value. Satisfaction is defined inductively from the formula's structure; tautology quantifies over all valuations, entailment over every valuation satisfying the premises, and satisfiability requires one valuation satisfying all formulas together.",
       "source_sha256": "3040499782b5cc91adab39a5ba93031d4daf6d05ad084e97937d6f84ebed432c",
-      "translation_sha256": "f69fa05e7359e5b13eba8b1bcb136c039366cf036b759ac564e4d2cdb53938b0"
+      "translation_sha256": "ebccab56ac6150820abc6807c57bfb908b48a98c549858e239a06b84dfaac063"
     },
     {
       "unit_id": "OLP-0058",
       "status": "pass",
-      "checks": "Compared the language inventory, every tag-controlled primitive and defined connective, alternate-symbol note, inductive formula definition, two-stage explanation blocks, all seven abbreviation clauses, outer-parenthesis convention and string-level syntactic-identity definition. All 94 mathematical spans, 39 localization tokens, tags and environments are retained. OLPL-001 restores the single missing opening parenthesis in the source's not-A-or-B material-conditional branch and identifies that bounded repair inside the same list item.",
-      "reverse_sample": "Formulas are the least inductively generated set containing the atomic formulas and closed under the selected connectives. Defined symbols abbreviate formulas over the primitive basis. Syntactic identity compares equal-length symbol strings position by position. The corrected conditional abbreviation is the parenthesized disjunction of not A with B.",
+      "checks": "Compared the language inventory, every tag-controlled primitive and defined connective, alternate-symbol note, inductive formula definition, both stage-explanation blocks, all seven abbreviation clauses, outer-parenthesis convention and string-level syntactic-identity definition. All 36 blocks, 94 mathematical spans, 39 localization tokens, three protected commands, tags and environments are retained. The alternate names bottom, top, falsum and verum are now explicitly attributed to English or Latin rather than asserted as conventional Javanese names. Ordered string concatenation is expressed as joining strings or symbols one after another. OLPL-001 remains the sole disclosed mathematical exception: it restores the missing opening parenthesis in the not-A-or-B branch and identifies that bounded repair inside the same list item.",
+      "reverse_sample": "Formulas are the least inductively generated set containing the atomic formulas and closed under the selected connectives. Defined symbols abbreviate formulas over the primitive basis. English and Latin literature supplies several alternate names for the truth-value constants. Syntactic identity compares equal-length strings symbol by symbol, and concatenation joins ordered pieces end to end. The corrected conditional abbreviation is the parenthesized disjunction of not A with B.",
       "source_sha256": "f05ab9c5e23b362dbee9f6063f096f52ebc9e7f97b29acc9c07f18788f1f8f48",
-      "translation_sha256": "4970549092af228a0eaab6c3b16092aaaa67f3de2c7e39c1ed6d8df1eb587c11",
+      "translation_sha256": "06170578ee7451f257d92a43abc7034a1cd7d7a834eca98bf40afb7811805a32",
       "source_audit_ids": [
         "OLPL-001"
       ]

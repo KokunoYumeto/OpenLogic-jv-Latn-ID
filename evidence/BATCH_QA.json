@@ -1,6 +1,6 @@
 {
   "schema": "jv-batch-qa/1",
-  "utc": "2026-09-09T19:00:48.550470+00:00",
+  "utc": "2026-09-19T17:29:19.175121+00:00",
   "checked_units": 118,
   "structural_pass_units": 118,
   "total_units": 722,
@@ -1199,8 +1199,8 @@
       "unit_id": "OLP-0055",
       "source_path": "content/propositional-logic/propositional-logic.tex",
       "source_sha256": "1af59702eeba2337e42385ae40315eb7761ca569b0991f0afe69ad74bd5258aa",
-      "translation_sha256": "a3b0158af5dc43f11f446c64f3449f00d357b10ecc595028c1be1905cf48a744",
-      "translation_bytes": 1449,
+      "translation_sha256": "fc20546c3819bee0f98617e3ed63b2a830c797b552b5c7e36222c96e06094e53",
+      "translation_bytes": 1450,
       "checks": {
         "paragraph_count": true,
         "protected_commands": true,
@@ -1221,8 +1221,8 @@
       "unit_id": "OLP-0056",
       "source_path": "content/propositional-logic/syntax-and-semantics/syntax-and-semantics.tex",
       "source_sha256": "d99022091f0fa2b689b3a3e845c3908dd45c8a9c36c74f3d9c589d17d629f805",
-      "translation_sha256": "2e3790b7c9cc8ef49d694c1563cb78bf08bdc8f3d7bc1939eea0d99312401032",
-      "translation_bytes": 605,
+      "translation_sha256": "ce735d663973faee2e495ef4eae2537bfe4cd2f1bec9ac7b1ec3720681acedaa",
+      "translation_bytes": 626,
       "checks": {
         "paragraph_count": true,
         "protected_commands": true,
@@ -1243,8 +1243,8 @@
       "unit_id": "OLP-0057",
       "source_path": "content/propositional-logic/syntax-and-semantics/introduction.tex",
       "source_sha256": "3040499782b5cc91adab39a5ba93031d4daf6d05ad084e97937d6f84ebed432c",
-      "translation_sha256": "f69fa05e7359e5b13eba8b1bcb136c039366cf036b759ac564e4d2cdb53938b0",
-      "translation_bytes": 4389,
+      "translation_sha256": "ebccab56ac6150820abc6807c57bfb908b48a98c549858e239a06b84dfaac063",
+      "translation_bytes": 4398,
       "checks": {
         "paragraph_count": true,
         "protected_commands": true,
@@ -1265,8 +1265,8 @@
       "unit_id": "OLP-0058",
       "source_path": "content/propositional-logic/syntax-and-semantics/formulas.tex",
       "source_sha256": "f05ab9c5e23b362dbee9f6063f096f52ebc9e7f97b29acc9c07f18788f1f8f48",
-      "translation_sha256": "4970549092af228a0eaab6c3b16092aaaa67f3de2c7e39c1ed6d8df1eb587c11",
-      "translation_bytes": 7311,
+      "translation_sha256": "06170578ee7451f257d92a43abc7034a1cd7d7a834eca98bf40afb7811805a32",
+      "translation_bytes": 7521,
       "checks": {
         "paragraph_count": true,
         "protected_commands": true,

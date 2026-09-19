@@ -5,6 +5,15 @@ functions chapters. Its driver is edition/jv-sets.tex. Other translated sources
 are continuing work toward the full 722-file edition and are not automatically
 included in this reader.
 
+Release v0.2.0 has three editable forms for this bounded reader and source
+snapshot. The direct cumulative TeX is assembled from the 24 reader body units
+with `python tools/build-cumulative-tex.py`; the authoritative modular build is
+preserved in the full-source ZIP created from the exact Git commit with
+`python tools/build-release-sources.py`. The ZIP includes the master, all 118
+accepted translated source units, upstream styles/macros, bibliography,
+figures/assets, evidence, and reconstruction scripts. The EPUB is built from
+the same accepted localized TeX with `python tools/build-epub.py`.
+
 On Windows, install PowerShell and a TeX distribution providing pdfLaTeX,
 BibTeX, memoir, mathpazo, microtype, TikZ, and the packages required by the pinned
 OpenLogic style. Put pdflatex and bibtex on PATH, then run from this directory:
@@ -46,6 +55,11 @@ and alignment evidence against the checked-out bytes. Confirmed source repairs
 are normalized only at their exact asserted source strings. In OLP-0048 this
 includes the complete `\equivrep{f}{}\neq 0_\Rat` expression before command
 sequence comparison, matching its audited `0_\Real` target correction.
+
+The direct cumulative TeX release asset is intended to be placed in the
+extracted ZIP's `edition/` directory. It retains the reader preamble and
+inlines all 24 reader bodies and the errata so the released text is directly
+readable and editable; the modular files remain the build authority.
 
 The build produces a searchable visual PDF, without a claim of PDF/UA tagging,
 screen-reader certification, synthesized audio, or native-language review.

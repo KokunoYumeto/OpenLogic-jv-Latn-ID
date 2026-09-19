@@ -938,9 +938,60 @@ for u in units:
             if 'cacah' in tm[0].lower():consulted+=['JV-P014']
             if 'ping-pingan' in tm[0].lower():consulted+=['JV-P015']
             if 'jinis' in tm[0].lower():consulted+=['JV-P020']
+        if not same and u['unit_id']=='OLP-0055':
+            consulted={
+                4:['JV-P001','JV-P002','JV-P004','JV-P006','JV-P025'],
+                5:['JV-P001','JV-P002','JV-P004','JV-P005','JV-P006','JV-P008','JV-P025','JV-P026','JV-P027'],
+                6:['JV-P002','JV-P003','JV-P006','JV-P012','JV-P023','JV-P025','JV-P026'],
+            }[i]
+        if not same and u['unit_id']=='OLP-0056':
+            consulted={
+                4:['JV-P002','JV-P006','JV-P023','JV-P024','JV-P025'],
+                5:['JV-P002','JV-P005','JV-P006','JV-P008','JV-P025','JV-P026','JV-P027'],
+            }[i]
+        if not same and u['unit_id']=='OLP-0057':
+            consulted={
+                5:['JV-P002','JV-P025','JV-P026'],
+                6:['JV-P001','JV-P002','JV-P003','JV-P004','JV-P006','JV-P009','JV-P012','JV-P023','JV-P024','JV-P025','JV-P026'],
+                7:['JV-P001','JV-P002','JV-P004','JV-P006','JV-P023','JV-P025','JV-P026','JV-P027','JV-P038'],
+                8:['JV-P001','JV-P002','JV-P003','JV-P006','JV-P009','JV-P012','JV-P023','JV-P024','JV-P025','JV-P026','JV-P027'],
+                9:['JV-P001','JV-P002','JV-P003','JV-P006','JV-P008','JV-P009','JV-P023','JV-P024','JV-P025','JV-P026','JV-P027'],
+            }[i]
+        if not same and u['unit_id']=='OLP-0058':
+            consulted={
+                5:['JV-P001','JV-P002','JV-P004','JV-P006','JV-P025'],
+                6:['JV-P001','JV-P002','JV-P003','JV-P004','JV-P006','JV-P023','JV-P025','JV-P026'],
+                7:['JV-P001','JV-P002','JV-P003','JV-P004','JV-P006','JV-P014','JV-P025','JV-P026'],
+                8:['JV-P001','JV-P002','JV-P006','JV-P025'],
+                9:['JV-P001','JV-P002','JV-P004','JV-P006','JV-P023','JV-P024','JV-P025','JV-P026'],
+                10:['JV-P002','JV-P006','JV-P008','JV-P025','JV-P026'],
+                12:['JV-P001','JV-P002','JV-P003','JV-P004','JV-P006','JV-P023','JV-P024','JV-P025','JV-P026'],
+                13:['JV-P001','JV-P002','JV-P004','JV-P006','JV-P023','JV-P025','JV-P026'],
+                14:['JV-P001','JV-P002','JV-P003','JV-P004','JV-P006','JV-P025'],
+                15:['JV-P001','JV-P002','JV-P004','JV-P006','JV-P025'],
+                16:['JV-P001','JV-P002','JV-P004','JV-P005','JV-P006','JV-P025','JV-P026'],
+                17:['JV-P001','JV-P002','JV-P004','JV-P005','JV-P006','JV-P025','JV-P026'],
+                18:['JV-P001','JV-P002','JV-P004','JV-P005','JV-P006','JV-P025','JV-P026'],
+                19:['JV-P001','JV-P002','JV-P004','JV-P005','JV-P006','JV-P025','JV-P026'],
+                20:['JV-P001','JV-P002','JV-P004','JV-P005','JV-P006','JV-P025','JV-P026'],
+                21:['JV-P002','JV-P006','JV-P025','JV-P026'],
+                22:['JV-P002','JV-P006','JV-P025','JV-P026','JV-P027'],
+                23:['JV-P002','JV-P006','JV-P025','JV-P026','JV-P027'],
+                24:['JV-P002','JV-P006','JV-P025','JV-P026'],
+                25:['JV-P001','JV-P002','JV-P004','JV-P006','JV-P023','JV-P025','JV-P026'],
+                27:['JV-P001','JV-P002','JV-P003','JV-P004','JV-P006','JV-P023','JV-P025','JV-P026'],
+                28:['JV-P001','JV-P002','JV-P003','JV-P004','JV-P006','JV-P023','JV-P025','JV-P026'],
+                29:['JV-P001','JV-P002','JV-P003','JV-P004','JV-P006','JV-P023','JV-P025','JV-P026'],
+                30:['JV-P001','JV-P002','JV-P003','JV-P004','JV-P006','JV-P023','JV-P025','JV-P026'],
+                31:['JV-P001','JV-P002','JV-P003','JV-P004','JV-P006','JV-P023','JV-P025','JV-P026'],
+                32:['JV-P001','JV-P002','JV-P003','JV-P004','JV-P006','JV-P023','JV-P025','JV-P026'],
+                33:['JV-P001','JV-P002','JV-P003','JV-P004','JV-P006','JV-P023','JV-P024','JV-P025','JV-P026'],
+                34:['JV-P001','JV-P002','JV-P004','JV-P005','JV-P006','JV-P023','JV-P024','JV-P025','JV-P026'],
+                35:['JV-P002','JV-P005','JV-P006','JV-P024','JV-P025','JV-P026','JV-P027'],
+            }[i]
         consulted=list(dict.fromkeys(consulted))
         seg={'segment_id':u['unit_id']+f'-P{i:03d}','unit_id':u['unit_id'],'source_path':u['source_path'],'source_line_start':a.count('\n',0,am.start())+1,'source_line_end':a.count('\n',0,am.end())+1,'translation_line_start':t.count('\n',0,tm.start())+1,'translation_line_end':t.count('\n',0,tm.end())+1,'source_segment_sha256':sha(am[0].encode()),'translation_segment_sha256':sha(tm[0].encode()),'classification':'unchanged_structural_or_formal' if same else 'translated','passage_ids':consulted,'passage_hashes':{p:passages[p]['excerpt_sha256'] for p in consulted},'consultation_note':'Source identifiers, imports, environments or nonlinguistic structure; no translated prose.' if same else 'Consulted during English-to-Javanese authorship for register, spelling and listed lexical decisions; canon is not mathematical authority.','semantic_review':'pending'}
-        if u['unit_id'] in ['OLP-0001','OLP-0002','OLP-0003','OLP-0004','OLP-0005','OLP-0006','OLP-0007','OLP-0008','OLP-0009','OLP-0010','OLP-0011','OLP-0012','OLP-0013','OLP-0014','OLP-0015','OLP-0016','OLP-0017','OLP-0018','OLP-0019','OLP-0020','OLP-0021','OLP-0022','OLP-0023','OLP-0024','OLP-0025','OLP-0026','OLP-0027','OLP-0028','OLP-0029','OLP-0030','OLP-0031','OLP-0032','OLP-0033','OLP-0034','OLP-0035','OLP-0036','OLP-0037','OLP-0038','OLP-0039','OLP-0040','OLP-0041','OLP-0042','OLP-0043','OLP-0044','OLP-0045','OLP-0046','OLP-0047','OLP-0048','OLP-0049','OLP-0050','OLP-0051','OLP-0052','OLP-0053','OLP-0054'] and not same:
+        if u['unit_id'] in ['OLP-0001','OLP-0002','OLP-0003','OLP-0004','OLP-0005','OLP-0006','OLP-0007','OLP-0008','OLP-0009','OLP-0010','OLP-0011','OLP-0012','OLP-0013','OLP-0014','OLP-0015','OLP-0016','OLP-0017','OLP-0018','OLP-0019','OLP-0020','OLP-0021','OLP-0022','OLP-0023','OLP-0024','OLP-0025','OLP-0026','OLP-0027','OLP-0028','OLP-0029','OLP-0030','OLP-0031','OLP-0032','OLP-0033','OLP-0034','OLP-0035','OLP-0036','OLP-0037','OLP-0038','OLP-0039','OLP-0040','OLP-0041','OLP-0042','OLP-0043','OLP-0044','OLP-0045','OLP-0046','OLP-0047','OLP-0048','OLP-0049','OLP-0050','OLP-0051','OLP-0052','OLP-0053','OLP-0054','OLP-0055','OLP-0056','OLP-0057','OLP-0058'] and not same:
             seg['consultation_note']='Retranslated or deliberately reaffirmed after the independent canon audit while consulting the listed exact passages. Each passage is used only for its stated register, orthographic, borrowing, or licensing role; the frozen English source controls the OpenLogic meaning.'
         seg['segment_hash_representation']='UTF-8 with LF-normalized line endings; whole-file source and translation hashes remain raw-byte hashes'
         align.append(seg)
