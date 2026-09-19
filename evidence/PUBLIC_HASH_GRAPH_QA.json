@@ -1,7 +1,7 @@
 {
   "schema": "jv-public-hash-graph-qa/2",
-  "utc": "2026-09-19T17:48:47.426713+00:00",
-  "prospective_parent_commit": "2aa33df0ff9ff37e57a7693b97f6137bd6549ebf",
+  "utc": "2026-09-19T17:57:21.047845+00:00",
+  "prospective_parent_commit": "9ccf38fb29eb4710d3eb48810b30f1e079f25412",
   "representation": {
     "evidence_attribute": "-text at final precedence",
     "qa_script_attribute": "-text at final precedence",
@@ -80,7 +80,7 @@
     "tools/build-review-views.py": "c9d601f30806a68897d0595c25817e821a939199eb0b0225c19d0bbe9fb8575c",
     "tools/build-translation-decisions.py": "316afb4d6d81856889d00c61fa652173344176c680f35a58f00792d943d1069d",
     "tools/build-cumulative-tex.py": "6a9a336909a9fedbf99eafd4e8d4be0cf7099699f204f39cea369cd7a2ac4ec1",
-    "tools/build-release-sources.py": "94ffe1b57cf6dda1359605bafbbe3df588174df64ce3fc68ffb9df6dae208a1a",
+    "tools/build-release-sources.py": "45c2eab576c5c00c439413c69b163525b25cd391538ecaaf156cfbb833843a92",
     "tools/build-epub.py": "e92ca2e3ed293b1cd4e2811d6398a6f638d4dc1d40c2bd72ae173f72efb81e3b",
     "tools/audit-epub.py": "a321fdfee09eda3c9e2512e59863e2fb87806d8fc08b310a227079834d52e2e0",
     "tools/accept-epub-runtime.mjs": "15aa0567b99023889a316df95d04e9bb595be87c13f802b26bd22987e41a9030",

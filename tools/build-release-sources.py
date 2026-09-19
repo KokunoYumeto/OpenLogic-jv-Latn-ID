@@ -60,12 +60,67 @@ def run(repo: Path, *args: str) -> str:
     return subprocess.check_output(args, cwd=repo, text=True).strip()
 
 
-def build_archive(repo: Path, commit: str, prefix: str, output: Path) -> None:
-    subprocess.run(
-        ["git", "archive", "--format=zip", f"--prefix={prefix}/", f"--output={output}", commit],
-        cwd=repo,
-        check=True,
+def git_tree(repo: Path, commit: str) -> list[dict[str, object]]:
+    raw = subprocess.check_output(
+        ["git", "ls-tree", "-r", "-z", commit], cwd=repo
     )
+    metadata: list[tuple[str, str, str]] = []
+    for record in raw.rstrip(b"\0").split(b"\0"):
+        header, path_raw = record.split(b"\t", 1)
+        mode, object_type, object_id = header.decode("ascii").split()
+        if object_type != "blob":
+            raise ValueError(f"Non-blob Git tree entry is not supported: {path_raw!r}")
+        metadata.append((mode, object_id, path_raw.decode("utf-8")))
+
+    cat = subprocess.Popen(
+        ["git", "cat-file", "--batch"],
+        cwd=repo,
+        stdin=subprocess.PIPE,
+        stdout=subprocess.PIPE,
+    )
+    output, _ = cat.communicate(
+        "".join(object_id + "\n" for _, object_id, _ in metadata).encode("ascii")
+    )
+    if cat.returncode != 0:
+        raise subprocess.CalledProcessError(cat.returncode, cat.args)
+    stream = memoryview(output)
+    offset = 0
+    entries: list[dict[str, object]] = []
+    for mode, expected_id, path in metadata:
+        line_end = output.index(b"\n", offset)
+        object_id, object_type, size_raw = output[offset:line_end].decode("ascii").split()
+        size = int(size_raw)
+        offset = line_end + 1
+        payload = bytes(stream[offset : offset + size])
+        offset += size
+        if output[offset : offset + 1] != b"\n":
+            raise ValueError(f"Malformed git cat-file stream after {path}")
+        offset += 1
+        if object_id != expected_id or object_type != "blob":
+            raise ValueError(f"Git object mismatch for {path}")
+        entries.append(
+            {"mode": mode, "object_id": object_id, "path": path, "payload": payload}
+        )
+    if offset != len(output):
+        raise ValueError("Trailing data in git cat-file stream")
+    return entries
+
+
+def build_archive(entries: list[dict[str, object]], prefix: str, output: Path) -> None:
+    with zipfile.ZipFile(output, "w") as archive:
+        for entry in entries:
+            info = zipfile.ZipInfo(
+                f"{prefix}/{entry['path']}", date_time=(1980, 1, 1, 0, 0, 0)
+            )
+            info.create_system = 3
+            info.external_attr = int(str(entry["mode"]), 8) << 16
+            info.compress_type = zipfile.ZIP_DEFLATED
+            archive.writestr(
+                info,
+                entry["payload"],
+                compress_type=zipfile.ZIP_DEFLATED,
+                compresslevel=9,
+            )
 
 
 def main() -> int:
@@ -84,15 +139,17 @@ def main() -> int:
     prefix = f"OpenLogic-jv-Latn-ID-{args.version}"
     output = Path(args.output).resolve()
     output.parent.mkdir(parents=True, exist_ok=True)
-    build_archive(repo, commit, prefix, output)
+    entries = git_tree(repo, commit)
+    build_archive(entries, prefix, output)
     with tempfile.TemporaryDirectory(prefix="jv-source-replay-") as directory:
         replay = Path(directory) / output.name
-        build_archive(repo, commit, prefix, replay)
+        build_archive(entries, prefix, replay)
         cold_identical = output.read_bytes() == replay.read_bytes()
     if not cold_identical:
         raise ValueError("Cold git-archive replay is not byte-identical")
 
-    tracked = run(repo, "git", "ls-tree", "-r", "--name-only", commit).splitlines()
+    tracked = [str(entry["path"]) for entry in entries]
+    payload_by_path = {str(entry["path"]): entry["payload"] for entry in entries}
     expected = {f"{prefix}/{path}" for path in tracked}
     with zipfile.ZipFile(output) as archive:
         bad_member = archive.testzip()
@@ -104,6 +161,13 @@ def main() -> int:
                 f"ZIP tree differs from Git tree: missing={sorted(expected - names)[:10]}, "
                 f"extra={sorted(names - expected)[:10]}"
             )
+        byte_mismatches = [
+            path
+            for path, payload in payload_by_path.items()
+            if archive.read(f"{prefix}/{path}") != payload
+        ]
+        if byte_mismatches:
+            raise ValueError(f"ZIP members differ from Git blob bytes: {byte_mismatches[:10]}")
         required_missing = [path for path in REQUIRED if f"{prefix}/{path}" not in names]
         protected_present = [path for path in PROTECTED_UNPUBLISHED if f"{prefix}/{path}" in names]
         if required_missing:
@@ -141,6 +205,7 @@ def main() -> int:
         "verification": {
             "archive_test": "PASS",
             "exact_git_tree": True,
+            "exact_git_blob_bytes": True,
             "cold_build_identical": cold_identical,
             "required_master_styles_macros_bibliography_and_scripts_present": True,
             "all_accepted_translation_bodies_present": True,
