@@ -1,7 +1,7 @@
 {
   "schema": "jv-public-hash-graph-qa/2",
-  "utc": "2026-09-19T17:42:29.885608+00:00",
-  "prospective_parent_commit": "2c5fdc78114e735a7ed8c3da1be9df7d1e8b36cc",
+  "utc": "2026-09-19T17:48:47.426713+00:00",
+  "prospective_parent_commit": "2aa33df0ff9ff37e57a7693b97f6137bd6549ebf",
   "representation": {
     "evidence_attribute": "-text at final precedence",
     "qa_script_attribute": "-text at final precedence",
@@ -80,7 +80,7 @@
     "tools/build-review-views.py": "c9d601f30806a68897d0595c25817e821a939199eb0b0225c19d0bbe9fb8575c",
     "tools/build-translation-decisions.py": "316afb4d6d81856889d00c61fa652173344176c680f35a58f00792d943d1069d",
     "tools/build-cumulative-tex.py": "6a9a336909a9fedbf99eafd4e8d4be0cf7099699f204f39cea369cd7a2ac4ec1",
-    "tools/build-release-sources.py": "b0e1a211b8ae77cc5f9570c88e41d1ed87525da1190797350ceec8b54355bf88",
+    "tools/build-release-sources.py": "94ffe1b57cf6dda1359605bafbbe3df588174df64ce3fc68ffb9df6dae208a1a",
     "tools/build-epub.py": "e92ca2e3ed293b1cd4e2811d6398a6f638d4dc1d40c2bd72ae173f72efb81e3b",
     "tools/audit-epub.py": "a321fdfee09eda3c9e2512e59863e2fb87806d8fc08b310a227079834d52e2e0",
     "tools/accept-epub-runtime.mjs": "15aa0567b99023889a316df95d04e9bb595be87c13f802b26bd22987e41a9030",
@@ -103,7 +103,15 @@
     "translation-decisions/START_HERE.md": "885ab9949bf148ef4f17f17fb4befe1d9db12846d5aac81ed3d4c667dab987ab",
     "translation-decisions/TRANSLATION_DECISIONS_FULL.md": "edccfe4d671ebaaa4881a630b50895e8656507dd20332e53ce62a67719a4dc8e",
     "translation-decisions/TRANSLATION_DECISION_QA.json": "7a42f06d776c7a1e3bd57aaacb749c3346184d904fe4c97c0a92fac419174686",
-    "translation-decisions/translation-decision.schema.json": "50e7fa407b62c711f92f8b93be591d3b4a6e1c4adb1386c398bb5f76844d9f90"
+    "translation-decisions/translation-decision.schema.json": "50e7fa407b62c711f92f8b93be591d3b4a6e1c4adb1386c398bb5f76844d9f90",
+    "upstream/assets/diagrams/bijective.tikz": "c6b3bf38943e8a2ecef195c57cbe77a2e016610ebd853fca1eba044a9c6789d5",
+    "upstream/assets/diagrams/composition.tikz": "d712231c90796b4b2987506502723cd756fa9c5b7f4111e65284d107a79d2d4b",
+    "upstream/assets/diagrams/difference.tikz": "c4214baef02f0261773a29b793a8221144fbe1d022ef1e753054c56080e4cdfc",
+    "upstream/assets/diagrams/function.tikz": "0f9ad6d025a743c8b90509d7507bd88bfc6934e555175adc29d36c8ce93a04c9",
+    "upstream/assets/diagrams/injective.tikz": "7e2a17dfe1cab68938c4eed21fe135a33c0af33895cfe386fb38f270829060c2",
+    "upstream/assets/diagrams/intersection.tikz": "d95d0e70278ddbdc46e76f94930b6f29aedec8b91a3550338e553ba35067464c",
+    "upstream/assets/diagrams/surjective.tikz": "324e03fb275baee81614586cadb5243deaf801050d061b9ec33d7ccebd4a282d",
+    "upstream/assets/diagrams/union.tikz": "f9ca5508f0bac1f848271027572c4a59a6caba3db1f2c31bdd844f5bcea3e22e"
   },
   "sealed_release": {
     "tag": "v0.1.2",
