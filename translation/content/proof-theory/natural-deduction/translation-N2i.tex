@@ -74,7 +74,11 @@ Yèn $\delta$ pungkasané aturan inferènsi, kasusé dibédakaké:
   kanthi $\Gamma = \Gamma_1 \cup \Gamma_2$. Hipotesis induksi
   ngasilaké !!{proof}s $\pi_1$ kanggo
   $\Gamma_1' \Sequent !B \lif !A$ lan
-  $\pi_2$ kanggo $\Gamma_2' \Sequent !B$.
+  $\pi_2$ kanggo $\Gamma_2' \Sequent !B$ yèn $!B$ dudu~$\lfalse$.
+  Yèn $!B \ident \lfalse$, hipotesis induksi ngasilaké
+  $\Gamma_2' \Sequent \ $; kita netepaké $\pi_2$
+  minangka bukti kanggo $\Gamma_2' \Sequent !B$
+  sawisé \RightR{\Weakening}.
   Kita olèh !!{proof}~$\pi$ kaya mangkéné:
   \[
   \AxiomC{}
@@ -98,8 +102,8 @@ Yèn $\delta$ pungkasané aturan inferènsi, kasusé dibédakaké:
   Iki bisa dibeneraké kanthi nambah inferènsi
   \LeftR{\Contraction} kang trep.
 
-  Yèn $!A \ident \lfalse$, hipotesis induksi kanggo $\delta_2$
-  tetep ngasilaké !!a{proof} kanggo $\Gamma_2' \Sequent !B$.
+  Yèn $!A \ident \lfalse$, $\pi_2$ kang wis ditemtokaké
+  ing ndhuwur mbuktèkaké $\Gamma_2' \Sequent !B$.
   Konstruksi ing ndhuwur mènèhi !!{proof}~$\pi$ kanthi
   falsitas~$!A$ ing sisih tengen. Kanthi \Cut marang aksioma
   falsitas ing sisih kiwa kang suksèdené kosong, kita ngolèhké
@@ -127,6 +131,9 @@ Yèn $\delta$ pungkasané aturan inferènsi, kasusé dibédakaké:
   \BinaryInf$\Gamma' \fCenter !A$
   \DisplayProof
   \]
+  Yèn $!A \ident \lfalse$, konstruksi iki ngasilaké
+  $\Gamma' \Sequent \lfalse$; \Cut manèh nganggo aksioma
+  $\lfalse \Sequent \ $ ngasilaké $\Gamma' \Sequent \ $.
 \end{enumerate}
 Élinga yèn mung terjemahan \FalseCl{} kang ngasilaké
 !!a{proof}~$\pi$ kanthi luwih saka siji !!{formula} ing sisih

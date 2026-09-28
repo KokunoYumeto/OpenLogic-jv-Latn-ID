@@ -1,0 +1,53 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0671",
+  "source_path": "content/proof-theory/natural-deduction/translation-N2i.tex",
+  "source_sha256": "bcdc9e912c815aca8702cfe0346eba3a308dd2569e4dcca2950cfa0c590a0be4",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-612",
+      "source_line": 14,
+      "location": "statement of the N2-to-G2 translation proposition",
+      "finding": "The consequent names G2c (N2i), mixing a sequent-calculus system with a natural-deduction system; the intended parallel is G2c (G2i).",
+      "proposed_resolution": "Name G2i as the intuitionistic target."
+    },
+    {
+      "id": "OLPL-613",
+      "source_line": 54,
+      "location": "implication introduction without a discharged context formula",
+      "finding": "The induction-hypothesis conclusion is written with C on the right in all cases, but the proposition translates a false conclusion to an empty succedent. Right weakening is needed first in that case before left weakening and right implication.",
+      "proposed_resolution": "State the empty-succedent exception and the preliminary right-weakening step."
+    },
+    {
+      "id": "OLPL-614",
+      "source_line": 92,
+      "location": "implication elimination when the conclusion is falsity",
+      "finding": "The source incorrectly makes the second premise translate to an empty succedent even though it concludes B. The proposed weakening steps cannot remove falsity from the right. The displayed derivation still gives a proof of falsity, which can be cut with the false-left axiom to obtain the required empty succedent.",
+      "proposed_resolution": "Keep the second translated premise at B and add a final cut against the false-left axiom after the displayed construction."
+    },
+    {
+      "id": "OLPL-615",
+      "source_line": 113,
+      "location": "classical falsity-rule translation diagram",
+      "finding": "The G2 premise of the cut retains the N2 discharge label x: even though the proposition explicitly removes labels from the translated multiset context.",
+      "proposed_resolution": "Display the unlabelled left formula not A in the G2 premise."
+    },
+    {
+      "id": "OLPL-616",
+      "source_line": 71,
+      "location": "implication elimination when the second premise concludes falsity",
+      "finding": "If B is falsity, the induction hypothesis for the second N2 premise yields an empty G2 succedent, not B on the right as used by the displayed derivation. This subcase was omitted from the first bounded repair.",
+      "proposed_resolution": "Apply right weakening to the empty-succedent proof to define pi_2 with B on the right before the displayed implication-elimination construction."
+    },
+    {
+      "id": "OLPL-617",
+      "source_line": 117,
+      "location": "classical falsity rule when its conclusion is falsity",
+      "finding": "If A is falsity, the displayed G2 cut ends with falsity on the right, although the translation proposition requires an empty succedent. The source leaves this subcase unstated.",
+      "proposed_resolution": "Append a cut with the false-left axiom to turn the displayed falsity conclusion into the required empty succedent."
+    }
+  ],
+  "translation_treatment": "The target corrects the system name, the omitted empty-succedent subcases, the falsity-conclusion cut, and the leaked N2 label while leaving the frozen English file untouched. OLPL-616 and OLPL-617 are a bounded amendment after manager review of the initial OLP-0671 seal.",
+  "no_source_mutation": true
+}

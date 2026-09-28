@@ -20,11 +20,11 @@
   "unmodified_other_rows": "Other rows retain their specific recorded evidence; no blanket independent canon or native-specialist certification is claimed.",
   "source_evidence_sha256": {
     "TERM_DECISIONS.jsonl": "26c185b1d8cfbfc6ebabf71a50a8f2a3a3175e160ad74c074e3841ae303d9265",
-    "SEGMENT_CANON_USE.jsonl": "23aacf27a96ace7d647d14bcfe3f12c95df63230ace7ffa7211a05b1f5d2aa58"
+    "SEGMENT_CANON_USE.jsonl": "253f130c17f731c54adcca0049eefa3718ea8544dc31c70487d423c488bde88d"
   },
   "public_projection_sha256": {
     "TERM_DECISIONS.jsonl": "5db39c85807e06adeb1f66c0bdda9cfb4037c7521bae91ac54532bb4ec601063",
-    "SEGMENT_CANON_USE.jsonl": "d5f8b92f9556187dc1b3311a10dfdacfa3ec032b31c7917866dc5951db8c4f7d"
+    "SEGMENT_CANON_USE.jsonl": "189c66b219c8b6b1024b34ef5dc7a3b86114c41e52a2919a1e9ee21f2dec5d05"
   },
   "revalidation_status": "pending; source and structural QA can proceed while this evidence is repaired"
 }

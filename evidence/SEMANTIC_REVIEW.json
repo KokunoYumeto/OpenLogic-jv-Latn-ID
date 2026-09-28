@@ -7504,17 +7504,19 @@
     {
       "unit_id": "OLP-0671",
       "status": "pass",
-      "checks": "Directly compared five changed blocks with ten frozen-English blocks. The proposition maps N2c/N2i to G2c/G2i with Cut and removes context labels while sending a falsity conclusion to an empty succedent. The axiom case, implication introduction with and without a discharged assumption, implication elimination with a cut and any needed contraction, and the classical FalseCl case are retained. OLPL-612 repairs the intuitionistic G2 system name; OLPL-613 supplies the omitted empty-succedent premise and preliminary right weakening; OLPL-614 replaces the invalid falsity conclusion argument with a final cut against the false-left axiom; OLPL-615 removes an N2 label from a G2 displayed premise. Focused structural QA passes ten segments with zero failures. Specialist terminology remains provisional; integrated reader rendering and independent native review remain pending.",
+      "checks": "Directly compared five changed blocks with ten frozen-English blocks. The proposition maps N2c/N2i to G2c/G2i with Cut and removes context labels while sending a falsity conclusion to an empty succedent. The axiom case, implication introduction with and without a discharged assumption, implication elimination with a cut and any needed contraction, and the classical FalseCl case are retained. OLPL-612 repairs the intuitionistic G2 system name; OLPL-613 supplies the omitted empty-succedent premise and preliminary right weakening; OLPL-614 replaces the invalid falsity conclusion argument with a final cut against the false-left axiom; OLPL-615 removes an N2 label from a G2 displayed premise. Focused structural QA passes ten segments with zero failures. Specialist terminology remains provisional; integrated reader rendering and independent native review remain pending. Bounded manager follow-up: if implication-elimination premise B is falsity, right weakening supplies the displayed B succedent; if the classical FalseCl conclusion A is falsity, a final cut with false-left supplies the empty succedent. Both omissions are recorded as OLPL-616/617.",
       "reverse_sample": "Remove labels from an N2 context to obtain a G2 multiset. Translate a non-false conclusion to a singleton succedent and falsity to an empty succedent. Induction on the N2 proof height handles initial sequents and the implication rules. If implication elimination first constructs falsity on the right, a further cut with the false-left axiom produces the required empty succedent. The classical falsity rule is the only case needing a multi-formula G2 right side.",
       "source_sha256": "bcdc9e912c815aca8702cfe0346eba3a308dd2569e4dcca2950cfa0c590a0be4",
-      "translation_sha256": "903ada26c78df1b2bcb99b8731230867b24885029900108aa5d71c8b17f20990",
+      "translation_sha256": "64d6872971af89b691d13640a89ccdc9be4dfcc69b19395a04e514a467b4ee89",
       "source_audit_ids": [
         "OLPL-612",
         "OLPL-613",
         "OLPL-614",
-        "OLPL-615"
+        "OLPL-615",
+        "OLPL-616",
+        "OLPL-617"
       ],
-      "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review with bounded source corrections OLPL-612 through OLPL-615 and sparse canon provenance."
+      "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review with bounded source corrections OLPL-612 through OLPL-615 and sparse canon provenance. Bounded OLP-0671 manager amendment OLPL-616/617 after the initial seal."
     }
   ],
   "unresolved_language_uncertainties": [

@@ -1,6 +1,6 @@
 {
   "schema": "jv-batch-qa/1",
-  "utc": "2026-09-28T19:46:23.815395+00:00",
+  "utc": "2026-09-28T19:56:01.880713+00:00",
   "checked_units": 671,
   "structural_pass_units": 671,
   "total_units": 722,
@@ -14751,8 +14751,8 @@
       "unit_id": "OLP-0671",
       "source_path": "content/proof-theory/natural-deduction/translation-N2i.tex",
       "source_sha256": "bcdc9e912c815aca8702cfe0346eba3a308dd2569e4dcca2950cfa0c590a0be4",
-      "translation_sha256": "903ada26c78df1b2bcb99b8731230867b24885029900108aa5d71c8b17f20990",
-      "translation_bytes": 4588,
+      "translation_sha256": "64d6872971af89b691d13640a89ccdc9be4dfcc69b19395a04e514a467b4ee89",
+      "translation_bytes": 4953,
       "checks": {
         "paragraph_count": true,
         "protected_commands": true,
@@ -14766,7 +14766,7 @@
       "source_paragraphs": 10,
       "target_paragraphs": 10,
       "source_math_count": 67,
-      "target_math_count": 67,
+      "target_math_count": 77,
       "status": "structural_pass"
     }
   ],
