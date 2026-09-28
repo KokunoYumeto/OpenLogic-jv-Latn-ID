@@ -1,0 +1,74 @@
+% Part: normal-modal-logic
+% Chapter: completeness
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{com}{int}
+
+\olsection{Pambuka}
+
+Yen $\Sigma$ sistem modal, teorema kasahihan netepake yen
+$\Sigma \Proves !A$, mula $!A$ valid ing sembarang kelas
+$\mClass{C}$ model kang kabeh instansi saka kabeh !!{formula}s
+ing~$\Sigma$ valid. Mligine, yen $\Log{K}
+\Proves !A$, mula $!A$ bener ing kabeh model; yen $\Log{KT} \Proves !A$,
+mula $!A$ bener ing kabeh model refleksif; yen $\Log{KD} \Proves !A$,
+mula $!A$ bener ing kabeh model serial, lan sateruse.
+
+Kasampurnan iku kosok baline kasahihan: \Log{K} jangkep
+ateges yen !!a{formula}~$!A$ valid, mula $\Proves !A$, upamane.
+Mbuktekake kasampurnan luwih angel tinimbang mbuktekake kasahihan.
+Mula, migunani yen luwih dhisik nimbang kontraposisine: \Log{K}
+jangkep yen lan mung yen saben $\Proves/ !A$ ana model kang mbantah,
+yaiku model~$\mModel{M}$ saengga $\mSat/{M}{!A}$. Kanthi cara
+ekuivalen (kanthi negasi $!A$), kita bisa mbuktekake yen saben
+$\Proves/ \lnot !A$ ana model saka~$!A$. Nalika mbangun model kaya
+mangkono, kita bisa nggunakake informasi kang ana ing $!A$. Nalika
+nemokake model kanggo !!{formula}s tartamtu, kita kerep nindakake bab
+kang padha: upamane, yen arep nemokake model kang mbantah
+$p \lif \Box q$, kita ngerti yen model iku kudu ngandhut jagad kang
+$p$ bener lan $\Box q$ salah. Jagad kang $\Box q$ salah mbutuhake
+anane jagad kang bisa diakses saka kono lan $q$ salah. Iku kabeh kang
+perlu dingerteni: !!{propositional variable}s endi kang bener ing saben
+jagad, lan jagad endi kang bisa diakses saka jagad liyane.
+
+Nanging, nalika mbuktekake kasampurnan, kita ora duwe
+!!{formula}~$!A$ tartamtu kang dibanguni model. Kita arep netepake
+anane model kanggo saben $!A$ saengga
+$\Proves/[\Sigma] \lnot !A$. Iki sarat minimal, amarga
+\emph{yen} $\Proves[\Sigma] \lnot !A$, miturut kasahihan, ora ana model
+kanggo~$!A$ (kang nyukupi $\Sigma$). Saiki elinga yen $\Proves/[\Sigma]
+\lnot !A$ yen lan mung yen $!A$ iku $\Sigma$-konsisten. (Elinga yen
+$\Proves/[\Sigma] \lnot !A$ lan $!A \Proves/[\Sigma] \lfalse$ iku
+ekuivalen.) Dadi, tugas kita yaiku mbangun model kanggo saben
+!!{formula} kang $\Sigma$-konsisten.
+
+Carane yaiku nemokake himpunan !!{formula}s kang
+$\Sigma$-konsisten lan ngandhut~$!A$, nanging uga ngemot formula
+liyane kang nerangake wujude jagad kang ndadekake $!A$ bener. Himpunan
+kaya mangkono iku \emph{jangkep} $\Sigma$-konsisten. Ora cukup yen
+model kang ndadekake~$!A$ bener mung nduweni siji jagad; model iku
+kudu nduweni luwih saka siji jagad lan relasi aksesibilitas. Himpunan
+$\Sigma$-konsisten jangkep kang ngandhut~$!A$ uga ngandhut
+!!{formula}s liyane awujud $\Box !B$ lan~$\Diamond !C$. Ing kabeh
+jagad kang bisa diakses, $!B$ kudu bener; ing paling ora siji jagad,
+$!C$ kudu bener. Kanggo nggayuh iki, kita njupuk \emph{kabeh}
+himpunan $\Sigma$-konsisten jangkep kang bisa ana minangka dhasar
+himpunan jagad. Bab kang angel yaiku nemtokake kapan sawijining
+himpunan $\Sigma$-konsisten jangkep dianggep bisa diakses saka
+himpunan liyane ing model kita.
+
+Kita bakal nuduhake yen ing model kang ditepakake mangkono,
+$!A$ bener ing sawijining jagad---kang uga himpunan $\Sigma$-konsisten
+jangkep---yen lan mung yen $!A$ iku !!a{element} saka himpunan
+kasebut. Yen $!A$ $\Sigma$-konsisten, formula iku bakal dadi
+!!a{element} saka paling ora siji himpunan $\Sigma$-konsisten jangkep
+(kasunyatan kang bakal kita buktekake), mula bakal ana jagad kang
+$!A$~bener. Dadi, kita bakal nduweni siji model kang saben
+$\Sigma$-konsisten !!{formula}~$!A$ bener ing sawijining jagad.
+Model tunggal iki yaiku model \emph{kanonik} kanggo~$\Sigma$.
+
+\end{document}

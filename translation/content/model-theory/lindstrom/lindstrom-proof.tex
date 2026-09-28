@@ -1,0 +1,139 @@
+% Part: first-order-logic
+% Chapter: lindstrom
+% Section: lindstrom-proof
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{lin}{prf}
+
+\olsection{Teorema Lindstr\"om}
+
+\begin{lem}
+\ollabel{lem:lindstrom}
+Upamana $!E \in L(\Lang{L})$, kanthi $\Lang{L}$ winates, lan
+upamana uga ana $n \in \Nat$ saengga kanggo sembarang rong
+!!{structure}s $\Struct{M}$ lan~$\Struct{N}$, yen $\Struct{M} \equiv_n
+\Struct{N}$ lan $\Struct{M} \models_L !E$, mula $\Struct{N}
+\models_L !E$. Banjur $!E$ ekuivalen karo !!{sentence}
+orde kapisan, yaiku ana $!D$ orde kapisan saengga
+$\Mod(L){!E} = \Mod(L){!D}$.
+\end{lem}
+
+\begin{proof}
+Upamana $n$ saengga sembarang rong !!{structure}s kang ekuivalen-$n$,
+$\Struct{M}$ lan $\Struct{N}$, sarujuk marang biji bebener~$!E$.
+Elinga \olref[bas][pis]{prop:qr-finite}: nganti ekuivalensi logis,
+mung ana cacah winates !!{sentence}s orde kapisan ing
+!!{language} winates kang pangkat kuantoré ora ngluwihi~$n$.
+Saiki, kanggo
+saben !!{structure}~$\Struct{M}$ kang tetep, upamana
+$!D_{\Struct{M}}$ minangka konjungsi kabeh !!{sentence}s
+orde kapisan~$!E$ kang bener ing~$\Struct{M}$ lan
+$\QuantRank{!E} \le n$ (konjungsi iki winates), saengga
+$\Struct{N} \models !D_{\Struct{M}}$ yen lan mung yen
+$\Struct{N} \equiv_n \Struct{M}$. Banjur tetapna
+$!D = \textstyle\bigvee
+\Setabs{!D_{\Struct{M}}}{\Struct{M} \models_L !E}$; disjungsi iki
+uga winates (nganti ekuivalensi logis).
+
+Saka kene, kasimpulan $\Mod(L){!E} = \Mod(L){!D}$ tumut.
+Pancen, yen $\Struct{N} \models_L !D$, mula kanggo sawijining
+$\Struct{M} \models_L !E$ kita nduweni
+$\Struct{N} \models !D_{\Struct{M}}$, mula uga
+$\Struct{N} \models_L !E$ (miturut hipotesis lema).
+Kosokbaline, yen $\Struct{N} \models_L !E$, mula
+$!D_\Struct{N}$ dadi salah siji suku disjungsi ing $!D$,
+lan amarga $\Struct{N} \models !D_\Struct{N}$, uga
+$\Struct{N} \models_L !D$.
+\end{proof}
+
+\begin{thm}[Teorema Lindstr\"om]
+  \ollabel{thm:lindstrom} Upamana $\tuple{L, \models_L}$ nduweni
+  Sipat Kekompakan lan Sipat L\"owenheim--Skolem. Banjur
+  $\tuple{L, \models_L} \le \tuple{F, \models}$ (mula
+  $\tuple{L, \models_L}$ ekuivalen karo logika orde kapisan).
+\end{thm}
+
+\begin{proof}
+Miturut \olref{lem:lindstrom}, cukup dibuktekake yen kanggo sembarang
+$!E \in L(\Lang{L})$, kanthi $\Lang{L}$ winates, ana $n \in \Nat$
+saengga kanggo sembarang rong !!{structure}s $\Struct{M}$
+lan~$\Struct{N}$: yen $\Struct{M} \equiv_n \Struct{N}$, mula
+$\Struct{M}$ lan $\Struct{N}$ sarujuk marang~$!E$. Amarga iku,
+$!E$ banjur ekuivalen karo !!{sentence} orde kapisan, lan saka
+kene $\tuple{L, \models_L} \le \tuple{F, \models}$ tumut.
+Amarga kita makarya ing !!{language} relasional murni kang winates,
+miturut \olref[bas][pis]{thm:b-n-f}, pratelan
+$\Struct{M} \equiv_n \Struct{N}$ bisa diganti nganggo pratelan
+aljabar kang cocog, yaiku $I_n(\emptyset,\emptyset)$.
+
+Kanggo $!E$ kang diwenehake, upamana, kanggo nggoleki cengkah,
+yen kanggo saben $n$ ana !!{structure}s $\Struct{M}_n$ lan
+$\Struct{N}_n$ saengga $I_n(\emptyset, \emptyset)$,
+nanging (umpamane) $\Struct{M}_n \models_L !E$ dene
+$\Struct{N}_n \not\models_L !E$. Miturut Sipat Isomorfisme
+kita bisa nganggep yen kabeh $\Struct{M}_n$ napsirake konstanta
+basa kasebut nganggo objek kang padha; saliyane iku, amarga
+ing basa kasebut mung ana cacah winates !!{sentence}s atomik,
+kita uga bisa nganggep yen kabeh mau nyukupi !!{sentence}s
+atomik kang padha (yen ora, kita bisa njupuk subsekuens saka
+$\Struct{M}$). Upamana $\Struct{M}$ minangka gabungan kabeh
+$\Struct{M}_n$, yaiku !!{structure} minimal tunggal kang
+nduweni saben $\Struct{M}_n$ minangka substruktur. Kaya ing
+bukti \olref[lsp]{thm:abstract-p-isom}, upamana
+$\Struct{M}^*$ minangka perluasan saka $\Struct{M}$ kanthi
+!!{domain} $\Domain{M} \cup
+\Domain{M}^{<\omega}$, ing !!{language} kang diperluas
+kanthi predikat panyambungan $P$ lan~$Q$.
+
+Kanthi cara kang padha, tetapna $\Struct{N}_n$, $\Struct{N}$
+lan $\Struct{N}^*$. Saiki upamana $\Struct{M}$ minangka
+!!{structure} kang !!{domain}-e ngemot !!{domain}s saka
+$\Struct{M}^*$ lan $\Struct{N}^*$ uga wilangan asli~$\Nat$
+kalebu urutan alamiahe~$\le$, ing !!{language} kanthi predikat
+tambahan kang nglambangake !!{domain}s
+$\Domain{M}$, $\Domain{N}$, $\Domain{M}^{<\omega}$ lan
+$\Domain{N}^{<\omega}$ uga predikat kang nyandi ranah saka
+$\Struct{M}_n$ lan $\Struct{N}_n$ ing pangerten iki:
+\begin{align*}
+  \Domain{M_n} & = \Setabs{a \in \Domain{M}}{R(a, n)}; &
+  \Domain{N_n} & = \Setabs{a \in \Domain{N}}{S(a,n)}; \\
+  \Domain{M}^{<\omega}_n & = \Setabs{a \in \Domain{M}^{<\omega}}{R(a,n)}; &
+  \Domain{N}^{<\omega}_n & = \Setabs{a \in \Domain{N}^{<\omega}}{S(a,n)}.
+\end{align*}
+!!{structure}~$\Struct{M}$ iki uga nduweni relasi telung panggonan
+$J$ saengga $J(n, \mathbf{a}, \mathbf{b})$ lumaku yen lan mung
+yen $I_n(\mathbf{a}, \mathbf{b})$.
+
+Saiki ana !!a{sentence}~$!D$ ing !!{language}~$\Lang{L}$ kang
+ditambahi $R$, $S$, $J$, lan sapiturute, kang nyatakake yen
+$\le$ iku urutan linear diskret kang nduweni unsur kapisan
+nanging ora nduweni unsur pungkasan, lan yen
+$\Struct{M}_n \models !E$, $\Struct{N}_n \not\models !E$,
+lan kanggo saben $n$ ing urutan kasebut,
+$J(n, \mathbf{a}, \mathbf{b})$ lumaku yen lan mung yen
+$I_n(\mathbf{a}, \mathbf{b})$.
+
+Nganggo Sipat Kekompakan, kita bisa nemokake model
+$\Struct{M}^*$ saka $!D$ kang urutane ngemot unsur
+nonstandar~$n^*$. Mula, mligine, $\Struct{M^*}$ ngemot
+sub!!{structure}s $\Struct{M_{n^*}}$ lan
+$\Struct{N_{n^*}}$ saengga $\Struct{M_{n^*}}
+\models_L !E$ lan $\Struct{N_{n^*}} \not\models_L !E$.
+Nanging saiki kita bisa nemtokake himpunan $\mathcal{I}$
+saka pasangan tupel-$k$ saka $\Domain{M_{n^*}}$ lan
+$\Domain{N_{n^*}}$ kanthi netepake
+$\tuple{\mathbf{a}, \mathbf{b}} \in \mathcal{I}$ yen lan mung
+yen $J(n^*-k, \mathbf{a}, \mathbf{b})$, ing ngendi $k$
+iku dawané $\mathbf{a}$ lan $\mathbf{b}$. Amarga $n^*$
+nonstandar, kanggo saben $k$ standar kita nduweni
+$n^* - k >0$, lan himpunan $\mathcal{I}$ iki dadi seksi
+yen $\Struct{M_{n^*}} \simeq_p
+\Struct{N_{n^*}}$. Nanging miturut
+\olref[lsp]{thm:abstract-p-isom}, $\Struct{M_{n^*}}$
+iku ekuivalen-$L$ karo $\Struct{N_{n^*}}$, lan iki cengkah.
+\end{proof}
+
+\end{document}

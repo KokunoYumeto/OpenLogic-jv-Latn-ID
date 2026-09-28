@@ -18,7 +18,7 @@
 \begin{explain}
   Kita netepake yen relasi !!{derivability}~$\Proves$ saka deduksi
   natural cukup kuwat kanggo netepake sawetara kasunyatan dhasar kang
-  ngemot konektif proposisional, kayata $!A \land !B \Proves !A$ lan
+  nglibatake konektif proposisional, kayata $!A \land !B \Proves !A$ lan
   $!A, !A \lif !B \Proves !B$ (modus ponens). Kasunyatan kasebut
   dibutuhake ing bukti teorema kelengkapan.
 \end{explain}
@@ -78,8 +78,8 @@
       \DischargeRule{\Elim{\lor}}{1}
       \TrinaryInfC{$\lfalse$}
     \end{prooftree}
-    Iki !!a{derivation} saka~$\lfalse$ adhedhasar asumsi
-    !!{undischarged} $!A \lor !B$, $\lnot !A$, lan $\lnot !B$.
+    Iki !!a{derivation} saka~$\lfalse$ adhedhasar asumsi-asumsi
+    !!{undischarged}, yaiku $!A \lor !B$, $\lnot !A$, lan $\lnot !B$.
   \item Kita bisa !!{derive} kalorone:
     \begin{prooftree}
       \AxiomC{$!A$}
@@ -112,7 +112,7 @@
       \BinaryInfC{$!B$}
     \end{prooftree}
 
-  \item Iki dituduhake dening loro !!{derivation}s iki:
+  \item Loro !!{derivation}s iki nuduhake pratelan kasebut:
     \begin{prooftree}
       \AxiomC{$\lnot !A$}
       \AxiomC{$\Discharge{!A}{1}$}

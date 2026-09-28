@@ -1,0 +1,147 @@
+% Part: lambda-calculus
+% Chapter: syntax
+% Section: term-revisited
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{syn}{tr}
+\olsection{Suku minangka Kelas Ekuivalensi-$\alpha$}
+
+Sabanjure kita nganggep suku
+nganti ekuivalensi-$\alpha$.
+Tegese, nalika nulis sawijining
+suku, kang dimaksud iku kelas
+ekuivalensi-$\alpha$ kang ngemot suku
+kasebut. Umpamane, kita nulis
+$\lambd[a][\lambd[b][a c]]$
+kanggo himpunan kabeh suku kang
+ekuivalen-$\alpha$ karo suku iku,
+kayata $\lambd[a][\lambd[b][a
+    c]]$, $\lambd[b][\lambd[a][b c]]$,
+lan sapiturute.
+
+Ing bagean sadurunge, aksara
+kayata $N, Q$ nglambangake suku;
+sabanjure aksara iku nglambangake
+kelas. Kelas-kelas kasebut, dudu
+wakil suku tartamtu, kang bakal
+dadi objek panliten sabanjure.
+Aksara kayata $x, y$ tetep
+nglambangake variabel.
+
+Kita uga nggunakake notasi
+$\rep{M}$ kanggo nglambangake
+!!{element} sembarang saka kelas~$M$,
+lan $\rep{M}[0]$, $\rep{M}[1]$,
+lan sapiturute yen mbutuhake
+luwih saka siji wakil.
+
+Kanggo nyederhanakake andharan,
+kita nggunakake maneh notasi
+saka suku. Ing kelas ana
+definisi iki:
+\begin{defn}
+  \begin{enumerate}
+  \item $\lambd[x][N]$ ditetepake
+    minangka kelas kang ngemot
+    $\lambd[x][\rep{N}]$.
+  \item $PQ$ ditetepake minangka
+    kelas kang ngemot $\rep{P}\rep{Q}$.
+  \end{enumerate}
+\end{defn}
+
+Definisi iki konsisten amarga
+konversi-$\alpha$ kompatibel.
+
+\begin{defn} \ollabel{def:fv}
+  \emph{Variabel bebas} saka kelas
+  ekuivalensi-$\alpha$~$M$, yaiku
+  $\FV{M}$, ditetepake minangka
+  $\FV{\rep{M}}$.
+\end{defn}
+
+Definisi iki konsisten amarga
+$\FV{\rep{M}[0]} =
+\FV{\rep{M}[1]}$, kaya kang
+dituduhake ing \olref[alp]{thm:fv}.
+
+Notasi substitusi uga digunakake
+maneh kanggo kelas:
+\begin{defn} \ollabel{def:sub}
+  \emph{Substitusi} $R$ kanggo
+  $y$ ing $M$, yaiku
+  $\Subst{M}{R}{y}$, ditetepake
+  minangka kelas saka
+  $\Subst{\rep{M}}{\rep{R}}{y}$
+  kanggo wakil $\rep{M}$
+  lan $\rep{R}$ sembarang
+  kang ndadekake substitusi
+  kasebut katetepake.
+\end{defn}
+
+Definisi iki uga konsisten,
+kaya kang dinyatakake dening
+\olref[alp]{cor:sub}.
+
+Gatekna yen definisi iki
+nyederhanakake nalar kita.
+Umpamane:
+\begin{align}
+  \Subst{\lambd[x][x]}{y}{x} & \ollabel{eq:1}\\
+  &= \Subst{\lambd[z][z]}{y}{x} \ollabel{eq:2}\\
+  &= \lambd[z][\Subst{z}{y}{x}] \\
+  &= \lambd[z][z]
+\end{align}
+
+\olref{eq:1} wis katetepake
+uga minangka substitusi suku
+miturut aturan pangiket kang padha:
+asile suku kasebut dhewe.
+Ing kene substitusi dimangerteni
+ing kelas, mula \olref{eq:2}
+ngidini kita ngganti
+$\lambd[x][x]$ nganggo wakil
+$\lambd[z][z]$, amarga
+loro-lorone ana ing kelas kang padha.
+
+Kanthi alesan padha,
+sabanjure kita nganggep wakil
+kang dipilih tansah nyukupi
+syarat substitusi. Umpamane,
+nalika nemoni
+$\Subst{\lambd[x][N]}{R}{y}$,
+kita nganggep wakil
+$\lambd[x][N]$ dipilih
+saengga $x \neq y$
+lan $x \notin \FV{R}$.
+
+Amarga rada aneh nyebut
+$\lambd[x][x]$ minangka
+``kelas'', sabanjure kita
+nyebut objek iki
+suku-$\Lambda$
+(utawa mung ``suku'' ing sisa
+bagean iki), supaya beda
+saka suku-$\lambda$ kang
+wis kita kenal.
+
+\begin{editorial}
+  Kita durung bisa ninggalake
+  suku lumrah: sakabehe definisi
+  suku-$\Lambda$ adhedhasar
+  suku-$\lambda$, lan kita durung
+  menehi cara kanggo netepake
+  fungsi ing suku-$\Lambda$.
+  Mula fungsi kaya mangkono
+  kudu luwih dhisik ditetepake
+  ing suku-$\lambda$, banjur
+  ``diproyeksikake'' menyang
+  suku-$\Lambda$, kaya ing substitusi.
+  Nanging kita nganggep pamaca
+  bisa mangerteni kanthi intuisi
+  carane fungsi ing suku-$\Lambda$
+  bisa ditetepake.
+\end{editorial}
+\end{document}

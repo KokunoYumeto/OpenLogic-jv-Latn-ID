@@ -1,0 +1,196 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{cardinals}{classing}
+\olsection{Winates, \usetoken{S}{enumerable}, \usetoken{S}{nonenumerable}}
+
+Sawisé ngenal kardinal, prayoga kita ngrembug sawatara jinis
+kardinal, mliginé kardinal winates, !!{enumerable}, lan
+!!{nonenumerable}.
+
+Rong asil kapisan bakal nuduhaké yèn kardinal winates persis
+ordinal winates, kang wis kita tetapake minangka
+\emph{wilangan asli} ing
+\olref[z][infinity-again]{defnomega}:
+
+\begin{prop}\ollabel{finitecardisoequal}
+Upamané $n, m \in \omega$. Mula $n = m$ yen lan mung yen $\cardeq{n}{m}$.
+\end{prop}
+
+\begin{proof}
+\emph{Saka kiwa menyang tengen} cetha. Kanggo mbuktèkaké
+\emph{saka tengen menyang kiwa}, upamané $\cardeq{n}{m}$
+nanging $n \neq m$. Miturut Trikotomi, $n
+\in m$ utawa $m \in n$; tanpa ngurangi keumuman, upamané $n \in m$.
+Mula $n \subsetneq m$ lan ana !!a{bijection} $f \colon m \to n$,
+saéngga $m$ tanpa wates miturut Dedekind, mbantah
+\olref[z][infinity-again]{naturalnumbersarentinfinite}.
+\end{proof}
+
+\begin{cor}\ollabel{naturalsarecardinals}
+Yèn $n \in \omega$, mula $n$ iku kardinal.
+\end{cor}
+
+\begin{proof}
+Langsung.
+\end{proof}
+\noindent
+Mula sawetara pangertèn kang lumrah kanggo nyebut kardinal
+“winates” utawa “tanpa wates” uga ekivalen:
+\begin{thm}\ollabel{generalinfinitycharacter}Kanggo sembarang himpunan $A$, pratelan iki ekivalen:
+\begin{enumerate}
+	\item\ollabel{card:notinomega} $\card{A} \notin \omega$, yaiku
+	$A$ dudu himpunan winates;
+	\item\ollabel{card:omegaplus} $\omega \leq \card{A}$;
+	\item\ollabel{card:infinite} $A$ tanpa wates miturut Dedekind.
+\end{enumerate}
+\end{thm}
+
+\begin{proof}
+Saka \olref[ord-arithmetic][using-addition]{ordinfinitycharacter},
+\olref[cardinals][cardsasords]{lem:CardinalsBehaveRight}, lan
+\olref{naturalsarecardinals}.
+\end{proof}
+
+Iki ngidinaké kita netepaké sacara \emph{resmi} sawetara
+pangertèn kang sadurungé dienggo kanthi informal ing
+\olref[sfr][][]{part}:
+
+\begin{defn}\ollabel{defnfinite}
+Kita kandha yèn $A$ \emph{winates} yen lan mung yen $\card{A}$
+iku wilangan asli, yaiku $\card{A} \in \omega$. Yèn ora,
+kita kandha yèn $A$ \emph{tanpa wates}.
+\end{defn}
+\noindent
+Nanging wigatèkna yèn definisi iki gumantung marang
+$\ZFC$. Kita perlu Pengurutan Becik kanggo njamin
+saben himpunan nduwèni kardinalitas. Malah tanpa
+Pengurutan Becik, bisa ana himpunan kang ora winates
+nanging uga ora tanpa wates miturut Dedekind. Bab kaya iki
+bakal kita rembug manèh ing \olref[choice][]{chap}.
+Saiki kita terus nganggep Pengurutan Becik.
+
+Saiki ayo ngalih saka kardinal winates menyang kardinal
+tanpa wates. Iki rong pratelan dhasar:
+
+\begin{cor}\ollabel{omegaisacardinal}
+$\omega$ iku kardinal tanpa wates kang paling cilik.
+\end{cor}
+
+\begin{proof}
+$\omega$ iku kardinal, amarga $\omega$ tanpa wates
+miturut Dedekind, lan yèn $\cardeq{\omega}{n}$
+kanggo sawatara $n \in \omega$, mula $n$ uga tanpa wates
+miturut Dedekind, kang mbantah
+\olref[z][infinity-again]{naturalnumbersarentinfinite}. Saiki
+$\omega$ iku kardinal tanpa wates paling cilik miturut definisi.
+\end{proof}
+
+\begin{cor}
+Saben kardinal tanpa wates iku ordinal limit.
+\end{cor}
+
+\begin{proof}
+Upamané $\alpha$ ordinal penerus kang tanpa wates, mula
+$\alpha = \beta
+\ordplus 1$ kanggo sawatara $\beta$. Amarga penerus ordinal
+winates mesthi winates, $\beta$
+uga tanpa wates, mula $\cardeq{\beta}{\beta \ordplus 1}$ miturut
+\olref[ord-arithmetic][using-addition]{ordinfinitycharacter}. Saiki
+$\card{\beta} = \card{\beta\ordplus 1} = \card{\alpha}$ miturut
+\olref[cardinals][cardsasords]{lem:CardinalsBehaveRight}; amarga
+kardinal sawijining ordinal ora ngluwihi ordinal kasebut, mula
+$\alpha \neq \card{\alpha}$.
+\end{proof}
+
+Ing \olref[sfr][siz][enm-alt]{defn:enumerable} kita wis nuduhaké
+yèn himpunan tanpa wates kang !!{enumerable} bisa dibédakaké
+saka kang !!{nonenumerable}. Definisi iku nuwuhaké asil iki:
+
+\begin{prop}
+$A$ iku !!{enumerable} yen lan mung yen $\card{A} \leq \omega$,
+lan $A$ iku !!{nonenumerable} yen lan mung yen $\omega < \card{A}$.
+\end{prop}
+
+\begin{proof}
+Miturut Trikotomi, rong pratelan mau ekivalen; mula cukup
+mbuktèkaké yèn $A$ iku !!{enumerable} yen lan mung yen
+$\card{A} \leq \omega$. Kanggo
+\emph{saka tengen menyang kiwa}: yèn $\card{A} \leq \omega$, mula
+$\cardle{A}{\omega}$ miturut
+\olref[cardinals][cardsasords]{lem:CardinalsBehaveRight} lan
+\olref{omegaisacardinal}. Kanggo \emph{saka kiwa menyang tengen}:
+upamané $A$ iku !!{enumerable}; miturut
+\olref[sfr][siz][enm-alt]{defn:enumerable} ana telung kasus:
+\begin{enumerate}
+	\item yèn $A = \emptyset$, mula $\card{A} = 0 \in \omega$, miturut
+	\olref{naturalsarecardinals} lan
+	\olref[cardinals][cardsasords]{lem:CardinalsBehaveRight}.
+	\item yèn $\cardeq{n}{A}$, mula $\card{A} = n \in \omega$, miturut
+	\olref{naturalsarecardinals} lan
+	\olref[cardinals][cardsasords]{lem:CardinalsBehaveRight}.
+	\item yèn $\cardeq{\omega}{A}$, mula $\card{A} = \omega$, miturut \olref{omegaisacardinal}.
+\end{enumerate}
+Dadi ing kabèh kasus, $\card{A} \leq \omega$.
+\end{proof}
+\noindent
+Pancen, $\omega$ nduwèni kalungguhan mligi. Sanadyan ana
+akèh ordinal kang bisa diétung:
+
+\begin{cor}
+$\omega$ iku siji-sijiné kardinal tanpa wates kang !!{enumerable}.
+\end{cor}
+
+\begin{proof}
+Upamané $\cardfont{a}$ iku kardinal tanpa wates kang !!a{enumerable}. Amarga
+$\cardfont{a}$ tanpa wates, $\omega \leq \cardfont{a}$. Amarga
+$\cardfont{a}$ iku kardinal kang !!a{enumerable}, $\cardfont{a} =
+\card{\cardfont{a}} \leq \omega$. Mula $\cardfont{a} = \omega$ miturut
+Trikotomi. \end{proof}
+
+Mesthiné ana tanpa wates akèhé kardinal. Mula kita bisa takon:
+\emph{Pira cacahé kardinal?} Asil-asil sabanjuré nuduhaké
+yèn pitakonan iki perlu dipikir manèh.
+
+\begin{prop}\ollabel{unioncardinalscardinal}
+Yèn saben unsur $X$ iku kardinal, mula $\bigcup X$ iku kardinal.
+\end{prop}
+
+\begin{proof}
+Gampang dipriksa yèn $\bigcup X$ iku ordinal. Upamané $\alpha \in
+\bigcup X$ iku ordinal; mula $\alpha \in \cardfont{b} \in X$ kanggo
+sawatara kardinal $\cardfont{b}$. Amarga $\cardfont{b}$ iku kardinal,
+$\cardless{\alpha}{\cardfont{b}}$. Amarga $\cardfont{b} \subseteq
+\bigcup X$, kita nduwèni $\cardle{\cardfont{b}}{\bigcup X}$, lan mula
+$\cardneq{\alpha}{\bigcup X}$. Kanthi nggeneralisasi, $\bigcup X$
+iku kardinal.
+\end{proof}
+
+\begin{thm}\ollabel{lem:NoLargestCardinal}
+Ora ana kardinal paling gedhé.
+\end{thm}
+
+\begin{proof}
+Kanggo sembarang kardinal $\cardfont{a}$, Teorema Cantor
+(\olref[sfr][siz][car]{thm:cantor}) lan
+\olref[cardinals][cardsasords]{lem:CardinalsExist} ndadèkaké
+$\cardfont{a} < \card{\Pow{\cardfont{a}}}$.
+\end{proof}
+
+\begin{thm}
+Himpunan kabèh kardinal ora ana.
+\end{thm}
+
+\begin{proof}
+Kanggo kontradiksi, upamané $C = \Setabs{\cardfont{a}}{\cardfont{a} \text{
+iku kardinal}}$. Saiki $\bigcup C$ iku kardinal miturut
+\olref{unioncardinalscardinal}, mula miturut \olref{lem:NoLargestCardinal}
+ana kardinal $\cardfont{b} > \bigcup C$. Miturut definisi,
+$\cardfont{b} \in C$, mula $\cardfont{b} \subseteq \bigcup{C}$, saéngga
+$\cardfont{b} \leq \bigcup C$, sawijining kontradiksi.
+\end{proof}
+
+Bandhingna iki karo Paradoks Russell lan Burali-Forti.
+
+\end{document}

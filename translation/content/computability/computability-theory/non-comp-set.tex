@@ -1,0 +1,81 @@
+% Part: computability
+% Chapter: computability-theory
+% Section: non-comp-set
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{thy}{ncp}
+\olsection{Ana Himpunan kang Ora Komputabel}
+
+
+Ing ndhuwur wis kita deleng yen saben himpunan
+komputabel bisa dienumerasi sacara komputabel.
+Apa kosok baline uga bener? Ing ngisor iki
+dituduhake yen sacara umum ora bener.
+
+\begin{thm}\ollabel{thm:K-0}
+Tetepna $K_0$ minangka himpunan
+$\Setabs{\tuple{e, x}}{\cfind{e}(x) \fdefined}$.
+Mula $K_0$ bisa dienumerasi sacara komputabel
+nanging ora komputabel.
+\end{thm}
+
+\begin{proof}
+Kanggo ndeleng yen $K_0$ bisa dienumerasi
+sacara komputabel, gatekna yen himpunan iku
+domain fungsi~$f$ kang ditegesi minangka
+\[
+f(z) = \umin{y}{(\len{z} = 2 \land T((z)_0, (z)_1, y))}.
+\]
+Sebab, yen $\cfind{e}(x)$ ditegesi,
+$f(\tuple{e, x})$ nemokake runtutan
+komputasi kang mandheg; yen
+$\cfind{e}(x)$ ora ditegesi, semono uga
+$f(\tuple{e, x})$; lan yen $z$ malah ora
+ngode pasangan, $f(z)$ uga ora ditegesi.
+
+Kasunyatan yen $K_0$ ora komputabel yaiku
+ora bisane masalah mandheg diputusake,
+\olref[hlt]{thm:halting-problem}.
+\end{proof}
+
+Himpunan $K_0$ yaiku himpunan pasangan
+$\tuple{e,x}$ kang ndadekake
+$\cfind{e}(x) \fdefined$, yaiku
+$\tuple{e,x} \in K_0$ yen lan mung yen
+$\cfind{e}$ ditegesi (mandheg) ing
+input~$x$. Mula himpunan iki uga diarani
+``himpunan mandheg''. Himpunan
+$K = \Setabs{e}{\cfind{e}(e) \fdefined}$
+yaiku ``himpunan mandheg ing indekse dhewe''.
+Himpunan iki kerep digunakake minangka
+conto baku himpunan kang ora bisa diputusake.
+
+\begin{thm}\ollabel{thm:K}
+Himpunan mandheg ing indekse dhewe
+$K = \Setabs{e}{\cfind{e}(e) \fdefined}$
+iku !!{c.e.} nanging ora bisa diputusake.
+\end{thm}
+
+\begin{proof}
+  Upamane $K$ bisa diputusake, yaiku fungsi
+  karakteristike $\Char{K}$ komputabel. Tetepna
+  \[d(e) = \begin{cases}
+  1 & \text{yen\/ $\Char{K}(e) = 0$}\\
+  \fundefined & \text{yen ora.}
+  \end{cases}
+  \] 
+  Tetepna $k$ minangka indeks~$d$, yaiku
+  $d \simeq \cfind{k}$. Mula $d(k)
+  \simeq \cfind{k}(k)$. Iki nalisir
+  kasunyatan yen $d(k) \fdefined$ yen lan
+  mung yen $\cfind{k}(k) \fundefined$,
+  kang manut saka definisi~$d$.
+
+  $K$ minangka domain $f(x) = \umin{y}{T(x,x,y)}$
+  mula uga !!{c.e.}
+\end{proof}
+
+\end{document}

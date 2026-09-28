@@ -1,0 +1,69 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{z}{arbintersections}
+\olsection{Apendiks: Tutupan, Komprehensi, lan Irisan}
+
+Ing \olref[sth][z][milestone]{sec}, kita menehi saran
+supaya panjenengan nyawang maneh pakaryan naif ing
+\olref[sfr][][]{part} lan mriksa yen pakaryan iku bisa
+ditindakake ing~$\Zminus$. Yen panjenengan ngetutake
+saran iku, ana \emph{siji} bab kang bisa mbingungake:
+panggunaan \emph{irisan} nalika Dedekind ngrembug
+\emph{tutupan}.
+
+Elinga saka \olref[sfr][infinite][dedekind]{Closure} yen
+\begin{align*}
+  \closureofunder{f}{o} & = \bigcap\Setabs{X}{o \in X \text{ lan $X$ tutup miturut
+$f$}}.
+\intertext{Wangun umume yaiku panetepan kaya mangkene:}
+  C & = \bigcap\Setabs{X}{\phi(X)}.
+\end{align*}
+Nanging iki kudu nggawe kita ngati-ati: amarga
+Komprehensi Naif ora lumaku, ora ana jaminan yen
+$\Setabs{X}{\phi(X)}$ ana. Dadi panetepan kaya mangkene
+katon \emph{curang}.
+
+Untunge, panetepan iku ora kudu curang; utawa, yen
+wujude saiki pancen \emph{curang}, kita bisa nggarap
+kanthi tliti supaya dadi sah. Cara iku wis disinggung ing
+\olref[sth][z][sep]{prop:intersectionsexist}, nalika
+kita nerangake sebabe $\bigcap A$ ana kanggo saben
+$A \neq \emptyset$. Saiki kita bakal ngandharake kanthi
+gamblang.
+
+Kanthi Ekstensionalitas, yen kita arep netepake $C$
+minangka $\bigcap\Setabs{X}{\phi(X)}$, kang sejatine
+kita butuhake mung obyek $C$ kang nyukupi syarat iki:
+\begin{equation}\ollabel{bicondelimarbintersection}
+	\forall x(x \in C \liff \forall X(\phi(X) \lif x \in X))\tag{*}
+\end{equation}
+Saiki upamane ana \emph{sawijining} himpunan $S$ kang
+nyukupi $\phi(S)$. Supaya entuk
+\olref{bicondelimarbintersection}, kita cukup netepake $C$
+kanthi \emph{Pamisahan} mangkene:
+\[
+	C = \Setabs{x \in S}{\forall X(\phi(X) \lif x \in X)}.
+\]
+Panjenengan bisa mriksa minangka gladhen yen panetepan
+iki pancen ngasilake \olref{bicondelimarbintersection}.
+% Pilih $x$. Upamane luwih dhisik $x \in C$ miturut panetepan anyar; mula $x
+% \in S$ lan $\forall X(\phi(X) \lif x \in X)$; nanging amarga
+% $\phi(S)$, iki padha karo syarat $\forall X(\phi(X)
+% \lif x \in X)$. Kosok baline, upamane $\forall X(\phi(X) \lif
+% x \in X)$; banjur, amarga $\phi(S)$, kita uga ngerti yen $x \in S$; mula
+% $x \in C$ miturut panetepan anyar.
+Strategi umum iki bisa ngindhari panggunaan
+Komprehensi Naif kang katon ana ing panetepan irisan.
+Kanggo kasus kang miwiti pamikiran iki, yaiku
+$\closureofunder{f}{o}$, carane mangkene. Ing wiwitan
+bukti \olref[sfr][infinite][dedekind]{closureproperties},
+kita nyathet yen $o \in \ran{f}\cup\{o\}$ lan
+$\ran{f} \cup \{o\}$ tutup miturut $f$. Mula, kang
+kita karepake bisa ditetepake mangkene:
+\[
+	\closureofunder{f}{o} = \Setabs{x \in \ran{f} \cup \{o\}}{(\forall X \ni o)(X \text{ tutup miturut $f$} \lif x \in X)}.
+\]
+
+\end{document}

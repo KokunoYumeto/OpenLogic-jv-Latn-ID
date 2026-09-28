@@ -1,0 +1,70 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{ordinals}{vn}	
+\olsection[Pambangunan von Neumann]{Pambangunan Ordinal Miturut von Neumann}
+
+\olref[sth][ordinals][iso]{thm:woalwayscomparable}
+ndadekake kita mikir. Kita bisa ngenalake obyek tartamtu,
+kang diarani \emph{tipe urutan}, minangka wakil
+kanggo urutan becik. Yen $\ordtype{A, <}$ ditulis
+kanggo tipe urutan saka urutan becik $\tuple{A, <}$,
+kita ngarepake rong prinsip iki:
+\begin{align*}
+	\ordtype{A, <} = \ordtype{B, \lessdot} & 
+	\text{ yen lan mung yen } \ordeq{\tuple{A, <}}{\tuple{B, \lessdot}}\\
+	\ordtype{A, <} < \ordtype{B, \lessdot}&
+	\text{ yen lan mung yen }\ordeq{\tuple{A, <}}{\tuple{B_b, \lessdot_b}}\text{ kanggo sawenehing }b \in B
+\end{align*}
+Kajaba iku, kita bisa ngenalake tipe urutan
+\emph{minangka himpunan tartamtu}, kaya anggone kita
+ngenalake wilangan asli minangka himpunan tartamtu.
+
+Cara kang paling lumrah kanggo nindakake iki---lan
+iki kang bakal kita tindakake---yaiku netepake tipe
+urutan kasebut liwat sawenehing himpunan kang diurutake
+kanthi becik lan \emph{kanonik}. Himpunan kanonik iki
+pisanan dikenalake dening von Neumann:
+
+\begin{defn}
+Himpunan $A$ iku \emph{transitif} yen lan mung yen
+$(\forall x \in A)x \subseteq A$. Banjur $A$ iku
+\emph{ordinal} yen lan mung yen $A$ transitif lan
+diurutake kanthi becik dening $\in$.
+\end{defn}
+\noindent
+Ing salajengipun, kita bakal nganggo aksara Yunani
+kanggo ordinal. Saka definisi langsung ndherek yen
+$\alpha$ ordinal, mula $\tuple{\alpha, \in_\alpha}$
+iku urutan becik, kanthi $\in_\alpha =
+\Setabs{\tuple{x, y} \in \alpha^2}{x \in y}$.
+Dadi, kanthi rada nglonggari notasi, kita bisa kandha
+yen $\alpha$ \emph{dhewe} iku urutan becik.
+
+Iki sawetara ordinal kang kapisan:
+\[
+	\emptyset, \{\emptyset\}, 
+	\{\emptyset, \{\emptyset\}\}, 
+	\{\emptyset, \{\emptyset\}, \{\emptyset, \{\emptyset\}\}\}, \ldots
+\]
+Panjenengan bisa ndeleng yen iki padha karo ordinal
+kapisan kang ditemoni ing Aksioma Tanpa Wates, yaiku
+ing definisi $\omega$ miturut von Neumann (delengen
+\olref[sth][z][infinity-again]{sec}). Iki dudu
+bab kang dumadi tanpa sengaja. Definisi ordinal miturut von Neumann
+nganggep wilangan asli minangka ordinal, nanging uga
+ngidini ordinal transfinit.
+
+Kaya biasane, saiki kita bisa takon: apa himpunan iki
+\emph{pancen} ordinal? Utawa von Neumann mung menehi
+sawenehing himpunan kang bisa kita \emph{anggep}
+minangka ordinal? Rembugan bab pitakonan iki padha
+jinise karo rembugan ing \olref[sfr][rel][ref]{sec},
+\olref[sfr][arith][ref]{sec},
+\olref[sfr][infinite][dedekindsproof]{sec}, lan
+\olref[sth][z][nat]{sec}, mula kita ora bakal
+ngrembug dawa ing kene. Ing salajengipun, kita bakal
+nganggo ``ordinal'' kanggo nyebut ``ordinal von Neumann''.
+
+\end{document}

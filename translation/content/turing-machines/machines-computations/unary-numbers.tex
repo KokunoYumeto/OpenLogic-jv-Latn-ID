@@ -1,0 +1,267 @@
+% Part: turing-machines
+% Chapter: machines-computations
+% Section: unary-numbers
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{tur}{mac}{una}
+\olsection{Representasi Wilangan kanthi Siji Simbol}
+
+\begin{explain}
+Mesin Turing makarya nganggo runtutan simbol kang ditulis
+ing pitane. Gumantung marang alfabet kang digunakake mesin
+Turing, runtutan simbol iki bisa nggambarake maneka input
+lan output. Kang mesthi wigati yaiku mesin Turing kang
+ngitung fungsi \emph{aritmetika}, yaiku fungsi ing wilangan
+asli. Cara prasaja kanggo nggambarake wilangan wutuh positif
+yaiku ngode nganggo runtutan siji jinis simbol~$\TMstroke$.
+Yen $n \in \Nat$, tetepna $\TMstroke^n$ minangka runtutan
+kosong yen $n = 0$, lan yen ora, minangka runtutan kang
+dumadi saka persis $n$ simbol $\TMstroke$.
+\end{explain}
+
+\begin{defn}[Komputasi]
+Mesin Turing~$M$ \emph{ngitung} fungsi
+$f\colon \Nat^k \to \Nat$ yen lan mung yen
+$M$~mandheg nalika nampa input
+\[
+\TMstroke^{n_1} \TMblank \TMstroke^{n_2} \TMblank \dots \TMblank \TMstroke^{n_k}
+\]
+kanthi output $\TMstroke^{f(n_1, \dots, n_k)}$.
+\end{defn}
+
+\begin{prob}
+  Wenehana definisi kapan mesin Turing~$M$
+  ngitung fungsi $f\colon \Nat^k \to \Nat^m$.
+\end{prob}
+
+\begin{ex}\ollabel{ex:adder}
+\emph{Panambahan:}
+Ayo kita gawe mesin kang ngitung fungsi $f(n,m) = n + m$.
+Iki mbutuhake mesin kang diwiwiti nganggo rong blok
+$\TMstroke$ dawa $n$ lan~$m$ ing pita, banjur mandheg
+kanthi siji blok kang dumadi saka
+$n+m$~$\TMstroke$. Rong blok input~$\TMstroke$
+dipisahake dening~$\TMblank$, mula salah siji
+carane yaiku nulis guratan ing kothak kang ngemot
+$\TMblank$ lan mbusak~$\TMstroke$ pungkasan.
+\begin{figure}\[
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                    semithick]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+  \node[initial,state]         (A)              {$q_0$};
+  \node[state]         (B) [right of=A] {$q_1$};
+  \node[state]         (C) [right of=B] {$q_2$};
+
+  \path (A) edge node {\TMtrans{\TMblank}{\TMstroke}{\TMstay}} (B)
+           edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (B)
+        (B) edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (B)
+            edge node {\TMtrans{\TMblank}{\TMblank}{\TMleft}} (C)
+        (C) edge [loop above] node {\TMtrans{\TMstroke}{\TMblank}{\TMstay}} (C);
+\end{tikzpicture}
+\]\caption{Mesin kang ngitung $f(x,y) = x+y$}
+\ollabel{fig:adder}
+\end{figure}
+\end{ex}
+
+\begin{prob}
+Telusurana konfigurasi mesin ing
+\olref[tur][mac][una]{ex:adder} kanggo input~$\tuple{3,2}$.
+Apa kang kedadeyan yen mesin ngitung $0+0$?
+\end{prob}
+
+\begin{explain}
+Ing \olref[rep]{ex:doubler}, kita menehi tuladha
+mesin Turing kang nampa runtutan~$\TMstroke$
+minangka input lan mandheg kanthi runtutan
+$\TMstroke$ kang cacahe tikel loro ing pita
+---mesin pangganda. Nanging amarga outpute
+ngemot $\TMblank$ ing sisih kiwa blok
+$\TMstroke$ kang wis digandakake, mesin iku
+sejatine ora ngitung fungsi $f(x) = 2x$,
+senajan mbokmenawa kowe nganggep mangkono.
+Kita bakal njlentrehake rong cara kanggo
+mbenerake iki.
+\end{explain}
+
+\begin{ex}
+Mesin ing \olref{fig:doubler-disc} ngitung fungsi
+$f(x) = 2x$. Beda karo tumindake mbusak input
+lan nulis rong $\TMstroke$ ing sisih tengen
+adoh kanggo saben $\TMstroke$ ing input
+kaya mesin saka \olref[rep]{ex:doubler},
+mesin iki nambah siji~$\TMstroke$ ing sisih
+tengen kanggo saben~$\TMstroke$ ing input.
+Mesin kudu ngerti papan pungkasane input,
+mula ditinggalake~$\TMblank$ ing antarane
+input lan guratan tambahan, kang ing pungkasan
+diisi~$\TMstroke$. Kita uga kudu
+``ngelingi'' papan saiki ing input,
+mula sawatara wektu siji~$\TMstroke$ ing
+blok input diganti dadi~$\TMblank$.
+  \begin{figure}
+\[
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                    semithick]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+  \node[initial,state] (0)              {$q_0$};
+  \node[state]         (1) [above of=0] {$q_1$};
+  \node[state]         (2) [above of=1] {$q_2$};
+  \node[state]         (3) [right of=2] {$q_3$};
+  \node[state]         (4) [below of=3] {$q_4$};
+  \node[state]         (5) [below of=4] {$q_5$};
+  \node[state]         (6) [above right of=4] {$q_6$};
+  \node[state]         (7) [below of=6] {$q_7$};
+  \node[state]         (8) [below of=7] {$q_8$};
+
+  \path (0) edge node {\TMtrans{\TMstroke}{\TMblank}{\TMright}} (1)
+%    (0) edge node {\TMtrans{\TMblank}{\TMblank}{\TMstay}} (h)
+    (1) edge [loop left] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (1)
+      edge node {\TMtrans{\TMblank}{\TMblank}{\TMright}} (2)
+    (2) edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (2)
+        edge node {\TMtrans{\TMblank}{\TMstroke}{\TMleft}} (3)
+    (3) edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMleft}} (3)
+        edge node[left] {\TMtrans{\TMblank}{\TMblank}{\TMleft}} (4)
+    (4) edge        node[left] {\TMtrans{\TMstroke}{\TMstroke}{\TMleft}} (5)
+    (5) edge [loop below] node {\TMtrans{\TMstroke}{\TMstroke}{\TMleft}} (5)
+        edge              node {\TMtrans{\TMblank}{\TMstroke}{\TMright}} (0)
+    (4) edge      node[sloped] {\TMtrans{\TMblank}{\TMstroke}{\TMright}} (6)
+    (6) edge              node {\TMtrans{\TMblank}{\TMstroke}{\TMright}} (7)
+    (7) edge [loop right] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (7)
+        edge              node {\TMtrans{\TMblank}{\TMblank}{\TMleft}} (8)
+    (8) edge [loop right] node {\TMtrans{\TMstroke}{\TMblank}{\TMstay}} (8);
+    \end{tikzpicture}
+\]
+\caption{Mesin kang ngitung $f(x) = 2x$}
+\ollabel{fig:doubler-disc}
+\end{figure}
+\end{ex}
+
+\begin{ex}\ollabel{ex:mover}
+Cara kapindho kanggo ngitung $f(x) = 2x$
+yaiku tetep nganggo mesin pangganda asal,
+nanging nambah kahanan lan instruksi ing
+pungkasan kang mindhah blok guratan kang
+wis digandakake menyang sisih kiwa paling adoh
+ing pita. Mesin ing \olref{fig:mover}
+nindakake bagean pungkasan iki: yen diwiwiti
+ing pita kang dumadi saka blok~$\TMblank$
+banjur blok~$\TMstroke$ (kanthi sirah ana
+ing papan sembarang ing blok~$\TMblank$),
+mesin mbusak $\TMstroke$ siji-siji lan
+nulis maneh ing wiwitan pita. Supaya bisa
+ngerti kapan wis rampung, mesin luwih
+dhisik nandhani pungkasane blok $\TMstroke$
+nganggo simbol~$\TMendtape$, kang banjur
+dibusak ing pungkasan. Kita miwiti nomer
+kahanan saka~$q_6$, supaya bisa ditambahake
+marang mesin pangganda. Kang dibutuhake
+mung instruksi tambahan $\delta(q_0,
+\TMblank) = \tuple{q_6,\TMblank,\TMstay}$,
+yaiku panah saka~$q_0$ menyang~$q_6$
+kanthi tandha~$\TMtrans{\TMblank}{\TMblank}{\TMstay}$.
+(Ana sawijining masalah cilik: mesin kang
+diasilake ora lumaku kanggo input~$x=0$.
+Iki kita tinggalake dadi latihan.)
+\begin{figure}
+  \[
+  \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                      semithick]
+    \tikzstyle{every state}=[fill=none,draw=black,text=black]
+    \node[initial,state] (6)              {$q_6$};
+    \node[state]         (7) [right of=6] {$q_7$};
+    \node[state]         (8) [right of=7] {$q_8$};
+    \node[state]         (9) [below of=8] {$q_9$};
+    \node[state]         (10) [left of=9] {$q_{10}$};
+    \node[state]         (11) [left of=10]  {$q_{11}$};
+    \node[state]         (12) [below of=11]  {$q_{12}$};
+    \node[state]         (13) [right of=12] {$q_{13}$};
+    \node[state]         (14) [right of=13] {$q_{14}$};
+    \path
+    (6)  edge node {\TMtrans{\TMblank}{\TMblank}{\TMright}} (7)
+    (7)  edge [loop above] node {\TMtrans{\TMblank}{\TMblank}{\TMright}} (7)
+         edge node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (8)
+    (8)  edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (8)
+         edge node {\TMtrans{\TMblank}{\TMendtape}{\TMleft}} (9)
+    (9)  edge [loop right] node {\TMtrans{\TMstroke}{\TMstroke}{\TMleft}} (9)
+         edge node {\TMtrans{\TMblank}{\TMblank}{\TMright}} (10)
+    (10) edge node[above] {\TMtrans{\TMstroke}{\TMblank}{\TMleft}} (11)
+    (11) edge [loop above] node {\TMtrans{\TMblank}{\TMblank}{\TMleft}} (11)
+         edge node[left] {\begin{tabular}{@{}l@{}}
+          \TMtrans{\TMendtape}{\TMendtape}{\TMright}\\
+          \TMtrans{\TMstroke}{\TMstroke}{\TMright}
+         \end{tabular}} (12)
+    (12) edge node[] {\TMtrans{\TMblank}{\TMstroke}{\TMright}} (13)
+    (13) edge [loop below] node {\TMtrans{\TMblank}{\TMblank}{\TMright}} (13)
+         edge node[sloped] {\TMtrans{\TMstroke}{\TMblank}{\TMleft}} (11)
+    (13) edge node {\TMtrans{\TMendtape}{\TMblank}{\TMstay}} (14);
+  \end{tikzpicture}
+  \]
+  \caption{Mindhah blok $\TMstroke$ menyang kiwa}
+  \ollabel{fig:mover}
+\end{figure}
+\end{ex}
+
+\begin{prob}
+Ing \olref[tur][mac][una]{ex:mover}, kita njlentrehake
+mesin kang nyawijikake mesin pangganda saka
+\olref[tur][mac][una]{fig:doubler-disc} lan mesin
+pamindhah saka \olref[tur][mac][una]{fig:mover}.
+Apa kang kedadeyan yen mesin gabungan iki
+diwiwiti nganggo input~$x=0$, yaiku pita kosong?
+Kepriye carane mbenerake mesin supaya ing kahanan
+iki mesin mandheg kanthi output~$2x=0$?
+(Kowe kudune bisa nindakake iki kanthi nambah
+siji kahanan lan siji transisi.)
+\end{prob}
+
+\begin{prob}
+\emph{Pangurangan:} Rancangna mesin Turing kang
+yen diwenehi input rong runtutan guratan ora kosong
+kanthi dawa $n$ lan~$m$, ing ngendi $n >
+m$, ngitung fungsi $f(n,m) = n - m$.
+\end{prob}
+
+\begin{prob}
+\emph{Pepadhan:} Rancangna mesin Turing kanggo
+ngitung fungsi ing ngisor iki:
+\[
+\fn{equality}(n,m) = 
+\begin{cases}
+  \text{1} & \text{yen~$n = m$} \\
+  \text{0} & \text{yen~$n \neq m$}
+\end{cases}
+\]
+ing ngendi~$n$ lan~$m \in \PosInt$.
+\end{prob}
+
+\begin{prob}
+Rancangna mesin Turing kanggo ngitung fungsi
+$\min(x,y)$ nalika $x$ lan $y$ wilangan wutuh
+positif kang digambarake ing pita minangka
+runtutan $\TMstroke$ kang dipisahake dening
+$\TMblank$. Kowe oleh nganggo simbol tambahan
+ing alfabet mesin.
+
+Fungsi $\min$ milih nilai paling cilik saka
+argumene, mula $\min(3,5)=3$, $\min(20,16)=16$,
+lan $\min(4,4)=4$, lan sateruse.
+\end{prob}
+
+\begin{defn}
+  Mesin Turing~$M$ ngitung fungsi parsial $f\colon \Nat^k
+  \pto \Nat$ yen lan mung yen
+  \begin{enumerate}
+    \item $M$ mandheg nalika nampa input $\TMstroke^{n_1}\concat\TMblank\concat
+    \dots \concat\TMblank\concat\TMstroke^{n_k}$ kanthi output $\TMstroke^{m}$ yen $f(n_1, \dots, n_k) = m$.
+    \item $M$ ora mandheg babar pisan, utawa mandheg kanthi
+    output kang dudu siji blok~$\TMstroke$, yen
+    $f(n_1, \dots, n_k)$ ora ditegesi.
+  \end{enumerate}
+\end{defn}
+
+\end{document}

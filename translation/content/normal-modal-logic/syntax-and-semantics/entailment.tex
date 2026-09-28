@@ -1,0 +1,86 @@
+% Part: normal-modal-logic
+% Chapter: syntax-and-semantics
+% Section: entailment
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{syn}{ent}
+
+\olsection{Relasi Akibat Logis}
+
+\begin{explain}
+  Kanthi definisi kabeneran ing sawijining donya, kita bisa nemtokake
+  relasi akibat logis antarane !!{formula}s. !!^a{formula}~$!B$
+  ngakibatake~$!A$ yen lan mung yen, saben $!B$ bener, $!A$ uga
+  bener. Ing kene, ``saben'' ateges ``model endi wae kang dianggep''
+  lan ``donya endi wae ing model kasebut kang dianggep.''
+\end{explain}
+
+\begin{defn}
+  Yen $\Gamma$ himpunan !!{formula}s lan $!A$ !!a{formula}, mula
+  $\Gamma$ \emph{ngakibatake}~$!A$, kanthi simbol: $\Gamma \Entails !A$, yen
+  lan mung yen kanggo saben model $\mModel{M} = \tuple{W, R, V}$ lan donya
+  $w \in W$, yen $\mSat{M}{!B}[w]$ kanggo saben $!B \in \Gamma$, mula
+  $\mSat{M}{!A}[w]$. Yen $\Gamma$ mung ngemot siji !!{formula}~$!B$,
+  kita nulis $!B \Entails !A$.
+\end{defn}
+
+\begin{ex}
+  Kanggo mbuktekake yen !!a{formula} ngakibatake formula liyane, kita kudu
+  nalar babagan kabeh model kanthi definisi $\mSat{M}{}[w]$. Upamane,
+  kanggo mbuktekake $p \lif \Diamond p \Entails \Box\lnot p \lif \lnot p$,
+  kita bisa nalar kaya mangkene: Pilih model $\mModel{M} = \tuple{W, R,
+    V}$ lan $w \in W$, lan upamane $\mSat{M}{p \lif \Diamond
+    p}[w]$. Kita kudu mbuktekake $\mSat{M}{\Box\lnot p \lif \lnot
+    p}[w]$. Upamane ora. Mula $\mSat{M}{\Box\lnot p}[w]$ lan
+  $\mSat/{M}{\lnot p}[w]$. Amarga $\mSat/{M}{\lnot p}[w]$, $\mSat{M}{
+    p}[w]$. Miturut asumsi, $\mSat{M}{p \lif \Diamond p}[w]$, mula
+  $\mSat{M}{\Diamond p}[w]$. Miturut definisi $\mSat{M}{\Diamond
+    p}[w]$, ana $w'$ kang nyukupi $Rww'$ saengga
+  $\mSat{M}{p}[w']$. Amarga uga $\mSat{M}{\Box \lnot p}[w]$,
+  $\mSat{M}{\lnot p}[w']$, sawijining kontradiksi.
+
+Kanggo mbuktekake yen !!a{formula}~$!B$ ora ngakibatake formula
+  liyane~$!A$, kita kudu menehi tuladha kontra, yaiku model
+  $\mModel{M} = \tuple{W, R,
+    V}$ kang ing sawijining donya~$w \in W$ nyukupi $\mSat{M}{!B}[w]$
+  nanging $\mSat/{M}{!A}[w]$. Ayo buktekake yen $p \lif \Diamond p \Entails/
+  \Box p \lif p$. Delengen model ing \olref{fig:counterex}. Kita
+  duwe $\mSat{M}{\Diamond p}[w_1]$ lan mula $\mSat{M}{p \lif
+    \Diamond p}[w_1]$. Nanging, amarga $\mSat{M}{\Box p}[w_1]$ lan
+  $\mSat/{M}{p}[w_1]$, kita duwe $\mSat/{M}{\Box p \lif p}[w_1]$.
+  \begin{figure}
+  \begin{center}
+    \begin{tikzpicture}[modal]
+      \node[world] (w1) [label=right:\mFalse{p}]{$w_1$}; 
+      \node[world] (w2) [label=right:\mTrue{p}, above left=of w1]{$w_2$}; 
+      \node[world] (w3) [label=right:\mTrue{p}, above right=of w1] {$w_3$};
+      \draw[->] (w1) to (w2);
+      \draw[->] (w1) to (w3);
+    \end{tikzpicture}
+  \end{center}
+  \caption{Tuladha kontra kanggo $p \lif \Diamond p
+  \Entails \Box p \lif p$.}
+  \ollabel{fig:counterex}
+  \end{figure}
+
+Asring tuladha kontra kang prasaja wis cukup. Model $\mModel{M'} =
+  \tuple{W', R', V'}$ kanthi $W' = \{w\}$, $R' = \emptyset$, lan $V'(p) =
+  \emptyset$ uga tuladha kontra: Amarga $\mSat/{M'}{p}[w]$,
+  $\mSat{M'}{p \lif \Diamond p}[w]$. Amarga ora ana donya kang bisa diakses
+  saka~$w$, kita duwe $\mSat{M'}{\Box p}[w]$, mula $\mSat/{M'}{\Box p
+    \lif p}[w]$.
+\end{ex}
+
+\begin{prob}
+  Buktekna yen $\Box (!A \land !B) \Entails \Box !A$.
+\end{prob}
+
+\begin{prob}
+  Buktekna yen $\Box (p \lif q) \Entails/ p \lif \Box q$ lan $p \lif \Box
+  q \Entails/\Box (p \lif q)$.
+\end{prob}
+
+\end{document}

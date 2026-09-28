@@ -1,0 +1,225 @@
+% Part: proof-theory
+% Chapter: natural-deduction
+% Section: quantifiers
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{nat}{qua}
+
+\olsection{\usetoken{P}{proof} Reguler lan Substitusi}
+
+Aturan kuantor njalari sawatara keruwetan amarga
+``syarat variabel eigen'' kang lumaku kanggo aturan
+\Elim{\lexists} lan~\Intro{\lforall}.
+Akèh-akèhé keruwetan iki bisa diatasi kanthi njamin
+yèn !!{constant}~$c$ ing inferènsi mau ora tau dienggo
+manèh. Kita tetepaké definisi iki.
+
+\begin{defn}
+!!{proof}~$\delta$ ing deduksi alami diarani
+\emph{reguler} yèn
+\begin{enumerate}
+  \item ora ana variabel eigen~$a$ kang dienggo ing
+  luwih saka siji inferènsi \Elim{\lexists}
+  utawa~\Intro{\lforall}, lan
+  \item yèn $a$ variabel eigen ing inferènsi
+  \Elim{\lexists} utawa~\Intro{\lforall},
+  variabel iku mung ana ing sub-!!{proof} langsung
+  kang nuju premis cilik, utawa premis tunggal,
+  miturut urutané.
+\end{enumerate}
+\end{defn}
+
+\begin{lem}\ollabel{lem:subst-regular}
+Yèn $\delta$ reguler lan pungkasané ana ing~$!C$,
+$c$ iku !!a{constant} kang ora dadi variabel eigen
+ing~$\delta$, sarta $t$~suku kang ora ngemot variabel
+eigen saka~$\delta$, banjur
+$\Subst{\delta}{t}{c}$, kang diolehké saka~$\delta$
+kanthi ngganti saben kedadéan~$c$ nganggo~$t$,
+iku !!{proof} reguler. !!{formula} pungkasan saka
+$\Subst{\delta}{t}{c}$ yaiku $\Subst{!C}{t}{c}$.
+Yèn $!A^x$ asumsi kabuka ing~$\delta$, banjur
+$\Subst{!A}{t}{c}^x$ asumsi kabuka ing
+~$\Subst{\delta}{t}{c}$.
+\end{lem}
+
+\begin{proof}
+  Buktiné nganggo induksi tumrap $\pheight{\delta}$.
+  Yèn $\pheight{\delta} = 0$, isiné mung asumsi~$!A^x$.
+  Banjur $\Subst{\delta}{t}{c}$ padha karo
+  ~$\Subst{!A}{t}{c}^x$.
+
+  Yèn $\pheight{\delta} > 0$, kita bedakaké manut
+  inferènsi pungkasan ing~$\delta$. Kahanan aturan
+  konektif proposisional gampang lan dipasrahaké
+  dadi latihan. Kita ngrembug nalika $\delta$
+  pungkasané nganggo inferènsi kuantor.
+  \begin{enumerate}
+    \item Yèn inferènsi pungkasan yaiku $\Intro{\lforall}$,
+    $\delta$ wujudé
+    \[
+    \AxiomC{}
+    \RightLabel{$\delta'$}
+    \DeduceC{$!A(a,c)$}
+    \RightLabel{\Intro{\lforall}}
+    \UnaryInfC{$\lforall[x][!A(x,c)]$}
+    \DisplayProof
+    \]
+    Miturut hipotesis induksi, $\Subst{\delta'}{t}{c}$
+    iku !!{proof} reguler kanggo $!A(a,t)$.
+    Amarga $a$ variabel eigen ing~$\delta$,
+    $a$~ora ana ing~$t$. Mula inferènsi pungkasan ing
+    $\Subst{\delta}{t}{c}$,
+    \[
+    \AxiomC{}
+    \RightLabel{$\Subst{\delta'}{t}{c}$}
+    \DeduceC{$!A(a,t)$}
+    \RightLabel{\Intro{\lforall}}
+    \UnaryInfC{$\lforall[x][!A(x,t)]$}
+    \DisplayProof
+    \]
+    iku bener: amarga $t$ ora ngemot~$a$, konklusi
+    lan kabèh asumsi kabuka uga ora ngemot~$a$.
+    \item Yèn inferènsi pungkasan yaiku
+    $\Elim{\lforall}$, $\delta$ wujudé
+    \[
+    \AxiomC{}
+    \RightLabel{$\delta'$}
+    \DeduceC{$\lforall[x][!A(x,c)]$}
+    \RightLabel{\Elim{\lforall}}
+    \UnaryInfC{$!A(s(c),c)$}
+    \DisplayProof
+    \]
+    Miturut hipotesis induksi,
+    $\Subst{\delta'}{t}{c}$ iku !!{proof} reguler kanggo
+    $\lforall[x][!A(x,t)]$. (Suku~$s(c)$ ing konklusi
+    bisa ngemot~$c$, nanging ora kudu.)
+    Inferènsi pungkasan ing $\Subst{\delta}{t}{c}$,
+    \[
+    \AxiomC{}
+    \RightLabel{$\Subst{\delta'}{t}{c}$}
+    \DeduceC{$\lforall[x][!A(x,t)]$}
+    \RightLabel{\Elim{\lforall}}
+    \UnaryInfC{$!A(s(t),t)$}
+    \DisplayProof
+    \]
+    iku bener, lan
+    $!A(s(t),t) \ident \Subst{!A(s(c),c)}{t}{c}$.
+    Kahanan \Intro{\lexists} padha polané.
+  \item Yèn inferènsi pungkasan yaiku
+    $\Elim{\lexists}$, $\delta$ wujudé
+    \[
+    \AxiomC{}
+    \RightLabel{$\delta_1'$}
+    \DeduceC{$\lexists[x][!A(x,c)]$}
+    \AxiomC{$\Discharge{!A(a,c)}{x}$}
+    \RightLabel{$\delta_2'$}
+    \DeduceC{$!C$}
+    \DischargeRule{\Elim{\lexists}}{x}
+    \BinaryInfC{$!C$}
+    \DisplayProof
+    \]
+    Miturut hipotesis induksi, $\Subst{\delta_1'}{t}{c}$
+    lan $\Subst{\delta_2'}{t}{c}$ iku !!{proof}s reguler
+    kanggo $\lexists[x][!A(x,t)]$ lan
+    $\Subst{!C}{t}{c}$ saka asumsi kabuka~$!A(a,t)$.
+    Amarga $a$ variabel eigen ing~$\delta$,
+    $a$~ora ana ing~$t$. Mula inferènsi pungkasan ing
+    $\Subst{\delta}{t}{c}$,
+    \[
+    \AxiomC{}
+    \RightLabel{$\Subst{\delta_1'}{t}{c}$}
+    \DeduceC{$\lexists[x][!A(x,t)]$}
+    \AxiomC{$\Discharge{!A(a,t)}{x}$}
+    \RightLabel{$\Subst{\delta_2'}{t}{c}$}
+    \DeduceC{$\Subst{!C}{t}{c}$}
+    \DischargeRule{\Elim{\lexists}}{x}
+    \BinaryInfC{$\Subst{!C}{t}{c}$}
+    \DisplayProof
+    \]
+    iku bener: $\Subst{!A(x,t)}{a}{x} \ident
+    \Subst{!A(a,c)}{t}{c}$, lan konklusi
+    ~$\Subst{!C}{t}{c}$ sarta kabèh asumsi kabuka
+    ora ngemot~$a$.
+  \end{enumerate}
+\end{proof}
+
+\begin{prop}\ollabel{prop:regular}
+Yèn $\delta$ iku !!a{proof} ing \Log{N1c} utawa
+\Log{N1i}, banjur ana !!{proof} reguler~$\delta'$
+kanthi struktur kang padha (mliginé !!{height} kang
+padha), kang béda saka $\delta$ mung amarga ngganti
+variabel eigen.
+\end{prop}
+
+\begin{proof}
+Kanggo bukti iki waé, sebut inferènsi variabel eigen
+ing~$\delta$ \emph{resik} yèn variabel eigené ora dadi
+variabel eigen inferènsi liya lan ora ana ing pérangan
+liya saka~$\delta$ saliyané sub-!!{proof} langsung
+saka inferènsi iku; yèn ora, sebut \emph{reged}.
+Upama $n$ cacah inferènsi variabel eigen reged
+ing~$\delta$. Kita tuduhaké kanthi induksi tumrap~$n$
+yèn $\delta$~bisa diowahi dadi !!{proof} reguler~$\delta'$
+kang dikarepaké. Yèn $n=0$, kabèh inferènsi variabel
+eigen ing~$\delta$ resik, mula $\delta$ wis reguler
+lan ora ana kang perlu dibuktèkaké. Yèn ora, pilihen
+inferènsi variabel eigen reged kang paling dhuwur,
+upamané \Intro{\lforall}. Sub-!!{proof}~$\delta_1$
+ing~$\delta$ kang pungkasané ana ing inferènsi iku
+wujudé
+    \[
+    \AxiomC{}
+    \RightLabel{$\delta_2$}
+    \DeduceC{$!A(c)$}
+    \RightLabel{\Intro{\lforall}}
+    \UnaryInfC{$\lforall[x][!A(x)]$}
+    \DisplayProof
+    \]
+Amarga $c$ variabel eigen, ora ana ing
+~$\lforall[x][!A(x)]$ utawa asumsi kabuka.
+Bukti $\delta_2$ reguler, amarga saben inferènsi
+variabel eigen ing kono resik. Upama $a$ iku
+!!a{constant} kang ora ana ing~$\delta$.
+Miturut \olref{lem:subst-regular},
+$\Subst{\delta_2}{a}{c}$ iku bukti reguler kanggo
+$!A(a)$. Miturut syarat variabel eigen, ora ana
+asumsi kabuka ing~$\delta_2$ kang ngemot~$c$,
+mula ora ana asumsi kabuka ing
+~$\Subst{\delta_2}{a}{c}$ kang ngemot~$a$.
+Dadi kita bisa ngetrapaké~$\Intro{\lforall}$.
+Yèn $\delta_1$ ing~$\delta$ diganti bukti $\delta_1'$,
+    \[
+    \AxiomC{}
+    \RightLabel{$\Subst{\delta_2}{a}{c}$}
+    \DeduceC{$!A(a)$}
+    \RightLabel{\Intro{\lforall}}
+    \UnaryInfC{$\lforall[x][!A(x)]$}
+    \DisplayProof
+    \]
+kita wis ngganti inferènsi variabel eigen reged dadi
+resik, lan bédané mung variabel eigen $c$ diganti
+nganggo~$a$. Bukti asilé nduwèni paling akèh $n-1$
+inferènsi variabel eigen reged, mula asilé ndhèrèk saka
+hipotesis induksi.
+\end{proof}
+
+\begin{prob}
+Jlentrehna kahanan ing bukti \olref{prop:regular}
+nalika inferènsi variabel eigen reged kang paling
+dhuwur yaiku~\Elim{\lexists}.
+\end{prob}
+
+Kita ora bakal kanthi eksplisit ngrujuk proposisi kang
+lagi dibuktèkaké, nanging bakal nganggep kabèh
+!!{proof}s kang dirembug reguler---yèn durung,
+variabel eigen mesthi bisa diganti supaya reguler.
+
+\Olref{lem:subst-regular} lan \olref{prop:regular}
+uga bener kanggo \Log{N2c} lan~\Log{N2i}.
+Buktiné dipasrahaké dadi latihan.
+
+\end{document}

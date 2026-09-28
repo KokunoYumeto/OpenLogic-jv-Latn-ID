@@ -1,0 +1,70 @@
+% Part: first-order-logic
+% Chapter: introduction
+% Section: soundness-completeness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{int}{scp}
+
+\olsection{Kasahihan lan Kelengkapan}
+
+Kita uga bakal ngenalake sistem !!{derivation} kanggo logika sepisanan. Ana
+akeh sistem !!{derivation} kang wis dikembangake para ahli logika, nanging
+kabeh nemtokake relasi !!{derivability} kang padha ing antarane
+!!{sentence}s. Kita kandha yen $\Gamma$ \emph{!!{derive}s}~$!A$,
+$\Gamma \Proves !A$, yen ana !!a{derivation} saka jinis tartamtu kang
+ditemtokake kanthi persis. !!^{derivation}s mesthi arupa tatanan simbol
+kang winates---mbokmenawa dhaftar !!{sentence}s, utawa sawijining
+struktur kang luwih rumit. Tujuane sistem !!{derivation} yaiku nyawisake
+piranti kanggo nemtokake apa !!a{sentence} dadi akibat saka sawijining
+himpunan~$\Gamma$. Supaya bisa nggayuh tujuan iki, kudu lumaku yen
+$\Gamma \Entails !A$ yen lan mung yen $\Gamma \Proves !A$.
+
+Yen $\Gamma \Proves !A$ nanging ora $\Gamma \Entails !A$, sistem
+!!{derivation} kita bakal kuwat banget lan mbuktekake kakehan. Sipat yen
+$\Gamma \Proves !A$ menehi $\Gamma \Entails !A$ diarani
+\emph{kasahihan}, lan iki syarat paling sithik kanggo saben sistem
+!!{derivation} kang becik. Kosok baline, yen $\Gamma \Entails !A$
+nanging ora $\Gamma \Proves !A$, sistem !!{derivation} kita ringkih
+banget lan ora mbuktekake cukup akeh. Sipat yen $\Gamma \Entails !A$
+menehi $\Gamma \Proves !A$ diarani \emph{kelengkapan}. Kasahihan
+lumrahe rada gampang dibuktekake (kanthi induksi tumrap struktur
+!!{derivation}s, kang ditemtokake kanthi induktif). Kelengkapan luwih
+angel dibuktekake.
+
+Kasahihan lan kelengkapan nduweni sawetara akibat wigati. Yen sawijining
+himpunan !!{sentence}s~$\Gamma$ !!{derive}s kontradiksi (kayata
+$!A \land \lnot !A$), himpunan kasebut diarani \emph{ora konsisten}.
+$\Gamma$ kang ora konsisten ora bisa nduweni model apa wae; himpunan
+kasebut ora bisa dicukupi. Saka kelengkapan, kosok baline ndherek: saben
+$\Gamma$ kang ora kalebu ora konsisten---utawa, kaya kang bakal kita
+kandhakake, \emph{konsisten}---nduweni model. Malah, iki padha karo
+kelengkapan, lan wujud kelengkapan iki kang bakal kita buktekake. Iki
+asil kang jero lan mbokmenawa nggumunake: kasunyatan yen sampeyan ora
+bisa mbuktekake $!A \land \lnot !A$ saka $\Gamma$ wis njamin anane
+!!a{structure} kang pas kaya katrangane~$\Gamma$. Dadi, kelengkapan
+menehi wangsulan marang pitakon: himpunan !!{sentence}s endi kang nduweni
+model? Wangsulane: persis kabeh himpunan kang konsisten.
+
+Teorema kasahihan lan kelengkapan nduweni loro akibat wigati: teorema
+kekompakan lan teorema L\"owenheim--Skolem. Iki asil-asiling wigati ing
+teori model, lan bisa digunakake kanggo netepake akeh asil kang narik
+kawigaten. Kita wis nyebut loro ing antarane: logika sepisanan ora bisa
+ngandharake yen !!{domain} saka !!a{structure} iku winates utawa yen
+struktur kasebut !!{nonenumerable}.
+
+Ing sejarah, kabeh iki---carane nemtokake sintaksis lan semantik logika
+sepisanan, carane nemtokake sistem !!{derivation} kang becik, carane
+mbuktekake kasahihan lan kelengkapane, lan carane mangerteni kanthi
+cetha apa kang bisa lan ora bisa diandharake ing basa logika
+sepisanan---mbutuhake wektu suwe nganti ditemokake lan dirumusake kanthi
+bener. Saiki kita wis ngerti carane nindakake, nanging ngliwati kabeh
+rinciane isih bisa mbingungake lan marahi bosen. Nanging rincian kasebut
+uga wigati, amarga metode kang dikembangake ing kene kanggo basa formal
+logika sepisanan ditrapake ing endi-endi sajrone logika, ilmu komputer,
+lan linguistik. Mula, nggarap rincian kasebut bakal migunani kanggo
+jangka dawa.
+
+\end{document}

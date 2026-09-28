@@ -1,0 +1,66 @@
+% Part: computability
+% Chapter: computability-theory
+% Section: def-functions-self-reference
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{thy}{slf}
+\olsection{Netepake Fungsi Nganggo Rujukan Marang Awake Dhewe}
+
+Lumrahe migunani yen kita bisa netepake fungsi
+adhedhasar fungsi iku dhewe. Tuladhane, yen diwenehi
+fungsi komputabel $k$, $l$, lan~$m$, lema titik tetep
+nyebut yen ana fungsi komputabel parsial~$f$
+kang nyukupi persamaan ing ngisor iki kanggo saben~$y$:
+\[
+f(y) \simeq
+\begin{cases}
+k(y) & \text{yen $l(y) = 0$} \\
+f(m(y)) & \text{yen ora.}
+\end{cases}
+\]
+Luwih mligi, $f$~diasilake kanthi netepake
+\[
+g(x,y) \simeq
+\begin{cases}
+k(y) & \text{yen $l(y) = 0$} \\
+\cfind{x}(m(y)) & \text{yen ora}
+\end{cases}
+\]
+banjur nganggo lema titik tetep kanggo
+nemokake indeks~$e$ saengga
+$\cfind{e}(y) = g(e,y)$.
+
+Minangka tuladha nyata, fungsi
+``pambagi bebarengan paling gedhe''
+$\fn{gcd}(u,v)$ bisa ditetepake kanthi
+\[
+\fn{gcd}(u,v) \simeq
+\begin{cases}
+v & \text{yen $u = 0$} \\
+\fn{gcd}(\fn{mod}(v, u), u) & \text{yen ora}
+\end{cases}
+\]
+ing ngendi $\fn{mod}(v, u)$ nuduhake turahan
+nalika $v$ dipara dening~$u$. Lema titik
+tetep nuduhake yen $\fn{gcd}$ komputabel parsial.
+(Sejatine, iki bisa dilebokake ing pola ing
+ndhuwur, kanthi $y$ minangka kode pasangan
+$\tuple{u, v}$.) Induksi marang~$u$
+banjur nuduhake yen sejatine $\fn{gcd}$ total.
+
+Mesthi wae, kita bisa nggawe definisi kang
+ngrujuk marang awake dhewe kang luwih
+rumit tinimbang tuladha-tuladha mau.
+Umume basa pamrograman ngidini definisi
+fungsi adhedhasar fungsi iku dhewe,
+kanthi sawijine cara. Gatekna yen iki
+rada kurang nggumunake tinimbang bisa
+netepake fungsi adhedhasar sawijining
+\emph{indeks} algoritma kang ngitung fungsi
+iku, kaya kang diidinake dening teorema
+titik tetep kanthi wujud paling umume.
+
+\end{document}

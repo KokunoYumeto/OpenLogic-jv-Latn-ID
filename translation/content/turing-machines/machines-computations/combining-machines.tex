@@ -1,0 +1,187 @@
+% Part: turing-machines
+% Chapter: machines-computations
+% Section: combining-machines
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{tur}{mac}{cmb}
+\olsection{Nggabungake Mesin Turing}
+
+\begin{explain}
+Tuladha mesin Turing kang wis kita deleng nganti saiki
+lumayan prasaja. Nanging satemene, saben masalah kang
+bisa dirampungake nganggo basa pamrograman modern uga
+bisa dirampungake nganggo mesin Turing. Kanggo mbangun
+mesin Turing kang luwih rumit, kita perlu mesthekake
+yen mesin-mesin iku bisa digabung. Kanthi mangkono,
+kita bisa mbangun mesin kanggo ngrampungake masalah
+luwih rumit kanthi mecah prosedure dadi bagean-bagean
+luwih prasaja. Yen kita bisa nemokake cara lumrah
+kanggo mecah masalah rumit dadi bagean-bageane,
+kita bisa ngrampungake masalah iku ing sawetara
+tahap: gawe sawetara mesin Turing prasaja banjur
+nggabungake dadi siji mesin kang bisa ngrampungake
+masalah mau. Bab iki mligine wigati nalika kita
+ngadhepi Masalah Mandheg ing bagean sabanjure.
+
+Kepriye carane nggabungake mesin Turing
+$M = \tuple{Q, \Sigma, q_0, \delta}$ lan~$M' =
+\tuple{Q', \Sigma', q_0', \delta'}$? Konfigurasi pita
+sawise $M$~mandheg saiki kita gunakake minangka
+konfigurasi input kanggo lumakune mesin~$M'$.
+Kanggo ngasilake siji mesin Turing $M \frown M'$
+kang nindakake iki, tindakna langkah-langkah iki:
+\begin{enumerate}
+    \item Wenehana nomer (utawa jeneng) anyar marang kabeh
+    kahanan~$Q'$ saka~$M'$, supaya $M$ lan~$M'$
+    ora nduwé kahanan kang padha ($Q \cap Q' = \emptyset$).
+    \item Himpunan kahanan $M \frown M'$ yaiku $Q \cup Q'$.
+    \item Alfabet pitane yaiku $\Sigma \cup \Sigma'$.
+    \item Kahanan wiwitane yaiku~$q_0$.
+    % OLPL-149: Ing sumber beku, syarat cabang pisanan uga nyakup transisi kang ora ditegesi; syarat iki diwatesi supaya ora tabrakan karo cabang katelu.
+    \item Fungsi transisine yaiku fungsi $\delta''$ iki:
+    \[\delta''(q,\sigma) =
+    \begin{cases}
+      \delta(q,\sigma) & \text{yen $q \in Q$ lan transisine ditegesi}\\
+      \delta'(q,\sigma) & \text{yen $q \in Q'$}\\
+      \tuple{q_0', \sigma, \TMstay} & \text{yen $q \in Q$ lan
+      $\delta(q,\sigma)$ ora ditegesi}
+    \end{cases}\]
+\end{enumerate}
+Mesin kang diasilake nggunakake instruksi saka~$M$
+nalika ana ing kahanan $q \in Q$, lan instruksi
+saka~$M'$ nalika ana ing kahanan~$q \in Q'$.
+Nalika ana ing kahanan $q \in Q$ lan lagi maca
+simbol~$\sigma$ kang ora nduwé transisi ing~$M$
+(yaiku nalika $M$ mesthine mandheg), mesin mau
+mlebu kahanan wiwitan~$M'$ (tanpa ngowahi isi
+pita utawa panggonan sirah maca-nulis).
+
+Elinga, yen mesin~$M$ ora tertib, kita ora ngerti
+ing endi sirah maca-nulis nalika $M$~mandheg.
+Mula, ing konfigurasi nalika $M$ mandheg, sirah
+durung mesthi maca kothak~$1$. Iki kudu digatekake
+nalika nggabungake mesin.
+\end{explain}
+
+\begin{ex}
+\emph{Nggabungake Mesin:} Kita bakal ngrancang mesin kang,
+yen diwiwiti nganggo input rong blok~$\TMstroke$ kang
+dawane $n$ lan~$m$, mandheg kanthi siji blok
+$2(m+n)$~$\TMstroke$ ing pita. Kanggo mbangun mesin
+iki, kita bisa nggabungake rong mesin kang wis kita
+kenal: mesin panambah lan mesin pangganda. Ayo diwiwiti
+kanthi nggambar diagram kahanan mesin panambah.
+\[
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                    semithick]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+  \node[initial,state] (A)              {$q_0$};
+  \node[state]         (B) [right of=A] {$q_1$};
+  \node[state]         (C) [right of=B] {$q_2$};
+
+  \path (A) edge node {\TMtrans{\TMblank}{\TMstroke}{\TMstay}} (B)
+            edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (B)
+        (B) edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (B)
+            edge node {\TMtrans{\TMblank}{\TMblank}{\TMleft}} (C)
+        (C) edge [loop above] node {\TMtrans{\TMstroke}{\TMblank}{\TMstay}} (C);
+\end{tikzpicture}
+\]
+Tinimbang mandheg ing kahanan~$q_2$, kita kepengin
+mesin nerusake pakaryane kanggo nggandakake output.
+Elinga, mesin pangganda mbusak guratan kapisan ing
+input lan nulis rong guratan ing output kang kapisah.
+Ayo nambah instruksi supaya sirah maca-nulis mesthi
+maca guratan kapisan saka output mesin panambah.
+\[
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                    semithick]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+  \node[initial,state] (A)              {$q_0$};
+  \node[state]         (B) [right of=A] {$q_1$};
+  \node[state]         (C) [right of=B] {$q_2$};
+  \node[state]         (D) [below left of=C] {$q_3$};
+  \node[state]         (E) [below left of=D] {$q_4$};
+
+  \path (A) edge node {\TMtrans{\TMblank}{\TMstroke}{\TMstay}} (B)
+            edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (B)
+        (B) edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (B)
+            edge node {\TMtrans{\TMblank}{\TMblank}{\TMleft}} (C)
+        (C) edge node {\TMtrans{\TMstroke}{\TMblank}{\TMleft}} (D)
+        (D) edge [loop left] node {\TMtrans{\TMstroke}{\TMstroke}{\TMleft}} (D)
+            edge node[left, xshift=-2mm] {\TMtrans{\TMendtape}{\TMendtape}{\TMright}} (E);
+\end{tikzpicture}
+\]
+Saiki gampang kanggo nggandakake input---kita mung
+perlu nyambungake mesin pangganda marang kahanan~$q_4$.
+Kanggo iki, kahanan-kahanan mesin pangganda kudu diwenehi
+jeneng anyar supaya diwiwiti saka~$q_4$, dudu saka~$q_0$
+---kanthi mangkono ora ana rong kahanan wiwitan.
+Diagram pungkasan kudune kaya ing \olref{fig:combined}.
+\begin{figure}
+\[
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                    semithick]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+  \node[initial,state] (A)              {$q_0$};
+  \node[state]         (B) [right of=A] {$q_1$};
+  \node[state]         (C) [right of=B] {$q_2$};
+  \node[state]         (D) [below left of=C] {$q_3$};
+  \node[state]         (E) [below left of=D] {$q_4$};
+  \node[state]         (2) [right of=E] {$q_5$};
+  \node[state]         (3) [right of=2] {$q_6$};
+  \node[state]         (4) [below of=3] {$q_7$};
+  \node[state]         (5) [left of=4]  {$q_8$};
+  \node[state]         (6) [left of=5]  {$q_9$};
+
+  \path (A) edge node {\TMtrans{\TMblank}{\TMstroke}{\TMstay}} (B)
+            edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (B)
+        (B) edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (B)
+            edge node {\TMtrans{\TMblank}{\TMblank}{\TMleft}} (C)
+        (C) edge node {\TMtrans{\TMstroke}{\TMblank}{\TMleft}} (D)
+        (D) edge [loop left] node {\TMtrans{\TMstroke}{\TMstroke}{\TMleft}} (D)
+            edge node[left, xshift=-2mm] {\TMtrans{\TMendtape}{\TMendtape}{\TMright}} (E)
+    (E) edge node {\TMtrans{\TMstroke}{\TMblank}{\TMright}} (2)
+    (2) edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (2)
+      edge node {\TMtrans{\TMblank}{\TMblank}{\TMright}} (3)
+    (3) edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (3)
+        edge node {\TMtrans{\TMblank}{\TMstroke}{\TMright}} (4)
+    (4) edge [loop below] node {\TMtrans{\TMblank}{\TMstroke}{\TMleft}} (4)
+        edge node {\TMtrans{\TMstroke}{\TMstroke}{\TMleft}} (5)
+    (5) edge [loop below]  node {\TMtrans{\TMstroke}{\TMstroke}{\TMleft}} (5)
+        edge              node {\TMtrans{\TMblank}{\TMblank}{\TMleft}} (6)
+    (6) edge [loop below] node {\TMtrans{\TMstroke}{\TMstroke}{\TMleft}} (6)
+        edge              node {\TMtrans{\TMblank}{\TMblank}{\TMright}} (E);
+\end{tikzpicture}
+\]
+\caption{Nggabungake mesin panambah lan pangganda}
+\ollabel{fig:combined}
+\end{figure}
+\end{ex}
+
+\begin{prop}
+    Yen $M$ lan $M'$ padha-padha tertib lan ngitung fungsi $f\colon
+    \Nat^k \to \Nat$ lan $f'\colon \Nat \to \Nat$, miturut urutane,
+    mula $M \frown M'$ uga tertib lan ngitung~$\comp{f}{f'}$.
+\end{prop}
+
+\begin{proof}
+    Amarga $M$ tertib, nalika mandheg kanthi
+    output~$f(n_1,\dots,n_k) = m$, sirah maca-nulis
+    lagi maca kothak~$1$. Yen banjur mlebu kahanan
+    wiwitan~$M'$, mesin bakal mandheg kanthi output
+    $f'(m)$ lan sirah maca-nulis bali maca kothak~$1$.
+    Syarat liyane saka \olref[dis]{defn:disciplined}
+    uga katepung.
+\end{proof}
+
+\begin{prob}
+    Wenehana mesin Turing tertib kang ngitung $f(x) = x+2$
+    kanthi njupuk mesin~$M$ saka
+    \cref{tur:mac:dis:prob:disc-succ} lan mbangun $M \frown M$.
+\end{prob}
+\end{document}

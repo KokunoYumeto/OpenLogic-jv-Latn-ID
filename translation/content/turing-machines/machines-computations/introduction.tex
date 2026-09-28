@@ -1,0 +1,163 @@
+% Part: turing-machines 
+% Chapter: machines-computations 
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{tur}{mac}{int}
+\olsection{Pambuka}
+
+Apa tegese fungsi, upamane saka $\Nat$ menyang $\Nat$,
+iku \emph{komputabel}? Salah siji wangsulan kang paling
+awal lan paling kawentar yaiku fungsi komputabel yen bisa
+diitung dening mesin Turing. Pangerten iki diandharake
+dening Alan Turing ing taun 1936. Mesin Turing minangka
+tuladha \emph{model komputasi}---cara kang cetha sacara
+matematis kanggo netepake gagasan ``prosedur komputasi''.
+Tegese gagasan iki kanthi persis isih dadi rembugan,
+nanging akeh kang sarujuk yen mesin Turing minangka
+salah siji cara kanggo nemtokake prosedur komputasi.
+Sanajan istilah ``mesin Turing'' bisa nuwuhake gambaran
+mesin fisik kanthi bagean-bagean kang obah, sejatine
+mesin Turing mung konstruksi matematis, mula dadi
+idealisasi prosedur komputasi. Tuladhane, kita ora
+matesi wektu utawa memori kang dibutuhake mesin Turing:
+mesin Turing bisa ngitung sawijining perkara sanajan
+komputasine mbutuhake papan panyimpenan utawa langkah
+kang luwih akeh tinimbang cacah atom ing alam semesta.
+
+\begin{explain}
+Mbokmenawa luwih becik mesin Turing dianggep
+minangka program kanggo sawijining mekanisme
+khayalan kang mligi. Mekanisme iki dumadi saka
+\emph{pita} lan \emph{sirah maca-nulis}. Ing versi
+mesin Turing kang kita gunakake, pita iku tanpa
+wates ing siji arah (menyang tengen), lan kabagi
+dadi \emph{kothak-kothak}; saben kothak bisa ngemot
+simbol saka \emph{alfabet} winates. Alfabet kaya
+mangkono bisa ngemot simbol beda-beda kanthi cacah
+sembarang, nanging kita biasane cukup nganggo telu:
+$\TMendtape$, $\TMblank$, lan $\TMstroke$. Nalika
+mekanisme diwiwiti, pita kosong (yaiku, saben
+kothak ngemot simbol $\TMblank$) kajaba kothak
+paling kiwa, kang ngemot $\TMendtape$, lan
+sawetara kothak winates kang ngemot \emph{input}.
+Ing saben wektu, mekanisme ana ing salah siji
+saka \emph{kahanan} kang cacahe winates. Ing wiwitan,
+sirah maca kothak paling kiwa lan mekanisme ana
+ing \emph{kahanan wiwitan} kang wis ditemtokake.
+Ing saben langkah lumakune mekanisme, isi kothak
+kang lagi diwaca, kahanan mekanisme, lan program
+mesin Turing nemtokake apa kang kedadeyan sabanjure.
+Program mesin Turing diwenehake dening fungsi
+parsial kang nampa kahanan~$q$ lan simbol~$\sigma$
+minangka input lan ngasilake tripel~$\tuple{q', \sigma',
+  D}$. Nalika mekanisme ana ing kahanan $q$ lan
+maca simbol $\sigma$, mekanisme ngganti simbol
+ing kothak saiki dadi $\sigma'$, sirah obah
+menyang kiwa, menyang tengen, utawa tetep ing
+panggonane manut apa $D$ iku $\TMleft$,
+$\TMright$, utawa $\TMstay$, banjur mekanisme
+mlebu kahanan~$q'$.
+
+Tuladhane, gatekna kahanan ing \olref{fig:tm}.
+\begin{figure}
+  \olasset{\olpath/assets/diagrams/turing-machine.tikz}
+  \caption{Mesin Turing kang nglakokake programe.}
+  \ollabel{fig:tm}
+\end{figure}
+Bagean pita mesin Turing kang katon ngemot
+simbol pucuk pita $\TMendtape$ ing kothak paling
+kiwa, banjur telung simbol $1$, siji $0$,
+lan patang simbol $1$ maneh. Sirah lagi maca
+kothak katelu saka kiwa, kang ngemot
+simbol~$1$, lan ana ing kahanan~$q_1$---kita
+ngarani ``mesin lagi maca $1$ ing
+kahanan~$q_1$.'' Yen program mesin Turing
+kanggo input $\tuple{q_1, 1}$ mbalekake
+tripel $\tuple{q_2,
+0, \TMstay}$, mesin banjur ngganti~$1$ ing
+kothak katelu dadi~$0$, ora ngowahi panggonan
+sirah maca-nulis, lan ngalih menyang kahanan~$q_2$.
+Yen banjur program mbalekake $\tuple{q_3, 0, \TMright}$
+kanggo input $\tuple{q_2, 0}$, mesin banjur
+nimpa~$0$ nganggo~$0$ maneh (mula isi pita ing
+sangisore sirah maca-nulis ora owah), obah
+siji kothak menyang tengen, lan mlebu
+kahanan~$q_3$. Mangkono sateruse.
+
+Kita ngarani mesin \emph{mandheg} nalika
+nemoni kahanan, $q_n$, lan simbol, $\sigma$
+kang ora nduwé instruksi kanggo
+$\tuple{q_n, \sigma}$, yaiku fungsi transisi
+ora ditegesi kanggo input $\tuple{q_n,\sigma}$.
+Kanthi tembung liya, mesin ora nduwé instruksi
+kang bisa ditindakake lan banjur mandheg
+makarya. Kadhang kala mandheg iku diwakili
+dening kahanan mandheg mligi~$h$. Iki bakal
+dituduhake luwih rinci ing bagean sabanjure.
+\end{explain}
+
+\begin{digress}
+Kaistimewan tulisan Turing, ``On computable numbers,''
+yaiku ora mung menehi definisi formal, nanging
+uga argumen yen definisi iku nggambarake
+pangerten komputabilitas miturut intuisi.
+Saka definisine, kudune cetha yen fungsi kang
+bisa diitung mesin Turing uga komputabel miturut
+pangerten intuisi. Turing menehi telung jinis
+argumen kanggo arah kosok baline, yaiku yen
+saben fungsi kang lumrahe kita anggep komputabel
+uga bisa diitung dening mesin kaya mangkono.
+Telung argumen iku (miturut tembunge Turing):
+\begin{enumerate}
+\item Ngrujuk langsung marang intuisi.
+\item Bukti yen rong definisi iku ekuivalen
+  (yen definisi anyar luwih gampang ditampa
+  miturut intuisi).
+\item Menehi tuladha kelas-kelas gedhe
+  saka wilangan kang komputabel.
+\end{enumerate}
+Tujuan kita yaiku nyoba netepake pangerten
+komputabilitas ``miturut prinsip'', yaiku
+tanpa nggatekake watesan wektu lan papan
+kang nyata. Mesthi wae, sawise definisi
+komputabilitas kang paling amba ditemtokake,
+kita bisa nerusake ngrembug komputasi kanthi
+sumber daya winates; iki dadi inti saka
+bidang ``kompleksitas komputasional''.
+\end{digress}
+
+\begin{history}
+Alan Turing ngripta mesin Turing ing taun 1936.
+Sanajan nalika semana kang dadi kawigatene
+yaiku bisa-orane logika orde kapisan diputusake,
+tulisane diarani tulisan kang wigati banget
+bab dhasar rancangan komputer. Ing tulisan
+iku, Turing nggatekake wilangan real komputabel,
+yaiku wilangan real kang pangembangane ing
+sistem desimal bisa diitung; nanging dheweke
+nyebut yen pangerten iku gampang dicocogake
+kanggo fungsi komputabel ing wilangan asli,
+lan sateruse. Gatekna yen iki limang taun
+sadurunge komputer serbaguna kang bisa makarya
+kapisan dibangun ing taun 1941 (dening
+Konrad Zuse saka Jerman ing ruang tamu
+wong tuwane), pitung taun sadurunge Turing
+lan kanca-kancane ing Bletchley Park mbangun
+Colossus kanggo mecah kode (1943), sangang
+taun sadurunge ENIAC saka Amerika (1945),
+rolas taun sadurunge komputer serbaguna
+kapisan saka Britania---Manchester Small-Scale
+Experimental Machine---dibangun ing Manchester
+(1948), lan telulas taun sadurunge wong
+Amerika nyoba BINAC kanggo kapisan (1949).
+Manchester SSEM minangka komputer kapisan
+kang nyimpen program---mesin sadurunge
+kudu disambung maneh nganggo tangan
+kanggo saben tugas anyar.
+\end{history}
+
+\end{document}

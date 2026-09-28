@@ -1,0 +1,142 @@
+% Part: normal-modal-logic
+% Chapter: frame-definability
+% Section: equivalence-S5
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{frd}{es5}
+
+\olsection{Relasi Ekuivalensi lan \Log{S5}}
+
+Logika modal \Log{S5} dicirèkaké minangka himpunan
+!!{formula}s kang valid ing kabeh bingkai universal, yaiku saben
+donya bisa diakses saka saben donya, kalebu awake dhewe. Ing kahanan
+kaya mangkono, $\Box$ cocog karo keniscayan lan $\Diamond$ karo
+kamungkinan: $\Box !A$ bener yen $!A$ bener ing \emph{saben} donya,
+lan $\Diamond !A$ bener yen $!A$ bener ing \emph{sawijining} donya.
+Nyatane \Log{S5} uga bisa dicirèkaké minangka !!{formula}s kang valid
+ing kabeh bingkai refleksif, simetris, lan transitif, yaiku bingkai
+kanthi \emph{relasi ekuivalensi}.
+
+\begin{defn}
+  Relasi binar $R$ ing $W$ iku \emph{relasi ekuivalensi} yen lan mung yen
+  refleksif, simetris, lan transitif. Relasi $R$ ing $W$ iku
+  \emph{universal} yen lan mung yen $Ruv$ kanggo kabeh $u,v \in W$.
+\end{defn}
+
+Amarga \Ax{T}, \Ax{B}, lan \Ax{4} saben-saben dadi ciri
+bingkai refleksif, simetris, lan transitif, bingkai kang relasi
+aksesibilitase minangka relasi ekuivalensi persis bingkai kang kabeh
+telu !!{formula}s kasebut valid. Nyatane relasi ekuivalensi uga bisa
+dicirèkaké dening gabungan !!{formula}s liyane, amarga kondisi kang
+kita gunakake kanggo ndéfinisikake relasi ekuivalensi padha karo
+gabungan kondisi-kondisi liyane kang wis dikenal tumrap~$R$.
+
+\begin{prop}\ollabel{prop:equivalences}
+  Kondisi-kondisi iki ekuivalen:
+  \begin{enumerate}
+  \item $R$ relasi ekuivalensi;
+  \item $R$ refleksif lan Euklidean;
+  \item $R$ serial, simetris, lan Euklidean;
+  \item $R$ serial, simetris, lan transitif.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  Gladhen.
+\end{proof}
+
+\begin{prob}
+  Buktekna \olref[nml][frd][es5]{prop:equivalences} kanthi nuduhake:
+  \begin{enumerate}
+  \item Yen $R$ simetris lan transitif, mula Euklidean.
+  \item Yen $R$ refleksif, mula serial.
+  \item Yen $R$ refleksif lan Euklidean, mula simetris.
+  \item Yen $R$ simetris lan Euklidean, mula transitif.
+  \item Yen $R$ serial, simetris, lan transitif, mula refleksif.
+  \end{enumerate}
+  Jlentrehna kenapa iki cukup kanggo mbuktekake ekuivalensi
+  kondisi-kondisi kasebut.
+\end{prob}
+
+\olref{prop:equivalences} minangka pasangan semantis saka
+\olref[prf][prs]{prop:S5}: proposisi iku menehi ciri kang ekuivalen
+kanggo logika modal bingkai kang $R$ dadi relasi ekuivalensi (logika
+kang miturut pakulinan diarani \Log{S5}).
+
+Kepriye sesambungan antarane relasi universal lan relasi
+ekuivalensi? Senadyan saben relasi universal iku relasi ekuivalensi,
+cetha ora saben relasi ekuivalensi iku universal. Nanging, himpunan
+!!{formula}s kang valid ing kabeh relasi universal persis padha karo
+himpunan kang valid ing kabeh relasi ekuivalensi.
+
+\begin{prop}
+  Upamane $R$ relasi ekuivalensi, lan kanggo saben $w \in W$ temtokna
+  \emph{kelas ekuivalensi} saka $w$ minangka himpunan $[w] = \{w'\in W :
+  Rww'\}$. Mula:
+  \begin{enumerate}
+  \item $w \in [w]$;
+  \item $R$ universal ing saben kelas ekuivalensi $[w]$;
+  \item Kumpulan kelas ekuivalensi mecah $W$ dadi subhimpunan-subhimpunan
+    kang ora tumpang tindih lan bareng-bareng nyakup kabeh donya.
+  \end{enumerate}
+\end{prop}
+
+\begin{prop}\ollabel{prop:S5=univ}
+  !!^a{formula}~$!A$ valid ing kabeh bingkai $\mModel{F} =\tuple{W,R}$
+  kang $R$ relasi ekuivalensi yen lan mung yen valid ing kabeh bingkai
+  $\mModel{F} =\tuple{W,R}$ kang $R$ universal. Mula logika bingkai
+  universal iku persis \Log{S5}.
+\end{prop}
+
+\begin{proof}
+  Gampang dipriksa yen relasi universal~$R$ ing~$W$ iku relasi
+  ekuivalensi. Mula yen $!A$ valid ing kabeh bingkai kang $R$ relasi
+  ekuivalensi, formula iku uga valid ing kabeh bingkai universal. Kanggo arah
+  liyane, kita nggunakake kontraposisi: upamane $!B$ iku !!a{formula}
+  kang gagal ing donya $w$ saka model $\mModel{M} = \tuple{W, R, V}$
+  kang adhedhasar bingkai $\tuple{W,R}$, kanthi $R$ relasi ekuivalensi
+  ing $W$. Dadi $\mSat/{M}{!B}[w]$. Temtokna model $\mModel{M}' =
+  \tuple{W', R', V'}$ kaya mangkene:
+  \begin{enumerate}
+  \item $W' = [w]$;
+  \item $R'$ universal ing $W'$;
+  \item $V'(p) = V(p) \cap W'$.
+  \end{enumerate}
+  (Dadi himpunan donya $W'$ saka $\mModel{M}'$ digambarake dening
+  wilayah kang diarsir ing \olref{fig:partition}.) Gampang dideleng
+  yen $R$ lan $R'$ padha ing $W'$. Banjur, kanthi induksi marang
+  !!{formula}s, kita bisa nuduhake yen kanggo kabeh $w' \in W'$:
+  $\mSat{M'}{!A}[w']$ yen lan mung yen $\mSat{M}{!A}[w']$ kanggo
+  saben $!A$ (pratelan iki nduweni teges amarga $W' \subseteq W$). Mligine,
+  $\mSat/{M'}{!B}[w]$, mula $!B$ gagal ing model kang adhedhasar
+  bingkai universal.
+\end{proof}
+
+\begin{figure}[t]
+  \centering
+  \begin{tikzpicture}[node distance=2cm, auto, thick]
+    \clip [rounded corners] (0,0) -- (6,0) -- (6,4) -- (0,4) --  cycle;
+    \begin{scope}
+      \clip (0,0) -- (2,0)  .. controls (1.5,1.5) and (4.5,1.5)
+      .. (4,4) -- (0,4) -- (0,0) -- cycle;
+      \filldraw[fill=gray!40] (0,4) -- (0,2) .. controls (1.5,1.5)
+      and (4.5,1.5) .. (4.5,0) -- (6,0) -- (6,4) -- (0,4) --  cycle;
+    \end{scope}
+    \draw [name path=line1] (2,0) .. controls (1.5,1.5) and (4.5,1.5) .. (4,4);
+    \draw [name path=line2] (0,2)  .. controls (1.5,1.5) and (4.5,1.5) .. (4.5,0);
+    \path [name intersections={of=line1 and line2}];
+    \draw [rounded corners, use as bounding box, very thick] (0,0)
+    -- (6,0) -- (6,4) -- (0,4) --  cycle; 
+    \node at (2,3) {$[w]$} ;
+    \node at (1,1) {$[u]$} ;
+    \node at (3,0.75) {$[v]$} ;
+    \node at (4.75,2) {$[z]$} ;
+  \end{tikzpicture}
+  \caption{Pemecahan $W$ dadi kelas-kelas ekuivalensi.}
+  \ollabel{fig:partition}
+\end{figure}
+
+\end{document}

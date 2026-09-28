@@ -1,0 +1,88 @@
+% Part: incompleteness
+% Chapter: theories-computability
+% Section: extensions-of-q-not-decidable
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{tcp}{cqn}
+
+\olsection{Ekstensi $\Th{Q}$ kang konsisten ora bisa diputusake}
+
+\begin{explain}
+Elinga yen teori iku \emph{konsisten} yen ora mbuktekake $!A$ lan
+$\lnot !A$ bebarengan kanggo formula~$!A$ sembarang. Amarga apa wae
+bisa diturunake saka kontradiksi, teori kang ora konsisten iku trivial:
+saben ukara bisa dibuktekake. Cetha yen teori iku $\omega$-konsisten,
+mula teori iku konsisten. Nanging konsisten iku syarat kang luwih
+ringkih (yaiku, ana teori kang konsisten nanging ora $\omega$-konsisten).
+Kita bisa ngendhori panganggep ing \olref[oqn]{thm:oconsis-q} dadi
+kekonsistenan lumrah kanggo ngasilake teorema kang luwih kuwat.
+\end{explain}
+
+\begin{lem}
+Ora ana ``relasi komputabel universal''. Tegese, ora ana relasi
+komputabel biner $R(x,y)$ kang nduweni sipat mangkene:
+kapan wae $S(y)$ iku relasi komputabel uner, ana sawijining $k$ saengga
+kanggo saben $y$, $S(y)$ bener yen lan mung yen $R(k,y)$ bener.
+\end{lem}
+
+\begin{proof}
+Upamana $R(x,y)$ iku relasi komputabel universal. Upamana $S(y)$
+iku relasi $\lnot R(y,y)$. Amarga $S(y)$ komputabel, kanggo sawijining
+$k$, $S(y)$ ekuivalen karo $R(k,y)$. Nanging banjur $S(k)$
+ekuivalen karo $R(k,k)$ lan $\lnot R(k,k)$ bebarengan, kang dadi
+kontradiksi.
+\end{proof}
+
+
+\begin{thm}
+Upamana $\Th{T}$ teori konsisten sembarang kang ngemot $\Th{Q}$. Mula
+$\Th{T}$ ora bisa diputusake.
+\end{thm}
+
+
+\begin{proof}
+Upamana $\Th{T}$ iku ekstensi $\Th{Q}$ kang konsisten lan bisa
+diputusake. Kita bakal nemokake kontradiksi kanthi nggunakake $\Th{T}$
+kanggo nemtokake relasi komputabel universal.
+
+Tetepna $R(x,y)$ bener yen lan mung yen
+\begin{quote}
+$x$ ngodeake formula $!D(u)$, lan $\Th{T}$ mbuktekake $!D(\num y)$.
+\end{quote}
+Amarga kita nganggep yen $\Th{T}$ bisa diputusake, $R$ iku komputabel.
+Saiki ayo dituduhake yen $R$ universal. Yen $S(y)$ relasi komputabel
+sembarang, mula relasi iki bisa direpresentasikake ing $\Th{Q}$
+(lan mulane $\Th{T}$) dening formula $!D_S(u)$. Mula kanggo saben $n$,
+kita nduweni
+\begin{eqnarray*}
+S(\num n) & \lif & T \vdash !D_S(\num n) \\
+& \lif & R(\Gn{!D_S(u)}, n)
+\end{eqnarray*}
+and
+\begin{eqnarray*}
+\lnot S(\num n) & \lif & T \vdash \lnot !D_S(\num n) \\
+& \lif & T \not\vdash !D_S(\num n) \quad \text{(amarga $\Th{T}$
+  konsisten)} \\
+& \lif & \lnot R(\Gn{!D_S(u)}, n).
+\end{eqnarray*}
+Tegese, kanggo saben $y$, $S(y)$ bener yen lan mung yen
+$R(\Gn{!D_S(u)}, y)$ bener. Mula $R$ universal, lan kita nemokake
+kontradiksi kang digoleki.
+\end{proof}
+
+Upamana ``aritmetika bener'' iku teori $\Setabs{!A}{ \Sat{\Nat}{!A}}$,
+yaiku himpunan ukara ing basa aritmetika kang bener ing interpretasi
+standar.
+
+\begin{cor}
+Aritmetika bener ora bisa diputusake.
+\end{cor}
+
+%In Section~\olref{undefinability:truth:section} we will state a stronger
+%result, due to Tarski.
+
+\end{document}
+

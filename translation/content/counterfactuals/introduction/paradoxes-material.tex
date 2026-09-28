@@ -1,0 +1,60 @@
+% Part: counterfactuals
+% Chapter: introduction
+% Section: paradoxes-material
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cnt}{int}{par}
+
+\olsection{Paradoks Kondisional Material}
+
+Salah siji wong kapisan kang ngritik panggunaan $!A \lif !B$ kanggo
+nyimbolake pratelan basa Inggris ``if \dots then \dots'' yaiku
+C.~I. Lewis. Lewis ngritik panggunaan kondisional material ing
+\emph{Principia Mathematica} anggitane Whitehead lan Russell, kang
+maca $\lif$ minangka ``implies'' (``ngimplikasikake''). Lewis kanthi
+bener ngandharake yen $\lif$ tegese ``implies'', mula saben
+proposisi~$p$ kang luput ngimplikasikake yen $p$ ngimplikasikake~$q$,
+amarga $p \lif (p \lif q)$ bener yen~$p$ luput; lan saben proposisi~$q$
+kang bener ngimplikasikake yen $p$ ngimplikasikake~$q$, amarga
+$q \lif (p \lif q)$ bener yen $q$~bener.
+
+Mesthi wae para ahli logika mangerteni yen \emph{implikasi}, yaiku
+konsekuensi logis, iku relasi antarane !!{formula}s utawa pratelan,
+dudu konektif. Mula kanggo nyingkiri kebingungan, kita aja maca
+$\lif$ minangka ``implies''.\footnote{Maca ``$\lif$'' minangka
+  ``implies'' isih lumrah ing antarane matematikawan lan ilmuwan
+  komputer, sanadyan para filsuf ngupaya nyingkiri kebingungan kang
+  dituduhake Lewis kanthi maca minangka ``only if'' (``mung yen'').}
+Anggere kita ora maca mangkono, prakara kang dikuwatirake Lewis
+ora tuwuh: $p$ ora ``ngimplikasikake'' $q$, sanajan kita nganggep
+$p$ minangka wakil ukara basa Inggris kang luput. Kanggo nemtokake
+apa $p \Entails q$, kita kudu nimbang \emph{kabeh} !!{valuation}s,
+lan $p \Entails/ q$ sanajan kita nggunakake $p$ kanggo nyimbolake
+ukara kang kebeneran luput.
+
+Nanging isih ana kang aneh ing pratelan ``if \dots then\dots''
+kaya tuladhane Lewis iki:
+\begin{quote}
+Yen rembulan digawe saka keju ijo, mula $2+2=4$.
+\end{quote}
+lan ing inferensi iki:
+\begin{quote}
+  Rembulan ora digawe saka keju ijo. Mula, yen rembulan digawe
+  saka keju ijo, mula $2+2=4$.
+
+  $2+2 = 4$. Mula, yen rembulan digawe
+  saka keju ijo, mula $2+2=4$.
+\end{quote}
+Nanging yen ``if \dots then \dots'' mung ateges $\lif$, ukara
+kasebut bener tanpa masalah, lan inferensi-inferensine sah tanpa
+masalah.
+
+Tuladha liyane gegayutan karo tautologi $(!A \lif !B) \lor (!B \lif
+!A)$. Iki nuduhake yen kita njupuk rong ukara indikatif~$S$ lan $T$
+saka koran kanthi acak, ukara ``Yen $S$ mula $T$, utawa yen $T$
+mula~$S$'' mesthine bener.
+
+\end{document}

@@ -1,0 +1,147 @@
+% Part: intuitionistic-logic
+% Chapter: tableaux
+% Section: rules
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{tab}{rul}
+
+\olsection{Aturan kanggo Logika Intuisionistik}
+
+Aturan kanggo konektif $\land$ lan $\lor$ padha karo kanggo
+!!{tableau}s proposisional mawa tandha biasa, mung ditambahi prefiks.
+Ing saben kasus, aturan kang ditrapake marang !!{formula} mawa tandha
+$\sFmla{S}{!A}[\sigma]$ ngasilake !!{formula}s anyar kang uga
+mawa prefiks~$\sigma$. Iki cetha sacara intuitif: upamane yen
+$!A \land !B$ bener ing (donya kang dijenengi dening)~$\sigma$,
+mula $!A$ lan $!B$ bener ing~$\sigma$ (aturan iki ngenalake
+formula ing prefiks iku, tanpa nyingkirake kabeneran ing donya liyane).
+Aturan kanggo $\land$ lan $\lor$ diklumpukake ing \olref{tab:prop-rules}.
+
+\begin{table}
+  \[\def\arraystretch{3}\begin{array}{|c|c|}
+    \hline
+    \AxiomC{\sFmla{\True}{!A \land !B}[\sigma]}
+    \RightLabel{\TRule{\True}{\land}}
+    \UnaryInfC{\sFmla{\True}{!A}[\sigma]}
+    \noLine
+    \UnaryInfC{\sFmla{\True}{!B}[\sigma]}
+    \DisplayProof
+    &
+    \AxiomC{\sFmla{\False}{!A \land !B}[\sigma]}
+    \RightLabel{\TRule{\False}{\land}}
+    \UnaryInfC{$\sFmla{\False}{!A}[\sigma] \quad \mid \quad
+      \sFmla{\False}{!B}[\sigma]$}
+    \DisplayProof
+    \\[2ex]
+    \hline
+    \AxiomC{\sFmla{\True}{!A \lor !B}[\sigma]}
+    \RightLabel{\TRule{\True}{\lor}}
+    \UnaryInfC{$\sFmla{\True}{!A}[\sigma] \quad \mid \quad
+      \sFmla{\True}{!B}[\sigma]$}
+    \DisplayProof
+    &
+    \AxiomC{\sFmla{\False}{!A \lor !B}[\sigma]}
+    \RightLabel{\TRule{\False}{\lor}}
+    \UnaryInfC{\sFmla{\False}{!A}[\sigma]}
+    \noLine
+    \UnaryInfC{\sFmla{\False}{!B}[\sigma]}
+    \DisplayProof
+    \\[2ex]
+    \hline
+  \end{array}\]
+  \caption{Aturan !!{tableau} mawa prefiks kanggo $\land$ lan $\lor$}
+  \ollabel{tab:prop-rules}
+\end{table}
+
+Syarat penutupan padha karo kanggo !!{tableau}s biasa, nanging ora
+mung !!{formula}s kang kudu cocog, prefikse uga kudu cocog.
+Sejatine, syarate bisa luwih longgar: ing model intuisionistik,
+!!{formula}s kang wis bener tetep bener, mula ora mungkin $!A$
+bener ing~$\sigma$ nanging salah ing prefiks aksesibel
+~$\sigma.{*}$. Dadi cabang katutup yen ngemot loro-lorone
+\[
+\sFmla{\True}{!A}[\sigma] \quad\text{lan}\quad \sFmla{\False}{!A}[\sigma.{*}]
+\]
+kanggo sawenehing prefiks $\sigma$ lan !!{formula}~$!A$.
+Yen tandhane dibalik, yaiku yen ngemot
+\[
+\sFmla{\False}{!A}[\sigma] \quad\text{lan}\quad \sFmla{\True}{!A}[\sigma.{*}]
+\]
+cabang katutup mung yen $*$ iku urutan kosong.
+
+Kajaba iku, cabang katutup yen ngemot~$\sFmla{\True}{\bot}[\sigma]$.
+
+Aturan kanggo nyetel asumsi uga padha karo kanggo !!{tableau}s
+biasa, nanging kanggo asumsi kita tansah nggunakake prefiks~$1$.
+(Ora dadi prakara prefiks endi kang digunakake, anggere padha
+kanggo kabeh asumsi.) Dadi, upamane, kita nyebut
+\[
+!B_1, \dots, !B_n \Proves !A
+\]
+yen lan mung yen ana tabelau katutup kanggo asumsi
+\[
+\sFmla{\True}{!B_1}[1], \dots, \sFmla{\True}{!B_n}[1],
+\sFmla{\False}{!A}[1].
+\]
+
+Kanggo kondisional~$\lif$, aturane beda karo kasus klasik lan modal.
+Aturan $\TRule{\True}{\lif}$ ngluwihi cabang kang ngemot
+$\sFmla{\True}{!A \lif !B}[\sigma]$ nganggo
+$\sFmla{\False}{!A}[\sigma.{*}]$ lan $\sFmla{\True}{!B}[\sigma.{*}]$
+ing rong cabang kang beda. Aturan iki mung bisa ditrapake kanggo
+prefiks~$\sigma.{*}$ kang \emph{wis} ana ing cabang kang dadi
+papan penerapane. Prefiks kaya mangkono diarani ``wis digunakake''
+(ing cabang iku). (Amarga $\sigma.{*}$ ngemot $\sigma$ dhewe,
+aturan iki tansah bisa ditrapake kanthi nambahake formula mawa
+tandha lan prefiks $\sFmla{\False}{!A}[\sigma]$ lan
+$\sFmla{\True}{!B}[\sigma]$ ing cabang kang kapisah.)
+
+Aturan $\TRule{\False}{\lif}$ ngluwihi cabang kang ngemot
+$\sFmla{\False}{!A \lif !B}[\sigma]$ nganggo loro-lorone
+$\sFmla{\True}{!A}[\sigma.n]$ lan $\sFmla{\False}{!B}[\sigma.n]$
+ing cabang kang padha, kanthi $\sigma.n$ prefiks anyar ing cabang iku.
+
+Aturan kanggo $\lnot$ ditetepake kanthi cara kang padha
+(nggunakake definisi $\lnot !A$ minangka $!A \lif \lfalse$).
+
+Aturan iku diwenehake ing \olref{tab:rules-lif-lnot}.
+
+\begin{table}
+  \[\def\arraystretch{3}\begin{array}{|c|c|}
+    \hline
+    \AxiomC{\sFmla{\True}{\lnot !A}[\sigma]}
+    \RightLabel{\TRule{\True}{\lnot}}
+    \UnaryInfC{$\sFmla{\False}{!A}[\sigma.{*}]$}
+    \DisplayProof
+    &
+    \AxiomC{\sFmla{\False}{\lnot !A}[\sigma]}
+    \RightLabel{\TRule{\False}{\lnot}}
+    \UnaryInfC{\sFmla{\True}{!A}[\sigma.n]}
+    \DisplayProof
+    \\[1ex]
+    \text{$\sigma.{*}$ wis digunakake} & \text{$\sigma.n$ anyar}\\
+    \hline
+    \AxiomC{\sFmla{\True}{!A \lif !B}[\sigma]}
+    \RightLabel{\TRule{\True}{\lif}}
+    \UnaryInfC{$\sFmla{\False}{!A}[\sigma.{*}] \quad \mid \quad
+      \sFmla{\True}{!B}[\sigma.{*}]$}
+    \DisplayProof
+    &
+    \AxiomC{\sFmla{\False}{!A \lif !B}[\sigma]}
+    \RightLabel{\TRule{\False}{\lif}}
+    \UnaryInfC{\sFmla{\True}{!A}[\sigma.n]}
+    \noLine
+    \UnaryInfC{\sFmla{\False}{!B}[\sigma.n]}
+    \DisplayProof
+    \\[1ex]
+    \text{$\sigma.{*}$ wis digunakake} & \text{$\sigma.n$ anyar}\\
+    \hline
+  \end{array}\]
+  \caption{Aturan !!{tableau} mawa prefiks kanggo $\lnot$ lan $\lif$}
+  \ollabel{tab:rules-lif-lnot}
+\end{table}
+
+\end{document}

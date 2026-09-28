@@ -1,0 +1,131 @@
+% Part: many-valued-logic
+% Chapter: infinite-valued-logics
+% Section: goedel
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{inf}{god}
+
+\olsection{Logika-logika G\"odel}
+
+\begin{editorial}
+  Iki mung draf ringkes saka perangan bab logika G\"odel
+  mawa nilai tanpa wates.
+\end{editorial}
+
+\begin{defn}\ollabel{def:goedel} Logika G\"odel mawa nilai tanpa wates
+~$\LogGod[\infty]$ ditetepake nganggo matriks iki:
+\begin{enumerate}
+  \item Basa proposisional baku $\Lang L_0$ kang ngemot
+  $\lfalse$, $\lnot$, $\land$, $\lor$, $\lif$.
+  \item Himpunan nilai kabeneran $V_\infty$.
+  \item $1$ mung siji-sijine nilai pinilih, yaiku $V^+ = \{1\}$.
+  \item Fungsi kabeneran diwenehake ing ngisor iki:
+  \begin{align*}
+    \tf{\lfalse} & = 0\\
+    \tf{\lnot}[\LogGod](x) & = \begin{cases}
+      1 & \text{yen } x =0\\
+      0 & \text{yen ora}
+    \end{cases}\\
+    \tf{\land}[\LogGod](x,y) & = \min(x,y)\\
+    \tf{\lor}[\LogGod](x,y) & = \max(x,y)\\
+    \tf{\lif}[\LogGod](x,y) & = \begin{cases}
+      1 & \text{yen } x \le y\\
+      y & \text{yen ora.}
+    \end{cases}
+    \end{align*}
+\end{enumerate}
+Logika G\"odel $m$ nilai ditetepake kanthi cara padha, nanging $V = V_m$.
+\end{defn}
+
+\begin{prop}
+  Logika $\LogGod[3]$ kang ditetepake ing
+  \olref[thr][god]{defn:goedel} padha karo $\LogGod[3]$
+  kang ditetepake ing \olref{def:goedel}.
+\end{prop}
+
+\begin{proof}
+  Iki katon kanthi mbandhingake tabel kabeneran konektif ing
+  \olref[thr][god]{defn:goedel} karo tabel kang ditemtokake
+  dening persamaan ing \olref{def:goedel}:
+  \begin{center}
+    \begin{tabular}{c|c} 
+      $\tf{\lnot}[\LogGod[3]]$ & \\ 
+      \hline  
+      $1$ & $0$ \\ 
+      $1/2$ & $0$ \\
+      $0$ & $1$ 
+    \end{tabular}
+    \quad
+    \begin{tabular}{c|ccc} 
+      $\tf{\land}[\LogGod]$ & $1$ & $1/2$ & $0$ \\ 
+      \hline 
+      $1$ & $1$ & $1/2$ & $0$ \\ 
+      $1/2$ & $1/2$ & $1/2$ & $0$\\ 
+      $0$ & $0$ & $0$ & $0$ 
+    \end{tabular}
+    \\[2ex]
+    \begin{tabular}{c|ccc} 
+      $\tf{\lor}[\LogGod]$ & $1$ & $1/2$ & $0$ \\ 
+      \hline 
+      $1$ & $1$ & $1$ & $1$ \\ 
+      $1/2$ & $1$ & $1/2$ & $1/2$ \\
+      $0$ & $1$ & $1/2$ & $0$ 
+    \end{tabular}
+    \quad
+    \begin{tabular}{c|ccc} 
+      $\tf{\lif}[\LogGod]$ & $1$ & $1/2$ & $0$ \\ 
+      \hline 
+      $1$ & $1$ & $1/2$ & $0$ \\ 
+      $1/2$ & $1$ & $1$ & $0$  \\ 
+      $0$ & $1$ & $1$ & $1$ 
+    \end{tabular}
+  \end{center} 
+\end{proof}
+
+\begin{prop}\ollabel{prop:god-infty-m}
+  Yen $\Gamma \Entails[\LogGod[\infty]] !B$, mula $\Gamma
+  \Entails[\LogGod[m]] !B$ kanggo kabeh~$m \ge 2$.
+\end{prop}
+
+\begin{proof}
+  Latihan.
+\end{proof}
+
+\begin{prob}
+  Buktèkna \olref[mvl][inf][god]{prop:god-infty-m}.
+\end{prob}
+
+Satemene arah kosok baline uga bener.
+
+Kaya $\LogGod[3]$, $\LogGod[\infty]$ nduweni kabeh
+!!{formula}s kang sah ing logika intuisionistik minangka tautologi.
+Conto-conto kang padha kang dudu tautologi uga tetep dudu tautologi
+ing~$\LogGod[\infty]$:
+\begin{align*}
+  & p \lor \lnot p && (p \lif q) \lif (\lnot p \lor q) \\
+  & \lnot\lnot p \lif p && \lnot(\lnot p \land \lnot q) \lif (p \lor q) \\
+  & ((p \lif q) \lif p) \lif p && \lnot(p \lif q) \lif (p \land \lnot q)
+\end{align*}
+Conto !!{formula} kang ora sah ing logika intuisionistik nanging
+tautologi ing~$\LogGod[3]$, yaiku $(p \lif q) \lor (q \lif
+p)$, uga tautologi ing~$\LogGod[\infty]$. Malah,
+$\LogGod[\infty]$ bisa dicireni minangka logika intuisionistik
+kang ditambahi skema $(!A \lif !B) \lor (!B \lif !A)$.
+Iki dibuktekake dening Michael Dummett, mula $\LogGod[\infty]$
+asring diarani logika G\"odel--Dummett~$\Log{LC}$.
+
+\begin{prob}
+  Tuduhna yen $(p \lif q) \lor (q \lif p)$ iku tautologi
+  ing~$\LogGod[\infty]$.
+\end{prob}
+
+\begin{prob}
+  Tuduhna yen $(p \lif q) \lor (q \lif r) \lor (r \lif s)$,
+  kang dadi tautologi ing $\LogGod[3]$, dudu tautologi
+  ing~$\LogGod[\infty]$.
+\end{prob}
+
+\end{document}

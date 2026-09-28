@@ -1,0 +1,126 @@
+% Part: first-order-logic
+% Chapter: completeness
+% Section: completeness-theorem
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{com}{cth}}
+      {\olfileid{pl}{com}{cth}}
+
+\olsection{Teorema Kelengkapan}
+
+\begin{explain}
+Kanthi nggabungake asil-asil iki, kita oleh teorema kelengkapan.
+\end{explain}
+
+\begin{thm}[Teorema Kelengkapan]
+\ollabel{thm:completeness}
+Upamana $\Gamma$ minangka himpunan !!{sentence}s. Yen $\Gamma$
+konsisten, himpunan kasebut bisa dicukupi.
+\end{thm}
+
+\begin{proof}
+Upamana $\Gamma$ konsisten.\iftag{FOL}{ Miturut
+  \olref[hen]{lem:henkin}, ana himpunan konsisten kang jenuh
+  $\Gamma' \supseteq \Gamma$.}{} Miturut \olref[lin]{lem:lindenbaum},
+ana $\Gamma^* \supseteq \iftag{FOL}{\Gamma'}{\Gamma}$ kang konsisten
+lan !!{complete}.
+\iftag{FOL}{
+  Amarga $\Gamma' \subseteq \Gamma^*$, kanggo saben
+  !!{formula}~$!A(x)$, $\Gamma^*$ ngemot !!a{sentence} kanthi wujud
+  \iftag{prvEx}
+        {$\lexists[x][!A(x)] \lif !A(c)$}
+        {$\lnot\lforall[x][!A(x)] \lif \lnot !A(c)$}
+  lan mula $\Gamma^*$ jenuh. Yen $\Gamma$ ora ngemot~$\eq$, miturut}{Miturut}
+\olref[mod]{lem:truth},
+$\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{!A}$ yen lan mung
+yen $!A \in \Gamma^*$. Saka kene mligine nderek yen kanggo kabeh
+$!A \in \Gamma$, $\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{!A}$,
+mula $\Gamma$ bisa dicukupi.\iftag{FOL}{
+  Yen $\Gamma$ ngemot~$\eq$, miturut \olref[ide]{lem:truth}, kanggo
+  kabeh !!{sentence}s~$!A$, $\Sat{\equivclass{M}{\approx}}{!A}$ yen lan
+  mung yen $!A \in \Gamma^*$. Mligine,
+  $\Sat{\equivclass{M}{\approx}}{!A}$ kanggo kabeh $!A \in \Gamma$,
+  mula $\Gamma$ bisa dicukupi.}{}
+\end{proof}
+
+\begin{cor}[Teorema Kelengkapan, Versi Kapindho]
+\ollabel{cor:completeness}
+Kanggo kabeh $\Gamma$ lan !!{sentence}s~$!A$: yen $\Gamma \Entails !A$
+mula $\Gamma \Proves !A$.
+\end{cor}
+
+\begin{proof}
+Elinga yen $\Gamma$ ing \olref{cor:completeness} lan
+\olref{thm:completeness} dikuwantifikasi universal. Supaya ora kliru,
+pratelan \olref{thm:completeness} kita tulis maneh nganggo variabel
+liyane: kanggo saben himpunan !!{sentence}s~$\Delta$, yen $\Delta$
+konsisten, himpunan kasebut bisa dicukupi. Miturut kontraposisi, yen
+$\Delta$ ora bisa dicukupi, mula $\Delta$ ora konsisten. Iki bakal
+digunakake kanggo mbuktekake korolari kasebut.
+
+Upamana $\Gamma \Entails !A$. Banjur $\Gamma \cup \{\lnot !A\}$ ora
+bisa dicukupi miturut \olref[syn][sem]{prop:entails-unsat}. Kanthi
+njupuk $\Gamma \cup \{\lnot !A\}$ minangka $\Delta$, versi sadurunge
+saka \olref{thm:completeness} menehi yen $\Gamma \cup \{\lnot !A\}$
+ora konsisten. Miturut
+\iftag{FOL}{%
+  \tagrefs{prfAX/{fol:axd:prv:prop:prov-incons},
+    prfSC/{fol:seq:prv:prop:prov-incons},
+    prfND/{fol:ntd:prv:prop:prov-incons},
+    prfTab/{fol:tab:prv:prop:prov-incons}}}{%
+  \tagrefs{prfAX/{pl:axd:prv:prop:prov-incons},
+    prfSC/{pl:seq:prv:prop:prov-incons},
+    prfND/{pl:ntd:prv:prop:prov-incons},
+    prfTab/{pl:tab:prv:prop:prov-incons}}},
+$\Gamma \Proves !A$.
+\end{proof}
+
+\tagprob{FOL}
+\begin{prob}
+Gunakna \olref[fol][com][cth]{cor:completeness} kanggo mbuktekake
+\olref[fol][com][cth]{thm:completeness}, lan kanthi mangkono tuduhna
+yen rong formulasi teorema kelengkapan kasebut ekuivalen.
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+Gunakna \olref[pl][com][cth]{cor:completeness} kanggo mbuktekake
+\olref[pl][com][cth]{thm:completeness}, lan kanthi mangkono tuduhna
+yen rong formulasi teorema kelengkapan kasebut ekuivalen.
+\end{prob}
+\tagendprob
+
+\tagprob{FOL}
+\begin{prob}
+Supaya sawijining sistem !!a{derivation} jangkep, aturan-aturane kudu cukup kuwat
+kanggo mbuktekake yen saben himpunan kang ora bisa dicukupi iku ora
+konsisten. Aturan !!{derivation} endi wae kang dibutuhake kanggo
+mbuktekake kelengkapan? Apa ana aturan kasebut kang ora digunakake ing
+bukti iki? Kanggo mangsuli pitakon-pitakon iki, gawenen dhaptar utawa
+diagram kang nuduhake aturan !!{derivation} endi wae kang digunakake ing
+asil-asil kang tumuju marang bukti
+\olref[fol][com][cth]{thm:completeness}. Catheten uga saben panganggone
+aturan kang ora kasebut kanthi cetha ing bukti-bukti kasebut.
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+Supaya sawijining sistem !!a{derivation} jangkep, aturan-aturane kudu cukup kuwat
+kanggo mbuktekake yen saben himpunan kang ora bisa dicukupi iku ora
+konsisten. Aturan !!{derivation} endi wae kang dibutuhake kanggo
+mbuktekake kelengkapan? Apa ana aturan kasebut kang ora digunakake ing
+bukti iki? Kanggo mangsuli pitakon-pitakon iki, gawenen dhaptar utawa
+diagram kang nuduhake aturan !!{derivation} endi wae kang digunakake ing
+asil-asil kang tumuju marang bukti
+\olref[pl][com][cth]{thm:completeness}. Catheten uga saben panganggone
+aturan kang ora kasebut kanthi cetha ing bukti-bukti kasebut.
+\end{prob}
+\tagendprob
+
+\end{document}

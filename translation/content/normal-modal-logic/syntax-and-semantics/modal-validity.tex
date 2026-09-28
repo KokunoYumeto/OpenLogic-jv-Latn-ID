@@ -1,0 +1,77 @@
+% Part: normal-modal-logic
+% Chapter: syntax-and-semantics
+% Section: modal-validity
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{syn}{val}
+
+\olsection{Validitas}
+
+\begin{explain}
+  !!^{formula}s kang bener ing kabeh model, yaiku bener ing saben donya
+  ing saben model, pancen narik kawigaten. Formula kasebut nggambarake
+  proposisi modal kang bener tanpa gumantung marang carane $\Box$ lan
+  $\Diamond$ ditafsirake, anggere tafsirane ``normal'' ing teges
+  diasilake dening sawijining relasi aksesibilitas ing donya kang
+  mungkin. Kita ngarani !!{formula}s kaya mangkono \emph{valid}.
+  Upamane, $\Box(p \land q) \lif \Box p$ valid. Nanging, sawetara
+  !!{formula}s kang dikira valid adhedhasar tafsir aletik $\Box$,
+  kayata $\Box p \lif p$, sejatine ora valid. Salah sawijining
+  bab kang narik kawigaten saka model relasional yaiku maneka
+  tafsir $\Box$ lan $\Diamond$ bisa diwujudake dening maneka
+  jinis relasi aksesibilitas. Iki menehi alesan kanggo nemtokake
+  validitas ora mung relatif marang \emph{kabeh} model, nanging uga
+  marang kabeh model \emph{jinis tartamtu}. Pranyata, upamane,
+  $\Box p \lif p$ bener ing kabeh model kang saben donyane bisa
+  diakses saka awake dhewe, yaiku yen $R$ refleksif. Kanthi
+  nemtokake validitas relatif marang kelas model, kita bisa
+  ngandharake iki kanthi cekak: $\Box p \lif p$ valid ing kelas
+  model refleksif.
+\end{explain}
+
+\begin{defn}
+  !!^a{formula}~$!A$ iku \emph{valid} ing sawijining kelas $\mClass{C}$
+  saka model yen bener ing saben model ing~$\mClass{C}$ (yaiku bener
+  ing saben donya ing saben model ing~$\mClass{C}$). Yen $!A$ valid
+  ing~$\mClass{C}$, kita nulis $\mClass{C} \Entails !A$, lan kita
+  nulis $\Entails !A$ yen $!A$ valid ing kelas \emph{kabeh} model.
+\end{defn}
+
+\begin{prop}\ollabel{prop:subset-class}
+  Yen $!A$ valid ing $\mClass{C}$, mula uga valid ing saben kelas
+  $\mClass{C}' \subseteq \mClass{C}$.
+\end{prop}
+
+\begin{prop}\ollabel{prop:Nec-rule}
+  Yen $!A$ valid, mula $\Box!A$ uga valid.
+\end{prop}
+
+\begin{proof}
+  Upamane $\Entails !A$. Kanggo mbuktekake $\Entails \Box!A$, pilih model
+  $\mModel{M} = \tuple{W, R, V}$ lan $w \in W$. Yen $Rww'$, mula
+  $\mSat{M}{!A}[w']$, amarga $!A$ valid, lan mula uga
+  $\mSat{M}{\Box!A}[w]$. Amarga $\mModel{M}$ lan $w$ dipilih
+  sembarang, $\Entails \Box!A$.
+\end{proof}
+
+\begin{prob}
+  Buktekna yen ing ngisor iki valid:
+  \begin{enumerate}
+  \item $\Box p \lif \Box (q \lif p)$;
+  \item $\Box \lnot \lfalse$;
+  \item $\Box p \lif (\Box q \lif \Box p)$.
+  \end{enumerate}
+\end{prob}
+
+\begin{prob}
+  Buktekna yen $!A \lif \Box!A$ valid ing kelas $\mClass{C}$ saka
+  model $\mModel{M} = \tuple{W, R, V}$ kang $W = \{w\}$. Kajaba iku,
+  buktekna yen $!B \lif \Box !A$ lan $\Diamond !A \lif !B$ valid ing
+  kelas model $\mModel{M} = \tuple{W, R, V}$ kang
+  $R = \emptyset$.
+\end{prob}
+
+\end{document}

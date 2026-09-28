@@ -1,5 +1,6 @@
 upstream/** -text
 translation/** text eol=lf
+translation/content/** -text
 edition/** text eol=lf
 editorial/** text eol=lf
 translation-decisions/** text eol=lf
@@ -8,3 +9,4 @@ translation-decisions/** text eol=lf
 *.md text eol=lf
 evidence/** -text
 tools/qa-batch.py -text
+tools/source_views/** -text

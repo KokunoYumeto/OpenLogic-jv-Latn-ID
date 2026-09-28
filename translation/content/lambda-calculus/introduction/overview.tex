@@ -1,0 +1,93 @@
+% Part: lambda-calculus
+% Chapter: introduction
+% Section: overview
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{int}{ovr}
+\olsection{Gambaran Umum}
+
+Kalkulus lambda wiwitane dirancang dening Alonzo Church
+ing wiwitan dasawarsa 1930-an minangka dhasar logika
+konstruktif, lan \emph{dudu} minangka model fungsi
+kang bisa diitung. Nanging ora suwe banjur dibuktekake
+yen kalkulus iki ekuivalen karo definisi komputabilitas
+liyane, kayata fungsi kang bisa diitung nganggo mesin
+Turing lan fungsi rekursif parsial. Kasunyatan yen
+asil iki wiwitane rada nggumunake ndadekake
+karakterisasi kasebut luwih narik kawigaten.
+
+Notasi lambda iku cara kang praktis kanggo nyebut
+fungsi langsung nganggo ekspresi simbolis kang
+netepake fungsi iku, tanpa kudu luwih dhisik
+menehi jeneng kapisah. Tinimbang nyebut
+``upamana $f$ iku fungsi kang ditetepake
+dening $f(x) = x + 3$,'' kita bisa nyebut
+``upamana $f$ iku fungsi
+$\lambd[x][(x + 3)]$.'' Kanthi tembung liya,
+$\lambd[x][(x+3)]$ mung sawijining \emph{jeneng}
+kanggo fungsi kang nambah telu marang argumene.
+Ing ekspresi iki, $x$ iku variabel semu,
+utawa panggonan isian: fungsi kang padha
+uga bisa ditulis minangka $\lambd[y][(y + 3)]$.
+Notasi iki uga lumaku yen ana parameter liyane.
+Umpamane, upamana $g(x, y)$ iku fungsi rong
+variabel, lan $k$ iku wilangan asli. Banjur
+$\lambd[x][g(x,k)]$ iku fungsi kang
+ngirim saben~$x$ menyang~$g(x, k)$.
+
+Cara netepake fungsi saka ekspresi simbolis iki
+diarani \emph{abstraksi lambda}. Kosok baline
+abstraksi lambda yaiku \emph{aplikasi}:
+yen kita duwe fungsi $f$ (umpamane, kang
+ditetepake ing wilangan asli), kita bisa
+\emph{ngaplikasikake} fungsi iku marang
+sembarang nilai, kayata 2. Ing notasi
+biasa, asile mesthi ditulis~$f(2)$.
+
+Apa kang kedadeyan yen abstraksi lambda
+digabung karo aplikasi? Ekspresi kang
+diasilake banjur bisa disederhanakake
+kanthi ``ngiseni'' variabel kang diabstraksi
+nganggo argumen aplikasi. Umpamane,
+\[
+(\lambd[x][(x + 3)])(2)
+\]
+bisa disederhanakake dadi~$2 + 3$.
+
+Nganti kene kita mung ngenalake notasi anyar
+kanggo gagasan kang wis lumrah. Nanging kalkulus
+lambda luwih adoh ninggalake sudut pandang
+teori himpunan. Ing kerangka iki:
+\begin{enumerate}
+\item Saben apa wae nyebut sawijining fungsi.
+\item Fungsi bisa ditetepake nganggo abstraksi lambda.
+\item Apa wae bisa diaplikasikake marang apa wae liyane.
+\end{enumerate}
+Umpamane, yen $F$ iku suku ing kalkulus lambda,
+$F(F)$ tansah dianggep nduweni teges.
+Kerangka kang bebas iki diarani kalkulus lambda
+\emph{tanpa tipe}, ing kene ``tanpa tipe''
+ateges ``ora ana watesan ngenani apa kang
+bisa diaplikasikake marang apa''.
+
+\begin{digress}
+Ana uga kalkulus lambda \emph{mawa tipe},
+yaiku variasi wigati saka versi tanpa tipe.
+Sanadyan kalkulus lambda mawa tipe padha
+karo versi tanpa tipe ing akeh bab, kalkulus
+mawa tipe luwih gampang diselarasake karo
+kerangka teori himpunan klasik lan nduweni
+sawetara sipat kang beda banget.
+
+Panliten ngenani kalkulus lambda wis dadi
+bagean utama ing ilmu komputer teoretis
+lan ing rancangan basa pamrograman. LISP,
+kang dirancang dening John McCarthy ing
+dasawarsa 1950-an, minangka tuladha wiwitan
+basa kang kena pengaruh saka gagasan-gagasan iki.
+\end{digress}
+
+\end{document}

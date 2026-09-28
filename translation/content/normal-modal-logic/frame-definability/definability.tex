@@ -1,0 +1,171 @@
+% Part: normal-modal-logic
+% Chapter: frame-definability
+% Section: definability
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{frd}{def}
+
+\olsection{Definabilitas Bingkai}
+
+Senadyan implikasi kosok baline \olref[acc]{thm:soundschemas}
+gagal, implikasi kasebut bener yen ``model'' diganti ``bingkai'':
+kanggo sipat kang ditliti ing \olref[acc]{thm:soundschemas},
+\emph{pancen} bener yen !!a{formula} valid ing sawijining
+\emph{bingkai}, mula relasi aksesibilitas bingkai iku nduweni sipat
+kang cocog. Dadi, !!{formula}s kang ditliti \emph{ndéfinisikake}
+kelas bingkai kang nduweni sipat kasebut.
+
+\begin{defn}
+  Yen $\mClass{F}$ sawijining kelas bingkai, kita ngarani $!A$
+  \emph{ndéfinisikake}~$\mClass{F}$ yen lan mung yen $\mModel{F} \Entails !A$
+  kanggo saben bingkai~$\mModel{F} \in \mClass{F}$ lan mung kanggo
+  bingkai kasebut.
+\end{defn}
+
+Saiki kita bakal netepake asil definabilitas kang jangkep
+kanggo bingkai.
+
+\begin{thm}\ollabel{thm:fullCorrespondence}
+Yen !!{formula} ing sisih tengen \olref[acc]{tab:five} valid ing sawijining
+bingkai~$\mModel{F}$, mula $\mModel{F}$ nduweni sipat ing sisih kiwa.
+\end{thm}
+
+\begin{proof}
+  \begin{enumerate}
+  \item Upamane \Ax{D} valid ing $\mModel{F} = \tuple{W, R}$, yaiku
+    $\mModel{F} \Entails \Box p \lif \Diamond p$. Pilih $\mModel{M} =
+    \tuple{W, R, V}$ minangka model kang adhedhasar~$\mModel{F}$, lan
+    $w \in W$. Kita kudu nuduhake yen ana $v$ kang nyukupi~$Rwv$.
+    Upamane ora: mula $\mSat{M}{\Box !A}[w]$ lan
+    $\mSat/{M}{\Diamond !A}[w]$ kanggo sembarang~$!A$, kalebu~$p$.
+    Nanging iki ateges $\mSat/{M}{\Box p \lif
+      \Diamond p}[w]$, kang nentang asumsi yen $\mModel{F}
+    \Entails \Box p \lif \Diamond p$.
+  \item Upamane \Ax{T} valid ing $\mModel{F}$, yaiku $\mModel{F} \Entails \Box
+    p \lif p$. Pilih $w \in W$ minangka donya sebarang; kita kudu
+    nuduhake $Rww$. Tetepna $u \in V(p)$ yen lan mung yen $Rwu$
+    (yen $q$ beda karo $p$, $V(q)$ dipilih sebarang, upamane
+    $V(q) = \emptyset$). Pilih $\mModel{M} = \tuple{W, R, V}$.
+    Miturut konstruksi, kanggo saben $u$ kang nyukupi $Rwu$:
+    $\mSat{M}{p}[u]$, mula $\mSat{M}{\Box p}[w]$. Nanging miturut
+    hipotesis, $\Box p \lif p$ bener ing~$w$, saengga
+    $\mSat{M}{p}[w]$; miturut definisi $V$ iki mung bisa yen~$Rww$.
+  \item Kita mbuktekake kontraposisine: Upamane $\mModel{F}$ ora
+    simetris, kita tuduhake yen \Ax{B}, yaiku $p \lif \Box\Diamond p$,
+    ora valid ing $\mModel{F}= \tuple{W, R}$. Yen $\mModel{F}$ ora
+    simetris, ana $u$, $v \in W$ kang nyukupi $Ruv$ nanging ora
+    $Rvu$. Temtokna $V$ saengga $w \in V(p)$ yen lan mung yen ora
+    $Rvw$ (lan $V$ kanggo variabel liyane dipilih sebarang). Pilih
+    $\mModel{M} =\tuple{W, R,
+      V}$. Miturut definisi $V$, $\mSat{M}{p}[w]$ kanggo saben $w$
+    kang ora nyukupi $Rvw$, mligine $\mSat{M}{p}[u]$ amarga ora
+    ana~$Rvu$. Uga, amarga $Rvw$ yen lan mung yen $w \notin V(p)$,
+    ora ana~$w$ kang nyukupi $Rvw$ lan $\mSat{M}{p}[w]$, mula
+    $\mSat/{M}{\Diamond p}[v]$. Amarga~$Ruv$, uga
+    $\mSat/{M}{\Box\Diamond p}[u]$. Dadi $\mSat/{M}{p \lif
+      \Box\Diamond p}[u]$, mula $\Ax{B}$ ora valid
+    ing~$\mModel{F}$.
+  \item Upamane \Ax{4} valid ing $\mModel{F} = \tuple{W,R}$, yaiku
+    $\mModel{F} \Entails \Box p \lif \Box\Box p$, lan pilih $u$, $v$,
+    $w \in W$ minangka donya sebarang kang nyukupi $Ruv$ lan $Rvw$;
+    kita kudu nuduhake $Ruw$. Temtokna $V$ saengga $z \in V(p)$ yen
+    lan mung yen $Ruz$ (lan $V$ kanggo variabel liyane dipilih
+    sebarang). Pilih $\mModel{M} =\tuple{W, R, V}$. Miturut definisi
+    $V$, $\mSat{M}{p}[z]$ kanggo kabeh $z$ kang nyukupi $Ruz$,
+    mula $\mSat{M}{\Box p}[u]$. Nanging miturut hipotesis \Ax{4},
+    $\Box p \lif \Box \Box p$, bener ing $u$, saengga
+    $\mSat{M}{\Box \Box
+      p}[u]$. Amarga $Ruv$ lan $Rvw$, kita duwe $\mSat{M}{p}[w]$;
+    miturut definisi~$V$ iki mung bisa yen $Ruw$, kaya kang dikarepake.
+  \item Kita nggunakake kontraposisi kanthi nganggep bingkai
+    $\mModel{F} = \tuple{W, R}$ ora Euklidean, lan nuduhake yen
+    bingkai iku mbantah~\Ax{5}, yaiku $\mModel{F} \Entails/ \Diamond p \lif
+      \Box\Diamond p$. Upamane ana donya $u$, $v$, $w \in W$
+    kang nyukupi $Rwu$ lan $Rwv$ nanging ora~$Ruv$. Temtokna $V$
+    saengga kanggo kabeh donya $z$, $z \in V(p)$ yen lan mung yen
+    \emph{ora}~$Ruz$. Pilih $\mModel{M} =\tuple{W, R, V}$. Mula miturut
+    hipotesis $\mSat{M}{p}[v]$, lan amarga $Rwv$ uga
+    $\mSat{M}{\Diamond p}[w]$. Nanging ora ana donya $y$ kang
+    nyukupi $Ruy$ lan $\mSat{M}{p}[y]$, mula $\mSat/{M}{\Diamond
+      p}[u]$. Amarga $Rwu$, dadi $\mSat/{M}{\Box\Diamond
+      p}[w]$, saengga \Ax{5}, $\Diamond p \lif \Box\Diamond p$,
+    gagal ing~$w$.
+  \end{enumerate}
+\end{proof}
+
+Sampeyan bisa nggatekake bedane bukti kanggo \Ax{D} lan
+kasus liyane: valuasi~$V$ ora kasebut. Sejatine, kita mbuktekake yen
+$\mSat{M}{\Ax{D}}$ mula $\mModel{M}$ serial. Dadi \Ax{D}
+ndéfinisikake kelas \emph{model} serial, ora mung bingkai.
+
+\begin{cor}\ollabel{prop:D-serial}
+  Saben model kang nyukupi \Ax{D} iku serial.
+\end{cor}
+
+\begin{cor}
+Saben !!{formula} ing sisih tengen \olref[acc]{tab:five}
+ndéfinisikake kelas bingkai kang nduweni sipat ing sisih kiwa.
+\end{cor}
+
+\begin{proof}
+  Ing \olref[acc]{thm:soundschemas}, kita mbuktekake yen model
+  nduweni sipat ing sisih kiwa, !!{formula} ing sisih tengen bener
+  ing model iku. Dadi yen bingkai~$\mModel{F}$ nduweni sipat ing sisih
+  kiwa, !!{formula} ing sisih tengen valid ing~$\mModel{F}$. Ing
+  \olref{thm:fullCorrespondence}, kita mbuktekake implikasi kosok
+  baline: yen !!a{formula} ing sisih tengen valid ing~$\mModel{F}$,
+  $\mModel{F}$ nduweni sipat ing sisih kiwa.
+\end{proof}
+
+\begin{prob}
+Tuduhna yen !!{formula} ing sisih tengen
+\olref[nml][frd][acc]{tab:anotherfive} valid ing bingkai~$\mModel{F}$,
+mula $\mModel{F}$ nduweni sipat ing sisih kiwa. Kanggo iku, pilih
+bingkai kang \emph{ora} nyukupi sipat ing sisih kiwa, banjur
+temtokna~$V$ kang cocog saengga !!{formula} ing sisih tengen salah
+ing sawijining donya.
+\end{prob}
+
+\olref{thm:fullCorrespondence} uga nuduhake yen sipat-sipat
+iku bisa digabung: upamane, yen \Ax{B} lan \Ax{4} loro-lorone valid
+ing~$\mModel{F}$, mula bingkai iku simetris lan transitif, lan
+sapanunggalane. Akeh logika modal wigati kang dicirèkaké minangka
+himpunan !!{formula}s kang valid ing kabeh bingkai kang nggabung
+sawetara sipat bingkai. Dadi, kita bisa njlentrehake logika kasebut
+minangka himpunan !!{formula}s kang valid ing kabeh bingkai kang
+ndadekake !!{formula}s panentu sipat kasebut valid. Upamane, sistem
+klasik \Log{S4} yaiku himpunan kabeh !!{formula}s kang valid ing
+kabeh bingkai refleksif lan transitif, yaiku bingkai kang \Ax{T}
+lan~\Ax{4} loro-lorone valid. \Log{S5} yaiku himpunan kabeh formula
+kang valid ing kabeh bingkai refleksif, simetris, lan Euklidean,
+yaiku bingkai kang \Ax{T}, \Ax{B}, lan \Ax{5} kabeh valid.
+
+Sesambungan logis antarane sipat-sipat $R$ lumrahe cocog
+karo sesambungan antarane !!{formula}s kang ndéfinisikake sipat-sipat
+iku. Upamane, saben relasi refleksif iku serial; mula yen \Ax{T}
+valid ing sawijining bingkai, \Ax{D} uga valid. (Gatekna yen
+sesambungan iki \emph{dudu} relasi akibat logis. Ora mesthi yen
+$\mSat{M}{\Ax{T}}[w]$ banjur $\mSat{M}{\Ax{D}}[w]$.) Kita cathet
+sawetara sesambungan kaya mangkene.
+
+\begin{prop}\ollabel{prop:relation-facts}
+  Upamane $R$ relasi binar ing himpunan $W$; mula:
+  \begin{enumerate}
+  \item Yen $R$ refleksif, mula relasi iku serial.
+  \item Yen $R$ simetris, relasi iku transitif yen lan mung yen
+    Euklidean.
+  \item Yen $R$ simetris utawa Euklidean, mula relasi iku kaarahake
+    lemah (nduweni ``sipat inten'').
+  \item Yen $R$ Euklidean, mula relasi iku kasambung lemah.
+  \item Yen $R$ fungsional, mula relasi iku serial.
+  \end{enumerate}
+\end{prop}
+
+\begin{prob}
+  Buktekna \olref[nml][frd][def]{prop:relation-facts}.
+\end{prob}
+
+\end{document}

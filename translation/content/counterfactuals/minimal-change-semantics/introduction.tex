@@ -1,0 +1,75 @@
+% Part: counterfactuals
+% Chapter: minimal-change-semantics
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cnt}{min}{int}
+
+\olsection{Pambuka}
+
+Stalnaker lan Lewis ngajokake panjelasan tumrap kondisional
+kontrafaktual kaya ``Saupama penthol korek digesek, mesthi bakal
+murub.'' Panjelasane minangka usulan kanggo mangerteni kanthi
+bener syarat bebener ukara kaya mangkono. Gagasan kang ndhasari
+loro usulan iku yaiku: kanggo nemtokake apa kondisional
+kontrafaktual bener, kita kudu nimbang donya-donya kang bisa ana
+lan kang bedane saka donya aktual paling sithik supaya
+antesedene bener. Yen konsekuene bener ing donya-donya iku,
+mula kontrafaktuale bener. Upamane, aku nyekel penthol korek
+lan bungkus korek awujud buku. Ing donya aktual, aku mung
+ndeleng lan mikir apa kang bakal kelakon saupama aku nggesek
+penthol korek. Owah-owahan minimal saka donya aktual menyang
+donya ing ngendi aku nggesek korek yaiku aku mutusake tumindak
+lan nggesek korek. Iki minimal amarga ora ana owah-owahan
+liyane: aku ora uga mlumpat, nggesek korek ora uga ngobong
+rambutku, drijiku ora dumadakan kelangan kabeh kakuwatane,
+aku ora ing wektu kang padha disiram banyu nalika disergap
+nganggo SuperSoaker, lan sapiturute. Ing kemungkinan alternatif
+iku, penthol korek murub. Mula bener yen saupama aku nggesek
+penthol korek, penthol iku mesthi bakal murub.
+
+Panjelasan intuitif iki bisa digandhengake karo semantik formal
+kanggo logika kontrafaktual. Lewis ngenalake simbol ``$\boxright$''
+kanggo kontrafaktual, dene Stalnaker nggunakake simbol~``$>$''.
+Kita bakal nggunakake~$\cif$ lan nambahake minangka konektif
+biner ing logika proposisional. Dadi, saliyane !!{formula}s
+awujud $!A \lif !B$, kita uga nduweni !!{formula}s awujud~$!A \cif !B$.
+Semantik formal iki, kaya semantik relasional logika modal,
+adhedhasar model kang ngevaluasi !!{formula}s ing donya-donya,
+lan syarat pemenuhan kang nemtokake $\mSat{M}{!A \cif !B}[w]$
+diandharake nganggo $\mSat{M}{!A}[w']$ lan $\mSat{M}{!B}[w']$
+kanggo sawenehing donya (liyane)~$w'$. Donya $w'$ kang endi?
+Kanthi intuitif, donya kang paling cedhak karo~$w$ lan ing
+kono $\mSat{M}{!A}[w']$ lumaku. Iki mbutuhake relasi
+``cedhak'' uga dilebokake ing model.
+
+Lewis ngenalake cara kang menehi pangerten kanggo nggambarake
+kaanan kontrafaktual. Saben donya kang bisa ana ana ing pusat
+himpunan bola-bola kang susun ing njero siji lan sijine lan
+ngemot donya liyane---kita nggambar bola-bola iki minangka
+bunderan kanthi pusat kang padha. Donya-donya ing lapisan
+antarane rong bola padha cedhake karo donya pusat; donya ing
+bola njero luwih cedhak, lan donya ing bola kang ngubengi
+luwih adoh.
+\begin{center}
+\begin{tikzpicture}[scale=.7]\small
+  \spheresystem{5}
+  \draw (0,0) node {$w$};
+  \propositionintersect{0}{4}{40}{3.5}
+  {\tikzset{proposition/.append={smooth,tension=1.4}}
+  \proposition[shift={(1.6,-1)}]{90}{1}{30}{4}}
+  \path (1.5,3) node[below] {$\formula{B}$};
+  \path (3,0) node {$\formula{A}$};
+\end{tikzpicture}
+\end{center}
+Ing gambar iki, donya-donya $!A$ kang paling cedhak yaiku
+donya-donya $w'$ kang nyukupi~$!A$ lan ana ing bola paling
+cilik kang ngemot donya kaya mangkono ing saubenge donya
+pusat~$w$ (wewengkon klawu). Kanthi intuitif, $!A \cif !B$
+dipenuhi ing~$w$ yen $!B$ bener ing kabeh donya $!A$ kang
+paling cedhak.
+
+\end{document}

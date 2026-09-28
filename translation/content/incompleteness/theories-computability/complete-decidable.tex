@@ -1,0 +1,40 @@
+% Part: incompleteness
+% Chapter: theories-computability
+% Section: complete-decidable
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{tcp}{cdc}
+
+\olsection{Teori kang \printtoken{S}{axiomatizable} lan jangkep bisa diputusake}
+
+Teori diarani {\em jangkep} yen kanggo saben ukara $!A$,
+$!A$ utawa $\lnot !A$ bisa dibuktekake.
+
+\begin{lem}
+Upamana teori $\Th{T}$ jangkep lan !!{axiomatizable}. Mula
+$\Th{T}$ bisa diputusake.
+\end{lem}
+
+\begin{proof}
+Upamana $\Th{T}$ jangkep lan $A$ himpunan aksioma kang komputabel.
+Yen $\Th{T}$ ora konsisten, cetha yen iki komputabel. (Algoritmane:
+``cukup wangsulana ya.'') Mula kita bisa nganggep yen $\Th{T}$
+uga konsisten.
+
+Kanggo mutusake apa ukara $!A$ kalebu ing~$\Th{T}$ utawa ora,
+goleka bebarengan !!a{derivation} kanggo~$!A$ saka~$\Th{T}$ lan
+!!a{derivation} kanggo~$\lnot !A$. Amarga $\Th{T}$ jangkep, mesthi
+nemokake salah sijine; lan amarga $\Th{T}$ konsisten, yen sampeyan
+nemokake !!a{derivation} kanggo~$\lnot !A$, ora ana !!{derivation} kanggo~$!A$.
+
+Kanthi tembung liya, kita wis ngerti yen $\Th{T}$ iku !!{c.e.}; mula,
+miturut teorema kang wis dibuktekake sadurunge, cukup dituduhake yen
+komplemen saka~$\Th{T}$ uga !!{c.e.}. Nanging !!a{formula}~$!A$ kalebu
+ing~$\Th{\bar T}$ yen lan mung yen $\lnot !A$ kalebu ing~$\Th{T}$; mula
+$\Th{\bar T} \leq_m \Th{T}$.
+\end{proof}
+
+\end{document}

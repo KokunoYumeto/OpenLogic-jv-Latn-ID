@@ -1,0 +1,62 @@
+% Part: computability
+% Chapter: computability-theory
+% Section: ce-sets
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{thy}{ces}
+\olsection{Himpunan kang Bisa Dienumerasi sacara Komputabel}
+
+\begin{defn}
+Sawijining himpunan \emph{bisa dienumerasi sacara
+  komputabel} yen kosong utawa dadi citra
+sawijining fungsi komputabel.
+\end{defn}
+
+\begin{history}
+Himpunan kang bisa dienumerasi sacara komputabel
+uga diarani \emph{bisa dienumerasi sacara
+  rekursif}. Iki istilah wiwitane, lan saiki
+loro-lorone lumrah digunakake, uga cekakan
+``c.e.'' lan ``r.e.''
+\end{history}
+
+\begin{explain}
+Coba pikirna teges definisi iki lan ngapa
+istilahe cocog. Gagasane, yen $S$ minangka
+citra fungsi komputabel~$f$, mula
+\[
+S = \{ f(0), f(1), f(2), \dots \},
+\]
+saengga $f$ bisa dianggep ``ngenumerasi''
+unsur-unsur~$S$. Gatekna yen miturut definisi,
+$f$~ora kudu fungsi kang tansah mundhak,
+yaiku enumerasine ora kudu miturut urutan
+mundhak. Malah $f$ uga ora kudu injektif,
+yaiku pengulangan ing enumerasi $f(0)$,
+$f(1)$, $f(2)$, \dots{} saka~$S$ diidini.
+Umpamane, fungsi konstan $f(x) = 0$
+ngenumerasi himpunan $\{ 0
+\}$.
+\end{explain}
+
+Saben himpunan komputabel bisa dienumerasi
+sacara komputabel. Kanggo ndeleng iki,
+upamane $S$~komputabel. Yen $S$ kosong,
+mula miturut definisi himpunan iku bisa
+dienumerasi sacara komputabel. Yen ora,
+tetepna $a$ minangka unsur sembarang saka
+$S$. Tetepna $f$ minangka
+\[
+f(x) =
+\begin{cases}
+x & \text{yen $\Char{S}(x) = 1$} \\
+a & \text{yen ora.}
+\end{cases}
+\]
+Mula $f$ fungsi komputabel, lan $S$
+minangka citra~$f$.
+
+\end{document}

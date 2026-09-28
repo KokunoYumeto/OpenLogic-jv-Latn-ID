@@ -1,0 +1,187 @@
+% Part: incompleteness
+% Chapter: introduction
+% Section: decidability
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{int}{dec}
+
+\olsection{Ora Bisa Diputusake lan Ora Jangkep}
+
+Buktine G\"odel kanggo teorema-teorema ora
+jangkep mbutuhake aritmetisasi sintaks. Nanging
+tanpa iku uga kita bisa entuk sawetara asil
+kang migunani, mung kanthi nganggep yen sawijining
+teori !!{represents} kabeh relasi !!{decidable}.
+Buktine nggunakake argumen diagonal kang padha
+karo bukti yen masalah mandheg ora bisa diputusake.
+
+\begin{thm}
+Yen $\Gamma$ teori konsisten kang !!{represents}
+saben relasi !!{decidable}, mula $\Gamma$
+ora !!{decidable}.
+\end{thm}
+
+\begin{proof}
+Upamane $\Gamma$ iku !!{decidable}.
+Kita bakal nuduhake yen $\Gamma$
+!!{represents} saben relasi !!{decidable},
+teori iku mesthi ora konsisten.
+
+Sifat-sifat !!^{decidable} (relasi siji papan)
+digambarake dening !!{formula}s kanthi siji
+variabel bebas. Tetepna $!A_0(x)$, $!A_1(x)$,
+\dots, minangka enumerasi komputabel kabeh
+!!{formula}s kaya mangkono. Saiki gatekna
+himpunan $D \subseteq \Nat$ ing ngisor iki:
+\[
+D = \Setabs{n}{\Gamma \Proves \lnot !A_n(\num{n})}
+\]
+Himpunan $D$ iku !!{decidable}, amarga kita
+bisa mriksa apa $n \in D$ kanthi ngitung
+$!A_n(x)$ dhisik, banjur saka iku
+$\lnot !A_n(\num{n})$. Mesthi wae,
+ngganti nganggo suku $\num{n}$ saben
+kemunculan bebas $x$ ing $!A_n(x)$,
+banjur menehi $!A(\num{n})$ awalan $\lnot$
+bisa ditindakake kanthi mekanis. Miturut
+asumsi, $\Gamma$ iku !!{decidable}, mula
+kita bisa mriksa apa
+% OLPL-168: Sumber ing langkah tes iki nulis A tanpa indeks n, senajan definisi D lan konstruksi sadurunge nggunakake A_n.
+$\lnot !A(\num{n}) \in \Gamma$.
+Yen iya, $n \in D$; yen ora,
+$n \notin D$. Mula $D$ uga !!{decidable}.
+
+Amarga $\Gamma$ !!{represents} kabeh sifat
+!!{decidable}, teori iku !!{represents}~$D$.
+Lan kabeh !!{formula}s kang !!{represents}s $D$
+ing~$\Gamma$ ana ing antarane $!A_0(x)$,
+$!A_1(x)$, \dots. Mula tetepna $d$ minangka
+bilangan saengga $!A_d(x)$ !!{represents} $D$
+ing~$\Gamma$. Yen $d \notin D$, mula amarga
+$!A_d(x)$ !!{represents}~$D$,
+$\Gamma \Proves \lnot !A_d(\num{d})$.
+Nanging iki ateges $d$ nyukupi syarat
+definisi~$D$, dadi $d \in D$. Iki
+mbantah $d \notin D$. Mula, kanthi
+bukti ora langsung, $d \in D$.
+
+Amarga $d \in D$, miturut definisi~$D$,
+$\Gamma \Proves \lnot !A_d(\num{d})$.
+Ing sisih liyane, amarga $!A_d(x)$
+!!{represents}~$D$ ing $\Gamma$,
+$\Gamma \Proves !A_d(\num{d})$.
+Mula $\Gamma$ ora konsisten.
+\end{proof}
+
+\begin{explain}
+Teorema sadurunge nuduhake yen ora ana teori
+konsisten kang !!{represents} kabeh relasi
+!!{decidable} kang uga !!{decidable}.
+Kita bakal nuduhake yen $\Th{Q}$ pancen
+!!{represents}s kabeh relasi !!{decidable}.
+Iki ateges saben teori kang ngemot $\Th{Q}$,
+kayata $\Th{PA}$ lan $\Th{TA}$, uga mangkono,
+mula uga ora !!{decidable}. (Amarga kabeh
+teori kasebut bener ing model baku,
+kabeh iku konsisten.)
+
+Asil iki uga bisa digunakake kanggo entuk
+versi ringkih saka teorema ora jangkep kapisan.
+Saben teori kang !!{axiomatizable} lan
+!!{complete} iku !!{decidable}. Mula teori
+konsisten kang !!{axiomatizable} lan
+!!{represents}s kabeh sifat !!{decidable}
+ora bisa !!{complete}.
+\end{explain}
+
+\begin{thm}
+Yen $\Gamma$ !!{axiomatizable} lan
+!!{complete}, teori iku !!{decidable}.
+\end{thm}
+
+\begin{proof}
+Saben teori kang ora konsisten iku !!{decidable},
+amarga teori kaya mangkono ngemot kabeh
+!!{sentence}s. Dadi wangsulan kanggo pitakon
+``apa $!A \in \Gamma$'' tansah ``ya'',
+mula bisa diputusake.
+
+Mula upamane $\Gamma$ konsisten, lan uga
+!!{axiomatizable} sarta !!{complete}.
+Amarga $\Gamma$ !!{axiomatizable}, teori iku
+!!{computably enumerable}. Sebabe, kita bisa
+ngenumerasi kabeh !!{derivation}s kang bener
+saka aksioma~$\Gamma$ nganggo fungsi komputabel.
+Saka !!{derivation} kang bener, kita bisa ngitung
+!!{sentence} kang !!{derive}s dening derivasi iku.
+Mula ana fungsi komputabel kang ngenumerasi
+kabeh teorema~$\Gamma$. Sawijining !!{sentence}
+iku teorema saka~$\Gamma$ yen lan mung yen
+$\lnot !A$ dudu teorema, amarga $\Gamma$
+konsisten lan !!{complete}. Mula kita bisa
+mutusake apa $!A \in \Gamma$ kaya mangkene.
+Enumerasikna kabeh teorema saka $\Gamma$.
+Nalika $!A$ katon ing dhaptar iki, kita ngerti
+yen $\Gamma \Proves !A$. Nalika
+$\lnot !A$ katon ing dhaptar iki, kita ngerti
+yen $\Gamma \Proves/ !A$. Amarga $\Gamma$
+!!{complete}, salah siji kedadeyan iki mesthi
+pungkasane dumadi, mula prosedur iku pungkasane
+menehi wangsulan.
+\end{proof}
+
+\begin{cor}
+\ollabel{cor:incompleteness}
+Yen $\Gamma$ konsisten, !!{axiomatizable},
+lan !!{represents} saben sifat !!{decidable},
+teori iku ora !!{complete}.
+\end{cor}
+
+\begin{proof}
+Yen $\Gamma$ !!{complete}, miturut teorema
+sadurunge teori iku bakal !!{decidable}
+(amarga !!{axiomatizable} lan konsisten).
+Nanging amarga $\Gamma$ !!{represents}
+saben sifat !!{decidable}, miturut teorema
+kapisan teori iku ora !!{decidable}.
+\end{proof}
+
+\begin{prob}
+Tuduhna yen $\Th{TA} = \Setabs{!A}{\Sat{N}{!A}}$
+ora !!{axiomatizable}. Kowé bisa nganggep
+yen $\Th{TA}$ nggambarake kabeh sifat
+kang bisa diputusake.
+\end{prob}
+
+Sawisé kita netepake yen, umpamane, $\Th{Q}$
+!!{represents} kabeh sifat !!{decidable},
+akibat teorema iku nuduhake yen $\Th{Q}$
+mesthi ora jangkep. Nanging buktine ora
+menehi conto !!{sentence} mandiri; bukti iku
+mung nuduhake yen !!a{sentence} kaya
+mangkono mesthi ana. Kanggo nemokake conto,
+kita kudu ngaritmetisasi sintaks lan ngetutake
+gagasan bukti asli G\"odel. Mesthi wae, kita
+uga isih kudu mbuktekake pratelan kapisan:
+$\Th{Q}$ pancen !!{represents}s kabeh sifat
+!!{decidable}.
+
+Perlu digatekake yen ora saben teori kang
+\emph{narik kawigaten} iku ora jangkep utawa
+ora bisa diputusake. Ana akeh teori kang
+cukup kuwat kanggo njlentrehake fakta
+matematika kang narik kawigaten nanging
+ora nyukupi syarat asil G\"odel. Tuladhane,
+$\Th{Pres} = \Setabs{!A \in \Lang{L_{A^+}}}{\Sat{N}{!A}}$,
+yaiku himpunan !!{sentence}s ing basa
+aritmetika tanpa~$\times$ kang bener ing
+model baku, jangkep lan uga bisa diputusake.
+Teori iki diarani aritmetika Presburger,
+lan mbuktekake kabeh kabeneran ngenani
+bilangan asli kang bisa dirumusake mung
+nganggo $\Obj{0}$, $\prime$, lan~$+$.
+
+\end{document}

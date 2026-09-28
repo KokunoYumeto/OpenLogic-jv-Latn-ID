@@ -1,0 +1,81 @@
+% Part: second-order-logic
+% Chapter: metatheory
+% Section: compactness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sol}{met}{com}
+
+\olsection{Logika Orde Kapindho Ora Kompak}
+
+\begin{explain}
+Himpunan ukara-ukara~$\Gamma$ diarani \emph{bisa dicukupi
+kanthi winates} yen saben subhimpunan winatese bisa dicukupi.
+Logika orde kapisan nduweni sipat iki: yen himpunan
+!!{sentence}s~$\Gamma$ bisa dicukupi kanthi winates, mula
+himpunan iku bisa dicukupi. Sipat iki diarani \emph{kekompakan}.
+Ana wujud kang ekuivalen nganggo relasi konsekuensi:
+yen $\Gamma \Entails !A$, mula wis
+$\Gamma_0 \Entails !A$ kanggo sawijining subhimpunan
+winates~$\Gamma_0 \subseteq \Gamma$. Ing wujud iki, kekompakan
+langsung dadi akibat saka teorema kelengkapan: yen
+$\Gamma \Entails !A$, mula miturut kelengkapan
+$\Gamma \Proves !A$. Nanging sawijining !!{derivation}
+amung bisa migunakake !!{sentence}s saka~$\Gamma$
+kang cacahe winates.
+
+Kekompakan ora bener kanggo logika orde kapindho. Ana
+himpunan !!{sentence}s orde kapindho kang bisa dicukupi
+kanthi winates nanging sakabehe ora bisa dicukupi. Ana
+uga himpunan kaya mangkono kang nyebabake~$!A$,
+dene ora ana subhimpunan winatese kang nyebabake~$!A$.
+\end{explain}
+
+
+\begin{thm}
+\ollabel{thm:sol-not-compact}
+Logika orde kapindho ora kompak.
+\end{thm}
+
+\begin{proof}
+Elinga yen
+\[
+\fn{Inf} \ident \lexists[u][(\lforall[x][\lforall[y][(\eq[u(x)][u(y)]
+      \lif \eq[x][y])]] \land \lexists[y][\lforall[x][\eq/[y][u(x)]]])]
+\]
+dicukupi ing sawijining !!a{structure} yen lan mung yen
+domaine tanpa wates. Upamana $!A^{\ge n}$ iku
+ukara kang nyatakake yen domain ngemot
+paling ora $n$ !!{element}s, umpamane kanthi rumus skematis
+\[
+!A^{\ge n} \ident \lexists[x_1][\dots\lexists[x_n][(\eq/[x_1][x_2]
+    \land \eq/[x_1][x_3] \land \dots \land \eq/[x_{n-1}][x_n])]].
+\]
+Timbang himpunan !!{sentence}s
+\[
+\Gamma = \{\lnot \fn{Inf}, !A^{\ge 1}, !A^{\ge 2}, !A^{\ge 3}, \dots\}.
+\]
+Himpunan iki bisa dicukupi kanthi winates. Kanggo saben
+subhimpunan winates~$\Gamma_0 \subseteq \Gamma$,
+kita bisa milih~$k$ saengga $!A^{\ge k} \in \Gamma$,
+nanging ora ana $!A^{\ge n}
+\in \Gamma_0$ kanggo $n>k$. Yen $\Domain{M}$
+ngemot $k$ !!{element}s, mula $\Sat{M}{\Gamma_0}$.
+Nanging $\Gamma$ ora bisa dicukupi: yen
+$\Sat{M}{\lnot \fn{Inf}}$, $\Domain{M}$ mesthi
+winates, umpamane ukurane~$k$. Banjur
+$\Sat/{M}{!A^{\ge k+1}}$.
+\end{proof}
+
+\begin{prob}
+Wenehana tuladha himpunan~$\Gamma$ lan
+!!a{sentence}~$!A$ saengga $\Gamma \Entails !A$,
+nanging kanggo saben subhimpunan winates
+$\Gamma_0 \subseteq \Gamma$,
+$\Gamma_0 \Entails/ !A$.
+\end{prob}
+
+
+\end{document}

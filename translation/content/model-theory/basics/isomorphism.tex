@@ -1,0 +1,221 @@
+% Part: first-order-logic
+% Chapter: model-theory
+% Section: isomorphism
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{bas}{iso}
+\olsection{Struktur-Struktur Isomorfis}
+
+!!{structure}s orde kapisan bisa padha
+ing salah siji saka rong cara.
+Cara kapisan yaiku padha ndadekake
+!!{sentence}s kang padha dadi bener.
+!!{structure}s kaya mangkono
+diarani \emph{ekuivalen elementer}.
+Nanging loro struktur bisa beda
+banget lan isih ndadekake
+!!{sentence}s kang padha
+dadi bener---upamane, sing siji
+bisa !!{enumerable}, dene
+sijine ora. Iki amarga akeh
+sipat !!a{structure} kang
+ora bisa dinyatakake ing
+basa orde kapisan, bisa
+amarga basane kurang sugih,
+utawa amarga watesan
+dhasar logika orde kapisan,
+kayata teorema
+L\"owenheim--Skolem.
+Mula ana cara kapindho
+kang luwih ketat kanggo
+ngarani rong !!{structure}s
+padha: loro-lorone
+sajatiné padha, mung
+objek-objek kang nyusune
+beda, dudu sipat
+strukturalé. Pangertèn
+iki bisa diprecisake
+kanthi \emph{isomorfisme}.
+
+\begin{defn}
+\ollabel{defn:elem-equiv}
+Yen ana loro !!{structure}s
+$\Struct{M}$ lan $\Struct M'$
+kanggo !!{language}~$\Lang{L}$
+kang padha, $\Struct{M}$
+diarani \emph{ekuivalen elementer
+  karo} $\Struct M'$,
+ditulis $\Struct{M} \equiv \Struct M'$,
+yen lan mung yen kanggo
+saben !!{sentence}~$!A$
+saka~$\Lang{L}$,
+$\Sat{M}{!A}$ yen lan
+mung yen $\Sat{M'}{!A}$.
+\end{defn}
+
+\begin{defn}
+\ollabel{defn:isomorphism}
+Yen ana loro !!{structure}s
+$\Struct{M}$ lan
+$\Struct M'$ kanggo
+!!{language}~$\Lang L$
+kang padha, $\Struct{M}$
+diarani \emph{isomorfis
+karo}~$\Struct M'$,
+ditulis $\Struct{M}
+\simeq \Struct M'$,
+yen lan mung yen ana
+fungsi $h \colon
+\Domain{M} \to \Domain{M'}$
+kanthi sipat-sipat iki:
+\begin{enumerate}
+\item $h$ iku !!{injective}:
+  yen $h(x) = h(y)$
+  mula $x = y$;
+\item $h$ iku !!{surjective}:
+  kanggo saben $y \in \Domain{M'}$
+  ana $x \in \Domain{M}$
+  saéngga $h(x) = y$;
+\item \ollabel{defn:iso-const}kanggo saben
+  !!{constant} $c$:
+  $h(\Assign{c}{M}) = \Assign{c}{M'}$;
+\item \ollabel{defn:iso-pred}kanggo saben
+  $n$-panggonan !!{predicate}~$P$:
+  \[
+  \tuple{a_1, \dots, a_n}\in \Assign{P}{M} \quad\text{yen lan mung yen}\quad
+  \tuple{h(a_1), \dots, h(a_n)} \in \Assign{P}{M'};
+  \]
+\item \ollabel{defn:iso-func}kanggo saben
+  $n$-panggonan !!{function} $f$:
+  \[
+  h(\Assign{f}{M}(a_1, \dots, a_n)) =
+  \Assign{f}{M'}(h(a_1), \dots, h(a_n)).
+  \]
+\end{enumerate}
+\end{defn}
+
+\begin{thm}
+\ollabel{thm:isom}
+Yen $\Struct{M} \iso \Struct M'$
+mula $\Struct{M} \elemequiv
+\Struct{M'}$.
+\end{thm}
+
+\begin{proof}
+Upamakna $h$ iku isomorfisme
+saka $\Struct{M}$ menyang
+$\Struct M'$. Kanggo
+sembarang pangancikan~$s$,
+$h \circ s$ iku komposisi
+$h$ lan $s$, yaiku
+pangancikan ing
+$\Struct{M'}$ kang nyukupi
+$(h \circ s)(x) = h(s(x))$.
+Kanthi induksi tumrap
+$t$ lan $!A$, kita
+bisa mbuktekake pratelan
+kang luwih kuwat iki:
+\begin{enumerate}
+  \item[a.] $h(\Value{t}{M}[s]) = \Value{t}{M'}[h\circ s]$.
+  \item[b.] $\Sat{M}{!A}[s]$ yen lan mung yen
+    $\Sat{M'}{!A}[h \circ s]$.
+\end{enumerate}
+Pratelan kapisan dibuktekake
+kanthi induksi tumrap
+kerumitan~$t$.
+\begin{enumerate}
+\item Yen $t \ident c$, mula
+  $\Value{c}{M}[s] = \Assign{c}{M}$
+  lan $\Value{c}{M'}[h \circ s] =
+  \Assign{c}{M'}$. Dadi,
+  $h(\Value{t}{M}[s]) =
+  h(\Assign{c}{M}) = \Assign{c}{M'}$
+  (miturut \olref{defn:iso-const}
+  saka \olref{defn:isomorphism})
+  $= \Value{t}{M'}[h \circ s]$.
+\item Yen $t \ident x$, mula
+  $\Value{x}{M}[s] = s(x)$
+  lan $\Value{x}{M'}[h \circ s] =
+  h(s(x))$. Dadi,
+  $h(\Value{x}{M}[s]) =
+  h(s(x)) = \Value{x}{M'}[h \circ s]$.
+\item Yen $t \ident f(t_1, \dots, t_n)$,
+  mula
+  \begin{align*}
+    \Value{t}{M}[s] & = \Assign{f}{M}(\Value{t_1}{M}[s], \dots, \Value{t_n}{M}[s]) \quad\text{lan}\\
+  \Value{t}{M'}[h \circ s] & = \Assign{f}{M'}(\Value{t_1}{M'}[h \circ
+    s], \dots, \Value{t_n}{M'}[h \circ s]).
+  \end{align*}
+  Cathetan koreksi sumber OLPL-087: nilai term ing
+  struktur kapindho nggunakake interpretasi fungsi
+  ing struktur kapindho, dudu ing struktur kapisan.
+  Hipotesis induksine yaiku kanggo saben $i$,
+  $h(\Value{t_i}{M}[s])
+  = \Value{t_i}{M'}[h\circ s]$.
+  Dadi,
+  \begin{align}
+    h(\Value{t}{M}[s])
+    & = h(\Assign{f}{M}(\Value{t_1}{M}[s], \dots, \Value{t_n}{M}[s])) \notag\\
+    & = \Assign{f}{M'}(h(\Value{t_1}{M}[s]), \dots,
+    h(\Value{t_n}{M}[s])) \ollabel{iso-1}\\
+    & = \Assign{f}{M'}(\Value{t_1}{M'}[h \circ s], \dots,
+    \Value{t_n}{M'}[h \circ s]) \ollabel{iso-2}\\
+    & = \Value{t}{M'}[h\circ s] \notag
+  \end{align}
+  Cathetan koreksi sumber OLPL-088: baris kapisan
+  rantai persamaan ing ndhuwur nutup uga kurung
+  njaba kanggo aplikasi fungsi isomorfisme.
+  Ing kene, \olref{iso-1}
+  ndherek saka \olref{defn:iso-func}
+  ing \olref{defn:isomorphism},
+  lan \olref{iso-2} saka
+  hipotesis induksi.
+\end{enumerate}
+Bagean (b) ditinggal minangka gladhen.
+
+Yen $!A$ iku ukara,
+pangancikan~$s$ lan
+$h \circ s$ ora mengaruhi
+kasunyatane, mula
+$\Sat{M}{!A}$ yen lan
+mung yen $\Sat{M'}{!A}$.
+\end{proof}
+
+\begin{prob}
+Rampungna bukti bagean (b)
+saka \olref[mod][bas][iso]{thm:isom}
+kanthi rinci. Tuduhna
+ing ngendi saben siji
+saka limang sipat
+isomorfisme ing
+\olref[mod][bas][iso]{defn:isomorphism}
+digunakake.
+\end{prob}
+
+\begin{defn}
+\emph{Automorfisme} saka
+struktur $\Struct{M}$
+iku isomorfisme saka
+$\Struct{M}$ menyang
+awake dhewe.
+\end{defn}
+
+\begin{prob}
+Tuduhna yen kanggo
+sembarang struktur
+$\Struct{M}$, yen $X$
+iku subhimpunan saka
+$\Struct{M}$ kang
+bisa ditetepake,
+lan $h$ iku automorfisme
+saka $\Struct{M}$,
+mula $X
+= \Setabs{h(x)}{x \in X}$
+(yaiku, $X$ tetep
+miturut $h$).
+\end{prob}
+
+\end{document}

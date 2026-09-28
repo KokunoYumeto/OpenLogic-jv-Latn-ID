@@ -1,0 +1,123 @@
+% Part: computability
+% Chapter: computability-theory
+% Section: halting-problem
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{thy}{hlt}
+\olsection{Masalah Mandheg}
+
+Miturut konstruksine, fungsi komputabel parsial
+universal~$\fn{Un}(e,x)$ ditegesi yen lan mung yen
+komputasi fungsi mawa kode~$e$ ngasilake nilai
+kanggo input~$x$. Lumrah yen kita takon apa
+kahanan iki bisa diputusake. Kasunyatane, ora bisa.
+Kanggo model komputasi mesin Turing, iki ateges
+ora bisa diputusake sacara komputasional apa mesin
+Turing tartamtu mandheg ing input tartamtu.
+Mula teorema ing ngisor iki dikenal minangka
+'ora bisane masalah mandheg diputusake'.
+Kita bakal menehi rong bukti. Bukti kapisan
+nerusake rembugan sadurunge, dene bukti
+kapindho luwih langsung.
+
+\begin{thm}
+\ollabel{thm:halting-problem}
+Tetepna
+\[
+h(e, x)  =
+\begin{cases}
+1 & \text{yen\/ $\fn{Un}(e, x)$ ditegesi} \\
+0 & \text{yen ora.}
+\end{cases}
+\]
+Mula $h$ ora komputabel.
+\end{thm}
+
+\begin{proof}
+Upamane $h$ komputabel. Kita bakal nuduhake
+yen iki ndadekake kita bisa netepake fungsi
+komputabel universal. Tetepna
+\[
+\fn{Un'}(e,x) =
+\begin{cases}
+\fn{Un}(e,x) & \text{yen $h(e,x) = 1$} \\
+0 & \text{yen ora.}
+\end{cases}
+\]
+Nanging saiki $\fn{Un'}(e, x)$ fungsi total,
+lan komputabel yen~$h$ komputabel. Umpamane,
+kita bisa netepake $g$ nganggo rekursi primitif,
+minangka
+\begin{align*}
+g(0, e, x) & \simeq 0 \\
+g(y+1, e, x) & \simeq \fn{Un}(e,x);
+\end{align*}
+banjur
+\[
+\fn{Un'}(e,x) \simeq g(h(e,x),e,x).
+\]
+Amarga $\fn{Un'}(e,x)$ padha karo $\fn{Un}(e,x)$
+ing saben papan kang ndadekake fungsi kapindho
+iku ditegesi, $\fn{Un'}$ universal kanggo
+fungsi komputabel parsial kang jebul total.
+Nanging iki nalisir \olref[nou]{thm:no-univ}.
+\end{proof}
+
+\begin{proof}
+Upamane $h(e,x)$ komputabel. Tetepna fungsi $g$
+minangka
+\[
+g(x) =
+\begin{cases}
+  0                & \text{yen $h(x,x) = 0$} \\
+  \fundefined & \text{yen ora.}
+\end{cases}
+\]
+Fungsi $g$ komputabel parsial. Umpamane,
+fungsi iki bisa ditegesi minangka
+$\umin{y}{h(x,x) = 0}$. Mula, kanggo sawenehing~$e$,
+$g(x) \simeq \fn{Un}(e, x)$ kanggo saben~$x$.
+Apa $g$ ditegesi ing $e$? Yen iya, miturut
+definisi~$g$, $h(e,e) = 0$ ($h$~mung bisa
+duwé nilai~$0$ yen ditegesi). Miturut
+definisi~$h$, iki ateges $\fn{Un}(e, e)$
+ora ditegesi. Amarga kita nganggep
+$g(x) \simeq \fn{Un}(e, x)$ kanggo saben~$x$,
+mula $g(e)$ ora ditegesi, sawijining
+kontradiksi. Kosok baline, yen $g(e)$ ora
+ditegesi, mula $h(e,e) \neq 0$, saengga
+$h(e,e) = 1$. Saka kene $\fn{Un}(e, e)$
+ditegesi. Nanging amarga
+$g(x) \simeq \fn{Un}(e, x)$, $g(e)$ uga
+bakal ditegesi. Iki uga kontradiksi.
+\end{proof}
+
+\begin{tagblock}{TMs}
+\begin{explain}
+Argumen iki bisa dijlentrehake nganggo
+mesin Turing. Upamane ana mesin Turing~$H$
+kang nampa jlentrehan mesin Turing~$E$
+lan input~$x$, banjur mutusake apa $E$
+mandheg ing input~$x$. Kita banjur bisa
+nggawe mesin Turing liya~$G$ kang nampa
+siji input~$x$, nglakokake $H$ kanggo
+mutusake apa mesin $M_x$ mawa indeks~$x$
+mandheg ing input~$x$, banjur nindakake
+kosok baline. Tegese, yen $H$ nglaporake
+yen $M_x$ mandheg ing input~$x$, $G$
+mlebu gelung tanpa wates; dene yen $H$
+nglaporake yen $M_x$ ora mandheg ing
+input~$x$, $G$ langsung mandheg. Apa
+$G$ mandheg yen diwenehi indekse dhewe
+minangka input? Argumen ing ndhuwur
+nuduhake yen mesin iki mandheg yen lan
+mung yen ora mandheg---kontradiksi.
+Mula panganggep yen mesin Turing~$H$
+kaya mangkono ana kudu salah.
+\end{explain}
+\end{tagblock}
+
+\end{document}

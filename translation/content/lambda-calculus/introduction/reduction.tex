@@ -1,0 +1,92 @@
+% Part: lambda-calculus
+% Chapter: introduction
+% Section: reduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{int}{red}
+\olsection{Reduksi Suku Lambda}
+
+Apa kang bisa ditindakake marang suku lambda?
+Disederhanakake. Yen $M$ lan $N$ iku
+sembarang suku lambda lan $x$ sembarang variabel,
+kita bisa nggunakake $\Subst{M}{N}{x}$ kanggo
+nyebut asil nyelehake $N$ minangka pangganti~$x$ ing~$M$,
+sawise ngganti jeneng variabel kaiket ing $M$
+kang bakal ngganggu variabel bebas ing~$N$
+sawise substitusi. Umpamane,
+\[
+\Subst{(\lambd[w][xxw])}{yyz}{x} = \lambd[w][(yyz)(yyz)w].
+\]
+
+\begin{digress}
+Notasi liya kanggo substitusi yaiku $[N/x]M$,
+$[x/N]M$, lan uga $M[x/N]$. Ati-ati!
+\end{digress}
+
+Miturut intuisi, $(\lambd[x][M])N$ lan
+$\Subst{M}{N}{x}$ nduweni teges kang padha;
+tumindak ngganti suku kapisan nganggo suku
+kapindho diarani \emph{kontraksi~$\beta$}.
+$(\lambd[x][M])N$ diarani \emph{redex},
+dene $\Subst{M}{N}{x}$ diarani
+\emph{kontraktume}. Umume, yen suku $P$
+bisa diowahi dadi~$P'$ kanthi kontraksi~$\beta$
+ing sawijining subsuku, kita nyebut yen $P$
+\emph{direduksi-$\beta$ dadi $P'$ sajroning
+siji langkah}, lan nulis $P \redone P'$.
+Yen saka $P$ kita bisa ngasilake~$P'$
+kanthi sawetara reduksi siji langkah
+(kalebu ora ana langkah), mula $P$
+\emph{direduksi-$\beta$} dadi~$P'$;
+kanthi simbol, $P \red P'$. Suku kang
+ora bisa direduksi-$\beta$ maneh diarani
+\emph{ora bisa direduksi-$\beta$},
+utawa \emph{normal-$\beta$}. Kita bakal
+nyebut ``direduksi'' tinimbang
+``direduksi-$\beta$'', lan sateruse,
+yen kontekse wis cetha.
+
+Gatekna sawetara tuladha.
+\begin{enumerate}
+\item Kita duwe
+\begin{align*}
+(\lambd[x][xxy]) \lambd[z][z] & \redone (\lambd[z][z])(\lambd[z][z]) y \\
+& \redone (\lambd[z][z]) y \\
+& \redone y.
+\end{align*}
+\item ``Nyederhanakake'' suku bisa ndadekake
+  suku iku luwih ruwet:
+\begin{align*}
+(\lambd[x][xxy])(\lambd[x][xxy]) & \redone (\lambd[x][xxy])(\lambd[x][xxy])y \\
+& \redone (\lambd[x][xxy])(\lambd[x][xxy])yy \\
+& \redone \dots
+\end{align*}
+\item Reduksi uga bisa ninggalake suku tanpa
+  owah-owahan:
+\[
+(\lambd[x][xx])(\lambd[x][xx]) \redone (\lambd[x][xx])(\lambd[x][xx]).
+\]
+\item Kajaba iku, sawetara suku bisa direduksi
+  kanthi luwih saka siji cara; umpamane,
+\[
+(\lambd[x][(\lambd[y][yx]) z)] v \redone (\lambd[y][yv]) z
+\]
+kanthi ngontraksi aplikasi kang paling njaba; lan
+\[
+(\lambd[x][(\lambd[y][yx]) z)] v \redone (\lambd[x][zx]) v
+\]
+kanthi ngontraksi aplikasi kang paling njero.
+Nanging gatekna yen ing kasus iki, loro suku
+iku banjur direduksi maneh dadi suku kang
+padha, yaiku $zv$.
+\end{enumerate}
+
+Asil pungkasan ing tuladha pungkasan iku
+dudu mung kabeneran, nanging nuduhake
+sipat kalkulus lambda kang jero lan wigati,
+kang diarani ``sipat Church--Rosser''.
+
+\end{document}

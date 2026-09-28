@@ -1,0 +1,67 @@
+% Part: lambda-calculus
+% Chapter: syntax
+% Section: terms
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{syn}{trm}
+\olsection{Suku}
+
+Suku-suku kalkulus lambda dibangun kanthi
+induktif saka variabel tanpa wates cacahé
+$\Obj{v_0}$, $\Obj{v_1}$, \dots, lambang
+``$\lambd$'', lan tandha kurung. Kita bakal
+nggunakake $x$, $y$, $z$, \dots{} kanggo
+nyebut variabel, lan $M$, $N$, $P$, \dots{}
+kanggo nyebut suku.
+
+\begin{defn}[Suku] \ollabel{defn:term}
+Himpunan \emph{suku} kalkulus lambda
+ditetepake kanthi induktif kaya mangkene:
+\begin{enumerate}
+  \item \ollabel{defn:term-var} Yen $x$ iku
+    variabel, mula $x$ iku suku.
+  \item \ollabel{defn:term-abs} Yen $x$ iku
+    variabel lan $M$ iku suku, mula
+    $(\lambd[x][M])$ iku suku.
+  \item \ollabel{defn:term-app} Yen $M$
+    lan $N$ iku suku, mula $(MN)$ iku suku.
+\end{enumerate}
+\end{defn}
+
+Yen suku $(\lambd[x][M])$ dibentuk miturut
+\olref{defn:term-abs}, suku iku diarani
+asil \emph{abstraksi}, lan $x$ ing
+$\lambd[x]$ diarani \emph{!!{parameter}}.
+Suku $(MN)$ kang dibentuk miturut
+\olref{defn:term-app} iku asil
+\emph{aplikasi}.
+
+Suku-suku kang nembe ditetepake nganggo
+tandha kurung kanthi lengkap. Iki bisa
+dadi rada ruwet, kaya kang katon ing
+suku $(\lambd[x][((\lambd[x][x])(\lambd[x][(xx)]))])$.
+Kita bakal ngenalake konvensi supaya
+sawetara tandha kurung bisa disingkirake.
+Nanging definisi resmi nggampangake kita
+nemtokake carane suku dibentuk miturut
+\olref{defn:term}. Umpamane, langkah
+pungkasan nalika mbentuk suku
+$(\lambd[x][((\lambd[x][x])(\lambd[x][(xx)]))])$
+mesthi abstraksi kanthi !!{parameter}~$x$.
+Suku iki diasilake kanthi abstraksi saka
+suku $((\lambd[x][x])(\lambd[x][(xx)]))$,
+yaiku aplikasi saka rong suku. Saben
+suku ing pasangan iku asil abstraksi,
+lan sateruse.
+
+\begin{prob}
+% OLPL-241: Kurung aplikasi njaba diwenehake supaya manut definisi resmi.
+Andharna carane
+$(\lambd[g][((\lambd[x][(g (x x))])
+  (\lambd[x][(g (x x))]))])$ dibentuk.
+\end{prob}
+
+\end{document}

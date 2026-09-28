@@ -1,0 +1,174 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{spine}{recursion}
+\olsection{Teorema-teorema Rekursi Transfinit}
+
+Nanging luwih dhisik kita kudu mesthekake yen
+\olref[valpha]{defValphas} pancen definisi kang sah.
+Luwih umum, kita kudu mbuktekake yen netepake
+sawijining obyek liwat rekursi transfinit bisa
+ditindakake. Iki tujuan bagean iki.
+
+\emph{Pangeling: materi iki rada angel}. Nanging
+gagasan utamane prasaja: Induksi Transfinit bebarengan
+karo Panggantian njamin sahé sawetara wujud rekursi
+transfinit.\footnote{Pangeling: kabeh rumus lan term
+bisa nduweni parameter (kajaba yen kanthi cetha
+kasebut kosok baline).}
+
+\begin{defn}
+	Upamane $\tau(x)$ term, $f$ fungsi, lan $\alpha$
+	ordinal. Kita ngarani $f$ \emph{aproksimasi-$\alpha$}
+	kanggo $\tau$ yen lan mung yen $\dom{f} = \alpha$
+	lan $(\forall \beta \in \alpha)f(\beta)
+	= \tau(\funrestrictionto{f}{\beta})$.
+\end{defn}
+
+\begin{lem}[Rekursi Winates]\ollabel{transrecursionfun}
+Kanggo sembarang term $\tau(x)$ lan sembarang
+ordinal $\alpha$, ana aproksimasi-$\alpha$ kang
+tunggal kanggo $\tau$.
+\end{lem}
+\begin{proof}
+Kita bakal nuduhake yen kanggo saben
+$\gamma \leq \alpha$ ana aproksimasi-$\gamma$
+kang tunggal.
+
+Pisanan kita buktekake tunggale. Upamane $g$ lan $h$
+iku aproksimasi-$\gamma$ lan aproksimasi-$\delta$.
+Induksi transfinit ing argumen-argumene nuduhake
+$g(\beta) = h(\beta)$ kanggo saben
+$\beta \in \dom{g} \cap \dom{h}
+= \gamma \cap \delta = \min(\gamma, \delta)$.
+Mula aproksimasi kasebut tunggal (yen ana), lan
+padha ing kabeh nilai kang dienggo bebarengan.
+
+Kanggo mbuktekake anane, saiki kita nggunakake
+induksi transfinit prasaja
+(\olref[ordinals][opps]{simpletransrecursion})
+ing ordinal $\delta \leq \alpha$.
+
+Fungsi kosong cetha dadi aproksimasi-$\emptyset$.
+
+Yen $g$ aproksimasi-$\gamma$, mula
+$g \cup \{\tuple{\gamma, \tau(g)}\}$ dadi
+aproksimasi-$\ordsucc{\gamma}$.
+
+Yen $\gamma$ ordinal limit lan $g_\delta$
+aproksimasi-$\delta$ kanggo saben $\delta < \gamma$,
+amarga saben aproksimasi tunggal, Panggantian bisa
+nglumpukake kabeh aproksimasi iki dadi himpunan.
+Upamane $g = \bigcup_{\delta \in \gamma} g_\delta$.
+Iki fungsi, amarga kabeh $g_\delta$ sarujuk
+ing nilai-nilai kang tumpang tindih. Yen
+$\delta \in \gamma$, mula
+$g(\delta) = g_{\ordsucc{\delta}}(\delta)
+= \tau(\funrestrictionto{g_{\ordsucc{\delta}}}{\delta})
+= \tau(\funrestrictionto{g}{\delta})$.
+
+Iki ngrampungake bukti kanthi induksi transfinit.
+\end{proof}
+
+Yen kita netepake \emph{term} tinimbang fungsi,
+wates $\alpha$ ing asil sadurunge bisa dicopot.
+Ing pratelan lan bukti asil sabanjure, yen $\sigma$
+term, kita netepake
+$\funrestrictionto{\sigma}{\alpha}
+= \Setabs{\tuple{\beta, \sigma(\beta)}}{\beta \in \alpha}$.
+
+\begin{thm}[Rekursi Umum]\ollabel{transrecursionschema}
+Kanggo sembarang term $\tau(x)$, kita bisa netepake
+kanthi gamblang sawijining term $\sigma(x)$ kang
+nyukupi $\sigma(\alpha)
+= \tau(\funrestrictionto{\sigma}{\alpha})$
+kanggo sembarang ordinal~$\alpha$.
+\end{thm}
+
+\begin{proof}
+Kanggo saben $\alpha$, miturut
+\olref{transrecursionfun} ana aproksimasi-$\alpha$
+kang tunggal, yaiku $f_\alpha$, kanggo~$\tau$.
+Temtokna $\sigma(\alpha)$ minangka
+$f_{\ordsucc{\alpha}}(\alpha)$. Saiki:
+	\begin{align*}
+		\sigma(\alpha) &= 
+		f_{\ordsucc{\alpha}}(\alpha) \\&= 
+		\tau(\funrestrictionto{f_{\ordsucc{\alpha}}}{\alpha}) \\&= 
+		\tau(\Setabs{\tuple{\beta, f_{\ordsucc{\alpha}}(\beta)}}{\beta \in \alpha}) \\&= 
+		\tau(\Setabs{\tuple{\beta, f_{\ordsucc{\beta}}(\beta)}}{\beta \in \alpha})\\&=
+		\tau(\funrestrictionto{\sigma}{\alpha})
+	\end{align*}
+ing kene $f_{\ordsucc{\beta}}(\beta)
+= f_{\ordsucc{\alpha}}(\beta)$ kanggo saben
+$\beta < \alpha$, kaya ing
+\olref{transrecursionfun}.
+\end{proof}
+\noindent 
+Elinga yen \olref{transrecursionschema} iku
+\emph{skema}. Kang wigati, kita ora bisa nganggep
+$\sigma$ minangka fungsi kang awujud \emph{himpunan},
+amarga yen mangkono $\dom{\sigma}$ bakal dadi
+himpunan kabeh ordinal, nentang Paradoks Burali-Forti
+(\olref[ordinals][basic]{buraliforti}).
+
+Nanging isih kudu dituduhake yen
+\olref{transrecursionschema} mbenerake definisi
+himpunan-himpunan $V_\alpha$. Iki mbokmenawa ora
+langsung katon; nanging bakal cetha liwat wujud
+rekursi transfinit pungkasan kang prasaja.
+
+\begin{thm}[Rekursi Prasaja]\ollabel{simplerecursionschema}
+Kanggo sembarang term $\tau(x)$ lan $\theta(x)$
+uga sembarang himpunan $A$, kita bisa netepake
+kanthi gamblang term $\sigma(x)$ kang nyukupi:
+\begin{align*}
+	\sigma(\emptyset) &= A\\
+	\sigma(\ordsucc{\alpha}) &= \tau(\sigma(\alpha)) &&
+		\text{kanggo sembarang ordinal }\alpha\\
+	\sigma(\alpha) &= \theta(\ran{\funrestrictionto{\sigma}{\alpha}})&&
+	\text{yen }\alpha\text{ ordinal limit}
+\end{align*}
+\end{thm}
+
+\begin{proof}
+Pisanan kita netepake term $\xi(x)$ mangkene:
+%t $\xi(x) = A$ yen $x$ dudu fungsi kanthi domain ordinal utawa fungsi kosong;
+%yen ora, temtokna:
+\[
+	\xi(x) = 
+	\begin{cases}
+			A &\text{yen $x$ dudu fungsi kang}\\
+			&\hspace{1em}\text{domaine ordinal utawa fungsi iku kosong; yen ora:}\\
+			\tau(x(\alpha)) & \text{yen $\dom{x} = \ordsucc{\alpha}$}\\
+			\theta(\ran{x}) & \text{yen $\dom{x}$ ordinal limit}
+	\end{cases}
+\]
+Miturut \olref{transrecursionschema}, ana term
+$\sigma(x)$ kang nyukupi
+$\sigma(\alpha) = \xi(\funrestrictionto{\sigma}{\alpha})$
+kanggo saben ordinal $\alpha$; kajaba iku,
+$\funrestrictionto{\sigma}{\alpha}$ iku fungsi
+kanthi domain $\alpha$. Kita nuduhake yen $\sigma$
+nduweni sipat-sipat kang dibutuhake nganggo induksi
+transfinit prasaja
+(\olref[ordinals][opps]{simpletransrecursion}).
+
+Pisanan, $\sigma(\emptyset) = \xi(\emptyset) = A$.
+
+Sabanjure,
+$\sigma(\ordsucc{\alpha}) = \xi(\funrestrictionto{\sigma}{\ordsucc{\alpha}}) = \tau(\funrestrictionto{\sigma}{\ordsucc{\alpha}}(\alpha)) = \tau(\sigma(\alpha))$.
+
+Pungkasan,
+$\sigma(\alpha) = \xi(\funrestrictionto{\sigma}{\alpha}) = \theta(\ran{\funrestrictionto{\sigma}{\alpha}})$,
+yen $\alpha$ ordinal limit.
+\end{proof}
+\noindent
+Saiki, kanggo mbenerake \olref[valpha]{defValphas},
+pilihen $A = \emptyset$, $\tau(x) = \Pow{x}$,
+lan $\theta(x) = \bigcup x$. Pungkasane definisi
+himpunan-himpunan $V_\alpha$ iku sah!{}
+
+
+\end{document}

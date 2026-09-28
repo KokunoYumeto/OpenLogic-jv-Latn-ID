@@ -1,0 +1,132 @@
+% Part: applied-modal-logics
+% Chapter: temporal-logic
+% Section: language-epistemic-logic
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{aml}{tl}{sem}
+
+\olsection{Semantik kanggo Logika Temporal}
+
+\begin{defn}
+Basa dhasar logika temporal ngemot
+\begin{enumerate}
+  \tagitem{prvFalse}{Konstanta proposisional kanggo !!{falsity}~$\lfalse$.}{}
+  \tagitem{prvTrue}{Konstanta proposisional kanggo !!{truth}~$\ltrue$.}{}
+  \item Sawijining himpunan kang !!{denumerable}s saka !!{propositional variable}s: $\Obj
+    p_0$, $\Obj p_1$, $\Obj p_2$, \dots
+  \item Konektif proposisional: \startycommalist
+  \iftag{prvNot}{\ycomma $\lnot$ (negasi)}{}%
+  \iftag{prvAnd}{\ycomma $\land$ (konjungsi)}{}%
+  \iftag{prvOr}{\ycomma $\lor$ (disjungsi)}{}%
+  \iftag{prvIf}{\ycomma $\lif$ (!!{conditional})}{}%
+  \iftag{prvIff}{\ycomma $\liff$ (!!{biconditional})}{}.
+  \item Operator kala kepungkur $\Ptemp$ lan $\Htemp$.
+  \item Operator mangsa ngarep $\Ftemp$ lan $\Gtemp$.
+\end{enumerate}
+\end{defn}
+
+Mengko kita bakal ngrembug kemungkinan nambahake jinis operator modal liyane.
+
+\begin{defn}
+\emph{!!^{formula}s} ing basa temporal ditetepake kanthi induksi
+  kaya mangkene:
+\begin{enumerate}
+\tagitem{prvFalse}{$\lfalse$ iku !!{formula} atomik.}{}
+
+\tagitem{prvTrue}{$\ltrue$ iku !!{formula} atomik.}{}
+
+\item Saben variabel proposisional $\Obj p_i$ iku !!{formula} (atomik).
+
+\tagitem{prvNot}{Yen $!A$ iku !!a{formula}, $\lnot !A$ uga
+  !!a{formula}.}{}
+
+\tagitem{prvAnd}{Yen $!A$ lan $!B$ iku !!{formula}s, $(!A \land
+  !B)$ uga !!a{formula}.}{}
+
+\tagitem{prvOr}{Yen $!A$ lan $!B$ iku !!{formula}s, $(!A \lor !B)$
+  uga !!a{formula}.}{}
+
+\tagitem{prvIf}{Yen $!A$ lan $!B$ iku !!{formula}s, $(!A \lif !B)$
+  uga !!a{formula}.}{}
+
+\tagitem{prvIff}{Yen $!A$ lan $!B$ iku !!{formula}s, $(!A \liff !B)$
+  uga !!a{formula}.}{}
+
+\item Yen $!A$ iku !!a{formula}, $\Ptemp  !A$, $\Htemp  !A$, $\Ftemp !A$, $\Gtemp  !A$
+  kabeh uga !!{formula}s.
+
+\tagitem{limitClause}{Ora ana liyane kang dadi !!a{formula}.}{}
+\end{enumerate}
+\end{defn}
+
+Semantik logika temporal diparingake lumantar model relasional,
+kaya ing jinis logika intensional liyane.
+
+\begin{defn}
+  \emph{Model} kanggo basa temporal yaiku tripel
+  $\mModel{M} = \tuple{T, \prec, V}$, where
+  \begin{enumerate}
+  \item $T$ iku himpunan ora kosong, kang diinterpretasikake minangka
+    titik-titik wektu.
+  \item $\prec$ iku relasi biner ing $T$.
+  \item $V$ iku fungsi kang netepake marang saben !!{propositional
+    variable}~$p$ sawijining himpunan titik wektu $V(p)$.
+  \end{enumerate}
+  Yen $t \prec t'$, kita kandha yen $t$ \emph{ndhisiki}~$t'$.
+  Yen $t \in V(p)$, kita kandha yen $p$ \emph{bener ing}~$t$.
+\end{defn}
+
+Saiki durung ana sarat kang kita trapake marang relasi urutan wektu
+$\prec$. Mula struktur model temporal kita durung diwatesi: wektu
+ing model bisa linier, nyabang, siklis, utawa nduweni struktur liyane.
+
+Kaya ing logika modal normal, saben model temporal nemtokake !!{formula}s
+kang bener ing saben titike. Kita nganggo notasi kang padha,
+``model $\mModel{M}$ ndadekake !!{formula}~$!A$ bener ing
+titik~$t$'', kanggo gagasan dhasar semantik relasional. Relasi iki
+ditetepake kanthi induksi lan padha karo kasus modal normal kanggo
+kabeh operator nonmodal.
+
+\begin{defn}\ollabel{defn:tmodels}
+  \emph{Bebener !!a{formula}~$!A$ ing~$t$} sajroning~$\mModel M$,
+  kanthi lambang $\mSat{M}{!A}[t]$, ditetepake kanthi induksi
+  kaya mangkene:
+  \begin{enumerate}
+  \tagitem{prvFalse}{\indcase{!A}{\lfalse}{Ora tau $\mSat{M}{\lfalse}[t]$}.}{}
+  \tagitem{prvTrue}{\indcase{!A}{\ltrue}{Tansah $\mSat{M}{\ltrue}[t]$}.}{}
+  \item $\mSat{M}{p}[t]$ yen lan mung yen $t \in V(p)$
+  \tagitem{prvNot}{\indcase{!A}{\lnot !B}{$\mSat{M}{\indfrm}[t]$ yen lan mung yen
+    $\mSat/{M}{!B}[t]$}.}{}
+  \tagitem{prvAnd}{\indcase{!A}{(!B \land !C)}{$\mSat{M}{\indfrm}[t]$ yen lan mung yen
+    $\mSat{M}{!B}[t]$ lan $\mSat{M}{!C}[t]$}.}{}
+  \tagitem{prvOr}{\indcase{!A}{(!B \lor !C)}{$\mSat{M}{\indfrm}[t]$ yen lan mung yen
+    $\mSat{M}{!B}[t]$ utawa $\mSat{M}{!C}[t]$} (utawa loro-lorone).}{}
+  \tagitem{prvIf}{\indcase{!A}{(!B \lif !C)}{$\mSat{M}{\indfrm}[t]$ yen lan mung yen
+    $\mSat/{M}{!B}[t]$ utawa $\mSat{M}{!C}[t]$}.}{}
+  \tagitem{prvIff}{\indcase{!A}{(!B \liff !C)}{$\mSat{M}{\indfrm}[t]$ yen lan mung yen
+    $\mSat{M}{!B}[t]$ lan $\mSat{M}{!C}[t]$ loro-lorone bener, utawa
+    $\mSat{M}{!B}[t]$ lan $\mSat{M}{!C}[t]$ loro-lorone ora bener}.}{}
+  \item\ollabel{defn:sub:mmodels-p}
+    \indcase{!A}{\Ptemp  !B}{$\mSat{M}{\indfrm}[t]$ yen lan mung yen
+    $\mSat{M}{!B}[t']$ kanggo sawijining $t' \in T$ kanthi $t' \prec t$}
+\item\ollabel{defn:sub:mmodels-h}
+    \indcase{!A}{\Htemp  !B}{$\mSat{M}{\indfrm}[t]$ yen lan mung yen
+    $\mSat{M}{!B}[t']$ kanggo saben $t' \in T$ kanthi $t' \prec t$}
+   \item\ollabel{defn:sub:mmodels-f}
+    \indcase{!A}{\Ftemp  !B}{$\mSat{M}{\indfrm}[t]$ yen lan mung yen
+    $\mSat{M}{!B}[t']$ kanggo sawijining $t' \in T$ kanthi $t \prec t'$}
+\item\ollabel{defn:sub:mmodels-g}
+    \indcase{!A}{\Gtemp  !B}{$\mSat{M}{\indfrm}[t]$ yen lan mung yen
+    $\mSat{M}{!B}[t']$ kanggo saben $t' \in T$ kanthi $t \prec t'$}
+  \end{enumerate} 
+\end{defn}
+
+Saka semantike, bisa dideleng yen operator $\Ptemp$ lan~$\Htemp$
+padha dual, kaya operator $\Ftemp$ lan $\Gtemp$. Mula kita bisa
+netepake $\Htemp  !A$ minangka $\lnot \Ptemp \lnot !A$;
+semono uga $\Gtemp$ gegayutan karo~$\Ftemp$.
+
+\end{document}

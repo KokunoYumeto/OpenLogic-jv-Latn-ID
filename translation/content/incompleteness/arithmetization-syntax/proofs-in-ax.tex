@@ -1,0 +1,238 @@
+% Part: incompleteness
+% Chapter: arithmetization-syntax
+% Section: proofs-in-ax
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{art}{pax}
+\olsection{\usetoken{P}{derivation} Aksiomatik}
+
+\begin{explain}
+Supaya bisa ngaritmetisasi !!{derivation}s aksiomatik, kita kudu
+makili !!{derivation}s minangka bilangan. Amarga !!{derivation}s
+iki mung urutan !!{formula}s, cara kang cetha yaiku ngodeake
+saben !!{derivation} minangka kode saka urutan kode !!{formula}s
+ing njerone.
+\end{explain}
+
+\begin{defn}
+Yen $\delta$ iku !!{derivation} aksiomatik kang dumadi saka
+!!{formula}s $!A_1$, \dots,~$!A_n$, $\Gn{\delta}$ yaiku
+\[
+\tuple{\Gn{!A_1}, \dots, \Gn{!A_n}}.
+\]
+\end{defn}
+
+\begin{ex}
+  Gatekna !!{derivation} kang prasaja iki:
+  \begin{derivation}
+  1. & $!B \lif (!B \lor !A)$ \\
+  2. & $(!B \lif (!B \lor !A)) \lif (!A  \lif (!B \lif (!B \lor !A)))$\\
+  3. & $!A  \lif (!B \lif (!B \lor !A))$
+  \end{derivation}
+  Bilangan G\"odel saka !!{derivation} iki yaiku
+  \begin{align*}
+  \openTuple\, 
+    & \Gn{!B \lif (!B \lor !A)}, \\
+    &\Gn{(!B \lif (!B \lor !A)) \lif (!A  \lif (!B \lif (!B \lor !A)))},\\
+    & \Gn{!A  \lif (!B \lif (!B \lor !A))} \,\closeTuple.
+  \end{align*}
+\end{ex}
+
+\begin{explain}
+Sawise nemtokake representasi !!{derivation}s, kita uga kudu
+nuduhake yen !!{derivation}s iki bisa diolah kanthi rekursif
+primitif, lan sifat sarta relasi pokoke bisa dinyatakake kanthi
+cara kang padha. Sawetara operasi prasaja: upamane, yen diwenehi
+bilangan G\"odel~$d$ saka !!a{derivation},
+$(d)_{\len{d}-1}$ menehi bilangan G\"odel saka !!{formula}
+pungkasan. Sawetara sifat liyane luwih angel. Kita bakal menehi
+sketsa carane. Tujuane yaiku nuduhake yen relasi
+``$\delta$ iku !!a{derivation} saka~$!A$ adhedhasar~$\Gamma$''
+iku rekursif primitif ing bilangan G\"odel $\delta$ lan~$!A$.
+\end{explain}
+
+\begin{prop}
+\ollabel{prop:followsby}
+Relasi-relasi iki rekursif primitif:
+\begin{enumerate}
+\item $!A$ iku aksioma.
+\item Baris kapangka-$i$ ing $\delta$ dibenerake dening modus ponens.
+\item Baris kapangka-$i$ ing $\delta$ dibenerake dening \QR.
+\item $\delta$ iku !!{derivation} kang bener.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+Kita kudu nuduhake yen relasi kang cocog ing antarane bilangan
+G\"odel saka !!{formula}s lan bilangan G\"odel saka
+!!{derivation}s iku rekursif primitif.
+\begin{enumerate}
+\item Kita duwe dhaptar skema aksioma, lan $!A$ iku aksioma yen
+  wujude cocog karo salah sijine skema mau. Amarga dhaptar skema
+  winates, cukup nuduhake yen kanggo saben skema aksioma,
+  kita bisa mriksa kanthi rekursif primitif apa $!A$ nduweni
+  wujud kasebut. Upamane, gatekna skema aksioma
+  \[
+  !B \lif (!C \lif !B).
+  \]
+  $!A$ iku instans saka skema aksioma iki yen ana !!{formula}s
+  $!B$ lan $!C$ saengga kita entuk $!A$ kanthi nyambungake `$($'
+  karo $!B$, karo `$\lif$', karo `$($', karo $!C$, karo `$\lif$',
+  karo $!B$, lan karo~`$))$'. Sifat kang cocog saka bilangan
+  G\"odel $n$ saka~$!A$ bisa dipriksa, amarga panyambungan urutan
+  iku rekursif primitif lan bilangan G\"odel saka $!B$ lan $!C$
+  kudu luwih cilik tinimbang bilangan G\"odel saka~$!A$.
+  Yen relasi iki bener, $!B$ lan $!C$ iku sub-!!{formula}s
+  saka~$!A$. Mula kita bisa netepake:
+  \begin{multline*}
+  \fn{IsAx}_{!B \lif (!C \lif !B)}(n) \defiff
+    \bexists{b< n}{\bexists{c < n}{
+      \fn{Sent}(b) \land \fn{Sent}(c) \land {}\\
+      n = \Gn{(} \concat b \concat \Gn{\lif} \concat \Gn{(}
+      \concat c \concat \Gn{\lif} \concat b \concat \Gn{))}}}.
+  \end{multline*}
+% OLPL-182: Kuantor b lan c ing sumber kudu nyakup kesetaraan kode aksioma.
+  Yen saben skema aksioma nduweni definisi kaya mangkono,
+  disjungsi definisi-definisi mau nemtokake sifat $\fn{IsAx}(n)$,
+  yaiku ``$n$~iku bilangan G\"odel saka aksioma.''
+\item Baris kapangka-$i$ ing $\delta$ dibenerake dening modus
+  ponens yen lan mung yen ana baris $j$ lan $k < i$ kang
+  !!{sentence} ing baris~$j$ iku sawijining formula $!A$,
+  ukara ing baris~$k$ iku $!A \lif !B$, lan ukara ing
+  baris~$i$ iku~$!B$.
+  \begin{multline*}
+    \fn{MP}(d, i) \defiff \bexists{j < i}{\bexists{k < i}{
+      (d)_k = \Gn{(} \concat (d)_j
+      \concat \Gn{\lif} \concat (d)_i \concat \Gn{)}}}
+  \end{multline*}
+% OLPL-183: Kesetaraan modus ponens dilebokake ing cakupan kuantor j lan k.
+  Amarga kuantifikasi winates, panyambungan, lan $=$ iku
+  rekursif primitif, iki netepake relasi rekursif primitif.
+\item Sawijining baris ing $\delta$ dibenerake dening \QR{} yen
+  wujude $!B \lif \lforall[x][!A(x)]$, ana baris sadurunge
+  kang awujud $!B \lif !A(c)$ kanggo sawijining !!{constant}~$c$,
+  lan $c$ ora muncul ing~$!B$. Iki lumaku yen lan mung yen
+  \begin{enumerate}
+  \item ana !!a{sentence}~$!B$ lan
+  \item !!a{formula}~$!A(x)$ kanthi mung siji variabel~$x$
+    kang bebas, saengga
+  \item baris $i$ ngemot $!B \lif \lforall[x][!A(x)]$,
+  \item sawijining baris $j < i$ ngemot $!B \lif \Subst{!A}{c}{x}$
+    kanggo sawijining konstanta~$c$,
+  \item kang ora muncul ing~$!B$.
+  \end{enumerate}
+  Kabeh iki bisa dipriksa kanthi rekursif primitif, amarga bilangan
+  G\"odel saka $!B$, $!A(x)$, lan $x$ luwih cilik tinimbang
+  bilangan G\"odel saka formula ing baris~$i$, lan bilangan
+  kode saka $c$ luwih cilik tinimbang bilangan G\"odel
+  saka formula ing baris~$j$:
+  \begin{multline*}
+    \fn{QR}_1(d, i) \defiff
+    \bexists{j<i}{\bexists{b < (d)_i}{\bexists{x < (d)_i}{
+      \bexists{a < (d)_i}{\bexists{c < (d)_j}{
+        \fn{Var}(x) \land \fn{Const}(c) \land {}\\
+        (d)_i = \Gn{(} \concat b \concat \Gn{\lif}
+        \concat \Gn{\lforall} \concat x \concat a
+        \concat \Gn{)} \land {}\\
+        (d)_j = \Gn{(} \concat b \concat \Gn{\lif}
+        \concat \fn{Subst}(a,c,x) \concat \Gn{)} \land {}\\
+        \fn{Sent}(b) \land \fn{Sent}(\fn{Subst}(a,c,x)) \land {}
+        \bforall{k < \len{b}}{(b)_k \neq (c)_0}}}}}}
+  \end{multline*}
+% OLPL-184: Baris sadurunge j kudu kaiket lan kabeh syarat QR kudu ana ing cakupan kuantor.
+% OLPL-185: Wates baris j iku kanggo kode konstanta c; c lan x yaiku kode konstanta lan variabel miturut urutane.
+  Ing kene kita nganggep $c$ lan $x$ minangka bilangan G\"odel
+  saka konstanta lan variabel kang dianggep suku (dudu kode
+  simbule). Kita mriksa yen $x$ iku siji-sijine variabel bebas
+  ing~$!A(x)$ kanthi mriksa apa $\Subst{!A(x)}{c}{x}$ iku
+  !!a{sentence}, lan mesthekake yen $c$ ora muncul ing $!B$
+  kanthi mbutuhake saben simbol ing~$!B$ beda karo~$c$.
+
+  Versi liyane saka \QR{} kita pasrahake dadi latihan.
+\item $d$ iku bilangan G\"odel saka !!{derivation} kang bener
+  yen lan mung yen saben barise iku aksioma, utawa dibenerake
+  dening modus ponens utawa~\QR. Mula:
+  \[
+  \fn{Deriv}(d) \defiff \bforall{i < \len{d}}{(\fn{IsAx}((d)_i) \lor
+    \fn{MP}(d,i) \lor \fn{QR}(d, i))}
+  \]
+\end{enumerate}
+\end{proof}
+
+\begin{prob}
+Tetepna relasi-relasi iki kaya ing
+\olref[inc][art][pax]{prop:followsby}:
+\begin{enumerate}
+\item $\fn{IsAx}_{!A \lif (!B \lif (!A \land !B))}(n)$,
+\item $\fn{IsAx}_{\lforall[x][!A(x)] \lif !A(t)}(n)$,
+\item $\fn{QR}_{2}(d, i)$ (kanggo versi liyane saka \QR).
+\end{enumerate}
+\end{prob}
+
+\begin{prop}
+Upamane $\Gamma$ iku himpunan rekursif primitif saka
+!!{sentence}s. Relasi $\Prf[\Gamma](x, y)$ kang nyatakake
+``$x$ iku kode saka !!a{derivation}~$\delta$ kanggo $!A$
+adhedhasar~$\Gamma$ lan $y$ iku bilangan G\"odel saka~$!A$''
+iku rekursif primitif.
+\end{prop}
+
+\begin{proof}
+Upamane ``$y \in \Gamma$'' diwenehake dening predikat
+rekursif primitif~$R_\Gamma(y)$. Kita kudu nuduhake yen relasi
+$\Prf[\Gamma](x, y)$ iku rekursif primitif; relasi
+$\Prf[\Gamma](x, y)$ bener yen lan mung yen $y$ iku
+bilangan G\"odel saka !!a{sentence}~$!A$ lan $x$~iku
+kode saka !!a{derivation} kanggo~$!A$ adhedhasar $\Gamma$.
+
+Miturut proposisi sadurunge, sifat $\fn{Deriv}(x)$, kang bener
+yen lan mung yen $x$ iku kode saka !!{derivation}~$\delta$
+kang bener, iku rekursif primitif. Nanging definisi mau durung
+nggatekake himpunan $\Gamma$ minangka cara tambahan kanggo
+mbenerake baris ing !!{derivation}. Tes rekursif primitif kita
+apa sawijining baris dibenerake dening \QR{} uga durung
+nggatekake syarat yen konstanta~$c$ ora kena muncul ing~$\Gamma$.
+Definisi bisa didandani supaya langsung nggatekake $\Gamma$,
+nanging luwih gampang nggunakake $\fn{Deriv}$ lan teorema
+deduksi. $\Gamma \Proves !A$ bener yen lan mung yen ana dhaptar
+winates !!{sentence}s $!B_1$, \dots, $!B_n \in \Gamma$
+saengga $\{!B_1, \dots, !B_n\} \Proves !A$. Miturut teorema
+deduksi, iki lumaku yen $\Proves (!B_1 \lif (!B_2 \lif
+\cdots (!B_n \lif !A)\cdots))$. Apa !!a{sentence} kanthi
+bilangan G\"odel~$z$ awujud kaya iki bisa dipriksa kanthi
+rekursif primitif. Mula, tinimbang nganggep $x$ minangka
+bilangan G\"odel saka !!a{derivation} kanggo !!{sentence}
+kanthi bilangan G\"odel~$y$ \emph{adhedhasar $\Gamma$},
+kita nganggep $x$ minangka bilangan G\"odel saka
+!!a{derivation} kanggo kondisional bersarang kaya ing ndhuwur
+adhedhasar~$\emptyset$.
+
+Pisanan, yen kita duwe urutan !!{sentence}s, kanthi rekursif
+primitif kita bisa mbentuk kondisional kanthi kabeh ukara mau
+minangka anteseden lan !!{sentence} kang diwenehake minangka
+konsekuen:
+\begin{align*}
+  \fn{hCond}(s, y, 0) & = y \\
+  \fn{hCond}(s, y, n+1) & = \Gn{(} \concat (s)_{n} \concat \Gn{\lif}
+  \concat \fn{hCond}(s, y, n) \concat \Gn{)}\\
+  \fn{Cond}(s, y) & = \fn{hCond}(s, y, \len{s})\\
+  \intertext{Mula kita bisa netepake $\Prf[\Gamma](x, y)$ dening}
+  \Prf[\Gamma](x, y) & \defiff \bexists{s < \fn{sequenceBound}(x,x)}{(} \\
+  &\qquad (x)_{\len{x}-1} = \fn{Cond}(s,y) \land {} \\
+  &\qquad\bforall{i<\len{s}}{(s)_i \in \Gamma} \land {} \\
+  &\qquad\fn{Deriv}(x)).
+\end{align*}
+% OLPL-186: Rekursi hCond ing sumber salah nyebut Cond kanthi telung argumen.
+Wates kanggo~$s$ diduweni kanthi nggatekake yen saben $(s)_i$
+iku bilangan G\"odel saka sub-!!{formula} ing baris pungkasan
+saka !!{derivation}, yaiku luwih cilik tinimbang
+$(x)_{\len{x}-1}$. Cacah anteseden $!B \in \Gamma$, yaiku
+dawane~$s$, luwih cilik tinimbang dawa baris pungkasan
+ing~$x$.
+% OLPL-187: Proposisi nyebut x kode derivasi saka Gamma, nanging rumus pungkasan nggunakake x kode derivasi tanpa premis kanggo kondisional bersarang; kesetaraan relasi iki isih perlu didandani ing sumber.
+\end{proof}
+
+\end{document}

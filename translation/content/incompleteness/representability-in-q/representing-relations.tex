@@ -1,0 +1,64 @@
+% Part: incompleteness
+% Chapter: representability-in-q
+% Section: representing-relations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{req}{rel}
+
+\olsection{Merepresentasikake Relasi}
+
+Ayo netepake teges \emph{relasi} kang representabel.
+
+\begin{defn}
+\ollabel{defn:representing-relations} Relasi $R(x_0,\dots,x_k)$
+ing bilangan asli diarani {\em representabel ing $\Th{Q}$} yen ana
+formula $!A_R(x_0,\dots,x_k)$ saengga saben $R(n_0,\dots,n_k)$ bener,
+$\Th{Q}$ mbuktekake $!A_R(\num{n_0},\dots,\num{n_k})$, lan saben
+$R(n_0,\dots,n_k)$ salah, $\Th{Q}$ mbuktekake
+$\lnot !A_R(\num{n_0}, \dots, \num{n_k})$.
+\end{defn}
+
+\begin{thm}
+\ollabel{thm:representing-rels} Sawijining relasi representabel ing
+$\Th{Q}$ yen lan mung yen komputabel.
+\end{thm}
+
+\begin{proof}
+Kanggo arah maju, upamana $R(x_0,\dots,x_k)$ direpresentasikake
+dening formula $!A_R(x_0,\dots,x_k)$. Iki algoritma kanggo ngitung
+$R$: kanggo input $n_0$, \dots,~$n_k$, goleka bebarengan bukti
+$!A_R(\num{n_0}, \dots, \num{n_k})$ lan bukti
+$\lnot !A_R(\num{n_0}, \dots, \num{n_k})$. Miturut asumsi, panggolekan
+iki mesthi nemokake salah sijine; yen kang kapisan, wenehana wangsulan
+``iya,'' lan yen ora, ``ora.''
+
+Kanggo arah liyane, upamana $R(x_0, \dots, x_k)$ komputabel. Miturut
+definisi, iki ateges fungsi $\Char{R}(x_0, \dots, x_k)$ komputabel.
+Miturut \olref[int]{thm:representable-iff-comp}, $\Char{R}$
+direpresentasikake dening sawijining formula, upamane
+$!A_{\Char{R}}(x_0, \dots, x_k, y)$. Tetepna $!A_R(x_0, \dots, x_k)$
+minangka formula $!A_{\Char{R}}(x_0, \dots, x_k, \num{1})$. Mula
+kanggo saben $n_0$, \dots,~$n_k$, yen $R(n_0, \dots, n_k)$ bener,
+$\Char{R}(n_0, \dots, n_k) = 1$, lan ing kasus iki $\Th{Q}$
+mbuktekake $!A_{\Char{R}}(\num{n_0}, \dots, \num{n_k}, \num{1})$,
+mula $\Th{Q}$ mbuktekake $!A_R(\num{n_0}, \dots, \num{n_k})$.
+Kosok baline, yen $R(n_0, \dots, n_k)$ salah, mula
+$\Char{R}(n_0, \dots, n_k) = 0$. Iki ateges $\Th{Q}$ mbuktekake
+\[
+\lforall[y][(!A_{\Char{R}}(\num{n_0}, \dots, \num{n_k}, y) \lif y =
+  \num{0})].
+\]
+Amarga $\Th{Q}$ mbuktekake $\eq/[\num{0}][\num{1}]$, $\Th{Q}$
+mbuktekake $\lnot !A_{\Char{R}}(\num{n_0}, \dots, \num{n_k}, \num{1})$,
+mula uga mbuktekake $\lnot !A_R(\num{n_0}, \dots, \num{n_k})$.
+\end{proof}
+
+\begin{prob}
+Tuduhna yen $R$ representabel ing~$\Th{Q}$, mula $\Char{R}$ uga
+representabel.
+\end{prob}
+
+\end{document}

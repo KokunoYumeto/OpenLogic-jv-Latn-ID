@@ -1,0 +1,84 @@
+% Part: computability
+% Chapter: computability-theory
+% Section: russells-paradox
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{thy}{rus}
+\olsection{Bandhingan karo Paradoks Russell}
+
+Migunani yen argumen-argumen ing bagean iki
+dibandhingake karo paradoks Russell, kalebu
+padha lan bedane:
+\begin{enumerate}
+\item Paradoks Russell: tetepna $S = \Setabs{x}{x \notin x}$.
+  % OLPL-136: Sumber beku nulis X ora kalebu S; substitusi S ing pambentukan S mbutuhake S ora kalebu S.
+  Mula $S \in S$ yen lan mung yen $S \notin S$,
+  sawijining kontradiksi.
+
+  \emph{Dudutan:} Himpunan~$S$ kaya mangkono ora ana.
+  Panganggep yen ana ``himpunan kabeh himpunan''
+  nalisir aksioma liyane ing teori himpunan.
+
+\item Owah-owahan paradoks Russell: tetepna $F$ minangka
+  ``fungsi'' saka himpunan kabeh fungsi menyang
+  $\{ 0, 1 \}$, kang ditegesi minangka
+  \[
+  F(f) =
+  \begin{cases}
+    1 & \text{yen $f$ kalebu domain $f$, lan $f(f) = 0$} \\
+    0 & \text{yen ora}
+  \end{cases}
+  \]
+  Argumen kang padha nuduhake yen $F(F) = 0$
+  yen lan mung yen $F(F) = 1$, sawijining kontradiksi.
+
+  \emph{Dudutan:} $F$ dudu fungsi. ``Himpunan kabeh
+  fungsi'' kegedhen kanggo dadi domain sawijining fungsi.
+
+\item Argumen diagonalisasi: tetepna $f_0$, $f_1$, \dots
+  minangka enumerasi fungsi komputabel parsial,
+  lan tetepna $G \colon \Nat \to
+  \{ 0, 1 \}$ ditegesi minangka
+  \[
+  G(x) =
+  \begin{cases}
+    1 & \text{yen $f_x(x)\downarrow = 0$} \\
+    0 & \text{yen ora}
+  \end{cases}
+  \]
+  Yen $G$ komputabel, mula iku fungsi $f_k$
+  kanggo sawenehing $k$. Nanging banjur $G(k) = 1$
+  yen lan mung yen $G(k) = 0$, sawijining kontradiksi.
+
+  \emph{Dudutan:} $G$ ora komputabel. Gatekna yen miturut
+  aksioma teori himpunan, $G$ tetep sawijining fungsi;
+  ing kene ora ana paradoks, mung ana panjlentreh.
+\end{enumerate}
+
+Rembugan bab fungsi parsial, fungsi komputabel,
+fungsi komputabel parsial, lan sapanunggalane
+bisa mbingungake. Himpunan kabeh fungsi parsial
+saka $\Nat$ menyang $\Nat$ minangka kumpulan
+obyek kang gedhe. Sawetara fungsi kasebut total,
+sawetara komputabel, sawetara total lan komputabel,
+lan sawetara dudu loro-lorone. Elinga yen nalika
+kita nyebut ``fungsi'' tanpa katrangan liyane,
+kang dimaksud lumrahe fungsi total. Mula ana:
+\begin{enumerate}
+\item fungsi komputabel
+\item fungsi komputabel parsial kang ora total
+\item fungsi kang ora komputabel
+\item fungsi parsial kang ora total lan ora komputabel
+\end{enumerate}
+Kanggo mbedakake iki kabeh, bisa migunani
+yen kokgambar kothak gedhe kang nggambarake
+kabeh fungsi parsial saka $\Nat$ menyang $\Nat$,
+banjur tandhana rong wilayah kang tumpang tindih,
+yaiku wilayah fungsi total lan wilayah fungsi
+komputabel parsial. Coba terangna conto sawijining
+obyek ing saben wilayah kang kawangun ing gambar iku.
+
+\end{document}

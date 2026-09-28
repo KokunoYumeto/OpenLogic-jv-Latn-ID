@@ -1,0 +1,695 @@
+% Part: proof-theory
+% Chapter: cut-elimination
+% Section: ce-topmost
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{cut}{top}
+
+\olsection{Ngilangi Cut kang Paling Dhuwur}
+
+\begin{defn}
+Gatekna !!a{proof}~$\pi$ kang pungkasané nganggo aturan \CutCS{},
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\Gamma \fCenter \Delta, !A$
+\AxiomC{}
+\RightLabel{$\pi_2$}
+\Deduce$!A, \Gamma \fCenter \Delta$
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta$
+\DisplayProof
+\]
+lan ora ngemot inferènsi \CutCS{} liyané. \emph{Dhuwuré cut}
+saka~$\pi$ yaiku $\cheight{\pi} = \pheight{\pi_1} + \pheight{\pi_2}$.
+\emph{Pangkat cut} saka~$\pi$ yaiku $\cutrank{\pi} = \depth{!A}$.
+\end{defn}
+
+\begin{lem}\ollabel{lem:cut-adm-G3c}
+Aturan \CutCS{} admisibel ing~\Log{G3c}. Tegesé, yèn $\pi$
+iku !!a{proof} kang pungkasané nganggo siji~\CutCS{} lan saliyané
+mung nganggo aturan~$\Log{G3c}$, ana !!a{proof}~$\pi'$ ing
+\Log{G3c} kanggo sekèn pungkasan kang padha.
+\end{lem}
+
+\begin{proof}
+Buktiné nganggo induksi rangkep tumrap !!{height} lan pangkat cut.
+!!{proof}~$\pi$ pungkasané kaya mangkéné:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\Gamma \fCenter \Delta, !A$
+\AxiomC{}
+\RightLabel{$\pi_2$}
+\Deduce$!A, \Gamma \fCenter \Delta$
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta$
+\DisplayProof
+\]
+
+Dhasar induksi: $\cheight{\pi} = 0$ lan $\cutrank{\pi} = 0$.
+Amarga $\cheight{\pi} = \pheight{\pi_1} + \pheight{\pi_2} = 0$,
+$\Gamma \Sequent \Delta, !A$ lan $!A, \Gamma \Sequent \Delta$
+kaloroné aksioma. Ana rong kahanan: (a)~$!A$ dudu formula utama
+ing salah siji aksioma, utawa (b)~$!A$ formula utama ing kaloroné.
+Ing saben kahanan, kita bakal nuduhaké ing ngisor yèn
+$\Gamma \Sequent \Delta$ mesthi aksioma (tanpa migunakaké
+hipotesis induksi).
+
+Saiki kita bedakaké sawatara kahanan manut $\pi_1$ lan
+$\pi_2$ iku aksioma utawa pungkasané nganggo inferènsi, lan
+manut $!A$~iku formula utama ing inferènsi mau utawa ora.
+Kahanan A lan~B nyakup dhasar induksi. Ing langkah induksi,
+kita anggep $\cheight{\pi} > 0$ utawa $\cutrank{\pi} > 0$
+(utawa kaloroné). Kita bisa migunakaké hipotesis induksi:
+\CutCS{} pungkasan bisa diilangi saka saben !!{proof} kang
+pungkasané nganggo siji~\CutCS{} lan pangkat cuté
+$= \cutrank{\pi}$ kanthi !!{height} cut $< \cheight{\pi}$,
+utawa pangkat cuté~$< \cutrank{\pi}$. Kahanan
+$\cheight{\pi} = 0$ (kaloro premis aksioma) katangani
+dening kahanan~A lan~B. Kahanan $\cheight{\pi} > 0$
+katangani dening kahanan C--D.
+
+\paragraph{Kahanan A:}
+Ana $!B$ ing $\Gamma$ lan uga ing~$\Delta$.
+Mula $\Gamma \Sequent \Delta$ iku aksioma (yèn $!B$~atomik),
+utawa nduwèni !!a{proof}~$\pi'$ ing \Log{G3c} tanpa
+\CutCS{} miturut \olref[seq][ex]{prop:G3c-axioms}.
+Iki nyakup kahanan~(a) ing dhasar induksi: yèn $!A$ dudu
+formula utama ing $\Gamma \Sequent \Delta, !A$ utawa ing
+$!A, \Gamma \Sequent \Delta$, lan kaloroné aksioma, mesthi
+ana $!B$~atomik liyané ing $\Gamma$ lan~$\Delta$.
+Iki uga nyakup langkah induksi yèn salah siji premis
+iku aksioma kang $!A$ dudu formula utamané (sanadyan
+premis liyané minangka konklusi sawijining aturan).
+
+\paragraph{Kahanan B:} Kaloro premis iku aksioma, lan $!A$
+formula utama, mula atomik. Gatekna premis kiwa,
+$\Gamma \Sequent \Delta, !A$. Amarga $!A$ formula utama,
+formula iku kudu ana ing $\Gamma$ (yèn ora,
+$\Gamma \Sequent \Delta, !A$ dudu aksioma). Semono uga,
+$!A$ kudu ana ing $\Delta$ (yèn ora,
+$!A, \Gamma \Sequent \Delta$ dudu aksioma).
+Dadi $!A$ atomik lan ana ing $\Gamma$ uga $\Delta$;
+tegesé, $\Gamma \Sequent \Delta$ iku aksioma. Iki
+nyakup kahanan~(b) ing dhasar induksi.
+
+\begin{center}
+Kahanan A lan B versi alternatif
+\end{center}
+
+\paragraph{Kahanan A:} Salah siji premis cut iku aksioma
+kanthi wujud $!C, \Gamma' \Sequent \Delta', !C$ lan $!C$~atomik.
+Yèn $!C$ dudu !!{formula} cut~$!A$, banjur $!C$ mesthi
+ana ing $\Gamma$ lan~$\Delta$. Mula $\Gamma \Sequent \Delta$
+iku aksioma lan bisa dijupuk minangka~$\pi'$.
+Yèn $!C \ident !A$ iku !!{formula} cut, banjur
+(yèn premis kiwa aksioma) $!A \in \Gamma$ lan
+$\Gamma = \Gamma', !A$, utawa (yèn premis tengen aksioma)
+$!A \in \Delta$ lan $\Delta = \Delta', !A$.
+Ing kahanan kapisan, $\pi_2$ iku !!a{proof} kanggo
+$!A, !A, \Gamma' \Sequent \Delta$ lan miturut admisibilitas
+\LeftR{\Contraction} (\olref[seq][inv]{prop:G3c-cont-adm})
+ana !!a{proof} kanggo $\Gamma \Sequent \Delta$.
+Ing kahanan kapindho, $\pi_1$ iku !!a{proof} kanggo
+$\Gamma \Sequent \Delta', !A, !A$ lan miturut admisibilitas
+\RightR{\Contraction} kita ngolèhké !!a{proof} kanggo
+$\Gamma \Sequent \Delta$.
+
+\paragraph{Kahanan B:} Salah siji premis iku aksioma kanthi
+wujud~$\lfalse, \Gamma' \Sequent \Delta'$. Yèn premis kiwa
+aksioma mangkono, banjur $\lfalse \in \Gamma$ lan
+$\Gamma \Sequent \Delta$ uga aksioma. Yèn premis tengen
+aksioma mangkono, banjur $\lfalse \in \Gamma$
+(mula $\Gamma \Sequent \Delta$ uga aksioma), utawa
+$!A \ident \lfalse$. Ing kahanan kapindho iki, $\pi_1$
+iku !!a{proof} kanggo
+$\Gamma \Sequent \Delta, \lfalse$. Bukti iku bisa diowahi
+dadi !!a{proof} kanggo~$\Gamma \Sequent \Delta$ kanthi
+mbusak siji salinan~$\lfalse$ saka suksèden saben sekèn
+ing~$\pi_1$. (Latihan: priksanen kanthi induksi tumrap
+$\pheight{\pi_1}$.)
+
+Saiki anggepen kahanan~A utawa~B ora lumaku. Ing kahanan
+liyané, $\cheight{\pi} > 0$, yaiku paling ora salah siji
+premis minangka konklusi sawijining inferènsi.
+
+\paragraph{Kahanan C lan D: Ngowahi urutan cut.}
+Kabèh kahanan ing~C lan~D nduwèni pola kang padha.
+Kita miwiti saka !!a{proof} kang pungkasané nganggo~\CutCS{},
+kanthi salah siji premis diolehké saka aturan~$R$ kang
+!!{formula} cut~$!A$ dudu formula utamané (nanging
+!!{formula} liya~$!D$). Ing !!{proof} iki,
+\CutCS{} ana sawisé aturan~$R$, kanthi skéma mangkéné:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\Gamma \fCenter \Delta', !D, !A$
+\AxiomC{}
+\RightLabel{$\pi_3$}
+\Deduce$!A, \Gamma, \Pi \fCenter \Delta', \Lambda$
+\RightLabel{$R$}
+\UnaryInf$!A, \Gamma \fCenter \Delta', !D$
+\RightSubproofLabel{$\pi_2$}
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta', !D$
+\DisplayProof
+\]
+Iki mung nyakup kahanan nalika $R$~aturan tengen kang nduwèni
+siji premis, $A$~dudu !!{formula} utama saka~$R$, lan
+!!{formula}~$!D$ kang \emph{dadi} formula utama ana ing
+suksèden premis tengen~\CutCS. Yèn $!D$~ana ing antesèden
+(yaiku $R$ aturan kiwa) utawa ing premis kiwa~\CutCS,
+wujudé mesthi béda. !!{formula}s ing $\Pi$ lan~$\Lambda$
+makili !!{formula}s aktif saka aturan~$R$.
+
+Kita balik urutan iki lan gatekna !!a{proof}
+ing ngendi $R$ ana sawisé~\CutCS{}:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$\Gamma, \Pi \fCenter \Delta', !D, \Lambda, !A$
+\AxiomC{}
+\RightLabel{$\pi_3'$}
+\Deduce$!A, \Gamma, \Pi \fCenter \Delta', !D, \Lambda$
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma, \Pi \fCenter \Delta', !D, \Lambda$
+\RightLabel{$R$}
+\UnaryInf$\Gamma \fCenter \Delta', !D, !D$
+\DisplayProof
+\]
+Kita migunakaké pelemahan kang njaga !!{height} kanggo ngolèhké
+$\pi_1'$ lan $\pi_3'$ saka $\pi_1$ lan $\pi_3$ miturut urutané.
+
+Amarga urutan \CutCS{} lan~$R$ dibalik, iki diarani
+``ngowahi urutan cut munggah ngliwati~$R$.'' Tumindak iki
+nyuda dhuwuré !!{proof} kang pungkasané ana ing premis
+tengen~\CutCS, mula uga nyuda !!{height} cut. Tegesé,
+sub-!!{proof}s kang pungkasané ana ing \CutCS{} anyar bisa
+dianggep !!{height}-é ora ngluwihi $\pi_1$ lan $\pi_3$,
+mula !!{height} cut suda (siji inferènsi ing sisih tengen
+wis kabusak). Saiki hipotesis induksi bisa ditrapaké,
+mula inferènsi \CutCS{} bisa diilangi. Pungkasané,
+salinan ekstra saka~$!D$ dibusak nganggo admisibilitas
+$\RightR{\Contraction}$.
+
+\paragraph{Kahanan C:}
+Paling ora salah siji saka $\pi_1$ lan $\pi_2$ pungkasané
+nganggo aturan siji premis~$R$ kang $!A$~dudu formula utama.
+Gunggungé ana 18 kahanan, manut $!A$~dudu formula utama
+ing premis kiwa utawa tengen~\CutCS, sarta manut endi
+saka sangang aturan siji premis
+(\LeftR{\lnot}, \RightR{\lnot}, \RightR{\lor}, \LeftR{\land},
+\RightR{\lif}, lan papat aturan kuantor) kang dadi~$R$.
+Kita mung ngrembug rong tuladha: $!A$~dudu formula utama
+ing inferènsi pungkasan~$\pi_2$ kang nganggo~$\RightR{\lif}$
+utawa~\LeftR{\lexists}. Kahanan liyané padha polané
+lan dipasrahaké dadi latihan.
+
+Anggepen $\pi$ pungkasané kaya mangkéné:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\Gamma \fCenter \Delta', !B \lif !C, !A$
+\AxiomC{}
+\RightLabel{$\pi_3$}
+\Deduce$!A, !B, \Gamma \fCenter \Delta', !C$
+\RightLabel{$\RightR{\lif}$}
+\UnaryInf$!A, \Gamma \fCenter \Delta', !B \lif !C$
+\RightSubproofLabel{$\pi_2$}
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta', !B \lif !C$
+\DisplayProof
+\]
+ing ngendi $\Delta = \Delta', !B \lif !C$. Kita ngetrapaké
+pelemahan kang njaga !!{height}
+(\olref[seq][adm]{prop:weak-G3c-adm}) marang $\pi_1$
+kanggo ngolèhké !!a{proof} $\pi_1'$ kanggo
+$!B, \Gamma \fCenter \Delta', !B \lif !C, !C, !A$
+(kanthi nambah $!B$ ing kiwa lan $!C$ ing tengen).
+Semono uga, kita ngetrapaké
+\olref[seq][adm]{prop:weak-G3c-adm} marang~$\pi_3$
+kanggo ngolèhké !!a{proof}~$\pi_3'$ kanggo
+$!A, !B, \Gamma \fCenter \Delta', !B \lif !C, !C$
+(kanthi nambah $!B \lif !C$ ing tengen).
+Hipotesis induksi ditrapaké marang
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$!B, \Gamma \fCenter \Delta', !B \lif !C, !C, !A$
+\AxiomC{}
+\RightLabel{$\pi_3'$}
+\Deduce$!A, !B, \Gamma \fCenter \Delta', !B \lif !C, !C$
+\RightLabel{\CutCS}
+\BinaryInf$!B, \Gamma \fCenter \Delta', !B \lif !C, !C$
+\DisplayProof
+\]
+kanthi !!{formula} cut~$!A$: !!{proof} iki nduwèni
+pangkat cut kang padha nanging !!{height} cut luwih cilik
+tinimbang~$\pi$. Mula kita ngolèhké !!a{proof}~$\pi_4$
+ing \Log{G3c} tanpa \CutCS{} kanggo
+$!B, \Gamma \fCenter \Delta', !B \lif !C, !C$.
+Trapna $\RightR{\lif}$ kanggo ngolèhké !!a{proof} kanggo
+$\Gamma \fCenter \Delta', !B \lif !C, !B \lif !C$:
+\[
+\AxiomC{}
+\RightLabel{$\pi_4$}
+\Deduce$!B, \Gamma \fCenter \Delta', !B \lif !C, !C$
+\RightLabel{$\RightR{\lif}$}
+\UnaryInf$\Gamma \fCenter \Delta', !B \lif !C, !B \lif !C$
+\DisplayProof
+\]
+Kanggo ngolèhké !!a{proof}~$\pi'$ kanggo
+$\Gamma \Sequent \Delta$, yaiku
+$\Gamma \fCenter \Delta', !B \lif !C$, trapna
+\olref[seq][inv]{prop:G3c-cont-adm} (admisibilitas kontraksi).
+
+Saiki anggepen $\pi$ pungkasané kaya mangkéné:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\lexists[x][!B(x)], \Gamma' \fCenter \Delta, !A$
+\AxiomC{}
+\RightLabel{$\pi_3$}
+\Deduce$!A, !B(c), \Gamma' \fCenter \Delta$
+\RightLabel{$\LeftR{\lexists}$}
+\UnaryInf$!A, \lexists[x][!B(x)], \Gamma' \fCenter \Delta$
+\RightSubproofLabel{$\pi_2$}
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma' \fCenter \Delta$
+\DisplayProof
+\]
+Hipotesis induksi kita trapaké manèh marang
+\[
+\AxiomC{}
+\RightLabel{$\pi_1[!B(c) \Sequent {}]$}
+\Deduce$\lexists[x][!B(x)], !B(c), \Gamma' \fCenter \Delta, !A$
+\AxiomC{}
+\LeftLabel{$\pi_3[\lexists[x][!B(x)] \Sequent {}]$}
+\Deduce$!A, \lexists[x][!B(x)], !B(c), \Gamma' \fCenter \Delta$
+\RightLabel{\CutCS}
+\BinaryInf$\lexists[x][!B(x)], !B(c), \Gamma' \fCenter \Delta$
+\RightLabel{\LeftR{\lexists}}
+\UnaryInf$\lexists[x][!B(x)], \lexists[x][!B(x)], \Gamma' \fCenter \Delta$
+\DisplayProof
+\]
+Gatekna yèn syarat variabel eigen kacukupan: syarat
+variabel eigen kanggo~\LeftR{\lexists} ing~$\pi_2$
+njamin $c$ ora ana ing $\lexists[x][!B(x)]$, $\Gamma'$,
+utawa~$\Delta$. Pungkasané, trapna
+\olref[seq][inv]{prop:G3c-cont-adm}.
+
+
+\paragraph{Kahanan D:}
+Paling ora salah siji saka $\pi_1$ lan $\pi_2$ pungkasané
+nganggo aturan rong premis~$R$ kang $!A$ dudu formula utama.
+Ana 6 kahanan. Kita ngrembug kahanan nalika $!A$ dudu
+formula utama ing inferènsi pungkasan~$\pi_2$ kang nganggo
+$\RightR{\land}$; kahanan liyané padha polané.
+
+Anggepen $\pi$ pungkasané kaya mangkéné:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\Gamma \fCenter \Delta', !B \land !C, !A$
+\AxiomC{}
+\RightLabel{$\pi_3$}
+\Deduce$!A, \Gamma \fCenter \Delta', !B$
+\AxiomC{}
+\RightLabel{$\pi_4$}
+\Deduce$!A, \Gamma \fCenter \Delta', !C$
+\RightLabel{$\RightR{\land}$}
+\BinaryInf$!A, \Gamma \fCenter \Delta', !B \land !C$
+\RightSubproofLabel{$\pi_2$}
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta$
+\DisplayProof
+\]
+Hipotesis induksi ditrapaké marang !!{proof}s
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$\Gamma \fCenter \Delta', !B \land !C, !B, !A$
+\AxiomC{}
+\RightLabel{$\pi_3'$}
+\Deduce$!A, \Gamma \fCenter \Delta', !B \land !C, !B$
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta', !B \land !C, !B$
+\DisplayProof
+\]
+and
+\[
+\AxiomC{}
+\RightLabel{$\pi_1''$}
+\Deduce$\Gamma \fCenter \Delta', !B \land !C, !C, !A$
+\AxiomC{}
+\RightLabel{$\pi_4'$}
+\Deduce$!A, \Gamma \fCenter \Delta', !B \land !C, !C$
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta', !B \land !C, !C$
+\DisplayProof
+\]
+Ing kéné, !!{proof}s \Log{G3c} $\pi_1'$ lan $\pi_1''$
+diolehké kanthi pelemahan kang njaga !!{height}
+(\olref[seq][adm]{prop:weak-G3c-adm}) saka~$\pi_1$,
+siji kanthi nambah $!B$ ing tengen, siji manèh kanthi
+nambah $!C$. !!{proof}s $\pi_3'$ lan~$\pi_4'$
+uga diolehké saka $\pi_3$ lan~$\pi_4$ kanthi
+pelemahan kang njaga !!{height} saka $\pi_3$ lan~$\pi_4$
+miturut urutané, yaiku nambah
+$!B \land !C$ ing tengen.
+
+Hipotesis induksi maringi !!{proof}s~$\pi_5$ lan~$\pi_6$
+ing \Log{G3c} kanggo
+$\Gamma \fCenter \Delta', !B \land !C, !B$ lan
+$\Gamma \fCenter \Delta', !B \land !C, !C$.
+Kaloroné digandhèng dadi !!a{proof} kanggo
+$\Gamma \Sequent \Delta', !B \land !C, !B \land !C$
+nganggo aturan~$\RightR{\land}$:
+\[
+\AxiomC{}
+\RightLabel{$\pi_5$}
+\Deduce$\Gamma \fCenter \Delta', !B \land !C, !B$
+\AxiomC{}
+\RightLabel{$\pi_6$}
+\Deduce$\Gamma \fCenter \Delta', !B \land !C, !C$
+\RightLabel{\RightR{\land}}
+\BinaryInf$\Gamma \fCenter \Delta', !B \land !C, !B \land !C$
+\DisplayProof
+\]
+Kanggo ngolèhké !!a{proof} kanggo
+$\Gamma \Sequent \Delta$, yaiku
+$\Gamma \fCenter \Delta', !B \land !C$, trapna
+\olref[seq][inv]{prop:G3c-cont-adm} (admisibilitas kontraksi).
+
+\paragraph{Kahanan E: Nyuda cut.}
+Kahanan pungkasan iki nalika $\pi_1$ lan $\pi_2$ kaloroné
+pungkasané nganggo inferènsi kang $!A$ dadi formula utama.
+Ana enem kahanan, siji kanggo saben !!{main operator}
+kang bisa ana ing~$!A$.
+
+Ing saben kahanan, \CutCS{} kanthi !!{formula} cut~$!A$
+diowahi dadi siji utawa luwih cut tumrap sub-!!{formula}s
+saka~$!A$, yaiku !!{formula}s aktif saka inferènsi-inferènsi
+kang~$!A$ dadi !!{formula} utamané. Mula kahanan iki
+biasané diarani ``reduksi'' utawa ``konversi'' inferènsi cut.
+
+\begin{enumerate}
+\item Yèn $!A \ident \lnot !B$, banjur $\pi$ pungkasané kaya mangkéné:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$!B, \Gamma \fCenter \Delta$
+\RightLabel{\RightR{\lnot}}
+\UnaryInf$\Gamma \fCenter \Delta, \lnot !B$
+\LeftSubproofLabel{$\pi_1$}
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$\Gamma \fCenter \Delta, !B$
+\RightLabel{\LeftR{\lnot}}
+\UnaryInf$\lnot !B, \Gamma \fCenter \Delta$
+\RightSubproofLabel{$\pi_2$}
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta$
+\DisplayProof
+\]
+Miturut hipotesis induksi, \CutCS{} bisa diilangi saka
+\[
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$\Gamma \fCenter \Delta, !B$
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$!B, \Gamma \fCenter \Delta$
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta$
+\DisplayProof
+\]
+
+\item
+Yèn $!A \ident (!B \lor !C)$, banjur $\pi$ pungkasané kaya mangkéné:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$\Gamma \fCenter \Delta, !B, !C$
+\RightLabel{\RightR{\lor}}
+\UnaryInf$\Gamma \fCenter \Delta, !B \lor !C$
+\LeftSubproofLabel{$\pi_1$}
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$!B, \Gamma \fCenter \Delta$
+\AxiomC{}
+\RightLabel{$\pi_2''$}
+\Deduce$!C, \Gamma \fCenter \Delta$
+\RightLabel{\LeftR{\lor}}
+\BinaryInf$!B \lor !C, \Gamma \fCenter \Delta$
+\RightSubproofLabel{$\pi_2$}
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta$
+\DisplayProof
+\]
+Gatekna !!{proof} kang pungkasané nganggo \CutCS{},
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$\Gamma \fCenter \Delta, !B, !C$
+\AxiomC{}
+\RightLabel{$\pi_2'''$}
+\Deduce$!C, \Gamma \fCenter \Delta, !B$
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta, !B$
+\DisplayProof
+\]
+ing ngendi $\pi_2'''$ diolehké saka $\pi_2''$ kanthi
+pelemahan kang njaga !!{height}. Pangkat cuté
+$< \cutr{\pi}$ amarga $\depth{!C} < \depth{!B \lor !C}$,
+mula hipotesis induksi maringi !!a{proof} ing \Log{G3c},
+yaiku $\pi_1''$, kanggo $\Gamma \fCenter \Delta, !B$.
+!!{proof} kang pungkasané nganggo \CutCS{},
+\[
+\AxiomC{}
+\RightLabel{$\pi_1''$}
+\Deduce$\Gamma \fCenter \Delta, !B$
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$!B, \Gamma \fCenter \Delta$
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta$
+\DisplayProof
+\]
+nduwèni pangkat cut $= \depth{!B} < \depth{!B \lor !C}$,
+mula hipotesis induksi bisa ditrapaké manèh lan ngasilaké
+!!a{proof} $\pi'$ kanggo $\Gamma \fCenter \Delta$.
+
+\item $!A \ident (!B \land !C)$. Latihan.
+
+\item Yèn $!A \ident (!B \lif !C)$, banjur $\pi$ pungkasané kaya mangkéné:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$!B, \Gamma \fCenter \Delta, !C$
+\RightLabel{\RightR{\lif}}
+\UnaryInf$\Gamma \fCenter \Delta, !B \lif !C$
+\LeftSubproofLabel{$\pi_1$}
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$\Gamma \fCenter \Delta, !B$
+\AxiomC{}
+\RightLabel{$\pi_2''$}
+\Deduce$!C, \Gamma \fCenter \Delta$
+\RightLabel{\LeftR{\lif}}
+\BinaryInf$!B \lif !C, \Gamma \fCenter \Delta$
+\RightSubproofLabel{$\pi_2$}
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta$
+\DisplayProof
+\]
+!!{proof} kang pungkasané nganggo \CutCS{},
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$!B, \Gamma \fCenter \Delta, !C$
+\AxiomC{}
+\RightLabel{$\pi_2''$}
+\Deduce$!C, \Gamma \fCenter \Delta$
+\RightLabel{\CutCS}
+\BinaryInf$!B, \Gamma \fCenter \Delta$
+\DisplayProof
+\]
+nduwèni pangkat cut luwih cilik tinimbang~$\pi$.
+Hipotesis induksi maringi !!a{proof}~$\pi_1''$ kanggo
+$!B, \Gamma \fCenter \Delta$. Saiki gatekna !!{proof}
+kang pungkasané nganggo \CutCS{},
+\[
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$\Gamma \fCenter \Delta, !B$
+\AxiomC{}
+\RightLabel{$\pi_1''$}
+\Deduce$!B, \Gamma \fCenter \Delta$
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta$
+\DisplayProof
+\]
+Pangkat cuté uga luwih cilik tinimbang pangkat cut~$\pi$,
+mula hipotesis induksi maringi \Log{G3c}-!!{proof}~$\pi'$
+kanggo $\Gamma \fCenter \Delta$.
+\item Yèn $!A \ident \lforall[x][!B(x)]$, banjur $\pi$
+pungkasané kaya mangkéné:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$\Gamma \fCenter \Delta, !B(c)$
+\RightLabel{\RightR{\lforall}}
+\UnaryInf$\Gamma \fCenter \Delta, \lforall[x][!B(x)]$
+\LeftSubproofLabel{$\pi_1$}
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$!B(t), \lforall[x][!B(x)], \Gamma \fCenter \Delta$
+\RightLabel{\LeftR{\lforall}}
+\UnaryInf$\lforall[x][!B(x)], \Gamma \fCenter \Delta$
+\RightSubproofLabel{$\pi_2$}
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta$
+\DisplayProof
+\]
+Miturut hipotesis induksi, \CutCS{} bisa diilangi saka
+\[
+\AxiomC{}
+\RightLabel{$\pi_1''$}
+\Deduce$!B(t), \Gamma \fCenter \Delta, \lforall[x][!B(x)]$
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$!B(t), \lforall[x][!B(x)], \Gamma \fCenter \Delta$
+\RightLabel{\CutCS}
+\BinaryInf$!B(t), \Gamma \fCenter \Delta$
+\DisplayProof
+\]
+ing ngendi $\pi_1''$ diolehké saka $\pi_1$ (dudu~$\pi_1'$!)
+kanthi pelemahan kang njaga !!{height}. (!!{proof} iki
+nduwèni pangkat cut kang padha nanging !!{height} cut
+luwih cilik.) Mula kita ngolèhké !!a{proof}~$\pi_2''$
+kanggo $!B(t), \Gamma \fCenter \Delta$.
+
+!!{proof}~$\pi_1'$ nduwèni sekèn pungkasan
+$\Gamma \Sequent \Delta, !B(c)$, ing ngendi $c$~variabel
+eigen saka inferènsi~$\RightR{\lforall}$. Mula $c$~ora ana
+ing~$!B(x)$, $\Gamma$, utawa~$\Delta$. Kita anggep
+!!{proof}~$\pi$ reguler, mula $c$~mung dadi variabel eigen
+ing inferènsi~$\RightR{\lforall}$ kang nyusul iki lan
+mung ana ing sadhuwuré, yaiku mung ana ing~$\pi_1'$,
+lan dudu variabel eigen sawijining inferènsi ing~$\pi_1'$.
+Amarga $c$ ora ana ing~$\pi_2$, variabel iku ora bisa ana ing~$t$.
+Miturut \olref[seq][qua]{lem:subst-regular},
+!!{proof}~$\Subst{\pi_1'}{t}{c}$ iku !!a{proof} kanggo
+$\Gamma \Sequent \Delta, !B(t)$. Saiki hipotesis induksi
+ditrapaké marang !!{proof}
+\[
+\AxiomC{}
+\RightLabel{$\Subst{\pi_1'}{t}{c}$}
+\Deduce$\Gamma \fCenter \Delta, !B(t)$
+\AxiomC{}
+\RightLabel{$\pi_2''$}
+\Deduce$!B(t), \Gamma \fCenter \Delta$
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta$
+\DisplayProof
+\]
+(Hipotesis induksi bisa ditrapaké amarga !!{formula} cuté
+yaiku~$!B(t)$, mula !!{proof} iku nduwèni pangkat cut
+luwih cilik tinimbang~$\pi$.)
+\item Kahanan $!A \ident \lexists[x][!B(x)]$ dipasrahaké
+dadi latihan.
+\end{enumerate}
+\end{proof}
+
+\begin{prob}
+Priksanen subkahanan saka kahanan~D ing bukti
+\olref{lem:cut-adm-G3c} nalika $!A$ dudu formula utama
+ing inferènsi pungkasan~$\pi_1$ kang nganggo~$\LeftR{\lif}$.
+(Cathetan: pérangan saka latihan iki yaiku njlentrehaké
+apa kang kudu dibuktèkaké, yaiku wujudé $\pi$ ing kahanan iki.)
+\end{prob}
+
+\begin{prob}
+Priksanen subkahanan saka kahanan~D ing bukti
+\olref{lem:cut-adm-G3c} nalika $!A$ dudu formula utama
+ing inferènsi pungkasan~$\pi_1$ kang nganggo
+~$\LeftR{\lforall}$.
+\end{prob}
+
+\begin{prob}
+Priksanen subkahanan saka kahanan~E ing bukti
+\olref{lem:cut-adm-G3c} nalika $!A$ dadi formula utama
+ing inferènsi pungkasan $\pi_1$ lan $\pi_2$,
+lan $!A \ident (!B \land !C)$.
+\end{prob}
+
+\begin{prob}
+Priksanen subkahanan saka kahanan~E ing bukti
+\olref{lem:cut-adm-G3c} nalika $!A$ dadi formula utama
+ing inferènsi pungkasan $\pi_1$ lan $\pi_2$,
+lan $!A \ident \lexists[x][!B(x)]$.
+\end{prob}
+
+Gatekna yèn ing kahanan~E, !!{height} cut saka
+!!{proof} kang pungkasané nganggo \CutCS{} lan kena
+hipotesis induksi bisa luwih gedhé tinimbang !!{height}
+cut saka bukti asal. Tuladhané, ing kahanan
+$!A \ident (!B \lif !C)$, $\pi$ kita owahi dadi
+!!a{proof} kang ngemot rong inferènsi \CutCS{},
+\[
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$\Gamma \fCenter \Delta, !B$
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$!B, \Gamma \fCenter \Delta, !C$
+\AxiomC{}
+\RightLabel{$\pi_2''$}
+\Deduce$!C, \Gamma \fCenter \Delta$
+\RightLabel{\CutCS}
+\BinaryInf$!B, \Gamma \fCenter \Delta$
+\RightSubproofLabel{$\pi_1''$}
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta$
+\DisplayProof
+\]
+\CutCS{} sisih ndhuwur ing antarané $\pi_1'$ lan $\pi_2''$
+nduwèni pangkat cut lan !!{height} cut kang luwih cilik
+tinimbang~$\pi$. Nanging !!{proof}~$\pi_1''$---asil saka
+ngetrapaké hipotesis induksi---saiki ora mesthi nduwèni
+!!{height} cut luwih cilik tinimbang~$\pi$. Amarga
+!!{formula} cut saka \CutCS{} sisih ngisor yaiku $!B$,
+\emph{pangkat} cuté tetep luwih cilik tinimbang pangkat
+cut~$\pi$.
+
+\olref{lem:cut-adm-G3c} nuduhaké yèn siji inferènsi
+\CutCS{} kang paling dhuwur bisa diilangi saka !!a{proof}.
+Kita bisa nuduhaké yèn pirang-pirang inferènsi \CutCS{}
+ing !!a{proof} bisa diilangi kanthi ngetrapaké lema iku
+kanthi urut marang sub-!!{proof}s paling dhuwur kang
+pungkasané nganggo~\CutCS.
+
+\begin{thm}\ollabel{thm:cut-elim-G3c-topmost} Saben !!{proof} $\pi$
+ing $\Log{G3c} + \CutCS$ bisa diowahi dadi !!a{proof} ing~\Log{G3c}.
+\end{thm}
+
+\begin{proof}
+  Buktiné nganggo induksi tumrap cacah~$n$ inferènsi
+  \CutCS{} ing~$\pi$. Yèn $n=0$, ora ana kang perlu
+  ditindakaké: $\pi$ wis dadi !!a{proof} ing~\Log{G3c}.
+  Yèn ora, gatekna sub-!!{proof}~$\pi'$ kang pungkasané
+  nganggo inferènsi \CutCS{} paling dhuwur. Ing kono
+  mung ana siji aturan \CutCS{} minangka inferènsi
+  pungkasan. Trapna \olref{lem:cut-adm-G3c} kanggo
+  ngowahi dadi bukti tanpa \CutCS{}~$\pi''$, banjur
+  gantenana sub-!!{proof}~$\pi'$ nganggo~$\pi''$.
+  Asilé !!a{proof} kang ngemot $n-1$ inferènsi \CutCS{},
+  mula hipotesis induksi bisa ditrapaké.
+\end{proof}
+
+\end{document}

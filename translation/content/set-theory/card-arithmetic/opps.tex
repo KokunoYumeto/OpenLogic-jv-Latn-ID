@@ -1,0 +1,160 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{card-arithmetic}{opps}
+\olsection{Netepaké Operasi Dhasar}
+
+Amarga ora perlu nggatekaké urutan, aritmetika kardinal luwih
+gampang ditetepaké tinimbang aritmetika ordinal. Kita bakal
+netepaké panambahan, ping-pingan, lan pemangkatan bebarengan.
+
+\begin{defn}
+Yèn $\cardfont{a}$ lan $\cardfont{b}$ iku kardinal:
+\begin{align*}
+	\cardfont{a} \cardplus \cardfont{b} &\defis
+	\card{\cardfont{a} \disjointsum \cardfont{b}}\\
+	\cardfont{a} \cardtimes \cardfont{b} &\defis
+	\card{\cardfont{a} \times \cardfont{b}}\\
+	\cardexpo{\cardfont{a}}{\cardfont{b}} &\defis
+	\card{\funfromto{\cardfont{b}}{\cardfont{a}}}
+\end{align*}
+ing kéné $\funfromto{X}{Y} = \Setabs{f}{f \text{ iku fungsi } X \to Y}$.
+(Gampang dituduhaké yèn $\funfromto{X}{Y}$ ana kanggo
+sembarang himpunan $X$ lan $Y$; iki dadi latihan.)
+\end{defn}
+
+\begin{prob}
+Buktèkna ing $\Zminus$ yèn $\funfromto{X}{Y}$ ana kanggo
+sembarang himpunan $X$ lan~$Y$. Kanthi makarya ing $\ZF$,
+itung $\setrank{\funfromto{X}{Y}}$ saka
+$\setrank{X}$ lan $\setrank{Y}$, kaya ing
+\olref[sth][ord-arithmetic][using-addition]{rankcomputation}.
+\end{prob}
+
+Definisi iki perlu diterangaké sedhela. Kanggo panambahan:
+kita nganggo gagasan gunggung pisah, $\disjointsum$,
+kaya kang ditetepaké ing
+\olref[ord-arithmetic][add]{defdissum}; gampang dideleng
+yèn definisi iki menehi asil kang trep kanggo kasus winates.
+Kanggo ping-pingan:
+\olref[sfr][set][pai]{cardnmprod} kandha yèn $A$
+duwé $n$ unsur lan $B$ duwé $m$ unsur, mula $A \times B$
+duwé $n \cdot m$ unsur; dadi definisi kita nggedhèkaké gagasan
+iki menyang ping-pingan transfinit. Pemangkatan uga padha:
+kita nggedhèkaké gagasan saka kasus winates menyang
+kasus transfinit. Pancen, ing sawetara babagan,
+aritmetika kardinal transfinit luwih mirip aritmetika
+“biasa” tinimbang aritmetika ordinal transfinit:
+
+\begin{prop}\ollabel{cardplustimescommute}
+$\cardplus$ lan $\cardtimes$ iku komutatif lan asosiatif.
+\end{prop}
+
+\begin{proof}
+Kanggo komutativitas, miturut
+\olref[cardinals][cardsasords]{lem:CardinalsBehaveRight}
+cukup wigatèkna yèn $\cardeq{(\cardfont{a} \disjointsum
+\cardfont{b})}{(\cardfont{b} \disjointsum \cardfont{a})}$ lan
+$\cardeq{(\cardfont{a} \times \cardfont{b})}{(\cardfont{b} \times
+\cardfont{a})}$. Asosiativitas kita pasrahaké minangka latihan.
+\end{proof}
+
+\begin{prob}
+Buktèkna yèn $\cardplus$ lan $\cardtimes$ asosiatif.
+\end{prob}
+
+\begin{prop}
+$A$ tanpa wates yen lan mung yen $\card{A} \cardplus 1 = 1 \cardplus \card{A} = \card{A}$.
+\end{prop}
+
+\begin{proof}
+Kaya ing
+\olref[cardinals][classing]{generalinfinitycharacter}, saka
+\olref[ord-arithmetic][using-addition]{ordinfinitycharacter} lan
+\olref[cardinals][cardsasords]{lem:CardinalsBehaveRight}.
+\end{proof}
+
+Iki nerangaké sebabé kita kudu nganggo simbol béda kanggo
+panambahan lan ping-pingan ordinal lan kardinal: operasi-operasi
+iki pancèn \emph{béda}. Rong asil sabanjuré nuduhaké yèn
+pemangkatan ordinal lan kardinal uga béda.
+(Élinga yèn \olref[z][infinity-again]{defnomega}
+ngakibataké $2 = \{0,
+1\}$):
+
+\begin{lem}\ollabel{lem:SizePowerset2Exp}
+$\card{\Pow{A}} = \cardexpo{2}{\card{A}}$, kanggo sembarang $A$.
+\end{lem}
+
+\begin{proof}
+Kanggo saben subhimpunan $B \subseteq A$, tetepna $\chi_B \in \funfromto{A}{2}$ kanthi:
+\begin{align*}
+	\chi_{B}(x) &\defis
+	\begin{cases}
+		1 & \text{yèn }x\in B\\
+		0 & \text{yèn ora.}
+	\end{cases}
+\end{align*}
+Saiki tetepna $f(B) = \chi_B$; iki netepaké !!a{bijection} $f \colon \Pow{A}
+\to \funfromto{A}{2}$. Dadi $\cardeq{\Pow{A}}{\funfromto{A}{2}}$. Mula
+$\cardeq{\Pow{A}}{\funfromto{\card{A}}{2}}$, saéngga
+$\card{\Pow{A}} = \card{\funfromto{\card{A}}{2}} =
+2^{\card{A}}$.
+\end{proof}
+
+Bukti ringkes iki sakjané nyakup rembugan ing
+\olref[sfr][siz][red-alt]{sec}. Ing kono kita nuduhaké carané
+“nyuda” sifat ora bisa diétung saka $\Pow{\omega}$
+menyang sifat ora bisa diétung saka himpunan untai biner
+tanpa wates, $\Bin^\omega$. Ing intiné, $\Bin^{\omega}$
+iku $\funfromto{\omega}{2}$; lan bukti sadurungé nuduhaké
+yèn panalaran ing \olref[sfr][siz][red-alt]{sec} uga lumaku
+yèn sembarang himpunan~$A$ nggantèkaké~$\omega$.
+Asil iku uga menehi pratelan cekak babagan pemangkatan
+kardinal:
+
+\begin{cor}\ollabel{cantorcor}
+$\cardfont{a} < \cardexpo{2}{\cardfont{a}}$ kanggo sembarang kardinal~$\cardfont{a}$.
+\end{cor}
+
+\begin{proof}
+Saka Teorema Cantor (\olref[sfr][siz][car]{thm:cantor}) lan
+\olref{lem:SizePowerset2Exp}.
+\end{proof}
+\noindent
+Dadi $\omega < \cardexpo{2}{\omega}$. Nanging wigatèkna:
+iki asil babagan pemangkatan \emph{kardinal}. Bandhingna
+karo pemangkatan \emph{ordinal}, amarga ing kasus iku
+$\omega = \ordexpo{2}{\omega}$
+(delengen \olref[ord-arithmetic][expo]{sec}).
+
+Isih babagan pemangkatan kardinal, kita bisa nerangaké
+kanthi luwih trep “cara” $\Real$ iku
+!!{nonenumerable}.
+
+\begin{thm}\ollabel{continuumis2aleph0}
+$\card{\Real} = \cardexpo{2}{\omega}$
+\end{thm}
+
+\begin{proof}[Rangka bukti]
+Ana akèh cara mbuktèkaké iki. Cara kang paling langsung
+yaiku nuduhaké $\cardle{\Pow{\omega}}{\Real}$ lan
+$\cardle{\Real}{\Pow{\omega}}$, banjur nganggo
+Schr\"oder-Bernstein kanggo nyimpulaké
+$\cardeq{\Real}{\Pow{\omega}}$, lan
+\olref[card-arithmetic][opps]{lem:SizePowerset2Exp} kanggo
+nyimpulaké $\card{\Real} = \cardexpo{2}{\omega}$.
+Kita pasrahaké minangka latihan kang maringi pangerten
+kanggo netepaké injeksi $f \colon
+\Pow{\omega} \to \Real$ lan $g \colon \Real \to \Pow{\omega}$.
+\end{proof}
+
+\begin{prob}
+Rampungna bukti
+\olref[sth][card-arithmetic][opps]{continuumis2aleph0}, kanthi
+nuduhaké $\cardle{\Pow{\omega}}{\Real}$ lan
+$\cardle{\Real}{\Pow{\omega}}$.
+\end{prob}
+
+\end{document}

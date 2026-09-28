@@ -1,0 +1,61 @@
+% Part: first-order-logic
+% Chapter: axiomatic-proofs
+% Section: identity
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{axd}{ide}
+
+\olsection{\usetoken{P}{derivation} mawa \usetoken{S}{identity}}
+
+Kanggo nampung $\eq$ ing !!{derivation}s, kita mung perlu nambah
+skema-skema aksioma anyar. Definisi !!{derivation} lan $\Proves$ tetep
+padha; kita mung uga ngidini aksioma-aksioma anyar kasebut.
+
+\begin{defn}[Aksioma kanggo !!{identity}]
+\begin{align}
+\ollabel{ax:id1} & \eq[t][t], \\
+\ollabel{ax:id2} & \eq[t_1][t_2] \lif (!B(t_1) \lif
+  !B(t_2)),
+\end{align}
+kanggo saben term katutup $t$, $t_1$, $t_2$.
+\end{defn}
+
+\begin{prop}\ollabel{prop:sound}
+  Aksioma \olref{ax:id1} lan \olref{ax:id2} iku valid.
+\end{prop}
+
+\begin{proof}
+  Gladhen.
+\end{proof}
+
+\begin{prob}
+Buktekna \olref[fol][axd][ide]{prop:sound}.
+\end{prob}
+
+\begin{prop}\ollabel{prop:iden1}
+ $\Gamma \Proves \eq[t][t]$, kanggo saben term katutup $t$ lan
+ himpunan~$\Gamma$.
+ Cathetan koreksi sumber OLPL-040: watesan term tertutup diwarisake
+ saka skema aksioma identitas kapisan.
+\end{prop}
+
+\begin{prop}\ollabel{prop:iden2}
+  Kanggo term-term katutup, yen $\Gamma \Proves !A(t_1)$ lan $\Gamma
+  \Proves \eq[t_1][t_2]$, mula $\Gamma \Proves !A(t_2)$. Cathetan
+  koreksi sumber OLPL-040: watesan iki dibutuhake amarga bukti
+  nggunakake skema aksioma identitas kapindho.
+\end{prop}
+
+\begin{proof}
+!!{formula}
+\[
+(\eq[t_1][t_2] \lif (!A(t_1) \lif !A(t_2)))
+\]
+iku conto saka~\olref{ax:id2}. Kesimpulan kasebut ndherek saka rong
+aplikasi~\MP.
+\end{proof}
+
+\end{document}

@@ -1,0 +1,128 @@
+% Bagean: metodhe
+% Bab: bukti
+% Pérangan: conto-2
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mth}{prf}{ex2}
+
+\olsection{Conto Liyané}
+
+\begin{prop}
+Yèn $A \subseteq C$, mula $A \cup (C \setminus A) = C$.
+\end{prop}
+
+\begin{proof}
+  Anggepen $A \subseteq C$. Kita arep mbuktekaké
+  $A \cup (C \setminus A) = C$.
+  \begin{quote}
+    Wiwitané, pratelan iki awujud kondisional. Kanthi
+    implisit, pratelan iki dikuantifikasi universal: proposisi
+    mau bener kanggo kabèh himpunan $A$ lan $C$. Dadi $A$ lan
+    $C$ iku variabel kanggo himpunan sembarang. Kanggo
+    mbuktekaké pratelan kaya iki, kita nganggep antesedèn
+    lan mbuktekaké konsekuèné.
+
+    Sabanjuré gunakna anggepan $A \subseteq C$.
+    Dhéfinisi~$\subseteq$ dijlentrehaké: saben !!{element}s
+    saka~$A$ uga !!{element}s saka~$C$. Kasunyatan wigati
+    iki ayo ditulis, amarga bakal digunakaké ing sadawaning
+    bukti.
+  \end{quote}
+  Miturut dhéfinisi~$\subseteq$, amarga $A \subseteq C$,
+  kanggo saben $z$, yèn $z \in A$, mula $z \in C$.
+  \begin{quote}
+    Kabèh dhéfinisi ing anggepan wis dijlentrehaké. Saiki
+    pindhah menyang kesimpulan. Kita arep nuduhaké
+    $A \cup (C \setminus A) = C$, mula bukti disusun kaya
+    conto sadurungé: saben !!{element} saka
+    $A \cup (C \setminus A)$ uga !!a{element} saka~$C$,
+    lan kosok baliné saben !!{element} saka $C$ uga
+    !!a{element} saka $A \cup (C
+    \setminus A)$. Iki bisa dicekak dadi:
+    $A \cup (C \setminus A)
+    \subseteq C$ lan $C \subseteq A \cup (C \setminus A)$.
+    Ing kéné kita tumindak kosok baliné saka njlentrehaké
+    dhéfinisi, supaya buktiné luwih gampang diwaca.
+    Amarga iki konjungsi, loro pérangan kudu dibuktèkaké.
+    Kanggo pérangan kapisan, yaiku yèn saben
+    !!{element} saka $A \cup (C \setminus A)$ uga
+    !!a{element} saka~$C$, kita nganggep
+    $z \in A \cup (C \setminus A)$ kanggo~$z$ sembarang
+    lan nuduhaké $z \in C$. Miturut dhéfinisi
+    $\cup$, kita nyimpulaké $z \in A$ utawa
+    $z \in C \setminus A$ saka
+    $z \in A \cup (C \setminus A)$.
+    Saiki panjenengan mesthiné wis wiwit kulina.
+  \end{quote}
+  $A \cup (C \setminus A) = C$ yèn lan mung yèn
+  $A \cup (C \setminus A) \subseteq
+  C$ lan $C \subseteq A \cup (C \setminus A)$.
+  Kaping pisan kita buktèkaké
+  $A \cup (C \setminus A) \subseteq C$.
+  Jupuken $z \in A \cup (C
+  \setminus A)$. Dadi $z \in A$ utawa
+  $z \in (C \setminus A)$.
+  \begin{quote}
+    Kita tekan disjungsi, lan saka kéné arep
+    mbuktekaké $z \in C$. Gunakna bukti mawa kasus.
+  \end{quote}
+  Kasus 1: $z \in A$. Amarga kanggo saben $z$,
+  yèn $z \in A$ mula $z \in C$, kita olèh $z \in C$.
+  \begin{quote}
+    Ing kéné kita migunakaké kasunyatan kang wis
+    dicathet saka hipotesis proposisi $A \subseteq C$.
+    Kasus kapisan rampung; saiki kasus kapindho,
+    $z \in (C
+    \setminus A)$. Élinga yèn $C \setminus A$ iku
+    \emph{selisih} rong himpunan: himpunan kabèh
+    !!{element}s saka~$C$ kang dudu !!{element}s saka~$A$.
+    Saben !!{element} saka $C$ kang ora ana ing~$A$
+    mesthi uga !!a{element} saka~$C$.
+  \end{quote}
+  Kasus 2: $z \in (C \setminus A)$. Iki ateges
+  $z \in C$ lan $z
+  \notin A$. Mula, mliginé, $z \in C$.
+  \begin{quote}
+    Apik, arah kapisan wis kabuktèkaké. Saiki
+    arah kapindho: buktèkna
+    $C \subseteq A \cup (C \setminus
+    A)$. Mula kita nganggep $z \in C$ lan mbuktekaké
+    $z \in A \cup (C
+    \setminus A)$.
+  \end{quote}
+  Saiki jupuken $z \in C$. Kita arep nuduhaké
+  $z \in A$ utawa $z \in C
+  \setminus A$.
+  \begin{quote}
+    Amarga saben !!{element}s saka $A$ uga
+    !!{element}s saka $C$, lan $C
+    \setminus A$ yaiku himpunan kabèh obyèk kang
+    !!{element}s saka $C$ nanging dudu anggota $A$,
+    mula $z$ mesthi ana ing $A$ utawa $C
+    \setminus A$. Iki mbokmenawa durung cetha
+    yèn panjenengan durung ngerti sebabé. Luwih becik
+    mbuktekaké langkah demi langkah. Kita bisa
+    migunakaké kasunyatan prasaja tanpa bukti:
+    $z \in A$ utawa $z \notin A$. Iki diarani
+    ``Hukum Tengah kang Disingkiraké'': kanggo
+    sembarang pratelan~$p$, $p$ bener utawa
+    negasiné bener. Ing kéné, $p$ yaiku pratelan
+    $z \in A$. Amarga iki disjungsi, kita bisa
+    migunakaké bukti mawa kasus maneh.
+  \end{quote}
+  Salah siji $z \in A$ utawa $z \notin A$.
+  Ing kasus kapisan, $z \in A \cup
+  (C \setminus A)$. Ing kasus kapindho,
+  $z \in C$ lan $z \notin A$, mula
+  $z \in C \setminus A$. Dadi
+  $z \in A \cup (C \setminus A)$.
+  \begin{quote}
+    Bukti wis rampung: kita wis nuduhaké
+    $A \cup (C \setminus A) = C$.
+  \end{quote}
+\end{proof}
+
+\end{document}

@@ -80,7 +80,7 @@ aturan \Elim{\lor}. Ayo ngetrapake pilihan kapindho. Kita bakal
 nggunakake asumsi $\lnot !A \lor !B$ minangka premis paling kiwa saka
 \Elim{\lor}. Kanggo panrapan \Elim{\lor} kang bener, premis loro
 liyane kudu padha karo kesimpulan $!A \lif !B$, nanging saben premis
-bisa diasilake kanthi urut saka asumsi liyane, yaiku salah siji saka
+bisa diderivasi siji-siji saka asumsi liyane, yaiku salah siji saka
 rong disjung ing $\lnot !A \lor !B$. Mula !!{derivation} kita bakal
 awujud mangkene:
 \begin{prooftree}
@@ -95,7 +95,7 @@ awujud mangkene:
 \UnaryInfC{$(\lnot !A \lor !B) \lif (!A \lif !B)$}
 \end{prooftree}
 
-Ing saben cabang loro ing sisih tengen, kita arep !!{derive} $!A
+Ing saben cabang saka rong cabang ing sisih tengen, kita arep !!{derive} $!A
 \lif !B$, kang paling becik ditindakake nganggo \Intro{\lif}.
 \begin{prooftree}
 \AxiomC{$\Discharge{\lnot !A \lor !B}{1}$}
@@ -156,9 +156,9 @@ ngenali langkah iki minangka eliminasi negasi.
 Saiki ayo ndeleng cabang paling tengen. Ing kene kudu dielingi yen
 definisi !!{derivation} \emph{ngidini asumsi dibubarake}, nanging
 \emph{ora meksa} asumsi kasebut dibubarake. Kanthi tembung liya, yen
-kita bisa ngasilake $!B$ saka salah siji asumsi $!A$ lan $!B$ tanpa
+$!B$ bisa diderivasi saka salah siji asumsi $!A$ lan $!B$ tanpa
 nggunakake liyane, iku ora dadi masalah. Lan kanggo !!{derive} $!B$
-saka~$!B$ iku gampang: $!B$ dhewe wis dadi !!a{derivation} kaya
+saka~$!B$ iku gampang: $!B$ dhewe iku !!a{derivation} kaya
 mangkono, tanpa mbutuhake inferensi. Dadi, kita cukup mbusak
 asumsi~$!A$.
 \begin{prooftree}
@@ -190,7 +190,7 @@ sub-!!{formula} saka kesimpulan aturan kasebut. Aturan iki raket
 sesambungane karo aturan \FalseInt{}. Malah, aturan \FalseInt{} iku
 kasus mligi saka aturan \FalseCl{}---ana logika kang diarani
 ``logika intuisionistik'' kang mung ngidini \FalseInt{}. Aturan
-\FalseCl{} dadi upaya pungkasan nalika ora ana cara liyane kang bisa
+\FalseCl{} iku upaya pungkasan nalika ora ana cara liyane kang bisa
 ditindakake. Tuladhane, upamana kita arep !!{derive} $!A \lor \lnot
 !A$. Strategi lumrahe yaiku nyoba !!{derive} $!A \lor \lnot !A$
 nganggo $\Intro{\lor}$. Nanging iki mbutuhake supaya kita !!{derive}

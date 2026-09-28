@@ -1,0 +1,175 @@
+% Part: first-order-logic
+% Chapter: completeness
+% Section: maximally-consistent-sets
+
+% Definition of maximally consistent sets. Properties of mcs required
+% for completeness proved are in maximally-consistent-sets.tex in the
+% chapter on the proof system used.
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{com}{mcs}
+\olsection{Himpunan \usetoken{P}{sentence} kang Konsisten Maksimal}
+
+\begin{defn}[Himpunan konsisten maksimal]
+\ollabel{mcs}
+Himpunan~$\Gamma$ saka !!{sentence}s iku
+\emph{konsisten maksimal} yèn lan mung yèn
+\begin{enumerate}
+\item $\Gamma$ konsisten, lan
+\item yèn $\Gamma \subsetneq \Gamma'$, mula $\Gamma'$ ora konsisten.
+\end{enumerate}
+\end{defn}
+
+\begin{explain}
+Definisi liya kang padha tegesé yaiku: himpunan $\Gamma$
+saka ukara iku \emph{konsisten maksimal} yèn lan mung yèn
+\begin{enumerate}
+\item $\Gamma$ konsisten, lan
+\item yèn $\Gamma \cup \{ !A \}$ konsisten, mula $!A \in \Gamma$.
+\end{enumerate}
+Kanthi tembung liya, ora bisa nambah !!{sentence}s kang
+durung ana ing~$\Gamma$ marang himpunan konsisten maksimal~$\Gamma$
+tanpa njalari himpunan kang luwih gedhé dadi ora konsisten.
+\end{explain}
+
+\begin{explain}
+Himpunan konsisten maksimal wigati ing bukti kelengkapan,
+amarga saben himpunan konsisten saka !!{sentence}s~$\Gamma$
+bisa dilebokaké ing sawijining himpunan konsisten maksimal~$\Gamma^*$.
+Kajaba iku, kanggo saben !!{sentence}~$!A$, himpunan konsisten
+maksimal ngemot $!A$ utawa negasiné $\lnot !A$.
+Iki uga bener kanggo !!{sentence}s atomik. Mula, saka himpunan
+konsisten maksimal ing basa kang wis ditambahi !!{constant}s
+kanthi cocog, kita bisa mbangun !!a{structure} kang interpretasi
+!!{predicate}s-é ditemtokaké déning !!{sentence}s atomik endi
+kang ana ing~$\Gamma^*$. Banjur bisa dituduhaké yèn !!{structure}
+iki ndadèkaké kabèh !!{sentence}s ing~$\Gamma^*$
+(lan mula uga ing $\Gamma$) bener. Bukti bab iki mbutuhaké
+$\lnot !A \in \Gamma^*$ yèn lan mung yèn $!A \notin \Gamma^*$,
+$(!A \lor !B) \in \Gamma^*$ yèn lan mung yèn $!A
+\in \Gamma^*$ utawa $!B \in \Gamma^*$, lan sapituruté.
+\end{explain}
+
+\begin{prop}
+\ollabel{prop:mcs}
+Anggepen $\Gamma$ konsisten maksimal. Mula:
+\begin{enumerate}
+\item \ollabel{prop:mcs-prov-in} Yèn $\Gamma \Proves !A$, mula $!A \in
+  \Gamma$.
+
+\item \ollabel{prop:mcs-either-or} Kanggo saben $!A$, $!A \in
+  \Gamma$ utawa $\lnot !A \in \Gamma$.
+
+\tagitem{prvAnd}{\ollabel{prop:mcs-and} $(!A \land !B) \in \Gamma$
+  yèn lan mung yèn $!A \in \Gamma$ lan $!B \in \Gamma$.}{}
+
+\tagitem{prvOr}{\ollabel{prop:mcs-or} $(!A \lor !B) \in \Gamma$ yèn lan
+  mung yèn $!A \in \Gamma$ utawa $!B \in \Gamma$.}{}
+
+\tagitem{prvIf}{\ollabel{prop:mcs-if} $(!A \lif !B) \in \Gamma$ yèn lan
+  mung yèn $!A \notin \Gamma$ utawa $!B \in \Gamma$.}{}
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+Kanggo sakabèhé ing ngisor iki, anggepen $\Gamma$
+konsisten maksimal.
+\begin{enumerate}
+\item Yèn $\Gamma \Proves !A$, mula $!A \in \Gamma$.
+
+Anggepen $\Gamma \Proves !A$. Kanggo mbantah, anggepen $!A
+\notin \Gamma$. Amarga $\Gamma$ konsisten maksimal, $\Gamma
+\cup \{!A\}$ ora konsisten, mula $\Gamma \cup \{!A\} \Proves
+\lfalse$. Miturut
+\tagrefs{prfSC/{fol:seq:prv:prop:provability-contr},prfND/{fol:ntd:prv:prop:provability-contr}},
+$\Gamma$ ora konsisten. Iki mbantah anggepan yèn
+$\Gamma$ konsisten. Mula, ora mungkin $!A \notin
+\Gamma$, dadi $!A \in \Gamma$.
+
+\item Kanggo saben $!A$, $!A \in \Gamma$ utawa $\lnot !A \in \Gamma$.
+
+Kanggo mbantah, anggepen ana~$!A$ kang nyukupi $!A \notin \Gamma$
+lan $\lnot !A \notin \Gamma$. Amarga $\Gamma$ konsisten maksimal,
+$\Gamma \cup \{!A\}$ lan $\Gamma \cup \{\lnot !A\}$ padha-padha
+ora konsisten, mula $\Gamma \cup \{!A\} \Proves \lfalse$ lan $\Gamma \cup
+\{\lnot !A\} \Proves \lfalse$. Miturut
+\tagrefs{prfSC/{fol:seq:prv:prop:provability-exhaustive},prfND/{fol:ntd:prv:prop:provability-exhaustive}},
+$\Gamma$ ora konsisten, sawijining kontradiksi. Mula ora ana
+!!a{sentence}~$!A$ kaya mangkono, lan kanggo saben $!A$,
+$!A \in \Gamma$ utawa $\lnot !A \in \Gamma$.
+
+\tagitem{defAnd}{}{%
+\iftag{probAnd}{Gladhen.}{%
+$(!A \land !B) \in \Gamma$ yèn lan mung yèn
+$!A \in \Gamma$ lan $!B \in \Gamma$:
+
+Kanggo arah maju, anggepen $(!A \land !B) \in \Gamma$.
+Mula $\Gamma \Proves !A \land !B$. Miturut
+\tagrefs{prfSC/{fol:seq:prv:prop:provability-land-left},prfND/{fol:ntd:prv:prop:provability-land-left}},
+$\Gamma \Proves !A$ lan $\Gamma \Proves !B$. Miturut
+\olref{prop:mcs-prov-in}, $!A \in \Gamma$ lan $!B \in \Gamma$,
+kaya kang dikarepaké.
+
+Kanggo arah walikan, anggepen $!A \in \Gamma$ lan $!B \in
+\Gamma$. Mula $\Gamma \Proves !A$ lan $\Gamma \Proves !B$. Miturut
+\tagrefs{prfSC/{fol:seq:prv:prop:provability-land-right},prfND/{fol:ntd:prv:prop:provability-land-right}},
+$\Gamma \Proves !A \land !B$. Miturut \olref{prop:mcs-prov-in},
+$(!A \land !B) \in \Gamma$.}}
+
+\tagitem{defOr}{}{%
+\iftag{probOr}{Gladhen.}{%
+$(!A \lor !B) \in \Gamma$ yèn lan mung yèn
+$!A \in \Gamma$ utawa $!B \in \Gamma$.
+
+Kanggo kontrapositif arah maju, anggepen $!A
+\notin \Gamma$ lan $!B \notin \Gamma$. Kita arep nuduhaké
+$(!A \lor !B) \notin \Gamma$. Amarga $\Gamma$ konsisten maksimal,
+$\Gamma \cup \{!A\} \Proves \lfalse$ lan $\Gamma \cup \{!B\} \Proves \lfalse$.
+Miturut
+\tagrefs{prfSC/{fol:seq:prv:prop:provability-lor-left},prfND/{fol:ntd:prv:prop:provability-lor-left}},
+$\Gamma \cup \{(!A \lor !B)\}$ ora konsisten. Mula $(!A \lor !B)
+\notin \Gamma$, kaya kang dikarepaké.
+
+Kanggo arah walikan, anggepen $!A \in \Gamma$ utawa $!B \in
+\Gamma$. Mula $\Gamma \Proves !A$ utawa $\Gamma \Proves !B$. Miturut
+\tagrefs{prfSC/{fol:seq:prv:prop:provability-lor-right},prfND/{fol:ntd:prv:prop:provability-lor-right}},
+$\Gamma \Proves !A \lor !B$. Miturut \olref{prop:mcs-prov-in},
+$(!A \lor !B) \in \Gamma$, kaya kang dikarepaké.}}
+
+\tagitem{defIf}{}{%
+\iftag{probIf}{Gladhen.}{%
+$(!A \lif !B) \in \Gamma$ yèn lan mung yèn
+$!A \notin \Gamma$ utawa $!B \in \Gamma$:
+
+Kanggo arah maju, anggepen $(!A \lif !B) \in \Gamma$,
+lan kanggo mbantah anggepen $!A \in \Gamma$ sarta
+$!B \notin \Gamma$. Saka anggepan iki,
+$\Gamma \Proves !A \lif !B$ lan $\Gamma \Proves !A$. Miturut
+\tagrefs{prfSC/{fol:seq:prv:prop:provability-mp},prfND/{fol:ntd:prv:prop:provability-mp}},
+$\Gamma \Proves !B$. Nanging miturut \olref{prop:mcs-prov-in},
+$!B \in \Gamma$, mbantah anggepan yèn $!B \notin \Gamma$.
+
+Kanggo arah walikan, dhisik delengen kahanan $!A \notin
+\Gamma$. Miturut \olref{prop:mcs-either-or},
+$\lnot !A \in \Gamma$, mula $\Gamma \Proves \lnot !A$. Miturut
+\tagrefs{prfSC/{fol:seq:prv:prop:provability-lif},prfND/{fol:ntd:prv:prop:provability-lif}},
+$\Gamma \Proves !A \lif !B$. Miturut \olref{prop:mcs-prov-in}
+sapisan manèh, kita olèh $(!A \lif !B) \in \Gamma$,
+kaya kang dikarepaké.
+
+Saiki delengen kahanan $!B \in \Gamma$. Mula $\Gamma \Proves !B$,
+lan miturut
+\tagrefs{prfSC/{fol:seq:prv:prop:provability-lif},prfND/{fol:ntd:prv:prop:provability-lif}},
+$\Gamma \Proves !A \lif !B$. Miturut \olref{prop:mcs-prov-in},
+$(!A \lif !B) \in \Gamma$.}}
+\end{enumerate}
+\end{proof}
+
+\begin{prob}
+Rampungna bukti kanggo \olref[fol][com][mcs]{prop:mcs}.
+\end{prob}
+
+\end{document}

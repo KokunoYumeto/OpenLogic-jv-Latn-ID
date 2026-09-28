@@ -1,0 +1,61 @@
+% Part: computability
+% Chapter: recursive-functions
+% Section: normal-form
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{rec}{nft}
+\olsection{Teorema Wangun Normal}
+
+\begin{thm}[Teorema Wangun Normal Kleene]
+\ollabel{thm:kleene-nf}
+Ana relasi rekursif primitif $T(e, x, s)$ lan
+fungsi rekursif primitif $U(s)$, kanthi sipat iki:
+yen $f$ fungsi rekursif parsial sembarang,
+mula kanggo sawenehing~$e$,
+\[
+f(x) \simeq U(\umin{s}{T(e, x, s)})
+\]
+kanggo saben $x$.
+\end{thm}
+
+\begin{explain}
+Bukti teorema wangun normal iki rumit,
+nanging gagasan dhasare prasaja. Saben
+fungsi rekursif parsial nduwé \emph{indeks}~$e$,
+yaiku, sacara intuitif, wilangan kang ngode
+program utawa definisine. Yen $f(x)
+\fdefined$, komputasi iku bisa dicathet
+kanthi sistematis lan dikode nganggo
+sawenehing wilangan~$s$; kasunyatan yen $s$
+ngode komputasi~$f$ kanggo input~$x$
+bisa dipriksa kanthi cara rekursif primitif
+mung nganggo $x$ lan definisi~$e$.
+Mula relasi~$T$, kang nyatakake 'fungsi
+mawa indeks~$e$ nduwé komputasi kanggo
+input~$x$, lan $s$ ngode komputasi iki,'
+iku rekursif primitif. Yen cathetan
+komputasi~$s$ wis pepak, asile
+saka~$s$ yaiku nilai~$f(x)$, lan
+nilai iki uga bisa diolehake saka~$s$
+kanthi cara rekursif primitif.
+
+Teorema wangun normal nuduhake yen
+kanggo netepake fungsi rekursif parsial
+sembarang cukup mung siji panggolekan
+tanpa wates. Sejatine kita bisa nlusuri
+kabeh wilangan nganti nemokake wilangan
+kang ngode komputasi fungsi mawa indeks~$e$
+kanggo input~$x$. Kita bisa nggunakake
+wilangan~$e$ minangka 'jeneng' fungsi
+rekursif parsial, lan nulis $\cfind{e}$
+kanggo fungsi~$f$ kang ditegesi dening
+persamaan ing teorema mau. Gatekna yen
+fungsi rekursif parsial sembarang bisa
+nduwé luwih saka siji indeks---malah
+saben fungsi rekursif parsial nduwé
+indeks tanpa wates cacahé.
+\end{explain}
+\end{document}

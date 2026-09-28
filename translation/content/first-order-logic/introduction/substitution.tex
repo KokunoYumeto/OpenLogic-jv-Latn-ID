@@ -1,0 +1,54 @@
+% Part: first-order-logic
+% Chapter: introduction
+% Section: substitution
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{int}{sub}
+
+\olsection{Substitusi}
+
+Kita bakal ngrembug sawijining tuladha kanggo nggambarake kepriye kabeh
+prekara iki gegandhengan, lan kepriye pangrembakan sintaksis lan
+semantik nyawisake landhesan kanggo panliten kita kang luwih maju
+mengko. Sistem !!{derivation} kita kudune marengake kita !!{derive}
+$\Atom{\Obj P}{\Obj a}$ saka $\lforall[\Obj
+v_0][\Atom{\Obj P}{\Obj v_0}]$. Cathetan koreksi sumber OLPL-061:
+sumber Inggris nutup argumen pilihan kuantor sadurunge argumen
+formula atom rampung, mula formula kasebut ora nduweni argumen
+predikat ing cakupan kuantor; braket dibalekake supaya variabel kasebut
+dadi argumen predikat. Mbokmenawa kita malah
+pengin nyatakake iki minangka aturan inferensi. Nanging, kanggo
+nindakake mangkono, kita kudu bisa nyatakake iki kanthi wujud paling
+umum: ora mung kanggo $\Obj P$, $\Obj a$, lan $\Obj v_0$, nanging
+kanggo sembarang !!{formula}~$!A$, term~$t$, lan !!{variable}~$x$.
+(Elinga yen !!{constant}s iku term, nanging kita uga bakal nimbang term
+kang luwih rumit kang dibangun saka !!{constant}s lan !!{function}s.)
+Dadi kita pengin bisa kandha kurang luwih, ``saben sampeyan wis
+!!{derive} $\lforall[x][!A(x)]$, sampeyan kabenerake nyimpulake~$!A(t)$
+---asil mbusak $\lforall[x]$ lan ngganti~$x$ nganggo~$t$.'' Nanging apa
+teges persise ``ngganti $x$ nganggo~$t$''? Apa relasi antarane $!A(x)$
+lan~$!A(t)$? Apa iki mesthi bisa?
+
+Supaya iki trep, kita nemtokake operasi \emph{substitution}.
+Substitusi iku nyatane ruwet, amarga kita ora bisa mung ngganti
+kabeh~$x$ ing~$!A$ nganggo~$t$, lan ora saben~$t$ bisa disubstitusikake
+kanggo sembarang~$x$. Kita bakal ngrampungi iki, maneh, nganggo definisi
+induktif. Nanging yen wis rampung, nemtokake aturan inferensi minangka
+``simpulake $!A(t)$ saka $\lforall[x][!A(x)]$'' dadi definisi kang
+trep. Kajaba iku, kita bakal bisa mbuktekake yen iki aturan inferensi
+kang apik, ing pangertene yen $\lforall[x][!A(x)]$ ngakibatake~$!A(t)$.
+Nanging kanggo mbuktekake iki, kita maneh kudu mbuktekake sawijining
+prekara kang sakpisanan bisa njalari sampeyan takon, ``kenapa kita
+nindakake iki?'' Kasunyatan yen $\lforall[x][!A(x)]$ ngakibatake~$!A(t)$
+gumantung marang kasunyatan manawa dicukupi utawa orane
+$\Sat{M}{!A(t)}$ mung gumantung marang nilai term~$t$. Yaiku, yen $m$
+iku !!{element} saka~$\Domain{M}$ kang dituduhake dening~$t$, banjur
+$\Sat{M}{!A(t)}[s]$ yen lan mung yen
+$\Sat{M}{!A(x)}[\Subst{s}{m}{x}]$. Iki lumaku sanajan $t$ ngemot
+!!{variable}s, nanging kita kudu ngati-ati bab carane persis nyatakake
+asil kasebut.
+
+\end{document}

@@ -1,0 +1,81 @@
+% Part: computability
+% Chapter: computability-theory
+% Section: complete-ce-sets
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{thy}{cce}
+\olsection{Himpunan kang Bisa Dienumerasi sacara Komputabel kang Komplet}
+
+\begin{defn}
+Himpunan $A$ diarani \emph{himpunan !!{computably enumerable}
+kang komplet} (miturut reduksibilitas akeh marang siji) yen
+\begin{enumerate}
+\item $A$ bisa dienumerasi sacara komputabel, lan
+\item kanggo saben himpunan liyane $B$ kang bisa dienumerasi
+  sacara komputabel, $B \leq_m A$.
+\end{enumerate}
+\end{defn}
+
+Kanthi tembung liya, himpunan kang bisa dienumerasi
+sacara komputabel lan komplet iku paling ``angel''
+ing antarane himpunan kaya mangkono. Himpunan
+iki ngidini kita mangsuli pitakon bab \emph{sembarang}
+himpunan kang bisa dienumerasi sacara komputabel.
+
+\begin{thm}
+$K$, $K_0$, lan $K_1$ kabeh himpunan kang bisa
+dienumerasi sacara komputabel lan komplet.
+\end{thm}
+
+\begin{proof}
+Kanggo ndeleng yen $K_0$ komplet, tetepna $B$
+minangka himpunan sembarang kang bisa dienumerasi
+sacara komputabel. Mula ana indeks $e$ kang ndadekake
+\[
+B = W_e = \Setabs{x}{\cfind{e}(x) \fdefined}.
+\]
+Tetepna $f$ minangka fungsi $f(x) = \tuple{e, x}$.
+Mula kanggo saben wilangan asli $x$, $x \in B$
+yen lan mung yen $f(x) \in K_0$.
+Kanthi tembung liya, $f$ ngreduksi $B$ menyang~$K_0$.
+
+Kanggo ndeleng yen $K_1$ komplet, gatekna yen
+ing bukti \olref[k1]{prop:k1} kita wis ngreduksi
+$K_0$ menyang himpunan iku. Mula miturut
+\olref[ppr]{prop:trans-red}, saben himpunan kang
+bisa dienumerasi sacara komputabel uga bisa
+direduksi menyang~$K_1$.
+
+% OLPL-143: Sumber beku menehi arah K menyang K_0, nanging kanggo mbuktekake K komplet kudu K_0 menyang K.
+$K_0$ uga bisa direduksi menyang $K$.
+Saka kode program lan input, teorema s-m-n
+ngidini kita ngitung indeks program anyar
+kang ora nggatekake inpute dhewe lan
+niru program asal ing input asal. Program
+anyar mandheg ing indekse dhewe yen lan
+mung yen komputasi asal mandheg. Mula
+reduksi kang dibutuhake ana, lan
+transitivitas ngrampungake bukti.
+\end{proof}
+
+\begin{prob}
+Wenehana reduksi saka $K$ menyang $K_0$.
+\end{prob}
+
+\begin{digress}
+Pranyata kabeh conto himpunan kang bisa
+dienumerasi sacara komputabel kang wis
+kita deleng nganti saiki padha komputabel
+utawa komplet. Iki kudune katon aneh!{}
+Apa ana conto himpunan kang bisa dienumerasi
+sacara komputabel nanging ora komputabel
+lan uga ora komplet? Wangsulane ana,
+nanging kasunyatan iki lagi dibuktekake
+ing tengahan taun 1950-an dening Friedberg
+lan Muchnik kanthi mandhiri.
+\end{digress}
+
+\end{document}

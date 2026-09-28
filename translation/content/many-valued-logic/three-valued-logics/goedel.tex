@@ -1,0 +1,121 @@
+% Part: many-valued-logic
+% Chapter: three-valued-logics
+% Section: goedel
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{thr}{god}
+
+\olsection{Logika-logika G\"odel}
+
+Kurt G\"odel ngenalake rerangkening logika $n$ nilai kang
+saben logikane ngemot kabeh !!{formula}s kang sah ing logika
+intuisionistik lan kalebu ing logika klasik. Iki kang kapisan
+narik kawigaten:
+
+\begin{defn}\ollabel{defn:goedel}
+\emph{Logika G\"odel $3$ nilai}~$\LogGod$ ditetepake nganggo matriks iki:
+\begin{enumerate}
+  \item Basa proposisional baku $\Lang L_0$ kang ngemot
+  $\lfalse$, $\lnot$, $\land$, $\lor$, $\lif$.
+  \item Himpunan nilai kabeneran $V = \{\True, \Undef, \False\}$.
+  \item $\True$ mung siji-sijine nilai pinilih, yaiku $V^+ = \{\True\}$.
+  \item Kanggo $\lfalse$, kita nduweni $\tf{\lfalse} = \False$.
+  Fungsi kabeneran kanggo konektif liyane diwenehake dening
+  tabel iki:
+  \begin{center}
+    \begin{tabular}{c|c} 
+      $\tf{\lnot}[\LogGod]$ & \\ 
+      \hline  
+      $\True$ & $\False$ \\ 
+      $\Undef$ & $\False$ \\
+      $\False$ & $\True$ 
+    \end{tabular}
+    \quad
+    \begin{tabular}{c|ccc} 
+      $\tf{\land}[\LogGod]$ & $\True$ & $\Undef$ & $\False$ \\ 
+      \hline 
+      $\True$ & $\True$ & $\Undef$ & $\False$ \\ 
+      $\Undef$ & $\Undef$ & $\Undef$ & $\False$\\ 
+      $\False$ & $\False$ & $\False$ & $\False$ 
+    \end{tabular}
+    \\[2ex]
+    \begin{tabular}{c|ccc} 
+      $\tf{\lor}[\LogGod]$ & $\True$ & $\Undef$ & $\False$ \\ 
+      \hline 
+      $\True$ & $\True$ & $\True$ & $\True$ \\ 
+      $\Undef$ & $\True$ & $\Undef$ & $\Undef$ \\
+      $\False$ & $\True$ & $\Undef$ & $\False$ 
+    \end{tabular}
+    \quad
+    \begin{tabular}{c|ccc} 
+      $\tf{\lif}[\LogGod]$ & $\True$ & $\Undef$ & $\False$ \\ 
+      \hline 
+      $\True$ & $\True$ & $\Undef$ & $\False$ \\ 
+      $\Undef$ & $\True$ & $\True$ & $\False$  \\ 
+      $\False$ & $\True$ & $\True$ & $\True$ 
+    \end{tabular}
+  \end{center} 
+\end{enumerate}
+\end{defn}
+
+Tabel kabeneran kanggo $\land$ lan~$\lor$ padha karo
+ing logika \L ukasiewicz lan logika Kleene kang kuwat, nanging
+tabel kanggo $\lnot$ lan~$\lif$ beda ing saben logika. Ing logika
+G\"odel, $\tf{\lnot}(\Undef) = \False$. Beda karo logika
+\L ukasiewicz lan Kleene, $\tf{\lif}(\Undef, \False) = \False$;
+beda karo logika Kleene, nanging padha karo logika \L ukasiewicz,
+$\tf{\lif}(\Undef, \Undef) = \True$.
+
+Kaya kang wis diisyaratake dening sesambungane karo logika
+intuisionistik, $\LogGod[3]$ cedhak karo logika intuisionistik.
+Kabeh proposisi kang sah ing logika intuisionistik dadi tautologi
+ing~$\LogGod[3]$; akeh tautologi klasik kang ora sah ing logika
+intuisionistik uga dudu tautologi ing~$\LogGod[3]$. Umpamane,
+formula ing ngisor iki dudu tautologi:
+\begin{align*}
+  & p \lor \lnot p && (p \lif q) \lif (\lnot p \lor q) \\
+  & \lnot\lnot p \lif p && \lnot(\lnot p \land \lnot q) \lif (p \lor q) \\
+  & ((p \lif q) \lif p) \lif p && \lnot(p \lif q) \lif (p \land \lnot q)
+\end{align*}
+Nanging ora saben tautologi ing $\LogGod[3]$ sah ing logika
+intuisionistik, umpamane $\lnot\lnot p \lor \lnot p$ utawa $(p
+\lif q) \lor (q \lif p)$.
+
+\begin{prob}
+  Wenehana tabel kabeneran kanggo nuduhake yen formula ing ngisor
+  iki tautologi ing~$\LogGod[3]$:
+  \begin{align*}
+    & \lnot\lnot p \lor \lnot p\\
+    & (p \lif q) \lor (q \lif p) \\
+    & \lnot(p \land q) \lif (\lnot p \lor \lnot q) \\
+    & (p \lif q) \lor (q \lif r) \lor (r \lif s)
+  \end{align*}
+\end{prob}
+
+\begin{prob}
+  Wenehana tabel kabeneran kanggo nuduhake yen formula ing ngisor
+  iki dudu tautologi ing~$\LogGod[3]$
+  \begin{align*}
+    & (p \lif q) \lif (\lnot p \lor q) \\
+    & \lnot(\lnot p \land \lnot q) \lif (p \lor q) \\
+    & ((p \lif q) \lif p) \lif p \\
+    & \lnot(p \lif q) \lif (p \land \lnot q)
+  \end{align*}
+\end{prob}
+
+\begin{prob}
+  Sesambungan endi ing ngisor iki kang lumaku ing logika G\"odel?
+  Wenehana tabel kabeneran kanggo saben sesambungan.
+  \begin{enumerate}
+    \item $p, p \lif q \Entails q$
+    \item $p \lor q, \lnot p \Entails q$
+    \item $p \land q \Entails p$
+    \item $p \Entails p \land p$
+    \item $p \Entails p \lor q$
+  \end{enumerate}
+\end{prob}
+
+\end{document}

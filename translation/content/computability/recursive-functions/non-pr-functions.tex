@@ -1,0 +1,129 @@
+% Part: computability
+% Chapter: recursive-functions
+% Section: non-pr-functions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{rec}{npr}
+\olsection{Fungsi kang Dudu Rekursif Primitif}
+
+Fungsi rekursif primitif ora nyakup kabeh fungsi
+kang sacara intuitif komputabel. Sacara intuitif,
+kita bisa nggawe dhaptar kabeh fungsi rekursif
+primitif unèr, yaiku $f_0$, $f_1$, $f_2$,~\dots,
+kanthi cara kang ndadekake kita bisa ngitung nilai
+$f_x$ kanggo input $y$ kanthi efektif. Kanthi
+tembung liya, fungsi $g(x,y)$ kang ditegesi dening
+\[
+g(x,y) = f_x(y)
+\]
+iku komputabel. Nanging fungsi iki uga komputabel:
+\begin{eqnarray*}
+h(x) & = & g(x,x) + 1 \\
+& = & f_x(x) +1.
+\end{eqnarray*}
+Kanggo saben fungsi rekursif primitif $f_i$,
+nilai $h$ lan $f_i$ béda ing $i$. Dadi $h$
+komputabel nanging dudu rekursif primitif;
+pratelan kang padha uga bener kanggo $g$.
+Iki wangun 'efektif' saka argumen
+diagonalisasi Cantor.
+
+Kita uga bisa menehi tuladha kang luwih cetha
+saka fungsi komputabel kang dudu rekursif
+primitif. Umpamane, notasi $g^n(x)$ nglambangake
+$g(g(\dots g(x)))$, kanthi $n$ panyusunan
+$g$ kabeh; banjur tegese rerangken fungsi
+$g_0,g_1,\dots$ kanthi
+\begin{eqnarray*}
+g_0(x) & = & x+1 \\
+g_{n + 1}(x) & = & g_n^x(x)
+\end{eqnarray*}
+Kita bisa mriksa yen saben fungsi $g_n$
+rekursif primitif. Saben fungsi sabanjure
+tuwuh luwih cepet tinimbang kang sakdurunge;
+$g_1(x)$ padha karo $2x$, $g_2(x)$ padha
+karo $2^x \cdot x$, lan $g_3(x)$ tuwuhe
+kurang luwih kaya tumpukan eksponen saka
+$x$ angka $2$. Fungsi Ackermann--P\'eter
+pancen meh padha karo fungsi $G(x) = g_x(x)$,
+lan bisa dibuktekake yen fungsi iki tuwuh
+luwih cepet tinimbang fungsi rekursif
+primitif endi wae.
+
+Saiki kita bali menyang prakara enumerasi
+fungsi rekursif primitif. Elinga yen kita wis
+menehi notasi simbolis kanggo saben fungsi
+rekursif primitif; mula cukup kanggo
+ngenumerasi notasi-notasi kasebut. Kita bisa
+menehi wilangan asli $\#(F)$ marang saben
+notasi $F$ kanthi rekursif kaya mangkene:
+\begin{eqnarray*}
+\#(0) & = & \langle 0 \rangle \\
+\#(S) & = & \langle 1 \rangle \\
+\#(\Proj{n}{i}) & = & \langle 2, n, i \rangle \\
+\#(\fn{Comp}_{k,l}[H,G_0,\dots,G_{k-1}]) & = & \langle
+3,k,l,\#(H),\#(G_0),\dots,\#(G_{k-1}) \rangle \\
+\#(\fn{Rec}_l[G,H]) & = & \langle 4, l, \#(G), \#(H) \rangle
+\end{eqnarray*}
+Ing kéné kita nggunakake kasunyatan yen saben
+rerangken wilangan bisa dianggep minangka
+wilangan asli, nganggo kode saka bagean sadurunge.
+Asile, saben kode notasi oleh sawiji wilangan asli.
+Mesthi wae, sawenehing rerangken (lan mula
+sawenehing wilangan) ora cocog karo notasi;
+nanging kita bisa netepake $f_i$ dadi fungsi
+rekursif primitif unèr kang notasiné dikode
+dening $i$, yen $i$ ngode notasi kaya mangkono;
+yen ora, fungsi kasebut dadi fungsi konstan $0$.
+Kanthi mangkono, kita nduwé cara eksplisit
+kanggo ngenumerasi fungsi rekursif primitif
+unèr.
+
+(Pancen, sawenehing fungsi, kaya fungsi
+konstan nol, bakal katon luwih saka sepisan
+ing dhaptar. Iki ora mung akibat saka cara
+pangodean, nanging uga amarga fungsi konstan
+nol nduwé luwih saka siji notasi. Mengko kita
+bakal weruh yen ulangan iki ora bisa
+disingkiri kanthi cara komputabel; upamane,
+ora ana fungsi komputabel kang bisa mutusake
+apa sawiji notasi nglambangake fungsi
+konstan nol utawa ora.)
+
+Saiki fungsi $g(x,y)$ bisa kita anggep
+ditetepake dening $f_x(y)$, kanthi $f_x$
+nuduhake enumerasi kang lagi wae diandharake.
+Kepiye kita ngerti yen $g(x,y)$ komputabel?
+Sacara intuitif iki cetha: kanggo ngitung
+$g(x,y)$, luwih dhisik 'bongkar' $x$
+lan priksa apa iku notasi kanggo fungsi
+unèr. Yen iya, itung nilai fungsi kasebut
+kanggo input~$y$.
+
+\begin{tagblock}{TMs}
+\begin{digress}
+Mbokmenawa panjenengan wis yakin yen (kanthi
+upaya tartamtu!) kita bisa nulis program
+(umpamane ing Java utawa C++) kang nindakake
+iki; lan saiki kita bisa nggunakake tesis
+Church--Turing, kang nyatakake yen apa wae
+kang sacara intuitif komputabel bisa diitung
+dening mesin Turing.
+
+Mesthi wae, cara kang luwih langsung kanggo
+nuduhake yen $g(x,y)$ komputabel yaiku
+ngandharake kanthi eksplisit mesin Turing
+kang ngitung fungsi kasebut. Kanthi mangkono,
+kita ora perlu nggunakake tesis Church--Turing
+utawa intuisi. Sedhela maneh kita bakal
+nduwé piranti kang cukup kanggo nuduhake
+yen $g(x,y)$ komputabel kanthi nggunakake
+model komputasi kang bisa \emph{ditiru}
+ing mesin Turing, yaiku fungsi rekursif.
+\end{digress}
+\end{tagblock}
+
+\end{document}

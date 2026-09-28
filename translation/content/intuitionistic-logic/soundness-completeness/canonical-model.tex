@@ -1,0 +1,67 @@
+% part: intuitionistic-logic
+% chapter: soundness-completeness
+% section: canonical-model
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{sc}{mod}
+
+\olsection{Model Kanonik}
+
+Donya ing model kita bakal awujud urutan winates~$\sigma$ saka
+wilangan asli, yaiku $\sigma \in \Nat^*$. $\Nat^*$ ditetepake sacara
+induktif dening:
+\begin{enumerate}
+\item $\emptyseq \in \Nat^*$.
+\item Yen $\sigma \in \Nat^*$ lan $n \in \Nat$, mula $\sigma.n \in
+  \Nat^*$ (kanthi $\sigma.n$ yaiku $\sigma \concat \tuple{n}$ lan
+  $\sigma \concat \sigma'$ yaiku konkatenasi saka $\sigma$ lan $\sigma'$).
+\item Ora ana liyane kang ana ing $\Nat^*$.
+\end{enumerate}
+Mula kita bisa nggunakake $\Nat^*$ kanggo menehi definisi induktif.
+
+Upamane $\tuple{!B_0, !C_0}$, $\tuple{!B_1, !C_1}$, \dots, iku
+enumerasi kabeh pasangan !!{formula}s. Yen diwenehi himpunan
+!!{formula}s~$\Delta$, tetepa $\Delta(\sigma)$ nganggo induksi
+kaya mangkene:
+\begin{enumerate}
+\item $\Delta(\emptyseq) = \Delta$
+\item $\Delta(\sigma.n) = {}$
+  \[
+  \begin{cases}
+    (\Delta(\sigma) \cup \{!B_n\})^* &
+    \text{yen $\Delta(\sigma) \cup \{!B_n\} \Proves/ !C_n$} \\
+    \Delta(\sigma) & \text{yen ora}
+  \end{cases}
+  \]
+\end{enumerate}
+Ing kene, $(\Delta(\sigma) \cup \{!B_n\})^*$ tegese himpunan prim saka
+!!{formula}s kang ana miturut \olref[lin]{lem:lindenbaum}, kanthi
+lema iku ditrapake marang himpunan $\Delta(\sigma) \cup \{!B_n\}$
+lan !!{formula}~$!C_n$. Miturut definisi iki, yen
+$\Delta(\sigma) \cup \{!B_n\} \Proves/ !C_n$, mula
+$\Delta(\sigma.n) \Proves !B_n$ lan $\Delta(\sigma.n) \Proves/ !C_n$.
+Uga $\Delta(\sigma) \subseteq \Delta(\sigma.n)$ kanggo sembarang~$n$.
+Yen $\Delta$ prim, mula $\Delta(\sigma)$ prim kanggo kabeh~$\sigma$.
+
+\begin{defn}\ollabel{defn:canonical-model}
+  Upamane $\Delta$ prim. Mula \emph{model kanonik} $\mModel{M(\Delta)}$
+  kanggo $\Delta$ ditetepake dening:
+  \begin{enumerate}
+  \item $W = \Nat^*$, himpunan urutan winates saka wilangan asli.
+  \item $R$ iku urutan parsial kanthi $R\sigma\sigma'$ yen lan mung yen
+    $\sigma$ iku segmen wiwitan saka~$\sigma'$ (yaiku
+    $\sigma' = \sigma \concat \sigma''$ kanggo sawenehing urutan~$\sigma''$).
+  \item $V(p) = \Setabs{\sigma}{p \in \Delta(\sigma)}$.
+  \end{enumerate}
+\end{defn}
+
+Gampang dipriksa yen $R$ pancen urutan parsial. Syarat monotonisitas
+tumrap~$V$ uga kasembadan. Amarga
+$\Delta(\sigma) \subseteq \Delta(\sigma.n)$, kita entuk
+$\Delta(\sigma) \subseteq \Delta(\sigma')$ saben $R\sigma\sigma'$
+nganggo induksi tumrap dawa urutan kang ditambahake marang~$\sigma$.
+
+\end{document}

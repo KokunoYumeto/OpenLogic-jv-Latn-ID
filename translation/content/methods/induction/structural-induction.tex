@@ -1,0 +1,204 @@
+% Bagean: metodhe
+% Bab: induksi
+% Pérangan: induksi-struktural
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mth}{ind}{sti}
+
+\olsection{Induksi Struktural}
+
+Nganti saiki induksi digunakaké kanggo
+mbuktekaké pratelan tumrap kabèh bilangan
+asli. Nanging prinsip kang padha bisa
+langsung digunakaké kanggo mbuktekaké
+pratelan tumrap kabèh !!{element}s
+saka himpunan kang didhéfinisikaké
+kanthi induktif. Iki kerep diarani
+induksi \emph{struktural}, amarga
+gumantung marang struktur obyèk
+kang didhéfinisikaké kanthi induktif.
+
+Lumrahé dhéfinisi induktif mènèhi
+(a)~dhaptar !!{element}s ``wiwitan''
+saka himpunan, lan (b)~dhaptar
+operasi kang nggawe !!{element}s
+anyar saka kang wis ana. Ing
+conto term trep, obyèk wiwitan
+yaiku aksara. Operasiné mung siji:
+\begin{align*}
+  o(s_1, s_2) = & [s_1 \circ s_2]
+\end{align*}
+Bilangan asli~$\Nat$ dhéwé uga
+bisa dianggep didhéfinisikaké
+kanthi induktif: obyèk wiwitan
+yaiku~$0$, lan operasiné
+fungsi panerus~$x + 1$.
+
+Kanggo mbuktekaké yèn kabèh
+anggota himpunan induktif,
+yaiku saben !!{element} ing
+himpunan mau, nduwèni
+sipat~$P$, kita kudu:
+\begin{enumerate}
+\item Mbuktekaké yèn obyèk
+  wiwitan nduwèni~$P$.
+\item Mbuktekaké yèn kanggo
+  saben operasi~$o$, yèn
+  argumèné nduwèni~$P$,
+  asilé uga nduwèni sipat iku.
+\end{enumerate}
+Upamané, kanggo mbuktekaké
+pratelan tumrap kabèh term
+trep, kita buktèkaké kanggo
+kabèh aksara, lan kanggo
+$[s_1 \circ s_2]$ kanthi
+anggepan yèn pratelan iku
+bener tumrap $s_1$ lan
+$s_2$ siji-siji.
+
+\begin{prop}
+  Cacah $[$ padha karo cacah
+  $]$ ing sembarang term
+  trep~$t$.
+\end{prop}
+
+\begin{proof}
+Kita migunakaké induksi
+struktural. Term trep
+didhéfinisikaké kanthi
+induktif: aksara minangka
+obyèk wiwitan lan operasi
+$o$ kanggo mbangun term
+trep anyar saka kang wis ana.
+\begin{enumerate}
+\item Pratelan bener kanggo
+  saben aksara, amarga
+  cacah $[$ ing aksara
+  tunggal yaiku~$0$ lan
+  cacah $]$ uga~$0$.
+\item Anggepen cacah $[$
+  ing $s_1$ padha karo
+  cacah $]$, lan bab kang
+  padha bener kanggo $s_2$.
+  Cacah $[$ ing
+  $o(s_1, s_2)$, yaiku
+  ing $[s_1 \circ s_2]$,
+  padha karo jumlah cacah
+  $[$ ing $s_1$ lan
+  $s_2$ ditambah siji.
+  Cacah $]$ ing
+  $o(s_1, s_2)$ padha
+  karo jumlah cacah $]$
+  ing $s_1$ lan $s_2$
+  ditambah siji. Mula
+  cacah $[$ ing
+  $o(s_1, s_2)$ padha
+  karo cacah $]$ ing
+  $o(s_1,s_2)$.
+\end{enumerate}
+\end{proof}
+
+\begin{prob}
+  Buktèkna kanthi induksi
+  struktural yèn ora ana
+  term trep kang diwiwiti
+  déning~$]$.
+\end{prob}
+
+Ayo deleng bukti induksi
+struktural liyané: bagéan
+wiwitan sejati saka rerangken
+simbol~$t$ yaiku rerangken
+ora kosong~$s$ kang saben
+simbolé padha karo simbol
+wiwitan~$t$ yèn diwaca
+saka kiwa, nanging $t$
+luwih dawa. Upamané,
+$[a \circ {}$ iku bagéan
+wiwitan sejati saka
+$[a \circ b]$, nanging
+$[b \circ {}$ dudu
+(béda ing simbol kapindho),
+lan $[a
+\circ b]$ uga dudu
+(dawané padha).
+
+\begin{prop}\ollabel{prop:initial}
+  Saben bagéan wiwitan sejati
+  kang ora kosong saka term
+  trep~$t$ ngemot $[$ luwih
+  akèh tinimbang $]$.
+\end{prop}
+
+\begin{proof}
+  Kanthi induksi ing~$t$:
+  \begin{enumerate}
+  \item Yèn $t$ mung aksara,
+    $t$ ora nduwèni bagéan
+    wiwitan sejati kang ora kosong.
+  \item Yèn $t = [s_1 \circ s_2]$
+    kanggo term trep $s_1$
+    lan~$s_2$, lan $r$ bagéan
+    wiwitan sejati kang ora kosong
+    saka $t$, ana sawatara
+    kamungkinan:
+    \begin{enumerate}
+    \item Yèn $r$ mung $[$,
+      $r$ nduwèni cacah $[$
+      luwih siji tinimbang~$]$.
+    \item Yèn $r$ awujud
+      $[r_1$ kanthi $r_1$
+      bagéan wiwitan sejati
+      saka~$s_1$, amarga
+      $s_1$ term trep,
+      miturut hipotesis
+      induksi $r_1$
+      ngemot $[$ luwih
+      akèh tinimbang $]$,
+      lan $[r_1$ uga
+      mangkono.
+    \item Yèn $r$ awujud
+      $[s_1$ utawa
+      $[s_1 \circ {}$,
+      miturut asil sadurungé
+      cacah $[$ lan $]$
+      ing~$s_1$ padha.
+      Dadi cacah $[$
+      ing $[s_1$ utawa
+      $[s_1 \circ {}$
+      luwih siji tinimbang
+      cacah~$]$.
+    \item Yèn $r$ awujud
+      $[s_1 \circ r_2$
+      kanthi $r_2$ bagéan
+      wiwitan sejati
+      saka~$s_2$, miturut
+      hipotesis induksi
+      $r_2$ ngemot $[$
+      luwih akèh tinimbang
+      $]$. Miturut asil
+      sadurungé, cacah $[$
+      lan $]$ ing~$s_1$
+      padha. Mula cacah $[$
+      ing $[s_1 \circ r_2$
+      luwih akèh tinimbang
+      cacah~$]$.
+    \item Yèn $r$ awujud
+      $[s_1 \circ s_2$,
+      miturut asil sadurungé
+      cacah $[$ lan $]$
+      ing $s_1$ padha,
+      lan semono uga
+      ing~$s_2$. Dadi
+      cacah $[$ ing
+      $[s_1 \circ s_2$
+      luwih siji tinimbang
+      cacah~$]$.
+    \end{enumerate}
+  \end{enumerate}
+\end{proof}
+
+\end{document}

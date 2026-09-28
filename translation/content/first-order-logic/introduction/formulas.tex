@@ -1,0 +1,94 @@
+% Part: first-order-logic
+% Chapter: introduction
+% Section: formulas
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{int}{fml}
+
+\section{\usetoken{P}{formula}}
+
+Iki cara kang bakal kita gunakake kanggo nemtokake kanthi trep
+!!{sentence}s ing logika sepisanan lan ngrampungi prekara kang tuwuh
+saka panganggone !!{variable}s. Sepisan kita netepake sawijining
+himpunan ekspresi kang \emph{beda}: !!{formula}s. Sawise iku rampung,
+kita bisa nimbang kalungguhane !!{variable}s ing formula-formula
+kasebut---lan adhedhasar sawetara gagasan liyane, yaiku !!{variable}s
+kang ``bebas'' lan kang ``kaiket,'' kita bisa nemtokake apa iku
+!!a{sentence} (yaiku !!a{formula} tanpa !!{variable}s bebas). Iki
+ditindakake ora mung amarga ndadekake definisi ``!!{sentence}'' luwih
+gampang ditata, nanging uga amarga bakal wigati banget tumrap cara kita
+nemtokake gagasan semantis ngenani relasi nyukupi.
+
+Ayo kita netepake ``!!{formula}'' kanggo basa logika sepisanan kang
+prasaja, kang mung ngemot siji !!{predicate}~$\Obj P$ lan siji
+!!{constant}~$\Obj a$, sarta mung simbol logis $\lnot$, $\land$,
+lan~$\lexists$. Definisi kita kang jangkep bakal luwih umum:
+kita bakal marengake !!{predicate}s lan !!{constant}s kang cacahe tanpa
+wates. Malah, kita uga bakal nimbang !!{function}s kang bisa digabungake
+karo !!{constant}s lan !!{variable}s kanggo mbentuk ``term.'' Sauntara
+iki, $\Obj a$ lan variabel-variabel mau bakal dadi siji-sijine term
+kita. Nanging, kita pancen mbutuhake !!{variable}s kang cacahe tanpa
+wates. Kanthi resmi kita bakal nggunakake simbol $\Obj v_0$, $\Obj
+v_1$, \dots, minangka variabel.
+
+\begin{defn}
+Himpunan \emph{!!{formula}s}~$\Frm$ ditegesi kaya mangkene:
+\begin{enumerate}
+\item\ollabel{fmls-atom} $\Atom{\Obj P}{\Obj a}$ lan $\Atom{\Obj
+  P}{\Obj v_i}$ yaiku !!{formula}s ($i \in \Nat$).
+
+\tagitem{prvNot}{\ollabel{fmls-not}Yen $!A$ iku !!a{formula}, mula $\lnot !A$
+  yaiku !!{formula}.}{}
+
+\tagitem{prvAnd}{Yen $!A$ lan $!B$ iku !!{formula}s, mula $(!A \land
+  !B)$ iku !!a{formula}.}{}
+
+\tagitem{prvEx}{\ollabel{fmls-ex}Yen $!A$ iku !!a{formula} lan $x$ iku !!a{variable},
+  mula $\lexists[x][!A]$ iku !!a{formula}.}{}
+
+\tagitem{limitClause}{\ollabel{fmls-limit}Ora ana liyane kang dadi !!a{formula}.}{}
+\end{enumerate}
+\end{defn}
+
+\olref{fmls-atom} ngandhani kita yen $\Atom{\Obj P}{\Obj a}$ lan
+$\Atom{\Obj P}{\Obj v_i}$ iku !!{formula}s, kanggo saben $i \in
+\Nat$. Iki diarani !!{formula}s \emph{atom}. Formula-formula iki
+menehi titik wiwitan. Klausa-klausa liyane menehi cara kanggo mbentuk
+!!{formula}s anyar saka formula kang wis kita bentuk. Dadi, tuladhane,
+miturut \olref{fmls-not}, kita oleh asil yen $\lnot \Atom{\Obj P}{\Obj
+v_2}$ iku !!a{formula}, amarga $\Atom{\Obj P}{\Obj v_2}$ wis dadi
+!!a{formula} miturut \olref{fmls-atom}. Banjur, miturut
+\olref{fmls-ex}, kita oleh asil yen $\lexists[\Obj v_2][\lnot
+\Atom{\Obj P}{\Obj v_2}]$ iku !!{formula} liyane, lan sabanjure.
+\olref{fmls-limit} ngandhani kita yen \emph{mung} rerangken kang bisa
+kita bentuk nganggo cara iki kang dianggep !!{formula}s. Mligine,
+$\lexists[\Obj v_0][\Atom{\Obj P}{\Obj a}]$ lan $\lexists[\Obj
+  v_0][\lexists[\Obj v_0][\Atom{\Obj P}{\Obj a}]]$ \emph{pancen}
+dianggep !!{formula}s, dene $(\lnot \Atom{\Obj P}{\Obj a})$ ora,
+amarga kurung njaba kasebut keluwih.
+
+Cara nemtokake !!{formula}s kaya iki diarani \emph{definisi
+induktif}, lan ndadekake kita bisa mbuktekake prekara ngenani
+!!{formula}s nganggo salah sawijining ragam bukti kanthi induksi kang
+diarani \emph{induksi struktural}. Bab iki dirembug kanthi umum ing
+\olref[mth][ind][idf]{sec} lan \olref[mth][ind][sti]{sec}, kang kudu
+sampeyan sinau maneh sadurunge nyinaoni bukti-bukti sabanjure. Gagasan
+dhasare yaiku yen sampeyan arep menehi bukti yen sawijining prekara
+bener tumrap kabeh !!{formula}s, sepisan sampeyan nuduhake yen prekara
+iku bener tumrap !!{formula}s atom, banjur nuduhake yen \emph{yen}
+prekara iku bener tumrap sembarang !!{formula}~$!A$ (lan~$!B$), prekara
+iku \emph{uga} bener tumrap $\lnot !A$, $(!A \land !B)$, lan
+$\lexists[x][!A]$. Tuladhane, iki mbuktekake yen prekara kasebut bener
+tumrap $\lexists[\Obj v_2][\lnot \Atom{\Obj P}{\Obj v_2}]$: saka
+perangan kapisan sampeyan ngerti yen prekara iku bener tumrap
+!!{formula} atom~$\Atom{\Obj P}{\Obj v_2}$. Banjur, saka perangan
+kapindho sampeyan oleh asil yen prekara iku bener tumrap $\lnot
+\Atom{\Obj P}{\Obj v_2}$, lan banjur oleh maneh yen prekara iku bener
+tumrap $\lexists[\Obj v_2][\lnot \Atom{\Obj P}{\Obj v_2}]$ dhewe.
+Amarga kabeh !!{formula}s diasilake kanthi induktif saka !!{formula}s
+atom, cara iki lumaku tumrap formula endi wae.
+
+\end{document}

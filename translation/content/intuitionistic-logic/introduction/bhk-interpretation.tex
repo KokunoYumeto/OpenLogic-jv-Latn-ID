@@ -1,0 +1,168 @@
+% part: intuitionistic-logic
+% chapter: introduction
+% section: bhk-interpretation
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{int}{bhk}
+
+\olsection{Interpretasi Brouwer--Heyting--Kolmogorov}
+
+\begin{editorial}
+  Bukti validitas proposisi intuisionistik nganggo interpretasi BHK
+  isih mbingungake; perlu dijlentrehake kanthi luwih cetha.
+\end{editorial}
+
+Ana interpretasi konstruktif informal kanggo konektif intuisionistik,
+kang lumrahe diarani interpretasi Brouwer--Heyting--Kolmogorov.
+Interpretasi iki nggunakake gagasan ``konstruksi,'' kang bisa dianggep
+minangka bukti konstruktif. (Ing interpretasi BHK kita ora nggunakake
+tembung ``bukti'' supaya ora kacampur karo !!a{derivation} ing sistem
+!!{derivation} formal.) Adhedhasar gagasan intuisi iki, interpretasi
+BHK njlentrehake teges konektif intuisionistik.
+
+\begin{enumerate}
+\item Kita nganggep wis ngerti apa kang diarani konstruksi kanggo
+  pratelan atomik.
+\item Konstruksi kanggo $!A_1 \land !A_2$ yaiku pasangan $\tuple{M_1, M_2}$
+  kang $M_1$ iku konstruksi kanggo~$!A_1$ lan $M_2$ iku konstruksi
+  kanggo~$!A_2$.
+\item Konstruksi kanggo $!A_1 \lor !A_2$ yaiku pasangan $\tuple{s, M}$
+  kang $s$ iku~$1$ lan $M$ iku konstruksi kanggo~$!A_1$, utawa $s$ iku~$2$
+  lan $M$ iku konstruksi kanggo~$!A_2$.
+\item Konstruksi kanggo $!A \lif !B$ yaiku fungsi kang ngowahi
+  konstruksi kanggo~$!A$ dadi konstruksi kanggo~$!B$.
+\item Ora ana konstruksi kanggo~$\lfalse$ (absurditas).
+\item $\lnot !A$ ditetepake minangka sinonim saka $!A \lif \lfalse$.
+  Tegese, konstruksi kanggo $\lnot !A$ yaiku fungsi kang ngowahi
+  konstruksi kanggo~$!A$ dadi konstruksi kanggo~$\lfalse$.
+\end{enumerate}
+
+\begin{ex}
+Contone $\lnot \lfalse$. Konstruksi kanggo rumus iki yaiku fungsi
+kang nampa sembarang konstruksi kanggo $\lfalse$ minangka input lan
+menehi konstruksi kanggo~$\lfalse$ minangka output. Temenan, fungsi
+identitas~$\Id{}$ iku konstruksi kaya mangkono: yen diwenehi
+konstruksi~$M$ kanggo~$\lfalse$, $\Id{}(M) = M$ ngasilake
+konstruksi kanggo~$\lfalse$.
+\end{ex}
+
+Sacara umum, $\lnot !A$ ateges ``Konstruksi kanggo $!A$ iku mokal''.
+
+\begin{ex}
+Saiki ayo buktekake $!A \lif \lnot \lnot !A$ kanggo saben
+proposisi~$!A$, yaiku $!A \lif ((!A \lif \lfalse) \lif \lfalse)$.
+Konstruksine kudu awujud fungsi~$f$ kang, yen diwenehi konstruksi~$M$
+kanggo $!A$, ngasilake konstruksi~$f(M)$ kanggo
+$(!A \lif \lfalse) \lif \lfalse$. Mangkene carane~$f$ mbangun
+konstruksi kanggo $(!A \lif \lfalse) \lif
+\lfalse$: kita kudu netepake fungsi $g$ kang nampa konstruksi~$h$
+kanggo $!A \lif \lfalse$ minangka input lan ngasilake konstruksi
+kanggo~$\lfalse$. Fungsi $g$ bisa ditetepake kanthi ngetrapake
+input~$h$ marang konstruksi~$M$ kanggo $!A$ kang wis ditampa.
+Amarga output~$h(M)$ saka $h$ iku konstruksi kanggo $\lfalse$,
+$f(M)(h) = h(M)$ iku konstruksi kanggo~$\lfalse$ yen $M$ iku
+konstruksi kanggo~$!A$.
+\end{ex}
+
+\begin{ex}
+Saiki kita wenehi konstruksi kanggo $\lnot(!A \land \lnot !A)$,
+yaiku $(!A
+\land (!A \lif \lfalse)) \lif \lfalse$. Iki fungsi~$f$ kang,
+yen nampa konstruksi~$M$ kanggo $!A \land (!A \lif \lfalse)$,
+ngasilake konstruksi kanggo~$\lfalse$. Konstruksi kanggo konjungsi
+$!B_1 \land !B_2$ yaiku pasangan $\tuple{N_1, N_2}$ kang $N_1$
+iku konstruksi kanggo~$!B_1$ lan $N_2$ iku konstruksi kanggo~$!B_2$.
+Kita bisa netepake fungsi $p_1$ lan $p_2$ kang njupuk saka konstruksi
+kanggo $!B_1 \land !B_2$ konstruksi kanggo $!B_1$ lan $!B_2$
+miturut urutane:
+\begin{align*}
+  p_1(\tuple{N_1, N_2}) &= N_1\\
+  p_2(\tuple{N_1, N_2}) &= N_2
+\end{align*}
+Mangkene tumindake $f$: dhisik fungsi iku ngetrapake $p_1$ marang
+input~$M$, mula entuk konstruksi kanggo~$!A$. Banjur $p_2$
+ditrapake marang~$M$ lan ngasilake konstruksi kanggo
+$!A \lif \lfalse$. Konstruksi iki yaiku fungsi~$p_2(M)$ kang,
+yen nampa konstruksi kanggo~$!A$, ngasilake konstruksi
+kanggo~$\lfalse$. Dadi, yen $p_2(M)$ ditrapake marang $p_1(M)$,
+kita entuk konstruksi kanggo~$\lfalse$. Mula bisa ditetepake
+$f(M) = p_2(M)(p_1(M))$.
+\end{ex}
+
+\begin{ex}
+Ayo menehi konstruksi kanggo $((!A \land !B) \lif !C) \lif (!A \lif
+(!B \lif !C))$, yaiku fungsi $f$ kang ngowahi konstruksi~$g$ kanggo
+$(!A \land !B) \lif !C$ dadi konstruksi kanggo $(!A \lif (!B \lif
+!C))$. Konstruksi $g$ iku dhewe fungsi saka konstruksi kanggo
+$!A \land !B$ menyang konstruksi kanggo~$!C$. Output $f(g)$ yaiku
+fungsi~$h_g$ saka konstruksi kanggo $!A$ menyang fungsi kang ngowahi
+konstruksi kanggo~$!B$ dadi konstruksi kanggo~$!C$.
+
+Ya, iki pancen mbingungake. Kita kudu mbangun fungsi $h_g$ kang dadi
+output saka $f$ kanggo input~$g$. Input kanggo~$h_g$ yaiku
+konstruksi~$M$ kanggo~$!A$. Output $h_g(M)$ kudu awujud fungsi~$k_{g,M}$
+kang ngowahi konstruksi~$N$ kanggo~$!B$ dadi konstruksi kanggo~$!C$.
+Netepna $k_{g,M}(N) = g(\tuple{M, N})$. Elinga yen $\tuple{M,
+  N}$ iku konstruksi kanggo~$!A \land !B$. Dadi $k_{g,M}$ iku
+konstruksi kanggo $!B \lif !C$: fungsi iki ngowahi konstruksi~$N$
+kanggo~$!B$ dadi konstruksi kanggo~$!C$. Saiki netepna
+$h_g(M) = k_{g,M}$. Iki fungsi kang ngowahi konstruksi~$M$ kanggo~$!A$
+dadi konstruksi $k_{g,M}$ kanggo $!B
+\lif !C$. Banjur netepna $f(g) = h_g$. Iki fungsi kang ngowahi
+konstruksi $g$ kanggo $(!A \land !B) \lif !C$ dadi konstruksi kanggo
+$!A
+\lif (!B \lif !C)$. Rampung!{}
+\end{ex}
+
+Pratelan $!A \lor \lnot !A$ diarani Hukum Tengah kang Disingkirake.
+Kita bisa mbuktekake kanggo $!A$ tartamtu (umpamane $\lfalse \lor
+\lnot \lfalse$), nanging ora kanthi umum. Sebabe, disjungsi
+intuisionistik mbutuhake konstruksi kanggo salah siji cabange, dene
+ana pratelan kang saiki durung bisa dibuktekake utawa dibantah
+(umpamane dugaan Goldbach). Nanging Hukum Tengah kang Disingkirake uga
+ora bisa dibantah: yaiku, $\lnot \lnot (!A
+\lor \lnot !A)$ bener.
+
+\begin{ex}
+Kanggo mbuktekake $\lnot \lnot (!A \lor \lnot !A)$, kita perlu
+fungsi~$f$ kang ngowahi konstruksi kanggo $\lnot(!A \lor \lnot !A)$,
+yaiku kanggo $(!A
+\lor (!A \lif \lfalse)) \lif \lfalse$, dadi konstruksi
+kanggo~$\lfalse$. Kanthi tembung liya, kita perlu fungsi $f$ kang
+$f(g)$ iku konstruksi kanggo~$\lfalse$ yen $g$ iku konstruksi kanggo
+$\lnot(!A
+\lor \lnot !A)$.
+
+Upamane $g$ iku konstruksi kanggo $\lnot(!A \lor \lnot !A)$, yaiku
+fungsi kang ngowahi konstruksi kanggo $!A \lor \lnot !A$ dadi
+konstruksi kanggo~$\lfalse$. Konstruksi kanggo $!A \lor \lnot !A$
+iku pasangan $\tuple{s, M}$ kang $s = 1$ lan $M$ iku konstruksi kanggo
+$!A$, utawa $s = 2$ lan $M$ iku konstruksi kanggo $\lnot !A$.
+Upamane $h_1$ iku fungsi kang nggawa konstruksi~$M_1$ kanggo $!A$
+menyang konstruksi kanggo $!A \lor \lnot !A$: fungsi iku nggawa
+$M_1$ menyang $\tuple{1, M_1}$. Dene $h_2$ iku fungsi kang nggawa
+konstruksi~$M_2$ kanggo $\lnot !A$ menyang konstruksi kanggo
+$!A \lor \lnot !A$: fungsi iku nggawa $M_2$ menyang $\tuple{2, M_2}$.
+
+Upamane $k$ iku $\comp{h_1}{g}$: fungsi iki, yen diwenehi konstruksi
+kanggo~$!A$, ngasilake konstruksi kanggo~$\lfalse$. Dadi, iki
+konstruksi kanggo~$!A \lif \lfalse$ utawa $\lnot !A$. Saiki upamane
+$l$ iku $\comp{h_2}{g}$. Fungsi iki, yen diwenehi konstruksi kanggo
+$\lnot !A$, ngasilake konstruksi kanggo~$\lfalse$. Amarga $k$ iku
+konstruksi kanggo $\lnot !A$, $l(k)$ iku konstruksi kanggo~$\lfalse$.
+
+Kanthi mangkono, kita wis nerangake carane ngowahi konstruksi~$g$
+kanggo $\lnot(!A \lor \lnot !A)$ dadi konstruksi kanggo~$\lfalse$.
+Tegese, fungsi $f$ kang nggawa konstruksi~$g$ kanggo
+$\lnot(!A \lor \lnot !A)$ menyang konstruksi $l(k)$ kanggo~$\lfalse$
+iku konstruksi kanggo $\lnot\lnot(!A \lor \lnot !A)$.
+\end{ex}
+
+Kaya kang katon, nggunakake interpretasi BHK kanggo nuduhake
+validitas intuisionistik !!{formula}s enggal dadi ruwet lan
+mbingungake. Untunge, ana sistem !!{derivation} kang luwih becik
+kanggo logika intuisionistik, uga interpretasi semantik kang luwih tliti.
+\end{document}

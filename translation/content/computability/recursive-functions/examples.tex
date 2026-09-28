@@ -1,0 +1,203 @@
+% Part: computability
+% Chapter: recursive-functions
+% Section: examples
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{rec}{exa}
+\olsection{Tuladha Fungsi Rekursif Primitif}
+
+Kita wis nduweni sawetara tuladha fungsi rekursif primitif:
+fungsi panjumlahan lan perkalian~$\Add$ lan $\Mult$. Fungsi
+identitas $\fn{id}(x) = x$ iku rekursif primitif, amarga
+mung~$\Proj{1}{0}$. Fungsi konstan $\fn{const}_n(x) = n$
+uga rekursif primitif, amarga bisa ditegesi saka $\Zero$
+lan $\Succ$ kanthi komposisi kang ditrapake bola-bali.
+Iki migunani nalika kita arep nganggo konstanta ing definisi
+rekursif primitif. Umpamane, yen kita arep netepake fungsi
+$f(x) = 2 \cdot x$, kita bisa ngasilake kanthi komposisi
+saka $\fn{const}_n(x)$ lan perkalian minangka $f(x) =
+\Mult(\fn{const}_2(x), \Proj{1}{0}(x))$. Wiwit saiki kita
+bakal nggunakake cara iki.
+
+\begin{prop}
+  Fungsi pemangkatan $\fn{exp}(x, y) = x^y$ iku rekursif primitif.
+\end{prop}
+
+\begin{proof}
+  Kita bisa netepake $\fn{exp}$ kanthi rekursi primitif kaya mangkene:
+  \begin{align*}
+    \fn{exp}(x, 0) & = 1\\
+    \fn{exp}(x, y+1) & = \Mult(x, \fn{exp}(x,y)).
+    \intertext{Miturut syarat kang tliti, iki durung dadi definisi
+      rekursif saka fungsi rekursif primitif. Nanging kanthi
+      wangun kang cocog karo aturan, kita nduweni:}
+    \fn{exp}(x, 0) & = f(x)\\
+    \fn{exp}(x, y+1) & = g(x, y, \fn{exp}(x,y)).
+    \intertext{ing ngendi}
+    f(x) & = \Succ(\Zero(x)) = 1\\
+    g(x, y, z) & = \Mult(\Proj{3}{0}(x, y, z), \Proj{3}{2}(x, y, z)) = x \cdot z
+  \end{align*}
+  mula $f$ lan $g$ ditegesi saka fungsi rekursif primitif
+  kanthi komposisi.
+\end{proof}
+
+\begin{prop}
+  Fungsi pendahulu $\fn{pred}(y)$ kang ditegesi kanthi
+  \[
+  \fn{pred}(y) = \begin{cases}
+    0 & \text{yen $y=0$}\\
+    y-1 & \text{yen ora}
+  \end{cases}
+  \]
+  iku rekursif primitif.
+\end{prop}
+
+\begin{proof}
+ Gatekna yen
+ \begin{align*}
+   \fn{pred}(0) & = 0 \text{ lan}\\
+   \fn{pred}(y+1) & = y.
+ \end{align*}
+ Iki meh dadi definisi rekursif primitif. Nanging, miturut
+ syarat kang tliti, iki durung cocog karo pola definisi
+ kanthi rekursi primitif, amarga pola kasebut mbutuhake
+ paling ora siji argumen tambahan~$x$. Uga katon aneh
+ amarga $\fn{pred}(y)$ saktemene ora digunakake ing
+ definisi $\fn{pred}(y+1)$. Nanging kita bisa netepake dhisik
+ $\fn{pred}'(x, y)$ kanthi
+ \begin{align*}
+   \fn{pred}'(x, 0) & = \Zero(x) = 0,\\
+   \fn{pred}'(x, y+1) & = \Proj{3}{1}(x, y, \fn{pred'}(x, y)) = y.
+ \end{align*}
+lan banjur netepake $\fn{pred}$ saka fungsi kasebut kanthi
+komposisi, umpamane minangka
+$\fn{pred}(x) = \fn{pred}'(\Zero(x), \Proj{1}{0}(x))$.
+\end{proof}
+
+\begin{prop}
+  Fungsi faktorial $\fn{fac}(x) = \fact{x} = 1 \cdot 2 \cdot 3
+  \cdot \dots \cdot x$ iku rekursif primitif.
+\end{prop}
+
+\begin{proof}
+  Definisi rekursif primitif kang paling cetha yaiku
+  \begin{align*}
+    \fn{fac}(0) &= 1\\
+    \fn{fac}(y+1) & = \fn{fac}(y) \cdot (y+1).
+    \intertext{Miturut aturan, kita kudu luwih dhisik
+      netepake fungsi rong panggonan $h$}
+    h(x, 0) & = \fn{const}_1(x)\\
+    h(x, y+1) & = g(x, y, h(x, y))
+    \intertext{ing ngendi $g(x, y, z) = \Mult(\Proj{3}{2}(x, y, z),
+      \Succ(\Proj{3}{1}(x, y, z)))$ banjur netepake}
+    \fn{fac}(y) & = h(\Proj{1}{0}(y), \Proj{1}{0}(y)) = h(y,y).
+  \end{align*}
+  Wiwit saiki kita bakal luwih luwes lan ora mesthi menehi
+  definisi kang manut aturan kanthi komposisi lan rekursi
+  primitif.
+\end{proof}
+
+\begin{prop}
+  Pangurangan terpotong, $x \tsub y$, kang ditegesi kanthi
+  \[
+  x \tsub y = \begin{cases}
+    0 & \text{yen $x < y$}\\
+    x-y & \text{yen ora}
+  \end{cases}
+  \]
+  iku rekursif primitif.
+\end{prop}
+
+\begin{proof}
+  Kita nduweni:
+  \begin{align*}
+    x \tsub 0 & = x\\
+    x \tsub (y+1) & = \fn{pred}(x \tsub y)
+  \end{align*}
+\end{proof}
+
+\begin{prop}
+  Jarak antarane $x$ lan $y$, $\left|x-y\right|$, iku rekursif primitif.
+\end{prop}
+
+\begin{proof}
+  Kita nduweni $\left| x-y \right| = (x \tsub y) + (y \tsub x)$,
+  mula jarak bisa ditegesi kanthi komposisi saka $+$ lan $\tsub$,
+  kang kalorone rekursif primitif.
+\end{proof}
+
+\begin{prop}
+  Biji maksimum saka $x$ lan $y$, $\fn{max}(x,y)$, iku rekursif primitif.
+\end{prop}
+
+\begin{proof}
+  Kita bisa netepake $\fn{max}(x,y)$ kanthi komposisi saka $+$ lan $\tsub$:
+  \[
+  \fn{max}(x,y) \defis x + (y \tsub x).
+  \]
+  Yen $x$ iku maksimum, yaiku $x \ge y$, mula $y \tsub x = 0$,
+  dadi $x + (y \tsub x) = x + 0 = x$. Yen $y$ iku maksimum,
+  mula $y \tsub x = y - x$, lan dadi
+  $x + (y \tsub x) = x + (y - x) = y$.
+\end{proof}
+
+\begin{prop}
+  \ollabel{prop:min-pr}
+  Biji minimum saka $x$ lan $y$, $\fn{min}(x,y)$, iku rekursif primitif.
+\end{prop}
+
+\begin{proof}
+  Latihan.
+\end{proof}
+
+\begin{prob}
+  Buktikna \olref[cmp][rec][exa]{prop:min-pr}.
+\end{prob}
+
+\begin{prob}
+Tuduhna yen \[
+f(x, y) =
+2^{(2^{\iddots^{2^{x}}})}\raisebox{1ex}{\bigg\rbrace}
+\raisebox{1ex}{\text {$y$ angka $2$}}\] iku rekursif primitif.
+\end{prob}
+
+\begin{prob}
+Tuduhna yen pambagian wilangan wutuh $d(x, y) = \lfloor x/y \rfloor$
+(yaiku pambagian kang ora nggatekake bagean sawise tandha desimal)
+iku rekursif primitif. Yen $y = 0$, kita netepake
+$d(x, y) = 0$. Wenehana definisi eksplisit kanggo~$d$
+nganggo rekursi primitif lan komposisi.
+\end{prob}
+
+\begin{prop}
+Himpunan fungsi rekursif primitif katutup tumrap
+rong operasi iki:
+\begin{enumerate}
+\item Jumlah winates: yen $f(\vec x, z)$ iku rekursif primitif,
+mula fungsi
+\[
+g(\vec x, y) \defis \sum_{z = 0}^y f(\vec x, z).
+\]
+uga rekursif primitif.
+\item Asil kali winates: yen $f(\vec x, z)$ iku rekursif
+primitif, mula fungsi
+\[
+h(\vec x, y) \defis \prod_{z = 0}^y f(\vec x, z).
+\]
+uga rekursif primitif.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+Umpamane, jumlah winates ditegesi kanthi rekursif liwat
+persamaan iki:
+\begin{align*}
+  g(\vec x, 0) & = f(\vec x, 0)\\
+  g(\vec x, y+1) & = g(\vec x, y) + f(\vec x, y+1).
+\end{align*}
+\end{proof}
+
+\end{document}

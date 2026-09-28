@@ -1,0 +1,96 @@
+% Part: normal-modal-logic
+% Chapter: frame-definability
+% Section: first-order-definability
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{frd}{fol}
+
+\olsection{Definabilitas Orde Kapisan}
+
+Kita wis weruh yen saweneh sipat relasi aksesibilitas bingkai
+bisa didéfinisikake dening !!{formula}s modal. Upamane, simetri
+bingkai bisa didéfinisikake dening !!{formula}~\Ax{B}, $p \lif
+\Box\Diamond p$. Kabeh kondisi kang wis kita temoni nganti saiki
+bisa diandharake nganggo !!{formula}s orde kapisan ing !!a{language}
+kang mung ngemot siji !!{predicate} rong panggonan. Upamane, simetri
+didéfinisikake dening
+$\lforall[x][\lforall[y][(\Atom{Q}{x,y} \lif \Atom{Q}{y, x})]]$
+ing pangertèn yen !!{structure} orde kapisan~$\Struct{M}$ kanthi
+$\Domain{M} = W$ lan $\Assign{Q}{M} = R$ nyukupi formula kasebut yen
+lan mung yen $R$ simetris. Iki nuntun marang definisi iki:
+
+\begin{defn}
+  Kelas bingkai~$\mClass{F}$ \emph{bisa didéfinisikake kanthi orde
+    kapisan} yen ana !!a{sentence}~$!A$ ing basa orde kapisan kang mung
+  nduweni siji !!{predicate} rong panggonan~$Q$ saengga $\mModel{F} =
+  \tuple{W, R} \in \mClass{F}$ yen lan mung yen $\Sat{M}{!A}$ ing
+  !!{structure} orde kapisan~$\Struct{M}$ kanthi $\Domain{M} = W$ lan
+  $\Assign{Q}{M} = R$.
+\end{defn}
+
+Nyatane sipat-sipat lan !!{formula}s modal kang
+ndéfinisikake sipat kasebut, kang wis ditliti nganti saiki, iku
+istimewa. Ora saben !!{formula} ndéfinisikake kelas bingkai kang bisa
+didéfinisikake kanthi orde kapisan; lan ora saben kelas bingkai kang
+bisa didéfinisikake kanthi orde kapisan bisa didéfinisikake dening
+formula modal.
+
+Tuladha kontra kanggo pratelan kapisan yaiku formula L\"ob:
+\begin{equation}
+\Box(\Box p \lif p) \lif \Box p. \tag{\Ax{W}}
+\end{equation}
+\Ax{W} ndéfinisikake kelas bingkai transitif kang mapan kanthi becik
+saka arah kosok baline. Sawijining relasi mapan kanthi becik yen ora
+ana runtutan tanpa wates
+$w_1$, $w_2$, \dots{} kang nyukupi $Rw_2w_1$, $Rw_3w_2$, \dots.
+Upamane, relasi $<$ ing~$\Nat$ mapan kanthi becik, nanging relasi
+$<$ ing~$\Int$ ora. Relasi mapan kanthi becik saka arah kosok baline
+yen lan mung yen relasi kosok baline mapan kanthi becik. Dadi, relasi
+kang mapan kanthi becik saka arah kosok baline yaiku relasi kang ora
+nduweni runtutan tanpa wates $w_1$, $w_2$, \dots{} kang nyukupi
+$Rw_1w_2$, $Rw_2w_3$, \dots.
+
+Nanging ora ana !!{formula} orde kapisan kang
+ndéfinisikake relasi transitif kang mapan kanthi becik saka arah
+kosok baline. Upamane~$\Sat{M}{!F}$ yen lan mung yen $R =
+\Assign{Q}{M}$ transitif lan mapan kanthi becik saka arah kosok
+baline. Kanggo saben indeks wiwit loro, $!A_n$ iku !!{formula}
+\[
+(\Atom{Q}{a_1,a_2} \land \dots \land
+    \Atom{Q}{a_{n-1},a_{n}})
+\]
+Saiki delengen himpunan !!{formula}s
+\[
+\Gamma = \{!F, !A_2, !A_3, \dots\}.
+\]
+Saben subhimpunan winates saka $\Gamma$ bisa dipenuhi: Yen ora ana
+formula rantai ing subhimpunan iku, pilih model kanthi siji donya lan
+relasi kosong. Yen ana, pilih $k$ paling gedhe saengga $!A_k$ kalebu ing
+subhimpunan iku, lan pilih $\Domain{M_k} = \{1, \dots, k\}$,
+$\Assign{a_i}{M_k} = i$ kanggo indeks nganti k (konstanta liyane
+ditafsirake sakarepe), lan $\Assign{Q}{M_k} = <$. Amarga $<$ ing
+$\{1, \dots, k\}$ transitif lan mapan kanthi becik saka arah kosok
+baline, $\Sat{M_k}{!F}$. Miturut konstruksi, $\Sat{M_k}{!A_i}$ kanggo
+saben $i \le k$. Miturut Teorema Kompaksi kanggo logika orde kapisan,
+$\Gamma$ bisa dipenuhi ing sawijining !!{structure}~$\Struct{M}$.
+Miturut hipotesis, amarga $\Sat{M}{!F}$, relasi $\Assign{Q}{M}$ mapan
+kanthi becik saka arah kosok baline. Nanging cetha yen
+$\Assign{a_1}{M}$, $\Assign{a_2}{M}$, \dots{} bakal mbentuk runtutan
+tanpa wates saka jinis kang dilarang dening sipat kasebut.
+
+Tuladha kontra kanggo pratelan kapindho yaiku sipat
+universalitas: kanggo saben $u$ lan $v$, $Ruv$. Bingkai universal bisa
+didéfinisikake kanthi orde kapisan dening formula
+$\lforall[x][\lforall[y][\Atom{Q}{x,y}]]$. Nanging ora ana formula
+modal kang valid ing kabeh lan mung bingkai universal. Iki akibat saka
+asil kang uga narik kawigaten dhewe: formula-formula kang valid ing
+bingkai universal persis padha karo kang valid ing bingkai refleksif,
+simetris, lan transitif. Ana bingkai refleksif, simetris, lan
+transitif kang ora universal; mula saben !!{formula} kang valid ing
+kabeh bingkai universal uga valid ing sawetara bingkai kang ora
+universal.
+
+\end{document}

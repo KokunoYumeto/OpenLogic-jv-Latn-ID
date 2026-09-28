@@ -1,0 +1,140 @@
+% Part: first-order-logic 
+% Chapter: axiomatic-deduction 
+% Section: deduction-theorem
+
+% pamriksan sipat-sipat provabilitas kang dibutuhake kanggo himpunan
+% konsisten maksimal ing bab kelengkapan.
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{axd}{ded}}
+      {\olfileid{pl}{axd}{ded}}
+
+\olsection{Teorema Deduksi}
+
+Kaya kang wis dideleng, nyuguhake !!{derivation}s ing sistem aksiomatik
+iku rumit, lan !!{derivation}s kasebut bisa uga angel ditemokake.
+Tinimbang nulis dhaptar !!{formula}s kang dawa kanthi rinci, lumrahe luwih
+gampang mbuktekake yen !!{derivation}s kasebut ana kanthi nggunakake
+sawetara asil prasaja. Kita wis netepake telung asil kaya mangkono:
+\olref[ptn]{prop:reflexivity} nyebutake yen kita tansah bisa negesake
+$\Gamma \Proves !A$ nalika ngerti yen $!A \in \Gamma$.
+\olref[ptn]{prop:monotonicity} nyebutake yen, yen $\Gamma \Proves !A$,
+mula uga $\Gamma \cup \{!B\} \Proves !A$. Lan
+\olref[ptn]{prop:transitivity} menehi akibat yen, yen $\Gamma \Proves
+!A$ lan $!A \Proves !B$, mula $\Gamma \Proves !B$. Ana asil
+prasaja liyane, yaiku versi “meta” saka modus ponens:
+
+\begin{prop}
+  \ollabel{prop:mp} Yen $\Gamma \Proves !A$ lan $\Gamma \Proves !A
+  \lif !B$, mula $\Gamma \Proves !B$.
+\end{prop}
+
+\begin{proof}
+  Kita duwe $\{!A, !A \lif !B\} \Proves !B$:
+  \begin{derivation}
+    1. & $!A$ & Hip.\\
+    2. & $!A \lif !B$ & Hip.\\
+    3. & $!B$ & 1, 2, MP
+  \end{derivation}
+  Miturut \olref[ptn]{prop:transitivity}, $\Gamma \Proves !B$.
+\end{proof}
+
+Asil paling wigati kang bakal digunakake ing konteks iki yaiku
+teorema deduksi:
+
+\begin{thm}[Teorema Deduksi]
+\ollabel{thm:deduction-thm} $\Gamma \cup \{!A\} \Proves !B$ yen lan
+mung yen $\Gamma \Proves !A \lif !B$.
+\end{thm}
+
+\begin{proof}
+Arah “yen” langsung lumaku. Yen $\Gamma \Proves !A \lif !B$, mula
+uga $\Gamma \cup \{!A\} \Proves !A \lif !B$ miturut
+\olref[ptn]{prop:monotonicity}. Uga, $\Gamma \cup \{!A\} \Proves !A$
+miturut \olref[ptn]{prop:reflexivity}. Mula, miturut
+\olref{prop:mp}, $\Gamma \cup \{!A\} \Proves !B$.
+
+Kanggo arah “mung yen”, kita lumaku kanthi induksi miturut dawane
+!!{derivation} kang formula pungkasane $!B$ saka $\Gamma \cup \{!A\}$.
+
+Kanggo kasus dhasar induksi, kita mbuktekake pratelan kasebut kanggo
+saben !!{derivation} kang dawane~$1$. !!^a{derivation} kang formula
+pungkasane~$!B$ saka $\Gamma \cup \{!A\}$ lan dawane~$1$ mung dumadi
+saka $!B$ dhewe; lan yen iku bener, $!B \in \Gamma \cup \{!A\}$ utawa
+iku aksioma.
+Cathetan koreksi sumber OLPL-027: sumber Inggris misahake B saka
+tandha kaanggotaan, dene pamisahan kasus sabanjure mbutuhake
+pratelan kaanggotaan kang pepak iki. Yen $!B \in \Gamma$ utawa iku
+aksioma, mula $\Gamma \Proves !B$. Kita uga duwe $\Gamma
+\Proves !B \lif (!A \lif !B)$ miturut \olref[prp]{ax:lif1}, lan
+\olref{prop:mp} menehi $\Gamma \Proves !A \lif !B$. Yen $!B \in \{
+!A\}$, mula $\Gamma \Proves !A \lif !B$, amarga !!{sentence}
+pungkasan~$!A \lif !B$ padha karo $!A \lif !A$, lan kita wis
+!!{derive} iki ing \olref[pro]{ex:identity}.
+
+Kanggo langkah induktif, upamana !!a{derivation} kang formula pungkasane
+$!B$ saka $\Gamma \cup \{!A\}$ lan langkah pungkasan~$!B$ kasebut
+nduweni dhasar modus ponens. (Yen dhasare dudu modus ponens, mula
+$!B \in \Gamma$, $!B \ident !A$, utawa $!B$ minangka aksioma, lan
+pamikiran kang padha karo basis induksi lumaku.) Banjur sawetara
+langkah sadurunge ing !!{derivation} kasebut yaiku $!C \lif !B$ lan
+$!C$, kanggo sawijining !!{formula}~$!C$, yaiku $\Gamma \cup \{!A\}
+\Proves !C \lif !B$ lan $\Gamma \cup \{!A\} \Proves !C$, lan
+!!{derivation}s kasebut luwih cekak, mula hipotesis induksi lumaku
+kanggo kalorone. Dadi, kita nduweni:
+\begin{align*}
+  & \Gamma \Proves !A \lif (!C \lif !B); \\
+  & \Gamma \Proves !A \lif !C.
+\end{align*}
+Nanging uga
+\[
+\Gamma \Proves (!A \lif (!C \lif !B)) \lif
+((!A\lif !C)  \lif (!A \lif !B)),
+\]
+miturut \olref[prp]{ax:lif2}, lan rong aplikasi
+\olref{prop:mp} menehi $\Gamma \Proves !A \lif !B$, kaya kang
+dikarepake.
+\end{proof}
+
+Gatekna carane \olref[prp]{ax:lif1} lan \olref[prp]{ax:lif2} dipilih
+mligi supaya Teorema Deduksi lumaku.
+
+Ing ngisor iki sawetara kasunyatan migunani ngenani
+!!{derivability}, kang ditinggalake minangka gladhen.
+
+\begin{prop}
+  \ollabel{prop:derivfacts}
+\begin{enumerate}
+\item $\Proves (!A \lif !B) \lif ((!B \lif !C)
+  \lif (!A \lif !C))$; \ollabel{derivfacts:a}
+  Cathetan koreksi sumber OLPL-028: siji kurung panutup kang ilang ing
+  sumber Inggris dibalekake supaya formula iki imbang.
+\item Yen $\Gamma \cup \{ \lnot !A\}
+  \Proves \lnot !B$, mula $\Gamma \cup \{ !B\} \Proves
+  !A$ (Kontraposisi); \ollabel{derivfacts:b}
+\item  $\{ !A, \lnot!A\} \Proves
+    !B$ (Ex Falso Quodlibet, Eksplosi); \ollabel{derivfacts:c}
+\item  $\{ \lnot\lnot!A\} \Proves
+  !A$ (Eliminasi Negasi Rangkep);\ollabel{derivfacts:d}
+\item Yen $\Gamma \Proves \lnot\lnot!A$, mula $\Gamma \Proves
+  !A$;\ollabel{derivfacts:e}
+\end{enumerate}
+\end{prop}
+
+\tagprob{FOL}
+\begin{prob}
+  Buktekna \olref[fol][axd][ded]{prop:derivfacts}
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+  Buktekna \olref[pl][axd][ded]{prop:derivfacts}
+\end{prob}
+\tagendprob
+
+\end{document}

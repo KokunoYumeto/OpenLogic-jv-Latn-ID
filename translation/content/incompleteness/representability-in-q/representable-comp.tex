@@ -1,0 +1,114 @@
+% Part: incompleteness
+% Chapter: representability-in-q
+% Section: representable-comp
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{req}{rpc}
+\olsection{Fungsi Representabel ing $\Th{Q}$ Iku Komputabel}
+
+Kita bakal mbuktekake yen saben fungsi kang representabel ing~$\Th{Q}$
+iku komputabel. Luwih dhisik, kita kudu netepake sawijining lema
+ngenani fungsi kang representabel ing~$\Th{Q}$.
+
+\begin{lem}\ollabel{lem:rep-q}
+  Yen $f(x_0,
+  \dots, x_k)$ representabel ing~$\Th{Q}$, ana
+  !!a{formula}~$!A(x_0, \dots, x_k, y)$ saengga
+  \[
+  \Th{Q} \Proves !A_f(\num{n_0}, \dots, \num{n_k}, \num{m})
+  \quad\text{iff}\quad m = f(n_0, \dots, n_k).
+  \]
+\end{lem}
+
+\begin{proof}
+  Arah ``yen'' iku
+\olref[int]{defn:representable-fn}\olref[int]{defn:rep:a}. Arah ``mung
+yen'' katon kaya mangkene: Upamana $\Th{Q} \Proves !A_f(\num{n_0},
+\dots, \num{n_k}, \num{m})$ nanging $m \neq f(n_0, \dots, n_k)$. Tetepna $l =
+f(n_0, \dots, n_k)$. Miturut
+\olref[int]{defn:representable-fn}\olref[int]{defn:rep:a}, $\Th{Q}
+\Proves !A_f(\num{n_0}, \dots, \num{n_k}, \num{l})$. Miturut
+\olref[int]{defn:representable-fn}\olref[int]{defn:rep:b},
+$\lforall[y][(!A_f(\num{n_0}, \dots, \num{n_k}, y) \lif \num{l} =
+y)]$. Kanthi logika lan asumsi yen $\Th{Q} \Proves
+!A_f(\num{n_0}, \dots, \num{n_k}, \num{m})$, kita entuk $\Th{Q}
+\Proves \eq[\num{l}][\num{m}]$. Nanging, miturut
+\olref[bre]{lem:q-proves-neq}, $\Th{Q} \Proves
+\eq/[\num{l}][\num{m}]$. Dadi $\Th{Q}$ ora konsisten. Iki
+ora mungkin, amarga model standar nyukupi $\Th{Q}$ (delengen
+\olref[int][def]{def:standard-model}), $\Sat{N}{\Th{Q}}$, lan
+teori kang bisa dicukupi mesthi konsisten miturut Teorema Kesahihan
+(\tagrefs{prfAX/{fol:axd:sou:cor:consistency-soundness},
+prfSC/{fol:seq:sou:cor:consistency-soundness},
+prfND/{fol:ntd:sou:cor:consistency-soundness},
+prfTab/{fol:tab:sou:cor:consistency-soundness}}).
+\end{proof}
+
+\begin{lem}
+Saben fungsi kang representabel ing $\Th{Q}$ iku komputabel.
+\end{lem}
+
+\begin{proof}
+Luwih dhisik, ayo deleng gagasan intuitif kenapa pratelan iki bener.
+Kanggo ngitung~$f$, kita nindakake iki. Dhaptarna kabeh
+!!{derivation}s~$\delta$ kang mungkin ing basa aritmetika. Iki
+bisa ditindakake kanthi mekanis. Kanggo saben derivasi, priksa apa iku
+!!a{derivation} saka !!a{formula} kang awujud~$!A_f(\num{n_0}, \dots,
+\num{n_k}, \num{m})$ (!!{formula} kang merepresentasikake $f$ ing~$\Th{Q}$
+saka \olref{lem:rep-q}). Yen iya, $m = f(n_0, \dots, n_k)$ miturut
+\olref{lem:rep-q}, lan kita wis nemokake bijine~$f$. Panggolekan iki
+mandheg amarga $\Th{Q} \Proves !A_f(\num{n_0}, \dots, \num{n_k},
+\num{f(n_0, \dots, n_k)})$, mula pungkasane kita nemokake $\delta$ kang
+cocog.
+
+Iki durung persis, amarga prosedur kita nggarap
+!!{derivation}s lan !!{formula}s, dudu mung bilangan, lan kita
+durung nerangake kanthi tepat kenapa ``ndhaptar kabeh !!{derivation}s
+kang mungkin'' bisa ditindakake kanthi mekanis. Nanging, kaya kang wis
+kita deleng, suku, !!{formula}s, lan !!{derivation}s bisa dikodeake
+nganggo bilangan G\"odel. Kita uga wis ngenalake model komputasi kang
+persis, yaiku fungsi rekursif umum. Lan kita wis weruh yen relasi
+$\Prf[\Th{Q}](d,y)$, kang lumaku yen lan mung yen $d$ iku bilangan
+G\"odel saka !!a{derivation} kanggo !!{formula} kanthi bilangan
+G\"odel~$y$ saka aksioma~$\Th{Q}$, iku rekursif (primitif). Fungsi
+rekursif primitif liyane kang dibutuhake yaiku $\fn{num}$
+(\olref[art][trm]{prop:num-primrec}) lan $\fn{Subst}$
+(\olref[art][sub]{prop:subst-primrec}). Saka fungsi lan relasi iki,
+$f$ bisa ditegesi liwat minimalisasi; mula $f$ rekursif.
+
+Luwih dhisik, tegesna
+\begin{multline*}
+  A(n_0, \dots, n_k, m) = \\
+  \fn{Subst}(\fn{Subst}(\dots\fn{Subst}(\Gn{!A_f}, \fn{num}(n_0), \Gn{x_0}),\\ \dots),
+  \fn{num}(n_k),  \Gn{x_k}), \fn{num}(m), \Gn{y})
+\end{multline*}
+Iki katon ruwet, nanging mung fungsi $A(n_0, \dots, n_k,
+m) = \Gn{!A_f(\num{n_0}, \dots, \num{n_k}, \num{m})}$.
+
+Saiki, delengen relasi~$R(n_0, \dots, n_k, s)$ kang lumaku yen
+$(s)_0$ iku bilangan G\"odel saka !!a{derivation} saka~$\Th{Q}$ kanggo
+$!A_f(\num{n_0}, \dots, \num{n_k}, \num{(s)_1})$:
+\[
+R(n_0, \dots, n_k, s) \quad\text{iff}\quad \Prf[\Th{Q}]((s)_0, A(n_0,
+\dots, n_k, (s)_1))
+\]
+Yen kita bisa nemokake~$s$ saengga $R(n_0, \dots, n_k, s)$ lumaku, kita wis
+nemokake pasangan bilangan---$(s)_0$ lan~$(s)_1$---saengga $(s)_0$ iku
+bilangan G\"odel saka !!a{derivation} kanggo~$A_f(\num{n_0}, \dots,
+\num{n_k}, (s)_1)$. Mula nggoleki~$s$ padha karo nggoleki pasangan
+$d$ lan $m$ ing bukti informal mau. Fungsi komputabel kang
+``nggoleki'' $s$ kaya mangkono bisa ditegesi liwat panggolekan tanpa
+wates reguler. Gatekna yen $R$ reguler: kanggo saben $n_0$, \dots, $n_k$, ana
+!!a{derivation}~$\delta$ kanggo $\Th{Q} \Proves !A_f(\num{n_0}, \dots,
+\num{n_k}, \num{f(n_0, \dots, n_k)})$, mula $R(n_0, \dots, n_k, s)$
+lumaku kanggo $s = \tuple{\Gn{\delta}, f(n_0, \dots, n_k)}$. Dadi, kita bisa
+nulis $f$ dadi
+\[
+f(n_0,\dots,n_{k}) = (\umin{s}{R(n_0, \dots, n_k, s)})_1.
+\]
+\end{proof}
+
+\end{document}

@@ -10,19 +10,19 @@
 
 \olsection{Urutan Pambentukan}
 
-Nemtokake !!{formula}s nganggo definisi induktif, lan teknik
-gegandhengane kanggo mbuktekake sipat !!{formula}s kanthi induksi,
-iku pendekatan kang endah lan efisien. Nanging, kita uga kadhangkala
-perlu nggatekake pendekatan saka ngisor menyang ndhuwur, tahap demi
-tahap, kanggo mbangun !!{formula}s. Ing kene kita nindakake iki nganggo
-gagasan \emph{urutan pambentukan}.
+Nemtokake !!{formula}s nganggo definisi induktif, lan teknik kanggo
+mbuktekake sipat !!{formula}s kanthi induksi kang nglengkapi cara mau,
+iku pendekatan kang endah lan efisien. Nanging, uga bisa migunani yen
+kita nggatekake pendekatan liyane saka ngisor menyang ndhuwur, langkah
+mbaka langkah, kanggo mbangun !!{formula}s. Ing kene pendekatan iki kita
+lakoni kanthi gagasan \emph{urutan pambentukan}.
 
 \begin{defn}[Urutan pambentukan kanggo formula]
 \ollabel{defn:fseq-frm}
 Urutan winates $\tuple{!A_0,\dotsc,!A_n}$ saka rerangken simbol ing
 basa~$\Lang L_0$ diarani \emph{urutan pambentukan} kanggo $!A$ yen
 $!A \ident !A_n$ lan kanggo kabeh $i \leq n$, $!A_i$ iku formula
-atomik utawa ana $j,k < i$ kang ndadekake salah siji saka perkara iki
+atomik utawa ana $j,k < i$ kanthi salah siji kahanan ing ngisor iki
 lumaku:
 \begin{enumerate}
     \tagitem{prvNot}{$!A_i \ident \lnot !A_j$.}{}%
@@ -42,7 +42,7 @@ lumaku:
     \lnot (\Obj p_1 \land \Obj p_0)
 }
 \]
-iku urutan pambentukan saka
+iku urutan pambentukan kanggo
 $\lnot (\Obj p_1 \land \Obj p_0)$, semono uga
 \[
 \tuple{
@@ -56,19 +56,20 @@ $\lnot (\Obj p_1 \land \Obj p_0)$, semono uga
 \]
 %
 Kaya kang katon saka tuladha kapindho, urutan pambentukan bisa ngemot
-``sampah'': formula kang mubazir utawa ora melu mbangun asil.
+``sampah'': formula kang ora dibutuhake utawa ora nyumbang tumrap
+pambentukan.
 \end{ex}
 
 \begin{prop}
 \ollabel{prop:formed}
-Saben !!{formula}~$!A$ ing~$\Frm[L_0]$ duwe urutan pambentukan.
+Saben !!{formula}~$!A$ ing~$\Frm[L_0]$ nduweni urutan pambentukan.
 \end{prop}
 
 \begin{proof}
-Upamakna $!A$ iku atomik. Banjur urutan~$\tuple{!A}$ minangka urutan
+Upamakna $!A$ iku atomik. Banjur urutan~$\tuple{!A}$ iku urutan
 pambentukan kanggo~$!A$.
 %
-Saiki upamakna $!B$ lan~$!C$ duwe urutan pambentukan
+Saiki upamakna $!B$ lan~$!C$ nduweni urutan pambentukan
 $\tuple{!B_0,\dotsc,!B_n}$ lan $\tuple{!C_0,\dotsc,!C_m}$
 miturut urutane.
 %
@@ -89,14 +90,14 @@ miturut urutane.
       mula $\tuple{!B_0,\dotsc,!B_n,!C_0,\dotsc,!C_m,(!B_n \liff !C_m)}$
       iku urutan pambentukan kanggo~$!A$.}{}
 \end{enumerate}
-Miturut asas induksi ing !!{formula}s, saben !!{formula} duwe urutan
+Miturut asas induksi ing !!{formula}s, saben !!{formula} nduweni urutan
 pambentukan.
 \end{proof}
 
 Kita uga bisa mbuktekake walikane. Iki wigati amarga nuduhake yen rong
-cara kita kanggo nemtokake formula iku ekuivalen: kalorone menehi asil
-kang padha. Iki uga ateges kita bisa mbuktekake teorema ngenani formula
-nganggo induksi lumrah ing dawa urutan pambentukan.
+cara nemtokake formula iku ekuivalen: kalorone menehi asil kang padha.
+Iki uga ateges kita bisa mbuktekake teorema ngenani formula kanthi
+induksi lumrah miturut dawane urutan pambentukan.
 
 \begin{lem}
 \ollabel{lem:fseq-init}
@@ -106,27 +107,27 @@ pambentukan kanggo~$!A_k$.
 \end{lem}
 
 \begin{proof}
-Latihan.
+Gladhen.
 \end{proof}
 
 \begin{thm}
 \ollabel{thm:fseq-frm-equiv}
 $\Frm[L_0]$ iku himpunan kabeh rerangken simbol ing basa~$\Lang L_0$
-kang duwe urutan pambentukan.
+kang nduweni urutan pambentukan.
 \end{thm}
 
 \begin{proof}
-$F$ dadi himpunan kabeh rerangken simbol ing basa~$\Lang L_0$ kang
-duwe urutan pambentukan. Ing \olref[pl][syn][fseq]{prop:formed} kita
+Tetepna $F$ minangka himpunan kabeh rerangken simbol ing basa~$\Lang L_0$
+kang nduweni urutan pambentukan. Ing \olref[pl][syn][fseq]{prop:formed} kita
 wis weruh yen $\Frm[L_0] \subseteq F$, mula saiki kita mbuktekake
 walikane.
 
-Upamakna $!A$ duwe urutan pambentukan $\tuple{!A_0,\dotsc,!A_n}$.
+Upamakna $!A$ nduweni urutan pambentukan $\tuple{!A_0,\dotsc,!A_n}$.
 Kita mbuktekake yen $!A \in \Frm[L_0]$ kanthi induksi kuwat ing~$n$.
-Hipotesis induksi kita yaiku saben rerangken simbol kang duwe urutan
-pambentukan dawa $m < n$ kalebu ing~$\Frm[L_0]$. Miturut definisi
-urutan pambentukan, $!A_n$ iku atomik utawa mesthi ana $j,k < n$ kang
-ndadekake salah siji saka perkara iki lumaku:
+Hipotesis induksi kita yaiku saben rerangken simbol kang nduweni urutan
+pambentukan kang dawane $m < n$ kalebu ing~$\Frm[L_0]$. Miturut definisi
+urutan pambentukan, $!A_n$ iku atomik utawa mesthi ana $j,k < n$ kanthi
+salah siji kahanan ing ngisor iki lumaku:
 \begin{enumerate}
     \tagitem{prvNot}{$!A_n \ident \lnot !A_j$.}{}%
     \tagitem{prvAnd}{$!A_n \ident (!A_j \land !A_k)$.}{}%
@@ -143,7 +144,7 @@ kalorone iku suburutan wiwitan sejati saka urutan pambentukan
 kanggo~$!A$, dawane kalorone kurang saka~$n$. Mula miturut hipotesis
 induksi, $!A_j$ lan~$!A_k$ kalebu ing~$\Frm[L_0]$, dadi miturut
 definisi !!a{formula}, $(!A_j \land !A_k)$ uga kalebu. Kasus liyane
-nduweni penalaran kang padha.
+bisa dibuktekake kanthi cara nalar kang padha.
 \end{proof}
 
 \end{document}

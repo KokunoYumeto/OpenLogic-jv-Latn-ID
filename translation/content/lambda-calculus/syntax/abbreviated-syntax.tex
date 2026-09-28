@@ -1,0 +1,59 @@
+% Part: lambda-calculus
+% Chapter: syntax
+% Section: abbreviated-syntax
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{syn}{abb}
+\olsection{Sintaksis kang Dicekak}
+
+Suku kang ditetepake ing
+\olref[trm]{defn:term} kadhangkala
+ruwet yen ditulis, mula migunani
+yen kita ngenalake sintaksis kang
+luwih ringkes. Mesthi wae kita kudu
+njamin yen suku kang ditulis kanthi
+notasi ringkes iku tetep bisa diwaca
+kanthi cara tunggal. Salah siji
+versi kang lumrah digunakake,
+diarani \emph{suku cekakan},
+kaya mangkene.
+
+\begin{enumerate}
+\item Yen tandha kurung ora ditulis,
+  aplikasi lumaku saka kiwa menyang
+  tengen. Umpamane, yen $M$, $N$,
+  $P$, lan~$Q$ iku suku, mula
+  $MNPQ$ iku cekakan saka
+  $(((MN)P)Q)$.
+\item Maneh, yen tandha kurung ora
+  ditulis, abstraksi lambda nduweni
+  cakupan paling amba kang bisa.
+  Umpamane, $\lambd[x][MNP]$
+  diwaca minangka
+  $(\lambd[x][MNP])$.
+\item Lambda bisa digunakake kanggo
+  ngiket luwih saka siji variabel.
+  Umpamane, $\lambd[xyz][M]$
+  iku cekakan saka
+  $\lambd[x][\lambd[y][\lambd[z][M]]]$.
+\end{enumerate}
+
+Umpamane,
+\[
+\lambd[xy][xxyx \lambd[z][xz]]
+\]
+iku cekakan saka
+\[
+(\lambd[x][(\lambd[y][((((xx)y)x)(\lambd[z][(xz)]))])]).
+\]
+
+\begin{prob}
+Uraikna suku cekakan
+$\lambd[g][(\lambd[x][g (x x)])
+  \lambd[x][g (x x)]]$.
+\end{prob}
+
+\end{document}

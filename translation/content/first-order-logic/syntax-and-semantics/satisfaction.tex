@@ -1,0 +1,478 @@
+% Part: first-order-logic
+% Chapter: syntax-and-semantics
+% Section: satisfaction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{syn}{sat}
+
+\olsection{Relasi Nyukupi \article{formula} \printtoken{S}{formula}
+  ing \article{structure} \printtoken{S}{structure}}
+
+\begin{explain}
+Gagasan dhasar kang ngubungake ungkapan kayata term lan
+!!{formula}s ing siji pihak karo !!{structure}s ing pihak liyane
+yaiku \emph{!!{value}} saka term lan \emph{relasi nyukupi}
+!!a{formula}. Sacara ora resmi, !!{value} saka term iku !!{element}
+saka !!a{structure}---yen term iku mung konstanta, !!{value}-ne
+yaiku obyek kang diwenehake marang konstanta dening !!{structure};
+yen term kawangun nganggo !!{function}s, !!{value}-ne dietung saka
+!!{value}s konstanta lan fungsi kang diwenehake marang simbol fungsi
+ing term kasebut. !!^a{formula} \emph{dicukupi} ing !!a{structure}
+yen interpretasi kang diwenehake marang predikat ndadekake
+!!{formula} iku bener ing domain !!{structure} kasebut. Gagasan
+relasi nyukupi iki ditemtokake kanthi induktif: spesifikasi
+!!{structure} langsung nemtokake kapan !!{formula}s atom dicukupi,
+dene kapan !!{formula} kompleks dicukupi kita tetepake miturut
+konektif utawa kuantor utama lan dicukupi utawa orane
+!!{subformula}s kang langsung.
+
+Kasus kuantor ing kene rada ruwet, amarga !!{subformula} kang
+langsung saka !!{formula} mawa kuantor nduweni !!{variable} bebas,
+lan !!{structure}s ora nemtokake !!{value}s saka !!{variable}s.
+Kanggo ngrampungi kangelan iki, kita uga ngenalake \emph{pangaji
+variabel} lan nemtokake relasi nyukupi
+dudu mung relatif marang !!a{structure}, nanging marang
+!!a{structure} bebarengan karo pangaji !!a{variable}.
+\end{explain}
+
+\begin{defn}[Pangaji Variabel]
+\emph{Pangaji variabel}~$s$ kanggo !!a{structure}~$\Struct{M}$
+iku fungsi kang masangake saben !!{variable} karo
+!!a{element} saka~$\Domain M$, yaiku
+$s\colon \Var \to \Domain M$.
+\end{defn}
+
+\begin{explain}
+!!^a{structure} menehi !!a{value} marang saben !!{constant},
+lan pangaji variabel menehi nilai marang saben variabel.
+Nanging, kita uga pengin nggunakake term kang kawangun saka
+simbol-simbol kasebut kanggo menehi jeneng marang !!{element}s
+saka !!{domain}. Mulane, kita nemtokake !!{value} saka term
+kanthi induktif. Kanggo !!{constant}s lan variabel, nilai kasebut
+persis kaya kang ditemtokake dening !!{structure} utawa pangaji
+variabel; kanggo term kang luwih rumit, nilaine dietung kanthi
+rekursif nggunakake fungsi kang diwenehake dening !!{structure}
+marang !!{function}s.
+\end{explain}
+
+\begin{defn}[!!^{value} saka Term]
+Yen $t$ iku term saka basa~$\Lang L$, $\Struct M$ iku
+!!{structure} kanggo~$\Lang L$, lan $s$ iku pangaji !!a{variable}
+kanggo~$\Struct M$, \emph{!!{value}}~$\Value{t}{M}[s]$
+ditetepake kaya mangkene:
+\begin{enumerate}
+\item \indcase{t}{c}{$\Value{\indfrm}{M}[s] = \Assign{\indcomplex}{M}$.}
+\item \indcase{t}{x}{$\Value{\indfrm}{M}[s] = s(\indcomplex)$.}
+\item \indcase{t}{\Atom{f}{t_1, \ldots, t_n}}{
+\[
+\Value{\indfrm}{M}[s] = \Assign{f}{M}(\Value{t_1}{M}[s], \ldots,
+\Value{t_n}{M}[s]).
+\]}
+\end{enumerate}
+\end{defn}
+
+\begin{defn}[Varian-$x$]
+Yen $s$ iku pangaji !!a{variable} kanggo !!a{structure}~$\Struct M$,
+mula sembarang pangaji !!{variable}~$s'$ kanggo~$\Struct M$
+kang beda saka~$s$ paling akeh mung ing nilai kang diwenehake
+marang~$x$ diarani \emph{varian-$x$} saka~$s$. Yen $s'$ iku
+varian-$x$ saka~$s$, kita nulis $\varAssign{s'}{s}{x}$.
+\end{defn}
+
+\begin{explain}
+Gatekna yen varian-$x$ saka pangaji~$s$ ora \emph{kudu}
+menehi nilai kang beda marang~$x$. Nyatane, saben pangaji
+iku varian-$x$ saka awake dhewe.
+\end{explain}
+
+\begin{defn}
+  Yen $s$ iku pangaji !!a{variable} kanggo !!a{structure}~$\Struct M$
+  lan $m \in \Domain{M}$, mula pangaji~$\Subst{s}{m}{x}$
+  yaiku pangaji variabel kang ditetepake dening
+  \[\Subst{s}{m}{x}(y) = \begin{cases}
+    m & \text{yen } y \ident x\\
+    s(y) & \text{yen ora}.
+  \end{cases}\]
+\end{defn}
+
+Kanthi tembung liya, $\Subst{s}{m}{x}$ iku varian-$x$
+tartamtu saka~$s$ kang menehi !!{element} domain~$m$ marang~$x$,
+lan menehi nilai marang !!{variable}s saliyane~$x$
+padha karo kang diwenehake~$s$.
+
+\begin{defn}[Relasi Nyukupi]
+\ollabel{defn:satisfaction}
+Relasi nyukupi tumrap !!a{formula}~$!A$ ing !!a{structure}~$\Struct M$
+relatif marang pangaji !!a{variable}~$s$, kang ditulis
+$\Sat{M}{!A}[s]$, ditetepake kanthi rekursif kaya mangkene.
+(Kita nulis $\Sat/{M}{!A}[s]$ kanggo teges "ora $\Sat{M}{!A}[s]$".)
+\begin{enumerate}
+\tagitem{prvFalse}{%
+  \indcase{!A}{\lfalse}{$\Sat/{M}{\indfrm}[s]$.}}{}
+
+\tagitem{prvTrue}{%
+  \indcase{!A}{\ltrue}{$\Sat{M}{\indfrm}[s]$.}}{}
+
+\item \indcase{!A}{\Atom{R}{t_1, \dots, t_n}}{$\Sat{M}{\indfrm}[s]$
+  yen lan mung yen $\langle \Value{t_1}{M}[s], \dots, \Value{t_n}{M}[s] \rangle \in
+  \Assign{R}{M}$.}
+
+\item \indcase{!A}{\eq[t_1][t_2]}{$\Sat{M}{\indfrm}[s]$ yen lan mung yen
+  $\Value{t_1}{M}[s] = \Value{t_2}{M}[s]$.}
+
+\tagitem{prvNot}{%
+  \indcase{!A}{\lnot !B}{$\Sat{M}{\indfrm}[s]$ yen lan mung yen
+    $\Sat/{M}{!B}[s]$.}}{}
+
+\tagitem{prvAnd}{%
+  \indcase{!A}{(!B \land !C)}{$\Sat{M}{\indfrm}[s]$ yen lan mung yen
+    $\Sat{M}{!B}[s]$ lan $\Sat{M}{!C}[s]$.}}{}
+
+\tagitem{prvOr}{%
+  \indcase{!A}{(!B \lor !C)}{$\Sat{M}{\indfrm}[s]$ yen lan mung yen
+    $\Sat{M}{!B}[s]$ utawa $\Sat{M}{!C}[s]$ (utawa kalorone).}}{}
+
+\tagitem{prvIf}{%
+  \indcase{!A}{(!B \lif !C)}{$\Sat{M}{\indfrm}[s]$ yen lan mung yen
+    $\Sat/{M}{!B}[s]$ utawa $\Sat{M}{!C}[s]$ (utawa kalorone).}}{}
+
+\tagitem{prvIff}{%
+  \indcase{!A}{(!B \liff !C)}{$\Sat{M}{\indfrm}[s]$ yen lan mung yen
+    $\Sat{M}{!B}[s]$ lan $\Sat{M}{!C}[s]$ kalorone,
+    utawa $\Sat{M}{!B}[s]$ lan $\Sat{M}{!C}[s]$ kalorone ora kelakon.}}{}
+
+\tagitem{prvAll}{%
+  \indcase{!A}{\lforall[x][!B]}{$\Sat{M}{\indfrm}[s]$ yen lan mung yen
+    kanggo saben !!{element}~$m \in \Domain M$,
+    $\Sat{M}{!B}[\Subst{s}{m}{x}]$.}}{}
+
+\tagitem{prvEx}{%
+  \indcase{!A}{\lexists[x][!B]}{$\Sat{M}{\indfrm}[s]$ yen lan mung yen
+    kanggo paling ora siji !!{element}~$m \in \Domain M$,
+    $\Sat{M}{!B}[\Subst{s}{m}{x}]$.}}{}
+\end{enumerate}
+\end{defn}
+
+\begin{explain}
+Pangaji variabel wigati ing
+\iftag{notprvEx,notprvAll}{klausa pungkasan}{rong klausa pungkasan}.
+\iftag{prvAll}{ Kita ora bisa nemtokake kapan
+$\lforall[x][!B(x)]$ dicukupi kanthi kandha "kanggo kabeh
+$m \in \Domain{M}$, $\Sat{M}{!B(m)}$".}{}\iftag{prvEx}{
+Kita ora bisa nemtokake kapan $\lexists[x][!B(x)]$ dicukupi kanthi
+kandha "kanggo paling ora siji $m \in \Domain{M}$,
+$\Sat{M}{!B(m)}$".}{} Sebabe, yen $m \in \Domain M$,
+unsur kasebut dudu simbol basa, mula $!B(m)$~dudu !!a{formula}
+(yaiku, $\Subst{!B}{m}{x}$ ora ditetepake). Kita uga ora bisa
+nganggep yen kita nduweni !!{constant}s utawa term kang bisa menehi
+jeneng marang saben !!{element} saka~$\Struct{M}$, amarga definisi
+!!{structure}s ora mbutuhake kuwi. Ing basa standar, himpunan
+!!{constant}s iku !!{denumerable}, mula yen $\Domain{M}$
+ora !!{enumerable}, cacah !!{constant}s malah ora cukup kanggo
+menehi jeneng marang saben obyek.
+
+Kita ngrampungi masalah iki kanthi ngenalake pangaji !!{variable},
+kang ngidini kita ngubungake variabel langsung karo !!{element}s
+domain. Dadi, tinimbang kandha, upamane,
+\iftag{prvEx}{$\lexists[x][!B(x)]$}{$\lforall[x][!B(x)]$}
+dicukupi ing~$\Struct M$ yen lan mung yen
+\iftag{prvEx}{kanggo paling ora siji $m \in \Domain{M}$,
+$\Sat{M}{!B(m)}$}{kanggo kabeh $m \in \Domain{M}$,
+$\Sat{M}{!B(m)}$}, kita kandha yen formula kasebut dicukupi
+ing~$\Struct M$ \emph{relatif marang}~$s$ yen lan mung yen
+$!B(x)$ dicukupi relatif marang~$\Subst{s}{m}{x}$
+\iftag{prvEx}{kanggo paling ora siji}{kanggo saben}
+$m \in \Domain M$. Cathetan koreksi sumber OLPL-073:
+cabang prvEx ing ukara bandhingan sumber mung nyebut
+anane unsur domain nanging ora nyebut syarat relasi nyukupi
+tumrap matriks; syarat kasebut dibalekake supaya sejajar
+karo cabang universal lan ukara sadurunge.
+\end{explain}
+
+\begin{ex}
+Upamakna $\Lang{L} = \{a, b, f, R\}$ kanthi $a$ lan $b$
+minangka !!{constant}s, $f$~!!{function} rong panggonan,
+lan $R$~!!{predicate} rong panggonan. Gatekna
+!!{structure}~$\Struct{M}$ kang ditetepake dening:
+\begin{enumerate}
+\item $\Domain M = \{1, 2, 3, 4\}$
+\item $\Assign{a}{M} = 1$
+\item $\Assign{b}{M} = 2$
+\item $\Assign{f}{M}(x, y) = x+y$ yen $x+y \le 3$ lan $= 3$
+  yen ora.
+\item $\Assign{R}{M} = \{\tuple{1, 1}, \tuple{1, 2}, \tuple{2, 3}, \tuple{2, 4}\}$
+\end{enumerate}
+Fungsi $s(x) = 1$ kang menehi $1 \in \Domain{M}$
+marang saben !!{variable} iku pangaji variabel kanggo~$\Struct{M}$.
+
+Banjur
+\begin{align*}
+\Value{f(a,b)}{M}[s] & = \Assign{f}{M}(\Value{a}{M}[s], \Value{b}{M}[s]).
+\intertext{Amarga $a$ lan $b$ iku !!{constant}s, $\Value{a}{M}[s]
+  = \Assign{a}{M} = 1$ lan $\Value{b}{M}[s] = \Assign{b}{M} = 2$. Mula}
+\Value{f(a,b)}{M}[s] & = \Assign{f}{M}(1, 2) = 1+2 = 3.
+\intertext{Kanggo ngetung nilai $f(f(a,b),a)$, kita kudu nimbang}
+\Value{f(f(a,b),a)}{M}[s] & = \Assign{f}{M}(\Value{f(a, b)}{M}[s],
+\Value{a}{M}[s]) = \Assign{f}{M}(3, 1) = 3,
+\intertext{amarga $3+1 > 3$. Amarga $s(x) = 1$ lan $\Value{x}{M}[s] =
+  s(x)$, kita uga nduweni}
+\Value{f(f(a,b),x)}{M}[s] & = \Assign{f}{M}(\Value{f(a, b)}{M}[s],
+\Value{x}{M}[s]) = \Assign{f}{M}(3, 1) = 3,
+\end{align*}
+
+!!{formula} atom~$R(t_1, t_2)$ dicukupi yen pasangan nilai
+argumene, yaiku $\tuple{\Value{t_1}{M}[s],
+  \Value{t_2}{M}[s]}$, dadi !!a{element} saka~$\Assign{R}{M}$.
+Dadi, upamane, kita nduweni $\Sat{M}{R(b,f(a,b))}[s]$
+amarga $\tuple{\Value{b}{M},
+  \Value{f(a,b)}{M}} = \tuple{2, 3} \in \Assign{R}{M}$,
+nanging $\Sat/{M}{R(x, f(a,b))}[s]$ amarga
+$\tuple{1, 3} \notin \Assign{R}{M}$.
+Cathetan koreksi sumber OLPL-072: interpretasi predikat
+iku ditemtokake dening struktur, dudu pangaji variabel;
+indeks pangaji kang
+kelebihan ing pungkasan rumus sumber dicopot.
+
+Kanggo nemtokake apa formula nonatomik~$!A$ dicukupi,
+gunakna klausa ing definisi induktif kang cocog karo
+konektif utama. Upamane, konektif utama ing
+$R(a, a) \lif (R(b, x) \lor R(x, b))$ yaiku~$\lif$, lan
+\begin{align*}
+  & \Sat{M}{R(a, a) \lif (R(b, x) \lor R(x, b))}[s]
+  \text{ yen lan mung yen }\\
+  & \qquad
+  \Sat/{M}{R(a,a)}[s] \text{ utawa } \Sat{M}{R(b, x) \lor R(x, b)}[s]
+  \intertext{Amarga $\Sat{M}{R(a,a)}[s]$ (awit $\tuple{1,1} \in
+    \Assign{R}{M}$), kita durung bisa nemtokake wangsulane lan kudu
+    mriksa dhisik apa $\Sat{M}{R(b, x) \lor R(x, b)}[s]$:}
+  & \Sat{M}{R(b, x) \lor R(x, b)}[s] \text{ yen lan mung yen }\\
+  & \qquad \Sat{M}{R(b,x)}[s] \text{ utawa } \Sat{M}{R(x, b)}[s]
+  \intertext{Iki pancen bener, amarga $\Sat{M}{R(x, b)}[s]$
+    (awit $\tuple{1,2} \in \Assign{R}{M}$).}
+\end{align*}
+
+Elinga yen varian-$x$ saka~$s$ iku pangaji variabel kang
+beda saka $s$ paling akeh mung ing nilai kang diwenehake
+marang~$x$. Kanggo saben !!{element} ing~$\Domain{M}$,
+ana varian-$x$ saka~$s$:
+\begin{align*}
+  s_1 & = \Subst{s}{1}{x}, &
+  s_2 & = \Subst{s}{2}{x},\\
+  s_3 & = \Subst{s}{3}{x}, &
+  s_4 & = \Subst{s}{4}{x}.
+\end{align*}
+Dadi, upamane, $s_2(x) = 2$ lan $s_2(y) = s(y) = 1$
+kanggo kabeh variabel~$y$ saliyane~$x$. Iki kabeh
+varian-$x$ saka~$s$ kanggo struktur~$\Struct{M}$,
+amarga $\Domain{M} = \{1, 2, 3, 4\}$. Gatekna,
+utamane, yen $s_1 = s$ ($s$~mesthi dadi varian-$x$
+saka awake dhewe).
+
+\iftag{prvEx}{Kanggo nemtokake apa !!{formula} mawa kuantor
+  eksistensial~$\lexists[x][!A(x)]$ dicukupi, kita kudu nemtokake
+  apa $\Sat{M}{!A(x)}[\Subst{s}{m}{x}]$ kanggo paling ora siji
+  $m \in \Domain M$. Dadi,
+  \[
+  \Sat{M}{\lexists[x][(R(b,x) \lor R(x,b))]}[s],
+  \]
+  amarga $\Sat{M}{R(b,x) \lor R(x, b)}[\Subst{s}{1}{x}]$
+  ($\Subst{s}{3}{x}$ uga bisa dadi paseksi). Nanging,
+  \[
+  \Sat/{M}{\lexists[x][(R(b,x) \land R(x,b))]}[s]
+  \]
+  amarga kanggo sembarang $m \in \Domain{M}$ kang kita pilih,
+  $\Sat/{M}{R(b,x) \land R(x,b)}[\Subst{s}{m}{x}]$.}{}
+
+\iftag{prvAll}{Kanggo nemtokake apa !!{formula} mawa kuantor
+  universal~$\lforall[x][!A(x)]$ dicukupi, kita kudu nemtokake
+  apa $\Sat{M}{!A(x)}[\Subst{s}{m}{x}]$ kanggo kabeh
+  $m \in \Domain M$. Dadi,
+  \[
+  \Sat{M}{\lforall[x][(R(x,a) \lif R(a,x))]}[s],
+  \]
+  amarga $\Sat{M}{R(x,a) \lif R(a,x)}[\Subst{s}{m}{x}]$
+  kanggo kabeh $m \in \Domain M$. Kanggo $m = 1$,
+  kita nduweni $\Sat{M}{R(a,x)}[\Subst{s}{1}{x}]$,
+  mula konsekuene bener; kanggo $m = 2$, $3$, lan~$4$,
+  kita nduweni $\Sat/{M}{R(x,a)}[\Subst{s}{m}{x}]$,
+  mula antesedene salah. Nanging,
+  \[
+  \Sat/{M}{\lforall[x][(R(a,x) \lif R(x,a))]}[s]
+  \]
+  amarga $\Sat/{M}{R(a,x) \lif R(x,a)}[\Subst{s}{2}{x}]$
+  (awit $\Sat{M}{R(a, x)}[\Subst{s}{2}{x}]$ lan
+  $\Sat/{M}{R(x, a)}[\Subst{s}{2}{x}]$).}{}
+
+\iftag{defEx}{Kanggo nemtokake apa !!{formula} mawa kuantor
+  eksistensial~$\lexists[x][!A(x)]$ dicukupi, kita kudu nemtokake
+  apa $\Sat{M}{\lnot \lforall[x][\lnot !A(x)]}[s]$.
+  Upamane, kita nduweni
+  \[
+  \Sat{M}{\lexists[x][(R(b,x) \lor R(x,b))]}[s].
+  \]
+  Kaping pisan, $\Sat{M}{R(b,x) \lor R(x, b)}[\Subst{s}{1}{x}]$
+  ($\Subst{s}{3}{x}$ uga bisa dadi paseksi). Mula,
+  $\Sat/{M}{\lnot(R(b,x) \lor R(x,b))}[\Subst{s}{1}{x}]$,
+  mula $\Sat/{M}{\lforall[x][\lnot(R(b,x) \lor R(x,b))]}[s]$,
+  lan mula $\Sat{M}{\lnot\lforall[x][\lnot(R(b,x) \lor
+  R(x,b))]}[s]$. Cathetan koreksi sumber OLPL-077:
+  kurung bukak kang keluwihan ing rong rumus kuantor
+  dicopot supaya matriks negasine imbang. Ing sisih liya,
+  \[
+  \Sat/{M}{\lexists[x][(R(b,x) \land R(x,b))]}[s].
+  \]
+  Cathetan koreksi sumber OLPL-074: koma kang kleru mlebu
+  ing argumen formula ing tampilan sumber wis dicopot.
+  Iki amarga $\Sat{M}{\lforall[x][\lnot(R(b,x) \land
+  R(x,b))]}[s]$, awit ora ana $m \in \Domain M$ kang
+  ndadekake $\Sat{M}{R(b,x) \land R(x,b)}[\Subst{s}{m}{x}]$.
+  Kaya kang bisa dikira saka tuladha iki,
+  $\Sat{M}{\lexists[x][!A(x)]}[s]$ yen lan mung yen
+  $\Sat{M}{!A(x)}[\Subst{s}{m}{x}]$ kanggo paling ora
+  siji $m \in \Domain M$.}{}
+
+\iftag{defAll}{Kanggo nemtokake apa !!{formula} mawa kuantor
+  universal~$\lforall[x][!A(x)]$ dicukupi, kita kudu nemtokake
+  apa $\Sat{M}{\lnot\lexists[x][\lnot !A(x)]}[s]$.
+  Upamane,
+  \[
+  \Sat{M}{\lforall[x][(R(x,a) \lif R(a,x))]}[s],
+  \]
+  Kaping pisan, $\Sat{M}{R(x,a) \lif R(a,x)}[\Subst{s}{m}{x}]$
+  kanggo kabeh $m \in \Domain M$
+  ($\Sat{M}{R(a,x)}[\Subst{s}{1}{x}]$ lan
+  $\Sat/{M}{R(x,a)}[\Subst{s}{m}{x}]$ kanggo $m = 2$,
+  $3$, utawa~$4$). Cathetan koreksi sumber OLPL-078:
+  predikat ing alesan kanggo telung nilai pungkasan
+  kudu duwe variabel ing argumen kapisan.
+  Mula ora ana $m \in \Domain M$
+  kang ndadekake $\Sat{M}{\lnot(R(x,a) \lif R(a,x))}[\Subst{s}{m}{x}]$,
+  mula $\Sat/{M}{\lexists[x][\lnot(R(x,a) \lif R(a,x))]}[s]$.
+  Dadi $\Sat{M}{\lnot\lexists[x][\lnot(R(x,a) \lif R(a,x))]}[s]$.
+  Ing sisih liya,
+  \[
+  \Sat/{M}{\lforall[x][(R(a,x) \lif R(x,a))]}[s],
+  \]
+  amarga $\Sat/{M}{R(a,x) \lif R(x,a)}[\Subst{s}{2}{x}]$,
+  mula $\Sat{M}{\lexists[x][\lnot(R(a,x) \lif R(x,a))]}[s]$.
+  Kaya kang bisa dikira saka tuladha iki,
+  $\Sat{M}{\lforall[x][!A(x)]}[s]$ yen lan mung yen
+  $\Sat{M}{!A(x)}[\Subst{s}{m}{x}]$ kanggo saben
+  $m \in \Domain M$.}{}
+
+Kanggo kasus kang luwih rumit, gatekna
+\[
+\lforall[x][(R(a,x) \lif \lexists[y][R(x,y)])].
+\]
+Amarga $\Sat/{M}{R(a,x)}[\Subst{s}{3}{x}]$ lan
+$\Sat/{M}{R(a,x)}[\Subst{s}{4}{x}]$, kasus kang kudu
+nggatekake konsekuen kondisional mung $m = 1$
+lan $m = 2$. Cathetan koreksi sumber OLPL-075:
+sumber ngilangake huruf variabel ing nilai kapindho;
+indeks pangaji kang padha dibalekake. Apa
+$\Sat{M}{\lexists[y][R(x,y)]}[\Subst{s}{1}{x}]$
+dicukupi? Iki bener yen ana paling ora siji $n \in \Domain M$
+kang ndadekake $\Sat{M}{R(x,y)}[\Subst{\Subst{s}{1}{x}}{n}{y}]$.
+Nyatane, yen kita njupuk $n = 1$, kita nduweni
+$\Subst{\Subst{s}{1}{x}}{n}{y} = \Subst{s}{1}{y} =
+s$. Amarga $s(x) = 1$, $s(y) = 1$, lan
+$\tuple{1,1} \in \Assign{R}{M}$, wangsulane ya.
+
+Kanggo nemtokake apa
+$\Sat{M}{\lexists[y][R(x,y)]}[\Subst{s}{2}{x}]$,
+kita kudu mriksa pangaji !!{variable}
+$\Subst{\Subst{s}{2}{x}}{n}{y}$. Ing kene, kanggo $n = 1$,
+pangaji iki yaiku~$s_2 = \Subst{s}{2}{x}$,
+kang ora nyukupi $R(x,y)$ ($s_2(x) = 2$, $s_2(y) = 1$,
+lan $\tuple{2,1}\notin \Assign{R}{M}$).
+Nanging, gatekna $\Subst{\Subst{s}{2}{x}}{3}{y} =
+\Subst{s_2}{3}{y}$.
+$\Sat{M}{R(x,y)}[\Subst{s_2}{3}{y}]$ amarga
+$\tuple{2,3} \in \Assign{R}{M}$, mula
+$\Sat{M}{\lexists[y][R(x,y)]}[s_2]$.
+
+Dadi, kanggo kabeh $m \in \Domain M$, salah siji
+$\Sat/{M}{R(a,x)}[\Subst{s}{m}{x}]$ (yen $m = 3$, $4$)
+utawa $\Sat{M}{\lexists[y][R(x,y)]}[\Subst{s}{m}{x}]$
+(yen $m = 1$, $2$), mula
+\[
+\Sat{M}{\lforall[x][(R(a,x) \lif \lexists[y][R(x,y)])]}[s].
+\]
+Cathetan koreksi sumber OLPL-076: kuantifikasi panutup
+sumber nggunakake huruf kanggo pangaji variabel njero,
+dene saben kasus ing ukara iki miturut pangaji variabel njaba;
+huruf kang cocog dibalekake. Ing sisih liya,
+\[
+\Sat/{M}{\lexists[x][(R(a,x) \land \lforall[y][R(x,y)])]}[s].
+\]
+Kita nduweni $\Sat{M}{R(a,x)}[\Subst{s}{m}{x}]$
+mung kanggo $m = 1$ lan $m = 2$. Nanging kanggo
+rong nilai~$m$ iku, ana maneh $n \in \Domain M$,
+yaiku $n = 4$, kang ndadekake
+$\Sat/{M}{R(x,y)}[\Subst{\Subst{s}{m}{x}}{n}{y}]$,
+mula $\Sat/{M}{\lforall[y][R(x,y)]}[\Subst{s}{m}{x}]$
+kanggo $m = 1$ lan $m = 2$. Dadi ora ana
+$m \in \Domain M$ kang ndadekake
+$\Sat{M}{R(a,x) \land \lforall[y][R(x,y)]}[\Subst{s}{m}{x}]$.
+\end{ex}
+
+\iftag{defEx}{%
+\begin{prop}\ollabel{prop:sat-ex}
+$\Sat{M}{\lexists[x][!B(x)]}[s]$ yen lan mung yen ana varian-$x$ $s'$ saka $s$
+    kang ndadekake $\Sat{M}{!B(x)}[s']$.
+\end{prop}
+
+\begin{proof}
+  Gladhen.
+\end{proof}
+}{}
+
+\tagprob{defEx}
+\begin{prob}
+  Buktèkna \olref[fol][syn][sat]{prop:sat-ex}
+\end{prob}
+\tagendprob
+
+\iftag{defAll}{%
+\begin{prop}\ollabel{prop:sat-all}
+$\Sat{M}{\lforall[x][!B(x)]}[s]$ yen lan mung yen kanggo saben varian-$x$~$s'$ saka $s$,
+  $\Sat{M}{!B(x)}[s']$
+\end{prop}
+
+\begin{proof}
+  Gladhen.
+\end{proof}
+}{}
+
+\tagprob{defAll}
+\begin{prob}
+  Buktèkna \olref[fol][syn][sat]{prop:sat-all}
+\end{prob}
+\tagendprob
+
+\begin{prob}
+Upamakna $\Lang L = \{c, f, A\}$ kanthi siji !!{constant}, siji
+!!{function} siji panggonan, lan siji !!{predicate} rong panggonan,
+lan !!{structure}~$\Struct{M}$ ditemtokake dening
+\begin{enumerate}
+\item $\Domain M = \{1, 2, 3\}$
+\item $\Assign{c}{M} = 3$
+\item $\Assign{f}{M}(1) = 2, \Assign{f}{M}(2) = 3, \Assign{f}{M}(3) = 2$
+\item $\Assign{A}{M} = \{\tuple{1, 2}, \tuple{2, 3}, \tuple{3, 3}\}$
+\end{enumerate}
+(a) Upamakna $s(v) = 1$ kanggo kabeh !!{variable}s~$v$.
+Temtokna apa
+\[
+\Sat{M}{\lexists[x][(A(f(z), c) \lif \lforall[y][(A(y, x) \lor A(f(y),
+      x))])]}[s]
+\]
+Jlentrehna alesane.
+
+(b) Wenehana struktur lan pangaji !!{variable} liyane kang
+!!{formula} iki ora dicukupi.
+\end{prob}
+
+\end{document}

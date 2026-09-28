@@ -1,0 +1,159 @@
+% Part: normal-modal-logic
+% Chapter: syntax-and-semantics
+% Section: tautological-instances
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{syn}{tau}
+
+\olsection{Instansi Tautologis}
+
+\begin{explain}
+Sawijining formula tanpa modal iku tautologi yen bener kanggo saben
+penetapan nilai kabeneran. Cetha yen saben tautologi bener ing saben
+donya ing saben model. Nanging kanggo !!{formula}s kang ngemot $\Box$
+lan~$\Diamond$, gagasan tautologi ora ditetepake. Apa, upamane,
+$\Box p \lor \lnot \Box p$---instansi prinsip tengah kang
+dikecualekake---valid? Gagasan \emph{instansi tautologis} mbiyantu:
+!!a{formula} kang dadi instansi substitusi saka tautologi (nonmodal).
+Ora nggumunake, nanging tetep kudu dibuktekake, yen saben instansi
+tautologis valid.
+\end{explain}
+
+\begin{defn}
+  Sawijining !!{formula} modal~$!B$ iku \emph{instansi tautologis} yen
+  lan mung yen ana tautologi tanpa modal~$!A$ kang nduweni !!{propositional
+    variable}s $p_1$, \dots,~$p_n$ lan !!{formula}s $!D_1$,
+  \dots,~$!D_n$ saengga $!B \ident \SSubst{!A}{\subst{!D_1}{p_1},
+    \dots, \subst{!D_n}{p_n}}$.
+\end{defn}
+
+\begin{lem}\ollabel{lem:valid-taut}
+  Upamane $!A$ sawijining !!{formula} tanpa modal kang !!{propositional
+  variable}s-e yaiku $p_1$, \dots, $p_n$, lan $!D_1$, \dots,
+  $!D_n$ iku !!{formula}s modal. Mula kanggo sembarang penetapan $\pAssign{v}$,
+  sembarang model $\mModel{M} = \tuple{W, R, V}$, lan sembarang $w \in W$
+  kang nyukupi $\pAssign{v}(p_i) = \True$ yen lan mung yen $\mSat{M}{!D_i}[w]$,
+  kita duwe $\pSat{v}{!A}$ yen lan mung yen
+  $\mSat{M}{\SSubst{!A}{\subst{!D_1}{p_1}, \dots,
+      \subst{!D_n}{p_n}}}[w]$.
+\end{lem}
+
+\begin{proof}
+  Kanthi induksi marang $!A$.
+  \begin{enumerate}
+  \tagitem{prvFalse}{\indcase{!A}{\lfalse}{Loro-lorone $\pSat/{v}{\lfalse}$
+      lan $\mSat/{M}{\lfalse}[w]$}.}{}
+  \tagitem{prvTrue}{\indcase{!A}{\ltrue}{Loro-lorone $\pSat{v}{\ltrue}$
+      lan $\mSat{M}{\ltrue}[w]$}.}{}
+  \item \indcase{!A}{p_i}{%
+    \begin{align*}
+      \pSat{v}{p_i} \Leftrightarrow {} & \pAssign{v}(p_i) = \True \\
+      & \qquad \text{miturut definisi $\pSat{v}{p_i}$}\\
+      \Leftrightarrow {} & \mSat{M}{!D_i}[w] \\
+      &\qquad \text{miturut asumsi}\\
+      \Leftrightarrow {} & \mSat{M}{\SSubst{p_i}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+      &\qquad \text{amarga $\SSubst{p_i}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}} \ident !D_i$}.
+      \end{align*}}
+  \tagitem{prvNot}{\indcase{!A}{\lnot !B}{%
+      \begin{align*}
+        \pSat{v}{\lnot !B} \Leftrightarrow {} & \pSat/{v}{!B}\\
+        &\qquad \text{miturut definisi $\pSat{v}{}$};\\
+        \Leftrightarrow {} & \mSat/{M}{\SSubst{!B}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+        &\qquad \text{miturut hipotesis induksi}\\
+        \Leftrightarrow {} &
+        \mSat{M}{\SSubst{\lnot !B}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+        &\qquad \text{miturut definisi $\mSat{M}{}[w]$}.
+      \end{align*}}}{}
+  \tagitem{prvAnd}{\indcase{!A}{(!B \land !C)}{%
+      \begin{align*}
+        \pSat{v}{!B \land !C} \Leftrightarrow {} &
+        \pSat{v}{!B} \text{ lan } \pSat{v}{!C}\\
+        &\qquad \text{miturut definisi $\pSat{v}{}$}\\
+        \Leftrightarrow {} &
+        \mSat{M}{\SSubst{!B}{\subst{!D_1}{p_1}, \dots,
+            \subst{!D_n}{p_n}}}[w] \text{ lan } \\
+        & \mSat{M}{\SSubst{!C}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+        &\qquad \text{miturut hipotesis induksi}\\
+        \Leftrightarrow{} &
+        \mSat{M}{\SSubst{(!B \land !C)}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+        &\qquad \text{miturut definisi $\mSat{M}{}[w]$}.
+      \end{align*}}}{}
+  \tagitem{prvOr}{\indcase{!A}{(!B \lor !C)}{%
+      \begin{align*}
+        \pSat{v}{!B \lor !C} \Leftrightarrow{} &
+        \pSat{v}{!B} \text{ utawa } \pSat{v}{!C}\\
+        &\qquad \text{miturut definisi $\pSat{v}{}$};\\
+        \Leftrightarrow{} & \mSat{M}{\SSubst{!B}{\subst{!D_1}{p_1}, \dots,
+            \subst{!D_n}{p_n}}}[w] \text{ utawa }\\
+        & \mSat{M}{\SSubst{!C}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+        &\qquad \text{miturut hipotesis induksi}\\
+        \Leftrightarrow{} &
+        \mSat{M}{\SSubst{(!B \lor !C)}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+        &\qquad \text{miturut definisi $\mSat{M}{}[w]$}.
+      \end{align*}}}{}
+  \tagitem{prvIf}{\indcase{!A}{(!B \lif !C)}{%
+      \begin{align*}
+        \pSat{v}{!B \lif !C} \Leftrightarrow{} &
+        \pSat/{v}{!B} \text{ utawa } \pSat{v}{!C}\\
+        &\qquad \text{miturut definisi $\pSat{v}{}$}\\
+        \Leftrightarrow{} &
+        \mSat/{M}{\SSubst{!B}{\subst{!D_1}{p_1}, \dots,
+            \subst{!D_n}{p_n}}}[w] \text{ utawa }\\
+        & \mSat{M}{\SSubst{!C}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+        &\qquad \text{miturut hipotesis induksi}\\
+        \Leftrightarrow{} &
+        \mSat{M}{\SSubst{(!B \lif !C)}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+        &\qquad \text{miturut definisi $\mSat{M}{}[w]$}.
+      \end{align*}}}{}
+  \tagitem{prvIff}{\indcase{!A}{(!B \liff !C)}{%
+      \begin{align*}
+        \pSat{v}{!B \liff !C} \Leftrightarrow {} &
+        \text{salah siji: } \pSat{v}{!B} \text{ lan } \pSat{v}{!C}\\
+        & \text{utawa } \pSat/{v}{!B} \text{ lan } \pSat/{v}{!C}\\
+        &\qquad \text{miturut definisi $\pSat{v}{}$}\\
+        \Leftrightarrow {} &
+        \text{salah siji: } \mSat{M}{\SSubst{!B}{\subst{!D_1}{p_1}, \dots,
+            \subst{!D_n}{p_n}}}[w] \text{ lan }\\
+        & \qquad \mSat{M}{\SSubst{!C}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\ 
+        &  \text{ utawa } \mSat/{M}{\SSubst{!B}{\subst{!D_1}{p_1}, \dots,
+            \subst{!D_n}{p_n}}}[w] \text{ lan }\\
+        & \qquad \mSat/{M}{\SSubst{!C}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+        &\qquad\text{miturut hipotesis induksi}\\
+        \Leftrightarrow {} &
+        \mSat{M}{\SSubst{(!B \liff !C)}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+        &\qquad \text{miturut definisi $\mSat{M}{}[w]$}.
+      \end{align*}}}{}
+  \end{enumerate}
+  \end{proof}
+
+\begin{prop}\ollabel{prop:valid-taut}
+  Saben instansi tautologis valid.
+\end{prop}
+
+\begin{proof}
+  Kanthi kontraposisi, upamane $!A$ saengga
+  $\mSat/{M}{\SSubst{!A}{\subst{!D_1}{p_1}, \dots,
+  \subst{!D_n}{p_n}}}[w]$, kanggo sawenehing model $\mModel{M}$ lan donya~$w$.
+  Tetepna sawijining penetapan $\pAssign{v}$ saengga $\pAssign{v}(p_i) =
+  \True$ yen lan mung yen $\mSat{M}{!D_i}[w]$ (lan $\pAssign{v}$ menehi
+  nilai sembarang marang $q \notin \{p_1, \dots, p_n \}$). Mula miturut
+  \olref{lem:valid-taut}, $\pSat/{v}{!A}$, dadi $!A$ dudu tautologi.
+\end{proof}
+
+\end{document}

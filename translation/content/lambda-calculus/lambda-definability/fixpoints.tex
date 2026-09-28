@@ -1,0 +1,179 @@
+% Part: lambda-calculus
+% Chapter: lambda-definability
+% Section: fixpoints
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{ldf}{fp}
+
+\olsection{Titik Tetep}
+
+Upamakna kita arep netepake fungsi faktorial kanthi rekursi minangka
+suku $\fn{Fac}$ kang nduweni sipat iki:
+\[
+\fn{Fac} \ident \lambd[n][\fn{IsZero}\, n\, \num 1 (\fn{Mult}\, n (\fn{Fac}(\fn{Pred} \, n)))]
+\]
+Tegese, faktorial saka $n$ yaiku $1$ yen $n = 0$, lan $n$ dikali
+faktorial saka $n-1$ yen ora. Mesthi wae, kita ora bisa netepake suku
+$\fn{Fac}$ kanthi cara iki amarga $\fn{Fac}$ dhewe katon ing sisih
+tengen. Definisi rekursif kang ngrujuk marang awake dhewe kaya iki
+dudu bagean saka kalkulus lambda. Netepake sawijining suku, kayata
+\[
+\fn{Mult} \ident \lambd[ab][a (\fn{Add}\, b) \num{0}]
+\]
+mung nggunakake suku kang wis ditetepake sadurunge ing sisih tengen,
+kayata $\fn{Add}$. Kita bisa tansah ngilangi $\fn{Add}$ kanthi ngganteni
+nganggo suku kang netepake. Kanthi mangkono, $\fn{Mult}$ dadi suku
+lambda murni; yen $\fn{Add}$ dhewe ngemot suku kang wis ditetepake
+(kaya $\fn{Add}'$), kita bisa nerusake proses iki nganti pungkasane
+entuk suku lambda murni.
+
+Nanging bab iki ora lumaku kanggo definisi rekursif kaya
+$\fn{Fac}$ ing ndhuwur. Yen kedadeyan $\fn{Fac}$ ing sisih tengen
+kita ganti nganggo definisi $\fn{Fac}$ dhewe, kita entuk:
+\begin{align*}
+  \fn{Fac} & \ident \lambd[n][\fn{IsZero}\, n\, \num{1}\,
+    (\fn{Mult}\, n\,
+      ((\lambd[n][\fn{IsZero}\, n\, \num{1}\,
+        (\fn{Mult}\, n\, (\fn{Fac}(\fn{Pred}\, n)))])
+       (\fn{Pred}\, n)))]
+\end{align*}
+lan $\fn{Fac}$ isih durung ilang saka sisih tengen.
+Cetha yen proses iki dibaleni, definisine dadi saya dawa
+lan ora bakal ngasilake suku lambda murni. Mula cara iki
+ora bisa digunakake kanggo netepake faktorial, utawa
+fungsi rekursif umume.
+
+Nanging definisi rekursif mau isih menehi sawijining pituduh:
+Yen $f$ suku kang makili fungsi faktorial, suku
+\[
+\fn{Fac}' \ident \lambd[g][\lambd[n][\fn{IsZero} \, n \, \num 1\, (\fn{Mult} \, n\, (g (\fn{Pred} n)))]]
+\]
+kang ditrapake marang suku $f$, yaiku $\fn{Fac}'\,f$, uga makili
+fungsi faktorial. Tegese, yen $\fn{Fac}'$ dianggep minangka fungsi
+kang nampa fungsi lan ngasilake fungsi, nilaine
+$\fn{Fac'}\, f$ padha karo~$f$, yen $f$ iku fungsi faktorial.
+Fungsi~$f$ kang nduweni sipat $\fn{Fac}' \, f \equal[\beta] f$ diarani
+\emph{titik tetep} saka $\fn{Fac}'$. Dadi, fungsi faktorial iku
+titik tetep saka $\fn{Fac}'$.
+
+Ing kalkulus lambda ana suku-suku kang ngitung titik tetep
+saka suku kang diwenehake. Suku-suku iki bisa digunakake
+supaya suku kaya $\fn{Fac}'$ dadi definisi faktorial.
+
+\begin{defn}
+  \ollabel{defn:Turing-Y}
+  \emph{Kombinator-Y} yaiku suku iki:
+  \[
+  Y \ident (\lambd[ux][x(uux)])(\lambd[ux][x(uux)]).
+  \]
+\end{defn}
+
+\begin{thm}
+  $Y$ nduweni sipat $Yg \red g(Yg)$ kanggo saben suku $g$.
+  Mula $Yg$ tansah dadi titik tetep saka~$g$.
+\end{thm}
+
+\begin{proof}
+  Cekakna $(\lambd[ux][x(uux)])$ dadi~$U$, saéngga $Y \ident UU$. Banjur
+  \begin{align*}
+    Y g &\ident (\lambd[ux][x(uux)])U\,g \\
+    &\red (\lambd[x][x(UUx)])g\\
+    & \red g(UUg) \ident g(Yg).
+  \end{align*}
+  Amarga $g(Yg)$ lan $Yg$ loro-lorone bisa direduksi dadi $g(Yg)$,
+  mula $g(Yg) \equal[\beta] Yg$; dadi $Yg$ titik tetep saka~$g$.
+\end{proof}
+
+Mesthi wae, amarga $Yg$ ngemot redex, reduksi bisa terus tanpa wates:
+\begin{align*}
+  Y g &\red g (Y g) \\
+    &\red g (g (Y g)) \\
+    &\red g(g (g (Y g)))\\
+    &\ldots
+\end{align*}
+Mula $Yg$ bisa dibayangake minangka $g$ kang ditrapake marang
+awake dhewe tanpa wates kaping. Yen $g$ ditrapake sepisan maneh,
+kaya-kaya ora ana tambahan apa-apa: $g$ kang ditrapake marang~$g$
+kang wis ditrapake tanpa wates kaping marang~$Yg$ isih padha karo
+$g$ kang ditrapake tanpa wates kaping marang~$Yg$.
+
+Gatekna yen rerangkening langkah reduksi-$\beta$ ing ndhuwur kang
+diwiwiti saka~$Yg$ iku tanpa wates. Dadi yen $Yg$ ditrapake marang
+sawijining suku, yaiku $(Yg)N$, suku iku uga bisa direduksi dadi
+tanpa wates suku kang beda-beda, yaiku $(g(Yg))N$,
+$(g(g(Yg)))N$, \dots. Nanging bisa wae ana rerangkening reduksi
+\emph{liyane} kang mandheg ing wujud normal.
+
+Jupuken faktorial minangka conto. Tetepna $\fn{Fac}$ minangka
+$Y\, \fn{Fac}'$ (yaiku titik tetep saka $\fn{Fac'}$). Banjur:
+\begin{align*}
+  \fn{Fac}\,\num 3
+  &\red Y\, \fn{Fac}' \, \num 3 \\
+  &\red \fn{Fac}' (Y \,\fn{Fac}') \, \num 3 \\
+  &\ident (\lambd[x][\lambd[n][\fn{IsZero} \, n\, \num 1\,
+      (\fn{Mult}\, n\, (x (\fn{Pred}\, n)))]]) \, \fn{Fac} \, \num 3\\
+  & \red \fn{IsZero} \, \num 3\, \num 1\,
+      (\fn{Mult}\, \num 3\, (\fn{Fac} (\fn{Pred}\, \num 3))) \\
+  &\red  \fn{Mult}\, \num 3 \, (\fn{Fac} \, \num 2).
+  \intertext{Kanthi cara kang padha,}
+  \fn{Fac}\,\num 2
+  &\red  \fn{Mult}\, \num 2 \, (\fn{Fac} \, \num 1) \\
+  \fn{Fac}\,\num 1
+  &\red  \fn{Mult}\, \num 1 \, (\fn{Fac} \, \num 0)
+  \intertext{nanging}
+  \fn{Fac}\,\num 0
+  &\red \fn{Fac}' (Y \,\fn{Fac}') \, \num 0 \\
+  &\ident (\lambd[x][\lambd[n][\fn{IsZero} \, n\, \num 1\,
+      (\fn{Mult}\, n\, (x (\fn{Pred}\, n)))]]) \, \fn{Fac} \, \num 0\\
+  & \red \fn{IsZero} \, \num 0\, \num 1\,
+      (\fn{Mult}\, \num 0\, (\fn{Fac} (\fn{Pred}\, \num 0))).\\
+  &\red \num 1.
+  \intertext{Mula yen digabungake,}
+  \fn{Fac}\,\num 3
+  &\red  \fn{Mult}\, \num 3 \,
+  (\fn{Mult} \, \num 2\, (\fn{Mult} \, \num 1\, \num 1)).
+\end{align*}
+
+Bab kang lumaku kanggo $\fn{Fac'}$ uga lumaku kanggo saben
+definisi rekursif. Upamakna kita duwe persamaan rekursif
+\begin{align*}
+g\,x_1\dots x_n & \equal[\beta] N
+\intertext{kanthi $N$ bisa ngemot~$g$ lan $x_1$, \dots,~$x_n$. Mula mesthi
+ana suku~$G \ident (Y \lambd[g][\lambd[x_1\dots x_n][N]])$ kang
+nyukupi}
+G\,x_1 \dots x_n & \equal[\beta] \Subst{N}{G}{g}.
+\intertext{Amarga miturut teorema titik tetep,}
+G \ident (Y \lambd[g][\lambd[x_1\dots x_n][N]]) & \red \lambd[g][\lambd[x_1\dots x_n][N]](Y \lambd[g][\lambd[x_1\dots x_n][N]])\\
+& \ident (\lambd[g][\lambd[x_1\dots x_n][N]])\,G
+\intertext{lan mulane}
+G\,x_1 \dots x_n 
+& \red (\lambd[g][\lambd[x_1\dots x_n][N]])\,G\,x_1\dots x_n\\
+& \red (\lambd[x_1\dots x_n][\Subst{N}{G}{g}])\,x_1\dots x_n\\
+  & \red \Subst{N}{G}{g}.
+\end{align*}
+
+Kombinator $Y$ ing \olref{defn:Turing-Y} asalé saka Alan
+Turing. Alonzo Church ngajokake versi liya kang kita
+arani~$Y_C$:
+\[
+Y_C \ident \lambd[g][(\lambd[x][g(xx)])(\lambd[x][g(xx)])].
+\]
+Kombinator Church rada luwih ringkih tinimbang kombinator Turing:
+$Y_Cg \equal[\beta] g(Y_Cg)$, nanging ora $Y_Cg \bred g(Y_Cg)$.
+Upamakna $V$ iku suku $\lambd[x][g(xx)]$, saéngga
+$Y_C \ident \lambd[g][VV]$, kanthi cekakan iku dimekarake
+ing sangisore pengiket paramètere. Banjur
+\begin{align*}
+  VV & \ident (\lambd[x][g(xx)])V \red g(VV)
+  \text{ lan mulane}\\
+  Y_C g & \ident (\lambd[g][VV])g \red VV \red g(VV), \text{ nanging uga}\\
+  g(Y_C g) & \ident g((\lambd[g][VV])g) \red g(VV).
+\end{align*}
+Tegese, $Y_Cg$ lan $g(Y_Cg)$ loro-lorone direduksi dadi
+suku kang padha, yaiku $g(VV)$; mula $Y_Cg \equal[\beta] g(Y_Cg)$.
+Sipat iki asring cukup kanggo panganggone.
+
+\end{document}

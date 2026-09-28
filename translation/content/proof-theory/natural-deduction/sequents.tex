@@ -1,0 +1,166 @@
+% Part: proof-theory
+% Chapter: natural-deduction
+% Section: sequents
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{nat}{seq}
+
+\olsection{Deduksi Alami nganggo Sekuèn: \Log{N2c} lan~\Log{N2i}}
+
+!!^a{proof}~$\delta$ ing \Log{N1c} utawa \Log{N1i} nuduhaké yèn
+!!{formula} pungkasané~$!A$ ndhèrèk saka asumsi kabukané. Yèn
+$\Gamma$ iku himpunan !!{formula}s~$!B$ kang $!B^x$ katon minangka
+asumsi kabuka ing~$\delta$, kita bisa nulis iki minangka
+$\delta \Proves \Gamma \Sequent !A$. Iki mènèhi gagasan yèn
+sistem deduksi alami uga bisa dirumusaké kanggo sekuèn. Ing sistem
+kaya mangkono, saben sekuèn nggawa katrangan bab asumsi kabuka endi
+kang dadi dhasaré !!{formula} ing sisih tengen, yaiku asumsi kang
+kabuka ing sub-!!{proof} kang pungkasané sekuèn mau. Iki deduksi
+alami nganggo sekuèn, utawa deduksi alami ``gaya sekuèn,'' lan
+sistem asilé diarani \Log{N2c} lan~\Log{N2i}.
+
+Supaya korespondènsi antarané \Log{N1} lan \Log{N2} luwih cedhak,
+kita gawe himpunan~$\Gamma$ ing sisih kiwa isi !!{formula}s
+mawa label~$x:!B$. Amarga aturan ing \Log{N1} mung nggarap
+!!{formula}s ing premis, yaiku !!{formula}s pungkasan saka
+sub-!!{proof}s langsung, aturan \Log{N2} mung nggarap
+konsekuèn sekuèn. Mula formula mawa label ing sisih kiwa
+sekuèn bisa diarani kontèks.
+
+Ing panggonané asumsi, bukti ing \Log{N2} nduwèni
+aksioma minangka sekuèn paling dhuwur kanthi wujud
+\[x:!A \Sequent !A.\]
+Aturané cocog persis karo aturan \Log{N1} lan katulis ing
+\olref{tab:N2}.
+
+\subfile{rules-N2}
+
+Amarga kita kudu ngidinaké (kaya ing \Log{N1c} lan \Log{N1i})
+yèn aturan \Intro{\lif}, \Intro{\lnot}, \Elim{\lor}, lan \Elim{\lexists}
+bisa mbusak asumsi nanging ora kudu nglakoni, panrapan aturan kang
+cocog ing \Log{N2c} lan~\Log{N2i} uga dianggep bener sanajan
+!!{formula}s kontèks kang cocog, $!A$, $!B$, lan $!A(a)$,
+ora ana ing kontèks premis kang gegayutan.
+
+\begin{prop}
+Yèn $\delta$ iku !!a{proof} ing~\Log{N1c} utawa \Log{N1i}
+kanggo~$!A$, banjur ana !!a{proof}~$\delta'$ kanggo
+$\Gamma \Sequent !A$ ing~\Log{N2c} (\Log{N2i}), kanthi $\Gamma$
+minangka himpunan kabèh~$x:!B$ saéngga $!B^x$ iku asumsi kabuka
+saka~$\delta$.
+\end{prop}
+
+\begin{proof}
+  Kanthi induksi marang $n=\pheight{\delta}$. Yèn $n=0$,
+  $\delta$ mung isi siji asumsi kabuka~$!A^x$. Mula
+  $\Gamma = \{x:!A\}$ lan $\Gamma \Sequent !A$ iku aksioma
+  ing \Log{N2c} utawa~\Log{N2i}.
+
+  Yèn $n>0$, kita mbedakaké kasus miturut inferènsi pungkasan
+  ing~$\delta$. Kita mung ngrembug siji kasus; sisané dadi
+  gladhen.
+
+  Upamana inferènsi pungkasané $\Intro{\lif}$. Banjur $\delta$
+  pungkasané kaya mangkéné:
+  \[
+  \AxiomC{$\Discharge{!B}{x}$}
+  \RightLabel{$\delta_1$}
+  \DeduceC{$!C$}
+  \DischargeRule{\Intro{\lif}}{x}
+  \UnaryInfC{$!B \lif !C$}
+  \DisplayProof
+  \]
+  Miturut hipotesis induksi ana !!a{proof}~$\delta_1'$ ing~\Log{N2c}
+  (\Log{N2i}) kanggo $\Gamma' \Sequent !C$, kanthi $\Gamma'$
+  minangka asumsi mawa label kang kabuka ing~$\delta_1$.
+  Yèn $!B^x$ iku asumsi kabuka saka $\delta_1$, asumsi iku dibusak
+  ing inferènsi \Intro{\lif}, mula asumsi kabuka saka~$\delta$
+  yaiku $\Gamma = \Gamma' \setminus \{x:!B\}$. Tegesé,
+  $\delta_1'$ iku !!a{proof} kanggo~$x:!B, \Gamma \Sequent !C$,
+  lan $\delta'$ bisa dipilih dadi
+  \[
+  \AxiomC{}
+  \RightLabel{$\delta_1'$}
+  \Deduce$x:!B, \Gamma \fCenter !C$
+  \RightLabel{\Intro{\lif}}
+  \UnaryInf$\Gamma \fCenter !B \lif !C$
+  \DisplayProof
+  \]
+  Yèn $!B^x$ dudu asumsi kabuka saka~$\delta_1$, banjur
+  \Intro{\lif} ora mbusak asumsi, lan asumsi kabuka saka $\delta$
+  lan $\delta_1$ padha. Amarga formula kontèks $x:!B$ ora kudu
+  ana ing premis \Intro{\lif} ing~\Log{N2c} lan~\Log{N2i},
+  $\delta'$ bisa dipilih dadi
+  \[
+  \AxiomC{}
+  \RightLabel{$\delta_1'$}
+  \Deduce$\Gamma \fCenter !C$
+  \RightLabel{\Intro{\lif}}
+  \UnaryInf$\Gamma \fCenter !B \lif !C$
+  \DisplayProof
+  \]
+
+  Kasus nalika $\delta$ pungkasané aturan liya ditangani kanthi
+  cara kang padha.
+\end{proof}
+
+\begin{prop}
+Yèn $\delta$ iku !!a{proof} ing \Log{N2c} utawa \Log{N2i}
+kanggo $\Gamma \Sequent !A$, banjur ana !!a{proof}~$\delta'$
+ing \Log{N1c} (\Log{N1i}) kanthi !!{formula} pungkasan~$!A$
+lan asumsi kabuka $!B^x$ kanggo saben $x:!B \in \Gamma$.
+\end{prop}
+
+\begin{proof}
+  Kita nganggo induksi manèh marang !!{height}~$n$ saka~$\delta$.
+  Yèn $n=0$, $\delta$ iku aksioma, $x:!A \Sequent !A$.
+  !!{proof}~$\delta'$ yaiku asumsi~$!A^x$.
+
+  Yèn $n>0$, kita mbedakaké kasus miturut inferènsi pungkasan
+  ing~$\delta$. Tuladhané, yèn inferènsi iku~$\Intro{\lif}$,
+  $\delta$~pungkasané kaya mangkéné:
+  \[
+  \bottomAlignProof
+  \AxiomC{}
+  \RightLabel{$\delta_1$}
+  \Deduce$x:!B, \Gamma \fCenter !C$
+  \RightLabel{\Intro{\lif}}
+  \UnaryInf$\Gamma \fCenter !B \lif !C$
+  \DisplayProof
+  \quad\text{ utawa }\quad
+  \bottomAlignProof
+  \AxiomC{}
+  \RightLabel{$\delta_1$}
+  \Deduce$\Gamma \fCenter !C$
+  \RightLabel{\Intro{\lif}}
+  \UnaryInf$\Gamma \fCenter !B \lif !C$
+  \DisplayProof
+  \]
+  Miturut hipotesis induksi, ana !!a{proof} ing~\Log{N1c}
+  (\Log{N1i}) kanggo~$!C$. Ing kasus kapisan, $!B^x$ iku
+  asumsi kabuka ing subbukti ndhuwur~$\delta'$;
+  ing kasus kapindho ora. !!{proof}~$\delta'$ bisa dipilih dadi
+  \[
+  \bottomAlignProof
+  \AxiomC{$\Discharge{!B}{x}$}
+  \RightLabel{$\delta_1$}
+  \DeduceC{$!C$}
+  \DischargeRule{\Intro{\lif}}{x}
+  \UnaryInfC{$!B \lif !C$}
+  \DisplayProof
+  \quad\text{ utawa }\quad
+  \bottomAlignProof
+  \AxiomC{}
+  \RightLabel{$\delta_1$}
+  \DeduceC{$!C$}
+  \RightLabel{\Intro{\lif}}
+  \UnaryInfC{$!B \lif !C$}
+  \DisplayProof
+  \]
+  miturut urutané.
+\end{proof}
+
+\end{document}

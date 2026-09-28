@@ -1,0 +1,119 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{ord-arithmetic}{using-addition}
+\olsection{Migunakaké Panambahan Ordinal}
+
+Kanthi panambahan ordinal, kita bisa ngetung rank manéka
+himpunan kanthi eksplisit, miturut pangertèn ing
+\olref[spine][rank]{defnsetrank}:
+
+\begin{lem}\ollabel{rankcomputation}
+Yèn $\setrank{A} = \alpha$ lan $\setrank{B} = \beta$, mula:
+\begin{enumerate}
+	\item\ollabel{exrankpow} $\setrank{\Pow{A}} = \alpha\ordplus 1$
+	\item\ollabel{exrankpair} $\setrank{\{A, B\}} = \max(\alpha,
+	\beta) \ordplus 1$
+	\item\ollabel{exrankcup} $\setrank{A \cup B} = \max(\alpha,
+	\beta)$
+	\item\ollabel{exranktuple} $\setrank{\tuple{A,B}} = \max(\alpha,
+	\beta) \ordplus  2$
+	\item\ollabel{exranktimes} $\setrank{A \times B} \leq \max(\alpha,
+	\beta) \ordplus  2$
+	\item\ollabel{exrankunion} $\setrank{\bigcup A} = \alpha$ yèn
+	$\alpha$ kosong utawa ordinal limit; $\setrank{\bigcup A} = \gamma$ yèn
+	$\alpha = \gamma\ordplus 1$
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+Ing saindhenging bukti, kita bola-bali migunakaké
+\olref[spine][rank]{ranksupstrict}.
+
+\emph{\olref{exrankpow}.} Yèn $x \subseteq A$, mula $\setrank{x} \leq
+\setrank{A}$. Dadi $\setrank{\Pow{A}} \leq \alpha \ordplus  1$. Amarga $A
+\in \Pow{A}$, kita olèh $\setrank{\Pow{A}} = \alpha \ordplus  1$.
+
+\emph{\olref{exrankpair}.} Miturut \olref[spine][rank]{ranksupstrict}.
+
+\emph{\olref{exrankcup}.} Miturut \olref[spine][rank]{ranksupstrict}.
+
+\emph{\olref{exranktuple}.} Miturut \olref{exrankpair}, ping pindho.
+
+\emph{\olref{exranktimes}.} Wigatèkna yèn $A \times B \subseteq
+\Pow{\Pow{A \cup B}}$; banjur gunakna \olref{exrankpow} ping pindho
+lan \olref{exrankcup}.
+
+\emph{\olref{exrankunion}.} Yèn $\alpha = \gamma\ordplus 1$, ana
+sawatara $c \in A$ kang $\setrank{c} = \gamma$, lan ora ana !!{element} saka $A$
+kang ranké luwih dhuwur; mula $\setrank{\bigcup A} = \gamma$. Yèn $\alpha$ iku
+ordinal limit, mula $A$ nduwèni !!{element}s kang ranké bisa nyedhaki
+$\alpha$ tanpa wates (nanging tetep luwih cilik), saéngga $\bigcup A$ uga nduwèni
+!!{element}s kang ranké bisa nyedhaki $\alpha$ tanpa wates
+(nanging tetep luwih cilik); mula $\setrank{\bigcup A} = \alpha$.
+\end{proof}
+\noindent
+Kita pasrahaké minangka latihan panjlentrehan apa sebabé
+\olref{exranktimes} nganggo tandha \emph{kurang saka utawa padha karo}.
+
+\begin{prob}
+Golekana himpunan $A$ lan $B$ kang nyukupi $\setrank{A \times B}=
+\max(\setrank{A}, \setrank{B})$. Golekana himpunan $A$ lan $B$ kang nyukupi
+$\setrank{A \times B}=\max(\setrank{A}, \setrank{B}) \ordplus  2$. Apa
+ana rank liya kang bisa dumadi?
+\end{prob}
+
+Saiki kita uga bisa nuduhaké yèn sawetara pangertèn kang lumrah
+babagan ordinal “winates” utawa “tanpa wates” padha tegesé:
+
+\begin{lem}\ollabel{ordinfinitycharacter}
+Kanggo sembarang ordinal $\alpha$, pratelan-pratelan iki ekivalen:
+\begin{enumerate}
+	\item\ollabel{ord:notinomega} $\alpha\notin \omega$, yaiku
+	$\alpha$ dudu wilangan asli
+	\item\ollabel{ord:omegaplus} $\omega \leq \alpha$
+	\item\ollabel{ord:oneplus} $1 \ordplus  \alpha = \alpha$
+	%$\alpha \approx \alpha \ordplus 1$
+	\item\ollabel{ord:plusone} $\alpha \approx \alpha\ordplus 1$,
+	yaiku $\alpha$ lan $\alpha\ordplus 1$ padha cacahé
+	\item\ollabel{ord:infinite} $\alpha$ tanpa wates miturut Dedekind
+	\end{enumerate}
+\end{lem}
+\noindent
+Dadi ana limang cara kang bisa dibuktèkaké ekivalen kanggo
+mangertèni syarat supaya ordinal iku (ora) winates.
+
+\begin{proof}
+\emph{\olref{ord:notinomega} $\Rightarrow$ \olref{ord:omegaplus}.} Miturut
+trikotomi.
+
+\emph{\olref{ord:omegaplus} $\Rightarrow$ \olref{ord:oneplus}.} Tetepna
+$\alpha \geq \omega$. Kanthi Induksi Transfinit, ana ordinal $\gamma$ paling
+cilik (mbokmenawa $0$) kang nyukupi yèn ana ordinal limit
+$\beta$ kanthi $\alpha = \beta \ordplus \gamma$. Saiki:
+\[
+	1 \ordplus \alpha =
+	1 \ordplus (\beta \ordplus \gamma) =
+	(1 \ordplus \beta) \ordplus \gamma =
+	\supstrict_{\delta < \beta} (1 \ordplus  \delta) \ordplus  \gamma =
+	\beta \ordplus  \gamma =
+	\alpha.
+\]
+\emph{\olref{ord:oneplus} $\Rightarrow$ \olref{ord:plusone}.} Cetha ana
+!!a{bijection} $f \colon (\alpha \disjointsum 1) \to (1
+\disjointsum \alpha)$. Yèn $1 \ordplus \alpha = \alpha$, ana
+isomorfisme $g \colon (1 \disjointsum \alpha) \to \alpha$. Saiki
+gatekna $\comp{f}{g}$.
+
+\emph{\olref{ord:plusone} $\Rightarrow$ \olref{ord:infinite}.} Yèn
+$\alpha \approx \alpha \ordplus 1$, ana !!a{bijection} $f \colon
+(\alpha \disjointsum 1) \to \alpha$. Tetepna $g(\gamma) = f(\gamma, 0)$
+kanggo saben $\gamma < \alpha$; !!{injection} iki mbuktèkaké yèn $\alpha$
+tanpa wates miturut Dedekind, awit $f(0,1) \in \alpha \setminus \ran{g}$.
+
+\emph{\olref{ord:infinite} $\Rightarrow$ \olref{ord:notinomega}.} Iki
+yaiku \olref[z][infinity-again]{naturalnumbersarentinfinite}.
+\end{proof}
+
+\end{document}

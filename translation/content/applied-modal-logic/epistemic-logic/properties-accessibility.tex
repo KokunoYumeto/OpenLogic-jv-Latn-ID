@@ -1,0 +1,76 @@
+% Part: applied-modal-logics
+% Chapter: epistemic-logic
+% Section: properties-accessibility
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{aml}{el}{acc}
+
+\olsection{Relasi Aksesibilitas lan Prinsip Epistemik}
+
+Adhedhasar kang wis kita ngerteni bab korespondensi kerangka ing logika
+modal lumrah, kita bisa nliti wujud !!{formula}s khas yen diwenehi
+tafsiran epistemik. Kita wis nyebutake yen logika epistemik biasane
+ditafsirake ing S5. Saiki ayo dideleng carane maneka prinsip epistemik
+diwakili lan carane prinsip iku cocog karo maneka syarat kerangka.
+
+Elinga saka logika modal lumrah yen !!{formula}s modal kang beda-beda
+nggambarake sipat relasi aksesibilitas kang beda-beda. Tabel iki
+milih sawetara rumus kang cocog karo prinsip epistemik tartamtu.
+
+\begin{table}[t]
+    \begin{tabular}{| p{.48\textwidth} || p{.48\textwidth} |}
+      \hline
+      {\emph{Yen $R$ iku \dots}} & {\emph{mula \dots bener ing~$\mModel{M}$:}} \\
+      \hline \hline
+        
+      & $\Knows (p \lif q) \lif (\Knows p \lif \Knows q)$ 
+      \hfill \newline{(Katutupan)} \\
+      \hline
+      \emph{refleksif}: $\forall w Rww$  
+      & $\Knows p \lif p$ \hfill \newline{(Veridikalitas)} \\
+      \hline
+      \emph{transitif}: \newline
+      $\forall u \forall v \forall w ((Ruv \land Rvw) \lif Ruw)$ & 
+      $\Knows p \lif \Knows \Knows p$ \hfill 
+           \newline{(Introspeksi Positif)} \\
+      \hline 
+      \emph{Euklidean}: \newline
+      $\forall w \forall u \forall v ((Rwu \land Rwv) \lif Ruv)$ &  
+      $\lnot \Knows p \lif \Knows \neg \Knows p$ \hfill 
+        \newline{(Introspeksi Negatif)} \\
+      \hline
+    \end{tabular}
+    \caption{Papat prinsip epistemik.}
+    \ollabel{tab:four}
+  \end{table} 
+
+Veridikalitas, kang cocog karo aksioma~$T$, kerep dianggep prinsip
+kang paling ora dadi pasulayan, amarga nyatakake yen !!a{formula}
+dingerteni, rumus iku mesthi bener. Katutupan, uga introspeksi positif
+lan negatif, luwih akeh dadi pasulayan.
+
+Katutupan, kang cocog karo aksioma~$K$, nglambangake gagasan yen
+kawruh sawijining agen katutup miturut implikasi. Ing sawetara
+kahanan, iki katon lumrah. Contone, aku bisa ngerti manawa yen aku ana
+ing Victoria, mula aku ana ing Pulo Vancouver. Yen ora ana skenario skeptis
+kang aneh, aku pancen ngerti yen aku ana ing Victoria, mula iki
+uga nuduhake yen aku ngerti yen aku ana ing Pulo Vancouver. Dadi,
+ing kasus iki, katutupan logis kawruhku katon cukup lumrah.
+Nanging, kita ora tansah mikirake sakabehe konsekuensi saka kang
+kita ngerteni, mula ing kasus liyane prinsip iki bisa marakake
+asil kang ora patiya lumrah.
+
+Introspeksi positif, kang kadhang diarani prinsip KK, bisa diandharake
+kanthi pratelan: yen aku ngerti sawijining bab, aku ngerti yen aku
+ngerti bab iku. Iki pasangan epistemik aksioma~4. Kajaba iku,
+introspeksi negatif bisa diandharake kanthi pratelan: yen aku
+\emph{ora} ngerti sawijining bab, aku ngerti yen aku ora ngerti
+bab iku. Iki pasangan epistemik aksioma~5. Loro prinsip iki katon
+nduweni tuladha kang mbantah kanthi cukup lumrah: aku bisa ora yakin
+apa aku ngerti sawijining bab, senadyan nyatane aku ngerti bab iku.
+
+
+\end{document}

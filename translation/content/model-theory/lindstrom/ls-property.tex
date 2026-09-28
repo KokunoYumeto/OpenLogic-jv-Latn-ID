@@ -1,0 +1,134 @@
+% Part: first-order-logic
+% Chapter: lindstrom
+% Section: ls-property
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{lin}{lsp}
+
+\olsection{Sipat Kekompakan lan L\"owenheim--Skolem}
+
+Saiki kita menehi generalisasi kang cetha saka kekompakan lan
+L\"owenheim--Skolem kanggo logika abstrak.
+
+\begin{defn}
+Sawijining logika abstrak $\tuple{L, \models_L}$ nduweni
+\emph{Sipat Kekompakan} yen saben himpunan $\Gamma$ saka
+!!{sentence}s ing $L(\Lang{L})$ bisa dicukupi nalika saben
+$\Gamma_0 \subseteq \Gamma$ kang winates bisa dicukupi.
+\end{defn}
+
+\begin{defn}
+$\tuple{L, \models_L}$ nduweni \emph{Sipat L\"owenheim--Skolem
+  Mudhun} yen saben $\Gamma$ kang bisa dicukupi nduweni model
+kang !!a{enumerable}.
+\end{defn}
+
+
+Pangerten isomorfisme parsial saka
+\olref[bas][pis]{defn:partialisom} sipate murni “aljabar” (yaiku,
+diwenehake tanpa ngrujuk marang !!{sentence}s saka basa, nanging
+mung marang konstanta kang diwenehake dening
+!!{language}~$\Lang{L}$ saka !!{structure}s), mula pangerten iku
+uga lumaku kanggo logika abstrak. Ing logika orde kapisan, saka
+\olref[bas][pis]{thm:p-isom2} kita ngerti yen rong !!{structure}s
+kang isomorfis parsial iku ekuivalen elementer. Bukti kasebut ora
+bisa langsung ditrapake marang logika abstrak, amarga induksi
+miturut !!{formula}s bisa uga ora kasedhiya kanggo sembarang
+$!E \in L(\Lang{L})$; nanging teorema kasebut isih bener yen
+Sipat L\"owenheim--Skolem lumaku.
+
+\begin{thm}
+\ollabel{thm:abstract-p-isom}
+Upamana $\tuple{L, \models_L}$ iku logika normal kang nduweni
+Sipat L\"owenheim--Skolem. Banjur sembarang rong !!{structure}s
+kang isomorfis parsial iku ekuivalen elementer ing
+$\tuple{L, \models_L}$.
+\end{thm}
+
+\begin{proof}
+Upamana $\Struct{M} \simeq_p \Struct{N}$, nanging kanggo sawijining
+$!E$ uga $\Struct{M} \models_L !E$ dene $\Struct{N}
+\not\models_L !E$. Miturut Sipat Isomorfisme kita bisa nganggep
+yen $\Domain{M}$ lan $\Domain{N}$ padha pisah, lan miturut Sipat
+Ekspansi kita bisa nganggep yen $!E \in L(\Lang{L})$ kanggo
+!!{language}~$\Lang{L}$ kang winates. Upamana $\mathcal{I}$
+himpunan isomorfisme parsial antarane $\Struct{M}$ lan
+$\Struct{N}$; tanpa nyuda umume pratelan, kita uga nganggep yen
+$p \in \mathcal{I}$ lan $q \subseteq p$ mula $q \in \mathcal{I}$.
+
+$\Domain{M}^{<\omega}$ iku himpunan runtutan winates saka
+!!{element}s ing~$\Domain{M}$. Upamana $S$ relasi telung panggonan
+ing $\Domain{M}^{<\omega}$ kang nglambangake panyambungan runtutan,
+yaiku, yen $\mathbf{a}, \mathbf{b}, \mathbf{c} \in
+\Domain{M}^{<\omega}$, mula $S(\mathbf{a}, \mathbf{b},
+\mathbf{c})$ lumaku yen lan mung yen $\mathbf{c}$ iku
+sambungane $\mathbf{a}$ lan $\mathbf{b}$; lan upamana $T$
+relasi telung panggonan saengga $T(\mathbf{a}, b, \mathbf{c})$
+lumaku kanggo $b \in M$ lan $\mathbf{a}, \mathbf{c} \in
+\Domain{M}^{<\omega}$ yen lan mung yen $\mathbf{a} =
+a_1, \dots a_n$ lan $\mathbf{c} = a_1, \dots a_n, b$.
+Jupuken !!{predicate}s anyar $P$ lan $Q$ kang telung panggonan,
+lan wangunen !!{structure} $\Struct{M}^*$ kang ranahé
+$\Domain{M} \cup \Domain{M}^{<\omega}$, ngemot
+$\Struct{M}$ minangka substruktur, lan napsirake $P$ lan
+$Q$ kanthi relasi panyambungan $S$ lan $T$ (mula
+$\Struct{M}^*$ ana ing !!{language} $\Lang{L} \cup \{ P, Q\}$).
+
+Tetepna $\Domain{N}^{<\omega}$, $S'$, $T'$, $P'$, $Q'$
+lan $\Struct{N}^*$ kanthi cara kang padha. Amarga miturut
+hipotesis $\Struct{M} \simeq_p \Struct{N}$, ana relasi $I$
+antarane $\Domain{M}^{<\omega}$ lan $\Domain{N}^{<\omega}$
+saengga $I(\mathbf{a}, \mathbf{b})$ lumaku yen lan mung yen
+$\mathbf{a}$ lan $\mathbf{b}$ isomorfis lan nyukupi syarat
+maju-mundur saka \olref[bas][pis]{defn:partialisom}. Saiki,
+upamakna $\Struct{M}$ minangka !!{structure} kang !!{domain}-e
+iku gabungan !!{domain}s saka $\Struct{M}^*$ lan
+$\Struct{N}^*$, ngemot $\Struct{M}^*$ lan $\Struct{N}^*$
+minangka sub!!{structure}s, ing !!{language} kanthi tambahan
+!!{predicate} binèr~$R$ kang ditafsirake dening relasi~$I$,
+lan !!{predicate}s kang nglambangake !!{domain}s
+$\Domain{M}^*$ lan~$\Domain{N}*$.
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}[node distance=2cm, auto, thick, >=stealth']
+    \draw [rounded corners] (0,0) -- (8,0) -- (8,4) -- (0,4) --  cycle;
+    \draw (2,2) circle (0.5cm);
+    \draw (2,2) circle (1.25cm);
+    \draw (6,2) circle (0.5cm);
+    \draw (6,2) circle (1.25cm);
+    \path node at (0.75,3.5) {\large $\Struct{M}$};
+    \path node at (2,2) {\large $\Struct{M}$};
+    \path node at (6,2) {\large $\Struct{N}$};
+    \path node at (3.5,1) {\large $\Struct{M}^*$};
+    \path node at (7.5,1) {\large $\Struct{N}^*$};
+    \node (Idom) at (2.8,2) {};
+    \node (Irng) at (5.2,2) {};
+    \draw[<->, bend left] (Idom) to node {\large $I$} (Irng) ;
+  \end{tikzpicture}
+  \caption{Iki !!{structure}~$\Struct{M}$ kanthi isomorfisme parsial
+    ing njerone.}
+\end{figure}
+
+Pangamatan kang wigati yaiku ing !!{language} saka
+!!{structure}~$\Struct{M}$ ana !!{sentence} \emph{orde kapisan}
+$!D_1$ kang bener ing $\Struct{M}$ lan nyatakake yen
+$\Struct{M} \models_L !E$ lan $\Struct{N} \not\models_L !E$
+(iki mbutuhake Sipat Relativisasi), uga ana !!{sentence}
+\emph{orde kapisan} $!D_2$ kang bener ing $\Struct{M}$ lan
+nyatakake yen $\Struct{M} \simeq_p \Struct{N}$ lumantar
+isomorfisme parsial~$I$. Miturut Sipat L\"owenheim--Skolem,
+$!D_1$ lan $!D_2$ bebarengan bener ing model~$\Struct{M}_0$
+kang !!a{enumerable} lan ngemot substruktur $\Struct{M}_0$
+lan $\Struct{N}_0$ kang isomorfis parsial, saengga
+$\Struct{M}_0 \models_L !E$ lan $\Struct{N}_0
+\not\models_L !E$. Nanging !!{structure}s kang !!{enumerable}
+lan isomorfis parsial sejatine isomorfis miturut
+\olref[bas][pis]{thm:p-isom1}, kang cengkah karo Sipat
+Isomorfisme kanggo logika abstrak normal.
+\end{proof}
+
+\end{document}

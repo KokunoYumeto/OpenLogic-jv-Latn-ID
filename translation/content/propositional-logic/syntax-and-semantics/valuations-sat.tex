@@ -8,19 +8,19 @@
 
 \olfileid{pl}{syn}{val}
 
-\olsection{\usetoken{P}{valuation} lan Panyukupan}
+\olsection{\usetoken{P}{valuation} lan Relasi Nyukupi}
 
 \begin{defn}[!!^{valuation}s]
-$\{\True, \False\}$ dadi himpunan rong nilai kabeneran, ``bener'' lan
+Tetepna $\{\True, \False\}$ minangka himpunan rong nilai kabeneran, ``bener'' lan
 ``salah''. \emph{!!{valuation}} kanggo $\Lang{L_0}$ yaiku
-fungsi~$\pAssign{v}$ kang masangake $\True$ utawa $\False$ marang
+fungsi~$\pAssign{v}$ kang menehi nilai $\True$ utawa $\False$ marang
 !!{propositional variable}s ing basa kasebut, yaiku $\pAssign{v} \colon
 \PVar \to \{\True, \False \}$.
 \end{defn}
 
 \begin{defn}
   Yen diwenehi !!a{valuation}~$\pAssign{v}$, temtokna fungsi evaluasi
-  $\pValue{v} \colon \Frm[L_0] \to \{\True, \False \}$ kanthi induktif:
+  $\pValue{v} \colon \Frm[L_0] \to \{\True, \False \}$ kanthi induksi:
   \begin{align*}
     \iftag{prvFalse}{\pValue{v}(\lfalse) & = \False; \\}{}
     \iftag{prvTrue}{\pValue{v}(\ltrue) & = \True; \\}{}
@@ -117,8 +117,8 @@ Klausa-klausa kasebut cocog karo tabel kabeneran iki:
 \end{explain}
 
 \begin{prob}
-Gatekna yen ing $\Lang{L_0}$ ditambahake konektif ternèr
-$\diamondsuit$ kanthi evaluasi kang diwenehake dening
+Upamakna ing $\Lang{L_0}$ ditambahake konektif ternèr
+$\diamondsuit$ kanthi evaluasi kaya mangkene:
 \begin{gather*}
   \pValue{v}(\diamondsuit( !A , !B , !C ) ) = \begin{cases}
     \pValue{v}( !B ) &
@@ -135,8 +135,8 @@ Tulisen tabel kabeneran kanggo konektif iki.
 $\pAssign{v_2}$ iku !!{valuation}s kang menehi nilai padha marang
 !!{propositional
 variable}s kang muncul ing $!A$, yaiku
-$\pAssign{v_1}(\Obj p_n) = \pAssign{v_2}(\Obj p_n)$ saben $\Obj p_n$
-muncul ing sawijining !!{formula}~$!A$. Banjur $\pValue{v_1}$ lan
+$\pAssign{v_1}(\Obj p_n) = \pAssign{v_2}(\Obj p_n)$ yen $\Obj p_n$
+muncul ing !!{formula}~$!A$. Banjur $\pValue{v_1}$ lan
 $\pValue{v_2}$ uga menehi nilai padha marang~$!A$, yaiku
 $\pValue{v_1}(!A) = \pValue{v_2}(!A)$.
 \end{thm}
@@ -145,11 +145,12 @@ $\pValue{v_1}(!A) = \pValue{v_2}(!A)$.
 Kanthi induksi ing $!A$.
 \end{proof}
 
-\begin{defn}[Panyukupan]
-\ollabel{defn:satisfaction} Kita bisa nemtokake kanthi induktif gagasan
-  \emph{panyukupan !!a{formula}~$!A$ dening
-  !!a{valuation}~$\pAssign{v}$}, $\pSat{v}{!A}$, kaya mangkene.
-  (Kita nulis $\pSat/{v}{!A}$ kanthi teges ``ora $\pSat{v}{!A}$.'' )
+\begin{defn}[Relasi Nyukupi]
+\ollabel{defn:satisfaction} Kita bisa nemtokake kanthi induksi
+  \emph{relasi antarane !!a{formula}~$!A$ lan
+  !!a{valuation}~$\pAssign{v}$ nalika valuasi kasebut nyukupi formula
+  kasebut}, $\pSat{v}{!A}$, kaya mangkene.
+  (Kita nulis $\pSat/{v}{!A}$ kanggo negesi ``ora $\pSat{v}{!A}$.'' )
 \begin{enumerate}
 \tagitem{prvFalse}{%
   \indcase{!A}{\lfalse}{$\pSat/{v}{\indfrm}$.}}{}

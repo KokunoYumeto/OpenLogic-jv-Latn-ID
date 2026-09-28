@@ -1,0 +1,75 @@
+Yèn $!A \ident (!B \lif !C)$, banjur $\pi$
+pungkasané kaya mangkéné:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$!B, \Gamma \fCenter \Delta, !C$
+\RightLabel{\RightR{\lif}}
+\UnaryInf$\Gamma \fCenter \Delta, !B \lif !C$
+\LeftSubproofLabel{$\pi_1$}
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$!B \lif !C, \Pi \fCenter \Lambda, !B$
+\AxiomC{}
+\RightLabel{$\pi_2''$}
+\Deduce$!C, \Pi \fCenter \Lambda$
+\RightLabel{\LeftR{\lif}}
+\BinaryInf$!B \lif !C, \Pi \fCenter \Lambda$
+\RightSubproofLabel{$\pi_2$}
+\RightLabel{\Cut}
+\BinaryInf$\Gamma, \Pi \fCenter \Delta, \Lambda$
+\DisplayProof
+\]
+!!{proof} kang pungkasané nganggo \Cut{},
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$!B, \Gamma \fCenter \Delta, !C$
+\RightLabel{\RightR{\lif}}
+\UnaryInf$\Gamma \fCenter \Delta, !B \lif !C$
+\LeftSubproofLabel{$\pi_1$}
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$!B \lif !C, \Pi \fCenter \Lambda, !B$
+\RightLabel{\Cut}
+\BinaryInf$\Gamma, \Pi \fCenter \Delta, \Lambda, !B$
+\DisplayProof
+\]
+nduwèni !!{height} cut luwih cilik tinimbang~$\pi$.
+Hipotesis induksi maringi !!a{proof}~$\pi_1''$ kanggo
+$\Gamma, \Pi \fCenter \Delta, \Lambda, !B$.
+!!{proof} kang pungkasané nganggo \Cut{},
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$!B, \Gamma \fCenter \Delta, !C$
+\AxiomC{}
+\RightLabel{$\pi_2''$}
+\Deduce$!C, \Pi \fCenter \Lambda$
+\RightLabel{\Cut}
+\BinaryInf$!B, \Gamma, \Pi \fCenter \Delta, \Lambda$
+\DisplayProof
+\]
+Pangkat cut lan !!{height} cuté luwih cilik tinimbang
+pangkat cut lan !!{height} saka~$\pi$, mula hipotesis
+induksi maringi \Log{G3c}-!!{proof}~$\pi_2'''$ kanggo
+$!B, \Gamma, \Pi \fCenter \Delta, \Lambda$.
+Saiki trapna hipotesis induksi marang !!{proof}
+kang pungkasané nganggo \Cut{},
+\[
+\AxiomC{}
+\RightLabel{$\pi_1''$}
+\Deduce$\Gamma, \Pi \fCenter \Delta, \Lambda, !B$
+\AxiomC{}
+\RightLabel{$\pi_2'''$}
+\Deduce$!B, \Gamma, \Pi \fCenter \Delta, \Lambda$
+\RightLabel{\Cut}
+\BinaryInf$\Gamma, \Gamma, \Pi, \Pi \fCenter \Delta, \Delta, \Lambda, \Lambda$
+\DisplayProof
+\]
+(pangkat cuté $< \cutr{\pi}$) kanggo ngolèhké
+!!a{proof} kanggo $\Gamma, \Gamma, \Pi, \Pi \fCenter
+\Delta, \Delta, \Lambda, \Lambda$. Kita ngolèhké
+!!{proof} $\pi'$ kanggo
+$\Gamma, \Pi \fCenter \Delta, \Lambda$
+kanthi ngetrapaké \olref[seq][inv]{prop:G3c-cont-adm}.

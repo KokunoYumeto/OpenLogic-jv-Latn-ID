@@ -1,0 +1,201 @@
+% Part: lambda-calculus
+% Chapter: lambda-definability
+% Section: arithmetical-functions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{rep}{arf}
+\olsection{Fungsi Aritmetika kang \usetoken{S}{lambda definable}}
+
+\begin{prop}
+  \ollabel{prop:succ-ld}
+  Fungsi penerus~$\Succ$ iku
+  !!{lambda definable}.
+\end{prop}
+
+\begin{proof}
+Suku kang !!{lambda define}s
+fungsi penerus yaiku
+\begin{align*}
+  \fn{Succ} & \ident \lambd[a][\lambd[fx][f ({a} f x)]].
+  \intertext{Miturut konvensi kita, iki cekakan saka}
+  \fn{Succ} & \ident \lambd[a][\lambd[f][\lambd[x][(f (({a} f) x))]]].
+  \intertext{$\fn{Succ}$ yaiku fungsi kang nampa
+    sawijining bilangan~$a$ minangka argumen,
+    banjur ngasilake fungsi liya,
+    $\lambd[fx][f ({a} f x)]$.
+    Fungsi iki dhewe dudu numeral Church.
+    Nanging yen argumen $a$ numeral Church,
+    asile direduksi dadi numeral Church.
+    Gatekna:}
+   (\lambd[a][\lambd[fx][f ({a} f x)]])\,\num{n} & \redone
+   \lambd[fx][f ({\num{n}} f x)].
+   \intertext{Suku sisipan $\num{n}fx$ iku redex,
+     amarga $\num{n}$ yaiku $\lambd[fx][f^nx]$.
+     Mula $\num{n}fx \redone f^nx$,
+     saéngga kanggo suku sakabèhé kita oleh}
+   \fn{Succ}\, \num n & \red \lambd[fx][f(f^n(x))],
+\end{align*}
+yaiku $\num{n+1}$.
+\end{proof}
+
+\begin{ex}
+  Gatekna apa kang kelakon yen
+  $\fn{Succ}$ ditrapake
+  marang~$\num{0}$, yaiku
+  $\lambd[fx][x]$.
+  Kita tulis suku-sukune
+  kanthi pepak:
+  \begin{align*}
+    \fn{Succ}\, \num{0} & \ident (\lambd[a][\lambd[f][\lambd[x][(f (({a} f) x))]]])(\lambd[f][\lambd[x][x]])\\
+    & \redone \lambd[f][\lambd[x][(f (({(\lambd[f][\lambd[x][x]])} f) x))]] \\
+    & \redone \lambd[f][\lambd[x][(f ({(\lambd[x][x])} x))]] \\
+    & \redone \lambd[f][\lambd[x][(f x)]] \ident \num{1}\\
+  \end{align*}
+\end{ex}
+
+\begin{prob}
+  Suku
+  \begin{align*}
+    \fn{Succ}' & \ident \lambd[{n}][\lambd[fx][{n} f (f x)]]
+  \end{align*}
+  !!{lambda define}s
+  fungsi penerus.
+  Terangna alesane.
+\end{prob}
+
+\begin{prop}
+  \ollabel{prop:add-ld}
+  Fungsi panjumlahan~$\Add$
+  iku !!{lambda definable}.
+\end{prop}
+
+\begin{proof}
+Panjumlahan !!{lambda define}d
+dening suku-suku iki:
+\begin{align*}
+  \fn{Add} & \ident \lambd[{a}{b}][\lambd[fx][{a} f ({b} f x)]]
+\intertext{utawa, minangka cara liya,}
+  \fn{Add}' & \ident \lambd[{a}{b}][{a}\, \fn{Succ} \, {b}].
+\intertext{Panjumlahan kapisan lumaku mangkene:
+  $\fn{Add}$ nampa dhisik rong bilangan,
+  ${a}$ lan ${b}$. Asile sawijining fungsi
+  kang nampa $f$ lan $x$ banjur
+  ngasilake $af(bfx)$. Yen $a$ lan $b$
+  numeral Church $\num{n}$ lan
+  $\num{m}$, asil iki direduksi dadi
+  $f^{n+m}(x)$, kang padha karo
+  $f^{n}(f^{m}(x))$. Rinciane:}
+  (\lambd[{a}{b}][\lambd[fx][{a} f ({b} f x)]])\num n\,\num m & \redone
+  \lambd[fx][\num{n}\, f (\num {m}\, f x)] \\
+  & \redone \lambd[fx][\num{n}\, f (f^m x)] \\
+  & \redone \lambd[fx][f^n (f^m x)] \ident \num {n+m}.
+\intertext{Perwakilan panjumlahan kapindho,
+  $\fn{Add'}$, lumaku kanthi cara liya:
+  yen ditrapake marang rong numeral Church,
+  $\num{n}$ lan $\num{m}$,}
+\fn{Add}' \num n \,\num m
+& \redone \num{n}\, \fn{Succ}\, \num{m}.
+\intertext{Nanging $\num{n} f x$ mesthi
+  direduksi dadi $f^n(x)$. Mula,}
+  \num{n}\,  \fn{Succ}\, \num{m} & \red \fn{Succ}^n(\num{m}).
+\end{align*}
+Amarga $\fn{Succ}$
+!!{lambda define}s fungsi
+penerus, lan fungsi penerus
+kang ditrapake ping $n$
+marang~$m$ ngasilake
+$n+m$, asil iki banjur
+direduksi dadi~$\num{n+m}$.
+\end{proof}
+
+\begin{prop}
+  \ollabel{prop:mult-ld}
+  Perkalian iku
+  !!{lambda definable}
+  dening suku iki:
+  \[
+  \fn{Mult} \ident \lambd[ab][\lambd[fx][a (b f) x]]
+  \]
+\end{prop}
+
+\begin{proof}
+  Kanggo ndeleng carane kerjane,
+  upamane $\fn{Mult}$
+  ditrapake marang numeral Church
+  $\num{n}$ lan $\num{m}$:
+  $\fn{Mult} \, \num{n} \, \num{m}$
+  direduksi dadi
+  $\lambd[fx][\num{n}(\num{m}\, f)x]$.
+  Suku $\num{m} f$ netepake
+  fungsi kang ngetrapake $f$
+  marang argumene ping $m$.
+  Mula $\num{n} (\num{m} f) x$
+  ngetrapake fungsi kang
+  ngetrapake $f$ ping $m$
+  iku dhewe ping $n$
+  marang~$x$.
+  Kanthi tembung liya,
+  $f$ ditrapake marang
+  $x$ ping $n\cdot m$.
+  Suku normal asile
+  ora liya numeral Church
+  $\num{nm}$.
+\end{proof}
+
+\begin{editorial}
+Suku iki sejatine bisa
+disederhanakake maneh
+kanthi reduksi-$\eta$:
+\[
+  \fn{Mult} \ident \lambd[ab][\lambd[f][a (b f)]].
+\]
+
+Reduksi-$\eta$ kang
+dibutuhake ing kene wis
+diandharake ing bab sintaksis.
+\end{editorial}
+
+\begin{prob}
+Perkalian bisa
+!!{lambda define}d
+dening suku
+\[
+  \fn{Mult}' \ident \lambd[ab][a (\fn{Add}\, b) \num{0}].
+\]
+Terangna kepriye
+suku iki makarya.
+\end{prob}
+
+Definisi pemangkatan
+minangka suku-$\lambd$
+prasaja kanthi cara
+kang nggumunake:
+\[
+  \fn{Exp} \ident \lambd[be][e b].
+\]
+Argumen kapisan $b$
+yaiku basis, dene
+argumen kapindho~$e$
+yaiku eksponen.
+Miturut intuisi,
+$e f$ iku $f^e$
+miturut pangodean
+bilangan kita.
+Yen iki angel dipahami,
+pemangkatan uga bisa
+ditetepake liwat
+perkalian kang dibaleni:
+\[
+  \fn{Exp}' \ident \lambd[be][e (\fn{Mult}\, b) \num{1}].
+\]
+
+Fungsi sadurunge lan
+pengurangan ing numeral
+Church ora segampang
+kang dikira: perlu
+pangodean pasangan.
+
+\end{document}

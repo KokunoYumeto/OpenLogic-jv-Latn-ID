@@ -1,0 +1,59 @@
+% Part: first-order-logic
+% Chapter: axiomatic-deduction
+% Section: provability-quantifiers
+
+% pamriksan sipat-sipat provabilitas kang dibutuhake kanggo himpunan
+% konsisten maksimal ing bab kelengkapan.
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{axd}{qpr}
+
+\olsection{\usetoken{S}{derivability} lan Kuantor}
+
+\begin{explain}
+  Teorema kelengkapan uga mbutuhake supaya deduksi aksiomatik
+  ngasilake kasunyatan ngenani~$\Proves$ kang ditetepake ing bagean
+  iki.
+\end{explain}
+
+\begin{thm}
+\ollabel{thm:strong-generalization} Yen $c$ iku !!a{constant} kang ora
+muncul ing $\Gamma$ utawa $!A(x)$ lan $\Gamma \Proves !A(c)$, mula
+$\Gamma \Proves \lforall[x][!A(x)]$.
+\end{thm}
+
+\begin{proof}
+Miturut Teorema Deduksi, $\Gamma \Proves \ltrue \lif !A(c)$. Amarga
+$c$ ora muncul ing $\Gamma$ utawa~$\ltrue$, kita entuk $\Gamma
+\Proves \ltrue \lif \lforall[x][!A(x)]$. Amarga aksioma kabeneran
+bisa diderivasi saka saben himpunan premis, modus ponens meta banjur
+menehi $\Gamma \Proves
+\lforall[x][!A(x)]$. Cathetan koreksi sumber OLPL-034 lan OLPL-035:
+lambang konstanta kabeneran diselarasake karo notasi basa-objek
+ing saubenge, lan langkah pungkasan dibenerake nganggo aksioma
+kabeneran sarta modus ponens meta, dudu nganggo Teorema Deduksi maneh.
+\end{proof}
+
+\begin{prop}
+\ollabel{prop:provability-quantifiers}
+Kanggo saben term katutup, perkara-perkara iki lumaku. Cathetan
+koreksi sumber OLPL-036: watesan iki diwarisake saka skema aksioma
+kuantor kang digunakake ing bukti.
+\begin{tagenumerate}{prvEx,prvAll}
+\tagitem{prvEx}{$!A(t) \Proves \lexists[x][!A(x)]$.}{}
+
+\tagitem{prvAll}{$\lforall[x][!A(x)] \Proves !A(t)$.}{}
+\end{tagenumerate}
+\end{prop}
+
+\begin{proof}
+\begin{tagenumerate}{prvEx,prvAll}
+\tagitem{prvEx}{Miturut \olref[qua]{ax:q2} lan Teorema Deduksi.}{}
+\tagitem{prvAll}{Miturut \olref[qua]{ax:q1} lan Teorema Deduksi.}{}
+\end{tagenumerate}
+\end{proof}
+
+\end{document}

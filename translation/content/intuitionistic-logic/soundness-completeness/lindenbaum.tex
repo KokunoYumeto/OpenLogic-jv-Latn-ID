@@ -1,0 +1,153 @@
+% part: intuitionistic-logic
+% chapter: soundness-completeness
+% section: lindenbaum
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{sc}{lin}
+
+\olsection{Lema Lindenbaum}
+
+Teorema kelengkapan kanggo logika intuisionistik dibuktekake kanthi
+nganggep $\Gamma \Proves/ !A$ lan mbangun model kanthi
+$\mSat{M}{\Gamma}$ lan~$\mSat/{M}{!A}$.
+
+Ing logika klasik, relasi !!{derivability} bisa direduksi dadi
+pangerten konsistensi, amarga !!a{formula}~$!A$ iku !!{derivable}
+saka himpunan !!{formula}s yen lan mung yen himpunan iku bebarengan
+karo negasi saka~$!A$ ora konsisten. Iki ora bisa ditindakake ing
+logika intuisionistik. Ing logika intuisionistik, yen $\lnot!A$ ora
+konsisten, kita mung entuk $\Proves \lnot\lnot !A$. Amarga
+$\lnot\lnot!A \lif !A$ ora lumaku sacara intuisionistik ing umum,
+kita ora bisa nyimpulake yen~$\Proves !A$.
+
+Mula nalika mbangun model~$\mModel{M}$, kita kudu njaga supaya
+!!{derivability} kanggo !!{formula}~$!A$ tetep ora kelakon. Dadi kita
+ora bisa nggunakake himpunan lengkap $\Gamma^* \supseteq \Gamma$
+kanggo mbangun model $\mModel{M}$, amarga ing saben himpunan lengkap
+$\Gamma^*$, kita nduweni $\Gamma^* \Proves !A \lor \lnot !A$.
+
+Minangka gantine himpunan lengkap~$\Gamma^*$, kita bakal nggunakake
+pangerten himpunan formula kang prim:
+
+\begin{defn}\ollabel{defn:prime}
+  Himpunan !!{formula}s~$\Gamma$ iku \emph{prim} yen lan mung yen
+  \begin{enumerate}
+  \item\ollabel{defn:prime1} $\Gamma$ konsisten, yaiku $\Gamma \Proves/ \lfalse$;
+  \item\ollabel{defn:prime2} yen $\Gamma \Proves !A$, mula $!A \in \Gamma$; lan
+  \item\ollabel{defn:prime3} yen $!A \lor !B \in \Gamma$, mula $!A \in
+    \Gamma$ utawa $!B \in \Gamma$.
+  \end{enumerate}
+\end{defn}
+
+\begin{lem}[Lema Lindenbaum]
+  \ollabel{lem:lindenbaum} Yen $\Gamma \Proves/ !A$, ana
+  $\Gamma^* \supseteq \Gamma$ kanthi $\Gamma^*$ prim lan
+  $\Gamma^* \Proves/ !A$.
+\end{lem}
+
+\begin{proof}
+  Upamane $!B_1 \lor !C_1$, $!B_2 \lor !C_2$, \dots, iku enumerasi
+  kabeh !!{formula}s kang awujud~$!B \lor !C$. Kita bakal nemtokake
+  urutan himpunan !!{formula}s~$\Gamma_n$ kang mundhak, kanthi saben
+  $\Gamma_{n+1}$ ditetepake minangka $\Gamma_n$ bebarengan karo siji
+  !!{formula} anyar yen isih ana kang kudu ditambahake. $\Gamma^*$
+  bakal dadi gabungan kabeh~$\Gamma_n$. !!{formula}s anyar dipilih
+  supaya $\Gamma^*$ prim lan tetep $\Gamma^* \Proves/ !A$.
+  Tegese, ing saben langkah kita kudu nemokake disjungsi kapisan
+  ~$!B_i \lor !C_i$ kanthi:
+  \begin{enumerate}
+  \item\ollabel{gamma-1} $\Gamma_n \Proves !B_i \lor !C_i$
+  \item\ollabel{gamma-2} $!B_i \notin \Gamma_n$ lan $!C_i \notin \Gamma_n$
+  \end{enumerate}
+  Kita nambahake marang $\Gamma_n$ salah siji $!B_i$ yen
+  $\Gamma_n \cup \{!B_i\} \Proves/ !A$, utawa $!C_i$ yen ora.
+  Kita kudu nuduhake yen cara iki kasil. Sauntara, tetepa $i(n)$
+  minangka $i$ paling cilik kang nyukupi \olref{gamma-1}
+  lan~\olref{gamma-2}.
+  
+  Tetepa $\Gamma_0 = \Gamma$ lan
+  \[
+  \Gamma_{n+1} = \begin{cases}
+    \Gamma_n \cup \{!B_{i(n)}\} &
+    \text{yen $\Gamma_n \cup \{!B_{i(n)}\} \Proves/ !A$} \\
+    \Gamma_n \cup \{!C_{i(n)}\} & \text{yen ora}
+    \end{cases}
+  \]
+  Yen $i(n)$ ora ditetepake, yaiku saben $\Gamma_n \Proves !B \lor !C$,
+  salah siji $!B \in \Gamma_n$ utawa $!C \in \Gamma_n$, kita nemtokake
+  $\Gamma_{n+1} = \Gamma_n$. Saiki tetepa
+  $\Gamma^* = \bigcup_{n=0}^\infty \Gamma_n$.
+
+  Sepisan, kita nuduhake yen kanggo kabeh $n$, $\Gamma_n \Proves/ !A$.
+  Kita nganggo induksi tumrap~$n$. Kanggo $n = 0$, pratelan iki
+  bener miturut hipotesis lema, yaiku $\Gamma \Proves/ !A$.
+  Kanggo $n \ge 0$, kita kudu nuduhake yen $\Gamma_n \Proves/ !A$,
+  mula $\Gamma_{n+1} \Proves/ !A$. Yen $i(n)$ ora ditetepake,
+  $\Gamma_{n+1} = \Gamma_n$ lan ora ana kang kudu dibuktekake.
+  Mula upamane $i(n)$ ditetepake. Supaya prasaja, tetepa $i = i(n)$.
+  
+  Kita bakal mbuktekake kontrapositif pratelan iki. Upamane
+  $\Gamma_{n+1} \Proves !A$. Miturut konstruksi,
+  $\Gamma_{n+1} = \Gamma_n \cup \{!B_i\}$ yen
+  $\Gamma_n \cup \{!B_i\} \Proves/ !A$, utawa yen ora,
+  $\Gamma_{n+1} = \Gamma_n \cup \{!C_i\}$. Cetha ora bisa kang
+  kapisan, amarga banjur $\Gamma_{n+1} \Proves/ !A$. Mula
+  $\Gamma_n \cup \{!B_i\} \Proves !A$ lan
+  $\Gamma_{n+1} = \Gamma_n \cup \{!C_i\}$. Miturut definisi $i(n)$,
+  kita nduweni $\Gamma _n \Proves !B_i \lor !C_i$.
+  Kita nduweni $\Gamma_n \cup \{!B_i\} \Proves !A$. Uga
+  $\Gamma_{n+1} = \Gamma_n \cup \{!C_i\} \Proves !A$.
+  Mula $\Gamma_n \Proves !A$, kaya kang arep dituduhake.
+
+  Yen $\Gamma^* \Proves !A$, ana subhimpunan winates
+  $\Gamma' \subseteq \Gamma^*$ kanthi $\Gamma' \Proves !A$.
+  Saben $!D \in \Gamma'$ kudu ana ing $\Gamma_i$ kanggo sawenehing~$i$.
+  Pilihen $n$ kang ora luwih cilik tinimbang kabeh indeks iku;
+  yen ora ana indeks amarga himpunane kosong, pilih nol.
+  Amarga $\Gamma_i \subseteq \Gamma_n$ yen $i \le n$,
+  $\Gamma' \subseteq \Gamma_n$. Nanging banjur $\Gamma_n \Proves !A$,
+  nalisir bukti ing ndhuwur yen $\Gamma_n \Proves/ !A$.
+
+  Pungkasan, kita nuduhake yen $\Gamma^*$ prim, yaiku nyukupi syarat
+  \olref{defn:prime1}, \olref{defn:prime2}, lan~\olref{defn:prime3}
+  saka \olref{defn:prime}.
+
+  Sepisan, $\Gamma^* \Proves/ !A$, mula $\Gamma^*$ konsisten.
+  Dadi \olref{defn:prime1} kasembadan.
+
+  Saiki kita nuduhake yen $\Gamma^* \Proves !B \lor !C$, mula salah
+  siji $!B \in \Gamma^*$ utawa $!C \in \Gamma^*$. Iki mbuktekake
+  \olref{defn:prime3}, amarga yen $!B \lor !C \in \Gamma^*$,
+  uga $\Gamma^* \Proves !B \lor !C$. Mula upamane
+  $\Gamma^* \Proves !B \lor !C$ nanging $!B \notin \Gamma^*$ lan
+  $!C \notin \Gamma^*$. Amarga $\Gamma^* \Proves !B \lor !C$,
+  $\Gamma_n \Proves !B \lor !C$ kanggo sawenehing~$n$.
+  $!B \lor !C$ ana ing enumerasi kabeh disjungsi, upamane minangka
+  $!B_j \lor !C_j$. $!B_j \lor !C_j$ nyukupi sipat-sipat ing definisi
+  $i(n)$, yaiku $\Gamma_n \Proves !B_j \lor !C_j$, dene
+  $!B_j \notin \Gamma_n$ lan $!C_j \notin \Gamma_n$.
+  Disjungsi iki tetep nyukupi syarat ing saben tahap sabanjure nganti
+  dipilih. Ing saben tahap sadurunge dipilih, disjungsi $!B_i \lor !C_i$
+  kanthi indeks luwih cilik dipilih. Indeks kang luwih cilik mung ana
+  winates, lan saben disjungsi iku mung bisa dipilih sapisan, amarga
+  saben dipilih kita nambahake salah siji $!B_i$ utawa $!C_i$.
+  Mula ing sawenehing tahap~$m$, kita bakal nduweni $j = i(m)$.
+  Nanging banjur salah siji $!B \in \Gamma_{m+1}$ utawa
+  $!C \in \Gamma_{m+1}$, nalisir asumsi yen $!B \notin \Gamma^*$
+  lan $!C \notin \Gamma^*$.
+
+  Saiki upamane $\Gamma^* \Proves !B$. Mula $\Gamma^* \Proves !B \lor !B$.
+  Nanging kita lagi wae mbuktekake yen $\Gamma^* \Proves !B \lor !B$,
+  mula $!B \in \Gamma^*$. Dadi $\Gamma^*$ nyukupi
+  ~\olref{defn:prime2} saka~\olref{defn:prime}.
+\end{proof}
+
+\begin{prob}
+Tuduhna yen $\Gamma \Proves/ \bot$, mula $\Gamma$ konsisten ing logika
+klasik, yaiku ana valuasi kang ndadekake kabeh formula ing~$\Gamma$ bener.
+\end{prob}
+
+\end{document}

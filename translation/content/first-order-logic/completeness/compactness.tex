@@ -1,0 +1,221 @@
+% Part: first-order-logic
+% Chapter: completeness
+% Section: compactness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{com}{com}}
+      {\olfileid{pl}{com}{com}}
+
+\olsection{Teorema Kekompakan}
+
+Salah sawijining akibat wigati saka teorema kelengkapan yaiku teorema
+kekompakan. Teorema kekompakan nyatakake yen saben subhimpunan
+\emph{winates} saka sawijining himpunan !!{sentence}s bisa dicukupi,
+mula kabeh himpunan kasebut bisa dicukupi---sanajan himpunan kasebut
+dhewe tanpa wates. Bab iki ora cetha babar pisan. Ing pandeleng
+kapisan paling ora, katon ora ana apa-apa kang nyegah anane himpunan
+!!{sentence}s tanpa wates kang kontradiktif, nanging kontradiksi mau,
+upamane, mung tuwuh saka cacahe kang tanpa wates. Teorema kekompakan
+nyatakake yen kahanan kaya mangkono bisa disingkirake: ora ana
+himpunan !!{sentence}s tanpa wates kang ora bisa dicukupi nanging
+saben subhimpunan winatese bisa dicukupi. Kaya teorema kelengkapan,
+teorema iki duwe versi kang gegayutan karo akibat semantis: yen
+sawijining himpunan !!{sentence}s tanpa wates ngakibatake sawijining
+pratelan, sawijining subhimpunan winates wae wis ngakibatake pratelan
+kasebut.
+
+\begin{defn}
+  Himpunan $\Gamma$ saka !!{formula}s diarani \emph{bisa dicukupi
+  kanthi winates} yen lan mung yen saben $\Gamma_0 \subseteq \Gamma$
+  kang winates bisa dicukupi.
+\end{defn}
+
+\begin{thm}[Teorema Kekompakan]
+\ollabel{thm:compactness}
+Pratelan-pratelan sabanjure bener kanggo saben himpunan ukara
+$\Gamma$ lan ukara~$!A$. Cathetan koreksi sumber OLPL-053:
+sumber Inggris kanthi kliru nyebut loro-lorone minangka ukara; ing
+kene Gamma dibalekake minangka himpunan ukara, kaya kang dibutuhake
+dening rong pratelan sabanjure.
+\begin{enumerate}
+  \item $\Gamma \Entails !A$ yen lan mung yen ana $\Gamma_0
+    \subseteq \Gamma$ kang winates nganti $\Gamma_0 \Entails !A$.
+  \item $\Gamma$ bisa dicukupi yen lan mung yen bisa dicukupi kanthi
+    winates.
+\end{enumerate}
+\end{thm}
+
+\begin{proof}
+Kita mbuktekake (2). Yen $\Gamma$ bisa dicukupi, mula ana
+\iftag{FOL}{!!a{structure}~$\Struct{M}$}{!!a{valuation}~$\pAssign{v}$}
+nganti $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$ kanggo kabeh $!A \in
+\Gamma$. Mesthi wae, $\iftag{FOL}{\Struct{M}}{\pAssign{v}}$ iki uga
+nyukupi saben subhimpunan winates saka~$\Gamma$, mula $\Gamma$ bisa
+dicukupi kanthi winates.
+
+Saiki upamana $\Gamma$ bisa dicukupi kanthi winates. Mula saben
+subhimpunan winates~$\Gamma_0 \subseteq \Gamma$ bisa dicukupi. Miturut
+kesahihan
+(\iftag{FOL}{%
+  \tagrefs{prfAX/{fol:axd:sou:cor:consistency-soundness},
+    prfSC/{fol:seq:sou:cor:consistency-soundness},
+    prfND/{fol:ntd:sou:cor:consistency-soundness},
+    prfTab/{fol:tab:sou:cor:consistency-soundness}}}{%
+  \tagrefs{prfAX/{pl:axd:sou:cor:consistency-soundness},
+    prfSC/{pl:seq:sou:cor:consistency-soundness},
+    prfND/{pl:ntd:sou:cor:consistency-soundness},
+    prfTab/{pl:tab:sou:cor:consistency-soundness}}}),
+saben subhimpunan winates konsisten. Banjur $\Gamma$ dhewe kudu
+konsisten miturut
+\iftag{FOL}{%
+  \tagrefs{prfAX/{fol:axd:ptn:prop:proves-compact},
+    prfSC/{fol:seq:ptn:prop:proves-compact},
+    prfND/{fol:ntd:ptn:prop:proves-compact},
+    prfTab/{fol:tab:ptn:prop:proves-compact}}}{%
+  \tagrefs{prfAX/{pl:axd:ptn:prop:proves-compact},
+    prfSC/{pl:seq:ptn:prop:proves-compact},
+    prfND/{pl:ntd:ptn:prop:proves-compact},
+    prfTab/{pl:tab:ptn:prop:proves-compact}}}.
+Miturut kelengkapan (\olref[cth]{thm:completeness}), amarga
+$\Gamma$~konsisten, himpunan kasebut bisa dicukupi.
+\end{proof}
+
+\tagprob{FOL}
+\begin{prob}
+Buktekna (1) saka \olref[fol][com][com]{thm:compactness}.
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+Buktekna (1) saka \olref[pl][com][com]{thm:compactness}.
+\end{prob}
+\tagendprob
+
+\iftag{FOL}{%
+\begin{ex}
+Ing saben model~$\Struct{M}$ saka sawijining teori~$\Gamma$, saben
+term~$t$ mesthi nuduhake !!a{element} saka~$\Domain{M}$. Apa kita bisa
+njamin yen saben !!{element} saka~$\Domain{M}$ uga dituduhake dening
+sawijining term? Kanthi tembung liya, apa ana teori~$\Gamma$ kang
+kabeh modele katutup? Teorema kekompakan nuduhake yen jawabane ora yen
+$\Gamma$ nduweni model tanpa wates. Katrangane mangkene: Upamana
+$\Struct{M}$ minangka model tanpa wates saka~$\Gamma$, lan upamana
+$c$ minangka !!a{constant} kang ora ana ing basa~$\Gamma$. Upamana
+$\Delta$ minangka himpunan kabeh ukara $\eq/[c][t]$ kanggo saben term
+$t$ ing basa~$\Lang{L}$ saka~$\Gamma$, yaiku,
+  \[
+  \Delta = \Setabs{\eq/[c][t]}{t \in \Trm[L]}.
+  \]
+Sawijining subhimpunan winates saka $\Gamma \cup \Delta$ bisa ditulis
+minangka $\Gamma' \cup \Delta'$, kanthi $\Gamma' \subseteq \Gamma$ lan
+$\Delta' \subseteq \Delta$. Amarga $\Delta'$ winates, himpunan iki
+mung bisa ngemot term kang cacahe winates. Jupuken $a \in \Domain{M}$
+minangka !!a{element} saka $\Domain{M}$ kang ora dituduhake dening
+siji wae saka term-term kasebut, lan upamana $\Struct{M'}$ minangka
+!!{structure} kang padha karo $\Struct{M}$, nanging uga
+$\Assign{c}{M'} = a$. Amarga $a \neq \Value{t}{M}$ kanggo kabeh~$t$
+kang muncul ing~$\Delta'$, $\Sat{M'}{\Delta'}$. Amarga
+$\Sat{M}{\Gamma}$, $\Gamma' \subseteq \Gamma$, lan $c$ ora muncul
+ing~$\Gamma$, kita uga duwe $\Sat{M'}{\Gamma'}$. Dadi,
+$\Sat{M'}{\Gamma' \cup \Delta'}$ kanggo saben subhimpunan winates
+$\Gamma' \cup \Delta'$ saka $\Gamma \cup \Delta$. Mula saben
+subhimpunan winates saka $\Gamma \cup \Delta$ bisa dicukupi. Miturut
+kekompakan, $\Gamma \cup \Delta$ dhewe bisa dicukupi. Dadi,
+$\Sat{M}{\Gamma \cup \Delta}$ kanggo sawijine model M. Saben
+$\Struct{M}$ kaya mangkono
+minangka model saka~$\Gamma$, nanging ora katutup dening term-term
+saka basa asline, amarga $\Value{c}{M} \neq \Value{t}{M}$ kanggo kabeh
+term~$t$ saka~$\Lang{L}$.
+\end{ex}
+
+\begin{ex}
+Gatekna !!a{language} $\Lang{L}$ kang ngemot !!{predicate}~$<$,
+!!{constant}s $\Obj{0}$, $\Obj{1}$, lan !!{function}s $+$, $\times$,
+lan $-$. Upamana $\Gamma$ minangka himpunan kabeh !!{sentence}s ing
+!!{language} iki kang bener ing !!{structure}~$\Struct{Q}$ kanthi
+domain~$\Rat$ lan tafsiran kang lumrah. $\Gamma$~yaiku himpunan kabeh
+!!{sentence}s saka~$\Lang{L}$ kang bener ngenani wilangan rasional.
+Mesthi wae, ing~$\Rat$ (lan malah ing~$\Real$), ora ana wilangan~$r$
+kang luwih gedhe tinimbang~$0$ nanging luwih cilik tinimbang $1/k$
+kanggo kabeh $k \in \PosInt$. Yen ana, wilangan kaya mangkono bakal
+dadi \emph{infinitesimal:} ora nol, nanging cilik tanpa wates.
+Teorema kekompakan bisa digunakake kanggo nuduhake yen ana model
+saka~$\Gamma$ kang ngemot infinitesimal. Ing basa kita ora ana
+!!a{function} kanggo pembagian (pembagian kanthi nol ora katetepake,
+lan !!{function}s kudu ditafsirake dening fungsi total). Nanging, kita
+isih bisa nyatakake yen $r < 1/k$, amarga iki bener yen lan mung yen
+$r \cdot k < 1$. Saiki upamana $c$ minangka !!{constant} anyar lan
+upamana $\Delta$ yaiku
+\[
+\{\Obj{0} < c\}
+\cup \Setabs{ c \times \num k < \Obj{1} }{k \in \PosInt}
+\]
+(ing kene $\num{k} = (\Obj{1} + (\Obj{1} + \dots + (\Obj{1} +
+\Obj{1})\dots))$ kanthi $k$~$\Obj{1}$). Kanggo saben subhimpunan
+winates~$\Delta_0$ saka~$\Delta$, ana~$K$ nganti kabeh !!{sentence}s
+$c \times \num{k} < \Obj{1}$ ing~$\Delta_0$ nduweni $k < K$. Yen
+kita nggedhekake $\Struct{Q}$ dadi~$\Struct{Q'}$ kanthi
+$\Assign{c}{Q'} = 1/K$, kita duwe
+$\Sat{Q'}{\Gamma_0 \cup \Delta_0}$ kanggo saben $\Gamma_0 \subseteq
+\Gamma$ kang winates, mula $\Gamma \cup \Delta$ bisa dicukupi kanthi
+winates (Gladhen: buktekna iki kanthi rinci). Miturut kekompakan,
+$\Gamma \cup \Delta$ bisa dicukupi. Saben model~$\Struct{S}$ saka
+$\Gamma \cup \Delta$ ngemot infinitesimal, yaiku~$\Assign{c}{S}$.
+\end{ex}
+}{}
+
+\tagprob{FOL}
+\begin{prob}
+Ing model standar aritmetika~$\Struct{N}$, ora ana !!{element}~$k \in
+\Domain{N}$ kang nyukupi saben formula~$\num{n} < x$ (ing kene
+$\num{n}$ yaiku $\Obj{0}^{\prime\dots\prime}$ kanthi $n$~$\prime$).
+Gunakna teorema kekompakan kanggo nuduhake yen himpunan
+!!{sentence}s ing basa aritmetika kang bener ing model standar
+aritmetika $\Struct{N}$ uga bener ing !!a{structure}~$\Struct{N'}$
+kang ngemot !!a{element} kang \emph{pancen} nyukupi saben formula
+$\num{n} < x$.
+\end{prob}
+\tagendprob
+
+\iftag{FOL}{
+\begin{ex}
+Kita ngerti yen logika sepisanan kanthi !!{identity} bisa nyatakake
+yen ukuran !!{domain} kudu nduweni ukuran minimal tartamtu: Ukara
+$!A_{\ge n}$ (kang nyatakake “ana paling ora $n$ objek kang beda”)
+mung bener ing struktur kang $\Domain{M}$ ngemot paling ora~$n$ objek.
+Dadi yen kita njupuk
+  \[
+  \Delta = \Setabs{!A_{\ge n}}{n \ge 1}
+  \]
+mula saben model saka $\Delta$ kudu tanpa wates. Mula, kita bisa
+njamin yen sawijining teori mung nduweni model tanpa wates kanthi
+nambahake~$\Delta$ marang teori kasebut: model saka $\Gamma \cup
+\Delta$ yaiku kabeh lan mung model tanpa wates saka~$\Gamma$.
+
+Dadi logika sepisanan bisa nyatakake sifat tanpa wates. Nanging,
+teorema kekompakan nuduhake yen logika sepisanan ora bisa nyatakake
+sifat winates. Upamana ana sawijine himpunan ukara $\Lambda$ kang bisa
+dicukupi ing kabeh lan mung !!{structure}s winates. Banjur $\Delta
+\cup \Lambda$ bisa dicukupi kanthi winates. Apa sebabe? Upamana
+$\Delta' \cup \Lambda' \subseteq \Delta \cup \Lambda$ winates kanthi
+$\Delta' \subseteq \Delta$ lan $\Lambda' \subseteq \Lambda$. Cathetan
+koreksi sumber OLPL-054: yen subhimpunan Delta-prime kasebut kosong,
+jupuken n minangka siji; yen ora kosong, gunakna angka paling gedhe
+kaya ing ukara sabanjure. Ing perkara kang ora kosong, upamana $n$
+minangka wilangan paling gedhe nganti $!A_{\ge n} \in \Delta'$; ing
+perkara kosong, n wis dipilih minangka siji. Amarga $\Lambda$ bisa
+dicukupi ing kabeh struktur winates, himpunan kasebut nduweni
+model~$\Struct{M}$
+kanthi !!{element}s kang cacahe winates nanging $\ge n$. Nanging banjur
+$\Sat{M}{\Delta' \cup \Lambda'}$. Miturut kekompakan, $\Delta \cup
+\Lambda$ nduweni model tanpa wates, kang mbantah panganggep yen
+$\Lambda$ mung bisa dicukupi ing !!{structure}s winates.
+\end{ex}
+}{}
+
+\end{document}

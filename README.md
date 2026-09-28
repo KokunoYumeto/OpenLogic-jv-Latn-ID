@@ -3,22 +3,13 @@
 Terjemahan OpenLogic nganggo basa Jawa aksara Latin (jv-Latn-ID).
 Ragam utama yaiku ngoko tinulis kanggo andharan akademik.
 
-**Isih digarap: sumber saiki ngemot 118 saka 722 berkas kang wis diterjemahake.**
-Bab himpunan, relasi, fungsi, himpunan tanpa wates, sintaksis-semantik
-logika proposisional, ringkesan sistem derivasi, kalkulus sekuen
-nganti kasahihan lan identitas, deduksi natural nganti konsep
-teoretis-bukti, tableaux nganti kasahihan mawa identitas, sarta dhasar
-deduksi aksiomatik nganti gagasan teoretis-bukti wis rampung ditulis.
-Pambangunan PDF telung bab kang wis diterbitake didhukung 26 berkas sumber,
-lan 24 unit sumber dimuat ing wacane.
-Wacan PDF saiki ngemot 24 unit sumber lan dibangun maneh kanggo rilis
+**Isih digarap: sumber saiki ngemot 671 saka 722 berkas kang wis diterjemahake.**
+Urutan sumber wis tekan pungkasan bab deduksi natural ing perangan teori bukti.
+Wacan PDF kang wis diterbitake tetep ngemot 24 unit sumber lan dibangun kanggo rilis
 [v0.2.0](https://github.com/KokunoYumeto/OpenLogic-jv-Latn-ID/releases/tag/v0.2.0),
 kanthi TeX kumulatif langsung, ZIP sumber editable jangkep, lan EPUB3
-reflowable minangka pasangan rilis. Potret sumber v0.2.0 ngemot 118 unit.
-70 unit bab himpunan tanpa
-wates, sintaksis-semantik proposisional, ringkesan sistem derivasi, kalkulus sekuen,
-dhasar deduksi natural, tableaux, lan deduksi aksiomatik kang sabanjure wis rampung diterjemahake nanging durung
-kalebu PDF utawa EPUB mau.
+reflowable minangka pasangan rilis. Potret sumber v0.2.0 ngemot 118 unit;
+potret sumber saiki luwih amba tinimbang wacan PDF lan EPUB mau.
 Edhisi jangkep tetep dadi ancas, kalebu kabeh isi ing njaba
 alur wacan baku.
 
@@ -34,22 +25,25 @@ No endorsement by the upstream project or independent native review is claimed.
 - editorial/ records the academic register, source clarifications, and an
   expert-facing terminology and difficult-decision review log, full index,
   and priority review view.
-- translation-decisions/ provides the canonical schema-validated decision
-  register, focused review queue, and exact source-target occurrence table.
-- evidence/ includes the machine decision index and a one-row-per-tracked-
-  occurrence CSV; final PDF page fields are bound after the next accepted
-  reader pagination.
+- translation-decisions/ retains the first-118-unit decision index and exact
+  source-target occurrence table. SOURCE_CONTINUATION.md lists subsequent
+  decision-level choices without claiming exact occurrence locations.
+- evidence/ includes source hashes, structural QA, same-author review,
+  bounded source corrections, and the public canon-provenance scope statement.
 
 Source and translation coverage are separate from reader coverage.
 The ordinary upstream graph reaches 642 units; the full edition must
 account coherently for all 722 without duplicating alternative wrappers.
 That complete reader is not yet built.
 
-The first 118 files have exact source-aligned paragraph records,
+All 671 translated files have source-aligned paragraph records,
 formula/token/link/label checks, and same-author semantic comparisons with
-reverse paraphrases. The current independent canon revalidation and repair has
-reached OLP-0058; later translated files remain published source work whose
-canon revalidation is still in progress.
+selected reverse paraphrases. The current independent canon revalidation and
+repair has reached OLP-0058; later translated files remain source work whose
+canon revalidation is still in progress. Earlier uniform passage assignments
+for 444 decisions and 4,143 translated segments have been withdrawn from the
+public evidence pending specific revalidation; see
+[`evidence/PROVENANCE_SCOPE.json`](evidence/PROVENANCE_SCOPE.json).
 Applied source-audit corrections and retracted findings have separate
 machine-readable evidence records, including exact source and target hashes.
 These checks do not replace native review, which has not been claimed.

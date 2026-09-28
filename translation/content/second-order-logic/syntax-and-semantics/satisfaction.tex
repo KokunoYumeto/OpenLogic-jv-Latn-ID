@@ -1,0 +1,228 @@
+% Part: second-order-logic
+% Chapter: syntax-and-semantics
+% Section: satisfaction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sol}{syn}{sat}
+
+\olsection{Relasi Nyukupi}
+
+\begin{explain}
+Kanggo netepake relasi nyukupi $\Sat{M}{!A}[s]$ kanggo
+!!{formula}s orde kapindho, kita kudu njembarake definisi supaya
+ngemot !!{variable}s orde kapindho. Pangerten !!a{structure}
+ing logika orde kapindho padha kaya ing logika orde kapisan.
+Bedane mung ing pangaji variabel~$s$: saiki pangaji iku kudu
+menehi nilai ora mung marang !!{variable}s orde kapisan,
+nanging uga marang !!{variable}s orde kapindho.
+\end{explain}
+
+\begin{defn}[Pangaji Variabel]
+\emph{Pangaji variabel}~$s$ kanggo !!a{structure}~$\Struct{M}$
+iku fungsi kang nggandhengake saben
+\begin{enumerate}
+\item !!{variable} objek~$\Obj{v_i}$ karo sawijining unsur
+  saka~$\Domain M$, yaiku $s(\Obj{v_i}) \in \Domain{M}$
+\item variabel relasi $n$-papan~$\Obj{V_i^n}$ karo relasi
+  $n$-papan ing~$\Domain{M}$, yaiku
+  $s(\Obj{V_i^n}) \subseteq \Domain{M}^n$;
+\item variabel fungsi $n$-papan~$\Obj{u_i^n}$ karo fungsi
+  $n$-papan saka $\Domain{M}$ menyang $\Domain{M}$, yaiku
+  $s(\Obj{u_i^n})\colon \Domain{M}^n \to \Domain{M}$;
+\end{enumerate}
+\end{defn}
+
+\begin{explain}
+!!^a{structure} menehi !!a{value} marang saben !!{constant}
+lan !!{function}, dene pangaji variabel orde kapindho menehi objek
+lan fungsi marang saben variabel objek lan fungsi. Bareng-bareng,
+loro-lorone ngidini kita menehi nilai marang saben term.
+\end{explain}
+
+\begin{defn}[\usetoken{S}{value} saka Term]
+Yen $t$ iku term saka basa~$\Lang L$, $\Struct M$ iku
+!!a{structure} kanggo~$\Lang L$, lan $s$ iku pangaji
+!!a{variable} kanggo~$\Struct M$, mula \emph{!!{value}}~$\Value{t}{M}[s]$
+ditetepake kaya kanggo term orde kapisan, ditambah klausa iki:
+\begin{quote}
+\indcase{t}{\Atom{u}{t_1, \ldots, t_n}}{
+\[
+\Value{\indfrm}{M}[s] = s(u)(\Value{t_1}{M}[s], \ldots,
+\Value{t_n}{M}[s]).
+\]}
+\end{quote}
+\end{defn}
+
+\begin{defn}[Varian-$x$]
+Yen $s$ iku pangaji !!a{variable} kanggo !!a{structure}~$\Struct M$,
+mula saben pangaji !!{variable} $s'$ kanggo $\Struct M$ kang
+bedane karo $s$ paling akeh mung ing nilai kang diwenehake marang
+$x$ diarani \emph{varian-$x$} saka~$s$. Yen $s'$ iku varian-$x$
+saka $s$, kita nulis $\varAssign{s'}{s}{x}$. (Semono uga kanggo
+variabel orde kapindho $X$ utawa $u$.)
+\end{defn}
+
+\begin{defn}
+  Yen $s$ iku pangaji !!a{variable} kanggo
+  !!a{structure}~$\Struct M$ lan $m \in \Domain{M}$, mula
+  pangaji~$\Subst{s}{m}{x}$ iku pangaji !!{variable} kang
+  ditetepake dening
+  \[\Subst{s}{m}{y} = \begin{cases}
+    m & \text{yen } y \ident x\\
+    s(y) & \text{yen ora},
+  \end{cases}\]
+  Yen $X$ iku !!{variable} relasi $n$-papan lan $M \subseteq
+  \Domain{M}^n$, mula $\Subst{s}{M}{X}$ iku pangaji
+  !!{variable} kang ditetepake dening
+  \[\Subst{s}{M}{y} = \begin{cases}
+    M & \text{yen } y \ident X\\
+    s(y) & \text{yen ora}.
+  \end{cases}\]
+  Yen $u$ iku !!{variable} fungsi $n$-papan lan
+  $f\colon \Domain{M}^n \to \Domain{M}$, mula
+  $\Subst{s}{f}{u}$ iku pangaji !!{variable} kang ditetepake
+  dening
+  \[\Subst{s}{f}{y} = \begin{cases}
+    f & \text{yen } y \ident u\\
+    s(y) & \text{yen ora}.
+  \end{cases}\]
+  Ing saben kasus, $y$ bisa dadi !!{variable} orde kapisan utawa
+  orde kapindho apa wae.
+\end{defn}
+
+\begin{defn}[Relasi Nyukupi]
+Kanggo !!{formula}s orde kapindho~$!A$, definisi relasi nyukupi
+kaya ing \olref[fol][syn][sat]{defn:satisfaction}, ditambah:
+\begin{enumerate}
+\item \indcase{!A}{\Atom{X^n}{t_1, \dots, t_n}}{$\Sat{M}{\indfrm}[s]$
+  yen lan mung yen $\langle \Value{t_1}{M}[s], \dots, \Value{t_n}{M}[s] \rangle \in
+  s(X^n)$.}
+\tagitem{prvAll}{%
+  \indcase{!A}{\lforall[X][!B]}{$\Sat{M}{\indfrm}[s]$ yen lan mung yen kanggo saben $M
+  \subseteq \Domain{M}^n$, $\Sat{M}{!B}[\Subst{s}{M}{X}]$.}}{}
+
+\tagitem{prvEx}{%
+  \indcase{!A}{\lexists[X][!B]}{$\Sat{M}{\indfrm}[s]$ yen lan mung yen ana paling ora
+  siji $M \subseteq \Domain{M}^n$ saengga
+  $\Sat{M}{!B}[\Subst{s}{M}{X}]$.}}{}
+
+\tagitem{prvAll}{%
+  \indcase{!A}{\lforall[u][!B]}{$\Sat{M}{\indfrm}[s]$ yen lan mung yen kanggo saben
+  $f\colon \Domain{M}^n \to \Domain{M}$,
+  $\Sat{M}{!B}[\Subst{s}{f}{u}]$.}}{}
+
+\tagitem{prvEx}{%
+  \indcase{!A}{\lexists[u][!B]}{$\Sat{M}{\indfrm}[s]$ yen lan mung yen ana paling ora
+  siji $f\colon \Domain{M}^n \to \Domain{M}$ saengga
+  $\Sat{M}{!B}[\Subst{s}{f}{u}]$.}}{}
+\end{enumerate}
+\end{defn}
+
+\begin{ex}
+  Gatekna !!{formula}
+  $\lforall[z][(\Atom{X}{z} \liff \lnot \Atom{Y}{z})]$.
+  Formula iki ora ngemot kuantor orde kapindho, nanging ngemot
+  !!{variable}s orde kapindho $X$ lan~$Y$ (ing kene dianggep
+  siji-papan). !!{sentence} orde kapisan kang cocog,
+  $\lforall[z][(\Atom{P}{z} \liff \lnot \Atom{R}{z})]$,
+  nyatakake yen apa wae kang kalebu interpretasi~$P$ ora
+  kalebu interpretasi~$R$, lan kosok balene. Ing
+  !!a{structure}, interpretasi !!a{predicate}~$P$
+  diwenehake dening interpretasi~$\Assign{P}{M}$. Nanging
+  kanggo !!{variable}s orde kapindho kaya $X$ lan~$Y$,
+  interpretasi diwenehake dudu dening !!{structure} kasebut
+  dhewe, nanging dening pangaji !!a{variable}. Amarga
+  !!{formula} orde kapindho iki dudu !!a{sentence} (formula iki
+  ngemot !!{variable}s bebas $X$ lan~$Y$), relasi nyukupine
+  mung bisa ditemtokake relatif marang
+  !!a{structure}~$\Struct{M}$ bebarengan karo pangaji
+  !!a{variable}~$s$.
+
+  $\Sat{M}{\lforall[z][(\Atom{X}{z} \liff \lnot \Atom{Y}{z})]}[s]$
+  bener yen !!{element}s saka~$s(X)$ dudu !!{element}s
+  saka~$s(Y)$, lan kosok balene, yaiku yen lan mung yen
+  $s(Y) = \Domain{M} \setminus s(X)$. Tuladhane, upamana
+  $\Domain{M} = \{1, 2, 3\}$. Amarga ora ana !!{predicate}s,
+  !!{function}s, utawa !!{constant}s kang melu, mung domain
+  saka~$\Struct{M}$ kang wigati. Saiki, kanggo
+  $s_1(X) = \{1, 2\}$ lan $s_1(Y) = \{3\}$, kita nduweni
+  $\Sat{M}{\lforall[z][(\Atom{X}{z}
+      \liff \lnot \Atom{Y}{z})]}[s_1]$.
+
+  Kosok baline, yen $s_2(X) = \{1, 2\}$ lan
+  $s_2(Y) = \{2, 3\}$, kita nduweni
+  $\Sat/{M}{\lforall[z][(\Atom{X}{z} \liff \lnot
+      \Atom{Y}{z})]}[s_2]$. Sebabe,
+  $\Sat{M}{\Atom{X}{z}}[\Subst{s_2}{2}{z}]$ (amarga
+  $2 \in \Subst{s_2}{2}{z}(X)$), nanging
+  $\Sat/{M}{\lnot \Atom{Y}{z}}[\Subst{s_2}{2}{z}]$
+  (amarga uga $2 \in \Subst{s_2}{2}{z}(Y)$).
+\end{ex}
+
+\begin{ex}
+  $\Sat{M}{\lexists[Y][(\lexists[y][\Atom{Y}{y}] \land
+  \lforall[z][(\Atom{X}{z} \liff \lnot \Atom{Y}{z})])]}[s]$
+  bener yen ana $N \subseteq \Domain{M}$ saengga
+  $\Sat{M}{(\lexists[y][\Atom{Y}{y}] \land \lforall[z][(\Atom{X}{z}
+  \liff \lnot \Atom{Y}{z})])}[\Subst{s}{N}{Y}]$. Iki kedadeyan
+  yen $N \neq \emptyset$ (saengga
+  $\Sat{M}{\lexists[y][\Atom{Y}{y}]}[\Subst{s}{N}{Y}]$) lan,
+  kaya ing tuladha sadurunge, $N = \Domain{M} \setminus s(X)$.
+  Kanthi tembung liya,
+  $\Sat{M}{\lexists[Y][(\lexists[y][\Atom{Y}{y}] \land
+  \lforall[z][(\Atom{X}{z} \liff \lnot \Atom{Y}{z})])]}[s]$
+  yen lan mung yen $\Domain{M} \setminus s(X)$ ora kosong,
+  yaiku $s(X) \neq \Domain{M}$. Dadi, !!{formula} iki
+  dicukupi, upamane, yen $\Domain{M} = \{1, 2, 3\}$
+  lan $s(X) = \{1, 2\}$, nanging ora yen
+  $s(X) = \{1, 2, 3\} = \Domain{M}$.
+
+  Amarga !!{formula} iki ora dicukupi yen
+  $s(X) = \Domain{M}$, mula !!{sentence}
+  \[
+  \lforall[X][\lexists[Y][(\lexists[y][\Atom{Y}{y}] \land
+      \lforall[z][(\Atom{X}{z} \liff \lnot \Atom{Y}{z})])]]
+  \]
+  ora tau dicukupi: kanggo saben !!{structure}~$\Struct{M}$,
+  pangaji~$s(X) = \Domain{M}$ bakal ndadekake !!{sentence}
+  kasebut salah. Kosok baline, ukara
+  \[
+  \lexists[X][\lexists[Y][(\lexists[y][\Atom{Y}{y}] \land
+      \lforall[z][(\Atom{X}{z} \liff \lnot \Atom{Y}{z})])]]
+  \]
+  dicukupi relatif marang pangaji~$s$ apa wae, amarga kita
+  tansah bisa nemokake $M \subseteq \Domain{M}$ kanthi
+  $M \neq \Domain{M}$ (umpamane, $M = \emptyset$).
+\end{ex}
+
+\begin{ex}
+  !!{sentence} orde kapindho~$\lforall[X][\lforall[y][X(y)]]$
+  nyatakake yen saben relasi $1$-papan, yaiku saben sipat,
+  nyakup saben objek. Pratelan iki cetha ora tau bener,
+  amarga ing saben~$\Struct{M}$, kanggo pangaji variabel~$s$
+  kanthi $s(X) = \emptyset$ lan $s(y) = a \in \Domain{M}$,
+  kita nduweni $\Sat/{M}{X(y)}[s]$. Tegese,
+  $!A \lif \lforall[X][\lforall[y][X(y)]]$ iku ekuivalen
+  ing logika orde kapindho karo $\lnot !A$, yaiku:
+  $\Sat{M}{!A \lif \lforall[X][\lforall[y][X(y)]]}$
+  yen lan mung yen $\Sat{M}{\lnot !A}$. Kanthi tembung
+  liya, ing logika orde kapindho kita bisa netepake $\lnot$
+  nganggo $\lforall$ lan~$\lif$.
+\end{ex}
+
+\begin{prob}
+  Tuduhna yen ing logika orde kapindho $\lforall$ lan~$\lif$
+  bisa netepake konektif liyane:
+  \begin{enumerate}
+    \item Buktèkna yen ing logika orde kapindho $!A \land !B$
+    ekuivalen karo $\lforall[X][(!A \lif (!B \lif \lforall[x][X(x)])\lif
+    \lforall[x][X(x)])]$.
+    \item Temokna formula orde kapindho kang mung nggunakake
+    $\lforall$ lan $\lif$ lan ekuivalen karo $!A \lor !B$.
+  \end{enumerate}
+\end{prob}
+
+\end{document}

@@ -1,0 +1,65 @@
+% part: intuitionistic-logic
+% chapter: soundness-completeness
+% section: decidability
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{sc}{dec}
+
+\olsection{Desidabilitas}
+Bukti teorema kelengkapan menehi, kanggo saben $\Gamma \Proves/ !A$,
+model kanthi donya kang cacahe tanpa wates kang dadi saksi yen
+$\Gamma \Entails/ !A$. Teorema iki nuduhake yen kanggo mbuktekake
+$\Entails !A$, cukup mbuktekake $\mSat{M}{!A}$ kanggo kabeh model
+winates, yaiku model kanthi himpunan donya kang winates.
+
+\begin{thm}\ollabel{thm:decidability}
+  Yen $\Entails/ !A$, ana model winates kanthi $\mSat/{M'}{!A}$.
+\end{thm}
+
+\begin{proof}
+  Upamane $\mModel{M}=\tuple{W, R, V}$ nyukupi $\mSat/{M}{!A}$ lan $S$
+  iku himpunan kabeh !!{subformula}s saka~$!A$, kanthi abréviasi
+  konektif dibukak dhisik. Tetepa
+  $\mModel{M'}=\tuple{W', R', V'}$ kanthi $W' = \Setabs{[w]}{w \in W}$,
+  kang $[w] = \Setabs{!B \in S}{\mSat{M}{!B}[w]}$, $R'$ iku relasi
+  subhimpunan, lan $V'(p)=\Setabs{[w]}{p \in [w]}$.
+  Kita nduweni $|W'| \le 2^{|S|}$. Relasi subhimpunan iku urutan parsial,
+  lan valuasi atom monoton tumrap relasi iku. Mula $\mModel{M'}$ iku
+  !!a{relational model} kang winates.
+
+  Kanthi induksi tumrap formula ing himpunan subformula iku,
+  kita bisa nuduhake yen
+  \[
+    \mSat{M}{!B}[w] \text{ yen lan mung yen } \mSat{M'}{!B}[{[w]}]
+  \]
+  kanggo kabeh !!{formula}s $!B \in S$. Kasus atom, falsitas, konjungsi
+  lan disjungsi langsung kasimpulake saka definisi lan hipotesis induksi.
+  Kanggo implikasi kang bener ing model asli, implikasi iku dadi anggota
+  himpunan kabeneran saiki lan kabeh himpunan kabeneran kang luwih gedhe.
+  Ing donya wakil kanggo saben himpunan iku, refleksivitas lan hipotesis
+  induksi njamin yen kabeneran anteseden menehi kabeneran konsekuen.
+  Kosokbaline, donya aksesibel kang mbantah implikasi ing model asli
+  menehi himpunan kabeneran kang ngemot himpunan saiki miturut
+  monotonisitas; hipotesis induksi njaga anteseden bener lan konsekuen
+  salah ing model winates. Kasus negasi nganggo alasan kang padha,
+  kanthi ora ana donya aksesibel kang ndadekake formula kang dinegasi
+  bener. Rincian induksi ditinggal minangka latihan kanggo pamaca.
+  Amarga formula wiwitan kalebu himpunan subformula iki, donya kang
+  mbantah formula iku menehi donya panyanggah ing model winates.
+\end{proof}
+
+\begin{prob}
+Jangkepna bukti \olref[int][sc][dec]{thm:decidability} kanthi nuduhake
+yen $\mSat{M}{!B}[w]$ yen lan mung yen $\mSat{M'}{!B}[{[w]}]$
+kanggo kabeh !!{formula}s~$!B \in S$.
+\end{prob}
+
+Saka \olref{thm:decidability}, ana algoritma kanggo mutusake
+apa~$\Entails !A$: priksa kabeh urutan parsial lan valuasi atom monoton kang
+relevan ing model kanthi paling akeh $2^{|S|}$ donya.
+
+
+\end{document}

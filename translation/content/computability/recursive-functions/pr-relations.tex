@@ -1,0 +1,185 @@
+% Part: computability
+% Chapter: recursive-functions
+% Section: pr-relations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{rec}{prr}
+\olsection{Relasi Rekursif Primitif}
+
+
+\begin{defn}
+Relasi $R(\vec x)$ diarani rekursif primitif yen fungsi
+karakteristike,
+\[
+\Char{R}(\vec x) = \left\{
+  \begin{array}{ll}
+  1 & \mbox{yen $R(\vec x)$} \\
+  0 & \mbox{yen ora}
+  \end{array}
+\right.
+\]
+iku rekursif primitif.
+\end{defn}
+
+Kanthi tembung liya, nalika kita nyebut relasi rekursif
+primitif $R(\vec x)$, kang dimaksud yaiku relasi kanthi
+wujud $\Char{R}(\vec
+x) = 1$, ing ngendi $\Char{R}$ iku fungsi rekursif primitif
+kang ngasilake 1 utawa 0 kanggo sembarang input. Umpamane,
+relasi $\fn{IsZero}(x)$, kang bener yen lan mung yen $x = 0$,
+cocog karo fungsi $\Char{\fn{IsZero}}$ kang ditegesi
+kanthi rekursi primitif:
+\begin{align*}
+\Char{\fn{IsZero}}(0) & = 1,\\
+\Char{\fn{IsZero}}(x+1) & = 0.
+\end{align*}
+
+Cetha yen kita bisa nyusun komposisi relasi karo fungsi
+rekursif primitif liyane. Mula ing ngisor iki uga rekursif
+primitif:
+\begin{enumerate}
+\item Relasi kesamaan, $x = y$, kang ditegesi kanthi
+  $\fn{IsZero}(\left|x -
+  y\right|)$
+% OLPL-123: Sumber nyebut "less-than" nanging lambang lan definisi
+% IsZero nganggo pangurangan terpotong netepake x <= y,
+% yaiku kurang saka utawa padha karo.
+\item Relasi kurang saka utawa padha karo, $x \leq y$, kang
+  ditegesi kanthi $\fn{IsZero}(x
+  \tsub y)$
+\end{enumerate}
+
+
+\begin{prop}
+  Himpunan relasi rekursif primitif katutup tumrap operasi
+  Boolean, yaiku yen $P(\vec x)$ lan $Q(\vec x)$ rekursif
+  primitif, mula relasi iki uga:
+  \begin{enumerate}
+  \item $\lnot P(\vec x)$
+  \item $P(\vec x) \land Q(\vec x)$
+  \item $P(\vec x) \lor Q(\vec x)$
+  \item $P(\vec x) \lif Q(\vec x)$
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  Upamana $P(\vec x)$ lan $Q(\vec x)$ rekursif primitif,
+  yaiku fungsi karakteristike $\Char{P}$ lan $\Char{Q}$
+  rekursif primitif. Kita kudu nuduhake yen fungsi
+  karakteristik saka $\lnot P(\vec x)$ lan sakbanjure
+  uga rekursif primitif.
+  \[
+  \Char{\lnot P}(\vec x) = \begin{cases}
+    0 & \text{yen $\Char{P}(\vec x) = 1$}\\
+    1 & \text{yen ora}
+  \end{cases}
+  \]
+  Kita bisa netepake $\Char{\lnot P}(\vec x)$ minangka
+  $1 \tsub \Char{P}(\vec x)$.
+  \[
+  \Char{P \land Q}(\vec x) = \begin{cases}
+    1 & \text{yen $\Char{P}(\vec x) = \Char{Q}(\vec x) = 1$}\\
+    0 & \text{yen ora}
+  \end{cases}
+  \]
+  Kita bisa netepake $\Char{P \land Q}(\vec x)$ minangka
+  $\Char{P}(\vec x) \cdot
+  \Char{Q}(\vec x)$ utawa minangka $\fn{min}(\Char{P}(\vec x), \Char{Q}(\vec
+  x))$. Kanthi cara kang padha,
+  \begin{align*}
+    \Char{P \lor Q}(\vec x) & = \fn{max}(\Char{P}(\vec x), \Char{Q}(\vec x)) \text{ lan}\\
+    \Char{P \lif Q}(\vec x) & = \fn{max}(1 \tsub
+  \Char{P}(\vec x), \Char{Q}(\vec x)).
+  \end{align*}
+\end{proof}
+
+\begin{prop}
+  Himpunan relasi rekursif primitif katutup tumrap
+  kuantifikasi mawa wates, yaiku yen $R(\vec x, z)$
+  relasi rekursif primitif, mula relasi iki uga:
+  \begin{align*}
+    & \bforall{z < y}{R(\vec x, z)} \text{ lan}\\
+    & \bexists{z < y}{R(\vec x, z)}.
+  \end{align*}
+  $\bforall{z < y}{R(\vec x, z)}$ bener kanggo $\vec x$
+  lan $y$ yen lan mung yen $R(\vec x, z)$ bener kanggo
+  saben~$z$ kang kurang saka~$y$; semono uga kanggo
+  $\bexists{z < y}{R(\vec x, z)}$.
+\end{prop}
+
+\begin{proof}
+  Miturut konvensi, $\bforall{z < 0}{R(\vec x, z)}$
+  dianggep bener (amarga ora ana $z$ kang kurang
+  saka~$0$) lan $\bexists{z < 0}{R(\vec x, z)}$
+  dianggep salah. Kuantor universal mawa wates tumindak
+  kaya asil kali winates utawa minimum kang diulang,
+  yaiku yen $P(\vec x, y) \defiff \bforall{z <
+  y}{R(\vec x, z)}$, mula $\Char{P}(\vec x, y)$
+  bisa ditegesi kanthi
+  \begin{align*}
+    \Char{P}(\vec x, 0) & = 1\\
+    \Char{P}(\vec x, y+1) & =
+    \fn{min}(\Char{P}(\vec x, y), \Char{R}(\vec x, y)).
+  \end{align*}
+  Kuantifikasi eksistensial mawa wates uga bisa ditegesi
+  nganggo $\fn{max}$. Utawa, bisa ditegesi saka
+  kuantifikasi universal mawa wates, nganggo ekuivalensi
+  $\bexists{z < y}{R(\vec x, z)}
+  \liff \lnot \bforall{z < y}{\lnot R(\vec x, z)}$.
+  Gatekna yen, umpamane, kuantor mawa wates kanthi
+  wujud $\bexists{x \leq y}{\dots
+  x\dots}$ ekuivalen karo
+  $\bexists{x < y+1}{\dots x \dots}$.
+\end{proof}
+
+\begin{prob}
+  Tuduhna yen relasi telung panggonan $x \equiv y \mod n$
+  (kongruensi modulo~$n$) iku rekursif primitif.
+\end{prob}
+
+Fungsi rekursif primitif liyane kang migunani yaiku
+fungsi kondisional, $\fn{cond}(x,y,z)$, kang ditegesi kanthi
+\begin{align*}
+  \fn{cond}(x,y,z) & = \begin{cases}
+  y & \text{yen $x = 0$} \\
+  z & \text{yen ora}.
+\end{cases}
+\intertext{Fungsi iki ditegesi kanthi rekursif liwat}
+\fn{cond}(0,y,z) & = y,\\
+\fn{cond}(x+1,y,z) & = z.
+\end{align*}
+Iki bisa digunakake kanggo mbenerake definisi fungsi
+rekursif primitif miturut kasus saka relasi rekursif primitif:
+
+\begin{prop}
+Yen $g_0(\vec x)$, \dots,~$g_m(\vec x)$ iku fungsi rekursif
+primitif, lan $R_0(\vec
+x)$, \dots, $R_{m-1}(\vec x)$ iku relasi rekursif primitif,
+mula fungsi $f$ kang ditegesi kanthi
+\[
+f(\vec x) = \begin{cases}
+    g_0(\vec x) & \text{yen $R_0(\vec{x})$} \\
+    g_1(\vec x) & \text{yen $R_1(\vec{x})$ lan dudu $R_0(\vec{x})$} \\
+    \vdots & \\
+    g_{m-1}(\vec x) & \text{yen $R_{m-1}(\vec{x})$ lan ora ana
+      syarat sadurunge kang bener}
+    \\
+    g_m(\vec x) & \mbox{yen ora}
+\end{cases}
+\]
+uga rekursif primitif.
+\end{prop}
+
+\begin{proof}
+  Yen $m = 1$, iki mung fungsi kang ditegesi kanthi
+  \[
+  f(\vec x) = \fn{cond}(\Char{\lnot R_0}(\vec x),g_0(\vec x),g_1(\vec
+  x)).
+  \]
+  Kanggo $m$ luwih gedhe tinimbang $1$, kita cukup
+  nyusun komposisi definisi kanthi wujud iki.
+\end{proof}
+\end{document}

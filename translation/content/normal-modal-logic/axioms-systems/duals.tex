@@ -1,0 +1,43 @@
+% Part: normal-modal-logic
+% Chapter: axioms-systems
+% Section: duals
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{prf}{dua}
+
+\olsection{Dual saka \usetoken{P}{formula}}
+
+\begin{defn}\ollabel{def:duals}
+  Saben !!{formula}s \Ax{T}, \Ax{B}, \Ax{4}, lan
+  \Ax{5} nduweni \emph{dual}, kang ditandhani nganggo wajik minangka
+  subskrip, kaya mangkene:
+  \begin{align}
+    \tag{\Ax{T_\Diamond}} p & \lif \Diamond p\\
+    \tag{\Ax{B_\Diamond}} \Diamond\Box p & \lif p\\
+    \tag{\Ax{4_\Diamond}} \Diamond\Diamond p & \lif \Diamond p\\
+    \tag{\Ax{5_\Diamond}} \Diamond\Box p & \lif \Box p
+    \end{align}
+\end{defn}
+
+Saben !!{formula}s dual ing ndhuwur dipikolehi saka !!{formula}
+kang cocog kanthi ngesubstitusi $\lnot p$ kanggo $p$, njupuk
+kontraposisi, ngganti $\lnot\Box\lnot$ nganggo $\Diamond$, lan ngganti
+$\lnot\Diamond\lnot$ nganggo~$\Box$. \Ax{D}, yaiku,
+$\Box!A \lif \Diamond!A$, iku dual kanggo awake dhewe miturut
+pangertèn kasebut.
+
+\begin{prop}\ollabel{prop:dualsys}
+  Kanggo saben !!{formula}~$!A$ ing \olref[nml][prf][dua]{def:duals}:
+  $\Log{K}!A = \Log{K}!A_{\Diamond}$.
+\end{prop}
+\begin{proof}
+  Latihan.
+\end{proof}
+\begin{prob}
+  Buktekna \olref[nml][prf][dua]{prop:dualsys}.
+\end{prob}
+
+\end{document}

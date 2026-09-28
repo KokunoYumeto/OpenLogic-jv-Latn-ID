@@ -1,0 +1,302 @@
+% Part: first-order-logic
+% Chapter: completeness
+% Section: construction-of-model
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{com}{mod}}
+      {\olfileid{pl}{com}{mod}}
+
+\olsection{Konstruksi Model}
+
+\begin{explain}
+\iftag{FOL}{Saiki kita durung nggatekake $\eq$, yaiku kita mung arep
+  nuduhake yen himpunan konsisten~$\Gamma$ saka !!{sentence}s kang ora
+  ngemot~$\eq$ bisa dicukupi. Kaping pisan, kita ngambakake~$\Gamma$
+  dadi himpunan~$\Gamma^*$ kang konsisten, !!{complete}, lan jenuh.
+  Ing perkara iki, definisi model~$\Struct{M(\Gamma^*)}$ prasaja: kita
+  nggunakake himpunan term katutup saka~$\Lang{L'}$ minangka domain.
+  Saben !!{constant} dipasangake marang awake dhewe, lan kanthi luwih
+  umum kita mesthekake yen kanggo saben term katutup~$t$,
+  $\Value{t}{M(\Gamma^*)} = t$. !!{predicate}s dipasangake marang
+  ekstensi saengga !!{sentence} atomik bener ing
+  $\Struct{M(\Gamma^*)}$ yen lan mung yen ana ing~$\Gamma^*$. Iki
+  mesthi ndadekake kabeh !!{sentence}s atomik ing~$\Gamma^*$ bener ing
+  $\Struct{M(\Gamma^*)}$. Ukara liyane bener yen $\Gamma^*$ wiwitan
+  iku konsisten, jangkep, lan jenuh.}{Saiki kita wis siap nemtokake
+  !!a{valuation} kang ndadekake kabeh $!A \in \Gamma$ bener. Kanggo
+  nindakake iki, kita dhisik ngetrapake Lemma Lindenbaum: kita entuk
+  $\Gamma^* \supseteq \Gamma$ kang jangkep lan konsisten. Upamana
+  !!{propositional variable}s ing~$\Gamma^*$ nemtokake~$\pAssign
+  v(\Gamma^*)$.}
+\end{explain}
+
+\iftag{FOL}{%
+\begin{defn}[Model term]
+\ollabel{defn:termmodel}
+Upamana $\Gamma^*$ minangka !!a{complete} himpunan konsisten lan jenuh
+saka !!{sentence}s ing basa~$\Lang L$. \emph{Model term}~$\Struct
+M(\Gamma^*)$ saka $\Gamma^*$ yaiku !!{structure} kang ditemtokake
+kaya ing ngisor iki:
+\begin{enumerate}
+\item !!{domain}~$\Domain{M(\Gamma^*)}$ yaiku himpunan kabeh term
+  katutup saka~$\Lang L$.
+\item Interpretasi !!a{constant} $c$ yaiku $c$ dhewe:
+  $\Assign{c}{M(\Gamma^*)} = c$.
+\item !!{function}~$f$ dipasangake marang fungsi kang, nalika diwenehi
+  term-term katutup $t_1$, \dots, $t_n$ minangka argumen, nduweni term
+  katutup $f(t_1, \dots, t_n)$ minangka nilai:
+\[
+\Assign{f}{M(\Gamma^*)}(t_1, \dots, t_n) = f(t_1,\dots, t_n)
+\]
+\item Yen $R$ minangka !!{predicate} kanthi $n$ panggonan, mula
+  \[
+  \tuple{t_1, \dots,
+  t_n} \in \Assign{R}{M(\Gamma^*)} \text{ yen lan mung yen } \Atom{R}{t_1, \dots,
+    t_n} \in \Gamma^*.
+  \]
+\end{enumerate}
+\end{defn}
+}{%
+\begin{defn}
+\ollabel{defn:termmodel}
+Upamana $\Gamma^*$ minangka himpunan konsisten jangkep saka
+!!{formula}s. Banjur kita netepake
+\[
+\pAssign v(\Gamma^*)(p) = \begin{cases}
+  \True & \text{yen $p \in \Gamma^*$}\\
+  \False & \text{yen $p \notin \Gamma^*$}
+  \end{cases}
+\]
+\end{defn}
+}
+
+\iftag{FOL}{%
+Saiki kita bakal mriksa yen pancen $\Value{t}{M(\Gamma^*)} = t$.
+
+\begin{lem}
+\ollabel{lem:val-in-termmodel} Upamana $\Struct M(\Gamma^*)$ minangka
+model term ing \olref{defn:termmodel}, banjur kanggo saben term katutup
+$\Value{t}{M(\Gamma^*)} = t$. Cathetan koreksi sumber OLPL-047: bukti
+lan domain model mbutuhake watesan term katutup iki.
+\end{lem}
+\begin{proof}
+ Buktine kanthi induksi marang $t$, kanthi perkara basis nalika $t$
+ minangka !!a{constant} langsung ndherek saka definisi model term.
+ Kanggo langkah induksi, upamana $t_1, \ldots, t_n$ minangka term-term
+ katutup saengga $\Value{t_i}{M(\Gamma^*)} = t_i$ lan $f$ minangka
+ !!{function} kanthi $n$ argumen. Banjur
+\begin{align*}
+\Value{f(t_1,\ldots,t_n)}{M(\Gamma^*)} &= \Assign{f}{M(\Gamma^*)}(\Value{t_1}
+ {M(\Gamma^*)},
+\ldots, \Value{t_n}{M(\Gamma^*)}) \\
+&= \Assign{f}{M(\Gamma^*)}(t_1, \dots, t_n) \\
+&= f(t_1,\dots, t_n),
+\end{align*}
+lan mula kanthi induksi iki bener kanggo saben term katutup~$t$.
+\end{proof}
+}
+
+\iftag{FOL}{%
+\begin{explain}
+  \iftag{prvEx}{!!^a{structure}~$\Struct{M}$ bisa ndadekake
+    !!{sentence}~$\lexists[x][!A(x)]$ kang dikuantifikasi eksistensial
+    bener tanpa ana conto~$!A(t)$ kang uga didadekake bener dening
+    struktur kasebut.}{}
+  \iftag{prvAll}{!!^a{structure}~$\Struct{M}$ bisa ndadekake kabeh
+    conto~$!A(t)$ saka !!{sentence}~$\lforall[x][!A(x)]$ kang
+    dikuantifikasi universal bener tanpa ndadekake
+    $\lforall[x][!A(x)]$ bener.}{} Iki amarga ing umum ora saben
+  !!{element} saka~$\Domain{M}$ minangka nilai term katutup
+  ($\Struct{M}$ bisa uga ora katutup dening term). Iki alesan relasi
+  nyukupi ditemtokake lumantar pamasangan variabel. Nanging kanggo
+  model term~$\Struct{M(\Gamma^*)}$ kita, iki ora perlu amarga model
+  kasebut katutup dening term. Iki isi asil sabanjure.
+\end{explain}
+
+\begin{prop}
+\ollabel{prop:quant-termmodel}
+Upamana $\Struct M(\Gamma^*)$ minangka model term ing
+\olref{defn:termmodel}.
+\begin{tagenumerate}{prvEx,prvAll}
+\tagitem{prvEx}{$\Sat{M(\Gamma^*)}{\lexists[x][!A(x)]}$ yen lan mung
+  yen $\Sat{M(\Gamma^*)}{!A(t)}$ kanggo paling ora siji term
+  katutup~$t$.}{}
+\tagitem{prvAll}{$\Sat{M(\Gamma^*)}{\lforall[x][!A(x)]}$ yen lan mung
+  yen $\Sat{M(\Gamma^*)}{!A(t)}$ kanggo kabeh term katutup~$t$.}{}
+\end{tagenumerate}
+\end{prop}
+
+\begin{proof}
+\begin{tagenumerate}{prvEx,prvAll}
+\tagitem{prvEx}{%
+  \iftag{probEx}{Latihan.}{Miturut \olref[syn][ass]{prop:sat-quant},
+    $\Sat{M(\Gamma^*)}{\lexists[x][!A(x)]}$ yen lan mung yen kanggo
+    paling ora siji pamasangan variabel~$s$,
+    $\Sat{M(\Gamma^*)}{!A(x)}[s]$. Amarga
+    $\Domain{M(\Gamma^*)}$ kasusun saka term-term katutup
+    ing~$\Lang{L}$, iki bener yen lan mung yen ana paling ora siji
+    term katutup~$t$ saengga $s(x) = t$ lan
+    $\Sat{M(\Gamma^*)}{!A(x)}[s]$. Miturut
+    \olref[fol][syn][ext]{prop:ext-formulas},
+    $\Sat{M(\Gamma^*)}{!A(x)}[s]$ yen lan mung yen
+    $\Sat{M(\Gamma^*)}{!A(t)}[s]$, kanthi $s(x) = t$. Miturut
+    \olref[fol][syn][ass]{prop:sentence-sat-true},
+    $\Sat{M(\Gamma^*)}{!A(t)}[s]$ yen lan mung yen
+    $\Sat{M(\Gamma^*)}{!A(t)}$, amarga $!A(t)$ iku ukara.}}{}
+\tagitem{prvAll}{%
+  \iftag{probAll}{Latihan.}{Miturut \olref[syn][ass]{prop:sat-quant},
+    $\Sat{M(\Gamma^*)}{\lforall[x][!A(x)]}$ yen lan mung yen kanggo
+    saben pamasangan variabel $s$, $\Sat{M(\Gamma^*)}{!A(x)}[s]$.
+    Elinga yen $\Domain{M(\Gamma^*)}$ kasusun saka term-term katutup
+    ing~$\Lang{L}$, mula kanggo saben term katutup~$t$, $s(x) = t$
+    minangka pamasangan variabel kaya mangkono, lan kanggo sembarang
+    pamasangan variabel, $s(x)$ minangka sawijine term katutup~$t$.
+    Miturut \olref[fol][syn][ext]{prop:ext-formulas},
+    $\Sat{M(\Gamma^*)}{!A(x)}[s]$ yen lan mung yen
+    $\Sat{M(\Gamma^*)}{!A(t)}[s]$, kanthi $s(x) = t$. Miturut
+    \olref[fol][syn][ass]{prop:sentence-sat-true},
+    $\Sat{M(\Gamma^*)}{!A(t)}[s]$ yen lan mung yen
+    $\Sat{M(\Gamma^*)}{!A(t)}$, amarga $!A(t)$ iku ukara.}}{}
+\end{tagenumerate}
+\end{proof}
+}{}
+
+\tagprob[FOL]{probEx,probAll}
+\begin{prob}
+Rampungna bukti \olref[fol][com][mod]{prop:quant-termmodel}.
+\end{prob}
+\tagendprob
+
+\begin{lem}[Lemma Bebener]
+\ollabel{lem:truth} \iftag{FOL}{Upamana $!A$ ora ngemot~$\eq$. Banjur}{}
+$\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{!A}$ yen lan mung
+yen $!A \in \Gamma^*$.
+\end{lem}
+
+\begin{proof}
+Kita mbuktekake rong arah bebarengan kanthi induksi marang $!A$.
+\begin{enumerate}
+\tagitem{prvFalse}{\indcase{!A}{\lfalse}
+  {$\iftag{FOL}{\Sat/{M(\Gamma^*)}{\lfalse}}{\pSat/{v(\Gamma^*)}{\lfalse}}$
+    miturut definisi relasi nyukupi. Ing sisih liyane, $\lfalse \notin
+    \Gamma^*$ amarga $\Gamma^*$ konsisten.}}{}
+
+\tagitem{prvTrue}{\indcase{!A}{\ltrue}
+  {$\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{\ltrue}$
+    miturut definisi relasi nyukupi. Ing sisih liyane, $\ltrue \in
+    \Gamma^*$ amarga $\Gamma^*$ konsisten lan !!{complete}, lan
+    $\Gamma^* \Proves \ltrue$.}}{}
+
+\tagitem{FOL}{\indcase{!A}{R(t_1, \dots, t_n)}
+  {$\Sat{M(\Gamma^*)}{\Atom{R}{t_1, \dots, t_n}}$ yen lan mung yen
+    $\tuple{t_1, \dots, t_n} \in \Assign{R}{M(\Gamma^*)}$ (miturut
+    definisi relasi nyukupi), yen lan mung yen $R(t_1, \dots, t_n)
+    \in \Gamma^*$ (miturut konstruksi $\Struct
+    M(\Gamma^*)$).}}{\indcase{!A}{p}{$\pSat{v(\Gamma^*)}{p}$ yen lan
+    mung yen $\pAssign v(\Gamma^*)(p) = \True$ (miturut definisi relasi
+    nyukupi), yen lan mung yen $p \in \Gamma^*$ (miturut konstruksi
+    $\pAssign v(\Gamma^*)$).}}
+
+\tagitem{prvNot}{%
+  \indcase{!A}{\lnot !B}
+    {$\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{\indfrm}$ yen
+    lan mung yen
+    $\iftag{FOL}{\Sat/{M(\Gamma^*)}{!B}}{\pSat/{v(\Gamma^*)}{!B}}$
+    (miturut definisi relasi nyukupi). Miturut hipotesis induksi,
+    $\iftag{FOL}{\Sat/{M(\Gamma^*)}{!B}}{\pSat/{v(\Gamma^*)}{!B}}$ yen
+    lan mung yen $!B \notin \Gamma^*$. Amarga $\Gamma^*$ konsisten
+    lan !!{complete}, $!B \notin \Gamma^*$ yen lan mung yen
+    $\lnot !B \in \Gamma^*$.}}{}
+
+\tagitem{prvAnd}{%
+\iftag{probAnd}{%
+  \indcase!{!A}{!B \land !C}{}}{%
+  \indcase{!A}{!B \land
+    !C}{$\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{\indfrm}$
+    yen lan mung yen
+    $\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{!B}$ lan
+    $\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{!C}$ kalorone
+    bener (miturut definisi relasi nyukupi), yen lan mung yen
+    $!B \in \Gamma^*$ lan $!C \in \Gamma^*$ kalorone (miturut
+    hipotesis induksi). Miturut
+    \olref[ccs]{prop:ccs}\olref[ccs]{prop:ccs-and}, iki bener yen lan
+    mung yen $(!B \land !C) \in \Gamma^*$.}}}{}
+
+\tagitem{prvOr}{%
+\iftag{probOr}{%
+  \indcase!{!A}{!B \lor !C}{}}{%
+  \indcase{!A}{!B \lor !C}
+    {$\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{\indfrm}$ yen
+    lan mung yen
+    $\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{!B}$ utawa
+    $\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{!C}$ (miturut
+    definisi relasi nyukupi), yen lan mung yen $!B \in \Gamma^*$ utawa
+    $!C \in \Gamma^*$ (miturut hipotesis induksi). Iki bener yen lan
+    mung yen $(!B \lor !C) \in \Gamma^*$ (miturut
+    \olref[ccs]{prop:ccs}\olref[ccs]{prop:ccs-or}).}}}{}
+
+\tagitem{prvIf}{%
+\iftag{probIf}{%
+  \indcase!{!A}{!B \lif !C}{}}{%
+  \indcase{!A}{!B \lif !C}
+    {$\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{\indfrm}$ yen
+    lan mung yen
+    $\iftag{FOL}{\Sat/{M(\Gamma^*)}}{\pSat/{v(\Gamma^*)}}{!B}$ utawa
+    $\iftag{FOL}{\Sat{M (\Gamma^*)}}{\pSat{v(\Gamma^*)}}{!C}$ (miturut
+    definisi relasi nyukupi), yen lan mung yen $!B \notin \Gamma^*$
+    utawa $!C \in \Gamma^*$ (miturut hipotesis induksi). Iki bener yen
+    lan mung yen $(!B \lif !C) \in \Gamma^*$ (miturut
+    \olref[ccs]{prop:ccs}\olref[ccs]{prop:ccs-if}).}}}{}
+
+\iftag{FOL}{%
+\tagitem{prvAll}{%
+  \iftag{probAll}{%
+    \indcase!{!A}{\lforall[x][!B(x)]}{}}{%
+    \indcase{!A}{\lforall[x][!B(x)]}{$\Sat{M(\Gamma^*)}{\indfrm}$ yen
+      lan mung yen $\Sat{M(\Gamma^*)}{!B(t)}$ kanggo kabeh term
+      katutup~$t$ (\olref{prop:quant-termmodel}). Miturut hipotesis
+      induksi, iki bener yen lan mung yen $!B(t) \in \Gamma^*$ kanggo
+      kabeh term katutup~$t$; miturut
+      \olref[hen]{prop:saturated-instances}, iki sabanjure bener yen lan
+      mung yen $\lforall[x][!B(x)] \in \Gamma^*$. Cathetan koreksi
+      sumber OLPL-048: rong kuantifikasi term iki diwatesi marang term
+      katutup, kaya pratelan kang dirujuk. OLPL-049: formula pungkasan
+      nggunakake subformula B, dudu formula induksi njaba.}}}{}
+
+\tagitem{prvEx}{%
+  \iftag{probEx}{%
+    \indcase!{!A}{\lexists[x][!B(x)]}{}}{%
+    \indcase{!A}{\lexists[x][!B(x)]}{$\Sat{M(\Gamma^*)}{\indfrm}$ yen
+      lan mung yen $\Sat{M(\Gamma^*)}{!B(t)}$ kanggo paling ora siji
+      term katutup~$t$ (\olref{prop:quant-termmodel}). Miturut hipotesis
+      induksi, iki bener yen lan mung yen $!B(t) \in \Gamma^*$ kanggo
+      paling ora siji term katutup~$t$. Miturut
+      \olref[hen]{prop:saturated-instances}, iki sabanjure bener yen lan
+      mung yen $\lexists[x][!B(x)] \in \Gamma^*$. Cathetan koreksi
+      sumber OLPL-048: loro-lorone nggunakake term katutup.}}}{}
+}{}
+\end{enumerate}
+\end{proof}
+
+
+\tagprob[FOL]{probOr,probAnd,probIf,probEx,probAll}
+
+\begin{prob}
+Rampungna bukti \olref[fol][com][mod]{lem:truth}.
+\end{prob}
+
+\tagendprob
+
+\tagprob[notFOL]{probOr,probAnd,probIf}
+
+\begin{prob}
+Rampungna bukti \olref[pl][com][mod]{lem:truth}.
+\end{prob}
+
+\tagendprob
+
+\end{document}

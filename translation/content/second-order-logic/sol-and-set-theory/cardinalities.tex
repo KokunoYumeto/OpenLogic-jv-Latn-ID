@@ -1,0 +1,81 @@
+% Part: second-order-logic
+% Chapter: sol-and-sets
+% Section: cardinalities
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sol}{set}{crd}
+
+\olsection{Kardinalitas Himpunan}
+
+\begin{explain}
+Kaya dene kita bisa nyatakake yen domain winates utawa tanpa
+wates, !!{enumerable} utawa !!{nonenumerable}, kita uga bisa
+netepake sipat subhimpunan saka~$\Domain{M}$ minangka winates
+utawa tanpa wates, !!{enumerable} utawa !!{nonenumerable}.
+\end{explain}
+
+\begin{prop}
+Rumus $\fn{Inf}(X) \ident$
+\begin{multline*}
+\lexists[u][(\lforall[x][(X(x) \lif X(u(x)))] \land {}
+    \lforall[x][\lforall[y][(\eq[u(x)][u(y)] \lif
+      \eq[x][y])]] \land {} \\
+    \lexists[y][(X(y) \land \lforall[x][(X(x)
+      \lif \eq/[y][u(x)])])])]
+\end{multline*}
+dicukupi tumrap pangaji variabel~$s$ yen lan mung yen
+$s(X)$ tanpa wates.
+\end{prop}
+
+\begin{prop}
+Rumus $\fn{Count}(X) \ident $
+\begin{multline*}
+\lnot\lexists[x][X(x)] \lor {} \\
+\lexists[z][\lexists[u][(X(z) \land
+    \lforall[x][(X(x) \lif X(u(x)))] \land {} \\
+    \lforall[Y][((Y(z) \land
+      \lforall[x][(Y(x) \lif Y(u(x)))]) \lif X \subseteq Y)])]]
+\end{multline*}
+dicukupi tumrap pangaji variabel~$s$ yen lan mung yen
+$s(X)$ iku !!{enumerable}.
+\end{prop}
+
+Saka Teorema Cantor, kita ngerti yen ana himpunan
+!!{nonenumerable}, lan malah ana tingkat ukuran tanpa
+wates kang beda-beda tanpa wates cacahe. Teori himpunan
+ngrembakakake aritmetika lengkap kanggo ukuran himpunan
+lan menehi wilangan kardinal tanpa wates marang himpunan.
+Wilangan asli dadi wilangan kardinal kanggo ngukur
+gedhene himpunan winates. Kardinalitas himpunan
+!!{denumerable} iku kardinalitas tanpa wates kapisan,
+diarani~$\aleph_0$ (``alef-nol'' utawa
+``alef-zero''). Ukuran tanpa wates sabanjure
+yaiku~$\aleph_1$. Iki ukuran paling cilik kang bisa
+diduweni sawijining himpunan tanpa bisa dienumerasi
+(yaiku, ora ukurane~$\aleph_0$). Kita bisa netepake
+``$X$ ukurane $\aleph_0$'' kanthi
+$\fn{Aleph}_0(X) \liff \fn{Inf}(X) \land \fn{Count}(X)$.
+$X$ ukurane $\aleph_1$ yen lan mung yen himpunan iku
+ora bisa dienumerasi, lan saben subhimpunan kang ukuran
+kardinale luwih cilik mung winates utawa ukurane~$\aleph_0$;
+mula himpunan iku dhewe dudu ukurane~$\aleph_0$.
+Kanthi tembung liya, saben subhimpunan kang ora bisa
+dienumerasi padha cacahe karo himpunan asal.
+Mula iki bisa dinyatakake kanthi rumus
+$\fn{Aleph_1}(X) \ident \lnot \fn{Count}(X) \land
+  \lforall[Y][((Y \subseteq X \land \lnot \fn{Count}(Y))
+  \lif \cardeq{X}{Y})]$. Ukuran~$\aleph_2$
+ditetepake kanthi cara kang padha, lan sateruse.
+
+Ana siji ukuran kang narik kawigaten khusus, yaiku
+kardinalitas kontinuum. Iki ukurane
+$\Pow{\Nat}$, utawa, kanthi ekuivalen,
+ukurane~$\Real$. Sipat sawijining himpunan
+nduweni ukuran kontinuum uga bisa dinyatakake ing
+logika orde kapindho, nanging mbutuhake upaya
+rada luwih akeh.
+
+\end{document}

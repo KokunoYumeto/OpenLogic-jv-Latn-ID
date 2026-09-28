@@ -24,13 +24,13 @@
 \DisplayProof
 \end{defish}
 
-Ing aturan kanggo~$\lforall$, $t$ iku term tertutup (term kang ora
+Ing aturan kanggo~$\lforall$, $t$ iku term katutup (term kang ora
 ngemot variabel), lan $a$~iku !!a{constant} kang ora muncul ing
 kesimpulan~$\lforall[x][!A(x)]$, utawa ing sembarang asumsi kang
-!!{undischarged} ing !!{derivation} kang mungkasi nganggo
-premis~$!A(a)$. Kita ngarani $a$ \emph{eigenvariabel} saka inferensi
+!!{undischarged} ing !!{derivation} kang pungkasane premis~$!A(a)$.
+Kita ngarani $a$ \emph{eigenvariabel} saka inferensi
 \Intro{\lforall}.\footnote{Kita nggunakake istilah ``eigenvariabel''
-senajan $a$ ing aturan ndhuwur iku konstanta. Iki amarga alasan
+senajan $a$ ing aturan ndhuwur iku konstanta. Iki amarga alesan
 sajarah.}
 
 \subsection{Aturan kanggo $\lexists$}
@@ -49,10 +49,10 @@ sajarah.}
 \DisplayProof
 \end{defish}
 
-Maneh, $t$ iku term tertutup, lan $a$ iku !!a{constant} kang ora
+Maneh, $t$ iku term katutup, lan $a$ iku !!a{constant} kang ora
 muncul ing premis $\lexists[x][!A(x)]$, ing kesimpulan~$!C$, utawa ing
 sembarang asumsi kang !!{undischarged} ing !!{derivation}s kang
-mungkasi nganggo premis loro mau (kajaba asumsi $!A(a)$). Kita
+pungkasane premis loro mau (kajaba asumsi $!A(a)$). Kita
 ngarani $a$ \emph{eigenvariabel} saka inferensi \Elim{\lexists}.
 
 Syarat yen eigenvariabel ora muncul ing kesimpulan utawa asumsi kang
@@ -65,8 +65,8 @@ asumsi kang dibubarake mesthi ngemot eigenvariabel; rumusan ing kene
 ngetutake syarat rinci kang diwenehake langsung ing ndhuwur.
 
 \begin{explain}
-Elinga konvensi yen $!A$ iku !!a{formula} kanthi !!{variable}~$x$
-bebas, kita nuduhake iki kanthi nulis~$!A(x)$. Ing konteks kang padha,
+Elinga konvensi iki: yen $!A$ iku !!a{formula} kanthi !!{variable}~$x$
+bebas, kita nuduhake bab iki kanthi nulis~$!A(x)$. Ing konteks kang padha,
 $!A(t)$ banjur minangka cekakan saka~$\Subst{!A}{t}{x}$. Dadi, kita
 uga bisa nulis aturan $\Intro\lexists$ minangka:
 \begin{prooftree}
@@ -88,12 +88,12 @@ nganggo~$\Intro\lforall$.
 
 \begin{explain}
 Ing \Intro{\lexists} lan \Elim{\lforall} ora ana watesan tambahan,
-lan term tertutup~$t$ bisa dipilih sawenang-wenang, mula kita ora
+lan term katutup~$t$ bisa dipilih sawenang-wenang, mula kita ora
 perlu nguwatirake syarat liyane. Nanging, ing aturan
 \Elim{\lexists} lan \Intro{\lforall}, syarat eigenvariabel mbutuhake
 supaya !!{constant}~$a$ ora muncul ing panggonan kang dilarang ing
 kesimpulan, premis eksistensial, utawa asumsi kang !!{undischarged},
-miturut aturan sing cocog. Syarat iki perlu kanggo njamin yen sistem
+miturut aturan kang cocog. Syarat iki perlu kanggo njamin yen sistem
 iku sah, yaiku sistem mung !!{derive}s !!{sentence}s saka asumsi kang
 !!{undischarged} nalika ukara kasebut pancen ndherek saka asumsi mau.
 Tanpa syarat iki, inferensi iki bakal diidinake:
@@ -108,7 +108,7 @@ Tanpa syarat iki, inferensi iki bakal diidinake:
 Nanging, $\lexists[x][!A(x)] \Entails/ \lforall[x][!A(x)]$.
 
 Amarga aturan eliminasi kanggo kuantor mung ngidini substitusi term
-tertutup kanggo !!{variable}s, saben !!{formula} kang bisa diasilake
+katutup kanggo !!{variable}s, saben !!{formula} kang bisa diderivasi
 saka sawijining himpunan !!{sentence}s mesthi uga !!a{sentence}.
 \end{explain}
 

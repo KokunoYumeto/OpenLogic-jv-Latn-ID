@@ -1,0 +1,167 @@
+% Part: first-order-logic
+% Chapter: syntax-and-semantics
+% Section: first-order-languages
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{syn}{fol}
+
+\olsection{Basa Logika Sepisanan}
+
+
+Ungkapan logika sepisanan kawangun saka kosakata dhasar kang ngemot
+\emph{!!{variable}s}, \emph{!!{constant}s}, \emph{!!{predicate}s}, lan
+kadhangkala \emph{!!{function}s}. Saka simbol-simbol kasebut, bebarengan
+karo konektif logis, kuantor, lan tandha wacan kayata kurung lan koma,
+kawangun \emph{term} lan \emph{!!{formula}s}.
+
+\begin{explain}
+Sacara ora resmi, !!{predicate}s iku jeneng kanggo sipat lan relasi,
+!!{constant}s iku jeneng kanggo objek siji-siji, lan !!{function}s iku
+jeneng kanggo pamasangan. Kajaba !!{identity}~$\eq$, kabeh iki kalebu
+\emph{simbol nonlogis} lan bebarengan mbentuk sawijining basa. Saben
+basa logika sepisanan~$\Lang L$ ditemtokake dening simbol-simbol
+nonlogise. Ing kasus kang paling umum, $\Lang L$ ngemot tanpa wates
+simbol saka saben jinis.
+\end{explain}
+
+Ing kasus umum, kita nggunakake simbol-simbol iki ing logika
+sepisanan:
+
+\begin{enumerate}
+\item Simbol logis
+\begin{enumerate}
+\item Konektif logis:
+  \startycommalist
+  \iftag{prvNot}{\ycomma $\lnot$ (negasi)}{}%
+  \iftag{prvAnd}{\ycomma $\land$ (konjungsi)}{}%
+  \iftag{prvOr}{\ycomma $\lor$ (disjungsi)}{}%
+  \iftag{prvIf}{\ycomma $\lif$ (!!{conditional})}{}%
+  \iftag{prvIff}{\ycomma $\liff$ (!!{biconditional})}{}%
+  \iftag{prvAll}{\ycomma $\lforall$ (kuantor universal)}{}%
+  \iftag{prvEx}{\ycomma $\lexists$ (kuantor eksistensial)}{}.
+\tagitem{prvFalse}{Konstanta proposisional kanggo !!{falsity}~$\lfalse$.}{}
+\tagitem{prvTrue}{Konstanta proposisional kanggo !!{truth}~$\ltrue$.}{}
+\item !!{identity} rong panggonan~$\eq$.
+\item Himpunan !!{denumerable}s saka !!{variable}s: $\Obj v_0$, $\Obj v_1$, $\Obj
+  v_2$, \dots
+\end{enumerate}
+\item Simbol nonlogis kang mbentuk \emph{basa standar} logika
+  sepisanan
+\begin{enumerate}
+\item Himpunan !!{denumerable}s saka !!{predicate}s $n$-panggonan
+  kanggo saben $n>0$: $\Obj
+  A^n_0$, $\Obj A^n_1$, $\Obj A^n_2$, \dots
+\item Himpunan !!{denumerable}s saka !!{constant}s: $\Obj c_0$, $\Obj c_1$, $\Obj
+  c_2$, \dots.
+\item Himpunan !!{denumerable}s saka !!{function}s $n$-panggonan
+  kanggo saben $n>0$:
+  $\Obj f^n_0$, $\Obj f^n_1$, $\Obj f^n_2$, \dots
+\end{enumerate}
+\item Tandha wacan: (, ), lan koma.
+\end{enumerate}
+
+Umume definisi lan asil kita bakal dirumusake kanggo basa standar
+logika sepisanan kang jangkep. Nanging, miturut panganggone, kita uga
+bisa matesi basa kasebut supaya mung ngemot sawetara !!{predicate}s,
+!!{constant}s, lan !!{function}s.
+
+\begin{ex}
+Basa aritmetika~$\Lang L_A$ ngemot siji !!{predicate} rong panggonan~$<$,
+siji !!{constant}~$\Obj 0$, siji !!{function} siji panggonan~$\prime$,
+lan loro !!{function}s rong panggonan~$+$ lan~$\times$.
+\end{ex}
+
+\begin{ex}
+Basa teori himpunan~$\Lang L_Z$ mung ngemot siji !!{predicate} rong
+panggonan~$\in$.
+\end{ex}
+
+\begin{ex}
+Basa tatanan~$\Lang L_\le$ mung ngemot siji !!{predicate} rong
+panggonan~$\le$.
+\end{ex}
+
+Maneh, iki mung konvensi: sacara resmi, kabeh iku mung jeneng liya.
+Tuladhane, $<$, $\in$, lan $\le$ minangka jeneng liya kanggo $\Obj A^2_0$,
+$\Obj 0$ kanggo $\Obj c_0$, $\prime$ kanggo $\Obj f^1_0$, $+$ kanggo
+$\Obj f^2_0$, lan $\times$ kanggo $\Obj f^2_1$.
+
+\iftag{defNot,defOr,defAnd,defIf,defIff,defTrue,defFalse,defEx,defAll}{%
+Saliyane konektif primitif lan
+\iftag{notprvEx,notprvAll}{kuantor}{kuantor-kuantor} kang ditepungake
+ing ndhuwur, kita uga nggunakake simbol-simbol \emph{kang ditetepake}
+iki:
+\startycommalist
+  \iftag{defNot}{\ycomma $\lnot$ (negasi)}{}%
+  \iftag{defAnd}{\ycomma $\land$ (konjungsi)}{}%
+  \iftag{defOr}{\ycomma $\lor$ (disjungsi)}{}%
+  \iftag{defIf}{\ycomma $\lif$ (!!{conditional})}{}%
+  \iftag{defIff}{\ycomma $\liff$ (!!{biconditional})}{}%
+  \iftag{defAll}{\ycomma $\lforall$ (kuantor universal)}{}%
+  \iftag{defEx}{\ycomma $\lexists$ (kuantor eksistensial)}{}%
+  \iftag{defFalse}{\ycomma !!{falsity}~$\lfalse$}{}%
+  \iftag{defTrue}{\ycomma !!{truth}~$\ltrue$}}{}.
+
+\begin{tagblock}{defNot,defOr,defAnd,defIf,defIff,defTrue,defFalse,defEx,defAll}
+\begin{explain}
+Simbol kang ditetepake dudu perangan resmi saka basa, nanging
+ditepungake minangka cekakan ora resmi: kanthi simbol kasebut, kita
+bisa nyekakake formula kang bakal dawa banget yen mung nggunakake
+simbol primitif. Iki cetha migunani. Nanging paedah kang luwih gedhe
+yaiku bukti dadi luwih cekak. Yen sawijining simbol iku primitif,
+simbol kasebut kudu ditangani dhewe ing bukti. Mula, saya akeh simbol
+primitif, saya dawa bukti kita.
+\end{explain}
+\end{tagblock}
+
+% Alternate symbols
+
+\begin{intro}
+Mbokmenawa sampeyan wis kulina karo istilah lan simbol kang beda saka
+kang digunakake ing ndhuwur. Buku teks logika (lan guru) lumrahe
+nggunakake $\sim$, $\neg$, utawa~!\ kanggo ``negasi'', lan $\wedge$,
+$\cdot$, utawa $\&$ kanggo ``konjungsi''. Simbol kang umum digunakake
+kanggo ``kondisional'' utawa ``implikasi'' yaiku $\rightarrow$,
+$\Rightarrow$, lan $\supset$.
+\iftag{prvIff,defIff}{Simbol kanggo ``bikondisional'', ``bi-implikasi'',
+  utawa ``ekuivalensi (material)'' yaiku $\leftrightarrow$,
+  $\Leftrightarrow$, lan $\equiv$.}{}
+\iftag{prvFalse,defFalse}{Ing pustaka logika basa Inggris, simbol
+  $\lfalse$ duwe maneka jeneng: ``falsity'' (kasalahan), ``falsum''
+  (istilah Latin), ``absurdity'' (absurditas), utawa ``bottom'' (ngisor).}{}
+\iftag{prvTrue,defTrue}{Ing pustaka logika basa Inggris, simbol
+  $\ltrue$ duwe maneka jeneng: ``truth'' (kabeneran), ``verum'' (istilah
+  Latin), utawa ``top'' (ndhuwur).}{}
+
+Miturut konvensi, aksara cilik saka wiwitan abjad Latin (umpamane
+$a$, $b$, $c$) digunakake kanggo !!{constant}s (kadhangkala diarani
+jeneng), lan aksara cilik saka pungkasane (umpamane $x$, $y$, $z$)
+kanggo !!{variable}s. Kuantor digandhengake karo !!{variable}s,
+umpamane $x$; variasi notasi kanggo kuantor universal kalebu $\forall x$,
+$(\forall x)$, $(x)$, $\Pi x$, $\bigwedge_x$, dene kanggo kuantor
+eksistensial kalebu $\exists x$, $(\exists
+x)$, $(Ex)$, $\Sigma x$, $\bigvee_x$.
+\end{intro}
+
+\begin{explain}
+Kita bisa nganggep kabeh operator proposisional lan loro kuantor
+minangka simbol primitif saka basa. Utawa kita bisa milih simbol
+primitif kang luwih sithik lan nganggep !!{operator}s liyane minangka
+simbol kang ditetepake. Himpunan operator Boolean kang ``jangkep
+miturut fungsi bebener'' kalebu $\{ \lnot, \lor \}$, $\{ \lnot,
+\land \}$, lan $\{ \lnot,
+\lif\}$---saben himpunan iki bisa digandhengake karo salah siji
+kuantor kanggo mbentuk basa logika sepisanan kang jangkep daya
+andharane.
+
+Mbokmenawa sampeyan uga wis ngerti loro !!{operator}s liyane: garis
+Sheffer~$|$ (dijenengi miturut Henry Sheffer), lan panah
+Peirce~$\downarrow$, kang uga diarani belati Quine. Yen diwenehi
+teges kang lumrah, yaiku ``nand'' lan ``nor'' (miturut urutane),
+operator-operator iki saben-saben jangkep miturut fungsi bebener.
+\end{explain}
+
+\end{document}

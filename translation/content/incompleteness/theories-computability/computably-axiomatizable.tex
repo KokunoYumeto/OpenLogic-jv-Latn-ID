@@ -1,0 +1,38 @@
+% Part: incompleteness
+% Chapter: theories-computability
+% Section: computably-axiomatizable
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{tcp}{cax}
+
+\olsection{Teori kang \printtoken{S}{axiomatizable}}
+
+Teori $\Th{T}$ diarani \emph{!!{axiomatizable}} yen nduweni
+himpunan aksioma~$A$ kang komputabel. (Nyebut $A$ minangka himpunan
+aksioma kanggo $\Th{T}$ tegese $T = \Setabs{!A}{A \Proves !A}$.)
+Saben aksiomatisasi bilangan asli kang ``lumrah'' nduweni sipat iki.
+Mligi, saben teori kang nduweni himpunan aksioma winates iku
+!!{axiomatizable}.
+
+\begin{lem}
+Upamana $\Th{T}$ iku !!{axiomatizable}. Mula $\Th{T}$ iku !!{computably
+enumerable}.
+\end{lem}
+
+\begin{proof}
+Upamana $A$ himpunan aksioma kang komputabel kanggo $\Th{T}$. Kanggo
+nemtokake apa $!A \in T$, cukup goleka !!a{derivation} saka aksioma
+menyang $!A$.
+
+Kanthi tembung liya, $!A$ kalebu ing $\Th{T}$ yen lan mung yen ana
+dhaftar winates aksioma $!B_1$, \dots, $!B_k$ ing $A$ lan !!a{derivation}
+saka $(!B_1 \land \dots \land !B_k) \lif !A$ ing logika orde siji.
+Nanging kita wis ngerti yen saben himpunan kanthi definisi awujud
+``ana \dots saengga \dots'' iku !!{c.e.}, angger ``\dots'' kang
+kapindho komputabel.
+\end{proof}
+
+\end{document}

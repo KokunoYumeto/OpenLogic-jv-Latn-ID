@@ -1,0 +1,90 @@
+% Part: lambda-calculus
+% Chapter: introduction
+% Section: currying
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{int}{cur}
+\olsection{Currying}
+
+Abstraksi-$\lambd$~$\lambd[x][M]$ makili fungsi
+siji argumen. Iki dadi watesan nalika kita arep
+netepake fungsi kang nampa luwih saka siji argumen.
+Salah siji cara yaiku nggedhekake kalkulus-$\lambd$
+supaya bisa mbentuk pasangan, triplèt, lan sateruse;
+yen mangkono, umpamane, fungsi telung argumen
+$\lambd[x][M]$ bakal nampa sawijining triplèt
+minangka argumene. Nanging luwih praktis yen
+kita nggunakake \emph{Currying}.
+
+Gatekna sawijining tuladha. Sedhela wae, upamakna
+ana operasi~$+$ ing kalkulus-$\lambd$.
+Fungsi tambah iku fungsi $2$ argumen, yaiku
+nampa rong argumen. Nanging abstraksi-$\lambd$
+mung ngasilake fungsi siji argumen: sintaksise
+ora ngidini ekspresi kaya
+$\lambd[(x,y)][(x+y)]$. Senadyan mangkono,
+kita bisa nimbang fungsi siji argumen~$f_x(y)$
+kang diwenehake dening $\lambd[y][(x+y)]$,
+yaiku nambahake $x$ marang argumen tunggale~$y$.
+Satemene iki dudu siji fungsi, nanging kulawarga
+fungsi kang beda-beda, ``tambah~$x$'',
+siji kanggo saben wilangan~$x$. Saiki kita bisa
+netepake fungsi siji argumen liyane~$g$ minangka
+$\lambd[x][f_x]$. Yen diaplikasikake marang
+argumen $x$, $g(x)$ ngasilake fungsi~$f_x$;
+dadi nilai-nilaine uga fungsi. Saiki yen
+kita ngaplikasikake $g$ marang $x$, banjur
+ngaplikasikake asile marang~$y$, kita oleh
+$(g(x))y = f_x(y) = x+y$. Kanthi cara iki,
+fungsi siji argumen~$g$ bisa nindakake pakaryan
+kang padha karo fungsi tambah rong argumen.
+``Currying'' mung jeneng kanggo cara
+ngowahi fungsi rong argumen dadi fungsi siji
+argumen kang nilai-nilaine fungsi siji argumen.
+
+Ing ngisor iki tuladha kang trep ing sintaksis
+kalkulus-$\lambd$. Kepiye carane makili
+fungsi $f(x,y) = x$? Yen kita arep netepake
+fungsi kang nampa rong argumen lan ngasilake
+argumen kapisan, kita bisa nulis
+$\lambd[x][\lambd[y][x]]$, kang teges
+harfiahe fungsi kang nampa argumen~$x$
+lan ngasilake fungsi~$\lambd[y][x]$.
+Fungsi $\lambd[y][x]$ nampa argumen
+liyane~$y$, nanging ora migunakake argumen
+iku lan tansah ngasilake~$x$.
+Gatekna apa kang kedadeyan nalika
+$\lambd[x][\lambd[y][x]]$
+diaplikasikake marang rong argumen:
+\begin{align*}
+  (\lambd[x][\lambd[y][x]])MN
+  \bredone & (\lambd[y][M])N \\
+  \bredone & M
+\end{align*}
+
+Umume, kanggo nulis fungsi kanthi parameter
+$x_1$, \dots,~$x_n$ kang ditetepake
+dening sawijining suku~$N$, kita bisa nulis
+$\lambd[x_1][\lambd[x_2][\ldots\lambd[x_n][N]]]$.
+Yen kita ngaplikasikake $n$ argumen
+marang fungsi iki, kita oleh:
+\begin{multline*}
+  (\lambd[x_1][\lambd[x_2][\ldots\lambd[x_n][N]]]) M_1 \dots M_n \\
+  \begin{aligned}
+  \bredone {} & (\Subst{(\lambd[x_2][\ldots\lambd[x_n][N]])}{M_1}{x_1}) M_2
+  \dots M_n\\
+   \eqs {} & (\lambd[x_2][\ldots\lambd[x_n][\Subst{N}{M_1}{x_1}]]) M_2
+            \dots M_n \\
+  \vdots & \\
+  \bredone {} &\Subst{\Subst{N}{M_1}{x_1}\ldots}{M_n}{x_n}
+  \end{aligned}
+\end{multline*}
+Larik pungkasan teges harfiahe nyelehake
+$M_i$ minangka pangganti $x_i$ ing awak
+definisi fungsi, persis kaya kang dikarepake
+nalika fungsi diaplikasikake marang luwih saka
+siji argumen.
+\end{document}

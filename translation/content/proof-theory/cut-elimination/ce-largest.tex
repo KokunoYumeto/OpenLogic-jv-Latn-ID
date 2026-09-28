@@ -1,0 +1,392 @@
+% Part: proof-theory
+% Chapter: cut-elimination
+% Section: ce-largest
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{cut}{inv}
+
+\olsection{Ngilangi Cut kang Pangkaté Paling Gedhé}
+
+Bukti \olref[seq][inv]{lem:G3c-invert} nuduhaké yèn yèn
+\Log{G3c} !!{prove}s dudutan aturan logis
+(saliyané \RightR{\lexists} lan \LeftR{\lforall}),
+saben premis aturan mau uga bisa !!{prove}s tanpa nambah
+!!{height} buktiné. Kita bisa nuduhaké pratelan kang luwih
+kuwat: iki uga bener kanggo $\Log{G3c} + \CutCS$.
+
+Kaya sadurungé, \emph{pangkat cut} saka inferènsi
+\CutCS{} kita tetepaké minangka ambane !!{formula}
+kang di-cut.
+
+\begin{lem}\ollabel{lem:inv-G3c-cut}
+Yèn $\Log{G3c} + \CutCS$ !!{prove}s dudutan aturan logis
+~$R$ saliyané \RightR{\lexists} utawa \LeftR{\lforall}
+nganggo !!a{proof}~$\pi$, saben premisé uga bisa
+!!{prove}s nganggo !!{proof}~$\pi'$
+(utawa !!{proof}s~$\pi'$, $\pi''$ yèn aturané
+nduwèni rong premis). Kajaba iku,
+(a)~$\pheight{\pi'}\le\pheight{\pi}$
+(lan $\pheight{\pi''}\le\pheight{\pi}$), sarta
+(b)~cacah inferènsi \CutCS{} lan pangkaté ing
+~$\pi'$ (lan $\pi''$) padha karo kang ana ing~$\pi$.
+\end{lem}
+
+\begin{proof}
+Delengen bukti
+\cref{pt:seq:inv:lem:G3c-invert,pt:seq:inv:lem:invert-quant}.
+Bukti mau nganggo induksi tumrap~$\pheight{\pi}$.
+Ing kahanan dhasar, sawijining aksioma diganti aksioma liya;
+mula syarat (a) lan~(b) langsung kacukupan.
+Yèn aturan pungkasané~$\pi$ yaiku~$R$,
+sub-!!{proof}s langsungé yaiku !!{proof}s~$\pi_i$
+kang dikarepaké, lan (a) sarta~(b) uga kacukupan.
+Ing kahanan liya, hipotesis induksi ditrapaké marang
+sub-!!{proof}s langsung saka~$\pi$, yaiku kang nuju
+premis-premis inferènsi pungkasan~$R$; banjur aturan
+$R$ kang padha ditrapaké marang asilé.
+Syarat (a) lan~(b) bener kanggo sub-!!{proof}s langsung
+saka bukti anyar, mula uga bener kanggo sakabèhé bukti.
+Isih kudu dipriksa kahanan nalika inferènsi pungkasané
+yaiku~\CutCS. Kaya mau, cukup siji tuladha: anggepen
+$\pi$ iku !!a{proof} kanggo dudutan
+$!B \land !C, \Gamma \Sequent \Delta$ saka
+\LeftR{\land}, lan pungkasané nganggo~\CutCS:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$!B \land !C, \Gamma \fCenter \Delta, !A$
+\AxiomC{}
+\RightLabel{$\pi_2$}
+\Deduce$!A, !B \land !C, \Gamma \fCenter \Delta$
+\RightLabel{\CutCS}
+\BinaryInf$!B \land !C, \Gamma \fCenter \Delta$
+\DisplayProof
+\]
+Hipotesis induksi ditrapaké marang $\pi_1$ lan~$\pi_2$
+(kang uga !!{proof}s kanggo tuladha dudutan
+$\LeftR{\land}$), lan ngasilaké !!{proof}s
+$\pi_1'$ lan~$\pi_2'$ kanggo
+$!B, !C, \Gamma \fCenter \Delta, !A$ lan
+$!A, !B, !C, \Gamma \fCenter \Delta$ miturut
+urutané. Kaloroné digandhèng nganggo \CutCS{}
+kanggo ngolèhké~$\pi'$:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$!B, !C, \Gamma \fCenter \Delta, !A$
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$!A, !B, !C, \Gamma \fCenter \Delta$
+\RightLabel{\CutCS}
+\BinaryInf$!B, !C, \Gamma \fCenter \Delta$
+\DisplayProof
+\]
+Cetha yèn (a) lan~(b) kacukupan.
+\end{proof}
+
+Élinga yèn iki ora bakal lumaku yèn kita nganggo
+\Cut{} tinimbang \CutCS, amarga dudutan !!{proof}
+pungkasan bakal nduwèni rong salinan
+$!B, !C, \Gamma$ ing antesèden lan rong salinan
+$\Delta$ ing suksèden. Kita kudu migunakaké
+admisibilitas kontraksi, nanging bukti
+\olref[seq][inv]{prop:G3c-cont-adm} migunakaké lema
+inversibilitas. Iki bakal dadi argumèn mbunder.
+
+Lema \cref{pt:cut:inv:lem:inv-G3c-cut} bisa digunakaké
+kanggo bukti alternatif eliminasi cut. Ing bukti iki,
+kita ora ngilangi inferènsi \CutCS{} paling dhuwur
+siji-siji, nanging ngilangi inferènsi \CutCS{}
+kang pangkaté maksimal. Wiwitané ana !!a{proof}~$\pi$
+ing $\Log{G3c} + \CutCS$; sawijining cut ing endi waé
+dibusak (bisa uga diganti cut kang pangkaté luwih cilik),
+lan iki diulang nganti ora ana cut. Syaraté mung siji:
+ing sadhuwuré cut kang digarap, ora ana cut kang
+pangkaté padha utawa luwih gedhé.
+
+\begin{lem}\ollabel{lem:max-cut-red-G3c} Yèn $\pi$
+iku !!a{proof} ing $\Log{G3c}+\CutCS$ kang pungkasané
+nganggo inferènsi \CutCS{} pangkat~$n$, lan saliyané
+mung nganggo aturan~$\Log{G3c}$ sarta inferènsi
+\CutCS{} pangkat $<n$, mula ana bukti~$\pi'$
+kanggo sekèn pungkasan kang padha ing
+$\Log{G3c} + \CutCS$, kanthi saben inferènsi
+\CutCS{} pangkaté~$<n$.
+\end{lem}
+
+\begin{proof}
+!!{proof}~$\pi$ pungkasané kaya mangkéné:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\Gamma \fCenter \Delta, !A$
+\AxiomC{}
+\RightLabel{$\pi_2$}
+\Deduce$!A, \Gamma \fCenter \Delta$
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta$
+\DisplayProof
+\]
+Kita bedakaké kahanané manut wujudé~$!A$.
+
+Anggepen $!A$ atomik. Miturut syarat yèn kabèh inferènsi
+\CutCS{} ing~$\pi_1$ lan $\pi_2$ kudu pangkaté $<
+\depth{!A} = 0$, ora ana inferènsi \CutCS{} ing~$\pi_1$
+utawa~$\pi_2$. Kita nuduhaké yèn
+$\Gamma \Sequent \Delta$ nduwèni bukti tanpa cut
+kanthi induksi tumrap $\pheight{\pi_2}$.
+Yèn $\pheight{\pi_2} = 0$, banjur $!A,
+\Gamma \Sequent \Delta$ iku aksioma. Yèn $!A$ dudu
+formula utama, ana $!C$ atomik kang dadi !!a{element} ing~$\Gamma$
+lan $\Delta$, mula $\Gamma \Sequent \Delta$ dhéwé
+iku aksioma. Yèn $!A$ formula utama, banjur
+$\Delta = \Delta', !A$. Ing kahanan iki, $\pi_1$ pungkasané
+$\Gamma \Sequent \Delta', !A, !A$. Kita ngolèhké
+bukti tanpa cut kanggo $\Gamma \Sequent \Delta', !A$
+kanthi ngetrapaké \olref[seq][inv]{prop:G3c-cont-adm}
+(admisibilitas kontraksi). Yèn $\pheight{\pi_2} > 0$,
+bukti iki pungkasané nganggo aturan~$R$. Jupuken salah siji
+premis aturan mau: wujudé $!A, \Gamma',
+\Pi \Sequent \Delta', \Lambda$, ing ngendi $\Pi$ lan $\Lambda$
+iku !!{formula}s aktif saka~$R$. Kanthi ngetrapaké
+\olref[seq][adm]{prop:weak-G3c-adm}
+marang~$\pi_1$ lan $\pi_2$, kita ngolèhké !!{proof}s
+kanggo $\Gamma, \Gamma',
+\Pi \Sequent \Delta, \Delta', \Lambda, !A$ lan $!A, \Gamma, \Gamma',
+\Pi \Sequent \Delta, \Delta', \Lambda$; hipotesis induksi
+ditrapaké marang kaloroné. Mula kita ngolèhké
+!!a{proof} kanggo $\Gamma, \Gamma', \Pi
+\Sequent \Delta, \Delta', \Lambda$ kanggo saben premis~$R$.
+Ngetrapaké $R$ ngasilaké $\Gamma, \Gamma \Sequent \Delta, \Delta$,
+lan \olref[seq][inv]{prop:G3c-cont-adm} maringi bukti tanpa cut
+kanggo $\Gamma \Sequent \Delta$.
+
+Yèn $!A$ ora atomik, kita bedakaké kahanané manut !!{main
+operator} saka~$!A$. Ing saben kahanan, kita ngetrapaké
+\olref{lem:inv-G3c-cut} kanggo ngolèhké !!{proof}s
+premis-premis aturan kiwa lan tengen kanthi $!A$ minangka
+formula utama. Banjur kita nerusaké kaya ing kahanan~E
+saka bukti \olref[top]{lem:cut-adm-G3c}.
+\begin{enumerate}
+  \item $!A \ident \lnot !B$. !!{proof}s $\pi_1$ lan $\pi_2$
+  pungkasané ana ing $\Gamma \Sequent \Delta, \lnot !B$ lan
+  $\lnot !B, \Gamma \Sequent \Delta$. Miturut
+  \olref{lem:inv-G3c-cut}, ana !!{proof}s $\pi_1'$
+  lan $\pi_2'$ kanggo $!B, \Gamma \Sequent
+  \Delta$ lan $\Gamma \Sequent \Delta, !B$.
+  !!{proof}~$\pi'$ iki:
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_2'$}
+  \Deduce$\Gamma \fCenter \Delta, !B$
+  \AxiomC{}
+  \RightLabel{$\pi_1'$}
+  \Deduce$!B, \Gamma \fCenter \Delta$
+  \RightLabel{\CutCS}
+  \BinaryInf$\Gamma \fCenter \Delta$
+  \DisplayProof
+  \]
+  \item $!A \ident (!B \lor !C)$. !!{proof}s $\pi_1$ lan $\pi_2$
+  pungkasané ana ing $\Gamma \Sequent \Delta, !B \lor !C$ lan
+  $!B \lor !C, \Gamma \Sequent \Delta$. Miturut
+  \olref{lem:inv-G3c-cut} (inversi kanggo
+  \RightR{\lor} kang ditrapaké marang~$\pi_1$), ana
+  !!a{proof} $\pi_1'$ kanggo
+  $\Gamma \Sequent \Delta, !B, !C$. Miturut
+  \olref{lem:inv-G3c-cut} (inversi kanggo \LeftR{\lor}
+  kang ditrapaké marang~$\pi_2$), ana !!a{proof}
+  $\pi_2'$ kanggo $!B, \Gamma \Sequent \Delta$ lan
+  !!a{proof} $\pi_2''$ kanggo
+  $!C, \Gamma \Sequent \Delta$. Kanthi ngetrapaké
+  \olref[seq][adm]{prop:weak-G3c-adm} marang $\pi_2''$,
+  kita uga ngolèhké !!a{proof}~$\pi_2'''$ kanggo
+  $!C, \Gamma \Sequent \Delta, !B$. !!{proof}~$\pi'$ iki:
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_1'$}
+  \Deduce$\Gamma \fCenter \Delta, !B, !C$
+  \AxiomC{}
+  \RightLabel{$\pi_2'''$}
+  \Deduce$!C, \Gamma \fCenter \Delta, !B$
+  \RightLabel{\CutCS}
+  \BinaryInf$\Gamma \fCenter \Delta, !B$
+  \AxiomC{}
+  \RightLabel{$\pi_2'$}
+  \Deduce$!B, \Gamma \fCenter \Delta$
+  \RightLabel{\CutCS}
+  \BinaryInf$\Gamma \fCenter \Delta$
+  \DisplayProof
+  \]
+  \item $!A \ident (!B \land !C)$. Latihan.
+  \item $!A \ident (!B \lif !C)$. !!{proof}s $\pi_1$ lan $\pi_2$
+  pungkasané ana ing $\Gamma \Sequent \Delta, !B \lif !C$ lan
+  $!B \lif !C, \Gamma \Sequent \Delta$. Miturut
+  \olref{lem:inv-G3c-cut} (inversi kanggo
+  \RightR{\lif} kang ditrapaké marang~$\pi_1$), ana
+  !!a{proof} $\pi_1'$ kanggo
+  $!B, \Gamma \Sequent \Delta, !C$. Miturut
+  \olref{lem:inv-G3c-cut} (inversi kanggo
+  \LeftR{\lif} kang ditrapaké marang~$\pi_2$), ana
+  !!a{proof} $\pi_2'$ kanggo $\Gamma \Sequent \Delta, !B$
+  lan !!a{proof} $\pi_2''$ kanggo
+  $!C, \Gamma \Sequent \Delta$. Kanthi ngetrapaké
+  \olref[seq][adm]{prop:weak-G3c-adm} marang $\pi_2''$,
+  kita uga ngolèhké !!a{proof}~$\pi_2'''$ kanggo
+  $!C, !B, \Gamma \Sequent \Delta$. !!{proof}~$\pi'$ iki:
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_2'$}
+  \Deduce$\Gamma \fCenter \Delta, !B$
+  \AxiomC{}
+  \RightLabel{$\pi_1'$}
+  \Deduce$!B, \Gamma \fCenter \Delta, !C$
+  \AxiomC{}
+  \RightLabel{$\pi_2'''$}
+  \Deduce$!C, !B, \Gamma \fCenter \Delta$
+  \RightLabel{\CutCS}
+  \BinaryInf$!B, \Gamma \fCenter \Delta$
+  \RightLabel{\CutCS}
+  \BinaryInf$\Gamma \fCenter \Delta$
+  \DisplayProof
+  \]
+  \item $!A \ident \lforall[x][!B(x)]$. !!{proof}s $\pi_1$ lan
+  $\pi_2$ pungkasané ana ing
+  $\Gamma \Sequent \Delta, \lforall[x][!B(x)]$ lan
+  $\lforall[x][!B(x)], \Gamma \Sequent \Delta$. Miturut
+  \olref{lem:inv-G3c-cut}, ana !!a{proof}~$\pi_1'$ kanggo
+  $\Gamma \Sequent \Delta, !B(c)$.
+
+  Saiki gatekna !!{proof}~$\pi_2$. Bukti iki pungkasané ana ing
+  $\lforall[x][!B(x)], \Gamma \Sequent \Delta$. Saka sekèn
+  pungkasan ing~$\pi_2$, lumakua munggah lan tandhanana
+  saben kedadéan $\lforall[x][!B(x)]$ ing sisih kiwa sekèn kang
+  ``nuju'' menyang kedadéan $\lforall[x][!B(x)]$ ing sekèn
+  pungkasan~$\pi_2$, yaiku:
+  (a)~Tandhanana $\lforall[x][!B(x)]$ ing sekèn pungkasan~$\pi_2$.
+  (b)~Yèn $\lforall[x][!B(x)]$ ana ing kontèks konklusi aturan
+  lan wis ditandhani, tandhanana kedadéan kang cocog ing
+  premis utawa premis-premis aturan mau.
+  (c)~Yèn $\lforall[x][!B(x)]$ iku formula utama ing konklusi
+  aturan \LeftR{\lforall} lan wis ditandhani, tandhanana
+  kedadéan aktif kang cocog saka $\lforall[x][!B(x)]$ lan $!B(t)$
+  ing premisé.
+
+  Saiki gatekna kabèh kedadéan $\lforall[x][!B(x)]$ kang
+  ditandhani. Ora ana kang aktif ing aturan saliyané
+  \LeftR{\lforall} (mung !!{formula}s aktif saka
+  \LeftR{\lforall} kang kena tandha). Busaken kabèh
+  kedadéan $\lforall[x][!B(x)]$ kang ditandhani saka $\pi_2$.
+  Yèn asilé tetep !!{proof} kang bener, kedadéan
+  $\lforall[x][!B(x)]$ kang ditandhani mau ora tau aktif;
+  kabèh asalé langsung saka aksioma. !!{proof} iki pungkasané
+  ana ing~$\Gamma \Sequent \Delta$ lan bisa ngganti $\pi$.
+  Mangkono siji cut pangkat maksimal wis kabusak.
+
+  Yèn ora, asilé dudu bukti kang bener amarga kita wis
+  mbusak !!{formula}s $\lforall[x][!B(x)]$ kang aktif ing
+  sawatara inferènsi \LeftR{\lforall}. Inferènsi-inferènsi
+  mau dadi ``inferènsi'' kanthi wujud
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_t$}
+  \Deduce$!B(t), \Pi \fCenter \Lambda$
+  \RightLabel{\LeftR{\lforall}}
+  \UnaryInf$\Pi \fCenter \Lambda$
+  \DisplayProof
+  \]
+  Saben ``inferènsi'' mangkono kang paling dhuwur diganti karo
+  \[
+  \AxiomC{}
+  \RightLabel{$\Subst{\pi_1'}{t}{c}[\Pi \Sequent \Lambda]$}
+  \Deduce$\Gamma, \Pi \fCenter \Delta, \Lambda, !B(t)$
+  \AxiomC{}
+  \RightLabel{$\pi_t[\Gamma \Sequent \Delta]$}
+  \Deduce$!B(t), \Gamma, \Pi \fCenter \Delta, \Lambda$
+  \RightLabel{\CutCS}
+  \BinaryInf$\Gamma, \Pi \fCenter \Delta, \Lambda$
+  \DisplayProof
+  \]
+  banjur tambahna $\Gamma$ ing sisih kiwa lan $\Delta$ ing sisih
+  tengen saben sekèn ing sangisoré. Balènana nganti kabèh
+  ``inferènsi'' \LeftR{\lforall} kang premisé ngandhut
+  $!B(t)$ bertandha diganti inferènsi \CutCS{} tumrap
+  sawijining~$!B(t)$. Sekèn pungkasan saka !!{proof} asilé
+  (kang saiki dadi !!{proof} kang bener) wujudé
+  $\Gamma, \dots, \Gamma \Sequent \Delta, \dots, \Delta$.
+  Trapna admisibilitas kontraksi supaya dadi !!a{proof} kanggo
+  $\Gamma \Sequent \Delta$, banjur gantenana $\pi$ nganggo bukti
+  iku. Siji cut tumrap $\lforall[x][!B(x)]$ wis diganti
+  (mbokmenawa akèh) cut tumrap $!B(t)$, nanging pangkaté
+  kabèh luwih cilik. Cut kang wis ana ing $\pi_1$ utawa
+  $\pi_2$ tetep ana, nanging pangkaté uga kabèh luwih cilik.
+\end{enumerate}
+\end{proof}
+
+\begin{prob}
+Priksanen kahanan $!A \ident (!B \land !C)$ ing bukti
+\olref{lem:max-cut-red-G3c}. Tegesé, tuduhna yèn ana
+!!a{proof}~$\pi$ kang pungkasané kaya mangkéné:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\Gamma \fCenter \Delta, !B \land !C$
+\AxiomC{}
+\RightLabel{$\pi_2$}
+\Deduce$!B \land !C, \Gamma \fCenter \Delta$
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta$
+\DisplayProof
+\]
+lan $\pi_1$ sarta $\pi_2$ mung ngemot cut kang pangkaté
+$<\depth{!B \land !C}$, banjur ana !!a{proof}~$\pi'$ kanggo
+$\Gamma \Sequent \Delta$ kang mung ngemot cut kang pangkaté
+$<\depth{!B \land !C}$.
+\end{prob}
+
+% \begin{prob}
+% Verify the case where $!A \ident \lexists[x][!B(x)]$ in the proof of
+% \olref{lem:inv-G3c-cut}.
+% \end{prob}
+
+
+\olref{lem:max-cut-red-G3c} nuduhaké yèn inferènsi \CutCS{}
+kang pangkaté paling gedhé ing !!a{proof} bisa diganti
+inferènsi-inferènsi \CutCS{} kang pangkaté luwih cilik.
+Lema iki bisa digunakaké manèh kanggo nuduhaké yèn
+pirang-pirang inferènsi \CutCS{} ing !!a{proof} bisa
+diilangi kanthi ngetrapaké lema mau kanthi urut marang
+sub-!!{proof}s paling dhuwur kang pungkasané ana ing
+\CutCS{} pangkat maksimal.
+
+\begin{thm}\ollabel{thm:cut-elim-G3c-largest}
+Saben !!{proof} $\pi$ ing $\Log{G3c} + \CutCS$
+bisa diowahi dadi bukti ing~\Log{G3c}.
+\end{thm}
+
+\begin{proof}
+  Sepisan, kita buktèkaké yèn kabèh cut kang pangkaté maksimal
+  ing~$\pi$ bisa diilangi. Upama $d$ iku pangkat maksimal cut
+  kang ana ing~$\pi$, lan $n$ cacah cut pangkat~$d$.
+  Buktiné nganggo induksi tumrap~$n$. Yèn $n=0$, ora ana
+  kang perlu dibuktèkaké. Yèn $n>0$, pilihen cut pangkat~$d$
+  kang paling dhuwur, lan upama $\pi_1$ sub-!!{proof} kang
+  pungkasané ana ing cut iku. Miturut
+  \olref{lem:max-cut-red-G3c}, ana !!a{proof}~$\pi_1'$
+  kanggo sekèn pungkasan kang padha kanthi kabèh cut
+  pangkat $<d$. Gantenana $\pi_1$ nganggo $\pi_1'$ ing~$\pi$.
+  Asilé !!a{proof} kang ngemot $n-1$ cut pangkat~$d$,
+  mula hipotesis induksi bisa ditrapaké.
+
+  Saiki asilé ndhèrèk saka induksi tumrap~$d$. Yèn $d=0$,
+  kabèh cut atomik, lan miturut asil sadurungé kabèh bisa
+  diilangi. Yèn $d>0$, asil sadurungé maringi bukti kang
+  kabèh cut pangkat $d$ wis diganti cut pangkat~$<d$.
+  Amarga $d$ iku pangkat maksimal cut ing~$\pi$, saiki
+  kita nduwèni bukti kang pangkat maksimal cuté $<d$,
+  mula hipotesis induksi bisa ditrapaké.
+\end{proof}
+
+\end{document}

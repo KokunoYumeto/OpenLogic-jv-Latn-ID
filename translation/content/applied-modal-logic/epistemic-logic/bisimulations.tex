@@ -1,0 +1,102 @@
+% Part: applied-modal-logics
+% Chapter: epistemic-logic
+% Section: bisimulations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{aml}{el}{bsd}
+
+\olsection{Bisimulasi}
+
+Isih ana pitakonan bab daya ekspresif basa epistemik kita, yaiku
+sesambungan antarane model lan rumus kang bener ing model iku.
+Saka asil korespondensi kerangka, kita wis weruh yen rumus tartamtu
+kang valid ing sawijining kerangka mesthekake yen kerangka iku nduweni
+sipat tartamtu. Nanging, apa basa modal kita, contone, bisa mbedakake
+antarane jagad kang nduweni panah refleksif lan rerangken jagad tanpa
+wates kang saben jagade nyambung menyang jagad sabanjure? Tegese,
+apa ana rumus~$A$ kang mung bener ing salah siji saka rong jagad iku?
+
+Bisimulasi iku sesambungan kang bisa kita tetepake antarane model
+relasional kanggo nyatakake yen struktur model-model iku padha
+miturut pangertèn modal. Kaya kang bakal kita deleng, bisimulasi
+ngandharake ekuivalensi antarane model miturut apa kang bisa
+dibedakake dening basa epistemik kita.
+
+\begin{defn}[Bisimulasi]
+Upamane $M_1 = \tuple{W_1, R_1, V_1}$ lan $M_2 = \tuple{W_2, R_2, V_2}$
+iku rong model relasional. Upamane uga $\mathcal{R} \subseteq W_1 \times W_2$
+iku relasi biner. Kita nyebut $\mathcal{R}$ minangka
+\emph{bisimulasi} yen kanggo saben $\tuple{w_1, w_2} \in \mathcal{R}$,
+syarat-syarat iki kawujud:
+
+\begin{enumerate}
+  \item $w_1 \in V_1(p)$ yen lan mung yen $w_2 \in V_2(p)$ kanggo saben
+  !!{propositional variable}s~$p$.
+  \item Kanggo saben agen $a \in G$ lan jagad $v_1 \in W_1$, yen
+  $R_{1,a} w_1 v_1$, ana $v_2 \in W_2$ kang nyukupi
+  $R_{2,a} w_2 v_2$ lan $\tuple{v_1, v_2} \in
+  \mathcal{R}$.
+  \item Kanggo saben agen $a \in G$ lan jagad $v_2 \in W_2$, yen
+   $R_{2,a} w_2 v_2$, ana $v_1 \in W_1$ kang nyukupi
+   $R_{1,a} w_1 v_1$ lan $\tuple{v_1, v_2} \in
+   \mathcal{R}$.
+\end{enumerate}
+
+Yen ana bisimulasi antarane $M_1$ lan $M_2$ kang nggandhengake jagad
+$w_1$ lan $w_2$, kita uga bisa nulis $\tuple{M_1, w_1} \leftrightarroweq
+\tuple{M_2, w_2}$, lan nyebut $\tuple{M_1, w_1}$ lan $\tuple{M_2, w_2}$
+\emph{bisimilar}.
+\end{defn}
+
+Saben klausa ing relasi bisimulasi njamin prakara kang beda-beda.
+Klausa 1 njamin yen jagad-jagad bisimilar nyukupi rumus tanpa
+modalitas kang padha, amarga klausa iku njamin kecocokan tumrap kabeh
+!!{propositional variable}s. Rong klausa liyane, kang sok diarani
+``maju'' lan ``mundur,'' njamin yen relasi aksesibilitase nduweni
+struktur kang padha.
+
+\begin{thm}
+Yen $\tuple{M_1, w_1} \leftrightarroweq \tuple{M_2, w_2}$, mula kanggo
+saben !!{formula}~$!A$, $\mSat{M_1}{!A}[w_1]$ yen lan mung yen
+$\mSat{M_2}{!A}[w_2]$.
+\end{thm}
+
+\begin{figure}
+  \begin{center}
+    \begin{tikzpicture}[modal]
+      \node[world] (w1) {$w_1$}; 
+      \node[world] (w2) [above left=of w1]{$w_2$}; 
+      \node[world] (w3) [above right=of w1] {$w_3$};
+      \draw[<->] (w1) to node {$a$} (w2);
+      \draw[->,loop below] (w1) to node {$a$} (w1);
+      \draw[<->] (w1) to [swap] node {$a$} (w3);
+      \draw[->,loop above] (w2) to node {$a$} (w2) ;
+      \draw[->,loop above] (w3) to node {$a$} (w3) ;
+      
+      \node[world](v1)[right of=w1, xshift=1.5in]{$v_1$};
+      \node[world](v2)[above of=v1]{$v_2$};
+      \draw[<->] (v1) to node {$a$} (v2);
+      \draw[->,loop below] (v1) to node {$a$} (v1);
+      \draw[->,loop above] (v2) to node {$a$} (v2) ;
+
+      \draw[-,dotted] (w1) to (v1) ;
+      \draw[-,dotted,bend left=45] (w2) to (v2) ;
+      \draw[-,dotted,bend left=30] (w3) to (v2) ;
+    \end{tikzpicture}
+  \end{center}
+  \caption{Rong model kang bisimilar yen valuasine cocog.}
+  \ollabel{fig:bisimilar}
+\end{figure}
+
+Sanadyan rong model ing \olref{fig:bisimilar} ora persis padha,
+yen valuasi jagad-jagad kang digandhengake cocog, ana bisimulasi
+kang nggandhengake $w_1$ karo~$v_1$. Bisimulasi iki uga nggandhengake
+$w_2$ lan $w_3$ karo~$v_2$: basa modal kita ora bisa medharake
+apa-apa kang temenan mbedakake jagad-jagad iku. Nanging, kahanane
+bakal beda yen $w_2$ lan~$w_3$ nyukupi !!{propositional variable}s
+kang beda.
+
+\end{document}

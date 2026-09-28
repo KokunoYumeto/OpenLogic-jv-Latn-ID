@@ -1,0 +1,137 @@
+% Part: incompleteness
+% Chapter: incompleteness-provability
+% Section: second-incompleteness-thm
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{inp}{2in}
+
+\olsection{Teorema Ora Jangkep Kapindho}
+
+Kepiye carane nyatakake yen $\Th{PA}$ ora mbuktekake
+kekonsistenane dhewe? Nyebut $\Th{PA}$ ora konsisten padha karo
+nyebut yen $\Th{PA} \Proves \eq[0][1]$. Mula kita bisa netepake
+pratelan kekonsistenan $\OCon[\Th{PA}]$ minangka !!{sentence}
+$\lnot \OProv[\Th{PA}](\gn{\eq[0][1]})$, lan teorema sabanjure
+nyatakake asil kang dikarepake:
+
+\begin{thm}
+\ollabel{thm:second-incompleteness} 
+Yen $\Th{PA}$ konsisten, mula $\Th{PA}$ ora !!{derive}
+$\OCon[\Th{PA}]$.
+\end{thm}
+
+Wigati dimangerteni yen teorema iki gumantung marang representasi
+tartamtu saka $\OCon[\Th{PA}]$ (yaiku, representasi tartamtu saka
+$\OProv[\Th{PA}](y)$). Kang digunakake mung kasunyatan yen
+representasi $\OProv[\Th{PA}](y)$ nyukupi telung sarat
+!!{derivability}, mula teorema iki bisa digeneralisasi marang
+saben teori kang nduweni predikat !!a{derivability} kanthi sipat-sipat
+iki.
+
+Migunani maca rancangan argumen G\"odel, amarga teorema iki banjur
+dadi panutup kang ngena. Gagasane mangkene. Upamana $!G_\Th{PA}$
+ukara G\"odel kang wis dibangun ing bukti
+\olref[1in]{thm:first-incompleteness}. Kita wis nuduhake
+``Yen $\Th{PA}$ konsisten, mula $\Th{PA}$ ora !!{derive}
+$!G_\Th{PA}$.'' Yen iki diformalisasi \emph{ing} $\Th{PA}$, kita
+nduweni bukti kanggo
+\[
+\OCon[\Th{PA}] \lif \lnot \OProv[\Th{PA}](\gn{!G_\Th{PA}}).
+\]
+Saiki upamana $\Th{PA}$ !!{derive}s $\OCon[\Th{PA}]$. Mula teori iki
+!!{derive}s $\lnot \Prov[\Th{PA}](\gn{!G_\Th{PA}})$. Nanging amarga
+$!G_\Th{PA}$ iku ukara G\"odel, pratelan iki ekuivalen karo
+$!G_\Th{PA}$. Mula $\Th{PA}$ !!{derive}s $!G_\Th{PA}$.
+
+Nanging kita ngerti: yen $\Th{PA}$ konsisten, teori iki ora
+!!{derive} $!G_\Th{PA}$!{} Dadi yen $\Th{PA}$ konsisten, teori iki
+ora bisa !!{derive} $\OCon[\Th{PA}]$.
+
+Supaya argumen iki luwih presisi, upamana $!G_\Th{PA}$ iku ukara
+G\"odel kanggo~$\Th{PA}$, banjur gunakna sarat !!{derivability}
+(P1)--(P3) kanggo nuduhake yen $\Th{PA}$ !!{derive}s
+$\OCon[\Th{PA}] \lif !G_\Th{PA}$. Iki bakal nuduhake yen
+$\Th{PA}$ ora !!{derive} $\OCon[\Th{PA}]$. Ing ngisor iki rancangan
+buktine ing~$\Th{PA}$. (Supaya prasaja, subskrip $\Th{PA}$
+diilangake.)
+\begin{align}
+& !G \liff \lnot \OProv(\gn{!G}) \ollabel{G2-1}\\
+& \qquad\text{$!G$ iku ukara G\"odel}\notag \\
+& !G \lif \lnot \OProv(\gn{!G}) \ollabel{G2-2}\\
+  & \qquad\text{saka \olref{G2-1}} \notag\\
+& !G \lif
+  (\OProv(\gn{!G}) \lif \lfalse) \ollabel{G2-3}\\
+  & \qquad\text{saka \olref{G2-2} miturut logika}\notag\\
+& \OProv(\gn{
+    !G \lif
+    (\OProv(\gn{!G}) \lif \lfalse)
+  }) \ollabel{G2-4}\\
+  & \qquad\text{saka \olref{G2-3} miturut sarat P1} \notag\\
+& \OProv(\gn{!G}) \lif
+  \OProv(\gn{
+    (\OProv(\gn{!G}) \lif \lfalse)
+    }) \ollabel{G2-5}\\
+  & \qquad\text{saka \olref{G2-4} miturut sarat P2} \notag\\
+& \OProv(\gn{!G}) \lif (\OProv(\gn{\OProv(\gn{!G})}) \lif \OProv(\gn{\lfalse})) \ollabel{G2-6}\\
+  & \qquad\text{saka \olref{G2-5} miturut sarat P2 lan logika} \notag\\
+& \OProv(\gn{!G}) \lif 
+  \OProv(\gn{\OProv(\gn{!G})}) \ollabel{G2-7}\\
+   & \qquad\text{miturut P3} \notag\\
+& \OProv(\gn{!G}) \lif \OProv(\gn{\lfalse}) \ollabel{G2-8}\\
+  & \qquad \text{saka \olref{G2-6} lan \olref{G2-7} miturut logika}\notag\\
+& \OCon \lif \lnot \OProv(\gn{!G}) \ollabel{G2-9}\\
+  & \qquad\text{kontraposisi saka \olref{G2-8} lan $\OCon \ident \lnot \OProv(\gn{\lfalse})$}\notag \\
+& \OCon \lif !G \notag\\
+  & \qquad\text{saka \olref{G2-1} lan \olref{G2-9} miturut logika}\notag
+\end{align}
+Logika kang digunakake ing ndhuwur mung fakta dhasar logika
+proposisional; upamane, \olref{G2-3} nggunakake
+$\Proves \lnot!A \liff (!A\lif \lfalse)$ lan \olref{G2-8}
+nggunakake $!A \lif (!B \lif !C), !A \lif !B \Proves !A \lif !C$.
+Panganggone sarat~P2 ing \olref{G2-5} lan \olref{G2-6}
+gumantung marang conto saka~P2,
+$\OProv(\gn{!A \lif !B}) \lif
+(\OProv(\gn{!A}) \lif \OProv(\gn{!B}))$. Ing kang kapisan,
+$!A \ident !G$ lan $!B \ident \OProv(\gn{!G}) \lif \lfalse$;
+ing kang kapindho, $!A \ident \OProv(\gn{G})$ lan
+$!B \ident \lfalse$.
+
+Wujud luwih abstrak saka teorema ora jangkep kapindho yaiku:
+
+\begin{thm}
+\ollabel{thm:second-incompleteness-gen} Upamana $\Th{T}$ teori
+konsisten sembarang kang !!{axiomatized} lan ngembangake $\Th{Q}$,
+lan upamana $\OProv[\Th{T}](y)$ formula sembarang kang nyukupi sarat
+!!{derivability} P1--P3 kanggo~$\Th{T}$. Mula $\Th{T}$ ora
+!!{derive}~$\OCon[T]$.
+\end{thm}
+
+\begin{prob}
+Tuduhna yen $\Th{PA}$ !!{derive}s
+$!G_{\Th{PA}} \lif \OCon[\Th{PA}]$.
+\end{prob}
+
+\begin{digress}
+Piwulang saka crita iki yaiku ora ana teori matematika konsisten kang
+``lumrah'' kang bisa !!{derive} pratelan kekonsistenane dhewe.
+Upamana $\Th{T}$ teori matematika kang ngemot $\Th{Q}$ lan
+panalaran ``finitari'' saka Hilbert (apa wae teges sing dimaksud).
+Mula sakabehe $\Th{T}$ ora bisa !!{derive} pratelan
+kekonsistenan saka $\Th{T}$, luwih-luwih bagean finitarine uga ora
+bisa !!{derive} pratelan kekonsistenan saka~$\Th{T}$. Ing teges iki,
+ora mungkin ana bukti kekonsistenan finitari kanggo
+``sakabehe matematika.''
+
+Ana keluwesan nalika nafsirake istilah ``finitari,'' lan ing makalah
+taun 1931 G\"odel ngakoni kemungkinan yen sawijining perkara kang
+kita anggep ``finitari'' bisa ana ing njaba jinis matematika
+kang arep diformalisasi Hilbert. Nanging G\"odel wis menehi
+kelonggaran; saiki angel mbayangake perkara kang lumrah diarani
+finitari nanging ora bisa diformalisasi ing, upamane, $\Th{ZFC}$,
+teori himpunan Zermelo--Fraenkel kanthi aksioma pilihan.
+\end{digress}
+
+\end{document}

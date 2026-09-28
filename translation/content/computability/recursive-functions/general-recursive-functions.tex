@@ -1,0 +1,50 @@
+% Part: computability
+% Chapter: recursive-functions
+% Section: general-recursive-functions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{rec}{gen}
+\olsection{Fungsi Rekursif Umum}
+
+Ana cara liya kanggo ngentukake himpunan fungsi total.
+Fungsi total $f(x,\vec z)$ diarani \emph{reguler}
+yen kanggo saben runtutan wilangan asli $\vec z$,
+ana $x$ kang ndadekake $f(x,\vec z) = 0$.
+Kanthi tembung liya, fungsi reguler yaiku persis
+fungsi kang bisa dikenani panggolekan tanpa wates
+lan asile tetep fungsi total. Tanpa ngowahi
+himpunan fungsi total kang diasilake, kita bisa
+matesi panggolekan tanpa wates mung kanggo
+fungsi reguler:
+
+\begin{defn}
+\ollabel{defn:general-recursive}
+Himpunan \emph{fungsi rekursif umum} yaiku
+himpunan paling cilik saka fungsi ing wilangan asli
+menyang wilangan asli (kanthi aritas warna-warna)
+kang ngemot fungsi nol, penerus, lan proyeksi,
+lan katutup tumrap komposisi, rekursi primitif,
+lan panggolekan tanpa wates kang ditrapake
+marang fungsi \emph{reguler}.
+\end{defn}
+
+Cetha yen saben fungsi rekursif umum iku total.
+Bedane \olref{defn:general-recursive} lan
+\olref[par]{defn:recursive-fn} yaiku ing definisi
+kang pungkasan, fungsi rekursif parsial oleh
+digunakake ing langkah-langkah antarane; siji-sijine
+syarat yaiku fungsi kang diasilake ing pungkasan
+kudu total. Mula tembung 'umum', tinggalan
+sajarah, iku sebutan kang kurang trep; yen
+katon saka definisine,
+\olref{defn:general-recursive} malah \emph{kurang}
+umum tinimbang \olref[par]{defn:recursive-fn}.
+Nanging untunge, bedane iki mung katon wae;
+sanajan definisine beda, himpunan fungsi
+rekursif umum lan himpunan fungsi rekursif
+iku padha persis.
+
+\end{document}

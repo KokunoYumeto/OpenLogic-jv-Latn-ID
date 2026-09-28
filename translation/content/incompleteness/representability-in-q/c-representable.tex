@@ -1,0 +1,214 @@
+% Part: incompleteness
+% Chapter: representability-in-q
+% Section: c-representable
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{req}{cre}
+\olsection{Fungsi ing $C$ Bisa Direpresentasikaké ing $\Th{Q}$}
+
+Kita kudu nuduhaké yèn saben fungsi ing $C$ bisa direpresentasikaké
+ing $\Th{Q}$. Pungkasané, kita kudu nuduhaké carané kanggo saben
+fungsi aritas-$k$ $f(x_0,\dots,x_{k-1})$ ing $C$ milih formula
+$!A_f(x_0,\dots,x_{k-1},y)$ kang merepresentasikaké fungsi mau.
+
+\begin{lem}
+Kanggo wilangan asli $n$ lan $m$, yèn $n \neq m$, mula
+$Q \Proves \num n \neq \num m$.
+\end{lem}
+
+\begin{proof}
+Gunakna induksi tumrap $n$ kanggo nuduhaké yèn kanggo saben $m$,
+yèn $n \neq m$, mula $Q \Proves \eq/[\num n][\num m]$.
+
+Ing kahanan dhasar, $n = 0$. Yèn $m$ ora padha karo $0$,
+mula $m = k + 1$ kanggo sawatara wilangan asli $k$.
+Kita nduwèni aksioma $\lforall[x][\eq/[0][x']]$.
+Kanthi aksioma kuantor, kita ganti $x$ nganggo $\num k$
+lan olèh $\eq/[0][\num k']$. Nanging $\num k'$ iku
+$\num m$.
+
+Ing langkah induksi, anggepen pratelan iki bener kanggo $n$,
+banjur delengen $n+1$. Anggep $m$ wilangan asli sembarang.
+Ana rong kemungkinan: $m = 0$ utawa kanggo sawatara $k$
+kita nduwèni $m = k+1$. Kahanan kapisan dirampungaké kaya ing ndhuwur.
+Ing kahanan kapindho, anggepen $n+1 \neq k+1$.
+Mula $n \neq k$. Miturut hipotesis induksi kanggo $n$,
+kita olèh $\Th{Q} \Proves \eq/[\num n][\num k]$.
+Ana aksioma $\lforall[x][\lforall[y][\eq[x'][y'] \lif \eq[x][y]]]$.
+Kanthi aksioma kuantor, kita olèh
+$\eq[\num n'][\num k'] \lif \eq[\num n][\num k]$.
+Miturut logika proposisional, ing $\Th{Q}$ kita bisa ngasilaké
+$\eq/[\num n][\num k] \lif \eq/[\num n'][\num k']$.
+Kanthi modus ponens, kita olèh $\eq/[\num n'][\num k']$,
+kaya kang dikarepaké, amarga $\num k'$ iku $\num m$.
+\end{proof}
+
+Lema iki pratelané ora akèh: intiné, $\Th{Q}$ bisa mbuktèkaké
+yèn numeral kang béda nuduhaké obyek kang béda. Umpamané,
+$\Th{Q}$ mbuktèkaké $0'' \neq 0'''$. Nanging bukti umumé
+butuh pangati-ati. Élinga uga yèn induksi kang kita gunakaké
+ana \emph{ing njaba} $\Th{Q}$.
+
+Kita bakal bisa merepresentasikaké nol, penerus,
+panjumlahan, perkalian, fungsi karakteristik kanggo
+kesamaan, lan proyeksi. Ing saben kahanan, formula kang
+merepresentasikaké fungsi iku gampang ditemtokaké;
+umpamané, nol direpresentasikaké déning formula
+\[
+y = 0,
+\]
+penerus direpresentasikaké déning formula
+\[
+x_0' = y,
+\]
+lan panjumlahan direpresentasikaké déning formula
+\[
+x_0 + x_1 = y.
+\]
+Pakaryan kang kudu ditindakake yaiku nuduhaké yèn $\Th{Q}$
+bisa mbuktèkaké pratelan kang gegayutan. Umpamané, yèn
+panjumlahan direpresentasikaké déning formula ing ndhuwur,
+kita kudu nuduhaké yèn kanggo saben pasangan wilangan asli
+$m$ lan $n$, $\Th{Q}$ mbuktèkaké
+\[
+\eq[\num n + \num m][\num {n+m}]
+\]
+lan
+\[
+\lforall[y][(\eq[(\num n + \num m)][y] \lif \eq[y][\num {n+m}])].
+\]
+
+Kepiyé komposisi? Anggepen $h$ ditetepaké déning
+\[
+h(x_0,\dots,x_{l-1}) = f(g_0(x_0,\dots,x_{l-1}), \dots,
+g_{k-1}(x_0,\dots,x_{l-1})).
+\]
+ing kéné kita wis nemu formula $!A_f, !A_{g_0}, \dots,
+!A_{g_{k-1}}$ kang merepresentasikaké fungsi
+$f,g_0,\dots,g_{k-1}$ miturut urutané. Banjur kita bisa
+netepaké formula $!A_h$ kang merepresentasikaké $h$,
+yaiku kanthi netepaké $!A_h(x_0,\dots,x_{l-1},y)$ dadi
+\begin{multline*}
+  \lexists[z_0\dots][\lexists[z_{k-1}][(!A_{g_0}(x_0,\dots,x_{l-1},z_0) \land
+  \dots \land !A_{g_{k-1}}(x_0,\dots,x_{l-1},z_{k-1}) \land\\
+  !A_f(z_0,\dots,z_{k-1},y))]].
+\end{multline*}
+
+Pungkasané, delengen telusuran tanpa wates. Anggepen
+$g(x,\vec z)$ reguler lan bisa direpresentasikaké ing $\Th{Q}$,
+umpamané déning formula $!A_g(x,\vec z,y)$.
+Anggep $f$ ditetepaké déning $f(\vec z) = \mu x \; g(x,\vec z)$.
+Kita arep nemu formula $!A_f(\vec z,y)$ kang merepresentasikaké
+$f$. Pilihan kang lumrah yaiku:
+\[
+!A_f(\vec z,y) \ident !A_g(y,\vec z,0) \land \lforall[w][(w < y
+\lif \lnot !A_g(w,\vec z,0))].
+\]
+
+Bisa dituduhaké yèn iki bener kanthi sawetara lema tambahan,
+umpamané:
+
+\begin{lem}
+  Kanggo saben variabel $x$ lan wilangan asli $n$,
+  $\Th{Q}$ mbuktèkaké $\eq[(x' + \num n)][(x + \num n)']$.
+\end{lem}
+
+Élinga manèh yèn pratelan iki luwih lemah tinimbang
+pratelan yèn $\Th{Q}$ mbuktèkaké
+$\lforall[x][\lforall[y][(x' + y) = (x +y)']]$
+(kang pancèn salah).
+
+\begin{proof}
+Buktiné, kaya lumrahé, nganggo induksi tumrap $n$.
+Ing kahanan dhasar, $n = 0$, kita kudu nuduhaké yèn
+$\Th{Q}$ mbuktèkaké $\eq[(x'+0)][(x+0)']$. Nanging kita olèh:
+\begin{eqnarray*}
+& & \eq[(x' + 0)][x'] \quad \text{saka aksioma 4} \\
+& & \eq[(x + 0)][x] \quad \text{saka aksioma 4} \\
+& & \eq[(x+0)'][x'] \quad \text{miturut larik 2} \\
+& & \eq[(x' + 0)][(x + 0)'] \quad \text{larik 1 lan 3}
+\end{eqnarray*}
+Ing langkah induksi, anggepen kita wis nurunké $\eq[(x' +
+  \num n)][(x + \num n)']$ ing $\Th{Q}$.
+Amarga $\num{n+1}$ iku $\num n'$, kita kudu nuduhaké yèn
+$\Th{Q}$ mbuktèkaké $\eq[(x' + \num n')][(x + \num n')']$.
+Rerangkening kesamaan ing ngisor iki bisa diturunké ing $\Th{Q}$:
+\begin{eqnarray*}
+(x' + \num n') & \eq & (x' + \num n)' \quad \text{aksioma 5} \\
+& \eq & (x + \num n')' \quad \text{saka hipotesis induksi}
+\end{eqnarray*}
+\end{proof}
+
+\begin{lem}
+\begin{enumerate}
+\item $\Th{Q}$ mbuktèkaké $\lnot (x < \num 0)$.
+\item Kanggo saben wilangan asli $n$, $\Th{Q}$ mbuktèkaké
+\[
+x < \num {n+1} \lif (\eq[x][\num 0] \lor \dots \lor \eq[x][\num n]).
+\]
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+Kita rampungaké pérangan 1 lan sawatara saka pérangan 2 kanthi
+informal (yaiku mung mènèhi pituduh carané mbangun
+!!{derivation} formal).
+
+Kanggo pérangan 1, miturut definisi $<$, kita kudu mbuktèkaké
+$\lnot \lexists[y][\eq[(y'+x)][0]]$ ing $\Th{Q}$.
+Miturut aksioma lan aturan logika tataran kapisan, iki padha
+karo $\lforall[y][\eq/[(y' + x)][0]]$.
+Gagasané mangkéné: anggepen $\eq[(y'+x)][0]$.
+Yèn $x$ iku 0, kita olèh $\eq[(y' + 0)][0]$.
+Nanging miturut aksioma 4 saka $\Th{Q}$, kita olèh
+$\eq[(y' + 0)][y']$, lan miturut aksioma 2 kita olèh
+$\eq/[y'][0]$, sawijining kontradiksi.
+Mula $\lforall[y][\eq/[(y' +x)][0]]$.
+Yèn $x$ dudu $0$, miturut aksioma 3 ana $z$ saéngga
+$\eq[x][z']$. Banjur kita olèh $\eq[(y' + z')][0]$.
+Miturut aksioma~5, kita olèh $\eq[(y' + z)'][0]$,
+kang manèh mbantah aksioma~2.
+
+Kanggo pérangan 2, gunakna induksi tumrap $n$.
+Delengen kahanan dhasar nalika $n =0$.
+Ing kahanan iki kita kudu nuduhaké
+$x < \num 1 \lif \eq[x][\num 0]$.
+Anggepen $x < \num 1$. Miturut aksioma kang netepaké $<$,
+kita olèh $\lexists[y][\eq[(y'+x)][0']]$.
+Anggepen $y$ nduwèni sipat iki; mula
+$\eq[y'+x][0']$.
+
+Kita kudu nuduhaké $\eq[x][0]$. Miturut aksioma 3,
+yèn $x$ dudu 0, mula padha karo $z'$ kanggo sawatara $z$.
+Banjur kita olèh $\eq[(y' + z')][0']$.
+Miturut aksioma~5 saka $\Th{Q}$, kita olèh
+$\eq[(y'+z)'][0']$. Miturut aksioma 1, kita olèh
+$\eq[(y' + z)][0]$. Nanging miturut definisi,
+iki ateges $z < 0$, kang mbantah pérangan~1.
+\end{proof}
+
+\begin{explain}
+Kita wis nuduhaké yèn himpunan fungsi kang bisa diitung bisa
+ditandhani minangka himpunan fungsi kang bisa direpresentasikaké
+ing $\Th{Q}$. Sejatiné, buktiné luwih umum.
+Saka definisi representabilitas, gampang dideleng yèn
+saben téori kang ngluwihi $\Th{Q}$ (utawa kang bisa
+nginterpretasikaké $\Th{Q}$) bisa merepresentasikaké
+fungsi-fungsi kang bisa diitung. Kosok baliné, ing saben
+sistem !!{derivation} kang konsep buktiné bisa diitung,
+saben fungsi kang bisa direpresentasikaké uga bisa diitung.
+Mula, umpamané, himpunan fungsi kang bisa diitung bisa
+ditandhani minangka himpunan fungsi kang direpresentasikaké
+ing aritmetika Peano, utawa malah ing téori himpunan Zermelo
+Fraenkel. Kaya kang dicathet G\"odel, iki rada nggumunaké.
+Bakal kita deleng yèn pitakonan bab apa kang bisa dibuktèkaké
+gumantung banget marang téori kang dipilih; kanthi kasar,
+saya kuwat aksiomané, saya akèh kang bisa dibuktèkaké.
+Nanging ing akèh téori aksiomatik, fungsi kang bisa
+direpresentasikaké persis fungsi kang bisa diitung.
+\end{explain}
+
+\end{document}

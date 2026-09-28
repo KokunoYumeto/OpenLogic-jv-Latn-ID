@@ -1,0 +1,208 @@
+% Part: first-order-logic
+% Chapter: syntax-and-semantics
+% Section: unique-readability
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{syn}{unq}
+
+\olsection{Mung Bisa Diwaca Kanthi Siji Cara}
+
+\begin{explain}
+Carane kita nemtokake !!{formula}s njamin yen saben !!{formula} mung
+bisa \emph{diwaca kanthi siji cara}, yaiku miturut aturan pambentukan
+!!{formula}s, saktemene mung ana siji cara kanggo mbangun lan
+nafsirake formula kasebut. Yen ora mangkono, bakal ana !!{formula}s
+kang ambigu, yaiku !!{formula}s kang bisa diwaca utawa ditafsirake
+luwih saka siji cara---lan cetha yen kita kepengin nyingkiri perkara
+iku. Nanging, kang luwih wigati, tanpa sipat iki umume definisi lan
+bukti kang bakal kita wenehake ora bakal lumaku.
+
+Mbokmenawa cara paling cetha kanggo nerangake iki yaiku ndeleng apa
+kang bakal kelakon yen kita menehi aturan pambentukan !!{formula}s
+kang ora njamin yen formula mung bisa diwaca kanthi siji cara.
+Umpamane, kita bisa wae lali nyertakake kurung ing aturan pambentukan
+kanggo konektif, kayata ngidini aturan iki:
+\begin{quote}
+Yen $!A$ lan $!B$ iku !!{formula}s, mula $!A \lif !B$ uga formula.
+\end{quote}
+Miwiti saka formula atomik $!D$, aturan iki ngidini kita mbangun
+$!D \lif !D$. Saka iki bebarengan karo $!D$, kita bakal oleh $!D \lif !D
+\lif !D$. Nanging, ana rong cara kanggo nindakake iki:
+\begin{enumerate}
+\item Kita nganggep $!D$ minangka $!A$ lan $!D \lif !D$ minangka $!B$.
+\item Kita nganggep $!A$ minangka $!D \lif !D$ lan $!B$ yaiku~$!D$.
+\end{enumerate}
+Mula, ana rong cara kanggo maca !!{formula}~$!D \lif !D \lif !D$.
+Formula iku awujud $!B \lif !C$ kanthi $!B$ yaiku $!D$ lan $!C$
+yaiku $!D \lif !D$, nanging \emph{uga} awujud $!B \lif !C$ kanthi
+$!B$ yaiku $!D \lif !D$ lan $!C$ yaiku~$!D$.
+
+Yen iki kelakon, definisi kita ora mesthi lumaku. Umpamane, nalika
+kita nemtokake !!{main operator} sawijining formula, kita kandha:
+ing formula kang awujud $!B \lif !C$, !!{main operator} yaiku
+kemunculan~$\lif$ kang dituduhake. Nanging yen kita bisa nyocogake
+formula $!D \lif !D \lif !D$ karo $!B \lif !C$ kanthi rong cara mau,
+ing kasus kapisan kemunculan $\lif$ kang kapisan dadi !!{main operator},
+dene ing kasus kapindho kemunculan kang kapindho. Nanging kita
+ngersakake supaya !!{main operator} dadi \emph{fungsi} saka
+!!{formula}, yaiku saben !!{formula} kudu duwe pas siji kemunculan
+!!{main
+  operator}.
+\end{explain}
+
+\begin{lem}
+Cacahing kurung buka lan kurung tutup ing !!a{formula}~$!A$ iku padha.
+\end{lem}
+
+\begin{proof}
+Kita mbuktekake iki kanthi induksi miturut cara $!A$ kawangun. Iki
+mbutuhake rong bab: (a) Kaping pisanan, kita kudu mbuktekake yen kabeh
+formula atomik nduweni sipat kang dikarepake (dhasar induksi).
+(b) Banjur, kita kudu mbuktekake yen nalika kita mbangun formula anyar
+saka formula kang wis ana, formula anyar nduweni sipat kasebut yen
+formula lawas uga nduweni.
+
+Upamana $l(!A)$ iku cacahing kurung buka, lan $r(!A)$ cacahing
+kurung tutup ing~$!A$; mangkono uga $l(t)$ lan $r(t)$ kanggo cacahing
+kurung buka lan kurung tutup ing sawijining term~$t$.
+
+\begin{prob}
+    Buktèkna yen kanggo saben term~$t$, $l(t) = r(t)$.
+\end{prob}
+
+\begin{enumerate}
+\tagitem{prvFalse}{\indcase{!A}{\lfalse}{$\indfrm$ nduweni $0$ kurung
+    buka lan $0$ kurung tutup.}}{}
+
+\tagitem{prvTrue}{\indcase{!A}{\ltrue}{$\indfrm$ nduweni $0$ kurung
+    buka lan $0$ kurung tutup.}}{}
+
+\item \indcase{!A}{\Atom{R}{t_1,\dots,t_n}}{$l(\indfrm) = 1 + l(t_1) +
+  \dots + l(t_n) = 1 + r(t_1) + \dots + r(t_n) = r(\indfrm)$. Ing kene
+  kita nggunakake kasunyatan, kang ditinggal minangka latihan, yen
+  $l(t) = r(t)$ kanggo saben term~$t$.}
+
+\item \indcase{!A}{\eq[t_1][t_2]}{$l(\indfrm) = l(t_1) + l(t_2) =
+  r(t_1) + r(t_2) = r(\indfrm)$.}
+
+\tagitem{prvNot}{\indcase{!A}{\lnot !B}{Miturut hipotesis induksi,
+    $l(!B) = r(!B)$. Mula $l(\indfrm) = l(!B) = r(!B) =
+    r(\indfrm)$.}}{}
+
+\item \indcase{!A}{(!B \ast !C)}{Miturut hipotesis induksi, $l(!B) =
+  r(!B)$ lan $l(!C) = r(!C)$. Mula $l(\indfrm) = 1 + l(!B) + l(!C) =
+  1 + r(!B) + r(!C) = r(\indfrm)$.}
+
+\tagitem{prvAll}{\indcase{!A}{\lforall[x][!B]}{Miturut hipotesis
+    induksi, $l(!B) = r(!B)$. Mula, $l(\indfrm) = l(!B) = r(!B) =
+    r(\indfrm)$.}}{}
+
+% Print case for \lexists if prvEx and not prvAll
+\tagitem{prvAll,notprvEx}{}{\indcase{!A}{\lexists[x][!B]}{Miturut hipotesis
+    induksi, $l(!B) = r(!B)$. Mula, $l(\indfrm) = l(!B) = r(!B) =
+    r(\indfrm)$.}}
+
+% Just say similarly if prvEx and prvAll
+\tagitem{notprvAll,notprvEx}{}{\indcase{!A}{\lexists[x][!B]}{Semono uga.}}
+\end{enumerate}
+\end{proof}
+
+\begin{defn}[Awalan sejati]
+Sawijining rerangken simbol $!B$ iku \emph{awalan sejati} saka
+rerangken simbol~$!A$ yen nyambungake $!B$ karo rerangken simbol
+kang ora kosong ngasilake~$!A$.
+\end{defn}
+
+\begin{lem}\ollabel{lem:no-prefix}
+Yen $!A$ iku !!a{formula}, lan $!B$ iku awalan sejati saka $!A$,
+mula $!B$ dudu !!a{formula}.
+\end{lem}
+
+\begin{proof}
+Latihan.
+\end{proof}
+
+\begin{prob}
+Buktèkna \olref[fol][syn][unq]{lem:no-prefix}.
+\end{prob}
+
+\begin{prop}
+\ollabel{prop:unique-atomic}
+Yen $!A$ iku !!{formula} atomik, mula formula kasebut nyukupi siji, lan mung
+siji, saka syarat-syarat ing ngisor iki.
+\begin{enumerate}
+\tagitem{prvFalse}{$!A \ident \lfalse$.}{}
+\tagitem{prvTrue}{$!A \ident \ltrue$.}{}
+\item $!A \ident \Atom{R}{t_1,\dots,t_n}$ kanthi $R$ iku
+  !!{predicate} $n$-panggonan, $t_1$, \dots, $t_n$ iku term, lan
+  saben $R$, $t_1$, \dots, $t_n$ ditemtokake kanthi siji cara.
+\item $!A \ident \eq[t_1][t_2]$ kanthi $t_1$ lan $t_2$ iku term
+  kang ditemtokake kanthi siji cara.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+Latihan.
+\end{proof}
+
+\begin{prob}
+Buktèkna \olref[fol][syn][unq]{prop:unique-atomic} (Pituduh:
+Rumusna lan buktèkna versi \olref[fol][syn][unq]{lem:no-prefix}
+kanggo term.)
+\end{prob}
+
+\begin{prop}[Mung Bisa Diwaca Kanthi Siji Cara]
+Saben !!{formula} nyukupi siji, lan mung siji, saka syarat-syarat
+ing ngisor iki.
+\begin{enumerate}
+\item $!A$ iku atomik.
+
+\tagitem{prvNot}{$!A$ awujud $\lnot !B$.}{}
+
+\tagitem{prvAnd}{$!A$ awujud $(!B \land !C)$.}{}
+
+\tagitem{prvOr}{$!A$ awujud $(!B \lor !C)$.}{}
+
+\tagitem{prvIf}{$!A$ awujud $(!B \lif !C)$.}{}
+
+\tagitem{prvIff}{$!A$ awujud $(!B \liff !C)$.}{}
+
+\tagitem{prvAll}{$!A$ awujud $\lforall[x][!B]$.}{}
+
+\tagitem{prvEx}{$!A$ awujud $\lexists[x][!B]$.}{}
+\end{enumerate}
+Kajaba iku, ing saben kasus $!B$, utawa $!B$ lan $!C$, ditemtokake
+kanthi siji cara. Iki ateges, umpamane, ora ana pasangan beda $!B$,
+$!C$ lan $!B'$, $!C'$ saengga $!A$ awujud loro-lorone
+\iftag{prvIf}{$(!B \lif !C)$ lan $(!B' \lif !C')$.}{
+    \iftag{prvOr}{$(!B \lor !C)$ lan $(!B' \lor !C')$.}{
+      \iftag{prvAnd}{$(!B \land !C)$ lan $(!B' \land !C')$.}{}}}
+\end{prop}
+
+\begin{proof}
+Aturan pambentukan mbutuhake yen !!a{formula} ora atomik, formula iku
+kudu diwiwiti tandha kurung buka~(, \iftag{prvNot}{$\lnot$,}{}
+utawa kuantor. Kosok baline, saben !!{formula} kang diwiwiti salah
+siji saka simbol-simbol iki mesthi atomik: !!a{predicate},
+!!a{function}, !!a{constant}\iftag{prvFalse}{, $\lfalse$}{}\iftag{prvTrue}{, $\ltrue$}{}.
+
+Dadi, kita mung perlu nuduhake yen $!A$ awujud $(!B \ast
+!C)$ lan uga awujud $(!B' \mathbin{\ast'} !C')$, mula $!B \ident
+!B'$, $!C \ident !C'$, lan $\ast = {\ast'}$.
+
+Upamana $!A \ident (!B \ast !C)$ lan $!A \ident (!B'
+\mathbin{\ast'} !C')$. Mula bisa uga $!B \ident !B'$ utawa ora.
+Yen padha, cetha yen $\ast = {\ast'}$ lan $!C \ident !C'$,
+amarga loro-lorone banjur dadi subrerangken saka $!A$ kang diwiwiti
+ing papan kang padha lan dawane padha. Kasus liyane yaiku
+$!B \not\ident !B'$. Amarga $!B$ lan $!B'$ loro-lorone subrerangken
+saka $!A$ kang diwiwiti ing papan kang padha, salah siji mesthi
+dadi awalan sejati saka sijine. Nanging iki ora mungkin miturut
+\olref{lem:no-prefix}.
+\end{proof}
+
+
+\end{document}

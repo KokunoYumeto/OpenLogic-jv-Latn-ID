@@ -1,0 +1,54 @@
+% Part: incompleteness
+% Chapter: theories-computability
+% Section: q-is-ce
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{tcp}{qce}
+
+\olsection{$\Th{Q}$ iku \printtoken{S}{c.e.}-lengkap}
+
+
+\begin{thm}
+$\Th{Q}$ iku !!{c.e.} nanging ora bisa diputusake. Malah,
+  iki himpunan !!{c.e.} kang lengkap.
+\end{thm}
+
+\begin{proof}
+Ora angel kanggo weruh yen $\Th{Q}$ iku !!{c.e.}, amarga iki himpunan
+(kode kanggo) ukara $y$ kang nduweni bukti $x$ tumrap $y$ ing
+$\Th{Q}$:
+\[
+Q = \Setabs{y}{\lexists[x][\Prf[\Th{Q}](x,y)]}.
+\]
+Nanging kita ngerti yen $\Prf[\Th{Q}](x,y)$ komputabel (malah rekursif
+primitif), lan saben himpunan kang bisa ditulis kaya ing ndhuwur iku c.e.
+
+Nyebut iki himpunan c.e.\ kang lengkap padha karo nyebut $K
+\leq_m Q$, ing ngendi $K = \Setabs{x}{!A_x(x) \downarrow}$. Mula ayo
+dituduhake yen $K$ bisa direduksi menyang $\Th{Q}$. Amarga predikat
+Kleene $T(e,x,s)$ rekursif primitif, predikat iki bisa direpresentasikake
+ing $\Th{Q}$, upamane dening $!A_T$. Mula kanggo saben $x$, kita nduweni
+\begin{align*}
+x \in K & \lif \lexists[s][T(x,x,s)] \\
+& \lif \lexists[s][(\Th{Q} \Proves !A_T(\num x,\num x, \num s))]
+  \\
+& \lif \Th{Q} \Proves \lexists[s][!A_T(\num x, \num x, s)].
+\end{align*}
+Kosok baline, yen $\Th{Q} \Proves \lexists[s][!A_T(\num x, \num x, s)]$,
+mula sejatine kanggo sawijining bilangan asli $n$, formula $!A_T(\num x,
+\num x, \num n)$ mesthi bener. Saiki, yen $T(x,x,n)$ salah,
+$\Th{Q}$ bakal mbuktekake $\lnot !A_T(\num x, \num x, \num n)$, amarga
+$!A_T$ merepresentasikake $T$. Nanging banjur $\Th{Q}$ mbuktekake
+formula kang salah, lan iki kontradiksi. Mula $T(x,x,n)$ mesthi bener,
+kang ateges $!A_x(x) \downarrow$.
+
+Cekake, kanggo saben $x$, $x$ kalebu ing $K$ yen lan mung yen
+$\Th{Q}$ mbuktekake $\lexists[s][T(\num x,\num x,s)]$. Dadi fungsi $f$
+kang nggawa $x$ menyang (kode kanggo) ukara $\lexists[s][T(\num x,
+  \num x, s)]$ iku reduksi saka $K$ menyang $\Th{Q}$.
+\end{proof}
+
+\end{document}

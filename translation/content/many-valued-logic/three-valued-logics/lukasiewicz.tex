@@ -1,0 +1,252 @@
+% Part: many-valued-logic
+% Chapter: three-valued-logics
+% Section: lukasiewicz
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{thr}{luk}
+
+\olsection{Logika \L ukasiewicz}
+
+Salah sawijining usulan logika mawa akeh nilai kang paling wiwitan
+diterbitake lan diandharake kanthi rinci asalé saka filsuf Polandia,
+Jan \L ukasiewicz, ing taun 1921. \L ukasiewicz kabangun dening
+masalah perang laut Aristoteles: katon yen \emph{dina iki}, ukara
+``Sesuk bakal ana perang laut'' durung bener lan durung salah;
+nilai kabenerane durung katetepake. \L ukasiewicz ngusulake
+nilai kabeneran katelu kanggo ukara ``kontingen mangsa ngarep''
+kaya mangkono.
+\begin{quote}
+Aku bisa nganggep tanpa kontradiksi yen aku ana ing Warsawa ing
+sawijining wektu taun ngarep, umpama awan tanggal 21 Desember,
+saiki durung katetepake kanthi positif utawa negatif. Mula bisa
+wae, nanging ora mesthi, aku bakal ana ing Warsawa ing wektu
+kasebut. Miturut anggepan iki, proposisi ``Aku bakal ana ing
+Warsawa nalika awan tanggal 21 Desember taun ngarep'' saiki
+durung bisa diarani bener utawa salah. Yen saiki bener, aku ana
+ing Warsawa mengko mesthi kudu kelakon, lan iki nalisir
+anggepan mau. Dene yen saiki salah, aku ana ing Warsawa mengko
+mesthi ora mungkin, lan iki uga nalisir anggepan mau. Mula
+proposisi kasebut saiki durung bener lan durung salah, lan
+kudu nduweni nilai katelu kang beda saka ``0'' utawa salah,
+lan ``1'' utawa bener. Nilai iki bisa kita tandhani nganggo
+``$\frac{1}{2}$.'' Nilai iki makili ``kang mungkin'' lan
+nggabung karo ``kang bener'' lan ``kang salah'' minangka
+nilai katelu.
+\end{quote}
+Kita nggunakake $\Undef$ kanggo nilai kabeneran katelu
+miturut \L ukasiewicz.\footnote{Ing kene \L ukasiewicz
+nganggo tembung ``mungkin'' kanthi makna kang saiki ora lumrah,
+yaiku mungkin nanging ora mesthi.}
+
+Fungsi kabeneran kanggo konektif $\lnot$, $\land$, lan $\lor$
+gampang ditemtokake miturut tafsir iki: negasi ukara
+kontingen mangsa ngarep uga kontingen mangsa ngarep, mula
+$\tf{\lnot}(\Undef) = \Undef$. Yen salah siji komponen
+konjungsi durung katetepake dene liyane bener, konjungsine
+uga durung katetepake: gumantung marang kepriye komponen
+kontingen iku kelakon, konjungsi bisa dadi bener utawa salah.
+Mula \[
+    \tf{\land}(\True, \Undef) =
+\tf{\land}(\Undef, \True) =
+\Undef.
+\]
+Nanging yen komponen liyane salah, konjungsi ora bisa dadi
+bener, mula \[\tf{\land}(\False, \Undef) =
+\tf{\land}(\Undef, \False) = \False.\]
+Nilai liyane, yen argumene nilai kabeneran kang wis katetepake,
+$\True$ utawa $\False$, padha karo ing logika klasik.
+
+Kanggo kondisional, kahanane rada luwih ruwet. Upamakna $q$
+ukara kontingen mangsa ngarep. Yen $p$ salah, $p \lif q$
+bakal bener ora preduli kepriye $q$ kelakon, mula kita netepake
+$\tf{\lif}(\False, \Undef) = \True$. Yen $p$ bener,
+$q \lif p$ uga bener ora preduli kepriye $q$ kelakon,
+mula $\tf{\lif}(\Undef, \True) = \True$. Yen $p$ bener,
+$p \lif q$ bisa dadi bener utawa salah, mula
+$\tf{\lif}(\True, \Undef) = \Undef$. Uga, yen $p$ salah,
+$q \lif p$ bisa dadi bener utawa salah, mula
+$\tf{\lif}(\Undef, \False) = \Undef$. Kari kasus
+nalika $p$ lan $q$ loro-lorone kontingen mangsa ngarep.
+Miturut motivasi sadurunge, kita sakmesthine menehi nilai
+$\Undef$ ing kasus iki. Nanging iki njalari $!A \lif !A$
+\emph{dudu} tautologi. \L ukasiewicz ora kabotan ninggalake
+$!A \lor \lnot !A$ lan $\lnot(!A \land \lnot !A)$,
+nanging ora gelem ninggalake $!A \lif !A$. Mula dheweke
+netepake $\tf{\lif}(\Undef, \Undef) = \True$.
+
+\begin{defn}\ollabel{def:lukasiewicz}
+Logika telung nilai \L ukasiewicz ditetepake nganggo matriks iki:
+\begin{enumerate}
+  \item Basa proposisional baku $\Lang L_0$ kang ngemot
+  $\lfalse$, $\lnot$, $\land$, $\lor$, $\lif$.
+  \item Himpunan nilai kabeneran $V = \{\True, \Undef, \False\}$.
+  \item $\True$ mung siji-sijine nilai pinilih, yaiku
+  $V^+ = \{\True\}$.
+  \item Kanggo tetapan proposisional,
+  $\tf{\lfalse}[\LogLuk[3]] = \False$. Fungsi kabeneran liyane
+  diwenehake dening tabel iki:
+  \begin{center}
+    \begin{tabular}{c|c} 
+      $\tf{\lnot}$ & \\ 
+      \hline  
+      $\True$ & $\False$ \\ 
+      $\Undef$ & $\Undef$ \\
+      $\False$ & $\True$ 
+    \end{tabular}
+    \quad
+    \begin{tabular}{c|ccc} 
+      $\tf{\land}[\LogLuk[3]]$ & $\True$ & $\Undef$ & $\False$ \\ 
+      \hline 
+      $\True$ & $\True$ & $\Undef$ & $\False$ \\ 
+      $\Undef$ & $\Undef$ & $\Undef$ & $\False$\\ 
+      $\False$ & $\False$ & $\False$ & $\False$ 
+    \end{tabular}
+    \\[2ex]
+    \begin{tabular}{c|ccc} 
+      $\tf{\lor}[\LogLuk[3]]$ & $\True$ & $\Undef$ & $\False$ \\ 
+      \hline 
+      $\True$ & $\True$ & $\True$ & $\True$ \\ 
+      $\Undef$ & $\True$ & $\Undef$ & $\Undef$ \\
+      $\False$ & $\True$ & $\Undef$ & $\False$ 
+    \end{tabular}
+    \quad
+    \begin{tabular}{c|ccc} 
+      $\tf{\lif}[\LogLuk[3]]$ & $\True$ & $\Undef$ & $\False$ \\ 
+      \hline 
+      $\True$ & $\True$ & $\Undef$ & $\False$ \\ 
+      $\Undef$ & $\True$ & $\True$ & $\Undef$  \\ 
+      $\False$ & $\True$ & $\True$ & $\True$ 
+    \end{tabular}
+  \end{center} 
+\end{enumerate}
+\end{defn}
+
+Kaya kang gampang dideleng, saben !!{formula}~$!A$ kang mung
+ngemot $\lnot$, $\land$, lan $\lor$ bakal nduweni nilai
+kabeneran~$\Undef$ yen kabeh !!{propositional variable}s
+diparingi nilai~$\Undef$. Mula, umpama, tautologi klasik
+$p \lor \lnot p$ lan $\lnot(p \land \lnot p)$ dudu
+tautologi ing $\LogLuk[3]$, amarga $\pValue{v}(!A) = \Undef$
+nalika $\pAssign v(p) = \Undef$.
+
+Ing !!{valuation}s kang nyukupi $\pAssign v(p) = \True$ utawa
+$\False$, $\pValue v(!A)$ padha karo nilai kabeneran klasik.
+
+\begin{prop}
+  Yen $\pAssign v(p) \in \{\True, \False\}$ kanggo saben $p$
+  ing~$!A$, mula
+  $\pValue v(!A)[\LogLuk[3]] = \pValue v(!A)[\LogCL]$.
+\end{prop}
+
+\begin{prob}\label{mvl:thr:luk:prob:luk-iff} Upamakna kita netepake
+  $\pValue v(!A \liff !B) = \pValue v((!A \lif !B) \land (!B \lif
+  !A))$ ing~$\LogLuk[3]$. Kaya apa tabel kabeneran kanggo $\liff$?
+\end{prob}
+
+Akeh tautologi klasik \emph{uga} tautologi ing \LogLuk[3],
+umpamane $\lnot p \lif (p \lif q)$. Kaya ing logika klasik,
+kita bisa mriksa kanthi tabel kabeneran:
+\begin{center}
+\begin{tabular}{cc|cccccc}
+  $p$ & $q$ & $\lnot$ & $p$ & $\lif$ & $\smash{(}p$ & $\lif$ & $q\smash{)}$ \\ \hline
+  \True & \True & \False & \True & \True & \True & \True & \True \\
+  \True & \Undef & \False & \True & \True & \True & \Undef & \Undef \\
+  \True & \False & \False & \True & \True & \True & \False & \False \\
+  \Undef & \True & \Undef & \Undef & \True & \Undef & \True & \True \\
+  \Undef & \Undef & \Undef & \Undef & \True & \Undef & \True & \Undef \\
+  \Undef & \False & \Undef & \Undef & \True & \Undef & \Undef & \False \\
+  \False & \True & \True & \False & \True & \False & \True & \True \\
+  \False & \Undef & \True & \False & \True & \False & \True & \Undef \\
+  \False & \False & \True & \False & \True & \False & \True & \False \\  
+\end{tabular}
+\end{center}
+
+\begin{prob}
+  Tuduhna yen formula-formula iki tautologi ing \LogLuk[3]:
+  \begin{enumerate}
+    \item $p \lif (q \lif p)$
+    \item\label{mvl:thr:luk:prob:luk-taut-2} $\lnot(p \land q) \liff (\lnot p \lor \lnot q)$
+    \item\label{mvl:thr:luk:prob:luk-taut-3} $\lnot(p \lor q) \liff (\lnot p \land \lnot q)$
+  \end{enumerate}
+  (Ing \olref[mvl][thr][luk]{prob:luk-taut-2} lan
+  \olref[mvl][thr][luk]{prob:luk-taut-3}, gunakna $!A \liff !B$
+  minangka cekakan kanggo $(!A \lif !B) \land (!B \lif !A)$,
+  utawa delengen jawabanmu marang
+  \olref[mvl][thr][luk]{prob:luk-iff}.)
+\end{prob}
+
+\begin{prob}
+  Tuduhna yen tautologi-tautologi klasik iki dudu tautologi ing~\LogLuk[3]:
+  \begin{enumerate}
+    \item $((\lnot p \land p) \lif q)$
+    \item $((p \lif q) \lif p) \lif p$
+    \item $(p \lif (p \lif q)) \lif (p \lif q)$
+  \end{enumerate}
+\end{prob}
+
+Saka kene bisa wae dikira yen sanajan ora kabeh tautologi
+klasik uga tautologi ing~$\LogLuk[3]$, paling ora
+nilainé~$\True$ utawa~$\Undef$ kanggo saben
+!!{valuation}. Nanging ora mangkono. Kontraconto diwenehake dening
+\[
+  \lnot(p \lif \lnot p) \lor \lnot(\lnot p \lif p)
+\]
+kang nilaine $\False$ yen $p$ iku~$\Undef$.
+
+\begin{prob}
+  Endi sesambungan ing ngisor iki kang lumaku ing logika \L ukasiewicz?
+  Wenehana tabel kabeneran kanggo saben sesambungan.
+  \begin{enumerate}
+    \item $p, p \lif q \Entails q$
+    \item $\lnot\lnot p \Entails p$
+    \item $p \land q \Entails p$
+    \item $p \Entails p \land p$
+    \item $p \Entails p \lor q$
+  \end{enumerate}
+\end{prob}
+
+\L ukasiewicz ngarep-arep bisa mbangun logika kemungkinan adhedhasar
+sistem telung nilaine, kanthi nambah konektif sapanggonan $\Diamond
+!A$ (tegesé ``$!A$ mungkin'') lan $\Box !A$ kang cocog (tegesé ``$!A$
+mesthi''):
+\begin{center}
+  \begin{tabular}{c|c} 
+    $\tf{\Diamond}$ & \\ 
+    \hline  
+    $\True$ & $\True$ \\ 
+    $\Undef$ & $\True$ \\
+    $\False$ & $\False$ 
+  \end{tabular}
+  \quad
+  \begin{tabular}{c|c} 
+    $\tf{\Box}$ & \\ 
+    \hline  
+    $\True$ & $\True$ \\ 
+    $\Undef$ & $\False$ \\
+    $\False$ & $\False$ 
+  \end{tabular}
+\end{center}
+Tegese, $p$ mungkin yen lan mung yen durung katetepake salah;
+dene $p$ mesthi yen lan mung yen wis katetepake bener.
+
+\begin{prob}
+  Tuduhna yen $\Box p \liff \lnot\Diamond \lnot p$ lan $\Diamond p \liff
+  \lnot \Box \lnot p$ iku tautologi ing~\LogLuk[3] kang ditambahi
+  tabel kabeneran kanggo $\Box$ lan~$\Diamond$.
+\end{prob}
+
+Nanging, kekurangan usulan logika modal iki enggal katon:
+kepiye wae kahanane mengko, $p \land \lnot p$ ora bakal bener.
+Mula senajan saiki durung katetepake (lan mulane durung dingerteni),
+ukara iku kudu dianggep ora mungkin; tegesé,
+$\lnot \Diamond(p \land \lnot p)$ sakmesthine tautologi.
+Nanging yen $\pAssign v(p) = \Undef$, mula
+$\pValue v(\lnot \Diamond(p \land \lnot p)) = \False$.
+Senajan \L ukasiewicz bener yen rong nilai kabeneran ora cukup
+kanggo mbedakake kemungkinan lan kepastian, nambah nilai katelu
+uga isih durung cukup.
+
+\end{document}

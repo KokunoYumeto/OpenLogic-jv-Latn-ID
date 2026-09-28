@@ -1,0 +1,173 @@
+% Part: first-order-logic
+% Chapter: beyond
+% Section: higher-order-logic
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{byd}{hol}
+
+\olsection{Logika Orde Luwih Dhuwur}
+
+Saka logika orde kapisan menyang logika orde kapindho,
+kita bisa ngrembug himpunan objek ing !!{domain}
+orde kapisan kanthi basa formal. Apa sebabé kudu
+mandheg ing kono? Upamane, logika orde katelu
+ngidini kita ngrembug himpunan saka himpunan objek,
+utawa malah himpunan kang ngemot objek lan himpunan
+objek bebarengan. Logika orde kapapat banjur
+ngidini kita ngrembug himpunan objek kang kaya
+mangkono. Gagasan iki bisa diterusake nganti
+sembarang tingkat.
+
+Ing praktik, !!{formula} logika orde luwih dhuwur
+asring katulis nganggo fungsi tinimbang relasi.
+(Yen panyamaan alamiahe digatekake, bedane iki
+ora wigati.) Yen ana sawetara "jinis" dhasar
+$A$, $B$, $C$,~\dots (saiki kita arani "tipe"),
+kita bisa nggawe tipe anyar kanthi aturan
+\begin{quote}
+Yen $\sigma$ lan $\tau$ iku tipe winates, mula
+$\sigma \to \tau$ uga tipe winates.
+\end{quote}
+Tipe bisa dianggep "label" sintaktis kang
+nggolongake objek kang dikarepake ing !!{domain};
+$\sigma \to \tau$ njlentrehake objek awujud
+fungsi kang nggawa objek tipe~$\sigma$ menyang
+objek tipe~$\tau$. Upamane, kita bisa nduweni
+tipe~$\Omega$ kanggo nilai bebener, "bener" lan
+"kleru", sarta tipe~$\Nat$ kanggo wilangan asli.
+Ing kene, objek tipe $\Nat \to \Omega$ bisa
+dianggep relasi unari utawa subhimpunan
+saka~$\Nat$; objek tipe $\Nat \to \Nat$ iku
+fungsi saka wilangan asli menyang wilangan asli;
+lan objek tipe $(\Nat \to \Nat) \to \Nat$
+iku "fungsional", yaiku fungsi kanthi tipe
+luwih dhuwur kang nggawa fungsi menyang wilangan.
+
+Kaya ing logika orde kapindho, logika orde luwih
+dhuwur bisa dianggep sawijining logika akeh
+jinis, kanthi siji jinis kanggo saben tipe
+objek kang arep ditliti. Nanging lumrahe
+luwih cetha yen sintaks logika tipe luwih
+dhuwur ditemtokake saka dhasare. Upamane,
+himpunan tipe winates bisa ditemtokake
+kanthi induksi kaya mangkene:
+\begin{enumerate}
+\item $\Nat$ iku tipe winates.
+\item Yen $\sigma$ lan $\tau$ iku tipe winates,
+  mula $\sigma \to \tau$ uga tipe winates.
+\item Yen $\sigma$ lan $\tau$ iku tipe winates,
+  mula $\sigma \times \tau$ uga tipe winates.
+\end{enumerate}
+Miturut pangertèn lumrah, $\Nat$ nuduhake
+tipe wilangan asli, $\sigma \to \tau$ nuduhake
+tipe fungsi saka $\sigma$ menyang $\tau$,
+lan $\sigma \times \tau$ nuduhake tipe pasangan
+objek, siji saka $\sigma$ lan siji saka $\tau$.
+Sabanjure, himpunan term bisa ditemtokake
+kanthi induksi kaya mangkene:
+\begin{enumerate}
+\item Kanggo saben tipe $\sigma$, ana variabel
+  $x$, $y$, $z$, \dots kanthi tipe $\sigma$
+\item $\Obj 0$ iku term tipe $\Nat$
+\item $\Obj S$ (penerus) iku term tipe
+  $\Nat \to \Nat$
+\item Yen $s$ iku term tipe $\sigma$, lan
+  $t$ iku term tipe $\Nat \to (\sigma \to \sigma)$,
+  mula $\Obj{R}_{st}$ iku term tipe
+  $\Nat \to \sigma$
+\item Yen $s$ iku term tipe $\tau \to \sigma$
+  lan $t$ iku term tipe~$\tau$, mula $s(t)$
+  iku term tipe $\sigma$
+\item Yen $s$ iku term tipe~$\sigma$ lan $x$
+  iku variabel tipe~$\tau$, mula
+  $\lambd[x][s]$ iku term tipe
+  $\tau \to \sigma$.
+\item Yen $s$ iku term tipe~$\sigma$ lan $t$
+  iku term tipe~$\tau$, mula $\tuple{s, t}$
+  iku term tipe $\sigma \times \tau$.
+\item Yen $s$ iku term tipe~$\sigma \times \tau$,
+  mula $p_1(s)$ iku term tipe~$\sigma$ lan
+  $p_2(s)$ iku term tipe~$\tau$.
+\end{enumerate}
+Miturut pangertèn lumrah, $\Obj{R}_{st}$
+nuduhake fungsi kang ditemtokake kanthi
+rekursi dening
+\begin{align*}
+\Obj{R}_{st}(0) & = s \\
+\Obj{R}_{st}(x+1) & = t(x, R_{st}(x)),
+\end{align*}
+$\tuple{s, t}$ nuduhake pasangan kang
+komponen kapisane~$s$ lan komponen kapindhone~$t$,
+dene $p_1(s)$ lan~$p_2(s)$ nuduhake unsur
+kapisan lan kapindho ("proyeksi") saka~$s$.
+Pungkasane, $\lambd[x][s]$ nuduhake
+fungsi~$f$ kang ditemtokake dening
+\[
+f(x) = s
+\]
+kanggo saben~$x$ kanthi tipe~$\tau$;
+mula butir (6) menehi salah siji wujud
+komprehensi, saéngga kita bisa nemtokake
+fungsi nganggo term.
+Cathetan koreksi sumber OLPL-085: ing butir (6)
+variabel x nduweni tipe tau, dudu sigma kaya
+kang katulis ing prosa sumber sakwise rumus iki.
+!!^{formula}s dibangun saka ukara !!{identity}
+$\eq[s][t]$ antarane term kanthi tipe padha,
+panyambung proposisional lumrah, lan
+kuantifikasi tumrap tipe luwih dhuwur.
+Aksioma sistem banjur bisa dijupuk minangka
+persamaan dhasar kang ngatur term-term ing
+ndhuwur, bebarengan karo aturan logika
+lumrah kanggo kuantor lan !!{identity}.
+
+Yen sistem tipe winates ditambahi tipe~$\Omega$
+kanggo nilai bebener, kita uga kudu nambah
+aksioma kang ngatur panganggone. Malah yen
+kita cukup trampil, !!{formula}s kang rumit
+bisa dibusak kabeh lan diganti term tipe~$\Omega$!{}
+Sistem bukti banjur bisa diowahi
+manut kahanan iku. Asile yaiku, ing pokoke,
+\emph{teori tipe prasaja} kang diajokake
+Alonzo Church ing dasawarsa 1930-an.
+
+Kaya ing logika orde kapindho, semantik
+tipe luwih dhuwur nduweni sawetara versi
+kang bisa dipilih. Ing versi pepak,
+variabel tipe $\sigma \to \tau$ nglimputi
+himpunan \emph{kabeh} fungsi saka objek
+tipe~$\sigma$ menyang objek tipe~$\tau$.
+Kaya kang bisa dikira, semantik iki
+kuwat banget nganti ora ana sistem
+!!{derivation} efektif kang jangkep
+kanggo semantik kasebut. Nanging kita
+bisa nggatekake semantik kang luwih ringkih,
+ing ngendi !!a{structure} dumadi saka
+himpunan unsur $T_\tau$ kanggo saben tipe
+$\tau$, bebarengan karo operasi kang
+cocog kanggo aplikasi, proyeksi, lan
+sapanunggalane. Yen rinciane ditata
+kanthi bener, teorema kelengkapan
+bisa dioleh kanggo jinis sistem
+!!{derivation} kang diterangake ing ndhuwur.
+
+Logika tipe luwih dhuwur narik kawigaten
+amarga nyedhiyakake kerangka kang bisa
+ngemot akeh matematika kanthi cara lumrah:
+wiwit saka~$\Nat$, kita bisa nemtokake
+wilangan real, fungsi kontinu, lan liyane.
+Logika iki uga narik kawigaten mligine
+ing logika intuisionistik, amarga tipe-tipe
+kasebut nduweni tafsiran "konstruktif"
+kang cetha. Malah versi konstruktif
+semantik tipe luwih dhuwur bisa
+dikembangake adhedhasar logika intuisionistik,
+dudu logika klasik; versi iki njlentrehake
+tafsiran konstruktif kasebut kanthi
+cetha lan ing akeh bab luwih narik
+kawigaten tinimbang pasangan klasiké.
+
+\end{document}

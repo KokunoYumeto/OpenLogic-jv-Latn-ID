@@ -1,0 +1,274 @@
+% Bagean: metodhe
+% Bab: bukti
+% Pérangan: bukti-kanthi-kontradiksi
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mth}{prf}{con}
+
+\olsection{Bukti Kanthi Kontradiksi}
+
+Wiwitané, bukti kanthi kontradiksi iku pola inferensi kanggo
+mbuktekaké pratelan négatif. Anggepen panjenengan arep
+nuduhaké yèn pratelan~$p$ iku \emph{salah}, yaiku
+nuduhaké~$\lnot p$. Cara kang paling njanjèni yaiku
+(a) nganggep $p$~bener, banjur (b) nuduhaké yèn anggepan
+iki marakaké bab kang wis dingertèni salah.
+``Bab kang dingertèni salah'' bisa awujud asil kang
+nentang, utawa kontradiktif karo, $p$ dhéwé utawa
+hipotesis liya saka pratelan kang lagi dirembug.
+Upamané, bukti kanggo ``yèn $q$ mula $\lnot p$''
+nganggep $q$~bener lan mbuktekaké~$\lnot p$ saka iku.
+Yèn $\lnot p$ dibuktèkaké kanthi kontradiksi, kita
+uga nganggep $p$ saliyané~$q$. Yèn kita
+bisa mbuktekaké $\lnot q$ saka $p$, kita wis nuduhaké yèn
+anggepan~$p$ marakaké bab kang nentang anggepan
+liyane~$q$, amarga $q$ lan $\lnot q$ ora bisa padha
+bener. Mesthi waé, mbuktekaké kontradiksi isih
+mbutuhaké pola inferensi liya lan njlentrehaké
+dhéfinisi. Ayo deleng sawijining conto.
+
+\begin{prop}
+  Yèn $A \subseteq B$ lan $B = \emptyset$, mula $A$
+  ora nduwèni !!{element}s.
+\end{prop}
+
+\begin{proof}
+  Anggepen $A \subseteq B$ lan $B = \emptyset$.
+  Kita arep nuduhaké yèn $A$ ora nduwèni !!{element}s.
+  \begin{quote}
+    Amarga iki pratelan kondisional, kita nganggep
+    antesedèn lan arep mbuktekaké konsekuèné.
+    Konsekuèné yaiku: $A$ ora nduwèni !!{element}s.
+    Iki bisa dipratelakaké luwih gamblang: ora bener
+    yèn ana~$x \in A$.
+  \end{quote}
+  $A$ ora nduwèni !!{element}s yèn lan mung yèn
+  ora bener ana~$x$ kang nyukupi $x \in A$.
+  \begin{quote}
+    Dadi pratelan kang arep dibuktèkaké iku pratelan
+    négatif~$\lnot p$: ora bener yèn ana $x \in A$.
+    Kanggo bukti kanthi kontradiksi, kita kudu nganggep
+    pratelan positif kang cocog~$p$, yaiku ana
+    $x \in A$, banjur nurunaké kontradiksi saka iku.
+    Kita nandhani cara iki kanthi nulis
+    ``kanthi anggepan kang ndadèkaké kontradiksi''
+    utawa mung ``anggepen kosok baliné'', banjur
+    nyebut anggepan~$p$.
+  \end{quote}
+  Anggepen kosok baliné: ana $x \in A$.
+  \begin{quote}
+    Iki anggepan anyar kanggo ngasilaké kontradiksi.
+    Isih ana rong anggepan liya: $A \subseteq B$
+    lan $B = \emptyset$. Anggepan kapisan mènèhi
+    $x \in B$:
+  \end{quote}
+  Amarga $A \subseteq B$, $x \in B$.
+  \begin{quote}
+    Nanging amarga $B = \emptyset$, saben !!{element}
+    saka $B$, upamané $x$, uga kudu !!a{element}
+    saka~$\emptyset$.
+  \end{quote}
+  Amarga $B = \emptyset$, $x \in \emptyset$.
+  Iki kontradiksi, amarga miturut dhéfinisi $\emptyset$
+  ora nduwèni !!{element}s.
+  \begin{quote}
+    Sejatiné iki wis ngrampungaké bukti: saka
+    anggepan-anggepan mau kita olèh kontradiksi,
+    mula ora kabèh anggepan bisa bener bebarengan.
+    Rong anggepan kapisan, $A \subseteq B$ lan
+    $B = \emptyset$, tetep ditampa. Dadi anggepan
+    kang pungkasan, yèn ana $x \in A$, mesthi salah.
+    Nanging yèn kepéngin luwih rinci, iki bisa ditulis.
+  \end{quote}
+  Mula anggepan yèn ana $x \in A$ mesthi salah;
+  kanthi bukti kontradiksi, $A$ ora nduwèni !!{element}s.
+\end{proof}
+
+Saben pratelan positif padha tegesé karo pratelan
+négatif: $p$ yèn lan mung yèn $\lnot\lnot p$.
+Dadi bukti kanthi kontradiksi uga bisa mbuktekaké
+pratelan positif ``kanthi ora langsung''.
+Kanggo mbuktekaké~$p$, wacanen minangka
+pratelan négatif $\lnot\lnot p$. Yèn saka
+$\lnot p$ kita bisa nurunaké kontradiksi,
+mula $\lnot\lnot p$ wis kabuktèkaké kanthi
+kontradiksi, lan mulané~$p$.
+
+Ing conto mau kita arep mbuktekaké pratelan négatif,
+yaiku $A$ ora nduwèni !!{element}s. Mula anggepan
+kanggo bukti kontradiksi, yaiku ana $x \in A$,
+iku pratelan positif. Pratelan iki mènèhi bahan
+kanggo nalar, yaiku $x \in A$ kang hipotètis,
+nganti tekan $x \in \emptyset$.
+
+Yèn pratelan positif dibuktèkaké kanthi cara ora
+langsung, anggepan kanggo bukti kontradiksi
+awujud négatif. Nanging pratelan positif asring
+gampang dipratelakaké minangka pratelan négatif,
+lan kosok baliné. Bukti sadurungé sejatiné
+padha yèn kita mbuktekaké ``$A = \emptyset$''
+tinimbang konsekuèn négatif ``$A$ ora nduwèni
+!!{element}s''. Miturut dhéfinisi $=$,
+``$A = \emptyset$'' iku pratelan umum, amarga
+tegesé ``saben !!{element} saka~$A$ uga
+!!{element} saka~$\emptyset$ lan kosok baliné''.
+Nanging iki cetha padha tegesé karo pratelan
+négatif ``ora bener yèn ana $x \in A$''.
+
+Mula kadhangkala luwih gampang nganggep $\lnot p$
+tinimbang mbuktekaké~$p$ kanthi langsung.
+Senajan bukti langsung padha gampang utawa
+malah luwih gampang, kaya conto sabanjuré,
+ana kang luwih seneng cara ora langsung.
+Yèn negasi pindho mbingungaké, anggepen bukti
+kontradiksi kanggo pratelan minangka cara
+nurunaké kontradiksi saka pratelan kang
+\emph{kosok baliné}. Dadi bukti kontradiksi
+kanggo $\lnot p$ miwiti saka anggepan~$p$;
+déné bukti kontradiksi kanggo~$p$ miwiti
+saka~$\lnot p$.
+
+\begin{prop}
+$A \subseteq A \cup B$.
+\end{prop}
+
+\begin{proof}
+  Kita arep nuduhaké yèn $A \subseteq A \cup B$.
+  \begin{quote}
+    Sekilas iki pratelan positif: saben $x \in A$
+    uga ana ing $A \cup B$. Negasiné yaiku:
+    ana $x \in A$ kang $x \notin A \cup B$.
+    Mula pratelan iki bisa dibuktèkaké ora langsung
+    kanthi nganggep negasiné lan nurunaké
+    kontradiksi.
+  \end{quote}
+  Anggepen kosok baliné, yaiku
+  $A \nsubseteq A \cup B$.
+  \begin{quote}
+    Dhéfinisi $A \subseteq A \cup B$ yaiku:
+    saben $x \in A$ uga $x \in A \cup B$.
+    Kanggo ngerti tegesé $A \nsubseteq A \cup B$,
+    dhéfinisi kang wis dijlentrehaké kudu
+    dianalisis kanthi logika dhasar: pratelan
+    yèn saben $x \in A$ uga $x \in
+    A \cup B$ iku salah yèn lan mung yèn ana
+    \emph{sawijining}~$x \in A$ kang
+    $x \notin A \cup B$.
+    Ing kéné kudu ngati-ati: akèh bukti kontradiksi
+    kang dicoba déning mahasiswa gagal amarga
+    salah nganalisis negasi pratelan kaya
+    ``kabèh $A$s iku $B$s''. Tegesé,
+    $A \nsubseteq A \cup B$ yèn lan mung yèn
+    ana $x$ kang nyukupi $x \in A$ lan
+    $x \notin A \cup B$. Sabanjuré gampang.
+  \end{quote}
+  Dadi ana $x \in A$ kang nyukupi
+  $x \notin A \cup B$. Miturut dhéfinisi
+  $\cup$, $x \in A \cup B$ yèn lan mung yèn
+  $x \in A$ utawa $x \in
+  B$. Amarga $x \in A$, kita olèh
+  $x \in A \cup B$. Iki nentang anggepan
+  $x \notin A \cup B$.
+\end{proof}
+
+\begin{prob}
+Buktèkna \emph{kanthi ora langsung} yèn
+$A \cap B \subseteq A$.
+\end{prob}
+
+\begin{prop}
+Yèn $A \subseteq B$ lan $B \subseteq C$,
+mula $A \subseteq C$.
+\end{prop}
+
+\begin{proof}
+  Anggepen $A \subseteq B$ lan $B \subseteq C$.
+  Kita arep nuduhaké $A
+  \subseteq C$.
+  \begin{quote}
+    Kita gunakna cara ora langsung: anggepen
+    negasi saka kang arep dibuktèkaké.
+  \end{quote}
+  Anggepen kosok baliné, yaiku
+  $A \nsubseteq C$.
+  \begin{quote}
+    Kaya mau, $A \nsubseteq C$ yèn lan mung
+    yèn ora saben $x \in A$ uga $x \in C$,
+    yaiku ana $x \in A$ kang $x \notin C$.
+    Aja kuwatir; kanthi latihan, njlentrehaké
+    negasi kaya iki bakal dadi lumrah.
+  \end{quote}
+  Tegesé, ana~$x$ kang nyukupi $x \in A$
+  lan $x \notin C$.
+  \begin{quote}
+    Saiki iki bisa digunakaké kanggo tekan
+    kontradiksi. Mesthi waé kita uga kudu
+    migunakaké rong anggepan liyane.
+  \end{quote}
+  Amarga $A \subseteq B$, $x \in B$.
+  Amarga $B \subseteq C$, $x \in
+  C$. Nanging iki nentang $x \notin C$.
+\end{proof}
+
+\begin{prop}
+Yèn $A \cup B = A \cap B$, mula $A = B$.
+\end{prop}
+
+\begin{proof}
+  Anggepen $A \cup B = A \cap B$.
+  Kita arep nuduhaké yèn $A = B$.
+  \begin{quote}
+    Wiwitané saiki wis lumrah:
+  \end{quote}
+  Anggepen, kanggo ngasilaké kontradiksi,
+  yèn $A \neq B$.
+  \begin{quote}
+    Anggepan kanggo bukti kontradiksi yaiku
+    $A \neq B$. Amarga $A = B$ yèn lan mung
+    yèn $A \subseteq B$ lan $B \subseteq A$,
+    kita olèh $A \neq B$ yèn lan mung yèn
+    $A \nsubseteq B$ \emph{utawa}
+    $B \nsubseteq
+    A$. Élinga yèn negasi kudu diolah kanthi
+    ngati-ati!{} Kanggo nurunaké kontradiksi
+    saka disjungsi iki, kita mbédakaké kasus
+    lan nuduhaké kontradiksi ing saben kasus.
+  \end{quote}
+  $A \neq B$ yèn lan mung yèn $A \nsubseteq B$
+  utawa $B \nsubseteq A$. Kita mbédakaké kasus.
+  \begin{quote}
+    Ing kasus kapisan, anggepen $A \nsubseteq B$,
+    yaiku ana $x$ kang $x \in A$ nanging
+    $x \notin B$. $A \cap B$ yaiku
+    himpunan !!{element}s kang padha-padha
+    ana ing $A$ lan $B$. Mula yèn sawijining
+    obyèk ora ana ing salah siji, obyèk iku
+    uga ora ana ing irisan. $A \cup B$
+    nggabungaké $A$ lan $B$, mula anggota
+    salah sijiné uga anggota gabungan.
+    Iki nuduhaké $x \in A \cup B$ nanging
+    $x \notin A \cap
+    B$, lan mula $A \cap B \neq A \cup B$.
+  \end{quote}
+
+  Kasus 1: $A \nsubseteq B$. Mula ana $x$,
+  $x \in A$ nanging $x \notin
+  B$. Amarga $x \notin B$, mula
+  $x \notin A \cap B$. Amarga $x \in A$,
+  $x \in A \cup B$. Dadi
+  $A \cap B \neq A \cup B$, kang nentang
+  anggepan $A \cap B = A \cup B$.
+
+  Kasus 2: $B \nsubseteq A$. Mula ana $y$,
+  $y \in B$ nanging $y \notin
+  A$. Kaya mau, kita olèh $y \in A \cup B$
+  nanging $y \notin A \cap B$, mula
+  $A \cap B \neq A \cup B$, kang maneh
+  nentang $A \cap B = A \cup
+  B$.
+\end{proof}
+
+\end{document}

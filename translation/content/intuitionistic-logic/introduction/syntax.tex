@@ -1,0 +1,78 @@
+% part: intuitionistic-logic
+% chapter: introduction
+% section: syntax
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{int}{syn}
+
+\olsection{Sintaks Logika Intuisionistik}
+
+Sintaks logika intuisionistik padha karo sintaks logika proposisional.
+Ing logika proposisional klasik, sawetara konektif bisa ditetepake
+nganggo konektif liyane. Umpamane, $!A \lif !B$ bisa ditetepake
+nganggo $\lnot !A \lor !B$, utawa $!A \lor !B$ nganggo
+$\lnot(\lnot !A \land \lnot
+!B)$. Mula, andharan logika klasik kerep ngenalake sawetara
+konektif minangka cekakan saka definisi mau. Ing logika
+intuisionistik iki ora lumaku, kajaba ana rong prakara: $\lnot !A$
+bisa---lan kerep---ditetepake minangka cekakan saka $!A \lif \lfalse$.
+Yen mangkono, $\lfalse$ ora kena ditetepake minangka cekakan!{} Kajaba
+iku, $!A \liff !B$ bisa ditetepake kaya ing logika klasik minangka
+$(!A \lif !B) \land (!B \lif
+!A)$.
+
+!!^{formula}s logika proposisional intuisionistik dibangun saka
+\emph{!!{propositional variable}s} lan konstanta
+proposisional~$\lfalse$ nganggo \emph{konektif logis}. Unsur-unsure yaiku:
+
+\begin{enumerate}
+\item Himpunan~$\PVar$ kang !!^a{denumerable} saka !!{propositional variable}s $\Obj p_0$,
+  $\Obj p_1$, \dots
+  \item Konstanta proposisional kanggo !!{falsity}~$\lfalse$.
+\item Konektif logis: $\land$
+  (konjungsi), $\lor$ (disjungsi), $\lif$ (kondisional).
+\item Tandha wacan: (, ), lan koma.
+\end{enumerate}
+
+\begin{defn}[Rumus]
+\ollabel{defn:formulas} Himpunan~$\Frm[L_0]$ saka \emph{!!{formula}s}
+logika proposisional intuisionistik ditetepake kanthi induksi kaya mangkene:
+\begin{enumerate}
+\item $\lfalse$ iku !!{formula} atomik.
+
+\item Saben !!{propositional variable}~$\Obj p_i$ iku !!{formula}
+  atomik.
+
+\item Yen $!A$ lan $!B$ iku !!{formula}s, $(!A \land
+  !B)$ uga !!a{formula}.
+
+\item Yen $!A$ lan $!B$ iku !!{formula}s, $(!A \lor !B)$
+  uga !!a{formula}.
+
+\item Yen $!A$ lan $!B$ iku !!{formula}s, $(!A \lif !B)$
+  uga !!a{formula}.
+
+\tagitem{limitClause}{Ora ana liyane kang dadi !!a{formula}.}{}
+\end{enumerate}
+\end{defn}
+
+Saliyane konektif primitif ing ndhuwur, kita uga nggunakake lambang
+kang \emph{ditetepake} iki: $\lnot$ (negasi) lan $\liff$
+(!!{biconditional}). Rumus kang dibangun nganggo operator kang
+ditetepake iku kudu dimangerteni kaya mangkene:
+\begin{enumerate}
+\item $\lnot !A$ iku cekakan saka $!A \lif \lfalse$.
+
+\item $!A \liff !B$ iku cekakan saka $(!A \lif !B) \land (!B
+  \lif !A)$.
+\end{enumerate}
+
+Sanadyan $\lnot$ kanthi resmi dianggep cekakan, kadhangkala kita
+menehi aturan lan klausa definisi kang cetha kanggo~$\lnot$
+kaya-kaya iku konektif primitif. Tujuane utamane supaya kita bisa
+menehi soal latihan.
+
+\end{document}

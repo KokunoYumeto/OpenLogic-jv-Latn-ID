@@ -1,0 +1,158 @@
+% Part: second-order-logic
+% Chapter: syntax-and-semantics
+% Section: size-of-domain
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sol}{syn}{siz}
+
+\olsection{Njlentrehake Domain Tanpa Wates lan \usetoken{S}{enumerable}
+  \usetoken{P}{domain}}
+
+Himpunan~$M$ tanpa wates (miturut Dedekind) yen lan mung yen
+ana fungsi !!a{injective}~$f\colon M \to M$ kang ora
+!!{surjective}, yaiku $\ran{f} \neq M$. Ing logika orde
+kapisan, kita bisa nimbang !!{function} siji-papan~$f$
+lan nyatakake yen fungsi~$\Assign{f}{M}$ kang diwenehake
+marang simbol iku ing !!a{structure}~$\Struct{M}$ iku
+!!{injective} lan $\ran{f} \neq \Domain{M}$:
+\[
+\lforall[x][\lforall[y][(\eq[f(x)][f(y)] \to \eq[x][y])]] \land
+\lexists[y][\lforall[x][\eq/[y][f(x)]]].
+\]
+Yen $\Struct{M}$ nyukupi !!{sentence} iki,
+$\Assign{f}{M}: \Domain{M} \to \Domain{M}$ iku
+!!{injective}, mula $\Domain{M}$ mesthi tanpa wates. Yen
+$\Domain{M}$ tanpa wates, mula fungsi kaya mangkono ana,
+lan kita bisa netepake $\Assign{f}{M}$ minangka fungsi
+iku supaya $\Struct{M}$ nyukupi !!{sentence} kasebut.
+Nanging iki mbutuhake basa kita ngemot simbol nonlogis~$f$
+kanggo tujuan iku. Ing logika orde kapindho, kita cukup
+nyatakake yen fungsi kaya mangkono \emph{ana}. Kita ora
+perlu~$f$ maneh, lan oleh !!{sentence} logika orde
+kapindho murni
+\[
+\fn{Inf} \ident \lexists[u][(\lforall[x][\lforall[y][(\eq[u(x)][u(y)]
+      \lif \eq[x][y])]] \land \lexists[y][\lforall[x][\eq/[y][u(x)]]])].
+\]
+$\Sat{M}{\fn{Inf}}$ yen lan mung yen $\Domain{M}$ tanpa
+wates. Sabanjure kita bisa netepake
+$\fn{Fin} \ident \lnot \fn{Inf}$;
+$\Sat{M}{\fn{Fin}}$ yen lan mung yen $\Domain{M}$ winates.
+Ora ana siji !!{sentence} logika orde kapisan murni kang bisa
+nyatakake yen !!{domain} iku tanpa wates, sanadyan himpunan
+tanpa wates saka ukara-ukara kaya mangkono bisa. Ora ana
+himpunan !!{sentence}s logika orde kapisan murni kang dicukupi
+ing !!a{structure} yen lan mung yen domaine winates.
+
+\begin{prop}
+$\Sat{M}{\fn{Inf}}$ yen lan mung yen $\Domain{M}$ tanpa wates.
+\end{prop}
+
+\begin{proof}
+$\Sat{M}{\fn{Inf}}$ yen lan mung yen
+  $\Sat{M}{\lforall[x][\lforall[y][(\eq[u(x)][u(y)] \lif \eq[x][y])]]
+    \land \lexists[y][\lforall[x][\eq/[y][u(x)]]]}[s]$
+  kanggo sawijining~$s$. Yen mangkono, $s(u)$ iku fungsi
+  !!a{injective}, lan ana $y \in \Domain{M}$ kang ora
+  kalebu jangkauane~$s(u)$. Kosok baline, yen ana
+  !!a{injective} $f\colon \Domain{M} \to \Domain{M}$
+  kanthi $\ran{f} \neq \Domain{M}$, mula $s(u) = f$
+  minangka pangaji variabel kang dibutuhake.
+\end{proof}
+
+Himpunan $M$ kang ora kosong iku !!{enumerable} yen ana enumerasi
+\[
+m_0, m_1, m_2, \dots
+\]
+saka kabeh !!{element}s ing himpunan iku (tanpa pangulangan nanging bisa
+winates). Kanggo himpunan ora kosong, enumerasi kaya mangkono
+ana yen lan mung yen ana !!a{element} $z \in M$ lan fungsi
+$f\colon M \to M$ saengga $z$, $f(z)$, $f(f(z))$, \dots,
+iku kabeh !!{element}s saka~$M$. Yen enumerasi kasebut ana,
+$z = m_0$ lan $f(m_k) = m_{k+1}$ (utawa $f(m_k) = m_k$
+yen $m_k$ iku !!{element} pungkasan enumerasi) iku
+!!{element} lan fungsi kang dibutuhake. Kosok baline, yen
+$z$ lan $f$ kaya mangkono ana, mula $z$, $f(z)$,
+$f(f(z))$, \dots, iku enumerasi saka~$M$, lan $M$
+!!{enumerable}. Miturut definisi sadurunge, himpunan kosong
+bisa dienumerasi nganggo dhaptar kosong; domain sawijining
+struktur tansah ora kosong. Anane $z$ lan~$f$ bisa
+dinyatakake ing logika orde kapindho kanggo ngasilake
+!!{sentence} kang bener ing !!a{structure} yen lan mung
+yen !!{structure} kasebut !!{enumerable}:
+\[
+\fn{Count} \ident
+\lexists[z][\lexists[u][\lforall[X][((X(z) \land
+      \lforall[x][(X(x) \lif X(u(x)))]) \lif \lforall[x][X(x)])]]]
+\]
+
+\begin{prop}
+$\Sat{M}{\fn{Count}}$ yen lan mung yen $\Domain{M}$
+!!{enumerable}.
+\end{prop}
+
+\begin{proof}
+Upamana $\Domain{M}$ iku !!{enumerable}, lan upamana
+$m_0$, $m_1$, \dots, sawijining enumerasi. Kanthi
+mbusak pangulangan, kita bisa njamin yen ora ana $m_k$
+kang katon kaping pindho. Tetepna $f(m_k) = m_{k+1}$
+lan $s(z) = m_0$ sarta $s(u) = f$. Yen enumerasine
+winates, fungsi kasebut ngirim unsur pungkasan menyang
+awake dhewe, kaya kang diterangake ing ndhuwur. Kita bakal
+nuduhake yen
+\[
+\Sat{M}{\lforall[X][((X(z) \land \lforall[x][(X(x) \lif X(u(x)))])
+    \lif \lforall[x][X(x)])]}[s]
+\]
+Upamana $M \subseteq \Domain{M}$ sembarang. Upamana uga
+$\Sat{M}{(X(z) \land \lforall[x][(X(x) \lif
+X(u(x)))])}[\Subst{s}{M}{X}]$. Mula
+$\Subst{s}{M}{X}(z) \in M$, lan yen $x \in M$, uga
+$(\Subst{s}{M}{X}(u))(x) \in M$. Kanthi tembung liya,
+amarga $\varAssign{\Subst{s}{M}{X}}{s}{X}$,
+$m_0 \in M$ lan yen $x \in M$ mula $f(x) \in M$,
+dadi $m_0 \in M$, $m_1 = f(m_0) \in M$,
+$m_2 = f(f(m_0)) \in M$, lan sateruse.
+Mula $M = \Domain{M}$, saengga
+$\Sat{M}{\lforall[x][X(x)]}[\Subst{s}{M}{X}]$.
+Amarga $M \subseteq \Domain{M}$ dipilih sembarang, bukti
+iki rampung:
+$\Sat{M}{\fn{Count}}$.
+
+Saiki upamana $\Sat{M}{\fn{Count}}$, yaiku
+\[
+\Sat{M}{\lforall[X][((X(z) \land \lforall[x][(X(x) \lif X(u(x)))])
+    \lif \lforall[x][X(x)])]}[s]
+\]
+kanggo sawijining~$s$. Upamana $m = s(z)$ lan
+$f = s(u)$, banjur gatekna $M = \{m, f(m), f(f(m)), \dots\}$.
+$M$ kang ditetepake mangkene cetha !!{enumerable}.
+Mula
+\[
+\Sat{M}{(X(z) \land \lforall[x][(X(x) \lif X(u(x)))])
+    \lif \lforall[x][X(x)]}[\Subst{s}{M}{X}]
+\]
+miturut anggepan. Kajaba iku,
+$\Sat{M}{X(z)}[\Subst{s}{M}{X}]$ amarga
+$M \ni m = \Subst{s}{M}{X}(z)$, lan uga
+$\Sat{M}{\lforall[x][(X(x) \lif
+X(u(x)))]}[\Subst{s}{M}{X}]$ amarga yen $x \in M$,
+uga $f(x) \in M$. Dadi, amarga anteseden lan implikasine
+loro-lorone dicukupi, konsekuene uga kudu dicukupi:
+$\Sat{M}{\lforall[x][X(x)]}[\Subst{s}{M}{X}]$.
+Iki ateges $M = \Domain{M}$, mula $\Domain{M}$
+!!{enumerable} amarga $M$ mangkono miturut definisi.
+\end{proof}
+
+\begin{prob}
+!!{sentence} $\fn{Inf} \land \fn{Count}$ bener persis
+ing kabeh domain kang !!{denumerable}. Owahana definisi
+$\fn{Count}$ supaya dadi !!{sentence} liya kang langsung
+nyatakake yen domaine !!{denumerable}, lan buktikna.
+\end{prob}
+
+\end{document}
+

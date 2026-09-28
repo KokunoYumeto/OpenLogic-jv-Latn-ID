@@ -1,0 +1,258 @@
+% Part: model-theory
+% Chapter: models-of-arithmetic
+% Section: computable-models
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{mar}{cmp}
+\section{Model Aritmetika Komputabel}
+
+\begin{explain}
+Model standar~$\Struct{N}$
+nduweni rong sipat kang becik.
+Ranahe yaiku wilangan asli~$\Nat$,
+tegese unsur-unsuré pancen
+prekara kang arep dirembug
+nganggo basa aritmetika,
+lan angka standar~$\num{n}$
+pancen nunjuk~$n$.
+Sipat becik liyane:
+interpretasi kabeh simbol
+nonlogis saka~$\Lang{L_A}$
+iku \emph{komputabel}.
+Fungsi penerus, panjumlahan,
+lan pingan kang dadi
+$\Assign{\prime}{N}$,
+$\Assign{+}{N}$,
+lan $\Assign{\times}{N}$
+iku fungsi wilangan
+kang komputabel.
+(Upamane bisa diitung
+dening mesin Turing,
+utawa ditegesi nganggo
+rekursi primitif.)
+Relasi kurang-saka
+ing~$\Struct{N}$,
+yaiku $\Assign{<}{N}$,
+uga bisa diputusake.
+
+Model nonstandar saka
+teori aritmetika kayata
+$\Th{Q}$ lan
+$\Th{PA}$ kudu
+ngemot unsur nonstandar.
+Mula ranahe lumrahe
+ngemot !!{element}s
+saliyane~$\Nat$.
+Nanging saben
+!!{structure} kang
+bisa didhaptar
+bisa dibangun ing
+sembarang himpunan
+!!{denumerable},
+kalebu~$\Nat$.
+Mula uga ana model
+nonstandar kanthi
+ranah~$\Nat$.
+Ing model~$\Struct{M}$
+kaya mangkono,
+mesthi paling ora
+sawenehing wilangan
+ora nindakake peran
+kang lumrah,
+amarga sawenehing~$k$
+kudu beda saka
+$\Value{\num{n}}{M}$
+kanggo saben~$n \in \Nat$.
+\end{explain}
+
+\begin{defn}
+!!^a{structure}~$\Struct{M}$
+kanggo $\Lang{L_A}$
+iku \emph{komputabel}
+yen lan mung yen
+$\Domain{M} = \Nat$
+lan $\Assign{\prime}{M}$,
+$\Assign{+}{M}$,
+$\Assign{\times}{M}$
+iku fungsi komputabel,
+dene $\Assign{<}{M}$
+iku relasi kang
+bisa diputusake.
+\end{defn}
+
+\begin{ex}\ollabel{ex:comp-model-q}
+Elinga struktur
+$\Struct{K}$
+saka
+\olref[mdq]{ex:model-K-of-Q}.
+Ranahe yaiku
+$\Domain{K} = \Nat
+\cup \{a\}$
+lan interpretasine
+\begin{align*}
+  \Assign{\Obj{0}}{K} & = 0\\
+  \Assign{\prime}{K}(x) & =
+  \begin{cases}
+    x+1 & \text{yen $x\in \Nat$}\\
+    a & \text{yen $x = a$}
+  \end{cases}\\
+  \Assign{+}{K}(x, y) & =
+  \begin{cases}
+    x+y & \text{yen $x$, $y \in\Nat$}\\
+    a & \text{yen ora mangkono}
+  \end{cases}\\
+  \Assign{\times}{K}(x, y) & =
+  \begin{cases}
+    xy & \text{yen $x$, $y \in\Nat$}\\
+    0 & \text{yen $x=0$ utawa $y=0$}\\
+    a & \text{yen ora mangkono}\\
+  \end{cases}\\
+  \Assign{<}{K} & =
+  \Setabs{\tuple{x,y}}{x, y \in \Nat \text{ lan } x<y} \cup
+  \Setabs{\tuple{x,a}}{x \in \Domain{K}}
+\end{align*}
+Cathetan koreksi sumber OLPL-108:
+peubah kang diiket ing
+himpunan pasangan kapindho
+yaiku x, padha karo
+komponen kapisan pasangane.
+Nanging $\Domain{K}$
+iku !!{denumerable}
+lan mula ekwinumerik
+karo~$\Nat$.
+Upamane,
+$g\colon \Nat \to \Domain{K}$
+kanthi $g(0) =
+a$ lan $g(n) = n-1$
+kanggo $n>0$
+iku !!a{bijection}.
+Cathetan koreksi sumber OLPL-109:
+rumus n-1 nggawa
+wilangan positif menyang
+kabeh wilangan asli,
+dene rumus n+1 ing sumber
+ngilangake rong nilai awal.
+Kita bisa nggunakake
+pemetaan iki kanggo
+ngasilake isomorfisme
+antarane model anyar~$\Struct{K'}$
+saka~$\Th{Q}$
+lan $\Struct{K}$.
+Ing $\Struct{K'}$,
+kita kudu menehi fungsi
+lan relasi kang beda
+marang simbol-simbol
+saka~$\Lang{L_A}$,
+amarga !!{element}s
+beda saka~$\Nat$
+nglakoni peran
+wilangan standar
+lan nonstandar.
+
+Khususe, $0$
+saiki nglakoni
+peran~$a$,
+dudu wilangan standar
+paling cilik.
+Wilangan standar
+paling cilik saiki~$1$.
+Mula kita tetapkan
+$\Assign{\Obj{0}}{K'} = 1$.
+Fungsi penerus
+uga saiki beda:
+yen diwenehi
+wilangan standar,
+yaiku $n > 0$,
+asile isih
+$n+1$.
+Nanging $0$
+saiki nglakoni
+peran~$a$,
+kang dadi penerus
+kanggo awake dhewe.
+Mula
+$\Assign{\prime}{K'}(0) = 0$.
+Kanggo panjumlahan
+lan pingan,
+kita uga nduweni
+\begin{align*}
+\Assign{+}{K'}(x, y) & =
+  \begin{cases}
+    x+y-1 & \text{yen $x$, $y >0$}\\
+    0 & \text{yen ora mangkono}
+  \end{cases}\\
+  \Assign{\times}{K'}(x, y) & =
+  \begin{cases}
+    1 & \text{yen $x = 1$ utawa $y = 1$}\\
+    xy - x - y + 2 & \text{yen $x$, $y > 1$}\\
+    0 & \text{yen ora mangkono}\\
+  \end{cases}
+\end{align*}
+Lan
+$\tuple{x, y} \in \Assign{<}{K'}$
+yen lan mung yen
+$x < y$
+lan $x > 0$
+lan $y > 0$,
+utawa yen
+$y = 0$.
+
+Kabeh fungsi iki
+komputabel minangka
+fungsi wilangan asli,
+lan $\Assign{<}{K'}$
+iku relasi kang
+bisa diputusake
+ing~$\Nat$.
+Nanging fungsi-fungsi iki
+beda saka fungsi
+penerus, panjumlahan,
+lan pingan lumrah
+ing~$\Nat$,
+lan $\Assign{<}{K'}$
+uga beda saka
+relasi~$<$
+ing~$\Nat$.
+\end{ex}
+
+\begin{prob}
+Wenehana !!a{structure}~$\Struct{L'}$
+kanthi $\Domain{L'} = \Nat$
+kang isomorfis
+karo~$\Struct{L}$
+saka
+\olref[mod][mar][mdq]{ex:model-L-of-Q}.
+\end{prob}
+
+\begin{explain}
+\Olref{ex:comp-model-q}
+nuduhake yen $\Th{Q}$
+nduweni model nonstandar
+komputabel kanthi
+ranah~$\Nat$.
+Nanging asil ing ngisor
+iki nuduhake yen
+kahanan mangkono
+ora dumadi kanggo
+model saka~$\Th{PA}$
+(lan mula uga
+model saka~$\Th{TA}$).
+\end{explain}
+
+\begin{thm}[Teorema Tennenbaum]
+$\Struct{N}$
+iku siji-sijine model
+komputabel saka~$\Th{PA}$
+nganti isomorfisme.
+Cathetan koreksi sumber OLPL-110:
+kaunikan iki miturut
+isomorfisme; salinan
+komputabel kang mung
+beda jeneng unsur
+uga bisa ana.
+\end{thm}
+  
+\end{document}

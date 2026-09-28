@@ -1,0 +1,89 @@
+% Part: normal-modal-logic
+% Chapter: tableaux
+% Section: simple-S5
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{tab}{s5}
+
+\olsection{\usetoken{P}{tableau} Prasaja kanggo \Log{S5}}
+
+\Log{S5} sah lan lengkap relatif marang kelas model universal, yaiku
+model kang saben jagade bisa diakses saka saben jagad liyane. Ing model
+universal, relasi aksesibilitas ora perlu dibedakake maneh:
+``ana jagad~$w$ kang nyukupi $\mSat{M}{!A}[w]$'' bener yen lan mung
+yen ana jagad $w$ mangkono kang bisa diakses saka~$u$. Dadi ing
+\Log{S5}, model bisa ditepakake mung minangka himpunan jagad lan
+valuasi~$V$. Iki nuduhake yen aturan !!{tableau} uga bisa
+diprasajakake. Ing kasus umum, prefiks iku urutan bilangan bulat
+positif supaya kita bisa nglacak prefiks endi kang maringi jeneng
+jagad kang bisa diakses saka jagad liyane: $\sigma.n$ maringi jeneng
+jagad kang bisa diakses saka~$\sigma$. Nanging ing \Log{S5} saben
+jagad bisa diakses saka saben jagad liyane, mula pelacakan mangkono
+ora perlu. Minangka gantine, kita bisa nggunakake bilangan bulat
+positif minangka prefiks. Aturan kang wis diprasajakake ana ing
+\olref{tab:rules-S5}.
+
+\begin{table}
+  \begin{center}
+    \def\arraystretch{3}\def\fCenter{}
+    \begin{tabular}{|c|c|}
+    \hline
+    \iftag{prvBox}{
+      \AxiomC{\sFmla{\True}{\Box !A}[n]}
+      \RightLabel{\TRule{\True}{\Box}}
+      \UnaryInfC{\sFmla{\True}{!A}[m]}
+      \DisplayProof
+      &
+      \AxiomC{\sFmla{\False}{\Box !A}[n]}
+      \RightLabel{\TRule{\False}{\Box}}
+      \UnaryInfC{\sFmla{\False}{!A}[m]}
+      \DisplayProof\\
+      $m$ wis dienggo & $m$ anyar
+      \\[1ex]
+      \hline}{}
+    \iftag{prvDiamond}{
+      \AxiomC{\sFmla{\True}{\Diamond !A}[n]}
+      \RightLabel{\TRule{\True}{\Diamond}}
+      \UnaryInfC{\sFmla{\True}{!A}[m]}
+      \DisplayProof
+      &
+      \AxiomC{\sFmla{\False}{\Diamond !A}[n]}
+      \RightLabel{\TRule{\False}{\Diamond}}
+      \UnaryInfC{\sFmla{\False}{!A}[m]}
+      \DisplayProof\\
+      $m$ anyar & $m$ wis dienggo
+      \\[1ex]
+      \hline}{}
+    \end{tabular}
+  \end{center}
+  \caption{Aturan kang diprasajakake kanggo \Log{S5}.}
+  \ollabel{tab:rules-S5}
+\end{table}
+
+\begin{ex}
+  Kita nyuguhake tableau katutup kang wis diprasajakake kanggo nuduhake
+  $\Log{S5} \Proves \Ax{5}$, yaiku $\Diamond!A \lif \Box\Diamond!A$.
+  \begin{oltableau}
+    [\pFmla{\False}{\Diamond\formula{A} \lif \Box\Diamond \formula{A}}{1},
+      just = \TAss
+      [\pFmla{\True}{\Diamond \formula{A}}{1}, just = {\TRule{\False}{\lif}[1]}
+        [\pFmla{\False}{\Box\Diamond \formula{A}}{1},
+          just = {\TRule{\False}{\lif}[1]}
+          [\pFmla{\False}{\Diamond \formula{A}}{2},
+            just = {\TRule{\False}{\Box}[3]}
+            [\pFmla{\True}{\formula{A}}{3},
+              just = {\TRule{\True}{\Diamond}[2]}
+                [\pFmla{\False}{\formula{A}}{3},
+                  just = {\TRule{\False}{\Diamond}[4]}, close]
+            ]
+          ]
+        ]
+      ]
+    ]
+  \end{oltableau}
+\end{ex}
+
+\end{document}

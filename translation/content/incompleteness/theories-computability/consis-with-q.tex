@@ -1,0 +1,65 @@
+% Part: incompleteness
+% Chapter: theories-computability
+% Section: consis-with-q
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{tcp}{con}
+
+\olsection{Teori kang konsisten karo $\Th{Q}$ ora bisa diputusake}
+
+Teorema sabanjure nyatakake yen ora mung $\Th{Q}$ kang ora bisa
+diputusake, nanging sejatine saben teori kang ora pasulayan karo
+$\Th{Q}$ uga ora bisa diputusake.
+
+\begin{thm}
+Upamana $\Th{T}$ teori sembarang ing basa aritmetika kang konsisten
+karo $\Th{Q}$ (yaiku, $\Th{T} \cup \Th{Q}$ konsisten). Mula
+$\Th{T}$ ora bisa diputusake.
+\end{thm}
+
+\begin{proof}
+Elinga yen $\Th{Q}$ nduweni himpunan aksioma winates, $!Q_1$, \dots,
+$!Q_8$. Kita malah bisa ngganti kabeh iki nganggo siji aksioma,
+$!E = !Q_1 \land \dots \land !Q_8$.
+
+Upamana $\Th{T}$ teori kang bisa diputusake lan konsisten karo~$\Th{Q}$.
+Tetepna
+\[
+C = \Setabs{!A}{\Th{T} \Proves !E \lif !A}.
+\]
+Kita tuduhake yen $C$ bakal dadi pamisah komputabel kanggo $\Th{Q}$ lan
+$\Th{\bar Q}$, kang dadi kontradiksi. Sepisan, yen $!A$ kalebu ing
+$\Th{Q}$, mula $!A$ bisa dibuktekake saka aksioma $\Th{Q}$; miturut
+teorema deduksi, ana !!a{derivation} kanggo $!E \lif !A$ ing logika orde siji.
+Mula $!A$ kalebu ing~$C$.
+
+Kosok baline, yen $!A$ kalebu ing $\Th{\bar Q}$, mula ana bukti
+kanggo $!E \lif \lnot !A$ ing logika orde siji. Yen $\Th{T}$ uga
+mbuktekake $!E \lif !A$, mula $\Th{T}$ mbuktekake $\lnot !E$, lan ing
+kahanan iku $\Th{T} \cup \Th{Q}$ ora konsisten. Nanging kita nganggep
+yen $\Th{T} \cup \Th{Q}$ konsisten, mula $\Th{T}$ ora mbuktekake
+$!E \lif !A$, lan $!A$ ora kalebu ing~$C$.
+
+Kita wis nuduhake: yen $!A$ kalebu ing $\Th{Q}$, mula uga kalebu ing
+$C$; lan yen $!A$ kalebu ing $\Th{\bar Q}$, mula kalebu ing
+$\Complement{C}$. Dadi $C$ iku pamisah komputabel, kang dadi
+kontradiksi kang digoleki.
+\end{proof}
+
+Teorema iki kuwat banget. Salah siji akibate yaiku:
+
+\begin{cor}
+  Logika orde siji kanggo basa aritmetika (yaiku, himpunan
+  $\Setabs{!A}{\text{$!A$ bisa dibuktekake ing logika orde siji}}$)
+  ora bisa diputusake.
+\end{cor}
+
+\begin{proof}
+Logika orde siji iku himpunan akibat saka $\emptyset$,
+kang konsisten karo~$\Th{Q}$.
+\end{proof}
+
+\end{document}

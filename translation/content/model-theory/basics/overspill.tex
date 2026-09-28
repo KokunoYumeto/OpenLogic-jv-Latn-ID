@@ -1,0 +1,65 @@
+% Part: first-order-logic
+% Chapter: model-theory
+% Section: overspill
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{bas}{ove}
+\olsection{Overspill}
+
+\begin{thm}
+\ollabel{overspill} Yen himpunan ukara $\Gamma$
+nduweni model winates kang ukurane bisa
+ngluwihi sembarang wates, mula himpunan
+iku nduweni model tanpa wates.
+\end{thm}
+
+\begin{proof}
+Jembarake basa kanggo $\Gamma$ kanthi
+nambah konstanta anyar kang cacahé
+kaetung, yaiku $c_0$, $c_1$, \dots
+lan gatekna himpunan $\Gamma \cup \{c_i \neq c_j :
+i \neq j\}$. Pratelan yen $\Gamma$
+nduweni model winates kang ukurane
+bisa ngluwihi sembarang wates
+ateges kanggo saben $m >0$
+ana $n\ge m$ saéngga $\Gamma$
+nduweni model kang kardinalitase~$n$.
+Iki nuduhake yen saben subhimpunan
+winates saka $\Gamma \cup \{c_i \neq
+c_j : i \neq j\}$ bisa dipenuhi.
+Miturut kompaktitas, $\Gamma
+\cup \{c_i \neq c_j : i \neq j\}$
+nduweni model $\Struct M$
+kang ranahe mesthi tanpa wates,
+amarga model iku nyukupi
+kabeh pertidaksamaan $c_i \neq c_j$.
+\end{proof}
+
+\begin{prop}
+\ollabel{inf-not-fo}
+Ora ana ukara $!A$ ing sembarang
+basa orde kapisan kang bener ing
+!!a{structure}~$\Struct M$
+yen lan mung yen ranah
+$\Domain{M}$ saka
+!!{structure} iku tanpa wates.
+\end{prop}
+
+\begin{proof}
+Yen ana ukara $!A$ kaya mangkono,
+negasine $\lnot !A$ mesthi bener
+ing kabeh !!{structure}s winates
+lan mung ing struktur-struktur
+iku. Mula negasi kasebut
+nduweni model winates kang
+ukurane bisa ngluwihi
+sembarang wates, nanging
+ora nduweni model tanpa
+wates. Iki mbantah
+\olref{overspill}.
+\end{proof}
+
+\end{document}

@@ -1,0 +1,197 @@
+% Bagean: metodhe
+% Bab: induksi
+% Pérangan: induksi-ing-N
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mth}{ind}{inN}
+
+\olsection{Induksi ing~$\Nat$}
+
+Ing wujud kang paling prasaja, induksi iku tèknik
+kanggo mbuktekaké asil tumrap kabèh bilangan asli.
+Tèknik iki migunakaké kasunyatan yèn saka $0$,
+kanthi nambah~$1$ bola-bali, kita bakal tekan
+saben bilangan asli. Mula kanggo mbuktekaké
+sawijining bab bener kanggo kabèh bilangan,
+kita bisa (1)~nuduhaké yèn bab iku bener kanggo $0$,
+lan (2)~nuduhaké yèn saben bener kanggo
+bilangan~$n$, bab iku uga bener kanggo bilangan
+sabanjuré~$n+1$. Yèn ukara ``bilangan~$n$
+nduwèni sipat $P$'' dicekak dadi $P(n)$
+(lan ``bilangan~$k$ nduwèni sipat $P$''
+dadi $P(k)$, lan sapanunggalané), bukti
+induksi yèn $P(n)$ kanggo kabèh $n \in \Nat$
+kudu ngemot:
+\begin{enumerate}
+\item bukti $P(0)$, lan
+\item bukti yèn kanggo sembarang~$k$,
+  yèn $P(k)$ mula $P(k+1)$.
+\end{enumerate}
+Supaya cetha, anggepen kita wis nduwèni
+(1) lan~(2). Saka (1), $P(0)$ bener.
+Saka~(2), mliginé kita ngerti yèn
+$P(0)$ mula $P(0+1)$, yaiku $P(1)$.
+Iki katut saka pratelan umum ``kanggo
+sembarang~$k$, yèn $P(k)$ mula
+$P(k+1)$'' kanthi masang~$0$ ing panggonan~$k$.
+Dadi, miturut modus ponens, kita olèh~$P(1)$.
+Saka (2) maneh, kanthi masang~$1$ ing panggonan~$k$,
+kita olèh: yèn $P(1)$ mula~$P(2)$.
+Amarga~$P(1)$ wis kabuktèkaké, modus
+ponens mènèhi~$P(2)$, lan saterusé.
+Kanggo sembarang bilangan~$n$, sawisé
+langkah iki diulang $n$~kaping, kita tekan~$P(n)$.
+Dadi (1) lan~(2) bebarengan mbuktekaké~$P(n)$
+kanggo saben $n
+\in \Nat$.
+
+Ayo deleng conto. Anggepen kita arep ngerti
+pira cacah jumlah béda kang bisa metu saka
+$n$ dadu. Sanajan katon anèh, miwitia
+saka $0$ dadu. Tanpa dadu, mung ana siji
+jumlah kang mungkin ``diuncalké'': ora ana
+titik babar pisan, dadi jumlahé~$0$.
+Mula cacah asil kang béda yaiku~$1$.
+Yèn mung siji dadu, yaiku $n=1$,
+ana enem nilai, saka $1$ nganti~$6$.
+Kanthi rong dadu, kita bisa éntuk
+saben jumlah saka $2$ nganti $12$,
+yaiku $11$ kamungkinan. Kanthi telung
+dadu, saben bilangan saka $3$ nganti
+$18$ bisa metu, yaiku $16$ kamungkinan.
+$1$, $6$, $11$, $16$: katon ana pola.
+Mbokmenawa wangsulané $5n+1$?
+Mesthi $5n+1$ iku cacah paling akèh
+kamungkinan, amarga mung ana $5n+1$
+bilangan saka $n$, nilai paling cilik
+kang bisa metu saka $n$ dadu
+(kabèh nuduhaké $1$), nganti $6n$,
+nilai paling gedhé (kabèh nuduhaké $6$).
+
+\begin{thm}
+  Kanthi $n$ dadu, kabèh $5n+1$ nilai
+  kang mungkin saka $n$ nganti $6n$
+  bisa diéntukaké.
+\end{thm}
+
+\begin{proof}
+Tetepna $P(n)$ minangka pratelan:
+``Saben bilangan saka $n$ nganti~$6n$
+bisa diéntukaké nganggo $n$~dadu.''
+Kanggo migunakaké induksi, kita buktèkaké:
+\begin{enumerate}
+\item \emph{dhasar induksi} $P(1)$,
+  yaiku kanthi siji dadu, saben bilangan
+  saka $1$ nganti $6$ bisa metu.
+\item \emph{langkah induksi}: kanggo
+  saben $k$, yèn $P(k)$ mula~$P(k+1)$.
+\end{enumerate}
+
+Kasus tanpa dadu wis dibuktèkaké ing ndhuwur.
+(1) Kabuktèkaké kanthi ndeleng dadu mawa
+$6$ sisih. Dadu iku nduwèni enem sisih,
+lan saben bilangan saka $1$ nganti~$6$
+muncul ing salah sijiné. Mula kanthi siji
+dadu saben bilangan saka $1$ nganti~$6$
+bisa diéntukaké.
+
+Kanggo mbuktekaké (2), kita nganggep
+antesedèn kondisional, yaiku $P(k)$.
+Anggepan iki diarani \emph{hipotesis induksi}.
+Anggepan iki digunakaké kanggo mbuktekaké~$P(k+1)$.
+Pérangan kang angel yaiku nemokaké cara
+ndeleng nilai kang bisa metu saka $k+1$
+dadu liwat nilai saka $k$~dadu lan nilai
+dadu tambahan kang urutané $k+1$.
+Nanging iki kudu ditindakaké supaya
+hipotesis induksi bisa digunakaké.
+
+Hipotesis induksi nyatakaké yèn kita
+bisa éntuk saben bilangan saka $k$
+nganti~$6k$ nganggo $k$~dadu.
+Yèn kita éntuk~$1$ saka dadu urutan
+$(k+1)$, jumlahé nambah $1$.
+Dadi kita bisa éntuk saben nilai saka
+$k+1$ nganti $6k+1$ kanthi nguncalaké
+$k$~dadu banjur éntuk~$1$ saka
+dadu urutan $(k+1)$. Nilai endi kang isih
+durung? Nilai saka $6k+2$ nganti
+$6k+6$. Iki bisa diéntukaké kanthi
+$k$ dadu nuduhaké $6$s, banjur
+salah siji bilangan saka $2$ nganti
+$6$ metu saka dadu urutan $(k+1)$.
+Mula kanthi $k+1$ dadu kita
+bisa éntuk saben bilangan saka $k+1$
+nganti $6(k+1)$, yaiku
+wis mbuktekaké~$P(k+1)$ saka
+anggepan~$P(k)$, hipotesis induksi.
+\end{proof}
+
+Kita asring migunakaké induksi kanggo
+mbuktekaké bab sawijining rerangkening
+obyèk, kaya bilangan utawa himpunan,
+kang dhéwé didhéfinisikaké
+``kanthi induktif'': obyèk urutan
+$(n+1)$ didhéfinisikaké saka obyèk
+urutan $n$. Upamané, jumlah~$s_n$
+saka bilangan asli nganti~$n$ bisa
+didhéfinisikaké kanthi
+\begin{align*}
+  s_0 & = 0\\
+  s_{n+1} & = s_n + (n+1)
+\end{align*}
+Dhéfinisi iki mènèhi:
+\begin{align*}
+  s_0 & = 0,\\
+  s_1 & = s_0 + 1 && = 1,\\
+  s_2 & = s_1 + 2 && = 1 + 2 = 3\\
+  s_3 & = s_2 + 3 && = 1 + 2 + 3 = 6, \text{ lsp.}
+\end{align*}
+Saiki kanthi induksi kita bisa
+mbuktekaké yèn $s_n = n(n+1)/2$.
+
+\begin{prop}
+  $s_n = n(n+1)/2$.
+\end{prop}
+
+\begin{proof}
+  Kita kudu mbuktekaké (1)
+  $s_0 = 0\cdot(0 + 1)/2$ lan (2)
+  yèn $s_k =
+  k(k+1)/2$ mula
+  $s_{k+1} = (k+1)(k+2)/2$.
+  Pérangan (1) cetha. Kanggo
+  mbuktekaké (2), kita nganggep
+  hipotesis induksi:
+  $s_k = k(k+1)/2$. Saka kéné
+  kita kudu nuduhaké
+  $s_{k+1} = (k+1)(k+2)/2$.
+
+  Pira $s_{k+1}$? Miturut dhéfinisi,
+  $s_{k+1} = s_k + (k+1)$.
+  Miturut hipotesis induksi,
+  $s_k = k(k+1)/2$. Iki bisa
+  disulih menyang pepadhan sadurungé,
+  banjur cukup ngétung pecahan:
+  \begin{align*}
+    s_{k+1} & = \frac{k(k+1)}{2} + (k+1) = {}\\
+    & = \frac{k(k+1)}{2} + \frac{2(k+1)}{2} = {}\\
+    & = \frac{k(k+1) + 2(k+1)}{2} = {}\\
+    & = \frac{(k+2)(k+1)}{2}.
+  \end{align*}
+\end{proof}
+
+Piwulang wigatiné: yèn arep mbuktekaké
+pratelan babagan barisan $a_n$ kang
+didhéfinisikaké kanthi induktif,
+induksi dadi cara kang lumrah.
+Senajan barisané ora didhéfinisikaké
+mangkono, kaya kamungkinan asil
+uncalan dadu, induksi tetep bisa
+digunakaké yèn kasus~$k+1$
+bisa digandhèngaké karo kasus~$k$.
+
+\end{document}

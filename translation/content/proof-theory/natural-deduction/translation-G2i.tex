@@ -1,0 +1,223 @@
+% Part: proof-theory
+% Chapter: natural-deduction
+% Section: translation-G2i
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{nat}{tgi}
+
+\olsection{Nerjemahaké saka \Log{G2i} menyang \Log{N2i}}
+
+Antesèden sekuèn ing \Log{G2i} iku multihimpunan~$\Gamma$
+saka !!{formula}s, déné antesèden sekuèn ing \Log{N2i} iku
+himpunan~$\Gamma'$ saka formula mawa label, kanthi saben label
+katon mung sapisan. Himpunan~$\Gamma'$ saka !!{formula}s mawa label
+diarani \emph{cocog karo} multihimpunan~$\Gamma$ yèn, kanggo
+saben !!{formula}~$!A$, cacah !!{element}s ing~$\Gamma'$ kang wujudé
+$x : !A$ ora ngungkuli multiplisitas~$!A$ (yaiku cacah salinan~$!A$)
+ing~$\Gamma$.
+
+\begin{prop}\ollabel{prop:G2i-to-N2i}
+Yèn $\Log{G2i} + \Cut \Proves \Gamma \Sequent \Delta$,
+banjur $\Log{N2i} \Proves \Gamma' \Sequent !C$,
+kanthi $!C \ident \lfalse$ yèn $\Delta$ kosong, déné yèn
+$\Delta = \{!A\}$, konklusiné formula tunggal mau, lan
+$\Gamma'$ cocog karo~$\Gamma$.
+\end{prop}
+
+\begin{proof}
+  Kita tuduhaké yèn $\pi$ iku !!a{proof} kanggo
+  $\Gamma \Sequent \Delta$ ing \Log{G2i} ditambah aturan~\Cut,
+  banjur ana~$\Gamma'$ kang cocog karo~$\Gamma$ lan
+  !!a{proof}~$\delta$ kanggo~$\Gamma' \Sequent !C$ ing~\Log{N2i}.
+  Iki dibuktèkaké kanthi induksi marang $n = \pheight{\pi}$.
+
+  Yèn $n = 0$, banjur $\pi$ iku aksioma. Yèn iku aksioma
+  $\lfalse \Sequent \quad$, $\delta$ iku aksioma
+  $x:\lfalse \Sequent \lfalse$, yaiku
+  $\Gamma' = \{x:\lfalse\}$ lan $!C \ident \lfalse$.
+  Yèn $\pi$ aksioma kang wujudé $!A \Sequent !A$,
+  banjur $\delta$ iku $x: !A \Sequent !A$.
+  
+  Yèn $n>0$, $\pi$ pungkasané aturan~$R$. Hipotesis induksi
+  njamin anané !!{proof}s sekuèn kang cocog karo premis-premis
+  aturan mau ing~\Log{N2i}. Kita bisa nganggep kabèh label
+  pambusakan ing bukti-bukti mau béda-béda, lan label $x$
+  mung katon ing sadhuwuré inferènsi kang mbusak label iku,
+  yèn pancèn dibusak (kanthi ngowahi label yèn perlu).
+  Banjur kita tuduhaké carané nggandhèngaké !!{proof}s mau
+  kanggo ngasilaké bukti $\Gamma' \Sequent !C$ kang trep.
+  Kasus-kasusé dibédakaké miturut~$R$.
+
+  \begin{enumerate}
+    \item Yèn $R$ iku \RightR{\Weakening}, $\pi$ pungkasané
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi_1$}
+    \Deduce$\Gamma \fCenter$
+    \RightLabel{\RightR{\Weakening}}
+    \UnaryInf$\Gamma \fCenter !A$
+    \DisplayProof
+    \]
+    Hipotesis induksi kang ditrapaké marang $\pi_1$ ngasilaké
+    !!a{proof} kanggo~$\Gamma' \Sequent \lfalse$.
+    Kita ngetrapaké $\FalseInt$ kanggo ngasilaké
+    !!a{proof} kanggo $\Gamma' \Sequent !A$.
+    \item Yèn $R$ iku \LeftR{\Weakening}, $\pi$ pungkasané
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi_1$}
+    \Deduce$\Gamma \fCenter \Delta$
+    \RightLabel{\LeftR{\Weakening}}
+    \UnaryInf$!A, \Gamma \fCenter \Delta$
+    \DisplayProof
+    \]
+    Hipotesis induksi kanggo $\pi_1$ ngasilaké !!a{proof}
+    kanggo~$\Gamma' \Sequent !C$; iki dipilih dadi $\delta$.
+    Élinga yèn $\Gamma'$ cocog karo $\Gamma$, uga cocog karo
+    $!A, \Gamma$, amarga cacah $x : !A$ ing $\Gamma'$ ora ngungkuli
+    cacah salinan~$!A$ ing $\Gamma$, mula uga ora ngungkuli
+    cacah salinan $!A$ ing $\Gamma \cup \{!A\}$.
+    \item Yèn $R$ iku \LeftR{\Contraction}, $\pi$ pungkasané
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi_1$}
+    \Deduce$!A, !A, \Gamma \fCenter \Delta$
+    \RightLabel{\LeftR{\Contraction}}
+    \UnaryInf$!A, \Gamma \fCenter \Delta$
+    \DisplayProof
+    \]
+    Hipotesis induksi kanggo $\pi_1$ ngasilaké !!a{proof}~$\delta_1$
+    kanggo~$\Pi, \Gamma' \Sequent !C$, kanthi $\Pi \subseteq \{x : !A,
+    y:!A\}$. Yèn $\Pi = \{x : !A, y:!A\}$, ganti kabèh
+    !!{formula}s mawa label $y:!A$ ing~$\delta_1$ dadi $x:!A$.
+    Amarga $x$~katon ing kontèks sekuèn pungkasan saka~$\delta_1$,
+    kita bisa nganggep ora ana inferènsi ing~$\delta_1$ kang
+    mbusak !!a{formula} kang wujudé~$x:!B$; tegesé, ora ana
+    $x:!B$ ing sisih kiwa sekuèn ing~$\delta_1$ kang aktif.
+    Mula asilé isih !!a{proof} ing~\Log{N2i}.
+    \item Yèn $R$ iku $\RightR{\lif}$, $\pi$ pungkasané
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi_1$}
+    \Deduce$!A, \Gamma \fCenter !B$
+    \RightLabel{\RightR{\lif}}
+    \UnaryInf$\Gamma \fCenter !A \lif !B$
+    \DisplayProof
+    \]
+    Miturut hipotesis induksi, ana !!a{proof}~$\delta_1$ kanggo $x:
+    !A, \Gamma' \Sequent !B$ utawa $\Gamma' \Sequent !B$,
+    kanthi $\Gamma'$ cocog karo~$\Gamma$. Bukti~$\delta_1$
+    bisa ditambahi kanggo ngasilaké~$\delta$ kanthi panrapan
+    \Intro{\lif}.
+    \item Yèn $R$ iku \LeftR{\lif}, $\pi$ pungkasané
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi_1$}
+    \Deduce$\Gamma_1 \fCenter !A$
+    \AxiomC{}
+    \RightLabel{$\pi_2$}
+    \Deduce$!B, \Gamma_2 \fCenter \Delta$
+    \RightLabel{\LeftR{\lif}}
+    \BinaryInf$!A \lif !B, \Gamma_1, \Gamma_2 \fCenter \Delta$
+    \DisplayProof
+    \]
+    Hipotesis induksi ngasilaké !!{proof}s $\delta_1$ kanggo
+    $\Gamma_1' \Sequent !A$ lan $\delta_2$ kanggo
+    $x: !B, \Gamma_2' \Sequent !C$ utawa kanggo
+    $\Gamma_2' \Sequent !C$. Yèn $\delta_2$ wujudé kang kapindho,
+    $\delta_2$ bisa dadi~$\delta$. Yèn ora, kita bisa ngowahi
+    label formula lan label pambusakan ing~$\delta_1$ supaya
+    ora ana label kang katon ing $\delta_1$ lan~$\delta_2$
+    bebarengan. Banjur $\Gamma_1' \cup \Gamma_2'$ cocog karo
+    $\Gamma_1 \cup \Gamma_2$. Amarga $x:!B$ katon ing sekuèn
+    pungkasan saka~$\delta_2$, $x:!B$ ora bisa aktif ing inferènsi
+    mawa label pambusakan~$x$ ing~$\delta_2$. Ganti saben aksioma
+    $x:!B \Sequent !B$ ing~$\delta_2$ nganggo !!{proof}~$\delta_3$
+    \[
+    \Axiom$x: !A \lif !B \fCenter !A \lif !B$
+    \AxiomC{}
+    \RightLabel{$\delta_1$}
+    \Deduce$\Gamma_1' \fCenter !A$
+    \RightLabel{\Elim{\lif}}
+    \BinaryInf$x: !A \lif !B \fCenter !B$
+    \DisplayProof
+    \]
+    sarta saben kemunculan $x:!B$ ing~$\delta_2$ nganggo
+    $x:!A \lif !B$. Asilé $\Subst{\delta_2}{\delta_3}{x:!B}$
+    iku !!a{proof} kanggo
+    $x:!A \lif !B, \Gamma_1', \Gamma_2' \Sequent !C$.
+    \item Yèn $R$ iku \RightR{\land}, $\pi$ pungkasané
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi_1$}
+    \Deduce$\Gamma_1 \fCenter !A$
+    \AxiomC{}
+    \RightLabel{$\pi_2$}
+    \Deduce$\Gamma_2 \fCenter !B$
+    \RightLabel{\RightR{\land}}
+    \BinaryInf$\Gamma_1, \Gamma_2 \fCenter !A \land !B$
+    \DisplayProof
+    \]
+    Hipotesis induksi ngasilaké bukti $\delta_1$ kanggo
+    $\Gamma_1' \Sequent !A$ lan $\delta_2$ kanggo
+    $\Gamma_2' \Sequent !B$. Kanthi ngowahi label formula
+    lan label pambusakan ing~$\delta_2$, kita bisa njamin ora ana
+    label kang katon ing $\delta_1$ lan $\delta_2$ bebarengan.
+    Banjur $\Gamma_1' \cup \Gamma_2'$ cocog karo
+    $\Gamma_1 \cup \Gamma_2$. Kita olèh !!a{proof}~$\delta$
+    kanthi ngetrapaké $\Intro{\land}$ marang sekuèn pungkasan
+    saka $\delta_1$ lan~$\delta_2$.
+    \item Yèn $R$ iku $\LeftR{\land}$, $\pi$ pungkasané,
+    tuladhané,
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi_1$}
+    \Deduce$!A, \Gamma \fCenter \Delta$
+    \RightLabel{\LeftR{\land}}
+    \UnaryInf$!A \land !B, \Gamma \fCenter \Delta$
+    \DisplayProof
+    \]
+    Miturut hipotesis induksi ana !!a{proof}~$\delta_1$ kanggo
+    $x: !A, \Gamma' \Sequent !C$ utawa $\Gamma' \Sequent !C$,
+    kanthi $\Gamma'$ cocog karo~$\Gamma$. Ing kasus kapindho,
+    bukti~$\delta_1$ bisa langsung dadi~$\delta$. Ing kasus kapisan,
+    amarga $x:!A$ katon ing sekuèn pungkasan, $x:!A$ ora aktif
+    ing inferènsi mawa label pambusakan~$x$ ing~$\delta_1$.
+    Ganti saben aksioma $x:!A \Sequent !A$ nganggo
+    !!{proof}~$\delta_2$
+    \[
+    \Axiom$x: !A \land !B \fCenter !A \land !B$
+    \RightLabel{\Elim{\land}}
+    \UnaryInf$x: !A \land !B \fCenter !A$
+    \DisplayProof
+    \]
+    lan ganti saben kemunculan $x:!A$ dadi $x:!A \land !B$,
+    yaiku mbentuk $\Subst{\delta_1}{\delta_2}{x:!A}$.
+    Iki !!a{proof} kanggo $x:!A \land !B, \Gamma' \Sequent !C$.
+    \item Yèn $R$ iku \Cut, $\pi$ pungkasané
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi_1$}
+    \Deduce$\Gamma_1 \fCenter !A$
+    \AxiomC{}
+    \RightLabel{$\pi_2$}
+    \Deduce$!A, \Gamma_2 \fCenter \Delta$
+    \RightLabel{\Cut}
+    \BinaryInf$\Gamma_1, \Gamma_2 \fCenter \Delta$
+    \DisplayProof
+    \]
+    Hipotesis induksi ngasilaké bukti $\delta_1$ kanggo
+    $\Gamma_1' \Sequent !A$ lan $\delta_2$ kanggo
+    $x:!A, \Gamma_2' \Sequent !C$ utawa kanggo
+    $\Gamma_2' \Sequent !C$. Ing kasus kapindho,
+    pilih $\delta$ dadi~$\delta_2$. Yèn ora, ganti saben aksioma
+    $x:!A \Sequent !A$ ing $\delta_2$ nganggo $\delta_1$
+    supaya ngolèhké~$\delta$ minangka !!{proof}~$\Subst{\delta_2}{\delta_1}{x:!A}$
+    kanggo $\Gamma_1', \Gamma_2' \Sequent !C$.
+  \end{enumerate}
+\end{proof}
+
+\end{document}

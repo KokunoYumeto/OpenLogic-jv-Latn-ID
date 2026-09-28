@@ -1,0 +1,101 @@
+% Part: first-order-logic
+% Chapter: introduction
+% Section: first-order-logic
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{int}{fol}
+
+\olsection{Logika Sepisanan}
+
+Sampeyan mbokmenawa wis wanuh karo logika sepisanan saka pambuka
+pisanan marang logika formal.\footnote{Sejatine, kita kurang luwih
+nganggep yen sampeyan pancen wis wanuh!{} Yen durung, sampeyan bisa
+nyemak maneh buku ajar kang luwih dhasar, kayata \emph{forall x}
+\citep{Magnus2021}.} Sampeyan bisa uga mangerteni logika iki kanthi
+jeneng ``logika kuantifikasional'' utawa ``logika predikat.'' Kaping
+pisan, logika sepisanan iku basa formal. Tegese, logika iki nduweni
+tetembungan tartamtu, lan ekspresine awujud rerangken simbol saka
+tetembungan kasebut. Nanging, ora saben rerangken simbol diparengake.
+Ana maneka jinis ekspresi kang diparengake: term, !!{formula}s, lan
+!!{sentence}s. Kawigaten kita utamane tumuju marang !!{sentence}s ing
+logika sepisanan: ukara-ukara kasebut menehi padanan formal kanggo
+ukara basa Inggris, lan kita bisa ngajokake pitakon-pitakon kang
+lumrahe narik kawigatene ahli logika. Tuladhane:
+\begin{itemize}
+    \item Apa $!B$ ndherek saka~$!A$ kanthi logis?
+    \item Apa $!A$ bener kanthi logis, salah kanthi logis, utawa
+kontingen?
+    \item Apa $!A$ lan $!B$ ekuivalen?
+\end{itemize}
+
+Pitakon-pitakon iki utamane babagan ``makna'' !!{sentence}s ing logika
+sepisanan. Tuladhane, ahli filsafat bakal nganalisis pitakon apa $!B$
+ndherek kanthi logis saka~$!A$ kanthi takon: apa ana kasus nalika $!A$
+bener nanging~$!B$ salah ($!B$ ora ndherek saka~$!A$), utawa apa saben
+kasus kang ndadekake $!A$ bener uga ndadekake~$!B$ bener ($!B$ ndherek
+saka~$!A$)? Nanging, kita durung diwenehi katrangan apa kang diarani
+``kasus''---iku tugase \emph{semantik}. Semantik logika sepisanan
+menehi model matematis kang trep kanggo gagasan intuisi ahli filsafat
+ngenani ``kasus,'' lan uga---iki wigati---ngenani apa tegese
+!!a{sentence}~$!A$ \emph{bener ing} sawijining kasus. Model matematis
+kang trep iki, kang bakal kita wangun, diarani !!a{structure}. Relasi
+kang njlentrehake ``bener ing'' kanthi trep diarani relasi
+\emph{nyukupi}. Mula, kang bakal kita temtokake yaiku ``$!A$
+dicukupi ing~$\Struct{M}$'' (ing simbol: $\Sat{M}{!A}$) kanggo
+!!{sentence}s~$!A$ lan !!{structure}s~$\Struct{M}$. Sawise iki rampung,
+kita uga bisa menehi definisi kang trep kanggo istilah-istilah semantis
+liyane, kayata ``ndherek saka'' utawa ``bener kanthi logis.''
+Definisi-definisi kasebut bakal ndadekake kita bisa netepake, kanthi
+presisi matematis maneh, apa, upamane,
+$\lforall[x][(!A(x) \lif !B(x))],
+\lexists[x][!A(x)] \Entails \lexists[x][!B(x)]$. Cathetan koreksi
+sumber OLPL-056: sumber Inggris ora nutup argumen kuantor universal
+sawise B(x), lan kurung kasebut kliru dumunung sawise kesimpulan,
+mula cakupan formula premis rusak; kurung panutup dibalekake adhedhasar
+rong pangulangan kang bener ing ngisor iki.
+Jawabane mesthi ``ya.'' Yen sampeyan wis sinau nyimbolake ukara basa
+Inggris ing logika sepisanan, sampeyan bakal ngenali iki minangka,
+upamane, simbolisasi saka pratelan ``Kabeh semut iku serangga, ana
+semut, mula ana serangga.'' Iki cetha minangka argumen kang valid,
+mula model matematis kita kanggo ``ndherek saka'' ing basa formal kudu
+menehi jawaban kang padha.
+
+Topik liyane kang mbokmenawa isih sampeyan eling saka pambuka pisanan
+marang logika formal yaiku anane \emph{!!{derivation}s}. Yen sampeyan
+wis tau melu kuliah logika formal dhasar, pamulang mesthine wis menehi
+latihan nggoleki !!{derivation}s kasebut, bisa uga malah !!a{derivation}
+kang nuduhake yen akibat ing ndhuwur lumaku. Ana maneka cara kanggo
+menehi !!{derivation}s: sampeyan bisa uga wis nggunakake cara kang
+diarani ``deduksi natural'' utawa ``wit kabeneran,'' nanging isih ana
+akeh cara liyane. Tujuane sistem !!{derivation} yaiku nyedhiyakake
+piranti kanggo mangsuli pitakon-pitakone ahli logika ing ndhuwur:
+upamane, !!{derivation} deduksi natural kang nduweni
+$\lforall[x][(!A(x) \lif !B(x))]$ lan $\lexists[x][!A(x)]$ minangka
+premis sarta $\lexists[x][!B(x)]$ minangka kesimpulan (larik pungkasan)
+\emph{mesthekake} yen $\lexists[x][!B(x)]$ ndherek kanthi logis saka
+$\lforall[x][(!A(x) \lif !B(x))]$ lan $\lexists[x][!A(x)]$. Cathetan
+koreksi sumber OLPL-057: formula premis pisanan ing ukara Inggris iki
+kelangan kurung panutup lan kurung kasebut kliru dipindhah menyang
+formula kesimpulan; rong formula iki dibalekake menyang cakupane dhewe.
+
+Nanging, apa sebabe? Yen mung dideleng saklumrahe, sistem
+!!{derivation} kaya ora ana gandhengane karo semantik: menehi
+!!{derivation} formal mung mbutuhake panyusunan simbol kanthi cara-cara
+tartamtu kang manut aturan; sistem kasebut ora nyebut ``kasus'' utawa
+``bener ing'' babar pisan. Gandhengane sistem !!{derivation} karo
+semantik kudu ditetepake liwat panliten metalogis. Kang dibutuhake yaiku
+bukti matematis, upamane, yen !!{derivation} formal kanggo
+$\lexists[x][!B(x)]$ saka premis $\lforall[x][(!A(x) \lif !B(x))]$ lan
+$\lexists[x][!A(x)]$ bisa digawe yen, lan mung yen,
+$\lforall[x][(!A(x) \lif !B(x))]$ lan $\lexists[x][!A(x)]$ bebarengan
+nduweni akibat~$\lexists[x][!B(x)]$. Cathetan koreksi sumber OLPL-058:
+pratelan Inggris pungkasan ngulang pola kurung kang padha, yaiku kurung
+panutup universal ilang lan dumunung keluwih sawise kesimpulan; saben
+kurung dibalekake menyang formula kang trep. Nanging, sadurunge iki
+bisa ditindakake, akeh pakaryan tliti kudu dirampungake supaya definisi
+sintaksis lan semantik bener.
+
+\end{document}

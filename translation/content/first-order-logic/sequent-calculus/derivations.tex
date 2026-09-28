@@ -15,7 +15,7 @@
 \begin{explain}
 Kita wis nerangake wujude sekuen wiwitan lan wis menehi aturan
 inferensi. !!^{derivation}s ing kalkulus sekuen dibangkitake kanthi
-induktif saka rong perkara iku: saben !!{derivation} dadi sekuen
+induktif saka rong perkara iku: saben !!{derivation} iku sekuen
 wiwitan dhewe, utawa dumadi saka siji utawa rong !!{derivation}s kang
 diterusake dening sawijining inferensi.
 \end{explain}
@@ -44,11 +44,11 @@ kanthi ngetrapake, umpamane, aturan $\LeftR{\Weakening}$,
 \RightLabel{\LeftR{\Weakening}}
 \UnaryInf$ !A, \Gamma \fCenter \Delta$
 \end{prooftree}
-Nanging, aturan kasebut dimaksudake umum: $!A$ ing aturan bisa diganti
-nganggo sembarang !!{sentence}, upamane uga nganggo~$!D$. Yen premis
-cocog karo sekuen wiwitan $!C \Sequent !C$, iki ateges $\Gamma$ lan
-$\Delta$ kalorone mung~$!C$, mula kesimpulane dadi $!D, !C \Sequent
-!C$. Dadi, iki !!a{derivation}:
+Nanging, aturan kasebut dimaksudake supaya bisa digunakake kanthi umum:
+$!A$ ing aturan bisa diganti nganggo sembarang !!{sentence}, upamane
+uga nganggo~$!D$. Yen premis cocog karo sekuen wiwitan $!C \Sequent
+!C$, iki ateges $\Gamma$ lan $\Delta$ kalorone mung~$!C$, mula
+kesimpulane dadi $!D, !C \Sequent !C$. Dadi, iki !!a{derivation}:
 \begin{prooftree}
 \Axiom$ !C \fCenter !C $
 \RightLabel{\LeftR{\Weakening}}
@@ -78,19 +78,19 @@ kang meh padha, kita uga bisa weruh yen
 \RightLabel{\LeftR{\Weakening}}
 \UnaryInf$ !C, !D \fCenter !D$
 \end{prooftree}
-iku !!a{derivation}. Saiki rong !!{derivation}s iki bisa dijupuk lan
-digabungake nganggo $\RightR{\land}$. Aturan kasebut yaiku
+iku !!a{derivation}. Saiki kita bisa njupuk rong !!{derivation}s iki
+lan nggabungake nganggo $\RightR{\land}$. Aturan kasebut yaiku
 \begin{prooftree}
 \Axiom$\Gamma \fCenter \Delta, !A$
 \Axiom$ \Gamma \fCenter \Delta, !B$
 \RightLabel{\RightR{\land}}
 \BinaryInf$ \Gamma \fCenter \Delta, !A \land !B $
 \end{prooftree}
-Ing kasus iki, premis kudu cocog karo sekuen pungkasan saka
-!!{derivation}s kang mungkasi premis. Iki ateges $\Gamma$ yaiku
+Ing kasus iki, premis loro mau kudu cocog karo sekuen-pungkasan saka
+rong !!{derivation}s kang arep digabungake. Iki ateges $\Gamma$ yaiku
 $!C, !D$, $\Delta$ kosong, $!A$ yaiku $!C$, lan $!B$ yaiku $!D$. Mula,
-yen inferensine bener, kesimpulane yaiku $!C, !D \Sequent !C
-\land !D$.
+yen inferensine bener, kesimpulane yaiku $!C, !D \Sequent !C \land
+!D$.
 \begin{prooftree}
 \Axiom$ !C \fCenter !C $
 \RightLabel{\LeftR{\Weakening}}
@@ -103,8 +103,8 @@ yen inferensine bener, kesimpulane yaiku $!C, !D \Sequent !C
 \RightLabel{\RightR{\land}}
 \BinaryInf$ !C, !D \fCenter !C \land !D $
 \end{prooftree}
-Mesthi wae, kita uga bisa ngowahi urutan premis, mula $!A$
-dadi $!D$ lan $!B$ dadi~$!C$.
+Mesthi wae, kita uga bisa ngijolake premis loro mau, mula $!A$ dadi
+$!D$ lan $!B$ dadi~$!C$.
 \begin{prooftree}
 \Axiom$ !D \fCenter !D $
 \RightLabel{\LeftR{\Weakening}}

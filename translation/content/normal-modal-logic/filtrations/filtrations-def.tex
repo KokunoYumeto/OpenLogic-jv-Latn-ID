@@ -1,0 +1,186 @@
+% Part: normal-modal-logic
+% Chapter: filtrations
+% Section: filtrations-def
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{fil}{fil}
+
+\olsection{Filtrasi}
+
+Tinimbang netepake ``filtrasi tunggal'' saka $\mModel{M}$ liwat
+$\Gamma$, kita netepake kapan model~$\mModel{M^*}$ dianggep filtrasi
+saka~$\mModel{M}$. Kabeh filtrasi nduweni himpunan jagad~$W^*$ kang
+padha lan valuasi~$V^*$ kang padha. Nanging filtrasi kang beda bisa
+nduweni relasi aksesibilitas~$R^*$ kang beda. Supaya dianggep filtrasi,
+$R^*$ kudu nyukupi sawetara sarat. Sarat-sarat iku persis kang
+dibutuhake kanggo mbuktekake asil utama, yaiku
+$\mSat{M}{!A}[w]$ yen lan mung yen $\mSat{M^*}{!A}[{[w]}]$,
+anggere $!A \in \Gamma$.
+
+\begin{defn}\ollabel{defn:filtration}
+  Upamane $\Gamma$ katutup tumrap subformula lan
+  $\mModel{M} = \tuple{W, R, V}$. \emph{Filtrasi saka $\mModel{M}$
+  liwat $\Gamma$} yaiku sembarang model
+  $\mModel{M^*} = \tuple{W^*,R^*,V^*}$, ing ngendi:
+  \begin{enumerate}
+  \item $W^* = \Setabs{[w]}{w \in W}$;
+  \item \ollabel{defn:filtration-R}%
+    Kanggo sembarang $u,v \in W$:
+    \begin{enumerate}
+    \item \ollabel{defn:filtration-R1}%
+      Yen $Ruv$ mula $R^*[u][v]$;
+    \tagitem{prvBox}{\ollabel{defn:filtration-R2}%
+      Yen $R^*[u][v]$, mula kanggo sembarang $\Box !A \in \Gamma$,
+      yen $\mSat{M}{\Box!A}[u]$ mula $\mSat{M}{!A}[v]$}{};
+    \tagitem{prvDiamond}{\ollabel{defn:filtration-R3}%
+      Yen $R^*[u][v]$, mula kanggo sembarang $\Diamond !A \in \Gamma$,
+      yen $\mSat{M}{!A}[v]$ mula $\mSat{M}{\Diamond!A}[u]$.}{}
+    \end{enumerate}
+  \item $V^*(p) = \Setabs{[u]}{u \in V(p)}$.
+  \end{enumerate}
+\end{defn}
+
+Penting kanggo nggatekake teges $V^*(p)$: himpunan kelas
+ekuivalensi~$[w]$ saka kabeh jagad~$w$ kang ndadekake $p$ bener
+ing~$\mModel{M}$. Ing siji sisih, yen $w \in V(p)$, mula $[w] \in
+V^*(p)$ miturut definisi kasebut. Nanging, saka $[w] \in V^*(p)$
+ora mesthi nderek yen $w \in V(p)$. Yen $[w] \in V^*(p)$, kita mung
+dijamin yen $[w] = [u]$ kanggo \emph{sawijining}~$u \in V(p)$.
+Mesthi, $[w] = [u]$ ateges $w \equiv u$. Dadi, yen $[w] \in
+V^*(p)$, kita (mung) bisa nyimpulake yen $w \equiv u$ kanggo sawijining
+$u \in V(p)$.
+
+\begin{thm}\ollabel{thm:filtrations}
+  Yen $\mModel{M^*}$ filtrasi saka $\mModel{M}$ liwat $\Gamma$,
+  mula kanggo saben $!A \in \Gamma$ lan $w \in W$, kita duwe
+  $\mSat{M}{!A}[w]$ yen lan mung yen
+  $\mSat{M^*}{!A}[{[w]}]$.
+\end{thm}
+
+\begin{proof}
+  Kanthi induksi marang $!A$, nggunakake kasunyatan yen $\Gamma$
+  katutup tumrap subformula. Amarga $!A \in \Gamma$ lan $\Gamma$
+  katutup tumrap sub-!!{formula}s, kabeh sub-!!{formula}s saka~$!A$
+  uga $\in \Gamma$. Mula ing saben langkah induksi, hipotesis induksi
+  lumaku tumrap sub-!!{formula}s saka~$!A$.
+  \begin{enumerate}
+    \tagitem{prvFalse}{\indcase{!A}{\lfalse}{Ora
+        $\mSat{M}{\indfrm}[w]$ lan ora $\mSat{M^*}{\indfrm}[{[w]}]$.}}{}
+    \tagitem{prvTrue}{\indcase{!A}{\ltrue}{Loro-lorone:
+        $\mSat{M}{\indfrm}[w]$ lan $\mSat{M^*}{\indfrm}[{[w]}]$.}}{}
+    \item \indcase{!A}{p}{Arah kiwa menyang tengen langsung cetha,
+      amarga $\mSat{M}{\indfrm}[w]$ mung yen $w \in V(p)$, kang
+      njalari $[w] \in V^*(p)$, yaiku
+      $\mSat{M^*}{\indfrm}[{[w]}]$. Kosok baline, upamane
+      $\mSat{M^*}{\indfrm}[{[w]}]$, yaiku $[w] \in V^*(p)$. Banjur
+      kanggo sawijining $v \in V(p)$, $w \equiv v$. Mesthi banjur uga
+      $\mSat{M}{p}[v]$. Amarga $w \equiv v$, $w$ lan $v$ ndadekake
+      !!{formula}s saka~$\Gamma$ kang padha bener. Amarga miturut
+      asumsi $p \in \Gamma$ lan $\mSat{M}{p}[v]$, kita entuk
+      $\mSat{M}{\indfrm}[w]$.}
+
+    \tagitem{prvNot}{\iftag{probNot}{Latihan.}{\indcase{!A}{\lnot
+          !B}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
+          $\mSat/{M}{!B}[w]$. Miturut hipotesis induksi,
+          $\mSat/{M}{!B}[w]$ yen lan mung yen
+          $\mSat/{M^*}{!B}[{[w]}]$. Pungkasane,
+          $\mSat/{M^*}{!B}[{[w]}]$ yen lan mung yen
+          $\mSat{M^*}{\indfrm}[{[w]}]$.}}}{}
+        
+    \tagitem{prvAnd}{\iftag{probAnd}{Latihan.}{\indcase{!A}{(!B \land
+          !C)}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
+          $\mSat{M}{!B}[w]$ lan $\mSat{M}{!C}[w]$. Miturut hipotesis
+          induksi, $\mSat{M}{!B}[w]$ yen lan mung yen
+          $\mSat{M^*}{!B}[{[w]}]$, lan $\mSat{M}{!C}[w]$ yen lan mung
+          yen $\mSat{M^*}{!C}[{[w]}]$. Uga,
+          $\mSat{M^*}{\indfrm}[{[w]}]$ yen lan mung yen
+          $\mSat{M^*}{!B}[{[w]}]$ lan $\mSat{M^*}{!C}[{[w]}]$.}}}{}
+
+    \tagitem{prvOr}{\iftag{probOr}{Latihan.}{\indcase{!A}{(!B \lor
+          !C)}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
+          $\mSat{M}{!B}[w]$ utawa $\mSat{M}{!C}[w]$. Miturut hipotesis
+          induksi, $\mSat{M}{!B}[w]$ yen lan mung yen
+          $\mSat{M^*}{!B}[{[w]}]$, lan $\mSat{M}{!C}[w]$ yen lan mung
+          yen $\mSat{M^*}{!C}[{[w]}]$. Uga,
+          $\mSat{M^*}{\indfrm}[{[w]}]$ yen lan mung yen
+          $\mSat{M^*}{!B}[{[w]}]$ utawa $\mSat{M^*}{!C}[{[w]}]$.}}}{}
+
+    \tagitem{prvIf}{\iftag{probIf}{Latihan.}{\indcase{!A}{(!B \lif
+          !C)}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
+          $\mSat/{M}{!B}[w]$ utawa $\mSat{M}{!C}[w]$. Miturut
+          hipotesis induksi, $\mSat{M}{!B}[w]$ yen lan mung yen
+          $\mSat{M^*}{!B}[{[w]}]$, lan $\mSat{M}{!C}[w]$ yen lan mung
+          yen $\mSat{M^*}{!C}[{[w]}]$. Uga,
+          $\mSat{M^*}{\indfrm}[{[w]}]$ yen lan mung yen
+          $\mSat/{M^*}{!B}[{[w]}]$ utawa $\mSat{M^*}{!C}[{[w]}]$.}}}{}
+
+    \tagitem{prvIff}{\iftag{probIff}{Latihan.}{\indcase{!A}{(!B \liff
+          !C)}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
+          $\mSat{M}{!B}[w]$ lan $\mSat{M}{!C}[w]$, utawa
+          $\mSat/{M}{!B}[w]$ lan $\mSat/{M}{!C}[w]$. Miturut
+          hipotesis induksi, $\mSat{M}{!B}[w]$ yen lan mung yen
+          $\mSat{M^*}{!B}[{[w]}]$, lan $\mSat{M}{!C}[w]$ yen lan mung
+          yen $\mSat{M^*}{!C}[{[w]}]$. Uga,
+          $\mSat{M^*}{\indfrm}[{[w]}]$ yen lan mung yen
+          $\mSat{M^*}{!B}[{[w]}]$ lan $\mSat{M^*}{!C}[{[w]}]$, utawa
+          $\mSat/{M^*}{!B}[{[w]}]$ lan $\mSat/{M^*}{!C}[{[w]}]$.}}}{}
+
+    \tagitem{prvBox}{\iftag{probBox}{Latihan.}{\indcase{!A}{\Box
+          !B}{Upamane $\mSat{M}{\indfrm}[w]$; kanggo nuduhake
+          $\mSat{M^*}{\indfrm}[{[w]}]$, jupuken $v$ kang
+          $R^*[w][v]$. Miturut
+          \olref{defn:filtration}\olref{defn:filtration-R2}, kita duwe
+          $\mSat{M}{!B}[v]$, lan miturut hipotesis induksi
+          $\mSat{M^*}{!B}[{[v]}]$. Amarga $v$ sembarang,
+          $\mSat{M^*}{\indfrm}[{[w]}]$ nderek.
+
+          Kosok baline, upamane $\mSat{M^*}{\indfrm}[{[w]}]$ lan jupuken
+          $v$ sembarang kang $Rwv$. Miturut
+          \olref{defn:filtration}\olref{defn:filtration-R1}, kita duwe
+          $R^*[w][v]$, saengga $\mSat{M^*}{!B}[{[v]}]$; miturut
+          hipotesis induksi $\mSat{M}{!B}[v]$, lan amarga $v$
+          sembarang, $\mSat{M}{\indfrm}[w]$.}}}{}
+    
+    \tagitem{prvDiamond}{\iftag{probDiamond}{Latihan.}{\indcase{!A}{\Diamond
+          !B}{Upamane $\mSat{M}{\indfrm}[w]$. Banjur ana $v \in W$
+          kang $Rwv$ lan $\mSat{M}{!B}[v]$. Miturut hipotesis induksi,
+          $\mSat{M^*}{!B}[{[v]}]$, lan miturut
+          \olref{defn:filtration}\olref{defn:filtration-R1}, kita duwe
+          $R^*[w][v]$. Mula, $\mSat{M^*}{\indfrm}[{[w]}]$.
+
+          Saiki upamane $\mSat{M^*}{\indfrm}[{[w]}]$. Banjur ana
+          $[v] \in W^*$ kang $R^*[w][v]$ lan
+          $\mSat{M^*}{!B}[{[v]}]$. Miturut hipotesis induksi,
+          $\mSat{M}{!B}[v]$. Miturut
+          \olref{defn:filtration}\olref{defn:filtration-R3}, kita duwe
+          $\mSat{M}{\indfrm}[w]$.}}}{}
+  \end{enumerate}
+\end{proof}
+
+\begin{prob}
+  Jangkepna bukti \olref[nml][fil][fil]{thm:filtrations}
+\end{prob}
+
+Apa kang bener tumrap bebener ing jagad-jagad sawijining model uga
+bener tumrap bebener ing model lan validitas ing sawijining kelas model.
+
+\begin{cor}
+  Upamane $\Gamma$ katutup tumrap subformula. Banjur:
+  \begin{enumerate}
+  \item Yen $\mModel{M^*}$ filtrasi saka $\mModel{M}$ liwat
+    $\Gamma$, mula kanggo sembarang $!A \in \Gamma$:
+    $\mSat{M}{!A}$ yen lan mung yen $\mSat{M^*}{!A}$.
+  \item Yen $\mClass{C}$ sawijining kelas model lan
+    $\Gamma(\mClass{C})$ iku kelas filtrasi liwat $\Gamma$ saka model
+    ing $\mClass{C}$, mula saben !!{formula}~$!A \in \Gamma$ valid ing
+    $\mClass{C}$ yen lan mung yen valid ing
+    $\Gamma(\mClass{C})$.
+  \end{enumerate}
+\end{cor}
+
+
+
+\end{document}

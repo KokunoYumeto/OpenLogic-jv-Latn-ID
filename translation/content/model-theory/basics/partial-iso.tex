@@ -1,0 +1,408 @@
+% Part: first-order-logic
+% Chapter: model-theory
+% Section: partial-iso
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{bas}{pis}
+\section{Isomorfisme Parsial}
+
+\begin{defn}
+  Yen diwenehi rong !!{structure}s $\Struct{M}$
+  lan $\Struct{N}$, \emph{isomorfisme parsial}
+  saka $\Struct{M}$ menyang $\Struct{N}$
+  iku fungsi parsial winates $p$
+  kang nampa argumen saka $\Domain M$
+  lan ngasilake nilai ing $\Domain N$,
+  lan nyukupi syarat-syarat isomorfisme
+  saka \olref[iso]{defn:isomorphism}
+  ing ranahé:
+  \begin{enumerate}
+  \item $p$ iku !!{injective};
+  \item kanggo saben !!{constant}~$c$:
+    yen $p(\Assign{c}{M})$ katetepake,
+    mula $p(\Assign{c}{M}) = \Assign{c}{N}$;
+  \item kanggo saben $n$-panggonan
+    !!{predicate} $P$: yen $a_1$, \dots, $a_n$
+    ana ing ranah $p$, mula
+    $\langle a_1, \dots, a_n\rangle \in
+    \Assign P M$ yen lan mung yen
+    $\langle p(a_1), \dots, p(a_n) \rangle
+    \in \Assign P N$;
+  \item kanggo saben $n$-panggonan
+    !!{function} $f$: yen $a_1$, \dots, $a_n$
+    ana ing ranah $p$, mula
+    $p(\Assign f M (a_1, \dots,a_n))
+    = \Assign f N (p(a_1), \dots, p(a_n))$.
+  \end{enumerate}
+  $p$ winates tegesé $\dom{p}$ winates.
+\end{defn}
+
+Gatekna yen fungsi kosong~$\emptyset$
+mesthi dadi isomorfisme parsial
+antarane sembarang rong !!{structure}s.
+
+\begin{defn}\ollabel{defn:partialisom}
+  Rong !!{structure}s $\Struct{M}$
+  lan $\Struct{N}$ diarani
+  \emph{isomorfis parsial}, ditulis
+  $\Struct{M} \iso[p]
+  \Struct{N}$, yen lan mung yen
+  ana himpunan ora kosong $I$
+  kang isiné isomorfisme parsial
+  antarane $\Struct{M}$ lan $\Struct{N}$
+  lan nyukupi sipat \emph{maju-mundur}:
+  \begin{enumerate}
+  \item (\emph{Maju}) Kanggo saben $p \in I$
+    lan $a \in \Domain M$,
+    ana $q \in I$ saéngga
+    $p \subseteq q$ lan $a$
+    ana ing ranah $q$;
+  \item (\emph{Mundur}) Kanggo saben $p \in I$
+    lan $b \in \Domain N$,
+    ana $q \in I$ saéngga
+    $p \subseteq q$ lan $b$
+    ana ing jajaran asil $q$.
+  \end{enumerate}
+\end{defn}
+
+\begin{thm}\ollabel{thm:p-isom1}
+  Yen $\Struct{M} \iso[p] \Struct{N}$
+  lan $\Struct{M}$ sarta
+  $\Struct{N}$ padha !!{enumerable},
+  mula $\Struct{M} \iso
+  \Struct{N}$.
+\end{thm}
+
+\begin{proof}
+  Amarga $\Struct{M}$ lan
+  $\Struct{N}$ padha !!{enumerable},
+  jupuken $\Domain{M} =
+  \{a_0, a_1, \ldots \}$
+  lan $\Domain{N} = \{b_0, b_1, \ldots \}$.
+  Wiwit saka sembarang $p_0 \in I$,
+  kita netepake urutan isomorfisme parsial
+  kang saya amba $p_0 \subseteq p_1
+  \subseteq p_2 \subseteq \cdots$
+  kaya mangkene:
+  \begin{enumerate}
+  \item yen $n+1$ ganjil, upamane $n = 2r$,
+    kanthi sipat Maju goleka
+    $p_{n+1} \in I$ saéngga
+    $p_n \subseteq p_{n+1}$
+    lan $a_r$ ana ing ranah $p_{n+1}$;
+  \item yen $n+1$ genep, upamane
+    $n+1 =2r$, kanthi sipat Mundur
+    goleka $p_{n+1} \in I$ saéngga
+    $p_n \subseteq p_{n+1}$
+    lan $b_{r-1}$ ana ing jajaran
+    asil $p_{n+1}$.
+  \end{enumerate}
+  Cathetan koreksi sumber OLPL-089:
+  nalika langkah genep kapisan,
+  unsur kapisan saka jajaran asil
+  kudu dilebokake; indeks ing
+  sumber diwiwiti saka unsur kapindho.
+Yen saiki ditetepake:
+\[
+p = \bigcup_{n\ge 0} p_n,
+\]
+mula $p$ iku isomorfisme
+antarane $\Struct{M}$
+lan $\Struct{N}$.
+\end{proof}
+
+\begin{prob}
+  Tuduhna kanthi rinci yen $p$
+  kang ditetepake ing
+  \olref[mod][bas][pis]{thm:p-isom1}
+  pancen isomorfisme.
+\end{prob}
+
+\begin{thm}\ollabel{thm:p-isom2}
+  Upamakna $\Struct{M}$ lan
+  $\Struct{N}$ iku !!{structure}s
+  kanggo !!{language} relasional
+  murni (!!a{language} kang mung
+  ngemot !!{predicate}s,
+  tanpa !!{function}s utawa konstanta).
+  Yen $\Struct{M} \iso[p] \Struct{N}$,
+  mula uga $\Struct{M} \elemequiv
+  \Struct{N}$.
+\end{thm}
+
+\begin{proof}
+  Kanthi induksi tumrap !!{formula}s,
+  kita nuduhake yen $a_1$, \dots, $a_n$
+  lan $b_1$, \dots, $b_n$
+  nduweni isomorfisme parsial $p$
+  kang ngirim saben $a_i$ menyang $b_i$,
+  lan $s_1(x_i) =a_i$ sarta
+  $s_2(x_i) =b_i$ (kanggo $i =1$,
+  \dots,~$n$), mula
+  $\Sat{M}{!A}[s_1]$ yen lan
+  mung yen $\Sat{N}{!A}[s_2]$.
+  Kasus $n=0$ menehi
+  $\Struct{M} \elemequiv \Struct{N}$.
+\end{proof}
+
+\begin{rem}
+Yen ana !!{function}s, asil sadurunge
+isih bener, nanging kita kudu
+nggatekake isomorfisme kang diasilake
+dening $p$ antarane
+sub!!{structure} saka $\Struct{M}$
+kang dibangkitake dening $a_1$, \dots, $a_n$
+lan sub!!{structure} saka
+$\Struct{N}$ kang dibangkitake
+dening $b_1$, \dots, $b_n$.
+\end{rem}
+
+Asil sadurunge bisa dipérang
+dadi sawetara tataran kanthi
+ngubungake cacah kuantor
+kang nyarang ing !!a{formula}
+karo cacah ekstensi
+isomorfisme parsial kang dibutuhake.
+
+\begin{defn}
+  Kanggo sembarang !!{formula}~$!A$,
+  \emph{tingkat kuantor} saka $!A$,
+  ditulis $\QuantRank{!A} \in \Nat$,
+  ditetepake sacara rekursif minangka
+  cacah paling gedhé kuantor kang
+  nyarang ing $!A$. Rong
+  !!{structure}s $\Struct{M}$
+  lan $\Struct{N}$ diarani
+  \emph{ekuivalen-$n$}, ditulis
+  $\Struct{M} \elemequiv[n] \Struct{N}$,
+  yen padha kanggo kabeh ukara
+  kanthi tingkat kuantor
+  kurang saka utawa padha karo~$n$.
+\end{defn}
+
+\begin{prop}\ollabel{prop:qr-finite}
+  Upamakna $\Lang{L}$ iku
+  !!{language} winates tanpa
+  simbol fungsi, yaiku
+  !!{language} kang ngemot
+  !!{predicate}s lan !!{constant}s
+  winates cacahé, lan tanpa
+  !!{function}s. Mula kanggo
+  saben $n \in \Nat$ mung ana
+  winates cacahé !!{sentence}s
+  orde kapisan ing !!{language}
+  $\Lang{L}$ kang tingkat
+  kuantoré ora luwih saka $n$,
+  nganti ekuivalensi logis.
+  Cathetan koreksi sumber OLPL-090:
+  ing proposisi iki konstanta diidinake,
+  dadi teges basane luwih jembar
+  tinimbang teges relasional murni
+  ing teorema sadurunge.
+\end{prop}
+
+\begin{proof}
+  Kanthi induksi tumrap $n$.
+\end{proof}
+
+\begin{defn}
+  Yen diwenehi !!a{structure}~$\Struct{M}$,
+  upamakna $\Domain M^{<\omega}$
+  iku himpunan kabeh urutan winates
+  saka $\Domain{M}$. Kita nggunakake
+  $\mathbf{a}, \mathbf{b},
+  \mathbf{c}, \ldots$
+  kanggo nglambangake urutan winates
+  saka unsur-unsur. Yen
+  $\mathbf{a} \in \Domain{M}^{<\omega}$
+  lan $a \in \Domain{M}$,
+  mula $\mathbf{a}a$ nglambangake
+  \emph{gabungan urutan}
+  $\mathbf{a}$ karo $a$.
+\end{defn}
+
+\begin{defn}
+  Yen diwenehi !!{structure}s
+  $\Struct{M}$ lan $\Struct{N}$,
+  kita netepake relasi
+  $I_n \subseteq \Domain M^{<\omega}
+  \times \Domain N^{<\omega}$
+  antarane urutan-urutan kang padha
+  dawane, kanthi rekursi tumrap $n$
+  kaya mangkene:
+   \begin{enumerate}
+   \item $I_0(\mathbf{a},\mathbf{b})$
+     yen lan mung yen $\mathbf{a}$
+     lan $\mathbf{b}$ nyukupi
+     !!{formula}s atomik kang padha
+     ing $\Struct{M}$ lan
+     $\Struct{N}$; yaiku, yen
+     $s_1(x_i) = a_i$ lan
+     $s_2(x_i) = b_i$
+     sarta $!A$ iku atomik
+     kanthi kabeh !!{variable}s
+     ana ing antarane
+     $x_1$, \dots,~$x_k$,
+     mula $\Sat{M}{!A}[s_1]$
+     yen lan mung yen~
+     $\Sat{N}{!A}[s_2]$.
+     Cathetan koreksi sumber OLPL-091:
+     k ing indeks pungkasan iku
+     dawa urutan, dudu tingkat rekursi.
+   \item $I_{n+1} (\mathbf{a},\mathbf{b})$
+     yen lan mung yen kanggo
+     saben $a\in \Domain M$
+     ana $b\in \Domain N$
+     saéngga $I_n
+     (\mathbf{a}a,\mathbf{b}b)$,
+     lan uga kosok baline.
+   \end{enumerate}
+\end{defn}
+
+\begin{defn}
+  Tulis $\Struct{M} \approx_n
+  \Struct{N}$ yen
+  $I_n(\emptyseq,\emptyseq)$
+  bener kanggo $\Struct{M}$
+  lan $\Struct{N}$
+  (ing kene $\emptyseq$
+  iku urutan kosong).
+\end{defn}
+
+\begin{thm}\ollabel{thm:b-n-f}
+  Upamakna $\Lang{L}$
+  !!{language} relasional murni.
+  Mula $I_n
+  (\mathbf{a},\mathbf{b})$
+  njalari yen kanggo saben $!A$
+  kanthi $\QuantRank{!A} \le n$,
+  $\Sat{M}{!A}[\mathbf{a}]$
+  yen lan mung yen
+  $\Sat{N}{!A}[\mathbf{b}]$
+  (ing kene maneh $\mathbf{a}$
+  nyukupi $!A$ yen sembarang
+  $s$ kanthi
+  $s(x_i) = a_i$
+  kang nyukupi $!A$).
+  Sabanjure, yen $\Lang{L}$
+  winates, pratelan kosok
+  baline uga bener.
+\end{thm}
+
+\begin{proof}
+  Bukti yen $I_n(\mathbf{a},\mathbf{b})$
+  njalari $\mathbf{a}$
+  lan $\mathbf{b}$ nyukupi
+  !!{formula}s kang padha
+  kanthi tingkat kuantor
+  ora luwih saka $n$
+  lumaku kanthi induksi
+  kang prasaja tumrap $!A$.
+  Kanggo kosok baline,
+  kita nggunakake induksi
+  tumrap $n$ lan
+  \olref{prop:qr-finite},
+  kang njamin yen kanggo
+  saben $n$ mung ana
+  winates cacahé !!{formula}s
+  kang ora ekuivalen
+  kanthi tingkat kuantor kasebut.
+
+  Kanggo $n=0$, hipotesis yen
+  $\mathbf{a}$ lan $\mathbf{b}$
+  nyukupi !!{formula}s
+  tanpa kuantor kang padha
+  njalari padha nyukupi
+  formula atomik kang padha;
+  mula $I_0(\mathbf{a},\mathbf{b})$.
+
+  Kanggo kasus $n+1$,
+  upamakna $\mathbf{a}$
+  lan $\mathbf{b}$ nyukupi
+  !!{formula}s kang padha
+  kanthi tingkat kuantor
+  ora luwih saka $n+1$.
+  Kanggo nuduhake
+  $I_{n+1}(\mathbf{a},\mathbf{b})$,
+  cukup nuduhake yen kanggo
+  saben $a \in \Domain M$
+  ana $b \in \Domain N$
+  saéngga $I_n(\mathbf{a}a,\mathbf{b}b)$.
+  Miturut hipotesis induksi,
+  iki padha karo nuduhake
+  yen kanggo saben
+  $a \in \Domain M$
+  ana $b \in \Domain N$
+  saéngga $\mathbf{a}a$
+  lan $\mathbf{b}b$
+  nyukupi !!{formula}s
+  kang padha kanthi
+  tingkat kuantor
+  ora luwih saka $n$.
+
+  Yen diwenehi $a \in \Domain M$,
+  upamakna $!T^a_n$
+  iku himpunan !!{formula}s
+  $!B(x,\mathbf{y})$
+  kanthi tingkat ora luwih saka $n$
+  kang disukupi dening
+  $\mathbf{a}a$ ing $\Struct{M}$.
+  $!T^a_n$ mung nduweni
+  winates kelas ekuivalensi logis;
+  kita bisa milih wakil
+  winates cacahé saka
+  himpunan iki lan nganggep
+  konjungsine minangka siji
+  !!{formula} orde kapisan.
+  Cathetan koreksi sumber OLPL-092:
+  himpunan formula sintaktis kasebut
+  ora winates; kang winates
+  yaiku kelas-kelas ekuivalensine.
+  Mula $\mathbf{a}$ nyukupi
+  $\lexists[x][!T^a_n(x,\mathbf{y})]$,
+  kang tingkat kuantoré
+  ora luwih saka $n+1$.
+  Miturut hipotesis,
+  $\mathbf{b}$ nyukupi
+  !!{formula} kang padha
+  ing $\Struct{N}$, mula
+  ana $b \in \Domain N$
+  saéngga $\mathbf{b}b$
+  nyukupi $!T^a_n$;
+  mliginé, $\mathbf{b}b$
+  nyukupi !!{formula}s
+  kang padha kanthi
+  tingkat kuantor
+  ora luwih saka $n$
+  karo $\mathbf{a}a$.
+  Kanthi cara padha,
+  kanggo saben
+  $b \in \Domain N$
+  ana $a\in \Domain M$
+  saéngga $\mathbf{a}a$
+  lan $\mathbf{b}b$
+  nyukupi !!{formula}s
+  kang padha kanthi
+  tingkat kuantor
+  ora luwih saka $n$;
+  mangkono bukti rampung.
+\end{proof}
+
+\begin{cor}\ollabel{cor:b-n-f}
+  Yen $\Struct{M}$
+  lan $\Struct{N}$
+  iku !!{structure}s relasional
+  murni ing !!{language} winates,
+  mula $\Struct{M} \approx_n\Struct{N}$
+  yen lan mung yen
+  $\Struct{M} \elemequiv[n] \Struct{N}$.
+  Mliginé $\Struct{M} \elemequiv
+  \Struct{N}$ yen lan mung yen
+  kanggo saben $n$,
+  $\Struct{M} \approx_n \Struct{N}$.
+\end{cor}
+
+\end{document}

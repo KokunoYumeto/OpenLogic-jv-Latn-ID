@@ -1,0 +1,164 @@
+% Part: incompleteness
+% Chapter: incompleteness-provability
+% Section: lob-thm
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{inp}{lob}
+
+\olsection{Teorema L\"ob}
+
+Ukara G\"odel kanggo teori~$\Th{T}$ iku titik tetep saka $\lnot
+\OProv[\Th{T}](y)$, yaiku !!a{sentence}~$!G$ kang nyukupi
+\[
+\Th{T} \Proves \lnot \OProv[\Th{T}](\gn{!G}) \liff !G.
+\]
+Yen teori iki konsisten, ukara kasebut ora !!{derivable}, amarga
+yen $\Th{T} \Proves !G$, (a) miturut
+sarat !!{derivability}~(1), $\Th{T} \Proves \OProv[\Th{T}](\gn{!G})$,
+lan (b) saka $\Th{T} \Proves !G$ bebarengan karo $\Th{T} \Proves
+\lnot \OProv[\Th{T}](\gn{!G}) \liff !G$, kita oleh $\Th{T} \Proves
+\lnot \OProv[\Th{T}](\gn{!G})$; mula $\Th{T}$ mesthi ora konsisten.
+Saiki lumrah yen kita takon kepriye status titik tetep saka
+$\OProv[\Th{T}](y)$, yaiku !!a{sentence}~$!H$ kang nyukupi
+\[
+\Th{T} \Proves \OProv[\Th{T}](\gn{!H}) \liff !H.
+\]
+Yen ukara iki !!{derivable}, miturut sarat~(1) kita nduweni
+$\Th{T} \Proves \OProv[\Th{T}](\gn{!H})$, nanging dudutan kang padha
+uga bisa dipikolehi kanthi ngetrapake modus ponens marang ekuivalensi
+ing ndhuwur. Mula kita ora oleh dudutan yen $\Th{T}$ ora konsisten,
+saora-orane ora kanthi argumen kang padha kaya kanggo ukara G\"odel.
+Mesthi wae, iki uga durung nuduhake yen $\Th{T}$ \emph{pancen}
+!!{derive}~$!H$.
+
+Kita bisa ngrembakakake pitakon iki sethithik supaya luwih maju.
+Arah saka kiwa menyang tengen ing ekuivalensi titik tetep,
+$\OProv[\Th{T}](\gn{!H}) \lif !H$, minangka conto saka skema umum
+kang diarani \emph{prinsip refleksi}:
+$\OProv[\Th{T}](\gn{!A}) \lif !A$.
+Jeneng iki digunakake amarga skema kasebut, ing sawijining teges,
+nyatakake yen $\Th{T}$ bisa ``ngrefleksikake'' apa kang bisa
+!!{derive}; intine, skema iki nyatakake,
+``Yen $\Th{T}$ bisa !!{derive}~$!A$, mula~$!A$ bener,''
+kanggo saben~$!A$.
+Mesthi wae, iki mung bener kanggo teori kang sahih, lan iki menehi
+pituduh yen umume teori ora bakal !!{derive} saben contone.
+Dadi, sawijining teori (kang cukup kuwat lan nyukupi sarat
+!!{derivability}) bisa !!{derive} conto endi?
+Mesthi wae kabeh conto kang $!A$-ne dhewe !!{derivable}.
+Asil sabanjure nuduhake yen mung kuwi contone.
+
+\begin{thm}\ollabel{thm:lob}
+Upamana $\Th{T}$ teori kang !!a{axiomatizable} lan ngembangake
+$\Th{Q}$, sarta upamana $\OProv[\Th{T}](y)$ formula kang nyukupi
+sarat P1--P3 saka \olref[2in]{sec}. Yen $\Th{T}$ !!{derive}s
+$\OProv[\Th{T}](\gn{!A}) \lif !A$, mula sejatine $\Th{T}$
+!!{derive}s $!A$.
+\end{thm}
+
+Kanthi tembung liya, yen $\Th{T} \Proves/ !A$, mula $\Th{T} \Proves/
+\OProv[\Th{T}](\gn{!A}) \lif !A$. Asil iki dikenal minangka
+teorema L\"ob.
+
+\begin{explain}
+Gambaran intuitif kanggo bukti teorema L\"ob yaiku sawijining bukti
+kang cerdik yen Sinterklas ana. (Yen sampeyan ora seneng marang
+dudutan iku, sampeyan bisa nggantine nganggo dudutan liya kang
+sampeyan karepake.) Buktine mangkene:
+\begin{enumerate}
+\item Upamana $X$ iku ukara, ``Yen $X$ bener, mula Sinterklas ana.''
+\item Upamana $X$ bener.
+\item Mula isi ukara kasebut bener; yaiku, yen $X$
+  bener, mula Sinterklas ana.
+\item Amarga kita nganggep $X$ bener, kanthi modus ponens saka
+  (2) lan~(3) kita bisa ndudut yen Sinterklas ana.
+\item Kita wis kasil ndeduksi (4), ``Sinterklas ana,'' saka
+  anggepan~(2), ``$X$ bener.'' Miturut bukti kondisional,
+  kita wis nuduhake: ``Yen $X$ bener, mula Sinterklas ana.''
+\item Nanging iki persis ukara~$X$. Dadi kita wis nuduhake yen
+  $X$ bener.
+\item Mula, miturut argumen (2)--(4) ing ndhuwur, Sinterklas ana.
+\end{enumerate}
+Yen gagasan iki diformalisasi kanthi ngganti ``bener'' dadi
+``!!{derivable},'' lan ``Sinterklas ana'' dadi~$!A$,
+kita oleh bukti teorema L\"ob. Carane yaiku ngetrapake lema
+titik tetep marang !!{formula}~$\OProv[\Th{T}](y) \lif !A$.
+Titik tetep saka formula kasebut cocog karo ukara~$X$ ing
+gambaran sadurunge.
+\end{explain}
+
+\begin{proof}[Bukti \olref{thm:lob}]
+Upamana $!A$ iku !!a{sentence} saengga $\Th{T}$ !!{derive}s
+$\OProv[\Th{T}](\gn{!A}) \lif !A$. Upamana $!B(y)$ iku
+!!{formula}~$\OProv[\Th{T}](y) \lif !A$, banjur gunakna lema titik
+tetep kanggo nemokake !!a{sentence}~$!D$ saengga $\Th{T}$
+!!{derive}s $!D \liff !B(\gn{!D})$. Mula saben pratelan ing
+ngisor iki !!{derivable} ing $\Th{T}$:
+\begin{align}
+  & !D \liff (\OProv[\Th{T}](\gn{!D}) \lif !A) \ollabel{L-1}\\
+  & \qquad \text{$!D$ iku titik tetep saka~$!B(y)$}\notag \\
+  & !D \lif (\OProv[\Th{T}](\gn{!D}) \lif !A) \ollabel{L-2}\\
+  & \qquad\text{saka \olref{L-1}}\notag\\
+  & \OProv[\Th{T}](\gn{!D \lif (\OProv[\Th{T}](\gn{!D}) \lif !A)}) \ollabel{L-3}\\
+  & \qquad \text{saka \olref{L-2} miturut sarat P1}\notag \\
+  & \OProv[\Th{T}](\gn{!D}) \lif \OProv[\Th{T}](\gn{\OProv[\Th{T}](\gn{!D}) \lif !A})
+  \ollabel{L-4}\\
+  &\qquad \text{saka \olref{L-3} kanthi sarat P2}\notag \\
+  & \OProv[\Th{T}](\gn{!D}) \lif (\OProv[\Th{T}](\gn{\OProv[\Th{T}](\gn{!D})}) \lif \OProv[\Th{T}](\gn{!A})) \ollabel{L-5}\\
+  &\qquad \text{saka \olref{L-4} kanthi P2 maneh} \notag\\
+& \OProv[\Th{T}](\gn{!D}) \lif \OProv[\Th{T}](\gn{\OProv[\Th{T}](\gn{!D})}) \ollabel{L-6}\\
+  & \qquad\text{miturut sarat !!{derivability} P3} \notag\\
+  & \OProv[\Th{T}](\gn{!D}) \lif \OProv[\Th{T}](\gn{!A}) \ollabel{L-7} \\
+  &\qquad\text{saka \olref{L-5} lan \olref{L-6}}\notag\\
+  & \OProv[\Th{T}](\gn{!A}) \lif !A \ollabel{L-8}\\
+  &\qquad\text{miturut anggepan ing teorema} \notag\\
+  & \OProv[\Th{T}](\gn{!D}) \lif !A \ollabel{L-9}\\
+  &\qquad\text{saka \olref{L-7} lan \olref{L-8}}\notag\\
+  & (\OProv[\Th{T}](\gn{!D}) \lif !A) \lif !D \ollabel{L-10}\\
+  & \qquad \text{saka \olref{L-1}}\notag \\
+  & !D \ollabel{L-11}\\
+  & \qquad\text{saka \olref{L-9} lan \olref{L-10}}\notag \\
+  & \OProv[\Th{T}](\gn{!D}) \ollabel{L-12}\\
+  & \qquad\text{saka \olref{L-11} miturut sarat~P1}\notag \\
+  & !A \qquad\qquad\text{saka \olref{L-8} lan \olref{L-12}}\notag
+\end{align}
+\end{proof}
+
+Kanthi teorema L\"ob, kita oleh bukti cekak kanggo teorema ora jangkep
+kapindho (kanggo teori kang nduweni predikat !!a{derivability} kang
+nyukupi sarat P1--P3): yen $\Th{T} \Proves
+\OProv[\Th{T}](\gn{\lfalse}) \lif \lfalse$, mula
+$\Th{T} \Proves \lfalse$. Yen $\Th{T}$ konsisten,
+$\Th{T} \Proves/ \lfalse$. Mula,
+$\Th{T} \Proves/ \OProv[\Th{T}](\gn{\lfalse}) \lif \lfalse$,
+yaiku $\Th{T} \Proves/ \OCon[\Th{T}]$. Teorema iki uga bisa
+digunakake kanggo nuduhake yen~$!H$, titik tetep saka
+$\OProv[\Th{T}](x)$, iku !!{derivable}. Amarga
+\begin{align*}
+  \Th{T} & \Proves \OProv[\Th{T}](\gn{!H}) \liff !H\\
+  \intertext{mligine}
+    \Th{T} & \Proves \OProv[\Th{T}](\gn{!H}) \lif !H
+\end{align*}
+mula miturut teorema L\"ob, $\Th{T} \Proves !H$.
+
+% Going in the other direction, for homework I
+% may ask you to work through a short proof of L\"ob's theorem, using
+% the second incompleteness theorem instead of the fixed-point lemma.
+
+\begin{prob}
+Upamana $\Th{T}$ iku teori kang diaksiomatisasi kanthi komputabel,
+lan $\OProv[\Th{T}]$ iku predikat !!a{derivability} kanggo
+$\Th{T}$. Gatekna patang pratelan ing ngisor iki:
+\begin{enumerate}
+\item Yen $T \Proves !A$, mula $T \Proves \OProv[\Th{T}](\gn{!A})$.
+\item $T \Proves !A \lif \OProv[\Th{T}](\gn{!A})$.
+\item Yen $T \Proves \OProv[\Th{T}](\gn{!A})$, mula $T \Proves !A$.
+\item $T \Proves \OProv[\Th{T}](\gn{!A}) \lif !A$
+\end{enumerate}
+Ing sarat-sarat apa saben pratelan iki bener?
+\end{prob}
+
+\end{document}

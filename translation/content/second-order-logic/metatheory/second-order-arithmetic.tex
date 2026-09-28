@@ -1,0 +1,148 @@
+% Part: second-order-logic
+% Chapter: metatheory
+% Section: second-order-arithmetic
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sol}{met}{spa}
+
+\olsection{Aritmetika Orde Kapindho}
+
+Elinga yen teori $\Th{PA}$ saka aritmetika Peano ngemot
+wolung aksioma saka~$\Th{Q}$,
+\begin{align*}
+& \lforall[x][\eq/[x'][\Obj 0]]\\
+& \lforall[x][\lforall[y][(\eq[x'][y'] \lif \eq[x][y])]]\\
+& \lforall[x][(\eq[x][\Obj 0] \lor \lexists[y][\eq[x][y']])]\\ 
+& \lforall[x][\eq[(x + \Obj 0)][x]]\\
+& \lforall[x][\lforall[y][\eq[(x + y')][(x + y)']]]\\
+& \lforall[x][\eq[(x \times \Obj 0)][\Obj 0]]\\
+& \lforall[x][\lforall[y][\eq[(x \times y')][((x \times y) + x)]]]\\
+& \lforall[x][\lforall[y][(x < y \liff \lexists[z][\eq[(z' + x)][y]])]]\\
+\intertext{ditambah kabeh ukara kanthi wujud}
+& (!A(\Obj 0) \land \lforall[x][(!A(x) \lif !A(x'))]) \lif \lforall[x][!A(x)].
+\end{align*}
+Kang pungkasan iku ``skema,'' yaiku pola kang ngasilake
+!!{sentence}s basa aritmetika kang cacahe tanpa wates,
+siji kanggo saben !!{formula}~$!A(x)$. Skema iki diarani
+\emph{skema aksioma induksi} (orde kapisan).
+Ing aritmetika Peano \emph{orde kapindho}~$\Th{PA^2}$,
+induksi bisa dinyatakake nganggo siji ukara.
+$\Th{PA^2}$ ngemot wolung aksioma kapisan ing ndhuwur
+ditambah \emph{aksioma induksi} (orde kapindho):
+\[
+\lforall[X][((X(\Obj 0) \land \lforall[x][(X(x) \lif X(x'))]) \lif \lforall[x][X(x)])].
+\]
+Iki nyatakake yen subhimpunan~$X$ saka !!{domain}
+ngemot~$\Assign{\Obj{0}}{M}$ lan, kanggo saben~$x \in \Domain{M}$
+kang kalebu ing subhimpunan kasebut, uga
+ngemot~$\Assign{\prime}{M}(x)$ (yaiku ``tutup tumrap
+panerus''), mula subhimpunan iku ngemot sakabehe unsur
+ing !!{domain} (yaiku $X = \Domain{M})$.
+
+Aksioma induksi njamin yen saben !!{structure} kang nyukupi
+aksioma iku mung ngemot !!{element}s saka~$\Domain{M}$
+kang pancen diwajibake dening aksioma, yaiku nilai
+saka~$\num{n}$ kanggo $n \in \Nat$. Model
+$\Th{PA^2}$ ora ngemot wilangan nonstandar.
+
+\begin{thm}
+\ollabel{thm:sol-pa-standard}
+Yen $\Sat{M}{\Th{PA^2}}$, mula $\Domain{M} =
+\Setabs{\Value{\num{n}}{M}}{n \in \Nat}$.
+\end{thm}
+
+\begin{proof}
+Upamana $N = \Setabs{\Value{\num{n}}{M}}{n \in \Nat}$, lan
+upamana $\Sat{M}{\Th{PA^2}}$. Mesthi wae, kanggo saben
+$n \in \Nat$, $\Value{\num{n}}{M} \in \Domain{M}$,
+mula $N \subseteq \Domain{M}$.
+
+Saiki buktekake inklusi arah kosok baline. Gatekna
+pangaji variabel $s$ kanthi $s(X) = N$. Miturut anggepan,
+\begin{align*}
+\Sat{M}{\lforall[X][((X(\Obj 0) \land \lforall[x][(X(x)
+      \lif X(x'))]) \lif \lforall[x][X(x)])]}, & \text{ mula}\\
+\Sat{M}{(X(\Obj 0) \land \lforall[x][(X(x) \lif X(x'))]) \lif
+  \lforall[x][X(x)]}[s]. & 
+\end{align*}
+Gatekna anteseden saka implikasi iki.
+$\Value{\Obj{0}}{M} \in N$, mula
+$\Sat{M}{X(\Obj{0})}[s]$. Konjungsi kapindho,
+$\lforall[x][(X(x) \lif X(x'))]$, uga dicukupi.
+Upamana $x \in N$. Miturut definisi~$N$,
+$x = \Value{\num{n}}{M}$ kanggo sawijining~$n$.
+Mula $\Assign{\prime}{M}(x) = \Value{\num{n+1}}{M} \in N$.
+Dadi, $\Assign{\prime}{M}(x) \in N$.
+
+Kita nduweni
+$\Sat{M}{X(\Obj 0) \land \lforall[x][(X(x) \lif X(x'))]}[s]$.
+Mula $\Sat{M}{\lforall[x][X(x)]}[s]$. Iki ateges
+kanggo saben $x \in \Domain{M}$, kita nduweni
+$x \in s(X) = N$. Dadi, $\Domain{M} \subseteq N$.
+\end{proof}
+
+\begin{cor}
+\ollabel{cor:sol-pa-categorical}
+Sembarang rong model saka~$\Th{PA^2}$ iku isomorfik.
+\end{cor}
+
+\begin{proof}
+Miturut \olref{thm:sol-pa-standard}, domain saben model saka
+$\Th{PA^2}$ kapenuhan dening $\Value{\num{n}}{M}$.
+Saben model kaya mangkono uga model saka~$\Th{Q}$.
+Miturut \olref[mod][mar][stm]{prop:thq-standard}, saben
+model kasebut standar, yaiku isomorfik karo~$\Struct{N}$.
+\end{proof}
+
+Ing ndhuwur kita netepake $\Th{PA^2}$ minangka teori kang ngemot
+wolung aksioma aritmetika kapisan ditambah aksioma induksi orde
+kapindho. Sejatine, amarga daya ungkap logika orde kapindho,
+aritmetika Peano orde kapindho mung mbutuhake \emph{rong aksioma
+kapisan} saka aksioma aritmetika mau, ditambah induksi.
+
+\begin{prop}\ollabel{prop:sol-pa-definable}
+Upamana $\Th{PA^{2\dagger}}$ iku teori orde kapindho kang ngemot
+rong aksioma aritmetika kapisan (aksioma panerus) lan aksioma
+induksi orde kapindho. Mula $\le$, $+$, lan $\times$ bisa
+didefinisikake ing $\Th{PA^{2\dagger}}$.
+\end{prop}
+
+\begin{proof}
+Kanggo nuduhake yen $\le$ bisa didefinisikake, kita kudu
+nemokake formula~$!A_\le(x, y)$ saengga
+$\Sat{N}{!A_\le(\num n, \num m)}$ yen lan mung yen
+$n \le m$. Gatekna formula
+\[
+!B(x, Y) \ident Y(x) \land \lforall[y][(Y(y) \lif Y(y'))]
+\]
+Cetha yen $!B(\num n, Y)$ dicukupi dening sawijining
+himpunan $Y \subseteq \Nat$, mula
+$\Setabs{m}{n \le m} \subseteq Y$. Kosok baline ora kudu
+bener, amarga himpunan kang ngemot buntut iki durung mesthi
+tutup tumrap panerus ing unsur liyane. Nanging buntut iku
+dhewe ngemot titik wiwitane lan tutup tumrap panerus, mula
+kita bisa njupuk $!A_\le(x, y) \ident
+\lforall[Y][(!B(x, Y) \lif Y(y))]$.
+
+Kanggo nuduhake yen tambah bisa didefinisikake, gatekna
+$k+l=m$ yen lan mung yen ana fungsi $u$ saengga
+$u(0)=k$, $u(n')=u(n)'$ kanggo saben $n$, lan
+$m = u(l)$. Kita bisa nggunakake ekuivalensi iki kanggo
+netepake tambah ing $\Th{PA^{2\dagger}}$ nganggo formula
+ing ngisor iki:
+\[
+!A_+(x,y,z) \ident \lexists[u][(u(\Obj 0)=x \land \lforall[w][u(x')=u
+ (x)'] \land u(y)=z)]
+\] 
+Cetha yen $\Sat{N}{!A_+(\num k, \num l, \num m)}$
+yen lan mung yen $k+l=m$.
+\end{proof}
+
+\begin{prob}
+Rampungna bukti \olref[sol][met][spa]{prop:sol-pa-definable}.
+\end{prob}
+
+\end{document}

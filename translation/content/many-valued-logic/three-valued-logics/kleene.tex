@@ -1,0 +1,199 @@
+% Part: many-valued-logic
+% Chapter: three-valued-logics
+% Section: kleene
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{thr}{skl}
+
+\olsection{Logika-logika Kleene}
+
+Stephen Kleene ngenalake rong logika telung nilai kang adhedhasar
+pamikiran yen nilai kabeneran iku asil saka prosedur komputasi:
+sawijining prosedur bisa ngasilake $\True$ utawa $\False$, nanging
+uga bisa ora mandheg. Yen mangkono, nilai kabeneran kang cocog ora
+katetepake, diwakili dening nilai~$\Undef$.
+
+Kanggo ngitung negasi proposisi~$!A$, kita luwih dhisik ngitung
+nilainé~$!A$, banjur ngasilake kosok baline. Yen komputasi $!A$
+ora mandheg, sakabehe prosedur uga ora mandheg: mula negasi
+$\Undef$ yaiku $\Undef$.
+
+Kanggo ngitung konjungsi $!A \land !B$, ana rong cara. Cara kapisan,
+kita bisa ngitung~$!A$ luwih dhisik, banjur $!B$; asile $\True$
+yen asil loro-lorone~$\True$, lan $\False$ yen ora mangkono.
+Yen salah siji komputasi ora mandheg, sakabehe prosedur uga ora
+mandheg. Mula ing cara iki, yen salah siji komponen konjungsi
+ora katetepake, konjungsine uga ora katetepake. Semono uga
+kanggo disjungsi.
+
+Nanging yen kita bisa ngetung $!A$ lan $!B$ bebarengan,
+kita bisa oleh asil luwih cepet. Yen salah siji prosedur mandheg
+lan ngasilake $\False$, kita bisa mandheg, amarga konjungsine
+mesthi salah. Mula konjungsi kang nduweni siji komponen salah
+iku salah, sanajan komponen liyane ora katetepake. Semono uga,
+nalika ngitung disjungsi bebarengan, kita bisa mandheg sawise
+salah siji prosedur ngasilake nilai bener: disjungsine mesthi
+bener. Dadi ing tafsir iki kita bisa ngerti asil pratelan majemuk,
+sanajan salah siji komponene ora katetepake. Ing kene $\Undef$
+bisa diwaca ``durung dingerteni'', dudu ``ora katetepake''.
+
+Rong tafsir iki ngasilake logika Kleene kang kuwat lan kang
+ringkih. Kondisional ditetepake padha karo $\lnot !A \lor !B$.
+
+\begin{defn}
+\emph{Logika Kleene kang kuwat}~$\LogKs$ ditetepake nganggo matriks iki:
+\begin{enumerate}
+  \item Perangan tanpa tetapan saka basa proposisional baku
+  $\Lang L_0$ kang ngemot $\lnot$, $\land$, $\lor$, $\lif$.
+  \item Himpunan nilai kabeneran $V = \{\True, \Undef, \False\}$.
+  \item $\True$ mung siji-sijine nilai pinilih, yaiku $V^+ = \{\True\}$.
+  \item Fungsi kabeneran diwenehake dening tabel iki:
+  \begin{center}
+    \begin{tabular}{c|c} 
+      $\tf{\lnot}$ & \\ 
+      \hline  
+      $\True$ & $\False$ \\ 
+      $\Undef$ & $\Undef$ \\
+      $\False$ & $\True$ 
+    \end{tabular}
+    \quad
+    \begin{tabular}{c|ccc} 
+      $\tf{\land}[\LogKs]$ & $\True$ & $\Undef$ & $\False$ \\ 
+      \hline 
+      $\True$ & $\True$ & $\Undef$ & $\False$ \\ 
+      $\Undef$ & $\Undef$ & $\Undef$ & $\False$\\ 
+      $\False$ & $\False$ & $\False$ & $\False$ 
+    \end{tabular}
+    \\[2ex]
+    \begin{tabular}{c|ccc} 
+      $\tf{\lor}[\LogKs]$ & $\True$ & $\Undef$ & $\False$ \\ 
+      \hline 
+      $\True$ & $\True$ & $\True$ & $\True$ \\ 
+      $\Undef$ & $\True$ & $\Undef$ & $\Undef$ \\
+      $\False$ & $\True$ & $\Undef$ & $\False$ 
+    \end{tabular}
+    \quad
+    \begin{tabular}{c|ccc} 
+      $\tf{\lif}[\LogKs]$ & $\True$ & $\Undef$ & $\False$ \\ 
+      \hline 
+      $\True$ & $\True$ & $\Undef$ & $\False$ \\ 
+      $\Undef$ & $\True$ & $\Undef$ & $\Undef$  \\ 
+      $\False$ & $\True$ & $\True$ & $\True$ 
+    \end{tabular}
+  \end{center} 
+\end{enumerate}
+\end{defn}
+
+\begin{defn}
+\emph{Logika Kleene kang ringkih}~$\LogKw$ ditetepake nganggo matriks iki:
+\begin{enumerate}
+  \item Perangan tanpa tetapan saka basa proposisional baku
+  $\Lang L_0$ kang ngemot $\lnot$, $\land$, $\lor$, $\lif$.
+  \item Himpunan nilai kabeneran $V = \{\True, \Undef, \False\}$.
+  \item $\True$ mung siji-sijine nilai pinilih, yaiku $V^+ = \{\True\}$.
+  \item Fungsi kabeneran diwenehake dening tabel iki:
+  \begin{center}
+    \begin{tabular}{c|c} 
+      $\tf{\lnot}$ & \\ 
+      \hline  
+      $\True$ & $\False$ \\ 
+      $\Undef$ & $\Undef$ \\
+      $\False$ & $\True$ 
+    \end{tabular}
+    \quad
+    \begin{tabular}{c|ccc} 
+      $\tf{\land}[\LogKw]$ & $\True$ & $\Undef$ & $\False$ \\ 
+      \hline 
+      $\True$ & $\True$ & $\Undef$ & $\False$ \\ 
+      $\Undef$ & $\Undef$ & $\Undef$ & $\Undef$\\ 
+      $\False$ & $\False$ & $\Undef$ & $\False$ 
+    \end{tabular}
+    \\[2ex]
+    \begin{tabular}{c|ccc} 
+      $\tf{\lor}[\LogKw]$ & $\True$ & $\Undef$ & $\False$ \\ 
+      \hline 
+      $\True$ & $\True$ & $\Undef$ & $\True$ \\ 
+      $\Undef$ & $\Undef$ & $\Undef$ & $\Undef$ \\
+      $\False$ & $\True$ & $\Undef$ & $\False$ 
+    \end{tabular}
+    \quad
+    \begin{tabular}{c|ccc} 
+      $\tf{\lif}[\LogKw]$ & $\True$ & $\Undef$ & $\False$ \\ 
+      \hline 
+      $\True$ & $\True$ & $\Undef$ & $\False$ \\ 
+      $\Undef$ & $\Undef$ & $\Undef$ & $\Undef$  \\ 
+      $\False$ & $\True$ & $\Undef$ & $\True$ 
+    \end{tabular}
+  \end{center} 
+\end{enumerate}
+\end{defn}
+
+\begin{prop}
+  $\LogKs$ lan $\LogKw$ ora nduweni tautologi.
+\end{prop}
+
+\begin{proof}
+  Yen $\pAssign v(p) = \Undef$ kanggo kabeh !!{propositional variable}s~$p$,
+  saben formula~$!A$ ing perangan basa iki bakal nduweni nilai
+  kabeneran~$\pValue v(!A) = \Undef$, amarga
+  \[
+    \tf{\lnot}(\Undef) = \tf{\lor}(\Undef, \Undef) = \tf{\land}(\Undef,
+  \Undef) = \tf{\lif}(\Undef, \Undef) = \Undef
+  \]
+  ing loro logika. Amarga $\Undef \notin V^+$ ing $\LogKs$ lan
+  $\LogKw$, miturut !!{valuation} iki $!A$ ora oleh nilai pinilih.
+\end{proof}
+
+Sanajan logika Kleene kang ringkih lan kang kuwat ora nduweni
+tautologi, sesambungan konsekuensine ora trivial.
+
+\begin{prob}
+  Sesambungan endi ing ngisor iki kang lumaku ing (a) logika Kleene
+  kang kuwat lan (b) logika Kleene kang ringkih? Wenehana tabel
+  kabeneran kanggo saben sesambungan.
+  \begin{enumerate}
+    \item $p, p \lif q \Entails q$
+    \item $p \lor q, \lnot p \Entails q$
+    \item $p \land q \Entails p$
+    \item $p \Entails p \land p$
+    \item $p \Entails p \lor q$
+  \end{enumerate}
+\end{prob}
+
+Dmitry Bochvar napsirake $\Undef$ minangka ``tanpa makna'' lan nyoba
+nggunakake kanggo ngrampungake paradoks kayata paradoks Pembohong,
+kanthi netepake ukara paradoks nduweni nilai~$\Undef$. Dheweke
+ngenalake logika kang pokoke logika Kleene kang ringkih, nanging
+ditambahi konektif liyane. Loro ing antarane yaiku ``negasi njaba''
+lan operator ``ora katetepake'':
+\begin{center}
+  \begin{tabular}{c|c} 
+    $\tf{\sim}$ & \\ 
+    \hline  
+    $\True$ & $\False$ \\ 
+    $\Undef$ & $\True$ \\
+    $\False$ & $\True$ 
+  \end{tabular}
+\quad
+  \begin{tabular}{c|c} 
+    $\tf{+}$ & \\ 
+    \hline  
+    $\True$ & $\False$ \\ 
+    $\Undef$ & $\True$ \\
+    $\False$ & $\False$ 
+  \end{tabular}
+\end{center}
+
+\begin{prob}
+  Apa $\sim$ ing logika Bochvar bisa ditetepake nganggo $\lnot$
+  lan~$+$? Tegesé, apa ana !!a{formula} kang mung ngemot
+  !!{propositional
+  variable}~$p$ lan ora ngemot $\sim$, nanging
+  mesthi nduweni nilai kabeneran padha karo~$\mathord{\sim}p$?
+  Wenehana tabel kabeneran kanggo mbuktekake jawabanmu.
+\end{prob}
+
+\end{document}

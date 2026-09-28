@@ -1,0 +1,99 @@
+% Part: normal-modal-logic
+% Chapter: axioms-systems
+% Section: logics-proofs
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{prf}{prf}
+
+\olsection{\usetoken{P}{derivation} lan Sistem Modal}
+
+Kaping pisan, kita ndéfinisikake apa iku !!a{derivation}
+kanggo logika modal normal. Sacara kasar, !!a{derivation} yaiku
+runtutan !!{formula}s kang saben !!{element} minangka salah siji
+instansi substitusi saka sawijining \emph{aksioma}, utawa ngetutake
+saka !!{element}s sadurunge miturut salah siji saka sawetara aturan
+inferensi. Kanggo logika modal normal, kabeh instansi tautologi
+\iftag{prvDiamond}{, \Ax{K}, lan~\Dual{}}{ lan~\Ax{K}}
+dianggep aksioma. Iki ngasilake sistem modal~$\Log{K}$, yaiku logika
+modal normal paling cilik. Nanging, kita bisa nambah aksioma liyane
+kanggo ngasilake sistem liyane. Aturane tansah modus ponens~\MP{}
+lan nesesitasi~\Nec.
+
+\begin{defn}
+  Kanggo sistem modal $\Log{K} !A_1 \dots !A_n$ lan !!a{formula}~$!B$,
+  kita ngarani $!B$ \emph{!!{derivable}} ing $\Log{K} !A_1 \dots
+  !A_n$, katulis $\Log{K} !A_1 \dots !A_n \Proves !B$, yen lan mung
+  yen ana !!{formula}s $!C_1$, \dots, $!C_k$ saengga $!C_k = !B$
+  lan saben $!C_i$ iku instansi tautologis, utawa instansi saka salah
+  siji $\Ax{K}$,\iftag{prvDiamond}{ $\Dual$,}{} $!A_1$,
+  \dots, $!A_n$, utawa ngetutake saka !!{formula}s sadurunge
+  kanthi aturan \MP{} utawa~\Nec.
+\end{defn}
+
+Proposisi iki ngidinake kita nuduhake yen $!B \in \Sigma$
+kanthi menehi $\Sigma$-!!{derivation} kanggo~$!B$.
+
+\begin{prop}
+  $\Log{K} !A_1 \dots !A_n = \Setabs{!B}{\Log{K} !A_1 \dots !A_n \Proves !B}$.
+\end{prop}
+
+\begin{proof}
+  Kita nggunakake induksi marang dawa !!{derivation}s kanggo nuduhake
+  yen $\Setabs{!B}{\Log{K} !A_1 \dots !A_n \Proves !B} \subseteq
+  \Log{K} !A_1 \dots !A_n$.
+
+Yen !!{derivation} saka~$!B$ dawane~$1$, mung ngemot siji
+  !!{formula}. !!{formula} iku ora bisa ngetutake formula sadurunge
+  miturut \MP{} utawa \Nec, mula kudu dadi instansi tautologis,
+  instansi \Ax{K},\iftag{prvDiamond}{ $\Dual$,}{} utawa instansi
+  saka salah siji $!A_1$, \dots,~$!A_n$. Nanging
+  $\Log{K}!A_1\dots!A_n$ uga ngemot kabeh iku, mula
+  $!B \in \Log{K}!A_1 \dots !A_n$.
+
+Yen !!{derivation} saka $!B$ dawane~$> 1$, $!B$ uga
+  bisa diasilake kanthi \MP{} utawa \Nec{} saka !!{formula}s kang
+  ora dadi baris pungkasan ing !!{derivation}. Yen $!B$ ngetutake
+  saka $!C$ lan $!C \lif !B$ (kanthi \MP), mula $!C$ lan
+  $!C \lif !B \in \Log{K}!A_1 \dots !A_n$ miturut hipotesis induksi.
+  Nanging saben logika modal ditutup marang modus ponens, mula
+  $!B \in \Log{K}!A_1 \dots !A_n$. Yen $!B \equiv \Box !C$ ngetutake
+  saka $!C$ kanthi \Nec, mula $!C \in \Log{K}!A_1 \dots !A_n$
+  miturut hipotesis induksi. Nanging saben logika modal normal
+  ditutup marang $\Nec$, mula $!B \in \Log{K}!A_1\dots!A_n$.
+
+Inklusi kosok baline dituduhake kanthi mbuktekake yen
+  $\Sigma = \Setabs{!B}{\Log{K} !A_1 \dots !A_n \Proves !B }$ iku
+  logika modal normal kang ngemot kabeh instansi saka $!A_1$,
+  \dots, $!A_n$; miturut definisi, $\Log{K} !A_1 \dots !A_n$
+  iku logika paling cilik kang nyukupi syarat kasebut.
+  \begin{enumerate}
+    \item Saben tautologi~$!B$ iku instansi tautologis, mula
+      $\Log{K}!A_1\dots!A_n \Proves !B$, saengga $\Sigma$ ngemot kabeh
+      tautologi.
+    \item Yen $\Log{K}!A_1\dots!A_n \Proves !C$ lan
+      $\Log{K}!A_1\dots!A_n \Proves !C \lif !B$, mula
+      $\Log{K}!A_1\dots!A_n \Proves !B$: Gabungna !!{derivation}
+      saka $!C$ karo derivasi saka $!C \lif !B$, banjur tambahna
+      baris~$!B$. Baris pungkasan iku dibenerake dening \MP{}.
+      Dadi $\Sigma$ ditutup marang modus ponens.
+    \item Yen $!B$ nduweni !!a{derivation}, saben instansi substitusi
+      saka~$!B$ uga nduweni !!a{derivation}: terapna substitusi marang
+      saben !!{formula} ing !!{derivation}. (Gladhen: buktekna kanthi
+      induksi marang dawa !!{derivation}s yen asil kasebut uga
+      !!{derivation} kang bener.) Dadi $\Sigma$ ditutup marang
+      substitusi seragam. (Saiki kita wis netepake yen $\Sigma$
+      nyukupi kabeh syarat logika modal.)
+    \item Kita duwe $\Log{K}!A_1\dots!A_n \Proves \Ax{K}$, mula
+      $K \in \Sigma$.
+    \tagitem{prvDiamond}{Kita duwe
+      $\Log{K}!A_1\dots!A_n \Proves \Dual$, mula $\Dual \in \Sigma$.}{}
+    \item Yen $\Log{K}!A_1\dots!A_n \Proves !C$, baris tambahan
+      $\Box !C$ dibenerake dening~\Nec. Mula $\Sigma$ ditutup
+      marang~\Nec. Dadi $\Sigma$ normal.
+  \end{enumerate}
+\end{proof}
+
+\end{document}

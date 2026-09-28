@@ -1,0 +1,137 @@
+% Part: normal-modal-logic
+% Chapter: filtrations
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{fil}{int}
+
+\olsection{Pambuka}
+
+Pitakon wigati ngenani sawijining logika yaiku apa logika iku bisa
+diputusake, yaiku apa ana prosedur efektif kang bisa mangsuli pitakon
+``apa !!{formula} iki valid?'' Logika proposisional bisa diputusake:
+kita bisa nguji kanthi efektif apa !!a{formula} iku tautologi kanthi
+mbangun tabel bebener, lan kanggo !!{formula} tartamtu tabel kasebut
+winates. Nanging, ora langsung cetha kepiye nguji apa sawijining
+formula modal bener ing kabeh model, amarga cacah modele tanpa wates.
+Kita bisa ndhaptar kabeh model winates kang relevan kanggo sawijining
+formula, amarga mung panetepan himpunan bagean jagad marang
+!!{propositional variable}s kang pancen katon ing !!{formula} iku
+relevan. Yen relasi aksesibilitas wis tetep, saben panetepan $V(p)$
+sing mungkin mung sawijining himpunan bagean saka~$W$, lan yen
+$\card{W} = n$ ana $2^n$ pilihan. Yen !!{formula}~$!A$ ngemot $m$
+!!{propositional
+  variable}s, ana $2^{nm}$ model beda kanthi~$n$ jagad. Kanggo saben
+model, kita bisa nguji apa~$!A$ bener ing kabeh jagad kanthi ngetung
+nilai bebener~$!A$ ing saben jagad. Mesthi wae, kita uga kudu mriksa
+kabeh relasi aksesibilitas kang mungkin, nanging cacah relasi ing~$n$
+jagad uga winates (persise, cacah himpunan bagean saka $W \times W$,
+yaiku $2^{n^2}$).
+
+Yen kang kita teliti dudu logika~\Log{K}, nanging logika kang
+ditepakake dening sawijining kelas model (upamane model refleksif lan
+transitif), kita uga kudu bisa nguji apa relasi aksesibilitas iku saka
+jinis kang bener. Iki bisa ditindakake yen bingkai kang kita teliti
+bisa didéfinisikake dening !!{formula}s modal (upamane kanthi nguji apa
+\Ax{T} lan \Ax{4} valid ing bingkai kasebut). Dadi, kita bisa nlusuri
+kabeh bingkai winates, nguji apa saben bingkai kalebu kelas kang
+diteliti, banjur ndhaptar kabeh model kang mungkin ing bingkai iku
+lan nguji apa $!A$ bener ing saben model. Yen ora, mandhega:
+$!A$ ora valid ing kelas model kang diteliti.
+
+Ana masalah karo gagasan iki: kita ora ngerti kapan, yen pancen ana,
+panelusuran bisa dipungkasi. Yen !!{formula} nduweni kontramodel
+winates, prosedur kita bakal nemokake. Nanging yen ora nduweni
+kontramodel winates, kita ora bakal entuk jawaban. !!{formula} iku bisa
+wae valid (ora ana kontramodel babar pisan), utawa mung nduweni
+kontramodel tanpa wates kang ora bakal kita priksa. Masalah iki bisa
+dirampungi yen kita bisa nuduhake yen saben !!{formula} kang nduweni
+kontramodel uga nduweni kontramodel winates. Yen mangkono, kita kandha
+yen logika iku nduweni \emph{sipat model winates}.
+
+Nanging kepiye mbuktekake yen sawijining logika nduweni sipat model
+winates? Salah siji cara yaiku nemokake cara ngowahi (kontra)model
+tanpa wates saka~$!A$ dadi model winates. Yen iki bisa ditindakake,
+saben ana model kang $!A$ ora bener, model winates kang diasilake uga
+ndadekake $!A$ ora bener. Model winates iku bakal katon ing dhaptar
+kabeh model winates, lan pungkasane kita bisa nemtokake kanggo saben
+formula kang ora valid yen pancen ora valid. Prosedur iki ora bakal
+mandheg yen formulane valid. Yen saliyane iku kita bisa nuduhake yen
+ana ukuran maksimum kanggo model winates kang diwenehake prosedur,
+lan yen ukuran maksimum iku mung gumantung marang
+!!{formula}~$!A$, kita bakal duwe wates ukuran kanggo nguji model
+winates nalika nggoleki kontramodel. Yen nganti wates kasebut kita
+durung nemokake kontramodel, tegesé pancen ora ana. Mula prosedur kita
+bakal bisa mutusake pitakon ``apa $!A$ valid?'' kanggo sembarang
+!!{formula}~$!A$.
+
+Strategi kang kerep bisa ngowahi struktur tanpa wates dadi struktur
+winates yaiku ``ngidhentifikasi'' !!{element}s saka struktur kang
+prilakune padha tumrap perkara kang relevan. Yen ana tanpa wates
+jagad ing~$\mModel{M}$ kang prilakune padha tumrap perkara kang
+relevan, bisa uga kita nglumpukake \emph{kabeh} jagad iku dadi
+sawetara ``kelas'' kang cacahé winates (senajan saben kelas bisa tanpa
+wates). Kanthi tembung liya, kita kudu mbagi himpunan jagad kanthi
+cara kang trep, yaiku saben kelas bisa ngemot tanpa wates jagad,
+nanging cacah kelase winates. Banjur kita netepake
+model anyar~$\mModel{M^*}$ kang jagade yaiku kelas-kelas kasebut.
+Kelas kang cacahé winates ing model lawas menehi jagad kang cacahé
+winates ing model anyar, yaiku model winates. Sebuta kelas kang ngemot
+jagad~$w$ kanthi $[w]$. Kita kepengin $\mSat{M}{!A}[w]$ yen lan mung
+yen $\mSat{M^*}{!A}[{[w]}]$, amarga kita kepengin model anyar dadi
+kontramodel tumrap~$!A$ yen model lawas uga mangkono. Kanggo iki,
+kita kudu netepake pambagian kelas lan relasi aksesibilitas
+saka~$\mModel{M^*}$ kanthi trep.
+
+Kanggo ndeleng cara kerjane, upamane dhisik relasi aksesibilitas iku
+universal. $\mSat{M}{\Box !B}[w]$ yen lan mung yen kanggo saben
+$v \in W$, $\mSat{M}{!B}[v]$; padha uga kanggo $\mModel{M^*}$,
+nanging nganggo $[w]$ lan $[v]$. Minangka gagasan wiwitan, anggepa
+loro jagad $u$ lan $v$ ekuivalen (kalebu kelas kang padha) yen loro-lorone
+sarujuk tumrap kabeh !!{propositional variable}s ing~$\mModel{M}$,
+yaiku $\mSat{M}{p}[u]$ yen lan mung yen $\mSat{M}{p}[v]$.
+Tetepa $V^*(p) = \Setabs{[w]}{\mSat{M}{p}[w]}$. Tujuwan kita yaiku
+nuduhake $\mSat{M}{!A}[w]$ yen lan mung yen
+$\mSat{M^*}{!A}[{[w]}]$. Mesthi iki dibuktekake kanthi induksi:
+kasus dhasar yaiku $!A \equiv p$. Sepisan, upamane
+$\mSat{M}{p}[w]$. Banjur $[w] \in V^*(p)$ miturut definisi, mula
+$\mSat{M^*}{p}[{[w]}]$. Saiki upamane
+$\mSat{M^*}{p}[{[w]}]$. Iki ateges $[w] \in V^*(p)$, yaiku kanggo
+sawetara $v$ kang ekuivalen karo~$w$, $\mSat{M}{p}[v]$. Nanging
+``$w$ ekuivalen karo $v$'' ateges ``$w$ lan $v$ ndadekake kabeh
+!!{propositional variable}s kang padha bener,'' mula
+$\mSat{M}{p}[w]$. Saiki kanggo langkah induksi, upamane $!A
+\ident \lnot !B$. Banjur $\mSat{M}{\lnot !B}[w]$ yen lan mung yen
+$\mSat/{M}{!B}[w]$; yen lan mung yen
+$\mSat/{M^*}{!B}[{[w]}]$ (miturut hipotesis induksi); yen lan mung yen
+$\mSat{M^*}{\lnot !B}[{[w]}]$. Padha uga tumrap operator nonmodal
+liyane. Iki uga lumaku kanggo $\Box$: upamane
+$\mSat{M^*}{\Box
+  !B}[{[w]}]$. Iki ateges kanggo saben $[u]$,
+$\mSat{M^*}{!B}[{[u]}]$. Miturut hipotesis induksi, kanggo saben $u$,
+$\mSat{M}{!B}[u]$. Mula, $\mSat{M}{\Box !B}[w]$.
+
+Ing kasus umum, nalika kita uga kudu netepake relasi aksesibilitas
+kanggo $\mModel{M^*}$, perkarane luwih rumit. Model~$\mModel{M^*}$
+bakal kita sebut \emph{filtrasi} yen relasi aksesibilitase~$R^*$
+nyukupi sarat kang dibutuhake supaya bukti induksi ing ndhuwur lumaku.
+Banjur saben filtrasi~$\mModel{M^*}$ ndadekake $!A$ bener ing $[w]$
+yen lan mung yen $\mModel{M}$ ndadekake $!A$ bener ing~$w$. Nanging
+saiki kita uga kudu nuduhake yen filtrasi \emph{ana}, yaiku kita bisa
+netepake~$R^*$ saengga nyukupi sarat kang dibutuhake. Supaya cara iki
+bisa lumaku, jagad $u$ lan $v$ kudu dianggep ekuivalen ora mung yen
+padha sarujuk tumrap kabeh !!{propositional variable}s, nanging uga
+tumrap kabeh sub-!!{formula}s saka~$!A$. Amarga $!A$ mung nduweni
+sub-!!{formula}s kang cacahé winates, filtrasi uga dijamin winates.
+Filtrasi bisa ditepakake kanthi luwih saka siji cara. Supaya relasi
+aksesibilitas filtrasi nyukupi sipat kang dibutuhake (upamane
+refleksif, transitif, lan sapanunggalane), kita kudu milih definisi
+kanggo~$R^*$ kanthi ngati-ati.
+
+
+\end{document}
+
+

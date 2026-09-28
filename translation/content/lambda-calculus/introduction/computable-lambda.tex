@@ -1,0 +1,52 @@
+% Part: lambda-calculus
+% Chapter: introduction
+% Section: computable-lambda
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{int}{lrp}
+\olsection{Fungsi kang Bisa Diitung iku \usetoken{S}{lambda definable}}
+
+\begin{thm}
+\ollabel{thm:computable-lambda}
+Saben fungsi parsial kang bisa diitung iku
+!!{lambda definable}.
+\end{thm}
+
+\begin{proof}
+Kita kudu nuduhake yen saben fungsi parsial kang
+bisa diitung~$f$ !!{lambda defined} dening sawijining
+suku lambda~$F$. Miturut teorema wujud normal
+Kleene, cukup nuduhake yen saben fungsi rekursif
+primitif !!{lambda defined} dening sawijining suku
+lambda, banjur yen kelas fungsi kang
+!!{lambda definable} katutup tumrap komposisi
+kang trep lan panelusuran tanpa wates. Kanggo
+nuduhake yen saben fungsi rekursif primitif
+!!{lambda defined} dening sawijining suku lambda,
+cukup nuduhake yen fungsi-fungsi wiwitan iku
+!!{lambda definable}, lan yen kelas fungsi parsial
+kang !!{lambda definable} katutup tumrap komposisi,
+rekursi primitif, lan panelusuran tanpa wates.
+\end{proof}
+
+Kita bakal nggunakake notasi kang luwih lumrah
+supaya bukti sabanjure luwih gampang diwaca.
+Umpamane, kita bakal nulis $M(x, y, z)$
+tinimbang $Mxyz$. Senajan notasi iki menehi
+gambaran tartamtu, elinga yen suku ing
+kalkulus lambda tanpa jinis ora nduweni
+aritas kang tetep; mula kanggo suku~$M$
+kang padha, nulis $M(x,y)$ utawa
+$M(x,y,z,w)$ padha-padha lumrah.
+Nanging notasi iki nuduhake yen kita lagi
+nganggep $M$ minangka fungsi telung variabel,
+lan mbantu njlentrehake maksud definisi.
+Kanthi cara kang padha, kita bakal nyebut
+``netepake $M$ kanthi $M(x,y,z) = \dots$''
+tinimbang ``netepake $M$ kanthi $M =
+\lambd[x][\lambd[y][\lambd[z][\dots]]]$.''
+
+\end{document}

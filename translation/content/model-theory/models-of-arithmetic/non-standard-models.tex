@@ -1,0 +1,260 @@
+% Part: model-theory
+% Chapter: models-of-arithmetic
+% Section: non-standard-models
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{mar}{nst}
+\section{Model Nonstandar}
+
+\begin{explain}
+Kita nyebut !!a{structure}
+kanggo $\Lang{L_A}$ standar
+yen isomorfis
+karo~$\Struct{N}$.
+Yen !!a{structure}
+ora isomorfis
+karo~$\Struct{N}$,
+struktur iku diarani
+nonstandar.
+\end{explain}
+
+\begin{defn}
+!!{structure}~$\Struct{M}$
+kanggo $\Lang{L_A}$
+iku \emph{nonstandar}
+yen ora isomorfis
+karo~$\Struct{N}$.
+!!{element}s
+$x \in \Domain{M}$
+kang padha karo
+$\Value{\num{n}}{M}$
+kanggo sawenehing
+$n \in \Nat$
+diarani \emph{wilangan standar}
+(saka $\Struct{M}$),
+dene kang ora mangkono
+diarani \emph{wilangan nonstandar}.
+\end{defn}
+
+\begin{explain}
+Miturut
+\olref[stm]{prop:standard-domain},
+saben !!{structure} standar
+kanggo~$\Lang{L_A}$
+mung ngemot !!{element}s
+standar. Mula, yen
+!!{structure} ngemot
+!!{element} nonstandar,
+!!{structure} iku mesthi
+nonstandar.
+Kosok baline ora mesthi:
+struktur nonstandar bisa
+mung ngemot unsur standar,
+kaya kang dituduhake
+dening gladhen ing bagean
+sadurunge.
+Cathetan koreksi sumber OLPL-097:
+sumber mratelakake kosok baline
+kang ora bener tanpa
+hipotesis tambahan.
+\end{explain}
+
+\begin{prop}
+Yen !!a{structure}~$\Struct{M}$
+kanggo $\Lang{L_A}$
+ngemot wilangan nonstandar,
+$\Struct{M}$ iku nonstandar.
+\end{prop}
+
+\begin{proof}
+Upamakna ora mangkono,
+yaiku $\Struct{M}$
+standar nanging ngemot
+wilangan nonstandar~$x$.
+Jupuken isomorfisme
+$g\colon \Nat \to \Domain{M}$.
+Kanthi gampang bisa
+dideleng (lumantar induksi
+tumrap~$n$) yen
+$g(\Value{\num{n}}{N}) =
+\Value{\num{n}}{M}$.
+Kanthi tembung liya,
+$g$ nggawa wilangan
+standar saka~$\Struct{N}$
+menyang wilangan standar
+saka~$\Struct{M}$.
+Yen $\Struct{M}$
+ngemot wilangan nonstandar,
+$g$ ora bisa
+!!{surjective},
+kosok balen karo hipotesis.
+\end{proof}
+
+\begin{prob}
+Elinga yen $\Th{Q}$
+ngemot aksioma-aksioma
+\begin{align*}
+& \lforall[x][\lforall[y][(\eq[x'][y'] \lif \eq[x][y])]] \tag{$!Q_1$}\\
+& \lforall[x][\eq/[\Obj 0][x']] \tag{$!Q_2$}\\
+& \lforall[x][(\eq[x][\Obj 0] \lor \lexists[y][\eq[x][y']])] \tag{$!Q_3$}
+\end{align*}
+Wenehana !!{structure}s~$\Struct{M_1}$,
+$\Struct{M_2}$, $\Struct{M_3}$
+saéngga
+\begin{enumerate}
+\item $\Sat{M_1}{!Q_1}$, $\Sat{M_1}{!Q_2}$, $\Sat/{M_1}{!Q_3}$;
+\item $\Sat{M_2}{!Q_1}$, $\Sat/{M_2}{!Q_2}$, $\Sat{M_2}{!Q_3}$; lan
+\item $\Sat/{M_3}{!Q_1}$, $\Sat{M_3}{!Q_2}$, $\Sat{M_3}{!Q_3}$;
+\end{enumerate}
+Cetha yen kanggo saben
+struktur iku, sampeyan mung
+kudu nemtokake
+$\Assign{\Obj{0}}{M_i}$
+lan $\Assign{\prime}{M_i}$.
+\end{prob}
+
+\begin{explain}
+Cukup gampang nemtokake
+!!{structure}s nonstandar
+kanggo $\Lang{L_A}$.
+Upamane, jupuken
+struktur kanthi
+!!{domain}~$\Int$
+lan tafsirna kabeh
+simbol nonlogis
+kaya lumrahe.
+Amarga wilangan negatif
+dudu nilai $\num{n}$
+kanggo sembarang~$n$,
+struktur iki nonstandar.
+Mesthi struktur iki
+ora dadi \emph{model}
+aritmetika ing teges
+ndadekake ukara-ukara
+kang padha bener
+kaya~$\Struct{N}$.
+Upamane,
+$\lforall[x][\eq/[x'][\Obj{0}]]$
+iku kleru. Nanging
+anane model aritmetika
+nonstandar bisa dibuktekake
+kanthi gampang
+nganggo teorema kompak.
+\end{explain}
+
+\begin{prop}
+Upamakna
+$\Th{TA} = \Setabs{!A}{\Sat{N}{!A}}$
+iku teori~$\Struct{N}$.
+$\Th{TA}$ nduweni
+model nonstandar
+kang !!a{enumerable}.
+\end{prop}
+
+\begin{proof}
+Jembarake $\Lang{L_A}$
+nganggo !!{constant} anyar~$c$
+lan gatekna himpunan
+!!{sentence}s
+\[
+\Gamma = \Th{TA} \cup \{\eq/[c][\num{0}], \eq/[c][\num{1}],
+\eq/[c][\num{2}], \dots\}
+\]
+Sembarang model~$\Struct{M^c}$
+saka~$\Gamma$ bakal ngemot
+!!a{element}~$x =
+\Assign{c}{M^c}$
+kang nonstandar, amarga
+$x \neq \Value{\num{n}}{M}$
+kanggo saben
+$n \in \Nat$.
+Kajaba iku, cetha yen
+$\Sat{M^c}{\Th{TA}}$,
+amarga $\Th{TA} \subseteq \Gamma$.
+Yen $\Struct{M^c}$
+diowahi dadi !!a{structure}~$\Struct{M}$
+kanggo $\Lang{L_A}$
+kanthi mung nglalekake~$c$,
+ranahé isih ngemot
+$x$ nonstandar iku,
+lan uga
+$\Sat{M}{\Th{TA}}$.
+Bab pungkasan iki
+dijamin amarga $c$
+ora ana ing~$\Th{TA}$.
+Mula cukup nuduhake
+yen $\Gamma$ nduweni model.
+Cathetan koreksi sumber OLPL-098:
+interpretasi konstanta anyar
+kudu dijupuk saka struktur
+kang isih ngemot konstanta iku.
+
+Kita nggunakake
+teorema kompak kanggo
+nuduhake yen~$\Gamma$
+nduweni model.
+Yen saben subhimpunan
+winates saka~$\Gamma$
+bisa dipenuhi,
+mula $\Gamma$ uga
+bisa dipenuhi.
+Gatekna sembarang
+subhimpunan winates
+$\Gamma_0 \subseteq \Gamma$.
+$\Gamma_0$ ngemot
+sawenehing !!{sentence}s
+saka~$\Th{TA}$
+lan sawenehing kang
+awujud~$\eq/[c][\num{n}]$,
+nanging cacahe mung winates.
+Yen ana syarat wujud iku,
+upamakna $k$ iku
+indeks paling gedhe
+saéngga
+$\eq/[c][\num{k}] \in \Gamma_0$;
+yen ora ana, pilih
+indeks nol minangka gantine.
+Tetepna $\Struct{N_k}$
+kanthi njembarake~$\Struct{N}$
+supaya ngemot tafsir
+$\Assign{c}{N_k} = k+1$.
+$\Sat{N_k}{\Gamma_0}$:
+yen $!A \in \Th{TA}$,
+mula $\Sat{N_k}{!A}$
+amarga $\Struct{N_k}$
+padha karo~$\Struct{N}$
+ing kabeh bab kajaba~$c$,
+lan $c$ ora ana
+ing~$!A$.
+Lan
+$\Sat{N_k}{\eq/[c][\num{n}]}$,
+amarga $n \le k$,
+lan
+$\Value{c}{N_k} = k+1$.
+Mula saben subhimpunan
+winates saka~$\Gamma$
+bisa dipenuhi.
+Cathetan koreksi sumber OLPL-099:
+yen subhimpunan winates
+ora ngemot syarat pengecualian,
+indeks paling gedhe
+ora ana lan kudu dipilih
+kanthi kapisah.
+Amarga basa kang ditambahi
+konstanta iki bisa didhaptar
+lan modelé tanpa wates,
+teorema Löwenheim--Skolem mudhun
+menehi model kang bisa didhaptar.
+Redukté marang basa asal
+isih dadi model nonstandar
+kang bisa didhaptar.
+Cathetan koreksi sumber OLPL-100:
+langkah iki nggenepi
+pratelan bisa didhaptar
+ing proposisi.
+\end{proof}
+
+\end{document}

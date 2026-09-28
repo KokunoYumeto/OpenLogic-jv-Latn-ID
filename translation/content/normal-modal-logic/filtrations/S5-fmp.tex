@@ -1,0 +1,89 @@
+% Part: normal-modal-logic
+% Chapter: filtrations
+% Section: S5-fmp
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{fil}{fmp}
+
+\olsection{\Log{K} lan \Log{S5} Nduweni Sipat Model Winates}
+
+\begin{defn}
+  Sistem $\Sigma$ saka logika modal diarani nduweni \emph{sipat model
+    winates} yen saben !!a{formula}~$!A$ kang bener ing sawijining
+  jagad ing model saka $\Sigma$, $!A$ uga bener ing sawijining jagad ing
+  model \emph{winates} saka~$\Sigma$.
+\end{defn}
+
+\begin{prop}\ollabel{prop:K-fmp}
+  \Log{K} nduweni sipat model winates.
+\end{prop}
+
+\begin{proof}
+  \Log{K} iku himpunan !!{formula}s kang valid, yaiku sembarang model
+  iku model saka~\Log{K}. Miturut \olref[fil]{thm:filtrations}, yen
+  $\mSat{M}{!A}[w]$, mula $\mSat{M^*}{!A}[{[w]}]$ kanggo sembarang
+  filtrasi saka~$\mModel{M}$ liwat himpunan $\Gamma$ sub-!!{formula}s
+  saka~$!A$. Saben !!{formula} mung nduweni sub-!!{formula}s kang
+  cacahé winates, mula $\Gamma$ winates. Miturut
+  \olref[fin]{prop:filt-are-finite}, $\card{W^*} \le 2^n$, ing ngendi
+  $n$ iku cacah !!{formula}s ing~$\Gamma$. Lan amarga \Log{K} ora
+  mbatesi model, $\mModel{M^*}$ iku model \Log{K}.
+\end{proof}
+
+Kanggo nuduhake yen logika~\Log{L} nduweni sipat model winates liwat
+filtrasi, filtrasi saka model \Log{L} kudu uga dadi model \Log{L}.
+Asring iki mbutuhake bukti kang ora prasaja, lan ora saben filtrasi
+ngasilake model \Log{L}. Nanging kanggo model universal, sipat iki
+tetep lumaku.
+
+\begin{prop}\ollabel{prop:univ-fin}
+  Upamane $\mClass{U}$ kelas model universal (delengen
+  \olref[frd][es5]{prop:S5=univ}) lan $\mClass{U}_\mathrm{Fin}$ kelas
+  kabeh model universal winates. Banjur saben !!{formula}~$!A$ valid
+  ing $\mClass{U}$ yen lan mung yen valid ing
+  $\mClass{U}_\mathrm{Fin}$.
+\end{prop}
+
+\begin{proof}
+  Model universal winates kalebu model universal, mula arah kiwa
+  menyang tengen langsung cetha. Kanggo arah tengen menyang kiwa,
+  upamane~$!A$ salah ing sawijining jagad $w$ ing model universal
+  $\mModel{M}$. Jupuken $\Gamma$ kang ngemot $!A$ lan kabeh
+  subformulane; cetha yen $\Gamma$ winates. Jupuken filtrasi
+  $\mModel{M^*}$ saka $\mModel{M}$; banjur $\mModel{M^*}$ winates
+  miturut \olref[fin]{prop:filt-are-finite}, lan miturut
+  \olref[fil]{thm:filtrations}, $!A$ salah ing $[w]$ ing
+  $\mModel{M^*}$. Isih kudu digatekake yen $\mModel{M^*}$ uga
+  universal: kanggo $u$ lan $v$, miturut hipotesis $Ruv$ lan miturut
+  \olref[fil]{defn:filtration}\olref[fil]{defn:filtration-R},
+  uga $R^*[u][v]$.
+\end{proof}
+
+\begin{cor}\ollabel{cor:S5fmp}
+  \Log{S5} nduweni sipat model winates.
+\end{cor}
+
+\begin{proof}
+  Miturut \olref[frd][es5]{prop:S5=univ}, yen $!A$ bener ing sawijining
+  jagad ing model refleksif lan Euklidean, mula bener ing sawijining
+  jagad ing model universal. Miturut \olref{prop:univ-fin}, formula iku
+  bener ing sawijining jagad ing model universal winates (yaiku
+  filtrasi model liwat himpunan sub-!!{formula}s saka~$!A$). Saben
+  model universal uga refleksif lan Euklidean; mula $!A$ bener ing
+  sawijining jagad ing model refleksif lan Euklidean kang winates.
+\end{proof}
+
+\begin{prob}
+  Tuduhna yen saben filtrasi saka model serial utawa refleksif uga
+  serial utawa refleksif (miturut urutane).
+\end{prob}
+
+\begin{prob}
+  Temokna filtrasi kang ora simetris (ora transitif, ora Euklidean)
+  saka model simetris (transitif, Euklidean).
+\end{prob}
+
+\end{document}

@@ -1,0 +1,90 @@
+% Part: second-order-logic
+% Chapter: sol-and-sets
+% Section: comparing-sets
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sol}{set}{cmp}
+
+\olsection{Mbandhingake Himpunan}
+
+\begin{prop}
+!!{formula} $\lforall[x][(X(x) \lif Y(x))]$ netepake relasi
+subhimpunan, yaiku
+$\Sat{M}{\lforall[x][(X(x) \lif Y(x))]}[s]$
+yen lan mung yen $s(X) \subseteq s(Y)$.
+\end{prop}
+
+\begin{prop}
+!!{formula} $\lforall[x][(X(x) \liff Y(x))]$ netepake relasi
+identitas ing himpunan, yaiku
+$\Sat{M}{\lforall[x][(X(x) \liff Y(x))]}[s]$
+yen lan mung yen $s(X) = s(Y)$.
+\end{prop}
+
+\begin{prop}
+!!{formula} $\lexists[x][X(x)]$ netepake sipat ora kosong,
+yaiku $\Sat{M}{\lexists[x][X(x)]}[s]$ yen lan mung yen
+$s(X) \neq \emptyset$.
+\end{prop}
+
+Himpunan~$X$ ora luwih gedhe tinimbang himpunan~$Y$,
+$\cardle{X}{Y}$, yen lan mung yen ana fungsi
+!!a{injective} $f\colon X \to Y$. Amarga kita bisa
+nyatakake yen fungsi iku injektif, lan uga yen nilai-nilaine
+kanggo argumen ing~$X$ kalebu ing~$Y$, kita uga bisa
+netepake relasi ora luwih gedhe tinimbang ing antarane
+subhimpunan domain.
+
+\begin{prop}
+Rumus
+\[
+\lexists[u][(\lforall[x][(X(x) \lif Y(u(x)))] \land \lforall[x][\lforall[y][(\eq[u(x)][u(y)] \lif
+      \eq[x][y])]])]
+\]
+netepake relasi ora luwih gedhe tinimbang.
+\end{prop}
+
+Rong himpunan padha ukurane, utawa ``padha cacahe,''
+$\cardeq{X}{Y}$, yen lan mung yen ana fungsi
+!!a{bijective}~$f\colon X \to Y$.
+
+\begin{prop}
+Rumus
+\begin{multline*}
+  \lexists[u][(\lforall[x][(X(x) \lif Y(u(x)))] \land {}\\
+    \lforall[x][\lforall[y][(\eq[u(x)][u(y)] \lif \eq[x][y])]]
+  \land {} \\\lforall[y][(Y(y) \lif \lexists[x][(X(x)
+      \land \eq[y][u(x)])])])]
+\end{multline*}
+netepake relasi padha cacahe.
+\end{prop}
+
+Kita bakal nyingkat !!{formula}s iki, kanthi urut,
+dadi $X \subseteq Y$, $X = Y$, $X \neq \emptyset$,
+$\cardle{X}{Y}$, lan $\cardeq{X}{Y}$.
+(Iki bisa rada mbingungake, amarga kita nggunakake notasi
+kang padha nalika ngomong kanthi ora formal ngenani
+himpunan $X$ lan $Y$---nanging ing kene notasi iku
+singkatan kanggo !!{formula}s logika orde kapindho
+kang ngemot variabel relasi siji-papan $X$ lan~$Y$.)
+
+\begin{prop}
+!!{sentence} $\lforall[X][\lforall[Y][((\cardle{X}{Y} \land
+    \cardle{Y}{X}) \lif \cardeq{X}{Y})]]$ iku valid.
+\end{prop}
+
+\begin{proof}
+!!{sentence} iku dicukupi ing !!a{structure}~$\Struct{M}$
+yen, kanggo saben subhimpunan $X \subseteq \Domain{M}$
+lan $Y \subseteq \Domain{M}$, saka
+$\cardle{X}{Y}$ lan $\cardle{Y}{X}$ nyusul
+$\cardeq{X}{Y}$. Nanging iki bener kanggo
+\emph{sembarang} himpunan $X$ lan $Y$---yaiku
+Teorema Schr\"oder-Bernstein.
+\end{proof}
+
+
+\end{document}

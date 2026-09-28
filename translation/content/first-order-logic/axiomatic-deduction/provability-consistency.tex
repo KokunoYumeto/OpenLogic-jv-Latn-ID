@@ -1,0 +1,101 @@
+% Part: first-order-logic
+% Chapter: axiomatic-deduction
+% Section: provability-consistency
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{axd}{prv}}
+      {\olfileid{pl}{axd}{prv}}
+
+\olsection{\usetoken{S}{derivability} lan Konsistensi}
+
+Saiki kita bakal netepake sawetara sipat relasi !!{derivability}.
+Sipat kasebut narik kawigaten dhewe-dhewe, nanging saben sipat bakal
+duwe peran ing bukti teorema kelengkapan.
+
+\begin{prop}\ollabel{prop:provability-contr}
+  Yen $\Gamma \Proves !A$ lan $\Gamma \cup \{!A\}$ ora konsisten,
+  mula $\Gamma$ ora konsisten.
+\end{prop}
+
+\begin{proof}
+  Yen $\Gamma \cup \{!A\}$ ora konsisten, mula $\Gamma \cup \{!A\}
+  \Proves \lfalse$. Miturut \olref[ptn]{prop:reflexivity}, $\Gamma
+  \Proves !B$ kanggo saben $!B \in \Gamma$. Amarga miturut hipotesis
+  kita uga duwe $\Gamma \Proves !A$, mula $\Gamma \Proves !B$ kanggo
+  saben $!B \in \Gamma \cup \{!A\}$. Miturut
+  \olref[ptn]{prop:transitivity}, $\Gamma \Proves \lfalse$, yaiku
+  $\Gamma$ ora konsisten.
+\end{proof}
+
+\begin{prop}
+\ollabel{prop:prov-incons}
+$\Gamma \Proves !A$ yen lan mung yen $\Gamma \cup \{\lnot !A\}$ ora
+konsisten.
+\end{prop}
+
+\begin{proof}
+Kaping pisan, upamana $\Gamma \Proves !A$. Banjur $\Gamma \cup \{\lnot
+!A\} \Proves !A$ miturut \olref[ptn]{prop:monotonicity}. $\Gamma \cup
+\{\lnot !A\} \Proves \lnot !A$ miturut
+\olref[ptn]{prop:reflexivity}. Kita uga duwe $\Proves \lnot !A \lif
+(!A \lif \lfalse)$ miturut \olref[prp]{ax:lnot2}. Mula, nganggo rong
+aplikasi \olref[ded]{prop:mp}, kita duwe $\Gamma \cup \{\lnot !A\}
+\Proves \lfalse$.
+
+Saiki upamana $\Gamma \cup \{\lnot !A\}$ ora konsisten, yaiku $\Gamma
+\cup \{\lnot !A\} \Proves \lfalse$. Miturut Teorema Deduksi, $\Gamma
+\Proves \lnot !A \lif \lfalse$. $\Gamma \Proves (\lnot !A \lif
+\lfalse) \lif \lnot\lnot !A$ miturut \olref[prp]{ax:lfalse2}, mula
+$\Gamma \Proves \lnot\lnot !A$ miturut \olref[ded]{prop:mp}. Amarga
+$\Gamma \Proves \lnot\lnot !A \lif !A$ (\olref[prp]{ax:dne}), kita
+entuk $\Gamma \Proves !A$ kanthi nggunakake
+\olref[ded]{prop:mp} maneh.
+\end{proof}
+
+\begin{prob}
+Buktekna yen $\Gamma \Proves \lnot !A$ yen lan mung yen $\Gamma \cup
+\{!A\}$ ora konsisten.
+\end{prob}
+
+\begin{prop}\ollabel{prop:explicit-inc}
+  Yen $\Gamma \Proves !A$ lan $\lnot !A \in \Gamma$, mula $\Gamma$
+  ora konsisten.
+\end{prop}
+
+\begin{proof}
+  Miturut refleksivitas, negasi A bisa diderivasi saka Gamma.
+  Uga, $\Gamma \Proves \lnot !A \lif (!A \lif \lfalse)$ miturut
+  \olref[prp]{ax:lnot2}. Mula $\Gamma \Proves \lfalse$ kanthi rong
+  aplikasi \olref[ded]{prop:mp}. Cathetan koreksi sumber OLPL-031:
+  langkah refleksivitas kang diwajibake dening premis kaanggotaan
+  ditulis cetha sadurunge rong aplikasi modus ponens.
+\end{proof}
+
+
+\begin{prop}\ollabel{prop:provability-exhaustive}
+  Yen $\Gamma \cup \{!A\}$ lan $\Gamma \cup \{\lnot !A\}$ kalorone
+  ora konsisten, mula $\Gamma$ ora konsisten.
+\end{prop}
+
+\begin{proof}
+Gladhen.
+\end{proof}
+
+\tagprob{FOL}
+\begin{prob}
+  Buktekna \olref[fol][axd][prv]{prop:provability-exhaustive}
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+  Buktekna \olref[pl][axd][prv]{prop:provability-exhaustive}
+\end{prob}
+\tagendprob
+
+
+\end{document}

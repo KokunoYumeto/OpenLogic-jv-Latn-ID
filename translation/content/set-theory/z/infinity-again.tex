@@ -1,0 +1,158 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{z}{infinity-again}	
+\olsection{Tanpa Wates}
+
+Kita wis duwe aksioma kang cukup kanggo njamin anane
+himpunan kang cacahé tanpa wates (yen paling ora ana siji).
+Upamane ana sawijining himpunan, mula $\emptyset$ ana
+(miturut \olref[sth][z][sep]{prop:emptyexists}). Saiki
+kanggo sembarang himpunan~$x$, himpunan $x \cup \{x\}$ ana
+miturut \olref[sth][z][pairs]{prop:pairsconsequences}.
+Yen proses iki dibaleni sawetara kaping, kita entuk
+himpunan-himpunan iki:
+\begin{enumerate}
+	\item[0.] $\emptyset$ %& $0$ & tataran $0$\\
+	\item[1.] $ \{\emptyset\}$ %& $1$ & tataran $1$\\
+	\item[2.] $\{\emptyset, \{\emptyset\}\}$ %& $2$ & tataran $2$\\
+	\item[3.] $\{\emptyset, \{\emptyset\}, \{\emptyset, \{\emptyset\}\}\}$ %&$3$ & tataran $3$\\
+	\item[4.] $\{\emptyset, \{\emptyset\}, \{\emptyset, \{\emptyset\}\}, \{\emptyset, \{\emptyset\}, \{\emptyset, \{\emptyset\}\}\}\}$% & $4$ & tataran $4$ 
+\end{enumerate}
+lan kita bisa mriksa yen saben himpunan iki beda.
+
+Kita miwiti nomer saka $0$ amarga sawetara alasan.
+Salah sijine yaiku iki: ora angel mriksa yen himpunan
+kang diwenehi label ``$n$'' nduweni persis $n$ anggota
+lan (kanthi intuitif) kawangun ing tataran kaping $n$.
+
+Nanging iki menehi kita himpunan kang cacahé
+\emph{tanpa wates}, tanpa njamin anane \emph{himpunan
+tanpa wates}, yaiku siji himpunan kanthi anggota kang
+cacahé tanpa wates. Iki wigati: tanpa himpunan tanpa
+wates (miturut Dedekind), kita ora bisa nggawe aljabar
+Dedekind. Kita mbutuhake aljabar Dedekind supaya bisa
+nganggep aljabar iku minangka himpunan wilangan asli.
+(Bandhingna \olref[sfr][infinite][dedekindsproof]{sec}.)
+
+Mligine, aksioma kang wis kita aturake nganti saiki
+\emph{ora} njamin anane himpunan tanpa wates. Mula
+kita kudu nambah aksioma anyar:
+
+\begin{axiom}[Tanpa Wates]
+Ana himpunan $I$ kanthi $\emptyset \in I$ lan
+$x \cup \{x\} \in I$ saben $x \in I$.
+\begin{align*}
+	\exists I( & (\exists o \in I)\forall x\ x \notin o \land {}\\
+	& (\forall x \in I)(\exists s \in I)\forall z(z \in s \liff (z \in x \lor z = x)))
+\end{align*}
+\end{axiom}
+
+Saka himpunan $I$ kang diwenehake Aksioma Tanpa Wates,
+kita bisa njupuk himpunan bagean kang tanpa wates miturut
+Dedekind: tutupan saka himpunan kosong miturut fungsi penerus.
+Unsur kang dipilih yaiku $\emptyset$, lan tutupan ing
+$I$ nduweni injeksi $s(x) = x\cup \{x\}$.
+Saiki \olref[sfr][infinite][dedekind]{thm:DedekindInfiniteAlgebra}
+nuduhake carane njupuk Aljabar Dedekind saka himpunan
+tanpa wates miturut Dedekind; aljabar iki bakal kita
+anggep minangka himpunan wilangan asli. Luwih trep:
+\begin{defn}\ollabel{defnomega}
+Upamane $I$ iku sembarang himpunan kang diwenehake Aksioma
+Tanpa Wates. Upamane $s$ iku fungsi $s(x) = x \cup \{x\}$.
+Upamane $\omega = \closureofunder{s}{\emptyset}$. Anggota
+$\omega$ kita arani \emph{wilangan asli}, lan $n$ diarani
+asil saka $n$ penerapan $s$ marang $\emptyset$.
+\end{defn}
+
+Saiki kita bisa ndeleng maneh yen himpunan kang diwenehi
+label ``$n$'' sawetara paragraf sadurunge bakal dianggep
+\emph{minangka} wilangan $n$.
+
+Kita bakal ngrembug teges saka panetepan iki ing
+\olref[sth][z][nat]{sec}. Saiki panetepan iki ngidini
+kita mbuktekake asil intuitif:
+
+\begin{prop}\ollabel{naturalnumbersarentinfinite}
+Ora ana wilangan asli kang tanpa wates miturut Dedekind.
+\end{prop}
+
+\begin{proof}
+Bukti iki nganggo induksi, yaiku
+\olref[sfr][infinite][induction]{thm:dedinfiniteinduction}.
+Cetha yen $0 = \emptyset$ ora tanpa wates miturut Dedekind.
+Kanggo langkah induksi, kita mbuktekake kontrapositife:
+yen (sacara absurd) $s(n)$ tanpa wates miturut Dedekind,
+mula $n$ tanpa wates miturut Dedekind.
+
+Dadi upamane $s(n)$ tanpa wates miturut Dedekind,
+yaiku ana sawenehing !!{injection} $f$ kanthi
+$\ran{f}\subsetneq \dom{f} = s(n) = n \cup \{n\}$.
+Ana rong kasus kang kudu ditimbang.
+
+\emph{Kasus 1: $n \notin \ran{f}$.} Mula
+$\ran{f} \subseteq n$, lan $f(n) \in n$.
+Upamane $g = \funrestrictionto{f}{n}$; banjur
+$\ran{g} = \ran{f} \setminus \{f(n)\} \subsetneq n = \dom{g}$.
+Mula $n$ tanpa wates miturut Dedekind.
+
+\emph{Kasus 2: $n \in \ran{f}$.} Pilihen
+$m \in \dom{f} \setminus \ran{f}$, banjur temtokna
+fungsi $h$ kanthi domain $s(n) = n \cup \{n\}$:
+\[
+h(x) = 
+	\begin{cases}
+		f(x) & \text{yen }f(x) \neq n\\
+		m & \text{yen }f(x)=n
+	\end{cases}
+\]
+Dadi $h$ lan $f$ padha ing kabeh panggonan kajaba
+$h(f^{-1}(n)) = m \neq n = f(f^{-1}(n))$.
+Amarga $f$ iku !!a{injection}, $n \notin \ran{h}$;
+lan $\ran{h} \subsetneq \dom{h} = s(n)$. Saiki $n$
+tanpa wates miturut Dedekind kanthi nggunakake
+penalaran Kasus 1.
+\end{proof}
+
+Nanging isih ana pitakonan carane kita bisa \emph{ndhukung}
+Aksioma Tanpa Wates. Wangsulan cekake yaiku kita kudu
+nambah prinsip liyane marang gambaran sadurunge.
+Prinsip iku mangkene:
+\begin{enumerate}
+	\item[] \stagesinf. Ana tataran tanpa wates. Yaiku ana
+	tataran kang (a) dudu tataran kapisan, (b) nduweni
+	sawetara tataran sadurunge, nanging (c) ora nduweni
+	pendahulu langsung.
+\end{enumerate}
+Aksioma Tanpa Wates langsung ndherek saka prinsip iki.
+Kita ngerti yen wilangan asli $n$ kawangun ing tataran $n$.
+Mula himpunan $\omega$ kawangun ing tataran tanpa wates
+kapisan. Lan $\omega$ dhewe dadi saksi Aksioma Tanpa Wates.
+
+Nanging iki mung mbalekake kita marang pitakonan carane
+ndhukung \stagesinf. Kaya \stagessucc, prinsip iki ora
+kalebu kanthi gamblang ing gambaran hierarki
+kumulatif-iteratif sadurunge. Malah ora ana ing gagasan
+hierarki iteratif dhewe, kang nggawe himpunan tataran
+demi tataran, kang meksa kita nganggep proses iku
+nduweni tataran \emph{tanpa wates}. Katon lumrah yen
+tataran-tataran iku mung diurutake kaya wilangan asli.
+
+Nanging saka kene tuwuh masalah kang cetha. Ing
+\olref[sfr][infinite][dedekindsproof]{sec}, kita wis
+nimbang ``bukti'' Dedekind yen ana himpunan tanpa wates
+miturut Dedekind (saka pikiran). Bukti iku bisa wae
+ora krasa marem. Yen \stagesinf{} ora ``dijibakake''
+dening konsepsi iteratif tumrap himpunan (utawa dening
+``hukum-hukum pikiran''), kita isih durung nduweni
+alasan intrinsik kanggo negesake anane himpunan
+tanpa wates miturut Dedekind.
+
+Mesthi isih akeh kang bisa diandharake. Nanging muga-muga
+saiki kita bisa wiwit mikir apa kang \emph{dibutuhake}
+kanggo ndhukung sawijining aksioma (utawa prinsip).
+Ing salajengipun kita mung bakal nganggep \stagesinf{}
+lumaku.
+
+\end{document}

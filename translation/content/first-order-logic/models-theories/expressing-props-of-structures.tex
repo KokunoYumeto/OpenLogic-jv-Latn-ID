@@ -1,0 +1,77 @@
+% Part: first-order-logic
+% Chapter: models-theories
+% Section: expressing-props-of-structures
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{mat}{exs}
+
+\olsection{Nyatakake Sipat-Sipat \printtoken{P}{structure}}
+
+\begin{explain}
+Kerep migunani lan wigati kanggo nyatakake syarat tumrap
+fungsi lan relasi, utawa luwih umum, yen fungsi lan relasi
+ing sawijining struktur nyukupi syarat-syarat kasebut.
+Upamane, kanggo sawijining basa kita kepengin
+bisa mbedakake !!{structure}s kang nggambarake
+teges kang kita karepake kanggo !!{predicate}s
+saka struktur kang ora mangkono. Mesthi kita bebas nemtokake
+!!{structure}s endi kang kita karepake, upamane,
+kita bisa nemtokake yen interpretasi !!{predicate}~$\le$
+kudu dadi relasi urutan, utawa yen kita mung nggatekake
+interpretasi~$\Lang L$ kang ranahé dumadi saka himpunan
+lan $\Obj \in$ diinterpretasi minangka relasi
+"minangka !!a{element} saka". Nanging apa kita bisa
+nindakake iki nganggo !!{sentence}s ing basa kasebut?
+Kanthi tembung liya, syarat apa marang
+!!a{structure}~$\Struct M$ kang bisa kita nyatakake
+nganggo !!a{sentence} (utawa bisa uga himpunan
+!!{sentence}s) ing basa~$\Struct M$? Ana sawetara
+syarat kang ora bisa kita nyatakake. Upamane,
+ora ana ukara ing~$\Lang L_A$ kang mung bener
+ing sawijining !!{structure}~$\Struct M$ yen
+$\Domain M = \Nat$. Kita ora bisa nyatakake
+"ranahé mung ngemot wilangan asli". Nanging,
+ana "sipat struktural" saka !!{structure}s
+kang mbokmenawa bisa kita nyatakake. Sipat apa
+saka !!{structure}s kang bisa kita nyatakake
+nganggo !!{sentence}s? Utawa, kanthi cara liyane,
+klumpukan !!{structure}s endi kang bisa kita
+jlentrehake minangka struktur-struktur kang
+ndadekake !!a{sentence} (utawa himpunan
+!!{sentence}s) bener?
+\end{explain}
+
+\begin{defn}[Model saka himpunan]
+Upamakna $\Gamma$ iku himpunan !!{sentence}s ing
+basa~$\Lang L$. Kita kandha yen !!a{structure}~$\Struct M$
+\emph{iku model saka}~$\Gamma$ yen $\Sat{M}{!A}$
+kanggo saben $!A \in \Gamma$.
+\end{defn}
+
+\begin{ex}
+Ukara $\lforall[x][x \le x]$ bener ing~$\Struct M$
+yen lan mung yen $\Assign{\le}{M}$ iku relasi refleksif.
+Ukara
+$\lforall[x][\lforall[y][((x \le y \land y \le x) \lif x = y)]]$
+bener ing~$\Struct M$ yen lan mung yen $\Assign{\le}{M}$
+iku antisimetris. Ukara
+$\lforall[x][\lforall[y][\lforall[z][((x \le y \land y \le z)
+      \lif x \le z)]]]$ bener ing~$\Struct M$ yen lan
+mung yen $\Assign{\le}{M}$ iku transitif. Mula, model-model saka
+\begin{align*}
+\{\quad &\lforall[x][x \le x], \\
+   & \lforall[x][\lforall[y][((x \le y \land y \le
+    x) \lif x = y)]], \\
+   &\lforall[x][\lforall[y][\lforall[z][((x \le y
+      \land y \le z) \lif x \le z)]]] \quad \}
+\end{align*}
+iku persis struktur-struktur kang~$\Assign{\le}{M}$ refleksif,
+antisimetris, lan transitif, yaiku urutan parsial. Mula,
+kita bisa nggunakake ukara-ukara iku minangka aksioma
+kanggo \emph{teori logika sepisanan babagan urutan parsial}.
+\end{ex}
+
+\end{document}

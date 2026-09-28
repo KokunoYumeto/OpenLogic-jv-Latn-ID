@@ -1,0 +1,98 @@
+% Part: proof-theory
+% Chapter: natural-deduction
+% Section: grafting
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{nat}{gra}
+
+\olsection{Nyambung \usetoken{P}{proof}}
+
+!!^{proof}s ing \Log{N1c} lan~\Log{N1i} iku !!{proof}s
+kanggo !!{formula}s~$!A$ saka asumsi~$!B$.
+Anggepen $!B$ dhéwé nduwèni !!a{proof}.
+Kepriyé nggabungaké !!{proof} kanggo~$!B$ karo
+!!{proof} kanggo $!A$ saka~$!B$, supaya ngolèhké
+!!a{proof} kanggo~$!A$ tanpa nganggo asumsi~$!B$?
+
+Salah siji cara yaiku mbusak asumsi~$!B$ saka
+!!{proof} kanggo~$!A$ kanthi ngetrapaké~\Intro{\lif}.
+Banjur !!{proof} kang diasilaké kanggo~$!B \lif !A$
+bisa digandhèng karo !!{proof} kanggo~$!B$ saéngga dadi
+\[
+\AxiomC{$\Discharge{!B}{x}$}
+\DeduceC{$!A$}
+\DischargeRule{\Intro{\lif}}{x}
+\UnaryInfC{$!B \lif !A$}
+\AxiomC{}
+\DeduceC{$!B$}
+\RightLabel{\Elim{\lif}}
+\BinaryInfC{$!A$}
+\DisplayProof
+\]
+Cara iki gampang, nanging rada ora éndah: kena apa
+nglebokaké $\lif$ mung kanggo langsung ngilangaké?
+Liku-liku liwat $!B \lif !A$ iki kuduné bisa diendhani.
+(Pancen, teorema normalisasi mratélakaké yèn
+liku-liku mangkono mesthi bisa diendhani.)
+
+Ing \Log{N1c} lan~\Log{N1i}, liku-liku iki gampang
+diendhani: saben asumsi~$!B^x$ cukup diganti
+sakabèhé !!{proof} kanggo~$!B$.
+``Nyambung'' !!{proof}s ing papan asumsi bukti liya
+iki migunani, mula kita tetepaké dadi definisi.
+
+\begin{defn}
+Yèn $\delta_1$ iku \Log{N1c}-!!{proof} (utawa
+\Log{N1i}-!!{proof}) kanggo~$!A$ saka asumsi
+kabuka~$!B^x$, lan $\delta_2$ iku \Log{N1c}-!!{proof}
+(\Log{N1i}-!!{proof}) kanggo~$!B$, banjur
+$\Subst{\delta_1}{\delta_2}{!B^x}$ yaiku asil saka
+ngganti saben kedadéan~$!B^x$ kang durung dibusak
+ing~$\delta_1$ nganggo~$\delta_2$.
+\end{defn}
+
+Yèn $\delta_1$ lan $\delta_2$ ora nduwèni
+!!{formula}s asumsi béda kanthi label kang padha,
+lan ora ana asumsi kabuka ing~$\delta_2$ kang ngemot
+variabel eigen saka~$\delta_1$, banjur
+$\Subst{\delta_1}{\delta_2}{!B^x}$ iku !!{proof}
+kang bener, kanthi asumsi kabuka saka $\delta_1$
+lan saka~$\delta_2$. Nalika nyambung !!{proof}s,
+syarat iki lumrahé kacukupan. Syarat kapisan kacukupan
+yèn $\delta_1$ lan $\delta_2$ subbukti saka !!{proof}
+kang luwih gedhé. Yèn syarat kapindho durung kacukupan,
+variabel eigen ing~$\delta_1$ bisa diganti jenengé
+supaya syarat mau kacukupan.
+
+Definisi kang cocog uga lumaku kanggo \Log{N2c} lan~\Log{N2i}.
+
+\begin{defn}
+Yèn $\delta_1$ iku \Log{N2c}-!!{proof} (utawa
+\Log{N2i}-!!{proof}) kanggo~$x:!B, \Gamma_1 \Sequent !A$,
+lan $\delta_2$ iku \Log{N2c}-!!{proof}
+(\Log{N2i}-!!{proof}) kanggo~$\Gamma_2 \Sequent !B$,
+banjur $\Subst{\delta_1}{\delta_2}{x:!B}$ iku asil
+saka ngganti saben aksioma $x:!B \Sequent !B$
+ing~$\delta_1$ nganggo~$\delta_2$, lan nambah
+$\Gamma_2$ ing kontèks saben sekèn ing sangisoré
+aksioma mau.
+\end{defn}
+
+\begin{prop}
+Yèn $\delta_1 \Proves x:!B, \Gamma_1 \Sequent !A$
+lan $\delta_2 \Proves \Gamma_2 \Sequent !B$,
+banjur $\Subst{\delta_1}{\delta_2}{x:!B}
+\Proves \Gamma_1, \Gamma_2 \Sequent !A$,
+anggèr ora ana variabel eigen saka~$\delta_1$
+ing~$\Gamma_2$.
+\end{prop}
+
+
+\begin{proof}
+  Kanthi induksi tumrap $\pheight{\delta_1}$.
+\end{proof}
+
+\end{document}

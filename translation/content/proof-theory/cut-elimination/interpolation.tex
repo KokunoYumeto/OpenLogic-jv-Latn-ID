@@ -1,0 +1,659 @@
+% Part: proof-theory
+% Chapter: cut-elimination
+% Section: interpolation
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{cut}{itp}
+
+\olsection{Lema Maehara lan Teorema Interpolasi Craig}
+
+Teorema interpolasi saka William Craig mratélakaké yèn
+$!A \Entails !B$, banjur ana !!a{sentence}~$!C$
+(\emph{interpolan}) kang marakaké $!A \Entails !C$ lan
+$!C \Entails !B$. Kang wigati, interpolan~$!C$ bisa
+dipilih saéngga kabèh !!{constant}s lan !!{predicate}s
+ing~$!C$ uga ana ing~$!A$ lan~$!B$.
+(Kita nganggep ora ana !!{function}s.) Tanpa watesan iki,
+$!A$~lan $!B$ bisa kanthi gampang dadi interpolan.
+
+Teorema interpolasi bener kanggo logika orde kapisan klasik
+lan tau diarani ``sipat wigati pungkasan saka logika orde
+kapisan'' kang ditemokaké. Teorema iki duwé panggunaan
+wigati ing teori modèl lan panalaran otomatis.
+Motivasi lan panggunaan wiwitané ana ing filsafat ilmu,
+amarga bisa dipigunakaké kanggo nyinaoni istilah primitif
+kang bisa utawa ora bisa dadi dhasar aksiomatisasi sawijining
+teori. Teorema iki uga ndadèkaké teorema definabilitas Beth,
+kang mratélakaké yèn sawijining teori bisa nemtokaké konsèp
+kanthi implisit, teori iku uga bisa nemtokaké kanthi eksplisit.
+
+Kaya akèh asil ing logika matématis, teorema interpolasi
+bisa dibuktèkaké nganggo cara teori modèl utawa teori bukti.
+Kaluwihan cara teori bukti yaiku ora mung nuduhaké anané
+interpolan, nanging uga maringi algoritma kanggo ngétung
+interpolan saka !!a{proof} yèn $!A \Entails !B$,
+tuladhané !!a{proof} ing~\Log{G3c} kanggo
+$!A \Sequent !B$.
+
+Upama $\Lang L(!A)$ himpunan !!{constant}s lan
+!!{predicate}s ing~$!A$, sarta
+$\Lang L(\Gamma) = \bigcup \Setabs{\Lang L(!A)}{!A \in
+\Gamma}$. Ing sakabèhé pérangan iki, kita nganggep
+!!{formula}s kang ora ngemot !!{function}s.
+
+\begin{thm}[Teorema Interpolasi Craig]\ollabel{thm:interpolation}
+Upama !!{language} saka~$!A$ yaiku $\Lang L(!A)$ lan
+basa saka $!B$ yaiku $\Lang L(!B)$.
+Yèn $\Log{G3c} \Proves !A \Sequent !B$, banjur ana
+!!a{formula}~$!C$ ing !!{language}~$\Lang L(!C) \subseteq \Lang
+L(!A) \cap \Lang L(!B)$ saéngga
+$\Log{G3c} \Proves !A \Sequent !C$ lan
+$\Log{G3c} \Proves !C \Sequent !B$.
+\end{thm}
+
+Kita mbuktèkaké generalisasi teorema interpolasi supaya bisa
+migunakaké struktur !!{proof}s ing~\Log{G3c}. Anggepen
+antesèden lan suksèden saben sekèn dipérang dadi rong
+pérangan. Kita nulis
+$\maeh{\Gamma_1}{\Gamma_2} \Sequent
+\maeh{\Delta_1}{\Delta_2}$ kanggo nandhakaké yèn
+$\Gamma_1$ lan $\Delta_1$ ana ing pérangan kapisan,
+dene $\Gamma_2$ lan $\Delta_2$ ana ing pérangan kapindho.
+Teorema interpolasi banjur langsung ndhèrèk saka lema iki.
+
+\begin{lem}[Lema Maehara]\ollabel{lem:maehara}
+Yèn $\Log{G3c}
+\Proves \maeh{\Gamma_1}{\Gamma_2} \Sequent \maeh{\Delta_1}{\Delta_2}$,
+banjur ana !!a{formula}~$!C$ ing !!{language}~$\Lang L(!C)
+\subseteq \Lang L(\Gamma_1,
+\Delta_1) \cap \Lang L(\Gamma_2, \Delta_2)$ saéngga
+$\Log{G3c} \Proves \Gamma_1 \Sequent \Delta_1, !C$ lan
+$\Log{G3c} \Proves !C, \Gamma_2 \Sequent \Delta_2$.
+\end{lem}
+
+\begin{proof}
+  Anggepen $\pi \Proves \maeh{\Gamma_1}{\Gamma_2} \Sequent
+  \maeh{\Delta_1}{\Delta_2}$. Pratelan iki kita buktèkaké
+  kanthi induksi tumrap $n=\pheight{\pi}$.
+
+  Yèn $n=0$, banjur $\maeh{\Gamma_1}{\Gamma_2} \Sequent
+  \maeh{\Delta_1}{\Delta_2}$ iku aksioma, lan ana
+  !!{formula}~$!A$ atomik ing $\Gamma_1, \Gamma_2$
+  uga ing $\Delta_1, \Delta_2$. Ana patang kahanan,
+  manut $!A$~ana ing pérangan kapisan utawa kapindho
+  ing sisih kiwa, lan ing pérangan kapisan utawa kapindho
+  ing sisih tengen.
+  \begin{enumerate}
+    \item $!A \in \Gamma_1$ lan $!A \in \Delta_1$.
+    Kita nggoleki~$!C$ saéngga
+    $\Gamma_1 \Sequent \Delta_1, !C$ lan
+    $!C, \Gamma_2 \Sequent \Delta_2$ kaloroné !!{provable}.
+    Sekèn kapisan wis aksioma tanpa gumantung pilihan~$!C$,
+    amarga $!A$ ana ing kiwa lan tengen. Supaya
+    $!C, \Gamma_2 \Sequent \Delta_2$ mesthi !!{provable},
+    pilihané yaiku $!C \ident \lfalse$.
+    \item $!A \in \Gamma_1$ lan $!A \in \Delta_2$.
+    Banjur $\Gamma_1 \Sequent \Delta_1, !A$ lan
+    $!A, \Gamma_2 \Sequent \Delta_2$ kaloroné aksioma,
+    mula kita bisa milih $!C \ident !A$.
+    \item $!A \in \Gamma_2$ lan $!A \in \Delta_1$.
+    Banjur $!A, \Gamma_1 \Sequent \Delta_1$ lan
+    $\Gamma_2 \Sequent \Delta_2, !A$ dadi aksioma,
+    nanging~$!A$ ana ing sisih kang kliru. Mula $!A$
+    dudu interpolané. Nanging nganggo $\RightR{\lnot}$
+    lan $\LeftR{\lnot}$ kita bisa !!{prove}
+    $\Gamma_1 \Sequent \Delta_1, \lnot!A$ lan
+    $\lnot !A, \Gamma_2 \Sequent \Delta_2$.
+    \item $!A \in \Gamma_2$ lan $!A \in \Delta_2$.
+    Latihan.
+  \end{enumerate}
+  Kahanan nalika $\maeh{\Gamma_1}{\Gamma_2} \Sequent
+  \maeh{\Delta_1}{\Delta_2}$ dadi aksioma amarga
+  $\lfalse \in \Gamma_1$ utawa $\lfalse \in \Gamma_2$
+dipasrahaké dadi latihan.
+
+  Yèn $n>0$, $\pi$ pungkasané nganggo inferènsi logis.
+  Kahanané dibedakaké manut aturan kang dienggo lan
+  pérangan endi kang ngemot formula utama. Ing saben
+  kahanan, kita bisa migunakaké hipotesis induksi yèn
+  lema iki bener kanggo kabèh !!{proof}s~$\pi_1$ kanthi
+  $\pheight{\pi_1} < n$, senadyan sekèn pungkasan~$\pi_1$
+dipérang dadi rong pérangan kanthi cara apa waé.
+  Gatekna sawatara kahanan tartamtu.
+  \begin{enumerate}
+    \item $\pi$ pungkasané nganggo $\RightR{\lnot}$ kanthi
+    formula utama~$\lnot !A$. Ana rong kahanan: manut
+    $\lnot !A$ ana ing pérangan kapisan utawa kapindho,
+    $\pi$ pungkasané nganggo salah siji saka
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi_1$}
+    \Deduce$\maeh{!A, \Gamma_1}{\Gamma_2} \fCenter
+      \maeh{\Delta_1}{\Delta_2}$
+    \RightLabel{\RightR{\lnot}}
+    \UnaryInf$\maeh{\Gamma_1}{\Gamma_2} \fCenter
+      \maeh{\Delta_1, \lnot !A}{\Delta_2}$
+    \DisplayProof
+    \]
+    utawa
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi_1$}
+    \Deduce$\maeh{\Gamma_1}{!A, \Gamma_2} \fCenter
+      \maeh{\Delta_1}{\Delta_2}$
+    \RightLabel{\RightR{\lnot}}
+    \UnaryInf$\maeh{\Gamma_1}{\Gamma_2} \fCenter
+      \maeh{\Delta_1}{\Delta_2, \lnot !A}$
+    \DisplayProof
+    \]
+    Gatekna yèn nalika !!{formula} utama~$\lnot !A$
+    ana ing pérangan kapisan, !!{formula} aktif~$!A$
+    uga dilebokaké ing pérangan kapisan premis. Iki
+    pilihan kang bisa kita gawé. Hipotesis induksi uga
+    bisa ditrapaké yèn formula aktif mau dilebokaké
+    ing pérangan liyané, nanging banjur kita ora bisa
+    nemokaké interpolan (latihan: cobanen).
+
+    Gatekna dhisik kahanan kapisan nalika $\lnot !A$~ana
+    ing pérangan kapisan. Miturut hipotesis induksi,
+    ana interpolan kanggo sekèn pungkasan~$\pi_1$,
+    yaiku !!a{formula}~$!C_1$ saéngga kaloroné
+    \begin{align*}
+    !A, \Gamma_1 & \Sequent \Delta_1, !C_1 &&\text{lan} &
+    !C_1, \Gamma_2 & \Sequent \Delta_2
+    \intertext{bisa dibuktèkaké. Kang dibutuhaké yaiku !!a{formula}~$!C$ saéngga
+    rong sekèn iki !!{provable}:}
+    \Gamma_1 & \Sequent \Delta_1, \lnot !A, !C &&\text{lan} &
+    !C, \Gamma_2 & \Sequent \Delta_2
+    \end{align*}
+    Cetha yèn kita bisa njupuk $!C \ident !C_1$:
+    hipotesis induksi wis njamin sekèn tengen !!{provable},
+    lan sekèn kiwa ndhèrèk saka sekèn ing hipotesis induksi
+    kanthi~$\RightR{\lnot}$. Hipotesis induksi uga maringi
+    $\Lang L(!C_1) \subseteq \Lang L(!A, \Gamma_1,
+    \Delta_1) \cap \Lang L(\Gamma_2, \Delta_2)$.
+    Amarga $\Lang L(\lnot !A) = \Lang L(!A)$ lan
+    $\Lang L(!C) = \Lang L(!C_1)$, kita ngolèhké
+    $\Lang L(!C_1) \subseteq \Lang L(\Gamma_1, \Delta_1, \lnot !A) \cap \Lang
+    L(\Gamma_2, \Delta_2)$.
+
+    Ing kahanan kapindho, $\lnot !A$~ana ing pérangan
+    kapindho. !!{formula} aktif ing premis uga kita
+    lebokaké ing pérangan kapindho, banjur hipotesis
+    induksi ditrapaké marang
+    \begin{align*}
+    \Gamma_1 & \Sequent \Delta_1, !C_1 &&\text{lan} &
+    !C_1, !A, \Gamma_2 & \Sequent \Delta_2
+    \intertext{kang bisa dibuktèkaké. Yèn aturan \RightR{\lnot} ditrapaké marang sekèn kapindho, kita ngolèhké !!{proof}s kanggo}
+    \Gamma_1 & \Sequent \Delta_1, !C_1 &&\text{lan} &
+    !C_1, \Gamma_2 & \Sequent \Delta_2, \lnot !A
+    \end{align*}
+    Iki pancèn sekèn-sekèn kang kudu !!{provable} supaya
+    $!C_1$ dadi interpolan; kita njupuk manèh
+    $!C \ident !C_1$. Kaya sadurungé,
+    $\Lang L(!C_1) \subseteq \Lang L(\Gamma_1, \Delta_1) \cap \Lang L(\Gamma_2,
+    \Delta_2, \lnot !A)$.
+    \item $\pi$ pungkasané nganggo $\RightR{\lif}$ kanthi
+    !!{formula} utama~$!A \lif !B$. Ana manèh rong kahanan,
+    manut $!A \lif !B$ ana ing pérangan kapisan utawa
+    kapindho. !!{proof}~$\pi$ pungkasané nganggo salah siji saka
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi_1$}
+    \Deduce$\maeh{!A, \Gamma_1}{\Gamma_2} \fCenter
+      \maeh{\Delta_1, !B}{\Delta_2}$
+    \RightLabel{\RightR{\lif}}
+    \UnaryInf$\maeh{\Gamma_1}{\Gamma_2} \fCenter
+      \maeh{\Delta_1, !A \lif !B}{\Delta_2}$
+    \DisplayProof
+    \]
+    utawa
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi_1$}
+    \Deduce$\maeh{\Gamma_1}{!A, \Gamma_2} \fCenter
+      \maeh{\Delta_1}{\Delta_2, !B}$
+    \RightLabel{\RightR{\lif}}
+    \UnaryInf$\maeh{\Gamma_1}{\Gamma_2} \fCenter
+      \maeh{\Delta_1}{\Delta_2, !A \lif !B}$
+    \DisplayProof
+    \]
+    Manèh, !!{formula}s aktif dilebokaké ing pérangan
+    premis kang padha karo pérangan !!{formula} utama
+    ing konklusi. Ing kahanan kapisan, hipotesis induksi
+    maringi !!{proof}s kanggo
+    \begin{align*}
+    !A, \Gamma_1 & \Sequent \Delta_1, !B, !C_1 &&\text{lan} & !C_1, \Gamma_2 & \Sequent \Delta_2
+    \intertext{Sekèn kiwa dadi premis kang cocog kanggo \RightR{\lif}. Mula sekèn-sekèn iki !!{provable}:}
+    \Gamma_1 & \Sequent \Delta_1, !A \lif !B, !C_1 &&\text{lan} & !C_1, \Gamma_2 & \Sequent \Delta_2
+    \end{align*}
+    Tegesé, $!C_1$ uga interpolan kanggo sekèn pungkasan
+    saka~$\pi$, mula kita bisa njupuk $!C \ident !C_1$ manèh.
+    
+    Kahanan kapindho ditangani kanthi cara kang padha.
+    \item $\pi$ pungkasané nganggo $\LeftR{\lif}$ kanthi
+    !!{formula} utama~$!A \lif !B$. Yèn $!A \lif !B$
+    ana ing pérangan kapisan, !!{proof}~$\pi$ pungkasané kaya mangkéné:
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi_1$}
+    \Deduce$\maeh{\Gamma_1}{\Gamma_2} \fCenter
+      \maeh{\Delta_1, !A}{\Delta_2}$
+    \AxiomC{}
+    \RightLabel{$\pi_2$}
+    \Deduce$\maeh{!B, \Gamma_1}{\Gamma_2} \fCenter
+      \maeh{\Delta_1}{\Delta_2}$
+    \BinaryInf$\maeh{!A \lif !B, \Gamma_1}{\Gamma_2} \fCenter
+      \maeh{\Delta_1}{\Delta_2}$
+    \DisplayProof
+    \]
+    Hipotesis induksi saiki maringi patang sekèn
+    kang !!{provable}: loro kanggo interpolan $!C_1$
+    saka premis kiwa lan loro kanggo interpolan $!C_2$
+    saka premis kapindho:
+    \begin{align*}
+    \Gamma_1 & \Sequent \Delta_1, !A, !C_1 &&\text{(1)} &
+    !C_1, \Gamma_2 & \Sequent \Delta_2 && \text{(2)}\\
+    !B, \Gamma_1 & \Sequent \Delta_1, !C_2 &&\text{(3)} &
+    !C_2, \Gamma_2 & \Sequent \Delta_2 && \text{(4)}
+    \end{align*}
+    Sekèn (1) lan (3) bisa dadi premis~\LeftR{\lif}
+    yèn nganggo pelemahan kanggo nambah $!C_2$ ing sisih
+    tengen~(1) lan $!C_1$ ing sisih tengen~(3):
+    \[
+    \AxiomC{}
+    \Deduce$\Gamma_1 \fCenter \Delta_1, !A, !C_1, !C_2$
+    \AxiomC{}
+    \Deduce$!B, \Gamma_1 \fCenter \Delta_1, !C_1, !C_2$
+    \RightLabel{\LeftR{\lif}}
+    \BinaryInf$!A \lif !B, \Gamma_1 \fCenter \Delta_1, !C_1, !C_2$
+    \DisplayProof
+    \]
+    Kanthi ngetrapaké $\RightR{\lor}$ kita ngolèhké sekèn
+    \[
+    !A \lif !B, \Gamma_1 \fCenter \Delta_1, !C_1 \lor !C_2
+    \]
+    Iki nuduhaké yèn $!C_1 \lor !C_2$ bisa dadi interpolan
+    ing kahanan iki. Pancèn, kita bisa !!{prove} sekèn
+    liyané kang dibutuhaké saka sekèn (2) lan~(4):
+    \[
+    \AxiomC{}
+    \Deduce$!C_1, \Gamma_2 \fCenter \Delta_2$
+    \AxiomC{}
+    \Deduce$!C_2, \Gamma_2 \fCenter \Delta_2$
+    \RightLabel{\LeftR{\lor}}
+    \BinaryInf$!C_1 \lor !C_2, \Gamma_2 \fCenter \Delta_2$
+    \DisplayProof
+    \]
+    Isih perlu dipriksa yèn $!C_1 \lor !C_2$ ana ing
+    basa kang trep. Hipotesis induksi maringi
+    \begin{align*}
+    \Lang L(!C_1) & \subseteq
+    \Lang L(\Gamma_1, \Delta_1, !A) \cap \Lang L(\Gamma_2, \Delta_2) &\text{lan}\\
+    \Lang L(!C_2) & \subseteq
+    \Lang L(!B, \Gamma_1, \Delta_1) \cap \Lang L(\Gamma_2, \Delta_2)
+    \intertext{Amarga}
+    \Lang L(!A) & \subseteq \Lang L(!A \lif !B) &\text{lan}\\
+    \Lang L(!B) & \subseteq \Lang L(!A \lif !B)
+    \intertext{kita ngolèhké kaloroné}
+    \Lang L(!C_1) & \subseteq
+    \Lang L(\Gamma_1, \Delta_1, !A \lif !B) \cap \Lang L(\Gamma_2, \Delta_2) &\text{lan}\\
+    \Lang L(!C_2) & \subseteq
+    \Lang L(\Gamma_1, \Delta_1, !A \lif !B) \cap \Lang L(\Gamma_2, \Delta_2)
+    \intertext{mula, $\Lang L (!C_1 \lor !C_2) = {}$}
+    \Lang L(!C_1) \cup \Lang L(!C_2) & \subseteq
+    \Lang L(\Gamma_1, \Delta_1, !A \lif !B) \cap \Lang L(\Gamma_2, \Delta_2),
+    \end{align*}
+    kaya kang dibutuhaké.
+
+    Yèn $!A \lif !B$ ana ing pérangan kapindho,
+    kahanané béda nanging ditangani kanthi cara kang
+    padha. Hipotesis induksi maringi manèh patang sekèn
+    kang !!{provable}:
+    \begin{align*}
+    \Gamma_1 & \Sequent \Delta_1, !C_1 &&\text{(1)} &
+    !C_1, \Gamma_2 & \Sequent \Delta_2, !A && \text{(2)}\\
+    \Gamma_1 & \Sequent \Delta_1, !C_2 &&\text{(3)} &
+    !C_2, !B, \Gamma_2 & \Sequent \Delta_2 && \text{(4)}
+    \end{align*}
+    Saiki sekèn (2) lan (4)---kanthi sawatara !!{formula}s
+    kang ditambahaké liwat pelemahan---dadi premis~\LeftR{\lif}:
+    \[
+    \AxiomC{}
+    \Deduce$!C_1, !C_2, \Gamma_2 \fCenter \Delta_2, !A$
+    \AxiomC{}
+    \Deduce$!B, !C_1, !C_2, \Gamma_2 \fCenter \Delta_2$
+    \RightLabel{\LeftR{\lif}}
+    \BinaryInf$!A \lif !B, !C_1, !C_2, \Gamma_2 \fCenter \Delta_2$
+    \DisplayProof
+    \]
+    Kita perlu ngowahi iki dadi sekèn kang nduwèni siji
+    !!{formula} saka $!C_1$ lan $!C_2$, nanging saiki
+    ana ing antesèden (amarga iki pérangan kapindho).
+    Trapna $\LeftR{\land}$; interpolané bisa dijupuk
+    $!C \ident (!C_1 \land !C_2)$. Sekèn (1) lan (3)
+    kang isih ana bisa digunakaké kanggo !!{prove}
+    sekèn kang cocog kanggo pérangan liyané:
+    \[
+    \AxiomC{}
+    \Deduce$\Gamma_1 \fCenter \Delta_1, !C_1$
+    \AxiomC{}
+    \Deduce$\Gamma_1 \fCenter \Delta_1, !C_2$
+    \RightLabel{\RightR{\land}}
+    \BinaryInf$\Gamma_1 \fCenter \Delta_1, !C_1 \land !C_2$
+    \DisplayProof
+    \]
+    Kaya sadurungé, kita nduwèni
+    $\Lang L(!C_1 \land !C_2) \subseteq \Lang
+    L(\Gamma_1, \Delta_1) \cap \Lang L(\Gamma_2, \Delta_2, !A \lif
+    !B)$.
+
+    \item $\pi$ pungkasané nganggo $\RightR{\lforall}$ kanthi
+    !!{formula} utama~$\lforall[x][!A(x)]$:
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi_1$}
+    \Deduce$\maeh{\Gamma_1}{\Gamma_2} \fCenter
+    \maeh{\Delta_1, !A(c)}{\Delta_2}$
+    \RightLabel{\RightR{\lforall}}
+    \UnaryInf$\maeh{\Gamma_1}{\Gamma_2} \fCenter
+      \maeh{\Delta_1, \lforall[x][!A(x)]}{\Delta_2}$
+    \DisplayProof
+    \]
+    utawa
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi_1$}
+    \Deduce$\maeh{\Gamma_1}{\Gamma_2} \fCenter
+      \maeh{\Delta_1}{\Delta_2, !A(c)}$
+    \RightLabel{\RightR{\lforall}}
+    \UnaryInf$\maeh{\Gamma_1}{\Gamma_2} \fCenter
+      \maeh{\Delta_1}{\Delta_2, \lforall[x][!A(x)]}$
+    \DisplayProof
+    \]
+    Ing kahanan kapisan, hipotesis induksi maringi !!{proof}s
+    kanggo $\Gamma_1 \Sequent \Delta_1, !A(c), !C_1$ lan
+    $!C_1, \Gamma_2 \Sequent \Delta_2$.
+    Kita bisa ngetrapaké $\RightR{\lforall}$ marang kang
+    kapisan kanggo ngolèhké
+    $\Gamma_1 \Sequent \Delta_1, \lforall[x][!A(x)], !C_1$.
+    (Syarat variabel eigen kacukupan, amarga wis kacukupan
+    ing aturan \RightR{\lforall} ing pungkasan~$\pi$.)
+    Mula $!C_1$ dadi interpolan yèn
+    $\Lang L(!C_1) \subseteq \Lang L(\Gamma_1, \Delta_1, \lforall[x][!A(x)])
+    \cap \Lang L(\Gamma_2, \Delta_2)$ kacukupan.
+    Miturut hipotesis induksi, kita nduwèni
+    $\Lang L(!C_1) \subseteq \Lang L(\Gamma_1,
+    \Delta_1, !A(c)) \cap \Lang L(\Gamma_2, \Delta_2)$.
+    Dadi kudu dipriksa babagan~$c$: apa $c$ bisa ana ing~$!C_1$?
+    Ora bisa. Yèn $c$ ana ing $!C_1$, banjur
+    $c \in \Lang L(\Gamma_1, \Delta_1,
+    !A(c))$ (iki bener) lan uga
+    $c \in \Lang L(\Gamma_2, \Delta_2)$.
+    Nanging iki ndadèkaké $c$ ana ing konklusi inferènsi
+    $\RightR{\lforall}$ ing~$\pi$, nerak syarat variabel eigen.
+    
+    Kahanan kapindho padha polané.
+
+    \item $\pi$ pungkasané nganggo $\RightR{\lexists}$
+    kanthi !!{formula} utama~$\lexists[x][!A(x)]$.
+    Ana rong kahanan manèh. Kita ngrembug nalika
+    $\lexists[x][!A(x)]$ ana ing pérangan kapisan,
+    dene kahanan kapindho dipasrahaké dadi latihan.
+
+    Ing kahanan kapisan, $\pi$ pungkasané kaya mangkéné:
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi_1$}
+    \Deduce$\maeh{\Gamma_1}{\Gamma_2} \fCenter
+      \maeh{\Delta_1, \lexists[x][!A(x)], !A(t)}{\Delta_2}$
+    \RightLabel{\RightR{\lexists}}
+    \UnaryInf$\maeh{\Gamma_1}{\Gamma_2} \fCenter
+      \maeh{\Delta_1, \lexists[x][!A(x)]}{\Delta_2}$
+    \DisplayProof
+    \]
+    Hipotesis induksi maringi !!{proof}s kanggo
+    $\Gamma_1 \Sequent \Delta_1, \lexists[x][!A(x)], !A(t), !C_1$
+    lan $!C_1, \Gamma_2 \Sequent \Delta_2$.
+    Kita bisa ngetrapaké $\RightR{\lexists}$ marang kang
+    kapisan kanggo ngolèhké
+    $\Gamma_1 \Sequent \Delta_1, \lexists[x][!A(x)], !C_1$.
+    Mula $!C_1$ dadi interpolan yèn
+    $\Lang L(!C_1) \subseteq \Lang L(\Gamma_1, \Delta_1,
+    \lexists[x][!A(x)]) \cap \Lang L(\Gamma_2, \Delta_2)$
+    kacukupan. Ing kéné hipotesis induksi mung maringi
+    $\Lang L(!C_1) \subseteq
+    \Lang L(\Gamma_1, \Delta_1, \lexists[x][!A(x)], !A(t))
+    \cap \Lang L(\Gamma_2, \Delta_2)$. Élinga yèn kita
+    nganggep ora ana !!{function}s. Mula suku~$t$ mung
+    bisa !!a{constant}, yaiku $t \ident b$.
+    Yèn $b \notin \Lang L(!C_1)$ utawa
+    $b \in \Lang L(\Gamma_1, \Delta_1, \lexists[x][!A(x)]) \cap
+    \Lang L(\Gamma_2, \Delta_2)$, $!C_1$ bisa langsung
+    dijupuk dadi interpolan. Nanging kepriyé yèn
+    $b \in \Lang L(!C_1)$ lan
+    $b \notin \Lang L(\Gamma_1, \Delta_1,
+    \lexists[x][!A(x)]) \cap \Lang L(\Gamma_2, \Delta_2)$?
+    Sepisan, kanthi ngganti saben kedadéan~$b$ ing~$!C_1$
+    nganggo !!a{variable}~$y$, kita bisa nulis
+    $!C_1 \ident \Subst{!C_1'}{b}{y}$ kanthi $!C_1'$~ora
+    ngemot~$b$. Sabanjuré, $b \notin
+    \Lang L(\Gamma_1, \Delta_1, \lexists[x][!A(x)])$ utawa
+    $b \notin \Lang L(\Gamma_2, \Delta_2)$.
+    Kita bisa njupuk $!C \ident \lforall[y][!C_1'(y)]$
+    utawa $!C \ident \lexists[y][!C_1'(y)]$ miturut urutané.
+    Ing kahanan kapisan, kita nduwèni:
+    \[
+    \AxiomC{}
+    \Deduce$\Gamma_1 \fCenter
+      \Delta_1, \lexists[x][!A(x)], !A(b), !C_1'(b)$
+    \RightLabel{\RightR{\lexists}}
+    \UnaryInf$\Gamma_1 \fCenter \Delta_1, \lexists[x][!A(x)], !C_1'(b)$
+    \RightLabel{\RightR{\lforall}}
+    \UnaryInf$\Gamma_1 \fCenter
+      \Delta_1, \lexists[x][!A(x)], \lforall[y][!C_1'(y)]$
+    \DisplayProof
+    \]
+    lan
+    \[
+    \AxiomC{}
+    \Deduce$!C_1'(b), \lforall[y][!C_1'(y)], \Gamma_2 \fCenter \Delta_2$
+    \RightLabel{\LeftR{\lforall}}
+    \UnaryInf$\lforall[y][!C_1'(y)], \Gamma_2 \fCenter \Delta_2$
+    \DisplayProof
+    \]
+    !!{proof}s kanggo sekèn paling dhuwur asalé saka
+    hipotesis induksi (ing kang kapindho, kita ngetrapaké
+    admisibilitas pelemahan kanthi nambah
+    $\lforall[y][!C_1'(y)]$ ing antesèden). Syarat
+    variabel eigen kanggo \RightR{\lforall} ing
+    !!{proof} kapisan kacukupan amarga
+    $b \notin \Lang L(\Gamma_1, \Delta_1,
+    \lexists[x][!A(x)])$, lan $!C_1'$~wis ditegesaké
+    supaya ora ngemot~$b$.
+    
+    Ing kahanan kapindho, kita nduwèni (saka hipotesis
+    induksi lan admisibilitas pelemahan kanthi nambah
+    ~$\lexists[y][!C_1'(y)]$):
+    \[
+    \AxiomC{}
+    \Deduce$\Gamma_1 \fCenter
+      \Delta_1, \lexists[x][!A(x)], !A(b), \lexists[y][!C_1'(y)], !C_1'(b)$
+    \RightLabel{\RightR{\lexists}}
+    \UnaryInf$\Gamma_1 \fCenter
+      \Delta_1, \lexists[x][!A(x)], \lexists[y][!C_1'(y)], !C_1'(b)$
+    \RightLabel{\RightR{\lexists}}
+    \UnaryInf$\Gamma_1 \fCenter
+      \Delta_1, \lexists[x][!A(x)], \lexists[y][!C_1'(y)]$
+    \DisplayProof
+    \]
+    lan
+    \[
+    \AxiomC{}
+    \Deduce$!C_1'(b), \Gamma_2 \fCenter \Delta_2$
+    \RightLabel{\LeftR{\lexists}}
+    \UnaryInf$\lexists[y][!C_1'(y)], \Gamma_2 \fCenter \Delta_2$
+    \DisplayProof
+    \]
+    Syarat variabel eigen kanggo \LeftR{\lexists} ing
+    !!{proof} kapindho kacukupan amarga
+    $b \notin \Lang L(\Gamma_2, \Delta_2)$, lan $!C_1'$
+    wis ditegesaké supaya ora ngemot~$b$.
+  \end{enumerate}
+  Kahanan liyané padha polané; dipasrahaké dadi latihan.
+\end{proof}
+
+\begin{prob}
+Anggepen ana konektif $\lnand$ kanthi aturan
+\[
+\Axiom$\Gamma \fCenter \Delta, !A$
+\Axiom$\Gamma \fCenter \Delta, !B$
+\RightLabel{\LeftR{\lnand}}
+\BinaryInf$!A \lnand !B, \Gamma \fCenter \Delta$
+\DisplayProof
+\quad
+\Axiom$!A, !B, \Gamma \fCenter \Delta$
+\RightLabel{\RightR{\lnand}}
+\UnaryInf$\Gamma \fCenter \Delta, !A \lnand !B$
+\DisplayProof
+\]
+Tuduhna yèn Lema Maehara tetep bener kanthi ngrampungaké
+kahanan-kahanan ing bukti \olref{lem:maehara} nalika
+$\pi$ pungkasané nganggo salah siji aturan iki.
+\end{prob}
+
+Sawisé Lema Maehara kabuktèkaké, kita bisa migunakaké
+kanggo mbuktèkaké Teorema Interpolasi Craig.
+
+\begin{proof}[Bukti \olref{thm:interpolation}]
+  Anggepen $!A \Sequent !B$ iku !!{provable}.
+  Trapna \olref{lem:maehara} marang
+  $\maeh{!A}{\ } \Sequent \maeh{\ }{!B}$ kanggo
+  ngolèhké interpolan~$!C$. Kita nduwèni
+  $\Proves !A \Sequent !C$ lan $\Proves !C \Sequent !B$.
+\end{proof}
+
+Anggepen $\Gamma$ iku teori (himpunan !!{sentence}s) ing
+!!a{language}~$\Lang L$ kang ngemot predikat $n$-panggonan~$R$.
+Kita kandha yèn $\Gamma$ \emph{nemtokaké kanthi implisit}~$R$
+yèn lan mung yèn
+\begin{align*}
+\Gamma, \Gamma'
+& \Entails \lforall[x_1][\dots\lforall[x_n][(R(x_1,\dots,x_n) \liff
+R'(x_1, \dots, x_n))]],
+\intertext{ing ngendi $\Gamma'$ asalé saka $\Gamma$ kanthi saben
+kedadéan~$R$ diganti~$R' \notin \Lang L$. $\Gamma$
+\emph{nemtokaké kanthi eksplisit}~$R$ yèn lan mung yèn ana~$!A(x_1, \dots, x_n)$
+kang ora ngemot~$R$ saéngga}
+\Gamma &\Entails
+\lforall[x_1][\dots\lforall[x_n][(R(x_1,\dots,x_n) \liff !A(x_1,
+\dots, x_n))]].
+\end{align*}
+Cetha yèn $\Gamma$ nemtokaké $R$ kanthi eksplisit,
+mula uga nemtokaké kanthi implisit~$R$.
+Waliké ora langsung cetha, nanging tetep bener:
+
+\begin{lem}[Teorema Definabilitas Beth]
+  Yèn $\Gamma$ nemtokaké~$R$ kanthi implisit,
+  teori iku uga nemtokaké kanthi eksplisit.
+\end{lem}
+
+\begin{proof}
+  Anggepen $\Gamma$ nemtokaké~$R$ kanthi implisit.
+  Upama $R'$ lan $\Gamma'$ kaya ing ndhuwur, sarta
+  $\Lang L' = \Lang L(\Gamma') = \Lang L \setminus \{R\}
+  \cup \{R'\}$. Miturut hipotesis, kita nduwèni
+  \begin{align*}
+    \Gamma, \Gamma' & 
+    \Sequent \lforall[x_1][\dots\lforall[x_n][(R(x_1,\dots,x_n) 
+    \liff R'(x_1, \dots, x_n))]]
+  \intertext{Upama $c_1$, \dots,~$c_n$ iku !!{constant}s kang ora ana ing~$\Gamma$. Miturut lema inversibilitas, kita nduwèni}
+    \Gamma, \Gamma', R(c_1,\dots,c_n) & \Sequent  R'(c_1, \dots, c_n)
+  \intertext{Trapna Lema Maehara marang}
+    \maeh{\Gamma, R(c_1,\dots,c_n)}{\Gamma'} & \Sequent
+      \maeh{\ }{R'(c_1, \dots, c_n)}
+  \intertext{kanggo nemokaké~$!A \ident !A(x_1, \dots, x_n)$ saéngga}
+    \Gamma, R(c_1,\dots,c_n) & \Sequent !A(c_1, \dots, c_n) \\
+    !A(c_1, \dots, c_n), \Gamma' & \Sequent R'(c_1, \dots, c_n)
+  \intertext{nduwèni !!{proof}s. Amarga $\Lang L(!A) \subseteq \Lang L_1 \cap
+  \Lang L_2$, $!A$~ora ngemot~$R$, kang mung ana ing pérangan kapisan.
+  Gantenana $R'$ nganggo~$R$ ing saindhenging !!{proof} sekèn kapindho
+  kanggo ngolèhké !!a{proof} kanggo}
+    !A(c_1, \dots, c_n), \Gamma & \Sequent R(c_1, \dots, c_n)
+  \end{align*}
+  Trapna \RightR{\lif} lan \RightR{\lforall} kanggo ngolèhké
+  !!a{proof} kanggo
+  \[
+    \Gamma \Sequent \lforall[x_1][\dots\lforall[x_n][(R(x_1,\dots,x_n) \liff !A(x_1, \dots, x_n))]].
+  \]
+  Iki nuduhaké yèn $!A(x_1, \dots, x_n)$ nemtokaké
+  $R$ kanthi eksplisit ing~$\Gamma$.
+\end{proof}
+
+Asil katelu kang équivalèn karo interpolasi (lan kaya
+interpolasi, bisa dibuktèkaké nganggo Lema Maehara)
+yaiku teorema iki: Yèn rong teori konsistèn~$\Gamma_1$
+lan $\Gamma_2$ ngemot teori komplet $\Gamma$ ing basa
+$\Lang L(\Gamma) \subseteq \Lang L(\Gamma_1)
+\cap \Lang L(\Gamma_2)$, banjur
+$\Gamma_1 \cup \Gamma_2$ konsistèn.
+
+Élinga yèn teori komplet iku teori kang kanggo saben
+!!{sentence}~$!A$ ing basané, $\Gamma \Proves !A$ utawa
+$\Gamma \Proves \lnot !A$. Amarga $\Gamma_1$ lan~$\Gamma_2$
+iku ekstènsi konsistèn saka~$\Gamma$, mula $\Gamma$
+uga konsistèn. Dadi, yèn $!A$ iku !!a{sentence} ing basa
+$\Lang L(\Gamma_1) \cap \Lang L(\Gamma_2)$, ora mungkin
+$\Gamma_1 \Entails !A$ lan
+$\Gamma_2 \Entails \lnot !A$ bebarengan.
+Anggepen ana~$!A$ mangkono. Yèn
+$\Gamma_1 \Entails !A$, banjur $\Gamma \Entails !A$:
+yèn ora, amarga $\Gamma$ komplet,
+$\Gamma \Entails \lnot !A$, lan amarga
+$\Gamma \subseteq \Gamma_1$, kita ngolèhké
+$\Gamma_1 \Entails \lnot !A$, kang ndadèkaké
+$\Gamma_1$ ora konsistèn. Dadi $\Gamma \Entails !A$,
+lan amarga $\Gamma \subseteq \Gamma_2$,
+$\Gamma_2 \Entails !A$. Mula $\Gamma \Entails/
+\lnot !A$; yèn ora, $\Gamma_2$ ora konsistèn.
+
+Ora anané !!a{sentence}~$!A$ ing
+!!{language} sesarengan~$\Lang L(\Gamma_1) \cap \Lang L(\Gamma_2)$
+kanthi $\Gamma_1 \Entails !A$ lan
+$\Gamma_2 \Entails \lnot !A$ wis cukup kanggo bukti,
+kang ing kéné kita wènèhaké kanthi cara teori bukti
+nganggo Lema Maehara.
+
+\begin{thm}[Teorema Konsistènsi Gabungan Robinson]
+Anggepen $\Gamma_1$ lan $\Gamma_2$ iku teori konsistèn,
+lan ora ana~$!A$ ing !!{language}
+$\Lang L(\Gamma_1) \cap \Lang L(\Gamma_2)$ kang marakaké
+$\Gamma_1 \Entails !A$ lan
+$\Gamma_2 \Entails \lnot !A$ bebarengan. Banjur
+$\Gamma_1 \cup \Gamma_2$ konsistèn.
+\end{thm}
+
+\begin{proof}
+  Kosok balènana, anggepen $\Gamma_1 \cup \Gamma_2$
+  ora konsistèn. Banjur sekèn
+  $\Gamma_1, \Gamma_2 \Sequent \ $ nduwèni !!a{proof}.
+  Trapna Lema Maehara marang
+  $\maeh{\Gamma_1}{\Gamma_2} \Sequent \maeh{\ }{\ }$
+  kanggo ngolèhké !!a{sentence}~$!A$ ing
+  !!{language}~$\Lang L(\Gamma_1) \cap \Lang L(\Gamma_2)$
+  saéngga $\Proves \Gamma_1 \Sequent !A$ lan
+  $\Proves !A, \Gamma_2 \Sequent \quad$. Saka sekèn
+  kapindho iki kita ngolèhké
+  $\Proves \Gamma_2 \Sequent \lnot !A$.
+  Nanging kita wis nganggep ora ana !!{sentence} mangkono.
+\end{proof}
+
+Ing ndhuwur kita meneng-menengan nganggep teori
+$\Gamma$, $\Gamma_1$, lan $\Gamma_2$ winates.
+Miturut kakompakan, asilé uga bener kanggo teori
+tanpa wates.
+
+\end{document}

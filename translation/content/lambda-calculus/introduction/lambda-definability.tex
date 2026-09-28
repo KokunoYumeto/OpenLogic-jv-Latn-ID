@@ -1,0 +1,69 @@
+% Part: lambda-calculus
+% Chapter: introduction
+% Section: lambda-definability
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{int}{rep}
+\olsection{Fungsi Aritmetika kang \usetoken{S}{lambda definable}}
+
+Kepiye kalkulus lambda bisa dadi modhèl komputasi?
+Wiwitane, malah durung cetha kepriye ukara iki
+kudu dimangerteni. Kanggo ngrembug komputabilitas
+ing wilangan asli, kita perlu nemokake representasi
+kang trep kanggo wilangan-wilangan iku. Ing ngisor
+iki salah siji representasi kang bisa digunakake
+kanthi becik, luwih becik tinimbang kang bisa
+dikira sadurunge.
+
+\begin{defn}
+Kanggo saben wilangan asli~$n$, tetepna
+\emph{numeral Church} $\num{n}$ minangka
+suku lambda $\lambd[x][\lambd[y][(x(x(x(\dots
+x(y)))))]]$, kanthi cacah sakabehe ana $n$ aksara $x$.
+\end{defn}
+
+Suku-suku $\num{n}$ iku ``iterator'': yen
+diwenehi input $f$, $\num{n}$ ngasilake
+fungsi kang masangake $y$ karo $f^n(y)$.
+Gatekna yen saben numeral iku wis normal.
+Saiki kita bisa nerangake apa tegese sawijining
+suku lambda ``ngitung'' fungsi ing wilangan asli.
+
+\begin{defn}
+Upamana $f(x_0, \dots, x_{k-1})$ sawijining fungsi
+parsial kanthi $k$ argumen saka $\Nat$ lan
+asil ing $\Nat$. Kita nyebut suku-$\lambd$~$F$
+\emph{!!{lambda define}s}~$f$ yen lan mung yen
+kanggo saben urutan wilangan asli $n_0$,
+\dots,~$n_{k-1}$,
+\[
+F\, \num{n_0}\, \num{n_1} \dots \num{n_{k-1}} \red \num{f(n_0, n_1, \dots,
+  n_{k-1})}
+\]
+yen $f(n_0, \dots, n_{k-1})$ nduweni nilai,
+dene $F\, \num{n_0}\, \num{n_1}
+\dots \num{n_{k-1}}$ ora nduweni wujud
+normal yen fungsi iku ora nduweni nilai
+ing input kasebut.
+\end{defn}
+
+\begin{thm}
+\ollabel{thm:lambda-def}
+Fungsi $f$ iku fungsi parsial kang bisa diitung
+yen lan mung yen fungsi iku
+!!{lambda defined} dening sawijining suku lambda.
+\end{thm}
+
+\begin{explain}
+Teorema iki rada nggumunake. Minangka modhèl
+komputasi, kalkulus lambda iku kalkulus kang
+cukup prasaja: mung ana rong operasi, yaiku
+abstraksi lambda lan aplikasi!{} Nanging saka
+sarana kang winates iki, saben prosedur komputasi
+bisa diwujudake.
+\end{explain}
+
+\end{document}

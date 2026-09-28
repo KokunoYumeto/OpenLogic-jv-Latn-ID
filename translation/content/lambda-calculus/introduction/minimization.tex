@@ -1,0 +1,94 @@
+% Part: lambda-calculus
+% Chapter: introduction
+% Section: minimization
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{int}{min}
+\olsection{Fungsi kang \usetoken{S}{lambda definable} Katutup tumrap Minimisasi}
+
+\begin{lem}
+Upamana $f(x,y)$ iku !!{lambda definable}.
+Tetepna $g$ kanthi
+\[
+g(x) \simeq \umin{y}{f(x,y)}.
+\]
+Mula $g$ uga !!{lambda definable}.
+\end{lem}
+
+\begin{proof}
+Gagasane kira-kira kaya mangkene. Yen
+diwenehi $x$, kita bakal nggunakake
+suku lambda titik tetep $Y$ kanggo
+netepake fungsi $h_x(n)$ kang nggoleki~$y$
+wiwit saka~$n$; banjur $g(x)$ mung
+$h_x(0)$. Fungsi~$h_x$ bisa diwujudake
+minangka solusi persamaan titik tetep:
+\[
+h_x(n) \simeq
+\begin{cases}
+n & \text{yen $f(x,n) = 0$} \\
+h_x(n+1) & \text{yen ora.}
+\end{cases}
+\]
+
+Mangkene rinciane. Amarga $f$ iku
+!!{lambda defined} dening sawijining
+suku $F$.
+Elinga yen kita uga duwe suku
+lambda~$D$, saengga
+$D(M, N, \bar{0}) \red M$ lan
+$D(M, N, \bar{1}) \red N$.
+Saiki kanggo sawetara wektu tetepna
+$x$; kanggo !!{lambda define} $h_x$
+kita kudu nemokake suku~$H$
+(kang gumantung marang~$x$)
+kang nyukupi
+\[
+H(\num{n}) \equiv D(\num{n}, H(\fn{Succ}(\num{n})), F(x, \num{n})).
+\]
+Iki bisa ditindakake nganggo suku
+titik tetep~$Y$. Sepisanan, tetepna
+$U$ minangka suku
+\[
+\lambd[h][\lambd[z][D(z,(h(\fn{Succ}(z))),F(x,z))]],
+\]
+banjur tetepna $H$ minangka suku~$YU$.
+Gatekna yen siji-sijine variabel bebas
+ing~$H$ yaiku~$x$. Kita bakal nuduhake
+yen $H$ nyukupi persamaan ing ndhuwur.
+
+Miturut definisi $Y$, kita duwe
+\[
+H = YU \equiv U(YU) = U(H).
+\]
+Mligine, kanggo saben wilangan asli~$n$,
+kita duwe
+\begin{align*}
+H(\num{n}) & \equiv U(H, \num{n}) \\
+& \red D(\num{n}, H(\fn{Succ}(\num{n})), F(x, \num{n})),
+\end{align*}
+kaya kang dikarepake. Gatekna yen
+nalika numeral $\num{m}$ disubstitusi
+kanggo~$x$ ing larik pungkasan,
+ekspresi kasebut direduksi dadi
+$\num{n}$ yen $F(\num{m},
+\num{n})$ direduksi dadi $\num{0}$,
+lan direduksi dadi
+$H(\fn{Succ}(\num{n}))$ yen
+$F(\num{m}, \num{n})$ direduksi
+dadi numeral liyane.
+
+Kanggo ngrampungake bukti, tetepna
+$G$ minangka $\lambd[x][H(\num 0)]$.
+Banjur $G$ !!{lambda define}s~$g$;
+tegese, kanggo saben~$m$,
+$G(\num m)$ direduksi dadi
+$\overline {g(m)}$ yen $g(m)$
+nduweni nilai, lan ora nduweni
+wujud normal yen ora.
+\end{proof}
+
+\end{document}

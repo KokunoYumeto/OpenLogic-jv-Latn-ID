@@ -1,0 +1,34 @@
+% Part: lambda-calculus
+% Chapter: introduction
+% Section: composition
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{int}{com}
+\olsection{Fungsi kang \usetoken{S}{lambda definable} Katutup tumrap Komposisi}
+
+\begin{lem}
+Fungsi-fungsi kang !!{lambda definable}
+katutup tumrap komposisi.
+\end{lem}
+
+\begin{proof}
+Upamana $f$ ditetepake kanthi komposisi
+saka $h$, $g_0,$ \dots,~$g_{k-1}$.
+Upamana $h$, $g_0$, \dots,~$g_{k-1}$
+saben-saben !!{lambda defined} dening
+$H$, $G_0$, \dots,~$G_{k-1}$.
+Kita kudu nemokake suku~$F$ kang
+!!{lambda define}s~$f$. Nanging kita
+bisa langsung netepake~$F$ kanthi
+\[
+F(x_0, \dots, x_{l-1}) = H(G_0(x_0, \dots, x_{l-1}),
+\dots, G_{k-1}(x_0, \dots, x_{l-1})).
+\]
+Tegese, basa kalkulus lambda pancen trep
+kanggo makili komposisi.
+\end{proof}
+
+\end{document}

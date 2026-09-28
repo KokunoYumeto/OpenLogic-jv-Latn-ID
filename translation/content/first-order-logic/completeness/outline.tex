@@ -1,0 +1,182 @@
+% Part: first-order-logic
+% Chapter: completeness
+% Section: outline
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{com}{out}}
+      {\olfileid{pl}{com}{out}}
+
+\olsection{Garis Gedhe Bukti}
+
+Bukti teorema kelengkapan rada rumit, lan nalika pisanan diwaca kita
+gampang kesasar. Mula, ayo kita gawe garis gedhe buktine. Langkah
+kapisan yaiku ngowahi sudut pandang supaya dalan tumuju bukti katon.
+Nalika kelengkapan dirumusake minangka pratelan yen saben $\Gamma
+\Entails !A$ mesthi menehi $\Gamma \Proves !A$, bisa uga angel
+nemokake gagasan kanggo miwiti: kanggo nuduhake $\Gamma \Proves !A$,
+kita kudu nemokake !!a{derivation}, dene hipotesis $\Gamma \Entails
+!A$ katon ora maringi pitulungan kanggo nemokake iku. Ing sawetara
+sistem bukti, !!a{derivation} bisa dibangun langsung, nanging kita
+bakal nganggo pendekatan kang rada beda. Owahing sudut pandang kang
+dibutuhake yaiku iki: kelengkapan uga bisa dirumusake mangkene: yen
+$\Gamma$ konsisten, mula himpunan iku bisa dicukupi. Mbokmenawa informasi
+ing~$\Gamma$ bebarengan karo hipotesis konsistensine bisa digunakake
+kanggo mbangun \iftag{FOL}{!!a{structure}}{!!a{valuation}} kang
+nyukupi saben \iftag{FOL}{!!{sentence}}{!!{formula}} ing~$\Gamma$.
+Kita wis ngerti jinis \iftag{FOL}{!!{structure}}{!!{valuation}} kang
+digoleki: sing cocog persis karo katerangane~$\Gamma$!{}
+
+Yen $\Gamma$ mung ngemot \iftag{FOL}{!!{sentence}s
+  atomik}{!!{propositional variable}s}, modele gampang dibangun.
+\iftag{FOL}{Upamana kabeh !!{sentence}s atomik mau awujud
+  $\Atom{P}{a_1,\dots,a_n}$, kanthi $a_i$ minangka !!{constant}s.}{}
+Kita mung perlu nemtokake
+\iftag{FOL}{%
+  !!a{domain}~$\Domain{M}$ lan pamasangan kanggo~$P$ saengga
+  $\Sat{M}{\Atom{P}{a_1,\ldots,a_n}}$. Iki ora angel: tetepna
+  $\Domain{M} = \Nat$, $\Assign{\Obj c_i}{M} = i$, lan kanggo saben
+  $\Atom{P}{a_1,\ldots,a_n} \in \Gamma$, lebokna tuple $\tuple{k_1,
+    \dots, k_n}$ menyang $\Assign{P}{M}$, kanthi $k_i$ minangka indeks
+  simbol konstanta~$a_i$ (yaiku, $a_i \ident \Obj c_{k_i}$).}{%
+  !!a{valuation}~$\pAssign{v}$ saengga $\pSat{v}{p}$ kanggo saben
+  $p \in \Gamma$. Tetepna wae $\pAssign{v}(p) = \True$ yen lan mung
+  yen $p \in \Gamma$.}
+
+Saiki upamana $\Gamma$ ngemot !!{formula}~$\lnot !B$, kanthi $!B$
+atomik. Bisa wae kita kuwatir yen konstruksi
+$\iftag{FOL}{\Struct{M}}{\pAssign{v}}$ ngalangi $\lnot !B$ dadi
+bener. Nanging ing kene konsistensi~$\Gamma$ nduweni peran: yen
+$\lnot !B \in \Gamma$, mula $!B \notin \Gamma$; yen ora, $\Gamma$
+ora konsisten. Yen $!B \notin \Gamma$, miturut konstruksi
+$\iftag{FOL}{\Struct{M}}{\pAssign{v}}$ kita,
+$\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!B}$, mula
+$\iftag{FOL}{\Sat{M}}{\pSat{v}}{\lnot !B}$. Nganti kene ora ana
+masalah.
+
+Kepiye yen $\Gamma$ ngemot formula majemuk kang dudu atomik? Upamane,
+himpunan iku ngemot $!A \land !B$. Supaya formula iku bener, kita kudu
+tumindak kaya-kaya $!A$ lan $!B$ kalorone ana ing~$\Gamma$. Yen
+$!A \lor !B \in \Gamma$, kita kudu ndadekake paling ora salah siji
+ing antarane kalorone bener, yaiku tumindak kaya-kaya salah sijine ana
+ing~$\Gamma$.
+
+Iki nuwuhake gagasan mangkene: kita nambah !!{formula}s liyane
+menyang~$\Gamma$ supaya (a)~himpunan asile tetep konsisten,
+(b)~kanggo saben !!{sentence} atomik~$!A$ kang mungkin, $!A$ utawa
+$\lnot !A$ ana ing himpunan asil kasebut, lan (c)~yen $!A \land !B$
+ana ing himpunan, $!A$ lan $!B$ kalorone uga ana; yen $!A \lor !B$
+ana ing himpunan, paling ora salah siji saka $!A$ utawa $!B$ uga ana;
+lan sateruse. Proses iki diterusake, bisa uga tanpa entek. Sebuten
+himpunan kabeh !!{formula}s kang ditambahake mau~$\Gamma^*$. Banjur
+konstruksi ing ndhuwur menehi
+\iftag{FOL}{!!a{structure}~$\Struct{M}$}{!!a{valuation}~$\pAssign{v}$}
+kang kanthi induksi bisa dibuktekake nyukupi kabeh ukara
+ing~$\Gamma^*$, lan mula uga kabeh ukara ing~$\Gamma$ amarga
+$\Gamma \subseteq \Gamma^*$. Cathetan koreksi sumber OLPL-045: sumber
+Inggris nganggo wujud tunggal sentence nalika ngrujuk kabeh ukara ing
+himpunan mau; wujud jamak kang dikarepake dibalekake ing kene. Pranyata
+jaminan (a) lan~(b) wis cukup. Himpunan ukara kang nyukupi (b) diarani
+\emph{jangkep}. Dadi, tugas kita yaiku ngambakake himpunan
+konsisten~$\Gamma$ dadi himpunan~$\Gamma^*$ kang konsisten lan
+jangkep.
+
+\iftag{FOL}{%
+Ana siji alangan ing rancangan iki: yen $\lexists[x][!A(x)] \in
+\Gamma$, kita pengin bisa milih !!{constant}~$c$ lan nambah $!A(c)$
+ing proses kasebut. Nanging kepiye kita ngerti manawa iki tansah bisa
+dilakoni? Mbokmenawa basa kita mung duwe sawetara !!{constant}s, lan
+kanggo saben konstanta mau $\lnot !A(c) \in \Gamma$. Kita ora bisa
+uga nambah $!A(c)$, amarga iku bakal ndadekake himpunan ora konsisten,
+lan kita ora bakal ngerti apa $\Struct{M}$ kudu ndadekake $!A(c)$
+utawa $\lnot !A(c)$ bener. Kajaba iku, bisa wae $\Gamma$ mung ngemot
+ukara ing basa kang ora duwe simbol konstanta babar pisan (umpamane
+basa teori himpunan).
+
+Pamedharing masalah iki yaiku nambah tanpa winates akeh konstanta ing
+wiwitan, bebarengan karo ukara-ukara kang nyambungake konstanta mau
+marang kuantor kanthi cara kang trep. (Mesthi wae, kita kudu
+mbuktekake yen iki ora bisa nuwuhake inkonsistensi.)
+
+Konstruksi wiwitan kita lumaku kanthi becik yen ukara atomik mung
+ngemot !!{constant}s. Nanging basa bisa uga ngemot !!{function}s.
+Ing perkara iki, bisa angel nemokake fungsi ing~$\Nat$ kang trep
+kanggo dipasangake marang !!{function}s kasebut. Mula ana cara liya:
+tinimbang nganggo $i$ kanggo napsirake $\Obj c_i$, gunakna himpunan
+!!{constant}s dhewe minangka domain. Banjur $\Struct M$ bisa
+masangake saben !!{constant} marang awake dhewe:
+$\Assign{\Obj c_i}{M} = \Obj c_i$. Malah, kenapa ora diterusake
+sakabehe: tetepna $\Domain{M}$ minangka kabeh \emph{term} ing basa
+kasebut!{} Kanthi mangkono, ana pamasangan fungsi kang cetha marang
+!!{function}s: fungsi kasebut njupuk term minangka argumen lan
+ngasilake term minangka nilai. Kita masangake marang
+!!{function}~$\Obj f^n_i$ fungsi kang, yen diwenehi $n$ term
+$t_1$, \dots,~$t_n$ minangka input, ngasilake term
+$\Obj f^n_i(t_1, \dots, t_n)$ minangka nilai.
+
+Perangan pungkasan yaiku carane nangani~$\eq$.
+!!{predicate}~$\eq$ duwe interpretasi tetep:
+$\Sat{M}{\eq[t][t']}$ yen lan mung yen $\Value{t}{M} =
+\Value{t'}{M}$. Yen konstruksi digawe supaya !!{value} term~$t$
+yaiku $t$ dhewe, !!{structure} iki ora bakal ndadekake
+\emph{samubarang} ukara awujud $\eq[t][t']$ bener kajaba $t$ lan
+$t'$ iku term kang padha persis. Iki dadi masalah, amarga meh saben
+teori kang wigati ing basa kanthi !!{function}s duwe teorema awujud
+$\eq[t][t']$ nalika $t$ lan $t'$ dudu term kang padha (umpamane ing
+teori aritmetika: $\eq[(\Obj 0+ \Obj 0)][\Obj 0]$). Kanggo
+ngrampungake masalah iki, domain~$\Struct M$ diowahi: tinimbang
+nganggo term minangka objek ing~$\Domain{M}$, kita nganggo
+himpunan-himpunan term, lan saben himpunan ngemot kabeh term kang
+diwajibake padha dening ukara-ukara ing~$\Gamma$. Umpamane, yen
+$\Gamma$ iku teori aritmetika, salah siji himpunan iki bakal ngemot
+$\Obj 0$, $(\Obj 0 + \Obj 0)$, $(\Obj 0 \times \Obj 0)$, lan
+sateruse. Himpunan iki bakal dipasangake marang $\Obj 0$, lan
+pranyata uga dadi nilai kabeh term ing njero, kalebu
+$(\Obj 0 + \Obj 0)$. Mula, ukara
+$\eq[(\Obj 0+ \Obj 0)][\Obj 0]$ bakal bener ing
+!!{structure} kang wis direvisi iki.}{}
+
+Dadi, iki rancangan buktine. Kaping pisan, kita nliti sipat-sipat
+himpunan konsisten kang !!{complete}; mligine, kita mbuktekake yen
+!!a{complete} himpunan konsisten ngemot $!A \land !B$ yen lan mung
+yen ngemot $!A$ lan~$!B$ kalorone, lan ngemot $!A \lor !B$ yen lan
+mung yen ngemot paling ora salah sijine, lan sateruse
+(\olref[ccs]{prop:ccs}).\iftag{FOL}{ Banjur kita nemtokake lan nliti
+  himpunan ukara kang jenuh. Himpunan jenuh ngemot implikasi kang
+  nyambungake saben !!{sentence} kauntifikasi marang conto-conto
+  ukara kasebut (\olref[hen]{defn:henkin-exp}). Kita mbuktekake yen
+  saben himpunan konsisten~$\Gamma$ tansah bisa diambakake dadi
+  himpunan jenuh~$\Gamma'$ (\olref[hen]{lem:henkin}). Yen sawijining
+  himpunan iku konsisten, jenuh, lan !!{complete}, himpunan kasebut
+  uga nduweni sipat yen ngemot
+  \iftag{prvEx}{$\lexists[x][!A(x)]$ yen lan mung yen ngemot $!A(t)$
+    kanggo sawijine term katutup~$t$}{}\iftag{defEx,defAll}{}{ lan
+  }\iftag{prvAll}{$\lforall[x][!A(x)]$ yen lan mung yen ngemot $!A(t)$
+    kanggo kabeh term katutup~$t$}{}
+  (\olref[hen]{prop:saturated-instances}).}{}
+Banjur kita njupuk himpunan\iftag{FOL}{ jenuh}{} kang
+konsisten~$\iftag{FOL}{\Gamma'}{\Gamma}$ lan mbuktekake yen himpunan
+iku bisa diambakake dadi himpunan kang
+\iftag{FOL}{jenuh, konsisten, lan}{konsisten lan} !!{complete}~$\Gamma^*$
+(\olref[lin]{lem:lindenbaum}). Himpunan~$\Gamma^*$ iki digunakake
+kanggo nemtokake \iftag{FOL}{model term~$\Struct
+  M(\Gamma^*)$}{!!{valuation}~$\pAssign v(\Gamma^*)$}.
+\iftag{FOL}{Model term nduweni himpunan term katutup minangka domain,
+  lan interpretasi !!{predicate}s ditemtokake dening !!{sentence}s
+  atomik}{Valuasi ditemtokake dening !!{propositional
+    variable}s}
+ing~$\Gamma^*$ (\olref[mod]{defn:termmodel}). Kita nggunakake
+sipat-sipat himpunan konsisten kang\iftag{FOL}{ jenuh,}{}
+jangkep kanggo mbuktekake yen
+$\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{!A}$ yen lan mung
+yen $!A \in \Gamma^*$ (\olref[mod]{lem:truth}), lan mligine,
+$\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{\Gamma}$.
+\iftag{FOL}{Pungkasan, kita bakal nliti carane nemtokake model term
+  yen $\Gamma$ uga ngemot~$\eq$
+  (\olref[ide]{defn:term-model-factor}) lan mbuktekake yen model iku
+  nyukupi~$\Gamma^*$ (\olref[ide]{lem:truth}).}{}
+
+\end{document}

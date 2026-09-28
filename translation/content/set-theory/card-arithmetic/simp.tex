@@ -1,0 +1,144 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+\olfileid{sth}{card-arithmetic}{simp}
+
+\olsection{Nyederhanakaké Panambahan lan Ping-pingan}
+
+Ternyata panambahan lan ping-pingan kardinal transfinit iku
+\emph{gampang banget}. Iki amarga kardinal iku ordinal
+(tartamtu), mula terurut becik lan bisa diolah kanthi cara
+tartamtu. Nanging mbuktèkaké iki \emph{ora} gampang.
+Kanggo miwiti, kita perlu definisi kang rada njlimet:
+
+\begin{defn}
+Kita netepaké \emph{pengurutan kanonik}, $\canonord$,
+ing pasangan ordinal, kanthi aturan yèn $\tuple{\alpha_1, \alpha_2} \canonord
+\tuple{\beta_1, \beta_2}$ yen lan mung yen salah siji:
+\begin{enumerate}
+	\item $\max(\alpha_1, \alpha_2) < \max(\beta_1, \beta_2)$; utawa
+	\item $\max(\alpha_1, \alpha_2) = \max(\beta_1, \beta_2)$ lan
+	$\alpha_1 < \beta_1$; utawa
+	\item $\max(\alpha_1, \alpha_2) = \max(\beta_1, \beta_2)$ lan
+	$\alpha_1 = \beta_1$ lan $\alpha_2 < \beta_2$
+\end{enumerate}
+\end{defn}
+
+\begin{lem}
+$\tuple{\alpha \times \alpha, \canonord}$ iku pengurutan becik,
+kanggo sembarang ordinal $\alpha$.
+\end{lem}
+
+\begin{proof}
+Cetha yèn $\canonord$ nyambung ing $\alpha \times \alpha$.
+Upamané $\tuple{\alpha_1, \alpha_2}$ lan $\tuple{\beta_1,
+\beta_2}$ ora ana kang luwih cilik miturut $\canonord$
+tinimbang sijiné. Mula $\max(\alpha_1,
+\alpha_2) = \max(\beta_1, \beta_2)$ lan $\alpha_1 = \beta_1$ lan
+$\alpha_2 = \beta_2$, saéngga $\tuple{\alpha_1, \alpha_2} =
+\tuple{\beta_1,  \beta_2}$.
+
+Kanggo nuduhaké sipat pengurutan becik, tetepna
+$X \subseteq \alpha\times\alpha$ kang ora kosong.
+Amarga $\alpha$ ordinal, ana $\delta$ kang dadi unsur
+paling cilik ing $\Setabs{\max(\gamma_1, \gamma_2)}{\tuple{\gamma_1,
+\gamma_2} \in X}$. Saiki sisihna kabèh pasangan saka
+$\Setabs{\tuple{\gamma_1,\gamma_2} \in X}{\max(\gamma_1, \gamma_2) =
+\delta}$ kajaba kang koordinat kapisané paling cilik;
+ing antarané, pasangan kang koordinat kapindhoné
+paling cilik iku unsur paling cilik miturut $\canonord$ ing $X$.
+\end{proof}
+\noindent
+Saiki sawijining pangamatan prasaja:
+
+\begin{prop}\ollabel{simplecardproduct}
+Yèn $\cardeq{\alpha}{\beta}$, mula $\cardeq{\alpha \times \alpha}{\beta
+\times \beta}$.
+\end{prop}
+
+\begin{proof}
+Cukup gunakna $f \colon \alpha \to \beta$ kanggo mbangun
+pemetaan $\tuple{\gamma_1,
+\gamma_2} \mapsto \tuple{f(\gamma_1), f(\gamma_2)}$.
+\end{proof}
+\noindent
+Saiki kabèh iki bakal dienggo kanggo mbuktèkaké lema wigati:
+\begin{lem}\ollabel{alphatimesalpha}
+$\cardeq{\alpha}{\alpha \times \alpha}$ kanggo sembarang
+ordinal tanpa wates $\alpha$.
+\end{lem}
+
+\begin{proof}
+Kanggo kontradiksi, upamané $\alpha$ ordinal tanpa wates paling
+cilik kang ora nyukupi iki.
+\olref[sfr][siz][zigzag]{natsquaredenumerable} nuduhaké
+$\cardeq{\omega}{\omega\times\omega}$, mula $\omega \in \alpha$.
+Kajaba iku, $\alpha$ iku kardinal: yèn ora, kanggo
+kontradiksi, $\card{\alpha} \in \alpha$, saéngga
+$\cardeq{\card{\alpha}}{\card{\alpha} \times \card{\alpha}}$ miturut
+hipotesis; lan $\cardeq{\card{\alpha}}{\alpha}$ miturut
+definisi; mula $\cardeq{\alpha}{\alpha\times\alpha}$ miturut
+\olref{simplecardproduct}.
+
+Saiki, kanggo saben $\tuple{\gamma_1, \gamma_2} \in \alpha \times \alpha$,
+gatekna segmen iki:
+\begin{align*}
+	\text{Seg}(\gamma_1, \gamma_2) &= \Setabs{\tuple{\delta_1, \delta_2} \in \alpha \times \alpha}{\tuple{\delta_1, \delta_2} \canonord \tuple{\gamma_1, \gamma_2}}
+\end{align*}
+Tetepna $\gamma = \max(\gamma_1, \gamma_2)$; wigatèkna yèn $\tuple{\gamma_1, \gamma_2} \canonord \tuple{\gamma+1, \gamma + 1}$. Dadi, nalika $\gamma$ tanpa wates, kita olèh:
+\begin{align*}
+	\text{Seg}(\gamma_1, \gamma_2) &
+	\precsim ((\gamma \ordplus 1)\ordtimes (\gamma \ordplus 1))\\
+	&\approx (\gamma \ordtimes \gamma)
+	\text{, miturut \olref[ord-arithmetic][using-addition]{ordinfinitycharacter} lan
+	\olref{simplecardproduct}}\\
+	&\approx \gamma \text{, miturut hipotesis induksi}\\
+	& \prec \alpha\text{, amarga $\alpha$ iku kardinal}
+\end{align*}
+Yèn indeks maksimum mau winates, segmen kasebut uga winates, mula cacahé
+luwih cilik tinimbang kardinal tanpa wates iki. Dadi
+$\ordtype{\alpha\times \alpha, \canonord} \leq \alpha$, mula
+$\cardle{\alpha \times \alpha}{\alpha}$. Amarga cetha
+$\cardle{\alpha}{\alpha \times \alpha}$, asilé nututi
+teorema Schr\"oder-Bernstein.
+\end{proof}
+
+Pungkasané, kita tekan asil panyederhanaan:
+
+\begin{thm}\ollabel{cardplustimesmax}
+Yèn $\cardfont{a}, \cardfont{b}$ kardinal tanpa wates, mula:
+\[
+	\cardfont{a}
+\cardtimes \cardfont{b} = \cardfont{a} \cardplus \cardfont{b} =
+\text{max}(\cardfont{a}, \cardfont{b}).
+\]
+\end{thm}
+
+\begin{proof}
+Tanpa ngurangi keumuman, upamané $\cardfont{a} = \max(\cardfont{a},
+\cardfont{b})$. Kanthi \olref{alphatimesalpha},
+$\cardfont{a}\cardtimes\cardfont{a} = \cardfont{a} \leq \cardfont{a}
+\cardplus \cardfont{b} \leq \cardfont{a} \cardplus \cardfont{a} \leq
+\cardfont{a} \cardtimes \cardfont{a}$. \end{proof}\noindent Semono uga,
+yèn $\cardfont{a}$ tanpa wates, gabungan saka
+$\cardfont{a}$ himpunan kang saben-saben ukurané
+$\leq\cardfont{a}$ uga nduwèni ukuran $\leq\cardfont{a}$:
+
+\begin{prop}\ollabel{kappaunionkappasize}
+Upamané $\cardfont{a}$ kardinal tanpa wates. Kanggo saben ordinal $\beta
+\in \cardfont{a}$, upamané $X_\beta$ himpunan kang $\card{X_\beta} \leq
+\cardfont{a}$. Mula $\card{\bigcup_{\beta \in \cardfont{a}} X_\beta}
+\leq \cardfont{a}$.
+\end{prop}
+
+\begin{proof}
+Kanggo saben $\beta \in \cardfont{a}$, pilih !!a{injection} $f_\beta \colon
+X_\beta \to \cardfont{a}$.\footnote{Kepiyé pilihan-pilihan iki ditetepaké? Delengen \olref[sth][choice][countablechoice]{sec}.} Tetepna !!a{injection} $g \colon
+\bigcup_{\beta \in \cardfont{a}} X_\beta \to \cardfont{a} \times
+\cardfont{a}$ kanthi $g(v) = \tuple{\beta, f_\beta(v)}$, ing kéné $v \in
+X_\beta$ lan $v \notin X_\gamma$ kanggo sembarang $\gamma \in \beta$. Saiki
+$\bigcup_{\beta \in \cardfont{a}} X_\beta \preceq \cardfont{a} \times
+\cardfont{a} \approx \cardfont{a}$ miturut \olref{cardplustimesmax}.
+\end{proof}
+
+\end{document}

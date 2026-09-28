@@ -1,0 +1,111 @@
+% Part: turing-machines 
+% Chapter: undecidability 
+% Section: unsolvability-decision-problem
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{tur}{und}{uns} 
+\olsection{Masalah Putusan Ora Bisa Dirampungake}
+
+\begin{thm}
+\ollabel{thm:decision-prob}
+Masalah putusan ora bisa dirampungake: Ora ana mesin Turing~$D$
+kang, nalika diwiwiti ing pita kang ngemot
+!!a{sentence}~$!B$ saka logika orde kapisan minangka input,
+$D$~pungkasane mandheg lan ngasilake~$1$ yen lan mung yen
+$!B$ sah, dene ngasilake $0$ yen ora.
+\end{thm}
+
+\begin{proof}
+Upamane masalah putusan bisa dirampungake, yaiku ana
+mesin Turing~$D$. Banjur kita bisa ngrampungake masalah
+mandheg kaya mangkene. Kita mbangun mesin Turing~$E$ kang,
+yen diwenehi input angka~$e$ saka mesin Turing~$M_e$
+lan input~$w$, ngitung !!{sentence}~$!T(M_e, w) \lif !E(M_e, w)$
+kang cocog, banjur mandheg karo sirah kang maca kothak
+paling kiwa ing pita. Mula mesin $E \concat D$, yen diwenehi
+input $e$ lan $w$, mula-mula ngitung~$!T(M_e, w) \lif
+!E(M_e, w)$, banjur nglakokake mesin masalah putusan~$D$
+nganggo asil iku minangka input. $D$ mandheg kanthi output~$1$
+yen lan mung yen $!T(M_e, w) \lif !E(M_e, w)$ sah,
+dene ngasilake~$0$ yen ora. Miturut
+\olref[ver]{lem:halt-if-valid} lan
+\olref[ver]{lem:valid-if-halt}, $!T(M_e, w) \lif !E(M_e, w)$
+sah yen lan mung yen $M_e$ mandheg nganggo input~$w$.
+Dadi, $E\concat D$, yen diwenehi input $e$ lan $w$,
+mandheg kanthi output~$1$ yen lan mung yen $M_e$
+mandheg nganggo input~$w$, dene mandheg kanthi
+output~$0$ yen ora. Kanthi tembung liya,
+$E \concat D$ bakal ngrampungake masalah mandheg.
+Nanging miturut \olref[hal]{thm:halting-problem},
+kita ngerti yen mesin Turing kaya mangkono ora mungkin ana.
+\end{proof}
+
+\begin{cor}\ollabel{cor:undecidable-sat}%
+Ora bisa diputusake apa sembarang !!{sentence}
+saka logika orde kapisan bisa dicukupi.
+\end{cor}
+
+\begin{proof}
+  Upamane apa sawijining ukara bisa dicukupi iku bisa diputusake
+  dening mesin Turing~$S$. Banjur kita bisa ngrampungake
+  masalah putusan kaya mangkene: Yen diwenehi
+  !!a{sentence}~$B$ minangka input, geser $!B$
+  sakothak menyang tengen. Bali menyang kothak~$1$
+  banjur tulis simbol~$\lnot$.
+
+  Saiki lakokna mesin Turing~$S$. Mesin iki pungkasane mandheg
+  kanthi output $1$ (yen $\lnot !B$ bisa dicukupi) utawa~$0$
+  (yen $\lnot !B$ ora bisa dicukupi) ing pita. Yen ana
+  $\TMstroke$ ing kothak~$1$, busak tandha iku;
+  yen kothak~$1$ kosong, tulis $\TMstroke$, banjur mandheg.
+
+  Mesin Turing iki mesthi mandheg, lan outpute~$1$ yen lan
+  mung yen $\lnot !B$ ora bisa dicukupi, dene $0$~yen ora.
+  Amarga $!B$ sah yen lan mung yen $\lnot !B$~ora bisa
+  dicukupi, mesin iki ngasilake~$1$ yen lan mung yen
+  $!B$ sah, dene $0$~yen ora. Tegese, mesin iki bakal
+  ngrampungake masalah putusan.
+\end{proof}
+
+\begin{explain}
+Dadi ora ana mesin Turing kang tansah menehi wangsulan
+``ya'' utawa ``ora'' kang bener kanggo pitakon
+``Apa $!B$ iku !!{sentence} logika orde kapisan kang sah?''
+Nanging \emph{ana} mesin Turing kang tansah menehi
+wangsulan ``ya'' kang bener---mung wae mesin iku ora
+mandheg yen wangsulane ``ora''. Iki ndherek saka
+teorema kasahihan lan kelengkapan logika orde kapisan,
+uga saka kasunyatan yen !!{derivation}s bisa
+dienumerasi kanthi efektif.
+\end{explain}
+
+\begin{thm}
+  \ollabel{thm:valid-ce}%
+  Kasahihan !!{sentence}s logika orde kapisan semi-bisa
+  diputusake: Ana mesin Turing~$E$ kang, nalika diwiwiti
+  ing pita kang ngemot !!a{sentence}~$!B$ saka logika
+  orde kapisan minangka input, $E$~pungkasane mandheg lan
+  ngasilake~$1$ yen lan mung yen $!B$ sah, nanging ora
+  mandheg yen ora.
+\end{thm}
+
+\begin{proof}
+  Kabeh !!{derivation}s logika orde kapisan kang mungkin
+  bisa diasilake siji mbaka siji dening algoritma efektif.
+  Mesin~$E$ nindakake iki, lan nalika nemokake
+  !!a{derivation} kang nuduhake yen $\Proves
+  !B$, mesin iku mandheg kanthi output~$1$.
+  Miturut teorema kasahihan, yen $E$ mandheg kanthi
+  output~$1$, sebabe~$\Entails !B$. Miturut teorema
+  kelengkapan, yen $\Entails !B$, ana !!a{derivation}
+  kang nuduhake yen~$\Proves !B$. Amarga $E$
+  ngasilake kabeh !!{derivation}s kang mungkin
+  kanthi sistematis, pungkasane mesin iku bakal
+  nemokake kang nuduhake~$\Proves !B$,
+  banjur mandheg kanthi output~$1$.
+\end{proof}
+
+\end{document}

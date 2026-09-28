@@ -1,0 +1,132 @@
+% Part: proof-theory
+% Chapter: natural-deduction
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{nat}{int}
+
+\olsection{Pambuka}
+
+Deduksi alami iku kulawarga sistem !!{proof} kang saben
+konektif logis utawa kuantor nduwèni pasangan inferènsi:
+siji ``nglebokaké'' operator mau (aturan
+!!a{introduction}) lan siji ``ngilangaké'' operator
+mau (aturan !!a{elimination}). Tuladhané,
+\Intro{\lif} nduwèni !!{formula}s kanthi wujud
+~$!A \lif !B$ minangka konklusi, déné \Elim{\lif}
+nduwèni !!{formula}s kanthi wujud~$!A \lif !B$
+minangka premis.
+
+Rong versi deduksi alami kang sepisanan dikenalaké ing
+taun 1930-an dening Gerhard Gentzen lan Stanisław Jaśkowski.
+Sistem Gentzen kang paling akèh dirembug ahli teori bukti,
+dene saka Jaśkowski lair sistem kang paling akèh dienggo
+mulang. Ing kaloro sistem, bukti bisa diwiwiti saka
+\emph{asumsi}---!!{formula}s kang ora perlu
+!!{prove}d, nanging bisa dienggo kanggo !!{proving}
+!!{formula}s liya. Sakabèhé !!{proof} bisa gumantung
+marang asumsi mau, lan amarga asumsi durung kabuktèkaké,
+!!{proof} iku ora langsung netepaké konklusiné
+(\emph{!!{formula} pungkasan}), nanging mung nuduhaké
+yèn konklusiné ndhèrèk saka asumsi.
+
+Sawetara aturan inferènsi nduwèni konklusi kang ora
+gumantung manèh marang sawetara asumsi: aturan mau
+``mbusak'' asumsi. Tuladhané, aturan \Intro{\lif}
+njupuk !!a{proof} kanggo konklusi~$!B$ saka
+asumsi~$!A$, banjur ngasilaké $!A \lif !B$ minangka
+konklusi. !!{proof} kang pungkasané ana ing
+$!A \lif !B$ ora gumantung manèh marang~$!A$;
+asumsi $!A$ wis dibusak. Ing sistem Gentzen,
+!!{proof}s wujudé wit !!{formula}s, asumsi ana minangka
+!!{formula}s paling dhuwur, lan aturan kaya~\Intro{\lif}
+nduwèni label kang nuduhaké asumsi endi kang dibusak.
+Ing sistem Jaśkowski, pérangan !!{proof} kang gumantung
+marang asumsi dipisah kanthi cara tartamtu, upamané
+digeser mlebu ing mburi garis vertikal utawa dilebokaké
+ing kothak, kanthi asumsi~$!A$ kang dibusak lan
+konsekuèn $!B$ saka implikasi minangka larik kapisan
+lan pungkasan ing kothak, déné konklusi~$!A \lif !B$
+saka \Intro{\lif} ana ing njaban kothak.
+
+Sistem iki diarani ``alami'' amarga aturan inferènsiné
+niru carané kita (utawa paling ora matématikawan)
+mikiran kanthi alami. Kanggo netepaké asil hipotètis
+(implikasi), kita nganggep antesèdené bener lan
+migunakaké kanggo mbuktèkaké konsekuèné.
+Iki~\Intro{\lif}. Yèn kita ngerti implikasi
+$!A \lif !B$ lan antesèdené~$!A$, kita nyimpulaké~$!B$.
+Iki~\Elim{\lif}. Kita migunakaké bukti miturut kahanan
+kanggo nuduhaké yèn saka disjungsi~$!A \lor !B$
+ndhèrèk sawijining konklusi. Iki~\Elim{\lor}.
+Kanggo mbuktèkaké pratelan umum~$\lforall[x][!A(x)]$,
+kita mbuktèkaké $!A(c)$ kanggo~$c$ kang arbitrèr.
+Iki~\Intro{\lforall}. Lan saterusé.
+
+Tuladhané, iki !!{proof} prasaja kanggo
+~$!A \lif (!A \lor !B)$ ing deduksi alami gaya Gentzen:
+\[
+\AxiomC{$\Discharge{!A}{x}$}
+\RightLabel{\Intro{\lor}}
+\UnaryInfC{$!A \lor !B$}
+\DischargeRule{\Intro{\lif}}{x}
+\UnaryInfC{$!A \lif (!A \lor !B)$}
+\DisplayProof
+\]
+Bukti iki diwiwiti saka asumsi~$!A$, nganggo
+\Intro{\lor} kanggo nyimpulaké~$!A \lor !B$,
+banjur \Intro{\lif} kanggo nyimpulaké
+~$!A \lif (!A \lor !B)$. Inferènsi \Intro{\lif}
+mbusak asumsi~$!A$; iki ditandhani label~$x$.
+
+Ahli teori bukti luwih seneng sistem asli Gentzen kang
+nganggo wit !!{formula}s, nanging ana varian liya kang
+uga wigati. !!^a{proof} kanggo~$!A$ saka
+asumsi~$\Gamma$ nuduhaké yèn $!A$ ndhèrèk saka~$\Gamma$,
+yaiku $\Gamma \Entails !A$. Aturan inferènsi deduksi
+alami bisa diwaca minangka pratelan babagan akibat
+mangkono; tuladhané, \Intro{\lif} mratélakaké yèn
+$\Gamma + !A \Entails !B$, banjur
+$\Gamma \Entails !A \lif !B$. Dadi wajar yèn aturan
+dirumusaké langsung kanggo nggarap asumsi lan
+konklusi kang ndhèrèk saka asumsi mau ing premis
+lan konklusi aturan inferènsi, yaiku nggarap sekèn
+$\Gamma \Sequent !A$. Bukti prasaja ing ndhuwur
+dadi kaya mangkéné ing sistem iku:
+\[
+\Axiom$x:!A \fCenter !A$
+\RightLabel{\Intro{\lor}}
+\UnaryInf$x:!A \fCenter !A \lor !B$
+\DischargeRule{\Intro{\lif}}{x}
+\UnaryInf$\fCenter !A \lif (!A \lor !B)$
+\DisplayProof
+\]
+Kaya kang katon, aturané padha: aturan nggarap
+!!{formula} ing sisih tengen~$\Sequent$, déné
+!!{formula}s ing sisih kiwa mung nyathet asumsi
+kang dienggo ing saben langkah.
+
+Pasangan aturan !!{introduction}/!!{elimination}
+waé durung cukup kanggo logika klasik. Kita perlu
+nambah rong aturan kang gegayutan karo~$\lfalse$.
+Kapisan yaiku ``aturan absurditas intuisionistik''~\FalseInt,
+utawa ``èksplosi'', kang ngidini nyimpulaké apa waé
+saka $\lfalse$. Kapindho yaiku prinsip klasik bukti
+ora langsung~\FalseCl{} (utawa ``aturan absurditas
+klasik''), kang mratélakaké yèn kita bisa
+!!{prove}~$\lfalse$ saka~$\lnot !A$, kita wis
+!!{prove}d~$!A$. Yèn~\FalseCl dibusak, kita ngolèhké
+sistem kang cocog kanggo logika intuisionistik.
+Yèn kaloroné dibusak, kita ngolèhké kang diarani
+``logika minimal''.
+
+Kita bakal ngrembug deduksi alami gaya Gentzen kanggo
+logika klasik lan intuisionistik. Iki sistem \Log{N1c}
+lan \Log{N1i}. Sistem \Log{N2c} lan \Log{N2i} iku
+versi kang cocog nanging nggarap sekèn
+$\Gamma \Sequent !A$ tinimbang !!{formula}s siji-siji~$!A$.
+
+\end{document}

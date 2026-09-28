@@ -1,0 +1,127 @@
+% Part: applied-modal-logics
+% Chapter: epistemic-logic
+% Section: public-announcement-logic-semantics
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{aml}{el}{psm}
+
+\olsection{Semantik Logika Wara-Wara Umum}
+
+Model relasional kanggo logika wara-wara umum padha karo model ing
+logika epistemik. Nanging, semantik operator wara-wara umum iku anyar.
+
+\begin{defn}\ollabel{defn:mmodels} \emph{Kabeneran !!a{formula}~$!A$
+  ing~$w$} sajroning~$\mModel M = \tuple{W, R, V}$, kang dinotasikake
+  $\mSat{M}{!A}[w]$, ditetepake kanthi induksi kaya mangkene:
+  \begin{enumerate}
+  \tagitem{prvFalse}{\indcase{!A}{\lfalse}{$\mSat{M}{\lfalse}[w]$ ora nate kelakon}.}{}
+  \tagitem{prvTrue}{\indcase{!A}{\ltrue}{$\mSat{M}{\ltrue}[w]$ tansah kelakon}.}{}
+  \item $\mSat{M}{p}[w]$ yen lan mung yen $w \in V(p)$
+  \tagitem{prvNot}{\indcase{!A}{\lnot !B}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
+    $\mSat{M}{!B}[w]$ ora kelakon}.}{}
+  \tagitem{prvAnd}{\indcase{!A}{(!B \land !C)}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
+    $\mSat{M}{!B}[w]$ lan $\mSat{M}{!C}[w]$}.}{}
+  \tagitem{prvOr}{\indcase{!A}{(!B \lor !C)}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
+    $\mSat{M}{!B}[w]$ utawa $\mSat{M}{!C}[w]$} (utawa loro-lorone).}{}
+  \tagitem{prvIf}{\indcase{!A}{(!B \lif !C)}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
+    $\mSat{M}{!B}[w]$ ora kelakon utawa $\mSat{M}{!C}[w]$}.}{}
+  \tagitem{prvIff}{\indcase{!A}{(!B \liff !C)}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
+    $\mSat{M}{!B}[w]$ lan $\mSat{M}{!C}[w]$ loro-lorone kelakon,
+    utawa $\mSat{M}{!B}[w]$ lan $\mSat{M}{!C}[w]$ loro-lorone ora kelakon}.}{}
+  \item\ollabel{defn:sub:mmodels-box}
+    \indcase{!A}{\Knows_a !B}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
+    $\mSat{M}{!B}[w']$ kanggo saben $w' \in W$ kang nyukupi $R_a ww'$}
+  \item\ollabel{defn:sub:mmodels-pal}
+    \indcase{!A}{[!B] !C}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
+    $\mSat{M}{!B}[w]$ ngimplikasekake $\mSat{M \mid !B}{!C}[w]$}
+
+  
+  Ing kene $\mModel M \mid !B = \tuple{W', R', V'}$ ditetepake
+  kaya mangkene:
+  \begin{enumerate}
+    \item $W' = \Setabs{ u \in W}{\mSat{M}{!B}[u]}$. Dadi jagad-jagad ing
+      $\mModel M \mid !B$ yaiku jagad-jagad ing~$\mModel M$ kang $!B$
+      bener.
+    \item $R'_a = R_a \cap (W' \times W')$. Relasi aksesibilitas saben
+      agen mung diwatesi marang jagad-jagad kang isih ana ing~$W'$.
+    \item $V'(p) = \Setabs{ u \in W'}{u \in V(p) }$. Mangkono uga,
+      valuasi proposisional ing saben jagad tetep padha. Iki
+      nglambangake gagasan yen prastawa informasi ora ngowahi nilai
+      kabeneran variabel proposisional.
+  \end{enumerate}
+  
+  \end{enumerate} 
+\end{defn}
+
+Mula, ciri khas logika wara-wara umum yaiku kabeneran !!a{formula}
+ing~$\mModel M$ kadhang mung bisa ditemtokake kanthi ngrujuk marang
+model liyane saliyane~$\mModel M$ dhewe.
+
+Elinga uga yen semantik iki nganggep operator wara-wara minangka
+operator~$\Box$. Mula yen !!a{formula}~$!A$ ora bisa diwara-warake
+kanthi bener ing sawijining jagad, $[!A] !B$ bener kanthi kosong ing
+jagad iku, kaya kabeh !!{formula}s mawa $\Box$ kang bener ing titik pungkasan.
+
+\begin{figure}
+  \begin{center}
+    \begin{tikzpicture}[modal]
+      \node[world] (w1) [label={below left:$p, \lnot q$}]{$w_1$}; 
+      \node[world] (w2) [left=of w1, label={left:$\lnot p, \lnot q$}]{$w_2$}; 
+      \node[world] (w3) [above=of w1, label={right:$p, q$}] {$w_3$};
+      \draw[<->] (w1) to [swap] node {$b$} (w2);
+      \draw[->,loop below] (w1) to node {$a, b$} (w1);
+      \draw[<->] (w1) to [swap] node {$a$} (w3);
+      \draw[->,loop above] (w2) to node {$a, b$} (w2) ;
+      \draw[->,loop above] (w3) to node {$a, b$} (w3) ;
+      
+      \node[world](v1)[right of=w1, xshift=1.25in, label={right:$p, \lnot q$}]{$w'_1$};
+      \node[world](v3)[above of=v1,label={right:$p,q$}]{$w'_3$};
+      \draw[<->] (v1) to node {$a$} (v3);
+      \draw[->,loop below] (v1) to node {$a,b$} (v1);
+      \draw[->,loop above] (v3) to node {$a,b$} (v3) ;
+      
+      \node(m)[below=of w1]{$\mModel M$};
+      \node(m')[below=of v1]{$\mModel M \mid p$}; 
+
+      \draw[-,dotted] (w1) to node {\footnotesize wara-wara $p$}(v1) ;
+     
+    \end{tikzpicture}
+  \end{center}
+  \caption{Sadurunge lan sawise wara-wara umum babagan $p$.}
+  \ollabel{fig:announcement-example}
+\end{figure}
+
+Wara-wara umum babagan !!a{formula} bisa dianggep nyilikake model,
+utawa matesi model marang jagad-jagad kang !!{formula} mau bener.
+\olref{fig:announcement-example} menehi tuladha akibat saka
+wara-wara umum babagan~$p$. Ing model iku, agen~$b$ dadi ngerti
+yen~$p$ amarga wara-wara mau, dene agen~$a$ ora entuk kawruh anyar
+(amarga $a$ wis ngerti yen~$p$ bener).
+
+Luwih resmi, kita duwe $\mSat{M}{\lnot \Knows_b p}[w_1]$, nanging
+$\mSat{M
+\mid p}{\Knows_b p}[w'_1]$. Mula $\mSat{M}{[p] \Knows_b
+p}[w_1]$. Nanging, kita uga bisa nyatakake akibat wara-wara kang
+luwih kuwat. Nyatane,
+$\mSat{M}{[p]\CKnows_{\{a,b\}} p}[w_1]$. Tegese, sawise $p$
+diwara-warake, pratelan iku dadi \emph{kawruh umum}.
+
+Nanging, apa iki uga kelakon ing saben kasus? Apa wara-wara kang bener
+babagan~$!A$ \emph{tansah} ndadekake $!A$ dadi kawruh umum? Wangsulane,
+kang bisa wae ngagetake, ora. Nyatane, ana !!{formula}s kang bisa
+diwara-warake kanthi bener nanging dadi ora bener sawise diumumake.
+Contone, delengen akibat wara-wara babagan $p \land \lnot \Knows_b p$
+ing~$w_1$ ing \olref{fig:announcement-example}. Satemene,
+$\mModel M \mid p$ lan $\mModel M \mid (p \land \lnot \Knows_b p)$
+ora padha: model kapindho uga nyingkirake jagad ing sisih ndhuwur.
+Nanging, kaya kang wis dicathet, $\mSat{M \mid p}{\Knows_b
+p}[w'_1]$. Ing model kapindho, agen b uga mung bisa ngakses jagad
+wiwitan, mula dheweke tetep ngerti pratelan atom kasebut. Dadi,
+$\mSat{M \mid (p \land \lnot \Knows_b p)}{\lnot
+(p \land \lnot \Knows_b p)}[w'_1]$, mula iki !!a{formula} kang
+dadi ora bener sawise diwara-warake.
+
+\end{document}

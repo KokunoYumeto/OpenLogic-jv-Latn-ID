@@ -1,0 +1,99 @@
+% part: intuitionistic-logic
+% chapter: semantics
+% section: topological-semantics
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{sem}{top}
+
+\olsection{Semantik Topologis}
+
+Cara liyane kanggo menehi semantik logika intuisionistik yaiku
+nggunakake konsep matematika topologi.
+
+\begin{defn}
+  Upamane $X$ iku himpunan. \emph{Topologi ing~$X$} iku himpunan
+  $\Top{O} \subseteq \Pow{X}$ kang nyukupi sipat-sipat ing ngisor iki.
+  !!{element}s saka~$\Top{O}$ diarani \emph{himpunan kabuka} saka
+  topologi iku. Himpunan $X$ bebarengan karo $\Top{O}$ diarani
+  \emph{ruang topologis}.
+  \begin{enumerate}
+  \item Himpunan kosong lan kabeh ruang iku kabuka: $\emptyset$, $X \in
+    \Top{O}$.
+  \item Himpunan kabuka katutup tumrap irisan winates: yen $U$, $V \in
+    \Top{O}$, mula $U \cap V \in \Top{O}$
+  \item Himpunan kabuka katutup tumrap gabungan sembarang: yen $U_i \in
+    \Top{O}$ kanggo kabeh $i \in I$, mula $\bigcup \Setabs{U_i}{i \in
+      I} \in \Top{O}$.
+  \end{enumerate}
+\end{defn}
+
+Kita bisa nulis $X$ kanggo topologi yen kumpulan himpunan kabukane
+bisa dingerteni saka konteks. Nanging, mung sawisé $X$ diwenehi
+himpunan kabuka iku, bisa diarani topologi.
+
+\begin{defn}
+  \emph{Model topologis} kanggo logika proposisional intuisionistik
+  iku tripel $\mModel{X} = \tuple{X, \Top{O}, V}$ kanthi $\Top{O}$
+  topologi ing~$X$ lan $V$ fungsi kang menehi himpunan kabuka ing
+  $\Top{O}$ marang saben variabel proposisional.
+
+  Yen diwenehi model topologis~$\mModel{X}$, kita bisa nemtokake
+  $\Prop{X}{!A}$ sacara induktif kaya mangkene:
+  \begin{enumerate}
+  \item $\Prop{X}{\lfalse} = \emptyset$
+  \item $\Prop{X}{p} = V(p)$
+  \item $\Prop{X}{!A \land !B} = \Prop{X}{!A} \cap \Prop{X}{!B}$
+  \item $\Prop{X}{!A \lor !B} = \Prop{X}{!A} \cup \Prop{X}{!B}$
+  \item $\Prop{X}{!A \lif !B} = \Interior{(X \setminus \Prop{X}{!A}) \cup
+    \Prop{X}{!B}}$
+  \end{enumerate}
+  Ing kene, $\Interior{V}$ nuduhake asil kanggo himpunan
+  $V \subseteq X$, yaiku \emph{interior}, gabungan kabeh himpunan kabuka kang
+  kakandhut ing kono. Kanthi tembung liya,
+  \[
+  \Interior{V} = \bigcup \Setabs{U}{U \subseteq V \text{ lan } U \in \Top{O}}.
+  \]
+\end{defn}
+
+Interior saka himpunan apa wae tansah kabuka, amarga iku gabungan
+himpunan kabuka. Mula $\Prop{X}{!A}$ tansah himpunan kabuka.
+
+Sanajan semantik topologis banget abstrak, ana cara kanggo
+mikirake kang bisa menehi alasan kanggo semantik iki. Upamane
+!!{element}s, utawa ``titik,'' saka $X$ iku titik kang bisa digunakake
+kanggo ngevaluasi pranyatan. Himpunan kabeh titik kang $!A$ bener
+iku proposisi kang diwedharake dening~$!A$. Ora saben himpunan titik
+bisa dadi proposisi; mung !!{element}s saka $\Top{O}$ kang bisa.
+$!A \Entails !B$ yen lan mung yen $!B$ bener ing saben titik kang~$!A$
+bener, yaiku $\Prop{X}{!A} \subseteq \Prop{X}{!B}$, kanggo kabeh~$X$.
+Pranyatan absurd~$\lfalse$ ora tau bener, mula
+$\Prop{X}{\lfalse} = \emptyset$.
+
+Kepiye sesambungane proposisi kang diwedharake dening $!B \land !C$,
+$!B \lor !C$, lan $!B \lif !C$ karo kang diwedharake dening $!B$
+lan~$!C$ supaya hukum-hukum intuisionistik kang valid lumaku?
+Tegese, supaya $!A \Proves !B$ yen lan mung yen
+$\Prop{X}{!A} \subseteq \Prop{X}{!B}$ kanggo kabeh model topologis.
+Kita mbutuhake $\lfalse \Proves !A$ kanggo sembarang $!A$, kang
+kasembadan amarga $\emptyset \subseteq U$ kanggo kabeh $U$.
+Amarga $!B \land !C \Proves !B$, kita mbutuhake
+$\Prop{X}{!B \land !C} \subseteq \Prop{X}{!B}$, lan uga
+$\Prop{X}{!B \land !C} \subseteq \Prop{X}{!C}$. Himpunan paling gedhe
+kang nyukupi $W \subseteq U$ lan $W \subseteq V$ yaiku $U \cap V$.
+Kosokbaline, $!B \Proves !B \lor !C$ lan $!C \Proves !B \lor !C$,
+mula kita mbutuhake $\Prop{X}{!B} \subseteq \Prop{X}{!B \lor !C}$ lan
+$\Prop{X}{!C} \subseteq \Prop{X}{!B \lor !C}$. Himpunan paling cilik~$W$
+kanthi $U \subseteq W$ lan $V \subseteq W$ yaiku $U \cup V$.
+
+Definisi kanggo $\lif$ rada angel: $!A \lif !B$ ngandharake
+proposisi paling ringkih kang, yen digabungake karo $!A$, ngentail $!B$.
+Yen $!A \lif !B$ digabungake karo $!A$ ngentail~$!B$, iki cetha saka
+$(!A \lif !B) \land !A \Proves !B $. Dadi $\Prop{X}{!A \lif !B}$
+kudu dadi himpunan kabuka paling gedhe kang nyukupi
+$\Prop{X}{!A \lif !B} \cap \Prop{X}{!A} \subseteq \Prop{X}{!B}$,
+kang ndadekake definisi ing ndhuwur.
+
+\end{document}

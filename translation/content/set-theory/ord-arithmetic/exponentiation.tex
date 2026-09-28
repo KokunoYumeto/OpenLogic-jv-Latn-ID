@@ -1,0 +1,63 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{ord-arithmetic}{expo}
+\olsection{Pemangkatan Ordinal}
+
+Saiki kita ngalih menyang pemangkatan ordinal. Sayangé, ora ana
+definisi sintetis kang \emph{gampang dibayangaké} kanggo
+pemangkatan ordinal.
+
+Pancen \emph{ana} definisi sintetis kang eksplisit. Iki salah
+sijiné. Upamané $\text{finfun}(\alpha,\beta)$ iku himpunan kabèh
+fungsi $f \colon \beta \to \alpha$ kang nyukupi yèn $\Setabs{\gamma \in
+\beta}{f(\gamma) \neq 0}$ padha cacahé karo sawatara wilangan asli;
+ing konstruksi iki dhasar ordinal kudu ora nol. Tetepna pengurutan
+becik ing $\text{finfun}(\alpha,\beta)$ kanthi $f
+\sqsubset g$ yen lan mung yen $f \neq g$ lan $f(\gamma_0) < g(\gamma_0)$, kanthi
+$\gamma_0 = \text{max}\Setabs{\gamma \in \beta}{f(\gamma) \neq
+g(\gamma)}$. Banjur kita bisa netepaké $\ordexpo{\alpha}{\beta}$
+minangka $\ordtype{\text{finfun}(\alpha, \beta), \sqsubset}$. Potter
+nganggo definisi eksplisit iki, banjur langsung njlentrehaké:
+\begin{quote}
+	Pamilihan pengurutan iki mung ditemtokaké déning karep kita
+	kanggo olèh definisi pemangkatan ordinal kang manut syarat
+	rekursif kang trep\ldots, lan iki luwih angel dibayangaké
+	tinimbang gunggung terurut utawa ping-pingan terurut.
+	\citep[kaca~199]{Potter2004}
+\end{quote}
+Pancen. Panambahan kita terangaké minangka “salinan $\alpha$
+diterusaké salinan $\beta$”, lan ping-pingan minangka “urutan
+$\beta$ salinan $\alpha$”. Nanging ora ana ukara ringkes kang
+cocog kanggo nerangaké $\text{finfun}(\alpha, \gamma)$. Mula kita
+bakal menehi definisi pemangkatan ordinal \emph{liwat} rekursi
+transfinit, yaiku:
+
+\begin{defn}\ollabel{ordexporecursion}
+\begin{align*}
+	\ordexpo{\alpha}{0} &= 1\\
+	\ordexpo{\alpha}{\beta\ordplus 1} &=\ordexpo{\alpha}{\beta} \ordtimes \alpha\\
+	\ordexpo{\alpha}{\beta} &= \bigcup_{\delta < \beta}\ordexpo{\alpha}{\delta}& & \text{yèn $\beta$ ordinal limit}
+\end{align*}
+\end{defn}
+
+Yèn kita nyambut gawé \emph{minangka} ahli téori himpunan, kita
+mbokmenawa kepéngin nliti sawetara sipat pemangkatan ordinal.
+Nanging, ora akèh manèh kang perlu kita tambahi, kajaba nyathet
+kasunyatan kang ora nggumunaké yèn pemangkatan ordinal ora
+komutatif. Dadi $\ordexpo{2}{\omega} =
+\bigcup_{\delta < \omega}\ordexpo{2}{\delta} = \omega$, déné
+$\ordexpo{\omega}{2} = \omega \ordtimes \omega$. Nanging kita
+ora kudu \emph{ngarep-arep} pemangkatan komutatif, amarga
+pemangkatan wilangan asli uga ora komutatif: $\ordexpo{2}{3} = 8 < 9 = \ordexpo{3}{2}$.
+
+\begin{prob}
+Kanthi Induksi Transfinit, buktèkna yèn kanggo dhasar ordinal
+kang ora nol, definisi
+$\ordexpo{\alpha}{\beta} = \ordtype{\text{finfun}(\alpha, \beta),
+\sqsubset}$ ngasilaké persamaan rekursi ing
+\olref[sth][ord-arithmetic][expo]{ordexporecursion}.
+\end{prob}
+
+\end{document}

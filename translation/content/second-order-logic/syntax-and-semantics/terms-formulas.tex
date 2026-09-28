@@ -1,0 +1,94 @@
+% Part: second-order-logic
+% Chapter: syntax-and-semantics
+% Section: terms-formulas
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sol}{syn}{frm}
+
+\olsection{Term lan \printtoken{P}{formula}}
+
+Kaya ing logika orde kapisan, ekspresi logika orde kapindho
+dibangun saka kosakata dhasar kang ngemot \emph{!!{variable}s},
+\emph{!!{constant}s}, \emph{!!{predicate}s}, lan kadhang uga
+\emph{!!{function}s}. Saka unsur-unsur iku, bebarengan karo
+konektif logis, kuantor, lan simbol tandha wacan kayata
+kurung lan koma, dibentuk \emph{term} lan \emph{!!{formula}s}.
+Bedane, saliyane variabel kanggo objek, logika orde kapindho
+uga ngemot variabel kanggo relasi lan fungsi, lan ngidini
+kuantifikasi tumrape. Mula simbol logis logika orde kapindho
+yaiku simbol logika orde kapisan, ditambah:
+
+\begin{enumerate}
+\item Himpunan kang !!{denumerable}s saka !!{variable}s relasi
+  orde kapindho kanggo saben aritas~$n$: $\Obj V_0^n$,
+  $\Obj V_1^n$, $\Obj V_2^n$, \dots
+\item Himpunan kang !!{denumerable}s saka !!{variable}s fungsi
+  orde kapindho:
+  $\Obj u_0^n$, $\Obj u_1^n$, $\Obj u_2^n$, \dots
+\end{enumerate}
+
+Kaya dene kita nggunakake $x$, $y$, $z$ minangka metavariabel
+kanggo variabel orde kapisan $\Obj v_i$, kita bakal nggunakake
+$X$, $Y$, $Z$, lan sateruse minangka metavariabel kanggo
+$\Obj V_i^n$, lan $u$, $v$, lan sateruse minangka metavariabel
+kanggo~$\Obj u_i^n$.
+
+\begin{explain}
+Simbol nonlogis ing basa orde kapindho ditemtokake kanthi cara
+kang padha kaya ing basa orde kapisan: kanthi ndhaptar
+!!{constant}s, !!{function}s, lan !!{predicate}s.
+
+Ing logika orde kapisan, !!{identity}~$\eq$ biasane dilebokake.
+Ing logika orde kapisan, simbol nonlogis saka basa~$\Lang{L}$
+wigati supaya kita bisa nyatakake perkara kang narik kawigaten.
+Mesthi ana !!{sentence}s kang ora nggunakake simbol nonlogis,
+nanging yen mung nganggo~$\eq$, angel nyatakake perkara kang
+narik kawigaten. Ing logika orde kapindho, amarga kita nduweni
+variabel relasi lan fungsi tanpa wates, kita bisa nyatakake
+apa wae kang bisa dinyatakake ing basa orde kapisan sanajan ora
+nduweni simbol nonlogis kang disedhiyakake kanthi mligi.
+\end{explain}
+
+\begin{defn}[Term Orde Kapindho]
+Himpunan \emph{term orde kapindho} saka~$\Lang L$,
+$\TrmSOL[L]$, ditetepake kanthi nambahake klausa ing ngisor
+iki marang \olref[fol][syn][frm]{defn:terms}:
+\begin{enumerate}
+\item Yen $u$ iku variabel fungsi $n$-papan lan $t_1$, \dots,
+  $t_n$ iku term, mula $\Atom{u}{t_1, \ldots, t_n}$ iku term.
+\end{enumerate}
+\end{defn}
+
+\begin{explain}
+Dadi, term orde kapindho wujude kaya term orde kapisan, nanging
+ing papan kang ngemot !!a{function}~$\Obj{f^n_i}$ ing term orde
+kapisan, term orde kapindho bisa ngemot variabel fungsi~$\Obj{u^n_i}$.
+\end{explain}
+
+\begin{defn}[\usetoken{s}{formula} Orde Kapindho]
+Himpunan \emph{!!{formula}s orde kapindho}~$\FrmSOL[L]$
+saka basa~$\Lang L$ ditetepake kanthi nambahake klausa-klausa
+ing ngisor iki marang \olref[fol][syn][frm]{defn:formulas}:
+\begin{enumerate}
+\item Yen $X$ iku variabel predikat $n$-papan lan $t_1$, \dots,
+  $t_n$ iku term orde kapindho saka~$\Lang L$, mula
+  $\Atom{X}{t_1,\ldots, t_n}$ iku !!{formula} atomik.
+
+\tagitem{prvAll}{Yen $!A$ iku !!a{formula} lan $u$ iku variabel fungsi,
+  mula $\lforall[u][!A]$ iku !!a{formula}.}{}
+
+\tagitem{prvAll}{Yen $!A$ iku !!a{formula} lan $X$ iku variabel predikat,
+  mula $\lforall[X][!A]$ iku !!a{formula}.}{}
+
+\tagitem{prvEx}{Yen $!A$ iku !!a{formula} lan $u$ iku variabel fungsi,
+  mula $\lexists[u][!A]$ iku !!a{formula}.}{}
+
+\tagitem{prvEx}{Yen $!A$ iku !!a{formula} lan $X$ iku variabel predikat,
+  mula $\lexists[X][!A]$ iku !!a{formula}.}{}
+\end{enumerate}
+\end{defn}
+
+\end{document}

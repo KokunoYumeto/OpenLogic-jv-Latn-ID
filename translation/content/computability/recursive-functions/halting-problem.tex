@@ -1,0 +1,107 @@
+% Part: computability
+% Chapter: recursive-functions
+% Section: halting-problem
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{rec}{hlt}
+\olsection{Masalah Mandheg}
+
+\emph{Masalah mandheg} umume yaiku masalah nemtokake,
+yen diwenehi katrangan~$e$ (umpamane, program) ngenani fungsi
+komputabel lan wilangan~$n$, apa komputasi fungsi kasebut
+ing input~$n$ mandheg, yaiku ngasilake sawenehing asil.
+Alan Turing mbuktekake yen masalah iki dhewe ora bisa
+dirampungake dening fungsi komputabel, yaiku fungsi
+\[
+h(e, n) =
+\begin{cases}
+1 & \text{yen komputasi $e$ mandheg ing input $n$}\\
+0 & \text{yen ora,}
+\end{cases}
+\]
+ora komputabel.
+
+Ing konteks fungsi rekursif parsial, peran
+katrangan program bisa dilakoni dening indeks~$e$
+kang diwenehake ing teorema wangun normal Kleene.
+Yen $f$ fungsi rekursif parsial, saben $e$~kang
+nyukupi persamaan ing teorema wangun normal iku
+indeks saka~$f$. Yen diwenehi wilangan~$e$,
+teorema wangun normal nyatakake yen
+\[
+\cfind{e}(x) \simeq U(\mu s \; T(e, x, s))
+\]
+iku rekursif parsial, lan kanggo saben fungsi
+rekursif parsial $f\colon \Nat
+\to \Nat$, ana $e \in \Nat$ kang ndadekake
+$\cfind{e}(x) \simeq f(x)$ kanggo saben~$x \in \Nat$.
+Malah, kanggo saben fungsi~$f$ kaya mangkono,
+indeks~$e$ iku ora mung siji, nanging tanpa wates cacahé.
+\emph{Fungsi mandheg}~$h$ ditegesi minangka
+\[
+h(e, x) =
+\begin{cases}
+1 & \text{yen $\cfind{e}(x) \fdefined$}\\
+0 & \text{yen ora.}
+\end{cases}
+\]
+Gatekna yen $h(e, x) = 0$ yen $\cfind{e}(x) \fundefined$,
+nanging uga yen~$e$ dudu indeks saka fungsi
+rekursif parsial babar pisan.
+
+\begin{thm}
+\ollabel{thm:halting-problem}
+Fungsi mandheg~$h$ dudu fungsi rekursif parsial.
+\end{thm}
+
+\begin{proof}
+Yen $h$ rekursif parsial, kita bisa netepake
+\[
+d(y) =
+\begin{cases}
+1 & \text{yen $h(y, y) = 0$}\\
+\umin{x}{x \neq x} & \text{yen ora.}
+\end{cases}
+\]
+Amarga ora ana wilangan $x$ kang nyukupi $x \neq x$,
+mula $\umin{x}{x \neq x}$ ora ana, saengga
+$d(y) \fundefined$ yen lan mung yen $h(y,y) \neq 0$.
+Saka definisi iki kita entuk
+\begin{enumerate}
+\item $d(y) \fdefined$ yen lan mung yen
+  $\cfind{y}(y) \fundefined$ utawa $y$
+  dudu indeks saka fungsi rekursif parsial.
+\item $d(y) \fundefined$ yen lan mung yen
+  $\cfind{y}(y) \fdefined$.
+\end{enumerate}
+Yen $h$ rekursif parsial, $d$ uga rekursif parsial.
+Mula, miturut teorema wangun normal Kleene,
+fungsi iki nduwé indeks~$e_d$. Gatekna nilai
+$h(e_d, e_d)$. Ana rong kemungkinan, $0$
+lan~$1$.
+\begin{enumerate}
+\item Yen $h(e_d, e_d) = 1$, mula
+  $\cfind{e_d}(e_d) \fdefined$. Nanging
+  $\cfind{e_d} \simeq d$, lan $d(e_d)$
+  ditegesi yen lan mung yen $h(e_d, e_d) = 0$.
+  Dadi $h(e_d, e_d) \neq 1$.
+\item Yen $h(e_d, e_d) = 0$, mula bisa uga
+  $e_d$ dudu indeks saka fungsi rekursif parsial,
+  utawa pancen indeks kasebut lan
+  $\cfind{e_d}(e_d) \fundefined$. Nanging maneh,
+  $\cfind{e_d} \simeq d$, lan $d(e_d)$ ora
+  ditegesi yen lan mung yen
+  $\cfind{e_d}(e_d) \fdefined$.
+\end{enumerate}
+Asile, $e_d$ jebul ora bisa dadi indeks
+saka fungsi rekursif parsial. Nanging yen $h$
+rekursif parsial, $d$ uga rekursif parsial,
+mula panetepan $e_d$ minangka indekse iku sah.
+Mula kita kudu nyimpulake yen $h$ ora bisa
+dadi fungsi rekursif parsial.
+\end{proof}
+
+\end{document}

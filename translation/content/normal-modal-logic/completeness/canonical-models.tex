@@ -1,0 +1,34 @@
+% Part: normal-modal-logic
+% Chapter: completeness
+% Section: canonical-models
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{com}{cmd}
+
+\olsection{Model Kanonik}
+
+\emph{Model kanonik} kanggo sawijining sistem modal~$\Sigma$ yaiku
+model tartamtu~$\mModel{M^\Sigma}$ kang jagad-jagade awujud kabeh
+himpunan $\Sigma$-konsisten jangkep. Relasi aksesibilitas~$R^\Sigma$
+lan valuasi $V^\Sigma$ ditepakake saengga !!{formula}s kang bener ing
+sawijining jagad~$\Delta$ yaiku persis !!{formula}s kang mbentuk~$\Delta$.
+
+\begin{defn}
+  Upamane $\Sigma$ sawijining logika modal normal. \emph{Model kanonik}
+  kanggo $\Sigma$ yaiku $\mModel{M}^\Sigma = \tuple{W^\Sigma, R^\Sigma,
+    V^\Sigma}$, ing ngendi:
+  \begin{enumerate}
+  \item $W^\Sigma = \Setabs{ \Delta }{\Delta \text{
+      iku $\Sigma$-konsisten jangkep} }$.
+  \item $R^\Sigma \Delta\Delta'$ bener yen lan mung yen
+    \iftag{prvBox}{$\Box^{-1}\Delta \subseteq
+      \Delta'$}{$\Diamond\Delta' \subseteq \Delta$}.
+  \item $V^\Sigma(p) = \Setabs{\Delta}{p \in \Delta}$.
+  \end{enumerate}
+\end{defn}
+
+
+\end{document}

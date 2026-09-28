@@ -1,0 +1,218 @@
+% Part: first-order-logic
+% Chapter: completeness
+% Section: henkin-expansion
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{com}{hen}
+
+\olsection{Ekspansi Henkin}
+
+\begin{explain}
+Salah siji tantangan nalika mbuktekake teorema kelengkapan yaiku model
+kang dibangun saka himpunan konsisten jangkep~$\Gamma$ kudu ndadekake
+kabeh !!{formula}s kang dikuantifikasi ing~$\Gamma$ bener. Kanggo
+njamin iki, kita nggunakake siasat saka Leon Henkin. Intine, siasat
+iki nggedhekake basa nganggo tanpa winates akeh !!{constant}s lan
+nambah, kanggo saben !!{formula} kanthi siji !!{variable} bebas
+$!A(x)$, formula awujud
+\iftag{prvEx}
+      {$\lexists[x][!A(x)] \lif !A(c)$}
+      {$\lnot\lforall[x][!A(x)] \lif \lnot !A(c)$},
+kanthi $c$ minangka salah siji !!{constant}s anyar. Nalika kita
+mbangun !!{structure} kang nyukupi~$\Gamma$, iki bakal njamin yen saben
+\iftag{prvEx}
+{ukara eksistensial kang bener nduweni saksi}
+{ukara universal kang luput nduweni conto panolak}
+ing antarane konstanta anyar kasebut.
+\end{explain}
+
+\begin{prop}
+\ollabel{prop:lang-exp}
+Yen $\Gamma$ konsisten ing $\Lang L$ lan $\Lang L'$ dipikolehi saka
+$\Lang L$ kanthi nambah !!a{denumerable} himpunan !!{constant}s anyar
+$\Obj d_0$, $\Obj d_1$, \dots, mula $\Gamma$ konsisten ing~$\Lang L'$.
+\end{prop}
+
+\begin{defn}[Himpunan jenuh]
+Himpunan $\Gamma$ saka !!{formula}s ing basa $\Lang {L}$ diarani
+\emph{jenuh} yen lan mung yen kanggo saben !!{formula}~$!A(x) \in
+\Frm[L]$ kanthi siji !!{variable} bebas~$x$, ana !!a{constant}~$c \in
+\Lang{L}$ saengga
+\iftag{prvEx}
+      {$\lexists[x][!A(x)] \lif !A(c) \in \Gamma$}
+      {$\lnot\lforall[x][!A(x)] \lif \lnot !A(c) \in \Gamma$}.
+\end{defn}
+
+Definisi ing ngisor iki bakal digunakake ing bukti teorema sabanjure.
+
+\begin{defn}
+\ollabel{defn:henkin-exp}
+Upamana $\Lang L'$ kaya ing \olref{prop:lang-exp}. Tetepna enumerasi
+$!A_0(x_0)$, $!A_1(x_1)$, \dots saka kabeh !!{formula}s~$!A_i(x_i)$
+ing~$\Lang L'$ kang ngemot siji variabel ($x_i$) kanthi bebas. Kita
+nemtokake !!{sentence}s~$!D_n$ kanthi induksi marang~$n$.
+
+Upamana $c_0$ minangka !!{constant} kapisan ing antarane $\Obj d_i$
+kang ditambahake marang~$\Lang{L}$ lan ora muncul ing~$!A_0(x_0)$.
+Kanthi nganggep $!D_0$, \dots,~$!D_{n-1}$ wis ditemtokake, upamana
+$c_n$ minangka sing kapisan ing antarane !!{constant}s anyar~$\Obj
+d_i$ kang ora muncul ing $!D_0$, \dots,~$!D_{n-1}$ lan uga ora muncul
+ing~$!A_n(x_n)$.
+
+Saiki upamana $!D_{n}$ minangka !!{formula} \iftag{prvEx}
+{$\lexists[x_{n}][!A_{n}(x_{n})] \lif
+  !A_{n}(c_{n})$}{$\lnot\lforall[x_{n}][!A_{n}(x_{n})] \lif \lnot
+  !A_{n}(c_{n})$}.
+\end{defn}
+
+\begin{lem}
+\ollabel{lem:henkin}
+Saben himpunan konsisten~$\Gamma$ bisa diambakake dadi himpunan
+konsisten jenuh~$\Gamma'$.
+\end{lem}
+
+\begin{proof}
+Saka himpunan ukara konsisten~$\Gamma$ ing basa~$\Lang{L}$,
+gedhekna basane kanthi nambah !!a{denumerable} himpunan
+!!{constant}s anyar kanggo mbentuk~$\Lang{L'}$. Miturut
+\olref{prop:lang-exp}, $\Gamma$ isih konsisten ing basa kang luwih
+sugih iki. Sabanjure, upamana $!D_i$ kaya ing
+\olref{defn:henkin-exp}. Tetepna
+\begin{align*}
+\Gamma_0 & = \Gamma \\
+\Gamma_{n+1} & = \Gamma_n \cup \{!D_n \}
+\end{align*}
+yaiku, $\Gamma_{n+1} = \Gamma \cup \{ !D_0, \dots, !D_n \}$, lan
+tetepna $\Gamma' = \bigcup_{n} \Gamma_n$. Cetha yen $\Gamma'$ jenuh.
+
+Yen $\Gamma'$ ora konsisten, kanggo sawijine $n$, $\Gamma_n$ mesthi
+ora konsisten (Latihan: terangna sebabe). Mula, kanggo nuduhake yen
+$\Gamma'$ konsisten, cukup dituduhake kanthi induksi marang~$n$ yen
+saben himpunan~$\Gamma_n$ konsisten.
+
+Basis induksine mung pratelan yen $\Gamma_0 = \Gamma$ konsisten, kang
+minangka hipotesis teorema. Kanggo langkah induksi, upamana
+$\Gamma_{n}$ konsisten nanging $\Gamma_{n+1} = \Gamma_n \cup
+\{!D_n\}$ ora konsisten. Elinga yen $!D_n$~yaiku
+\iftag{prvEx}
+{$\lexists[x_{n}][!A_{n}(x_n)] \lif !A_{n}(c_{n})$}
+{$\lnot\lforall[x_{n}][!A_{n}(x_n)] \lif \lnot !A_{n}(c_{n})$},
+kanthi $!A_n(x_n)$ minangka !!a{formula} saka $\Lang{L'}$ kang mung
+nduweni variabel~$x_n$ kanthi bebas. Miturut cara kita milih~$c_n$
+(delengen \olref{defn:henkin-exp}), $c_n$ ora muncul ing~$!A_n(x_n)$
+utawa ing~$\Gamma_n$.
+
+Yen $\Gamma_n \cup \{!D_n\}$ ora konsisten, mula $\Gamma_n
+\Proves \lnot !D_n$, lan mulane rong pratelan ing ngisor iki bener:
+\iftag{prvEx}{
+\[
+\Gamma_n \Proves \lexists[x_n][!A_n(x_n)]
+\qquad
+\Gamma_n \Proves \lnot !A_n(c_n)
+\]}{
+\[
+\Gamma_n \Proves \lnot\lforall[x_n][!A_n(x_n)]
+\qquad
+\Gamma_n \Proves !A_n(c_n)
+\]}
+Amarga $c_n$ ora muncul ing
+$\Gamma_n$ utawa ing~$!A_n(x_n)$,
+\tagrefs{prfAX/{fol:axd:qpr:thm:strong-generalization},prfSC/{fol:seq:qpr:thm:strong-generalization},prfND/{fol:ntd:qpr:thm:strong-generalization},prfTab/{fol:tab:qpr:thm:strong-generalization}} bisa ditrapake.
+Saka \iftag{prvEx}
+{$\Gamma_n \Proves \lnot !A_n(c_n)$}
+{$\Gamma_n \Proves !A_n(c_n)$},
+kita entuk
+\iftag{prvEx}
+{$\Gamma_n \Proves \lforall[x_n][\lnot !A_n(x_n)]$}
+{$\Gamma_n \Proves \lforall[x_n][!A_n(x_n)]$}.
+Mula kita nduweni kalorone
+\iftag{prvEx}
+{$\Gamma_n \Proves \lexists[x_n][!A_n(x_n)]$ lan
+$\Gamma_n \Proves \lforall[x_n][\lnot !A_n(x_n)]$}
+{$\Gamma_n \Proves \lnot\lforall[x_n][!A_n(x_n)]$ lan
+$\Gamma_n \Proves \lforall[x_n][!A_n(x_n)]$},
+dadi $\Gamma_n$ dhewe ora konsisten.
+\iftag{prvEx}
+{(Cathetan:
+\iftag{prvAll}
+{$\lforall[x_n][\lnot !A_n(x_n)] \Proves
+  \lnot\lexists[x_n][!A_n(x_n)]$}
+{$\lforall[x_n][\lnot !A_n]$ ditetepake minangka
+  $\lnot\lexists[x_n][\lnot\lnot !A_n(x_n)]$ lan
+  $\lnot\lexists[x_n][\lnot\lnot !A_n(x_n)] \Proves
+  \lnot\lexists[x_n][!A_n(x_n)]$}.)}{}
+Iki cengkah: $\Gamma_n$ dikira konsisten. Mula $\Gamma_n \cup \{
+!D_n\}$ konsisten.
+\end{proof}
+
+\begin{explain}
+Saiki bakal dituduhake yen himpunan konsisten kang \emph{jangkep} lan
+jenuh nduweni sipat yen \iftag{prvAll}{himpunan iku ngemot
+  !!{sentence} kang dikuantifikasi universal yen lan mung yen ngemot
+  kabeh conto ukarane}{}\iftag{defAll,defEx}{}{ lan
+  }\iftag{prvAll}{himpunan iku ngemot !!{sentence} kang dikuantifikasi
+  eksistensial yen lan mung yen ngemot paling ora siji conto ukarane}{}.
+Iki bakal digunakake kanggo nuduhake yen !!{structure} kang bakal
+diasilake saka himpunan kang jangkep, konsisten, lan jenuh ndadekake
+kabeh ukara kang dikuantifikasi ing himpunan kasebut bener.
+\end{explain}
+
+\begin{prop}\ollabel{prop:saturated-instances}
+Upamana $\Gamma$ iku jangkep, konsisten, lan jenuh.
+\begin{tagenumerate}{prvEx,prvAll}
+\tagitem{prvEx}{$\lexists[x][!A(x)] \in \Gamma$ yen lan mung yen
+  $!A(t) \in \Gamma$ kanggo paling ora siji term katutup~$t$.}{}
+\tagitem{prvAll}{$\lforall[x][!A(x)] \in \Gamma$ yen lan mung yen
+  $!A(t) \in \Gamma$ kanggo kabeh term katutup~$t$.}{}
+\end{tagenumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{tagenumerate}{prvEx,prvAll}
+  \tagitem{prvEx}{%
+    \iftag{probEx}{Latihan.}{Kaping pisan, upamana
+      $\lexists[x][!A(x)] \in \Gamma$. Amarga $\Gamma$ jenuh,
+      $(\lexists[x][!A(x)] \lif !A(c)) \in \Gamma$ kanggo sawijine
+      !!{constant}~$c$. Miturut
+      \tagrefs{prfAX/{fol:axd:ppr:prop:provability-lif},prfSC/{fol:seq:ppr:prop:provability-lif},prfND/{fol:ntd:ppr:prop:provability-lif},prfTab/{fol:tab:ppr:prop:provability-lif}}, butir~(1),
+      lan \olref[ccs]{prop:ccs}\olref[ccs]{prop:ccs-prov-in}, $!A(c)
+      \in \Gamma$.
+
+    Kanggo arah liyane, kejenuhan ora dibutuhake: upamana
+    $!A(t) \in \Gamma$. Banjur $\Gamma \Proves
+    \lexists[x][!A(x)]$ miturut
+      \tagrefs{prfAX/{fol:axd:qpr:prop:provability-quantifiers},prfSC/{fol:seq:qpr:prop:provability-quantifiers},prfND/{fol:ntd:qpr:prop:provability-quantifiers},prfTab/{fol:tab:qpr:prop:provability-quantifiers}}, butir~(1). Miturut
+    \olref[ccs]{prop:ccs}\olref[ccs]{prop:ccs-prov-in},
+    $\lexists[x][!A(x)] \in \Gamma$.}}{}
+  \tagitem{prvAll}{%
+    \iftag{probAll}{Latihan.}{Upamana $!A(t) \in \Gamma$ kanggo
+      kabeh term katutup~$t$. Kanggo nggayuh cengkah, upamana
+      $\lforall[x][!A(x)] \notin \Gamma$. Amarga $\Gamma$ jangkep,
+      $\lnot\lforall[x][!A(x)] \in \Gamma$. Amarga jenuh,
+      \iftag{prvEx}{$(\lexists[x][\lnot !A(x)] \lif \lnot !A(c)) \in
+        \Gamma$}{$(\lnot\lforall[x][!A(x)] \lif \lnot !A(c)) \in
+        \Gamma$} kanggo sawijine !!{constant}~$c$. Miturut hipotesis,
+      amarga $c$ minangka term katutup, $!A(c) \in \Gamma$. Nanging
+      iki bakal ndadekake $\Gamma$ ora konsisten. (Latihan: wenehana
+      !!{derivation} kang nuduhake yen
+      \[
+      \lnot \lforall[x][!A(x)],
+      \iftag{prvEx}{\lexists[x][\lnot !A(x)] \lif \lnot
+        !A(c)}{\lnot\lforall[x][!A(x)] \lif \lnot
+        !A(c)}, !A(c)
+      \]
+      ora konsisten.)
+
+      Kanggo arah kosok baline, kita ora mbutuhake kejenuhan: upamana
+      $\lforall[x][!A(x)] \in \Gamma$. Banjur $\Gamma \Proves !A(t)$
+      miturut
+      \tagrefs{prfAX/{fol:axd:qpr:prop:provability-quantifiers},prfSC/{fol:seq:qpr:prop:provability-quantifiers},prfND/{fol:ntd:qpr:prop:provability-quantifiers},prfTab/{fol:tab:qpr:prop:provability-quantifiers}},
+      butir~(2). Kita entuk $!A(t) \in \Gamma$ miturut
+      \olref[ccs]{prop:ccs}.}}{}
+  \end{tagenumerate}
+\end{proof}
+
+\end{document}

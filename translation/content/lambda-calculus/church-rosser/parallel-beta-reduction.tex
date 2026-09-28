@@ -1,0 +1,254 @@
+% Part: lambda-calculus
+% Chapter: church-rosser
+% Section: parallel-beta-reduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{cr}{pb}
+
+\olsection{Reduksi-$\beta$ paralel}
+
+Kita ngenalake konsep
+\emph{reduksi-$\beta$ paralel}
+lan mbuktekake yen relasi iki
+nduweni sipat Church--Rosser.
+
+\begin{defn}[reduksi-$\beta$ paralel, $\bredpar$] \ollabel{defn:bredpar}
+  Reduksi paralel ($\bredpar$)
+  ing suku ditetepake kanthi
+  induktif kaya mangkene:
+  \begin{enumerate}
+    \item \ollabel{defn:bredpar1} $x \bredpar x$.
+    \item \ollabel{defn:bredpar2} Yen $N \bredpar N'$, mula $\lambd[x][N] \bredpar
+      \lambd[x][N']$.
+    \item \ollabel{defn:bredpar3} Yen $P \bredpar P'$ lan $Q \bredpar Q'$, mula $PQ \bredpar
+      P'Q'$.
+    \item \ollabel{defn:bredpar4} Yen $N \bredpar N'$ lan $Q \bredpar Q'$, mula
+      $(\lambd[x][N])Q \bredpar \Subst{N'}{Q'}{x}$.
+  \end{enumerate}
+\end{defn}
+
+Reduksi-$\beta$ paralel ngidini
+pirang-pirang redex ing sawijining
+suku dikontraksi sajroning siji
+langkah. Bedane karo
+reduksi-$\beta$, ing sawijining
+langkah paralel kita mung bisa
+ngontraksi redex kang wis ana
+ing suku asal, dudu redex anyar
+kang muncul saka reduksi-$\beta$
+paralel.
+Contone, suku
+$(\lambd[f][fx])(\lambd[y][y])$
+sajroning siji langkah reduksi-$\beta$
+paralel
+mung bisa direduksi dadi suku
+iku dhewe utawa
+$(\lambd[y][y])x$, durung
+bisa dadi~$x$, sanajan suku
+asal bisa direduksi-$\beta$
+dadi~$x$. Redex kanggo langkah
+pungkasan iku lagi muncul
+sawisé siji langkah reduksi-$\beta$
+paralel. Nanging langkah reduksi-$\beta$
+paralel
+kapindho ngasilake~$x$.
+
+\begin{thm}\ollabel{thm:refl}
+  $M \bredpar M$.
+\end{thm}
+
+\begin{proof}
+  Latihan.
+\end{proof}
+
+\begin{prob}
+  Buktekna \olref[lam][cr][pb]{thm:refl}.
+\end{prob}
+
+\begin{defn}[pangembangan lengkap-$\beta$]\ollabel{defn:bcd}
+  \emph{Pangembangan lengkap-$\beta$}~$\bcd{M}$
+  saka $M$ ditetepake kanthi
+  induktif kaya mangkene:
+  \begin{align}
+    \bcd{x} &= x \ollabel{defn:bcd1} \\
+    \bcd{(\lambd[x][N])} &= \lambd[x][\bcd{N}] \ollabel{defn:bcd2}\\
+    \bcd{(PQ)} &= \bcd{P}\bcd{Q} && \text{yen $P$ dudu abstraksi-$\lambd$}
+    \ollabel{defn:bcd3} \\
+    \bcd{((\lambd[x][N])Q)} &= \Subst{\bcd{N}}{\bcd{Q}}{x} \ollabel{defn:bcd4}
+  \end{align}
+\end{defn}
+
+Pangembangan lengkap-$\beta$
+sawijining suku, kaya
+kang katuduhake dening jenenge,
+yaiku ``reduksi paralel kang
+lengkap''. Ing reduksi-$\beta$
+paralel kita isih bisa milih
+ora ngontraksi sawijining redex,
+nanging ing pangembangan lengkap
+kabeh redex asal kudu dikontraksi.
+Mula pangembangan lengkap saka
+$(\lambd[f][fx])(\lambd[y][y])$
+yaiku $(\lambd[y][y])x$,
+dudu suku asal iku dhewe.
+
+\begin{editorial}
+  Definisi iki isih nduweni
+  masalah: kita durung nerangake
+  carane netepake fungsi ing
+  suku-$\lambd$ kanthi rekursif.
+  Bab iki bakal didandani
+  ing tembe.
+\end{editorial}
+
+\begin{lem}\ollabel{lem:comp}
+  Yen $M \bredpar M'$ lan $R \bredpar R'$,
+  mula $\Subst{M}{R}{y}
+  \bredpar \Subst{M'}{R'}{y}$.
+\end{lem}
+
+\begin{proof}
+  Gunakake induksi ing !!{derivation}
+  saka $M \bredpar M'$.
+  \begin{enumerate}
+    \item Yen langkah pungkasan
+      \olref{defn:bredpar1}: latihan.
+    \item Yen langkah pungkasan
+      \olref{defn:bredpar2}: $M$
+      awujud $\lambd[x][N]$ lan
+      $M'$ awujud $\lambd[x][N']$,
+      kanthi $N \bredpar N'$.
+      Kita kudu mbuktekake
+      $\Subst{(\lambd[x][N])}{R}{y} \bredpar
+      \Subst{(\lambd[x][N'])}{R'}{y}$,
+      yaiku
+      $\lambd[x][\Subst{N}{R}{y}] \bredpar
+      \lambd[x][\Subst{N'}{R'}{y}]$.
+      Iki ndherek saka
+      \olref{defn:bredpar2} lan
+      hipotesis induksi, sawisé
+      wakil binder dipilih seger.
+    \item Yen langkah pungkasan
+      \olref{defn:bredpar3}: latihan.
+    \item Yen langkah pungkasan
+      \olref{defn:bredpar4}: $M$
+      awujud $(\lambd[x][N])Q$
+      lan $M'$ awujud
+      $\Subst{N'}{Q'}{x}$.
+      Kita kudu mbuktekake
+      $\Subst{((\lambd[x][N])Q)}{R}{y} \bredpar
+      \Subst{\Subst{N'}{Q'}{x}}{R'}{y}$,
+      yaiku
+      $(\lambd[x][\Subst{N}{R}{y}])\Subst{Q}{R}{y} \bredpar
+      \Subst{\Subst{N'}{R'}{y}}{\Subst{Q'}{R'}{y}}{x}$.
+      Langkah iki nggunakake
+      \olref{defn:bredpar4},
+      hipotesis induksi, lan
+      hukum komposisi substitusi
+      kanthi binder kang dipilih
+      seger. Justifikasi pungkasan
+      iki durung diwenehake ing
+      teks sumber.
+  \end{enumerate}
+\end{proof}
+
+\begin{prob}
+  Rampungna bukti \olref[lam][cr][pb]{lem:comp}.
+\end{prob}
+
+\begin{lem}\ollabel{lem:cont}
+  Yen $M \bredpar M'$, mula
+  $M' \bredpar \bcd{M}$.
+\end{lem}
+\begin{proof}
+  Gunakake induksi ing !!{derivation}
+  saka $M \bredpar M'$.
+  \begin{enumerate}
+    \item Yen aturan pungkasan
+      \olref{defn:bredpar1}: latihan.
+    \item Yen aturan pungkasan
+      \olref{defn:bredpar2}: $M$
+      awujud $\lambd[x][N]$
+      lan $M'$ awujud
+      $\lambd[x][N']$ kanthi
+      $N \bredpar N'$.
+      Kita kudu nuduhake
+      $\lambd[x][N'] \bredpar
+      \bcd{(\lambd[x][N])}$,
+      yaiku $\lambd[x][N'] \bredpar
+      \lambd[x][\bcd{N}]$
+      miturut \olref{defn:bcd2}.
+      Iki ndherek saka
+      \olref{defn:bredpar2} lan
+      hipotesis induksi.
+    \item Yen aturan pungkasan
+      \olref{defn:bredpar3}:
+      $M$ awujud $PQ$ lan
+      $M'$ awujud $P'Q'$
+      kanggo sawetara $P$,
+      $Q$, $P'$, lan $Q'$,
+      kanthi $P \bredpar P'$
+      lan $Q \bredpar Q'$.
+      Miturut hipotesis induksi,
+      $P' \bredpar \bcd{P}$
+      lan $Q' \bredpar \bcd{Q}$.
+      \begin{enumerate}
+        \item Yen $P$ awujud
+          $\lambd[x][N]$ kanggo
+          sawetara $x$ lan $N$,
+          $P'$ mesthi awujud
+          $\lambd[x][N']$
+          kanggo sawetara $N'$
+          kanthi $N \bredpar N'$.
+          Miturut hipotesis induksi,
+          $N' \bredpar \bcd{N}$
+          lan $Q' \bredpar \bcd{Q}$.
+          Mula $(\lambd[x][N'])Q' \bredpar
+          \Subst{\bcd{N}}{\bcd{Q}}{x}$
+          miturut \olref{defn:bredpar4}.
+        \item Yen $P$ dudu
+          abstraksi-$\lambd$,
+          mula $P'Q' \bredpar
+          \bcd{P}\bcd{Q}$
+          miturut \olref{defn:bredpar3},
+          lan sisih tengen iku
+          $\bcd{PQ}$ miturut
+          \olref{defn:bcd3}.
+      \end{enumerate}
+    \item Yen aturan pungkasan
+      \olref{defn:bredpar4}: $M$
+      awujud $(\lambd[x][N])Q$
+      lan $M'$ awujud
+      $\Subst{N'}{Q'}{x}$
+      kanggo sawetara $x$,
+      $N$, $Q$, $N'$, lan~$Q'$,
+      kanthi $N \bredpar N'$
+      lan $Q \bredpar Q'$.
+      Miturut hipotesis induksi,
+      $N' \bredpar \bcd{N}$
+      lan $Q' \bredpar \bcd{Q}$.
+      Miturut \olref{lem:comp},
+      $\Subst{N'}{Q'}{x} \bredpar
+      \Subst{\bcd{N}}{\bcd{Q}}{x}$;
+      sisih tengen iku
+      $\bcd{((\lambd[x][N])Q)}$.
+  \end{enumerate}
+\end{proof}
+
+\begin{prob}
+  Rampungna bukti \olref[lam][cr][pb]{lem:cont}.
+\end{prob}
+
+\begin{thm}\ollabel{thm:cr}
+  $\bredpar$ nduweni
+  sipat Church--Rosser.
+\end{thm}
+
+\begin{proof}
+  Langsung saka \olref{lem:cont}.
+\end{proof}
+
+\end{document}

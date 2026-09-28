@@ -1,0 +1,130 @@
+% Part: normal-modal-logic
+% Chapter: sequent-calculus
+% Section: rules-for-K
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{seq}{rul}
+
+\olsection{Aturan kanggo \Log{K}}
+
+Aturan kanggo konektif proposisional lumrah padha karo aturan ing
+kalkulus sekuen lumrah~$\Log{LK}$. Aksiomane uga padha: saben sekuen
+awujud $!A \Sequent !A$ dianggep aksioma.
+
+Kanggo operator modal\iftag{prvBox}{\iftag{prvDiamond}{~$\Box$
+lan}{~$\Box$}}{}\iftag{prvDiamond}{~$\Diamond$}{}, ana
+\iftag{notprvBox,notprvDiamond}{aturan}{aturan} tambahan iki:
+\[
+  \iftag{prvBox}{\iftag{prvDiamond}{% <> and [] primitive
+    \Axiom$\Gamma \fCenter \Delta, !A$
+    \RightLabel{$\Box$}
+    \UnaryInf$\Box\Gamma \fCenter \Diamond\Delta, \Box!A$
+    \DisplayProof  
+    \qquad
+    \Axiom$!A, \Gamma \fCenter \Delta$
+    \RightLabel{$\Diamond$}
+    \UnaryInf$\Diamond!A, \Box\Gamma \fCenter \Diamond\Delta$
+    \DisplayProof
+}{% only Box primitive
+\Axiom$\Gamma \fCenter !A$
+\RightLabel{$\Box$}
+\UnaryInf$\Box\Gamma \fCenter \Box!A$
+\DisplayProof
+}}{% only <> primitive
+  \Axiom$!A \fCenter \Delta$
+  \RightLabel{$\Diamond$}
+  \UnaryInf$\Diamond!A \fCenter \Diamond\Delta$
+  \DisplayProof
+}
+\]
+Ing kene, \iftag{prvBox}{$\Box\Gamma$ ateges urutan !!{formula}s
+kang diasilake saka~$\Gamma$ kanthi masang $\Box$ ing ngarepe saben
+!!{formula} ing~$\Gamma$\iftag{prvDiamond}{ lan
+}{}}{}\iftag{prvDiamond}{$\Diamond\Delta$ ateges urutan
+!!{formula}s kang diasilake saka~$\Delta$ kanthi masang $\Diamond$
+ing ngarepe saben !!{formula} ing~$\Delta$}{}.
+\iftag{notprvDiamond}{Sisih tengen premis aturan $\Box$ mung kena
+ngemot paling akeh siji !!{formula}~$!A$. }{}%
+\iftag{notprvBox}{Sisih kiwa premis aturan $\Diamond$ mung kena
+ngemot paling akeh siji !!{formula}~$!A$. }{}%
+\iftag{prvBox}{$\Gamma$\iftag{prvDiamond}{~lan~}{}}{}\iftag{prvDiamond}{$\Delta$}{}
+bisa kosong; yen mangkono, bagean kang cocog, yaiku
+\iftag{prvBox}{$\Box\Gamma$\iftag{prvDiamond}{~lan~}{}}{}\iftag{prvDiamond}{$\Diamond\Delta$}{}
+ing sekuen kesimpulan uga kosong.
+
+Watesan yen
+\iftag{prvBox}{$\Box$ ing sisih tengen\iftag{prvDiamond}{ lan
+}{}}{}\iftag{prvDiamond}{$\Diamond$ ing sisih kiwa}{}
+mung ditambahake marang siji !!{formula}~$!A$ iku perlu. Yen kita
+ngolehake
+\iftag{prvBox}{nambahake $\Box$ marang !!{formula}s saakeh-akehe
+ing sisih tengen\iftag{prvDiamond}{ utawa }{}}{}\iftag{prvDiamond}{nambahake $\Diamond$
+marang !!{formula}s saakeh-akehe ing sisih kiwa}{}, kita bisa
+!!{derive}:
+  \[
+    \iftag{prvBox}{
+      \Axiom$!A \fCenter !A$
+      \RightLabel{\RightR{\lnot}}
+      \UnaryInf$\fCenter !A, \lnot !A$
+      \RightLabel{$\Box*$}
+      \UnaryInf$\fCenter \Box!A, \Box\lnot !A$
+      \doubleLine
+      \RightLabel{\RightR{\lor}}
+      \UnaryInf$\fCenter \Box!A \lor \Box \lnot !A$
+      \DisplayProof}{}
+    \iftag{notprvBox,notprvDiamond}{}{\qquad}
+    \iftag{prvDiamond}{
+      \Axiom$!A \fCenter !A$
+      \RightLabel{\LeftR{\lnot}}
+      \UnaryInf$\lnot !A, !A \fCenter$
+      \RightLabel{$\Diamond*$}
+      \UnaryInf$\Diamond\lnot !A,\Diamond!A \fCenter $
+      \RightLabel{\RightR{\lnot}}
+      \UnaryInf$\Diamond!A \fCenter \lnot\Diamond\lnot !A$
+      \RightLabel{\RightR{\lif}}
+      \UnaryInf$ \fCenter \Diamond!A \lif \lnot\Diamond\lnot !A$
+      \DisplayProof}{}
+  \]
+Nanging, \iftag{prvBox}{$\Box!A \lor \Box \lnot !A$\iftag{prvDiamond}{ lan
+$\Diamond!A \lif \lnot\Diamond\lnot !A$}{}}{$\Diamond!A \lif
+\lnot\Diamond\lnot !A$} ora valid ing~$\Log{K}$.
+
+Yen kita ngolehake rumus sampingan saliyane~$!A$ ing premis lan
+ngolehake \iftag{prvBox}{aturan $\Box$ nambahake $\Box$ mung marang~$!A$
+ing sisih tengen\iftag{prvDiamond}{, utawa ngolehake }{}}{}\iftag{prvDiamond}{aturan
+$\Diamond$ nambahake $\Diamond$ mung marang~$!A$ ing sisih kiwa}{}
+(tanpa ngowahi rumus sampingan), kita bisa !!{derive}:
+\[
+  \iftag{prvBox}{
+    \Axiom$!A \fCenter !A$
+    \RightLabel{\RightR{\lnot}}
+    \UnaryInf$\fCenter !A, \lnot !A$
+    \RightLabel{\RightR{\Exchange}}
+    \UnaryInf$\fCenter \lnot !A, !A$
+    \RightLabel{$\Box*$}
+    \UnaryInf$\fCenter \lnot!A, \Box !A$
+    \doubleLine
+    \RightLabel{\RightR{\lor}}
+    \UnaryInf$\fCenter \lnot!A \lor \Box !A$
+    \DisplayProof}{}
+  \iftag{notprvBox,notprvDiamond}{}{\qquad}
+  \iftag{prvDiamond}{
+    \Axiom$!A \fCenter !A$
+    \RightLabel{\LeftR{\lnot}}
+    \UnaryInf$\lnot !A, !A \fCenter$
+    \RightLabel{$\Diamond*$}
+    \UnaryInf$\Diamond\lnot !A, !A \fCenter $
+    \RightLabel{\RightR{\lnot}}
+    \UnaryInf$!A \fCenter \lnot\Diamond\lnot !A$
+    \RightLabel{\RightR{\lif}}
+    \UnaryInf$ \fCenter !A \lif \lnot\Diamond\lnot !A$
+    \DisplayProof}{}
+\]
+Nanging, \iftag{prvBox}{$\lnot!A \lor \Box !A$ (kang ekuivalen karo $!A
+\lif \Box!A$)\iftag{prvDiamond}{ lan $!A \lif \lnot\Diamond\lnot !A$
+}{}}{$!A \lif \lnot\Diamond\lnot !A$} ora valid ing~$\Log{K}$.
+
+\end{document}

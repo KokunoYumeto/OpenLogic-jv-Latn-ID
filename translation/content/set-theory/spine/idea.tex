@@ -1,0 +1,49 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{spine}{valpha}
+
+\olsection{Netepake Tataran Minangka $V_\alpha$}
+
+Ing \olref[sth][ordinals][]{chap}, kita wis netepake
+urutan becik lan ordinal (miturut von Neumann).
+Ing bab iki, kita bakal nggunakake loro gagasan iku
+kanggo nggambarake hierarki himpunan \emph{dhewe}.
+Kanggo iku, elinga yen ing
+\olref[sth][ordinals][opps]{sec} kita wis netepake
+ordinal penerus lan ordinal limit. Gagasan-gagasan
+iki digunakake ing definisi sabanjure:
+
+\begin{defn}\ollabel{defValphas}
+	\begin{align*}
+	V_\emptyset &\defis \emptyset\\
+	V_{\ordsucc{\alpha}} &\defis \Pow{V_\alpha} & & 
+	\text{kanggo sembarang ordinal }\alpha\\
+	V_{\alpha} &\defis \bigcup_{\gamma < \alpha} V_\gamma & & 
+	\text{yen }\alpha\text{ ordinal limit}
+\end{align*}
+\end{defn}
+\noindent
+Iki bakal dadi definisi nganggo \emph{rekursi
+transfinit} ing ordinal. Ing bab iki, kita bisa
+mbandhingake karo definisi rekursif fungsi ing
+wilangan asli.\footnote{Bandhingna\ definisi
+panjumlahan, pingan, lan pemangkatan ing
+\olref[sfr][infinite][dedekind]{sec}.} Kaya ing
+wilangan asli, kita netepake kasus dhasar lan kasus
+penerus; nanging kanggo ordinal, kita uga kudu
+nerangake kelakuan kasus \emph{limit}.
+
+Definisi himpunan-himpunan $V_\alpha$ iki bakal dadi
+tonggak kang wigati. Sadurunge, kita nerangake
+hierarki himpunan kanthi cara informal: himpunan
+kawangun miturut \emph{tataran}. Himpunan-himpunan
+$V_\alpha$ iku sejatine tataran-tataran mau.
+Nanging iki minangka cara nggambarake tataran kanthi
+\emph{internal}. Kita ora mung ngusulake sawijining
+\emph{model} kanggo teori iki; kita
+netepake tataran \emph{ing sajroning} teori himpunan
+kita dhewe.
+
+\end{document}

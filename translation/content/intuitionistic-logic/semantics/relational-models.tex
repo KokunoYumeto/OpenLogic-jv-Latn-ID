@@ -1,0 +1,73 @@
+% part: intuitionistic-logic
+% chapter: semantics
+% section: relational-models
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{sem}{rel}
+
+\olsection{\usetoken{P}{relational model}}
+
+Kanggo menehi semantik kang presisi kanggo logika proposisional
+intuisionistik, kita kudu nemtokake apa kang diarani model kang bisa
+digunakake kanggo ngevaluasi !!{formula}s. Adhedhasar definisi iku,
+kita uga bisa nemtokake pangerten semantik kayata validitas lan
+entailmen. Salah siji semantik kaya mangkono diwenehake dening
+!!{relational model}s.
+
+\begin{defn}
+  !!^a{relational model} kanggo logika proposisional intuisionistik
+  iku tripel $\mModel{M} = \tuple{W, R, V}$, kanthi
+  \begin{enumerate}
+  \item $W$ iku himpunan kang ora kosong,
+  \item $R$ iku urutan parsial (yaiku relasi biner kang refleksif,
+    antisimetris, lan transitif) ing~$W$, lan
+  \item $V$ iku fungsi kang menehi marang saben !!{propositional
+    variable}~$p$ sawijining subhimpunan saka~$W$, kanthi syarat
+  \item $V$ monoton tumrap $R$, yaiku yen $w
+    \in V(p)$ lan $Rww'$, mula $w' \in V(p)$.
+  \end{enumerate}
+\end{defn}
+
+\begin{defn}\ollabel{defn:true-at-w}
+  Pangerten yen $!A$ \emph{bener ing $w$ sajrone
+    $\mModel{M}$}, $\mSat{M}{!A}[w]$, ditetepake sacara induktif kaya mangkene:
+  \begin{enumerate}
+  \item \indcase{!A}{p}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen $w \in V(p)$.}
+  \item \indcase{!A}{\lfalse}{ora $\mSat{M}{\indfrm}[w]$}.
+  \item \indcase{!A}{\lnot !B}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
+    ora ana $w'$ kanthi $Rww'$ kang nyukupi $\mSat{M}{!B}[w']$}.
+  \item \indcase{!A}{!B \land !C}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
+    $\mSat{M}{!B}[w]$ lan $\mSat{M}{!C}[w]$}.
+  \item \indcase{!A}{!B \lor !C}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
+    $\mSat{M}{!B}[w]$ utawa $\mSat{M}{!C}[w]$ (utawa loro-lorone)}.
+  \item \indcase{!A}{!B \lif !C}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
+    kanggo saben $w'$ kanthi $Rww'$, ora $\mSat{M}{!B}[w']$ utawa
+    $\mSat{M}{!C}[w']$} (utawa loro-lorone).
+  \end{enumerate}
+  Kita nulis $\mSat/{M}{!A}[w]$ yen ora $\mSat{M}{!A}[w]$. Yen $\Gamma$
+  iku himpunan !!{formula}s, $\mSat{M}{\Gamma}[w]$ tegese
+  $\mSat{M}{!B}[w]$ kanggo kabeh $!B \in \Gamma$.
+\end{defn}
+
+\begin{prob}
+  Tuduhna yen miturut \olref[int][sem][rel]{defn:true-at-w},
+  $\mSat{M}{\lnot !A}[w]$ yen lan mung yen $\mSat{M}{!A \lif \lfalse}[w]$.
+\end{prob}
+
+\begin{prop}\ollabel{prop:true-monotonic}
+  Kabeneran ing donya iku monoton tumrap~$R$, yaiku yen
+  $\mSat{M}{!A}[w]$ lan $Rww'$, mula $\mSat{M}{!A}[w']$.
+\end{prop}
+
+\begin{proof}
+  Latihan.
+\end{proof}
+
+\begin{prob}
+  Buktèkna \olref[int][sem][rel]{prop:true-monotonic}.
+\end{prob}
+
+\end{document}

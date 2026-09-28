@@ -1,0 +1,69 @@
+% Part: normal-modal-logic
+% Chapter: syntax-and-semantics
+% Section: normal-modal-logics
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{syn}{nor}
+
+\olsection{Logika Modal Normal}
+
+Logika modal bisa dipandang minangka himpunan !!{formula}s
+kang nyukupi aturan-aturan tartamtu. Ana sawetara
+logika modal kang mligi narik kawigatèn amarga
+interpretasi lan panganggoné, lan luwih-luwih amarga
+landhesan téoriné wis dimangertèni kanthi apik.
+Logika iki diarani logika modal normal.
+
+\begin{defn}\ollabel{defn:modal-logic}
+\emph{Logika modal}~$\Log L$ yaiku himpunan
+!!{formula}s saka basa modal dhasar kang
+\begin{enumerate}
+\item ngemot kabèh tautologi proposisional,
+\item katutup tumrap substitusi seragam, lan
+\item katutup tumrap modus ponens, yaiku yèn $!A$
+  lan $(!A \lif !B) \in \Log L$, mula
+  $!B \in \Log L$.
+\end{enumerate}
+\end{defn}
+
+\begin{ex}
+Sawetara himpunan !!{formula}s kang nyukupi definisi iki,
+sanajan ora pati narik kawigatèn, mula kalebu logika modal yaiku:
+\begin{enumerate}
+\item himpunan kabèh tautologi;
+\item himpunan kabèh !!{formula}s (logika modal kang ora konsisten).
+\end{enumerate}
+\end{ex}
+
+\begin{defn}\label{defn:normal-modal-logic}
+Logika modal~$\Log L$ diarani \emph{normal} yèn lan mung yèn
+\begin{enumerate}
+\item ngemot kaloro formula iki:
+\begin{align}
+\tag{K} \Box(p \lif q) & \lif (\Box p \lif \Box q) \\
+\tag{Dual} \Diamond p & \liff \lnot \Box \lnot p
+\end{align}
+\item lan katutup tumrap aturan peniscayaan, yaiku
+  yèn $!A \in \Log L$, mula $\Box !A \in \Log L$.
+\end{enumerate}
+\end{defn}
+
+Kita bakal nemoni rong cara utama netepaké logika modal.
+Cara kapisan adhedhasar téori bukti: minangka himpunan
+!!{formula}s kang bisa diturunké ing sistem
+!!{derivation} tartamtu. Cara kapindho adhedhasar
+téori modèl: minangka himpunan !!{formula}s kang valid
+ing kelas modèl tartamtu. Iki padha karo kahanan
+ing logika proposisional lumrah (utawa logika tataran
+kapisan). Ing kono sawijining himpunan !!{formula}s
+uga bisa ditemtokaké kanthi rong cara: minangka
+himpunan tautologi kang bener ing saben pangaji nilai
+bebener, utawa minangka himpunan kabèh !!{derivable}
+!!{formula}s ing sistem !!{derivation} tartamtu.
+Kanggo logika modal normal, rong cara iki bisa
+ditrapaké kanthi modèl relasional lan sistem bukti
+aksiomatik jinis Hilbert.
+\end{document}

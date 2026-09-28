@@ -1,0 +1,233 @@
+% Part: incompleteness
+% Chapter: representability-in-q
+% Section: basic-representable
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{req}{bre}
+\olsection{Fungsi Dhasar Representabel ing~$\Th{Q}$}
+
+Luwih dhisik, kita kudu nuduhake yen kabeh fungsi dhasar representabel
+ing~$\Th{Q}$. Pungkasane, kita kudu nuduhake carane masangake saben
+fungsi dhasar $k$-argumen $f(x_0,\dots,x_{k-1})$ karo !!a{formula}
+$!A_f(x_0,\dots,x_{k-1},y)$ kang merepresentasikake fungsi iku.
+
+Kita bakal bisa merepresentasikake nol, penerus, panjumlahan,
+perkalian, fungsi karakteristik kanggo kesamaan, lan proyeksi. Ing
+saben kasus, formula kang merepresentasikake fungsi kasebut cukup
+langsung; umpamane, nol direpresentasikake dening formula $y = \Obj 0$,
+penerus dening !!{formula} $x_0' = y$, lan panjumlahan dening
+!!{formula} $(x_0 + x_1) = y$. Gaweyan kang perlu yaiku nuduhake yen
+$\Th{Q}$ bisa mbuktekake !!{sentence}s kang cocog; umpamane, nyatakake
+yen panjumlahan direpresentasikake dening !!{formula} ing ndhuwur
+mbutuhake bukti yen kanggo saben pasangan bilangan asli $m$ lan $n$,
+$\Th{Q}$ mbuktekake
+\begin{align*}
+& \eq[\num n + \num m][\num {n+m}] \text{ lan}\\
+& \lforall[y][(\eq[(\num n + \num m)][y] \lif \eq[y][\num{n+m}])].
+\end{align*}
+
+\begin{prop}
+\ollabel{prop:rep-zero}
+Fungsi nol $\Zero(x) = 0$ direpresentasikake ing~$\Th{Q}$ dening
+$!A_{\Zero}(x,y) \ident \eq[y][\Obj 0]$.
+\end{prop}
+
+\begin{prop}
+\ollabel{prop:rep-succ}
+Fungsi penerus $\Succ(x) = x+1$ direpresentasikake ing~$\Th{Q}$ dening
+$!A_{\Succ}(x,y) \ident \eq[y][x']$.  
+\end{prop}
+
+\begin{prop}
+\ollabel{prop:rep-proj}
+Fungsi proyeksi $\Proj{n}{i}(x_0, \dots, x_{n-1}) = x_i$
+direpresentasikake ing~$\Th{Q}$ dening \[!A_{\Proj{n}{i}}(x_0, \dots, x_{n-1}, y) \ident \eq[y][x_i].\]
+\end{prop}
+
+\begin{prob}
+Buktekna yen $\eq[y][\Obj 0]$, $\eq[y][x']$, lan $\eq[y][x_i]$
+merepresentasikake $\Zero$, $\Succ$, lan $\Proj{n}{i}$ miturut urutane.
+\end{prob}
+
+\begin{prop}
+\ollabel{prop:rep-id}
+Fungsi karakteristik saka~$=$,
+\[
+\Char{=}(x_0, x_1) =
+\begin{cases}
+  1 & \text{yen } x_0 =x_1\\
+  0 & yen ora
+\end{cases}
+\]
+direpresentasikake ing~$\Th{Q}$ dening
+\[
+  !A_{\Char{=}}(x_0, x_1, y) \ident (\eq[x_0][x_1] \land \eq[y][\num{1}]) \lor (\eq/[x_0][x_1] \land
+\eq[y][\num{0}]).
+\]
+\end{prop}
+
+Buktine mbutuhake lema iki.
+
+\begin{lem}
+\ollabel{lem:q-proves-neq} Kanggo bilangan asli $n$ lan $m$, yen $n
+\neq m$, mula $\Th{Q} \Proves \eq/[\num n][\num m]$.
+\end{lem}
+
+\begin{proof}
+Gunakna induksi marang $n$ kanggo nuduhake yen kanggo saben $m$, yen
+$n \neq m$, mula $Q \Proves \eq/[\num n][\num m]$.
+
+Ing kasus dhasar, $n = 0$. Yen $m$ ora padha karo $0$, mula $m = k +
+1$ kanggo sawijining bilangan asli $k$. Kita duwe aksioma kang nyatakake
+$\lforall[x][\eq/[0][x']]$. Kanthi aksioma kuantor, yen $x$ diganti
+  $\num k$, kita bisa nyimpulake $\eq/[0][\num k']$. Nanging $\num k'$
+  iku mung $\num m$.
+
+Ing langkah induksi, kita bisa nganggep pratelan iki bener kanggo $n$,
+banjur nimbang $n+1$. Tetepna $m$ minangka bilangan asli sembarang. Ana rong
+kemungkinan: $m = 0$ utawa ana $k$ saengga $m = k+1$. Kasus kapisan
+ditangani kaya ing ndhuwur. Ing kasus kapindho, upamana $n+1 \neq
+k+1$. Mula $n \neq k$. Miturut hipotesis induksi kanggo $n$, kita nduweni
+$\Th{Q} \Proves \eq/[\num n][\num k]$. Kita duwe aksioma kang nyatakake
+$\lforall[x][\lforall[y][\eq[x'][y'] \lif \eq[x][y]]]$. Kanthi
+aksioma kuantor, kita entuk $\eq[\num n'][\num k'] \lif \eq[\num n][\num
+  k]$. Kanthi logika proposisional, kita bisa nyimpulake, ing $\Th{Q}$,
+$\eq/[\num n][\num k] \lif \eq/[\num n'][\num k']$. Kanthi modus
+ponens, kita nyimpulake $\eq/[\num n'][\num k']$, kaya kang dikarepake,
+amarga $\num k'$ iku $\num m$.
+\end{proof}
+
+\begin{explain}
+Gatekna yen lema iki ora nyatakake akeh: pokoke, $\Th{Q}$ bisa
+mbuktekake yen numeral kang beda nuduhake objek kang beda. Umpamane,
+$\Th{Q}$ mbuktekake $0'' \neq 0'''$. Nanging kanggo nuduhake yen iki
+bener sacara umum perlu ngati-ati. Gatekna uga yen sanajan kita
+nggunakake induksi, induksi iki ana \emph{ing njaba} $\Th{Q}$.
+\end{explain}
+
+\begin{proof}[Bukti \olref{prop:rep-id}]
+Yen $n = m$, mula $\num{n}$ lan $\num{m}$ iku suku kang padha, lan
+$\Char{=}(n, m) = 1$. Nanging $\Th{Q} \Proves (\eq[\num{n}][\num{m}] \land
+\eq[\num{1}][\num{1}])$, mula teori iku mbuktekake $!A_=(\num{n}, \num{m},
+\num{1})$. Yen $n \neq m$, mula $\Char=(n, m) = 0$. Miturut
+\olref{lem:q-proves-neq}, $\Th{Q} \Proves \eq/[\num{n}][\num{m}]$ lan
+uga $(\eq/[\num{n}][\num{m}] \land \Obj 0 = \Obj 0)$. Dadi $\Th{Q}
+\Proves !A_=(\num{n}, \num{m}, \num{0})$.
+
+Kanggo bagean kapindho, ana rong kasus maneh. Yen $n = m$, kita kudu
+nuduhake yen $\Th{Q} \Proves \lforall[y][(!A_=(\num{n}, \num{m}, y)
+  \lif \eq[y][\num{1}])]$. Kanthi argumentasi informal, upamana $!A_=(\num{n},
+\num{m}, y)$, yaiku,
+\[
+(\eq[\num{n}][\num{n}] \land \eq[y][\num{1}]) \lor
+(\eq/[\num{n}][\num{n}] \land \eq[y][\num{0}])
+\]
+Disjungsi sisih kiwa njalari $\eq[y][\num{1}]$ kanthi logika; sisih
+tengen mbantah $\eq[\num{n}][\num{n}]$ kang bisa dibuktekake kanthi
+logika.
+
+Kosok baline, upamana $n \neq m$. Mula $!A_=(\num{n},
+\num{m}, y)$ iku
+\[
+(\eq[\num{n}][\num{m}] \land \eq[y][\num{1}]) \lor
+(\eq/[\num{n}][\num{m}] \land \eq[y][\num{0}])
+\]
+Ing kene, disjungsi sisih kiwa mbantah $\eq/[\num{n}][\num{m}]$, kang
+bisa dibuktekake ing $\Th{Q}$ miturut \olref{lem:q-proves-neq};
+disjungsi sisih tengen njalari $\eq[y][\num{0}]$.
+\end{proof}
+
+\begin{prop}
+\ollabel{prop:rep-add}
+Fungsi panjumlahan $\Add(x_0, x_1) = x_0+x_1$ direpresentasikake
+ing~$\Th{Q}$ dening
+\[
+  !A_{\Add}(x_0, x_1, y) \ident \eq[y][(x_0 + x_1)].
+\]
+\end{prop}
+
+\begin{lem}
+\ollabel{lem:q-proves-add}
+$\Th{Q} \Proves \eq[(\num{n} + \num{m})][\num{n+m}]$
+\end{lem}
+
+\begin{proof}
+Kita mbuktekake iki kanthi induksi marang~$m$. Yen $m = 0$, pratelane
+yaiku $\Th{Q} \Proves \eq[(\num{n} + \Obj 0)][\num{n}]$. Iki lumaku
+miturut aksioma~$!Q_4$. Saiki upamana pratelan iki bener kanggo $m$;
+ayo mbuktekake kanggo $m+1$, yaiku $\Th{Q} \Proves \eq[(\num{n} +
+  \num{m+1})][\num{n+m+1}]$. Gatekna yen $\num{m+1}$ iku mung $\num{m}'$,
+lan $\num{n+m+1}$ iku mung $\num{n+m}'$. Miturut aksioma $!Q_5$, $\Th{Q}
+\Proves \eq[(\num{n} + \num{m}')][(\num{n}+\num{m})']$. Miturut
+hipotesis induksi, $\Th{Q} \Proves \eq[(\num{n} + \num{m})][\num{n+m}]$.
+Mula $\Th{Q} \Proves \eq[(\num{n} + \num{m}')][\num{n+m}']$.
+\end{proof}
+
+\begin{proof}[Bukti \olref{prop:rep-add}]
+!!{formula}~$!A_\Add(x_0, x_1, y)$ kang merepresentasikake $\Add$ yaiku
+$\eq[y][(x_0 + x_1)]$. Luwih dhisik, kita nuduhake yen $\Add(n, m) = k$, mula
+$\Th{Q} \Proves !A_\Add(\num{n}, \num{m}, \num{k})$, yaiku $\Th{Q}
+\Proves \eq[\num{k}][(\num{n} + \num{m})]$. Nanging amarga $k = n + m$,
+$\num{k}$ iku mung $\num{n+m}$, lan kita wis nuduhake ing
+\olref{lem:q-proves-add} yen $\Th{Q} \Proves \eq[(\num{n} +
+  \num{m})][\num{n+m}]$.
+
+Kita uga kudu nuduhake yen $\Add(n, m) = k$, mula
+\[
+\Th{Q} \Proves \lforall[y][(!A_\Add(\num{n}, \num{m}, y) \lif
+  \eq[y][\num{k}])].
+\]
+Upamana kita nduweni $\eq[(\num{n} + \num{m})][y]$. Amarga
+\[
+\Th{Q} \Proves \eq[(\num{n}+\num{m})][\num{n+m}],
+\]
+kita bisa ngganti sisih kiwa karo $\num{n+m}$ lan entuk
+$\eq[\num{n+m}][y]$, kanggo~$y$ sembarang.
+\end{proof}
+
+\begin{prop}
+\ollabel{prop:rep-mult}
+Fungsi perkalian $\Mult(x_0, x_1) = x_0 \cdot x_1$ direpresentasikake
+ing~$\Th{Q}$ dening
+\[
+  !A_{\Mult}(x_0, x_1, y) \ident y = (x_0 \times x_1).
+\]
+\end{prop}
+
+\begin{proof} Latihan. \end{proof}
+
+\begin{lem}
+\ollabel{lem:q-proves-mult}
+$\Th{Q} \Proves \eq[(\num{n} \times \num{m})][\num{n \cdot m}]$
+\end{lem}
+
+\begin{proof} Latihan. \end{proof}
+
+\begin{prob}
+Buktekna \olref[inc][req][bre]{lem:q-proves-mult}.
+\end{prob}
+
+\begin{prob}
+Gunakna \olref[inc][req][bre]{lem:q-proves-mult} kanggo mbuktekake
+\olref[inc][req][bre]{prop:rep-mult}.
+\end{prob}
+
+\begin{explain}
+  Elinga yen kita nggunakake $\times$ minangka simbol fungsi ing basa
+  aritmetika, lan $\cdot$ kanggo operasi perkalian biasa marang
+  bilangan. Dadi $\cdot$ bisa katon ing antarane ekspresi bilangan
+  (kayata ing $m \cdot n$), dene $\times$ mung katon ing antarane suku
+  basa aritmetika (kayata ing $(\num{m} \times
+  \num{n})$). Sing luwih mbingungake, $+$ digunakake kanggo
+  !!{function} lan uga operasi panjumlahan. Yen katon ing antarane
+  suku---umpamane, ing $(\num{n} + \num{m})$---iku !!{function} kanthi
+  $2$ argumen ing basa aritmetika, lan yen katon ing antarane
+  bilangan---umpamane, ing $n+m$---iku operasi panjumlahan.
+  Iki kalebu kasus $\num{n+m}$: iki numeral standar
+  kang cocog karo bilangan~$n+m$.
+\end{explain}
+
+\end{document}

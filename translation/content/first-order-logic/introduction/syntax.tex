@@ -1,0 +1,58 @@
+% Part: first-order-logic
+% Chapter: introduction
+% Section: syntax
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{int}{syn}
+
+\olsection{Sintaksis}
+
+Sepisan, kita kudu njlentrehake kanthi trep rerangken simbol endi kang
+dianggep !!{sentence}s ing logika sepisanan. Bab iki bakal ditindakake
+mengko; sauntara iki kita bakal maju nganggo tuladha. Perangan pambangun
+dhasar---tetembungane---ing logika sepisanan kabagi dadi rong perangan.
+Perangan kapisan yaiku simbol-simbol kang digunakake kanggo ngandharake
+bab tartamtu utawa nuduhake sawijining bab kanthi mligi. Kita nuduhake
+sawijining bab nganggo !!{constant}s, lan ngandharake bab ngenani apa
+kang dituduhake mau nganggo !!{predicate}s. Tuladhane, kita bisa
+nggunakake $\Obj a$ minangka !!a{constant} kanggo nuduhake siji bab,
+banjur ngandharake sawijining bab ngenani bab kasebut nganggo
+!!{sentence}~$\Atom{\Obj P}{\Obj a}$. Yen sampeyan wis duwe makna kanggo
+``$\Obj a$'' lan ``$\Obj P$'' ing pikiran, sampeyan bisa maca
+$\Atom{\Obj P}{\Obj a}$ minangka ukara basa Inggris (lan mbokmenawa
+pancen wis nindakake mangkono nalika sepisanan sinau logika formal).
+Sawise nduweni !!{sentence}s logika sepisanan kang prasaja kaya
+mangkono, kita bisa mbangun ukara kang luwih majemuk nganggo perangan
+kapindho saka tetembungan kasebut, yaiku simbol logis (konektif lan
+kuantor). Dadi, tuladhane, kita bisa mbentuk ekspresi kaya
+$(\Atom{\Obj P}{\Obj a} \land \Atom{\Obj Q}{\Obj b})$
+utawa~$\lexists[\Obj x][\Atom{\Obj P}{\Obj x}]$.
+
+Supaya bisa menehi definisi semantik lan aturan sistem !!{derivation}
+kang trep lan dibutuhake kanggo panliten metalogis kang tliti, sepisan
+kita kudu menehi definisi kang trep ngenani apa kang dianggep
+!!a{sentence} ing logika sepisanan. Gagasan dhasare cukup gampang
+dimangerteni: ana sawetara !!{sentence}s prasaja kang bisa kita bentuk
+mung saka !!{predicate}s lan !!{constant}s, kayata~$\Atom{\Obj P}{\Obj
+a}$. Sabanjure, saka ukara-ukara kasebut kita mbentuk ukara-ukara kang
+luwih majemuk nganggo konektif lan kuantor. Nanging, aturan kang
+pas endi sing marengake kita mbentuk !!{sentence}s kang luwih majemuk?
+Aturan kasebut kudu ditemtokake; yen ora, kita durung nemtokake
+``!!{sentence} ing logika sepisanan'' kanthi cukup trep. Ana sawetara
+prekara. Prekara kapisan yaiku nemtokake rerangken simbol kang trep
+supaya dianggep !!{sentence}s. Prekara kapindho yaiku nindakake iki
+kanthi cara kang ndadekake kita bisa menehi bukti matematis ngenani
+\emph{kabeh} !!{sentence}s. Pungkasane, kita uga kudu menehi definisi
+kang trep kanggo sawetara operasi dhasar tumrap !!{sentence}s, kayata
+``ganti saben $\Obj x$ ing~$!A$ nganggo~$\Obj b$.'' Masalahe, kuantor
+lan !!{variable}s kang ana ing logika sepisanan ndadekake cara
+nindakake iki ora mesthi cetha. Tuladhane, apa $\lexists[\Obj
+x][\Atom{\Obj P}{\Obj a}]$ kudu dianggep !!a{sentence}? Kepriye karo
+$\lexists[\Obj x][\lexists[\Obj x][\Atom{\Obj P}{\Obj x}]]$? Apa asil
+saka ``ganti $\Obj x$ nganggo~$\Obj b$ ing $(\Atom{\Obj
+P}{\Obj x} \land \lexists[\Obj x][\Atom{\Obj P}{\Obj x}])$''?
+
+\end{document}

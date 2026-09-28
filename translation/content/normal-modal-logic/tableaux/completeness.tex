@@ -1,0 +1,239 @@
+% Part: normal-modal-logic
+% Chapter: tableaux
+% Section: completeness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{tab}{cpl}
+
+\olsection{Kelengkapan kanggo \Log{K}}
+
+\begin{explain}
+  Kanggo nuduhake yen metode !!{tableau}s iku lengkap, kita kudu
+  nuduhake yen nalika ora ana !!{tableau} katutup kang nuduhake
+  $\Gamma \Proves !A$, mula $\Gamma \Entails/ !A$, yaiku ana
+  kontramodel. Nanging ``ora ana !!{tableau} katutup'' ateges saben
+  cara nyoba mbangun tableau kasebut bakal gagal nutup kabeh cabange.
+  Bab kang wigati yaiku yen kabeh cara gagal, cara tartamtu kang
+  \emph{sistematis lan tuntas} uga bakal gagal. Kosok baline, cara
+  sistematis lan tuntas iki bakal nutup yen ana !!{tableau} katutup.
+  Tableau siji iki, liwat cabang-cabang bukake, ngemot kabeh informasi
+  kang dibutuhake kanggo netepake kontramodel. Kontramodel saka
+  sawijining cabang bukak nggunakake kabeh prefiks ing cabang iku
+  minangka jagad-jagade, lan !!a{propositional
+    variable}~$p$ bener ing $\sigma$ yen lan mung yen
+  $\sFmla{\True}{p}[\sigma]$ katon ing cabang kasebut.
+\end{explain}
+
+\begin{defn}
+  Cabang ing !!a{tableau} diarani lengkap yen, saben cabang iku ngemot
+  !!{formula} mawa prefiks $\sFmla{S}{!A}[\sigma]$ kang bisa dikenani
+  aturan, cabang iku uga ngemot
+  \begin{enumerate}
+    \item !!{formula}s mawa prefiks kang dadi kesimpulan aturan kang
+      cocog, kanggo aturan proposisional kang numpuk rumus ing siji
+      cabang;
+    \item salah siji !!{formula}s kesimpulan kang cocog kanggo aturan
+      proposisional kang mecah cabang;
+    \item paling ora siji kesimpulan kang mungkin kanggo aturan modal
+      kang mbutuhake prefiks anyar;
+    \item kesimpulan kang cocog kanggo saben prefiks penerus relevan
+      kang wis dienggo ing cabang, kanggo aturan modal kang mbutuhake
+      prefiks kang wis dienggo.
+  \end{enumerate}
+\end{defn}
+
+\begin{explain}
+Upamane, cabang lengkap ngemot $\sFmla{\True}{!B}[\sigma]$ lan
+$\sFmla{\True}{!C}[\sigma]$ saben cabang iku ngemot $\sFmla{\True}{!B
+  \land !C}[\sigma]$. Yen ngemot $\sFmla{\True}{!B \lor !C}[\sigma]$,
+cabang iku ngemot paling ora salah siji saka $\sFmla{\True}{!B}[\sigma]$
+lan $\sFmla{\True}{!C}[\sigma]$. Yen ngemot \iftag{prvBox}
+{$\sFmla{\False}{\Box !B}[\sigma]$} {$\sFmla{\True}{\Diamond !B}[\sigma]$},
+cabang iku uga ngemot \iftag{prvBox} {$\sFmla{\False}{!B}[\sigma.n]$}
+{$\sFmla{\True}{!B}[\sigma.n]$} kanggo paling ora siji~$n$. Lan
+saben ngemot \iftag{prvBox} {$\sFmla{\True}{\Box !B}[\sigma]$}
+{$\sFmla{\False}{\Diamond !B}[\sigma]$}, cabang iku uga ngemot \iftag{prvBox}
+{$\sFmla{\True}{!B}[\sigma.n]$}
+{$\sFmla{\False}{!B}[\sigma.n]$} kanggo saben~$n$ kang ndadekake
+$\sigma.n$ wis dienggo ing cabang.
+\end{explain}
+
+\begin{prop}\ollabel{prop:complete-tableau}
+  Saben $\Gamma$ winates nduweni !!a{tableau} kang saben cabang bukake lengkap.
+\end{prop}
+
+\begin{proof}
+  Gatekna cabang bukak ing !!a{tableau} kanggo~$\Gamma$. Ana
+  !!{formula}s mawa prefiks kang winates cacahe ing cabang iku lan
+  bisa dikenani aturan. Miturut urutan kang tetep (upamane saka
+  ndhuwur menyang ngisor), kanggo saben !!{formula}s mawa prefiks
+  kang durung nyukupi sarat (1)--(4), trapna aturan kang bisa
+  ditrapake supaya cabang iku diambakake. Ing sawetara kasus, iki
+  bakal mecah cabang; trapna aturan ing pucuk saben cabang asil kanggo
+  kabeh !!{formula}s mawa prefiks kang isih kari. Amarga cacahe
+  !!{formula}s mawa prefiks lan prefiks kang wis dienggo ing cabang
+  winates, prosedur iki pungkasane ngasilake cabang-cabang (bisa uga
+  akeh) kang ngambakake cabang wiwitan. Trapna prosedur marang saben
+  cabang mau, banjur baleni. Prefiks penerus anyar nyuda jerone modal;
+  subformula mung winates cacahe lan saben kewajiban prefiks anyar
+  dituntaskan sapisan ing saben prefiks. Mula proses iki rampung, lan
+  miturut pambangunane saben cabang bukak dadi lengkap.
+\end{proof}
+
+\begin{thm}[Kelengkapan]
+  \ollabel{thm:tableau-completeness}
+  Yen $\Gamma$ ora nduweni !!{tableau} katutup, $\Gamma$ bisa dicukupi.
+\end{thm}
+
+\begin{proof}
+Kaping pisan, upamane $\Gamma$ winates. Miturut proposisi kasebut,
+$\Gamma$ nduweni !!a{tableau} kang saben cabang bukake lengkap.
+Amarga ora ana !!{tableau} katutup, ana !!a{tableau}
+kang paling ora siji cabange bukak lan lengkap. Upamane $\Delta$
+himpunan !!{formula}s mawa prefiks ing cabang iku, lan $P(\Delta)$
+himpunan prefiks kang katon ing kono.
+
+Kita netepake model~$\mModel{M(\Delta)} = \tuple{P(\Delta), R, V}$,
+kanthi jagad-jagade yaiku prefiks kang katon ing~$\Delta$, lan relasi
+aksesibilitase ditepakake mangkene:
+\[
+R\sigma\sigma' \quad \text{yen lan mung yen} \quad
+\sigma'=\sigma.n \quad \text{kanggo sawijining~$n$}
+\]
+lan
+\[
+V(p) = \Setabs{\sigma}{\sFmla{\True}{p}[\sigma] \in \Delta}.
+\]
+Kita nuduhake kanthi induksi miturut~$!A$ yen
+$\sFmla{\True}{!A}[\sigma] \in \Delta$ mula
+$\mSat{M(\Delta)}{!A}[\sigma]$, lan yen
+$\sFmla{\False}{!A}[\sigma] \in \Delta$ mula
+$\mSat/{M(\Delta)}{!A}[\sigma]$.
+
+\begin{enumerate}
+  \item \indcase{!A}{p}{Yen $\sFmla{\True}{\indfrm}[\sigma] \in \Delta$,
+    mula $\sigma \in V(p)$ (miturut definisi~$V$), saengga
+    $\mSat{M(\Delta)}{\indfrm}[\sigma]$.
+
+    Yen $\sFmla{\False}{\indfrm}[\sigma] \in \Delta$, mula
+    $\sFmla{\True}{\indfrm}[\sigma] \notin \Delta$, amarga yen ora,
+    cabange bakal katutup. Dadi $\sigma \notin V(p)$, mula
+    $\mSat/{M(\Delta)}{\indfrm}[\sigma]$.}
+  \item \indcase{!A}{\lnot !B}{\iftag{probNot}{Latihan.}{Yen
+      $\sFmla{\True}{\indfrm}[\sigma] \in \Delta$, mula
+      $\sFmla{\False}{!B}[\sigma] \in \Delta$ amarga cabange
+      lengkap. Miturut hipotesis induksi,
+      $\mSat/{M(\Delta)}{!B}[\sigma]$, saengga
+      $\mSat{M(\Delta)}{\indfrm}[\sigma]$.
+
+      Yen $\sFmla{\False}{\indfrm}[\sigma] \in \Delta$, mula
+      $\sFmla{\True}{!B}[\sigma] \in \Delta$ amarga cabange
+      lengkap. Miturut hipotesis induksi,
+      $\mSat{M(\Delta)}{!B}[\sigma]$, saengga
+      $\mSat/{M(\Delta)}{\indfrm}[\sigma]$.}}
+  \item \indcase{!A}{!B \land !C}{\iftag{probAnd}{Latihan.}{Yen
+      $\sFmla{\True}{\indfrm}[\sigma] \in \Delta$, mula
+      $\sFmla{\True}{!B}[\sigma] \in \Delta$ lan
+      $\sFmla{\True}{!C}[\sigma] \in \Delta$ loro-lorone amarga
+      cabange lengkap. Miturut hipotesis induksi,
+      $\mSat{M(\Delta)}{!B}[\sigma]$ lan
+      $\mSat{M(\Delta)}{!C}[\sigma]$. Mula
+      $\mSat{M(\Delta)}{\indfrm}[\sigma]$.
+
+      Yen $\sFmla{\False}{\indfrm}[\sigma] \in \Delta$, mula
+      $\sFmla{\False}{!B}[\sigma] \in \Delta$ utawa
+      $\sFmla{\False}{!C}[\sigma] \in \Delta$ amarga cabange
+      lengkap. Miturut hipotesis induksi,
+      $\mSat/{M(\Delta)}{!B}[\sigma]$ utawa
+      $\mSat/{M(\Delta)}{!C}[\sigma]$. Mula
+      $\mSat/{M(\Delta)}{\indfrm}[\sigma]$.}}
+  \item \indcase{!A}{!B \lor !C}{\iftag{probOr}{Latihan.}{Yen
+      $\sFmla{\True}{\indfrm}[\sigma] \in \Delta$, mula
+      $\sFmla{\True}{!B}[\sigma] \in \Delta$ utawa
+      $\sFmla{\True}{!C}[\sigma] \in \Delta$ amarga cabange
+      lengkap. Miturut hipotesis induksi,
+      $\mSat{M(\Delta)}{!B}[\sigma]$ utawa
+      $\mSat{M(\Delta)}{!C}[\sigma]$. Mula
+      $\mSat{M(\Delta)}{\indfrm}[\sigma]$.
+
+      Yen $\sFmla{\False}{\indfrm}[\sigma] \in \Delta$, mula
+      $\sFmla{\False}{!B}[\sigma] \in \Delta$ lan
+      $\sFmla{\False}{!C}[\sigma] \in \Delta$ loro-lorone amarga
+      cabange lengkap. Miturut hipotesis induksi,
+      $\mSat/{M(\Delta)}{!B}[\sigma]$ lan
+      $\mSat/{M(\Delta)}{!C}[\sigma]$ loro-lorone. Mula
+      $\mSat/{M(\Delta)}{\indfrm}[\sigma]$.}}
+  \item \indcase{!A}{!B \lif !C}{\iftag{probIf}{Latihan.}{Yen
+      $\sFmla{\True}{\indfrm}[\sigma] \in \Delta$, mula
+      $\sFmla{\False}{!B}[\sigma] \in \Delta$ utawa
+      $\sFmla{\True}{!C}[\sigma] \in \Delta$ amarga cabange
+      lengkap. Miturut hipotesis induksi,
+      $\mSat/{M(\Delta)}{!B}[\sigma]$ utawa
+      $\mSat{M(\Delta)}{!C}[\sigma]$. Mula
+      $\mSat{M(\Delta)}{\indfrm}[\sigma]$.
+
+      Yen $\sFmla{\False}{\indfrm}[\sigma] \in \Delta$, mula
+      $\sFmla{\True}{!B}[\sigma] \in \Delta$ lan
+      $\sFmla{\False}{!C}[\sigma] \in \Delta$ loro-lorone amarga
+      cabange lengkap. Miturut hipotesis induksi,
+      $\mSat{M(\Delta)}{!B}[\sigma]$ lan
+      $\mSat/{M(\Delta)}{!C}[\sigma]$ loro-lorone. Mula
+      $\mSat/{M(\Delta)}{\indfrm}[\sigma]$.}}
+  \item \indcase{!A}{\Box !B}{\iftag{probBox}{Latihan.}{Yen
+      $\sFmla{\True}{\indfrm}[\sigma] \in \Delta$, mula, amarga
+      cabange lengkap, $\sFmla{\True}{!B}[\sigma.n] \in \Delta$ kanggo
+      saben $\sigma.n$ kang wis dienggo ing cabang, yaiku kanggo saben
+      $\sigma' \in P(\Delta)$ kang nyukupi $R\sigma\sigma'$. Miturut
+      hipotesis induksi, $\mSat{M(\Delta)}{!B}[\sigma']$ kanggo saben
+      $\sigma'$ kang nyukupi $R\sigma\sigma'$. Mula,
+      $\mSat{M(\Delta)}{\indfrm}[\sigma]$.
+
+      Yen $\sFmla{\False}{\indfrm}[\sigma] \in \Delta$, mula kanggo
+      sawetara $\sigma.n$, $\sFmla{\False}{!B}[\sigma.n] \in \Delta$
+      amarga cabange lengkap. Miturut hipotesis induksi,
+      $\mSat/{M(\Delta)}{!B}[\sigma.n]$. Amarga $R\sigma(\sigma.n)$,
+      ana~$\sigma'$ kang nyukupi
+      $\mSat/{M(\Delta)}{!B}[\sigma']$. Dadi
+      $\mSat/{M(\Delta)}{\indfrm}[\sigma]$.}}
+  \item \indcase{!A}{\Diamond !B}{\iftag{probDiamond}{Latihan.}{Yen
+      $\sFmla{\True}{\indfrm}[\sigma] \in \Delta$, mula kanggo sawetara
+      $\sigma.n$, $\sFmla{\True}{!B}[\sigma.n] \in \Delta$ amarga
+      cabange lengkap. Miturut hipotesis induksi,
+      $\mSat{M(\Delta)}{!B}[\sigma.n]$. Amarga $R\sigma(\sigma.n)$,
+      ana~$\sigma'$ kang nyukupi
+      $\mSat{M(\Delta)}{!B}[\sigma']$. Dadi
+      $\mSat{M(\Delta)}{\indfrm}[\sigma]$.
+
+      Yen $\sFmla{\False}{\indfrm}[\sigma] \in \Delta$, mula, amarga
+      cabange lengkap, $\sFmla{\False}{!B}[\sigma.n] \in \Delta$
+      kanggo saben $\sigma.n$ kang wis dienggo ing cabang, yaiku kanggo
+      saben $\sigma' \in P(\Delta)$ kang nyukupi $R\sigma\sigma'$.
+      Miturut hipotesis induksi, $\mSat/{M(\Delta)}{!B}[\sigma']$
+      kanggo saben $\sigma'$ kang nyukupi $R\sigma\sigma'$. Mula,
+      $\mSat/{M(\Delta)}{\indfrm}[\sigma]$.}}
+\end{enumerate}
+Amarga $\Gamma \subseteq \Delta$, $\mSat{M(\Delta)}{\Gamma}$.
+Kanggo $\Gamma$ sembarang, saben subhimpunan winatese ora nduweni
+!!{tableau} katutup lan bisa dicukupi miturut kasus winates. Miturut
+kekompakan modal, kang diturunake saka kekompakan orde-siji liwat
+terjemahan standar, $\Gamma$ uga bisa dicukupi.
+\end{proof}
+
+\begin{prob}
+Jangkepna bukti \olref[nml][tab][cpl]{thm:tableau-completeness}.
+\end{prob}
+
+\begin{cor}
+\ollabel{cor:entailment-completeness}
+Yen $\Gamma \Entails !A$, mula $\Gamma \Proves !A$.
+\end{cor}
+
+\begin{cor}
+\ollabel{cor:weak-completeness}
+Yen $!A$ bener ing saben model, mula $\Proves !A$.
+\end{cor}
+
+\end{document}

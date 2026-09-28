@@ -13,8 +13,8 @@
 \begin{ex}
 Nalika nangani kuantor, kita kudu mesthekake supaya ora nerak syarat
 eigenvariabel, lan kadhangkala iki mbutuhake kita nyoba-nyoba urutan
-panrapan inferensi tartamtu. Umume, luwih gampang yen aturan kang kena
-syarat eigenvariabel ditangani luwih dhisik (aturan iku bakal ana ing
+panrapan inferensi tartamtu. Umume, luwih gampang yen aturan kang tundhuk
+marang syarat eigenvariabel ditangani luwih dhisik (aturan iku bakal ana ing
 sisih luwih dhuwur ing !!{tableau} kang wis rampung).
 
 Ayo ndeleng carane menehi !!a{tableau} kanggo !!{sentence}
@@ -135,8 +135,8 @@ iki ora duwe syarat eigenvariabel, kita bisa milih sembarang term. Ing
 sawetara kasus, aturan kasebut malah kudu ditrapake ping pirang-pirang
 nganggo $t$ kang beda. Nanging minangka pathokan umum, luwih migunani
 milih salah siji term kang wis muncul ing !!{tableau}---ing kasus iki,
-$a$ lan~$b$---lan ing kasus iki kita bisa ngira yen $a$ luwih gampang
-ngasilake cabang katutup.
+$a$ lan~$b$---lan ing kasus iki kita bisa ngira yen kamungkinane
+nggunakake $a$ kanggo ngasilake cabang katutup luwih gedhe.
 \begin{oltableau}
   [\sFmla{\False}{\lexists[x][\formula{C}(x,b)]}, just=\TAss
     [\sFmla{\True}{\lexists[x][(\formula{A}(x) \land \formula{B}(x))]},
@@ -283,7 +283,10 @@ eigenvariabel, mula aturan-aturan iku kudu ditrapake sabanjure:
   ]
 \end{oltableau}
 Kanggo nutup cabang-cabang kasebut, kita kudu nggunakake
-!!{signed formula}s ing larik $1$ lan~$3$. Aturan kang cocog
+!!{signed formula}s ing larik $1$ lan~$4$. Cathetan koreksi sumber
+OLPL-041: larik telu wis diambakake dadi larik papat, lan aturan
+eksistensial mawa tandha salah ing tableau ditrapake marang larik
+papat; mula rujukan kapindho dibalekake dadi larik papat. Aturan kang cocog
 (\TRule{\True}{\lforall} lan \TRule{\False}{\lexists}) ora duwe
 syarat eigenvariabel, mula kita bebas milih term kang trep. Ing kasus
 iki, terme yaiku $b$ lan~$c$, miturut urutane.

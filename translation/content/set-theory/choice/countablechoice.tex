@@ -1,0 +1,168 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{choice}{countablechoice}
+\olsection{Pilihan Kaétung}
+
+Tanpa migunakaké Pilihan utawa Pengurutan Becik, kita gampang
+mbuktekaké pratelan iki:
+
+\begin{lem}[ing $\Zminus$]
+Saben himpunan winates nduwèni fungsi pilihan.
+\end{lem}
+
+\begin{proof}
+Anggepen $a = \{b_1, \ldots, b_n\}$. Supaya prasaja, anggepen saben
+$b_i \neq \emptyset$. Mula ana obyèk $c_1, \ldots, c_n$ kang nyukupi
+$c_1 \in b_1, \ldots, c_n \in b_n$. Miturut
+\olref[z][pairs]{prop:pairsconsequences}, himpunan $\{\langle b_1,
+c_1\rangle , \ldots, \langle b_n, c_n\rangle\}$ ana; iki fungsi
+pilihan kanggo~$a$.
+\end{proof}
+
+Nanging prakarané dadi luwih ruwet nalika kita nggatekaké himpunan
+tanpa wates. Upamané, gatekna perluasan ``paling cilik'' saka asil mau:
+
+\begin{defish}
+\emph{Pilihan Kaétung.} Saben himpunan \emph{kaétung} nduwèni fungsi pilihan.
+\end{defish}
+
+Iki kasus khusus saka Aksioma Pilihan. Pranyata prinsip iki wis
+bola-bali digunakaké tanpa kesadaran kang cetha. Ing ngisor iki ana
+rong conto kang migunani.\footnote{Conto iki asalé saka
+\citet[\S9.4]{Potter2004} lan Luca Incurvati.}
+
+\begin{ex}
+Pamikiran kang lumrah yaiku: kanggo sembarang himpunan $A$, salah siji
+$\cardle{\omega}{A}$, utawa $\cardeq{A}{n}$ kanggo sawijining
+$n \in \omega$. Iki sawijining cara kanggo mratelakaké pamikiran
+intuitif yèn saben himpunan winates utawa tanpa wates. Cantor lan
+akèh matématikawan liyané nyatakaké iki tanpa bukti. Amarga ngati-ati,
+kita wis mbuktekaké ing
+\olref[cardinals][classing]{generalinfinitycharacter}. Nanging bukti
+ing kana lumaku ing $\ZFC$: kita nganggep saben himpunan $A$ bisa
+diurutaké kanthi becik, mula $\card{A}$ mesthi ana. Dadi kita kanthi
+gamblang nganggep Pilihan.
+
+Malah \citet{Dedekind1888} mènèhi buktiné dhéwé kanggo
+pratelan iki:
+
+\begin{thm}[ing $\Zminus + \text{Pilihan Kaétung}$]
+Kanggo sembarang $A$, salah siji $\cardle{\omega}{A}$ utawa
+$\cardeq{A}{n}$ kanggo sawijining $n \in \omega$.
+\end{thm}
+
+\begin{proof}
+Anggepen $\cardneq{A}{n}$ kanggo saben $n \in \omega$. Mula kanggo
+saben $n < \omega$ ana himpunan pérangan $A_n \subseteq A$ kang
+nduwèni pas $\cardexpo{2}{n}$ unsur. Saka runtutan $A_0, A_1, A_2,
+\ldots$ iki, kanggo saben $n$ kita dhéfinisikaké:
+\[
+	B_n = A_n \setminus \bigcup_{i < n} A_i.
+\]
+Saiki gatekna
+\begin{align*}
+	\card{\bigcup_{i < n}A_i}
+	&\leq \card{A_0} + \card{A_1} + \ldots + \card{A_{n-1}}\\
+	&=1 + 2 + \ldots + 2^{n-1}\\
+	& = 2^n - 1\\
+	& < 2^n = \card{A_n}
+\end{align*}
+Mula saben $B_n$ ora kosong; jupuken sawijining unsur $c_n$ saka
+$B_n$. Himpunan-himpunan mau uga pisah-pisah sepasang-sepasang;
+mula yèn $c_n = c_m$, banjur $n = m$. Saben $c_n \in A$, saéngga
+fungsi $f(n) = c_n$ iku injeksi $\omega \to A$.
+\end{proof}
+\noindent
+Dedekind ora nyebut yèn dhèwèké wis migunakaké Pilihan Kaétung.
+Nanging apa \emph{panjenengan} ndeleng panganggoné? Gatekna maneh.
+(Pancen, \emph{gatekna maneh}.)
+
+Bukti iki migunakaké Pilihan Kaétung kaping pindho. Kapisan kanggo
+milih runtutan himpunan $A_0$, $A_1$, $A_2$, \dots\@; kapindho
+kanggo milih unsur $c_n$ saka saben~$B_n$. Panganggoné Pilihan iki
+ora bisa disingkiraké. \citet[kaca~138]{Cohen1966} mbuktekaké yèn
+asile gagal tanpa sembarang wujud Pilihan. Tegesé, konsisten karo
+$\ZF$ yèn ana himpunan kang \emph{ora bisa dibandhingaké} karo~$\omega$.
+\end{ex}
+
+\begin{ex}
+Ing \citeyear{Cantor1878}, Cantor nyatakaké yèn gabungan kaétung
+saka himpunan kaétung uga kaétung. Dhèwèké ora mènèhi bukti,
+mbokmenawa amarga nganggep buktiné cetha. Kanthi ngati-ati, kita wis
+mbuktekaké versi kang luwih umum ing
+\olref[card-arithmetic][simp]{kappaunionkappasize}. Nanging bukti mau
+kanthi gamblang nganggep Pilihan. Malah versi kang kurang umum iki
+uga mbutuhaké Pilihan Kaétung.
+
+\begin{thm}[ing $\Zminus + \text{Pilihan Kaétung}$]
+Yèn $A_n$ kaétung kanggo saben $n \in \omega$, mula $\bigcup_{n <
+\omega} A_n$ uga kaétung.
+\end{thm}
+
+\begin{proof}
+Tanpa ngurangi umumé, anggepen saben $A_n \neq \emptyset$.
+Mula kanggo saben $n \in \omega$ ana !!a{surjection}
+$f_n \colon \omega \to A_n$. Dhéfinisikaké
+$f \colon \omega \times \omega \to \bigcup_{n < \omega} A_n$
+kanthi $f(m, n) = f_n(m)$. Asilé katut amarga $\omega \times \omega$
+kaétung (\olref[sfr][siz][zigzag]{natsquaredenumerable}) lan $f$
+iku !!a{surjection}.
+\end{proof}
+\noindent
+Apa panjenengan ndeleng panganggoné Pilihan Kaétung? Prinsip iki
+digunakaké kanggo milih runtutan fungsi $f_0$, $f_1$, $f_2$,
+\dots\footnote{Panganggoné Pilihan kang padha uga ana ing
+\olref[card-arithmetic][simp]{kappaunionkappasize}, nalika kita
+ndhawuhaké ``Kanggo saben $\beta \in \cardfont{a}$, tetepna
+!!a{injection} $f_\beta$''.} Tanpa prinsip Pilihan, asil iki uga
+bisa gagal. Mliginé, \citet{FefermanLevy1963} mbuktekaké yèn
+konsisten karo $\ZF$ menawa himpunan bilangan riil $\Real$, kang
+ora kaétung, dadi gabungan kaétung saka himpunan-himpunan kaétung.
+Nanging Russell mènèhi gambaran kang luwih ngélingaké:
+\begin{quote}
+  Bab iki digambaraké déning sawijining milyuner kang saben tuku
+  sapasang sepatu bot uga tuku sapasang kaos kaki, lan ora naté
+  tuku kaos kaki ing wektu liya. Dhèwèké seneng banget tuku
+  kaloroné nganti pungkasané nduwèni $\aleph_0$ pasang bot lan
+  $\aleph_0$ pasang kaos kaki\dots\@ Ing saben pasangan bot, kita
+  bisa mbédakaké sisih tengen lan kiwa, mula bisa milih siji saka
+  saben pasangan: kabèh bot tengen utawa kabèh bot kiwa. Nanging
+  ing pasangan kaos kaki ora ana patokan pilihan kang padha; tanpa
+  nganggep aksioma ping-pingan [yaiku, kanthi efektif, Pilihan],
+  kita ora bisa mesthèkaké anané kelas kang ngemot siji kaos kaki
+  saka saben pasangan.
+  \citep[kaca~126]{Russell1919}
+\end{quote}
+Cekaké, kanggo mbuktekaké yèn saka pasangan kaos kaki kang kaétung
+cacahé bisa kawangun himpunan kaos kaki kang kaétung, dibutuhaké
+sawijining wujud Pilihan. Pancen, tanpa Pilihan Kaétung utawa
+prinsip kang ekuivalen, gabungan kaétung saka himpunan kaétung
+bisa dadi ora kaétung.
+\end{ex}
+
+Piwulangé: Pilihan Kaétung bola-bali digunakaké tanpa akèh
+kesadaran saka panganggoné. Pitakonan filsafaté yaiku: kepriyé kita
+bisa \emph{mbeneraké} Pilihan Kaétung?
+
+Salah siji upaya pambenaran intuitif bisa njaluk bantuan saka
+tugas tanpa wates kang rampung sajroning wektu winates.
+Anggepen pilihan kapisan rampung sajroning $\nicefrac{1}{2}$ menit,
+pilihan kapindho sajroning $\nicefrac{1}{4}$ menit, \dots, lan
+pilihan kaping $n$ sajroning $\nicefrac{1}{2^n}$ menit, \dots\@
+Mula sajroning $1$~menit kita wis nindakaké runtutan $\omega$
+pilihan lan nemtokaké sawijining fungsi pilihan.
+
+Nanging apa sejatine kang bisa diwulangaké déning eksperimen pikiran
+kaya mangkono? Sepisan, eksperimen iku mangertèni ``milih'' kanthi
+teges kang harfiah banget. Kajaba iku, matématika kaya dikaitaké
+marang kamungkinan metafisis.
+
+Kang luwih wigati, panalaran mau ora bakal mbeneraké Pilihan
+\emph{kanthi umum}, nanging mung Pilihan Kaétung \emph{waé}.
+Yèn \emph{saben} himpunan kudu nduwèni fungsi pilihan, kita kudu bisa
+nindakaké ``tugas tanpa wates kang dawané sembarang ordinal''.
+Terus terang, gagasan iku ora masuk akal.
+
+\end{document}

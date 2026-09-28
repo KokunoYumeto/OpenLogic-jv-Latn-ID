@@ -1,0 +1,168 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{card-arithmetic}{fix}
+\olsection{Titik Ajeg $\aleph$}
+
+Ing \olref[spine][]{chap}, kita ngandhakake yèn Aksioma Panggantian
+mbutuhaké pambenaran, amarga aksioma iki ndadèkaké hirarki
+dadi dhuwur banget. Sawisé nyinaoni aritmetika kardinal, kita bisa
+mènèhi gambaran cilik bab dhuwuré hirarki kasebut.
+
+Cetha yèn $0 < \aleph_0$, $1 < \aleph_1$, lan $2 < \aleph_2$\ldots;
+malah béda ukurané saya \emph{gedhé} ing saben langkah. Mula ana
+godhaan kanggo ngira yèn $\kappa< \aleph_\kappa$ kanggo saben
+ordinal $\kappa$.
+
+Nanging pangira iki \emph{klèru}, miturut $\ZFC$. Malah kita bisa
+mbuktekaké anané \emph{titik ajeg $\aleph$}, yaiku kardinal
+$\kappa$ kang nyukupi $\kappa=\aleph_\kappa$.
+
+\begin{prop}\ollabel{alephfixed}
+Ana titik ajeg $\aleph$.
+\end{prop}
+
+\begin{proof}
+Kanthi rekursi, tetepna:
+\begin{align*}
+	\kappa_0 &= 0\\
+	\kappa_{n+1} &= \aleph_{\kappa_n}\\
+	\kappa&= \bigcup_{n < \omega}\kappa_n
+\end{align*}
+Saiki $\kappa$ iku kardinal miturut
+\olref[cardinals][classing]{unioncardinalscardinal}. Sabanjuré:
+\[
+	\kappa= \bigcup_{n < \omega} \kappa_{n+1} =
+	\bigcup_{n < \omega}\aleph_{\kappa_n} =
+	\bigcup_{\alpha < \kappa}\aleph_\alpha = \aleph_\kappa
+\]
+%	Miturut konstruksi, $\kappa$ iku kardinal paling cilik kang luwih gedhé
+%	imbang saben $\kappa_n$. Mula $\aleph_\kappa$ iku kardinal paling cilik
+%	kang luwih gedhé tinimbang saben $\aleph_{\kappa_n}$, lan mula uga
+%	luwih gedhé tinimbang saben $\kappa_{n+1}$. Nanging $\kappa$ uga
+%	kardinal paling cilik kang luwih gedhé tinimbang saben
+%	$\kappa_{n+1} = \aleph_{\kappa_n}$. Dadi $\kappa=
+%	\aleph_\kappa$.
+\end{proof}
+
+Boolos naté nulis artikel bab titik ajeg $\aleph$ kang mentas kita
+konstruksi. Sawisé nyebut anané $\kappa$ ing wiwitan artikelé,
+dhèwèké ngandika:
+\begin{quote}
+	[$\kappa$ iku] cacah kang \emph{gedhé banget}, miturut pangertèné
+	wong kang durung naté sinau teori himpunan; nganti, miturutku,
+	kahanan iku ndadèkaké bebeneré sembarang téori kang negesaké
+	anaké paling ora $\kappa$ obyèk dadi pitakonan.
+	\citep[kaca~257]{Boolos2000}
+\end{quote}
+Ing pungkasan artikelé dhèwèké takon:
+\begin{quote}
+	[apa] kita curiga yèn, apa waé kahanané ing wiwitan crita,
+	manawa wis tekan kéné rodhané mung muter tanpa tujuan lan
+	kita ora lagi ngrungokaké gambaran bab samubarang kang nyata?
+	\citep[kaca~268]{Boolos2000}
+\end{quote}
+Yèn pancèn kita wis ngluwihi ``samubarang kang nyata'', mula
+panyalahé kudu kita tujokaké langsung marang Aksioma Panggantian.
+Aksioma iki kang ndadèkaké bukti mau bisa lumaku. Yèn mangkono,
+Boolos mesthiné kudu nliti maneh pratelané sawatara dasawarsa
+sadurungé yèn Panggantian ora nduwèni akibat kang ``ora dikarepaké''
+(delengen \olref[replacement][extrinsic]{sec}).
+
+Nanging apa anané $\kappa$ pancèn ala? Ing kéné bisa migunani
+nyawang \emph{paradoks Tristram Shandy} saka Russell. Tristram Shandy
+nyathet uripé ing buku harian, nanging dhèwèké mbutuhaké setaun kanggo
+nyathet sedina waé. Saben taun liwati, cathetané saya keri: sawisé
+setaun dhèwèké lagi nyathet sedina lan isih ana 364 dina kang durung
+kacathet; sawisé rong taun, lagi rong dina kang kacathet lan 728 dina
+durung kacathet; sawisé telung taun, lagi telung dina kang kacathet
+lan 1092 dina durung kacathet \dots\footnote{Taun kabisat ora diétung.}
+Nanging yèn Tristram \emph{ora bisa mati}, dhèwèké bakal kasil
+nyathet saben dina, amarga dina kaping $n$ bakal kacathet ing taun
+kaping $n$ uripé. Mula ``ing pungkasaning wektu'' dhèwèké bakal
+nduwèni buku harian kang jangkep.
+
+Saiki, apa bédané karo pamikiran yèn $\alpha$ luwih cilik tinimbang
+$\aleph_\alpha$---malah saya cilik banget---nganti tekan $\kappa$,
+nalika rong sisih mau padha tekan titik kang padha lan $\kappa
+= \aleph_\kappa$?
+
+Kita sisihaké dhisik pitakonan iku. Yèn kita nampa $\ZFC$, ayo
+dipungkasi kanthi konstruksi titik ajeg kang luwih nyenengaké.
+Telung asil sabanjuré nerangaké, miturut pangertèn intuitif, yèn
+ana titik kang ora sepele nalika amba lan dhuwuré hirarki padha:
+
+\begin{prop}\ollabel{bethfixed}
+Ana titik ajeg $\beth$, yaiku $\kappa$ kang nyukupi $\kappa=
+\beth_\kappa$.
+\end{prop}
+
+\begin{proof}
+Kaya ing \olref{alephfixed}, nanging ``$\beth$'' ngganti ``$\aleph$''.
+\end{proof}
+
+\begin{prop}\ollabel{stagesize}
+$\card{V_{\omega+\alpha}} = \beth_{\alpha}$. Yèn $\omega \ordtimes
+\omega \leq \alpha$, mula $\card{V_\alpha} = \beth_\alpha$.
+\end{prop}
+
+\begin{proof}
+Pratelan kapisan kabukten kanthi induksi transfinit kang prasaja.
+Pratelan kapindho katut amarga yèn $\omega \ordtimes \omega \leq \alpha$,
+mula $\omega + \alpha = \alpha$. Kanggo mbuktekaké iki, kita migunakaké
+kasunyatan aritmetika ordinal saka \olref[ord-arithmetic][]{chap}.
+Wiwitané, gatekna $\omega \ordtimes \omega = \omega \ordtimes (1 \ordplus \omega) =
+(\omega  \ordtimes 1) \ordplus (\omega\ordtimes\omega) = \omega
+\ordplus (\omega \ordtimes \omega)$. Saiki yèn $\omega \ordtimes \omega
+\leq \alpha$, yaiku $\alpha = (\omega\ordtimes\omega) \ordplus \beta$
+kanggo sawijining $\beta$, mula $\omega \ordplus \alpha = \omega \ordplus
+((\omega \ordtimes \omega) \ordplus \beta) = (\omega \ordplus (\omega
+\ordtimes \omega)) \ordplus \beta = (\omega \ordtimes \omega) \ordplus
+\beta = \alpha$.
+\end{proof}
+
+\begin{cor}
+Ana $\kappa$ kang nyukupi $\card{V_\kappa} = \kappa$.
+\end{cor}
+
+\begin{proof}
+Jupuken $\kappa$ titik ajeg $\beth$ kaya kang diwènèhaké déning
+\olref{bethfixed}. Cetha $\omega \ordtimes \omega < \kappa$.
+Mula $\card{V_\kappa} = \beth_\kappa= \kappa$ miturut
+\olref{stagesize}.
+\end{proof}
+
+Cacahé tahap ing sangisoré $V_\kappa$ padha karo cacahé !!{element}s
+ing $V_\kappa$. Mula miturut pangertèn intuitif, $V_\kappa$ padha
+amba lan dhuwuré. Iki ngélingaké marang Tristram Shandy: kita pindhah
+saka siji tahap menyang tahap sabanjuré kanthi njupuk
+\emph{himpunan pangkat}, saéngga hirarki dadi \emph{luwih}
+gedhé ing saben langkah. Nanging ``ing pungkasan'', yaiku ing tahap
+$\kappa$, amba hirarki mau nyusul dhuwuré.
+
+Wong bisa takon: \emph{Sepira kerepé amba hirarki padha karo
+dhuwuré?} Wangsulané: \emph{Padha kerepé karo anané ordinal.}
+Nanging iki perlu dijlentrehaké sethithik.
+
+Kita dhéfinisikaké suku $\tau$ kaya mangkéné. Kanggo sembarang $A$,
+tetepna:
+\begin{align*}
+	\tau_0(A) & \defis \cardsucc{\card{A}}\\
+	\tau_{n+1}(A) & \defis \beth_{\tau_n(A)}\\
+	\tau(A) & \defis \bigcup_{n < \omega}\tau_n(A)
+\intertext{Kaya ing \olref{bethfixed}, $\tau(A)$ iku titik ajeg
+$\beth$ kanggo saben $A$, lan mesthi $\card{A} < \tau(A)$.
+Saiki gatekna dhéfinisi rekursif iki:}
+	W_0 &\defis \tau(0)\\
+	W_{\alpha + 1} & \defis \tau(W_\alpha)\\
+	W_\alpha & \defis \bigcup_{\beta < \alpha} W_\beta
+	\text{, nalika $\alpha$ ordinal limit}
+\end{align*}
+Konstruksi iki didhéfinisikaké kanggo saben ordinal. Ing tahap limit,
+gabungan runtutan kang mundhak saka titik ajeg bet tetep titik ajeg bet.
+Mula $W$ iku ``!!a{injection}'' kelas saka ordinal menyang titik ajeg
+$\beth$. Lan kaya sadurungé, $V_{W_\alpha}$ padha amba lan dhuwuré
+kanggo saben $\alpha$.
+
+\end{document}

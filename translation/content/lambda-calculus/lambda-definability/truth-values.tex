@@ -1,0 +1,152 @@
+% Part: lambda-calculus
+% Chapter: lambda-definability
+% Section: truth-values
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{ldf}{tvr}
+\olsection{Nilai Bebeneran lan Relasi}
+
+Nilai bebeneran bisa dikodeake
+ing kalkulus lambda murni
+kaya mangkene:
+\begin{align*}
+  \fn{true} & \ident \lambd[x][\lambd[y][x]]\\
+  \fn{false} & \ident \lambd[x][\lambd[y][y]]
+\end{align*}
+
+Nilai bebeneran diwujudake
+minangka \emph{selektor},
+yaiku fungsi kang nampa
+rong argumen lan ngasilake
+salah sijine.
+Nilai $\fn{true}$ milih
+argumen kapisan, dene
+$\fn{false}$ milih
+argumen kapindho.
+Contone, $\fn{true}\, M N$
+mesthi direduksi dadi $M$,
+dene $\fn{false}\, M N$
+mesthi direduksi dadi~$N$.
+
+\begin{defn}
+Relasi $R \subseteq \Nat^k$
+diarani !!{lambda definable}
+yen ana suku~$R$ kang nyukupi
+\begin{align*}
+  R\, \num{n_1} \dots \num{n_k} & \bred \fn{true}
+  \intertext{nalika $R(n_1, \dots, n_k)$ bener, lan}
+  R\, \num{n_1} \dots \num{n_k} & \bred \fn{false}
+\end{align*}
+yen ora.
+\end{defn}
+
+Contone, relasi
+$\fn{IsZero} = \{0\}$
+kang bener tumrap $0$
+lan mung $0$ iku
+!!{lambda definable}
+dening
+\[
+  \fn{IsZero} \ident \lambd[n][n (\lambd[x][\fn{false}])\, \fn{true}].
+\]
+Kepiye carane?
+Amarga numeral Church
+ditetepake minangka iterator
+(fungsi kang ngetrapake
+argumen kapisan ping $n$
+marang argumen kapindho),
+nilai wiwitan kita gawe
+$\fn{true}$. Ing saben
+langkah iterasi, asil
+sing dibalekake
+$\fn{false}$ tanpa
+nggatekake asil langkah
+sadurunge.
+Langkah iki ditrapake
+marang nilai wiwitan
+ping $n$, lan asile
+$\fn{true}$ yen lan
+mung yen ora ana langkah
+kang ditrapake, yaiku
+nalika $n = 0$.
+
+Saka perwakilan nilai
+bebeneran iki, kita
+uga bisa netepake
+fungsi-fungsi bebeneran.
+Iki rong conto, kanggo
+negasi lan konjungsi:
+\begin{align*}
+  \fn{Not} & \ident \lambd[x][x\, \fn{false}\, \fn{true}]\\
+  \fn{And} & \ident \lambd[x][\lambd[y][xy \,\fn{false}]]
+\end{align*}
+Fungsi $\fn{Not}$
+nampa siji argumen lan
+ngasilake $\fn{true}$
+yen argumene $\fn{false}$,
+lan $\fn{false}$
+yen argumene~$\fn{true}$.
+Fungsi $\fn{And}$
+nampa rong nilai
+bebeneran minangka
+argumen, lan kudu
+ngasilake $\fn{true}$
+yen lan mung yen
+loro-lorone
+argumen~$\fn{true}$.
+Nilai bebeneran iku
+selektor kaya katrangan
+ing ndhuwur, dadi yen
+$x$ nilai bebeneran
+lan ditrapake marang
+rong argumen, asile
+argumen kapisan yen
+$x$ iku $\fn{true}$,
+dene argumen kapindho
+yen ora.
+Saiki $\fn{And}$
+nampa argumen $x$
+lan $y$, banjur
+menehake $y$ lan
+$\fn{false}$ marang
+argumen kapisan~$x$.
+Yen $x$ nilai
+bebeneran, asile
+dievaluasi dadi~$y$
+yen $x$ iku
+$\fn{true}$, lan
+dadi $\fn{false}$
+yen $x$ iku
+$\fn{false}$;
+iki pancen asil kang
+dikarepake.
+
+Gatekna yen ing kene
+kita nganggep mung
+nilai bebeneran kang
+dadi argumen
+$\fn{And}$.
+Yen fungsi iki
+diwenehi suku liyane,
+asile (yaiku wujud
+normal, yen ana)
+bisa wae dudu
+nilai bebeneran.
+
+\begin{prob}
+  Tetepna fungsi
+  $\fn{Or}$ lan
+  $\fn{Xor}$ kang
+  makili fungsi
+  bebeneran disjungsi
+  inklusif lan
+  eksklusif nganggo
+  pangodean nilai
+  bebeneran minangka
+  suku-$\lambd$.
+\end{prob}
+
+\end{document}

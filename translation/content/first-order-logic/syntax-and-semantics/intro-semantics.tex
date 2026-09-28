@@ -1,0 +1,49 @@
+% Part: first-order-logic
+% Chapter: semantics
+% Section: intro-semantics
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{syn}{its}
+
+\olsection{Pambuka}
+
+Menehi teges marang ungkapan iku wewengkone semantik. Gagasan pokok
+ing semantik yaiku nyukupi ing !!a{structure}. !!^a{structure} menehi
+teges marang unsur-unsur dhasar basa: !!a{domain} iku himpunan obyek
+kang ora kosong. Kuantor ditafsirake kanthi variabele njupuk nilai saka domain iki,
+!!{constant}s diwenehi elemen ing domain, !!{function}s diwenehi
+fungsi saka !!{domain} menyang awake dhewe, lan !!{predicate}s diwenehi
+relasi ing !!{domain}. !!{domain} bebarengan karo pangaji marang
+kosakata dhasar mbentuk !!a{structure}. !!^{variable}s bisa muncul
+ing !!{formula}s, lan supaya bisa menehi semantik, kita uga kudu
+menehi !!{element}s saka !!{domain} marang variabel kasebut---iki
+diarani pangaji variabel. Pungkasan, relasi nyukupi nyawijikake
+kabeh iki. !!^a{formula} bisa dicukupi ing !!a{structure}~$\Struct{M}$
+relatif marang pangaji !!a{variable}~$s$, kang ditulis
+$\Sat{M}{!A}[s]$. Relasi iki uga ditetepake kanthi induksi marang
+struktur~$!A$, nggunakake tabel bebener kanggo konektif logis
+supaya bisa nemtokake, upamane, kapan $(!A \land !B)$ dicukupi
+adhedhasar dicukupi utawa orane $!A$ lan ~$!B$. Banjur kabukten
+yen pangaji !!{variable} ora nduweni pangaribawa nalika
+!!{formula}~$!A$ iku !!a{sentence}, yaiku ora nduweni variabel bebas,
+mula kita bisa kandha yen !!{sentence}s mung dicukupi (utawa ora)
+ing !!{structure}s.
+
+Adhedhasar relasi nyukupi $\Sat{M}{!A}$ kanggo !!{sentence}s, kita
+banjur bisa nemtokake gagasan semantis dhasar: validitas, akibat
+semantis, lan bisa dicukupi. !!^a{sentence} iku valid, $\Entails !A$,
+yen saben !!{structure} nyukupi ukara kasebut. Ukara iku dadi akibat
+saka sawijining himpunan !!{sentence}s, $\Gamma \Entails !A$,
+yen saben !!{structure} kang nyukupi kabeh !!{sentence}s ing~$\Gamma$
+uga nyukupi~$!A$. Lan sawijining himpunan !!{sentence}s bisa
+dicukupi yen ana sawenehing !!{structure} kang nyukupi kabeh
+!!{sentence}s ing himpunan iku bebarengan. Amarga !!{formula}s
+ditetepake kanthi induktif, lan relasi nyukupi sabanjure uga
+ditetepake kanthi induksi marang struktur !!{formula}s, kita
+bisa nggunakake induksi kanggo mbuktekake sipat-sipat semantik
+kita lan ngubungake gagasan-gagasan semantis kang wis ditetepake.
+
+\end{document}

@@ -1,0 +1,125 @@
+% Part: first-order-logic
+% Chapter: introduction
+% Section: satisfaction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{int}{sat}
+
+\olsection{Relasi Nyukupi}
+
+Sawise ngerti apa iku !!{formula}s, kita wis bisa mlumpat menyang
+semantik logika sepisanan: ing kene, definisi dhasare yaiku definisi
+!!a{structure}. Kanggo basa prasaja kita, !!a{structure}~$\Struct M$
+mung nduweni telung komponèn: himpunan ora kosong $\Domain{M}$ kang
+diarani \emph{!!{domain}}, apa kang dituduhake $\Obj a$ ing~$\Struct
+M$, lan marang apa $\Obj P$ bener ing~$\Struct M$. Obyek kang
+dituduhake dening~$\Obj a$ dilambangake~$\Assign{\Obj a}{M}$, dene
+himpunan obyek kang ndadekake $\Obj P$ bener dilambangake~$\Assign{\Obj
+P}{M}$. !!^a{structure}~$\Struct{M}$ mung dumadi saka telung prekara
+iki: $\Domain{M}$, $\Assign{\Obj a}{M} \in \Domain{M}$ lan
+$\Assign{\Obj P}{M} \subseteq \Domain{M}$. Kasus umum bakal luwih
+rumit, amarga bakal ana akeh !!{predicate}s lan !!{constant}s,
+!!{predicate}s bisa nduweni luwih saka siji papan, lan uga bakal ana
+!!{function}s. Cathetan koreksi sumber OLPL-059: sumber Inggris kliru
+mbaleni konstanta minangka simbol kang bisa nduweni luwih saka siji
+papan; definisi umum struktur menehi aritas marang predikat, dene saben
+konstanta nuduhake siji unsur domain, mula predikat dibalekake ing
+klausa iki.
+
+Iki wis cukup kanggo menehi definisi relasi nyukupi tumrap !!{formula}s
+kang ora ngemot !!{variable}s. Gagasane yaiku menehi definisi induktif
+kang nggambarake cara kita nemtokake !!{formula}s. Kita nemtokake kapan
+formula atom dicukupi ing~$\Struct{M}$, banjur nemtokake, tuladhane,
+kapan $\lnot !A$ dicukupi ing~$\Struct{M}$ adhedhasar apa $!A$
+dicukupi utawa ora ing~$\Struct{M}$. Tuladhane, kita bisa menehi
+definisi:
+\begin{enumerate}
+  \item $\Atom{\Obj P}{\Obj a}$ dicukupi ing~$\Struct{M}$ yen lan mung yen
+  $\Assign{\Obj a}{M} \in \Assign{\Obj P}{M}$.
+  \item $\lnot !A$ dicukupi ing~$\Struct{M}$ yen lan mung yen $!A$ ora
+  dicukupi ing~$\Struct{M}$.
+  \item $(!A \land !B)$ dicukupi ing~$\Struct{M}$ yen lan mung yen $!A$
+  dicukupi ing~$\Struct{M}$, lan $!B$ uga dicukupi ing~$\Struct{M}$.
+\end{enumerate}
+Upamakna $\Domain{M} = \{0, 1, 2\}$, $\Assign{\Obj a}{M} = 1$,
+lan $\Assign{\Obj P}{M} = \{1, 2\}$. Definisi iki bakal ngandhani kita
+yen $\Atom{\Obj P}{\Obj a}$ dicukupi ing~$\Struct{M}$ (amarga
+$\Assign{\Obj a}{M} =  1 \in \{1,2\} = \Assign{\Obj P}{M}$). Definisi
+iki banjur ngandhani kita yen $\lnot \Atom{\Obj P}{\Obj a}$ ora
+dicukupi ing~$\Struct{M}$, mula $\lnot\lnot \Atom{\Obj P}{\Obj a}$
+dicukupi lan $(\lnot \Atom{\Obj P}{\Obj a} \land \Atom{\Obj P}{\Obj
+a})$ ora dicukupi, lan sabanjure.
+
+Masalahe muncul nalika kita arep menehi definisi kanggo kuantor: kita
+arep kandha kurang luwih, ``$\lexists[\Obj v_0][\Atom{\Obj P}{\Obj
+v_0}]$ dicukupi yen lan mung yen $\Atom{\Obj P}{\Obj v_0}$ dicukupi.''
+Nanging, !!{structure}~$\Struct{M}$ ora ngandhani kita apa kang kudu
+ditindakake marang !!{variable}s. Kang saktemene arep kita kandhakake
+yaiku yen $\Atom{\Obj P}{\Obj v_0}$ dicukupi \emph{kanggo sawenehing
+nilai~$\Obj v_0$}. Supaya iki trep, kita mbutuhake cara kanggo menehi
+!!{element}s saka~$\Domain{M}$ ora mung marang $\Obj a$, nanging uga
+marang~$\Obj v_0$. Mula, kita ngenalake \emph{pangaji} !!{variable}.
+Pangaji !!^a{variable} mung sawijining fungsi~$s$ kang menehi
+!!{variable}s nilai awujud !!{element}s saka~$\Domain{M}$ (ing tuladha kita,
+marang salah siji saka $0$, $1$, utawa~$2$). Cathetan koreksi sumber
+OLPL-060: domain tuladha kasebut ngemot nol, siji lan loro, lan tuladha
+sabanjure uga nggunakake telung nilai iku; dhaptar sumber kang diwiwiti
+siji lan rampung telu dibalekake dadi anggota domain kang bener. Amarga
+kita ora ngerti sadurunge !!{variable}s endi kang bisa muncul ing
+!!a{formula}, kita ora bisa matesi !!{variable}s endi kang diwenehi
+nilai dening~$s$. Cara prasajane yaiku mbutuhake supaya $s$ menehi nilai
+marang \emph{kabeh} !!{variable}s~$\Obj v_0$, $\Obj v_1$, \dots\@ Kita
+mung bakal nggunakake variabel kang dibutuhake.
+
+Tinimbang nemtokake relasi nyukupi tumrap !!{formula}s mung relatif
+marang !!a{structure}, kita bakal nemtokake relasi kasebut relatif
+marang !!a{structure}~$\Struct{M}$ \emph{lan} pangaji
+!!a{variable}~$s$, banjur kanggo cekake nulis $\Sat{M}{!A}[s]$.
+Definisi kita saiki bakal ngemot klausa tambahan kanggo ngurusi
+!!{formula}s atom kang ngemot !!{variable}s:
+\begin{enumerate}
+  \item $\Sat{M}{\Atom{\Obj P}{\Obj a}}[s]$ yen lan mung yen
+  $\Assign{\Obj a}{M} \in \Assign{\Obj P}{M}$.
+  \item $\Sat{M}{\Atom{\Obj P}{\Obj v_i}}[s]$ yen lan mung yen
+  $s(\Obj v_i) \in \Assign{\Obj P}{M}$.
+  \item $\Sat{M}{\lnot !A}[s]$ yen lan mung yen ora $\Sat{M}{!A}[s]$.
+  \item $\Sat{M}{(!A \land !B)}[s]$ yen lan mung yen $\Sat{M}{!A}[s]$ lan $\Sat{M}{!B}[s]$.
+\end{enumerate}
+Iki ngrampungake siji masalah: saiki kita bisa kandha kapan $\Struct{M}$
+nyukupi $\Atom{\Obj P}{\Obj v_0}$ kanggo nilai~$s(\Obj v_0)$. Supaya
+definisi kanggo $\lexists[\Obj v_0][\Atom{\Obj P}{\Obj v_0}]$ bener,
+kita kudu nindakake siji prekara maneh: kita pengin
+$\Sat{M}{\lexists[\Obj v_0][\Atom{\Obj P}{\Obj v_0}]}[s]$ yen lan
+mung yen $\Sat{M}{\Atom{\Obj P}{\Obj v_0}}[s']$ kanggo \emph{sawenehing}
+cara $s'$ menehi nilai marang~$\Obj v_0$. Nanging, nilai kang diwenehake
+marang~$\Obj v_0$ ora kudu padha karo nilai kang dituduhake dening
+$s(\Obj v_0)$. Kita bakal ngenalake notasi kanggo iki: yen $m \in
+\Domain{M}$, mula $\Subst{s}{m}{\Obj v_0}$ yaiku pangaji kang padha
+karo~$s$ (kanggo kabeh !!{variable}s saliyane~$\Obj v_0$), kajaba
+marang~$\Obj v_0$ pangaji iku menehi~$m$. Saiki definisine bisa dadi:
+\begin{enumerate}\setcounter{enumi}{4}
+  \item $\Sat{M}{\lexists[\Obj v_i][!A]}[s]$ yen lan mung yen
+  $\Sat{M}{!A}[\Subst{s}{m}{\Obj v_i}]$ kanggo sawenehing~$m \in \Domain{M}$.
+\end{enumerate}
+Apa iki lumaku? Upamakna kita netepake $s(\Obj v_i) = 0$ kanggo
+kabeh~$i \in \Nat$. $\Sat{M}{\lexists[\Obj v_0][\Atom{\Obj P}{\Obj
+v_0}]}[s]$ yen lan mung yen ana $m \in \Domain{M}$ kanthi
+$\Sat{M}{\Atom{\Obj P}{\Obj v_0}}[\Subst{s}{m}{\Obj v_0}]$. Lan
+nilai kaya mangkono ana: kita bisa milih $m = 1$ utawa $m = 2$.
+Gatekna yen iki bener sanajan nilai~$s(\Obj v_0)$ kang diwenehake
+marang~$\Obj v_0$ dening $s$ dhewe---ing kasus iki, $0$---ora bisa
+ndadekake formula atom kasebut dicukupi. Kita nduweni $\Sat{M}{\Atom{\Obj P}{\Obj
+v_0}}[\Subst{s}{1}{\Obj v_0}]$, nanging ora nduweni
+$\Sat{M}{\Atom{\Obj P}{\Obj v_0}}[s]$.
+
+Yen iki katon mbingungake lan ruwet, ya pancen mangkono. Nanging,
+keruwetan tambahan iki dibutuhake kanggo menehi definisi relasi
+nyukupi kang trep lan induktif tumrap kabeh !!{formula}s, lan kita
+mbutuhake definisi kaya mangkene kanggo nemtokake gagasan-gagasan
+semantis kanthi trep. Ana cara liyane kanggo nindakake iki, nanging
+kabeh padha (ora) endah.
+
+\end{document}

@@ -1,0 +1,42 @@
+% Part: lambda-calculus
+% Chapter: lambda-definability
+% Section: partial-recursive-functions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{ldf}{par}
+\olsection{Fungsi Rekursif Parsial iku \usetoken{S}{lambda definable}}
+
+Fungsi rekursif parsial yaiku fungsi kang diolehake saka fungsi
+dhasar kanthi komposisi, rekursi primitif, lan minimisasi tanpa
+wates. Bedane saka fungsi rekursif umum yaiku fungsi kang digunakake
+ing panelusuran tanpa wates ora kudu reguler. Tanpa syarat
+regularitas, fungsi kang ditetepake kanthi minimisasi bisa wae
+ora nduweni nilai kanggo sawetara argumen.
+
+Sepisanan katon kaya-kaya cara kang padha kanggo nuduhake yen
+kabeh fungsi rekursif umum (kang total) iku !!{lambda definable}
+uga bisa digunakake kanggo mbuktekake yen kabeh fungsi rekursif
+parsial iku !!{lambda definable}. Tuladhane, komposisi $f$ karo $g$
+!!{lambda define}d dening $\lambd[x][F (G x)]$ yen $f$ lan $g$
+!!{lambda define}d dening suku $F$ lan~$G$. Nanging kanggo fungsi
+parsial, iki dadi masalah. Yen $g(x)$ ora nduweni nilai, tegese
+$G x$ ora nduweni wujud normal. Biasane iki uga ndadekake $F (G
+x)$ ora nduweni wujud normal, kaya kang dikarepake. Nanging
+upamakna $F$ iku $\lambd[x][\lambd[y][y]]$; ing kene $F (G x)$
+malah nduweni wujud normal ($\lambd[y][y]$).
+
+Masalah iki isih bisa diatasi, lan ana cara kanggo
+!!{lambda define} kabeh fungsi rekursif parsial kanthi nilai kang
+ora katetepake diwakili dening suku tanpa wujud normal. Nanging
+cara-cara iku rada luwih rumit lan kurang gampang dipahami
+tinimbang pendekatan kang wis digunakake kanggo fungsi rekursif
+umum. Ing kene kita mung nyathet teoremane tanpa bukti:
+
+\begin{thm}
+  Kabeh fungsi rekursif parsial iku !!{lambda definable}.
+\end{thm}
+
+\end{document}

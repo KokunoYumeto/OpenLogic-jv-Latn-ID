@@ -1,0 +1,46 @@
+% Part: normal-modal-logic
+% Chapter: filtrations
+% Section: finite
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{fil}{fin}
+
+\olsection{Filtrasi Iku Winates}
+
+Kita wis netepake filtrasi kanggo sembarang himpunan~$\Gamma$ kang
+katutup tumrap sub-!!{formula}s. Definisi iku dhewe ora njamin yen
+filtrasi winates. Malah, yen $\Gamma$ tanpa wates (upamane himpunan
+kabeh !!{formula}s), filtrasi bisa tanpa wates. Nanging yen
+$\Gamma$ winates (upamane himpunan sub-!!{formula}s saka
+!!{formula}~$!A$ tartamtu), saben filtrasi liwat~$\Gamma$ uga
+winates.
+
+\begin{prop}\ollabel{prop:filt-are-finite}
+  Yen $\Gamma$ winates, saben filtrasi $\mModel{M^*}$ saka model
+  $\mModel{M}$ liwat $\Gamma$ uga winates.
+\end{prop}
+
+\begin{proof}
+  Ukuran $W^*$ yaiku cacah kelas~$[w]$ kang beda miturut relasi
+  ekuivalensi~$\equiv$. Sembarang rong jagad $u$, $v$ ing kelas kang
+  padha---yaiku sembarang $u$ lan $v$ kang~$u \equiv v$---sarujuk
+  tumrap kabeh !!{formula}s~$!A$ ing~$\Gamma$: kanggo $!A \in \Gamma$,
+  $!A$ bisa bener ing $u$ lan $v$ loro-lorone, utawa salah ing
+  loro-lorone. Dadi saben kelas~$[w]$ cocog karo sawijining himpunan
+  bagean saka~$\Gamma$, yaiku himpunan kabeh $!A \in \Gamma$ saengga
+  $!A$ bener ing jagad-jagad saka~$[w]$. Ora ana rong kelas beda $[u]$ lan
+  $[v]$ kang cocog karo himpunan bagean saka~$\Gamma$ kang padha.
+  Amarga yen himpunan !!{formula}s kang bener ing $u$ lan himpunan
+  !!{formula}s kang bener ing $v$ padha, mula $u$ lan $v$ sarujuk
+  tumrap kabeh formula ing~$\Gamma$, yaiku $u \equiv v$. Nanging
+  banjur $[u] = [v]$. Dadi ana fungsi !!a{injective} saka $W^*$
+  menyang $\Pow{\Gamma}$, mula
+  $\card{W^*} \le \card{\Pow{\Gamma}}$. Mula yen $\Gamma$ ngemot
+  $n$ ukara, kardinalitas $W^*$ ora luwih saka~$2^n$.
+\end{proof}
+
+\end{document}
+

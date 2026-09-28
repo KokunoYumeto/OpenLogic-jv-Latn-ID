@@ -1,0 +1,83 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{ordinals}{wo}
+\olsection{Urutan Becik}
+
+Gagasan dhasare mangkene:
+
+\begin{defn}
+Relasi $<$ \emph{ngurutake kanthi becik} $A$ yen lan mung yen
+nyukupi rong syarat iki:
+\begin{enumerate}
+	\item $<$ iku nyambung, yaiku kanggo kabeh $a, b \in A$,
+	utawa $a < b$ utawa $a = b$ utawa $b < a$;
+	\item saben himpunan bagean $A$ kang ora kosong nduweni
+	!!{element} minimal miturut $<$, yaiku yen
+	$\emptyset \neq X \subseteq A$ mula $(\exists m \in
+	X)(\forall z \in X)z \nless m$
+\end{enumerate}
+\end{defn}
+
+Gampang dideleng yen telung conto kang mentas kita rembug
+pancen relasi urutan becik.
+
+\begin{prob}
+\Olref[sth][ordinals][idea]{sec} menehi telung conto urutan
+ing wilangan asli. Priksanen yen saben conto iku
+urutan becik.
+\end{prob}
+
+Iki sawetara pengamatan dhasar nanging wigati banget
+ngenani urutan becik.
+
+\begin{prop}\ollabel{wo:strictorder}
+Yen $<$ ngurutake $A$ kanthi becik, saben himpunan bagean
+$A$ kang ora kosong nduweni anggota paling cilik miturut
+$<$ kang tunggal, lan $<$ ora refleksif, asimetris, lan
+transitif.
+\end{prop}
+
+\begin{proof}
+Yen $X$ himpunan bagean $A$ kang ora kosong, ana !!{element}
+minimal miturut $<$, yaiku $m$, kanthi
+$(\forall z \in X)z \nless m$. Amarga $<$ nyambung,
+$(\forall z \in X)m \leq z$. Mula $m$ iku !!{element}
+paling cilik miturut $<$ ing $X$.
+
+Kanggo ora refleksif, pilihen $a \in A$; !!{element}
+paling cilik miturut $<$ ing $\{a\}$ yaiku $a$,
+mula $a \nless a$. Kanggo transitif, yen $a < b < c$,
+amarga $\{a, b, c\}$ nduweni !!{element} paling cilik
+miturut $<$, $a < c$: unsur tengah lan pungkasan ora
+bisa dadi kang paling cilik. Asimetris ndherek saka
+sipat ora refleksif lan transitif.
+\end{proof}
+
+\begin{prop}\ollabel{propwoinduction}
+Yen $<$ ngurutake $A$ kanthi becik, kanggo sembarang
+rumus $\phi(x)$:
+\[
+	\text{yen }(\forall a \in A)((\forall b < a)\phi(b) \lif 
+		\phi(a))\text{, mula }(\forall a \in A)\phi(a).
+\]
+\end{prop}
+
+\begin{proof}
+Kita bakal mbuktekake kontrapositife. Upamane
+$\lnot(\forall a \in A)\phi(a)$, yaiku
+$X = \Setabs{x \in A}{\lnot\phi(x)} \neq \emptyset$.
+Mula $X$ nduweni !!{element} minimal miturut $<$,
+yaiku $a$. Dadi $(\forall b < a)\phi(b)$ nanging
+$\lnot \phi(a)$. \end{proof}\noindent Sipat pungkasan
+iki mesthine ngelingake panjenengan marang prinsip
+induksi kuwat tumrap wilangan asli: yen
+$(\forall n \in \omega)((\forall m < n)\phi(m) \lif
+\phi(n))$, mula $(\forall n \in \omega)\phi(n)$.
+Sipat iki ndadekake urutan becik dadi gagasan kang
+\emph{kukuh} banget.\footnote{Pangeling: kabeh rumus bisa
+nduweni parameter (kajaba yen kanthi cetha kasebut
+kosok baline).}
+
+\end{document}

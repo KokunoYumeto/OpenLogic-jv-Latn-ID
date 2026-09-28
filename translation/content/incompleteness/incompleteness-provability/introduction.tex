@@ -1,0 +1,94 @@
+% Part: incompleteness
+% Chapter: incompleteness-provability
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{inp}{int}
+
+\olsection{Pambuka}
+
+Miturut Hilbert, sistem aksioma kanggo sawijining struktur matematika,
+kayata bilangan asli, durung cukup yen ora bisa nurunake kabeh pratelan
+kang bener ngenani struktur mau. Yen digandhengake karo kawigatene
+sabanjure marang sistem deduksi formal, iki nuduhake yen dheweke nganggep
+kita kudu njamin, upamane, yen sistem formal kang digunakake kanggo
+nalar ngenani bilangan asli ora mung konsisten nanging uga
+\emph{jangkep}, yaiku saben pratelan ing basane bisa
+!!{derivable} utawa negasine bisa. Teorema ora jangkep kapisan saka
+G\"odel nuduhake yen sistem aksioma kaya mangkono ora ana: ora ana
+sistem formal kanggo aritmetika kang jangkep, konsisten, lan
+!!{axiomatizable}. Malah, ora ana teori matematika kang
+``cukup kuwat,'' konsisten, lan !!{axiomatizable} kang jangkep.
+
+Tujuan Hilbert kang luwih wigati, dadi punjere programe kanggo
+menehi landhesan marang matematika modern (``klasik''), yaiku nemokake bukti
+kekonsistenan finitari kanggo sistem formal kang nggambarake panalaran
+klasik. Mula, tumrap program Hilbert, teorema ora jangkep kapindho saka
+G\"odel dadi pukulan kang luwih abot. Teorema ora jangkep kapindho bisa
+diandharake kanthi umum kaya teorema kapisan. Sacara kasar, teorema iki
+nyatakake yen ora ana teori aritmetika kang cukup kuwat kang bisa
+mbuktekake kekonsistenane dhewe. ``Cukup kuwat'' ing kene kudu
+ngemot luwih saka~$\Th{Q}$.
+
+Gagasan kang ndhasari bukti asli teorema ora jangkep saka G\"odel
+bisa ditemokake ing paradoks Epimenides. Epimenides, wong Kreta,
+nyatakake yen kabeh wong Kreta tukang ngapusi; wujud paradoks kang
+luwih langsung yaiku pratelan ``ukara iki salah.'' Pokoke, kanthi
+ngganti bebener nganggo !!{derivability}, G\"odel bisa mbangun
+!!a{sentence} formal kang, kanthi cara ora langsung, nyatakake yen
+ukara iku dhewe ora !!{derivable}. Yen !!{sentence} mau !!{derivable},
+teorine bakal ora konsisten. G\"odel nuduhake yen negasi saka
+!!{sentence} mau uga ora !!{derivable} saka sistem aksioma kang
+dirembug. (Kanggo bagean kapindho iki, G\"odel kudu nganggep yen
+teori~$\Th{T}$ nduweni sipat kang diarani ``$\omega$-konsisten.''
+Kekonsistenan-$\omega$ sesambungan karo kekonsistenan, nanging sipate
+luwih kuwat.\footnote{Tegese, saben teori kang $\omega$-konsisten iku
+konsisten, nanging kosok baline ora mesthi.} Sawetara taun sawise
+G\"odel, Rosser nuduhake yen nganggep kekonsistenan lumrah saka~$\Th{T}$
+wis cukup.)
+
+Tantangan kapisan yaiku mangerteni carane mbangun !!a{sentence} kang
+nyebut awake dhewe. Kanggo saben !!{formula}~$!A$ ing basa
+saka~$\Th{Q}$, tetepna~$\gn{!A}$ minangka numeral kang cocog
+karo~$\Gn{!A}$. Gatekna teges iki: $!A$~iku !!a{formula} ing
+basa saka~$\Th{Q}$, $\Gn{!A}$~iku bilangan asli, lan $\gn{!A}$~iku
+\emph{suku} ing basa saka~$\Th{Q}$. Dadi saben !!{formula}~$!A$
+ing basa saka~$\Th{Q}$ nduweni \emph{jeneng},~$\gn{!A}$, yaiku
+suku ing basa saka~$\Th{Q}$; iki menehi rerangka gagasan kang ngidini
+!!{formula}s ing basa saka~$\Th{Q}$ ``ngomong'' ngenani
+!!{formula}s liyane. Lema sabanjure diarani lema titik tetep.
+
+\begin{lem}
+Upamana $\Th{T}$ teori sembarang kang ngembangake~$\Th{Q}$, lan
+$!B(x)$ iku !!{formula} sembarang kang mung variabel~$x$ bebas.
+Mula ana !!a{sentence}~$!A$ saengga
+$\Th{T} \Proves!A \liff !B(\gn{!A})$.
+\end{lem}
+
+Lema iki nyatakake yen kanggo saben sipat $!B(x)$, ana
+!!a{sentence}~$!A$ kang nyatakake ``$!B(x)$ bener tumrap aku,''
+lan $\Th{T}$ ``ngerti'' perkara iki.
+
+Kepiye carane mbangun !!a{sentence} kaya mangkono? Gatekna versi
+paradoks Epimenides saka Quine iki:
+\begin{quote}
+``Ngasilake pratelan salah yen didhisiki petikane'' ngasilake pratelan salah
+yen didhisiki petikane.
+\end{quote}
+Ukara iki ora langsung nyebut awake dhewe. Ukara iki mung nyatakake
+perkara ngenani objek sintaksis ing antarane tandha petik, lan kanthi
+cara kuwi padha karo ukara-ukara kaya
+\begin{enumerate}
+\item ``Robert'' iku jeneng kang apik.
+\item ``Aku mlayu.'' iku ukara cekak.
+\item ``Nduweni telung tembung'' nduweni telung tembung.
+\end{enumerate}
+Nanging apa kang kelakon yen njupuk frasa ``ngasilake pratelan salah yen
+didhisiki petikane,'' banjur frasa mau didhisiki versi kang dipetik
+saka frasa iku dhewe? Banjur kita entuk ukara asal mau!{} Cekake,
+ukara iki nyatakake yen ukara iku dhewe salah.
+
+\end{document}

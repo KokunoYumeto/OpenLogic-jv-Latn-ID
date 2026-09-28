@@ -1,0 +1,216 @@
+% Part: computability
+% Chapter: computability-theory
+% Section: equiv-ce-defs
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{thy}{eqc}
+
+\olsection[Definisi Himpunan C. E.]{Definisi kang Setara kanggo
+  Himpunan kang Bisa Dienumerasi sacara Komputabel}
+
+
+Ing ngisor iki ana sawetara pratelan penting
+kang setara bab teges bisa dienumerasi sacara
+komputabel.
+
+\begin{thm}
+\ollabel{thm:ce-equiv}
+Tetepna $S$ minangka himpunan wilangan asli.
+Mula pratelan-pratelan iki setara:
+\begin{enumerate}
+\item\ollabel{case:ce} $S$ bisa dienumerasi sacara komputabel.
+\item\ollabel{case:ran-pc} $S$ minangka citra fungsi komputabel \emph{parsial}.
+\item\ollabel{case:ran-prim} $S$ kosong utawa minangka citra fungsi rekursif primitif.
+\item\ollabel{case:ce-domain} $S$ minangka \emph{domain} fungsi komputabel parsial.
+\end{enumerate}
+\end{thm}
+
+\begin{explain}
+Telung klausa kapisan nyebut yen saben himpunan
+ora kosong kang bisa dienumerasi sacara
+komputabel bisa uga dienumerasi dening fungsi
+komputabel, fungsi komputabel parsial, utawa
+fungsi rekursif primitif. Klausa kapapat
+nyebut yen $S$ bisa dienumerasi sacara
+komputabel, mula kanggo sawenehing indeks~$e$,
+\[
+S = \Setabs{x}{\cfind{e}(x) \fdefined}.
+\]
+Kanthi tembung liya, $S$ yaiku himpunan
+input kang ndadekake komputasi $\cfind{e}$
+mandheg. Mula himpunan kang bisa dienumerasi
+sacara komputabel kadhang diarani
+\emph{semi-diputusake}: yen wilangan kalebu
+himpunan, pungkasane kita entuk wangsulan
+``iya'', nanging yen ora kalebu, kita ora
+bakal entuk wangsulan ``ora''!{}
+\end{explain}
+
+\begin{proof}
+Amarga saben fungsi rekursif primitif iku
+komputabel lan saben fungsi komputabel uga
+komputabel parsial, \olref{case:ran-prim}
+ngakibatake \olref{case:ce}, dene
+\olref{case:ce} ngakibatake~\olref{case:ran-pc}.
+(Gatekna yen $S$ kosong, $S$~minangka citra
+fungsi komputabel parsial kang ora ditegesi
+ing endi wae.) Yen kita nuduhake yen
+\olref{case:ran-pc} ngakibatake
+\olref{case:ran-prim}, telung klausa
+kapisan wis kabukten setara.
+
+Mula upamane $S$ minangka citra fungsi
+komputabel parsial $\cfind{e}$. Yen $S$
+kosong, rampung. Yen ora, tetepna $a$
+minangka unsur sembarang saka~$S$.
+Miturut teorema wangun normal Kleene,
+kita bisa nulis
+\[
+\cfind{e}(x) = U(\umin{s}{T(e, x, s)}).
+\]
+Mligine, $\cfind{e}(x) \fdefined$ lan
+$= y$ yen lan mung yen ana $s$ kang
+ndadekake $T(e, x, s)$ lan $U(s) = y$.
+Tetepna $f(z)$ minangka
+\[
+f(z) = \begin{cases}
+  U((z)_1) & \text{yen $T(e, (z)_0, (z)_1)$} \\
+  a        & \text{yen ora.}
+\end{cases}
+\]
+Mula $f$ rekursif primitif, amarga $T$ lan $U$
+uga mangkono. \iftag{TMs}{Ing basa mesin Turing,
+  yen $z$ ngode pasangan $\tuple{(z)_0, (z)_1}$
+  kang $(z)_1$ minangka komputasi mesin~$M_e$
+  kang mandheg kanggo input $(z)_0$, mula $f$
+  ngasilake output komputasi iku; yen ora,
+  ngasilake~$a$.}
+
+Kita kudu nuduhake yen $S$ minangka citra~$f$,
+yaiku kanggo saben wilangan asli~$y$,
+$y \in S$ yen lan mung yen kalebu
+citra~$f$. Ing arah maju, upamane $y \in S$.
+Mula $y$ kalebu citra $\cfind{e}$, saengga
+kanggo sawenehing $x$ lan~$s$, $T(e,x,s)$
+lumaku lan $U(s) = y$. Nanging mula
+$y = f(\tuple{x,s})$. Kosok baline,
+upamane $y$ kalebu citra~$f$. Mula $y = a$,
+utawa kanggo sawenehing~$z$,
+$T(e,(z)_0,(z)_1)$ lan $U((z)_1) = y$.
+% OLPL-137: Sumber beku nganggo x kang ora kaiket ing kasus iki; input sing dipilih pasangan kode yaiku (z)_0.
+Amarga ing kasus kapindho $\cfind{e}((z)_0) \fdefined =
+y$, ing loro-lorone kasus $y$ kalebu~$S$.
+
+(Notasi $\cfind{e}(x) \fdefined = y$ ateges
+``$\cfind{e}(x)$ ditegesi lan padha karo
+$y$.'' Kita uga bisa nggunakake $\cfind{e}(x) =
+y$, nanging panah tambahan kadhang migunani
+kanggo ngelingake yen fungsi sing dirembug
+iku parsial.)
+
+Kanggo ngrampungake bukti \olref{thm:ce-equiv},
+cukup nuduhake yen \olref{case:ce} lan
+\olref{case:ce-domain} setara. Kaping pisan,
+kita nuduhake yen \olref{case:ce}
+ngakibatake~\olref{case:ce-domain}.
+% OLPL-138: Bukti sumber ngliwati kasus S kosong; domain fungsi parsial kang ora nate ditegesi nyukupi kasus iki.
+Kanggo himpunan kosong, domain fungsi komputabel
+parsial kang ora nate ditegesi wis nyukupi.
+Ing kasus liyane, upamane $S$ minangka citra
+fungsi komputabel~$f$, yaiku
+\[
+S = \Setabs{y}{\text{kanggo sawenehing $x$, } f(x) = y}.
+\]
+Tetepna
+\[
+g(y) = \umin{x}{(f(x) = y)}.
+\]
+Mula $g$ fungsi komputabel parsial, lan
+$g(y)$ ditegesi yen lan mung yen kanggo
+sawenehing~$x$, $f(x) = y$. Kanthi tembung
+liya, domain $g$~yaiku citra~$f$.
+\iftag{TMs}{Ing basa mesin Turing: yen ana
+mesin Turing~$F$ kang ngenumerasi unsur-unsur
+saka~$S$, tetepna $G$ minangka mesin Turing
+kang semi-mutusake $S$ kanthi nggoleki ing
+antarane output~$F$ apa unsur tartamtu kalebu
+himpunan; mesin iki mandheg yen unsur kasebut
+ketemu, lan terus nggoleki tanpa wates yen
+ora ketemu.}{}
+
+Pungkasane, kanggo nuduhake yen
+\olref{case:ce-domain} ngakibatake~\olref{case:ce},
+upamane $S$~minangka domain fungsi komputabel
+parsial~$\cfind{e}$, yaiku
+\[
+S = \Setabs{x}{\cfind{e}(x) \fdefined}.
+\]
+Yen $S$ kosong, rampung; yen ora,
+tetepna $a$ minangka unsur sembarang
+saka~$S$. Tetepna $f$ minangka
+\[
+f(z) = \begin{cases}
+(z)_0 & \text{yen $T(e,(z)_0,(z)_1)$} \\
+a & \text{yen ora.}
+\end{cases}
+\]
+Mula, kaya ing ndhuwur, wilangan $x$
+kalebu citra~$f$ yen lan mung yen
+$\cfind{e}(x) \fdefined$, yaiku yen lan
+mung yen $x \in S$. \iftag{TMs}{Ing basa mesin
+Turing: yen ana mesin $M_e$ kang semi-mutusake
+$S$, unsur-unsur $S$ bisa dienumerasi kanthi
+nglakokake kabeh komputasi mesin Turing
+kang mungkin, banjur ngasilake input
+kang cocog karo komputasi kang mandheg.}{}
+\end{proof}
+
+Klausa~\olref{case:ce-domain} ing
+\olref{thm:ce-equiv} menehi cara kang trep
+kanggo ngenumerasi himpunan kang bisa
+dienumerasi sacara komputabel: kanggo
+saben~$e$, tetepna $W_e$ minangka domain
+$\cfind{e}$, yaiku
+\[
+W_e = \Setabs{x}{\cfind{e}(x) \fdefined}.
+\] 
+Mula yen $A$ minangka himpunan sembarang
+kang bisa dienumerasi sacara komputabel,
+$A = W_e$ kanggo sawenehing~$e$.
+
+Ing ngisor iki ana ciri liyane kanggo himpunan
+kang bisa dienumerasi sacara komputabel.
+
+\begin{thm}
+\ollabel{thm:exists-char}
+Himpunan $S$ bisa dienumerasi sacara komputabel
+yen lan mung yen ana relasi komputabel
+$R(x,y)$ kang ndadekake
+\[
+S = \Setabs{ x }{ \lexists[y][R(x,y)] }.
+\]
+\end{thm}
+
+\begin{proof}
+Ing arah maju, upamane $S$ bisa dienumerasi
+sacara komputabel. Mula kanggo sawenehing
+$e$, $S = W_e$. Kanggo nilai~$e$ iki,
+kita bisa nulis $S$ minangka
+\[
+S = \Setabs{ x }{ \lexists[y][T(e, x, y)] }.
+\]
+Ing arah kosok baline, upamane
+$S = \Setabs{ x }{
+  \lexists[y][R(x, y)] }$. Tetepna $f$~minangka
+\[
+f(x) \simeq \umin{y}{R(x, y)}.
+\]
+Mula $f$ komputabel parsial, lan $S$
+minangka domain~$f$.
+\end{proof}
+
+
+\end{document}

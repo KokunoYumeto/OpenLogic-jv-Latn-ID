@@ -1,0 +1,49 @@
+% Part: many-valued-logic
+% Chapter: syntax-and-semantics
+% Section: valuations-sat
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{syn}{val}
+
+\olsection{\usetoken{P}{valuation} lan Panyukupan}
+
+\begin{defn}[!!^{valuation}s] 
+Upamakna $V$ himpunan nilai kabeneran. \emph{!!{valuation}} kanggo
+$\Lang{L}$ menyang~$V$ yaiku
+fungsi~$\pAssign{v}$ kang masangake !!a{element} saka~$V$
+marang !!{propositional variable}s ing basa iku, yaiku
+$\pAssign{v} \colon \PVar \to V$.
+\end{defn}
+
+\begin{defn}\ollabel{defn:pValue}
+  Yen diwenehi !!a{valuation}~$\pAssign{v}$ menyang himpunan nilai
+  kabeneran~$V$ saka logika mawa akeh nilai~$\Log L$, tetepna
+  fungsi evaluasi $\pValue{v} \colon \Frm[L] \to V$ kanthi induktif:
+  \begin{enumerate}
+    \item $\pValue{v}(\Obj p_n) = \pAssign{v}(\Obj p_n)$;
+    \item Yen $\star$ konektif kanthi $0$ panggonan, mula
+    $\pValue{v}(\star)  = \tf{\star}[\Log L]$;
+    \item Yen $\star$ konektif kanthi $n$ panggonan, mula
+    \[
+      \pValue{v}(\star(!A_1, \dots, !A_n)) = \tf{\star}[\Log L]
+      (\pValue{v}(!A_1), \dots, \pValue{v}(!A_n)).
+    \]
+  \end{enumerate}
+\end{defn}
+
+\begin{defn}[Panyukupan]
+\ollabel{defn:satisfaction} !!{formula}~$!A$ \emph{dicukupi}
+  dening !!a{valuation}~$\pAssign{v}$, $\pSat{v}{!A}[\Log L]$,
+  yen lan mung yen $\pValue{v}(!A)[\Log L] \in V^+$,
+  kanthi $V^+$ himpunan nilai kabeneran pinilih saka~$\Log L$.
+  
+  Kita tulis $\pSat/{v}{!A}[\Log L]$ kanggo ateges
+  ``dudu $\pSat{v}{!A}[\Log L]$.'' Yen $\Gamma$ himpunan
+  !!{formula}s, mula $\pSat{v}{\Gamma}[\Log L]$ yen lan mung yen
+  $\pSat{v}{!A}[\Log L]$ kanggo saben~$!A \in \Gamma$.
+\end{defn}
+
+\end{document}

@@ -1,0 +1,101 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{ordinals}{ordtype}
+\olsection{Ordinal Minangka Tipe Urutan}
+
+Kanthi Panggantian, mula saiki kita makarya ing
+$\ZFminus$, pungkasane kita bisa mbuktekake asil
+kang wis kita tuju:
+
+\begin{thm}\ollabel{thmOrdinalRepresentation}
+Saben urutan becik isomorfis karo ordinal kang tunggal.
+\end{thm}
+
+\begin{proof}
+Upamane $\tuple{A, <}$ urutan becik. Miturut
+\olref[basic]{ordisoidentity}, urutan iki paling akeh
+isomorfis karo siji ordinal. Kanggo kontradiksi,
+upamane $\tuple{A, <}$ ora isomorfis karo
+\emph{ordinal endi wae}. Pisanan kita bakal
+``nggawe $\tuple{A, <}$ sacilik-cilike''.
+Rincine: yen ana perangan wiwitan sejati
+$\tuple{A_a, <_a}$ kang ora isomorfis karo ordinal,
+ana $a \in A$ paling cilik kang nduweni sipat iku;
+banjur upamane $B = A_a$ lan
+$\mathord{\lessdot} = \mathord{<_a}$.
+Yen ora, upamane $B = A$ lan
+$\mathord{\lessdot} = \mathord{<}$.
+
+Miturut pilihan iki, saben perangan wiwitan sejati
+saka $B$ isomorfis karo sawenehing ordinal kang
+tunggal kaya ing ndhuwur. Dadi miturut Panggantian,
+himpunan ing ngisor iki ana lan dadi fungsi:
+\[
+	f = \Setabs{\tuple{\beta, b}}{b \in B\text{ lan }\ordeq{\beta}{\tuple{B_b, \lessdot_b}}}
+\]
+Kanggo ngrampungake kontradiksi, kita bakal nuduhake
+yen $f$ isomorfisme $\alpha \to B$ kanggo sawijining
+ordinal $\alpha$.
+
+Cetha yen $\ran{f} = B$. Miturut
+\olref[iso]{lemordsegments}, $f$ njaga urutan, yaiku
+$\gamma \in \beta$ yen lan mung yen
+$f(\gamma) \lessdot f(\beta)$. Kanggo nuduhake yen
+$\dom{f}$ ordinal, miturut
+\olref[basic]{corordtransitiveord} cukup nuduhake
+yen $\dom{f}$ transitif. Pilihen
+$\beta \in \dom{f}$, yaiku
+$\ordeq{\beta}{\tuple{B_b, \lessdot_b}}$ kanggo
+sawijining $b$. Yen $\gamma \in \beta$, mula
+$\gamma \in \dom{f}$ miturut
+\olref[iso]{wellordinitialsegment}; kanthi umum,
+$\beta \subseteq \dom{f}$.
+\end{proof}
+
+Asil iki ngidini definisi kang wis dikarepake wiwit
+\olref[vn]{sec}:
+
+\begin{defn}
+Yen $\tuple{A, <}$ urutan becik, tipe urutane,
+$\ordtype{A, <}$, yaiku ordinal tunggal $\alpha$
+kang nyukupi $\ordeq{\tuple{A, < }}{\alpha}$.
+\end{defn}
+
+Kajaba iku, definisi iki ngasilake rong prinsip:
+
+\begin{cor}\ollabel{ordtypesworklikeyouwant}
+Yen $\tuple{A, <}$ lan $\tuple{B, \lessdot}$
+urutan becik:
+\begin{align*}
+	\ordtype{A, <} = \ordtype{B, \lessdot}&\text{ yen lan mung yen }\ordeq{\tuple{A, <}}{\tuple{B, \lessdot}}\\
+	\ordtype{A, <} \in \ordtype{B, \lessdot}&\text{ yen lan mung yen }\ordeq{\tuple{A, <}}{\tuple{B_b, \lessdot_b}}\text{ kanggo sawenehing }b \in B
+\end{align*}
+\end{cor}
+
+\begin{proof}
+Persamaan kapisan ndherek saka
+\olref[basic]{ordisoidentity}. Kanggo mbuktekake
+pratelan kapindho, upamane $\ordtype{A, <} = \alpha$
+lan $\ordtype{B, \lessdot} = \beta$, lan upamane
+$f \colon \beta \to B$ isomorfisme kita. Mula:
+\begin{align*}
+	\alpha \in \beta&\Longrightarrow\funrestrictionto{f}{\alpha} \colon \alpha \to B_{f(\alpha)}\text{ iku isomorfisme}\\
+	&\Longrightarrow\ordeq{\tuple{A, <}}{\tuple{B_{f(\alpha)}, \lessdot_{f(\alpha)}}}\\
+	&\Longrightarrow\ordeq{\tuple{A, <}}{\tuple{B_b, \lessdot_b}}\text{ kanggo sawenehing $b \in B$}
+\end{align*}
+miturut \olref[iso]{ordisounique},
+\olref[iso]{wellordinitialsegment}, lan
+\olref[basic]{ordissetofsmallerord}. Kosok baline,
+yen urutan kapisan isomorfis karo sawijining perangan
+wiwitan sejati saka urutan kapindho, titik pungkasan
+perangan iku nduweni prabayangan ing ordinal sumber
+miturut isomorfisme kasebut. Perangan mau isomorfis
+karo prabayangan iki minangka ordinal; mula tipe
+urutan kapisan padha karo prabayangan kasebut miturut
+\olref[basic]{ordisoidentity}. Dadi tipe urutan kapisan
+iku anggota ordinal sumber mau.
+\end{proof}
+
+\end{document}

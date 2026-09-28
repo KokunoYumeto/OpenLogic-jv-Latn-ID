@@ -1,0 +1,66 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{choice}{justifications}
+\olsection{Panimbangan Intrinsik Babagan Pilihan}
+
+Pitakonan kang luwih amba yaiku apa Pengurutan Becik, Pilihan, utawa
+kabandingan ukurané kabèh himpunan---endi waé, amarga padha
+ekuivalen---bisa diwènèhi pambenaran.
+
+Ing ngisor iki ana upaya pambenaran kang \emph{intrinsik}. Ing
+\olref[z][story]{sec}, kita ngenalaké sawatara prinsip babagan
+hirarki. Salah sijiné prayoga dipratelakaké maneh:
+\begin{enumerate}
+	\item[] \stagesacc. Kanggo sembarang tahap $S$, lan sembarang
+	himpunan kang wis kawangun \emph{sadurungé} tahap $S$,
+	ing tahap $S$ kawangun himpunan kang unsuré pas himpunan-himpunan
+	kasebut. Ora ana himpunan liya kang kawangun ing tahap~$S$.
+\end{enumerate}
+Pancen, akèh panulis kang nyaranaké yèn Aksioma Pilihan bisa
+dibeneraké liwat prinsip iki utawa prinsip kang sarupa. Kita bakal
+mènèhi gambaran cekak bab pendekatan kasebut.
+
+Kita miwiti saka asil prasaja kang mènèhi \emph{ekuivalensi liya}
+tumrap Pilihan:
+
+\begin{thm}[ing $\ZF$]\ollabel{choiceset}
+Pilihan ekuivalen karo prinsip iki. Yèn !!{element}s saka $A$
+pisah-pisah sepasang-sepasang lan ora kosong, mula ana $C$ kang
+ndadèkaké $C \cap x$ singleton kanggo saben $x \in A$. ($C$ kaya
+mangkono diarani {himpunan pilihan} kanggo $A$.)
+\end{thm}
+
+Bukti asil iki prasaja, lan kita tinggalaké minangka gladhen kanggo
+pamaos.
+
+\begin{prob}
+Buktèkna \olref[sth][choice][justifications]{choiceset}. Yèn
+panjenengan kangèlan, buktiné bisa ditemokaké ing
+\cite[kaca~242--3]{Potter2004}.
+\end{prob}
+
+Pokoké, himpunan pilihan kanggo $A$ iku mung jangkauan sawijining
+fungsi pilihan kanggo $A$. Mula kanggo mbeneraké Pilihan, kita bisa
+nyoba mbeneraké pratelan kang ekuivalen iki liwat anané himpunan
+pilihan. Saiki kita bakal nyoba nindakaké iku.
+
+Anggepen !!{element}s saka $A$ pisah-pisah lan ora kosong.
+Miturut \stageshier{} (delengen \olref[z][story]{sec}), $A$
+kawangun ing sawatara tahap~$S$. Gatekna yèn kabèh !!{element}s
+saka $\bigcup A$ wis ana sadurungé tahap $S$. Saiki, miturut
+\stagesacc{}, kanggo \emph{sembarang} himpunan kang kawangun
+sadurungé~$S$, kawangun himpunan kang unsuré pas himpunan-himpunan mau.
+Kanthi tembung liya, saben kumpulan kang \emph{bisa} kawangun saka
+himpunan kang wis ana sadurungé bakal ana ing tahap~$S$. Nanging
+mesthi \emph{bisa} milih obyèk kang mbentuk sawijining himpunan
+pilihan kanggo~$A$; iki mung sawijiné himpunan pérangan tartamtu
+saka $\bigcup A$. Dadi ana himpunan pilihan kang dikarepaké.
+
+Iki upaya kang \emph{cekak banget} kanggo mbeneraké Pilihan kanthi
+alasan intrinsik. Nanging yèn panjenengan kepengin nyinaoni luwih
+adoh, wacanen pangrembakan Potter kang becik
+(\citeyear[\S14.8]{Potter2004}).
+
+\end{document}

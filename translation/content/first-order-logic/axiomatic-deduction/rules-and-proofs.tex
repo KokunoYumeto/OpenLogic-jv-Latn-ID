@@ -13,7 +13,7 @@
 \olsection{Aturan lan \usetoken{P}{derivation}}
 
 \begin{explain}
-  !!{derivation}s aksiomatik mbokmenawa dadi sistem !!{derivation}
+  !!{derivation}s aksiomatik mbokmenawa minangka sistem !!{derivation}
   kang paling prasaja kanggo logika. !!^a{derivation} mung sawijining
   rerangken !!{formula}s. Supaya dianggep !!a{derivation}, saben
   !!{formula} ing rerangken kasebut kudu dadi conto sawijining
@@ -36,13 +36,13 @@ $i \le n$ salah siji saka perkara iki lumaku:
 \end{defn}
 
 Apa kang dianggep minangka !!{derivation} kang bener gumantung marang
-aturan inferensi endi kang diidini (lan mesthi wae apa kang dianggep
-aksioma). Aturan inferensi iku pratelan yen-banjur kang ngandhani yen,
-ing syarat tartamtu, sawijining langkah~$!A_i$ ing !!a{derivation}
-iku langkah inferensi kang bener. Cathetan koreksi sumber OLPL-024:
-sumber Inggris ngilangake tandha metavariabel formula saka langkah
-kang lagi dirembug, sanadyan definisi sadurunge lan kabeh sebutan
-sabanjure nggunakake tandha kasebut; tandha iku dibalekake ing kene.
+aturan inferensi kang diidini (lan mesthi wae aksioma kang dipilih).
+Aturan inferensi iku pratelan kondisional kang nyatakake manawa ing
+kahanan tartamtu, sawijining langkah~$!A_i$ ing !!a{derivation} iku
+langkah inferensi kang bener. Cathetan koreksi sumber OLPL-024: sumber
+Inggris ora menehi tandha metavariabel formula ing langkah kang lagi
+dirembug, sanadyan definisi sadurunge lan kabeh sebutan sabanjure
+nggunakake tandha kasebut; tandha kasebut dibalekake ing kene.
 
 \begin{defn}[Aturan inferensi]
 \emph{Aturan inferensi} menehi syarat cukup kanggo apa kang dianggep
@@ -78,22 +78,22 @@ lumaku:
 \item kanggo sawijining $j < i$, $!A_j$ yaiku $!B \lif !A_i$, lan
   kanggo sawijining $k < i$, $!A_k$ yaiku~$!B$.
 \end{enumerate}
-Klausa pungkasan nyebut yen $!A_i$ ndherek saka~$!A_j$ ($!B \lif
+Klausa pungkasan nyatakake yen $!A_i$ ndherek saka~$!A_j$ ($!B \lif
 !A_i$) lan $!A_k$ ($!B$) miturut modus ponens. Yen kita bisa mlaku
 saka $1$ nganti~$n$, lan saben wektu kita nemokake !!a{formula}~$!A_i$
-kang kalebu ing~$\Gamma$, dadi aksioma, utawa diarani langkah inferensi
-kang bener dening aturan inferensi, mula kabeh rerangken dianggep
+yaiku anggota~$\Gamma$, sawijining aksioma, utawa langkah inferensi
+kang bener miturut aturan inferensi, mula kabeh rerangken dianggep
 !!{derivation} kang bener.
 
 \begin{defn}[!!^{derivability}]
-!!{formula}~$!A$ \emph{bisa !!{derivable}} saka $\Gamma$, ditulis
+!!{formula}~$!A$ iku \emph{!!{derivable}} saka $\Gamma$, ditulis
 $\Gamma \Proves !A$, yen ana !!a{derivation} saka $\Gamma$ kang
-pungkasan ing $!A$.
+formula pungkasane $!A$.
 \end{defn}
 
 \begin{defn}[Teorema]
-!!^a{formula}~$!A$ iku \emph{teorema} yen ana !!a{derivation}
-saka himpunan kosong kang ngasilake~$!A$. Kita nulis $\Proves !A$
+!!^a{formula}~$!A$ iku \emph{teorema} yen $!A$ dadi formula pungkasan
+ing !!a{derivation} saka himpunan kosong. Kita nulis $\Proves !A$
 yen $!A$ iku teorema, lan $\Proves/ !A$ yen dudu teorema.
 \end{defn}
 

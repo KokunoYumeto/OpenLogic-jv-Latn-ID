@@ -1,0 +1,136 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{cardinals}{cardsasords}
+\olsection{Kardinal minangka Ordinal}
+
+Sajatiné, téori kardinal kita bakal kanthi terang-terangan
+nganggo téori ordinal. Tegesé, kardinal bakal kita tetepake
+minangka ordinal-ordinal tartamtu. Mliginé, kita menehi
+definisi iki:
+
+\begin{defn}\ollabel{defcardinalasordinal}
+Yèn $A$ bisa diurutaké becik, $\card{A}$ iku ordinal
+$\gamma$ paling cilik kang nyukupi $\cardeq{A}{\gamma}$. Kanggo
+sembarang ordinal $\gamma$, kita kandha yèn $\gamma$ iku
+\emph{kardinal} yen lan mung yen $\gamma = \card{\gamma}$.
+\end{defn}
+
+Kita lagi wae nganggo ukara “$A$ bisa diurutaké becik”.
+Kaya lumrahé ing matematika, tembung modal ing kéné mung cara
+ringkes kanggo nyatakake klaim eksistensial: kandha
+“$A$ bisa diurutaké becik” padha karo kandha
+“ana relasi kang ngurutaké $A$ kanthi becik”.
+
+Nanging \olref{defcardinalasordinal} nduwèni alangan. Kita
+péngin supaya \emph{saben} himpunan nduwèni ukuran, yaiku supaya
+$\card{A}$ ana kanggo saben~$A$. Déné definisi mau diwiwiti
+karo syarat: “\emph{Yèn} $A$ bisa diurutaké becik\ldots”.
+Yèn ana himpunan $A$ kang ora bisa diurutaké becik, definisi
+kita ora bakal nemtokaké objek~$\card{A}$.
+
+Mula, kanggo migunakaké \olref{defcardinalasordinal}, kita perlu
+jaminan yèn saben himpunan bisa diurutaké becik. Sayangé,
+jaminan iki ora ana ing~$\ZF$. Dadi, yèn kita arep nganggo
+\olref{defcardinalasordinal}, kita kudu nambah aksioma anyar,
+kayata:
+\begin{axiom}[Pengurutan Becik]
+Saben himpunan bisa diurutaké becik.
+\end{axiom}
+Apa Aksioma Pengurutan Becik iki bisa ditampa bakal kita rembug
+ing \olref[choice][]{chap}. Nanging wiwit saiki kita bakal
+nganggep aksioma iku kasedhiya. Kanthi aksioma iki, cukup
+gampang mbuktèkaké yèn kardinal (miturut
+\olref{defcardinalasordinal}) ana lan nduwèni sipat kang trep:
+
+\begin{lem}\ollabel{lem:CardinalsExist}
+Kanggo saben himpunan $A$:
+\begin{enumerate}
+	\item\ollabel{cardaexists} $\card{A}$ ana lan tunggal;
+	\item\ollabel{cardaapprox} $\cardeq{\card{A}}{A}$;
+	\item\ollabel{cardaidem} $\card{A}$ iku kardinal, yaiku
+	$\card{A} = \card{\card{A}}$;
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+Tetepna $A$. Miturut Pengurutan Becik, ana pengurutan becik
+$\tuple{A, R}$. Miturut
+\olref[ordinals][ordtype]{thmOrdinalRepresentation}, $\tuple{A,
+R}$ isomorfis karo ordinal tunggal, $\beta$. Dadi
+$\cardeq{A}{\beta}$. Kanthi Induksi Transfinit, ana ordinal
+$\gamma$ paling cilik kang tunggal lan nyukupi
+$\cardeq{A}{\gamma}$. Mula $\card{A}
+= \gamma$, kang mbuktekaké \olref{cardaexists} lan \olref{cardaapprox}.
+Kanggo mbuktekaké \olref{cardaidem}, wigatèkna yèn $\delta \in \gamma$
+ngakibataké $\cardless{\delta}{A}$ miturut pamilihan $\gamma$,
+mula uga $\cardless{\delta}{\gamma}$ amarga relasi padha cacahé
+iku relasi ekivalensi
+(\olref[sfr][siz][equ]{equinumerosityisequi}). Dadi $\gamma =
+\card{\gamma}$.
+%Dadi, kanggo kontradiksi, upamané ana ordinal $\delta \in \gamma$ kang nyukupi $\cardeq{\gamma}{\delta}$. Mula $\cardeq{\cardeq{A}{\gamma}}{\delta}$, saéngga $\cardeq{A}{\delta}$ miturut \olref[sfr][set][equ]{equinumerosityisequi}; iki mbantah pamilihan $\gamma$ minangka ordinal paling cilik kang nyukupi $\cardeq{A}{\gamma}$.
+\end{proof}
+
+Asil sabanjuré njamin Prinsip Cantor, lan uga pratelan liya.
+(Wigatèkna yèn kardinal oleh urutané saka ordinal, yaiku
+$\cardfont{a} < \cardfont{b}$ yen lan mung yen $\cardfont{a} \in \cardfont{b}$. Nalika
+nyatakaké iki, kita bakal nganggo aksara Fraktur kanggo objek
+kang wis dingertèni minangka kardinal. Iki cukup lumrah.
+Pilihan liya kang umum yaiku nganggo aksara Yunani,
+amarga kardinal uga ordinal, nanging milih aksara saka
+tengahing abjad, umpamané: $\kappa, \lambda$.):
+\begin{lem}\ollabel{lem:CardinalsBehaveRight}
+Kanggo sembarang himpunan $A$ lan $B$:
+\begin{align*}
+	\cardeq{A}{B} &\text{ yen lan mung yen } \card{A} = \card{B}\\
+	\cardle{A}{B} &\text{ yen lan mung yen } \card{A} \leq \card{B}\\
+	\cardless{A}{B}&\text{ yen lan mung yen } \card{A} < \card{B}
+\end{align*}
+\end{lem}
+
+\begin{proof}
+Kita bakal mbuktèkaké arah saka kiwa menyang tengen kanggo
+pratelan kapindho (kasus liya padha lan dadi latihan). Mula,
+gatekna diagram iki:
+\begin{center}
+	\begin{tikzpicture}
+	\node (nodea) {$A$};
+	\node[right = 6em of nodea] (nodeb) {$B$};
+	\node[below = 2em of nodea] (nodecarda) {$\card{A}$};
+	\node[below = 2em of nodeb] (nodecardb) {$\card{B}$};
+	\draw[->] (nodea)--(nodeb);
+	\draw[<->] (nodea)--(nodecarda);
+	\draw[<->] (nodeb)--(nodecardb);
+	\draw[->, dashed] (nodecarda)--(nodecardb);
+\end{tikzpicture}
+\end{center}
+Panah kang pucuké loro nuduhaké !!{bijection}s, kang anané
+dijamin déning \olref{lem:CardinalsExist}. Kanthi nganggep
+$\cardle{A}{B}$, ana !!a{injection} $A\to B$. Saiki,
+nututi panah saka $\card{A}$ menyang $A$, banjur menyang
+$B$, lan pungkasane menyang $\card{B}$, kita olèh
+!!a{injection} $\card{A} \to \card{B}$ (panah putus-putus).
+\end{proof}\noindent Kita uga bisa nganggo \olref{lem:CardinalsBehaveRight}
+kanggo mbuktèkaké manèh teorema Schr\"{o}der--Bernstein. Pratelané:
+yèn $\cardle{A}{B}$ lan $\cardle{B}{A}$, mula $\cardeq{A}{B}$. Iki wis
+kita nyatakaké minangka \olref[sfr][siz][sb]{thm:schroder-bernstein},
+nanging bukti kapisané---kanthi gawé kang ora sithik---ana ing
+\olref[sfr][infinite][card-sb]{sec}.
+Saiki gatekna:
+
+\begin{proof}[Bukti manèh Schr\"oder-Bernstein]
+Yèn $\cardle{A}{B}$ lan $\cardle{B}{A}$, mula $\card{A} \leq \card{B}$
+lan $\card{B} \leq \card{A}$ miturut \olref{lem:CardinalsBehaveRight}. Dadi
+$\card{A} = \card{B}$ lan $\cardeq{A}{B}$ miturut Trikotomi lan
+\olref{lem:CardinalsBehaveRight}.
+\end{proof}
+\noindent
+Sanadyan bukti iki prasaja banget, kanthi meneng-meneng bukti
+iki ngandelaké Panggantian (kanggo njamin
+\olref[ordinals][ordtype]{thmOrdinalRepresentation}) lan
+Pengurutan Becik (kanggo njamin \olref{lem:CardinalsBehaveRight}).
+Kosokbaliné, bukti ing \olref[sfr][infinite][card-sb]{sec} luwih
+mandiri (malah bisa ditindakake ing~$\Zminus$).
+
+\end{document}

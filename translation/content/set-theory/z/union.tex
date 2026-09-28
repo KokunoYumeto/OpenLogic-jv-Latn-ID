@@ -1,0 +1,29 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{z}{union}
+\olsection{Gabungan}
+
+\olref[sth][z][sep]{prop:intersectionsexist} wis menehi kita
+irisan. Nanging supaya gabungan saka sembarang himpunan ana,
+kita butuh aksioma liyane:
+
+\begin{axiom}[Gabungan] Kanggo sembarang himpunan $A$, himpunan
+$\bigcup A = \Setabs{x}{(\exists b \in A) x \in b}$ ana.
+\[
+	\forall A \exists U \forall x(x \in U \liff (\exists b \in A)x \in b)
+\]
+\end{axiom}
+
+Aksioma iki uga didhukung dening konsepsi kumulatif-iteratif.
+Upamane $A$ iku himpunan, mula $A$ kawangun ing sawenehing
+tataran $S$ (miturut \stageshier). Saben anggota $A$ wis
+kawangun \emph{sadurunge} $S$ (miturut \stagesacc); mula
+kanthi penalaran kang padha, saben anggota saka saben
+anggota $A$ uga kawangun sadurunge $S$. Dadi kabeh
+himpunan \emph{iku} wis kasedhiya sadurunge $S$ kanggo
+diwangun dadi sawijining himpunan ing $S$. Himpunan iku
+persis $\bigcup A$.
+
+\end{document}

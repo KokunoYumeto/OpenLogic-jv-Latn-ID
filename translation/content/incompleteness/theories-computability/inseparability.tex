@@ -1,0 +1,49 @@
+% Part: incompleteness
+% Chapter: theories-computability
+% Section: inseparability
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{tcp}{ins}
+
+\olsection{Ukara kang Bisa Dibuktekake lan Dibantah ing $\Th{Q}$ Ora Bisa
+  Dipisahake kanthi Komputabel}
+
+
+Upamana $\Th{\bar Q}$ iku himpunan ukara kang {\em negasine} bisa
+dibuktekake ing $\Th{Q}$, yaiku $\Th{\bar Q} = \Setabs{!A}{\Th{Q} \Proves
+  \lnot !A}$. Elinga yen himpunan $A$ lan $B$ kang ora irisan diarani
+ora bisa dipisahake kanthi komputabel yen ora ana himpunan komputabel
+$C$ saengga $A \subseteq C$ lan $B \subseteq \Complement{C}$.
+
+\begin{lem}
+$\Th{Q}$ lan $\Th{\bar Q}$ ora bisa dipisahake kanthi komputabel.
+\end{lem}
+
+\begin{proof}
+Upamana $C$ himpunan komputabel saengga $\Th{Q} \subseteq C$ lan
+$\Th{\bar Q} \subseteq \Complement{C}$. Upamana $R(x,y)$ iku relasi
+\begin{quote}
+$x$ ngodeake formula $!D(u)$ lan $!D(\num y)$ kalebu ing $C$.
+\end{quote}
+Kita bakal nuduhake yen $R(x,y)$ iku relasi komputabel universal, kang
+nuwuhake kontradiksi.
+
+Upamana $S(y)$ komputabel, direpresentasikake dening $!D_S(u)$ ing
+$\Th{Q}$. Mula
+\begin{eqnarray*}
+S(\num n) & \lif & \Th{Q} \Proves !D_S(\num n) \\
+& \lif & !D_S(\num n) \in C
+\end{eqnarray*}
+lan
+\begin{eqnarray*}
+\lnot S(\num n) & \lif & \Th{Q} \Proves \lnot !D_S(\num n) \\
+& \lif & !D_S(\num n) \in \Th{\bar Q} \\
+& \lif & !D_S(\num n) \not\in C
+\end{eqnarray*}
+Mula $S(y)$ ekuivalen karo $R(\#(!D_S(\num u)),y)$.
+\end{proof}
+
+\end{document}

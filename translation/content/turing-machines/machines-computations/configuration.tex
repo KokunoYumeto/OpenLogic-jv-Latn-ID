@@ -1,0 +1,123 @@
+% Part: computability
+% Chapter: machines-computations
+% Section: configuration
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{tur}{con}
+\olsection{Konfigurasi lan Komputasi}
+
+\begin{explain}
+Elinga nalika kita nelusuri konfigurasi mesin genep
+ing bagean sadurunge. Mekanisme khayalan kang dumadi
+saka pita, sirah maca-nulis, lan program mesin Turing
+sejatine mung cara intuisi kanggo nggambarake
+komputasi mesin Turing. Sacara formal, kita bisa
+netepake komputasi mesin Turing kanthi input tartamtu
+minangka runtutan \emph{konfigurasi}---lan konfigurasi
+iku dhewe dumadi saka runtutan simbol (kang cocog
+karo isi pita ing sawijining wektu komputasi),
+wilangan kang nuduhake panggonan sirah maca-nulis,
+lan sawijining kahanan. Kanthi iki, kita bisa
+netepake apa kang diitung mesin Turing~$M$
+nalika diwenehi input tartamtu.
+\end{explain}
+
+\begin{defn}[Konfigurasi]
+\emph{Konfigurasi} mesin Turing $M = \tuple{Q, \Sigma, q_0,
+\delta}$ yaiku tripel $\tuple{C, m, q}$ kanthi
+\begin{enumerate}
+\item $C \in \Sigma^*$ runtutan winates simbol saka $\Sigma$,
+\item $m \in \Nat$ wilangan $< \len{C}$, lan
+\item $q \in Q$
+\end{enumerate}
+Miturut intuisi, runtutan~$C$ yaiku isi pita
+(simbol kabeh kothak saka kothak paling kiwa
+nganti kothak pungkasan kang ora kosong utawa
+wis tau ditekani), $m$~yaiku nomer kothak
+kang lagi diwaca sirah maca-nulis (diwiwiti
+saka $0$ minangka nomer kothak paling kiwa),
+lan $q$ kahanan mesin saiki.
+\end{defn}
+
+\begin{explain}
+Input kang bisa diwenehake marang mesin Turing
+yaiku runtutan simbol, lumrahe runtutan kang
+ngode sawijining wilangan kanthi cara tartamtu.
+Konfigurasi wiwitan mesin Turing yaiku konfigurasi
+nalika kita miwiti mesin Turing kanggo ngolah
+input iku: pita ngemot panandha pucuk pita
+kang langsung disusul input ing kothak-kothak
+sisih tengene, sirah maca-nulis lagi maca
+kothak paling kiwa saka input (yaiku kothak
+ing sisih tengen panandha pucuk kiwa), lan
+mekanisme ana ing kahanan wiwitan~$q_0$
+kang wis ditemtokake.
+\end{explain}
+
+\begin{defn}[Konfigurasi wiwitan]
+\emph{Konfigurasi wiwitan} $M$ kanggo input
+$I \in \Sigma^*$ yaiku
+\[
+\tuple{\TMendtape \frown I, 1, q_0}.
+\]
+\end{defn}
+
+\begin{explain}
+% OLPL-146: Sumber beku nyebut input ing sisih kiwa panandha pucuk kiwa, nanging konfigurasi wiwitan lan andharan sadurunge nuduhake input ing sisih tengene.
+Simbol~$\frown$ nuduhake \emph{pangandhengan
+runtutan}---runtutan input diwiwiti langsung
+ing sisih tengen panandha pucuk kiwa.
+\end{explain}
+
+\begin{defn}
+Kita nyebut yen konfigurasi $\tuple{C, m, q}$
+\emph{ngasilake konfigurasi $\tuple{C', m', q'}$
+ing siji langkah} (miturut~$M$), yen lan mung yen
+\begin{enumerate}
+\item simbol kapangka-$m$ ing $C$ yaiku $\sigma$,
+\item himpunan instruksi $M$ nemtokake $\delta(q, \sigma) =
+  \tuple{q', \sigma', D}$,
+\item simbol kapangka-$m$ ing $C'$ yaiku $\sigma'$, lan
+\item
+\begin{enumerate}
+\item $D = L$ lan $m' = m - 1$ yen $m>0$, yen ora $m'=0$, utawa
+\item $D = R$ lan $m' = m + 1$, utawa
+\item $D = N$ lan $m' = m$,
+\end{enumerate}
+\item yen $m' = \len{C}$, mula $\len{C'} = \len{C} + 1$ lan simbol
+  kapangka-$m'$ ing $C'$ yaiku~$\TMblank$. Yen ora, $\len{C'}=\len{C}$.
+\item kanggo saben $i$ saengga $i < \len{C}$ lan $i \neq m$, $C'(i) = C(i)$,
+\end{enumerate}
+\end{defn}
+
+\begin{defn}\ollabel{defn:run-output}
+\emph{Lumakune $M$ kanthi input~$I$}
+yaiku runtutan konfigurasi $C_i$ saka $M$,
+kanthi $C_0$ konfigurasi wiwitan $M$
+kanggo input~$I$, lan saben $C_i$
+ngasilake $C_{i+1}$ ing siji langkah.
+
+Kita nyebut $M$ \emph{mandheg nalika nampa input $I$
+sawise $k$ langkah} yen $C_k =
+\tuple{C, m, q}$, simbol kapangka-$m$
+ing~$C$ yaiku~$\sigma$, lan $\delta(q,
+\sigma)$ ora ditegesi. Ing kahanan iku,
+\emph{output}~$M$ kanggo input~$I$ yaiku~$O$,
+ing ngendi $O$ runtutan simbol kang ora dipungkasi
+dening~$\TMblank$ lan $C = \TMendtape \concat O \concat \TMblank^j$
+kanggo sawijining~$j \in \Nat$. ($\TMblank^j$
+yaiku runtutan $j$ simbol $\TMblank$.)
+\end{defn}
+
+\begin{explain}
+Miturut definisi iki, output~$O$ saka~$M$
+mesthi dipungkasi simbol saliyane~$\TMblank$,
+utawa, yen ing wektu~$k$ kabeh pita diisi
+simbol~$\TMblank$ (kajaba simbol~$\TMendtape$
+paling kiwa), $O$~minangka runtutan kosong.
+\end{explain}
+
+\end{document}

@@ -1,0 +1,77 @@
+% Part: first-order-logic
+% Chapter: model-theory
+% Section: substructures
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{bas}{sub}
+\olsection{Sub\printtoken{p}{structure}}
+
+!!{domain} saka !!a{structure}~$\Struct{M}$
+bisa dadi subhimpunan saka ranah
+$\Struct{M'}$ liyane. Nanging
+$\Struct{M}$ prayogane mung dianggep
+"perangan" saka $\Struct{M'}$
+yen ora mung $\Domain{M}
+\subseteq \Domain{M'}$, nanging
+$\Struct{M}$ lan $\Struct{M'}$
+uga "sarujuk" ngenani carane
+menehi interpretasi marang
+simbol-simbol basa, paling
+ora ing perangan
+kang padha, yaiku~$\Domain{M}$.
+
+\begin{defn}
+\ollabel{defn:substructure}
+Yen !!{structure}s $\Struct M$
+lan $\Struct M'$ nganggo
+basa~$\Lang L$ kang padha,
+kita ngarani $\Struct M$
+\emph{sub!!{structure}}
+saka $\Struct M'$, lan
+$\Struct M'$ \emph{ekstensi}
+saka $\Struct M$, ditulis
+$\Struct M \substruct \Struct M'$,
+yen lan mung yen
+\begin{enumerate}
+\item $\Domain{M} \subseteq \Domain{M'}$,
+\item Kanggo saben konstanta $c \in \Lang L$,
+  $\Assign{c}{M} =
+    \Assign{c}{M'}$;
+\item Kanggo saben !!{function} kanthi $n$ panggonan,
+  $f \in \Lang L$,
+  $\Assign{f}{M}(a_1, \dots, a_n) = \Assign{f}{M'}(a_1, \dots, a_n)$
+  kanggo kabeh $a_1$, \dots, $a_n \in \Domain{M}$.
+\item Kanggo saben !!{predicate} kanthi $n$ panggonan,
+  $R \in \Lang L$, $\langle
+  a_1, \dots, a_n\rangle \in \Assign{R}{M}$
+  yen lan mung yen $\langle a_1, \dots,
+  a_n\rangle \in \Assign{R}{M'}$
+  kanggo kabeh $a_1$, \dots, $a_n \in
+  \Domain{M}$.
+\end{enumerate}
+\end{defn}
+
+\begin{rem}
+\ollabel{rem:substructure}
+Yen basa ora nduweni konstanta
+utawa !!{function}s, saben
+himpunan ora kosong $N
+\subseteq \Domain{M}$
+nemtokake sub!!{structure}~$\Struct{N}$
+saka $\Struct M$ kanthi
+!!{domain}~$\Domain{N} = N$,
+yen kita nemtokake $\Assign{R}{N} =
+\Assign{R}{M} \cap N^n$.
+Cathetan koreksi sumber OLPL-086:
+struktur ing buku iki mbutuhake
+ranah ora kosong, mula pilihan
+himpunan kosong ora menehi
+substruktur.
+\end{rem}
+
+% Apa ana kang perlu dibuktekake babagan iki? Tuladha?
+
+\end{document}

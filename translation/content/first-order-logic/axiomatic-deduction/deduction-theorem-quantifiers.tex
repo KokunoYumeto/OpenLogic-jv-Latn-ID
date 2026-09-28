@@ -1,0 +1,62 @@
+% Part: first-order-logic 
+% Chapter: axiomatic-deduction 
+% Section: deduction-theorem-quantifiers
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{axd}{ddq}
+
+\olsection{Teorema Deduksi mawa Kuantor}
+
+\begin{thm}[Teorema Deduksi]
+\ollabel{thm:deduction-thm-q} Yen $\Gamma \cup \{!A\} \Proves !B$,
+mula $\Gamma \Proves !A \lif !B$.
+\end{thm}
+
+\begin{proof}
+Kita lumaku maneh kanthi induksi miturut dawane !!{derivation} kang
+formula pungkasane $!B$ saka $\Gamma \cup \{!A\}$.
+
+Bukti kanggo kasus dhasar induksi padha karo bukti ing
+\olref[ded]{thm:deduction-thm}.
+
+Kanggo langkah induktif, upamana maneh yen !!{derivation} kang formula
+pungkasane $!B$ saka $\Gamma \cup \{!A\}$ nduweni langkah
+pungkasan~$!B$ kang dhasare aturan inferensi. Yen aturan inferensi
+kang dadi dhasar iku modus ponens, kita lumaku kaya ing bukti
+\olref[ded]{thm:deduction-thm}. Yen aturan kasebut \QR, kita
+ngerti yen $!B \ident !C \lif \lforall[x][!D(x)]$ lan !!a{formula}
+awujud $!C \lif !D(a)$ muncul luwih dhisik ing !!{derivation}, kanthi
+$a$ ora muncul ing~$!C$, $!A$, utawa $\Gamma$. Dadi, kita duwe
+\begin{align*}
+  \Gamma \cup \{!A\} & \Proves !C \lif !D(a),\\
+  \intertext{lan hipotesis induksi lumaku, mula kita duwe}
+    \Gamma & \Proves !A \lif (!C \lif !D(a)).\\
+  \intertext{Miturut}
+  & \Proves (!A \lif (!C \lif !D(a))) \lif ((!A \land !C) \lif !D(a))\\
+  \intertext{lan modus ponens, kita entuk}
+  \Gamma & \Proves (!A \land !C) \lif !D(a).\\
+  \intertext{Amarga syarat eigenvariabel isih dicukupi, kita bisa nambahake langkah marang !!{derivation} iki kanthi dhasar \QR, lan entuk}
+    \Gamma & \Proves (!A \land !C) \lif \lforall[x][!D(x)].\\
+    \intertext{Kita uga duwe}
+    & \Proves ((!A \land !C) \lif \lforall[x][!D(x)]) \lif (!A \lif (!C \lif \lforall[x][!D(x)])),\\
+    \intertext{mula miturut modus ponens,}
+    \Gamma & \Proves !A \lif (!C \lif \lforall[x][!D(x)]),
+\end{align*}
+yaiku $\Gamma \Proves !A \lif !B$. Cathetan koreksi sumber OLPL-029
+lan OLPL-030: siji kurung panutup kang ilang ing formula implikasi
+sadurunge dibalekake supaya formula kasebut imbang; kesimpulan pungkasan
+uga dibalekake dadi implikasi saka A menyang B, kaya asil ing baris
+sadurunge.
+
+Kasus nalika $!B$ nduweni dhasar aturan \QR, nanging awujud
+$\lexists[x][!D(x)] \lif !C$, ditinggalake minangka gladhen.
+\end{proof}
+
+\begin{prob}
+  Rampungna bukti \olref[fol][axd][ddq]{thm:deduction-thm-q}.
+\end{prob}
+
+\end{document}

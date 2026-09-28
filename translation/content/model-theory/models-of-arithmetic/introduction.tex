@@ -1,0 +1,145 @@
+% Part: model-theory
+% Chapter: models-of-arithmetic
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{mar}{int}
+\section{Pambuka}
+
+\emph{Model standar} aritmetika
+iku !!{structure}~$\Struct{N}$
+kanthi $\Domain{N} = \Nat$,
+ing ngendi $\Obj{0}$,
+$\prime$, $+$, $\times$,
+lan $<$ diinterpretasi
+kaya kang lumrah.
+Tegesé, $\Obj{0}$ iku $0$,
+$\prime$ iku fungsi penerus,
+$+$ diinterpretasi minangka
+panjumlahan lan $\times$
+minangka ping-pingan
+wilangan ing~$\Nat$.
+Luwih cetha,
+\begin{align*}
+  \Assign{\Obj{0}}{N} & = 0\\
+  \Assign{\prime}{N}(n) & = n + 1\\
+  \Assign{+}{N}(n, m) & = n + m\\
+  \Assign{\times}{N}(n, m) & = nm
+\end{align*}
+Mesthi ana struktur-struktur
+kanggo $\Lang{L_A}$ kang
+ranahé dudu~$\Nat$.
+Upamane, kita bisa njupuk
+$\Struct{M}$ kanthi ranah
+$\Domain{M} = \{a\}^*$
+(urutan winates saka siji
+simbol~$a$, yaiku
+$\emptyset$, $a$, $aa$,
+$aaa$, \dots), lan
+interpretasi iki:
+\begin{align*}
+  \Assign{\Obj{0}}{M} & = \emptyset\\
+  \Assign{\prime}{M}(s) & = s \concat a\\
+  \Assign{+}{M}(a^n, a^m) & = a^{n + m}\\
+  \Assign{\times}{M}(a^n, a^m) & = a^{nm}
+\end{align*}
+Cathetan koreksi sumber OLPL-094:
+rong operasi pungkasan nampa
+urutan saka ranah struktur,
+dene eksponen nyatakake
+dawane urutan; sumber nulis
+inpute minangka angka.
+Rong struktur iki sajatiné
+padha: bedane mung
+!!{element}s saka
+!!{domain}s-e, dudu
+carane !!{element}s
+saka !!{domain}s iku
+sesambungan siji lan
+sijiné lumantar
+fungsi interpretasi.
+Kita ngarani rong
+!!{structure}s iki
+\emph{isomorfis}.
+
+Akibat gampang saka teorema
+kompaktitas yaiku yen sembarang
+teori kang bener ing~$\Struct{N}$
+uga duwe model kang ora isomorfis
+karo~$\Struct{N}$.
+Struktur kaya mangkono
+diarani \emph{nonstandar}.
+Kang narik kawigaten,
+!!{element}s saka model standar
+(yaiku $\Struct{N}$, lan uga
+kabeh !!{structure}s kang
+isomorfis karo iku)
+kabeh dadi nilai angka
+standar~$\num{n}$, yaiku
+\[
+\Domain{N} = \Setabs{\Value{\num{n}}{N}}{n \in \Nat}
+\]
+Nanging ora kaya mangkono
+ing model nonstandar:
+yen $\Struct{M}$ nonstandar,
+mula ana paling ora siji
+$x \in \Domain{M}$ saéngga
+$x \neq \Value{\num{n}}{M}$
+kanggo saben~$n$.
+
+Unsur-unsur nonstandar iki
+narik kawigaten: bisa dianggep
+minangka wilangan asli
+tanpa wates. Nanging
+anane uga nerangake,
+ing sawijine teges,
+gejala ora-komplet.
+Gatekna contone pratelan
+konsistensi aritmetika Peano,
+$\OCon[\Th{PA}]$, yaiku
+$\lnot
+\lexists[x][\OPrf[\Th{PA}](x, \gn{\lfalse})]$.
+Amarga $\Th{PA}$ ora
+mbuktekake $\OCon[\Th{PA}]$
+utawa $\lnot \OCon[\Th{PA}]$,
+salah siji saka loro iku
+bisa ditambahake marang
+$\Th{PA}$ tanpa
+ngrusak konsistensi.
+Amarga $\Th{PA}$
+konsisten,
+$\Sat{N}{\OCon[\Th{PA}]}$,
+lan mula
+$\Sat/{N}{\lnot
+  \OCon[\Th{PA}]}$.
+Dadi $\Struct{N}$
+\emph{dudu} model saka
+$\Th{PA}
+\cup \{\lnot \OCon[\Th{PA}]\}$,
+lan kabeh modele
+kudu nonstandar.
+Model saka
+$\Th{PA} \cup
+\{\lnot \OCon[\Th{PA}]\}$
+kudu ngemot sawenehing
+!!{element} kang dadi
+saksi supaya
+$\lexists[x][\OPrf[\Th{PA}](x, \gn{\lfalse})]$
+bener, yaiku nomer
+G\"odel saka !!a{derivation}
+kontradiksi saka~$\Th{PA}$.
+Cathetan koreksi sumber OLPL-095:
+predikat bukti ing ukara
+eksistensial iki kudu
+ngemot argumen saksi kang
+wis diiket kuantor.
+!!a{element} kaya mangkono
+ora bisa standar---amarga
+$\Th{PA} \Proves \lnot
+\OPrf[\Th{PA}](\num{n}, \gn{\lfalse})$
+kanggo saben~$n$.
+
+\end{document}

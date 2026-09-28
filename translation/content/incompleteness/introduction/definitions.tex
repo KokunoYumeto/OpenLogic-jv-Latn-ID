@@ -1,0 +1,408 @@
+% Part: incompleteness
+% Chapter: introduction
+% Section: definitions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{int}{def}
+
+\olsection{Definisi}
+
+Kanggo nindakake proyek Hilbert kang arep
+ngformalkan matematika lan nuduhake yen
+formalisasi iku konsisten lan jangkep,
+langkah kapisan yaiku milih basa, kerangka
+logis, lan sistem aksioma. Kanggo ancas kita,
+upamane matematika bisa diformalkan ing basa
+orde kapisan. Tegese, ana himpunan !!{constant}s,
+!!{function}s, lan !!{predicate}s kang, bebarengan
+karo panggandheng lan kuantor logika orde kapisan,
+ngidini kita nyatakake pratelan matematika.
+Akeh wong sarujuk yen basa kaya mangkono ana:
+basa teori himpunan, kang mung nduwé $\in$
+minangka simbol nonlogis. Sepisanan, pratelan
+yen basa kang prasaja iku bisa nyatakake akèh
+banget bab mesthi katon ora masuk akal; perlu
+pakaryan kang akèh kanggo netepake yen meh
+kabeh matematika bisa dinyatakake nganggo
+kosakata kang winates iki. Supaya prasaja,
+saiki kita watesi rembugan marang aritmetika,
+yaiku pérangan matematika kang ngurusi
+bilangan asli~$\Nat$. Basa kang lumrah kanggo
+nyatakake fakta aritmetika yaiku~$\Lang L_A$.
+$\Lang L_A$ ngemot siji !!{predicate} rong papan~$<$,
+siji !!{constant}~$\Obj 0$, siji !!{function}
+siji papan~$\prime$, lan loro !!{function}s
+rong papan~$+$ lan~$\times$.
+
+\begin{defn}
+Himpunan !!{sentence}s~$\Gamma$ diarani
+\emph{teori} yen katutup tumrap akibat semantis,
+yaiku yen $\Gamma = \Setabs{!A}{\Gamma \Entails
+!A}$.
+\end{defn}
+
+Ana rong cara gampang kanggo netepake teori.
+Cara kapisan yaiku minangka himpunan !!{sentence}s
+kang bener ing sawijining !!{structure}. Tuladhane,
+gatekna !!{structure} kanggo $\Lang L_A$ kang
+!!{domain}e yaiku~$\Nat$ lan kabeh simbol
+nonlogis diinterpretasi kaya kang lumrah.
+
+\begin{defn}\ollabel{def:standard-model}
+\emph{Model baku aritmetika} yaiku
+!!{structure}~$\Struct N$ kang ditegesi kaya mangkene:
+\begin{enumerate}
+\item $\Domain N = \Nat$
+\item $\Assign{\Obj 0}{N} = 0$
+\item $\Assign{\Obj \prime}{N}(n) = n + 1$ kanggo kabeh $n \in \Nat$
+\item $\Assign{\Obj +}{N}(n, m) = n + m$ kanggo kabeh $n, m \in \Nat$
+\item $\Assign{\Obj \times}{N}(n, m) = n\cdot m$ kanggo kabeh $n, m \in \Nat$
+\item $\Assign{\Obj <}{N} = \Setabs{\tuple{n, m}}{n \in \Nat, m \in
+  \Nat, n < m}$
+\end{enumerate}
+\end{defn}
+
+Gatekna bédane `$\times$' lan `$\cdot$':
+$\times$ iku simbol ing basa aritmetika.
+Mesthi wae, simbol iku dipilih supaya
+ngelingake kita marang perkalian, nanging
+$\times$ dudu operasi perkalian; iku simbol
+fungsi rong papan (sacara resmi, $\Obj f^2_1$).
+Déné $\cdot$~\emph{pancen} fungsi perkalian lumrah.
+Yen ana tulisan kaya $n \cdot m$, tegesé asil
+perkalian bilangan $n$ lan~$m$; yen ana tulisan
+kaya $x \times y$, kang dirembug yaiku suku
+ing basa aritmetika. Ing model baku, simbol
+fungsi~$\times$ diinterpretasi minangka fungsi
+$\cdot$ ing bilangan asli. Kanggo panjumlahan,
+kita nggunakake $+$ minangka simbol fungsi
+ing basa aritmetika lan uga minangka fungsi
+panjumlahan ing bilangan asli. Ing kene konteks
+kang nemtokake tegesé.
+
+\begin{defn}
+Teori \emph{aritmetika bener} yaiku himpunan
+!!{sentence}s kang dicukupi ing model baku
+aritmetika, yaiku
+\[
+\Th{TA} = \Setabs{!A}{\Sat{N}{!A}}.
+\]
+\end{defn}
+
+$\Th{TA}$ iku teori, amarga yen
+$\Th{TA} \Entails !A$, $!A$ dicukupi ing
+saben !!{structure} kang nyukupi~$\Th{TA}$.
+Amarga $\Sat{N}{\Th{TA}}$, mula
+$\Sat{N}{!A}$, dadi $!A \in \Th{TA}$.
+
+Cara liyane kanggo netepake teori~$\Gamma$
+yaiku minangka himpunan !!{sentence}s kang
+dadi akibat semantis saka himpunan ukara~$\Gamma_0$.
+Ing kahanan iki, $\Gamma$ iku ``panutupan''
+$\Gamma_0$ tumrap akibat semantis. Netepake
+teori kanthi cara iki mung migunani yen
+$\Gamma_0$ ditemtokake kanthi cetha, umpamane
+!!{element}s saka~$\Gamma_0$ didhaptar.
+Paling ora, $\Gamma_0$ kudu bisa diputusake,
+yaiku kudu ana tes komputabel kanggo mutusake
+apa !!a{sentence} kalebu unsur~$\Gamma_0$
+utawa ora. !!{sentence}s ing~$\Gamma_0$
+diarani \emph{aksioma} tumrap~$\Gamma$,
+dene $\Gamma$ diarani \emph{diaksiomatisasi}
+dening~$\Gamma_0$.
+
+\begin{defn}
+Teori~$\Gamma$ \emph{diaksiomatisasi}
+dening~$\Gamma_0$ yen lan mung yen
+\[
+\Gamma = \Setabs{!A}{\Gamma_0 \Entails !A}
+\]
+\end{defn}
+
+\begin{defn}
+Teori $\Th{Q}$ kang diaksiomatisasi dening
+ukara-ukara ing ngisor iki dikenal minangka
+``$\Th{Q}$ Robinson'' lan dadi teori
+aritmetika kang prasaja banget.
+\begin{align*}
+& \lforall[x][\lforall[y][(\eq[x'][y'] \lif \eq[x][y])]] \tag{$!Q_1$}\\
+& \lforall[x][\eq/[\Obj 0][x']] \tag{$!Q_2$}\\
+& \lforall[x][(\eq[x][\Obj 0] \lor \lexists[y][\eq[x][y']])] \tag{$!Q_3$}\\
+& \lforall[x][\eq[(x + \Obj 0)][x]] \tag{$!Q_4$}\\
+& \lforall[x][\lforall[y][\eq[(x + y')][(x + y)']]] \tag{$!Q_5$}\\
+& \lforall[x][\eq[(x \times \Obj 0)][\Obj 0]] \tag{$!Q_6$}\\
+& \lforall[x][\lforall[y][\eq[(x \times y')][((x \times y) + x)]]] \tag{$!Q_7$}\\
+& \lforall[x][\lforall[y][(x < y \liff \lexists[z][\eq[(z' + x)][y]])]] \tag{$!Q_8$}
+\end{align*}
+Himpunan !!{sentence}s $\{!Q_1, \dots, !Q_8\}$
+iku aksioma $\Th{Q}$, mula $\Th{Q}$ ngemot
+kabeh !!{sentence}s kang dadi akibat semantise:
+\[
+\Th{Q} = \Setabs{!A}{\{!Q_1, \dots, !Q_8\} \Entails !A}.
+\]
+\end{defn}
+
+\begin{defn}
+Upamane $!A(x)$ iku !!a{formula} ing $\Lang L_A$
+kanthi variabel bebas~$x$ lan $y_1$, \dots, $y_n$.
+Mula saben !!{sentence} kanthi wujud
+\[
+\lforall[y_1][\dots\lforall[y_n][((!A(\Obj 0) \land \lforall[x][(!A(x)
+\lif !A(x'))]) \lif \lforall[x][!A(x)])]]
+\]
+iku instansiasi saka \emph{skema induksi}.
+
+\emph{Aritmetika Peano}~$\Th{PA}$ yaiku teori
+kang diaksiomatisasi dening aksioma $\Th{Q}$
+bebarengan karo kabeh instansiasi skema induksi.
+\end{defn}
+
+\begin{explain}
+Saben instansiasi skema induksi bener
+ing~$\Struct{N}$. Iki paling gampang dideleng
+yen !!{formula}~$!A$ mung nduwé siji
+!!{variable} bebas~$x$. Banjur $!A(x)$
+netepake subhimpunan~$X_{!A}$ saka~$\Nat$
+ing~$\Struct{N}$. $X_{!A}$ iku himpunan
+kabeh~$n \in \Nat$ saengga
+$\Sat{N}{!A(x)}[s]$ nalika $s(x) = n$.
+Instansiasi skema induksi kang cocog yaiku
+\[
+((!A(\Obj 0) \land \lforall[x][(!A(x) \lif !A(x'))]) \lif 
+  \lforall[x][!A(x)]).
+\]
+Yen antesedene bener ing~$\Struct{N}$,
+mula $0 \in X_{!A}$ lan, saben
+$n \in X_{!A}$, uga $n+1$ kalebu.
+Amarga $0 \in X_{!A}$, kita entuk
+$1 \in X_{!A}$. Saka $1 \in X_{!A}$
+kita entuk $2 \in X_{!A}$, lan sateruse.
+Dadi kanggo saben $n \in \Nat$,
+$n \in X_{!A}$. Iki ateges
+$\lforall[x][!A(x)]$ dicukupi ing~$\Struct{N}$.
+\end{explain}
+
+$\Th{Q}$ lan $\Th{PA}$ loro-lorone teori
+kang diaksiomatisasi. Pitakon gedhene,
+sepira kuwat teori-teori iku? Umpamane,
+apa $\Th{PA}$ bisa mbuktekake kabeh
+kabeneran ngenani~$\Nat$ kang bisa
+dinyatakake ing~$\Lang L_A$? Luwih
+cetha maneh, apa aksioma $\Th{PA}$
+bisa mutusake kabeh pitakon kang bisa
+dirumusake ing~$\Lang L_A$?
+
+Pitakon iki uga bisa diucapake mangkene:
+Apa $\Th{PA} = \Th{TA}$? Mesthi wae
+$\Th{TA}$ bisa mbuktekake (yaiku ngemot)
+kabeh kabeneran ngenani~$\Nat$, lan bisa
+mutusake kabeh pitakon kang bisa dirumusake
+ing~$\Lang L_A$. Sebabe, yen $!A$ iku
+!!a{sentence} ing $\Lang L_A$, mesthi
+$\Sat{N}{!A}$ utawa $\Sat{N}{\lnot !A}$,
+mula $\Th{TA} \Entails !A$ utawa
+$\Th{TA} \Entails \lnot !A$. Teori
+kaya mangkono diarani \emph{!!{complete}}.
+
+\begin{defn}
+Teori $\Gamma$ diarani \emph{!!{complete}}
+yen lan mung yen kanggo saben
+!!{sentence}~$!A$ ing basane,
+$\Gamma \Entails !A$ utawa
+$\Gamma \Entails \lnot !A$.
+\end{defn}
+
+\begin{explain}
+Miturut Teorema Kelengkapan,
+$\Gamma \Entails !A$ yen lan mung yen
+$\Gamma \Proves !A$. Dadi $\Gamma$
+jangkep yen lan mung yen kanggo saben
+!!{sentence}~$!A$ ing basane,
+$\Gamma \Proves !A$ utawa
+$\Gamma \Proves \lnot !A$.
+\end{explain}
+
+Pitakon liyane yaiku: Apa ana prosedur komputasional
+kanggo mriksa apa !!a{sentence} kalebu~$\Th{TA}$,
+$\Th{PA}$, utawa malah mung~$\Th{Q}$?
+Iki bisa digawe luwih cetha kanthi netepake
+kapan sawijining himpunan (umpamane himpunan
+!!{sentence}s) iku !!{decidable}.
+
+\begin{defn}
+Himpunan $X$ diarani \emph{!!{decidable}}
+yen lan mung yen ana prosedur komputasional
+kang, kanggo input~$x$, ngasilake~$1$
+yen $x \in X$ lan $0$ yen ora.
+\end{defn}
+
+Dadi pitakone: Apa $\Th{TA}$
+($\Th{PA}$, $\Th{Q}$) iku !!{decidable}?
+
+Wangsulan kanggo kabeh pitakon iki yaiku: ora.
+Ora siji wae saka teori-teori iki kang bisa
+diputusake. Nanging kedadeyan iki ora mung
+kanggo teori-teori iki. Sejatine, \emph{sembarang}
+teori kang nyukupi syarat tartamtu kena asil
+kang padha. Salah sawijining syarat iku,
+kang dicukupi dening $\Th{Q}$ lan $\Th{PA}$,
+yaiku teori kasebut diaksiomatisasi dening
+himpunan aksioma kang !!a{decidable}.
+
+\begin{defn}
+Teori diarani \emph{!!{axiomatizable}}
+yen diaksiomatisasi dening himpunan
+aksioma kang !!a{decidable}.
+\end{defn}
+
+\begin{ex}
+Saben teori kang diaksiomatisasi dening himpunan
+winates !!{sentence}s iku !!{axiomatizable},
+amarga saben himpunan winates iku !!{decidable}.
+Mula, tuladhane, $\Th{Q}$ iku !!{axiomatizable}.
+
+Teori kang diaksiomatisasi nganggo skema kaya~$\Th{PA}$
+uga !!{axiomatizable}. Kanggo mriksa apa $!B$
+kalebu aksioma~$\Th{PA}$, yaiku ngitung
+fungsi $\Char{X}$ kang nduwé
+$\Char{X}(!B) = 1$ yen $!B$ aksioma~$\Th{PA}$
+lan $= 0$ yen ora, kita bisa nindakake iki:
+Kapisan, priksa apa $!B$ salah siji aksioma~$\Th{Q}$.
+Yen iya, wangsulane ``ya'' lan nilaine
+$\Char{X}(!B) = 1$. Yen ora, priksa apa iku
+instansiasi skema induksi. Iki bisa ditindakake
+kanthi sistematis; ing kene cara kang paling
+gampang dideleng kaya mangkene: Saben instansiasi
+skema induksi diwiwiti sawetara kuantor universal,
+banjur sub-!!{formula} kang wujude implikasi.
+Konsekuen implikasi iku
+$\lforall[x][!A(x, y_1, \dots, y_n)]$, ing ngendi
+$x$ lan $y_1$, \dots, $y_n$ iku kabeh variabel
+bebas saka~$!A$, dene kuantor-kuantor wiwitan
+ing~$!B$ ngiket variabel~$y_1$, \dots,~$y_n$.
+Sawisé ngangkat~$!A$ iki lan mriksa yen variabel
+bebase cocog karo variabel kang diiket kuantor
+universal ing ngarep lan~$\lforall[x]$,
+kita mriksa apa anteseden implikasi iku cocog karo
+\[
+!A(\Obj 0, y_1, \dots, y_n) \land \lforall[x][(!A(x, y_1, \dots, y_n)
+\lif !A(x', y_1, \dots, y_n))]
+\]
+Yen cocog, $!B$ iku instansiasi skema induksi;
+yen ora cocog, $!B$ dudu instansiasi iku.
+\end{ex}
+
+Kanggo mangsuli pitakon iki---lan pitakon
+kang luwih umum ngenani teori endi kang jangkep
+utawa bisa diputusake---definisi ing ngisor iki
+uga migunani. Elinga yen himpunan $X$ iku
+!!{enumerable} yen lan mung yen kosong utawa
+ana fungsi~$f \colon \Nat \to X$ kang
+!!a{surjective}. Fungsi kaya mangkono diarani
+enumerasi saka~$X$.
+
+\begin{defn}
+Himpunan $X$ diarani \emph{!!{computably enumerable}}
+(disingkat !!{c.e.}) yen lan mung yen kosong
+utawa nduwé enumerasi komputabel.
+\end{defn}
+
+Saliyane !!{axiomatizability}, syarat liyane
+kanggo teori kang kena teorema-teorema ora
+jangkep yaiku cukup kuwat kanggo mbuktekake
+fakta dhasar ngenani fungsi komputabel lan
+relasi !!{decidable}. Kang diarani ``fakta
+dhasar'' yaiku !!{sentence}s kang nyatakake
+nilai fungsi komputabel kanggo saben argumene.
+Kang diarani ``cukup kuwat'' yaiku teori kasebut
+ngemot ukara-ukara iki minangka teoremane.
+Tuladhane, gatekna fungsi komputabel kang lumrah:
+panjumlahan. Nilai $+$ kanggo argumen $2$
+lan $3$ yaiku~$5$, yaiku $2+3 = 5$.
+Ukara ing basa aritmetika kang nyatakake yen
+nilai $+$ kanggo argumen $2$ lan $3$ iku~$5$
+yaiku: $(\num{2} + \num{3}) = \num{5}$.
+Lan, umpamane, $\Th{Q}$ mbuktekake ukara iki.
+Luwih umum, kanggo saben fungsi komputabel
+$f(x_1, x_2)$, kita kepengin ana
+!!a{formula}~$!A_f(x_1, x_2, y)$ ing~$\Lang{L_A}$
+saengga $\Th{Q} \Proves !A_f(\num{n_1},
+\num{n_2}, \num{m})$ yen $f(n_1, n_2) = m$.
+Kanthi mangkono, $\Th{Q}$ mbuktekake yen
+nilai~$f$ kanggo argumen $n_1$, $n_2$
+iku~$m$. Malah kita mbutuhake luwih saka iku:
+teori iku uga kudu mbuktekake yen ora ana
+bilangan liya kang dadi nilai~$f$ kanggo
+argumen $n_1$,~$n_2$. Bab kang padha uga
+kanggo relasi !!{decidable}. Iki bakal
+ditegesi kanthi cetha ing rong definisi
+ing ngisor iki.
+
+\begin{defn}
+!!{formula}~$!A(x_1, \dots, x_k, y)$
+\emph{!!{represents}} fungsi
+$f\colon \Nat^k \to \Nat$ ing~$\Gamma$
+yen lan mung yen saben $f(n_1, \dots, n_k) = m$,
+mangka
+\begin{enumerate}
+\item $\Gamma \Proves !A(\num{n_1}, \dots, \num{n_k}, \num{m})$, lan
+\item $\Gamma \Proves \lforall[y](!A(\num{n_1}, \dots, \num{n_k},
+y) \lif y = \num{m})$.
+\end{enumerate}
+\end{defn}
+
+\begin{defn}
+% OLPL-167: Definisi sumber kanggo representasi relasi nggunakake Gamma ing klausa bukti nanging ora ngenalake parameter "ing Gamma" kaya ing definisi fungsi sadurunge.
+!!{formula}~$!A(x_1, \dots, x_k)$
+\emph{!!{represents}} relasi
+$R \subseteq \Nat^k$ yen lan mung yen,
+\begin{enumerate}
+\item saben $R(n_1, \dots, n_k)$ bener,
+  $\Gamma \Proves !A(\num{n_1},
+\dots, \num{n_k})$, lan
+\item saben $R(n_1, \dots, n_k)$ ora bener,
+  $\Gamma \Proves \lnot
+!A(\num{n_1}, \dots, \num{n_k})$.
+\end{enumerate}
+\end{defn}
+
+Teori diarani ``cukup kuwat'' supaya
+teorema-teorema ora jangkep bisa ditrapake
+yen teori iku !!{represents} kabeh fungsi
+komputabel lan kabeh relasi !!{decidable}.
+$\Th{Q}$~lan perluasane nyukupi syarat iki,
+nanging kita isih perlu wektu kanggo netepake
+iku---iki fakta kang ora prasaja ngenani apa
+kang bisa dibuktekake dening $\Th{Q}$,
+lan angel dituduhake amarga $\Th{Q}$ mung
+nduwé sithik aksioma minangka landhesan
+mbuktekake kabeh fakta kasebut. Nanging
+$\Th{Q}$ iku teori kang ringkih banget.
+Mula sanadyan angel mbuktekake yen
+$\Th{Q}$ nggambarake kabeh fungsi komputabel,
+akeh teori kang narik kawigaten luwih
+kuwat tinimbang~$\Th{Q}$, yaiku bisa
+mbuktekake luwih akeh tinimbang $\Th{Q}$.
+Yen $\Th{Q}$ mbuktekake sawijining bab,
+teori kang luwih kuwat uga bisa; amarga
+$\Th{Q}$ nggambarake kabeh fungsi komputabel,
+saben teori kang luwih kuwat uga bisa.
+Iki ateges akeh teori kang narik kawigaten
+nyukupi syarat teorema-teorema ora jangkep.
+Dadi upaya kita kang angel iki bakal ana
+asilé, amarga nuduhake yen teorema-teorema
+ora jangkep ditrapake marang akèh teori.
+Mesthi wae, saben teori kang arep
+ngformalkan ``kabeh matematika'' kudu
+mbuktekake kabeh kang dibuktekake
+dening $\Th{Q}$, amarga paling ora teori
+iku kudu bisa nyakup asil komputasi dhasar.
+Mula saben teori kang bisa dadi calon
+teori kanggo ``kabeh matematika'' uga
+kena teorema-teorema ora jangkep.
+
+
+\end{document}

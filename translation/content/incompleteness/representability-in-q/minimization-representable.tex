@@ -1,0 +1,261 @@
+% Part: incompleteness
+% Chapter: representability-in-q
+% Section: minimization-representable
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{req}{min}
+\olsection{Panggolekan Tanpa Wates Reguler Representabel ing $\Th{Q}$}
+
+Ayo nimbang panggolekan tanpa wates. Upamana $g(x, z)$ reguler lan
+representabel ing $\Th{Q}$, upamane dening !!{formula}~$!A_g(x, z, y)$.
+Tetepna $f$ ditegesi dening $f(z) = \umin{x}{[g(x, z) = 0]}$. Kita
+arep nemokake !!a{formula}~$!A_f(z, y)$ kang merepresentasikake~$f$.
+Biji~$f(z)$ iku bilangan~$x$ kang (a) nyukupi $g(x, z) = 0$ lan (b)
+paling cilik ing antarane bilangan kang nyukupi iki, yaiku kanggo
+saben $w < x$, $g(w, z) \neq 0$. Mula pilihan kang alamiah yaiku:
+\[
+!A_f(z,y) \ident !A_g(y, z, \Obj 0) \land \lforall[w][(w < y \lif \lnot
+  !A_g(w, z, \Obj 0))].
+\]
+Ing kasus umum, mesthi wae kita kudu ngganti $z$ karo
+$z_0$, \dots, $z_k$.
+
+Bukti iki maneh mbutuhake sawetara lema ngenani perkara kang
+bisa dibuktekake dening $\Th{Q}$.
+
+\begin{lem}
+\ollabel{lem:succ} Kanggo saben !!{constant}~$a$ lan saben bilangan
+asli~$n$,
+\[
+\Th{Q} \Proves \eq[(a' + \num n)][(a + \num n)'].
+\]
+\end{lem}
+
+\begin{proof}
+Buktine, kaya lumrahe, nganggo induksi marang $n$. Ing kasus dhasar,
+$n = 0$, kita kudu nuduhake yen $\Th{Q}$ mbuktekake
+$\eq[(a' + \Obj 0)][(a + \Obj 0)']$. Nanging kita nduweni:
+\begin{align}
+  \Th{Q} & \Proves \eq[(a' + \Obj 0)][a'] \quad \text{miturut aksioma $Q_4$}
+  \ollabel{step1}\\
+  \Th{Q} & \Proves  \eq[(a + \Obj 0)][a] \quad \text{miturut aksioma $Q_4$}
+  \ollabel{step2} \\
+  \Th{Q} & \Proves \eq[(a + \Obj 0)'][a'] \quad \text{miturut \olref{step2}}
+  \ollabel{step3} \\
+  \Th{Q} & \Proves \eq[(a' + \Obj 0)][(a + \Obj 0)'] \quad
+  \text{miturut \olref{step1} lan \olref{step3}}\notag
+\end{align}
+Ing langkah induksi, kita bisa nganggep wis nuduhake yen $\Th{Q}
+\Proves \eq[(a' + \num n)][(a + \num n)']$. Amarga
+$\num{n+1}$ iku $\num{n}'$, kita kudu nuduhake yen $\Th{Q}$
+mbuktekake $\eq[(a' + \num{n}')][(a + \num{n}')']$. Kita nduweni:
+\begin{align}
+  \Th{Q} & \Proves \eq[(a' + \num n')][(a' + \num n)'] \quad
+  \text{miturut aksioma $!Q_5$} \ollabel{step5}\\
+  \Th{Q} & \Proves \eq[(a' + \num n')][(a + \num n')'] \quad
+  \text{hipotesis induksi} \ollabel{step6}\\
+  \Th{Q} & \Proves \eq[(a' + \num n)'][(a + \num n')'] \quad
+  \text{miturut \olref{step5} lan \olref{step6}.} \notag
+\end{align}
+\end{proof}
+
+Perlu dielingake maneh yen iki luwih ringkih tinimbang nyatakake yen
+$\Th{Q}$ mbuktekake $\lforall[x][\lforall[y][(x' + y) = (x + y)']]$.
+Sanajan !!{sentence} iki bener ing~$\Struct{N}$, $\Th{Q}$ ora
+mbuktekake.
+
+\begin{lem}
+\ollabel{lem:less-zero}
+$\Th{Q} \Proves \lforall[x][\lnot x < \Obj 0]$.
+\end{lem}
+
+\begin{proof}
+Kita menehi bukti kanthi informal (yaiku mung menehi pituduh
+carane mbangun !!{derivation} formal).
+
+Kita kudu mbuktekake $\lnot a < \Obj 0$ kanggo~$a$ sembarang. Miturut
+definisi $<$, kita kudu mbuktekake $\lnot
+\lexists[y][\eq[(y'+a)][\Obj 0]]$ ing $\Th{Q}$. Kita bakal nganggep
+$\lexists[y][\eq[(y'+a)][\Obj 0]]$ lan mbuktekake kontradiksi. Upamana
+$\eq[(b'+a)][\Obj 0]$. Kanthi $!Q_3$, kita nduweni
+$\eq[a][\Obj 0] \lor \lexists[y][\eq[a][y']]$. Kita bedakake
+kasuse.
+
+Kasus 1: $\eq[a][\Obj 0]$ lumaku. Saka $\eq[(b'+a)][\Obj 0]$, kita entuk
+$\eq[(b' + \Obj 0)][\Obj 0]$. Miturut aksioma~$!Q_4$ saka $\Th{Q}$,
+kita nduweni $\eq[(b' + \Obj 0)][b']$, mula $\eq[b'][\Obj 0]$. Nanging
+miturut aksioma~$!Q_2$ kita uga nduweni $\eq/[b'][\Obj 0]$,
+kontradiksi.
+
+Kasus 2: Kanggo sawijining $c$, $\eq[a][c']$. Nanging banjur kita
+nduweni $\eq[(b' + c')][\Obj 0]$. Miturut aksioma~$!Q_5$, kita nduweni
+$\eq[(b' + c)'][\Obj 0]$, kang maneh mbantah aksioma~$Q_2$.
+\end{proof}
+
+\begin{lem}
+\ollabel{lem:less-nsucc}
+Kanggo saben bilangan asli~$n$,
+  \[
+  \Th{Q} \Proves
+  \lforall[x][(x < \num {n+1} \lif (\eq[x][\Obj 0] \lor \dots \lor
+    \eq[x][\num n]))].
+  \]
+\end{lem}
+
+\begin{proof}
+Kita nggunakake induksi marang~$n$. Ayo nimbang kasus dhasar, nalika
+$n = 0$. Ing kasus iki, kita kudu nuduhake $a < \num 1 \lif
+\eq[a][\Obj 0]$ kanggo~$a$ sembarang. Upamana $a < \num 1$. Mula
+miturut aksioma kang netepake $<$, kita nduweni
+$\lexists[y][\eq[(y'+a)][\Obj 0']]$ (amarga $\num 1 \ident
+\Obj 0'$).
+
+Upamana $b$ nduweni sipat iku, yaiku $\eq[(b'+a)][\Obj 0']$. Kita
+kudu nuduhake $\eq[a][\Obj 0]$. Miturut aksioma~$!Q_3$, kita nduweni
+$\eq[a][\Obj 0]$ utawa ana $c$ saengga $\eq[a][c']$. Ing kasus
+kapisan, ora ana maneh kang kudu dituduhake. Mula upamana
+$\eq[a][c']$. Banjur kita nduweni $\eq[(b' + c')][\Obj 0']$.
+Miturut aksioma~$!Q_5$ saka $\Th{Q}$, kita nduweni
+$\eq[(b'+c)'][\Obj 0']$. Miturut aksioma~$!Q_1$, kita nduweni
+$\eq[(b' + c)][\Obj 0]$. Nanging miturut aksioma~$!Q_8$ iki ateges
+$c < \Obj 0$, kang mbantah \olref{lem:less-zero}.
+
+Saiki langkah induksi. Kita mbuktekake kasus kanggo $n+1$ kanthi
+nganggep kasus kanggo~$n$. Upamana $a < \num {n+2}$. Kanthi $!Q_3$
+maneh, kita bisa mbedakake rong kasus: $\eq[a][\Obj 0]$ lan ana $b$
+saengga $\eq[a][b']$. Ing kasus kapisan, $\eq[a][\Obj 0] \lor \dots
+\lor \eq[a][\num{n+1}]$ langsung lumaku. Ing kasus kapindho, kita
+nduweni $b' < \num {n+2}$, yaiku $b' < \num{n+1}'$. Miturut aksioma
+~$!Q_8$, kanggo sawijining $c$, $\eq[(c'+b')][\num{n+1}']$. Miturut
+aksioma $!Q_5$, $\eq[(c'+b)'][\num{n+1}']$. Miturut aksioma~$!Q_1$,
+$\eq[(c'+b)][\num{n+1}]$, mula $b < \num{n+1}$ miturut aksioma~$!Q_8$.
+Miturut hipotesis induksi, $\eq[b][\Obj 0] \lor \dots \lor
+\eq[b][\num{n}]$. Saka kene, kita entuk $\eq[b'][\Obj 0'] \lor
+\dots \lor \eq[b'][\num{n}']$ kanthi logika, mula
+$\eq[a][\num{1}] \lor \dots \lor \eq[a][\num{n+1}]$ amarga
+$\eq[a][b']$.
+\end{proof}
+
+\begin{lem}
+  \ollabel{lem:trichotomy} For every natural number~$m$,
+  \[
+  \Th{Q} \Proves
+  \lforall[y][((y < \num{m} \lor \num{m} < y) \lor \eq[y][\num{m}])].
+  \]
+\end{lem}
+
+\begin{proof}
+Kanthi induksi marang~$m$. Luwih dhisik, nimbang kasus $m=0$.
+$\Th{Q} \Proves
+\lforall[y][(\eq[y][\Obj 0] \lor \lexists[z][\eq[y][z']])]$ miturut~$!Q_3$.
+Tetepna $a$ sembarang. Mula $\eq[a][\Obj 0]$ utawa ana~$b$ saengga
+$\eq[a][b']$. Ing kasus kapisan, kita uga nduweni $(a < \Obj 0 \lor
+\Obj 0 < a) \lor \eq[a][\Obj 0]$. Nanging yen $\eq[a][b']$, mula
+$\eq[(b' + \Obj 0)][(a + \Obj 0)]$ miturut logika~$\eq$. Miturut
+$!Q_4$, $\eq[(a + \Obj 0)][a]$, mula kita nduweni
+$\eq[(b' + \Obj 0)][a]$, lan banjur
+$\lexists[z][\eq[(z' + \Obj 0)][a]]$. Miturut definisi $<$ ing
+$!Q_8$, $\Obj 0 < a$. Yen $\Obj 0 < a$, mula uga
+$(\Obj 0 < a \lor a < \Obj 0) \lor \eq[a][\Obj 0]$.
+
+Saiki upamana kita nduweni
+\begin{align*}
+  \Th{Q} & \Proves \lforall[y][((y < \num{m} \lor \num{m} < y) \lor
+    \eq[y][\num{m}])]
+  \intertext{lan kita arep nuduhake}
+  \Th{Q} & \Proves \lforall[y][((y < \num{m+1} \lor \num{m+1} < y) \lor
+    \eq[y][\num{m+1}])]
+\end{align*}
+Tetepna $a$ sembarang. Miturut $!Q_3$, $\eq[a][\Obj 0]$ utawa kanggo
+sawijining~$b$, $\eq[a][b']$. Ing kasus kapisan, kita nduweni
+$\eq[\num{m}' + a][\num{m+1}]$ miturut $!Q_4$, mula $a < \num{m+1}$
+miturut $!Q_8$.
+
+Saiki nimbang kasus kapindho, $\eq[a][b']$. Miturut hipotesis
+induksi, $(b < \num{m} \lor \num{m} < b) \lor
+    \eq[b][\num{m}]$.
+
+Disjungsi kapisan $b < \num{m}$ padha tegese (miturut $!Q_8$) karo
+$\lexists[z][\eq[(z' + b)][\num{m}]]$. Upamana $c$ nduweni sipat iki.
+Yen $\eq[(c' + b)][\num{m}]$, mula uga
+$\eq[(c' + b)'][\num{m}']$. Miturut $!Q_5$,
+$\eq[(c' + b)'][(c' + b')]$. Mula $\eq[(c' +
+b')][\num{m}']$. Kita entuk
+$\lexists[u][\eq[(u' + b')][\num{m+1}]]$ kanthi ngenalake kuantor
+eksistensial marang~$c'$ lan ngelingi yen $\num{m}' \ident
+\num{m+1}$. Dadi yen $b < \num{m}$, mula $b' < \num{m+1}$ lan
+$a < \num{m+1}$.
+
+Saiki upamana $\num{m} < b$, yaiku $\lexists[z][\eq[(z' +
+\num{m})][b]]$. Upamana $c$ iku~$z$ kang dimaksud, yaiku
+$\eq[(c' + \num{m})][b]$. Kanthi logika,
+$\eq[(c' + \num{m})'][b']$. Miturut $!Q_5$,
+$\eq[(c' + \num{m}')][b']$. Amarga $\eq[a][b']$ lan
+$\num{m}' \ident \num{m+1}$, kita entuk
+$\eq[(c' + \num{m+1})][a]$. Miturut $!Q_8$, $\num{m+1} < a$.
+
+Pungkasan, upamana $\eq[b][\num{m}]$. Mula kanthi logika,
+$\eq[b'][\num{m}']$, dadi $\eq[a][\num{m+1}]$.
+
+Mula saka saben disjungsi ing kasus kanggo~$m$ lan~$b$, kita bisa
+entuk disjungsi kang cocog kanggo~$m+1$ lan~$a$.
+\end{proof}
+  
+\begin{prop}
+\ollabel{prop:rep-minimization}
+Yen $!A_g(x, z, y)$ merepresentasikake $g(x, z)$ ing~$\Th{Q}$, mula
+\[
+!A_f(z,y) \ident !A_g(y, z, \Obj 0) \land \lforall[w][(w < y \lif \lnot
+  !A_g(w, z, \Obj 0))]
+\]
+merepresentasikake $f(z) = \umin{x}{[g(x, z) = 0]}$.
+\end{prop}
+
+\begin{proof}
+Luwih dhisik, kita nuduhake yen $f(n) = m$, mula
+$\Th{Q} \Proves !A_f(\num n, \num m)$, yaiku,
+\begin{align}
+  \Th{Q} & \Proves !A_g(\num{m}, \num{n}, \Obj 0) \land \lforall[w][(w <
+    \num{m} \lif \lnot !A_g(w, \num{n}, \Obj 0))]. \notag
+  \intertext{Amarga $!A_g(x, z, y)$ merepresentasikake $g(x, z)$ lan
+    $g(m, n) = 0$ yen $f(n) = m$, kita nduweni}
+\Th{Q} & \Proves !A_g(\num{m}, \num{n}, \Obj 0). \notag
+\intertext{Yen $f(n) = m$, mula kanggo saben $k < m$, $g(k, n) \neq 0$.
+  Dadi}
+\Th{Q} & \Proves \lnot !A_g(\num{k}, \num{n}, \Obj 0). \notag
+\intertext{Kita entuk}
+\Th{Q} & \Proves \lforall[w][(w < \num{m} \lif \lnot
+  !A_g(w, \num{n}, \Obj 0))]. \ollabel{rep-less}
+\end{align}
+miturut \olref{lem:less-zero} yen $m = 0$ lan miturut
+\olref{lem:less-nsucc} yen ora.
+
+Saiki ayo nuduhake yen $f(n) = m$, mula $\Th{Q} \Proves
+\lforall[y][(!A_f(\num{n}, y) \lif \eq[y][\num{m}])]$. Kita maneh
+nggambarake argumentasi kanthi informal, lan ninggalake formalisasine
+kanggo pamaca.
+
+Upamana $!A_f(\num{n}, b)$. Saka iki kita entuk (a)
+$!A_g(b, \num{n}, \Obj 0)$ lan (b)
+$\lforall[w][(w < b \lif \lnot !A_g(w, \num{n}, \Obj
+  0))]$. Miturut \olref{lem:trichotomy},
+$(b < \num{m} \lor \num{m} < b) \lor \eq[b][\num{m}]$. Kita bakal
+nuduhake yen $b < \num{m}$ lan $\num{m} < b$ loro-lorone njalari
+kontradiksi.
+
+Yen $\num{m} < b$, mula $\lnot !A_g(\num{m}, \num{n}, \Obj 0)$
+saka~(b). Nanging $m = f(n)$, mula $g(m, n) = 0$, lan
+$\Th{Q} \Proves !A_g(\num{m}, \num{n}, \Obj 0)$ amarga $!A_g$
+merepresentasikake~$g$. Dadi ana kontradiksi.
+
+Saiki upamana $b < \num{m}$. Amarga
+$\Th{Q} \Proves \lforall[w][(w <
+  \num{m} \lif \lnot !A_g(w, \num{n}, \Obj 0))]$ miturut
+\olref{rep-less}, kita entuk $\lnot !A_g(b, \num{n}, \Obj 0)$.
+Iki maneh mbantah~(a).
+\end{proof}
+
+\end{document}

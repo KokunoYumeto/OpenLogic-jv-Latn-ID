@@ -1,0 +1,61 @@
+% Part: second-order-logic
+% Chapter: metatheory
+% Section: undecidability-and-axiomatizability
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sol}{met}{nax}
+
+\olsection{Logika Orde Kapindho Ora Bisa Diaksiomatisasi}
+
+
+\begin{thm}
+\ollabel{thm:sol-undecidable}
+Logika orde kapindho ora bisa diputusake.
+\end{thm}
+
+\begin{proof}
+!!{sentence} orde kapisan valid ing logika orde kapisan yen lan
+mung yen valid ing logika orde kapindho, dene logika orde
+kapisan ora bisa diputusake.
+\end{proof}
+
+\begin{thm}
+\ollabel{cor:sol-not-axiomatizable}
+Ora ana sistem !!{derivation} kang sahih lan jangkep kanggo
+logika orde kapindho.
+\end{thm}
+
+\begin{proof}
+Upamana $!A$ iku !!a{sentence} ing basa aritmetika.
+$\Sat{N}{!A}$ yen lan mung yen $\Th{PA^2} \Entails !A$.
+Upamana $!P$ iku konjungsi sangang aksioma saka~$\Th{PA^2}$.
+$\Th{PA^2} \Entails !A$ yen lan mung yen
+$\Entails !P \lif !A$, yaiku, kanggo saben struktur,
+$\Sat{M}{!P \lif !A}$. Saiki gatekna !!{sentence}
+$\lforall[z][\lforall[u][\lforall[u'][\lforall[u''][\lforall[L][(!P' \lif !A')]]]]]$
+kang diasilake kanthi ngganti $\Obj{0}$ dadi $z$,
+$\prime$ dadi variabel fungsi siji-papan $u$,
+$+$ lan $\times$ dadi variabel fungsi rong-papan
+$u'$ lan $u''$, kanthi urut, sarta $<$ dadi
+variabel relasi rong-papan~$L$, banjur kabeh dikuwantifikasi
+universal. Ukara iki valid ing logika orde kapindho murni
+yen lan mung yen ukara asal valid, yen lan mung yen
+$\Th{PA^2} \Entails !A$, yen lan mung yen
+$\Sat{N}{!A}$. Mula yen ana sistem bukti kang sahih
+lan jangkep kanggo logika orde kapindho, kita bisa
+nggunakake kanggo netepake enumerasi komputabel
+$f\colon \Nat \to \Sent[L_A]$ saka !!{sentence}s kang
+bener ing~$\Struct{N}$. Fungsi iki bakal bisa
+direpresentasikake ing~$\Th{Q}$ dening sawijining
+formula orde kapisan~$!B_f(x, y)$. Banjur
+!!{formula}~$\lexists[x][!B_f(x, y)]$ bakal netepake
+himpunan !!{sentence}s orde kapisan kang bener
+ing~$\Struct{N}$, kosok balen karo Teorema Tarski.
+\end{proof}
+
+
+
+\end{document}

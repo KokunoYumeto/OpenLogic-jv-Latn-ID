@@ -1,0 +1,164 @@
+% Part: normal-modal-logic
+% Chapter: frame-definability
+% Section: standard-translation
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{frd}{st}
+
+\olsection{Definabilitas Orde Kapindho}
+
+Ora saben sipat bingkai kang bisa didéfinisikake dening formula
+modal bisa didéfinisikake kanthi orde kapisan. Nanging, yen kita
+ngidinake kuantifikasi tumrap predikat siji panggonan (yaiku
+kuantifikasi orde kapindho monadik), kita bisa ndéfinisikake kabeh
+sipat bingkai kang bisa didéfinisikake kanthi modal. Carane yaiku
+nggunakake hubungan kang sistematis antarane kondisi kang ndadekake
+!!{formula} modal bener ing sawijining donya lan !!{formula}s orde
+kapisan. Iki diarani translasi standar saka formula modal menyang
+formula orde kapisan ing basa kang ora mung ngemot !!{predicate} rong
+panggonan~$Q$ kanggo relasi aksesibilitas, nanging uga !!{predicate}
+siji panggonan~$P_i$ kanggo !!{propositional variable}s~$\Obj p_i$
+kang katon ing~$!A$.
+
+\begin{defn}
+  \emph{Translasi standar}~$\ST_x(!A)$ didéfinisikake kanthi
+  induksi kaya mangkene:
+  \begin{enumerate}
+  \tagitem{prvFalse}{\indcase{!A}{\lfalse}{$\ST_x(\indfrm) = \lfalse$.}}{}
+  \tagitem{prvTrue}{\indcase{!A}{\ltrue}{$\ST_x(\indfrm) = \ltrue$.}}{}
+  \item \indcase{!A}{\Obj p_i}{$\ST_x(\indfrm) = \Atom{P_i}{x}$.}
+  \tagitem{prvNot}{\indcase{!A}{\lnot !B}{$\ST_x(\indfrm) = \lnot \ST_x(!B)$.}}{}
+  \tagitem{prvAnd}{\indcase{!A}{(!B \land !C)}{$\ST_x(\indfrm) = (\ST_x(!B)
+      \land \ST_x(!C))$.}}{}
+  \tagitem{prvOr}{\indcase{!A}{(!B \lor !C)}{$\ST_x(\indfrm) = (\ST_x(!B)
+      \lor \ST_x(!C))$.}}{}
+  \tagitem{prvIf}{\indcase{!A}{(!B \lif !C)}{$\ST_x(\indfrm) = (\ST_x(!B)
+      \lif \ST_x(!C))$.}}{}
+  \tagitem{prvIff}{\indcase{!A}{(!B \liff !C)}{$\ST_x(\indfrm) = (\ST_x(!B)
+      \liff \ST_x(!C))$.}{}
+  \tagitem{prvBox}{\indcase{!A}{\Box !B}{$\ST_x(\indfrm) =
+      \lforall[y][(\Atom{Q}{x,y} \lif \ST_y(!B))]$.}}{}
+  \tagitem{prvDiamond}{\indcase{!A}{\Diamond !B}{$\ST_x(\indfrm) =
+      \lexists[y][(\Atom{Q}{x,y} \land \ST_y(!B))]$.}}{}
+  \end{enumerate}
+\end{defn}
+
+Upamane, $\ST_x(\Box p \lif p)$ yaiku $\lforall[y][(\Atom{Q}{x,y}
+  \lif \Atom{P}{y})] \lif \Atom{P}{x}$. Saben !!{structure} kanggo
+basa~$\ST_x(!A)$ mbutuhake domain, relasi rong panggonan kang
+ditetepake kanggo~$Q$, lan subhimpunan domain kang ditetepake kanggo
+!!{predicate}s siji panggonan~$P_i$. Kanthi tembung liya, komponen
+sawijining !!a{structure} kaya mangkono persis komponen model kanggo~$!A$:
+domain iku himpunan donya, relasi rong panggonan kang ditetepake
+kanggo~$Q$ iku relasi aksesibilitas, lan subhimpunan kang ditetepake
+kanggo~$P_i$ iku penetapan~$V(\Obj p_i)$. Mula ora nggumunake yen
+kepuasan $!A$ ing model modal lan kepuasan $\ST_x(!A)$ ing
+!!{structure} kang cocog iku padha:
+
+\begin{prop}\ollabel{prop:st}
+  Upamane $\mModel{M} = \tuple{W, R, V}$, lan $\Struct{M'}$
+  sawijining !!{structure} orde kapisan kanthi $\Domain{M'} = W$,
+  $\Assign{Q}{M'} = R$, lan $\Assign{P_i}{M'} = V(\Obj p_i)$,
+  sarta $s(x) = w$. Mula
+  \[
+  \mSat{M}{!A}[w] \text{ yen lan mung yen } \Sat{M'}{\ST_x(!A)}[s]
+  \]
+\end{prop}
+
+\begin{proof}
+  Kanthi induksi marang~$!A$.
+\end{proof}
+
+\begin{prop}
+  Upamane $!A$ iku !!{formula} modal lan $\mModel{F} = \tuple{W, R}$
+  sawijining bingkai. Upamane $\Struct{F'}$ sawijining !!{structure}
+  orde kapisan kanthi $\Domain{F'} = W$ lan $\Assign{Q}{F'} = R$,
+  lan $!A'$ formula orde kapindho iki:
+  \[
+  \lforall[X_1][\dots\lforall[X_n][\lforall[x][
+        \SSubst{\ST_x(!A)}{\subst{X_1}{P_1}, \dots,
+          \subst{X_n}{P_n}}]]],
+  \]
+  ing ngendi $P_1$, \dots, $P_n$ kabeh !!{predicate}s siji panggonan
+  ing~$\ST_x(!A)$. Mula
+  \[
+  \mModel{F} \Entails !A \text{ yen lan mung yen } \Sat{F'}{!A'}
+  \]
+\end{prop}
+
+\begin{proof}
+  $\Sat{F'}{!A'}$ yen lan mung yen kanggo saben !!{structure}~$\mModel{M'}$
+  kang $\Assign{P_i}{M'} \subseteq W$ kanggo $i = 1$, \dots,~$n$,
+  lan kanggo saben $s$ kang $s(x) \in W$,
+  $\Sat{M'}{\ST_x(!A)}[s]$. Miturut \olref{prop:st}, iki bener yen
+  lan mung yen kanggo kabeh model~$\mModel{M}$ kang
+  adhedhasar~$\mModel{F}$ lan saben donya~$w \in W$,
+  $\mSat{M}{!A}[w]$, yaiku $\mModel{F} \Entails !A$.
+\end{proof}
+
+\begin{defn}
+  Kelas bingkai~$\mClass{F}$ \emph{bisa didéfinisikake kanthi orde
+    kapindho} yen ana !!a{sentence}~$!A$ ing basa orde kapindho kang
+  mung nduweni siji !!{predicate} rong panggonan~$P$ lan kuantor
+  mung tumrap variabel himpunan monadik, saengga $\mModel{F} =
+  \tuple{W, R} \in \mClass{F}$ yen lan mung yen $\Sat{M}{!A}$ ing
+  !!{structure}~$\Struct{M}$ kanthi $\Domain{M} = W$ lan
+  $\Assign{P}{M} = R$.
+\end{defn}
+
+\begin{cor}
+  Yen kelas bingkai bisa didéfinisikake dening !!a{formula}~$!A$,
+  kelas relasi aksesibilitas kang cocog bisa didéfinisikake dening
+  ukara orde kapindho monadik.
+\end{cor}
+
+\begin{proof}
+  Ukara orde kapindho monadik~$!A'$ saka bukti sadurunge nduweni
+  sipat kang dibutuhake.
+\end{proof}
+
+Minangka tuladha, delengen maneh !!{formula}~$\Box p \lif p$.
+Formula iki ndéfinisikake refleksivitas. Refleksivitas mesthi bisa
+didéfinisikake kanthi orde kapisan dening !!{sentence}~$\lforall[x][\Atom{Q}{x,x}]$.
+Nanging sipat iku uga bisa didéfinisikake dening !!{sentence} orde
+kapindho monadik
+\[
+\lforall[X][\lforall[x][(\lforall[y][(\Atom{Q}{x,y} \lif \Atom{X}{y})]
+    \lif \Atom{X}{x})]].
+\]
+Iki mesthi ateges yen loro ukara kasebut ekuivalen. Mangkene carane
+ndeleng kanthi langsung: Kaping pisan, upamane ukara orde kapindho
+iku bener ing !!a{structure}~$\Struct{M}$. Amarga $x$ lan $X$
+dikuwantifikasi universal, bagean kang isih ana kudu bener kanggo
+sembarang $x \in W$ lan himpunan~$X \subseteq W$, upamane himpunan
+$\Setabs{z}{Rxz}$ kang $R = \Assign{Q}{M}$. Dadi, kanggo saben~$s$
+kang $s(x) \in W$ lan $s(X) = \Setabs{z}{Rxz}$, kita duwe
+$\Sat{M}{\lforall[y][(\Atom{Q}{x,y} \lif
+    \Atom{X}{y})] \lif \Atom{X}{x}}$. Nanging amarga pilihan
+$s(X)$, iki ateges $\Sat{M}{\lforall[y][(\Atom{Q}{x,y} \lif
+    \Atom{Q}{x,y})] \lif \Atom{Q}{x,x}}[s]$, kang ekuivalen karo
+$\Atom{Q}{x,x}$ amarga antesedene valid. Amarga $s(x)$ dipilih
+sebarang, kita duwe $\Sat{M}{\lforall[x][\Atom{Q}{x,x}]}$.
+
+Saiki upamane $\Sat{M}{\lforall[x][\Atom{Q}{x,x}]}$, lan
+nuduhna yen
+$\Sat{M}{\lforall[X][\lforall[x][(\lforall[y][(\Atom{Q}{x,y} \lif
+        \Atom{X}{y})] \lif \Atom{X}{x})]]}$. Pilih sembarang
+penetapan~$s$, lan upamane $\Sat{M}{\lforall[y][(\Atom{Q}{x,y} \lif
+    \Atom{X}{y})]}[s]$. Pilih $s'$ minangka varian-$y$ saka~$s$
+kanthi $s'(y) = s(x)$; kita duwe
+$\Sat{M}{\Atom{Q}{x,y} \lif \Atom{X}{y}}[s']$, yaiku
+$\Sat{M}{\Atom{Q}{x,x} \lif \Atom{X}{x}}[s]$. Amarga
+$\Sat{M}{\lforall[x][\Atom{Q}{x,x}]}$, antesedene bener, mula
+$\Sat{M}{\Atom{X}{x}}[s]$, kaya kang kudu dituduhake.
+
+Amarga saweneh kelas bingkai kang bisa didéfinisikake
+ora bisa didéfinisikake kanthi orde kapisan, ora saben
+!!{sentence} orde kapindho monadik kang wujude~$!A'$ ekuivalen
+karo !!{sentence} orde kapisan. Ora ana cara efektif kanggo mutusake
+endi kang ekuivalen.
+
+\end{document}

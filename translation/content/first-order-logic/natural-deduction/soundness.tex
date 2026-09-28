@@ -15,7 +15,7 @@
 \begin{explain}
 Sistem !!^a{derivation}, kayata deduksi natural, iku \emph{sah} yen
 ora bisa !!{derive} bab kang sejatine ora ndherek. Mula kasahihan iku
-sawijining sipat aman kang dijamin kanggo sistem
+sawijining sipat kaslametan kang dijamin kanggo sistem
 !!{derivation}. Gumantung marang sipat teoretis-bukti kang dirembug,
 kita kepengin ngerti, upamane, yen
 \begin{enumerate}
@@ -34,12 +34,12 @@ iku wigati banget.
 
 \begin{thm}[Kasahihan]
 \ollabel{thm:soundness}
-Yen $!A$ bisa !!{derivable} saka asumsi !!{undischarged} $\Gamma$,
+Yen $!A$ bisa !!{derivable} saka asumsi-asumsi !!{undischarged} $\Gamma$,
 mula $\Gamma \Entails !A$.
 \end{thm}
 
 \begin{proof}
-Ayo $\delta$ dadi !!a{derivation} saka $!A$. Kita lumaku kanthi
+Tetepna $\delta$ minangka !!a{derivation} saka $!A$. Kita lumaku kanthi
 induksi ing cacah inferensi ing~$\delta$.
 
 Kanggo basis induksi, kita nuduhake pratelan iki nalika cacah
@@ -55,9 +55,9 @@ Saiki kanggo langkah induktif. Upamana $\delta$ ngemot~$n$ inferensi.
 Premis siji utawa luwih saka inferensi paling ngisor iku !!{derive}d
 nganggo sub-!!{derivation}s kang saben-sabene ngemot inferensi kurang
 saka~$n$. Kita nganggep hipotesis induksi: premis-premis saka
-inferensi paling ngisor ndherek saka asumsi !!{undischarged} ing
+inferensi paling ngisor ndherek saka asumsi-asumsi !!{undischarged} ing
 sub-!!{derivation}s kang mungkasi ing premis kasebut. Kita kudu
-nuduhake yen kesimpulan~$!A$ ndherek saka asumsi !!{undischarged} ing
+nuduhake yen kesimpulan~$!A$ ndherek saka asumsi-asumsi !!{undischarged} ing
 kabeh bukti.
 
 Kita mbedakake kasus adhedhasar jinis inferensi paling ngisor. Sepisan,
@@ -73,7 +73,7 @@ kita nimbang inferensi-inferensi kang mung duwe siji premis.
     \DischargeRule{\Intro{\lnot}}{n}
     \UnaryInfC{$\lnot !A$}
   \end{prooftree}
-  Miturut hipotesis induksi, $\lfalse$ ndherek saka asumsi
+  Miturut hipotesis induksi, $\lfalse$ ndherek saka asumsi-asumsi
   !!{undischarged} $\Gamma \cup \{!A\}$ ing~$\delta_1$. Nimbang
   \iftag{FOL}{!!a{structure}~$\Struct{M}$}{!!a{valuation}~$\pAssign{v}$}.
   Kita kudu nuduhake yen, yen
@@ -96,7 +96,7 @@ kita nimbang inferensi-inferensi kang mung duwe siji premis.
     \RightLabel{\Elim{\land}}
     \UnaryInfC{$!A$}
   \end{prooftree}
-  Miturut hipotesis induksi, $!A \land !B$ ndherek saka asumsi
+  Miturut hipotesis induksi, $!A \land !B$ ndherek saka asumsi-asumsi
   !!{undischarged}~$\Gamma$ ing~$\delta_1$. Nimbang
   !!a{structure}~\iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$}. Kita kudu
   nuduhake yen, yen $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$, mula
@@ -119,7 +119,7 @@ kita nimbang inferensi-inferensi kang mung duwe siji premis.
     \RightLabel{\Intro{\lor}}
     \UnaryInfC{$!A \lor !B$}
   \end{prooftree}
-  Miturut hipotesis induksi, $!A$ ndherek saka asumsi
+  Miturut hipotesis induksi, $!A$ ndherek saka asumsi-asumsi
   !!{undischarged}~$\Gamma$ ing~$\delta_1$. Nimbang
   \iftag{FOL}{!!a{structure}~$\Struct{M}$}{!!a{valuation}~$\pAssign{v}$}.
   Kita kudu nuduhake yen, yen
@@ -132,7 +132,7 @@ kita nimbang inferensi-inferensi kang mung duwe siji premis.
   \lor !B$ diturunake saka~$!B$ ditangani kanthi cara kang padha.)
 
 \item Inferensi pungkasan iku \Intro{\lif}: $!A \lif !B$
-  diturunake saka subbukti kang duwe asumsi~$!A$ lan kesimpulan~$!B$,
+  diturunake saka subbukti kang nduweni asumsi~$!A$ lan kesimpulan~$!B$,
   yaiku
   \begin{prooftree}
     \AxiomC{$\Gamma, \Discharge{!A}{n}$}
@@ -141,11 +141,11 @@ kita nimbang inferensi-inferensi kang mung duwe siji premis.
     \DischargeRule{\Intro{\lif}}{n}
     \UnaryInfC{$!A \lif !B$}
   \end{prooftree}
-  Miturut hipotesis induksi, $!B$ ndherek saka asumsi
+  Miturut hipotesis induksi, $!B$ ndherek saka asumsi-asumsi
   !!{undischarged} ing~$\delta_1$, yaiku $\Gamma \cup \{!A\}
   \Entails !B$. Nimbang
   \iftag{FOL}{!!a{structure}~$\Struct{M}$}{!!a{valuation}~$\pAssign{v}$}.
-  Asumsi !!{undischarged} ing~$\delta$ mung $\Gamma$, amarga $!A$ wis
+  Asumsi-asumsi !!{undischarged} ing~$\delta$ mung $\Gamma$, amarga $!A$ wis
   dibubarake ing inferensi pungkasan. Dadi kita kudu nuduhake yen
   $\Gamma \Entails !A \lif !B$. Kanggo reductio, upamana kanggo
   sawijining
@@ -187,7 +187,7 @@ kita nimbang inferensi-inferensi kang mung duwe siji premis.
     \RightLabel{\Intro{\lforall}}
     \UnaryInfC{$\lforall[x][!A(x)]$}
   \end{prooftree}
-  Miturut hipotesis induksi, premis $!A(a)$ iku akibat saka asumsi
+  Miturut hipotesis induksi, premis $!A(a)$ iku akibat saka asumsi-asumsi
   !!{undischarged} $\Gamma$. Nimbang sawijining struktur,
   $\Struct{M}$, kang $\Sat{M}{\Gamma}$. Kita kudu nuduhake yen
   $\Sat{M}{\lforall[x][!A(x)]}$. Amarga $\lforall[x][!A(x)]$ iku
@@ -195,7 +195,8 @@ kita nimbang inferensi-inferensi kang mung duwe siji premis.
   penetapan variabel~$s$, $\Sat{M}{!A(x)}[s]$
   (\olref[syn][ass]{prop:sat-quant}). Amarga $\Gamma$ mung dumadi saka
   ukara, $\Sat{M}{!B}[s]$ kanggo kabeh $!B \in \Gamma$ miturut
-  \olref[syn][sat]{defn:satisfaction}. Ayo $\Struct{M'}$ padha karo
+  \olref[syn][sat]{defn:satisfaction}. Tetepna $\Struct{M'}$ minangka
+  struktur kang padha karo
   $\Struct{M}$ kajaba $\Assign{a}{M'} = s(x)$. Amarga $a$ ora muncul
   ing~$\Gamma$, $\Sat{M'}{\Gamma}$ miturut
   \olref[syn][ext]{cor:extensionality-sent}. Amarga $\Gamma \Entails
@@ -216,7 +217,7 @@ kita nimbang inferensi-inferensi kang mung duwe siji premis.
 }{}
 \end{enumerate}
 
-Saiki ayo nimbang inferensi-inferensi kang bisa duwe sawetara premis:
+Saiki kita nimbang inferensi-inferensi kang bisa duwe sawetara premis:
 \Elim{\lor}, \Intro{\land},
 \iftag{FOL}{\Elim{\lif}, lan \Elim{\lexists}}{lan \Elim{\lif}}.
 \begin{enumerate}
@@ -233,9 +234,9 @@ Saiki ayo nimbang inferensi-inferensi kang bisa duwe sawetara premis:
     \RightLabel{\Intro{\land}}
     \BinaryInfC{$!A \land !B$}
   \end{prooftree}
-  Miturut hipotesis induksi, $!A$ ndherek saka asumsi
+  Miturut hipotesis induksi, $!A$ ndherek saka asumsi-asumsi
   !!{undischarged}~$\Gamma_1$ ing~$\delta_1$, lan $!B$ ndherek saka
-  asumsi !!{undischarged}~$\Gamma_2$ ing~$\delta_2$. Asumsi
+  asumsi-asumsi !!{undischarged}~$\Gamma_2$ ing~$\delta_2$. Asumsi-asumsi
   !!{undischarged} ing~$\delta$ yaiku $\Gamma_1 \cup \Gamma_2$, mula
   kita kudu nuduhake yen $\Gamma_1 \cup \Gamma_2 \Entails !A \land
   !B$. Nimbang
@@ -263,9 +264,9 @@ Saiki ayo nimbang inferensi-inferensi kang bisa duwe sawetara premis:
     \RightLabel{\Elim{\lif}}
     \BinaryInfC{$!B$}
   \end{prooftree}
-  Miturut hipotesis induksi, $!A \lif !B$ ndherek saka asumsi
+  Miturut hipotesis induksi, $!A \lif !B$ ndherek saka asumsi-asumsi
   !!{undischarged}~$\Gamma_1$ ing~$\delta_1$, lan $!A$ ndherek saka
-  asumsi !!{undischarged}~$\Gamma_2$ ing~$\delta_2$. Nimbang
+  asumsi-asumsi !!{undischarged}~$\Gamma_2$ ing~$\delta_2$. Nimbang
   \iftag{FOL}{!!a{structure}~$\Struct{M}$}{!!a{valuation}~$\pAssign{v}$}.
   Kita kudu nuduhake yen, yen
   $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma_1 \cup \Gamma_2}$, mula
@@ -311,7 +312,7 @@ Yen $\Gamma$ bisa dicukupi, mula himpunan iku konsisten.
 \begin{proof}
 Kita mbuktekake kontraposisine. Upamana $\Gamma$ ora konsisten.
 Banjur $\Gamma \Proves \lfalse$, yaiku ana !!a{derivation} saka
-$\lfalse$ adhedhasar asumsi !!{undischarged} ing~$\Gamma$. Miturut
+$\lfalse$ adhedhasar asumsi-asumsi !!{undischarged} ing~$\Gamma$. Miturut
 \olref{thm:soundness}, saben
 \iftag{FOL}{!!{structure}~$\Struct{M}$}{!!{valuation}~$\pAssign{v}$}
 kang nyukupi $\Gamma$ mesthi nyukupi $\lfalse$. Amarga

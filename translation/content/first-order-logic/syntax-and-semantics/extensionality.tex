@@ -1,0 +1,163 @@
+% Part: first-order-logic
+% Chapter: syntax-and-semantics
+% Section: substitution
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{syn}{ext}
+
+\olsection{Ekstensionalitas}
+
+\begin{explain}
+Ekstensionalitas, kang kadhang diarani relevansi, sacara
+ora resmi bisa diandharake mangkene: siji-sijine faktor
+kang mengaruhi apa !!{formula}~$!A$ dicukupi ing
+!!a{structure}~$\Struct M$ relatif marang pangaji
+!!a{variable}~$s$ yaiku gedhene !!{domain} lan
+nilai kang diwenehake~$\Struct M$ lan~$s$ marang
+unsur-unsur basa kang pancen katon ing~$!A$.
+
+Salah siji akibat langsung saka ekstensionalitas yaiku:
+yen rong !!{structure}s~$\Struct M$ lan~$\Struct M'$
+padha ing kabeh unsur basa kang katon ing ukara~$!A$
+lan nduweni domain kang padha,~$\Struct M$ lan~$\Struct M'$
+uga mesthi padha bab apa $!A$ iku bener.
+\end{explain}
+
+\begin{prop}[Ekstensionalitas]
+  \ollabel{prop:extensionality}
+  Upamakna $!A$ iku !!a{formula}, $\Struct M_1$ lan
+  $\Struct M_2$ iku !!{structure}s kanthi
+  $\Domain{M_1} = \Domain{M_2}$, lan $s$ iku
+  pangaji variabel ing $\Domain{M_1} = \Domain{M_2}$.
+  Yen $\Assign{c}{M_1} = \Assign{c}{M_2}$,
+  $\Assign{R}{M_1}=\Assign{R}{M_2}$, lan
+  $\Assign{f}{M_1} = \Assign{f}{M_2}$ kanggo saben
+  !!{constant}~$c$, simbol relasi~$R$, lan
+  !!{function} $f$ kang katon ing~$!A$, mula
+  $\Sat{M_1}{!A}[s]$ yen lan mung yen $\Sat{M_2}{!A}[s]$.
+\end{prop}
+
+\begin{proof}
+  Kaping pisan, buktèkna (kanthi induksi miturut~$t$)
+  yen kanggo saben term kang kawangun saka simbol-simbol
+  kang katon ing formula kasebut,
+  $\Value{t}{M_1}[s] = \Value{t}{M_2}[s]$.
+  Cathetan koreksi sumber OLPL-081: klaim pitulungan
+  sumber nyebut kabeh term tanpa matesi simbol-simbole;
+  wates simbol kang relevan dibalekake miturut hipotesis
+  proposisi. Banjur buktèkna proposisi kanthi induksi
+  miturut~$!A$, nggunakake klaim kang mentas dibuktekake
+  kanggo kasus dhasar induksi (nalika $!A$ atom).
+\end{proof}
+
+\begin{prob}
+Tindakake bukti \olref[fol][syn][ext]{prop:extensionality}
+kanthi rinci.
+\end{prob}
+
+\begin{cor}[Ekstensionalitas kanggo !!^{sentence}s]
+  \ollabel{cor:extensionality-sent}
+  Upamakna $!A$ iku !!a{sentence} lan $\Struct{M_1}$,
+  $\Struct{M_2}$ kaya ing \olref{prop:extensionality}.
+  Mula $\Sat{M_1}{!A}$ yen lan mung yen $\Sat{M_2}{!A}$.
+\end{cor}
+
+\begin{proof}
+Iki miturut \olref{prop:extensionality} lan
+\olref[ass]{cor:sat-sentence}.
+\end{proof}
+
+Salajengipun, nilai term lan apa !!a{structure}
+nyukupi !!a{formula} mung gumantung marang
+nilai subterm-subterm kasebut.
+
+\begin{prop}\ollabel{prop:ext-terms}
+Upamakna $\Struct M$ iku !!a{structure}, $t$ lan
+$t'$ term, lan $s$ pangaji variabel. Mula
+$\Value{\Subst{t}{t'}{x}}{M}[s] =
+\Value{t}{M}[\Subst{s}{\Value{t'}{M}[s]}{x}]$.
+\end{prop}
+
+\begin{proof}
+Kanthi induksi miturut~$t$.
+\begin{enumerate}
+\item Yen $t$ konstanta, upamane $t\ident c$, mula
+  $\Subst{t}{t'}{x} = c$, lan $\Value{c}{M}[s] =
+  \Assign{c}{M} =
+  \Value{c}{M}[\Subst{s}{\Value{t'}{M}[s]}{x}]$.
+
+\item Yen $t$ variabel saliyane~$x$, upamane
+  $t \ident y$, mula $\Subst{t}{t'}{x} = y$, lan
+  $\Value{y}{M}[s] =
+  \Value{y}{M}[\Subst{s}{\Value{t'}{M}[s]}{x}]$
+  amarga $\varAssign{s}{\Subst{s}{\Value{t'}{M}[s]}{x}}{x}$.
+
+\item Yen $t \ident x$, mula $\Subst{t}{t'}{x} = t'$.
+  Nanging
+  $\Value{x}{M}[\Subst{s}{\Value{t'}{M}[s]}{x}] =
+  \Value{t'}{M}[s]$ miturut definisi
+  $\Subst{s}{\Value{t'}{M}[s]}{x}$.
+
+\item Yen $t \ident \Atom{f}{t_1,\dots,t_n}$,
+mula kita nduweni:
+\begin{multline*}
+  \Value{\Subst{t}{t'}{x}}{M}[s] \\
+  \begin{aligned}[b]
+& = \Value{\Atom{f}{\Subst{t_1}{t'}{x}, \dots, \Subst{t_n}{t'}{x}}}{M}[s]\\
+& \qquad    \text{ miturut definisi $\Subst{t}{t'}{x}$}\\
+& = \Assign{f}{M}(\Value{\Subst{t_1}{t'}{x}}{M}[s], \dots,
+    \Value{\Subst{t_n}{t'}{x}}{M}[s])\\
+    & \qquad  \text{ miturut definisi $\Value{\Atom{f}{\dots}}{M}[s]$}\\
+& = \Assign{f}{M}(\Value{t_1}{M}[\Subst{s}{\Value{t'}{M}[s]}{x}], \dots,
+   \Value{t_n}{M}[\Subst{s}{\Value{t'}{M}[s]}{x}])\\
+& \qquad    \text{ miturut hipotesis induksi}\\
+& = \Value{t}{M}[\Subst{s}{\Value{t'}{M}[s]}{x}]
+    \text{ miturut definisi $\Value{\Atom{f}{\dots}}{M}[\Subst{s}{\Value{t'}{M}[s]}{x}]$}
+  \end{aligned}
+\end{multline*}
+Cathetan koreksi sumber OLPL-082: tandha padha-karo
+ing pungkasan baris kapisan tampilan sumber dicopot
+amarga baris sabanjure wis miwiti pepadhan.
+\end{enumerate}
+\end{proof}
+
+\begin{prop}\ollabel{prop:ext-formulas}
+Upamakna $\Struct M$ iku !!a{structure},
+$!A$ iku !!a{formula}, $t'$~term, lan $s$~pangaji
+variabel. Mula $\Sat{M}{\Subst{!A}{t'}{x}}[s]$
+yen lan mung yen
+$\Sat{M}{!A}[\Subst{s}{\Value{t'}{M}[s]}{x}]$.
+\end{prop}
+
+\begin{proof}
+Gladhen.
+\end{proof}
+
+\begin{prob}
+Buktèkna \olref[fol][syn][ext]{prop:ext-formulas}
+\end{prob}
+
+\begin{explain}
+  Maksud saka
+  \cref{fol:syn:ext:prop:ext-terms,fol:syn:ext:prop:ext-formulas}
+  yaiku mangkene. Upamakna kita nduweni term $t$ utawa
+  !!a{formula}~$!A$ lan sawijining term~$t'$, lan arep
+  ngerti nilai saka $\Subst{t}{t'}{x}$ utawa apa
+  $\Subst{!A}{t'}{x}$ dicukupi ing
+  !!a{structure}~$\Struct M$ relatif marang pangaji
+  !!a{variable}~$s$. Kita bisa luwih dhisik nindakake
+  substitusi, banjur nimbang nilai utawa relasi nyukupi
+  relatif marang $\Struct{M}$ lan~$s$; utawa luwih dhisik
+  nemtokake nilai~$m = \Value{t'}{M}[s]$ saka $t'$ ing
+  $\Struct{M}$ relatif marang~$s$, ngganti pangaji
+  !!{variable} dadi~$\Subst{s}{m}{x}$, banjur nimbang
+  nilai~$t$ ing $\Struct{M}$ lan~$\Subst{s}{m}{x}$,
+  utawa apa $\Sat{M}{!A}[\Subst{s}{m}{x}]$.
+  \Cref{fol:syn:ext:prop:ext-terms,fol:syn:ext:prop:ext-formulas}
+  njamin yen wangsulane padha, cara endi wae kang dipilih.
+\end{explain}
+
+\end{document}

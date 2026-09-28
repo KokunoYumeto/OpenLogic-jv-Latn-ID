@@ -56,14 +56,14 @@ Sepisan, upamana $\Gamma \Proves !A$, yaiku ana
 \sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\}
 \]
 Kanthi nggunakake aturan $\TRule{\True}{\lnot}$, tableau iki bisa
-dadi !!{tableau} katutup kanggo
+diowahi dadi !!{tableau} katutup kanggo
 \[
 \{\sFmla{\True}{\lnot !A},
 \sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\}.
 \]
 
 Kosok baline, yen ana !!{tableau} katutup kanggo himpunan kang
-pungkasan mau, kita bisa ngowahi dadi !!{tableau} katutup kanggo
+pungkasan mau, kita bisa ngowahi tableau iku dadi !!{tableau} katutup kanggo
 himpunan kapisan kanthi mbusak saben formula kang diasilake saka
 \TRule{\True}{\lnot} kang ditrapake marang asumsi kapisan
 $\sFmla{\True}{\lnot !A}$, uga mbusak asumsi kasebut, banjur nambahake
@@ -104,9 +104,10 @@ Buktekna yen $\Gamma \Proves \lnot !A$ yen lan mung yen $\Gamma \cup
   Dadi, yen !!{tableau} lawas katutup, tableau anyar uga katutup.
   Tableau anyar nuduhake yen $\Gamma$ ora konsisten, amarga kabeh
   asumsine kalebu ing~$\Gamma$. Cathetan koreksi sumber OLPL-018:
-  sumber Inggris nyebut formula kesimpulan minangka formula kang
-  dikenani aturan benar-negasi, sanadyan asumsi pangganti lan aturan
-  kasebut mbutuhake formula benar-negasi; kesimpulan iku mapan sawise
+  sumber Inggris nyebut formula kesimpulan minangka premis kang
+  dikenani aturan negasi mawa tandha bener, sanadyan asumsi pangganti
+  lan aturan kasebut mbutuhake formula negasi mawa tandha bener minangka
+  premis; kesimpulan iku mapan sawise
   kabeh asumsi, saengga aplikasi lan nomer larik kang dibalekake ing
   kene ditemtokake kanthi tunggal.
 \end{proof}
@@ -137,7 +138,10 @@ Buktekna yen $\Gamma \Proves \lnot !A$ yen lan mung yen $\Gamma \cup
   ing sangisore asumsi-asumsine. Ing kene, saben aplikasi aturan tetep
   bener, amarga kabeh asumsi !!{tableau} kapisan, kalebu
   $\sFmla{\True}{!A}$, wis cumawis. Mula, saben cabang ing sangisore
-  $\sFmla{\True}{!A}$ katutup.
+  $\sFmla{\True}{!A}$ katutup. Cathetan koreksi sumber OLPL-042:
+  sumber Inggris mbaleni tembung penunjuk sisih kiwa; ing kene mung siji
+  tembung dipertahanake, cocog karo cabang mawa tandha bener kang
+  diasilake aturan Cut.
   
   Ing sisih tengen, tambahana bagean saka !!{tableau} kapindho kang
   ana ing sangisore asumsine, kanthi mbusak asil saka saben aplikasi
@@ -159,7 +163,9 @@ Buktekna yen $\Gamma \Proves \lnot !A$ yen lan mung yen $\Gamma \cup
   !!{tableau} gabungan uga katutup, amarga saben !!{signed formula}s
   saliyane $\sFmla{\True}{\lnot !A}$ kang muncul ing cabang
   !!{tableau} lawas kapindho uga muncul ing cabang kang cocog ing
-  !!{tableau} gabungan.
+  !!{tableau} gabungan. Cathetan koreksi sumber OLPL-043: sawise verba
+  bantu, sumber Inggris nggunakake wangun kriya kang ora gramatikal;
+  wangun dhasare dibalekake tanpa ngowahi aturan, premis, utawa asile.
   \end{proof}
 
 \end{document}

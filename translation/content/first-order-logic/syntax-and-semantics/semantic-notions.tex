@@ -1,0 +1,195 @@
+% Part: first-order-logic
+% Chapter: syntax-and-semantics
+% Section: Semantic Notions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{syn}{sem}
+\olsection{Gagasan Semantis}
+
+\begin{explain}
+Sawise nduweni definisi !!{structure}s kanggo basa logika
+sepisanan, kita bisa nemtokake sawetara sipat semantis dhasar
+sarta relasi antarane ukara-ukara. Kang paling prasaja yaiku
+gagasan \emph{validitas} ukara. Ukara valid yen dicukupi
+ing saben !!{structure}. Ukara valid tetep dicukupi apa wae
+carane simbol nonlogis ing ukara kasebut diinterpretasi.
+Mula ukara valid uga diarani \emph{bebener logis}---ukara iku
+bener, yaiku dicukupi, ing sembarang !!{structure}, saengga
+bebener kasebut mung gumantung marang simbol logis kang
+katon ing ukara lan !!{structure} sintaksise, dudu marang
+simbol nonlogis utawa interpretasine.
+\end{explain}
+
+\begin{defn}[Validitas]
+Ukara $!A$ iku \emph{valid}, $\Entails !A$, yen lan mung yen
+$\Sat{M}{!A}$ kanggo saben !!{structure}~$\Struct M$.
+\end{defn}
+
+\begin{defn}[Akibat Semantis]
+Himpunan ukara~$\Gamma$ \emph{ngakibatake} ukara~$!A$,
+$\Gamma \Entails !A$, yen lan mung yen kanggo saben
+!!{structure}~$\Struct M$ kang ndadekake $\Sat{M}{\Gamma}$,
+uga $\Sat{M}{!A}$.
+\end{defn}
+
+
+\begin{defn}[Bisa Dicukupi]
+Himpunan ukara~$\Gamma$ \emph{bisa dicukupi} yen
+$\Sat{M}{\Gamma}$ kanggo sawenehing !!{structure}~$\Struct M$.
+Yen $\Gamma$ ora bisa dicukupi, himpunan iku diarani
+\emph{ora bisa dicukupi}.
+\end{defn}
+
+\begin{prop}
+Ukara $!A$ valid yen lan mung yen $\Gamma \Entails !A$
+kanggo saben himpunan ukara~$\Gamma$.
+\end{prop}
+
+\begin{proof}
+Kanggo arah maju, upamakna $!A$ valid, lan
+$\Gamma$ himpunan ukara. Upamakna $\Struct M$ iku
+!!a{structure} kang ndadekake $\Sat{M}{\Gamma}$.
+Amarga $!A$ valid, $\Sat{M}{!A}$, mula
+$\Gamma \Entails !A$.
+
+Kanggo kontrapositif arah walik, upamakna $!A$ ora valid,
+mula ana !!a{structure}~$\Struct M$ kang ndadekake
+$\Sat/{M}{!A}$. Nalika $\Gamma = \{ \ltrue \}$,
+amarga $\ltrue$ valid, $\Sat{M}{\Gamma}$.
+Dadi ana !!a{structure}~$\Struct M$ kang ndadekake
+$\Sat{M}{\Gamma}$ nanging $\Sat/{M}{!A}$,
+mula $\Gamma$ ora ngakibatake $!A$.
+\end{proof}
+
+\begin{prop}
+\ollabel{prop:entails-unsat}
+$\Gamma \Entails !A$ yen lan mung yen
+$\Gamma \cup \{\lnot !A\}$ ora bisa dicukupi.
+\end{prop}
+
+\begin{proof}
+Kanggo arah maju, upamakna $\Gamma \Entails !A$ lan,
+minangka kosok balen kang arep diselaki, ana
+!!a{structure}~$\Struct M$ kang ndadekake
+$\Sat{M}{\Gamma
+  \cup \{ \lnot !A \}}$. Amarga $\Sat{M}{\Gamma}$
+lan $\Gamma \Entails !A$, $\Sat{M}{!A}$.
+Kajaba iku, amarga $\Sat{M}{\Gamma\cup \{ \lnot !A \}}$,
+$\Sat{M}{\lnot !A}$, mula kita nduweni
+$\Sat{M}{!A}$ lan $\Sat/{M}{!A}$ bebarengan:
+iki kontradiksi. Dadi ora ana !!{structure}~$\Struct M$
+kaya mangkono, mula $\Gamma \cup \{ \lnot !A \}$
+ora bisa dicukupi.
+
+Kanggo arah walik, upamakna
+$\Gamma \cup \{ \lnot !A \}$ ora bisa dicukupi.
+Mula kanggo saben !!{structure}~$\Struct M$,
+salah siji $\Sat/{M}{\Gamma}$ utawa $\Sat{M}{!A}$.
+Dadi kanggo saben !!{structure} $\Struct M$ kang
+ndadekake $\Sat{M}{\Gamma}$, uga $\Sat{M}{!A}$,
+mula $\Gamma \Entails !A$.
+\end{proof}
+
+\begin{prob}
+\begin{enumerate}
+\item Tuduhna yen $\Gamma \Entails \bot$ yen lan mung yen
+  $\Gamma$ ora bisa dicukupi.
+\item Tuduhna yen $\Gamma \cup \{!A\} \Entails \bot$
+  yen lan mung yen $\Gamma \Entails \lnot !A$.
+\item Upamakna $c$ ora katon ing $!A$ utawa $\Gamma$.
+  Tuduhna yen $\Gamma \Entails \lforall[x][!A]$
+  yen lan mung yen $\Gamma \Entails
+  \Subst{!A}{c}{x}$.
+\end{enumerate}
+\end{prob}
+
+\begin{prop}
+Yen $\Gamma \subseteq \Gamma'$ lan $\Gamma \Entails !A$,
+mula $\Gamma' \Entails !A$.
+\end{prop}
+
+\begin{proof}
+Upamakna $\Gamma \subseteq \Gamma'$ lan
+$\Gamma \Entails !A$. Upamakna $\Struct M$ iku
+struktur kang ndadekake $\Sat{M}{\Gamma'}$;
+mula $\Sat{M}{\Gamma}$, lan amarga
+$\Gamma \Entails !A$, kita oleh $\Sat{M}{!A}$.
+Dadi kapan wae $\Sat{M}{\Gamma'}$, uga
+$\Sat{M}{!A}$, mula $\Gamma' \Entails !A$.
+\end{proof}
+
+
+\begin{thm}[Teorema Deduksi Semantis]
+\ollabel{thm:sem-deduction}
+$\Gamma \cup \{!A\} \Entails !B$ yen lan mung yen
+$\Gamma \Entails !A \lif !B$.
+\end{thm}
+
+\begin{proof}
+Kanggo arah maju, upamakna
+$\Gamma \cup \{ !A \} \Entails !B$ lan
+$\Struct M$ iku !!a{structure} kang ndadekake
+$\Sat{M}{\Gamma}$. Yen $\Sat{M}{!A}$,
+mula $\Sat{M}{\Gamma \cup \{ !A \} }$;
+amarga $\Gamma \cup \{ !A \}$ ngakibatake $!B$,
+kita oleh $\Sat{M}{!B}$. Dadi
+$\Sat{M}{!A \lif !B}$, mula
+$\Gamma \Entails !A \lif !B$.
+
+Kanggo arah walik, upamakna
+$\Gamma \Entails !A \lif !B$ lan
+$\Struct M$ iku !!a{structure} kang ndadekake
+$\Sat{M}{\Gamma \cup \{ !A
+  \}}$. Mula $\Sat{M}{\Gamma}$, saengga
+$\Sat{M}{!A \lif !B}$, lan amarga
+$\Sat{M}{!A}$, uga $\Sat{M}{!B}$.
+Dadi kapan wae $\Sat{M}{\Gamma \cup \{
+  !A \} }$, uga $\Sat{M}{!B}$,
+mula $\Gamma \cup \{ !A \} \Entails !B$.
+\end{proof}
+
+\begin{prop}\ollabel{prop:quant-terms}
+  Upamakna $\Struct{M}$ iku !!a{structure},
+  lan $!A(x)$ iku !!a{formula} kanthi siji
+  variabel bebas~$x$, sarta $t$~term katutup. Mula:
+  \begin{tagenumerate}{prvEx,prvAll}
+    \tagitem{prvEx}{$!A(t) \Entails \lexists[x][!A(x)]$}{}
+    \tagitem{prvAll}{$\lforall[x][!A(x)] \Entails !A(t)$}{}
+  \end{tagenumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{tagenumerate}{prvEx,prvAll}
+    \tagitem{prvEx}{%
+      \iftag{probEx}{Gladhen.}{Upamakna $\Sat{M}{!A(t)}$.
+        Upamakna $s$ iku pangaji variabel kanthi
+        $s(x) = \Value{t}{M}$. Mula
+        $\Sat{M}{!A(t)}[s]$ amarga $!A(t)$ iku
+        !!a{sentence}. Miturut
+        \olref[ext]{prop:ext-formulas},
+        $\Sat{M}{!A(x)}[s]$. Miturut
+        \olref[ass]{prop:sat-quant},
+        $\Sat{M}{\lexists[x][!A(x)]}$.}}{}
+    \tagitem{prvAll}{%
+      \iftag{probAll}{Gladhen.}{Upamakna
+        $\Sat{M}{\lforall[x][!A(x)]}$. Upamakna
+        $s$ iku pangaji variabel kanthi
+        $s(x) = \Value{t}{M}$. Miturut
+        \olref[ass]{prop:sat-quant},
+        $\Sat{M}{!A(x)}[s]$. Miturut
+        \olref[ext]{prop:ext-formulas},
+        $\Sat{M}{!A(t)}[s]$. Miturut
+        \olref[ass]{prop:sentence-sat-true},
+        $\Sat{M}{!A(t)}$ amarga $!A(t)$ iku
+        !!a{sentence}.}}{}
+  \end{tagenumerate}
+\end{proof}
+
+\begin{probtag}{probEx,probAll}
+  Rampungna bukti \olref[fol][syn][sem]{prop:quant-terms}.
+\end{probtag}
+
+\end{document}

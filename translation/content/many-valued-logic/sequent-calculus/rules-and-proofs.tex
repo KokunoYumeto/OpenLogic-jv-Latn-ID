@@ -1,0 +1,79 @@
+% Part: many-valued-logic
+% Chapter: sequent-calculus
+% Section: rules-and-proofs
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{seq}{rul}
+
+\olsection{Aturan lan \usetoken{P}{derivation}}
+
+Ing ngisor iki, $\Gamma, \Delta, \Pi, \Lambda$ makili
+rerangkening winates saka !!{sentence}s.
+
+\begin{defn}[Sekuen]
+Sawijining \emph{sekuen $n$ sisi} iku ekspresi awujud
+\[
+\Gamma_1 \nSequent \dots \nSequent \Gamma_n
+\]
+ing ngendi saben $\Gamma_i$ iku rerangkening winates
+(bisa uga kothong) saka !!{sentence}s ing basa~$\Lang L$.
+\end{defn}
+
+\begin{defn}[Sekuen Wiwitan]
+Sawijining \emph{sekuen wiwitan $n$ sisi} iku sekuen $n$ sisi
+awujud $!A \nSequent \dots \nSequent !A$ kanggo saben
+!!{sentence} $!A$ ing basa kasebut.
+
+Yen basa iku ngemot konektif $0$-argumen~$\star$,
+yaiku tetapan proposisional, kita uga njupuk sekuen
+$\dots \nSequent \star \nSequent \dots$ kang $\star$ mapan
+ing panggonan kanggo nilai kabeneran kang cocog karo~$\tf{\star}
+\in V$, dene panggonan liyane kothong.
+\end{defn}
+
+Kanggo saben konektif ing logika $n$ nilai~$\Log{L}$,
+ana aturan logis kanggo saben nilai kabeneran kang bisa
+diwenehake dening konektif kasebut ing~$\Log{L}$.
+!!^{derivation}s ing kalkulus sekuen $n$ sisi kanggo~$\Log{L}$
+iku wit-wit sekuen; sekuen kang paling ndhuwur yaiku sekuen
+wiwitan, lan yen sekuen ana ing sangisore siji utawa luwih
+sekuen liyane, sekuen iku kudu manut kanthi bener marang
+aturan inferensi kanggo konektif ing~$\Log{L}$.
+
+\begin{defn}[Teorema]
+!!^a{sentence}~$!A$ iku \emph{teorema} ing logika $n$ nilai~$\Log{L}$
+yen ana !!a{derivation} kanggo sekuen $n$ sisi kang ngemot $!A$
+ing saben panggonan kang cocog karo nilai kabeneran pinilih
+ing~$\Log{L}$. Kita nulis $\Proves[\Log{L}] !A$ yen $!A$
+iku teorema lan $\Proves/[\Log{L}] !A$ yen dudu teorema.
+\end{defn}
+
+\begin{defn}[!!^{derivability}]
+!!^a{sentence}~$!A$ \emph{!!{derivable} saka} himpunan
+!!{sentence}s~$\Gamma$ ing logika $n$ nilai~$\Log{L}$,
+$\Gamma \Proves[\Log{L}] !A$, yen lan mung yen ana subhimpunan
+winates~$\Gamma_0 \subseteq \Gamma$ lan rerangkening $\Gamma_0'$
+saka !!{sentence}s ing~$\Gamma_0$ saéngga sekuen iki
+nduweni !!a{derivation}:
+\[ \Lambda_1 \nSequent \dots \nSequent \Lambda_n \]
+ing ngendi $\Lambda_i$ iku $!A$ yen panggonan $i$ cocog karo
+nilai kabeneran pinilih, lan $\Gamma_0'$ yen ora. Yen $!A$
+ora !!{derivable} saka $\Gamma$, kita nulis
+$\Gamma \Proves/[\Log{L}] !A$.
+\end{defn}
+
+Umpamane, logika \L ukasiewicz $3$ nilai nduweni
+kalkulus sekuen $3$ sisi. Ing sekuen $3$ sisi
+$\Gamma \nSequent \Pi \nSequent \Delta$, $\Gamma$ cocog
+karo~$\False$, $\Delta$ karo~$\True$, lan $\Pi$ karo~$\Undef$.
+Aksiomane $!A \nSequent !A \nSequent !A$. Amarga mung
+$\True$ kang dadi nilai pinilih, $\Gamma \Proves[\LogLuk[3]] !A$
+yen lan mung yen sekuen $\Gamma \nSequent \Gamma \nSequent !A$
+nduweni !!a{derivation}. (Yen $\Undef$ uga dadi nilai pinilih,
+kita bakal mbutuhake !!a{derivation} kanggo
+$\Gamma \nSequent !A \nSequent !A$.)
+
+\end{document}

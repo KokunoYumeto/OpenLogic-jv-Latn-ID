@@ -1,0 +1,75 @@
+% Part: first-order-logic
+% Chapter: syntax-and-semantics
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{syn}{int}
+
+\olsection{Pambuka}
+
+Kanggo ngembangaké téori lan métatéori logika tataran kapisan,
+kita kudu luwih dhisik netepaké sintaksis lan semantik
+ekspresiné. Ekspresi logika tataran kapisan awujud suku lan
+!!{formula}s. Suku dibangun saka !!{variable}s, !!{constant}s,
+lan !!{function}s. Sabanjuré, !!^{formula}s dibangun saka
+!!{predicate}s bebarengan karo suku (iki mbentuk !!{formula}s
+paling prasaja, yaiku kang ``atomik''). Saka !!{formula}s atomik,
+kita bisa mbangun wangun kang luwih rumit nganggo konektif
+logika lan kuantor. Aturan pambentukan bisa ditetepaké kanthi
+akèh cara; ing kéné kita mung mènèhi salah siji cara.
+Sistem liya bisa milih lambang kang béda, milih konektif
+primitif kang béda, lan nganggo kurung kanthi cara kang béda
+(utawa ora nganggo kurung babar pisan, kaya notasi Polandia).
+Nanging kabèh cara mau padha-padha netepaké himpunan suku lan
+!!{formula}s sacara \emph{induktif}. Yèn aturan iki dirumusaké
+kanthi trep, saben ekspresi dhasaré mung bisa kabangun kanthi
+siji cara. Definisi induktif kang ngasilaké ekspresi kang
+\emph{bisa diwaca kanthi unik} uga ngidini kita mènèhi teges
+marang ekspresi mau kanthi cara kang padha: definisi induktif.
+
+Nemtokaké teges ekspresi iku pakaryané semantik. Konsep
+utama semantik yaiku relasi nyukupi ing !!a{structure}.
+!!^a{structure} mènèhi teges marang unsur-unsur dhasar basa:
+!!a{domain} iku himpunan obyek kang ora kosong. Kuantor
+ditafsiraké ngliwati domain iki, !!{constant}s diwènèhi
+unsur ing domain, !!{function}s diwènèhi fungsi saka
+pangkat Kartesius domainé kang cocog karo aritasé menyang
+!!{domain}, lan !!{predicate}s diwènèhi relasi ing
+!!{domain}. !!{domain} bebarengan karo penetapan marang
+kosakata dhasar mbentuk !!a{structure}. !!^{variable}s bisa
+katon ing !!{formula}s; kanggo mènèhi semantik, kita uga
+kudu netepaké !!{element}s saka !!{domain} kanggo variabel mau.
+Iki diarani pangaji variabel. Pungkasané, relasi nyukupi
+nyawijèkaké kabèh mau. !!^a{formula} bisa dicukupi ing
+!!a{structure}~$\Struct{M}$ relatif marang pangaji variabel~$s$,
+lan ditulis $\Sat{M}{!A}[s]$. Relasi iki uga ditetepaké
+kanthi induksi tumrap wangun~$!A$. Tabel bebener kanggo
+konektif logika, umpamané, netepaké kapan $!A \land !B$
+dicukupi adhedhasar dicukupi (utawa ora) $!A$ lan ~$!B$.
+Pangaji variabel banjur ora nduwèni pangaruh yèn
+!!{formula}~$!A$ iku !!a{sentence}, yaiku ora nduwèni
+variabel bebas. Mula kita bisa nyebut !!{sentence}s kang
+dicukupi (utawa ora) ing !!{structure}s tanpa nyebut
+pangaji variabel.
+
+Adhedhasar relasi nyukupi $\Sat{M}{!A}$ kanggo ukara,
+kita bisa netepaké konsep semantik dhasar: validitas,
+akibat semantis, lan bisa dicukupi. Ukara diarani valid,
+$\Entails !A$, yèn saben struktur nyukupiné. Ukara iku
+dadi konsekuènsi saka himpunan !!{sentence}s,
+$\Gamma \Entails !A$, yèn saben !!{structure} kang
+nyukupi kabèh !!{sentence}s ing~$\Gamma$ uga nyukupi~$!A$.
+Himpunan ukara bisa dicukupi yèn ana !!{structure} kang
+nyukupi kabèh !!{sentence}s ing kono bebarengan. Amarga
+!!{formula}s ditetepaké sacara induktif, lan relasi nyukupi
+uga ditetepaké kanthi induksi tumrap wangun !!{formula}s,
+kita bisa migunakaké induksi kanggo mbuktèkaké sipat-sipat
+semantik lan sesambungan antarkonsep semantik kasebut.
+
+
+
+
+\end{document}

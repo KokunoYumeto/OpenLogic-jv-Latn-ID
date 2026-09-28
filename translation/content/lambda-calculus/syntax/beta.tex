@@ -1,0 +1,186 @@
+% Part: lambda-calculus
+% Chapter: syntax
+% Section: beta
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{syn}{bet}
+\olsection{Reduksi-$\beta$}
+
+Nalika ndeleng
+$(\lambd[m][(\lambd[y][y]) m])$,
+lumrah yen kita ngira ana
+sesambungan karo $\lambd[m][m]$:
+suku kapindho iku asil
+``nyederhanakake'' suku kapisan.
+Konsep \emph{reduksi-$\beta$}
+ngandharake intuisi iki kanthi formal.
+
+\begin{defn}[Kontraksi-$\beta$, $\bredone$] \ollabel{defn:betacontr}
+  \emph{Kontraksi-$\beta$} ($\bredone$)
+  yaiku relasi kompatibel paling cilik
+  ing suku kang nyukupi syarat iki:
+  \[
+    (\lambd[x][N])Q \bredone \Subst{N}{Q}{x} 
+  \]
+  $P$ diarani \emph{dikontraksi-$\beta$}
+  dadi $Q$ yen $P \bredone Q$.
+  Suku kang awujud
+  $(\lambd[x][N])Q$ diarani
+  \emph{redex}.
+\end{defn}
+
+\begin{prob} \ollabel{prob:def}
+  Tulisen definisi induktif
+  kang ekuivalen kanggo
+  kontraksi-$\beta$, kaya
+  owah-owahan variabel kaiket
+  ing \olref[lam][syn][alp]{defn:aconvone}.
+\end{prob}
+  
+\begin{defn}[Reduksi-$\beta$, $\bred$] \ollabel{defn:betared}
+  \emph{Reduksi-$\beta$} ($\bred$)
+  yaiku relasi refleksif lan transitif
+  paling cilik ing suku kang
+  ngemot $\bredone$.
+  $P$ diarani direduksi-$\beta$
+  dadi $Q$ yen $P \bred Q$.
+\end{defn}
+
+Yen konteks wis cetha,
+kita nulis $\redone$ tinimbang
+$\bredone$, lan $\red$
+tinimbang $\bred$.
+
+Miturut intuisi, $M \bred N$
+yen lan mung yen $M$ bisa
+diowahi dadi $N$ kanthi nol
+utawa sawetara langkah
+kontraksi-$\beta$.
+
+\begin{defn}[Normal-$\beta$]
+Suku kang ora bisa dikontraksi-$\beta$
+maneh diarani \emph{normal-$\beta$}.
+\end{defn}
+
+Yen $M \bred N$ lan $N$
+normal-$\beta$, mula $N$
+diarani \emph{wujud normal}
+saka~$M$. Apa wujud normal
+sawijining suku iku tunggal?
+Ya, kaya kang bakal kita
+deleng sabanjure.
+
+Gatekna sawetara conto.
+\begin{enumerate}
+\item Kita nduweni
+\begin{align*}
+(\lambd[x][xxy]) \lambd[z][z] & \redone (\lambd[z][z])(\lambd[z][z]) y \\
+& \redone (\lambd[z][z]) y \\
+& \redone y
+\end{align*}
+\item ``Nyederhanakake'' suku
+  malah bisa ndadekake suku
+  luwih rumit:
+\begin{align*}
+(\lambd[x][xxy])(\lambd[x][xxy]) & \redone (\lambd[x][xxy])(\lambd[x][xxy])y \\
+& \redone (\lambd[x][xxy])(\lambd[x][xxy])yy \\
+& \redone \dots
+\end{align*}
+\item Reduksi uga bisa
+  ora ngowahi sawijining suku:
+\[
+(\lambd[x][xx])(\lambd[x][xx]) \redone (\lambd[x][xx])(\lambd[x][xx])
+\]
+\item Sawetara suku uga bisa
+  direduksi kanthi luwih saka siji
+  cara; umpamane,
+\[
+(\lambd[x][(\lambd[y][yx]) z]) v \redone (\lambd[y][yv]) z
+\]
+kanthi ngontraksi aplikasi
+paling njaba; lan
+\[
+(\lambd[x][(\lambd[y][yx]) z]) v \redone (\lambd[x][zx]) v
+\]
+kanthi ngontraksi aplikasi
+paling njero. Nanging gatekna
+yen ing kasus iki loro-lorone
+suku terus direduksi dadi suku
+kang padha, yaiku $zv$.
+\end{enumerate}
+
+Asil pungkasan ing conto mau
+dudu kabeneran, nanging
+nggambarake sipat kalkulus lambda
+kang jero lan wigati,
+yaiku sipat Church--Rosser.
+
+\begin{digress}
+  Umume ana luwih saka siji
+  cara kanggo ngreduksi-$\beta$
+  sawijining suku. Mula ana
+  maneka strategi reduksi;
+  kang paling lumrah yaiku
+  \emph{strategi alami}.
+  Strategi alami tansah ngontraksi
+  redex \emph{paling kiwa},
+  kanthi posisi redex ditetepake
+  minangka titik wiwitane
+  ing suku. Strategi alami nduweni
+  sipat migunani: sawijining suku
+  bisa direduksi dadi wujud normal
+  kanthi sawijining strategi
+  yen lan mung yen bisa direduksi
+  dadi wujud normal kanthi
+  strategi alami. Sabanjure
+  kita nggunakake strategi alami
+  kajaba yen ditemtokake liyane.
+\end{digress}
+
+\begin{defn}[Ekuivalensi-$\beta$, $\equal$]
+  \emph{Ekuivalensi-$\beta$} ($\equal$)
+  yaiku relasi kang ditetepake
+  kanthi induktif kaya mangkene:
+  \begin{enumerate}
+  \item $M \equal M$.
+  \item Yen $M \equal N$, mula $N \equal M$.
+  \item Yen $M \equal N$, $N \equal O$, mula $M \equal O$.
+  \item Yen $M \equal N$, mula $PM \equal PN$.
+  \item Yen $M \equal N$, mula $MQ \equal NQ$.
+  \item Yen $M \equal N$, mula $\lambd[x][M] \equal \lambd[x][N]$.
+  \item $(\lambd[x][N])Q \equal \Subst{N}{Q}{x}$.
+  \end{enumerate}
+\end{defn}
+
+Telung aturan kapisan ndadekake
+relasi iki relasi ekuivalensi;
+telung aturan sabanjure ndadekake
+kompatibel; aturan pungkasan
+njamin yen relasi iki ngemot
+kontraksi-$\beta$.
+
+Miturut intuisi, loro suku
+ekuivalen-$\beta$ yen lan mung yen
+siji bisa diowahi dadi sijine
+kanthi nol utawa luwih langkah
+kontraksi-$\beta$ utawa
+``walikan'' kontraksi-$\beta$.
+Walikan kontraksi-$\beta$
+ditetepake supaya $M$
+dikontraksi-$\beta$ kanthi
+walikan dadi $N$ yen lan
+mung yen $N$ dikontraksi-$\beta$
+dadi $M$.
+
+Kajaba aturan ing ndhuwur,
+kita bakal nggedhekake relasi
+kanthi aturan liyane lan
+nglambangake relasi ekuivalensi
+kang digedhekake iku minangka
+$\equal[X]$, kanthi $X$
+aturan tambahan kasebut.
+
+\end{document}

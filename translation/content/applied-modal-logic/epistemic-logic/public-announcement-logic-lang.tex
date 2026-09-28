@@ -1,0 +1,83 @@
+% Part: applied-modal-logics
+% Chapter: epistemic-logic
+% Section: public-announcement-logic-lang
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{aml}{el}{pal}
+
+\olsection{Logika Wara-Wara Umum}
+
+Logika epistemik dinamis ngidini kita nggambarake carane kawruh para
+agen owah manut wektu utawa nalika entuk informasi anyar. Akeh
+logika iki nggambarake owah-owahan kawruh liwat \emph{prastawa}
+informasi utawa \emph{panganyaran}. Jinis panganyaran kang paling
+dhasar yaiku wara-wara umum: sawijining rumus diwara-warake kanthi
+bener lan kabeh agen nyekseni prastawa iku bebarengan. Kanggo iki,
+kita ngambakake basane kaya mangkene.
+
+\begin{defn}
+Upamane $G$ himpunan lambang agen. Basa dhasar logika epistemik
+multiagen kanthi wara-wara umum ngemot
+\begin{enumerate}
+  \tagitem{prvFalse}{Konstanta proposisional kanggo !!{falsity}~$\lfalse$.}{}
+  \tagitem{prvTrue}{Konstanta proposisional kanggo !!{truth}~$\ltrue$.}{}
+  \item Sawijining himpunan kang !!{denumerable}s saka !!{propositional variable}s: $\Obj
+    p_0$, $\Obj p_1$, $\Obj p_2$, \dots
+  \item Konektif proposisional: \startycommalist
+  \iftag{prvNot}{\ycomma $\lnot$ (negasi)}{}%
+  \iftag{prvAnd}{\ycomma $\land$ (konjungsi)}{}%
+  \iftag{prvOr}{\ycomma $\lor$ (disjungsi)}{}%
+  \iftag{prvIf}{\ycomma $\lif$ (!!{conditional})}{}%
+  \iftag{prvIff}{\ycomma $\liff$ (!!{biconditional})}{}.
+  \item Operator kawruh $\Knows_a$ kang $a \in G$.
+  \item Operator wara-wara umum $[!B]$ kang $!B$ iku !!a{formula}.
+\end{enumerate}
+\end{defn}
+
+Operator wara-wara umum tumindak minangka operator kothak, mula
+definisi basa kanthi induksi diwenehake kaya mangkene:
+
+\begin{defn}
+  \emph{!!^{formula}s} ing basa epistemik ditetepake kanthi induksi
+  kaya mangkene:
+  \begin{enumerate}
+  \tagitem{prvFalse}{$\lfalse$ iku !!{formula} atomik.}{}
+
+  \tagitem{prvTrue}{$\ltrue$ iku !!{formula} atomik.}{}
+
+  \item Saben variabel proposisional $\Obj p_i$ iku !!{formula} (atomik).
+
+  \tagitem{prvNot}{Yen $!A$ iku !!a{formula}, $\lnot !A$ uga
+  !!a{formula}.}{}
+
+  \tagitem{prvAnd}{Yen $!A$ lan $!B$ iku !!{formula}s, $(!A \land
+  !B)$ uga !!a{formula}.}{}
+
+  \tagitem{prvOr}{Yen $!A$ lan $!B$ iku !!{formula}s, $(!A \lor !B)$
+  uga !!a{formula}.}{}
+
+  \tagitem{prvIf}{Yen $!A$ lan $!B$ iku !!{formula}s, $(!A \lif !B)$
+  uga !!a{formula}.}{}
+
+  \tagitem{prvIff}{Yen $!A$ lan $!B$ iku !!{formula}s, $(!A \liff !B)$
+  uga !!a{formula}.}{}
+
+  \item Yen $!A$ iku !!a{formula} lan $a \in G$, $\Knows_a !A$
+  uga !!a{formula}.
+  
+  \item Yen $!A$ lan $!B$ iku !!{formula}s, $[!A] !B$ uga !!a{formula}.
+
+  \tagitem{limitClause}{Ora ana liyane kang dadi !!a{formula}.}{}
+\end{enumerate}
+\end{defn}
+
+!!{formula} $[!A] !B$ dimaksudake diwaca ``Sawise $!A$ diwara-warake
+kanthi bener, $!B$~bener.'' Kadhangkala uga migunani kanggo ngrembug
+kawruh umum ing konteks wara-wara umum, mula basa iki uga bisa ngemot
+operator kawruh umum~$\CKnows_G
+!A$.
+
+\end{document}

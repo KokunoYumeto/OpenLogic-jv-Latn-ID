@@ -1,0 +1,50 @@
+% part: intuitionistic-logic
+% chapter: soundness-completeness
+% section: completeness-thm
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{sc}{cpl}
+
+\olsection{Teorema Kelengkapan}
+
+\begin{thm}\ollabel{thm:completeness}
+  Yen $\Gamma \Entails !A$, mula $\Gamma \Proves !A$.
+\end{thm}
+
+\begin{proof}
+  Kita mbuktekake kontrapositife: upamane $\Gamma \Proves/ !A$.
+  Miturut \olref[lin]{lem:lindenbaum}, ana himpunan prim
+  ~$\Gamma^* \supseteq \Gamma$ kanthi $\Gamma^* \Proves/ !A$.
+  Gatekna model kanonik~$\mModel{M(\Gamma^*)}$ kanggo $\Gamma^*$
+  kaya kang ditetepake ing \olref[mod]{defn:canonical-model}.
+  Kanggo sembarang $!B \in \Gamma$, $\Gamma^* \Proves !B$.
+  Uga $\Gamma^*(\emptyseq) = \Gamma^*$. Miturut Lema Kabeneran
+  (\olref[tru]{lem:truth}), kita nduweni
+  $\mSat{M(\Gamma^*)}{!B}[\emptyseq]$ kanggo kabeh $!B \in \Gamma$
+  lan $\mSat/{M(\Gamma^*)}{!A}[\emptyseq]$. Iki nuduhake yen
+  $\Gamma \Entails/ !A$.
+\end{proof}
+
+\begin{prob}
+  Tuduhna yen $!A$ mung ngemot !!{propositional variable}s, $\lor$,
+  lan~$\land$, mula $\Entails/ !A$. Gunakna iki kanggo nyimpulake yen
+  $\lif$ ora bisa ditetepake ing logika intuisionistik saka $\lor$
+  lan~$\land$.
+\end{prob}
+  
+\begin{prob}
+  Kanthi nggunakake teorema kelengkapan, buktèkna yen $\Proves !A \lor !B$,
+  mula $\Proves !A$ utawa $\Proves !B$. (Pituduh: upamane
+  $\mSat/{M_1}{!A}$ lan $\mSat/{M_2}{!B}$, banjur bangunen model anyar
+  $\mModel{M}$ kanthi $\mSat/{M}{!A \lor !B}$.)
+\end{prob}
+  
+\begin{prob} 
+  Tuduhna yen $\mModel{M}$ iku model relasional kang nggunakake
+  urutan linear, mula $\mSat{M}{(!A \lif !B)\lor(!B \lif !A)}$.
+\end{prob}
+
+\end{document}

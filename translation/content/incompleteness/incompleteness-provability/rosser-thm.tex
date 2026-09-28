@@ -1,0 +1,154 @@
+% Part: incompleteness
+% Chapter: incompleteness-provability
+% Section: rosser-thm
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{inp}{ros}
+
+\olsection{Teorema Rosser}
+
+Apa bukti G\"odel bisa diowahi supaya ngasilake asil kang luwih kuwat,
+kanthi ngganti ``$\omega$-konsisten'' dadi mung ``konsisten''?
+Wangsulane ``bisa,'' nganggo trik kang ditemokake Rosser. Trik
+Rosser yaiku nggunakake predikat !!{derivability} kang
+``dipowahi'' $\ORProv_T(y)$ tinimbang $\OProv[\Th{T}](y)$.
+
+\begin{thm}
+\ollabel{thm:rosser}
+Upamana $\Th{T}$ teori konsisten sembarang kang !!{axiomatizable}
+lan ngembangake $\Th{Q}$. Mula $\Th{T}$ ora jangkep.
+\end{thm}
+
+\begin{proof}
+Elinga yen $\OProv[\Th{T}](y)$ ditemtokake minangka
+$\lexists[x][\OPrf[\Th{T}](x, y)]$, ing ngendi
+$\OPrf[\Th{T}](x, y)$ merepresentasikake relasi kang bisa diputusake
+lan bener yen lan mung yen $x$ iku bilangan G\"odel saka
+!!a{derivation} kanggo !!{sentence} kang nduweni bilangan
+G\"odel~$y$. Relasi antarane $x$ lan~$y$ kang bener yen $x$~iku
+bilangan G\"odel saka sawijining \emph{bantahan} tumrap ukara kang
+nduweni bilangan G\"odel~$y$ uga bisa diputusake. Tetepna
+$\fn{not}(x)$ minangka fungsi rekursif primitif mangkene: yen $x$
+kode saka formula $!A$, $\fn{not}(x)$ iku kode saka $\lnot !A$.
+Mula $\Refut[\Th{T}](x, y)$ bener yen lan mung yen
+$\Prf[\Th{T}](x, \fn{not}(y))$. Tetepna
+$\ORefut[\Th{T}](x, y)$ kanggo merepresentasikake relasi iki. Mula,
+yen $\Th{T} \Proves \lnot !A$ lan $\delta$ iku !!{derivation}
+kang cocog, $\Th{Q} \Proves \ORefut[\Th{T}](\gn{\delta}, \gn{!A})$.
+Kita nemtokake $\ORProv[\Th{T}](y)$ minangka
+\[
+\lexists[x][(\OPrf[\Th{T}](x,y) \land \lforall[z][(z < x \lif \lnot
+  \ORefut[\Th{T}](z,y))])].
+\]
+Sacara kasar, $\ORProv[\Th{T}](y)$ nyatakake ``ana bukti kanggo
+$y$ ing $\Th{T}$, lan ora ana bantahan kanggo~$y$ kang kodene luwih
+cilik tinimbang kode bukti mau.''
+Yen $\Th{T}$ konsisten, $\ORProv[\Th{T}](y)$ bener tumrap bilangan kang
+padha karo $\OProv[\Th{T}](y)$; nanging saka sudut pandang
+\emph{provabilitas} ing~$\Th{T}$ (lan saiki kita ngerti yen bebener lan
+provabilitas iku beda!) loro-lorone nduweni sipat kang beda. Yen
+$\Th{T}$ \emph{ora} konsisten, loro-lorone \emph{ora} bener tumrap
+bilangan kang padha!{} ($\ORProv[\Th{T}](y)$ kerep diwaca minangka
+``$y$ bisa dibuktekake kanthi cara Rosser.'' Nanging, kaya kang
+lagi dirembug, provabilitas Rosser dudu jinis provabilitas khusus---ing
+teori kang ora konsisten, ana !!{sentence}s kang bisa dibuktekake
+nanging ora bisa dibuktekake kanthi cara Rosser---mula sebutan iki
+bisa mbingungake. Supaya ora bingung, bisa wae diwaca minangka
+``$y$ iku shmovable.'')
+
+Miturut lema titik tetep, ana formula $!R_\Th{T}$ saengga
+\begin{equation}
+  \Th{Q} \Proves !R_\Th{T} \liff \lnot \ORProv[\Th{T}](\gn{!R_\Th{T}}).
+  \ollabel{RT}
+\end{equation}
+Beda karo bukti \olref[1in]{thm:first-incompleteness}, ing kene kita
+nyatakake yen $\Th{T}$ konsisten, $\Th{T}$ ora !!{derive}
+$!R_\Th{T}$, lan $\Th{T}$ uga ora !!{derive} $\lnot !R_\Th{T}$.
+(Kanthi tembung liya, kita ora mbutuhake panganggep
+$\omega$-konsisten.)
+
+Sepisan, ayo dituduhake yen $\Th{T} \Proves/ !R_{\Th{T}}$.
+Upamana teori iki mbuktekake, mula ana !!a{derivation}
+kanggo~$!R_{\Th{T}}$ saka~$T$; upamana $n$ bilangan G\"odele. Mula
+$\Th{Q} \Proves \OPrf[\Th{T}](\num{n}, \gn{!R_{\Th{T}}})$, amarga
+$\OPrf[\Th{T}]$ merepresentasikake $\Prf[\Th{T}]$ ing~$\Th{Q}$.
+Kajaba iku, kanggo saben $k < n$, $k$ dudu bilangan G\"odel saka
+!!a{derivation} kanggo $\lnot !R_{\Th{T}}$, amarga $\Th{T}$
+konsisten. Dadi kanggo saben $k < n$, $\Th{Q} \Proves \lnot
+\ORefut[\Th{T}](\num{k}, \gn{!R_{\Th{T}}})$. Miturut
+\olref[req][min]{lem:less-nsucc},
+$\Th{Q} \Proves \lforall[z][(z < \num{n} \lif \lnot \ORefut[\Th{T}](z,
+  \gn{!R_{\Th{T}}}))]$. Mula,
+\[
+\Th{Q} \Proves \lexists[x][(\OPrf[\Th{T}](x,\gn{!R_{\Th{T}}}) \land \lforall[z][(z
+    < x \lif \lnot \ORefut[\Th{T}](z,\gn{!R_{\Th{T}}}))])],
+\]
+nanging iki persis $\ORProv[\Th{T}](\gn{!R_{\Th{T}}})$. Miturut
+\olref{RT}, $\Th{Q} \Proves \lnot !R_{\Th{T}}$. Amarga $\Th{T}$
+ngembangake $\Th{Q}$, uga $\Th{T} \Proves \lnot !R_{\Th{T}}$.
+Kita wis nganggep yen $\Th{T} \Proves !R_{\Th{T}}$, mula $\Th{T}$
+bakal ora konsisten, nalisir panganggep ing teorema.
+
+Saiki ayo dituduhake yen $\Th{T} \Proves/ \lnot !R_{\Th{T}}$.
+Upamana maneh teori iki mbuktekake, lan upamana $n$ bilangan G\"odel
+saka !!a{derivation} kanggo~$\lnot !R_{\Th{T}}$. Mula
+$\Refut[\Th{T}](n, \Gn{!R_{\Th{T}}})$ bener, lan amarga
+$\ORefut[\Th{T}]$ merepresentasikake $\Refut[\Th{T}]$ ing
+$\Th{Q}$, $\Th{Q} \Proves
+\ORefut[\Th{T}](\num{n}, \gn{!R_{\Th{T}}})$. Kita bakal nuduhake
+yen $\Th{T}$ banjur ora konsisten amarga teori iki uga
+!!{derive}~$!R_{\Th{T}}$. Amarga
+\begin{align*}
+\Th{Q} & \Proves !R_{\Th{T}} \liff \lnot \ORProv[\Th{T}](\gn{!R_{\Th{T}}}), 
+\intertext{lan amarga $\Th{T}$ ngembangake~$\Th{Q}$, cukup dituduhake yen}
+\Th{Q} & \Proves \lnot \ORProv[\Th{T}](\gn{!R_{\Th{T}}}).
+\end{align*}
+!!{sentence} $\lnot
+\ORProv[\Th{T}](\gn{!R_{\Th{T}}})$, yaiku,
+\begin{align*}
+  \lnot & \lexists[x][(\OPrf[\Th{T}](x,\gn{!R_{\Th{T}}}) \land
+    \lforall[z][(z < x \lif \lnot \ORefut[\Th{T}](z,\gn{!R_{\Th{T}}}))])],
+  \intertext{ekuivalen sacara logis karo}
+  & \lforall[x][(\OPrf[\Th{T}](x,\gn{!R_{\Th{T}}}) \lif
+    \lexists[z][(z < x \land \ORefut[\Th{T}](z,\gn{!R_{\Th{T}}}))])].
+\end{align*}
+Kita ngandharake kanthi informal nganggo logika lan fakta-fakta kang
+$\Th{Q}$ !!{derive}s. Upamana $x$ sembarang lan
+$\OPrf[\Th{T}](x,\gn{!R_{\Th{T}}})$. Kita wis ngerti yen
+$\Th{T} \Proves/ !R_{\Th{T}}$, mula kanggo saben $k$,
+$\Th{Q} \Proves \lnot \OPrf[\Th{T}](\num{k}, \gn{!R_{\Th{T}}})$.
+Mula kanggo saben $k$ kita entuk $\eq/[x][\num{k}]$. Mligine,
+(a) kita nduweni $\eq/[x][\num{n}]$. Kita uga nduweni
+$\lnot(\eq[x][\num{0}] \lor \eq[x][\num{1}] \lor \dots \lor
+\eq[x][\num{n-1}])$ lan mula miturut
+\olref[req][min]{lem:less-nsucc}, (b) $\lnot(x < \num{n})$.
+Miturut \olref[req][min]{lem:trichotomy}, $\num{n} < x$.
+Amarga $\Th{Q} \Proves
+\ORefut[\Th{T}](\num{n}, \gn{!R_{\Th{T}}})$, kita nduweni
+$\num{n} < x \land
+\ORefut[\Th{T}](\num{n}, \gn{!R_{\Th{T}}})$, lan saka iku
+$\lexists[z][(z < x \land \ORefut[\Th{T}](z,\gn{!R_{\Th{T}}}))]$.
+Amarga $x$ sembarang, kita entuk kaya kang dibutuhake:
+\[
+\lforall[x][(\OPrf[\Th{T}](x,\gn{!R_{\Th{T}}}) \lif
+  \lexists[z][(z < x \land \ORefut[\Th{T}](z,\gn{!R_{\Th{T}}}))])].
+\]
+\end{proof}
+
+\begin{prob}
+Rong himpunan $A$ lan $B$ saka bilangan asli diarani
+\emph{ora bisa dipisahake kanthi komputabel} yen ora ana himpunan
+!!{decidable}~$X$ saengga $A \subseteq X$ lan
+$B \subseteq \Complement{X}$ ($\Complement{X}$ iku komplemen,
+$\Nat \setminus X$, saka~$X$). Upamana $\Th{T}$ ekstensi konsisten
+kang !!{axiomatizable} saka $\Th{Q}$. Upamana $A$ himpunan bilangan
+G\"odel saka !!{sentence}s kang bisa dibuktekake ing~$\Th{T}$ lan
+$B$ himpunan bilangan G\"odel saka ukara kang bisa dibantah
+ing~$\Th{T}$. Buktekna yen $A$ lan~$B$ ora bisa dipisahake
+kanthi komputabel.
+\end{prob}
+
+\end{document}

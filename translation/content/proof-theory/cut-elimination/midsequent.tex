@@ -1,0 +1,294 @@
+% Part: proof-theory
+% Chapter: cut-elimination
+% Section: midsequent
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{cut}{mid}
+
+\olsection{Teorema Sekèn Tengah lan Teorema Herbrand}
+
+Salah siji akibat wigati saka teorema eliminasi cut yaiku
+teorema sekèn tengah. Teorema iki mratélakaké yèn ana
+!!a{proof}~$\pi$ kanggo~$\Gamma \Sequent \Delta$
+kanthi saben !!{formula} preneks, banjur ana
+!!a{proof}~$\pi'$ kang ngemot sekèn
+$S \ident \Pi \Sequent \Lambda$ (diarani
+\emph{sekèn tengah}) saéngga kabèh inferènsi ing
+sadhuwuré $S$ ing~$\pi'$ iku proposisional lan kabèh
+inferènsi ing sangisoré~$S$ iku inferènsi kuantor.
+(!!^a{formula}~$!A$ diarani \emph{preneks} (utawa
+nganggo \emph{wujud preneks}) yèn wujudé
+\[\mathsf{Q}_1x_1\dots\mathsf{Q}_nx_n\,!B(x_1,\dots,x_n)\]
+ing ngendi saben $\mathsf{Q}_i$ iku $\lforall$ utawa~$\lexists$.)
+Akibat wigati saka teorema sekèn tengah yaiku teorema
+Herbrand. Wujud umumé rada angèl diterangaké, nanging
+kanthi garis gedhé: kanggo saben !!{provable}
+!!{sentence}~$!A$ ing logika orde kapisan, ana tautologi
+proposisional~$!A'$ kang bisa digunakaké kanggo
+!!{prove}~$!A$. Iki versi kanggo !!{sentence}s kanthi
+wujud~$\lexists[x][!B(x)]$ nalika $!B$ tanpa kuantor:
+
+\begin{thm}[Teorema Herbrand]
+Anggepen $!B(x)$ tanpa kuantor lan
+$\Proves \lexists[x][!B(x)]$. Banjur ana suku-suku~$t_1$,
+\dots, $t_n$ saéngga
+$\Proves !B(t_1) \lor \dots \lor !B(t_n)$.
+\end{thm}
+
+!!{formula}~$!B(t_1) \lor \dots \lor !B(t_n)$ diarani
+\emph{disjungsi Herbrand} saka~$\lexists[x][!B(x)]$.
+Amarga $!B$ tanpa kuantor, disjungsi iki uga tanpa
+kuantor. Mula yèn disjungsi mau !!{provable}, iku
+!!{provable} nganggo bukti tanpa cut, lan akibaté
+nganggo !!a{proof} kang mung ngemot inferènsi
+proposisional. Dadi, disjungsi iku tautologi.
+
+Pérangan kang angèl saka Teorema Herbrand yaiku nuduhaké
+yèn saben !!{provable} !!{formula}~$\lexists[x][!B(x)]$
+nduwèni disjungsi Herbrand. Arah kosok balènané gampang:
+yèn $\lexists[x][!B(x)]$ nduwèni disjungsi Herbrand,
+formula iku bisa dibuktèkaké. Pancèn, disjungsi Herbrand
+ngakibataké $\lexists[x][!B(x)]$. Tuladhané, iki
+!!a{proof} ing~$\Log{G3c}$ kanggo $n=2$:
+\[
+\Axiom$!B(t_1) \fCenter \lexists[x][!B(x)], !B(t_1), !B(t_2)$
+\Axiom$!B(t_2) \fCenter \lexists[x][!B(x)], !B(t_1), !B(t_2)$
+\RightLabel{\LeftR{\lor}}
+\BinaryInf$!B(t_1) \lor !B(t_2) \fCenter \lexists[x][!B(x)], !B(t_1), !B(t_2)$
+\RightLabel{\RightR{\lexists}}
+\UnaryInf$!B(t_1) \lor !B(t_2) \fCenter \lexists[x][!B(x)], !B(t_2)$
+\RightLabel{\RightR{\lexists}}
+\UnaryInf$!B(t_1) \lor !B(t_2) \fCenter \lexists[x][!B(x)]$
+\DisplayProof
+\]
+
+Kanggo njupuk disjungsi Herbrand saka
+!!a{proof}~$\pi$ kanggo~$\Sequent \lexists[x][!B(x)]$,
+gatekna kahanan nalika kabèh inferènsi $\RightR{\lexists}$
+ing !!{proof}~$\pi$ tanpa cut ana ing pérangan pungkasan:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$ \fCenter \lexists[x][!B(x)], !B(t_1), \dots, !B(t_n)$
+\RightLabel{\RightR{\lexists}}
+\UnaryInf$ \fCenter \lexists[x][!B(x)], !B(t_2), \dots, !B(t_n)$
+\RightLabel{$(n-1) \times \RightR{\lexists}$}
+\Deduce$ \fCenter \lexists[x][!B(x)]$
+\DisplayProof
+\]
+Yèn iki kabèh inferènsi $\RightR{\lexists}$ ing~$\pi$
+kang ngaktifaké $\lexists[x][!B(x)]$, banjur ora ana
+inferènsi kuantor liya ing~$\pi_1$. Sebab, $!B(x)$
+ora ngemot kuantor liya lan sekèn pungkasan ora ngemot
+!!{formula}s ing sisih kiwa. Tegesé,
+$ \fCenter \lexists[x][!B(x)], !B(t_1), \dots, !B(t_n)$
+iku sekèn tengah saka~$\pi$. Kajaba iku, amarga ora
+ana inferènsi kuantor ing sadhuwuré sekèn tengah,
+saben sekèn ing sadhuwuré ngemot
+$\lexists[x][!B(x)]$ minangka formula kang ora aktif
+lan ora utama. Mula formula mau bisa dibusak saka
+!!{proof}~$\pi_1$, lan kita ngolèhké !!a{proof}
+kanggo~$\fCenter !B(t_1), \dots, !B(t_n)$.
+Kanthi $n-1$ panrapan $\RightR{\lor}$, kita banjur
+ngolèhké !!a{proof} kanggo disjungsi Herbrand
+~$\Sequent !B(t_1) \lor \dots \lor !B(t_n)$.
+
+Masalahé, sanadyan !!{proof} tanpa cut kanggo
+$\Sequent \lexists[x][!B(x)]$, kita ora bisa nganggep
+kabèh inferènsi \RightR{\lexists} ana ing siji runtutan
+ing pungkasan. Bisa ana inferènsi ing antarané inferènsi
+\RightR{\lexists} mau kang sawetara $!B(t_i)$ dadi
+formula utama. Mula teorema sekèn tengah dibutuhaké.
+
+\begin{thm}[Teorema Sekèn Tengah]\ollabel{thm:midsequent}
+Yèn ana \Log{G3c}-!!{proof}~$\pi$ kanggo
+$\Gamma \Sequent \Delta$ kanthi kabèh !!{formula}s ing
+$\Gamma$ lan $\Delta$ preneks, banjur ana
+!!a{proof}~$\pi'$ kang ngemot sekèn
+$\Pi \Sequent \Lambda$ saéngga kabèh inferènsi
+ing sangisoré iku inferènsi kuantor lan kabèh
+inferènsi ing sadhuwuré iku inferènsi proposisional.
+\end{thm}
+
+\begin{proof}
+  Titepna \emph{urutan} inferènsi kuantor ing~$\pi$
+  minangka cacah inferènsi proposisional ing sangisoré,
+  lan urutan~$o(\pi)$ saka $\pi$ minangka jumlah
+  urutan kabèh inferènsi kuantor ing kono.
+  Yèn $o(\pi) = 0$, ora ana inferènsi kuantor kang
+  nduwèni inferènsi proposisional ing sangisoré,
+  mula asilé wis kacukupan. Amarga saben inferènsi
+  kuantor nduwèni siji premis, yèn ana inferènsi
+  kuantor, ana siji kang paling dhuwur lan premisé
+  dadi sekèn tengah. Yèn ora ana inferènsi kuantor,
+  sekèn pungkasané dhéwé dadi sekèn tengah.
+
+  Yèn $o(\pi) > 0$, pilihen inferènsi kuantor paling
+  ngisor kang urutané $>0$. Amarga urutané $>0$,
+  mesthi ana inferènsi proposisional ing sangisoré.
+  Amarga inferènsi kuantor iki paling ngisor,
+  konklusiné ora bisa dadi premis inferènsi kuantor:
+  yèn iya, inferènsi kuantor kapindho kang luwih
+  ngisor iku uga nduwèni inferènsi proposisional ing
+  sangisoré. Kita bedakaké (akèh!) kahanan manut
+  inferènsi kuantor lan inferènsi proposisional ing
+  sangisoré. Amarga sekèn pungkasan mung ngemot
+  formula preneks, formula utama inferènsi kuantor
+  ora bisa aktif ing inferènsi proposisional sabanjuré.
+  Yèn aktif, formula utama inferènsi proposisional iku
+  bakal nduwèni kuantor ing sangisoré konektif
+  proposisional. Miturut sipat sub-!!{formula},
+  iki kudu dadi sub-!!{formula} saka !!a{formula}
+  ing sekèn pungkasan. Mula !!{formula} utama
+  inferènsi kuantor dadi !!a{element} kontèks inferènsi
+  proposisional kang luwih ngisor.
+
+  Iki rong tuladha:
+
+Sepisan, anggepen inferènsi $\RightR{\lforall}$ ana ing
+premis tengen saka $\LeftR{\lif}$. Banjur
+sub-!!{proof} kang cocog ing~$\pi$ pungkasané ana ing
+sub-!!{proof}~$\pi_1$.
+\[
+\AxiomC{}
+\RightLabel{$\pi_2$}
+\Deduce$\Gamma' \fCenter \Delta', \lforall[x][!A(x)], !B$
+\AxiomC{}
+\RightLabel{$\pi_3$}
+\Deduce$!C, \Gamma' \fCenter \Delta', !A(c)$
+\RightLabel{\RightR{\lforall}}
+\UnaryInf$!C, \Gamma' \fCenter \Delta', \lforall[x][!A(x)]$
+\RightLabel{\LeftR{\lif}}
+\BinaryInf$!B \lif !C, \Gamma' \fCenter \Delta', \lforall[x][!A(x)]$
+\DisplayProof
+\]
+Kita bisa nganggep $\pi$ reguler, mula variabel
+eigen~$c$ ora ana ing sanjabané~$\pi_3$;
+mliginé, ora ana ing $!B \lif !C$ utawa ing~$\pi_2$.
+Saiki gatekna bukti~$\pi_1'$:
+\[
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$\Gamma' \fCenter \Delta', \lforall[x][!A(x)], !A(c), !B$
+\AxiomC{}
+\RightLabel{$\pi_3$}
+\Deduce$!C, \Gamma' \fCenter \Delta', \lforall[x][!A(x)], !A(c)$
+\RightLabel{\LeftR{\lif}}
+\BinaryInf$!B \lif !C, \Gamma' \fCenter \Delta', \lforall[x][!A(x)], !A(c)$
+\RightLabel{\RightR{\lforall}}
+\UnaryInf$!B \lif !C, \Gamma' \fCenter \Delta', \lforall[x][!A(x)], \lforall[x][!A(x)]$
+\DisplayProof
+\]
+Ing kéné $\pi_2'$ diolehké saka~$\pi_2$ kanthi
+pelemahan nambah~$!A(c)$ ing tengen. (Iki ora nambah
+inferènsi apa waé, mliginé ora nambah inferènsi kuantor
+kang bisa ngowahi urutan. Iki uga ora nerak syarat
+variabel eigen ing~$\pi_2$, amarga ora ana konstanta
+ing~$!A(c)$ kang dadi variabel eigen ing~$\pi_2$.)
+Syarat variabel eigen kanggo \RightR{\lforall} tetep
+kacukupan, amarga $c$ ora ana ing~$!B \lif !C$.
+
+Kita migunakaké admisibilitas kontraksi kanggo
+ngolèhké !!a{proof}~$\pi_1''$ kanggo
+$!B \lif !C, \Gamma' \fCenter \Delta', \lforall[x][!A(x)]$.
+Bukti admisibilitas $\RightR{\Contraction}$ kanggo
+$\lforall[x][!A(x)]$ lan bukti inversibilitas
+$\RightR{\lforall}$ kang digunakaké ing kono ora
+ngowahi urutan inferènsi apa waé: paling-paling
+mung mbusak inferènsi. Mula cacah inferènsi kuantor
+ing~$\pi_1''$ ora luwih akèh tinimbang ing~$\pi_1$,
+lan saben inferènsi kuantor ing~$\pi_1''$ nduwèni
+cacah inferènsi proposisional ing sangisoré kang padha
+karo inferènsi kang cocog ing~$\pi_1$---kajaba
+\RightR{\lforall} pungkasan: ana
+\LeftR{\lif} ing sangisoré ing~$\pi$, déné ing~$\pi_1''$
+wis dipindhah ing sadhuwuré. Gantenana $\pi_1$ ing
+$\pi$ nganggo $\pi_1''$. Urutan !!{proof} asilé
+luwih cilik, amarga paling ora urutan inferènsi
+$\RightR{\lforall}$ wis suda (paling ora)~$1$.
+Saiki trapna hipotesis induksi.
+
+Kahanan nalika inferènsi kuantor iku
+\RightR{\lexists} malah luwih gampang, amarga kontraksi
+ora dibutuhaké lan syarat variabel eigen ora perlu
+digatèkké. Tuladhané, anggepen $\RightR{\lexists}$
+disusul $\RightR{\land}$ (saiki minangka premis kiwa).
+Sub-!!{proof} kang cocog yaiku $\pi_1$:
+\[
+\AxiomC{}
+\RightLabel{$\pi_2$}
+\Deduce$\Gamma' \fCenter \Delta', \lexists[x][!A(x)], !A(t), !B$
+\RightLabel{\RightR{\lexists}}
+\UnaryInf$\Gamma' \fCenter \Delta', \lexists[x][!A(x)], !B$
+\AxiomC{}
+\RightLabel{$\pi_3$}
+\Deduce$\Gamma' \fCenter \Delta', \lexists[x][!A(x)], !C$
+\RightLabel{\RightR{\land}}
+\BinaryInf$\Gamma' \fCenter \Delta', \lexists[x][!A(x)], !B \land !C$
+\DisplayProof
+\]
+Gantenana $\pi_1$ ing~$\pi$ nganggo $\pi_1'$:
+\[
+\AxiomC{}
+\RightLabel{$\pi_2$}
+\Deduce$\Gamma' \fCenter \Delta', \lexists[x][!A(x)], !A(t), !B$
+\AxiomC{}
+\RightLabel{$\pi_3'$}
+\Deduce$\Gamma' \fCenter \Delta', \lexists[x][!A(x)], !A(t), !C$
+\RightLabel{\RightR{\land}}
+\BinaryInf$\Gamma' \fCenter \Delta', \lexists[x][!A(x)], !A(t), !B \land !C$
+\RightLabel{\RightR{\lexists}}
+\UnaryInf$\Gamma' \fCenter \Delta', \lexists[x][!A(x)], !B \land !C$
+\DisplayProof
+\]
+Ing kéné $\pi_3'$ diolehké saka $\pi_3$ kanthi
+pelemahan nambah~$!A(t)$ ing tengen. Pelemahan iki
+mung nambah $!A(t)$ ing sisih tengen saben sekèn
+ing~$\pi_3$, mula ora ngowahi urutan inferènsi kuantor.
+Urutan inferènsi kuantor ing~$\pi'$ padha karo
+ing~$\pi$, kajaba urutan inferènsi \RightR{\lexists}
+kang diowahi urutané ngliwati~\RightR{\land}
+suda~$1$. Hipotesis induksi bisa ditrapaké.
+\end{proof}
+
+\begin{prob}
+Jlentrehna kahanan ing bukti \olref{thm:midsequent}
+nalika \LeftR{\lexists} ana ing premis~\RightR{\lif},
+lan nalika \LeftR{\lforall} ana ing premis kiwa~\LeftR{\lor}.
+\end{prob}
+
+\begin{proof}[Bukti Teorema Herbrand]
+Anggepen $\pi$ pungkasané ana ing
+$\Sequent \lexists[x][!A(x)]$. Miturut
+\olref{thm:midsequent}, $\pi$ bisa diowahi dadi
+!!a{proof}~$\pi'$ kang nduwèni sekèn tengah~$S$,
+kang kudu wujudé \[\Sequent
+\lexists[x][!A(x)], !A(t_1), \dots, !A(t_n).\]
+Amarga kabèh inferènsi ing sadhuwuré $S$ proposisional,
+$\lexists[x][!A(x)]$ ora bisa dadi formula utama
+inferènsi ing sadhuwuré~$S$. Amarga ora atomik,
+formula iki uga ora bisa dadi formula utama ing aksioma.
+Amarga $\lexists[x][!A(x)]$ ora bisa dadi subformula
+sejati saka $!A(t_1)$ (élinga $!A(x)$ tanpa kuantor),
+formula iki uga ora bisa aktif ing sadhuwuré~$S$.
+Mula mbusak $\lexists[x][!A(x)]$ saka
+sub-!!{proof} kang pungkasané ana ing~$S$
+ngasilaké !!{proof} kang bener kanggo
+$\Sequent !A(t_1), \dots, !A(t_n)$; saka kéné,
+kita ngolèhké !!a{proof} kanggo
+$\Sequent !A(t_1) \lor \dots \lor !A(t_n)$
+kanthi $n-1$ inferènsi $\RightR{\lor}$.
+\end{proof}
+
+% \begin{prob}
+% Find a Herbrand disjunction of $\lexists[x][\lforall[y][(!A(x) \lif
+% !A(y))]]$ by finding a cut-free !!{proof} of $\Sequent
+% \lexists[x][\lforall[y][(!A(x) \lif !A(y))]]$ and applying the
+% transformation in \olref{thm:midsequent} to find a midsequent (if
+% necessary).
+% \end{prob}
+
+\end{document}

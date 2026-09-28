@@ -1,0 +1,69 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{z}{power}
+\olsection{Himpunan Pangkat}
+
+Kita nerusake nganggo aksioma liyane:
+
+\begin{axiom}[Himpunan Pangkat]
+Kanggo sembarang himpunan $A$, himpunan
+$\Pow{A} = \Setabs{x}{x \subseteq A}$ ana.
+\[
+	\forall A \exists P \forall x(x \in P \liff (\forall z \in x)z \in A)
+\]
+\end{axiom}
+
+Panjelasan kang ndhukung iki cukup langsung. Upamane $A$
+kawangun ing tataran $S$. Mula kabeh anggotane $A$ wis
+kasedhiya sadurunge $S$ (miturut \stagesacc). Dadi kanthi
+penalaran kaya ing Pamisahan, saben himpunan bagean $A$
+kawangun paling telat ing tataran $S$. Mula kabeh wis
+kasedhiya kanggo digabung dadi siji himpunan ing sembarang
+tataran sawise $S$. Kita ngerti tataran kaya mangkono ana
+amarga $S$ dudu tataran pungkasan (miturut \stagessucc).
+Dadi $\Pow{A}$ ana.
+
+Iki akibat kang migunani saka Himpunan Pangkat:
+
+\begin{prop}\label{thm:Products}
+Kanggo sembarang himpunan $A, B$, prodhuk Kartesiuse
+$A \times B$ ana.
+\end{prop}
+
+\begin{proof}
+Himpunan $\Pow{\Pow{A \cup B}}$ ana miturut Himpunan Pangkat
+lan \olref[sth][z][pairs]{prop:pairsconsequences}. Mula
+miturut Pamisahan himpunan iki ana:
+\[
+	C = \Setabs{z \in \Pow{\Pow{A \cup B}}}{(\exists x \in A)(\exists y \in B) z = \tuple{x, y}}.
+\]
+Saiki kanggo sembarang $x \in A$ lan $y \in B$,
+himpunan $\tuple{x, y}$ ana miturut
+\olref[sth][z][pairs]{prop:pairsconsequences}. Kajaba iku,
+amarga $x, y \in A \cup B$, kita nduweni
+$\{x\}, \{x, y\} \in \Pow{A \cup B}$, lan
+$\tuple{x,y} \in \Pow{\Pow{A \cup B}}$. Mula $A \times B = C$.
+\end{proof}
+
+Ing bukti iki, Himpunan Pangkat sesambungan karo Pamisahan.
+Iki ora nggumunake. Tanpa Pamisahan, Himpunan Pangkat ora
+dadi prinsip kang banget \emph{kuwat}. Amarga Pamisahan
+ngandharake himpunan bagean endi saka sawijining himpunan
+kang ana, lan kanthi mangkono nemtokake sepira ``gedhe''
+saben himpunan pangkat.
+
+\begin{prob}
+Tuduhna yen kanggo sembarang himpunan $A, B$: (i) himpunan
+kabeh relasi kanthi domain $A$ lan range $B$ ana; lan
+(ii) himpunan kabeh fungsi saka $A$ menyang $B$ ana.
+\end{prob}
+
+\begin{prob}
+Upamane $A$ iku himpunan lan $\sim$ relasi ekuivalensi ing $A$.
+Buktekna yen himpunan kelas-kelas ekuivalensi miturut $\sim$
+ing $A$, yaiku $\equivclass{A}{\sim}$, ana.
+\end{prob}
+
+\end{document}

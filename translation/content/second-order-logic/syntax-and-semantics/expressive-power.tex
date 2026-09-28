@@ -1,0 +1,106 @@
+% Part: second-order-logic
+% Chapter: syntax-and-semantics
+% Section: expressive-power
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sol}{syn}{exp}
+\olsection{Daya Ungkap}
+
+\begin{explain}
+Kuantifikasi tumrap variabel orde kapindho ndadekake daya ungkap
+basa mundhak gedhe banget yen dibandhingake karo logika orde
+kapisan. Kuantifikasi eksistensial orde kapindho ngidini kita
+nyatakake anane fungsi utawa relasi kang nduweni sipat tartamtu.
+Ing logika orde kapisan, siji-sijine cara kanggo iku yaiku
+netepake simbol nonlogis (yaiku !!a{function} utawa
+!!{predicate}) kanggo maksud kasebut. Kuantifikasi universal
+orde kapindho ngidini kita nyatakake yen kabeh subhimpunan saka
+domain, relasi ing domain, utawa fungsi saka !!{domain}
+menyang !!{domain} nduweni sawijining sipat. Ing logika orde kapisan,
+kita mung bisa nyatakake yen subhimpunan, relasi, utawa fungsi
+kang diwenehake marang salah siji simbol nonlogis ing basa
+nduweni sipat tartamtu. Nalika nyatakake anane subhimpunan,
+relasi, utawa fungsi kang nduweni sawijining sipat, utawa yen
+kabeh mau nduweni sipat iku, kita uga bisa nggunakake
+kuantifikasi orde kapindho kanggo nemtokake sipat kasebut.
+Iki ngidini kita netepake relasi kang ora bisa ditetepake ing
+logika orde kapisan, lan nyatakake sipat domain kang ora bisa
+dinyatakake ing logika orde kapisan.
+\end{explain}
+
+\begin{defn}
+Yen $\Struct{M}$ iku !!a{structure} kanggo basa~$\Lang{L}$,
+relasi~$R \subseteq \Domain{M}^2$ \emph{bisa didefinisikake}
+ing~$\Lang{L}$ yen ana !!{formula}~$!A_R(x, y)$ kang mung
+nduweni variabel bebas $x$ lan~$y$, saengga $R(a, b)$ bener
+(yaiku, $\tuple{a,b} \in R$) yen lan mung yen
+$\Sat{M}{!A_R(x, y)}[s]$ kanggo $s(x) = a$ lan $s(y) = b$.
+\end{defn}
+
+\begin{ex}
+Ing logika orde kapisan kita bisa netepake relasi
+identitas~$\Id{\Domain{M}}$ (yaiku
+$\Setabs{\tuple{a,a}}{a \in \Domain{M}}$) nganggo formula
+$\eq[x][y]$. Ing logika orde kapindho, relasi iki bisa
+ditetepake \emph{tanpa~$\eq$}. Amarga yen $a$ lan $b$ iku
+!!{element} kang padha saka~$\Domain{M}$, loro-lorone
+kalebu !!{element}s saka subhimpunan-subhimpunan kang padha
+saka~$\Domain{M}$ (amarga himpunan ditemtokake dening
+!!{element}s kang ana ing njerone). Kosok baline, yen $a$ lan $b$ beda,
+loro-lorone ora kalebu !!{element}s saka subhimpunan-subhimpunan
+kang padha: upamane, $a \in \{a\}$ nanging $b \notin \{a\}$
+yen $a \neq b$. Mula ``kalebu !!{element}s saka
+subhimpunan-subhimpunan kang padha saka~$\Domain{M}$''
+iku relasi kang bener kanggo $a$ lan $b$ yen lan mung yen
+$a = b$. Relasi iki bisa dinyatakake ing logika orde kapindho,
+amarga kita bisa nguantifikasi tumrap kabeh subhimpunan
+saka~$\Domain{M}$. Mula !!{formula} ing ngisor iki
+netepake $\Id{\Domain{M}}$:
+\[
+\lforall[X][(X(x) \liff X(y))]
+\]
+\end{ex}
+
+\begin{prob}
+Tuduhna yen $\lforall[X][(X(x) \lif X(y))]$ (elinga:
+$\lif$, dudu~$\liff$!) netepake $\Id{\Domain{M}}$.
+\end{prob}
+
+\begin{ex}
+Yen $R$ iku !!{predicate} rong-papan, $\Assign{R}{M}$ iku
+relasi rong-papan ing~$\Domain{M}$. Sanajan rada mbingungake,
+kita bakal nggunakake $R$ kanggo !!{predicate}~$R$ lan uga
+kanggo relasi~$\Assign{R}{M}$ iku dhewe. \emph{Tutupan
+transitif}~$R^*$ saka~$R$ iku relasi kang bener antarane
+$a$ lan $b$ yen lan mung yen kanggo sawetara $c_1$, \dots,
+$c_k$, pratelan $R(a,c_1)$, $R(c_1, c_2)$, \dots,
+$R(c_k,b)$ bener. Iki kalebu kasus $k = 0$, yaiku yen
+$R(a,b)$ bener, mula $R^*(a,b)$ uga bener. Mula
+$R \subseteq R^*$. Sejatine, $R^*$ iku relasi paling cilik
+kang ngemot~$R$ lan transitif. Ing logika orde kapindho kita
+bisa nyatakake yen $X$ iku relasi transitif kang ngemot~$R$:
+\begin{multline*}
+  !B_R(X) \ident \lforall[x][\lforall[y][(R(x,y) \lif X(x, y))]] \land {}\\
+\lforall[x][\lforall[y][\lforall[z][((X(x,y) \land X(y,z)) \lif X(x,
+      z))]]].
+\end{multline*}
+Konjungsi kapisan nyatakake yen $R \subseteq X$, dene
+konjungsi kapindho yen $X$ transitif.
+
+Nyatakake yen $X$ iku relasi paling cilik kaya mangkono
+tegese nyatakake yen relasi kasebut kalebu ing saben relasi kang ngemot
+$R$ lan transitif. Mula kita bisa netepake tutupan transitif
+saka~$R$ nganggo !!{formula}
+\[
+R^*(X) \ident !B_R(X) \land \lforall[Y][(!B_R(Y) \lif
+  \lforall[x][\lforall[y][(X(x, y) \lif Y(x,y))]])].
+\]
+Kita nduweni $\Sat{M}{R^*(X)}[s]$ yen lan mung yen
+$s(X) = R^*$. Tutupan transitif saka~$R$ ora bisa
+dinyatakake ing logika orde kapisan.
+\end{ex}
+
+\end{document}

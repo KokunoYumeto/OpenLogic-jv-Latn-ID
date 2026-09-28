@@ -1,0 +1,75 @@
+% Part: applied-modal-logics
+% Chapter: temporal-logic
+% Section: possible-histories
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{aml}{tl}{poss}
+
+\olsection{Riwayat Kang Mungkin}
+
+Model relasional logika temporal kang wis kita gunakake iku luwes
+banget, amarga kita ora kudu netepake watesan tumrap relasi
+aksesibilitas. Mula model temporal bisa nyabang ing kala kepungkur
+lan mangsa ngarep. Nanging, kita bisa nimbang pangertèn percabangan
+kang luwih ``modal'', yaiku ndeleng urutan kedadeyan minangka
+riwayat kang mungkin. Iki ora mesthi mbutuhake owah-owahan basa,
+senajan kita uga bisa nambahake operator modal ``lumrah'' $\Box$
+lan~$\Diamond$, sarta relasi aksesibilitas epistemik kanggo makili
+owah-owahan kawruh para agen saka wektu menyang wektu.
+
+\begin{defn}
+  \emph{Model riwayat kang mungkin} kanggo basa temporal yaiku tripel
+  $\mModel{M} = \tuple{T, C, V}$, where
+  \begin{enumerate}
+    \item $T$ iku himpunan ora kosong, kang diinterpretasikake
+      minangka kahanan ing wektu.
+    \item $C$ iku himpunan lintasan komputasi, utawa \emph{riwayat
+      kang mungkin} sawijining sistem. Tegese, $C$~iku himpunan
+      urutan~$\sigma$ saka kahanan $s_1$, $s_2$,~$s_3$, \dots, kang
+      saben $s_i \in T$.
+    \item $V$ iku fungsi kang netepake marang saben !!{propositional
+      variable}~$p$ sawijining himpunan~$V(p)$ saka titik wektu.
+  \end{enumerate}
+  Supaya luwih prasaja, kita uga lumrahe nganggep yen sawijining
+  riwayat ana ing~$C$, kabeh sufikse uga ana ing kono. Contone, yen
+  $s_1$, $s_2$,~$s_3$ minangka urutan ing~$C$, mula $s_2$, $s_3$
+  lan~$s_3$ uga ana ing kono. Yen rong kahanan $s_i$ lan~$s_j$ katon
+  ing urutan~$\sigma$, kita kandha $s_i \prec_\sigma s_j$ yen $i < j$.
+  Yen $t \in V(p)$, kita kandha $p$~\emph{bener ing}~$t$.
+\end{defn}
+
+Owah-owahan kang wigati yaiku nalika kita ngevaluasi bebener
+!!a{formula} ing titik wektu~$t$ sajroning model~$\mModel M$,
+kita nindakake iku relatif marang riwayat~$\sigma$, kang ngemot $t$
+minangka kahanan. Nanging, semantik kanggo !!{propositional
+variable}s lan konektif kang fungsional miturut bebener ora perlu
+diowahi. Kabeh iku tetep kaya ing \olref[sem]{defn:tmodels}, amarga
+ora ana kang nyebut~$\sigma$. Saiki operator mangsa ngarep~$\Ftemp$
+kita tegesi maneh lan operator~$\Diamond$ kita tambahake relatif
+marang riwayat kasebut.
+
+\begin{defn}\ollabel{defn:phmodels}
+  \emph{Bebener !!a{formula}~$!A$ ing~$t, \sigma$} sajroning~$\mModel M$, kanthi lambang:
+  $\mSat{M}{!A}[t, \sigma]$:
+  \begin{enumerate}
+  \item\ollabel{defn:sub:phmodels-f} \indcase{!A}{\Ftemp
+    !B}{$\mSat{M}{\indfrm}[t, \sigma]$ yen lan mung yen $\mSat{M}{!B}[t', \sigma]$
+    kanggo sawijining $t' \in T$ kang nyukupi $t \prec_\sigma t'$.}
+  \item\ollabel{defn:sub:phmodels-diamond} \indcase{!A}{\Diamond
+    !B}{$\mSat{M}{\indfrm}[t, \sigma]$ yen lan mung yen $\mSat{M}{!B}[t, \sigma']$
+    kanggo sawijining $\sigma' \in C$ kang ngemot $t$.}
+  \end{enumerate} 
+\end{defn}
+
+Operator temporal lan modal liyane bisa ditegesi kanthi cara kang
+padha. Saiki kita bisa makili pratelan kang nggabungake kala lan
+modalitas. Contone, ``$p$~ora bakal kelakon, nanging bisa wae
+kelakon'' bisa dilambangake nganggo rumus
+$\lnot \Ftemp p \land \Diamond \Ftemp p$. Rumus iki bener ing
+titik lan riwayat kang $p$ ora dadi bener ing kahanan peneruse,
+nanging ana riwayat alternatif kang $p$ bakal dadi bener.
+
+\end{document}

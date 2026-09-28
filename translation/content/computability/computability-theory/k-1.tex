@@ -1,0 +1,89 @@
+% Part: computability
+% Chapter: computability-theory
+% Section: k-1
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{thy}{k1}
+\olsection{Tuladha Reduksibilitas}
+
+Ayo kita gatekake sawijining panganggone \olref[ppr]{prop:reduce}.
+
+\begin{prop}
+\ollabel{prop:k1}
+Tetepna
+\[
+K_1 = \Setabs{e}{\cfind{e}(0) \fdefined}.
+\]
+Mula $K_1$ bisa dienumerasi sacara komputabel nanging ora komputabel.
+\end{prop}
+
+\begin{proof}
+Amarga $K_1 = \Setabs{e}{\lexists[s][T(e,0,s)]}$, $K_1$ bisa
+dienumerasi sacara komputabel miturut \olref[eqc]{thm:exists-char}.
+
+Kanggo nuduhake yen $K_1$ ora komputabel, ayo nuduhake yen $K_0$
+bisa direduksi menyang himpunan iku.
+
+\begin{explain}
+Iki rada angel, amarga nganggo $K_1$ kita mung bisa
+takon bab komputasi kang diwiwiti nganggo input tartamtu,
+$0$. Upamane kowe nduwé kanca pinter kang bisa mangsuli
+pitakon kaya mangkono (kanca kaya iki diarani ``orakel'').
+Banjur upamane ana wong marani kowe lan takon apa
+$\tuple{e,
+  x}$ kalebu $K_0$, yaiku apa mesin $e$ mandheg nalika
+nampa input $x$. Salah siji cara yaiku gawe mesin liyane,
+$e_x$, kang kanggo input \emph{sembarang} ora nggatekake
+input iku lan malah nglakokake~$e$ nganggo input $x$.
+Mula cetha yen pitakon apa mesin $e$ mandheg nganggo
+input $x$ ekuivalen karo pitakon apa mesin $e_x$
+mandheg nganggo input $0$ (utawa input liyane apa wae).
+Dadi, kowe takon marang kancamu apa mesin anyar iki,
+$e_x$, mandheg nganggo input $0$; wangsulane kancamu
+kanggo pitakon kang diowahi iku menehi wangsulan
+kanggo pitakon asline. Iki ngasilake reduksi $K_0$
+menyang~$K_1$ kang dikarepake.
+\end{explain}
+
+Kanthi nggunakake fungsi parsial komputabel universal,
+tetepna $f$ minangka fungsi telung argumen kang
+ditetepake dening
+\[
+f(x,y,z) \simeq \cfind{x}(y).
+\]
+Gatekna yen $f$ babar pisan ora nggatekake input katelune.
+Pilihen indeks $e$ saengga $f = \cfind{e}[3]$; mula kita nduwé
+\[
+\cfind{e}[3](x,y,z) \simeq \cfind{x}(y).
+\]
+Miturut teorema $s$-$m$-$n$, ana fungsi $s(e,x,y)$ saengga,
+kanggo saben $z$,
+\begin{align*}
+\cfind{s(e,x,y)}(z) & \simeq \cfind{e}[3](x,y,z) \\
+& \simeq \cfind{x}(y).
+\end{align*}
+
+\begin{explain}
+Miturut andharan informal ing ndhuwur, $s(e,x,y)$
+minangka indeks kanggo mesin kang, kanggo input $z$
+sembarang, ora nggatekake input iku lan ngitung
+$\cfind{x}(y)$.
+\end{explain}
+
+Mligine, kita nduwé
+\[
+\cfind{s(e,x,y)}(0) \fdefined \quad \text{yen lan mung yen} \quad
+\cfind{x}(y) \fdefined.
+\]
+Kanthi tembung liya, $\tuple{x, y} \in K_0$ yen lan mung yen $s(e,x,y) \in
+K_1$. Mula fungsi $g$ kang ditetepake dening
+\[
+g(w) = s(e,(w)_0,(w)_1)
+\]
+minangka reduksi $K_0$ menyang~$K_1$.
+\end{proof}
+
+\end{document}

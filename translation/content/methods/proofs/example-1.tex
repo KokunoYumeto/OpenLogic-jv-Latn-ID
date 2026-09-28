@@ -1,0 +1,204 @@
+% Bagean: metodhe
+% Bab: bukti
+% Pérangan: conto-1
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mth}{prf}{ex1}
+
+\olsection{Sawijining Conto}
+
+Conto kapisan yaiku kasunyatan prasaja ing ngisor iki babagan
+gabungan lan irisan himpunan. Conto iki bakal nuduhaké cara
+njlentrehaké dhéfinisi, mbuktekaké konjungsi lan pratelan
+universal, sarta mbuktekaké kanthi kasus.
+
+\begin{prop}
+Kanggo sembarang himpunan $A$, $B$, lan $C$, $A \cup (B \cap C) = (A \cup B)
+\cap (A \cup C)$
+\end{prop}
+
+Ayo dibuktèkaké!{}
+
+\begin{proof}
+Kita arep nuduhaké yèn kanggo sembarang himpunan $A$, $B$, lan $C$,
+$A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$.
+\begin{quote}
+Kaping pisan, kita njlentrehaké dhéfinisi ``$=$'' ing pratelan
+proposisi. Élinga yèn mbuktekaké pepadhan himpunan ateges
+mbuktekaké yèn loro himpunan nduwèni !!{element}s kang padha.
+Tegesé, kabèh !!{element}s saka $A \cup (B \cap C)$ uga
+!!{element}s saka $(A \cup B) \cap (A \cup C)$, lan kosok baliné.
+``Kosok baliné'' ateges saben !!{element} saka $(A \cup B)
+\cap (A \cup C)$ uga kudu !!a{element} saka $A \cup (B \cap
+C)$. Dadi, sawisé dhéfinisi dijlentrehaké, katon yèn kita
+kudu mbuktekaké konjungsi. Ayo iki dicathet:
+\end{quote}
+Miturut dhéfinisi, $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$
+yèn lan mung yèn saben !!{element} saka $A \cup (B \cap C)$
+uga !!a{element} saka $(A \cup B) \cap (A \cup C)$, lan
+saben !!{element} saka $(A \cup B) \cap (A \cup C)$ uga
+!!a{element} saka $A \cup (B \cap C)$.
+\begin{quote}
+Amarga iki konjungsi, saben pérangan kudu dibuktèkaké dhéwé.
+Kita wiwiti saka kang kapisan: buktèkna yèn saben
+!!{element} saka $A \cup (B \cap C)$ uga !!a{element}
+saka $(A \cup B) \cap (A \cup C)$.
+
+Iki pratelan universal. Mula kita jupuk !!{element} sembarang
+saka $A \cup (B \cap C)$, banjur nuduhaké yèn iku uga
+!!a{element} saka $(A \cup B) \cap (A \cup C)$.
+Kita wènèhi jeneng variabel kanggo !!{element} sembarang
+iku, upamané~$z$. Buktiné diterusaké:
+\end{quote}
+Kaping pisan, kita buktèkaké yèn saben !!{element} saka
+$A \cup (B \cap C)$ uga !!a{element} saka $(A \cup B)
+\cap (A \cup C)$. Jupuken $z \in A \cup (B
+\cap C)$. Kita kudu nuduhaké yèn
+$z \in (A \cup B) \cap (A \cup C)$.
+\begin{quote}
+Saiki dhéfinisi $\cup$ lan~$\cap$ kudu dijlentrehaké.
+Upamané, dhéfinisi $\cup$ yaiku
+$A \cup B = \Setabs{z}{z \in A
+  \text{ utawa } z \in B}$. Nalika dhéfinisi iki ditrapaké
+marang ``$A \cup (B
+\cap C)$'', panggonan ``$B$'' ing dhéfinisi
+saiki diisi déning ``$B \cap C$'', saéngga
+$A \cup (B \cap C) = \Setabs{z}{z \in A \text{ utawa }
+  z \in B \cap C}$. Dadi anggepan
+$z \in A \cup (B \cap C)$ padha karo
+$z \in \Setabs{z}{z \in A \text{ utawa } z \in B \cap
+  C}$. Lan $z \in \Setabs{z}{\dots z\dots}$ yèn lan mung yèn
+\dots $z$ \dots; ing kéné tegesé $z \in A$ utawa $z \in B \cap C$.
+\end{quote}
+Miturut dhéfinisi $\cup$, salah siji $z \in A$ utawa
+$z \in B \cap C$.
+\begin{quote}
+Amarga iki disjungsi, bukti mawa kasus migunani. Kita
+mbédakaké rong kasus lan nuduhaké yèn saben kasus ngasilaké
+kesimpulan kang dituju, yaiku ``$z \in (A \cup B) \cap (A \cup
+C)$''.
+\end{quote}
+Kasus 1: Anggepen $z \in A$.
+\begin{quote}
+Anggepan iki ora akèh mènèhi bahan tambahan. Mula kita deleng
+dhisik wujud kesimpulan: kita arep nuduhaké
+$z \in (A \cup B) \cap (A \cup C)$. Miturut dhéfinisi
+$\cap$, yèn arep nuduhaké $z \in (A \cup B) \cap (A \cup C)$,
+kita kudu nuduhaké yèn obyèk mau dadi anggota $(A \cup B)$
+lan $(A \cup C)$. Nanging $z
+\in A \cup B$ yèn lan mung yèn $z \in A$ utawa $z \in B$,
+lan anggepan kasus~1 wis mènèhi $z \in A$.
+Kanthi panalaran padha, kanthi ngganti $C$ kanggo $B$,
+kita olèh $z \in A \cup C$.
+Panalaran mau mlaku saka arah kosok, mula saiki ayo
+kita tulis manut urutan kang dibutuhaké bukti.
+\end{quote}
+Amarga $z \in A$, kita olèh $z \in A$ utawa $z \in B$;
+mula miturut dhéfinisi~$\cup$, $z \in A \cup B$.
+Semono uga $z \in A \cup C$. Iki ateges
+$z \in (A \cup B) \cap (A \cup C)$ miturut dhéfinisi~$\cap$.
+\begin{quote}
+Iki ngrampungaké kasus kapisan. Saiki kesimpulan padha
+kudu diturunaké ing kasus kapindho, yaiku nalika
+$z \in B \cap C$.
+\end{quote}
+Kasus 2: Anggepen $z \in B \cap C$.
+\begin{quote}
+Kita ketemu maneh karo irisan rong himpunan.
+Ayo dhéfinisi~$\cap$ ditrapaké:
+\end{quote}
+Amarga $z \in B \cap C$, $z$ mesthi !!a{element} saka
+$B$ lan $C$, miturut dhéfinisi~$\cap$.
+\begin{quote}
+Saiki delengen kesimpulan maneh. Kita kudu nuduhaké yèn
+$z$ ana ing $(A \cup B)$ lan $(A \cup C)$.
+Wangsulané uga langsung.
+\end{quote}
+Amarga $z \in B$, kita olèh $z \in (A \cup B)$.
+Amarga $z \in C$, uga $z \in (A
+\cup C)$. Dadi $z \in (A \cup B) \cap (A \cup C)$.
+\begin{quote}
+Ing kéné dhéfinisi $\cup$ lan $\cap$ ditrapaké maneh.
+Amarga dhéfinisi kasebut wis dielingaké lan kita wis
+nuduhaké yèn $z$ kang ana ing salah siji saka rong
+himpunan uga ana ing gabungané, langkah iki ora perlu
+dijlentrehaké luwih rinci.
+
+Kasus kapindho uga rampung; mula kesimpulan kapisan
+bisa dipratelakaké.
+\end{quote}
+Dadi, yèn $z \in A \cup (B \cap C)$ mula
+$z \in (A \cup B) \cap (A \cup C)$.
+\begin{quote}
+Saiki kari mbuktekaké arah kosok baliné: saben
+!!{element} saka $(A \cup B) \cap (A \cup C)$
+uga !!a{element} saka $A \cup (B \cap
+C)$. Kaya sadurungé, pratelan universal iki dibuktèkaké
+kanthi njupuk !!{element} sembarang saka himpunan
+kapisan lan nuduhaké yèn iku anggota himpunan kapindho.
+Ayo pratelakna tujuwan iki.
+\end{quote}
+Saiki anggepen $z \in (A \cup B) \cap (A \cup C)$.
+Kita arep nuduhaké yèn $z \in A \cup (B \cap C)$.
+\begin{quote}
+Saiki kita mangkat saka anggepan $z \in (A \cup B) \cap (A
+\cup C)$. Panganggoné~$z$ kang padha kaya ing pérangan
+kapisan muga-muga ora mbingungaké. Sawisé pérangan iku
+rampung, kabèh anggepan ing kono wis ora lumaku, mula
+saiki kita bisa nggawe anggepan anyar babagan $z$.
+Yèn iki mbingungaké, gantinen $z$ nganggo variabel liya
+ing bukti sabanjuré.
+
+Kita ngerti yèn $z$ ana ing $A \cup B$ lan
+$A \cup C$, miturut dhéfinisi~$\cap$. Miturut dhéfinisi
+$\cup$, iki bisa dijlentrehaké maneh: $z \in A$
+utawa $z \in B$, lan uga $z \in A$ utawa $z \in
+C$. Iki kaya bukti mawa kasus, nanging tembung ``lan''
+bisa mbingungaké. Mbokmenawa panjenengan ngira yèn
+iki mung ana telung kamungkinan: $z$ ana ing $A$, $B$,
+utawa $C$. Iku klèru. Kita kudu ngati-ati lan nliti
+saben disjungsi siji-siji.
+\end{quote}
+Miturut dhéfinisi $\cap$, $z \in A \cup B$ lan
+$z \in A \cup C$. Miturut dhéfinisi $\cup$,
+$z \in A$ utawa $z \in B$. Kita mbédakaké kasus.
+\begin{quote}
+Amarga fokus ing disjungsi kapisan, disjungsi kapindho
+saka njlentrehaké $A \cup C$ durung ditulis.
+Saiki pancèn durung perlu. Kasus kapisan yaiku
+$z \in A$, lan !!a{element} sawijining himpunan
+uga !!a{element} gabungané karo himpunan liya.
+Dadi kasus~1 gampang:
+\end{quote}
+Kasus 1: Anggepen $z \in A$. Mula
+$z \in A \cup (B \cap
+C)$.
+\begin{quote}
+Saiki kasus kapindho yaiku $z \in B$.
+Ing kéné kita njlentrehaké $\cup$ kapindho lan
+mbédakaké kasus maneh:
+\end{quote}
+Kasus 2: Anggepen $z \in B$. Amarga $z \in A \cup C$,
+$z \in A$ utawa $z \in C$. Kita mbédakaké kasus maneh:
+
+Kasus 2a: $z \in A$. Mula maneh,
+$z \in A \cup (B \cap C)$.
+\begin{quote}
+Iki rada anèh. Anggepan yèn~$z \in B$ pancèn ora
+dibutuhaké ing kasus iki, nanging ora dadi masalah.
+\end{quote}
+Kasus 2b: $z \in C$. Mula $z \in B$ lan $z \in C$,
+saéngga $z \in B \cap C$; banjur
+$z \in A \cup (B \cap C)$.
+\begin{quote}
+Iki ngrampungaké loro bukti mawa kasus, lan kanthi
+iku pérangan kapindho uga rampung.
+\end{quote}
+Dadi, yèn $z \in (A \cup B) \cap (A \cup C)$ mula
+$z \in A \cup (B \cap C)$.
+\end{proof}
+
+\end{document}

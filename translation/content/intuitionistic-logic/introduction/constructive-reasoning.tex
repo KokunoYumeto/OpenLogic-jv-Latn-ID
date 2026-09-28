@@ -1,0 +1,96 @@
+% part: intuitionistic-logic
+% chapter: introduction
+% section: constructive-reasoning
+
+\documentclass[../../../include/open-logic-chapter]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{int}{cr}
+
+\section{Panalaran Konstruktif}
+
+Beda karo pangambakan logika klasik nganggo operator modal utawa
+kuantor orde kapindho, logika intuisionistik kalebu ``nonklasik''
+amarga mbatesi logika klasik. Logika klasik iku \emph{ora konstruktif}
+ing maneka cara. Logika intuisionistik dirancang kanggo nggambarake
+panalaran kang luwih ``konstruktif'' lan dadi ciri sawijining jinis
+matematika konstruktif. Tuladha ing ngisor iki nggambarake sawetara
+alasan dhasare.
+
+Upamane ana wong ngaku wis nemtokake bilangan asli~$n$ kang nduweni
+sipat mangkene: yen $n$ genep, hipotesis Riemann bener; yen $n$
+gasal, hipotesis Riemann ora bener. Kabar apik!{} Apa hipotesis
+Riemann bener utawa ora iku salah siji pitakonan gedhe kang durung
+kapecah ing matematika, lan kayane wong iku wis ngowahi prakara iki
+dadi prakara itungan: nemtokake apa sawijining bilangan tartamtu
+genep utawa ora.
+
+Pira nilai ajaib saka~$n$ iku? Wong iku nerangake mangkene: $n$ iku
+bilangan asli kang padha karo $2$ yen hipotesis Riemann bener, lan
+padha karo $3$ yen ora.
+
+Kanthi nesu, sampeyan njaluk dhuwit bali. Saka sudut pandang klasik,
+andharan mau pancen nemtokake siji nilai $n$ kang unik; nanging kang
+sampeyan karepake yaiku nilai $n$ kang diwenehake kanthi
+\emph{gamblang}.
+
+Kanggo tuladha liyane kang mbokmenawa ora digawe-gawe banget,
+gatekna pitakonan iki. Kita ngerti yen bilangan irasional bisa
+dipangkatake nganggo bilangan rasional lan asile rasional. Contone,
+$\sqrt{2}^2 = 2$. Kang durung cetha yaiku apa bilangan irasional
+bisa dipangkatake nganggo bilangan \emph{irasional} lan ngasilake
+bilangan rasional. Teorema iki menehi wangsulan ya:
+
+\begin{thm}
+Ana bilangan irasional $a$ lan $b$ kang ndadekake $a^b$ rasional.
+\end{thm}
+
+\begin{proof}
+Gatekna $\sqrt{2}^{\sqrt{2}}$. Yen iki rasional, bukti wis rampung:
+kita bisa milih $a = b = \sqrt{2}$. Yen ora, bilangan iku irasional.
+Mula kita duwe
+\[
+(\sqrt{2}^{\sqrt{2}})^{\sqrt{2}} = \sqrt{2}^{\sqrt{2} \cdot
+  \sqrt{2}} = \sqrt{2}^2 = 2,
+\]
+kang rasional. Dadi, ing kasus iki, pilih $a$ minangka
+$\sqrt{2}^{\sqrt{2}}$ lan $b$ minangka~$\sqrt 2$.
+\end{proof}
+
+Apa iki bukti kang sah? Umume matematikawan nganggep sah. Nanging,
+isih ana bab kang kurang marem: kita wis mbuktekake anane sapasang
+bilangan nyata kanthi sipat tartamtu, nanging durung bisa nyebutake
+\emph{pasangan endi} kang dimaksud. Asil kang padha bisa dibuktekake
+kanthi nyebutake pasangan $a$, $b$ \emph{ing} bukti: pilih
+$a = \sqrt{3}$ lan $b = \log_3 4$. Mula
+\[
+a^b = \sqrt{3}^{\log_3 4} = 3^{1/2 \cdot \log_3 4} = (3^{\log_3
+  4})^{1/2} = 4^{1/2}= 2,
+\]
+amarga $3^{\log_3 x} = x$. Bilangan logaritma mau irasional: yen
+rasional, ana pangkat bulat positif saka telu kang padha karo
+pangkat bulat positif saka papat, kang mokal miturut faktorisasi prima.
+
+Logika intuisionistik dirancang kanggo nggambarake jinis panalaran
+kang ora ngidini langkah kaya ing bukti kapisan. Mbuktekake anane
+$x$ kang nyukupi~$!A(x)$ ateges kudu menehi sawijining~$x$ tartamtu
+lan bukti yen dheweke nyukupi $!A$, kaya ing bukti kapindho.
+Mbuktekake yen $!A$ utawa $!B$ bener mbutuhake bukti kanggo salah
+sijine.
+
+Miturut cara formal, logika intuisionistik dipikolehi kanthi mbatesi
+sistem !!a{derivation} kanggo logika klasik kanthi cara tartamtu.
+Saka sudut matematika, iki mung sistem deduktif formal, nanging kaya
+kang wis kasebut, sistem iki dirancang kanggo nggambarake sawijining
+jinis panalaran matematika. Kita bisa nganggep panalaran iki sah
+miturut sawijining pandangan filosofis babagan matematika (kayata
+intuisionisme Brouwer); bisa uga nganggep panalaran iki luwih
+``konkret'' lan luwih marem (kaya konstruktivisme Bishop); lan bisa
+uga ngrembug apa andharan formal iku bener-bener nggambarake
+motivasi informal. Nanging, apa wae pandangan filosofis kita,
+logika intuisionistik tetep bisa ditliti minangka logika kang
+disajekake kanthi formal; lan kanthi maneka alasan, akeh ahli
+logika matematika kang nganggep panlitene narik kawigaten.
+
+\end{document}

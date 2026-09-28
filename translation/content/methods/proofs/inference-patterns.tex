@@ -1,0 +1,364 @@
+% Bagean: metodhe
+% Bab: bukti
+% Pérangan: pola inferensi
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mth}{prf}{pat}
+
+\olsection{Pola-Pola Inferensi}
+
+Bukti kasusun saka inferensi siji-siji. Nalika nggawe inferensi,
+kita lumrahé nandhani kanthi tembung kaya ``mula'', ``dadi'', utawa
+``kanthi mangkono''. Inferensi asring gumantung marang siji utawa
+loro kasunyatan kang wis kasedhiya ing bukti: bisa anggepan, bisa uga
+kesimpulan saka inferensi sadurungé. Supaya cetha, kita bisa mènèhi
+tandha marang pratelan-pratelan mau lan nyebut endi kang digunakaké
+ing inferensi anyar. Inferensi uga asring nerangaké \emph{ngapa}
+kesimpulan anyar katut saka bab-bab sadurungé. Ana sawatara pola
+inferensi kang kerep banget digunakaké ing bukti; kita bakal
+ngrembug sawatara ing ngisor iki. Pola liya, kaya bukti kanthi
+induksi, luwih rumit lan bakal dirembug mengko.
+
+Kita wis ngrembug siji pola inferensi: njlentrehaké lan nrapaké
+dhéfinisi. Nalika dhéfinisi dijlentrehaké, pratelan kang ngandhut
+definiendum dipratelakaké maneh nganggo definiens. Upamané, anggepen
+ing bukti wis ditemokaké $D = E$ (a). Banjur dhéfinisi $=$ kanggo
+himpunan bisa ditrapaké kanggo nyimpulaké: ``Mula, miturut
+dhéfinisi saka (a), saben !!{element} saka~$D$ uga !!a{element}
+saka~$E$, lan kosok baliné.''
+
+Kadhangkala mbingungaké: pambenaran inferensi ora tansah ditulis
+nalika inferensi kuwi digawé, nanging bisa luwih dhisik. Anggepen
+kita durung mbuktekaké $D = E$, nanging iki tujuan kita. Yèn $D = E$
+kesimpulan kang dikarepaké, tujuwan iki bisa dipratelakaké maneh
+kanthi dhéfinisi: kanggo mbuktekaké $D = E$, kita kudu mbuktekaké
+yèn saben !!{element} saka~$D$ uga !!a{element} saka~$E$, lan
+kosok baliné. Dadi bukti bisa awujud: (a) buktèkna saben
+!!{element} saka~$D$ iku !!a{element} saka~$E$; (b) saben
+!!{element} saka~$E$ iku !!a{element} saka~$D$; (c) mula saka
+(a) lan (b) miturut dhéfinisi $=$, $D = E$. Nanging biasané ora
+ditulis kaya mangkono. Kita bisa nulis:
+\begin{quote}
+Kita arep nuduhaké $D = E$. Miturut dhéfinisi~$=$, iki padha karo
+nuduhaké yèn saben !!{element} saka~$D$ iku !!a{element}
+saka~$E$, lan kosok baliné.
+
+(a) \dots (bukti yèn saben !!{element} saka~$D$ iku !!a{element}
+saka~$E$) \dots
+
+(b) \dots (bukti yèn saben !!{element}
+saka~$E$ iku !!a{element} saka~$D$) \dots
+\end{quote}
+
+\subsection{Migunakaké Konjungsi}
+
+Mbokmenawa pola inferensi kang paling prasaja yaiku njupuk siji
+pérangan saka konjungsi minangka kesimpulan. Tegesé, yèn kita
+nganggep utawa wis mbuktekaké $p$ lan~$q$, kita kena nyimpulaké
+~$p$ (uga~$q$). Inferensi dhasar iki asring ora perlu disebut.
+Upamané, sawisé njlentrehaké dhéfinisi $D = E$, kita ngerti yèn
+saben !!{element} saka~$D$ iku !!a{element} saka~$E$ lan kosok
+baliné. Saka kéné kita bisa nyimpulaké yèn saben !!{element}
+saka~$E$ iku !!a{element} saka~$D$; iki pérangan ``kosok baliné''.
+
+\subsection{Mbuktekaké Konjungsi}
+
+Kadhangkala kang dijaluk dibuktèkaké awujud konjungsi:
+``buktèkna $p$ lan $q$''. Ing kéné cukup nindakaké rong bab:
+mbuktekaké $p$, banjur mbuktekaké $q$. Bukti bisa dipérang dadi
+rong pérangan lan diwènèhi tandha supaya cetha. Nalika nyusun
+cathetan wiwitan, panjenengan bisa nulis ``(1) Buktèkna $p$''
+ing ndhuwur kertas lan ``(2) Buktèkna $q$'' ing tengah kertas.
+Kadhangkala pitakonan ora kanthi gamblang njaluk bukti konjungsi,
+nanging buktiné mbutuhaké iku. Upamané, kanggo mbuktekaké $D = E$,
+sawisé njlentrehaké dhéfinisi~$=$, panjenengan kudu mbuktekaké:
+saben !!{element} saka~$D$ iku !!a{element} saka~$E$
+\emph{lan} saben !!{element} saka~$E$ iku !!a{element} saka~$D$.
+
+\subsection{Mbuktekaké Disjungsi}
+
+Yèn kang dibuktèkaké awujud disjungsi, yaiku pratelan ``$p$
+utawa $q$'', cukup nuduhaké yèn salah siji pérangané bener.
+Nanging arang banget ana pérangan kang langsung katut saka
+anggepan téoréma. Luwih kerep, anggepané dhéwé awujud disjungsi,
+utawa kita nuduhaké yèn kabèh obyèk saka sawijining jinis nduwèni
+salah siji saka rong sipat, nanging obyèk kang béda nduwèni
+sipat kang béda. Ing kéné bukti mawa kasus migunani (delengen
+ing ngisor iki).
+
+\subsection{Bukti Kondisional}
+
+Akèh téoréma awujud kondisional: yèn $p$ bener, mula $q$ uga
+bener. Nata buktiné gampang: anggepen pérangan wiwitan kondisional,
+ing kéné $p$, banjur buktèkna kesimpulan~$q$ saka anggepan iku.
+Dadi yèn téoréma nyatakaké ``Yèn $p$ mula $q$'', bukti diwiwiti
+kanthi ``anggepen $p$'' lan dipungkasi kanthi mbuktekaké~$q$.
+
+Kondisional bisa dipratelakaké kanthi cara béda-béda. Saliyané
+``Yèn $p$ mula $q$'', téoréma bisa nyatakaké ``$p$ mung yèn
+$q$'', ``$q$ yèn $p$'', utawa ``$q$, angger $p$''.
+Kabèh padha tegesé lan mbutuhaké anggepan $p$ banjur bukti~$q$.
+Élinga yèn bikondisional ``$p$ yèn lan mung yèn (iff) $q$''
+iku gabungan rong kondisional: yèn $p$ mula $q$, lan yèn $q$
+mula~$p$. Mula cukup gawe rong bukti kondisional. Nanging
+kadhangkala pratelan ``iff'' bisa dibuktèkaké kanthi ngrangkè
+sawatara pratelan ``iff'', diwiwiti saka ``$p$'' lan dipungkasi
+ing ``$q$''; ing kéné saben langkah kudu pancèn ekuivalensi.
+
+\subsection{Pratelan Universal}
+
+Migunakaké pratelan universal iku prasaja: yèn sawijining bab
+bener kanggo kabèh obyèk, bab iku uga bener kanggo saben obyèk
+tartamtu. Upamané, yèn hipotesis bukti yaiku $A \subseteq B$,
+tegesé, sawisé dhéfinisi~$\subseteq$ dijlentrehaké, kanggo
+saben $x \in A$ uga $x \in B$. Mula yèn wis ngerti $z \in A$,
+kita bisa nyimpulaké $z \in B$.
+
+Mbuktekaké pratelan universal bisa katon rada angel. Lumrahé
+pratelan iku awujud: ``Yèn $x$ nduwèni sipat~$P$, mula uga
+nduwèni sipat~$Q$'' utawa ``Kabèh $P$s iku $Q$s''.
+Mesthi, wujudé ora tansah pas kaya iki, lan perlu latihan
+kanggo ngerti apa persis kang kudu dibuktèkaké. Nanging asring
+kita kudu mbuktekaké yèn saben obyèk mawa siji sipat uga
+nduwèni sipat liya.
+
+Kanggo mbuktekaké pratelan universal, kita ngenalaké jeneng
+utawa variabel kanggo obyèk mawa sipat kapisan, banjur
+nuduhaké yèn obyèk mau uga nduwèni sipat kapindho.
+Tegesé, kanggo mbuktekaké bab kanggo \emph{kabèh}~$P$s,
+kita mbuktekaké kanggo sawijining~$P$ kang \emph{sembarang}.
+Jeneng kang dienalaké iku jeneng kanggo~$P$ kang sembarang.
+Lumrahé jeneng iki aksara siji, manut pakulinan: $n$
+kanggo bilangan asli, $!A$ kanggo !!{formula}s, $A$
+kanggo himpunan, $f$ kanggo fungsi, lan sapanunggalané.
+
+Kunciné yaiku njaga sipat umum ing sadawaning bukti. Wiwitané,
+anggepen obyèk sembarang ``$x$'' nduwèni sipat~$P$, banjur
+nuduhaké, mung saka dhéfinisi lan anggepan kang diidini, yèn
+$x$ nduwèni sipat~$Q$. Amarga ora ana katrangan khusus babagan
+$x$ saliyané sipat $P$, kita bisa nyimpulaké yèn saben obyèk
+mawa $P$ uga nduwèni sipat~$Q$. Cekaké, $x$ ngwakili
+\emph{kabèh} obyèk mawa sipat~$P$.
+
+\begin{prop}
+  Kanggo sembarang himpunan $A$ lan $B$, $A \subseteq A \cup B$.
+\end{prop}
+
+\begin{proof}
+  Anggepen $A$ lan $B$ sembarang himpunan. Kita arep mbuktekaké
+  $A \subseteq A \cup B$. Miturut dhéfinisi $\subseteq$, iki
+  ateges: kanggo saben $x$, yèn $x \in A$ mula $x \in A \cup B$.
+  Mula jupuken $x \in A$ minangka !!{element} sembarang saka~$A$.
+  Kang kudu dibuktèkaké yaiku $x \in A \cup B$. Amarga $x \in A$,
+  kita ngerti $x \in A$ utawa $x \in B$. Mula $x \in
+  \Setabs{x}{x \in A \lor x \in B}$. Miturut dhéfinisi $\cup$,
+  iki ateges $x \in A \cup B$.
+\end{proof}
+
+\subsection{Bukti Mawa Kasus}
+
+Anggepen ana disjungsi minangka anggepan utawa kesimpulan kang
+wis kabukten: $p$ utawa $q$ bener. Panjenengan arep mbuktekaké
+$r$. Lakonana rong langkah: anggepen $p$ bener lan buktèkna~$r$;
+banjur anggepen $q$ bener lan buktèkna~$r$ maneh. Cara iki sah
+amarga salah siji saka rong kamungkinan mesthi kelakon. Rong
+langkah mau nuduhaké yèn saben kamungkinan cukup kanggo
+mbuktekaké~$r$. Yèn kaloroné bener, kita mung nduwèni rong
+alasan yèn $r$ bener; ora perlu mbuktekaké $r$ maneh ing
+anggepan yèn $p$ lan~$q$ padha bener. Kanggo nandhani cara iki,
+kita ngumumaké yèn bakal ``mbédakaké kasus''. Upamané, anggepen
+kita ngerti $x \in B \cup C$. Himpunan $B \cup C$
+didhéfinisikaké minangka $\Setabs{x}{x \in B \text{ utawa } x \in C}$.
+Mula miturut dhéfinisi, $x \in B$ utawa $x \in C$.
+Kanggo mbuktekaké $x \in A$ saka iki, dhisik anggepen $x \in B$
+lan buktèkna $x \in A$ saka anggepan iku; banjur anggepen
+$x \in C$ lan buktèkna maneh $x \in A$. Ing ngisor anggepan
+tulisen ``Kita mbédakaké kasus'', banjur ``Kasus (1): $x \in B$'',
+lan ing tengah kertas ``Kasus (2): $x \in C$''. Sabanjuré
+isinen pérangan ndhuwur lan ngisor kertas.
+
+Bukti mawa kasus mligi migunani yèn kang dibuktèkaké dhéwé
+awujud disjungsi. Iki conto prasaja:
+
+\begin{prop}
+Anggepen $B \subseteq D$ lan $C \subseteq E$.
+Mula $B \cup C \subseteq D \cup E$.
+\end{prop}
+
+\begin{proof}
+  Anggepen (a) $B \subseteq D$ lan (b) $C \subseteq E$.
+  Miturut dhéfinisi, saben $x \in B$ uga $x \in D$ (c),
+  lan saben $x \in C$ uga $x \in E$ (d).
+  Kanggo mbuktekaké $B \cup C \subseteq D \cup E$, kita
+  kudu nuduhaké yèn $x \in B \cup C$ mula $x \in D \cup E$
+  (miturut dhéfinisi $\subseteq$). $x \in B \cup C$ yèn
+  lan mung yèn $x \in B$ utawa $x \in C$ (miturut dhéfinisi~$\cup$).
+  Semono uga $x \in D \cup E$ yèn lan mung yèn $x \in D$
+  utawa $x \in E$. Mula kang kudu dibuktèkaké yaiku:
+  kanggo sembarang $x$, yèn $x \in B$ utawa $x \in C$,
+  mula $x \in D$ utawa $x \in E$.
+
+  \begin{quote}
+  Nganti kéné kita mung njlentrehaké dhéfinisi!{} Proposisi wis
+  dipratelakaké maneh tanpa $\subseteq$ lan $\cup$, lan saiki
+  kari bukti pratelan kondisional universal. Kaya kang wis dirembug,
+  kita nindakaké iki kanthi nganggep sawijining $x$ kang nyukupi
+  pérangan ``yèn'', banjur mbuktekaké pérangan ``mula''.
+  Tegesé, kita nganggep $x \in B$ utawa $x \in C$ lan
+  nuduhaké $x \in D$ utawa $x \in E$.\footnote{Alinea iki mung
+  njlentrehaké apa kang lagi ditindakaké; dudu pérangan bukti,
+  lan panjenengan ora perlu nulis kanthi rinci kaya iki nalika
+  nyusun bukti dhéwé.}
+  \end{quote}
+
+  Anggepen $x \in B$ utawa $x \in C$. Kang kudu dibuktèkaké
+  yaiku $x \in D$ utawa $x \in E$. Kita mbédakaké kasus.
+
+  Kasus 1: $x \in B$. Miturut (c), $x \in D$. Mula $x \in D$
+  utawa $x \in E$. Iki inferensi kang wis dirembug ing
+  pérangan sadurungé.
+
+  Kasus 2: $x \in C$. Miturut (d), $x \in E$. Mula $x \in D$
+  utawa $x \in E$.
+\end{proof}
+
+\subsection{Mbuktekaké Pratelan Eksistensial}
+
+Yèn dijaluk mbuktekaké pratelan eksistensial, pitakonané lumrahé
+awujud ``buktèkna yèn ana~$x$ kang nyukupi $\dots x \dots$'',
+yaiku ana obyèk mawa sipat kang diterangaké déning ``$\dots x
+\dots$''. Ing kéné panjenengan kudu nemokaké obyèk kang cocog
+lan nuduhaké yèn obyèk mau nduwèni sipat kang dijaluk.
+Iki katon prasaja, nanging bukti kaya iki bisa ruwet. Asring
+kita kudu \emph{ngonstruksi} utawa \emph{ndhéfinisikaké} obyèk
+lan mbuktekaké yèn obyèk kang didhéfinisikaké iku nduwèni
+sipat kang dikarepaké. Nemokaké obyèk kang pas bisa angel;
+mbuktekaké sipaté uga bisa angel; malah kadhangkala nuduhaké
+yèn dhéfinisiné pancèn ngasilaké obyèk uga angel!{}
+
+Lumrahé panjenengan nemtokaké obyèk iku kanthi nulis,
+upamané ``tetepna $x$ minangka \dots'' (ing kéné \dots{}
+nerangaké obyèk kang dikarepaké), mbokmenawa mbuktekaké
+yèn $\dots$ pancèn nemtokaké obyèk kang ana, banjur nuduhaké
+yèn $x$ nduwèni sipat~$Q$. Iki conto prasaja.
+
+\begin{prop}
+  Anggepen $x \in B$. Mula ana~$A$ kang nyukupi
+  $A \subseteq B$ lan $A \neq \emptyset$.
+\end{prop}
+
+\begin{proof}
+  Anggepen $x \in B$. Tetepna $A = \{x\}$.
+  \begin{quote}
+    Ing kéné kita ndhéfinisikaké himpunan~$A$ kanthi nyebut
+    !!{element}s siji-siji. Amarga wis dianggep yèn $x$ iku obyèk,
+    lan himpunan bisa kawangun saka dhaptar !!{element}s-é,
+    ora perlu mbuktekaké maneh yèn kita kasil ndhéfinisikaké
+    himpunan~$A$. Nanging kita isih kudu nuduhaké yèn $A$
+    nduwèni sipat-sipat kang dijaluk déning proposisi.
+    Tanpa iku, buktiné durung jangkep!{}
+  \end{quote}
+  Amarga $x \in A$, $A \neq \emptyset$.
+  \begin{quote}
+    Iki gumantung marang dhéfinisi $A$ minangka $\{x\}$ lan
+    kasunyatan cetha yèn $x \in \{x\}$ lan $x \notin \emptyset$.
+  \end{quote}
+  Amarga $x$ siji-sijiné !!{element} saka~$\{x\}$ lan
+  $x \in B$, saben !!{element} saka~$A$ uga !!a{element}
+  saka~$B$. Miturut dhéfinisi~$\subseteq$, $A \subseteq B$.
+\end{proof}
+
+\subsection{Migunakaké Pratelan Eksistensial}
+
+Anggepen panjenengan ngerti sawijining pratelan eksistensial
+bener, amarga wis dibuktèkaké utawa kalebu hipotesis kang bisa
+digunakaké, upamané ``kanggo sawijining~$x$, $x \in A$'' utawa
+``ana $x \in A$''. Kanggo migunakaké ing bukti, panjenengan
+bisa ngenalaké jeneng kanggo salah siji obyèk kang ana miturut
+hipotesis. Amarga $A$ paling ora ngemot siji obyèk, jeneng mau
+bisa nuding salah siji obyèk iku. Bisa waé panjenengan ora bisa
+milih utawa njlèntrèhaké obyèk mau luwih rinci, kajaba yèn
+obyèk mau ana ing $A$. Nanging kanggo bukti, anggepen obyèk
+iku wis dipilih lan wènèhana jeneng. Jeneng anyar aja nganti
+wis dienggo sadurungé utawa muncul ing hipotesis, amarga bisa
+nimbulaké panalaran kang klèru. Ing bukti, iki ditandhani
+kanthi owah saka ``kanggo sawijining $x$, $x \in A$'' dadi
+``Jupuken $a \in A$''. Saiki panjenengan bisa nalar babagan~$a$
+lan migunakaké hipotesis liya nganti tekan kesimpulan $p$.
+Yèn $p$ ora nyebut~$a$ maneh, $p$ ora gumantung
+marang pilihan saksi $a \in A$ kang tartamtu,
+saéngga katut saka anggepan
+``kanggo sawijining $x$, $x \in A$''.
+
+\begin{prop}
+Yèn $A \neq \emptyset$, mula $A \cup B \neq \emptyset$.
+\end{prop}
+
+\begin{proof}
+  Anggepen $A \neq \emptyset$. Dadi kanggo sawijining $x$,
+  $x \in A$.
+  \begin{quote}
+    Ing kéné kita luwih dhisik mung mratelakaké hipotesis
+    proposisi kanthi cara liya. Hipotesis $A \neq \emptyset$
+    nyimpen pratelan eksistensial kang katon sawisé sawetara
+    dhéfinisi dijlentrehaké. Dhéfinisi $=$ nuduhaké yèn
+    $A = \emptyset$ yèn lan mung yèn saben $x \in A$
+    uga $x \in \emptyset$ lan saben $x \in \emptyset$
+    uga $x \in A$. Kanthi negasi, kita olèh yèn $A \neq
+    \emptyset$ yèn salah siji ana $x \in A$ kang
+    $x \notin \emptyset$, utawa ana $x \in \emptyset$
+    kang $x \notin A$. Amarga ora ana $x \in \emptyset$,
+    pérangan kapindho ora mungkin bener, déné ``$x \in A$
+    lan $x \notin \emptyset$'' mung dadi $x \in A$.
+    Dadi $A \neq \emptyset$ yèn lan mung yèn ana $x$
+    kang $x \in A$. Iki pratelan eksistensial. Saiki
+    kita migunakaké pratelan iku kanthi ngenalaké jeneng
+    kanggo salah siji !!{element}s saka~$A$:
+  \end{quote}
+  Jupuken $a \in A$.
+  \begin{quote}
+    Saiki kita wis ngenalaké jeneng kanggo salah siji
+    obyèk ing~$A$. Kita bakal nalar babagan~$a$, nanging
+    mung nganggep yèn $a \in A$ lan ora luwih:
+  \end{quote}
+  Amarga $a \in A$, mula $a \in A \cup B$ miturut
+  dhéfinisi~$\cup$. Dadi ana $x$ kang $x \in A \cup B$,
+  yaiku $A \cup B \neq \emptyset$.
+  \begin{quote}
+    Ing langkah pungkasan, kita pindhah saka ``$a \in A \cup B$''
+    menyang ``ana $x$ kang $x \in A \cup B$''.
+    Pratelan pungkasan ora nyebut $a$ maneh, mula
+    ``ana $x$ kang $x \in A \cup B$'' katut mung saka
+    ``ana $x$ kang $x \in A$''. Iki ateges $A \cup B \neq
+    \emptyset$.
+  \end{quote}
+\end{proof}
+
+Mbokmenawa prayoga misahaké variabel kaiket kaya ``$x$''
+saka jeneng saksi hipotètis kaya $a$, kaya ing ndhuwur.
+Nanging ing laku kita asring migunakaké $x$ waé, kaya iki:
+\begin{quote}
+Anggepen $A \neq \emptyset$, yaiku ana $x \in A$.
+Miturut dhéfinisi $\cup$, $x \in A \cup B$.
+Dadi $A \cup B \neq \emptyset$.
+\end{quote}
+Yèn nganggo cara iki, panjenengan kudu luwih ngati-ati
+supaya $x$ lan $y$ kang beda digunakaké kanggo pratelan
+eksistensial kang béda. Upamané, iki \emph{dudu} bukti
+kang sah kanggo ``Yèn $A \neq \emptyset$ lan $B \neq
+\emptyset$, mula $A \cap B \neq \emptyset$''; pratelan
+iku pancèn salah.
+\begin{quote}
+Anggepen $A \neq \emptyset$ lan $B \neq \emptyset$.
+Dadi kanggo sawijining $x$, $x \in A$, lan kanggo
+sawijining $x$, $x \in B$. Amarga $x \in A$ lan $x \in
+B$, mula $x \in A \cap B$ miturut dhéfinisi~$\cap$.
+Dadi $A \cap B \neq \emptyset$.
+\end{quote}
+Apa panjenengan bisa nemokaké langkah kang klèru lan nerangaké
+ngapa asil mau ora bener?
+
+\end{document}

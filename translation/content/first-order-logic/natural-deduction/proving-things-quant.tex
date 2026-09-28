@@ -14,7 +14,7 @@
 Nalika nangani kuantor, kita kudu mesthekake supaya ora nerak syarat
 eigenvariabel, lan kadhangkala iki mbutuhake kita ngowahi urutan
 panrapan inferensi tartamtu. Umume, luwih gampang yen kita nyoba
-nangani luwih dhisik aturan kang kena syarat eigenvariabel
+nangani luwih dhisik aturan kang kaiket dening syarat eigenvariabel
 (aturan-aturan iki bakal ana ing sisih ngisor bukti kang wis rampung).
 
 Ayo ndeleng carane menehi !!a{derivation} saka !!{formula}
@@ -24,8 +24,8 @@ Kaya lumrahe, kita miwiti kanthi nulis
 \AxiomC{}
 \UnaryInfC{$\lexists[x][\lnot !A(x)]\lif \lnot \lforall[x][!A(x)]$}
 \end{prooftree}
-Kita miwiti kanthi nulis apa kang dibutuhake kanggo mbenerake langkah
-pungkasan nganggo aturan \Intro{\lif}.
+Kita miwiti kanthi nulis apa kang dibutuhake supaya langkah pungkasan
+nduweni dhasar miturut aturan \Intro{\lif}.
 \begin{prooftree}
 \AxiomC{$\Discharge{\lexists[x][\lnot !A(x)]}{1}$}
 \DeduceC{$\lnot \lforall[x][!A(x)]$}
@@ -51,9 +51,9 @@ padha, mula syarat kesegaran ora owah. (Nanging, amarga ora ana
 \DischargeRule{\Intro{\lif}}{1}
 \UnaryInfC{$\lexists[x][\lnot !A(x)] \lif \lnot \lforall[x][!A(x)]$}
 \end{prooftree}
-Kanggo ngasilake $\lnot \lforall[x][!A(x)]$, kita bakal nyoba
-nggunakake aturan \Intro{\lnot}: iki mbutuhake kita ngasilake
-kontradiksi, bisa uga kanthi nggunakake $\lforall[x][!A(x)]$ minangka
+Supaya $\lnot \lforall[x][!A(x)]$ bisa diderivasi, kita bakal nyoba
+nggunakake aturan \Intro{\lnot}: iki mbutuhake supaya kontradiksi bisa
+diderivasi, bisa uga kanthi nggunakake $\lforall[x][!A(x)]$ minangka
 asumsi tambahan. Mesthi wae, kontradiksi iki bisa nyakup asumsi
 $\lnot !A(a)$ kang bakal dibubarake dening inferensi
 \Elim{\lexists}. Kita bisa nata bukti kaya mangkene:
@@ -90,16 +90,16 @@ nggunakake~$a$ supaya bisa nggayuh kontradiksi.
 \end{prooftree}
 
 Ing tahap iki, mligine nalika nangani kuantor, kita kudu mriksa maneh
-supaya syarat eigenvariabel ora dilanggar. Amarga siji-sijine aturan
+manawa syarat eigenvariabel ora dilanggar. Amarga siji-sijine aturan
 kang kita trapake lan kena syarat eigenvariabel yaiku
 \Elim{\exists}, lan eigenvariabel~$a$ ora muncul ing asumsi apa wae
 kang dadi gantungane, iki !!{derivation} kang bener.
 \end{ex}
 
 \begin{ex}
-Kadhangkala kita bisa ngasilake !!a{formula} saka !!{formula}s liyane.
+Kadhangkala !!a{formula} bisa diderivasi saka !!{formula}s liyane.
 Ing kasus iki bisa ana asumsi kang durung dibubarake. Mula kita kudu
-nyathet asumsi-asumsi kasebut uga ancas pungkasane.
+nyathet asumsi-asumsi kasebut uga ancas pungkasan.
 
 Ayo ndeleng carane menehi !!a{derivation} saka !!{formula}
 $\lexists[x][!C(x,b)]$ adhedhasar asumsi $\lexists[x][(!A(x)
@@ -177,7 +177,7 @@ wis nggayuh ancas.
 \insertBetweenHyps{\hspace{-5em}}
 \BinaryInfC{$\lexists[x][!C(x,b)]$}
 \end{prooftree}
-Amarga ing saben langkah kita wis mesthekake supaya syarat
+Amarga ing saben langkah kita wis mesthekake manawa syarat
 eigenvariabel ora dilanggar, kita bisa yakin yen iki !!{derivation}
 kang bener.
 \end{ex}

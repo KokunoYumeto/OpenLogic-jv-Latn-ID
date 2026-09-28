@@ -1,0 +1,147 @@
+% Part: computability
+% Chapter: recursive-functions
+% Section: primitive-recursion
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{rec}{pre}
+\olsection{Rekursi Primitif}
+
+Ciri wilangan asli yaiku saben wilangan asli bisa digayuh saka~$0$
+kanthi ngetrapake operasi penerus~$+1$ kaping winates---saben
+wilangan asli iku~$0$ utawa peneruse \dots{} peneruse~$0$.
+Salah siji cara nemtokake fungsi~$h\colon\Nat \to \Nat$
+kang migunakake kasunyatan iki kaya mangkene: (a)~tetepna
+biji $h$ kanggo argumen~$0$, lan (b)~tetepna, yen biji
+$h(x)$ wis dingerteni, carane ngitung biji $h(x+1)$.
+Amarga (a)
+langsung menehi biji $h(0)$, mula $h$~ditetepake kanggo~$0$.
+Saiki, nganggo pituduh saka (b) kanggo $x=0$, kita bisa ngitung
+$h(1) = h(0+1)$ saka~$h(0)$. Nganggo pituduh kang padha kanggo
+$x=1$, kita ngitung $h(2) = h(1+1)$ saka~$h(1)$, lan sateruse.
+% OLPL-121: Sumber mbalikke arah langkah pungkasan; aturan (b) lan
+% tuladha ing ndhuwur nemtokake h(x+1) saka h(x), dudu kosokbaline.
+Kanggo saben wilangan asli~$x$, pungkasane kita tekan langkah
+kang netepake $h(x+1)$ saka $h(x)$, mula $h(x)$ ditetepake
+kanggo kabeh $x \in \Nat$.
+
+Umpamane, upamana kita nemtokake $h\colon \Nat \to \Nat$
+nganggo rong persamaan iki:
+\begin{align*}
+h(0) & =  1\\
+h(x+1) & =  2 \cdot h(x)
+\end{align*}
+Yen kita wis ngerti carane ngalikake, persamaan iki menehi
+katrangan kang dibutuhake kanggo (a) lan~(b) ing ndhuwur.
+Kanthi bola-bali ngetrapake persamaan kapindho, kita entuk
+\begin{align*}
+  h(1) & = 2\cdot h(0) = 2,\\
+  h(2) & = 2\cdot h(1) = 2\cdot 2,\\
+  h(3) & = 2 \cdot h(2) = 2\cdot 2 \cdot 2,\\
+  & \vdots
+\end{align*}
+Kita weruh yen fungsi~$h$ kang wis ditemtokake yaiku $h(x) = 2^x$.
+
+Ciri khas wilangan asli njamin yen mung ana siji fungsi~$h$
+kang nyukupi rong syarat iki. Sepasang persamaan kaya mangkene
+diarani \emph{definisi kanthi rekursi primitif} kanggo
+fungsi~$h$. Iki diarani “rekursif,” yaiku kita netepake~$h$
+kanthi definisi kang, mligine ing persamaan kapindho,
+ngemot $h$ dhewe ing sisih tengen. Iki diarani “primitif”
+amarga kanggo netepake $h(x+1)$ kita mung nggunakake
+biji~$h(x)$, yaiku biji sakdurunge kang langsung.
+Iki cara paling prasaja kanggo netepake fungsi ing~$\Nat$
+kanthi rekursif.
+
+Kita bisa netepake fungsi kang luwih dhasar maneh, kayata
+panjumlahan lan perkalian, kanthi rekursi primitif. Nanging
+ing kene fungsi kang dirembug nduweni $2$ panggonan.
+Kita netepake salah siji panggonan argumen, lan nggunakake
+liyane kanggo rekursi. Umpamane, kanggo netepake
+$\Add(x, y)$, kita bisa netepake~$x$ lan nemtokake biji
+dhisik kanggo $y=0$, banjur kanggo $y+1$ adhedhasar~$y$.
+Amarga $x$ tetep, argumen kasebut bakal katon ing sisih kiwa lan tengen
+persamaan definisine.
+\begin{align*}
+\Add(x,0) & =  x\\
+\Add(x,y+1) & =  \Add(x,y)+1
+\end{align*}
+Persamaan iki nemtokake biji $\Add$ kanggo kabeh $x$
+\emph{lan}~$y$. Kanggo nemokake $\Add(2,3)$, umpamane,
+kita ngetrapake persamaan definisi kanggo $x = 2$,
+nganggo persamaan kapisan kanggo nemokake
+$\Add(2,0) = 2$, banjur nganggo persamaan kapindho
+kanthi mbaka siji nemokake $\Add(2,1) = 2 + 1 = 3$,
+$\Add(2, 2) = 3 + 1 = 4$, $\Add(2,
+3) = 4 + 1 = 5$.
+
+Ing definisi $\Add$ kita nggunakake $+$ ing sisih tengen
+persamaan kapindho, nanging mung kanggo nambah~$1$.
+Tegese, kita nggunakake fungsi penerus $\Succ(z) = z+1$
+lan ngetrapake marang biji sadurunge $\Add(x,y)$
+kanggo netepake $\Add(x,y+1)$. Mula kita bisa nganggep
+definisi rekursif iku diwenehi liwat siji fungsi kang
+ditrapake marang biji sadurunge. Nanging ora apa-apa---lan
+kadhangkala perlu---ngidini fungsi kasebut gumantung ora
+mung marang biji sadurunge, nanging uga marang $x$ lan~$y$.
+Coba delengen:
+\begin{align*}
+  \Mult(x,0) & =  0 \\
+  \Mult(x,y+1) & =  \Add(\Mult(x,y),x)
+\end{align*}
+Iki definisi rekursif primitif fungsi $\Mult$ kanthi
+ngetrapake fungsi $\Add$ marang biji sadurunge
+$\Mult(x,y)$ lan argumen kapisan~$x$. Iki uga nemtokake
+fungsi~$\Mult(x,y)$ kanggo saben argumen $x$ lan~$y$.
+Umpamane, $\Mult(2,3)$ ditemtokake kanthi mbaka siji
+ngitung $\Mult(2,0)$, $\Mult(2,1)$, $\Mult(2,2)$,
+lan~$\Mult(2,3)$:
+\begin{align*}
+  \Mult(2,0) & = 0\\
+  \Mult(2,1) & = \Mult(2,0+1) =
+  \Add(\Mult(2,0), 2) = \Add(0, 2) = 2\\
+  \Mult(2,2) & = \Mult(2,1+1) =
+  \Add(\Mult(2,1), 2) = \Add(2, 2) = 4\\
+  \Mult(2,3) & = \Mult(2,2+1) =
+  \Add(\Mult(2,2), 2) = \Add(4, 2) = 6
+\end{align*}
+
+Mula pola umume kaya mangkene: kanggo menehi definisi rekursif
+primitif fungsi~$h(x_0, \dots, x_{k-1}, y)$, kita nyedhiyakake
+rong persamaan. Persamaan kapisan netepake biji
+$h(x_0, \dots, x_{k-1}, 0)$ tanpa ngrujuk marang~$h$.
+Persamaan kapindho netepake biji $h(x_0,
+\dots, x_{k-1}, y+1)$ adhedhasar $h(x_0, \dots, x_{k-1}, y)$,
+argumen liyane $x_0$, \dots,~$x_{k-1}$, lan~$y$.
+Mung biji sadurunge saka~$h$ kang langsung bisa digunakake
+ing persamaan kapindho. Yen operasi ing sisih tengen rong
+persamaan kasebut dianggep minangka fungsi $f$ lan~$g$,
+mula pola umum kanggo netepake fungsi anyar~$h$ kanthi
+rekursi primitif kaya mangkene:
+\begin{align*}
+  h(x_0, \dots, x_{k-1}, 0) & = f(x_0, \dots, x_{k-1})\\
+  h(x_0, \dots, x_{k-1}, y+1) & =
+  g(x_0, \dots, x_{k-1}, y, h(x_0, \dots, x_{k-1}, y))
+\end{align*}
+Ing kasus $\Add$, kita nduweni $k=1$ lan $f(x_0) = x_0$
+(fungsi identitas), lan $g(x_0, y, z) = z + 1$
+(fungsi $3$ panggonan kang ngasilake penerus saka argumen
+katelu):
+\begin{align*}
+  \Add(x_0, 0) & = f(x_0) = x_0\\
+  \Add(x_0, y+1) & = g(x_0, y, \Add(x_0, y)) =
+  \Succ(\Add(x_0, y))
+\end{align*}
+Ing kasus $\Mult$, kita nduweni $f(x_0) = 0$
+(fungsi konstan kang tansah ngasilake~$0$) lan
+$g(x_0, y, z) = \Add(z,x_0)$ (fungsi $3$ panggonan
+kang ngasilake jumlah argumen pungkasan lan kapisan):
+\begin{align*}
+  \Mult(x_0,0) & =  f(x_0) = 0 \\
+  \Mult(x_0,y+1) & =  g(x_0, y, \Mult(x_0,y)) =
+  \Add(\Mult(x_0,y), x_0)
+\end{align*}
+
+\end{document}

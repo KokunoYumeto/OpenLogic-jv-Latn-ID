@@ -1,0 +1,135 @@
+% Part: incompleteness
+% Chapter: arithmetization-syntax
+% Section: coding-symbols
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{art}{cod}
+\olsection{Pangodean Simbol}
+
+Basa dhasar~$\Lang L$ logika orde kapisan
+nggunakake simbol-simbol
+\[
+\lfalse \quad \lnot \quad \lor \quad \land \quad \lif \quad \lforall
+\quad \lexists \quad \eq \quad ( \quad ) \quad ,
+\]
+bebarengan karo himpunan !!{enumerable}
+variabel lan !!{constant}s, sarta himpunan
+!!{enumerable} !!{function}s lan
+!!{predicate}s kanthi aritas sembarang.
+Kita bisa menehi \emph{kode} marang saben
+simbol iki saengga saben simbol nduwé siji
+bilangan khas minangka kodene, lan ora ana
+rong simbol béda kang diwenehi bilangan
+kang padha. Iki mungkin amarga himpunan
+kabeh simbol iku !!{enumerable}, mula ana
+!!a{bijection} antarane himpunan iku lan
+himpunan bilangan asli. Nanging kita uga
+kepengin bisa nemokake maneh simbol kasebut
+(bebarengan karo sawatara katrangan, umpamane
+aritas !!a{function}) saka kodene kanthi
+cara komputabel. Mesthi ana akeh cara kanggo
+nindakake iku. Ing ngisor iki salah siji cara
+kang nggunakake fungsi rekursif primitif.
+(Elinga yen $\tuple{n_0, \dots, n_k}$ iku
+bilangan kang ngodeake urutan bilangan
+$n_0$, \dots, $n_k$.)
+
+\begin{defn}
+Yen $s$ iku simbol saka~$\Lang L$,
+tetepna \emph{kode simbol}~$\scode s$
+kaya mangkene:
+\begin{enumerate}
+\item Yen $s$ kalebu simbol logis,
+  $\scode s$ diwenehi dening tabel iki:
+\[
+\begin{array}{cccccccccc}
+  \lfalse & \lnot & \lor & \land & \lif & \lforall \\
+\tuple{0, 0} & \tuple{0, 1} & \tuple{0, 2} & \tuple{0, 3} &
+\tuple{0, 4} & \tuple{0, 5} \\
+\lexists & \eq & ( & ) & ,\\
+\tuple{0, 6} & \tuple{0, 7} &
+\tuple{0, 8} & \tuple{0, 9} & \tuple{0, 10}
+\end{array}
+\]
+\item Yen $s$ iku variabel kapangka-$i$
+  $\Obj v_i$, mula $\scode s = \tuple{1, i}$.
+\item Yen $s$ iku !!{constant} kapangka-$i$
+  $\Obj c_i$, mula $\scode s = \tuple{2, i}$.
+\item Yen $s$ iku !!{function} kapangka-$i$
+  kanthi aritas~$n$ $\Obj f_i^n$, mula
+  $\scode s = \tuple{3, n, i}$.
+\item Yen $s$ iku !!{predicate} kapangka-$i$
+  kanthi aritas~$n$ $\Obj P_i^n$, mula
+  $\scode s = \tuple{4, n, i}$.
+\end{enumerate}
+\end{defn}
+
+\begin{prop}
+Relasi-relasi ing ngisor iki rekursif primitif:
+\begin{enumerate}
+\item $\fn{Fn}(x, n)$ yen lan mung yen $x$
+  iku kode $\Obj f^n_i$ kanggo sawijining~$i$,
+  yaiku $x$ iku kode !!{function} aritas~$n$.
+\item $\fn{Pred}(x, n)$ yen lan mung yen $x$
+  iku kode $\Obj P^n_i$ kanggo sawijining~$i$
+  utawa $x$ iku kode $\eq$ lan $n = 2$,
+  yaiku $x$ iku kode !!{predicate} aritas~$n$.
+\end{enumerate}
+\end{prop}
+
+\begin{defn}
+Yen $s_0, \dots, s_{n-1}$ iku urutan simbol,
+\emph{bilangan G\"odel} saka urutan iku yaiku
+$\tuple{\scode{s_0}, \dots, \scode{s_{n-1}}}$.
+\end{defn}
+
+\begin{explain}
+Gatekna yen \emph{kode} lan \emph{bilangan G\"odel}
+iku rong bab kang béda. Tuladhane,
+variabel~$\Obj v_5$ nduwé kode~$\scode{\Obj
+  v_5} = \tuple{1, 5} = 2^2\cdot 3^6$.
+Nanging variabel~$\Obj v_5$ yen dianggep
+minangka suku uga dadi urutan simbol
+(dawane~$1$). \emph{Bilangan G\"odel}~$\Gn{\Obj v_5}$
+saka \emph{suku}~$\Obj v_5$ yaiku
+$\tuple{\scode{\Obj v_5}} = 2^{\scode{\Obj
+    v_5} + 1} = 2^{2^2\cdot 3^6 + 1}$.
+\end{explain}
+
+\begin{ex}
+Elinga yen $k_0$, \dots, $k_{n-1}$ iku
+urutan bilangan. Kode urutan
+$\tuple{k_0, \dots, k_{n-1}}$ ing
+pangodean pangkat bilangan prima yaiku
+\[
+2^{k_0+1}\cdot3^{k_1+1}\cdot \dots \cdot p_{n-1}^{k_{n-1}+1},
+\]
+ing ngendi $p_i$ iku bilangan prima kapangka-$i$
+(diwiwiti saka $p_0 = 2$). Mula, umpamane,
+formula $\eq[\Obj v_0][\Obj 0]$, utawa
+kanthi luwih cetha, ${\eq}(\Obj v_0,\Obj c_0)$,
+nduwé bilangan G\"odel
+\[
+\tuple{\scode{\eq},\scode{(},\scode{\Obj v_0},\scode{,}, \scode{\Obj
+    c_0},\scode{)}}.
+\]
+Ing kene, $\scode{\eq}$ yaiku
+$\tuple{0,7} = 2^{0+1}\cdot 3^{7+1}$,
+$\scode{\Obj v_0}$ yaiku
+$\tuple{1,0} = 2^{1+1}\cdot3^{0+1}$,
+lan sateruse. Mula $\Gn{=(\Obj v_0,\Obj c_0)}$ yaiku
+\begin{multline*}
+2^{\scode{=} + 1}\cdot 3^{\scode{(}+1}\cdot 5^{\scode{\Obj v_0}+1}
+\cdot 7^{\scode{,} + 1} \cdot 11^{\scode{\Obj c_0}+1} \cdot
+13^{\scode{)}+1} = \\
+2^{2^1\cdot 3^8 + 1}\cdot 3^{2^1\cdot 3^9+1}\cdot 5^{2^2\cdot 3^1+1}
+\cdot 7^{2^1\cdot 3^{11} + 1} \cdot 11^{2^3\cdot3^1+1} \cdot
+13^{2^1\cdot3^{10}+1} = \\
+2^{13\,123}\cdot 3^{39\,367}\cdot 5^{13}\cdot 7^{354\,295}\cdot11^{25}\cdot13^{118\,099}.
+\end{multline*}
+\end{ex}
+
+\end{document}

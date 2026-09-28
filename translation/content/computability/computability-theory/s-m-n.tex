@@ -1,0 +1,51 @@
+% Part: computability
+% Chapter: computability-theory
+% Section: s-m-n
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{thy}{smn}
+\olsection{Teorema $s$-$m$-$n$}
+
+\begin{explain}
+Teorema sabanjure diarani 'teorema $s$-$m$-$n$',
+kanthi alesan kang sedhela maneh bakal cetha.
+Perkara kang angel yaiku mangerteni persis
+apa kang diandharake teorema iki; yen
+andharane wis dingerteni, teorema iki
+bakal katon cukup cetha.
+\end{explain}
+
+\begin{thm}
+\ollabel{thm:s-m-n}
+  Kanggo saben pasangan wilangan asli $n$ lan~$m$,
+  ana fungsi rekursif primitif~$s^m_n$ kang
+  ndadekake, kanggo saben runtutan
+  $e$, $a_0$, \dots, $a_{m-1}$, $y_0$, \dots,
+  $y_{n-1}$, kita nduwé
+  \[
+  \cfind{s^m_n(e, a_0, \dots, a_{m-1})}[n](y_0, \dots, y_{n-1}) \simeq
+  \cfind{e}[m+n](a_0, \dots, a_{m-1}, y_0, \dots, y_{n-1}).
+\]
+\end{thm}
+
+\begin{explain}
+Migunani yen $s^m_n$ dianggep tumindak marang
+\emph{program}. Tegese, $s^m_n$ nampa program~$e$
+kanggo fungsi aritas $(m+n)$, uga input tetep
+$a_0$, \dots, $a_{m-1}$; banjur ngasilake program
+% OLPL-133: Sumber beku nulis x ing rong rujukan indeks program ing paragraf iki; teorema lan ukara sadurunge nggunakake e.
+$s^m_n(e, a_0, \dots, a_{m-1})$ kanggo fungsi
+aritas $n$ saka argumen kang isih kari.
+\iftag{TMs}{Yen $e$ dianggep minangka jlentrehan
+mesin Turing, mula $s^m_n(e, a_0, \dots, a_{m-1})$
+iku mesin Turing kang, yen nampa input $y_0$,
+\dots,~$y_{n-1}$, nambahake $a_0$, \dots,~$a_{m-1}$
+ing wiwitan runtutan input, banjur nglakokake~$e$.
+Saben $s^m_n$ dadi fungsi rekursif primitif
+kanggo nemokake kode mesin Turing kang cocog.}{}
+\end{explain}
+
+\end{document}

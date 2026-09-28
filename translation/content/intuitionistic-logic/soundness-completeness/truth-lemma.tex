@@ -1,0 +1,73 @@
+% part: intuitionistic-logic
+% chapter: soundness-completeness
+% section: truth-lemma
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{sc}{tru}
+
+\olsection{Lema Kabeneran}
+
+Lema iki nggayutake pemenuhan ing model kanonik karo !!{formula}s
+kang dadi !!{element}s saka himpunan prim $\Delta$.
+
+\begin{lem}\ollabel{lem:truth}
+  Yen $\Delta$ prim, mula $\mSat{M(\Delta)}{!A}[\sigma]$ yen lan mung yen
+  $\Delta(\sigma) \Proves !A$.
+\end{lem}
+
+\begin{proof}
+  Kanthi induksi tumrap~$!A$.
+  \begin{enumerate}
+    \item \indcase{!A}{\lfalse}{Amarga $\Delta(\sigma)$ prim,
+      uga konsisten, mula $\Delta(\sigma) \Proves/ \indfrm$.
+      Miturut definisi, $\mSat/{M(\Delta)}{\indfrm}[\sigma]$.}
+      \item \indcase{!A}{p}{Miturut definisi $\mSat{{}}{}$,
+        $\mSat{M(\Delta)}{\indfrm}[\sigma]$ yen lan mung yen $\sigma \in V(p)$,
+        yaiku $\Delta(\sigma) \Proves \indfrm$.}
+      \item \indcase!{!A}{\lnot !B}{}
+      \item \indcase{!A}{!B \land
+        !C}{$\mSat{M(\Delta)}{\indfrm}[\sigma]$ yen lan mung yen
+        $\mSat{M(\Delta)}{!B}[\sigma]$ lan
+        $\mSat{M(\Delta)}{!C}[\sigma]$. Miturut hipotesis induksi,
+        $\mSat{M(\Delta)}{!B}[\sigma]$ yen lan mung yen
+        $\Delta(\sigma) \Proves !B$, lan kanthi cara kang padha kanggo~$!C$.
+        Nanging $\Delta(\sigma) \Proves !B$ lan $\Delta(\sigma) \Proves !C$
+        yen lan mung yen $\Delta(\sigma) \Proves \indfrm$.}
+      \item \indcase{!A}{!B \lor
+        !C}{$\mSat{M(\Delta)}{\indfrm}[\sigma]$ yen lan mung yen
+        $\mSat{M(\Delta)}{!B}[\sigma]$ utawa
+        $\mSat{M(\Delta)}{!C}[\sigma]$. Miturut hipotesis induksi,
+        iki kasembadan yen lan mung yen $\Delta(\sigma) \Proves !B$
+        utawa $\Delta(\sigma) \Proves !C$. Kita kudu nuduhake yen iki
+        kasembadan yen lan mung yen $\Delta(\sigma) \Proves \indfrm$.
+        Arah saka kiwa menyang tengen cetha. Arah saka tengen menyang
+        kiwa kasimpulake amarga $\Delta(\sigma)$ prim.}
+      \item \indcase{!A}{!B \lif !C}{Sepisan, kontrapositif arah saka
+        kiwa menyang tengen: upamane $\Delta(\sigma) \Proves/ !B \lif !C$.
+        Mula uga $\Delta(\sigma) \cup \{!B\} \Proves/ !C$.
+        Amarga $\tuple{!B, !C}$ iku $\tuple{!B_n, !C_n}$ kanggo
+        sawenehing~$n$, kita nduweni
+        $\Delta(\sigma.n) = (\Delta(\sigma) \cup \{!B\})^*$,
+        lan $\Delta(\sigma.n) \Proves !B$ nanging
+        $\Delta(\sigma.n) \Proves/ !C$. Miturut hipotesis induksi,
+        $\mSat{M(\Delta)}{!B}[\sigma.n]$ lan
+        $\mSat/{M(\Delta)}{!C}[\sigma.n]$. Amarga $R\sigma(\sigma.n)$,
+        iki tegese $\mSat/{M(\Delta)}{\indfrm}[\sigma]$.
+
+        Saiki upamane $\Delta(\sigma) \Proves !B \lif !C$, lan
+        $R\sigma\sigma'$. Amarga $\Delta(\sigma) \subseteq \Delta(\sigma')$,
+        yen $\Delta(\sigma') \Proves !B$, mula $\Delta(\sigma') \Proves !C$.
+        Kanthi tembung liya, kanggo saben $\sigma'$ kanthi $R\sigma\sigma'$,
+        salah siji $\Delta(\sigma') \Proves/ !B$ utawa
+        $\Delta(\sigma') \Proves !C$. Miturut hipotesis induksi,
+        tegese saben $R\sigma\sigma'$, salah siji
+        $\mSat/{M(\Delta)}{!B}[\sigma']$ utawa
+        $\mSat{M(\Delta)}{!C}[\sigma']$, yaiku
+        $\mSat{M(\Delta)}{\indfrm}[\sigma]$.}
+  \end{enumerate}
+\end{proof}
+
+\end{document}

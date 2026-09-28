@@ -1,0 +1,46 @@
+% Part: many-valued-logic
+% Chapter: syntax-and-semantics
+% Section: formulas
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{syn}{fml}
+
+\olsection{\usetoken{P}{formula}}
+
+\begin{defn}[Formula]
+\ollabel{defn:formulas}
+Himpunan~$\Frm[L]$ saka \emph{!!{formula}s} ing basa
+proposisional~$\Lang L$ ditetepake kanthi induktif kaya mangkene:
+\begin{enumerate}
+\item Saben !!{propositional variable}~$\Obj p_i$ iku
+  !!{formula} atomik.
+\item Saben konektif kanthi $0$ panggonan (tetapan proposisional)
+  ing~$\Lang L$ iku !!{formula} atomik.
+\item Yen $\star$ konektif kanthi $n$ panggonan ing~$\Lang L$,
+  lan $!A_1$, \dots, $!A_n$ iku !!{formula}s, mula
+  $\star(!A_1, \dots, !A_n)$ iku !!a{formula}.
+\tagitem{limitClause}{Ora ana liyane kang !!a{formula}.}{}
+\end{enumerate}
+Yen $\star$ nduweni $1$ panggonan, $\star(!A_1)$ asring
+ditulis prasaja minangka $\star !A_1$. Yen $\star$ nduweni
+$2$ panggonan, $\star(!A_1,!A_2)$ asring ditulis
+minangka $(!A_1 \star !A_2)$.
+\end{defn}
+
+Kaya lumrahe, kurung paling njaba asring ora kita tulis
+tanpa katrangan maneh.
+
+\begin{ex}
+  Ing basa baku~$\Lang{L_0}$, $\Obj p_1 \lif (\Obj p_1
+  \land \lnot \Obj p_2)$ iku formula. Ing basa logika produk,
+  formula iku ditulis dadi $\Obj p_1 \lif (\Obj p_1 \odot
+  \lnot \Obj p_2)$. Yen konektif kanthi $1$ panggonan, yaiku
+  $\triangle$, ditambahake ing basa, kita uga bisa duwe formula kaya
+  $\triangle (\Obj p_1
+  \land \Obj p_2) \lif (\triangle \Obj p_1 \land \triangle \Obj p_2)$.
+\end{ex}
+
+\end{document}

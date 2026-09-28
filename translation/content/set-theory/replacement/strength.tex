@@ -1,0 +1,73 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{replacement}{strength}
+\olsection{Kakuwataning Panggantian}
+
+Kita miwiti kanthi pangamatan prasaja babagan
+kakuwataning Panggantian: yen ora ngluwihi $\Z$,
+kita ora bisa mbuktekake anane ordinal von Neumann
+sebarang kang luwih gedhe utawa padha karo
+$\omega + \omega$.
+
+Mangkene garis gedhe alesane. Makarya ing~$\ZF$,
+gatekna himpunan $V_{\omega+\omega}$. Himpunan
+iki dadi domain kanggo sawijining \emph{model}
+saka~$\Z$. Kanggo ndeleng iki, kita ngenalake
+notasi kanggo \emph{relativisasi} formula:
+\begin{defn}\ollabel{formularelativization}
+	Kanggo saben himpunan $M$ lan formula $\phi$,
+	$\phi^M$ yaiku formula kang dipikolehi kanthi
+	matesi kabeh kuantor ing $\phi$ marang $M$.
+	Tegese, ganti ``$\lexists[x]$'' dadi
+	``$(\lexists[x \in M])$'', lan ganti
+	``$\lforall[x]$'' dadi
+	``$(\lforall[x \in M])$''.
+\end{defn}\noindent
+Bisa dibuktekake yen kanggo saben aksioma
+$\phi$ saka~$\Z$, kita duwe
+$\ZF \vdash \phi^{V_{\omega+\omega}}$.
+Nanging $\omega+\omega$ ora \emph{kalebu ing}
+$V_{\omega+\omega}$ miturut
+\olref[spine][rank]{ordsetrankalpha}. Dadi $\Z$
+konsisten karo ora anane $\omega+\omega$.
+
+Iki sebabe kita kandha ing
+\olref[ordinals][replacement]{sec} yen
+\olref[ordinals][ordtype]{thmOrdinalRepresentation}
+ora bisa dibuktekake tanpa Panggantian. Awit
+ing~$\Z$ gampang netepake urutan becik kang
+eksplisit, kang miturut intuisi \emph{mesthine}
+nduweni tipe urutan $\omega+\omega$. Conto
+ora formale wis diwenehake ing
+\olref[ordinals][idea]{sec}, nalika kita
+nerangake urutan wilangan asli iki:
+\begin{align*}
+	n \lessdot m \text{ yen lan mung yen }&\text{salah siji }n < m\text{ lan }m-n\text{ genep,}\\
+	& \text{utawa $n$ genep lan $m$ ganjil.}
+\end{align*}
+Nanging yen $\omega+\omega$ ora ana, urutan
+becik iki ora isomorfis karo ordinal apa wae.
+Mula $\Z$ \emph{ora} mbuktekake
+\olref[ordinals][ordtype]{thmOrdinalRepresentation}.
+
+Kosokbaline, Panggantian ngidini kita
+mbuktekake anane $\omega+\omega$, lan mula
+uga anane $V_{\omega+\omega}$. Ora mung kuwi.
+Kanggo \emph{saben} urutan becik kang bisa
+kita tetepake,
+\olref[ordinals][ordtype]{thmOrdinalRepresentation}
+ngandhakake yen ana sawijining $\alpha$ kang
+isomorfis karo urutan becik iku, lan mula
+$V_\alpha$ ana. Dadi Panggantian njamin
+yen hierarki himpunan iku \emph{dhuwur banget}.
+
+Ing sawetara bagean sabanjure, lan maneh ing
+\olref[card-arithmetic][fix]{sec}, kita bakal
+luwih ngerti \emph{sepira} dhuwure hierarki
+kang diwajibake dening Panggantian. Saiki,
+pokok prasajane yaiku Panggantian pancen
+\emph{mbutuhake} pambeneran!
+
+\end{document}

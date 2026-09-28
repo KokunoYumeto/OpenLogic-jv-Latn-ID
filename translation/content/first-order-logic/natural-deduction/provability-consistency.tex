@@ -14,7 +14,7 @@
 
 Saiki kita bakal netepake sawetara sipat relasi !!{derivability}.
 Sipat kasebut narik kawigaten dhewe-dhewe, nanging saben sipat bakal
-duwe peran ing bukti teorema kelengkapan.
+nduweni peran ing bukti teorema kelengkapan.
 
 \begin{prop}\ollabel{prop:provability-contr}
   Yen $\Gamma \Proves !A$ lan $\Gamma \cup \{!A\}$ ora konsisten,
@@ -22,9 +22,9 @@ duwe peran ing bukti teorema kelengkapan.
 \end{prop}
 
 \begin{proof}
-Ayo !!{derivation} saka~$!A$ adhedhasar~$\Gamma$ dijenengi~$\delta_1$,
+Tetepna !!{derivation} saka~$!A$ adhedhasar~$\Gamma$ minangka~$\delta_1$,
 lan !!{derivation} saka~$\lfalse$ adhedhasar $\Gamma \cup \{!A\}$
-dijenengi~$\delta_2$. Banjur kita bisa !!{derive}:
+minangka~$\delta_2$. Banjur kita bisa !!{derive}:
 \begin{prooftree}
 \AxiomC{$\Gamma, \Discharge{!A}{1}$}
 \RightLabel{$\delta_2$}
@@ -49,8 +49,8 @@ konsisten.
 
 \begin{proof}
 Sepisan, upamana $\Gamma \Proves !A$, yaiku ana
-!!a{derivation}~$\delta_0$ saka~$!A$ adhedhasar asumsi
-!!{undischarged}~$\Gamma$. Kita entuk !!a{derivation} saka $\lfalse$
+!!a{derivation}~$\delta_0$ saka~$!A$ adhedhasar asumsi-asumsi
+!!{undischarged} ing~$\Gamma$. Kita entuk !!a{derivation} saka $\lfalse$
 adhedhasar $\Gamma \cup \{\lnot !A\}$ kaya mangkene:
 \begin{prooftree}
   \AxiomC{$\lnot !A$}
@@ -61,8 +61,8 @@ adhedhasar $\Gamma \cup \{\lnot !A\}$ kaya mangkene:
   \BinaryInfC{$\lfalse$}
 \end{prooftree}
 
-Saiki upamana $\Gamma \cup \{\lnot !A\}$ ora konsisten, lan ayo
-$\delta_1$ dadi !!{derivation} kang cocog saka~$\lfalse$ adhedhasar
+Saiki upamana $\Gamma \cup \{\lnot !A\}$ ora konsisten, lan tetepna
+$\delta_1$ minangka !!{derivation} kang cocog saka~$\lfalse$ adhedhasar
 asumsi !!{undischarged} ing~$\Gamma \cup \{\lnot !A\}$. Kita entuk
 !!a{derivation} saka~$!A$ adhedhasar $\Gamma$ wae kanthi
 nggunakake~$\FalseCl$:

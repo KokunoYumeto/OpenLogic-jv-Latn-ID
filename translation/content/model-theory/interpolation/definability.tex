@@ -1,0 +1,153 @@
+% Part: model-theory
+% Chapter: interpolation
+% Section: definability
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{int}{def}
+
+\olsection{Teorema Definabilitas}
+
+Salah siji panganggone teorema interpolasi kang wigati yaiku
+teorema definabilitas Beth. Kanggo netepake relasi
+$n$-papan~$R$, kita bisa menehi !!a{formula}~$!C$
+kanthi $n$ !!{variable}s bebas kang ora ngemot~$R$.
+Iki dadi definisi \emph{eksplisit} kanggo~$R$ adhedhasar~$!C$.
+Kita uga bisa kandha yen sawijining teori~$\Sigma(P)$
+ing !!{language} kang ngemot !!{predicate}
+$n$-papan~$P$ netepake~$P$ kanthi eksplisit yen teori iku
+ngemot (utawa paling ora nduweni akibat) definisi
+eksplisit kang diformalkan, yaiku
+\[
+\Sigma(P) \Entails \lforall[x_1][\dots
+  \lforall[x_n][(\Atom{P}{x_1,\dots, x_n} \liff !C(x_1, \dots,
+    x_n))]].
+\]
+Nanging definisi eksplisit mung siji cara kanggo
+netepake relasi kanthi tuntas. Sawijining teori
+uga bisa nemtokake interpretasi~$P$ kanthi tuntas
+lumantar interpretasi bagean !!{language} liyane
+ing saben model. Teorema definabilitas nyatakake:
+saben teori kang nemtokake interpretasi~$P$
+kanthi cara iki---yaiku \emph{netepake~$P$ kanthi implisit}---
+uga netepake kanthi eksplisit.
+
+\begin{defn}
+Upamane $\Lang{L}$ iku !!a{language} kang ora ngemot
+!!{predicate}~$P$. Himpunan $\Sigma(P)$ saka
+!!{sentence}s ing $\Lang{L} \cup \{P\}$
+\emph{netepake~$P$ kanthi eksplisit} yen lan mung yen
+ana !!a{formula}~$!C(x_1, \dots, x_n)$ ing $\Lang{L}$
+saengga
+\[
+\Sigma(P) \Entails \lforall[x_1][\dots
+  \lforall[x_n][(\Atom{P}{x_1,\dots, x_n} \liff !C(x_1, \dots,
+    x_n))]].
+\]
+\end{defn}
+
+\begin{defn}
+Upamane $\Lang{L}$ iku !!a{language} kang ora ngemot
+!!{predicate}s~$P$ lan~$P'$. Himpunan $\Sigma(P)$
+saka !!{sentence}s ing $\Lang{L} \cup \{P\}$
+\emph{netepake $P$ kanthi implisit} yen lan mung yen
+\[
+\Sigma(P) \cup \Sigma(P') \Entails \lforall[x_1][\dots
+  \lforall[x_n][(\Atom{P}{x_1,\dots, x_n} \liff \Atom{P'}{x_1,\dots,
+      x_n})]],
+\]
+ing ngendi $\Sigma(P')$ dipikolehi saka panggantos
+seragam $P$ dadi $P'$ ing $\Sigma(P)$.
+\end{defn}
+
+Tegese, kanggo saben model $\Struct{M}$ lan $R, R' \subseteq
+\Domain{M}^n$, yen $\Expan{M}{R} \Entails \Sigma(P)$ lan
+$\Expan{M}{R'} \Entails \Sigma(P')$, mula $R=R'$.
+Ing kene $\Expan{M}{R}$ iku !!{structure}~$\Struct{M'}$
+kanggo ekspansi saka $\Lang{L}$ menyang
+$\Lang{L} \cup \{P\}$ kang nduweni
+$\Assign{P}{M'} = R$; semono uga kanggo
+$\Expan{M}{R'}$ kanthi lambang predikat kang wis diganti.
+
+\begin{thm}[Teorema Definabilitas Beth]
+Himpunan $\Sigma(P)$ saka !!{sentence}s ing $\Lang{L}
+  \cup\{P\}$ netepake $P$ kanthi implisit yen lan mung yen
+  $\Sigma(P)$ netepake $P$ kanthi eksplisit.
+Cathetan koreksi sumber OLPL-120:
+teorema iki nganggo himpunan ukara kaya rong
+definisi sadurunge, dudu himpunan formula bebas.
+\end{thm}
+
+\begin{proof}
+Yen $\Sigma(P)$ netepake $P$ kanthi eksplisit, mula
+loro pratelan iki bener:
+\begin{align*}
+  \Sigma(P) & \Entails & \lforall[x_1][\dots \lforall[x_n]
+    [(\Atom{P}{x_1,\dots, x_n} \liff !C(x_1,\dots,x_n))]]\\
+  \Sigma(P') & \Entails & \lforall[x_1][\dots \lforall[x_n]
+    [(\Atom{P'}{x_1,\dots, x_n} \liff !C(x_1,\dots,x_n))]]
+\end{align*}
+lan kesimpulane banjur langsung tumut.
+Kanggo arah kosok baline, upamane $\Sigma(P)$
+netepake $P$ kanthi implisit. Dhisik kita tambah
+!!{constant}s $c_1$, \dots,~$c_n$ menyang $\Lang{L}$.
+Banjur
+\[
+\Sigma(P) \cup \Sigma(P') \Entails
+\Atom{P}{c_1, \dots, c_n} \to  \Atom{P'}{c_1, \dots, c_n}.
+\]
+Miturut kompaktitas, ana himpunan winates
+$\Delta_0 \subseteq \Sigma(P)$ lan
+$\Delta_1 \subseteq \Sigma(P')$ saengga
+\[
+\Delta_0 \cup \Delta_1 \Entails
+\Atom{P}{c_1, \dots, c_n} \to \Atom{P'}{c_1, \dots, c_n}.
+\]
+Sebut $!D(P)$ konjungsi kabeh !!{sentence}s $!A(P)$
+kang $!A(P) \in \Delta_0$ utawa $!A(P') \in \Delta_1$;
+sebut $!D(P')$ konjungsi kabeh !!{sentence}s $!A(P')$
+kang $!A(P) \in \Delta_0$ utawa $!A(P') \in \Delta_1$.
+Banjur $!D(P) \land !D(P') \Entails
+\Atom{P}{c_1, \dots, c_n} \to \Atom{P'}{c_1,\dots,c_n}$.
+Cathetan koreksi sumber OLPL-119:
+predikat ing sisih tengen ditulis nganggo wangun atomik
+kang padha karo premis lan rumus sabanjure.
+Kita bisa nata maneh supaya saben !!{predicate}
+katon ing sisih dhewe-dhewe saka $\Entails$:
+\[
+!D(P) \land \Atom{P}{c_1, \dots, c_n} \Entails
+!D(P') \to \Atom{P'}{c_1, \dots, c_n}.
+\]
+Miturut Teorema Interpolasi Craig, ana !!a{sentence}
+$!C(c_1,\dots, c_n)$ kang ora ngemot $P$ utawa $P'$
+saengga:
+\begin{align*}
+  !D(P) \land \Atom{P}{c_1, \dots, c_n} & \Entails !C(c_1,\dots, c_n); \\
+  !C(c_1,\dots, c_n) & \Entails !D(P') \to \Atom{P'}{c_1, \dots, c_n}.
+\end{align*}
+Saka akibat kang kapisan, kita oleh $!D(P) \Entails
+\Atom{P}{c_1,\dots, c_n} \lif !C(c_1,\dots, c_n)$.
+Saka akibat kang kapindho, amarga model
+$\Lang{L} \cup \{P\}$ yaiku $\Expan{M}{R}
+\Entails !A(P)$ yen lan mung yen model
+$\Lang{L} \cup \{P'\}$ kang cocog,
+$\Expan{M}{R} \models !A(P')$, kita oleh
+$!C(c_1,\dots, c_n) \Entails !D(P) \lif
+\Atom{P}{c_1,\dots, c_n}$, mula:
+\[
+!D(P) \Entails !C(c_1,\dots,c_n) \to \Atom{P}{c_1,\dots, c_n}.
+\]
+Yen loro asil iki digandhengake,
+$!D(P) \Entails \Atom{P}{c_1,\dots, c_n}
+\liff !C(c_1, \dots, c_n)$; miturut monotonisitas
+lan generalisasi, kita uga oleh
+\[
+\Sigma(P) \Entails
+\lforall[x_1][\dots\lforall[x_n][(\Atom{P}{x_1,\dots, x_n} \liff
+    !C(x_1,\dots, x_n))]].
+\]
+\end{proof}
+
+\end{document}

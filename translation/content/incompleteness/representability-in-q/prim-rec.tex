@@ -1,0 +1,59 @@
+% Part: incompleteness
+% Chapter: representability-in-q
+% Section: prim-rec
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{req}{pri}
+\olsection{Niru Rekursi Primitif}
+
+Saiki kita bisa nuduhake yen definisi liwat rekursi primitif bisa
+``ditiru'' nganggo panggolekan tanpa wates reguler liwat fungsi beta.
+Upamana kita duwe $f(\vec x)$ lan $g(\vec x, y, z)$. Mula fungsi~$h(x,\vec
+z)$ kang ditegesi saka $f$ lan~$g$ liwat rekursi primitif yaiku
+\begin{align*}
+h(\vec x, 0) & =  f(\vec x) \\
+h(\vec x, y+1) & =  g(\vec x, y, h(\vec x, y)).
+\end{align*}
+Kita kudu nuduhake yen $h$ bisa ditegesi saka $f$ lan~$g$ mung nganggo
+komposisi lan panggolekan tanpa wates reguler, kanthi nggunakake
+fungsi dhasar lan fungsi kang ditegesi saka fungsi mau nganggo
+komposisi lan panggolekan tanpa wates reguler (kayata~$\beta$).
+
+\begin{lem}
+\ollabel{lem:prim-rec}
+Yen $h$ bisa ditegesi saka $f$ lan $g$ nganggo rekursi primitif, iku
+bisa ditegesi saka $f$, $g$, lan fungsi $\Zero$, $\Succ$,
+$\Proj{n}{i}$, $\Add$, $\Mult$, $\Char{=}$, nganggo komposisi lan
+panggolekan tanpa wates reguler.
+\end{lem}
+
+\begin{proof}
+Luwih dhisik, tegesna fungsi bantu $\hat h(\vec x, y)$ kang mbalekake
+bilangan paling cilik~$d$ saengga $d$ ngodeake urutan kang nyukupi
+\begin{enumerate}
+\item $(d)_0 = f(\vec x)$, lan
+\item kanggo saben $i < y$, $(d)_{i+1} = g(\vec x, i, (d)_i)$,
+\end{enumerate}
+ing kene $(d)_i$ iku cekakan saka $\beta(d,i)$. Kanthi tembung liya, $\hat h$
+mbalekake urutan $\tuple{h(\vec x, 0), h(\vec x, 1), \dots, h(\vec
+x, y)}$. Kita bisa nulis $\hat h$ dadi
+\[
+\hat h(\vec x, y) = \umin{d}{(\beta(d,0) = f(\vec x) \land \bforall{i <
+  y}{\beta(d,i+1) = g(\vec x, i,\beta(d,i)})}.
+\]
+Gatekna: ing kene ora perlu rekursi primitif, mung minimalisasi. Fungsi
+kang diminimalisasi iku reguler amarga lema fungsi beta
+\olref[bet]{lem:beta}.
+
+Nanging saiki kita nduweni
+\[
+h(\vec x, y) = \beta(\hat h(\vec x, y), y),
+\]
+mula $h$ bisa ditegesi saka fungsi dhasar mung nganggo komposisi
+lan panggolekan tanpa wates reguler.
+\end{proof}
+
+\end{document}

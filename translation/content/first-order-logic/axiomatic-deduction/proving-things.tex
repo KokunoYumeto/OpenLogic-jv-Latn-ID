@@ -17,8 +17,8 @@
 Upamana kita arep mbuktekake $(\lnot !D \lor !E) \lif (!D \lif
 !E)$. Cetha yen iki dudu conto saka aksioma apa wae, mula kita kudu
 nggunakake aturan \MP{} kanggo !!{derive} formula iku. Siji-sijine
-aturan kita yaiku~MP, kang, yen diwenehi $!A$ lan $!A \lif !B$,
-ngidini kita mbenerake~$!B$. Salah siji strategi yaiku nggunakake
+aturan kita yaiku~MP; yen diwenehi $!A$ lan $!A \lif !B$, aturan iki
+menehi dhasar kanggo~$!B$. Salah siji strategi yaiku nggunakake
 \olref[prp]{ax:lor3} kanthi $!A$ minangka $\lnot !D$, $!B$ minangka
 $!E$, lan $!C$ minangka $!D \lif !E$, yaiku conto
 \[
@@ -40,19 +40,21 @@ iku conto saka \olref[prp]{ax:lif1}. Dadi, !!{derivation} kita yaiku:
 \end{ex}
 
 \begin{ex}\ollabel{ex:identity}
-Ayo kita nyoba golek !!a{derivation} saka $!D \lif !D$. Formula iku
+Kita nyoba nggoleki !!a{derivation} saka $!D \lif !D$. Formula iku
 dudu conto aksioma, mula kita kudu nggunakake \MP{} kanggo
 !!{derive} formula kasebut. \olref[prp]{ax:lif1} iku aksioma kanthi
 wujud~$!A \lif !B$ kang bisa dikenani~\MP. Mesthi wae, supaya migunani,
-$!B$ kang dibenerake \MP{} minangka langkah kang bener ing kasus iki
-kudu padha karo~$!D \lif !D$, amarga iki kang arep kita !!{derive}.
+$!B$ kang bakal diwenehi dhasar dening \MP{} minangka langkah kang
+bener ing kasus iki kudu padha karo~$!D \lif !D$, amarga iki kang arep
+kita !!{derive}.
 Iki ateges $!A$ uga kudu padha karo $!D$; mula kita bisa nimbang conto
 \olref[prp]{ax:lif1} iki:
 \[
 !D \lif (!D \lif !D)
 \]
-Kanggo ngetrapake \MP, kita uga kudu mbenerake premis kapindho kang
-cocog, yaiku~$!A$. Nanging ing kasus kita, premis iku bakal dadi~$!D$,
+Kanggo ngetrapake \MP, kita uga kudu nuduhake manawa premis kapindho
+kang cocog, yaiku~$!A$, nduweni dhasar. Nanging ing kasus kita, premis
+iku bakal dadi~$!D$,
 lan kita ora bakal bisa !!{derive}~$!D$ dhewe. Mula kita mbutuhake
 strategi liyane.
 
@@ -61,13 +63,13 @@ Aksioma liyane kang mung ngemot~$\lif$ yaiku
 \[
 (!A \lif (!B \lif !C)) \lif ((!A \lif !B) \lif (!A \lif !C))
 \]
-Kita bisa nggayuh kondisional tersarang kang pungkasan kanthi
+Kita bisa nggayuh kondisional kang ana ing sisih paling pungkasan kanthi
 ngetrapake \MP{} kaping pindho. Iki maneh ateges kita kepengin conto
 saka \olref[prp]{ax:lif2} kang $!A \lif !C$-ne yaiku $!D \lif !D$,
 !!{formula} kang dadi ancas kita. Mula, $!A$ lan $!C$ mesthi padha
 karo~$!D$. Kepiye carane milih~$!B$ supaya $!A \lif (!B \lif !C)$
 lan $!A \lif !B$, yaiku ing kasus kita $!D \lif (!B \lif !D)$ lan
-$!D \lif !B$, uga bisa !!{derivable}? Formula kapisan wis dadi conto
+$!D \lif !B$, uga !!{derivable}? Formula kapisan wis dadi conto
 saka \olref[prp]{ax:lif1}, apa wae kang dipilih dadi $!B$. Lan
 $!D \lif !B$ bakal dadi conto liyane saka \olref[prp]{ax:lif1} yen
 $!B$ yaiku $(!D \lif !D)$. Dadi, !!{derivation} kita yaiku:
@@ -82,8 +84,9 @@ $!B$ yaiku $(!D \lif !D)$. Dadi, !!{derivation} kita yaiku:
 \end{ex}
 
 \begin{ex}\ollabel{ex:chain}
-Kadhangkala kita arep nuduhake yen ana !!a{derivation} saka sawijining
-!!{formula} saka !!{formula}s liyane~$\Gamma$. Upamane, ayo nuduhake
+Kadhangkala kita arep nuduhake anane !!a{derivation} kang ngasilake
+sawijining !!{formula} kanthi premis !!{formula}s liyane~$\Gamma$.
+Upamane, kita bakal nuduhake
 yen kita bisa !!{derive} $!A \lif !C$ saka $\Gamma = \{!A \lif !B,
 !B \lif !C\}$.
 \begin{derivation}
@@ -107,21 +110,22 @@ Larik-larik kanthi label ``\Hyp'' (kanggo ``hipotesis'') nuduhake yen
 
 \begin{proof}
   Upamana $\Gamma \Proves !A \lif !B$ lan $\Gamma \Proves !B \lif
-  !C$. Banjur ana !!a{derivation} saka $!A \lif !B$ saka~$\Gamma$,
-  lan uga ana !!a{derivation} saka~$!B \lif !C$ saka~$\Gamma$.
+  !C$. Mula ana !!a{derivation} kang ngasilake $!A \lif !B$
+  saka~$\Gamma$, lan uga ana !!a{derivation} kang ngasilake~$!B \lif
+  !C$ saka~$\Gamma$.
   Gabungna dadi siji !!{derivation} kanthi nggandhengake loro rerangken
   kasebut. Saiki tambahana larik 3--7 saka !!{derivation} ing conto
-  sadurunge. Iki !!a{derivation} saka $!A \lif !C$---yaiku larik
-  pungkasan ing !!{derivation} anyar---saka~$\Gamma$. Gatekna yen
-  kabeneran larik 4 lan~7 tetep lumaku yen rujukan marang nomer
+  sadurunge. Iki !!a{derivation} kang ngasilake $!A \lif !C$---yaiku
+  larik pungkasan ing !!{derivation} anyar---saka~$\Gamma$. Gatekna yen
+  dhasar inferensial larik 4 lan~7 tetep sah yen rujukan marang nomer
   larik~1 diganti nganggo rujukan marang larik pungkasan ing
-  !!{derivation} saka~$!A \lif !B$, lan rujukan marang nomer larik~2
+  !!{derivation} kang ngasilake~$!A \lif !B$, lan rujukan marang nomer larik~2
   diganti nganggo rujukan marang larik pungkasan ing !!{derivation}
-  saka~$!B \lif !C$.
+  kang ngasilake~$!B \lif !C$.
 \end{proof}
 
 \begin{prob} 
-Nuduhna yen pratelan-pratelan iki lumaku kanthi menehi !!{derivation}s
+Nuduhna yen pratelan-pratelan iki lumaku kanthi nyuguhake !!{derivation}s
 saka aksioma:
 \begin{enumerate} 
 \item $(!A \land !B) \lif (!B \land !A)$

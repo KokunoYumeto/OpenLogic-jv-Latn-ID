@@ -1,0 +1,222 @@
+% Part: many-valued-logic
+% Chapter: three-valued-logics
+% Section: multiple-designation
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{thr}{mul}
+
+\olsection{Milih nilai saliyane mung $\True$}
+
+Nganti saiki, kabeh logika kang wis kita deleng nduweni himpunan
+nilai kabeneran pinilih $V^+ = \{\True\}$: sawijining pratelan
+dianggep bener yen lan mung yen nilai kabenerane~$\True$.
+Nanging sawijining pratelan uga bisa dianggep bener anggere
+nilainé dudu~$\False$. Kita bisa oleh logika mangkono kanthi
+netepake ing matriks, umpamane, $V^+ = \{\True, \Undef\}$.
+
+\begin{defn}
+\emph{Logika paradoks}~$\LogLP$ ditetepake nganggo matriks iki:
+\begin{enumerate}
+  \item Perangan tanpa tetapan saka basa proposisional baku
+  $\Lang L_0$ kang ngemot $\lnot$, $\land$, $\lor$, $\lif$.
+  \item Himpunan nilai kabeneran $V = \{\True, \Undef, \False\}$.
+  \item $\True$ lan $\Undef$ iku nilai pinilih, yaiku $V^+ = \{\True, \Undef\}$.
+  \item Fungsi kabenerane padha karo logika Kleene kang kuwat.
+\end{enumerate}
+\end{defn}
+
+\begin{defn}
+Halld\'en ngenalake \emph{logika tanpa makna}~$\LogHal$ kanthi matriks iki:
+\begin{enumerate}
+  \item Perangan tanpa tetapan saka basa proposisional baku
+  $\Lang L_0$ kang ngemot $\lnot$, $\land$, $\lor$, $\lif$
+  lan konektif $1$-argumen~$+$.
+  \item Himpunan nilai kabeneran $V = \{\True, \Undef, \False\}$.
+  \item $\True$ lan $\Undef$ iku nilai pinilih, yaiku $V^+ = \{\True, \Undef\}$.
+  \item Fungsi kabenerane padha karo logika Kleene kang ringkih,
+  ditambahi operator ``tanpa makna'' iki:
+  \begin{center}
+    \begin{tabular}{c|c} 
+    $\tf{+}$ & \\ 
+    \hline  
+    $\True$ & $\False$ \\ 
+    $\Undef$ & $\True$ \\
+    $\False$ & $\False$ 
+    \end{tabular}
+  \end{center}
+\end{enumerate}
+\end{defn}
+
+Beda karo logika-logika Kleene kang nduweni tabel kabeneran
+padha, logika loro iki \emph{nduweni} tautologi.
+
+\begin{prop}\ollabel{prop:LP-taut-CL} Tautologi ing $\LogLP$
+  padha karo tautologi ing logika proposisional klasik.
+\end{prop}
+
+\begin{proof}
+  Miturut \olref[syn][sub]{prop:mvl-cl}, yen $\Entails[\LogLP] !A$
+  mula $\Entails[\LogCL] !A$. Kanggo mbuktekake arah kosok baline,
+  kita tuduhake: yen ana !!a{valuation}~$\pAssign v\colon \PVar \to
+  \{\False, \True, \Undef\}$ kang nyukupi $\pValue v(!A)[\LogKs]
+  = \False$, mula ana !!a{valuation}~$\pAssign {v'}\colon \PVar \to
+  \{\False, \True\}$ kang nyukupi $\pValue {v'}(!A)[\LogCL] =
+  \False$. Iki mbuktekake asil kanggo $\LogLP$, amarga $\LogKs$
+  lan $\LogLP$ nduweni fungsi kabeneran kang padha, lan mung
+  $\False$ kang ora dadi nilai pinilih ing $\LogLP$ (iki mung
+  bedane $\LogLP$ karo~$\LogKs$). Dadi, yen $\Entails/[\LogLP]
+  !A$, ana !!{valuation}~$\pAssign v$ kang nyukupi $\pValue
+  v(!A)[\LogLP] = \pValue v(!A)[\LogKs] = \False$. Miturut klaim
+  kang bakal dibuktekake, $\pValue{v'}(!A)[\LogCL] = \False$,
+  yaiku $\Entails/[\LogCL] !A$.
+
+Kanggo mbuktekake klaim kasebut, luwih dhisik kita tetepake
+  $\pAssign {v'}$ mangkene:
+  \[
+    \pAssign {v'}(p) =
+    \begin{cases}
+    \True & \text{yen } \pAssign {v}(p) \in \{\True, \Undef\}\\
+    \False & \text{yen ora}
+  \end{cases}
+  \]
+  Saiki kita buktèkake kanthi induksi tumrap $!A$ yen (a)~yen
+  $\pValue v(!A)[\LogKs] = \False$, mula $\pValue {v'}(!A)[\LogCL]
+  = \False$; lan (b)~yen $\pValue v(!A)[\LogKs] = \True$, mula
+  $\pValue {v'}(!A)[\LogCL] = \True$.
+  \begin{enumerate}
+    \item Dhasar induksi: $!A \ident p$. Yen nilai variabel p salah utawa
+    bener, miturut \olref[syn][val]{defn:pValue},
+    $\pValue v(!A)[\LogKs] = \pAssign v(p) = \pValue {v'}(!A)[\LogCL]$;
+    iki negesake (a) lan~(b). Yen nilai variabel p ora katetepake,
+    prasyarat (a) lan (b) loro-lorone ora kawujud.
+
+Kanggo langkah induksi, gatekna kasus-kasus iki:
+    \item $!A \ident \lnot !B$.
+    \begin{enumerate}
+      \item Upamakna $\pValue v(\lnot!B)[\LogKs] = \False$.
+      Miturut definisi $\tf{\lnot}[\LogKs]$, kita oleh
+      $\pValue v(!B)[\LogKs] = \True$. Miturut hipotesis induksi,
+      kasus~(b), $\pValue {v'}(!B)[\LogCL] = \True$; mula
+      $\pValue {v'}(\lnot !B)[\LogCL] = \False$.
+      \item Upamakna $\pValue v(\lnot!B)[\LogKs] = \True$.
+      Miturut definisi $\tf{\lnot}[\LogKs]$, kita oleh
+      $\pValue v(!B)[\LogKs] = \False$. Miturut hipotesis induksi,
+      kasus~(a), $\pValue {v'}(!B)[\LogCL] = \False$; mula
+      $\pValue {v'}(\lnot !B)[\LogCL] = \True$.
+    \end{enumerate}
+
+\item $!A \ident (!B \land !C)$.
+    \begin{enumerate}
+      \item Upamakna $\pValue v(!B \land !C)[\LogKs] = \False$.
+      Miturut definisi $\tf{\land}[\LogKs]$, salah siji saka
+      $\pValue v(!B)[\LogKs] = \False$ utawa
+      $\pValue v(!C)[\LogKs] = \False$ kudu lumaku. Miturut
+      hipotesis induksi, kasus~(a), salah siji saka
+      $\pValue {v'}(!B)[\LogCL] = \False$ utawa
+      $\pValue {v'}(!C)[\LogCL] = \False$ lumaku; mula
+      $\pValue {v'}(!B \land !C)[\LogCL] = \False$.
+      \item Upamakna $\pValue v(!B \land !C)[\LogKs] = \True$.
+      Miturut definisi $\tf{\land}[\LogKs]$,
+      $\pValue v(!B)[\LogKs] = \True$ lan
+      $\pValue v(!C)[\LogKs] = \True$. Miturut hipotesis induksi,
+      kasus~(b), $\pValue {v'}(!B)[\LogCL] = \True$ lan
+      $\pValue {v'}(!C)[\LogCL] = \True$; mula
+      $\pValue {v'}(!B \land !C)[\LogCL] = \True$.
+    \end{enumerate}
+  \end{enumerate}
+
+Rong kasus liyane padha carane lan dadi latihan. Utawa,
+  bukti ing ndhuwur wis mbuktekake asil kanggo kabeh !!{formula}s
+  kang mung ngemot $\lnot$ lan~$\land$. Sabanjure kita bisa
+  nggunakake kasunyatan yen ing $\LogKs$ lan $\LogCL$, kanggo
+  saben $\pAssign v$, $\pValue v(!B \lor !C) = \pValue
+  v(\lnot(\lnot!B \land \lnot !C))$ lan $\pValue v(!B \lif !C)
+  = \pValue v(\lnot(!B \land \lnot !C))$.
+\end{proof}
+
+\begin{prob}
+  Rampungna bukti \olref[mvl][thr][mul]{prop:LP-taut-CL}, yaiku
+  buktèkna (a) lan~(b) kanggo kasus $!A \ident (!B \lor !C)$
+  lan $!A \ident (!B \lif !C)$.
+\end{prob}
+
+\begin{prob}
+Buktèkna yen saben tautologi klasik uga tautologi ing~$\LogHal$.
+\end{prob}
+
+Sanajan tautologie padha karo logika klasik ing perangan basa
+tanpa operator tambahan, sesambungan konsekuensine beda. Umpamane,
+$\LogLP$ iku \emph{parakonsisten}, amarga $\lnot p, p \Entails/ q$;
+mula prinsip eksplosi $\lnot !A, !A \Entails !B$ ora lumaku kanthi
+umum. (Prinsip iki lumaku kanggo sawetara $!A$ lan $!B$, umpamane
+yen $!B$~iku tautologi.)
+
+\begin{prob}
+  Sesambungan endi ing ngisor iki kang lumaku ing (a)~$\LogLP$
+  lan (b)~$\LogHal$? Wenehana tabel kabeneran kanggo saben
+  sesambungan.
+  \begin{enumerate}
+    \item $p, p \lif q \Entails q$
+    \item $\lnot q, p \lif q \Entails \lnot p$
+    \item $p \lor q, \lnot p \Entails q$
+    \item $\lnot p, p \Entails q$
+    \item $p \Entails p \lor q$
+    \item $p \lif q, q\lif r \Entails p \lif r$
+  \end{enumerate}
+\end{prob}
+
+Kepriye yen $\Undef$ uga dadi nilai pinilih ing $\LogLuk[3]$?
+
+\begin{defn}
+  \emph{R-Mingle telung nilai}~$\LogRM[3]$ ditetepake nganggo matriks iki:
+  \begin{enumerate}
+    \item Basa proposisional baku $\Lang L_0$ kang ngemot
+    $\lfalse$, $\lnot$, $\land$, $\lor$, $\lif$.
+    \item Himpunan nilai kabeneran $V = \{\True, \Undef, \False\}$.
+    \item $\True$ lan $\Undef$ iku nilai pinilih, yaiku $V^+ = \{\True, \Undef\}$.
+    \item Fungsi kabenerane padha karo logika \L ukasiewicz~$\LogLuk[3]$.
+  \end{enumerate}
+\end{defn}
+
+\begin{prob}
+  Sesambungan endi ing ngisor iki kang lumaku ing $\LogRM[3]$?
+  \begin{enumerate}
+    \item $p, p \lif q \Entails q$
+    \item $p \lor q, \lnot p \Entails q$
+    \item $\lnot p, p \Entails q$
+    \item $p \Entails p \lor q$
+  \end{enumerate}
+\end{prob}
+
+Tabel kabeneran kang beda kadhangkala bisa ngasilake logika
+(sesambungan entailment) kang padha mung kanthi ngganti nilai
+pinilih. Umpamane, iki kedadeyan yen ing logika G\"odel kita
+milih $V^+ = \{\True, \Undef\}$ tinimbang~$\{\True\}$.
+
+\begin{prop}\ollabel{prop:gl-udes}
+  Matriks kanthi $V = \{\False, \Undef,\True\}$, $V^+=\{\True,
+  \Undef\}$, lan fungsi kabeneran logika G\"odel $3$ nilai
+  netepake logika klasik.
+\end{prop}
+
+\begin{proof}
+  Latihan.
+\end{proof}
+
+\begin{prob}
+  Buktèkna \olref[mvl][thr][mul]{prop:gl-udes} kanthi nuduhake yen
+  kanggo logika~$\Log L$ kang ditetepake kaya logika G\"odel nanging
+  nganggo $V^+=\{\True,\Undef\}$, yen $\Gamma \Entails/[\Log L]
+  !B$ mula $\Gamma \Entails/[\LogCL] !B$. Gunakna gagasan saka
+  \olref[mvl][thr][mul]{prop:LP-taut-CL}, nanging tinimbang mbuktekake
+  sipat (a) lan~(b), tuduhna yen $\pValue v(!A)[\LogGod] = \False$
+  yen lan mung yen $\pValue {v'}(!A)[\LogCL] = \False$ (lan mula
+  $\pValue v(!A)[\LogGod] \in \{\True,\Undef\}$ yen lan mung yen
+  $\pValue {v'}(!A)[\LogCL] = \True$). Terangna ngapa iki
+  mbuktekake proposisi kasebut.
+\end{prob}
+
+\end{document}

@@ -1,0 +1,254 @@
+% Bagean: metodhe
+% Bab: induksi
+% Pérangan: dhéfinisi-induktif
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mth}{ind}{idf}
+
+\olsection{Dhéfinisi Induktif}
+
+Ing logika kita kerep ndhéfinisikaké jinis
+obyèk \emph{kanthi induktif}: kita nemtokaké
+aturan kang njlèntrèhaké obyèk apa kang
+kalebu jinis iki lan kepriyé obyèk anyar
+saka jinis iki dibangun saka obyèk lawas
+kang padha jinisé. Upamané, rerangken
+simbol tartamtu, kaya term lan !!{formula}s
+ing sawijining basa, kerep didhéfinisikaké
+kanthi induksi. Minangka conto prasaja,
+delengen rerangken kang kasusun saka aksara
+$\mathrm{a}$, $\mathrm{b}$, $\mathrm{c}$,
+$\mathrm{d}$, simbol~$\circ$, lan kurung
+siku $[$ lan $]$, kaya
+``$[[\mathrm{c} \circ \mathrm{d}][$'',
+``$[\mathrm{a}[]\circ]$'',
+``$\mathrm{a}$'' utawa
+``$[[\mathrm{a} \circ \mathrm{b}]\circ
+\mathrm{d}]$''. Mbokmenawa panjenengan
+rumangsa ana kang ``salah'' ing rong
+rerangken kapisan: ing kang kapisan,
+kurung sikuné ora ``imbang'' babar pisan;
+panjenengan uga bisa rumangsa yèn
+``$\circ$'' kuduné ``nyambungaké''
+ekspresi kang dhéwé nduwèni teges.
+Rerangken katelu lan kapapat katon
+luwih trep: saben ``$[$'' nduwèni
+pasangan nutup ``$]$'' yèn kurung
+iku ana, lan ing saben $\circ$
+ana ekspresi kang ``trep'' ing
+loro sisihé, dikurung sapasang kurung.
+
+Kita kepéngin nemtokaké kanthi persis
+apa kang kalebu ``term trep''.
+Kaping pisan, saben aksara kang madeg
+dhéwé iku trep. Saliyane aksara tunggal,
+term trep kudu awujud ``$[t \circ s]$'',
+kanthi $s$ lan $t$ dhéwé trep.
+Kosok baliné, yèn $t$ lan $s$
+trep, kita bisa nggawe term trep
+anyar kanthi nyeleh $\circ$
+ing antarané lan ngubengi nganggo
+sapasang kurung siku. Operasi iki
+bisa digunakaké kanggo
+\emph{ndhéfinisikaké} himpunan
+term trep. Iki \emph{dhéfinisi
+  induktif}.
+
+\begin{defn}[Term trep]
+  Himpunan \emph{term trep}
+  didhéfinisikaké kanthi induktif:
+  \begin{enumerate}
+  \item Saben aksara $\mathrm{a}$,
+    $\mathrm{b}$, $\mathrm{c}$,
+    $\mathrm{d}$ iku term trep.
+  \item Yèn $s_1$ lan $s_2$
+    term trep, mula $[s_1 \circ s_2]$
+    uga term trep.
+  \item Ora ana liya kang kalebu
+    term trep.
+  \end{enumerate}
+\end{defn}
+
+Dhéfinisi iki nyatakaké yèn sawijining
+obyèk kalebu term trep yèn lan mung
+yèn bisa dibangun miturut syarat
+(1) lan~(2) liwat cacah langkah winates.
+Ing langkah kapisan, kita mbangun
+kabèh term trep kang mung aksara
+tunggal:
+\[
+\mathrm{a}, \mathrm{b}, \mathrm{c}, \mathrm{d}
+\]
+Ing langkah kapindho, kita nrapaké
+(2) marang term kang wis dibangun.
+Kita olèh
+\[
+[\mathrm{a} \circ \mathrm{a}], [\mathrm{a} \circ \mathrm{b}],
+[\mathrm{b} \circ \mathrm{a}], \dots, [\mathrm{d} \circ \mathrm{d}]
+\]
+kanggo kabèh pasangan aksara.
+Ing langkah katelu, kita nrapaké
+(2) maneh marang pasangan term
+trep kang wis dibangun. Kita
+olèh term trep anyar kaya
+$[\mathrm{a} \circ [\mathrm{a} \circ
+    \mathrm{a}]]$, ing kéné
+$t$ yaiku $\mathrm{a}$ saka
+langkah~1 lan $s$ yaiku
+$[\mathrm{a} \circ \mathrm{a}]$
+saka langkah~2; lan
+$[[\mathrm{b} \circ
+    \mathrm{c}] \circ [\mathrm{d} \circ \mathrm{b}]]$
+kang dibangun saka rong term
+$[\mathrm{b} \circ \mathrm{c}]$
+lan $[\mathrm{d}
+  \circ \mathrm{b}]$ saka langkah~2.
+Saterusé uga mangkono.
+Klausa (3) nyegah obyèk kang
+ora dibangun kanthi cara iki
+melu mlebu himpunan term trep.
+
+Élinga yèn kita durung mbuktekaké
+kabèh rerangken simbol kang ``katon''
+trep pancèn trep miturut dhéfinisi iki.
+Nanging kuduné cetha yèn kabèh
+kang bisa kita bangun pancèn
+``katon trep'': kurung sikuné
+imbang, lan $\circ$ nyambungaké
+pérangan kang dhéwé trep.
+
+Ciri pokok dhéfinisi induktif yaiku
+yèn panjenengan arep mbuktekaké
+pratelan tumrap kabèh term trep,
+dhéfinisi iku nuduhaké kasus endi
+kang kudu ditliti. Upamané, yèn
+$t$ diwènèhaké minangka term trep,
+dhéfinisi induktif nuduhaké
+wujud kang mungkin kanggo $t$:
+$t$ bisa awujud aksara, utawa
+$[s_1 \circ s_2]$ kanggo pasangan
+term trep $s_1$ lan~$s_2$.
+Amarga klausa (3), mung iku
+kamungkinané.
+
+Nalika mbuktekaké pratelan
+tumrap kabèh anggota himpunan
+kang didhéfinisikaké kanthi induktif,
+induksi kuwat mligi wigati.
+Upamané, kita arep mbuktekaké
+yèn ing saben term trep kanthi
+dawa~$n$, cacah $[$ iku~$< n/2$.
+Iki bisa diwaca minangka pratelan
+kanggo kabèh~$n$: kanggo saben $n$,
+cacah $[$ ing sembarang term trep
+kanthi dawa~$n$ iku $< n/2$.
+
+\begin{prop}
+  Kanggo sembarang $n$, cacah $[$
+  ing term trep kanthi dawa~$n$
+  iku $< n/2$.
+\end{prop}
+
+\begin{proof}
+Kanggo mbuktekaké kanthi induksi
+(kuwat), kita kudu nuduhaké yèn
+pratelan kondisional iki bener:
+\begin{quote}
+  Yèn kanggo saben $l < k$,
+  saben term trep kanthi dawa~$l$
+  nduwèni $< l/2$ simbol $[$,
+  mula saben term trep kanthi
+  dawa~$k$ nduwèni $< k/2$
+  simbol $[$.
+\end{quote}
+Kanggo mbuktekaké kondisional
+iki, anggepen antesedèné bener:
+kanggo sembarang $l<k$,
+term trep kanthi dawa~$l$
+ngemot $< l/2$ simbol $[$.
+Anggepan iki diarani
+hipotesis induksi. Kita kudu
+nuduhaké bab kang padha kanggo
+term trep kanthi dawa~$k$.
+
+Anggepen $t$ term trep kanthi
+dawa~$k$. Amarga term trep
+didhéfinisikaké kanthi induktif,
+ana rong kasus: (1)~$t$ mung
+aksara, utawa (2)~$t$ awujud
+$[s_1 \circ s_2]$ kanggo
+term trep $s_1$ lan~$s_2$.
+\begin{enumerate}
+\item Yèn $t$ aksara, mula
+  $k = 1$, lan cacah $[$
+  ing $t$ yaiku~$0$.
+  Amarga $0 < 1/2$, pratelan
+  iki bener.
+\item Yèn $t$ awujud
+  $[s_1 \circ s_2]$ kanggo
+  term trep $s_1$ lan~$s_2$,
+  tetepna $l_1$ minangka
+  dawa~$s_1$ lan $l_2$
+  minangka dawa~$s_2$.
+  Mula dawa~$k$ saka $t$
+  yaiku $l_1+l_2+3$:
+  dawa $s_1$ lan $s_2$
+  ditambah telung simbol
+  $[$, $\circ$, $]$.
+  Amarga $l_1+l_2+3$
+  tansah luwih gedhé tinimbang
+  $l_1$, kita olèh $l_1 < k$.
+  Semono uga $l_2
+  < k$. Dadi hipotesis induksi
+  bisa ditrapaké marang
+  $s_1$ lan~$s_2$:
+  cacah~$m_1$ simbol $[$
+  ing $s_1$ iku $< l_1/2$,
+  lan cacah~$m_2$ simbol $[$
+  ing~$s_2$ iku $< l_2/2$.
+
+  Cacah $[$ ing $t$
+  yaiku cacah $[$ ing~$s_1$,
+  ditambah cacah $[$ ing~$s_2$,
+  ditambah~$1$, yaiku
+  $m_1 + m_2 + 1$.
+  Amarga $m_1
+  < l_1/2$ lan $m_2 < l_2/2$,
+  kita olèh:
+  \[
+  m_1 + m_2 + 1 < \frac{l_1}{2} + \frac{l_2}{2} + 1 = \frac{l_1+l_2+2}{2} < \frac{l_1+l_2+3}{2} = k/2.
+  \]
+\end{enumerate}
+Ing saben kasus, cacah $[$
+ing $t$ kabuktèn $< k/2$
+kanthi hipotesis induksi.
+Miturut induksi kuwat, proposisi
+iku katut.
+\end{proof}
+
+\begin{prob}
+  Dhéfinisikna himpunan term
+  supertrep mangkéné:
+  \begin{enumerate}
+  \item Saben aksara
+    $\mathrm{a}$, $\mathrm{b}$,
+    $\mathrm{c}$, $\mathrm{d}$
+    iku term supertrep.
+  \item Yèn $s$ term supertrep,
+    mula $[s]$ uga mangkono.
+  \item Yèn $s_1$ lan $s_2$
+    term supertrep, mula
+    $[s_1 \circ s_2]$ uga mangkono.
+  \item Ora ana liya kang
+    kalebu term supertrep.
+  \end{enumerate}
+  Tuduhna yèn cacah $[$
+  ing term supertrep~$t$
+  kanthi dawa~$n$ iku
+  $\le n/2 +1$.
+\end{prob}
+
+\end{document}

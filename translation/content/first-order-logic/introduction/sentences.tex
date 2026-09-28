@@ -1,0 +1,59 @@
+% Part: first-order-logic
+% Chapter: introduction
+% Section: sentences
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{int}{snt}
+
+\olsection{\usetoken{P}{sentence}}
+
+Saiki kita wis nduweni (rancangan) definisi relasi nyukupi (``bener
+ing'') kanggo !!{structure}s lan !!{formula}s. Nanging, definisi iki
+mbutuhake perangan tambahan---yaiku pangaji !!a{variable}---dene kang
+kita karepake yaiku definisi !!{sentence}s. Kepriye carane nyingkirake
+pangaji, lan apa iku !!{sentence}s?
+
+Sampeyan mbokmenawa isih kelingan rembugan ing pambuka pisanan marang
+logika formal ngenani relasi antarane !!{variable}s lan kuantor. Kuantor
+mesthi diterusake dening !!a{variable}, banjur ing perangan
+!!{sentence} kang dikenani kuantor kasebut (``cakupane''), kita
+mangerteni yen !!{variable} kasebut ``kaiket'' dening kuantor mau. Ing
+!!{formula}s, saben !!{variable} ora kudu nduweni kuantor kang cocog,
+lan !!{variable}s tanpa kuantor kang cocog iku ``bebas'' utawa ``ora
+kaiket.'' Kita bakal nganggep !!{sentence}s minangka kabeh !!{formula}s
+kang ora nduweni !!{variable}s bebas.
+
+Maneh, gagasan intuisi ngenani kapan muncule !!a{variable} ing
+!!a{formula}~$!A$ iku kaiket, kuantor endi kang ngiket, lan kapan
+muncule bebas, ora angel dimangerteni. Sampeyan bisa uga wis sinau cara
+kanggo mriksa iki, mbokmenawa kanthi ngetung kurung. Kita kudu tetep
+nyuwun definisi kang trep---lan amarga wis nemtokake !!{formula}s kanthi
+induksi, kita uga bisa menehi definisi kanthi induksi tumrap saben
+muncule !!a{variable}~$x$ kang bebas lan kaiket ing
+!!a{formula}~$!A$. Tuladhane, kanggo basa prasaja kita, definisine bisa
+kaya mangkene:
+\begin{enumerate}
+  \item Yen $!A$ iku atom, saben muncule $x$ ing formula kasebut bebas
+  (yaiku, muncule $x$ ing~$\Atom{\Obj P}{x}$ iku bebas).
+  \item Yen $!A$ awujud $\lnot !B$, banjur sawijining muncule~$x$
+  ing~$\lnot !B$ bebas yen lan mung yen muncule~$x$ kang cocog bebas
+  ing~$!B$ (yaiku, saben muncule variabel bebas ing~$
+  !B$ persis padha karo muncule kang cocog ing~$\lnot !B$).
+  \item Yen $!A$ awujud $(!B \land !C)$, banjur sawijining muncule~$x$
+  ing~$(!B \land !C)$ bebas yen lan mung yen muncule~$x$ kang cocog
+  bebas ing~$!B$ utawa ing~$!C$.
+  \item Yen $!A$ awujud $\lexists[x][!B]$, banjur ora ana muncule
+  $x$ ing~$!A$ kang bebas; yen formula kasebut awujud $\lexists[y][!B]$ kanthi
+  $y$ minangka !!{variable} kang beda saka~$x$, banjur sawijining
+  muncule~$x$ ing $\lexists[y][!B]$ bebas yen lan mung yen muncule~$x$
+  kang cocog bebas ing~$!B$.
+\end{enumerate}
+
+Sawise nduweni definisi kang trep tumrap muncule variabel bebas lan
+kaiket, kita mung perlu kandha: !!a{sentence} yaiku sembarang
+!!{formula} tanpa muncule !!{variable}s bebas.
+
+\end{document}

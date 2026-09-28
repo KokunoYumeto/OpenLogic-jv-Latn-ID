@@ -1,0 +1,96 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{choice}{woproblem}
+\olsection{Prakara Pengurutan Becik}
+
+Cetha yèn akèh kang gumantung marang apa kita nampa Pengurutan Becik.
+Nanging rembugan bab prinsip iki lumrahé tumuju marang prinsip kang
+ekuivalen, yaiku Aksioma Pilihan. Mula saiki kita nggatekaké aksioma
+kasebut lan mbuktekaké ekuivalensiné.
+
+Ing \citeyear{Cantor1883}, Cantor nyengkuyung Aksioma Pengurutan Becik,
+lan nyebut iku ``hukum pikiran kang katon dhasar, sugih akibaté,
+lan mligi banget amarga lumakune sacara umum'' (dipetik ing
+\citeauthor{Potter2004} \citeyear[kaca~243]{Potter2004}). Nanging
+pungkasané Cantor yakin yèn ``Aksioma'' iku perlu bukti. Semono uga
+komunitas matématika.
+
+Prakara iki ``dipecahaké'' déning Zermelo ing
+\citeyear{Zermelo1904}. Kanggo nerangaké cara pamungkasé, kita
+mbutuhaké sawatara dhéfinisi.
+
+\begin{defn}
+Fungsi $f$ diarani \emph{fungsi pilihan} yèn lan mung yèn
+$f(x) \in x$ kanggo saben $x \in \dom{f}$. Kita nyebut $f$
+\emph{fungsi pilihan kanggo $A$} yèn $f$ fungsi pilihan kanthi
+$\dom{f} = A \setminus \{\emptyset\}$.
+\end{defn}
+
+Miturut pangertèn intuitif, kanggo saben himpunan kang ora kosong
+$x \in A$, fungsi pilihan kanggo $A$ \emph{milih} siji unsur tartamtu,
+$f(x)$, saka $x$. Aksioma Pilihan banjur mratelakaké:
+
+\begin{axiom}[Pilihan]
+	Saben himpunan nduwèni fungsi pilihan.
+\end{axiom}
+
+Zermelo nuduhaké yèn Pilihan nyebabaké Pengurutan Becik, lan kosok baliné:
+
+\begin{thm}[ing $\ZF$]\ollabel{thmwochoice}
+Pengurutan Becik lan Pilihan iku ekuivalen.
+\end{thm}
+
+\begin{proof}
+\emph{Saka kiwa menyang tengen.} Jupuken $A$ minangka himpunan saka
+himpunan. Mula $\bigcup A$ ana miturut Aksioma Gabungan, saéngga
+miturut Pengurutan Becik ana $<$ kang ngurutaké $\bigcup A$ kanthi becik.
+Saiki tetepna $f(x) = \text{unsur paling cilik miturut $<$ saka }x$.
+Iki fungsi pilihan kanggo $A$.
+
+\emph{Saka tengen menyang kiwa.} Tetepna $A$. Yèn himpunan iki kosong,
+dhèwèké wis terurut becik; mula anggepen ora kosong. Miturut Pilihan,
+ana fungsi pilihan $f$ kanggo $\Pow{A} \setminus \{\emptyset\}$.
+Kanthi Rekursi Transfinit, dhéfinisikaké fungsi:
+\begin{align*}
+	g(0) &= f(A)\\
+	g(\alpha) &=
+		\begin{cases}
+			\text{mandheg!{}} &\text{yèn }A \subseteq \funimage{g}{\alpha}\\
+			f(A \setminus \funimage{g}{\alpha}) & \text{yèn ora}\\	
+		\end{cases}
+\end{align*}
+Pratandha ``mandheg!'' iku cekakan saka dhéfinisi kang luwih dawa:
+nalika $A = \funimage{g}{\alpha}$ pisanan kelakon, tetepna
+$g(\delta) = A$ kanggo saben $\delta \geq \alpha$ minangka nilai
+panandha, banjur gunakna mung watesan sadurungé tahap iku. Ing wiwitan
+kita mung ngerti yèn rekursi iki ndhéfinisikaké sawijining \emph{suku}
+(delengen cathetan sawisé
+\olref[sth][spine][recursion]{transrecursionschema}); ing ngisor iki
+kita mbuktekaké yèn watesan kang dibutuhaké iku sawijining fungsi.
+
+Amarga $f$ fungsi pilihan, kanggo saben $\alpha$ sadurungé mandheg
+kita nduwèni $g(\alpha) =
+f(A \setminus \funimage{g}{\alpha}) \in A \setminus
+\funimage{g}{\alpha}$; yaiku $g(\alpha) \notin \funimage{g}{\alpha}$.
+Mula yèn $g(\alpha) = g(\beta)$, banjur $g(\beta) \notin
+\funimage{g}{\alpha}$, yaiku $\beta \notin \alpha$; semono uga
+$\alpha \notin \beta$. Miturut Trikotomi, $\alpha = \beta$.
+Dadi watesan $g$ sadurungé mandheg iku !!{injective}.
+
+Sabanjuré, proses iki mesthi mandheg, yaiku ana ordinal $\alpha$ paling
+cilik kang nyukupi $A = g[\alpha]$. Yèn ora, watesan $g$ bakal
+!!{injective} lan kita bakal nduwèni $\cardle{\alpha}{A}$ kanggo
+saben ordinal $\alpha$, nalisir \olref[hartogs]{HartogsLemma}.
+Sawisé fungsi iki diwatesi ing segmen sadurungé mandheg, kita uga nduwèni
+$\ran{g} = A$.
+
+Saka kabèh iki, watesan $g$ iku !!a{bijection} saka sawijining ordinal
+menyang $A$. Saiki $g$ bisa digunakaké kanggo ngurutaké $A$ kanthi becik.
+\end{proof}
+
+Dadi Pengurutan Becik lan Pilihan padha-padha bener utawa padha-padha
+gagal. Nanging pitakonané isih ana: apa kaloroné bener?
+
+\end{document}

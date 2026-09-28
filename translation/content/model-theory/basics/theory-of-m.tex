@@ -1,0 +1,93 @@
+% Part: first-order-logic
+% Chapter: model-theory
+% Section: theory-of-m
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{bas}{thm}
+
+\section{Teori Sawijining \printtoken{S}{structure}}
+
+Saben !!{structure}~$\Struct{M}$ ndadekake sawenehing
+!!{sentence}s bener lan sawenehing liyane kleru.
+Himpunan kabeh !!{sentence}s kang digawe bener
+dening struktur iku diarani \emph{teori}-ne.
+Himpunan iku pancen sawijining teori, amarga
+apa wae kang dadi akibat semantise mesthi
+bener ing kabeh modele, kalebu~$\Struct{M}$.
+
+\begin{defn}
+  Yen diwenehi !!a{structure}~$\Struct M$,
+  \emph{teori} saka $\Struct{M}$ yaiku
+  himpunan $\Theory{M}$ kang isi !!{sentence}s
+  kang bener ing $\Struct{M}$, yaiku
+  $\Theory{M} = \Setabs{!A}{\Sat{M}{!A}}$.
+\end{defn}
+
+Kita uga nggunakake tembung teori
+kanthi ora resmi kanggo nyebut himpunan
+!!{sentence}s kang duwe interpretasi
+kang dikarepake, apa wis katutup
+miturut deduksi utawa durung.
+
+\begin{prop}
+Kanggo sembarang $\Struct{M}$,
+$\Theory{M}$ iku komplet.
+\end{prop}
+
+\begin{proof}
+Kanggo saben !!{sentence}~$!A$,
+bisa $\Sat{M}{!A}$ utawa
+$\Sat{M}{\lnot !A}$,
+dadi bisa $!A \in \Theory{M}$
+utawa $\lnot !A \in \Theory{M}$.
+\end{proof}
+
+\begin{prop}\ollabel{prop:equiv}
+  Yen $\Struct{N} \models !A$
+  kanggo saben $!A \in \Theory{M}$,
+  mula $\Struct{M} \elemequiv \Struct{N}$.
+\end{prop}
+
+\begin{proof}
+Amarga $\Sat{N}{!A}$ kanggo kabeh
+$!A \in \Theory{M}$, mula
+$\Theory{M} \subseteq
+\Theory{N}$. Yen $\Sat{N}{!A}$,
+mula $\Sat/{N}{\lnot !A}$,
+saéngga $\lnot !A
+\notin \Theory{M}$. Amarga
+$\Theory{M}$ komplet, mula
+$!A \in \Theory{M}$. Dadi,
+$\Theory{N} \subseteq \Theory{M}$,
+lan kita nduweni
+$\Struct{M} \elemequiv \Struct{N}$.
+\end{proof}
+
+\begin{rem}\ollabel{remark:R}
+  Gatekna $\Struct{R} = \langle\Real, <\rangle$,
+  yaiku !!{structure} kang ranahé
+  himpunan $\Real$ saka wilangan real,
+  ing !!{language} kang mung ngemot
+  !!{predicate} kanthi rong panggonan
+  kang diinterpretasi minangka relasi
+  $<$ ing wilangan real. Cetha yen
+  $\Struct{R}$ iku !!{nonenumerable};
+  nanging amarga $\Theory{R}$
+  mesthi konsisten, miturut teorema
+  L\"owenheim--Skolem teori iku
+  duwe model kang !!a{enumerable},
+  upamane $\Struct{S}$, lan
+  miturut \olref{prop:equiv},
+  $\Struct{R}
+  \equiv \Struct{S}$. Sabanjure,
+  amarga $\Struct{R}$ lan $\Struct{S}$
+  ora isomorfis, iki nuduhake yen
+  kosok baline
+  \olref[iso]{thm:isom}
+  ora mesthi bener.
+\end{rem}
+
+\end{document}

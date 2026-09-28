@@ -1,0 +1,86 @@
+% Part: lambda-calculus
+% Chapter: lambda-definability
+% Section: pairs
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{ldf}{pai}
+\olsection{Pasangan lan Fungsi Sadurunge}
+
+\begin{defn}
+Pasangan saka $M$ lan $N$
+(ditulis $\tuple{M,N}$)
+ditetepake kaya mangkene:
+\[
+\tuple{M,N} \ident \lambd[f][fMN].
+\]
+\end{defn}
+  
+Miturut intuisi, pasangan iku
+fungsi kang nampa sawijining
+fungsi banjur ngetrapake
+fungsi mau marang rong unsur
+pasangan kasebut.
+Miturut gagasan iki, kita
+nduweni konstruktor kang
+nampa rong suku lan ngasilake
+pasangan kang ngemot
+loro-lorone:
+\[
+  \fn{Pair} \ident \lambd[mn][\lambd[f][fmn]]
+\]
+Saka pasangan, kita uga
+perlu njupuk maneh
+unsur-unsure.
+Kanggo iku dibutuhake
+rong fungsi pangakses
+kang nampa pasangan minangka
+argumen lan ngasilake
+unsur kapisan utawa kapindho:
+\begin{align*}
+  \fn{Fst} & \ident \lambd[p][p(\lambd[mn][m])]\\
+  \fn{Snd} & \ident \lambd[p][p(\lambd[mn][n])]
+\end{align*}
+
+\begin{prob}
+  Terangna ngapa fungsi
+  pangakses $\fn{Fst}$
+  lan $\fn{Snd}$ makarya.
+\end{prob}
+
+Kanthi pasangan, saiki kita
+bisa !!{lambda define}
+fungsi sadurunge:
+\[
+  \fn{Pred} \ident \lambd[n][\fn{Fst}(n (\lambd[p][\tuple{\fn{Snd}\, {p}, \fn{Succ}(\fn{Snd}\, {p})}]) \tuple{\num 0, \num 0})]
+\]
+Elinga yen $\num n\, f x$
+direduksi dadi $f^{n}(x)$;
+ing kene $f$ iku fungsi kang
+nampa pasangan $p$ lan
+ngasilake pasangan anyar
+kang ngemot unsur kapindho
+saka $p$ lan penerus
+unsur kapindho kasebut;
+$x$ iku pasangan
+$\tuple{\num 0,\num 0}$.
+Mula asile
+$\tuple{\num 0,\num 0}$
+yen $n=0$, lan
+$\tuple{\num{n-1}, \num n}$
+yen liyane.
+Sawisé iku $\fn{Pred}$
+ngasilake unsur kapisan
+saka pasangan asil.
+
+Pengurangan bisa ditetepake
+kanthi ngetrapake
+$\fn{Pred}$ marang $a$
+ping $b$:
+\[
+\fn{Sub} \ident \lambd[ab][b \fn{Pred}\, a].
+\]
+    
+\end{document}

@@ -1,0 +1,100 @@
+% Part: computability
+% Chapter: recursive-functions
+% Section: trees
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{rec}{tre}
+\olsection{Wit}
+
+Kadhang migunani yen wit diwakili minangka wilangan asli,
+kaya rerangken kang bisa diwakili nganggo wilangan, dene
+sipat lan operasi ing rerangken mau diwakili dening relasi
+lan fungsi rekursif primitif ing kode-kodene. Kita bakal
+nggunakake rerangken lan kode-kodene kanggo nindakake iki.
+Wit bisa awujud siji simpul (kang bisa nduwé label),
+utawa siji simpul (kang bisa nduwé label) kang
+disambungake karo sawetara subwit. Simpul mau diarani
+\emph{oyod} wit, lan subwit kang langsung kasambung
+diarani \emph{subwit langsung}.
+
+Kita ngode wit kanthi rekursif minangka rerangken
+$\tuple{k, d_1, \dots, d_k}$, kanthi $k$ cacah subwit
+langsung lan $d_1$, \dots,~$d_k$ kode subwit
+langsung kasebut. Yen simpul-simpule mawa label,
+label kasebut bisa dilebokake sawisé subwit langsung.
+Dadi wit kang mung ngemot siji simpul mawa label~$l$
+dikode nganggo $\tuple{0,l}$, dene wit kang ngemot
+oyod (mawa label~$l_1$) kang kasambung karo rong
+simpul tunggal (mawa label $l_2$, $l_3$)
+dikode nganggo $\tuple{2,
+  \tuple{0, l_2}, \tuple{0, l_3}, l_1}$.
+
+\begin{prop}
+  \ollabel{prop:subtreeseq}
+  Fungsi $\fn{SubtreeSeq}(t)$, kang ngasilake kode
+  rerangken kanthi unsur-unsur awujud kode kabeh
+  subwit saka wit kang kode~$t$, iku rekursif primitif.
+\end{prop}
+
+\begin{proof}
+  Pisanan, gatekna yen $\fn{ISubtrees}(t) =
+  \fn{subseq}(t, 1, (t)_0)$ iku rekursif primitif
+  lan ngasilake kode subwit langsung saka wit~$t$.
+  Saiki kita bisa netepake fungsi pambantu
+  $\fn{hSubtreeSeq}(t,n)$ kang ngitung rerangken
+  kabeh subwit kang jarake saka oyod paling akeh
+  $n$ rusuk, kanthi kemungkinan ana ulangan.
+  Rerangken subwit saka~$t$ kang jarake $0$
+  rusuk saka oyod---yaiku diwiwiti ing oyod
+  wit~$t$---mung ngemot~$t$.
+  Kanggo nggayuh tataran nganti~$n+1$ saka $t$, kita
+  nyambungake rerangken kang wis ngemot subwit
+  nganti tataran $n$ karo rerangken kabeh subwit
+  langsung saka subwit nganti tataran $n$.
+  % OLPL-131: Rekurensi n+1 nambah subwit marang kabeh asil nganti n;
+  % asil iki kumulatif, dudu mung subwit persis tataran n.
+  Kanggo ndhaptar kabeh subwit langsung iki, gatekna
+  yen $f(x)$ iku fungsi rekursif primitif kang
+  ngasilake kode rerangken, mula $g_f(s, k) = f((s)_0) \concat
+  \dots \concat f((s)_k)$ uga rekursif primitif:
+    \begin{align*}
+      g(s, 0) & = f((s)_0)\\
+      g(s, k+1) & = g(s, k) \concat f((s)_{k+1})
+    \end{align*}
+    Umpamane, yen $s$ rerangken wit, mula
+    $h(s) = g_{\fn{ISubtrees}}(s, \len{s})$
+    ngasilake rerangken subwit langsung saka
+    unsur-unsur~$s$. Suku tambahan kang indeksé
+    padha karo dawane rerangken mung ngasilake
+    rerangken kosong: unsur ing njaban dawa
+    diwenehi nilai nol, lan subwit langsung saka
+    kode kosong uga kosong.
+    % OLPL-132: g(s,k) ngemot indeks 0 nganti k;
+    % nalika k=dawa s, suku tambahan f(0) iku kosong.
+    Kita bisa nggunakake fungsi iki kanggo netepake
+    $\fn{hSubtreeSeq}$ kanthi
+    \begin{align*}
+      \fn{hSubtreeSeq}(t, 0) & = \tuple{t} \\
+      \fn{hSubtreeSeq}(t, n+1) & = \fn{hSubtreeSeq}(t, n) \concat
+      h(\fn{hSubtreeSeq}(t, n)).
+    \end{align*}
+    Tataran paling gedhe saka subwit ing wit kang
+    dikode nganggo~$t$, yaiku jarak paling gedhe
+    antarane oyod lan simpul godhong, diwatesi
+    dening kode~$t$. Mula rerangken kode kabeh
+    subwit saka wit kang dikode nganggo~$t$
+    diwenehake dening $\fn{hSubtreeSeq}(t, t)$.
+\end{proof}
+
+\begin{prob}
+  Definisi $\fn{hSubtreeSeq}$ ing bukti
+  \olref[cmp][rec][tre]{prop:subtreeseq} lumrahe
+  ngemot ulangan. Wenehana definisi liya kang
+  njamin yen kode saben subwit mung katon sepisan
+  ing dhaptar asile.
+\end{prob}
+
+\end{document}

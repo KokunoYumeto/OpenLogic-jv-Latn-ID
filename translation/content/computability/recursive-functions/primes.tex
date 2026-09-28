@@ -1,0 +1,105 @@
+% Part: computability
+% Chapter: recursive-functions
+% Section: primes
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{rec}{pri}
+\olsection{Wilangan Prima}
+
+Kuantifikasi mawa wates lan minimisasi mawa wates menehi
+cukup akeh piranti kanggo nuduhake yen fungsi lan relasi
+ing wilangan asli iku rekursif primitif. Umpamane, gatekna
+relasi “$x$ mbagi $y$,” kang ditulis $x \mid y$. Relasi
+$x \mid y$ bener yen $y$ dipara~$x$ tanpa
+turah, yaiku yen $y$ iku asil ping-pingan
+sawenehing wilangan wutuh karo~$x$. (Yen relasi
+iki ora bener, mula kanggo pembagi kang positif,
+turah nalika $y$ dipara $x$
+iku $> 0$; kita nulis $x \nmid y$.)
+% OLPL-125: Sumber mbalikke urutan kang dibagi lan pembagi ing
+% katerangan turah; turah sing trep yaiku saka y dipara x.
+Kanthi tembung liya, $x \mid y$ yen lan mung yen ana~$z$
+kanthi $x \cdot z = y$. Kita bisa milih saksi~$z$
+kang $\leq y$ yen saksi ana. Dadi $x \mid y$
+yen lan mung yen ana $z \le y$ kanthi $x \cdot z = y$.
+% OLPL-126: Pratelan sumber "saben saksi z <= y" salah yen
+% x=y=0; saksi z=0 tetep ana lan nyukupi wates.
+Kita bisa netepake relasi $x \mid y$ kanthi kuantifikasi
+eksistensial mawa wates saka $=$ lan perkalian:
+\[
+x \mid y \defiff \bexists{z \leq y}{(x \cdot z) = y}.
+\]
+Mula kita wis nuduhake yen $x \mid y$ rekursif primitif.
+
+Wilangan asli~$x$ diarani \emph{prima} yen dudu $0$
+utawa $1$ lan mung bisa dibagi dening $1$ lan
+awake dhewe. Kanthi tembung liya, kanggo wilangan
+prima, yen $y \mid x$, mesthi $y = 1$ utawa~$y=x$.
+Kanggo mriksa apa $x$~prima, kita mung perlu mriksa
+$y \mid x$ kanggo kabeh $y \le x$, amarga yen
+$y > x$, mesthi~$y \nmid x$. Dadi relasi
+$\fn{Prime}(x)$, kang bener yen lan mung yen $x$
+prima, bisa ditegesi kanthi
+\[
+\fn{Prime}(x) \defiff x \geq 2 \land \bforall{y \leq x}{(y \mid x \lif y
+  = 1 \lor y = x)}
+\]
+lan mula rekursif primitif.
+
+Wilangan prima yaiku $2$, $3$, $5$, $7$, $11$,
+lan sateruse. Gatekna fungsi $p(x)$ kang ngasilake
+prima kaping $x$ ing rerangken kasebut, yaiku
+$p(0) = 2$, $p(1) = 3$, $p(2) = 5$, lan sateruse.
+(Kanggo nggampangake, kita kerep nulis $p(x)$
+minangka $p_x$ ($p_0=2$, $p_1=3$, lan sateruse.)
+
+Yen kita nduweni fungsi
+$\fn{nextPrime(x)}$, kang ngasilake wilangan prima
+pisanan kang luwih gedhe tinimbang~$x$, $p$~bisa
+gampang ditegesi nganggo rekursi primitif:
+\begin{align*}
+  p(0) & = 2\\
+  p(x+1) & = \fn{nextPrime}(p(x))
+\end{align*}
+Amarga $\fn{nextPrime}(x)$ iku $y$ paling cilik
+kang nyukupi $y > x$ lan $y$~prima, fungsi iki
+bisa gampang diitung kanthi panggolekan tanpa wates.
+Nanging fungsi iki uga bisa ditegesi kanthi minimisasi
+mawa wates, amarga asil saka Euclid: mesthi ana
+wilangan prima ing antarane $x$ lan $\fact{x}+1$.
+\[
+  \fn{nextPrime(x)} =
+  \bmin{y \leq \fact{x}+1}{(y > x \land \fn{Prime}(y))}.
+\]
+Iki nuduhake yen $\fn{nextPrime}(x)$ lan mula $p(x)$
+(ora mung komputabel nanging) rekursif primitif.
+
+(Yen kepengin ngerti, iki bukti ringkes kanggo
+teorema Euclid. Kanggo wilangan asli luwih gedhe
+tinimbang siji, upamana $p_n$ prima paling gedhe
+kang $\le x$, lan gatekna asil kali $p =
+p_0\cdot p_1 \cdot \dots \cdot p_n$ saka kabeh
+prima~$\le x$. Yen wilangan asline nol utawa siji,
+prima loro langsung menehi kesimpulan kang padha.
+% OLPL-127: Bukti nganggo "prima paling gedhe <= x" mung ana
+% yen x paling ora loro; kasus nol lan siji dipriksa langsung.
+$p+1$ iku prima utawa ana prima ing antarane
+$x$ lan~$p+1$. Ngapa? Upamana $p+1$ dudu prima.
+Banjur ana prima $q \mid p+1$ kang $q < p+1$.
+Ora ana prima $\le x$ kang mbagi $p+1$. (Miturut
+definisi~$p$, saben prima $p_i \le x$ mbagi~$p$,
+yaiku kanthi turah~$0$. Mula saben prima $p_i \le x$
+mbagi $p+1$ kanthi turah~$1$, dadi $p_i \nmid p+1$.)
+Mula $q$ iku prima $> x$ lan $< p+1$. Lan
+$p \le \fact{x}$, dadi ana prima $> x$ lan
+$\le \fact{x}+1$.)
+
+\begin{prob}
+Netepna pambagian wilangan wutuh $d(x, y)$ nganggo
+minimisasi mawa wates.
+\end{prob}
+
+\end{document}

@@ -1,0 +1,80 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{story}{rus}
+\olsection{Paradoks Russell (maneh)}
+
+Ing \olref[sfr][][]{part}, kita nggunakake teori himpunan naif.
+Nanging miturut konsepsi kang \emph{luwih naif maneh}, himpunan
+iku mung ekstensi saka predikat. Pamawas naif iki nuntut
+prinsip ing ngisor iki:
+
+\begin{defish}
+  \emph{Komprehensi Naif.} $\Setabs{x}{\phi(x)}$ ana kanggo
+  saben formula $\phi$.
+\end{defish}
+
+Sanajan prinsip iki katon narik kawigaten, bisa dibuktekake
+yen prinsip iki ora konsisten. Kita wis weruh iki ing
+\olref[sfr][set][rus]{sec}, nanging asil iki wigati banget
+lan prasaja banget nganti pantes dibaleni, persis kaya sadurunge.
+
+\begin{thm}[Paradoks Russell]
+Ora ana himpunan $R = \Setabs{x}{x \notin x}$.
+\end{thm}
+
+\begin{proof}
+Yen $R = \Setabs{x}{x \notin x}$ ana, mula $R \in R$ yen lan
+mung yen $R \notin R$, sawijining kontradiksi.
+\end{proof}
+
+Russell nemokake asil iki ing Juni 1901. (Nanging dheweke
+ora ngandharake paradoks ing wujud kang persis kaya kang
+anyar wae kita aturake, amarga dheweke nimbang teori himpunan
+Frege kaya kang diandharake ing \emph{Grundgesetze}. Kita bakal
+bali menyang iki ing \olref[blv]{sec}.) Russell nulis surat
+marang Frege tanggal 16 Juni 1902, nerangake inkonsistensi
+sisteme Frege. Kanggo korespondensi kasebut lan sawetara
+katrangan latar, delengen \citet[pp.~124--8]{Heijenoort1967}.
+
+Perlu ditekanake yen bukti rong larik iki minangka asil saka
+\emph{logika murni}. Pancen, ing notasi
+$\Setabs{x}{x \notin x}$ kita sacara implisit nggunakake
+aksioma Ekstensionalitas (apa aksioma iki dudu logis?).
+Amarga $\Setabs{x}{\phi(x)}$ dimaksudake dadi himpunan
+\emph{tunggal} (miturut Ekstensionalitas) kang ngemot
+persis $\phi$s, yen himpunan iku ana. Nanging kita bisa
+nyingkiri malah kesan yen Ekstensionalitas dibutuhake,
+kanthi ngandharake asil iki kaya mangkene: \emph{ora ana
+himpunan kang anggotane persis himpunan kang ora dadi
+anggota awake dhewe}. Bab iki ora gumantung banget marang
+himpunan. Kaya kang dingerteni Russell dhewe, penalaran kang
+padha persis uga menehi konklusi: \emph{ora ana priya kang
+nyukur persis para priya kang ora nyukur awake dhewe}.
+Utawa: \emph{ora ana asu pug kang ngambu persis asu-asu pug
+kang ora ngambu awake dhewe}. Lan sapiturute. Kanthi skema,
+wujud asile mung:
+\[
+\lnot \exists x \forall z(Rzx \liff \lnot R zz).
+\]
+Lan iku sawijining teorema (skema) logika tataran kapisan.
+Mula kita ora bisa nyingkiri Paradoks Russell mung kanthi
+ngowahi teori himpunan: paradoks iki tuwuh sadurunge kita
+malah \emph{mlebu} ing teori himpunan. Yen kita arep nggunakake
+logika tataran kapisan (klasik), kita kudu \emph{nampa}
+yen ora ana himpunan $R = \Setabs{x}{x\notin x}$.
+
+Akibate mangkene. Yen kita arep nampa Komprehensi Naif
+nanging \emph{nyingkiri} inkonsistensi, kita ora cukup mung
+ngowahi \emph{teori himpunan}. Nanging kita kudu ngowahi
+\emph{logika} kang digunakake kanthi dhasar.
+
+Mesthi wae, teori himpunan kanthi logika nonklasik wis ana.
+Nanging teori-teori iku---paling ora---dudu pendekatan baku.
+Pendekatan baku tumrap Paradoks Russell yaiku nganggep
+paradoks minangka bukti langsung yen himpunan kasebut ora
+ana, banjur sinau urip kanthi kasunyatan iki. Pendekatan
+iki kang bakal kita tindakake.
+
+\end{document}

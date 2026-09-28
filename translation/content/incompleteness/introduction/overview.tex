@@ -1,0 +1,137 @@
+% Part: incompleteness
+% Chapter: introduction
+% Section: overview
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{int}{ovr}
+
+\olsection{Gegambaran Umum Asil Ora Jangkep}
+
+Hilbert ngarepake yen matematika bisa diformalkan
+ing teori kang !!{axiomatizable}, kang bisa
+dibuktekake !!{complete} lan !!{decidable}.
+Kajaba iku, dheweke arep mbuktekake konsistensi
+teori iki nganggo cara kang ringkih banget,
+yaiku cara ``finitèr'', kanggo mbela matematika
+klasik saka tantangan intuisionisme. Teorema-teorema
+G\"odel ngenani ora jangkep nuduhake yen
+ancas-ancas iku ora bisa digayuh.
+
+Teorema pisanan G\"odel ngenani ora jangkep
+nuduhake yen salah sawijining versi
+\emph{Principia Mathematica} anggitane Russell
+lan Whitehead ora !!{complete}. Nanging buktine
+sejatine umum banget lan bisa ditrapake marang
+maneka warna teori. Iki ateges ora mung
+\emph{Principia Mathematica} kang gagal nyakup
+matematika kanthi pepak; \emph{ora ana} teori
+kang bisa ditampa kang bisa nindakake iku.
+Perlu wektu kanggo nemtokake ciri-ciri teori
+kang cukup supaya teorema-teorema ora jangkep
+bisa ditrapake, lan kanggo nggeneralisasi bukti
+G\"odel supaya mung gumantung marang ciri-ciri
+iku. Saiki kita bisa nyatakake versi kang umum
+banget saka teorema pisanan ngenani ora jangkep
+kanggo teori ing basa aritmetika $\Lang L_A$.
+
+\begin{thm}
+Yen $\Gamma$ iku teori kang konsisten lan
+!!{axiomatizable} ing~$\Lang L_A$ kang
+!!{represents} kabeh fungsi komputabel lan
+relasi !!{decidable}, mula $\Gamma$
+ora !!{complete}.
+\end{thm}
+
+Ngendika yen $\Gamma$ ora !!{complete} ateges
+ana paling ora siji !!{sentence}~$!A$ saengga
+$\Gamma \Proves/ !A$ lan $\Gamma \Proves/ \lnot
+!A$. !!a{sentence} kaya mangkono diarani
+\emph{mandiri} (saka~$\Gamma)$.
+Sejatine, ora angel banget mbuktekake yen ukara
+mandiri mesthi ana. Nanging kakuwatan buktine
+G\"odel yaiku menehi \emph{conto tartamtu}
+saka !!{sentence} mandiri kaya mangkono.
+Konstruksi kang narik kawigaten iku ngasilake
+!!a{sentence}~$!G_\Gamma$, kang diarani
+\emph{ukara G\"odel} kanggo~$\Gamma$.
+Ukara iki ora bisa dibuktekake amarga ing
+$\Gamma$, $!G_\Gamma$ ekuivalen karo pratelan
+yen $!G_\Gamma$ ora bisa dibuktekake ing~$\Gamma$.
+Konstruksi iki ditindakake kanthi
+\emph{konstruktif}: yen diwenehi aksiomatisasi
+saka~$\Gamma$ lan katrangan sistem
+!!{derivation}, bukti iku menehi cara nyata
+kanggo nulis~$!G_\Gamma$.
+
+Konstruksi ing buktine G\"odel mbutuhake cara
+kanggo nyatakake ing $\Lang L_A$ sifat-sifat
+lan operasi marang suku lan !!{formula}s saka
+$\Lang L_A$ dhewe. Iki kalebu sifat kaya
+``$!A$ iku !!a{sentence},'' ``$\delta$ iku
+!!a{derivation} saka~$!A$,'' lan operasi kaya
+$\Subst{!A}{t}{x}$. Cara iki kudu (a) nyatakake
+sifat lan relasi kasebut liwat ``pangodean''
+simbol lan urutane (yaiku wujud suku,
+!!{formula}s, !!{derivation}s, lan liya-liyane)
+minangka bilangan asli (kang bisa dirembug
+dening $\Lang L_A$). Cara iku uga kudu (b)
+nindakake pangodean kanthi cara saengga
+$\Gamma$ bisa mbuktekake fakta kang cocog.
+Mula kita kudu nuduhake yen sifat-sifat kasebut
+dikodeake dening sifat bilangan asli kang
+!!{decidable}, lan operasine cocog karo fungsi
+komputabel ing bilangan asli. Iki diarani
+``aritmetisasi sintaks''.
+
+Nanging sadurunge nliti cara ngaritmetisasi
+sintaks, kita bakal ngrembug syarat yen~$\Gamma$
+``cukup kuwat'', yaiku !!{represents} kabeh
+fungsi komputabel lan relasi !!{decidable}.
+Iki mbutuhake definisi kang cetha tumrap
+``komputabel''. Ana sawetara cara kanggo
+netepake, umpamane liwat model mesin Turing
+utawa minangka fungsi kang bisa diitung dening
+program ing basa pamrograman umum. Nanging
+amarga ancas kita yaiku supaya teori ing
+basa~$\Lang L_A$ !!{represents}s fungsi
+lan relasi kasebut, luwih becik milih
+definisi komputabilitas kang prasaja kanggo
+fungsi numeris wae. Iki gagasan
+\emph{fungsi rekursif}. Mula kita bakal
+ngrembug fungsi rekursif dhisik. Banjur kita
+bakal nuduhake yen $\Th{Q}$ wis
+!!{represents} kabeh fungsi lan relasi
+rekursif. Iki ngidini kita ngetrapake
+teorema ora jangkep marang teori tartamtu
+kaya $\Th{Q}$ lan $\Th{PA}$, amarga kita
+wis netepake yen teori-teori iki ``cukup kuwat''.
+
+Asil pungkasan aritmetisasi sintaks yaiku
+!!a{formula} $\OProv[\Gamma](x)$ kang,
+liwat pangodean !!{formula}s minangka bilangan,
+nyatakake kabuktenan saka aksioma~$\Gamma$.
+Mligine, yen $!A$ dikodeake dening bilangan~$n$
+lan $\Gamma \Proves !A$, mula
+$\Gamma \Proves \Prov[\Gamma](\num{n})$.
+``Predikat kabuktenan'' kanggo $\Gamma$ iki
+uga ngidini kita nyatakake, ing teges tartamtu,
+konsistensine $\Gamma$ minangka
+!!a{sentence} ing~$\Lang L_A$:
+tetepna ``ukara konsistensi'' kanggo~$\Gamma$
+minangka !!{sentence}
+$\lnot \Prov[\Gamma](\num{n})$, ing ngendi
+$n$ dijupuk minangka kode sawijining
+kontradiksi, umpamane~$\lfalse$. Teorema
+kapindho ngenani ora jangkep nyatakake yen
+teori-teori kang konsisten lan !!{axiomatizable}
+uga ora bisa mbuktekake ukara konsistensine
+dhewe. Syarat supaya teorema iki bisa
+ditrapake rada luwih ketat tinimbang mung
+teori kasebut nggambarake kabeh fungsi
+komputabel lan relasi !!{decidable}, nanging
+kita bakal nuduhake yen $\Th{PA}$ nyukupi.
+
+\end{document}

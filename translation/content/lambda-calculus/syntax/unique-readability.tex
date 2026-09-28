@@ -1,0 +1,149 @@
+% Part: lambda-calculus
+% Chapter: syntax
+% Section: unique-readability
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{syn}{unq}
+\olsection{Cara Maca Tunggal}
+
+Kita bisa takon apa saben suku mung nduweni
+siji cara kanggo mbentuk, lan jawabane ya.
+Saben suku lambda mung nduweni siji cara
+pambentukan lan siji cara panapsiran.
+Ing rembugan ing ngisor iki,
+\emph{pambentukan} iku tata cara mbangun
+suku kanthi ngetrapake paugeran pambentukan
+(sepisan utawa luwih) saka
+\olref[trm]{defn:term}.
+
+\begin{lem}\ollabel{lem:term-start}
+Suku diwiwiti dening variabel utawa
+tandha kurung bukak.
+\end{lem}
+
+\begin{proof}
+Sawijining ekspresi diarani suku mung yen
+dibangun miturut \olref[trm]{defn:term}.
+Yen ekspresi iku asil saka
+\olref[trm]{defn:term-var}, mesthi
+awujud variabel. Yen iku asil saka
+\olref[trm]{defn:term-abs} utawa
+\olref[trm]{defn:term-app}, ekspresi
+iku diwiwiti dening tandha kurung bukak.
+\end{proof}
+
+\begin{lem}\ollabel{lem:app-start}
+Asil aplikasi diwiwiti dening rong
+tandha kurung bukak utawa dening
+tandha kurung bukak banjur variabel.
+\end{lem}
+
+\begin{proof}
+Yen $M$ iku asil aplikasi, wujude
+$(PQ)$, mula diwiwiti dening tandha
+kurung bukak. Amarga $P$ iku suku,
+miturut \olref{lem:term-start},
+suku iku diwiwiti dening tandha kurung
+bukak utawa variabel.
+\end{proof}
+
+\begin{lem}\ollabel{lem:initial}
+Ora ana perangan wiwitan sejati
+saka sawijining suku kang dhewe
+uga suku.
+\end{lem}
+
+\begin{prob}
+Buktikna \olref[lam][syn][unq]{lem:initial}
+kanthi induksi ing dawa suku.
+\end{prob}
+
+\begin{prop}[Cara Maca Tunggal] \ollabel{prop:unq}
+Saben suku nduweni pambentukan kang
+mung siji. Tegese, yen suku $M$
+dibentuk liwat sawijining pambentukan,
+mung pambentukan iku kang bisa
+mbentuk suku kasebut.
+\end{prop}
+
+\begin{proof}
+  Kita mbuktekake kanthi induksi ing
+  pambentukan suku.
+  \begin{enumerate}
+    \item $M$ awujud
+      $x$, ing ngendi $x$ iku sawijining
+      variabel. Amarga asil abstraksi
+      lan aplikasi tansah diwiwiti
+      dening tandha kurung bukak, rong
+      paugeran iku ora bisa digunakake
+      kanggo mbangun $M$. Mula
+      pambentukan $M$ mesthi mung
+      siji langkah saka
+      \olref[trm]{defn:term},
+      yaiku \olref[trm]{defn:term-var}.
+    \item $M$ awujud
+      $(\lambd[x][N])$, ing ngendi
+      $x$ iku sawijining variabel lan
+      $N$ iku suku. Suku iki ora bisa
+      dibangun miturut
+      \olref[trm]{defn:term}
+      \olref[trm]{defn:term-var},
+      amarga dudu variabel tunggal.
+      Miturut \olref{lem:app-start},
+      iku dudu asil aplikasi. Dadi
+      $M$ mung bisa dadi asil abstraksi
+      saka~$N$. Miturut hipotesis
+      induksi, pambentukan $N$ uga
+      mung siji.
+    \item $M$ awujud $(PQ)$, ing
+      ngendi $P$ lan $Q$ iku suku.
+      Amarga diwiwiti dening tandha
+      kurung bukak, suku iki ora bisa
+      dibangun miturut
+      \olref[trm]{defn:term}
+      \olref[trm]{defn:term-var}.
+      Miturut \olref{lem:term-start},
+      $P$ ora bisa diwiwiti dening
+      $\lambd$, mula $(PQ)$ ora
+      bisa dadi asil abstraksi.
+      Saiki upamana ana cara liyane
+      kanggo mbangun $M$ kanthi
+      aplikasi, umpamane uga awujud
+      $(P'Q')$. Yen pamisahan iki
+      beda, $P$ dadi perangan wiwitan
+      sejati saka $P'$ utawa kosokbaline;
+      iki ora mungkin miturut
+      \olref{lem:initial}. Mula
+      $P$ lan $Q$ ditemtokake kanthi
+      unik, lan miturut hipotesis
+      induksi, pambentukan $P$
+      lan $Q$ uga mung siji.
+  \end{enumerate}
+\end{proof}
+
+Andharan kang luwih gampang diwaca
+saka proposisi ing ndhuwur kaya
+mangkene:
+\begin{prop}
+  Suku $M$ mung bisa awujud salah
+  siji saka wujud iki:
+  \begin{enumerate}
+    \item $x$, ing ngendi $x$ iku
+      variabel kang ditemtokake kanthi
+      unik dening $M$.
+    \item $(\lambd[x][N])$, ing ngendi
+      $x$ iku variabel lan $N$ iku
+      suku liyane; loro-lorone
+      ditemtokake kanthi unik
+      dening $M$.
+    \item $(PQ)$, ing ngendi $P$ lan
+      $Q$ iku rong suku kang
+      ditemtokake kanthi unik
+      dening $M$.
+  \end{enumerate}
+\end{prop}
+
+\end{document}

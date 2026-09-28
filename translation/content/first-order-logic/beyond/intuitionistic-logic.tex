@@ -1,0 +1,418 @@
+% Part: first-order-logic
+% Chapter: beyond
+% Section: intuitionistic-logic
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{byd}{il}
+
+\olsection{Logika Intuisionistik}
+
+Beda karo logika orde kapindho lan orde luwih dhuwur,
+logika orde kapisan intuisionistik iku wujud
+logika klasik kang diwatesi, kanthi tujuan
+nggambarake cara nalar kang luwih "konstruktif".
+Tuladha-tuladha ing ngisor iki bisa njlentrehake
+sawetara panyebab kang ndhasari gagasan kasebut.
+
+Upamakna ing sawijining dina ana wong kandha
+marang sampeyan yen dheweke wis nemtokake
+wilangan asli~$x$ kang nduweni sipat iki:
+yen $x$ prima, hipotesis Riemann bener;
+yen $x$ komposit, hipotesis Riemann kleru.
+Iki kabar apik!{} Apa hipotesis Riemann
+bener utawa ora isih dadi salah siji
+pitakonan gedhe kang durung kaudhari
+ing matematika. Wong iku kaya-kaya wis
+ngowahi masalah mau dadi pitakonan
+petungan: apa wilangan tartamtu iku
+prima utawa dudu.
+
+Pira nilai ajaib saka $x$ iku?
+Miturut katrangane, $x$ iku wilangan
+asli kang padha karo $7$ yen
+hipotesis Riemann bener, lan
+padha karo $9$ yen ora bener.
+
+Sampeyan nesu lan njaluk dhuwit
+sampeyan dibalekake. Saka sudut
+pandang klasik, katrangan ing
+ndhuwur pancen nemtokake siji-sijine
+nilai~$x$; nanging kang sejatine
+sampeyan karepake yaiku nilai~$x$
+kang diwenehake kanthi \emph{gamblang}.
+
+Minangka tuladha liyane kang mbokmenawa
+ora banget digawe-gawe, gatekna pitakonan
+iki. Kita ngerti yen wilangan irasional
+bisa dipangkatake nganggo pangkat rasional
+lan ngasilake wilangan rasional.
+Upamane, $\sqrt{2}^2 = 2$.
+Kang durung cetha yaiku apa wilangan
+irasional bisa dipangkatake nganggo
+pangkat \emph{irasional} lan ngasilake
+wilangan rasional. Teorema ing ngisor
+iki mangsuli ya:
+
+\begin{thm}
+Ana wilangan irasional $a$ lan $b$
+saéngga $a^b$ rasional.
+\end{thm}
+
+\begin{proof}
+Gatekna $\sqrt{2}^{\sqrt{2}}$.
+Yen iki rasional, prakara rampung:
+kita bisa njupuk $a = b = \sqrt{2}$.
+Yen ora, wilangan iki irasional.
+Mula kita duwe
+\[
+(\sqrt{2}^{\sqrt{2}})^{\sqrt{2}} = \sqrt{2}^{\sqrt{2} \cdot
+  \sqrt{2}} = \sqrt{2}^2 = 2,
+\]
+kang mesthi rasional. Dadi, ing kahanan
+iki, jupuken $a$ minangka
+$\sqrt{2}^{\sqrt{2}}$, lan
+$b$ minangka~$\sqrt 2$.
+\end{proof}
+
+Apa iki dadi bukti kang sah?
+Umume ahli matematika rumangsa
+yen mangkono. Nanging ana bab
+kang isih kurang marem: kita
+wis mbuktekake anane pasangan
+wilangan real kanthi sipat
+tartamtu, tanpa bisa nyebutake
+\emph{pasangan endi} kang dimaksud.
+Asil kang padha bisa dibuktekake
+kanthi cara kang menehi pasangan
+$a$, $b$ \emph{ing bukti iku dhewe}:
+jupuken $a = \sqrt{3}$ lan
+$b = \log_3 4$. Banjur
+\[
+a^b = \sqrt{3}^{\log_3 4} = 3^{1/2 \cdot \log_3 4} = (3^{\log_3
+  4})^{1/2} = 4^{1/2}= 2,
+\]
+amarga $3^{\log_3 x} = x$.
+
+Logika intuisionistik dirancang
+kanggo nggambarake cara nalar
+kang ora ngidini langkah kaya
+ing bukti kapisan. Kanggo
+mbuktekake anane $x$ kang
+nyukupi~$!A(x)$, kita kudu
+menehi~$x$ tartamtu lan bukti
+yen dheweke nyukupi $!A$,
+kaya ing bukti kapindho.
+Kanggo mbuktekake yen $!A$
+utawa $!B$ bener, kita kudu
+bisa mbuktekake salah sijine.
+
+Sacara formal, logika orde kapisan
+intuisionistik dioleh kanthi
+matesi !!a{derivation} sistem
+kanggo logika orde kapisan
+kanthi cara tartamtu.
+Semono uga, ana versi
+intuisionistik kanggo logika
+orde kapindho utawa orde
+luwih dhuwur. Saka sudut
+pandang matematika, sistem
+kasebut mung sistem deduktif
+formal, nanging, kaya kang
+wis kacathet, tujuane
+nggambarake cara nalar
+matematika tartamtu.
+Cara nalar iki bisa dianggep
+minangka cara kang dibenerake
+dening pandangan filsafat
+matematika tartamtu (kayata
+intuisionisme Brouwer);
+uga bisa dianggep minangka
+cara nalar matematika kang
+luwih "konkret" lan marem
+(kaya konstruktivisme Bishop).
+Wong uga bisa padha beda
+panemu apa gambaran formal
+iku cocog karo alesan informal.
+Nanging apa wae pandangan
+filsafat kang dianut,
+logika intuisionistik bisa
+ditliti minangka logika
+kang diwenehake sacara
+formal; lan amarga warna-warna
+alesan, akeh ahli logika
+matematika kang seneng
+nliti logika iki.
+
+Ana tafsiran konstruktif
+informal kanggo panyambung
+intuisionistik, kang lumrahe
+diarani tafsiran BHK
+(saka jeneng Brouwer,
+Heyting, lan Kolmogorov).
+Tafsiran iku kaya mangkene:
+bukti $!A \land !B$
+dumadi saka bukti $!A$
+kang dipasangake karo
+bukti $!B$; bukti
+$!A \lor !B$ dumadi
+saka bukti $!A$ utawa
+bukti $!B$, bebarengan
+karo katrangan gamblang
+endi kang kelakon;
+bukti $!A \lif !B$
+iku prosedur kang ngowahi
+bukti $!A$ dadi bukti~$!B$;
+bukti $\lforall[x][!A(x)]$
+iku prosedur kang ngasilake
+bukti $!A(x)$ kanggo
+saben nilai~$x$; lan bukti
+$\lexists[x][!A(x)]$
+dumadi saka nilai~$x$
+bebarengan karo bukti
+yen nilai iku nyukupi~$!A$.
+Tafsiran iki uga bisa
+diandharake kanthi istilah
+komputasi kang diarani
+"isomorfisme Curry--Howard"
+utawa "paradigma
+!!{formula}s-minangka-tipe":
+!!a{formula} dianggep
+nemtokake jinis tipe data,
+dene bukti dadi objek
+komputasi saka tipe data
+kasebut kang nuduhake
+yen !!{formula} kang
+cocog iku bener.
+
+Logika intuisionistik asring
+dianggep logika klasik
+"tanpa" hukum tengah
+kang disingkirake.
+Teorema ing ngisor iki
+njlentrehake teges
+pernyataan kasebut.
+\begin{thm}
+Sacara intuisionistik,
+skema aksioma ing ngisor
+iki padha kuwat:
+\begin{enumerate}
+\item $(\lnot !A \lif \lfalse) \lif !A$.
+\item $!A \lor \lnot !A$
+\item $\lnot \lnot !A \lif !A$
+\end{enumerate}
+\end{thm}
+Nuduhake yen instansi saka
+salah siji skema bisa dioleh
+saka salah siji skema liyane
+dadi gladhen kang becik
+ing logika intuisionistik.
+
+Sistem deduktif kapisan
+kanggo logika proposisional
+intuisionistik, kang diajokake
+kanggo formalisasi intuisionisme
+Brouwer, digawe kanthi mandiri
+dening Kolmogorov, Glivenko,
+lan Heyting. Formalisasi
+kapisan logika orde kapisan
+intuisionistik (lan saperangan
+matematika intuisionistik)
+asal saka Heyting. Sanadyan
+sawetara skema sah ing logika
+klasik nanging ora sah sacara
+intuisionistik, akeh skema
+liyane kang tetep sah.
+
+\emph{Terjemahan negasi pindho}
+njlentrehake sesambungan
+wigati antarane logika klasik
+lan intuisionistik.
+Terjemahan iki ditemtokake
+kanthi induksi kaya mangkene
+(anggepen $!A^N$ minangka
+terjemahan "intuisionistik"
+saka !!{formula} klasik~$!A$):
+\begin{align*}
+!A^N & \ident \lnot\lnot !A \quad \text{kanggo !!{formula}s atomik $!A$} \\
+(!A \land !B)^N & \ident (!A^N \land !B^N) \\
+(!A \lor !B)^N & \ident  \lnot\lnot (!A^N \lor !B^N) \\
+(!A \lif !B)^N & \ident (!A^N \lif !B^N) \\
+(\lforall[x][!A])^N & \ident \lforall[x][!A^N] \\
+(\lexists[x][!A])^N & \ident \lnot\lnot\lexists[x][!A^N]
+\end{align*}
+Kolmogorov lan Glivenko
+duwe versi terjemahan iki
+kanggo logika proposisional;
+kanggo logika predikat,
+terjemahan iki ditemokake
+kanthi mandiri dening
+G\"odel lan Gentzen.
+Kita duwe
+
+\begin{thm}
+\begin{enumerate}
+\item $!A \liff !A^N$ bisa dibuktekake sacara klasik
+\item Yen $!A$ bisa dibuktekake sacara klasik,
+  mula $!A^N$ bisa dibuktekake sacara intuisionistik.
+\end{enumerate}
+\end{thm}
+
+Saiki kita bisa mbayangake
+pacelathon iki. Ahli matematika
+klasik: "Aku wis mbuktekake
+$!A$!" Ahli matematika
+intuisionistik: "Buktimu
+ora sah. Kang sejatine
+wis kokbuktèkaké yaiku
+$!A^N$." Ahli matematika
+klasik: "Ya ora apa-apa!"
+Miturut ahli matematika
+klasik, ahli intuisionistik
+mung mbedakake bab kang
+sepele amarga loro-lorone
+padha ekuivalen. Nanging
+ahli intuisionistik
+tetep negesake yen ana
+bedane.
+
+Gatekna yen terjemahan
+ing ndhuwur mung ngenani
+logika murni; terjemahan
+iki ora njawab pitakonan
+aksioma \emph{nonlogis}
+endi kang trep kanggo
+matematika klasik lan
+intuisionistik, utawa
+apa sesambungane aksioma
+iku. Nanging teorema
+ing ndhuwur bisa
+dijembarake sethithik
+lan menehi katrangan
+kang migunani:
+
+\begin{thm}
+Yen $\Gamma$ mbuktekake $!A$ sacara klasik,
+$\Gamma^N$ mbuktekake $!A^N$
+sacara intuisionistik.
+\end{thm}
+
+Kanthi tembung liya,
+yen $!A$ bisa dibuktekake
+saka sawetara hipotesis
+sacara klasik, mula
+$!A^N$ bisa dibuktekake
+saka terjemahan negasi
+pindho hipotesis kasebut.
+
+Kanggo nuduhake yen sawijining
+ukara utawa !!{formula}
+proposisional sah sacara
+intuisionistik, cukup
+wenehana bukti. Nanging
+kepiye carane nuduhake
+yen ora sah? Kanggo
+kaperluan iku, kita butuh
+semantik kang sah, lan
+yen bisa uga jangkep.
+Semantik saka Kripke
+cocog kanggo kaperluan iki.
+
+Kita bisa nglakoni kaya
+ing logika klasik:
+nemtokake semantik, banjur
+mbuktekake kasahan lan
+kelengkapan. Nanging ana
+bedane kang prayoga
+digatekake. Ing logika
+klasik, semantike ing
+sawijining pangertèn
+"cetha kanthi dhewe",
+wis kinandhut ing teges
+panyambung-panyambunge.
+Semantik Kripke bisa
+diwenehi alesan intuisi,
+nanging ora krasa kaya
+mesthi kudu mangkono.
+Kajaba iku, gagasan
+!!{structure} klasik
+iku lumrah ing matematika.
+Mula !!a{structure}
+bisa dianggep piranti
+kanggo nliti logika
+orde kapisan klasik,
+utawa logika orde
+kapisan klasik dianggep
+piranti kanggo nliti
+!!{structure}s matematika.
+Kosok balene,
+!!{structure}s Kripke
+mung bisa dianggep
+pambangunan logis;
+ora katon nduweni
+kawigaten matematika
+mandiri.
+
+!!{structure} Kripke
+~$\mModel M = \tuple{W, R, V}$
+kanggo basa proposisional
+dumadi saka himpunan~$W$,
+urutan parsial~$R$
+ing~$W$ kang nduweni
+!!{element} paling cilik,
+lan pangancikan "monoton"
+variabel proposisional
+marang !!{element}s
+saka~$W$. Intuisine,
+!!{element}s saka $W$
+nggambarake "donya"
+utawa "kahanan
+kawruh"; unsur
+$v \geq u$ nggambarake
+"kahanan mbesuk kang
+mungkin" saka~$u$;
+dene variabel
+proposisional kang
+dipasangake marang~$u$
+iku proposisi kang
+diweruhi bener
+ing kahanan~$u$.
+Relasi pemaksaan
+$\mSat{M}{!A}[w]$
+banjur njembarake
+sesambungan iki
+marang sembarang
+!!{formula}s ing
+basa kasebut;
+$\mSat{M}{!A}[w]$
+diwaca "$!A$ bener
+ing kahanan~$w$."
+Sesambungan iki
+ditemtokake kanthi
+induksi kaya mangkene:
+\begin{enumerate}
+\item $\mSat{M}{\Obj p_i}[w]$ yen lan mung yen
+  $\Obj p_i$ kalebu variabel proposisional
+  kang dipasangake marang~$w$.
+\item $\mSat/{M}{\lfalse}[w]$.
+\item $\mSat{M}{(!A \land !B)}[w]$ yen lan mung yen
+  $\mSat{M}{!A}[w]$ lan $\mSat{M}{!B}[w]$.
+\item $\mSat{M}{(!A \lor !B)}[w]$ yen lan mung yen
+  $\mSat{M}{!A}[w]$ utawa $\mSat{M}{!B}[w]$.
+\item $\mSat{M}{(!A \lif !B)}[w]$ yen lan mung yen,
+  saben $w' \geq w$ lan
+  $\mSat{M}{!A}[w']$ njalari
+  $\mSat{M}{!B}[w']$.
+\end{enumerate}
+Minangka gladhen, coba
+tuduhna yen $\lnot (p \land q) \lif
+(\lnot p \lor \lnot q)$
+ora sah sacara intuisionistik
+kanthi nggawe
+!!{structure} Kripke
+kang dadi tuladha
+kosok baline.
+
+\end{document}

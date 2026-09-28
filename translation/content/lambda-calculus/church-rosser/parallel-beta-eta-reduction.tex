@@ -1,0 +1,158 @@
+% Part: lambda-calculus
+% Chapter: church-rosser
+% Section: parallel-beta-eta-reduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{cr}{pbe}
+
+\olsection{Reduksi-$\beta\eta$ paralel}
+
+Ing bagean iki kita mbuktekake
+sipat Church--Rosser kanggo
+reduksi-$\beta\eta$ paralel,
+yaiku konsep reduksi paralel
+kang cocog karo
+reduksi-$\beta\eta$.
+
+\begin{defn}[Reduksi-$\beta\eta$ paralel, $\beredpar$] \ollabel{defn:beredpar}
+  \emph{Reduksi-$\beta\eta$ paralel}
+  ($\beredpar$) ing suku
+  ditetepake kanthi induktif
+  kaya mangkene:
+  \begin{enumerate}
+    \item \ollabel{defn:beredpar1} $x \beredpar x$.
+    \item \ollabel{defn:beredpar2} Yen $N \beredpar N'$, mula $\lambd[x][N] \beredpar
+      \lambd[x][N']$.
+    \item \ollabel{defn:beredpar3} Yen $P \beredpar P'$ lan $Q \beredpar Q'$, mula $PQ \beredpar
+      P'Q'$.
+    \item \ollabel{defn:beredpar4} Yen $N \beredpar N'$ lan $Q \beredpar Q'$, mula
+      $(\lambd[x][N])Q \beredpar \Subst{N'}{Q'}{x}$.
+    \item \ollabel{defn:beredpar5} Yen $N \beredpar N'$, mula $\lambd[x][Nx]
+      \beredpar N'$, kanthi syarat $x \notin FV(N)$.
+  \end{enumerate}
+\end{defn}
+
+\begin{thm}\ollabel{thm:refl}
+  $M \beredpar M$.
+\end{thm}
+
+\begin{proof}
+  Latihan.
+\end{proof}
+
+\begin{prob}
+  Buktekna \olref[lam][cr][pbe]{thm:refl}.
+\end{prob}
+
+\begin{defn}[pangembangan lengkap-$\beta\eta$]\ollabel{defn:becd}
+  \emph{Pangembangan lengkap-$\beta\eta$}~$\becd{M}$
+  saka~$M$ ditetepake
+  kaya mangkene:
+  \begin{align}
+    \becd{x} &= x \ollabel{defn:becd1} \\
+    \becd{(\lambd[x][N])} &= \lambd[x][\becd{N}] \ollabel{defn:becd2}\\
+    \becd{(PQ)} &= \becd{P}\becd{Q} && \text{yen $P$ dudu abstraksi-$\lambd$}
+    \ollabel{defn:becd3} \\
+    \becd{((\lambd[x][N])Q)} &= \Subst{\becd{N}}{\becd{Q}}{x}
+                             \ollabel{defn:becd4} \\
+    \becd{(\lambd[x][Nx])} &= \becd{N} \ollabel{defn:becd5} & \text{yen $x
+                                                      \notin FV(N)$}
+  \end{align}
+  Yen pola abstraksi umum lan
+  pola redex eta padha cocog,
+  aturan redex eta pungkasan
+  kang dienggo.
+\end{defn}
+
+\begin{lem}\ollabel{lem:comp}
+  Yen $M \beredpar M'$
+  lan $R \beredpar R'$,
+  mula $\Subst{M}{R}{y}
+  \beredpar \Subst{M'}{R'}{y}$.
+\end{lem}
+
+\begin{proof}
+  Gunakake induksi ing !!{derivation}
+  saka $M \beredpar M'$.
+
+  Patang kasus kapisan padha
+  polahe karo kasus ing
+  \olref[pb]{lem:comp}.
+  Yen aturan pungkasan
+  \olref{defn:beredpar5},
+  $M$ awujud $\lambd[x][Nx]$
+  lan $M'$ awujud $N'$
+  kanggo sawetara $x$
+  lan~$N'$, kanthi
+  $x \notin FV(N)$
+  lan $N \beredpar N'$.
+  Kita kudu nuduhake
+  $\Subst{(\lambd[x][Nx])}{R}{y}
+  \beredpar \Subst{N'}{R'}{y}$,
+  yaiku
+  $\lambd[x][\Subst{N}{R}{y} x]
+  \beredpar \Subst{N'}{R'}{y}$.
+  Iki nggunakake
+  \olref{defn:beredpar},
+  mligine \olref{defn:beredpar5},
+  lan hipotesis induksi.
+  Binder kudu dipilih seger
+  marang suku pangganti lan
+  variabel substitusi supaya
+  syarat aturan redex eta
+  tetep kacukupan. Justifikasi
+  iki durung diwenehake
+  ing teks sumber.
+\end{proof}
+
+\begin{lem}\ollabel{lem:cont}
+  Yen $M \beredpar M'$,
+  mula $M' \beredpar \becd{M}$.
+\end{lem}
+
+\begin{proof}
+  Gunakake induksi ing !!{derivation}
+  saka $M \beredpar M'$.
+
+  Patang kasus kapisan
+  mirip karo kasus ing
+  \olref[pb]{lem:cont}.
+  Yen aturan pungkasan
+  \olref{defn:beredpar5},
+  $M$ awujud $\lambd[x][Nx]$
+  lan $M'$ awujud $N'$
+  kanggo sawetara $x$,
+  $N$, $N'$ kanthi
+  $x \notin FV(N)$
+  lan $N \beredpar N'$.
+  Kita kudu nuduhake
+  $N' \beredpar
+  \becd{(\lambd[x][Nx])}$,
+  yaiku $N' \beredpar
+  \becd{N}$; iki
+  langsung saka hipotesis
+  induksi.
+  Nanging kasus abstraksi
+  kang uga redex eta
+  butuh pamriksa dhewe
+  amarga loro aturan
+  pangembangan lengkap
+  bisa tumpang tindih.
+\end{proof}
+
+\begin{thm}\ollabel{thm:cr}
+  $\beredpar$ nduweni
+  sipat Church--Rosser.
+\end{thm}
+
+\begin{proof}
+  Langsung saka \olref{lem:cont},
+  kanthi gumantung marang
+  pamriksa kasus-kasus
+  kang kasebut ing ndhuwur.
+\end{proof}
+
+\end{document}

@@ -1,0 +1,166 @@
+% Part: lambda-calculus
+% Chapter: lambda-definability
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{ldf}{int}
+\olsection{Pambuka}
+
+Yen dideleng sapisan, kalkulus
+lambda mung kalkulus ekspresi
+kang abstrak banget kanggo
+makili fungsi lan aplikasi
+fungsi marang fungsi liyane.
+Ora ana ing sintaksis
+kalkulus lambda kang nuduhake
+yen fungsi-fungsi iki gegayutan
+karo jinis objek tartamtu;
+mligine, sintaksise ora nyebut
+bilangan asli.
+Operasi dhasare---aplikasi
+lan abstraksi lambda---bisa
+ditrapake marang fungsi apa wae,
+ora mung fungsi ing bilangan
+asli.
+
+Nanging, kanthi rekadaya,
+kita bisa netepake fungsi
+aritmetika, yaiku fungsi
+ing bilangan asli, ing
+kalkulus lambda.
+Kanggo iku, saben bilangan
+asli~$n \in \Nat$ diwenehi
+suku-$\lambd$ mligi~$\num n$,
+yaiku \emph{numeral Church}
+kanggo~$n$.
+(Numeral Church dijenengi
+miturut Alonzo Church.)
+
+\begin{defn}
+  Yen $n \in \Nat$,
+  \emph{numeral Church}
+  kang cocog, $\num{n}$,
+  makili~$n$:
+  \[
+    \num{n} \ident \lambd[fx][f^n(x)]
+  \]
+  Ing kene $f^n(x)$
+  ateges asil ngetrapake
+  $f$ marang~$x$
+  ping $n$.
+  Contone, $\num{0}$
+  yaiku $\lambd[fx][x]$,
+  lan $\num{3}$ yaiku
+  $\lambd[fx][f(f(f\,x))]$.
+\end{defn}
+  
+Numeral Church $\num n$
+dikodeake minangka suku
+lambda kang makili fungsi
+kang nampa rong argumen,
+$f$ lan $x$, banjur
+ngasilake $f^n(x)$.
+Numeral Church cetha
+ana ing wujud normal.
+
+Perwakilan bilangan asli
+ing kalkulus lambda
+mung migunani yen kita
+bisa ngitung nganggo
+bilangan kasebut.
+Ngitung nganggo numeral
+Church ing kalkulus lambda
+ateges ngetrapake
+suku-$\lambd$~$F$ marang
+numeral Church mau,
+banjur ngreduksi suku
+gabungan~$F\, \num n$
+nganti wujud normal.
+Yen suku iki mesthi
+direduksi nganti wujud
+normal lan wujud normale
+mesthi numeral Church~$\num m$,
+asil pangétungan bisa
+dianggep bilangan~$m$.
+Mula $F$ bisa dianggep
+netepake fungsi
+$f\colon \Nat \to \Nat$,
+yaiku fungsi kang
+$f(n) = m$ yen lan
+mung yen $F\, \num n
+\red \num m$.
+Miturut sipat Church--Rosser,
+wujud normal iku tunggal
+yen ana. Dadi, yen
+$F\, \num n \red \num m$,
+ora ana suku wujud normal
+liya, mligine ora ana
+numeral Church liya,
+kang bisa digayuh saka
+$F \, \num n$ kanthi
+reduksi.
+
+Kosok baline, kanggo
+fungsi $f\colon \Nat \to \Nat$,
+kita bisa takon apa ana
+suku $F$ kang netepake~$f$
+kanthi cara iki.
+Yen ana, kita kandha
+yen $F$ \emph{!!{lambda define}s}~$f$,
+lan $f$ iku
+!!{lambda definable}.
+Konsep iki bisa ditambahi
+marang fungsi kang aritase
+luwih saka siji lan fungsi
+parsial.
+
+\begin{defn}
+Upamana $f\colon \Nat^k \to \Nat$.
+Suku lambda~$F$ diarani
+\emph{!!{lambda define}s}
+$f$ yen kanggo saben
+$n_0$, \dots,~$n_{k-1}$,
+\[
+F \, \num{n_0} \, \num{n_1} \dots \num{n_{k-1}} \red \num{f(n_0, n_1, \dots,
+  n_{k-1})}
+\]
+yen $f(n_0, \dots, n_{k-1})$
+katetepake, lan
+$F \, \num{n_0} \,
+\num{n_1} \dots \num{n_{k-1}}$
+ora nduweni wujud normal
+yen fungsine ora katetepake.
+\end{defn}
+
+Conto kang prasaja banget
+yaiku fungsi konstan.
+Suku $C_k \ident
+\lambd[x][\num{k}]$
+!!{lambda define}s
+fungsi $c_k\colon \Nat \to
+\Nat$ kang nyukupi
+$c_k(n) = k$.
+Jalaran, $C_k \, \num n \ident
+(\lambd[x][\num{k}])\num n
+\redone \num{k}$
+kanggo sembarang~$n$.
+Fungsi identitas
+!!{lambda defined}
+dening $\lambd[x][x]$.
+Fungsi kang luwih rumit
+mesthi luwih angel
+ditetepake lan asring
+mbutuhake rekadaya akeh.
+Mula rada nggumunake yen
+saben fungsi kang bisa
+diitung iku
+!!{lambda definable}.
+Kosok baline uga bener:
+yen fungsi iku
+!!{lambda definable},
+fungsi iku bisa diitung.
+
+\end{document}

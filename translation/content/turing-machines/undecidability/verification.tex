@@ -1,0 +1,417 @@
+% Part: turing-machines 
+% Chapter: undecidability 
+% Section: verification
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{tur}{und}{ver} 
+\olsection{Mriksa Representasi}
+
+\begin{explain}
+Kanggo mriksa yen representasi kita bisa digunakake,
+kita kudu mbuktekake rong bab. Kapisan, kita kudu
+nuduhake yen $M$ mandheg nganggo input~$w$, mula
+$!T(M, w) \lif !E(M, w)$ sah. Banjur kita kudu
+nuduhake kosok baline: yen $!T(M, w) \lif !E(M, w)$
+sah, mula $M$ pancen pungkasane mandheg nalika
+dilakokake nganggo input~$w$.
+
+Strategi kanggo mbuktekake rong bab iki béda banget.
+Kanggo asil kapisan, kita kudu nuduhake yen
+!!a{sentence} logika orde kapisan (yaiku
+$!T(M, w) \lif !E(M, w)$) sah. Cara paling
+gampang yaiku menehi !!a{derivation}. Nanging
+bukti kita kudu lumaku kanggo kabeh $M$ lan $w$,
+mula dudu mung siji !!{sentence} kang mbutuhake
+!!a{derivation}, nanging tanpa wates cacahe.
+Mula kang bisa kita tindakake yaiku mbuktekake
+kanthi induksi yen, apa wae wujud $M$ lan~$w$
+lan pira wae langkah kang dibutuhake $M$
+kanggo mandheg nganggo input~$w$, mesthi ana
+!!a{derivation} saka $!T(M, w) \lif !E(M, w)$.
+
+Mesthi wae, induksi kita bakal adhedhasar cacahe
+langkah kang ditindakake $M$ sadurunge tekan
+konfigurasi mandheg. Ing bukti induktif iki,
+kita bakal netepake yen kanggo saben langkah~$n$
+nalika $M$ lumaku nganggo input~$w$,
+$!T(M, w) \Entails !C(M, w, n)$, ing ngendi
+$!C(M, w, n)$ njlentrehake konfigurasi $M$
+sawisé lumaku nganggo input~$w$ nganti~$n$
+langkah. Yen $M$ mandheg nganggo input~$w$
+sawisé, upamane, $n$ langkah, $!C(M, w, n)$
+bakal njlentrehake konfigurasi mandheg.
+Kita uga bakal nuduhake yen $!C(M, w, n)
+\Entails !E(M, w)$ saben $!C(M, w, n)$
+njlentrehake konfigurasi mandheg. Mula yen
+$M$ mandheg nganggo input~$w$, ana sawijining~$n$
+saengga $M$ ana ing konfigurasi mandheg sawisé
+$n$~langkah. Dadi $!T(M, w) \Entails !C(M, w, n)$,
+ing ngendi $!C(M, w, n)$ njlentrehake konfigurasi
+mandheg; lan amarga ing kahanan iki
+$!C(M, w, n) \Entails !E(M, w)$, kita entuk
+% OLPL-156: Sumber pungkasan iki nulis T(M,w) tanpa tandha formula, sanajan premis lan kesimpulan sadurunge nggunakake !T(M,w).
+$T(M, w) \Entails !E(M, w)$, yaiku
+$\Entails !T(M, w) \lif !E(M, w)$.
+
+Strategi kanggo kosok baline béda banget.
+Ing kene kita nganggep yen
+$\Entails !T(M, w) \lif !E(M, w)$
+lan kudu mbuktekake yen $M$ mandheg
+nganggo input~$w$. Saka hipotesis iki
+kita entuk $!T(M, w) \Entails !E(M, w)$,
+yaiku $!E(M, w)$ bener ing saben
+!!{structure} kang ndadekake $!T(M, w)$
+bener. Mula kita bakal njlentrehake
+!!a{structure}~$\Struct{M}$ kang ndadekake
+$!T(M, w)$ bener: domaine yaiku $\Nat$,
+dene interpretasi kabeh $\Obj Q_q$ lan
+$\Obj S_\sigma$ diwenehake dening
+konfigurasi~$M$ sajrone lumaku nganggo
+input~$w$. Contone,
+% OLPL-157: Sumber ing tuladha iki nyebut T tinimbang M minangka mesin kang lumaku; identitas simbol ditahan nganti audit sumber rampung.
+$\Sat{M}{\Obj Q_q(\num{m}, \num{n})}$
+yen lan mung yen $T$, sawisé lumaku
+nganggo input~$w$ nganti $n$ langkah,
+ana ing kahanan~$q$ lan lagi maca
+kothak~$m$. Amarga miturut hipotesis
+$!T(M, w) \Entails !E(M, w)$,
+lan amarga $\Sat{M}{!T(M, w)}$
+miturut konstruksi, mula $\Sat{M}{!E(M, w)}$.
+Nanging $\Sat{M}{!E(M, w)}$
+yen lan mung yen ana $n \in \Domain{M} = \Nat$
+saengga $M$, nalika lumaku nganggo
+input~$w$, ana ing konfigurasi mandheg
+sawisé~$n$ langkah.
+\end{explain}
+
+\begin{defn} 
+Tetepna $!C(M, w, n)$ minangka !!{sentence}
+\[ 
+\Obj Q_q(\num{m}, \num{n}) \land \Obj S_{\sigma_0}(\num{0}, \num{n})
+\land \dots \land \Obj S_{\sigma_k}(\num{k}, \num{n}) \land
+\lforall[x][(\num{k} < x \lif \Obj S_\TMblank(x, \num{n}))]
+\] 
+ing ngendi $q$ yaiku kahanan $M$ ing wektu~$n$,
+$M$ maca kothak~$m$ ing wektu~$n$, kothak~$i$
+ngemot simbol~$\sigma_i$ ing wektu~$n$ kanggo
+$0 \le i \le k$, lan $k$ yaiku kothak paling
+tengen kang ora kosong ing pita ing wektu~$0$,
+utawa kothak paling tengen kang wis ditekani
+sirah maca-nulis sawisé $n$ langkah, endi
+wae kang luwih gedhé.
+\end{defn}
+
+\begin{lem}\ollabel{lem:halt-config-implies-halt}
+Yen $M$ kang lumaku nganggo input~$w$
+ana ing konfigurasi mandheg sawisé $n$
+langkah, mula $!C(M, w, n) \Entails !E(M, w)$.
+\end{lem}
+
+\begin{proof}
+Upamane $M$ mandheg kanggo input~$w$
+sawisé $n$ langkah. Ana kahanan~$q$,
+kothak~$m$, lan simbol~$\sigma$ saengga:
+\begin{enumerate} 
+\item Sawisé $n$ langkah, $M$ ana ing
+  kahanan~$q$ lan maca kothak~$m$
+  kang ngemot~$\sigma$.
+\item Fungsi transisi $\delta(q, \sigma)$
+  ora ditegesi.
+\end{enumerate}
+$!C(M, w, n)$ njlentrehake konfigurasi iki
+lan ngemot klausa $\Obj Q_{q}(\num{m}, \num{n})$
+lan $\Obj S_{\sigma}(\num{m}, \num{n})$.
+Rong klausa iki bebarengan nyebabake
+$!E(M, w)$:
+\[
+\lexists[x][\lexists[y][(\bigvee_{\tuple{q, \sigma} \in
+      X}(\Obj Q_q(x, y) \land \Obj S_\sigma(x, y)))]]
+\]
+% OLPL-158: Baris sumber iki ngalih saka q,sigma menyang q',sigma' tanpa ngenalake saksi anyar lan nulis S tanpa Obj; rumus beku ditahan nganti audit.
+amarga $\Obj Q_{q'}(\num{m}, \num{n}) \land S_{\sigma'}(\num{m},
+\num{n}) \Entails \bigvee_{\tuple{q, \sigma} \in X} (\Obj Q_q(\num{m},
+\num{n}) \land \Obj S_{\sigma}(\num{m}, \num{n}))$,
+amarga $\tuple{q',\sigma'} \in X$.
+\end{proof}
+
+\begin{explain}
+Mula yen $M$ mandheg kanggo input $w$,
+ana sawijining~$n$ saengga $!C(M, w, n)
+\Entails !E(M,w)$. Saiki kita bakal
+nuduhake yen kanggo saben wektu~$n$,
+$!T(M, w) \Entails !C(M, w, n)$.
+\end{explain}
+
+\begin{lem}
+\ollabel{lem:config}
+Kanggo saben $n$, yen $M$ durung
+mandheg sawisé $n$ langkah, mula
+$!T(M, w) \Entails !C(M, w, n)$.
+\end{lem}
+
+\begin{proof}
+Landhesan induksi: Yen $n = 0$, konjungsi-konjunksi
+ing $!C(M, w, 0)$ uga ana ing $!T(M, w)$,
+mula bisa didudut saka iku.
+
+Hipotesis induksi: Yen $M$ durung mandheg
+sadurunge langkah kapangka-$n$, mula
+$!T(M,w) \Entails !C(M, w, n)$.
+Kita kudu nuduhake yen (kajaba yen
+$!C(M, w, n)$ njlentrehake konfigurasi
+mandheg), $!T(M, w) \Entails
+!C(M, w, n+1)$.
+
+% OLPL-159: Langkah induksi ing sumber mung nganggep n>0, mula kasus n=0 menyang n=1 durung kacathet ing bukti iki.
+Upamane $n > 0$ lan sawisé $n$ langkah,
+$M$ kang diwiwiti nganggo $w$ ana ing
+kahanan~$q$ lan maca kothak~$m$.
+Amarga $M$ ora mandheg sawisé~$n$
+langkah, mesthi ana instruksi kanthi
+salah siji saka telung wujud ing ngisor
+iki ing program~$M$:
+
+\begin{enumerate} 
+\item \ollabel{right} $\delta(q, \sigma) = \tuple{q', \sigma', \TMright}$
+
+\item \ollabel{left} $\delta(q, \sigma) = \tuple{q', \sigma', \TMleft}$
+
+\item \ollabel{stay} $\delta(q, \sigma) = \tuple{q', \sigma', \TMstay}$
+\end{enumerate}
+
+Kita bakal nliti telung kasus iki siji-siji.
+
+\begin{enumerate} 
+\item Upamane ana instruksi kanthi wujud~\olref{right}.
+  Miturut \olref[rep]{defn:tm-descr}\olref[rep]{rep-right}, iki ateges
+\begin{align*} 
+& \lforall[x][\lforall[y][((\Obj Q_{q}(x,
+  y) \land \Obj S_\sigma(x, y)) \lif {}]]\\
+& \qquad (\Obj Q_{q'}(x',
+  y') \land \Obj S_{\sigma'}(x, y') \land !A(x, y)))  
+\intertext{iku konjungsi saka $!T(M,w)$. Saka iki
+  kita entuk !!{sentence} ing ngisor iki
+  (instansiasi universal, $\num{m}$ kanggo~$x$
+  lan $\num{n}$ kanggo~$y$):}
+& (\Obj Q_{q}(\num{m}, \num{n}) \land \Obj S_{\sigma}(\num{m},
+\num{n})) \lif {}\\
+& \qquad (\Obj Q_{q'}(\num{m}', \num{n}') \land
+\Obj S_{\sigma'}(\num{m}, \num{n}') \land !A(\num{m}, \num{n})).
+\intertext{Miturut hipotesis induksi,
+  $!T(M, w) \Entails !C(M, w, n)$, yaiku}
+& \Obj Q_q(\num{m}, \num{n}) \land \Obj S_{\sigma_0}(\num{0}, \num{n})
+\land \dots \land \Obj S_{\sigma_k}(\num{k}, \num{n}) \land \\
+& \qquad\lforall[x][(\num{k} < x \lif \Obj S_\TMblank(x, \num{n}))]\\
+\intertext{Amarga sawisé $n$ langkah,
+  kothak pita~$m$ ngemot~$\sigma$, konjungsi
+  kang cocog yaiku~$\Obj S_\sigma(\num{m}, \num{n})$,
+  mula saka iki kita entuk:}
+& \Obj Q_{q}(\num{m}, \num{n}) \land \Obj S_{\sigma}(\num{m},
+   \num{n})
+\intertext{Saiki kita entuk}
+& \Obj Q_{q'}(\num{m}', \num{n}') \land \Obj S_{\sigma'}(\num{m},
+  \num{n}') \land {}\\
+& \qquad\Obj S_{\sigma_0}(\num{0}, \num{n}') \land \dots \land
+  \Obj S_{\sigma_k}(\num{k}, \num{n}') \land {}\\
+& \qquad \lforall[x][(\num{k} < x \lif \Obj S_\TMblank(x, \num{n}'))]
+\end{align*}
+alesane kaya mangkene: Larik kapisan langsung
+ndherek saka konsekuen implikasi sadurunge,
+kanthi modus ponens. Saben konjungsi ing larik
+tengah---kang ora kalebu $S_{\sigma_m}(\num{m},\num{n}')$
+---ndherek saka konjungsi kang cocog ing
+$!C(M, w, n)$ bebarengan karo $!A(\num{m},\num{n})$.
+% OLPL-160: Sumber nyebut larik tengah ora ngemot sel m, nanging tampilan sakdurunge isih nyerat kabeh S_sigma0 nganti S_sigmak.
+
+Yen $m < k$, $!T(M,w) \Proves \num{m} < \num {k}$
+(\olref[rep]{prop:mlessk}), lan saka transitivitas~$<$,
+kita entuk $\lforall[x][(\num{k} < x \lif \num{m} < x)]$.
+Yen $m = k$, banjur
+$\lforall[x][(\num{k} < x \lif \num{m} < x)]$
+ndherek saka logika wae. Larik pungkasan banjur
+ndherek saka konjungsi kang cocog ing $!C(M, w, n)$,
+$\lforall[x][(\num{k} < x \lif \num{m} < x)]$,
+lan $!A(\num{m},\num{n})$. Yen $m<k$,
+iki wis dadi $!C(M, w, n+1)$.
+
+Saiki upamane $m=k$. Ing kahanan iki, sawisé
+$n+1$ langkah, sirah maca-nulis uga wis
+ndatangi kothak~$k+1$, kang saiki dadi
+kothak paling tengen kang tau ditekani.
+Mula $!C(M, w, n+1)$ nduwé konjungsi anyar,
+$\Obj S_\TMblank(\num{k}',\num{n}')$,
+lan konjungsi pungkasan yaiku
+$\lforall[x][(\num{k}' < x \lif \Obj S_\TMblank(x, \num{n}'))]$.
+Kita kudu mriksa yen rong !!{sentence}s
+iki uga bisa didudut.
+
+Kita wis nduwé $\lforall[x][(\num{k} < x \lif \Obj S_\TMblank(x,
+  \num{n}'))]$. Mligine, iki menehi
+$\num{k} < \num{k}' \lif \Obj S_\TMblank(\num{k}', \num{n}')$.
+Saka aksioma $\lforall[x][x < x']$,
+kita entuk $\num{k} < \num{k}'$.
+Kanthi modus ponens, kita entuk
+$\Obj S_\TMblank(\num{k}',\num{n}')$.
+
+Semono uga, amarga $!T(M,w) \Proves \num{k} < \num{k}'$,
+aksioma transitivitas~$<$ menehi
+$\lforall[x][(\num{k}' < x \lif \Obj
+  S_\TMblank(x, \num{n}'))]$.
+(Buktine iki kita tinggalake dadi latihan.)
+
+\item Upamane ana instruksi kanthi wujud~\olref{left}.
+  Miturut \olref[rep]{defn:tm-descr}\olref[rep]{rep-left},
+\begin{align*} 
+& \lforall[x][\lforall[y][((\Obj Q_{q}(x', y) \land \Obj
+    S_{\sigma}(x', y)) \lif {}]]\\
+& \qquad (\Obj Q_{q'}(x, y') \land \Obj
+  S_{\sigma'}(x', y') \land !A(x, y))) \land {}\\
+& \lforall[y][((\Obj Q_{q_i}(\num{0}, y) \land \Obj S_{\sigma}(\num{0},
+    y)) \lif {}]\\
+& \qquad (\Obj Q_{q_j}(\num{0}, y') \land \Obj S_{\sigma'}(\num{0}, y')
+  \land !A(\num{0}, y)))
+\intertext{iku konjungsi saka $!T(M,w)$.
+  Yen $m>0$, tetepna $l = m - 1$
+  (yaiku $m = l+1$). Konjungsi kapisan
+  saka !!{sentence} ing ndhuwur
+  menehi akibat iki:}
+& (\Obj Q_{q}(\num{l}', \num{n}) \land \Obj S_{\sigma}(\num{l}', \num{n}))
+\lif {} \\
+& \qquad (\Obj Q_{q'}(\num{l}, \num{n}') \land \Obj S_{\sigma'}(\num{l}',
+\num{n}') \land !A(\num{l}, \num{n}))
+\intertext{Yen ora mangkono, tetepna
+  $l = m = 0$ lan gatekna !!{sentence}
+  ing ngisor iki kang ndherek saka
+  konjungsi kapindho:}
+& ((\Obj Q_{q_i}(\num{0}, \num{n}) \land \Obj S_{\sigma}(\num{0}, \num{n})) \lif {}\\
+& \qquad   (\Obj Q_{q_j}(\num{0}, \num{n}') \land \Obj S_{\sigma'}(\num{0}, \num{n}') \land
+!A(\num{0}, \num{n}))) 
+\intertext{Saben ukara iki nyebabake}
+&  \Obj Q_{q'}(\num{l}, \num{n}') \land \Obj S_{\sigma'}(\num{m},
+  \num{n}') \land {}\\
+&\qquad  \Obj S_{\sigma_0}(\num{0}, \num{n}')\land \dots \land
+  \Obj S_{\sigma_k}(\num{k}, \num{n}')  \land {} \\
+& \qquad  \lforall[x][(\num{k} < x
+  \lif \Obj S_\TMblank(x, \num{n}'))]
+\end{align*}
+minangka sadurunge. (Gatekna yen ing kasus
+kapisan $\num{l}' \ident \num{l+1} \ident \num{m}$,
+dene ing kasus kapindho $\num{l} \ident \num{0}$.)
+Nanging iki persis $!C(M, w, n+1)$.
+
+\item Kasus \olref{stay} ditinggal dadi latihan.
+\end{enumerate}
+Kita wis nuduhake yen kanggo sembarang~$n$,
+$!T(M, w) \Entails !C(M, w, n)$.
+\end{proof}
+
+\begin{prob}
+Rampungna kasus~\olref[tur][und][ver]{stay}
+ing bukti \olref[tur][und][ver]{lem:config}.
+\end{prob}
+
+\begin{prob}
+Wenehana !!a{derivation} kanggo
+$\Obj S_{\sigma_i}(\num{i}, \num{n}')$
+saka $\Obj S_{\sigma_i}(\num{i}, \num{n})$
+lan $!A(m, n)$ (kanthi nganggep $i \neq m$,
+yaiku $i < m$ utawa $m < i$).
+\end{prob}
+
+\begin{prob}
+Wenehana !!a{derivation} kanggo
+$\lforall[x][(\num{k}' < x \lif \Obj
+  S_\TMblank(x, \num{n}'))]$ saka
+$\lforall[x][(\num{k} < x \lif \Obj
+  S_\TMblank(x, \num{n}'))]$,
+$\lforall[x][x < x']$, lan
+$\lforall[x][\lforall[y][\lforall[z][ ((x < y \land y < z) \lif x <
+      z)]]]$.)
+\end{prob}
+
+
+\begin{lem}
+\ollabel{lem:valid-if-halt}
+Yen $M$ mandheg nganggo input~$w$,
+mula $!T(M, w) \lif !E(M, w)$ sah.
+\end{lem}
+
+\begin{proof}
+Miturut \olref{lem:config}, kanggo saben
+wektu~$n$, andharan~$!C(M, w, n)$
+ngenani konfigurasi $M$ ing wektu~$n$
+bisa didudut saka~$!T(M, w)$.
+Upamane $M$ mandheg sawisé $k$ langkah.
+Ing wektu iku mesin maca kothak~$m$
+kanggo sawijining~$m \in \Nat$.
+Mula $!C(M, w, k)$ njlentrehake
+konfigurasi mandheg saka~$M$, yaiku
+ngemot konjungsi $\Obj Q_q(\num{m}, \num{k})$
+lan $\Obj S_\sigma(\num{m}, \num{k})$
+kanthi $\delta(q,\sigma)$ ora ditegesi.
+Mula, miturut \olref{lem:halt-config-implies-halt},
+$!C(M, w, k) \Entails !E(M, w)$.
+Nanging amarga $!T(M, w) \Entails !C(M, w, k)$,
+kita entuk $!T(M, w) \Entails !E(M, w)$,
+mula $!T(M, w) \lif !E(M, w)$ sah.
+\end{proof}
+
+
+\begin{explain} 
+Kanggo ngrampungake pamriksan pratelan kita,
+kita uga kudu netepake arah kosok baline:
+yen $!T(M, w) \lif !E(M, w)$ sah,
+mula $M$ pancen mandheg nalika diwiwiti
+nganggo input~$w$.
+\end{explain}
+
+\begin{lem}
+\ollabel{lem:halt-if-valid}
+Yen $\Entails !T(M, w) \lif !E(M, w)$,
+mula $M$ mandheg nganggo input~$w$.
+\end{lem}
+
+\begin{proof}
+Gatekna $\Lang L_M$-!!{structure}~$\Struct M$
+kanthi domain~$\Nat$ kang nginterpretasi
+$\Obj 0$ minangka~$0$, $\prime$~minangka
+fungsi penerus, $<$~minangka relasi luwih
+cilik, lan predikat $\Obj Q_q$
+lan~$\Obj S_\sigma$ kaya mangkene:
+\begin{align*}
+  \Assign{\Obj Q_q}{M} & =
+\Setabs{\tuple{m, n}}{\begin{array}{ll}\text{diwiwiti nganggo~$w$, sawisé~$n$ langkah,}\\ \text{$M$ ana ing kahanan $q$
+  lan maca kothak~$m$}\end{array}} \\
+\Assign{\Obj S_\sigma}{M} & = \Setabs{\tuple{m, n}}{\begin{array}{ll}
+\text{diwiwiti nganggo~$w$, sawisé $n$ langkah,}\\ \text{kothak~$m$ saka $M$ ngemot
+  simbol~$\sigma$}\end{array}}
+\end{align*}
+Kanthi tembung liya, kita mbangun
+!!{structure}~$\Struct{M}$ supaya
+njlentrehake tumindake $M$ kang
+diwiwiti nganggo input~$w$ kanthi
+saben langkah. Cetha yen
+$\Sat{M}{!T(M, w)}$. Yen
+$\Entails !T(M, w) \lif !E(M, w)$,
+mula uga $\Sat{M}{!E(M, w)}$, yaiku
+\[
+\Sat{M}{\lexists[x][\lexists[y][(\bigvee_{\tuple{q, \sigma} \in
+      X}(\Obj Q_q(x, y) \land \Obj S_\sigma(x, y)))]]}.
+\]
+Amarga $\Domain{M} = \Nat$, mesthi ana
+$m$, $n \in \Nat$ saengga
+$\Sat{M}{\Obj Q_q(\num{m}, \num{n}) \land \Obj S_\sigma(\num{m},
+\num{n})}$ kanggo sawijining~$q$
+lan~$\sigma$ kang $\delta(q, \sigma)$
+ora ditegesi. Miturut definisi~$\Struct M$,
+iki ateges $M$ kang diwiwiti nganggo
+input~$w$ sawisé~$n$ langkah ana ing
+kahanan~$q$ lan maca simbol~$\sigma$,
+dene fungsi transisine ora ditegesi,
+yaiku $M$~wis mandheg.
+\end{proof}
+
+\end{document}

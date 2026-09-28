@@ -1,0 +1,210 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{ord-arithmetic}{add}
+\olsection{Panambahan Ordinal}
+
+Upamané kita arep nambahaké $\alpha$ lan $\beta$. Kita bisa nyelehake
+{salinan} $\beta$ persis sawisé salinan $\alpha$. (Kita perlu nganggo
+\emph{salinan}, amarga saka
+\olref[ordinals][basic]{ordinalsaresubsets} kita ngerti yèn $\alpha
+\subseteq \beta$ utawa $\beta \subseteq \alpha$.) Kanthi intuisi, iki
+tegesé ngliwati urutan langkah dawané $\alpha$, \emph{banjur}
+ngliwati urutan langkah dawané $\beta$. Urutan kang diasilaké
+bakal terurut becik; mula miturut
+\olref[ordinals][ordtype]{thmOrdinalRepresentation} urutan iku
+isomorfis karo ordinal (kang tunggal). Ordinal mau bisa dianggep
+minangka \emph{gunggung} $\alpha$ lan $\beta$.
+
+Iki gagasan intuitif ing waliking panambahan ordinal. Kanggo
+netepaké kanthi ketat, kita miwiti saka gagasan nggawe
+\emph{salinan} himpunan. Ing kéné kita nganggo tandha sawenang-wenang,
+$0$ lan $1$, kanggo nandhani asal saben objek:
+
+\begin{defn}\ollabel{defdissum}
+\emph{Gunggung pisah} saka $A$ lan $B$ yaiku $A \disjointsum B = (A\times
+\{0\}) \cup (B \times \{1\})$.
+\end{defn}
+
+Sabanjuré kita netepaké sawijining pengurutan tumrap pasangan ordinal:
+
+\begin{defn}
+Kanggo sembarang ordinal $\alpha_1, \alpha_2, \beta_1, \beta_2$, kandhaa yèn:
+\begin{align*}
+	\tuple{\alpha_1, \alpha_2} \rlexless \tuple{\beta_1, \beta_2}\text{ yen lan mung yen }&
+	\text{utawa $\alpha_2 \in \beta_2$}\\
+	& \text{utawa $\alpha_2 = \beta_2$ lan $\alpha_1 \in \beta_1$}
+\end{align*}
+\end{defn}
+
+Iki pengurutan \emph{leksikografis kuwalik}, amarga unsur kapindho
+diurutaké dhisik, banjur unsur kapisan. Élinga yèn kita arep
+netepaké $\alpha \ordplus \beta$ minangka jinis urutan saka salinan
+$\alpha$ kang diterusaké salinan $\beta$. Kanggo kuwi, kita kandha:
+
+\begin{defn}\ollabel{defordplus}
+Kanggo sembarang ordinal $\alpha$, $\beta$, gunggungé yaiku $\alpha \ordplus
+\beta = \ordtype{\alpha \disjointsum \beta, \rlexless}$.
+\end{defn}
+\noindent
+Wigatèkna yèn ing kéné kita rada nyimpang saka notasi kang ketat;
+sakjané kita kudu nulis “$\Setabs{\tuple{x,y}\in \alpha\disjointsum\beta}{x \rlexless y}$” tinimbang “$\rlexless$”. Nanging, supaya ringkes,
+ing pérangan sabanjuré kita tetep nganggo notasi iki.
+
+Asil ing ngisor iki, bebarengan karo
+\olref[ordinals][ordtype]{thmOrdinalRepresentation}, nandhesaké
+yèn definisi kita wujudé trep:
+
+\begin{lem}\ollabel{ordsumlessiswo}
+$\tuple{\alpha \disjointsum \beta, \rlexless}$ iku pengurutan becik,
+kanggo sembarang ordinal $\alpha$ lan $\beta$.
+\end{lem}
+
+\begin{proof}
+Cetha yèn $\rlexless$ iku pengurutan kang nyambung ing $\alpha \disjointsum \beta$. Kanggo
+nélakaké yèn saben subhimpunan ora kosong nduwèni unsur paling cilik, tetepna $X \subseteq \alpha
+\disjointsum \beta$ kang ora kosong. Upamané $Y$ iku subhimpunan $X$ kang koordinat kapindhoné paling cilik, yaiku\ $Y = \Setabs{\tuple{\gamma, i} \in X}{(\forall \tuple{\delta, j} \in X)i \leq j}$. Saiki pilih unsur ing $Y$ kang koordinat kapisané paling cilik.
+\end{proof}
+\noindent
+Dadi kita wis nduwèni definisi panambahan ordinal kang cetha
+lan eksplisit. Iki sawijining kasunyatan kang ora nggumunaké
+(élinga yèn $1 = \{0\}$, miturut
+\olref[z][infinity-again]{defnomega}):
+\begin{prop}
+$\alpha \ordplus  1 = \ordsucc{\alpha}$, kanggo sembarang ordinal $\alpha$.
+\end{prop}
+
+\begin{proof}
+Gatekna isomorfisme $f$ saka $\ordsucc{\alpha} = \alpha \cup
+\{\alpha\}$ menyang $\alpha\disjointsum1 = (\alpha \times \{0\})
+\cup (\{0\} \times \{1\})$ kang diwènèhaké déning $f(\gamma) =
+\tuple{\gamma, 0}$ kanggo $\gamma \in \alpha$, lan $f(\alpha) = \tuple{0,
+1}$.
+\end{proof}
+\noindent
+Kajaba iku, gampang dituduhaké yèn panambahan manut sawetara
+syarat rekursif:
+
+\begin{lem}\ollabel{ordadditionrecursion}
+Kanggo sembarang ordinal $\alpha, \beta$, kita nduwèni:
+\begin{align*}
+	\alpha\ordplus 0 &= \alpha\\
+	\alpha \ordplus  (\beta\ordplus 1) &= (\alpha \ordplus  \beta) \ordplus  1\\
+	\alpha  \ordplus  \beta &= \supstrict_{\delta < \beta}(\alpha \ordplus  \delta) && \text{yèn $\beta $ ordinal limit}
+\end{align*}
+\end{lem}
+
+\begin{proof}
+Kita priksa saben kasus; kapisan:
+\begin{align*}
+	\alpha \ordplus  0
+	& = \ordtype{(\alpha \times \{0\}) \cup (0 \times \{1\}), \rlexless} \\
+	&= \ordtype{(\alpha \times \{0\}) \cup \emptyset, \rlexless}\\
+	&= \alpha\\
+	\alpha \ordplus (\beta \ordplus  1)
+	%&= \ordtype{(\alpha\times \{0\}) \cup (\ordtype{\beta \ordplus  1}\times \{1\}), \rlexless} \\
+	&= \ordtype{(\alpha\times \{0\}) \cup (\ordsucc{\beta}\times \{1\}), \rlexless} \\
+	&= \ordtype{(\alpha\times \{0\}) \cup (\beta \times \{1\}), \rlexless} \ordplus 1\\
+	&= (\alpha \ordplus  \beta) \ordplus  1
+\end{align*}
+Saiki upamané $\beta \neq \emptyset$ iku ordinal limit. Yèn $\delta < \beta$, uga
+$\delta\ordplus 1 < \beta$, mula $\alpha \ordplus \delta$ iku
+segmen awal sejati saka $\alpha \ordplus \beta$. Mulané $\alpha
+\ordplus \beta$ iku wates ndhuwur ketat kanggo $X = \Setabs{\alpha
+\ordplus \delta}{\delta < \beta}$. Kajaba iku, yèn $\alpha \leq \gamma <
+\alpha \ordplus \beta$, mesthi $\gamma = \alpha \ordplus
+\delta$ kanggo sawatara $\delta < \beta$. Mula $\alpha \ordplus \beta =
+\supstrict_{\delta< \beta}(\alpha\ordplus \delta)$.
+\end{proof}
+
+Nanging ana kasunyatan kang narik kawigaten. Kanggo netepaké
+panambahan ordinal, kita bisa \emph{kosokbaliné} mung nganggo
+Teorema Rekursi Transfinit, lan nyatakaké persamaan rekursi
+persis kaya ing \olref{ordadditionrecursion} (nanging nganggo
+“$\ordsucc{\beta}$” tinimbang “$\beta \ordplus 1$”).
+
+Dadi ana rong cara béda kanggo netepaké operasi ing ordinal.
+Kita bisa netepaké kanthi \emph{sintetis}, yaiku mbangun himpunan
+terurut becik kanthi eksplisit lan njupuk jinis urutané. Utawa
+kita bisa netepaké kanthi \emph{rekursif}, mung kanthi nyatakaké
+persamaan rekursiné. Yèn ditindakake kanthi bener, asile padha.
+Awit \olref[ordinals][ordtype]{thmOrdinalRepresentation} njamin
+yèn persamaan rekursi iki nemtokaké ordinal kang \emph{tunggal}.
+
+Ing akèh babagan, aritmetika ordinal tumindaké padha karo
+panambahan wilangan asli. Contoné, kita bisa mbuktèkaké iki:
+
+\begin{lem}\ollabel{ordinaladditionisnice}
+Yèn $\alpha, \beta, \gamma$ ordinal, mula:
+\begin{enumerate}
+	\item\ollabel{ordaddition1} yèn $\beta < \gamma$, mula $\alpha
+	\ordplus  \beta < \alpha \ordplus  \gamma$
+	\item\ollabel{ordaddition2} yèn $\alpha \ordplus  \beta =
+	\alpha\ordplus \gamma$, mula $\beta = \gamma$
+	\item\ollabel{ordaddition3} $\alpha \ordplus  (\beta \ordplus
+	\gamma) = (\alpha \ordplus  \beta) \ordplus  \gamma$, yaiku
+	panambahan asosiatif
+	\item\ollabel{ordaddition4} yèn $\alpha \leq \beta$, mula $\alpha
+	\ordplus  \gamma \leq \beta \ordplus \gamma$
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+Kita mbuktèkaké \olref{ordaddition3}; sisane dadi latihan. Buktiné
+nganggo Induksi Transfinit Prasaja marang $\gamma$, kanthi
+\olref{ordadditionrecursion}. Nalika $\gamma = 0$:
+\[
+(\alpha \ordplus  \beta) \ordplus  0 = \alpha \ordplus  \beta  = \alpha \ordplus  (\beta \ordplus  0)
+\]
+Nalika $\gamma = \delta\ordplus 1$, upamané kanggo induksi yèn $(\alpha
+\ordplus  \beta) \ordplus  \delta = \alpha \ordplus  (\beta \ordplus
+\delta)$; saiki nganggo \olref{ordadditionrecursion} ping telu:
+\begin{align*}
+	(\alpha \ordplus  \beta) \ordplus  (\delta \ordplus  1) & = ((\alpha \ordplus  \beta) \ordplus  \delta)\ordplus 1\\
+	& = (\alpha \ordplus  (\beta \ordplus  \delta)) \ordplus  1\\
+	& = \alpha \ordplus  ((\beta \ordplus  \delta)\ordplus 1)\\
+	& = \alpha \ordplus  (\beta \ordplus  (\delta\ordplus 1))
+\end{align*}
+Nalika $\gamma$ iku ordinal limit, upamané kanggo induksi yèn
+$\delta \in \gamma$ ngakibataké $(\alpha \ordplus  \beta) \ordplus  \delta =
+\alpha \ordplus  (\beta \ordplus  \delta)$; mula:
+\begin{align*}
+	(\alpha \ordplus  \beta) \ordplus  \gamma & = \supstrict_{\delta < \gamma}((\alpha \ordplus  \beta) \ordplus  \delta) \\
+	&= \supstrict_{\delta < \gamma}(\alpha \ordplus  (\beta \ordplus  \delta))\\
+	&= \alpha \ordplus  \supstrict_{\delta < \gamma}(\beta \ordplus  \delta)\\
+	& = \alpha \ordplus  (\beta \ordplus  \gamma)
+\end{align*}
+\end{proof}
+
+\begin{prob}
+Buktèkna pérangan liya saka
+\olref[sth][ord-arithmetic][add]{ordinaladditionisnice}.
+\end{prob}
+
+Miturut perkara-perkara iki, panambahan ordinal mesthiné wis
+kulina tumrap kita. Nanging ana siji bab wigati kang ndadèkaké
+panambahan ordinal \emph{ora} kaya panambahan wilangan asli.
+
+\begin{prop}\ollabel{ordsumnotcommute}
+Panambahan ordinal {ora} komutatif; $1 \ordplus  \omega = \omega <
+\omega \ordplus  1$.
+\end{prop}
+
+\begin{proof}
+Wigatèkna yèn $1 \ordplus  \omega = \supstrict_{n < \omega} (1 \ordplus n)
+= \omega \in \omega \cup \{\omega\} = \ordsucc{\omega} = \omega
+\ordplus  1$.
+\end{proof}
+\noindent
+Sanadyan wiwitané iki bisa nggumunaké, \emph{sakjané ora perlu}.
+Nalika mikiraké $1 \ordplus \omega$, kita mikiraké jinis urutan kang
+kapikolehi kanthi nyelehake unsur tambahan \emph{sadurungé}
+kabeh wilangan asli. Kaya panalaran babagan Hotel Hilbert ing
+\olref[sfr][infinite][hilbert]{sec}, kanthi intuisi unsur tambahan
+ing wiwitan iki ora ngowahi jinis urutan sakabèhé. Nanging nalika
+mikiraké $\omega \ordplus 1$, kita mikiraké jinis urutan kang
+kapikolehi kanthi nyelehake unsur tambahan \emph{sawisé}
+kabeh wilangan asli. Asilé béda banget!
+
+\end{document}

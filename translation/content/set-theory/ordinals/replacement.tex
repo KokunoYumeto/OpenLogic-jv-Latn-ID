@@ -1,0 +1,99 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{ordinals}{replacement}
+\olsection{Panggantian}
+
+Ing \olref[sth][ordinals][vn]{sec}, kita nerangake
+alesan ngenalake ordinal kanthi ngusulake supaya
+ordinal dianggep minangka tipe urutan, yaiku wakil
+kanonik tumrap urutan becik. Supaya cara iki lumaku,
+kita kudu mbuktekake yen \emph{saben urutan becik
+isomorfis karo sawenehing ordinal}. Iki ngidini
+kita netepake $\ordtype{A, <}$ minangka ordinal
+$\alpha$ kang nyukupi $\tuple{A, <} \isomorphic \alpha$.
+
+Sayange, kita \emph{ora bisa} mbuktekake asil kang
+dikarepake mung nganggo aksioma kang wis dikenalake
+nganti saiki. (Sebabe bakal katon ing
+\olref[replacement][strength]{sec}; saiki cukup
+dimangerteni yen pancen ora bisa.) Kita butuh
+gagasan anyar, yaiku:
+
+\begin{axiom}[Skema Panggantian]
+Kanggo sembarang rumus $\phi(x, y)$, iki sawijining aksioma:
+\begin{quote}
+	kanggo sembarang $A$, yen
+	$(\forall x \in A)\lexists![y][\phi(x,y)]$, mula
+	$\Setabs{y}{(\exists x \in A)\phi(x,y)}$ ana.
+\end{quote}
+\end{axiom}
+\noindent
+Kaya Pamisahan, iki sawijining skema: ngasilake
+aksioma kang cacahé tanpa wates, siji kanggo saben
+$\phi$ kang beda-beda. Skema iki uga bisa (lan
+lumrahe pancen) ditulis mangkene:
+
+\begin{defish}
+Kanggo sembarang rumus $\phi(x,y)$ kang ora ngemot
+``$B$'', iki sawijining aksioma:
+\[
+\forall A[(\forall x \in A)\lexists![y][\phi(x,y)] \lif \exists B\forall y (y \in B \liff (\exists x \in A)\phi(x,y))]
+\]
+\end{defish}
+
+Nanging nalika sepisanan dideleng, rumus iki katon
+ruwet. Akibat langsung saka Panggantian ing ngisor
+iki mbokmenawa nuduhake gagasan intuitif kita kanthi
+luwih \emph{cetha}: \footnote{Term iku ungkapan kang
+nemtokake persis siji obyek (kanggo saben pangisian
+variabel bebasa). Contone, ``$\emptyset$'' iku term
+kang nemtokake himpunan kosong; ``$\{x\}$'' iku
+term kang nemtokake himpunan tunggal saka $x$
+(apa wae $x$); ``$x \cup y$'' iku term kang nemtokake
+gabungan saka $x$ lan $y$ (apa wae nilai loro-lorone).}
+
+\begin{cor}
+Kanggo sembarang term $\tau(x)$ lan sembarang
+himpunan $A$, himpunan iki ana:
+\[
+	\Setabs{\tau(x)}{x \in A} = \Setabs{y}{(\exists x \in A)y = \tau(x)}.
+\]
+\end{cor}
+
+\begin{proof}
+Amarga $\tau$ iku \emph{term},
+$\forall x \lexists![y][\tau(x) = y]$. Mula luwih-luwih
+$(\forall x \in A)\lexists![y][\tau(x) = y]$.
+Dadi $\Setabs{y}{(\exists x \in A)\tau(x) = y}$
+ana miturut Panggantian.
+\end{proof}
+\noindent
+Mula ``Panggantian'' dadi jeneng kang trep kanggo
+aksioma iki: saka sawijining himpunan $A$, kita
+bisa mbentuk himpunan anyar,
+$\Setabs{\tau(x)}{x \in A}$, kanthi ngganti saben
+anggota $A$ nganggo bayangane miturut~$\tau$.
+Miturut notasi kanggo bayangan himpunan dening
+fungsi, kita bisa nulis $\funimage{\tau}{A}$
+kanggo $\Setabs{\tau(x)}{x \in A}$.
+
+Nanging kang wigati, $\tau$ iku \emph{term}.
+Dheweke ora kudu dadi (jeneng kanggo) sawijining
+\emph{fungsi} miturut \olref[sfr][fun][rel]{sec},
+yaiku himpunan tartamtu saka pasangan urut.
+Yen $f$ pancen fungsi miturut teges iku lan
+ditetepake kanggo saben anggota himpunan kang
+dirembug, himpunan
+$\funimage{f}{A} = \Setabs{f(x)}{x \in A}$ mung
+himpunan bagean tartamtu saka $\ran{f}$, lan
+anane wis dijamin nganggo aksioma~$\Zminus$.
+\footnote{Coba pikirna
+$\Setabs{y \in \bigcup \bigcup f}{(\exists x \in A)y = f(x)}$.}
+Kosok baline, Panggantian nambah kakuwatan
+\emph{gedhe} marang aksioma kita, kaya kang bakal
+katon ing \olref[sth][replacement][]{chap}.
+
+
+\end{document}

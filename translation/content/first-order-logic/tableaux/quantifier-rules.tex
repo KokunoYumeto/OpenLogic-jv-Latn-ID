@@ -24,13 +24,13 @@
 \DisplayProof
 \end{defish}
 
-Ing \TRule{\True}{\lforall}, $t$ yaiku term tertutup (yaiku, kang
+Ing \TRule{\True}{\lforall}, $t$ yaiku term katutup (yaiku, kang
 ora ngemot variabel). Ing \TRule{\False}{\lforall}, $a$~yaiku
 !!a{constant} kang ora kena muncul ing endi wae ing cabang ing
 sadhuwure aturan \TRule{\False}{\lforall}. Kita ngarani $a$
 \emph{eigenvariabel} saka inferensi \TRule{\False}{\forall}.
 \footnote{Kita nggunakake istilah ``eigenvariabel'' sanajan $a$ ing
-aturan ndhuwur iku !!a{constant}. Iki ana amarga sebab sajarah.}
+aturan ndhuwur iku !!a{constant}. Iki amarga alesan sajarah.}
 
 \subsection{Aturan kanggo $\lexists$}
 
@@ -46,7 +46,7 @@ aturan ndhuwur iku !!a{constant}. Iki ana amarga sebab sajarah.}
 \DisplayProof
 \end{defish}
 
-Maneh, $t$~yaiku term tertutup, lan $a$~yaiku !!a{constant} kang ora
+Maneh, $t$~yaiku term katutup, lan $a$~yaiku !!a{constant} kang ora
 muncul ing cabang ing sadhuwure aturan~\TRule{\True}{\lexists}. Kita
 ngarani $a$ \emph{eigenvariabel} saka inferensi
 \TRule{\True}{\lexists}.
@@ -66,7 +66,7 @@ ditulis kaya mangkene:
   \RightLabel{\TRule{\False}{\lexists}}
   \UnaryInfC{\sFmla{\False}{\Subst{!A}{t}{x}}}
 \end{prooftree}
-Gatekna yen $t$ bisa wis muncul ing~$!A$, tuladhane $!A$ bisa
+Gatekna yen $t$ bisa uga wis muncul ing~$!A$, tuladhane $!A$ bisa
 awujud~$\Atom{\Obj P}{t,x}$. Mula, nyimpulake
 $\sFmla{\False}{\Atom{\Obj P}{t,t}}$ saka
 ~$ \sFmla{\False}{\lexists[x][\Atom{\Obj P}{t,x}]}$ iku panrapan
@@ -81,15 +81,15 @@ $\sFmla{\False}{\lforall[x][\Atom{\Obj P}{a,x}]}$ nganggo
 
 \begin{explain}
 Ing \TRule{\True}{\lforall} lan \TRule{\False}{\lexists}, ora ana
-watesan eigenvariabel tumrap pilihan term tertutup~$t$. Ing sisih
+watesan eigenvariabel tumrap pilihan term katutup~$t$. Ing sisih
 liyane, ing aturan \TRule{\True}{\lexists} lan
 \TRule{\False}{\lforall}, syarat eigenvariabel nuntut supaya
 !!{constant}~$a$ ora muncul ing endi wae ing cabang ing sadhuwure
 inferensi kang gegayutan. Cathetan koreksi sumber OLPL-014: teks
 Inggris ngarani t tanpa watesan, sanajan definisi aturan ing ndhuwur
-mbatesi t dadi term tertutup; kang ora ana yaiku watesan
+mbatesi t dadi term katutup; kang ora ana yaiku watesan
 eigenvariabel. Syarat iki perlu kanggo mesthekake yen sistem iku sah.
-Tanpa syarat iki, ing ngisor iki mesthine dadi !!{tableau} katutup
+Tanpa syarat iki, ing ngisor iki bakal dadi !!{tableau} katutup
 kanggo $\lexists[x][\formula{A}(x)] \lif
 \lforall[x][\formula{A}(x)]$:
 \begin{center}

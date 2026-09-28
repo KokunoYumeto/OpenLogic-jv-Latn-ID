@@ -1,0 +1,134 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{spine}{foundation}
+
+\olsection{Landhesan}
+
+Kita mung \emph{meh} rampung---durung \emph{temenan}
+rampung---amarga ing $\ZFminus$ ora ana kang
+njamin manawa \emph{saben} himpunan kalebu ing
+sawijining $V_\alpha$, yaiku saben himpunan
+kabentuk ing sawijining tataran.
+
+Saiki, miturut salah siji pangerten matematis kang
+cukup prasaja, kita ora \emph{perlu nggatekake}
+apa ana himpunan ing sanjabane hierarki. (Yen ana,
+kita bisa wae nglirwakake.) Nanging, \emph{konsep}
+kita babagan himpunan dilandhesi gagasan yen saben
+himpunan kabentuk ing sawijining tataran
+(delengen \stageshier{} ing \olref[z][story]{sec}).
+Mula kita kudu nyingkirake kamungkinan anane
+himpunan ing sanjabane hierarki. Kanggo kuwi,
+kita kudu nambah aksioma anyar kang njamin yen
+saben himpunan ana ing salah siji tataran hierarki.
+
+Amarga $V_\alpha$ iku tataran-tataran kita,
+kita bisa nganggep pratelan iki minangka aksioma:
+
+\begin{defish}
+\emph{Regularitas.} $\forall A \exists \alpha\, A \subseteq V_\alpha$
+\end{defish}
+
+Iki pendekatan kang bisa ditampa. Nanging,
+amarga alasan kang bakal diterangake ing bagean
+sabanjure, kita milih aksioma alternatif:
+
+\begin{axiom}[Landhesan]
+$(\forall A \neq \emptyset)(\exists B \in A)A \cap B = \emptyset$.
+\end{axiom}
+
+Kanthi pambuktian kang rada dawa, kita bisa
+nuduhake (ing $\ZFminus$) yen Landhesan
+ngakibatake Regularitas:
+\begin{defn}
+Kanggo saben himpunan $A$, tetepna:
+\begin{align*}
+	\text{cl}_0(A) &= A,\\
+	\text{cl}_{n+1}(A) &= \bigcup \text{cl}_n(A),\\
+	\text{trcl}(A) &= \bigcup_{n < \omega} \text{cl}_{n}(A).
+\end{align*}
+$\text{trcl}(A)$ diarani \emph{panutupan
+transitif} saka $A$.
+\end{defn}
+\noindent
+Jeneng ``panutupan transitif'' iku trep:
+\begin{prop}\ollabel{subsetoftrcl}
+$A \subseteq \trcl{A}$ and $\trcl{A}$ is a transitive set. 
+\end{prop}
+
+\begin{proof}
+Cetha yen $A = \text{cl}_0(A) \subseteq
+\text{trcl}(A)$. Yen $x \in b \in \trcl{A}$,
+mula $b \in \text{cl}_n(A)$ kanggo sawijining
+$n$, saengga $x \in \text{cl}_{n+1}(A)
+\subseteq \text{trcl}(A)$.
+\end{proof}
+
+\begin{lem}\ollabel{lem:TransitiveWellFounded}
+Yen $A$ himpunan transitif, ana sawijining
+$\alpha$ kang nyukupi $A \subseteq V_\alpha$.
+\end{lem}
+
+\begin{proof}
+Elinga definisi ``$\supstrict(X)$'' saka
+\olref[ordinals][opps]{defsupstrict}. Tetepna
+loro himpunan iki:
+\begin{align*}
+	D  &= \Setabs{x \in A}{\forall \delta\ x \nsubseteq V_\delta}\\
+	\alpha &= \supstrict\Setabs{\delta}{(\exists x \in A)
+	(x \subseteq V_\delta \land (\forall \gamma \in \delta)x \nsubseteq V_\gamma)}
+\end{align*}
+Upamane $D = \emptyset$. Dadi yen $x \in A$,
+ana sawijining $\delta$ kang nyukupi
+$x \subseteq V_\delta$ lan, amarga ordinal
+terurut becik, uga nyukupi
+$(\forall \gamma \in \delta)x \nsubseteq V_\gamma$;
+mula $\delta \in \alpha$ lan
+$x \in V_\alpha$ miturut
+\olref[spine][Valphabasic]{Valphabasicprops}.
+Kanthi mangkono, $A \subseteq V_{\alpha}$,
+kaya kang dikarepake.
+
+Dadi cukup mbuktekake $D = \emptyset$.
+Kanggo reductio, upamane kosokbaline. Miturut
+Landhesan, ana sawijining $B \in D \subseteq A$
+kang nyukupi $D \cap B = \emptyset$.
+Yen $x \in B$, mula $x \in A$ amarga $A$
+transitif; lan amarga $x \notin D$, mula
+$\exists \delta\ x \subseteq V_\delta$.
+Saiki tetepna
+\[
+	\beta = \supstrict\Setabs{\delta}{(\exists x \in B)(x \subseteq V_\delta \land (\forall \gamma < \delta)x \nsubseteq V_\gamma)}.
+\]
+Kaya sadurunge, $B \subseteq V_\beta$,
+bertentangan karo $B \in D$.
+\end{proof}
+
+\begin{thm}\ollabel{zfentailsregularity}
+Regularitas lumaku.
+\end{thm}
+
+\begin{proof}
+Tetepna $A$; $A \subseteq \trcl{A}$ miturut
+\olref{subsetoftrcl}, lan himpunan iki transitif.
+Mula ana sawijining $\alpha$ kang nyukupi
+$A \subseteq \trcl{A} \subseteq V_\alpha$
+miturut \olref{lem:TransitiveWellFounded}.
+\end{proof}
+
+Asil-asil iki nuduhake yen $\ZFminus$ mbuktekake
+implikasi $\emph{Landhesan}\Rightarrow\emph{Regularitas}$.
+Ing \olref[spine][rank]{zfminusregularityfoundation},
+kita bakal mbuktekake yen $\ZFminus$ uga mbuktekake
+$\emph{Regularitas}\Rightarrow\emph{Landhesan}$.
+Dadi, Landhesan lan Regularitas iku
+\emph{ekivalen} (relatif marang $\ZFminus$).
+Mula, yen $\ZFminus$ wis ditampa, kita bisa
+menehi dhasar kanggo Landhesan liwat
+ekivalensine karo Regularitas. Dene Regularitas
+bisa langsung diwenehi dhasar saka
+\stageshier{}.
+
+\end{document}

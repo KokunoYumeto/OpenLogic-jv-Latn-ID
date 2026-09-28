@@ -1,0 +1,105 @@
+% Part: first-order-logic
+% Chapter: completeness
+% Section: lindenbaums-lemma
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{com}{lin}}
+      {\olfileid{pl}{com}{lin}}
+
+\olsection{Lemma Lindenbaum}
+
+\begin{explain}
+Saiki kita mbuktekake lemma kang nuduhake yen sembarang himpunan
+konsisten saka !!{sentence}s kamot ing sawijine himpunan ukara kang
+ora mung konsisten, nanging uga !!{complete}. Bukti kasebut lumaku
+kanthi nambah siji !!{sentence} saben langkah lan njamin ing saben
+langkah yen himpunane tetep konsisten. Iki ditindakake supaya kanggo
+saben $!A$, $!A$ utawa $\lnot !A$ ditambahake ing sawijine tahap.
+Gabungan kabeh tahap ing konstruksi kasebut banjur ngemot $!A$ utawa
+negasine~$\lnot !A$, lan mula jangkep. Gabungan iku uga konsisten
+amarga ing saben tahap kita mesthekake supaya ora ngenalake
+inkonsistensi.
+\end{explain}
+
+\begin{lem}[Lemma Lindenbaum]
+\ollabel{lem:lindenbaum} Saben himpunan konsisten~$\Gamma$ ing
+basa~$\Lang{L}$ bisa diambakake dadi !!a{complete} himpunan
+konsisten~$\Gamma^*$.
+\end{lem}
+
+\begin{proof}
+Upamana $\Gamma$ konsisten. Upamana $!A_0$, $!A_1$, \dots{} minangka
+enumerasi kabeh !!{sentence}s saka~$\Lang L$. Tetepna $\Gamma_0 =
+\Gamma$, lan
+\[
+\Gamma_{n+1} =
+\begin{cases}
+\Gamma_n \cup \{ !A_n \} & \textrm{yen $\Gamma_n \cup \{!A_n\}$
+  konsisten;} \\
+\Gamma_n \cup \{ \lnot !A_n \} & \textrm{yen ora.}
+\end{cases}
+\]
+Tetepna $\Gamma^* = \bigcup_{n \geq 0} \Gamma_n$.
+
+Saben $\Gamma_n$ konsisten: $\Gamma_0$ konsisten miturut definisi.
+Yen $\Gamma_{n+1} = \Gamma_n \cup \{!A_n\}$, iki amarga himpunan
+pungkasan kasebut konsisten. Yen ora, $\Gamma_{n+1} = \Gamma_n \cup
+\{\lnot !A_n\}$. Kita kudu mbuktekake yen $\Gamma_n \cup \{\lnot
+!A_n\}$ konsisten. Upamana ora konsisten. Banjur \emph{kalorone}
+$\Gamma_n \cup \{!A_n\}$ lan $\Gamma_n \cup \{\lnot !A_n\}$ ora
+konsisten. Iki ateges $\Gamma_n$ mesthi ora konsisten miturut
+\iftag{FOL}{%
+  \tagrefs{prfAX/{fol:axd:prv:prop:provability-exhaustive},
+    prfSC/{fol:seq:prv:prop:provability-exhaustive},
+    prfND/{fol:ntd:prv:prop:provability-exhaustive},
+    prfTab/{fol:tab:prv:prop:provability-exhaustive}}}{%
+  \tagrefs{prfAX/{pl:axd:prv:prop:provability-exhaustive},
+    prfSC/{pl:seq:prv:prop:provability-exhaustive},
+    prfND/{pl:ntd:prv:prop:provability-exhaustive},
+    prfTab/{pl:tab:prv:prop:provability-exhaustive}}},
+kang cengkah karo hipotesis induksi.
+
+Kanggo saben~$n$ lan saben $i < n$, $\Gamma_i \subseteq \Gamma_n$.
+Iki bisa didudut kanthi induksi prasaja marang~$n$. Kanggo $n=0$,
+ora ana $i < 0$, mula pratelan kasebut bener kanthi langsung. Kanggo
+langkah induksi, upamana pratelan kasebut bener kanggo~$n$. Kita
+nuduhake yen $i < n+1$ mula $\Gamma_i \subseteq \Gamma_{n+1}$. Miturut
+konstruksi, kita duwe $\Gamma_{n+1} = \Gamma_n \cup \{!A_n\}$ utawa
+$= \Gamma_n \cup \{\lnot !A_n\}$. Dadi $\Gamma_n \subseteq
+\Gamma_{n+1}$. Yen $i < n+1$, mula $\Gamma_i \subseteq \Gamma_n$
+miturut hipotesis induksi (yen $i < n$) utawa kasunyatan langsung yen
+$\Gamma_n \subseteq \Gamma_n$ (yen $i = n$). Kita entuk $\Gamma_i
+\subseteq \Gamma_{n+1}$ miturut transitivitas saka~$\subseteq$.
+
+Saka iki bisa didudut yen $\Gamma^*$ konsisten. Katrangane mangkene:
+upamana $\Gamma' \subseteq \Gamma^*$ winates. Cathetan koreksi sumber
+OLPL-046: yen subhimpunan winates iki kosong, konsistensine langsung;
+pilihan indeks paling gedhe ing ukara sabanjure mung kanggo perkara
+kang ora kosong. Saben $!B \in \Gamma'$ uga ana ing~$\Gamma_i$ kanggo
+sawijine~$i$. Upamana $n$ minangka sing paling gedhe ing antarane
+indeks-indeks kasebut. Amarga $\Gamma_i \subseteq \Gamma_n$ yen $i
+\le n$, saben $!B \in \Gamma'$ uga $\in \Gamma_n$, yaiku, $\Gamma'
+\subseteq \Gamma_n$, lan $\Gamma_n$~konsisten. Dadi, saben subhimpunan
+winates $\Gamma' \subseteq \Gamma^*$ konsisten. Miturut
+\iftag{FOL}{%
+  \tagrefs{prfAX/{fol:axd:ptn:prop:proves-compact},
+    prfSC/{fol:seq:ptn:prop:proves-compact},
+    prfND/{fol:ntd:ptn:prop:proves-compact},
+    prfTab/{fol:tab:ptn:prop:proves-compact}}}{%
+  \tagrefs{prfAX/{pl:axd:ptn:prop:proves-compact},
+    prfSC/{pl:seq:ptn:prop:proves-compact},
+    prfND/{pl:ntd:ptn:prop:proves-compact},
+    prfTab/{pl:tab:ptn:prop:proves-compact}}}, $\Gamma^*$ iku
+  konsisten.
+
+Saben !!{sentence} saka $\Frm[L]$ muncul ing daftar kang digunakake
+kanggo nemtokake~$\Gamma^*$. Yen $!A_n \notin \Gamma^*$, iku amarga
+$\Gamma_n \cup \{!A_n\}$ ora konsisten. Nanging banjur $\lnot !A_n
+\in \Gamma^*$, dadi $\Gamma^*$ iku !!{complete}.
+\end{proof}
+
+\end{document}

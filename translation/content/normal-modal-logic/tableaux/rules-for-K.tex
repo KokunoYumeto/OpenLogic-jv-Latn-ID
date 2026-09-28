@@ -1,0 +1,275 @@
+% Part: normal-modal-logic
+% Chapter: tableaux
+% Section: rules-for-K
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{tab}{rul}
+
+\olsection{Aturan kanggo \Ax{K}}
+
+Aturan kanggo panggandheng proposisional lumrah padha karo aturan
+kanggo !!{tableau}s proposisional mawa tandha lumrah, mung ditambahi
+prefiks. Ing saben kasus, aturan kang ditrapake marang !!{formula}
+mawa tandha $\sFmla{S}{!A}[\sigma]$ ngasilake !!{formula}s anyar kang
+uga nduweni prefiks~$\sigma$. Iki cetha miturut intuisi: upamane, yen $!A
+\land !B$ bener ing jagad kang dijenengi~$\sigma$, mula $!A$ lan $!B$
+bener ing~$\sigma$ (dene aturan iki ora mratelakake kabenerane ing jagad
+liyane). Aturan
+proposisional diklumpukake ing \olref{tab:prop-rules}.
+
+\begin{table}
+  \[\def\arraystretch{3}\begin{array}{|c|c|}
+    \hline
+    \AxiomC{\sFmla{\True}{\lnot !A}[\sigma]}
+    \RightLabel{\TRule{\True}{\lnot}}
+    \UnaryInfC{\sFmla{\False}{!A}[\sigma]}
+    \DisplayProof
+    &
+    \AxiomC{\sFmla{\False}{\lnot !A}[\sigma]}
+    \RightLabel{\TRule{\False}{\lnot}}
+    \UnaryInfC{\sFmla{\True}{!A}[\sigma]}
+    \DisplayProof
+    \\[1ex]
+    \hline
+    \AxiomC{\sFmla{\True}{!A \land !B}[\sigma]}
+    \RightLabel{\TRule{\True}{\land}}
+    \UnaryInfC{\sFmla{\True}{!A}[\sigma]}
+    \noLine
+    \UnaryInfC{\sFmla{\True}{!B}[\sigma]}
+    \DisplayProof
+    &
+    \AxiomC{\sFmla{\False}{!A \land !B}[\sigma]}
+    \RightLabel{\TRule{\False}{\land}}
+    \UnaryInfC{$\sFmla{\False}{!A}[\sigma] \quad \mid \quad
+      \sFmla{\False}{!B}[\sigma]$}
+    \DisplayProof
+    \\[2ex]
+    \hline
+    \AxiomC{\sFmla{\True}{!A \lor !B}[\sigma]}
+    \RightLabel{\TRule{\True}{\lor}}
+    \UnaryInfC{$\sFmla{\True}{!A}[\sigma] \quad \mid \quad
+      \sFmla{\True}{!B}[\sigma]$}
+    \DisplayProof
+    &
+    \AxiomC{\sFmla{\False}{!A \lor !B}[\sigma]}
+    \RightLabel{\TRule{\False}{\lor}}
+    \UnaryInfC{\sFmla{\False}{!A}[\sigma]}
+    \noLine
+    \UnaryInfC{\sFmla{\False}{!B}[\sigma]}
+    \DisplayProof
+    \\[2ex]
+    \hline
+    \AxiomC{\sFmla{\True}{!A \lif !B}[\sigma]}
+    \RightLabel{\TRule{\True}{\lif}}
+    \UnaryInfC{$\sFmla{\False}{!A}[\sigma] \quad \mid
+      \quad \sFmla{\True}{!B}[\sigma]$}
+    \DisplayProof
+    &
+    \AxiomC{\sFmla{\False}{!A \lif !B}[\sigma]}
+    \RightLabel{\TRule{\False}{\lif}}
+    \UnaryInfC{\sFmla{\True}{!A}[\sigma]}
+    \noLine
+    \UnaryInfC{\sFmla{\False}{!B}[\sigma]}
+    \DisplayProof
+    \\[2ex]
+    \hline
+  \end{array}\]
+  \caption{Aturan !!{tableau} mawa prefiks kanggo panggandheng
+    proposisional}
+  \ollabel{tab:prop-rules}
+\end{table}
+
+Sarat katutupan padha karo kang ana ing !!{tableau}s lumrah, nanging
+kita mbutuhake supaya ora mung !!{formula}s, nanging uga prefiks-prefikse
+padha. Dadi sawijining cabang katutup yen ngemot loro-lorone
+\[
+\sFmla{\True}{!A}[\sigma] \quad\text{lan}\quad \sFmla{\False}{!A}[\sigma]
+\]
+kanggo sawijining prefiks $\sigma$ lan !!{formula}~$!A$.
+
+Aturan kanggo netepake asumsi uga padha karo kang ana ing
+!!{tableau}s lumrah, kejaba yen kanggo asumsi kita tansah nggunakake
+prefiks~$1$. (Prefiks endi wae sejatine bisa dienggo, anggere padha
+kanggo kabeh asumsi.) Dadi, upamane, kita nyebut yen
+\[
+!B_1, \dots, !B_n \Proves !A
+\]
+yen lan mung yen ana tableau katutup kanggo asumsi
+\[
+\sFmla{\True}{!B_1}[1], \dots, \sFmla{\True}{!B_n}[1],
+\sFmla{\False}{!A}[1].
+\]
+
+Kanggo operator modal\iftag{prvBox}{\iftag{prvDiamond}{~$\Box$
+    lan}{~$\Box$}}{}\iftag{prvDiamond}{~$\Diamond$}{}, prefiks ing
+kesimpulan aturan kang ditrapake marang !!a{formula} kanthi
+prefiks~$\sigma$ yaiku $\sigma.n$. Nanging, $n$ endi kang diidini
+gumantung marang apa tandhane~$\True$ utawa~$\False$.
+
+\iftag{prvBox}{Aturan $\TRule{\True}{\Box}$ ngambakake cabang
+  kang ngemot $\sFmla{\True}{\Box !A}[\sigma]$ kanthi
+  $\sFmla{\True}{!A}[\sigma.n]$.\iftag{prvDiamond}{ Mangkono uga,
+    a}{}}{A}\iftag{prvDiamond}{turan $\TRule{\False}{\Diamond}$
+  ngambakake cabang kang ngemot $\sFmla{\False}{\Diamond !A}[\sigma]$ kanthi
+  $\sFmla{\False}{!A}[\sigma.n]$.}{}
+\iftag{notprvBox,notprvDiamond}{Aturan iki}{Aturan-aturan iki} mung
+bisa ditrapake kanggo prefiks~$\sigma.n$ kang \emph{wis} ana ing
+cabang papan aturan iku ditrapake. Prefiks mangkono diarani ``wis
+dienggo'' (ing cabang kasebut).
+
+\iftag{prvBox}{Aturan $\TRule{\False}{\Box}$ ngambakake cabang
+  kang ngemot $\sFmla{\False}{\Box !A}[\sigma]$ kanthi
+  $\sFmla{\False}{!A}[\sigma.n]$.\iftag{prvDiamond}{ Mangkono uga,
+    a}{}}{A}\iftag{prvDiamond}{turan $\TRule{\True}{\Diamond}$ ngambakake
+  cabang kang ngemot $\sFmla{\True}{\Diamond !A}[\sigma]$ kanthi
+  $\sFmla{\True}{!A}[\sigma.n]$.}{}
+\iftag{notprvBox,notprvDiamond}{Aturan iki}{Aturan-aturan iki},
+nanging, mung bisa ditrapake kanggo prefiks~$\sigma.n$ kang
+\emph{durung} ana ing cabang papan aturan iku ditrapake. Prefiks
+mangkono diarani ``anyar'' (tumrap cabang kasebut).
+
+Aturan-aturan kasebut disajekake ing \olref{tab:rules-K}.
+
+\begin{table}
+  \begin{center}
+    \def\arraystretch{3}\def\fCenter{}
+    \begin{tabular}{|c|c|}
+    \hline
+    \iftag{prvBox}{
+      \AxiomC{\sFmla{\True}{\Box !A}[\sigma]}
+      \RightLabel{\TRule{\True}{\Box}}
+      \UnaryInfC{\sFmla{\True}{!A}[\sigma.n]}
+      \DisplayProof
+      &
+      \AxiomC{\sFmla{\False}{\Box !A}[\sigma]}
+      \RightLabel{\TRule{\False}{\Box}}
+      \UnaryInfC{\sFmla{\False}{!A}[\sigma.n]}
+      \DisplayProof\\
+      $\sigma.n$ wis dienggo & $\sigma.n$ anyar
+      \\[1ex]
+      \hline}{}
+    \iftag{prvDiamond}{
+      \AxiomC{\sFmla{\True}{\Diamond !A}[\sigma]}
+      \RightLabel{\TRule{\True}{\Diamond}}
+      \UnaryInfC{\sFmla{\True}{!A}[\sigma.n]}
+      \DisplayProof
+      &
+      \AxiomC{\sFmla{\False}{\Diamond !A}[\sigma]}
+      \RightLabel{\TRule{\False}{\Diamond}}
+      \UnaryInfC{\sFmla{\False}{!A}[\sigma.n]}
+      \DisplayProof\\
+      $\sigma.n$ anyar & $\sigma.n$ wis dienggo
+      \\[1ex]
+      \hline}{}
+    \end{tabular}
+  \end{center}
+  \caption{Aturan modal kanggo \Ax{K}.}
+  \ollabel{tab:rules-K}
+\end{table}
+
+Sarat yen prefiks kanggo
+\iftag{prvBox}{\TRule{\True}{\Box}}{\TRule{\False}{\Diamond}} kudu wis
+dienggo iku perlu; tanpa sarat iki, kita bakal nganggep ing ngisor iki
+minangka !!{tableau} katutup:
+\iftag{notprvBox,notprvDiamond}{%
+  \iftag{prvBox}{%
+  \begin{oltableau}
+    [\pFmla{\True}{\Box \formula{A}}{1}, just = \TAss
+      [\pFmla{\False}{\lnot\Box\lnot \formula{A}}{1}, just = \TAss
+        [\pFmla{\True}{\formula{A}}{1.1}, just = {\TRule{\True}{\Box}[1]}
+          [\pFmla{\True}{\Box\lnot\formula{A}}{1},
+            just ={\TRule{\False}{\lnot}[2]}
+            [\pFmla{\True}{\lnot\formula{A}}{1.1},
+              just = {\TRule{\True}{\Box}[4]}
+              [\pFmla{\False}{\formula{A}}{1.1},
+                  just ={\TRule{\True}{\lnot}[5]}, close]
+            ]
+          ]
+        ]
+      ]
+    ]
+  \end{oltableau}
+  }{
+  \begin{oltableau}
+    [\pFmla{\True}{\lnot\Diamond\lnot \formula{A}}{1}, just = \TAss
+      [\pFmla{\False}{\Diamond\formula{A}}{1}, just = \TAss
+        [\pFmla{\False}{\formula{A}}{1.1}, just = {\TRule{\False}{\Diamond}[2]}
+          [\pFmla{\False}{\Diamond\lnot\formula{A}}{1},
+            just ={\TRule{\True}{\lnot}[1]}
+            [\pFmla{\False}{\lnot\formula{A}}{1.1},
+              just = {\TRule{\False}{\Diamond}[4]}
+              [\pFmla{\True}{\formula{A}}{1.1},
+                  just ={\TRule{\True}{\lnot}[5]}, close]
+            ]
+          ]
+        ]
+      ]
+    ]
+  \end{oltableau}
+}}{
+  \begin{oltableau}
+    [\pFmla{\True}{\Box \formula{A}}{1}, just = \TAss
+      [\pFmla{\False}{\Diamond \formula{A}}{1}, just = \TAss
+        [\pFmla{\True}{\formula{A}}{1.1}, just = {\TRule{\True}{\Box}[1]}
+          [\pFmla{\False}{\formula{A}}{1.1},
+            just = {\TRule{\False}{\Diamond}[2]}, close]
+        ]
+      ]
+    ]
+\end{oltableau}}
+
+Nanging $\Box \formula{A} \Entails/ \Diamond \formula{A}$, mula sistem
+bukti kita bakal ora sah. Mangkono uga, $\Diamond \formula{A} \Entails/
+\Box \formula{A}$, nanging tanpa sarat yen prefiks kanggo
+\iftag{prvBox}{\TRule{\False}{\Box}}{\TRule{\True}{\Diamond}} kudu
+anyar, ing ngisor iki bakal dadi tableau katutup: \iftag{notprvBox,notprvDiamond}{%
+  \iftag{prvBox}{%
+  \begin{oltableau}
+    [\pFmla{\True}{\lnot\Box\lnot \formula{A}}{1}, just = \TAss
+      [\pFmla{\False}{\Box \formula{A}}{1}, just = \TAss
+        [\pFmla{\False}{\formula{A}}{1.1}, just = {\TRule{\True}{\Box}[2]}
+          [\pFmla{\False}{\Box\lnot\formula{A}}{1},
+            just ={\TRule{\True}{\lnot}[1]}
+            [\pFmla{\False}{\lnot\formula{A}}{1.1},
+              just = {\TRule{\False}{\Box}[4]}
+              [\pFmla{\True}{\formula{A}}{1.1},
+                  just ={\TRule{\False}{\lnot}[5]}, close]
+            ]
+          ]
+        ]
+      ]
+    ]
+  \end{oltableau}
+  }{
+  \begin{oltableau}
+    [\pFmla{\True}{\Diamond \formula{A}}{1}, just = \TAss
+      [\pFmla{\False}{\lnot\Diamond\lnot\formula{A}}{1}, just = \TAss
+        [\pFmla{\True}{\formula{A}}{1.1}, just = {\TRule{\True}{\Diamond}[1]}
+          [\pFmla{\True}{\Diamond\lnot\formula{A}}{1},
+            just ={\TRule{\False}{\lnot}[2]}
+            [\pFmla{\True}{\lnot\formula{A}}{1.1},
+              just = {\TRule{\True}{\Diamond}[4]}
+              [\pFmla{\False}{\formula{A}}{1.1},
+                  just ={\TRule{\True}{\lnot}[5]}, close]
+            ]
+          ]
+        ]
+      ]
+    ]
+  \end{oltableau}
+}}{
+  \begin{oltableau}
+    [\pFmla{\True}{\Diamond \formula{A}}{1}, just = \TAss,name=one
+      [\pFmla{\False}{\Box \formula{A}}{1}, just = \TAss, name=two
+        [\pFmla{\True}{\formula{A}}{1.1}, just = {\TRule{\True}{\Diamond}[1]}
+          [\pFmla{\False}{\formula{A}}{1.1},
+            just = {\TRule{\False}{\Box}[2]}, close]
+        ]
+      ]
+    ]
+  \end{oltableau}}
+
+\end{document}

@@ -1,0 +1,85 @@
+% Section: truth-in-model
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{syn}{tru}
+
+\olsection{Kabeneran ing Sawijining Model}
+
+Kadhangkala kita kepengin ngerti !!{formula}s endi kang bener
+ing saben donya ing sawijining model tartamtu. Ayo ngenalake
+notasi kanggo iki.
+
+\begin{defn}
+  !!^a{formula}~$!A$ \emph{bener ing sawijining model} $M = \tuple{W, R,
+    V}$, ditulis $\mSat{M}{!A}$, yen lan mung yen $\mSat{M}{!A}[w]$
+  kanggo saben $w \in W$.
+\end{defn}
+
+\begin{prop}\ollabel{prop:truthfacts}
+  \begin{enumerate}
+  \item Yen $\mSat{M}{!A}$ mula $\mSat/{M}{\lnot !A}$, nanging \emph{ora}
+    kosok baline.
+  \item Yen $\mSat{M}{!A \lif !B}$ mula $\mSat{M}{!A}$ mung yen
+    $\mSat{M}{!B}$, nanging \emph{ora} kosok baline.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+  \item Yen $\mSat{M}{!A}$ mula $!A$ bener ing kabeh donya ing $W$, lan
+    amarga $W \neq \emptyset$, ora mungkin $\mSat{M}{\lnot!A}$; yen
+    iya, $!A$ kudu bener lan salah bebarengan ing sawijining
+    donya.
+
+Kosok baline, yen $\mSat/{M}{\lnot !A}$ mula $!A$ bener ing
+    sawenehing donya $w \in W$. Saka iki ora mesthi $\mSat{M}{!A}[w]$
+    kanggo \emph{saben}~$w \in W$. Upamane, ing model
+    \olref[rel]{fig:simple}, $\mSat/{M}{\lnot p}$, lan uga $\mSat/{M}{p}$.
+  \item Upamane $\mSat{M}{!A \lif !B}$ lan $\mSat{M}{!A}$; kanggo mbuktekake
+    $\mSat{M}{!B}$, pilih $w \in W$ sembarang. Banjur
+    $\mSat{M}{!A \lif !B}[w]$ lan $\mSat{M}{!A}[w]$, mula
+    $\mSat{M}{!B}[w]$, lan amarga $w$ dipilih sembarang,
+    $\mSat{M}{!B}$.
+
+Kanggo nuduhake yen kosok baline ora lumaku, kita kudu nemokake model
+    $\mModel{M}$ kang nyukupi $\mSat{M}{!A}$ mung yen $\mSat{M}{!B}$, nanging
+    $\mSat/{M}{!A \lif !B}$. Delengen maneh model ing
+    \olref[rel]{fig:simple}: $\mSat/{M}{p}$ lan mula (kanthi vakua)
+    $\mSat{M}{p}$ mung yen $\mSat{M}{q}$. Nanging, $\mSat/{M}{p \lif
+      q}$, amarga $p$ bener nanging $q$ salah ing~$w_1$.
+  \end{enumerate}
+\end{proof}
+
+\begin{prob}
+  Delengen model $\mModel{M}$ ing ngisor iki kanggo basa
+  kang mung ngemot $p_1$, $p_2$, $p_3$ minangka !!{propositional variable}s:
+  \begin{center}
+    \begin{tikzpicture}[modal]
+      \node[world] (w1) [label={[align=right]left:\mTrue{p_1}\\\mFalse{p_2}\\\mFalse{p_3}}]
+            {$w_1$} ; 
+      \node[world] (w2) [label={[align=right]right:\mTrue{p_1}\\\mTrue{p_2}\\\mFalse{p_3}},
+        below right=of w1]  {$w_2$}; 
+      \node[world] (w3) [label={[align=right]right:\mTrue{p_1}\\\mTrue{p_2}\\\mTrue{p_3}},
+        above right=of w2] {$w_3$};
+      \draw[reflexive above] (w3) to (w3); 
+      \draw[->] (w1) to (w2);
+      \draw[->] (w2) to (w3);
+      \draw[->] (w1) to (w3); 
+    \end{tikzpicture}
+  \end{center}
+  Apa !!{formula}s lan skema ing ngisor iki bener ing model $\mModel{M}$,
+  yaiku bener ing saben donya ing $\mModel{M}$? Terangna.
+  \begin{enumerate}
+  \item $p\lif \Diamond p$ (kanggo $p$ atomik);
+  \item $!A\lif \Diamond !A$ (kanggo $!A$ sembarang);
+  \item $\Box p \lif p$ (kanggo $p$ atomik);
+  \item $\lnot p \lif \Diamond \Box p$ (kanggo $p$ atomik);
+  \item $\Diamond \Box !A$ (kanggo $!A$ sembarang);
+  \item $\Box \Diamond p$ (kanggo $p$ atomik). 
+  \end{enumerate}
+\end{prob}
+
+\end{document}

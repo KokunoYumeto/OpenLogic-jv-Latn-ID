@@ -1,0 +1,80 @@
+% Part: incompleteness
+% Chapter: representability-in-q
+% Section: undecidability
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{req}{und}
+\olsection{Ora Bisa Diputusake}
+
+Teori $\Th{T}$ diarani \emph{ora bisa diputusake} yen ora ana
+prosedur komputasi kang, sawisé langkah winates lan tanpa gagal,
+menehi wangsulan bener marang pitakonan ``apa $\Th{T}$
+mbuktekake~$!A$?'' kanggo saben ukara~$!A$ ing basa~$\Th{T}$.
+Dadi $\Th{Q}$ bisa diputusake yen lan mung yen ana prosedur komputasi
+kang, yen diwenehi ukara~$!A$ ing basa aritmetika, mutusake apa
+$\Th{Q} \Proves !A$ utawa ora. Iki bisa digawe luwih persis kanthi
+pitakonan: Apa relasi~$\Prov[\Th{Q}](y)$, kang lumaku kanggo~$y$
+yen lan mung yen $y$ iku bilangan G\"odel saka ukara kang bisa
+dibuktekake ing~$\Th{Q}$, rekursif? Wangsulane: ora.
+
+\begin{thm}
+$\Th{Q}$ ora bisa diputusake, yaiku relasi
+\[
+\Prov[\Th{Q}](y) \defiff \fn{Sent}(y) \land
+\lexists[x][\Prf[\Th{Q}](x, y)]
+\]
+ora rekursif.
+\end{thm}
+
+\begin{proof}
+Upamana relasi iku rekursif. Mula kita bisa ngrampungake masalah
+mandheg kaya mangkene: Yen diwenehi $e$ lan $n$, kita ngerti yen
+$\cfind{e}(n) \fdefined$ yen lan mung yen ana~$s$ saengga $T(e, n, s)$,
+ing ngendi $T$ iku predikat Kleene saka
+\olref[cmp][rec][nft]{thm:kleene-nf}. Amarga $T$ rekursif primitif,
+relasi iku representabel ing~$\Th{Q}$ dening formula $!B_T$, yaiku
+$\Th{Q} \Proves !B_T(\num{e}, \num{n}, \num{s})$ yen lan mung yen
+$T(e, n, s)$. Yen $\Th{Q} \Proves !B_T(\num{e}, \num{n}, \num{s})$,
+mula uga $ \Th{Q} \Proves
+\lexists[y][!B_T(\num{e}, \num{n}, y)]$. Yen ora ana $s$ kaya
+mangkono, mula $\Th{Q} \Proves \lnot !B_T(\num{e}, \num{n}, \num{s})$
+kanggo saben~$s$. Nanging $\Th{Q}$ iku $\omega$-konsisten, yaiku yen
+$\Th{Q} \Proves \lnot !A(\num{n})$ kanggo saben~$n \in \Nat$, mula
+$\Th{Q} \Proves/ \lexists[y][!A(y)]$. Kita ngerti iki amarga
+aksioma-aksioma $\Th{Q}$ bener ing model standar~$\Struct{N}$.
+Mula $\Th{Q} \Proves/
+\lexists[y][!B_T(\num{e}, \num{n}, y)]$. Kanthi tembung liya,
+$\Th{Q} \Proves \lexists[y][!B_T(\num{e}, \num{n}, y)]$ yen lan mung yen
+ana $s$ saengga $T(e, n, s)$, yaiku yen lan mung yen
+$\cfind{e}(n) \fdefined$. Saka $e$ lan~$n$ kita bisa ngitung
+$\Gn{\lexists[y][!B_T(\num{e},
+    \num{n}, y)]}$; tetepna $g(e, n)$ minangka fungsi rekursif
+primitif kang nindakake iku. Mula
+\[
+h(e, n) =
+\begin{cases}
+1 & \text{yen $\Prov[\Th{Q}](g(e, n))$}\\
+0 & \text{yen ora}.
+\end{cases}
+\]
+Iki bakal nuduhake yen $h$ rekursif yen $\Prov[\Th{Q}]$ rekursif.
+Nanging~$h$ ora rekursif miturut
+\olref[cmp][rec][hlt]{thm:halting-problem}, mula
+$\Prov[\Th{Q}]$ uga ora bisa rekursif.
+\end{proof}
+
+\begin{cor}
+Logika orde kapisan ora bisa diputusake.
+\end{cor}
+
+\begin{proof}
+Yen logika orde kapisan bisa diputusake, provabilitas ing~$\Th{Q}$
+uga bisa diputusake, amarga $\Th{Q} \Proves !A$ yen lan mung yen
+$\Proves !T \lif !A$, ing ngendi $!T$ iku konjungsi aksioma-aksioma
+~$\Th{Q}$.
+\end{proof}
+
+\end{document}

@@ -1,0 +1,232 @@
+% Part: computability
+% Chapter: recursive-functions
+% Section: sequences
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{rec}{seq}
+\olsection{Rerangken}
+
+Himpunan fungsi rekursif primitif iku pancen kukuh.
+Nanging kita bisa nindakake luwih akeh maneh sawisé
+duwé cara kang nyukupi kanggo ngolah \emph{rerangken}.
+Kita bakal nggandhengake rerangken winates saka wilangan
+asli karo wilangan asli kanthi cara iki: rerangken
+$\langle a_0, a_1, a_2, \dots, a_k \rangle$ cocog karo
+wilangan
+\[
+p_0^{a_0+1} \cdot p_1^{a_1+1} \cdot p_2^{a_2+1} \cdot \dots \cdot
+p_k^{a_k+1}.
+\]
+Kita nambah siji ing saben pangkat supaya, upamane,
+rerangken $\langle 2, 7, 3\rangle$ lan
+$\langle 2, 7, 3, 0, 0 \rangle$ nduwé kode numerik
+kang béda. Kita bisa nggunakake $0$ utawa~$1$ kanggo
+ngode rerangken kosong; supaya cetha, $\emptyseq$
+nglambangake~$0$.
+
+Pangodean rerangken iki bisa lumaku amarga Teorema
+Dhasar Aritmetika: saben wilangan asli $n \ge 2$ bisa
+ditulis kanthi siji cara waé ing wangun
+\[
+n = p_0^{a_0} \cdot p_1^{a_1} \cdot \dots \cdot p_k^{a_k}
+\]
+kanthi $a_k \ge 1$. Iki njamin yen pemetaan
+$\tuple{}(a_0, \dots, a_k) = \tuple{a_0, \dots, a_k}$
+iku injektif: rerangken kang béda dipetakake menyang
+wilangan kang béda; saben wilangan cocog karo paling
+akeh siji rerangken.
+
+Saiki kita bakal nuduhake yen operasi nemtokake dawa
+rerangken, nemtokake unsur kaping~$i$, nambahi unsur
+ing pucuk rerangken, lan nyambungake rong rerangken,
+kabeh rekursif primitif.
+
+\begin{prop}
+  Fungsi $\len{s}$, kang ngasilake dawa rerangken
+  $s$, iku rekursif primitif.
+\end{prop}
+
+\begin{proof}
+  Upamana $R(i, s)$ iku relasi kang ditegesi kanthi
+  \[
+  R(i, s) \text{ yen lan mung yen }
+  p_i \mid s \land p_{i+1} \nmid s.
+  \]
+  $R$ cetha rekursif primitif. Yen $s$ dadi kode
+  rerangken kang ora kosong, yaiku
+  \[
+  s = p_0^{a_0+1} \cdot \dots \cdot p_{k}^{a_{k}+1},
+  \]
+  $R(i,s)$ bener yen $p_i$ iku prima paling gedhe
+  kang nyukupi $p_i \mid s$, yaiku $i = k$.
+  Dadi dawa $s$ iku $i+1$ yen lan mung yen
+  $p_i$ prima paling gedhe kang mbagi~$s$,
+  mula kita bisa netepake
+  \[
+  \len{s} =
+  \begin{cases}
+    0 & \text{yen $s = 0$ utawa $s = 1$} \\
+    1 + \bmin{i < s}{R(i, s)} & \text{yen ora}
+  \end{cases}
+  \]
+  Ing kéné kita bisa nggunakake minimisasi mawa wates,
+  amarga mung ana siji $i$ kang nyukupi $R(i,s)$
+  nalika $s$ kode rerangken, lan yen $i$ ana,
+  nilaine luwih cilik tinimbang~$s$.
+\end{proof}
+
+\begin{prop}
+  Fungsi $\fn{append}(s,a)$, kang ngasilake rerangken
+  sawisé $a$ ditambahake ing pucuk rerangken $s$,
+  iku rekursif primitif.
+\end{prop}
+
+\begin{proof}
+  $\fn{append}$ bisa ditegesi kanthi:
+  \[
+  \fn{append}(s,a) =
+  \begin{cases}
+    2^{a+1} & \text{yen $s = 0$ utawa $s = 1$} \\
+    s \cdot p_{\len{s}}^{a+1} & \text{yen ora.}
+  \end{cases}
+  \]
+\end{proof}
+
+\begin{prop}
+  Fungsi $\fn{element}(s,i)$, kang ngasilake unsur
+  kaping~$i$ saka $s$ (unsur wiwitan diarani
+  unsur kaping~$0$), utawa $0$ yen $i$ luwih
+  gedhe tinimbang utawa padha karo dawa $s$,
+  iku rekursif primitif.
+\end{prop}
+
+\begin{proof}
+Gatekna yen $a$ iku unsur kaping~$i$ saka~$s$
+yen lan mung yen $p_i^{a+1}$ iku pangkat~$p_i$
+paling gedhe kang mbagi~$s$, yaiku
+$p_i^{a+1} \mid s$ nanging
+$p_i^{a+2} \nmid s$. Dadi:
+  \[
+  \fn{element}(s,i) =
+  \begin{cases}
+    0 & \mbox{yen $i \geq \len{s}$} \\
+    \bmin{a < s}{(p_i^{a+2} \nmid s)} & \text{yen ora.}
+  \end{cases}
+  \]
+\end{proof}
+
+Tinimbang nggunakake jeneng resmi fungsi-fungsi
+kang wis ditegesi mau, kita ngenalake notasi kang
+luwih ringkes. Kita bakal nulis $(s)_i$ kanggo
+$\fn{element}(s,i)$, lan
+$\tuple{s_0, \dots, s_k}$ kanggo ngringkes
+\[
+\fn{append}(\fn{append}(\dots \fn{append}(\emptyseq,s_0)
+\dots),s_k).
+\]
+Gatekna yen dawa $s$ yaiku~$k$, unsur-unsur $s$ yaiku
+$(s)_0$, \dots,~$(s)_{k-1}$.
+
+\begin{prop}
+Fungsi $\fn{concat}(s,t)$, kang nyambungake rong
+rerangken, iku rekursif primitif.
+\end{prop}
+
+\begin{proof}
+  Kita ngupaya fungsi $\fn{concat}$ kang nyukupi
+  \[
+    \fn{concat}(\tuple{a_0, \dots, a_k}, \tuple{b_0, \dots, b_l}) =
+    \tuple{a_0, \dots, a_k, b_0, \dots, b_l}.
+  \]
+  Kita nggunakake fungsi pambantu
+  $\fn{hconcat}(s,t,n)$ kang nyambungake $n$
+  unsur wiwitan saka $t$ menyang~$s$.
+  Fungsi iki bisa ditegesi kanthi rekursi
+  primitif kaya mangkene:
+  \begin{align*}
+    \fn{hconcat}(s,t,0) & = s\\
+    \fn{hconcat}(s,t,n+1) & = \fn{append}(\fn{hconcat}(s,t,n),(t)_n)
+    \intertext{Banjur kita bisa netepake $\fn{concat}$ kanthi}
+    \fn{concat}(s,t) & = \fn{hconcat}(s,t,\len{t}).
+  \end{align*}
+\end{proof}
+
+Kita bakal nulis $s \concat t$ kanggo
+$\fn{concat}(s,t)$.
+
+Migunani yen kita bisa menehi wates kanggo kode
+numerik rerangken adhedhasar dawane lan unsur
+paling gedhene. Upamana $s$ rerangken kang
+dawane~$k$, lan saben unsuré kurang saka utawa
+padha karo sawenehing wilangan~$x$. Dadi $s$
+nduwé paling akeh $k$ faktor prima, saben faktor
+ora ngluwihi~$p_{k-1}$, lan pangkate ora
+ngluwihi $x+1$ ing faktorisasi prima~$s$.
+Kanthi tembung liya, kanggo dawa positif, yen
+kita netepake
+\[
+\fn{sequenceBound}(x,k) = p_{k-1}^{k \cdot (x+1)},
+\]
+kode numerik rerangken~$s$ kang kasebut mau
+ora ngluwihi~$\fn{sequenceBound}(x,k)$.
+Yen dawane nol, kita netepake nilai wates iki
+dadi siji supaya uga nyakup kode nol kanggo
+rerangken kosong.
+% OLPL-128: p_{k-1} ora ditegesi kanggo k=0;
+% nilai wates siji nutupi kode kosong nol.
+
+Wates rerangken iki menehi cara kanggo netepake
+fungsi-fungsi anyar kanthi panggolekan mawa wates.
+Umpamane, kita bisa netepake $\fn{concat}$
+kanthi panggolekan mawa wates. Kita mung perlu
+nulis \emph{spesifikasi} rekursif primitif kanggo
+obyek kang digoleki (kode numerik rerangken
+gandhengan), lan wates panggolekane. Iki kang
+nyukupi:
+\begin{align*}
+  \fn{concat}(s,t) = {} & \bmin{v \leq \fn{sequenceBound}(s+t,\len{s} +
+    \len{t})}{} \\
+  & \quad(\len{v} = \len{s} + \len{t} \land {}\\
+    & \qquad \bforall{i < \len{s}}{((v)_i = (s)_i)} \land {} \\
+      & \qquad \bforall{j < \len{t}}{((v)_{\len{s}+j} = (t)_j)})
+\end{align*}
+% OLPL-129: Wates sumber nganggo v < B, sanadyan kode bisa padha B.
+% OLPL-130: Rong kuantor kudu sejajar supaya unsur t tetep dipriksa
+% nalika s kosong.
+
+\begin{prob}
+Tuduhna yen ana fungsi rekursif primitif~$\fn{sconcat}(s)$
+kang nyukupi
+\[
+\fn{sconcat}(\tuple{s_0, \dots, s_k}) = s_0 \concat \dots \concat s_k.
+\]
+\end{prob}
+
+\begin{prob}
+Tuduhna yen ana fungsi rekursif primitif~$\fn{tail}(s)$
+kang nyukupi
+\begin{align*}
+  \fn{tail}(\emptyseq) & = 0 \text{ lan}\\
+  \fn{tail}(\tuple{s_0, \dots, s_{k}}) & = \tuple{s_1, \dots, s_{k}}.
+\end{align*}
+\end{prob}
+
+\begin{prop}
+  \ollabel{prop:subseq}
+  Fungsi $\fn{subseq}(s, i, n)$ kang ngasilake
+  rerangken bagean saka $s$ kang dawane~$n$ wiwit
+  unsur kaping~$i$, iku rekursif primitif.
+\end{prop}
+
+\begin{proof}
+  Latihan.
+\end{proof}
+
+\begin{prob}
+  Buktikna \olref[cmp][rec][seq]{prop:subseq}.
+\end{prob}
+  
+\end{document}

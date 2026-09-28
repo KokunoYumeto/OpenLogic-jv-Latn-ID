@@ -1,0 +1,190 @@
+% Part: computability
+% Chapter: machines-computations
+% Section: halting-problem
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{tur}{und}{hal}
+\olsection{Masalah Mandheg}
+
+\begin{explain}
+Upamane kita wis netepake sawijining enumerasi
+andharan mesin Turing. Mula saben mesin Turing
+nduwé \emph{indeks}: panggonane ing enumerasi
+andharan mesin Turing $M_1$, $M_2$, $M_3$, \dots{}.
+
+Kita ngerti yen mesthi ana fungsi kang ora bisa
+diitung dening mesin Turing: himpunan andharan
+mesin Turing---lan kanthi mangkono himpunan mesin
+Turing---iku !!{enumerable}, nanging himpunan
+kabeh fungsi saka $\Nat$ menyang $\Nat$ ora.
+Nanging kita uga bisa nemokake tuladha fungsi
+tartamtu kang ora bisa diitung. Salah sijine
+yaiku fungsi mandheg.
+\end{explain}
+
+\begin{defn}[Fungsi mandheg]
+ \emph{Fungsi mandheg}~$h$ ditegesi minangka
+\[
+h(e,n) =
+\begin{cases}
+  \text{0} & \text{yen mesin~$M_e$ ora mandheg kanggo input $n$} \\
+  \text{1} & \text{yen mesin~$M_e$ mandheg kanggo input $n$}
+\end{cases}
+\]
+\end{defn}
+
+\begin{defn}[Masalah mandheg]
+\emph{Masalah Mandheg} yaiku masalah nemtokake
+(kanggo sembarang $e$, $n$) apa mesin Turing~$M_e$
+mandheg kanggo input kang dumadi saka~$n$ guratan.
+\end{defn}
+
+\begin{explain}
+Kita bakal nuduhake yen~$h$ ora bisa diitung
+dening mesin Turing kanthi nuduhake yen fungsi
+kang gegayutan, yaiku~$s$, ora bisa diitung
+dening mesin Turing. Bukti iki gumantung marang
+kasunyatan yen apa wae kang bisa diitung dening
+mesin Turing uga bisa diitung dening mesin Turing
+tertib (\olref[mac][dis]{sec}), lan yen rong mesin
+Turing bisa disambung dadi siji mesin
+(\olref[mac][cmb]{sec}).
+\end{explain}
+
+\begin{defn} Fungsi~$s$ ditegesi minangka
+\[
+s(e) =
+\begin{cases}
+  \text{0} & \text{yen mesin~$M_e$ ora mandheg kanggo input $e$} \\
+  \text{1} & \text{yen mesin~$M_e$ mandheg kanggo input $e$}
+\end{cases}
+\]
+\end{defn}
+
+\begin{lem}
+Fungsi~$s$ ora bisa diitung dening mesin Turing.
+\end{lem}
+
+\begin{proof}
+Kanggo nggayuh kontradiksi, upamane fungsi~$s$
+bisa diitung dening mesin Turing. Yen mangkono
+ana mesin Turing~$S$ kang ngitung~$s$.
+% OLPL-153: Sumber nyamake mandheg ing kothak kapisan karo definisi mesin tertib; teorema sadurunge marengake milih mesin tertib, kang banjur nduwe sipat kothak kapisan.
+Tanpa nyuda umume, kita bisa milih mesin
+iki kang tertib. Mula nalika $S$ mandheg,
+sirah maca kothak kapisan. Mesin iki bisa
+``disambung'' karo mesin liyane~$J$ kang
+mandheg yen diwiwiti nganggo input~$0$
+(yaiku yen maca $\TMblank$ ing kahanan
+wiwitan nalika sirah ana ing kothak sisih
+tengen simbol pucuk pita), lan yen ora,
+terus mlaku menyang tengen tanpa mandheg.
+$S \concat J$, mesin kang diasilake kanthi
+nyambung $S$ karo~$J$, iku mesin Turing;
+mula mesin iki $M_e$ kanggo sawijining~$e$
+(yaiku ana ing enumerasi). Miwitiana $M_e$
+nganggo input~$e$~$\TMstroke$. Ana rong
+kemungkinan: $M_e$ mandheg utawa ora mandheg.
+\begin{enumerate}
+\item Upamane $M_e$ mandheg kanggo input
+  $e$~$\TMstroke$. Mula $s(e) = 1$.
+  Dadi $S$, nalika diwiwiti nganggo~$e$,
+  mandheg kanthi output siji $\TMstroke$
+  ing pita. Banjur $J$ diwiwiti nalika ana
+  $\TMstroke$ ing pita. Ing kahanan iki
+  $J$ ora mandheg. Nanging $M_e$ iku mesin
+  $S \concat J$, mula tumindake kudu padha
+  karo $S$ kang diterusake dening $J$
+  (yaiku ing kahanan iki terus mlaku
+  menyang tengen tanpa mandheg). Mula
+  $M_e$ ora mungkin mandheg kanggo input
+  $e$~$\TMstroke$.
+
+\item Saiki upamane $M_e$ ora mandheg
+  kanggo input $e$~$\TMstroke$.
+  Mula $s(e) = 0$, lan $S$, nalika
+  diwiwiti nganggo input~$e$, mandheg
+  kanthi pita kosong. $J$,~yen diwiwiti
+  nganggo pita kosong, langsung mandheg.
+  Maneh, $M_e$ nindakake apa kang
+  ditindakake $S$ banjur~$J$, mula
+  $M_e$ mesthi mandheg kanggo input
+  $e$~$\TMstroke$.
+\end{enumerate}
+Ing saben kasus kita tekan kontradiksi karo
+panganggep kita. Mula mesin Turing~$S$
+ora mungkin ana: $s$~ora bisa diitung
+dening mesin Turing.
+\end{proof}
+
+\begin{thm}[Masalah Mandheg Ora Bisa Dirampungake]
+\ollabel{thm:halting-problem} Masalah mandheg ora bisa
+dirampungake, yaiku fungsi~$h$ ora bisa diitung
+dening mesin Turing.
+\end{thm}
+
+\begin{proof}
+Upamane $h$ bisa diitung dening mesin Turing,
+umpamane dening mesin Turing~$H$. Kita bisa
+nggunakake $H$ kanggo mbangun mesin Turing
+kang ngitung~$s$: dhisik, gawe salinan input
+(dipisahake dening simbol~$\TMblank$). Banjur
+balia menyang wiwitan lan lumakna~$H$.
+Kita mesthi bisa gawe mesin kang nindakake
+langkah kapisan (delengen
+\cref{tur:mac:dis:prob:copier}), lan yen $H$
+ana, kita bisa ``nyambung'' mesin iku
+karo mesin panyalin mau kanggo ngasilake
+mesin anyar kang nemtokake apa $M_e$
+mandheg kanggo input~$e$, yaiku ngitung~$s$.
+Nanging kita wis nuduhake yen mesin kaya
+mangkono ora mungkin ana. Mula $h$~uga
+ora bisa diitung dening mesin Turing.
+\end{proof}
+
+\begin{prob}
+Masalah Mandheg Telu (3-Halt) yaiku masalah
+menehi prosedur putusan kanggo nemtokake apa
+mesin Turing kang dipilih sembarang mandheg
+nalika diwenehi input telung~$\TMstroke$
+ing pita kang liyane kosong. Buktekna
+yen masalah 3-Halt ora bisa dirampungake.
+\end{prob}
+
+\begin{prob}
+Tuduhna yen masalah mandheg bisa dirampungake
+kanggo pasangan mesin Turing lan input $M_e$
+lan~$n$ kang $e \neq n$, mula masalah iku
+uga bisa dirampungake kanggo kasus kang
+$e = n$.
+\end{prob}
+
+\begin{prob}
+Kita wis mbuktekake yen masalah mandheg
+ora bisa dirampungake yen inpute wilangan~$e$
+kang nemtokake mesin Turing~$M_e$ liwat
+enumerasi kabeh mesin Turing. Kepriye yen
+andharan mesin Turing saka
+\olref[tur][und][enu]{sec} oleh langsung
+digunakake minangka input? Apa ana mesin
+Turing kang mutusake masalah mandheg nanging
+nampa andharan mesin Turing minangka input,
+dudu indeks? Jlentrehna apa sebabe bisa
+utawa ora.
+\end{prob}
+
+\begin{prob} Tuduhna yen fungsi \emph{parsial}~$s'$ kang ditegesi minangka
+  \[
+  s'(e) =
+  \begin{cases}
+    \text{1} & \text{yen mesin~$M_e$ mandheg kanggo input $e$}\\
+    \text{ora ditegesi} & \text{yen mesin~$M_e$ ora mandheg kanggo input $e$}
+  \end{cases}
+  \]
+  \emph{bisa} diitung dening mesin Turing.
+\end{prob}
+
+\end{document}

@@ -1,0 +1,391 @@
+% Part: first-order-logic
+% Chapter: syntax-and-semantics
+% Section: assignments
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{syn}{ass}
+
+\olsection{Pangaji Variabel}
+
+\begin{explain}
+Pangaji !!{variable}~$s$ menehi nilai marang \emph{saben}
+variabel---lan cacah variabel iku tanpa wates. Mesthi wae,
+syarat iki ora perlu. Kita njaluk supaya pangaji !!{variable}
+menehi nilai marang kabeh !!{variable}s mung amarga cara iki
+nggampangake prakara. Nilai term~$t$, lan apa !!a{formula}~$!A$
+dicukupi ing !!a{structure} relatif marang~$s$, mung gumantung
+marang nilai kang diwenehake~$s$ marang !!{variable}s ing~$t$
+lan !!{variable}s bebas ing~$!A$. Iki isi saka rong proposisi
+sabanjure. Supaya teges "gumantung marang" cetha, kita nuduhake
+yen rong pangaji variabel kang padha ing kabeh variabel
+ing~$t$ menehi nilai kang padha, lan yen rong pangaji variabel
+padha ing kabeh variabel bebas saka~$!A$, mula $!A$
+dicukupi relatif marang pangaji kapisan yen lan mung yen
+dicukupi relatif marang pangaji kapindho.
+\end{explain}
+
+\begin{prop}\ollabel{prop:valindep}
+Yen !!{variable}s ing term~$t$ kalebu $x_1$, \dots,~$x_n$, lan
+$s_1(x_i) = s_2(x_i)$ kanggo $i = 1$, \dots,~$n$, mula $\Value{t}{M}[s_1]
+= \Value{t}{M}[s_2]$.
+\end{prop}
+
+\begin{proof}
+Kanthi induksi miturut keruwetan~$t$. Kanggo kasus dhasar, $t$ bisa
+dadi !!a{constant} utawa salah siji variabel~$x_1$, \dots,~$x_n$.
+Yen $t = c$, mula $\Value{t}{M}[s_1] = \Assign{c}{M} =
+\Value{t}{M}[s_2]$. Yen $t = x_i$, $s_1(x_i) = s_2(x_i)$ miturut
+hipotesis proposisi, mula $\Value{t}{M}[s_1] = s_1(x_i) =
+s_2(x_i) = \Value{t}{M}[s_2]$.
+
+Kanggo langkah induksi, upamakna $t = \Atom{f}{t_1, \dots, t_k}$
+lan pratelan iki bener kanggo $t_1$, \dots, $t_k$. Mula
+\begin{align*}
+  \Value{t}{M}[s_1] & = \Value{\Atom{f}{t_1, \dots, t_k}}{M}[s_1] \\
+  & = \Assign{f}{M}(\Value{t_1}{M}[s_1], \dots, \Value{t_k}{M}[s_1]).
+\intertext{Kanggo $j = 1$, \dots,~$k$, !!{variable}s ing~$t_j$
+    kalebu $x_1$, \dots,~$x_n$. Miturut hipotesis induksi,
+    $\Value{t_j}{M}[s_1] = \Value{t_j}{M}[s_2]$. Dadi,}
+\Value{t}{M}[s_1] & = \Value{\Atom{f}{t_1, \dots, t_k}}{M}[s_1] \\
+  & = \Assign{f}{M}(\Value{t_1}{M}[s_1], \dots, \Value{t_k}{M}[s_1]) \\
+  & = \Assign{f}{M}(\Value{t_1}{M}[s_2], \dots, \Value{t_k}{M}[s_2]) \\
+  & = \Value{\Atom{f}{t_1, \dots, t_k}}{M}[s_2] = \Value{t}{M}[s_2].
+\end{align*}
+\end{proof}
+
+\begin{prop}\ollabel{prop:satindep}
+Yen !!{variable}s bebas ing $!A$ kalebu $x_1$, \dots,~$x_n$, lan
+$s_1(x_i) = s_2(x_i)$ kanggo $i = 1$, \dots,~$n$, mula $\Sat{M}{!A}[s_1]$
+yen lan mung yen $\Sat{M}{!A}[s_2]$.
+\end{prop}
+
+\begin{proof}
+Kita nggunakake induksi miturut keruwetan $!A$. Ing kasus dhasar,
+nalika $!A$ atom, $!A$ bisa awujud:
+\iftag{prvTrue}{$\ltrue$,}{}
+\iftag{prvFalse}{$\lfalse$,}{}
+$\Atom{R}{t_1, \dots, t_k}$ kanggo predikat $k$-panggonan $R$
+lan term $t_1$, \dots,~$t_k$, utawa $\eq[t_1][t_2]$ kanggo term
+$t_1$ lan~$t_2$. Ing rong kasus pungkasan, kita mung nuduhake
+arah maju saka !!{biconditional}, amarga bukti arah walike simetris.
+
+\begin{enumerate}
+\tagitem{prvTrue}{%
+  \indcase{!A}{\ltrue}{loro-lorone $\Sat{M}{\indfrm}[s_1]$ lan
+    $\Sat{M}{\indfrm}[s_2]$.}}{}
+
+\tagitem{prvFalse}{%
+  \indcase{!A}{\lfalse}{loro-lorone $\Sat/{M}{!A}[s_1]$ lan
+    $\Sat/{M}{!A}[s_2]$.}}{}
+
+\item
+  \indcase{!A}{\Atom{R}{t_1, \ldots, t_k}}{upamakna
+    $\Sat{M}{\indfrm}[s_1]$. Mula
+    \[
+    \langle \Value{t_1}{M}[s_1], \ldots, \Value{t_k}{M}[s_1] \rangle
+    \in \Assign{R}{M}.
+    \]
+    Kanggo $i = 1$, \dots,~$k$, $\Value{t_i}{M}[s_1] =
+    \Value{t_i}{M}[s_2]$ miturut \olref{prop:valindep}. Mula uga
+    $\langle \Value{t_1}{M}[s_2], \ldots, \Value{t_k}{M}[s_2] \rangle
+    \in \Assign{R}{M}$, saengga $\Sat{M}{\indfrm}[s_2]$.
+    Cathetan koreksi sumber OLPL-079: entri kapisan ing
+    tupel panutup sumber migunakake indeks umum, dudu indeks
+    kapisan; indeks wiwitan kang cocog dibalekake.}
+\item
+  \indcase{!A}{\eq[t_1][t_2]}{upamakna $\Sat{M}{\indfrm}[s_1]$.
+    Mula $\Value{t_1}{M}[s_1] = \Value{t_2}{M}[s_1]$. Dadi,
+    \begin{align*}
+      \Value{t_1}{M}[s_2] & = \Value{t_1}{M}[s_1]
+      & \text{(miturut \olref{prop:valindep})} \\
+      & = \Value{t_2}{M}[s_1]
+      & \text{(amarga $\Sat{M}{\eq[t_1][t_2]}[s_1]$)}\\
+      &= \Value{t_2}{M}[s_2]
+      & \text{(miturut \olref{prop:valindep}),}
+    \end{align*}
+    mula $\Sat{M}{\eq[t_1][t_2]}[s_2]$.}
+\end{enumerate}
+
+Saiki upamakna $\Sat{M}{!B}[s_1]$ yen lan mung yen
+$\Sat{M}{!B}[s_2]$ kanggo kabeh !!{formula}s~$!B$
+kang kurang rumit tinimbang~$!A$. Langkah induksi dipérang
+miturut operator utama~$!A$. Ing saben kasus, kita mung
+nuduhake arah maju saka !!{biconditional}; bukti arah
+walike simetris. Ing kabeh kasus kajaba kuantor, kita
+ngetrapake hipotesis induksi marang sub-!!{formula}s~$!B$
+saka~$!A$. Variabel bebas ing~$!B$ kalebu variabel bebas
+ing~$!A$. Mula, yen $s_1$ lan $s_2$ padha ing variabel bebas
+ing~$!A$, loro pangaji iku uga padha ing variabel bebas
+ing~$!B$, saengga hipotesis induksi bisa ditrapake marang~$!B$.
+
+\begin{enumerate}
+\tagitem{defNot}{}{%
+  \iftag{probNot}{%
+    \indcase!{!A}{\lnot !B}{}}{%
+    \indcase{!A}{\lnot !B}{yen $\Sat{M}{\indfrm}[s_1]$, mula
+      $\Sat/{M}{!B}[s_1]$, dadi miturut hipotesis induksi,
+      $\Sat/{M}{!B}[s_2]$, saengga $\Sat{M}{\indfrm}[s_2]$.}}}
+
+\tagitem{defAnd}{}{%
+  \iftag{probAnd}{%
+    \indcase!{!A}{!B \land !C}{}}{%
+    \indcase{!A}{!B \land !C}{yen $\Sat{M}{\indfrm}[s_1]$, mula
+      $\Sat{M}{!B}[s_1]$ lan $\Sat{M}{!C}[s_1]$, mula miturut
+      hipotesis induksi, $\Sat{M}{!B}[s_2]$ lan
+      $\Sat{M}{!C}[s_2]$. Dadi $\Sat{M}{\indfrm}[s_2]$.}}}
+
+\tagitem{defOr}{}{%
+  \iftag{probOr}{%
+    \indcase!{!A}{!B \lor !C}{}}{%
+    \indcase{!A}{!B \lor !C}{yen $\Sat{M}{\indfrm}[s_1]$, mula
+      $\Sat{M}{!B}[s_1]$ utawa $\Sat{M}{!C}[s_1]$. Miturut
+      hipotesis induksi, $\Sat{M}{!B}[s_2]$ utawa
+      $\Sat{M}{!C}[s_2]$, saengga $\Sat{M}{\indfrm}[s_2]$.}}}
+
+\tagitem{defIf}{}{%
+  \iftag{probIf}{%
+    \indcase!{!A}{!B \lif !C}{}}{%
+    \indcase{!A}{!B \lif !C}{yen $\Sat{M}{\indfrm}[s_1]$, mula
+    $\Sat/{M}{!B}[s_1]$ utawa $\Sat{M}{!C}[s_1]$. Miturut
+    hipotesis induksi, $\Sat/{M}{!B}[s_2]$ utawa
+    $\Sat{M}{!C}[s_2]$, saengga $\Sat{M}{\indfrm}[s_2]$.}}}
+
+\tagitem{defIff}{}{%
+  \iftag{probIff}{%
+    \indcase!{!A}{!B \liff !C}{}}{%
+    \indcase{!A}{!B \liff !C}{yen $\Sat{M}{\indfrm}[s_1]$, mula
+      salah siji $\Sat{M}{!B}[s_1]$ lan $\Sat{M}{!C}[s_1]$,
+      utawa $\Sat/{M}{!B}[s_1]$ lan $\Sat/{M}{!C}[s_1]$.
+      Miturut hipotesis induksi, salah siji
+      $\Sat{M}{!B}[s_2]$ lan $\Sat{M}{!C}[s_2]$ utawa
+      $\Sat/{M}{!B}[s_2]$ lan $\Sat/{M}{!C}[s_2]$.
+      Ing salah siji kasus kasebut, $\Sat{M}{\indfrm}[s_2]$.}}}
+
+\tagitem{defEx}{}{%
+  \iftag{probEx}{%
+    \indcase!{!A}{\lexists[x][!B]}{}}{%
+    \indcase{!A}{\lexists[x][!B]}{yen $\Sat{M}{\indfrm}[s_1]$,
+      ana $m \in \Domain{M}$ kang ndadekake
+      $\Sat{M}{!B}[\Subst{s_1}{m}{x}]$.
+      Upamakna $s_1' = \Subst{s_1}{m}{x}$ lan $s_2' =
+      \Subst{s_2}{m}{x}$. Variabel bebas ing~$!B$ kalebu $x_1$,
+      \dots, $x_n$, lan $x$. $s_1'(x_i) = s_2'(x_i)$, amarga
+      $s_1'$ lan $s_2'$ iku varian-$x$ saka $s_1$ lan~$s_2$
+      miturut urutane, lan miturut hipotesis
+      $s_1(x_i) = s_2(x_i)$. $s_1'(x) = s_2'(x) = m$
+      miturut cara kita netepake $s_1'$ lan~$s_2'$.
+      Mula hipotesis induksi bisa ditrapake marang $!B$ lan
+      $s_1'$, $s_2'$, saengga $\Sat{M}{!B}[s_2']$.
+      Dadi, amarga $s_2' = \Subst{s_2}{m}{x}$,
+      ana $m \in \Domain{M}$ kang ndadekake
+      $\Sat{M}{!B}[\Subst{s_2}{m}{x}]$, saengga
+      $\Sat{M}{\indfrm}[s_2]$.}}}
+
+\tagitem{defAll}{}{%
+  \iftag{probAll}{%
+    \indcase!{!A}{\lforall[x][!B]}{}}{%
+    \indcase{!A}{\lforall[x][!B]}{yen $\Sat{M}{\indfrm}[s_1]$,
+      mula kanggo saben $m \in \Domain{M}$,
+      $\Sat{M}{!B}[\Subst{s_1}{m}{x}]$. Kita arep nuduhake yen
+      uga kanggo saben $m \in \Domain{M}$,
+      $\Sat{M}{!B}[\Subst{s_2}{m}{x}]$. Dadi pilih
+      $m \in \Domain{M}$ sembarang, lan gatekna
+      $s_1' = \Subst{s_1}{m}{x}$ lan $s_2' =
+      \Subst{s_2}{m}{x}$. Cathetan koreksi sumber OLPL-080:
+      rong pangaji turunan ing sumber nganggo pangaji dhasar
+      kang ora ditetepake; saben turunan saiki nganggo pangaji
+      dhasare dhewe. Kita nduweni $\Sat{M}{!B}[s_1']$.
+      Variabel bebas ing~$!B$ kalebu $x_1$, \dots, $x_n$, lan $x$.
+      $s_1'(x_i) = s_2'(x_i)$, amarga $s_1'$ lan $s_2'$ iku
+      varian-$x$ saka $s_1$ lan~$s_2$ miturut urutane, lan miturut
+      hipotesis $s_1(x_i) = s_2(x_i)$. $s_1'(x) = s_2'(x) = m$
+      miturut cara kita netepake $s_1'$ lan~$s_2'$. Mula hipotesis
+      induksi bisa ditrapake marang~$!B$ lan~$s_1'$, $s_2'$,
+      lan kita nduweni $\Sat{M}{!B}[s_2']$. Iki bener
+      kanggo saben $m \in \Domain{M}$, yaiku
+      $\Sat{M}{!B}[\Subst{s_2}{m}{x}]$ kanggo kabeh~$m \in
+      \Domain{M}$, saengga $\Sat{M}{\indfrm}[s_2]$.}}}
+\end{enumerate}
+Kanthi induksi, kita oleh $\Sat{M}{!A}[s_1]$ yen lan mung yen
+$\Sat{M}{!A}[s_2]$ kapan wae !!{variable}s bebas ing $!A$
+kalebu $x_1$, \dots, $x_n$ lan $s_1(x_i)=s_2(x_i)$
+kanggo $i = 1$, \dots,~$n$.
+\end{proof}
+
+\begin{probtag}{probNot,probOr,probAnd,probIf,probIff,probEx,probAll}
+Rampungna bukti \olref[fol][syn][ass]{prop:satindep}.
+\end{probtag}
+
+\begin{explain}
+!!^{sentence}s ora nduweni variabel bebas, mula sembarang
+rong pangaji variabel menehi nilai kang padha marang kabeh
+variabel bebas (kang cacahé nol) saka saben ukara. Dadi
+proposisi kang mentas dibuktekake ngandharake yen apa
+!!a{sentence} dicukupi ing struktur relatif marang pangaji
+variabel pancen ora gumantung marang pangaji kasebut.
+Kita bakal nyathet kasunyatan iki. Iki dadi dhasar
+definisi sabanjure bab relasi nyukupi !!a{sentence} ing
+!!a{structure} tanpa nyebut pangaji variabel.
+\end{explain}
+
+\begin{cor}
+\ollabel{cor:sat-sentence}
+Yen $!A$ iku !!a{sentence} lan $s$ pangaji variabel, mula
+$\Sat{M}{!A}[s]$ yen lan mung yen $\Sat{M}{!A}[s']$
+kanggo saben pangaji variabel~$s'$.
+\end{cor}
+
+\begin{proof}
+  Upamakna $s'$ sembarang pangaji variabel. Amarga $!A$ iku
+  !!a{sentence}, ukara iku ora nduweni variabel bebas,
+  mula saben pangaji variabel~$s'$ kanthi otomatis menehi
+  nilai kang padha marang kabeh variabel bebas ing~$!A$
+  kaya kang diwenehake~$s$. Dadi syarat
+  \olref{prop:satindep} kacukupan, lan kita oleh
+  $\Sat{M}{!A}[s]$ yen lan mung yen $\Sat{M}{!A}[s']$.
+\end{proof}
+
+\begin{defn}
+\ollabel{defn:satisfaction}
+Yen $!A$ iku !!a{sentence}, kita kandha yen
+!!a{structure}~$\Struct M$ \emph{nyukupi}~$!A$,
+$\Sat{M}{!A}$, yen lan mung yen $\Sat{M}{!A}[s]$
+kanggo kabeh pangaji variabel~$s$.
+\end{defn}
+
+Yen $\Sat{M}{!A}$, kita uga kandha kanthi prasaja yen
+\emph{$!A$ bener ing~$\Struct{M}$.} Gagasan relasi nyukupi
+lumrahé bisa dijembarake saka !!{sentence}s siji-siji
+marang himpunan !!{sentence}s.
+
+\begin{defn}
+\ollabel{defn:sat}
+Yen $\Gamma$ iku himpunan !!{sentence}s~$\Gamma$, kita
+kandha yen !!a{structure}~$\Struct M$ \emph{nyukupi}~$\Gamma$,
+$\Sat{M}{\Gamma}$, yen lan mung yen $\Sat{M}{!A}$
+kanggo kabeh $!A \in \Gamma$.
+\end{defn}
+
+\begin{prop}\ollabel{prop:sentence-sat-true}
+  Upamakna $\Struct{M}$ iku !!a{structure}, $!A$ iku
+  !!a{sentence}, lan $s$ pangaji variabel.
+  $\Sat{M}{!A}$ yen lan mung yen $\Sat{M}{!A}[s]$.
+\end{prop}
+
+\begin{proof}
+Gladhen.
+\end{proof}
+
+\begin{prob}
+Buktèkna \olref[fol][syn][ass]{prop:sentence-sat-true}
+\end{prob}
+
+\begin{prop}\ollabel{prop:sat-quant}
+  Upamakna $!A(x)$ mung ngemot $x$ minangka variabel bebas,
+  lan $\Struct M$ iku !!a{structure}. Mula:
+  \begin{tagenumerate}{prvEx,prvAll}
+    \tagitem{prvEx}{$\Sat{M}{\lexists[x][!A(x)]}$ yen lan mung yen
+      $\Sat{M}{!A(x)}[s]$ kanggo paling ora siji pangaji variabel~$s$.}{}
+    \tagitem{prvAll}{$\Sat{M}{\lforall[x][!A(x)]}$ yen lan mung yen
+      $\Sat{M}{!A(x)}[s]$ kanggo kabeh pangaji variabel~$s$.}{}
+\end{tagenumerate}
+\end{prop}
+
+\begin{proof}
+Gladhen.
+\end{proof}
+
+\begin{prob}
+Buktèkna \olref[fol][syn][ass]{prop:sat-quant}.
+\end{prob}
+
+\begin{prob}
+\DeclareRobustCommand{\VDash}{\mathrel{||}\joinrel\Relbar}
+Upamakna $\Lang L$ iku basa tanpa !!{function}s. Kanggo
+!!{structure}~$\Struct M$, $c$ !!a{constant}, lan
+$a \in \Domain M$, tetapna $\Struct M[a/c]$ minangka
+!!{structure} kang padha karo~$\Struct M$ kajaba
+$\Assign{c}{M[a/c]} = a$. Tetepna $\Struct M \VDash !A$
+kanggo !!{sentence}s~$!A$ kaya mangkene:
+\begin{enumerate}
+\tagitem{prvFalse}{%
+  \indcase{!A}{\lfalse}{ora $\Struct{M} \VDash \indfrm$.}}{}
+
+\tagitem{prvTrue}{%
+  \indcase{!A}{\ltrue}{$\Struct{M} \VDash \indfrm$.}}{}
+
+\item \indcase{!A}{\Atom{R}{d_1, \dots, d_n}}{$\Struct M \VDash \indfrm$
+  yen lan mung yen $\langle \Assign{d_1}{M}, \dots, \Assign{d_n}{M} \rangle \in
+  \Assign{R}{M}$.}
+
+\item \indcase{!A}{\eq[d_1][d_2]}{$\Struct M \VDash \indfrm$ yen lan mung yen
+  $\Assign{d_1}{M} = \Assign{d_2}{M}$.}
+
+\tagitem{prvNot}{%
+  \indcase{!A}{\lnot !B}{$\Struct{M} \VDash \indfrm$ yen lan mung yen
+    ora $\Struct{M} \VDash {!B}$.}}{}
+
+\tagitem{prvAnd}{%
+  \indcase{!A}{(!B \land !C)}{$\Struct{M} \VDash
+    \indfrm$ yen lan mung yen $\Struct{M} \VDash!B$
+    lan $\Struct{M} \VDash !C$.}}{}
+
+\tagitem{prvOr}{%
+  \indcase{!A}{(!B \lor !C)}{$\Struct{M} \VDash \indfrm$ yen lan mung yen
+    $\Struct{M} \VDash !B$ utawa $\Struct{M} \VDash !C$
+    (utawa kalorone).}}{}
+
+\tagitem{prvIf}{%
+  \indcase{!A}{(!B \lif !C)}{$\Struct{M} \VDash \indfrm$ yen lan mung yen
+    ora $\Struct {M} \VDash !B$ utawa $\Struct M \VDash !C$
+    (utawa kalorone).}}{}
+
+\tagitem{prvIff}{%
+  \indcase{!A}{(!B \liff !C)}{$\Struct{M} \VDash {\indfrm}$ yen lan mung yen
+    salah siji $\Struct{M} \VDash {!B}$ lan
+    $\Struct{M} \VDash {!C}$ kalorone, utawa
+    $\Struct{M} \VDash {!B}$ lan $\Struct{M} \VDash {!C}$
+    kalorone ora bener.}}{}
+
+\tagitem{prvAll}{%
+  \indcase{!A}{\lforall[x][!B]}{$\Struct{M} \VDash {\indfrm}$
+    yen lan mung yen kanggo kabeh $a \in \Domain{M}$,
+    $\Struct{M[a/c]} \VDash \Subst{!B}{c}{x}$,
+    yen $c$ ora katon ing~$!B$.}}{}
+
+\tagitem{prvEx}{%
+  \indcase{!A}{\lexists[x][!B]}{$\Struct{M} \VDash
+  {\indfrm}$ yen lan mung yen ana $a \in \Domain M$ kang
+  ndadekake $\Struct{M[a/c]} \VDash \Subst{!B}{c}{x}$,
+  yen $c$ ora katon ing~$!B$.}}{}
+\end{enumerate}
+Upamakna $x_1$, \dots, $x_n$ iku kabeh !!{variable}s bebas
+ing~$!A$, $c_1$, \dots, $c_n$ simbol konstanta kang ora ana
+ing~$!A$, $a_1$, \dots, $a_n \in \Domain M$, lan
+$s(x_i) = a_i$.
+
+Tuduhna yen $\Sat{M}{!A}[s]$ yen lan mung yen
+$\Struct M[a_1/c_1,\dots,a_n/c_n]
+\VDash \Subst{\Subst{!A}{c_1}{x_1}\dots}{c_n}{x_n}$.
+
+(Masalah iki nuduhake yen semantik logika sepisanan bisa
+ditetepake tanpa nggunakake pangaji variabel.)
+\end{prob}
+
+\begin{prob}
+Upamakna $f$ iku simbol fungsi kang ora ana
+ing~$!A(x,y)$. Tuduhna yen ana !!a{structure}~$\Struct{M}$
+kang ndadekake
+$\Sat{M}{\lforall[x][\lexists[y][!A(x,y)]]}$
+yen lan mung yen ana~$\Struct M'$ kang ndadekake
+$\Sat{M'}{\lforall[x][!A(x,f(x))]}$.
+
+(Masalah iki kasus mligi saka kang diarani Teorema Skolem;
+$\lforall[x][!A(x,f(x))]$ diarani \emph{wangun normal Skolem}
+saka $\lforall[x][\lexists[y][!A(x,y)]]$.)
+\end{prob}
+
+\end{document}

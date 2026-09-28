@@ -1,0 +1,112 @@
+% Part: first-order-logic
+% Chapter: syntax-and-semantics
+% Section: Structures
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{syn}{str}
+
+\olsection{\printtoken{P}{structure} kanggo Basa Logika Sepisanan}
+
+\begin{explain}
+Basa logika sepisanan, yen mung basa iku dhewe, \emph{durung diwenehi
+interpretasi:} !!{constant}s, !!{function}s, lan !!{predicate}s durung
+nduweni teges tartamtu. Teges diwenehake kanthi nemtokake
+\article{structure} \emph{!!{structure}}. Struktur iki nemtokake
+\emph{domain}, yaiku obyek-obyek kang dituduhake dening !!{constant}s,
+dadi papan tumindake !!{function}s, lan dadi wilayah kang dilewati
+dening kuantor. Kajaba iku, struktur nemtokake !!{constant}s endi
+kang nuduhake obyek endi, carane !!a{function} masangake obyek
+marang obyek, lan obyek endi kang dicakup dening !!{predicate}s.
+!!^{structure}s dadi dhasar kanggo gagasan \emph{semantis} ing logika,
+umpamane gagasan akibat, validitas, lan bisa dicukupi. Ing pustaka,
+struktur uga diarani ``struktur,'' ``interpretasi,'' utawa ``model.''
+\end{explain}
+
+\begin{defn}[!!^{structure}s]
+\Article{structure} \emph{!!{structure}}~$\Struct M$ kanggo basa
+$\Lang{L}$ saka logika sepisanan dumadi saka unsur-unsur iki:
+\begin{enumerate}
+\item \emph{Domain:} himpunan kang ora kosong, $\Domain M$
+\item \emph{Interpretasi !!{constant}s:} kanggo saben !!{constant}~$c$
+  ing $\Lang{L}$, !!a{element} $\Assign{c}{M} \in \Domain M$
+\item \emph{Interpretasi !!{predicate}s:} kanggo saben $n$-panggonan
+  !!{predicate}~$R$ ing $\Lang{L}$ (saliyane $\eq$), relasi
+  $n$-panggonan $\Assign{R}{M} \subseteq \Domain{M}^n$
+\item \emph{Interpretasi !!{function}s:} kanggo saben $n$-panggonan
+  !!{function}~$f$ ing $\Lang{L}$, fungsi $n$-panggonan
+  $\Assign{f}{M} \colon \Domain{M}^n \to \Domain{M}$
+\end{enumerate}
+\end{defn}
+
+\begin{ex}
+!!^a{structure}~$\Struct M$ kanggo basa aritmetika dumadi saka
+sawijining himpunan, sawijining elemen ing $\Domain M$,
+$\Assign{\Obj 0}{M}$, minangka interpretasi saka !!{constant}~$\Obj 0$,
+fungsi siji panggonan $\Assign{\Obj \prime}{M} \colon \Domain{M} \to
+\Domain M$, rong fungsi rong panggonan $\Assign{\Obj +}{M}$ lan
+$\Assign{\Obj \times}{M}$, kang kalorone $\Domain M^2 \to \Domain M$,
+lan relasi rong panggonan $\Assign{\Obj <}{M} \subseteq \Domain{M}^2$.
+
+Tuladha kang cetha saka struktur kaya mangkono yaiku:
+\begin{enumerate}
+\item $\Domain N = \Nat$
+\item $\Assign{\Obj 0}{N} = 0$
+\item $\Assign{\Obj \prime}{N}(n) = n + 1$ kanggo saben $n \in \Nat$
+\item $\Assign{\Obj +}{N}(n, m) = n + m$ kanggo saben $n, m \in \Nat$
+\item $\Assign{\Obj \times}{N}(n, m) = n\cdot m$ kanggo saben $n, m \in \Nat$
+\item $\Assign{\Obj <}{N} = \Setabs{\tuple{n, m}}{n \in \Nat, m \in
+  \Nat, n < m}$
+\end{enumerate}
+Struktur~$\Struct N$ kanggo $\Lang L_A$ kang ditetepake mangkono
+diarani \emph{model standar aritmetika}, amarga struktur iki menehi
+interpretasi marang konstanta nonlogis ing~$\Lang L_A$ persis kaya
+kang lumrahe dikarepake.
+
+Nanging, isih ana akeh !!{structure}s liyane kang bisa digawe
+kanggo~$\Lang L_A$. Upamane, kita bisa njupuk himpunan~$\Int$
+saka wilangan bulat minangka domain, dudu~$\Nat$, banjur nemtokake
+interpretasi $\Obj 0$, $\Obj \prime$, $\Obj +$, $\Obj \times$, lan
+$\Obj <$ kanthi cocog. Kita uga bisa nemtokake struktur kanggo~$\Lang L_A$
+kang babar pisan ora ana gegayutane karo wilangan.
+\end{ex}
+
+\begin{ex}
+Sawijining struktur~$\Struct M$ kanggo basa~$\Lang L_Z$ saka teori
+himpunan mung mbutuhake sawijining himpunan lan siji relasi rong
+panggonan. Dadi, sacara teknis, upamane, himpunan wong bebarengan
+karo relasi ``$x$ luwih tuwa tinimbang $y$'' bisa digunakake minangka
+!!a{structure} kanggo $\Lang L_Z$, semono uga $\Nat$ bebarengan
+karo $n \ge m$ kanggo $n, m \in \Nat$.
+
+Salah siji !!{structure} kang mligi narik kawigaten kanggo $\Lang L_Z$,
+kanthi !!{element}s ing domaine pancen awujud himpunan lan interpretasi
+$\Obj \in$ pancen relasi ``$x$ iku !!a{element} saka~$y$'', yaiku
+!!{structure}~$\Struct{{HF}}$ saka \emph{himpunan winates turun-temurun}:
+\begin{enumerate}
+\item $\Domain{{{HF}}} = \emptyset \cup \Pow{\emptyset} \cup
+  \Pow{\Pow{\emptyset}} \cup \Pow{\Pow{\Pow{\emptyset}}} \cup \dots$;
+\item $\Assign{\Obj \in}{{{HF}}} = \Setabs{\tuple{x, y}}{x, y \in
+  \Domain{{{HF}}}, x \in y}$.
+\end{enumerate}
+\end{ex}
+
+\begin{digress}
+Syarat-syarat kang kita tetepake kanggo nemtokake apa kang dianggep
+!!a{structure} nduweni pangaribawa marang logika kita. Upamane,
+pilihan supaya domain ora kosong njamin, miturut definisi lumrah
+relasi nyukupi (utawa bebener) kanggo ukara mawa kuantor, yen
+$\lexists[x][(!A(x) \lor \lnot !A(x))]$ iku valid---yaiku bebener
+logis. Lan syarat manawa kabeh !!{constant}s kudu nuduhake obyek
+ing domain njamin yen generalisasi eksistensial iku pola inferensi
+kang ngemu jaminan semantis: $!A(a)$, mula
+$\lexists[x][!A(x)]$. Yen kita ngidini jeneng nuduhake obyek
+ing njaba domain, utawa ora nuduhake obyek babar pisan, kita bakal
+nyedhaki \emph{logika bebas}, kang mbutuhake premis tambahan kanggo
+generalisasi eksistensial: $!A(a)$ lan
+$\lexists[x][\eq[x][a]]$, mula $\lexists[x][!A(x)]$.
+\end{digress}
+
+\end{document}

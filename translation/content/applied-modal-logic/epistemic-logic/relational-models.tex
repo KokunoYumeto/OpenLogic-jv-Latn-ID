@@ -1,0 +1,50 @@
+% Part: applied-modal-logics
+% Chapter: epistemic-logic
+% Section: relational-models
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{aml}{el}{rel}
+
+\olsection{Model Relasional}
+
+Gagasan semantik dhasar kanggo logika epistemik padha karo logika
+modal lumrah. Model relasional tetep ngemot himpunan jagad lan
+panetepan kang nemtokake !!{propositional
+variable}s endi kang
+dianggep ``bener'' ing saben jagad. Yen mung ana siji agen, kita
+nduweni siji relasi aksesibilitas kaya biyasane. Nanging, ing
+logika epistemik multiagen, relasi aksesibilitas siji mau diganti
+himpunan relasi aksesibilitas, siji kanggo saben~$a$ ing himpunan
+lambang agen~$G$.
+
+\emph{Model relasional} ngemot himpunan jagad kang disambungake
+dening relasi aksesibilitas biner---siji kanggo saben agen---lan
+panetepan kang nemtokake !!{propositional variable}s endi kang
+bener ing saben jagad.
+
+\begin{defn}
+  \emph{Model} kanggo basa epistemik multiagen yaiku tripel
+  $\mModel{M} = \tuple{W, R, V}$, where
+  \begin{enumerate}
+  \item $W$ iku himpunan ``jagad'' kang ora kosong,
+  \item kanggo saben $a \in G$, ${R}_a$ iku relasi aksesibilitas biner
+  ing~$W$, lan
+  \item $V$ iku fungsi kang netepake marang saben !!{propositional
+    variable}~$p$ sawijining himpunan jagad mungkin $V(p)$.
+  \end{enumerate}
+  Yen $R_a ww'$, kita kandha yen $w'$ \emph{bisa diakses dening a
+    saka}~$w$. Yen $w \in V(p)$, kita kandha $p$ \emph{bener ing}~$w$.
+\end{defn}
+
+Cara kerjane padha karo logika modal normal, mung relasi
+aksesibilitase luwih akeh. Kanggo sawijining agen, relasi
+aksesibilitase lumrahe ditafsirake minangka gegambaran kahanan
+informasi agen iku. Contone, $R_a ww'$ kerep dianggep medharake
+yen $w'$ selaras karo informasi kang diduweni~$a$ ing~$w$.
+Kanthi tembung liya, ing~$w$, agen iku ora bisa mbedakake jagad
+$w$ lan jagad~$w'$.
+
+\end{document}

@@ -1,0 +1,153 @@
+% Part: lambda-calculus
+% Chapter: lambda-definability
+% Section: primitive-recursive-functions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{ldf}{prf}
+\olsection{Fungsi Rekursif Primitif iku \usetoken{S}{lambda definable}}
+
+Elinga yen fungsi rekursif primitif yaiku fungsi-fungsi kang bisa
+ditetepake saka fungsi dhasar $\Zero$, $\Succ$, lan $\Proj{n}{i}$
+kanthi komposisi lan rekursi primitif.
+
+\begin{lem}
+  \ollabel{lem:basic}
+  Fungsi rekursif primitif dhasar $\Zero$, $\Succ$, lan
+  proyeksi~$\Proj{n}{i}$ iku !!{lambda definable}.
+\end{lem}
+
+\begin{proof}
+Fungsi-fungsi mau !!{lambda define}d dening suku-suku iki:
+\begin{align*}
+  \fn{Zero} & \ident \lambd[a][\lambd[fx][x]]\\
+  \fn{Succ} & \ident \lambd[a][\lambd[fx][f (a f x)]] \\
+  \fn{Proj}^n_i & \ident \lambd[x_0\dots x_{n-1}][x_i]
+\end{align*}
+\end{proof}
+
+\begin{lem}
+  \ollabel{lem:comp} Upamakna fungsi kanthi aritas $k$, yaiku $f$,
+  lan fungsi-fungsi kanthi aritas $n$, yaiku $g_0, \dots, g_{k-1}$,
+  !!{lambda definable} dening suku $F$, $G_0$, \dots, $G_{k-1}$,
+  lan $h$ ditetepake saka fungsi-fungsi mau kanthi komposisi.
+  Mula $h$ uga !!{lambda definable}.
+\end{lem}
+
+\begin{proof}
+  $h$ bisa !!{lambda define}d dening suku
+  \[
+  H \ident \lambd[x_0 \dots x_{n-1}][F\, (G_0 x_0 \dots
+    x_{n-1}) \dots (G_{k-1} x_0 \dots x_{n-1})]
+  \]
+  Verifikasi pratelan iki kita tinggalake minangka latihan.
+\end{proof}
+
+\begin{prob}
+  Rampungna bukti \olref[lam][ldf][prf]{lem:comp} kanthi nuduhake
+  yen $H\num{n_0}\dots\num{n_{n-1}} \red \num{h(n_0, \dots,
+    n_{n-1})}$.
+\end{prob}
+
+Gatekna yen \olref{lem:comp} ora mbutuhake $f$ lan $g_0$,
+\dots,~$g_{k-1}$ minangka fungsi rekursif primitif; kang dibutuhake
+mung fungsi-fungsi iku total lan !!{lambda definable}.
+
+\begin{lem}\ollabel{lem:prim}
+  Upamakna $f$ fungsi kanthi aritas $n$ lan~$g$ fungsi kanthi
+  aritas $n+2$. Loro-lorone !!{lambda definable} dening suku $F$
+  lan~$G$, dene fungsi~$h$ ditetepake saka $f$ lan $g$ kanthi
+  rekursi primitif. Mula $h$ uga !!{lambda definable}.
+\end{lem}
+
+\begin{proof}
+  Elinga yen $h$ ditetepake dening
+  \begin{align*}
+    h(x_1, \dots, x_n, 0) &= f(x_1, \dots, x_n)\\
+    h(x_1, \dots, x_n, y+1) & = g(x_1, \dots, x_n, y, h(x_1, \dots, x_n, y)).
+  \end{align*}
+  Kanthi informal, definisi rekursif primitif ngetrapake fungsi
+  pambaru kahanan saka $g$ ping $y$, kawiwitan saka $f(x_1,
+  \dots, x_n)$. Iki mirip definisi numeral Church, kang uga
+  nggunakake iterasi.
+
+  Supaya luwih prasaja, kita menehi definisi lan bukti kanggo siji
+  argumen tambahan~$x$. Fungsi $h$ !!{lambda define}d dening:
+  \begin{align*}
+    H \ident & \lambd[x][\lambd[y][\fn{Snd} (y
+        D \tuple{\num{0}, F x})]]
+    \intertext{kanthi }
+    D \ident & \lambd[p][\tuple{\fn{Succ} (\fn{Fst}\, p), (G x
+          (\fn{Fst}\, p) (\fn{Snd}\, p))}]
+  \end{align*}
+  Kahanan iterasi kang kita simpen iku pasangan: komponen kapisan
+  nuduhake nilai $y$ saiki, dene komponen kapindho nuduhake nilai
+  $h$ kang cocog. Ing saben langkah iterasi, kita gawe pasangan
+  anyar kanggo nilai $y$ lan $h$; sawuse iterasi rampung, komponen
+  kapindho dibalekake minangka nilai pungkasan $h$. Suku pambaru
+  dimaksudake minangka cithakan kang peubah paramètere bebas lan
+  kaiket nalika cithakan iki dilebokake ing suku utama. Saiki kita
+  buktekake yen suku iki pancen makili rekursi primitif.
+
+  Kita arep mbuktekake yen kanggo saben $n$ lan $m$, $H\,\num{n}\,\num{m} \red
+  \num{h(n,m)}$. Dhisik kita tuduhake yen yen $D_n \ident
+  \Subst{D}{\num{n}}{x}$, mula $D_n^m \tuple{\num{0}, F\, \num{n}} \red
+  \tuple{\num{m}, \num{h(n, m)}}$. Kita nggunakake induksi marang~$m$.
+
+  Yen $m=0$, kang kudu dituduhake yaiku $D_n^0 \tuple{\num{0}, F\, \num{n}} \red
+  \tuple{\num{0}, \num{h(n, 0)}}$. Nanging $D_n^0 \tuple{\num{0}, F\,
+    \num{n}}$ pancen mung $\tuple{\num{0}, F\, \num{n}}$. Amarga $F$
+  !!{lambda define}s~$f$, suku iki direduksi dadi $\tuple{\num{0},
+    \num{f(n)}}$; lan amarga $f(n) = h(n, 0)$, asile $\tuple{\num{0},
+    \num{h(n,0)}}$.
+
+  Saiki upamakna $D_n^m \tuple{\num{0}, F\, \num{n}} \red
+  \tuple{\num{m}, \num{h(n, m)}}$. Kita arep
+  nuduhake yen $D_n^{m+1} \tuple{\num{0}, F\, \num{n}} \red
+  \tuple{\num{m+1}, \num{h(n, m+1)}}$.
+  \begin{align*}
+    D_n^{m+1} \tuple{\num{0}, F\, \num{n}}
+    & \ident D_n(D_n^{m} \tuple{\num{0}, F\, \num{n}})\\
+    & \red D_n\,\tuple{\num{m}, \num{h(n, m)}} \text{\qquad (miturut HI)}\\
+    & \ident (\lambd[p][
+      \tuple{
+        \fn{Succ} (\fn{Fst}\, p), (G \, \num{n} (\fn{Fst}\, p) (\fn{Snd}\, p))
+    }]) \tuple{\num{m}, \num{h(n,m)}}\\
+    & \redone \tuple{\fn{Succ} (\fn{Fst}\, \tuple{\num{m}, \num{h(n,m)}}),
+      (G \, \num{n} (\fn{Fst}\, \tuple{\num{m}, \num{h(n,m)}}) (\fn{Snd}\, \tuple{\num{m}, \num{h(n,m)}}))}\\
+    & \red 
+    \tuple{\fn{Succ}\, \num{m}, (G \, \num{n} \,\num{m} \, \num{h(n,m)})}\\
+    & \red \tuple{\num{m+1}, \num{g(n, m, h(n, m))}}
+  \end{align*}
+  Amarga $g(n, m, h(n, m)) = h(n, m+1)$, bukti rampung.
+
+  Pungkasan, gatekna
+  \begin{align*}
+    H\,\num n\,\num m &\ident \lambd[x][\lambd[y][\fn{Snd} (y
+        (\lambd[p][\tuple{\fn{Succ} (\fn{Fst}\, p), (G\, x\,
+          (\fn{Fst}\, p)\, (\fn{Snd}\, p))}]) \tuple{\num{0}, F x})]]\\
+    & \qquad\,\num n\, \num m\\
+    & \red \fn{Snd} (\num m \,
+    \underbrace{(\lambd[p][\tuple{\fn{Succ} (\fn{Fst}\, p), (G \,\num n\,
+      (\fn{Fst}\, p) (\fn{Snd}\, p))}])}_{D_n} \tuple{\num{0}, F \num n})\\
+    & \ident \fn{Snd} (\num m \, D_n\, \tuple{\num{0}, F \num n})\\
+    & \red \fn{Snd} \,(D_n^m  \tuple{\num{0}, F \num n})\\
+    & \red \fn{Snd} \,\tuple{\num{m}, \num{h(n, m)}} \\
+    & \red \num{h(n,m)}. 
+  \end{align*}  
+\end{proof}
+
+
+\begin{prop}
+  Saben fungsi rekursif primitif iku !!{lambda definable}.
+\end{prop}
+
+\begin{proof}
+  Miturut \olref{lem:basic}, kabeh fungsi dhasar iku !!{lambda definable},
+  lan miturut \olref{lem:comp} lan \olref{lem:prim}, kelas fungsi kang
+  !!{lambda definable} katutup marang komposisi lan rekursi primitif.
+\end{proof}
+
+\end{document}

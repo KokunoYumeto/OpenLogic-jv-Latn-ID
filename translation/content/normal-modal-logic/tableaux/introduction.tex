@@ -1,0 +1,64 @@
+% Part: normal-modal-logic
+% Chapter: tableaux
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{tab}{int}
+
+\olsection{Pambuka}
+
+!!^{tableau}s iku wit tartamtu kang cabange tumuju mangisor lan dumadi
+saka !!{signed
+  formula}s, yaiku pasangan saka tandha biji-kabeneran
+($\True$ utawa $\False$) lan !!a{sentence}
+\[
+\sFmla{\True}{!A} \text{ utawa } \sFmla{\False}{!A}.
+\]
+!!^a{tableau} diwiwiti kanthi sawetara \emph{asumsi}. Saben
+!!{signed formula} sabanjure diasilake kanthi ngetrapake salah siji
+aturan inferensi. Sawetara aturan inferensi nambah siji utawa luwih
+!!{signed formula}s ing pucuk wit; aturan liyane nambah rong pucuk
+anyar, saengga ngasilake rong cabang. Aturan-aturan mau ngasilake
+!!{signed formula}s kang !!{formula}-ne luwih prasaja tinimbang
+kang ana ing !!{signed formula} kang dienggo ngetrapake aturan iku.
+Yen sawijining cabang ngemot $\sFmla{\True}{!A}$ lan
+$\sFmla{\False}{!A}$, cabang iku diarani \emph{katutup}. Yen saben
+cabang ing !!a{tableau} katutup, kabeh !!{tableau} iku katutup.
+!!{tableau} katutup mujudake !!a{derivation} kang nuduhake yen
+himpunan !!{signed formula}s kang digunakake kanggo miwiti
+!!{tableau} iku ora bisa dicukupi. Iki bisa digunakake kanggo
+netepake relasi~$\Proves$:
+$\Gamma \Proves !A$ yen lan mung yen ana himpunan winates~$\Gamma_0 = \{!B_1,
+\dots, !B_n\} \subseteq \Gamma$ kang nduweni !!{tableau} katutup
+kanggo asumsi
+\[
+\{\sFmla{\False}{!A}, \sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\}.
+\]
+
+Kanggo logika modal, kita kudu ngambakake pangerten !!{signed
+formula} lan nambah aturan kang nyakup~\iftag{prvBox}{$\Box$\iftag{prvDiamond}{ lan
+    $\Diamond$}}{$\Diamond$}. Saliyane tandha ($\True$ utawa
+$\False$), !!{formula}s ing !!{tableau}s modal uga nduweni
+\emph{prefiks}~$\sigma$. Prefiks iku urutan bilangan bulat positif
+kang ora kosong, yaiku $\sigma \in (\PosInt)^* \setminus
+\{\emptyseq\}$. Kita nulis prefiks kasebut tanpa kurung
+$\tuple{\ }$ lan misahake saben !!{element}s nganggo~$.$,
+dudu $,$. Yen $\sigma$ sawijining prefiks, $\sigma.n$ padha karo $\sigma
+\concat \tuple{n}$; upamane, yen $\sigma = 1.2.1$, $\sigma.3$ iku
+$1.2.1.3$. Dadi, upamane,
+\[
+\sFmla{\True}{\Box !A \lif !A}[1.2]
+\]
+iku \emph{!!{signed formula} mawa prefiks} (utawa cekake
+\emph{!!{formula} mawa prefiks}).
+
+Miturut intuisi, prefiks iku menehi jeneng marang jagad ing sawijining
+model kang bisa nyukupi !!{formula}s ing sawijining cabang saka
+!!a{tableau}; yen $\sigma$ menehi jeneng marang sawijining jagad,
+mula $\sigma.n$ menehi jeneng marang jagad kang bisa diakses saka
+jagad kang dijenengi~$\sigma$.
+
+\end{document}

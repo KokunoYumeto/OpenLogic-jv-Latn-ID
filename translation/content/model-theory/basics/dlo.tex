@@ -1,0 +1,164 @@
+% Part: first-order-logic
+% Chapter: model-theory
+% Section: partial-iso
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{bas}{dlo}
+\section{Urutan Linear Rapet Tanpa Titik Ujung}
+
+\begin{defn}
+  \emph{Urutan linear rapet tanpa titik ujung}
+  iku !!a{structure} $\Struct{M}$
+  kanggo !!{language} kang mung ngemot
+  siji !!{predicate}~$<$ kanthi
+  rong panggonan lan nyukupi
+  ukara-ukara iki:
+  \begin{enumerate}
+  \item $\lforall[x][\lnot x < x]$;
+  \item $\lforall[x][\lforall[y][\lforall[z][(x < y \lif (y < z \lif x
+    <z ))]]]$;
+  \item $\lforall[x][\lforall[y][(x< y \lor \eq[x][y] \lor y < x)]]$;
+  \item $\lforall[x][\lexists[y][x < y]]$;
+  \item $\lforall[x][\lexists[y][y < x]]$;
+  \item $\lforall[x][\lforall[y][(x < y \lif \lexists[z][(x < z \land
+        z < y))]]]$.
+ \end{enumerate}
+\end{defn}
+
+\begin{thm}\ollabel{thm:cantorQ}
+  Sembarang rong urutan linear rapet
+  tanpa titik ujung kang !!{enumerable}
+  padha isomorfis.
+\end{thm}
+
+\begin{proof}
+  Upamakna $\Struct{M_1}$ lan
+  $\Struct{M_2}$ iku urutan linear rapet
+  tanpa titik ujung kang !!{enumerable},
+  kanthi ${<_1} = \Assign{<}{M_1}$
+  lan ${<_2} =
+  \Assign{<}{M_2}$, lan upamakna
+  $\PIso{I}$ iku himpunan kabeh
+  isomorfisme parsial antarane loro
+  struktur iku. $\PIso{I}$ ora kosong
+  amarga paling ora $\emptyset \in \PIso{I}$.
+  Kita nuduhake yen $\PIso{I}$
+  nyukupi sipat Maju-Mundur.
+  Mula $\Struct{M_1} \iso[p] \Struct{M_2}$,
+  lan teorema ndherek saka
+  \olref[pis]{thm:p-isom1}.
+
+  Kanggo nuduhake yen $\PIso{I}$
+  nyukupi sipat Maju, jupuken
+  $p \in \PIso{I}$.
+  Yen fungsi parsial iki kosong,
+  saben unsur sumber kang dikarepake
+  bisa dipasang karo sembarang unsur
+  ranah struktur kapindho.
+  Kanggo kasus kang ora kosong, upamakna
+  $p(a_i) = b_i$ kanggo
+  $i = 1$, \dots,~$n$.
+  Tanpa ngilangake umumé,
+  upamakna $a_1 <_1 a_2 <_1 \cdots <_1
+  a_n$. Yen diwenehi
+  $a \in \Domain{M_1}$,
+  goleka $b \in \Domain{M_2}$
+  kaya mangkene:
+  Yen unsur kang arep ditambah
+  wis ana ing ranah fungsi,
+  gunakna pasangane kang wis ana.
+  Ing kasus liyane, gunakna
+  salah siji saka telung
+  pilihan iki:
+  \begin{enumerate}
+  \item yen $a <_1 a_1$, jupuken
+    $b \in \Domain{M_2}$ saéngga
+    $b <_2 b_1$;
+  \item yen $a_n <_1 a$, jupuken
+    $b \in \Domain{M_2}$ saéngga
+    $b_n <_2 b$;
+ \item yen $a_i <_1 a <_1 a_{i+1}$
+   kanggo sawenehing $i$,
+   jupuken $b \in \Domain{M_2}$
+   saéngga $b_i <_2 b <_2 b_{i+1}$.
+  \end{enumerate}
+  Cathetan koreksi sumber OLPL-093:
+  bukti Maju uga kudu nangani
+  fungsi parsial kosong lan
+  unsur kang wis ana ing ranahé;
+  telung kasus ketaksamaan
+  mung nyakup unsur anyar
+  nalika ranahé ora kosong.
+  Unsur $b$ kanthi sipat
+  kang dikarepake mesthi
+  bisa ditemokake amarga
+  $\Struct{M_2}$ iku urutan
+  linear rapet tanpa titik ujung.
+  Tetepna $q = p \cup
+  \{ \langle a, b \rangle \}$
+  saéngga $q \in \PIso{I}$
+  dadi ekstensi $p$
+  kang dikarepake.
+  Iki mbuktekake sipat Maju.
+  Sipat Mundur dibuktekake
+  kanthi cara padha.
+  Mula $\Struct{M_1} \iso[p]
+  \Struct{M_2}$; miturut
+  \olref[pis]{thm:p-isom1},
+  $\Struct{M_1} \iso
+  \Struct{M_2}$.
+\end{proof}
+
+\begin{prob}
+  Rampungna bukti
+  \olref[mod][bas][dlo]{thm:cantorQ}
+  kanthi mriksa yen
+  $\PIso{I}$ nyukupi
+  sipat Mundur.
+\end{prob}
+
+\begin{rem}
+  Upamakna $\Struct{S}$ sembarang
+  urutan linear rapet
+  tanpa titik ujung kang
+  !!{enumerable}.
+  Mula (miturut
+  \olref{thm:cantorQ})
+  $\Struct{S} \iso
+  \Struct{Q}$, kanthi
+  $\Struct{Q} = (\Rat, <)$
+  iku urutan linear rapet
+  tanpa titik ujung kang
+  !!{enumerable} lan
+  ranahé himpunan $\Rat$
+  saka wilangan rasional.
+  Saiki gatekna maneh
+  !!{structure}~$\Struct{R} =
+  (\Real, <)$ saka
+  \olref[thm]{remark:R}.
+  Kita wis weruh yen ana
+  !!a{enumerable}
+  !!{structure}~$\Struct{S}$
+  saéngga $\Struct{R}
+  \elemequiv \Struct{S}$.
+  Nanging $\Struct{S}$
+  iku urutan linear rapet
+  tanpa titik ujung kang
+  !!a{enumerable}, mula
+  isomorfis (lan mulané
+  ekuivalen elementer)
+  karo !!{structure}~$\Struct{Q}$.
+  Amarga ekuivalensi elementer
+  transitif, $\Struct{R}
+  \elemequiv \Struct{Q}$.
+  (Iki uga bisa dibuktekake
+  langsung kanthi nuduhake
+  $\Struct{R} \iso[p]
+  \Struct{Q}$ nganggo
+  argumen Maju-Mundur
+  kang padha.)
+\end{rem}
+\end{document}

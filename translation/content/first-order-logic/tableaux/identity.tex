@@ -12,7 +12,7 @@
 
 !!^{tableau}s mawa !!{identity} mbutuhake aturan inferensi tambahan.
 Aturan kanggo $\eq$ yaiku ($t$, $t_1$, lan $t_2$ iku term-term
-tertutup):
+katutup):
 
 \begin{defish}
 \AxiomC{}
@@ -35,12 +35,12 @@ tertutup):
 \DisplayProof
 \end{defish}
 Gatekna yen, beda karo kabeh aturan liyane, $\TRule{\True}{\eq}$ lan
-$\TRule{\False}{\eq}$ mbutuhake \emph{rong} !!{formula}s wis
+$\TRule{\False}{\eq}$ mbutuhake supaya \emph{rong} !!{formula}s wis
 muncul ing cabang, yaiku $\sFmla{\True}{\eq[t_1][t_2]}$ lan
 $\sFmla{S}{!A(t_1)}$ kalorone.
 
 \begin{ex}
-Yen $s$ lan $t$ iku term-term tertutup, mula $\eq[s][t], !A(s)
+Yen $s$ lan $t$ iku term-term katutup, mula $\eq[s][t], !A(s)
 \Proves !A(t)$:
 \begin{oltableau}
   [\sFmla{\False}{\formula{A}(t)}, just = \TAss
@@ -76,7 +76,7 @@ larik katelu, nanging substitusi kang langsung diterangake sawise iku
 lan arah aturan netepake argumen kapisan, kaya kang dibalekake ing
 kene.
 
-Tableaux uga mbuktekake yen $\eq$ iku transitif, yaiku
+Tableau uga mbuktekake yen $\eq$ iku transitif, yaiku
 $\eq[s_1][s_2], \eq[s_2][s_3] \Proves \eq[s_1][s_3]$:
 \begin{oltableau}
   [\sFmla{\False}{\eq[s_1][s_3]}, just = \TAss
@@ -89,8 +89,8 @@ $\eq[s_1][s_2], \eq[s_2][s_3] \Proves \eq[s_1][s_3]$:
 \end{oltableau}
 Ing !!{tableau} iki, !!{formula} prasyarat kapisan saka
 $\TRule{\True}{\eq}$ yaiku larik~$3$,
-$\sFmla{\True}{\eq[s_2][s_3]}$ ($s_2$ nindakake peran~$t_1$, lan
-$s_3$ peran~$t_2$). Prasyarat kapindho, kang awujud
+$\sFmla{\True}{\eq[s_2][s_3]}$ ($s_2$ makili~$t_1$, lan
+$s_3$ makili~$t_2$). Prasyarat kapindho, kang awujud
 $\sFmla{\True}{!A(s_2)}$, yaiku larik~$2$. Ing kene, anggepen
 $!A(x)$ minangka $\eq[s_1][x]$; iki nggawe $!A(s_2)$ dadi
 $\eq[s_1][s_2]$ (yaiku larik~$2$) lan $!A(s_3)$ dadi

@@ -1,0 +1,64 @@
+% Part: turing-machines
+% Chapter: undecidability
+% Section: unsolvability-decision-problem
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{tur}{und}{dec}
+\olsection{Masalah Putusan}
+
+Kita nyebut logika orde kapisan \emph{bisa diputusake}
+yen lan mung yen ana cara efektif kanggo nemtokake
+apa sawijining !!{sentence} kang diwenehake sah
+utawa ora. Pranyata cara kaya mangkono ora ana:
+masalah nemtokake kasahihan ukara orde kapisan
+ora bisa dirampungake.
+
+Kanggo netepake asil negatif kang wigati iki,
+kita mbuktekake yen masalah putusan ora bisa
+dirampungake dening mesin Turing. Tegese,
+ora ana mesin Turing kang, saben diwiwiti
+ing pita kang ngemot !!{sentence} orde kapisan,
+mesthi mandheg lan ngasilake $1$ utawa~$0$
+miturut apa !!{sentence} iku sah utawa ora.
+Miturut tesis Church--Turing, saben fungsi
+kang bisa diitung uga bisa diitung dening
+mesin Turing. Mula yen ``fungsi kasahihan''
+iki bisa diitung kanthi efektif, fungsi iku
+uga bisa diitung dening mesin Turing.
+Yen ora bisa diitung dening mesin Turing,
+fungsi iku uga ora bisa diitung kanthi efektif.
+
+Strategi kita kanggo mbuktekake yen masalah
+putusan ora bisa dirampungake yaiku ngreduksi
+masalah mandheg menyang masalah iku. Tegese:
+kita wis mbuktekake yen fungsi~$h(e,w)$,
+kang menehi output~$1$ yen mesin Turing
+kang diterangake dening~$e$ mandheg kanggo
+input~$w$ lan output~$0$ yen ora, ora
+bisa diitung dening mesin Turing. Kita
+bakal nuduhake yen ana mesin Turing kang
+mutusake kasahihan ukara orde kapisan,
+mula uga ana mesin Turing kang ngitung~$h$.
+Amarga $h$ ora bisa diitung dening mesin
+Turing, mesin Turing kang mutusake kasahihan
+uga ora mungkin ana.
+
+Langkah kapisan ing strategi iki yaiku nuduhake
+yen kanggo saben input~$w$ lan mesin Turing~$M$,
+kita bisa kanthi efektif njlentrehake
+!!a{sentence} $!T(M, w)$ kang nggambarake
+himpunan instruksi~$M$ lan input~$w$,
+lan !!a{sentence}~$!E(M, w)$ kang nyatakake
+``$M$ pungkasane mandheg'' saengga:
+\begin{quote}
+  $\Entails !T(M, w) \lif !E(M,w)$ yen lan mung yen $M$ mandheg kanggo input~$w$.
+\end{quote}
+Bagean utama bukti kita yaiku njlentrehake
+ukara loro iki, $!T(M, w)$ lan~$!E(M, w)$,
+banjur mbuktekake yen $!T(M, w) \lif !E(M, w)$
+sah yen lan mung yen $M$~mandheg kanggo input~$w$.
+
+\end{document}

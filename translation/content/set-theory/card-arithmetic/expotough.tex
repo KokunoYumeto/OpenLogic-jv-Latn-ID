@@ -1,0 +1,107 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+\olfileid{sth}{card-arithmetic}{expotough}
+
+\olsection[Sawetara Panyederhanaan]{Sawetara Panyederhanaan Pemangkatan Kardinal}
+
+Sanadyan netepaké $\canonord$ rada njlimet, asilé
+pratelan kang migunani babagan panambahan lan ping-pingan
+kardinal, \olref[simp]{cardplustimesmax}. Nanging pemangkatan
+transfinit ora bisa disederhanakaké kanthi cara kang padha
+gampangé. Kanggo nerangaké sebabé, kita miwiti kanthi asil
+kang ngluwihi pola kang wis dikenal ing kasus winates
+(sanadyan buktiné ana ing tingkat abstraksi kang dhuwur):
+
+\begin{prop}\ollabel{simplecardexpo}
+$\cardexpo{\cardfont{a}}{\cardfont{b} \cardplus \cardfont{c}} =
+\cardexpo{\cardfont{a}}{\cardfont{b}} \cardtimes
+\cardexpo{\cardfont{a}}{\cardfont{c}}$ lan
+$\cardexpo{(\cardexpo{\cardfont{a}}{\cardfont{b}})}{\cardfont{c}} =
+\cardexpo{\cardfont{a}}{\cardfont{b} \cardtimes \cardfont{c}}$ kanggo
+sembarang kardinal $\cardfont{a}, \cardfont{b}, \cardfont{c}$.
+\end{prop}
+
+\begin{proof}
+Kanggo pratelan kapisan, gatekna fungsi $f \colon
+(\cardfont{b}\disjointsum\cardfont{c}) \to \cardfont{a}$.
+Saiki “pisahna” fungsi iki kanthi netepaké
+$f_\cardfont{b}(\beta) = f(\beta, 0)$ kanggo saben
+$\beta \in \cardfont{b}$, lan $f_\cardfont{c}(\gamma) = f(\gamma, 1)$
+kanggo saben $\gamma \in \cardfont{c}$. Pemetaan $f \mapsto
+\tuple{f_{\cardfont{b}}, f_\cardfont{c}}$ iku !!a{bijection}
+$\funfromto{\cardfont{b} \disjointsum \cardfont{c}}{\cardfont{a}} \to
+(\funfromto{\cardfont{b}}{\cardfont{a}} \times
+\funfromto{\cardfont{c}}{\cardfont{a}})$.
+
+Kanggo pratelan kapindho, gatekna fungsi $f \colon \cardfont{c} \to
+(\funfromto{\cardfont{b}}{\cardfont{a}})$; dadi kanggo saben $\gamma \in
+\cardfont{c}$ kita nduwèni fungsi $f(\gamma) \colon \cardfont{b} \to
+\cardfont{a}$. Saiki tetepna $f^*(\beta, \gamma) = (f(\gamma))(\beta)$
+kanggo saben $\tuple{\beta, \gamma} \in \cardfont{b} \times \cardfont{c}$.
+Pemetaan $f \mapsto f^*$ iku !!a{bijection}
+$\funfromto{\cardfont{c}}{(\funfromto{\cardfont{b}}{\cardfont{a}})}
+\to \funfromto{\cardfont{b} \times \cardfont{c}}{\cardfont{a}}$.
+\end{proof}
+
+Saiki kang \emph{kita karepake} yaiku cara gampang
+kanggo ngitung $\cardexpo{\cardfont{a}}{\cardfont{b}}$
+yèn kardinal-kardinalé tanpa wates. Iki sawijining
+langkah kang becik menyang kana:
+
+\begin{prop}\ollabel{cardexpo2reduct}
+Yèn $2 \leq \cardfont{a} \leq \cardfont{b}$ lan $\cardfont{b}$
+tanpa wates, mula $\cardexpo{\cardfont{a}}{\cardfont{b}} =
+\cardexpo{2}{\cardfont{b}}$
+\end{prop}
+
+\begin{proof}
+\begin{align*}
+	\cardexpo{2}{\cardfont{b}} &\leq
+	\cardexpo{\cardfont{a}}{\cardfont{b}}\text{, amarga $2 \leq \cardfont{a}$}\\
+	&\leq \cardexpo{(2^\cardfont{a})}{\cardfont{b}}
+	\text{, miturut \olref[opps]{cantorcor}}\\
+	&= \cardexpo{2}{\cardfont{a} \cardtimes \cardfont{b}}
+	\text{, miturut \olref{simplecardexpo}} \\
+	&= \cardexpo{2}{\cardfont{b}}
+	\text{, miturut \olref[simp]{cardplustimesmax}}
+\end{align*}
+\end{proof}
+
+Ora pantes kita ngarep-arep panyederhanaan luwih adoh,
+amarga $\cardfont{b} < \cardexpo{2}{\cardfont{b}}$ miturut
+\olref[card-arithmetic][opps]{cantorcor}.
+Nanging iki durung nerangaké apa kang bisa dikandhakake
+babagan $\cardexpo{\cardfont{a}}{\cardfont{b}}$ nalika $\cardfont{b} <
+\cardfont{a}$. Mesthiné, yèn $\cardfont{b}$ \emph{winates},
+kita ngerti carané.
+
+\begin{prop}
+Yèn $\cardfont{a}$ tanpa wates lan $0<n \in \omega$, mula
+$\cardexpo{\cardfont{a}}{n} = \cardfont{a}$
+\end{prop}
+
+\begin{proof}
+$\cardexpo{\cardfont{a}}{n} = \cardfont{a} \cardtimes \cardfont{a}
+\cardtimes \ldots \cardtimes \cardfont{a} = \cardfont{a}$, miturut \olref[simp]{cardplustimesmax}.
+\end{proof}
+\noindent
+Kajaba iku, ing sawatara kasus liya, kita bisa matesi ukuran
+$\cardexpo{\cardfont{a}}{\cardfont{b}}$:
+
+\begin{prop}
+Yèn $2 \leq \cardfont{b} < \cardfont{a} \leq
+\cardexpo{2}{\cardfont{b}}$ lan $\cardfont{b}$ tanpa wates, mula
+$\cardexpo{\cardfont{a}}{\cardfont{b}} = \cardexpo{2}{\cardfont{b}}$
+\end{prop}
+
+\begin{proof}
+$\cardexpo{2}{\cardfont{b}}\leq \cardexpo{\cardfont{a}}{\cardfont{b}}
+\leq \cardexpo{(\cardexpo{2}{\cardfont{b}})}{\cardfont{b}} =
+\cardexpo{2}{\cardfont{b}\cardtimes\cardfont{b}} =
+\cardexpo{2}{\cardfont{b}}$, kanthi panalaran kaya ing \olref{cardexpo2reduct}.
+\end{proof}
+\noindent
+Nanging sawisé iki, prakarané dadi luwih rumit.
+
+\end{document}

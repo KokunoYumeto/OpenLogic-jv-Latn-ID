@@ -1,0 +1,63 @@
+% Part: computability
+% Chapter: computability-theory
+% Section: no-universal-function
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{thy}{nou}
+\olsection{Ora Ana Fungsi Komputabel Universal}
+
+% OLPL-135: Sumber beku nyebut fungsi parsial sadurunge total kanggo fungsi parsial, nanging teorema sadurunge lan panjelasan ing ngisor iki nyebut universal lan ora total.
+Sanajan ana fungsi komputabel parsial kang
+universal kanggo fungsi komputabel parsial,
+ora ana fungsi komputabel total kang universal
+kanggo fungsi komputabel total.
+
+\begin{thm}
+\ollabel{thm:no-univ}
+Ora ana fungsi komputabel universal. Kanthi
+tembung liya, fungsi $\fn{Un}'(k, x)$ sembarang
+kang nduwé sipat iki: yen $f(x)$ fungsi komputabel
+total, ana wilangan asli~$k$ kang ndadekake
+$f(x) = \fn{Un}'(k,x)$ kanggo saben~$x$,
+fungsi kasebut ora komputabel.
+\end{thm}
+
+\begin{proof}
+Buktine yaiku argumen diagonal kang prasaja:
+yen $\fn{Un}'(k,x)$ total lan komputabel,
+mula
+\[
+d(x) = \fn{Un}'(x, x) + 1
+\]
+uga total lan komputabel. Nanging miturut
+definisi, $d(k)$ ora padha karo
+$\fn{Un}'(k,k)$. Mula, kanggo saben $k$,
+nilai $d(x)$ lan~$\fn{Un}'(k, x)$ beda
+ing saora-orane siji~$x$, yaiku $x = k$.
+\end{proof}
+
+\begin{explain}
+\olref[uni]{thm:univ-comp} ing ndhuwur nuduhake
+yen argumen diagonal iki bisa diendhani,
+nanging mung kanthi ngidini fungsi universal
+iku parsial. Tegese, $\fn{Un}$ universal
+kanggo fungsi komputabel total, nanging
+fungsi kasebut dhewe ora total. Argumen
+diagonal ora lumaku ing kasus parsial.
+\end{explain}
+
+\begin{prob}
+  Kanggo mangerteni ngapa argumen diagonal
+  ing bukti \olref{thm:no-univ} ora lumaku
+  ing kasus parsial, gatekna fungsi
+  $f(x) \simeq \fn{Un}(x,x)+1$. Apa fungsi
+  iki komputabel parsial? Yen mangkono,
+  fungsi iki nduwé indeks~$e$, yaiku
+  $f(x) \simeq \fn{Un}(e,x)$. Apa kang
+  bisa kokandharake bab~$f(e)$?
+\end{prob}
+
+\end{document}

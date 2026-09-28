@@ -1,0 +1,110 @@
+% Part: many-valued-logic
+% Chapter: infinite-valued-logics
+% Section: lukasiewicz
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{inf}{luk}
+
+\olsection{Logika \L ukasiewicz}
+
+\begin{editorial}
+  Iki mung draf ringkes saka perangan bab logika
+  \L ukasiewicz mawa nilai tanpa wates.
+\end{editorial}
+
+\begin{defn}\ollabel{def:lukasiewicz} Logika \L ukasiewicz mawa nilai tanpa wates
+~$\LogLuk[\infty]$ ditetepake nganggo matriks iki:
+\begin{enumerate}
+  \item Basa proposisional baku $\Lang L_0$ kang ngemot
+  $\lfalse$, $\lnot$, $\land$, $\lor$, $\lif$.
+  \item Himpunan nilai kabeneran $V_\infty$.
+  \item $1$ mung siji-sijine nilai pinilih, yaiku $V^+ = \{1\}$.
+  \item Kanggo tetapan salah, $\tf{\lfalse}[\LogLuk[\infty]] = 0$. Fungsi kabeneran liyane diwenehake ing ngisor iki:
+  \begin{align*}
+    \tf{\lnot}[\LogLuk](x) & = 1 - x\\
+    \tf{\land}[\LogLuk](x,y) & = \min(x,y)\\
+    \tf{\lor}[\LogLuk](x,y) & = \max(x,y)\\
+    \tf{\lif}[\LogLuk](x,y) & = \min(1,1-(x-y)) = \begin{cases}
+      1 & \text{yen } x \le y\\
+      1-(x-y) & \text{yen ora.}
+    \end{cases}
+    \end{align*}
+\end{enumerate}
+Logika \L ukasiewicz $m$ nilai ditetepake kanthi cara padha, nanging $V = V_m$.
+\end{defn}
+
+\begin{prop}
+  Logika $\LogLuk[3]$ kang ditetepake ing
+  \olref[thr][luk]{def:lukasiewicz} padha karo $\LogLuk[3]$
+  kang ditetepake ing \olref{def:lukasiewicz}.
+\end{prop}
+
+\begin{proof}
+  Nilai tetapan salah uga cocog ing loro matriks. Iki katon
+  kanthi mbandhingake tabel kabeneran konektif ing
+  \olref[thr][luk]{def:lukasiewicz} karo tabel kang ditemtokake
+  dening persamaan ing \olref{def:lukasiewicz}:
+  \begin{center}
+    \begin{tabular}{c|c} 
+      $\tf{\lnot}$ & \\ 
+      \hline  
+      $1$ & $0$ \\ 
+      $1/2$ & $1/2$ \\
+      $0$ & $1$ 
+    \end{tabular}
+    \quad
+    \begin{tabular}{c|ccc} 
+      $\tf{\land}[\LogLuk[3]]$ & $1$ & $1/2$ & $0$ \\ 
+      \hline 
+      $1$ & $1$ & $1/2$ & $0$ \\ 
+      $1/2$ & $1/2$ & $1/2$ & $0$\\ 
+      $0$ & $0$ & $0$ & $0$ 
+    \end{tabular}
+    \\[2ex]
+    \begin{tabular}{c|ccc} 
+      $\tf{\lor}[\LogLuk[3]]$ & $1$ & $1/2$ & $0$ \\ 
+      \hline 
+      $1$ & $1$ & $1$ & $1$ \\ 
+      $1/2$ & $1$ & $1/2$ & $1/2$ \\
+      $0$ & $1$ & $1/2$ & $0$ 
+    \end{tabular}
+    \quad
+    \begin{tabular}{c|ccc} 
+      $\tf{\lif}[\LogLuk[3]]$ & $1$ & $1/2$ & $0$ \\ 
+      \hline 
+      $1$ & $1$ & $1/2$ & $0$ \\ 
+      $1/2$ & $1$ & $1$ & $1/2$  \\ 
+      $0$ & $1$ & $1$ & $1$ 
+    \end{tabular}
+  \end{center} 
+\end{proof}
+
+\begin{prop}\ollabel{prop:luk-infty-m}
+  Yen $\Gamma \Entails[\LogLuk[\infty]] !B$, mula $\Gamma
+  \Entails[\LogLuk[m]] !B$ kanggo kabeh~$m \ge 2$.
+\end{prop}
+
+\begin{proof}
+  Latihan.
+\end{proof}
+
+\begin{prob}
+  Buktèkna \olref[mvl][inf][luk]{prop:luk-infty-m}.
+\end{prob}
+
+Satemene arah kosok baline uga bener.
+
+Logika \L ukasiewicz mawa nilai tanpa wates iku logika fuzzy
+kang paling populer. Ing pustaka logika fuzzy, kondisional asring
+ditetepake minangka $\lnot !A \lor !B$. Asile yaiku logika
+Kleene kang kuwat kanthi nilai tanpa wates.
+
+\begin{prob}
+  Tuduhna yen $(p \lif q) \lor (q \lif p)$ iku tautologi
+  ing~$\LogLuk[\infty]$.
+\end{prob}
+
+\end{document}

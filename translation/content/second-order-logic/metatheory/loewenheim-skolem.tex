@@ -1,0 +1,62 @@
+% Part: second-order-logic
+% Chapter: metatheory
+% Section: compactness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sol}{met}{lst}
+
+\olsection{Teorema L\"owenheim--Skolem Ora Bener kanggo Logika Orde Kapindho}
+
+\begin{explain}
+Teorema L\"owenheim--Skolem (Mudhun) nyatakake yen saben
+himpunan !!{sentence}s kang nduweni model tanpa wates uga
+nduweni model !!a{enumerable}. Teorema iki uga dadi akibat
+saka teorema kelengkapan: bukti kelengkapan mbangun model
+kanggo saben himpunan !!{sentence}s kang konsisten, lan
+model iku !!{enumerable}. Ana uga Teorema
+L\"owenheim--Skolem Munggah, kang njamin yen himpunan
+!!{sentence}s nduweni model !!a{denumerable}, mula uga
+nduweni model !!a{nonenumerable}. Loro teorema iki ora
+bener ing logika orde kapindho.
+\end{explain}
+
+
+\begin{thm}
+\ollabel{thm:sol-no-ls} Teorema L\"owenheim--Skolem ora bener
+kanggo logika orde kapindho: ana !!{sentence}s kang nduweni
+model tanpa wates nanging ora nduweni model !!{enumerable}.
+\end{thm}
+
+\begin{proof}
+Elinga yen
+\[
+\fn{Count} \ident \lexists[z][\lexists[u][\lforall[X][((X(z) \land
+      \lforall[x][(X(x) \lif X(u(x)))]) \lif \lforall[x][X(x)])]]]
+\]
+bener ing sawijining !!a{structure}~$\Struct{M}$ yen lan
+mung yen $\Domain{M}$ iku !!{enumerable}, mula
+$\lnot\fn{Count}$ bener ing~$\Struct{M}$
+yen lan mung yen $\Domain{M}$ iku !!{nonenumerable}.
+Ana !!{structure}s kaya mangkono---jupuken sembarang
+himpunan !!{nonenumerable} minangka !!{domain},
+umpamane $\Pow{\Nat}$ utawa~$\Real$. Mula
+$\lnot \fn{Count}$ nduweni model tanpa wates nanging
+ora nduweni model !!{enumerable}.
+\end{proof}
+
+\begin{thm}
+Ana !!{sentence}s kang nduweni model !!{denumerable}
+nanging ora nduweni model !!{nonenumerable}.
+\end{thm}
+
+\begin{proof}
+$\fn{Count} \land \fn{Inf}$ bener ing $\Nat$ nanging
+ora bener ing !!{structure}~$\Struct{M}$ apa wae
+kang $\Domain{M}$ iku !!{nonenumerable}.
+\end{proof}
+
+
+\end{document}

@@ -1,0 +1,38 @@
+% Part: many-valued-logic
+% Chapter: infinite-valued-logics
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{inf}{int}
+
+\olsection{Pambuka}
+
+Jumlah nilai kabeneran ing sawijining matriks ora kudu winates.
+Pilihan kang cetha kanggo himpunan nilai kabeneran tanpa wates
+yaiku himpunan bilangan rasional antarane $0$ lan~$1$,
+$V_\infty = [0,1] \cap \Rat$, yaiku,
+\begin{align*}
+    V_\infty & = \Setabs{\frac{n}{m}}{n,m \in \Nat, 0<m, n\le m}.
+\intertext{Nalika nimbang himpunan nilai kabeneran tanpa wates iki,
+asring migunani uga nimbang subhimpunan kanggo indeks paling ora loro:}
+V_m & = \Setabs{\frac{n}{m-1}}{n \in \Nat \text{ lan } n<m}
+\intertext{Umpamane, $V_5$ iku himpunan kang dumadi saka $5$ nilai kabeneran
+kanthi sela kang padha,}
+V_5 & = \{0, \frac{1}{4}, \frac{1}{2}, \frac{3}{4}, 1\}.
+\end{align*}
+Ing logika kang adhedhasar himpunan nilai kabeneran iki, lumrahe
+mung $1$ kang dadi nilai pinilih, yaiku $V^+ = \{1\}$. Kanthi
+tembung liya, $1$ dadi nilai bener (mutlak), $0$ dadi nilai salah
+mutlak, nanging !!{formula}s bisa nduweni nilai antarané
+ing~$V$.
+
+Kita uga bisa nimbang himpunan $V_{[0,1]} = [0,1]$ kang ngemot
+kabeh bilangan \emph{real} antarane $0$ lan~$1$, utawa
+subhimpunan tanpa wates liyane saka $[0,1]$. Logika kang
+nggunakake himpunan nilai kabeneran iki kerep diarani
+\emph{fuzzy}.
+
+\end{document}

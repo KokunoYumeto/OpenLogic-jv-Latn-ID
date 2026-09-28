@@ -1,0 +1,70 @@
+% Part: counterfactuals
+% Chapter: minimal-change-semantics
+% Section: transitivity
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cnt}{min}{cpo}
+
+\olsection{Kontraposisi}
+
+Kondisional material lan kondisional ketat ekuivalen karo
+kontrapositife. Kontrafaktual ora mangkono. Iki tuladha saka
+Kratzer:
+\begin{quote}
+  Saupama Goethe ora seda ing taun 1832, dheweke (tetep)
+  mesthi wis seda saiki.
+
+  Saupama Goethe durung seda saiki, dheweke mesthi wis seda
+  ing taun 1832.
+\end{quote}
+Ukara kapisan bener: manungsa ora urip nganti atusan taun.
+Ukara kapindho cetha luput: saupama Goethe durung seda saiki,
+dheweke isih urip, mula ora mungkin wis seda ing taun 1832.
+
+\begin{ex}\ollabel{ex:contraposition-counterex}
+  Semantik bola nuduhake yen kontraposisi ora sah, yaiku $p
+  \cif q \Entails/ \lnot q \cif \lnot p$. Upamane $p$
+  ateges ``Goethe ora seda ing taun 1832'' lan $q$ ateges
+  ``Goethe wis seda saiki.'' Iki bisa diwakili dening model
+  $\mModel{M} = \tuple{W, O, V}$ kanthi $W = \{w, w_1, w_2\}$,
+  $O_w = \{\{w\}, \{w, w_1\}, \{w, w_1, w_2\}\}$,
+  $V(p) = \{w_1, w_2\}$ lan $V(q) = \{w, w_1\}$. Dadi $w$
+  donya aktual kang ing kono Goethe seda ing taun 1832 lan
+  saiki isih seda; $w_1$ donya kang cedhak, kang ing kono
+  Goethe seda, upamane, ing taun 1833 lan saiki isih seda;
+  lan $w_2$ donya kang adoh, kang ing kono Goethe isih urip.
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}[scale=.6,layerwidth=1.5]\tiny
+  \spheresystem{3}
+  \begin{scope}
+    \clip \propositionplot{0}{.8}{50}{4.5} -- (4.5,-4.5) -- (-4.5,-4.5) -- (-4.5,4.5) -- (4.5,4.5);
+    \spherelayer{3}
+  \end{scope}
+  \propositionintersect{0}{2}{110}{5.5}
+  \proposition{0}{.8}{50}{4.5}
+  \path (0,0) node[world] {$w$};
+  \spherepos{0}{2}{node[world] {$w_1$}}
+  \spherepos{-50}{3}{node[world] {$w_2$}}
+  \spherepos{28}{3}{node {$q$}}
+  \spherepos{42}{3}{node {$\lnot q$}}
+  \spherepos{-55}{4}{node {$p$}}
+  \spherepos{-67}{4}{node {$\lnot p$}}
+\end{tikzpicture}
+\caption{Tuladha panyanggah tumrap kontraposisi}
+\ollabel{fig:contraposition}
+\end{center}
+\end{figure}
+Ana bola kang ngakoni $p$, yaiku $S = \{w, w_1\}$, lan
+$p \lif q$ bener ing kabeh donya ing kono, mula
+$\mSat{M}{p \cif q}[w]$. Nanging bola siji-sijine kang
+ngakoni $\lnot q$, yaiku $\{w, w_1, w_2\}$, ngemot donya~$w_2$
+kang ing kono $q$ luput lan $p$ bener, mula
+$\mSat/{M}{\lnot q \lif \lnot p}[w_2]$. Dadi
+kontrafaktual kontrapositif luput ing~$w$.
+\end{ex}
+
+\end{document}

@@ -1,0 +1,113 @@
+% Part: first-order-logic
+% Chapter: syntax-and-semantics
+% Section: subformulas
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{syn}{sbf}
+
+\olsection{\printtoken{P}{subformula}}
+
+\begin{explain}
+Kerep migunani kanggo ngrembug !!{formula}s kang nyusun sawijining
+!!{formula}. Iki diarani \emph{!!{subformula}s} saka formula kasebut.
+Saben !!{formula} dianggep !!a{subformula} saka awake dhewe;
+subformula saka $!A$ kang dudu $!A$ dhewe diarani
+\emph{!!{subformula} sejati}.
+\end{explain}
+
+\begin{defn}[!!^{subformula} Langsung]
+Yen $!A$ iku !!a{formula}, \emph{!!{subformula}s langsung}
+saka $!A$ ditetepake kanthi induktif kaya mangkene:
+\begin{enumerate}
+\item !!{formula}s atomik ora nduweni !!{subformula}s langsung.
+
+\tagitem{prvNot}{\indcase{!A}{\lnot !B}{Siji-sijine
+    !!{subformula} langsung saka $\indfrm$ yaiku~$!B$.}}{}
+
+\item \indcase{!A}{(!B \ast !C)}{!!{subformula}s langsung saka
+  $\indfrm$ yaiku $!B$ lan $!C$ ($\ast$ iku salah siji saka konektif
+  rong panggonan).}
+
+\tagitem{prvAll}{\indcase{!A}{\lforall[x][!B]}{Siji-sijine
+    !!{subformula} langsung saka $\indfrm$ yaiku~$!B$.}}{}
+
+\tagitem{prvEx}{\indcase{!A}{\lexists[x][!B]}{Siji-sijine
+    !!{subformula} langsung saka $\indfrm$ yaiku~$!B$.}}{}
+\end{enumerate}
+\end{defn}
+
+\begin{defn}[!!^{subformula} Sejati]
+Yen $!A$ iku !!a{formula}, \emph{!!{subformula}s sejati}
+saka $!A$ ditetepake kanthi rekursif kaya mangkene:
+\begin{enumerate}
+\item !!{formula}s atomik ora nduweni !!{subformula}s sejati.
+
+\tagitem{prvNot}{\indcase{!A}{\lnot !B}{!!{subformula}s sejati saka
+    $\indfrm$ yaiku~$!B$ bebarengan karo kabeh !!{subformula}s sejati
+    saka~$!B$.}}{}
+
+\item \indcase{!A}{(!B \ast !C)}{!!{subformula}s sejati saka
+  $\indfrm$ yaiku $!B$, $!C$, bebarengan karo kabeh !!{subformula}s
+  sejati saka $!B$ lan saka~$!C$.}
+
+\tagitem{prvAll}{\indcase{!A}{\lforall[x][!B]}{!!{subformula}s
+    sejati saka $\indfrm$ yaiku~$!B$ bebarengan karo kabeh
+    !!{subformula}s sejati saka~$!B$.}}{}
+
+\tagitem{prvEx}{\indcase{!A}{\lexists[x][!B]}{!!{subformula}s
+    sejati saka $\indfrm$ yaiku~$!B$ bebarengan karo kabeh
+    !!{subformula}s sejati saka~$!B$.}}{}
+\end{enumerate}
+\end{defn}
+
+\begin{defn}[!!^{subformula}]
+!!{subformula}s saka $!A$ yaiku $!A$ dhewe bebarengan karo kabeh
+!!{subformula}s sejatine.
+\end{defn}
+
+\begin{explain}
+Gatekna prabédan alus ing carane kita nemtokake !!{subformula}s
+langsung lan !!{subformula}s sejati. Ing kasus kapisan, kita
+langsung nemtokake !!{subformula}s langsung saka sawijining
+formula~$!A$ kanggo saben wujud $!A$ kang mungkin. Iki definisi
+eksplisit miturut kasus, lan kasus-kasuse niru definisi induktif
+himpunan !!{formula}s. Ing kasus kapindho, kita uga niru cara
+himpunan kabeh !!{formula}s ditetepake, nanging ing saben kasus kita
+uga nyakup !!{subformula}s sejati saka !!{formula}s kang luwih cilik,
+yaiku $!B$, $!C$, saliyane !!{formula}s kasebut dhewe. Iki ndadekake
+definisi kasebut \emph{rekursif}. Umume, definisi sawijining fungsi
+ing himpunan kang ditetepake kanthi induktif (ing kene, !!{formula}s)
+iku rekursif yen kasus-kasus ing definisi fungsi mau nggunakake
+fungsi kasebut dhewe. Nanging supaya definisine sah, kita kudu
+mesthekake yen nilai fungsi kang digunakake mung kanggo argumen
+kang teka luwih dhisik tinimbang argumen kang lagi ditetepake---ing
+kene, nalika nemtokake "!!{subformula} sejati" kanggo $(!B \ast !C)$,
+kita mung nggunakake !!{subformula}s sejati saka !!{formula}s
+kang luwih dhisik, yaiku $!B$ lan $!C$.
+\end{explain}
+
+\begin{prop}
+\ollabel{prop:subfrm-trans}
+Upamana $!B$ iku subformula saka $!A$ lan $!C$ iku subformula saka $!B$.
+Mula $!C$ iku subformula saka $!A$. Kanthi tembung liya, relasi
+subformula iku transitif.
+\end{prop}
+
+\begin{prob}
+Buktèkna \olref[fol][syn][sbf]{prop:subfrm-trans}.
+\end{prob}
+
+\begin{prop}
+\ollabel{prop:count-subfrms}
+Upamana $!A$ iku formula kanthi $n$ konektif lan kuantor.
+Mula $!A$ nduweni paling akeh $2n+1$ subformula.
+\end{prop}
+
+\begin{prob}
+Buktèkna \olref[fol][syn][sbf]{prop:count-subfrms}.
+\end{prob}
+
+\end{document}

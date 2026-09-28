@@ -1,0 +1,59 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{replacement}{ref}
+\olsection{Panggantian lan Refleksi}
+
+Upaya pungkasan kita kanggo menehi dhasar
+marang Panggantian liwat \stagesinex diwiwiti
+kanthi asil kang jero lan endah:\footnote{Elinga:
+kabeh formula bisa ngemot parameter (kajaba yen
+diandharake kanthi cetha kosokbaline).}
+%Ing kene aku bakal nganggo garis ndhuwur, kayata $x_1, \ldots, x_n$, kanggo
+%nyingkat ``$x_1, \ldots, x_n$'':
+\begin{thm}[Skema Refleksi]\ollabel{reflectionschema}
+Kanggo saben formula $\phi$:
+\[
+\forall \alpha \exists \beta > \alpha (\forall x_1 \ldots, x_n \in
+V_\beta)(\phi(x_1, \ldots, x_n) \liff \phi^{V_\beta}(x_1, \ldots, x_n))
+\]
+\end{thm}
+\noindent 
+Kaya ing \olref[sth][replacement][strength]{formularelativization},
+$\phi^{V_\beta}$ dipikolehi kanthi matesi
+saben kuantor ing $\phi$ marang himpunan~$V_\beta$.
+Dadi, miturut intuisi, Refleksi kandha:
+yen $\phi$ bener ing sakabehing hierarki,
+$\phi$ uga bener ing \emph{perangan wiwitan}
+hierarki kang indeksé bisa ngluwihi ordinal
+apa wae.
+
+\citet{Montague1961} lan \citet{Levy1960}
+nuduhake yen (rumusan kang trep saka)
+Panggantian lan Refleksi iku ekivalen relatif
+marang~$\Z$, mula nambah salah siji bakal
+ngasilake~$\ZF$. (Kita bakal mbuktekake iki
+ing \olref[sth][replacement][refproofs]{sec}.)
+Amarga ekivalensi iki, kita bisa ngarepake
+yen Refleksi lan Panggantian bisa diwenehi
+dhasar liwat \stagesinex{} mangkene: miturut
+\stagesinex, hierarki mesthine dhuwur banget,
+nganti pratelan apa wae babagan hierarki ora
+cukup kanggo matesi dhuwure. Iki bisa
+dimangerteni mangkene: yen sawijining
+ukara~$\phi$ bener ing sakabehing hierarki,
+ing sadhuwure wates apa wae ana perangan
+wiwitan hierarki kang uga ndadekake ukara iku
+bener.
+Iki persis Refleksi.
+
+Sepisan maneh, iki katon minangka upaya kang
+njanjeni kanggo menehi dhasar intrinsik marang
+Panggantian. Nanging rembugane akeh banget
+kanggo diwenehake ing kene. Pamaca kudu
+mutusake dhewe apa upaya iki kasil.\footnote{Kanggo
+nerusake, pamaca bisa maca
+\citet[95--100]{Incurvati2020}.}
+
+\end{document}

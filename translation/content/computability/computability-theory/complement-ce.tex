@@ -1,0 +1,85 @@
+% Part: computability
+% Chapter: computability-theory
+% Section: complement-ce
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{thy}{cmp}
+\olsection{Himpunan kang Bisa Dienumerasi sacara Komputabel Ora Katutup tumrap Komplemen}
+
+Upamane $A$ bisa dienumerasi sacara komputabel.
+Apa komplemen~$A$,
+$\Complement{A} = \Nat \setminus A$,
+uga mesthi bisa dienumerasi sacara komputabel?
+Teorema lan akibat ing ngisor iki nuduhake
+yen wangsulane ``ora''.
+
+\begin{thm}
+\ollabel{thm:ce-comp}
+Tetepna $A$ minangka himpunan sembarang
+saka wilangan asli. Mula $A$ komputabel yen
+lan mung yen $A$ lan $\Complement{A}$
+loro-lorone bisa dienumerasi sacara komputabel.
+\end{thm}
+
+\begin{proof}
+Arah maju gampang: yen $A$ komputabel,
+mula $\Complement{A}$ uga komputabel
+($\Char{A} = 1 \tsub
+\Char{\Complement{A}}$), saengga loro-lorone
+bisa dienumerasi sacara komputabel.
+
+Ing arah kosok baline, upamane $A$ lan
+$\Complement{A}$ loro-lorone bisa
+dienumerasi sacara komputabel. Tetepna
+$A$ minangka domain~$\cfind{d}$, lan
+$\Complement{A}$ minangka domain~$\cfind{e}$.
+Tetepna $h$ minangka
+\[
+h(x) = \umin{s}{(T(d,x,s) \lor T(e,x,s))}.
+\]
+Kanthi tembung liya, ing input~$x$,
+$h$~nggoleki komputasi kang mandheg saka
+$\cfind{d}$ utawa $\cfind{e}$. Yen
+$x \in A$, panggolekan iki kasil ing
+kasus kapisan; yen $x \in
+\Complement{A}$, kasil ing kasus kapindho.
+Mula $h$~fungsi komputabel total.
+% OLPL-139: Sumber beku nulis e ing tes anggota A, padahal d ngindeks A lan e ngindeks komplemene.
+Nanging saiki kanggo saben~$x$, $x \in A$
+yen lan mung yen $T(d, x, h(x))$,
+yaiku yen $\cfind{d}$ kang ditegesi.
+Amarga $T(d, x, h(x))$ relasi komputabel,
+$A$~komputabel.
+\end{proof}
+
+\begin{explain}
+Ing basa komputasi kang ora formal,
+iki luwih gampang dimangerteni: kanggo
+mutusake $A$, ing input $x$ goleka
+% OLPL-140: Sumber beku nyebut e lan f, banjur ngarani e anggota A; indeks sing bener yaiku d kanggo A lan e kanggo komplemene.
+komputasi kang mandheg saka $\cfind{d}$
+lan $\cfind{e}$. Salah sijine mesthi
+mandheg; yen iku $\cfind{d}$, mula
+$x$ kalebu~$A$, yen ora, $x$ kalebu
+$\Complement{A}$.
+\end{explain}
+
+\begin{cor}
+\ollabel{cor:comp-k}
+$\Complement{K_0}$ ora bisa dienumerasi
+sacara komputabel.
+\end{cor}
+
+\begin{proof}
+Kita ngerti yen $K_0$ bisa dienumerasi
+sacara komputabel, nanging ora komputabel.
+Yen $\Complement{K_0}$ bisa dienumerasi
+sacara komputabel, mula $K_0$ mesthi
+komputabel miturut \olref{thm:ce-comp},
+nalisir \olref[ncp]{thm:K-0}.
+\end{proof}
+
+\end{document}

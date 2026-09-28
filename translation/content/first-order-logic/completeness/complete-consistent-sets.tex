@@ -1,0 +1,229 @@
+% Part: first-order-logic
+% Chapter: completeness
+% Section: complete-sets
+
+% Definition of complete consistent sets. Properties of complete sets required
+% for completeness proved are in provability.tex in the
+% chapter on the proof system used.
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{com}{ccs}}
+      {\olfileid{pl}{com}{ccs}}
+      
+\olsection{Himpunan \usetoken{P}{sentence} kang Jangkep lan Konsisten}
+
+\begin{defn}[Himpunan jangkep]
+\ollabel{def:complete-set} Himpunan~$\Gamma$ saka !!{sentence}s iku
+\emph{!!{complete}} yen lan mung yen kanggo sembarang !!{sentence}~$!A$,
+$!A \in \Gamma$ utawa $\lnot !A \in \Gamma$.
+\end{defn}
+
+\begin{explain}
+!!^{complete} himpunan ukara ora ninggal pitakon kang durung kajawab.
+Kanggo sembarang !!{sentence}~$!A$, $\Gamma$ ``ngandharake'' apa $!A$
+bener utawa luput. Wigatine himpunan !!{complete} ora mung tumrap bukti
+teorema kelengkapan. Umpamane, teori kang !!{complete} lan bisa
+diaksiomatisasi mesthi bisa diputusake.
+\end{explain}
+
+\begin{explain}
+!!^{complete} himpunan konsisten wigati ing bukti kelengkapan amarga
+kita bisa njamin yen saben himpunan konsisten saka
+!!{sentence}s~$\Gamma$ kamot ing !!a{complete} himpunan konsisten
+$\Gamma^*$. !!^a{complete} himpunan konsisten ngemot, kanggo saben
+!!{sentence}~$!A$, $!A$ utawa negasine $\lnot !A$, nanging ora
+kalorone. Iki mligine bener kanggo \iftag{FOL}{!!{sentence}s
+atomik}{variabel proposisional}, mula saka !!a{complete} himpunan
+konsisten\iftag{FOL}{ ing basa kang wis digedhekake kanthi trep nganggo
+!!{constant}s}{}, kita bisa mbangun
+\iftag{FOL}{!!a{structure}}{!!a{valuation}} kang
+\iftag{FOL}{interpretasi !!{predicate}s}{nilai bebener kang dipasangake
+marang variabel proposisional} ditemtokake miturut
+\iftag{FOL}{!!{sentence}s atomik}{!!{propositional variable}s} endi kang
+ana ing~$\Gamma^*$. Banjur bisa dibuktekake yen
+\iftag{FOL}{!!{structure}}{!!{valuation}} iki ndadekake kabeh
+!!{sentence}s ing~$\Gamma^*$ (lan mula uga kabeh kang ana
+ing~$\Gamma$) bener. Bukti kasunyatan pungkasan iki mbutuhake yen
+$\lnot !A \in \Gamma^*$ yen lan mung yen $!A \notin \Gamma^*$,
+$(!A \lor !B) \in \Gamma^*$ yen lan mung yen $!A \in \Gamma^*$ utawa
+$!B \in \Gamma^*$, lan sateruse.
+\end{explain}
+
+Ing sabanjure, kita bakal kerep nggunakake tanpa nyebutake
+sipat refleksivitas, monotonisitas, lan transitivitas saka $\Proves$
+(delengen
+\iftag{FOL}{%
+  \tagrefs{prfSC/{fol:seq:ptn:sec},prfND/{fol:ntd:ptn:sec},prfAX/{fol:axd:ptn:sec},prfTab/{fol:tab:ptn:sec}}}{%
+  \tagrefs{prfSC/{pl:seq:ptn:sec},prfND/{pl:ntd:ptn:sec},prfAX/{pl:axd:ptn:sec},prfTab/{pl:tab:ptn:sec}}}).
+
+\begin{prop}
+\ollabel{prop:ccs}
+Upamana $\Gamma$ iku !!{complete} lan konsisten. Banjur:
+\begin{enumerate}
+\item \ollabel{prop:ccs-prov-in} Yen $\Gamma \Proves !A$, mula $!A \in
+  \Gamma$.
+
+\tagitem{prvAnd}{\ollabel{prop:ccs-and} $!A \land !B \in \Gamma$
+  yen lan mung yen $!A \in \Gamma$ lan $!B \in \Gamma$ kalorone.}{}
+
+\tagitem{prvOr}{\ollabel{prop:ccs-or} $!A \lor !B \in \Gamma$ yen lan
+  mung yen $!A \in \Gamma$ utawa $!B \in \Gamma$.}{}
+
+\tagitem{prvIf}{\ollabel{prop:ccs-if} $!A \lif !B \in \Gamma$ yen lan
+  mung yen $!A \notin \Gamma$ utawa $!B \in \Gamma$.}{}
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+Kanggo kabeh bagean ing ngisor iki, upamana $\Gamma$ iku !!{complete}
+lan konsisten.
+\begin{enumerate}
+\item Yen $\Gamma \Proves !A$, mula $!A \in \Gamma$.
+
+Upamana $\Gamma \Proves !A$. Kanggo nggayuh cengkah, upamana $!A
+\notin \Gamma$. Amarga $\Gamma$ iku !!{complete}, $\lnot !A \in \Gamma$.
+Miturut
+\iftag{FOL}{%
+  \tagrefs{prfSC/{fol:seq:prv:prop:explicit-inc},
+    prfND/{fol:ntd:prv:prop:explicit-inc},
+    prfAX/{fol:axd:prv:prop:explicit-inc},
+    prfTab/{fol:tab:prv:prop:explicit-inc}}}{%
+  \tagrefs{prfSC/{pl:seq:prv:prop:explicit-inc},
+    prfND/{pl:ntd:prv:prop:explicit-inc},
+    prfAX/{pl:axd:prv:prop:explicit-inc},
+    prfTab/{pl:tab:prv:prop:explicit-inc}}},
+$\Gamma$ ora konsisten. Iki cengkah karo hipotesis yen $\Gamma$
+konsisten. Mula, ora mungkin $!A \notin \Gamma$, dadi $!A \in
+\Gamma$.
+
+\tagitem{defAnd}{}{%
+\iftag{probAnd}{Latihan.}{%
+$!A \land !B \in \Gamma$ yen lan mung yen $!A \in \Gamma$ lan
+$!B \in \Gamma$ kalorone:
+
+Kanggo arah maju, upamana $!A \land !B \in \Gamma$. Banjur miturut
+\iftag{FOL}{%
+  \tagrefs{prfSC/{fol:seq:ppr:prop:provability-land},
+    prfND/{fol:ntd:ppr:prop:provability-land},
+    prfAX/{fol:axd:ppr:prop:provability-land},
+    prfTab/{fol:tab:ppr:prop:provability-land}}}{%
+  \tagrefs{prfSC/{pl:seq:ppr:prop:provability-land},
+    prfND/{pl:ntd:ppr:prop:provability-land},
+    prfAX/{pl:axd:ppr:prop:provability-land},
+    prfTab/{pl:tab:ppr:prop:provability-land}}}, butir~(1),
+$\Gamma \Proves !A$ lan $\Gamma \Proves !B$. Miturut
+\olref{prop:ccs-prov-in}, $!A \in \Gamma$ lan $!B \in \Gamma$,
+kaya kang dibutuhake.
+
+Kanggo arah kosok baline, upamana $!A \in \Gamma$ lan $!B \in
+\Gamma$. Miturut
+\iftag{FOL}{%
+  \tagrefs{prfSC/{fol:seq:ppr:prop:provability-land},
+    prfND/{fol:ntd:ppr:prop:provability-land},
+    prfAX/{fol:axd:ppr:prop:provability-land},
+    prfTab/{fol:tab:ppr:prop:provability-land}}}{%
+  \tagrefs{prfSC/{pl:seq:ppr:prop:provability-land},
+    prfND/{pl:ntd:ppr:prop:provability-land},
+    prfAX/{pl:axd:ppr:prop:provability-land},
+    prfTab/{pl:tab:ppr:prop:provability-land}}}, butir~(2),
+$\Gamma \Proves !A \land !B$. Miturut \olref{prop:ccs-prov-in},
+$!A \land !B \in \Gamma$.}}
+
+\tagitem{defOr}{}{%
+\iftag{probOr}{Latihan.}{%
+Kaping pisan, kita nuduhake yen $!A \lor !B \in \Gamma$, mula
+$!A \in \Gamma$ utawa $!B \in \Gamma$. Upamana $!A \lor !B \in
+\Gamma$, nanging $!A \notin \Gamma$ lan $!B \notin \Gamma$. Amarga
+$\Gamma$ iku !!{complete}, $\lnot !A \in \Gamma$ lan $\lnot !B \in
+\Gamma$. Miturut
+\iftag{FOL}{%
+  \tagrefs{prfSC/{fol:seq:ppr:prop:provability-lor},
+    prfND/{fol:ntd:ppr:prop:provability-lor},
+    prfAX/{fol:axd:ppr:prop:provability-lor},
+    prfTab/{fol:tab:ppr:prop:provability-lor}}}{%
+  \tagrefs{prfSC/{pl:seq:ppr:prop:provability-lor},
+    prfND/{pl:ntd:ppr:prop:provability-lor},
+    prfAX/{pl:axd:ppr:prop:provability-lor},
+    prfTab/{pl:tab:ppr:prop:provability-lor}}},
+butir (1), $\Gamma$ ora konsisten, kang dadi cengkah. Mula,
+$!A \in \Gamma$ utawa $!B \in \Gamma$.
+
+Kanggo arah kosok baline, upamana $!A \in \Gamma$ utawa $!B \in
+\Gamma$. Miturut
+\iftag{FOL}{%
+  \tagrefs{prfSC/{fol:seq:ppr:prop:provability-lor},
+    prfND/{fol:ntd:ppr:prop:provability-lor},
+    prfAX/{fol:axd:ppr:prop:provability-lor},
+    prfTab/{fol:tab:ppr:prop:provability-lor}}}{%
+  \tagrefs{prfSC/{pl:seq:ppr:prop:provability-lor},
+    prfND/{pl:ntd:ppr:prop:provability-lor},
+    prfAX/{pl:axd:ppr:prop:provability-lor},
+    prfTab/{pl:tab:ppr:prop:provability-lor}}}, butir (2),
+$\Gamma \Proves !A \lor !B$. Miturut \olref{prop:ccs-prov-in},
+$!A \lor !B \in \Gamma$, kaya kang dibutuhake.}}
+
+\tagitem{defIf}{}{%
+\iftag{probIf}{Latihan.}{%
+Kanggo arah maju, upamana $!A \lif !B \in \Gamma$, lan kanggo nggayuh
+cengkah upamana $!A \in \Gamma$ lan $!B \notin \Gamma$. Miturut
+hipotesis-hipotesis iki, $!A \lif !B \in \Gamma$ lan $!A \in
+\Gamma$. Miturut
+\iftag{FOL}{%
+  \tagrefs{prfSC/{fol:seq:ppr:prop:provability-lif},
+    prfND/{fol:ntd:ppr:prop:provability-lif},
+    prfAX/{fol:axd:ppr:prop:provability-lif},
+    prfTab/{fol:tab:ppr:prop:provability-lif}}}{%
+  \tagrefs{prfSC/{pl:seq:ppr:prop:provability-lif},
+    prfND/{pl:ntd:ppr:prop:provability-lif},
+    prfAX/{pl:axd:ppr:prop:provability-lif},
+    prfTab/{pl:tab:ppr:prop:provability-lif}}}, butir (1),
+$\Gamma \Proves !B$. Nanging banjur, miturut
+\olref{prop:ccs-prov-in}, $!B \in \Gamma$, kang cengkah karo hipotesis
+yen $!B \notin \Gamma$.
+
+Kanggo arah kosok baline, dhisik gatekna perkara $!A \notin \Gamma$.
+Amarga $\Gamma$ iku !!{complete}, $\lnot !A \in \Gamma$. Miturut
+\iftag{FOL}{%
+  \tagrefs{prfSC/{fol:seq:ppr:prop:provability-lif},
+    prfND/{fol:ntd:ppr:prop:provability-lif},
+    prfAX/{fol:axd:ppr:prop:provability-lif},
+    prfTab/{fol:tab:ppr:prop:provability-lif}}}{%
+  \tagrefs{prfSC/{pl:seq:ppr:prop:provability-lif},
+    prfND/{pl:ntd:ppr:prop:provability-lif},
+    prfAX/{pl:axd:ppr:prop:provability-lif},
+    prfTab/{pl:tab:ppr:prop:provability-lif}}}, butir (2),
+$\Gamma \Proves !A \lif !B$. Miturut \olref{prop:ccs-prov-in} maneh,
+kita entuk $!A \lif !B \in \Gamma$, kaya kang dibutuhake.
+
+Saiki gatekna perkara $!B \in \Gamma$. Miturut
+\iftag{FOL}{%
+  \tagrefs{prfSC/{fol:seq:ppr:prop:provability-lif},
+    prfND/{fol:ntd:ppr:prop:provability-lif},
+    prfTab/{fol:tab:ppr:prop:provability-lif},
+    prfAX/{fol:axd:ppr:prop:provability-lif}}}{%
+  \tagrefs{prfSC/{pl:seq:ppr:prop:provability-lif},
+    prfND/{pl:ntd:ppr:prop:provability-lif},
+    prfTab/{pl:tab:ppr:prop:provability-lif},
+    prfAX/{pl:axd:ppr:prop:provability-lif}}},
+butir (2) maneh, $\Gamma \Proves !A \lif !B$. Miturut
+\olref{prop:ccs-prov-in}, $!A \lif !B \in \Gamma$.}}
+\end{enumerate}
+\end{proof}
+
+\tagprob{FOL}
+\begin{prob}
+Rampungna bukti \olref[fol][com][ccs]{prop:ccs}.
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+Rampungna bukti \olref[pl][com][ccs]{prop:ccs}.
+\end{prob}
+\tagendprob
+
+\end{document}

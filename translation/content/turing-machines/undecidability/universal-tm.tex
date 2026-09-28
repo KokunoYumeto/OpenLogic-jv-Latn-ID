@@ -1,0 +1,167 @@
+% Part: turing-machines
+% Chapter: undecidability
+% Section: universal-tm
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{tur}{und}{uni}
+\olsection{Mesin Turing Universal}
+
+Ing \olref[enu]{sec} kita wis ngrembug carane
+saben mesin Turing bisa diterangake nganggo runtutan
+winates wilangan wutuh. Runtutan iku ngode kahanan,
+alfabet, kahanan wiwitan, lan instruksi mesin Turing.
+Kita uga wis nuduhake yen himpunan kabeh andharan
+iki !!{enumerable}. Amarga himpunan andharan mau
+!!{denumerable}, ana fungsi !!a{surjective}
+saka~$\Nat$ menyang himpunan andharan iku. Fungsi
+!!a{surjective} kaya mangkono bisa diasilake,
+umpamane, nganggo cara zig-zag Cantor. Kanthi iki,
+kita bisa ngenumerasi kabeh (andharan) mesin Turing.
+Yen salah siji enumerasi iku wis ditetepake,
+kita bisa nyebut mesin Turing kapangka-$1$,
+kapangka-$2$, \dots, kapangka-$e$. Wilangan
+iki diarani \emph{indeks}.
+
+\begin{defn}
+Yen $M$~yaiku mesin Turing kapangka-$e$
+(ing enumerasi kang wis ditetepake), kita nyebut
+$e$~minangka \emph{indeks} saka~$M$. Kita nulis
+$M_e$ kanggo mesin Turing kapangka-$e$.
+\end{defn}
+
+Siji mesin bisa nduwé luwih saka siji indeks.
+Contone, rong andharan saka~$M$ bisa béda
+ing urutan dhaptar instruksine, lan andharan
+kang béda iku nduwé indeks kang béda.
+
+Sing wigati, enumerasi andharan mesin Turing bisa
+ditetepake saengga andharan~$M$ bisa diitung
+kanthi efektif saka indekse, lan sawijining indeks
+mesin~$M$ bisa diitung kanthi efektif saka
+andharane. Miturut tesis Church--Turing, banjur
+ana mesin Turing kang bisa nemokake andharan
+mesin Turing kanthi indeks~$e$ lan nulis andharan
+iku ing pitane minangka output. Andharan iku
+awujud runtutan blok-blok~$\TMstroke$ (kang
+nggambarake wilangan wutuh positif ing runtutan
+andharan~$M_e$).
+
+Saka kene, lumrah yen kita takon: fungsi apa
+saka indeks mesin Turing kang uga bisa diitung
+dening mesin Turing? Sipat apa saka indeks mesin
+Turing kang bisa diputusake dening mesin Turing?
+Tuladhane, fungsi kang nggandhengake indeks~$e$
+karo cacahe kahanan mesin Turing kanthi indeks~$e$
+bisa diitung dening mesin Turing. Mesin kaya
+mangkono, yen diwiwiti ing pita kang ngemot
+siji blok $e$~$\TMstroke$, dhisik mbukak kode
+$e$ dadi andharane. Saiki andharan iku awujud
+runtutan blok-blok~$\TMstroke$ ing pita. Amarga
+!!{element} kapisan ing runtutan iki yaiku
+cacahe kahanan, mesin mung perlu mbusak kabeh
+kejaba blok $\TMstroke$ kapisan, banjur mandheg.
+
+A remarkable result is the following:
+
+\begin{thm}\ollabel{thm:universal-tm} Ana \emph{mesin Turing
+  universal}~$U$ kang, yen diwiwiti nganggo input $\tuple{e,n}$ 
+  \begin{enumerate}
+    \item mandheg yen lan mung yen $M_e$ mandheg nganggo input~$n$, lan
+    \item yen $M_e$ mandheg kanthi output $m$, $U$ uga mangkono.
+  \end{enumerate}
+  Mula $U$ ngitung fungsi $f\colon \Nat \times \Nat \pto \Nat$
+  kang $f(e,n) = m$ yen $M_e$, nalika diwiwiti
+  nganggo input~$n$, mandheg kanthi output~$m$,
+  lan ora ditegesi yen ora mangkono.
+\end{thm}
+
+\begin{proof}
+  Mbangun~$U$ kanthi nyata iku praktis ora mungkin,
+  amarga mesin iki rumit banget. Nanging kita bisa
+  njlentrehake garis gedhé carane makarya, banjur
+  nggunakake tesis Church--Turing. Nalika diwiwiti,
+  pita~$U$ ngemot blok $e$~$\TMstroke$ banjur blok
+  $n$~$\TMstroke$. Dhisik mesin ``mbukak kode''
+  indeks~$e$ ing sisih tengen input~$n$. Iki
+  ngasilake dhaptar wilangan (yaiku blok-blok
+  $\TMstroke$ kang dipisahake dening~$\TMblank$)
+  kang njlentrehake instruksi mesin~$M_e$. Banjur
+  $U$ nulis nomer kahanan wiwitan~$M_e$ lan
+  wilangan~$1$ ing pita sisih tengen andharan~$M_e$.
+  (Iki uga digambarake kanthi siji simbol bola-bali,
+  minangka blok-blok $\TMstroke$.) Sabanjure,
+  mesin nyalin input (blok $n$~$\TMstroke$) menyang
+  sisih tengen---nanging saben $\TMstroke$ diganti
+  blok telung $\TMstroke$ (elinga, nomer simbol
+  $\TMstroke$ yaiku~$3$, $1$ yaiku nomer~$\TMendtape$,
+  lan $2$ yaiku nomer~$\TMblank$). Ing pucuk kiwa
+  runtutan blok-blok iki (kang dipisahake dening
+  simbol $\TMblank$ ing pita~$U$), mesin nulis
+  siji~$\TMstroke$, yaiku kode kanggo~$\TMendtape$.
+
+  Saiki pita~$U$ ngemot: indeks~$e$, wilangan~$n$,
+  nomer kode kahanan wiwitan (yaiku ``kahanan saiki''),
+  nomer panggonan wiwitan sirah maca-nulis~$1$
+  (yaiku ``panggonan sirah saiki''), lan isi
+  wiwitan ``pita'' (runtutan blok-blok~$\TMstroke$
+  kang nggambarake nomer kode simbol-simbol~$M_e$
+  ---yaiku ``simbol-simbol''---lan dipisahake
+  dening~$\TMblank$).
+
+  Banjur mesin iku niru apa kang bakal ditindakake
+  $M_e$ yen diwiwiti nganggo input~$n$, kanthi
+  langkah-langkah iki:
+  \begin{enumerate}
+    \item Temokake wilangan~$k$ kanggo ``panggonan
+    sirah saiki'' (ing wiwitan yaiku~$1$),
+    \item Pindhaha menyang blok kapangka-$k$ ing
+    ``pita'' kanggo ndeleng ``simbol'' ing kono,
+    \item\ollabel{find-inst}%
+    Temokake instruksi kang cocog karo ``kahanan''
+    lan ``simbol'' saiki,
+    \item Bali menyang blok kapangka-$k$ ing ``pita''
+    lan ganti ``simbol'' ing kono nganggo nomer
+    kode simbol kang bakal ditulis~$M_e$,
+    \item Pindhaha sirah menyang papan kang nyathet
+    ``kahanan'' saiki lan ganti nomer ing kono
+    nganggo nomer kahanan anyar,
+    % OLPL-151: Langkah ngurangi penghitung posisi durung njlentrehake aturan tetep ing kothak 0 yen instruksi mindhah kiwa.
+    \item Pindhaha menyang papan kang nyathet
+    ``panggonan ing pita'' lan busak
+    siji~$\TMstroke$ utawa tambah siji~$\TMstroke$
+    (yen instruksine obah kiwa utawa tengen,
+    miturut urutane).
+    \item Baleni.\footnote{Ing kene kita ngliwati
+    sawetara kangelan kang alus. Contone, $U$~bisa
+    mbutuhake papan tambahan nalika nambah penghitung
+    ``panggonan sirah saiki''---ing kahanan iki,
+    kabeh isi ``pita'' kudu dipindhah menyang tengen.}
+  \end{enumerate}
+  Yen $M_e$ kang diwiwiti nganggo input~$n$
+  ora tau mandheg, $U$ uga ora tau mandheg,
+  mula outpute ora ditegesi.
+
+  Yen ing langkah~\olref{find-inst} katemu yen
+  andharan~$M_e$ ora ngemot instruksi kanggo
+  pasangan ``kahanan''/``simbol'' saiki,
+  $M_e$ bakal mandheg. Yen iki kedadeyan,
+  $U$ mbusak bagean pita ing sisih kiwa
+  ``pita.'' Kanggo saben blok telung~$\TMstroke$
+  (kang nggambarake siji~$\TMstroke$ ing pita~$M_e$),
+  mesin nulis siji $\TMstroke$ ing pucuk kiwa
+  pitane dhewe lan mbusak ``pita'' sithik-sithik.
+  Yen wis rampung, pita~$U$ ngemot siji blok
+  $\TMstroke$ kang dawane~$m$.
+  
+  % OLPL-152: Rekonstruksi output ing sumber durung netepake carane ngliwati kode panandha pucuk kiwa lan kothak kosong ing pita simulasi sadurunge ngetrapake uji blok telu.
+  Yen $U$ nemoni bab saliyane blok telung~$\TMstroke$
+  ing ``pita,'' mesin langsung mandheg. Amarga
+  ing kahanan iki pita~$U$ ora ngemot siji blok
+  $\TMstroke$, outpute dudu wilangan asli,
+  yaiku $f(e,n)$ ora ditegesi ing kahanan iki.
+\end{proof}
+
+\end{document}

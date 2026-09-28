@@ -1,0 +1,592 @@
+% Part: first-order-logic
+% Chapter: models-of-arithmetic
+% Section: models-of-pa
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{mar}{mpa}
+\section{Model-Model saka $\Th{PA}$}
+
+\begin{explain}
+Saben model nonstandar saka~$\Th{TA}$
+uga model saka~$\Th{PA}$.
+Kita ngerti yen model nonstandar
+saka~$\Th{TA}$, lan mula
+saka~$\Th{PA}$, pancen ana.
+Kita uga ngerti yen model-model iki
+ngemot “wilangan” nonstandar,
+yaiku !!{element}s ing ranahé
+kang “ngluwihi” kabeh
+“wilangan” standar.
+Nanging kepriyé tata susunane?
+Pira cacahe?
+Kita wis weruh yen model
+teori kang luwih ringkih~$\Th{Q}$
+bisa ngemot mung siji
+wilangan nonstandar.
+Nanging !!{structure}s
+prasaja kaya mangkono
+dudu model saka $\Th{PA}$
+utawa $\Th{TA}$.
+
+Kunci kanggo mangerteni
+struktur model-model saka $\Th{PA}$
+utawa $\Th{TA}$
+yaiku ndeleng fakta apa kang
+!!{derivable} ing teori-teori iki.
+Upamane, $\Th{PA}$
+wis mbuktekake
+$\lforall[x][\eq/[x][x']]$
+lan
+$\lforall[x][\lforall[y][\eq[(x+y)][(y+x)]]]$.
+Mula struktur prasaja
+kang ndadekake !!{sentence}s
+iki kleru ora bisa dadi
+model saka~$\Th{PA}$.
+
+Upamakna~$\Struct{M}$
+model saka~$\Th{PA}$.
+Yen $\Th{PA} \Proves
+!A$, mula $\Sat{M}{!A}$.
+Kita gunakake maneh
+$\nszero$ kanggo
+$\Assign{\Obj{0}}{M}$,
+$\nssucc$ kanggo
+$\Assign{\prime}{M}$,
+$\nsplus$ kanggo
+$\Assign{+}{M}$,
+$\nstimes$ kanggo
+$\Assign{\times}{M}$,
+lan $\nsless$ kanggo
+$\Assign{<}{M}$.
+Saben !!{sentence}~$!A$
+banjur mratelakake
+sawijining syarat ngenani
+$\nszero$, $\nssucc$,
+$\nsplus$, $\nstimes$,
+lan $\nsless$.
+Yen $\Sat{M}{!A}$,
+syarat iku kudu kapenuhi.
+Upamane, yen
+$\Sat{M}{!Q_1}$,
+yaiku
+$\Sat{M}{\lforall[x][\lforall[y][(\eq[x'][y'] \lif \eq[x][y])]]}$,
+mula $\nssucc$ kudu
+!!{injective}.
+\end{explain}
+
+\begin{prop}
+Ing $\Struct{M}$,
+$\nsless$ iku urutan linear ketat,
+yaiku nyukupi:
+\begin{enumerate}
+\item Ora ana $x \nsless x$
+kanggo sembarang~$x \in \Domain{M}$.
+\item Yen $x \nsless y$
+lan $y \nsless z$,
+mula $x \nsless z$.
+\item Kanggo saben $x \neq y$,
+$x \nsless y$ utawa $y \nsless x$.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+$\Th{PA}$ mbuktekake:
+\begin{enumerate}
+\item $\lforall[x][\lnot x < x]$
+\item $\lforall[x][\lforall[y][\lforall[z][((x < y \land y < z) \lif x < z)]]]$
+\item $\lforall[x][\lforall[y][((x < y \lor y < x) \lor \eq[x][y])]]$
+\end{enumerate}
+Cathetan koreksi sumber OLPL-103:
+kurung panutup kang keluwihan
+ing rumus katelu dicopot;
+isi trikotominé tetep padha.
+\end{proof}
+
+\begin{prop}
+\ollabel{prop:M-discrete}
+$\nszero$ iku
+!!{element} paling cilik
+ing~$\Domain{M}$
+miturut urutan $\nsless$.
+Kanggo saben $x$,
+$x \nsless x^\nssucc$,
+lan $x^\nssucc$
+iku !!{element} paling cilik
+miturut $\nsless$
+kang luwih gedhe
+tinimbang unsur mau.
+Kanggo saben $x$
+kang dudu nol,
+ana siji-sijine $y$
+saéngga $y^\nssucc = x$.
+(Kita nyebut $y$
+“pradésesor” saka~$x$
+ing~$\Struct{M}$,
+lan nulis~$^\nssucc x$.)
+Cathetan koreksi sumber OLPL-104:
+nol ora nduweni pradésesor;
+pratelan iki mung kanggo
+unsur kang dudu nol.
+\end{prop}
+
+\begin{proof}
+Gladhen.
+\end{proof}
+
+\begin{prob}
+Temokna !!{sentence}s
+ing~$\Lang{L_A}$
+kang !!{derivable}
+ing~$\Th{PA}$
+(lan mula bener
+ing~$\Struct{N}$)
+kanggo njamin sipat-sipat
+$\nszero$, $\nssucc$,
+lan $\nsless$
+ing
+\olref[mod][mar][mpa]{prop:M-discrete}.
+\end{prob}
+
+\begin{prop}
+Kabeh !!{element}s standar
+saka~$\Struct{M}$
+luwih cilik
+miturut~$\nsless$
+tinimbang kabeh
+!!{element}s nonstandar.
+\end{prop}
+
+\begin{proof}
+Kita gunakake $n$
+minangka cekakan kanggo
+$\Value{\num{n}}{M}$,
+yaiku !!{element}
+standar saka~$\Struct{M}$.
+$\Th{Q}$ wis mbuktekake
+yen kanggo saben~$n
+\in \Nat$,
+$\lforall[x][(x < \num{n}' \lif (\eq[x][\num{0}] \lor
+  \eq[x][\num{1}] \lor \dots \lor \eq[x][\num{n}]))]$.
+Ora ana !!{element}s
+kang $\nsless \nszero$.
+Mula yen $n$ standar
+lan $x$ nonstandar,
+ora mungkin $x \nsless n$.
+Miturut definisi,
+unsur nonstandar iku
+ora padha karo
+$\Value{\num{n}}{M}$
+kanggo sembarang~$n
+\in \Nat$;
+mula $x \neq n$ uga.
+Amarga $\nsless$
+urutan linear,
+kudu $n \nsless x$.
+\end{proof}
+
+\begin{prop}
+Saben !!{element} nonstandar~$x$
+saka~$\Domain{M}$
+kalebu ing subhimpunan
+\[
+\dots ^{\nssucc\nssucc\nssucc}x \nsless ^{\nssucc\nssucc}x \nsless
+^{\nssucc}x \nsless x \nsless x^{\nssucc} \nsless x^{\nssucc\nssucc}
+\nsless x^{\nssucc\nssucc\nssucc} \nsless \dots
+\]
+Subhimpunan iki
+diarani \emph{blok saka~$x$}
+lan ditulis $[x]$.
+Blok iki ora nduweni
+!!{element} paling cilik
+utawa paling gedhe.
+Blok iku uga bisa
+ditegesi minangka
+himpunan kabeh
+$y \in \Domain{M}$
+saéngga, kanggo
+sawenehing $n$ standar,
+$x \nsplus n = y$
+utawa $y \nsplus n = x$.
+\end{prop}
+
+\begin{proof}
+Cetha yen himpunan~$[x]$
+kaya mangkono tansah ana,
+amarga saben !!{element}~$y$
+ing~$\Domain{M}$
+kang ana ing blok nonstandar iki
+nduweni penerus tunggal
+$y^\nssucc$
+lan pradésesor tunggal
+$^\nssucc y$.
+Kanggo !!{element}s
+jejer $y$, $y^\nssucc$,
+kita nduweni
+$y \nsless y^\nssucc$,
+lan $y^\nssucc$
+iku !!{element} paling cilik
+miturut $\nsless$
+ing~$\Domain{M}$
+saéngga $y$
+iku $\nsless$-luwih cilik
+tinimbang unsur iku.
+Amarga tansah
+$^\nssucc y \nsless y$
+lan $y \nsless y^\nssucc$,
+$[x]$ ora nduweni
+!!{element} paling cilik
+utawa paling gedhe.
+Yen $y \in [x]$,
+mula $x \in [y]$,
+amarga salah siji
+$y^{\nssucc\dots\nssucc} = x$
+utawa
+$x^{\nssucc\dots\nssucc} = y$.
+Yen
+$y^{\nssucc\dots\nssucc} = x$
+(kanthi $n$ penerus
+$\nssucc$),
+mula $y \nsplus n = x$
+lan kosok baline,
+amarga
+$\Th{PA} \Proves \lforall[x][\eq[x^{\prime\dots\prime}][(x +
+    \num{n})]]$
+(yen $n$ iku
+cacahé~$\prime$).
+Cathetan koreksi sumber OLPL-104:
+pradésesor tunggal ing kéné
+digunakake mung kanggo
+unsur blok nonstandar,
+dudu kanggo nol.
+\end{proof}
+
+\begin{prop}
+Yen $[x] \neq [y]$
+lan $x \nsless y$,
+mula kanggo saben
+$u \in [x]$
+lan saben $v \in [y]$,
+$u \nsless v$.
+\end{prop}
+
+\begin{proof}
+Gatekna yen
+$\Th{PA} \Proves \lforall[x][\lforall[y][(x < y \lif (x' < y
+    \lor x' = y))]]$.
+Mula yen $u \nsless v$,
+kita uga nduweni
+$u \nsplus
+n^\nssucc \nsless v$
+kanggo sembarang~$n$
+yen $[u] \neq [v]$.
+
+Saben $u \in [x]$
+iku $\nsless y$:
+$x \nsless y$
+miturut hipotesis.
+Yen $u \nsless x$,
+mula $u \nsless y$
+amarga transitivitas.
+Yen $x \nsless u$
+nanging $u \in [x]$,
+kita nduweni
+$u = x\nsplus n^\nssucc$
+kanggo sawenehing~$n$,
+mula $u \nsless y$
+miturut fakta kang
+bubar dibuktekake.
+  
+Saiki upamakna
+$v \in [y]$
+iku $\nsless y$,
+yaiku
+$v \nsplus
+m^\nssucc = y$
+kanggo sawenehing~$m$
+standar. Iki nyegah
+$v \nsless x$;
+yen ora,
+$y = v \nsplus m^\nssucc
+\nsless x$.
+Cetha uga yen $x \neq
+v$; yen padha,
+$x \nsplus m^\nssucc =
+v \nsplus m^\nssucc = y$
+lan bakal
+$[x] = [y]$.
+Mula $x \nsless v$.
+Nanging banjur uga
+$x \nsplus
+n^\nssucc \nsless v$
+kanggo sembarang~$n$.
+Mula yen $x \nsless u$
+lan $u \in
+[x]$, kita entuk
+$u \nsless v$.
+Yen $u \nsless x$,
+mula $u \nsless v$
+amarga transitivitas.
+
+Pungkasan, yen
+$y \nsless v$,
+mula $u \nsless v$
+amarga, kaya kang wis
+dituduhake,
+$u \nsless y$
+lan $y \nsless v$.
+\end{proof}
+
+\begin{cor}
+Yen $[x] \neq [y]$,
+mula $[x] \cap [y] =
+\emptyset$.
+\end{cor}
+
+\begin{proof}
+Upamakna $z \in [x]$
+lan $x \nsless y$.
+Mula $z \nsless u$
+kanggo saben $u \in [y]$.
+Yen $z \in [y]$,
+bakal $z \nsless z$.
+Semono uga yen
+$y \nsless x$.
+\end{proof}
+
+\begin{explain}
+Iki ateges blok-blok mau
+bisa diurutake kanthi
+ngajeni $\nsless$:
+$[x] \nsless [y]$
+yen lan mung yen
+$x \nsless y$,
+utawa, padha tegese,
+yen $u \nsless v$
+kanggo sembarang
+$u \in [x]$
+lan $v \in [y]$.
+Cetha yen blok standar
+$[0]$ iku paling cilik.
+Blok iki ora ketemu
+blok nonstandar,
+lan sembarang rong blok
+nonstandar uga ora ketemu.
+Mligine, kita ora bisa
+“tekan” blok liyane
+kanthi ngetutake penerus
+utawa pradésesor bola-bali.
+\end{explain}
+
+\begin{prop}
+Yen $x$ lan $y$
+nonstandar, mula
+$x \nsless x \nsplus y$
+lan $x
+\nsplus y \notin [x]$.
+\end{prop}
+
+\begin{proof}
+Yen $y$ nonstandar,
+mula $y \neq \nszero$.
+$\Th{PA} \Proves
+\lforall[x][(y \neq \Obj{0} \lif x < (x+y))]$.
+Saiki upamakna $x
+\nsplus y \in [x]$.
+Amarga
+$x \nsless x \nsplus y$,
+bakal ana
+$x \nsplus
+n^\nssucc = x \nsplus y$.
+Nanging $\Th{PA} \Proves
+\lforall[x][\lforall[y][\lforall[z][(\eq[(x+y)][(x+z)] \lif y = z)]]]$
+(hukum panyoretan
+kanggo panjumlahan).
+Iki ateges
+$y = n^\nssucc$
+kanggo sawenehing~$n$
+standar, nalisir
+hipotesis yen $y$
+nonstandar.
+\end{proof}
+
+\begin{prop}
+Ora ana blok nonstandar
+paling cilik.
+\end{prop}
+
+\begin{proof}
+$\Th{PA} \Proves \lforall[x][\lexists[y][(\eq[(y+y)][x] \lor
+      \eq[(y+y)'][x])]]$,
+yaiku saben $x$
+bisa dibagi~$2$
+(bokmanawa kari sisa~$1$).
+Yen $x$ nonstandar,
+mula $y$ uga nonstandar.
+Miturut proposisi sadurunge,
+$y \nsless y \nsplus y$
+lan $y \nsplus y
+\notin [y]$.
+Banjur uga
+$y \nsless (y \nsplus y)^\nssucc$
+lan $(y
+\nsplus y)^\nssucc \notin [y]$.
+Nanging
+$x = y \nsplus y$
+utawa
+$x = (y
+\nsplus y)^\nssucc$,
+mula $y \nsless x$
+lan $y \notin [x]$.
+\end{proof}
+
+\begin{prop}
+Ing model nonstandar,
+ora ana blok paling gedhe.
+Cathetan koreksi sumber OLPL-105:
+syarat nonstandar dibutuhake;
+model standar mung nduweni
+blok standar.
+\end{prop}
+
+\begin{proof}
+Gladhen.
+\end{proof}
+
+\begin{prob}
+Tuduhna yen ing model
+nonstandar saka~$\Th{PA}$
+ora ana blok paling gedhe.
+\end{prob}
+
+\begin{prop}
+\ollabel{prop:blocks-dense}
+Urutan blok-blok iku rapet.
+Yaiku, yen
+$x \nsless y$
+lan $[x] \neq [y]$,
+ana blok $[z]$
+kang beda saka kalorone
+lan dumunung ing antarane.
+\end{prop}
+
+\begin{proof}
+Upamakna $x \nsless y$.
+Kaya sadurunge,
+$x \nsplus y$
+bisa dibagi loro
+(bokmanawa kari sisa):
+ana $z \in \Domain{M}$
+saéngga salah siji
+$x \nsplus y = z \nsplus z$
+utawa
+$x \nsplus y = (z \nsplus
+z)^\nssucc$.
+Unsur $z$ iku
+“rata-rata” saka $x$
+lan~$y$,
+lan $x \nsless z$
+uga $z \nsless y$.
+Cathetan koreksi sumber OLPL-106:
+simbol operasi ing persamaan
+rata-rata diselaraské
+karo panjumlahan model
+kang wis ditetepake;
+rincian bedane blok dadi
+gladhen sabanjure.
+\end{proof}
+
+\begin{prob}
+Tulisen bukti rinci kanggo
+\olref[mod][mar][mpa]{prop:blocks-dense}.
+!!{sentence} apa kang kudu
+!!{derive} dening
+$\Th{PA}$
+kanggo njamin anane~$z$?
+Yagéné
+$x \nsless z$
+lan $z \nsless y$,
+lan yagéné
+$[x] \neq [z]$
+lan $[z]
+\neq [y]$?
+\end{prob}
+
+\begin{explain}
+Yen modelé bisa didhaptar,
+blok-blok nonstandar
+diurutake kaya wilangan rasional:
+padha mbentuk
+urutan linear rapet
+tanpa titik ujung kang
+!!a{denumerable}.
+Bisa dituduhake yen
+sembarang rong urutan
+!!{denumerable}
+kaya mangkono isomorfis.
+Cathetan koreksi sumber OLPL-107:
+katrangan bisa didhaptar
+iki mung lumaku kanggo
+model kang bisa didhaptar;
+model sembarang bisa
+luwih gedhe.
+Mula kanggo sembarang
+rong model nonstandar
+!!{enumerable}
+$\Struct{M}_1$
+lan $\Struct{M_2}$
+saka aritmetika sejati,
+reduk loro-lorone
+menyang basa kang
+mung ngemot $<$
+lan $=$ iku isomorfis.
+Isomorfisme $h$
+bisa ditetepake mangkene:
+bagean standar saka
+$\Struct{M_1}$ lan
+$\Struct{M_2}$
+isomorfis karo model
+standar $\Struct{N}$,
+mula isomorfis
+siji karo sijiné.
+Blok-blok bagean nonstandar
+uga diurutake kaya
+wilangan rasional,
+mula isomorfis.
+Isomorfisme antarblok
+bisa dijembarake dadi
+isomorfisme
+\emph{ing njero}
+saben blok kanthi
+nyocogake unsur kang
+dipilih ing saben blok,
+banjur nggawa bayangan
+penerus $x$
+ing $\Struct{M_1}$
+menyang penerus bayangan
+$x$ ing $\Struct{M_2}$.
+Elinga, saka kéné
+\emph{ora} bisa disimpulake
+yen $\mathfrak{M}_1$
+lan $\mathfrak{M}_2$
+isomorfis ing basa
+aritmetika kang jangkep
+(amarga isomorfisme
+tansah gumantung marang
+!!a{language}),
+sebab panjumlahan
+lan pingan ing
+$\Domain{M_1}$
+lan $\Domain{M_2}$
+bisa ditetepake kanthi
+cara-cara kang ora isomorfis.
+(Iki uga ndherek
+saka teorema kondhang
+dening Vaught yen
+cacah model bisa didhaptar
+saka teori jangkep
+ora bisa padha karo~2.)
+\end{explain}
+\end{document}

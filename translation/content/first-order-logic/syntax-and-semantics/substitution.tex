@@ -1,0 +1,127 @@
+% Part: first-order-logic
+% Chapter: syntax-and-semantics
+% Section: substitution
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{syn}{sub}
+
+\olsection{Substitusi}
+
+\begin{defn}[Substitusi ing term]
+Kita nemtokake $\Subst{s}{t}{x}$, yaiku asil saka \emph{nyubstitusikake}
+$t$ kanggo saben kemunculan~$x$ ing $s$, kanthi rekursif:
+\begin{enumerate}
+\item \indcase{s}{c}{$\Subst{\indfrm}{t}{x}$ mung $s$.}
+
+\item \indcase{s}{y}{$\Subst{\indfrm}{t}{x}$ uga mung~$s$,
+  yen $y$ iku variabel lan $y \not\ident x$.}
+
+\item \indcase{s}{x}{$\Subst{\indfrm}{t}{x}$ yaiku~$t$.}
+
+\item\indcase{s}{\Atom{f}{t_1, \dots, t_n}}{$\Subst{\indfrmp}{t}{x}$
+  yaiku $\Atom{f}{\Subst{t_1}{t}{x}, \dots, \Subst{t_n}{t}{x}}$.}
+\end{enumerate}
+\end{defn}
+
+\begin{defn}
+Term~$t$ iku \emph{!!{free for}} $x$ ing $!A$ yen ora ana kemunculan
+bebas~$x$ ing $!A$ kang dumunung ing cakupan kuantor kang ngiket
+sawijining variabel ing~$t$.
+\end{defn}
+
+\begin{ex} ~
+\begin{enumerate}
+\item $\Obj v_8$ iku bebas kanggo $\Obj v_1$ ing $\lexists[\Obj
+  v_3]\Atom{\Obj A^2_4}{\Obj v_3,\Obj v_1}$
+
+\item $\Obj f^2_1(\Obj v_1, \Obj v_2)$ \emph{ora} bebas kanggo $\Obj
+  v_0$ ing $\lforall[\Obj v_2]\Atom{\Obj A^2_4}{\Obj v_0,\Obj v_2}$
+\end{enumerate}
+\end{ex}
+
+\begin{defn}[Substitusi ing !!a{formula}]
+Yen $!A$ iku !!a{formula}, $x$~iku !!a{variable}, lan $t$~iku term
+kang !!{free for}~$x$ ing~$!A$, mula $\Subst{!A}{t}{x}$ yaiku asil saka
+nyubstitusikake $t$ kanggo kabeh kemunculan bebas~$x$ ing~$!A$.
+\begin{enumerate}
+\tagitem{prvFalse}{\indcase{!A}{\lfalse}{$\Subst{\indfrm}{t}{x}$
+    yaiku $\lfalse$.}}{}
+
+\tagitem{prvTrue}{\indcase{!A}{\ltrue}{$\Subst{\indfrm}{t}{x}$
+    yaiku $\ltrue$.}}{}
+
+\item \indcase{!A}{\Atom{P}{t_1,\dots,
+    t_n}}{$\Subst{\indfrm}{t}{x}$ yaiku $\Atom{P}{\Subst{t_1}{t}{x},
+    \dots, \Subst{t_n}{t}{x}}$.}
+
+\item \indcase{!A}{\eq[t_1][t_2]}{$\Subst{\indfrmp}{t}{x}$ yaiku
+  $\Subst{t_1}{t}{x} = \Subst{t_2}{t}{x}$.}
+
+\tagitem{prvNot}{\indcase{!A}{\lnot !B}{$\Subst{\indfrmp}{t}{x}$
+    yaiku $\lnot \Subst{!B}{t}{x}$.}}{}
+
+\tagitem{prvAnd}{\indcase{!A}{(!B \land
+    !C)}{$\Subst{\indfrmp}{t}{x}$ yaiku $(\Subst{!B}{t}{x} \land
+    \Subst{!C}{t}{x})$.}}{}
+
+\tagitem{prvOr}{\indcase{!A}{(!B \lor
+    !C)}{$\Subst{\indfrmp}{t}{x}$ yaiku $(\Subst{!B}{t}{x} \lor
+    \Subst{!C}{t}{x})$.}}{}
+
+\tagitem{prvIf}{\indcase{!A}{(!B \lif
+    !C)}{$\Subst{\indfrmp}{t}{x}$ yaiku $(\Subst{!B}{t}{x} \lif
+    \Subst{!C}{t}{x})$.}}{}
+
+\tagitem{prvIff}{\indcase{!A}{(!B \liff
+    !C)}{$\Subst{\indfrmp}{t}{x}$ yaiku $(\Subst{!B}{t}{x} \liff
+    \Subst{!C}{t}{x})$.}}{}
+
+\tagitem{prvAll}{
+\indcase{!A}{\lforall[y][!B]}{$\Subst{\indfrmp}{t}{x}$
+    yaiku $\lforall[y][\Subst{!B}{t}{x}]$, yen $y$ iku variabel
+    saliyane $x$; yen ora, $\Subst{\indfrmp}{t}{x}$
+    mung $\indfrm$.}}{}
+
+\tagitem{prvEx}{
+\indcase{!A}{\lexists[y][!B]}{$\Subst{\indfrmp}{t}{x}$
+    yaiku $\lexists[y][\Subst{!B}{t}{x}]$, yen $y$ iku variabel
+    saliyane $x$; yen ora, $\Subst{\indfrmp}{t}{x}$
+    mung $\indfrm$.}}{}
+\end{enumerate}
+\end{defn}
+
+\begin{explain}
+Gatekna yen substitusi bisa tanpa pangaribawa: yen $x$ ora muncul ing
+$!A$ babar pisan, mula $\Subst{!A}{t}{x}$ mung~$!A$.
+
+Syarat manawa $t$ kudu !!{free for}~$x$ ing~$!A$ perlu kanggo
+nyingkirake kasus kaya ing ngisor iki. Yen $!A \ident \lexists[y][x < y]$
+lan $t \ident y$, mula $\Subst{!A}{t}{x}$ bakal dadi $\lexists[y][y <
+  y]$. Ing kasus iki, variabel bebas $y$ ditangkep dening
+kuantor $\lexists[y]$ nalika substitusi, lan iki ora dikarepake.
+Contone, kita pengin yen $\lforall[x][!B]$ bener, banjur
+$\Subst{!B}{t}{x}$ uga bener. Nanging gatekna
+$\lforall[x][\lexists[y][x < y]]$ (ing kene $!B$ yaiku $\lexists[y][x <
+  y]$). Iki ukara kang bener, upamane, tumrap wilangan asli:
+kanggo saben wilangan~$x$ ana wilangan~$y$ kang luwih gedhe tinimbang
+wilangan kasebut. Yen $y$ diidini dadi panggantos kanggo~$x$, kita bakal entuk
+$\Subst{!B}{y}{x} \ident \lexists[y][y < y]$, kang salah. Kita
+nyegah iki kanthi syarat supaya ora ana variabel bebas ing~$t$ kang
+bakal dadi kaiket dening kuantor ing~$!A$.
+\end{explain}
+
+Kita kerep nggunakake pranatan ing ngisor iki supaya notasi ora
+ruwet: yen $!A$ iku !!a{formula} kang bisa ngemot !!{variable}~$x$
+kanthi bebas, kita uga nulis~$!A(x)$ kanggo nuduhake iki. Yen wis
+cetha $!A$ lan~$x$ kang dimaksud, lan $t$ iku term (dianggep bebas
+kanggo $x$ ing $!A(x)$), mula kita nulis $!A(t)$ minangka cekakan
+kanggo $\Subst{!A}{t}{x}$. Dadi, upamane, kita bisa ngarani
+$!A(t)$ sawijining instansi saka~$\lforall[x][!A(x)]$.
+Tegese, yen $!A$~iku sembarang !!{formula}, $x$~!!a{variable},
+lan $t$~term kang bebas kanggo~$x$ ing~$!A$, mula
+$\Subst{!A}{t}{x}$ iku instansi saka~$\lforall[x][!A]$.
+
+\end{document}

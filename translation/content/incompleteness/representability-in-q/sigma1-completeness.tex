@@ -1,0 +1,311 @@
+% Part: incompleteness
+% Chapter: representability-in-q
+% Section: sigma1-completeness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{inp}{s1c}
+\olsection{Kelengkapan \texorpdfstring{$\Sigma_1$}{Sigma-1}}
+
+Sanajan $\Th{Q}$ lan ekstensi-ekstensine kang konsisten lan bisa
+diaksiomatisasi ora jangkep, kita wis weruh yen $\Th{Q}$ mbuktekake
+akeh fakta dhasar ngenani numeral. Nyatane, iki bisa dikembangake
+luwih adoh. Kanggo mangerteni cakupan perkara kang bisa dibuktekake
+ing~$\Th{Q}$, kita ngenalake !!{formula}s $\Delta_0$, $\Sigma_1$,
+lan $\Pi_1$. Sacara kasar, !!{formula} $\Sigma_1$ awujud
+$\lexists[x][!B(x)]$, ing ngendi $!B$ dibangun mung saka penghubung
+proposisional lan kuantor winates. Kita bakal nuduhake yen $!A$ iku
+!!{sentence} $\Sigma_1$ kang bener ing $\Struct{N}$, mula
+$\Th{Q} \Proves !A$ (\olref{thm:sigma1-completeness}).
+
+\begin{defn}
+\ollabel{defn:bd-quant}
+\emph{!!{formula} eksistensial winates} awujud
+$\lexists[x][(x < t \land !A(x))]$ ing ngendi $t$ iku suku sembarang,
+kang lumrahe kita tulis $\bexists{x < t}{!A(x)}$.
+%
+\emph{!!{formula} universal winates} awujud
+$\lforall[x][(x < t \lif !A(x))]$ ing ngendi $t$ iku suku sembarang,
+kang lumrahe kita tulis $\bforall{x < t}{!A(x)}$.
+\end{defn}
+
+\begin{defn}
+\ollabel{defn:delta0-sigma1-pi1-frm}
+!!{formula} $!B$ iku $\Delta_0$ yen dibangun saka !!{formula}s
+atomik mung nganggo penghubung proposisional lan kuantifikasi
+winates.
+%
+!!{formula} $!A$ iku $\Sigma_1$ yen
+$!A \ident \lexists[x][!B(x)]$ ing ngendi $!B$ iku $\Delta_0$.
+%
+!!{formula} $!A$ iku $\Pi_1$ yen
+$!A \ident \lforall[x][!B(x)]$ ing ngendi $!B$ iku $\Delta_0$.
+\end{defn}
+
+\begin{lem}
+\ollabel{lem:q-proves-clterm-id} Upamana $t$ suku katutup saengga
+$\Value{t}{N} = n$. Mula $\Th{Q} \Proves \eq[t][\num n]$.
+\end{lem}
+
+\begin{proof}
+Kita mbuktekake iki kanthi induksi marang keruwetan~$t$. Kanggo kasus
+dhasar, $\Value{\Obj 0}{N} = 0$, lan
+$\Th{Q} \Proves \eq[\Obj 0][\num 0]$ amarga
+$\num 0 \ident \Obj 0$.
+%
+Kanggo kasus induksi, tetepna $t_1$ lan $t_2$ minangka suku saengga
+$\Value{t_1}{N} = n_1$, $\Value{t_2}{N} = n_2$,
+$\Th{Q} \Proves \eq[t_1][\num n_1]$, and
+$\Th{Q} \Proves \eq[t_2][\num n_2]$.
+
+Mula $\Value{(t_1')}{N} = n_1 + 1$, lan kita nduweni
+$\Th{Q} \Proves \eq[t_1'][{\num n_1}']$ miturut aturan identitas
+orde kapisan kang ditrapake marang hipotesis induksi lan !!{formula}
+$\eq[\num{n_1}'][\num{n_1}']$,
+mula kita nduweni $\Th{Q} \Proves \eq[t_1'][\num{n_1 + 1}]$
+miturut definisi numeral.
+
+Kanggo panjumlahan kita nduweni
+\[
+      \Value{(t_1 + t_2)}{N}
+    = \Value{t_1}{N} + \Value{t_2}{N}
+    = n_1 + n_2.
+\]
+Miturut hipotesis induksi lan aturan identitas,
+$\Th{Q} \Proves \eq[t_1 + t_2][\num{n_1} + t_2]$, and then
+$\Th{Q} \Proves \eq[t_1 + t_2][\num{n_1} + \num{n_2}]$
+kanthi ngetrapake aturan identitas kaping pindho.
+Miturut \olref[inc][req][bre]{lem:q-proves-add},
+$\Th{Q} \Proves \eq[\num{n_1} + \num{n_2}][\num{n_1 + n_2}]$,
+mula $\Th{Q} \Proves \eq[t_1 + t_2][\num{n_1 + n_2}]$.
+
+Argumentasi kang padha uga lumaku kanggo~$\times$, nganggo
+\olref[inc][req][bre]{lem:q-proves-mult}.
+%
+Amarga iki nyakup kabeh suku katutup aritmetika, kita nduweni
+$\Th{Q} \Proves \eq[t][\num n]$ kanggo saben suku katutup~$t$
+saengga $\Value{t}{N} = n$.
+\end{proof}
+
+\begin{prob}
+Buktekna kanthi rinci bagean \olref{lem:q-proves-clterm-id}
+kang ngenani~$\times$.
+\end{prob}
+
+\begin{lem}
+\ollabel{lem:atomic-completeness}
+Upamana $t_1$ lan $t_2$ suku katutup. Mula
+\begin{enumerate}
+\item Yen $\Value{t_1}{N} = \Value{t_2}{N}$,
+    mula $\Th{Q} \Proves \eq[t_1][t_2]$.
+\item Yen $\Value{t_1}{N} \neq \Value{t_2}{N}$,
+    mula $\Th{Q} \Proves \eq/[t_1][t_2]$.
+\item Yen $\Value{t_1}{N} < \Value{t_2}{N}$,
+    mula $\Th{Q} \Proves t_1 < t_2$.
+\item Yen $\Value{t_2}{N} \leq \Value{t_1}{N}$,
+    mula $\Th{Q} \Proves \lnot(t_1 < t_2)$.
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+Kanggo suku $t_1$ lan $t_2$, kita tetepna
+$n = \Value{t_1}{N}$ lan $m = \Value{t_2}{N}$.
+
+Upamana $!A \ident t_1 = t_2$. Miturut
+\olref{lem:q-proves-clterm-id},
+$\Th{Q} \Proves \eq[t_1][\num n]$ lan
+$\Th{Q} \Proves \eq[t_2][\num n]$.
+Yen $n = m$, mula $\Th{Q} \Proves \eq[\num n][\num m]$ lan
+$\Th{Q} \Proves \eq[t_1][t_2]$ miturut transitivitas identitas.
+Yen $n \neq m$, mula $\Th{Q} \Proves \eq/[\num n][\num m]$,
+lan miturut transitivitas identitas maneh,
+$\Th{Q} \Proves \eq/[t_1][t_2]$.
+
+Saiki tetepna $!A \ident t_1 < t_2$. Kanggo loro kasus iki, kita
+nggunakake aksioma~$!Q_8$, kang nyatakake
+$x < y \liff \lexists[z][\eq[z' + x][y]]$ kanggo saben $x,y$.
+
+Upamana $\Sat{N}{t_1 < t_2}$. Mula ana $k \in \Nat$ saengga
+$n + k + 1 = m$. Miturut \olref{lem:q-proves-clterm-id},
+$\Th{Q} \Proves \eq[t_1][\num n]$ lan
+$\Th{Q} \Proves \eq[t_2][\num m]$, lan miturut bagean kapisan
+lema iki, $\Th{Q} \Proves \eq[\num n + {\num k}'][\num m]$.
+Miturut transitivitas identitas, mula
+$\Th{Q} \Proves \eq[{\num k}' + t_1][t_2]$,
+mula $\Th{Q} \Proves \lexists[z][\eq[z' + t_1][t_2]]$.
+Miturut arah saka tengen menyang kiwa saka~$!Q_8$,
+$\Th{Q} \Proves t_1 < t_2$.
+
+Kosok baline, upamana $\Sat/{N}{t_1 < t_2}$, yaiku $m \leq n$.
+%
+Kita makarya ing~$\Th{Q}$ lan nganggep $t_1 < t_2$. Miturut arah
+saka kiwa menyang tengen saka~$!Q_8$, ana~$z$ saengga
+$\eq[z' + t_1][t_2]$. Amarga
+$\Th{Q} \Proves \eq[t_1][\num n]$ lan
+$\Th{Q} \Proves \eq[t_2][\num m]$, mula
+$\eq[z' + \num n][\num m]$.
+%
+Kanthi induksi ing njaba teori marang~$m$ nganggo~$!Q_5$, kita entuk
+$\eq[z' + \num{n - m}][\Obj 0]$.
+Yen $m = n$, mula $\eq/[z'][\Obj 0]$, kang menehi kontradiksi
+liwat~$!Q_3$. Yen $m < n$, mula
+$\eq[(z' + \num{n - m - 1})'][\Obj 0]$ miturut~$!Q_5$ maneh,
+kang menehi kontradiksi liwat~$!Q_3$.
+Dadi $\Th{Q} \Proves \lnot(t_1 < t_2)$.
+\end{proof}
+
+\begin{lem}
+\ollabel{lem:bounded-quant-equiv}
+Upamana $!A$ iku !!a{formula}, $t$ suku katutup, lan
+$k=\Value{t}{N}$. Mula
+\begin{enumerate}
+\item $\Th{Q} \Proves \bforall{x<t}{!A(x)}$ iff $\Th{Q} \Proves
+    !A(\num 0) \land \dots \land !A(\num{k-1})$.
+\item $\Th{Q} \Proves \bexists{x<t}{!A(x)}$ iff $\Th{Q} \Proves
+    !A(\num 0) \lor \dots \lor !A(\num{k-1})$.
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+    Kita mbuktekake kasus kuantor universal winates.
+    Yen $\Value{t}{N} = 0$, mula sisih kiwa saka
+    ekivalensi bisa dibuktekake ing~$\Th{Q}$, amarga ora ana
+    $x<\num 0$ miturut \olref[inc][req][min]{lem:less-zero}.
+    Semono uga, kita bisa nganggep disjungsi kosong mung minangka
+    $\ltrue$, kang uga bisa dibuktekake ing~$\Th{Q}$.
+    %
+    Mula upamana $\Value{t}{N} = k+1$ kanggo sawijining
+    bilangan asli~$k$. Miturut \olref{lem:q-proves-clterm-id}, kita
+    bisa nganggep yen lagi nggarap !!a{formula} awujud
+    $\bforall{x<\num{k+1}}{!A(x)}$.
+    
+    Upamana $\Th{Q} \Proves \bforall{x<\num{k+1}}{!A(x)}$,
+    lan tetepna $n \leq k$. Amarga
+    $\Th{Q} \Proves \num n < \num{k+1}$ miturut
+    \olref{lem:atomic-completeness}, kanthi logika kita entuk
+    $\Th{Q} \Proves !A(\num n)$. Kanthi ngetrapake fakta iki $k+1$
+    kaping kanggo saben $n \leq k$, kita entuk
+    $\Th{Q} \Proves !A(\num 0) \land \dots \land !A(\num k)$
+    kaya kang dikarepake.
+    
+    Kanggo arah liyane, upamana $\Th{Q} \Proves
+    !A(\num 0) \land \dots \land !A(\num k)$. Nalika makarya ing
+    $\Th{Q}$, upamana $x < \num{k+1}$.
+    Miturut \olref[inc][req][min]{lem:less-nsucc}, kita nduweni
+    $x = \num 0 \lor \dots \lor x = \num k$, mula kanthi logika
+    $!A(x)$ lumaku, lan saka iku pratelan universal
+    $\bforall{x<\num{k+1}}{!A(x)}$ uga lumaku.
+    
+    Bukti ekivalensi kanggo !!{formula}s kanthi kuantor
+    eksistensial winates padha carane.
+\end{proof}
+
+\begin{prob}
+Wenehana bukti rinci kanggo kasus eksistensial ing
+\olref{lem:bounded-quant-equiv}.
+\end{prob}
+
+\begin{lem}
+\ollabel{lem:delta0-completeness}
+Yen $!A$ iku !!{sentence} $\Delta_0$ kang bener ing
+$\Struct{N}$, mula $\Th{Q} \Proves !A$.
+\end{lem}
+
+\begin{proof}
+Kita mbuktekake iki kanthi induksi marang keruwetan !!{formula}.
+%
+Kasus dhasar diwenehi dening \olref{lem:atomic-completeness},
+mula kita maju menyang langkah induksi. Supaya prasaja, kita
+mbagi kasus negasi dadi sawetara subkasus miturut struktur
+!!{formula} kang dinegasi.
+
+\begin{enumerate}
+\item Upamana $(!A \land !B)$ bener ing $\Struct{N}$,
+mula $!A$ lan $!B$ bener ing~$\Struct{N}$.
+Miturut hipotesis induksi, $\Th{Q} \Proves !A$ lan
+$\Th{Q} \Proves !B$,
+mula $\Th{Q} \Proves (!A \land !B)$ kanthi logika.
+%
+\item Upamana $\lnot (!A \land !B)$ bener ing $\Struct{N}$,
+mula $\lnot !A$ utawa $\lnot !B$ bener ing $\Struct{N}$.
+Tanpa ngurangi umum, upamana kang kapisan. Miturut
+hipotesis induksi $\Th{Q} \Proves \lnot !A$, mula
+$\Th{Q} \Proves \lnot (!A \land !B)$ kanthi logika.
+%
+\item Upamana $(!A \lor !B)$ bener ing $\Struct{N}$, mula
+$!A$ bener ing $\Struct{N}$ utawa $!B$ bener ing
+$\Struct{N}$. Tanpa ngurangi umum, upamana kang kapisan.
+Miturut hipotesis induksi $\Th{Q} \Proves !A$, mula
+$\Th{Q} \Proves (!A \lor !B)$ kanthi logika.
+%
+\item Upamana $\lnot(!A \lor !B)$ bener ing $\Struct{N}$,
+mula $\lnot !A$ lan $\lnot !B$ bener ing $\Struct{N}$.
+Mula $\Th{Q} \Proves \lnot !A$ lan
+$\Th{Q} \Proves \lnot !B$ miturut hipotesis induksi.
+Akibate, $\Th{Q} \Proves \lnot(!A \lor !B)$ kanthi logika.
+%
+\item Upamana $\bforall{x<t}{!A(x)}$ bener
+ing~$\Struct{N}$, ing ngendi $t$ iku suku katutup lan
+$k=\Value{t}{N}$. Miturut hipotesis induksi lan logika, yen
+$!A(\num n)$ bener ing~$\Struct{N}$ kanggo saben
+$n < \Value{t}{N}$, mula $\Th{Q} \Proves
+!A(\num 0) \land \dots \land !A(\num{k-1})$.
+Miturut \olref{lem:bounded-quant-equiv}, saka kene
+$\Th{Q} \Proves \bforall{x<t}{!A(x)}$.
+%
+\item Kasus kuantor eksistensial winates, nalika
+kita duwe !!a{sentence} awujud $\bexists{x < t}{!A(x)}$,
+padha karo kasus kuantor universal winates.
+%
+\item Upamana $\lnot \bforall{x<t}{!A(x)}$ bener
+ing~$\Struct{N}$, ing ngendi $t$ iku suku katutup.
+!!{sentence} iki ekivalen karo !!{sentence}
+$\bexists{x<t}{\lnot !A(x)}$, lan ekivalensine bisa
+diturunake ing~$\Th{Q}$, mula kita bisa nggunakake
+argumentasi kanggo kuantor eksistensial winates.
+%
+\item Semono uga, upamana $\lnot \bexists{x<t}!A(x)$
+bener ing $\Struct{N}$, ing ngendi $t$ iku suku katutup.
+!!{sentence} iki ekivalen ing $\Th{Q}$ karo
+$\bforall{x<t}{\lnot!A(x)}$, mula kita bisa nggunakake
+argumentasi kanggo kuantor universal winates.
+%
+\item Pungkasan, upamana $\lnot !A$ bener ing $\Struct{N}$.
+Kasus kang isih ana mung nalika $!A$ atomik lan nalika
+$\lnot !A \ident \lnot\lnot !B$ kanggo sawijining
+!!{sentence} $\Delta_0$ $!B$. Yen $!A$ atomik, mula miturut
+\olref{lem:atomic-completeness}, $\Th{Q} \Proves \lnot !A$.
+Yen $\lnot !A \ident \lnot\lnot !B$, mula kanthi logika
+formula iku bisa dibuktekake ekivalen ing~$\Th{Q}$ karo~$!B$,
+kang bener ing~$\Struct{N}$ amarga $\lnot !A$ bener
+ing~$\Struct{N}$. Mula miturut hipotesis induksi kita nduweni
+$\Th{Q} \Proves \lnot !A$.
+\end{enumerate}
+\end{proof}
+
+\begin{prob}
+Wenehana bukti rinci kanggo kasus eksistensial ing
+\olref{lem:delta0-completeness}.
+\end{prob}
+
+\begin{thm}
+\ollabel{thm:sigma1-completeness}
+Yen $!A$ iku !!{sentence} $\Sigma_1$ kang bener
+ing~$\Struct{N}$, mula $\Th{Q} \Proves !A$.
+\end{thm}
+
+\begin{proof}
+Yen $\lexists{x}!A(x)$ iku !!{sentence} $\Sigma_1$
+kang bener ing~$\Struct{N}$, mula ana bilangan asli~$n$
+lan penetapan variabel~$s$ saengga $s(x) = n$ lan
+$\Sat{N}{!A(x)}[s]$. Miturut fakta lumrah ngenani
+relasi kepuasan, saka kene kita entuk $\Sat{N}{!A(\num n)}$.
+Nanging $!A(\num n)$ iku !!{formula} $\Delta_0$, mula
+miturut \olref{lem:delta0-completeness} kita nduweni
+$\Th{Q} \Proves !A(\num n)$, lan kanthi logika uga
+$\Th{Q} \Proves \lexists[x][!A(x)]$.
+\end{proof}
+
+\end{document}

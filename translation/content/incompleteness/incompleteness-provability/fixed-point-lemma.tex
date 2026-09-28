@@ -1,0 +1,144 @@
+% Part: incompleteness
+% Chapter: incompleteness-provability
+% Section: fixed-point-lemma
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{inp}{fix}
+
+\olsection{Lema Titik Tetep}
+
+\begin{explain}
+Lema titik tetep nyatakake yen kanggo saben !!{formula}~$!B(x)$, ana
+!!a{sentence}~$!A$ saengga $\Th{T} \Proves !A \liff !B(\gn{!A})$,
+yen $\Th{T}$ ngembangake~$\Th{Q}$. Ing kasus ukara paradoks tukang
+ngapusi, kita kepengin $!A$ ekuivalen (bisa dibuktekake ing~$\Th{T}$)
+karo~``$\gn{!A}$ salah,'' yaiku pratelan yen $\Gn{!A}$ iku
+bilangan G\"odel saka !!{sentence} kang salah. Kanggo mangerteni
+gagasan buktine, migunani yen dibandhingake karo andharan informal
+Quine ngenani~$!A$ minangka
+``{}`ngasilake pratelan salah yen didhisiki petikane' ngasilake
+pratelan salah yen didhisiki petikane.'' Tumindak njupuk ekspresi
+banjur mbentuk ukara kanthi ndhisiki ekspresi iku nganggo petikane
+dhewe bisa diarani \emph{ndiagonalisasi} ekspresi iku, lan asile
+diarani diagonalisasine. Dadi diagonalisasi saka
+`ngasilake pratelan salah yen didhisiki petikane' yaiku
+``{}`ngasilake pratelan salah yen didhisiki petikane' ngasilake
+pratelan salah yen didhisiki petikane.'' Gatekna saiki yen ukara
+paradoks tukang ngapusi saka Quine dudu diagonalisasi saka
+`ngasilake pratelan salah' nanging saka
+`ngasilake pratelan salah yen didhisiki petikane.' Dadi sipat kang
+didiagonalisasi kanggo ngasilake ukara paradoks iku dhewe wis
+ngemot diagonalisasi!{}
+
+Ing basa aritmetika, kita mbentuk petikan saka !!a{formula} kang
+nduweni siji variabel bebas kanthi ngitung bilangan G\"odele banjur
+nglebokake numeral standar kanggo bilangan G\"odel mau ing variabel
+bebas. Diagonalisasi saka~$!E(x)$ iku $!E(\num{n})$, ing ngendi
+$n = \Gn{!E(x)}$. (Wiwit saiki, kita cekak $\num{\Gn{!E(x)}}$ dadi
+$\gn{!E(x)}$.) Dadi yen $!B(x)$ iku ``iku salah,'' mula ``ngasilake
+pratelan salah yen didhisiki petikane'' dadi ``ngasilake pratelan
+salah yen ditrapake marang bilangan G\"odel saka diagonalisasine.''
+Yen kita nduweni simbol~$\Obj{diag}$ kanggo fungsi $\fn{diag}(n)$ kang
+ngitung bilangan G\"odel saka diagonalisasi !!{formula} kang nduweni
+bilangan G\"odel~$n$, kita bisa nulis $!E(x)$ minangka
+$!B(\Obj{diag}(x))$. Versi ukara paradoks saka Quine banjur dadi
+diagonalisasine, yaiku $!E(\gn{!E(x)})$ utawa
+$!B(\Obj{diag}(\gn{!B(\Obj{diag}(x))}))$. Mesthi wae, $!B(x)$ saiki
+bisa dadi sipat liyane sembarang, lan konstruksi kang padha tetep
+lumaku. Kanggo teorema ora jangkep, kita pilih $!B(x)$ minangka
+``$x$~ora !!{derivable} ing~$\Th{T}$.'' Mula $!E(x)$ dadi
+``ngasilake !!a{sentence} kang ora !!{derivable} ing~$\Th{T}$
+yen ditrapake marang bilangan G\"odel saka diagonalisasine.''
+
+Kanggo ngformalisasi iki ing~$\Th{T}$, kita kudu nemokake cara
+ngformalisasi $\fn{diag}$. Fungsi $\fn{diag}(n)$ komputabel, malah
+rekursif primitif: yen $n$ iku bilangan G\"odel saka
+formula~$!E(x)$, $\fn{diag}(n)$ ngasilake bilangan G\"odel
+saka~$!E(\gn{!E(x)})$. (Elinga, $\gn{!E(x)}$ iku numeral standar kanggo
+bilangan G\"odel saka~$!E(x)$, yaiku $\num{\Gn{!E(x)}}$). Yen
+$\Obj{diag}$ minangka simbol fungsi ing $\Th{T}$ kang merepresentasikake
+fungsi $\fn{diag}$, kita bisa netepake $!A$ minangka formula
+$!B(\Obj{diag}(\gn{!B(\Obj{diag}(x))}))$. Gatekna yen
+\begin{align*}
+\fn{diag}(\Gn{!B(\Obj{diag}(x))}) & = 
+\Gn{!B(\Obj{diag}(\gn{!B(\Obj{diag}(x))}))} \\
+& = \Gn{!A}.
+\end{align*}
+Yen $\Th{T}$ bisa !!{derive}
+\[
+\Obj{diag}(\gn{!B(\Obj{diag}(x))}) = \gn{!A},
+\]
+teori iku bisa !!{derive} $!B(\Obj{diag}(\gn{!B(\Obj{diag}(x))}))
+\liff !B(\gn{!A})$. Nanging sisih kiwa, miturut
+definisi, iku~$!A$.
+
+Mesthi wae, $\Obj{diag}$ lumrahe dudu simbol fungsi saka
+$\Th{T}$, lan mesthi dudu saka~$\Th{Q}$. Nanging, amarga $\fn{diag}$
+komputabel, fungsi iki \emph{bisa direpresentasikake} ing~$\Th{Q}$
+dening sawijining formula $!D_{\fn{diag}}(x,y)$. Mula tinimbang nulis
+$!B(\Obj{diag}(x))$, kita bisa nulis
+$\lexists[y][(!D_{\fn{diag}}(x,y) \land !B(y))]$. Saliyane panggantos
+iki, rancangan bukti ing ndhuwur tetep lumaku, malah wis lumaku
+ing~$\Th{Q}$.
+\end{explain}
+
+\begin{lem}
+\ollabel{lem:fixed-point} Upamana $!B(x)$ formula sembarang kang mung
+nduweni siji variabel bebas~$x$. Mula ana ukara~$!A$ saengga
+$\Th{Q} \Proves !A \liff !B(\gn{!A})$.
+\end{lem}
+
+
+\begin{proof}
+Kanggo $!B(x)$ kang diwenehake, tetepna $!E(x)$ minangka formula
+$\lexists[y][(!D_{\fn{diag}}(x,y) \land !B(y))]$ lan tetepna $!A$
+minangka diagonalisasine, yaiku formula $!E(\gn{!E(x)})$.
+
+Amarga $!D_{\fn{diag}}$ merepresentasikake $\fn{diag}$, lan
+$\fn{diag}(\Gn{!E(x)}) = \Gn{!A}$, $\Th{Q}$ bisa !!{derive}
+\begin{align}
+  & !D_{\fn{diag}}(\gn{!E(x)}, \gn{!A}) \ollabel{repdiag1} \\
+  & \lforall[y][(!D_{\fn{diag}}(\gn{!E(x)},y) \lif
+  \eq[y][\gn{!A}])]. \ollabel{repdiag2}
+\end{align}
+Saiki kita nuduhake yen $\Th{Q} \Proves !A \liff !B(\gn{!A})$. Kita
+ngandharake kanthi informal, mung nggunakake logika lan fakta kang
+!!{derivable} ing~$\Th{Q}$.
+
+Sepisan, upamana~$!A$, yaiku $!E(\gn{!E(x)})$. Yen bali menyang
+definisi $!E(x)$, kita weruh yen $!E(\gn{!E(x)})$ iku
+\[
+\lexists[y][(!D_{\fn{diag}}(\gn{!E(x)},y) \land !B(y))].
+\]
+Gatekna sawijining~$y$ kang kaya mangkono. Amarga
+$!D_{\fn{diag}}(\gn{!E(x)},y)$, miturut \olref{repdiag2},
+$y = \gn{!A}$. Mula saka $!B(y)$ kita entuk~$!B(\gn{!A})$.
+
+Saiki upamana $!B(\gn{!A})$. Miturut \olref{repdiag1}, kita nduweni
+\begin{align*}
+& !D_{\fn{diag}}(\gn{!E(x)}, \gn{!A}) \land !B(\gn{!A}).
+\intertext{Mula}
+& \lexists[y][(!D_{\fn{diag}}(\gn{!E(x)},y) \land !B(y))].
+\end{align*}
+Nanging iki persis $!E(\gn{!E(x)})$, yaiku~$!A$.
+\end{proof}
+
+\begin{digress}
+Bandhingna iki karo bukti lema titik tetep ing teori komputabilitas.
+Bedane, ing kene kita arep nemtokake sawijining \emph{pratelan}
+nganggo pratelan iku dhewe, dene ing kana kita arep nemtokake
+sawijining \emph{fungsi} nganggo fungsi iku dhewe; sanajan ana
+beda iki, gagasane sejatine padha.
+\end{digress}
+
+\begin{prob} 
+  !!^a{formula}~$!A(x)$ iku \emph{definisi bebener} yen $\Th{Q}
+  \Proves !B \liff !A(\gn{!B})$ kanggo saben !!{sentence}s~$!B$.
+  Tuduhna nganggo lema titik tetep yen ora ana !!{formula} kang dadi
+  definisi bebener.
+\end{prob}
+
+\end{document}

@@ -1,0 +1,170 @@
+% Part: computability
+% Chapter: recursive-functions
+% Section: pr-functions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{rec}{prf}
+\olsection{Fungsi Rekursif Primitif}
+
+Ayo kita cathet maneh carane netepake fungsi anyar saka fungsi
+kang wis ana nganggo rekursi primitif lan komposisi.
+
+\begin{defn}
+  \ollabel{defn:primitive-recursion} Upamana $f$ iku fungsi
+  $k$ panggonan ($k\ge 1$) lan $g$ iku fungsi $(k+2)$ panggonan.
+  Fungsi kang ditegesi kanthi \emph{rekursi primitif saka $f$ lan $g$}
+  iku fungsi $(k+1)$ panggonan~$h$ kang ditemtokake dening
+  persamaan iki:
+  \begin{align*}
+    h(x_0,\dots,x_{k-1},0) & =  f(x_0,\dots,x_{k-1}) \\
+    h(x_0,\dots,x_{k-1},y+1) & = g(x_0,\dots,x_{k-1}, y, h(x_0,\dots,x_{k-1}, y))
+  \end{align*}
+\end{defn}
+
+\begin{defn}
+  \ollabel{defn:composition} Upamana $f$ iku fungsi $k$ panggonan,
+  lan $g_0$, \dots, $g_{k-1}$ iku $k$ fungsi kang kabeh nduweni
+  $n$ panggonan. Fungsi kang ditegesi kanthi \emph{komposisi saka $f$
+    lan $g_0$, \dots,~$g_{k-1}$} iku fungsi $n$ panggonan~$h$
+  kang ditemtokake dening
+  \[
+  h(x_0, \dots, x_{n-1}) =
+  f(g_0(x_0, \dots, x_{n-1}), \dots, g_{k-1}(x_0, \dots, x_{n-1})).
+  \]
+\end{defn}
+
+Saliyane $\Succ$ lan fungsi proyeksi
+\[
+\Proj{n}{i}(x_0,\dots,x_{n-1}) = x_i,
+\]
+kanggo saben wilangan asli $n$ lan $i < n$, kita uga bakal nglebokake
+fungsi~$\Zero(x) = 0$ ing golongan fungsi rekursif primitif.
+
+\begin{defn}
+  Himpunan fungsi rekursif primitif iku himpunan fungsi
+  saka $\Nat^n$ menyang $\Nat$, kang ditegesi kanthi induktif
+  liwat syarat-syarat iki:
+  \begin{enumerate}
+  \item $\Zero$ iku rekursif primitif.
+  \item $\Succ$ iku rekursif primitif.
+  \item Saben fungsi proyeksi $\Proj{n}{i}$ iku rekursif primitif.
+  \item Yen $f$ iku fungsi rekursif primitif $k$ panggonan lan $g_0$,
+    \dots,~$g_{k-1}$ iku fungsi rekursif primitif $n$ panggonan,
+    komposisi $f$ karo $g_0$, \dots,~$g_{k-1}$ uga rekursif
+    primitif.
+  \item Yen $f$ iku fungsi rekursif primitif $k$ panggonan lan $g$ iku
+    fungsi rekursif primitif $k+2$ panggonan, fungsi kang ditegesi
+    kanthi rekursi primitif saka $f$ lan $g$ uga rekursif
+    primitif.
+\end{enumerate}
+\end{defn}
+
+\begin{explain}
+Kanthi luwih ringkes, himpunan fungsi rekursif primitif iku
+himpunan paling cilik kang ngemot $\Zero$, $\Succ$, lan fungsi
+proyeksi~$\Proj{n}{j}$, lan kang katutup tumrap komposisi lan
+rekursi primitif.
+
+Cara liyane kanggo nggambarake himpunan fungsi rekursif primitif
+yaiku netepake miturut “tahap.” Upamana $S_0$ minangka himpunan
+fungsi wiwitan: $\Zero$, $\Succ$, lan fungsi proyeksi. Iki
+fungsi rekursif primitif tahap~$0$. Sawise tahap $S_i$ ditemtokake,
+upamana $S_{i+1}$ minangka himpunan kabeh fungsi kang dipikolehi
+kanthi ngetrapake siji langkah komposisi utawa rekursi primitif
+marang fungsi-fungsi kang wis ana ing~$S_i$. Banjur
+\[
+S = \bigcup_{i \in \Nat} S_i
+\]
+iku himpunan kabeh fungsi rekursif primitif.
+\end{explain}
+
+Ayo dibuktekake yen $\Add$ iku fungsi rekursif primitif.
+
+\begin{prop}
+  Fungsi panjumlahan $\Add(x,y) = x+y$ iku rekursif primitif.
+\end{prop}
+
+\begin{proof}
+Kita wis nduweni definisi rekursif primitif kanggo $\Add$ nganggo
+rong fungsi $f$ lan~$g$ kang cocog karo pola ing
+\olref{defn:primitive-recursion}:
+\begin{align*}
+  \Add(x_0, 0) & = f(x_0) = x_0\\
+  \Add(x_0, y+1) & = g(x_0, y, \Add(x_0, y)) =
+  \Succ(\Add(x_0, y))
+\end{align*}
+Dadi $\Add$ iku rekursif primitif yen $f$ lan $g$ uga
+rekursif primitif. $f(x_0) = x_0 = \Proj{1}{0}(x_0)$, lan fungsi
+proyeksi kalebu rekursif primitif, mula $f$ iku rekursif primitif.
+Fungsi $g$ iku fungsi telung panggonan $g(x_0, y, z)$ kang
+ditegesi kanthi
+\[
+g(x_0, y, z) = \Succ(z).
+\]
+Iki durung mbuktekake yen $g$ iku rekursif primitif, amarga $g$
+lan $\Succ$ dudu fungsi kang persis padha: $\Succ$ iku fungsi
+siji panggonan, dene $g$ kudu telung panggonan. Nanging kita
+bisa netepake $g$ kanthi cara kang cocog karo aturan komposisi,
+yaiku
+\[
+g(x_0, y, z) = \Succ(\Proj{3}{2}(x_0, y, z))
+\]
+Amarga $\Succ$ lan $\Proj{3}{2}$ kalebu fungsi rekursif
+primitif, $g$ uga mangkono, awit bisa ditegesi kanthi komposisi
+saka fungsi rekursif primitif.
+\end{proof}
+
+\begin{prop}
+  \ollabel{prop:mult-pr}
+  Fungsi perkalian $\Mult(x,y) = x \cdot y$ iku rekursif primitif.
+\end{prop}
+
+\begin{proof}
+  Latihan.
+\end{proof}
+
+\begin{prob}
+  Buktikna \olref[cmp][rec][prf]{prop:mult-pr} kanthi nuduhake yen
+  definisi rekursif primitif kanggo $\Mult$ bisa diwujudake miturut
+  pola kang diwajibake dening \olref[cmp][rec][prf]{defn:primitive-recursion}
+  lan nuduhake yen fungsi $f$ lan~$g$ kang cocog iku rekursif
+  primitif.
+\end{prob}
+
+\begin{ex}
+Mangkene tuladha pisanan kita kanggo definisi rekursif primitif:
+\begin{align*}
+h(0) & =  1 \\
+h(y+1) & =  2 \cdot h(y).
+\end{align*}
+Fungsi iki ora bisa mlebu pola kang diwajibake dening
+\olref{defn:primitive-recursion}, amarga $k=0$. Definisi iki uga
+nganggo konstanta $1$ lan $2$. Kanggo ngatasi masalah kapisan,
+ayo kita tambahake argumen semu lan netepake fungsi~$h'$:
+\begin{align*}
+h'(x_0, 0) & =  f(x_0) = 1 \\
+h'(x_0, y+1) & =  g(x_0, y, h'(x_0, y)) = 2 \cdot h'(x_0, y).
+\end{align*}
+Fungsi $f(x_0) = 1$ bisa ditegesi saka $\Succ$ lan $\Zero$
+kanthi komposisi: $f(x_0) = \Succ(\Zero(x_0))$. Fungsi $g$ bisa
+ditegesi kanthi komposisi saka $g'(z) = 2 \cdot z$ lan fungsi
+proyeksi:
+\begin{align*}
+g(x_0, y, z) & = g'(\Proj{3}{2}(x_0, y, z))
+\intertext{lan $g'$ banjur bisa ditegesi kanthi komposisi kaya mangkene}
+g'(z) & = \Mult(g''(z), \Proj{1}{0}(z))
+\intertext{lan}
+g''(z) & = \Succ(f(z)),
+\end{align*}
+ing ngendi $f$ kaya ing ndhuwur: $f(z) = \Succ(\Zero(z))$.
+Saiki, sawisé nduweni~$h'$, kita bisa nganggo komposisi maneh
+kanggo netepake $h(y) =
+h'(\Proj{1}{0}(y),\Proj{1}{0}(y))$. Iki nuduhake yen $h$ bisa
+ditegesi saka fungsi dhasar liwat rerangken komposisi lan
+rekursi primitif, mula $h$~iku rekursif primitif.
+\end{ex}
+
+\end{document}

@@ -1,0 +1,60 @@
+% part: intuitionistic-logic
+% chapter: soundness-completeness
+% section: soundness-axd
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{sc}{sax}
+
+\olsection{Jaminan Semantis kanggo \usetoken{P}{derivation} Aksiomatis}
+
+\begin{editorial}
+  Bukti jaminan semantis gumantung marang fakta yen kabeh aksioma
+  valid sacara intuisionistik. Iki isih kudu dibuktekake, upamane
+  ing bab Semantik.
+\end{editorial}
+
+\begin{thm}[Jaminan Semantis]
+  \ollabel{thm:soundness}
+  Yen $\Gamma \Proves !A$, mula $ \Gamma \Entails !A$.
+\end{thm}
+
+\begin{proof}
+  Kita mbuktekake yen $\Gamma \Proves !A$, mula $\Gamma \Entails !A$.
+  Bukti iki nganggo induksi tumrap cacahe~$n$ !!{formula}s ing
+  !!{derivation} kanggo~$!A$ saka~$\Gamma$. Kita nuduhake yen $!A_1$,
+  \dots, $!A_n = !A$ iku !!a{derivation} saka~$\Gamma$, mula $\Gamma
+  \Entails !A_n$. Yen $!A_1$, \dots, $!A_n$ iku !!a{derivation},
+  $!A_1$, \dots, $!A_k$ uga mangkono kanggo sembarang $k<n$.
+
+  Ora ana !!{derivation}s kanggo formula kanthi dawa~$0$, mula
+  kanggo $n=0$ pratelan iki bener kanthi vakum. Kanggo langkah
+  induksi, upamane pratelan iki bener kanggo kabeh !!{derivation}s
+  kanthi dawa~$<n$. Kita mbedakake kasus miturut dhasar kanggo~$!A_n$.
+  
+  \begin{enumerate}
+  \item $!A_n$ iku aksioma. Kabeh aksioma valid, mula $\Gamma \Entails
+    !A_n$ kanggo sembarang~$\Gamma$.
+  \item $!A_n \in \Gamma$. Mula kanggo sembarang $\mModel{M}$ lan $w$,
+    yen $\mSat{M}{\Gamma}[w]$, cetha yen $\mSat{M}{!A_n}[w]$,
+    yaiku $\Gamma \Entails !A$.
+  \item $!A_n$ kasimpulake nganggo \MP{} saka $!A_i$ lan
+    $!A_j \ident !A_i \lif !A_n$. $!A_1$, \dots, $!A_i$ lan $!A_1$,
+    \dots, $!A_j$ iku !!{derivation}s saka~$\Gamma$, mula miturut
+    hipotesis induksi, $\Gamma \Entails !A_i$ lan
+    $\Gamma \Entails !A_i \lif !A_n$.
+    
+    Upamane $\mSat{M}{\Gamma}[w]$. Amarga $\mSat{M}{\Gamma}[w]$ lan
+    $\Gamma \Entails !A_i \lif !A_n$, kita entuk
+    $\mSat{M}{!A_i \lif !A_n}[w]$. Miturut definisi, tegese kanggo
+    kabeh $w'$ kanthi $Rww'$, yen $\mSat{M}{!A_i}[w']$, mula
+    $\mSat{M}{!A_n}[w']$. Amarga $R$ refleksif, $w$ kalebu $w'$
+    kanthi $Rww'$. Tegese, yen $\mSat{M}{!A_i}[w]$, mula
+    $\mSat{M}{!A_n}[w]$. Amarga $\Gamma \Entails !A_i$,
+    $\mSat{M}{!A_i}[w]$. Mula $\mSat{M}{!A_n}[w]$, kaya kang arep dituduhake.
+  \end{enumerate}
+\end{proof}
+
+\end{document}

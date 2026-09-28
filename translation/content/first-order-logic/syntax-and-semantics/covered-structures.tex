@@ -1,0 +1,79 @@
+% Part: first-order-logic
+% Chapter: syntax-and-semantics
+% Section: covered-structures
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{syn}{cov}
+
+\olsection{\printtoken{P}{structure} kang Katutup kanggo Basa Logika Sepisanan}
+
+\begin{explain}
+Elinga yen sawijining term iku \emph{katutup} yen ora ngemot
+!!{variable}s.
+\end{explain}
+
+\begin{defn}[!!^{value} saka term katutup]
+Yen $t$ iku term katutup saka basa~$\Lang L$ lan $\Struct M$
+iku !!{structure} kanggo~$\Lang L$, \emph{!!{value}}~$\Value{t}{M}$
+ditetepake kaya mangkene:
+\begin{enumerate}
+\item Yen $t$ mung !!{constant}~$c$, mula $\Value{c}{M} = \Assign{c}{M}$.
+\item Yen $t$ awujud $\Atom{f}{t_1, \ldots, t_n}$, mula
+  \[
+  \Value{t}{M} = \Assign{f}{M}(\Value{t_1}{M}, \ldots,
+  \Value{t_n}{M}).
+  \]
+\end{enumerate}
+\end{defn}
+
+\begin{defn}[!!{structure} katutup]
+Sawijining !!{structure} iku \emph{katutup} yen saben elemen domaine
+iku !!{value} saka sawenehing term katutup.
+\end{defn}
+
+\begin{ex}
+Upamakna ~$\Lang L$ iku basa kang ngemot !!{constant}s $\Obj{zero}$,
+$\Obj{one}$, $\Obj{two}$, \dots, !!{predicate}~$<$ rong panggonan,
+lan !!{function}s $+$ lan $\times$ kang rong panggonan. Mula
+!!a{structure}~$\Struct M$ kanggo~$\Lang L$ nduweni domain
+$\Domain M = \{0, 1, 2, \ldots \}$ lan pangaji
+$\Assign{\Obj{zero}}{M} = 0$, $\Assign{\Obj{one}}{M} = 1$,
+$\Assign{\Obj{two}}{M} = 2$, lan sabanjure. Kanggo simbol relasi
+$<$ rong panggonan, himpunan $\Assign{<}{M}$ iku himpunan kabeh
+pasangan $\tuple{c_1, c_2} \in \Domain{M}^2$ kanthi $c_1$
+luwih cilik tinimbang~$c_2$: upamane, $\tuple{1, 3} \in
+\Assign{<}{M}$ nanging $\tuple{2, 2} \notin \Assign{<}{M}$.
+Kanggo !!{function} $+$ rong panggonan, tetepna $\Assign{+}{M}$
+kanthi cara lumrah---upamane, $\Assign{+}{M}(2,3)$ ngasilake~$5$,
+lan padha uga kanggo !!{function}~$\times$ rong panggonan.
+Mula, !!{value} saka $\Obj{four}$ mung~$4$, lan !!{value}
+saka $\times(\Obj{two},
++(\Obj{three},\Obj{zero}))$ (utawa ing notasi infiks,
+$\Obj{two} \times (\Obj{three} + \Obj{zero})$) yaiku
+kaya ing ngisor iki. Cathetan koreksi sumber OLPL-071: tampilan
+Inggris nulis tandha padha karo ing pungkasan larik kapisan lan
+maneh ing wiwitan larik kapindho; tandha kapisan dicopot supaya
+saben langkah mung nduweni siji tandha padha karo.
+\begin{multline*}
+\Value{\times(\Obj{two}, +(\Obj{three},\Obj{zero}))}{M} \\
+\begin{aligned}
+& =\Assign{\times}{M}(\Value{\Obj{two}}{M}, \Value{+(\Obj{three}, \Obj{zero})}{M})\\
+& = \Assign{\times}{M}(\Value{\Obj{two}}{M}, \Assign{+}{M}(\Value{\Obj{three}}{M},
+\Value{\Obj{zero}}{M})) \\
+& = \Assign{\times}{M}(\Assign{\Obj{two}}{M}, \Assign{+}{M}(\Assign{\Obj{three}}{M},
+\Assign{\Obj{zero}}{M})) \\
+& = \Assign{\times}{M}(2, \Assign{+}{M}(3, 0)) \\
+& = \Assign{\times}{M}(2, 3) \\
+& = 6
+\end{aligned}
+\end{multline*}
+\end{ex}
+
+\begin{prob}
+Apa $\Struct N$, model standar aritmetika, katutup? Jlentrehna.
+\end{prob}
+
+\end{document}

@@ -1,0 +1,87 @@
+% Part: lambda-calculus
+% Chapter: introduction
+% Section: syntax
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{int}{syn}
+\olsection{Sintaksis Kalkulus Lambda}
+
+Kita miwiti nganggo rerangken variabel $x$, $y$,
+$z$,~\dots lan sawetara simbol konstanta $a$, $b$,
+$c$,~\dots. Himpunan suku ditetepake kanthi induktif
+kaya mangkene:
+\begin{enumerate}
+\item Saben variabel iku suku.
+\item Saben konstanta iku suku.
+\item Yen $M$ lan $N$ iku suku, mula $(MN)$ uga suku.
+\item Yen $M$ iku suku lan $x$ iku variabel, mula
+  $(\lambd[x][M])$ uga suku.
+\end{enumerate}
+Suku kang wujude $(MN)$ diarani \emph{aplikasi},
+dene suku kang wujude $(\lambd[x][M])$
+diarani \emph{abstraksi}.
+
+Sistem kang ora ngemot konstanta babar pisan diarani
+kalkulus lambda \emph{murni}. Kita mligine bakal
+nggarap kalkulus-$\lambd$ murni, mula kabeh aksara
+cilik makili variabel. Aksara gedhe ($M$, $N$,
+lan sateruse) digunakake kanggo makili suku
+kalkulus-$\lambd$.
+
+Kita bakal netepi sawetara paugeran notasi:
+
+\begin{conv}
+\begin{enumerate}
+\item Yen tandha kurung ora ditulis, aplikasi
+  ditindakake saka kiwa menyang tengen.
+  Umpamane, yen $M$, $N$, $P$, lan $Q$ iku
+  suku, mula $MNPQ$ iku singkatan saka
+  $(((MN)P)Q)$.
+\item Maneh, yen tandha kurung ora ditulis,
+  abstraksi lambda diwenehi cakupan paling
+  amba. Umpamane, $\lambd[x][MNP]$
+  diwaca $(\lambd[x][((MN)P)])$.
+\item Lambda bisa digunakake kanggo
+  ngabstraksi sawetara variabel bebarengan.
+  Umpamane, $\lambd[xyz][M]$ iku
+  singkatan saka
+  $\lambd[x][\lambd[y][\lambd[z][M]]]$.
+\end{enumerate}
+\end{conv}
+
+Umpamane,
+\[
+\lambd[xy][xxyx \lambd[z][xz]]
+\]
+iku singkatan saka
+\[
+\lambd[x][\lambd[y][((((xx)y)x)(\lambd[z][(xz)]))]].
+\]
+Paugeran iki kudu dielingi. Wiwitane bisa nggawe
+mumet, nanging mengko bakal kulina,
+lan suwene-suwene paugeran iki ora semumet
+tinimbang kudu ngurusi kurung kang ruwet
+ora karuan.
+
+Rong suku kang mung beda jeneng variabel kaiket
+diarani ekuivalen-$\alpha$; umpamane,
+$\lambd[x][x]$ lan $\lambd[y][y]$.
+Luwih trep yen loro iku dianggep minangka suku
+kang ``padha''; kanthi tembung liya,
+nalika kita nyebut $M$ lan $N$ padha, maksude
+uga ``nganti owah-owahan jeneng variabel
+kaiket''. Muncule variabel kang diiket
+dening sawijining $\lambd$ ing cakupane diarani
+``kaiket'', dene kemunculan liyane
+diarani ``bebas''.
+Ora ana variabel bebas ing tuladha sadurunge;
+nanging ing
+\[
+(\lambd[z][yz])x
+\]
+$y$ lan $x$ iku bebas, dene $z$ kaiket.
+
+\end{document}

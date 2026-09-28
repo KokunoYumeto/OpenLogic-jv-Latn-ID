@@ -1,0 +1,231 @@
+% Part: model-theory
+% Chapter: interpolation
+% Section: interpolation-proof
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{int}{prf}
+
+\olsection{Teorema Interpolasi Craig}
+
+\begin{thm}[Teorema Interpolasi Craig]
+\ollabel{thm:interpol}
+Yen $\Entails !A \lif !B$, ana !!a{sentence} $!C$ kang
+$\Entails !A \lif !C$ lan $\Entails !C \lif !B$, lan saben
+!!{constant}, !!{function}, lan !!{predicate} (saliyane $\eq$) ing
+$!C$ uga katon ing $!A$ lan~$!B$. !!{sentence} $!C$ iki diarani
+\emph{interpolan} kanggo $!A$ lan~$!B$.
+\end{thm}
+
+\begin{proof}
+Upamane $\Lang{L}_1$ iku basa saka $!A$ lan $\Lang{L}_2$ iku
+basa saka $!B$. Tetepake $\Lang{L}_0 = \Lang{L}_1 \cap \Lang{L}_2$.
+Kanggo saben $i \in \{0, 1, 2 \}$, wangun $\Lang{L}'_i$ dipikolehi
+saka $\Lang{L}_i$ kanthi nambah tanpa wates akehe !!{constant}s anyar
+$\Obj c_0, \Obj c_1, \Obj c_2, \dots$.
+
+Yen $!A$ ora bisa dipenuhi, $\lexists[x][\eq/[x][x]]$ iku
+interpolan. Yen $\lnot !B$ ora bisa dipenuhi (mula $!B$ valid),
+$\lexists[x][\eq[x][x]]$ iku interpolan. Mula kita uga bisa
+nganggep $!A$ lan $\lnot !B$ loro-lorone bisa dipenuhi.
+
+Kanggo mbuktekake kontraposisi Teorema Interpolasi,
+upamane ora ana interpolan kanggo $!A$ lan $!B$.
+Tegese, upamane $\{!A\}$ lan $\{\lnot !B\}$ ora bisa dipisahake
+ing $\Lang{L}_0$.
+
+Tujuan kita yaiku nggedhekake pasangan $(\{ !A \}, \{\lnot!B\})$
+dadi pasangan kang ora bisa dipisahake lan maksimal
+$(\Gamma^*, \Delta^*)$. Upamane $!A_0$,
+$!A_1$, $!A_2$, \dots ndhaptar !!{sentence}s saka $\Lang{L}'_1$,
+lan $!B_0$, $!B_1$, $!B_2$, \dots ndhaptar !!{sentence}s
+saka~$\Lang{L}'_2$. Cathetan koreksi sumber OLPL-115:
+dhaptar kudu nyakup basa kang wis ditambahi konstanta anyar,
+amarga maksimalitas ing ngisor iki ditegesake ing basa iku.
+Kita tegesi rong barisan mundhak saka himpunan
+!!{sentence}s $(\Gamma_n, \Delta_n)$ kanggo $n \ge 0$ kaya iki.
+Tetepake $\Gamma_0 = \{ !A\}$ lan $\Delta_0 = \{\lnot !B \}$.
+Yen $(\Gamma_n, \Delta_n)$ wis ditegesi, tegese
+$\Gamma_{n+1}$ lan $\Delta_{n+1}$ mangkene:
+\begin{enumerate}
+\item Yen $\Gamma_n \cup \{!A_n \}$ lan $\Delta_n$ ora bisa dipisahake
+  ing $\Lang{L}'_0$, lebokake $!A_n$ menyang $\Gamma_{n+1}$.
+  Kajaba iku, yen $!A_n$ iku !!{formula} eksistensial
+  $\lexists[x][!S]$, pilih !!{constant} anyar $c$ kang ora katon
+  ing $\Gamma_n$, $\Delta_n$, $!A_n$ utawa $!B_n$, lan lebokake
+  $\Subst{!S}{c}{x}$ menyang $\Gamma_{n+1}$.
+\item Yen $\Gamma_{n+1}$ lan $\Delta_n \cup \{!B_n \}$ ora bisa
+  dipisahake ing $\Lang{L}'_0$, lebokake $!B_n$ menyang
+  $\Delta_{n+1}$. Kajaba iku, yen $!B_n$ iku !!{formula}
+  eksistensial $\lexists[x][!S]$, pilih !!{constant} anyar $c$
+  kang ora katon ing $\Gamma_{n+1}$, $\Delta_n$, $!A_n$
+  utawa $!B_n$, lan lebokake $\Subst{!S}{c}{x}$ menyang
+  $\Delta_{n+1}$.
+\end{enumerate}
+Pungkasane, tegesi:
+\begin{align*}
+  \Gamma^* & = \bigcup_{n\ge 0} \Gamma_n, &
+  \Delta^* & = \bigcup_{n\ge 0} \Delta_n.
+\end{align*}
+Kanthi induksi bebarengan marang $n$, saiki kita bisa mbuktekake:
+\begin{enumerate}
+\item\ollabel{part-a} $\Gamma_n$ lan $\Delta_n$ ora bisa dipisahake
+  ing $\Lang{L}'_0$;
+\item\ollabel{part-b} $\Gamma_{n+1}$ lan $\Delta_n$ ora bisa
+  dipisahake ing $\Lang{L}'_0$.
+\end{enumerate}
+Dhasar kanggo \olref{part-a} diwenehake dening
+\olref[sep]{lem:sep1}. Kanggo \olref{part-b}, kita kudu
+mbedakake telung kasus:
+\begin{enumerate}
+\item Yen $\Gamma_0 \cup \{!A_0 \}$ lan $\Delta_0$ bisa dipisahake,
+  mula $\Gamma_1 = \Gamma_0$ lan \olref{part-b} padha karo
+  \olref{part-a};
+\item Yen $\Gamma_1 = \Gamma_0 \cup\{ !A_0\}$, mula $\Gamma_1$
+  lan $\Delta_0$ ora bisa dipisahake miturut konstruksi.
+\item Isih ana kasus nalika $!A_0$ eksistensial, saengga
+  $\Gamma_1 = \Gamma_0 \cup \{ \lexists[x][!S], \Subst{!S}{c}{x}
+  \}$. Miturut konstruksi, $\Gamma_0 \cup \{ \lexists[x][!S]\}$
+  lan $\Delta_0$ ora bisa dipisahake; mula miturut
+  \olref[sep]{lem:sep2}, $\Gamma_0 \cup \{ \lexists[x][!S],
+  \Subst{!S}{c}{x} \}$ lan $\Delta_0$ uga ora bisa dipisahake.
+\end{enumerate}
+Iki ngrampungake dhasar induksi kanggo \olref{part-a} lan
+\olref{part-b} ing ndhuwur. Saiki menyang langkah induksi.
+Kanggo \olref{part-a}, yen $\Delta_{n+1} = \Delta_n \cup
+\{ !B_n \}$, mula $\Gamma_{n+1}$ lan $\Delta_{n+1}$ ora bisa
+dipisahake miturut konstruksi (sanajan $!B_n$ eksistensial,
+miturut \olref[sep]{lem:sep2}); yen $\Delta_{n+1} = \Delta_n$
+(amarga $\Gamma_{n+1}$ lan $\Delta_n \cup \{!B_n\}$ bisa
+dipisahake), kita gunakake hipotesis induksi \olref{part-b}.
+Kanggo langkah induksi \olref{part-b}, yen
+$\Gamma_{n+2} = \Gamma_{n+1} \cup \{!A_{n+1} \}$, mula
+$\Gamma_{n+2}$ lan $\Delta_{n+1}$ ora bisa dipisahake
+miturut konstruksi (sanajan $!A_{n+1}$ eksistensial,
+miturut \olref[sep]{lem:sep2}); yen
+$\Gamma_{n+2} = \Gamma_{n+1}$, kita gunakake kasus induksi
+kanggo \olref{part-a} kang lagi dibuktekake. Iki ngrampungake
+induksi kanggo \olref{part-a} lan \olref{part-b}.
+
+Mula $\Gamma^*$ lan $\Delta^*$ ora bisa dipisahake; yen bisa,
+miturut kompaktitas ana $n \ge 0$ kang misahake
+$\Gamma_n$ lan $\Delta_n$, nalisir \olref{part-a}.
+Khususe, $\Gamma^*$ lan $\Delta^*$ konsisten:
+yen sing kapisan utawa kapindho ora konsisten,
+loro-lorone bisa dipisahake dening
+$\lexists[x][\eq/[x][x]]$ utawa
+$\lforall[x][\eq[x][x]]$, manut kasusé.
+
+Saiki kita tuduhake yen $\Gamma^*$ konsisten maksimal ing
+$\Lang{L}'_1$, lan semono uga $\Delta^*$ ing $\Lang{L}'_2$.
+Kanggo sing kapisan, upamane $!A_n \notin \Gamma^*$ lan
+$\lnot !A_n \notin \Gamma^*$ kanggo sawenehing $n \ge 0$.
+Yen $!A_n \notin \Gamma^*$, mula $\Gamma_n \cup \{!A_n \}$
+bisa dipisahake saka $\Delta_n$, dadi ana $!C \in
+\Lang{L}'_0$ saengga loro pratelan iki bener:
+\begin{align*}
+  \Gamma^* & \Entails !A_n \lif !C, &
+  \Delta^* & \Entails \lnot !C.
+\end{align*}
+Semono uga, yen $\lnot !A_n \notin \Gamma^*$, ana $!C' \in
+\Lang{L}'_0$ saengga loro pratelan iki bener:
+\begin{align*}
+  \Gamma^* & \Entails \lnot !A_n \lif !C', &
+  \Delta^* & \Entails \lnot !C'.
+\end{align*}
+Miturut logika proposisional, $\Gamma^* \Entails !C \lor !C'$
+lan $\Delta^* \Entails \lnot (!C \lor !C')$, mula $!C \lor
+!C'$ misahake $\Gamma^*$ lan $\Delta^*$. Argumen kang padha
+nuduhake yen $\Delta^*$ maksimal.
+
+Pungkasan, kita tuduhake yen $\Gamma^* \cap \Delta^*$
+konsisten maksimal ing $\Lang{L}'_0$. Cetha yen konsisten,
+amarga minangka irisan rong himpunan konsisten.
+Kanggo nuduhake maksimalitas, pilih $!S \in \Lang{L}'_0$.
+Saiki, $\Gamma^*$ maksimal ing $\Lang{L'_1}
+\supseteq \Lang{L'_0}$, lan semono uga $\Delta^*$
+maksimal ing $\Lang{L'_2} \supseteq \Lang{L'_0}$.
+Mula $!S \in \Gamma^*$ utawa $\lnot !S \in \Gamma^*$,
+lan $!S \in \Delta^*$ utawa $\lnot !S \in \Delta^*$.
+Yen $!S \in \Gamma^*$ lan $\lnot !S \in \Delta^*$,
+$!S$ bakal misahake $\Gamma^*$ lan $\Delta^*$;
+yen $\lnot !S \in \Gamma^*$ lan $!S \in \Delta^*$,
+$\Gamma^*$ lan $\Delta^*$ bakal dipisahake
+dening $\lnot !S$.
+Mula $!S \in \Gamma^* \cap \Delta^*$ utawa
+$\lnot !S \in \Gamma^* \cap \Delta^*$,
+lan $\Gamma^* \cap \Delta^*$ maksimal.
+
+Amarga $\Gamma^*$ konsisten maksimal, himpunan iki nduweni
+model $\Struct{M}'_1$ kang !!{domain} $\Domain{M'_1}$
+dumadi saka, lan mung saka, unsur-unsur $\Assign{c}{M'_1}$
+kang dadi interpretasi !!{constant}s---kaya ing bukti
+teorema kelengkapan
+(\olref[fol][com][cth]{thm:completeness}).
+Semono uga, $\Delta^*$ nduweni model $\Struct{M}'_2$
+kang !!{domain} $\Domain{M'_2}$ diwenehi dening
+interpretasi $\Assign{c}{M'_2}$ saka !!{constant}s.
+
+Wangun $\Struct{M_1}$ saka $\Struct{M'_1}$ kanthi
+ngilangi interpretasi !!{constant}s, !!{function}s,
+lan !!{predicate}s ing $\Lang{L'_1} \setminus
+\Lang{L'_0}$; tumrap $\Struct{M_2}$ uga mangkono.
+Pemetaan $h \colon M_1 \to M_2$ kang ditegesi dening
+$h(\Assign{c}{M'_1}) = \Assign{c}{M'_2}$ iku
+isomorfisme ing $\Lang{L}'_0$, amarga
+$\Gamma^* \cap \Delta^*$ konsisten maksimal ing
+$\Lang{L}'_0$, kaya kang wis dituduhake.
+Sebabé, saben $\Lang{L}'_0$-!!{sentence}
+kalebu ing $\Gamma^*$ lan $\Delta^*$ loro-lorone,
+utawa ora kalebu ing loro-lorone. Mula
+$\Assign{c}{M'_1} \in \Assign{P}{M'_1}$ yen lan
+mung yen $\Atom{P}{c} \in \Gamma^*$, yen lan mung yen
+$\Atom{P}{c} \in \Delta^*$, yen lan mung yen
+$\Assign{c}{M'_2} \in \Assign{P}{M'_2}$.
+Syarat isomorfisme liyane bisa dibuktekake kanthi cara padha.
+
+Saiki tegesi model $\Struct{M}$ kanggo !!{language}
+$\Lang{L}'_1 \cup \Lang{L}'_2$ kaya mangkene:
+Cathetan koreksi sumber OLPL-117:
+basa gabungan iki kudu ngemot konstanta anyar,
+supaya pratelan pungkasan ngenani
+gabungan rong himpunan lintang bisa ditegesi.
+\begin{enumerate}
+\item !!{domain} $\Domain{M}$ yaiku $\Domain{M_2}$,
+  tegese himpunan kabeh unsur $\Assign{c}{M'_2}$;
+\item Yen !!a{predicate}~$P$ ana ing $\Lang{L_2} \setminus
+  \Lang{L_1}$, mula $\Assign{P}{M} = \Assign{P}{M'_2}$;
+\item Yen predikat $P$ ana ing $\Lang{L}_1\setminus \Lang{L}_2$,
+  mula $\Assign{P}{M} = h(\Assign{P}{M'_1})$.
+  Cathetan koreksi sumber OLPL-116:
+  predikat iki mung ana ing basa kapisan, dadi relasine
+  dijupuk saka model kapisan banjur ditranspor nganggo h.
+  Tegese, $\tuple{\Assign{c_1}{M'_2}, \dots,
+  \Assign{c_n}{M'_2}} \in \Assign{P}{M}$ yen lan mung yen
+  $\tuple{\Assign{c_1}{M'_1}, \dots,
+  \Assign{c_n}{M'_1}} \in \Assign{P}{M'_1}$.
+\item Yen !!a{predicate} $P$ ana ing $\Lang{L}_0$,
+  mula $\Assign{P}{M} = \Assign{P}{M'_2} =
+  h(\Assign{P}{M'_1})$.
+\item !!^{function}s saka $\Lang{L}_1 \cup \Lang{L}_2$,
+  kalebu !!{constant}s, ditangani kanthi cara padha.
+\end{enumerate}
+
+Pungkasan, induksi marang !!{formula}s nuduhake yen
+$\Struct{M}$ cocog karo $\Struct{M'_1}$ kanggo kabeh
+!!{formula}s saka $\Lang{L'_1}$ liwat isomorfisme h,
+lan cocog karo $\Struct{M'_2}$ kanggo kabeh
+!!{formula}s saka $\Lang{L'_2}$.
+Cathetan koreksi sumber OLPL-118:
+amarga ranah model kapisan lan model gabungan beda,
+kecocokan tumrap pangaji variabel kudu liwat h.
+Khususe, $\Struct{M} \Entails \Gamma^* \cup \Delta^*$,
+mula $\Struct{M} \Entails !A$ lan
+$\Struct{M} \Entails \lnot!B$, saengga
+$\not\Entails !A \lif !B$. Iki ngrampungake bukti
+Teorema Interpolasi Craig.
+\end{proof}
+
+\end{document}

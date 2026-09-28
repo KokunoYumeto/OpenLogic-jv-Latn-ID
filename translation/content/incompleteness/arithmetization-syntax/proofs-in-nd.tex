@@ -1,0 +1,359 @@
+% Part: incompleteness
+% Chapter: arithmetization-syntax
+% Section: proofs-in-nd
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{art}{pnd}
+\olsection{\usetoken{P}{derivation} ing Deduksi Natural}
+
+\begin{explain}
+Supaya bisa ngaritmetisasi !!{derivation}s, kita kudu makili
+!!{derivation}s minangka bilangan. Amarga !!{derivation}s iku wit
+saka !!{formula}s kang saben inferensine nggawa siji utawa loro
+label, cara kang paling cetha yaiku representasi rekursif: kita
+makili !!{derivation} minangka tupla kang komponene yaiku cacah
+sub-!!{derivation}s langsung kang tumuju marang premis inferensi
+pungkasan, representasi sub-!!{derivation}s mau, !!{formula}
+pungkasan, label pambebasan saka inferensi pungkasan, lan bilangan
+kang nuduhake jinis inferensi pungkasan.
+\end{explain}
+
+\begin{defn}
+  Yen $\delta$ iku !!a{derivation} ing deduksi natural, $\Gn{\delta}$
+  ditemtokake kanthi induktif kaya mangkene:
+  \begin{enumerate}
+  \item 
+    Yen $\delta$ mung dumadi saka asumsi~$!A$, $\Gn{\delta}$
+    yaiku $\tuple{0, \Gn{!A}, n}$. Bilangan~$n$ yaiku~$0$
+    yen asumsi iku !!{undischarged}, lan dadi label bilangane
+    yen ora mangkono.
+  \item 
+    Yen $\delta$ dipungkasi inferensi kanthi nol, siji, loro,
+    utawa telu premis, $\Gn{\delta}$ yaiku
+    \begin{align*}
+      & \tuple{0, \Gn{!A}, n, k}, \\
+      & \tuple{1, \Gn{\delta_1}, \Gn{!A}, n, k}, \\
+      & \tuple{2, \Gn{\delta_1}, \Gn{\delta_2}, \Gn{!A}, n, k}, \text{ utawa}\\
+      & \tuple{3, \Gn{\delta_1}, \Gn{\delta_2}, \Gn{\delta_3}, \Gn{!A}, n,
+        k},
+    \end{align*}
+    miturut urutane. Ing kene $\delta_1$, $\delta_2$, $\delta_3$
+    iku sub-!!{derivation}s kang pungkasane premis inferensi
+    pungkasan ing $\delta$; $!A$ iku konklusi inferensi pungkasan
+    ing~$\delta$; $n$ iku label pambebasan inferensi pungkasan
+    ($0$ yen inferensi iku ora mbebasake asumsi); lan $k$~diwenehi
+    dening tabel iki miturut aturan kang digunakake ing inferensi
+    pungkasan.
+  
+    \begin{tabular}{lccccccc}
+      \text{Aturan:} & \Intro{\land} & \Elim{\land} & \Intro{\lor} & \Elim{\lor} \\
+      $k$: & 1 & 2 & 3 & 4  \\[1.5ex]
+      \text{Aturan:} &  \Intro{\lif} & \Elim{\lif} & \Intro{\lnot} & \Elim{\lnot} \\
+      $k$: & 5 & 6 & 7 & 8 \\[1.5ex]
+      \text{Aturan:}  &  \FalseInt & \FalseCl & \Intro{\lforall} & \Elim{\lforall} \\
+      $k$: & 9 & 10 & 11 & 12 \\[1.5ex]
+      \text{Aturan:} & \Intro{\lexists} & \Elim{\lexists} & \Intro{\eq} & \Elim{\eq} \\
+      $k$: & 13 & 14 & 15 & 16 
+    \end{tabular}
+  \end{enumerate}
+\end{defn}
+
+\begin{ex}
+  Gatekna !!{derivation} kang prasaja iki
+  \begin{prooftree}
+    \AxiomC{$\Discharge{!A \land !B}{1}$}
+    \RightLabel{\Elim{\land}}
+    \UnaryInfC{$!A$}
+    \DischargeRule{\Intro{\lif}}{1}
+    \UnaryInfC{$(!A \land !B) \lif !A$}
+  \end{prooftree}
+  Bilangan G\"odel saka asumsi iku $d_0 = \tuple{0,
+    \Gn{!A \land !B}, 1}$. Bilangan G\"odel saka !!{derivation}
+  kang pungkasane konklusi~$\Elim{\land}$ iku $d_1 = \tuple{1,
+     d_0, \Gn{!A}, 0, 2}$ ($1$ amarga $\Elim{\land}$ nduweni siji
+  premis, banjur bilangan G\"odel saka konklusi~$!A$, $0$ amarga
+  ora ana asumsi kang dibebasake, lan $2$ iku bilangan kang ngodeake
+  $\Elim{\land}$). Mula bilangan G\"odel saka sakabehe
+  !!{derivation} yaiku
+  $\tuple{1, d_1, \Gn{((!A \land !B) \lif
+      !A)}, 1, 5}$, yaiku
+  \[
+  \tuple{1, \tuple{1, \tuple{0, \Gn{(!A \land !B)}, 1}, \Gn{!A}, 0, 2},
+    \Gn{((!A \land !B) \lif !A)}, 1, 5}.
+  \]
+\end{ex}
+
+\begin{explain}
+Sawise nemtokake representasi !!{derivation}s, kita uga kudu
+nuduhake yen bilangan G\"odel saka !!{derivation}s iki bisa
+diolah kanthi rekursif primitif, lan sifat sarta relasi pokoke
+bisa dinyatakake. Sawetara operasi prasaja: upamane, yen diwenehi
+bilangan G\"odel~$d$ saka !!a{derivation},
+$\fn{EndFmla}(d) = (d)_{(d)_0+1}$ menehi bilangan G\"odel saka
+!!{formula} pungkasan, $\fn{DischargeLabel}(d) = (d)_{(d)_0 + 2}$
+menehi label pambebasan, lan $\fn{LastRule}(d) = (d)_{(d)_0 + 3}$
+menehi bilangan kang nuduhake jinis inferensi pungkasan.
+Sawetara sifat liyane luwih angel. Kita bakal menehi sketsa carane.
+Tujuane yaiku nuduhake yen relasi ``$\delta$ iku !!a{derivation}
+saka~$!A$ adhedhasar~$\Gamma$'' iku relasi rekursif primitif
+saka bilangan G\"odel $\delta$ lan~$!A$.
+\end{explain}
+
+\begin{prop}
+  Relasi-relasi iki rekursif primitif:
+  \begin{enumerate}
+  \item $!A$ muncul minangka asumsi ing~$\delta$ kanthi label~$n$.
+  \item Kabeh asumsi ing $\delta$ kanthi label~$n$ awujud~$!A$
+    (yaiku, kita bisa !!{discharge} asumsi~$!A$ nganggo label~$n$
+    ing~$\delta$).
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  Kita kudu nuduhake yen relasi kang cocog ing antarane bilangan
+  G\"odel saka !!{formula}s lan bilangan G\"odel saka
+  !!{derivation}s iku rekursif primitif.
+  \begin{enumerate}
+  \item Kita arep nuduhake yen $\fn{Assum}(x, d, n)$ iku rekursif
+    primitif. Relasi iki bener yen $x$ iku bilangan G\"odel saka
+    asumsi ing !!{derivation} kang bilangan G\"odele~$d$
+    kanthi label~$n$. Iki lumaku yen !!{derivation} kanthi bilangan
+    G\"odel~$\tuple{0, x, n}$ iku sub-!!{derivation} saka~$d$.
+    Gatekna yen cara kita ngodeake !!{derivation}s iku kasus khusus
+    saka pangodean wit kang dikenalake ing
+    \olref[cmp][rec][tre]{sec}. Mula fungsi rekursif primitif
+    $\fn{SubtreeSeq}(d)$ menehi urutan bilangan G\"odel saka kabeh
+    sub-!!{derivation}s saka~$d$ (kang dawane paling akeh $d$).
+    Dadi kita bisa netepake
+    \[
+    \fn{Assum}(x, d, n) \defiff \bexists{i<d}{(\fn{SubtreeSeq}(d))_i =
+      \tuple{0, x, n}}.
+    \]
+  \item Kita arep nuduhake yen $\fn{Discharge}(x, d, n)$, kang
+    bener yen kabeh asumsi kanthi label~$n$ ing !!{derivation}
+    kanthi bilangan G\"odel~$d$ iku !!{formula} kanthi bilangan
+    G\"odel~$x$. Relasi iki bener yen lan mung yen
+    $\bforall{y<d}{(\fn{Assum}(y, d, n) \lif y
+      = x)}$.
+  \end{enumerate}
+\end{proof}
+
+\begin{prop}
+  \ollabel{prop:followsby}
+  Sifat $\fn{Correct}(d)$, kang bener yen lan mung yen inferensi
+  pungkasan ing !!{derivation}~$\delta$ kanthi bilangan G\"odel~$d$
+  iku bener, yaiku rekursif primitif.
+\end{prop}
+
+\begin{proof}
+  Ing kene kita kudu nuduhake yen kanggo saben aturan inferensi~$R$,
+  relasi $\fn{FollowsBy}_R(d)$ iku rekursif primitif.
+  $\fn{FollowsBy}_R(d)$ bener yen lan mung yen $d$ iku bilangan
+  G\"odel saka !!{derivation}~$\delta$, lan !!{formula} pungkasane
+  $\delta$ diduweni kanthi ngetrapake~$R$ kanthi bener marang
+  sub-!!{derivation}s langsung saka~$\delta$.
+
+  Kasus kang prasaja yaiku aturan \Intro{\land}. Yen $\delta$
+  dipungkasi inferensi $\Intro{\land}$ kang bener, wujude kaya iki:
+  \begin{prooftree}
+    \AxiomC{}
+    \RightLabel{$\delta_1$}
+    \DeduceC{$!A$}
+    
+    \AxiomC{}
+    \RightLabel{$\delta_2$}
+    \DeduceC{$!B$}
+
+    \RightLabel{\Intro\land}
+    \BinaryInfC{$!A \land !B$}
+  \end{prooftree}
+  Mula bilangan G\"odel~$d$ saka~$\delta$ yaiku
+  $\tuple{2, d_1, d_2, \Gn{(!A \land !B)}, 0, k}$,
+  ing ngendi $\fn{EndFmla}(d_1) = \Gn{!A}$,
+  $\fn{EndFmla}(d_2) = \Gn{!B}$, $n=0$, lan $k=1$.
+  Dadi $\fn{FollowsBy}_{\Intro\land}(d)$ bisa ditetepake minangka
+  \begin{multline*}
+    (d)_0 = 2 \land \fn{DischargeLabel}(d) = 0 \land \fn{LastRule}(d) = 1 \land {}\\
+    \fn{EndFmla}(d) = {}\\
+    \Gn{(} \concat \fn{EndFmla}((d)_1) \concat \Gn{\land}
+    \concat \fn{EndFmla}((d)_2) \concat \Gn{)}.
+  \end{multline*}
+
+  Tuladha prasaja liyane yaiku aturan $\Intro\eq$. Aturan iki
+  ora nduweni premis, mula $(d)_0 = 0$, kaya asumsi. Aturan iki
+  uga ora nduweni label pambebasan, yaiku $n=0$. Nanging $!A$
+  kudu awujud $\eq[t][t]$ kanggo suku katutup~$t$.
+  Ing kene definisi rekursif primitife yaiku
+  \begin{multline*}
+    (d)_0 = 0 \land \fn{DischargeLabel}(d) = 0 \land {}\\
+    \bexists{t<d}{(\fn{ClTerm}(t) \land 
+      \fn{EndFmla}(d) = {}\\
+      \Gn{{\eq}(} \concat t \concat \Gn{,} \concat t \concat \Gn{)})}.
+  \end{multline*}
+
+  Kanggo tuladha kang luwih rumit,
+  $\fn{FollowsBy}_{\Intro{\lif}}(d)$ bener yen lan mung yen
+  !!{formula} pungkasane~$\delta$ awujud $(!A \lif !B)$,
+  !!{formula} pungkasane $\delta_1$ yaiku~$!B$, lan nalika ana
+  pambebasan, saben asumsi ing~$\delta$ kanthi label~$n$
+  awujud~$!A$. Yen label pambebasan nol, ora ana asumsi kang
+  dibebasake. Iki bisa
+  dinyatakake kanthi rekursif primitif dening
+  \begin{multline*}
+    (d)_0 = 1 \land {}\\
+    \bexists{a<d}{
+      (\fn{DischargeLabel}(d) = 0 \lor
+       \fn{Discharge}(a, (d)_1, \fn{DischargeLabel}(d))) \land {}\\
+      \fn{EndFmla}(d) = (\Gn{(} \concat a \concat \Gn{\lif}
+      \concat \fn{EndFmla}((d)_1) \concat \Gn{)})}
+  \end{multline*}
+% OLPL-179: Kuantor a kudu nyakup rumus pungkasane; label nol ngidinake introduksi implikasi tanpa pambebasan asumsi.
+  (Anggepen $a$ minangka bilangan G\"odel saka~$!A$).
+
+  Kanggo tuladha liyane, gatekna \Intro{\lexists}. Ing kene
+  inferensi pungkasan ing~$\delta$ bener yen lan mung yen ana
+  !!a{formula}~$!A$, suku katutup~$t$, lan !!a{variable}~$x$
+  saengga $\Subst{!A}{t}{x}$ iku !!{formula} pungkasane
+  !!{derivation}~$\delta_1$ lan $\lexists[x][!A]$ iku konklusi
+  inferensi pungkasan. Mula
+  $\fn{FollowsBy}_{\Intro{\lexists}}(d)$ bener yen lan mung yen
+  \begin{multline*}
+    (d)_0 = 1 \land \fn{DischargeLabel}(d) = 0 \land {} \\
+    \bexists{a < d}{\bexists{x<d}{\bexists{t<d}{
+          (\fn{ClTerm}(t) \land \fn{Var}(x)  \land {}}}}\\
+    \fn{Subst}(a,t,x) = \fn{EndFmla}((d)_1) \land
+    \fn{EndFmla}(d) = (\Gn{\lexists} \concat x \concat a)).
+  \end{multline*}
+
+  Sabanjure kita netepake $\fn{Correct}(d)$ minangka
+  \begin{multline*}
+    \fn{Sent}(\fn{EndFmla}(d)) \land [\\
+    (\fn{LastRule}(d) = 1 \land
+    \fn{FollowsBy}_{\Intro\land}(d)) \lor \dots \lor {}\\
+    (\fn{LastRule}(d) = 16 \land \fn{FollowsBy}_{\Elim\eq}(d)) \lor {}\\
+    \bexists{n<d}{\bexists{x<d}{(d = \tuple{0, x, n})}}].
+  \end{multline*}
+% OLPL-176: Kurung siku njangkepi cakupan syarat Sent kanggo kabeh alternatif Correct.
+  Baris kapisan mesthekake yen !!{formula} pungkasane~$d$ iku
+  ukara. Baris pungkasan nyakup kasus nalika $d$ mung asumsi.
+\end{proof}
+
+\begin{prob}
+  Tetepna sifat-sifat iki kaya ing
+  \olref[inc][art][pnd]{prop:followsby}:
+  \begin{enumerate}
+  \item $\fn{FollowsBy}_{\Elim{\lif}}(d)$,
+  \item $\fn{FollowsBy}_{\Elim{\eq}}(d)$,
+  \item $\fn{FollowsBy}_{\Elim{\lor}}(d)$,
+  \item $\fn{FollowsBy}_{\Intro{\lforall}}(d)$.
+  \end{enumerate}
+  Kanggo sifat pungkasan, kowé uga kudu nuduhake yen kanthi
+  rekursif primitif bisa dipriksa apa inferensi pungkasan saka
+  !!{derivation} kanthi bilangan G\"odel~$d$ nyukupi syarat
+  eigenvariabel, yaiku eigenvariabel~$a$ saka inferensi
+  $\Intro{\lforall}$ ora muncul ing !!{formula} pungkasane~$d$
+  utawa ing asumsi kabuka saka~$d$. Kanggo iki, kowé bisa
+  nggunakake predikat rekursif primitif $\fn{OpenAssum}$ saka
+  \olref[inc][art][pnd]{prop:openassum}.
+\end{prob}
+
+\begin{prop}
+  \ollabel{prop:deriv}
+  Relasi $\fn{Deriv}(d)$, kang bener yen $d$ iku bilangan G\"odel
+  saka !!{derivation}~$\delta$ kang bener, iku rekursif primitif.
+\end{prop}
+
+\begin{proof}
+  !!^a{derivation}~$\delta$ iku bener yen saben inferensine
+  ngetrapake aturan kanthi bener, yaiku yen saben
+  sub-!!{derivation}s-e dipungkasi inferensi kang bener.
+  Mula $\fn{Deriv}(d)$ bener yen lan mung yen
+  \[
+  \bforall{i<\len{\fn{SubtreeSeq}(d)}}{\fn{Correct}((\fn{SubtreeSeq}(d))_i)}
+  \]
+\end{proof}
+
+\begin{prop}
+  \ollabel{prop:openassum} Relasi $\fn{OpenAssum}(z, d)$,
+  kang bener yen $z$ iku bilangan G\"odel saka asumsi~$!A$
+  kang !!a{undischarged} ing !!{derivation}~$\delta$ kanthi
+  bilangan G\"odel~$d$, iku rekursif primitif.
+\end{prop}
+
+\begin{proof}
+  Sawijining kemunculan asumsi iku !!{discharged} yen muncul kanthi
+  label~$n$ ing sub-!!{derivation} saka~$\delta$ kang dipungkasi
+  aturan kanthi label pambebasan~$n$. Mula $!A$ iku asumsi kang
+  !!a{undischarged} ing~$\delta$ yen paling ora ana siji
+  kemunculane kang ora !!{discharged} ing~$\delta$. Kita kudu
+  ngati-ati: $\delta$ bisa ngemot kemunculan~$!A$ kang
+  !!{discharged} lan kang !!{undischarged} bebarengan.
+
+  Gatekna urutan $\delta_0$, \dots, $\delta_k$ kanthi $\delta_0 =
+  \delta$, $\delta_k$ iku asumsi $\Discharge{!A}{n}$
+  (kanggo sawijining~$n$), lan $\delta_{i+1}$ iku sub-!!{derivation}
+  langsung saka~$\delta_i$. Yen ana urutan kaya mangkono kang
+  ora ana $\delta_i$ dipungkasi inferensi kanthi label
+  pambebasan~$n$, mula $!A$ iku asumsi kang !!a{undischarged}
+  ing~$\delta$.
+
+  Fungsi rekursif primitif $\fn{SubtreeSeq}(d)$ menehi urutan
+  bilangan G\"odel saka kabeh sub-!!{derivation}s saka~$\delta$.
+  Saben urutan bilangan G\"odel saka sub-!!{derivation}s
+  saka~$\delta$ nduweni unsur kang uga ana ing urutan mau.
+  Syarat saben unsur iki rekursif primitif: relasi kang ing kene
+  dijenengi $\fn{Subseq}(s, s')$ bener yen lan mung yen
+  $\bforall{i<\len{s}}{\lexists[j<\len{s'}][(s)_i = (s')_j]}$.
+% OLPL-180: Rumus iki mriksa keanggotaan saben unsur, ora mriksa urutan subsekuen kang sejati.
+  Dadi sub-!!{derivation} langsung uga relasi kaya mangkono:
+  $\fn{Subderiv}(d, d')$ bener yen lan mung yen
+  $\bexists{j<(d')_0}{d = (d')_{j+1}}$. Mula
+  $\fn{OpenAssum}(z, d)$ bisa ditetepake dening
+% OLPL-177: Anak langsung ing tupla diwiwiti ing indeks 1, dudu indeks 0.
+  \begin{multline*}
+    \bexists{s\le\fn{SubtreeSeq}(d)}{
+      \fn{Subseq}(s, \fn{SubtreeSeq}(d))
+      \land (s)_0 = d \land {}\\
+      \bexists{n<d}{(s)_{\len{s} \tsub 1} = \tuple{0, z, n} \land {}\\
+        \bforall{i<(\len{s} \tsub 1)}{
+          \fn{Subderiv}((s)_{i+1}, (s)_i) \land
+          \fn{DischargeLabel}((s)_i) \neq n}}}.
+  \end{multline*}
+% OLPL-178: Syarat label pambebasan dilebokake ing saben langkah jalur; kurung kuantor sumber ora nyakup syarat iki.
+% OLPL-181: Wates s kudu ngidinake kesamaan nalika urutan jalur padha karo SubtreeSeq(d).
+\end{proof}
+
+\begin{prop}
+  \ollabel{prop:prf-prim-rec}
+  Upamane $\Gamma$ iku himpunan rekursif primitif saka
+  !!{sentence}s. Relasi $\Prf[\Gamma](x, y)$ kang nyatakake
+  ``$x$ iku kode saka !!a{derivation}~$\delta$ kanggo $!A$
+  adhedhasar asumsi kang !!{undischarged} ing~$\Gamma$ lan
+  $y$ iku bilangan G\"odel saka~$!A$'' iku rekursif primitif.
+\end{prop}
+
+\begin{proof}
+  Upamane ``$y \in \Gamma$'' diwenehake dening predikat
+  rekursif primitif~$R_\Gamma(y)$. Kita kudu nuduhake yen
+  $\Prf[\Gamma](x, y)$, kang bener yen lan mung yen $y$ iku
+  bilangan G\"odel saka ukara~$!A$ lan $x$~iku kode saka
+  !!{derivation} deduksi natural kanthi !!{formula}
+  pungkasan~$!A$ lan kabeh asumsi kang !!{undischarged}
+  ana ing~$\Gamma$, iku rekursif primitif.
+
+  Miturut \olref{prop:deriv}, sifat $\fn{Deriv}(x)$, kang bener
+  yen lan mung yen $x$ iku bilangan G\"odel saka
+  !!{derivation}~$\delta$ kang bener ing deduksi natural,
+  iku rekursif primitif. Mula $\Prf[\Gamma](x, y)$ bisa
+  ditetepake dening
+  \begin{align*}
+    \Prf[\Gamma](x, y) \defiff {}
+    & \fn{Deriv}(x) \land \fn{EndFmla}(x) = y \land {} \\
+    & \bforall{z < x}{(\fn{OpenAssum}(z, x) \lif R_\Gamma(z))}.
+  \end{align*}
+\end{proof}
+
+\end{document}

@@ -1,0 +1,59 @@
+% Part: first-order logic
+
+\documentclass[../../include/open-logic-part]{subfiles}
+
+\begin{document}
+
+\olpart{fol}{Logika Sepisanan}
+
+\begin{editorial}
+  Perangan iki ngrembug metateori logika sepisanan nganti teorema
+  kelengkapan. Saiki perangan iki ora gumantung marang pangrembug
+  kapisah ngenani logika proposisional; kabeh dibuktekake. Berkas
+  sumber bakal ngilangi materi ngenani kuantor (lan ngganti
+  “!!{structure}” dadi “!!{valuation}”, $\Struct{M}$ dadi
+  $\pAssign{v}$, lan sapanunggalane) yen tag “FOL” luput. Malah,
+  akeh-akehe materi ing perangan logika proposisional mung arupa
+  materi logika sepisanan kanthi tag “FOL” dipateni.
+
+  Yen perangan logika proposisional dilebokake, iki njalari akeh
+  pengulangan. Nanging, wis dirancang supaya ing tembe perangan iki
+  bisa nggatekake materi logika proposisional (lan ngilangi materi
+  kang wis dirembug, uga nyepetake bukti kanthi rujukan menyang
+  panggonan kang cocog ing perangan proposisional).
+\end{editorial}
+
+\olimport[introduction]{introduction}
+
+\olimport[syntax-and-semantics]{syntax}
+
+\olimport[syntax-and-semantics]{semantics}
+
+\olimport[models-theories]{models-theories}
+
+\olimport[proof-systems]{proof-systems}
+
+\iftag{prfSC}{%
+  \olimport[sequent-calculus]{sequent-calculus}
+}{}
+
+\iftag{prfND}{%
+  \olimport[natural-deduction]{natural-deduction}
+}{}
+
+\iftag{prfTab}{%
+  \olimport[tableaux]{tableaux}
+}{}
+
+\iftag{prfAX}{%
+  \olimport[axiomatic-deduction]{axiomatic-deduction}
+}{}
+
+\olimport[completeness]{completeness}
+
+\olimport[beyond]{beyond}
+
+\OLEndPartHook
+
+\end{document}
+

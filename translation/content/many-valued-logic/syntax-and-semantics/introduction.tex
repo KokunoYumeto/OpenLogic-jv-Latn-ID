@@ -1,0 +1,68 @@
+% Part: many-valued-logic
+% Chapter: syntax-and-semantics
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{syn}{int}
+
+\olsection{Pambuka}
+
+Ing logika klasik, kita nyinaoni !!{formula}s kang kawangun saka
+!!{propositional variable}s kanthi konektif proposisional
+$\lnot$, $\land$, $\lor$, $\lif$, lan $\liff$. Nalika netepake
+semantik kanggo logika klasik, kita nggunakake rong nilai kabeneran,
+$\True$ lan $\False$. Kita napsirake !!{propositional variable}s ing
+!!a{valuation}~$\pAssign{v}$, kang masangake nilai kabeneran
+$\True$, $\False$ marang !!{propositional variable}s. Saben
+!!{valuation} banjur nemtokake nilai kabeneran $\pValue{v}(!A)$
+kanggo saben !!{formula}~$!A$; lan !!^a{formula} dicukupi dening
+!!a{valuation}~$\pAssign{v}$, $\pSat{v}{!A}$, yen lan mung yen
+$\pValue{v}(!A) = \True$.
+
+Logika mawa akeh nilai nggeneralisasi logika klasik kang nduweni
+rong nilai kanthi ngidini nilai kabeneran luwih akeh tinimbang
+$\True$ lan $\False$. Mula ing logika mawa akeh nilai,
+!!a{valuation}~$\pAssign{v}$ yaiku fungsi kang masangake
+salah sawijining nilai kabeneran kang diidini marang saben
+!!{propositional variable}~$p$. Himpunan nilai kabeneran kang
+diidini umume diarani~$V$. Logika klasik kalebu logika mawa akeh
+nilai kanthi $V = \{\True, \False\}$; nilai kabeneran
+$\pValue{v}(!A)$ diitung nganggo tabel kabeneran kang lumrah
+kanggo saben konektif.
+
+Sawise nilai kabeneran liyane ditambahake, ana luwih saka siji
+cara kang lumrah kanggo ngitung~$\pValue{v}(!A)$ tumrap konektif
+kang kita waca minangka ``lan,'' ``utawa,'' ``ora,'' lan
+``yen---mula.'' Dadi logika mawa akeh nilai ora mung ditemtokake
+dening himpunan nilai kabeneran, nanging uga dening
+\emph{fungsi kabeneran} kang dipilih kanggo saben konektif.
+Sawise pilihan iku ditetepake kanggo logika mawa akeh nilai~$\Log L$,
+nilai kabeneran $\pValue{v}(!A)[\Log L]$ ditemtokake kanthi unik
+dening valuasi, kaya ing logika klasik. Logika mawa akeh nilai,
+kaya logika klasik, iku \emph{fungsional tumrap kabeneran}.
+
+Kanthi dhasar semantis iki, kita bisa nerusake kanggo netepake
+padanan konsep semantis tautologi, akibat semantis, lan bisa dicukupi.
+Ing logika klasik, !!a{formula} iku tautologi yen nilai kabenerane
+$\pValue{v}(!A) = \True$ kanggo saben~$\pAssign{v}$. Ing logika
+mawa akeh nilai, konsep iki uga kudu digeneralisasi. Sepisanan,
+himpunan nilai kabeneran~$V$ ora kudu ngemot~$\True$. Tuladhane,
+sawetara logika mawa akeh nilai nggunakake bilangan, kayata kabeh
+bilangan rasional ing antarane $0$ lan~$1$, minangka himpunan nilai
+kabeneran. Ing kahanan iki, $1$~umume nduweni peran kaya~$\True$.
+Ing logika liyane, ora mung siji nanging sawetara nilai kabeneran
+nduweni peran iku. Mula saben logika mawa akeh nilai kudu nduweni
+himpunan~$V^+$ kang dumadi saka \emph{nilai pinilih}. Kita banjur
+bisa kandha yen !!a{formula} dicukupi dening
+!!a{valuation}~$\pAssign{v}$, $\pSat{v}{!A}[\Log L]$, yen lan mung yen
+$\pValue{v}(!A)[\Log L] \in V^+$. !!^a{formula}~$!A$ iku tautologi
+ing logika iki, $\Entails[\Log L] !A$, yen lan mung yen
+$\pValue{v}(!A)[\Log L] \in V^+$ kanggo saben~$\pAssign{v}$.
+Pungkasan, kita kandha yen $!A$ iku akibat saka himpunan
+!!{formula}s, $\Gamma \Entails[\Log L] !A$, yen saben !!{valuation}
+kang nyukupi kabeh !!{formula}s ing~$\Gamma$ uga nyukupi~$!A$.
+
+\end{document}

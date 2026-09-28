@@ -1,0 +1,124 @@
+% Part: turing-machines 
+% Chapter: undecidability
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{tur}{und}{int} 
+\olsection{Pambuka}
+
+Mbokmenawa katon cetha yen ora saben fungsi, malah
+ora saben fungsi aritmetika, bisa diitung. Cacahe
+fungsi kakehan lan tumindake ana kang rumit banget.
+Contone, fungsi kang ditegesi saka peluruhan partikel
+radioaktif utawa saka tumindak liya kang kacau utawa
+acak. Upamane kita wiwit ngitung interval-interval
+siji detik saka sawijining wektu, banjur netepake
+fungsi $f(n)$ minangka cacahe partikel ing jagad raya
+kang luruh sajrone interval siji detik kapangka-$n$
+sawise wektu wiwitan iku. Fungsi iki katon kaya
+tuladha fungsi kang ora bakal bisa kita itung.
+
+Nanging ora bisa mbayangake carane ngitung fungsi
+kaya mangkono iku beda karo tenan mbuktekake yen
+fungsi iku ora bisa diitung. Malah fungsi kang katon
+rumit tanpa pangarep-arep bisa uga, kanthi teges
+abstrak, bisa diitung. Contone, upamane umur jagad
+raya winates---ing sawijining dina kang isih adoh
+banget, jagad raya bakal ngempet dadi siji titik,
+kaya kang diramalake sawetara teori kosmologi.
+Yen mangkono, mung ana cacahe detik kang winates
+(senajan gedhé banget) saka wektu wiwitan mau nalika
+$f(n)$ ditegesi. Saben fungsi kang mung ditegesi
+kanggo input winates cacahe bisa diitung: outpute
+bisa didaftar ing siji tabel gedhé, utawa dikode
+ing siji diagram transisi kahanan mesin Turing
+kang gedhé banget.
+
+Kita kerep mligi nggatekake fungsi kang nilaine
+menehi wangsulan kanggo pitakon ya/ora. Contone,
+pitakon ``apa $n$ wilangan prima?'' digandhengake
+karo fungsi
+\[
+\fn{isprime}(n) = \begin{cases}
+  1 & \text{yen $n$ prima}\\
+  0 & \text{yen ora.}
+  \end{cases}
+\]
+Kita nyebut pitakon ya/ora \emph{bisa diputusake
+kanthi efektif} yen fungsi kang gegayutan lan
+nduwé nilai $1/0$ bisa diitung kanthi efektif.
+
+Kanggo mbuktekake sacara matematis yen ana fungsi
+kang ora bisa diitung kanthi efektif, utawa masalah
+kang ora bisa diputusake kanthi efektif, kita kudu
+netepake model komputasi tartamtu banjur nuduhake
+yen ana fungsi kang ora bisa diitung utawa masalah
+kang ora bisa diputusake dening model iku. Contone,
+kita bisa nuduhake yen ora saben fungsi bisa diitung
+dening mesin Turing lan ora saben masalah bisa
+diputusake dening mesin Turing. Banjur kita bisa
+nggunakake tesis Church--Turing kanggo nyimpulake
+yen ora mung mesin Turing kang ora cukup kuwat
+kanggo ngitung saben fungsi, nanging prosedur
+efektif apa wae uga ora bisa.
+
+Kunci kanggo mbuktekake asil negatif kaya mangkono
+yaiku kasunyatan yen mesin Turing dhewe bisa diwenehi
+nomer. Cara kang paling gampang yaiku ngenumerasi
+mesin-mesin iku, upamane kanthi netepake cara tartamtu
+kanggo nulis mesin Turing lan programe, banjur
+ndhaftar kabeh kanthi runtut. Sawise ngerti yen
+iki bisa ditindakake, anane fungsi kang ora bisa
+diitung dening mesin Turing dadi akibat saka
+petungan kardinalitas kang prasaja: himpunan fungsi
+saka $\Nat$ menyang~$\Nat$ (malah saka $\Nat$ menyang
+$\{0, 1\}$ wae) iku !!{nonenumerable}, nanging
+amarga kabeh mesin Turing bisa dienumerasi, himpunan
+fungsi kang bisa diitung dening mesin Turing mung
+!!{denumerable}.
+
+Kita uga bisa netepake fungsi lan masalah
+\emph{tartamtu} kang bisa dibuktekake ora bisa
+diitung lan ora bisa diputusake, miturut urutane.
+Salah siji masalah iku diarani \emph{Masalah Mandheg.}
+Mesin Turing bisa diterangake kanthi winates
+kanthi ndhaptar instruksine. Andharan mesin
+Turing kaya mangkono, yaiku program mesin Turing,
+mesthi bisa digunakake minangka input kanggo
+mesin Turing liyane. Mula kita bisa nliti mesin
+Turing kang mutusake pitakon bab mesin Turing liyane.
+Salah siji pitakon kang narik kawigaten yaiku:
+``Apa mesin Turing kang diwenehake bakal mandheg
+ing sawijining wektu yen diwiwiti nganggo input~$n$?''
+Apik yen ana mesin Turing kang bisa mutusake pitakon
+iki: bayangna minangka mesin pangawas mutu kang
+mesthekake yen mesin Turing ora kejebak ing daur
+tanpa wates lan sapiturute. Kasunyatan kang narik
+kawigaten, kang dibuktekake Turing, yaiku mesin kaya
+mangkono ora mungkin ana. Ora ana siji mesin Turing
+kang, yen diwiwiti nganggo input kang ngemot andharan
+mesin Turing $M$ lan sawijining wilangan~$n$, mesthi
+mandheg kanthi output $1$ utawa $0$ miturut apa
+$M$ bakal mandheg yen diwiwiti nganggo input $n$
+utawa ora.
+
+Yen wis nduwé tuladha masalah tartamtu kang ora bisa
+diputusake, kita bisa nggunakake kanggo nuduhake
+yen masalah liyane uga ora bisa diputusake. Contone,
+salah siji masalah kang misuwur yaiku pitakon,
+``Apa !!{formula} orde kapisan~$!A$ sah?''
+Ora ana mesin Turing kang, yen diwenehi input
+!!{formula} orde kapisan~$!A$, mesthi mandheg
+kanthi output $1$ utawa $0$ manut apa $!A$
+sah utawa ora. Miturut sejarahe, pitakon golek
+prosedur kanggo ngrampungake masalah iki kanthi
+efektif mung diarani masalah putusan;
+mula kita nyebut masalah putusan iku ora bisa
+dirampungake. Turing lan Church mbuktekake asil
+iki kanthi mandhiri ing wektu kang meh padha,
+mula asil iki uga diarani Teorema Church--Turing.
+
+\end{document}

@@ -1,0 +1,101 @@
+% Part: first-order-logic
+% Chapter: model-theory
+% Section: reducts-and-expansions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{bas}{red}
+\section{Redukt lan Ekspansi}
+
+Asring migunani utawa perlu kanggo
+mbandhingake basa-basa kang nduweni
+simbol padha, uga !!{structure}s
+kanggo basa-basa iku. Kahanan
+kang paling lumrah yaiku nalika
+kabeh simbol ing !!a{language}~$\Lang{L}$
+uga kalebu ing !!a{language}~$\Lang{L'}$,
+yaiku $\Lang{L} \subseteq
+\Lang{L'}$. Sawijining
+$\Lang{L}$-!!{structure}~$\Struct{M}$
+banjur tansah bisa ditambahi dadi
+$\Lang{L'}$-!!{structure}
+kanthi menehi interpretasi
+marang simbol-simbol tambahan
+lan njaga interpretasi simbol
+kang padha supaya tetep.
+Kosok baline, saka
+$\Lang{L'}$-struktur~$\Struct{M'}$
+kita bisa oleh
+$\Lang{L}$-struktur
+kanthi mung "nglalekake"
+interpretasi simbol kang
+ora ana ing~$\Lang{L}$.
+
+\begin{defn}
+\ollabel{defn:reduct}
+Upamakna $\Lang L \subseteq \Lang L'$,
+$\Struct M$ iku
+$\Lang L$-!!{structure} lan
+$\Struct M'$ iku
+$\Lang L'$-!!{structure}.
+$\Struct M$ diarani \emph{redukt}
+saka $\Struct M'$ menyang $\Lang L$,
+lan $\Struct M'$ diarani
+\emph{ekspansi} saka $\Struct M$
+menyang $\Lang L'$ yen lan mung yen
+\begin{enumerate}
+\item $\Domain{M} = \Domain{M'}$
+\item Kanggo saben !!{constant}~$c \in \Lang L$,
+  $\Assign{c}{M} =
+  \Assign{c}{M'}$.
+\item Kanggo saben !!{function}~$f \in \Lang L$,
+  $\Assign{f}{M} =
+  \Assign{f}{M'}$.
+\item Kanggo saben !!{predicate}~$P \in \Lang L$,
+  $\Assign{P}{M} =
+  \Assign{P}{M'}$.
+\end{enumerate}
+\end{defn}
+
+\begin{prop}
+\ollabel{prop:reduct}
+Yen sawijining
+$\Lang{L}$-!!{structure}~$\Struct{M}$
+iku redukt saka
+$\Lang{L'}$-!!{structure}~$\Struct{M'}$,
+mula kanggo saben
+$\Lang{L}$-!!{sentence}s~$!A$,
+\[
+\Sat{M}{!A} \text{ yen lan mung yen } \Sat{M'}{!A}.
+\]
+\end{prop}
+
+\begin{proof}
+  Gladhen.
+\end{proof}
+
+\begin{prob}
+Buktèkna \olref[mod][bas][red]{prop:reduct}.
+\end{prob}
+
+\begin{defn}
+Yen kita duwe
+$\Lang{L}$-struktur $\Struct{M}$,
+lan $\Lang{L'} =
+\Lang{L} \cup \{P\}$ iku
+ekspansi saka $\Lang{L}$
+kanthi nambah siji
+!!{predicate} kanthi $n$
+panggonan, yaiku~$P$,
+dene $R \subseteq \Domain{M}^n$
+iku relasi kanthi $n$
+panggonan, kita nulis
+$\Expan{M}{R}$ kanggo
+ekspansi~$\Struct{M'}$
+saka~$\Struct{M}$
+kanthi $\Assign{P}{M'} = R$.
+\end{defn}
+
+\end{document}

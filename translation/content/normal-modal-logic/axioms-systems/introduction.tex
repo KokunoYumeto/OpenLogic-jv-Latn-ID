@@ -1,0 +1,95 @@
+% Part: normal-modal-logic
+% Chapter: axioms-systems
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{prf}{int}
+
+\olsection{Pambuka}
+
+Kita wis nduweni semantik kanggo basa modal dhasar adhedhasar
+model modal, lan pangertèn yen !!a{formula} iku valid---bener ing
+kabeh donya saka kabeh model---utawa valid tumrap sawijining kelas
+model utawa bingkai---bener ing kabeh donya saka kabeh model ing kelas
+iku, utawa kang adhedhasar bingkai kasebut. Logika lumrahe
+nyambungake ciri semantis validitas kaya mangkono karo pangertèn
+!!{derivability} saka teori bukti. Tujuwane yaiku ndéfinisikake
+!!{derivability} ing sawijining sistem saengga !!a{formula} iku
+!!{derivable} yen lan mung yen valid.
+
+Sistem !!{derivation} kang paling prasaja lan paling tuwa
+miturut sejarah diarani sistem !!{derivation} jinis Hilbert utawa
+aksiomatik. Sistem !!{derivation} jinis Hilbert kanggo akeh logika
+modal cukup gampang dibangun: minangka objek kajian metateoretis,
+sistem kasebut prasaja (umpamane kanggo mbuktekake kasahihan lan
+kelengkapan). Nanging, kanggo mbuktekake !!{formula}s, sistem mau
+luwih angel digunakake tinimbang, upamane, sistem deduksi alami.
+
+Ing sistem !!{derivation} jinis Hilbert, !!a{derivation}
+saka !!a{formula} yaiku runtutan !!{formula}s kang kawiwitan saka
+aksioma tartamtu, banjur liwat sawetara aturan inferensi, nganti
+tekan !!{formula} kang dituju. Amarga kita pengin sistem
+!!{derivation} cocog karo semantik, kita kudu njamin yen himpunan
+formula kang !!{derivable} bener ing kabeh model (utawa bener ing
+kabeh model kang kabeh aksiomane bener). Kaping pisan, kita bakal
+misahake sawetara sipat logika modal kang dibutuhake supaya iki bisa
+kelakon: logika modal ``normal''. Kanggo logika modal normal, mung ana
+loro aturan inferensi kang perlu dianggep: modus ponens lan
+nesesitasi. Minangka aksioma, kita njupuk kabeh instansi substitusi
+saka tautologi lan, gumantung marang logika modal kang dianggep,
+sawetara aksioma modal. Sanadyan kita mung nggatekake kelas kabeh
+model, kabeh instansi substitusi saka~$\Ax{K}$\iftag{notprvDiamond}{}{ lan~$\Ax{Dual}$}
+uga kudu dianggep aksioma. Iki wae wis ngasilake logika modal normal
+paling cilik~$\Log K$.
+
+\begin{defn}
+Aturan \emph{modus ponens} yaiku skema inferensi
+\begin{prooftree}
+\AxiomC{$!A$}
+\AxiomC{$!A \lif !B$}
+\RightLabel{\MP}
+\BinaryInfC{$!B$}
+\end{prooftree}
+Kita ngarani !!a{formula}~$!B$ \emph{ngetutake saka}~!!{formula}s
+$!A$, $!C$ miturut modus ponens yen lan mung yen
+$!C \ident !A \lif !B$.
+\end{defn}
+
+\begin{defn}
+Aturan \emph{nesesitasi} yaiku skema inferensi
+\begin{prooftree}
+\AxiomC{$!A$}
+\RightLabel{\Nec}
+\UnaryInfC{$\Box !A$}
+\end{prooftree}
+Kita ngarani !!{formula}~$!B$ ngetutake saka !!{formula}s $!A$ miturut
+nesesitasi yen lan mung yen $!B \ident \Box !A$.
+\end{defn}
+
+\begin{defn}
+Sawijining \emph{!!{derivation}} saka himpunan aksioma~$\Sigma$
+yaiku runtutan !!{formula}s $!B_1$, $!B_2$, \dots, $!B_n$, kang saben
+$!B_i$ iku
+\begin{enumerate}
+\item instansi substitusi saka tautologi, utawa
+\item instansi substitusi saka !!a{formula} ing~$\Sigma$, utawa
+\item ngetutake saka loro !!{formula}s $!B_j$, $!B_k$ kanthi $j$,
+  $k < i$ miturut modus ponens, utawa
+\item ngetutake saka !!a{formula}~$!B_j$ kanthi $j < i$ miturut
+  nesesitasi.
+\end{enumerate}
+Yen ana !!a{derivation} kaya mangkono kanthi $!B_n \ident !A$,
+kita ngarani $!A$ \emph{!!{derivable} saka $\Sigma$}, kanthi simbol
+$\Sigma \Proves !A$.
+\end{defn}
+
+Kanthi definisi iki, bakal kabukten yen himpunan formula
+kang !!{derivable} mbentuk logika modal normal, lan saben
+kang !!{derivable} minangka !!{formula} bener ing saben model kang kabeh
+aksiomane bener. Sipat !!{derivation}s iki diarani \emph{kasahihan}.
+Kosok baline, yaiku \emph{kelengkapan}, luwih angel dibuktekake.
+
+\end{document}

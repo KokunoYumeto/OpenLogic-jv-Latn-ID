@@ -1,0 +1,151 @@
+% Part: normal-modal-logic
+% Chapter: completeness
+% Section: truth-lemma
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{com}{tru}
+
+\olsection{Lemma Bebener}
+
+Model kanonik~$\mModel{M^\Sigma}$ ditepakake saengga
+$\mSat{M^\Sigma}{!A}[\Delta]$ yen lan mung yen $!A \in \Delta$.
+Kanggo !!{propositional
+variable}s, iki langsung diturunake saka
+definisi $V^\Sigma$. Nanging, kita kudu mbuktekake yen ekuivalensi
+iki bener kanggo kabeh !!{formula}s. Kita nindakake iki kanthi induksi.
+Langkah induksi kalebu mbuktekake ekuivalensi kanggo !!{formula}s kang
+ngemot operator proposisional (kanthi nggunakake
+\olref[ccs]{prop:ccs-properties}) lan operator modal (kanthi nggunakake
+asil ing \olref[mod]{sec}).
+
+\begin{prop}[Lemma Bebener]
+  \ollabel{prop:truthlemma}
+  Kanggo saben !!{formula}~$!A$, $\mSat{M^\Sigma}{!A}[\Delta]$ yen lan
+  mung yen $!A \in \Delta$.
+\end{prop}
+
+\begin{proof}
+  Kanthi induksi marang~$!A$.
+  \begin{enumerate}
+    \tagitem{prvFalse}{\indcase{!A}{\lfalse}{$\mSat/{M^\Sigma}{\lfalse}[\Delta]$
+        miturut \olref[syn][trw]{defn:mmodels}, lan $\lfalse \notin \Delta$
+        miturut
+        \olref[ccs]{prop:ccs-properties}\olref[ccs]{prop:ccs-lfalse}.}}{}
+
+    \tagitem{prvTrue}{\indcase{!A}{\ltrue}{$\mSat{M^\Sigma}{\ltrue}[\Delta]$
+        miturut \olref[syn][trw]{defn:mmodels}, lan $\ltrue \in \Delta$ miturut
+        \olref[ccs]{prop:ccs-properties}\olref[ccs]{prop:ccs-ltrue}.}}{}
+
+    \item \indcase{!A}{p}{$\mSat{M^\Sigma}{p}[\Delta]$ yen lan mung yen
+      $\Delta \in V^\Sigma(p)$ miturut \olref[syn][trw]{defn:mmodels}.
+      Kajaba iku, $\Delta \in V^\Sigma(p)$ yen lan mung yen
+      $p \in \Delta$ miturut definisi~$V^\Sigma$.}
+
+    \tagitem{prvNot}{\indcase{!A}{\lnot !B}{%
+        \iftag{probNot}{Latihan.}{$\mSat{M^\Sigma}{\lnot !B}[\Delta]$
+          yen lan mung yen $\mSat/{M^\Sigma}{!B}[\Delta]$
+          (\olref[syn][trw]{defn:mmodels}); yen lan mung yen $!B \notin \Delta$
+          (miturut hipotesis induksi); yen lan mung yen $\lnot !B \in \Delta$
+          (miturut
+          \olref[ccs]{prop:ccs-properties}\olref[ccs]{prop:ccs-lnot}).}}}{}
+
+    \tagitem{prvAnd}{\indcase{!A}{!B \land !C}{%
+        \iftag{probAnd}{Latihan.}{$\mSat{M^\Sigma}{!B \land
+            !C}[\Delta]$ yen lan mung yen $\mSat{M^\Sigma}{!B}[\Delta]$ lan
+          $\mSat{M^\Sigma}{!C}[\Delta]$ (miturut
+          \olref[syn][trw]{defn:mmodels}); yen lan mung yen $!B \in \Delta$
+          lan $!C \in \Delta$ (miturut hipotesis induksi); yen lan mung yen
+          $!B \land !C \in \Delta$ (miturut
+          \olref[ccs]{prop:ccs-properties}\olref[ccs]{prop:ccs-land}).}}}{}
+
+    \tagitem{prvOr}{\indcase{!A}{!B \lor !C}{%
+        \iftag{probOr}{Latihan.}{$\mSat{M^\Sigma}{!B \lor
+            !C}[\Delta]$ yen lan mung yen $\mSat{M^\Sigma}{!B}[\Delta]$
+          utawa $\mSat{M^\Sigma}{!C}[\Delta]$ (miturut
+          \olref[syn][trw]{defn:mmodels}); yen lan mung yen $!B \in \Delta$
+          utawa $!C \in \Delta$ (miturut hipotesis induksi); yen lan mung
+          yen $!B \lor !C \in \Delta$ (miturut
+          \olref[ccs]{prop:ccs-properties}\olref[ccs]{prop:ccs-lor}).}}}{}
+
+    \tagitem{prvIf}{\indcase{!A}{!B \lif !C}{%
+        \iftag{probIf}{Latihan.}{$\mSat{M^\Sigma}{!B \lif
+            !C}[\Delta]$ yen lan mung yen $\mSat/{M^\Sigma}{!B}[\Delta]$
+          utawa $\mSat{M^\Sigma}{!C}[\Delta]$ (miturut
+          \olref[syn][trw]{defn:mmodels}); yen lan mung yen $!B \notin \Delta$
+          utawa $!C \in \Delta$ (miturut hipotesis induksi); yen lan mung
+          yen $!B \lif !C \in \Delta$ (miturut
+          \olref[ccs]{prop:ccs-properties}\olref[ccs]{prop:ccs-lif}).}}}{}
+
+    \tagitem{prvIff}{\indcase{!A}{!B \liff !C}{%
+        \iftag{probIff}{Latihan.}{$\mSat{M^\Sigma}{!B \liff
+            !C}[\Delta]$ yen lan mung yen $\mSat{M^\Sigma}{!B}[\Delta]$
+          lan $\mSat{M^\Sigma}{!C}[\Delta]$, utawa
+          $\mSat/{M^\Sigma}{!B}[\Delta]$ lan
+          $\mSat/{M^\Sigma}{!C}[\Delta]$ (miturut
+          \olref[syn][trw]{defn:mmodels}); yen lan mung yen $!B \in \Delta$
+          lan $!C \in \Delta$, utawa $!B \notin \Delta$ lan $!C \notin
+          \Delta$ (miturut hipotesis induksi); yen lan mung yen
+          $!B \liff !C \in \Delta$ (miturut
+          \olref[ccs]{prop:ccs-properties}\olref[ccs]{prop:ccs-liff}).}}}{}
+
+    \tagitem{prvBox}{\indcase{!A}{\Box !B}{%
+        \iftag{probBox}{Latihan.}{Sepisan, upamane
+          $\mSat{M^\Sigma}{\Box !B}[\Delta]$. Miturut
+          \olref[syn][trw]{defn:mmodels}, kanggo saben $\Delta'$ kang
+          $R^\Sigma \Delta\Delta'$, dadi
+          $\mSat{M^\Sigma}{!B}[\Delta']$. Miturut hipotesis induksi,
+          kanggo saben $\Delta'$ kang $R^\Sigma \Delta\Delta'$,
+          $!B \in \Delta'$. Miturut definisi $R^\Sigma$, kanggo saben
+          $\Delta'$ kang $\Box^{-1} \Delta \subseteq \Delta'$,
+          $!B \in \Delta'$. Miturut \olref[mod]{prop:box},
+          $\Box !B \in \Delta$.
+
+          Saiki upamane $\Box !B \in \Delta$. Jupuken $\Delta' \in W^\Sigma$
+          kang $R^\Sigma \Delta\Delta'$, yaiku $\Box^{-1}\Delta
+          \subseteq \Delta'$. Amarga $\Box !B \in \Delta$, $!B \in
+          \Box^{-1} \Delta$. Mula, $!B \in \Delta'$. Miturut hipotesis
+          induksi, $\mSat{M^\Sigma}{!B}[\Delta']$. Amarga $\Delta'$ iki
+          sembarang kang $R^\Sigma \Delta\Delta'$, kanggo kabeh
+          $\Delta' \in W^\Sigma$ kang $R^\Sigma \Delta\Delta'$, bener
+          $\mSat{M^\Sigma}{!B}[\Delta']$. Miturut
+          \olref[syn][trw]{defn:mmodels}, $\mSat{M^\Sigma}{\Box
+            !B}[\Delta]$.}}}{}
+
+    \tagitem{prvDiamond}{\indcase{!A}{\Diamond !B}{%
+        \iftag{probDiamond}{Latihan.}{Sepisan, upamane
+          $\mSat{M^\Sigma}{\Diamond !B}[\Delta]$. Miturut
+          \olref[syn][trw]{defn:mmodels}, ana $\Delta'$ kang
+          $R^\Sigma \Delta\Delta'$ lan
+          $\mSat{M^\Sigma}{!B}[\Delta']$. Miturut hipotesis induksi,
+          ana $\Delta'$ kang $R^\Sigma \Delta\Delta'$ lan
+          $!B \in \Delta'$. Miturut definisi
+          $R^\Sigma$,\iftag{prvBox}{ ana $\Delta'$ kang
+            $\Box^{-1} \Delta \subseteq \Delta'$ lan $!B \in \Delta'$.
+            Miturut \olref[mod]{lem:box-iff-diamond},}{} ana $\Delta'$ kang
+          $\Diamond \Delta' \subseteq \Delta$ lan $!B \in \Delta'$.
+          Amarga $!B \in \Delta'$, $\Diamond !B \in \Diamond
+          \Delta'$, mula $\Diamond !B \in \Delta$.
+
+          Saiki upamane $\Diamond !B \in \Delta$. Miturut
+          \olref[mod]{prop:diamond}, ana himpunan $\Sigma$-konsisten
+          jangkep $\Delta' \in W^\Sigma$ saengga
+          $\Diamond \Delta' \subseteq \Delta$ lan $!B \in
+          \Delta'$.\iftag{prvBox}{ Miturut \olref[mod]{lem:box-iff-diamond},
+            ana $\Delta' \in W^\Sigma$ kang $\Box^{-1}
+            \Delta \subseteq \Delta'$ lan $!B \in \Delta'$.}{} Miturut
+          definisi $R^\Sigma$, $R^\Sigma \Delta\Delta'$, mula ana
+          $\Delta' \in W^\Sigma$ kang $R^\Sigma \Delta\Delta'$ lan
+          $!B \in \Delta'$. Miturut
+          \olref[syn][trw]{defn:mmodels}, $\mSat{M^\Sigma}{\Diamond
+            !B}[\Delta]$.}}}{}
+  \end{enumerate}
+\end{proof}
+
+\begin{probtag}{probFalse,probTrue,probNot,probAnd,probOr,probIf,probIff,probBox,probDiamond}
+  Jangkepna bukti \olref[nml][com][tru]{prop:truthlemma}.
+\end{probtag}
+
+\end{document}

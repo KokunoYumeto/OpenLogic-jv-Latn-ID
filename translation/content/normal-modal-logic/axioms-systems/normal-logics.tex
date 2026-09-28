@@ -1,0 +1,125 @@
+% Part: normal-modal-logic
+% Chapter: axioms-systems
+% Section: normal-logics
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{prf}{nor}
+
+\olsection{Logika Modal Normal}
+
+Ora saben himpunan !!{formula}s modal gampang dicirèkaké
+minangka himpunan !!{formula}s kang bisa diderivasi saka sawijining
+himpunan aksioma. Kita pengin logika modal nduweni sipat kang trep.
+Kaping pisan, kabeh kang bisa kita !!{derive} ing logika proposisional
+klasik mesthi kudu tetep !!{derivable}, kanthi nggatekake yen
+!!{formula}s saiki uga bisa ngemot
+\iftag{prvBox}{$\Box$\iftag{prvDiamond}{
+    lan~}{}}{}\iftag{prvDiamond}{$\Diamond$}{}. Kanggo iku,
+kita mbutuhake logika modal ngemot kabeh instansi tautologis lan
+ditutup marang modus ponens.
+
+\begin{defn}
+  Sawijining \emph{logika modal} yaiku himpunan~$\Sigma$ saka
+  !!{formula}s modal kang
+  \begin{enumerate}
+  \item ngemot kabeh tautologi, lan
+  \item ditutup marang substitusi, yaiku yen $!A \in \Sigma$, lan
+    $!D_1$, \dots, $!D_n$ iku !!{formula}s, mula
+    \[
+    \SSubst{!A}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}} \in \Sigma,
+    \]
+    \item ditutup marang \emph{modus ponens}, yaiku yen $!A$ lan $!A
+      \lif !B \in \Sigma$, mula $!B \in \Sigma$.
+  \end{enumerate}
+\end{defn}
+
+Supaya bisa nggunakake semantik relasional kanggo logika
+modal, kita uga kudu mbutuhake yen kabeh !!{formula}s kang valid ing
+kabeh model modal kalebu. Nyatane syarat iki wis kacukupan yen kabeh
+instansi \Ax{K}\iftag{prvDiamond}{ lan~\Dual{}}{} iku
+!!{derivable}, lan saben !!a{formula}~$!A$ kang !!{derivable} uga
+ndadekake~$\Box !A$ bisa diderivasi. Logika modal kang nyukupi
+syarat-syarat iki diarani \emph{normal}. (Mesthi ana uga logika modal
+kang ora normal, nanging model relasional lumrah ora cocog kanggo
+logika kasebut.)
+
+\begin{defn}
+  Logika modal $\Sigma$ iku \emph{normal} yen ngemot
+  \begin{align*}
+    \tag{\Ax{K}} & \Box(p \lif q) \lif (\Box p \lif \Box q),
+    \iftag{prvDiamond}{\\
+      \tag{\Dual} & \Diamond p \liff \lnot\Box\lnot p}{}
+  \end{align*}
+  lan ditutup marang \emph{nesesitasi}, yaiku yen $!A \in
+  \Sigma$, mula $\Box !A \in \Sigma$.
+\end{defn}
+
+Gatekna yen implikasi tautologis cukup ``rinci'' kanggo
+njaga \emph{kabeneran ing sawijining donya}, nanging aturan \Nec{}
+mung njaga \emph{kabeneran ing sawijining model} (lan mula uga
+validitas ing sawijining bingkai utawa kelas bingkai).
+
+\begin{prop}\ollabel{prop:rk}
+  Saben logika modal normal ditutup marang aturan \RK,
+  \begin{prooftree}
+    \AxiomC{$!A_1 \lif (!A_2 \lif \cdots (!A_{n-1} \lif !A_n)\cdots)$}
+    \RightLabel{\RK}
+    \UnaryInfC{$\Box!A_1 \lif (\Box!A_2 \lif \cdots (\Box!A_{n-1}
+      \lif \Box!A_n)\cdots).$}
+  \end{prooftree}
+\end{prop}
+
+\begin{proof}
+  Kanthi induksi marang~$n$: Yen $n = 1$, aturan iku mung \Nec,
+  lan saben logika modal normal ditutup marang \Nec.
+
+Saiki upamane asil iki bener kanggo $n-1$; kita tuduhake
+yen uga bener kanggo~$n$.
+
+Upamane
+  \begin{align*}
+  & !A_1 \lif (!A_2 \lif \cdots (!A_{n-1} \lif !A_n)\cdots) \in \Sigma
+  \intertext{Miturut hipotesis induksi, kita duwe}
+  & \Box!A_1 \lif (\Box!A_2 \lif \cdots \Box(!A_{n-1} \lif !A_n)\cdots)
+  \in \Sigma
+  \intertext{Amarga $\Sigma$ logika modal normal, kabeh instansi
+    saka~$\Ax{K}$ kalebu, mligine}
+  & \Box(!A_{n-1} \lif !A_n) \lif (\Box!A_{n-1} \lif \Box!A_n) \in \Sigma
+  \intertext{Kanthi modus ponens lan instansi tautologis kang cocog, kita entuk}
+  & \Box!A_1 \lif (\Box!A_2 \lif \cdots (\Box!A_{n-1}
+  \lif \Box!A_n)\cdots) \in \Sigma.
+  \end{align*}
+\end{proof}
+
+\begin{prop}\ollabel{prop:notDiamondBot}
+  Saben logika modal normal $\Sigma$ ngemot~$\lnot\Diamond\lfalse$.
+\end{prop}
+
+\begin{prob}
+  Buktekna \olref[nml][prf][nor]{prop:notDiamondBot}.
+\end{prob}
+
+\begin{prop}
+  Upamane $!A_1$, \dots, $!A_n$ iku !!{formula}s. Mula ana logika
+  modal normal paling cilik $\Sigma$ kang ngemot kabeh instansi
+  saka $!A_1$, \dots, $!A_n$.
+\end{prop}
+
+\begin{proof}
+  Kanggo $!A_1$, \dots, $!A_n$, temtokna $\Sigma$ minangka irisan
+  kabeh logika modal normal kang ngemot kabeh instansi saka
+  $!A_1$, \dots, $!A_n$. Kulawarga kang diiris ora kosong, amarga
+  $\Frm[L]$, himpunan kabeh !!{formula}s, uga logika modal normal
+  kaya mangkono.
+\end{proof}
+
+\begin{defn}
+Logika modal normal paling cilik kang ngemot $!A_1$, \dots, $!A_n$
+diarani \emph{sistem modal} lan dilambangake $\Log{K} !A_1 \dots
+!A_n$. Logika modal normal paling cilik dilambangake~\Log{K}.
+\end{defn}
+
+\end{document}

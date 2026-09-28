@@ -1,0 +1,302 @@
+% Bagean: metodhe
+% Bab: induksi
+% Pérangan: relasi
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mth}{ind}{rel}
+
+\olsection{Relasi lan Fungsi}
+
+Yèn sawijining himpunan obyèk, kaya bilangan asli
+utawa term trep, wis didhéfinisikaké kanthi induktif,
+kita uga bisa ndhéfinisikaké \emph{relasi ing}
+obyèk mau kanthi induksi. Upamané, delengen
+gagasan iki: term trep~$t_1$ iku subterm
+saka term trep~$t_2$ yèn muncul minangka
+pérangané. Gunakna simbol:
+$t_1 \sqsubseteq t_2$. Mesthi saben term
+trep dadi subtermé dhéwé:
+$t \sqsubseteq t$. Relasi iki bisa
+didhéfinisikaké kanthi induktif:
+
+\begin{defn}
+  Relasi yèn term trep~$t_1$
+  dadi subterm saka~$t_2$,
+  $t_1
+  \sqsubseteq t_2$,
+  didhéfinisikaké kanthi induksi
+  ing~$t_2$ mangkéné:
+  \begin{enumerate}
+  \item Yèn $t_2$ aksara,
+    $t_1 \sqsubseteq t_2$ yèn
+    lan mung yèn $t_1 = t_2$.
+  \item Yèn $t_2$ awujud
+    $[s_1 \circ s_2]$, mula
+    $t_1 \sqsubseteq t_2$ yèn
+    lan mung yèn $t_1 =
+    t_2$, $t_1 \sqsubseteq s_1$,
+    utawa $t_1 \sqsubseteq s_2$.
+  \end{enumerate}
+\end{defn}
+
+Upamané, dhéfinisi iki nuduhaké
+yèn $\mathrm{a}
+\sqsubseteq [\mathrm{b} \circ \mathrm{a}]$.
+Miturut (2),
+$\mathrm{a} \sqsubseteq [\mathrm{b} \circ \mathrm{a}]$
+yèn lan mung yèn
+$\mathrm{a}
+= [\mathrm{b} \circ \mathrm{a}]$,
+utawa $\mathrm{a} \sqsubseteq \mathrm{b}$,
+utawa $\mathrm{a} \sqsubseteq \mathrm{a}$.
+Rong kamungkinan kapisan salah:
+$\mathrm{a}$ cetha ora padha karo
+$[\mathrm{b} \circ
+  \mathrm{a}]$, lan miturut~(1),
+$\mathrm{a} \sqsubseteq \mathrm{b}$
+yèn lan mung yèn
+$\mathrm{a} = \mathrm{b}$,
+kang uga salah. Nanging miturut~(1),
+$\mathrm{a} \sqsubseteq \mathrm{a}$
+yèn lan mung yèn
+$\mathrm{a} = \mathrm{a}$,
+kang bener.
+
+Wigati dielingi yèn kasil oraé
+dhéfinisi iki gumantung marang
+kasunyatan kang durung dibuktèkaké:
+saben term trep~$t$ iku aksara
+tunggal, utawa ana term trep
+$s_1$ lan $s_2$ kang
+\emph{ditemtokaké kanthi siji cara}
+saéngga $t = [s_1 \circ s_2]$.
+``Ditemtokaké kanthi siji cara''
+ateges yèn $t = [s_1 \circ s_2]$,
+ora bisa \emph{uga}
+$= [r_1 \circ r_2]$
+kanthi $s_1 \neq r_1$
+utawa $s_2 \neq r_2$.
+Yèn bisa, klausa~(2)
+mbokmenawa bakal nentang
+awaké dhéwé: maca $t_2$
+minangka $[s_1 \circ s_2]$
+bisa mènèhi $t_1
+\sqsubseteq t_2$, nanging
+maca $t_2$ minangka
+$[r_1 \circ r_2]$ bisa
+mènèhi ora $t_1 \sqsubseteq t_2$.
+Sadurungé mbuktekaké yèn iki
+ora mungkin, ayo deleng conto
+kang nuduhaké yèn bab iki
+\emph{bisa} kelakon.
+
+\begin{defn}
+  Dhéfinisikna \emph{term tanpa kurung}
+  kanthi induktif:
+  \begin{enumerate}
+  \item Saben aksara iku
+    term tanpa kurung.
+  \item Yèn $s_1$ lan $s_2$
+    term tanpa kurung,
+    $s_1 \circ s_2$ uga
+    term tanpa kurung.
+  \item Ora ana liya kang
+    kalebu term tanpa kurung.
+  \end{enumerate}
+\end{defn}
+
+Conto term tanpa kurung yaiku
+$\mathrm{a}$,
+$\mathrm{b} \circ
+\mathrm{d}$, lan
+$\mathrm{b} \circ \mathrm{a} \circ \mathrm{b}$.
+Yèn ``subterm'' kanggo term
+tanpa kurung didhéfinisikaké
+kaya ing ndhuwur, klausa
+kapindho dadi
+\begin{center}
+  Yèn $t_2 = s_1 \circ s_2$,
+  mula $t_1 \sqsubseteq t_2$
+  yèn lan mung yèn
+  $t_1 = t_2$,
+  $t_1 \sqsubseteq s_1$,
+  utawa $t_1 \sqsubseteq s_2$.
+\end{center}
+
+Saiki $\mathrm{b} \circ \mathrm{a} \circ \mathrm{b}$
+awujud $s_1
+\circ s_2$ kanthi
+\begin{align*}
+  s_1 & = \mathrm{b} \text{ lan} & s_2 & = \mathrm{a} \circ \mathrm{b}.
+\intertext{Iki uga awujud $r_1 \circ r_2$ kanthi}
+  r_1 & = \mathrm{b} \circ \mathrm{a} \text{ lan} & r_2 &= \mathrm{b}.
+\end{align*}
+Apa $\mathrm{a} \circ \mathrm{b}$
+iku subterm saka
+$\mathrm{b} \circ
+\mathrm{a} \circ \mathrm{b}$?
+Miturut pamacaan kapisan,
+wangsulané iya, nanging
+miturut pamacaan kapindho
+ora.
+
+Sipat yèn cara mbangun
+term trep saka term trep liya
+iku tunggal diarani
+\emph{mung bisa diwaca kanthi siji cara}.
+Amarga dhéfinisi induktif
+kanggo relasi ing obyèk
+kaya iki wigati, kita kudu
+mbuktekaké sipat mau.
+
+\begin{prop}
+  Anggepen $t$ term trep.
+  Mula $t$ aksara tunggal,
+  utawa ana term trep
+  $s_1$, $s_2$ kang
+  ditemtokaké kanthi siji
+  cara saéngga~$t =
+  [s_1 \circ s_2]$.
+\end{prop}
+
+\begin{proof}
+  Yèn $t$ aksara tunggal,
+  syarat iku kacukupan.
+  Dadi anggepen $t$
+  dudu aksara tunggal.
+  Miturut dhéfinisi induktif,
+  $t$ kudu awujud
+  $[s_1 \circ s_2]$
+  kanggo term trep
+  $s_1$ lan~$s_2$.
+  Kari mbuktekaké yèn
+  loro-loroné ditemtokaké
+  kanthi siji cara: yèn
+  $t = [r_1 \circ r_2]$,
+  mula $s_1 = r_1$
+  lan $s_2 = r_2$.
+
+  Anggepen $t = [s_1 \circ s_2]$
+  lan uga $t = [r_1 \circ r_2]$
+  kanggo term trep
+  $s_1$, $s_2$, $r_1$, $r_2$.
+  Kita kudu nuduhaké
+  $s_1 = r_1$ lan
+  $s_2 = r_2$. Kaping pisan,
+  $s_1$ lan $r_1$
+  mesthi padha, amarga
+  yèn ora, salah sijiné
+  dadi bagéan wiwitan sejati
+  saka sijiné. Nanging
+  miturut \olref[sti]{prop:initial},
+  iki ora mungkin yèn
+  $s_1$ lan~$r_1$ padha-padha
+  term trep. Yèn
+  $s_1 = r_1$, cetha
+  $s_2 = r_2$ uga.
+\end{proof}
+
+Fungsi uga bisa didhéfinisikaké
+kanthi induktif. Upamané,
+fungsi~$f$ kang ngirim saben
+term trep menyang tingkat
+jeroné susunan $[\dots]$
+kang paling gedhé bisa
+didhéfinisikaké mangkéné:
+
+\begin{defn}
+  \ollabel{defn:depth}
+  \emph{Jeroning} term trep,
+  $f(t)$, didhéfinisikaké
+  kanthi induktif:
+  \[
+  f(t) = \begin{cases}
+    0 & \text{ yèn $t$ aksara}\\
+    \max(f(s_1), f(s_2)) + 1 & \text{ yèn $t = [s_1 \circ s_2]$.}
+  \end{cases}
+  \]
+\end{defn}
+
+Upamané,
+\begin{align*}
+  f([\mathrm{a} \circ \mathrm{b}]) & =
+    \max(f(\mathrm{a}),f(\mathrm{b})) + 1 = \\
+  &= \max(0, 0) + 1 = 1, \text{ lan}\\
+  f([[\mathrm{a} \circ \mathrm{b}] \circ \mathrm{c}]) & =
+    \max(f([\mathrm{a} \circ \mathrm{b}]), f(\mathrm{c})) + 1 = \\
+  & = \max(1,0) + 1 = 2.
+\end{align*}
+
+Ing kéné kita nganggep
+$s_1$ lan $s_2$
+term trep, lan migunakaké
+kasunyatan yèn saben
+term trep iku aksara
+utawa awujud
+$[s_1 \circ s_2]$.
+Wigati maneh yèn wujud
+iki mung ana siji cara.
+Kanggo ngerti sebabé,
+delengen maneh term tanpa
+kurung. ``Dhéfinisi'' kang
+cocog bakal awujud:
+\[
+  g(t) =
+  \begin{cases}
+    0 & \text{ yèn $t$ aksara}\\
+   \max(g(s_1), g(s_2)) + 1 & \text{ yèn $t = s_1 \circ s_2$.}
+  \end{cases}
+\]
+Saiki delengen term tanpa
+kurung $\mathrm{a} \circ \mathrm{b} \circ
+\mathrm{c} \circ \mathrm{d}$.
+Term iki bisa diwaca
+luwih saka siji cara,
+upamané $s_1 \circ s_2$
+kanthi
+\begin{align*}
+  s_1 & = \mathrm{a} \text{ lan} &
+  s_2 & = \mathrm{b} \circ \mathrm{c} \circ \mathrm{d},
+\intertext{utawa minangka $r_1 \circ r_2$ kanthi}
+  r_1 & = \mathrm{a} \circ \mathrm{b} \text{ lan} &
+  r_2 &= \mathrm{c} \circ \mathrm{d}.
+\end{align*}
+Yèn $g$ diétung manut
+pamacaan kapisan, kita olèh
+\begin{align*}
+  g(s_1 \circ s_2) & =
+  \max(g(\mathrm{a}), g(\mathrm{b} \circ \mathrm{c} \circ \mathrm{d})) + 1 =\\ & =
+  \max(0,2) + 1 = 3
+  \intertext{nanging manut pamacaan liya,}
+  g(r_1 \circ r_2) & =
+  \max(g(\mathrm{a} \circ \mathrm{b}), g(\mathrm{c} \circ \mathrm{d})) + 1=\\ &
+  = \max(1,1) + 1 = 2
+\end{align*}
+Fungsi kudu tansah ngasilaké
+nilai tunggal, mula
+``dhéfinisi'' kanggo~$g$
+iku ora ndhéfinisikaké
+fungsi babar pisan.
+
+\begin{prob}
+  Wènèhana dhéfinisi
+  induktif kanggo fungsi $l$,
+  kanthi $l(t)$ cacah
+  simbol ing term trep~$t$.
+\end{prob}
+
+\begin{prob}
+  Buktèkna kanthi induksi
+  struktural ing term trep
+  $t$ yèn $f(t) < l(t)$,
+  kanthi $l(t)$ cacah simbol
+  ing~$t$ lan $f(t)$
+  jeroning $t$ kaya
+  didhéfinisikaké ing
+  \olref[mth][ind][rel]{defn:depth}.
+\end{prob}
+
+\end{document}

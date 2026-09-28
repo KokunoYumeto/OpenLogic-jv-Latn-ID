@@ -1,0 +1,88 @@
+% Part: turing-machines
+% Chapter: machines-computations
+% Section: halting-states
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{tur}{mac}{hal}
+\olsection{Kahanan Mandheg}
+
+\begin{explain}
+Sanajan kita wis netepake mesin mung mandheg
+nalika ora ana instruksi kang bisa ditindakake,
+gambaran umum mesin Turing nduwé
+\emph{kahanan mandheg}~$h$ mligi,
+saengga $h \in Q$.
+
+Gagasan kahanan mandheg iku prasaja: nalika mesin
+wis ngrampungake pakaryane (wis siyap nampa input,
+utawa wis rampung nulis output), mesin mlebu
+kahanan~$h$ lan mandheg. Sawetara mesin nduwé
+rong kahanan mandheg, siji kanggo nampa input
+lan siji kanggo nolak input.
+\end{explain}
+
+\begin{ex}\emph{Kahanan Mandheg}.
+Kanggo njlentrehake gagasan iki, ayo diwiwiti
+saka owah-owahan ing mesin genep. Tinimbang
+mesin mandheg ing kahanan~$q_0$ nalika input
+genep, kita bisa nambah instruksi kanggo
+ngirim mesin menyang kahanan mandheg.
+\[
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                    semithick]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+  \node[initial, state]         (A)                     {$q_0$};
+  \node[state]         (B) [right of=A] {$q_1$};
+  \node[state]         (C) [below of=A] {$h$};
+
+  \path (A) edge [bend left] node {\TMtrans{\TMstroke}{\TMstroke}{R}} (B)
+  	    edge node {\TMtrans{\TMblank}{\TMblank}{N}} (C)
+        (B) edge [loop above] node {\TMtrans{\TMblank}{\TMblank}{R}} (B)
+            edge [bend left] node {\TMtrans{\TMstroke}{\TMstroke}{R}} (A);
+\end{tikzpicture}
+\]
+
+Ayo tuladha iki dikembangake maneh. Nalika mesin
+nemtokake yen input ganjil, mesin ora tau mandheg.
+Kita bisa ngowahi mesin kanthi nambah
+\emph{kahanan nolak}, yaiku ngganti instruksi
+kang bola-bali mau karo instruksi kanggo
+mlebu kahanan nolak~$r$.
+\[
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                    semithick]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+  \node[initial,state]         (A)                     {$q_0$};
+  \node[state]         (B) [right of=A] {$q_1$};
+  \node[state]         (C) [below of=A] {$h$};
+  \node[state]         (D) [below of=B] {$r$};
+
+  \path (A) edge [bend left] node {\TMtrans{\TMstroke}{\TMstroke}{R}} (B)
+  	    edge node {\TMtrans{\TMblank}{\TMblank}{N}} (C)
+        (B) edge node {\TMtrans{\TMblank}{\TMblank}{N}} (D)
+            edge [bend left] node {\TMtrans{\TMstroke}{\TMstroke}{R}} (A);
+\end{tikzpicture}
+\]
+\end{ex}
+
+\begin{explain}
+Nambah kahanan mandheg mligi bisa migunani
+ing kahanan kaya iki, amarga kanthi mangkono
+cetha kapan mesin nampa utawa nolak input
+tartamtu. Nanging perlu digatekake yen
+nambah kahanan mandheg mligi ora nambah
+daya komputasi. Semono uga, pangerten
+mandheg kang kurang formal nduwé paedahe
+dhewe. Definisi mandheg kang wis digunakake
+nganti saiki ing bab iki ndadekake bukti
+\emph{Masalah Mandheg} gampang dimangerteni
+lan dituduhake. Mula kita tetep nganggo
+definisi asal.
+\end{explain}
+
+\end{document}

@@ -1,0 +1,50 @@
+% Part: normal-modal-logic
+% Chapter: sequent-calculus
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{seq}{int}
+
+\olsection{Pambuka}
+
+Kalkulus sekuen kanggo logika proposisional bisa diambakake nganggo
+aturan tambahan kang nangani
+\iftag{prvBox}{$\Box$\iftag{prvDiamond}{ lan~}{}}{}%
+\iftag{prvDiamond}{$\Diamond$}{}. Contone, kanggo~$\Log{K}$,
+kita nduweni \Log{LK} kanthi tambahan:
+\[
+  \iftag{prvBox}{\iftag{prvDiamond}{% <> and [] primitive
+    \Axiom$\Gamma \fCenter \Delta, !A$
+    \RightLabel{$\Box$}
+    \UnaryInf$\Box\Gamma \fCenter \Diamond\Delta, \Box!A$
+    \DisplayProof  
+    \qquad
+    \Axiom$!A, \Gamma \fCenter \Delta$
+    \RightLabel{$\Diamond$}
+    \UnaryInf$\Diamond!A, \Box\Gamma \fCenter \Diamond\Delta$
+    \DisplayProof
+}{% only Box primitive
+\Axiom$\Gamma \fCenter !A$
+\RightLabel{$\Box$}
+\UnaryInf$\Box\Gamma \fCenter \Box!A$
+\DisplayProof
+}}{% only <> primitive
+  \Axiom$!A \fCenter \Delta$
+  \RightLabel{$\Diamond$}
+  \UnaryInf$\Diamond!A \fCenter \Diamond\Delta$
+  \DisplayProof
+}
+\]
+Kanggo perluasan~$\Log{K}$, aturan tambahan uga kudu ditambahake.
+
+Ora saben logika modal nduweni kalkulus sekuen kang kaya mangkono.
+Malah $\Log{S5}$, kang semantike prasaja (bisa ditegesi tanpa migunakake
+relasi aksesibilitas babar pisan), durung dikenal nduweni kalkulus
+sekuen turunan saka~$\Log{LK}$ kang lengkap tanpa aturan~\Cut.
+Nanging, logika iki nduweni kalkulus \emph{hipersekuen} kang lengkap
+lan tanpa aturan cut.
+
+\end{document}

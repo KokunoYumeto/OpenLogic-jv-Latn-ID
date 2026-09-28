@@ -1,0 +1,50 @@
+% Part: normal-modal-logic
+% Chapter: axioms-systems
+% Section: provability-properties
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{prf}{prp}
+
+\olsection{Sipat-Sipat \usetoken{S}{derivability}}
+
+\begin{prop}\ollabel{prop:derivabilityfacts}
+  Upamane $\Sigma$ sistem modal lan $\Gamma$ himpunan !!{formula}s
+  modal. Sipat-sipat ing ngisor iki lumaku:
+  \begin{enumerate}
+  \item\ollabel{prop:derivabilityfacts-monotonicity} \emph{Monotonisitas}: Yen
+    $\Gamma \Proves[\Sigma] !A$ lan $\Gamma \subseteq \Delta$, mula
+    $\Delta \Proves[\Sigma] !A$;
+  \item\ollabel{prop:derivabilityfacts-reflexivity}
+    \emph{Refleksivitas}: Yen $!A \in \Gamma$, mula $\Gamma
+    \Proves[\Sigma] !A$;
+  \item\ollabel{prop:derivabilityfacts-cut} \emph{Cut}: Yen $\Gamma
+    \Proves[\Sigma] !A$ lan $\Delta \cup \{!A\} \Proves[\Sigma] !B$,
+    mula $\Gamma \cup \Delta \Proves[\Sigma] !B$;
+  \item\ollabel{prop:derivabilityfacts-deduction} \emph{Teorema deduksi}: $\Gamma \cup \{!B\}
+    \Proves[\Sigma] !A$ yen lan mung yen $\Gamma \Proves[\Sigma] !B \lif
+      !A$;
+  \item \ollabel{prop:derivabilityfacts-ruleT} \emph{Aturan T}: Yen
+    $\Gamma \Proves[\Sigma] !A_1$ lan \dots lan $\Gamma
+    \Proves[\Sigma] !A_n$ lan $!A_1 \to (!A_2 \lif \cdots (!A_n \lif
+    !B)\cdots)$ iku instansi tautologis, mula $\Gamma
+    \Proves[\Sigma] !B$.
+  \end{enumerate}
+\end{prop}
+
+Buktine dadi latihan kang gampang. Bagean
+\olref{prop:derivabilityfacts-ruleT} saka \olref{prop:derivabilityfacts}
+nuduhake, upamane, yen $\Gamma \Proves[\Sigma] !A \lor !B$
+lan $\Gamma \Proves[\Sigma] \lnot !A$, mula $\Gamma \Proves[\Sigma]
+!B$. Sabanjure, kita nulis $\Gamma, !A \Proves[\Sigma] !B$
+minangka cekakan saka $\Gamma \cup \{ !A\} \Proves[\Sigma] !B$.
+
+\begin{defn}
+  Himpunan $\Gamma$ diarani \emph{katutup sacara deduktif} relatif marang
+  sistem $\Sigma$ yen lan mung yen $\Gamma \Proves[\Sigma] !A$
+  ngimplikasikake $!A \in \Gamma$.
+\end{defn}
+
+\end{document}

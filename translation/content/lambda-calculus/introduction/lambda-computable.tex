@@ -1,0 +1,55 @@
+% Part: lambda-calculus
+% Chapter: introduction
+% Section: lambda-computable
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{int}{cmp}
+\olsection{Fungsi kang \usetoken{S}{lambda definable} Bisa Diitung}
+
+\begin{thm}
+\ollabel{thm:lambda-computable}
+Yen fungsi parsial $f$ !!{lambda defined}
+dening suku lambda, fungsi iku bisa diitung.
+\end{thm}
+
+\begin{proof}
+Upamana fungsi~$f$ !!{lambda defined} dening
+suku lambda~$X$. Kita andharake prosedur
+informal kanggo ngitung~$f$. Kanggo input
+$m_0$, \dots,~$m_{n-1}$, tulisen suku
+$X \num{m_0} \ldots \num{m_{n-1}}$.
+Gawea sawijining wit: luwih dhisik tulisen
+kabeh asil reduksi saklangkah saka suku wiwitan;
+ing sangisore iku tulisen kabeh asil reduksi
+saklangkah saka suku-suku mau (yaiku asil
+reduksi rong langkah saka suku wiwitan);
+banjur terusna. Yen ing sawijining wektu
+ketemu numeral, wangsulana wilangan kang
+diwakili numeral iku; yen ora nate ketemu,
+fungsi iku ora nduweni nilai ing input kasebut.
+
+Kanthi nggunakake tesis Church, kita bisa
+nyimpulake yen fungsi iki bisa diitung.
+Cara kang luwih becik kanggo mbuktekake
+teorema iki yaiku menehi katrangan rekursif
+babagan prosedur panelusuran mau. Umpamane,
+kita bisa netepake sawetara fungsi lan relasi
+rekursif primitif, ``$\fn{IsASubterm}$,''
+``$\fn{Substitute}$,''
+``$\fn{ReducesToInOneStep}$,''
+``$\fn{ReductionSequence}$,''
+``$\fn{Numeral}$,'' lan sateruse.
+Prosedur rekursif parsial kanggo ngitung
+$f(m_0, \dots, m_{n-1})$ banjur nggoleki
+urutan reduksi saklangkah kang diwiwiti saka
+$X \num{m_0} \dots \num{m_{n-1}}$ lan
+dipungkasi dening sawijining numeral,
+banjur mbalekake wilangan kang cocog karo
+numeral iku. Rinciane dawa lan mboseni,
+nanging saliyane iku lumrah.
+\end{proof}
+
+\end{document}

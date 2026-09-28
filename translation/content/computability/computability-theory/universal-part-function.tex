@@ -1,0 +1,51 @@
+% Part: computability
+% Chapter: computability-theory
+% Section: universal-part-function
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{thy}{uni}
+\olsection{Fungsi Komputabel Parsial Universal}
+
+\begin{thm}
+\ollabel{thm:univ-comp}
+Ana fungsi komputabel parsial universal~$\fn{Un}(e,x)$.
+Kanthi tembung liya, ana fungsi $\fn{Un}(e,x)$
+kang nduwé sipat iki:
+\begin{enumerate}
+\item $\fn{Un}(e,x)$ komputabel parsial.
+\item Yen $f(x)$ fungsi komputabel parsial sembarang,
+  ana wilangan asli $e$ kang ndadekake
+  $f(x) \simeq \fn{Un}(e,x)$ kanggo saben~$x$.
+\end{enumerate}
+\end{thm}
+
+\begin{proof}
+Tetepna $\fn{Un}(e,x) \simeq U(\umin{s}{T(e,x,s)})$,
+kanthi $U$ lan $T$ kaya ing teorema wangun normal
+Kleene (\olref[nfm]{thm:normal-form}).
+\end{proof}
+
+\begin{explain}
+Iki mung cara kang presisi kanggo nyatakake
+yen kita nduwé enumerasi efektif fungsi
+komputabel parsial. Gagasane, yen kita nulis
+$f_e$ kanggo fungsi kang ditegesi dening
+$f_e(x) = \fn{Un}(e,x)$, mula runtutan
+$f_0$, $f_1$, $f_2$, \dots ngemot kabeh
+fungsi komputabel parsial, kanthi sipat yen
+$f_e(x)$ bisa diitung kanthi seragam ing
+$e$ lan~$x$. Supaya prasaja, kita nggunakake
+fungsi binèr kang universal kanggo fungsi
+unari, nanging kanthi ngode runtutan wilangan,
+iki gampang digeneralisasi kanggo argumen
+luwih akèh. Umpamane, gatekna yen
+$f(x,y,z)$ fungsi rekursif parsial aritas~$3$,
+mula fungsi $g(x) \simeq f((x)_0, (x)_1, (x)_2)$
+% OLPL-134: Sumber beku nyebut g rekursif tanpa kualifikasi, nanging f parsial bisa nggawe g uga parsial.
+iku fungsi rekursif parsial unari.
+\end{explain}
+
+\end{document}

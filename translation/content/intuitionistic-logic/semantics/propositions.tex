@@ -1,0 +1,53 @@
+% part: intuitionistic-logic
+% chapter: semantics
+% section: propositions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{sem}{pro}
+
+\olsection{Proposisi}
+
+Kadhangkala migunani yèn ana jeneng kanggo himpunan donya
+ing !!a{relational model}~$\mModel{M}$ kang ndadèkaké
+!!a{formula}~$!A$ bener. Himpunan iki diarani
+\emph{proposisi} kang ditetepaké déning~$!A$, lan ditulis
+$\Prop{M}{!A}$.
+
+\begin{defn}
+  Fungsi $V$ kita ambakaké dadi fungsi $\Prop{M}{!A} \colon \Frm
+  \to \Pow{W}$ kanthi induksi kaya ing ngisor iki:
+  \begin{enumerate}
+  \item $\Prop{M}{\lfalse} = \emptyset$
+  \item $\Prop{M}{p} = V(p)$
+  \item $\Prop{M}{\lnot !B} = {}$
+    \[
+      \Setabs{w \in W}{\text{kanggo saben $w'$ kang nyukupi $Rww'$, $w'
+          \notin \Prop{M}{!B}$}}.
+    \]
+  \item $\Prop{M}{!B \land !C} = \Prop{M}{!B} \cap \Prop{M}{!C}$.
+  \item $\Prop{M}{!B \lor !C} = \Prop{M}{!B} \cup \Prop{M}{!C}$.
+  \item $\Prop{M}{!B \lif !C} = {}$
+    \[
+      \Setabs{w \in W}{\text{kanggo saben $w'$ kang nyukupi $Rww'$, yèn $w'
+          \in \Prop{M}{!B}$ mula $w' \in \Prop{M}{!C}$}}.
+    \]
+  \end{enumerate}
+\end{defn}
+
+\begin{prop}
+  \ollabel{prop:propositions-true}
+  $\mModel{M}{!A}[w]$ yèn lan mung yèn $w \in \Prop{M}{!A}$
+\end{prop}
+
+\begin{proof}
+  Gladhen.
+\end{proof}
+
+\begin{prob}
+  Buktèkna \olref[int][sem][pro]{prop:propositions-true}.
+\end{prob}
+
+\end{document}

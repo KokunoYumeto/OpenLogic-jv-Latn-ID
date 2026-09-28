@@ -1,0 +1,157 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{replacement}{absinf}
+\olsection{Panggantian lan ``Tanpa Wates Mutlak''}
+
+Saiki kita ninggalake \limofsize{}, banjur
+nliti kulawarga upaya (intrinsik) liyane
+kanggo menehi dhasar marang Panggantian,
+kang nganggep kanthi tenanan gagasan yen
+himpunan kabentuk tataran demi tataran.
+
+Nalika pisanan nggambarake proses iteratif,
+kita ngusulake prinsip-prinsip kang nerangake
+apa kang kelakon ing saben tataran: yaiku
+\stageshier, \stagesord, lan \stagesacc.
+Sabanjure kita nambah prinsip-prinsip babagan
+cacahing tataran: \stagessucc{} ngandhakake
+yen proses pambentukan himpunan ora tau
+rampung, lan \stagesinf{} ngandhakake yen
+proses iki tekan tataran tanpa wates kang
+kapisan.
+
+Lumrah yen rong prinsip pungkasan iku
+dianggep ndherek saka prinsip kang luwih amba,
+kayata:
+\begin{enumerate}
+	\item[] \stagesinex. Ana tataran kang tanpa
+	wates kanthi mutlak; hierarki iku sa-dhuwur
+	kang bisa digayuh.
+\end{enumerate}
+Cetha yen iki prinsip ora formal. Sanadyan
+ora langsung \emph{ndherek} saka konsepsi
+himpunan kang kumulatif lan iteratif, prinsip
+iki katon \emph{selaras} karo konsepsi mau.
+Paling ora, beda karo \limofsize, prinsip iki
+njaga gagasan yen himpunan kabentuk tataran
+demi tataran.
+
+Saiki pangarep-arepe yaiku nggunakake
+\stagesinex{} kanggo menehi dhasar marang
+Panggantian. Ayo dideleng carane.
+
+Ing \olref[ordinals][idea]{sec}, kita weruh
+yen gampang mbangun urutan becik kang miturut
+intuisi mesthine isomorfis karo
+$\omega+\omega$. Kanthi tembung liya, kita
+bisa mbayangake proses iteratif tataran demi
+tataran kang tipe urutane, miturut intuisi,
+$\omega+\omega$. Dadi yen wis nampa
+\stagesinex, kita mesthine uga nampa anane
+paling ora tataran kaping-$\omega+\omega$
+ing hierarki, yaiku $V_{\omega+\omega}$,
+amarga hierarki iku mesthi \emph{bisa}
+terus tekan kono.
+
+Gagasan iki bisa diumumake mangkene: kanggo
+saben urutan becik, proses pambangunan hierarki
+iteratif kudu tekan paling ora sasuwene urutan
+becik iku. Iki bisa dijamin yen
+\olref[ordinals][ordtype]{thmOrdinalRepresentation}
+dianggep minangka \emph{aksioma}. Mula saben
+urutan becik bakal isomorfis karo ordinal von
+Neumann. Amarga rank saben ordinal von Neumann
+padha karo ordinal iku dhewe,
+\olref[ordinals][ordtype]{thmOrdinalRepresentation}
+bakal ngandhakake yen kapan wae kita bisa
+njlentrehake urutan becik ing teori himpunan,
+proses pambentukan himpunan kang iteratif kudu
+ngluwihi urutan becik mau.
+
+Gagasan iki katon minangka akibat saka
+\stagesinex. Nanging yen tujuwane njupuk
+Panggantian saka gagasan iki, ana alangan
+teknis kang prasaja: Panggantian luwih kuwat
+tinimbang
+\olref[ordinals][ordtype]{thmOrdinalRepresentation}.
+(Iki dicathet dening \citet[\S13.2]{Potter2004};
+kita bakal mbuktekake ing
+\olref[sth][replacement][finiteaxiomatizability]{sec}.)
+
+Dadi yen \stagesinex{} arep dimangerteni
+kanthi cara kang ngasilake Panggantian,
+prinsip iku ora bisa \emph{mung} kandha yen
+hierarki ngluwihi saben urutan becik. Prinsip
+iku kudu nyatakake bab kang luwih kuwat.
+Kanggo iki, \cite{Shoenfield:AST} ngusulake
+penguatan kang lumrah: hierarki ora
+\emph{kofinal} karo himpunan apa wae.\footnote{G\"odel
+katon uga ngusulake gagasan kang mirip; delengen
+\citet[p.~223]{Potter2004}. Kanggo rembugan
+G\"odel lan \citeauthor{Shoenfield:AST},
+delengen \citet[90--5]{Incurvati2020}.}
+Luwih rinci, yen $\tau$ iku peta saka
+himpunan menyang tataran hierarki, citra
+himpunan apa wae $A$ miturut $\tau$ ora bakal
+ngentekake kabeh hierarki. Kanthi skematis:
+\begin{enumerate}
+	\item[] \stagescofin. Yen $A$ himpunan lan
+	$\tau(x)$ tataran kanggo saben $x \in A$,
+	mula ana tataran kang luwih pungkasan
+	tinimbang saben $\tau(x)$ kanggo $x \in A$.
+\end{enumerate}
+Cetha yen $\ZF$ mbuktekake versi
+\stagescofin{} kang diformalake kanthi trep.
+Kosokbaline, kanthi ora formal kita bisa
+nerangake yen \stagescofin{} menehi dhasar
+marang Panggantian.\footnote{Luwih angel
+mbuktekake Panggantian saka sawijining
+formalisasi \stagescofin, amarga $\Z$ dhewe
+ora cukup kuwat kanggo netepake tataran-tataran;
+mula ora cetha carane ngrumusake
+\stagescofin kanthi formal. Salah siji pilihan
+yaiku makarya
+ing sawijining ekstensi saka $\LT$, kaya kang
+dirembug ing
+\olref[sth][replacement][extrinsic]{sec}.}
+Upamane $(\forall x \in A)\lexists![y][\phi(x,y)]$.
+Kanggo saben $x \in A$, tetepna $\sigma(x)$
+minangka $y$ kang nyukupi $\phi(x,y)$, lan
+$\tau(x)$ minangka tataran nalika $\sigma(x)$
+pisanan kabentuk. Miturut \stagescofin, ana
+tataran $V$ kang nyukupi
+$(\forall x \in A)\tau(x)\in V$. Amarga saben
+$\tau(x) \in V$ lan $\sigma(x) \subseteq \tau(x)$,
+lan tataran iki poten, Pamisahan menehi
+$\Setabs{y \in V}{(\exists x \in A)\sigma(x) = y}
+= \Setabs{y}{(\exists x \in A)\phi(x,y)}$.
+
+\begin{prob}
+	Rumusna \stagescofin{} kanthi formal ing $\ZF$.
+\end{prob}
+
+Dadi \stagescofin{} ndhukung Panggantian.
+Lan paling ora katon lumrah yen \stagesinex{}
+ndhukung \stagescofin. Upamane \stagescofin{}
+ora lumaku. Mula hierarki iku kofinal karo
+sawijining himpunan~$A$: ana peta $\tau$
+kang kanggo saben tataran~$S$ ana sawijining
+$x \in A$ kang nyukupi $S \in \tau(x)$.
+Yen mangkono, ana cara kanggo nyekel
+``tanpa wates mutlak'' kang dianggep diduweni
+hierarki: saben tataran \emph{kawengku} dening
+sawijining anggota citra $\tau$ ing $A$.
+Iki nglemesake gagasan
+yen hierarki iku ``tanpa wates mutlak''.
+Miturut kontraposisi, \stagesinex{}
+ngakibatake \stagescofin, kang banjur menehi
+dhasar marang Panggantian.
+
+Iki upaya kang cukup njanjeni kanggo menehi
+dhasar intrinsik marang Panggantian. Nanging
+apa pungkasane bisa kasil, kita pasrahake
+marang pamaca kanggo mutusake.
+
+\end{document}

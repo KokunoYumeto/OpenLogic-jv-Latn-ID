@@ -1,0 +1,204 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{ordinals}{iso}
+\olsection{Isomorfisme Urutan}
+
+Kanggo njlentrehake \emph{sepira} kukuhé urutan becik,
+kita bakal miwiti kanthi cara mbandhingake urutan-urutan
+becik.
+
+\begin{defn}
+\emph{Urutan becik} yaiku pasangan $\tuple{A, <}$ kang
+$<$ ngurutake $A$ kanthi becik. Urutan becik
+$\tuple{A, <}$ lan $\tuple{B, \lessdot}$ iku
+\emph{isomorfis miturut urutan} yen lan mung yen ana
+!!a{bijection} $f \colon A \to B$ kang nyukupi:
+$x < y$ yen lan mung yen $f(x) \lessdot  f(y)$.
+Ing kahanan iki kita nulis
+$\ordeq{\tuple{A, <}}{\tuple{B, \lessdot}}$, lan
+ngarani $f$ minangka \emph{isomorfisme urutan}.
+\end{defn}
+\noindent
+Ing salajengipun, supaya ringkes, kita bakal nyebut
+``isomorfisme'' tinimbang ``isomorfisme urutan''.
+Kanthi intuitif, isomorfisme iku !!{bijection}
+kang njaga struktur. Iki sawetara kasunyatan prasaja
+ngenani isomorfisme.
+
+\begin{lem}\ollabel{isoscompose}
+Komposisi isomorfisme iku uga isomorfisme: yen
+$f \colon A \to B$ lan $g \colon B \to C$ iku
+isomorfisme, mula $(g \circ f) \colon A \to C$
+uga isomorfisme.
+\end{lem}
+\begin{prob}
+	Buktikna \olref[sth][ordinals][iso]{isoscompose}.
+\end{prob}
+\begin{proof}
+Ditinggalake minangka gladhen.
+\end{proof}
+\begin{cor}\ollabel{ordisoisequiv}
+	$\ordeq{X}{Y}$ iku relasi ekuivalensi.
+\end{cor}
+\begin{prop}\ollabel{ordisounique}
+Yen $\tuple{A, <}$ lan $\tuple{B, \lessdot}$ iku
+urutan becik kang isomorfis, mula isomorfisme ing
+antarane loro iku tunggal.
+\end{prop}
+
+\begin{proof}
+Upamane $f$ lan $g$ iku isomorfisme $A \to B$.
+Kita bakal mbuktekake kanthi induksi, yaiku\ nggunakake
+\olref[wo]{propwoinduction}. Pilihen $a\in A$ lan
+upamane (kanggo induksi) yen $(\forall b < a)f(b) = g(b)$.
+Pilihen $x \in B$.
+
+Yen $x \lessdot f(a)$, mula $f^{-1}(x) < a$,
+dadi $g(f^{-1}(x)) \lessdot g(a)$ amarga $f$ lan $g$
+iku isomorfisme. Nanging amarga $f^{-1}(x) < a$,
+miturut pangira-ira induksi kita
+$x =f(f^{-1}(x)) = g(f^{-1}(x))$. Dadi
+$x \lessdot g(a)$. Semono uga, yen $x \lessdot g(a)$,
+mula $x \lessdot f(a)$.
+
+Mula $(\forall x \in B)(x \lessdot f(a) \liff x \lessdot
+g(a))$. Saka kene $f(a) = g(a)$ miturut
+\olref[sfr][rel][ord]{prop:extensionality-strictlinearorders}.
+Mula $(\forall a \in A)f(a) = g(a)$ miturut
+\olref[wo]{propwoinduction}.
+\end{proof}\noindent 
+Iki menehi gambaran yen urutan becik iku kukuh.
+Nanging kanggo nerangake luwih adoh, kita perlu
+ngenalake notasi liyane.
+
+\begin{defn}
+Yen $\tuple{A, <}$ urutan becik kanthi $a \in A$,
+upamane $A_a = \Setabs{x \in A}{x < a}$. Kita
+ngarani $A_a$ \emph{perangan wiwitan} sejati saka
+$A$ (lan $A$ dhewe uga dianggep perangan wiwitan
+ora sejati saka $A$). Upamane $<_a$ iku watesan
+$<$ marang perangan wiwitan iki, yaiku
+$\funrestrictionto{\mathord{<}}{A_a^2}$.
+\end{defn}
+\noindent
+Kanthi notasi iki, kita bisa negesake lan mbuktekake
+yen ora ana urutan becik kang isomorfis karo
+perangan wiwitan sejatine dhewe.
+
+\begin{lem}\ollabel{wellordnotinitial}
+Yen $\tuple{A, <}$ urutan becik kanthi $a \in A$,
+mula $\ordneq{\tuple{A, <}}{\tuple{A_a, <_a}}$.
+\end{lem}
+
+\begin{proof}
+Kanggo bukti kanthi kontradiksi, upamane
+$f \colon A \to A_a$ iku isomorfisme. Amarga $f$
+bijeksi lan $A_a \subsetneq A$, miturut
+\olref[wo]{wo:strictorder} pilihen $b \in A$
+minangka !!{element} paling cilik miturut $<$ ing
+$A$ kang nyukupi $b \neq f(b)$. Kita bakal nuduhake
+$(\forall x \in A)(x<b \liff x < f(b))$; mula miturut
+\olref[sfr][rel][ord]{prop:extensionality-strictlinearorders}
+kita entuk $b = f(b)$, sawijining kontradiksi.
+
+Upamane $x < b$. Mula $x = f(x)$ miturut pilihan
+$b$. Lan $f(x) < f(b)$ amarga $f$ isomorfisme.
+Mula $x < f(b)$.
+
+Upamane $x < f(b)$. Mula $f^{-1}(x) < b$
+amarga $f$ isomorfisme; invers iki bisa dienggo amarga
+perangan wiwitan ngemu kabeh unsur sadurunge
+bayangan kasebut. Dadi $f^{-1}(x) = x$
+miturut pilihan $b$. Mula $x < b$.
+\end{proof}
+
+Asil sabanjure nuduhake, kanthi ringkes, yen
+``perangan wiwitan'' saka isomorfisme uga isomorfisme:
+
+\begin{lem}\ollabel{wellordinitialsegment}
+Upamane $\tuple{A, <}$ lan $\tuple{B, \lessdot}$
+urutan becik. Yen $f \colon A \to B$ isomorfisme
+lan $a \in A$, mula
+$\funrestrictionto{f}{A_{a}} : A_a \to B_{f(a)}$
+uga isomorfisme.
+\end{lem}
+
+\begin{proof}
+Amarga $f$ isomorfisme:
+	%Amarga $f$ isomorfisme, $b < a$ yen lan mung yen $f(b) \lessdot f(a)$, mula
+\begin{align*}
+	\funimage{f}{A_a} &= \funimage{f}{\Setabs{x \in A}{x < a}}\\
+	&= \funimage{f}{\Setabs{f^{-1}(y) \in A}{f^{-1}(y) < a}} \\
+	&= \Setabs{y \in B}{y \lessdot f(a)} \\
+	&=B_{f(a)} 
+\end{align*}
+Lan $\funrestrictionto{f}{A_a}$ njaga urutan amarga
+$f$ uga njaga urutan.
+\end{proof}
+
+Rong asil sabanjure nuduhake yen urutan becik mesthi
+bisa dibandhingake:
+
+\begin{lem}\ollabel{lemordsegments}
+Upamane $\tuple{A, <}$ lan $\tuple{B, \lessdot}$
+urutan becik. Yen
+$\ordeq{\tuple{A_{a_1}, <_{a_1}}}{\tuple{B_{b_1}, \lessdot_{b_1}}}$
+lan $\ordeq{\tuple{A_{{a_2}}, <_{a_2}}}{\tuple{B_{{b_2}},
+\lessdot_{b_2}}}$, mula
+${a_1}  < {a_2} \text{ yen lan mung yen }{b_1} \lessdot {b_2}$.
+\end{lem}
+
+\begin{proof}
+Kita buktekake arah \emph{kiwa menyang tengen}; arah
+kosok baline padha. Upamane
+$\ordeq{\tuple{A_{a_1}, <_{a_1}}}{\tuple{B_{b_1},
+\lessdot_{b_1}}}$ lan $\ordeq{\tuple{A_{{a_2}},
+<_{a_2}}}{\tuple{B_{{b_2}}, \lessdot_{b_2}}}$,
+kanthi $f \colon A_{{a_2}} \to B_{{b_2}}$ minangka
+isomorfisme kita. Upamane ${a_1} < {a_2}$; mula
+$\ordeq{\tuple{A_{a_1}, <_{a_1}}}{\tuple{B_{f({a_1})},
+\lessdot_{f({a_1})}}}$ miturut
+\olref{wellordinitialsegment}. Dadi
+$\ordeq{\tuple{B_{b_1}, \lessdot_{b_1}}}{\tuple{B_{f({a_1})},
+\lessdot_{f({a_1})}}}$, mula ${b_1} = f({a_1})$
+miturut \olref{wellordnotinitial}. Saiki
+${b_1} \lessdot {b_2}$ amarga jangkauan $f$ iku
+$B_{{b_2}}$.
+\end{proof}
+
+\begin{thm}\ollabel{thm:woalwayscomparable}
+Kanggo sembarang rong urutan becik, salah sijine
+isomorfis karo perangan wiwitan (ora kudu sejati)
+saka liyane.
+\end{thm}
+
+\begin{proof}
+Upamane $\tuple{A, <}$ lan $\tuple{B, \lessdot}$
+urutan becik. Kanthi Pamisahan, temtokna
+\[
+	f = \Setabs{\tuple{a, b} \in A \times B}{
+		\ordeq{\tuple{A_a, <_a}}{\tuple{B_b, \lessdot_b}}}.
+\]
+Miturut \olref{lemordsegments}, $a_1 < a_2$ yen lan
+mung yen $b_1 \lessdot b_2$ kanggo kabeh
+$\tuple{a_1, b_1}, \tuple{a_2, b_2} \in f$.
+Mula $f \colon \dom{f} \to \ran{f}$ isomorfisme.
+
+Yen $a_2 \in \dom{f}$ lan $a_1 < a_2$, mula
+$a_1 \in \dom{f}$ miturut
+\olref{wellordinitialsegment}; dadi $\dom{f}$
+perangan wiwitan saka $A$. Semono uga, $\ran{f}$
+perangan wiwitan saka $B$. Kanggo kontradiksi,
+upamane loro-lorone perangan wiwitan \emph{sejati}.
+Pilihen $a$ minangka !!{element} paling cilik miturut
+$<$ ing $A \setminus \dom{f}$, dadi
+$\dom{f} = A_a$; lan pilihen $b$ minangka !!{element}
+paling cilik miturut $\lessdot$ ing
+$B \setminus \ran{f}$, dadi $\ran{f} = B_b$.
+Mula $f \colon A_a \to B_b$ isomorfisme, saengga
+$\tuple{a, b} \in f$, sawijining kontradiksi.
+\end{proof}
+
+\end{document}

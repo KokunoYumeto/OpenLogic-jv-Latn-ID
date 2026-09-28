@@ -1,0 +1,135 @@
+% Part: incompleteness
+% Chapter: representability-in-q
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{req}{int}
+\olsection{Pambuka}
+
+Teorema-teorema ora-jangkep lumaku kanggo teori kang bisa
+nyatakake lan mbuktekake fakta dhasar ngenani fungsi komputabel.
+Kita bakal njlentrehake teori kang minimal banget kaya mangkono,
+diarani ``$\Th{Q}$'' (utawa kadhangkala ``$Q$ Robinson,''
+miturut Raphael Robinson). Kita bakal nerangake teges fungsi
+kang \emph{representabel} ing $\Th{Q}$, banjur mbuktekake iki:
+\begin{quote}
+  Sawijining fungsi representabel ing $\Th{Q}$ yen lan mung yen komputabel.
+\end{quote}
+Iki menehi model komputabilitas liyane. Kajaba iku, kita bakal
+nggunakake kanggo nuduhake yen himpunan
+$\Setabs{!A}{\Th{Q} \Proves !A}$ ora bisa diputusake, kanthi
+ngreduksi masalah mandheg marang himpunan iki. Ing pungkasan,
+kita bakal mbuktekake pratelan kang luwih kuwat tinimbang iki.
+
+Basa $\Th{Q}$ iku basa aritmetika; $\Th{Q}$ dumadi saka
+aksioma-aksioma iki (kang digunakake bebarengan karo aksioma
+lan aturan liyane saka logika orde kapisan kanthi !!{identity}):
+\begin{align*}
+& \lforall[x][\lforall[y][(\eq[x'][y'] \lif \eq[x][y])]] \tag{$!Q_1$}\\
+& \lforall[x][\eq/[\Obj 0][x']] \tag{$!Q_2$}\\
+& \lforall[x][(\eq[x][\Obj 0] \lor \lexists[y][\eq[x][y']])] \tag{$!Q_3$}\\
+& \lforall[x][\eq[(x + \Obj 0)][x]] \tag{$!Q_4$}\\
+& \lforall[x][\lforall[y][\eq[(x + y')][(x + y)']]] \tag{$!Q_5$}\\
+& \lforall[x][\eq[(x \times \Obj 0)][\Obj 0]] \tag{$!Q_6$}\\
+& \lforall[x][\lforall[y][\eq[(x \times y')][((x \times y) + x)]]] \tag{$!Q_7$}\\
+& \lforall[x][\lforall[y][(x < y \liff \lexists[z][\eq[(z' + x)][y]])]] \tag{$!Q_8$}
+\end{align*}
+Kanggo saben bilangan asli $n$, tetepna numeral $\num{n}$ minangka
+suku $\Obj{0}^{\prime\prime\ldots\prime}$ kang nduweni $n$
+tandha prima kabeh. Mula $\num{0}$ iku !!{constant}~$\Obj{0}$
+wae, $\num{1}$ iku $\Obj{0}'$, $\num{2}$ iku $\Obj{0}''$,
+lan sapiturute.
+
+Minangka teori aritmetika, $\Th{Q}$ iku \emph{ringkih banget};
+umpamane, fakta kang prasaja kaya
+$\lforall[x][\eq/[x][x']]$ utawa $\lforall[x][\lforall[y][(x + y) = (y +
+    x)]]$ wae ora bisa dibuktekake. Nanging kita bakal weruh yen
+$\Th{Q}$ narik kawigaten malah \emph{amarga} ringkihe kuwi.
+Sejatine, kekuwatane mung pas cukup supaya teorema ora-jangkep
+lumaku. Alesan liyane kenapa $\Th{Q}$ narik kawigaten yaiku
+himpunan aksiomane \emph{winates}.
+
+Teori kang luwih kuwat tinimbang $\Th{Q}$ (diarani
+\emph{aritmetika Peano} $\Th{PA}$) diduweni kanthi nambahake
+skema induksi marang~$\Th{Q}$:
+\[
+(!A(\Obj 0) \land \lforall[x][(!A(x) \lif !A(x'))]) \lif \lforall[x][!A(x)]
+\]
+ing ngendi $!A(x)$ iku formula sembarang. Yen $!A(x)$ ngemot
+!!{variable}s bebas liyane saliyane $x$, kita nambahake
+kuantor universal ing ngarep kanggo ngiket kabeh variabel mau
+(supaya instans skema induksi kang cocog iku !!a{sentence}).
+Upamane, yen $!A(x, y)$ uga ngemot !!{variable}~$y$ kang
+bebas, instans kang cocog yaiku
+\[
+\lforall[y][((!A(\Obj 0) \land \lforall[x][(!A(x) \lif !A(x'))]) \lif
+  \lforall[x][!A(x)])]
+\]
+Kanthi nggunakake instans skema induksi, luwih akeh pratelan
+bisa dibuktekake saka aksioma~$\Th{PA}$ tinimbang saka
+aksioma $\Th{Q}$. Malah, golek pratelan ``alamiah'' ngenani
+bilangan asli kang ora bisa dibuktekake ing aritmetika Peano
+mbutuhake gaweyan kang akeh!{}
+
+\begin{defn}
+\ollabel{defn:representable-fn}
+  Fungsi $f(x_0,\ldots,x_k)$ saka bilangan asli menyang
+  bilangan asli diarani {\em representabel ing $\Th{Q}$} yen
+  ana formula $!A_f(x_0,\dots,x_k,y)$ saengga saben
+  $f(n_0,\dots,n_k) = m$, $\Th{Q}$ mbuktekake
+\begin{enumerate}
+\item\ollabel{defn:rep:a} $!A_f(\num{n_0}, \dots, \num{n_k}, \num{m})$
+\item\ollabel{defn:rep:b} $\lforall[y][(!A_f(\num{n_0}, \dots,
+\num{n_k}, y) \lif \num{m} = y)]$.
+\end{enumerate}
+\end{defn}
+
+Ana cara liyane kanggo nyatakake definisi iki; upamane,
+kanthi padha tegese kita bisa mbutuhake supaya $\Th{Q}$
+mbuktekake $\lforall[y][(!A_f(\num{n_0}, \dots,
+\num{n_k}, y) \liff \eq[y][\num{m}])]$.
+
+\begin{thm}
+\ollabel{thm:representable-iff-comp}
+Sawijining fungsi representabel ing $\Th{Q}$ yen lan mung yen komputabel.
+\end{thm}
+
+Ana rong arah kanggo mbuktekake teorema iki. Arah saka kiwa
+menyang tengen cukup gampang sawisé sintaks wis diaritmetisasi.
+Arah sijine mbutuhake gaweyan luwih akeh. Gagasan dhasare:
+kita nggunakake ``rekursif umum'' kanggo menehi teges kang
+pas marang ``komputabel'', banjur nuduhake yen saben fungsi
+rekursif umum representabel ing~$\Th{Q}$. Elinga yen fungsi
+iku rekursif umum yen bisa ditegesi saka $\Zero$, fungsi
+penerus~$\Succ$, lan fungsi proyeksi~$\Proj{n}{i}$, kanthi
+komposisi, rekursi primitif, lan panggolekan tanpa wates reguler.
+Mula salah siji cara nuduhake yen saben fungsi rekursif umum
+representabel ing~$\Th{Q}$ yaiku nuduhake yen fungsi dhasar
+representabel, lan yen sawetara fungsi representabel, mula
+fungsi kang ditegesi saka fungsi mau nganggo komposisi,
+rekursi primitif, lan panggolekan tanpa wates reguler uga
+representabel. Kanthi tembung liya, kita bisa nuduhake yen
+fungsi dhasar representabel lan himpunan fungsi representabel
+``katutup tumrap'' komposisi, rekursi primitif, lan panggolekan
+tanpa wates reguler. Iki njamin saben fungsi rekursif umum
+representabel.
+
+Nyatane, langkah kanggo nuduhake yen fungsi representabel
+katutup tumrap rekursi primitif iku angel. Supaya ora perlu
+langkah iki, kita luwih dhisik nuduhake yen rekursi primitif
+sejatine bisa ditinggalake. Tegese, saben fungsi rekursif umum
+bisa ditegesi saka fungsi dhasar mung nganggo komposisi lan
+panggolekan tanpa wates reguler. Kanggo iki, kita nuduhake
+yen rekursi primitif bisa ditindakake liwat sawijining
+panggolekan tanpa wates reguler kang tartamtu. Nanging supaya
+iki bisa lumaku, kita kudu nambah sawetara fungsi dhasar:
+panjumlahan, perkalian, lan fungsi karakteristik saka relasi
+identitas~$\Char{=}$. Banjur kita bisa mbuktekake teorema
+kanthi nuduhake yen kabeh fungsi dhasar \emph{iki}
+representabel ing~$\Th{Q}$, lan fungsi representabel katutup
+tumrap komposisi lan panggolekan tanpa wates reguler.
+
+\end{document}

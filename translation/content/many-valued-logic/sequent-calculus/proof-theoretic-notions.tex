@@ -1,0 +1,178 @@
+% Part: many-valued-logics
+% Chapter: sequent-calculus
+% Section: proof-theoretic-notions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{seq}{prf}
+
+\olsection{Gagasan Téori Bukti}
+
+\begin{explain}
+Kaya déné kita wis netepaké sawetara gagasan semantik kang wigati
+(validitas, akibat semantis, lan bisa dicukupi), saiki kita
+netepaké \emph{gagasan téori bukti} kang cocog. Gagasan iki
+ora ditetepaké miturut dicukupi utawa orané !!{sentence}s
+ing !!{structure}s, nanging miturut !!{derivability} utawa
+!!{nonderivability} saka sekèn tartamtu. Kasunyatan yèn
+gagasan-gagasan iki cocog iku panemuan wigati; iki isi
+\emph{téoréma kasahihan} lan \emph{téoréma kelengkapan}.
+\end{explain}
+
+\begin{defn}[Téoréma]
+!!^a{sentence}~$!A$ diarani \emph{téoréma} yèn ana
+!!a{derivation} ing~$\Log{LK}$ kanggo sekèn
+$\quad \Sequent !A$. Kita nulis $\Proves !A$ yèn $!A$
+iku téoréma, lan $\Proves/ !A$ yèn ora.
+\end{defn}
+
+\begin{defn}[!!^{derivability}]
+!!^a{sentence}~$!A$ \emph{!!{derivable} saka} himpunan
+!!{sentence}s~$\Gamma$, yaiku $\Gamma \Proves !A$,
+yèn lan mung yèn ana himpunan pérangan winates
+$\Gamma_0 \subseteq \Gamma$ lan runtutan $\Gamma_0'$
+saka !!{sentence}s ing~$\Gamma_0$ saéngga $\Log{LK}$
+!!{derive}s $\Gamma_0' \Sequent !A$. Yèn $!A$ ora
+!!{derivable} saka $\Gamma$, kita nulis
+$\Gamma \Proves/ !A$.
+\end{defn}
+
+Amarga ana aturan kontraksi, pelemahan, lan pertukaran,
+urutan lan cacah !!{sentence}s ing~$\Gamma_0'$ ora wigati:
+yèn sekèn $\Gamma_0' \Sequent !A$ !!{derivable},
+mula $\Gamma_0'' \Sequent !A$ uga mangkono kanggo
+saben $\Gamma_0''$ kang ngemot !!{sentence}s kang padha
+karo~$\Gamma_0'$. Umpamané, yèn $\Gamma_0 = \{!B, !C\}$,
+$\Gamma_0' = \tuple{!B, !B, !C}$ lan $\Gamma_0'' =
+\tuple{!C, !C, !B}$ padha-padha runtutan kang mung
+ngemot !!{sentence}s ing~$\Gamma_0$.
+Yèn sekèn kanthi salah sijiné !!{derivable},
+mula sekèn nganggo sijiné uga, umpamané:
+\begin{prooftree}
+  \AxiomC{}
+  \Deduce$!B, !B, !C \fCenter !A$
+  \RightLabel{\LeftR{\Contraction}}
+  \UnaryInf$!B, !C \fCenter !A$
+  \RightLabel{\LeftR{\Exchange}}
+  \UnaryInf$!C, !B \fCenter !A$
+  \RightLabel{\LeftR{\Weakening}}
+  \UnaryInf$!C, !C, !B \fCenter !A$
+\end{prooftree}
+Wiwit saiki, yèn $\Gamma_0$ iku himpunan winates saka
+!!{sentence}s, notasi $\Gamma_0 \Sequent !A$ tegesé
+sekèn sembarang kang antesèdené runtutan !!{sentence}s
+ing~$\Gamma_0$. Yèn perlu, kita anggep aturan kontraksi,
+pertukaran, lan pelemahan wis ditrapaké kanthi meneng-meneng.
+
+\begin{defn}[Konsistènsi]
+Himpunan ukara~$\Gamma$ diarani \emph{ora konsisten}
+yèn lan mung yèn ana himpunan pérangan winates
+$\Gamma_0 \subseteq \Gamma$ saéngga $\Log{LK}$
+!!{derive}s $\Gamma_0 \Sequent \quad$.
+Yèn $\Gamma$ ora mangkono, yaiku yèn kanggo saben
+$\Gamma_0 \subseteq \Gamma$ kang winates, $\Log{LK}$
+ora !!{derive} $\Gamma_0 \Sequent \quad$,
+mula diarani \emph{konsisten}.
+\end{defn}
+
+\begin{prop}[Refleksivitas]
+\ollabel{prop:reflexivity}
+Yèn $!A \in \Gamma$, mula $\Gamma \Proves !A$.
+\end{prop}
+
+\begin{proof}
+Sekèn wiwitan $!A \Sequent !A$ iku !!{derivable},
+lan $\{!A\} \subseteq \Gamma$.
+\end{proof}
+  
+\begin{prop}[Monotonisitas]
+\ollabel{prop:monotonicity}
+Yèn $\Gamma \subseteq \Delta$ lan $\Gamma \Proves !A$,
+mula $\Delta \Proves !A$.
+\end{prop}
+
+\begin{proof}
+Anggepen $\Gamma \Proves !A$, yaiku ana $\Gamma_0
+\subseteq \Gamma$ kang winates saéngga
+$\Gamma_0 \Sequent !A$ iku !!{derivable}.
+Amarga $\Gamma \subseteq \Delta$, $\Gamma_0$ uga
+himpunan pérangan winates saka~$\Delta$.
+Mula !!{derivation} kanggo $\Gamma_0 \Sequent !A$
+uga nuduhaké $\Delta \Proves !A$.
+\end{proof}
+
+\begin{prop}[Transitivitas]
+\ollabel{prop:transitivity}
+Yèn $\Gamma \Proves !A$ lan $\{!A\} \cup \Delta \Proves
+!B$, mula $\Gamma \cup \Delta \Proves !B$.
+\end{prop}
+
+\begin{proof}
+Yèn $\Gamma \Proves !A$, ana $\Gamma_0 \subseteq \Gamma$
+kang winates lan !!a{derivation}~$\pi_0$ kanggo
+$\Gamma_0 \Sequent !A$. Yèn $\{!A\} \cup \Delta \Proves !B$,
+mula kanggo sawatara $\Delta_0 \subseteq \Delta$ kang winates,
+ana !!a{derivation}~$\pi_1$ kanggo $!A, \Delta_0
+\Sequent !B$. Delengen !!{derivation} iki:
+\begin{prooftree}
+  \AxiomC{}
+  \RightLabel{$\pi_0$}
+  \Deduce$\Gamma_0 \fCenter !A$
+  \AxiomC{}
+  \RightLabel{$\pi_1$}
+  \Deduce$!A, \Delta_0 \fCenter !B$
+  \RightLabel{\Cut}
+  \BinaryInf$\Gamma_0, \Delta_0 \fCenter !B$
+\end{prooftree}
+Amarga $\Gamma_0 \cup \Delta_0 \subseteq \Gamma \cup \Delta$,
+iki nuduhaké $\Gamma \cup \Delta \Proves !B$.
+\end{proof}
+
+Mligi, iki ateges yèn $\Gamma \Proves !A$ lan $!A
+\Proves !B$, mula $\Gamma \Proves !B$.
+Uga, yèn $!A_1, \dots, !A_n \Proves !B$
+lan $\Gamma \Proves !A_i$ kanggo saben~$i$,
+mula $\Gamma \Proves !B$.
+
+\begin{prop}
+\ollabel{prop:incons}
+$\Gamma$ ora konsisten yèn lan mung yèn
+$\Gamma \Proves {!A}$ kanggo saben ukara~$!A$.
+\end{prop}
+
+\begin{proof}
+Gladhen.
+\end{proof}
+
+\begin{prob}
+Buktèkna \olref[mvl][seq][prf]{prop:incons}
+\end{prob}
+
+\begin{prop}[Kompaknes]
+  \ollabel{prop:proves-compact}
+  \begin{enumerate}
+  \item Yèn $\Gamma \Proves !A$, ana himpunan pérangan winates
+    $\Gamma_0 \subseteq \Gamma$ saéngga
+    $\Gamma_0 \Proves !A$.
+  \item Yèn saben himpunan pérangan winates saka~$\Gamma$
+    konsisten, mula $\Gamma$ konsisten.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+    \item Yèn $\Gamma \Proves !A$, ana himpunan pérangan winates
+      $\Gamma_0 \subseteq \Gamma$ saéngga sekèn
+      $\Gamma_0 \Sequent !A$ nduwèni !!a{derivation}.
+      Akibaté, $\Gamma_0 \Proves !A$.
+    \item Yèn $\Gamma$ ora konsisten, ana himpunan pérangan
+      winates~$\Gamma_0 \subseteq \Gamma$ saéngga $\Log{LK}$
+      !!{derive}s $\Gamma_0 \Sequent \quad$.
+      Nanging $\Gamma_0$ iku himpunan pérangan winates
+      saka~$\Gamma$ kang ora konsisten.
+  \end{enumerate}
+\end{proof}
+
+\end{document}

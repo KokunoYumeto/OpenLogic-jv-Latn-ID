@@ -1,0 +1,276 @@
+% Part: normal-modal-logic
+% Chapter: tableaux
+% Section: soundness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{tab}{sou}
+
+\olsection{Kesahihan kanggo \Log{K}}
+
+\begin{editorial}
+  Bukti kesahihan iki nggunakake maneh bukti kesahihan kanggo logika
+  proposisional klasik, yaiku mbuktekake kabeh saka wiwitan. Iki ora
+  dadi masalah yen dikarepake bukti kesahihan kang mandiri. Yen
+  kesahihan tableau lumrah wis disinaoni, pérangan iki bakal krasa
+  mbaleni. Ana rancangan supaya pamaca bisa milih antarane versi
+  mandiri lan versi kang adhedhasar kasus nonmodal.
+\end{editorial}
+
+\begin{explain}
+  Kanggo nuduhake yen !!{tableau}s mawa prefiks iku sah, kita kudu
+  nuduhake yen manawa
+  \[
+  \sFmla{\True}{!B_1}[1], \dots, \sFmla{\True}{!B_n}[1], \sFmla{\False}{!A}[1]
+  \]
+  nduweni !!{tableau} katutup, mula $!B_1, \dots, !B_n \Entails !A$.
+  Luwih gampang mbuktekake kontraposisine: yen ana $\mModel{M}$ lan
+  jagad~$w$ kang nyukupi $\mSat{M}{!B_i}[w]$ kanggo kabeh $i=1$,
+  \dots,~$n$, nanging $\mSat/{M}{!A}[w]$, mula ora ana !!{tableau}
+  kang bisa katutup. Kontramodel mangkono nuduhake yen asumsi wiwitan
+  !!{tableau} bisa dicukupi. Strategi buktine yaiku nuduhake yen saben
+  !!{formula}s mawa prefiks ing sawijining cabang !!a{tableau} bisa
+  dicukupi, ngetrapake aturan apa wae bakal ngasilake paling ora siji
+  cabang kang wis dikembangake lan isih bisa dicukupi. Amarga cabang
+  katutup ora bisa dicukupi, saben !!{tableau} kanggo himpunan
+  !!{formula}s mawa prefiks kang bisa dicukupi mesthi nduweni paling
+  ora siji cabang bukak.
+
+  Kanggo ngetrapake strategi iki ing kasus modal, definisi ``bisa
+  dicukupi'' kudu diambakake menyang model modal lan prefiks. Sawise
+  iku, buktine dadi langsung.
+\end{explain}
+
+\begin{defn}
+  Upamane $P$ sawijining himpunan prefiks, yaiku $P \subseteq (\PosInt)^*
+  \setminus \{\emptyseq\}$, lan upamane $\mModel{M}$ sawijining model.
+  Fungsi~$f\colon P \to W$ iku \emph{interpretasi saka}~$P$
+  ing~$\mModel{M}$ yen, saben $\sigma$ lan $\sigma.n$ loro-lorone
+  ana ing~$P$, mula $Rf(\sigma)f(\sigma.n)$.
+
+  Relatif marang interpretasi prefiks~$P$, kita bisa netepake:
+  \begin{enumerate}
+  \item $\mModel{M}$ nyukupi $\sFmla{\True}{!A}[\sigma]$ yen lan mung yen
+    $\mSat{M}{!A}[f(\sigma)]$.
+  \item $\mModel{M}$ nyukupi $\sFmla{\False}{!A}[\sigma]$ yen lan mung yen
+    $\mSat/{M}{!A}[f(\sigma)]$.
+  \end{enumerate}
+\end{defn}
+
+\begin{defn}
+  Upamane $\Gamma$ sawijining himpunan !!{formula}s mawa prefiks, lan
+  $P(\Gamma)$ himpunan prefiks kang katon ing kono. Yen $f$
+  interpretasi saka~$P(\Gamma)$ ing $\mModel{M}$, kita nyebut
+  $\mModel{M}$ nyukupi $\Gamma$ relatif marang~$f$,
+  $\mSat{M}{\Gamma}[f]$, yen $\mModel{M}$ nyukupi saben !!{formula}
+  mawa prefiks ing~$\Gamma$ relatif marang~$f$. $\Gamma$
+  \emph{bisa dicukupi} yen lan mung yen ana model~$\mModel{M}$ lan
+  interpretasi~$f$ saka $P(\Gamma)$ kang nyukupi
+  $\mSat{M}{\Gamma}[f]$.
+\end{defn}
+
+\begin{prop}
+  Yen $\Gamma$ ngemot $\sFmla{\True}{!A}[\sigma]$ lan
+  $\sFmla{\False}{!A}[\sigma]$, kanggo sawijining !!{formula}~$!A$
+  lan prefiks~$\sigma$, mula $\Gamma$ ora bisa dicukupi.
+\end{prop}
+
+\begin{proof}
+  Ora mungkin ana model~$\mModel{M}$ lan interpretasi~$f$ saka
+  $P(\Gamma)$ kang nyukupi $\mSat{M}{!A}[f(\sigma)]$ lan
+  $\mSat/{M}{!A}[f(\sigma)]$.
+\end{proof}
+
+\begin{thm}[Kesahihan]
+  \ollabel{thm:tableau-soundness}
+  Yen $\Gamma$ nduweni !!{tableau} katutup, $\Gamma$ ora bisa dicukupi.
+\end{thm}
+
+\begin{proof}
+Cabang saka !!a{tableau} diarani bisa dicukupi yen lan mung yen
+himpunan !!{signed formula}s ing cabang iku bisa dicukupi; !!a{tableau}
+diarani bisa dicukupi yen ngemot paling ora siji cabang kang bisa
+dicukupi.
+
+Kita nuduhake pratelan iki: ngambakake !!{tableau} kang bisa dicukupi
+kanthi salah siji aturan inferensi mesthi ngasilake !!{tableau} kang
+isih bisa dicukupi. Iki bakal mbuktekake teorema: saben !!{tableau}
+katutup diasilake kanthi ngetrapake aturan inferensi marang
+!!{tableau} kang mung dumadi saka asumsi saka~$\Gamma$. Dadi yen
+$\Gamma$ bisa dicukupi, saben !!{tableau} kanggo himpunan iku uga bisa
+dicukupi. Nanging !!{tableau} katutup cetha ora bisa dicukupi, amarga
+kabeh cabange katutup lan cabang katutup ora bisa dicukupi.
+
+Upamane kita nduweni !!{tableau} kang bisa dicukupi, yaiku
+!!a{tableau} kang nduweni paling ora siji cabang kang bisa dicukupi.
+Ngetrapake aturan inferensi bisa nambah !!{signed formula}s ing
+sawijining cabang utawa mecah cabang dadi loro. Yen !!{tableau} duwe
+cabang kang bisa dicukupi lan ora diambakake dening aturan kasebut,
+cabang iku tetep bisa dicukupi ing !!{tableau} kang wis dikembangake,
+mula tableau kang wis dikembangake uga bisa dicukupi. Dadi kita mung
+kudu nggatekake kasus nalika aturan ditrapake marang cabang kang bisa
+dicukupi.
+
+Upamane $\Gamma$ himpunan !!{signed formula}s ing cabang kasebut,
+lan $\sFmla{S}{!A}[\sigma] \in \Gamma$ iku !!{signed formula} kang
+dikenani aturan. Yen aturan iku ora mecah cabang, kita kudu nuduhake
+yen cabang kang wis dikembangake, yaiku $\Gamma$ bebarengan karo
+kesimpulan aturan iku, isih bisa dicukupi. Yen aturan iku mecah cabang,
+kita kudu nuduhake yen paling ora siji saka rong cabang asile bisa
+dicukupi.
+\tagfalse{prvDiamond}
+Kaping pisan, kita nggatekake inferensi kang ora mecah cabang.
+\begin{enumerate}
+\item Cabang diambakake kanthi ngetrapake $\TRule{\True}{\lnot}$ marang
+  $\sFmla{\True}{\lnot !B}[\sigma] \in \Gamma$. Banjur cabang kang
+  wis diambakake ngemot !!{signed formula}s $\Gamma \cup
+  \{\sFmla{\False}{!B}[\sigma]\}$. Upamane $\mSat{M}{\Gamma}[f]$.
+  Mligine, $\mSat{M}{\lnot !B}[f(\sigma)]$. Mula,
+  $\mSat/{M}{!B}[f(\sigma)]$, yaiku $\mModel{M}$ nyukupi
+  $\sFmla{\False}{!B}[\sigma]$ relatif marang~$f$.
+\item Cabang diambakake kanthi ngetrapake $\TRule{\False}{\lnot}$ marang
+  $\sFmla{\False}{\lnot !B}[\sigma] \in \Gamma$: Latihan.
+\item Cabang diambakake kanthi ngetrapake $\TRule{\True}{\land}$ marang
+  $\sFmla{\True}{!B \land !C}[\sigma] \in \Gamma$, kang ngasilake
+  rong !!{signed formula}s anyar ing cabang:
+  $\sFmla{\True}{!B}[\sigma]$ lan $\sFmla{\True}{!C}[\sigma]$. Upamane
+  $\mSat{M}{\Gamma}[f]$, mligine $\mSat{M}{!B \land
+    !C}[f(\sigma)]$. Banjur $\mSat{M}{!B}[f(\sigma)]$ lan
+  $\mSat{M}{!C}[f(\sigma)]$. Iki ateges $\mModel{M}$ nyukupi
+  $\sFmla{\True}{!B}[\sigma]$ lan $\sFmla{\True}{!C}[\sigma]$
+  loro-lorone relatif marang~$f$.
+\item Cabang diambakake kanthi ngetrapake $\TRule{\False}{\lor}$ marang
+  $\sFmla{\False}{!B \lor !C}[\sigma] \in \Gamma$: Latihan.
+\item Cabang diambakake kanthi ngetrapake $\TRule{\False}{\lif}$ marang
+  $\sFmla{\False}{!B \lif !C}[\sigma] \in \Gamma$: Iki ngasilake rong
+  !!{signed formula}s anyar ing cabang: $\sFmla{\True}{!B}[\sigma]$ lan
+  $\sFmla{\False}{!C}[\sigma]$. Upamane
+  $\mSat{M}{\Gamma}[f]$, mligine
+  $\mSat/{M}{!B \lif !C}[f(\sigma)]$. Banjur
+  $\mSat{M}{!B}[f(\sigma)]$ lan
+  $\mSat/{M}{!C}[f(\sigma)]$. Iki ateges
+  $\mModel{M}, f$ nyukupi
+  $\sFmla{\True}{!B}[\sigma]$ lan $\sFmla{\False}{!C}[\sigma]$ loro-lorone.
+
+\iftag{prvBox}{%
+\item Cabang diambakake kanthi ngetrapake $\TRule{\True}{\Box}$ marang
+  $\sFmla{\True}{\Box !B}[\sigma] \in \Gamma$:
+  \iftag{probBox}{Latihan.}{Iki nambah !!{signed
+      formula}~$\sFmla{\True}{!B}[\sigma.n]$ anyar ing cabang, kanggo
+    sawijining $\sigma.n \in P(\Gamma)$ (amarga $\sigma.n$ kudu wis
+    dienggo). Upamane $\mSat{M}{\Gamma}[f]$, mligine $\mSat{M}{\Box
+      !B}[f(\sigma)]$. Amarga $f$ interpretasi prefiks lan
+    $\sigma$ uga $\sigma.n \in P(\Gamma)$, kita ngerti yen
+    $Rf(\sigma)f(\sigma.n)$. Mula $\mSat{M}{!B}[f(\sigma.n)]$,
+    yaiku $\mModel{M}, f$ nyukupi $\sFmla{\True}{!B}[\sigma.n]$.}
+
+\item Cabang diambakake kanthi ngetrapake $\TRule{\False}{\Box}$ marang
+  $\sFmla{\False}{\Box !B}[\sigma] \in \Gamma$:
+  \iftag{probBox}{Latihan.}{Iki ngasilake !!{signed
+      formula}~$\sFmla{\False}{!B}[\sigma.n]$ anyar, kanthi $\sigma.n$
+    minangka prefiks anyar ing cabang, yaiku $\sigma.n \notin P(\Gamma)$.
+    Amarga $\Gamma$ bisa dicukupi, ana $\Struct{M}$ lan
+    interpretasi~$f$ saka $P(\Gamma)$ kang nyukupi $\Sat{M}{\Gamma}[f]$,
+    mligine $\mSat/{M}{\Box !B}[f(\sigma)]$. Kita kudu nuduhake
+    yen $\Gamma \cup \{\sFmla{\False}{!B}[\sigma.n]\}$ bisa
+    dicukupi. Kanggo iku, kita netepake interpretasi saka $P(\Gamma)
+    \cup \{\sigma.n\}$ kaya mangkene:
+
+  Amarga $\mSat/{M}{\Box !B}[f(\sigma)]$, ana $w \in W$ kang nyukupi
+  $Rf(\sigma)w$ lan $\mSat/{M}{!B}[w]$. Upamane $f'$ padha karo $f$,
+  kajaba yen $f'(\sigma.n) = w$. Amarga $f'(\sigma) = f(\sigma)$ lan
+  $Rf(\sigma)w$, kita entuk $Rf'(\sigma)f'(\sigma.n)$, mula $f'$ iku
+  interpretasi saka $P(\Gamma) \cup \{\sigma.n\}$. Cetha yen
+  $\mSat/{M}{!B}[f'(\sigma.n)]$. Amarga $f(\sigma') = f'(\sigma')$
+  kanggo saben prefiks $\sigma' \in P(\Gamma)$,
+  $\mSat{M}{\Gamma}[f']$. Mula $\mModel{M}, f'$ nyukupi $\Gamma \cup
+  \{\sFmla{\False}{!B}[\sigma.n]\}$.}
+  }{}
+
+\iftag{prvDiamond}{%
+\item Cabang diambakake kanthi ngetrapake $\TRule{\True}{\Diamond}$ marang
+  $\sFmla{\True}{\Diamond !B}[\sigma] \in \Gamma$:
+  \iftag{probDiamond}{Latihan.}{Iki ngasilake !!{signed
+      formula}~$\sFmla{\True}{!B}[\sigma.n]$ anyar, kanthi $\sigma.n$
+    minangka prefiks anyar ing cabang, yaiku $\sigma.n \notin P(\Gamma)$.
+    Amarga $\Gamma$ bisa dicukupi, ana $\Struct{M}$ lan
+    interpretasi~$f$ saka $P(\Gamma)$ kang nyukupi $\Sat{M}{\Gamma}[f]$,
+    mligine $\mSat{M}{\Diamond !B}[f(\sigma)]$. Kita kudu nuduhake
+    yen $\Gamma \cup \{\sFmla{\True}{!B}[\sigma.n]\}$ bisa
+    dicukupi. Kanggo iku, kita netepake interpretasi saka $P(\Gamma)
+    \cup \{\sigma.n\}$ kaya mangkene:
+
+  Amarga $\mSat{M}{\Diamond !B}[f(\sigma)]$, ana $w \in W$ kang nyukupi
+  $Rf(\sigma)w$ lan $\mSat{M}{!B}[w]$. Upamane $f'$ padha karo $f$,
+  kajaba yen $f'(\sigma.n) = w$. Amarga $f'(\sigma) = f(\sigma)$ lan
+  $Rf(\sigma)w$, kita entuk $Rf'(\sigma)f'(\sigma.n)$, mula $f'$ iku
+  interpretasi saka $P(\Gamma) \cup \{\sigma.n\}$. Cetha yen
+  $\mSat{M}{!B}[f'(\sigma.n)]$. Amarga $f(\sigma') = f'(\sigma')$
+  kanggo saben prefiks $\sigma' \in P(\Gamma)$,
+  $\mSat{M}{\Gamma}[f']$. Mula $\mModel{M}, f'$ nyukupi $\Gamma \cup
+  \{\sFmla{\True}{!B}[\sigma.n]\}$.}
+\item Cabang diambakake kanthi ngetrapake $\TRule{\False}{\Diamond}$ marang
+  $\sFmla{\False}{\Diamond !B}[\sigma] \in \Gamma$:
+  \iftag{probDiamond}{Latihan.}{Iki nambah !!{signed
+      formula}~$\sFmla{\False}{!B}[\sigma.n]$ anyar ing cabang,
+    kanggo sawijining $\sigma.n \in P(\Gamma)$ (amarga $\sigma.n$
+    kudu wis dienggo). Upamane $\mSat{M}{\Gamma}[f]$, mligine
+    $\mSat/{M}{\Diamond
+      !B}[f(\sigma)]$. Amarga $f$ interpretasi prefiks lan
+    $\sigma$ uga $\sigma.n \in P(\Gamma)$, kita ngerti yen
+    $Rf(\sigma)f(\sigma.n)$. Mula $\mSat/{M}{!B}[f(\sigma.n)]$,
+    yaiku $\mModel{M}, f$ nyukupi $\sFmla{\False}{!B}[\sigma.n]$.}
+  }{}
+\end{enumerate}
+Saiki kita nggatekake inferensi kang mecah cabang.
+\begin{enumerate}
+\item Cabang diambakake kanthi ngetrapake $\TRule{\False}{\land}$ marang
+  $\sFmla{\False}{!B \land !C}[\sigma] \in \Gamma$, kang ngasilake
+  rong cabang: cabang kiwa nerusake liwat
+  $\sFmla{\False}{!B}[\sigma]$ lan cabang tengen liwat
+  $\sFmla{\False}{!C}[\sigma]$. Upamane $\mSat{M}{\Gamma}[f]$,
+  mligine $\mSat/{M}{!B \land !C}[f(\sigma)]$. Banjur
+  $\mSat/{M}{!B}[f(\sigma)]$ utawa $\mSat/{M}{!C}[f(\sigma)]$.
+  Ing kasus kapisan, $\mModel{M}, f$ nyukupi
+  $\sFmla{\False}{!B}[\sigma]$, yaiku cabang kiwa bisa dicukupi.
+  Ing kasus kapindho, $\mModel{M}, f$ nyukupi
+  $\sFmla{\False}{!C}[\sigma]$, yaiku cabang tengen bisa dicukupi.
+\item Cabang diambakake kanthi ngetrapake $\TRule{\True}{\lor}$ marang
+    $\sFmla{\True}{!B \lor !C}[\sigma] \in \Gamma$: Latihan.
+\item Cabang diambakake kanthi ngetrapake $\TRule{\True}{\lif}$ marang
+    $\sFmla{\True}{!B \lif !C}[\sigma] \in \Gamma$: Latihan.
+\end{enumerate}
+\end{proof}
+
+\begin{prob}
+Jangkepna bukti \olref[nml][tab][sou]{thm:tableau-soundness}.
+\end{prob}
+
+\begin{cor}
+\ollabel{cor:entailment-soundness}
+Yen $\Gamma \Proves !A$, mula $\Gamma \Entails !A$.
+\end{cor}
+
+\begin{proof}
+  Yen $\Gamma \Proves !A$, mula kanggo sawetara $!B_1$, \dots,
+  $!B_n \in \Gamma$, himpunan $\Delta = \{\sFmla{\False}{!A}[1],
+  \sFmla{\True}{!B_1}[1], \dots, \sFmla{\True}{!B_n}[1]\}$ nduweni
+  !!{tableau} katutup. Kita arep nuduhake yen $\Gamma \Entails !A$.
+  Upamane ora mangkono, mula ana $\mModel{M}$ lan $w$ kang nyukupi
+  $\mSat{M}{!B_i}[w]$ kanggo $i=1$, \dots,~$n$, nanging
+  $\mSat/{M}{!A}[w]$. Upamane $f(1) = w$; banjur $f$ iku interpretasi
+  saka~$P(\Delta)$ menyang~$\mModel{M}$, lan $\mModel{M}$ nyukupi~$\Delta$
+  relatif marang~$f$. Nanging miturut
+  \olref{thm:tableau-soundness}, $\Delta$ ora bisa dicukupi amarga
+  nduweni !!{tableau} katutup; iki kontradiksi. Dadi mesthi
+  $\Gamma \Entails !A$.
+\end{proof}
+
+\begin{cor}
+\ollabel{cor:weak-soundness}
+Yen $\Proves !A$, mula $!A$ bener ing saben model.
+\end{cor}
+
+\end{document}

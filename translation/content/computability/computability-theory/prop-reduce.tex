@@ -1,0 +1,152 @@
+% Part: computability
+% Chapter: computability-theory
+% Section: prop-reduce
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{thy}{ppr}
+\olsection{Sipat Reduksibilitas}
+
+Kita nulis $A \leq_m B$ yen $A$ bisa
+direduksi menyang~$B$. Notasi iki
+nggambarake yen nalika $A \leq_m B$,
+$A$ ``ora luwih angel tinimbang''~$B$,
+lan $B$ ``padha angel utawa luwih angel
+tinimbang''~$A$; uga yen $\le_m$,
+kaya $\le$ lumrah kanggo wilangan,
+ngurutake himpunan (utawa masalah
+kaputusan) miturut kompleksitase.
+Rong proposisi ing ngisor iki
+nyengkuyung gagasan iki. Proposisi
+kapisan nyebut yen $\le_m$ transitif.
+
+\begin{prop}
+\ollabel{prop:trans-red}
+Yen $A \leq_m B$ lan $B \leq_m C$,
+mula $A \leq_m C$.
+\end{prop}
+
+\begin{proof}
+Komposisi reduksi saka $A$ menyang~$B$
+lan reduksi saka $B$ menyang $C$
+ngasilake reduksi saka $A$ menyang~$C$.
+\end{proof}
+
+\begin{prob}
+Buktekna \olref{prop:trans-red} kanthi
+nuduhake yen $f$ lan~$g$ saben-saben
+reduksi akeh marang siji saka $A$
+menyang~$B$ lan saka $B$ menyang~$C$,
+mula $\comp{f}{g}$ minangka reduksi
+akeh marang siji saka $A$ menyang~$C$.
+\end{prob}
+
+\begin{prop}
+\ollabel{prop:reduce}
+Tetepna $A$ lan $B$ minangka himpunan
+sembarang, lan upamane $A \leq_m B$.
+\begin{enumerate}
+\item Yen $B$ bisa dienumerasi sacara komputabel,
+  semono uga~$A$.
+\item Yen $B$ komputabel, semono uga~$A$.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+Tetepna $f$ minangka reduksi akeh
+marang siji saka $A$ menyang~$B$.
+Kanggo pratelan kapisan, cukup priksa
+yen $B$ minangka domain fungsi parsial~$g$,
+mula $A$ minangka domain~$\comp{f}{g}$:
+\begin{align*}
+x \in A & \text{ yen lan mung yen } f(x) \in B \\
+& \text{ yen lan mung yen }  g(f(x)) \fdefined.
+\end{align*}
+
+Kanggo pratelan kapindho, elinga yen
+$B$~komputabel, mula $B$ lan
+~$\Complement{B}$ bisa dienumerasi
+sacara komputabel
+(\olref[cmp]{thm:ce-comp}). Gampang
+dipriksa yen $f$~uga reduksi akeh
+marang siji saka $\Complement{A}$
+menyang $\Complement{B}$, saengga
+miturut bagean kapisan bukti iki,
+$A$ lan~$\Complement{A}$ loro-lorone
+!!{computably
+enumerable}. Mula $A$
+uga komputabel miturut
+\olref[cmp]{thm:ce-comp}. (Cara liyane,
+priksanen yen $\Char{A} =
+\comp{f}{\Char{B}}$; mula yen
+$\Char{B}$ komputabel, semono uga
+~$\Char{A}$.)
+\end{proof}
+
+\begin{prob}
+Upamane $f$ minangka reduksi akeh
+marang siji saka $A$ menyang~$B$.
+Tuduhna yen $f$ uga reduksi akeh
+marang siji saka $\Complement{A}$
+menyang $\Complement{B}$.
+\end{prob}
+
+\begin{prob}
+% OLPL-142: Sumber beku nulis f saka A menyang B, nanging reduksi akeh marang siji miturut definisi nduwé domain kabeh wilangan asli.
+Tuduhna yen $f\colon \Nat \to \Nat$
+minangka reduksi akeh marang siji,
+mula $\Char{A}
+= \comp{f}{\Char{B}}$.
+\end{prob}
+
+\begin{digress}
+Pangerten reduksibilitas kang luwih
+umum, diarani \emph{reduksibilitas
+Turing}, migunani ing konteks liyane,
+mligine kanggo mbuktekake asil
+ora bisa diputusake. Gatekna yen
+miturut \olref[cmp]{cor:comp-k},
+komplemen~$K_0$ ora bisa direduksi
+menyang~$K_0$, amarga komplemen iku
+ora bisa dienumerasi sacara komputabel.
+Nanging miturut intuisi, yen kowe
+ngerti wangsulan pitakon-pitakon bab
+$K_0$, kowe uga ngerti wangsulan
+pitakon-pitakon bab komplemene.
+Himpunan $A$ diarani bisa direduksi
+miturut Turing menyang~$B$ yen
+wangsulan pitakon bab~$A$ bisa
+ditetepake nganggo prosedur komputabel
+kang bisa takon bab~$B$. Iki luwih
+longgar tinimbang reduksibilitas akeh
+marang siji, kang (1)~mung ngidini
+siji pitakon bab $B$, lan (2)~wangsulan
+``iya'' kudu dadi wangsulan ``iya''
+kanggo pitakon bab $A$, semono uga
+kanggo ``ora''. Isih bener yen
+$A$~bisa direduksi miturut Turing
+menyang~$B$ lan $B$~komputabel,
+mula $A$~uga komputabel (sanajan,
+kaya wis kita deleng, pratelan
+kang padha ora bener kanggo
+enumerabilitas komputabel).
+
+Coba pikirna maneka pangerten
+reduksibilitas kang wis dirembug,
+lan mangertiya bedane. Nanging ing
+bab iki kita mung bakal ngrembug
+reduksibilitas akeh marang siji.
+Kajaba iku, loro jinis reduksibilitas
+ing paragraf sadurunge nduwé padanan
+ing kompleksitas komputasional, kanthi
+syarat tambahan yen mesin Turing
+lumaku ing wektu polinomial: versi
+kompleksitas reduksibilitas akeh marang
+siji diarani \emph{reduksibilitas Karp},
+dene versi kompleksitas reduksibilitas
+Turing diarani \emph{reduksibilitas Cook}.
+\end{digress}
+
+\end{document}

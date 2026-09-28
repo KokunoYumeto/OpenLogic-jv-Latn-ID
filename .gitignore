@@ -8,3 +8,5 @@
 *.blg
 *.synctex.gz
 .build/
+__pycache__/
+*.pyc

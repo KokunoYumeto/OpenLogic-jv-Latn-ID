@@ -1,0 +1,41 @@
+% Part: second-order-logic
+% Chapter: syntax-and-semantics
+% Section: semantic-notions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sol}{syn}{sem}
+\olsection{Gagasan Semantis}
+
+\begin{explain}
+Gagasan logis utama babagan \emph{validitas}, \emph{akibat
+semantis}, lan \emph{bisa dicukupi} ditetepake kanthi cara kang
+padha ing logika orde kapindho lan logika orde kapisan, kejaba
+relasi nyukupi kang dadi dhasare saiki kanggo !!{formula}s
+orde kapindho. Mesthi wae, !!{sentence} orde kapindho iku
+!!a{formula} kang kabeh variabele, kalebu variabel predikat
+lan fungsi, kaiket.
+\end{explain}
+
+\begin{defn}[Validitas]
+Ukara $!A$ iku \emph{valid}, $\Entails !A$, yen lan mung yen
+$\Sat{M}{!A}$ kanggo saben !!{structure}~$\Struct M$.
+\end{defn}
+
+\begin{defn}[Akibat Semantis]
+Himpunan ukara~$\Gamma$ \emph{ngakibatake} ukara~$!A$,
+$\Gamma \Entails !A$, yen lan mung yen kanggo saben
+!!{structure}~$\Struct M$ kang ndadekake
+$\Sat{M}{\Gamma}$, uga $\Sat{M}{!A}$.
+\end{defn}
+
+\begin{defn}[Bisa Dicukupi]
+Himpunan ukara~$\Gamma$ \emph{bisa dicukupi} yen
+$\Sat{M}{\Gamma}$ kanggo sawenehing
+!!{structure}~$\Struct M$. Yen $\Gamma$ ora bisa dicukupi,
+himpunan kasebut diarani \emph{ora bisa dicukupi}.
+\end{defn}
+
+\end{document}

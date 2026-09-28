@@ -1,0 +1,226 @@
+% Part: normal-modal-logic
+% Chapter: tableaux
+% Section: more-soundness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{tab}{msn}
+      
+\olsection{Kesahihan Aturan Tambahan}
+
+Sawijining aturan diarani sah kanggo kelas model yen, saben cabang ing
+!!a{tableau} kang bisa dicukupi ing model saka kelas iku, cabang asil
+ngetrapake aturan kasebut uga bisa dicukupi ing model saka kelas iku.
+
+\begin{prop}
+  \ollabel{prop:soundness-T} 
+  \iftag{prvBox}{\Ax{T}$\Box$}{}%
+  \iftag{notprvBox,notprvDiamond}{}{ lan }%
+  \iftag{prvDiamond}{\Ax{T}$\Diamond$}{}
+  \iftag{notprvBox,notprvDiamond}{iku}{iku}
+  sah kanggo model refleksif.
+\end{prop}
+
+\begin{proof}
+\begin{tagenumerate}{prvBox,prvDiamond}
+\tagitem{prvBox}{Cabang diambakake kanthi ngetrapake T$\Box$ marang
+  $\sFmla{\True}{\Box !B}[\sigma] \in \Gamma$:
+  \iftag{probBox}{Latihan.}{Iki ngasilake !!{signed
+      formula}~$\sFmla{\True}{!B}[\sigma]$ anyar ing cabang. Upamane
+    $\mSat{M}{\Gamma}[f]$, mligine $\mSat{M}{\Box
+      !B}[f(\sigma)]$. Amarga $R$ refleksif, kita ngerti yen
+    $Rf(\sigma)f(\sigma)$. Mula $\mSat{M}{!B}[f(\sigma)]$, yaiku
+    $\mModel{M}, f$ nyukupi $\sFmla{\True}{!B}[\sigma]$.}}{}
+\tagitem{prvDiamond}{Cabang diambakake kanthi ngetrapake T$\Diamond$ marang
+  $\sFmla{\False}{\Diamond !B}[\sigma] \in \Gamma$:
+  \iftag{probDiamond}{Latihan.}{Iki ngasilake !!{signed
+      formula}~$\sFmla{\False}{!B}[\sigma]$ anyar ing cabang. Upamane
+    $\mSat{M}{\Gamma}[f]$, mligine $\mSat/{M}{\Diamond
+      !B}[f(\sigma)]$. Amarga $R$ refleksif, kita ngerti yen
+    $Rf(\sigma)f(\sigma)$. Mula $\mSat/{M}{!B}[f(\sigma)]$, yaiku
+    $\mModel{M}, f$ nyukupi $\sFmla{\False}{!B}[\sigma]$.}}{}
+\end{tagenumerate}
+\end{proof}
+
+\tagprob{probBox,probDiamond}
+\begin{prob}
+  Jangkepna bukti \olref[nml][tab][msn]{prop:soundness-T}
+\end{prob}
+\tagendprob
+
+\begin{prop}
+  \ollabel{prop:soundness-D} 
+  \iftag{prvBox}{\Ax{D}$\Box$}{}%
+  \iftag{notprvBox,notprvDiamond}{}{ lan }%
+  \iftag{prvDiamond}{\Ax{D}$\Diamond$}{}
+  \iftag{notprvBox,notprvDiamond}{iku}{iku}
+  sah kanggo model serial.
+\end{prop}
+
+\begin{proof}
+\begin{tagenumerate}{prvBox,prvDiamond}
+\tagitem{prvBox}{Cabang diambakake kanthi ngetrapake D$\Box$ marang
+  $\sFmla{\True}{\Box !B}[\sigma] \in \Gamma$:
+  \iftag{probBox}{Latihan.}{Iki ngasilake !!{signed
+      formula}~$\sFmla{\True}{\Diamond !B}[\sigma]$ anyar ing
+    cabang. Upamane $\mSat{M}{\Gamma}[f]$, mligine
+    $\mSat{M}{\Box !B}[f(\sigma)]$. Amarga $R$ serial, ana $w
+    \in W$ kang nyukupi $Rf(\sigma)w$. Banjur $\mSat{M}{!B}[w]$, mula
+    $\mSat{M}{\Diamond !B}[f(\sigma)]$. Dadi $\mModel{M}, f$
+    nyukupi $\sFmla{\True}{\Diamond!B}[\sigma]$.}}{}
+\tagitem{prvDiamond}{Cabang diambakake kanthi ngetrapake D$\Diamond$ marang
+  $\sFmla{\False}{\Diamond !B}[\sigma] \in \Gamma$:
+  \iftag{probDiamond}{Latihan.}{Iki ngasilake !!{signed
+      formula}~$\sFmla{\False}{\Box !B}[\sigma]$ anyar ing
+    cabang. Upamane $\mSat{M}{\Gamma}[f]$, mligine
+    $\mSat/{M}{\Diamond !B}[f(\sigma)]$. Amarga $R$ serial, ana $w
+    \in W$ kang nyukupi $Rf(\sigma)w$. Banjur $\mSat/{M}{!B}[w]$, mula
+    $\mSat/{M}{\Box !B}[f(\sigma)]$. Dadi $\mModel{M}, f$
+    nyukupi $\sFmla{\False}{\Box!B}[\sigma]$.}}{}
+\end{tagenumerate}
+\end{proof}
+
+\tagprob{probBox,probDiamond}
+\begin{prob}
+  Jangkepna bukti \olref[nml][tab][msn]{prop:soundness-D}
+\end{prob}
+\tagendprob
+
+\begin{prop}
+  \ollabel{prop:soundness-B} 
+  \iftag{prvBox}{\Ax{B}$\Box$}{}%
+  \iftag{notprvBox,notprvDiamond}{}{ lan }%
+  \iftag{prvDiamond}{\Ax{B}$\Diamond$}{}
+  \iftag{notprvBox,notprvDiamond}{iku}{iku}
+  sah kanggo model simetris.
+\end{prop}
+
+\begin{proof}
+\begin{tagenumerate}{prvBox,prvDiamond}
+\tagitem{prvBox}{Cabang diambakake kanthi ngetrapake B$\Box$ marang
+  $\sFmla{\True}{\Box !B}[\sigma.n] \in \Gamma$:
+  \iftag{probBox}{Latihan.}{Iki ngasilake !!{signed
+      formula}~$\sFmla{\True}{!B}[\sigma]$ anyar ing cabang. Upamane
+    $\mSat{M}{\Gamma}[f]$, mligine $\mSat{M}{\Box
+      !B}[f(\sigma.n)]$. Amarga $f$ interpretasi prefiks ing cabang
+    menyang~$\mModel{M}$, kita ngerti yen
+    $Rf(\sigma)f(\sigma.n)$. Amarga $R$ simetris,
+    $Rf(\sigma.n)f(\sigma)$. Amarga $\mSat{M}{\Box !B}[f(\sigma.n)]$,
+    $\mSat{M}{!B}[f(\sigma)]$. Mula $\mModel{M}, f$ nyukupi
+    $\sFmla{\True}{!B}[\sigma]$.}}{}
+\tagitem{prvDiamond}{Cabang diambakake kanthi ngetrapake B$\Diamond$ marang
+  $\sFmla{\False}{\Diamond !B}[\sigma.n] \in \Gamma$:
+  \iftag{probDiamond}{Latihan.}{Iki ngasilake !!{signed
+      formula}~$\sFmla{\False}{!B}[\sigma]$ anyar ing cabang. Upamane
+    $\mSat{M}{\Gamma}[f]$, mligine $\mSat/{M}{\Diamond
+      !B}[f(\sigma.n)]$. Amarga $f$ interpretasi prefiks ing cabang
+    menyang~$\mModel{M}$, kita ngerti yen
+    $Rf(\sigma)f(\sigma.n)$. Amarga $R$ simetris,
+    $Rf(\sigma.n)f(\sigma)$. Amarga $\mSat/{M}{\Diamond !B}[f(\sigma.n)]$,
+    $\mSat/{M}{!B}[f(\sigma)]$. Mula $\mModel{M}, f$ nyukupi
+    $\sFmla{\False}{!B}[\sigma]$.}}{}
+\end{tagenumerate}
+\end{proof}
+
+\tagprob{probBox,probDiamond}
+\begin{prob}
+  Jangkepna bukti \olref[nml][tab][msn]{prop:soundness-B}
+\end{prob}
+\tagendprob
+
+\begin{prop}
+  \ollabel{prop:soundness-4} 
+  \iftag{prvBox}{\Ax{4}$\Box$}{}%
+  \iftag{notprvBox,notprvDiamond}{}{ lan }%
+  \iftag{prvDiamond}{\Ax{4}$\Diamond$}{}
+  \iftag{notprvBox,notprvDiamond}{iku}{iku}
+  sah kanggo model transitif.
+\end{prop}
+
+\begin{proof}
+\begin{tagenumerate}{prvBox,prvDiamond}
+\tagitem{prvBox}{Cabang diambakake kanthi ngetrapake 4$\Box$ marang
+  $\sFmla{\True}{\Box !B}[\sigma] \in \Gamma$:
+  \iftag{probBox}{Latihan.}{Iki ngasilake !!{signed
+      formula}~$\sFmla{\True}{\Box!B}[\sigma.n]$ anyar ing
+    cabang. Upamane $\mSat{M}{\Gamma}[f]$, mligine
+    $\mSat{M}{\Box !B}[f(\sigma)]$. Amarga $f$ interpretasi prefiks
+    ing cabang menyang~$\mModel{M}$ lan $\sigma.n$ kudu wis dienggo,
+    kita ngerti yen $Rf(\sigma)f(\sigma.n)$. Saiki upamane $w$ jagad
+    sembarang kang nyukupi $Rf(\sigma.n)w$. Amarga $R$ transitif,
+    $Rf(\sigma)w$. Amarga $\mSat{M}{\Box !B}[f(\sigma)]$,
+    $\mSat{M}{!B}[w]$. Mula $\mSat{M}{\Box !B}[f(\sigma.n)]$, lan
+    $\mModel{M}, f$ nyukupi $\sFmla{\True}{\Box !B}[\sigma.n]$.}}{}
+\tagitem{prvDiamond}{Cabang diambakake kanthi ngetrapake 4$\Diamond$ marang
+  $\sFmla{\False}{\Diamond !B}[\sigma] \in \Gamma$:
+  \iftag{probDiamond}{Latihan.}{Iki ngasilake !!{signed
+      formula}~$\sFmla{\False}{\Diamond!B}[\sigma.n]$ anyar ing
+    cabang. Upamane $\mSat{M}{\Gamma}[f]$, mligine
+    $\mSat/{M}{\Diamond !B}[f(\sigma)]$. Amarga $f$ interpretasi
+    prefiks ing cabang menyang~$\mModel{M}$ lan $\sigma.n$ kudu wis
+    dienggo, kita ngerti yen $Rf(\sigma)f(\sigma.n)$. Saiki upamane
+    $w$ jagad sembarang kang nyukupi $Rf(\sigma.n)w$. Amarga $R$
+    transitif, $Rf(\sigma)w$. Amarga $\mSat/{M}{\Diamond !B}[f(\sigma)]$,
+    $\mSat/{M}{!B}[w]$. Mula $\mSat/{M}{\Diamond !B}[f(\sigma.n)]$, lan
+    $\mModel{M}, f$ nyukupi $\sFmla{\False}{\Diamond !B}[\sigma.n]$.}}{}
+\end{tagenumerate}
+\end{proof}
+
+\tagprob{probBox,probDiamond}
+\begin{prob}
+  Jangkepna bukti \olref[nml][tab][msn]{prop:soundness-4}
+\end{prob}
+\tagendprob
+
+\begin{prop}
+  \ollabel{prop:soundness-4r} 
+  \iftag{prvBox}{\Ax{4r}$\Box$}{}%
+  \iftag{notprvBox,notprvDiamond}{}{ lan }%
+  \iftag{prvDiamond}{\Ax{4r}$\Diamond$}{}
+  \iftag{notprvBox,notprvDiamond}{iku}{iku}
+  sah kanggo model Euklidean.
+\end{prop}
+
+\begin{proof}
+\begin{tagenumerate}{prvBox,prvDiamond}
+\tagitem{prvBox}{Cabang diambakake kanthi ngetrapake 4r$\Box$ marang
+  $\sFmla{\True}{\Box !B}[\sigma.n] \in \Gamma$:
+  \iftag{probBox}{Latihan.}{Iki ngasilake !!{signed
+      formula}~$\sFmla{\True}{\Box!B}[\sigma]$ anyar ing cabang. Upamane
+    $\mSat{M}{\Gamma}[f]$, mligine $\mSat{M}{\Box
+      !B}[f(\sigma.n)]$. Amarga $f$ interpretasi prefiks ing cabang
+    menyang~$\mModel{M}$, kita ngerti yen
+    $Rf(\sigma)f(\sigma.n)$. Saiki upamane $w$ jagad sembarang kang
+    nyukupi $Rf(\sigma)w$. Amarga $R$ Euklidean,
+    $Rf(\sigma.n)w$. Amarga $\mSat{M}{\Box !B}[f(\sigma.n)]$,
+    $\mSat{M}{!B}[w]$. Mula $\mSat{M}{\Box !B}[f(\sigma)]$, lan
+    $\mModel{M}, f$ nyukupi $\sFmla{\True}{\Box !B}[\sigma]$.}}{}
+\tagitem{prvDiamond}{Cabang diambakake kanthi ngetrapake 4r$\Diamond$ marang
+  $\sFmla{\False}{\Diamond !B}[\sigma.n] \in \Gamma$:
+  \iftag{probDiamond}{Latihan.}{Iki ngasilake !!{signed
+      formula}~$\sFmla{\False}{\Diamond!B}[\sigma]$ anyar ing cabang. Upamane
+    $\mSat{M}{\Gamma}[f]$, mligine $\mSat/{M}{\Diamond
+      !B}[f(\sigma.n)]$. Amarga $f$ interpretasi prefiks ing cabang
+    menyang~$\mModel{M}$, kita ngerti yen
+    $Rf(\sigma)f(\sigma.n)$. Saiki upamane $w$ jagad sembarang kang
+    nyukupi $Rf(\sigma)w$. Amarga $R$ Euklidean,
+    $Rf(\sigma.n)w$. Amarga $\mSat/{M}{\Diamond !B}[f(\sigma.n)]$,
+    $\mSat/{M}{!B}[w]$. Mula $\mSat/{M}{\Diamond !B}[f(\sigma)]$, lan
+    $\mModel{M}, f$ nyukupi $\sFmla{\False}{\Diamond !B}[\sigma]$.}}{}
+\end{tagenumerate}
+\end{proof}
+
+\tagprob{probBox,probDiamond}
+\begin{prob}
+  Jangkepna bukti \olref[nml][tab][msn]{prop:soundness-4r}
+\end{prob}
+\tagendprob
+
+\begin{cor}
+\ollabel{cor:soundness-logics} Sistem !!{tableau} ing
+\olref[mru]{tab:logics-rules} sah kanggo kelas model kang cocog.
+\end{cor}
+
+\end{document}

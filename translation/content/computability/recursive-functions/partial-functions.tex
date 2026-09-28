@@ -1,0 +1,150 @@
+% Part: computability
+% Chapter: recursive-functions
+% Section: partial-functions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{rec}{par}
+\olsection{Fungsi Rekursif Parsial}
+
+
+Kanggo menehi dhasar marang definisi fungsi rekursif,
+gatekna yen bukti kita bab anane fungsi komputabel
+kang dudu rekursif primitif sejatine mbuktekake luwih
+akeh maneh. Argumene prasaja: kang kita gunakake
+mung kasunyatan yen fungsi $f_0,f_1,\dots$ bisa
+dienumerasi kanthi cara kang ndadekake, minangka
+fungsi saka $x$ lan $y$, $f_x(y)$ komputabel.
+Dadi argumen kasebut lumaku kanggo \emph{golongan
+fungsi apa wae kang bisa dienumerasi kanthi cara
+kaya mangkono}. Iki ndadekake kita nemoni masalah:
+kita kepengin njlentrehake fungsi komputabel kanthi
+eksplisit, nanging saben jlentrehan eksplisit ngenani
+kumpulan fungsi komputabel ora bakal nyakup kabeh!
+
+Carane metu saka masalah iki yaiku nglebokake
+fungsi \emph{parsial}. Kita bakal weruh yen fungsi
+komputabel parsial \emph{bisa} dienumerasi.
+\iftag{TMs}{ Pancen, kita wis meh ngerti iki, amarga
+  mesin Turing bisa dienumerasi kanthi sistematis.}{}
+Kita bakal bali maneh marang argumen diagonal
+lan nliti ngapa argumen kasebut ora bisa lumaku
+nalika fungsi parsial uga dilebokake.
+
+Saiki pitakonane: apa kang kudu ditambahake
+marang fungsi rekursif primitif supaya kita
+entuk kabeh fungsi rekursif parsial? Kita
+kudu nindakake rong perkara:
+\begin{enumerate}
+\item Owahana definisi fungsi rekursif primitif
+  supaya uga ngidini fungsi parsial.
+\item \emph{Tambahna} sawenehing bab marang definisi
+  supaya kalebu fungsi parsial anyar.
+\end{enumerate}
+
+Perkara kapisan gampang. Kaya sadurunge,
+kita miwiti saka fungsi nol, penerus, lan
+proyeksi, banjur nutup golongan iki marang
+komposisi lan rekursi primitif. Bedane mung
+definisi komposisi lan rekursi primitif kudu
+diowahi supaya ngidini sawenehing term ing
+definisi ora nduwé nilai. Yen $f$ lan $g$
+fungsi parsial, kita nulis $f(x) \fdefined$
+kanggo nyatakake yen $f$ ditegesi ing $x$,
+yaiku $x$ kalebu domain $f$; lan
+$f(x) \fundefined$ kanggo nyatakake kosok
+baline, yaiku $f$ ora ditegesi ing~$x$.
+Kita nggunakake $f(x) \simeq g(x)$ kanggo
+nyatakake yen $f(x)$ lan $g(x)$ kalorone
+ora ditegesi, utawa kalorone ditegesi lan
+padha. Notasi iki uga digunakake kanggo
+term kang luwih rumit. Kita netepake
+konvensi yen $h$ lan $g_0$, \dots,~$g_k$
+kabeh fungsi parsial, mula
+\[
+h(g_0(\vec x),\dots,g_k(\vec x))
+\]
+ditegesi yen lan mung yen saben $g_i$ ditegesi
+ing $\vec x$, lan $h$ ditegesi ing
+$g_0(\vec x)$, \dots,~$g_k(\vec x)$.
+Kanthi pangerten iki, definisi komposisi
+lan rekursi primitif kanggo fungsi parsial
+padha kaya sadurunge, kajaba tandha
+'$=$' kudu diganti nganggo '$\simeq$'.
+
+Bab kang ditambahake marang definisi fungsi
+rekursif primitif kanggo entuk fungsi parsial
+yaiku \emph{operator panggolekan tanpa wates}.
+Yen $f(x,\vec z)$ iku fungsi parsial sembarang
+ing wilangan asli, tegese $\mu x \; f(x,\vec z)$
+minangka
+\begin{quote}
+  $x$ paling cilik kang ndadekake
+  $f(0,\vec z), f(1,\vec z), \dots, f(x,\vec
+  z)$ kabeh ditegesi, lan $f(x,\vec z) = 0$,
+  yen $x$ kaya mangkono ana
+\end{quote}
+kanthi pangerten yen $\mu x \; f(x,\vec z)$
+ora ditegesi yen ora ana. Iki netepake
+$\mu x \; f(x,\vec z)$ kanthi unik.
+
+\begin{explain}
+Gatekna yen definisi iki ora nyebut
+\iftag{TMs}{ mesin Turing utawa}{} algoritma
+utawa model komputasi tartamtu. Nanging
+kaya komposisi lan rekursi primitif, ana
+gagasan operasional bab komputasi ing
+panggolekan tanpa wates. Kanggo fungsi
+parsial kang komputabel, argumen kang
+ora nduwé nilai cocog karo input kang
+komputasine ora mandheg. Tata cara
+ngitung $\mu x \; f(x,\vec z)$ yaiku:
+itung $f(0,\vec z), f(1,\vec z),
+f(2,\vec z)$ nganti ana nilai nol
+kang diasilake. Nanging yen salah siji
+komputasi ing antarane ora mandheg,
+komputasi $\mu x \; f(x,\vec z)$
+uga ora mandheg.
+\end{explain}
+
+Yen $R(x,\vec z)$ iku relasi sembarang,
+$\mu x \; R(x,\vec z)$ ditegesi minangka
+$\mu x \; (1 \tsub \Char{R}(x,\vec z))$.
+Kanthi tembung liya, $\mu x \;
+R(x,\vec z)$ ngasilake nilai $x$ paling
+cilik kang nyukupi $R(x,\vec z)$.
+Dadi yen $f(x,\vec z)$ fungsi total,
+$\mu x \; f(x,\vec z)$ padha karo
+$\mu x \; (f(x,\vec z) = 0)$.
+Nanging gatekna yen definisi wiwitan
+luwih umum, amarga ngidini $f(x,\vec z)$
+ora ditegesi ing saben papan (dene
+fungsi karakteristik saka relasi
+mesthi total).
+
+\begin{defn}
+Himpunan \emph{fungsi rekursif parsial}
+yaiku himpunan paling cilik saka fungsi
+parsial ing wilangan asli menyang
+wilangan asli (kanthi aritas warna-warna)
+kang ngemot fungsi nol, penerus, lan
+proyeksi, lan katutup tumrap komposisi,
+rekursi primitif, lan panggolekan tanpa wates.
+\end{defn}
+
+Mesthi wae, sawenehing fungsi rekursif parsial
+uga total, yaiku ditegesi kanggo saben argumen.
+
+\begin{defn}
+\ollabel{defn:recursive-fn}
+Himpunan \emph{fungsi rekursif} yaiku
+himpunan fungsi rekursif parsial kang total.
+\end{defn}
+
+Fungsi rekursif kadhang diarani
+'rekursif total' kanggo nandheske yen
+fungsi iki ditegesi ing saben papan.
+
+\end{document}

@@ -1,0 +1,137 @@
+% Part: proof-theory
+% Chapter: natural-deduction
+% Section: translation-N2i
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{nat}{tni}
+
+\olsection{Nerjemahaké saka \Log{N2} menyang \Log{G2}}
+
+\begin{prop}\ollabel{prop:N2-to-G2} Yèn $\Log{N2c}\ (\Log{N2i}) \Proves
+\Gamma \Sequent !A$, banjur $\Log{G2c}\ (\Log{G2i}) + \Cut \Proves \Gamma'
+\Sequent \Delta$, kanthi $\Gamma'$ minangka multihimpunan !!{formula}s
+asil saka $\Gamma$ sawisé labelé dibusak, lan $\Delta = \{!A\}$
+yèn $!A$ dudu~$\lfalse$, déné $\Delta = \emptyset$ yèn iya.
+\end{prop}
+
+\begin{proof}
+Buktiné nganggo induksi manèh marang dhuwuré
+!!{proof}~$\delta$ kanggo $\Gamma \Sequent !A$.
+Yèn $\delta$ iku aksioma $x:!A \Sequent !A$,
+$\pi$ iku aksioma kang cocog $!A \Sequent !A$
+utawa $\lfalse \Sequent \ $ yèn $!A \ident \lfalse$.
+
+Yèn $\delta$ pungkasané aturan inferènsi, kasusé dibédakaké:
+\begin{enumerate}
+  \item Yèn $R$ iku \Intro{\lif} kanthi formula utama $!B \lif !C$
+  lan $x:!B$ ana ing kontèks premis nanging ora ana ing
+  konklusi, banjur $\delta$ pungkasané
+  \[
+  \AxiomC{}
+  \RightLabel{$\delta_1$}
+  \Deduce$x:!B, \Gamma \fCenter !C$
+  \RightLabel{\Intro{\lif}}
+  \UnaryInf$\Gamma \fCenter !B \lif !C$
+  \DisplayProof
+  \]
+  Hipotesis induksi ngasilaké !!a{proof}~$\pi_1$ kanggo
+  $!B, \Gamma' \Sequent !C$ (utawa kanggo $!B, \Gamma'
+  \Sequent \ $ yèn $!C \ident \lfalse$). Saka kéné kita
+  ngolèhké $\pi$ kanthi ngetrapaké~\RightR{\lif}
+  (sawisé ngetrapaké \RightR{\Weakening} yèn
+  $!C \ident \lfalse$).
+  \item Yèn $R$ iku \Intro{\lif}, nanging $x:!B$ ora ana ing
+  kontèks premis, banjur $\delta$ pungkasané
+  \[
+  \AxiomC{}
+  \RightLabel{$\delta_1$}
+  \Deduce$\Gamma \fCenter !C$
+  \RightLabel{\Intro{\lif}}
+  \UnaryInf$\Gamma \fCenter !B \lif !C$
+  \DisplayProof
+  \]
+  Hipotesis induksi ngasilaké !!a{proof}~$\pi_1$ kanggo
+  $\Gamma' \Sequent !C$ yèn konklusiné dudu falsitas;
+  yèn falsitas, suksèdené kosong lan kita ngetrapaké
+  \RightR{\Weakening} dhisik. Banjur kita ngolèhké $\pi$
+  kanthi ngetrapaké \LeftR{\Weakening} kanggo~$!B$,
+  terus~\RightR{\lif}.
+  \item Yèn $R$ iku \Elim{\lif}, $\delta$ pungkasané
+  \[
+  \AxiomC{}
+  \RightLabel{$\delta_1$}
+  \Deduce$\Gamma_1 \fCenter !B \lif !A$
+  \AxiomC{}
+  \RightLabel{$\delta_2$}
+  \Deduce$\Gamma_2 \fCenter !B$
+  \RightLabel{\Elim{\lif}}
+  \BinaryInf$\Gamma_1, \Gamma_2 \fCenter !A$
+  \DisplayProof
+  \]
+  kanthi $\Gamma = \Gamma_1 \cup \Gamma_2$. Hipotesis induksi
+  ngasilaké !!{proof}s $\pi_1$ kanggo
+  $\Gamma_1' \Sequent !B \lif !A$ lan
+  $\pi_2$ kanggo $\Gamma_2' \Sequent !B$.
+  Kita olèh !!{proof}~$\pi$ kaya mangkéné:
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_1$}
+  \Deduce$\Gamma_1' \fCenter !B \lif !A$
+  \AxiomC{}
+  \RightLabel{$\pi_2$}
+  \Deduce$\Gamma_2' \fCenter !B$
+  \Axiom$!A \fCenter !A$
+  \RightLabel{\LeftR{\lif}}
+  \BinaryInf$!B \lif !A, \Gamma_2' \fCenter !A$
+  \RightLabel{\Cut}
+  \BinaryInf$\Gamma_1', \Gamma_2' \fCenter !A$
+  \DisplayProof
+  \]
+  Multihimpunan $\Gamma_1' \cup \Gamma_2'$ bisa béda karo
+  $\Gamma' = (\Gamma_1 \cup \Gamma_2)'$: tuladhané, yèn
+  $\Gamma_1$ lan $\Gamma_2$ padha-padha ngemot $x:!C$,
+  banjur $\Gamma_1' \cup \Gamma_2'$ ngemot rong salinan $!C$,
+  nanging $(\Gamma_1 \cup \Gamma_2)'$ mung ngemot siji salinan.
+  Iki bisa dibeneraké kanthi nambah inferènsi
+  \LeftR{\Contraction} kang trep.
+
+  Yèn $!A \ident \lfalse$, hipotesis induksi kanggo $\delta_2$
+  tetep ngasilaké !!a{proof} kanggo $\Gamma_2' \Sequent !B$.
+  Konstruksi ing ndhuwur mènèhi !!{proof}~$\pi$ kanthi
+  falsitas~$!A$ ing sisih tengen. Kanthi \Cut marang aksioma
+  falsitas ing sisih kiwa kang suksèdené kosong, kita ngolèhké
+  suksèden kosong kang dibutuhaké.
+\item Yèn $R$ iku \FalseCl, $\delta$ pungkasané
+  \[
+  \AxiomC{}
+  \RightLabel{$\delta_1$}
+  \Deduce$x: \lnot !A, \Gamma \fCenter \lfalse$
+  \RightLabel{\FalseCl}
+  \UnaryInf$\Gamma \fCenter !A$
+  \DisplayProof
+  \]
+  Miturut hipotesis induksi, ana !!a{proof} $\pi_1$ kanggo
+  $\lnot !A, \Gamma' \Sequent \ $. Kita pilih !!{proof}~$\pi$
+  kaya mangkéné:
+  \[
+  \Axiom$!A \fCenter !A$
+  \RightLabel{\RightR{\lnot}}
+  \UnaryInf$\fCenter !A, \lnot !A$
+  \AxiomC{}
+  \RightLabel{$\pi_1$}
+  \Deduce$\lnot !A, \Gamma' \fCenter $
+  \RightLabel{\Cut}
+  \BinaryInf$\Gamma' \fCenter !A$
+  \DisplayProof
+  \]
+\end{enumerate}
+Élinga yèn mung terjemahan \FalseCl{} kang ngasilaké
+!!a{proof}~$\pi$ kanthi luwih saka siji !!{formula} ing sisih
+tengen. Tegesé, terjemahan !!{proof} ing~\Log{N2i}
+iku !!{proof} ing~\Log{G2i}.
+\end{proof}
+
+\end{document}

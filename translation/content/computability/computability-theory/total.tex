@@ -1,0 +1,63 @@
+% Part: computability
+% Chapter: computability-theory
+% Section: total
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{thy}{tot}
+\olsection{Totalitas Ora Bisa Diputusake}
+
+Ayo kita gatekake conto liyane panganggone teorema $s$-$m$-$n$
+kanggo nuduhake yen sawijining perkara ora komputabel. Tetepna
+$\fn{Tot}$ minangka himpunan indeks fungsi komputabel total, yaiku
+\[
+\fn{Tot} = \Setabs{x}{\text{kanggo saben $y$, $\cfind{x}(y)\fdefined$}}.
+\]
+
+\begin{prop}
+\ollabel{prop:total}
+$\fn{Tot}$ ora komputabel.
+\end{prop}
+
+\begin{proof}
+Kanggo ndeleng yen $\fn{Tot}$ ora komputabel, cukup tuduhna yen $K$
+bisa direduksi menyang himpunan iku. Tetepna $h(x,y)$ kang ditetepake dening
+\[
+h(x,y) \simeq
+\begin{cases}
+0 & \text{yen $x \in K$} \\
+\fundefined & \text{yen ora}
+\end{cases}
+\]
+Gatekna yen $h(x,y)$ babar pisan ora gumantung marang $y$.
+Ora angel ndeleng yen $h$~komputabel parsial: kanggo
+input $x, y$, kita ngitung~$h$ kanthi luwih dhisik
+niru fungsi~$\cfind{x}$ nganggo input~$x$; yen komputasi
+iki mandheg, $h(x,y)$ ngasilake $0$ lan mandheg. Mula
+$h(x,y)$ padha karo $\Zero(\umin{s}{T(x,x,s)})$, ing ngendi
+$\Zero$ minangka fungsi konstan nol.
+
+Kanthi nggunakake teorema $s$-$m$-$n$, ana fungsi
+rekursif primitif~$k(x)$ saengga kanggo saben $x$ lan~$y$,
+\[
+\cfind{k(x)}(y) =
+\begin{cases}
+0 & \text{yen $x \in K$} \\
+\fundefined & \text{yen ora}
+\end{cases}
+\]
+Mula $\cfind{k(x)}$ total yen $x \in K$, lan ora
+ditegesi ing input endi wae yen ora. Dadi,
+$k$ minangka reduksi $K$ menyang~$\fn{Tot}$.
+\end{proof}
+
+\begin{digress}
+Pranyata $\fn{Tot}$ malah ora bisa dienumerasi sacara
+komputabel---kompleksitase luwih dhuwur ing
+``hierarki aritmetika.'' Nanging kita ora bakal
+ngrembug penguatan iki ing kene.
+\end{digress}
+
+\end{document}

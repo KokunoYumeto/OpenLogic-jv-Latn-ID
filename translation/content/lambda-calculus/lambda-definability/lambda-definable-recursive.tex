@@ -1,0 +1,50 @@
+% Part: lambda-calculus
+% Chapter: lambda-definability
+% Section: lambda-definable-recursive
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{dfl}{ldr}
+\olsection{Fungsi kang \usetoken{S}{lambda definable} iku Rekursif}
+
+Ora mung kabeh fungsi rekursif parsial iku !!{lambda definable},
+kosokbaline uga bener. Tegese, kabeh fungsi kang
+!!{lambda definable} iku rekursif parsial.
+
+\begin{thm}
+  \ollabel{thm:lambda-computable} Yen fungsi parsial $f$ iku
+  !!{lambda definable}, mula fungsi iku rekursif parsial.
+\end{thm}
+
+\begin{proof}
+  Kita mung menehi garis gedhe buktine. Sepisanan, kita
+  aritmetisasi suku-$\lambd$, yaiku menehi bilangan G\"odel
+  marang suku-$\lambd$ kanthi sistematis, nganggo cara lumrah
+  pangodean rerangkening liwat pangkat bilangan prima. Banjur
+  kita netepake fungsi rekursif parsial $\fn{normalize}(t)$ kang
+  nampa bilangan G\"odel~$t$ saka suku lambda minangka argumen.
+  Fungsi iku mbalekake bilangan G\"odel saka wujud normal
+  yen ana, lan ora nduweni nilai yen ora ana. Banjur tetepna
+  rong fungsi rekursif parsial $\fn{toChurch}$ lan
+  $\fn{fromChurch}$ kang ngowahi bilangan asli dadi bilangan
+  G\"odel saka numeral Church kang cocog, lan kosokbaline.
+
+  Kanthi fungsi-fungsi rekursif iki, kita bisa netepake fungsi~$f$
+  minangka fungsi rekursif parsial. Ana suku-$\lambd$~$F$ kang
+  !!{lambda define}s~$f$. Kanggo ngitung $f(n_1, \dots, n_k)$,
+  dhisik goleka bilangan G\"odel saka numeral Church kang cocog
+  nganggo $\fn{toChurch}(n_i)$, banjur sambungna kode-kode iki
+  marang $\Gn{F}$ kanggo entuk bilangan G\"odel saka suku
+  $F \num{n_1}\dots\num{n_k}$. Saiki gunakna $\fn{normalize}$
+  marang bilangan G\"odel iki. Yen $f(n_1, \dots, n_k)$ nduweni
+  nilai, $F \num{n_1}\dots\num{n_k}$ nduweni wujud normal
+  (kang kudu numeral Church); yen ora, suku iki ora nduweni
+  wujud normal (saéngga
+  \[\fn{normalize}(\Gn{F\num{n_1}\dots\num{n_k}})\]
+  uga ora nduweni nilai). Pungkasan, gunakna $\fn{fromChurch}$
+  marang bilangan G\"odel saka suku kang wis dinormalake.
+\end{proof}
+
+\end{document}

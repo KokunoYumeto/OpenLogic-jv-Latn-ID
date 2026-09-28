@@ -1,0 +1,110 @@
+% Part: normal-modal-logic
+% Chapter: completeness
+% Section: lindenbaums-lemma
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{com}{lin}
+
+\olsection{Lemma Lindenbaum}
+
+Lemma Lindenbaum netepake yen saben himpunan !!{formula}s
+$\Sigma$-konsisten kalebu ing paling ora siji himpunan \emph{jangkep}
+$\Sigma$-konsisten. Pambangunan model kanonik bakal nuduhake yen kanggo
+saben himpunan $\Sigma$-konsisten jangkep~$\Delta$, ana sawijining
+jagad ing model kanonik kang kabeh lan mung !!{formula}s
+ing~$\Delta$ bener. Dadi Lemma Lindenbaum njamin yen saben himpunan
+$\Sigma$-konsisten bener ing sawijining jagad ing model kanonik.
+
+\begin{thm}[Lemma Lindenbaum]\ollabel{thm:lindenbaum}
+  Yen $\Gamma$ $\Sigma$-konsisten, mula ana himpunan $\Sigma$-konsisten
+  jangkep $\Delta$ kang ngluwihi~$\Gamma$.
+\end{thm}
+
+\begin{proof}
+Upamane $!A_0$, $!A_1$, \dots{} iku dhaptar kang nyakup kabeh formula
+ing basa iki (pangulangan diidinake). Upamane, wiwitana kanthi
+ndhaptar $\Obj p_0$, banjur ing saben tahap $n \ge 1$ dhaptarna
+formula-formula kang cacahe winates lan dawane~$n$ kanthi mung nggunakake
+variabel ing antarane $\Obj p_0$, \dots,~$\Obj p_n$. Kita netepake
+himpunan !!{formula}s $\Delta_n$ kanthi induksi marang~$n$, banjur
+netepake $\Delta = \bigcup_n \Delta_n$. Kawitan, tetepa
+$\Delta_0 = \Gamma$. Yen $\Delta_n$ wis ditepakake, kita netepake
+$\Delta_{n+1}$ kaya mangkene:
+\[
+\Delta_{n+1} =
+\begin{cases}
+  \Delta_n \cup \{!A_n\}, & \text{yen $\Delta_n \cup \{ !A_n\}$
+    iku $\Sigma$-konsisten;} \\
+  \Delta_n \cup \{ \lnot !A_n\}, & \text{yen ora.}
+\end{cases}
+\]
+Saiki tetepa $\Delta = \bigcup_{n=0}^\infty \Delta_n$.
+
+Kita kudu nuduhake yen definisi iki pancen ngasilake himpunan
+$\Delta$ kanthi sipat-sipat kang dibutuhake, yaiku $\Gamma \subseteq \Delta$
+lan $\Delta$ iku $\Sigma$-konsisten jangkep.
+
+Cetha yen $\Gamma \subseteq \Delta$, amarga $\Delta_0 \subseteq
+\Delta$ miturut pambangunan lan $\Delta_0 = \Gamma$. Malah, $\Delta_n
+\subseteq \Delta$ kanggo kabeh~$n$, amarga $\Delta$ iku gabungan
+kabeh~$\Delta_n$. (Amarga ing saben langkah pambangunan kita nambah
+!!a{formula} marang himpunan kang wis dibangun, $\Delta_n \subseteq
+\Delta_{n+1}$; mula amarga $\subseteq$ transitif, $\Delta_n \subseteq
+\Delta_{m}$ yen $n \le m$.) Ing saben tahap pambangunan, kita nambah
+$!A_n$ utawa $\lnot !A_n$, lan saben !!{formula} katon (paling ora
+sapisan) ing dhaptar kabeh~$!A_n$. Mula kanggo saben $!A$, $!A
+\in \Delta$ utawa $\lnot !A \in \Delta$; kanthi definisi, $\Delta$
+jangkep.
+
+Pungkasan, kita kudu nuduhake yen $\Delta$ iku
+$\Sigma$-konsisten. Kanggo iku, kita nuduhake yen (a) manawa $\Delta$
+ora $\Sigma$-konsisten, sawijining $\Delta_n$ uga ora
+$\Sigma$-konsisten, lan (b) kabeh $\Delta_n$ iku $\Sigma$-konsisten.
+
+Upamane $\Delta$ ora $\Sigma$-konsisten. Banjur $\Delta
+\Proves[\Sigma] \lfalse$, yaiku ana $!A_1$, \dots,~$!A_k \in
+\Delta$ saengga $\Sigma \Proves !A_1 \lif (!A_2 \lif \cdots (!A_k
+\lif \lfalse)\dots)$. Amarga $\Delta = \bigcup_{n=0}^\infty \Delta_n$,
+saben $!A_i \in \Delta_{n_i}$ kanggo sawenehing~$n_i$. Pilihen $n$
+minangka kang paling gedhe ing antarane indeks-indeks iki. Amarga
+$n_i \le n$, $\Delta_{n_i} \subseteq \Delta_n$. Dadi kabeh
+$!A_i$ ana ing sawijining~$\Delta_n$. Iki ateges $\Delta_n
+\Proves[\Sigma] \lfalse$, yaiku $\Delta_n$ ora $\Sigma$-konsisten.
+
+Kanggo nuduhake yen saben $\Delta_n$ $\Sigma$-konsisten,
+kita nggunakake induksi prasaja marang~$n$. $\Delta_0 = \Gamma$,
+lan kita wis nganggep $\Gamma$ $\Sigma$-konsisten. Dadi pratelan iki
+bener kanggo $n = 0$. Saiki upamane pratelan iki bener kanggo $n$,
+yaiku $\Delta_n$ $\Sigma$-konsisten. $\Delta_{n+1}$ iku
+$\Delta_n \cup \{!A_n\}$ yen himpunan iki $\Sigma$-konsisten;
+yen ora, iku $\Delta_n \cup \{\lnot!A_n\}$. Ing
+kasus kapisan, $\Delta_{n+1}$ cetha $\Sigma$-konsisten. Nanging miturut
+\olref[prf][con]{prop:consistencyfacts}\olref[prf][con]{prop:consistencyfacts-c},
+$\Delta_n \cup \{!A_n\}$ utawa $\Delta_n \cup \{\lnot!A_n\}$
+konsisten, mula $\Delta_{n+1}$ uga konsisten ing kasus liyane.
+\end{proof}
+
+\begin{cor}\ollabel{cor:provability-characterization}
+  $\Gamma \Proves[\Sigma] !A$ yen lan mung yen $!A \in \Delta$ kanggo
+  saben himpunan $\Sigma$-konsisten jangkep $\Delta$ kang ngluwihi $\Gamma$
+  (kalebu nalika $\Gamma = \emptyset$, kang menehi karakterisasi liyane
+  tumrap sistem modal $\Sigma$.)
+\end{cor}
+
+\begin{proof}
+  Upamane $\Gamma \Proves[\Sigma] !A$, lan $\Delta$ sembarang himpunan
+  $\Sigma$-konsisten jangkep kang ngluwihi $\Gamma$. Yen $!A
+  \notin \Delta$, mula miturut maksimalitas $\lnot!A \in \Delta$, saengga
+  $\Delta \Proves[\Sigma] !A$ (miturut monotonisitas) lan $\Delta
+  \Proves[\Sigma] \lnot!A$ (miturut refleksivitas); mula $\Delta$
+  ora konsisten. Kosok baline, yen $\Gamma \Proves/[\Sigma] !A$, mula
+  $\Gamma \cup \{ \lnot!A\}$ $\Sigma$-konsisten, lan miturut
+  Lemma Lindenbaum ana himpunan konsisten jangkep $\Delta$
+  kang ngluwihi $\Gamma \cup \{ \lnot!A \}$. Amarga konsistensi, $!A
+  \notin \Delta$.
+\end{proof}
+
+\end{document}

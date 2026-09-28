@@ -1,0 +1,108 @@
+% Bagean: metodhe
+% Bab: bukti
+% Pérangan: migunakaké dhéfinisi
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mth}{prf}{def}
+
+\olsection{Migunakaké Dhéfinisi}
+
+Kita wis nyebut yèn panjenengan kudu ngerti kabèh dhéfinisi kang
+bisa digunakaké ing bukti lan bisa nrapaké kanthi bener. Bab iki
+wigati banget, mula prayoga ditliti luwih rinci. Dhéfinisi
+nyingket sipat lan relasi supaya luwih gampang dirembug. Ungkapan
+cekak kang diweruhaké diarani \emph{definiendum}, déné bab kang
+disingket diarani \emph{definiens}. Ing bukti, kita asring kudu
+mbalèkaké definiendum marang dhéfinisi asalé, amarga struktur
+logis saka definiens---wujud jangkep kang disingket---iku kang
+mbantu kita ngrampungaké bukti. Kanthi njlentrehaké dhéfinisi,
+panjenengan tekan pérangan kang ngandhut panalaran logis wigati.
+
+Kita miwiti kanthi conto. Anggepen panjenengan arep mbuktekaké:
+
+\begin{prop}
+Kanggo sembarang himpunan $A$ lan $B$, $A \cup B = B \cup A$.
+\end{prop}
+
+Kanggo miwiti bukti waé, kita kudu ngerti tegesé rong himpunan
+padha, yaiku tegesé ``$=$'' ing persamaan iku kanggo himpunan.
+Rong himpunan diarani padha yèn nduwèni !!{element}s kang padha.
+Dadi dhéfinisi kang
+kudu kita njlentrehaké yaiku:
+
+\begin{defn}
+Himpunan $A$ lan $B$ \emph{padha}, $A = B$, yèn lan mung yèn
+saben !!{element} saka~$A$ uga !!a{element} saka~$B$, lan kosok baliné.
+\end{defn}
+
+Dhéfinisi iki migunakaké $A$ lan~$B$ minangka panggonan kanggo
+sebarang himpunan. Bab kang didhéfinisikaké---\emph{definiendum}---
+yaiku ungkapan ``$A = B$'', kanthi mènèhi syarat kapan $A = B$
+bener. Syarat iki---``saben !!{element} saka~$A$ iku
+!!a{element} saka~$B$, lan kosok baliné''---yaiku
+\emph{definiens}.\footnote{Ing kasus iki, kang bisa mbingungaké,
+yèn $A = B$, himpunan $A$ lan $B$ sakjané sawijining himpunan
+kang padha, sanadyan aksarané béda ing sisih kiwa lan tengen.
+Nanging carané ngenali himpunan mau bisa béda, mula dhéfinisi
+iki tetep wigati.} Dhéfinisi iku negesaké yèn $A = B$ bener yèn
+lan mung yèn syarat mau kelakon; iki sok disingket dadi ``iff''.
+
+Nalika nrapaké dhéfinisi, panjenengan kudu nyocogaké $A$ lan $B$
+ing dhéfinisi karo kasus kang lagi dirembug. Ing conto iki,
+supaya $A \cup B = B \cup A$ bener, saben $z \in A \cup B$
+uga kudu ana ing $B \cup A$, lan kosok baliné. Ungkapan $A \cup
+B$ ing proposisi dadi pengganti~$A$ ing dhéfinisi, déné
+$B \cup A$ dadi pengganti~$B$. Amarga $A$ lan $B$ padha dienggo
+ing dhéfinisi lan ing proposisi nanging kanthi peran béda,
+panjenengan kudu ngati-ati supaya ora kecampur. Upamané,
+mbuktekaké yèn saben !!{element} saka~$A$ iku !!a{element}
+saka~$B$ lan kosok baliné ora mbuktekaké proposisi iki;
+iku mung mbuktekaké $A = B$, dudu $A \cup B = B \cup A$.
+Kajaba iku, amarga $A$ lan $B$ bisa sembarang himpunan,
+tanpa anggepan tambahan $A$ lan $B$ bisa waé béda.
+
+Ing bukti iki kita uga migunakaké pangertèn teori himpunan kaya
+gabungan, mula kudu ngerti tegesé simbol $\cup$ supaya ngerti
+carané nerusaké bukti. Kadhangkala njlentrehaké sawijining
+dhéfinisi mbutuhaké njlentrehaké dhéfinisi liya maneh. Upamané,
+$A \cup B$ didhéfinisikaké minangka $\Setabs{z}{z \in A
+  \text{ utawa } z \in B}$. Yèn arep mbuktekaké $x \in A \cup
+B$, dhéfinisi $\cup$ nuduhaké yèn kudu mbuktekaké
+$x \in \Setabs{z}{z \in A \text{ utawa } z \in B}$.
+Saiki élinga uga yèn $x \in \Setabs{z}{\dots z\dots}$ yèn lan
+mung yèn $\dots x\dots$. Dadi sawisé notasi
+$\Setabs{z}{\dots z \dots}$ uga dijlentrehaké, kang kudu
+dibuktèkaké yaiku $x \in A$ utawa $x \in B$. Mula pratelan
+``saben !!{element} saka $A \cup B$ uga !!a{element} saka
+$B \cup A$'' tegesé ``kanggo saben $x$, yèn $x \in A$
+utawa $x \in B$, mula $x \in B$ utawa $x \in A$''.
+Yèn kabèh dhéfinisi ing proposisi dijlentrehaké, kang kudu
+dibuktèkaké dadi:
+
+\begin{prop}
+Kanggo sembarang himpunan $A$ lan $B$: (a) kanggo saben $x$,
+yèn $x \in A$ utawa $x \in B$, mula $x \in B$ utawa $x \in A$;
+lan (b) kanggo saben $x$, yèn $x \in B$ utawa $x \in A$,
+mula $x \in A$ utawa $x \in B$.
+\end{prop}
+
+Bab kang wigati yaiku njlentrehaké dhéfinisi minangka pérangan
+kang perlu nalika nyusun bukti. Nindakaké iki kanthi bener
+kadhangkala angel: variabel ing dhéfinisi kudu dibédakaké lan
+dicocogaké karo suku ing pratelan kang dibuktèkaké. Supaya
+kasil, panjenengan kudu ngerti apa kang dijaluk pitakonan lan
+tegesé saben istilah ing kono; asring luwih saka siji dhéfinisi
+kudu dijlentrehaké. Ing bukti prasaja kaya conto ing ngisor iki,
+solusiné meh langsung katut saka dhéfinisi. Nanging ora saben
+bukti segampang iku.
+
+\begin{prob}
+Anggepen panjenengan dijaluk mbuktekaké $A \cap B \neq \emptyset$.
+Jlentrehna kabèh dhéfinisi ing kéné: pratelakna maneh tanpa
+nyebut ``$\cap$'', ``='', utawa ``$\emptyset$''.
+\end{prob}
+
+\end{document}

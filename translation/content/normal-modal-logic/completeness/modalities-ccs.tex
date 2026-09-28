@@ -1,0 +1,251 @@
+% Part: normal-modal-logic
+% Chapter: completeness
+% Section: modalities-ccs
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{com}{mod}
+
+\olsection{Modalitas lan Himpunan Konsisten Jangkep}
+
+\begin{explain}
+Nalika kita mbangun model~$\mModel{M^\Sigma}$ kang himpunan jagade
+kawangun saka himpunan $\Sigma$-konsisten jangkep~$\Delta$ ing
+sawijining logika modal normal~$\Sigma$, kita uga kudu netepake
+relasi aksesibilitas~$R^\Sigma$ ing antarane ``jagad'' kasebut. Kita
+ngarepake relasi aksesibilitas (lan pemetaan $V^\Sigma$) ditepakake
+saengga $\mSat{M^\Sigma}{!A}[\Delta]$ yen lan mung yen $!A \in
+\Delta$. Kepiye carane?
+
+Sawise relasi aksesibilitas ditepakake, definisi bebener ing
+sawijining jagad njamin yen \iftag{prvBox}{$\mSat{M^\Sigma}{\Box!A}[\Delta]$
+  yen lan mung yen $\mSat{M^\Sigma}{!A}[\Delta']$ kanggo kabeh $\Delta'$
+  kang $R^\Sigma\Delta\Delta'$}{$\mSat{M^\Sigma}{\Diamond!A}[\Delta]$
+  yen lan mung yen $\mSat{M^\Sigma}{!A}[\Delta']$ kanggo paling ora siji
+  $\Delta'$ kang $R^\Sigma\Delta\Delta'$}. Bukti yen
+$\mSat{M^\Sigma}{!A}[\Delta]$ yen lan mung yen $!A \in \Delta$
+mbutuhake iki uga bener tumrap !!{formula}s kang diawali operator modal,
+yaiku \iftag{prvBox}{$\mSat{M^\Sigma}{\Box!A}[\Delta]$ yen lan mung yen
+  $\Box !A \in \Delta$}{$\mSat{M^\Sigma}{\Diamond!A}[\Delta]$ yen lan mung yen
+  $\Diamond !A \in \Delta$}. Yen sarat iki digandhengake karo definisi
+bebener ing sawijining jagad kanggo \iftag{prvBox}{$\Box !A$}{$\Diamond !A$},
+kita entuk:
+\[
+\iftag{prvBox}{%
+  \Box!A \in \Delta \text{ yen lan mung yen } !A \in \Delta' \text{
+    kanggo kabeh $\Delta'$ kanthi } R^\Sigma\Delta\Delta'}{%
+  \Diamond!A \in \Delta \text{ yen lan mung yen } !A \in \Delta' \text{ kanggo
+    paling ora siji } \Delta' \text{ kanthi } R^\Sigma\Delta\Delta'}
+\]
+\iftag{prvBox}{Delengen arah kiwa menyang tengen: yen
+  $\Box !A \in \Delta$, mula $!A \in \Delta'$ kanggo sembarang $!A$ lan
+  sembarang $\Delta'$ kang $R^\Sigma\Delta\Delta'$. Yen kita netepake
+  $R^\Sigma\Delta\Delta'$ yen lan mung yen $!A \in \Delta'$ kanggo kabeh
+  $\Box!A \in \Delta$, mula sarat iku kawujud. Sarat ing sisih tengen
+  saka ``yen lan mung yen'' bisa ditulis luwih ringkes minangka
+  $\Setabs{!A}{\Box!A \in \Delta} \subseteq \Delta'$.}{Delengen arah
+  tengen menyang kiwa: yen $!A \in \Delta'$, mula $\Diamond!A \in \Delta$,
+  kanggo sembarang $!A$ lan $\Delta'$ kang $R^\Sigma\Delta\Delta'$.
+  Yen kita netepake $R^\Sigma\Delta\Delta'$ yen lan mung yen
+  $\Diamond!A \in \Delta$ kanggo kabeh $!A \in \Delta'$, sarat iku
+  kawujud. Sarat ing sisih tengen saka ``yen lan mung yen'' bisa ditulis
+  luwih ringkes minangka
+  $\Setabs{\Diamond!A}{!A \in \Delta'} \subseteq \Delta$.}
+
+Dadi pitakone: apa definisi $R^\Sigma$ iki pancen njamin
+yen \iftag{prvBox}{$\Box !A \in \Delta$ yen lan mung yen
+  $\mSat{M^\Sigma}{\Box !A}[\Delta]$? \iftag{prvDiamond}{Apa uga
+    njamin yen }{}}{}\iftag{prvDiamond}{$\Diamond !A \in \Delta$
+  yen lan mung yen $\mSat{M^\Sigma}{\Diamond !A}[\Delta]$?}{}
+Asil-asil sabanjure bakal netepake iki.
+\end{explain}
+
+\begin{defn}
+  Yen $\Gamma$ himpunan !!{formula}s, tetepa
+  \begin{align*}
+    \Box\Gamma & = \Setabs{\Box !B}{!B \in \Gamma}\\
+    \Diamond\Gamma & = \Setabs{\Diamond !B}{!B \in \Gamma}\\
+    \intertext{lan}
+    \Box^{-1}\Gamma & = \Setabs{!B}{\Box !B \in \Gamma}\\
+    \Diamond^{-1}\Gamma & = \Setabs{!B}{\Diamond !B \in \Gamma}\\
+  \end{align*}
+\end{defn}
+
+Kanthi tembung liya, $\Box\Gamma$ iku $\Gamma$ kanthi
+$\Box$ ing ngarepe saben !!{formula} ing~$\Gamma$;
+$\Box^{-1}\Gamma$ iku himpunan kabeh !!{formula}s kang diawali $\Box$
+ing~$\Gamma$ sawisé $\Box$ wiwitane dicopot. Definisi iki
+ora wigati banget kanthi mandiri, nanging bakal nggampangake notasi.
+
+Elinga yen $\Box\Box^{-1}\Gamma \subseteq \Gamma$:
+\[
+\Box\Box^{-1}\Gamma = \Setabs{\Box!B}{\Box!B \in \Gamma}
+\]
+yaiku himpunan kabeh !!{formula}s ing~$\Gamma$ kang diawali~$\Box$.
+
+\begin{lem}\ollabel{lem:box1}
+  Yen $\Gamma \Proves[\Sigma] !A$, mula $\Box\Gamma \Proves[\Sigma] \Box
+  !A$.
+\end{lem}
+
+\begin{proof}
+  Yen $\Gamma \Proves[\Sigma] !A$, mula ana $!B_1$, \dots, $!B_k
+  \in \Gamma$ saengga $\Sigma \Proves !B_1 \lif (!B_2 \lif \cdots
+  (!B_k \lif !A)\cdots)$. Amarga $\Sigma$ normal, miturut aturan \RK{},
+  $\Sigma \Proves \Box!B_1 \lif (\Box!B_2 \lif \cdots (\Box!B_k \lif
+  \Box!A)\cdots)$; lan cetha yen $\Box!B_1$, \dots, $\Box!B_k \in
+  \Box\Gamma$. Mula, miturut definisi, $\Box\Gamma \Proves[\Sigma] \Box
+  !A$.
+\end{proof}
+
+\begin{lem}\ollabel{lem:box2}
+  Yen $\Box^{-1} \Gamma \Proves[\Sigma] !A$, mula $\Gamma
+  \Proves[\Sigma] \Box!A$.
+\end{lem}
+
+\begin{proof}
+  Upamane $\Box^{-1}\Gamma \Proves[\Sigma] !A$; banjur miturut
+  \olref{lem:box1}, $\Box\Box^{-1}\Gamma \Proves[\Sigma] \Box!A$.
+  Nanging amarga $\Box\Box^{-1}\Gamma \subseteq \Gamma$, miturut
+  monotonisitas uga $\Gamma \Proves[\Sigma] \Box!A$.
+\end{proof}
+
+\iftag{prvBox}{%
+% Box is primitive
+
+\begin{prop}\ollabel{prop:box}
+  Yen $\Gamma$ $\Sigma$-konsisten jangkep, mula $\Box !A \in
+  \Gamma$ yen lan mung yen kanggo saben himpunan $\Sigma$-konsisten
+  jangkep $\Delta$ kanthi $\Box^{-1} \Gamma \subseteq \Delta$, kita entuk
+  $!A \in \Delta$.
+\end{prop}
+
+\begin{proof}
+  Upamane $\Gamma$ $\Sigma$-konsisten jangkep. Arah ``mung yen''
+  gampang: upamane $\Box !A \in \Gamma$ lan
+  $\Box^{-1}\Gamma \subseteq \Delta$. Amarga $\Box!A \in \Gamma$, $!A
+  \in \Box^{-1}\Gamma \subseteq \Delta$, mula $!A \in \Delta$.
+
+Kanggo arah ``yen'', kita mbuktekake kontraposisine: upamane
+  $\Box!A \notin \Gamma$. Amarga $\Gamma$ $\Sigma$-konsisten
+  jangkep, himpunan iku katutup sacara deduktif, mula $\Gamma
+  \Proves/[\Sigma] \Box !A$. Miturut \olref{lem:box2},
+  $\Box^{-1}\Gamma \Proves/[\Sigma] !A$. Miturut
+  \olref[prf][con]{prop:consistencyfacts}\olref[prf][con]{prop:consistencyfacts-b},
+  $\Box^{-1}\Gamma \cup \{ \lnot!A \}$ iku $\Sigma$-konsisten. Miturut
+  Lemma Lindenbaum, ana himpunan $\Sigma$-konsisten jangkep~$\Delta$
+  saengga $\Box^{-1}\Gamma \cup \{ \lnot!A \} \subseteq
+  \Delta$. Amarga konsistensi, $!A \notin \Delta$.
+\end{proof}
+}{%
+% Box is not primitive, only Diamond is
+
+\begin{prop}\ollabel{prop:diamond}
+  Yen $\Gamma$ $\Sigma$-konsisten jangkep, mula $\Diamond !A \in
+  \Gamma$ yen lan mung yen kanggo sawenehing himpunan $\Sigma$-konsisten
+  jangkep $\Delta$ kanthi $\Diamond\Delta \subseteq
+  \Gamma$, kita entuk $!A \in \Delta$.
+\end{prop}
+
+\begin{proof}
+  Upamane $\Gamma$ $\Sigma$-konsisten jangkep. Arah tengen menyang kiwa
+  gampang: pilih $\Delta$ $\Sigma$-konsisten jangkep kanthi
+  $\Diamond\Delta \subseteq \Gamma$ lan $!A \in \Delta$. Banjur
+  $\Diamond!A \in \Diamond\Delta \subseteq \Gamma$, yaiku $\Diamond!A
+  \in \Gamma$.
+
+Kanggo arah kiwa menyang tengen, upamane $\Diamond !A \in \Gamma$.
+  Kita kudu nuduhake anane himpunan $\Sigma$-konsisten jangkep $\Delta$
+  kanthi $!A \in \Delta$ lan $\Diamond\Delta \subseteq \Gamma$. Amarga
+  $\Diamond !A \in \Gamma$ lan $\Gamma$ $\Sigma$-konsisten,
+  $\Box\lnot !A \notin \Gamma$. Amarga $\Gamma$ $\Sigma$-konsisten
+  jangkep, himpunan iki katutup sacara deduktif, mula $\Gamma
+  \Proves/[\Sigma] \Box\lnot !A$. Miturut \olref{lem:box2},
+  $\Box^{-1}\Gamma \Proves/[\Sigma] \lnot !A$. Miturut
+  \olref[prf][con]{prop:consistencyfacts}\olref[prf][con]{prop:consistencyfacts-b},
+  $\Box^{-1}\Gamma \cup \{ !A \}$ iku $\Sigma$-konsisten. Miturut
+  Lemma Lindenbaum, ana himpunan $\Sigma$-konsisten jangkep~$\Delta$
+  saengga $\Box^{-1}\Gamma \cup \{ !A \} \subseteq
+  \Delta$. Cetha yen $!A \in \Delta$. Kanggo nuduhake $\Diamond\Delta
+  \subseteq \Gamma$, upamane ora mangkono: kanggo sawenehing $!B \in \Delta$,
+  $\Diamond !B \notin \Gamma$. Amarga $\Gamma$ $\Sigma$-konsisten
+  jangkep, $\Box\lnot !B \in \Gamma$. Nanging uga $\lnot
+  !B \in \Box^{-1}\Gamma \subseteq \Delta$, saengga $\Delta$
+  ora konsisten.
+\end{proof}
+}
+
+\begin{lem}\ollabel{lem:box-iff-diamond}
+  Upamane $\Gamma$ lan $\Delta$ $\Sigma$-konsisten jangkep.
+  Banjur $\Box^{-1}\Gamma \subseteq \Delta$ yen lan mung yen
+  $\Diamond\Delta \subseteq \Gamma$.
+\end{lem}
+
+\begin{proof}
+  Arah ``mung yen'': upamane $\Box^{-1}\Gamma \subseteq \Delta$ lan
+  $\Diamond!A \in \Diamond\Delta$ (yaiku $!A \in \Delta$). Kanggo
+  nuduhake $\Diamond!A \in \Gamma$, cukup nuduhake yen
+  $\Box\lnot!A \notin \Gamma$, amarga miturut maksimalitas,
+  $\lnot\Box\lnot !A \in \Gamma$. Saiki, yen $\Box\lnot!A \in \Gamma$,
+  miturut hipotesis $\lnot!A \in \Delta$, kang mbantah konsistensi
+  $\Delta$ (amarga $!A \in \Delta$). Mula $\Box\lnot!A \notin \Gamma$,
+  kaya kang dibutuhake.
+
+Arah ``yen'': upamane $\Diamond\Delta
+  \subseteq \Gamma$. Kita nggunakake kontraposisi: upamane $!A
+  \notin \Delta$ kanggo nuduhake $\Box!A \notin \Gamma$. Yen
+  $!A \notin \Delta$, miturut maksimalitas $\lnot!A \in \Delta$,
+  mula miturut hipotesis $\Diamond\lnot!A \in \Gamma$. Nanging ing
+  logika modal normal, $\Diamond\lnot!A$ ekuivalen karo
+  $\lnot\Box !A$, lan yen kang pungkasan iki ana ing $\Gamma$, miturut
+  konsistensi $\Box!A \notin\Gamma$, kaya kang dibutuhake.
+\end{proof}
+
+\iftag{prvBox}{%
+  \iftag{prvDiamond}{%
+% Box and Diamond are both primitive; prove
+% prop:diamond using lem:box-iff-diamond
+
+\begin{prop}\ollabel{prop:diamond}
+  Yen $\Gamma$ $\Sigma$-konsisten jangkep, mula $\Diamond !A \in
+  \Gamma$ yen lan mung yen kanggo sawenehing himpunan $\Sigma$-konsisten
+  jangkep $\Delta$ kanthi $\Diamond\Delta \subseteq
+  \Gamma$, kita entuk $!A \in \Delta$.
+\end{prop}
+
+\begin{proof}
+Upamane $\Gamma$ $\Sigma$-konsisten jangkep. $\Diamond!A \in
+\Gamma$ yen lan mung yen $\lnot\Box\lnot !A \in \Gamma$ miturut \Dual{}
+lan katutup sacara deduktif. $\lnot\Box\lnot !A \in \Gamma$ yen lan
+mung yen $\Box\lnot !A \notin \Gamma$ miturut
+\olref[ccs]{prop:ccs-properties}\olref[ccs]{prop:ccs-lnot} amarga
+$\Gamma$ $\Sigma$-konsisten jangkep. Miturut \olref{prop:box},
+$\Box\lnot !A \notin \Gamma$ yen lan mung yen ana himpunan
+$\Sigma$-konsisten jangkep $\Delta$ kanthi $\Box^{-1}\Gamma \subseteq \Delta$
+lan $\lnot!A \notin \Delta$. Saiki delengen sembarang~$\Delta$ kaya
+mangkono. Miturut \olref{lem:box-iff-diamond},
+$\Box^{-1}\Gamma \subseteq \Delta$ yen lan mung yen
+$\Diamond\Delta \subseteq \Gamma$. Uga, $\lnot !A \notin \Delta$ yen lan
+mung yen $!A \in \Delta$ miturut
+\olref[ccs]{prop:ccs-properties}\olref[ccs]{prop:ccs-lnot}. Dadi
+$\Diamond!A \in \Gamma$ yen lan mung yen ana himpunan
+$\Sigma$-konsisten jangkep $\Delta$ kanthi $\Diamond\Delta \subseteq \Gamma$
+lan $!A \in \Delta$.
+\end{proof}
+
+}{}}{}
+
+\begin{prob}
+  Tuduhna yen $\Gamma$ $\Sigma$-konsisten jangkep, mula
+  \iftag{prvBox}{$\Diamond !A \in \Gamma$ yen lan mung yen ana
+    himpunan $\Sigma$-konsisten jangkep $\Delta$ kanthi $\Box^{-1}\Gamma
+    \subseteq \Delta$ lan $!A \in \Delta$.}{$\Box !A \in
+    \Gamma$ yen lan mung yen kanggo saben himpunan $\Sigma$-konsisten
+    jangkep $\Delta$ kanthi $\Box^{-1} \Gamma \subseteq \Delta$, kita entuk
+    $!A \in \Delta$.} \emph{Lakonana tanpa nggunakake
+    \olref[nml][com][mod]{lem:box-iff-diamond}}.
+\end{prob}
+
+\end{document}

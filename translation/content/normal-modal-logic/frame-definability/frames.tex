@@ -1,0 +1,51 @@
+% Part: normal-modal-logic
+% Chapter: frame-definability
+% Section: frames
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{frd}{fra}
+
+\olsection{Bingkai}
+
+\begin{defn}
+  Sawijining \emph{bingkai} yaiku pasangan $\mModel{F} = \tuple{W,R}$,
+  ing ngendi $W$ himpunan donya kang ora kosong lan $R$ relasi binar
+  ing~$W$. Sawijining model $\mModel{M}$ \emph{adhedhasar} bingkai
+  $\mModel{F} = \tuple{W,R}$ yen lan mung yen $\mModel{M} = \tuple{W, R, V}$
+  kanggo sawijining valuasi $V$.
+\end{defn}
+
+\begin{defn}
+  Yen $\mModel{F}$ sawijining bingkai, kita ngarani $!A$ \emph{valid ing
+    $\mModel{F}$,} $\mModel{F} \Entails !A$, yen $\mSat{M}{!A}$ kanggo
+  saben model~$\mModel{M}$ kang adhedhasar~$\mModel{F}$.
+  
+
+Yen $\mClass{F}$ sawijining kelas bingkai, kita ngarani $!A$
+  \emph{valid ing $\mClass{F}$,} $\mClass{F} \Entails !A$, yen lan mung
+  yen $\mModel{F} \Entails !A$ kanggo saben bingkai~$\mModel{F} \in
+  \mClass{F}$.
+\end{defn}
+
+Bingkai narik kawigaten amarga korespondensi antarane
+skema lan sipat relasi aksesibilitas~$R$ dumadi ing tataran bingkai,
+\emph{dudu model}. Upamane, senadyan \Ax{T} bener ing kabeh model
+refleksif, ora saben model kang nyukupi \Ax{T} iku refleksif. Nanging,
+\emph{pancen} bener yen \Ax{T} \emph{valid} ing kabeh \emph{bingkai}
+refleksif, lan saben bingkai kang \Ax{T} valid ing kono iku refleksif.
+
+\begin{rem}
+Validitas ing kelas bingkai kalebu kasus mligi saka validitas ing kelas
+model: $\mClass{F} \Entails !A$ yen lan mung yen
+$\mClass{C} \Entails !A$, ing ngendi $\mClass{C}$ kelas kabeh model
+kang adhedhasar salah siji bingkai ing~$\mClass{F}$.
+
+Cetha yen !!a{formula} utawa skema iku valid, yaiku valid
+tumrap kelas \emph{kabeh} model, mula uga valid tumrap saben
+kelas~$\mClass{F}$ bingkai.
+\end{rem}
+
+\end{document}

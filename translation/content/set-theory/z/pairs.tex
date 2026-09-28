@@ -1,0 +1,80 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{z}{pairs}
+\olsection{Pasangan}
+
+Aksioma sabanjure kang arep kita timbang yaiku:
+
+\begin{axiom}[Pasangan]
+Kanggo sembarang himpunan $a, b$, himpunan $\{a, b\}$ ana.
+\[
+	\forall a \forall b \exists P \forall x (x \in P \liff (x = a \lor x = b))
+\]
+\end{axiom}
+
+Mangkene carane ndhukung aksioma iki nganggo konsepsi
+iteratif. Upamane $a$ wis kasedhiya ing tataran $S$ lan $b$
+wis kasedhiya ing tataran $T$. Upamane $M$ iku tataran kang
+luwih pungkasan saka $S$ lan $T$. Amarga $a$ lan $b$
+loro-lorone wis kasedhiya ing tataran $M$, himpunan $\{a,b\}$
+minangka koleksi kang bisa kawangun ing sembarang tataran
+sawise $M$.
+
+Nanging enteni!{} Yagene kita nganggep \emph{ana} tataran
+sawise $M$? Yen ora ana, panjelasan kita bakal gagal.
+Mula kanggo ndhukung Pasangan, kita kudu nambah prinsip
+liyane ing gambaran saka \olref[sth][z][story]{sec}, yaiku:
+\begin{enumerate}
+	\item[] \stagessucc. Ora ana tataran pungkasan.
+\end{enumerate}
+Apa prinsip iki duwe dhasar? Ora ana ing gambaran Shoenfield
+kang nyebut kanthi \emph{gamblang} yen ora ana tataran
+pungkasan. Nanging sanajan (sacara trep) iki tambahan
+tumrap gambaran sadurunge, prinsip iki cocog karo gagasan
+dhasar yen himpunan kawangun ing tataran-tataran. Ing
+salajengipun kita bakal nampa prinsip iki. Mula kita uga
+bakal nampa Aksioma Pasangan.
+
+Kanthi aksioma anyar iki, kita bisa mbuktekake anane akeh
+himpunan liyane. Upamane:
+
+\begin{prop}\ollabel{prop:pairsconsequences}
+Kanggo sembarang himpunan $a$ lan $b$, himpunan iki ana:
+	\begin{enumerate}
+		\item\ollabel{singleton} $\{a\}$
+		\item\ollabel{binunion} $a \cup b$
+		\item\ollabel{tuples} $\tuple{a, b}$
+	\end{enumerate}
+\end{prop}
+
+\begin{proof}
+\olref{singleton}. Miturut Pasangan, $\{a, a\}$ ana,
+lan miturut Ekstensionalitas iku padha karo $\{a\}$.
+
+\olref{binunion}. Miturut Pasangan, $\{a, b\}$ ana.
+Saiki $a \cup b = \bigcup \{a, b\}$ ana miturut Gabungan.
+
+\olref{tuples}. Miturut \olref{singleton}, $\{a\}$ ana.
+Miturut Pasangan, $\{a, b\}$ ana. Saiki
+$\{\{a\}, \{a, b\}\} = \tuple{a, b}$ ana, kanthi
+ngetrapake Pasangan maneh.
+\end{proof}
+
+\begin{prob}
+Tuduhna yen kanggo sembarang himpunan $a, b, c$,
+himpunan $\{a, b, c\}$ ana.
+\end{prob}
+
+\begin{prob}
+Tuduhna yen kanggo sembarang himpunan $a_1, \ldots, a_n$,
+himpunan $\{a_1, \ldots, a_n\}$ ana.
+\end{prob}
+
+%\begin{proof} Kanthi Pasangan kaping pindho, $\{\{a_1, a_2\}, \{a_1,
+%   a_3\}\}$ ana. Miturut Gabungan lan Ekstensionalitas, $\bigcup \{\{a_1,
+%   a_2\}, \{a_1, a_3\}\} = \{a_1, a_2, a_3\}$ ana. Baleni cara iki
+%   sakperlu. \end{proof}
+
+\end{document}

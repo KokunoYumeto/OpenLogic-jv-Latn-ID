@@ -1,0 +1,121 @@
+% Part: lambda-calculus
+% Chapter: syntax
+% Section: de-bruijn
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{syn}{deb}
+
+\olsection{Indeks De Bruijn}
+
+Ekuivalensi-$\alpha$ iku lumrah banget,
+amarga suku-suku kang ekuivalen-$\alpha$
+``nduweni teges padha.'' Pancen,
+kita bisa menehi sintaksis kanggo
+suku lambda kang ora mbedakake
+suku-suku kang bisa dikonversi-$\alpha$
+siji dadi sijine. Cara kang paling
+misuwur ngganti variabel nganggo
+\emph{indeks De Bruijn}.
+
+Nalika nulis $\lambd[x][M]$,
+kita nyebut kanthi cetha yen $x$
+iku parameter fungsi, mula $x$
+ing $M$ bisa ngrujuk marang
+parameter iku. Ing notasi
+indeks De Bruijn, parameter ora
+duwe jeneng; rujukan marang
+parameter ing awak fungsi ditulis
+nganggo cacah tingkat abstraksi
+ing antarane. Umpamane,
+ing $\lambd[x][\lambd[y][y x]]$,
+abstraksi njaba ngiket variabel~$x$,
+dene abstraksi njero ngiket
+variabel~$y$. Subsuku $y x$
+ana ing cakupan abstraksi njero:
+ora ana abstraksi ing antarane
+$y$ lan pangikete~$\lambd[y]$,
+nanging ana siji abstraksi
+ing antarane $x$ lan
+pangikete~$\lambd[x]$.
+Mula $0\, 1$ ditulis kanggo $y x$,
+lan kabeh suku ditulis
+$\lambd[][\lambd[][01]]$.
+
+\begin{defn}
+  Suku De Bruijn ditetepake
+  kanthi induktif kaya mangkene:
+  \begin{enumerate}
+  \item $n$, kanthi $n$ sembarang
+    wilangan asli.
+  \item $PQ$, kanthi $P$ lan $Q$
+    loro-lorone suku De Bruijn.
+  \item $\lambd[][N]$, kanthi $N$
+    suku De Bruijn.
+  \end{enumerate}
+\end{defn}
+
+Alih-wujud formal saka suku lambda
+lumrah menyang suku kanthi
+indeks De Bruijn kaya mangkene:
+\begin{defn}
+  \begin{align*}
+    F_\Gamma(x) &= \Gamma(x) \\
+    F_\Gamma(PQ) &= F_\Gamma(P)F_\Gamma(Q) \\
+    F_\Gamma(\lambd[x][N]) &= \lambd[][F_{x,\Gamma}(N)]
+  \end{align*}
+  Ing kene $\Gamma$ iku dhaptar
+  variabel kanthi indeks wiwit nol;
+  $\Gamma(x)$ nuduhake posisi
+  muncule variabel $x$ kang
+  paling ngarep ing $\Gamma$.
+  Umpamane, yen $\Gamma$ yaiku
+  $x,y,z$, mula $\Gamma(x)$ yaiku
+  $0$ lan $\Gamma(z)$ yaiku $2$.
+  
+  $x,\Gamma$ nuduhake dhaptar
+  kang dipikolehi kanthi nyelehake
+  $x$ ing wiwitane $\Gamma$.
+  Nerusake $\Gamma$ ing conto mau,
+  $w,\Gamma$ yaiku $w,x,y,z$.
+\end{defn}
+
+Suku lambda lumrah bisa dipikolehi
+malih saka suku De Bruijn kaya
+mangkene:
+
+\begin{defn}
+  \begin{align*}
+    G_\Gamma(n) &= \Gamma[n] \\
+    G_\Gamma(PQ) &= G_\Gamma(P) G_\Gamma(Q) \\
+    G_\Gamma(\lambd[][N]) &= \lambd[x][G_{x,\Gamma}(N)]
+  \end{align*}
+  Ing kene $\Gamma$ maneh-lagi
+  dhaptar variabel kanthi indeks
+  wiwit nol, lan $\Gamma[n]$
+  nuduhake variabel ing posisi~$n$.
+  Rumus iki mbutuhake posisi
+  kasebut ana ing dhaptar.
+  Umpamane, yen $\Gamma$ yaiku
+  $x,y,z$, mula $\Gamma[1]$
+  yaiku $y$.
+
+  Variabel $x$ ing persamaan
+  pungkasan dipilih minangka
+  variabel sembarang kang ora
+  ana ing $\Gamma$.
+\end{defn}
+
+Ing kene sawetara asil diwenehake
+tanpa bukti:
+
+\begin{prop}
+  Yen $M \aconvone M'$
+  lan $\Gamma$ sembarang dhaptar
+  kang ngemot $\FV{M}$, mula
+  $F_\Gamma(M) \eqs F_\Gamma(M')$.
+\end{prop}
+
+\end{document}

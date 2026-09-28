@@ -1,0 +1,387 @@
+% Part: model-theory
+% Chapter: models-of-arithmetic
+% Section: standard-models
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{mar}{stm}
+\olsection{Model-Model Standar Aritmetika}
+
+Basa aritmetika~$\Lang{L_A}$
+mesthi dimaksudake kanggo
+ngrembug wilangan, mliginé
+wilangan asli. Mula model
+standar~$\Struct{N}$ iku
+istimewa: iki model kang
+arep dirembug. Nanging
+ing logika, kang kerep
+dadi kawigaten kita yaiku
+sipat struktural, lan
+sembarang rong !!{structure}s
+kang isomorfis nduweni
+sipat-sipat iku padha.
+Mula kita bisa luwih luwes
+lan nganggep sembarang
+!!{structure} kang isomorfis
+karo~$\Struct{N}$
+minangka standar.
+
+\begin{defn}
+!!{structure} kanggo
+$\Lang{L_A}$ iku
+\emph{standar} yen isomorfis
+karo~$\Struct{N}$.
+\end{defn}
+
+\begin{prop}
+\ollabel{prop:standard-domain}
+Yen !!a{structure}~$\Struct{M}$
+standar, ranahé iku
+himpunan nilai angka-angka
+standar, yaiku
+\[
+\Domain{M} = \Setabs{\Value{\num{n}}{M}}{n \in \Nat}
+\]
+\end{prop}
+
+\begin{proof}
+Cetha yen saben
+$\Value{\num{n}}{M} \in \Domain{M}$.
+Kita mung kudu nuduhake
+yen saben $x \in \Domain{M}$
+padha karo $\Value{\num{n}}{M}$
+kanggo sawenehing~$n$.
+Amarga $\Struct{M}$ standar,
+struktur iku isomorfis
+karo~$\Struct{N}$.
+Upamakna $g\colon
+\Nat \to \Domain{M}$
+iku isomorfisme.
+Mula $g(n) =
+g(\Value{\num{n}}{N}) =
+\Value{\num{n}}{M}$.
+Nanging kanggo saben
+$x \in \Domain{M}$,
+ana~$n
+\in \Nat$ saéngga
+$g(n) = x$,
+amarga $g$ !!{surjective}.
+\end{proof}
+
+\begin{explain}
+Yen struktur~$\Struct{M}$
+kanggo $\Lang{L_A}$ standar,
+kabeh unsur ing
+!!{domain}-é bisa dijenengi
+nganggo angka standar
+$\num{0}$, $\num{1}$,
+$\num{2}$, \dots,
+yaiku term $\Obj{0}$,
+$\Obj{0}'$, $\Obj{0}''$,
+lan sateruse. Mesthi
+iki ora ateges
+!!{element}s saka
+$\Domain{M}$ \emph{pancen}
+wilangan, nanging mung
+ateges kita bisa
+nunjuk unsur-unsur mau
+kanthi cara padha
+kaya nuduhake wilangan
+ing~$\Domain{N}$.
+\end{explain}
+
+\begin{prob}
+Tuduhna yen kosok baline
+\olref[mod][mar][stm]{prop:standard-domain}
+ora bener, yaiku wenehana
+tuladha !!a{structure}~$\Struct{M}$
+kanthi $\Domain{M} =
+\Setabs{\Value{\num{n}}{M}}{n \in \Nat}$
+kang ora isomorfis
+karo~$\Struct{N}$.
+\end{prob}
+
+\begin{prop}
+\ollabel{prop:thq-standard}
+Yen $\Sat{M}{\Th{Q}}$,
+lan $\Domain{M} =
+\Setabs{\Value{\num{n}}{M}}{n
+  \in \Nat}$,
+mula $\Struct{M}$ standar.
+\end{prop}
+
+\begin{proof}
+Kita kudu nuduhake yen
+$\Struct{M}$ isomorfis
+karo~$\Struct{N}$.
+Gatekna fungsi
+$g\colon \Nat \to \Domain{M}$
+kang ditetepake dening
+$g(n) = \Value{\num{n}}{M}$.
+Miturut hipotesis,
+$g$ !!{surjective}.
+Fungsi iku uga
+!!{injective}:
+$\Th{Q} \Proves
+\eq/[\num{n}][\num{m}]$
+manawa $n \neq m$.
+Mula, amarga
+$\Sat{M}{\Th{Q}}$,
+$\Sat{M}{\eq/[\num{n}][\num{m}]}$
+manawa $n \neq
+m$. Dadi, yen
+$n \neq m$,
+mula $\Value{\num{n}}{M}
+\neq \Value{\num{m}}{M}$,
+yaiku $g(n) \neq g(m)$.
+
+Kita uga kudu mriksa yen
+$g$ iku isomorfisme.
+\begin{enumerate}
+\item Kita nduweni
+  $g(\Assign{\Obj{0}}{N}) = g(0)$
+  amarga
+  $\Assign{\Obj{0}}{N} = 0$.
+  Miturut definisi~$g$,
+  $g(0) = \Value{\num{0}}{M}$.
+  Nanging $\num{0}$
+  iku mung $\Obj{0}$,
+  lan nilai term kang
+  arupa !!a{constant}
+  ditemtokake dening apa
+  kang diwenehake
+  !!{structure} marang
+  !!{constant} iku,
+  yaiku
+  $\Value{\Obj{0}}{M} =
+  \Assign{\Obj{0}}{M}$.
+  Mula kita nduweni
+  $g(\Assign{\Obj{0}}{N}) =
+  \Assign{\Obj{0}}{M}$
+  kaya kang dibutuhake.
+\item $g(\Assign{\prime}{N}(n)) =
+  g(n+1)$, amarga
+  $\prime$ ing
+  $\Struct{N}$ iku
+  fungsi penerus ing~$\Nat$.
+  Banjur $g(n+1) =
+  \Value{\num{n+1}}{M}$
+  miturut definisi~$g$.
+  Nanging $\num{n+1}$
+  iku term kang padha karo
+  $\num{n}'$, mula
+  $\Value{\num{n+1}}{M} =
+  \Value{\num{n}'}{M}$.
+  Miturut definisi
+  fungsi nilai, iki
+  $= \Assign{\prime}{M}(
+  \Value{\num{n}}{M})$.
+  Amarga
+  $\Value{\num{n}}{M} = g(n)$,
+  kita entuk
+  $g(\Assign{\prime}{N}(n)) =
+  \Assign{\prime}{M}(g(n))$.
+\item $g(\Assign{+}{N}(n,m)) =
+  g(n+m)$, amarga
+  $+$ ing $\Struct{N}$
+  iku fungsi panjumlahan
+  ing~$\Nat$.
+  Banjur $g(n+m) =
+  \Value{\num{n+m}}{M}$
+  miturut definisi~$g$.
+  Nanging
+  $\Th{Q} \Proves
+  \num{n+m} =
+  (\num{n} + \num{m})$,
+  mula $\Value{\num{n+m}}{M} =
+  \Value{\num{n}+\num{m}}{M}$.
+  Miturut definisi
+  fungsi nilai, iki
+  $=
+  \Assign{+}{M}(
+  \Value{\num{n}}{M},
+  \Value{\num{m}}{M})$.
+  Amarga
+  $\Value{\num{n}}{M} = g(n)$
+  lan $\Value{\num{m}}{M} = g(m)$,
+  kita entuk
+  $g(\Assign{+}{N}(n, m)) =
+  \Assign{+}{M}(g(n), g(m))$.
+\item $g(\Assign{\times}{N}(n, m)) =
+  \Assign{\times}{M}(g(n), g(m))$:
+  Gladhen.
+\item $\tuple{n,m} \in
+  \Assign{<}{N}$ yen lan mung yen
+  $n < m$. Yen $n < m$,
+  mula $\Th{Q} \Proves
+  \num{n} < \num{m}$,
+  lan uga $\Sat{M}{\num{n} <
+  \num{m}}$.
+  Mula $\tuple{
+  \Value{\num{n}}{M},
+  \Value{\num{m}}{M}} \in
+  \Assign{<}{M}$,
+  yaiku $\tuple{g(n), g(m)}
+  \in \Assign{<}{M}$.
+  Yen $n
+  \not< m$,
+  mula $\Th{Q} \Proves
+  \lnot \num{n} < \num{m}$,
+  lan akibate
+  $\Sat/{M}{\num{n} < \num{m}}$.
+  Mula, kaya ing ndhuwur,
+  $\tuple{g(n), g(m)} \notin
+  \Assign{<}{M}$.
+  Dadi kita entuk:
+  $\tuple{n,m} \in
+  \Assign{<}{N}$ yen lan mung yen
+  $\tuple{g(n), g(m)} \in
+  \Assign{<}{M}$.
+\end{enumerate}
+\end{proof}
+
+\begin{explain}
+Fungsi~$g$ iku cara
+paling cetha kanggo
+netepake pemetaan saka
+$\Nat$ menyang ranah
+sembarang !!{structure}~$\Struct{M}$
+liyane kanggo
+$\Lang{L_A}$, amarga
+saben $\Struct{M}$
+kaya mangkono ngemot
+!!{element}s kang dijenengi
+dening $\num{0}$,
+$\num{1}$, $\num{2}$,
+lan sateruse.
+Mula ora nggumunake yen
+$\Struct{M}$ ndadekake
+paling ora sawenehing
+pratelan dhasar ngenani
+$\num{n}$ bener
+kanthi cara padha
+kaya~$\Struct{N}$,
+lan $g$ uga bijektif,
+mula $g$ dadi isomorfisme.
+Nyatane, yen
+$\Domain{M}$ ora ngemot
+!!{element}s liyane
+ngluwihi kang dijenengi
+dening $\num{n}$,
+iku siji-sijine.
+\end{explain}
+
+\begin{prop}
+\ollabel{prop:thq-unique-iso}
+Yen $\Struct{M}$ standar,
+mula $g$ saka bukti
+\olref{prop:thq-standard}
+iku siji-sijine isomorfisme
+saka $\Struct{N}$
+menyang~$\Struct{M}$.
+\end{prop}
+
+\begin{proof}
+Upamakna $h\colon
+\Nat \to \Domain{M}$
+iku isomorfisme
+antarane $\Struct{N}$
+lan~$\Struct{M}$.
+Kita nuduhake $g = h$
+kanthi induksi tumrap~$n$.
+Yen $n = 0$, mula
+$g(0) = \Assign{\Obj{0}}{M}$
+miturut definisi~$g$.
+Nanging amarga $h$
+isomorfisme,
+$h(0) =
+h(\Assign{\Obj{0}}{N}) =
+\Assign{\Obj{0}}{M}$,
+mula $g(0) = h(0)$.
+
+Saiki gatekna kasus
+$n+1$. Kita nduweni
+\begin{align*}
+  g(n+1) & = \Value{\num{n+1}}{M} \text{ miturut definisi~$g$}\\
+  & = \Value{\num{n}'}{M} \text{ amarga $\num{n+1}\ident \num{n}'$}\\
+  & = \Assign{\prime}{M}(\Value{\num{n}}{M})
+    \text{ miturut definisi $\Value{t'}{M}$}\\
+  & = \Assign{\prime}{M}(g(n))  \text{ miturut definisi~$g$}\\
+  & = \Assign{\prime}{M}(h(n)) \text{ miturut hipotesis induksi}\\
+  & = h(\Assign{\prime}{N}(n)) \text{ amarga $h$ iku isomorfisme}\\
+  & = h(n+1)
+\end{align*}
+\end{proof}
+
+\begin{explain}
+Kanggo sembarang himpunan
+!!{denumerable}~$M$,
+ana !!a{bijection}
+antarane $\Nat$ lan
+$M$, mula saben himpunan~$M$
+kaya mangkono bisa dadi
+!!{domain} model
+standar~$\Struct{M}$.
+Nyatane, sawisé milih
+objek $z \in M$
+lan fungsi $s$
+kang cocog minangka
+$\Assign{\Obj{0}}{M}$
+lan $\Assign{\prime}{M}$,
+interpretasi $+$,
+$\times$, lan $<$
+wis katetepake.
+Mung fungsi~$s\colon
+M \to M \setminus \{z\}$
+kang !!{injective}
+lan !!{surjective}
+kang bisa dadi
+$\Assign{\prime}{M}$
+ing model standar.
+Jajaran asil $s$
+ora bisa ngemot~$z$,
+amarga yen ngemot,
+$\lforall[x][
+\eq/[\Obj 0][x']]$
+bakal kleru.
+!!{sentence} iku
+bener ing~$\Struct{N}$,
+mula $\Struct{M}$
+uga kudu ndadekake
+ukara iku bener.
+Fungsi~$s$ kudu
+!!{injective},
+amarga fungsi penerus
+$\Assign{\prime}{N}$
+ing~$\Struct{N}$
+uga mangkono, lan
+sipat !!{injective}
+saka $\Assign{\prime}{N}$
+bisa dinyatakake
+dening !!a{sentence}
+kang bener ing~$\Struct{N}$.
+Fungsi iku kudu
+!!{surjective}
+amarga yen ora,
+ana sawenehing
+$x \in M \setminus \{z\}$
+kang ora ana ing
+jajaran asil saka~$s$;
+kanthi mangkono
+!!{sentence}
+$\lforall[x][(
+\eq[x][\Obj 0] \lor
+\lexists[y][\eq[y'][x]])]$
+bakal kleru ing~$\Struct{M}$,
+dene ukara iku bener
+ing~$\Struct{N}$.
+Cathetan koreksi sumber OLPL-096:
+surjektivitas gegayutan
+karo jajaran asil fungsi,
+dudu ranah inpute.
+\end{explain}
+
+
+\end{document}

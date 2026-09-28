@@ -1,0 +1,138 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{spine}{Valphabasic}
+\olsection{Sipat Dhasar Tataran}
+
+Kanggo nuduhake wigatine definisi himpunan-himpunan
+$V_\alpha$ tumrap dhasar teori, kita bakal nerangake
+sawetara asil dhasar. Kita miwiti saka sawijining
+definisi:\footnote{Durung ana istilah baku kanggo
+``potent''; iki jeneng kang dienggo dening
+\citet{ButtonLT1}.}
+\begin{defn}
+	Himpunan $A$ iku \emph{poten} yen lan mung yen
+	$\forall x((\exists y \in A)x \subseteq y \lif x \in A)$.
+\end{defn}
+\begin{lem}\ollabel{Valphabasicprops}
+Kanggo saben ordinal $\alpha$:
+\begin{enumerate}
+	\item\ollabel{Valphatrans} Saben $V_\alpha$ transitif.
+	\item\ollabel{Valphapotent} Saben $V_\alpha$ poten.
+	\item\ollabel{Valphacum} Yen $\gamma \in \alpha$,
+	mula $V_\gamma \in V_\alpha$ (lan mula uga
+	$V_\gamma \subseteq V_\alpha$ miturut
+	\olref{Valphatrans}).
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+Kita mbuktekake kanthi induksi transfinit bebarengan.
+Kanggo langkah induksi, upamane
+\olref{Valphatrans}--\olref{Valphacum} lumaku
+kanggo saben ordinal $\beta < \alpha$.
+
+Kasus $\alpha = \emptyset$ cetha.
+
+Upamane $\alpha = \ordsucc{\beta}$. Kanggo mbuktekake
+\olref{Valphacum}, yen $\gamma \in \alpha$
+mula $V_\gamma \subseteq V_\beta$ miturut
+pangira-ira induksi utawa refleksivitas, dadi
+$V_\gamma \in \Pow{V_\beta} = V_\alpha$.
+Kanggo mbuktekake \olref{Valphapotent}, upamane
+$A \subseteq B \in V_\alpha$, yaiku
+$A \subseteq B \subseteq V_\beta$; mula
+$A \subseteq V_\beta$, dadi $A \in V_\alpha$.
+Kanggo mbuktekake \olref{Valphatrans}, yen
+$x \in A \in V_\alpha$, kita duwe
+$A \subseteq V_\beta$, dadi $x \in V_\beta$.
+Mula $x \subseteq V_\beta$ amarga
+$V_\beta$ transitif miturut pangira-ira,
+lan dadi $x \in V_\alpha$.
+
+Upamane $\alpha$ ordinal limit. Kanggo mbuktekake
+\olref{Valphacum}, yen $\gamma \in \alpha$
+mula $\gamma \in \ordsucc{\gamma} \in \alpha$.
+Mula $V_\gamma \in V_{\ordsucc{\gamma}}$
+miturut pangira-ira, saengga
+$V_\gamma \in \bigcup_{\beta \in \alpha} V_\beta
+= V_\alpha$. Kanggo mbuktekake
+\olref{Valphatrans} lan \olref{Valphapotent},
+elinga yen gabungan himpunan-himpunan transitif
+(utawa poten) tetep transitif (utawa poten).
+\end{proof}
+
+\begin{lem}\ollabel{Valphanotref}
+Kanggo saben ordinal $\alpha$, $V_\alpha \notin V_\alpha$.
+\end{lem}
+
+\begin{proof}
+Kanthi induksi transfinit. Cetha yen
+$V_\emptyset \notin V_\emptyset$.
+
+Yen $V_{\ordsucc{\alpha}} \in V_{\ordsucc{\alpha}} =
+\Pow{V_\alpha}$, mula
+$V_{\ordsucc{\alpha}} \subseteq V_\alpha$;
+lan amarga $V_\alpha \in V_{\ordsucc{\alpha}}$
+miturut \olref{Valphabasicprops}, kita oleh
+$V_\alpha \in V_\alpha$. Mula, yen
+$V_\alpha \notin V_\alpha$, mesthi
+$V_{\ordsucc{\alpha}} \notin V_{\ordsucc{\alpha}}$.
+
+Yen $\alpha$ ordinal limit lan
+$V_\alpha \in V_\alpha = \bigcup_{\beta \in
+\alpha}V_\beta$, mula $V_\alpha \in V_\beta$
+kanggo sawijining $\beta \in \alpha$; nanging
+$V_\beta \in V_\alpha$ uga, saengga
+$V_\beta \in V_\beta$ miturut
+\olref{Valphabasicprops} (dienggo kaping pindho).
+Mula, yen $V_\beta \notin V_\beta$ kanggo saben
+$\beta \in \alpha$, mesthi
+$V_\alpha \notin V_\alpha$.
+\end{proof}
+
+\begin{cor}
+Kanggo ordinal sebarang $\alpha, \beta$:
+$\alpha \in \beta$ yen lan mung yen
+$V_\alpha \in V_\beta$.
+\end{cor}
+
+\begin{proof}
+\Olref{Valphabasicprops} mbuktekake salah siji
+arah. Kosokbaline, upamane $V_\alpha \in V_\beta$.
+Dadi $\alpha \neq \beta$ miturut
+\olref{Valphanotref};
+lan $\beta \notin \alpha$, awit yen ora,
+kita bakal duwe $V_\beta \in V_\alpha$,
+banjur $V_\beta \in V_\beta$ miturut
+\olref{Valphabasicprops} (dienggo kaping pindho),
+bertentangan karo \olref{Valphanotref}.
+Dadi $\alpha \in \beta$ miturut trikotomi.
+\end{proof}
+\noindent
+Kabeh iki ngidini kita nganggep saben $V_\alpha$
+minangka tataran kaping-$\alpha$ ing hierarki.
+Mangkene alesane.
+
+Saben $V_\alpha$ bisa dianggep kabentuk liwat
+proses \emph{iteratif}, amarga panganggone ordinal
+nglacak urutan iterasi. Kajaba iku, yen siji
+tataran kabentuk luwih dhisik tinimbang tataran
+liyane, yaiku $V_\beta \in V_\alpha$, utawa
+$\beta \in \alpha$, proses pambentukane
+\emph{kumulatif}, amarga
+$V_\beta \subseteq V_\alpha$. Pungkasane,
+kita pancen mbentuk \emph{kabeh} himpunan kang
+bisa dikumpulake saka himpunan-himpunan kang wis
+ana ing tataran sadurunge, amarga saben tataran
+penerus $V_{\ordsucc{\alpha}}$ iku himpunan
+kuasa saka tataran sadurunge, $V_\alpha$.
+
+Dadi, kanthi $\ZFminus$, kita wis
+\emph{meh} rampung njlentrehake gagasan babagan
+hierarki himpunan kang iteratif lan kumulatif.
+(Nanging, kita isih kudu menehi dhasar kanggo
+Aksioma Panggantian.)
+
+\end{document}

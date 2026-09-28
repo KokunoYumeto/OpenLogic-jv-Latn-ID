@@ -1,0 +1,295 @@
+% Part: proof-theory
+% Chapter: natural-deduction
+% Section: rules-proofs
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{nat}{rp}
+
+\olsection{Aturan lan \usetoken{P}{proof}}
+
+Kita miwiti kanthi menehi sawetara dhéfinisi lan netepaké sawetara istilah.
+
+Coba delengen rong aturan ing \Log{N1c} lan~\Log{N1i} kang nyebut $!A
+\lif !B$.
+\[
+\bottomAlignProof
+\AxiomC{$\Discharge{!A}{x}$}
+\shortDeduce
+\DeduceC{$!B$}
+\DischargeRule{\Intro{\lif}}{x}
+\UnaryInfC{$!A \lif !B$}
+\DisplayProof
+\qquad
+\bottomAlignProof
+\AxiomC{$!A \lif !B$}
+\AxiomC{$!A$}
+\RightLabel{\Elim{\lif}}
+\BinaryInfC{$!B$}
+\DisplayProof
+\]
+Aturan \Elim{\lif} cukup prasaja. !!{formula}s ing ndhuwur garis
+iku \emph{premis}. !!{formula} ing sisih kiwa iku
+!!{formula} \emph{utama}~$!A \lif !B$. Kabèh aturan !!{elimination}
+nduwèni siji premis kaya mangkono, tansah ing sisih paling kiwa.
+Premis iku diarani premis \emph{mayor} saka inferènsi. Yèn ana
+premis liya, kaya ing kéné, premis iku diarani premis \emph{minor}.
+Premis aturan !!{introduction} uga diarani premis mayor.
+!!{formula} ing sangisoré garis iku \emph{konklusi}.
+
+Aturan \Intro{\lif} mung nduwèni siji premis, lan ing kéné konklusiné
+yaiku formula utama~$!A \lif !B$. Kabèh aturan !!{introduction}
+kaya mangkono: konklusiné dadi formula utama, lan operator pokoké
+yaiku operator kang ``dilebokaké.''
+
+Notasi $\Discharge{!A}{x}$ nduwèni teges kaya mangkéné. Ing
+!!a{proof}, inferènsi \Intro{\lif} ditrapaké marang !!a{formula}~$!B$
+minangka premis. Sub-!!{proof} kang pungkasané~$!B$ nduwèni sawetara
+!!{formula}s wiwitan. Iki diarani \emph{asumsi}. !!^a{proof}
+kanggo~$!B$ saka siji utawa luwih asumsi kang wujudé~$!A$ iku
+!!a{proof} yèn $!A$ ndhèrèkaké~$!B$. Nalika aturan \Intro{\lif}
+ditrapaké, kita nyimpulaké~$!A \lif !B$, lan konklusi iku ora gumantung
+manèh marang asumsi~$!A$. Kanggo nandhani iki, asumsi kang wujudé~$!A$
+ing !!{proof} kang ngemot inferènsi~\Intro{\lif} mau \emph{dibusak}
+utawa \emph{ditutup}. Aturané nemtokaké asumsi endi kang bisa dibusak.
+Ing \Intro{\lif} kanthi konklusi $!A \lif !B$, asumsi iku
+wujudé~$!A$, yaiku padha karo antesèdené implikasi. Kadhang kala
+perlu dituduhaké asumsi endi kang dibusak déning aturan endi;
+kanggo kuwi dienggo label pambusakan~$x$. Sing wigati, aturan kang
+mbusak asumsi ora \emph{kudu} mbusak \emph{kabèh} asumsi kang wujudé
+cocog, malah ora kudu mbusak asumsi siji-sijia. Tuladhané, iki bener
+sanajan \Intro{\lif} kapisan ora mbusak asumsi apa-apa:
+\[
+\AxiomC{$\Discharge{!A}{y}$}
+\DischargeRule{\Intro{\lif}}{x}
+\UnaryInfC{$!B \lif !A$}
+\DischargeRule{\Intro{\lif}}{y}
+\UnaryInfC{$!A \lif (!B \lif !A)$}
+\DisplayProof
+\]
+Yèn sawijining aturan ora mbusak asumsi apa-apa, label pambusakané
+ora ditulis (kaya ing kéné).
+
+Ing !!{proof} iki
+\[
+\AxiomC{$\Discharge{!A}{x}$}
+\AxiomC{$\Discharge{!A}{y}$}
+\RightLabel{\Intro{\land}}
+\BinaryInfC{$!A \land !A$}
+\RightLabel{\Elim{\land}}
+\UnaryInfC{$!A$}
+\DischargeRule{\Intro{\lif}}{x}
+\UnaryInfC{$!A \lif !A$}
+\DischargeRule{\Intro{\lif}}{y}
+\UnaryInfC{$!A \lif (!A \lif !A)$}
+\DisplayProof
+\]
+inferènsi \Intro{\lif} kapisan mbusak asumsi sisih kiwa
+$!A^x$, déné kang kapindho mbusak asumsi sisih tengen~$!A^y$.
+Tegesé, kabèh asumsi mawa label~$x$ dibusak déning \Intro{\lif}
+mawa label~$x$, lan kabèh asumsi mawa label~$y$ déning aturan
+mawa label~$y$. Supaya iki lumaku, kabèh asumsi kang labelé padha
+uga kudu dadi !!{formula} kang padha.
+
+Aturan kuantor rada luwih ruwet. Tuladhané, aturan ing
+\Log{N1i} kanggo $\lexists$ yaiku:
+\[
+\bottomAlignProof
+\AxiomC{$!A(t)$}
+\RightLabel{\Intro{\lexists}}
+\UnaryInfC{$\lexists[x][!A(x)]$}
+\DisplayProof
+\qquad
+\bottomAlignProof
+\AxiomC{$\lexists[x][!A(x)]$} 
+\AxiomC{$\Discharge{!A(c)}{x}$}
+\shortDeduce
+\DeduceC{$!B$}
+\DischargeRule{\Elim{\lexists}}{x}
+\BinaryInfC{$!B$} \DisplayProof 
+\bottomAlignProof
+\] Ing aturan
+\Intro{\lexists}, premisé~$!A(t)$ kanthi $t$ minangka suku katutup,
+yaiku suku tanpa variabel. Inferènsi kaya mangkono bener---tegesé,
+cocog karo skéma aturan \Intro{\lexists}---yèn ana !!{formula}~$!A$,
+variabel~$x$, lan suku katutup~$t$ nganti konklusiné
+$\lexists[x][!A]$ lan premisé~$\Subst{!A}{t}{x}$.
+Aturan \Elim{\lexists} ngidini kita mbusak asumsi kang wujudé~$!A(c)$:
+ing saben inferènsi ana !!{constant}~$c$, lan asumsi kang wujudé
+$\Subst{!A}{c}{x}$ bisa dibusak. Kabèh asumsi kang dibusak déning
+siji inferènsi kudu nganggo~$c$ kang padha. Konstanta iki diarani
+\emph{variabel eigen} saka inferènsi \Elim{\lexists}. Inferènsi iku
+mung bener yèn $c$~ora katon ing asumsi kabuka liyané kajaba
+$!A(c)$ kang dibusak, ora katon ing~$!B$, lan ora katon ing~$!A$.
+Iki diarani \emph{syarat variabel eigen}.
+
+!!^{proof}s ing \Log{N1c} lan~\Log{N1i} iku wit winates saka
+formula kang kawangun sacara induktif saka aksioma nganggo
+aturan inferènsi. Saben pucuk wit iku asumsi, kang bisa mawa label
+pambusakan; saben !!{formula} liyané ndhèrèk saka !!{formula}s
+ing sadhuwuré langsung lumantar salah siji aturan inferènsi ing
+sistem mau. Yèn sawijining kemunculan !!{formula} minangka asumsi
+ing wit sadhuwuré inferènsi durung dibusak déning inferènsi ing
+antarané, asumsi iku diarani \emph{kabuka} (ing inferènsi mau).
+
+\begin{defn}\ollabel{defn:proof}
+\emph{!!^{proof}s} ing \Log{N1c} lan~\Log{N1i} iku wit winates saka
+!!{formula}s kang ditetepaké sacara induktif kaya mangkéné:
+\begin{enumerate}
+  \item\ollabel{defn:prf:assumption} Saben !!{formula}
+  kang mawa label pambusakan kayata $x$ utawa $y$, dhéwé wis dadi
+  !!a{proof}. Ing !!a{proof} kang mung isi siji !!{formula},
+  !!{formula} iku dianggep asumsi kabuka.
+  \item\ollabel{defn:prf:one-prem} Yèn $R$ aturan kang nduwèni siji,
+  loro, utawa telung premis $!A_1$, $!A_2$, $!A_3$, kanthi
+  konklusi~$!A$, lan $\delta_1$, $\delta_2$, $\delta_3$ iku
+  !!{proof}s kang pungkasané $!A_1$, $!A_2$, $!A_3$,
+  miturut urutané, banjur
+  \[
+  \AxiomC{}
+  \RightLabel{$\delta_1$}
+  \DeduceC{$!A_1$}
+  \RightLabel{$R$}
+  \UnaryInfC{$!A$}
+  \DisplayProof
+\qquad
+  \AxiomC{}
+  \RightLabel{$\delta_1$}
+  \DeduceC{$!A_1$}
+  \AxiomC{}
+  \RightLabel{$\delta_2$}
+  \DeduceC{$!A_2$}
+  \RightLabel{$R$}
+  \BinaryInfC{$!A$}
+  \DisplayProof
+\qquad
+  \AxiomC{}
+  \RightLabel{$\delta_1$}
+  \DeduceC{$!A_1$}
+  \AxiomC{}
+  \RightLabel{$\delta_2$}
+  \DeduceC{$!A_2$}
+  \AxiomC{}
+  \RightLabel{$\delta_3$}
+  \DeduceC{$!A_3$}
+  \RightLabel{$R$}
+  \TrinaryInfC{$!A$}
+  \DisplayProof
+  \]
+  saben-sabené dadi !!a{proof}, angger label asumsi ing !!{proof}s mau
+  cocog (ora ana rong !!{formula}s kang béda mawa label pambusakan
+  kang padha) lan inferènsiné ngetrapaké~$R$ kanthi bener.
+  \item Kemunculan !!{formula} paling dhuwur ing !!{proof} anyar
+  dianggep \emph{asumsi kabuka} saka !!{proof} iku yèn uga dadi
+  asumsi kabuka saka $\delta_1$, $\delta_2$, utawa~$\delta_3$,
+  kajaba kemunculan kang dibusak déning aturan mau. Yèn aturané
+  mawa label~$x$ (utawa $x\, y$), kanggo \Intro{\lif}
+  lan~\Intro{\lnot} kang dibusak yaiku kabèh asumsi kabuka
+  ing~$\delta_1$ mawa label~$x$; kanggo \Elim{\lexists} yaiku
+  kabèh asumsi kabuka mawa label~$x$ ing~$\delta_2$; kanggo
+  \Elim{\lor} yaiku kabèh asumsi kabuka mawa label~$x$
+  ing~$\delta_2$ lan kabèh asumsi kabuka mawa label~$y$
+  ing~$\delta_3$.
+\end{enumerate}
+\end{defn}
+
+!!{proof}s kang dienggo ing pambangunan induktif sawijining
+!!a{proof} diarani \emph{sub-!!{proof}s}-é. Sub-!!{proof}s kang
+pungkasané ana ing premis-premis sawijining inferènsi diarani
+\emph{sub-!!{proof}s langsung} saka inferènsi mau. Aturan
+\Log{N1c} lan \Log{N1i} katon ing \olref{tab:N1}.
+
+\subfile{rules-N1}
+
+\begin{defn}
+\emph{!!{height}}~$\pheight{\delta}$ saka !!a{proof}~$\delta$
+ditetepaké sacara induktif kaya mangkéné.
+\begin{enumerate}
+  \item Yèn $\delta$ mung isi asumsi, $\pheight{\delta} = 0$.
+  \item Yèn $\delta$ pungkasané inferènsi kanthi siji premis lan
+  sub-!!{proof} langsung~$\delta_1$, banjur $\pheight{\delta} = \pheight{\delta_1} + 1$.
+  \item Yèn $\delta$ pungkasané inferènsi kanthi rong premis lan
+  sub-!!{proof}s langsung~$\delta_1$ lan~$\delta_2$, banjur $\pheight{\delta} =
+  \max(\pheight{\delta_1}, \pheight{\delta_2}) + 1$.
+  \item Yèn $\delta$ pungkasané \Elim{\lor} kanthi
+  sub-!!{proof}s langsung~$\delta_1$, $\delta_2$, lan~$\delta_3$, banjur $\pheight{\delta} =
+  \max(\pheight{\delta_1}, \pheight{\delta_2}, \pheight{\delta_3}) + 1$.
+\end{enumerate}
+Yèn sekuen~$S$ nduwèni !!a{proof} kang dhuwuré $\le n$,
+kita nulis $\Proves[n] S$.
+\end{defn}
+
+\begin{ex}
+Ing \Log{N1i}, saben !!{formula} bisa dadi !!a{proof} saka awaké dhéwé
+minangka asumsi kabuka. Mula
+\[
+!A \land !B^x
+\]
+iku !!a{proof}~$\delta_1$. Dhuwuré~$0$.
+Saka $\delta_1$ kita bisa ngasilaké rong !!{proof}s~$\delta_2$
+lan~$\delta_3$ kanthi ngetrapaké salah siji saka rong versi~\Elim{\land}
+\[
+\AxiomC{$!A \land !B^x$}
+\RightLabel{\Elim{\land}[2]}
+\UnaryInfC{$!B$}
+\DisplayProof
+\qquad
+\AxiomC{$!A \land !B^x$}
+\RightLabel{\Elim{\land}[1]}
+\UnaryInfC{$!A$}
+\DisplayProof
+\]
+Sub-!!{proof}s langsung saka inferènsi pungkasan ing~$\delta_2$
+lan~$\delta_3$ iku padha, yaiku $!A \land !B$.
+Kaloro !!{proof}s mau nduwèni kemunculan $!A\land !B$
+minangka asumsi kabuka. Kita olèh
+$\pheight{\delta_2} = \pheight{\delta_3} = 1$.
+
+Aturan \Intro{\land} mbutuhaké rong premis kang wujudé $!B$ lan $!A$
+kanggo mbeneraké konklusi kang wujudé~$!B \land !A$. Mula, ing
+ngisor iki !!a{proof}~$\delta_4$:
+\[
+\AxiomC{$!A \land !B^x$}
+\RightLabel{\Elim{\land}[2]}
+\UnaryInfC{$!B$}
+\LeftSubproofLabel{$\delta_2$}
+\AxiomC{$!A \land !B^x$}
+\RightLabel{\Elim{\land}[1]}
+\UnaryInfC{$!A$}
+\RightSubproofLabel{$\delta_3$}
+\RightLabel{\Intro{\land}}
+\BinaryInfC{$!B \land !A$}
+\DisplayProof
+\]
+Dhuwuré $\pheight{\delta_4} = \max(\pheight{\delta_2},
+\pheight{\delta_3})+1 = \max(1,1) + 1 = 2$. Ana rong kemunculan
+$!A \land !B$ minangka asumsi, lan kaloroné kabuka.
+
+Pungkasan, kita bisa ngetrapaké \Intro{\lif} kanggo ngasilaké $\delta_5$:
+\[
+\AxiomC{$\Discharge{!A \land !B}{x}$}
+\RightLabel{\Elim{\land}[2]}
+\UnaryInfC{$!B$}
+\LeftSubproofLabel{$\delta_2$}
+\AxiomC{$\Discharge{!A \land !B}{x}$}
+\RightLabel{\Elim{\land}[1]}
+\UnaryInfC{$!A$}
+\RightSubproofLabel{$\delta_3$}
+\RightLabel{\Intro{\land}}
+\BinaryInfC{$!B \land !A$}
+\DischargeRule{\Intro{\lif}}{x}
+\UnaryInfC{$(!A \land !B) \lif (!B \land !A)$}
+\DisplayProof
+\]
+Dhuwuré $\pheight{\delta_4} + 1 = 3$. Inferènsi \Intro{\lif}
+mbusak kabèh kemunculan asumsi kang wujudé $!A \land !B$
+mawa label~$x$, yaiku kaloro asumsi kang sadurungé kabuka
+ing subbukti langsung. Amarga iku mung siji-sijiné jinis
+asumsi ing $\delta_5$, saiki ora ana asumsi kabuka, mula iki
+!!a{proof} \emph{kanggo} !!{formula} pungkasané
+$(!A \land !B) \lif (!B \land !A)$.
+\end{ex}
+
+\end{document}

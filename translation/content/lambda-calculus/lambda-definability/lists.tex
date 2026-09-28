@@ -1,0 +1,53 @@
+% Part: lambda-calculus
+% Chapter: lambda-definability
+% Section: lists
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{ldf}{lst}
+\olsection{Dhaptar}
+
+Dhaptar $[M_1, M_2, \ldots, M_n]$ bisa ditetepaké dadi:
+\[
+  [M_1, M_2, \ldots, M_n] \ident \lambd[sz][s M_1 (s M_2 (\ldots (s M_n z)))]
+\]
+Kanthi cara informal, suku kang merepresentasikaké dhaptar
+iku fungsi ``panglumpuk'' dhaptar kasebut: fungsi kang nampa
+rong suku. Suku kapisan minangka fungsi kang nampa nilai kang
+wis diklumpukaké lan sawijining unsur anyar, banjur mbalèkaké
+nilai panglumpuk anyar. Suku kapindho minangka nilai wiwitan.
+Fungsi iki nglumpukaké unsur siji-siji lan pungkasané
+mbalèkaké asilé.
+
+\begin{digress}
+  Yèn wis kulina karo pemrograman fungsional, definisi iki
+  mirip karo \emph{lipetan tengen}: sawijining dhaptar
+  ditetepaké minangka fungsi lipetan tengen saka unsur-unsuré.
+\end{digress}
+
+Saka enkoding iki, kita bisa kanthi gampang netepaké
+sawetara fungsi kang migunani:
+\begin{align*}
+  \fn{Sum} & \ident
+  \lambd[l][l \, (\lambd[xa][\fn{Add} \, x \, a])\,  \num{0}]\\
+  \fn{Len} & \ident
+  \lambd[l][l \, (\lambd[xa][\fn{Add} \, a \, \num{1}]) \num{0}]
+\end{align*}
+
+$\fn{Sum}$ ngitung gunggung saka sawijining dhaptar numeral
+Church. Fungsi iki nglumpukaké nilai ing dhaptar, kanthi nilai
+wiwitan $\num{0}$, lan kanggo saben unsur mbalèkaké
+$\fn{Add} \, x\, a$ minangka nilai anyar (ing kéné $x$
+iku unsur saiki lan $a$ nilai kang wis diklumpukaké).
+Asilé yaiku gunggung kabèh unsur.
+
+\begin{prob}
+  Apa kang ditindakake $\fn{Len}$? Terangna.
+\end{prob}
+
+\begin{prob}
+  Tetepna fungsi kang mbalikké urutan sawijining dhaptar.
+\end{prob}
+\end{document}

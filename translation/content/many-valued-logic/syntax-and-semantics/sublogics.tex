@@ -1,0 +1,97 @@
+% Part: many-valued-logic
+% Chapter: syntax-and-semantics
+% Section: sublogics
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{syn}{sub}
+
+\olsection{Logika Mawa Akeh Nilai minangka Sublogika saka~$\LogCL$}
+
+Logika mawa akeh nilai kang lumrah umume ditetepake nganggo matriks
+kang fungsi kabenerane, yen diwenehi argumen ing $\{\True, \False\}$,
+ngasilake nilai kang padha karo fungsi kabeneran klasik. Mligine,
+ing logika kasebut, yen $x \in \{\True, \False\}$, mula
+$\tf{\lnot}[\Log L](x) = \tf{\lnot}[\LogCL](x)$; lan yen
+$\star$ salah siji saka $\land$, $\lor$, utawa $\lif$,
+lan $x, y \in \{\True, \False\}$, mula
+$\tf{\star}[\Log L](x,y) = \tf{\star}[\LogCL](x,y)$.
+Tegese, fungsi kabeneran kanggo $\lnot$, $\land$, $\lor$,
+lan $\lif$ yen diwatesi marang $\{\True,\False\}$
+padha persis karo fungsi kabeneran klasik.
+
+\begin{prop}\ollabel{prop:mvl-cl}
+  Upamakna basa logika mawa akeh nilai~$\Log L$ mung ngemot
+  konektif $\lnot$, $\land$, $\lor$, $\lif$ lan ora ngemot
+  tetapan proposisional; $\True, \False \in V$; lan fungsi
+  kabenerane nyukupi:
+  \begin{enumerate}
+    \item\ollabel{prop:not} $\tf{\lnot}[\Log L](x) = \tf{\lnot}[\LogCL](x)$ yen $x =
+    \True$ utawa $x = \False$;
+    \item\ollabel{prop:land} $\tf{\land}[\Log L](x,y) = \tf{\land}[\LogCL](x,y)$,
+    \item\ollabel{prop:lor} $\tf{\lor}[\Log L](x,y) = \tf{\lor}[\LogCL](x,y)$,
+    \item\ollabel{prop:lif} $\tf{\lif}[\Log L](x,y) = \tf{\lif}[\LogCL](x,y)$,
+    yen $x, y \in \{\True, \False\}$.
+  \end{enumerate}
+  Mula kanggo saben valuasi $\pAssign v$ menyang~$V$ kang masangake
+  nilai Boolean marang saben peubah proposisional, yaiku
+  $\pAssign v(p) \in \{\True,\False\}$, kita duwe
+  $\pValue v[\Log L](!A) = \pValue v[\LogCL](!A)$.
+\end{prop}
+
+\begin{proof}
+  Bukti nganggo induksi marang~$!A$.
+  \begin{enumerate}
+  \item Yen $!A \ident p$ atomik, kita duwe $\pValue v[\Log L](!A) =
+  \pAssign v(p) = \pValue
+  v[\LogCL](!A)$.
+  \item Yen $!A \ident \lnot B$, kita duwe
+  \begin{align*}
+    \pValue v[\Log L](!A) & = \tf{\lnot}[\Log L](\pValue v[\Log L](!B)) & &\text{miturut \olref[val]{defn:pValue}}\\
+    & = \tf{\lnot}[\Log L](\pValue v[\LogCL](!B)) && \text{miturut hipotesis induksi}\\
+    & = \tf{\lnot}[\LogCL](\pValue v[\LogCL](!B)) 
+&&\text{miturut asumsi \olref{prop:not},}\\
+&&&\text{amarga $\pValue v[\LogCL](!B) \in \{\True, \False\}$,}\\
+& = \pValue v[\LogCL](!A) &&\text{miturut \olref[val]{defn:pValue}}.
+\end{align*}
+\item Yen $!A \ident (!B \land !C)$, kita duwe
+\begin{align*}
+  \pValue v[\Log L](!A) & = \tf{\land}[\Log L](\pValue v[\Log L](!B), \pValue v[\Log L](!C)) & &\text{miturut \olref[val]{defn:pValue}}\\
+  & = \tf{\land}[\Log L](\pValue v[\LogCL](!B),\pValue v[\LogCL](!C)) && \text{miturut hipotesis induksi}\\
+  & = \tf{\land}[\LogCL](\pValue v[\LogCL](!B),\pValue v[\LogCL](!C)) 
+&&\text{miturut asumsi \olref{prop:land},}\\
+&&&\text{amarga $\pValue v[\LogCL](!B),\pValue v[\LogCL](!C) \in \{\True, \False\}$,}\\
+& = \pValue v[\LogCL](!A) &&\text{miturut \olref[val]{defn:pValue}}.
+\end{align*}
+\end{enumerate}
+Kasus $!A \ident (!B \lor !C)$ lan $!A \ident (!B \lif !C)$
+padha carane.
+\end{proof}
+
+\begin{cor}
+  Yen logika mawa akeh nilai nyukupi syarat ing
+  \olref{prop:mvl-cl}, $\True \in V^+$ lan $\False \notin V^+$,
+  mula ${\Entails[\Log L]} \subseteq {\Entails[\LogCL]}$;
+  tegese, yen $\Gamma
+  \Entails[\Log L] !B$, mula $\Gamma \Entails[\LogCL] !B$.
+  Mligine, saben tautologi ing $\Log L$ uga tautologi klasik.
+\end{cor}
+
+\begin{proof}
+  Kita mbuktekake kontraposisine. Upamakna
+  $\Gamma \Entails/[\LogCL] !B$. Mula ana
+  !!{valuation}~$\pAssign v\colon \PVar \to
+  \{\True, \False\}$ kang nyukupi $\pValue v[\LogCL](!A) = \True$
+  kanggo saben $!A \in \Gamma$, dene $\pValue v[\LogCL](!B) = \False$.
+  Amarga $\True, \False \in V$, !!{valuation}~$\pAssign v$ uga
+  !!a{valuation} kanggo~$\Log L$. Miturut \olref{prop:mvl-cl},
+  $\pValue v[\Log L](!A) = \True$ kanggo saben $!A \in \Gamma$,
+  dene $\pValue v[\Log L](!B) = \False$.
+  Amarga $\True \in V^+$ lan $\False \notin V^+$,
+  iki ateges $\pSat{v}{\Gamma}[\Log L]$ lan
+  $\pSat/{v}{!B}[\Log L]$, yaiku
+  $\Gamma \Entails/[\Log L] !B$.
+\end{proof}
+\end{document}

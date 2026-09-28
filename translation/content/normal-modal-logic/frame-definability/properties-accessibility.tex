@@ -1,0 +1,189 @@
+% Part: normal-modal-logic
+% Chapter: frame-definability
+% Section: properties-accessibility
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{frd}{acc}
+
+\olsection{Sipat-Sipat Relasi Aksesibilitas}
+
+Akeh !!{formula}s modal kang nyata-nyata dadi ciri kanggo sipat
+relasi aksesibilitas kang prasaja, malah wis lumrah dikenal. Ing arah
+siji, iki ateges yen saben model kang nduweni sawijining sipat bakal
+ndadekake !!{formula} kang cocog (lan kabeh instansi substitusine)
+bener. Kita miwiti saka limang tuladha klasik jinis relasi
+aksesibilitas lan formula kang kabenerane dijamin dening relasi kasebut.
+
+\begin{thm}\ollabel{thm:soundschemas}
+  Upamane $\mModel{M} = \tuple{W, R, V}$ sawijining model. Yen $R$
+  nduweni sipat ing sisih kiwa \olref{tab:five}, saben instansi saka
+  !!{formula} ing sisih tengen bener ing~$\mModel{M}$.
+\end{thm}
+
+\begin{table}[t]
+    \begin{tabular}{| l || l |}
+      \hline
+      {\emph{Yen $R$ iku \dots}} & {\emph{mula \dots bener ing~$\mModel{M}$:}} \\
+      \hline \hline
+      \emph{serial}: $\forall u \exists v Ruv$ & \hbox to.43\textwidth
+           {$\Box p \lif \Diamond p$ \hfill (\Ax{D})} \\
+      \hline
+      \emph{refleksif}: $\forall w Rww$  
+      & \hbox to.43\textwidth
+          {$\Box p \lif p$ \hfill (\Ax{T})} \\
+      \hline
+      \emph{simetris}: &  \hbox to .43\textwidth
+           {$p \lif \Box\Diamond p$ \hfill (\Ax{B})} \\
+           $\forall u\forall v(Ruv \lif Rvu)$ & \\
+      \hline
+      \emph{transitif}: & \hbox to.43\textwidth
+           {$\Box p \lif \Box \Box p$ \hfill (\Ax{4})} \\
+      $\forall u \forall v \forall w ((Ruv \land Rvw) \lif Ruw)$ & \\
+      \hline 
+      \emph{Euklidean}: & \hbox to .43\textwidth
+        {$\Diamond p \lif \Box\Diamond p$ \hfill (\Ax{5})} \\
+      $\forall w \forall u \forall v ((Rwu \land Rwv) \lif Ruv)$ &\\
+      \hline
+    \end{tabular}
+    \caption{Lima fakta korespondensi.}
+    \ollabel{tab:five}
+  \end{table}
+
+\begin{proof}
+  Iki kasus kanggo \Ax{B}: kanggo nuduhake yen skema iki bener ing
+  sawijining model, kita kudu nuduhake yen kabeh instansine bener ing
+  kabeh donya ing model kasebut. Mula pilih $!A \lif \Box\Diamond !A$
+  minangka salah sawijining instansi \Ax{B}, lan pilih $w \in W$
+  minangka donya sebarang. Upamane anteseden $!A$ bener ing $w$;
+  kita arep nuduhake yen $\Box \Diamond !A$ bener ing $w$. Dadi kita
+  kudu nuduhake yen $\Diamond !A$ bener ing kabeh $w'$ kang bisa diakses
+  saka $w$. Saiki, kanggo saben $w'$ kang nyukupi $Rww'$, saka
+  hipotesis simetri kita uga duwe $Rw'w$ (delengen
+  \olref{fig:Bsymm}). Amarga $\mSat{M}{!A}[w]$, kita duwe
+  $\mSat{M}{\Diamond !A}[w']$. Amarga $w'$ dipilih sebarang kanthi
+  $Rww'$, kita duwe $\mSat{M}{\Box\Diamond!A}[w]$.
+
+Kasus-kasus liyane kita pasrahake minangka gladhen.
+\end{proof}
+
+\begin{prob}
+  Rampungna bukti \olref[nml][frd][acc]{thm:soundschemas}.
+\end{prob}
+
+\begin{figure}
+  \begin{center}
+    \begin{tikzpicture}[modal]
+      \node[world] (w1) [label={below:$\mSat{{}}{\formula{A}}$\\
+          $\mSat{{}}{\Box\Diamond \formula{A}}$}] {$w$}; 
+      \node[world] (w2) [label=below:{$\mSat{{}}{\Diamond \formula{A}}$},
+        right=of w1] {$w'$}; 
+      \draw[->, bend left] (w1) to (w2); 
+      \draw[->, bend left] (w2) to (w1); 
+    \end{tikzpicture}
+  \end{center}
+\caption{Argumentasi saka simetri.}
+\ollabel{fig:Bsymm}
+\end{figure}
+
+Gatekna yen implikasi kosok baline \olref{thm:soundschemas} ora
+bener: yen sawijining model nyukupi skema, relasi aksesibilitas model
+iku durung mesthi nduweni sipat kang cocog. Ing kasus \Ax{T} lan model
+refleksif, gampang menehi tuladha model kang \Ax{T} dhewe gagal:
+pilih $W = \{w\}$, $R = \emptyset$, lan
+$V(p) = \emptyset$. Dadi $R$ ora refleksif, nanging $\mSat{M}{\Box
+  p}[w]$ lan $\mSat/{M}{p}[w]$. Nanging ing kene mung siji instansi
+\Ax{T} kang gagal ing~$\mModel{M}$; instansi liyane, upamane
+$\Box \lnot p \lif \lnot p$, bener. Luwih angel menehi tuladha kang
+\emph{saben instansi substitusi} saka~\Ax{T} bener
+ing~$\mModel{M}$ nanging $\mModel{M}$ ora refleksif. Nanging model kaya
+mangkono pancen ana:
+
+\begin{prop}\ollabel{prop:reflexive}
+  Upamane $\mModel{M} = \tuple{W, R, V}$ sawijining model kanthi $W = \{u, v
+  \}$, ing ngendi donya $u$ lan $v$ direlasikake dening $R = \{(u,v),(v,u)\}$:
+  yaiku $Ruv$ lan $Rvu$, tanpa gelang dhiri. Upamane kanggo saben $p$:
+  $u \in V(p) \Leftrightarrow v
+  \in V(p)$. Mula:
+  \begin{enumerate}
+  \item Kanggo saben $!A$: $\mSat{M}{!A}[u]$ yen lan mung yen
+    $\mSat{M}{!A}[v]$ (gunakna induksi marang $!A$).
+  \item Saben instansi saka~\Ax{T} bener ing $\mModel{M}$.
+  \end{enumerate}
+  Amarga $\mModel{M}$ ora refleksif (malah
+  \emph{irrefleksif}), implikasi kosok baline \olref{thm:soundschemas}
+  gagal kanggo \Ax{T} (argumentasi kang padha bisa diwenehake kanggo
+  saweneh---nanging ora kabeh---skema liyane ing
+  \olref{thm:soundschemas}).
+\end{prop}
+
+\begin{prob}
+  Buktekna pratelan ing \olref[nml][frd][acc]{prop:reflexive}.
+\end{prob}
+
+Senadyan kita bakal nggatekake limang !!{formula}s klasik \Ax{D},
+\Ax{T}, \Ax{B}, \Ax{4}, lan \Ax{5}, kita cathet ing
+\olref{tab:anotherfive} sawetara sipat relasi aksesibilitas liyane.
+Relasi aksesibilitas~$R$ iku fungsional parsial yen saka saben donya
+paling akeh siji donya kang bisa diakses. Yen saka saben donya pas siji
+donya kang bisa diakses, relasi iku diarani fungsional. (Dadi relasi
+fungsional persis relasi kang serial lan fungsional parsial.) Relasi
+iki diarani ``fungsional'' amarga relasi aksesibilitas mau tumindak
+kaya fungsi (parsial). Sawijining relasi diarani padhet lemah yen
+saben $Ruv$ ana donya~$w$ ``ing antarane'' $u$ lan~$v$. Dadi relasi
+padhet lemah, ing sawijining pangertèn, kosok baline relasi transitif:
+ing relasi transitif, yen $v$ bisa digayuh saka~$u$ liwat~$w$, $v$
+uga bisa digayuh langsung saka $u$; ing relasi padhet lemah, yen $v$
+bisa digayuh langsung saka~$u$, donya iku uga bisa digayuh kanthi liwat
+sawijining~$w$. Sawijining relasi diarani kaarahake lemah yen, saben
+donya $u$ lan~$v$ bisa digayuh saka sawijining donya~$w$, ana siji
+donya~$t$ kang bisa digayuh saka $u$ lan uga saka~$v$---iki kadhang
+diarani ``sipat inten'' utawa ``konfluensi.''
+
+\begin{table}[t]
+    \begin{tabular}{| p{.50\textwidth} || p{.43\textwidth} |}
+      \hline
+      {\emph{Yen $R$ iku \dots}} & {\emph{mula \dots bener ing~$\mModel{M}$:}} \\
+      \hline \hline
+      \emph{fungsional parsial}: & 
+      \multirow{2}{*}{$\Diamond p \lif \Box p$} \\
+      $ \forall w \forall u \forall v ((Rwu \land Rwv) \lif u =v )$ & \\
+      \hline
+      \multirow{2}{*}{\emph{fungsional}: $\forall w \exists v \forall u(Rwu \liff \eq[u][v]) $} 
+      & \multirow{2}{*}{$\Diamond p \liff \Box p$} \\
+      & \\
+      \hline
+      \emph{padhet lemah}: &  \multirow{2}{*}{$\Box \Box p \lif
+        \Box p$} \\
+      $\forall u\forall v(Ruv \lif \exists w(Ruw \land Rwv))$ & \\
+      \hline
+      \emph{kasambung lemah}: &
+      \multirow{3}{*}{\hbox to.43\textwidth{$
+        \begin{array}{@{}l@{}}
+          \Box ((p \land \Box p) \lif q) \lor {} \\
+          \qquad \Box ((q \land \Box q) \lif p)
+        \end{array}$ \hfill (\Ax{L})}
+      } \\
+      $\forall w \forall u \forall v ((Rwu \land Rwv) \lif {}$ &\\
+      \qquad $(Ruv \lor u=v \lor Rvu))$ & \\
+      \hline 
+      \emph{kaarahake lemah}: & \multirow{3}{*}{\hbox to .43\textwidth
+        {$\Diamond\Box p \lif \Box\Diamond p$\hfill (\Ax{G})}} \\
+      $\forall w \forall u \forall v ((Rwu \land Rwv) \lif {}$ & \\
+      \qquad $\exists t (Rut \land Rvt))$ & \\
+      \hline
+    \end{tabular}
+    \caption{Lima fakta korespondensi liyane.}
+    \ollabel{tab:anotherfive}
+  \end{table}
+
+\begin{prob}
+  Upamane $\mModel{M} = \tuple{W, R, V}$ sawijining model. Tuduhna yen
+  $R$ nyukupi sipat ing sisih kiwa
+  \olref[nml][frd][acc]{tab:anotherfive}, saben instansi formula kang
+  cocog ing sisih tengen bener ing~$\mModel{M}$.
+\end{prob}
+
+\end{document}

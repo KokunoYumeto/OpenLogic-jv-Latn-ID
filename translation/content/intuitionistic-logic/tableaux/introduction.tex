@@ -1,0 +1,70 @@
+% Part: intuitionistic-logic
+% Chapter: tableaux
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{tab}{int}
+
+\olsection{Pambuka}
+
+!!^{tableau}s iku wit-wit tartamtu (kang cabange mudhun) saka !!{signed
+  formula}s, yaiku pasangan kang dumadi saka tandha nilai kabeneran
+($\True$ utawa $\False$) lan !!a{sentence}
+\[
+\sFmla{\True}{!A} \text{ utawa } \sFmla{\False}{!A}.
+\]
+!!^a{tableau} diwiwiti kanthi sawetara \emph{asumsi}. Saben
+!!{signed formula} sabanjure diasilake kanthi ngetrapake salah siji
+aturan inferensi. Sawetara aturan inferensi nambahake siji utawa
+luwih !!{signed formula}s marang pucuk wit; liyane nambahake loro
+pucuk anyar, saengga dadi rong cabang. Aturan ngasilake
+!!{signed formula}s kanthi !!{formula} kang luwih prasaja tinimbang
+ing !!{signed formula} kang dadi papan aturan iku ditrapake.
+Yen sawijining cabang ngemot $\sFmla{\True}{!A}$ lan
+$\sFmla{\False}{!A}$ bebarengan, cabang iku diarani \emph{katutup}.
+Yen saben cabang ing !!a{tableau} katutup, kabeh !!{tableau} iku
+katutup. !!{tableau} katutup iku !!a{derivation} kang nuduhake yen
+himpunan !!{signed formula}s kang digunakake kanggo miwiti
+!!{tableau} ora bisa dipenuhi. Iki bisa digunakake kanggo nemtokake
+relasi $\Proves$: $\Gamma \Proves !A$ yen lan mung yen ana himpunan
+winates~$\Gamma_0 = \{!B_1, \dots, !B_n\} \subseteq \Gamma$ kanthi
+ana !!{tableau} katutup kanggo asumsi
+\[
+\{\sFmla{\False}{!A}, \sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\}.
+\]
+
+Kanggo logika intuisionistik, kita kudu nggedhekake pangerten
+!!{signed formula} lan nyetel aturan kanggo konektif. Saliyane
+tandha ($\True$ utawa $\False$), !!{formula}s ing !!{tableau}s
+intuisionistik uga nduweni \emph{prefiks}~$\sigma$. Prefiks iku
+urutan kang ora kosong saka wilangan bulat positif, yaiku
+$\sigma \in (\PosInt)^* \setminus \{\emptyseq\}$.
+Kita nulis prefiks kaya mangkono tanpa $\tuple{\ }$ kang ngubengi,
+lan misahake saben !!{element}s nganggo~$.$ tinimbang $,$.
+Yen $\sigma$ iku prefiks, mula $\sigma.n$ yaiku
+$\sigma \concat \tuple{n}$; upamane yen $\sigma = 1.2.1$,
+mula $\sigma.3$ yaiku $1.2.1.3$. Dadi, upamane,
+\[
+\sFmla{\True}{!A \lif (!B \lif !C)}[1.2]
+\]
+iku \emph{!!{signed formula} mawa prefiks} (utawa cukup
+\emph{!!{formula} mawa prefiks} supaya ringkes).
+
+Sacara intuitif, prefiks menehi jeneng donya ing model kang bisa
+nyukupi !!{formula}s ing sawijining cabang !!a{tableau}, lan yen
+$\sigma$ menehi jeneng sawijining donya, mula $\sigma.n$ menehi
+jeneng donya kang bisa diakses saka (donya kang dijenengi dening)
+~$\sigma$.
+
+Ing model intuisionistik, relasi aksesibilitas refleksif lan transitif.
+Tumrap prefiks, tegese $\sigma$ bisa diakses saka $\sigma$ dhewe,
+lan uga saben prefiks kang nambahi~$\sigma$, yaiku saben prefiks
+kang awujud $\sigma.n_1.\cdots.n_k$. Ayo nganggo notasi $\sigma.*$
+kanggo nuduhake $\sigma$ dhewe lan saben ekstensine. Kanthi tembung
+liya, prefiks $\sigma.*$ iku kabeh lan mung prefiks kang bisa
+diakses saka~$\sigma$.
+
+\end{document}

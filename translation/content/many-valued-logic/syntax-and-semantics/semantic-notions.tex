@@ -1,0 +1,72 @@
+% Part: many-valued-logic
+% Chapter: syntax-and-semantics
+% Section: semantic-notions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{syn}{sem}
+
+\olsection{Gagasan Semantis}
+
+Upamakna logika mawa akeh nilai $\Log L$ diwenehake dening matriks.
+Saiki kita bisa netepake gagasan semantis kang lumrah kanggo~$\Log L$.
+
+\begin{defn} 
+\begin{enumerate}
+\item !!^a{formula}~$!A$ \emph{bisa dicukupi} yen ana
+  $\pAssign{v}$ kang nyukupi, yaiku $\pSat{v}{!A}$; formula iku
+  \emph{ora bisa dicukupi} yen ora ana $\pAssign{v}$ kang
+  nyukupi, yaiku $\pSat{v}{!A}$;
+\item !!^a{formula}~$!A$ iku \emph{tautologi} yen
+  $\pSat{v}{!A}$ kanggo kabeh !!{valuation}s~$v$;
+\item Yen $\Gamma$ himpunan !!{formula}s,
+  $\Gamma \Entails !A$ (``$\Gamma$ ngakibatake $!A$'')
+  yen lan mung yen $\pSat{v}{!A}$ kanggo saben
+  !!{valuation}~$\pAssign{v}$ kang nyukupi $\pSat{v}{\Gamma}$.
+\item Yen $\Gamma$ himpunan !!{formula}s, $\Gamma$
+  \emph{bisa dicukupi} yen ana !!a{valuation}~$\pAssign{v}$
+  kang nyukupi $\pSat{v}{\Gamma}$; yen ora, $\Gamma$
+  \emph{ora bisa dicukupi}.
+\end{enumerate} 
+\end{defn}
+
+Kanggo gagasan iki, ana sawetara fakta kang padha karo
+kahanan ing logika klasik:
+
+\begin{prop}
+\ollabel{prop:semanticalfacts} 
+\begin{enumerate} 
+\item $!A$ iku tautologi yen lan mung yen
+  $\emptyset \Entails !A$;
+\item Yen $\Gamma$ bisa dicukupi, saben subhimpunan winates
+  saka $\Gamma$ uga bisa dicukupi;
+\item\ollabel{def:monotonicity}%
+Monotonisitas: yen $\Gamma \subseteq \Delta$
+  lan $\Gamma \Entails !A$, mula $\Delta \Entails !A$;
+\item\ollabel{def:Cut}%
+Transitivitas: yen $\Gamma \Entails !A$ lan
+  $\Delta \cup \{ !A\} \Entails !B$, mula $\Gamma \cup \Delta \Entails
+  !B$;
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+Latihan.
+\end{proof}
+
+\begin{prob}
+Buktèkna \olref[mvl][syn][sem]{prop:semanticalfacts}.
+\end{prob}
+
+Ing logika klasik, kita bisa nggayutake akibat semantis karo kondisional.
+Contone, \emph{modus ponens} iku sah: yen $\Gamma
+\Entails !A$ lan $\Gamma \Entails !A \lif !B$, mula $\Gamma \Entails
+!B$. Sesambungan wigati liyane antarane $\Entails$ lan $\lif$ ing
+logika klasik yaiku teorema deduksi semantis: $\Gamma \Entails !A
+\lif !B$ yen lan mung yen $\Gamma \cup \{!A\} \Entails !B$.
+Asil-asil iki \emph{ora mesthi} lumaku ing logika mawa akeh nilai.
+Lumaku-orane gumantung marang fungsi kabeneran~$\tf{\lif}$.
+
+\end{document}

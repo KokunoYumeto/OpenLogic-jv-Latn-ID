@@ -1,0 +1,124 @@
+% Part: conditional-logics
+% Chapter: minimal-change-semantics
+% Section: sphere-models
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{con}{min}{sph}
+
+\olsection{Model Bola}
+
+Salah siji cara menehi semantik formal kanggo kontrafaktual
+yaiku ngowahi panjelasan informal Lewis dadi struktur matematika.
+Bola-bola ing saubenge donya~$w$ banjur minangka himpunan donya.
+Amarga bola-bola iku mapan ing njero siji lan sijine, himpunan
+donya ing saubenge~$w$ kudu diurutake kanthi linear dening
+relasi himpunan bagean.
+
+\begin{defn}
+  \emph{Model bola} iku tripel~$\mModel{M} = \tuple{W, O, V}$,
+  kanthi $W$ minangka himpunan donya kang ora kosong,
+  $V\colon \PVar \to \Pow{W}$ minangka valuasi, lan
+  $O\colon W \to \Pow{\Pow{W}}$ masangake saben donya~$w$
+  karo \emph{sistem bola}~$O_w$. Kanggo saben $w$, $O_w$ iku
+  himpunan kang anggotane himpunan donya lan kudu nyukupi:
+  \begin{enumerate}
+  \item $O_w$ \emph{dipusatake} ing~$w$: $\{w\} \in O_w$.
+  \item $O_w$ \emph{susun ing njero siji lan sijine}: saben
+    $S_1$, $S_2 \in O_w$, $S_1 \subseteq S_2$ utawa
+    $S_2 \subseteq S_1$, yaiku $O_w$ diurutake kanthi linear
+    dening~$\subseteq$.
+  \item $O_w$ tutup tumrap gabungan saka kulawarga bola kang ora kosong.
+  \item $O_w$ tutup tumrap irisan saka kulawarga bola kang ora kosong.
+  \end{enumerate}
+\end{defn}
+
+Intuisi kang ndhasari $O_w$ yaiku donya-donya ``ing saubenge'' $w$
+diperang dadi lapisan miturut adoh-cedhake saka~$w$. Bola ora
+kosong kang paling njero mung ngemot $w$ dhewe, yaiku
+himpunan~$\{w\}$: $w$ luwih cedhak karo~$w$ tinimbang donya-donya
+liyane ing bola liyane. Yen $S \subsetneq S'$, mula donya-donya ing
+$S' \setminus S$ luwih adoh saka $w$ tinimbang donya-donya
+ing~$S$: $S' \setminus S$ iku ``lapisan'' antarane $S$ lan
+donya-donya ing njaba~$S'$. Mligine, bola kudu dimangerteni
+minangka ngemot kabeh donya ing njero lumahing njabane,
+dudu mung lapisan dhewe-dhewe.
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}[layerwidth=1.5,scale=.6]\tiny
+  \spheresystem{3}
+  \propositionintersect{0}{3}{60}{6}
+  \path (0,0) node[world] {$w$};
+  \spherepos{-30}{2}{node[world] {$w_2$}}
+  \spherepos{220}{2}{node[world] {$w_3$}}
+  \spherepos{90}{2}{node[world] {$w_1$}}
+  \spherepos[shift={(.1,0)}]{10}{3}{node[world] {$w_5$}}
+  \spherepos[shift={(.1,0)}]{-10}{3}{node[world] {$w_6$}}
+  \spherepos{225}{3}{node[world] {$w_4$}}
+  \spherepos{20}{4}{node[world] {$w_7$}}
+  \path (5,0) node[left] {$p$};
+\end{tikzpicture}
+\caption{Diagram model bola}
+\ollabel{fig:sphere-model}
+\end{center}
+\end{figure}
+
+Diagram ing \olref{fig:sphere-model} cocog karo model bola kanthi
+$W = \{w, w_1, \dots, w_7\}$, $V(p) = \{w_5, w_6, w_7\}$.
+Bola paling njero yaiku $S_1 = \{w\}$. Donya-donya kang paling
+cedhak karo $w$ yaiku $w_1, w_2, w_3$, mula bola kang sabanjure
+luwih gedhe yaiku $S_2 = \{w, w_1, w_2, w_3\}$. Donya-donya
+kang luwih adoh yaiku $w_4$, $w_5$, $w_6$, mula bola paling
+njaba yaiku $S_3 = \{w, w_1, \dots, w_6\}$. Sistem bola ing
+saubenge $w$ yaiku $O_w = \{S_1, S_2, S_3\}$. Donya~$w_7$
+ora ana ing bola apa wae ing saubenge~$w$. Donya-donya kang
+paling cedhak lan ing kono $p$~bener yaiku $w_5$ lan~$w_6$,
+mula bola paling cilik kang ngakoni $p$ yaiku~$S_3$.
+
+Kanggo nemtokake pemenuhan formula~$!A$ ing donya~$w$ ing
+model bola~$\mModel M$, $\mSat{M}{!A}[w]$, kita ngluwihi
+definisi kanggo !!{formula}s modal kanthi nambah klausa
+kanggo $!B \cif !C$:
+
+\begin{defn}
+  $\mSat{M}{!B \cif !C}[w]$ yen lan mung yen salah siji iki lumaku:
+  \begin{enumerate}
+  \item\ollabel{sphere-vac} Kanggo kabeh $u \in \bigcup O_w$,
+    $\mSat/{M}{!B}[u]$, utawa
+  \item\ollabel{sphere-nonvac} Kanggo sawenehing $S \in O_w$,
+    \begin{enumerate}
+      \item $\mSat{M}{!B}[u]$ kanggo sawenehing $u \in S$, lan
+      \item kanggo kabeh $v \in S$, salah siji
+        $\mSat/{M}{!B}[v]$ utawa $\mSat{M}{!C}[v]$ lumaku.
+    \end{enumerate}
+  \end{enumerate}
+\end{defn}
+
+Miturut definisi iki, $\mSat{M}{!B \cif !C}[w]$ yen lan mung
+yen anteseden~$!B$ luput ing kabeh donya ing bola-bola saubenge~$w$,
+utawa ana bola~$S$ kang ing kono $!B$ bener lan kondisional
+material $!B \lif !C$ bener ing kabeh donya ing bola kang
+``ngakoni $!B$'' iku. Gatekna yen definisi ora mbutuhake
+$S$ minangka bola kang ngakoni $!B$ lan \emph{paling njero},
+sanajan saka panjelasan intuitif kita bisa uga ngarepake
+mangkono. Nanging yen syarat ing~\olref{sphere-nonvac}
+dipenuhi dening sawenehing bola~$S$, syarat iku uga dipenuhi
+dening kabeh bola ing njero~$S$ kang isih ngakoni anteseden.
+Mula, mligine, syarat iku dipenuhi ing bola kang ngakoni
+anteseden lan paling njero, yen bola kaya mangkono ana.
+
+Gatekna uga yen definisi model bola ora mbutuhake yen
+\emph{ana} bola kang ngakoni $!B$ lan paling njero: kita bisa
+nduweni runtutan tanpa wates $S_1 \supsetneq S_2 \supsetneq
+\dots \supsetneq \{w\}$ saka bola-bola kang ngakoni $!B$,
+kanthi irisan kabeh bola ing runtutan iku mung donya pusat,
+lan anteseden luput ing donya pusat. Ing kasus iki ora ana
+bola kang ngakoni $!B$ lan paling njero. Banjur
+$\mSat{M}{!B \cif !C}[w]$ yen lan mung yen $!B \lif !C$
+lumaku ing kabeh donya ing bola-bola $S_i$, $S_{i+1}$,
+\dots, kanggo sawenehing~$i$.
+
+\end{document}

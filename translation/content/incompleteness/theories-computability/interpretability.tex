@@ -1,0 +1,68 @@
+% Part: incompleteness
+% Chapter: theories-computability
+% Section: intepretability
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{tcp}{itp}
+
+\olsection{Teori kang ing jerone $\Th{Q}$ bisa diinterpretasikake ora bisa diputusake}
+
+Kita bisa ngiyatake asil-asil iki luwih adoh. Sacara informal,
+interpretasi basa $\Lang{L_1}$ ing basa liyane
+$\Lang{L_2}$ kalebu nemtokake semesta, simbol relasi, lan
+simbol fungsi saka $\Lang{L_1}$ nganggo !!{formula}s ing
+$\Lang{L_2}$. Sanajan kita ora bakal ngrembug kanthi rinci, definisi
+iki bisa digawe presisi.
+
+\begin{thm}
+  Upamana $\Th{T}$ teori ing basa kang bisa nginterpretasikake basa
+  aritmetika, kanthi cara saengga $\Th{T}$ konsisten karo interpretasi
+  $\Th{Q}$. Mula $\Th{T}$ ora bisa diputusake. Yen $\Th{T}$
+  mbuktekake interpretasi aksioma-aksioma $\Th{Q}$, mula ora ana
+  ekstensi konsisten saka $\Th{T}$ kang bisa diputusake.
+\end{thm}
+
+Buktine mung owah-owahan cilik saka bukti teorema sadurunge;
+sawijining conto tandhing bisa digunakake kanggo misahake $\Th{Q}$ lan
+$\Th{\bar Q}$. $\Th{ZFC}$, teori himpunan Zermelo--Fraenkel kanthi
+aksioma pilihan, bisa dianggep minangka landhesan aksiomatik kang cukup
+kuwat kanggo nindakake akeh matematika lumrah. Ing $\Th{ZFC}$,
+bilangan asli bisa ditemtokake, lan liwat interpretasi iki,
+aksioma-aksioma $\Th{Q}$ bener. Mula kita nduweni
+
+\begin{cor}
+Ora ana ekstensi $\Th{ZFC}$ kang bisa diputusake.
+\end{cor}
+
+\begin{cor}
+Ora ana ekstensi $\Th{ZFC}$ kang jangkep, konsisten, lan
+!!{axiomatizable} kanthi komputabel.
+\end{cor}
+
+Basa $\Th{ZFC}$ mung nduweni siji relasi biner,
+$\in$. (Malah, kesamaan uga ora perlu.) Mula kita nduweni
+
+\begin{cor}
+Logika orde siji kanggo saben basa kang nduweni simbol relasi biner
+ora bisa diputusake.
+\end{cor}
+
+Asil iki uga lumaku kanggo saben basa kang nduweni rong simbol fungsi
+uner, amarga simbol-simbol iki bisa digunakake kanggo nyimulasi simbol
+relasi biner. Asil-asil mau pas ing watese: jebul logika orde siji kanggo
+basa kang mung nduweni simbol relasi \emph{uner} lan paling akeh siji
+simbol fungsi \emph{uner} bisa diputusake.
+
+Ana siji cathetan tambahan. Kita ngerti yen himpunan ukara ing
+basa $\Obj 0$, $'$, $+$, $\times$, $<$ kang bener ing model standar
+ora bisa diputusake. Nyatane, $<$ bisa ditemtokake nganggo simbol-simbol
+liyane, banjur $+$ bisa ditemtokake nganggo $\times$ lan $'$. Mula
+himpunan ukara kang bener ing basa $\Obj 0$, $'$, $\times$ ora
+bisa diputusake. Kosok baline, Presburger wis nuduhake yen himpunan
+ukara ing basa $\Obj 0$, $'$, $+$ kang bener ing basa aritmetika
+bisa diputusake. Nanging prosedure ora praktis sacara komputasional.
+
+\end{document}

@@ -1,0 +1,87 @@
+% Part: computability
+% Chapter: computability-theory
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{thy}{int}
+\olsection{Pambuka}
+
+Cabang logika kang diarani \emph{teori komputabilitas}
+nyinaoni perkara komputabilitas, utawa komputabilitas
+relatif, saka fungsi lan himpunan. Pangaribawane
+Kleene katon saka kasunyatan yen bidang iki biyen
+diarani \emph{teori rekursi}, lan saiki jeneng loro-lorone
+lumrah digunakake.
+
+Fungsi~$f\colon \Nat \pto \Nat$ kita arani
+\emph{komputabel parsial} yen bisa diitung ing
+sawenehing model komputasi. Yen $f$ total, kita
+cukup nyebut $f$~\emph{komputabel}. Relasi~$R$
+kang fungsi karakteristike~$\Char{R}$ komputabel
+uga diarani komputabel. Yen $f$ lan~$g$ fungsi
+parsial, kita nulis $f(x) \fdefined$ kanggo
+nyatakake yen $f$ ditegesi ing~$x$, yaiku
+$x$~kalebu domain~$f$; lan $f(x) \fundefined$
+kanggo nyatakake kosok baline, yaiku $f$
+ora ditegesi ing~$x$. Kita nggunakake
+$f(x) \simeq g(x)$ kanggo nyatakake yen
+$f(x)$ lan $g(x)$ kalorone ora ditegesi,
+utawa kalorone ditegesi lan padha.
+
+Teori komputabilitas bisa ditliti tanpa kudu
+ngrujuk marang model komputasi tartamtu.
+Kanggo iki, dibuktekake yen ana fungsi
+komputabel parsial universal~$\fn{Un}(k, x)$.
+Iki ndadekake fungsi komputabel parsial bisa
+dienumerasi. Kita nggunakake notasi~$\cfind{k}$
+kanggo fungsi komputabel parsial unari kang
+kaparingi urutan kaping~$k$, kang ditegesi
+dening $\cfind{k}(x) \simeq \fn{Un}(k, x)$.
+(Kleene nggunakake $\{ k \}$ kanggo tujuan
+iki, nanging notasi kasebut saiki luwih
+arang digunakake.) Kanthi rada luwih umum,
+kita bisa ngenumerasi kanthi seragam fungsi
+komputabel parsial kanthi aritas sembarang,
+lan nggunakake $\cfind{k}[n]$ kanggo fungsi
+rekursif parsial kaping~$k$ kanthi aritas~$n$.
+
+Yen $f(\vec x, y)$ fungsi total utawa parsial,
+mula $\umin{y}{f
+(\vec x, y)}$ iku fungsi saka~$\vec x$ kang
+ngasilake~$y$ paling cilik kang ndadekake
+$f(\vec x, y) = 0$, kanthi syarat kabeh
+$f(\vec x, 0)$, \dots, $f(\vec x, y-1)$
+ditegesi; yen ora ana $y$ kaya mangkono,
+$\umin{y}{f (\vec x, y)}$ ora ditegesi.
+Yen $R(\vec x, y)$ relasi, $\umin{y}{R(\vec x, y)}$
+ditegesi minangka~$y$ paling cilik kang
+ndadekake $R(\vec x, y)$ bener; kanthi
+tembung liya, $y$ paling cilik kang
+ndadekake $1 \tsub \Char{R}(\vec x, y) = 0$.
+
+Kanggo nuduhake yen fungsi iku komputabel,
+ana rong cara kang bisa ditempuh:
+\begin{enumerate}
+\item Kanthi ketat: jlentrehna mesin Turing
+  utawa fungsi rekursif parsial kanthi eksplisit,
+  banjur tuduhna yen piranti iku ngitung fungsi
+  kang dimaksud;
+\item Kanthi informal: jlentrehna algoritma kang
+  ngitung fungsi iku, banjur gunakna tesis Church.
+\end{enumerate}
+Ora ana wates kang cetha antarane rong cara iki;
+jlentrehan algoritma kang rinci kudune menehi
+katrangan cukup supaya lumayan cetha carane,
+saora-orane sacara prinsip, ngrancang mesin
+Turing utawa runtutan definisi rekursif parsial
+kang trep. Definisi kang ketat kanthi lengkap
+biasane ora akeh menehi pangerten, mula kita bakal
+ngupaya nemokake imbangan antarane rong cara
+iki; cekake, kita bakal ngupaya bukti kang
+intuitif nanging tetep ketat,
+kang nuduhake yen definisi kang presisi bisa disusun.
+
+\end{document}

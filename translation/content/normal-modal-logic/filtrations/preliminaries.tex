@@ -1,0 +1,79 @@
+% Part: normal-modal-logic
+% Chapter: filtrations
+% Section: preliminaries
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{fil}{pre}
+
+\olsection{Prasyarat}
+
+Filtrasi ngidini kita netepake katerputusan sistem logika modal kanthi
+nuduhake yen sistem-sistem kasebut nduweni \emph{sipat model
+  winates}, yaiku saben !!{formula} kang bener (salah) ing sawijining
+model uga bener (salah) ing sawijining model \emph{winates}. Filtrasi
+ditepakake relatif marang himpunan !!{formula}s kang katutup tumrap
+subformula.
+
+\begin{defn}\ollabel{defn:modallyclosed}
+  Himpunan $\Gamma$ saka !!{formula}s iku \emph{katutup tumrap
+  subformula} yen ngemot saben subformula saka !!a{formula} ing
+  $\Gamma$. Salajengipun, $\Gamma$ iku \emph{katutup modal} yen
+  katutup tumrap subformula lan, saliyane iku, $!A \in \Gamma$ njalari
+  $\Box!A, \Diamond!A \in \Gamma$.
+\end{defn}
+
+Upamane, kanggo !!a{formula}~$!A$, himpunan kabeh
+sub-!!{formula}s-ne katutup tumrap sub-!!{formula}s. Nalika kita
+netepake filtrasi sawijining model liwat himpunan sub-!!{formula}s
+saka~$!A$, filtrasi iku bakal nduweni sipat kang dikarepake: filtrasi
+ndadekake $!A$ bener (salah) yen lan mung yen model asline mangkono.
+
+Himpunan jagad saka filtrasi~$\mModel{M}$ liwat~$\Gamma$ ditepakake
+minangka himpunan kabeh kelas ekuivalensi saka relasi ekuivalensi ing
+ngisor iki.
+
+\begin{defn}
+Upamane $\mModel{M} =\tuple{W, R, V}$ lan $\Gamma$ katutup tumrap
+sub-!!{formula}s. Tetepna relasi $\equiv$ ing $W$ kang nggayutake
+rong jagad yen !!{formula}s saka $\Gamma$ kang bener ing loro-lorone
+padha, yaiku:
+\[
+u \equiv v \quad \text{yen lan mung yen } \quad
+\forall !A \in \Gamma : \mSat{M}{!A}[u] \Leftrightarrow \mSat{M}{!A}[v].
+\]
+Kelas ekuivalensi~$[w]_\equiv$ saka jagad~$w$, utawa cekake $[w]$,
+yaiku himpunan kabeh jagad kang $\equiv$-ekuivalen karo~$w$:
+\[
+[w] = \Setabs{v}{v \equiv w}.
+\]
+\end{defn}
+
+\begin{prop}
+  Kanggo $\mModel{M}$ lan $\Gamma$, $\equiv$ kang ditepakake ing
+  ndhuwur iku relasi ekuivalensi, yaiku refleksif, simetris, lan
+  transitif.
+\end{prop}
+
+\begin{proof}
+  Relasi $\equiv$ iku refleksif, amarga $w$ ndadekake persis
+  !!{formula}s saka~$\Gamma$ kang padha bener kaya awake dhewe. Relasi
+  iki simetris, amarga yen $u$ ndadekake !!{formula}s saka~$\Gamma$
+  kang padha bener kaya $v$, kosok baline uga bener kanggo $v$ lan~$u$.
+  Relasi iki uga transitif, amarga yen $u$ ndadekake !!{formula}s
+  saka~$\Gamma$ kang padha bener kaya~$v$, lan $v$ kaya $w$, mula
+  $u$ ndadekake !!{formula}s saka~$\Gamma$ kang padha bener kaya~$w$.
+\end{proof}
+
+Relasi $\equiv$, kaya saben relasi ekuivalensi, mbagi~$W$ dadi
+\emph{kelas-kelas partisi}, yaiku himpunan bagean saka~$W$ kang
+padha-padha ora tumpang tindih lan bebarengan nutupi kabeh~$W$.
+Saben $w \in W$ iku !!a{element} saka salah siji kelas partisi,
+yaiku~$[w]$, amarga $w \equiv w$. Dadi kelas-kelas $[w]$ nutupi
+kabeh~$W$. Kelas-kelas iku padha-padha ora tumpang tindih, amarga yen
+$u \in [w]$ lan $u \in [v]$, mula $u \equiv w$ lan $u \equiv v$;
+miturut simetri lan transitivitas, $w \equiv v$, mula $[w] = [v]$.
+
+\end{document}

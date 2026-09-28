@@ -1,0 +1,137 @@
+% Part: normal-modal-logic
+% Chapter: filtrations
+% Section: more-filtrations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{fil}{acc}
+
+\olsection{Filtrasi lan Sipat Aksesibilitas}
+
+Kaya kang wis kasebut, filtrasi saka model universal, serial, lan
+refleksif mesthi uga universal, serial, utawa refleksif. Nanging ora
+saben filtrasi saka model simetris utawa transitif uga simetris utawa
+transitif, miturut urutane. Ing sawetara kasus, filtrasi bisa
+ditepakake supaya sipat iku tetep kawujud. Carane padha karo definisi
+filtrasi paling kasar, nanging kita nambah sarat ing definisi~$R^*$.
+Upamane $\Gamma$ katutup tumrap sub-!!{formula}s. Gatekna
+relasi~$C_i(u,v)$ ing \olref{tab:Cn-filtrations} antarane jagad
+$u$, $v$ ing model $\mModel{M} =\tuple{W, R, V}$. Kita bisa netepake
+$R^*[u][v]$ adhedhasar gabungan sarat-sarat iki. Upamane, yen kita
+netepake $R^*[u][v]$ yen lan mung yen sarat $C_1(u,v)$ kawujud,
+kita entuk persis filtrasi paling kasar. Yen kita netepake
+$R^*[u][v]$ yen lan mung yen $C_1(u,v)$ lan $C_2(u, v)$ loro-lorone
+kawujud, kita entuk filtrasi liyane. Filtrasi iki ``luwih alus''
+tinimbang filtrasi paling kasar amarga luwih sithik pasangan jagad
+kang nyukupi $C_1(u,v)$ lan $C_2(u,v)$ tinimbang kang mung nyukupi
+$C_1(u,v)$.
+
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{|ll|}
+    \hline
+    \multirow{2}{*}{$C_1(u,v)$:}
+    \iftag{prvBox}{&
+      yen $\Box!A \in \Gamma$ lan $\mSat{M}{\Box!A}[u]$,
+      mula $\mSat{M}{!A}[v]$;\iftag{prvDiamond}{ lan}{}\\}{}
+    \iftag{prvDiamond}{&
+      yen $\Diamond!A \in \Gamma$ lan $\mSat{M}{!A}[v]$,
+      mula $\mSat{M}{\Diamond!A}[u]$; \\}{}
+    \hline
+    \multirow{2}{*}{$C_2(u,v)$:} 
+    \iftag{prvBox}{&
+      yen $\Box!A \in \Gamma$ lan $\mSat{M}{\Box!A}[v]$,
+      mula $\mSat{M}{!A}[u]$;\iftag{prvDiamond}{ lan}{}\\}{}
+    \iftag{prvDiamond}{&
+      yen $\Diamond!A \in \Gamma$ lan $\mSat{M}{!A}[u]$,
+      mula $\mSat{M}{\Diamond!A}[v]$; \\}{}
+    \hline
+    \multirow{2}{*}{$C_3(u,v)$:}
+    \iftag{prvBox}{&
+      yen $\Box!A \in \Gamma$ lan $\mSat{M}{\Box!A}[u]$,
+      mula $\mSat{M}{\Box!A}[v]$;\iftag{prvDiamond}{ lan}{}\\}{}
+    \iftag{prvDiamond}{&
+      yen $\Diamond!A \in \Gamma$ lan $\mSat{M}{\Diamond!A}[v]$,
+      mula $\mSat{M}{\Diamond!A}[u]$; \\}{}
+    \hline
+    \multirow{2}{*}{$C_4(u,v)$:}
+    \iftag{prvBox}{&
+      yen $\Box!A \in \Gamma$ lan $\mSat{M}{\Box!A}[v]$,
+      mula $\mSat{M}{\Box!A}[u]$;\iftag{prvDiamond}{ lan}{}\\}{}
+    \iftag{prvDiamond}{&
+      yen $\Diamond!A \in \Gamma$ lan $\mSat{M}{\Diamond!A}[u]$,
+      mula $\mSat{M}{\Diamond!A}[v]$; \\}{}
+    \hline
+    \end{tabular}
+  \caption{Sarat ing jagad-jagad kang mungkin kanggo netepake
+    filtrasi.}
+  \ollabel{tab:Cn-filtrations}
+\end{table}
+
+\begin{thm}\ollabel{thm:more-filtrations}
+  Upamane $\mModel{M} =\tuple{W,R,V}$ sawijining model, lan $\Gamma$
+  katutup tumrap sub-!!{formula}s. Tetepna $W^*$ lan $V^*$ kaya ing
+  \olref[fil]{defn:filtration}. Banjur:
+  \begin{enumerate}
+  \item Upamane $R^*[u][v]$ yen lan mung yen $C_1(u, v) \land
+    C_2(u,v)$. Banjur $R^*$ simetris, lan $\mModel{M^*} =
+    \tuple{W^*,R^*,V^*}$ iku filtrasi yen $\mModel{M}$ simetris.
+  \item Upamane $R^*[u][v]$ yen lan mung yen $C_1(u, v)
+    \land C_3(u,v)$. Banjur $R^*$ transitif, lan
+    $\mModel{M^*}=\tuple{W^*,R^*,V^*}$ iku filtrasi yen
+    $\mModel{M}$ transitif.
+  \item Upamane $R^*[u][v]$ yen lan mung yen $C_1(u, v) \land C_2(u,v)
+    \land C_3(u,v) \land C_4(u,v)$. Banjur $R^*$ simetris lan
+    transitif, lan $\mModel{M^*}=\tuple{W^*,R^*,V^*}$ iku filtrasi
+    yen $\mModel{M}$ simetris lan transitif.
+  \item Upamane $R^*$ ditepakake minangka $R^*[u][v]$ yen lan mung yen
+    $C_1(u, v) \land C_3(u,v) \land C_4(u,v)$. Banjur $R^*$ transitif
+    lan Euklidean, lan $\mModel{M^*}=\tuple{W^*,R^*,V^*}$ iku filtrasi
+    yen $\mModel{M}$ transitif lan Euklidean.
+  \end{enumerate}
+\end{thm}
+
+\begin{proof}
+  \begin{enumerate}
+    \item Langsung cetha yen $R^*$ simetris, amarga $C_1(u,v)
+      \Leftrightarrow C_2(v,u)$ lan $C_2(u,v) \Leftrightarrow
+      C_1(v,u)$. Dadi isih kudu dituduhake yen $\mModel{M}$ simetris,
+      mula $\mModel{M^*}$ iku filtrasi liwat~$\Gamma$. Sarat
+      $C_1(u,v)$ njamin yen
+      \iftag{prvBox}{%
+        \iftag{prvDiamond}{%
+          \olref[fil]{defn:filtration-R2} lan
+          \olref[fil]{defn:filtration-R3} saka
+          \olref[fil]{defn:filtration} padha}{%
+          \olref[fil]{defn:filtration}\olref[fil]{defn:filtration-R2}}}{%
+        \olref[fil]{defn:filtration}\olref[fil]{defn:filtration-R3}}
+      kawujud. Dadi kita mung kudu mriksa
+      \olref[fil]{defn:filtration}\olref[fil]{defn:filtration-R1},
+      yaiku yen $Ruv$ njalari $R^*[u][v]$.
+
+      Dadi upamane $Ruv$. Kanggo nuduhake $R^*[u][v]$, kita kudu
+      netepake $C_1(u,v)$ lan $C_2(u,v)$. Kanggo $C_1$:
+      \iftag{prvBox}{yen $\Box!A \in\Gamma$ lan
+        $\mSat{M}{\Box!A}[u]$, mula uga $\mSat{M}{!A}[v]$ (amarga
+        $Ruv$).\iftag{prvDiamond}{ Kajaba iku,
+        }{}}{}\iftag{prvDiamond}{yen $\Diamond!A \in \Gamma$ lan
+        $\mSat{M}{!A}[v]$, mula $\mSat{M}{\Diamond!A}[u]$ amarga
+        $Ruv$.}{} Kanggo $C_2$: \iftag{prvBox}{yen $\Box!A \in \Gamma$
+        lan $\mSat{M}{\Box!A}[v]$, mula $Ruv$ njalari $Rvu$ miturut
+        simetri, saengga $\mSat{M}{!A}[u]$.\iftag{prvDiamond}{ Kajaba
+        iku, }{}}{}\iftag{prvDiamond}{yen $\Diamond!A \in\Gamma$ lan
+        $\mSat{M}{!A}[u]$, mula $\mSat{M}{\Diamond!A}[v]$ (amarga
+        $Rvu$ miturut simetri).}{}
+    \item Latihan.
+    \item Latihan.
+    \item Latihan.
+  \end{enumerate}
+\end{proof}
+
+\begin{prob}
+  Jangkepna bukti \olref[nml][fil][acc]{thm:more-filtrations}.
+\end{prob}
+
+\end{document}

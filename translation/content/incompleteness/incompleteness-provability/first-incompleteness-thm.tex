@@ -1,0 +1,138 @@
+% Part: incompleteness
+% Chapter: incompleteness-provability
+% Section: first-incompleteness-thm
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{inp}{1in}
+
+\olsection{Teorema Ora Jangkep Kapisan}
+
+Saiki kita bisa njlentrehake bukti asli G\"odel kanggo teorema ora
+jangkep kapisan. Upamana $\Th{T}$ teori sembarang kang bisa
+diaksiomatisasi kanthi komputabel ing basa kang ngembangake basa
+aritmetika, saengga $\Th{T}$ ngemot aksioma-aksioma $\Th{Q}$. Iki
+tegese, mligine, $\Th{T}$ merepresentasikake fungsi lan relasi kang
+komputabel.
+
+Kita wis ngandharake yen kanthi pangodean formula lan bukti minangka
+bilangan kang lumrah, relasi $\Prf[\Th{T}](x,y)$ iku komputabel, ing
+ngendi $\Prf[\Th{T}](x,y)$ bener yen lan mung yen $x$ iku bilangan
+G\"odel saka !!a{derivation} kanggo !!{formula} kang nduweni bilangan
+G\"odel~$y$ ing~$\Th{T}$. Malah, G\"odel bisa nuduhake yen kanggo
+teori tartamtu kang dipikirake G\"odel, relasi iki rekursif primitif
+nganggo dhaptar 45 fungsi lan relasi ing makalahe. Relasi kaping 45,
+$x B y$, persis $\Prf[\Th{T}](x,y)$ kanggo pilihan~$\Th{T}$
+tartamtu mau. Elinga yen nalika G\"odel nggunakake tembung
+``rekursif'' ing makalahe, saiki kita bakal nggunakake istilah
+``rekursif primitif.''
+
+Amarga $\Prf[\Th{T}](x,y)$ komputabel, relasi iki bisa
+direpresentasikake ing $\Th{T}$. Kita nggunakake
+$\OPrf[\Th{T}](x,y)$ kanggo nyebut formula kang merepresentasikake
+relasi iki. Tetepna $\OProv[\Th{T}](y)$ minangka formula
+$\lexists[x][\OPrf[\Th{T}](x,y)]$. Iki nggambarake relasi kaping 46,
+$\fn{Bew}(y)$, ing dhaptare G\"odel. Kaya kang dicathet G\"odel, iki
+relasi siji-sijine kang ``ora bisa ditegesake rekursif.'' Mbokmenawa
+tegese mangkene: saka definisine durung cetha yen relasi iki
+komputabel; lan pangembangan sabanjure pancen nuduhake yen ora.
+
+Upamana $\Th{T}$ teori kang !!{axiomatizable} lan ngemot~$\Th{Q}$.
+Mula $\Prf[\Th{T}](x, y)$ bisa diputusake, saengga bisa
+direpresentasikake ing~$\Th{Q}$ dening
+!!a{formula}~$\OPrf[\Th{T}](x, y)$. Tetepna $\OProv[\Th{T}](y)$
+minangka formula kang wis diterangake ing ndhuwur. Miturut lema titik
+tetep, ana formula $!G_\Th{T}$ saengga $\Th{Q}$ (lan mula
+$\Th{T}$) !!{derive}s
+\begin{equation}
+\ollabel{eqn:qpf}
+!G_\Th{T} \liff \lnot \OProv[\Th{T}](\gn{!G_\Th{T}}).
+\end{equation}
+Gatekna yen $!G_\Th{T}$ pokoke nyatakake ``$!G_\Th{T}$
+ora !!{derivable} ing~$\Th{T}$.'' 
+
+\begin{lem}\ollabel{lem:cons-G-unprov}
+Yen $\Th{T}$ iku teori konsisten kang !!{axiomatizable} lan
+ngembangake~$\Th{Q}$, mula $\Th{T} \Proves/ !G_\Th{T}$.
+\end{lem}
+
+\begin{proof}
+Upamana $\Th{T}$ !!{derive}s $!G_\Th{T}$. Mula pancen \emph{ana}
+!!a{derivation}, saengga kanggo sawijining bilangan $m$, relasi
+$\Prf[\Th{T}](m,\Gn{!G_\Th{T}})$ bener. Nanging banjur $\Th{Q}$
+!!{derive}s ukara $\OPrf[\Th{T}](\num m, \gn{!G_\Th{T}})$. Mula
+$\Th{Q}$ !!{derive}s
+$\lexists[x][\OPrf[\Th{T}](x,\gn{!G_\Th{T}})]$, kang miturut definisi
+iku $\OProv[\Th{T}](\gn{!G_\Th{T}})$. Miturut \olref{eqn:qpf},
+$\Th{Q}$ !!{derive}s $\lnot !G_\Th{T}$, lan amarga $\Th{T}$
+ngembangake $\Th{Q}$, mangkono uga~$\Th{T}$. Kita wis nuduhake yen
+$\Th{T}$ !!{derive}s $!G_\Th{T}$, mula teori iki uga !!{derive}s
+$\lnot !G_\Th{T}$, saengga teori iki ora konsisten.
+\end{proof}
+
+\begin{defn}
+\ollabel{thm:oconsis-q}
+Teori $\Th{T}$ diarani \emph{$\omega$-konsisten} yen kahanan iki
+kelakon: yen $\lexists[x][!A(x)]$ iku ukara sembarang lan $\Th{T}$
+!!{derive}s $\lnot !A(\num 0)$, $\lnot !A(\num 1)$,
+$\lnot !A(\num 2)$, \dots mula $\Th{T}$ ora mbuktekake
+$\lexists[x][!A(x)]$.
+\end{defn}
+
+Gatekna yen saben teori kang $\omega$-konsisten uga konsisten. Iki
+langsung saka kasunyatan yen $\Th{T}$ ora konsisten, mula
+$\Th{T} \Proves !A$ kanggo saben~$!A$. Mligine, yen $\Th{T}$ ora
+konsisten, teori iki !!{derive}s $\lnot !A(\num n)$ kanggo saben~$n$
+lan uga !!{derive}s~$\lexists[x][!A(x)]$. Dadi, yen $\Th{T}$ ora
+konsisten, teori iki ora $\omega$-konsisten. Miturut kontraposisi, yen
+$\Th{T}$ $\omega$-konsisten, teori iki mesthi konsisten.
+
+\begin{lem}\ollabel{lem:omega-cons-G-unref}
+Yen $\Th{T}$ iku teori $\omega$-konsisten kang !!{axiomatizable}
+lan ngembangake~$\Th{Q}$, mula $\Th{T} \Proves/ \lnot !G_\Th{T}$.
+\end{lem}
+
+\begin{proof}
+Kita nuduhake yen $\Th{T}$ !!{derive}s $\lnot !G_\Th{T}$, mula
+teori iku ora $\omega$-konsisten. Upamana $\Th{T}$ !!{derive}s
+$\lnot !G_\Th{T}$. Yen $\Th{T}$ ora konsisten, teori iki
+ora $\omega$-konsisten, lan bukti rampung. Yen ora, $\Th{T}$
+konsisten, mula teori iki ora !!{derive} $!G_\Th{T}$ miturut
+\olref{lem:cons-G-unprov}. Amarga ora ana !!{derivation} kanggo
+$!G_\Th{T}$ ing $\Th{T}$, $\Th{Q}$ !!{derive}s
+\[
+\lnot \OPrf[\Th{T}](\num 0, \gn{!G_\Th{T}}), \lnot \OPrf[\Th{T}](\num 1,
+\gn{!G_\Th{T}}), \lnot \OPrf[\Th{T}](\num 2, \gn{!G_\Th{T}}), \dots
+\]
+lan mangkono uga~$\Th{T}$. Kosok baline, miturut \olref{eqn:qpf},
+$\lnot !G_\Th{T}$ ekuivalen karo
+$\lexists[x][\OPrf[\Th{T}](x,\gn{!G_\Th{T}})]$. Dadi $\Th{T}$
+ora $\omega$-konsisten.
+\end{proof}
+
+\begin{prob}
+  Saben teori kang $\omega$-konsisten iku konsisten. Tuduhna yen
+  kosok baline ora mesthi bener, yaiku ana teori kang konsisten
+  nanging ora $\omega$-konsisten. Lakonana kanthi nuduhake yen
+  $\Th{Q} \cup \{\lnot !G_\Th{Q}\}$ konsisten nanging ora
+  $\omega$-konsisten.
+\end{prob}
+
+\begin{thm}
+\ollabel{thm:first-incompleteness} Upamana $\Th{T}$ teori sembarang
+kang $\omega$-konsisten, !!{axiomatizable}, lan
+ngembangake~$\Th{Q}$. Mula $\Th{T}$ ora jangkep.
+\end{thm}
+
+\begin{proof}
+  Yen $\Th{T}$ $\omega$-konsisten, teori iki konsisten, mula
+  $\Th{T} \Proves/ !G_\Th{T}$ miturut \olref{lem:cons-G-unprov}.
+  Miturut \olref{lem:omega-cons-G-unref},
+  $\Th{T} \Proves/ \lnot !G_\Th{T}$. Iki tegese $\Th{T}$ ora
+  jangkep, amarga teori iki ora !!{derive}s $!G_\Th{T}$ lan uga ora
+  $\lnot !G_\Th{T}$.
+\end{proof}
+
+\end{document}

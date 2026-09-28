@@ -1,0 +1,124 @@
+% Part: incompleteness
+% Chapter: incompleteness-provability
+% Section: lob-thm
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{inp}{tar}
+
+\olsection{Ora Bisane Ngedefinisikake Bebeneran}
+
+Pangerten \emph{definabilitas} gumantung marang anane semantik formal
+kanggo basa aritmetika. Kita wis njlentrehake sawijining himpunan
+formula lan ukara ing basa aritmetika. ``Interpretasi kang
+dikarepake'' yaiku maca ukara-ukara kasebut minangka pratelan
+babagan wilangan asli, lan pratelan mau bisa bener utawa salah.
+Upamana $\Struct{N}$ iku !!{structure} kanthi domain $\Nat$ lan
+interpretasi standar kanggo simbol-simbol ing basa aritmetika.
+Mula $\Sat{N}{!A}$ tegese ``$!A$ bener ing interpretasi standar.''
+
+\begin{defn}
+Relasi $R(x_1,\dots,x_k)$ antarane wilangan asli \emph{bisa
+didefinisikake} ing $\Struct{N}$ yen lan mung yen ana formula
+$!A(x_1,\dots,x_k)$ ing basa aritmetika saengga kanggo saben
+$n_1,\dots,n_k$, $R(n_1,\dots,n_k)$ yen lan mung yen
+$\Sat{N}{!A(\num n_1,\dots,\num n_k)}$.
+\end{defn}
+
+Kanthi tembung liya, sawijining relasi bisa didefinisikake ing
+$\Struct{N}$ yen lan mung yen bisa direpresentasikake ing teori
+$\Th{TA}$, ing ngendi $\Th{TA} = \Setabs{!A}{\Sat{N}{!A}}$
+minangka himpunan ukara aritmetika kang bener. (Yen perkara iki durung
+cetha, balenana maca definisi-definisie lan priksa dhewe
+kenapa mangkono.)
+
+\begin{lem}
+Saben relasi komputabel bisa didefinisikake ing~$\Struct{N}$.
+\end{lem}
+
+\begin{proof}
+Gampang dipriksa yen formula kang merepresentasikake sawijining
+relasi ing $\Th{Q}$ netepake relasi kang padha ing $\Struct{N}$.
+\end{proof}
+
+Saiki kita bisa takon apa kosok baline uga bener: apa saben relasi
+kang bisa didefinisikake ing~$\Struct{N}$ iku komputabel?
+Wangsulane ora. Tuladhane:
+
+\begin{lem}
+Relasi mandheg bisa didefinisikake ing $\Struct{N}$.
+\end{lem}
+
+\begin{proof}
+Elinga yen teorema wujud normal Kleene nyatakake: saben fungsi
+komputabel parsial~$f$ nduweni indeks~$e$ saengga $f(x) =
+U(\umin{s}{T(e,x,s)})$ kanggo saben $x \in \Nat$, lan $U$ uga
+$T$ iku rekursif primitif, mula kalorone total. Dadi, $f(x)$
+nduweni nilai (yaiku komputasine mandheg) yen lan mung yen ana~$s$
+saengga $T(e,x,s)$ bener.
+
+Saiki upamana $H$ iku relasi mandheg, yaiku
+\[
+H = \Setabs{\tuple{e,x}}{\lexists[s][T(e, x, s)]}.
+\]
+Upamana $!D_T$ netepake $T$ ing $\Struct{N}$. Mula
+\[
+H = \Setabs{\tuple{e,x}}{\Sat{N}{\lexists[s][!D_T(\num e, \num x, s)]}},
+\]
+Dadi $\lexists[s][!D_T(z, x, s)]$ netepake~$H$ ing
+$\Struct{N}$.
+\end{proof}
+
+\begin{prob}
+Tuduhna yen $Q(n) \defiff n \in \Setabs{\Gn{!A}}{\Th{Q} \Proves !A}$
+  bisa didefinisikake ing aritmetika.
+\end{prob}
+
+Kepiye karo $\Th{TA}$ dhewe? Apa teori iki bisa didefinisikake ing
+aritmetika? Tegese: apa himpunan
+$\Setabs{\Gn{!A}}{\Sat{N}{!A}}$ bisa didefinisikake ing
+aritmetika? Teorema Tarski menehi wangsulan ora.
+
+\begin{thm}
+\ollabel{thm:tarski}
+Himpunan !!{sentence}s aritmetika kang bener ora bisa
+didefinisikake ing aritmetika.
+\end{thm}
+
+\begin{proof} 
+Upamana $!D(x)$ netepake himpunan kasebut, yaiku
+$\Sat{N}{!A}$ yen lan mung yen $\Sat{N}{!D(\gn{!A})}$.
+Miturut lema titik tetep, ana formula $!A$ saengga
+$\Th{Q} \Proves !A \liff \lnot !D(\gn{!A})$, lan mula
+$\Sat{N}{!A \liff \lnot !D(\gn{!A})}$. Nanging banjur
+$\Sat{N}{!A}$ yen lan mung yen
+$\Sat{N}{\lnot !D(\gn{!A})}$, kosok balen karo anggepan
+yen $!D(y)$ netepake himpunan pratelan aritmetika kang bener.
+\end{proof}
+
+Tarski ngetrapake analisis iki marang pangerten filsafati ngenani
+bebeneran kang luwih umum. Kanggo basa $L$ sembarang, miturut
+Tarski, pangerten bebeneran kang nyukupi kanggo $L$ kudu netepi,
+kanggo saben ukara $X$,
+\begin{quote}
+`$X$' bener yen lan mung yen $X$.
+\end{quote}
+Tuladha Tarski saka basa Inggris kang asring dikutip, yen
+diterjemahake, yaiku ukara
+\begin{quote}
+`Salju iku putih' bener yen lan mung yen salju iku putih.
+\end{quote}
+Nanging, kanggo saben basa kang cukup kuwat kanggo
+merepresentasikake fungsi diagonal, lan kanggo saben predikat
+linguistik $T(x)$, kita bisa mbangun ukara $X$ kang nyukupi
+``$X$ yen lan mung yen ora $T(\text{`$X$'})$.''
+Amarga kita ora kepengin predikat bebeneran nyatakake manawa ana
+ukara kang bener lan salah bebarengan, Tarski ndudut yen predikat
+bebeneran kanggo kabeh ukara ing sawijining basa ora bisa
+ditetepake tanpa metu, kanthi cara tartamtu, saka watesing basa
+kasebut. Kanthi tembung liya, predikat bebeneran kanggo sawijining
+basa ora bisa didefinisikake ing basa iku dhewe.
+
+\end{document}

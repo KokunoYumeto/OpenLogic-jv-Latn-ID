@@ -1,0 +1,125 @@
+% Part: normal-modal-logic
+% Chapter: syntax-and-semantics
+% Section: truth-at-w
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{syn}{trw}
+
+\olsection{Kabeneran ing Sawijining Donya}
+
+Saben model modal nemtokake !!{formula}s modal endi kang dianggep
+bener ing donya endi. Relasi ``model $\mModel{M}$ ndadekake
+!!{formula}~$!A$ bener ing donya~$w$'' iku gagasan dhasar semantik
+relasional. Relasi iki ditegesi kanthi induktif lan cocog karo
+ciri lumrah adhedhasar tabel kabeneran kanggo operator nonmodal.
+
+\begin{defn}\ollabel{defn:mmodels}
+  \emph{Kabeneran !!a{formula}~$!A$ ing~$w$} ing~$\mModel M$, kanthi simbol:
+  $\mSat{M}{!A}[w]$, ditegesi kanthi induktif kaya mangkene:
+  \begin{enumerate}
+  \tagitem{prvFalse}{\indcase{!A}{\lfalse}{Ora nate $\mSat{M}{\lfalse}[w]$}.}{}
+  \tagitem{prvTrue}{\indcase{!A}{\ltrue}{Tansah $\mSat{M}{\ltrue}[w]$}.}{}
+  \item $\mSat{M}{p}[w]$ yen lan mung yen $w \in V(p)$.
+  \tagitem{prvNot}{\indcase{!A}{\lnot !B}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
+    $\mSat/{M}{!B}[w]$}.}{}
+  \tagitem{prvAnd}{\indcase{!A}{(!B \land !C)}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
+    $\mSat{M}{!B}[w]$ lan $\mSat{M}{!C}[w]$}.}{}
+  \tagitem{prvOr}{\indcase{!A}{(!B \lor !C)}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
+    $\mSat{M}{!B}[w]$ utawa $\mSat{M}{!C}[w]$} (utawa loro-lorone).}{}
+  \tagitem{prvIf}{\indcase{!A}{(!B \lif !C)}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
+    $\mSat/{M}{!B}[w]$ utawa $\mSat{M}{!C}[w]$}.}{}
+  \tagitem{prvIff}{\indcase{!A}{(!B \liff !C)}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
+    loro-lorone $\mSat{M}{!B}[w]$ lan $\mSat{M}{!C}[w]$ utawa
+    loro-lorone ora $\mSat{M}{!B}[w]$ lan uga ora $\mSat{M}{!C}[w]$}.}{}
+  \item\ollabel{defn:sub:mmodels-box}
+    \indcase{!A}{\Box !B}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
+    $\mSat{M}{!B}[w']$ kanggo kabeh $w' \in W$ kang $Rww'$.}
+  \item\ollabel{defn:sub:mmodels-diamond}
+    \indcase{!A}{\Diamond !B}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
+    $\mSat{M}{!B}[w']$ kanggo paling ora siji $w' \in W$ kang $Rww'$.}
+  \end{enumerate}
+\end{defn}
+
+Catheten yen miturut klausa~\olref{defn:sub:mmodels-box},
+!!a{formula}~$\Box !B$ bener ing~$w$ nalika ora ana~$w'$ kang
+$Rww'$. Ing kahanan kaya mangkono $\Box !B$ \emph{bener vakua}
+ing~$w$. Uga, $\Box !B$ bisa dicukupi ing~$w$ sanajan $!B$
+ora. Kabeneran~$!B$ ing~$w$ ora njamin kabeneran~$\Diamond !B$
+ing~$w$. Nanging iki lumaku yen $Rww$, umpama yen $R$ refleksif.
+Yen ora ana $w'$ kang $Rww'$, mula $\mSat/{M}{\Diamond !A}[w]$,
+kanggo sembarang~$!A$.
+
+\begin{prob}
+  Coba delengen model ing \olref[nml][syn][rel]{fig:simple}. Endi saka pratelan ing
+  ngisor iki kang bener?
+    \begin{enumerate}
+    \item $\mSat{M}{q}[w_1]$;
+    \item $\mSat{M}{\lnot q}[w_3]$;
+    \item $\mSat{M}{p \lor q}[w_1]$;
+    \item $\mSat{M}{\Box (p \lor q)}[w_1]$;
+    \item $\mSat{M}{\Box q}[w_3]$;
+    \item $\mSat{M}{\Box \bot}[w_3]$;
+    \item $\mSat{M}{\Diamond q}[w_1]$;
+    \item $\mSat{M}{\Box q}[w_1]$;
+    \item $\mSat{M}{\lnot \Box\Box \lnot q}[w_1]$.
+    \end{enumerate}
+\end{prob}
+
+% Buktekna dualitas \Box lan \Diamond
+\begin{tagblock}{prvDiamond}
+\begin{prop}\ollabel{prop:dual}
+  \begin{enumerate}
+  \item $\mSat{M}{\Box !A}[w]$ yen lan mung yen $\mSat{M}{\lnot\Diamond\lnot !A}[w]$.
+  \item $\mSat{M}{\Diamond !A}[w]$ yen lan mung yen $\mSat{M}{\lnot\Box\lnot !A}[w]$.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+    \item $\mSat{M}{\lnot\Diamond\lnot !A}[w]$ yen lan mung yen $\mSat/{M}{\Diamond\lnot
+      !A}[w]$ miturut definisi $\mSat{M}{}[w]$. $\mSat{M}{\Diamond\lnot
+      !A}[w]$ yen lan mung yen kanggo sawenehing $w'$ kang $Rww'$, $\mSat{M}{\lnot
+      !A}[w']$. Mula, $\mSat/{M}{\Diamond\lnot !A}[w]$ yen lan mung yen kanggo kabeh
+    $w'$ kang $Rww'$, $\mSat/{M}{\lnot !A}[w']$. Kita uga nduweni
+    $\mSat/{M}{\lnot !A}[w']$ yen lan mung yen $\mSat{M}{!A}[w']$. Saka kabeh iki kita nduweni
+    $\mSat{M}{\lnot\Diamond\lnot !A}[w]$ yen lan mung yen kanggo kabeh $w'$ kang $Rww'$,
+    $\mSat{M}{!A}[w']$. Miturut definisi $\mSat{M}{}[w]$, iki lumaku yen lan mung yen $\mSat{M}{\Box !A}[w]$.
+    \item \iftag{probDiamond}{Gladhen.}{$\mSat{M}{\lnot\Box\lnot !A}[w]$ yen lan mung yen
+      $\mSat/{M}{\Box\lnot !A}[w]$. $\mSat{M}{\Box\lnot !A}[w]$ yen lan mung yen kanggo kabeh
+      $w'$ kang $Rww'$, $\mSat{M}{\lnot !A}[w']$. Mula,
+      $\mSat/{M}{\Box\lnot !A}[w]$ yen lan mung yen kanggo sawenehing $w'$ kang $Rww'$,
+      $\mSat/{M}{\lnot !A}[w']$. Kita uga nduweni $\mSat/{M}{\lnot
+        !A}[w']$ yen lan mung yen $\mSat{M}{!A}[w']$. Saka kabeh iki kita nduweni
+      $\mSat{M}{\lnot\Box\lnot !A}[w]$ yen lan mung yen kanggo sawenehing~$w'$ kang
+      $Rww'$, $\mSat{M}{!A}[w']$. Miturut definisi
+      $\mSat{M}{}[w]$, iki lumaku yen lan mung yen $\mSat{M}{\Diamond
+        !A}[w]$.}
+  \end{enumerate}
+\end{proof}
+
+\begin{probtag}{probDiamond}
+  Rampungna bukti \olref[nml][syn][trw]{prop:dual}.
+\end{probtag}
+\end{tagblock}
+
+\begin{prob}
+  Upamane $\mModel{M} = \tuple{W, R, V}$ sawijining model, lan $w_1, w_2 \in
+  W$ nyukupi syarat iki:
+  \begin{enumerate}
+  \item $w_1 \in V(p)$ yen lan mung yen $w_2 \in V(p)$ (kanggo saben !!{propositional variable} $p$); lan
+  \item kanggo kabeh $w \in W$: $Rw_1w$ yen lan mung yen $Rw_2w$.
+  \end{enumerate}
+  Kanthi induksi marang !!{formula}s, buktekna yen kanggo kabeh !!{formula}s $!A$:
+  $\mSat{M}{!A}[w_1]$ yen lan mung yen $\mSat{M}{!A}[w_2]$.
+\end{prob}
+
+\begin{probtag}{prvDiamond}
+  Upamane $\mModel{M} = \tuple{W, R, V}$. Buktekna yen
+  $\mSat{M}{\lnot\Diamond !A}[w]$ yen lan mung yen
+  $\mSat{M}{\Box\lnot!A}[w]$.
+\end{probtag}
+
+\end{document}

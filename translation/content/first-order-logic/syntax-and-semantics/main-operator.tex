@@ -1,0 +1,104 @@
+% Part: first-order-logic
+% Chapter: syntax-and-semantics
+% Section: main-operator
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{syn}{mai}
+
+\olsection{\printtoken{S}{main operator} sawijining Formula}
+
+\begin{explain}
+Kerep migunani kanggo ngrembug operator pungkasan kang digunakake
+nalika mbangun !!a{formula}~$!A$. Operator iki diarani \emph{operator
+  utama} saka~$!A$. Sacara intuitif, iki operator kang paling njaba
+ing $!A$. Umpamane, operator utama saka $\lnot !A$ yaiku $\lnot$,
+operator utama saka $(!A \lor !B)$ yaiku $\lor$, lan sateruse.
+\end{explain}
+
+
+\begin{defn}[!!^{main operator}]
+\ollabel{def:main-op}
+\emph{!!{main operator}} saka !!a{formula}~$!A$
+ditetepake kaya mangkene:
+\begin{enumerate}
+\item \indcase*{!A}{!A}{$\indfrm$ ora nduweni !!{main operator}.}
+
+\tagitem{prvNot}{\indcase{!A}{\lnot !B}{!!{main operator} saka $\indfrm$
+  yaiku~$\lnot$.}}{}
+
+\tagitem{prvAnd}{\indcase{!A}{(!B \land !C)}{!!{main operator} saka
+  $\indfrm$ yaiku~$\land$.}}{}
+
+\tagitem{prvOr}{\indcase{!A}{(!B \lor !C)}{!!{main operator} saka
+  $\indfrm$ yaiku~$\lor$.}}{}
+
+\tagitem{prvIf}{\indcase{!A}{(!B \lif !C)}{!!{main operator} saka
+  $\indfrm$ yaiku~$\lif$.}}{}
+
+\tagitem{prvIff}{\indcase{!A}{(!B \liff !C)}{!!{main operator} saka
+  $\indfrm$ yaiku~$\liff$.}}{}
+
+\tagitem{prvAll}{\indcase{!A}{\lforall[x][!B]}{!!{main operator}
+  saka $\indfrm$ yaiku~$\lforall$.}}{}
+
+\tagitem{prvEx}{\indcase{!A}{\lexists[x][!B]}{!!{main operator} saka
+  $\indfrm$ yaiku~$\lexists$.}}{}
+\end{enumerate}
+\end{defn}
+
+Ing saben kasus, kang kita maksud yaiku \emph{kemunculan} tartamtu
+saka !!{main operator} kang dituduhake ing formula. Umpamane, amarga
+formula $((!D \lif !E) \lif (!E \lif !D))$ awujud $(!B \lif !C)$
+kanthi $!B$ yaiku $(!D \lif !E)$ lan $!C$ yaiku $(!E \lif !D)$,
+kemunculan $\lif$ kang kapindho iku !!{main operator}.
+
+\begin{explain}
+Iki \emph{definisi rekursif} sawijining fungsi kang mapanake kabeh
+!!{formula}s nonatomik menyang kemunculan !!{main operator}. Amarga
+!!{formula}s ditetepake kanthi induktif, saben
+!!{formula}~$!A$ nyukupi salah siji kasus ing \olref{def:main-op}.
+Iki njamin yen kanggo saben !!{formula} nonatomik~$!A$ ana !!a{main
+  operator}. Amarga saben !!{formula} mung nyukupi siji saka
+syarat-syarat iki, lan amarga !!{formula}s kang luwih cilik kang
+digunakake kanggo mbangun $!A$ ditemtokake kanthi siji cara ing
+saben kasus, kemunculan !!{main
+  operator} saka~$!A$ iku tunggal, mula kita wis netepake sawijining
+fungsi.
+\end{explain}
+
+Kita menehi jeneng marang !!{formula}s miturut \olref{tab:main-op}
+gumantung marang simbol kang dadi !!{main operator}.
+\iftag{defNot,defOr,defAnd,defIf,defIff,defTrue,defFalse,defEx,defAll}
+{ Nanging, elinga yen operator kang ditetepake ora resmi muncul ing
+!!{formula}s. Operator kasebut mung cekakan, mula sacara resmi ora
+bisa dadi operator utama sawijining formula. Mula, ing bukti ngenani
+kabeh !!{formula}s, operator kasebut ora perlu ditangani dhewe.}
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{c | c | c}
+!!^{main operator} & Jinis !!{formula} & Tuladha\\
+\hline
+ora ana & atomik (!!{formula}) &
+\iftag{prvFalse}{$\lfalse$,}{}
+\iftag{prvTrue}{$\ltrue$,}{}
+$\Atom{R}{t_1, \dots, t_n}$,
+$\eq[t_1][t_2]$\\
+$\lnot$ & negasi & $\lnot !A$ \\
+$\land$ & konjungsi & $(!A \land !B)$ \\
+$\lor$ & disjungsi & $(!A \lor !B)$ \\
+$\lif$ & !!{conditional} & $(!A \lif !B)$ \\
+$\liff$ & !!{biconditional} & $(!A \liff !B)$ \\
+$\lforall[][]$ & universal (!!{formula})& $\lforall[x][!A]$ \\
+$\lexists[][]$ & eksistensial (!!{formula})& $\lexists[x][!A]$
+\end{tabular}
+\caption{Operator utama lan jeneng !!{formula}s. Cathetan koreksi sumber
+OLPL-066: ing telung larik konjungsi, disjungsi, lan implikasi, kurung
+tutup dipindhah mlebu wates rumus supaya pasangan kurunge pepak.}
+\ollabel{tab:main-op}
+\end{table}
+
+\end{document}

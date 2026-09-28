@@ -1,0 +1,118 @@
+% Part: conditional-logics
+% Chapter: minimal-change-semantics
+% Section: true-false
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{con}{min}{tf}
+
+\olsection{Bebener lan Kaluputan Kontrafaktual}
+
+Ing tuladha kang digambarake iki, kang nduweni donya anteseden
+kang paling cedhak, kontrafaktual $!A \cif !B$ bener (kanthi
+ora vakum) yen kabeh donya $!A$ kang paling cedhak iku donya
+$!B$, kaya kang digambarake ing \olref{fig:true}.
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}[scale=.7]\small
+  \spheresystem{5}
+  \draw (0,0) node {$w$};
+  \propositionintersect{0}{4}{40}{3.5}
+  {\tikzset{proposition/.append={smooth,tension=1.4}}
+  \proposition[shift={(1.6,-1)}]{90}{1}{30}{4}}
+  \path (1.5,3) node[below] {$\formula{B}$};
+  \path (3,0) node {$\formula{A}$};
+\end{tikzpicture}
+\caption{Kontrafaktual kang bener kanthi ora vakum}
+\ollabel{fig:true}
+\end{center}
+\end{figure}
+Kontrafaktual uga bener ing $w$ yen sistem bola ing saubenge~$w$
+ora nduweni bola kang ngakoni $!A$ babar pisan. Ing kasus iku,
+kontrafaktual bener kanthi \emph{vakum} (delengen \olref{fig:vacuous}).
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}[scale=.7]\small
+  \spheresystem{5}
+  \draw (0,0) node {$w$};
+  \proposition{0}{6.5}{40}{3.5}
+  {\tikzset{proposition/.append={smooth,tension=1.4}}
+  \proposition[shift={(1.2,-1)}]{90}{1}{30}{4}}
+  \path (1.5,3) node[below] {$\formula{B}$};
+  \spherepos{0}{7}{node {$\formula{A}$}}
+\end{tikzpicture}
+\caption{Kontrafaktual kang bener kanthi vakum}
+\ollabel{fig:vacuous}
+\end{center}
+\end{figure}
+
+Ing kasus kanthi donya anteseden kang paling cedhak kaya iki,
+kontrafaktual bisa luput kanthi rong cara. Salah sijine yaiku
+yen ora kabeh donya $!A$ kang paling cedhak iku donya $!B$,
+nanging sawetara iya. Ing kasus iki, $!A \cif \lnot !B$ uga
+luput (delengen \olref{fig:false}).
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}[scale=.7]\small
+  \spheresystem{5}
+  \draw (0,0) node {$w$};
+  \propositionintersect{0}{4}{40}{3.5}
+  {\tikzset{proposition/.append={smooth,tension=1.4}}
+  \proposition[shift={(1.6,0)}]{90}{1}{30}{3}}
+  \path (1.5,3) node[below] {$\formula{B}$};
+  \path (3,0) node {$\formula{A}$};
+\end{tikzpicture}
+\caption{Kontrafaktual luput, kondisional kanthi konsekuen kang dinegasi uga luput}
+\ollabel{fig:false}
+\end{center}
+\end{figure}
+Yen donya-donya $!A$ kang paling cedhak ora duwe irisan karo
+donya-donya $!B$ babar pisan, mula $!A \cif !B$ luput.
+Nanging ing kasus iki, kabeh donya $!A$ kang paling cedhak
+iku donya $\lnot !B$, mula $!A \cif \lnot !B$ bener
+(delengen \olref{fig:false-opposite}).
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}[scale=.7]\small
+  \spheresystem{5}
+  \draw (0,0) node {$w$};
+  \propositionintersect{0}{4}{40}{3.5}
+  {\tikzset{proposition/.append={smooth,tension=1.4}}
+  \proposition[shift={(-1,0)}]{90}{1}{30}{3}}
+  \path (-1,3) node[below] {$\formula{B}$};
+  \path (3,0) node {$\formula{A}$};
+\end{tikzpicture}
+\caption{Kontrafaktual luput, kondisional kanthi konsekuen kang dinegasi bener}
+\ollabel{fig:false-opposite}
+\end{center}
+\end{figure}
+
+Beda karo kondisional ketat kang wis dirembug, kontrafaktual bisa
+kontingen. Gatekna model bola ing \olref{fig:contingent}.
+Kabeh donya $!A$ kang paling cedhak karo~$u$ iku donya $!B$,
+mula $\mSat{M}{!A \cif !B}[u]$. Nanging ana donya $!A$
+kang paling cedhak karo~$v$ lan dudu donya $!B$, mula
+$\mSat/{M}{!A \cif !B}[v]$.
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}[scale=.6]\small
+  \spheresystem{7}
+  \spheresystem[shift={(0:3.1)},dashed]{4}
+  \propositionintersect{45}{4}{40}{4.5}
+  \begin{scope}
+    \clip \propositionplot{45}{4}{40}{4.5} ;
+    \spherelayer[shift={(0:3.1)}]{3}
+  \end{scope}
+  \proposition[shift={(1.4,-.5)}]{90}{1}{35}{5}
+  \path (0,0) node {$u$};
+  \path (0:3.1) node {$v$};
+  \spherepos{35}{9}{node {$\formula{A}$}}
+  \spherepos{80}{9}{node {$\formula{B}$}}
+\end{tikzpicture}
+\end{center}
+\caption{Kontrafaktual kontingen}
+\ollabel{fig:contingent}
+\end{figure}
+\end{document}

@@ -1,0 +1,311 @@
+% Part: normal-modal-logic
+% Chapter: tableaux
+% Section: countermodels
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{tab}{cou}
+      
+\olsection{Kontramodel saka \usetoken{P}{tableau}}
+
+\begin{explain}
+  Bukti teorema kelengkapan ora mung nuduhake yen saka
+  $\Entails !A$ bisa dipikolehi $\Proves !A$, nanging uga maringi
+  cara kanggo mbangun kontramodel tumrap~$!A$ yen $\Entails/ !A$.
+  Kanggo~$\Log{K}$, cara iki minangka \emph{prosedur kaputusan}.
+  Upamane $\Entails/ !A$. Bukti
+  \olref[cpl]{prop:complete-tableau} maringi cara mbangun
+  !!{tableau} lengkap. Cara iki tansah rampung. Aturan proposisional
+  kanggo~$\Log{K}$ mung nambahake !!{formula}s mawa prefiks kang
+  kompleksitase luwih cendhek; tegese saben aturan proposisional
+  cukup ditrapake sapisan ing sawijine cabang tumrap saben rumus
+  mawa tandha $\sFmla{S}{!A}[\sigma]$. Prefiks anyar mung diasilake
+  dening aturan
+  \iftag{prvBox}{$\TRule{\False}{\Box}$}{}\iftag{notprvBox,notprvDiamond}{}{
+    and }\iftag{prvDiamond}{$\TRule{\True}{\Diamond}$}{}
+  \iftag{notprvBox,notprvDiamond}{iki}{iki}, lan saben aturan mau uga
+  cukup ditrapake sapisan (ngasilake siji prefiks anyar).
+  \iftag{prvBox}{$\TRule{\True}{\Box}$}{}\iftag{notprvBox,notprvDiamond}{}{
+    and }\iftag{prvDiamond}{$\TRule{\False}{\Diamond}$}{}
+  \iftag{notprvBox,notprvDiamond}{kadhang}{kadhang} kudu ditrapake
+  kaping pirang-pirang, nanging mung sapisan kanggo saben prefiks;
+  prefiks anyar kang diasilake uga winates cacahe. Mula, sawisé
+  tataran kang winates, pambangunan iki ngasilake cabang katutup
+  utawa cabang lengkap.
+
+  Yen wis kabangun tableau kang nduweni cabang bukak lan lengkap,
+  bukti \olref[cpl]{thm:tableau-completeness} maringi model eksplisit
+  kang nyukupi himpunan !!{formula}s mawa prefiks wiwitan. Dadi,
+  kajaba kasunyatan yen $\Gamma \Entails !A$ njalari anane
+  !!{tableau} katutup lan $\Gamma \Proves !A$, nalika kita nggoleki
+  !!{tableau} katutup kanthi cara kang trep nanging nemokake cabang
+  bukak lan lengkap ing !!{tableau}, kita ora mung ngerti yen $\Gamma \Entails/ !A$,
+  nanging uga bisa mbangun kontramodel.
+\end{explain}
+
+\iftag{prvBox}{
+\begin{ex}
+  Kita ngerti yen $\Proves/ \Box(p \lor q) \lif (\Box p \lor \Box
+  q)$. Pambangunan tableau diwiwiti mangkene:
+  \begin{oltableau}
+    [\pFmla{\False}{\Box(p \lor q) \lif (\Box p \lor \Box q)}{1},
+      just = \TAss, checked
+      [\pFmla{\True}{\Box(p \lor q)}{1},
+        just = {\TRule{\False}{\lif}[1]}, 
+        [\pFmla{\False}{\Box p \lor \Box q}{1},
+          just = {\TRule{\False}{\lif}[1]}, checked
+          [\pFmla{\False}{\Box p}{1},
+            just = {\TRule{\False}{\lor}[3]}, checked
+            [\pFmla{\False}{\Box q}{1},
+              just = {\TRule{\False}{\lor}[3]}, checked
+              [\pFmla{\False}{p}{1.1}, 
+                just = {\TRule{\False}{\Box}[4]}, checked
+                [\pFmla{\False}{q}{1.2}, 
+                  just = {\TRule{\False}{\Box}[5]}, checked
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  \end{oltableau}
+  !!{tableau} iki mesthi durung rampung. Ing langkah sabanjure,
+  kita gatekake siji-sijine larik kang durung diwenehi tandha centhang:
+  !!{formula} mawa prefiks $\sFmla{\True}{\Box(p \lor q)}[1]$
+  ing larik~$2$. Kanggo mbangun tableau lengkap, aturan
+  $\TRule{\True}{\Box}$ ditrapake kanggo saben prefiks kang wis
+  dienggo ing cabang iki, yaiku $1.1$ lan $1.2$:
+  \begin{oltableau}
+    [\pFmla{\False}{\Box(p \lor q) \lif (\Box p \lor \Box q)}{1},
+      just = \TAss, checked
+      [\pFmla{\True}{\Box(p \lor q)}{1},
+        just = {\TRule{\False}{\lif}[1]}, 
+        [\pFmla{\False}{\Box p \lor \Box q}{1},
+          just = {\TRule{\False}{\lif}[1]}, checked
+          [\pFmla{\False}{\Box p}{1},
+            just = {\TRule{\False}{\lor}[3]}, checked
+            [\pFmla{\False}{\Box q}{1},
+              just = {\TRule{\False}{\lor}[3]}, checked
+              [\pFmla{\False}{p}{1.1}, 
+                just = {\TRule{\False}{\Box}[4]}, checked
+                [\pFmla{\False}{q}{1.2}, 
+                  just = {\TRule{\False}{\Box}[5]}, checked
+                  [\pFmla{\True}{p \lor q}{1.1}, 
+                    just = {\TRule{\True}{\Box}[2]}
+                    [\pFmla{\True}{p \lor q}{1.2}, 
+                      just = {\TRule{\True}{\Box}[2]}
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  \end{oltableau}
+  Saiki larik 2, 8, lan 9 durung diwenehi tandha centhang. Nanging
+  ora ana prefiks anyar, mula kita trapake $\TRule{\True}{\lor}$
+  marang larik~8 lan~9 ing kabeh cabang asile kang durung katutup:
+  \begin{oltableau}
+    [\pFmla{\False}{\Box(p \lor q) \lif (\Box p \lor \Box q)}{1},
+      just = \TAss, checked
+      [\pFmla{\True}{\Box(p \lor q)}{1},
+        just = {\TRule{\False}{\lif}[1]}, checked
+        [\pFmla{\False}{\Box p \lor \Box q}{1},
+          just = {\TRule{\False}{\lif}[1]}, checked
+          [\pFmla{\False}{\Box p}{1},
+            just = {\TRule{\False}{\lor}[3]}, checked
+            [\pFmla{\False}{\Box q}{1},
+              just = {\TRule{\False}{\lor}[3]}, checked
+              [\pFmla{\False}{p}{1.1}, 
+                just = {\TRule{\False}{\Box}[4]}, checked
+                [\pFmla{\False}{q}{1.2}, 
+                  just = {\TRule{\False}{\Box}[5]}, checked
+                  [\pFmla{\True}{p \lor q}{1.1}, 
+                    just = {\TRule{\True}{\Box}[2]}, checked
+                    [\pFmla{\True}{p \lor q}{1.2}, 
+                      just = {\TRule{\True}{\Box}[2]}, checked
+                      [\pFmla{\True}{p}{1.1},
+                        just = {\TRule{\True}{\lor}[8]}, checked, close
+                      ]
+                      [\pFmla{\True}{q}{1.1},
+                        just = {\TRule{\True}{\lor}[8]}, checked
+                        [\pFmla{\True}{p}{1.2},
+                          just = {\TRule{\True}{\lor}[9]}, checked]
+                        [\pFmla{\True}{q}{1.2},
+                          just = {\TRule{\True}{\lor}[9]}, checked, close]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  \end{oltableau}
+  Kari siji cabang bukak, lan cabang iku lengkap. Saka cabang iki
+  kita netepake model kanthi himpunan jagad $W = \{1, 1.1, 1.2\}$
+  (mung prefiks iki kang katon ing cabang bukak), relasi
+  aksesibilitas $R = \{\tuple{1, 1.1}, \tuple{1, 1.2}\}$, lan
+  panetepan $V(p) = \{1.2\}$ (amarga larik~12 ngemot
+  $\sFmla{\True}{p}[1.2]$) sarta $V(q) = \{1.1\}$ (amarga larik~11
+  ngemot $\sFmla{\True}{q}[1.1]$). Model iki kagambar ing
+  \olref{fig:counter-Box}; bisa dipriksa yen iki kontramodel tumrap
+  $\Box(p \lor q) \lif (\Box p \lor \Box q)$.
+  \begin{figure}
+  \begin{center}
+    \begin{tikzpicture}[modal]
+      \node[world] (w1) [label={[align=right]right:\mFalse{p}\\ \mFalse{q}}]{$1$}; 
+      \node[world] (w2) [label={[align=right]right:\mFalse{p}\\ \mTrue{q}},
+        above left=of w1]{$1.1$}; 
+      \node[world] (w3) [label={[align=right]right:\mTrue{p}\\ \mFalse{q}},
+        above right=of w1] {$1.2$};
+      \draw[->] (w1) to (w2);
+      \draw[->] (w1) to (w3);
+    \end{tikzpicture}
+  \end{center}
+  \caption{Kontramodel tumrap $\Box(p \lor q) \lif (\Box p \lor \Box
+    q)$.}
+  \ollabel{fig:counter-Box}
+\end{figure}
+\end{ex}          
+}
+{
+\begin{ex}
+  Kita ngerti yen $\Proves/ (\Diamond p \land \Diamond q) \lif \Diamond(p
+  \land q)$. Pambangunan tableau diwiwiti mangkene:
+  \begin{oltableau}
+    [\pFmla{\False}{(\Diamond p \land \Diamond q) \lif \Diamond(p \land q)}{1},
+      just = \TAss, checked
+      [\pFmla{\True}{\Diamond p \land \Diamond q}{1},
+        just = {\TRule{\False}{\lif}[1]}, checked
+        [\pFmla{\False}{\Diamond(p \land q)}{1},
+          just = {\TRule{\False}{\lif}[1]}
+          [\pFmla{\True}{\Diamond p}{1},
+            just = {\TRule{\True}{\land}[2]}, checked
+            [\pFmla{\True}{\Diamond q}{1},
+              just = {\TRule{\True}{\land}[2]}, checked
+              [\pFmla{\True}{p}{1.1}, 
+                just = {\TRule{\True}{\Diamond}[4]}, checked
+                [\pFmla{\True}{q}{1.2}, 
+                  just = {\TRule{\True}{\Diamond}[5]}, checked
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  \end{oltableau}
+  !!{tableau} iki mesthi durung rampung. Ing langkah sabanjure,
+  kita gatekake siji-sijine larik kang durung diwenehi tandha centhang:
+  !!{formula} mawa prefiks $\sFmla{\False}{\Diamond(p \land q)}[1]$
+  ing larik~$3$. Kanggo mbangun tableau lengkap, aturan
+  $\TRule{\False}{\Diamond}$ ditrapake kanggo saben prefiks kang wis
+  dienggo ing cabang iki, yaiku $1.1$ lan $1.2$:
+  \begin{oltableau}
+    [\pFmla{\False}{(\Diamond p \land \Diamond q) \lif \Diamond(p \land q)}{1},
+      just = \TAss, checked
+      [\pFmla{\True}{\Diamond p \land \Diamond q}{1},
+        just = {\TRule{\False}{\lif}[1]}, checked
+        [\pFmla{\False}{\Diamond (p \land q)}{1},
+          just = {\TRule{\False}{\lif}[1]}
+          [\pFmla{\True}{\Diamond p}{1},
+            just = {\TRule{\True}{\land}[2]}, checked
+            [\pFmla{\True}{\Diamond q}{1},
+              just = {\TRule{\True}{\land}[2]}, checked
+              [\pFmla{\True}{p}{1.1}, 
+                just = {\TRule{\True}{\Diamond}[4]}, checked
+                [\pFmla{\True}{q}{1.2}, 
+                  just = {\TRule{\True}{\Diamond}[5]}, checked
+                  [\pFmla{\False}{p \land q}{1.1}, 
+                    just = {\TRule{\False}{\Diamond}[3]}
+                    [\pFmla{\False}{p \land q}{1.2}, 
+                      just = {\TRule{\False}{\Diamond}[3]}
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  \end{oltableau}
+  Saiki larik 3, 8, lan 9 durung diwenehi tandha centhang. Nanging
+  ora ana prefiks anyar, mula kita trapake $\TRule{\False}{\land}$
+  marang larik~8 lan~9 ing kabeh cabang asile kang durung katutup:
+  \begin{oltableau}
+    [\pFmla{\False}{(\Diamond p \land \Diamond q) \lif \Diamond(p \land q)}{1},
+      just = \TAss, checked
+      [\pFmla{\True}{\Diamond p \land \Diamond q}{1},
+        just = {\TRule{\False}{\lif}[1]}, checked
+        [\pFmla{\False}{\Diamond(p \land q)}{1},
+          just = {\TRule{\False}{\lif}[1]}, checked
+          [\pFmla{\True}{\Diamond p}{1},
+            just = {\TRule{\True}{\land}[2]}, checked
+            [\pFmla{\True}{\Diamond q}{1},
+              just = {\TRule{\True}{\land}[2]}, checked
+              [\pFmla{\True}{p}{1.1}, 
+                just = {\TRule{\True}{\Diamond}[4]}, checked
+                [\pFmla{\True}{q}{1.2}, 
+                  just = {\TRule{\True}{\Diamond}[5]}, checked
+                  [\pFmla{\False}{p \land q}{1.1}, 
+                    just = {\TRule{\False}{\Diamond}[3]}, checked
+                    [\pFmla{\False}{p \land q}{1.2}, 
+                      just = {\TRule{\False}{\Diamond}[3]}, checked
+                      [\pFmla{\False}{p}{1.1},
+                        just = {\TRule{\False}{\land}[8]}, checked, close
+                      ]
+                      [\pFmla{\False}{q}{1.1},
+                        just = {\TRule{\False}{\land}[8]}, checked
+                        [\pFmla{\False}{p}{1.2},
+                          just = {\TRule{\False}{\land}[9]}, checked]
+                        [\pFmla{\False}{q}{1.2},
+                          just = {\TRule{\False}{\land}[9]}, checked, close]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  \end{oltableau}
+  Kari siji cabang bukak, lan cabang iku lengkap. Saka cabang iki
+  kita netepake model kanthi himpunan jagad $W = \{1, 1.1, 1.2\}$
+  (mung prefiks iki kang katon ing cabang bukak), relasi
+  aksesibilitas $R = \{\tuple{1, 1.1}, \tuple{1, 1.2}\}$, lan
+  panetepan $V(p) = \{1.1\}$ (amarga larik~6 ngemot
+  $\sFmla{\True}{p}[1.1]$) sarta $V(q) = \{1.2\}$ (amarga larik~7
+  ngemot $\sFmla{\True}{q}[1.2]$). Model iki kagambar ing
+  \olref{fig:counter-Diamond}; bisa dipriksa yen iki kontramodel tumrap
+  $(\Diamond p \land \Diamond q) \lif \Diamond (p \land q)$.
+  \begin{figure}
+  \begin{center}
+    \begin{tikzpicture}[modal]
+      \node[world] (w1) [label={[align=right]right:\mFalse{p}\\ \mFalse{q}}]{$1$}; 
+      \node[world] (w2) [label={[align=right]right:\mTrue{p}\\ \mFalse{q}},
+        above left=of w1]{$1.1$}; 
+      \node[world] (w3) [label={[align=right]right:\mFalse{p}\\ \mTrue{q}},
+        above right=of w1] {$1.2$};
+      \draw[->] (w1) to (w2);
+      \draw[->] (w1) to (w3);
+    \end{tikzpicture}
+  \end{center}
+  \caption{Kontramodel tumrap $(\Diamond p \land \Diamond q) \lif
+    \Diamond (p \land q)$.}
+  \ollabel{fig:counter-Diamond}
+\end{figure}
+\end{ex}          
+}
+
+\end{document}

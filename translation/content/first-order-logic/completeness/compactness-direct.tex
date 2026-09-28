@@ -1,0 +1,170 @@
+% Part: first-order-logic
+% Chapter: completeness
+% Section: compactness-direct
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{com}{cpd}}
+      {\olfileid{pl}{com}{cpd}}
+
+\olsection{Bukti Langsung Teorema Kekompakan}
+
+Kita bisa mbuktekake Teorema Kekompakan kanthi langsung, tanpa
+nggunakake Teorema Kelengkapan, kanthi gagasan kang padha karo bukti
+teorema kelengkapan. Ing bukti Teorema Kelengkapan, kita miwiti saka
+himpunan~$\Gamma$ kang konsisten saka !!{sentence}s, nggedhekake dadi
+himpunan kang konsisten\iftag{FOL}{, jenuh,}{} lan !!{complete}, yaiku
+himpunan~$\Gamma^*$ saka !!{sentence}s, banjur nuduhake yen ing
+\iftag{FOL}{model term~$\Struct{M(\Gamma^*)}$}{!!{valuation}~
+  $\pAssign{v(\Gamma^*)}$}
+kang dibangun saka $\Gamma^*$, kabeh !!{sentence}s saka~$\Gamma$ iku
+bener, mula $\Gamma$ bisa dicukupi.
+
+Kita bisa nggunakake metodhe kang padha kanggo nuduhake yen himpunan
+ukara kang bisa dicukupi kanthi winates uga bisa dicukupi. Kita mung
+kudu mbuktekake versi asil-asil kang cocog lan tumuju marang lemma
+bebener, kanthi ngganti “konsisten” dadi “bisa dicukupi kanthi
+winates.”
+
+\begin{prop}
+\ollabel{prop:fsat-ccs}
+Upamana $\Gamma$ iku !!{complete} lan bisa dicukupi kanthi winates.
+Banjur:
+\begin{enumerate}
+\tagitem{prvAnd}{$(!A \land !B) \in \Gamma$
+  yen lan mung yen $!A \in \Gamma$ lan $!B \in \Gamma$ loro-lorone.}{}
+
+\tagitem{prvOr}{$(!A \lor !B) \in \Gamma$ yen lan mung yen
+  $!A \in \Gamma$ utawa $!B \in \Gamma$.}{}
+
+\tagitem{prvIf}{$(!A \lif !B) \in \Gamma$ yen lan mung yen
+  $!A \notin \Gamma$ utawa $!B \in \Gamma$.}{}
+\end{enumerate}
+\end{prop}
+
+\tagprob{FOL}
+\begin{prob}
+Buktekna \olref[fol][com][cpd]{prop:fsat-ccs}. Aja nggunakake $\Proves$.
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+Buktekna \olref[pl][com][cpd]{prop:fsat-ccs}. Aja nggunakake $\Proves$.
+\end{prob}
+\tagendprob
+
+\iftag{FOL}{%
+\begin{lem}
+\ollabel{lem:fsat-henkin} Saben himpunan~$\Gamma$ kang bisa dicukupi
+kanthi winates bisa digedhekake dadi himpunan jenuh~$\Gamma'$ kang
+bisa dicukupi kanthi winates.
+\end{lem}
+}{}
+
+\tagprob{FOL}
+\begin{prob}
+Buktekna \olref[fol][com][cpd]{lem:fsat-henkin}. (Pituduh: Langkah
+wigatine yaiku nuduhake yen $\Gamma_n$ bisa dicukupi kanthi winates,
+mula $\Gamma_n \cup \{!D_n\}$ uga bisa dicukupi kanthi winates, tanpa
+nggunakake !!{derivation}s utawa konsistensi.)
+\end{prob}
+\tagendprob
+
+\iftag{FOL}{
+\begin{prop}\ollabel{prop:fsat-instances}
+Upamana $\Gamma$ jangkep, bisa dicukupi kanthi winates, lan jenuh.
+\begin{tagenumerate}{prvEx,prvAll}
+\tagitem{prvEx}{$\lexists[x][!A(x)] \in \Gamma$ yen lan mung yen
+  $!A(t) \in \Gamma$ kanggo paling ora siji term katutup~$t$.}{}
+\tagitem{prvAll}{$\lforall[x][!A(x)] \in \Gamma$ yen lan mung yen
+  $!A(t) \in \Gamma$ kanggo kabeh term katutup~$t$.}{}
+\end{tagenumerate}
+\end{prop}
+}{}
+
+\tagprob{FOL}
+\begin{prob}
+Buktekna \olref[fol][com][cpd]{prop:fsat-instances}.
+\end{prob}
+\tagendprob
+
+\begin{lem}
+\ollabel{lem:fsat-lindenbaum} Saben himpunan~$\Gamma$ kang bisa
+dicukupi kanthi winates bisa digedhekake dadi himpunan~$\Gamma^*$
+kang !!a{complete} lan bisa dicukupi kanthi winates.
+\end{lem}
+
+\tagprob{FOL}
+\begin{prob}
+Buktekna \olref[fol][com][cpd]{lem:fsat-lindenbaum}. (Pituduh: langkah
+wigatine yaiku nuduhake yen $\Gamma_n$ bisa dicukupi kanthi winates,
+mula $\Gamma_n \cup \{!A_n\}$ utawa $\Gamma_n \cup \{\lnot !A_n\}$
+bisa dicukupi kanthi winates.)
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+Buktekna \olref[pl][com][cpd]{lem:fsat-lindenbaum}. (Pituduh: langkah
+wigatine yaiku nuduhake yen $\Gamma_n$ bisa dicukupi kanthi winates,
+mula $\Gamma_n \cup \{!A_n\}$ utawa $\Gamma_n \cup \{\lnot !A_n\}$
+bisa dicukupi kanthi winates.)
+\end{prob}
+\tagendprob
+
+\begin{thm}[Kekompakan]
+\ollabel{thm:compactness-direct} $\Gamma$ bisa dicukupi yen lan mung
+yen bisa dicukupi kanthi winates.
+\end{thm}
+
+\begin{proof}
+Yen $\Gamma$ bisa dicukupi, mula ana
+\iftag{FOL}{!!a{structure}~$\Struct{M}$}{!!a{valuation}~$\pAssign{v}$}
+nganti $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$ kanggo kabeh $!A \in
+\Gamma$. Mesthi wae, \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} iki uga
+nyukupi saben subhimpunan winates saka~$\Gamma$, mula $\Gamma$ bisa
+dicukupi kanthi winates.
+
+Saiki upamana $\Gamma$ bisa dicukupi kanthi winates.\iftag{FOL}{
+Miturut \olref{lem:fsat-henkin}, ana himpunan $\Gamma' \supseteq
+\Gamma$ kang bisa dicukupi kanthi winates lan jenuh.}{} Miturut
+\olref{lem:fsat-lindenbaum}, $\iftag{FOL}{\Gamma'}{\Gamma}$ bisa
+digedhekake dadi himpunan~$\Gamma^*$ kang !!a{complete} lan bisa
+dicukupi kanthi winates\iftag{FOL}{, lan $\Gamma^*$ isih jenuh}{}.
+Bangunen \iftag{FOL}{model term~$\Struct{M(\Gamma^*)}$}{!!{valuation}~
+$\pAssign{v(\Gamma^*)}$} kaya ing
+\olref[mod]{defn:termmodel}.\iftag{FOL}{ Catheten yen
+\olref[mod]{prop:quant-termmodel} ora gumantung marang kasunyatan yen
+$\Gamma^*$ konsisten (utawa !!{complete} utawa jenuh), nanging mung
+marang kasunyatan yen $\Struct{M(\Gamma^*)}$ katutup.}{}
+Bukti Lemma Bebener (\olref[mod]{lem:truth}) tetep lumaku yen kita
+ngganti rujukan menyang \olref[ccs]{prop:ccs}\iftag{FOL}{ lan
+\olref[hen]{prop:saturated-instances} nganggo rujukan menyang
+\olref{prop:fsat-ccs} lan \olref{prop:fsat-instances}}{ nganggo
+pratelan babagan himpunan jangkep kang bisa dicukupi kanthi winates
+ing ndhuwur}. Cathetan koreksi sumber OLPL-055: cabang logika
+proposisional ing sumber mungkasi ukara sawise rujukan lawas; teks
+iki mulihake pangganti prop:fsat-ccs kang dibutuhake cabang kasebut.
+\end{proof}
+
+\tagprob{FOL}
+\begin{prob}
+Tulisen bukti jangkep Lemma Bebener
+(\olref[fol][com][mod]{lem:truth}) ing versi kang dibutuhake kanggo
+bukti \olref[fol][com][cpd]{thm:compactness-direct}.
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+Tulisen bukti jangkep Lemma Bebener
+(\olref[pl][com][mod]{lem:truth}) ing versi kang dibutuhake kanggo
+bukti \olref[pl][com][cpd]{thm:compactness-direct}.
+\end{prob}
+\tagendprob
+
+\end{document}

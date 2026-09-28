@@ -1,0 +1,72 @@
+% part: intuitionistic-logic
+% chapter: introduction
+% section: axiomatic-derivations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{int}{axd}
+
+\olsection{\usetoken{P}{derivation} Aksiomatis}
+
+!!{derivation}s aksiomatis kanggo logika proposisional intuisionistik
+iku sistem !!{derivation} kang paling prasaja sacara konseptual lan
+pisanan sacara historis. Cara kerjane padha karo ing logika
+proposisional klasik.
+
+\begin{defn}[!!^{derivability}]
+Yen $\Gamma$ iku himpunan !!{formula}s saka $\Lang L$, mula
+\emph{!!{derivation}} saka $\Gamma$ iku urutan winates $!A_1$,
+\dots,~$!A_n$ kang dumadi saka !!{formula}s, kanthi saben $i \le n$
+nyukupi salah siji saka kahanan iki:
+\begin{enumerate}
+\item $!A_i \in \Gamma$; utawa
+\item $!A_i$ iku aksioma; utawa
+\item $!A_i$ disimpulake saka sawenehing $!A_j$ lan $!A_k$ kanthi
+  $j < i$ lan $k < i$ nganggo modus ponens, yaiku
+  $!A_k \ident !A_j \lif !A_i$.
+\end{enumerate}
+\end{defn}
+
+\begin{defn}[Aksioma]
+Himpunan $\PAx$ saka \emph{aksioma} kanggo logika proposisional
+intuisionistik dumadi saka kabeh !!{formula}s kang awujud kaya mangkene:
+\begin{align}
+  & (!A \land !B) \lif !A \ollabel{ax:land1}\\
+  & (!A \land !B) \lif !B \ollabel{ax:land2}\\
+  & !A \lif (!B \lif (!A \land !B)) \ollabel{ax:land3}\\
+  & !A \lif (!A \lor !B) \ollabel{ax:lor1}\\
+  & !A \lif (!B \lor !A) \ollabel{ax:lor2}\\
+  & (!A \lif !C) \lif ((!B \lif !C) \lif ((!A \lor !B) \lif !C)) \ollabel{ax:lor3}\\
+  & !A \lif (!B \lif !A) \ollabel{ax:lif1}\\
+  & (!A \lif (!B \lif !C)) \lif ((!A \lif !B) \lif (!A \lif !C)) \ollabel{ax:lif2}\\
+  & \lfalse \lif !A \ollabel{ax:lfalse1}
+\end{align}
+\end{defn}
+
+\begin{defn}[!!^{derivability}]
+!!^a{formula}~$!A$ iku \emph{!!{derivable}} saka $\Gamma$, ditulis
+$\Gamma \Proves !A$, yen ana !!a{derivation} saka $\Gamma$ kang
+pungkasan ing $!A$.
+\end{defn}
+
+\begin{defn}[Teorema]
+!!^a{formula}~$!A$ iku \emph{teorema} yen ana !!a{derivation}
+kanggo~$!A$ saka himpunan kosong. Kita nulis $\Proves !A$ yen $!A$
+iku teorema lan $\Proves/ !A$ yen dudu teorema.
+\end{defn}
+
+\begin{prop}
+  Yen $\Gamma \Proves !A$ ing sistem !!{derivation} aksiomatis kanggo
+  logika intuisionistik, $\Gamma \Proves !A$ uga ing logika klasik.
+  Mligine, yen $!A$ iku teorema intuisionistik, uga dadi teorema klasik.
+\end{prop}
+
+\begin{proof}
+  Saben aksioma intuisionistik uga aksioma klasik, mula saben
+  !!{derivation} ing logika intuisionistik uga !!a{derivation} ing
+  logika klasik.
+\end{proof}
+
+\end{document}

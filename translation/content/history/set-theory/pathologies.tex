@@ -1,0 +1,167 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{his}{set}{pathology}
+\olsection{Patologi}
+
+Nanging, dhéfinisi \emph{limit} jebulé ngidinaké
+sawetara konstruksi kang rada ``patologis''.
+
+Watara dasawarsa 1830-an, Bolzano nemokaké
+fungsi kang \emph{kontinu ing saben titik},
+nanging \emph{ora bisa didiferensiasi ing titik endi waé}.
+(Sayangé, Bolzano ora tau nerbitaké asil iki;
+para matématikawan nemoni gagasan iki ing taun
+1872 amarga Weierstrass uga nemokaké gagasan
+kang padha kanthi mandiri.)\footnote{Sajarah
+iki dicathet kanthi rinci banget ing cathetan
+sikil artikel Wikipedia ngenani
+\href{http://en.wikipedia.org/wiki/Weierstrass_function}{fungsi
+Weierstrass}.} Bab iki, paling ora, nggumunaké.
+Gampang nemokaké fungsi kaya $|x|$ kang
+kontinu ing saben titik nanging ora bisa
+didiferensiasi ing sawijining titik.
+Nanging fungsi kang kontinu ing saben
+titik lan \emph{ora ing titik endi waé}
+bisa didiferensiasi iku bab kang béda
+banget. Coba pikirna sedhéla carané
+nggambar fungsi kaya mangkono. Supaya
+kontinu, fungsi iku kudu bisa digambar
+tanpa tau ngangkat pulpen saka kertas;
+nanging supaya ora bisa didiferensiasi
+ing titik endi waé, arah pulpen kudu
+malih kanthi dadakan tanpa kendhat.
+
+``Patologi'' liya banjur muncul. Tanggal
+5 Januari 1874, Cantor nulis layang
+marang Dedekind lan ngajokaké masalah iki:
+\begin{quote}
+Apa sawijining bidang (upamané kothak
+kalebu pinggiré) bisa dipasangaké
+siji-siji karo sawijining garis
+(upamané garis lurus kalebu
+rong pucuké), saéngga saben titik
+ing bidang cocog karo siji titik
+ing garis, lan kosok baliné saben
+titik ing garis cocog karo siji
+titik ing bidang?
+
+Nganti saiki wangsulané pitakonan
+iki isih katon angel banget
+kanggo aku---senajan ing kéné
+uga wong kaya-kaya kepéngin
+mangsuli \emph{ora} nganti
+buktiné katon meh ora perlu.
+[Dikutip ing \citealt{Gouvea2011}]
+\end{quote}
+Nanging ing taun 1877, Cantor mbuktèkaké
+yèn pangirané salah. Satemené, garis
+lan kothak nduwèni cacah titik kang
+padha persis. Tanggal 29 Juni 1877
+dhèwèké nulis marang Dedekind
+``\emph{je le vois, mais je ne le crois pas}'';
+tegesé, ``Aku weruh, nanging aku
+ora percaya''. Ing ``riwayat kang
+lumrah ditampa'' ngenani matématika,
+ukara iki kerep dianggep nuduhaké
+sepira \emph{pancen angel dipercaya}
+asil-asil anyar iku kanggo
+matématikawan wektu iku.
+(Layang-layang kasebut disuguhaké
+ing \citet{Gouvea2011}, lan bakal
+kita rembug manèh ing
+\olref[his][set][mythology]{sec}.
+Garis gedhé buktiné Cantor ana
+ing \olref[his][set][cantorplane]{sec}.)
+
+Kasilé Cantor menehi inspirasi marang Peano
+kanggo nimbang apa garis bisa dipetakaké
+kanthi \emph{kontinu} menyang sawijining
+bidang. Iki bakal dadi \emph{kurva kang
+ngebaki ruang}. Ing \citeyear{Peano1890},
+Peano mbangun kurva kaya mangkono.
+Bab iki pancèn nglawan intuisi:
+Euclid ndhéfinisikaké garis minangka
+``dawa tanpa ambané'' (Buku I,
+Dhéfinisi 2), nanging Peano nuduhaké
+yèn kanthi nggulung garis kanthi
+cara kang trep, dawané bisa
+malih dadi ambané. Ing
+\citeyear{Hilbert1891}, Hilbert
+ngandharaké kurva kang ngebaki
+ruang lan luwih gampang
+dibayangaké, bebarengan
+karo sawatara gambar.
+Kurva iku dibangun
+minangka runtutan;
+iki enem tataran
+kapisan pambanguné:
+\begin{center}
+\begin{tikzpicture}
+\begin{scope}[xshift=20pt, yshift=20pt]
+	\draw [oldiagcolorC, l-system={Hilbert curve, step=40pt, angle=90, axiom=L, order=1}] lindenmayer system;
+\end{scope}
+\begin{scope}[xshift=110pt, yshift=10pt]
+	\draw [oldiagcolorC, l-system={Hilbert curve, step=20pt, angle=90, axiom=L, order=2}] lindenmayer system;
+\end{scope}
+\begin{scope}[xshift=205pt, yshift=5pt]
+	\draw [oldiagcolorC, l-system={Hilbert curve, step=10pt, angle=90, axiom=L, order=3}] lindenmayer system;
+\end{scope}
+\begin{scope}[xshift=2.5pt, yshift=-97.5pt]
+	\draw [oldiagcolorC, l-system={Hilbert curve, step=5pt, angle=90, axiom=L, order=4}] lindenmayer system;
+\end{scope}
+\begin{scope}[xshift=101.25pt, yshift=-98.75pt]
+	\draw [oldiagcolorC, l-system={Hilbert curve, step=2.5pt, angle=90, axiom=L, order=5}] lindenmayer system;
+\end{scope}
+\begin{scope}[xshift=200.625pt, yshift=-99.375pt]
+	\draw [oldiagcolorC, l-system={Hilbert curve, step=1.25pt, angle=90, axiom=L, order=6}] lindenmayer system;
+\end{scope}
+\draw[gray] (0pt,0pt) rectangle (80pt, 80pt);
+\draw[gray] (100pt,0pt) rectangle (180pt, 80pt);
+\draw[gray] (200pt,0pt) rectangle (280pt, 80pt);
+\draw[gray] (0pt,-100pt) rectangle (80pt, -20pt);
+\draw[gray] (100pt,-100pt) rectangle (180pt, -20pt);
+\draw[gray] (200pt,-100pt) rectangle (280pt, -20pt);
+\end{tikzpicture}  
+\end{center}
+Ing limit---gagasan kang nalika iku
+wis didhéfinisikaké kanthi ketat---
+sakabehé kothak kebak warna
+!!{colorC}. Kajaba iku,
+kurva Hilbert kontinu ing
+saben titik nanging ora
+bisa didiferensiasi ing titik
+endi waé; kanthi intuisi,
+amarga ing limit tanpa wates
+fungsi iku malih arah kanthi
+dadakan ing saben wektu.
+(Konstruksi Hilbert bakal
+kita andharaké luwih rinci
+ing \olref[his][set][hilbertcurve]{sec}.)
+
+Apa waé akibaté, konstruksi
+géomètri kang ``patologis'' iki
+dianggep alesan kanggo mamang
+marang intuisi géomètri.
+Konstruksi mau meh dadi
+\emph{propaganda} kanggo
+cara anyar nindakaké
+matématika, kang pungkasané
+tumeka ing téori himpunan.
+Nalika mitos bab sajarah
+bidhang iki dibangun
+ing tembé, kerep diulang
+yèn asil-asil iki
+padha-padha ketat
+lan nggumunaké banget.
+Mula gunané rangkep:
+minangka pepéling supaya
+ora gumantung marang
+intuisi géomètri,
+lan minangka bukti
+yèn cara mikir anyar
+bisa ngasilaké
+akèh prakara.
+
+\end{document}

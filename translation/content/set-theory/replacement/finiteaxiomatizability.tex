@@ -1,0 +1,73 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+	
+\olfileid{sth}{replacement}{finiteaxiomatizability}
+\olsection{Lampiran: Aksiomatisasi Winates}
+Kita mungkasi bab iki kanthi njupuk sawetara asil saka Panggantian. Asil kapisan asalé saka \citet{Montague1961}; wigatèkna yèn iki dudu bukti \emph{ing sajroning} $\ZF$, nanging bukti \emph{babagan} $\ZF$:
+\begin{thm}\ollabel{zfnotfinitely}
+	$\ZF$ ora bisa diaksiomatisasi kanthi winates. Luwih umum: yèn $\Th{T}$ winates lan $\Th{T} \Proves \ZF$, mula $\Th{T}$ ora konsisten.
+	
+	(Ing kéné, kanthi meneng-meneng kita matesi rembugan marang ukara-ukara orde kapisan kang mung nduwèni $\in$ minangka simbol primitif nonlogis, lan kita nulis $\Th{T} \Proves \ZF$ kanggo nuduhaké yèn $\Th{T} \Proves \phi$ kanggo saben $\phi \in \ZF$.)
+\end{thm}
+\begin{proof}
+	Tetepna $\Th{T}$ winates kang nyukupi $\Th{T} \Proves \ZF$. Mula $\Th{T}$ mbuktèkaké Refleksi, yaiku\ \olref[sth][replacement][ref]{reflectionschema}. Amarga $\Th{T}$ winates, kita bisa nulis manèh minangka siji konjungsi, $\theta$. Kanthi nerapaké Refleksi marang formula iki, $\Th{T} \Proves \exists \beta(\theta \liff \theta^{V_\beta})$. Amarga cetha $\Th{T} \Proves \theta$, kita olèh $\Th{T} \Proves \exists \beta\ \theta^{V_\beta}$. 
+	
+	Saiki, gunakna $\psi(X)$ minangka cekakan kanggo:
+	\[
+		\theta^X \land X\text{ transitif lan poten} \land (\forall Y \in X)(Y\text{ transitif lan poten}\lif \lnot \theta^{Y})
+	\]
+kanthi kasar tegesé: $X$ iku modhèl transitif lan poten kanggo $\theta$, lan minimal miturut $\in$ ing babagan iki. Tataran-tataran kasebut transitif lan poten; mula saka $\Th{T} \Proves \exists \beta\ \theta^{V_\beta}$, kanthi kasunyatan dhasar babagan pangkat ing $\ZF$ lan kanthi mangkono uga ing $\Th{T}$, kita olèh:
+	\begin{equation}
+		\Th{T} \Proves \exists M \psi(M). \tag{*}\label{Mpsi}
+	\end{equation}
+	Kanthi konjungsi kapisan ing $\psi(X)$, saben $\Th{T} \Proves \sigma$ menehi $\Th{T} \Proves \forall X(\psi(X) \lif \sigma^X)$. Mula, miturut \eqref{Mpsi}:
+	\begin{align*}
+		\Th{T} &\Proves \forall X(\psi(X) \lif (\exists N \psi(N))^X)\\
+	\intertext{Kanthi migunakaké iki lan \eqref{Mpsi} manèh:}
+		\Th{T} &\Proves \exists M(\psi(M) \land (\exists N \psi(N))^M)
+	\intertext{Mliginé, saka kéné:}
+		\Th{T} &\Proves \exists M(\psi(M) \land (\exists N \in M)((N\text{ transitif lan poten})^M \land (\theta^N)^M))
+	\intertext{Mula, kanthi panalaran dhasar babagan transitivitas lan kapotenan:}
+		\Th{T} &\Proves \exists M(\psi(M) \land (\exists N \in M)(N\text{ transitif lan poten} \land \theta^N))
+	\end{align*} 
+	Iki ndadèkaké $\Th{T}$ ora konsisten.\footnote{“Panalaran dhasar” iki mbutuhaké bukti sawetara kasunyatan “absolut” kanggo himpunan transitif lan poten.}
+\end{proof}
+
+Iki asil kang mirip, dicathet déning \citet[223]{Potter2004}:
+
+\begin{prop}\ollabel{finiteextensionofZ}
+	Upamané $\Th{T}$ ngluwihi $\Z$ kanthi nambah aksioma anyar kang cacahé winates. Yèn $\Th{T} \Proves \ZF$, mula $\Th{T}$ ora konsisten. (Ing kéné kita nganggo watesan kang padha karo ing \olref{zfnotfinitely}.)
+\end{prop}
+\begin{proof}
+	Gunakna $\theta$ kanggo konjungsi kabèh aksioma $\Th{T}$ \emph{kajaba} instansi-instansi Pamisahan (kang cacahé tanpa wates). Kanthi netepaké $\psi$ saka $\theta$ kaya ing \olref{zfnotfinitely}, kita bisa nuduhaké $\Th{T} \Proves \exists M \psi(M)$. 
+	
+	Kaya ing \olref{zfnotfinitely}, kita bisa netepaké skema iki: saben $\Th{T} \Proves \sigma$ menehi $\Th{T} \Proves \forall X(\psi(X) \lif \sigma^X)$. Banjur buktiné rampung persis kaya ing \olref{zfnotfinitely}.
+	
+	Nanging, netepaké skema iki mbutuhaké gawé kang luwih akèh tinimbang ing \olref{zfnotfinitely}. Instansi-instansi Pamisahan pancèn kalebu ing $\Th{T}$, nanging dudu konjungsi ing $\theta$. Alangan iki bisa diatasi kanthi mbuktèkaké $\Th{T} \Proves \forall X(X\text{ transitif lan poten} \lif \sigma^X)$ kanggo saben instansi Pamisahan $\sigma$. Kapotenan njamin yèn saben subhimpunan kang dipikolehi liwat Pamisahan tetep ana ing himpunan kasebut. Buktiné kita pasrahaké marang pamaos. 
+\end{proof}
+\begin{prob}
+	Tuduhna yèn kanggo saben instansi Pamisahan $\sigma$, kita nduwèni: $\Z \Proves \forall X(X\text{ transitif lan poten} \lif \sigma^X)$. (Kita migunakaké skema iki ing \olref[sth][replacement][finiteaxiomatizability]{finiteextensionofZ}.)
+\end{prob}
+\begin{prob}
+	Tuduhna yèn kanggo saben $\phi \in \Z$, kita nduwèni $\ZF \Proves \phi^{V_{\omega+\omega}}$.
+\end{prob}
+\begin{prob}
+	Pesthèkna asil-asil skematis liyané kang dienggo ing bukti \olref[sth][replacement][finiteaxiomatizability]{zfnotfinitely} lan \olref[sth][replacement][finiteaxiomatizability]{finiteextensionofZ}.
+\end{prob}
+
+Kaya kang wis dicathet ing \olref[sth][replacement][absinf]{sec}, iki nuduhaké yèn Panggantian luwih kuwat sacara ketat tinimbang
+\olref[ordinals][ordtype]{thmOrdinalRepresentation}. Utawa, kanthi pratelan kang luwih tliti: yèn $\Z$ + “saben pengurutan becik isomorfis karo ordinal kang tunggal” konsisten, mula teori iki ora bisa mbuktèkaké sawetara instansi Panggantian.
+
+
+	%	Miturut panganggep, $\psi^{V_\alpha}$ nduwèni wujud: 
+	%	\[
+	%		(\forall A \in V_\alpha)(\exists S \in V_\alpha)(\forall x \in V_\alpha)(x \in S \liff (\phi^{V_\alpha}(x) \land x \in A))
+	%	\]
+	%	Kanggo mbuktèkaké iki, tetepna $A \in V_\alpha$. Kanthi Pamisahan, olèha: 
+	%	\[
+	%		S = \Setabs{x \in A}{\phi^{V_\alpha}(x)}
+	%	\]
+	%	Saiki $S \in V_\alpha$, awit $S \subseteq A \in V_\alpha$, lan cetha $(\forall x \in V_\alpha)(x \in S \liff (\phi^{V_\alpha}(x) \land x \in A)$.
+
+\end{document}

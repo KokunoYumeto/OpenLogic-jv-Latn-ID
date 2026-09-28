@@ -1,0 +1,85 @@
+% Part: counterfactuals
+% Chapter: minimal-change-semantics
+% Section: transitivity
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cnt}{min}{tra}
+
+\olsection{Transitivitas}
+
+Kanggo kondisional material, aturan rantai lumaku: $!A \lif !B, !B
+\lif !C \Entails !A \lif !C$. Kanthi tembung liya, kondisional
+material transitif. Apa iki uga lumaku kanggo kontrafaktual?
+Gatekna tuladha saka Stalnaker iki.
+\begin{quote}
+  Saupama J.~Edgar Hoover lair minangka wong Rusia, dheweke mesthi dadi Komunis.
+
+  Saupama J.~Edgar Hoover dadi Komunis, dheweke mesthi dadi pengkhianat.
+
+  Mula, saupama J.~Edgar Hoover lair minangka wong Rusia,
+  dheweke mesthi dadi pengkhianat.
+\end{quote}
+Saupama Hoover lair (ing wektu kang padha karo laire kang nyata)
+ing Rusia, dudu ing Amerika Serikat, dheweke mesthi gedhe ing
+Uni Soviet lan dadi Komunis (upamane kita nganggep mangkono).
+Mula premis kapisan bener. Premis kapindho, yen ditimbang dhewe,
+uga bener. Nanging konklusine luput: kemungkinan gedhe Hoover
+mesthi dadi Komunis kang temen saupama lair ing USSR, lan ora
+dadi pengkhianat marang negarane. Penetapan nilai bebener
+kanthi intuitif iki diterangake dening panjelasan Stalnaker--Lewis.
+Donya kang bisa ana lan paling cedhak karo donya kita, kanthi
+owah-owahan mung panggonan laire Hoover, yaiku donya kang ing
+kono Hoover gedhe dadi warga USSR kang becik. Iki donya paling
+cedhak kang nyukupi anteseden premis kapisan lan konklusi.
+Ing donya iku Hoover anggota Partai Komunis kang setya, mula
+dudu pengkhianat. Nanging kanggo ngevaluasi premis kapindho,
+kita kudu nimbang donya kang beda: donya paling cedhak kang
+ing kono Hoover dadi Komunis, yaiku donya kang ing kono dheweke
+lair ing Amerika Serikat, ganti kasetyan, lan mula dadi
+pengkhianat.\footnote{Mesthi wae, kanggo mangerteni daya tuladha
+  iki kita kudu nampa sawetara asumsi metafisika lan politik,
+  upamane yen Hoover bisa wae lair saka wong tuwa Rusia, utawa
+  yen para Komunis ing Amerika Serikat taun 1950-an iku
+  pengkhianat marang negarane.}
+
+\begin{prob}
+  Golekana tuladha intuitif kang nggawe yakin tumrap gagale
+  transitivitas kontrafaktual.
+\end{prob}
+
+\begin{ex}\ollabel{ex:trans-counterex}
+  Semantik bola nuduhake yen inferensi iki ora sah, yaiku $p
+  \cif q, q \cif r \Entails/ p \cif r$. Gatekna model
+  $\mModel{M} = \tuple{W, O, V}$ kanthi $W = \{w, w_1, w_2\}$,
+  $O_w = \{\{w\}, \{w, w_1\}, \{w, w_1, w_2\}\}$,
+  $V(p) = \{w_2\}$, $V(q) = \{w_1, w_2\}$, lan $V(r) = \{w_1\}$.
+  Ana bola kang ngakoni $p$, yaiku $S = \{w, w_1, w_2\}$, lan
+  $p \lif q$ bener ing kabeh donya ing kono, mula
+  $\mSat{M}{p \cif q}[w]$. Ana uga bola kang ngakoni $q$, yaiku
+  $S' = \{w, w_1\}$, lan $q \lif r$ bener ing kabeh donya ing
+  kono, mula $\mSat{M}{q \cif r}[w]$. Nanging bola siji-sijine
+  kang ngakoni $p$, yaiku $\{w, w_1, w_2\}$, ngemot donya~$w_2$
+  kang ing kono $\mSat/{M}{p \lif r}[w_2]$. Mula konklusi
+  kontrafaktual luput ing donya pusat.
+\end{ex}
+
+\begin{prob}
+Gambarna diagram bola kang cocog karo tuladha panyanggah ing
+\olref[cnt][min][tra]{ex:trans-counterex}.
+\end{prob}
+
+\begin{prob}
+  Ing \olref[cnt][min][tra]{ex:trans-counterex}, donya $w_2$ yaiku
+  donya kang ing kono Hoover lair ing Rusia, dadi komunis lan
+  dudu pengkhianat; $w_1$ yaiku donya kang ing kono Hoover lair
+  ing Amerika Serikat, dadi komunis lan dadi pengkhianat.
+  Ing model iki, $w_1$ luwih cedhak karo~$w$ tinimbang $w_2$.
+  Apa iki perlu? Apa kita bisa menehi tuladha panyanggah kang
+  ora nganggep kemungkinan Hoover lair ing Rusia luwih adoh
+  tinimbang kemungkinan dheweke dadi Komunis?
+\end{prob}
+
+\end{document}

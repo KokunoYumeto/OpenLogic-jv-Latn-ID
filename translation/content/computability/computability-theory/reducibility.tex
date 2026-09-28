@@ -1,0 +1,109 @@
+% Part: computability
+% Chapter: computability-theory
+% Section: reducibility
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{thy}{red}
+\olsection{Reduksibilitas}
+
+\begin{explain}
+Saiki kita ngerti yen ana saora-orane siji
+himpunan, $K_0$, kang bisa dienumerasi
+sacara komputabel nanging ora komputabel.
+Mesthine ana himpunan liyane. Cara reduksibilitas
+menehi sarana kang kuwat kanggo nuduhake
+yen himpunan liyane nduwé sipat kaya mangkono,
+tanpa kudu tansah bali menyang prinsip dhasar.
+
+Umume, ``reduksi'' himpunan $A$ menyang
+himpunan~$B$ yaiku cara ngowahi wangsulan
+apa !!{element}s kalebu~$B$ dadi wangsulan
+apa !!{element}s kalebu~$A$. Kita bakal
+nggatekake jinis kang diarani ``reduksibilitas
+akeh marang siji'', nanging isih ana
+akeh jinis reduksibilitas liyane kanthi
+sipat kang beda-beda. Pangerten reduksibilitas
+uga wigati ing kajian kompleksitas
+komputasional, kang kudu nggatekake
+efisiensi. Umpamane, sawijining himpunan
+diarani ``NP-komplit'' yen kalebu NP lan
+saben masalah NP bisa direduksi menyang
+himpunan iku, nganggo jinis reduksi
+kang padha karo kang bakal dijlentrehake
+ing ngisor iki, nanging kanthi syarat
+tambahan yen reduksine bisa diitung
+ing wektu polinomial.
+
+Kita sejatine wis nggunakake pangerten
+reduksi kanthi ora langsung. Tetepna
+himpunan~$K$ minangka
+\[
+K = \Setabs{x}{\cfind{x}(x) \fdefined},
+\]
+yaiku $K = \Setabs{x}{x \in W_x}$.
+Bukti yen masalah mandheg ora bisa
+diputusake (\olref[hlt]{thm:halting-problem})
+kanthi paling langsung nuduhake yen
+$K$ ora komputabel. Elinga yen $K_0$
+minangka himpunan
+\[
+K_0 = \Setabs{\tuple{e, x}}{\cfind{e}(x) \fdefined },
+\]
+% OLPL-141: Sumber beku mbalikke urutan pasangan ing katrangan W_e; definisi K_0 ing ndhuwur lan teges x kalebu W_e mbutuhake (e,x).
+yaiku $K_0 = \Setabs{\tuple{e,x}}{x \in W_e}$.
+Gampang ngembangake bukti yen~$K$
+ora komputabel dadi bukti yen~$K_0$
+ora komputabel: yen $K_0$ komputabel,
+kita bisa mutusake apa !!a{element}~$x$
+kalebu $K$ mung kanthi takon apa
+pasangan $\tuple{x, x}$ kalebu $K_0$.
+Fungsi~$f$ kang ngirim $x$ menyang
+$\tuple{x, x}$ minangka conto
+\emph{reduksi} saka $K$ menyang $K_0$.
+\end{explain}
+
+\begin{defn}
+Tetepna $A$ lan $B$ minangka himpunan
+wilangan asli. Fungsi komputabel
+~$f\colon \Nat \to \Nat$ diarani
+\emph{reduksi akeh marang siji} saka $A$
+menyang~$B$ yen lan mung yen, kanggo
+saben wilangan asli~$x$,
+\[
+x \in A \quad \text{yen lan mung yen} \quad f(x) \in B.
+\]
+Yen ana reduksi $f$ kaya mangkono,
+kita nyebut $A$ \emph{bisa direduksi akeh
+marang siji} menyang~$B$, ditulis
+$A \leq_m B$. Yen $A$ bisa direduksi
+akeh marang siji menyang $B$ lan
+kosok baline, $A$ lan $B$ diarani
+\emph{setara miturut reduksi akeh marang siji},
+ditulis $A \equiv_m B$.
+\end{defn}
+
+Yen fungsi $f$ ing definisi ndhuwur
+jebul injektif, $A$~diarani
+\emph{bisa direduksi siji marang siji}
+menyang~$B$. Umume reduksi kang
+bakal diterangake ing ngisor iki
+nyukupi syarat kang luwih kuwat iku,
+nanging kita ora bakal nggunakake
+kasunyatan kasebut.
+
+\begin{digress}
+Pancen bener, nanging ora cetha,
+yen reduksibilitas siji marang siji
+iku syarat kang tenan luwih kuwat
+tinimbang reduksibilitas akeh marang siji.
+Kanthi tembung liya, ana himpunan
+tanpa wates $A$ lan~$B$ kang ndadekake
+$A$ bisa direduksi akeh marang siji
+menyang~$B$, nanging ora bisa direduksi
+siji marang siji menyang~$B$.
+\end{digress}
+
+\end{document}

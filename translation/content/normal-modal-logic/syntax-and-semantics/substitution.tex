@@ -1,0 +1,100 @@
+% Part: normal-modal-logic
+% Chapter: syntax-and-semantics
+% Section: substitution
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{syn}{sub}
+
+\olsection{Substitusi Simultan}
+
+Sawijining \emph{instansi} saka !!a{formula}~$!A$ iku asil
+ngganti kabeh kemunculan !!a{propositional variable} ing~$!A$
+nganggo !!{formula} liyane. Kita kerep ngrujuk marang instansi
+saka !!{formula}s, nalika ngrembug validitas lan nalika ngrembug
+!!{derivability}. Mula, gagasan iki perlu ditegesi kanthi cetha.
+
+\begin{defn}\ollabel{def:subst-inst}
+  Yen $!A$ iku !!{formula} modal kang kabeh !!{propositional
+    variable}s ana ing antarane $p_1$, \dots, $p_n$, lan $!D_1$, \dots,
+  $!D_n$ uga !!{formula}s modal, kita netepake
+  $\SSubst{!A}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}}$ minangka asil nyubstitusi saben $!D_i$ ngganti $p_i$
+  ing~$!A$ kanthi bebarengan. Sacara formal, iki definisi kanthi induksi marang~$!A$:
+  \begin{enumerate}
+    \tagitem{prvFalse}{\indcase{!A}{\lfalse}{%
+        $\SSubst{\indfrm}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}$ iku $\lfalse$.}}{}
+    \tagitem{prvTrue}{\indcase{!A}{\ltrue}{%
+        $\SSubst{\indfrm}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}$ iku $\ltrue$.}}{}
+    \item \indcase{!A}{q}{$\SSubst{\indfrm}{\subst{!D_1}{p_1}, \dots,
+        \subst{!D_n}{p_n}}$ iku $q$, yen $q \not\ident p_i$ kanggo $i
+      = 1$, \dots,~$n$.}
+    \item \indcase{!A}{p_i}{$\SSubst{\indfrm}{\subst{!D_1}{p_1},
+        \dots, \subst{!D_n}{p_n}}$ iku $!D_i$.}
+    \tagitem{prvNot}{\indcase{!A}{\lnot !B}{%
+        $\SSubst{\indfrm}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}}$ iku
+        $\lnot \SSubst{!B}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}}$.}}{}
+    \tagitem{prvAnd}{\indcase{!A}{(!B \land
+        !C)}{$\SSubst{\indfrm}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}$ iku
+        \[(\SSubst{!B}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}} \land
+          \SSubst{!C}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}}).\]}}{}
+    \tagitem{prvOr}{\indcase{!A}{(!B \lor
+          !C)}{$\SSubst{\indfrm}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}$ iku
+        \[(\SSubst{!B}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}} \lor
+          \SSubst{!C}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}}).\]}}{}
+    \tagitem{prvIf}{\indcase{!A}{(!B \lif
+          !C)}{$\SSubst{\indfrm}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}$ iku
+        \[(\SSubst{!B}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}} \lif
+          \SSubst{!C}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}}).\]}}{}
+    \tagitem{prvIff}{\indcase{!A}{(!B \liff
+          !C)}{$\SSubst{\indfrm}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}$ iku
+        \[(\SSubst{!B}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}} \liff
+          \SSubst{!C}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}}).\]}}{}
+    \tagitem{prvBox}{\indcase{!A}{\Box !B}{%
+        $\SSubst{\indfrm}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}}$ iku
+        $\Box
+        \SSubst{!B}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}}.$}}{}
+    \tagitem{prvDiamond}{\indcase{!A}{\Diamond !B}{%
+        $\SSubst{\indfrm}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}}$ iku
+        $\Diamond
+        \SSubst{!B}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}}.$}}{}
+  \end{enumerate}
+  !!{formula} $\SSubst{!A}{\subst{!D_1}{p_1}, \dots,
+    \subst{!D_n}{p_n}}$ diarani \emph{instansi substitusi}
+  saka~$!A$.
+\end{defn}
+
+\begin{ex}
+  Upamane $!A$ iku $p_1 \lif \Box(p_1 \land p_2)$, $!D_1$ iku
+  $\Diamond(p_2 \lif p_3)$ lan $!D_2$ iku $\lnot\Box p_1$. Banjur
+  $\SSubst{!A}{\subst{!D_1}{p_1}, \subst{!D_2}{p_2}}$ yaiku
+  \begin{align*}
+    \Diamond(p_2 \lif p_3) &
+    \lif \Box(\Diamond(p_2 \lif p_3) \land \lnot\Box p_1)
+    \intertext{dene $\SSubst{!A}{\subst{!D_2}{p_1}, \subst{!D_1}{p_2}}$ yaiku}
+    \lnot\Box p_1 &
+    \lif \Box(\lnot\Box p_1 \land \Diamond(p_2 \lif p_3))
+    \intertext{Elinga yen substitusi simultan umume ora padha
+      karo substitusi berurutan; upamane bandhingna
+      $\SSubst{!A}{\subst{!D_1}{p_1}, \subst{!D_2}{p_2}}$ ing ndhuwur karo
+      $\Subst{(\Subst{!A}{!D_1}{p_1})}{!D_2}{p_2}$, kang asile:}
+    \Diamond(p_2 \lif p_3) & \lif \Subst{\Box(\Diamond(p_2 \lif p_3) \land p_2)}{\lnot\Box p_1}{p_2}, \text{ yaiku,}\\
+    \Diamond(\lnot\Box p_1 \lif p_3) &
+    \lif \Box(\Diamond(\lnot\Box p_1
+    \lif p_3) \land \lnot\Box p_1)\\
+    \intertext{lan karo $\Subst{(\Subst{!A}{!D_2}{p_2})}{!D_1}{p_1}$:}
+    \Diamond(p_2 \lif p_3) & \lif \Subst{\Box(p_1 \land \lnot\Box p_1)}{\Diamond(p_2 \lif p_3)}{p_1}, \text{ yaiku,}\\
+    \Diamond(p_2 \lif p_3) &
+    \lif \Box(\Diamond(p_2
+    \lif p_3) \land \lnot\Box\Diamond(p_2 \lif p_3)).
+  \end{align*}
+\end{ex}
+
+\end{document}

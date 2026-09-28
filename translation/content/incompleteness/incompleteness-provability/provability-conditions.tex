@@ -1,0 +1,79 @@
+% Part: incompleteness
+% Chapter: incompleteness-provability
+% Section: provability-conditions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{inp}{prc}
+
+\olsection{Sarat \usetoken{S}{derivability} kanggo $\Th{PA}$}
+
+Aritmetika Peano, utawa $\Th{PA}$, iku teori kang ngembangake
+$\Th{Q}$ nganggo aksioma induksi kanggo saben !!{formula}s.
+Kanthi tembung liya, ing $\Th{Q}$ ditambahake aksioma awujud
+\[
+(!A(0) \land \lforall[x][(!A(x) \lif !A(x'))]) \lif \lforall[x][!A(x)]
+\]
+kanggo saben !!{formula}~$!A$. Gatekna yen iki sejatine sawijining
+\emph{skema}, yaiku aksioma kang cacahe tanpa wates (lan jebul
+$\Th{PA}$ {\em ora} bisa diaksiomatisasi kanthi winates). Nanging
+amarga kita bisa kanthi efektif mutusake apa sawijining rerangkening
+simbol iku conto saka aksioma induksi utawa ora, himpunan aksioma
+kanggo $\Th{PA}$ komputabel. $\Th{PA}$ iku teori kang luwih kuwat
+tinimbang~$\Th{Q}$. Upamane, kanthi induksi lumrah kita gampang
+mbuktekake yen panjumlahan lan pingan komutatif. Malah, akeh
+pambuktian finitari ing teori bilangan lan kombinatorika bisa
+ditindakake ing~$\Th{PA}$.
+
+Amarga $\Th{PA}$ bisa diaksiomatisasi kanthi komputabel, predikat
+!!{derivability} $\Prf[\Th{PA}](x,y)$ komputabel lan mula bisa
+direpresentasikake ing~$\Th{Q}$ (lan uga ing~$\Th{PA}$). Kaya
+sadurunge, $\OPrf[\Th{PA}](x,y)$ kita gunakake kanggo nyebut formula
+kang merepresentasikake relasi iki. Tetepna $\OProv[\Th{PA}](y)$
+minangka formula $\lexists[x][\Prf[\Th{PA}](x,y)]$, kang sacara
+intuitif nyatakake ``$y$ !!{derivable} saka aksioma-aksioma
+$\Th{PA}$.'' Alesan kita mbutuhake luwih saka aksioma $\Th{Q}$
+yaiku kita kudu ngerti yen teori kang digunakake cukup kuwat
+kanggo !!{derive} sawetara fakta dhasar ngenani predikat
+!!{derivability} iki. Nyatane, fakta kang dibutuhake yaiku:
+\begin{enumerate}
+\item[P1.] Yen $\Th{PA} \Proves !A$, mula $\Th{PA} \Proves
+  \OProv[\Th{PA}](\gn{!A})$.
+\item[P2.] Kanggo saben !!{formula}s $!A$ lan $!B$,
+  \[
+  \Th{PA} \Proves \OProv[\Th{PA}](\gn{!A \lif !B}) \lif
+  (\OProv[\Th{PA}](\gn{!A}) \lif \OProv[\Th{PA}](\gn{!B})).
+  \]
+\item[P3.] Kanggo saben !!{formula}~$!A$,
+  \[
+  \Th{PA} \Proves \OProv[\Th{PA}](\gn{!A})
+  \lif \OProv[\Th{PA}](\gn{\OProv[\Th{PA}](\gn{!A})}).
+  \]
+\end{enumerate}
+Kanggo mbuktekake yen telung sipat iki bener, kita kudu njlentrehake
+!!{formula} $\OProv[\Th{PA}](y)$ kanthi tliti lan nggunakake aksioma
+$\Th{PA}$ kanggo njlentrehake !!{derivation}s formal kang relevan.
+Sarat (1) lan~(2) gampang; sarat~(3) kang sejatine mbutuhake
+pakaryan. (Coba pikirna pakaryan apa kang dibutuhake \dots)
+Rincian kasebut bakal dawa lan ora narik kawigaten, mula ing kene
+kita njaluk sampeyan nampa tanpa bukti yen $\Th{PA}$ nduweni telung
+sipat ing ndhuwur. Pilihan $\OProv[\Th{PA}](y)$ kang lumrah uga
+bakal nyukupi
+\begin{enumerate}
+\item[P4.] Yen $\Th{PA} \Proves \OProv[\Th{PA}](\gn{!A})$, mula
+  $\Th{PA} \Proves !A$.
+\end{enumerate}
+Nanging fakta iki ora bakal dibutuhake.
+
+\begin{digress}
+Minangka cathetan, G\"odel uga rada kesed kaya kita saiki. Ing
+pungkasan makalahe taun 1931, dheweke nggambarake garis gedhe bukti
+teorema ora jangkep kapindho lan janji bakal njlentrehake rinciane
+ing makalah sabanjure. Nanging dheweke ora nate nindakake iku;
+amarga saben wong kang mangerteni argumene percaya yen bukti iku
+bisa dirampungake, dheweke ora perlu ngisi rinciane.
+\end{digress}
+
+\end{document}

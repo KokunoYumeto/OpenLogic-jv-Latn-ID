@@ -1,0 +1,78 @@
+% Part: computability
+% Chapter: recursive-functions
+% Section: other-recursions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{rec}{ore}
+\olsection{Wangun Rekursi Liyane}
+
+Kanthi nggunakake pasangan lan rerangken, kita bisa
+mbenerake wangun rekursi primitif kang luwih ora lumrah
+(lan migunani). Umpamane, kerep migunani yen rong
+fungsi ditegesi bebarengan, kaya ing definisi iki:
+\begin{align*}
+h_0(\vec x, 0) & = f_0(\vec x) \\
+h_1(\vec x, 0) & = f_1(\vec x) \\
+h_0(\vec x, y+1) & = g_0(\vec x, y, h_0(\vec x, y), h_1(\vec x, y)) \\
+h_1(\vec x, y+1) & = g_1(\vec x, y, h_0(\vec x, y), h_1(\vec x, y))
+\end{align*}
+Iki tuladha \emph{rekursi bebarengan}. Cara liya
+kang migunani kanggo netepake fungsi yaiku menehi
+nilai $h(\vec x, y+1)$ adhedhasar \emph{kabeh}
+nilai $h(\vec x, 0)$, \dots,~$h(\vec x, y)$,
+kaya ing definisi iki:
+\begin{align*}
+h(\vec x, 0) & = f(\vec x) \\
+h(\vec x, y+1) & = g(\vec x, y, \tuple{h(\vec x, 0), \dots, h(\vec x, y)}).
+\end{align*}
+Pola iki nyatakake gagasan mau kanthi luwih ringkes:
+\[
+h(\vec x, y) = g(\vec x, y, \tuple{h(\vec x, 0), \dots, h(\vec x, y-1)})
+\]
+kanthi pangerten yen argumen pungkasan kanggo $g$
+iku rerangken kosong nalika $y$ iku $0$.
+Ing kaloro wangun kasebut, gagasane yaiku nalika
+ngitung 'langkah penerus,' fungsi $h$ bisa
+nggunakake kabeh rerangken nilai kang wis
+diitung sadurunge. Iki diarani \emph{rekursi
+adhedhasar kabeh nilai sadurunge}. Minangka
+tuladha tartamtu, cara iki bisa mbenerake
+definisi jinis iki:
+\begin{align*}
+h(\vec x, y) & = \begin{cases}
+  g(\vec x, y, h(\vec x, k(\vec x, y))) & \text{yen $k(\vec x, y) < y$} \\
+  f(\vec x) & \text{yen ora}
+\end{cases}
+\end{align*}
+Kanthi tembung liya, nilai $h$ ing $y$ bisa
+diitung adhedhasar nilai $h$ ing \emph{sembarang}
+nilai sadurunge kang diwenehake dening~$k$.
+
+
+\begin{prob}
+  Netepna fungsi turah $r(x,y)$ kanthi rekursi
+  adhedhasar kabeh nilai sadurunge. (Yen $x$, $y$
+  wilangan asli lan $y > 0$, $r(x,y)$ iku wilangan
+  kang luwih cilik tinimbang~$y$ kanthi syarat
+  $x = z\times y + r(x,y)$ kanggo sawenehing~$z$.
+  Supaya cetha, yen $y=0$, $r(x,0) = 0$.)
+\end{prob}
+
+Pikirna carane ngasilake fungsi-fungsi iki kanthi
+rekursi primitif lumrah. Wangun pungkasan saka
+rekursi primitif luwih luwes amarga
+\emph{parameter} (nilai ing pinggir) bisa
+diowahi saklumakune proses:
+\begin{align*}
+h(\vec x, 0) & = f(\vec x) \\
+h(\vec x, y+1) & = g(\vec x, y, h(k(\vec x), y))
+\end{align*}
+Wangun iki uga bisa ditiru nganggo rekursi
+primitif lumrah. (Nindakake iki ora gampang.
+Minangka pituduh, coba urai itungane kanthi
+tangan.)
+
+\end{document}

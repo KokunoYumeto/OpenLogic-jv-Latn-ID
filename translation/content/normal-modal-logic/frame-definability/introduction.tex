@@ -1,0 +1,60 @@
+% Part: normal-modal-logic
+% Chapter: frame-definability
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{frd}{int}
+
+\olsection{Pambuka}
+
+Salah sawijining pitakon kang narik kawigaten para ahli logika
+modal yaiku sesambungan antarane relasi aksesibilitas lan kabeneran
+!!{formula}s tartamtu ing model kanthi relasi aksesibilitas kasebut.
+Upamane, relasi aksesibilitas iku refleksif, yaiku kanggo saben $w
+\in W$, $Rww$. Kanthi tembung liya, saben donya bisa diakses saka
+awake dhewe. Iki ateges yen $\Box !A$ bener ing sawijining donya~$w$,
+$w$ dhewe kalebu donya kang bisa diakses lan mula~$!A$ kudu bener
+ing kono. Dadi, yen relasi~$R$ saka~$\mModel{M}$ refleksif, mula
+apa wae donya $w$ lan formula $!A$ kang dipilih, $\Box !A
+\lif !A$ bener ing kono (kanthi tembung liya, skema $\Box p \lif
+p$ lan kabeh instansi substitusine bener ing~$\mModel{M}$).
+
+Nanging kosok baline ora bener. Upamane, yen
+$\Box p \lif p$ bener ing~$\mModel{M}$, iki ora ateges $R$ refleksif.
+Kita gampang nemokake model~$\mModel{M}$ kang ora refleksif nanging
+$\Box p \lif p$ bener ing kabeh donya: pilih model kang mung duwe
+siji donya~$w$, kang ora bisa diakses saka awake dhewe, nanging
+$w \in V(p)$. Kanthi milih nilai kabeneran $p$ kang cocog, kita
+bisa ndadekake $\Box !A \lif !A$ bener ing model kang ora refleksif.
+
+Solusine yaiku ngilangi penetapan variabel~$V$ saka
+pitungan iki. Yen kita mbutuhake $\Box p \lif p$ bener ing kabeh donya
+ing~$\mModel{M}$ tanpa gumantung marang donya endi wae ing~$V(p)$,
+mula $R$ kudu refleksif. Sebab ing saben model kang ora refleksif,
+ana paling ora siji donya~$w$ kang ora nyukupi $Rww$. Yen kita netepake
+$V(p) = W \setminus \{w\}$, mula $p$ bener ing kabeh donya liyane
+kajaba~$w$, lan mula uga ing kabeh donya kang bisa diakses saka~$w$
+(amarga $w$ mesthi ora bisa diakses saka~$w$, lan $w$ siji-sijine
+donya kang~$p$ salah). Nanging, $p$ salah ing $w$, mula $\Box
+p \lif p$ salah ing~$w$.
+
+Iki nuduhake yen kita perlu ngenalake notasi kanggo struktur
+model tanpa valuasi: iki diarani \emph{bingkai}. Sawijining bingkai
+$\mModel{F}$ mung pasangan $\tuple{W, R}$ kang dumadi saka himpunan
+donya lan relasi aksesibilitas. Saben model $\tuple{W, R, V}$ banjur,
+miturut tetembungan kita, \emph{adhedhasar} bingkai $\tuple{W, R}$.
+Kosok baline, sawijining bingkai nemtokake kelas model kang adhedhasar
+bingkai iku; lan kelas bingkai nemtokake kelas model kang adhedhasar
+salah siji bingkai ing kelas kasebut. Kita bisa nemtokake
+$\mModel{F} \Entails !A$, yaiku !!a{formula} kang \emph{valid} ing
+sawijining bingkai: $\mSat{M}{!A}$ kanggo kabeh $\mModel{M}$ kang
+adhedhasar~$\mModel{F}$.
+
+Kanthi notasi iki, kita bisa netepake relasi korespondensi
+antarane !!{formula}s lan kelas bingkai: upamane,
+$\mModel{F} \Entails \Box p \lif p$ yen lan mung yen $\mModel{F}$ refleksif.
+
+\end{document}

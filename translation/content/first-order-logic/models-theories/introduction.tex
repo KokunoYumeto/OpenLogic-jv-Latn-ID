@@ -1,0 +1,130 @@
+% Part: first-order-logic
+% Chapter: models-theories
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{mat}{int}
+\olsection{Pambuka}
+
+\begin{explain}
+Pangembangan metode aksiomatis iku salah siji prestasi
+wigati ing sajarah ilmu, lan wigatine mligi ing sajarah
+matematika. Ngembangake sawenehing bidang kanthi cara
+aksiomatis mbutuhake panjlentrehan akeh pitakon: Apa
+kang dadi pokok kajian bidang kasebut? Apa konsep-konsep
+kang paling dhasar? Kepriye sesambungane? Apa kabeh
+konsep ing bidang kasebut bisa ditemtokake lumantar
+konsep-konsep dhasar iki? Apa hukum kang dituruti,
+lan kang kudu dituruti, dening konsep-konsep kasebut?
+
+Metode aksiomatis lan logika cocog siji lan sijine.
+Logika formal nyedhiyakake piranti kanggo ngrumusake
+teori aksiomatis, kanggo mbuktekake teorema saka aksioma
+teori kanthi cara kang ditemtokake kanthi cetha,
+lan kanggo nliti sipat-sipat kabeh sistem kang nyukupi
+aksioma kasebut kanthi sistematis.
+\end{explain}
+
+\begin{defn}
+Himpunan !!{sentence}s~$\Gamma$ diarani \emph{katutup}
+yen lan mung yen, kapan wae $\Gamma \Entails !A$,
+mula $!A \in \Gamma$. \emph{Panutupan} saka himpunan
+!!{sentence}s~$\Gamma$ yaiku
+$\Setabs{!A}{\Gamma \Entails !A}$.
+
+Kita kandha yen~$\Gamma$ \emph{diaksiomatisasi dening}
+himpunan ukara~$\Delta$ yen $\Gamma$ iku panutupan
+saka~$\Delta$.
+\end{defn}
+
+\begin{explain}
+Kita bisa nganggep teori aksiomatis minangka himpunan
+ukara kang diaksiomatisasi dening himpunan aksiomane~$\Delta$.
+Kanthi tembung liya, yen kita nduweni basa logika sepisanan
+kang ngemot simbol nonlogis kanggo konsep-konsep dhasar
+ing ilmu kang arep dikembangake kanthi aksiomatis,
+bebarengan karo himpunan !!{sentence}s kang ngandharake
+hukum-hukum dhasar ilmu kasebut, teori iku bisa kita
+wakili kanthi kabeh !!{sentence}s ing basa kasebut
+kang dadi akibat saka aksioma. Cakupane wiwit saka
+tuladha prasaja kanthi mung siji konsep dhasar lan
+aksioma kang prasaja, kayata teori urutan parsial,
+nganti teori rumit kayata mekanika Newton.
+
+Kasunyatan logis kang ndadekake cara formal marang
+metode aksiomatis iki wigati banget yaiku ing ngisor iki.
+Upamakna $\Gamma$ iku sistem aksioma kanggo sawenehing
+teori, yaiku himpunan ukara.
+\begin{enumerate}
+\item Kita bisa nyatakake kanthi cetha kapan sistem
+  aksioma nyakup kelas !!{structure}s kang dikarepake.
+  Tegese, yen kita nggatekake kelas !!{structure}s tartamtu,
+  sistem aksioma~$\Gamma$ kasil nyakup kelas kasebut
+  yen lan mung yen !!{structure}s ing kelas iku persis
+  struktur~$\Struct M$ kang ndadekake
+  $\Sat{M}{\Gamma}$.
+\item Kita bisa gagal ing bab iki amarga ana $\Struct M$
+  kang ndadekake $\Sat{M}{\Gamma}$, nanging
+  $\Struct M$ dudu salah siji !!{structure}s kang
+  dikarepake. Iki bisa ndadekake kita nambah aksioma
+  kang ora bener ing~$\Struct M$.
+\item Yen kita paling ora kasil njaga supaya $\Gamma$
+  bener ing kabeh !!{structure}s kang dikarepake,
+  mula ukara~$!A$ bener ing kabeh !!{structure}s
+  kang dikarepake kapan wae $\Gamma \Entails !A$.
+  Dadi kita bisa nggunakake piranti logis
+  (kayata metode !!{derivation}) kanggo nuduhake
+  yen ukara bener ing kabeh !!{structure}s
+  kang dikarepake mung kanthi nuduhake yen ukara
+  kasebut dadi akibat saka aksioma.
+\item Kadhang kita ora miwiti saka !!{structure}s
+  kang wis dibayangake, nanging saka aksioma dhewe:
+  kita miwiti saka sawetara konsep dhasar kang
+  dikarepake nyukupi hukum tartamtu kang kita
+  rumusake ing sistem aksioma. Salah siji bab
+  kang arep langsung kita priksa yaiku apa
+  aksioma-aksioma kasebut ora padha kontradiksi:
+  yen kontradiksi, ora ana konsep kang bisa
+  manut hukum kasebut, lan teori kang kita
+  susun ora koheren. Kita bisa mriksa yen
+  prakara iki ora kedadeyan kanthi nemokake
+  model saka~$\Gamma$. Yen teori kita nduweni
+  model, kita bisa nggunakake metode logis
+  kanggo nliti model-model kasebut, lan uga
+  kanggo mbangun model.
+\item Kamardikan aksioma uga pitakon wigati.
+  Bisa wae salah siji aksioma nyatane dadi
+  akibat saka aksioma-aksioma liyane,
+  mula aksioma iku keluwihan. Kita bisa
+  mbuktekake yen aksioma $!A$ ing $\Gamma$
+  keluwihan kanthi mbuktekake $\Gamma \setminus
+  \{!A\} \Entails !A$. Kita uga bisa
+  mbuktekake yen aksioma iku ora keluwihan
+  kanthi nuduhake yen $(\Gamma \setminus \{!A\})
+  \cup \{\lnot !A\}$ bisa dicukupi. Upamane,
+  kanthi cara iki postulat paralel kabukten
+  mardika saka aksioma geometri liyane.
+\item Pitakon wigati liyane yaiku apa konsep
+  bisa ditemtokake ing sawijining teori:
+  pilihan basa nemtokake apa kang kalebu
+  model-model teori. Nanging ora saben
+  aspek teori kudu diwakili dhewe-dhewe
+  ing modele. Upamane, saben relasi urutan
+  $\le$ nemtokake relasi urutan ketat~$<$;
+  yen salah siji wis ana, liyane bisa kita
+  temtokake. Dadi model teori kang ngemot
+  urutan kaya mangkono ora kudu \emph{uga}
+  ngemot relasi urutan ketat kang cocog.
+  Kapan, sacara umum, siji relasi bisa
+  ditemtokake lumantar relasi liyane?
+  Kapan siji relasi ora bisa ditemtokake
+  lumantar relasi liyane (lan mula kudu
+  ditambahake dadi konsep dhasar ing basa)?
+\end{enumerate}
+\end{explain}
+
+
+\end{document}

@@ -1,0 +1,64 @@
+% Part: normal-modal-logic
+% Chapter: completeness
+% Section: completeness-K
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{com}{cmk}
+
+\olsection{Panemtuan lan Kasampurnan kanggo  \Log{K}}
+
+Saiki kita bisa nggunakake model kanonik kanggo netepake kasampurnan.
+Kasampurnan diturunake saka kasunyatan yen !!{formula}s kang bener ing
+model kanonik kanggo~$\Sigma$ yaiku persis kang
+$\Sigma$-!!{derivable}. Model kang nduweni sipat iki diarani
+\emph{nemtokake}~$\Sigma$.
+
+\begin{defn}
+  Sawijining model $\mModel{M}$ \emph{nemtokake} logika modal
+  normal~$\Sigma$ yen lan mung yen $\mSat{M}{!A}$ yen lan mung yen
+  $\Sigma \Proves !A$, kanggo kabeh !!{formula}s~$!A$.
+\end{defn}
+
+\begin{thm}[Panemtuan]\ollabel{thm:determination}
+   $\mSat{M^\Sigma}{!A}$ yen lan mung yen $\Sigma \Proves !A$.
+\end{thm}
+
+\begin{proof}
+  Yen $\mSat{M^\Sigma}{!A}$, mula kanggo saben himpunan
+  $\Sigma$-konsisten jangkep $\Delta$, kita duwe
+  $\mSat{M^\Sigma}{!A}[\Delta]$. Mula, miturut Lemma Bebener, $!A \in
+  \Delta$ kanggo saben himpunan $\Sigma$-konsisten jangkep $\Delta$, lan
+  miturut \olref[lin]{cor:provability-characterization} (kanthi $\Gamma =
+  \emptyset$), $\Sigma \Proves !A$.
+
+  Kosok baline, yen $\Sigma \Proves !A$, mula miturut
+  \olref[ccs]{prop:ccs-properties}\olref[ccs]{prop:ccs-closed}, saben
+  himpunan $\Sigma$-konsisten jangkep $\Delta$ ngemot~$!A$, lan mula
+  miturut Lemma Bebener, $\mSat{M^\Sigma}{!A}[\Delta]$ kanggo saben
+  $\Delta \in W^\Sigma$, yaiku $\mSat{M^\Sigma}{!A}$.
+\end{proof}
+
+Amarga model kanonik kanggo \Log{K} nemtokake~\Log{K}, kita langsung
+entuk kasampurnan~\Log{K} minangka akibat:
+
+\begin{cor}\ollabel{cor:Kcomplete}
+  Logika modal dhasar \Log{K} sampurna gegayutan karo kelas kabeh
+  model, yaiku yen $\Entails !A$ mula $\Log{K} \Proves !A$.
+\end{cor}
+
+\begin{proof}
+  Kanthi kontraposisi, yen $\Log{K} \Proves/ !A$, mula miturut Panemtuan
+  $\mSat/{M^{\Log{K}}}{!A}$ lan mula $!A$ ora valid.
+\end{proof}
+
+Kanggo kasus umum kasampurnan sawijining sistem $\Sigma$ gegayutan
+karo sawijining kelas model, upamane \Log{KTB4} gegayutan karo kelas
+model refleksif, simetris, lan transitif, panemtuan wae durung cukup.
+Kita uga kudu nuduhake yen model kanonik kanggo sistem $\Sigma$ iku
+kalebu kelas kasebut; iki ora langsung diturunake saka pambangunan
+model kanonik---malah ora mesthi bener!
+
+\end{document}

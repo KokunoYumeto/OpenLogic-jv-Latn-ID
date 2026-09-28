@@ -1,0 +1,123 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{ordinals}{opps}
+\olsection{Ordinal Penerus lan Ordinal Limit}
+
+Ing sawetara bab sabanjure, ordinal bakal asring
+kita gunakake. Mula migunani yen kita ngenalake
+sawetara gagasan prasaja.
+
+\begin{defn}
+Kanggo sembarang ordinal $\alpha$, \emph{peneruse}
+yaiku $\ordsucc{\alpha} =\alpha \cup \{\alpha\}$.
+Kita ngarani $\alpha$ \emph{ordinal penerus} yen
+$\ordsucc{\beta} = \alpha$ kanggo sawenehing
+ordinal~$\beta$. Kita ngarani $\alpha$ \emph{ordinal
+limit} yen lan mung yen $\alpha$ dudu ordinal kosong
+lan dudu ordinal penerus.
+\end{defn}
+\noindent
+Asil sabanjure nuduhake yen iki gagasan \emph{penerus}
+kang trep:
+
+\begin{prop}
+Kanggo sembarang ordinal $\alpha$:
+\begin{enumerate}
+	\item $\alpha \in \ordsucc{\alpha}$;
+	\item $\ordsucc{\alpha}$ iku ordinal;
+	\item ora ana ordinal $\beta$ kang nyukupi
+	$\alpha \in \beta \in \ordsucc{\alpha}$.
+	\end{enumerate}
+\end{prop}
+
+\begin{proof}
+Cetha yen $\alpha \in \alpha \cup \{\alpha\}
+= \ordsucc{\alpha}$. Semono uga,
+$\ordsucc{\alpha}$ iku himpunan transitif kang
+anggotane ordinal, mula dadi ordinal miturut
+\olref[basic]{corordtransitiveord}. Ora mungkin
+$\alpha \in \beta \in \ordsucc{\alpha}$,
+amarga saka kene $\beta \in \alpha$ utawa
+$\beta = \alpha$, nentang \olref[basic]{ordordered}.
+\end{proof}
+\noindent
+Iki uga ngidini wujud bukti induksi transfinit liyane:
+
+\begin{thm}[Induksi Transfinit Prasaja]\ollabel{simpletransrecursion}
+Upamane $\phi(x)$ rumus kang nyukupi:
+\begin{enumerate}
+	\item $\phi(\emptyset)$; lan
+	\item kanggo sembarang ordinal $\alpha$, yen
+	$\phi(\alpha)$ mula $\phi(\ordsucc{\alpha})$; lan
+	\item yen $\alpha$ ordinal limit lan $(\forall \beta \in
+	\alpha)\phi(\beta)$, mula $\phi(\alpha)$.
+\end{enumerate}
+Mula $\forall \alpha \phi(\alpha)$.
+\end{thm}
+
+\begin{proof}
+Kita mbuktekake kontrapositife. Upamane ana ordinal
+kang nyukupi $\lnot\phi$; pilih $\gamma$ minangka
+ordinal paling cilik kang mangkono. Mula utawa
+$\gamma = \emptyset$, utawa
+$\gamma = \ordsucc{\alpha}$ kanggo sawijining
+$\alpha$ kang nyukupi $\phi(\alpha)$, utawa
+$\gamma$ ordinal limit lan
+$(\forall \beta \in \gamma)\phi(\beta)$.
+Saben kemungkinan iki nentang salah siji syarat,
+mula ora ana ordinal kang luput saka rumus kasebut.
+\end{proof}
+\noindent
+Siji notasi pungkasan iki bakal migunani mengko:
+
+\begin{defn}\ollabel{defsupstrict}
+Yen $X$ himpunan ordinal, mula
+$\supstrict(X) = \bigcup_{\alpha \in X}
+\ordsucc{\alpha}$.
+\end{defn}
+\noindent
+Ing kene, ``lsub'' tegese ``wates ndhuwur ketat kang
+paling cilik''.\footnote{Sawetara buku nganggo
+``$\text{sup}(X)$'' kanggo iki. Nanging buku liyane
+nganggo ``$\text{sup}(X)$'' kanggo wates ndhuwur
+\emph{ora ketat} kang paling cilik, yaiku mung
+$\bigcup X$. Yen $X$ nduweni anggota paling gedhe,
+$\alpha$, loro gagasan iki beda: wates ndhuwur
+\emph{ketat} kang paling cilik yaiku
+$\ordsucc{\alpha}$, dene wates ndhuwur
+\emph{ora ketat} kang paling cilik mung $\alpha$.}
+Asil sabanjure njlentrehake iki:
+
+\begin{prop}
+Yen $X$ himpunan ordinal, $\supstrict(X)$ iku
+ordinal paling cilik kang luwih gedhe tinimbang
+saben ordinal ing $X$.
+\end{prop}
+
+\begin{proof}
+Upamane $Y = \Setabs{\ordsucc{\alpha}}{\alpha \in X}$,
+dadi $\supstrict(X) = \bigcup Y$. Amarga ordinal
+transitif lan saben anggota ordinal uga ordinal,
+$\supstrict(X)$ iku himpunan transitif kang anggotane
+ordinal, mula ordinal miturut
+\olref[basic]{corordtransitiveord}.
+
+Yen $\alpha \in X$, mula $\ordsucc{\alpha} \in Y$,
+dadi $\ordsucc{\alpha} \subseteq \bigcup Y
+= \supstrict(X)$, saengga
+$\alpha \in \supstrict(X)$. Mula $\supstrict(X)$
+luwih gedhe kanthi ketat tinimbang saben ordinal
+ing $X$.
+
+Kosok baline, yen $\alpha \in \supstrict(X)$,
+mula $\alpha \in \ordsucc{\beta} \in Y$ kanggo
+sawenehing $\beta \in X$, dadi $\alpha \leq
+\beta \in X$. Saben wates ndhuwur ketat kanggo
+himpunan mau mesthi ngemot anggota-anggota iki, mula
+$\supstrict(X)$ iku wates ndhuwur ketat kang
+\emph{paling cilik} tumrap $X$.
+\end{proof}
+
+\end{document}

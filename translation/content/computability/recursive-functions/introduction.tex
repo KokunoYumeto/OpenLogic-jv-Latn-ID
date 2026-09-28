@@ -1,0 +1,58 @@
+% Part: computability
+% Chapter: recursive-functions
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{rec}{int}
+\olsection{Pambuka}
+
+Kanggo ngembangake teori matematis ngenani komputabilitas, luwih dhisik
+kudu ngembangake \emph{model} komputabilitas. Saiki kita nganggep
+komputabilitas minangka jinis kagiyatan kang ditindakake komputer,
+lan komputer makarya nganggo lambang. Nanging nalika teori
+komputabilitas wiwit dikembangake, tuladha paradigmatik komputasi
+yaiku komputasi \emph{numerik}. Para matematikawan wiwit biyen
+kasengsem marang fungsi teori wilangan, yaiku fungsi
+$f\colon \Nat^n \to
+\Nat$ kang bisa diitung. Mula lumrah yen ing wiwitan teori
+komputabilitas, fungsi kaya mangkono kang ditliti. Tuladha kang
+paling lumrah saka fungsi numerik komputabel, kayata panjumlahan,
+perkalian, lan pemangkatan (wilangan asli), nduweni sipat kang
+narik kawigaten: fungsi kasebut bisa ditegesi kanthi
+\emph{rekursif}. Mula lumrah yen kita nyoba menehi definisi umum
+\emph{fungsi komputabel} adhedhasar definisi rekursif. Saka
+maneka cara kanggo netepake fungsi teori wilangan kanthi rekursif,
+ana siji pola definisi kang mligi prasaja lan dadi pokok ing kene:
+kang diarani \emph{rekursi primitif}.
+
+Kajaba fungsi komputabel, kita uga bisa kasengsem marang himpunan
+lan relasi komputabel. Himpunan iku komputabel yen kita bisa ngitung
+jawaban apa sawijining wilangan kang diwenehake kalebu
+!!a{element} ing himpunan iku apa ora, lan relasi iku komputabel
+yen lan mung yen kita bisa ngitung apa tupel
+$\tuple{n_1, \dots, n_k}$ kalebu !!a{element} ing relasi iku
+apa ora. Kanthi nimbang \emph{fungsi karakteristik} saka
+himpunan utawa relasi, rembugan ngenani himpunan lan relasi
+komputabel bisa dilebokake ing rembugan ngenani fungsi komputabel.
+Mula kita uga bisa netepake relasi rekursif primitif, kayata
+relasi “$n$ mbagi $m$ tanpa sisa” iku relasi rekursif primitif.
+
+Fungsi rekursif primitif---yaiku fungsi kang bisa ditegesi mung
+nganggo rekursi primitif---nanging dudu siji-sijine fungsi teori
+wilangan kang komputabel. Akeh generalisasi rekursi primitif
+kang wis dianggep, nanging cara tambahan kang paling kuat lan
+paling wiyar ditampa kanggo ngitung fungsi yaiku panggolekan
+tanpa wates. Iki nuwuhake definisi \emph{fungsi rekursif
+  parsial}, lan definisi kang gegandhengan yaiku \emph{fungsi
+  rekursif umum}. Fungsi rekursif umum iku komputabel lan total,
+lan definisi kasebut nemtokake kanthi tepat fungsi rekursif
+parsial kang pranyata total. Fungsi rekursif bisa nyimulasi
+saben model komputasi liyane (mesin Turing, kalkulus lambda,
+lan sapiturute) lan mula dadi salah siji saka maneka model
+komputasi kang ditampa.
+
+
+\end{document}

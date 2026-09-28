@@ -1,0 +1,169 @@
+% Part: normal-modal-logic
+% Chapter: axioms-systems
+% Section: derived-rules
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{prf}{der}
+
+\olsection{Aturan Turunan}
+
+Nggoleki lan nulis !!{derivation}s pancen angel,
+mbulet, lan bola-bali. Upamane, kerep banget kita pengin ngalih saka
+$!A \lif !B$ menyang $\Box !A \lif \Box !B$, yaiku ngetrapake
+aturan~\RK. Iki mbutuhake panganggone \Nec, banjur nyathet instansi
+saka~\Ax{K} kang cocog, banjur ngetrapake~\MP. Kanggo ngalih saka
+$!A \lif !B$ lan $!B \lif !C$ menyang $!A \lif !C$, kita kudu
+nyathet instansi tautologis kang dawa iki:
+\[
+(!A \lif !B) \lif ((!B \lif !C) \lif (!A \lif !C))
+\]
+banjur ngetrapake \MP{} kaping pindho. Kita uga kerep pengin ngganti
+sub-!!{formula} nganggo formula liyane kang wis dingerteni ekuivalen,
+umpamane \iftag{prvDiamond}{$\Diamond
+  !A$ nganggo $\lnot\Box\lnot !A$}{$\Box !A$ nganggo $\lnot\Diamond\lnot !A$},
+utawa $\lnot\lnot !A$ nganggo $!A$. Mula tinimbang nulis kabeh
+!!{derivation} nyata, luwih trep yen kita mung nyathet sebab apa
+langkah antara iku !!{derivable}. Kanggo iku, ayo nglumpukake
+sawetara fakta babagan !!{derivability}.
+
+\begin{prop}
+  Yen $\Log{K} \Proves !A_1$, \dots, $\Log{K} \Proves !A_n$, lan $!B$
+  ngetutake saka $!A_1$, \dots, $!A_n$ miturut logika proposisional,
+  mula $\Log{K} \Proves !B$.
+\end{prop}
+
+\begin{proof}
+  Yen $!B$ ngetutake saka $!A_1$, \dots,~$!A_n$ miturut logika
+  proposisional, mula
+  \[
+  !A_1 \lif (!A_2 \lif \cdots (!A_n \lif !B)\dots)
+  \]
+  iku instansi tautologis. Kanthi ngetrapake \MP{} kaping $n$, kita
+  oleh !!{derivation} saka~$!B$.
+\end{proof}
+
+Kita bakal nandhani panganggone proposisi iki nganggo~\PL.
+
+\begin{prop}
+  If $\Log{K} \Proves !A_1 \lif (!A_2 \lif \cdots (!A_{n-1} \lif
+  !A_n)\dots)$ then $\Log{K} \Proves \Box !A_1 \lif (\Box !A_2 \lif
+  \cdots (\Box !A_{n-1} \lif \Box !A_n)\dots)$.
+\end{prop}
+
+\begin{proof}
+  Kanthi induksi marang $n$, padha kaya bukti \olref[nor]{prop:rk}.
+\end{proof}
+
+Kita bakal nandhani panganggone proposisi iki nganggo~\RK.
+Ayo dideleng kepiye asil iki nggampangake netepake
+!!{derivability}.
+
+\begin{prop}
+  $\Log{K} \Proves (\Box!A \land \Box!B) \lif \Box (!A \land !B)$
+\end{prop}
+
+\begin{proof}
+  \begin{derivation}
+    1. & $\Log{K} \Proves !A \lif (!B \lif (!A \land !B))$ & \Taut \\
+    2. & $\Log{K} \Proves \Box!A \lif (\Box !B \lif \Box(!A \land !B)))$ & \RK, 1\\
+    3. & $\Log{K} \Proves (\Box!A \land \Box!B) \lif \Box(!A \land !B)$ & \PL, 2
+  \end{derivation}
+\end{proof}
+
+\begin{prop}\ollabel{prop:rewriting}
+  Yen $\Log{K} \Proves !A \liff !B$ lan $\Log{K} \Proves
+  \Subst{!C}{!A}{q}$, mula $\Log{K} \Proves \Subst{!C}{!B}{q}$.
+\end{prop}
+
+\begin{proof}
+  Gladhen.
+\end{proof}
+
+\begin{prob}
+  Buktekna \olref[nml][prf][der]{prop:rewriting} kanthi induksi
+  marang kerumitan~$!C$: yen $\Log{K} \Proves !A \liff !B$,
+  mula $\Log{K} \Proves \Subst{!C}{!A}{q} \liff \Subst{!C}{!B}{q}$.
+\end{prob}
+
+Proposisi iki migunani banget nalika kita pengin ngowahi
+$\Diamond$ dadi $\Box$ (utawa kosok baline), utawa mbusak negasi
+dobel ing njero !!a{formula}. Ing ngisor iki, kita nandhani panganggone
+\olref{prop:rewriting} nganggo ``$!B$ kanggo $!A$'' nalika nggunakake
+!!a{formula}~$!C(!B)$ minangka panggantos kanggo~$!C(!A)$. Kanthi tembung liya,
+``$!B$ kanggo $!A$'' iku cekakan saka:
+  \begin{derivation}
+    & $\Proves !C(!A)$ \\
+    & $\Proves !A \liff !B$\\
+    & $\Proves !C(!B)$ & miturut \olref{prop:rewriting}
+  \end{derivation}
+Upamane:
+
+\begin{prop}
+  $\Log{K} \Proves \lnot\Box p \lif \Diamond \lnot p$
+\end{prop}
+
+\begin{proof}
+  \iftag{prvDiamond}{% Diamond iku primitif
+  \begin{derivation}
+    1. & $\Log{K} \Proves \Diamond \lnot p \liff \lnot\Box\lnot\lnot p$ &
+    \Dual\\
+    2. & $\Log{K} \Proves \lnot \Box \lnot\lnot p \lif \Diamond \lnot p$ & \PL, 1\\
+    3. & $\Log{K} \Proves \lnot\Box p \lif \Diamond \lnot p$ & $p$ for $\lnot\lnot p$\\
+  \end{derivation}
+  }{% Diamond didéfinisikake
+  \begin{derivation}
+    1. & $\Log{K} \Proves \lnot \Box \lnot\lnot p \lif \Diamond \lnot p$ & \Taut\\
+    2. & $\Log{K} \Proves \lnot\Box p \lif \Diamond \lnot p$ & $p$ for $\lnot\lnot p$\\
+  \end{derivation}
+  Formula ing baris~$1$ iku instansi saka $\lnot q \lif \lnot q$,
+  kanthi substitusi $\Box\lnot\lnot p$ kanggo~$q$. $\Diamond\lnot p$ lan
+  $\lnot\Box\lnot\lnot p$ padha, amarga $\Diamond$ didéfinisikake
+  minangka~$\lnot\Box\lnot$.}
+\end{proof}
+
+Ing !!{derivation} ndhuwur, langkah pungkasan
+``$p$ kanggo $\lnot\lnot p$'' iku cekakan saka
+  \begin{derivation}
+    & $\Log{K} \Proves \lnot \Box \lnot\lnot p \lif \Diamond \lnot
+    p$\\
+    & $\Log{K} \Proves \lnot\lnot p \liff p$ & \Taut\\
+    & $\Log{K} \Proves \lnot\Box p \lif \Diamond \lnot p$ & miturut \olref{prop:rewriting}
+  \end{derivation}
+Ing kene $!C(q)$, $!A$, lan $!B$ saka \olref{prop:rewriting}
+dipadhaake, miturut urutane, karo $\lnot \Box q \lif \Diamond \lnot p$,
+$\lnot\lnot p$, lan~$p$.
+
+Yen !!a{formula} ngemot sub-!!{formula}
+$\lnot\Diamond !A$, kita bisa ngganti nganggo $\Box\lnot !A$
+kanthi \olref{prop:rewriting}, amarga
+$\Log{K} \Proves \lnot\Diamond !A \liff \Box\lnot !A$. Kita bakal
+nandhani panggantos iki lan kang padha mung nganggo
+``$\Box\lnot$ kanggo $\lnot\Diamond$.''
+
+Proposisi iki mbenerake panganggone skema kanggo
+netepake asil !!{derivability}. Upamane, proposisi sadurunge ora mung
+netepake $\Log{K} \Proves \lnot\Box p \lif \Diamond \lnot p$,
+nanging uga $\Log{K} \Proves \lnot\Box !A \lif \Diamond
+\lnot !A$ kanggo sembarang~$!A$.
+
+\begin{prop}
+  Yen $!A$ instansi substitusi saka $!B$ lan $\Log{K} \Proves !B$,
+  mula $\Log{K} \Proves !A$.
+\end{prop}
+
+\begin{proof}
+  Mriksa manawa substitusi ing sakabehe !!{derivation} ngasilake
+  !!{derivation} kang bener iku mbulet nanging lumrah, kanthi induksi
+  marang dawa !!{derivation} saka~$!B$. Mligine, instansi substitusi
+  saka instansi tautologis tetep instansi tautologis; instansi
+  substitusi saka instansi~\iftag{prvDiamond}{\Dual{} lan~}{}\Ax{K}
+  tetep instansi saka~\iftag{prvDiamond}{\Dual{}
+    lan~}{}\Ax{K}; lan panganggone \MP{} lan~\Nec{} tetep bener
+  nalika !!{formula}s disubstitusikake kanggo
+  !!{propositional variable}s ing premis lan kesimpulane.
+\end{proof}
+
+\end{document}

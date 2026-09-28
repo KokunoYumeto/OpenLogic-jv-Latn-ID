@@ -1,0 +1,65 @@
+% Part: first-order-logic
+% Chapter: completeness
+% Section: downward-ls
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{com}{dls}
+\olsection{Teorema L\"owenheim--Skolem}
+
+Teorema L\"owenheim--Skolem nyatakake yen sawijining teori nduweni
+model tanpa wates, mula teori kasebut uga nduweni model kang paling
+akeh !!{denumerable}. Akibat langsung saka kasunyatan iki yaiku logika
+sepisanan ora bisa nyatakake yen ukuran !!a{structure} iku
+!!{nonenumerable}: saben !!{sentence} utawa himpunan !!{sentence}s
+kang bisa dicukupi ing kabeh !!{nonenumerable} !!{structure}s uga bisa
+dicukupi ing sawijine struktur !!{enumerable}.
+
+\begin{thm}
+\ollabel{thm:downward-ls} Yen $\Gamma$ konsisten, himpunan kasebut
+nduweni model !!a{enumerable}, yaiku, bisa dicukupi ing
+!!a{structure} kang domaine winates utawa !!{denumerable}.
+\end{thm}
+
+\begin{proof}
+Yen $\Gamma$ konsisten, !!{structure}~$\Struct M$ kang diasilake
+dening bukti teorema kelengkapan nduweni domain $\Domain{M}$ kang ora
+luwih gedhe tinimbang himpunan term saka basa~$\Lang L$. Mula
+$\Struct M$ paling akeh !!{denumerable}.
+\end{proof}
+
+\begin{thm}
+\ollabel{noidentity-ls} Yen $\Gamma$ minangka himpunan
+!!{sentence}s konsisten ing basa logika sepisanan tanpa identitas,
+himpunan kasebut nduweni model !!a{denumerable}, yaiku, bisa dicukupi
+ing !!a{structure} kang domaine tanpa wates lan !!{enumerable}.
+\end{thm}
+
+\begin{proof}
+Yen $\Gamma$ konsisten lan ora ngemot ukara kang ngandhut identitas,
+!!{structure}~$\Struct M$ kang diasilake dening bukti teorema
+kelengkapan nduweni domain $\Domain{M}$ kang padha persis karo
+himpunan term saka basa~$\Lang L'$. Mula $\Struct{M}$ iku
+!!{denumerable}, amarga $\Trm[L']$ uga mangkono.
+\end{proof}
+
+\begin{ex}[Paradoks Skolem]
+Teori himpunan Zermelo--Fraenkel~$\Log{ZFC}$ minangka kerangka kang
+kuwat banget lan meh kabeh pratelan matematika bisa dinyatakake ing
+jerone, kalebu kasunyatan ngenani ukuran himpunan. Contone,
+$\Log{ZFC}$ bisa mbuktekake yen himpunan wilangan real~$\Real$ iku
+!!{nonenumerable}, bisa mbuktekake Teorema Cantor yen himpunan pangkat
+saben himpunan luwih gedhe tinimbang himpunan kasebut dhewe, lan
+sapanunggalane. Yen $\Log{ZFC}$ konsisten, kabeh modele tanpa wates,
+lan luwih saka iku, kabeh model kasebut ngemot !!{element}s kang
+miturut teori iku !!{nonenumerable}, kayata elemen kang nggawe bener
+teorema saka~$\Log{ZFC}$ yen himpunan pangkat wilangan asli ana.
+Miturut Teorema L\"owenheim--Skolem, $\Log{ZFC}$ uga nduweni model
+!!{enumerable}---model kang ngemot himpunan “!!{nonenumerable}”
+nanging modele dhewe !!{enumerable}.
+\end{ex}
+
+\end{document}
+

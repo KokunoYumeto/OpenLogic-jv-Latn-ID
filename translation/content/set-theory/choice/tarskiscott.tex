@@ -1,0 +1,81 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{choice}{tarskiscott}
+\olsection{Cara Tarski--Scott}
+
+Ing \olref[cardinals][cardsasords]{defcardinalasordinal}, kita
+ndhéfinisikaké kardinal minangka ordinal. Kanggo nindakaké iki, kita
+nganggep Aksioma Pengurutan Becik. Alesané mung amarga cara iki
+lumrah digunakaké ing disiplin iki.
+
+Mula sadurungé ngrembug pitakonan filsafat babagan Pengurutan Becik,
+perlu ditegesaké yèn kita \emph{bisa} ninggalaké cara kang lumrah mau
+lan ngrembakakaké téori kardinal \emph{tanpa} nganggep Pengurutan
+Becik. Kita isih bisa migunakaké dhéfinisi $\cardeq{A}{B}$,
+$\cardle{A}{B}$ lan $\cardless{A}{B}$ kaya kang katon ing
+\olref[sfr][siz][]{chap}. Kita mung mbutuhaké pangertèn anyar babagan
+\emph{kardinal}.
+
+Pamikiran naif yaiku nyoba ndhéfinisikaké kardinalitas $A$ kaya iki:
+\[
+	\Setabs{x}{\cardeq{A}{x}}.
+\]
+Panjenengan bisa mbandhingaké iki karo dhéfinisi Frege kanggo
+$\# x Fx$, kang wis digambaraké ing pungkasan
+\olref[cardinals][hp]{sec}. Amarga alasan kang wis kita tunjukaké ing
+kana, dhéfinisi iki gagal kanggo himpunan kang ora kosong. Saben himpunan
+singleton ekuinumerik karo $\{\emptyset\}$. Nanging singleton anyar
+kawangun ing saben tahap penerus hirarki: cukup gatekna singleton
+saka tahap sadurungé. Luwih umum, kanggo saben himpunan kang ora kosong,
+prodhuk Kartesiusé karo singleton kang unsuré ana ing tahap saya dhuwur
+tetep ekuinumerik karo himpunan mau, nanging pangkaté bisa saya dhuwur tanpa
+wates. Mula $\Setabs{x}{\cardeq{A}{x}}$ ora dadi himpunan kanggo
+himpunan kang ora kosong, amarga ora nduwèni wates pangkat. Yèn himpunan asal kosong,
+kumpulan ekuinumerik mau pancèn dadi himpunan.
+
+Kanggo ngatasi prakara iki, kita migunakaké cara saka Tarski lan Scott:\footnote{Élinga: saben rumus bisa nduwèni paramèter, kajaba yèn ana pratelan kang kanthi gamblang nglarang.}
+
+\begin{defn}[Tarski--Scott]
+Kanggo sembarang rumus $\phi(x)$, $[ x : \phi(x)] $ yaiku himpunan
+kabeh $x$ kang pangkaté paling cilik ing antarané kang nyukupi
+$\phi(x)$, utawa $\emptyset$ yèn ora ana kang nyukupi $\phi$.
+\end{defn}
+
+Kita kudu mriksa yèn dhéfinisi iki sah. Ing $\ZF$,
+\olref[spine][foundation]{zfentailsregularity} njamin anané
+$\setrank{x}$ kanggo saben $x$. Yèn ana obyèk kang nyukupi
+$\phi$, kita bisa njupuk $\alpha$ minangka pangkat paling cilik
+kang nyukupi $(\exists x\subseteq V_\alpha)\phi(x)$, yaiku
+$(\forall \beta \in \alpha)(\forall x \subseteq V_\beta)\lnot \phi(x)$.
+Banjur kanthi Pamisahan kita dhéfinisikaké $[x : \phi(x)]$ minangka
+$\Setabs{x \in V_{\alpha+1}}{\phi(x)}$.
+
+Sawisé mbeneraké cara Tarski--Scott, kita saiki bisa migunakaké
+kanggo ndhéfinisikaké sawijining pangertèn kardinalitas:
+
+\begin{defn}
+Kardinalitas \textsc{ts} saka $A$ yaiku $\text{tsc}(A) = [x :
+\cardeq{A}{x}]$.
+\end{defn}
+
+Dhéfinisi kardinal \textsc{ts} ora migunakaké Pengurutan Becik.
+Nanging sanadyan tanpa aksioma iku, kita bisa nuduhaké yèn
+\emph{kardinal \textsc{ts}} nduwèni sipat kang padha karo
+\emph{kardinal} kaya kang didhéfinisikaké ing
+\olref[cardinals][cardsasords]{defcardinalasordinal}.
+Upamané, yèn \olref[cardinals][cardsasords]{lem:CardinalsBehaveRight}
+lan \olref[card-arithmetic][opps]{lem:SizePowerset2Exp} kita
+pratelakaké maneh nganggo kardinal \textsc{ts}, buktiné tetep lumaku
+ing $\ZF$ tanpa nganggep Pengurutan Becik.
+
+Nalika lagi ngrembug iki, perlu dielingaké yèn kita uga bisa
+ngrembakakaké téori ordinal nganggo cara Tarski--Scott. Yèn
+$\tuple{A, <}$ sawijining pengurutan becik, tetepna
+$\text{tso}(A, <) = [\tuple{X, R} :
+\ordeq{\tuple{A, <}}{\tuple{X, R}}]$. Katrangan luwih jembar
+babagan cara iki kanggo kardinal lan ordinal bisa diwaca ing
+\citet[bab~9--12]{Potter2004}.
+
+\end{document}

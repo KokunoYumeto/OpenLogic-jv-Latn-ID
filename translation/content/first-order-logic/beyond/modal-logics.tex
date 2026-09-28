@@ -1,0 +1,180 @@
+% Part: first-order-logic
+% Chapter: beyond
+% Section: modal-logics
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{byd}{mod}
+
+\olsection{Logika Modal}
+
+Gatekna tuladha ukara kondisional iki:
+\begin{quote}
+  Yen Jeremy dhewekan ing kamar iku,
+  mula dheweke mabuk lan wuda lan
+  njogèd ing kursi-kursi.
+\end{quote}
+Iki tuladha pratelan kondisional kang
+mbokmenawa bener sacara material,
+nanging isih bisa nyasarake.
+Ukara kasebut kaya-kaya nuduhake
+sesambungan kang luwih kuwat
+antarane prasyarat lan akibat
+tinimbang mung kahanan yen
+prasyarate kleru utawa akibate
+bener. Tegese, susunan ukara
+iku nuduhake yen pratelan
+kasebut ora mung bener ing
+donya iki (ing ngendi bisa
+bener kanthi sepele amarga
+Jeremy ora dhewekan ing kamar),
+nanging akibate \emph{mesthine}
+bener \emph{yen} prasyarate
+bener. Kanthi tembung liya,
+pratelan iku bisa ditegesi
+bener ora mung ing donya iki,
+nanging ing saben donya kang
+"mungkin"; utawa pratelan
+iku \emph{mesthi} bener,
+dudu mung bener ing donya
+tartamtu iki.
+
+Logika modal dirancang kanggo
+njlentrehake keniscayan kaya
+mangkono. Logika proposisional
+modal dioleh saka logika
+proposisional lumrah kanthi
+nambah operator kothak:
+yen $!A$ iku !!a{formula},
+mula $\Box !A$ uga
+rumus. Miturut
+teges kang dikarepake,
+$\Box !A$ nyatakake
+yen $!A$ \emph{mesthi}
+bener, utawa bener ing
+saben donya kang mungkin.
+$\Diamond !A$ lumrahe
+dianggep cekakan kanggo
+$\lnot \Box \lnot !A$,
+lan bisa diwaca minangka
+pratelan yen $!A$
+\emph{bisa uga} bener.
+Mesthi wae, modalitas
+uga bisa ditambahake
+marang logika predikat.
+
+!!{structure}s Kripke bisa
+dienggo kanggo menehi
+semantik logika modal;
+malah Kripke wiwitane
+ngrancang semantik iki
+kanthi logika modal
+ing pikirane. Tinimbang
+mbatesi mung urutan
+parsial, sacara luwih
+umum ana himpunan
+"donya-donya kang mungkin",
+$P$, lan relasi binari
+"aksesibilitas"
+$\Atom{R}{x,y}$
+antarane donya.
+Miturut pangertèn
+lumrah, $\Atom{R}{p,q}$
+nyatakake yen donya~$q$
+cocog karo~$p$;
+yaiku, yen kita "ana"
+ing donya~$p$, kita
+kudu nganggep mungkin
+yen donya iku bisa
+kaya~$q$.
+
+Logika modal sok diarani
+logika "intensional",
+minangka kosok baline
+logika "ekstensional".
+Semantik kang dimaksud
+kanggo logika ekstensional,
+kaya logika klasik,
+mung ngacu marang siji
+donya, yaiku donya
+"aktual"; dene semantik
+logika intensional
+gumantung marang ontologi
+kang luwih rumit.
+Kejaba kanggo nyusun
+!!{structure} keniscayan,
+modalitas uga bisa
+kanggo nyusun
+!!{structure} wangun
+basa liyane, kanthi
+nafsirake maneh
+$\Box$ lan $\Diamond$
+manut panganggone.
+Upamane:
+\begin{enumerate}
+\item Ing logika keterbuktian,
+  $\Box !A$ diwaca
+  "$!A$ bisa dibuktekake"
+  lan $\Diamond !A$ diwaca
+  "$!A$ konsisten."
+\item Ing logika epistemik,
+  $\Box !A$ bisa diwaca
+  "Aku ngerti $!A$"
+  utawa "Aku percaya $!A$."
+\item Ing logika temporal,
+  $\Box !A$ bisa diwaca
+  "$!A$ tansah bener"
+  lan $\Diamond !A$ diwaca
+  "$!A$ kadhang bener."
+\end{enumerate}
+
+Kita kepengin nambah aturan
+lan aksioma kang ngurusi
+modalitas. Upamane, sistem
+$\Log{S4}$ dumadi saka
+aksioma lan aturan lumrah
+logika proposisional,
+bebarengan karo aksioma
+ing ngisor iki:
+\begin{align*}
+& \Box (!A \lif !B) \lif (\Box !A \lif \Box !B)\\
+& \Box !A \lif !A \\
+& \Box !A \lif \Box \Box !A
+\intertext{sarta aturan, "saka $!A$ simpulake $\Box !A$."
+  $\Log{S5}$ nambah aksioma ing ngisor iki:}
+& \Diamond !A \lif \Box \Diamond !A
+\end{align*}
+Wujud liya saka aksioma
+iki bisa cocog kanggo
+panganggone kang beda-beda;
+upamane, S5 lumrahe
+dianggep nggambarake
+keniscayan logis.
+Kang migunani, kita
+lumrahe bisa nemokake
+semantik kang ndadekake
+sistem !!{derivation}
+iku sah lan jangkep
+kanthi mbatesi relasi
+aksesibilitas ing
+!!{structure}s Kripke
+kanthi cara lumrah.
+Upamane, $\Log{S4}$
+cocog karo kelas
+!!{structure}s Kripke
+kang relasi aksesibilitase
+refleksif lan transitif.
+$\Log{S5}$ cocog
+karo kelas
+!!{structure}s Kripke
+kang relasi aksesibilitase
+{\em universal}, yaiku
+saben donya bisa diakses
+saka saben donya liyane;
+mula $\Box !A$ bener
+yen lan mung yen $!A$
+bener ing saben donya.
+
+\end{document}

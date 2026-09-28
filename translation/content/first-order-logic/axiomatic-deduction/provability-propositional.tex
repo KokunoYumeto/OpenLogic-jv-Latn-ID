@@ -1,0 +1,89 @@
+% Part: first-order-logic
+% Chapter: axiomatic-deduction
+% Section: provability-propositional
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{axd}{ppr}}
+      {\olfileid{pl}{axd}{ppr}}
+
+\olsection{\usetoken{S}{derivability} lan Konektif Proposisional}
+
+\begin{explain}
+  Kita netepake yen relasi !!{derivability}~$\Proves$ saka deduksi
+  aksiomatik cukup kuwat kanggo netepake sawetara kasunyatan dhasar
+  kang ngemot konektif proposisional, kayata $!A \land !B \Proves !A$
+  lan $!A, !A \lif !B \Proves !B$ (modus ponens). Kasunyatan kasebut
+  dibutuhake ing bukti teorema kelengkapan.
+\end{explain}
+
+\begin{prop}\ollabel{prop:provability-land}
+  \begin{enumerate}
+  \item \ollabel{prop:provability-land-left} $!A \land !B \Proves !A$
+    lan $!A \land !B \Proves !B$ kalorone lumaku.
+  \item \ollabel{prop:provability-land-right} $!A, !B \Proves !A \land !B$.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+    \item Saka \olref[prp]{ax:land1} lan \olref[prp]{ax:land2}
+      nganggo modus ponens. Cathetan koreksi sumber OLPL-032: rujukan
+      kapindho dibalekake marang aksioma proyeksi tengen, kang menehi
+      kesimpulan B.
+  \item Saka \olref[prp]{ax:land3} nganggo rong aplikasi modus ponens.
+  \end{enumerate}
+\end{proof}
+
+
+\begin{prop}\ollabel{prop:provability-lor}
+  \begin{enumerate}
+  \item $!A \lor !B, \lnot !A, \lnot !B$ ora konsisten.
+  \item $!A \Proves !A \lor !B$ lan $!B \Proves !A \lor !B$
+    kalorone lumaku.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+  \item Saka \olref[prp]{ax:lnot2}, kita entuk $\Proves \lnot !A
+    \lif (!A \lif \lfalse)$ lan $\Proves \lnot !B \lif (!B \lif
+    \lfalse)$. Cathetan koreksi sumber OLPL-033: wujud-wujud kasebut
+    minangka conto aksioma negasi kapindho, dudu aksioma
+    kontraposisi. Mula, miturut Teorema Deduksi, kita duwe $\{\lnot
+    !A\} \Proves !A \lif \lfalse$ lan $\{\lnot !B\} \Proves !B \lif
+    \lfalse$. Saka \olref[prp]{ax:lor3}, kita entuk $\{\lnot !A,
+    \lnot !B\} \Proves (!A \lor !B) \lif \lfalse$. Miturut teorema
+    Deduksi, $\{!A \lor !B, \lnot !A, \lnot !B\} \Proves \lfalse$.
+  \item Saka \olref[prp]{ax:lor1} lan \olref[prp]{ax:lor2} nganggo
+    modus ponens.
+  \end{enumerate}
+\end{proof}
+
+\begin{prop}\ollabel{prop:provability-lif}
+  \begin{enumerate}
+  \item \ollabel{prop:provability-lif-left} $!A, !A \lif !B \Proves !B$.
+  \item \ollabel{prop:provability-lif-right}
+    $\lnot !A \Proves !A \lif !B$ lan $!B \Proves !A \lif !B$
+    kalorone lumaku.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+  \item Kita bisa !!{derive}:
+    \begin{derivation}
+      1. & $!A$ & \Hyp\\
+      2. & $!A \lif !B$ & \Hyp\\
+      3. & $!B$ & 1, 2, \MP
+    \end{derivation}
+    
+  \item Miturut \olref[prp]{ax:lnot2} lan \olref[prp]{ax:lif1} sarta
+    Teorema Deduksi, miturut urutane.
+  \end{enumerate}
+\end{proof}
+
+\end{document}

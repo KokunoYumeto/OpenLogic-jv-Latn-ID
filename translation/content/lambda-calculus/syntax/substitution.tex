@@ -1,0 +1,245 @@
+% Part: lambda-calculus
+% Chapter: syntax
+% Section: substitution
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{syn}{sub}
+\olsection{Substitusi}
+
+\begin{explain}
+Variabel bebas iku rujukan marang variabel
+ing lingkungan, mula ana gunane yen kita
+nggunakake biji tartamtu kanggo ngganti
+variabel bebas. Umpamane, kita bisa
+ngganti $f$ ing $\lambd[x][f x]$
+nganggo suku tartamtu, kayata fungsi
+identitas $\lambd[y][y]$. Asile
+$\lambd[x][(\lambd[y][y]) x]$.
+Proses ngganti variabel bebas nganggo
+suku lambda diarani substitusi.
+\end{explain}
+
+\begin{defn}[Substitusi] \ollabel{defn:substitution}
+  \emph{Substitusi} suku $N$ kanggo
+  variabel $x$ ing suku $M$,
+  $\Subst{M}{N}{x}$, ditetepake
+  kanthi induktif kaya mangkene:
+  \begin{enumerate}
+    \item $\Subst{x}{N}{x} = N$. \ollabel{defn:substitution-1} 
+    \item $\Subst{y}{N}{x}  = y$ yen $x \neq y$. \ollabel{defn:substitution-2} 
+    \item $\Subst{PQ}{N}{x}  = (\Subst{P}{N}{x}) (\Subst{Q}{N}{x})$.
+      \ollabel{def:substitution-3}
+    \item $\Subst{(\lambd[y][P])}{N}{x} = \lambd[y][\Subst{P}{N}{x}]$,
+      yen $x \neq y$ lan $y \notin \FV{N}$.
+      \ollabel{defn:substitution-4}
+    \item $\Subst{(\lambd[x][P])}{N}{x} = \lambd[x][P]$.
+    \item Yen $x \notin \FV{P}$,
+      $\Subst{(\lambd[y][P])}{N}{x} = \lambd[y][P]$.
+  \end{enumerate}
+  Ing kasus abstraksi liyane kang ora nyukupi
+  syarat kasebut, substitusi ora katetepake.
+\end{defn}
+
+\begin{explain}
+Ing \olref{defn:substitution}\olref{defn:substitution-4},
+syarat $x \neq y$ njaga supaya
+muncule variabel~$x$ kang \emph{kaiket}
+ing~$M$ ora diganti dening~$N$.
+Umpamane, substitusi
+$\Subst{\lambd[x][x]}{y}{x}$
+asile dudu $\lambd[x][y]$,
+nanging tetep $\lambd[x][x]$.
+
+Nalika nyubstitusi $N$ kanggo~$x$ ing
+$\lambd[y][P]$, kita uga mbutuhake
+$y \notin \FV{N}$. Umpamane,
+kita ora bisa nyubstitusi $y$ kanggo $x$
+ing $\lambd[y][x]$, yaiku
+$\Subst{\lambd[y][x]}{y}{x}$,
+amarga iku bakal ngasilake
+$\lambd[y][y]$, suku kang makili
+fungsi kang nampa argumen lan
+langsung mbalekake argumen iku.
+Nanging $\lambd[y][x]$ makili
+fungsi kang tansah mbalekake suku~$x$
+(utawa apa wae kang dirujuk dening $x$).
+Mula asil kang kita karepake yaiku
+fungsi kang nampa argumen,
+nglirwakake argumen iku, lan
+mbalekake variabel lingkungan~$y$.
+Kanggo nindakake iki kanthi bener,
+kita kudu luwih dhisik ngganti jeneng
+variabel~$y$ kang kaiket.
+\end{explain}
+
+\begin{prob}
+  Apa asil substitusi ing ngisor iki?
+  \begin{enumerate}
+  \item $\Subst{\lambd[y][x(\lambd[w][vwx])]}{(uv)}{x}$
+  \item $\Subst{\lambd[y][x(\lambd[x][x])]}{(\lambd[y][xy])}{x}$
+  \item $\Subst{y(\lambd[v][xv])}{(\lambd[y][vy])}{x}$
+  \end{enumerate}
+\end{prob}
+
+\begin{thm} \ollabel{thm:notinfv}
+  Yen $x \notin \FV{M}$, mula
+  $\FV{\Subst{M}{N}{x}} = \FV{M}$
+  yen substitusine katetepake.
+\end{thm}
+
+\begin{proof}
+  Kanthi induksi tumrap pambentukan $M$.
+  \begin{enumerate}
+  \item $M$ iku variabel: latihan.
+  \item $M$ awujud $(PQ)$: latihan.
+  \item $M$ awujud $\lambd[y][P]$.
+    Yen $x=y$ utawa
+    $x \notin \FV{P}$, substitusi
+    ora ngowahi abstraksi iki,
+    mula pratelan cetha.
+    Yen $x \neq y$ lan
+    aturan rekursif lumaku,
+    $\Subst{\lambd[y][P]}{N}{x}$
+    katetepake, asile
+    $\lambd[y][\Subst{P}{N}{x}]$.
+    Mula $\Subst{P}{N}{x}$
+    katetepake. Saka
+    $x \notin \FV{M}$ lan $x \neq y$
+    uga oleh $x \notin \FV{P}$.
+    Dadi:
+    \begin{multline*}
+      \FV{\Subst{\lambd[y][P]}{N}{x}} \\
+    \begin{aligned}
+      & = \FV{\lambd[y][\Subst{P}{N}{x}]} &&
+      \text{miturut \olref{defn:substitution-4}}\\
+      & = \FV{\Subst{P}{N}{x}} \setminus \{y\} &&
+      \text{miturut \olref[fv]{def:fv}\olref[fv]{def:fv2}}\\
+      & = \FV{P} \setminus \{y\} && \text{miturut hipotesis induksi} \\
+      & = \FV{\lambd[y][P]} && \text{miturut \olref[fv]{def:fv}\olref[fv]{def:fv2}}
+    \end{aligned}
+    \end{multline*}
+  \end{enumerate}
+\end{proof}
+
+\begin{prob}
+  Rampungna bukti \olref[lam][syn][sub]{thm:notinfv}.
+\end{prob}
+
+\begin{thm} \ollabel{thm:infv}
+  Yen $x \in \FV{M}$, mula
+  $\FV{\Subst{M}{N}{x}} = (\FV{M} \setminus
+  \{x\}) \cup \FV{N}$, yen substitusine
+  katetepake.
+\end{thm}
+
+\begin{proof}
+  Kanthi induksi tumrap pambentukan $M$.
+  \begin{enumerate}
+  \item $M$ iku variabel: latihan.
+  \item $M$ awujud $PQ$: Amarga
+    $\Subst{(PQ)}{N}{x}$ katetepake,
+    asile mesthi
+    $(\Subst{P}{N}{x})(\Subst{Q}{N}{x})$,
+    lan substitusi ing loro-lorone
+    subsuku katetepake. Saka
+    $x \in \FV{PQ}$, oleh
+    $x \in \FV{P}$ utawa
+    $x \in \FV{Q}$, utawa loro-lorone.
+    Sisa buktine dadi latihan.
+  \item $M$ awujud $\lambd[y][P]$.
+    Amarga $x \in \FV{M}$,
+    mesthi $x \neq y$ lan
+    $x \in \FV{P}$.
+    Amarga
+    $\Subst{\lambd[y][P]}{N}{x}$
+    katetepake, asile
+    $\lambd[y][\Subst{P}{N}{x}]$;
+    $\Subst{P}{N}{x}$ katetepake
+    lan $y \notin \FV{N}$.
+    Mula:
+    \begin{multline*}
+      \FV{\Subst{(\lambd[y][P])}{N}{x}} \\
+      \begin{aligned}
+      & = \FV{\lambd[y][\Subst{P}{N}{x}]} \\
+      & = \FV{\Subst{P}{N}{x}} \setminus \{y\} \\
+      & = ((\FV{P} \setminus \{x\}) \cup \FV{N}) \setminus \{y\}
+       && \text{miturut hipotesis induksi} \\
+      & = (\FV{P} \setminus \{x, y\}) \cup \FV{N}
+       && y \notin \FV{N} \\
+      & = (\FV{\lambd[y][P]} \setminus \{x\}) \cup \FV{N}
+      \end{aligned}
+      \end{multline*}
+  \end{enumerate}
+\end{proof}
+
+\begin{prob}
+  Rampungna bukti \olref[lam][syn][sub]{thm:infv}.
+\end{prob}
+
+\begin{thm}\ollabel{thm:clr}
+  $x \notin \FV{\Subst{M}{N}{x}}$
+  yen substitusine katetepake
+  lan $x \notin \FV{N}$.
+\end{thm}
+
+\begin{proof}
+  Latihan.
+\end{proof}
+
+\begin{prob}
+  Buktikna \olref[lam][syn][sub]{thm:clr}.
+\end{prob}
+
+
+\begin{thm}\ollabel{thm:inv}
+  Yen $\Subst{M}{y}{x}$ katetepake
+  lan $y \notin \FV{M}$,
+  mula $\Subst{\Subst{M}{y}{x}}{x}{y}$
+  katetepake lan
+  $\Subst{\Subst{M}{y}{x}}{x}{y} = M$.
+\end{thm}
+
+\begin{proof}
+  Yen $x=y$, loro substitusi iku
+  identitas, mula pratelan cetha.
+  Yen $x \notin \FV{M}$, aturan
+  substitusi nuduhake yen loro-lorone
+  uga ora ngowahi $M$.
+  Saiki anggep $x \neq y$ lan
+  $x \in \FV{M}$, banjur gunakna
+  induksi tumrap pambentukan $M$.
+  \begin{enumerate}
+  \item $M$ iku variabel $z$: latihan.
+  \item $M$ awujud $(PQ)$. Mula:
+    \begin{align*}
+      \Subst{\Subst{(PQ)}{y}{x}}{x}{y}
+      &=\Subst{((\Subst{P}{y}{x})(\Subst{Q}{y}{x}))}{x}{y} \\
+      &= (\Subst{\Subst{P}{y}{x}}{x}{y})(\Subst{\Subst{Q}{y}{x}}{x}{y}) \\
+      &= (PQ) \text{ miturut hipotesis induksi}
+    \end{align*}
+  \item $M$ awujud $\lambd[z][N]$.
+    Amarga $\Subst{\lambd[z][N]}{y}{x}$
+    katetepake lan $x \in \FV{M}$,
+    $z \neq x$ lan $z \neq y$.
+    Saka $y \notin \FV{M}$ lan
+    $z \neq y$, uga oleh
+    $y \notin \FV{N}$.
+    Miturut hipotesis induksi, substitusi
+    balike ing~$N$ katetepake. Mula:
+    \begin{align*}
+      \Subst{\Subst{(\lambd[z][N])}{y}{x}}{x}{y}\\
+      & = \Subst{(\lambd[z][\Subst{N}{y}{x}])}{x}{y} \\
+      & = \lambd[z][\Subst{\Subst{N}{y}{x}}{x}{y}] \\
+      &= \lambd[z][N] \text{ miturut hipotesis induksi} 
+    \end{align*}
+  \end{enumerate}
+\end{proof}
+
+\begin{prob}
+  Rampungna bukti \olref[lam][syn][sub]{thm:inv}.
+\end{prob}
+
+\end{document}

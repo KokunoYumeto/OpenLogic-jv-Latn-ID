@@ -1,0 +1,30 @@
+{
+  "schema": "jv-public-source-provenance-scope/1",
+  "source_tranche": "OLP-0001..OLP-0671",
+  "release_reader_units": 24,
+  "sealed_checkpoint": "CHECKPOINT-DRAFT-OLP0671.json",
+  "sealed_checkpoint_sha256": "29dead5884260ec2d3be3bd524f24f1f5344dd836015e8cb27d571702d77b284",
+  "policy": "Public evidence projection withdraws uniform automatic canon assignments; source translation and sealed private checkpoints are not changed.",
+  "term_decisions_total": 661,
+  "term_auto_bundles_withdrawn": 444,
+  "term_withdrawn_id_range": [
+    "JV-T213",
+    "JV-T657"
+  ],
+  "segment_rows_total": 9941,
+  "segment_auto_bundles_withdrawn": 4143,
+  "segment_withdrawn_id_range": [
+    "OLP-0205-P004",
+    "OLP-0667-P004"
+  ],
+  "unmodified_other_rows": "Other rows retain their specific recorded evidence; no blanket independent canon or native-specialist certification is claimed.",
+  "source_evidence_sha256": {
+    "TERM_DECISIONS.jsonl": "26c185b1d8cfbfc6ebabf71a50a8f2a3a3175e160ad74c074e3841ae303d9265",
+    "SEGMENT_CANON_USE.jsonl": "23aacf27a96ace7d647d14bcfe3f12c95df63230ace7ffa7211a05b1f5d2aa58"
+  },
+  "public_projection_sha256": {
+    "TERM_DECISIONS.jsonl": "5db39c85807e06adeb1f66c0bdda9cfb4037c7521bae91ac54532bb4ec601063",
+    "SEGMENT_CANON_USE.jsonl": "d5f8b92f9556187dc1b3311a10dfdacfa3ec032b31c7917866dc5951db8c4f7d"
+  },
+  "revalidation_status": "pending; source and structural QA can proceed while this evidence is repaired"
+}

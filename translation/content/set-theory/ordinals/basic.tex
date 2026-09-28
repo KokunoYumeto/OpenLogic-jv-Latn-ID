@@ -1,0 +1,257 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{ordinals}{basic}
+\olsection{Sipat Dhasar Ordinal}
+
+Kita wis ndeleng yen sawetara ordinal kapisan iku
+wilangan asli. Alasan utama ngembangake teori ordinal
+yaiku nggedhekake prinsip induksi kang lumaku ing
+wilangan asli. Kita bakal tekan kana liwat sawetara
+asil dhasar.
+
+\begin{lem}\ollabel{ordmemberord}
+Saben !!{element} saka ordinal iku uga ordinal.
+\end{lem}
+
+\begin{proof}
+Upamane $\alpha$ ordinal kanthi $b \in \alpha$.
+Amarga $\alpha$ transitif, $b \subseteq \alpha$.
+Mula $\in$ ngurutake $b$ kanthi becik kaya dene
+$\in$ ngurutake $\alpha$ kanthi becik.
+
+Kanggo nuduhake yen $b$ transitif, upamane
+$x \in c \in b$. Mula $c \in \alpha$ amarga
+$b \subseteq \alpha$. Maneh, amarga $\alpha$
+transitif, $c \subseteq \alpha$, mula $x \in \alpha$.
+Dadi $x, c, b \in \alpha$. Nanging $\in$
+ngurutake $\alpha$ kanthi becik, mula $\in$
+minangka relasi transitif ing $\alpha$ miturut
+\olref[sth][ordinals][wo]{wo:strictorder}. Amarga
+$x \in c \in b$, kita entuk $x \in b$. Kanthi
+umum, $c \subseteq b$.
+\end{proof}
+
+\begin{cor}\ollabel{ordissetofsmallerord}
+$\alpha = \Setabs{\beta \in \alpha}{\beta \text{ iku ordinal}}$,
+kanggo sembarang ordinal~$\alpha$.
+\end{cor}
+
+\begin{proof}
+Langsung ndherek saka \olref{ordmemberord}.
+\end{proof}
+
+Inti saka rong asil utama sabanjure,
+\olref{ordinductionschema} lan \olref{ordtrichotomy},
+yaiku ordinal dhewe diurutake kanthi becik dening
+relasi keanggotaan:
+
+\begin{thm}[Induksi Transfinit]\ollabel{ordinductionschema}
+Kanggo sembarang rumus $\phi(x)$:
+\[
+	\text{yen }\exists \alpha \phi(\alpha)\text{, mula }\exists \alpha(\phi(\alpha)
+	\land  (\forall \beta \in \alpha) \lnot \phi(\beta))
+\]
+ing kene kuantor-kuantor kang ditampilake kanthi
+ora langsung diwatesi marang ordinal.
+\end{thm}
+
+\begin{proof}
+%\olref{ordinductionschema1}.
+Upamane $\phi(\alpha)$ kanggo sawijining ordinal
+$\alpha$. Yen $ (\forall \beta \in \alpha)
+\lnot \phi(\beta)$, bukti rampung. Yen ora, amarga
+$\alpha$ ordinal, anggota-anggotane kang nyukupi
+predikat iki mbentuk himpunan bagean ora kosong
+kanthi Pamisahan. Himpunan bagean iki nduweni
+!!{element} paling cilik miturut $\in$ kang nyukupi
+$\phi$, lan unsur iki ordinal miturut
+\olref{ordmemberord}. Amarga ordinal wiwitan transitif,
+saben ordinal sadurunge unsur kapilih iki uga dadi
+anggotane; mula ora ana kang nyukupi predikat kasebut.
+%	\olref{ordinductionschema2}. Upamane ana ordinal
+%	$\gamma$ kanthi $\lnot\phi(\gamma)$. Mula miturut
+%	\olref{ordinductionschema1}, ana ordinal minimal miturut $\in$
+%	$\alpha$ kang nyukupi $\lnot\phi(\alpha)$. Dadi $(\forall \beta <
+%	\alpha) \phi(\beta)$, saengga anteseden kondisional iku
+%	luput.
+\end{proof}
+\noindent
+Elinga yen \olref{ordinductionschema} uga bisa
+dinyatakake minangka skema iki:
+\[
+\text{yen }\forall \alpha((\forall \beta \in \alpha)\phi(\beta) \lif 
+\phi(\alpha))\text{, mula }\forall \alpha\phi(\alpha)
+\]
+yaiku kanthi njupuk $\lnot\phi(\alpha)$ ing
+\olref{ordinductionschema}, banjur nindakake
+owah-owahan logis kang prasaja.
+
+\begin{thm}[Trikotomi]\ollabel{ordtrichotomy}
+$\alpha \in \beta \lor \alpha = \beta \lor \beta \in \alpha$,
+kanggo sembarang ordinal $\alpha$ lan $\beta$.
+\end{thm}
+
+\begin{proof}
+Bukti iki nganggo induksi kaping pindho, yaiku
+nggunakake \olref{ordinductionschema} kaping pindho.
+Kita ngarani $x$ \emph{bisa dibandhingake} karo
+$y$ yen lan mung yen $x \in y \lor x = y \lor y \in x$.
+
+Kanggo induksi, upamane saben ordinal ing~$\alpha$
+bisa dibandhingake karo \emph{saben} ordinal. Kanggo
+induksi kapindho, upamane $\alpha$ bisa dibandhingake
+karo saben ordinal ing~$\beta$. Kita bakal nuduhake
+yen $\alpha$ bisa dibandhingake karo~$\beta$.
+Miturut induksi ing~$\beta$, mula $\alpha$ bisa
+dibandhingake karo saben ordinal; banjur miturut
+induksi ing~$\alpha$, \emph{saben} ordinal bisa
+dibandhingake karo \emph{saben} ordinal, kaya kang
+dikarepake. Cukup upamane $\alpha \notin \beta$
+lan $\beta \notin \alpha$, banjur nuduhake yen
+$\alpha = \beta$.
+
+Kanggo nuduhake $\alpha \subseteq \beta$, pilihen
+$\gamma \in \alpha$; iki ordinal miturut
+\olref{ordmemberord}. Miturut pangira-ira induksi
+kapisan, $\gamma$ bisa dibandhingake karo $\beta$.
+Nanging yen $\gamma = \beta$ utawa
+$\beta \in \gamma$, mula $\beta \in \alpha$
+(yen perlu, nganggo transitivitas $\alpha$),
+nentang pangira-ira kita; mula $\gamma \in \beta$.
+Kanthi umum, $\alpha \subseteq \beta$.
+
+Penalaran kang padha persis, nganggo pangira-ira
+induksi kapindho, nuduhake $\beta \subseteq \alpha$.
+Mula $\alpha = \beta$.
+\end{proof}\noindent Mula kadhang kita nulis
+$\alpha <\beta$ tinimbang $\alpha \in \beta$,
+amarga $\in$ tumindak minangka relasi urutan.
+Ora ana alasan kang luwih jero kajaba wis lumrah,
+lan amarga luwih gampang nulis $\alpha \leq \beta$
+tinimbang $\alpha \in \beta \lor \alpha = \beta$.
+\footnote{Kita bisa nulis
+$\alpha \mathrel{\underline{\in}} \beta$,
+nanging cara iki babar pisan ora lumrah.}
+
+Iki rong akibat langsung saka asil-asil mau;
+sing kapisan nggunakake notasi anyar kita:
+
+\begin{cor}\ollabel{ordordered}
+Yen $\exists \alpha\phi(\alpha)$, mula
+$\exists \alpha(\phi(\alpha)
+\land \forall \beta(\phi(\beta) \lif \alpha \leq \beta))$.
+Kajaba iku, kanggo sembarang ordinal $\alpha, \beta, \gamma$,
+lumaku $\alpha \notin \alpha$ lan
+$\alpha \in \beta \in \gamma \lif \alpha \in \gamma$.
+\end{cor}
+
+\begin{proof}
+Kaya ing \olref[wo]{wo:strictorder}.
+\end{proof}
+
+\begin{prob}
+Rampungna ``penalaran kang padha persis'' ing bukti
+\olref[sth][ordinals][basic]{ordtrichotomy}.
+\end{prob}
+
+\begin{cor}\ollabel{corordtransitiveord}
+$A$ iku ordinal yen lan mung yen $A$ iku himpunan
+transitif kang anggotane ordinal.
+\end{cor}
+
+\begin{proof}
+\emph{Kiwa menyang tengen.} Miturut
+\olref{ordmemberord}. \emph{Tengen menyang kiwa.}
+Yen $A$ himpunan transitif kang anggotane ordinal,
+mula $\in$ ngurutake $A$ kanthi becik miturut
+\olref{ordinductionschema} lan \olref{ordtrichotomy}.
+\end{proof}
+
+Saiki, kita wis nerangake
+\olref{ordinductionschema} lan \olref{ordtrichotomy}
+kaya-kaya loro asil iku negesake yen $\in$ ngurutake
+ordinal kanthi becik. Nanging kita kudu
+\emph{ngati-ati banget} marang pratelan kaya mangkene,
+amarga asil sabanjure:
+
+\begin{thm}[Paradoks Burali-Forti]\ollabel{buraliforti}
+Ora ana himpunan kang ngemot kabeh ordinal.
+\end{thm}
+
+\begin{proof}
+Kanggo bukti kanthi kontradiksi, upamane $O$ iku
+himpunan kabeh ordinal. Yen $\alpha \in \beta \in O$,
+mula $\alpha$ ordinal miturut \olref{ordmemberord},
+dadi $\alpha \in O$. Mula $O$ transitif, saengga
+$O$ ordinal miturut \olref{corordtransitiveord}.
+Akibate $O \in O$, nentang \olref{ordordered}.
+\end{proof}
+\noindent
+Asil iki dijenengi miturut \citeauthor{Burali-Forti1897}.
+Nanging Cantor ing taun 1899---liwat layang marang
+Dedekind---kang sepisanan ndeleng kanthi cetha
+\emph{kontradiksi} saka pangira-ira yen ana himpunan
+kabeh ordinal. Kaya kang diterangake van Heijenoort:
+\begin{quote}
+  Burali-Forti dhewe nganggep kontradiksi iku mbuktekake,
+  liwat \emph{reductio ad absurdum}, yen urutan alami
+  ordinal iku mung urutan parsial.
+  \citep[p.~105]{Heijenoort1967}
+\end{quote}
+Yen kalirune Burali-Forti disisihake, asil-asil mau
+bisa diringkes mangkene. Saben ordinal iku himpunan
+kang diurutake kanthi becik dening keanggotaan;
+ordinal-ordinal uga diurutake kanthi becik dening
+keanggotaan minangka sakabehan, sanadyan sakabehan
+iku ora mbentuk siji himpunan.
+
+Kanggo ngrampungake bab iki, iki sawetara sipat
+dhasar ordinal liyane kang ndherek saka
+\olref{ordinductionschema} lan \olref{ordtrichotomy}.
+
+\begin{prop}
+Saben urutan ordinal kang mudhun kanthi ketat mung
+nduweni anggota kang cacahé winates.
+\end{prop}
+
+\begin{proof}
+Sembarang urutan ordinal tanpa wates kang mudhun
+kanthi ketat $\alpha_0 > \alpha_1 > \alpha_2 > \ldots$
+ora nduweni anggota minimal miturut $<$,
+nentang \olref{ordinductionschema}.
+\end{proof}
+
+\begin{prop}\ollabel{ordinalsaresubsets}
+$\alpha \subseteq \beta \lor \beta \subseteq \alpha$,
+kanggo sembarang ordinal $\alpha, \beta$.
+\end{prop}
+
+\begin{proof}
+Yen $\alpha \in \beta$, mula $\alpha \subseteq \beta$
+amarga $\beta$ transitif. Semono uga, yen
+$\beta \in \alpha$, mula $\beta \subseteq \alpha$.
+Yen $\alpha = \beta$, mula $\alpha \subseteq \beta$
+lan $\beta \subseteq \alpha$. Dadi bukti rampung
+miturut \olref{ordtrichotomy}.
+\end{proof}
+
+\begin{prop}\ollabel{ordisoidentity}
+$\alpha = \beta$ yen lan mung yen
+$\ordeq{\alpha}{\beta}$, kanggo sembarang ordinal
+$\alpha, \beta$.
+\end{prop}
+
+\begin{proof}
+Ordinal iku urutan becik; mula iki langsung ndherek
+saka Trikotomi (\olref[basic]{ordtrichotomy}) lan
+\olref[iso]{wellordnotinitial}.
+\end{proof}
+
+\begin{prob}\ollabel{probunionordinalsordinal}
+Buktikna yen saben anggota $X$ iku ordinal,
+mula $\bigcup X$ uga ordinal.
+\end{prob}
+
+\end{document}

@@ -1,0 +1,102 @@
+% Part: computability
+% Chapter: recursive-functions
+% Section: composition
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{rec}{com}
+\olsection{Komposisi}
+
+Yen $f$ lan $g$ iku rong fungsi siji panggonan ing wilangan asli,
+kita bisa nyusun komposisine: $h(x) = f(g(x))$. Fungsi anyar~$h(x)$
+banjur ditegesi kanthi \emph{komposisi} saka fungsi $f$ lan~$g$.
+Kita arep nggeneralisasi iki menyang fungsi kang nduweni argumen
+luwih saka siji.
+
+Mangkene salah siji carane: upamana $f$ iku fungsi $k$ panggonan,
+lan $g_0$, \dots, $g_{k-1}$ iku $k$ fungsi kang kabeh nduweni
+$n$ panggonan. Banjur kita bisa netepake fungsi anyar
+kanthi $n$ panggonan, yaiku $h$, kaya mangkene:
+\[
+h(x_0, \dots, x_{n-1}) =
+f(g_0(x_0, \dots, x_{n-1}), \dots, g_{k-1}(x_0, \dots, x_{n-1}))
+\]
+Yen $f$ lan kabeh $g_i$ komputabel, $h$ uga komputabel:
+Kanggo ngitung $h(x_0,
+\dots, x_{n-1})$, dhisik itungen biji $y_i = g_i(x_0, \dots,
+x_{n-1})$ kanggo saben $i = 0$, \dots,~$k-1$. Banjur
+lebokna biji kasebut menyang $f$ kanggo ngitung
+% OLPL-122: Sumber nganggo indeks pungkasan k-1 kanggo input h;
+% saka definisine, h duwe n input lan indeks pungkasan n-1.
+$h(x_0, \dots, x_{n-1}) = f(y_0, \dots, y_{k-1})$.
+
+Iki bisa katon kaya gambaran kang banget mbatesi babagan
+carane kita ngitung fungsi anyar nganggo fungsi kang wis ana.
+Salah sijine, kadhangkala kita ora nggunakake kabeh argumen
+sawijining fungsi, kayata nalika kita netepake
+$g(x, y, z) = \Succ(z)$ kanggo definisi rekursif primitif
+saka~$\Add$. Upamana kita bisa nggunakake fungsi-fungsi iki:
+\[
+\Proj{n}{i}(x_0, \dots, x_{n-1}) = x_i
+\]
+Fungsi~$\Proj{k}{i}$ diarani fungsi \emph{proyeksi}:
+$\Proj{n}{i}$ iku fungsi $n$ panggonan. Banjur $g$
+bisa ditegesi kanthi
+\[
+g(x, y, z) = \Succ(\Proj{3}{2}(x, y, z)).
+\]
+Ing kene peran $f$ dimainake dening fungsi $1$ panggonan
+$\Succ$, mula $k=1$. Lan kita nduweni fungsi $3$ panggonan
+$\Proj{3}{2}$ kang dadi $g_0$. Asile yaiku fungsi $3$
+panggonan kang ngasilake penerus argumen katelu.
+
+Fungsi proyeksi uga ngidini kita netepake fungsi anyar
+kanthi ngowahi urutan utawa nyamakake argumen. Umpamane,
+fungsi $h(x)
+= \Add(x, x)$ bisa ditegesi kanthi
+\[
+h(x_0) = \Add(\Proj{1}{0}(x_0),\Proj{1}{0}(x_0)).
+\]
+Ing kene $k=2$, $n=1$, peran $f(y_0,y_1)$ dimainake
+dening $\Add$, lan peran $g_0(x_0)$ lan $g_1(x_0)$
+kalorone dimainake dening~$\Proj{1}{0}(x_0)$,
+yaiku fungsi proyeksi siji panggonan (uga diarani
+fungsi identitas).
+
+Yen $f(y_0, y_1)$ iku fungsi kang wis kita nduweni,
+kita bisa netepake fungsi $h(x_0, x_1) = f(x_1, x_0)$
+kanthi
+\[
+h(x_0, x_1) = f(\Proj{2}{1}(x_0, x_1),\Proj{2}{0}(x_0, x_1)).
+\]
+Ing kene $k=2$, $n = 2$, lan peran $g_0$ lan $g_1$
+dimainake dening $\Proj{2}{1}$ lan~$\Proj{2}{0}$
+kanthi urutan kuwi.
+
+Kita uga bisa kuwatir yen $g_0$, \dots,~$g_{k-1}$
+kabeh kudu nduweni aritas~$n$. (Elinga yen \emph{aritas}
+fungsi iku cacah argumene; fungsi $n$ panggonan nduweni
+aritas~$n$.) Nanging tambahan fungsi proyeksi menehi
+keluwesan kang dibutuhake. Umpamane, upamana $f$ lan~$g$
+iku fungsi $3$ panggonan lan $h$~iku fungsi $2$ panggonan
+kang ditegesi kanthi
+\[
+h(x,y) = f(x,g(x,x,y),y).
+\]
+Definisi~$h$ bisa ditulis maneh nganggo fungsi proyeksi,
+yaiku
+\[
+h(x,y) = f(\Proj{2}{0}(x,y), g(\Proj{2}{0}(x,y), \Proj{2}{0}(x,y),
+\Proj{2}{1}(x,y)), \Proj{2}{1}(x,y)).
+\]
+Banjur $h$ iku komposisi $f$ karo $\Proj{2}{0}$, $l$,
+lan $\Proj{2}{1}$, ing ngendi
+\[
+l(x,y) = g(\Proj{2}{0}(x,y),\Proj{2}{0}(x,y),\Proj{2}{1}(x,y)),
+\]
+yaiku $l$ iku komposisi $g$ karo $\Proj{2}{0}$,
+$\Proj{2}{0}$, lan~$\Proj{2}{1}$.
+
+\end{document}

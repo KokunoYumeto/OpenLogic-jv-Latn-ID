@@ -1,0 +1,173 @@
+% Part: lambda-calculus
+% Chapter: syntax
+% Section: free-variables
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{syn}{fv}
+\olsection{Variabel Bebas}
+
+Kalkulus lambda ngrembug fungsi, lan
+abstraksi lambda iku cara mbentuk fungsi.
+Miturut intuisi, $\lambd[x][M]$ iku
+fungsi kang bijine diwenehake dening~$M$
+nalika argumen fungsi iku diwenehake
+marang~$x$. Nanging ora saben muncule~$x$
+ing~$M$ nduweni peran kanggo abstraksi iki:
+yen $M$ ngemot abstraksi liyane
+$\lambd[x][N]$, mula muncule $x$ ing~$N$
+duweni peran kanggo $\lambd[x][N]$
+nanging ora kanggo $\lambd[x][M]$.
+Dadi, abstraksi lambda $\lambd[x]$ ing
+$\lambd[x][M]$ \emph{ngiket} muncule
+$x$ ing~$M$ kang durung diiket dening
+abstraksi lambda liyane, yaiku muncule
+$x$ kang \emph{bebas} ing~$M$.
+
+\begin{defn}[Cakupan]
+Yen $\lambd[x][M]$ muncul ing suku~$N$,
+mula muncule~$M$ kang cocog iku
+\emph{cakupan} saka~$\lambd[x]$.
+\end{defn}
+
+
+\begin{defn}[Muncule variabel bebas lan kaiket]
+  Muncule variabel $x$ ing suku~$M$
+  diarani \emph{bebas} yen ora ana
+  ing cakupan sawijining $\lambd[x]$,
+  lan \emph{kaiket} yen ana.
+  Muncule variabel~$x$ ing
+  $\lambd[x][M]$ diiket dening
+  $\lambd[x]$ ing wiwitan yen lan
+  mung yen muncule $x$ ing~$M$
+  bebas.
+\end{defn}
+
+\begin{ex}
+  Ing $\lambd[x][x y]$, $x$ lan $y$
+  loro-lorone ana ing cakupan
+  $\lambd[x]$, mula $x$ diiket
+  dening $\lambd[x]$. Amarga $y$
+  ora ana ing cakupan sembarang
+  $\lambd[y]$, variabel iku bebas.
+  Ing $\lambd[x][x x]$, loro
+  muncule $x$ diiket dening~$\lambd[x]$,
+  amarga loro-lorone bebas ing $xx$.
+  Ing $((\lambd[x][xx])x)$,
+  muncule~$x$ kang pungkasan bebas,
+  amarga ora ana ing cakupan
+  $\lambd[x]$. Ing
+  $\lambd[x][(\lambd[x][x])x]$,
+  cakupan $\lambd[x]$ kapisan yaiku
+  $(\lambd[x][x])x$ lan cakupan
+  $\lambd[x]$ kapindho yaiku muncule~$x$
+  kang sadurunge pungkasan.
+  Ing $(\lambd[x][x])x$, muncule
+  $x$ kang pungkasan bebas, dene
+  muncule sadurunge pungkasan kaiket.
+  Dadi, muncule $x$ kang sadurunge
+  pungkasan ing
+  $\lambd[x][(\lambd[x][x])x]$
+  diiket dening $\lambd[x]$ kapindho,
+  dene muncule kang pungkasan
+  diiket dening $\lambd[x]$ kapisan.
+\end{ex}
+
+Kanggo suku $P$, kita bisa mriksa
+kabeh muncule variabel ing njero
+lan nemtokake himpunan variabel
+bebas. Himpunan iki dilambangake
+$\FV{P}$ lan nduweni definisi
+lumrah kaya mangkene:
+
+\begin{defn}[Variabel bebas ing sawijining suku] \ollabel{def:fv}
+  Himpunan \emph{variabel bebas}
+  saka suku ditetepake kanthi
+  induktif kaya mangkene:
+  \begin{enumerate}
+    \item $\FV{x} = \{x\}$ \ollabel{def:fv1}
+    \item $\FV{\lambd[x][N]} = \FV{N} \setminus \{x\}$ \ollabel{def:fv2}
+    \item $\FV{PQ} = \FV{P} \cup \FV{Q}$ \ollabel{def:fv3}
+  \end{enumerate}
+\end{defn}
+
+\begin{prob}
+  \begin{enumerate}
+  \item Temtokna cakupan $\lambd[g]$
+    lan loro $\lambd[x]$ ing suku
+    iki: $\lambd[g][(\lambd[x][g (x x)]) \lambd[x][g (x x)]]$.
+  \item Ing $\lambd[g][(\lambd[x][g (x x)]) \lambd[x][g (x x)]]$,
+    apa kabeh muncule variabel kaiket?
+    Abstraksi endi kang ngiket
+    saben muncule iku?
+  \item Temtokna
+    $\FV{\lambd[x][(\lambd[y][(\lambd[z][x y]) z]) y]}$.
+  \end{enumerate}
+\end{prob}
+
+\begin{explain}
+Variabel bebas iku kaya rujukan
+marang donya njaba, yaiku
+\emph{lingkungan}; suku kang
+ngemot variabel bebas bisa
+dianggep minangka suku kang
+durung ditemtokake kanthi
+lengkap, amarga tumindake
+gumantung marang carane kita
+netepake lingkungan. Umpamane,
+ing suku $\lambd[x][f x]$,
+kang nampa argumen~$x$ lan
+ngasilake asil $f$ ing argumen
+iku, variabel~$f$ bebas.
+Biji suku iki gumantung marang
+lingkungan, mligine biji $f$
+ing lingkungan kasebut.
+
+Yen suku iki diabstraksi maneh,
+kita oleh $\lambd[f][\lambd[x][f
+    x]]$. Suku iki ora gumantung
+maneh marang variabel lingkungan
+$f$, amarga saiki makili fungsi
+kang nampa rong argumen lan
+ngasilake asil aplikasi argumen
+kapisan marang argumen kapindho.
+Ngganti $f$ ing lingkungan
+ora bakal ngowahi tumindake
+suku iki, amarga suku mung
+nggunakake apa kang diwenehake
+minangka argumen, dudu biji
+$f$ ing lingkungan.
+\end{explain}
+
+\begin{defn}[Suku katutup, kombinator]
+  Suku kang ora nduweni
+  variabel bebas diarani
+  \emph{suku katutup}, utawa
+  \emph{kombinator}.
+\end{defn}
+
+\begin{lem}\ollabel{lem:fv}
+  \begin{enumerate}
+    \item \ollabel{lem:fv-abs}
+      Yen $y \neq x$, mula
+      $y \in
+      \FV{\lambd[x][N]}$ yen lan mung
+      yen $y \in \FV{N}$.
+    \item \ollabel{lem:fv-app}
+      $y \in \FV{PQ}$ yen lan mung yen
+      $y \in \FV{P}$ utawa
+      $y \in \FV{Q}$.
+  \end{enumerate}
+\end{lem}
+
+\begin{proof}
+  Latihan.
+\end{proof}
+
+\begin{prob}
+  Buktikna \olref[lam][syn][fv]{lem:fv}.
+\end{prob}
+
+\end{document}

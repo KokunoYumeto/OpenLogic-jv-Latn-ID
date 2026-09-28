@@ -1,0 +1,72 @@
+% Part: many-valued-logic
+% Chapter: syntax-and-semantics
+% Section: connectives
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{syn}{con}
+
+\olsection{Basa lan Konektif}
+
+Logika proposisional klasik, uga akeh logika liyane, nggunakake
+himpunan \emph{tetapan proposisional} lan \emph{konektif}.
+Contone, unsur primitif kang kita gunakake yaiku:
+\begin{enumerate}
+\tagitem{prvFalse}{Tetapan proposisional kanggo !!{falsity}~$\lfalse$.}{}
+\tagitem{prvTrue}{Tetapan proposisional kanggo !!{truth}~$\ltrue$.}{}
+\item Konektif logis:
+  \startycommalist
+  \iftag{prvNot}{\ycomma $\lnot$ (negasi)}{}%
+  \iftag{prvAnd}{\ycomma $\land$ (konjungsi)}{}%
+  \iftag{prvOr}{\ycomma $\lor$ (disjungsi)}{}%
+  \iftag{prvIf}{\ycomma $\lif$ (!!{conditional})}{}%
+  \iftag{prvIff}{\ycomma $\liff$ (!!{biconditional})}{}%
+\end{enumerate}
+\iftag{defNot,defOr,defAnd,defIf,defIff,defTrue,defFalse,defEx,defAll}{%
+Saliyane konektif primitif ing ndhuwur, kita uga nggunakake simbol
+kang ditetepake minangka cekakan, kayata
+\startycommalist
+  \iftag{defNot}{\ycomma $\lnot$ (negasi)}{}%
+  \iftag{defAnd}{\ycomma $\land$ (konjungsi)}{}%
+  \iftag{defOr}{\ycomma $\lor$ (disjungsi)}{}%
+  \iftag{defIf}{\ycomma $\lif$ (!!{conditional})}{}%
+  \iftag{defIff}{\ycomma $\liff$ (!!{biconditional})}{}%
+  \iftag{defFalse}{\ycomma $\lfalse$ (!!{falsity})}{}%
+  \iftag{defTrue}{\ycomma $\ltrue$ (!!{truth})}.}{}
+
+Konektif kang padha uga digunakake ing logika mawa akeh nilai.
+Nanging asring migunani yen ing siji logika ana pirang-pirang
+versi, umpama, konjungsi. Supaya versi-versi iku bisa dibedakake,
+simbolé kudu beda. Sawetara logika mawa akeh nilai uga ngemot
+konektif kang ora nduweni padanan ing logika klasik. Mula kita
+nganggo kerangka kang rada luwih umum tinimbang lumrahe.
+
+\begin{defn}
+  \emph{Basa proposisional} dumadi saka himpunan $\Lang L$
+  kang isine \emph{konektif}. Saben konektif $\star$ nduweni
+  \emph{aritas}; konektif kanthi aritas~$n$ diarani
+  \emph{nduweni $n$ panggonan.}
+  Konektif kanthi aritas~$0$ uga diarani \emph{tetapan};
+  konektif kanthi aritas~$1$ diarani \emph{unar}, lan
+  konektif kanthi aritas~$2$ diarani \emph{binar}.
+\end{defn}
+
+\begin{ex}
+  Basa baku logika proposisional $\Lang L_0$ ngemot
+  konektif iki (kanthi aritas saben-sabene):
+  $\lfalse$~($0$),
+  $\lnot$~($1$),
+  $\land$~($2$),
+  $\lor$~($2$),
+  $\lif$~($2$). Akeh-akèhé logika kang kita rembug
+  nggunakake basa iki. Sawetara logika, amarga tradhisi lan
+  konvensi, nggunakake simbol liya kanggo sawetara konektif.
+  Contone, ing logika produk, simbol konjungsi asring
+  $\odot$ tinimbang~$\land$. Kadhang kala migunani kanggo
+  nambah operator anyar, umpama operator katemtuan $\triangle$
+  (nduweni $1$ panggonan).
+\end{ex}
+
+\end{document}

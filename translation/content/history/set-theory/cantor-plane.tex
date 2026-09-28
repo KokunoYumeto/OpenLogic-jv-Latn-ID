@@ -1,0 +1,162 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{his}{set}{cantorplane}
+\olsection{Cantor ngenani Garis lan Bidang}
+
+Sawetara kahanan ing sakupengé bukti
+Schr\"oder-Bernstein gegandhèngan
+karo sajarah kang dirembug ing
+\olref[his][set][pathology]{sec}.
+Élinga yèn ing taun 1877 Cantor
+mbuktèkaké yèn cacah titik ing
+kothak padha persis karo cacah
+titik ing salah siji sisihé.
+Ing kéné kita bakal nyuguhaké
+upaya buktiné kang kapisan.
+
+Anggepen $\unitline$ garis satuan,
+yaiku himpunan titik $[0,1]$.
+Anggepen $\unitsquare$ kothak
+satuan, yaiku himpunan titik
+$\unitline \times \unitline$.
+Kanthi notasi iki, Cantor
+mbuktèkaké yèn
+$\cardeq{\unitline}{\unitsquare}$.
+Dhèwèké nulis cathetan
+marang Dedekind kang
+intiné ngemot argumèn
+ing ngisor iki.
+
+\begin{thm}\ollabel{thm:cantorplane}
+$\cardeq{\unitline}{\unitsquare}$
+\end{thm}
+
+\begin{proof}[Bukti: pérangan kapisan.]
+Tetepna $a, b \in \unitline$.
+Tulis nganggo notasi binèr:
+kanggo saben wilangan kurang
+saka siji, pilih ekspansi
+kang ora pungkasané kebak
+angka siji; kanggo wilangan
+siji, pilih ekspansi kang
+kabèh angkané siji.
+Kanthi mangkono kita olèh
+runtutan tanpa wates saka
+$0$s lan $1$s, yaiku
+$a_1$, $a_2$, \dots,
+lan $b_1$, $b_2$,
+\dots, saéngga:
+\begin{align*}
+a &= 0.a_1a_2a_3a_4\dots\\
+b &= 0.b_1b_2b_3b_4\dots
+\intertext{Saiki delengen fungsi $f \colon \unitsquare \to \unitline$ kang diwènèhaké déning}
+f(a, b) & = 0.a_1b_1a_2b_2a_3b_3a_4b_4\dots
+\end{align*}
+Ekspansi kang diasilaké kanthi
+nyelang-nyeling angka uga baku:
+angka nolé tanpa wates yèn ora
+kaloro input padha karo siji;
+yèn kaloroné siji, kabèh
+angkané siji. Mula $f$ iku
+!!a{injection}, amarga yèn
+$f(a, b) = f(c,d)$, mula
+$a_n = c_n$ lan $b_n = d_n$
+kanggo saben $n \in \Nat$,
+saéngga $a = c$ lan $b = d$.
+\end{proof}
+
+Sayangé, kaya kang dituduhaké
+Dedekind marang Cantor, iki
+durung mangsuli pitakonan
+wiwitan. Delengen $0.00\dot{1}\dot{0} =
+0.0010101010\ldots$.
+Supaya $f(a,b) = 0.00\dot{1}\dot{0}$,
+angka-angkané bakal meksa:
+\begin{align*}
+a&= 0.0\dot{1} = 0.011111\ldots\\
+b&= 0
+\end{align*}
+Nanging $a = 0.0\dot{1} = 0.1$.
+Mula nalika kandha ``tulis
+$a$ lan $b$ nganggo notasi
+binèr'', kita kudu netepaké
+\emph{ekspansi endi} kang
+dienggo; supaya $f$ dadi
+\emph{fungsi}, mung
+\emph{siji} saka rong
+ekspansi kang mungkin
+kanggo wilangan iki
+sing kena dipilih.
+Miturut pilihan baku
+ing ndhuwur, $a$
+kudu ditulis
+``$0.1000\ldots$'',
+dudu nganggo angka siji
+kang mbaleni. Amarga
+output kang dituju
+nduwèni ekspansi
+binèr kang tunggal,
+ora ana pasangan
+$\tuple{a, b}$ kang
+ngasilaké
+$f(a, b) = 0.00\dot{1}\dot{0}$.
+
+Mula, Dedekind nuduhaké
+yèn amarga sawetara
+ekspansi binèr bisa
+mbaleni, fungsi
+Cantor~$f$ iku
+!!a{injection}
+nanging \emph{dudu}
+!!a{surjection}.
+Dadi Cantor mung
+nuduhaké yèn
+$\cardle{\unitsquare}{\unitline}$,
+\emph{dudu} yèn
+$\cardeq{\unitsquare}{\unitline}$.
+
+Cantor meh langsung mbales
+layangé Dedekind lan
+intiné nyaranaké
+supaya bukti mau
+dirampungaké mangkéné:
+
+\begin{proof}[Bukti: dirampungaké.]
+Dadi kita wis nuduhaké
+$\cardle{\unitsquare}{\unitline}$.
+Nanging cetha ana
+!!a{injection} saka
+$\unitline$ menyang
+$\unitsquare$: cukup
+lebokna garis iku
+ing salah siji sisih
+kothak. Mula
+$\cardle{\unitline}{\unitsquare}$ lan
+$\cardle{\unitsquare}{\unitline}$. Miturut Schr\"{o}der--Bernstein
+(\olref[sfr][siz][sb]{thm:schroder-bernstein}),
+$\cardeq{\unitline}{\unitsquare}$.
+\end{proof}
+
+Nanging mesthi waé Cantor ora
+bisa ngrampungaké baris
+pungkasan nganggo cara iki,
+amarga Teorema
+Schr\"{o}der-Bernstein
+wektu iku durung dibuktèkaké.
+Sanajan Cantor mengko
+ngrumusaké minangka
+konjektur umum,
+teorema iki durung
+dibuktèkaké kanthi
+marem nganti taun 1897.
+(Mula, ing pungkasan
+taun 1877, Cantor
+mènèhi bukti liya
+kanggo
+\olref{thm:cantorplane}
+kang ora lumantar
+Schr\"{o}der--Bernstein.)
+
+\end{document}

@@ -1,0 +1,175 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{spine}{rank}
+\olsection{Rank}
+
+Saiki tataran-tataran wis ditetepake minangka
+$V_\alpha$, lan kita ngerti yen saben himpunan
+iku himpunan bagean saka sawijining tataran.
+Mula kita bisa netepake \emph{rank} sawijining
+himpunan. Miturut intuisi, rank $A$ iku indeks
+tataran paling awal kang unsur-unsure wis cukup
+kanggo mbentuk $A$. Luwih persis:
+
+\begin{defn}\ollabel{defnsetrank}
+Kanggo saben himpunan $A$, $\setrank{A}$ iku
+ordinal paling cilik $\alpha$ kang nyukupi
+$A \subseteq V_\alpha$.
+\end{defn}
+\begin{prop}\ollabel{ranksexist}
+	$\setrank{A}$ ana kanggo saben $A$.
+\end{prop}
+\begin{proof}
+	Dipasrahake minangka latihan.
+\end{proof}
+\begin{prob}
+	Buktikna \olref[sth][spine][rank]{ranksexist}.
+\end{prob}
+\noindent 
+Amarga rank-rank terurut becik, kita bisa
+mbuktekake sawetara asil kang wigati:
+\begin{prop}\ollabel{valphalowerrank}
+Kanggo saben ordinal $\alpha$,
+$V_\alpha = \Setabs{x}{\setrank{x} \in \alpha}$.
+\end{prop}
+
+\begin{proof}
+Yen $\setrank{x} \in \alpha$, mula
+$x \subseteq V_{\setrank{x}} \in V_\alpha$,
+saengga $x \in V_\alpha$ amarga $V_\alpha$
+poten (kanthi nggunakake
+\olref[Valphabasic]{Valphabasicprops} kaping pirang-pirang).
+Kosokbaline, yen $x \in V_\alpha$, mula
+$x \subseteq V_\alpha$, dadi
+$\setrank{x} \leq \alpha$; induksi transfinit
+prasaja banjur nuduhake yen
+$\setrank{x} \in \alpha$. Ing kasus penerus,
+kabeh unsur wis ana ing tataran sadurunge;
+ing kasus limit, himpunane wis ana ing
+sawijining tataran luwih awal.
+\end{proof}
+\begin{prob}
+	Rampungna induksi transfinit prasaja kang
+	kasebut ing \olref[sth][spine][rank]{valphalowerrank}.
+\end{prob}
+
+\begin{prop}\ollabel{rankmemberslower}
+Yen $B \in A$, mula $\setrank{B} \in \setrank{A}$.
+\end{prop}
+
+\begin{proof}
+$A \subseteq V_{\setrank{A}} = \Setabs{x}{\setrank{x} \in
+\setrank{A}}$ miturut \olref{valphalowerrank}.
+\end{proof}
+\noindent
+Kanthi kasunyatan iki, kita bisa mbuktekake
+asil kang ngidini kita mbuktekake pratelan
+babagan \emph{kabeh himpunan} liwat sawijining
+wujud induksi:
+
+\begin{thm}[Skema Induksi-$\in$]
+Kanggo saben formula $\phi$:
+\[
+	\forall A((\forall x \in A)\phi(x) \lif \phi(A)) \lif \forall A \phi(A).
+\]
+\end{thm}
+
+\begin{proof}
+Kita bakal mbuktekake kontrapositif. Upamane
+$\lnot \forall A \phi(A)$. Miturut Induksi
+Transfinit (\olref[ordinals][basic]{ordinductionschema}),
+ana sawijining kang dudu-$\phi$ kanthi rank
+paling cilik; yaiku\ ana $A$ kang nyukupi
+$\lnot \phi(A)$ lan
+$\forall x(\setrank{x} \in \setrank{A}
+\lif \phi(x))$. Saiki yen $x \in A$, mula
+$\setrank{x} \in \setrank{A}$ miturut
+\olref{rankmemberslower}, saengga $\phi(x)$;
+yaiku\ $(\forall x \in A)\phi(x) \land
+\lnot \phi(A)$.
+\end{proof}\noindent Pratelan kang kuwat iki
+bisa diterangake kanthi ora formal mangkene.
+$\phi$ diarani \emph{herediter} yen lan mung yen:
+yen kabeh !!{element} sawijining himpunan nyukupi
+$\phi$, himpunan iku dhewe uga nyukupi
+$\phi$. Mula Induksi-$\in$ nerangake yen
+$\phi$ iku herediter, saben himpunan nyukupi
+$\phi$.
+
+Kanggo mungkasi rembugan rank (sauntara iki),
+kita bakal mbuktekake sawetara pratelan kang
+wis bola-bali diwenehi pratandha sadurunge.
+
+\begin{prop}\ollabel{ranksupstrict}
+$\setrank{A} = \supstrict_{x \in A}\setrank{x}$.
+\end{prop}
+
+\begin{proof}
+Tetepna $\alpha = \supstrict_{x \in A}\setrank{x}$.
+Miturut \olref{rankmemberslower},
+$\alpha \leq \setrank{A}$. Nanging, yen
+$x \in A$, mula $\setrank{x} \in \alpha$,
+saengga $x \in V_\alpha$ miturut
+\olref{valphalowerrank}, lan mula
+$A \subseteq V_\alpha$, yaiku
+$\setrank{A} \leq \alpha$. Dadi
+$\setrank{A} = \alpha$.
+\end{proof}
+
+\begin{cor}\ollabel{ordsetrankalpha}
+Kanggo saben ordinal $\alpha$,
+$\setrank{\alpha} = \alpha$.
+\end{cor}
+
+\begin{proof}
+Kanggo induksi transfinit, upamane
+$\setrank{\beta} = \beta$ kanggo saben
+$\beta \in \alpha$. Saiki
+$\setrank{\alpha} = \supstrict_{\beta \in
+\alpha}\setrank{\beta} = \supstrict_{\beta \in
+\alpha}\beta = \alpha$ miturut
+\olref{ranksupstrict}.
+%	Elinga dhisik yen $\setrank{\alpha} \neq \beta$
+%	kanggo saben $\beta \in
+%	\alpha$. Yen ora,
+%	kita bakal duwe $\beta = \setrank{\beta} \in
+%	\setrank{\alpha} = \beta$ miturut
+%	\olref{rankmemberslower}, yaiku
+%	$\beta \in \beta$, sawijining kontradiksi.
+%
+%	Saiki elinga yen $\alpha \subseteq V_\alpha$.
+%	Awit $\alpha =
+%	\Setabs{\beta}{\beta \in \alpha}$ miturut
+%	\olref[sfr][ordinals][basic]{ordissetofsmallerord}.
+%	Lan yen $\beta \in \alpha$, mula
+%	$\beta \subseteq V_{\setrank{\beta}} =
+%	V_\beta \in V_\alpha$, saengga
+%	$\beta \in V_\alpha$, miturut
+%	\olref[sfr][spine][Valphabasic]{Valphabasicprops}
+%	kaping pindho.
+\end{proof}
+
+Pungkasan, iki bukti cekak asil kang dijanjekake
+ing pungkasan \olref[foundation]{sec}, yaiku
+$\ZFminus$ mbuktekake implikasi
+$\emph{Regularitas} \Rightarrow \emph{Landhesan}$.
+(Elinga yen gagasan ``rank'' lan
+\olref{rankmemberslower} bisa digunakake ing
+bukti iki, amarga---kaya kang kasebut ing
+wiwitan bagean iki---loro-lorone bisa
+ditetepake kanthi $\ZFminus + \text{Regularitas}$.)
+
+\begin{prop}[ing $\ZFminus + \text{Regularitas}$]\ollabel{zfminusregularityfoundation} Landhesan lumaku.
+\end{prop}
+
+\begin{proof}
+Tetepna $A \neq \emptyset$, lan pilih
+$B \in A$ kanthi rank paling cilik. Yen
+$c \in B$, mula $\setrank{c} \in \setrank{B}$
+miturut \olref{rankmemberslower}, saengga
+$c \notin A$ amarga pilihan $B$.
+\end{proof}
+
+\end{document}

@@ -1,0 +1,323 @@
+% Part: first-order-logic 
+% Chapter: axiomatic-deduction 
+% Section: provability
+
+% verification of properties of provability needed for maximally 
+% consistent sets in the completeness chapter.
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{axd}{prv}}
+      {\olfileid{pl}{axd}{prv}}
+
+\olsection{Sipat-sipat \usetoken{S}{derivability}}
+
+\begin{prop}[Monotonisitas] Yèn $\Gamma \subseteq \Delta$ lan $\Gamma \Proves !A$,
+mula uga $\Delta \Proves !A$. \end{prop}
+
+\begin{proof} Saben $\Gamma_0 \subseteq \Gamma$ kang winates uga
+himpunan pérangan winates saka~$\Delta$, mula !!a{derivation}
+kanggo $\Gamma_0 \Proves !A$ uga nuduhaké $\Delta \Proves !A$.
+\end{proof}
+
+\begin{prop}\ollabel{prop:provability} $\Gamma \Proves !A$ yèn lan
+namung yèn $\Gamma\cup \{\lnot!A \}$ ora konsisten. \end{prop}
+
+\begin{prop} \begin{enumerate}
+\item \ollabel{prop:provability-contr} Yèn $\Gamma \Proves !A$ lan $\Gamma
+\cup \{ !A\} \Proves \lfalse$, mula $\Gamma$ ora konsisten.
+
+\item \ollabel{prop:provability-lnot} Yèn $\Gamma \cup \{!A\}
+\Proves \lfalse$, mula $\Gamma \Proves \lnot !A$.
+
+\item \ollabel{prop:provability-exhaustive} Yèn $\Gamma \cup \{!A\}
+\Proves \lfalse$ lan $\Gamma \cup \{\lnot !A\} \Proves
+\lfalse$, mula $\Gamma \Proves \lfalse$.
+
+\tagitem{prvOr}{\ollabel{prop:provability-lor-left} Yèn $\Gamma \cup \{!A\}
+\Proves \lfalse$ lan $\Gamma \cup \{!B\} \Proves
+\lfalse$, mula $\Gamma \cup \{!A \lor !B\} \Proves \lfalse$.}{}
+
+\tagitem{prvOr}{\ollabel{prop:provability-lor-right} Yèn $\Gamma
+\Proves !A$ utawa $\Gamma \Proves !B$, mula $\Gamma
+\Proves !A \lor !B$.}{}
+
+\tagitem{prvAnd}{\ollabel{prop:provability-land-left} Yèn $\Gamma
+\Proves !A \land !B$, mula $\Gamma \Proves !A$ lan
+$\Gamma \Proves !B$.}{}
+
+\tagitem{prvAnd}{\ollabel{prop:provability-land-right} Yèn $\Gamma
+\Proves !A$ lan $\Gamma \Proves !B$, mula $\Gamma
+\Proves !A \land !B$.}{}
+
+\tagitem{prvIf}{\ollabel{prop:provability-mp} Yèn $\Gamma \Proves
+!A$ lan $\Gamma \Proves !A \lif !B$, mula $\Gamma
+\Proves !B$.}{}
+
+\tagitem{prvIf}{\ollabel{prop:provability-lif} Yèn $\Gamma \Proves
+\lnot !A$ utawa $\Gamma \Proves !B$, mula $\Gamma \Proves
+!A \lif !B$.}{} \end{enumerate} \end{prop}
+
+\begin{proof} 
+\begin{enumerate}
+\item Anggepen $\Gamma_0 \cup \{!A\} \Proves \lfalse$.
+
+\begin{derivation} 
+1. & $\Gamma_0 \cup \{!A\} \Proves \lfalse$ & asumsi \\
+2. & $\Gamma_1 \Proves !A$ & asumsi\\ 
+3. & $\Gamma_0 \cup \Gamma_1 \Proves \lfalse$ & cut \\ 
+\end{derivation}
+
+Amarga $\Gamma_0 \subseteq \Gamma$ lan $\Gamma_1 \subseteq \Gamma$,
+$\Gamma_0 \cup \Gamma_1 \subseteq \Gamma$, mula $\Gamma \Proves \lfalse$.
+
+\item Anggepen $\Gamma_0 \cup\{!A\} \Proves \lfalse$.
+
+\begin{derivation} 
+1. & $\Gamma_0 \cup\{!A\} \Proves \lfalse$ & asumsi \\ 
+2. & $\Gamma_0 \Proves !A \lif \lfalse$ & Téoréma Deduksi\\
+3. & $\Gamma_0 \Proves (!A \lif \lfalse) \lif \lnot !A$ & Ax0\\ 
+4. & $\Gamma_0 \Proves \lnot !A$ & MP 2, 3 \\ 
+\end{derivation}
+
+\item Anggepen $\Gamma_0 \cup \{ !A \} \Proves \lfalse$ lan
+$\Gamma_1 \cup \{\lnot !A \} \Proves \lfalse$.
+
+\begin{derivation} 
+1. & $\Gamma_0 \cup\{!A\} \Proves \lfalse$ & asumsi \\
+2. & $\Gamma_0 \Proves !A \lif \lfalse$ & Téoréma Deduksi \\ 
+3. & $\Gamma_1 \cup \{\lnot !A \} \Proves \lfalse$ & asumsi\\ 
+4. & $\Gamma_0 \Proves (!A \lif \lfalse) \lif \lnot !A$ & Ax0\\ 
+5. & $\Gamma_0 \Proves \lnot !A$ & MP 2, 4\\ 
+6. & $\Gamma_0 \cup \Gamma_1 \Proves \lfalse$ & Cut 3, 5 \\
+\end{derivation}
+
+Amarga $\Gamma_0 \subseteq \Gamma$ lan $\Gamma_1 \subseteq \Gamma$,
+$\Gamma_0 \cup \Gamma_1 \subseteq \Gamma$. Mula $\Gamma \Proves \lfalse$.
+
+% prop:provability-lor-left 
+\tagitem{defOr}{}{
+\iftag{probOr}{Gladhen.}{Gladhen.}}
+
+% prop:provability-lor-right 
+\tagitem{defOr}{}{ \iftag{probOr}{Gladhen.}{
+Anggepen $\Gamma_0 \Proves !A$.
+
+\begin{derivation} 
+1. & $\Gamma_0 \Proves !A$ & asumsi \\ 
+2. & $\Gamma_0 \Proves !A \lif (!A \lor !B)$ & Ax0\\ 
+3. & $\Gamma_0 \Proves !A \lor !B$ & MP 1, 2 \\
+\end{derivation}
+
+Mula $\Gamma \Proves !A \lor !B$. Bukti kanggo kahanan
+$\Gamma \Proves !B$ padha carané.}}
+
+% prop:provability-land-left 
+\tagitem{defAnd}{}{ \iftag{probAnd}{Gladhen}{
+Anggepen $\Gamma_0 \Proves !A \land !B$
+
+\begin{derivation} 
+1. & $\Gamma_0 \Proves !A \land !B$ & asumsi \\ 
+2. & $\Gamma_0 \Proves (!A\land !B) \lif !A $ & Ax0\\ 
+3. & $\Gamma_0 \Proves !A$ & MP 1, 2 \\ 
+\end{derivation}
+
+Mula $\Gamma \Proves !A$. !!{derivation} kang padha carané
+uga nuduhaké yèn $\Gamma \Proves !B$.}}
+
+% prop:provability-land-right
+\tagitem{defAnd}{}{\iftag{probAnd}{Gladhen.}{Gladhen.}}
+
+% prop:provability-mp 
+\tagitem{defIf}{}{ \iftag{probIf}{Gladhen.}{
+Anggepen $\Gamma_0 \Proves !A$ lan $\Gamma_1 \Proves !A \lif !B $.
+
+\begin{derivation} 
+1. & $\Gamma_0 \Proves !A$ & asumsi \\ 
+2. & $\Gamma_1 \Proves !A \lif !B $ & asumsi\\ 
+3. & $\Gamma_0 \cup \Gamma_1 \Proves !B$ & MP 1, 2\\
+\end{derivation}
+
+Amarga $\Gamma_0 \cup \Gamma_1 \subseteq \Gamma$, iki ateges $\Gamma
+\Proves !B$.}}
+
+% prop:provability-lif 
+\tagitem{defIf}{}{\iftag{probIf}{Gladhen.}{Dhisik,
+anggepen $\Gamma \Proves \lnot !A$.
+    
+\begin{derivation} 
+1. & $\Gamma_0 \Proves \lnot !A$ & asumsi \\ 
+2. & $\Gamma_0 \Proves \lnot !A \lif (!A \lif !B) $ & Ax0\\ 
+3. & $\Gamma_0 \Proves !A \lif !B$ & MP 1,
+2\\ \end{derivation}
+
+Bukti kanggo $\Gamma \Proves !B$ padha carané:
+
+\begin{derivation} 
+1. & $\Gamma_0 \Proves !B$ & asumsi \\ 
+2. & $\Gamma_0 \Proves !B \lif (!A \lif !B) $ & Ax0\\ 
+3. & $\Gamma_0 \Proves !A \lif !B$ & MP 1, 2\\
+\end{derivation}}}
+
+\end{enumerate} 
+\end{proof}
+
+\begin{probtag}{probOr,probAnd,probIf} Rampungna bukti kanggo
+\olref[fol][axd][prv]{prop:provability}. 
+\end{probtag}
+
+\begin{thm}[Generalisasi] \ollabel{thm:Generalization} Yèn $\Gamma \Proves
+!A$ lan $x$ ora bebas ing !!{formula} endi waé sajroning $\Gamma$,
+mula $\Gamma \Proves \lforall[x][!A]$.
+\end{thm}
+
+\begin{proof} Kanthi induksi tumrap $\mathsf{Thm}_\Gamma$: yèn $!A$
+iku aksioma, $\lforall[x][!A]$ uga aksioma. Yèn $!A\in \Gamma$,
+$x$ ora bebas ing $!A$, mula $!A \lif \lforall[x][!A]$
+iku aksioma (\textbf{Ax3}), lan kanthi MP kita olèh $\Gamma
+\Proves \lforall[x][!A]$. Saiki anggepen $!A$ diturunké kanthi MP
+amarga $\Gamma \Proves !B$ lan $\Gamma \Proves !B \lif !A$.
+Miturut hipotesis induksi, $\Gamma \Proves \lforall[x][!B]$
+lan $\Gamma \Proves \lforall[x][( !B \lif !A)]$.
+Nanging miturut \textbf{Ax2} uga \[ \Gamma \Proves
+\lforall[x][( !B \lif !A)] \lif (\lforall[x][ !B] \lif \lforall[x][!A]), \]
+mula rong panganggoné MP ngasilaké $\Gamma \Proves
+\lforall[x][!A]$ kaya kang dikarepaké. \end{proof}
+
+\begin{thm}\ollabel{thm:WeakGen} (\emph{Generalisasi Lemah tumrap Konstanta})
+Yèn $\Gamma \Proves !A$ lan $c$ iku !!a{constant} kang ora
+katon ing $\Gamma$, mula ana variabel $x$ kang ora katon
+ing $!A$ saéngga $\Gamma
+\Proves \lforall[x][\Subst{!A}{x}{c}]$, lan buktiné ora nganggo $c$.
+\end{thm}
+
+\begin{proof} Anggep $!A_1,\ldots,!A_n$ minangka bukti $!A$ saka
+$\Gamma$, saéngga $!A=!A_n$. Pilih variabel $x$ kang ora katon
+ing $!A_1,\ldots,!A_n$, banjur delengen runtutan anyar:
+$\Subst{!A_1}{x}{c},\ldots,\Subst{!A_n}{x}{c}.$ Runtutan iki
+minangka bukti $\Subst{!A}{x}{c}$ saka $\Gamma$. Kanggo saben
+$i=1,\ldots,n$: \begin{itemize} \item yèn $!A_i$ iku aksioma,
+$\Subst{!A_i}{x}{c}$ uga aksioma; \item yèn $!A_i \in \Gamma$,
+amarga $c$ ora katon ing $\Gamma$, kita olèh
+$\Subst{!A_i}{x}{c} = !A_i \in \Gamma$; \item yèn $!A_i$
+diturunké saka $!A_j$ lan $!A_j \lif !A_i$, mula
+$\Subst{!A_i}{x}{c}$ diturunké kanthi MP saka
+$\Subst{!A_j}{x}{c}$ lan $\Subst{(!A_j \lif !A_i)}{x}{c}
+= \Subst{!A_j}{x}{c} \lif \Subst{!A_i}{x}{c}$.
+\end{itemize} Cetha yèn !!{constant} $c$ ora katon manèh
+ing runtutan anyar iki. Saiki anggep $\Gamma'$ ngemot !!{formula}s
+saka $\Gamma$ kang katon ing !!{derivation}
+$\Subst{!A}{x}{c}$; mula $x$ ora bebas ing !!{formula} endi waé
+sajroning $\Gamma'$ lan $\Gamma' \Proves \Subst{!A}{x}{c}$.
+Miturut generalisasi (\olref{thm:Generalization}), $\Gamma'
+\Proves \lforall[x][\Subst{!A}{x}{c}]$, lan miturut
+monotonisitas $\Gamma \Proves
+\lforall[x][\Subst{!A}{x}{c}]$, kaya kang dikarepaké.
+\end{proof}
+
+\begin{explain}
+Tujuan kita yaiku ngganti syarat ing \olref{thm:WeakGen} yèn $x$
+ora katon babar pisan ing $!A$ nganggo syarat kang luwih lemah:
+$x$ ora bebas ing $!A$ lan !!{free for} $c$ ing $!A$.
+Iki bisa ditindakake kanthi ngganti !!{variable} kaiket;
+mula iki kang bakal dibuktèkaké luwih dhisik.
+\end{explain}
+
+\begin{lem}
+\ollabel{lem:free-for} 
+Yèn $x$ bebas kanggo $c$ ing $!A$ lan $y$ ora bebas ing $!A$,
+mula $x$ iku !!{free for} $y$ ing $\Subst{!A}{y}{c}$.
+\end{lem}
+
+\begin{proof} Yèn $x$ ora !!{free for} $y$ ing
+$\Subst{!A}{y}{c}$, mula ana kemunculan bebas saka $y$ ing
+$\Subst{!A}{y}{c}$ kang mapan ing cakupan kuantor
+$\lforall[x]$. Nanging, miturut hipotesis, $y$ ora bebas
+ing $!A$, mula saben kemunculan kaya mangkono asalé saka
+substitusi $\Subst{}{y}{c}$. Dadi ana kemunculan $c$
+ing cakupan $\lforall[x]$, saéngga $x$ ora
+!!{free for} $c$ ing $!A$.
+\end{proof}
+
+\begin{lem}[Panggantèn Variabel Kaiket]
+\ollabel{lem:ChangeBdVar} 
+Yèn $x$ lan $y$ ora bebas ing $!A$ lan kaloroné
+!!{free for} $c$ ing $!A$, mula
+$\Proves \lforall[x][\Subst{!A}{x}{c}] \equiv
+\lforall[y][\Subst{!A}{y}{c}]$ (lan buktiné ora nganggo $c$).
+\end{lem}
+
+\begin{proof} 
+Miturut hipotesis, $y$ iku !!{free for} $c$ ing $!A$ lan $x$
+ora bebas ing $!A$. Mula, miturut \olref{lem:free-for}, $y$
+iku !!{free for} $x$ ing $\Subst{!A}{x}{c}$. Saka kéné,
+$\lforall[x][\Subst{!A}{x}{c} \lif \Subst{!A}{x}{c} \Subst{}{y}{x}]$
+iku aksioma (\textbf{Ax1}). Amarga $x$ ora bebas ing $!A$,
+kita olèh $\Subst{!A}{x}{c} \Subst{}{y}{x} = \Subst{!A}{y}{c}$,
+mula
+\[
+\Proves \lforall[x][\Subst{!A}{x}{c}] \lif \Subst{!A}{y}{c}, 
+\] 
+lan miturut Téoréma Deduksi,
+$\lforall[x][\Subst{!A}{x}{c}] \Proves \Subst{!A}{y}{c}$.
+Amarga $y$ ora bebas ing $!A$, dhèwèké uga ora bebas ing
+$\lforall[x][\Subst{!A}{x}{c}]$, mula miturut Generalisasi,
+$\lforall[x][\Subst{!A}{x}{c}] \Proves \lforall[y][\Subst{!A}{y}{c}]$.
+Téoréma Deduksi sapisan manèh mènèhi $\Proves
+\lforall[x][\Subst{!A}{x}{c}] \lif \lforall[y][\Subst{!A}{y}{c}]$.
+Bukti kanggo $\Proves \lforall[y][\Subst{!A}{y}{c}] \lif \lforall[x]
+[\Subst{!A}{x}{c}]$ simètris, mula dudutané manut aturan Taut.
+\end{proof}
+
+\begin{thm}[Generalisasi Kuwat tumrap Konstanta]
+\ollabel{thm:StrongGen} 
+Yèn $\Gamma \Proves !A$, !!{constant} $c$ ora katon ing
+$\Gamma$, lan $x$ ora bebas ing $!A$ nanging !!{free for}
+$c$ ing $!A$, mula $\Gamma \Proves
+\lforall[x][\Subst{!A}{x}{c}]$.
+\end{thm}
+
+\begin{proof} 
+Amarga $\Gamma \Proves !A$ lan $c$ ora katon ing $\Gamma$,
+miturut Generalisasi Lemah ana !!a{variable} $y$ kang ora
+katon ing $!A$ saéngga
+$\Gamma \Proves \lforall[y][\Subst{!A}{y}{c}]$.
+Amarga $y$ ora katon babar pisan ing $!A$, dhèwèké ora bebas
+ing $!A$ lan uga !!{free for} $c$ ing $!A$.
+Miturut hipotesis, $x$ uga ora bebas ing $!A$ lan !!{free for}
+$c$ ing $!A$. Mula syarat kanggo ngganti !!{variable} kaiket
+wis kacukupan, saéngga
+$\Proves \lforall[x][\Subst{!A}{x}{c}] \equiv
+\lforall[y][\Subst{!A}{y}{c}]$, lan akibaté $\Gamma \Proves
+\lforall[x][\Subst{!A}{x}{c}]$.
+\end{proof}
+
+\begin{thm} 
+\ollabel{thm:provability-quantifiers}
+\begin{tagenumerate}{prvEx,prvAll} 
+\tagitem{prvEx}{Yèn $\Gamma \Proves !A(t)$, mula $\Gamma \Proves
+  \lexists[x][!A(x)]$.}{} 
+\tagitem{prvAll}{Yèn $\Gamma \Proves \lforall[x][!A(x)]$, mula $\Gamma
+  \Proves !A(t)$.}{}
+\end{tagenumerate} 
+\end{thm}
+
+\begin{proof} 
+\begin{tagenumerate}{prvEx,prvAll} 
+%%Need axioms for exists
+\tagitem{prvEx}{Gladhen.}{}
+\tagitem{prvAll} {Anggepen $\Gamma_0 \Proves \lforall[x][!A(x)]$.
+
+\begin{derivation} 
+1. & $\Gamma_0 \Proves \lforall[x][!A(x)]$ & asumsi \\
+2. & $\Gamma_0 \Proves \lforall[x][!A(x)] \lif \Subst{!A}{t}{x}$ & Ax1 \\ 
+3. & $\Gamma_0 \Proves \Subst{!A}{t}{x}$ & MP 1, 2 \\ 
+\end{derivation}}{}
+
+\end{tagenumerate} 
+\end{proof}
+
+\end{document}

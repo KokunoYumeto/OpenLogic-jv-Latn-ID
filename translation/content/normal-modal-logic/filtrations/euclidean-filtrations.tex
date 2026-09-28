@@ -1,0 +1,135 @@
+% Part: normal-modal-logic
+% Chapter: filtrations
+% Section: euclidean-filtrations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{fil}{euc}
+
+\olsection{Filtrasi Model Euklidean}
+
+Cara ing \olref[acc]{sec} ora lumaku kanggo model kang Euklidean
+utawa serial lan Euklidean. Gatekna model ing pérangan ndhuwur
+\olref{fig:ser-eucl}, kang Euklidean lan serial. Upamane
+$\Gamma = \{p, \Box p \}$. Nalika nggawe filtrasi liwat $\Gamma$,
+mula $[w_1] = [w_3]$ amarga $w_1$ lan $w_3$ iku siji-sijine jagad
+kang padha nilaine tumrap~$\Gamma$. Saben filtrasi uga nduweni panah
+warisan saka $\mModel{M}$, kaya ing \olref{fig:ser-eucl2}. Model iku
+ora Euklidean. Kajaba iku, kita ora bisa nambah panah ing model iku
+supaya dadi Euklidean. Kita kudu nambah panah bolak-balik antarane
+$[w_2]$ lan $[w_4]$, banjur uga antarane $[w_2]$ lan~$[w_5]$. Nanging $\Box
+p$ kudune bener ing~$w_2$, dene $p$ salah ing~$w_5$.
+
+\begin{figure}[htpb]
+  \centering
+  \begin{tikzpicture}[modal]
+    \node[world] (w1)
+          [label={left: \mFalse{p}},
+            label={below: $\mSat{{}}{\Box p}$}] {$w_1$}; 
+    \node[world] (w2)
+          [label={right: \mTrue{p}},
+            label = {below: $\mSat{{}}{\Box p}$},
+            right=of w1] {$w_2$}; 
+    \draw[->] (w1) to (w2);
+    \draw[reflexive above] (w2) to (w2);
+    \node[world] (w3)
+          [label={left: \mFalse{p}},
+            label={below: $\mSat{{}}{\Box p}$},
+            below=of w1] {$w_3$}; 
+    \node[world] (w4)
+          [label={right:\mTrue{p}},
+            label={below: $\mSat/{{}}{\Box p}$},
+            right=of w3] {$w_4$};
+    \draw[->] (w3) to (w4);
+    \draw[reflexive above] (w4) to (w4);     
+    \node[world] (w5)
+          [label={right: \mFalse{p}},
+            label=below:$\mSat/{{}}{\Box p}$,
+            right=of w4] {$w_5$}; 
+    \draw[->, bend left] (w4) to (w5);
+    \draw[->, bend left] (w5) to (w4);
+    \draw[reflexive above] (w5) to (w5);     
+  \end{tikzpicture}
+  \caption{Model serial lan Euklidean.}
+  \ollabel{fig:ser-eucl}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}[modal,every text node part/.style={align=center}]
+    \node[world] (w1)
+          [label={left: \mFalse{p}},
+            label={right:$[w_1]=[w_3]$},
+            label={below: $\mSat{{}}{\Box p}$}] {$[w_1]$}; 
+    \node[world] (w2)
+         [label={right: \mTrue{p}},
+           label = {below: $\mSat{{}}{\Box p}$},
+           right=of w1, yshift=1.5cm] {$[w_2]$}; 
+    \draw[->] (w1) to (w2);
+    \draw[reflexive above] (w2) to (w2);
+    \node[world] (w4)
+         [label={right:\mTrue{p}},
+           label={below: $\mSat/{{}}{\Box p}$},
+           right=of w1,yshift=-1.5cm] {$[w_4]$};
+    \draw[->] (w1) to (w4);
+    \draw[reflexive above] (w4) to (w4);     
+    \node[world] (w5)
+         [label={right: \mFalse{p}},
+             label=below:$\mSat/{{}}{\Box p}$,
+             right=of w4] {$[w_5]$}; 
+    \draw[->, bend left] (w4) to (w5);
+    \draw[->, bend left] (w5) to (w4);
+    \draw[reflexive above] (w5) to (w5);     
+  \end{tikzpicture}
+  \caption{Filtrasi model ing \olref{fig:ser-eucl}.}
+  \ollabel{fig:ser-eucl2}
+\end{figure}
+
+Mligine, kanggo ngasilake filtrasi Euklidean, ora cukup yen mung
+nggatekake filtrasi liwat $\Gamma$ sembarang kang katutup tumrap
+sub-!!{formula}s. Kosok baline, kita kudu nggatekake himpunan $\Gamma$
+kang \emph{katutup modal} (delengen \olref[pre]{defn:modallyclosed}).
+Himpunan ukara mangkono ora winates, mula ora langsung ngasilake
+sipat model winates utawa katerputusan kanggo sistem kang cocog.
+
+\begin{thm}\ollabel{thm:modal-closed-filt}
+  Upamane $\Gamma$ katutup modal, $\mModel{M}=\tuple{W,R,V}$,
+  lan $\mModel{M^*} = \tuple{W^*,R^*,V^*}$ sawijining filtrasi paling
+  kasar saka $\mModel{M}$.
+  \begin{enumerate}
+  \item Yen $\mModel{M}$ simetris, $\mModel{M^*}$ uga simetris.
+  \item Yen $\mModel{M}$ transitif, $\mModel{M^*}$ uga transitif.
+  \item Yen $\mModel{M}$ Euklidean, $\mModel{M^*}$ uga Euklidean.
+  \end{enumerate}
+\end{thm}
+
+\begin{proof}
+\begin{enumerate}
+  \item Latihan. Gunakna kasunyatan yen \Ax{B} lan $\Ax{B_\Diamond}$
+    valid ing saben model simetris.
+  \item Yen $\mModel{M^*}$ iku filtrasi paling kasar, miturut definisi
+    $R^*[u][v]$ kawujud yen lan mung yen $C_1(u,v)$. Kanggo transitivitas,
+    upamane $C_1(u,v)$ lan $C_1(v,w)$; kita kudu nuduhake
+    $C_1(u,w)$. \iftag{prvBox}{Upamane $\Box!A \in \Gamma$ lan $\mSat{M}{\Box !A}[u]$; mula
+      $\mSat{M}{\Box\Box!A}[u]$ amarga \Ax{4} valid ing saben
+      model transitif; amarga $\Box\Box!A \in \Gamma$ miturut katutupan,
+      $C_1(u,v)$ uga njalari $\mSat{M}{\Box!A}[v]$, lan $C_1(v,w)$
+      uga njalari $\mSat{M}{!A}[w]$. }{}\iftag{prvDiamond}{Upamane
+      $\Diamond!A \in \Gamma$ lan $\mSat{M}{!A}[w]$; mula $\mSat{M}{\Diamond !A}[v]$ miturut
+      $C_1(v,w)$, amarga $\Diamond !A \in \Gamma$ miturut katutupan modal. Miturut
+      $C_1(u,v)$, kita entuk $\mSat{M}{\Diamond\Diamond !A}[u]$ amarga
+      $\Diamond\Diamond!A \in \Gamma$ miturut katutupan modal. Amarga
+      $\Ax{4}_\Diamond$ valid ing saben model transitif,
+      $\mSat{M}{\Diamond!A}[u]$.}{}
+  \item Latihan. Gunakna kasunyatan yen \Ax{5} lan $\Ax{5_\Diamond}$
+    loro-lorone valid ing saben model Euklidean.
+\end{enumerate}
+\end{proof}
+
+\begin{prob}
+  Jangkepna bukti \olref[nml][fil][euc]{thm:modal-closed-filt}.
+\end{prob}
+
+\end{document}

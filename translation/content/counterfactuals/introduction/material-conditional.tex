@@ -1,0 +1,73 @@
+% Part: counterfactuals
+% Chapter: introduction
+% Section: material-conditional
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cnt}{int}{mat}
+
+\olsection{Kondisional Material}
+
+Ing wujud kang paling prasaja ing basa Inggris, kondisional iku
+ukara awujud ``If \dots then \dots'' (``Yen ... mula ...''), kanthi
+saben \dots{} minangka ukara dhewe. Tuladhane, yen diterjemahake,
+``Yen pelayan omah iku kang nindakake, mula tukang kebone ora
+luput.'' Ing kuliah pambuka logika, kita sinau nyimbolake
+kondisional nganggo konektif $\lif$: perangan kang dituduhake
+dening \dots{} disimbolake, upamane nganggo !!{formula}s $!A$
+lan~$!B$, banjur kabeh kondisional disimbolake kanthi $!A \lif !B$.
+
+Konektif $\lif$ iku \emph{fungsional tumrap bebener}, yaiku nilai
+bebener---$\True$ utawa $\False$---saka $!A \lif !B$ ditemtokake
+dening nilai bebener saka $!A$ lan~$!B$: $!A \lif !B$ bener yen
+lan mung yen $!A$~luput utawa $!B$~bener, lan luput ing kasus
+liyane. Tumrap penetapan nilai bebener~$\pAssign v$, kita nemtokake
+$\pSat{v}{!A \lif !B}$ yen lan mung yen $\pSat/{v}{!A}$ utawa
+$\pSat{v}{!B}$. Konektif $\lif$ kanthi semantik iki diarani
+\emph{kondisional material}.
+
+Definisi iki ngasilake sawetara fakta logis dhasar. Kapisan,
+teorema deduksi lumaku kanggo kondisional material:
+\begin{align}
+  \text{Yen } \Gamma, !A \Entails !B \text{ mula } \Gamma \Entails !A \lif !B
+\end{align}
+Kondisional iku fungsional tumrap bebener: $!A \lif !B$ lan
+$\lnot !A \lor !B$ ekuivalen:
+\begin{align}
+  !A \lif !B & \Entails \lnot !A \lor !B\\
+  \lnot !A \lor !B & \Entails !A \lif !B
+  \intertext{Kondisional material minangka konsekuensi semantis saka
+    konsekuene lan saka negasi antesedene:}
+  !B & \Entails !A \lif !B\\
+  \lnot !A & \Entails !A \lif !B
+  \intertext{Kondisional material kang luput ekuivalen karo konjungsi
+    antesedene lan negasi konsekuene: yen $!A \lif !B$ luput,
+    $!A \land \lnot !B$ bener, lan kosok balene:}
+  \lnot(!A \lif !B) & \Entails !A \land \lnot !B\\
+  !A \land \lnot !B & \Entails \lnot(!A \lif !B)
+  \intertext{Kondisional material ndhukung modus ponens:}
+  !A, !A \lif !B & \Entails !B
+  \intertext{Konsekuen-konsekuen saka kondisional material kanthi
+    anteseden kang padha bisa digandhengake:}
+  !A \lif !B,  !A \lif !C & \Entails !A \lif (!B \land !C)
+  \intertext{Kita tansah bisa nguwatake anteseden, yaiku kondisional
+    iku \emph{monoton}:}
+  !A \lif !B & \Entails (!A \land !C) \lif !B
+  \intertext{Kondisional material transitif, yaiku aturan rantai sah:}
+  !A \lif !B, !B \lif !C & \Entails !A \lif !C
+  \intertext{Kondisional material ekuivalen karo kontrapositife:}
+  !A \lif !B & \Entails \lnot !B \lif \lnot !A\\
+  \lnot !B \lif \lnot !A & \Entails !A \lif !B
+\end{align}
+
+Kabeh iki inferensi kang migunani lan ora nuwuhake masalah ing
+penalaran matematika. Nanging pustaka filsafat lan linguistik kebak
+tuladha kang diajokake minangka panyanggah tumrap inferensi kang
+padha ing konteks dudu matematika. Tuladha-tuladha iku nuduhake yen
+kondisional material~$\lif$ dudu---utawa paling ora ora tansah
+dadi---konektif kang trep kanggo nyimbolake pratelan basa Inggris
+``if \dots then \dots''.
+
+\end{document}

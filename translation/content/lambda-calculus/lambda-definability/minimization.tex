@@ -1,0 +1,73 @@
+% Part: lambda-calculus
+% Chapter: lambda-definability
+% Section: minimization
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{ldf}{min}
+\olsection{Minimisasi}
+
+Fungsi rekursif umum yaiku fungsi-fungsi kang bisa diolehake saka
+fungsi dhasar $\Zero$, $\Succ$, $\Proj{n}{i}$ kanthi komposisi,
+rekursi primitif, lan minimisasi reguler. Kanggo nuduhake yen kabeh
+fungsi rekursif umum iku !!{lambda definable}, kita kudu nuduhake
+yen saben fungsi kang ditetepake kanthi minimisasi reguler saka
+fungsi kang !!a{lambda
+  definable} uga !!{lambda definable}.
+
+\begin{lem}
+  \ollabel{lem:min} Yen $f(x_1, \dots, x_k, y)$ reguler lan
+  !!{lambda definable}, mula $g$~kang ditetepake dening
+  \[
+  g(x_1, \dots, x_k) = \umin{y}{f(x_1,\dots,x_k, y) = 0}
+  \]
+  uga !!{lambda definable}.
+\end{lem}
+
+\begin{proof}
+  Upamakna suku lambda~$F$ minangka suku $\lambda$ kang netepake
+  fungsi reguler $f(\vec x, y)$. Kanggo !!{lambda define}~$g$,
+  kita nggunakake fungsi panelusuran lan kombinator titik tetep:
+  \begin{align*}
+    \fn{Search} & \ident \lambd[g][\lambd[f\,\vec{x}\,y][
+        \fn{IsZero} (f\, \vec{x}\, y)\, y\, (g\, f\, \vec{x} (\fn{Succ}\, y))]]\\
+    H & \ident \lambd[\vec x][(Y \, \fn{Search}) F\, \vec{x}\, \num{0}],
+  \end{align*}
+  kanthi $Y$ minangka kombinator titik tetep apa wae. Kanthi
+  informal, $\fn{Search}$ iku fungsi kang ngrujuk marang awake dhewe:
+  wiwit saka~$y$, dipriksa apa $f\, \vec x\, y$ iku nol. Yen iya,
+  balekake~$y$; yen ora, fungsi iki nyeluk awake dhewe kanthi
+  $\fn{Succ}\, y$. Mula $(Y \, \fn{Search}) F
+  \num{n_1}\dots\num{n_k}\,\num{0}$ ngasilake $m$~paling cilik
+  kang nyukupi $f(n_1, \dots, n_k, m) = 0$.
+  
+  Kanthi luwih cetha, gatekna yen
+  \begin{align*}
+    (Y \, \fn{Search}) F \num{n_1}
+    \dots\num{n_k}\, \num{m} & \red \num{m}
+    \intertext{yen $f(n_1, \dots,
+      n_k, m) = 0$, utawa}
+    & \red (Y \, \fn{Search}) F\, \num{n_1} \dots\num{n_k}\, \num{m+1}
+    \intertext{yen ora. Amarga $f$ reguler, $f(n_1, \dots, n_k, y)
+      = 0$ kanggo sawijining $y$, mula}
+    (Y \, \fn{Search}) F \num{n_1} \dots\num{n_k}\,\num{0}
+    & \red \num{g(n_1, \dots, n_k)}.
+    \end{align*}
+\end{proof}
+
+
+\begin{prop}
+  Saben fungsi rekursif umum iku !!{lambda definable}.
+\end{prop}
+
+\begin{proof}
+ Miturut \olref[prf]{lem:basic}, kabeh fungsi dhasar iku
+ !!{lambda definable}, lan miturut \olref[prf]{lem:comp},
+ \olref[prf]{lem:prim}, sarta \olref{lem:min}, kelas fungsi kang
+ !!{lambda definable} katutup marang komposisi, rekursi primitif,
+ lan minimisasi reguler.
+\end{proof}
+
+\end{document}

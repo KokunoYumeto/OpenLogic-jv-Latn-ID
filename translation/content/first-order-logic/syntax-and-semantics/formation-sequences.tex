@@ -1,0 +1,292 @@
+% Part: first-order-logic
+% Chapter: syntax-and-semantics
+% Section: formation-sequences
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{syn}{fseq}
+
+\olsection{Urutan Pambentukan}
+
+Nemtokake !!{formula}s liwat definisi induktif, lan teknik pelengkap
+kanggo mbuktekake sipat-sipat !!{formula}s liwat induksi, iku cara kang
+endah lan efisien. Nanging, bisa uga migunani kanggo ndeleng
+pambentukan !!{formula}s saka unsur paling dhasar, saka tahap siji menyang tahap sabanjure.
+Ing kene kita nindakake iki nganggo konsep \emph{urutan pambentukan}.
+%
+Kanggo nuduhake carane term lan !!{formula}s bisa dikenalake kanthi
+cara iki tanpa nyandhak definisi induktife, dhisik kita ngenalake
+konsep rerangken simbol sembarang kang dijupuk saka sawijining
+basa~$\Lang L$.
+
+\begin{defn}[Rerangken simbol]
+\ollabel{defn:string}
+Upamana $\Lang L$ iku basa logika sepisanan. Sawijining
+\emph{rerangken~$\Lang L$} yaiku urutan winates simbol-simbol
+saka~$\Lang L$. Yen basa~$\Lang L$ wis cetha saka konteks, kita
+kerep nyebut rerangken~$\Lang L$ mung minangka \emph{rerangken}.
+\end{defn}
+
+\begin{ex}
+Kanggo saben basa logika sepisanan $\Lang L$, kabeh
+!!{formula}s ing~$\Lang L$ iku rerangken~$\Lang L$, nanging kosok baline
+ora mesthi bener. Umpamane, \[)(\Obj v_0\lif\lexists\] iku
+rerangken~$\Lang L$ nanging dudu !!{formula} ing~$\Lang L$.
+\end{ex}
+
+\begin{defn}[Urutan pambentukan kanggo term]
+\ollabel{defn:fseq-trm}
+Urutan winates rerangken~$\Lang L$, yaiku $\tuple{t_0,\dotsc,t_n}$,
+iku \emph{urutan pambentukan} kanggo term $t$ yen $t \ident t_n$
+lan kanggo saben $i \leq n$, $t_i$ iku !!a{variable} utawa
+!!a{constant}, utawa $\Lang L$ ngemot $k$-panggonan !!{function}~$f$
+lan ana $m_1,\dotsc,m_k < i$ saengga
+$t_i \ident f(t_{m_1},\dotsc,t_{m_k})$. Yen perlu mbedakake,
+kita nyebut urutan pambentukan kanggo term minangka
+\emph{urutan pambentukan term}. Cathetan koreksi sumber OLPL-067:
+indeks argumen ing sumber diwiwiti saka nol nganti aritase,
+kang marakake cacah argumene luwih siji tinimbang aritase;
+ing kene indeks diwiwiti saka siji.
+\end{defn}
+
+\begin{ex}
+Urutan
+\[
+    \tuple{\Obj c_0, \Obj v_0, \Atom{\Obj f^2_0}{\Obj c_0, \Obj v_0}, \Atom{\Obj f^1_0}{\Atom{\Obj f^2_0}{\Obj c_0, \Obj v_0}}}
+\]
+iku urutan pambentukan kanggo term $\Atom{\Obj f^1_0}{\Atom{\Obj
+f^2_0}{\Obj c_0, \Obj v_0}}$, semono uga
+\[
+    \tuple{\Obj v_0, \Obj c_0, \Atom{\Obj f^2_0}{\Obj c_0, \Obj v_0}, \Atom{\Obj f^1_0}{\Atom{\Obj f^2_0}{\Obj c_0, \Obj v_0}}}.
+\]
+\end{ex}
+
+\begin{defn}[Urutan pambentukan kanggo formula]
+\ollabel{defn:fseq-frm}
+Urutan winates rerangken~$\Lang L$, yaiku
+$\tuple{!A_0,\dotsc,!A_n}$, iku \emph{urutan pambentukan}
+kanggo~$!A$ yen $!A \ident !A_n$ lan kanggo saben $i \leq n$,
+$!A_i$ iku !!{formula} atomik utawa ana $j,k < i$ lan
+!!a{variable}~$x$ saengga salah siji saka syarat iki lumaku:
+\begin{enumerate}
+    \tagitem{prvNot}{$!A_i \ident \lnot !A_j$.}{}%
+    \tagitem{prvAnd}{$!A_i \ident (!A_j \land !A_k)$.}{}%
+    \tagitem{prvOr}{$!A_i \ident (!A_j \lor !A_k)$.}{}%
+    \tagitem{prvIf}{$!A_i \ident (!A_j \lif !A_k)$.}{}%
+    \tagitem{prvIff}{$!A_i \ident (!A_j \liff !A_k)$.}{}%
+    \tagitem{prvAll}{$!A_i \ident \lforall[x][!A_j]$.}{}%
+    \tagitem{prvEx}{$!A_i \ident \lexists[x][!A_j]$.}{}%
+\end{enumerate}
+Yen perlu mbedakake, kita nyebut urutan pambentukan kanggo
+formula minangka \emph{urutan pambentukan formula}.
+\end{defn}
+
+\begin{ex}
+\[
+\tuple{
+    \Atom{\Obj A^1_0}{\Obj v_0},
+    \Atom{\Obj A^1_1}{\Obj c_1},
+    (\Atom{\Obj A^1_1}{\Obj c_1} \land \Atom{\Obj A^1_0}{\Obj v_0}),
+    \lexists[\Obj v_0][(\Atom{\Obj A^1_1}{\Obj c_1} \land \Atom{\Obj A^1_0}{\Obj v_0})]
+}
+\]
+iku urutan pambentukan kanggo
+$\lexists[\Obj v_0][(\Atom{\Obj A^1_1}{\Obj
+c_1} \land \Atom{\Obj A^1_0}{\Obj v_0})]$, semono uga
+\begin{multline*}
+\tuple{
+    \Atom{\Obj A^1_0}{\Obj v_0},
+    \Atom{\Obj A^1_1}{\Obj c_1},
+    (\Atom{\Obj A^1_1}{\Obj c_1} \land \Atom{\Obj A^1_0}{\Obj v_0}),
+    \Atom{\Obj A^1_1}{\Obj c_1},\\
+    \lforall[\Obj v_1][\Atom{\Obj A^1_0}{\Obj v_0}],
+    \lexists[\Obj v_0][(\Atom{\Obj A^1_1}{\Obj c_1} \land \Atom{\Obj A^1_0}{\Obj v_0})]
+}.
+\end{multline*}
+%
+Kaya kang katon ing tuladha kapindho, urutan pambentukan bisa
+ngemot unsur kang ora perlu: !!{formula}s kang diulang utawa ora
+menehi sumbangan kanggo pambentukan.
+\end{ex}
+
+\begin{prop}\ollabel{prop:formed}
+Saben !!{formula}~$!A$ ing~$\Frm[L]$ nduweni urutan pambentukan.
+\end{prop}
+
+\begin{proof}
+Upamana $!A$ atomik. Mula urutan $\tuple{!A}$ iku
+urutan pambentukan kanggo~$!A$.
+%
+Saiki upamana $!B$ lan~$!C$ nduweni urutan pambentukan
+$\tuple{!B_0,\dotsc,!B_n}$ lan $\tuple{!C_0,\dotsc,!C_m}$
+miturut urutane.
+%
+\begin{enumerate}
+  \tagitem{prvNot}{Yen $!A \ident \lnot !B$,
+      mula $\tuple{!B_0,\dotsc,!B_n,\lnot !B_n}$
+      iku urutan pambentukan kanggo~$!A$.}{}
+  \tagitem{prvAnd}{Yen $!A \ident (!B \land !C)$,
+      mula $\tuple{!B_0,\dotsc,!B_n,!C_0,\dotsc,!C_m,(!B_n \land !C_m)}$
+      iku urutan pambentukan kanggo~$!A$.}{}
+  \tagitem{prvOr}{Yen $!A \ident (!B \lor !C)$,
+      mula $\tuple{!B_0,\dotsc,!B_n,!C_0,\dotsc,!C_m,(!B_n \lor !C_m)}$
+      iku urutan pambentukan kanggo~$!A$.}{}
+  \tagitem{prvIf}{Yen $!A \ident (!B \lif !C)$,
+      mula $\tuple{!B_0,\dotsc,!B_n,!C_0,\dotsc,!C_m,(!B_n \lif !C_m)}$
+      iku urutan pambentukan kanggo~$!A$.}{}
+  \tagitem{prvIff}{Yen $!A \ident (!B \liff !C)$,
+      mula $\tuple{!B_0,\dotsc,!B_n,!C_0,\dotsc,!C_m,(!B_n \liff !C_m)}$
+      iku urutan pambentukan kanggo~$!A$.}{}
+  \tagitem{prvAll}{Yen $!A \ident \lforall[x][!B]$,
+      mula $\tuple{!B_0,\dotsc,!B_n,\lforall[x][!B_n]}$
+      iku urutan pambentukan kanggo~$!A$.}{}
+  \tagitem{prvEx}{Yen $!A \ident \lexists[x][!B]$,
+      mula $\tuple{!B_0,\dotsc,!B_n,\lexists[x][!B_n]}$
+      iku urutan pambentukan kanggo~$!A$.}{}
+\end{enumerate}
+Miturut prinsip induksi tumrap !!{formula}s,
+saben !!{formula} nduweni urutan pambentukan.
+\end{proof}
+
+Kita uga bisa mbuktekake kosok baline. Iki wigati amarga nuduhake
+yen rong cara kita kanggo nemtokake formula iku ekuivalen: asil
+loro-lorone padha. Iki uga ateges kita bisa mbuktekake teorema
+ngenani formula nganggo induksi biasa marang dawa urutan pambentukan.
+
+\begin{lem}
+\ollabel{lem:fseq-init}
+Upamana $\tuple{!A_0,\dotsc,!A_n}$ iku urutan pambentukan
+kanggo~$!A_n$, lan $k \leq n$. Mula $\tuple{!A_0,\dotsc,!A_k}$
+iku urutan pambentukan kanggo~$!A_k$.
+\end{lem}
+
+\begin{proof}
+Latihan.
+\end{proof}
+
+\begin{prob}
+Buktèkna \olref[fol][syn][fseq]{lem:fseq-init}.
+\end{prob}
+
+\begin{thm}
+\ollabel{thm:fseq-frm-equiv}
+$\Frm[L]$ iku himpunan kabeh rerangken~$\Lang L$ kang awujud~$!A$
+saengga ana urutan pambentukan formula kanggo~$!A$.
+\end{thm}
+
+\begin{proof}
+Upamana $F$ iku himpunan kabeh rerangken simbol ing basa~$\Lang L$
+kang nduweni urutan pambentukan. Kita wis ndeleng ing
+\olref[fol][syn][fseq]{prop:formed} yen $\Frm[L] \subseteq F$,
+mula saiki kita mbuktekake kosok baline.
+
+Upamana $!A$ nduweni urutan pambentukan
+$\tuple{!A_0,\dotsc,!A_n}$. Kita mbuktekake yen
+$!A \in \Frm[L]$ kanthi induksi kuwat marang~$n$.
+Hipotesis induksi kita yaiku saben rerangken simbol kang nduweni
+urutan pambentukan kanthi indeks pungkasan $m < n$ ana ing
+$\Frm[L]$. Miturut definisi urutan pambentukan,
+$!A \ident !A_n$ lan rerangken pungkasan kasebut atomik,
+utawa ana $j,k < n$
+saengga salah siji saka kasus ing ngisor iki lumaku:
+\begin{enumerate}
+    \tagitem{prvNot}{$!A \ident \lnot !A_j$.}{}%
+    \tagitem{prvAnd}{$!A \ident (!A_j \land !A_k)$.}{}%
+    \tagitem{prvOr}{$!A \ident (!A_j \lor !A_k)$.}{}%
+    \tagitem{prvIf}{$!A \ident (!A_j \lif !A_k)$.}{}%
+    \tagitem{prvIff}{$!A \ident (!A_j \liff !A_k)$.}{}%
+    \tagitem{prvAll}{$!A \ident \lforall[x][!A_j]$.}{}%
+    \tagitem{prvEx}{$!A \ident \lexists[x][!A_j]$.}{}%
+\end{enumerate}
+Saiki kita nalar miturut kasus. Yen $!A$ atomik, mula
+$!A_n \in \Frm[L]$. Yen ora, upamana
+$!A \ident (!A_j \land !A_k)$. Miturut
+\olref[fol][syn][fseq]{lem:fseq-init},
+$\tuple{!A_0,\dotsc,!A_j}$ lan $\tuple{!A_0,\dotsc,!A_k}$
+iku urutan pambentukan kanggo $!A_j$ lan~$!A_k$ miturut urutane.
+Amarga loro-lorone minangka bagean wiwitan sejati saka urutan
+pambentukan kanggo~$!A$, indeks pungkasané luwih cilik tinimbang~$n$.
+Mula miturut hipotesis induksi, $!A_j$ lan~$!A_k$ ana ing~$\Frm[L]$,
+lan miturut definisi !!a{formula}, mangkono uga
+$(!A_j \land !A_k)$. Kasus liyane lumaku kanthi nalar kang padha.
+Cathetan koreksi sumber OLPL-068: ing langkah induksi iki,
+ukuran kang dibandhingake yaiku indeks pungkasan urutan,
+dudu cacah unsuré; sumber nyampurake loro ukuran kasebut.
+Cathetan koreksi sumber OLPL-069: ing rong papan, sumber nganggo
+subskrip basa kang beda saka basa ing teorema; ing kene subskrip
+diselarasake karo basa ing teorema.
+Cathetan koreksi sumber OLPL-070: tandha ekuivalensi ing sumber
+diganti tandha identitas sintaktis supaya langkah iki nyatakake
+identitas rerangken kaya dhaptar kasus sadurunge.
+\end{proof}
+
+Urutan pambentukan kanggo term nduweni sipat kang padha karo urutan
+pambentukan kanggo !!{formula}s.
+
+\begin{prop}
+\ollabel{prop:fseq-trm-equiv}
+$\Trm[L]$ iku himpunan kabeh rerangken~$\Lang L$ awujud $t$
+saengga ana urutan pambentukan term kanggo~$t$.
+\end{prop}
+
+\begin{proof}
+Latihan.
+\end{proof}
+
+\begin{prob}
+Buktèkna \olref[fol][syn][fseq]{prop:fseq-trm-equiv}.
+Pituduh: gunakna cara kang padha karo kang digunakake ing bukti
+\olref[fol][syn][fseq]{thm:fseq-frm-equiv}.
+\end{prob}
+
+Ana rong jinis unsur kang ora perlu ing urutan pambentukan:
+unsur kang diulang lan unsur kang ora magepokan karo pambentukan
+formula utawa term. Loro-lorone bisa disingkirake kanthi ndeleng
+urutan pambentukan minimal.
+
+\begin{defn}[Urutan pambentukan minimal]
+\ollabel{defn:minimal-fseq}
+Urutan pambentukan $\tuple{!A_0, \ldots, !A_n}$ kanggo
+formula~$!A$ iku \emph{urutan pambentukan minimal} kanggo~$!A$
+yen kanggo saben urutan pambentukan liyane~$s$ kanggo~$!A$,
+dawa~$s$ luwih gedhe utawa padha karo~$n+1$.
+
+Semono uga, urutan pambentukan $\tuple{t_0, \ldots, t_n}$
+kanggo term~$t$ iku \emph{urutan pambentukan minimal}
+kanggo~$t$ yen kanggo saben urutan pambentukan liyane~$s$ kanggo~$t$,
+dawa~$s$ luwih gedhe utawa padha karo~$n+1$.
+\end{defn}
+
+Elinga yen sawijining formula utawa term bisa duwe luwih saka
+siji urutan pambentukan minimal, nanging kabeh urutan kasebut
+ngemot rerangken kang persis padha.
+
+\begin{prop}
+\ollabel{prop:subformula-equivs}
+Syarat-syarat iki ekuivalen:
+\begin{enumerate}
+    \item $!B$ iku sub-!!{formula} saka~$!A$.
+    \item $!B$ muncul ing saben urutan pambentukan kanggo~$!A$.
+    \item $!B$ muncul ing sawijining urutan pambentukan minimal
+      kanggo~$!A$.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+Latihan.
+\end{proof}
+
+\begin{prob}
+Buktèkna \olref[fol][syn][fseq]{prop:subformula-equivs}.
+\end{prob}
+
+\begin{history}
+Urutan pambentukan dikenalake dening Raymond Smullyan ing
+buku teks \emph{First-Order Logic} \citep{Smullyan1968}.
+Sipat-sipat tambahan urutan pambentukan ditemtokake dening
+\citet{Zuckerman1973}.
+\end{history}
+
+\end{document}

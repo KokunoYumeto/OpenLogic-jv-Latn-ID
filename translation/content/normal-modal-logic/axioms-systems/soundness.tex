@@ -1,0 +1,58 @@
+% Part: normal-modal-logic
+% Chapter: axioms-systems
+% Section: soundness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{prf}{snd}
+
+\olsection{Kasahihan}
+
+Sistem !!^a{derivation} diarani sahih yen kabeh kang bisa
+!!{derive}d iku valid. Nalika ngrembug sistem modal, yaiku
+!!{derivation}s kang saliyane \Ax{K} uga ngidinake instansi sawetara
+!!{formula}s $!A_1$, \dots,~$!A_n$, kita ngarepake saben formula
+kang !!{derivable} bener ing saben model kang ndadekake $!A_1$,
+\dots, $!A_n$ bener.
+
+\begin{thm}[Teorema Kasahihan]\ollabel{thm:soundness}
+  Yen saben instansi saka $!A_1$, \dots, $!A_n$ valid ing
+  kelas model $\mClass{C}_1$, \dots, $\mClass{C}_n$
+  miturut urutane, mula $\Log{K}!A_1\dots !A_n
+  \Proves !B$ ngimplikasikake yen $!B$ valid ing kelas
+  model $\mClass{C}_1 \cap \dots \cap \mClass{C}_n$.
+\end{thm}
+
+\begin{proof}
+  Kanthi induksi marang dawa bukti. Supaya cekak, tetepa $\mClass{C} =
+  \mClass{C}_1 \cap \dots \cap \mClass{C}_n$.
+  \begin{enumerate}
+  \item Basis induksi: Yen $!B$ nduweni bukti kang dawane~$1$, mula
+    iku instansi tautologis, instansi
+    saka~\Ax{K},\iftag{prvDiamond}{ utawa saka~\Dual{},}{} utawa instansi
+    saka salah siji $!A_1$, \dots,~$!A_n$. Ing kasus kapisan, $!B$
+    valid ing $\mClass{C}$, amarga instansi tautologis valid ing
+    \emph{saben} kelas model, miturut \olref[syn][tau]{prop:valid-taut}.
+    Ing kasus kapindho uga mangkono, miturut
+    \olref[syn][sch]{prop:Kvalid}\iftag{prvDiamond}{ lan
+      \olref[syn][sch]{prop:Dual-valid}}{}. Pungkasan, ing kasus katelu,
+    amarga $!B$ valid ing $\mClass{C}_i$ lan $\mClass{C} \subseteq
+    \mClass{C}_i$, $!B$ uga valid ing $\mClass{C}$ miturut
+    \olref[syn][val]{prop:subset-class}.
+  \item Langkah induksi: Upamane $!B$ nduweni bukti kang dawane $k>1$. Yen
+    $!B$ iku instansi tautologis, instansi saka~\Ax{K},\iftag{prvDiamond}{ utawa saka~\Dual{},}{} utawa instansi saka salah siji $!A_1$,
+    \dots, $!A_n$, kita nindakake kaya ing langkah sadurunge. Dadi upamane $!B$
+    dipikolehi kanthi \MP{} saka !!{formula}s sadurunge $!C \lif !B$ lan
+    $!C$. Banjur $!C \lif !B$ lan $!C$ nduweni bukti kang dawane $<k$, lan
+    miturut hipotesis induksi, loro-lorone valid ing~$\mClass{C}$. Miturut
+    \olref[syn][sch]{prop:soundMP}, $!B$ uga valid ing $\mClass{C}$.
+    Pungkasan, upamane $!B$ dipikolehi kanthi \Nec{} saka $!C$ (mula
+    $!B = \Box!C$). Miturut hipotesis induksi, $!C$ valid ing
+    $\mClass{C}$, lan miturut \olref[syn][val]{prop:Nec-rule}, $!B$
+    uga valid.
+  \end{enumerate}
+\end{proof}
+
+\end{document}

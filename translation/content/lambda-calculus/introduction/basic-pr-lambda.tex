@@ -1,0 +1,40 @@
+% Part: lambda-calculus
+% Chapter: introduction
+% Section: basic-pr-lambda
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{int}{bas}
+\olsection{Fungsi Rekursif Primitif Dhasar iku \usetoken{S}{lambda definable}}
+
+\begin{lem}
+Fungsi $\Zero$, $\Succ$, lan $\Proj{n}{i}$
+iku !!{lambda definable}.
+\end{lem}
+
+\begin{proof}
+% OLPL-234: Fungsi nol iku siji argumen; argumen u ditampa nanging ora digunakake.
+$\Zero$ iku suku
+$\lambd[u][\lambd[x][\lambd[y][y]]]$:
+kanggo saben input, asile numeral Church nol.
+
+Fungsi panerus~$\Succ$ ditetepake kanthi
+$\fn{Succ}(u) = \lambd[x][\lambd[y][x(uxy)]]$.
+Pikirna apa sebabe iki bener; kanggo saben
+numeral $\num{n}$ kang dianggep iterator,
+lan saben fungsi~$f$,
+$\fn{Succ}(\num{n},f)$ iku fungsi kang,
+yen diwenehi input~$y$, ngetrapake $f$
+ping $n$ diwiwiti saka~$y$, banjur
+ngetrapake maneh sepisan.
+
+Ora perlu andharan dawa bab proyeksi:
+$\fn{Proj}^n_i(x_0, \dots,
+x_{n-1}) = x_i$. Tegese, miturut konvensi kita,
+$\fn{Proj}^n_i$ iku suku lambda
+$\lambd[x_0][\dots \lambd[x_{n-1}][x_i]]$.
+\end{proof}
+
+\end{document}

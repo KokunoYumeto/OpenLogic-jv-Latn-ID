@@ -1,0 +1,79 @@
+% Part: first-order-logic
+% Chapter: completeness
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{com}{int}}
+      {\olfileid{pl}{com}{int}}
+
+\olsection{Pambuka}
+
+Teorema kelengkapan iku salah siji asil kang paling dhasar ngenani
+logika. Ana rong formulasi, lan kita bakal mbuktekake yen kalorone
+ekuivalen. Ing formulasi kapisan, teorema iki nyatakake prakara dhasar
+ngenani sesambungan antarane akibat semantis lan sistem
+!!{derivation} kita: yen !!a{sentence}~$!A$ dadi akibat saka sawatara
+!!{sentence}s~$\Gamma$, uga ana !!a{derivation} kang netepake
+$\Gamma \Proves !A$. Mula, sistem !!{derivation} iku sakuwat-kuwate
+tanpa mbuktekake prakara kang sejatine ora dadi akibat.
+
+Ing formulasi kapindho, teorema iki bisa dirumusake minangka asil
+anane model: saben himpunan !!{sentence}s kang konsisten bisa
+dicukupi. Konsistensi iku gagasan teoretis-bukti: tegese sistem
+!!{derivation} kita ora bisa ngasilake !!{derivation}s tartamtu.
+Nanging, apa mung amarga ora ana !!{derivation}s jinis tartamtu
+saka~$\Gamma$ banjur mesthi ana
+\iftag{FOL}{!!a{structure}~$\Struct{M}$}{!!{valuation}{~$\pAssign{v}$}
+kanthi $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$}? Sadurunge
+teorema kelengkapan pisanan dibuktekake---malah sadurunge ana sistem
+!!{derivation} kang saiki digunakake---matematikawan Jerman gedhe,
+David Hilbert, duwe panemu yen konsistensi teori matematika njamin
+anane objek kang dirembug teori mau. Ing layang marang Gottlob Frege,
+dheweke nyatakake mangkene:
+\begin{quote}
+  Yen aksioma-aksioma apa wae kang diwenehake, bebarengan karo kabeh
+  akibate, ora padha sulaya, aksioma-aksioma iku bener lan samubarang
+  kang ditegesi dening aksioma kasebut ana. Kanggo aku, iki paugeran
+  kabeneran lan anane.
+\end{quote}
+Frege mbantah kanthi tegas. Formulasi kapindho teorema kelengkapan
+nuduhake yen Hilbert bener paling ora miturut teges iki: yen
+aksioma-aksioma konsisten, mula ana \emph{sawijining}
+\iftag{FOL}{!!{structure}}{!!{valuation}} kang ndadekake kabeh
+aksioma mau bener.
+
+Ana sebab liyane kang ndadekake teorema kelengkapan---utawa, luwih
+trep, buktine---wigati. Teorema iki duwe sawetara akibat wigati, lan
+sawetara bakal kita rembug dhewe. Contone, amarga saben !!{derivation}
+kang nuduhake $\Gamma \Proves !A$ iku winates lan mula mung bisa
+nggunakake !!{sentence}s kanthi cacah winates saka~$\Gamma$, saka
+teorema kelengkapan nderek manawa yen $!A$ dadi akibat saka~$\Gamma$,
+ukara iku wis dadi akibat saka sawijining subhimpunan winates
+saka~$\Gamma$. Iki diarani \emph{kekompakan}. Kanthi ekuivalen, yen
+saben subhimpunan winates saka~$\Gamma$ konsisten, mula $\Gamma$
+dhewe mesthi konsisten.
+
+Sanadyan teorema kekompakan nderek saka teorema kelengkapan kanthi
+dalan ora langsung lumantar !!{derivation}s, \emph{bukti} teorema
+kelengkapan uga bisa digunakake kanggo mbuktekake kekompakan kanthi
+langsung. Cathetan koreksi sumber OLPL-044: sumber Inggris ngulang
+artikel the ing frasa the proof of; terjemahan iki mulihake frasa
+tunggal kang dikarepake. Bukti kasebut njupuk himpunan !!{sentence}s
+kanthi sipat tartamtu---konsistensi---lan mbangun !!a{structure} saka
+himpunan iki kang nduweni sipat tartamtu (ing perkara iki, struktur
+kasebut nyukupi himpunan mau). Konstruksi kang meh padha bisa
+digunakake kanggo mbuktekake kekompakan kanthi langsung, kanthi miwiti
+saka himpunan !!{sentence}s kang saben subhimpunan winatese bisa
+dicukupi tinimbang saka himpunan kang konsisten.
+\iftag{FOL}{Konstruksi kasebut uga ngasilake akibat liyane, umpamane
+  saben himpunan !!{sentence}s kang bisa dicukupi duwe model winates
+  utawa !!{denumerable}s. (Asil iki diarani teorema
+  L\"owenheim--Skolem.) Umume, konstruksi !!{structure}s saka
+  himpunan !!{sentence}s asring digunakake ing logika, lan sok-sok uga
+  ing filsafat.}{}
+
+\end{document}

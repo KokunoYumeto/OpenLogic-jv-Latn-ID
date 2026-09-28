@@ -1,0 +1,95 @@
+% Part: first-order-logic
+% Chapter: beyond
+% Section: many-sorted-logic
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{byd}{msl}
+
+\olsection{Logika Akeh Jinis}
+
+Ing logika sepisanan, variabel lan kuantor
+nglimputi mung siji !!{domain}. Nanging asring
+migunani yen ana maneka !!{domain}s
+(kang padha pisah): upamane, kita bisa mbutuhake
+!!a{domain} wilangan, !!a{domain} objek geometri,
+!!a{domain} fungsi saka wilangan menyang
+wilangan, !!a{domain} grup abelian, lan liya-liyane.
+
+Logika akeh jinis nyedhiyakake kerangka kaya
+mangkono. Kita miwiti saka dhaptar "jinis";
+"jinis" sawijining objek nuduhake
+"!!{domain}" kang kudune dienggoni objek iku.
+Sabanjure ana !!{variable}s lan kuantor
+kanggo saben jinis, lan (lumrahe) siji
+!!{identity} kanggo saben jinis. Fungsi
+lan relasi uga diwatesi miturut "jinis"
+objek kang bisa dadi argumene. Saliyane iku,
+aturan logika sepisanan lumrahe tetep
+digunakake, kanthi aturan kuantor kang
+diulang kanggo saben jinis.
+
+Upamane, kanggo nliti hubungan internasional
+kita bisa milih basa kanthi rong jinis objek,
+warga Prancis lan warga Jerman. Kita bisa
+nduweni relasi unari "ngombe anggur" kanggo
+objek jinis kapisan; relasi unari liyane
+"mangan wurst" kanggo objek jinis kapindho;
+lan relasi binari "mbentuk pasangan bojo
+lintas negara" kanthi rong argumen, kang
+argumen kapisane saka jinis kapisan lan
+argumen kapindhone saka jinis kapindho.
+Yen kita nggunakake variabel $a$, $b$, $c$
+kanggo warga Prancis lan $x$, $y$, $z$
+kanggo warga Jerman, mula
+\[
+\lforall[a][\lforall x][(\Atom{\Obj{MarriedTo}}{a,x} \lif
+(\Atom{\Obj{DrinksWine}}{a} \lor \lnot \Atom{\Obj{EatsWurst}}{x})]]
+\]
+nyatakake yen sembarang warga Prancis nikah
+karo warga Jerman, mula warga Prancis iku
+ngombe anggur utawa warga Jerman iku ora
+mangan wurst.
+
+Logika akeh jinis bisa dilebokake ing logika
+sepisanan kanthi cara kang lumrah: kabeh
+objek saka !!{domain}s kang akeh jinis iku
+digabung dadi siji !!{domain} logika sepisanan,
+!!{predicate}s unari digunakake kanggo
+nyathet jinis-jinis kasebut, lan kuantor
+diwatesi miturut jinis. Upamane, basa
+logika sepisanan kang cocog karo tuladha
+ing ndhuwur bakal nduweni !!{predicate}s
+unari "$\Obj{German}$" lan "$\Obj{French}$",
+ing sajabane relasi liyane kang wis kasebut,
+kanthi syarat jinis ing relasi kasebut dicopot.
+Kuantor kang diwatesi jinis
+$\lforall[x][!A]$, ing ngendi $x$ iku
+!!a{variable} saka jinis Jerman, diterjemahake dadi
+\[
+\lforall[x][(\Atom{\Obj{German}}{x} \lif !A)].
+\]
+Kita kudu nambah aksioma kang njamin
+yen jinis-jinis iku padha pisah---upamane,
+$\lforall[x][\lnot (\Atom{\Obj{German}}{x} \land
+  \Atom{\Obj{French}}{x})]$---uga aksioma
+kang njamin yen "ngombe anggur" mung bener
+kanggo objek kang nyukupi predikat
+$\Atom{\Obj{French}}{x}$, lan liya-liyane.
+Kanthi tata cara lan aksioma kasebut,
+ora angel nuduhake yen !!{sentence}s
+logika akeh jinis bisa diterjemahake
+dadi !!{sentence}s logika sepisanan,
+lan !!{derivation}s logika akeh jinis
+bisa diterjemahake dadi !!{derivation}s
+logika sepisanan. Kajaba iku,
+!!{structure}s logika akeh jinis uga
+"diterjemahake" dadi !!{structure}s
+logika sepisanan kang cocog lan
+kosok balene, mula kita uga nduweni
+teorema kelengkapan kanggo logika
+akeh jinis.
+
+\end{document}

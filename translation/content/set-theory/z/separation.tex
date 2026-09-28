@@ -1,0 +1,121 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{z}{sep}
+\olsection{Pamisahan}
+
+Kita miwiti kanthi prinsip kanggo ngganti Komprehensi Naif:
+
+\begin{axiom}[Skema Pamisahan] Kanggo saben formula $\phi(x)$, iki
+aksioma: kanggo sembarang $A$, himpunan $\Setabs{x \in A}{\phi(x)}$ ana.
+\end{axiom}
+
+Gatekna yen iki dudu siji aksioma. Iki \emph{skema} aksioma.
+Ana aksioma Pamisahan kang \emph{tanpa wates cacahé}; siji
+kanggo saben formula $\phi(x)$. Skema iki uga bisa
+(lan lumrahe pancen) ditulis kaya mangkene:
+
+\begin{defish}
+Kanggo sembarang formula $\phi(x)$ kang ora ngemot ``$S$'',
+iki sawijining aksioma:
+\[
+	\forall A \exists S \forall x(x \in S \liff (\phi(x) \land x \in A)).
+\]
+\end{defish}
+
+Miturut konvensi kang kasebut ing wiwitan
+\olref[sth][][]{part}, formula-formula~$\phi$ ing aksioma
+Pamisahan bisa ngemot parameter.\footnote{Kanggo nerangake
+tegese, delengen rembugan pas sawise
+\olref[sfr][infinite][induction]{natinductionschema}.}
+
+Pamisahan langsung didhukung dening konsepsi
+kumulatif-iteratif tumrap himpunan kang wis kita aturake.
+Kanggo ndeleng sebabe, upamane $A$ iku himpunan.
+Mula $A$ kawangun ing sawenehing tataran~$S$
+(miturut \stageshier). Amarga $A$ kawangun ing tataran~$S$,
+kabeh anggotane $A$ wis kawangun sadurunge tataran $S$
+(miturut \stagesacc). Saiki nimbang mligine kabeh himpunan
+kang dadi anggota $A$ lan uga nyukupi $\phi$; cetha yen
+himpunan-himpunan iki kabeh wis kawangun sadurunge
+tataran~$S$. Mula himpunan-himpunan iki kawangun dadi
+himpunan $\Setabs{x \in A}{\phi(x)}$ ing tataran~$S$
+uga (miturut \stagesacc).
+
+Beda karo Komprehensi Naif, prinsip iki nyingkiri Paradoks
+Russell. Kita ora bisa langsung negesake anane himpunan
+$\Setabs{x}{x \notin x}$. Nanging, yen \emph{diwenehi}
+sawijining himpunan~$A$, kita bisa negesake anane himpunan
+$R_A = \Setabs{x \in A}{x \notin x}$. Nanging kang bisa
+dibuktekake mung $R_A \notin R_A$ lan $R_A \notin A$,
+lan ora ana kang gawe kuwatir saka loro iki.
+
+Nanging Pamisahan nduweni akibat langsung kang wigati:
+
+\begin{thm}\ollabel{thm:NoUniversalSet}
+Ora ana himpunan \emph{universal}, yaiku
+$\Setabs{x}{x = x}$ ora ana.
+\end{thm}
+
+\begin{proof}
+Kanggo bukti kanthi kontradiksi, upamane $V$ himpunan universal.
+Miturut Pamisahan, mula $R =
+\Setabs{x \in V}{x \notin x} = \Setabs{x}{x \notin x}$ ana,
+lan iki lelawanan karo Paradoks Russell.
+\end{proof}
+
+Ora anane himpunan universal---malah sifat tanpa wates pungkasan
+saka hierarki himpunan---minangka salah siji gagasan dhasar
+ing konsepsi kumulatif-iteratif. Mula migunani yen kita
+ndeleng yen kanthi intuitif asil iki uga bisa digayuh
+liwat cara liyane. Himpunan universal mesthi dadi
+!!a{element} saka awake dhewe. Nanging miturut konsepsi
+kumulatif-iteratif, saben himpunan pisanan katon ing
+tataran kang luwih pungkasan tinimbang saben !!{element}s-e.
+Iki nuduhake yen \emph{ora ana} himpunan kang dadi anggota
+awake dhewe. Amarga himpunan kaya mangkono kudu pisanan
+katon ing tataran kang luwih pungkasan tinimbang tataran
+pisanan nalika dheweke dhewe katon, lan iku mokal.
+(Ing \olref[sth][spine][rank]{defnsetrank}, kita bakal
+ndeleng carane nggawe panjelasan iki luwih trep nganggo
+gagasan ``rank'' sawijining himpunan. Nanging kanggo iku
+kita isih butuh sawetara aksioma liyane.)
+
+Iki sawetara akibat liyane saka Pamisahan lan Ekstensionalitas.
+
+\begin{prop}\ollabel{prop:emptyexists}
+Yen ana himpunan apa wae, mula $\emptyset$ ana.
+\end{prop}
+
+\begin{proof}
+Yen $A$ iku himpunan, mula miturut Pamisahan
+$\emptyset = \Setabs{x \in A}{x \neq x}$ ana.
+\end{proof}
+
+\begin{prop}
+$A \setminus B$ ana kanggo sembarang himpunan $A$ lan $B$.
+\end{prop}
+
+\begin{proof}
+$A \setminus B = \Setabs{x \in A}{x \notin B}$ ana miturut Pamisahan.
+\end{proof}
+
+Uga bisa dibuktekake yen irisan saka (meh) sembarang kulawarga ana:
+
+\begin{prop}\ollabel{prop:intersectionsexist}
+Yen $A \neq \emptyset$, mula $\bigcap A = \Setabs{x}{(\forall y \in A)x \in y}$ ana.
+\end{prop}
+
+\begin{proof}
+Upamane $A \neq \emptyset$, mula ana sawenehing $c \in A$.
+Banjur $\bigcap A =
+\Setabs{x}{(\forall y \in A)x \in y} = \Setabs{x \in c}{(\forall y \in
+A)x \in y}$, kang ana miturut Pamisahan.
+\end{proof}
+
+Nanging gatekna syarat $A \neq \emptyset$; amarga $\bigcap
+\emptyset$ bakal dadi himpunan universal kanthi vakum,
+kang lelawanan karo \olref{thm:NoUniversalSet}.
+
+\end{document}

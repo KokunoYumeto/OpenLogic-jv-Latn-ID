@@ -1,0 +1,198 @@
+% Part: second-order-logic
+% Chapter: sol-and-sets
+% Section: power-of-continuum
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sol}{set}{pow}
+
+\olsection{Kardinalitas Kontinuum}
+
+\begin{explain}
+Ing logika orde kapindho kita bisa nguwantifikasi
+subhimpunan !!{domain}, nanging ora bisa nguwantifikasi
+himpunan kang anggotane subhimpunan-subhimpunan !!{domain}.
+Kanggo nindakake iki kanthi langsung, kita mbutuhake
+logika \emph{orde katelu}. Umpamane, yen arep nyatakake
+Teorema Cantor yen ora ana fungsi !!{injective} saka
+himpunan pangkat sawijining himpunan menyang himpunan iku
+dhewe, kita bisa nyoba ngrumusake mangkene:
+``kanggo saben himpunan~$X$ lan saben himpunan~$P$,
+yen $P$ iku himpunan pangkat saka~$X$, mula
+ora $\cardle{P}{X}$''. Kanggo nyatakake yen $P$
+iku himpunan pangkat saka~$X$, kita kudu ngrumusake
+yen !!{element}s saka $P$ iku persis kabeh subhimpunan
+saka~$X$, dadi kurang luwih
+$\lforall[Y][(P(Y) \liff Y \subseteq X)]$.
+Masalahe ana ing $P(Y)$: iki dudu !!a{formula}
+logika orde kapindho, amarga mung suku kang bisa dadi
+argumen variabel relasi siji-papan kaya~$P$.
+
+Nanging kita bisa \emph{nyimulasi} kuantifikasi
+marang himpunan kang anggotane himpunan, yen
+domaine cukup gedhe. Gagasane nggunakake kasunyatan
+yen relasi rong-papan~$R$ nggayutake !!{element}s
+!!{domain} karo !!{element}s !!{domain}.
+Yen ana~$R$ kaya mangkono, kita bisa nglumpukake
+kabeh !!{element}s kang gegayutan karo
+sawijining~$x$ miturut~$R$: $\Setabs{y \in
+  \Domain{M}}{R(x,y)}$ iku himpunan kang
+``dikodhe'' dening~$x$. Kosok baline, yen
+$Z \subseteq \Pow{\Domain{M}}$ iku sawijining
+kulawarga subhimpunan saka~$\Domain{M}$,
+lan cacah !!{element}s ing~$\Domain{M}$
+paling ora padha karo cacah himpunan ing~$Z$,
+mula uga ana relasi~$R \subseteq \Domain{M}^2$
+saengga saben $Y \in Z$ dikodhe dening
+sawijining~$x$ nganggo~$R$.
+\end{explain}
+
+\begin{defn}
+Yen $R \subseteq \Domain{M}^2$, mula
+$x$ \emph{ngodhe miturut~$R$}
+$\Setabs{y \in \Domain{M}}{R(x, y)}$.
+\end{defn}
+
+Yen !!a{element}~$x \in \Domain{M}$ ngodhe
+miturut~$R$ sawijining himpunan
+$Z \subseteq \Domain{M}$, mula himpunan
+$Y \subseteq \Domain{M}$ ngodhe himpunan kang
+anggotane himpunan, yaiku himpunan-himpunan kang
+dikodhe dening !!{element}s saka~$Y$. Dadi
+himpunan $Y$ bisa ngodhe miturut~$R$
+$\Pow{X}$. Iki kedadeyan yen lan mung yen kanggo
+saben $Z \subseteq X$, ana $x \in Y$ kang
+ngodhe miturut~$R$ himpunan~$Z$, lan saben
+$x \in Y$ ngodhe miturut~$R$ sawijining~$Z \subseteq X$.
+
+\begin{prop}
+!!{formula}
+  \[
+  \fn{Codes}(x, R, Z) \ident \lforall[y][(Z(y) \liff
+    R(x, y))]
+  \]
+nyatakake yen $s(x)$ ngodhe miturut~$s(R)$
+himpunan~$s(Z)$. !!{formula}
+\begin{multline*}
+  \fn{Pow}(Y, R, X) \ident \\
+  \lforall[Z][(Z \subseteq X \lif \lexists[x][(Y(x) \land
+    \fn{Codes}(x, R, Z))])] \land {} \\
+  \lforall[x][(Y(x) \lif
+    \lforall[Z][(\fn{Codes}(x, R, Z) \lif Z \subseteq X)])]
+\end{multline*}
+nyatakake yen $s(Y)$ ngodhe miturut~$s(R)$
+himpunan pangkat saka~$s(X)$, yaiku
+unsur-unsur saka $s(Y)$ ngodhe miturut~$s(R)$ persis
+kabeh subhimpunan saka $s(X)$.
+\end{prop}
+
+\begin{explain}
+Kanthi cara iki kita bisa nyatakake pratelan ngenani
+himpunan pangkat kanthi nguwantifikasi kode
+subhimpunan, dudu subhimpunane dhewe. Umpamane,
+Teorema Cantor saiki bisa dinyatakake kanthi nyebut
+yen ora ana fungsi !!{injective} saka himpunan
+unsur kang dadi kode kanggo himpunan pangkat
+saka~$X$ menyang~$X$ dhewe.
+\end{explain}
+
+\begin{prop}
+Ukara
+\begin{multline*}
+  \lforall[X][\lforall[Y][\lforall[R][(\fn{Pow}(Y, R, X) \lif \\
+      \lnot \lexists[u][(\lforall[x][\lforall[y][(\eq[u(x)][u(y)] \lif
+            \eq[x][y])]] \land {}\\
+        \lforall[x][(Y(x) \lif X(u(x)))])])]]]
+\end{multline*}
+iku valid.
+\end{prop}
+
+\begin{explain}
+Himpunan pangkat saka himpunan !!a{denumerable}
+iku !!{nonenumerable}, mula kardinalitase luwih
+gedhe tinimbang kardinalitas sembarang himpunan
+!!{denumerable} (yaiku $\aleph_0$). Ukuran
+$\Pow{\Nat}$ diarani ``kardinalitas kontinuum'',
+amarga padha ukurane karo titik-titik ing garis
+wilangan nyata, yaiku~$\Real$. Yen !!{domain}
+cukup gedhe kanggo ngodhe himpunan pangkat
+saka himpunan !!a{denumerable}, kita bisa
+nyatakake yen sawijining himpunan ukurane
+kontinuum kanthi nyebut yen himpunan iku
+padha cacahe karo sawijining himpunan~$Y$
+kang ngodhe himpunan pangkat saka himpunan~$X$
+kang ukurane~$\aleph_0$. (Yen domaine ora
+cukup gedhe, yaiku ora ngemot subhimpunan
+kang padha cacahe karo~$\Real$, mula uga
+ora ana relasi kang ngodhe~$\Pow{X}$.)
+\end{explain}
+
+\begin{prop}
+Yen $\cardle{\Real}{\Domain{M}}$, mula
+!!{formula}
+\begin{multline*}
+\fn{Cont}(Y) \ident
+\lexists[X][\lexists[R][((\fn{Aleph}_0(X) \land
+      \fn{Pow}(Y, R, X)) \land \\
+      \lforall[x][\lforall[y][((Y(x) \land {}
+      Y(y) \land \lforall[z][R(x,z) \liff R(y,z)]) \lif \eq[x][y])]])]]
+\end{multline*}
+nyatakake yen $\cardeq{s(Y)}{\Real}$.
+\end{prop}
+
+\begin{proof}
+  $\fn{Pow}(Y, R, X)$ nyatakake yen $s(Y)$ ngodhe
+  miturut~$s(R)$ himpunan pangkat
+  saka~$s(X)$, kang miturut $\fn{Aleph}_0(X)$
+  bisa dienumerasi. Dadi $s(Y)$ paling ora
+  padha gedhene karo kontinuum, sanadyan bisa
+  luwih gedhe yen sawetara unsur $s(Y)$ ngodhe
+  subhimpunan saka~$X$ kang padha.
+  Kahanan iki dicegah dening konjungsi pungkasan,
+  kang mbutuhake sesambungan antarane unsur
+  $s(Y)$ lan subhimpunan saka $s(X)$ lumantar
+  $s(R)$ iku !!{injective}.
+\end{proof}
+
+\begin{prop}
+$\cardeq{\Domain{M}}{\Real}$ yen lan mung yen
+\begin{multline*}
+  \Sat{M}{\lexists[Y][(\lforall[x][Y(x)] \land \fn{Cont}(Y))]}.
+\end{multline*}
+\end{prop}
+
+\begin{explain}
+Hipotesis Kontinuum iku pratelan yen ukuran
+kontinuum minangka kardinalitas !!{nonenumerable}
+kapisan, yaiku yen $\Pow{\Nat}$
+ukurane~$\aleph_1$.
+\end{explain}
+
+\begin{prop}
+Hipotesis Kontinuum bener yen lan mung yen
+\[\fn{CH} \ident
+\lforall[X][(\fn{Aleph}_1(X) \liff \fn{Cont}(X))]\]
+valid.
+\end{prop}
+
+Gatekna yen ora bener yen $\lnot \fn{CH}$
+valid yen lan mung yen Hipotesis Kontinuum
+salah. Ing !!a{enumerable} domain, ora ana
+subhimpunan kang ukurane~$\aleph_1$ lan
+uga ora ana subhimpunan kang ukurane
+kontinuum, mula $\fn{CH}$ tansah bener
+ing !!a{enumerable} domain. Nanging kita
+bisa menehi ukara liya kang valid yen lan
+mung yen Hipotesis Kontinuum salah:
+
+\begin{prop}
+Hipotesis Kontinuum salah yen lan mung yen
+\[\fn{NCH} \ident
+\lforall[X][(\fn{Cont}(X) \lif \lexists[Y][(Y \subseteq X \land \lnot
+    \fn{Count}(Y) \land \lnot \cardeq{X}{Y})])]\]
+valid.
+\end{prop}
+
+\end{document}

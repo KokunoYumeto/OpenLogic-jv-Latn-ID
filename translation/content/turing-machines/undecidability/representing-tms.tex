@@ -1,0 +1,250 @@
+% Part: turing-machines
+% Chapter: undecidability
+% Section: representing-tms
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{tur}{und}{rep}
+\olsection{Nggambarake Mesin Turing}
+
+\begin{explain}
+Kanggo nggambarake mesin Turing lan tumindake nganggo
+!!a{sentence} saka logika orde kapisan, kita kudu
+netepake basa kang cocog. Basa iki dumadi saka rong
+bagean: !!{predicate}s kanggo njlentrehake konfigurasi
+mesin, lan ekspresi kanggo menehi nomer marang
+langkah-langkah lumakune mesin (``wayah'') lan
+panggonan ing pita.
+
+Kita ngenalake rong jinis !!{predicate}s kang
+padha-padha nduwé rong papan: kanggo saben
+kahanan~$q$, !!a{predicate}~$\Obj Q_q$,
+lan kanggo saben simbol pita~$\sigma$,
+!!a{predicate}~$\Obj S_\sigma$. Kang kapisan
+ngidini kita njlentrehake kahanan~$M$ lan
+panggonan sirah maca-nulis, dene kang kapindho
+ngidini kita njlentrehake isi pita.
+
+Kanggo nyatakake panggonan sirah maca-nulis
+lan cacahe langkah kang wis ditindakake,
+kita mbutuhake cara kanggo nyatakake wilangan.
+Kanggo iki kita nganggo !!a{constant}~$\Obj 0$
+lan fungsi $1$-papan~$\prime$, yaiku fungsi
+penerus. Miturut pranatan, fungsi iki ditulis
+\emph{sawise} argumene (tanpa tandha kurung).
+
+Kanggo saben wilangan $n$ ana suku baku~$\num{n}$,
+yaiku \emph{numeral} kanggo~$n$, kang
+nggambarake wilangan iku ing~$\Lang L_M$.
+$\num{0}$ yaiku $\Obj 0$, $\num{1}$
+yaiku $\Obj 0'$, $\num{2}$ yaiku $\Obj 0''$,
+lan sateruse. Sacara luwih formal:
+\begin{align*}
+\num{0} & = \Obj 0 \\
+\num{n+1} &= \num{n}'
+\end{align*}
+Suku $\num{0}$, yaiku $\Obj 0$, nyebut
+panggonan paling kiwa ing pita lan wektu
+sadurunge langkah lumaku kapisan (konfigurasi
+wiwitan). Suku $\num{1}$, yaiku $\Obj 0'$,
+nyebut kothak ing sisih tengen kothak paling
+kiwa lan wektu sawisé langkah kapisan,
+lan sateruse.
+
+Kita uga ngenalake !!a{predicate}~$<$ kanggo
+nyatakake urutan panggonan ing pita (kanthi
+teges ``ing sisih kiwa'') lan urutan langkah
+lumaku (kanthi teges ``sadurunge'').
+
+Sawisé basane ditetepake, kita dhaptar
+``aksioma'' saka $!T(M, w)$, yaiku
+!!{sentence}s kang bebarengan njlentrehake
+tumindake~$M$ nalika diwenehi input~$w$.
+Ana !!{sentence}s kang netepake syarat
+kanggo $\Obj 0$, $\prime$, lan $<$,
+!!{sentence}s kang njlentrehake konfigurasi
+input, lan !!{sentence}s kang njlentrehake
+konfigurasi $M$ sawisé nindakake instruksi
+tartamtu.
+\end{explain}
+
+\begin{defn}
+  \ollabel{defn:tm-descr}
+Kanggo mesin Turing $M = \tuple{Q, \Sigma, q_0, \delta}$,
+basa~$\Lang L_M$ dumadi saka:
+\begin{enumerate}
+\item !!{predicate} rong papan $\Obj Q_q(x, y)$
+  kanggo saben kahanan~$q \in Q$. Miturut intuisi,
+  $\Obj Q_q(\num{m}, \num{n})$ nyatakake
+  ``sawisé $n$ langkah, $M$ ana ing kahanan~$q$
+  lan lagi maca kothak kapangka-$m$.''
+\item !!{predicate} rong papan $\Obj S_\sigma(x, y)$
+  kanggo saben simbol~$\sigma\in \Sigma$.
+  Miturut intuisi, $\Obj S_\sigma(\num{m},
+  \num{n})$ nyatakake ``sawisé $n$ langkah,
+  kothak kapangka-$m$ ngemot simbol~$\sigma$.''
+\item !!{constant} $\Obj 0$
+\item !!{function} siji papan $\prime$
+\item !!{predicate} rong papan $<$
+\end{enumerate}
+\end{defn}
+
+!!{sentence}s kang njlentrehake lumakune mesin Turing~$M$
+kanthi input $w = \sigma_{i_1}\dots\sigma_{i_k}$
+yaiku ing ngisor iki:
+\begin{enumerate}
+\item Aksioma kang njlentrehake wilangan lan~$<$:
+\begin{enumerate}
+\item !!^a{sentence} kang nyatakake yen saben wilangan
+luwih cilik tinimbang peneruse:
+\[
+\lforall[x][x < x']
+\]
+\item !!^a{sentence} kang mesthekake yen $<$ transitif:
+\[
+\lforall[x][\lforall[y][\lforall[z][
+      ((x < y \land y < z) \lif x < z)]]]
+\]
+\end{enumerate}
+\item Aksioma kang njlentrehake konfigurasi input:
+\begin{enumerate}
+\item Sawisé $0$~langkah---sadurunge mesin miwiti
+  pakaryane---$M$ ana ing kahanan wiwitan~$q_0$
+  lan lagi maca kothak~$1$:
+\[
+\Obj Q_{q_0}(\num{1}, \num{0})
+\]
+% OLPL-155: Kanggo k=0, runtutan simbol input kosong lan suku sigma_i1 ing tampilan iki butuh pranatan konjungsi kosong.
+\item Kothak-kothak $k+1$ kapisan ngemot simbol
+  $\TMendtape$, $\sigma_{i_1}$, \dots, $\sigma_{i_k}$:
+\[
+\Obj S_\TMendtape(\num{0}, \num{0}) \land
+\Obj S_{\sigma_{i_1}}(\num{1}, \num{0}) \land
+\dots \land
+\Obj S_{\sigma_{i_k}}(\num{k}, \num{0})
+\]
+\item Ing kothak liyane, pita kosong:
+\[
+\lforall[x][(\num{k} < x \lif \Obj S_\TMblank(x, \num{0}))]
+\]
+\end{enumerate}
+\item Aksioma kang njlentrehake transisi saka
+  sawijining konfigurasi menyang konfigurasi sabanjure:
+
+% OLPL-154: Sumber nyebut klausa iki ukara, nanging x lan y tetep variabel bebas ing A(x,y); iki rumus mbukak.
+Kanggo bagean sabanjure, $!A(x, y)$ yaiku
+konjungsi kabeh !!{sentence}s kanthi wujud
+\[
+\lforall[z][
+  (((z < x \lor x < z) \land \Obj S_\sigma(z, y))
+  \lif \Obj S_\sigma(z, y'))]
+\]
+ing ngendi $\sigma \in \Sigma$.
+Kita nganggo $!A(\num{m},\num{n})$ kanggo
+nyatakake ``kajaba ing kothak~$m$, isi pita
+sawisé $n+1$ langkah padha karo isi pita
+sawisé $n$ langkah.''
+\begin{enumerate}
+\item \ollabel{rep-right} Kanggo saben instruksi $\delta(q_i, \sigma) =
+  \tuple{q_j, \sigma', \TMright}$, !!{sentence} iki:
+\begin{align*}
+& \lforall[x][\lforall[y][(
+   (\Obj Q_{q_i}(x, y) \land \Obj S_{\sigma}(x, y)) \lif {}]] \\
+&\qquad   (\Obj Q_{q_j}(x', y') \land \Obj S_{\sigma'}(x, y') \land
+!A(x, y)))
+\end{align*}
+Iki nyatakake yen sawisé~$y$ langkah, mesin ana
+ing kahanan~$q_i$ lan lagi maca kothak~$x$
+kang ngemot simbol~$\sigma$, mula sawisé
+$y+1$ langkah mesin maca kothak~$x+1$,
+ana ing kahanan~$q_j$, kothak~$x$ saiki
+ngemot~$\sigma'$, lan saben kothak saliyane~$x$
+ngemot simbol kang padha kaya sawisé~$y$ langkah.
+
+\item \ollabel{rep-left} Kanggo saben instruksi $\delta(q_i, \sigma) =
+  \tuple{q_j, \sigma', \TMleft}$, !!{sentence} iki:
+\begin{align*}
+& \lforall[x][\lforall[y][
+    ((\Obj Q_{q_i}(x', y) \land \Obj S_{\sigma}(x', y)) \lif {}]]\\
+& \qquad   (\Obj Q_{q_j}(x, y') \land \Obj S_{\sigma'}(x', y') \land
+!A(x, y))) \land {}\\
+& \lforall[y][((\Obj Q_{q_i}(\num{0}, y) \land \Obj S_{\sigma}(\num{0},
+    y)) \lif {}]\\
+& \qquad (\Obj Q_{q_j}(\num{0}, y') \land \Obj S_{\sigma'}(\num{0},
+  y') \land !A(\num{0}, y)))
+\end{align*}
+Gatekna sedhela carane iki lumaku: saiki kita
+ora miwiti nganggo ``yen maca kothak~$x$ \dots'',
+nanging nganggo ``yen maca kothak $x+1$ \dots''.
+Obah menyang kiwa ateges ing langkah sabanjure
+mesin maca kothak~$x$. Nanging kothak kang
+ditulisi yaiku~$x+1$. Kita nindakake iki
+amarga ora nduwé operasi pangurangan utawa
+fungsi kang menehi wilangan sadurunge.
+
+Elinga yen wilangan kang wujude $x+1$ yaiku
+$1$, $2$, \dots; mula iki durung nyakup
+kahanan nalika mesin maca kothak~$0$ lan
+kudu obah menyang kiwa (kang mesthi ora
+bisa---mesin mung tetep ing panggonane).
+Kasus mligi iki dicakup dening konjungsi
+kapindho: yen sawisé $y$ langkah mesin
+maca kothak~$0$ ing kahanan $q_i$ lan
+kothak~$0$ ngemot simbol~$\sigma$,
+mula sawisé $y+1$ langkah mesin isih
+maca kothak~$0$, saiki ana ing kahanan~$q_j$,
+simbol ing kothak~$0$ yaiku $\sigma'$,
+lan kothak-kothak saliyane kothak~$0$
+ngemot simbol kang padha kaya sawisé
+$y$~langkah.
+\item \ollabel{rep-stay} Kanggo saben instruksi $\delta(q_i, \sigma) =
+  \tuple{q_j, \sigma', \TMstay}$, !!{sentence} iki:
+\begin{align*}
+& \lforall[x][\lforall[y][(
+   (\Obj Q_{q_i}(x, y) \land \Obj S_{\sigma}(x, y)) \lif {}]] \\
+&\qquad   (\Obj Q_{q_j}(x, y') \land \Obj S_{\sigma'}(x, y') \land
+!A(x, y)))
+\end{align*}
+\end{enumerate}
+\end{enumerate}
+Tetepna $!T(M, w)$ minangka konjungsi kabeh
+!!{sentence}s ing ndhuwur kanggo mesin Turing~$M$
+lan input~$w$.
+
+Kanggo nyatakake yen~$M$ pungkasane mandheg,
+kita kudu nemokake !!{sentence} kang nyatakake
+``sawisé sawetara langkah, fungsi transisi
+ora ditegesi.'' Tetepna $X$~minangka himpunan
+kabeh pasangan $\tuple{q, \sigma}$ kang
+$\delta(q, \sigma)$ ora ditegesi.
+Banjur $!E(M, w)$ yaiku !!{sentence}
+\[
+\lexists[x][\lexists[y][(\bigvee_{\tuple{q, \sigma} \in
+      X}(\Obj Q_q(x, y) \land \Obj S_\sigma(x, y)))]]
+\]
+
+Yen kita nganggo mesin Turing kang nduwé
+kahanan mandheg mligi~$h$, iki malah luwih
+gampang: !!{sentence}~$!E(M, w)$
+\[
+\lexists[x][\lexists[y][\Obj Q_h(x, y)]]
+\]
+nyatakake yen mesin pungkasane mandheg.
+
+\begin{prop}
+\ollabel{prop:mlessk}
+Yen $m < k$, mula $!T(M, w) \Entails \num{m} < \num{k}$
+\end{prop}
+
+\begin{proof}
+Latihan.
+\end{proof}
+
+\begin{prob}
+Buktekna \olref[tur][und][rep]{prop:mlessk}.
+(Pituduh: gunakna induksi marang $k-m$).
+\end{prob}
+
+\end{document}

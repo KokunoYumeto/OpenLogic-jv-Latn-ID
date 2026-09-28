@@ -1,0 +1,183 @@
+% Part: normal-modal-logic
+% Chapter: syntax-and-semantics
+% Section: schemas
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{syn}{sch}
+
+\olsection{Skema lan Validitas}
+
+\begin{defn}
+  Sawijining \emph{skema} iku himpunan !!{formula}s kang ngemot kabeh
+  lan mung instansi substitusi saka sawijining !!{formula} modal~$!C$, yaiku
+  \[
+  \Setabs{!B}{\lexists[!D_1], \dots, \lexists[!D_n] \left(!B =
+  \SSubst{!C}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}} \right) }.
+  \]
+  !!{formula}~$!C$ diarani !!{formula} \emph{khas} saka skema
+  kasebut, lan unik nganti penggantian jeneng !!{propositional
+  variable}s. !!^a{formula}~$!A$ iku \emph{instansi} sawijining skema yen
+  dadi anggota himpunan kasebut.
+\end{defn}
+
+Kita bisa menehi jeneng skema kanthi ekspresi metalinguistik
+kang dipikolehi saka nggunakake `$!A$', `$!B$',~\dots kanggo
+ngganti komponen atomik~$!C$. Upamane, ing ngisor iki nuduhake skema:
+`$!A$', `$!A \lif \Box!A$', `$!A \lif (!B \lif !A)$'. Skema kasebut
+cocog karo !!{formula}s khas $p$, $p \lif \Box p$, $p \lif (q
+\lif p)$. Skema `$!A$' nuduhake himpunan \emph{kabeh}
+!!{formula}s.
+
+\begin{defn}
+  Sawijining skema \emph{bener} ing model yen lan mung yen kabeh
+  instansine bener; lan skema \emph{valid} yen lan mung yen bener ing
+  saben model.
+\end{defn}
+
+\begin{prop}\ollabel{prop:Kvalid}
+  Skema \Ax{K} ing ngisor iki valid
+  \begin{equation*}
+  \Box(!A \lif !B) \lif (\Box !A \lif \Box !B). \tag{\Ax{K}}
+  \end{equation*}
+\end{prop}
+
+\begin{proof}
+  Kita kudu mbuktekake yen kabeh instansi skema kasebut bener ing saben
+  donya ing saben model. Mula pilih $\mModel{M} = \tuple{W,R,V}$ lan $w \in
+  W$ sembarang. Kanggo mbuktekake yen sawijining kondisional bener ing
+  donya, kita nganggep antesedene bener banjur nuduhake yen
+  konsekuene uga bener. Ing kasus iki, upamane $\mSat{M}{\Box(!A \lif !B)}[w]$
+  lan $\mSat{M}{\Box !A}[w]$. Kita kudu mbuktekake $\mSat{M}{\Box !B}[w]$.
+  Pilih $w'$ sembarang kang nyukupi $Rww'$. Miturut asumsi kapisan,
+  $\mSat{M}{!A \lif !B}[w']$, lan miturut asumsi kapindho,
+  $\mSat{M}{!A}[w']$. Mula $\mSat{M}{!B}[w']$. Amarga $w'$
+  sembarang, $\mSat{M}{\Box !B}[w]$.
+\end{proof}
+
+\begin{prop}\ollabel{prop:Dual-valid}
+  Skema \Dual{} ing ngisor iki valid
+  \begin{equation*}
+  \Diamond !A \liff \lnot\Box\lnot !A. \tag{\Dual}
+  \end{equation*}
+\end{prop}
+
+\begin{proof}
+  Gladhen.
+\end{proof}
+
+\begin{prob}
+  Buktekna \olref[nml][syn][sch]{prop:Dual-valid}.
+\end{prob}
+
+\begin{prop}\ollabel{prop:soundMP}
+  Yen $!A$ lan $!A \lif !B$ bener ing sawijining donya ing model,
+  mula $!B$ uga bener. Mula, !!{formula}s kang valid katutup
+  miturut modus ponens.
+\end{prop}
+
+\begin{prop}\ollabel{prop:valid-instances}
+  !!^a{formula}~$!A$ valid yen lan mung yen kabeh instansi substitusine
+  valid. Kanthi tembung liya, sawijining skema valid yen lan mung yen
+  !!{formula} khas-e valid.
+\end{prop}
+
+\begin{proof}
+  Arah ``yen'' cetha, amarga $!A$ iku instansi substitusi saka
+  awake dhewe.
+
+Kanggo mbuktekake arah ``mung yen'', kita nuduhake iki: Upamane
+  $\mModel{M} = \tuple{W, R, V}$ sawijining model modal, lan $!B \ident
+  \SSubst{!A}{\subst{!D_1}{p_1},\dots,\subst{!D_n}{p_n}}$ sawijining
+  instansi substitusi saka~$!A$. Tetepna $\mModel{M'} = \tuple{W, R,
+    V'}$ kanthi $V'(p_i) = \Setabs{w}{\mSat{M}{!D_i}[w]}$. Mula
+  $\mSat{M}{!B}[w]$ yen lan mung yen $\mSat{M'}{!A}[w]$, kanggo saben~$w \in W$.
+  (Buktine kita tinggal dadi gladhen.) Saiki upamane $!A$ valid,
+  nanging ana instansi substitusi $!B$ saka~$!A$ kang ora valid. Mula
+  kanggo sawenehing $\mModel{M} = \tuple{W, R, V}$ lan $w \in W$,
+  $\mSat/{M}{!B}[w]$. Nanging saka pratelan mau $\mSat/{M'}{!A}[w]$,
+  dadi $!A$ ora valid, sawijining kontradiksi.
+\end{proof}
+
+\begin{prob}
+  Buktekna pratelan ing bagean ``mung yen'' saka bukti
+  \olref[nml][syn][sch]{prop:valid-instances}. (Pituduh: gunakna induksi
+  marang~$!A$.)
+\end{prob}
+
+Nanging elinga, ora bener yen skema bener ing sawijining model
+yen lan mung yen formula khas-e bener ing model kasebut.
+Mesthi, arah ``mung yen'' lumaku: yen saben instansi $!A$ bener
+ing~$\mModel{M}$, $!A$ dhewe uga bener ing~$\mModel{M}$. Nanging
+bisa uga $!A$ bener ing~$\mModel{M}$ dene ana instansi~$!A$ kang
+salah ing sawijining donya ing~$\mModel{M}$. Kanggo tuladha kontra
+prasaja, delengen~$p$ ing model kang mung nduweni donya~$w$ lan
+$V(p) = \{w\}$, mula $p$ bener ing~$w$. Nanging $\lfalse$ iku
+instansi~$p$, lan ora bener ing~$w$.
+
+\begin{prob}
+  Buktekna yen ora ana !!{formula}s ing ngisor iki kang valid:
+  \begin{enumerate}
+    \item[\Ax{D}:] \quad $\Box p \lif \Diamond p$;
+    \item[\Ax{T}:] \quad $\Box p \lif p$;
+    \item[\Ax{B}:] \quad $p \lif \Box\Diamond p$;
+    \item[\Ax{4}:] \quad $\Box p \lif \Box \Box p$;
+    \item[\Ax{5}:] \quad $\Diamond p \lif \Box \Diamond
+      p$.
+  \end{enumerate}
+\end{prob}
+
+\begin{table}[t]
+    \centering
+    \begin{tabular}{| l || l |}
+      \hline
+      {\emph{Skema Valid}} & {\emph{Skema Ora Valid}} \\
+      \hline\hline
+      $\Box(!A \lif !B) \lif (\Diamond !A \lif \Diamond !B)$
+      & $\Box (!A \lor !B) \lif (\Box !A \lor \Box !B)$ \\
+      $\Diamond (!A \lif !B) \lif (\Box !A \lif \Diamond
+      !B)$
+      & $(\Diamond !A \land \Diamond !B) \lif \Diamond (!A
+      \land !B)$\\
+      $\Box (!A \land !B) \liff (\Box !A \land \Box !B)$
+      & $!A \lif \Box !A$ \\
+      $\Box !A \lif \Box (!B \lif !A)$
+      & $\Box \Diamond !A \lif !B$ \\
+      $\lnot \Diamond !A \lif \Box (!A \lif !B)$
+      & $\Box \Box !A \lif \Box !A$ \\
+      $\Diamond (!A \lor !B) \liff (\Diamond !A \lor
+      \Diamond !B)$
+      & $\Box \Diamond !A \lif \Diamond \Box !A$. \\
+      \hline
+    \end{tabular}
+    \caption{Skema valid lan ora valid.}
+    \ollabel{tab:valid-invalidSchemas}
+\end{table}
+
+\begin{prob}%\ollabel{ex:in/validSchemas}
+  Buktekna yen skema ing kolom kapisan saka
+  \olref[nml][syn][sch]{tab:valid-invalidSchemas} valid lan skema ing
+  kolom kapindho ora valid.
+\end{prob}
+
+\begin{prob}
+  Temtokna apa skema ing ngisor iki valid utawa ora valid:
+  \begin{enumerate}
+  \item $(\Diamond !A \lif \Box !B) \lif (\Box !A \lif \Box
+    !B)$;
+  \item $\Diamond(!A \lif !B) \lor \Box(!B \lif !A)$.
+  \end{enumerate}
+\end{prob}
+
+\begin{prob}
+  Kanggo saben skema ing ngisor iki, goleka model $\mModel{M}$
+  kang saben instansi !!{formula} kasebut bener ing $\mModel{M}$:
+  \begin{enumerate}
+  \item $p \lif \Diamond\Diamond p$;
+  \item $\Diamond p \lif \Box p$.
+  \end{enumerate}
+\end{prob}
+
+\end{document}

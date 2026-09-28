@@ -1,0 +1,92 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{choice}{hartogs}
+\olsection{Kabandingan lan Lema Hartogs}
+
+Mau sisih kang nguntungaké. Saiki sisih kang nyusahaké. Tanpa
+Aksioma Pilihan, prakarané dadi \emph{ruwet}. Kanggo ndeleng sebabé,
+gatekna asil saka \cite{Hartogs1915} iki:
+
+\begin{lem}[\emph{ing $\ZF$}]\ollabel{HartogsLemma}
+Kanggo sembarang himpunan $A$, ana ordinal $\alpha$ kang nyukupi
+$\cardnless{\alpha}{A}$.
+\end{lem}
+
+\begin{proof}
+Yèn $B \subseteq A$ lan $R \subseteq B^2$, mula $\tuple{B, R} \subseteq
+V_{\setrank{A}+4}$ miturut
+\olref[ord-arithmetic][using-addition]{rankcomputation}. Mula, kanthi
+Pamisahan, gatekna:
+\[
+	C = \Setabs{\tuple{B, R} \in V_{\setrank{A}+5}}{B\subseteq A
+	\text{ lan $\tuple{B, R}$ sawijining pengurutan becik}}
+\]
+Kanthi Panggantian lan
+\olref[ordinals][ordtype]{thmOrdinalRepresentation}, wujudna himpunan:
+\[
+	\alpha = \Setabs{\ordtype{B, R}}{\tuple{B, R} \in C}.
+\]
+Miturut \olref[ordinals][basic]{corordtransitiveord}, $\alpha$ iku
+ordinal amarga sawijining himpunan transitif saka ordinal. Pancen, yèn
+$\gamma \in \beta \in \alpha$, mula $\beta = \ordtype{B, R}$ kanggo
+sawijining $B \subseteq A$; saka kéné $\gamma = \ordtype{B_b, R_b}$
+kanggo sawijining $b \in B$ miturut
+\olref[ordinals][iso]{wellordinitialsegment}, saéngga
+$\gamma \in \alpha$.
+
+Kanggo bukti kanthi kontradiksi, anggepen ana !!a{injection}
+$f \colon \alpha \to A$. Banjur tetepna:
+\begin{align*}
+	B &= \ran{f}\\
+	R &= \Setabs{\tuple{f(\xi), f(\zeta)}}{\xi,\zeta\in\alpha \land \xi\in\zeta}.
+\end{align*}
+Cetha yèn $\alpha = \ordtype{B, R}$ lan $\tuple{B, R} \in C$.
+Mula $\alpha \in \alpha$, sawijining kontradiksi.
+\end{proof}
+
+Asil iki mènèhi téoréma kang jero:
+
+\begin{thm}[\emph{ing $\ZF$}]
+Pratelan-pratelan iki ekuivalen:
+\begin{enumerate}
+	\item\ollabel{equivwo} Aksioma Pengurutan Becik
+	\item\ollabel{equivcompare} $\cardle{A}{B}$ utawa
+	$\cardle{B}{A}$ kanggo sembarang himpunan $A$ lan $B$
+\end{enumerate}
+\end{thm}
+
+\begin{proof}
+\emph{\olref{equivwo} $\Rightarrow$ \olref{equivcompare}.} Tetepna $A$ lan
+$B$. Miturut \olref{equivwo}, ana pengurutan becik $\tuple{A, R}$
+lan $\tuple{B, S}$. Miturut
+\olref[ordinals][ordtype]{thmOrdinalRepresentation}, jupuken
+isomorfisme $f \colon \alpha \to A$ lan $g \colon \beta \to B$.
+Miturut \olref[sth][ordinals][basic]{ordinalsaresubsets}, salah siji
+$\alpha \subseteq \beta$ utawa $\beta \subseteq \alpha$.
+Yèn $\alpha \subseteq \beta$, mula
+$\comp{f^{-1}}{g} \colon A \to B$ iku !!a{injection}, saéngga
+$\cardle{A}{B}$; semono uga, yèn $\beta \subseteq \alpha$, mula
+$\cardle{B}{A}$.
+
+\emph{\olref{equivcompare} $\Rightarrow$ \olref{equivwo}.} Tetepna $A$;
+miturut \olref{HartogsLemma} ana ordinal $\beta$ kang nyukupi
+$\cardnless{\beta}{A}$. Kanthi \olref{equivcompare}, kita nduwèni
+$\cardle{A}{\beta}$. Mula ana !!{injection} $f \colon A \to
+\beta$, lan injeksi iki bisa digunakaké kanggo ngurutaké unsur
+$A$ kanthi becik, kanthi ndhéfinisikaké pengurutan
+$\Setabs{\tuple{a, b} \in A \times A}{f(a) \in f(b)}$.
+\end{proof}
+\noindent
+Akibat langsungé: yèn Pengurutan Becik gagal, ana himpunan-himpunan
+kang \emph{pancen ora bisa dibandhingaké} ukurané. Mula aritmetika
+kardinal transfinit bakal ruwet. Upamané, kita kudu ninggalaké
+pratelan umum yèn kanggo $A$ lan $B$ tanpa wates,
+$\cardeq{A \disjointsum B}{M}$ lan $\cardeq{A \times B}{M}$,
+ing ngendi $M$ iku kang luwih gedhé saka $A$ lan $B$ (delengen
+\olref[card-arithmetic][simp]{cardplustimesmax}). Masalahé prasaja:
+yèn ukuran $A$ lan $B$ ora bisa \emph{dibandhingaké}, takon endi
+kang luwih gedhé dadi ora ana tegesé.
+
+\end{document}

@@ -1,0 +1,76 @@
+% Part: counterfactuals
+% Chapter: minimal-change-semantics
+% Section: antecedent-strengthening
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cnt}{min}{agg}
+
+\olsection{Penguwatan Anteseden}
+
+``Penguwatan anteseden'' ngrujuk marang inferensi
+$!A \lif !C \Entails (!A \land !B) \lif !C$. Inferensi iki sah
+kanggo kondisional material, nanging ora sah kanggo kontrafaktual.
+Upamane bener yen saupama aku nggesek penthol korek iki, penthol
+iku mesthi bakal murub. (Tegese, ora ana kang salah ing penthol
+korek utawa lumahing bungkus korek, aku ora bakal mecah penthol
+korek, lan sapiturute.) Nanging ora bener yen saupama aku
+nggesek penthol korek iki ing angkasa njaba, penthol iku mesthi
+bakal murub. Mula inferensi iki ora sah:
+\begin{quote}
+  Saupama penthol korek digesek, penthol iku mesthi bakal murub.
+
+  Mula, saupama penthol korek digesek ing angkasa njaba,
+  penthol iku mesthi bakal murub.
+\end{quote}
+
+Panjelasan Lewis--Stalnaker tumrap kondisional nerangake iki:
+donya paling cedhak kang ing kono aku nggesek penthol korek lan
+nindakake ing angkasa njaba luwih adoh saka donya aktual tinimbang
+donya paling cedhak kang ing kono aku nggesek penthol korek.
+Mula, sanajan penthol korek murub ing donya kapindho, ora murub
+ing donya kapisan. Iki cocog karo kang dikarepake.
+
+\begin{ex}
+  Semantik bola nuduhake yen inferensi iku ora sah, yaiku $p
+  \cif r \Entails/ (p \land q) \cif r$. Gatekna model
+  $\mModel{M} = \tuple{W, O, V}$ kanthi $W = \{w, w_1, w_2\}$,
+  $O_w = \{\{w\}, \{w, w_1\}, \{w, w_1, w_2\}\}$,
+  $V(p) = \{w_1, w_2\}$, $V(q) = \{w_2\}$, lan $V(r) = \{w_1\}$.
+  Ana bola kang ngakoni $p$, yaiku $S = \{w, w_1\}$, lan
+  $p \lif r$ bener ing kabeh donya ing kono, mula
+  $\mSat{M}{p \cif r}[w]$. Bola siji-sijine kang ngakoni
+  $(p \land q)$ yaiku $S' = \{w, w_1, w_2\}$, nanging
+  $\mSat/{M}{(p \land q) \lif r}[w_2]$, mula
+  $\mSat/{M}{(p \land q) \cif r}[w]$
+  (delengen \olref{fig:antecedent-strengthening}).
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}[layerwidth=1.5,scale=.6]\tiny
+  \spheresystem{3}
+  \propositionintersect{-10}{3}{30}{5}
+  \begin{scope}
+    \clip plot[smooth,tension=1] coordinates
+          {(0,4.5) (30:.95) (4.5,-3.5)} -- (4.5,4.5) ;
+    \spherefill{2}
+  \end{scope}
+  \draw[proposition] plot[dashed,smooth,tension=1] coordinates
+          {(0,4.5) (30:.95) (4.5,-3.5)} ;
+  \proposition{30}{2}{30}{5}
+  \path (0,0) node[world] {$w$};
+  \spherepos{30}{2}{node[world] {$w_1$}}
+  \spherepos{-10}{3}{node[world] {$w_2$}}
+  \spherepos{-10}{4}{node {$q$}}
+  \spherepos{30}{4}{node {$r$}}
+  \draw (1,4.5) node[below] {$p$};
+\end{tikzpicture}
+\caption{Tuladha panyanggah tumrap penguwatan anteseden}
+\ollabel{fig:antecedent-strengthening}
+\end{center}
+\end{figure}
+\end{ex}
+
+\end{document}

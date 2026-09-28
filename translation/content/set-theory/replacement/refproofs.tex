@@ -1,0 +1,237 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{replacement}{refproofs}
+\olsection{Lampiran: Asil-asil babagan Panggantian}
+
+Ing bagean iki, kita bakal mbuktekake Refleksi
+ing $\ZF$. Kita uga bakal mbuktekake salah siji
+pangerten yen Refleksi ekivalen karo Panggantian.
+Sabanjure kita mbuktekake akibat kang narik
+kawigaten babagan kakuwatan Refleksi/Panggantian.
+\emph{Pènget: bagean iki kalebu matematika
+kang paling maju ing buku iki.}
+
+Kita miwiti saka lema kang, supaya ringkes,
+nganggo notasi \emph{garis ndhuwur} kanggo
+urutan variabel utawa objek. Dadi,
+``$\overline{a}_k$'' nyingkat
+``$a_{k_1}$, \dots, $a_{k_n}$'',
+lan $n$ ditemtokake dening konteks.
+
+\begin{lem}\ollabel{lemreflection}
+Kanggo saben $1 \leq i \leq k$, tetepna
+$\phi_i(\overline{v}_i, x)$ minangka formula.
+Mula kanggo saben $\alpha$ ana sawijining
+$\beta > \alpha$ kang nyukupi pratelan iki
+kanggo saben $\overline{a}_1, \ldots,
+\overline{a}_k \in V_\beta$ lan
+$1 \leq i \leq k$:
+\[
+	\exists x\phi_i(\overline{a}_i, x) \rightarrow (\exists x \in V_\beta) \phi_i(\overline{a}_i, x)
+\]
+\end{lem}
+
+\begin{proof}
+Kita netepake term $\mu$ mangkene:
+$\mu(\overline{a}_1, \ldots,
+\overline{a}_k)$ iku tataran paling awal, $V$,
+kang nyukupi kabeh implikasi iki kanggo
+$1 \leq i \leq k$:
+\[
+\exists x\phi_i(\overline{a}_i, x) \rightarrow (\exists x \in V) \phi_i(\overline{a}_i, x)
+\]
+Gampang dipriksa yen
+$\mu(\overline{a}_1, \ldots, \overline{a}_k)$
+ana kanggo saben $\overline{a}_1, \ldots,
+\overline{a}_k$. Saiki, kanthi Panggantian lan
+teorema rekursi kita, tetepna:
+\begin{align*}
+	S_0 & = V_{\alpha+1}\\
+	S_{n+1} & = S_n \cup \bigcup
+	\Setabs{\mu(\overline{a}_1, \ldots, \overline{a}_k)}
+	{\overline{a}_1, \ldots, \overline{a}_k \in S_n} \\
+	S &= \bigcup_{m < \omega} S_m.
+\end{align*}
+Saben $S_n$, lan mula $S$ dhewe, iku tataran
+sawise $V_\alpha$. Saiki tetepna
+$\overline{a}_1$, \dots,~$\overline{a}_k \in S$;
+mula ana sawijining $n < \omega$ kang nyukupi
+$\overline{a}_1$, \dots,
+$\overline{a}_k \in S_n$. Tetepna sawijining
+$1 \leq i \leq k$, lan upamane
+$\exists x \phi_i(\overline{a}_i,x)$.
+Mula $(\exists x \in \mu(\overline{a}_1,
+\ldots, \overline{a}_k))\phi_i(\overline{a}_i, x)$
+miturut konstruksi, saengga
+$(\exists x \in S_{n+1})\phi_i(\overline{a}_i, x)$,
+lan banjur
+$(\exists x \in S)\phi_i(\overline{a}_i, x)$.
+Dadi $S$ iku $V_\beta$ kang digoleki.
+\end{proof}
+\noindent 
+Saiki kita bisa mbuktekake
+\olref[sth][replacement][ref]{reflectionschema}
+kanthi cukup langsung:
+
+\begin{proof}[Bukti]
+Tetepna $\alpha$. Tanpa ngurangi keumuman,
+kita bisa nganggep yen panyambung ing $\phi$
+mung $\exists$, $\lnot$, lan $\land$ (amarga
+kabeh iki cukup kanggo nyatakake formula).
+Tetepna $\psi_1, \ldots, \psi_k$ minangka
+dhaptar subformula $\phi$ miturut
+kerumitane, saengga $\psi_k = \phi$.
+Miturut \olref{lemreflection}, ana
+$\beta > \alpha$ kang nyukupi pratelan iki
+kanggo saben $\overline{a}_i \in V_\beta$
+lan $1 \leq i \leq k$:
+\begin{align}\label{reflectionnicelybehaved}
+	\exists x\psi_i(\overline{a}_i, x) \rightarrow 
+	(\exists x \in V_\beta) \psi_i(\overline{a}_i, x)\tag{*}
+\end{align}
+Kanthi induksi ing kerumitan $\psi_i$,
+kita bakal nuduhake yen
+$\psi_i(\overline{a}_i) \leftrightarrow
+\psi_i^{V_\beta}(\overline{a}_i)$ kanggo saben
+$\overline{a}_i \in V_\beta$. Yen $\psi_i$
+atomik, iki cetha. Bikondisional iki uga
+njamin yen $\psi_i$ arupa negasi utawa
+konjungsi saka subformula kang wis nyukupi
+sipat iki, mula $\psi_i$ uga nyukupine.
+Dadi mung kasus kuantifikasi kang perlu
+dipriksa. Tetepna $\overline{a}_i \in V_\beta$;
+mula:
+\begin{align*}
+	(\exists x \psi_i(\overline{a}_i, x))^{V_\beta}
+	&\text{ yen lan mung yen }
+	(\exists x \in V_\beta)\psi_i^{V_\beta}(\overline{a}_i, x)
+	&&\text{miturut definisi}\\
+	&\text{ yen lan mung yen }
+	(\exists x \in V_\beta)\psi_i(\overline{a}_i,  x)
+	&&\text{miturut pangira-ira}\\
+	&\text{ yen lan mung yen }
+	\exists x \psi_i(\overline{a}_i, x)
+	&&\text{miturut \eqref{reflectionnicelybehaved}}
+\end{align*}
+Iki ngrampungake induksi; asil kasebut
+ndherek amarga $\psi_k = \phi$.
+\end{proof}
+
+Kita wis mbuktekake Refleksi ing $\ZF$.
+Bukti iki umume manut \citet{Montague1961}.
+Saiki kita arep mbuktekake ing $\Z$ yen
+Refleksi ngakibatake Panggantian. Bukti
+iki manut \citet{Levy1960}, nanging luwih
+disederhanakake.
+
+Amarga kita makarya ing $\Z$, Refleksi
+ora bisa ditulis persis kaya ing ndhuwur.
+Rumusan mau nganggo notasi ``$V_\alpha$'',
+kang ora bisa ditetepake ing $\Z$ (delengen
+\olref[sth][spine][zf]{sec}). Mula kita
+ngusulake rumusan Panggantian kang katon
+luwih ringkih mangkene:
+
+\begin{defish}
+\emph{Refleksi Lemah.} Kanggo saben formula
+$\phi$, ana himpunan transitif $S$ kang ngemot
+$0$, $1$, lan saben parameter ing $\phi$
+minangka !!{element}s saka $S$, sarta
+$(\forall \overline{x} \in S)(\phi \liff
+\phi^S)$.
+\end{defish}
+
+Kanggo nggunakake iki kanggo mbuktekake
+Panggantian, kita bakal manut
+\citet[bagéan kapisan Teorema 2]{Levy1960}
+lan nuduhake yen rong formula bisa
+``direfleksikake'' bebarengan:
+
+\begin{lem}[ing $\Z + \text{Refleksi Lemah}$.]\ollabel{lem:reflect}
+Kanggo saben formula $\psi, \chi$, ana
+himpunan transitif $S$ kang ngemot $0$ lan
+$1$ (lan saben parameter ing formula-formula
+mau) minangka !!{element}s saka $S$, sarta
+$(\forall \overline{x} \in S)((\psi \liff
+\psi^S) \land (\chi \liff \chi^S))$.
+\end{lem}
+
+\begin{proof}
+Tetepna $\phi$ minangka formula
+$(z = 0 \land \psi) \lor (z = 1 \land \chi)$,
+kanthi variabel pananda anyar.
+
+Ing kene kita nganggo cekakan: ``$z = 0$''
+kudu ditulis kanthi lengkap minangka
+``$\forall t\, t \notin z$'', lan ``$z =1$''
+minangka ``$\forall s(s \in z \liff
+\forall t\, t \notin s)$''. Nanging amarga
+$0, 1 \in S$ lan $S$ transitif, formula-formula
+iki \emph{absolut} tumrap $S$; tegese,
+formula mau lumaku kanggo objek kang padha
+sanadyan kuantore diwatesi marang
+$S$.\footnote{Luwih formal, yen $\xi$ salah
+siji saka formula mau, mula
+$\xi(z) \liff \xi^S(z)$.}
+
+Miturut Refleksi Lemah, ana $S$ kang trep
+lan nyukupi:
+\begin{align*}
+	(\forall z, \overline{x} \in S)(&\phi \liff \phi^S)\\
+	\text{yaiku }(\forall z, \overline{x} \in S)(&((z = 0 \land \psi) \lor (z = 1 \land \chi)) \liff {}\\
+	&\phantom{(}((z = 0 \land \psi) \lor (z = 1 \land \chi))^S)\\
+	\text{yaiku }(\forall z, \overline{x} \in S)(&((z = 0 \land \psi) \lor (z = 1 \land \chi))\liff {}\\
+	&\phantom{(}((z = 0 \land \psi^S) \lor (z = 1 \land \chi^S)))\\
+	\text{yaiku }(\forall \overline{x} \in S)(&(\psi \liff \psi^S) \land (\chi \liff \chi^S))
+\end{align*}
+Pratelan kapindho ngakibatake kang katelu
+amarga ``$z = 0$'' lan ``$z=1$'' absolut
+tumrap $S$; pratelan kapapat ndherek amarga
+$0 \neq 1$.
+\end{proof}\noindent Saiki kita bisa
+mbuktekake Panggantian kanthi manut lan
+nyederhanakake \citet[Teorema 6]{Levy1960}:
+
+\begin{thm}[ing $\Z$ + Refleksi Lemah]\label{thm:replacement}
+Kanggo saben formula $\phi(v,w)$ lan saben
+$A$, yen $(\forall x \in A)\lexists![y][\phi(x,y)]$,
+mula $\Setabs{y}{(\exists x \in A)\phi(x,y)}$ ana.
+\end{thm}
+
+\begin{proof}
+Tetepna $A$ kang nyukupi
+$(\forall x \in A)\lexists![y][\phi(x,y)]$,
+lan tetepna formula-formula iki:
+\begin{align*}
+	\psi &\text{ iku } (\phi(x, z) \land A = A)\\
+	\chi &\text{ iku } \lexists[y][\phi(x, y)]
+\end{align*}
+Kanthi \olref{lem:reflect}, amarga $A$
+parameter ing $\psi$, ana himpunan
+transitif~$S$ kang nyukupi $0, 1, A \in S$
+(bebarengan karo saben parameter liyane),
+lan uga:
+\[
+	(\forall x,z \in S)((\psi \liff \psi^S) \land (\chi \liff \chi^S))
+\]
+Dadi, mligine:
+\begin{align*}
+	(\forall  x, z \in S)(&\phi(x, z) \liff \phi^S(x, z))\\
+	(\forall x \in S)(&\exists y\phi(x, y) \liff (\exists y \in S)\phi^S(x, y)) 
+\end{align*}
+Kanthi nggabungake iki lan ngelingi yen
+$A \subseteq S$ amarga $A \in S$ lan $S$
+transitif:
+\begin{align*}
+	(\forall x \in A)(&\exists y\phi(x, y) \liff (\exists y \in S)\phi(x, y))
+\end{align*}
+Saiki $(\forall x \in A)(\lexists![y \in S])\phi(x, y)$,
+amarga $(\forall x \in A)\lexists![y][\phi(x, y)]$.
+Miturut Pamisahan, kita oleh
+$\Setabs{y \in S}{(\exists x \in A) \phi(x, y)}
+= \Setabs{y}{(\exists x \in A) \phi(x, y)}$.
+\end{proof}
+
+\end{document}

@@ -1,0 +1,86 @@
+% Part: many-valued-logic
+% Chapter: sequent-calculus
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{seq}{int}
+
+\olsection{Pambuka}
+
+Kalkulus sekuen kanggo logika klasik iku sistem !!{derivation}
+kang efisien lan prasaja. Yen logika mawa akeh nilai ditetepake
+nganggo matriks kang nilai kabenerane winates, yaiku $V$ winates,
+kita bisa menehi kalkulus sekuen kanggo logika kasebut. Gagasan
+carane teka saka teges sekuen lan wujud aturan inferensi ing
+kasus klasik.
+
+Elinga yen sawijining sekuen
+\begin{align*}
+    !A_1, \dots, !A_m & \Sequent !B_1, \dots, !B_n
+\intertext{bisa ditafsirake minangka !!{formula}}
+    (!A_1 \land \cdots \land !A_m) & \lif (!B_1 \lor \cdots \lor
+!B_n)
+\end{align*}
+Kanthi tembung liya, !!^a{valuation}~$\pAssign{v}$ \emph{nyukupi}
+sekuen $\Gamma \Sequent \Delta$ yen lan mung yen $\pValue{v}(!A) = \False$
+kanggo saweneh $!A \in \Gamma$, utawa $\pValue{v}(!A) = \True$
+kanggo saweneh $!A \in \Delta$. Miturut tafsir iki, sekuen wiwitan
+$!A \Sequent !A$ tansah kacukupan, amarga $\pValue v(!A) = \True$
+utawa $\pValue v(!A) = \False$.
+
+Iki aturan inferensi kanggo kondisional ing~$\Log{LK}$,
+tanpa nulis formula sisih $\Gamma$ lan $\Delta$:
+
+\begin{defish}
+    \Axiom$ \fCenter !A$
+    \Axiom$ !B \fCenter $
+    \RightLabel{\LeftR{\lif}}
+    \BinaryInf$ !A \lif !B \fCenter $
+    \DisplayProof
+    \hfill
+    \Axiom$ !A \fCenter !B$
+    \RightLabel{\RightR{\lif}}
+    \UnaryInf$ \fCenter !A \lif !B $
+    \DisplayProof
+\end{defish}
+
+Yen kita gunakake tafsir semantik sekuen ing ndhuwur,
+aturan $\LeftR{\lif}$ bisa diwaca mangkene: yen
+$\pValue v(!A) = \True$ lan $\pValue v(!B) = \False$,
+mula $\pValue v(!A \lif !B) = \False$. Semono uga,
+aturan $\RightR{\lif}$ mratelakake yen $\pValue v(!A)
+= \False$ utawa $\pValue v(!B) = \True$, mula
+$\pValue v(!A \lif !B) = \True$. Satemene, pratelan
+kondisional iki loro-lorone bikondisional. Kanggo aturan
+$\LeftR{\land}$ lan $\RightR{\lor}$ ing wujud bakune,
+pratelan kondisional kang cocog ora dadi bikondisional.
+Nanging ana wujud alternatif aturan iki kang dadi bikondisional:
+
+\begin{defish}
+    \Axiom$!A, !B, \Gamma \fCenter \Delta$
+    \RightLabel{\LeftR{\land}}
+    \UnaryInf$!A \land !B, \Gamma \fCenter \Delta$
+    \DisplayProof
+    \hfill
+    \Axiom$ \Gamma \fCenter \Delta, !A, !B$
+    \RightLabel{\RightR{\lor}}
+    \UnaryInf$ \Gamma \fCenter \Delta, !A \lor !B$
+    \DisplayProof
+\end{defish}
+
+Gagasan dhasar iki, yen ditrapake ing logika $n$ nilai,
+ngasilake kalkulus sekuen kang nduweni $n$ panggonan tinimbang
+loro panggonan, siji kanggo saben nilai kabeneran. Kanggo logika
+telung nilai kanthi $V = \{\False, \Undef, \True\}$, sekuen
+iku ekspresi $\Gamma \mid \Pi \mid \Delta$. Sekuen iki kacukupan
+ing !!a{valuation}~$\pAssign v$ yen lan mung yen
+$\pValue{v}(!A) = \False$ kanggo saweneh $!A \in \Gamma$,
+utawa $\pValue{v}(!A) = \True$ kanggo saweneh
+$!A \in \Delta$, utawa $\pValue{v}(!A) = \Undef$ kanggo
+saweneh $!A \in \Pi$. Mula, sekuen wiwitan
+$!A \mid !A \mid !A$ tansah kacukupan.
+
+\end{document}

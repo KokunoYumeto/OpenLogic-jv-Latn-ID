@@ -24,13 +24,13 @@
 \DisplayProof
 \end{defish}
 
-Ing \LeftR{\lforall}, $t$ iku term tertutup (yaiku term tanpa
+Ing \LeftR{\lforall}, $t$ iku term katutup (yaiku term tanpa
 variabel). Ing \RightR{\lforall}, $a$~iku !!a{constant} kang ora kena
-muncul ing ngendi wae ing sekuen ngisor saka aturan
-\RightR{\lforall}. Kita ngarani $a$ \emph{eigenvariabel} saka inferensi
+muncul ing perangan endi wae saka sekuen ngisor ing aturan
+\RightR{\lforall}. $a$ diarani \emph{eigenvariabel} ing inferensi
 \RightR{\forall}.\footnote{Kita nggunakake istilah “eigenvariabel”
-sanajan $a$ ing aturan ndhuwur iku !!a{constant}. Iki amarga alasan
-sejarah.}
+sanajan $a$ ing aturan ndhuwur iku !!a{constant}. Iki amarga alesan
+historis.}
 
 \subsection{Aturan kanggo $\lexists$}
 
@@ -46,11 +46,11 @@ sejarah.}
 \DisplayProof
 \end{defish}
 
-Maneh, $t$~iku term tertutup, lan $a$~iku !!a{constant} kang ora
-muncul ing sekuen ngisor saka aturan \LeftR{\lexists}. Kita ngarani
-$a$ \emph{eigenvariabel} saka inferensi \LeftR{\lexists}.
+Maneh, $t$~iku term katutup, lan $a$~iku !!a{constant} kang ora
+muncul ing sekuen ngisor ing aturan \LeftR{\lexists}. $a$ diarani
+\emph{eigenvariabel} ing inferensi \LeftR{\lexists}.
 
-Syarat supaya eigenvariabel ora muncul ing sekuen ngisor saka
+Syarat manawa eigenvariabel ora muncul ing sekuen ngisor ing
 inferensi \RightR{\lforall} utawa \LeftR{\lexists} diarani
 \emph{syarat eigenvariabel}.
 
@@ -65,14 +65,14 @@ kita uga bisa nulis aturan \RightR{\lexists} kaya mangkene:
   \UnaryInf$\Gamma \fCenter \Delta, \lexists[x][!A]$
 \end{prooftree}
 Gatekna yen $t$ bisa wae wis muncul ing~$!A$, upamane $!A$~bisa
-awujud~$\Atom{\Obj P}{t,x}$. Dadi, nginferensi $\Gamma \Sequent \Delta,
+awujud~$\Atom{\Obj P}{t,x}$. Dadi, ngasilake $\Gamma \Sequent \Delta,
 \lexists[x][\Atom{\Obj P}{t,x}]$ saka~$\Gamma \Sequent \Delta,
 \Atom{\Obj P}{t,t}$ iku panrapan \RightR{\lexists} kang bener---kita
 bisa “ngganti” siji utawa luwih, lan ora kudu kabeh, muncule~$t$
-ing premis nganggo !!{variable} terikat~$x$. Nanging, syarat
+ing premis nganggo !!{variable}~$x$ kang kaiket. Nanging, syarat
 eigenvariabel ing \RightR{\lforall} lan~\LeftR{\lexists} nuntut supaya
 !!{constant}~$a$ ora muncul ing~$!A$. Mula, kita ora bisa kanthi bener
-nginferensi $\Gamma \Sequent \Delta,
+ngasilake $\Gamma \Sequent \Delta,
 \lforall[x][\Atom{\Obj P}{a,x}]$ saka $\Gamma \Sequent \Delta,
 \Atom{\Obj P}{a,a}$ nganggo~$\RightR{\lforall}$.
 \end{explain}
@@ -81,10 +81,10 @@ nginferensi $\Gamma \Sequent \Delta,
 Ing \RightR{\lexists} lan \LeftR{\lforall} ora ana watesan tumrap
 term~$t$. Kosok baline, ing aturan \LeftR{\lexists} lan
 \RightR{\lforall}, syarat eigenvariabel nuntut supaya
-!!{constant}~$a$ ora muncul ing ngendi wae ing njabane~$!A(a)$ ing
-sekuen ndhuwur. Syarat iki perlu kanggo njamin sistem tetep sah, yaiku
-mung !!{derive}s sekuen kang valid. Tanpa syarat iki, inferensi iki
-bakal diidini:
+!!{constant}~$a$ ora muncul ing perangan endi wae ing njabane~$!A(a)$
+saka sekuen ndhuwur. Syarat iki perlu kanggo mesthekake yen sistem mung
+!!{derive}s sekuen kang valid. Tanpa syarat iki, inferensi ing ngisor
+iki bakal diidini:
 \begin{prooftree}
   \Axiom$!A(a) \fCenter !A(a)$
   \RightLabel{*\LeftR{\lexists}}

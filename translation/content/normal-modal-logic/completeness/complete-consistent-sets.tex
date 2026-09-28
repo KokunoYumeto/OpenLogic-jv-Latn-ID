@@ -1,0 +1,144 @@
+% Part: normal-modal-logic
+% Chapter: completeness
+% Section: complete-consistent-sets
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{com}{ccs}
+
+\olsection{Himpunan $\Sigma$-Konsisten Jangkep}
+
+Upamane $\Sigma$ himpunan !!{formula}s modal---anggepen minangka
+aksioma utawa prinsip kang nemtokake logika modal normal. Himpunan $\Gamma$
+iku $\Sigma$-konsisten yen lan mung yen $\Gamma \Proves/[\Sigma] \lfalse$,
+yaiku yen ora ana !!{derivation} saka~$!A_1 \lif (!A_2 \lif \cdots (!A_n \lif
+\lfalse)\dots)$ saka $\Sigma$, kanthi saben $!A_i \in \Gamma$. Kita bakal
+mbangun model ``kanonik'' kang saben jagade dianggep minangka himpunan
+$\Sigma$-konsisten kanthi sipat mligi: ora mung $\Sigma$-konsisten,
+nanging uga maksimal ing teges bisa nemtokake nilai bebener saben
+!!{formula} modal: kanggo saben $!A$, $!A
+\in \Gamma$ utawa $\lnot !A \in \Gamma$:
+
+\begin{defn}
+  Himpunan $\Gamma$ diarani \emph{$\Sigma$-konsisten jangkep} yen lan
+  mung yen himpunan iku $\Sigma$-konsisten lan kanggo saben~$!A$,
+  $!A \in \Gamma$ utawa $\lnot !A \in \Gamma$.
+\end{defn}
+
+Himpunan $\Sigma$-konsisten jangkep $\Gamma$ nduweni sawetara
+sipat kang migunani. Kapisan, himpunan iku katutup sacara deduktif,
+yaiku yen $\Gamma \Proves[\Sigma] !A$, mula $!A \in \Gamma$.
+Iki mligine ateges saben instansi saka !!a{formula}~$!A \in \Sigma$
+uga $\in \Gamma$. Kajaba iku, keanggotaan ing $\Gamma$ nggambarake
+sarat bebener konektif proposisional. Iki bakal wigati nalika kita
+netepake ``model kanonik.''
+
+\begin{prop}\ollabel{prop:ccs-properties}
+  Upamane $\Gamma$ $\Sigma$-konsisten jangkep. Banjur:
+  \begin{enumerate}
+  \item \ollabel{prop:ccs-closed}%
+    $\Gamma$ katutup sacara deduktif ing~$\Sigma$.
+  \item \ollabel{prop:ccs-sigma}%
+    $\Sigma \subseteq \Gamma$.
+  \tagitem{prvFalse}{\ollabel{prop:ccs-lfalse}%
+    $\lfalse \notin \Gamma$}{}
+  \tagitem{prvTrue}{\ollabel{prop:ccs-ltrue}%
+    $\ltrue \in \Gamma$}{}
+  \item \ollabel{prop:ccs-lnot}%
+    $\lnot!A \in \Gamma$ yen lan mung yen $!A \notin
+    \Gamma$.
+  \tagitem{prvAnd}{\ollabel{prop:ccs-land}%
+    $!A \land !B \in \Gamma$ yen lan mung yen $!A \in \Gamma$ lan $!B \in \Gamma$}{}
+  \tagitem{prvOr}{\ollabel{prop:ccs-lor}%
+    $!A \lor !B \in \Gamma$ yen lan mung yen $!A \in \Gamma$ utawa $!B \in \Gamma$}{}
+  \tagitem{prvIf}{\ollabel{prop:ccs-lif}%
+    $!A \lif !B \in \Gamma$ yen lan mung yen $!A \notin \Gamma$ utawa $!B \in \Gamma$}{}
+  \tagitem{prvIff}{\ollabel{prop:ccs-liff}%
+    $!A \liff !B \in \Gamma$ yen lan mung yen $!A \in \Gamma$ lan $!B \in
+    \Gamma$, utawa $!A \notin \Gamma$ lan $!B \notin \Gamma$}{}
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+  \item Upamane $\Gamma \Proves[\Sigma] !A$ nanging $!A \notin
+    \Gamma$. Amarga $\Gamma$ $\Sigma$-konsisten jangkep,
+    $\lnot!A \in \Gamma$. Iki bakal ndadekake $\Gamma$ ora konsisten,
+    amarga $!A, \lnot !A \Proves[\Sigma] \lfalse$.
+
+\item Yen $!A \in \Sigma$, mula $\Gamma \Proves[\Sigma] !A$, lan $!A
+    \in \Gamma$ amarga katutup sacara deduktif, yaiku
+    kasus~\olref{prop:ccs-closed}.
+
+\tagitem{prvFalse}{Yen $\lfalse \in \Gamma$, mula $\Gamma
+    \Proves[\Sigma] \lfalse$, saengga $\Gamma$ bakal ora
+    $\Sigma$-konsisten.}{}
+
+\tagitem{prvTrue}{$\Gamma \Proves[\Sigma] \ltrue$, mula $\ltrue \in
+    \Gamma$ amarga katutup sacara deduktif, yaiku
+    kasus~\olref{prop:ccs-closed}.}{}
+
+\item Yen $\lnot!A \in \Gamma$, mula amarga konsistensi $!A \notin
+    \Gamma$; lan yen $!A \notin \Gamma$, mula $\lnot !A \in \Gamma$
+    amarga $\Gamma$ $\Sigma$-konsisten jangkep.
+
+\tagitem{prvAnd}{\iftag{probAnd}{Latihan.}{Upamane $!A \land !B \in
+      \Gamma$. Amarga $(!A \land !B) \lif !A$ iku instansi tautologis,
+      $!A \in \Gamma$ amarga katutup sacara deduktif, yaiku
+      kasus~\olref{prop:ccs-closed}. Kanthi cara padha, $!B \in \Gamma$.
+      Kosok baline, upamane $!A \in \Gamma$ lan $!B \in
+      \Gamma$. Banjur katutup sacara deduktif njalari $(!A \land !B) \in
+      \Gamma$, amarga $!A \lif (!B \lif (!A \land !B))$ iku
+      instansi tautologis.}}{}
+
+\tagitem{prvOr}{\iftag{probOr}{Latihan.}{Upamane $!A \lor !B \in
+      \Gamma$, nanging $!A \notin \Gamma$ lan $!B \notin \Gamma$.
+      Amarga $\Gamma$ $\Sigma$-konsisten jangkep, $\lnot!A \in \Gamma$
+      lan $\lnot !B \in \Gamma$. Banjur $\lnot(!A \lor !B) \in \Gamma$
+      amarga $\lnot !A \lif (\lnot !B \lif \lnot (!A \lor !B))$ iku
+      instansi tautologis. Iki ndadekake $\Gamma$ ora
+      $\Sigma$-konsisten, sawijining kontradiksi. Kosok baline, yen
+      $!A \in \Gamma$ utawa $!B \in \Gamma$, mula $!A \lor !B \in \Gamma$
+      amarga katutup sacara deduktif, awit $!A \lif (!A \lor !B)$ lan
+      $!B \lif (!A \lor !B)$ iku instansi tautologis.}}{}
+
+\tagitem{prvIf}{\iftag{probIf}{Latihan.}{Upamane $!A \lif !B \in
+      \Gamma$ lan $!A \in \Gamma$; banjur $\Gamma \Proves[\Sigma] !B$,
+      mula $!B \in \Gamma$ amarga katutup sacara deduktif. Kosok baline,
+      yen $!A \lif !B \notin \Gamma$, amarga $\Gamma$ $\Sigma$-konsisten
+      jangkep, $\lnot (!A \lif !B) \in \Gamma$. Amarga
+      $\lnot(!A \lif !B) \lif !A$ iku instansi tautologis, $!A \in
+      \Gamma$ amarga katutup sacara deduktif. Amarga $\lnot(!A \lif !B) \lif
+      \lnot !B$ iku instansi tautologis, $\lnot !B \in
+      \Gamma$. Mula $!B \notin \Gamma$ amarga $\Gamma$
+      $\Sigma$-konsisten.}}{}
+
+\tagitem{prvIff}{\iftag{probIff}{Latihan.}{Upamane $!A \liff !B \in
+      \Gamma$. Yen $!A \in \Gamma$, mula $!B \in \Gamma$, amarga $(!A
+      \liff !B) \lif (!A \lif !B)$ iku instansi tautologis.
+      Kanthi cara padha, yen $!B \in \Gamma$, mula $!A \in \Gamma$.
+      Dadi $!A \in \Gamma$ lan $!B \in \Gamma$ loro-lorone, utawa
+      ora $!A \in \Gamma$ lan ora $!B \in \Gamma$.
+
+Kosok baline, upamane $!A \liff !B \notin \Gamma$. Amarga $\Gamma$
+      $\Sigma$-konsisten jangkep, $\lnot (!A \liff !B) \in
+      \Gamma$. Amarga $\lnot(!A \liff !B) \lif (!A \lif \lnot !B)$ iku
+      instansi tautologis, yen $!A \in \Gamma$, mula $\lnot !B \in
+      \Gamma$, lan amarga $\Gamma$ $\Sigma$-konsisten, $!B \notin
+      \Gamma$. Kanthi cara padha, yen $!B \in \Gamma$, mula $!A \notin \Gamma$.
+      Yen loro-lorone ora dadi anggota himpunan, amarga jangkep,
+      negasine loro-lorone dadi anggota. Instansi tautologis
+      $\lnot !A \lif (\lnot !B \lif (!A \liff !B))$ lan sifat katutup
+      sacara deduktif banjur njalari bikondisional iku dadi anggota,
+      sawijining kontradiksi. Dadi ora mungkin $!A \in \Gamma$ lan $!B \in \Gamma$ bebarengan,
+      utawa $!A \notin \Gamma$ lan $!B \notin \Gamma$ bebarengan.}}{}
+  \end{enumerate}
+\end{proof}
+
+\begin{probtag}{probAnd,probOr,probIf,probIff}
+  Rampungna bukti \olref[nml][com][ccs]{prop:ccs-properties}.
+\end{probtag}
+
+\end{document}

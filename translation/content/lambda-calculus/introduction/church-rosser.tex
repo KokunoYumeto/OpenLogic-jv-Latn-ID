@@ -1,0 +1,50 @@
+% Part: lambda-calculus
+% Chapter: introduction
+% Section: church-rosser
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{int}{cr}
+\olsection{Sipat Church--Rosser}
+
+\begin{thm}
+\ollabel{thm:church-rosser}
+Upamana $M$, $N_1$, lan $N_2$ iku suku
+saengga $M \red N_1$ lan $M \red N_2$.
+Mula ana suku $P$ saengga $N_1 \red P$
+lan $N_2 \red P$.
+\end{thm}
+
+\begin{cor}
+Upamana $M$ bisa direduksi dadi wujud normal.
+Mula wujud normal iki unik.
+\end{cor}
+
+\begin{proof}
+Yen $M \red N_1$ lan $M \red N_2$, miturut
+teorema sadurunge ana suku~$P$ saengga
+$N_1$ lan $N_2$ loro-lorone direduksi dadi~$P$.
+Yen $N_1$ lan~$N_2$ loro-lorone wis wujud normal,
+iki mung bisa kedadeyan yen
+$N_1 \ident P \ident N_2$.
+\end{proof}
+
+Pungkasan, rong suku $M$ lan~$N$ diarani
+\emph{ekuivalen-$\beta$}, utawa mung
+\emph{ekuivalen}, yen loro-lorone bisa
+direduksi dadi suku kang padha; yaiku
+yen ana $P$ saengga $M \red P$ lan
+$N \red P$. Iki ditulis $M \equal[\beta] N$.
+Nganggo \olref{thm:church-rosser}, bisa
+dipriksa yen $\equal[\beta]$ iku relasi
+ekuivalensi, kanthi sipat tambahan:
+kanggo saben $M$ lan~$N$, yen $M \red N$
+utawa $N \red M$, mula
+$M \equal[\beta] N$. (Malah,
+bisa dibuktekake yen $\equal[\beta]$
+iku relasi ekuivalensi \emph{paling cilik}
+kang nduweni sipat iki.)
+
+\end{document}

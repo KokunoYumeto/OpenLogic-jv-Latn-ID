@@ -1,0 +1,119 @@
+% Part: computability
+% Chapter: computability-theory
+% Section: ce-closed-cup-cap
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{thy}{clo}
+
+\olsection[Gabungan lan Irisan Himpunan C.E.]{Himpunan kang Bisa Dienumerasi
+  sacara Komputabel Katutup tumrap Gabungan lan Irisan}
+
+Teorema ing ngisor iki menehi sawetara sipat
+katutupan kanggo himpunan kang bisa dienumerasi
+sacara komputabel.
+
+\begin{thm}
+Upamane $A$ lan $B$ bisa dienumerasi sacara
+komputabel. Mula $A \cap B$ lan $A \cup B$
+uga bisa dienumerasi sacara komputabel.
+\end{thm}
+
+\begin{proof}
+\olref[eqc]{thm:ce-equiv} ngidini kita
+nggunakake maneka ciri himpunan kang bisa
+dienumerasi sacara komputabel. Kanggo
+nggambarake iki, kita bakal menehi sawetara
+bukti kang beda.
+
+Kanggo bukti kapisan, upamane $A$ dienumerasi
+dening fungsi komputabel~$f$, lan $B$
+dienumerasi dening fungsi komputabel~$g$.
+Tetepna
+\begin{align*}
+h(x) & = \umin{y}{(f(y) = x \lor g(y) = x)} \text{ lan}\\
+j(x) & = \umin{y}{(f((y)_0) = x \land g((y)_1) = x)}.
+\end{align*}
+Mula $A \cup B$ minangka domain $h$,
+lan $A \cap B$ minangka domain~$j$.
+
+\begin{explain}
+Mangkene teges komputasionale: yen diwenehi
+prosedur kang ngenumerasi $A$ lan $B$,
+kita bisa semi-mutusake apa unsur $x$
+kalebu $A \cup B$ kanthi nggoleki $x$
+ing salah siji enumerasi; lan kita bisa
+semi-mutusake apa unsur $x$ kalebu
+$A \cap B$ kanthi nggoleki $x$ ing
+loro enumerasi bebarengan.
+\end{explain}
+
+Kanggo bukti kapindho, upamane maneh $A$
+dienumerasi dening~$f$ lan $B$ dening~$g$.
+Tetepna
+\[
+k(x) = \begin{cases}
+f(x/2) & \text{yen $x$ genap} \\
+g((x-1)/2) & \text{yen $x$ ganjil.}
+\end{cases}
+\]
+Mula $k$ ngenumerasi $A \cup B$;
+gagasane, $k$ mung nggenteni enumerasi
+saka $f$ lan~$g$ kanthi selang-seling.
+Ngenumerasi $A \cap B$ luwih angel.
+Yen $A \cap B$ kosong, himpunan iki
+cetha bisa dienumerasi sacara komputabel.
+Yen ora, tetepna $c$ minangka unsur
+sembarang saka $A \cap B$, banjur
+tetepna $l$ minangka
+\[
+l(x) = \begin{cases}
+f((x)_0) & \text{yen $f((x)_0) = g((x)_1)$} \\
+c & \text{yen ora.}
+\end{cases}
+\]
+Miturut komputasi, $l$ mriksa pasangan
+unsur ing enumerasi $f$ lan $g$,
+banjur ngasilake saben nilai kang
+padha sing ditemokake; yen ora padha, fungsi
+iki mung ngasilake $c$ maneh.
+
+Kanggo bukti pungkasan, upamane $A$
+minangka \emph{domain} fungsi parsial
+$m(x)$ lan $B$ minangka domain fungsi
+parsial $n(x)$. Mula $A \cap B$
+minangka domain fungsi parsial $m(x) +
+n(x)$.
+
+\begin{explain}
+Miturut komputasi, yen $A$ minangka
+himpunan nilai kang ndadekake $m$ mandheg
+lan $B$ minangka himpunan nilai kang
+ndadekake $n$ mandheg, mula $A \cap B$
+minangka himpunan nilai kang ndadekake
+loro prosedur iku padha mandheg.
+\end{explain}
+
+Nuduhake $A \cup B$ minangka himpunan
+nilai kang ndadekake komputasi mandheg
+luwih angel, amarga $m$ lan $n$ kudu
+disimulasi bebarengan. Tetepna $d$
+minangka indeks kanggo $m$ lan $e$
+minangka indeks kanggo $n$; kanthi
+tembung liya, $m = \cfind{d}$ lan
+$n = \cfind{e}$. Mula $A \cup B$
+minangka domain fungsi
+\[
+p(x) = \umin{y}{(T(d,x,y) \lor T(e,x,y))}.
+\]
+\begin{explain}
+Miturut komputasi, ing input $x$,
+$p$ nggoleki komputasi kang mandheg
+kanggo $m$ utawa kanggo $n$,
+banjur mandheg yen nemokake salah siji.
+\end{explain}
+\end{proof}
+
+\end{document}

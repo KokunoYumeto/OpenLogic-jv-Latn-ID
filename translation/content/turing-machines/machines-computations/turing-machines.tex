@@ -1,0 +1,72 @@
+% Part: turing-machines
+% Chapter: machines-computations
+% Section: turing-machines
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{tur}{mac}{tur}
+\olsection{Mesin Turing}
+
+\begin{explain}
+Definisi formal mesin Turing katon abstrak,
+nanging sejatine prasaja: definisi iki
+mung nyawijikake kabeh informasi kang
+dibutuhake kanggo nemtokake cara makaryane
+mesin Turing dadi siji struktur matematis.
+Informasi iku kalebu (1) kahanan apa wae
+kang bisa dialami mesin, (2) simbol apa
+wae kang diidinake ana ing pita, (3)
+ing kahanan apa mesin kudu diwiwiti,
+lan (4) apa wae instruksi mesin.
+\end{explain}
+
+\begin{defn}[Mesin Turing]
+\emph{Mesin Turing} $M$ yaiku tupel
+$\langle Q, \Sigma, q_0,
+\delta\rangle$ kang dumadi saka
+\begin{enumerate}
+\item himpunan \emph{kahanan}~$Q$ kang winates,
+\item \emph{alfabet} $\Sigma$ winates kang ngemot
+  $\TMendtape$ lan $\TMblank$,
+\item \emph{kahanan wiwitan}~$q_0 \in Q$,
+\item \emph{himpunan instruksi}~$\delta\colon Q \times \Sigma
+  \pto Q \times \Sigma \times \{\TMleft, \TMright, \TMstay\}$ kang winates.
+\end{enumerate}
+Fungsi parsial~$\delta$ uga diarani
+\emph{fungsi transisi} saka~$M$.
+\end{defn}
+
+\begin{explain}
+Kita nganggep pita tanpa wates mung
+ing siji arah. Mula migunani yen simbol
+mligi~$\TMendtape$ ditetepake minangka
+panandha pucuk kiwa pita. Iki nggampangake
+program mesin Turing mangerteni nalika
+program mau ``meh'' metu saka pita.
+Kita bisa nganggep simbol iki ora tau
+ditimpa, yaiku $\delta(q,\TMendtape) = \tuple{q', \TMendtape, x}$
+yen $\delta(q,\TMendtape)$ ditegesi.
+Sawetara buku ajar nganggo anggepan iki;
+kita ora. Nalika mbangun mesin Turing,
+kowe mung perlu ngati-ati supaya mesin
+ora nate nimpa~$\TMendtape$. Kajaba iku,
+ana kahanan nalika idin kanggo nimpa
+simbol iki menehi keluwesan kang migunani.
+\end{explain}
+
+\begin{ex}
+\emph{Mesin Genep:} Sacara formal,
+mesin genep iku rangkap papat
+$\tuple{Q, \Sigma, q_0, \delta}$ kanthi
+\begin{align*}
+Q & = \{ q_0, q_1 \} \\
+\Sigma & = \{ \TMendtape, \TMblank, \TMstroke \}, \\
+\delta(q_0, \TMstroke) & = \tuple{q_1, \TMstroke, \TMright},\\
+\delta(q_1, \TMstroke) & = \tuple{q_0, \TMstroke, \TMright},\\
+\delta(q_1, \TMblank)  & = \tuple{q_1, \TMblank, \TMright}.
+\end{align*}
+\end{ex}
+
+\end{document}

@@ -1,0 +1,291 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{choice}{vitali}
+\olsection{Lampiran: Paradoks Vitali}
+
+Supaya bisa netepaké apa konstruksi Banach--Tarski bisa ditampa,
+kita perlu nliti \emph{buktiné}. Sayangé, iki mbutuhaké aljabar
+kang luwih akèh tinimbang kang bisa kita aturaké ing kéné.
+Nanging kita bisa mènèhi sawatara cathetan cekak kang nerangaké
+inti bukti Banach--Tarski,\footnote{Kanggo katrangan luwih jembar,
+delengen \cite{Weston2003} utawa \cite{Wagon2016}.} kanthi
+nggatekaké asil iki:
+
+\begin{thm}[Paradoks Vitali (ing $\ZFC$)]\ollabel{vitaliparadox}
+Sembarang bunder bisa dipérang dadi pérangan kaétung cacahé;
+pérangan-pérangan iku bisa disusun maneh (kanthi rotasi lan translasi)
+dadi rong salinan bunder mau.
+\end{thm}
+
+Paradoks Vitali luwih gampang dibuktèkaké tinimbang Paradoks
+Banach--Tarski. Kita nyebut ``Paradoks Vitali'' amarga asil iki
+katut saka konstruksi himpunan kang ora bisa diukur déning Vitali
+ing \citeyear{Vitali1905}. Nanging pérangan teori himpunan ing
+kaloro buktiné padha banget. Béda wigatiné yaiku Banach--Tarski
+mbagi dadi pérangan \emph{winates} cacahé, déné Paradoks Vitali
+mbagi dadi pérangan \emph{tanpa wates nanging kaétung}. Miturut
+\citet{Weston2003}, Paradoks Vitali ``ora nganti semono
+nggumunaké kaya Paradoks Banach--Tarski, nanging nuduhaké yèn
+paradoks géometris bisa muncul sanadyan ing kahanan kang prasaja.''
+
+Paradoks Vitali ngrembug wujud rong dimensi, yaiku bunder.
+Mula kita makarya ing bidang $\Real^2$. Anggepen $\rotationsgroup$
+iku himpunan rotasi titik-titik ngubengi titik asal kanthi arah
+jarum jam, kanthi sudut kang kelipatan \emph{rasional} saka puteran wutuh
+lan diwakili ing $[0,2\pi)$. Ing ngisor iki ana sawatara kasunyatan
+aljabar babagan $\rotationsgroup$; bukti bakal njlentrehaké tegesé:
+
+\begin{lem}\ollabel{rotationsgroupabelian}
+$\rotationsgroup$ mbentuk {grup} abelian miturut komposisi fungsi.
+\end{lem}
+
+\begin{proof}
+Tulis $0_{\rotationsgroup}$ kanggo rotasi kanthi sudut $0$ radian.
+Iki unsur identitas ing $\rotationsgroup$, amarga
+$\comp{0_{\rotationsgroup}}{\rho} = \comp{\rho}{0_{\rotationsgroup}} =
+\rho$ kanggo sembarang $\rho \in \rotationsgroup$.
+
+Saben unsur nduwèni invers. Rotasi identitas dadi inversé dhéwé.
+Yèn $\rho \in \rotationsgroup$ muter kanthi sudut $r$ radian kang
+ora nol, mula $\rho^{-1} \in \rotationsgroup$ muter kanthi sudut
+$2\pi - r$ radian, saéngga $\rho \circ \rho^{-1} = 0_\rotationsgroup$.
+
+Komposisi asosiatif: $\comp{\rho}{(\comp{\sigma}{\tau})} =
+\comp{(\comp{\rho}{\sigma})}{\tau}$ kanggo sembarang
+$\rho, \sigma, \tau \in \rotationsgroup$.
+
+Komposisi komutatif: $\comp{\rho}{\sigma} =
+\comp{\sigma}{\rho}$ kanggo sembarang $\rho, \sigma \in
+\rotationsgroup$.
+\end{proof}
+
+Pancen, grup $\rotationsgroup$ bisa dipérang dadi rong pérangan,
+lan salah siji pérangan waé cukup kanggo mbalèkaké grup wutuh:
+
+\begin{lem}\ollabel{disjointgroup}
+Ana partisi $\rotationsgroup$ dadi rong himpunan kang pisah,
+$\rotationsgroup_{1}$ lan $\rotationsgroup_{2}$, kang saben-saben
+dadi basis kanggo $\rotationsgroup$.
+\end{lem}
+
+\begin{proof}
+Anggepen $\rotationsgroup_{1}$ ngemot rotasi kanthi sudut
+kelipatan rasional saka puteran wutuh ing $[0, \pi)$; tetepna
+$\rotationsgroup_{2} = \rotationsgroup \setminus \rotationsgroup_1$.
+Miturut aljabar dhasar,
+$\Setabs{\comp{\rho}{\rho}}{\rho \in \rotationsgroup_1} =
+\rotationsgroup$. Asil kang padha uga lumaku kanggo
+$\rotationsgroup_2$.
+\end{proof}
+
+Kasunyatan grup iki bakal kita gunakaké kanggo mbuktekaké
+\olref{vitaliparadox}. Anggepen $\onesphere$ bunder satuan,
+yaiku himpunan titik kang jaraké pas~$1$ saka titik asal bidang:
+$\Setabs{\tuple{r,s} \in \Real^2}{\sqrt{r^2+s^2}=1}$.
+Kita bakal mbagi $\onesphere$ kanthi relasi iki ing $\onesphere$:
+\[
+	r \sim s \emph{ yèn lan mung yèn }(\exists \rho \in \rotationsgroup)\rho(r) = s.
+\]
+Tegesé, rong titik ing $\onesphere$ gegandhengan yèn siji titik
+bisa dipindhah menyang sijiné kanthi rotasi sudut rasional kali
+puteran wutuh ngubengi titik asal. Ora nggumunaké yèn:
+
+\begin{lem}
+$\sim$ iku relasi ekuivalensi.
+\end{lem}
+
+\begin{proof}
+Cetha saka \olref{rotationsgroupabelian}.
+\end{proof}
+
+Saiki kita migunakaké Pilihan kanggo ngasilaké himpunan $C$ kang
+ngemot pas siji unsur saka saben kelas ekuivalensi $\onesphere$
+miturut $\sim$. Tegesé, kita njupuk fungsi pilihan $f$ ing himpunan
+kelas ekuivalensi,\footnote{Amarga $\rotationsgroup$ !!{enumerable},
+saben !!{element} saka $E$ uga !!{enumerable}. Amarga $\onesphere$
+!!{nonenumerable}, saka \olref{vitalicover} lan
+\olref[card-arithmetic][simp]{kappaunionkappasize} kita ngerti yèn
+$E$ !!{nonenumerable}. Mula ing kéné digunakaké Pilihan kang
+\emph{ora} kaétung.}
+\[
+	E = \Setabs{\equivrep{r}{\sim}}{r \in \onesphere},
+\]
+lan tetepna $C = \ran{f}$. Kanggo saben rotasi
+$\rho \in \rotationsgroup$, himpunan $\funimage{\rho}{C}$
+ngemot titik-titik asil nrapaké $\rho$ marang saben titik ing $C$.
+Rong asil sabanjuré nuduhaké yèn himpunan-himpunan iki nutupi
+bunder kanthi jangkep lan tanpa tumpang tindih:
+
+\begin{lem}\ollabel{vitalicover}
+$\onesphere = \bigcup_{\rho \in \rotationsgroup} \funimage{\rho}{C}$.
+\end{lem}
+
+\begin{proof}
+Tetepna $s \in \onesphere$. Ana $r \in C$ kang nyukupi
+$r \in \equivrep{s}{\sim}$, yaiku $r \sim s$, saéngga
+$\rho(r) = s$ kanggo sawijining $\rho \in \rotationsgroup$.
+\end{proof}
+
+\begin{lem}\ollabel{vitalinooverlap}
+Yèn $\rho_1 \neq \rho_2$, mula
+$\funimage{\rho_1}{C} \cap \funimage{\rho_2}{C} = \emptyset$.
+\end{lem}
+
+\begin{proof}
+Anggepen $s \in \funimage{\rho_{1}}{C} \cap
+\funimage{\rho_{2}}{C}$. Mula
+$s = \rho_{1}(r_{1}) = \rho_{2}(r_{2})$ kanggo sawijining
+$r_{1}, r_{2} \in C$. Saka kéné
+$\rho^{-1}_2(\rho_1(r_1)) = r_2$, lan
+$\comp{\rho_1}{\rho^{-1}_2} \in \rotationsgroup$, saéngga
+$r_{1} \sim r_{2}$. Mula $r_1 = r_2$, amarga $C$ milih pas siji
+unsur saka saben kelas ekuivalensi miturut $\sim$.
+Dadi $s = \rho_1(r_1) = \rho_2(r_1)$, lan mula
+$\rho_1 = \rho_2$.
+\end{proof}
+
+Saiki kasunyatan aljabar mau kita trapaké marang bunder:
+
+\begin{lem}\ollabel{pseudobanachtarski}
+Ana partisi $\onesphere$ dadi rong himpunan pisah, $D_{1}$
+lan $D_{2}$, saéngga $D_{1}$ bisa dipérang dadi himpunan-himpunan
+kaétung cacahé kang bisa diputer kanggo mbentuk salinan
+$\onesphere$; semono uga $D_{2}$.
+\end{lem}
+
+\begin{proof}
+Kanthi $\rotationsgroup_{1}$ lan $\rotationsgroup_{2}$ saka
+\olref{disjointgroup}, tetepna:
+\begin{align*}
+	D_{1} &= \bigcup_{\rho \in \rotationsgroup_1} \funimage{\rho}{C} &
+	D_{2} &= \bigcup_{\rho \in \rotationsgroup_2} \funimage{\rho}{C}
+\end{align*}
+Iki partisi $\onesphere$ miturut \olref{vitalicover}, lan $D_1$
+lan $D_2$ pisah miturut \olref{vitalinooverlap}. Miturut konstruksi,
+$D_1$ bisa dipérang dadi himpunan-himpunan kaétung cacahé,
+$\funimage{\rho}{C}$ kanggo saben $\rho \in \rotationsgroup_1$.
+Himpunan-himpunan iki bisa diputer kanggo mbentuk salinan
+$\onesphere$, amarga $\onesphere = \bigcup_{\rho \in
+\rotationsgroup}\funimage{\rho}{C} = \bigcup_{\rho \in
+\rotationsgroup_1}\funimage{(\comp{\rho}{\rho})}{C}$ miturut
+\olref{disjointgroup} lan \olref{vitalicover}. Panalaran kang
+padha lumaku kanggo $D_2$. \end{proof}\noindent Iki langsung
+mènèhi Paradoks Vitali. Kita bisa ngasilaké \emph{rong} salinan
+$\onesphere$ saka $\onesphere$ kanthi mbagi dadi pérangan kaétung
+cacahé (yaiku $\funimage{\rho}{C}$ kang warna-warna) banjur
+mindhah kanthi gerak kaku: saben pérangan $D_1$ cukup diputer,
+déné saben pérangan $D_2$ dhisik ditranslasèkaké banjur diputer.
+
+Ayo kita ringkes siasat buktiné. Kita miwiti saka kasunyatan aljabar
+grup rotasi ing bidang. Grup iki digunakaké kanggo mbagi
+$\onesphere$ dadi kelas-kelas ekuivalensi. Banjur muncul
+``paradoks'' nalika Pilihan digunakaké kanggo milih unsur saka
+saben kelas.
+
+Siasat kang padha uga digunakaké kanggo mbuktekaké Banach--Tarski.
+Béda utamané yaiku kasunyatan aljabar kang dibutuhaké kanggo
+Banach--Tarski luwih rumit tinimbang kanggo Paradoks Vitali.
+Nanging kasunyatan aljaba mau ora gumantung marang Pilihan.
+Kita bakal ngringkes kanthi cekak.
+
+Kanggo Banach--Tarski, kita miwiti kanthi mbuktekaké analog saka
+\olref{disjointgroup}: sembarang \emph{grup bebas} bisa dipérang
+dadi patang pérangan kang, miturut pangertèn intuitif, bisa
+``dipindhah'' kanggo mbalèkaké rong salinan grup wutuh.\footnote{
+Kasunyatan yèn cukup \emph{patang} pérangan asalé saka
+\cite{Robinson1947}. Bukti anyar ana ing
+\citet[Téoréma 5.2]{Wagon2016}. Kita manut
+\citet[kaca~3]{Weston2003} nalika nyebut iki minangka
+``mindhah'' pérangan-pérangan grup.} Banjur kita nuduhaké yèn
+rong rotasi tartamtu ngubengi titik asal ing $\Real^3$ ngasilaké
+grup rotasi bebas $F$.\footnote{Delengen
+\citet[Téoréma 2.1]{Wagon2016}.} (Nganti kéné durung ana Pilihan.)
+Saiki rong titik ing lumahing bal diarani ``padha jinisé'' yèn
+siji bisa dipindhah menyang sijiné kanthi rotasi ing~$F$.
+Banjur kita \emph{migunakaké Pilihan} kanggo milih pas siji titik
+saka saben kelas ekuivalensi titik kang ``padha jinisé''.
+Kanthi nrapaké pambagian $F$ marang lumahing bal kaya ing
+\olref{pseudobanachtarski}, kita mbagi lumahing mau dadi patang
+pérangan kang bisa ``dipindhah'' kanggo ngasilaké rong salinan
+lumahing bal. Iki mbuktekaké asil \citep{Hausdorff1914}:
+
+\begin{thm}[Paradoks Hausdorff (ing $\ZFC$)]
+Lumahing sembarang bal bisa dipérang dadi sawatara pérangan winates
+cacahé, banjur disusun maneh kanthi rotasi lan translasi dadi
+rong salinan kang pisah saka lumahing bal mau.
+\end{thm}
+
+Isih dibutuhaké rong cara aljabar liya kanggo ngasilaké Téoréma
+Banach--Tarski kang jangkep, kang ngrembug ora mung lumahing bal
+nanging uga njero bal. Nanging iki mung tambahan ing bukti aljabar.
+Mula Weston nulis:
+\begin{quote}
+  [\ldots] asil babagan grup bebas iku \emph{langkah kunci} ing
+  bukti Paradoks Banach--Tarski. Saka sudut pandang iki, Paradoks
+  Banach--Tarski ora mung pratelan babagan $\Real^3$, nanging
+  luwih-luwih pratelan babagan ruweté grup [translasi lan rotasi
+  ing $\Real^3$]. \cite[kaca~16]{Weston2003}
+\end{quote}
+Tegesé, apa kita bisa mbagi dadi pérangan \emph{winates}
+(kaya Banach--Tarski) utawa kudu \emph{tanpa wates nanging kaétung}
+(kaya Paradoks Vitali), gumantung marang kasunyatan teori grup
+kang béda antarané rong dimensi lan telung dimensi.
+
+Pancen, pengamatan pungkasan iki rada ngrusak guyonan ing pungkasan
+\olref[banach]{sec}. Amarga tulisan ``Banach--Tarski'' rong dimensi,
+tulisan iku kudu dipérang dadi pérangan kang \emph{tanpa wates}
+nanging kaétung yèn arep disusun dadi ``Banach--Tarski
+Banach--Tarski''. Supaya guyonané bener, tulisana ing telung
+dimensi. Iki kita tinggalaké minangka gladhen kanggo pamaos.
+
+Cathetan pungkasan. Ing \olref[banach]{sec}, kita nyebut yèn
+``pérangan'' bal kang dikasilaké ora bisa \emph{diukur}, nanging
+kaya ``sebaran tanpa wates'' kang ora bisa digambar. Prakara kang
+padha uga ana ing panganggoné Pilihan kanggo ngasilaké
+\olref{pseudobanachtarski}. Iki perlu dijlentrehaké.
+
+Kita kudu nggambaraké sethithik dhasar teori ukuran (nanging iki
+\emph{mung} gambaran; panjenengan bisa maca buku bab
+\emph{ukuran}). Ukuran ing himpunan $X$ mènèhi nilai
+$\mu(E) \in \Real$ marang saben $E$ ing sawijining
+``aljabar-$\sigma$'' ing $X$. Ing kéné kita nganggo ukuran
+nonnegatif kang domainé ditutup tumrap rotasi. Rincian liya
+ora wigati, kajaba fungsi $\mu$ kudu aditif kaétung:
+ukuran gabungan kaétung saka himpunan-himpunan kang pisah iku
+gunggung ukurané siji-siji, yaiku
+$\mu(\bigcup_{n < \omega} X_n) = \sum_{n < \omega}\mu(X_n)$
+yèn $X_n$ pisah sepasang-sepasang. Himpunan diarani ``ora bisa
+diukur'' yèn ora kalebu domain ukuran kang lagi dirembug.
+Saiki kita gunakaké $\rotationsgroup$ mau:
+
+\begin{cor}[Vitali]
+Anggepen $\mu$ ukuran kang nyukupi $\mu(\onesphere) = 1$,
+lan $\mu(X) = \mu(Y)$ yèn $X$ lan $Y$ kongruen. Mula
+$\funimage{\rho}{C}$ ora bisa diukur kanggo saben
+$\rho \in \rotationsgroup$.
+\end{cor}
+
+\begin{proof}
+Kanggo bukti kanthi kontradiksi, anggepen salah sawijining bisa
+diukur. Jupuken $\mu(\funimage{\sigma}{C}) = r$ kanggo sawijining
+$\sigma \in \rotationsgroup$ lan $r \in \Real$. Kanggo sembarang
+$\rho \in \rotationsgroup$, himpunan $\funimage{\rho}{C}$ lan
+$\funimage{\sigma}{C}$ kongruen, mula
+$\mu(\funimage{\rho}{C}) = r$ kanggo saben
+$\rho \in \rotationsgroup$. Miturut \olref{vitalicover} lan
+\olref{vitalinooverlap}, $\onesphere =
+\bigcup_{\rho \in \rotationsgroup}\funimage{\rho}{C}$ iku
+gabungan kaétung saka himpunan-himpunan kang pisah. Mula
+aditivitas kaétung mènèhi yèn $\mu(\onesphere) = 1$ iku
+gunggung ukuran kabèh $\funimage{\rho}{C}$, yaiku
+\[
+	1 = \mu(\onesphere) = \sum_{\rho \in \rotationsgroup}\mu(\funimage{\rho}{C}) = \sum_{\rho \in \rotationsgroup}r
+\]
+Nanging yèn $r = 0$, mula $\sum_{\rho \in \rotationsgroup}r = 0$;
+yèn $r > 0$, mula $\sum_{\rho \in \rotationsgroup}r = \infty$.
+Kaloroné nalisir angka siji ing sisih kiwa.
+\end{proof}
+
+\end{document}

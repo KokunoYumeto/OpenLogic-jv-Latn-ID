@@ -1,0 +1,41 @@
+% Part: normal-modal-logic
+% Chapter: filtrations
+% Section: S5-decidable
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{fil}{dec}
+
+\olsection{\Log{S5} Bisa Diputusake}
+Kanggo sistem kang diaksiomatisasi kanthi efektif lan kontramodel
+winates relevane bisa didhaptar kanthi efektif, sipat model winates
+bisa menehi
+\emph{katerputusan} (yaiku anane prosedur komputabel kanggo nemtokake
+apa !!a{formula} iku !!{derivable} ing sistem kasebut utawa ora).
+
+\begin{thm}
+  \Log{S5} bisa diputusake.
+\end{thm}
+
+\begin{proof}
+  Jupuken $!A$, lan upamane !!{propositional variable}s kang katon
+  ing $!A$ kalebu $p_1$, \dots, $p_k$. Amarga kanggo saben $n$ mung
+  ana model kang cacahé winates kanthi $n$ jagad lan panetepan nilai
+  kanggo $p_1$, \dots, $p_k$, kita bisa ndhaptar \emph{bebarengan}
+  kabeh teorema \Log{S5} kanthi ngasilake bukti kanthi cara sistematis;
+  uga kabeh model universal winates kanthi $1$, $2$, \dots jagad lan
+  mriksa apa $!A$ gagal ing salah siji jagad model kasebut. Pungkasane
+  salah siji saka rong proses bebarengan iki bakal menehi jawaban,
+  amarga miturut \olref[com][fra]{thm:generaldet} lan
+  \olref[fmp]{cor:S5fmp}, $!A$ iku !!{derivable} utawa gagal ing
+  sawijining model universal winates.
+\end{proof}
+
+Bukti ing ndhuwur lumaku kanggo \Log{S5} amarga filtrasi model
+universal kanthi otomatis uga universal. Bab kang padha lumaku kanggo
+refleksivitas lan keserialan, nanging sipat liyane mbutuhake bukti
+luwih akeh.
+
+\end{document}

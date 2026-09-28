@@ -1,0 +1,48 @@
+% Part: computability
+% Chapter: computability-theory
+% Section: computable-sets
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{thy}{cps}
+\olsection{Himpunan Komputabel}
+
+Pangerten komputabilitas bisa kita jembarake
+saka fungsi komputabel menyang himpunan komputabel:
+
+\begin{defn}
+  Tetepna $S$ minangka himpunan wilangan asli.
+  Mula $S$ \emph{komputabel} yen lan mung yen
+  fungsi karakteristike~$\Char{S}$ komputabel.
+  Kanthi tembung liya, $S$~komputabel yen lan
+  mung yen fungsi
+\[
+\Char{S}(x) =
+\begin{cases}
+1 & \text{yen $x \in S$} \\
+0 & \text{yen ora}
+\end{cases}
+\]
+komputabel. Semono uga, relasi
+$R(x_0, \dots, x_{k-1})$ komputabel yen lan
+mung yen fungsi karakteristike komputabel.
+
+Himpunan lan relasi komputabel uga diarani
+\emph{bisa diputusake}.
+\end{defn}
+
+\begin{explain}
+Gatekna yen saiki ana sawetara pangerten
+komputabilitas: kanggo fungsi parsial, fungsi,
+lan himpunan. Aja nganti bingung!{} \iftag{TMs}{Mesin
+  Turing kang ngitung fungsi parsial ngasilake
+  output fungsi iku kanggo nilai input nalika
+  fungsi kasebut ditegesi; mesin Turing kang
+  ngitung sawijining himpunan ngasilake $1$
+  utawa~$0$ sawisé mutusake apa nilai input
+  kalebu himpunan iku.}{}
+\end{explain}
+
+\end{document}

@@ -1,0 +1,113 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{cardinals}{hp}
+\olsection{Lampiran: Prinsip Hume}
+
+Ing \olref[cp]{sec}, kita wis njlentrehaké Prinsip Cantor.
+Prinsip mau yaiku:
+\begin{align*}
+	\card{A} = \card{B} & \text{ yen lan mung yen } A \approx B.
+\intertext{Iki mirip banget karo kang saiki diarani
+\emph{Prinsip Hume}, kang kandha:}
+	\fregenum{x} {F(x)} = \fregenum{x}{G(x)} & \text{ yen lan mung yen } F \sim G
+\end{align*}
+ing kéné “$F \sim G$” nyingkat pratelan yèn cacahé $F$ persis
+padha karo cacahé $G$, yaiku objek-objek $F$ bisa dipasangake
+kanthi bijeksi karo objek-objek $G$, yaiku:
+\begin{align*}
+	\exists R(&\forall v\forall y(Rvy \lif (Fv \land Gy)) \land {}\\
+		&\forall v(Fv \lif \lexists![y][Rvy]) \land {}\\
+		&\forall y(Gy \lif \lexists![v][Rvy]))
+\end{align*}
+Nanging Prinsip Hume lan Prinsip Cantor béda jinisé. Ing
+rumusan Prinsip Cantor, variabel “$A$” lan “$B$” iku
+term orde kapisan kang nuduhaké \emph{himpunan}. Ing
+rumusan Prinsip Hume, “$F$”, “$G$”, lan “$R$”
+\emph{dudu} term orde kapisan; kabèh mau dumunung ing
+\emph{panggonan predikat}. (Mbokmenawa nuduhaké
+\emph{sipat}.) Mula Prinsip Hume bisa kita jlentrehaké
+mangkéné: cacahé $F$ padha karo cacahé $G$ yen lan mung yen
+objek-objek $F$ bisa dibijeksèkaké karo~$G$. Prinsip iki
+diarani \emph{Prinsip Hume}, amarga Hume tau nulis:
+\begin{quote}
+  Nalika rong wilangan digandhèngaké saéngga saben satuan ing
+  siji tansah nduwèni pasangan satuan ing sijiné, kita nyebut
+  loro-loroné padha.
+  \citep[Pt.III Bk.1 \S1]{Hume1740}
+\end{quote}
+Prinsip Hume banjur diangkat dadi wigati ing logika
+matematika kontemporer déning \citet[\S63]{Frege1884}.
+Dheweke ngutip pethikan Hume mau sadurungé (ing intiné)
+nggambarake apa kang kita sebut Prinsip Hume.
+
+Wigatèkna kamiripan struktur antara Prinsip Hume lan
+Hukum Dhasar~V. Kita ngrumusaké ing \olref[story][blv]{sec}
+mangkéné:
+\[
+	\fregeext{x}{F(x)} = \fregeext{x}{G(x)} \text{yen lan mung yen } \lforall[x][(F(x) \liff G(x))].
+\]
+Ing titik iki, sawetara panjlentrehan lan pambandhing bisa migunani.
+
+Ana rong cara mangertèni prinsip kaya Prinsip Hume utawa Hukum
+Dhasar~V: kanthi \emph{predikatif} utawa
+\emph{impredikatif} (élinga
+\olref[story][predicative]{sec}). Miturut pamacaan impredikatif
+marang Hukum Dhasar~V, kanggo saben~$F$, objek
+$\fregeext{x}{F(x)}$ kalebu ing domain kuantifikasi kang
+dienggo kanggo ngrumusaké Hukum Dhasar~V iku dhéwé.
+Semono uga, miturut pamacaan impredikatif marang Prinsip
+Hume, kanggo saben~$F$, objek $\fregenum{x}{F(x)}$
+kalebu ing domain kuantifikasi kang dienggo kanggo ngrumusaké
+Prinsip Hume. Kosokbaliné, miturut pangertèn
+\emph{predikatif}, objek $\fregeext{x}{F(x)}$ lan~$\fregenum{x}{F(x)}$
+iku anggota domain kang \emph{béda}.
+
+Yèn Hukum Dhasar~V diwaca kanthi impredikatif, bakal
+nuwuhaké inkonsistensi liwat Komprehensi Naif (rinciné
+delengen \olref[story][blv]{sec}). Kaya Komprehensi Naif,
+prinsip iki bisa digawe konsisten kanthi pamacaan
+\emph{predikatif}. Nanging bisa uga ora nyukupi kabèh
+kang kita karepake.
+
+Prinsip Hume, kosokbaliné, \emph{bisa} diwaca kanthi
+impredikatif tanpa inkonsistensi. Kanthi pamacaan mangkono,
+prinsip iki cukup kuwat.
+
+Kanggo nggambarake: gatekna predikat “$x \neq x$”,
+kang cetha ora disukupi déning objek apa waé. Prinsip
+Hume banjur menehi sawijining objek $\# x( x\neq
+x)$. Kita bisa nganggep iki minangka wilangan~$0$. Saiki,
+miturut pangertèn \emph{impredikatif}---nanging
+\emph{mung} miturut pangertèn impredikatif---objek $0$ iki
+kalebu ing domain kuantifikasi wiwitan kita. Mula Prinsip
+Hume bisa ditrapaké marang predikat “$x = 0$” kanggo
+ngasilaké objek $\#x (x =
+0)$. Kita bisa nganggep iki minangka wilangan~$1$.
+Kajaba iku, Prinsip Hume ngakibataké $0 \neq 1$,
+amarga ora mungkin ana bijeksi saka objek kang ora padha
+karo dhiriné menyang objek kang padha karo $0$
+(sing kapisan ora ana, déné sing kapindho ana siji).
+Saiki, miturut pamacaan impredikatif manèh, $1$~kalebu
+ing domain kuantifikasi wiwitan kita. Mula Prinsip Hume
+bisa ditrapaké marang predikat “$(x = 0 \lor x = 1)$”
+kanggo ngasilaké objek $\#x(x = 0 \lor
+x = 1)$. Kita bisa nganggep iki minangka wilangan~$2$,
+lan bisa mbuktèkaké $0\neq 2$ lan $1 \neq 2$, lan saterusé.
+
+Dadi, yèn diwaca kanthi impredikatif, Prinsip Hume
+ngakibataké anané \emph{objek tanpa wates cacahé}.
+Iki nyurung para \emph{logisis neo-Fregean} kanggo
+nganggo Prinsip Hume minangka dhasar aritmetika.
+
+Nanging Frege \emph{dhéwé} ora nganggo Prinsip Hume
+minangka dhasar aritmetika. Frege malah mbuktèkaké
+Prinsip Hume saka sawijining definisi eksplisit:
+$\fregenum{x}{F(x)}$ ditetepaké minangka ekstensi
+konsep $F \sim \Phi$. Ing istilah modern, kita bisa
+nyoba nulis iki minangka
+$\fregenum{x}{F(x)} = \Setabs{G}{F \sim G}$;
+nanging iki mbalèkaké kita marang masalah Komprehensi Naif.
+
+\end{document}

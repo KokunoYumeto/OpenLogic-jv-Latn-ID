@@ -1,0 +1,152 @@
+% Part: computability
+% Chapter: computability-theory
+% Section: rice-theorem
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{thy}{rce}
+\olsection{Teorema Rice}
+
+Yen dipikirake, kowe bakal weruh yen sipat-sipat mligi
+$\fn{Tot}$ ora melu nemtokake bukti \olref[tot]{prop:total}.
+Kita ngrancang $h(x,y)$ supaya tumindake padha karo
+fungsi konstan $j(y) = 0$ persis nalika $x$ kalebu $K$;
+nanging ing kahanan iku kita uga bisa ngrancang supaya
+tumindake padha karo fungsi komputabel parsial liyane
+sembarang. Pangamatan iki ngidini kita nyebut teorema
+kang luwih umum: kurang luwih, ora ana sipat ora trivial
+saka fungsi komputabel kang bisa diputusake.
+
+Elinga yen $\cfind{0}$, $\cfind{1}$, $\cfind{2}$,~\dots
+minangka enumerasi baku fungsi-fungsi komputabel parsial.
+
+\begin{thm}[Teorema Rice]
+  Tetepna $C$ minangka himpunan sembarang fungsi
+  komputabel parsial, lan tetepna $A =
+  \Setabs{n}{\cfind{n} \in C}$. Yen $A$ komputabel,
+  mula $C$ kosong utawa $C$ minangka himpunan kabeh
+  fungsi komputabel parsial.
+\end{thm}
+
+{\em Himpunan indeks} yaiku himpunan $A$ kang nduwé sipat
+mangkene: yen $n$ lan $m$ indeks kang ``ngitung'' fungsi
+kang padha, mula $n$ lan $m$ loro-lorone kalebu $A$,
+utawa loro-lorone ora kalebu. Gampang dideleng yen
+himpunan~$A$ ing teorema iki nduwé sipat mau. Kosok
+baline, yen $A$~himpunan indeks lan $C$~himpunan fungsi
+kang diitung dening indeks-indeks iku, mula
+$A = \Setabs{n}{\cfind{n} \in C}$.
+
+\begin{explain}
+Kanthi istilah iki, teorema Rice padha tegese karo
+pratelan yen ora ana himpunan indeks ora trivial kang
+bisa diputusake. Kanggo mangerteni isi teorema iki,
+migunani yen kita mbedakake \emph{program}
+(umpamane, ing basa pamrograman kang koksenengi)
+saka fungsi kang diitung dening program iku.
+Mesthi ana pitakon bab program (indeks), yaiku
+obyek sintaktis, kang bisa diwangsuli sacara komputabel:
+apa program iki nduwé luwih saka 150 simbol?
+Apa dawane luwih saka 22 larik? Apa ana pratelan
+``while'' ing jerone? Apa runtutan aksara ``hello world''
+tau dadi argumen kanggo pratelan ``print''?
+Teorema Rice nyebut yen ora ana pitakon ora trivial
+bab \emph{tumindake} program kang bisa diwangsuli
+sacara komputabel. Iki kalebu pitakon kaya mangkene:
+apa program mandheg nalika nampa input $0$?
+Apa program tau mandheg? Apa program tau
+ngasilake wilangan genap?
+\end{explain}
+
+\begin{proof}[Bukti teorema Rice]
+Upamane $C$ ora kosong lan uga dudu himpunan kabeh
+fungsi komputabel parsial, lan tetepna $A$ minangka
+himpunan indeks fungsi ing~$C$. Kita bakal nuduhake
+yen $A$ komputabel, kita bisa ngrampungake masalah
+mandheg; mula $A$~ora komputabel.
+
+Tanpa ngurangi umumé argumen, kita bisa nganggep
+yen fungsi $f$ kang ora ditegesi ing input endi wae
+ora kalebu $C$ (yen kosok baline, ijolna $C$ lan
+komplemene ing argumen ing ngisor iki). Tetepna $g$
+minangka fungsi sembarang ing~$C$. Gagasane yaiku
+yen kita bisa mutusake~$A$, kita bisa mbedakake
+indeks kang ngitung~$f$ saka indeks kang ngitung~$g$;
+banjur kemampuan iku bisa digunakake kanggo
+ngrampungake masalah mandheg.
+
+Carane mangkene. Kanthi nggunakake fungsi-fungsi
+komputabel parsial universal, kita bisa netepake fungsi
+\[
+h(x,y) \simeq
+\begin{cases}
+\text{ora ditegesi} & \text{yen $\cfind{x}(x) \fundefined$} \\
+g(y) & \text{yen ora.}
+\end{cases}
+\]
+Kanggo ngitung $h$, luwih dhisik kita nyoba ngitung
+$\cfind{x}(x)$; yen komputasi iku mandheg, kita
+nerusake ngitung~$g(y)$; lan yen komputasi
+{\em iku} uga mandheg, kita mbalekake asile.
+Luwih formal, kita bisa nulis
+\[
+h(x,y) \simeq \Proj{2}{0}(g(y),\fn{Un}(x,x)).
+\]
+ing ngendi $\Proj{2}{0}(z_0, z_1) = z_0$ minangka
+fungsi proyeksi $2$ argumen kang mbalekake argumen
+kapangka-$0$, lan fungsi iki komputabel.
+
+Mula $h$ minangka komposisi fungsi-fungsi komputabel
+parsial, lan sisih tengen ditegesi lan padha
+karo~$g(y)$ yen lan mung yen $\fn{Un}(x,x)$ lan $g(y)$
+loro-lorone ditegesi.
+
+Gatekna yen kanggo~$x$ kang tetep, yen
+$\cfind{x}(x)$ ora ditegesi, mula $h(x,y)$
+ora ditegesi kanggo saben~$y$; lan yen
+$\cfind{x}(x)$ ditegesi, mula $h(x,y) \simeq g(y)$.
+Dadi, kanggo saben nilai~$x$ kang tetep,
+$h(x,y)$ tumindake padha karo $f$ utawa padha
+karo $g$, lan mutusake apa $\cfind{x}(x)$
+ditegesi padha karo mutusake endi saka loro
+kahanan iku kang kelakon. Iki uga padha karo
+mutusake apa fungsi $h_x(y) \simeq h(x,y)$ kalebu~$C$,
+lan yen $A$ komputabel, kita bisa nindakake iku.
+
+Luwih formal, amarga $h$~komputabel parsial,
+fungsi iku padha karo $\cfind{e}$ kanggo sawijining
+indeks~$e$. Miturut teorema $s$-$m$-$n$, ana
+fungsi rekursif primitif~$s$ saengga kanggo saben~$x$,
+$\cfind{s(e,x)}(y) = h_x(y)$. Saiki kita nduwé yen
+kanggo saben $x$, yen $\cfind{x}(x) \fdefined$,
+mula $\cfind{s(e,x)}$ fungsi kang padha karo~$g$,
+lan mula $s(e,x)$ kalebu $A$. Kosok baline,
+yen $\cfind{x}(x) \uparrow$, mula
+$\cfind{s(e,x)}$ fungsi kang padha karo~$f$,
+lan mula $s(e,x)$ ora kalebu~$A$. Kanthi tembung
+liya, kanggo saben~$x$, $x
+\in K$ yen lan mung yen $s(e,x) \in A$.
+Yen $A$ komputabel, $K$~uga komputabel,
+kang nuwuhake kontradiksi. Dadi $A$ ora komputabel.
+\end{proof}
+
+Teorema Rice migunani banget. Korolari langsung
+ing ngisor iki nuduhake sawetara tuladha panganggone.
+\begin{cor}
+Himpunan-himpunan ing ngisor iki ora bisa diputusake.
+\begin{enumerate}
+\item $\Setabs{x}{\text{$17$ kalebu jangkauan $\cfind{x}$}}$
+\item $\Setabs{x}{\text{$\cfind{x}$ konstan}}$
+\item $\Setabs{x}{\text{$\cfind{x}$ total}}$
+\item $\Setabs{x}{\text{saben $y < y'$, $\cfind{x}(y) \fdefined$, lan
+    yen $\cfind{x}(y') \fdefined$, mula $\cfind{x}(y) < \cfind{x}(y')$}}$
+\end{enumerate}
+\end{cor}
+
+\begin{proof}
+  Kabeh iku himpunan indeks kang ora trivial.
+\end{proof}
+
+\end{document}

@@ -1,0 +1,137 @@
+% Part: lambda-calculus
+% Chapter: church-rosser
+% Section: definitions-and-properties
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{cr}{dap}
+
+\olsection{Definisi lan Sipat}
+
+Ing bab iki kita ngenalake
+sipat Church--Rosser lan sawetara
+akibat umume.
+
+\begin{defn}[Sipat Church--Rosser, CR] Relasi $\xredone$ ing
+  suku diarani nduweni \emph{sipat Church--Rosser}
+  yen lan mung yen, saben
+  $M \xredone P$ lan $M \xredone Q$,
+  ana~$N$ kang nyukupi
+  $P \xredone N$ lan $Q \xredone N$.
+\end{defn}
+
+Kalkulus lambda bisa dideleng minangka
+model komputasi: suku kang wis ana
+ing wujud normal iku ``nilai'',
+dene relasi reduksi ing suku iku
+``aturan pangétungan''.
+Sipat Church--Rosser njamin yen
+pangétungan bisa maju liwat luwih
+saka siji dalan, saben asil kang
+tekan wujud normal tetep padha.
+
+Contone saka aljabar dhasar,
+ana luwih saka siji cara
+ngitung $4 \times (1+2) + 3$.
+Ungkapan iki bisa direduksi dadi
+$4 \times 3+3$ (yen luwih dhisik
+$1+2$ direduksi dadi~$3$)
+utawa dadi $4 \times 1+4
+\times 2+3$ (yen luwih dhisik
+$4 \times (1+2)$ diowahi
+miturut sipat distributif).
+Loro-lorone banjur bisa
+direduksi dadi $12+3$.
+
+Yen $\xredone$ dijupuk minangka
+reduksi-$\beta$, akibat saka
+sipat Church--Rosser yaiku
+wujud normal sawijining suku,
+yen ana, mesthi tunggal.
+Upamane $M$ bisa direduksi
+dadi $P$ lan $Q$, lan
+loro-lorone wujud normal.
+Miturut sipat Church--Rosser,
+ana $N$ kang bisa digayuh
+kanthi reduksi saka $P$
+uga saka $Q$.
+Amarga miturut pangira
+$P$ lan $Q$ wujud normal,
+reduksi saka $P$ lan $Q$
+menyang $N$ mung bisa
+reduksi sepele; tegese
+$P$, $Q$, lan $N$ padha.
+Iki mbenerake sebutan
+\emph{wujud normal} sawijining suku.
+
+Yen kalkulus lambda dideleng
+minangka model komputasi,
+wujud normal suku bisa dianggep
+``asil pungkasan'' pangétungan
+kang diwiwiti saka suku iku.
+Akibat ing ndhuwur tegesé
+asil pungkasan iku, yen ana,
+mung siji, kaya pangétungan
+$4 \times (1+2)+3$ kang
+asile siji, yaiku~$15$.
+
+\begin{thm} \ollabel{thm:str}
+  Yen relasi $\xredone$ nduweni
+  sipat Church--Rosser, lan
+  $\xred$ yaiku relasi transitif
+  paling cilik kang ngemot
+  $\xredone$, mula $\xred$
+  uga nduweni sipat Church--Rosser.
+\end{thm}
+
+\begin{proof}
+  Upamane
+  \begin{align*}
+    M & \xredone P_1 \xredone \dots \xredone P_m \text{ lan}\\
+    M & \xredone Q_1 \xredone \dots \xredone Q_n.
+  \end{align*}
+  Kita buktekake teorema iki
+  kanthi mbangun kothak suku $N$
+  kang dhuwure $m + 1$ lan
+  ambane $n + 1$.
+  $N_{i,j}$ nuduhake suku
+  ing larik kaping-$i$ lan
+  kolom kaping-$j$.
+  
+  Kita mbangun $N$ supaya
+  $N_{i,j} \xredone N_{i+1,j}$
+  lan $N_{i,j} \xredone N_{i,j+1}$.
+  Ing pinggir kothak:
+  \begin{align*}
+    N_{0,0} &= M \\
+    N_{i,0} &= P_i && \text{yen } 1 \le i \le m \\
+    N_{0,j} &= Q_j && \text{yen } 1 \le j \le n \\
+  \intertext{lan ing panggonan liyane:}
+    N_{i,j} &= R
+  \end{align*}
+  kanthi $R$ suku kang nyukupi
+  $N_{i-1,j} \xredone R$ lan
+  $N_{i,j-1} \xredone R$.
+  Ing saben sel njero, suku
+  sisih ndhuwur lan kiwa iku
+  asalé saka suku pojok
+  ndhuwur-kiwa kanthi
+  siji langkah.
+  Sipat Church--Rosser kanggo
+  $\xredone$ njamin yen suku
+  kaya mangkono mesthi ana.
+
+  Saiki $N_{m,0} \xredone \dots
+  \xredone N_{m,n}$ lan
+  $N_{0,n} \xredone \dots
+  \xredone N_{m,n}$.
+  Gatekna yen $N_{m,0}$
+  yaiku $P_m$ lan $N_{0,n}$
+  yaiku $Q_n$.
+  Miturut definisi $\xred$,
+  teorema iki kabukten.
+\end{proof}
+
+\end{document}

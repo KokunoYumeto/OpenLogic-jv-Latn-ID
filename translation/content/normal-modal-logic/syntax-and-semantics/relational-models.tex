@@ -1,0 +1,57 @@
+% Part: normal-modal-logic
+% Chapter: syntax-and-semantics
+% Section: relational-models
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{syn}{rel}
+
+\olsection{Model Relasional}
+
+Konsep dhasar semantik kanggo logika modal normal yaiku
+\emph{model relasional}. Model iki dumadi saka himpunan donya kang
+disambungake dening ``relasi aksesibilitas'' biner, sarta penetapan
+kang nemtokake !!{propositional variable}s endi kang dianggep
+``bener'' ing donya endi.
+
+\begin{defn}
+  Sawijining \emph{model} kanggo basa modal dhasar iku tripel $\mModel{M}
+  = \tuple{W, R, V}$, kanthi
+  \begin{enumerate}
+  \item $W$ iku himpunan ``donya'' kang ora kosong,
+  \item $R$ iku relasi aksesibilitas biner ing~$W$, lan
+  \item $V$ iku fungsi kang nemtokake kanggo saben !!{propositional
+    variable}~$p$ sawijining himpunan $V(p)$ saka donya kang mungkin.
+  \end{enumerate}
+  Yen $Rww'$ lumaku, kita kandha yen $w'$ \emph{bisa diakses
+    saka}~$w$. Yen $w \in V(p)$, kita kandha yen $p$ \emph{bener ing}~$w$.
+\end{defn}
+
+Kauntungan utama semantik relasional yaiku model bisa
+digambarake nganggo diagram prasaja, kaya ing \olref{fig:simple}.
+Donya digambarake minangka simpul, lan donya~$w'$ bisa diakses
+saka~$w$ persis yen ana panah saka~$w$ menyang~$w'$. Kajaba iku,
+kita menehi label simpul (donya) kanthi~$\mTrue{p}$ yen $w \in V(p)$,
+lan yen ora kanthi~\mFalse{p}. \olref{fig:simple} nuduhake model
+kanthi $W = \{w_1, w_2, w_3\}$, $R = \{\tuple{w_1, w_2},\tuple{w_1,
+  w_3}\}$, $V(p) = \{w_1, w_2\}$, lan $V(q) = \{w_2\}$.
+
+\begin{figure}
+  \begin{center}
+    \begin{tikzpicture}[modal]
+      \node[world] (w1) [label={[align=right]right:\mTrue{p}\\ \mFalse{q}}]{$w_1$}; 
+      \node[world] (w2) [label={[align=right]right:\mTrue{p}\\ \mTrue{q}},
+        above right=of w1]{$w_2$}; 
+      \node[world] (w3) [label={[align=right]right:\mFalse{p}\\ \mFalse{q}},
+        below right=of w1] {$w_3$};
+      \draw[->] (w1) to (w2);
+      \draw[->] (w1) to (w3);
+    \end{tikzpicture}
+  \end{center}
+  \caption{Model prasaja.}
+  \ollabel{fig:simple}
+\end{figure}
+
+\end{document}

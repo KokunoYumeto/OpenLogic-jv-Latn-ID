@@ -1,0 +1,233 @@
+% Part: normal-modal-logic
+% Chapter: completeness
+% Section: frame-completeness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{com}{fra}
+
+\olsection{Kasampurnan Tumrap Bingkai}
+
+Teorema kasampurnan kanggo \Log{K} bisa digedhekake marang sistem modal
+liyane, sawise kita nuduhake yen model kanonik kanggo logika tartamtu
+nduweni sipat bingkai kang cocog.
+
+\begin{thm}\ollabel{thm:completeframeprops}
+  Yen logika modal normal $\Sigma$ ngemot salah siji !!{formula}s ing
+  sisih kiwa \olref{tab:correspondencetable}, mula model kanonik
+  kanggo~$\Sigma$ nduweni sipat kang cocog ing sisih tengen.
+\end{thm}
+
+\begin{table}[htp]
+  \centering
+    \begin{tabular}{| l || l |}
+      \hline
+      \emph{Yen $\Sigma$ ngemot \dots} & \emph{\dots model kanonik
+        kanggo $\Sigma$ iku:} \\
+      \hline \hline
+      \Ax{D}:\;\; $\Box!A \lif \Diamond !A$ & \quad serial; \\
+      \hline
+      \Ax{T}:\;\; $\Box!A \lif !A$ &\quad  refleksif;\\
+      \hline
+      \Ax{B}: \;\;$!A \lif \Box\Diamond!A$ &\quad  simetris; \\
+      \hline
+      \Ax{4}: \;\; $\Box!A \lif \Box\Box!A$ & \quad transitif; \\
+      \hline 
+      \Ax{5}: \;\; $\Diamond !A \lif \Box\Diamond!A$& \quad Euklidean.\\
+      \hline
+    \end{tabular}
+    \caption{Kasunyatan korespondensi dhasar.}
+    \ollabel{tab:correspondencetable}
+\end{table}
+
+\begin{proof}
+  Kita bahas saben sipat iki kanthi urut.
+
+  Upamane $\Sigma$ ngemot \Ax{D}, lan jupuken $\Delta \in W^\Sigma$;
+  kita kudu nuduhake yen ana $\Delta'$ kang $R^\Sigma
+  \Delta\Delta'$. Cukup nuduhake yen $\Box^{-1}\Delta$ iku
+  $\Sigma$-konsisten, amarga banjur, miturut Lemma Lindenbaum, ana
+  himpunan $\Sigma$-konsisten jangkep $\Delta' \supseteq
+  \Box^{-1}\Delta$, lan miturut definisi $R^\Sigma$
+  \iftag{prvBox}{}{lan \olref[mod]{lem:box-iff-diamond} }kita duwe
+  $R^\Sigma \Delta\Delta'$. Dadi, kanggo kontradiksi, upamane
+  $\Box^{-1}\Delta$ iku \emph{ora} $\Sigma$-konsisten, yaiku
+  $\Box^{-1}\Delta \Proves[\Sigma] \lfalse$. Miturut \olref[mod]{lem:box2},
+  $\Delta \Proves[\Sigma] \Box\lfalse$, lan amarga $\Sigma$ ngemot
+  \Ax{D}, uga $\Delta \Proves[\Sigma] \Diamond\lfalse$. Nanging $\Sigma$
+  iku normal, mula $\Sigma \Proves \lnot\Diamond \lfalse$
+  (\olref[prf][nor]{prop:notDiamondBot}), saengga uga $\Delta
+  \Proves[\Sigma] \lnot\Diamond \lfalse$, kang nalisir karo
+  konsistensi~$\Delta$.
+
+  Saiki upamane $\Sigma$ ngemot \Ax{T}, lan jupuken $\Delta \in
+  W^\Sigma$. Kita arep nuduhake $R^\Sigma \Delta\Delta$,
+  yaiku,\iftag{prvBox}{}{ miturut \olref[mod]{lem:box-iff-diamond},}
+  $\Box^{-1}\Delta \subseteq \Delta$. Nanging yen $\Box!A \in \Delta$,
+  miturut \Ax{T} uga $!A \in \Delta$, kaya kang dikarepake.
+
+  Saiki upamane $\Sigma$ ngemot \Ax{B}, lan upamane $R^\Sigma
+  \Delta\Delta'$ kanggo $\Delta$, $\Delta' \in W^\Sigma$. Kita kudu
+  nuduhake $R^\Sigma \Delta'\Delta$, yaiku,\iftag{prvBox}{
+    $\Box^{-1}\Delta' \subseteq \Delta$. Miturut
+    \olref[mod]{lem:box-iff-diamond}, iki ekuivalen karo}{}
+  $\Diamond\Delta \subseteq \Delta'$. Dadi upamane $!A \in \Delta$.
+  Miturut \Ax{B}, uga $\Box\Diamond!A \in \Delta$. Miturut hipotesis
+  $R^\Sigma \Delta\Delta'$\iftag{prvBox}{}{ lan
+    \olref[mod]{lem:box-iff-diamond}}, kita duwe $\Box^{-1}\Delta
+  \subseteq \Delta'$, lan mula $\Diamond!A \in \Delta'$, kaya kang
+  dikarepake.
+
+  Saiki upamane $\Sigma$ ngemot \Ax{4}, lan upamane $R^\Sigma
+  \Delta_1\Delta_2$ lan $R^\Sigma \Delta_2\Delta_3$. Kita kudu nuduhake
+  $R^\Sigma \Delta_1\Delta_3$. Saka hipotesis\iftag{prvBox}{}{ lan
+    \olref[mod]{lem:box-iff-diamond}} kita entuk loro-lorone:
+  $\Box^{-1}\Delta_1 \subseteq \Delta_2$ lan $\Box^{-1}\Delta_2
+  \subseteq \Delta_3$. Kanggo nuduhake $R^\Sigma \Delta_1\Delta_3$,
+  cukup nuduhake $\Box^{-1}\Delta_1 \subseteq \Delta_3$. Dadi jupuken
+  $!B \in \Box^{-1}\Delta_1$, yaiku $\Box!B \in \Delta_1$. Miturut
+  \Ax{4}, uga $\Box\Box!B \in \Delta_1$ lan saka hipotesis kita entuk,
+  kawitan, $\Box!B \in \Delta_2$ lan, kapindho, $!B \in \Delta_3$,
+  kaya kang dikarepake.
+
+  Saiki upamane $\Sigma$ ngemot \Ax{5}, lan upamane $R^\Sigma
+  \Delta_1\Delta_2$ lan $R^\Sigma \Delta_1\Delta_3$. Kita kudu nuduhake
+  $R^\Sigma \Delta_2\Delta_3$. Hipotesis pisanan menehi
+  $\Box^{-1}\Delta_1 \subseteq \Delta_2$\iftag{prvBox}{}{ miturut
+    \olref[mod]{lem:box-iff-diamond}}, lan hipotesis kapindho ekuivalen
+  karo $\Diamond\Delta_3 \subseteq \Delta_1$\iftag{prvBox}{,
+    miturut \olref[mod]{lem:box-iff-diamond}}{}. Kanggo nuduhake $R^\Sigma
+  \Delta_2\Delta_3$\iftag{prvBox}{, miturut
+    \olref[mod]{lem:box-iff-diamond}, cukup}{ kita kudu}
+  nuduhake $\Diamond\Delta_3 \subseteq \Delta_2$. Dadi jupuken
+  $\Diamond!A \in \Diamond\Delta_3$, yaiku $!A \in \Delta_3$. Miturut
+  hipotesis kapindho $\Diamond!A \in \Delta_1$ lan miturut \Ax{5}, uga
+  $\Box\Diamond!A \in \Delta_1$. Saiki hipotesis pisanan menehi
+  $\Diamond!A \in \Delta_2$, kaya kang dikarepake.
+  \end{proof}
+
+Minangka akibat, kita entuk asil kasampurnan kanggo sawatara sistem.
+Upamane, kita ngerti yen $\Log{S5} = \Log{KT5} =
+\Log{KTB4}$ sampurna gegayutan karo kelas kabeh model refleksif lan
+Euklidean, kang padha karo kelas kabeh model refleksif, simetris, lan
+transitif.
+
+\begin{thm}\ollabel{thm:generaldet}
+  Upamane $\mClass{C}_\Ax{D}$, $\mClass{C}_\Ax{T}$,
+  $\mClass{C}_\Ax{B}$, $\mClass{C}_\Ax{4}$, lan
+  $\mClass{C}_\Ax{5}$ iku, miturut urutane, kelas kabeh model serial,
+  refleksif, simetris, transitif, lan Euklidean. Banjur kanggo sembarang
+  skema $!A_1$, \dots, $!A_n$ ing antarane \Ax{D},
+  \Ax{T}, \Ax{B}, \Ax{4}, lan \Ax{5}, sistem
+  $\Log{K}!A_1 \dots !A_n$ ditemtokake dening
+  kelas model $\mClass{C} = \mClass{C}_{!A_1} \cap \dots
+  \cap \mClass{C}_{!A_n}$.
+\end{thm}
+
+\begin{prop}
+  Upamane $\Sigma$ sawijining logika modal normal; banjur:
+  \begin{enumerate}
+  \item\ollabel{prop:anotherfive-a}%
+    Yen $\Sigma$ ngemot skema $\Diamond!A \lif \Box
+    !A$, mula model kanonik kanggo $\Sigma$ iku fungsional parsial.
+  \item Yen $\Sigma$ ngemot skema $\Diamond!A \liff \Box
+    !A$, mula model kanonik kanggo $\Sigma$ iku fungsional.
+  \item Yen $\Sigma$ ngemot skema $\Box\Box!A \lif \Box
+    !A$, mula model kanonik kanggo $\Sigma$ iku padhet lemah.
+  \end{enumerate}
+(delengen \olref[frd][acc]{tab:anotherfive} kanggo definisi sipat-sipat
+  bingkai iki).
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+  \item Upamane $\Sigma$ ngemot skema $\Diamond !A \lif
+    \Box !A$. Kanggo nuduhake yen $R^\Sigma$ fungsional parsial,
+    kita kudu mbuktekake yen kanggo sembarang $\Delta_1$, $\Delta_2$,
+    $\Delta_3 \in W^\Sigma$, yen $R^\Sigma \Delta_1\Delta_2$ lan
+    $R^\Sigma \Delta_1\Delta_3$, mula $\Delta_2=\Delta_3$. Amarga
+    $R^\Sigma \Delta_1\Delta_2$, kita duwe $\Box^{-1}\Delta_1
+    \subseteq \Delta_2$, lan amarga $R^\Sigma \Delta_1\Delta_3$,
+    uga $\Box^{-1}\Delta_1 \subseteq \Delta_3$\iftag{prvBox}{}{,
+      loro-lorone miturut \olref[mod]{lem:box-iff-diamond}}. Pepadhan
+    $\Delta_2=\Delta_3$ bakal nderek yen kita bisa netepake loro
+    inklusi $\Delta_2 \subseteq \Delta_3$ lan $\Delta_3 \subseteq
+    \Delta_2$. Kanggo inklusi pisanan, jupuken $!A \in \Delta_2$;
+    banjur $\Diamond!A \in \Delta_1$, lan miturut skema kasebut lan
+    katutupan deduktif $\Delta_1$ uga $\Box!A \in \Delta_1$.
+    Miturut hipotesis $R^\Sigma \Delta_1\Delta_3$, mula
+    $!A \in \Delta_3$. Inklusi kapindho padha carane.
+
+  \item Iki langsung nderek saka bagean~\olref{prop:anotherfive-a}
+    lan bukti keserialan ing \olref{thm:completeframeprops}.
+
+  \item Upamane $\Sigma$ ngemot skema $\Box\Box!A \lif \Box!A$.
+    Kanggo nuduhake yen $R^\Sigma$ padhet lemah, jupuken $R^\Sigma
+    \Delta_1\Delta_2$. Kita kudu nuduhake yen ana himpunan
+    $\Sigma$-konsisten jangkep $\Delta_3$ kang $R^\Sigma
+    \Delta_1\Delta_3$ lan $R^\Sigma \Delta_3\Delta_2$. Tetepa:
+    \[
+    \Gamma = \Box^{-1}\Delta_1 \cup \Diamond\Delta_2.
+    \]
+    Cukup nuduhake yen $\Gamma$ iku $\Sigma$-konsisten, amarga banjur,
+    miturut Lemma Lindenbaum, bisa disambung dadi himpunan
+    $\Sigma$-konsisten jangkep~$\Delta_3$ saengga $\Box^{-1}\Delta_1
+    \subseteq \Delta_3$ lan $\Diamond\Delta_2 \subseteq \Delta_3$,
+    yaiku $R^\Sigma \Delta_1\Delta_3$\iftag{prvBox}{}{ (miturut
+      \olref[mod]{lem:box-iff-diamond})} lan $R^\Sigma
+    \Delta_3\Delta_2$\iftag{prvBox}{ (miturut
+      \olref[mod]{lem:box-iff-diamond})}{}.
+
+    Kanggo kontradiksi, upamane $\Gamma$ ora konsisten. Banjur ana
+    !!{formula}s $\Box!A_1$, \dots, $\Box!A_n \in \Delta_1$
+    lan $!B_1$, \dots,~$!B_m \in \Delta_2$ saengga \[!A_1, \dots,
+    !A_n, \Diamond!B_1, \dots, \Diamond!B_m \Proves[\Sigma]
+    \lfalse.\] Amarga $\Diamond (!B_1 \land \dots \land !B_m) \to
+    (\Diamond!B_1 \land \dots \land \Diamond!B_m)$ iku !!{derivable}
+    ing saben logika modal normal, kita ngandharake runtutan ing ngisor
+    iki, kang nalisir karo konsistensi~$\Delta_2$:
+    \begin{align*}
+      !A_1, \dots, !A_n, & \Diamond!B_1, \dots,
+      \Diamond!B_m \Proves[\Sigma] \lfalse \\
+      !A_1, \dots,!A_n & \Proves[\Sigma] (\Diamond!B_1 \land
+      \dots \land \Diamond!B_m) \lif \lfalse\\
+      & \qquad\text{miturut teorema deduksi}\\
+      & \qquad\text{\olref[prf][prp]{prop:derivabilityfacts}\olref[prf][prp]{prop:derivabilityfacts-deduction}, lan \Taut} \\
+      !A_1, \dots,!A_n & \Proves[\Sigma]
+      \Diamond(!B_1 \land
+      \dots \land !B_m) \lif \lfalse\\
+      & \qquad \text{amarga $\Sigma$ normal} \\
+      !A_1, \dots,!A_n & \Proves[\Sigma]
+      \lnot\Diamond (!B_1 \land \dots \land !B_m)\\
+      & \qquad\text{miturut \PL} \\
+      !A_1, \dots,!A_n & \Proves[\Sigma]
+      \Box\lnot (!B_1 \land \dots \land !B_m)\\
+      & \qquad\text{$\Box\lnot$ kanggo $\lnot\Diamond$} \\
+      \Box!A_1, \dots,\Box!A_n
+      & \Proves[\Sigma] \Box\Box \lnot (!B_1 \land \dots \land !B_m)\\
+      & \qquad\text{miturut \olref[mod]{lem:box1}} \\
+      \Box!A_1, \dots,\Box!A_n
+      & \Proves[\Sigma]
+      \Box\lnot (!B_1 \land \dots \land !B_m)\\
+      &\qquad\text{miturut skema $\Box\Box!A \lif \Box!A$} \\
+      \Delta_1 & \Proves[\Sigma]
+      \Box\lnot (!B_1 \land \dots \land !B_m)\\
+      &\qquad\text{miturut monotonisitas, \olref[prf][prp]{prop:derivabilityfacts}\olref[prf][prp]{prop:derivabilityfacts-monotonicity}} \\
+      & \Box\lnot (!B_1 \land \dots \land !B_m) \in \Delta_1\\
+      &\qquad\text{miturut katutupan deduktif}; \\
+      & \lnot (!B_1 \land \dots \land !B_m) \in \Delta_2\\
+      &\qquad \text{amarga }
+      R^\Sigma \Delta_1\Delta_2. 
+    \end{align*}
+  \end{enumerate}
+\end{proof}
+
+Adhedhasar tuladha-tuladha iki, wong bisa ngira yen saben
+sistem~$\Sigma$ logika modal iku \emph{sampurna}, kanthi teges yen
+sistem kasebut mbuktekake saben formula kang valid ing saben bingkai
+kang ndadekake saben teorema $\Sigma$ valid. Nanging, ana akeh sistem
+kang ora sampurna miturut teges iki.
+
+\end{document}

@@ -1,0 +1,283 @@
+% Part: first-order-logic
+% Chapter: model-theory
+% Section: nonstandard-arithmetic
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{bas}{nsa}
+\section{Modèl Aritmetika Nonstandar}
+
+\begin{defn}
+Anggep $\Lang{L_N}$ minangka !!{language} aritmetika,
+kang ngemot !!{constant} $\Obj{0}$, !!{predicate} rong panggonan
+$<$, !!{function} siji panggonan $\prime$, lan
+!!{function}s rong panggonan $+$ lan $\times$.
+\begin{enumerate}
+\item \emph{Modèl standar} aritmetika yaiku !!{structure}
+  $\Struct{N}$ kanggo $\Lang{L_N}$ kanthi
+  $\Nat = \{ 0, 1, 2, \dots\}$, kang napsiraké
+  $\Obj{0}$ dadi $0$, $<$ dadi relasi kurang saka
+  ing~$\Nat$, lan $\prime$, $+$, lan $\times$
+  dadi fungsi penerus, panjumlahan, lan perkalian
+  ing $\Nat$ miturut urutané.
+\item \emph{Aritmetika bener} yaiku téori $\Theory{N}$.
+\end{enumerate}
+\end{defn}
+
+Nalika makarya ing $\Lang{L_N}$, saben suku awujud
+$\Obj{0}^{\prime\dots\prime}$, kanthi $n$ panganggoné
+fungsi penerus marang $\Obj{0}$, dicekak dadi~$\num{n}$.
+
+\begin{defn}
+!!{structure}~$\Struct{M}$ kanggo $\Lang{L_N}$ diarani
+\emph{standar} yèn lan mung yèn $\Struct{N} \iso \Struct{M}$.
+\end{defn}
+
+\begin{thm}\ollabel{thm:non-std}
+Ana modèl nonstandar kang !!{enumerable} kanggo aritmetika bener.
+\end{thm}
+
+\begin{proof}
+Ambakna $\Lang{L_N}$ kanthi nambah !!{constant} anyar~$c$,
+banjur delengen téori
+\[
+\Theory{N} \cup \Setabs{\num{n} < c}{n \in \Nat}.
+\]
+Téori iki bisa dicukupi kanthi winates, mula miturut
+kompaknes nduwèni modèl $\Struct{M}$.
+Miturut téoréma L\"owenheim--Skolem mudhun, modèl iki bisa
+dipilih kang !!{enumerable}. Anggep $\Domain{M}$ domainé
+$\Struct{M}$. Ing $\Struct{M}$, lambang nonlogis saka
+$\Lang{L_N}$ ditafsiraké dadi
+$\mathbf{z} = \Assign{\Obj{0}}{M} \in \Domain{M}$,
+${\prec} = \Assign{<}{M} \subseteq \Domain{M}^2$,
+$* = \Assign{\prime}{M} \colon \Domain{M} \to \Domain{M}$,
+lan $\oplus = \Assign{+}{M}, \otimes =
+\Assign{\times}{M} \colon \Domain{M}^2 \to \Domain{M}$.
+Kanggo saben $x \in \Domain{M}$, tulis $x^*$ kanggo
+unsur $\Domain{M}$ kang diasilaké saka $x$ kanthi
+ngetrapaké~$*$.
+
+Saiki, yèn $h$ isomorfisme antarané $\Struct{N}$ lan
+$\Struct{M}$, mesthi ana $n \in \Nat$ saéngga
+$h(n) = \Assign{c}{M}$. Anggep $s$ sawijining pangaji
+ing $\Struct{N}$ kang nyukupi $s(x) = n$. Mula
+$\Sat{N}{\eq[\num{n}][x]}[s]$; miturut bukti
+\olref[iso]{thm:isom}, uga
+$\Sat{M}{\eq[\num{n}][x]}[h \circ s]$, saéngga
+$\Assign{c}{M} = \mathbf{z}^{*\cdots *}$
+(kanthi $*$ diulang $n$ kaping). Nanging iki ora mungkin,
+amarga miturut anggepan $\Sat{M}{\num{n} < c}$
+lan $\prec$ iku irrefleksif. Mula $\Struct{M}$ nonstandar.
+\end{proof}
+
+\begin{prob}
+Relasi $R$ ing himpunan $X$ diarani \emph{berasas apik} yèn lan
+namung yèn ora ana ranté mudhun tanpa wates ing~$R$,
+yaiku ora ana $x_0$, $x_1$, $x_2$,~\dots ing $X$ saéngga
+$\dots x_2Rx_1Rx_0$. Kanthi anggepan téori himpunan
+Zermelo--Fraenkel~$ZF$ konsisten, tuduhna yèn ana
+modèl $ZF$ kang saka njabané ora berasas apik,
+yaiku modèl $\mathfrak{M}$ kang nduwèni
+$\dots x_2 \in x_1 \in x_0$.
+\end{prob}
+
+Amarga modèl nonstandar $\Struct{M}$ saka \olref{thm:non-std}
+ekuivalen sacara elementer karo modèl standar,
+sawetara sipat $\Struct{M}$ bisa diturunké.
+Pérangan sabanjuré ngrembug sipat-sipat iki kanggo
+ngolèhaké gambaran kang cetha bab modèl nonstandar
+$\Theory{N}$ kang !!{enumerable}.
+
+\begin{enumerate}
+\item Ora ana unsur $\Domain{M}$ kang $\prec$-kurang saka
+  awaké dhéwé: ukara $\lforall[x][\lnot x < x]$ bener
+  ing $\Struct{N}$ lan mula uga ing $\Struct{M}$.
+\item Kanthi alesan kang padha, $\prec$ dadi
+  \emph{urutan linier} ing $\Domain{M}$,
+  yaiku relasi total, irrefleksif, lan transitif
+  ing $\Domain{M}$.
+\item Unsur $\mathbf{z}$ iku unsur paling cilik
+  miturut $\prec$ ing $\Domain{M}$.
+\item Saben unsur $\Domain{M}$ luwih cilik miturut
+  $\prec$ tinimbang penerus-$*$-é, lan $x^*$ iku
+  unsur paling cilik miturut $\prec$ ing $\Domain{M}$ kang luwih gedhé
+  tinimbang $x$.
+\item $\Struct{M}$ ngemot pérangan wiwitan miturut
+  $\prec$ kang isomorfik karo $\Nat$:
+  $\mathbf{z}, \mathbf{z}^*, \mathbf{z}^{**}, \dots$.
+  Iki diarani \emph{pérangan standar} saka $\Domain{M}$.
+  Saben unsur liyane ing $\Domain{M}$ diarani
+  \emph{nonstandar}. Mesthi ana unsur nonstandar ing
+  $\Domain{M}$, amarga yèn ora, fungsi $h$ saka
+  bukti \olref{thm:non-std} bakal dadi isomorfisme.
+  Kita migunakaké $n, m, \dots$ minangka !!{variable}s
+  kang ngliwati pérangan standar $\Struct{M}$ iki.
+\item Saben unsur nonstandar luwih gedhé tinimbang
+  unsur standar endi waé; amarga kanggo saben $n \in \Nat$,
+  \[
+  \Sat{N}{\lforall[z][(\lnot(\eq[z][\Obj{0}] \lor
+  \dots \lor \eq[z][\num{n}]) \lif \num{n} < z)]},
+  \]
+  mula yèn $z \in \Domain{M}$ béda saka kabèh unsur
+  standar, unsur iki mesthi \emph{luwih gedhé} tinimbang
+  kabèh unsur standar mau.
+\item Saben unsur $\Domain{M}$ saliyané $\mathbf{z}$
+  iku penerus-$*$ saka siji unsur unik ing $\Domain{M}$,
+  kang dilambangaké $^*x$. Yèn $x = y^*$, mula
+  $x$ lan $y$ padha-padha standar yèn salah sijiné
+  standar (lan padha-padha nonstandar yèn salah sijiné
+  nonstandar).
+\item Tetepna relasi ekuivalènsi $\approx$ ing
+  $\Domain{M}$: $x \approx y$ yèn lan mung yèn
+  ana $n$ \emph{standar} saéngga
+  $x \oplus n = y$ utawa $y \oplus n =x$.
+  Tegesé, $x \approx y$ yèn lan mung yèn
+  jarak antarané $x$ lan $y$ winates.
+  Yèn $n$ lan $m$ standar, mula $n \approx m$.
+  \emph{Blok} saka $x$ yaiku kelas ekuivalènsiné
+  $[x] = \Setabs{y}{x \approx y}$.
+\item Anggepen $x \prec y$ lan $x \not\approx y$.
+  Amarga $\Sat{N}{\lforall[x][\lforall[y][(x < y \lif (x' < y \lor x' =
+      y))]]}$, mula $x^* \prec y$ utawa $x^* = y$.
+  Pilihan kapindho ora mungkin amarga ndadèkaké
+  $x \approx y$, mula $x^* \prec y$.
+  Kanthi alesan kang padha, yèn $x \prec y$ lan
+  $x \not\approx y$, mula $x \prec {^*y}$.
+  Dadi yèn $x \prec y$ lan $x \not\approx y$,
+  saben $w \approx x$ luwih cilik miturut $\prec$
+  tinimbang saben $v \approx y$. Mula saben blok
+  nonstandar $[x]$ mbentuk ranté tanpa wates ing
+  loro arahé:
+  \[
+  \cdots \prec  {^{**}x} \prec {^*}x \prec x \prec x^* \prec x^{**}
+  \prec \cdots
+  \]
+  Ranté iki diarani ranté-$Z$ amarga jinis urutané
+  padha karo wilangan bulat.
+\item Urutan $\prec$ bisa ditrapaké marang
+  blok-blok kang béda: yèn $x \prec y$ lan
+  kaloroné ana ing blok kang béda, mula blok $x$ luwih cilik
+  tinimbang blok $y$. Blok diarani
+  \emph{nonstandar} yèn ngemot unsur nonstandar.
+  Blok standar iku blok paling cilik.
+\item Ora ana blok nonstandar paling cilik: yèn $y$
+  nonstandar, ana $x \prec y$ kanthi $x$ uga nonstandar
+  lan $x \not\approx y$. Buktiné: ing modèl standar
+  $\Struct{N}$, saben wilangan bisa dipérang loro,
+  bisa uga kanthi sisa siji, yaiku
+  $\Sat{N}{\lforall[y][\lforall[x][(y = x + x \lor y = x + x +
+        \Obj{0}')]]}$. By elementary equivalence, for every $y \in
+  \Domain{M}$ ana $x \in \Domain{M}$ saéngga
+  $x \oplus x = y$ utawa
+  $x \oplus x \oplus \mathbf{z}^*= y$.
+  Yèn $x$ standar, $y$ uga standar; mula $x$
+  nonstandar. Kajaba iku, $x$ lan $y$ mapan ing blok
+  kang béda, yaiku $x \not\approx y$.
+  Kanggo mangertèni iki, anggepen kaloroné ing
+  blok kang padha, yaiku $x \oplus n = y$
+  kanggo sawatara $n$ standar.
+  Yèn $y = x \oplus x$, mula $x \oplus n = x
+  \oplus x$, saéngga $x = n$ miturut hukum
+  pambatalan kanggo panjumlahan
+  (kang bener ing $\Struct{N}$ lan mula uga ing
+  $\Struct{M}$). Iki ndadèkaké $x$ standar.
+  Kahanan $y = x \oplus x \oplus \mathbf{z}^*$
+  padha carané.
+\item Kanthi alesan kang padha, ora ana blok paling gedhé.
+\item Urutan blok-blok iku rapet: yèn $[x]$ luwih
+  cilik tinimbang $[y]$ (kanthi $x \not\approx y$),
+  ana blok $[z]$ kang béda saka kaloroné lan mapan
+  ing antarané. Anggepen $x \prec y$.
+  Kaya mau, $x \oplus y$ bisa dipérang loro
+  (bisa uga kanthi sisa), mula ana $u
+  \in \Domain{M}$ saéngga
+  $x \oplus y = u \oplus u$ utawa
+  $x \oplus y = u \oplus u \oplus \mathbf{z}^*$.
+  Unsur $u$ iku rata-rata saka $x$ lan $y$, mula
+  mapan ing antarané. Anggepen $x \oplus y =
+  u \oplus u$ (kahanan sijiné padha carané):
+  yèn $u \approx x$, kanggo sawatara $n$ standar,
+  \[
+  x \oplus y = x \oplus n \oplus x \oplus n,
+  \]
+  mula $y = x \oplus n \oplus n$ lan kita bakal
+  olèh $x \approx y$, kang mbantah anggepan.
+  Dadi $u \not\approx x$. Argumèn kang padha
+  ngasilaké $u \not\approx y$.
+\end{enumerate}
+Mula blok-blok nonstandar urutané kaya wilangan rasional:
+mbentuk urutan linier kang !!a{enumerable}, rapet,
+lan tanpa pucuk. Akibaté, kanggo saben rong modèl
+nonstandar !!{enumerable} $\Struct{M}_1$ lan
+$\Struct{M_2}$ saka aritmetika bener,
+redukté menyang basa kang mung ngemot $<$ lan $=$
+padha isomorfik. Isomorfisme $h$ bisa dibangun mangkéné:
+pérangan standar $\Struct{M_1}$ lan $\Struct{M_2}$
+padha isomorfik karo modèl standar $\Struct{N}$,
+mula uga karo siji lan sijiné. Blok-blok kang mbentuk
+pérangan nonstandar uga urutané kaya wilangan rasional,
+mula miturut \olref[dlo]{thm:cantorQ} padha isomorfik.
+Isomorfisme blok iki bisa ditambahi dadi isomorfisme
+\emph{ing sajroning} saben blok kanthi nyocogaké
+unsur sembarang ing saben pasangan blok, banjur
+nyocogaké penerus saka $x$ ing $\Struct{M_1}$
+karo penerus saka gambaré $x$ ing $\Struct{M_2}$.
+Nanging iki \emph{ora} ateges $\mathfrak{M}_1$
+lan $\mathfrak{M}_2$ isomorfik ing basa aritmetika
+jangkep (isomorfisme tansah gumantung marang tandha
+basa), amarga panjumlahan lan perkalian ing
+$\Domain{M_1}$ lan $\Domain{M_2}$ bisa ditetepaké
+kanthi cara kang ora isomorfik. (Iki uga manut téoréma
+misuwur saka Vaught: cacah modèl terhitung saka
+téori jangkep ora bisa persis~2.)
+
+\begin{prob}
+Tuduhna yèn ing modèl aritmetika nonstandar ora ana
+blok paling gedhé.
+\end{prob}
+
+\begin{prob} 
+Anggep $\Lang{L}$ sawijining !!{language} tataran kapisan
+kang mung ngemot $<$ minangka !!{predicate}
+(saliyané $\eq$), lan anggep $\Struct{N} = (\Nat, <)$.
+Kabèh himpunan pérangan winates utawa kang komplemèné
+winates ing $\Struct{N}$ bisa ditetepaké.
+Tuduhna yèn \emph{mung} himpunan mau kang bisa ditetepaké
+ing $\Struct{N}$.
+ 
+(Pituduh: Dhisik, anggep $\Obj{prc}(x,y)$ minangka
+cekakan formula $\Lang{L}$ kang ateges ``$x$ iku
+pendahulu langsung saka $y$:''
+\[
+x<y \land \lnot \lexists[z][(x<z \land z < y)].
+\]
+Saiki, saben himpunan pérangan $\Struct{N}$ kang bisa
+ditetepaké cocog karo formula $!A(x)$ ing $\Lang{L}$.
+Kanggo saben $!A$ kaya mangkono, delengen ukara $!D$:
+\[
+\lexists[x][\lforall[y][\lforall[z][((x<y \land x<z \land \Obj{prc}(y,z)
+  \land !A(y)) \lif !A(z))]]].
+\]
+Tuduhna yèn $\Sat{N}{!D}$ yèn lan mung yèn
+himpunan pérangan $\Struct{N}$ kang ditetepaké déning
+$!A$ iku winates utawa komplemèné winates.
+
+Saiki, anggep $\Struct{M}$ modèl nonstandar kang
+ekuivalen sacara elementer karo $\Struct{N}$.
+Yèn $a \in \Domain{M}$ nonstandar, pilih
+$b, c \in \Domain{M}$ kang luwih gedhé tinimbang $a$,
+lan anggep $b$ pendahulu langsung saka~$c$.
+Mula ana automorfisme $h$ saka $\Domain{M}$
+saéngga $h(b)=c$ (kenapa?).
+Dadi, yèn $b$ nyukupi $!A$, $c$ uga mangkono
+(kenapa?). Akibaté, $!D$ bener ing
+$\Struct{M}$ lan mula uga ing $\Struct{N}$.
+Iki nuduhaké yèn himpunan pérangan $\Struct{N}$
+kang ditetepaké déning $!A$ iku winates utawa
+komplemèné winates.
+\end{prob}
+
+\end{document}

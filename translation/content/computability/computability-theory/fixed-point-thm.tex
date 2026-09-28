@@ -1,0 +1,292 @@
+% Part: computability
+% Chapter: computability-theory
+% Section: fixed-point-thm
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{thy}{fix}
+\olsection{Teorema Titik Tetep}
+
+Ayo kita gatekake maneh masalah mandheg. Minangka notasi
+sawetara wektu, ayo nulis $\gn{\cfind{x}(y)}$ kanggo
+$\tuple{x, y}$; anggepen iki minangka ``jeneng'' kanggo
+nilai $\cfind{x}(y)$. Kanthi notasi iki, kita bisa
+ngandharake maneh salah siji bukti yen masalah
+mandheg ora bisa diputusake.
+
+Pitakon: apa ana fungsi komputabel $h$ kang nduwé
+sipat ing ngisor iki? Kanggo saben $x$ lan $y$,
+\[
+h(\gn{\cfind{x}(y)}) =
+\begin{cases}
+1 & \text{yen $\cfind{x}(y) \fdefined$} \\
+0 & \text{yen ora.}
+\end{cases}
+\]
+
+Wangsulan: Ora; yen ana, fungsi parsial
+\[
+g(x) \simeq
+\begin{cases}
+0 & \text{yen $h(\gn{\cfind{x}(x)}) = 0$} \\
+\text{ora ditegesi} & \text{yen ora}
+\end{cases}
+\]
+bakal komputabel, mula nduwé sawijining indeks~$e$.
+Nanging banjur kita nduwé
+\[
+\cfind{e}(e) \simeq
+\begin{cases}
+0 & \text{yen $h(\gn{\cfind{e}(e)}) = 0$} \\
+\text{ora ditegesi} & \text{yen ora,}
+\end{cases}
+\]
+lan ing kahanan iki $\cfind{e}(e)$ ditegesi yen
+lan mung yen ora ditegesi, yaiku kontradiksi.
+
+Saiki gatekna persamaan kang ngemot $\cfind{e}$.
+Ing kono ana sawijining wujud rujukan marang awake
+dhewe: kita wis ngatur supaya nilai $\cfind{e}(e)$
+gumantung marang $\gn{\cfind{e}(e)}$ kanthi cara
+tartamtu. Teorema titik tetep nyebut yen kita
+{\em bisa} nindakake iki sacara umum---ora mung
+kanggo mbuktekake kontradiksi.
+
+\olref{lem:fixed-equiv} menehi rong cara ekuivalen
+kanggo nyebut teorema titik tetep. Miturut logika,
+kalorone ekuivalen amarga kalorone bener; nanging
+kang tenan kita maksud yaiku saben pratelan
+bisa diturunake kanthi langsung saka liyane,
+saengga bisa dadi rong rumusan alternatif
+saka teorema kang padha.
+
+\begin{lem}
+\ollabel{lem:fixed-equiv}
+Pratelan-pratelan ing ngisor iki ekuivalen:
+\begin{enumerate}
+\item Kanggo saben fungsi komputabel parsial $g(x,y)$,
+  ana indeks~$e$ saengga kanggo saben~$y$,
+\[
+\cfind{e}(y) \simeq g(e,y).
+\]
+\item Kanggo saben fungsi komputabel~$f(x)$,
+  ana indeks~$e$ saengga kanggo saben~$y$,
+\[
+\cfind{e}(y) \simeq \cfind{f(e)}(y).
+\]
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+$(1) \Rightarrow (2)$: Yen diwenehi $f$, tetepna
+$g$ kanthi $g(x,y) \simeq \fn{Un}(f(x),y)$.
+Gunakna (1) kanggo ngentukake indeks~$e$
+saengga kanggo saben~$y$,
+\begin{align*}
+\cfind{e}(y) & = \fn{Un}(f(e),y) \\
+& = \cfind{f(e)}(y).
+\end{align*}
+
+$(2) \Rightarrow (1)$: Yen diwenehi $g$,
+gunakna teorema $s$-$m$-$n$ kanggo ngentukake
+$f$ saengga kanggo saben $x$ lan~$y$,
+$\cfind{f(x)}(y) \simeq g(x,y)$. Gunakna (2)
+kanggo ngentukake indeks~$e$ saengga
+\begin{align*}
+\cfind{e}(y) & = \cfind{f(e)}(y) \\
+& = g(e,y).
+\end{align*}
+Iki ngrampungake bukti.
+\end{proof}
+
+\begin{explain}
+Sadurunge nuduhake yen pratelan (1) bener
+(lan mulane (2) uga bener), pikirna sepira
+anehe pratelan iku. Anggepen $e$ minangka
+program komputer; pratelan (1) nyebut yen
+kanggo fungsi komputabel parsial $g(x,y)$
+sembarang, kowe bisa nemokake program
+komputer $e$ kang ngitung $g_e(y) \simeq g(e,y)$.
+Kanthi tembung liya, kowe bisa nemokake
+program komputer kang ngitung fungsi
+kang ngrujuk marang program iku dhewe.
+\end{explain}
+
+\begin{thm}
+Rong pratelan ing \olref{lem:fixed-equiv}
+iku bener. Mligine, kanggo saben fungsi
+komputabel parsial $g(x,y)$, ana indeks~$e$
+saengga kanggo saben~$y$,
+\[
+\cfind{e}(y) \simeq g(e,y).
+\]
+\end{thm}
+
+\begin{proof}
+Bahan-bahan bukti iki wis kasirat ing rembugan
+bab masalah mandheg ing ndhuwur. Tetepna
+$\fn{diag}(x)$ minangka fungsi komputabel kang,
+kanggo saben $x$, mbalekake indeks kanggo fungsi
+$f_x(y) \simeq \cfind{x}(x,y)$, yaiku
+\[
+\cfind{\fn{diag}(x)}(y) \simeq \cfind{x}(x,y).
+\]
+Anggepen $\fn{diag}$ minangka fungsi kang ngowahi
+program kanggo fungsi rong argumen dadi program
+kanggo fungsi siji argumen, kanthi netepake
+program asal minangka argumen kapisane.
+Fungsi $\fn{diag}$ bisa ditetepake sacara formal
+mangkene: luwih dhisik tetepna $s$ kanthi
+\[
+s(x,y) \simeq \fn{Un}^2(x,x,y),
+\]
+ing ngendi $\fn{Un}^2$ minangka fungsi telung
+argumen kang universal kanggo fungsi komputabel
+parsial rong argumen. Banjur miturut teorema
+$s$-$m$-$n$, kita bisa nemokake fungsi rekursif
+primitif $\fn{diag}$ kang nyukupi
+\[
+\cfind{\fn{diag}(x)}(y) \simeq s(x,y).
+\]
+
+Saiki tetepna fungsi $l$ kanthi
+\[
+l(x,y) \simeq g(\fn{diag}(x),y).
+\]
+lan tetepna $\gn{l}$ minangka indeks kanggo $l$.
+Pungkasane, tetepna $e = \fn{diag}(\gn{l})$.
+Mula kanggo saben $y$, kita nduwé
+\begin{align*}
+\cfind{e}(y) & \simeq \cfind{\fn{diag}(\gn{l})}(y) \\
+& \simeq \cfind{\gn{l}}(\gn{l}, y) \\
+& \simeq l(\gn{l}, y) \\
+& \simeq g(\fn{diag}(\gn{l}),y) \\
+& \simeq g(e, y),
+\end{align*}
+kaya kang dikarepake.
+\end{proof}
+
+\begin{explain}
+Apa kang kedadeyan? Upamane kowe diwenehi
+tugas nulis program komputer kang nyithak
+program iku dhewe. Upamane uga kowe
+nganggo basa pamrograman kang nduwé
+pustaka fungsi runtutan aksara kang
+sugih lan aneh. Mligine, upamane basa
+pamrogramanmu nduwé fungsi $\fn{diag}$
+kang makarya mangkene: yen diwenehi
+runtutan aksara~$s$, $\fn{diag}$ nemokake
+saben simbol `x' ing~$s$, banjur ngganteni
+simbol iku nganggo versi nganggo tandha
+petik saka runtutan aksara asal. Tuladhane,
+yen diwenehi runtutan aksara
+\begin{quote}
+\begin{verbatim}
+hello x world
+\end{verbatim}
+\end{quote}
+minangka input, fungsi iku mbalekake
+\begin{quote}
+\begin{verbatim}
+hello 'hello x world' world
+\end{verbatim}
+\end{quote}
+minangka output. Ing kahanan iku,
+gampang nulis program kang dikarepake;
+kowe bisa mriksa yen
+\begin{quote}
+\begin{verbatim}
+print(diag('print(diag(x))'))
+\end{verbatim}
+\end{quote}
+nindakake iku. Kanggo basa pamrograman
+kang luwih umum kaya C++ lan Java,
+gagasan kang padha (kanthi cara
+ngetrapake kang luwih ruwet) isih bisa.
+
+Saiki kita mung kari sawetara langkah
+menyang bukti teorema titik tetep.
+Upamane sawijining varian fungsi print
+$\fn{print}(x,y)$ nampa runtutan aksara $x$
+lan argumen angka liyane $y$, banjur
+nyithak runtutan aksara $x$ bola-bali,
+cacah $y$ kaping. Mula ``program''
+\begin{quote}
+\begin{verbatim}
+getinput(y);
+print(diag('getinput(y); print(diag(x), y)'), y)
+\end{verbatim}
+\end{quote}
+nyithak program iku dhewe $y$ kaping
+nalika nampa input $y$. Yen rangka
+$\fn{getinput}$---$\fn{print}$---$\fn{diag}$
+diganti karo fungsi sembarang $g(x,y)$,
+kita ngentukake
+\begin{quote}
+\begin{verbatim}
+g(diag('g(diag(x), y)'), y)
+\end{verbatim}
+\end{quote}
+yaiku program kang, nalika nampa input $y$,
+nglakokake $g$ marang program iku dhewe
+lan $y$. Yen ``menehi tandha petik''
+dianggep minangka ``nganggo indeks kanggo'',
+kita ngentukake bukti ing ndhuwur.
+
+Saiki ora apa-apa.\ yen kowe nganggep
+bukti iki minangka siasat formal utawa
+sihir. Nanging kowe kudune bisa
+nyusun maneh rincian argumen ing ndhuwur.
+Nalika kita mbuktekake teorema-teorema
+ketaklengkapan (lan ``teorema titik tetep''
+kang gegayutan), kita bakal ngrembug
+cara liyane kanggo mangerteni sebabe
+cara iki bisa lumaku.
+\end{explain}
+
+\begin{tagblock}{lambda}
+\begin{digress}
+Gagasan kang padha bisa digunakake kanggo
+ngentukake kombinator ``titik tetep''.
+Upamane kowe nduwé term lambda $g$,
+lan kepengin term liyane $k$ kang
+nduwé sipat yen $k$ ekuivalen-$\beta$
+karo $gk$. Tetepna term-term
+\[
+\fn{diag}(x) = xx
+\]
+lan
+\[
+l(x) = g(\fn{diag}(x))
+\]
+miturut konvensi notasi kita; kanthi
+tembung liya, $l$ iku term
+$\lambd[x][g(xx)]$. Tetepna $k$
+minangka term $ll$. Mula kita nduwé
+\begin{align*}
+k & = (\lambd[x][g(xx)])(\lambd[x][g(xx)]) \\
+& \red  g((\lambd[x][g(xx)])(\lambd[x][g(xx)])) \\
+& = gk.
+\end{align*}
+Yen kita njupuk
+\[
+Y = \lambd[g][((\lambd[x][g(xx)])(\lambd[x][g(xx)]))]
+\]
+mula $Yg$ lan $g(Yg)$ padha-padha bisa
+direduksi menyang sawijining term kang padha;
+dadi $Yg \equiv_\beta
+g(Yg)$. Iki diarani ``kombinator Curry''.
+Yen minangka gantine kita njupuk
+\[
+Y = (\lambd[xg][g(xxg)])(\lambd[xg][g(xxg)])
+\]
+mula sejatine $Yg$ bisa direduksi menyang
+$g(Yg)$, pratelan kang luwih kuwat.
+Versi $Y$ kang kapindho iki diarani
+``kombinator Turing''.
+\end{digress}
+\end{tagblock}
+
+\end{document}

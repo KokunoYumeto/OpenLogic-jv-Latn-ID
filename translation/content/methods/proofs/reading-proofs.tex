@@ -1,0 +1,137 @@
+% Bagean: metodhe
+% Bab: bukti
+% Pérangan: maca-bukti
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mth}{prf}{rea}
+\olsection{Maca Bukti}
+
+Bukti ing buku ajar lan artikel arang banget ngemot kabèh
+rincian kaya ing conto-conto sadurungé. Pangarang kerep ora
+nyebut nalika mbédakaké kasus, nalika nulis bukti ora langsung,
+utawa nalika migunakaké dhéfinisi. Dadi nalika maca bukti ing
+buku ajar, panjenengan asring kudu nglengkapi rincian mau
+dhéwé supaya bisa ngerti buktiné. Iki uga latihan kang apik
+kanggo nguwasani manéka langkah ing bukti. Ayo deleng conto.
+
+\begin{prop}[Absorpsi]
+Kanggo kabèh himpunan $A$, $B$,
+\[
+A \cap (A \cup B) = A
+\]
+\end{prop}
+
+\begin{proof}
+Yèn $z \in A \cap (A \cup B)$, mula $z \in A$, saéngga
+$A \cap (A \cup B) \subseteq A$. Saiki anggepen $z \in A$.
+Mula uga $z \in A \cup B$, lan mulané
+$z \in A \cap (A \cup B)$.
+\end{proof}
+
+Bukti hukum absorpsi mau cekak banget. Ora ana dhéfinisi
+kang disebut, ora ana ukara ``kang kudu dibuktèkaké yaiku''
+sadurungé mbuktekaké, lan sapanunggalané. Ayo dijlentrehaké.
+Proposisi mau pratelan umum kanggo sembarang himpunan $A$ lan
+$B$, lan nalika bukti nyebut $A$ utawa $B$, iki variabel
+kanggo himpunan sembarang. Pratelan umum kang dibuktèkaké
+yaiku kang dibutuhaké kanggo pepadhan himpunan: saben
+!!{element} ing sisih kiwa pepadhan uga !!a{element}
+ing sisih tengen, lan kosok baliné.
+
+\begin{quote}
+``Yèn $z \in A \cap (A \cup B)$, mula $z \in A$, saéngga
+  $A \cap (A \cup B) \subseteq A$.''
+\end{quote}
+
+Iki separo kapisan saka bukti pepadhan: nuduhaké yèn
+sebarang~$z$ kang !!a{element} sisih kiwa uga
+!!a{element} sisih tengen, yaiku
+$A \cap (A \cup B) \subseteq A$.
+Anggepen $z \in A \cap (A \cup B)$. Amarga $z$
+!!{element} irisan rong himpunan yèn lan mung yèn
+iku !!{element} loro-loroné, kita nyimpulaké
+$z \in A$ lan uga $z \in A \cup B$.
+Mliginé, $z \in A$, kang pancèn arep dibuktèkaké.
+Amarga separo kapisan mung mbutuhaké iki, sisane
+bukti mesthi kanggo separo kapindho, yaiku
+$A \subseteq A \cap
+(A \cup B)$.
+
+\begin{quote}
+``Saiki anggepen $z \in A$. Mula uga $z \in A \cup B$, lan
+mulané $z \in A \cap (A \cup B)$.''
+\end{quote}
+
+Kita miwiti kanthi nganggep $z \in A$, amarga arep
+nuduhaké yèn kanggo sembarang~$z$, yèn $z \in A$
+mula $z \in A \cap (A \cup B)$. Kanggo mbuktekaké
+$z \in A \cap (A \cup B)$, miturut dhéfinisi
+``$\cap$'', kita kudu nuduhaké (i) $z \in A$
+lan (ii) $z \in A \cup B$. Pérangan (i) wis
+dadi anggepan, mula ora perlu dibuktèkaké maneh
+lan ora disebut maneh ing bukti. Kanggo (ii), élinga
+yèn $z$ iku !!a{element} gabungan rong himpunan
+yèn lan mung yèn iku !!{element} paling ora salah
+sijiné. Amarga $z \in A$, lan $A \cup B$ iku
+gabungan $A$ lan $B$, syarat iki kacukupan.
+Dadi $z \in A \cup B$. Kita wis nuduhaké
+(i) $z \in A$ lan (ii) $z \in A \cup B$;
+mula miturut dhéfinisi ``$\cap$'',
+$z \in A \cap (A \cup B)$. Bukti ringkes
+ora nyebut dhéfinisi mau amarga dianggep pamaca
+wis mangertèni. Yèn durung, panjenengan
+kudu ngélingi maneh dhéfinisiné. Banjur
+panjenengan uga kudu ngerti ngapa saka $z
+\in A$ katut $z \in A \cup B$, lan saka
+$z \in A$ lan $z \in A \cup B$ katut
+$z \in A \cap (A \cup B)$.
+
+Iki versi liya saka bukti mau kang njlentrehaké
+kabèh langkah:
+\begin{proof}{}
+[Miturut dhéfinisi $=$ kanggo himpunan, kanggo
+  mbuktekaké $A \cap (A \cup B) = A$
+  kita kudu nuduhaké (a)
+  $A \cap (A \cup B) \subseteq A$ lan (b)
+  $A \subseteq A \cap (A \cup B)$.
+  (a): Miturut dhéfinisi $\subseteq$, kita kudu
+  nuduhaké yèn $z \in A \cap (A \cup B)$,
+  mula $z \in A$.] Yèn $z \in A
+\cap (A \cup B)$, mula $z \in A$
+[amarga miturut dhéfinisi $\cap$,
+$z \in A \cap (A \cup B)$ yèn lan mung
+yèn $z \in A$ lan $z \in A \cup B$],
+mula $A \cap (A \cup B) \subseteq A$.
+[(b): Miturut dhéfinisi $\subseteq$,
+kita kudu nuduhaké yèn $z \in A$,
+mula $z \in A \cap (A \cup B)$.]
+Saiki anggepen [(1)] $z \in A$.
+Mula uga [(2)] $z \in A \cup B$
+[amarga miturut (1) $z \in A$ utawa
+$z \in B$, kang miturut dhéfinisi $\cup$
+ateges $z \in A \cup B$], lan mulané
+$z \in A \cap (A \cup B)$
+[amarga dhéfinisi $\cap$ mbutuhaké
+$z \in A$, yaiku (1), lan
+$z \in A \cup B$, yaiku (2)].
+\end{proof}
+
+\begin{prob}
+Jlentrehna bukti ing ngisor iki kanggo
+$A \cup (A \cap B) = A$, kanthi nyebut kabèh
+pola inferensi kang digunakaké, sebab saben
+langkah katut saka anggepan utawa pratelan kang
+wis kabukten, lan dhéfinisi endi kang ditrapaké.
+\begin{proof}
+  Yèn $z \in A \cup (A \cap B)$ mula $z \in A$
+  utawa $z \in A \cap B$. Yèn
+  $z \in A \cap B$, mula $z \in A$.
+  Saben $z \in A$ uga $z \in A \cup (A
+  \cap B)$.
+\end{proof}
+\end{prob}
+
+\end{document}

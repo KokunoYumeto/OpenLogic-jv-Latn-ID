@@ -1,0 +1,153 @@
+% part: intuitionistic-logic
+% chapter: soundness-completeness
+% section: soundness-nd
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{sc}{snd}
+
+\olsection{Jaminan Semantis kanggo Deduksi Natural}
+
+Saiki kita bakal mbuktekake jaminan semantis deduksi natural tumrap
+semantik relasional. Tegese, nuduhake yen !!a{formula} iku !!{derivable}
+saka himpunan asumsi, mula himpunan asumsi iku ngentail
+!!{formula}.
+
+\begin{thm}[Jaminan Semantis]
+  \ollabel{thm:soundness}
+  Yen $\Gamma \Proves !A$, mula $ \Gamma \Entails !A$.
+\end{thm}
+
+\begin{proof}
+  Kita mbuktekake yen $\Gamma \Proves !A$, mula $\Gamma \Entails !A$.
+  Bukti iki nganggo induksi tumrap !!{derivation} kanggo~$!A$
+  saka~$\Gamma$.
+  
+  \begin{enumerate}
+  \item Yen !!{derivation} mung dumadi saka asumsi~$!A$, kita nduweni
+    $!A \Proves !A$, lan arep nuduhake yen $!A \Entails !A$.
+    Upamane $\mSat{M}{!A}[w]$. Mula kanthi langsung $\mSat{M}{!A}[w]$.
+
+  \item !!{derivation} pungkasan ing $\Intro{\land}$:
+    \iftag{probAnd}{Latihan.}{!!{derivation}s kanggo premis
+      $!B$ saka asumsi kang !!{undischarged}~$\Gamma$ lan kanggo~$!C$
+      saka asumsi kang !!{undischarged}~$\Delta$ nuduhake yen
+      $\Gamma \Proves !B$ lan $\Delta \Proves !C$. Miturut hipotesis
+      induksi, kita nduweni $\Gamma \Entails !B$ lan $\Delta \Entails !C$.
+      Kita kudu nuduhake yen $\Gamma \cup \Delta \Entails !B \land !C$,
+      amarga asumsi kang !!{undischarged} saka kabeh !!{derivation}
+      iku $\Gamma$ bebarengan karo $\Delta$. Mula upamane
+      $\mSat{M}{\Gamma \cup \Delta}[w]$. Uga $\mSat{M}{\Gamma}[w]$.
+      Amarga $\Gamma \Entails !B$, $\mSat{M}{!B}[w]$. Kanthi cara
+      kang padha, $\mSat{M}{!C}[w]$. Mula $\mSat{M}{!B \land !C}[w]$.}
+
+  \item !!{derivation} pungkasan ing $\Elim{\land}$:
+    \iftag{probAnd}{Latihan.}{!!{derivation} kanggo premis $!B \land !C$
+        saka asumsi kang !!{undischarged} $\Gamma$ nuduhake yen
+        $\Gamma \Proves !B \land !C$. Miturut hipotesis induksi,
+        $\Gamma \Entails !B \land !C$. Kita kudu nuduhake yen
+        $\Gamma \Entails !B$. Mula upamane $\mSat{M}{\Gamma}[w]$.
+        Amarga $\Gamma \Entails !B \land !C$, $\mSat{M}{!B \land !C}[w]$.
+        Uga $\mSat{M}{!B}[w]$. Kanthi cara kang padha, yen
+        $\Elim\land$ pungkasan ing~$!C$, mula $\Gamma \Entails !C$.}
+
+  \item !!{derivation} pungkasan ing $\Intro{\lor}$:
+    \iftag{probOr}{Latihan.}{Upamane premise $!B$, lan asumsi kang
+      !!{undischarged} saka !!{derivation} kang pungkasan ing~$!B$
+      iku $\Gamma$. Mula $\Gamma \Proves !B$ lan miturut hipotesis
+      induksi, $\Gamma \Entails !B$. Kita kudu nuduhake yen
+      $\Gamma \Entails !B \lor !C$. Upamane $\mSat{M}{\Gamma}[w]$.
+      Amarga $\Gamma \Entails !B$, $\mSat{M}{!B}[w]$. Nanging uga
+      $\mSat{M}{!B \lor !C}[w]$. Kanthi cara kang padha, yen premise~$!C$,
+      kita nduweni $\Gamma \Entails !B \lor !C$.}
+    
+  \item !!{derivation} pungkasan ing~$\Elim{\lor}$:
+    \iftag{probOr}{Latihan.}{!!{derivation}s kang pungkasan ing
+      premis iku kanggo $!B \lor !C$ saka asumsi kang !!{undischarged}
+      ~$\Gamma$, kanggo $!D$ saka asumsi kang !!{undischarged}
+      $\Delta_1 \cup \{!B\}$, lan kanggo $!D$ saka asumsi kang
+      !!{undischarged}~$\Delta_2 \cup \{!C\}$. Dadi kita nduweni
+      $\Gamma \Proves !B \lor !C$, $\Delta_1 \cup \{!B\} \Proves !D$,
+      lan $\Delta_2 \cup \{!C\} \Proves !D$. Miturut hipotesis induksi,
+      $\Gamma \Entails !B \lor !C$, $\Delta_1 \cup \{!B\} \Entails !D$,
+      lan $\Delta_2 \cup \{!C\} \Entails !D$. Kita kudu mbuktekake yen
+      $\Gamma \cup \Delta_1 \cup \Delta_2 \Entails !D$.
+
+    Upamane $\mSat{M}{\Gamma \cup \Delta_1 \cup \Delta_2}[w]$. Mula
+    $\mSat{M}{\Gamma}[w]$ lan amarga $\Gamma \Entails !B \lor !C$,
+    $\mSat{M}{!B \lor !C}[w]$. Miturut definisi $\mSat{M}{}$, salah siji
+    $\mSat{M}{!B}[w]$ utawa $\mSat{M}{!C}[w]$. Mula kita mbedakake kasus:
+    (a)~$\mSat{M}{!B}[w]$. Mula $\mSat{M}{\Delta_1 \cup \{!B\}}[w]$.
+    Amarga $\Delta_1 \cup \{!B\} \Entails !D$, kita entuk $\mSat{M}{!D}[w]$.
+    (b)~$\mSat{M}{!C}[w]$. Mula $\mSat{M}{\Delta_2 \cup \{!C\}}[w]$.
+    Amarga $\Delta_2 \cup \{!C\} \Entails !D$, kita entuk $\mSat{M}{!D}[w]$.
+    Dadi ing loro kasus, $\mSat{M}{!D}[w]$, kaya kang arep dituduhake.}
+
+  \item !!{derivation} pungkasan nganggo $\Intro{\lif}$ kanthi
+    kesimpulan~$!B\lif !C$. Premise yaiku~$!C$, lan !!{derivation}
+    kang pungkasan ing premis iku nduweni asumsi kang !!{undischarged}
+    ~$\Gamma \cup \{!B\}$. Mula $\Gamma \cup \{!B\} \Proves !C$,
+    lan miturut hipotesis induksi, $\Gamma \cup \{!B\} \Entails !C$.
+    Kita kudu nuduhake yen $\Gamma \Entails !B \lif !C$.
+
+    Upamane $\mSat{M}{\Gamma}[w]$. Kita arep nuduhake yen kanggo kabeh
+    $w'$ kanthi $Rww'$, yen $\mSat{M}{!B}[w']$, mula
+    $\mSat{M}{!C}[w']$. Mula upamane $Rww'$ lan
+    $\mSat{M}{!B}[w']$. Miturut \olref[sem][rel]{prop:true-monotonic},
+    $\mSat{M}{\Gamma}[w']$. Amarga $\Gamma \cup \{!B\} \Entails !C$,
+    $\mSat{M}{!C}[w']$, kaya kang arep dituduhake.
+
+  \item !!{derivation} pungkasan ing $\Elim{\lif}$ kanthi
+    kesimpulan~$!C$. Premis-premise yaiku $!B \lif !C$ lan $!B$,
+    kanthi !!{derivation}s saka asumsi kang !!{undischarged} $\Gamma$,
+    $\Delta$. Mula $\Gamma \Proves !B \lif !C$ lan $\Delta \Proves !B$.
+    Miturut hipotesis induksi, $\Gamma \Entails !B \lif !C$ lan
+    $\Delta \Entails !B$. Kita kudu nuduhake yen
+    $\Gamma \cup \Delta \Entails !C$.
+
+    Upamane $\mSat{M}{\Gamma \cup \Delta}[w]$. Amarga
+    $\mSat{M}{\Gamma}[w]$ lan $\Gamma \Entails !B \lif !C$,
+    $\mSat{M}{!B \lif !C}[w]$. Miturut definisi, tegese kanggo kabeh
+    $w'$ kanthi $Rww'$, yen $\mSat{M}{!B}[w']$, mula
+    $\mSat{M}{!C}[w']$. Amarga $R$ refleksif, $w$ kalebu $w'$
+    kanthi $Rww'$. Tegese, yen $\mSat{M}{!B}[w]$, mula
+    $\mSat{M}{!C}[w]$. Amarga $\mSat{M}{\Delta}[w]$ lan
+    $\Delta \Entails !B$, $\mSat{M}{!B}[w]$. Mula $\mSat{M}{!C}[w]$,
+    kaya kang arep dituduhake.
+
+  \item !!{derivation} pungkasan ing $\FalseInt$ kanthi kesimpulan~$!A$.
+    Premise $\lfalse$ lan asumsi kang !!{undischarged} saka
+    !!{derivation} kanggo premis iku yaiku~$\Gamma$. Mula
+    $\Gamma \Proves \lfalse$. Miturut hipotesis induksi,
+    $\Gamma \Entails \lfalse$. Kita kudu nuduhake $\Gamma \Entails !A$.
+
+    Kita nganggo bukti ora langsung. Yen $\Gamma \Entails/ !A$, ana
+    model~$\mModel{M}$ lan donya~$w$ kanthi $\mSat{M}{\Gamma}[w]$
+    lan $\mSat/{M}{!A}[w]$. Amarga $\Gamma \Entails \lfalse$,
+    $\mSat{M}{\lfalse}[w]$. Nanging iki ora mungkin, amarga miturut
+    definisi, $\mSat/{M}{\lfalse}[w]$. Mula $\Gamma \Entails !A$.
+  \item !!{derivation} pungkasan ing $\Intro\lnot$: Latihan.
+  \item !!{derivation} pungkasan ing $\Elim\lnot$: Latihan.
+  \end{enumerate}
+\end{proof}
+
+\begin{prob}
+  Jangkepna bukti \olref[int][sc][snd]{thm:soundness}. Kanggo kasus
+  $\Intro\lnot$ lan $\Elim\lnot$, gunakna definisi
+  $\mSat{M}{\lnot !A}[w]$ ing \olref[int][sem][rel]{defn:true-at-w}.
+  Tegese, aja nganggep $\lnot !A$ ditetepake dening $!A \lif \lfalse$.
+\end{prob}
+
+\begin{prob}
+  Tuduhna yen !!{formula}s iki ora !!{derivable} ing logika
+  intuisionistik:
+  \begin{enumerate}
+    \item $(!A \lif !B) \lor (!B \lif !A)$
+    \item $(\lnot\lnot !A \lif !A) \lif (!A \lor \lnot !A)$
+    \item $(!A \lif !B \lor !C) \lif \bigl((!A \lif !B)\lor(!A \lif !C)\bigr)$
+  \end{enumerate}
+\end{prob}
+
+\end{document}

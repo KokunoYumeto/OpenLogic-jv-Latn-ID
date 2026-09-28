@@ -1,0 +1,231 @@
+% Part: first-order-logic
+% Chapter: models-theories
+% Section: set-theory
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{mat}{set}
+
+\olsection{Teori Himpunan}
+
+Meh kabeh matematika bisa dikembangake ing teori himpunan.
+Ngembangake matematika ing teori iki nyakup sawetara prakara.
+Kapisan, dibutuhake himpunan aksioma kanggo relasi~$\in$.
+Wis dikembangake maneka sistem aksioma, kang kadhang
+nduweni sipat-sipat~$\in$ kang padha nentang.
+Sistem aksioma kang dikenal minangka $\Log{ZFC}$,
+teori himpunan Zermelo--Fraenkel kanthi aksioma pilihan,
+ngadeg dhewe: sistem iki kang paling akeh digunakake
+lan ditliti, amarga aksioma-aksiomane kabukten cukup
+kanggo mbuktekake meh kabeh bab kang dikarepake
+para matematikawan bisa dibuktekake. Nanging sadurunge
+iku bisa ditetepake, luwih dhisik kudu dijlentrehake
+kepriye kita bisa \emph{nyatakake} kabeh bab kang
+kepengin dinyatakake dening para matematikawan.
+Kaping pisan, basa iki ora ngemot !!{constant}s
+utawa !!{function}s, mula sepisanan katon ora cetha
+kepriye kita bisa ngrembug himpunan tartamtu
+(kayata $\emptyset$ utawa $\Nat$), operasi tumrap
+himpunan (kayata $X \cup Y$ lan $\Pow{X}$),
+apa maneh konstruksi liyane kang nyakup barang
+liya saliyane himpunan, kayata relasi lan fungsi.
+
+Kanggo miwiti, "dadi anggota saka" dudu siji-sijine
+relasi kang kita gatekake: "dadi subhimpunan saka"
+katon meh padha wigatine. Nanging kita bisa
+\emph{nemtokake} "dadi subhimpunan saka" lumantar
+"dadi anggota saka". Kanggo nindakake iki,
+kita kudu nemokake !!a{formula}~$!A(x, y)$
+ing basa teori himpunan kang dicukupi dening
+pasangan himpunan~$\tuple{X, Y}$ yen lan mung
+yen $X \subseteq Y$. Dene $X$ iku subhimpunan
+saka $Y$ yen lan mung yen kabeh !!{element}s
+saka~$X$ uga !!{element}s saka~$Y$. Mula,
+kita bisa nemtokake $\subseteq$ kanthi formula
+\[
+\lforall[z][(z \in x \lif z \in y)]
+\]
+Saiki, kapan wae kita arep nggunakake relasi~$\subseteq$
+ing sawijining formula, kita bisa nggantine
+nganggo formula kasebut (kanthi $x$ lan $y$ diganti
+kaya perlune, lan variabel kaiket~$z$ diwenehi
+jeneng anyar yen perlu). Upamane, ekstensionalitas
+himpunan ateges yen sembarang himpunan~$x$ lan $y$
+padha-padha ngemot sijine, mula $x$ lan $y$ iku
+himpunan kang padha. Iki bisa dinyatakake kanthi
+$\lforall[x][\lforall[y][((x \subseteq y \land y
+    \subseteq x) \lif x = y)]]$, utawa, yen
+$\subseteq$ diganti nganggo definisi ing ndhuwur,
+kanthi
+\[
+\lforall[x][\lforall[y][((\lforall[z][(z \in x \lif z \in y)] \land
+    \lforall[z][(z \in y \lif z \in x)]) \lif x = y)]].
+\]
+Iki pancen salah siji aksioma $\Log{ZFC}$, yaiku
+"aksioma ekstensionalitas".
+
+Ora ana !!{constant} kanggo $\emptyset$, nanging
+kita bisa nyatakake "$x$ kosong" kanthi
+$\lnot \lexists[y][y \in x]$. Banjur
+"$\emptyset$ ana" dadi !!{sentence}~
+$\lexists[x][\lnot \lexists[y][y \in
+    x]]$. Iki aksioma liyane saka~$\Log{ZFC}$.
+(Gatekna yen aksioma ekstensionalitas ngakibatake
+yen mung ana siji himpunan kosong.) Kapan wae
+kita arep ngrembug $\emptyset$ ing basa teori
+himpunan, kita bakal nulis minangka "ana
+himpunan kang kosong lan \dots" Upamane,
+kanggo nyatakake yen $\emptyset$ iku
+subhimpunan saka saben himpunan, kita bisa nulis
+\[
+\lexists[x][(\lnot\lexists[y][y \in x] \land \lforall[z][x \subseteq
+    z])]
+\]
+ing ngendi, mesthi, $x \subseteq z$ kudu diganti
+karo definisine.
+
+Kanggo ngrembug operasi ing himpunan, kayata
+$X \cup Y$ lan $\Pow{X}$, kita kudu nggunakake
+cara kang padha. Ora ana simbol fungsi ing basa
+teori himpunan, nanging kita bisa nyatakake relasi
+fungsional $X \cup Y = Z$ lan $\Pow{X} = Y$ kanthi
+\begin{align*}
+& \lforall[u][((u \in x \lor u \in y) \liff u \in z)]\\
+& \lforall[u][(u \subseteq x \liff u \in y )]
+\end{align*}
+amarga !!{element}s saka $X \cup Y$ persis
+himpunan-himpunan kang dadi !!{element}s saka~$X$
+utawa !!{element}s saka~$Y$, lan
+!!{element}s saka $\Pow{X}$ persis subhimpunan
+saka~$X$. Nanging iki ora marakake kita bisa
+nggunakake $x \cup y$ utawa $\Pow{x}$ kaya-kaya
+iku term: kita mung bisa nggunakake sakabehing
+!!{formula}s kang nemtokake relasi
+$X \cup Y = Z$ lan $\Pow{X} = Y$. Nyatane,
+kita durung ngerti apa relasi-relasi iku tau
+dicukupi, yaiku kita durung ngerti apa gabungan
+lan himpunan pangkat tansah ana. Upamane,
+!!{sentence} $\lforall[x][\lexists[y][\Pow{x} = y]]$
+iku aksioma liyane saka~$\Log{ZFC}$
+(aksioma himpunan pangkat).
+Cathetan notasi: rumus kang nganggo tandha himpunan
+pangkat ing kene mung cekakan metabahasa; ing formula
+basa murni, relasi kasebut kudu dibentangake miturut
+definisi ing ndhuwur.
+
+Saiki kepriye anggone ngrembug pasangan urut
+utawa fungsi? Ing kene kita kudu njlentrehake
+kepriye pasangan urut lan fungsi bisa dianggep
+minangka jinis himpunan tartamtu. Salah siji cara
+nemtokake pasangan urut $\tuple{x, y}$ yaiku
+minangka himpunan $\{\{x\}, \{x, y\}\}$.
+Nanging kaya sadurunge, kita ora bisa ngenalake
+!!a{function} kang menehi jeneng marang
+himpunan iki; kita mung bisa nemtokake relasi
+$\tuple{x, y} = z$, yaiku,
+$\{\{x\}, \{x, y\}\} = z$:
+\[
+\lforall[u][(u \in z \liff (\lforall[v][(v \in u \liff v = x)] \lor
+  \lforall[v][(v \in u \liff (v = x \lor v = y))]))]
+\]
+Iki nyatakake yen !!{element}s~$u$ saka~$z$
+persis himpunan-himpunan kang mung nduweni $x$
+minangka !!{element}, utawa mung nduweni $x$
+lan~$y$ minangka !!{element}s (kanthi tembung liya,
+himpunan kang padha karo $\{x\}$ utawa
+padha karo $\{x, y\}$). Sawisé iku, kita bisa
+nyatakake bab liyane, upamane, yen $X \times Y = Z$:
+\[
+\lforall[z][(z \in Z \liff \lexists[x][\lexists[y][(x \in
+        X \land y \in Y \land \tuple{x, y} = z)]])]
+\]
+
+Fungsi $f \colon X \to Y$ bisa dianggep minangka
+relasi $f(x) = y$, yaiku, minangka himpunan pasangan~
+$\Setabs{\tuple{x,y}}{f(x) = y}$. Banjur kita bisa
+kandha yen himpunan~$f$ iku fungsi saka $X$ menyang
+$Y$ yen (a) iku relasi
+$\subseteq X \times Y$, (b) total, yaiku
+kanggo saben $x \in X$ ana $y \in Y$ saéngga
+$\tuple{x, y} \in f$, lan (c) fungsional,
+yaiku kapan wae $\tuple{x, y}, \tuple{x, y'} \in f$,
+$y = y'$ (amarga nilai fungsi kudu tunggal).
+Dadi " $f$ iku fungsi saka $X$ menyang $Y$ "
+bisa ditulis minangka:
+\begin{align*}
+ \lforall[u][(u \in f \lif {}] & \lexists[x][\lexists[y][(x \in X \land y \in
+      Y \land \tuple{x, y} = u)]]) \land {}\\
+ \lforall[x][(x \in X \lif {}] &
+      (\lexists[y][(y \in Y \land \mathrm{maps}(f, x, y))] \land {}\\
+& (\lforall[y][\lforall[y'][((\mathrm{maps}(f, x, y) \land
+    \mathrm{maps}(f, x, y')) \lif y = y')]]))
+\end{align*}
+ing ngendi $\mathrm{maps}(f, x, y)$ nyepetake
+$\lexists[v][(v \in f \land
+  \tuple{x, y} = v)]$ (!!{formula} iki
+nyatakake "$f(x) = y$").
+
+Saiki uga ora angel nyatakake yen
+$f\colon X \to Y$ iku !!{injective}, upamane:
+\begin{multline*}
+ f \colon X \to Y \land \lforall[x][\lforall[x'][((x \in X \land x' \in
+     X \land {}]] \\
+ \lexists[y][(\mathrm{maps}(f, x, y) \land \mathrm{maps}(f,
+        x', y))]) \lif x = x')
+\end{multline*}
+Fungsi~$f\colon X \to Y$ iku !!{injective}
+yen lan mung yen, kapan wae $f$ masangake
+$x, x' \in X$ karo siji~$y$, mula $x = x'$.
+Yen formula iki dicekak minangka
+$\mathrm{inj}(f, X, Y)$, kita wis bisa
+nyatakake ing basa teori himpunan bab kang
+ora prasaja kaya Teorema Cantor:
+ora ana fungsi !!{injective} saka $\Pow{X}$
+menyang $X$:
+\[
+\lforall[X][\lforall[Y][(\Pow{X} = Y \lif
+    \lnot\lexists[f][\mathrm{inj}(f, Y, X)])]]
+\]
+
+Ana kang bisa ngira yen teori himpunan mbutuhake
+aksioma liyane kang njamin anane himpunan kanggo
+saben sipat kang nemtokake. Yen $!A(x)$ iku formula
+teori himpunan kang variabel~$x$ katon bebas,
+kita bisa nggatekake !!{sentence}
+\[
+\lexists[y][\lforall[x][(x \in y \liff !A(x))]].
+\]
+!!{sentence} iki nyatakake yen ana himpunan~$y$
+kang !!{element}s-e persis kabeh $x$ kang
+nyukupi~$!A(x)$. Skema iki diarani
+"prinsip komprehensi". Katon migunani banget;
+nanging sayange ora konsisten. Jupuken
+$!A(x) \ident \lnot x \in x$, mula prinsip
+komprehensi nyatakake
+\[
+\lexists[y][\lforall[x][(x \in y \liff x \notin x)]],
+\]
+yaiku nyatakake anane himpunan kabeh himpunan
+kang dudu !!{element}s saka awake dhewe.
+Himpunan kaya mangkono ora bisa ana---
+iki Paradoks Russell. Nyatane, $\Log{ZFC}$
+ngemot versi prinsip iki kang diwatesi---
+lan konsisten---yaiku prinsip pemisahan:
+\[
+\lforall[z][\lexists[y][\lforall[x][(x \in y \liff (x \in z \land
+      !A(x))]]].
+\]
+
+\begin{prob}
+Tuduhna yen prinsip komprehensi ora konsisten
+kanthi menehi !!a{derivation} kang nuduhake
+\[
+\lexists[y][\lforall[x][(x \in y \liff x \notin x)]] \Proves \lfalse.
+\]
+Mbokmenawa migunani yen luwih dhisik nuduhake
+$(A \lif \lnot A) \land (\lnot A \lif A)
+\Proves \lfalse$.
+\end{prob}
+\end{document}

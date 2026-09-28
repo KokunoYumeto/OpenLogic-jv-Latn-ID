@@ -1,0 +1,79 @@
+% Part: first-order-logic
+% Chapter: introduction
+% Section: models-theories
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{int}{mod}
+
+\olsection{Model lan Teori}
+
+Sawise sintaksis lan semantik logika sepisanan ditemtokake, kita bisa
+miwiti nliti sipat-sipat !!{structure}s lan gagasan semantis. Kita uga
+bisa nemtokake sistem !!{derivation}, banjur nliti sistem kasebut.
+Tumrap sawijining himpunan !!{sentence}s, kita bisa takon: !!{structure}s
+endi kang ndadekake kabeh !!{sentence}s ing himpunan kasebut bener?
+Yen diwenehi himpunan !!{sentence}s~$\Gamma$, !!a{structure}~$\Struct{M}$
+kang nyukupi ukara-ukara kasebut diarani \emph{model saka~$\Gamma$}.
+Kita bisa miwiti saka~$\Gamma$ lan nyoba nemokake model-modele---kaya
+apa rupane? Sepira gedhe utawa cilike? Nanging kita uga bisa miwiti
+saka siji !!{structure} utawa sawenehing !!{structure}s banjur takon:
+!!{sentence}s endi kang bener ing struktur-struktur kasebut? Apa ana
+!!{sentence}s kang \emph{menehi ciri} marang !!{structure}s iki kanthi
+pangerten yen ukara-ukara kasebut bener ing struktur-struktur iki, lan
+mung ing struktur-struktur iki? Cathetan koreksi sumber OLPL-062:
+sumber Inggris nyelehake tembung ``mung'' marang pronomina kanggo
+ukara, kang kanthi harfiah malah mbatesi ukara kang bener; konteks teori
+model lan metode aksiomatis mbutuhake ukara kasebut bener persis ing
+struktur saka kelas kang diwenehi ciri. Pitakon-pitakon kaya mangkono
+kalebu wewengkon \emph{teori model}. Pitakon kasebut uga dadi dhasar
+kanggo \emph{metode aksiomatis}: njlentrehake sawijining kumpulan
+!!{structure}s nganggo himpunan !!{sentence}s, yaiku aksioma-aksioma
+sawijining teori. Iki bisa ditindakake amarga pangamatan yen persis
+!!{sentence}s kang dadi akibat saka aksioma-aksioma ing logika
+sepisanan iku bener ing kabeh model aksioma kasebut.
+
+Minangka tuladha kang prasaja banget, timbangana pratatanan. Sawijining
+pratatanan yaiku relasi~$R$ ing sawenehing himpunan~$A$ kang refleksif
+lan transitif. Himpunan~$A$ kanthi relasi rong panggonan $R \subseteq A
+\times A$ ing himpunan kasebut persis kaya kang dibutuhake kanggo
+menehi !!a{structure} tumrap basa logika sepisanan kang mung nduweni
+siji simbol relasi rong panggonan~$\Obj P$: kita netepake
+$\Domain{M} = A$ lan $\Assign{\Obj P}{M} = R$. Amarga $R$ iku
+pratatanan, relasi kasebut refleksif lan transitif, lan kita bisa
+nemokake himpunan~$\Gamma$ saka !!{sentence}s logika sepisanan kang
+nyatakake iki:
+\begin{align*}
+  & \lforall[\Obj v_0][\Atom{\Obj P}{\Obj v_0,\Obj v_0}]\\
+  & \lforall[\Obj v_0][\lforall[\Obj v_1][\lforall[\Obj v_2][((\Atom{\Obj P}{\Obj v_0,\Obj v_1} \land \Atom{\Obj P}{\Obj v_1,\Obj v_2}) \lif \Atom{\Obj P}{\Obj v_0,\Obj v_2})]]]
+\end{align*}
+!!{sentence}s kasebut mung simbolisasi saka ``kanggo sembarang~$x$,
+$Rxx$'' ($R$ refleksif) lan ``saben $Rxy$ lan $Ryz$, uga $Rxz$''
+($R$ transitif). Kita bisa ndeleng yen !!a{structure}~$\Struct{M}$ iku
+model saka loro !!{sentence}s~$\Gamma$ iki yen lan mung yen $R$
+(yaiku, $\Assign{\Obj P}{M}$) dadi pratatanan ing~$A$ (yaiku,
+$\Domain{M}$). Kanthi tembung liya, model-model saka~$\Gamma$ persis
+pratatanan. Saben sipat saka kabeh pratatanan kang bisa diandharake ing
+basa logika sepisanan kang mung nggunakake~$\Obj P$ minangka
+!!{predicate} (kayata refleksivitas lan transitivitas ing ndhuwur),
+dadi akibat saka loro !!{sentence}s ing~$\Gamma$, lan kosok balene.
+Dadi, apa wae kang bisa kita buktekake ngenani model-model saka~$\Gamma$
+wis kita buktekake ngenani kabeh pratatanan.
+
+Tumrap saben teori lan kelas model tartamtu (kayata $\Gamma$ lan kabeh
+pratatanan), bakal ana pitakon-pitakon kang narik kawigaten ngenani apa
+kang bisa diandharake ing basa logika sepisanan kang gegandhengan, lan
+apa kang ora bisa diandharake. Ana sawetara sipat !!{structure}s kang
+narik kawigaten tumrap kabeh basa lan kelas model, yaiku sipat kang
+magepokan karo gedhene !!{domain}. Tuladhane, kita mesthi bisa
+ngandharake yen !!{domain} ngemot persis $n$~!!{element}s, kanggo
+sembarang~$n \in \PosInt$. Kita uga bisa ngandharake, kanthi
+nggunakake himpunan tanpa wates saka !!{sentence}s, yen !!{domain}
+tanpa wates. Nanging, kita ora bisa ngandharake yen domain iku winates,
+utawa yen domain iku !!{nonenumerable}. Asil-asiling wates logika
+sepisanan iki minangka akibat saka teorema kekompakan lan
+L\"owenheim--Skolem.
+
+\end{document}

@@ -1,0 +1,71 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{story}{blv}
+
+\olsection{Lampiran: Hukum Dhasar V Frege}
+
+Ing \olref[rus]{sec}, kita nerangake yen Russell ngrumusake
+paradokse minangka masalah tumrap sistem kang dijlentrehake
+Frege ing \emph{Grundgesetze}. Sistem Frege ora ngemot rumusan
+langsung Komprehensi Naif. Mula ing lampiran iki kita bakal
+nerangake kanthi cekak banget apa kang \emph{pancen} ana
+ing sistem Frege, sarta sesambungane karo Komprehensi Naif
+lan Paradoks Russell.
+
+Sistem Frege iku \emph{tataran kapindho} lan dirancang kanggo
+ngrumusake gagasan \emph{ekstensi sawijining konsep}.\footnote{Yen
+diandharake kanthi luwih trep, Frege nyoba ngrumusake gagasan
+kang luwih umum: ``rentang nilai'' sawijining fungsi. Ekstensi
+konsep iku kasus khusus saka gagasan kang luwih umum kasebut.
+Kanggo rinci, delengen \citet[pp.\ 8--9]{Heck2012}.}
+Kanthi notasi kang kailhami Frege, kita nulis
+$\fregeext{x}{F(x)}$ kanggo \emph{ekstensi konsep~$F$}.
+Iki piranti kang njupuk \emph{predikat}, ``$F$'', lan
+ngowahi dadi \emph{term} (tataran kapisan), yaiku
+``$\fregeext{x}{F(x)}$''. Kanthi piranti iki, Frege menehi
+\emph{definisi} keanggotaan kaya mangkene:
+\[
+	a \in b =_\text{df} \exists G(b = \fregeext{x}{G(x)} \land Ga)
+\]
+kurang luwih: $a \in b$ yen lan mung yen $a$ kalebu ing konsep
+kang ekstensine $b$. (Gatekna kuantor ``$\exists G$'' iku
+tataran kapindho.) Frege uga nampa prinsip ing ngisor iki,
+kang diarani \emph{Hukum Dhasar V}:
+$$\fregeext{x}{F(x)} = \fregeext{x}{G(x)} \liff \forall x (Fx \liff Gx)$$
+kurang luwih: konsep-konsep nduweni ekstensi kang identik yen
+lan mung yen konsep-konsep iku koekstensif. (Maneh,
+``$F$'' lan ``$G$'' loro-lorone ana ing posisi predikat.)
+Saiki prinsip prasaja nyambungake keanggotaan karo pemenuhan sipat:
+
+\begin{lem}[ing \emph{Grundgesetze}]\ollabel{lem:Fregeextensions}
+$\forall F \forall a(a \in \fregeext{x}{F(x)} \liff Fa)$
+\end{lem}
+
+\begin{proof} 
+Tetepna $F$ lan $a$. Saiki $a \in \fregeext{x}{F(x)}$ yen lan
+mung yen $\exists G(\fregeext{x}{F(x)}
+= \fregeext{x}{G(x)} \land Ga)$ (miturut definisi keanggotaan),
+yen lan mung yen $\exists G(\forall x(Fx \liff Gx) \land Ga)$
+(miturut Hukum Dhasar V), yen lan mung yen $Fa$ (miturut
+logika tataran kapindho kang dhasar).
+\end{proof}
+
+Lan iki meh langsung ngasilake Komprehensi Naif:
+
+\begin{lem}[ing \emph{Grundgesetze}.]
+$\forall F \exists s \forall a (a \in s \liff Fa)$
+\end{lem}
+
+\begin{proof}
+Tetepna $F$; miturut \olref{lem:Fregeextensions} kita nduweni
+$\forall a (a \in \fregeext{x}{F(x)} \liff Fa)$; mula
+$\exists s\forall a(a \in s \liff Fa)$ kanthi generalisasi
+eksistensial. Asil iki lumaku amarga $F$ dipilih sembarang.
+\end{proof}
+
+Paradoks Russell tuwuh yen $F$ dipilih kanthi
+$\forall x(Fx \liff x \notin x)$.
+
+\end{document}

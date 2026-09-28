@@ -1,0 +1,177 @@
+% Part: lambda-calculus
+% Chapter: introduction
+% Section: primitive-recursion
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{int}{pr}
+\olsection{Fungsi kang \usetoken{S}{lambda definable} Katutup tumrap Rekursi Primitif}
+
+Nalika tekan rekursi primitif, pungkasane ana
+pakaryan kang kudu ditindakake. Kita kudu
+lumaku kanthi sawetara tahap. Kaya sadurunge,
+upamana wis ana suku $G'$ lan $H'$ kang
+saben-saben !!{lambda define} fungsi $g$
+lan~$h$. Kita arep nemokake suku $F$ kang
+!!{lambda define}s fungsi~$f$ kang ditetepake
+dening
+\begin{align*}
+f(0, \vec z) & = g(\vec z) \\
+f(x+1, \vec z) & = h(x, f(x,\vec z), \vec z).
+\end{align*}
+Dadi, umume, yen ana suku lambda $G'$
+lan~$H'$, cukup nemokake suku~$F$ saengga
+\begin{align*}
+F(\num{0}, \vec z) & \equiv G'(\vec z) \\
+F(\overline{n+1}, \vec z) & \equiv H'(\num{n}, F(\num{n}, \vec z), \vec z)
+\end{align*}
+kanggo saben wilangan asli~$n$; amarga
+$G'$ lan~$H'$ !!{lambda define} $g$
+lan~$h$, yen numeral $\num{\vec m}$
+diselehake kanggo $\vec z$,
+$F(\num{n+1}, \num{\vec m})$ bakal
+direduksi nganti wujud normal kang
+menehi asil kang bener.
+
+Nanging kanggo iki, cukup nemokake
+suku~$F$ kang nyukupi
+\begin{align*}
+F(\num 0) & \equiv G \\
+F(\overline {n+1}) & \equiv H(\num{n},F(\num{n}))
+\intertext{kanggo saben wilangan asli $n$, kanthi}
+G & = \lambd[\vec z][G'(\vec z)] \text{ lan}\\
+H(u,v) & = \lambd[\vec z][H'(u,v(\vec z),\vec z)].
+\end{align*}
+Tegese, kanthi akal-akalan notasi lambda,
+kita ora perlu maneh mikirake paramèter
+tambahan $\vec z$: paramèter iku dilebokake
+ing notasi abstraksi lambda.
+
+Sadurunge netepake suku $F$, kita perlu
+cara kanggo nangani pasangan terurut.
+Lema sabanjure nyedhiyakake cara iku.
+
+\begin{lem}
+Ana suku lambda $D$ saengga kanggo saben
+pasangan suku lambda $M$ lan~$N$,
+$D(M,N)(\num{0}) \red M$ lan
+$D(M,N)(\num{1}) \red N$.
+\end{lem}
+
+\begin{proof}
+Dhisik, tetepna suku lambda $K$ kanthi
+\[
+K(y) = \lambd[x][y].
+\]
+Tegese, $K$ iku suku
+$\lambd[y][\lambd[x][y]]$.
+Kanthi cara ndeleng liyane, kanggo saben
+$M$, $K(M)$ iku fungsi konstan kang
+ngasilake~$M$ kanggo input apa wae.
+
+Saiki tetepna $D(x,y,z)$ kanthi
+$D(x,y,z) = z (K(y))x$. Banjur kita duwe
+\begin{align*}
+D(M,N,\num 0) & \red \num 0 (K(N)) M \red M \text{ lan}\\
+D(M,N,\num 1) & \red \num 1 (K(N)) M \red K(N) M \red N,
+\end{align*}
+kaya kang dikarepake.
+\end{proof}
+
+Gagasane yaiku $D(M,N)$ makili pasangan
+$\tuple{M, N}$; yen $P$ dianggep makili
+pasangan kaya mangkene, $P(\num 0)$
+lan $P(\num 1)$ makili proyeksi kiwa lan
+tengen, yaiku $(P)_0$ lan $(P)_1$.
+Kita bakal nggunakake notasi pungkasan iki.
+
+\begin{lem}
+Fungsi-fungsi kang !!{lambda definable}
+katutup tumrap rekursi primitif.
+\end{lem}
+
+\begin{proof}
+Kita kudu nuduhake yen, yen ana
+sembarang suku $G$ lan $H$, kita bisa
+nemokake suku $F$ saengga
+\begin{align*}
+F(\num{0}) & \equiv G \\
+F(\num{n+1}) & \equiv H(\num{n}, F(\num{n}))
+\end{align*}
+kanggo saben wilangan asli~$n$.
+Gagasane, kanthi kasar, yaiku ngitung
+urutan \emph{pasangan}
+\[
+\tuple{\num 0, F(\num 0)}, \tuple{\num 1, F(\num 1)}, \dots,
+\]
+kanthi nggunakake numeral minangka iterator.
+Gatekna yen pasangan kapisan mung
+$\tuple{\num 0, G}$. Yen wis ana pasangan
+$\tuple{\num{n}, F(\num{n})}$, pasangan
+sabanjure $\tuple{\num{n+1}, F(\num{n+1})}$
+kudu ekuivalen karo
+$\tuple{\num{n+1}, H(\num{n}, F(\num{n}))}$.
+Kita bakal ngrancang suku lambda~$T$
+kang nindakake transisi saklangkah iki.
+
+Rinciane kaya mangkene. Tetepna $T(u)$
+kanthi
+\[
+T(u) = \tuple{\fn{Succ}((u)_0), H((u)_0,(u)_1)}.
+\]
+Saiki gampang dipriksa yen kanggo saben
+wilangan~$n$,
+\[
+T(\tuple{\num{n}, M}) \red \tuple{\num{n+1}, H(\num{n}, M)}.
+\]
+Kaya kang disaranake ing ndhuwur, yen
+wis ana $G$ lan $H$, tetepna~$F(u)$
+kanthi
+\[
+F(u) = (u(T,\tuple{\num 0, G}))_1.
+\]
+Tegese, kanggo input~$\num{n}$,
+$F$ ngetrapake $T$ ping $n$ marang
+$\tuple{\num 0, G}$, banjur ngasilake
+komponen kapindho. Kanggo wiwitane,
+kita duwe
+\begin{enumerate}
+\item $\num{0} (T, \tuple{\num 0, G}) \equiv \tuple{\num{0}, G}$
+\item $F(\num{0}) \equiv G$
+\end{enumerate}
+Kanthi induksi ing~$n$, kita bisa
+nuduhake yen kanggo saben wilangan asli
+ukara ing ngisor iki bener:
+\begin{enumerate}
+\item $\num{n+1}(T, \tuple{\num{0}, G}) \equiv \tuple{\num{n+1}, F(\num{n+1})}$
+\item $F(\num{n+1}) \equiv H(\num{n}, F(\num{n}))$
+\end{enumerate}
+Kanggo klausa kapindho, kita duwe
+\begin{align*}
+F(\num{n+1}) & \red (\num{n+1}(T, \tuple{\num 0, G}))_1 \\
+& \equiv (T(\num{n} (T, \tuple{\num 0, G})))_1 \\
+& \equiv (T(\tuple{\num{n}, F(\num{n})}))_1 \\
+& \equiv (\tuple{\num{n+1}, H(\num{n}, F(\num{n}))})_1 \\
+& \equiv H(\num{n}, F(\num{n})).
+\end{align*}
+Ing larik sadurunge larik pungkasan,
+kita nggunakake hipotesis induksi.
+Kanggo klausa kapisan, kita duwe
+\begin{align*}
+\num{n+1} (T, \tuple{\num 0, G}) &
+\equiv T(\num{n} (T, \tuple{\num 0, G})) \\
+& \equiv T( \tuple{\num{n}, F(\num{n})}) \\
+& \equiv \tuple{\num{n+1}, H(\num{n}, F(\num{n}))} \\
+& \equiv \tuple{\num{n+1}, F(\num{n+1})}.
+\end{align*}
+Ing larik pungkasan, kita nggunakake
+klausa kapindho. Dadi kita wis nuduhake
+$F(\num 0) \equiv G$ lan, kanggo saben
+$n$, $F(\num {n+1}) \equiv H(\num
+n, F(\num{n}))$, persis kaya kang
+dibutuhake.
+\end{proof}
+
+\end{document}

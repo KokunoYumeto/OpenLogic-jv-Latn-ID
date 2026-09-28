@@ -1,0 +1,117 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{his}{set}{infinitesimals}
+\olsection{Infinitesimal lan Diferensiasi}
+
+Newton lan Leibniz nemokaké kalkulus kanthi mandiri
+ing pungkasan abad kaping pitulas. Salah siji
+panganggoné kalkulus kang wigati banget yaiku
+\emph{diferensiasi}. Kanthi kasar, diferensiasi
+ngupaya menehi teges kanggo ``laju owah-owahan'',
+utawa gradien, sawijining fungsi ing sawijining titik.
+
+Iki cara kang cetha kanggo nggambaraké gagasan iku.
+Delengen fungsi $f(x) = \nicefrac{x^2}{4} + \nicefrac{1}{2}$,
+kang digambar ireng ing ngisor iki:
+\begin{center}
+	\begin{tikzpicture}[scale=1]
+	\draw[->, gray] (-1,0) -- (4.25,0) node[right] {$x$};
+	\draw[->, gray] (0,-0.25) -- (0,5.25) node[above] {$f(x)$};
+	
+	\foreach \x/\xtext in {1/1, 2/2, 3/3, 4/4}
+	\draw[shift={(\x,0)}, gray] (0pt,2pt) -- (0pt,-2pt) node[below] {$\xtext$};
+	
+	\foreach \y/\ytext in {1/1, 2/2, 3/3, 4/4, 5/5}
+	\draw[shift={(0,\y)}, gray] (2pt,0pt) -- (-2pt,0pt) node[left] {$\ytext$};
+	
+	\draw[oldiagcolorC] (0.5, 9/16) -- (3.5, 57/16) -- (3.5, 9/16)--cycle;
+	\draw[oldiagcolorD] (.5, 9/16) -- (2.5, 33/16) -- (2.5, 9/16) -- cycle;
+	\draw[oldiagcolorE] (.5, 9/16) -- (1.5, 17/16) -- (1.5, 9/16) -- cycle;
+	\draw[thick] (-1,.75) parabola bend (0,0.5) (4,4.5);
+	\end{tikzpicture}
+\end{center}
+Anggepen kita arep nemtokaké gradien fungsi ing $c =
+\nicefrac{1}{2}$. Wiwitané, gambaren segitiga kang
+sisi miringé menehi taksiran gradien ing titik iku,
+upamané segitiga abang ing ndhuwur. Yèn $\beta$
+iku dawa dhasar segitiga, dhuwuré yaiku
+$f(\nicefrac{1}{2}+\beta) - f(\nicefrac{1}{2})$,
+dadi gradien sisi miringé yaiku:
+\[
+\frac{f(\nicefrac{1}{2}+\beta) - f(\nicefrac{1}{2})}{\beta}.
+\]
+Dadi gradien segitiga !!{colorC} kang dhasaré
+dawané~$3$ iku persis~$1$. Sisi miring segitiga
+kang luwih cilik, yaiku segitiga !!{colorD}
+kanthi dhasar dawa~$2$, menehi taksiran
+kang luwih becik; gradiené $\nicefrac{3}{4}$.
+Segitiga kang luwih cilik manèh, yaiku
+segitiga !!{colorE} kanthi dhasar dawa~$1$,
+menehi taksiran kang luwih becik manèh;
+gradiené $\nicefrac{1}{2}$.
+
+Segitiga kang saya cilik menehi taksiran
+kang saya becik. Mula kita bisa kandha:
+sisi miring segitiga kang dawa dhasaré
+\emph{infinitesimal} menehi gradien ing $c =
+\nicefrac{1}{2}$ iku dhéwé. Kanthi cara iki
+kita olèh rumus turunan (kapisan) fungsi $f$
+ing titik $c$:
+\[
+{f'}(c) = \frac{f(c+\beta) - f(c)}{\beta} \text{ kanthi $\beta$ infinitesimal.}
+\]
+Lan, kanthi kasar, iki kang diandharaké
+Newton lan Leibniz.
+
+Nanging, amarga padha ngandharaké mangkono,
+kita kudu takon: apa kang diarani
+\emph{infinitesimal}? Ana dilema kang abot.
+Yèn $\beta = 0$, mula $f'$ ora
+didhéfinisikaké kanthi becik, amarga
+nglibataké pambagian nganggo $0$.
+Nanging yèn $\beta > 0$, kita mung
+olèh \emph{taksiran} gradien, dudu
+gradiené iku dhéwé.
+
+Iki dudu keprihatinan kang mung muncul
+ing jaman sabanjuré. Mangkéné kritik
+Berkeley marang para pandhèrèké Newton:
+\begin{quote}
+Aku ngakoni yèn pralambang bisa dienggo kanggo nandhani
+samubarang utawa ora nandhani apa-apa: mula ing notasi
+wiwitan $c + \beta$, $\beta$ bisa ateges tambahan
+utawa ora ateges apa-apa. Nanging, teges endi waé
+kang panjenengan pilih, panalaran panjenengan kudu
+ajeg manut teges iku, lan aja nerusaké kanthi
+nganggo rong teges sekaligus: tumindak mangkono
+iku kesesatan nalar kang cetha.
+(\citealt[\S{}XIII]{Berkeley1734},
+peubah diganti supaya cocog karo tèks sadurungé)
+\end{quote}
+Kanggo mbéla kalkulus infinitesimal saka kritik
+Berkeley, ana kang bisa mangsuli yèn omongan
+ngenani ``infinitesimal'' mung kiasan. Wong bisa
+kandha yèn angger segitigané \emph{cilik banget},
+kita bakal olèh taksiran garis singgung kang
+\emph{cukup becik}. Berkeley uga nduwèni
+wangsulan: sanajan iku cukup kanggo rékayasa,
+bab iki nglemahaké \emph{kalungguhan}
+matématika, amarga
+\begin{quote}
+kita dikandhani yèn \emph{in rebus mathematicis errores qu\`{a}m minimi
+non sunt contemnendi}. [Ing matématika,
+kaluputan kang paling cilik waé ora kena
+dianggep entheng.] \citep[\S{}IX]{Berkeley1734}
+\end{quote}
+Pethikan kang dicithak miring iku meh persis
+kutipan saka karya Newton dhéwé,
+\emph{Quadrature of Curves} (1704).
+
+Bantahan filosofis Berkeley iku landhep banget.
+Nanging kalkulus kabukti kasil banget, lan
+para matématikawan terus migunakaké
+tanpa tiba ing kaluputan.
+
+\end{document}

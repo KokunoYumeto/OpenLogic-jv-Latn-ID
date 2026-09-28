@@ -1,0 +1,214 @@
+% Part: first-order-logic
+% Chapter: completeness
+% Section: identity
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{com}{ide}
+\olsection{Identitas}
+
+\begin{explain}
+Konstruksi model term ing bagean sadurunge cukup kanggo netepake
+kelengkapan logika orde kapisan tumrap himpunan~$\Gamma$ kang ora
+ngemot~$\eq$. Model term kasebut nyukupi saben $!A \in \Gamma^*$ kang
+ora ngemot~$\eq$ (lan mula kabeh $!A \in \Gamma$). Nanging konstruksi
+iki ora lumaku yen $\eq$ ana. Sebabe, $\Gamma^*$ banjur bisa ngemot
+!!a{sentence}~$\eq[t][t']$, nanging ing model term, nilai saben term
+yaiku term kasebut dhewe. Mula, yen $t$ lan $t'$ iku term kang beda,
+nilai kalorone ing model term---yaiku $t$ lan $t'$---uga beda, saengga
+$\eq[t][t']$ luput. Nanging iki bisa didandani nganggo konstruksi kang
+dikenal minangka ``pemfaktoran.''
+\end{explain}
+
+\begin{defn}
+  Upamana $\Gamma^*$ minangka himpunan ukara kang konsisten lan
+  !!{complete} ing~$\Lang L$. Kita nemtokake relasi $\approx$ ing
+  himpunan term katutup saka~$\Lang L$ kanthi
+  \[
+  t \approx t' \text{\quad yen lan mung yen \quad} \eq[t][t'] \in \Gamma^*
+  \]
+\end{defn}
+
+\begin{prop}
+\ollabel{prop:approx-equiv}
+Relasi $\approx$ nduweni sipat-sipat ing ngisor iki:
+\begin{enumerate}
+\item $\approx$ iku refleksif.
+\item $\approx$ iku simetris.
+\item $\approx$ iku transitif.
+\item Yen $t \approx t'$, $f$ minangka !!a{function}, lan $t_1$,
+  \dots, $t_{i-1}$, $t_{i+1}$, \dots, $t_n$ minangka term katutup,
+  mula
+\[
+\Atom{f}{t_1,\dots, t_{i-1}, t, t_{i+1}, \dots, t_n} \approx
+\Atom{f}{t_1,\dots, t_{i-1}, t', t_{i+1}, \dots, t_n}.
+\]
+\item Yen $t \approx t'$, $R$ minangka !!a{predicate}, lan $t_1$,
+  \dots, $t_{i-1}$, $t_{i+1}$, \dots, $t_n$ minangka term katutup,
+  mula
+\begin{multline*}
+\Atom{R}{t_1,\dots, t_{i-1}, t, t_{i+1}, \dots, t_n} \in \Gamma^* \text{ yen lan mung yen } \\
+\Atom{R}{t_1,\dots, t_{i-1}, t', t_{i+1}, \dots, t_n} \in \Gamma^*.
+\end{multline*}
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+Amarga $\Gamma^*$ konsisten lan !!{complete}, $\eq[t][t'] \in
+\Gamma^*$ yen lan mung yen $\Gamma^* \Proves \eq[t][t']$. Mula cukup
+nuduhake pratelan-pratelan ing ngisor iki:
+\begin{enumerate}
+\item $\Gamma^* \Proves \eq[t][t]$ kanggo kabeh term katutup~$t$.
+\item Yen $\Gamma^* \Proves \eq[t][t']$, mula $\Gamma^* \Proves
+  \eq[t'][t]$.
+\item Yen $\Gamma^* \Proves \eq[t][t']$ lan $\Gamma^* \Proves
+  \eq[t'][t'']$, mula $\Gamma^* \Proves \eq[t][t'']$.
+\item Yen $\Gamma^* \Proves \eq[t][t']$, mula
+\[
+\Gamma^* \Proves
+\eq[\Atom{f}{t_1,\dots,t_{i-1},t,t_{i+1},\dots,t_n}][\Atom{f}{t_1,\dots,t_{i-1},t',t_{i+1},\dots,t_n}]
+\]
+kanggo saben !!{function} $n$-panggonan~$f$ lan term katutup
+$t_1$, \dots, $t_{i-1}$, $t_{i+1}$, \dots,~$t_n$. Cathetan koreksi
+sumber OLPL-050: koma rangkep sawise term kanthi indeks i tambah siji ing
+rumus sumber dibusak.
+\item Yen $\Gamma^* \Proves \eq[t][t']$ lan
+$\Gamma^* \Proves
+\Atom{R}{t_1,\dots,t_{i-1},t,t_{i+1},\dots,t_n}$, mula
+$\Gamma^* \Proves \Atom{R}{t_1,\dots,t_{i-1},t',t_{i+1},\dots,t_n}$
+kanggo saben !!{predicate} $n$-panggonan~$R$ lan term katutup
+$t_1$, \dots, $t_{i-1}$, $t_{i+1}$, \dots,~$t_n$.
+\end{enumerate}
+\end{proof}
+
+\begin{prob}
+Rampungna bukti~\olref[fol][com][ide]{prop:approx-equiv}.
+\end{prob}
+
+\begin{defn}
+Upamana $\Gamma^*$ minangka himpunan konsisten lan !!{complete} ing
+basa~$\Lang L$, $t$ minangka term katutup, lan $\approx$ kaya ing
+definisi sadurunge. Banjur:
+\[
+\equivrep{t}{\approx} = \Setabs{t'}{t'\in \Trm[L], t \approx t'}
+\]
+lan $\equivclass{\Trm[L]}{\approx} = \Setabs{\equivrep{t}{\approx}}{t \in \Trm[L]}$.
+\end{defn}
+
+\begin{defn}
+\ollabel{defn:term-model-factor}
+Upamana $\Struct M = \Struct M(\Gamma^*)$ minangka model term
+kanggo~$\Gamma^*$ saka \olref[mod]{defn:termmodel}. Banjur
+$\Struct{\equivclass{M}{\approx}}$ yaiku !!{structure} ing ngisor iki:
+\begin{enumerate}
+\item $\Domain{\equivclass{M}{\approx}} = \equivclass{\Trm[L]}{\approx}$.
+\item $\Assign{c}{\equivclass{M}{\approx}} = \equivrep{c}{\approx}$
+\item $\Assign{f}{\equivclass{M}{\approx}}(\equivrep{t_1}{\approx}, \dots,
+  \equivrep{t_n}{\approx}) = \equivrep{\Atom{f}{t_1,\dots, t_n}}{\approx}$
+\item $\tuple{\equivrep{t_1}{\approx}, \dots, \equivrep{t_n}{\approx}} \in
+  \Assign{R}{\equivclass{M}{\approx}}$ yen lan mung yen
+  $\Sat{M}{\Atom{R}{t_1,\dots, t_n}}$, yaiku yen lan mung yen
+  $\Atom{R}{t_1,\dots, t_n} \in \Gamma^*$.
+\end{enumerate}
+\end{defn}
+
+\begin{explain}
+Elinga yen kita wis nemtokake $\Assign{f}{\equivclass{M}{\approx}}$
+lan $\Assign{R}{\equivclass{M}{\approx}}$ kanggo unsur-unsur saka
+$\equivclass{\Trm[L]}{\approx}$ kanthi ngrujuk unsur kasebut minangka
+$\equivrep{t}{\approx}$, yaiku lumantar
+\emph{wakil}~$t \in \equivrep{t}{\approx}$. Kita kudu mesthekake yen
+definisi iki ora gumantung marang pilihan wakil kasebut, yaiku yen
+pilihan liyane~$t'$ nemtokake kelas ekuivalensi kang padha
+($\equivrep{t}{\approx} = \equivrep{t'}{\approx}$), definisine menehi
+asil kang padha. Umpamane, yen $R$ minangka !!{predicate} kanthi siji
+panggonan, klausa pungkasan ing definisi nyatakake yen
+$\equivrep{t}{\approx} \in \Assign{R}{\equivclass{M}{\approx}}$ yen lan
+mung yen $\Sat{M}{\Atom{R}{t}}$. Yen kanggo term liyane~$t'$ kanthi
+$t \approx t'$ nanging $\Sat/{M}{\Atom{R}{t'}}$, definisi kasebut
+bakal mbutuhake $\equivrep{t'}{\approx} \notin
+\Assign{R}{\equivclass{M}{\approx}}$. Cathetan koreksi sumber OLPL-052:
+makro Sat kanthi garis miring wis nyatakake yen predikat luput; conto
+kasebut mung mbutuhake wakil kapindho mawa tandha prima, dudu wakil
+kapisan. Yen $t \approx t'$, mula
+$\equivrep{t}{\approx} = \equivrep{t'}{\approx}$, nanging ora mungkin
+$\equivrep{t}{\approx} \in \Assign{R}{\equivclass{M}{\approx}}$ lan
+$\equivrep{t}{\approx} \notin
+\Assign{R}{\equivclass{M}{\approx}}$ kalorone. Nanging
+\olref{prop:approx-equiv} njamin yen iki ora bisa kedadeyan.
+\end{explain}
+
+\begin{prop}
+$\Struct{\equivclass{M}{\approx}}$ ditemtokake kanthi becik, yaiku yen
+$t_1$, \dots, $t_n$, $t_1'$, \dots, $t_n'$ minangka term katutup, lan
+$t_i \approx t_i'$, mula
+\begin{enumerate}
+\item $\equivrep{\Atom{f}{t_1,\dots, t_n}}{\approx} =
+    \equivrep{\Atom{f}{t_1',\dots, t_n'}}{\approx}$, yaiku
+  \[
+  \Atom{f}{t_1,\dots, t_n} \approx \Atom{f}{t_1',\dots, t_n'}
+  \]
+  lan
+\item $\Sat{M}{\Atom{R}{t_1,\dots, t_n}}$ yen lan mung yen
+  $\Sat{M}{\Atom{R}{t_1',\dots, t_n'}}$, yaiku
+  \[
+    \Atom{R}{t_1,\dots, t_n} \in \Gamma^* \text{ yen lan mung yen }
+    \Atom{R}{t_1',\dots, t_n'} \in \Gamma^*.
+  \]
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+Iki ndherek saka \olref{prop:approx-equiv} kanthi induksi marang~$n$.
+\end{proof}
+
+Kaya ing perkara model term, sadurunge mbuktekake lemma bebener kita
+mbutuhake lemma ing ngisor iki.
+
+\begin{lem}
+\ollabel{lem:val-in-termmodel-factored} Upamana $\Struct M = \Struct M
+ (\Gamma^*)$, banjur kanggo saben term katutup
+$\Value{t}{\equivclass{M}{\approx}} = \equivrep{t}
+ {\approx}$. Cathetan koreksi sumber OLPL-051: domain lan bukti kang
+dirujuk mbutuhake watesan term katutup.
+\end{lem}
+\begin{proof}
+Buktine padha karo bukti \olref[mod]{lem:val-in-termmodel}.
+\end{proof}
+
+\begin{prob}
+Rampungna bukti~\olref[fol][com][ide]{lem:val-in-termmodel-factored}.
+\end{prob}
+
+\begin{lem}
+\ollabel{lem:truth}
+$\Sat{\equivclass{M}{\approx}}{!A}$ yen lan mung yen $!A \in
+\Gamma^*$ kanggo kabeh ukara~$!A$.
+\end{lem}
+
+\begin{proof}
+Kanthi induksi marang~$!A$, kaya ing bukti \olref[mod]{lem:truth}.
+Siji-sijine perkara kang mbutuhake kawigaten tambahan yaiku nalika
+$!A \ident \eq[t][t']$.
+\begin{align*}
+\Sat{\equivclass{M}{\approx}}{\eq[t][t']} & \text{ yen lan mung yen } \equivrep{t}{\approx} = \equivrep{t'}{\approx}
+\text{ (miturut definisi $\Struct{\equivclass{M}{\approx}}$)}\\
+& \text{ yen lan mung yen } t \approx t' \text{ (miturut definisi $\equivrep{t}{\approx}$)}\\
+& \text{ yen lan mung yen } \eq[t][t'] \in \Gamma^* \text{ (miturut definisi $\approx$).}
+\end{align*}
+\end{proof}
+
+\begin{digress}
+Elinga yen sanajan $\Struct{M(\Gamma^*)}$ mesthi !!{enumerable} lan
+tanpa wates, $\Struct{\equivclass{M}{\approx}}$ bisa winates, amarga
+bisa wae mung ana winates akeh kelas $\equivrep{t}{\approx}$. Iki
+pancen samesthine, amarga $\Gamma$ bisa ngemot !!{sentence}s kang
+mbutuhake saben !!{structure} panggonane ukara kasebut bener dadi
+winates. Umpamane, $\lforall[x][\lforall[y][x = y]]$ minangka
+!!{sentence} konsisten, nanging mung dicukupi ing !!{structure}s kanthi
+!!a{domain} kang ngemot persis siji !!{element}.
+\end{digress}
+
+\end{document}

@@ -1,0 +1,86 @@
+% Part: applied-modal-logics
+% Chapter: epistemic-logic
+% Section: language-epistemic-logic
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{aml}{el}{lan}
+
+\olsection{Basa Logika Epistemik}
+
+\begin{defn}
+Upamane $G$ himpunan lambang agen. Basa dhasar logika epistemik
+multiagen ngemot
+\begin{enumerate}
+  \tagitem{prvFalse}{Konstanta proposisional kanggo !!{falsity}~$\lfalse$.}{}
+  \tagitem{prvTrue}{Konstanta proposisional kanggo !!{truth}~$\ltrue$.}{}
+  \item Sawijining himpunan kang !!{denumerable}s saka !!{propositional variable}s: $\Obj
+    p_0$, $\Obj p_1$, $\Obj p_2$, \dots
+  \item Konektif proposisional: \startycommalist
+  \iftag{prvNot}{\ycomma $\lnot$ (negasi)}{}%
+  \iftag{prvAnd}{\ycomma $\land$ (konjungsi)}{}%
+  \iftag{prvOr}{\ycomma $\lor$ (disjungsi)}{}%
+  \iftag{prvIf}{\ycomma $\lif$ (!!{conditional})}{}%
+  \iftag{prvIff}{\ycomma $\liff$ (!!{biconditional})}{}.
+  \item Operator kawruh $\Knows_a$ kang $a \in G$.
+\end{enumerate}
+\end{defn}
+
+Yen kita mung ngrembug kawruh siji agen ing sistem, rujukan marang
+himpunan~$G$ lan agen-agen siji-siji bisa diilangi. Ing kasus iki,
+kita mung nggunakake operator dhasar~$\Knows$.
+
+\begin{defn}
+\emph{!!^{formula}s} ing basa epistemik ditetepake kanthi induksi
+  kaya mangkene:
+\begin{enumerate}
+\tagitem{prvFalse}{$\lfalse$ iku !!{formula} atomik.}{}
+
+\tagitem{prvTrue}{$\ltrue$ iku !!{formula} atomik.}{}
+
+\item Saben variabel proposisional $\Obj p_i$ iku !!{formula} (atomik).
+
+\tagitem{prvNot}{Yen $!A$ iku !!a{formula}, $\lnot !A$ uga
+  !!a{formula}.}{}
+
+\tagitem{prvAnd}{Yen $!A$ lan $!B$ iku !!{formula}s, $(!A \land
+  !B)$ uga !!a{formula}.}{}
+
+\tagitem{prvOr}{Yen $!A$ lan $!B$ iku !!{formula}s, $(!A \lor !B)$
+  uga !!a{formula}.}{}
+
+\tagitem{prvIf}{Yen $!A$ lan $!B$ iku !!{formula}s, $(!A \lif !B)$
+  uga !!a{formula}.}{}
+
+\tagitem{prvIff}{Yen $!A$ lan $!B$ iku !!{formula}s, $(!A \liff !B)$
+  uga !!a{formula}.}{}
+
+\item Yen $!A$ iku !!a{formula} lan $a \in G$, $\Knows_a !A$
+  uga !!a{formula}.
+
+\tagitem{limitClause}{Ora ana liyane kang dadi !!a{formula}.}{}
+\end{enumerate}
+\end{defn}
+
+Yen !!a{formula}~$!A$ ora ngemot $\Knows_a$ kanggo agen endi wae,
+rumus iku diarani \emph{tanpa modalitas}.
+
+\begin{defn}
+  Operator $\Knows$ nglambangake kawruh individu, dene $\EKnows$,
+  kang lumrahe diwaca ``saben wong ngerti,'' nglambangake kawruh
+  klompok. Yen $G' \subseteq G$, kita netepake $\EKnows_{G'} !A$
+  minangka cekakan kanggo \[\bigwedge_{b \in G'} \Knows_b !A.\]
+\end{defn}
+
+Kita uga bisa netepake pangertèn kawruh kang luwih kuwat, yaiku
+\emph{kawruh umum} ing klompok agen~$G$. Yen sawijining informasi
+dadi kawruh umum ing klompok agen, saben kombinasi agen ing klompok
+iku ngerti yen liyane ngerti yen liyane ngerti \dots tanpa wates.
+Iki luwih kuwat tinimbang kawruh klompok, lan gampang ditemokake
+model relasional kang !!a{formula} dadi kawruh klompok nanging dudu
+kawruh umum. Kita nganggo $\CKnows_G !A$ kanggo nglambangake
+  ``ing~$G$, pratelan~$!A$ dadi kawruh umum.''
+
+\end{document}

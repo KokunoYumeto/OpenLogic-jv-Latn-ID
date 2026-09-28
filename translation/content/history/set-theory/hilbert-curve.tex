@@ -1,0 +1,176 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{his}{set}{hilbertcurve}
+
+\olsection{Lampiran: Kurva Hilbert kang Ngebaki Bidang}
+
+Ing bab \olref[pathology]{sec}, wis kita sebutaké yèn buktiné Cantor
+ngenani garis lan kothak kang cacah titiké padha persis
+(\olref[his][set][cantorplane]{thm:cantorplane}) njalari Peano
+takon apa ana \emph{kurva} kang ngebaki bidang. Ing taun 1890
+dhèwèké olèh wangsulan iya. Ing pérangan iki kita njlèntrèhaké,
+kanthi cara kang durung gumathok banget, carané mbangun kurva Hilbert
+kang ngebaki bidang (kanthi sithik owah-owahan).\footnote{Kanggo
+panjlèntrèhan kang luwih ketat, delengen \cite{Rose2010}.
+Owah-owahan iku arupa tambahan pérangan abang ing kurva-kurva
+ing ngisor iki. Kanthi mangkono, kontinuitas kurva rada luwih
+gampang dipriksa.}
+
+Kita bakal netepaké fungsi $h$ minangka limit runtutan fungsi
+$h_1$, $h_2$, $h_3$, \dots\@ Dhisik kita njlèntrèhaké pambanguné.
+Sabanjuré kita tuduhaké yèn fungsi iki ngebaki bidang, banjur
+yèn fungsi iki pancèn sawijining kurva.
+
+Daerah asil $h$ kita tetepaké kothak satuan, $\unitsquare$.
+Iki panyedhakan kapisan marang $h$, yaiku $h_1$:
+\begin{center}
+	\begin{tikzpicture}
+	\draw[gray] (0pt, 0pt) rectangle (80pt, 80pt);
+	\draw[step = 40pt, gray, very thin] (0pt, 0pt) grid (80pt, 80pt);
+	\draw[oldiagcolorC, thick] (20pt, 0)--(20pt, 20pt);
+	\draw[oldiagcolorC, thick] (60pt, 0)--(60pt, 20pt);		
+	\begin{scope}[xshift=20pt, yshift=20pt]
+	\draw [black, thick, l-system={Hilbert curve, step=40pt, angle=90, axiom=L, order=1}]  lindenmayer system;
+	\end{scope}
+	\end{tikzpicture}
+\end{center}
+Supaya gampang ngetutaké, kothak iki kita bagi nganggo kisi
+$2 \times 2$. Kurvané bisa kita anggep diwiwiti saka seprapat
+kiwa ngisor, banjur menyang kiwa ndhuwur, tengen ndhuwur, lan
+pungkasané tengen ngisor. Iki tahap pambangunan kapindho, yaiku $h_2$:
+\begin{center}
+	\begin{tikzpicture}
+	\draw[gray] (0pt, 0pt) rectangle (80pt, 80pt);
+	\draw[step = 20pt, gray, very thin] (0pt, 0pt) grid (80pt, 80pt);
+	\draw[oldiagcolorC, thick] (0pt, 10pt)--(10pt, 10pt);
+	\draw[oldiagcolorC, thick] (70pt, 10pt)--(80pt, 10pt);
+	\draw[thick, oldiagcolorE] (10pt, 30pt)--(10pt, 50pt); 
+	\draw[thick, oldiagcolorE] (30pt, 50pt)--(50pt, 50pt); 
+	\draw[thick, oldiagcolorE] (70pt, 50pt)--(70pt, 30pt); \begin{scope}[xshift=10pt, yshift=30pt]
+	\draw [thick, rotate=270,black, l-system={Hilbert curve, step=20pt, angle=90, axiom=L, order=1}]  lindenmayer system;
+	\end{scope}
+	\begin{scope}[xshift=10pt, yshift=50pt]
+	\draw [thick, black, l-system={Hilbert curve, step=20pt, angle=90, axiom=L, order=1}]  lindenmayer system;
+	\end{scope}
+	\begin{scope}[xshift=50pt, yshift=50pt]
+	\draw [thick, black, l-system={Hilbert curve, step=20pt, angle=90, axiom=L, order=1}]  lindenmayer system;
+	\end{scope}
+	\begin{scope}[xshift=70pt, yshift=10pt]
+	\draw [thick, rotate=90,black, l-system={Hilbert curve, step=20pt, angle=90, axiom=L, order=1}]  lindenmayer system;
+	\end{scope}
+	\end{tikzpicture}
+\end{center}
+Werna-werna kang béda mbiyantu njlèntrèhaké carané mbangun $h_2$.
+Dhisik, salinan pérangan $h_1$ kang dudu !!{colorC}, kanthi ukuran
+dicilikaké, kita pasang ing kiwa ngisor, kiwa ndhuwur, tengen
+ndhuwur, lan tengen ngisor kothak (digambar ireng). Banjur
+patang gambar iku kita gandhèng nganggo garis !!{colorE}.
+Pungkasané, gambar iki kita sambungaké marang wates kothak
+nganggo garis !!{colorC}.
+
+Saiki delengen $h_3$. Kaya déné $h_2$ dumadi saka patang salinan
+pérangan $h_1$ kang dudu abang, kang dicilikaké lan digandhèng,
+$h_3$ uga dumadi saka patang salinan pérangan $h_2$ kang dudu abang,
+kanthi ukuran dicilikaké (digambar ireng). Salinan-salinan iku
+banjur digandhèng nganggo garis !!{colorE}, lan pungkasané
+disambungaké marang wates kothak nganggo garis !!{colorC}.
+\begin{center}
+	\begin{tikzpicture}
+	\draw[gray] (0pt, 0pt) rectangle (80pt, 80pt);
+	\draw[step = 10pt, gray, very thin] (0pt, 0pt) grid (80pt, 80pt);
+	\draw[thick, oldiagcolorC](5pt, 0pt)--(5pt, 5pt); 
+	\draw[thick, oldiagcolorC] (75pt, 0pt)--(75pt, 5pt); 
+	\draw[thick, oldiagcolorE] (75pt, 45pt)--(75pt, 35pt);
+	\draw[thick, oldiagcolorE] (5pt, 35pt)--(5pt, 45pt); 
+	\draw[thick, oldiagcolorE] (35pt, 45pt)--(45pt, 45pt); 
+	\draw[thick, oldiagcolorE] (75pt, 45pt)--(75pt, 35pt); \begin{scope}[xshift=5pt, yshift=35pt]
+	\draw [rotate=270, thick, black, l-system={Hilbert curve, step=10pt, angle=90, axiom=L, order=2}]  lindenmayer system;
+	\end{scope}
+	\begin{scope}[xshift=5pt, yshift=45pt]
+	\draw [thick, black, l-system={Hilbert curve, step=10pt, angle=90, axiom=L, order=2}]  lindenmayer system;
+	\end{scope}
+	\begin{scope}[xshift=45pt, yshift=45pt]
+	\draw [thick, black, l-system={Hilbert curve, step=10pt, angle=90, axiom=L, order=2}]  lindenmayer system;
+	\end{scope}
+	\begin{scope}[xshift=75pt, yshift=5pt]
+	\draw [thick, rotate=90,black, l-system={Hilbert curve, step=10pt, angle=90, axiom=L, order=2}]  lindenmayer system;
+	\end{scope}
+	\end{tikzpicture}
+\end{center}
+Saiki katon pola umum kanggo netepaké $h_{n+1}$ saka $h_n$.
+Pungkasané, kurva $h$ \emph{dhewe} kita tetepaké kanthi nimbang
+limit titik demi titik saka fungsi-fungsi $h_1$, $h_2$,
+\dots\@ Tegesé, kanggo saben $x \in \unitline$:
+\begin{align*}
+	h(x) &= \lim_{n \rightarrow \infty} h_n(x)
+\end{align*} 
+Saiki kita jlèntrèhaké gagasan yèn kurva iki ngebaki bidang.
+Nalika nggambar kurva $h_n$, kita masang kisi $2^n \times 2^n$
+ing $\unitsquare$. Miturut téoréma Pythagoras, dawa diagonal
+saben petak kisi yaiku:
+\[
+\sqrt{\left(\nicefrac{1}{2^{n}}\right)^2+\left(\nicefrac{1}{2^{n}}\right)^2} = 2^{(\frac{1}{2}-n)}
+\]
+lan cetha yèn $h_n$ ngliwati saben petak kisi. Mula, saben titik
+ing $\unitsquare$ jaraké \emph{ora ngluwihi}
+$2^{(\frac{1}{2}-n)}$ saka sawatara titik ing $h_n$. Saiki, $h$ wis
+ditetepaké minangka limit saka fungsi-fungsi $h_1$, $h_2$,
+$h_3$, \dots\@ Sketsa iki banjur nganggep yèn wates paling gedhé
+jarak sawijining titik saka $h$ diwènèhaké déning:
+\[
+\lim_{n \rightarrow \infty} 2^{(\frac{1}{2}-n)} = 0.
+\]
+Tegesé, saben titik ing $\unitsquare$ dianggep nduwèni jarak
+$0$ saka~$h$. Kanthi intuisi iki, saben titik ing $\unitsquare$
+ana \emph{ing} kurva. Mula $h$ ngebaki bidang!{}
+
+Isih perlu dituduhaké yèn $h$ pancèn sawijining \emph{kurva}.
+Kanggo kuwi, kita kudu netepaké pangertèné. Definisi modhèren
+adhedhasar definisi kang diwènèhaké Jordan ing taun 1887
+(mung sawetara taun sadurungé kurva kapisan kang ngebaki bidang
+diwènèhaké):
+
+\begin{defn}
+Kurva yaiku pemetaan kontinu saka $\unitline$ menyang $\Real^2$.
+\end{defn}
+
+Definisi iki cukup gampang dibayangaké: sawijining kurva iku
+pemetaan kang ``lancar'' saka garis baku menyang bidang $\Real^2$.
+Fungsi $h$ pancèn pemetaan saka $\unitline$ menyang $\Real^2$.
+Supaya dadi kurva, kita isih kudu mbuktèkaké yèn $h$ kontinu.
+Kontinuitas wis kita tetepaké ing \olref[limits]{sec} nganggo
+notasi $\epsilon$/$\delta$. Katrangan ing ngisor iki mung
+nyedhiyakaké gambaran bab carané kurva nyedhaki saben titik ing
+kothak: \emph{Yèn sawijining titik $p$ ing $\unitsquare$ lan
+tingkat katlitèn $\epsilon$ ditemtokaké, kita bisa nemu pérangan
+mbukak saka $\unitline$ saéngga kanggo saben $x$ ing pérangan
+iku, $h(x)$ ana ing sajroning jarak $\epsilon$ saka $p$.}
+
+Dadi, anggepen $p$ lan $\epsilon$ wis ditemtokaké. Iki padha
+karo nggambar bunderan kang puseuré $p$ lan radiusé $\epsilon$
+ing $\unitsquare$. (Bunderan iki bisa ngliwati wates
+$\unitsquare$, nanging kuwi ora dadi prakara.) Élinga yèn nalika
+njlèntrèhaké fungsi $h_n$, kita nggambar kisi $2^n \times 2^n$
+ing $\unitsquare$. Sepira waé ciliking $\epsilon$, ana $n$
+kang cukup gedhé saéngga sawijining petak ing kisi
+$2^n \times 2^n$ ing $\unitsquare$ iku mapan sakabèhé ing bunderan kang puseuré
+$p$ lan radiusé $\epsilon$.
+
+Dadi, pilih $n$ iku, lan anggep $I$ pérangan mbukak paling gedhé
+saka $\unitline$ kang sakabèhé dipetakké déning $h_n$ menyang
+petak kisi kang dimaksud. (Ing sketsa iki, anané interval
+$(a,b)$ dimangertèni saka kasunyatan yèn $h_n$ ngliwati
+saben petak ing kisi $2^n\times 2^n$.) Saiki kudu dituduhaké
+yèn kanggo saben $x \in I$, titik $h(x)$ tetep ana ing petak
+kisi kang padha. Kanggo \emph{iki}, cukup yèn $h_m(x)$ tetep
+ana ing petak iku kanggo saben $m > n$. Yèn kita deleng
+$h_m$ kanggo $m > n$, miturut pola gambar,
+``pérangan kang padha'' saka interval satuan tetep dipetakké
+menyang petak kisi kang padha, mung jaluré saya dawa lan
+mlengkung. Pangrembug iki nerangaké intuisi pambangunané,
+nanging durung dadi bukti kontinuitas fungsi iki kanthi syarat
+épsilon-dèlta ing saben titik domain.
+
+\end{document}

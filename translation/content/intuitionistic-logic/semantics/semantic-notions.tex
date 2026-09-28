@@ -1,0 +1,72 @@
+% part: intuitionistic-logic
+% chapter: semantics
+% section: semantic-notions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{sem}{sem}
+
+\olsection{Pangerten Semantik}
+
+\begin{defn}
+  Kita nyebut $!A$ \emph{bener ing model $\mModel{M} = \tuple{W,R,V}$,} $
+  \mSat{M}{!A}$, yen lan mung yen $\mSat{M}{!A}[w]$ kanggo kabeh $w \in W$.
+  $!A$ iku \emph{valid}, $\Entails !A$, yen lan mung yen bener ing kabeh model.
+  Kita nyebut himpunan !!{formula}s~$\Gamma$ \emph{ngentail}~$!A$, $\Gamma
+  \Entails !A$, yen lan mung yen kanggo saben model~$\mModel{M}$ lan
+  saben~$w$ kanthi $\mSat{M}{\Gamma}[w]$, uga $\mSat{M}{!A}[w]$.
+\end{defn}
+
+\begin{prop}\ollabel{prop:sat-entails}
+  \begin{enumerate}
+  \item\ollabel{prop:sat-entails1} Yen $\mSat{M}{\Gamma}[w]$ lan
+    $\Gamma \Entails !A$, mula $\mSat{M}{!A}[w]$.
+  \item\ollabel{prop:sat-entails2} Yen $\mSat{M}{\Gamma}$ lan $\Gamma
+    \Entails !A$, mula $\mSat{M}{!A}$.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+  \item Upamane $\mSat{M}{\Gamma}[w]$. Amarga $\Gamma \Entails !A$,
+    miturut definisi entailmen, saka $\mSat{M}{\Gamma}[w]$ kita
+    entuk $\mSat{M}{!A}[w]$.
+  \item Langsung kasimpulake saka \olref{prop:sat-entails1}.
+  \end{enumerate}
+\end{proof}
+
+
+\begin{defn}\ollabel{defn:restrict}
+  Upamane $\mModel{M}$ iku model relasional lan $w \in W$.
+  \emph{Restriksi} $\mModel{M}_w=\tuple{W_w, R_w, V_w}$
+  saka~$\mModel{M}$ marang~$w$ diwenehake dening:
+  \begin{align*}
+    W_w & = \Setabs{u \in W}{Rwu},\\
+    R_w  & = R \cap (W_w)^2, \text{ lan}\\
+    V_w(p) & = V(p) \cap W_w.
+  \end{align*}
+\end{defn}
+
+\begin{prop}\ollabel{prop:restrict}
+  $\mSat{M}{!A}[w]$ yen lan mung yen $\mSat{M_w}{!A}$.
+\end{prop}
+
+\begin{prob}
+  Buktèkna \olref[int][sem][sem]{prop:restrict}.
+\end{prob}
+
+\begin{prop}
+  Upamane kanggo saben model~$\mModel{M}$ kanthi $\mSat{M}{\Gamma}$,
+  uga $\mSat{M}{!A}$. Mula $\Gamma \Entails !A$.
+\end{prop}
+
+\begin{proof}
+  Upamane $\mSat{M}{\Gamma}[w]$. Kanthi ngetrapake \olref{prop:restrict}
+  marang saben~$!B \in \Gamma$, kita entuk $\mSat{M_w}{\Gamma}$.
+  Miturut asumsi, kita entuk $\mSat{M_w}{!A}$. Kanthi ngetrapake
+  \olref{prop:restrict} maneh, kita entuk $\mSat{M}{!A}[w]$.
+\end{proof}
+
+\end{document}

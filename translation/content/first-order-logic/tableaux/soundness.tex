@@ -13,14 +13,14 @@
 \olsection{Kasahihan}
 
 \begin{explain}
-Sistem !!^a{derivation}, kayata tableaux, iku \emph{sah} yen ora bisa
+Sistem !!^a{derivation}, kayata tableau, iku \emph{sah} yen ora bisa
 !!{derive} bab kang sejatine ora lumaku. Mula kasahihan iku sawijining
-sipat aman kang dijamin kanggo sistem !!{derivation}. Gumantung marang
+sipat kaslametan kang dijamin kanggo sistem !!{derivation}. Gumantung marang
 sipat teoretis-bukti kang dirembug, kita kepengin ngerti, upamane, yen
 \begin{enumerate}
 \item saben !!{derivable}~$!A$ iku \iftag{FOL}{valid}{tautologi};
-\item yen !!a{sentence} bisa !!{derivable} saka ukara-ukara liyane,
-  ukara iku uga dadi akibate;
+\item yen !!a{sentence} iku !!{derivable} saka ukara-ukara liyane,
+  ukara iku uga dadi akibat saka ukara-ukara kasebut;
 \item yen sawijining himpunan !!{sentence}s ora konsisten, himpunan
   iku ora bisa dicukupi.
 \end{enumerate}
@@ -33,7 +33,7 @@ Amarga kabeh sipat teoretis-bukti iki ditemtokake liwat !!{tableau}s
 katutup kanthi sawijining wujud, mbuktekake (1)--(3) ing ndhuwur
 mbutuhake bukti ngenani sipat semantis !!{tableau}s katutup. Kaping
 pisan kita bakal netepake apa tegese !!a{signed
-  formula} dicukupi ing sawijining struktur, banjur nuduhake yen, yen
+  formula} dicukupi ing sawijining struktur, banjur nuduhake manawa yen
 !!{tableau} katutup,
 ora ana struktur kang nyukupi kabeh asumsine. Sawise iku, (1)--(3)
 dadi korolari saka asil iki.
@@ -57,9 +57,9 @@ himpunan iku, lan \emph{ora bisa dicukupi} yen ora ana.
 \end{thm}
 
 \begin{proof}
-Ayo kita ngarani sawijining cabang saka !!a{tableau} bisa dicukupi yen
+Sebuten sawijining cabang saka !!a{tableau} bisa dicukupi yen
 lan mung yen himpunan !!{signed formula}s ing cabang iku bisa dicukupi,
-lan ayo kita ngarani !!a{tableau} bisa dicukupi yen ngemot paling ora
+lan sebuten !!a{tableau} bisa dicukupi yen ngemot paling ora
 siji cabang kang bisa dicukupi.
 
 Kita nuduhake pratelan iki: ngambakake !!{tableau} kang bisa dicukupi
@@ -82,8 +82,8 @@ dirembug, cabang kasebut tetep bisa dicukupi ing !!{tableau} kang wis
 kita mung kudu nimbang kasus nalika aturan ditrapake marang cabang
 kang bisa dicukupi.
 
-Ayo $\Gamma$ dadi himpunan !!{signed formula}s ing cabang kasebut,
-lan ayo $\sFmla{S}{!A} \in \Gamma$ dadi !!{signed formula} kang
+Tetepna $\Gamma$ minangka himpunan !!{signed formula}s ing cabang kasebut,
+lan tetepna $\sFmla{S}{!A} \in \Gamma$ minangka !!{signed formula} kang
 dikenani aturan. Yen aturan kasebut ora mecah cabang, kita kudu
 nuduhake yen cabang kang wis diambakake, yaiku $\Gamma$ bebarengan
 karo kesimpulan aturan, isih bisa dicukupi. Yen aturan mecah cabang,
@@ -153,8 +153,8 @@ Kaping pisan, kita nimbang inferensi-inferensi kang ora mecah cabang.
 
   Miturut \olref[syn][ass]{prop:sat-quant},
   $\Sat/{M}{\lforall[x][!A(x)]}$ yen lan mung yen kanggo sawijining
-  $s$, $\Sat/{M}{!A(x)}[s]$. Saiki ayo $\Struct{M'}$ padha karo
-  $\Struct{M}$, kajaba $\Assign{a}{M'} = s(x)$. Miturut
+  $s$, $\Sat/{M}{!A(x)}[s]$. Saiki tetepna $\Struct{M'}$ minangka
+  struktur kang padha karo $\Struct{M}$, kajaba $\Assign{a}{M'} = s(x)$. Miturut
   \olref[syn][ext]{cor:extensionality-sent}, kanggo saben
   $\sFmla{\True}{!C} \in \Gamma$, $\Sat{M'}{!C}$, lan kanggo saben
   $\sFmla{\False}{!C} \in \Gamma$, $\Sat/{M'}{!C}$, amarga $a$ ora
@@ -171,7 +171,7 @@ Kaping pisan, kita nimbang inferensi-inferensi kang ora mecah cabang.
 \item Cabang diambakake kanthi ngetrapake $\TRule{\False}{\lexists}$
   marang $\sFmla{\False}{\lexists[x][!B(x)]} \in \Gamma$: Gladhen.}{}
 \end{enumerate}
-Saiki ayo nimbang inferensi-inferensi kang mecah cabang.
+Saiki kita nimbang inferensi-inferensi kang mecah cabang.
 \begin{enumerate}
 \item Cabang diambakake kanthi ngetrapake $\TRule{\False}{\land}$
   marang $\sFmla{\False}{!B \land !C} \in \Gamma$, kang ngasilake
@@ -248,7 +248,7 @@ $\{\sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\}$. Miturut
 \olref{thm:tableau-soundness}, ora ana
 $\iftag{FOL}{\Struct{M}}{\pAssign{v}}$ saengga
 $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!B_i}$ kanggo kabeh $i=1$, \dots,~$n$.
-Nanging banjur $\Gamma$ ora bisa dicukupi.
+Mula $\Gamma$ ora bisa dicukupi.
 \end{proof}
 
 \end{document}

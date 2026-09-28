@@ -15,7 +15,7 @@
 \begin{explain}
 Sistem !!^a{derivation}, kayata kalkulus sekuen, iku \emph{sah}
 yen ora bisa !!{derive} prakara kang ora bener-bener lumaku. Mula
-kasahihan iku jinis sipat keamanan kang dijamin kanggo sistem
+kasahihan iku jinis sipat kaslametan kang dijamin kanggo sistem
 !!{derivation}. Gumantung marang sipat teoretis-bukti kang dirembug,
 kita arep ngerti, contone, yen
 \begin{enumerate}
@@ -58,8 +58,8 @@ nyukupi sekuen kasebut.
 \end{thm}
 
 \begin{proof}
-Ayo $\pi$ dadi !!a{derivation} saka $\Theta \Sequent \Xi$. Kita
-nerusake kanthi induksi marang cacah inferensi~$n$ ing~$\pi$.
+Upamana $\pi$ iku !!a{derivation} saka $\Theta \Sequent \Xi$. Kita
+mbuktekake teorema iki kanthi induksi marang cacah inferensi~$n$ ing~$\pi$.
 
 Yen cacah inferensine~$0$, mula $\pi$ mung dumadi saka sekuen
 wiwitan. Saben sekuen wiwitan $!A \Sequent !A$ mesthi valid, amarga
@@ -124,8 +124,8 @@ premis.
   $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$, utawa (b) kanggo sawetara
   $!C \in \Delta$, $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$, utawa (c)
   $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$. Kita arep nuduhake yen $\Theta
-  \Sequent \Xi$ uga valid. Ayo \iftag{FOL}{$\Struct{M}$ dadi
-    !!a{structure}}{$\pAssign{v}$ dadi !!a{valuation}}. Yen (a)
+  \Sequent \Xi$ uga valid. Upamana \iftag{FOL}{$\Struct{M}$ iku
+    !!a{structure}}{$\pAssign{v}$ iku !!a{valuation}}. Yen (a)
   lumaku, mula ana $!C \in \Gamma$ saengga
   $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$, nanging $!C \in \Theta$ uga.
   Yen (b) lumaku, ana $!C \in \Delta$ saengga
@@ -204,7 +204,7 @@ premis.
     \UnaryInf$\Gamma \fCenter \Delta, !A \lif !B$
   \end{prooftree}
   Maneh, hipotesis induksi nyebut yen premis iku valid; kita arep
-  nuduhake yen kesimpulane uga valid. Ayo
+  nuduhake yen kesimpulane uga valid. Upamana
   \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} dipilih sawenang-wenang.
   Amarga $!A, \Gamma \Sequent \Delta, !B$ iku valid, paling ora salah
   siji kasus iki lumaku: (a)
@@ -270,8 +270,8 @@ premis.
   $\Sat/{M}{!C}$. Kita kudu nuduhake yen (a) lumaku, yaiku
   $\Sat{M}{\lforall[x][!A(x)]}$. Miturut
   \olref[syn][ass]{prop:sat-quant}, cukup kanggo nuduhake yen
-  $\Sat{M}{!A(x)}[s]$ kanggo kabeh penetapan variabel~$s$. Mula ayo
-  $s$ dadi penetapan variabel kang dipilih sawenang-wenang. Nimbang
+  $\Sat{M}{!A(x)}[s]$ kanggo kabeh penetapan variabel~$s$. Mula upamana
+  $s$ iku penetapan variabel kang dipilih sawenang-wenang. Nimbang
   struktur~$\Struct{M'}$ kang padha karo~$\Struct{M}$ kajaba
   $\Assign{a}{M'} = s(x)$. Miturut
   \olref[syn][ext]{cor:extensionality-sent}, kanggo saben $!C \in
@@ -290,7 +290,7 @@ premis.
 \item Inferensi pungkasan iku \LeftR{\lexists}: Gladhen.
 }{}
 \end{enumerate}
-Saiki ayo nimbang inferensi-inferensi kang bisa duwe rong premis.
+Saiki kita nimbang inferensi-inferensi kang bisa duwe rong premis.
 \begin{enumerate}
 \item Inferensi pungkasan iku potong: banjur $\pi$ mungkasi nganggo
   \begin{prooftree}
@@ -301,7 +301,7 @@ Saiki ayo nimbang inferensi-inferensi kang bisa duwe rong premis.
     \RightLabel{\Cut}
     \BinaryInf$\Gamma, \Pi \fCenter \Delta, \Lambda$
   \end{prooftree}
-  Ayo \iftag{FOL}{$\Struct{M}$ dadi !!a{structure}}{$\pAssign{v}$ dadi
+  Upamana \iftag{FOL}{$\Struct{M}$ iku !!a{structure}}{$\pAssign{v}$ iku
     !!a{valuation}}. Miturut hipotesis induksi, premis loro mau valid,
   mula \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} nyukupi premis loro
   mau. Kita mbedakake rong kasus: (a)

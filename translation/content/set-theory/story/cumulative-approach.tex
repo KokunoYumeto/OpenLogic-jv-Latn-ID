@@ -1,0 +1,97 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{story}{approach}
+\olsection{Pendekatan Kumulatif-Iteratif}
+
+Iki panjelasan kang luwih jangkep sethithik babagan cara kita
+merang himpunan dadi tataran:
+\begin{quote}
+	Himpunan kawangun ing \emph{tataran-tataran}. Kanggo saben
+	tataran $S$, ana tataran tartamtu kang \emph{sadurunge} $S$.
+	Ing tataran $S$, saben koleksi kang anggotane himpunan kang
+	kawangun ing tataran sadurunge $S$ diwangun dadi sawijining
+	himpunan. Ora ana himpunan liyane kajaba himpunan kang
+	kawangun ing tataran-tataran. \citep[p.~323]{Shoenfield:AST}
+\end{quote}
+Iki gambaran cekak \emph{konsepsi kumulatif-iteratif
+tumrap himpunan}. Konsepsi iki bakal dadi dhasar teori himpunan
+formal kang kita aturake ing \olref[sth][][]{part}.
+
+Saiki ayo dideleng luwih rinci. Kaya panjelasane Shoenfield,
+ing saben tataran kita nggawe himpunan anyar saka himpunan
+kang wis kasedhiya saka tataran sadurunge. Dadi ing gambaran
+Shoenfield, tataran wiwitan, yaiku tataran $0$, ora nduweni
+tataran \emph{sadurunge}; mula \emph{luwih-lebih} ora ana
+himpunan saka tataran sadurunge kang kasedhiya.\footnote{Yagene
+kita kudu nganggep \emph{ana} tataran kapisan? Delengen
+cathetan ing \stagesord{} sajrone \olref[z][story]{sec}.}
+Mula kita mung nggawe siji himpunan: himpunan tanpa
+!!{element}s, yaiku $\emptyset$. Ing tataran $1$, persis
+siji himpunan kasedhiya saka tataran sadurunge, mula mung
+siji himpunan anyar, yaiku $\{\emptyset\}$. Ing tataran $2$,
+loro himpunan kasedhiya saka tataran sadurunge, lan kita
+nggawe rong himpunan anyar $\{\{\emptyset\}\}$ lan
+$\{\emptyset, \{\emptyset\}\}$. Ing tataran $3$, papat
+himpunan wis kasedhiya saka tataran sadurunge, mula kita
+nggawe rolas himpunan anyar\ldots. Dadi gambaran
+kumulatif-iteratif tumrap himpunan kaya ing ngisor iki
+(angka nuduhake tataran):
+\begin{center}
+	\begin{tikzpicture}[scale=0.6]
+	\tikzset{cut_here/.style={densely dotted}}
+	\draw (-4,6) -- (-1, 0)-- (2,6); 
+	\draw[cut_here] (-5,8)--(-4,6);
+	\draw[cut_here] (2,6)--(3,8);
+	\draw(-1.5, 1)--(-0.5, 1);
+	\draw(-2, 2)--(0, 2);
+	\draw(-2.5, 3)--(0.5,3);
+	\draw(-3, 4)--(1, 4);
+	\draw(-3.5, 5)--(1.5, 5);
+	\draw(-4, 6)--(2, 6);
+	\node[label] at (0, 0) {\small 0};
+	\node[label] at (0.5, 1) {\small 1};
+	\node[label] at (1, 2) {\small 2};
+	\node[label] at (1.5, 3) {\small 3};
+	\node[label] at (2, 4) {\small 4};
+	\node[label] at (2.5, 5) {\small 5};
+	\node[label] at (3, 6) {\small 6};
+	\end{tikzpicture}
+\end{center}
+Mula, yagene kita kudu nampa gambaran iki?
+
+Alesan siji yaiku gambaran iki apik lan gampang digarap.
+Amarga gambaran kang paling cetha, yaiku Komprehensi Naif,
+wis gagal, kita mbutuhake gambaran kang apik.
+
+Nanging gambaran iki ora \emph{mung} apik. Kita nduweni
+alesan kang becik kanggo percaya yen teori himpunan kang
+adhedhasar gambaran iki bakal \emph{konsisten}. Iki alesane.
+
+Miturut konsepsi kumulatif-iteratif, kita nggawe himpunan
+ing tataran-tataran, lan !!{element}s-e kudu objek kang
+\emph{wis} kasedhiya. Mula kanggo saben tataran~$S$,
+kita bisa nggawe himpunan
+\[
+	R_S = \Setabs{x}{x \notin x \text{ lan $x$ wis kasedhiya sadurunge $S$}}
+\]
+Penalaran kang digunakake kanggo mbuktekake Paradoks Russell
+saiki nuduhake yen $R_S$ dhewe durung kasedhiya sadurunge
+tataran $S$. Iki dudu kontradiksi. Kajaba iku, yen kita
+nampa konsepsi kumulatif-iteratif, kita kudune ora
+\emph{ngarepake} bisa nggawe himpunan Russell dhewe. Amarga
+himpunan iku bakal ngemot kabeh himpunan kang ora dadi
+anggota awake dhewe lan kang ``bakal tau kasedhiya''.
+Ringkese: miturut gambaran kumulatif-iteratif, kasunyatan
+yen kita (kanthi bukti) ora bisa nggawe himpunan Russell
+ora \emph{nggumunake}; iki pancen kang bakal kita
+\emph{prakirakake}.
+
+%Ing sawijine sisi, konsepsi kumulatif-iteratif tumrap himpunan menehi wangsulan marang Paradoks Russell kang rada padha karo wangsulane \emph{pendukung predikativitas}. Amarga pendukung predikativitas nganggep koleksi kabeh himpunan$_n$ kang ora dadi anggota awake dhewe minangka himpunan$_{n+1}$, lan himpunan$_n$ iki ora dadi anggota awake dhewe. (Malah akeh pendukung predikativitas nganggep pitakon apa sawijining himpunan dadi anggota awake dhewe minangka pitakon kang \emph{ora gramatikal}.)
+%
+%Nanging ana prabeda wigati antarane pendekatan kumulatif-iteratif lan pendekatan predikativis: pendekatan kumulatif-iteratif nganggep kabeh entitas \emph{sajinis}. Pendukung predikativitas mbokmenawa nduweni himpunan kosong$_0$ (yaiku himpunan$_0$ tanpa !!{element}s) lan himpunan kosong$_1$ (yaiku himpunan$_1$ tanpa !!{element}s), lan loro iki dadi \emph{entitas kang beda}. Nanging ing pendekatan kumulatif-iteratif mung ana siji himpunan kosong, $\emptyset$, kang kasedhiya ing saben tataran hierarki.
+
+%Pancen, Aksioma Ekstensionalitas kang diandharake ing wiwitan bab iki bakal lumaku kanggo unsur-unsur ing hierarki iki (mula mung bisa ana \emph{siji} himpunan ``kosong''). Nanging konsepsi kumulatif-iteratif ora dimaksudake kanggo mbenerake Ekstensionalitas (delengen \cite{Boolos1971}). Sepisan maneh: Ekstensionalitas becike ditampa amarga kita ngrembug koleksi ekstensional.
+
+\end{document}

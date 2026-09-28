@@ -1,0 +1,111 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{ord-arithmetic}{mult}
+
+\olsection{Ping-pingan Ordinal}
+
+Saiki kita ngalih menyang ping-pingan ordinal, kanthi cara kang
+padha karo panambahan ordinal. Upamané kita arep ngitung asil
+ping-pingan $\alpha$ karo~$\beta$. Kanggo kuwi, bayangna kothak-kothak
+persegi panjang kang ambané $\alpha$ lan dhuwuré $\beta$; asil
+ping-pingan $\alpha$ lan $\beta$ dipikolehi kanthi ngliwati saben
+larik, banjur ngliwati larik sabanjuré\ldots nganti kabèh larik
+rampung diliwati. Kanthi tembung liya, asil ping-pingan $\alpha$
+lan $\beta$ dipikolehi kanthi ngganti \emph{saben} unsur ing
+$\beta$ nganggo salinan $\alpha$.
+
+Kanggo netepaké kanthi formal, kita mung migunakaké pengurutan
+leksikografis kuwalik ing ping-pingan Kartesius saka $\alpha$ lan $\beta$:
+
+\begin{defn}
+Kanggo sembarang ordinal $\alpha, \beta$, asil ping-pingané yaiku $\alpha \ordtimes \beta = \ordtype{\alpha \times \beta, \rlexless}$.
+\end{defn}
+\noindent
+Kita kudu mesthèkaké manèh yèn definisi iki wujudé trep:
+
+\begin{lem}\ollabel{ordtimeslessiswo}
+$\tuple{\alpha \times \beta, \rlexless}$ iku pengurutan becik kanggo
+sembarang ordinal $\alpha$ lan $\beta$.
+\end{lem}
+
+\begin{proof}
+Persis kaya bukti \olref[add]{ordsumlessiswo}.
+\end{proof}
+\noindent
+Ora angel uga mbuktèkaké yèn ping-pingan manut pratelan iki:
+
+\begin{lem}\ollabel{ordtimesrecursion}
+Kanggo sembarang ordinal $\alpha, \beta$:
+\begin{align*}
+	\alpha \ordtimes 0 &= 0\\
+	\alpha \ordtimes (\beta \ordplus 1) &=
+		(\alpha \ordtimes \beta) \ordplus \alpha\\
+	\alpha  \ordtimes \beta &=
+		\supstrict_{\delta < \beta}(\alpha \ordtimes \delta) &&
+		\text{yèn $\beta$ ordinal limit}.
+\end{align*}
+\end{lem}
+
+\begin{proof}
+Dipasrahaké minangka latihan.
+\end{proof}
+
+Pancen, kaya ing kasus panambahan, kita bisa netepaké ping-pingan
+ordinal liwat persamaan rekursi iki, tanpa menehi definisi langsung.
+Uga kaya panambahan, sawetara sipaté wis kita kenal:
+
+\begin{lem}\ollabel{ordinalmultiplicationisnice}
+Yèn $\alpha, \beta, \gamma$ ordinal, mula:
+\begin{enumerate}
+	\item\ollabel{ordtimes1} yèn $\alpha \neq 0$ lan $\beta < \gamma$,
+	mula $\alpha \ordtimes \beta < \alpha \ordtimes \gamma$;
+	\item\ollabel{ordtimes2} yèn $\alpha \neq 0$ lan $\alpha \ordtimes
+	\beta = \alpha\ordtimes\gamma$, mula $\beta = \gamma$;
+	\item\ollabel{ordtimes3} $\alpha \ordtimes (\beta \ordtimes
+	\gamma) = (\alpha \ordtimes \beta) \ordtimes \gamma$;
+	\item\ollabel{ordtimes4} yèn $\alpha \leq \beta$, mula $\alpha
+	\ordtimes \gamma \leq \beta \ordtimes \gamma$;
+	\item\ollabel{ordtimes5} $\alpha \ordtimes (\beta \ordplus
+	\gamma) = (\alpha \ordtimes \beta )\ordplus (\alpha\ordtimes
+	\gamma)$.
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+Dipasrahaké minangka latihan.
+\end{proof}
+
+Panjenengan bisa mbuktèkaké utawa nggoleki asil-asil liya
+sakarepé. Nanging, sawisé
+\olref[ord-arithmetic][add]{ordsumnotcommute}, pratelan
+iki mesthiné ora nggumunaké:
+
+\begin{prop}
+Ping-pingan ordinal ora komutatif: $2 \ordtimes \omega  =
+\omega < \omega \ordtimes 2$
+\end{prop}
+
+\begin{proof}
+$2 \ordtimes \omega = \supstrict_{n < \omega}(2\ordtimes  n) = \omega \in \supstrict_{n < \omega}(\omega \ordplus n) = \omega \ordplus \omega = \omega \ordtimes 2$.
+\end{proof}
+\noindent
+Maneh, panjelasan intuitifé prasaja. Kanggo ngitung $2
+\ordtimes \omega$, saben wilangan asli diganti karo rong unsur.
+Jinis urutané bakal padha yèn kabèh wilangan “setengah” diselipaké
+ing antarané wilangan asli, yaiku yèn kita ndeleng urutan alami ing
+$\Setabs{\nicefrac{n}{2}}{n \in \omega}$. Kanthi cara ndeleng iki,
+jinis urutané cetha padha karo $\omega$ dhéwé. Nanging kanggo
+ngitung $\omega \ordtimes 2$, kita nyelehake rong salinan $\omega$,
+siji sawisé sijiné.
+
+\begin{prob}
+Buktèkna
+\olref[sth][ord-arithmetic][mult]{ordtimeslessiswo},
+\olref[sth][ord-arithmetic][mult]{ordtimesrecursion},
+lan
+\olref[sth][ord-arithmetic][mult]{ordinalmultiplicationisnice}
+\end{prob}
+
+\end{document}

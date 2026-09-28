@@ -1,0 +1,387 @@
+% Part: lambda-calculus
+% Chapter: syntax
+% Section: alpha
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{syn}{alp}
+\olsection{Konversi-$\alpha$}
+
+Apa sesambungane $\lambd[x][x]$ lan
+$\lambd[y][y]$? Loro-lorone makili
+fungsi identitas. Mesthi wae, minangka
+suku, sintaksise beda. Bedane mung
+jeneng variabel kaiket; suku siji bisa
+dipikolehi kanthi ngganti jeneng
+variabel kaiket ing suku sijine.
+Iki diarani \emph{konversi-$\alpha$}.
+
+\begin{defn}[Owah-owahan variabel kaiket, $\aconvone$]
+  Yen suku $M$ ngemot muncule
+  $\lambd[x][N]$, $x \neq y$,
+  $y \notin \FV{N}$, lan
+  $\Subst{N}{y}{x}$ katetepake,
+  mula ngganti muncule iku nganggo
+  \begin{equation*}
+    \lambd[y][\Subst{N}{y}{x}]
+  \end{equation*}
+  nganti ngasilake $M'$ diarani
+  \emph{owah-owahan variabel kaiket},
+  ditulis $M \redone[\alpha] M'$.
+\end{defn}
+
+\begin{defn}[Kompatibilitas relasi]
+  Relasi $R$ ing suku diarani
+  \emph{kompatibel} yen nyukupi
+  syarat-syarat iki:
+  \begin{enumerate}
+  \item Yen $R N N'$, mula
+    $R \lambd[x][N] \lambd[x][N']$.
+  \item Yen $R P P'$, mula $R (PQ) (P'Q)$.
+  \item Yen $R Q Q'$, mula $R (PQ) (PQ')$.
+  \end{enumerate}
+\end{defn}
+
+Dadi, definisi kasebut bisa
+dinyatakake maneh:
+\begin{defn}[Owah-owahan variabel kaiket, $\aconvone$]
+  \emph{Owah-owahan variabel kaiket}
+  ($\redone[\alpha]$) yaiku relasi
+  kompatibel paling cilik ing suku
+  kang nyukupi syarat iki:
+  \begin{align*}
+    &\lambd[x][N] \redone[\alpha] \lambd[y][\Subst{N}{y}{x}] && \text{if
+      $x \neq y$, $y \notin \FV{N}$} \\
+    & &&\text{and $\Subst{N}{y}{x}$ is defined}
+  \end{align*}
+\end{defn}
+
+Tembung ``paling cilik'' tegese relasi
+iku mung ngemot pasangan kang diwajibake
+dening kompatibilitas lan syarat tambahan
+ing ndhuwur. Mula relasi iki uga bisa
+ditetepake kaya mangkene:
+
+\begin{defn}[Owah-owahan variabel kaiket, $\aconvone$] \ollabel{defn:aconvone}
+  \emph{Owah-owahan variabel kaiket}
+  ($\aconvone$) ditetepake kanthi
+  induktif kaya mangkene:
+  \begin{enumerate}
+  \item Yen $N \aconvone N'$, mula
+    $\lambd[x][N] \aconvone
+    \lambd[x][N']$. \ollabel{defn:aconvone1}
+  \item Yen $P \aconvone P'$, mula
+    $(PQ) \aconvone (P'Q)$. \ollabel{defn:aconvone2}
+  \item Yen $Q \aconvone Q'$, mula
+    $(PQ) \aconvone (PQ')$. \ollabel{defn:aconvone3}
+  \item Yen $x \neq y$, $y \notin \FV{N}$,
+    lan $\Subst{N}{y}{x}$ katetepake,
+    mula $\lambd[x][N] \redone[\alpha]
+    \lambd[y][\Subst{N}{y}{x}]$.
+    \ollabel{defn:aconvone4}
+  \end{enumerate}
+\end{defn}
+
+Definisi-definisi iki ekuivalen,
+nanging buktine dadi latihan.
+Sabanjure kita nggunakake
+definisi induktif.
+
+\begin{defn}[Konversi-$\alpha$, $\aconv$]
+  \emph{Konversi-$\alpha$} ($\aconv$)
+  yaiku relasi refleksif lan transitif
+  paling cilik ing suku kang ngemot
+  $\aconvone$.
+\end{defn}
+
+Kaya ing ndhuwur, ``paling cilik''
+ateges relasi iku mung ngemot pasangan
+kang diwajibake dening refleksivitas,
+transitivitas, lan $\aconvone$.
+Mula kita oleh definisi ekuivalen iki:
+
+\begin{defn}[Konversi-$\alpha$, $\aconv$] \ollabel{defn:aconv}
+  \emph{Konversi-$\alpha$} ($\aconv$)
+  ditetepake kanthi induktif kaya mangkene:
+  \begin{enumerate}
+  \item Yen $P \aconv Q$ lan $Q \aconv R$,
+    mula $P \aconv R$.
+    \ollabel{defn:aconv1}
+  \item Yen $P \aconvone Q$, mula
+    $P \aconv Q$. \ollabel{defn:aconv2}
+  \item $P \aconv P$. \ollabel{defn:aconv3}
+  \end{enumerate}
+\end{defn}
+
+\begin{ex}
+  $\lambd[x][f x]$ bisa dikonversi-$\alpha$
+  dadi $\lambd[y][f y]$, lan uga
+  kosok baline. Miturut intuisi,
+  loro-lorone fungsi kang nampa
+  argumen lan mbalekake asil $f$
+  ing argumen iku, kanthi $f$
+  ngrujuk marang variabel lingkungan.
+
+  $\lambd[x][f x]$ ora bisa
+  dikonversi-$\alpha$ dadi
+  $\lambd[x][g x]$. Miturut intuisi,
+  suku-suku iku ngrujuk marang
+  variabel lingkungan $f$ lan~$g$
+  kanthi urut. Mula fungsine beda:
+  tumindake beda ing lingkungan
+  kang biji $f$ lan $g$ beda.
+\end{ex}
+
+\begin{prob}
+  Apa pasangan suku ing ngisor iki
+  bisa dikonversi-$\alpha$?
+  \begin{enumerate}
+  \item $\lambd[x][\lambd[y][x]]$ lan $\lambd[y][\lambd[x][y]]$
+  \item $\lambd[x][\lambd[y][x]]$ lan $\lambd[c][\lambd[b][a]]$
+  \item $\lambd[x][\lambd[y][x]]$ lan $\lambd[c][\lambd[b][a]]$
+  \end{enumerate}
+\end{prob}
+
+\begin{lem}\ollabel{lem:fv-one}
+  Yen $P \aconvone Q$, mula
+  $\FV{P} = \FV{Q}$.
+\end{lem}
+
+\begin{proof}
+  Kanthi induksi tumrap !!{derivation}
+  saka $P \aconvone Q$.
+  \begin{enumerate}
+  \item Yen aturan pungkasan yaiku
+    \olref{defn:aconvone4}, mula
+    $P$ awujud $\lambd[x][N]$
+    lan $Q$ awujud
+    $\lambd[y][\Subst{N}{y}{x}]$,
+    kanthi $x \neq y$,
+    $y \notin \FV{N}$ lan
+    $\Subst{N}{y}{x}$ katetepake.
+    Kita mbedakake kasus manut
+    apa $x \in \FV{N}$:
+    \begin{enumerate}
+    \item Yen $x \in \FV{N}$, mula:
+      \begin{align*}
+        \FV{\lambd[y][\Subst{N}{y}{x}]} &=
+        \FV{\Subst{N}{y}{x}} \setminus \{y\} \\
+        & = ((\FV{N} \setminus \{x\}) \cup \{y\}) \setminus \{y\}
+         && \text{miturut \olref[sub]{thm:infv}} \\
+        & = \FV{N} \setminus \{x\} \\
+        & = \FV{\lambd[x][N]}
+      \end{align*}
+    \item Yen $x \notin \FV{N}$, mula:
+      \begin{align*}
+        \FV{\lambd[y][\Subst{N}{y}{x}]}
+        & = \FV{\Subst{N}{y}{x}} \setminus \{y\} \\
+        & = \FV{N} \setminus \{y\}
+         && \text{miturut \olref[sub]{thm:notinfv}} \\
+        & = \FV{N} \setminus \{x\} \\
+        & = \FV{\lambd[x][N]}.
+      \end{align*}
+    \end{enumerate}
+  \item Telung kasus liyane dadi latihan.
+  \end{enumerate}
+\end{proof}
+
+\begin{prob}
+  Rampungna bukti \olref[lam][syn][alp]{lem:fv-one}.
+\end{prob}
+
+\begin{lem}\ollabel{lem:inv}
+  Yen $P \aconvone Q$, mula
+  $Q \aconvone P$.
+\end{lem}
+
+\begin{proof}
+  Kanthi induksi tumrap !!{derivation}
+  saka $P \aconvone Q$.
+  \begin{enumerate}
+  \item Yen aturan pungkasan yaiku
+    \olref{defn:aconvone4}, mula
+    $P$ awujud $\lambd[x][N]$
+    lan $Q$ awujud
+    $\lambd[y][\Subst{N}{y}{x}]$,
+    kanthi $x \neq y$,
+    $y \notin \FV{N}$ lan
+    $\Subst{N}{y}{x}$ katetepake.
+    Kapisan, $x \notin
+    \FV{\Subst{N}{y}{x}}$ miturut
+    \olref[sub]{thm:clr}, amarga
+    $x \neq y$. Miturut
+    \olref[sub]{thm:inv},
+    $\Subst{\Subst{N}{y}{x}}{x}{y}$
+    katetepake lan padha karo~$N$.
+    Dadi, miturut
+    \olref{defn:aconvone4},
+    $\lambd[y][\Subst{N}{y}{x}]
+    \aconvone
+    \lambd[x][\Subst{\Subst{N}{y}{x}}{x}{y}]
+    = \lambd[x][N]$.
+  \item Telung kasus kompatibilitas
+    ngetutake hipotesis induksi.
+  \end{enumerate}
+\end{proof}
+
+\begin{prob}
+  Rampungna bukti \olref[lam][syn][alp]{lem:inv}.
+\end{prob}
+
+\begin{thm}
+  Konversi-$\alpha$ iku relasi
+  ekuivalensi ing suku, yaiku
+  refleksif, simetris, lan transitif.
+\end{thm}
+
+\begin{proof}
+  \begin{enumerate}
+  \item Kanggo saben suku $M$,
+    $M$ bisa diowahi dadi $M$
+    kanthi \emph{nol} owah-owahan
+    variabel kaiket.
+  \item Yen $P$ dikonversi-$\alpha$
+    dadi $Q$ kanthi runtutan owah-owahan
+    variabel kaiket, saka $Q$ kita
+    bisa mbalikke owah-owahan mau
+    miturut \olref{lem:inv}
+    kanthi urutan kosok balen kanggo
+    ngasilake~$P$.
+  \item Yen $P$ dikonversi-$\alpha$
+    dadi $Q$ kanthi sawijining runtutan,
+    lan $Q$ dadi $R$ kanthi runtutan liyane,
+    kita bisa ngowahi $P$ dadi $R$
+    kanthi nindakake runtutan kapisan
+    banjur runtutan kapindho.
+  \end{enumerate}
+\end{proof}
+
+Sabanjure, $M$ lan $N$ diarani
+\emph{ekuivalen-$\alpha$}, $M
+\aeq N$, yen lan mung yen $M$
+bisa dikonversi-$\alpha$ dadi $N$.
+Miturut asil ing ndhuwur, iki
+ekuivalen karo $N$ bisa
+dikonversi-$\alpha$ dadi~$M$.
+
+\begin{thm}\ollabel{thm:fv}
+  Yen $M \aeq N$, mula
+  $\FV{M} = \FV{N}$.
+\end{thm}
+
+\begin{proof}
+  Langsung saka \olref{lem:fv-one}
+  lan definisi tutupan refleksif-transitif.
+\end{proof}
+
+\begin{lem}\ollabel{lem:sub:R}
+  Yen $R \aeq R'$ lan
+  $\Subst{M}{R}{y}$ katetepake,
+  mula $\Subst{M}{R'}{y}$
+  katetepake lan ekuivalen-$\alpha$
+  karo $\Subst{M}{R}{y}$.
+\end{lem}
+
+\begin{proof}
+  Latihan.
+\end{proof}
+
+\begin{prob}
+  Buktikna \olref[lam][syn][alp]{lem:sub:R}.
+\end{prob}
+
+Elinga yen ing \olref[sub]{sec},
+substitusi ora katetepake ing sawetara
+kasus. Nanging kanthi konversi-$\alpha$
+ing suku, kita bisa ngganti jeneng
+variabel kaiket supaya substitusi
+katetepake. Asile njaga
+ekuivalensi-$\alpha$, kaya kang
+dituduhake teorema iki:
+
+\begin{thm}\ollabel{thm:sub}
+  Kanggo sembarang $M$, $R$, lan~$y$,
+  ana $M'$ saengga $M \aeq M'$
+  lan $\Subst{M'}{R}{y}$ katetepake.
+  Saliyane iku, yen ana pasangan liya
+  $M'' \aeq M$ lan $R''$ kang
+  $\Subst{M''}{R''}{y}$ katetepake
+  sarta $R'' \aeq R$, mula
+  $\Subst{M'}{R}{y} \aeq
+  \Subst{M''}{R''}{y}$.
+\end{thm}
+
+\begin{proof}
+  Kanthi induksi tumrap pambentukan $M$:
+  \begin{enumerate}
+  \item $M$ iku variabel~$z$: latihan.
+  \item Umpamakna $M$ awujud
+    $\lambd[x][N]$. Pilih variabel
+    $z$ kang beda saka $x$ lan $y$,
+    kanthi $z \notin \FV{N}$
+    lan $z \notin \FV{R}$.
+    Miturut hipotesis induksi,
+    ana $N'$ saengga $N' \aeq N$
+    lan $\Subst{N'}{z}{x}$ katetepake.
+    Mula $\lambd[x][N] \aeq
+    \lambd[x][N']$ uga, miturut
+    \olref{defn:aconvone}\olref{defn:aconvone1}.
+    Saiki $\lambd[x][N']
+    \aeq \lambd[z][\Subst{N'}{z}{x}]$
+    miturut
+    \olref{defn:aconvone}\olref{defn:aconvone4}.
+    Iki bisa ditindakake amarga
+    $z \ne x$, $z \notin \FV{N'}$,
+    lan $\Subst{N'}{z}{x}$
+    katetepake. Pungkasan,
+    $\Subst{\lambd[z][\Subst{N'}{z}{x}]}{R}{y}$
+    mbutuhake $z \neq y$
+    lan $z \notin \FV{R}$.
+    Syarat yen substitusi ing awak
+    abstraksi uga katetepake
+    durung dituduhake ing langkah iki.
+
+    Saliyane iku, yen ana $N''$
+    lan $R''$ liyane kang nyukupi
+    syarat-syarat padha,
+    \begin{multline*}
+      \Subst{(\lambd[z][\Subst{N''}{z}{x}])}{R''}{y} \\
+    \begin{aligned}
+      &= \lambd[z][\Subst{\Subst{N''}{z}{x}}{R''}{y}] \\
+      &\aeq \lambd[z][\Subst{\Subst{N''}{z}{x}}{R}{y}] && \text{miturut
+        \olref{lem:sub:R}}\\
+      &\aeq\lambd[z][\Subst{\Subst{N'}{z}{x}}{R}{y}]
+      && \text{miturut hipotesis
+        induksi}\\
+      &=\Subst{(\lambd[z][\Subst{N'}{z}{x}])}{R}{y}
+    \end{aligned}
+    \end{multline*}
+    \item $M$ awujud $(PQ)$: latihan.
+  \end{enumerate}
+\end{proof}
+
+\begin{prob}
+  Rampungna bukti \olref[lam][syn][alp]{thm:sub}.
+\end{prob}
+
+\begin{cor}\ollabel{cor:sub}
+  Kanggo sembarang $M$, $R$, lan~$y$,
+  ana pasangan $M'$ lan $R'$
+  saengga $M' \aeq M$, $R \aeq R'$,
+  lan $\Subst{M'}{R'}{y}$
+  katetepake. Yen ana pasangan liya
+  $M'' \aeq M$ lan $R'' \aeq R'$
+  kanthi $\Subst{M''}{R''}{y}$
+  katetepake, mula
+  $\Subst{M'}{R'}{y} \aeq
+  \Subst{M''}{R''}{y}$.
+\end{cor}
+
+\begin{proof}
+  Langsung saka \olref{thm:sub}.
+\end{proof}
+
+\end{document}
+

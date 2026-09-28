@@ -1,0 +1,118 @@
+% Part: computability
+% Chapter: computability-theory
+% Section: normal-form
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{thy}{nfm}
+\olsection{Teorema Wangun Normal}
+
+Upamane kita bisa njlentrehake definisi fungsi
+komputabel lan mriksa apa jlentrehan kang dianggep
+cathetan lengkap komputasi fungsi iku ing sawenehing
+input pancen bener. Mula, tanpa gumantung marang
+model komputasi, kita mesthine bisa nemtokake nilai
+fungsi komputabel~$f$ ing input~$x$ kanthi cara iki:
+\begin{enumerate}
+  \item Telusurana kabeh jlentrehan cathetan
+  komputasi kang bisa ana.
+  \item Priksanen apa cathetan tartamtu iku cathetan
+  komputasi~$f(x)$.
+  \item Yen wis ketemu cathetan kang bener, jupuk
+  nilai~$f(x)$ saka cathetan iku.
+\end{enumerate}
+Kasunyatan yen cara iki pancen bener iku isi
+teorema wangun normal Kleene.
+
+\begin{thm}[Teorema Wangun Normal Kleene]
+\ollabel{thm:normal-form}
+Ana relasi rekursif primitif~$T(e, x, s)$ lan
+fungsi rekursif primitif~$U(s)$, kanthi sipat iki:
+yen $f$ fungsi komputabel parsial sembarang,
+mula kanggo sawenehing~$e$,
+\[
+f(x) \simeq U(\umin{s}{T(e, x, s)})
+\]
+kanggo saben~$x$.
+\end{thm}
+
+\begin{proof}[Sketsa Bukti]
+Kanggo model komputasi sembarang, jlentrehan
+fungsi komputabel~$f$ bisa ditegesi kanthi ketat
+lan dikode nganggo wilangan asli~$e$. Pangerten
+bab 'runtutan komputasi' kang nyathet proses
+ngitung fungsi mawa indeks~$e$ ing input~$x$
+uga bisa ditegesi kanthi ketat. Runtutan
+komputasi kaya mangkono uga bisa dikode
+minangka wilangan~$s$. Iki bisa ditindakake
+kanthi cara kang ndadekake
+\begin{enumerate}
+  \item relasi $T(e, x, s)$, kang lumaku yen lan
+  mung yen wilangan~$s$ ngode runtutan komputasi
+  fungsi mawa indeks~$e$ ing input~$x$, lan
+  \item fungsi $U(s)$ kang masangake runtutan
+  komputasi mawa kode~$s$ karo asil pungkasan
+  saka komputasi iku
+\end{enumerate}
+kalorone komputabel. Malah, relasi~$T$ lan
+fungsi~$U$ iku rekursif primitif.
+\end{proof}
+
+\begin{explain}
+Kanggo menehi bukti ketat tumrap Teorema Wangun
+Normal, kita kudu netepake model komputasi,
+nggarap pangodean jlentrehan fungsi komputabel
+lan runtutan komputasi kanthi rinci, banjur
+mriksa yen relasi~$T$ lan fungsi~$U$ iku
+rekursif primitif. Kanggo akèh panganggone,
+cukup yen $T$ lan~$U$ komputabel lan $U$~total.
+
+Mbokmenawa bukti teorema wangun normal paling
+gampang dielingi minangka ukara ringkes:
+$\umin{s}{T(e, x, s)}$ nggoleki runtutan
+komputasi fungsi mawa indeks~$e$ ing input~$x$,
+lan $U$ ngasilake asil runtutan komputasi iku
+yen runtutan kaya mangkono bisa ditemokake.
+\end{explain}
+
+Yen model komputasine yaiku fungsi rekursif
+parsial (kang wiwitane digunakake Kleene),
+teorema iki nuduhake yen mung siji panganggone
+panggolekan tanpa wates, yaiku mung siji operator
+$\umin{y}{f(\vec x, y)}$, kang dibutuhake
+kanggo netepake fungsi sembarang. Kanthi arti
+iki, saben fungsi rekursif parsial nduwé
+wujud normal.
+
+$T$ lan $U$ bisa digunakake kanggo netepake
+enumerasi $\cfind{0}$, $\cfind{1}$,
+$\cfind{2}$, \dots. Wiwit saiki, kita nganggep
+wis netepake pilihan $T$ lan~$U$ kang trep,
+lan njupuk persamaan
+\[
+\cfind{e}(x) \simeq U(\umin{s}{T(e,x,s)})
+\]
+minangka \emph{definisi} $\cfind{e}$.
+
+Iki kasunyatan migunani liyane:
+
+\begin{thm}
+Saben fungsi komputabel parsial nduwé
+indeks tanpa wates cacahé.
+\end{thm}
+
+Maneh, iki cetha sacara intuitif. Yen diwenehi
+sawijining (jlentrehan) fungsi komputabel,
+kita bisa nggawe jlentrehan liya kang ngitung
+fungsi kang padha (pasangan input-asil padha),
+nanging, umpamane, luwih dhisik nindakake
+perkara kang ora mengaruhi komputasi (umpamane,
+mriksa apa $0 = 0$, utawa ngetung nganti $5$,
+lan sapiturute). Indeks jlentrehan kang diowahi
+iku mesthi beda karo indeks asline. Kalorone
+indeks saka fungsi kang padha, mung carane
+ngitung rada beda.
+
+\end{document}

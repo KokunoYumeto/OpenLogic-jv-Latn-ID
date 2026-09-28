@@ -1,0 +1,75 @@
+% part: intuitionistic-logic
+% chapter: semantics
+% section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{sem}{int}
+
+\olsection{Pambuka}
+
+Ora ana logika kang bisa diandharake kanthi marem tanpa semantik,
+lan logika intuisionistik uga mangkono. Ing logika klasik, semantik
+adhedhasar !!{valuation}s iku kanonik, dene ana sawetara semantik
+kang saingan kanggo logika intuisionistik. Ora ana siji-sijia kang
+marem kanthi sampurna ing pangertene menehi andharan teges konektif
+kang bisa ditampa sacara intuisionistik.
+
+Semantik adhedhasar !!{relational model}s, kang padha karo semantik
+kanggo logika modal, mbokmenawa paling kerep digunakake. Ing semantik
+iki, !!{propositional variable}s ditetepake ing donya-donya, lan donya
+iku gegandhengan liwat relasi aksesibilitas. Relasi iku tansah urutan
+parsial, yaiku refleksif, antisimetris, lan transitif.
+
+Sacara intuitif, donya iki bisa dianggep kahanan kawruh utawa
+``kahanan bukti.'' Kahanan~$w'$ bisa diakses saka~$w$ yen lan mung
+yen, miturut kabeh kang kita weruhi, $w'$ iku kahanan kawruh
+(mbesuk) kang bisa kelakon, yaiku kang cocog karo apa kang diweruhi
+ing~$w$. Yen sawijining proposisi wis diweruhi, ora bisa dadi ora
+diweruhi maneh. Tegese, saben $!A$ diweruhi ing~$w$ lan~$Rww'$,
+$!A$ uga diweruhi ing~$w'$. Dadi ``kawruh'' iku monoton tumrap
+relasi aksesibilitas.
+
+Yen ``$!A$ diweruhi'' ditetepake kaya ing logika epistemik minangka
+``bener ing kabeh alternatif epistemik,'' mula $!A \land !B$
+diweruhi ing~$w$ yen ing kabeh alternatif epistemik, $!A$ lan~$!B$
+loro-lorone diweruhi. Nanging amarga kawruh iku monoton lan $R$
+refleksif, tegese $!A \land !B$ diweruhi ing $w$ yen lan mung yen
+$!A$ lan $!B$ diweruhi ing~$w$. Kanthi alasan kang padha,
+$!A \lor !B$ diweruhi ing $w$ yen lan mung yen paling ora salah
+sijine diweruhi. Dadi kanggo $\land$ lan $\lor$, syarat kabeneran
+konektif padha karo ing logika klasik.
+
+Nanging, syarat kabeneran kondisional beda karo ing logika klasik.
+$!A \lif !B$ diweruhi ing~$w$ yen lan mung yen ora ana $w'$ kanthi
+$Rww'$ kang $!A$ diweruhi nanging $!B$ ora diweruhi. Iki ora padha
+karo syarat yen $!A$ ora diweruhi utawa $!B$~diweruhi ing~$w$.
+Amarga yen $!A$ lan $!B$ loro-lorone ora kita weruhi ing~$w$, bisa wae ana
+kahanan epistemik mbesuk~$w'$ kanthi $Rww'$ kang ing $w'$, $!A$
+diweruhi nanging~$!B$ tetep ora diweruhi.
+
+Kita weruh $\lnot !A$ mung yen ora ana kahanan epistemik mbesuk kang
+bisa kelakon lan ing kono kita weruh~$!A$. Gagasane yaiku yen $!A$
+bisa diweruhi, mula ing sawenehing kahanan epistemik mbesuk kang bisa
+kelakon,~$!A$ dadi diweruhi. Amarga kita ora bisa weruh $\lfalse$,
+ing kahanan epistemik mbesuk iku kita bakal weruh $!A$ nanging ora
+weruh~$\lfalse$.
+
+Ing interpretasi iki, prinsip Hukum Tengah kang Disingkirake ora
+lumaku. Amarga ana sawenehing $!A$ kang durung kita weruhi nanging
+bisa dadi diweruhi mengko. Kanggo !!a{formula}~$!A$ kaya mangkono,
+$!A$ lan~$\lnot !A$ loro-lorone ora diweruhi, mula
+$!A \lor \lnot !A$ ora diweruhi. Nanging kita weruh, upamane,
+yen $\lnot(!A \land \lnot !A)$. Amarga ora bisa ana kahanan mbesuk
+kang kita weruh $!A$ lan $\lnot !A$ bebarengan, lan kita weruh iki
+tanpa gumantung marang apa kita weruh~$!A$ utawa $\lnot !A$ utawa ora.
+
+!!^{relational model}s dudu siji-sijine semantik kang kasedhiya
+kanggo logika intuisionistik. Semantik topologis iku pilihan liyane:
+ing kene proposisi diinterpretasikake minangka himpunan kabuka ing
+ruang topologis, lan konektif diinterpretasikake minangka operasi
+ing himpunan iku (upamane, $\land$ cocog karo irisan).
+
+\end{document}

@@ -1,0 +1,59 @@
+% Part: incompleteness
+% Chapter: representability-in-q
+% Section: comp-representable
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{req}{crq}
+\olsection{Fungsi Komputabel Representabel ing $\Th{Q}$}
+
+\begin{thm}
+Saben fungsi komputabel representabel ing~$\Th{Q}$.
+\end{thm}
+
+\begin{proof}
+Supaya cetha, lan nganggo Tesis Church--Turing, ayo netepake yen
+sawijining fungsi komputabel yen lan mung yen rekursif umum. Fungsi
+rekursif umum yaiku fungsi kang bisa ditegesi saka fungsi
+nol~$\Zero$, fungsi penerus~$\Succ$, lan fungsi proyeksi~$\Proj{n}{i}$
+nganggo komposisi, rekursi primitif, lan panggolekan tanpa wates
+reguler. Miturut \olref[pri]{lem:prim-rec}, saben fungsi~$h$ kang
+bisa ditegesi saka $f$ lan~$g$ uga bisa ditegesi nganggo komposisi
+lan panggolekan tanpa wates reguler saka $f$, $g$, lan $\Zero$,
+$\Succ$, $\Proj{n}{i}$, $\Add$, $\Mult$, $\Char{=}$.
+Mula sawijining fungsi rekursif umum yen lan mung yen bisa ditegesi
+saka $\Zero$, $\Succ$, $\Proj{n}{i}$, $\Add$, $\Mult$, $\Char{=}$ nganggo
+komposisi lan panggolekan tanpa wates reguler.
+
+Kajaba iku, kita wis nuduhake yen fungsi dhasar kang dimaksud
+representabel ing~$\Th{Q}$
+(\cref{inc:req:bre:prop:rep-zero,inc:req:bre:prop:rep-succ,inc:req:bre:prop:rep-proj,inc:req:bre:prop:rep-id,inc:req:bre:prop:rep-add,inc:req:bre:prop:rep-mult}),
+lan yen saben fungsi kang ditegesi saka fungsi-fungsi representabel
+liwat komposisi utawa panggolekan tanpa wates reguler
+(\olref[cmp]{prop:rep-composition},
+\olref[min]{prop:rep-minimization}) uga representabel. Mula saben
+fungsi rekursif umum representabel ing~$\Th{Q}$.
+\end{proof}
+
+\begin{explain}
+Kita wis nuduhake yen himpunan fungsi komputabel bisa dicireni
+minangka himpunan fungsi kang representabel ing $\Th{Q}$. Sejatine,
+bukti iki luwih umum. Saka definisi representabilitas, ora angel
+ndeleng yen saben teori kang ngluwihi $\Th{Q}$ (utawa kang bisa
+nginterpretasikake $\Th{Q}$) bisa merepresentasikake fungsi
+komputabel. Nanging kosok baline, ing saben sistem !!{derivation}
+kang pangerten !!{derivation} bisa diitung, saben fungsi representabel
+iku komputabel. Dadi, umpamane, himpunan fungsi komputabel bisa
+dicireni minangka himpunan fungsi kang representabel ing aritmetika
+Peano, utawa malah teori himpunan Zermelo--Fraenkel. Kaya kang
+digatekake G\"odel, iki rada nggumunake. Kita bakal weruh yen kanggo
+provabilitas, pitakonan gumantung banget marang teori kang dipilih;
+sacara kasar, saya kuwat aksiomane, saya akeh kang bisa dibuktekake.
+Nanging kanggo maneka teori aksiomatik, fungsi representabel iku
+persis fungsi komputabel; teori kang luwih kuwat ora
+merepresentasikake luwih akeh fungsi anggere bisa diaksiomatisasi.
+\end{explain}
+
+\end{document}

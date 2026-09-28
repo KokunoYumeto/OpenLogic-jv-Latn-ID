@@ -1,0 +1,151 @@
+% Part: first-order-logic
+% Chapter: lindstrom
+% Section: abstract-logics
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{lin}{alg}
+\olsection{Logika Abstrak}
+
+\begin{defn}
+Sawijining \emph{logika abstrak} yaiku pasangan $\tuple{L, \models_L}$,
+kanthi $L$ iku fungsi kang masangake marang saben !!{language}~$\Lang{L}$
+sawijining himpunan $L(\Lang{L})$ saka !!{sentence}s, lan $\models_L$
+iku relasi antarane !!{structure}s kanggo !!{language}~$\Lang{L}$
+lan !!{element}s saka $L(\Lang{L})$. Mligine, $\tuple{F, \models}$
+iku logika orde kapisan lumrah, yaiku $F$ fungsi kang masangake marang
+!!{language}~$\Lang{L}$ himpunan !!{sentence}s orde kapisan kang
+kawangun saka konstanta ing $\Lang{L}$, lan $\models$ iku relasi
+nyukupi ing logika orde kapisan.
+\end{defn}
+
+Gatekna yen kita isih nggunakake pangerten !!{structure} kang padha
+kanggo !!{language} tartamtu kaya ing logika orde kapisan, nanging kita
+ora nganggep yen !!{sentence}s kawangun saka simbol-simbol dhasar ing
+$\Lang{L}$ kanthi cara lumrah, utawa yen relasi $\models_L$
+ditetepake kanthi rekursif kaya ing logika orde kapisan. Mula, umpamane,
+definisi kang sipate umum iki uga nyakup !!{sentence}s ing
+$\tuple{L,\models_L}$ kang ngemot konjungsi utawa disjungsi tanpa wates
+dawane, kuantor saliyane $\lexists$ lan $\lforall$ (umpamane,
+“ana tanpa wates akehe~$x$ saengga \dots”), utawa mbokmenawa
+runtutan kuantor tanpa wates dawane. Kanggo negesake yen
+“!!{sentence}s” ing $L(\Lang{L})$ ora kudu awujud !!{sentence}s
+lumrah ing logika orde kapisan, ing bab iki kita nggunakake
+!!{variable}s $!E$, $!F$,~\dots kanggo nglambangake ukara-ukara iku,
+lan nyisihake $!A$, $!B$,~\dots kanggo !!{formula}s lumrah ing
+logika orde kapisan.
+
+\begin{defn}
+Upamana $\Mod(L){!E}$ nglambangake kelas
+$\Setabs{\Struct{M}}{\Struct{M} \models_L !E}$. Yen !!{language}
+kudu dicethakake, kita nulis $\Mod[L](L){!E}$. Rong !!{structure}s
+$\Struct{M}$ lan $\Struct{N}$ kanggo $\Lang{L}$ iku
+\emph{ekuivalen elementer ing} $\tuple{L, \models_L}$, ditulis
+$\Struct{M} \elemequiv[L] \Struct{N}$, yen !!{sentence}s kang
+padha saka $L(\Lang{L})$ bener ing kalorone.
+\end{defn}
+
+\begin{defn}
+Sawijining logika abstrak $\tuple{L,\models_L}$ kanggo
+!!{language} $\Lang{L}$ diarani \emph{normal} yen nyukupi
+sipat-sipat ing ngisor iki:
+\begin{enumerate}
+\item (\emph{Monotonisitas-$L$}) Kanggo !!{language}s $\Lang{L}$
+  lan $\Lang{L'}$, yen $\Lang{L} \subseteq \Lang{L'}$, mula
+  $L(\Lang{L}) \subseteq L(\Lang{L'})$.
+\item (\emph{Sipat Ekspansi}) Kanggo saben $!E \in L(\Lang{L})$
+  ana subhimpunan \emph{winates} $\Lang{L'}$ saka $\Lang{L}$
+  saengga relasi $\Struct{M} \models_L !E$ mung gumantung marang
+  redukt $\Struct{M}$ menyang $\Lang{L'}$; yaiku, yen
+  $\Struct{M}$ lan $\Struct{N}$ nduweni redukt kang padha menyang
+  $\Lang{L'}$, mula $\Struct{M} \models_L !E$ yen lan mung yen
+  $\Struct{N} \models_L !E$.
+\item (\emph{Sipat Isomorfisme}) Yen $\Struct{M} \models_L !E$
+  lan $\Struct{M} \simeq \Struct{N}$, mula $\Struct{N} \models_L
+  !E$ uga.
+\item (\emph{Sipat Pangowahan Jeneng}) Relasi $\models_L$ tetep
+  lumaku nalika simbol-simbol diganti jenenge: yen !!{language}
+  $\Lang{L}'$ dipikolehi saka $\Lang{L}$ kanthi ngganti saben
+  simbol $P$ nganggo simbol $P'$ kang aritase padha lan saben
+  konstanta $c$ nganggo konstanta $c'$ kang beda, mula kanggo
+  saben !!{structure}~$\Struct{M}$ lan !!{sentence}~$!E$,
+  $\Struct{M} \models_L !E$ yen lan mung yen
+  $\Struct{M}' \models_L !E'$, kanthi $\Struct{M}'$ iku
+  !!{structure} kanggo $\Lang{L}'$ kang cocog karo
+  $\Lang{L}$ lan $!E' \in L(\Lang{L}')$.
+\item (\emph{Sipat Boolean}) Logika abstrak $\tuple{L,
+  \models_L}$ katutup tumrap konektif Boolean ing teges iki:
+  kanggo saben $!E \in L(\Lang{L})$ ana $!F \in
+  L(\Lang{L})$ saengga $\Struct{M} \models_L !F$ yen lan mung
+  yen $\Struct{M} \not\models_L !E$, lan kanggo saben $!E$
+  lan $!F$ ana $!G$ saengga $\Mod(L){!G} = \Mod(L){!E}
+  \cap \Mod(L){!F}$. Semono uga kanggo !!{formula}s atomik
+  lan konektif liyane.
+\item (\emph{Sipat Kuantor}) Kanggo saben konstanta $c$ ing
+  $\Lang{L}$ lan $!E \in L(\Lang{L})$, ana $!F \in
+  L(\Lang{L})$ saengga
+  \[
+  \Mod[L'](L){!F} = \Setabs{\Struct{M}}{\Expan{M}{a} \in
+  \Mod[L](L){!E} \text{ kanggo sawatara } a \in \Domain{M}},
+  \]
+  kanthi $\Lang{L'} = \Lang{L} \setminus \{c\}$ lan
+  $\Expan{M}{a}$ iku ekspansi $\Struct{M}$ menyang $\Lang{L}$
+  kang masangake $a$ marang~$c$.
+\item (\emph{Sipat Relativisasi}) Yen diwenehi !!a{sentence}
+  $!E \in L(\Lang{L})$ lan simbol-simbol $R$, $c_1$, \dots,
+  $c_n$ kang ora ana ing $\Lang{L}$, ana !!a{sentence}
+  $!F \in L(\Lang{L} \cup \{R,c_1,\ldots,c_n\})$
+  kang diarani \emph{relativisasi} $!E$ marang
+  $\Atom{R}{x, c_1, \dots c_n}$, saengga kanggo saben
+  !!{structure}~$\Struct{M}$:
+  \[
+  \Expan{M}{X, b_1, \ldots, b_n} \models_L !F \text{ yen lan
+    mung yen } \Struct{N} \models_L !E,
+  \]
+  kanthi $\Struct{N}$ iku substruktur saka $\Struct{M}$ kanthi
+  !!{domain} $\Domain{N} = \Setabs{a\in \Domain{M}}{\Assign{R}{M}(a,
+  b_1, \dots, b_n)}$ (waca
+  \olref[bas][sub]{rem:substructure}), lan
+  $\Expan{M}{X, b_1, \ldots, b_n}$ iku ekspansi $\Struct{M}$
+  kang napsirake $R$, $c_1$, \dots, $c_n$ kanthi $X$, $b_1,$
+  \dots, $b_n$, miturut urutane (kanthi $X \subseteq M^{n+1}$).
+\end{enumerate}
+\end{defn}
+
+\begin{defn}
+Yen diwenehi rong logika abstrak $\tuple{L_1, \models_{L_1}}$
+lan $\tuple{L_2, \models_{L_2}}$, kita kandha yen logika kapindho
+\emph{paling ora sakuwate kang kapisan anggone nyatakake},
+ditulis $\tuple{L_1, \models_{L_1}} \leq
+\tuple{L_2, \models_{L_2}}$, yen kanggo saben !!{language}
+$\Lang{L}$ lan !!{sentence} $!E \in L_1(\Lang{L})$ ana
+!!a{sentence} $!F \in L_2(\Lang{L})$ saengga
+$\Mod[L](L_1){!E} = \Mod[L](L_2){!F}$. Logika
+$\tuple{L_1, \models_{L_1}}$ lan
+$\tuple{L_2, \models_{L_2}}$ iku \emph{ekuivalen} yen
+$\tuple{L_1, \models_{L_1}} \leq \tuple{L_2,
+  \models_{L_2}}$ lan $\tuple{L_2, \models_{L_2}} \leq
+\tuple{L_1, \models_{L_1}}$.
+\end{defn}
+
+\begin{rem}
+  Logika orde kapisan, yaiku logika abstrak $\tuple{F, \models}$,
+  iku normal. Satemene, sipat-sipat ing ndhuwur umume langsung
+  lumaku kanggo logika orde kapisan. Kita mung ngelingake yen
+  sipat ekspansi mujudake ekstensionalitas, lan relativisasi
+  !!a{sentence} $!E$ marang $\Atom{R}{x, c_1, \dots, c_n}$
+  dipikolehi kanthi ngganti saben !!{subformula}
+  $\lforall[x][!F]$ dadi
+  $\lforall[x][(\Atom{R}{x, c_1, \dots, c_n} \lif \ !F)]$.
+  Kajaba iku, yen $\tuple{L, \models_L}$ normal, mula
+  $\tuple{F, \models} \leq \tuple{L, \models_{L}}$,
+  kaya kang bisa dibuktekake kanthi induksi miturut
+  !!{formula}s orde kapisan. Mula, tanpa ngilangake kalumrahan,
+  kita bisa nganggep yen saben !!{sentence} orde kapisan
+  kalebu ing saben logika normal.
+\end{rem}
+
+\end{document}
+

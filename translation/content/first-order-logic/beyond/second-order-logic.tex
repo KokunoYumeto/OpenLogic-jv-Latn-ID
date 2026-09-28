@@ -1,0 +1,444 @@
+% Part: first-order-logic
+% Chapter: beyond
+% Section: second-order-logic
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{byd}{sol}
+
+\olsection{Logika Orde Kapindho}
+
+Basa logika orde kapindho ngidini kuantifikasi
+ora mung tumrap !!a{domain} individu, nanging
+uga tumrap relasi ing !!{domain} kasebut.
+Saka basa logika sepisanan $\Lang{L}$, kanggo
+saben $k$ ditambahake !!{variable}s $R$ kang
+nglimputi relasi $k$-ary, lan kuantifikasi
+tumrap variabel-variabel iku diidinake.
+Yen $R$ iku !!a{variable} kanggo relasi
+$k$-ary, lan $t_1$, \dots,~$t_k$ iku
+term biasa (orde kapisan), mula
+$\Atom{R}{t_1,\dots,t_k}$ iku !!{formula}
+atomik. Saliyane iku, himpunan !!{formula}s
+ditemtokake kaya ing logika sepisanan,
+kanthi klausa tambahan kanggo kuantifikasi
+orde kapindho. Gatekna yen !!{identity}
+mung ana kanggo term orde kapisan: yen
+$R$ lan $S$ iku !!{variable}s relasi
+kanthi aritas padha~$k$, kita bisa
+nemtokake $\eq[R][S]$ minangka cekakan
+kanggo
+\[
+\lforall[x_1 \dots][\lforall[x_k][(\Atom{R}{x_1, \dots, x_k} \liff
+  \Atom{S}{x_1, \dots, x_k})]].
+\]
+
+Aturan logika orde kapindho mung nggedhekake
+aturan kuantor supaya nyakup variabel
+orde kapindho kang anyar. Nanging ing kene
+kita kudu rada ngati-ati njlentrehake
+sesambungane variabel-variabel iki karo
+!!{predicate}s saka~$\Lang{L}$, lan
+luwih umum karo !!{formula}s saka~$\Lang{L}$.
+Paling ora, variabel relasi dianggep term,
+mula ana inferensi kanthi wujud
+\[
+!A(R) \Proves \lexists[R][!A(R)]
+\]
+Nanging yen $\Lang{L}$ iku basa aritmetika
+kanthi simbol relasi tetep~$<$, kita uga
+bakal nganggep inferensi ing ngisor iki sah:
+\[
+x < y \Proves \lexists[R][\Atom{R}{x,y}]
+\]
+utawa kanggo !!{formula}~$!A$ tartamtu,
+\[
+!A(x_1, \dots, x_k) \Proves \lexists[R][\Atom{R}{x_1,\dots,x_k}]
+\]
+Luwih umum, kita bisa ngidini inferensi
+kanthi wujud
+\[
+\Subst{!A}{\lambd[\vec x][!B(\vec x)]}{R} \Proves
+\lexists[R][!A]
+\]
+ing ngendi $\Subst{!A}{\lambd[\vec x][!B(\vec x)]}{R}$
+nuduhake asil ngganti saben !!{formula}
+atomik kanthi wujud
+$\Obj{R}{t_1,\dots,t_k}$ ing~$!A$
+nganggo $!B(t_1, \dots, t_k)$.
+Aturan kang pungkasan iki setara karo
+anane {\em skema komprehensi}, yaiku
+aksioma kanthi wujud
+\[
+\lexists[R][\lforall[x_1, \dots, x_k][(!A(x_1, \dots, x_k) \liff
+\Atom{R}{x_1, \dots, x_k})]],
+\]
+siji kanggo saben !!{formula}~$!A$
+ing basa orde kapindho, kanthi
+$R$ ora dadi variabel bebas.
+(Gladhen: tuduhna yen $R$ diidinake
+katon ing~$!A$, skema iki ora konsisten!)
+
+Nalika ahli logika nyebut "aksioma logika
+orde kapindho", lumrahe kang dimaksud
+yaiku pangembangan paling cilik saka
+logika sepisanan kanthi aturan kuantor
+orde kapindho lan skema komprehensi.
+Nanging subsistem aksioma lan aturan iki
+kang luwih ringkih uga asring narik
+kawigaten kanggo ditliti. Upamane,
+ing wujud paling umume, skema aksioma
+komprehensi iku \emph{impredikatif}:
+skema iki ngidini kita nyatakake anane
+relasi $\Atom{R}{x_1, \dots, x_k}$
+kang "ditemtokake" dening !!a{formula}
+kanthi kuantor orde kapindho; dene
+kuantor-kuantor iki nglimputi himpunan
+kabeh relasi kaya mangkono---himpunan
+kang uga ngemot $R$ dhewe!{}
+Ing wiwitan abad kaping rong puluh,
+salah siji tanggapan kang umum marang
+paradoks Russell yaiku nganggep
+definisi kaya mangkono minangka
+sumber masalah, banjur nyingkiri
+definisi iku nalika ngembangake
+dhasar matematika. Yen kuantor
+orde kapindho ora diidinake ing
+!!{formula}~$!A$, kita oleh
+wujud komprehensi {\em predikatif},
+kang rada luwih ringkih.
+
+Saka sudut pandang semantik,
+!!{structure} orde kapindho bisa
+dianggep dumadi saka !!{structure}
+orde kapisan kanggo basa kasebut,
+lan himpunan relasi ing !!{domain}
+kang dadi cakupan kuantor orde
+kapindho (luwih tepat, kanggo
+saben $k$ ana himpunan relasi
+kanthi aritas~$k$). Mesthi,
+yen komprehensi dilebokake ing
+sistem !!{derivation}, banjur
+diperlokake syarat tambahan:
+ana cukup relasi ing "perangan
+orde kapindho" kanggo nyukupi
+aksioma komprehensi---yen ora,
+sistem !!{derivation} iku ora sah!{}
+Salah siji cara gampang kanggo
+njamin anane cukup relasi yaiku
+njupuk perangan orde kapindho
+kang ngemot \emph{kabeh} relasi
+ing perangan orde kapisan.
+!!a{structure} kaya mangkono
+diarani \emph{pepak}, lan ing
+sawijining pangertèn pancen
+iku "!!{structure} kang dikarepake"
+kanggo basa kasebut. Yen kita
+mbatesi perhatian mung marang
+!!{structure}s pepak, kita
+oleh kang diarani semantik
+orde kapindho \emph{pepak}.
+Ing kahanan iki, nemtokake
+!!{structure} mung mbutuhake
+nemtokake perangan orde kapisan,
+amarga isi perangan orde kapindho
+wis ditemtokake kanthi implisit.
+
+Dadi, nalika ngrembug logika
+orde kapindho ana sawetara
+teges kang bisa beda. Kanggo
+sistem !!{derivation}, kang
+dimaksud bisa salah siji saka
+\begin{enumerate}
+\item Sistem !!{derivation}
+  orde kapindho "minimal",
+  bebarengan karo sawetara
+  aksioma komprehensi.
+\item Sistem !!{derivation}
+  orde kapindho "standar",
+  kanthi komprehensi pepak.
+\end{enumerate}
+Kanggo semantike, kang
+digatekake bisa salah siji saka
+\begin{enumerate}
+\item Semantik "ringkih",
+  ing ngendi !!a{structure}
+  dumadi saka perangan orde
+  kapisan lan perangan orde
+  kapindho kang cukup gedhe
+  kanggo nyukupi aksioma
+  komprehensi.
+\item Semantik orde kapindho
+  "standar", kang mung
+  nggatekake !!{structure}s pepak.
+\end{enumerate}
+Yen ahli logika ora nyebutake
+sistem !!{derivation} utawa
+semantik kang dimaksud,
+lumrahe nuduhake butir kapindho
+ing saben dhaptar. Kauntungan
+nggunakake semantik iki yaiku,
+kaya kang bakal kita deleng,
+kita bisa njlentrehake akeh
+struktur matematika lumrah
+kanthi kategoris; bebarengan
+iku, sistem !!{derivation}
+cukup kuwat lan sah kanggo
+semantik iki. Kakurangane,
+sistem !!{derivation}
+\emph{ora} jangkep kanggo
+semantik kasebut; nyatane,
+\emph{ora ana} sistem
+!!{derivation} kang bisa
+ditemtokake kanthi efektif
+kang jangkep kanggo semantik
+orde kapindho pepak. Dene
+kanggo semantik kang luwih
+ringkih, kaya kang bakal
+kita deleng, sistem
+!!{derivation} iku
+\emph{jangkep}; iki ateges
+yen sawijining ukara ora
+bisa dibuktekake, banjur
+ana \emph{sawijining}
+!!{structure}, ora mesthi
+sing pepak, kang ndadekake
+ukara iku ora bener.
+
+Basa logika orde kapindho
+sugih banget. Relasi unari
+bisa kita samakake karo
+subhimpunan saka !!{domain},
+mula kita uga bisa
+nguantifikasi himpunan-himpunan
+kasebut; upamane, induksi
+kanggo wilangan asli bisa
+dinyatakake kanthi siji aksioma
+\[
+\lforall[R][((\Atom{R}{\Obj{0}} \land \lforall[x][(\Atom{R}{x} \lif
+    \Atom{R}{x'})]) \lif \lforall[x][\Atom{R}{x}])].
+\]
+Yen basa aritmetika nduweni
+simbol $\Obj 0, \Obj \prime, +,
+\times$ lan $<$, kita bisa
+nambah aksioma ing ngisor iki
+kanggo njlentrehake tumindake:
+\begin{enumerate}
+\item $\lforall[x][\lnot x' = \Obj 0]$
+\item $\lforall[x][\lforall[y][(x' = y' \lif x = y)]]$
+  Cathetan koreksi sumber OLPL-084: simbol s ora kalebu
+  ing dhaptar simbol basa; aksioma injektivitas penerus
+  nggunakake notasi tandha petik kang wis ditemtokake.
+\item $\lforall[x][(x + \Obj 0) = x]$
+\item $\lforall[x][\lforall[y][(x + y') = (x + y)']]$
+\item $\lforall[x][(x \times \Obj 0) = \Obj 0]$
+\item $\lforall[x][\lforall[y][(x \times y') = ((x \times y) + x)]]$
+\item $\lforall[x][\lforall[y][(x < y \liff \lexists[z][y = (x + z')])]]$
+\end{enumerate}
+Ora angel nuduhake yen aksioma
+iki, bebarengan karo aksioma
+induksi ing ndhuwur, menehi
+gambaran kategoris marang
+!!{structure}~$\Struct{N}$,
+model standar aritmetika,
+yen kita nggunakake semantik
+orde kapindho pepak.
+Kanggo sembarang
+!!{structure}~$\Struct{M}$
+kang nyukupi aksioma iki,
+temtokna fungsi~$f$
+saka $\Nat$ menyang
+!!{domain} saka $\Struct{M}$
+kanthi rekursi biasa ing $\Nat$,
+saéngga $f(0) = \Assign{\Obj 0}{M}$
+lan $f(x+1) = \Assign{\prime}{M}(f(x))$.
+Kanthi induksi biasa
+ing~$\Nat$ lan amarga aksioma
+(1) lan~(2) bener ing~$\Struct M$,
+kita weruh yen $f$ iku
+!!{injective}. Kanggo nuduhake
+yen $f$ iku !!{surjective},
+upamakna~$P$ iku himpunan
+unsur-unsur ing~$\Domain{M}$
+kang kalebu ing jangkauan~$f$.
+Amarga $\Struct M$ pepak,
+$P$ kalebu ing !!{domain}
+orde kapindho. Saka pambangunan~$f$,
+kita ngerti yen $\Assign{\Obj
+  0}{M}$ kalebu ing~$P$,
+lan $P$~katutup tumrap
+$\Assign{\prime}{M}$.
+Amarga aksioma induksi bener
+ing $\Struct M$ (mligine
+kanggo~$P$), mula $P$~padha
+karo sakabehing !!{domain}
+orde kapisan saka~$\Struct M$.
+Iki nuduhake yen $f$
+iku !!a{bijection}.
+Nuduhake yen $f$ iku
+homomorfisme ora luwih angel,
+kanthi nggunakake induksi
+biasa ing $\Nat$ bola-bali.
+
+Ing istilah teori himpunan,
+fungsi mung jinis relasi
+tartamtu; upamane, fungsi
+unari~$f$ bisa disamake
+karo relasi binari~$R$
+kang nyukupi
+$\lforall[x][\lexists![y][R(x,y)]]$.
+Mula, kita uga bisa
+nguantifikasi fungsi.
+Kanthi semantik pepak,
+kita bisa nemtokake kelas
+!!{structure}s tanpa wates
+minangka kelas
+!!{structure}s $\Struct M$
+kang nduweni fungsi injektif
+saka !!{domain} saka $\Struct M$
+menyang subhimpunan sejati
+saka ranah iku dhewe:
+\[
+\lexists[f][(\lforall[x][\lforall[y][(\eq[f(x)][f(y)] \lif \eq[x][y])]]
+  \land \lexists[y][\lforall[x][\eq/[f(x)][y]]])].
+\]
+Negasi ukara iki banjur
+nemtokake kelas
+!!{structure}s winates.
+
+Kajaba iku, kita bisa
+nemtokake kelas urutan rapi
+kanthi nambah rumus ing
+ngisor iki marang definisi
+urutan linear:
+\[
+\lforall[P][(\lexists[x][\Atom{P}{x}] \lif \lexists[x][(\Atom{P}{x}
+    \land \lforall[y][(y < x \lif \lnot \Atom{P}{y})])])].
+\]
+Rumus iki nyatakake yen
+saben himpunan ora kosong
+nduweni unsur paling cilik,
+kanthi nganggep "himpunan"
+padha karo "relasi unari".
+Tuladha liyane, kita bisa
+nyatakake sipat keterhubungan
+graf kanthi kandha yen ora
+ana pamisahan titik kang
+ora sepele dadi perangan-
+perangan kang ora kaubung:
+\[
+\lnot \lexists[A][(\lexists[x][A(x)] \land \lexists[y][\lnot A(y)]
+  \land \lforall[w][\lforall[z][((\Atom{A}{w} \land \lnot \Atom{A}{z})
+      \lif \lnot \Atom{R}{w,z})]])].
+\]
+Minangka gladhen liyane,
+kita bisa nyoba nemtokake
+kelas !!{structure}s winates
+kang !!{domain}-e nduweni
+cacah genep. Sing luwih
+narik kawigaten, kita bisa
+menehi gambaran kategoris
+marang wilangan real minangka
+lapangan urut kang jangkep
+lan ngemot wilangan rasional.
+
+Dadi, logika orde kapindho
+luwih kuwat banget anggone
+nyatakake tinimbang logika
+sepisanan. Iku kabar becik;
+saiki kabar alane. Kita wis
+nyebutake yen ora ana sistem
+!!{derivation} efektif
+kang jangkep kanggo semantik
+orde kapindho pepak. Kanthi
+kauntungan lan kakurangane,
+akeh sipat logika sepisanan
+ora ana ing kene, kalebu
+kompaktitas lan teorema
+L\"owenheim--Skolem.
+
+Kosok balene, yen kita gelem
+ninggalake semantik orde
+kapindho pepak lan nggunakake
+semantik kang luwih ringkih,
+sistem !!{derivation}
+orde kapindho minimal jangkep
+kanggo semantik iki. Kanthi
+tembung liya, yen $\Proves$
+diwaca "bisa dibuktekake
+ing sistem minimal" lan
+$\Entails$ diwaca
+"ngakibatake sacara logis
+ing semantik ringkih",
+kita bisa nuduhake yen
+kapan wae $\Gamma \Entails !A$,
+mula $\Gamma \Proves !A$.
+Yen kita arep nambah aksioma
+komprehensi tartamtu ing
+sistem !!{derivation},
+kita kudu mbatesi semantik
+marang struktur orde
+kapindho kang nyukupi
+aksioma kasebut: upamane,
+yen $\Delta$ iku himpunan
+aksioma komprehensi
+(bisa uga kabeh), mula yen
+$\Gamma
+\cup \Delta \Entails !A$,
+banjur $\Gamma \cup \Delta \Proves !A$.
+Mligine, yen $!A$ ora
+bisa dibuktekake nganggo
+aksioma komprehensi kang
+kita gatekake, banjur
+ana model saka $\lnot !A$
+kang tetep nyukupi
+aksioma komprehensi kasebut.
+
+Cara paling gampang kanggo
+ndeleng yen teorema
+kelengkapan bener kanggo
+semantik kang luwih ringkih
+yaiku nganggep logika orde
+kapindho minangka logika
+akeh jinis, kaya mangkene.
+Siji jinis diinterpretasi
+minangka !!{domain}
+"orde kapisan" kang lumrah,
+lan kanggo saben $k$
+ana !!a{domain} "relasi
+kanthi aritas $k$".
+Kita njupuk basa kang
+nduweni simbol relasi
+bawaan "$\Atom{\Obj{true}_k}{R,x_1,\dots,x_k}$"
+kang dimaksud kanggo
+nyatakake yen $R$ bener
+kanggo $x_1$, \dots,~$x_k$,
+ing ngendi $R$ iku
+variabel jinis "relasi
+$k$-ary" lan $x_1$,
+\dots,~$x_k$ iku objek
+jinis orde kapisan.
+
+Kanthi panyamaan iki,
+semantik orde kapindho
+ringkih sejatine padha
+karo semantik lumrah
+kanggo logika akeh jinis;
+lan kita wis ngerteni
+yen logika akeh jinis
+bisa dilebokake ing
+logika sepisanan. Dadi,
+kanthi nggatekake
+terjemahan bolak-balik,
+pangertèn ringkih
+logika orde kapindho
+sejatine wujud logika
+sepisanan kang nyamar,
+ing ngendi !!{domain}
+ngemot "objek" lan
+"relasi" kang manut
+aksioma kang cocog.
+
+\end{document}

@@ -1,0 +1,54 @@
+% Part: computability
+% Chapter: recursive-functions
+% Section: notations-pr-functions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{rec}{not}
+\olsection{Notasi Rekursi Primitif}
+
+Salah siji paedahe gambaran induktif kang cetha ngenani fungsi
+rekursif primitif yaiku kita bisa nggambarake fungsi kasebut
+kanthi sistematis. Umpamane, kita bisa menehi “notasi” kanggo
+saben fungsi kasebut kaya mangkene. Gunakna lambang $\Zero$,
+$\Succ$, lan $\Proj{n}{i}$ kanggo fungsi nol, penerus, lan
+proyeksi. Saiki upamana $h$ ditegesi kanthi komposisi saka
+fungsi $k$ panggonan~$f$ lan fungsi $n$ panggonan $g_0$,
+\dots,~$g_{k-1}$, lan kita wis menehi notasi $F$, $G_0$,
+\dots,~$G_{k-1}$ marang fungsi-fungsi kasebut. Banjur,
+nganggo lambang anyar $\fn{Comp}_{k,n}$, kita bisa nulis
+fungsi $h$ minangka $\fn{Comp}_{k,n}[F,G_0,\dots,G_{k-1}]$.
+
+Kanggo fungsi kang ditegesi kanthi rekursi primitif,
+kita bisa nganggo notasi kang padha. Upamana fungsi
+$(k+1)$ panggonan~$h$ ditegesi kanthi rekursi primitif
+saka fungsi $k$ panggonan~$f$ lan fungsi $(k+2)$ panggonan~$g$,
+lan notasi kanggo $f$ lan~$g$ yaiku $F$ lan~$G$
+kanthi urutan kuwi. Banjur notasi kanggo~$h$ yaiku
+$\fn{Rec}_k[F,G]$.
+
+Elinga yen fungsi panjumlahan ditegesi kanthi rekursi primitif
+kaya mangkene:
+\begin{align*}
+  \Add(x_0, 0) & = \Proj{1}{0}(x_0) = x_0\\
+  \Add(x_0, y+1) & = \Succ(\Proj{3}{2}(x_0, y, \Add(x_0, y))) = \Add(x_0, y) +1
+\end{align*}
+Ing kene peran~$f$ dimainake dening $\Proj{1}{0}$, lan peran~$g$
+dimainake dening $\Succ(\Proj{3}{2}(x_0, y, z))$, kang diwenehi
+notasi $\fn{Comp}_{1,3}[\Succ,\Proj{3}{2}]$ amarga fungsi iki
+asile komposisi saka fungsi $1$ panggonan~$\Succ$
+lan fungsi $3$ panggonan~$\Proj{3}{2}$. Kanthi tatanan iki,
+kita bisa nulis fungsi panjumlahan minangka
+\[
+\fn{Rec}_1[\Proj{1}{0},\fn{Comp}_{1,3}[\Succ,\Proj{3}{2}]].
+\]
+Notasi kasebut kadhangkala migunani, umpamane nalika
+ngenumerasi fungsi rekursif primitif.
+
+\begin{prob}
+  Wenehana notasi rekursif primitif kang lengkap kanggo~$\Mult$.
+\end{prob}
+
+\end{document}

@@ -1,0 +1,78 @@
+% Part: many-valued-logic
+% Chapter: syntax-and-semantics
+% Section: matrices
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{syn}{mat}
+
+\olsection{Matriks}
+
+Logika mawa akeh nilai ditemtokake dening basane, himpunan nilai
+kabenerane~$V$, subhimpunan nilai kabeneran pinilih, lan fungsi
+kabeneran kanggo saben konektife. Bebarengan, unsur-unsur iki
+diarani \emph{matriks}.
+
+\begin{defn}[Matriks]
+\ollabel{defn:matrix}
+\emph{Matriks} kanggo logika~$\Log L$ dumadi saka:
+\begin{enumerate}
+\item himpunan konektif kang mbentuk basa~$\Lang L$;
+\item himpunan nilai kabeneran $V \neq \emptyset$;
+\item himpunan nilai kabeneran pinilih $V^+ \subseteq V$;
+\item kanggo saben konektif kanthi $n$ panggonan, yaiku $\star$, ing
+$\Lang L$, fungsi kabeneran~$\tf{\star} : V^n \to V$.
+Yen $n = 0$, $\tf{\star}$ mung sawijining unsur saka~$V$.
+\end{enumerate}
+\end{defn}
+
+\begin{ex}
+Matriks kanggo logika klasik~\LogCL{} dumadi saka:
+\begin{enumerate}
+  \item Basa proposisional baku $\Lang L_0$ kang ngemot
+  $\lfalse$, $\lnot$, $\land$, $\lor$, $\lif$.
+  \item Himpunan nilai kabeneran $V = \{\True, \False\}$.
+  \item $\True$ mung siji-sijine nilai pinilih, yaiku
+  $V^+ = \{\True\}$.
+  \item Kanggo $\lfalse$, kita duwe $\tf{\lfalse} = \False$.
+  Fungsi kabeneran liyane diwenehake dening tabel kabeneran
+  kang lumrah (delengen \olref{fig:tf-CL}).
+\end{enumerate}
+\begin{figure}
+  \begin{center}
+      \begin{tabular}{c|c} 
+        $\tf{\lnot}$ & \\ 
+        \hline  
+        $\True$ & $\False$ \\ 
+        $\False$ & $\True$ 
+      \end{tabular}
+      \quad
+      \begin{tabular}{c|cc} 
+        $\tf{\land}$ & $\True$ & $\False$ \\ 
+        \hline 
+        $\True$ & $\True$ & $\False$ \\ 
+        $\False$ & $\False$ & $\False$ 
+      \end{tabular}
+      \quad
+      \begin{tabular}{c|cc} 
+        $\tf{\lor}$ & $\True$ & $\False$ \\ 
+        \hline 
+        $\True$ & $\True$ & $\True$ \\ 
+        $\False$ & $\True$ & $\False$ 
+      \end{tabular}
+      \quad
+      \begin{tabular}{c|cc} 
+        $\tf{\lif}$ & $\True$ & $\False$ \\ 
+        \hline 
+        $\True$ & $\True$ & $\False$ \\ 
+        $\False$ & $\True$ & $\True$ 
+      \end{tabular}
+    \end{center} 
+    \caption{Fungsi kabeneran kanggo logika klasik~$\LogCL$.}
+    \ollabel{fig:tf-CL}
+  \end{figure}
+  \end{ex}
+
+\end{document}

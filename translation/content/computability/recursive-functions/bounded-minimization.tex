@@ -1,0 +1,81 @@
+% Part: computability
+% Chapter: recursive-functions
+% Section: bounded-minimization
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{rec}{bmi}
+\olsection{Minimisasi Mawa Wates}
+
+\begin{explain}
+Kadhangkala migunani yen kita netepake fungsi minangka wilangan
+paling cilik kang nyukupi sipat utawa relasi~$P$. Yen $P$
+bisa diputusake, kita bisa ngitung fungsi iki kanthi nyoba
+kabeh wilangan kang mungkin, $0$, $1$, $2$, \dots, nganti
+nemokake wilangan paling cilik kang nyukupi~$P$.
+Panggolekan tanpa wates kaya mangkene nggawa kita metu
+saka golongan fungsi rekursif primitif. Nanging yen kita
+mung nggoleki wilangan paling cilik kang \emph{kurang saka
+wates kang diwenehake kanthi mandiri}, asil kasebut tetep
+rekursif primitif. Kanthi tembung liya, lan luwih umum,
+upamana kita nduweni relasi rekursif primitif~$R(x,z)$.
+Gatekna fungsi kang nggandhengake $x$ lan~$y$ karo
+wilangan $z < y$ paling cilik kang nyukupi $R(x, z)$.
+Fungsi iki uga bisa diitung kanthi mriksa apa $R(x, 0)$,
+$R(x, 1)$, \dots, $R(x, y-1)$ bener. Nanging ngapa
+fungsi iki rekursif primitif?
+\end{explain}
+
+\begin{prop}
+Yen $R(\vec x, z)$ rekursif primitif, fungsi
+$m_R(\vec{x}, y)$ kang ngasilake~$z$ paling cilik
+kang kurang saka~$y$ lan nyukupi $R(\vec x, z)$,
+yen ana, utawa ngasilake $y$ yen ora ana, uga rekursif
+primitif. Kita bakal nulis fungsi~$m_R$ minangka
+\[
+\bmin{z < y}{R(\vec{x}, z)},
+\]
+\end{prop}
+
+\begin{proof}
+Ora ana~$z < 0$ kang nyukupi $R(\vec{x}, z)$ amarga
+pancen ora ana $z < 0$. Mula $m_R(\vec x, 0) = 0$.
+
+Yen watese awujud $y + 1$, ana telung kasus:
+\begin{enumerate}
+\item Ana $z < y$ kang nyukupi $R(\vec{x}, z)$;
+mula $m_R(\vec{x}, y+1) = m_R(\vec{x}, y)$.
+\item Ora ana~$z<y$ mangkono, nanging $R(\vec{x}, y)$
+bener; mula $m_R(\vec{x}, y+1) = y$.
+% OLPL-124: Sumber nggunakake vektor z kanggo input m_R ing kasus
+% katelu; proposisi, rong kasus sadurunge lan rekurensi nganggo vektor x.
+\item Ora ana $z < y+1$ kang nyukupi $R(\vec{x}, z)$;
+mula $m_R(\vec{x}, y+1) = y+1$.
+\end{enumerate}
+Mula kita bisa netepake $m_R(\vec x, 0)$ kanthi rekursi
+primitif kaya mangkene:
+\begin{align*}
+m_R(\vec{x}, 0) & = 0\\
+m_R(\vec{x}, y+1) & =
+\begin{cases}
+m_R(\vec{x}, y) & \text{yen $m_R(\vec x, y) \neq y$}\\
+y & \text{yen $m_R(\vec x, y) = y$ lan $R(\vec{x}, y)$}\\
+y+1 & \text{yen ora.}
+\end{cases}
+\end{align*}
+Gatekna yen ana $z<y$ kang nyukupi $R(\vec x, z)$
+yen lan mung yen $m_R(\vec x,
+y) \neq y$.
+\end{proof}
+
+\begin{prob}
+Upamana $R(\vec x, z)$ rekursif primitif. Netepna fungsi
+$m'_R(\vec{x}, y)$ kang ngasilake~$z$ paling cilik kang
+kurang saka~$y$ lan nyukupi $R(\vec{x}, z)$ yen ana,
+utawa ngasilake $0$ yen ora ana, kanthi rekursi
+primitif saka~$\Char{R}$.
+\end{prob}
+
+\end{document}

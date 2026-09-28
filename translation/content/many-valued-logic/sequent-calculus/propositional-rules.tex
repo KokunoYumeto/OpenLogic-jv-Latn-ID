@@ -1,0 +1,236 @@
+% Part: many-valued-logic
+% Chapter: sequent-calculus
+% Section: propositional-rules
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{seq}{prl}
+
+\olsection{Aturan Proposisional kanggo Logika Tartamtu}
+
+Aturan inferensi kanggo sawijining konektif ing kalkulus
+sekuen $n$ sisi mung gumantung marang fungsi kabeneran khas
+konektif kasebut. Mula, yen sawijining konektif ditetepake
+nganggo fungsi kabeneran kang padha ing logika-logika kang beda,
+aturan sekuen $n$ sisi kanggo konektif iku uga padha ing
+logika-logika kasebut.
+
+\subsection{Aturan kanggo $\lnot$}
+
+Aturan kanggo $\lnot$ ing ngisor iki lumaku ing logika
+\L ukasiewicz lan Kleene, uga variasine.
+
+\begin{defish}
+  \begin{center}
+\AxiomC{$ \Gamma \nSequent \Pi \nSequent \Delta, !A $}
+\RightLabel{\iR{\lnot}{\False}}
+\UnaryInfC{$ \lnot !A, \Gamma \nSequent \Pi \nSequent \Delta$}
+\DisplayProof
+\\[2ex]
+\AxiomC{$ \Gamma \nSequent !A, \Pi \nSequent \Delta $}
+\RightLabel{\iR{\lnot}{\Undef}}
+\UnaryInfC{$\Gamma \nSequent \lnot !A, \Pi \nSequent \Delta$}
+\DisplayProof
+\\[2ex]
+\AxiomC{$!A, \Gamma \nSequent \Pi \nSequent \Delta$}
+\RightLabel{\iR{\lnot}{\True}}
+\UnaryInfC{$\Gamma \nSequent \Pi \nSequent \Delta,  \lnot !A$}
+\DisplayProof
+  \end{center}
+\end{defish}
+
+Aturan kanggo $\lnot$ ing ngisor iki lumaku ing
+logika G\"odel.
+
+\begin{defish}
+\AxiomC{$ \Gamma \nSequent !A, \Pi \nSequent \Delta, !A $}
+\RightLabel{\iR{\lnot}{\False}[\LogGod]}
+\UnaryInfC{$ \lnot !A, \Gamma \nSequent \Pi \nSequent \Delta$}
+\DisplayProof
+\hfill
+\AxiomC{$!A, \Gamma \nSequent \Pi \nSequent \Delta$}
+\RightLabel{\iR{\lnot}{\True}[\LogGod]}
+\UnaryInfC{$\Gamma \nSequent \Pi \nSequent \Delta,  \lnot !A$}
+\DisplayProof
+\hfill
+\end{defish}
+
+(Ing logika G\"odel, $\lnot !A$ ora bisa nduweni
+nilai~$\Undef$, mula ora ana aturan kanggo panggonan tengah.)
+
+\subsection{Aturan kanggo $\land$}
+
+Iki aturan kanggo $\land$ ing logika \L ukasiewicz,
+Kleene kang kuwat, lan G\"odel.
+
+\begin{defish}
+\begin{center}
+  \AxiomC{$!A, !B, \Gamma \nSequent \Pi \nSequent \Delta$}
+  \RightLabel{$\iR{\land}{\False}$}
+  \UnaryInfC{$!A \land !B, \Gamma \nSequent \Pi \nSequent \Delta$}
+  \DisplayProof
+\\[2ex]
+  \AxiomC{$\Gamma \nSequent !A, \Pi \nSequent !A, \Delta$}
+  \AxiomC{$\Gamma \nSequent !B, \Pi \nSequent !B, \Delta$}
+  \AxiomC{$\Gamma \nSequent !A, !B, \Pi \nSequent \Delta$}
+  \RightLabel{$\iR\land\Undef$}
+  \TrinaryInfC{$\Gamma \nSequent !A \land !B, \Pi \nSequent \Delta$}
+  \DisplayProof
+  \\[2ex]  
+  \AxiomC{$\Gamma \nSequent \Pi \nSequent \Delta, !A$}
+  \AxiomC{$\Gamma \nSequent \Pi \nSequent \Delta, !B$}
+  \RightLabel{$\iR\land\True$}
+  \BinaryInfC{$\Gamma \nSequent \Pi \nSequent \Delta, !A \land !B$}
+  \DisplayProof
+\end{center}
+\end{defish}
+
+\subsection{Aturan kanggo $\lor$}
+
+Iki aturan kanggo $\lor$ ing logika \L ukasiewicz,
+Kleene kang kuwat, lan G\"odel.
+
+\begin{defish}
+\begin{center}
+ \AxiomC{$!A, \Gamma \nSequent \Pi \nSequent \Delta$}
+  \AxiomC{$!B, \Gamma \nSequent \Pi \nSequent \Delta$}
+  \RightLabel{$\iR\lor\False$}
+  \BinaryInfC{$!A \lor !B, \Gamma \nSequent \Pi \nSequent \Delta$}
+  \DisplayProof
+\\[2ex]
+  \AxiomC{$!A, \Gamma \nSequent !A, \Pi \nSequent \Delta$}
+  \AxiomC{$!B, \Gamma \nSequent !B, \Pi \nSequent \Delta$}
+  \AxiomC{$\Gamma \nSequent !A, !B, \Pi \nSequent \Delta$}
+  \RightLabel{$\iR\lor\Undef$}
+  \TrinaryInfC{$\Gamma \nSequent !A \lor !B, \Pi \nSequent \Delta$}
+  \DisplayProof
+  \\[2ex]  
+  \AxiomC{$\Gamma \nSequent \Pi \nSequent \Delta, !A, !B$}
+  \RightLabel{$\iR\lor\True$}
+  \UnaryInfC{$\Gamma \nSequent \Pi \nSequent \Delta, !A \lor !B$}
+  \DisplayProof
+\end{center}
+\end{defish}
+
+\subsection{Aturan kanggo $\lif$}
+
+Iki aturan kanggo $\lif$ ing logika \L ukasiewicz.
+
+\begin{defish}
+\begin{center}
+  \AxiomC{$\Gamma \nSequent \Pi \nSequent \Delta, !A$}
+  \AxiomC{$!B, \Gamma \nSequent \Pi \nSequent \Delta$}
+  \RightLabel{$\iR\lif\False[\LogLuk[3]]$}
+  \BinaryInfC{$!A \lif !B, \Gamma \nSequent \Pi \nSequent \Delta$}
+  \DisplayProof
+  \\[2ex]
+  \AxiomC{$\Gamma \nSequent !A, !B, \Pi \nSequent \Delta$}
+  \AxiomC{$!B, \Gamma \nSequent \Pi \nSequent \Delta, !A$}
+  \RightLabel{$\iR\lif\Undef[\LogLuk[3]]$}
+  \BinaryInfC{$\Gamma \nSequent !A \lif !B, \Pi \nSequent \Delta$}
+  \DisplayProof
+\\[2ex]
+  \AxiomC{$!A, \Gamma \nSequent !B, \Pi \nSequent \Delta, !B$}
+  \AxiomC{$!A, \Gamma \nSequent !A, \Pi \nSequent \Delta, !B$}
+  \RightLabel{$\iR{\lif}{\True}[\LogLuk[3]]$}
+  \BinaryInfC{$\Gamma \nSequent \Pi \nSequent \Delta, !A \lif !B$}
+  \DisplayProof
+\end{center}
+\end{defish}
+
+Iki aturan kanggo $\lif$ ing logika Kleene kang kuwat.
+
+\begin{defish}
+\begin{center}
+  \AxiomC{$\Gamma \nSequent \Pi \nSequent \Delta, !A$}
+  \AxiomC{$!B, \Gamma \nSequent \Pi \nSequent \Delta$}
+  \RightLabel{$\iR\lif\False[\LogKs]$}
+  \BinaryInfC{$!A \lif !B, \Gamma \nSequent \Pi \nSequent \Delta$}
+  \DisplayProof
+  \\[2ex]
+  \AxiomC{$!B, \Gamma \nSequent !B, \Pi \nSequent \Delta$}
+  \AxiomC{$\Gamma \nSequent !A, !B, \Pi \nSequent \Delta$}
+  \AxiomC{$\Gamma \nSequent !A, \Pi \nSequent \Delta, !A$}
+  \RightLabel{$\iR\lif\Undef[\LogKs]$}
+  \TrinaryInfC{$\Gamma \nSequent !A \lif !B, \Pi \nSequent \Delta$}
+  \DisplayProof
+\\[2ex]
+  \AxiomC{$!A, \Gamma \nSequent \Pi \nSequent \Delta, !B$}
+  \RightLabel{$\iR{\lif}{\True}[\LogKs]$}
+  \UnaryInfC{$\Gamma \nSequent \Pi \nSequent \Delta, !A \lif !B$}
+  \DisplayProof
+\end{center}
+\end{defish}
+
+Iki aturan kanggo $\lif$ ing logika G\"odel.
+
+\begin{defish}
+\begin{center}
+  \AxiomC{$\Gamma \nSequent !A, \Pi \nSequent \Delta, !A$}
+  \AxiomC{$!B, \Gamma \nSequent \Pi \nSequent \Delta$}
+  \RightLabel{$\iR\lif\False[\LogGod[3]]$}
+  \BinaryInfC{$!A \lif !B, \Gamma \nSequent \Pi \nSequent \Delta$}
+  \DisplayProof
+  \\[2ex]
+  \AxiomC{$\Gamma \nSequent !B, \Pi \nSequent \Delta$}
+  \AxiomC{$\Gamma \nSequent \Pi \nSequent \Delta, !A$}
+  \RightLabel{$\iR\lif\Undef[\LogGod[3]]$}
+  \BinaryInfC{$\Gamma \nSequent !A \lif !B, \Pi \nSequent \Delta$}
+  \DisplayProof
+\\[2ex]
+  \AxiomC{$!A, \Gamma \nSequent !B, \Pi \nSequent \Delta, !B$}
+  \AxiomC{$!A, \Gamma \nSequent !A, \Pi \nSequent \Delta, !B$}
+  \RightLabel{$\iR{\lif}{\True}[\LogGod[3]]$}
+  \BinaryInfC{$\Gamma \nSequent \Pi \nSequent \Delta, !A \lif !B$}
+  \DisplayProof
+\end{center}
+\end{defish}
+
+\begin{sidewaysfigure}
+  \begin{center}  
+  \AxiomC{$A \nSequent A \nSequent A$}
+  \RightLabel{\iR \Weakening \True}
+  \UnaryInfC{$A \nSequent A \nSequent B, A$}
+  \RightLabel{\iR \Weakening \Undef}
+  \UnaryInfC{$A \nSequent B, A \nSequent B, A$}
+  \RightLabel{\iR \Weakening \Undef}
+  \UnaryInfC{$A \nSequent A, B, A \nSequent B, A$}
+  \AxiomC{$A \nSequent A \nSequent A$}
+  \RightLabel{\iR \Weakening \True}
+  \UnaryInfC{$A \nSequent A \nSequent A, A$}
+  \RightLabel{\iR \Weakening \True}
+  \UnaryInfC{$A \nSequent A \nSequent B, A, A$}
+  \RightLabel{\iR \Weakening \False}
+  \UnaryInfC{$B, A \nSequent A \nSequent B, A, A$}
+  \RightLabel{$\iR\lif\Undef$}
+  \BinaryInfC{$A \nSequent A \lif B, A \nSequent B, A$}
+  \AxiomC{$B \nSequent B \nSequent B$}
+  \RightLabel{\iR \Weakening \Undef}
+  \UnaryInfC{$B \nSequent A, B \nSequent B$}
+  \RightLabel{\iR \Exchange \Undef}
+  \UnaryInfC{$B \nSequent B, A \nSequent B$}
+  \RightLabel{\iR \Weakening \Undef}
+  \UnaryInfC{$B \nSequent A, B, A \nSequent B$}
+  \RightLabel{\iR \Weakening \False}
+  \UnaryInfC{$A, B \nSequent A, B, A \nSequent B$}
+  \RightLabel{\iR \Exchange \False}
+  \UnaryInfC{$B, A \nSequent A, B, A \nSequent B$}
+  \AxiomC{$A \nSequent A \nSequent A$}
+  \RightLabel{\iR \Weakening \True}
+  \UnaryInfC{$A \nSequent A \nSequent B, A$}
+  \RightLabel{\iR \Weakening \False}
+  \UnaryInfC{$B, A \nSequent A \nSequent B, A$}
+  \RightLabel{\iR \Weakening \False}
+  \UnaryInfC{$B, B, A \nSequent A \nSequent B, A$}
+  \RightLabel{$\iR\lif\Undef$}
+  \BinaryInfC{$B, A \nSequent A \lif B, A \nSequent B$}
+  \RightLabel{$\iR\lif\False$}
+  \BinaryInfC{$A \lif B, A \nSequent A \lif B, A \nSequent B$}
+  \DisplayProof
+  \end{center}
+  \caption{Tuladha !!{derivation} ing~$\LogLuk[3]$}
+\end{sidewaysfigure}
+
+\end{document}

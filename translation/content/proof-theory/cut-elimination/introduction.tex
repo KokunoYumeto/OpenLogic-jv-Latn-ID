@@ -1,0 +1,123 @@
+% Part: proof-theory
+% Chapter: cut-elimination
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{cut}{int}
+
+\olsection{Pambuka}
+
+Aturan \Cut{} yaiku
+\[
+\Axiom$\Gamma \fCenter \Delta, !A$
+\Axiom$!A, \Pi \fCenter \Lambda$
+\RightLabel{\Cut}
+\BinaryInf$\Gamma, \Pi \fCenter \Delta, \Lambda$
+\DisplayProof
+\]
+(!!{formula}~$!A$ diarani \emph{formula cut}.)
+
+\Cut{} kalebu ing kalkulus sekèn Gentzen kang asli,~\Log{LK}.
+\emph{Hauptsatz} (``teorema utama'') Gentzen mratélakaké yèn
+saben sekèn kang !!{provable} ing~\Log{LK} uga
+!!{provable} tanpa nganggo aturan \Cut{}; tegesé,
+\Cut{} bisa ``diilangi'' saka bukti~\Log{LK}.
+Sistem kita, \Log{G1c} lan \Log{G3c}, ora ngemot
+\Cut, nanging pitakonan kang padha bisa diajokaké:
+apa \Cut{} bisa diilangi saka !!{proof}s kang nganggo
+\Cut{} bebarengan karo aturan liyané saka
+\Log{G1c} (utawa saka \Log{G3c})?
+Miturut istilah kang wis ditetepaké, pitakonan iki
+padha karo: apa \Cut{} aturan admisibel ing
+\Log{G1c} (utawa \Log{G3c})?
+
+Teorema eliminasi cut mbokmenawa asil teori bukti kang
+paling wigati lan misuwur. Sepisan, teorema iki nuduhaké
+yèn \Log{G1c} lan \Log{G3c} ora mbutuhaké aturan kang
+sakawit katon mesthi perlu. Nalika mbakuaké bukti nyata,
+kita perlu cara kanggo migunakaké lema. Matématikawan
+biasané mbuktèkaké asil, banjur migunakaké asil mau
+kanggo mbuktèkaké asil liyané. Upamané, bukti asil $L$
+(lema) dibakuaké minangka !!{proof} sekèn
+$\Sequent L$. Banjur bukti asil kapindho~$R$ kang
+nganggo~$L$ dibakuaké minangka !!{proof} sekèn
+$L \Sequent R$. Kepriyé kita ngerti ana bukti kanggo~$R$,
+yaiku !!a{proof} sekèn $\Sequent R$ waé?
+Kita kudu bisa nggabungaké rong !!{proof}s iku,
+lan aturan \Cut{} maringi cara kanggo nindakaké.
+
+Kita wis nyebut yèn \Log{G1c} lan \Log{G3c} iku komplet,
+mula bisa mbuktèkaké saben sekèn kang mesthiné bisa
+dibuktèkaké, yaiku kabèh sekèn valid. Iki bisa
+dibuktèkaké kanthi langsung. Nanging ing jaman Gentzen,
+mung sistem derivasi aksiomatik kang dimangertèni komplet.
+Kanggo nuduhaké yèn \Log{LK} komplet, Gentzen maringi
+terjemahan !!{derivation}s saka sistem aksiomatik dadi
+\Log{LK}-!!{proof}s. Terjemahan iki gumantung banget
+marang \Cut{}. Eliminasi cut ora mung wigati kanggo
+logika klasik: akèh logika liya nduwèni kalkulus sekèn.
+Kanggo sawatara logika, bukti langsung kakompletan
+kalkulus sekèné angel utawa ora mungkin, mula mung
+terjemahan saka sistem liya (nganggo \Cut) kang bisa
+nuduhaké kakompletan. Ing kahanan mangkono, bukti
+eliminasi cut kanthi cara teori bukti dibutuhaké
+kanggo nuduhaké yèn \Cut{} ora perlu lan sistem tanpa
+\Cut{} iku komplet.
+
+Eliminasi cut uga wigati amarga bisa digunakaké kanggo
+ngolèhké asil liya kang menarik dhéwé. Rong tuladha kang
+bakal kita rembug yaiku lema interpolasi Craig lan
+teorema Herbrand.
+
+Gagasan kanggo mbuktèkaké eliminasi cut lumrahé nuduhaké
+carané !!a{proof} kang nganggo \Cut{} bisa diowahi dadi
+bukti tanpa cut. Owah-owahan iki biasané ``lokal'':
+kita njupuk pérangan saka !!a{proof} (lumrahé
+sub-!!{proof} kang pungkasané nganggo inferènsi \Cut{})
+lan nggantèni nganggo sub-!!{proof} liya kanggo sekèn
+kang padha nanging inferènsi \Cut{}-é wis diilangi
+utawa diganti inferènsi liya. Argumèn mangkono maringi
+algoritma langkah demi langkah kanggo ngowahi !!{proof}s
+nganggo \Cut{} dadi bukti tanpa cut. Nalika prosedur
+eliminasi cut digunakaké, iki maringi informasi luwih akèh.
+Tuladhané, bukti teori modèl kanggo lema interpolasi
+bisa nuduhaké yèn ``yèn $!A \lif !B$'' valid, banjur
+ana interpolan (kanggo saiki ora perlu dijlentrehaké
+apa interpolan iku). Argumèn teori bukti kang nganggo
+eliminasi cut maringi algoritma kang nampa !!a{proof}
+kanggo $!A \lif !B$ lan ngasilaké interpolan.
+Béda karo argumèn teori modèl, argumèn teori bukti
+iki \emph{konstruktif}.
+
+Ana rong cara lumrah kanggo mbuktèkaké teorema eliminasi
+cut. Cara kapisan (wiwit Gentzen) nuduhaké yèn cut paling
+dhuwur ing bukti bisa dibusak, banjur dibusak siji-siji
+nganti entèk. Cara kapindho (wiwitané saka Sch\"utte lan Tait)
+nggatekaké cut kang paling rumit ing !!a{proof}, banjur
+mbusak cut maksimal siji-siji, yaiku ora ana cut liya
+kang !!{formula} cuté luwih jero. Saben cara nduwèni
+kaluwihan lan kakurangan. Ing sawatara sistem, cara siji
+bisa lumaku nanging cara liyané angel utawa malah ora
+mungkin. Mula kita njlentrehaké kaloro cara.
+Kita bakal mbuktèkaké eliminasi cut kanggo~\Log{G3c}.
+Satemah kang bakal kita tuduhaké bisa diilangi dudu
+\Cut{} langsung, nanging \emph{cut kanthi kontèks padha}~\CutCS:
+\[
+\Axiom$\Gamma \fCenter \Delta, !A$
+\Axiom$!A, \Gamma \fCenter \Delta$
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta$
+\DisplayProof
+\]
+Yèn kalkulus sekèn ngidini pelemahan lan kontraksi
+(minangka aturan nyata kaya ing \Log{G1c}, utawa
+minangka aturan admisibel kaya ing \Log{G3c}),
+\Cut{} bisa nyimulasi \CutCS, lan kosok balènané.
+Kita milih \CutCS{} tinimbang \Cut amarga strategi
+eliminasi cut kapisan luwih gampang dijlentrehaké kanggo
+\CutCS, déné strategi kapindho mung lumaku kanggo~\CutCS.
+
+\end{document}

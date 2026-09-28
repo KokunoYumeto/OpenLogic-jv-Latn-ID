@@ -1,0 +1,46 @@
+% Part: applied-modal-logics
+% Chapter: temporal-logic
+% Section: extra-operators
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{aml}{tl}{ext}
+
+\olsection{Operator Tambahan kanggo Logika Temporal}
+
+Saliyane operator unèr kanggo kala kepungkur lan mangsa ngarep,
+logika temporal kadhang uga ngemot operator binèr $\Since $ lan~$\Until$,
+kang nglambangake ``wiwit'' lan ``nganti''. Mula $\Since $ lan~$\Until$
+ditambahake ing basa logika temporal, lan klausa ing ngisor iki
+ditambahake ing definisi !!{formula} temporal:
+
+\begin{itemize}
+\item[] Yen $!A$ lan $!B$ iku !!{formula}s, mula $(\Since  !A !B)$ lan
+  $(\Until !A !B)$ loro-lorone !!{formula}s.
+\end{itemize}
+
+Semantik kanggo operator kasebut diparingake kaya mangkene:
+
+\begin{defn}\ollabel{defn:since-until}
+  \emph{Bebener !!a{formula}~$!A$ ing~$t$} sajroning~$\mModel M$:
+  \begin{enumerate}
+  \item\ollabel{defn:sub:mmodels-since} \indcase{!A}{\Since  !B
+    !C}{$\mSat{M}{\indfrm}[t]$ yen lan mung yen $\mSat{M}{!B}[t']$ kanggo
+    sawijining $t' \in T$ kanthi $t' \prec t$, lan kanggo saben $s$
+    kanthi $t' \prec s \prec t$,
+    $\mSat{M}{!C}[s]$}
+   \item\ollabel{defn:sub:mmodels-until} \indcase{!A}{\Until !B
+    !C}{$\mSat{M}{\indfrm}[t]$ yen lan mung yen $\mSat{M}{!B}[t']$ kanggo
+    sawijining $t' \in T$ kanthi $t \prec t'$, lan kanggo saben $s$
+    kanthi $t \prec s \prec t'$,
+    $\mSat{M}{!C}[s]$}
+  \end{enumerate} 
+\end{defn}
+
+Pangertèn intuisi saka $\Since  !B !C$ yaiku ``Wiwit $!B$ kelakon,
+$!C$~terus kelakon.'' Dene pangertèn intuisi saka $\Until !B !C$
+yaiku ``Nganti $!B$ kelakon, $!C$~bakal terus kelakon.''
+
+\end{document}

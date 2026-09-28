@@ -1,0 +1,119 @@
+% Part: applied-modal-logics
+% Chapter: epistemic-logic
+% Section: truth-at-w
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{aml}{el}{trw}
+
+\olsection{Kabeneran ing Sawijining Jagad}
+
+Kaya ing logika modal lumrah, saben model epistemik nemtokake !!{formula}s
+endi kang bener ing saben jagad ing model iku. Kita nggunakake notasi kang
+padha, ``model $\mModel{M}$ ndadekake !!{formula}~$!A$ bener ing
+jagad~$w$,'' kanggo gagasan dhasar semantik relasional. Relasi kabeneran
+iki ditetepake kanthi induksi lan padha karo ing logika modal lumrah
+kanggo kabeh operator nonmodal.
+
+\begin{defn}\ollabel{defn:mmodels}
+  \emph{Kabeneran !!a{formula}~$!A$ ing~$w$} sajroning~$\mModel M$,
+  kang dinotasikake $\mSat{M}{!A}[w]$, ditetepake kanthi induksi
+  kaya mangkene:
+  \begin{enumerate}
+  \tagitem{prvFalse}{\indcase{!A}{\lfalse}{$\mSat{M}{\lfalse}[w]$ ora nate kelakon}.}{}
+  \tagitem{prvTrue}{\indcase{!A}{\ltrue}{$\mSat{M}{\ltrue}[w]$ tansah kelakon}.}{}
+  \item $\mSat{M}{p}[w]$ yen lan mung yen $w \in V(p)$
+  \tagitem{prvNot}{\indcase{!A}{\lnot !B}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
+    $\mSat{M}{!B}[w]$ ora kelakon}.}{}
+  \tagitem{prvAnd}{\indcase{!A}{(!B \land !C)}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
+    $\mSat{M}{!B}[w]$ lan $\mSat{M}{!C}[w]$}.}{}
+  \tagitem{prvOr}{\indcase{!A}{(!B \lor !C)}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
+    $\mSat{M}{!B}[w]$ utawa $\mSat{M}{!C}[w]$} (utawa loro-lorone).}{}
+  \tagitem{prvIf}{\indcase{!A}{(!B \lif !C)}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
+    $\mSat{M}{!B}[w]$ ora kelakon utawa $\mSat{M}{!C}[w]$}.}{}
+  \tagitem{prvIff}{\indcase{!A}{(!B \liff !C)}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
+    $\mSat{M}{!B}[w]$ lan $\mSat{M}{!C}[w]$ loro-lorone kelakon,
+    utawa $\mSat{M}{!B}[w]$ lan $\mSat{M}{!C}[w]$ loro-lorone ora kelakon}.}{}
+  \item\ollabel{defn:sub:mmodels-box}
+    \indcase{!A}{\Knows_a !B}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
+    $\mSat{M}{!B}[w']$ kanggo saben $w' \in W$ kang nyukupi $R_a ww'$}
+  \end{enumerate} 
+\end{defn}
+
+Nanging, ing kene kita kudu mikirake watesan tumrap relasi
+aksesibilitas. Miturut klausa~\olref{defn:sub:mmodels-box},
+!!a{formula}~$\Knows_a !B$ bener ing~$w$ yen ora ana~$w'$ kang
+nyukupi $R_a ww'$. Iki padha karo klausa ing logika modal lumrah:
+yen sawijining jagad ora duwe penerus, kabeh rumus mawa
+$\Box$ bener kanthi kosong ing jagad iku. Tafsiran iki angel
+ditampa yen $\Knows$ dianggep nglambangake \emph{kawruh}.
+Kita lumrahe nganggep \emph{ora ana} kahanan kang ndadekake sawijining agen
+ngerti $!A$ lan $\lnot !A$ bebarengan.
+
+Salah siji cara kanggo ngatasi prakara iki yaiku mesthekake yen
+relasi aksesibilitas ing logika epistemik tansah \emph{refleksif}.
+Iki kurang luwih cocog karo gagasan yen jagad nyata selaras karo
+informasi kang diduweni sawijining agen. Logika epistemik biasane
+nggunakake S5, nanging ana uga kang nggunakake sistem luwih ringkih,
+gumantung marang apa kang dikarepake supaya diwakili dening relasi
+$\Knows_a$.
+
+\begin{figure}
+  \begin{center}
+    \begin{tikzpicture}[modal]
+      \node[world] (w1) [label={[align=right]right:\mTrue{p}\\ \mFalse{q}}]{$w_1$}; 
+      \node[world] (w2) [label={[align=right]right:\mTrue{p}\\ \mTrue{q}},
+        above right=of w1]{$w_2$}; 
+      \node[world] (w3) [label={[align=right]right:\mFalse{p}\\ \mFalse{q}},
+        below right=of w1] {$w_3$};
+      \draw[<->] (w1) to node {$a$} (w2);
+      \draw[->,loop left] (w1) to node {$a,b$} (w1);
+      \draw[<->] (w1) to [swap] node {$b$} (w3);
+      \draw[->,loop above] (w2) to node {$a,b$} (w2) ;
+      \draw[->,loop below] (w3) to node {$a,b$} (w3) ;
+    \end{tikzpicture}
+  \end{center}
+  \caption{Sawijining model epistemik prasaja.}
+  \ollabel{fig:simple}
+\end{figure}
+
+\begin{prob}
+  Temtokna endi saka pratelan ing ngisor iki kang bener ing
+  \olref[aml][el][trw]{fig:simple}:
+  \begin{enumerate}
+    \item $\mSat{M}{\lnot q}[w_1]$;
+    \item $\mSat{M}{\Knows_a \lnot q}[w_1]$;
+    \item $\mSat{M}{\Knows_b \lnot q}[w_1]$;
+    \item $\mSat{M}{\Knows_b q \lor \Knows_b \lnot q}[w_2]$;
+    \item $\mSat{M}{\Knows_a( \Knows_b q \lor \Knows_b \lnot q)}[w_2]$;
+    \item $\mSat{M}{\EKnows_{\{a,b\}} \lnot q}[w_3]$;
+    \end{enumerate}
+\end{prob}
+
+Sawise menehi definisi dhasar kabeneran ing sawijining jagad, kita
+bisa ngetrapake pangertèn semantik liyane saka logika modal lumrah,
+kayata validitas modal lan konsekuensi logis, marang cara anyar iki
+kanggo napsirake operator modal.
+
+Saiki kita uga bisa menehi syarat kabeneran kanggo operator kawruh
+umum~$\CKnows_G$. Elinga saka \olref[sfr][rel][ops]{sec} yen
+\emph{panutupan transitif}~$R^+$ saka relasi~$R$ ditetepake minangka
+\begin{align*}
+  R^+ &= \bigcup_{ n \in \mathbb{N}} R^n, 
+\intertext{ing kene}
+  R^0 & = R \text{ lan}\\ 
+  R^{n+1} & = \Setabs{\tuple{x, z}}{\exists y (R^n xy \land Ryz)}.
+\end{align*}
+Banjur, yen $G$ iku klompok agen, kita netepake $R_G = ( \bigcup_{b
+\in G} R_b )^+$ minangka panutupan transitif saka gabungan relasi
+aksesibilitas kabeh agen ing klompok iku.
+
+\begin{defn}
+Yen $G' \subseteq G$, kita netepake $\mSat{M}{\CKnows_{G'} !A}[ w]$
+yen lan mung yen kanggo saben $w'$ kang nyukupi $R_{G'} w w'$,
+$\mSat{M}{!A}[w']$ kelakon.
+\end{defn}
+
+\end{document}

@@ -1,0 +1,94 @@
+% Part: normal-modal-logic
+% Chapter: syntax-and-semantics
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{syn}{int}
+
+\olsection{Pambuka}
+
+Logika modal ngrembug \emph{proposisi modal} lan relasi konsekuensi
+ing antarane. Tuladha proposisi modal yaiku:
+\begin{enumerate}
+\item Mesthi yen $2+2=4$.
+\item Mesthi bisa kelakon yen sesuk udan.
+\item Yen mesthi bisa kelakon~$!A$, mula bisa kelakon~$!A$.
+\end{enumerate}
+Kemungkinan lan keniscayan dudu siji-sijine modalitas: konektif
+unari liyane uga digolongake dadi modalitas, upamane, ``kudune~$!A$,''
+``Bakal kelakon yen~$!A$,'' ``Dana ngerti yen~$!A$,''
+utawa ``Dana percaya yen~$!A$.''
+
+Logika modal sepisanan katon ing karya Aristoteles \emph{De
+  Interpretatione}: dheweke kang sepisanan nggatekake yen keniscayan
+ngimplikasi kemungkinan, nanging ora kosok baline; yen kemungkinan
+lan keniscayan bisa padha-padha ditemtokake saka siji lan sijine;
+yen $!A \land !B$ bisa bener, mula $!A$ bisa bener lan $!B$
+bisa bener, nanging ora kosok baline; lan yen $!A \to !B$
+mesthi bener, banjur yen $!A$ mesthi bener, $!B$ uga mesthi bener.
+
+Pendekatan modern kapisan marang logika modal yaiku karya
+C.~I. Lewis, kang pungkasane ngasilake karya Lewis lan Langford,
+\emph{Symbolic Logic} (1932). Lewis \& Langford ora marem karo
+representasi implikasi nganggo kondisional material: $!A \lif !B$
+dudu sulih kang becik kanggo ``$!A$ ngimplikasi $!B$.'' Mula,
+padha ngusulake supaya implikasi ditegesi minangka ``Mesthi, yen $!A$
+banjur $!B$,'' dilambangake dadi $!A \strictif !B$. Nalika nyoba
+njlentrehake sifat-sifat kang beda, Lewis nemtokake limang sistem
+modal, \Log{S1}, \ldots, \Log{S4}, \Log{S5}; loro kang pungkasan
+isih dienggo.
+
+Pendekatan Lewis lan Langford murni \emph{sintaktis}: padha
+nemtokake aksioma lan aturan kang lumrah, banjur nliti apa kang bisa
+dibuktekake kanthi sarana iku. Pendekatan semantik suwe ora ketemu,
+nganti Rudolf Carnap ngupaya sepisanan ing \emph{Meaning and Necessity}
+(1947) kanthi nggunakake gagasan \emph{deskripsi kahanan}, yaiku
+kumpulan ukara atomik (kang ``bener'' ing deskripsi kahanan kasebut).
+Sawise definisi kabeneran ditrapake marang ukara sembarang $!A$,
+Carnap netepake $!A$ minangka \emph{mesthi bener} yen bener ing
+kabeh deskripsi kahanan. Pendekatan Carnap ora bisa nangani modalitas
+\emph{bertingkat}: ukara arupa ``Bisa wae mesthi \ldots bisa wae
+$!A$'' mesthi nyusut dadi modalitas paling njero.
+
+Terobosan utama ing semantik modal teka saka artikel Saul
+Kripke ``A Completeness Theorem in Modal Logic'' (JSL 1959). Kripke
+ngedhasarake karyane marang gagasan Leibniz yen sawijining pratelan
+mesthi bener yen bener ``ing kabeh donya kang mungkin.'' Nanging,
+gagasan iki duwe kekurangan kaya pendekatan Carnap: kabeneran
+pratelan ing sawijining donya $w$ (utawa deskripsi kahanan $s$)
+ora gumantung marang $w$ babar pisan. Mula Kripke nganggep yen
+donya-donya dihubungake dening \emph{relasi aksesibilitas} $R$,
+lan yen pratelan arupa ``Mesthi $!A$'' bener ing donya $w$ yen
+lan mung yen $!A$ bener ing kabeh donya $w'$ kang \emph{bisa
+diakses saka} $w$. Semantik kang migunakake sawijining wujud
+pendekatan iki diarani semantik Kripke lan ngidini logika modal
+(ing wangun jamak) berkembang kanthi cepet.
+
+Nalika ditafsirake nganggo semantik Kripke, logika modal
+nuduhake kepriye \emph{struktur relasional} katon ``saka njero.''
+Struktur relasional iku himpunan kang dilengkapi relasi biner
+(umpamane, himpunan siswa ing sawijining kelas kang diurutake miturut
+nomer jaminan sosiale yaiku struktur relasional). Nanging,
+struktur relasional sejatine ana ing maneka warna domain: saliyane
+kemungkinan relatif antarane kahanan donya, ana kahanan epistemik
+sawijining agen kang gegandhengan miturut kemungkinan epistemik,
+utawa kahanan sistem dinamis kanthi transisi kahanane, lan
+sapanunggalane. Logika modal bisa kanggo ngemodelake kabeh iki:
+sing kapisan ngasilake logika modal biasa, yaiku logika aletik;
+liyane ngasilake logika epistemik, logika dinamis, lan sapanunggalane.
+
+Kita nggatekake siji sudut pandang tartamtu, kang dikenal
+dening ahli logika modal minangka ``teori korespondensi.'' Salah siji
+temuan awal Kripke kang wigati yaiku akeh sifat relasi
+aksesibilitas~$R$ (kayata transitif, simetris, lan sapanunggalane)
+bisa dicireni \emph{ing basa modal} dhewe nganggo ``skema modal''
+kang cocog. Upamane, ahli logika modal kandha yen refleksivitas
+$R$ ``korespondensi'' karo skema ``Yen mesthi~$!A$, banjur~$!A$''.
+Utamane kita nliti teori korespondensi sawetara sistem klasik
+logika modal (umpamane, \Log{S4} lan \Log{S5}) kang diasilake saka
+kombinasi skema \Ax{D}, \Ax{T}, \Ax{B}, \Ax{4}, lan~\Ax{5}.
+
+\end{document}

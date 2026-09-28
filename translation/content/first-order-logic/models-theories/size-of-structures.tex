@@ -1,0 +1,87 @@
+% Part: first-order-logic
+% Chapter: models-theories
+% Section: size-of-structures
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{mat}{siz}
+
+\olsection{Nyatakake Ukuran \printtoken{P}{structure}}
+
+\begin{explain}
+Ana sawenehing sipat struktur kang bisa kita nyatakake
+sanajan tanpa nggunakake simbol-simbol nonlogis sawijining
+basa. Upamane, ana !!{sentence}s kang bener ing
+!!a{structure} yen lan mung yen !!{domain} saka
+!!{structure} kasebut ngemot paling ora, paling akeh,
+utawa persis sawenehing cacah~$n$ !!{element}s.
+\end{explain}
+
+\begin{prop}
+!!{sentence}
+\begin{multline*}
+  !A_{\ge n} \ident \lexists[x_1][\lexists[x_2][\dots\lexists[x_n][{}]]]\\
+  \begin{aligned}
+  (\eq/[x_1][x_2] \land {}
+  \eq/[x_1][x_3] \land \eq/[x_1][x_4] \land \dots \land \eq/[x_1][x_n] \land {}\\
+\eq/[x_2][x_3] \land \eq/[x_2][x_4] \land \dots \land {} \eq/[x_2][x_n] \land {} \\
+\vdots\\
+\eq/[x_{n-1}][x_n])
+\end{aligned}
+\end{multline*}
+bener ing !!a{structure}~$\Struct M$ yen lan
+mung yen $\Domain M$ ngemot paling ora
+$n$ !!{element}s. Mula,
+$\Sat{M}{\lnot !A_{\ge n+1}}$ yen lan mung
+yen $\Domain M$ ngemot paling akeh~$n$
+!!{element}s.
+
+\end{prop}
+
+\begin{prop}
+!!{sentence}
+\begin{multline*}
+!A_{= n} \ident \lexists[x_1][\lexists[x_2][\dots\lexists[x_n][{}]]] \\
+\begin{aligned}
+  (\eq/[x_1][x_2] \land {}
+  \eq/[x_1][x_3] \land \eq/[x_1][x_4] \land \dots \land \eq/[x_1][x_n] \land {}\\
+\eq/[x_2][x_3] \land \eq/[x_2][x_4] \land \dots \land {} \eq/[x_2][x_n] \land {} \\
+\vdots\\
+\eq/[x_{n-1}][x_n] \land {} \\
+\lforall[y][(\eq[y][x_1] \lor \dots \lor \eq[y][x_n]]))
+\end{aligned}
+\end{multline*}
+bener ing !!a{structure}~$\Struct M$ yen lan
+mung yen $\Domain M$ ngemot persis
+$n$ !!{element}s.
+Cathetan notasi: rong tampilan iki pola skematis
+kanggo cacah unsur umum; kasus cilik kang ora
+nduweni pasangan variabel beda perlu diwaca
+kanthi konjungsi kosong kang trep, dudu
+kanthi nganggep indeks ing pola mau tetep ana.
+\end{prop}
+
+\begin{prop}
+!!{structure} iku tanpa wates yen lan mung
+yen dadi model saka
+\[
+\{!A_{\ge 1}, !A_{\ge 2}, !A_{\ge 3}, \dots \}.
+\]
+\end{prop}
+
+Ora ana siji ukara kang mung ngemot simbol logis
+kang bener ing~$\Struct M$ yen lan mung yen
+$\Domain M$ tanpa wates. Nanging, kita bisa
+menehi !!{sentence}s kanthi !!{predicate}s
+nonlogis kang mung nduweni model tanpa wates
+(sanajan ora saben !!{structure} tanpa wates
+dadi modele). Sipat dadi struktur winates, lan
+sipat dadi struktur !!{nonenumerable}, malah
+ora bisa dinyatakake nganggo himpunan
+!!{sentence}s tanpa wates. Kasunyatan-kasunyatan
+iki dadi akibat saka teorema kompaktitas lan
+L\"owenheim--Skolem.
+
+\end{document}
