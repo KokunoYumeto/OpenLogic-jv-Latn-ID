@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0418",
+  "source_path": "content/normal-modal-logic/syntax-and-semantics/entailment.tex",
+  "source_sha256": "825d28934a3a8ef5f7f6775e0624e97ede3be1ae9c0dc7af64883becb0bcfdee",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-338",
+      "source_line": 69,
+      "location": "singleton-world countermodel M-prime",
+      "finding": "The source writes M-prime as a set of W-prime, R-prime and V-prime, whereas relational models were defined as ordered triples; the three named components have distinct roles.",
+      "proposed_resolution": "Use the tuple constructor for M-prime in the target, preserving W-prime, R-prime, V-prime, their values and the frozen source."
+    }
+  ],
+  "translation_treatment": "Translated entailment and both counterexample arguments, localized the diagram caption, and represented the singleton countermodel as an ordered triple.",
+  "no_source_mutation": true
+}

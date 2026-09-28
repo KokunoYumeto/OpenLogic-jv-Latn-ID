@@ -1,0 +1,25 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0447",
+  "source_path": "content/normal-modal-logic/completeness/truth-lemma.tex",
+  "source_sha256": "ba09b193f2ccb8f8c5751a1c762c0f81f14937ffbb42bd0e7bfad1f82d51f147",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-373",
+      "source_line": 123,
+      "location": "Diamond case of the truth lemma, forward direction under the Box-primitive tag",
+      "finding": "The proof cites the Diamond proposition while moving from inverse-Box accessibility to Diamond-image inclusion. That proposition is the existence theorem used elsewhere in the case; the direct equivalence is the preceding Box/Diamond accessibility lemma.",
+      "proposed_resolution": "Cite lem:box-iff-diamond at this inference in the target."
+    },
+    {
+      "id": "OLPL-374",
+      "source_line": 143,
+      "location": "truth-lemma exercise tag list",
+      "finding": "The tag list spells the conjunction exercise as proband, while the proof branch and the parallel complete-consistent-sets exercise use the case-sensitive name probAnd.",
+      "proposed_resolution": "Use probAnd in the target exercise tag list."
+    }
+  ],
+  "translation_treatment": "Translated the induction cases, both modal directions and the exercise, applying the bounded citation and exercise-tag repairs.",
+  "no_source_mutation": true
+}

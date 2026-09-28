@@ -1,0 +1,39 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0489",
+  "source_path": "content/applied-modal-logic/epistemic-logic/public-announcement-logic-lang.tex",
+  "source_sha256": "9f39c9626584c27c3ce6509b5f4cb49db0c501e6fb9852598e66892db400beee",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-419",
+      "source_line": 3,
+      "location": "section metadata comment",
+      "finding": "The comment repeats the previous language-epistemic-logic section name although this file and its pal identifier introduce public-announcement logic.",
+      "proposed_resolution": "Set the translated section comment to public-announcement-logic-lang."
+    },
+    {
+      "id": "OLPL-420",
+      "source_line": 33,
+      "location": "connective inventory in the first language definition",
+      "finding": "The inventory omits the biconditional even though the same section's inductive formation definition explicitly includes it.",
+      "proposed_resolution": "Add the guarded biconditional entry to the translated connective inventory."
+    },
+    {
+      "id": "OLPL-421",
+      "source_line": 78,
+      "location": "intended reading of the public-announcement formula",
+      "finding": "The opening TeX quotation before the reading of [A]B has no closing quotation after the holds clause.",
+      "proposed_resolution": "Close the translated quotation after the truthfully-announced reading."
+    },
+    {
+      "id": "OLPL-422",
+      "source_line": 15,
+      "location": "opening explanation of knowledge change",
+      "finding": "The source spells knowledge as knowlege once.",
+      "proposed_resolution": "Render the intended word as kawruh in the translated explanation."
+    }
+  ],
+  "translation_treatment": "Translated the dynamic epistemic introduction, public-announcement alphabet and formation clauses; repaired section metadata, the missing biconditional inventory entry, quotation closure and the knowledge spelling in a bounded target/source comparison view without changing frozen English.",
+  "no_source_mutation": true
+}

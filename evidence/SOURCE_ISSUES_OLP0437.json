@@ -1,0 +1,25 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0437",
+  "source_path": "content/normal-modal-logic/axioms-systems/systems-distinct.tex",
+  "source_sha256": "5242bad1abef085ce60944f529370410d12a911fbe55fa1047a29fca3c7b214b",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-359",
+      "source_line": 27,
+      "location": "proper-inclusion proof for KD inside KT",
+      "finding": "The source writes KT proves Log{D}, a logic-system macro, while the cited result says KT proves the D axiom. The proof needs that axiom to establish that every KD theorem belongs to KT.",
+      "proposed_resolution": "Use the axiom macro Ax{D} as the provability conclusion in the target proof."
+    },
+    {
+      "id": "OLPL-360",
+      "source_line": 66,
+      "location": "theorem on KTB failing 4 and 5",
+      "finding": "The nonprovability theorem writes Log{4} and Log{5} as its conclusions, but the proof exhibits instances of the 4 and 5 axiom schemata that fail in a KTB model. Those conclusions must use axiom macros.",
+      "proposed_resolution": "Use Ax{4} and Ax{5} after the two nonprovability symbols in the target theorem."
+    }
+  ],
+  "translation_treatment": "Translated the countermodel arguments and captions, using axiom macros for D, 4 and 5 at the three affected provability claims.",
+  "no_source_mutation": true
+}

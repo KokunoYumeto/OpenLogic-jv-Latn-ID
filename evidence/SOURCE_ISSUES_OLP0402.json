@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0402",
+  "source_path": "content/many-valued-logic/sequent-calculus/sequent-calculus.tex",
+  "source_sha256": "28775295786cbfede3893029fdd6742f84bb12ada787a5e5f61faba049c113e6",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-320",
+      "source_line": 2,
+      "location": "many-valued sequent-calculus chapter metadata comment",
+      "finding": "The source comment names the preceding three-valued-logics chapter, while the file path, mvl/seq chapter ID and four imported sections identify the sequent-calculus chapter.",
+      "proposed_resolution": "Correct the target comment to sequent-calculus while preserving the frozen source, chapter ID and all imports."
+    }
+  ],
+  "translation_treatment": "The target localizes the chapter heading as Kalkulus Sekuen and corrects the stale source comment, preserving all four imports and the mvl/seq chapter ID.",
+  "no_source_mutation": true
+}

@@ -1,0 +1,32 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0370",
+  "source_path": "content/lambda-calculus/church-rosser/beta-reduction.tex",
+  "source_sha256": "c51e50d16a675080277053003c33dc22951be9a43bb9910cc1bf1dff6e05f361",
+  "status": "translation_corrected_pending_inherited_proofs_and_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-274",
+      "source_line": 16,
+      "location": "one-step beta to parallel-beta lemma proof",
+      "finding": "The proof assumes every one-step beta contraction is a root redex, but beta-contraction is the smallest compatible relation and can occur under abstraction or in an application context.",
+      "proposed_resolution": "Qualify the displayed calculation as the root case and state that parallel-beta compatibility lifts it through abstraction and application contexts."
+    },
+    {
+      "id": "OLPL-275",
+      "source_line": 43,
+      "location": "parallel-to-beta induction, redex case",
+      "finding": "The list of terms repeats M-prime where the reduced body N-prime is intended and then used in the premises and conclusion.",
+      "proposed_resolution": "Use N-prime in the target list and bounded structural-comparison view."
+    },
+    {
+      "id": "OLPL-276",
+      "source_line": 59,
+      "location": "least-transitive-closure proof, beta-to-parallel inclusion",
+      "finding": "The source represents every beta reduction as a nonempty chain of one-step contractions, omitting the zero-step case allowed by the reflexive definition of beta reduction.",
+      "proposed_resolution": "Handle the zero-step identity separately using reflexivity of parallel beta reduction, while retaining the source chain for positive length."
+    }
+  ],
+  "translation_treatment": "The target translates the section, repairs the root-context proof scope, the N-prime label and the zero-step case, and retains the inherited OLP-0362 and OLP-0369 proof dependencies for reader-release review.",
+  "no_source_mutation": true
+}

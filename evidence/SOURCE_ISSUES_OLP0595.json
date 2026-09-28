@@ -1,0 +1,39 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0595",
+  "source_path": "content/set-theory/choice/hartogs.tex",
+  "source_sha256": "ffe4c3f0a800bd7893a39e68d109ca1eb9662b5f29cda42393cbc5777cf557c4",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-517",
+      "source_line": 33,
+      "location": "transitivity proof for the set of order types",
+      "finding": "The proof says B is a subset of the relation R, although B is the underlying subset of A used to form an element of C.",
+      "proposed_resolution": "Use B subseteq A at this point of the order-type argument."
+    },
+    {
+      "id": "OLPL-518",
+      "source_line": 41,
+      "location": "relation pulled across a hypothetical injection from alpha to A",
+      "finding": "The set-builder reuses the fixed ordinal alpha as a bound variable and leaves beta unbounded, so it does not correctly define the transported well-order on the range of f.",
+      "proposed_resolution": "Use fresh xi,zeta ranging over alpha and include xi in zeta as the relation condition."
+    },
+    {
+      "id": "OLPL-519",
+      "source_line": 62,
+      "location": "forward implication from Well-Ordering to cardinal comparability",
+      "finding": "The isomorphism functions from alpha and beta are displayed with ordered structures as codomains, rather than their underlying sets A and B.",
+      "proposed_resolution": "Display f:alpha to A and g:beta to B while retaining the stated ordered-structure isomorphisms."
+    },
+    {
+      "id": "OLPL-520",
+      "source_line": 80,
+      "location": "closing example of the infinite-cardinal maximum law",
+      "finding": "The source nests a cardinal-equality macro inside another equality with M, producing a malformed assertion. The intended claim compares both the disjoint sum and product with the larger of A and B.",
+      "proposed_resolution": "State the two equations cardeq(A disjointsum B,M) and cardeq(A times B,M) separately, as a general law unavailable without Choice."
+    }
+  ],
+  "translation_treatment": "The target repairs the Hartogs proof's underlying-set inclusion and transported relation, the isomorphism codomains, and the closing two-equation claim. The frozen source remains unchanged.",
+  "no_source_mutation": true
+}

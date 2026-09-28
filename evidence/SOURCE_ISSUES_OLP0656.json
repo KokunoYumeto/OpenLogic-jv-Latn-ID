@@ -1,0 +1,39 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0656",
+  "source_path": "content/proof-theory/cut-elimination/ce-topmost.tex",
+  "source_sha256": "930858ac1885a22be7f561047de54c702127d914720572042917ed3c8cef3214",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-580",
+      "source_line": 107,
+      "location": "alternative axiom case A, right-premise axiom",
+      "finding": "The proof that duplicates A on the succedent side is labelled pi_2, but the proof of the left CutCS premise is pi_1.",
+      "proposed_resolution": "Use pi_1 for the succedent-side proof in the Javanese target."
+    },
+    {
+      "id": "OLPL-581",
+      "source_line": 167,
+      "location": "schematic permutation proof tree",
+      "finding": "The final sequent contains a stray comma between the antecedent context Gamma and the sequent arrow.",
+      "proposed_resolution": "Remove the stray comma in the target proof tree."
+    },
+    {
+      "id": "OLPL-582",
+      "source_line": 323,
+      "location": "case D, right-conjunction permutation derivations",
+      "finding": "Two displayed sequents use Delta where the surrounding premises and conclusion require Delta-prime before the explicitly appended conjunction copies.",
+      "proposed_resolution": "Use Delta-prime in the two displayed sequents at source lines 323 and 352."
+    },
+    {
+      "id": "OLPL-583",
+      "source_line": 613,
+      "location": "final explanatory implication-cut diagram",
+      "finding": "The lower CutCS conclusion repeats the upper cut conclusion with B still in the antecedent, although cutting B must yield Gamma sequent Delta.",
+      "proposed_resolution": "Use Gamma sequent Delta as the final conclusion of the displayed proof tree."
+    }
+  ],
+  "translation_treatment": "The target applies these bounded proof-tree and label corrections while preserving the frozen English source, proof strategy, and derivation order.",
+  "no_source_mutation": true
+}

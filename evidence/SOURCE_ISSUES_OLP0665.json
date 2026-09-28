@@ -1,0 +1,25 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0665",
+  "source_path": "content/proof-theory/natural-deduction/quantifiers.tex",
+  "source_sha256": "1729af6de07c7d3d94f148e87ebf8ac54c84f784036cb0dd47dc3326882d3cdc",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-598",
+      "source_line": 111,
+      "location": "substitution lemma, existential-elimination case",
+      "finding": "The induction sentence leaves c unsubstituted in the existential premise and conclusion. The following displayed tree repeats a universal-introduction case instead of substituting both premises of existential elimination.",
+      "proposed_resolution": "State the substituted existential premise and conclusion, and display the two substituted premise proofs joined by existential elimination with its discharged assumption."
+    },
+    {
+      "id": "OLPL-599",
+      "source_line": 145,
+      "location": "regularization induction on dirty eigenvariable inferences",
+      "finding": "Choosing an arbitrary highest eigenvariable inference may choose a clean one and fail to decrease the induction measure. Above a highest dirty inference there may still be clean inferences, and renaming can decrease the dirty count by more than one.",
+      "proposed_resolution": "Choose a highest dirty inference, note that all eigenvariable inferences in its upper subproof are clean, and conclude that at most n-minus-one dirty inferences remain; scope the exercise to that choice."
+    }
+  ],
+  "translation_treatment": "The target repairs the existential-elimination substitution step and the dirty-inference induction wording while preserving the frozen English source and other rule cases.",
+  "no_source_mutation": true
+}

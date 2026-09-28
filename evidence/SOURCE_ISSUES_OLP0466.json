@@ -1,0 +1,25 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0466",
+  "source_path": "content/normal-modal-logic/tableaux/more-soundness.tex",
+  "source_sha256": "8c68f92959ba86967753495c186b9f49a3da00247457511f5527e72e5a9eb936",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-393",
+      "source_line": 198,
+      "location": "both Box and Diamond branches of the 4r Euclidean proof",
+      "finding": "The proof evaluates modal formulas at f(sigma).n, which is not the prefix interpretation of sigma.n; both branches require evaluation at f(sigma.n).",
+      "proposed_resolution": "Use f(sigma.n) in both Euclidean 4r modal-satisfaction premises."
+    },
+    {
+      "id": "OLPL-394",
+      "source_line": 204,
+      "location": "new signed formula in the 4r Diamond branch",
+      "finding": "The source derives true Box B at sigma from a false Diamond B premise, but the 4r Diamond rule and subsequent proof derive false Diamond B at sigma.",
+      "proposed_resolution": "Use the negative signed Diamond B formula as the newly added branch conclusion."
+    }
+  ],
+  "translation_treatment": "Translated all five frame-specific rule-soundness propositions, both conditional proof branches and completion exercises, applying the two bounded Euclidean corrections in the target and source-comparison view.",
+  "no_source_mutation": true
+}

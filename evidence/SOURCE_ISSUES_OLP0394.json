@@ -1,0 +1,39 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0394",
+  "source_path": "content/many-valued-logic/three-valued-logics/lukasiewicz.tex",
+  "source_sha256": "fe499a0fa941ad8d370b2f0346660d76aad7b4aad999a54ea88f79cdacc2641a",
+  "status": "translation_corrected_pending_inherited_proofs_reference_audit_and_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-303",
+      "source_line": 54,
+      "location": "false-undetermined conjunction symmetry",
+      "finding": "The displayed equality repeats tf(and)(False,Undef) twice, leaving the symmetric argument order unshown despite the accompanying prose and the table's False/Undef and Undef/False entries.",
+      "proposed_resolution": "Use tf(and)(Undef,False) for the second expression."
+    },
+    {
+      "id": "OLPL-304",
+      "source_line": 175,
+      "location": "classical-tautology exercise formula",
+      "finding": "The first listed formula has a closing parenthesis after q without a matching outer opening parenthesis.",
+      "proposed_resolution": "Add the outer opening parenthesis so the item is ((not p and p) implies q)."
+    },
+    {
+      "id": "OLPL-305",
+      "source_line": 236,
+      "location": "modal contradiction's value at Undef",
+      "finding": "The source says not Diamond(p and not p) evaluates to Undef at p=Undef. Its own tables give p and not p = Undef, Diamond(Undef)=True, and not True=False.",
+      "proposed_resolution": "Give the displayed value as False; the claim that the formula is not a tautology remains valid."
+    },
+    {
+      "id": "OLPL-306",
+      "source_line": 80,
+      "location": "standard-language falsity constant in the Łukasiewicz matrix",
+      "finding": "The matrix names the standard propositional language L_0, defined earlier with a nullary falsity constant, but lists only four nonnullary connectives and supplies no truth value for that constant. A matrix requires an interpretation for every connective, including nullary ones.",
+      "proposed_resolution": "Include the falsity constant in the language item and set its logic-indexed truth-function value to False alongside the four tables."
+    }
+  ],
+  "translation_treatment": "The target translates the full historical introduction, four connective truth-function tables over three truth values, exercises and modal critique, while correcting four bounded source issues. Frozen source is unchanged; inherited audits remain open.",
+  "no_source_mutation": true
+}

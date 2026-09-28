@@ -1,0 +1,13 @@
+{
+  "schema":"jv-frozen-source-issues/1",
+  "unit_id":"OLP-0556",
+  "source_path":"content/set-theory/ordinals/ordtype.tex",
+  "source_sha256":"9a123198cbfcd0000eb27804a39148d5ee5fb7ad41cf7cff04ad78ea320dfcd6",
+  "status":"translation_corrected_pending_reader_build",
+  "issues":[
+    {"id":"OLPL-485","source_line":67,"location":"corollary proof isomorphism type, source lines 65–68","finding":"The map is written f: beta to the ordered pair (B, lessdot). An order isomorphism here maps the ordinal beta onto the underlying set B, with its order preserved; the displayed pair is not the function's codomain.","proposed_resolution":"Type the map as f: beta to B and keep the order-isomorphism property in prose; preserve the later restriction formulas."},
+    {"id":"OLPL-486","source_line":70,"location":"corollary proof equivalence chain, source lines 69–76","finding":"The first biconditional uses f(alpha) even when alpha is not in beta, so that term need not be defined. The displayed chain establishes the forward implication under alpha in beta but leaves the converse unproved; the final converse also needs equality of isomorphic ordinals.","proposed_resolution":"Display the valid forward implication chain. For the converse, pull the endpoint of a representing proper initial segment of B back through f, use the restricted isomorphism, and identify the resulting member of beta with alpha by equality of isomorphic ordinals."}
+  ],
+  "translation_treatment":"The target corrects the codomain, replaces the invalid biconditional chain by forward implications, and adds the converse argument in prose with the ordinal-identity reference. Earlier theorem, definitions and corollary statement remain intact; frozen source bytes are unchanged.",
+  "no_source_mutation":true
+}

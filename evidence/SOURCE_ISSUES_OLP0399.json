@@ -1,0 +1,25 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0399",
+  "source_path": "content/many-valued-logic/infinite-valued-logics/introduction.tex",
+  "source_sha256": "4ce56099c4d8b852148cfe24eb6d1ed00a03fce30c9e1770e52eadbd4412762c",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-314",
+      "source_line": 18,
+      "location": "rational truth-value set denominator",
+      "finding": "The displayed set for V_infty permits m=0 while its members contain n/m; the following V_5 example uses zero among the natural numerators, so zero cannot simply be excluded from Nat by convention. The denominator must be positive.",
+      "proposed_resolution": "Add 0<m to the rational set-builder conditions while retaining 0<=n<=m and the interval [0,1]."
+    },
+    {
+      "id": "OLPL-315",
+      "source_line": 21,
+      "location": "finite rational grid upper bound and index range",
+      "finding": "For V_m, the displayed condition n<=m includes n=m and therefore a value m/(m-1)>1 when m>1; it also leaves m=1 with a zero denominator. The immediately following V_5 example has exactly five values n/(5-1) for n=0,...,4.",
+      "proposed_resolution": "Use n<m in the set-builder condition and state in the surrounding prose that the index is at least two."
+    }
+  ],
+  "translation_treatment": "The target translates rational and real infinite truth-value sets, finite grids, designated 1 and fuzzy terminology while correcting the two denominator and indexing bounds. The frozen source remains unchanged.",
+  "no_source_mutation": true
+}

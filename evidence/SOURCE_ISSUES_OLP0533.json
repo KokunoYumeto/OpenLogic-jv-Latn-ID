@@ -1,0 +1,13 @@
+{
+  "schema":"jv-frozen-source-issues/1",
+  "unit_id":"OLP-0533",
+  "source_path":"content/set-theory/story/predicativity.tex",
+  "source_sha256":"c5cedcd2a3116e12338c7eb16e4704c2b9bb1eb6c93d9754585dbe8ba45912aa",
+  "status":"translation_corrected_pending_reader_build",
+  "issues":[
+    {"id":"OLPL-475","source_line":11,"location":"Russell collection gloss, source lines 10–11","finding":"The text says R contains sets which are not non-self-membered, reversing the condition in the immediately displayed definition x-not-in-x and the previous Russell theorem.","proposed_resolution":"Describe R as containing precisely the non-self-membered sets."},
+    {"id":"OLPL-476","source_line":39,"location":"transition from vicious-circle principle to simple type hierarchy, source lines 39–43","finding":"The text says to follow Whitehead and Russell in rejecting the vicious-circle principle, although the quotation endorses it and the proposed type hierarchy avoids the circularity by separating quantifier domains from formed objects.","proposed_resolution":"Say the argument follows them in accepting the principle, then introduce the predicative comprehension hierarchy."}
+  ],
+  "translation_treatment":"Translated the philosophical argument and attributed quotations, correcting the two meaning-reversing source slips. Exact source-language diaeresis and discretionary hyphens are normalized for Javanese prose comparison; formulas, citations and hierarchy levels are preserved.",
+  "no_source_mutation":true
+}

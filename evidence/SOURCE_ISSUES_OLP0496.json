@@ -1,0 +1,25 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0496",
+  "source_path": "content/intuitionistic-logic/introduction/natural-deduction.tex",
+  "source_sha256": "3fc69e5ddaa3c9273ab2fa9c4a9e5c7826c3044aa9945152d4f710f8cf62afd3",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-432",
+      "source_line": 59,
+      "location": "BHK explanation of conjunction elimination",
+      "finding": "The source writes A_1 and A_1, but the pair and following projection explanation use constructions of A_1 and A_2.",
+      "proposed_resolution": "Use A_1 and A_2 as the two conjuncts in the translated explanation."
+    },
+    {
+      "id": "OLPL-433",
+      "source_line": 179,
+      "location": "final conclusion of the first example proof tree",
+      "finding": "The conclusion omits explicit grouping around the double-negation consequent that is grouped in the stated goal; a right-associative reading has the intended meaning, but the proof display should make the grouping explicit.",
+      "proposed_resolution": "Print A implies ((A implies falsity) implies falsity), with explicit outer consequent parentheses matching the stated goal."
+    }
+  ],
+  "translation_treatment": "Translated the intuitionistic natural-deduction rules, BHK motivations, examples and exercises. Corrected the repeated conjunct and clarified the first proof's consequent grouping while preserving all rule applications and discharge labels.",
+  "no_source_mutation": true
+}

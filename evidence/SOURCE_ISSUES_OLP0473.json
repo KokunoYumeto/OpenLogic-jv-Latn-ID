@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0473",
+  "source_path": "content/normal-modal-logic/sequent-calculus/proofs-in-K.tex",
+  "source_sha256": "62589ae78eea5962800114b6fdfffa1923072dfb10c85746d042c4d5dc7f4c30",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-407",
+      "source_line": 85,
+      "location": "first negation step in the Dual sequent derivation",
+      "finding": "The displayed step sends A from the succedent of A sequent A to negated A in the antecedent, but is labeled as right negation introduction. The same rule direction is labeled left negation in the adjacent K-rule examples.",
+      "proposed_resolution": "Label this one step with the left negation rule while preserving its premise and conclusion."
+    }
+  ],
+  "translation_treatment": "Translated both K derivation examples, the Dual proof introduction and the exercises, correcting the one negation-rule label in the target and bounded source-comparison view without changing frozen English.",
+  "no_source_mutation": true
+}

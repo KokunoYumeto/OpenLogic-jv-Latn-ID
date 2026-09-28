@@ -1,0 +1,32 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0426",
+  "source_path": "content/normal-modal-logic/frame-definability/second-order-definability.tex",
+  "source_sha256": "1b4691078284c0f45e4ec808398c3952649ec79732167d7b2d6a1ce7ad974490",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-350",
+      "source_line": 2,
+      "location": "chapter metadata comment",
+      "finding": "The frozen section labels its chapter frame-correspondence, but its path, nml/frd/st file ID, and containing chapter driver identify frame-definability.",
+      "proposed_resolution": "Correct the target chapter metadata comment to frame-definability while preserving the frozen source and the standard-translation section ID."
+    },
+    {
+      "id": "OLPL-351",
+      "source_line": 30,
+      "location": "standard-translation truth-constant row",
+      "finding": "The row labeled prvTrue translates the false constant to the true constant; the induction case should have the true constant on both sides.",
+      "proposed_resolution": "Use the true constant as the input of the prvTrue row in the target, retaining the output and row label."
+    },
+    {
+      "id": "OLPL-352",
+      "source_line": 40,
+      "location": "standard-translation biconditional row",
+      "finding": "The biconditional row closes the indcase argument inside math mode before the closing dollar, unlike the neighboring rows; this leaves the argument with unmatched math delimiters.",
+      "proposed_resolution": "Move the math-mode closing dollar inside the indcase argument in the target, preserving the biconditional formula."
+    }
+  ],
+  "translation_treatment": "Translated standard translation and monadic second-order frame definability, corrected stale metadata, the truth-constant induction case, and biconditional math-mode grouping.",
+  "no_source_mutation": true
+}

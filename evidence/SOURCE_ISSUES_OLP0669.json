@@ -1,0 +1,32 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0669",
+  "source_path": "content/proof-theory/natural-deduction/sequents.tex",
+  "source_sha256": "838a883ad78be2c58a1c21cd84ac9dca8469872ad5ec0ed8ad01e3e8e82b2d54",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-604",
+      "source_line": 13,
+      "location": "opening comparison of natural-deduction proof systems",
+      "finding": "The section invokes G1c/G1i, but the immediately preceding natural-deduction section and the first proposition compare N1c/N1i with N2c/N2i; G1 is a different sequent-calculus family.",
+      "proposed_resolution": "Name N1c and N1i in the opening sentence."
+    },
+    {
+      "id": "OLPL-605",
+      "source_line": 83,
+      "location": "N1-to-N2 implication-introduction construction",
+      "finding": "The displayed premise reads x:B while every surrounding labelled assumption and conclusion uses the formula metavariable !B.",
+      "proposed_resolution": "Display x:!B in the premise context."
+    },
+    {
+      "id": "OLPL-606",
+      "source_line": 139,
+      "location": "N2-to-N1 implication-introduction converse",
+      "finding": "The source calls B^x an open assumption of the final proof delta' in the first case, although the ensuing implication introduction discharges it. It is open only in the upper subproof before that final inference.",
+      "proposed_resolution": "Locate B^x in the upper subproof of delta' before implication introduction."
+    }
+  ],
+  "translation_treatment": "The target repairs the opening system names, the labelled premise, and the open-assumption scope; the frozen English file is unchanged.",
+  "no_source_mutation": true
+}

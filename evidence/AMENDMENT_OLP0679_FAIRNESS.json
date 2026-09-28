@@ -1,0 +1,66 @@
+{
+  "schema": "jv-checkpoint-amendment/1",
+  "status": "SEALED_IN_PROGRESS",
+  "prior_checkpoint": "CHECKPOINT-DRAFT-OLP0683.json",
+  "prior_checkpoint_sha256": "44e863b09896a4c361b870dc3da1e3d53a8fdbe49d83159a61e34b172e1d5468",
+  "unit_id": "OLP-0679",
+  "frozen_source_sha256": "4ae649a8588a1ae4f82c22b142fa67690bfd8615cada1499b02d1d62db87a665",
+  "historical_target_sha256": "5dd06a7c167cd1a4aa10cd0ea2577867421d2c1d038c8618c892a78f52287c53",
+  "current_target_sha256": "363b687a9381974b3732c448e4f14c011b0c442e03773bf07c1cf67ef8593669",
+  "source_issue_ids_added": [
+    "OLPL-643",
+    "OLPL-644"
+  ],
+  "historical_source_issue_ids_retained": [
+    "OLPL-634",
+    "OLPL-635",
+    "OLPL-636",
+    "OLPL-637",
+    "OLPL-638",
+    "OLPL-639"
+  ],
+  "pre_amendment_archive": "work/olp0679_fairness_pre_amendment/",
+  "full_qa": {
+    "checked_units": 683,
+    "structural_pass_units": 683,
+    "segments": 10113,
+    "translated_segments": 6406,
+    "semantic_reviewed_units": 683,
+    "failures": 0
+  },
+  "changed_unit_qa_file": "CHANGED_UNIT_QA_OLP0679_FAIRNESS.json",
+  "changed_unit_qa_sha256": "96127de78afa45d4b215854bbdece726cc4a51ecd011569f9278643d65faa992",
+  "source_view_file": "work/olp0679_source_view_v167.py",
+  "source_view_sha256": "b226b3bd2bfb8d79be17b599d0a095caba0bc2f76d4b5e401e41a01682ff5f50",
+  "qa_script_file": "work/qa_batch_v167.py",
+  "qa_script_sha256": "c9bd363b89824de58458acf4e918870826461112269e618f8da4b97416d31220",
+  "prior_hash_links_changed": {
+    "QA.json": {
+      "before": "9b5d47bc60d4e38b37f0090712e7710bd288b7e21f4c31ca727fb961d611f105",
+      "after": "1b61bc7ed1fe6653f01e53c69bcf585de9becb06b1fd337e2527dd0cceac443a"
+    },
+    "SEGMENT_CANON_USE.jsonl": {
+      "before": "a88f3cd9da6dca8ffbc40a51c9e0b3e1707de49b11a13d6c1b4b6a9057b1dad2",
+      "after": "0e8ccd5106d8a531be0cff0aeb0985bacb664d30f161eb01e7500071090d9084"
+    },
+    "SEMANTIC_REVIEW.json": {
+      "before": "82c4f35162691b04e6418340bc2bacf4c777010ac51fa9dfa4291cc06eca9376",
+      "after": "db0e528819b5d7593d861cc3c1daa45b8725ce1c16f0c9e382cf35ee527c79c4"
+    },
+    "SOURCE_CORRECTIONS.jsonl": {
+      "before": "0c4a3ed1e8f837e0363758eb029ed8da67babcae55cdf2c70ac580668d8c17ff",
+      "after": "58d1f99f00e7d4d2fe15c03d389b5ac8cee5bedfe5d1af38c3fb6e5836259b9e"
+    },
+    "SOURCE_ISSUES_OLP0679.json": {
+      "before": "5d26461919376563bbaea9ed442b2e50a089d6ac2736449493a97fea484806d7",
+      "after": "44a8383a6e50a2a92344f39f5382cab0d38827085e50c3446cd47819485ecb27"
+    },
+    "WORKLOG.md": {
+      "before": "1a282cbe85f4e71c1d3a72745b5d0b3843b9deb9a406d11501751a0437f3b666",
+      "after": "bde74dfb0818ba011f54e5ad3ac42bb43d1accf9f573029af0a800a14768760c"
+    }
+  },
+  "unchanged_prior_hash_links_verified": 1306,
+  "next_unit": "OLP-0684",
+  "goal_status": "active"
+}

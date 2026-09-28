@@ -1,0 +1,10 @@
+{
+  "schema":"jv-frozen-source-issues/1",
+  "unit_id":"OLP-0553",
+  "source_path":"content/set-theory/ordinals/basic.tex",
+  "source_sha256":"7a9d1d198227e2de1a2af719417ae7d81ffc2c727e6da7d992b194f44a7f19c1",
+  "status":"translation_corrected_pending_reader_build",
+  "issues":[{"id":"OLPL-483","source_line":55,"location":"transfinite-induction least-witness proof, source lines 54–57","finding":"After assuming some member of alpha satisfies phi, the proof invokes a least element of alpha 'which is phi.' A least element of alpha need not satisfy phi; the argument requires a least member of the nonempty subset of alpha whose members satisfy the predicate, formed by Separation.","proposed_resolution":"Explicitly form the nonempty phi-satisfying subset of alpha by Separation and take its membership-least element. That element satisfies phi, is an ordinal, and has no smaller ordinal satisfying phi."}],
+  "translation_treatment":"The Javanese proof supplies the missing bounded subset and least-member step without adding or reordering formulas. The trichotomy, Burali-Forti proof, historical quotation, corollaries and unsolved exercises otherwise follow the frozen source; source bytes remain unchanged.",
+  "no_source_mutation":true
+}

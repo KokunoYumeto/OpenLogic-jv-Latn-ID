@@ -1,0 +1,25 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0368",
+  "source_path": "content/lambda-calculus/church-rosser/definitions-and-properties.tex",
+  "source_sha256": "8f2880db2bb1ecb7dc07bf844e6da844d82b48289a5f36270d20588d826deb6f",
+  "status": "translation_corrected_pending_alpha_proof_and_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-269",
+      "source_line": 26,
+      "location": "computational-value explanation of Church--Rosser",
+      "finding": "The source says multiple computation paths still have a single value without qualifying that a normal form must be reached. Church--Rosser gives uniqueness of a normal form if one exists; it does not prove termination.",
+      "proposed_resolution": "State that all reached normal forms agree, while retaining the later explicit if-any qualification."
+    },
+    {
+      "id": "OLPL-270",
+      "source_line": 81,
+      "location": "last grid-proof corner identification",
+      "finding": "The proof's two terminal chains end at N_(m,0) and N_(0,n), which the boundary assignments identify as P_m and Q_n. The frozen prose instead calls them P and Q without defining those endpoint symbols.",
+      "proposed_resolution": "Use P_m and Q_n in the target, and clarify that the interior diamond construction uses the upper-left predecessor; preserve frozen source bytes."
+    }
+  ],
+  "translation_treatment": "The target translates the section, qualifies the value-uniqueness claim, identifies the indexed proof endpoints, and names the common predecessor for each interior diamond. The inherited OLP-0362 proof gap remains a separate reader-release dependency.",
+  "no_source_mutation": true
+}

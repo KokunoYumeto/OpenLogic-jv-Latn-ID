@@ -1,0 +1,46 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0364",
+  "source_path": "content/lambda-calculus/syntax/term-revisited.tex",
+  "source_sha256": "6b58e0943a9203c2d90bc0c533f880effdb583993134da6c2448cc3aad79fc67",
+  "status": "translation_corrected_pending_alpha_proof_and_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-260",
+      "source_line": 2,
+      "location": "section chapter comment",
+      "finding": "The frozen comment names the introduction chapter although the path and lam/syn/tr identifier locate this section in syntax.",
+      "proposed_resolution": "Set the target chapter comment to syntax while keeping frozen source bytes and identifiers."
+    },
+    {
+      "id": "OLPL-261",
+      "source_line": 24,
+      "location": "notation for multiple class representatives",
+      "finding": "The frozen TeX places two representative expressions and the prose 'etc.' inside one dollar pair, making the text syntactically malformed as math.",
+      "proposed_resolution": "Give each representative its own math span and leave the continuation phrase in prose."
+    },
+    {
+      "id": "OLPL-262",
+      "source_line": 45,
+      "location": "free variables of an alpha-equivalence class",
+      "finding": "The source writes FV(M) and FV(representative) as raw letters rather than the project's FV macro, including in the well-definedness equation.",
+      "proposed_resolution": "Use the FV macro with braces on the class and representatives without changing the intended sets."
+    },
+    {
+      "id": "OLPL-263",
+      "source_line": 66,
+      "location": "class-substitution example and following explanation",
+      "finding": "The displayed alignment prints a duplicate equality, and the explanation says substitution for x in lambda-x.x is undefined on terms. Under the corrected matching-binder clause in OLP-0361, that term substitution is defined and returns lambda-x.x. The example still illustrates the freedom to choose an alpha-equivalent class representative.",
+      "proposed_resolution": "Remove the duplicate equality and explain that term substitution is already defined here; retain the class-level representative calculation as an example of representative freedom."
+    },
+    {
+      "id": "OLPL-264",
+      "source_line": 76,
+      "location": "representative selection condition",
+      "finding": "The source writes FV(R) as raw letters in the freshness condition.",
+      "proposed_resolution": "Use the project FV macro with braces while preserving the condition x not free in R."
+    }
+  ],
+  "translation_treatment": "The target fixes malformed math markup, the stale term-level undefinedness claim and FV notation, and makes the class of a substituted representative explicit in prose. The OLP-0362 proof dependency remains open and prevents reader-release certification of this section.",
+  "no_source_mutation": true
+}

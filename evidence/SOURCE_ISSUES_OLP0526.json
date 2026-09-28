@@ -1,0 +1,13 @@
+{
+  "schema":"jv-frozen-source-issues/1",
+  "unit_id":"OLP-0526",
+  "source_path":"content/counterfactuals/minimal-change-semantics/antecedent-strengthening.tex",
+  "source_sha256":"17178d12f5c6ec82fbe5143286b95f4e2cce3b97117cde0884304e39333892c8",
+  "status":"translation_corrected_pending_reader_build",
+  "issues":[
+    {"id":"OLPL-470","source_line":19,"location":"match-action wording, source lines 19, 28 and 30","finding":"Three occurrences replace striking the match with lighting it, making the stated antecedent already assert the outcome whose failure is required. The quoted inference and formal countermodel use striking as the antecedent.","proposed_resolution":"Use striking in all three antecedent descriptions, retaining lighting only as the consequent."},
+    {"id":"OLPL-471","source_line":40,"location":"strengthened-antecedent falsity justification, source lines 40–43","finding":"Failure of the material counterpart in an admitting sphere does not alone make a counterfactual false. The given valuation and sphere family make this the only strengthened-antecedent-admitting sphere, but the proof does not say so.","proposed_resolution":"Explicitly identify the displayed outer sphere as the only strengthened-antecedent-admitting sphere, making the falsity inference complete."}
+  ],
+  "translation_treatment":"Translated the intuitive and formal counterexamples, corrected action wording and made the uniquely admitting sphere explicit; all formulas, valuations and diagram geometry are unchanged.",
+  "no_source_mutation":true
+}

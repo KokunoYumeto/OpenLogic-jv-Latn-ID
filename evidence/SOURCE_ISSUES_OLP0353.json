@@ -1,0 +1,39 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0353",
+  "source_path": "content/lambda-calculus/introduction/primitive-recursion.tex",
+  "source_sha256": "04e8bc4bc52bc324158574551382bba00a369aeeda5fed708541e702746e4350",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-235",
+      "source_line": 14,
+      "location": "base-term names in the opening reduction to a recursive construction",
+      "finding": "The prose first names G and H as terms for g and h, then asks for H as the term for f, while the next sentence introduces G' and H' as those given terms and later defines G and H from them. The first displayed base and step clauses also use G and H where the direct representatives G' and H' are required.",
+      "proposed_resolution": "Use G' and H' for the given terms defining g and h, F for the sought term defining f, and G'/H' on the right of the first displayed numeral clauses; reserve G and H for the later curried auxiliary terms."
+    },
+    {
+      "id": "OLPL-236",
+      "source_line": 19,
+      "location": "primitive-recursion equation for f(x+1,z-vector)",
+      "finding": "The recurrence uses scalar z as the first argument of h although only predecessor x and parameter vector z are in scope; the later numeral recurrence passes n as that argument.",
+      "proposed_resolution": "Use x as the first argument of h in the target recurrence, matching the subsequent n-step clause."
+    },
+    {
+      "id": "OLPL-237",
+      "source_line": 38,
+      "location": "definition of auxiliary H(u,v)",
+      "finding": "The auxiliary v is the function F(n) of the parameter vector, so v(u,z-vector) supplies the recursion index twice; the intended previous value is v(z-vector).",
+      "proposed_resolution": "Use v(z-vector) inside H' while keeping u as H' first argument and z-vector as its remaining parameters."
+    },
+    {
+      "id": "OLPL-238",
+      "source_line": 98,
+      "location": "pair transition term T(u)",
+      "finding": "The source uses an undefined bare S to increment the first component; the immediately preceding base-function section defines the lambda successor term as Succ.",
+      "proposed_resolution": "Use the previously defined successor term \\fn{Succ} for the first component of T; leave the rest of the pair transition unchanged."
+    }
+  ],
+  "translation_treatment": "The target applies four bounded mathematical and naming corrections. QA v16 compares against exact source replacements and passes all structural checks; reader build and visual readback remain pending.",
+  "no_source_mutation": true
+}

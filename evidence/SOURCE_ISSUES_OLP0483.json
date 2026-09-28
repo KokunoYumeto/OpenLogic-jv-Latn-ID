@@ -1,0 +1,19 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0483",
+  "source_path": "content/applied-modal-logic/epistemic-logic/introduction.tex",
+  "source_sha256": "b2c3d1cfca757032d8e89e4f17207aa4f37248926fa4f1a3057ef724407c09d9",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-411",
+      "source_line": 21,
+      "location": "attribution of the 1962 book Knowledge and Belief",
+      "finding": "The frozen English spells the author's given name Jaako; bibliographic records for Knowledge and Belief identify Jaakko Hintikka.",
+      "proposed_resolution": "Use Jaakko Hintikka in the translated attribution while preserving the 1962 book title and source claim.",
+      "verification_url": "https://researchprofiles.ku.dk/en/publications/knowledge-and-belief-an-introduction-to-the-logic-of-the-two-noti/"
+    }
+  ],
+  "translation_treatment": "Translated the epistemic-logic introduction and four examples, correcting the one bibliographic name in the target and bounded source-comparison view without changing frozen English.",
+  "no_source_mutation": true
+}

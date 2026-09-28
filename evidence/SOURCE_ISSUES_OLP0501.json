@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0501",
+  "source_path": "content/intuitionistic-logic/semantics/semantic-notions.tex",
+  "source_sha256": "e181f2cc2add672ac76ae6cf3e011d3242479e1a1ff5f8e0f679eb1eda8f62fb",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-434",
+      "source_line": 33,
+      "location": "first part of the satisfaction-entailment proof",
+      "finding": "The first claim assumes Gamma is true at w, but its proof starts by assuming Gamma true throughout M. That stronger assumption proves only a special case and the intervening all-worlds step is unnecessary.",
+      "proposed_resolution": "Start from satisfaction of Gamma at w and apply the definition of entailment directly to obtain satisfaction of A at w."
+    }
+  ],
+  "translation_treatment": "Translated local and model-wide truth, validity, entailment, generated restriction and its two applications. Corrected the first proof's hypothesis and removed the unnecessary global-satisfaction step. Localized the equation's ordinary prose and to lan.",
+  "no_source_mutation": true
+}

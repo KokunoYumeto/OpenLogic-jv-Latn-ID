@@ -1,0 +1,32 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0610",
+  "source_path": "content/methods/proofs/reading-proofs.tex",
+  "source_sha256": "e5146120b8fd42d544e1e6e51fdcad7fd3a0c721a54ae320692c4fd4277fec33",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-539",
+      "source_line": 99,
+      "location": "second inclusion (b) in the expanded absorption proof",
+      "finding": "The expanded proof lists the same left-to-right inclusion for both (a) and (b), although the original short proof and the subsequent (b) explanation explicitly prove the reverse inclusion.",
+      "proposed_resolution": "State (b) as A subseteq A intersection (A union B)."
+    },
+    {
+      "id": "OLPL-540",
+      "source_line": 112,
+      "location": "last annotated step of the expanded absorption proof",
+      "finding": "The inline formula for z in A union B ends with an unmatched closing parenthesis inside math mode.",
+      "proposed_resolution": "Remove the stray closing parenthesis from that inline formula."
+    },
+    {
+      "id": "OLPL-541",
+      "source_line": 126,
+      "location": "final sentence of the absorption exercise proof",
+      "finding": "The membership predicate in the exercise conclusion lacks the element z mentioned at the start of the same sentence.",
+      "proposed_resolution": "Write z in A union (A intersection B) in the final sentence."
+    }
+  ],
+  "translation_treatment": "The Javanese target gives the reverse inclusion, removes the stray parenthesis, and supplies z in the exercise's final formula. A bounded comparison view records each correction; the frozen English bytes remain unchanged.",
+  "no_source_mutation": true
+}

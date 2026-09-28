@@ -1,0 +1,25 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0432",
+  "source_path": "content/normal-modal-logic/axioms-systems/derived-rules.tex",
+  "source_sha256": "ee93bd761e5cfd7c4f8b6084821dddb812fcf712c8c0733964d5d7e8bed143b8",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-355",
+      "source_line": 75,
+      "location": "replacement proposition conclusion",
+      "finding": "The source's conclusion substitutes bare B into C, while its premise, following exercise and explanatory schema use the formula metavariable !B. The missing formula marker makes the conclusion inconsistent with those occurrences.",
+      "proposed_resolution": "Use !B in the target conclusion's substitution argument while retaining C, q and the surrounding proof claim."
+    },
+    {
+      "id": "OLPL-356",
+      "source_line": 91,
+      "location": "generic replacement annotation",
+      "finding": "The source labels replacing C(A) with C(B) as 'A for B', but its worked instance labels replacing double-negation p with p as 'p for double-negation p'. The generic label runs opposite to the worked convention.",
+      "proposed_resolution": "Use 'B for A' in both generic labels in the target, preserving the order of the C(B) replacement and C(A) original and the worked 'p for double-negation p' example."
+    }
+  ],
+  "translation_treatment": "Translated derived modal proof rules and examples, corrected the formula metavariable in replacement and made the generic replacement label match its worked example.",
+  "no_source_mutation": true
+}

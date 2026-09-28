@@ -1,0 +1,35 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0505",
+  "source_path": "content/intuitionistic-logic/soundness-completeness/soundness-nd.tex",
+  "source_sha256": "2e1aae17af3a524802ebaa08e0a2f16f6b1014f0a06d697757a9ceddce02ab93",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-440", "source_line": 39,
+      "location": "goal in the conjunction-introduction case",
+      "finding": "The premises and final satisfaction assertion concern B and C, but the entailment goal is printed as A and B.",
+      "proposed_resolution": "Use Gamma union Delta entails B and C as the goal."
+    },
+    {
+      "id": "OLPL-441", "source_line": 64,
+      "location": "second branch of the disjunction-introduction case",
+      "finding": "For premise C, the closing sentence only repeats that Gamma entails C rather than establishing the required disjunction conclusion.",
+      "proposed_resolution": "Complete the parallel branch with Gamma entails B or C."
+    },
+    {
+      "id": "OLPL-442", "source_line": 82,
+      "location": "first disjunction-elimination case",
+      "finding": "The world suffix [w] appears outside math mode and outside the satisfaction assertion, rather than as its optional world argument.",
+      "proposed_resolution": "Keep [w] inside the mSat{M}{!B}[w] assertion."
+    },
+    {
+      "id": "OLPL-443", "source_line": 83,
+      "location": "premise-set unions in both disjunction-elimination branches, lines 83 and 85",
+      "finding": "The entailment premises unite Delta_i with a formula instead of its singleton set, unlike the correctly written induction hypotheses above.",
+      "proposed_resolution": "Use Delta_1 union {B} and Delta_2 union {C} in both branch entailments."
+    }
+  ],
+  "translation_treatment": "Translated all deduction-rule cases, both conditional-branch exercise texts and the final exercises. Corrected conjunction and disjunction goals, world-suffix placement and two missing singleton-set braces. The two-option monotonicity reference was verified against the project's olref definition and retained unchanged.",
+  "no_source_mutation": true
+}

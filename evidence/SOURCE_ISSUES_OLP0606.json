@@ -1,0 +1,32 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0606",
+  "source_path": "content/methods/proofs/inference-patterns.tex",
+  "source_sha256": "dec51f23018334023107ecfaa7a2f31fdf964b2b0cb7aebaeeb4e1688ed6dd31",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-532",
+      "source_line": 198,
+      "location": "proof by cases, subset premises",
+      "finding": "Two conclusions are printed as bare membership predicates, '$\\in D$' and '$\\in E$', although the quantified element is x in the same sentence.",
+      "proposed_resolution": "Write '$x \\in D$' and '$x \\in E$' in the two conclusions."
+    },
+    {
+      "id": "OLPL-533",
+      "source_line": 284,
+      "location": "using an existence claim and the nonempty-set proof explanation, lines 284 and 305–317",
+      "finding": "Several inline membership expressions omit their left operand: '$\\in A$', '$\\in \\emptyset$', '$\\notin \\emptyset$', and '$\\notin A$'. The surrounding text specifies either the witness or the quantified element x.",
+      "proposed_resolution": "Use ordinary prose 'in $A$' for the unnamed object, and write x on the left of membership or nonmembership when the sentence quantifies x."
+    },
+    {
+      "id": "OLPL-534",
+      "source_line": 310,
+      "location": "nonempty-set equivalence in the explanatory quote",
+      "finding": "The conclusion says '$x \\neq \\emptyset$ iff for some x, x belongs to A', switching from the set A to an element x; the proposition and preceding derivation concern '$A \\neq \\emptyset$'.",
+      "proposed_resolution": "State '$A \\neq \\emptyset$' on the left of the equivalence."
+    }
+  ],
+  "translation_treatment": "The Javanese target supplies the missing operands, uses 'in A' prose for the unnamed object, and states nonemptiness of A. A bounded comparison view records each difference; the frozen English bytes remain unchanged.",
+  "no_source_mutation": true
+}

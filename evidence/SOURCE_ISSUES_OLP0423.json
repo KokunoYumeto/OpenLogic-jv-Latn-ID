@@ -1,0 +1,25 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0423",
+  "source_path": "content/normal-modal-logic/frame-definability/definability.tex",
+  "source_sha256": "a107f2b5ce681ff056d243b0cd68955cdf997d66276ce17b74207164b1af6d8c",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-344",
+      "source_line": 42,
+      "location": "D converse proof, vacuous box claim",
+      "finding": "The source writes satisfaction of Box A without the world index w in a proof that explicitly evaluates the formula at w; the paired not-Diamond expression includes [w].",
+      "proposed_resolution": "Add [w] to the Box A satisfaction expression in the target, retaining the same model and formula."
+    },
+    {
+      "id": "OLPL-345",
+      "source_line": 49,
+      "location": "T converse proof, arbitrary valuation parenthetical",
+      "finding": "The source includes the prose closing parenthesis inside the math expression for V(q)=emptyset, leaving the inline mathematical notation malformed.",
+      "proposed_resolution": "Close the inline math before the prose parenthesis in the target, preserving V(q)=emptyset."
+    }
+  ],
+  "translation_treatment": "Translated the frame-definability theorem and proofs with a world-index repair and corrected inline-math punctuation.",
+  "no_source_mutation": true
+}

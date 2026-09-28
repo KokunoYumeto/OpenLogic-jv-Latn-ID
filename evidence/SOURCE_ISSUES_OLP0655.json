@@ -1,0 +1,32 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0655",
+  "source_path": "content/proof-theory/cut-elimination/ce-largest.tex",
+  "source_sha256": "1ea55e9f187e9daf9de01d795d158934d0871b216a0a61f98b062c0ab8b4ec1c",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-577",
+      "source_line": 126,
+      "location": "atomic cut case, succedent decomposition",
+      "finding": "The displayed equality Delta = Delta, A is self-referential while the next sentence uses Delta-prime as the context without A.",
+      "proposed_resolution": "Use Delta = Delta-prime, A in the Javanese proof."
+    },
+    {
+      "id": "OLPL-578",
+      "source_line": 287,
+      "location": "conjunction reduction exercise",
+      "finding": "The exercise asks for the conjunction case of maximal cut-rank reduction but cites the earlier invertibility lemma.",
+      "proposed_resolution": "Cite the maximal cut-rank reduction lemma in the target exercise."
+    },
+    {
+      "id": "OLPL-579",
+      "source_line": 311,
+      "location": "transition to the maximal-rank cut elimination theorem",
+      "finding": "The transition attributes maximal-rank cut reduction to the earlier topmost-cut lemma rather than the immediately preceding maximal-rank reduction lemma.",
+      "proposed_resolution": "Cite the maximal cut-rank reduction lemma in the target transition."
+    }
+  ],
+  "translation_treatment": "The target applies these bounded proof and cross-reference corrections while preserving the frozen English source, derivations, and formula order.",
+  "no_source_mutation": true
+}

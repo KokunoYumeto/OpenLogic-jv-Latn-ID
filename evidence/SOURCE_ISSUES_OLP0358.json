@@ -1,0 +1,25 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0358",
+  "source_path": "content/lambda-calculus/syntax/unique-readability.tex",
+  "source_sha256": "a11a3822afc6fd0e95f81b2040023d553f0682b5b099b7c75511d4b2a720b7f7",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-242",
+      "source_line": 2,
+      "location": "section chapter comment",
+      "finding": "The frozen comment calls this an introduction section, while its path, chapter import and lam/syn file identifier place it in the syntax chapter.",
+      "proposed_resolution": "Set the target's chapter comment to syntax; preserve the frozen source bytes and all TeX identifiers."
+    },
+    {
+      "id": "OLPL-243",
+      "source_line": 78,
+      "location": "unique-readability proof, application case",
+      "finding": "The proof claims one of P and P' is a proper initial segment of the other when considering another application decomposition, but that conclusion requires their split positions to differ. If they agree, both factors already agree and induction handles their formations.",
+      "proposed_resolution": "State the proper-prefix argument conditionally on a different split in the target prose, then retain the conclusion that P and Q are uniquely determined. No formula or reference changes."
+    }
+  ],
+  "translation_treatment": "The target aligns the chapter comment with the import path and makes the distinct-split premise explicit in prose. QA v18 passes all structural checks; reader build and visual readback remain pending.",
+  "no_source_mutation": true
+}

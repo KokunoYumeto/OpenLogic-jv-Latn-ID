@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0417",
+  "source_path": "content/normal-modal-logic/syntax-and-semantics/schemas.tex",
+  "source_sha256": "2644661ac31c8a11b18826df77ecd26332c0b3452f584d08260c01ee4fe727dc",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-337",
+      "source_line": 154,
+      "location": "valid/invalid schema table caption",
+      "finding": "The source caption says 'Valid and (or?) invalid schemas' even though the two table columns are explicitly labeled Valid Schemas and Invalid Schemas. The parenthesized question is editorial uncertainty, not a mathematical qualifier.",
+      "proposed_resolution": "Use a definite Javanese caption for valid and invalid schemas, preserving all table formulas and the frozen source."
+    }
+  ],
+  "translation_treatment": "Translated schema definitions, propositions, proofs, exercises and table headings; removed the source caption's editorial '(or?)' in the target.",
+  "no_source_mutation": true
+}

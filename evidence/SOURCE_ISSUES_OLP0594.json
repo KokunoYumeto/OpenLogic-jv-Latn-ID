@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0594",
+  "source_path": "content/set-theory/choice/tarskiscott.tex",
+  "source_sha256": "2cf102fa76c9cb3c1080901967626539d8da1aa6dda38dddbbc743ae5e883579",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-516",
+      "source_line": 27,
+      "location": "naive equinumerosity-class argument before the Tarski--Scott definition",
+      "finding": "The text claims the class of all sets equinumerous with A never exists as a set, but for A empty it is the singleton containing the empty set. Its given unbounded-rank example addresses singleton A only.",
+      "proposed_resolution": "Qualify failure to nonempty A, use copies obtained by Cartesian product with arbitrarily high-rank singletons for general nonempty A, and state the empty exception."
+    }
+  ],
+  "translation_treatment": "The target supplies the nonempty qualification, general unbounded-rank construction, and empty exception; it also localizes naif and Potter's chapter citation. The frozen source remains unchanged.",
+  "no_source_mutation": true
+}

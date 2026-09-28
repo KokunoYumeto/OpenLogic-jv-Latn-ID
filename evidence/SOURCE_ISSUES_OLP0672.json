@@ -1,0 +1,25 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0672",
+  "source_path": "content/proof-theory/normalization/introduction.tex",
+  "source_sha256": "0fa27f608c760663b6380ea308e56269a9d6659e37cfad14a5e3ec7ca6940dd5",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-618",
+      "source_line": 16,
+      "location": "proof labels in the implication-introduction/elimination detour",
+      "finding": "The prose assigns delta_1 both to a proof of A and a proof of A implies B, while the displayed A branch repeats delta_2, already used for the B-from-A branch. The intended distinct proof labels are delta_1 for A and delta_2 for B from A.",
+      "proposed_resolution": "Keep delta_1 on the proof of A, omit the conflicting label on the whole implication proof, and label the displayed A branch delta_1."
+    },
+    {
+      "id": "OLPL-619",
+      "source_line": 55,
+      "location": "informal statement of the normalization subformula property",
+      "finding": "The stated result-only subformula property omits undischarged assumptions: a normal derivation from an open assumption may contain formulas not occurring in its conclusion. The chapter proves intuitionistic normalization, so the informal claim also needs that scope.",
+      "proposed_resolution": "State the subformula property for intuitionistic natural deduction relative to undischarged assumptions or the conclusion."
+    }
+  ],
+  "translation_treatment": "The target keeps the detour, normalization and cut-elimination argument while correcting the two proof labels and narrowing the subformula claim. The frozen English file is not changed.",
+  "no_source_mutation": true
+}

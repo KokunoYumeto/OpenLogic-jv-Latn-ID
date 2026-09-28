@@ -1,0 +1,32 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0590",
+  "source_path": "content/set-theory/card-arithmetic/ch.tex",
+  "source_sha256": "b1bdee185ce2a21eeba54cce52ebec13154b54b77a6652820ad4f7ac61e8b212",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-511",
+      "source_line": 35,
+      "location": "prose after the aleph and beth recursion table",
+      "finding": "The text calls the remaining recursive definitions definitions of a cardinal a, although they define the aleph and beth sequences.",
+      "proposed_resolution": "Name the aleph and beth sequences as the objects defined by transfinite recursion."
+    },
+    {
+      "id": "OLPL-512",
+      "source_line": 70,
+      "location": "proof that every infinite cardinal has a unique aleph index",
+      "finding": "The induction hypothesis covers all smaller cardinals, including finite ones that are not alephs. The proof also omits the omega base case and an explanation of uniqueness.",
+      "proposed_resolution": "Start with a=omega=aleph_0, restrict the induction and limit unions to infinite smaller cardinals, and note strict increase of the aleph sequence for uniqueness."
+    },
+    {
+      "id": "OLPL-513",
+      "source_line": 95,
+      "location": "conditional GCH bound for a to the b",
+      "finding": "The statement says a<=a^b<=a^+ whenever b<a. It fails at b=0, and for finite a it can fail already at a=3,b=2. The surrounding discussion concerns infinite cardinals.",
+      "proposed_resolution": "State the claimed bound for infinite a and positive b<a."
+    }
+  ],
+  "translation_treatment": "The target names the two transfinite sequences, repairs the aleph proof's base and induction domain, and qualifies the conditional exponent bound. The frozen source remains unchanged.",
+  "no_source_mutation": true
+}

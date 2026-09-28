@@ -1,0 +1,234 @@
+% Part: proof-theory
+% Chapter: proof-search
+% Section: tableaux
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{ps}{tab}
+
+\olsection{Tableau}
+
+Sistem tableau yaiku sistem !!{proof} kang raket
+sesambungané karo kalkulus sekuèn lan mligi cocog
+kanggo panelusuran bukti, kanthi tangan utawa piranti
+lunak. Ing tableau, !!a{proof} awujud wit !!{formula}s,
+dudu wit sekuèn. Nanging, béda karo deduksi alamiah,
+aturan tableau ngibarataké aturan kalkulus sekuèn.
+!!{proof} tableau sejatiné panelusuran modhèl kang
+cetha katon. Mula tableau sok diarani tableau
+\emph{semantis} utawa \emph{wit kabeneran}.
+
+Tableau \emph{mawa tandha} iku wit !!{formula}s mawa
+tandha, kang bisa awujud $\sFmla{\True}{!A}$ utawa
+$\sFmla{\False}{!A}$. Wit tuwuh mudhun. Ing wiwitané
+ana !!{formula}s kang nemtokaké apa kang arep
+!!{prove}. Tuladhané, kanggo !!{prove} sekuèn
+$!A, !B \Sequent !C, !D$, tableau diwiwiti saka
+$\sFmla{\True}{!A}, \sFmla{\True}{!B},
+\sFmla{\False}{!C}, \sFmla{\False}{!D}$.
+!!^a{structure} kang ndadèkaké $!A$ lan $!B$
+bener, déning $!C$ lan $!D$ salah, yaiku
+!!a{structure} kang nuduhaké yèn
+$!A, !B \Sequent !C, !D$ ora valid.
+
+Simpul godhong (paling ngisor) ing tableau bisa
+ditambahi nganggo aturan pamranjangan cabang, kang
+nambah simpul ing cabang kang padha utawa nambah loro
+simpul sadulur ing sangisoré, saéngga cabang pecah
+dadi loro cabang anyar. Aturan bisa ditrapaké marang
+saben !!{formula} mawa tandha ing sadhuwuré simpul
+iku ing cabang kang padha. Aturan pamranjangan cabang
+kanggo sistem tableau klasik \Log{Tc} kapacak ing
+\olref{tab:Tc}.
+
+\subfile{rules-Tc}
+
+Kaya kang katon, aturan-aturan mau padha karo aturan
+\Log{G3c} kang diwalik arahé. Tandha $\True$
+lan $\False$ nuduhaké yèn !!a{formula} dadi
+rumus utama ing sisih kiwa utawa tengen
+sekuèn, kanthi urutan mau.
+
+Cabang tableau diarani \emph{ketutup} yèn ngemot
+$\sFmla{\True}{!A}$ lan $\sFmla{\False}{!A}$
+bebarengan, utawa yèn ngemot $\sFmla{\True}{\lfalse}$.
+Yèn saben cabang ketutup, tableau
+sakabèhé diarani ketutup. Tuladhané, iki tableau
+ketutup kanggo $!A \lor (!B \land !C) \Sequent
+(!A \lor !B) \land (!A \lor !C)$, kang diwiwiti
+saka $\sFmla{\True}{!A \lor (!B \land !C)}$
+lan $\sFmla{\False}{(!A \lor !B) \land (!A \lor !C)}$:
+\begin{oltableau}
+  [\sFmla{\True}{\formula{A} \lor (\formula{B} \land \formula{C})},
+    just=\TAss, checked
+    [\sFmla{\False}{(\formula{A} \lor \formula{B}) \land
+        (\formula{A} \lor \formula{C})}, just=\TAss, checked
+      [\sFmla{\True}{\formula{A}}, just={\TRule{\True}{\lor}[1]}
+        [\sFmla{\False}{\formula{A} \lor \formula{B}},
+          just={\TRule{\False}{\land}[2]}, checked
+          [\sFmla{\False}{\formula{A}},
+            just={\TRule{\False}{\lor}[4]}
+            [\sFmla{\False}{\formula{B}},
+              just={\TRule{\False}{\lor}[4]}, close]
+          ]
+        ]
+        [\sFmla{\False}{\formula{A} \lor \formula{C}},
+          just={\TRule{\False}{\land}[2]}, checked
+          [\sFmla{\False}{\formula{A}},
+            just={\TRule{\False}{\lor}[4]}
+            [\sFmla{\False}{\formula{C}},
+              just={\TRule{\False}{\lor}[4]}, close]
+          ]
+        ]
+      ]
+      [\sFmla{\True}{\formula{B} \land \formula{C}},
+        just={\TRule{\True}{\lor}[1]}, checked
+        [\sFmla{\False}{\formula{A} \lor \formula{B}},
+          just={\TRule{\False}{\land}[2]}, checked
+          [\sFmla{\True}{\formula{B}},
+            just={\TRule{\True}{\land}[3]}, move by=2
+            [\sFmla{\True}{\formula{C}},
+              just={\TRule{\True}{\land}[3]}
+              [\sFmla{\False}{\formula{A}},
+                just={\TRule{\False}{\lor}[4]}
+                [\sFmla{\False}{\formula{B}},
+                  just={\TRule{\False}{\lor}[4]},close
+                ]
+              ]
+            ]
+          ]
+        ]
+        [\sFmla{\False}{\formula{A} \lor \formula{C}},
+          just={\TRule{\False}{\land}[2]}, checked
+          [\sFmla{\True}{\formula{B}},
+            just={\TRule{\True}{\land}[3]}, move by=2
+              [\sFmla{\True}{\formula{C}},
+                just={\TRule{\True}{\land}[3]}
+                [\sFmla{\False}{\formula{A}},
+                  just={\TRule{\False}{\lor}[4]}
+                  [\sFmla{\False}{\formula{C}},
+                  just={\TRule{\False}{\lor}[4]},close
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+\end{oltableau}
+
+Tandha cèntang nuduhaké yèn aturan kang cocog wis
+ditrapaké marang !!a{formula} ing kabèh cabang
+sangisoré. Lambang $\otimes$ nuduhaké cabang ketutup.
+Nomer larik ing sawisé aturan nuduhaké !!{formula}s
+mawa tandha kang ditrapi aturan iku (yaiku
+!!{formula} ing cabang kang padha lan ing larik
+kang dituduhaké).
+
+Panelusuran bukti gampang ing tableau. Kita ngasilaké
+tableau tataran demi tataran. Ing tataran~$0$,
+tulis !!{formula}s wiwitan ing pérangan paling dhuwur.
+Ing tataran~$n+1$, tumrap saben simpul godhong,
+golekana rumus mawa tandha kang durung dicèntang
+lan paling dhuwur. Trapna aturan pamranjangan cabang
+marang rumus iku. Sawisé aturan ditrapaké ing saben
+cabang kang ngemot rumus mawa tandha mau, cèntang
+rumus iku. (Tuladha ing ndhuwur diasilaké nganggo
+algoritma iki.)
+
+!!{formula}s mawa tandha kang awujud
+$\sFmla{\True}{\lforall}$ lan
+$\sFmla{\False}{\lexists}$ ora tau dicèntang, mula
+kudu ditangani kanthi cara mligi. Yèn ana, kita
+kudu njamin yèn aturan $\TRule{\True}{\forall}$
+lan $\TRule{\False}{\lexists}$ pungkasane ditrapaké
+kanggo kabèh tèrma kang cocog. Iki bisa dijamin,
+tuladhané, kanthi ngetrapaké aturan mau ing saben
+tataran marang kabèh rumus kaya mangkono ing saben
+cabang (sawisé ngurusi !!{formula} mawa tandha
+paling dhuwur kang dudu wujud iki). Tèrma~$t$
+kang dienggo yaiku tèrma kapisan~$t$ kang bisa
+dibangun saka !!{constant}s kang wis katon ing
+cabang (utawa $\Obj c_0$ yèn ora ana !!{constant})
+lan !!{function}s kang katon ing !!{formula}s
+wiwitan, lan kang !!{formula} mawa tandha cocog,
+$\sFmla{\True}{!B(t)}$ utawa~$\sFmla{\False}{!B(t)}$,
+durung katon ing cabang. Yèn ora ana tèrma anyar
+kang cocog, aturan iki ora nambah simpul ing tataran
+iku; aturan dicoba manèh nalika ana tèrma anyar.
+
+Yèn panelusuran iki ora ngasilaké tableau ketutup,
+ana cabang kabuka winates kang kabèh !!{formula}s
+nonatomik kang bisa dicèntang wis dicèntang lan
+kabèh instansi tèrma kang cocog kanggo rumus
+kuantor kang ora dicèntang wis ana ing cabang,
+utawa panelusuran ngasilaké
+wit tanpa wates kanthi cabang winates ing saben
+simpul, kang mesthi nduwèni cabang tanpa wates.
+Kaya ing \olref[cpl]{sec}, kita bisa netepaké
+!!a{structure}~$\Struct{M}$ saéngga yèn
+$\sFmla{\True}{!A}$ katon ing cabang, mula
+$\Sat{M}{!A}$, lan yèn $\sFmla{\False}{!A}$
+katon, mula $\Sat/{M}{!A}$. (Jupuk $\Theta =
+\Setabs{!A}{\sFmla{\True}{!A} \text{ ing cabang}}$
+lan $\Xi =
+\Setabs{!A}{\sFmla{\False}{!A} \text{ ing cabang}}$.)
+
+Tableau kang diasilaké déning cara panelusuran iki
+gampang diterjemahaké dadi bukti \Log{G3c} kanthi
+mènèhi label sekuèn marang saben simpul. Yèn
+rumus-rumus wiwitan cocog karo sekuèn
+$\Gamma \Sequent \Delta$, wènèhana label
+$\Gamma \Sequent \Delta$ marang saben rumus wiwitan.
+Yèn cabang dipanjangaké kanthi ngetrapaké aturan
+pamranjangan cabang marang !!{formula} mawa tandha
+$\sFmla{\True}{!A}$, simpul godhongé diwènèhi label
+$!A, \Pi \Sequent \Lambda$; yèn aturan ditrapaké
+marang !!{formula} mawa tandha $\sFmla{\False}{!A}$,
+simpul godhongé diwènèhi label
+$\Pi \Sequent \Lambda, !A$. Ing papan kang tableau
+ngetrapaké aturan \TRule{\True}{\star}, trapna
+aturan \LeftR{\star} marang sekuèn (kanthi $!A$
+minangka rumus utama); ing papan kang ngetrapaké
+aturan \TRule{\False}{\star}, trapna aturan
+\RightR{\star}. Premis aturan iku sekuèn-sekuèn
+kang dadi label simpul cocog kang ditambahaké ing
+tableau. Nalika tableau ketutup amarga ngemot
+$\sFmla{\True}{!A}$ lan $\sFmla{\False}{!A}$,
+label simpul godhong pungkasan awujud sekuèn
+$!A, \Pi \Sequent \Lambda, !A$. Sawetara simpul
+urut-urutan ing tableau bisa diwènèhi sekuèn kang
+padha; busak duplikaté. Tuladhané, tableau ing
+ndhuwur diterjemahaké dadi !!{proof} iki:
+\[\small
+\Axiom$!A \fCenter !A, !B$
+\RightLabel{\RightR{\lor}}
+\UnaryInf$!A \fCenter !A \lor !B$
+\Axiom$!A \fCenter !A, !C$
+\RightLabel{\RightR{\lor}}
+\UnaryInf$!A \fCenter !A \lor !C$
+\RightLabel{\RightR{\land}}
+\BinaryInf$!A \fCenter (!A \lor !B) \land (!A \lor !C)$
+\Axiom$!B, !C \fCenter !A, !B$
+\RightLabel{\RightR{\lor}}
+\UnaryInf$!B, !C \fCenter !A \lor !B$
+\RightLabel{\LeftR{\land}}
+\UnaryInf$!B \land !C \fCenter !A \lor !B$
+\Axiom$!B, !C \fCenter !A, !C$
+\RightLabel{\RightR{\lor}}
+\UnaryInf$!B, !C \fCenter !A \lor !C$
+\RightLabel{\LeftR{\land}}
+\UnaryInf$!B \land !C \fCenter !A \lor !C$
+\RightLabel{\RightR{\land}}
+\BinaryInf$!B \land !C \fCenter (!A \lor !B) \land
+(!A \lor !C)$
+\RightLabel{\LeftR{\lor}}
+\BinaryInf$!A \lor (!B \land !C) \fCenter (!A \lor !B) \land
+(!A \lor !C)$
+\DisplayProof
+\]
+
+\end{document}

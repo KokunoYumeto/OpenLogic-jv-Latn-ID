@@ -1,0 +1,67 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0679",
+  "source_path": "content/proof-theory/proof-search/completeness.tex",
+  "source_sha256": "4ae649a8588a1ae4f82c22b142fa67690bfd8615cada1499b02d1d62db87a665",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-634",
+      "source_line": 17,
+      "location": "opening countermodel condition for the succedent",
+      "finding": "The formula metavariable is missing in the quantification over Delta, although the following satisfaction condition contains A.",
+      "proposed_resolution": "Write A in the quantified succedent formula."
+    },
+    {
+      "id": "OLPL-635",
+      "source_line": 31,
+      "location": "failure-branch successor claim",
+      "finding": "The statement that a failed premise exists for every n is too broad for a finite failure branch ending at an aborted atomic sequent.",
+      "proposed_resolution": "Apply the successor-premise claim only to stages that have a successor."
+    },
+    {
+      "id": "OLPL-636",
+      "source_line": 34,
+      "location": "constant set associated with a failure-branch sequent",
+      "finding": "The right side is written Delta_n instead of the Lambda_n used for the same branch throughout the definition.",
+      "proposed_resolution": "Use Lambda_n in the associated sequent."
+    },
+    {
+      "id": "OLPL-637",
+      "source_line": 38,
+      "location": "nonterminating search paragraph",
+      "finding": "The conditional begins with a duplicated If.",
+      "proposed_resolution": "Remove the duplicated conditional word."
+    },
+    {
+      "id": "OLPL-638",
+      "source_line": 61,
+      "location": "interpretation of an m-place function",
+      "finding": "The right-hand term ends in t_n although the function is m-place and its arguments are t_1 through t_m.",
+      "proposed_resolution": "Use t_m as the final argument of the interpreted function term."
+    },
+    {
+      "id": "OLPL-639",
+      "source_line": 64,
+      "location": "interpretation of an m-place predicate",
+      "finding": "The tuple has m entries, but the domain power and predicate membership clause use n instead of m.",
+      "proposed_resolution": "Use m consistently for the domain power and predicate arguments."
+    },
+    {
+      "id": "OLPL-643",
+      "source_line": 108,
+      "location": "minimum-index argument in the truth lemma",
+      "finding": "The proof says the minimum index of the whole successor sequent rises, but older atomic formulas persist with their original lower indices. The algorithm selects the least-indexed non-atomic formula, so the induction argument must refer to that restricted minimum.",
+      "proposed_resolution": "Qualify each minimum-index claim in the paragraph as the minimum among non-atomic formulas."
+    },
+    {
+      "id": "OLPL-644",
+      "source_line": 122,
+      "location": "truth-lemma references to generated premise indices",
+      "finding": "The displayed conjunction and existential premise descriptions repeat the search algorithm's former k and k+1 indices, despite k being the maximum existing index and newly generated formulas requiring fresh indices above it.",
+      "proposed_resolution": "Use k+1 and k+2 for two new formulas in one premise and k+1 for a single new formula, matching the corrected search algorithm."
+    }
+  ],
+  "translation_treatment": "The target translates the entire completeness section, applies six initial notation and scope repairs through work/olp0679_source_view.py, and adds two post-seal fairness repairs through work/olp0679_source_view_v167.py. Frozen English bytes remain unchanged.",
+  "no_source_mutation": true
+}

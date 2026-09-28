@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0406",
+  "source_path": "content/many-valued-logic/sequent-calculus/propositional-rules.tex",
+  "source_sha256": "7ec37019c2bc225b2cd247dbee140a3ba8e39b319c8e5c49e5b635dc669659e7",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-327",
+      "source_line": 1,
+      "location": "propositional-rules source part metadata comment",
+      "finding": "The source comment says first-order-logic, although the path and mvl file ID place this section in many-valued-logic.",
+      "proposed_resolution": "Correct the target part comment to many-valued-logic; leave frozen source and formal proof-rule displays unchanged."
+    }
+  ],
+  "translation_treatment": "Translated the explanatory prose, headings and derivation caption; preserved every proof-rule display and corrected only the stale part comment in metadata.",
+  "no_source_mutation": true
+}

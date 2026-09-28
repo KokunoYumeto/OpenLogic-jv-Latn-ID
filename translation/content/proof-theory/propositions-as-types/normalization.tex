@@ -1,0 +1,272 @@
+% part: intuitionistic-logic
+% chapter: propositions-as-types
+% section: normalization
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{pty}{nor}
+
+\olsection{Normalisasi}
+
+Ing bagean iki kita mbuktekake yen, kanthi sawijining urutan reduksi,
+saben dedhuksi bisa direduksi dadi dedhuksi normal, sing diarani
+\emph{sipat normalisasi}. Kita bakal nggunakake korespondhensi
+proposisi minangka tipe: kita nuduhake yen saben terma bukti sing tipene bener bisa
+direduksi dadi wujud normal; banjur normalisasi tumrap
+!!{derivation}s dedhuksi alami bisa dipikolehi.
+
+Sepisanan kita netepake sawetara fungsi kanggo ngukur kerumitan terma.
+\emph{Dawa}~$\len{!A}$ sawijining !!a{formula}s ditetepake kanthi
+\begin{align*}
+  \len{p} &= 0\\
+  \len{\lfalse} &= 0\\
+  \len{!A \land !B} &= \len{!A} + \len{!B} + 1\\
+  \len{!A \lor !B} &= \len{!A} + \len{!B} + 1 \\
+  \len{!A \lif !B} &= \len{!A} + \len{!B} + 1.
+\end{align*}
+Kerumitan redex~$M$ diukur kanthi \emph{rangking
+  cut}~$\cutrank{M}$:
+\begin{align*}
+  \cutrank{(\lambd[\typeof{x}{!A}][\typeof{N}{!B}])Q} &=
+  \len{!A} + \len{!B} + 1 \\
+  \cutrank{\ande{i}{\andi{\typeof{M}{!A}}{\typeof{N}{!B}}}} &=
+  \len{!A} + \len{!B} + 1 \\
+  \cutrank{\ore{\ori{i}{!A_{i}}{\typeof{M}{!A_i}}}
+    {\typeof{x_1}{!A_1}}{\typeof{N_1}{!C}}
+    {\typeof{x_2}{!A_2}}{\typeof{N_2}{!C}}} &=
+  \len{!A_1} + \len{!A_2} + 1
+\end{align*}
+Kerumitan terma bukti diukur kanthi redex sing paling ruwet ing terma
+kasebut, lan regane $0$ yen terma iku normal:
+\[
+  \maxrank{M} = \max (\{0\} \cup \{\cutrank{N} | N \text{ iku subterma saka } M \text{
+    lan minangka redex}\})
+\]
+
+\begin{lem}\ollabel{lem:subst}
+  Yen $\Subst{M}{\typeof{N}{!A}}{\typeof{x}{!A}}$ iku redex lan $M
+  \not\ident x$, salah siji kasus ing ngisor iki dumadi:
+  \begin{enumerate}
+  \item $M$ dhewe iku redex, utawa
+  \item $M$ awujud $\ande{i}{x}$, lan $N$ awujud
+    $\andi{P_1}{P_2}$
+  \item $M$ awujud $\ore{x}{x_1}{P_1}{x_2}{P_2}$, lan $N$
+    awujud $\ori{i}{}{Q}$
+  \item $M$ awujud $x Q$, lan $N$ awujud
+    $\lambd[x][P]$
+  \end{enumerate}
+  Ing kasus kapisan, $\cutrank{\Subst{M}{N}{x}} = \cutrank{M}$; ing
+  kasus liyane, $\cutrank{\Subst{M}{N}{x}} = \len{!A}$.
+\end{lem}
+\begin{proof}
+  Bukti kanthi induksi marang~$M$.
+  \begin{enumerate}
+  \item Yen $M$ mung variabel $y$ lan $y \not\ident x$,
+    $\Subst{y}{N}{x}$ iku $y$, mula dudu redex.
+  \item Yen $M$ awujud $\andi{N_1}{N_2}$, utawa $\lambd[x][N]$, utawa
+    $\ori{i}{!A}{N}$, $\Subst{M}{\typeof{N}{!A}}{\typeof{x}{!A}}$ uga
+    nduweni wujud kasebut, mula dudu redex.
+  \item Yen $M$ awujud $\ande{i}{P}$, kita nimbang rong kasus.
+    \begin{enumerate}
+      \item Yen $P$ awujud $\andi{P_1}{P_2}$, $M \ident
+        \ande{i}{\andi{P_1}{P_2}}$ iku redex, lan cetha yen
+        \[
+        \Subst{M}{N}{x} \ident
+        \ande{i}{\andi{\Subst{P_1}{N}{x}}{\Subst{P_2}{N}{x}}}
+        \]
+        uga redex. Rangking cut kalorone padha.
+      \item Yen $P$ mung variabel, variabel iku kudu $x$ supaya asil
+        substitusi dadi redex, lan $N$ kudu awujud
+        $\andi{P_1}{P_2}$. Saiki gatekna
+        \[
+        \Subst{M}{N}{x} \ident \Subst{\ande{i}{x}}{\andi{P_1}{P_2}}{x},
+        \]
+        sing padha karo $\ande{i}{\andi{P_1}{P_2}}$. Rangking cute padha karo
+        dawa tipe variabel sing diganti, yaiku $\len{!A}$.
+    \end{enumerate}
+  \end{enumerate}
+  Kasus $\ore{N}{x_1}{N_1}{x_2}{N_2}$ lan $P Q$ padha carane.
+\end{proof}
+
+\begin{lem}
+  Yen $M$ dikontraksi dadi $M'$, lan $\cutrank{M} > \cutrank{N}$ kanggo
+  saben subterma redex sejati $N$ saka $M$, mula $\cutrank{M} >
+  \maxrank{M'}$.
+\end{lem}
+
+\begin{proof}
+  Bukti kanthi pamisahan kasus.
+  \begin{enumerate}
+  \item Yen $M$ awujud $\ande{i}{\andi{M_1}{M_2}}$, $M'$ iku
+    $M_i$; amarga saben subterma saka $M_i$ uga subterma sejati
+    saka $M$, pratelan kasebut bener.
+  \item Yen $M$ awujud
+    $(\lambd[\typeof{x}{!A}][N])\typeof{Q}{!A}$, $M'$ iku
+    $\Subst{N}{\typeof{Q}{!A}}{\typeof{x}{!A}}$. Gatekna redex ing
+    $M'$. Bisa uga ana redex sing cocog ing $N$ kanthi rangking cut
+    sing padha, sing luwih cilik tinimbang $\cutrank{M}$ miturut asumsi,
+    utawa redex iku disalin saka argumen $Q$ lan rangking cute luwih cilik
+    miturut asumsi sing padha, utawa rangking cute padha karo $\len{!A}$,
+    sing miturut dhefinisi luwih cilik tinimbang
+    $\cutrank{(\lambd[x^{!A}][N])Q}$.
+  \item Yen $M$ awujud
+    \[
+    \ore{\ori{i}{}{\typeof{N}{!A_i}}}
+        {\typeof{x_1}{!A_1}}{\typeof{N_1}{!C}}
+        {\typeof{x_2}{!A_2}}{\typeof{N_2}{!C}},
+    \]
+    mula $M' \ident \Subst{N_i}{N}{\typeof{x_i}{!A_i}}$. Gatekna
+    redex ing~$M'$. Bisa uga ana redex sing cocog ing $N_i$ kanthi
+    rangking cut sing padha, sing luwih cilik tinimbang $\cutrank{M}$ miturut
+    asumsi; utawa redex iku disalin saka terma injeksi $N$ lan rangking cute
+    luwih cilik miturut asumsi sing padha; utawa rangking cute padha karo
+    $\len{!A_i}$, sing miturut dhefinisi luwih cilik tinimbang
+    $\cutrank{\ore{\ori{i}{}{\typeof{N}{!A_i}}}
+      {\typeof{x_1}{!A_1}}{\typeof{N_1}{!C}}
+      {\typeof{x_2}{!A_2}}{\typeof{N_2}{!C}}}$.
+  \end{enumerate}
+\end{proof}
+
+\begin{thm}
+  Saben terma bukti sing tipene bener direduksi dadi wujud normal; saben !!{derivation}s
+  direduksi dadi !!{derivation}s normal.
+\end{thm}
+
+\begin{proof}
+  Pratelan kapindho minangka akibat saka pratelan kapisan. Kita mbuktekake
+  pratelan kapisan kanthi induksi lengkap marang $m=\maxrank{M}$,
+  kanthi $M$ minangka terma bukti sing tipene bener.
+  \begin{enumerate}
+
+  \item Yen $m=0$, $M$ wis normal.
+  \item
+    Yen ora, kita nggunakake induksi marang~$n$, yaiku cacah redex
+    ing $M$ sing rangking cute padha karo~$m$.
+    \begin{enumerate}
+    \item Yen $n=1$, pilih redex $N$ kanthi $m = \cutrank{N} >
+      \cutrank{P}$ kanggo saben subterma sejati $P$ sing uga redex.
+      Redex kaya mangkono mesthi ana, amarga saben terma mung nduweni
+      subterma sing cacahe winates.
+
+      Upamane $N'$ nuduhake asil kontraksi $N$. Miturut lema,
+      $\maxrank{N'} < \maxrank{N}$, mula kita bisa ndeleng yen $n$,
+      yaiku cacah redex kanthi $\cutrank=m$, suda. Mula $m$ suda
+      (paling ora $1$), lan kita bisa nggunakake hipotesis induksi
+      kanggo~$m$.
+    \item Kanggo langkah induksi, upamane $n>1$. Prosese padha,
+      nanging $n$ mung suda dadi cacah positif, mula $m$ ora owah.
+      Kita banjur nggunakake hipotesis induksi kanggo~$n$.
+    \end{enumerate}
+\end{enumerate}
+\footnote{Cathetan editor (OLPL-655): Argumen sumber iki mung matesi redex
+ing subterma sing dikontraksi. Argumen iki durung ngendhaleni redex anyar
+sing kawiyak ing konteks saubenge, mligine nalika eliminasi disjungsi
+nduweni tipe asil sembarang. Rangking sing ditetepake uga durung menehi
+ukuran tumrap konversi permutasi. Mula argumen sing dicithak iki isih
+durung jangkep kanggo kalkulus sakabehe; cathetan iki ora menehi bukti
+sing isih kurang kasebut.}
+\end{proof}
+
+Kasunyatan yen terma $\lambd$ mawa tipe bisa dinormalisasi tegese saben
+terma kasebut \emph{nduweni wujud normal}. Yen kita nganggep reduksi
+$\beta$ tumrap terma $\lambd$ menyang wujud normale minangka nindakake
+komputasi, lan wujud normal minangka nilai komputasi kasebut, iki tegese
+saben komputasi ing kalkulus $\lambd$ mawa tipe pungkasane mandheg lan
+ngasilake nilai. Kajaba iku, panglestaren tipe njamin yen nilai kasebut
+nduweni tipe sing bener. Contone, yen $N$ nduweni tipe $!A \lif !B$
+(yaiku fungsi sing dikarepake bisa nampa argumen mawa tipe~$!A$ lan
+ngasilake nilai mawa tipe~$!B$), lan kita ngetrapake fungsi iku marang
+terma~$M$ mawa tipe~$!A$ (input), $(NM)$ direduksi dadi terma $N'$
+(output), lan output iku mesthi mawa tipe~$!B$.
+
+Sejatine, terma ing kalkulus $\lambd$ mawa tipe ora mung direduksi dadi
+wujud normal kanthi siji cara ngetrapake reduksi $\beta$ marang
+subterma, nanging \emph{saben} cara ngetrapake reduksi $\beta$ marang
+subterma pungkasane mandheg ing wujud normal. Sipat iki diarani
+\emph{normalisasi kuwat}. Tegese, ora mung ana cara kanggo njamin yen
+komputasi pungkasane mandheg lan ngasilake nilai, nanging \emph{saben}
+cara nindakake komputasi pungkasane ngasilake nilai.
+
+Kepiye kita ngerti yen cara-cara nindakake komputasi sing beda ngasilake
+nilai sing \emph{padha}? Nganti saiki kita mung ngerti (saka panglestaren
+tipe) yen kabeh nilai sing diasilake nduweni tipe sing padha. Kalkulus
+$\lambd$ mawa tipe nduweni sipat wigati liyane: kalkulus iki
+\emph{konfluen}, utawa \emph{Church-Rosser}. Yen $N \red N_1$ lan $N \red
+N_2$, ana terma~$N'$ kanthi $N_1 \red N'$ lan $N_2 \red N'$. Elinga
+yen $N \red N'$ tegese $N'$ diasilake saka nol utawa luwih langkah
+reduksi $\redone$. Yen $N_1$ awujud normal, siji-sijine terma $N'$
+kanthi $N_1 \red N'$ iku $N_1$ dhewe (kanthi nol langkah reduksi
+$\redone$). Mula yen $N_1$ lan $N_2$ kalorone awujud normal, kita
+nduweni $N_1 = N' = N_2$. Kanthi tembung liya, amarga $\red$
+nduweni normalisasi kuwat, saben cara ngreduksi terma pungkasane
+ngasilake wujud normal. Amarga $\red$ nduweni sipat Church-Rosser,
+saben rong wujud normal padha. Mula komputasi ing kalkulus $\lambd$
+mawa tipe tansah mandheg, lan nilai (wujud normal) sing diasilake
+padha, sanajan cara komputasine beda.
+
+Mbuktekake yen sawijining relasi konfluen lumrahe angel. Nanging,
+kita bisa netepake syarat sing luwih ringkih ing ngisor iki:
+
+\begin{prop}[Sipat Church-Rosser Ringkih]
+Yen $N \redone N_1$ lan $N \redone N_2$, ana terma $N'$ kanthi
+$N_1 \red N'$ lan $N_2 \red N'$.
+\end{prop}
+
+\begin{proof}
+  Rong terma $N_1$ lan $N_2$ diasilake saka $N$ kanthi ngganti redex
+  $M_1$ utawa $M_2$ nganggo asil kontraksine. Redex $M_1$ lan $M_2$
+  iku subterma saka $N$, mula ora bisa tumpang tindih mung saweneh.
+  Tegese, salah siji iku subterma saka sijine, utawa kalorone dumunung
+  ing papan beda sing ora tumpang tindih ing $N$. Gatekna kasus kapindho:
+  $N$ awujud $N(M_1,M_2)$. Ngganti $M_1$ nganggo asil kontraksine $M_1'$
+  ngasilake $N_1$, yaiku $N(M_1',M_2)$, lan ngganti $M_2$ nganggo
+  asil kontraksine $M_2'$ ngasilake $N_2$, yaiku $N(M_1,M_2')$.
+  Kalorone direduksi dadi $N(M_1',M_2')$. Kanggo kasus liyane,
+  upamane $M_2$ iku subterma saka~$M_1$ (kasus kosokbaline simetris),
+  lan bedakna kasus miturut jinis redex $M_1$. Contone, yen $M_1 \ident
+  \proj{1}{\pair{O_1}{O_2}}$, terma iki direduksi dadi $O_1$. Yen $M_2$
+  iku subterma saka $O_1$, ngowahi $M_2$ ngasilake $O_1'$. Mula
+  ngowahi $M_1$ dhisik, banjur $M_2$, ngasilake $O_1'$. Nanging,
+  ngowahi $M_2$ dhisik ngasilake $\proj{1}{\pair{O_1'}{O_2}}$, lan
+  iki uga direduksi dadi~$O_1'$. Yen redex njero dumunung ing komponen
+  sing dibuwang, loro urutan kasebut tetep ngasilake komponen kapisan.
+  \footnote{Cathetan editor (OLPL-657): Iki minangka sketsa kasus kontraksi
+  utama. Kasus njero liyane lan sesambungane karo konversi permutasi
+  durung dibuktekake ing kene.}
+\end{proof}
+
+\begin{lem}[Lema Newman]
+Yen $\red$ nduweni normalisasi kuwat lan sipat Church-Rosser ringkih,
+relasi iki konfluen.
+\end{lem}
+
+\begin{proof}
+  Amarga $\red$ nduweni normalisasi kuwat, saben urutan reduksi
+  ngasilake wujud normal. Wujud normal tunggal yen lan mung yen $\red$
+  konfluen. Mula upamane sawijining terma $N$ nduweni rong wujud normal
+  sing beda, yaiku $N'$ lan $N''$, minangka asil saka urutan reduksi
+  \begin{align*}
+  N & = N_0' \redone N_1' \redone N_2' \redone \dots \redone N_k' = N' \text{ lan}\\
+  N & = N_0'' \redone N_1'' \redone N_2'' \redone \dots \redone N_l'' = N''
+  \end{align*}
+  (Urutan reduksi kudu nduweni dawa $>0$, amarga yen ora, $N$ wis
+  awujud normal.)
+
+  Yen $N_1' = N_1''$, terma iki nduweni rong wujud normal sing beda
+  ($N'$ lan $N''$). Yen $N_1' \neq N_1''$, miturut sipat Church-Rosser
+  ringkih ana asil reduksi bebarengan. Kanthi normalisasi kuwat, asil
+  kasebut nduweni wujud normal $N'''$, mula $N_1' \red N'''$ lan
+  $N_1'' \red N'''$. Amarga $N' \neq N''$, salah siji saka
+  $N''' \neq N'$ utawa $N''' \neq N''$ bener. Mula salah siji saka
+  $N_1'$ utawa $N_1''$ nduweni rong wujud normal sing beda. Kita wis
+  nuduhake yen nalika $N$ nduweni rong wujud normal sing beda, ana
+  $N_1$ kanthi $N \redone N_1$ lan $N_1$ nduweni rong wujud normal
+  sing beda. Kita bisa nerusake lan ngasilake $N \redone N_1
+  \redone N_2 \redone \dots$, nanging iki mokal amarga $\redone$
+  nduweni normalisasi kuwat.
+\end{proof}
+
+
+\end{document}

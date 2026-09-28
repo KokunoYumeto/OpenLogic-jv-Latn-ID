@@ -1,0 +1,25 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0599",
+  "source_path": "content/set-theory/choice/banach.tex",
+  "source_sha256": "51f2d8e142b4bccd21bc0aa06330ecff874360d32005b34c415955eaaa24943a",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-526",
+      "source_line": 20,
+      "location": "statement of the Banach--Tarski paradox",
+      "finding": "The theorem says any ball without a dimension qualifier. The rigid-motion finite equidecomposition described is a three-dimensional result; unqualified ball can include lower-dimensional balls where this assertion is false.",
+      "proposed_resolution": "Specify a three-dimensional ball in the theorem statement."
+    },
+    {
+      "id": "OLPL-527",
+      "source_line": 49,
+      "location": "tangent map illustrating equinumerosity of the unit interval and the real line",
+      "finding": "The displayed tangent expression has one unmatched closing parenthesis, preventing a well-formed mathematical expression.",
+      "proposed_resolution": "Remove the final extra closing parenthesis in tan(pi(r-1/2))."
+    }
+  ],
+  "translation_treatment": "The target qualifies the ball as three-dimensional and balances the tangent expression, while localizing the Wagon theorem and page citation locators. The frozen source remains unchanged.",
+  "no_source_mutation": true
+}

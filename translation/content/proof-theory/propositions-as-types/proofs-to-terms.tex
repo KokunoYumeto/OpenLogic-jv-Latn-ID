@@ -1,0 +1,96 @@
+% part: intuitionistic-logic
+% chapter: propositions-as-types
+% section: proofs-to-terms
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{pty}{pt}
+
+\olsection{Ngowahi \usetoken{P}{derivation} dadi Terma Bukti}
+
+Proses ngowahi !!{proof}s dedhuksi alami dadi terma bukti, yaiku
+nerjemahake !!{proof}s ing~\Log{N2i} dadi !!{proof}s ing~\Log{tN2i},
+prasaja banget. Kita mung nulis terma bukti ing sisih kiwa saben
+!!{formula} ing sisih tengen sekuen ing !!{derivation}, supaya
+ngasilake sekuen awujud $\Gamma \Sequent M : !A$. Kita banjur
+ngarani $M$ \emph{nyekseni}~$!A$ ing konteks~$\Gamma$. Terma bukti
+sing kudu ditulis ditemtokake sakabehe dening aturan \Log{tN2i}.
+
+\begin{prop}
+Saben !!{proof}~$\delta$ saka $\Gamma \Sequent !A$ ing \Log{N2i}
+cocog karo !!a{proof}~$\delta'$ saka $\Gamma \Sequent N : !A$ ing
+\Log{tN2i}. Terma bukti $N$ ditemtokake kanthi tunggal dening~$\delta$.
+\end{prop}
+
+\begin{proof}
+Kita nggunakake induksi marang dhuwure~$\delta$. Yen $\delta$ iku
+aksioma $x:!A \Sequent !A$, $\delta'$ iku aksioma~$x:!A \Sequent
+x:!A$. Yen $\delta$ dipungkasi kanthi aturan inferensi, hipotesis
+induksi menehi terma bukti kanggo saben premis, lan !!{proof}s
+\Log{tN2i} saka sekuen sing ngandhut terma bukti kasebut lan cocog
+karo saben premis. Kita ngetrapake aturan \Log{tN2i} sing cocog;
+terma buktine ditemtokake dening aturan inferensi \Log{tN2i} kasebut.
+\end{proof}
+
+\begin{ex}
+  Gatekna !!{proof} prasaja banget ing \Log{N1i} saka $(!A \land !B)
+  \lif (!B \land !A)$:
+  \[
+  \AxiomC{$\Discharge{!A\land !B}{x}$}
+  \RightLabel{\Elim\land[2]}
+  \UnaryInfC{$!B$}
+  \AxiomC{$\Discharge{!A\land !B}{x}$}
+  \RightLabel{\Elim\land[1]}
+  \UnaryInfC{$!A$}
+  \RightLabel{\Intro\land}
+  \BinaryInfC{$!B \land !A$}
+  \DischargeRule{\Intro\lif}{x}
+  \UnaryInfC{$(!A \land !B) \lif (!B \land !A)$}
+  \DisplayProof
+  \]
+  Ing \Log{N2i}, wujude kaya mangkene:
+  \[
+  \Axiom$x : !A\land !B \fCenter !A\land !B$
+  \RightLabel{\Elim\land[2]}
+  \UnaryInf$x : !A\land !B \fCenter !B$
+  \Axiom$x : !A\land !B \fCenter !A\land !B$
+  \RightLabel{\Elim\land[1]}
+  \UnaryInf$x : !A\land !B \fCenter !A$
+  \RightLabel{\Intro\land}
+  \BinaryInf$x : !A\land !B \fCenter !B \land !A$
+  \RightLabel{\Intro\lif}
+  \UnaryInf$\fCenter (!A \land !B) \lif (!B \land !A)$
+  \DisplayProof
+  \]
+  Kita masang terma bukti saka ndhuwur menyang ngisor. Terma bukti
+  kanggo aksioma padha karo variabel ing konteks, yaiku~$x$.
+  Terma bukti sing digandhengake karo $\Elim\land[i]$ banjur
+  ditemtokake minangka $\proj{2}{x}$ lan~$\proj{1}{x}$.
+  Nalika ngetrapake \Intro{\land}, kita nggabungake rong terma
+  bukti kasebut: $\pair{\proj{2}{x}}{\proj{1}{x}}$.
+  Pungkasan, aturan \Intro{\lif} ngetrapake abstraksi $\lambd$,
+  ngiket~$x$ lan nyathet yen $x$ menehi label asumsi~$!A \land
+  !B$: $\lambd[\typeof{x}{!A \land
+  !B}][\pair{\proj{2}{x}}{\proj{1}{x}}]$.
+  Mula !!{proof} ing \Log{tN2i} iku:
+  \[
+  \Axiom$x : !A\land !B \fCenter x: !A\land !B$
+  \RightLabel{\Elim\land[2]}
+  \UnaryInf$x : !A\land !B \fCenter \proj{2}{x} : !B$
+  \Axiom$x : !A\land !B \fCenter x: !A\land !B$
+  \RightLabel{\Elim\land[1]}
+  \UnaryInf$x : !A\land !B \fCenter \proj{1}{x} : !A$
+  \RightLabel{\Intro\land}
+  \BinaryInf$x : !A\land !B \fCenter \pair{\proj{2}{x}}{\proj{1}{x}} : 
+    !B \land !A$
+  \RightLabel{\Intro\lif}
+  \UnaryInf$\fCenter \lambd[\typeof{x}{!A \land
+  !B}][\pair{\proj{2}{x}}{\proj{1}{x}}] : (!A \land !B) \lif (!B \land !A)$
+  \DisplayProof
+  \]
+\end{ex}
+
+
+\end{document}

@@ -1,0 +1,13 @@
+{
+  "schema":"jv-frozen-source-issues/1",
+  "unit_id":"OLP-0528",
+  "source_path":"content/counterfactuals/minimal-change-semantics/contraposition.tex",
+  "source_sha256":"bf3efbdee2ef7ffb044355a15128b37a9632a2c2a3fe3337d38c42644ab9a2bc",
+  "status":"translation_corrected_pending_reader_build",
+  "issues":[
+    {"id":"OLPL-473","source_line":29,"location":"sphere-model declaration, source lines 29–31","finding":"The model is named M_1 although every satisfaction clause in the example refers to M; the displayed O is a single sphere family, not the function from worlds to sphere families required by the model definition.","proposed_resolution":"Name the model M consistently and identify the displayed family as O_w, leaving other centers' sphere families implicit and freely completable."},
+    {"id":"OLPL-474","source_line":59,"location":"failure of the contraposed counterfactual, source lines 59–61","finding":"Failure of the material counterpart in one admitting sphere does not by itself refute the counterfactual; under the stated valuation this outer sphere is the only not-q-admitting sphere. The text stops without explicitly concluding falsity of the counterfactual.","proposed_resolution":"State the sphere's uniqueness and the resulting falsity of the contraposed counterfactual at the center."}
+  ],
+  "translation_treatment":"Translated the Kratzer example and its model, corrected model/family notation, and completed the counterfactual falsity argument. All valuations, worlds, diagram geometry and other formulas are unchanged.",
+  "no_source_mutation":true
+}

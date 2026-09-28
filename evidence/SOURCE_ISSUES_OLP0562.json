@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0562",
+  "source_path": "content/set-theory/spine/foundation.tex",
+  "source_sha256": "18d5d41a2becf13c6d5221d1c3504ea8300d96d85572c8848ed22bfc7ea321a5",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-489",
+      "source_line": 82,
+      "location": "Foundation lemma proof, displayed definition of beta",
+      "finding": "The supremum ranges over least stages for members of lowercase b, but no lowercase b is bound in this proof. The selected member of D is uppercase B, whose members are discussed immediately before and after the display.",
+      "proposed_resolution": "Replace the free lowercase b by uppercase B in the displayed existential binder."
+    }
+  ],
+  "translation_treatment": "The target's displayed definition of beta uses uppercase B. The named axioms in the two final mathematical implications are localized as Landhesan and Regularitas without changing the implications. All other formula structure is retained, and frozen source bytes remain unchanged.",
+  "no_source_mutation": true
+}

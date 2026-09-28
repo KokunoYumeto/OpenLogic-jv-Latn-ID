@@ -1,0 +1,32 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0572",
+  "source_path": "content/set-theory/replacement/refproofs.tex",
+  "source_sha256": "c034323f1402beaf3d329ac7d7a0be6e192bd86ea81ff3efffe29229aca9cf43",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-493",
+      "source_line": 34,
+      "location": "Reflection lemma proof, witness-stage implication display",
+      "finding": "The displayed implication ends with an extra closing parenthesis after phi_i(a_i,x), leaving the mathematical expression unbalanced.",
+      "proposed_resolution": "Remove exactly the stray final parenthesis; keep the implication and witness bound unchanged."
+    },
+    {
+      "id": "OLPL-494",
+      "source_line": 42,
+      "location": "Reflection lemma proof, definition of S in the align environment",
+      "finding": "The union binds m below omega but takes the fixed term S_n. The subsequent argument needs the union of the sequence's terms, so the indexed term must be S_m.",
+      "proposed_resolution": "Change only the term under the union from S_n to S_m."
+    },
+    {
+      "id": "OLPL-495",
+      "source_line": 147,
+      "location": "Replacement theorem statement, set-builder expression",
+      "finding": "The existential condition in Setabs lacks its closing parenthesis, although the final proof gives the intended correctly balanced set-builder formula.",
+      "proposed_resolution": "Close the existential condition after phi(x,y) in the theorem statement."
+    }
+  ],
+  "translation_treatment": "The target removes the extra parenthesis, corrects the bound sequence index, and closes the theorem's set-builder condition. It also localizes two Levy theorem-number citation locators. Other formulas and the proof structure remain aligned; frozen source bytes are unchanged.",
+  "no_source_mutation": true
+}

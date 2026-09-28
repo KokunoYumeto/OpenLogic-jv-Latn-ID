@@ -1,0 +1,25 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0615",
+  "source_path": "content/methods/induction/induction-on-N.tex",
+  "source_sha256": "30a7fe3bf67517b5744d826eeb819782d399cf28a018313f5a7eff12843fe222",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-542",
+      "source_line": 31,
+      "location": "iteration of the general induction step to establish P(2)",
+      "finding": "The quantified step uses the variable k, but the next substitution says to take 1 for n. The immediately preceding instantiation correctly takes 0 for k.",
+      "proposed_resolution": "Say to take 1 for k when deriving P(1) implies P(2)."
+    },
+    {
+      "id": "OLPL-543",
+      "source_line": 65,
+      "location": "base-case discussion in the dice induction proof",
+      "finding": "The theorem covers natural n and the preceding paragraph explicitly treats zero dice, but the displayed proof lists only P(1) as its base. Without invoking the earlier zero-dice case, the proof as written explicitly covers only positive n.",
+      "proposed_resolution": "Before proving P(1), explicitly refer to the zero-dice case already established above; retain the induction argument from P(1) for positive n."
+    }
+  ],
+  "translation_treatment": "The Javanese target instantiates the step at k=1 and explicitly notes the already established zero-dice case before its P(1) proof. The frozen English source remains unchanged.",
+  "no_source_mutation": true
+}

@@ -3,8 +3,9 @@
 Terjemahan OpenLogic nganggo basa Jawa aksara Latin (jv-Latn-ID).
 Ragam utama yaiku ngoko tinulis kanggo andharan akademik.
 
-**Isih digarap: sumber saiki ngemot 671 saka 722 berkas kang wis diterjemahake.**
-Urutan sumber wis tekan pungkasan bab deduksi natural ing perangan teori bukti.
+**Isih digarap: sumber saiki ngemot 697 saka 722 berkas kang wis diterjemahake.**
+Urutan sumber wis tekan pungkasan bab proposisi minangka tipe ing perangan teori bukti,
+kalebu normalisasi lan panelusuran bukti.
 Wacan PDF kang wis diterbitake tetep ngemot 24 unit sumber lan dibangun kanggo rilis
 [v0.2.0](https://github.com/KokunoYumeto/OpenLogic-jv-Latn-ID/releases/tag/v0.2.0),
 kanthi TeX kumulatif langsung, ZIP sumber editable jangkep, lan EPUB3
@@ -13,54 +14,54 @@ potret sumber saiki luwih amba tinimbang wacan PDF lan EPUB mau.
 Edhisi jangkep tetep dadi ancas, kalebu kabeh isi ing njaba
 alur wacan baku.
 
-This is an independent, machine-authored Javanese translation of
+Iki terjemahan basa Jawa mandhiri sing ditulis kanthi mesin saka
 [Open Logic Project](https://openlogicproject.org/), frozen at
-revision 9620cc73f9c8e0ad003c514a5d3748f29611c4c0.
-It is part of the [OpenLogic translations catalogue](https://github.com/KokunoYumeto/OpenLogic-translations).
-No endorsement by the upstream project or independent native review is claimed.
+revisi 9620cc73f9c8e0ad003c514a5d3748f29611c4c0.
+Terjemahan iki kalebu [katalog terjemahan OpenLogic](https://github.com/KokunoYumeto/OpenLogic-translations).
+Ora ana pratelan yen proyek asal nyengkuyung edhisi iki utawa yen wis ana panlitian mandhiri dening ahli basa Jawa.
 
-- upstream/ preserves the verified English bytes and component licenses.
-- translation/ contains only source units actually translated, preserving original paths.
-- edition/ contains the reader driver, localized captions/tokens, and explicit errata.
-- editorial/ records the academic register, source clarifications, and an
-  expert-facing terminology and difficult-decision review log, full index,
-  and priority review view.
-- translation-decisions/ retains the first-118-unit decision index and exact
-  source-target occurrence table. SOURCE_CONTINUATION.md lists subsequent
-  decision-level choices without claiming exact occurrence locations.
-- evidence/ includes source hashes, structural QA, same-author review,
-  bounded source corrections, and the public canon-provenance scope statement.
+- upstream/ ngreksa bita basa Inggris sing wis diverifikasi lan lisensi saben komponen.
+- translation/ ngemot unit sumber sing pancen wis diterjemahake, kanthi dalan berkas asal tetep.
+- edition/ ngemot pangatur wacan, caption lan token basa Jawa, sarta errata sing cetha.
+- editorial/ nyathet ragam akademik, panjelasan sumber, lan cathetan tetembungan
+  sarta pilihan angel kanggo ditliti, kanthi indeks jangkep lan dhaptar prioritas.
+- translation-decisions/ ngreksa indeks pilihan kanggo 118 unit kapisan lan tabel
+  kedadeyan sumber-terjemahan sing pas. SOURCE_CONTINUATION.md nyathet pilihan
+  sabanjure ing tingkat keputusan, tanpa ngaku lokasi saben tembung kanthi pas.
+- evidence/ ngemot hash sumber, QA struktural, panlitian dening panulis sing padha,
+  koreksi sumber winates, lan pratelan lingkup asal-usul bukti kanon.
 
-Source and translation coverage are separate from reader coverage.
-The ordinary upstream graph reaches 642 units; the full edition must
-account coherently for all 722 without duplicating alternative wrappers.
-That complete reader is not yet built.
+Lingkup sumber lan terjemahan dibedakake saka lingkup wacan.
+Alur sumber baku nyakup 642 unit; edhisi jangkep kudu nyakup kabeh 722
+kanthi runtut tanpa mbaleni pangatur alternatif. Wacan jangkep kasebut durung dibangun.
 
-All 671 translated files have source-aligned paragraph records,
-formula/token/link/label checks, and same-author semantic comparisons with
-selected reverse paraphrases. The current independent canon revalidation and
-repair has reached OLP-0058; later translated files remain source work whose
-canon revalidation is still in progress. Earlier uniform passage assignments
-for 444 decisions and 4,143 translated segments have been withdrawn from the
-public evidence pending specific revalidation; see
+Kabeh 697 berkas terjemahan nduweni cathetan paragraf sing sejajar karo sumber,
+pamriksan formula, token, pranala lan label, sarta pamandingan makna dening
+panulis sing padha kanthi parafrasa balik pilihan. Validasi maneh kanon lan
+koreksine wis tekan OLP-0058; validasi maneh kanon kanggo berkas sabanjure
+isih lumaku. Pasangan petikan seragam sing sadurunge dipasang kanthi otomatis
+kanggo 444 keputusan lan 4.143 segmen terjemahan wis dicopot saka bukti umum
+nganti validasi khusus ditindakake; delengen
 [`evidence/PROVENANCE_SCOPE.json`](evidence/PROVENANCE_SCOPE.json).
-Applied source-audit corrections and retracted findings have separate
-machine-readable evidence records, including exact source and target hashes.
-These checks do not replace native review, which has not been claimed.
-Provisional technical borrowing is disclosed rather than presented as
-attested Javanese mathematical usage.
+Koreksi sumber sing ditrapake lan temuan sing ditarik maneh nduweni cathetan
+bukti dhewe sing bisa diwaca mesin, kalebu hash sumber lan terjemahan sing pas.
+Cathetan koreksi historis bisa ngreksa hash sadurunge amendemen; cathetan
+amendemen nemtokake versi saiki. Loro kekurangan bukti sumber, OLPL-655 lan
+OLPL-657, diterangake kanthi cetha ing cathetan editor basa Jawa. Bukti
+normalisasi lan konfluensi kalkulus sakabehe durung dinyatakake wis jangkep.
+Pamriksan iki ora ngganti panlitian ahli basa Jawa sing mandhiri, sing durung
+diklaim. Tetembungan teknis serapan sing provisional diterangake minangka
+pilihan sementara, tanpa ngaku wis kabukten lumrah ing matematika basa Jawa.
 
-Native scholarly prose, the official Javanese Latin spelling guide,
-and official dictionary entries serve distinct evidence roles.
-The English original controls mathematical meaning.
-Indonesian dictionary explanations are not a semantic translation pivot.
-Canon PDFs and full dictionary responses are privately retained research
-originals and are not included for public redistribution.
+Prosa ilmiah basa Jawa, pedoman resmi ejaan Latin Jawa, lan entri kamus resmi
+nduweni peran bukti sing beda. Sumber Inggris nemtokake makna matematika.
+Panjelasan kamus basa Indonesia ora dadi poros makna terjemahan.
+PDF kanon lan wangsulan kamus jangkep disimpen minangka sumber panliten
+pribadi lan ora kalebu berkas sing disebarake umum.
 
-The source and this adaptation use CC BY 4.0, subject to original
-component exceptions. Preserve upstream/LICENSE.md and other notices.
-Release v0.2.0 contains the bounded reader as PDF and EPUB, a direct cumulative
-TeX file, the complete tagged editable-source tree, machine-readable QA
-evidence, and checksums. It states the 118-source, 26-supporting-source, and
-24-reader-unit scopes separately. The earlier v0.1.2 PDF and source assets
-remain sealed and available in their original release.
+Sumber lan adaptasi iki nggunakake CC BY 4.0, kanthi pangecualian komponen asal.
+Reksanen upstream/LICENSE.md lan kabar lisensi liyane. Rilis v0.2.0 ngemot
+wacan winates awujud PDF lan EPUB, TeX kumulatif langsung, sumber editable
+jangkep miturut tag, bukti QA sing bisa diwaca mesin, lan checksum.
+Rilis kasebut mbedakake lingkup 118 unit sumber, 26 sumber panyengkuyung,
+lan 24 unit wacan. PDF lan sumber v0.1.2 tetep disegel lan kasedhiya ing rilis asale.

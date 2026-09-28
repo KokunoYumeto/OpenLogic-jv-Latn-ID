@@ -1,0 +1,25 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0454",
+  "source_path": "content/normal-modal-logic/filtrations/examples-of-filtrations.tex",
+  "source_sha256": "8a20bbfcc005772b9166800bca81278de3b28c4b47f51d01dc07f69777c8a484",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-379",
+      "source_line": 103,
+      "location": "even-number valuation in the positive-integer model",
+      "finding": "The source fixes W as the positive integers but defines V(p) using 2n for n in Nat. The book defines Nat as including 0, so this valuation contains 0 outside W.",
+      "proposed_resolution": "Index the even-number valuation by positive integers in the target, yielding exactly the positive even worlds shown in the diagram."
+    },
+    {
+      "id": "OLPL-380",
+      "source_line": 174,
+      "location": "p and q valuations in the binary-tree exercise",
+      "finding": "The tree's W consists only of binary strings starting with 0, while the two valuation set builders also generate strings starting with 1. A model valuation must assign subsets of W; the diagram labels only worlds in W.",
+      "proposed_resolution": "Intersect each target valuation set builder with W, preserving the depicted truth assignments on the tree."
+    }
+  ],
+  "translation_treatment": "Translated finest and coarsest filtration proofs, the positive-integer quotient example, figure caption and binary-tree exercise with two bounded valuation-domain repairs.",
+  "no_source_mutation": true
+}

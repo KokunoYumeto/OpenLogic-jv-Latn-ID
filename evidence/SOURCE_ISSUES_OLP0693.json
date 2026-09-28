@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0693",
+  "source_path": "content/proof-theory/propositions-as-types/rules-tN3.tex",
+  "source_sha256": "948804549f0622cc616399743fa6fc6680b1b061763d292d7c5e2106fd583656",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-669",
+      "source_line": 70,
+      "location": "tN3i table label",
+      "finding": "The tN3i type-assignment table duplicates the tN2i table's tN2ip label, so cross-references cannot identify the intended table uniquely.",
+      "proposed_resolution": "Use tab:tN3ip for the N3i table and update the type-definition reference when OLP-0697 is translated."
+    }
+  ],
+  "translation_treatment": "Localized the table and assigned the unique tN3ip label; no inference is changed. The paired OLP-0697 type-definition reference remains a concrete pending correction.",
+  "no_source_mutation": true
+}

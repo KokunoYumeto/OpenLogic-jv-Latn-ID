@@ -1,0 +1,25 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0675",
+  "source_path": "content/proof-theory/normalization/permutations.tex",
+  "source_sha256": "7e7ecafb16908e749788e898e1651da247561dfe79c9a2539bf79e73099348ed",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-620",
+      "source_line": 22,
+      "location": "formula identifying the cut in the first permutation example",
+      "finding": "The prose says A is B or C, but both branch conclusions, the elimination premise, and the explanation below display B and C. The cut formula in this example is the conjunction B and C.",
+      "proposed_resolution": "Use B and C in the introductory formula, preserving the displayed proof trees."
+    },
+    {
+      "id": "OLPL-621",
+      "source_line": 350,
+      "location": "existential-elimination exercise and later eigenvariable explanation",
+      "finding": "Two references use the bare exists command inside the elimination-rule label, while the chapter, both displayed proof trees, and the same paragraph use the lexists rule token. The rule identifier is inconsistent.",
+      "proposed_resolution": "Use the lexists elimination-rule token in both references, leaving the rule diagrams unchanged."
+    }
+  ],
+  "translation_treatment": "The target repairs one formula connective and two rule-label tokens while translating the permutation-conversion prose and caption. The frozen English bytes remain unchanged.",
+  "no_source_mutation": true
+}

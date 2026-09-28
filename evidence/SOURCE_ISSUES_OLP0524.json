@@ -1,0 +1,14 @@
+{
+  "schema":"jv-frozen-source-issues/1",
+  "unit_id":"OLP-0524",
+  "source_path":"content/counterfactuals/minimal-change-semantics/sphere-models.tex",
+  "source_sha256":"8086fe23ef5707ea236526c24de19199690ae25ff49ac7e523d7ca79173fee37",
+  "status":"translation_corrected_pending_reader_build",
+  "issues":[
+    {"id":"OLPL-466","source_line":36,"location":"innermost-sphere intuition, source lines 36–39","finding":"The formal definition permits an empty sphere, so the assertion that the center singleton is the innermost sphere needs a nonempty qualification. Its strict closeness comparison must also concern other worlds, rather than the center itself present in larger spheres.","proposed_resolution":"Call the center singleton the innermost nonempty sphere and compare the center with other worlds; retain every formal model hypothesis."},
+    {"id":"OLPL-467","source_line":102,"location":"inheritance of non-vacuous satisfaction by contained spheres, source lines 102–103","finding":"An inner sphere need not contain an antecedent world, so the entire non-vacuous clause does not hold at every contained sphere. The final innermost-sphere conclusion also assumes existence despite the next paragraph denying that assumption.","proposed_resolution":"Restrict inheritance to contained antecedent-admitting spheres and condition the innermost antecedent-admitting conclusion on existence."},
+    {"id":"OLPL-468","source_line":107,"location":"infinite descending antecedent-admitting chain, source lines 107–112","finding":"An infinite descending chain alone does not imply that no smallest antecedent-admitting sphere exists; such a sphere could lie below the whole chain.","proposed_resolution":"Specify the example's intersection as only the center world, where the antecedent is false. Any putative smallest antecedent-admitting sphere would lie in that intersection, yielding the required contradiction."}
+  ],
+  "translation_treatment":"Translated model definitions, satisfaction clauses, diagram explanation and limit discussion; corrected only the audited prose scopes and example condition. Formal formulas, model hypotheses, legacy file identity and all diagram geometry remain unchanged.",
+  "no_source_mutation":true
+}

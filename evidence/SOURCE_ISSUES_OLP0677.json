@@ -1,0 +1,25 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0677",
+  "source_path": "content/proof-theory/normalization/segments.tex",
+  "source_sha256": "083d9544d8870daa58030ddf36209e1447fa7bcbbb2a1cc08f3d1eaf8c3cc9db",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-625",
+      "source_line": 78,
+      "location": "third clause of the segment definition",
+      "finding": "The successor occurrence is written A_(i+1) without the formula-metavariable marker used on A_i, A_1 and A_n in the same definition.",
+      "proposed_resolution": "Restore the formula-metavariable marker on the successor occurrence."
+    },
+    {
+      "id": "OLPL-626",
+      "source_line": 96,
+      "location": "explanation of length-one cut segments",
+      "finding": "The paragraph says a length-one cut must end at an introduction-rule conclusion, omitting the FalseInt alternative stated explicitly in the immediately preceding cut definition.",
+      "proposed_resolution": "Name both an introduction-rule conclusion and a FalseInt conclusion as the length-one cases."
+    }
+  ],
+  "translation_treatment": "The target translates the segment and cut definitions, restores the formula marker, and states the already-defined FalseInt alternative without changing the frozen English bytes.",
+  "no_source_mutation": true
+}

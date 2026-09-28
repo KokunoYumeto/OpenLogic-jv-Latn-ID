@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0647",
+  "source_path": "content/incompleteness/representability-in-q/c-representable.tex",
+  "source_sha256": "95d02f4982ae3ce8a01422b06515b4a37aeaedfac49e2f883dcad351def072d0",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-570",
+      "source_line": 90,
+      "location": "composition representation formula",
+      "finding": "The two optional matrix arguments of the displayed existential quantifiers close immediately after the last g-conjunct, leaving the A_f conjunct outside their scope and making the conjunction malformed.",
+      "proposed_resolution": "Move the two closing brackets after the A_f conjunct, so all intermediate witnesses and the final function formula lie in the quantified conjunction."
+    }
+  ],
+  "translation_treatment": "The Javanese target corrects only the placement of two closing brackets in the composition display. A bounded comparison view records the exact math change; frozen English bytes remain unchanged.",
+  "no_source_mutation": true
+}

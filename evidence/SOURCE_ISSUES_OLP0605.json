@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0605",
+  "source_path": "content/methods/proofs/using-definitions.tex",
+  "source_sha256": "0496b9489f10eb402e2eb91b503c7b522c2e73349e1481ceb9781f2e191a3bce",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-531",
+      "source_line": 9,
+      "location": "file identity for Using Definitions in the Methods/Proofs chapter",
+      "finding": "The source uses olfileid{mod}{prf}{def}, while the parent part uses mth and all nine other Proofs section files use mth/prf. The mismatched part key risks an inconsistent reader identity and reference namespace.",
+      "proposed_resolution": "Use olfileid{mth}{prf}{def} for this section, retaining its chapter and section keys."
+    }
+  ],
+  "translation_treatment": "The target uses the established mth/prf identity and translates the definitions lesson, preserving math and term-token order. The frozen source remains unchanged.",
+  "no_source_mutation": true
+}

@@ -1,0 +1,164 @@
+% part: intuitionistic-logic
+% chapter: propositions-as-types
+% section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{pty}{int}
+
+\olsection{Pambuka}
+
+Kalkulus lambda iku modhèl komputasi kang prasaja.
+Kalkulus iki ngolah tèrma kang dibangun saka variabel.
+Yèn $N$ lan $M$ iku tèrma, $(NM)$ uga tèrma
+(``$N$ ditrapaké marang~$M$''). Yèn $N$ iku tèrma,
+$\lambd[x][N]$ uga tèrma. Yèn $N$ ngemot variabel~$x$,
+kedadéan~$x$ kang cocog ing $\lambd[x][N]$ kaiket
+déning operator $\lambd[x]$, mula ora bébas manèh.
+Tèrma awujud $(\lambd[x][N]M)$ diarani ngalami
+kontraksi~$\beta$ dadi $\Subst{N}{M}{x}$
+(asil ngganti saben kedadéan bébas $x$ ing~$N$
+nganggo $M$, kanthi ngganti jeneng variabel kaiket
+luwih dhisik yèn perlu supaya variabel bébas ora
+kaiket). Tèrma $N$ ngalami konversi~$\beta$
+dadi~$N'$ yèn $N'$ diasilaké saka $N$ kanthi
+kontraksi~$\beta$ ing sub-tèrma; kita nulis
+$N \redone N'$. Komputasi ing kalkulus~$\lambd$
+iku rerangkéyan $N \redone N_1 \redone N_2 \redone \dots$.
+Yèn rerangkéyan iki pungkasané ing tèrma $N_k$
+kang ora nduwèni sub-tèrma kang bisa ngalami
+kontraksi~$\beta$, tèrma mau diarani \emph{normal}
+utawa wujud normal saka~$N$. Komputasi ing
+kalkulus~$\lambd$ bisa dianggep rerangkéyan kaya
+mangkono. Komputasi mandheg yèn ngasilaké wujud
+normal, lan wujud normal iku asil komputasiné.
+Modhèl prasaja iki jebul lengkap miturut Turing:
+saben fungsi rékursif parsial bisa dikomputasi
+nganggo tèrma ing kalkulus~$\lambd$.
+
+Haskell Curry lan William Howard kanthi mandhiri
+nemokaké pepadhan kang raket antarané deduksi alamiah
+lan kalkulus~$\lambd$. Miturut intuisi, tèrma
+$\lambd[x][N]$ iku fungsi: $x$ argumèné, lan $N$
+nuduhaké cara ngétung bijiné yèn diwènèhi~$x$.
+Tèrma $(\lambd[x][N]M)$ banjur ngetrapaké fungsi
+$\lambd[x][N]$ marang argumèn~$M$; kontraksi~$\beta$
+nuduhaké cara évaluasi: ganti $x$ ing $N$ nganggo~$M$
+(banjur terus évaluasi tèrma asilé). Saiki anggep
+iki fungsi kanthi domain lan jangkauan tetep.
+Yèn domain $\lambd[x][N]$ iku $A$ lan jangkauané~$B$,
+variabel~$x$ mung nampa argumèn saka~$A$, lan $N$
+ngasilaké biji saka~$B$. Mula $(\lambd[x][N]M)$ mung
+nduwèni teges yèn $\lambd[x][N]$ fungsi $A \to B$
+lan $M \in A$. Kanthi nambah katerangan iki ing
+kalkulus~$\lambd$, kita olèh kalkulus \emph{mawa tipe}
+$\lambd$. Ing kalkulus~$\lambd$ mawa tipe,
+ora saben èksprèsi $(\lambd[x][N]M)$ diidinaké,
+nanging mung yèn ``tipe'' saka $\lambd[x][N]$
+lan $M$ cocog: $\lambd[x][N]$ nduwèni tipe
+$A \lif B$, lan $M$ nduwèni tipe~$A$.
+Tipe $\lambd[x][N]$ iku $A \to B$ mung yèn
+tipe $x$ iku $A$ lan tipe $N$ iku~$B$.
+Umumé, ora saben èksprèsi $(M_1M_2)$ diidinaké.
+Mung tèrma $(M_1M_2)$ kang $M_1$ nduwèni tipe
+$A \to B$ lan $M_2$ nduwèni tipe~$A$ kang
+diidinaké; ing kéné $(M_1M_2)$ nduwèni tipe~$B$.
+
+Aturan tipe iki cetha cocog karo !!{derivation}s
+ing deduksi alamiah: tipe diwakili !!{formula}s,
+lan !!{derivation}s cocog karo tèrma~$\lambd$.
+Tuladhané, !!a{derivation} tumrap $!A \lif !B$
+cocog karo tèrma $\lambd[\typeof{x}{!A}][N]$,
+kang nduwèni tipe fungsi $!A \lif !B$.
+Aturan inferènsi deduksi alamiah cocog karo aturan
+tipe ing kalkulus lambda mawa tipe, kayata:
+\begin{prooftree}
+  \AxiomC{$\Discharge{!A}{x}$}
+  \DeduceC{$!B$}
+  \DischargeRule{\Intro\lif}{x}
+  \UnaryInfC{$!A \lif !B$}
+  \DisplayProof\bottomAlignProof
+  \quad\text{cocog karo}\quad
+  \Axiom$x: !A \fCenter N: !B$
+  \UnaryInf$ \fCenter \lambd[\typeof{x}{!A}][N] : !A \lif !B$
+\end{prooftree}
+Aturan ing sisih tengen ateges yèn $x$ nduwèni
+tipe~$!A$ lan $N$ nduwèni tipe~$!B$,
+mula $\lambd[\typeof{x}{!A}][N]$ nduwèni
+tipe~$!A \lif !B$.
+
+Aturan $\Elim\lif$ cocog karo aturan tipe kanggo
+tèrma aplikasi, yaiku:
+\[
+  \AxiomC{$!A \lif !B$}
+  \AxiomC{$!A$}
+  \RightLabel{\Elim\lif}
+  \BinaryInfC{$!B$}
+  \DisplayProof
+  \quad\text{cocog karo}\quad
+  \Axiom$\fCenter M_1: !A \lif !B$
+  \Axiom$\fCenter M_2: !A$
+  \BinaryInf$ \fCenter (M_1M_2) : !B$
+  \DisplayProof
+\]
+Yèn aturan \Intro\lif{} langsung disusul aturan
+\Elim\lif{}, !!{derivation} bisa diprasajakaké:
+\begin{gather*}
+  \AxiomC{$\Discharge{!A}{x}$}
+  \DeduceC{$!B$}
+  \DischargeRule{\Intro\lif}{x}
+  \UnaryInfC{$!A \lif !B$}
+  \AxiomC{}
+  \DeduceC{$!A$}
+  \RightLabel{\Elim\lif}
+  \BinaryInfC{$!B$}
+  \DisplayProof
+  \quad\redone\quad
+  \AxiomC{}
+  \DeduceC{$!A$}
+  \DeduceC{$!B$}
+  \DisplayProof
+\end{gather*}
+kang cocog karo kontraksi~$\beta$ ing tèrma lambda:
+\[
+(\lambd[\typeof{x}{!A}][N]M) \quad\redone\quad
+\Subst{N}{M}{x}.
+\]
+
+Pepadhan kang padha uga lumaku antarané aturan
+$\land$ lan tipe ``prodhuk'', sarta antarané
+aturan $\lor$ lan tipe ``gunggung''.
+
+Sesambungan antarané tèrma ing kalkulus lambda
+mawa tipe prasaja lan !!{derivation}s deduksi
+alamiah iki diarani sesambungan ``Curry--Howard'',
+``bukti minangka program'', utawa ``proposisi
+minangka tipe''. Saliyané !!{formula}s (proposisi)
+kang cocog karo tipe lan bukti kang cocog karo
+tèrma, sesambungan-sesambungan iki bisa diringkes
+mangkéné:
+\begin{center}
+  \begin{tabular}{c c c}
+    logika & program \\
+    \hline
+    proposisi/!!{formula} & tipe \\
+    bukti & tèrma \\
+    asumsi & variabel \\
+    asumsi kang dibusak & variabel kaiket \\
+    asumsi kang isih mbukak & variabel bébas \\
+    $!A \lif !B$ & tipe fungsi \\
+    $!A \land !B$ & tipe prodhuk \\
+    $!A \lor !B$ & tipe gunggung \\
+    $\lfalse$ & tipe kosong \\
+    \hline
+  \end{tabular}
+\end{center}
+
+Sesambungan Curry--Howard dadi salah siji dhasar
+asistèn bukti otomatis lan pamriksa tipe program,
+amarga mriksa bukti kang nyeksèni proposisi
+(kaya ing ndhuwur) padha karo mriksa apa program
+(tèrma) nduwèni tipe kang diumumaké.
+\end{document}

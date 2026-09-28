@@ -1,0 +1,39 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0443",
+  "source_path": "content/normal-modal-logic/completeness/complete-consistent-sets.tex",
+  "source_sha256": "b5bab763b10f3972e8a8c53ae3036677c0b462f86df13137ccb6181d9ce632e1",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-365",
+      "source_line": 84,
+      "location": "proof of the negation membership equivalence",
+      "finding": "The second direction says that if A is not in Gamma then A is in Gamma by completeness. Completeness instead puts not-A in Gamma; the source conclusion directly contradicts its premise.",
+      "proposed_resolution": "Conclude not-A is in Gamma when A is absent, retaining the first direction and the completeness hypothesis."
+    },
+    {
+      "id": "OLPL-366",
+      "source_line": 102,
+      "location": "proof of the disjunction membership equivalence",
+      "finding": "The non-exercise branch derives that membership of A-or-B forces membership of one disjunct, but stops without proving the converse required by the displayed iff.",
+      "proposed_resolution": "Add the converse: from A or B in Gamma, deductive closure and the tautological introductions A implies A-or-B and B implies A-or-B put the disjunction in Gamma."
+    },
+    {
+      "id": "OLPL-367",
+      "source_line": 122,
+      "location": "converse of the biconditional membership proof",
+      "finding": "The converse assumes A-implies-B is absent from Gamma, but the next sentence infers the negation of A-iff-B from completeness. That inference requires absence of the biconditional itself.",
+      "proposed_resolution": "Begin the converse with A-iff-B not in Gamma, matching the proposition and the next completeness step."
+    },
+    {
+      "id": "OLPL-368",
+      "source_line": 128,
+      "location": "exclusion of both formulas being absent in the biconditional proof",
+      "finding": "From not-(A-iff-B), the source proves that A and B cannot both belong to Gamma, but then also asserts they cannot both be absent without an argument. Completeness supplies both negations if they are absent, and a tautological implication yields A-iff-B, contradicting its negation.",
+      "proposed_resolution": "Add the missing both-absent case using completeness, the tautology not-A implies (not-B implies (A iff B)), and deductive closure before the final exclusion."
+    }
+  ],
+  "translation_treatment": "Translated the definition and propositional membership laws, corrected negation and biconditional formulas, and completed the disjunction and biconditional proof directions.",
+  "no_source_mutation": true
+}

@@ -1,0 +1,32 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0676",
+  "source_path": "content/proof-theory/normalization/reductions.tex",
+  "source_sha256": "2785b7f36d7c9deb83028e80f89d1143f05e56ea6ca37ffeda8a66af4f4ce731",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-622",
+      "source_line": 66,
+      "location": "unchanged-cut comparison after the first implication reduction",
+      "finding": "The sentence lists delta_4 among subproofs whose cuts remain unchanged, but the immediately preceding derivation defines only delta_1, delta_2 and delta_3. The delta_4 reference is a copy-through from a different example.",
+      "proposed_resolution": "Restrict this unchanged-cut list to delta_2 and delta_3, along with cuts outside delta_1."
+    },
+    {
+      "id": "OLPL-623",
+      "source_line": 97,
+      "location": "assumption occurrence in the second reduction caveat",
+      "finding": "The occurrence is written B^x without the formula-metavariable marker, unlike the preceding and surrounding references to the same labelled assumption !B^x.",
+      "proposed_resolution": "Restore the formula-metavariable marker on the labelled assumption."
+    },
+    {
+      "id": "OLPL-624",
+      "source_line": 304,
+      "location": "false-introduction followed by disjunction-elimination example",
+      "finding": "The two different discharged branch assumptions B and C carry the same label x, contrary to the section's regular-label convention; the disjunction-elimination inference also lacks the discharge annotation used by the rule elsewhere.",
+      "proposed_resolution": "Give the C branch a distinct label y and display the disjunction-elimination discharge rule with x and y, leaving every formula and the reduction conclusion unchanged."
+    }
+  ],
+  "translation_treatment": "The target translates the reduction-conversion prose and text inside diagrams, corrects three bounded source defects, and retains the frozen English bytes and all other proof trees.",
+  "no_source_mutation": true
+}

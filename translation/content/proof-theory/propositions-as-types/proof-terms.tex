@@ -1,0 +1,132 @@
+% part: intuitionistic-logic
+% chapter: propositions-as-types
+% section: proof-terms
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{pty}{ter}
+
+\olsection{Terma Bukti}
+
+Kita menehi label variabel (contone, $!A^x$) marang asumsi ing \Log{N1i}
+minangka label pelepasan. Ing \Log{N2i}, saben sekuen $\Gamma \Sequent !A$
+nduweni dhaftar pasangan variabel--!!{formula} ing konteks~$\Gamma$ ing
+sisih kiwa. Mula, ing \Log{N2i}, saben sekuen ing !!a{proof} ora mung
+ngandhut informasi ngenani apa sing !!{proof} kasebut wis !!{prove}
+nganti titik kasebut (yaiku $!A$), nanging uga asumsi endi sing isih
+mbukak ing saben titik (yaiku $\Gamma$). Kepiye yen kita uga nyakup
+informasi \emph{kepiye} $!A$ !!{prove} ing saben sekuen? Kanggo iki,
+kita bisa netepake sistem \emph{mawa label terma} \Log{tN2i}, kanthi
+sekuen awujud $\Gamma \Sequent N : !A$. $\Gamma$~lan $!A$ padha karo
+sadurunge: himpunan pasangan awujud $x: !B$ lan !!{formula} sing wis
+dituduhake dening sub-!!{proof} sing dipungkasi ing sekuen kasebut
+minangka akibat saka asumsi ing~$\Gamma$. $N$~bakal dadi sawijining
+terma sing ngode !!{proof} sing dipungkasi ing sekuen kasebut.
+
+Terma sing kita pasang ing saben sekuen digawe saka variabel $x$, $y$,
+\dots, kanthi simbol fungsi sing ngode inferensi sing wis ditindakake.
+Kita mbutuhake simbol fungsi dhewe kanggo saben aturan inferensi.
+Simbol fungsi sing cocog karo aturan !!{introduction} diarani
+``konstruktor'', lan sing cocog karo aturan !!{elimination} diarani
+``destruktor''. Saben simbol fungsi nampa argumen sing cacahe padha
+karo cacah premis aturan kasebut. Contone, simbol fungsi kanggo
+\Intro{\land} lan \Elim{\land}[1] bisa awujud $c^\land$ (rong panggonan)
+lan $d^\land_1$ (siji panggonan). Ing \Log{tN2i}, aturan iki dadi
+\[
+\Axiom$\Gamma_1 \fCenter N: !A$
+\Axiom$\Gamma_2 \fCenter M: !B$
+\RightLabel{\Intro{\land}}
+\BinaryInf$\Gamma_1, \Gamma_2 \fCenter c^\land(N, M) : !A \land !B $
+\DisplayProof
+\quad
+\Axiom$\Gamma \fCenter N: !A \land !B$
+\RightLabel{\Elim{\land}[1]}
+\UnaryInf$\Gamma \fCenter d^\land_1(N) : !A$
+\DisplayProof
+\]
+Yen sawijining aturan inferensi ngeculake asumsi, yaiku nduweni premis
+sing nyebut !!{formula} mawa label~$x:!A$ sing ora ana ing konteks
+konklusine, kita uga kudu menehi tandha iki ing terma bukti. Simbol
+fungsi sing digandhengake karo aturan kaya mangkono \emph{ngiket}
+variabel sing cocog. Contone, aturan \Intro{\lif} ngowahi premis
+$x:!A, \Gamma \Sequent !B$ dadi $\Gamma \Sequent !A \lif !B$.
+Konstruktor $c^{\lif}$ nampa siji argumen, nanging uga kudu menehi
+tandha yen variabel $x$ dadi kaiket. Iki carane terma bukti nyatakake
+yen asumsi mawa label~$x$ wis diuculake. Contone, yen terma bukti
+kanggo premis iku~$N$, kita bisa nulis terma bukti kanggo konklusi
+minangka $c^{\lif}([x]N)$, lan aturane minangka
+\[
+\Axiom$x:!A, \Gamma \fCenter N: !B$
+\RightLabel{\Intro{\lif}}
+\UnaryInf$\Gamma \fCenter c^{\lif}([x]N) : !A \lif !B$
+\DisplayProof
+\]
+
+Supaya bisa ngrakit maneh !!a{proof} kanthi jangkep, kita mbutuhake
+informasi tambahan. Yen !!{formula}s premis sawijining aturan ora
+nemtokake !!{formula} konklusine kanthi jangkep, kita kudu nambahake
+informasi kasebut ing terma. Iki dumadi ing \Intro{\lif}, mula kita
+bakal nulis $c^{\lif}([x:!A]N)$. Iki uga dumadi ing \Intro{\lor}
+lan~\FalseInt, mula kita nggunakake simbol fungsi sing ngandhut
+informasi kasebut, contone,
+\[
+\Axiom$\Gamma \fCenter N:!A$
+\RightLabel{\Intro{\lor}[1]}
+\UnaryInf$\Gamma \fCenter c^{\lor{!B}}_1(N):!A \lor !B$
+\DisplayProof
+\quad
+\Axiom$\Gamma \fCenter N:\lfalse$
+\RightLabel{\FalseInt}
+\UnaryInf$\Gamma \fCenter d^\lfalse_{!A}(N):!A$
+\DisplayProof
+\]
+
+Kanthi gagasan iki kita bisa ngrakit sistem dedhuksi alami kanthi gaya
+sekuen, kanthi saben sekuen awujud $\Gamma \Sequent N : !A$, lan
+$N$~minangka \emph{terma bukti}.
+
+Ana sesambungan raket antarane terma bukti kasebut lan terma ing
+\emph{kalkulus lambda mawa tipe}. Kanggo njaga sesambungan iki, kita
+bakal nggunakake simbol sing digunakake ing literatur kalkulus lambda,
+dudu simbol konstruktor lan destruktor umum ing ndhuwur. Contone,
+tinimbang $c^{\lif}([x:!A]N)$ kita nulis $\lambd[\typeof{x}{!A}][N]$;
+tinimbang $d^{\lif}(N,M)$ kita nulis $(NM)$;
+$\pair{N}{M}$ ngganti $c^\land(N,M)$, lan $\proj{i}{N}$ ngganti
+$d^\land_i(N)$.
+
+\begin{defn}
+  Terma bukti diasilake kanthi induktif miturut aturan ing ngisor iki:
+  \begin{enumerate}
+  \item Saben variabel $x$ iku terma bukti (Aksioma).
+  \item Yen $x$ iku variabel, $!A$ iku !!a{formula}, lan $N$ iku terma
+    bukti, $\lambd[\typeof{x}{!A}][N]$ uga terma bukti~(\Intro\lif).
+  \item Yen $N$ lan $M$ iku terma bukti, $(NM)$ uga terma
+    bukti~(\Elim\lif).
+  \item Yen $N$ lan $M$ iku terma bukti, $\pair{N}{M}$ iku terma
+    bukti~(\Intro\land).
+  \item Yen $N$ iku terma bukti, $\proj{i}{N}$ uga terma bukti,
+    kanthi $i$ minangka $1$ utawa~$2$~(\Elim\land[i]).
+  \item Yen $N$ iku terma bukti, lan $!A$ iku formula,
+    $\inj[!A]{i}{N}$ iku terma bukti, kanthi $i$ minangka $1$
+    utawa~$2$~(\Intro\lor[i]).
+  \item Yen $M$, $N_1$, $N_2$ iku terma bukti, lan $x_1$, $x_2$ iku
+    variabel, $\dcase{M}{x_1}{N_1}{x_2}{N_2}$ iku terma
+    bukti~(\Elim\lor).
+  \item Yen $N$ iku terma bukti lan $!A$ iku !!a{formula},
+    $\abort{!A}{N}$ iku terma bukti~(\FalseInt).
+  \end{enumerate}
+\end{defn}
+
+Ora saben terma bukti iku terma bukti saka !!a{proof}. Contone,
+terma $\pair{N}{M}$ ngode bukti sing dipungkasi kanthi inferensi
+\Intro{\land}, mula !!{formula} pungkasane iku konjungsi~$!A \land !B$.
+Iki ora bisa dadi premis utama aturan \Elim{\lif}, mula
+$(\pair{N}{M}P)$ ora bisa dadi terma bukti saka bukti sing bener.
+Mung terma bukti sing manut aturan \Log{tN2ip} sing dadi terma bukti
+\emph{bener}. Aturan kasebut diwenehake ing \olref{tab:tN2ip}.
+
+\subfile{rules-tN2}
+
+\end{document}

@@ -1,0 +1,39 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0451",
+  "source_path": "content/normal-modal-logic/filtrations/introduction.tex",
+  "source_sha256": "faffee0613cc37515af229a202fed584e49ea182600e77c96d722654492eb01a",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-375",
+      "source_line": 31,
+      "location": "count of accessibility relations on n worlds",
+      "finding": "The parenthetical explanation of 2^(n^2) opens before 'specifically' but has no closing parenthesis.",
+      "proposed_resolution": "Close the parenthesis after the displayed count in the target."
+    },
+    {
+      "id": "OLPL-376",
+      "source_line": 76,
+      "location": "finite partition of infinitely many worlds",
+      "finding": "The prose requires each partition class to contain infinitely many worlds, which need not hold. The construction requires only finitely many classes; individual classes may be finite or infinite.",
+      "proposed_resolution": "State that each class may contain infinitely many worlds while the number of classes is finite."
+    },
+    {
+      "id": "OLPL-377",
+      "source_line": 87,
+      "location": "introductory Box induction example",
+      "finding": "The setup says there is no accessibility relation, then equates Box B at w with Box B at some world. The subsequent proof infers B at every world from Box B in the quotient. That inference is sound for a universal accessibility relation, under which Box B at w means B at every world.",
+      "proposed_resolution": "Use a universal accessibility relation and the corresponding all-world Box truth condition in the target example."
+    },
+    {
+      "id": "OLPL-378",
+      "source_line": 97,
+      "location": "atomic valuation induction case",
+      "finding": "The first membership assertion omits the argument p from V-star, although the valuation was defined as V-star(p) and the converse direction uses V-star(p).",
+      "proposed_resolution": "Write V-star(p) in the first membership assertion."
+    }
+  ],
+  "translation_treatment": "Translated the finite-model-property motivation, quotient construction and introductory induction while applying the four bounded punctuation, partition and semantic-example repairs.",
+  "no_source_mutation": true
+}

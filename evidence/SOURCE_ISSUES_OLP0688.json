@@ -1,0 +1,32 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0688",
+  "source_path": "content/proof-theory/propositions-as-types/proof-terms.tex",
+  "source_sha256": "efeb3a9e0573794a31ef1cc56221cfb9f52c166ed73b4408118d0e9a2357aa66",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-661",
+      "source_line": 41,
+      "location": "conjunction constructor example",
+      "finding": "The displayed second premise supplies M, but the conjunction constructor uses undeclared lowercase m.",
+      "proposed_resolution": "Use M as the second constructor argument."
+    },
+    {
+      "id": "OLPL-662",
+      "source_line": 78,
+      "location": "disjunction constructor example",
+      "finding": "The disjunction-introduction conclusion omits the term N supplied by its premise.",
+      "proposed_resolution": "Apply the injection constructor to N."
+    },
+    {
+      "id": "OLPL-663",
+      "source_line": 113,
+      "location": "inductive injection term clause",
+      "finding": "The clause assumes N is a proof term but constructs an injection from unexplained !M, which is also a formula-style placeholder.",
+      "proposed_resolution": "Use the assumed term N as the injection argument."
+    }
+  ],
+  "translation_treatment": "Translate all proof-term prose and inductive clauses; repair the three undeclared or omitted constructor arguments through the bounded comparison view. Retain the raw-versus-correct term distinction.",
+  "no_source_mutation": true
+}

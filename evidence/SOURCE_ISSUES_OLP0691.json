@@ -1,0 +1,46 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0691",
+  "source_path": "content/proof-theory/propositions-as-types/reduction.tex",
+  "source_sha256": "2235ecd6b10d70a165d30bcf4a2251fed13f8f75e896726caf210cbc97406215",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-664",
+      "source_line": 50,
+      "location": "product reduction macro arity",
+      "finding": "The pair macro requires two mandatory arguments but the displayed contraction supplies only one comma-separated argument.",
+      "proposed_resolution": "Give N1 and N2 as separate pair macro arguments."
+    },
+    {
+      "id": "OLPL-665",
+      "source_line": 62,
+      "location": "injection syntax in redex prose",
+      "finding": "The injection macro has one optional type annotation followed by two mandatory arguments; this call instead supplies three mandatory arguments and changes their roles.",
+      "proposed_resolution": "Use the optional annotation form inj[A]{i}{N}."
+    },
+    {
+      "id": "OLPL-666",
+      "source_line": 94,
+      "location": "sum-contraction complementary annotation",
+      "finding": "The typing rules annotate injection with the complementary sum type. The displayed injection into A1-or-A2 instead repeats Ai, the payload's own type.",
+      "proposed_resolution": "Use A_(3-i), for i equal to 1 or 2, as the complementary injection annotation."
+    },
+    {
+      "id": "OLPL-667",
+      "source_line": 98,
+      "location": "substitution explanation and capture avoidance",
+      "finding": "The generic substitution explanation is itself ordered correctly, but reverses the M/Ni roles of the preceding contraction and omits the bound-variable renaming needed for capture avoidance. This is not evidence of a reversed substitution operator.",
+      "proposed_resolution": "Explain the displayed Subst{Ni}{M}{xi} directly and require renaming binders when necessary to avoid capture."
+    },
+    {
+      "id": "OLPL-668",
+      "source_line": 189,
+      "location": "multistep reduction sequence",
+      "finding": "The sequence repeats the same M2 as consecutive one-step reducts, introducing an unintended reflexive step.",
+      "proposed_resolution": "Remove the duplicated M2 one-step occurrence while preserving the explicit zero-step case k=1."
+    }
+  ],
+  "translation_treatment": "Complete direct translation of product, sum and function contractions, permutation example, contextual closure and normality. Correct macro arity, injection syntax/annotation and the reduction chain; clarify capture-avoiding substitution without falsely treating the generic source definition as reversed.",
+  "no_source_mutation": true
+}

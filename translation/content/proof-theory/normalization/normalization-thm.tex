@@ -1,0 +1,60 @@
+% Part: proof-theory
+% Chapter: normalization
+% Section: normalization-thm
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{nor}{thm}
+
+\olsection{Teorema Normalisasi}
+
+!!^a{proof} ana ing wujud \emph{normal} yèn ora nduwèni segmen cut.
+Cetha yèn iki kelakon yèn lan mung yèn ora ana konversi permutasi
+utawa konversi reduksi kang bisa ditrapaké marang bukti mau. Kanggo
+\emph{normalisasi} !!a{proof} tegesé ngowahi bukti mau dadi bukti
+normal kanthi ngetrapaké konversi permutasi lan reduksi nganti ora
+ana cut kang kari. Pratelan yèn iki tansah bisa ditindakaké diarani
+\emph{teorema normalisasi}.
+
+\begin{thm}\ollabel{thm:normalization} Saben \Log{N1i}-!!{proof}
+$\delta$ bisa dinormalisasi, yaiku bisa diowahi dadi
+!!a{proof}~$\delta'$ tanpa cut.
+\end{thm}
+
+\begin{proof}
+  Buktiné nganggo induksi marang pangkat cut lan dawa cut
+  saka~$\delta$. Hipotesis induksi nyatakaké yèn saben !!{proof}
+  kang pangkat cuté luwih cilik, utawa kang pangkat cuté padha
+  nanging dawa cuté luwih cilik, bisa dinormalisasi.
+
+  Yèn dawa cuté~$0$, ora ana cut lan $\delta$ wis normal.
+  Mula anggepen pangkat cut lan dawa cut saka~$\delta$
+  padha-padha~$> 0$. Pilih segmen cut maksimal kang paling
+  dhuwur lan paling tengen. Yèn dawa segmen cut mau $>1$,
+  trapna konversi permutasi. Yèn dawa segmen mau~$1$,
+  trapna konversi reduksi kang cocog. Iki ngasilaké !!{proof}
+  anyar kang pangkat cuté padha nanging dawa cuté luwih cilik,
+  utawa pangkat cuté luwih cilik; mula hipotesis induksi bisa
+  ditrapaké.
+\end{proof}
+
+Siasat ing bukti ndhuwur (tansah ngrampungaké cut maksimal kang
+paling dhuwur lan paling tengen) menehi urutan tartamtu kanggo
+ngetrapaké konversi marang !!a{proof} supaya ngasilaké !!{proof}
+normal. Nanging, nggumunaké yèn urutané pancèn ora dadi prakara.
+Ngetrapaké konversi permutasi lan reduksi miturut urutan apa waé
+pungkasané ngasilaké bukti normal.
+
+Definisi segmen lan cut gampang dirumusaké kanggo \Log{N2i}, lan
+konversi permutasi lan reduksi kanggo \Log{N1i} langsung bisa
+diterjemahaké menyang \Log{N2i}. Mula teorema normalisasi uga
+lumaku kanggo \Log{N2i}.
+
+\begin{thm}\ollabel{thm:normalization-N2i} Saben \Log{N2i}-!!{proof}
+$\delta$ bisa dinormalisasi, yaiku bisa diowahi dadi
+!!a{proof}~$\delta'$ tanpa cut.
+\end{thm}
+
+\end{document}

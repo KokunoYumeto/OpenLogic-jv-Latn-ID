@@ -1,0 +1,32 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0339",
+  "source_path": "content/second-order-logic/sol-and-set-theory/cardinalities.tex",
+  "source_sha256": "2383760cd26cb2fa42f968483e74a90dfd4a1e5de3361d21322508282bf588b6",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-220",
+      "source_line": 21,
+      "location": "Inf(X) displayed formula and its closing delimiters",
+      "finding": "The frozen formula requires a globally injective function and an element of X missing from its image of X, but does not require u[X] to lie in X. A finite proper subset can therefore satisfy it. The frozen display also has a mismatched closing parenthesis/bracket suffix.",
+      "proposed_resolution": "Require X(x) implies X(u(x)) before the global-injection condition and balance the final quantifier/parenthesis delimiters. With the image contained in X, the display expresses Dedekind infinitude of X under the ambient cardinality assumptions."
+    },
+    {
+      "id": "OLPL-221",
+      "source_line": 32,
+      "location": "Count(X) displayed formula",
+      "finding": "The frozen formula requires X(z), excluding the empty enumerable subset. Its universal clause ends X=Y; taking Y as the full domain satisfies that clause's antecedent, forcing X to be the whole domain even when a proper subset is enumerable.",
+      "proposed_resolution": "Add an empty-X disjunct and replace X=Y by X subseteq Y in the minimal-orbit clause. The closure of X then gives the other inclusion for nonempty X."
+    },
+    {
+      "id": "OLPL-222",
+      "source_line": 53,
+      "location": "aleph-one prose characterization and formula",
+      "finding": "The frozen condition says every subset of X is finite or of size aleph-zero while X itself is not of size aleph-zero. Because X is a subset of itself, no uncountable X satisfies this; finite X can satisfy the displayed formula.",
+      "proposed_resolution": "Require X to be nonenumerable and every nonenumerable subset Y of X to be equinumerous with X. This expresses the least uncountable cardinality under the usual choice-based cardinal comparison, with a corrected explanatory sentence."
+    }
+  ],
+  "translation_treatment": "The target applies three bounded formula repairs and corrects the aleph-one prose. work/olp0339_source_view.py gives exact one-span source views for each display or inline formula; QA v10 checks all other math and commands unchanged. The frozen English remains unmodified. Reader compilation, visual readback and the source chapter's broader mathematical review remain pending.",
+  "no_source_mutation": true
+}

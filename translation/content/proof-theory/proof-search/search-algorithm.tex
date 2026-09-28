@@ -1,0 +1,185 @@
+% Part: proof-theory
+% Chapter: proof-search
+% Section: search-algorithm
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{ps}{sal}
+
+\olsection{Algoritma Panelusuran kanggo \Log{G3c}}
+
+Kita njlentrehaké algoritma panelusuran kanggo
+\Log{G3c}. Algoritma iki dudu siji-sijiné kang mungkin,
+lan uga dudu kang paling éfisièn. Nanging algoritma iki
+bener: yèn sekuèn $\Gamma \Sequent \Delta$ nduwèni
+!!a{proof}, pungkasane algoritma mandheg lan nemokaké
+!!a{proof}. Algoritma iki uga bisa dipercaya: yèn
+mandheg tanpa nemokaké !!a{proof}, utawa ora tau
+mandheg, $\Gamma \Sequent \Delta$ pancèn ora valid
+saka wiwitan.
+
+Sipat wigati kang kudu diduwèni algoritma iki yaiku
+jaminan yèn saben !!{formula} ing
+$\Gamma \Sequent \Delta$, utawa ing sekuèn kang
+diasilaké sajroning panelusuran, bakal ``direduksi'':
+dianggep rumus utama ing aturan inferènsi kang
+ditrapaké mundur, lan iki kelakon sakehing kaping kang
+dibutuhaké. Sipat iki diarani \emph{kaadilan}.
+
+Algoritma lumaku tataran demi tataran. Asil saben
+tataran iku wit sekuèn; asil tataran sabanjuré
+diasilaké kanthi ngreduksi !!a{formula} ing saben
+sekuèn paling dhuwur kang durung dadi aksioma.
+
+Ing tataran~$0$, kita miwiti saka
+$\Gamma \Sequent \Delta$. Kanggo njamin kaadilan,
+kita mènèhi indeks angka marang !!{formula}s ing
+$\Gamma$ lan $\Delta$, kanthi !!{formula}s kang béda
+nampa angka kang béda. Tuladhané, kita bisa
+ngétung !!{formula}s saka kiwa menyang tengen.
+Angka mau ditulis minangka superskrip. Yèn kita
+nggoleki !!a{proof} tumrap $!A, !B \Sequent !C$,
+asil tataran~$0$ yaiku
+$!A^1, !B^2 \Sequent !C^3$. Angka~$n$ paling gedhé
+kang katon minangka superskrip ing sekuèn mawa indeks
+iki diarani \emph{indeks maksimal} ($3$ ing tuladha iki).
+
+Yèn sekuèn ngemot kuantor, kita uga kudu ngerti tèrma
+kang digunakaké nalika ngreduksi
+$\lexists[x][!A(x)]$ ing sisih tengen utawa
+$\lforall[x][!A(x)]$ ing sisih kiwa. Kita mung perlu
+tèrma kang dibangun saka !!{constant}s $\Obj c_0$,
+$\Obj c_1$, $\Obj c_2$, \dots, nganggo lambang fungsi
+kang katon ing~$\Gamma$ lan $\Delta$. Kita nganggep
+himpunan kabèh tèrma iki wis dienumerasi kanthi urutan
+tetep, mula bisa nyebut, tuladhané, ``!!{constant}
+kapisan kang ora katon ing $\Gamma \Sequent \Delta$.''
+Saben sekuèn mawa indeks ing wit asil algoritma
+nduwèni himpunan !!{constant}s kang gegandhèngan.
+Himpunan !!{constant}s kanggo sekuèn ing tataran~$0$
+iku kabèh !!{constant}s kang katon ing sekuèn iku
+(yèn ana), utawa $\{\Obj c_0\}$ yèn ora ana
+!!{constant}s.
+
+Anggep ing tataran~$n$ algoritma wis ngasilaké wit
+sekuèn mawa indeks lan himpunan !!{constant}s kang
+gegandhèngan. Ing tataran~$n+1$, tumrap saben
+sekuèn paling dhuwur kita tindakaké langkah iki.
+
+Yèn ana !!a{formula}~$!A$ kang katon ing sisih kiwa
+lan tengen sekuèn, utawa sisih kiwa ngemot~$\lfalse$,
+kita ora nindakaké apa-apa: sekuèn kaya mangkono
+nduwèni !!{proof}s ing~\Log{G3c}, mula sekuèn paling
+dhuwur iki ora perlu diolah manèh.
+
+Yèn ora ana !!{formula} nonatomik ing sekuèn,
+algoritma mandheg tanpa asil. Ora ana bukti tumrap
+$\Gamma \Sequent \Delta$.
+
+Yèn ora mangkono, pilih !!{formula} nonatomik~$!A$
+kang indeksé paling cilik, yaiku~$i$. Dadi, sekuèn
+paling dhuwur iku awujud $!A^i, \Pi \Sequent \Lambda$
+utawa $\Pi \Sequent \Lambda, !A^i$. Anggep $k$
+indeks maksimal sekuèn iku, lan $C$ himpunan
+!!{constant}s kang gegandhèngan karo sekuèn mau.
+
+Kita ``ngreduksi'' $!A^i$, yaiku ngasilaké sekuèn
+paling dhuwur anyar miturut aturan inferènsi kang
+ditetepaké déning !!{main operator} saka~$!A$ lan
+miturut panggonané $!A^i$ ing sisih kiwa utawa tengen.
+
+\begin{enumerate}
+  \item $!A \ident !B \land !C$ lan katon ing sisih
+  kiwa: tambahana siji sekuèn paling dhuwur anyar ing
+  sadhuwuré $(!B \land !C)^i, \Pi \Sequent \Lambda$:
+  \[
+  \Axiom$!B^{k+1}, !C^{k+2}, \Pi \fCenter \Lambda$
+  \RightLabel{\LeftR{\land}}
+  \UnaryInf$(!B \land !C)^i, \Pi \fCenter \Lambda$
+  \DisplayProof
+  \]
+  Himpunan !!{constant}s kang gegandhèngan karo
+  sekuèn anyar iku~$C$.
+  \item $!A \ident !B \land !C$ lan katon ing sisih
+  tengen: tambahana loro sekuèn paling dhuwur anyar ing
+  sadhuwuré $\Pi \Sequent \Lambda, (!B \land !C)^i$:
+  \[
+  \Axiom$\Pi \fCenter \Lambda, !B^{k+1}$
+  \Axiom$\Pi \fCenter \Lambda, !C^{k+1}$
+  \RightLabel{\RightR{\land}}
+  \BinaryInf$\Pi \fCenter \Lambda, (!B \land !C)^i$
+  \DisplayProof
+  \]
+  Himpunan !!{constant}s kang gegandhèngan karo
+  sekuèn anyar iku~$C$.
+
+  \item Kasus $!A \ident \lnot !B$,
+  $!A \ident !B \lor !C$, lan
+  $!A \ident !B \lif !C$ padha carané lan
+  dipasrahaké dadi latihan.
+
+  \item $!A \ident \lexists[x][!B(x)]$ lan katon ing
+  sisih kiwa: tambahana siji sekuèn paling dhuwur anyar
+  ing sadhuwuré
+  $\lexists[x][!B(x)]^i, \Pi \Sequent \Lambda$:
+  \[
+  \Axiom$!B(c)^{k+1}, \Pi \fCenter \Lambda$
+  \RightLabel{\LeftR{\lexists}}
+  \UnaryInf$\lexists[x][!B(x)]^i, \Pi \fCenter \Lambda$
+  \DisplayProof
+  \]
+  Ing kéné $c$ iku !!{constant} kapisan kang ora ana
+  ing~$C$. Himpunan !!{constant}s kanggo sekuèn anyar
+  iku $C \cup \{c\}$.
+  \item $!A \ident \lexists[x][!B(x)]$ lan katon ing
+  sisih tengen: tambahana siji sekuèn paling dhuwur
+  anyar ing sadhuwuré
+  $\Pi \Sequent \Lambda, \lexists[x][!B(x)]^i$:
+  \[
+  \Axiom$\Pi \fCenter \Lambda, \lexists[x][!B(x)]^{k+1}, !B(t)^{k+2}$
+  \RightLabel{\RightR{\lexists}}
+  \UnaryInf$\Pi \fCenter \Lambda, \lexists[x][!B(x)]^i$
+  \DisplayProof
+  \]
+  Ing kéné $t$ tèrma kapisan kang mung ngemot
+  !!{constant}s ing~$C$ lan durung digunakaké kanggo
+  reduksi tengen $\lexists[x][!B(x)]$ ing sangisoré
+  sekuèn iki (utawa $\Obj c_0$ yèn kabèh tèrma kaya
+  mangkono wis digunakaké). Himpunan !!{constant}s
+  kanggo sekuèn anyar iku~$C$.
+  \item Kasus $!A \ident \lforall[x][!B(x)]$
+  padha carané lan dipasrahaké dadi latihan.
+\end{enumerate}
+
+Yèn ing tataran~$n+1$ ora ana sekuèn anyar kang
+ditambahaké ing sadhuwuré sekuèn paling dhuwur
+endi waé, algoritma mandheg kanthi kasil. Ing kéné
+kita wis nemokaké !!a{proof} tumrap
+$\Gamma \Sequent \Delta$ saka wit ing tataran~$n+1$
+kanthi mbusak kabèh indeks. Kabèh sekuèn paling
+dhuwur awujud $!A, \Pi \Sequent \Lambda, !A$ utawa
+$\lfalse, \Pi \Sequent \Lambda$. Kabèh inferènsi
+iku inferènsi \Log{G3c} kang bener. Tumrap
+inferènsi proposisional iki cetha. Gatèkna yèn ing
+saben langkah, himpunan~$C$ saka !!{constant}s kang
+gegandhèngan karo sekuèn ngemot kabèh !!{constant}s
+kang katon ing sekuèn. Mula, ing reduksi kang nganggo
+\LeftR{\lexists} lan \RightR{\lforall}, syarat
+eigenvariabel kapenuhi: eigenvariabel~$c$ minangka
+!!a{constant} kang ora ana ing himpunan~$C$ kanggo
+konklusi, mula $c$ uga ora katon ing konklusi.
+Kita olèh:
+
+\begin{prop}
+Algoritma panelusuran bukti kanggo \Log{G3c} bener:
+yèn mandheg kanthi kasil, sekuèn wiwitan
+$\Gamma \Sequent \Delta$ nduwèni !!a{proof}.
+\end{prop}
+
+
+
+
+
+\end{document}

@@ -1,0 +1,32 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0375",
+  "source_path": "content/lambda-calculus/lambda-definability/arithmetical-functions.tex",
+  "source_sha256": "1c5db87c79c1edc7766be8031d7c6e35498be393367e2651c9b37950d5db7d24",
+  "status": "translation_corrected_pending_inherited_proofs_reference_audit_and_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-285",
+      "source_line": 2,
+      "location": "chapter metadata comment",
+      "finding": "The frozen chapter comment misspells lambda-definability.",
+      "proposed_resolution": "Correct the target comment and bounded comparison view; preserve the frozen source."
+    },
+    {
+      "id": "OLPL-286",
+      "source_line": 120,
+      "location": "alternate multiplication exercise",
+      "finding": "The proposed term lambda-ab. a (Add a) 0 ignores b and computes the square of a, not the product of a and b.",
+      "proposed_resolution": "Use a (Add b) 0 in the target and bounded comparison view, so a iterations each add b and yield the product."
+    },
+    {
+      "id": "OLPL-287",
+      "source_line": 114,
+      "location": "editorial note after eta simplification",
+      "finding": "The note says eta-reduction must first be explained, although the syntax chapter imported earlier already explains it.",
+      "proposed_resolution": "Point to the already translated preceding syntax chapter in target prose without changing the eta simplification equation."
+    }
+  ],
+  "translation_treatment": "The target translates successor, addition, multiplication, exponentiation and exercises, fixes the metadata typo and multiplication exercise, and updates the eta editorial cross-chapter chronology. Frozen source remains unchanged; inherited proof and mixed-ID audits remain open.",
+  "no_source_mutation": true
+}

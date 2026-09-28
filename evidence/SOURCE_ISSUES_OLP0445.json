@@ -1,0 +1,39 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0445",
+  "source_path": "content/normal-modal-logic/completeness/modalities-ccs.tex",
+  "source_sha256": "92b97da95c28f21f5806bcce481e64571dc3a82d5d1c315bcaf1c569c90d00a6",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-369",
+      "source_line": 18,
+      "location": "canonical model valuation in the opening explanation",
+      "finding": "The closing parenthesis after the valuation V^Sigma lies inside the math delimiters, leaving the prose parenthetical unclosed in TeX and displaying an extraneous parenthesis as part of the valuation symbol.",
+      "proposed_resolution": "Move the closing parenthesis outside the inline math expression in the target."
+    },
+    {
+      "id": "OLPL-370",
+      "source_line": 50,
+      "location": "Diamond-based definition of canonical accessibility",
+      "finding": "The explanation gives the Box-based accessibility condition as an iff, but describes the Diamond-based condition only as sufficient with 'whenever'. The later lemma and truth condition use the Diamond inclusion as the defining equivalence.",
+      "proposed_resolution": "State the Diamond-based accessibility condition as if and only if in the target, matching the later equivalence lemma."
+    },
+    {
+      "id": "OLPL-371",
+      "source_line": 95,
+      "location": "proof that derivability lifts under Box",
+      "finding": "The premise list is indexed B1 through Bk, but the nested implication and its Box-lifted copy end with Bn. No n is introduced for this witness list, so the formula indices disagree with the quantified premises.",
+      "proposed_resolution": "Use Bk as the last premise in both nested implications in the target proof."
+    },
+    {
+      "id": "OLPL-372",
+      "source_line": 109,
+      "location": "proof of the inverse-Box derivability lemma",
+      "finding": "The cited Box-lifting lemma yields derivability relative to Sigma, but this proof's intermediate conclusion omits the [Sigma] system index before Box A. The premise and final conclusion both retain it.",
+      "proposed_resolution": "Include [Sigma] on the intermediate derivability symbol in the target proof."
+    }
+  ],
+  "translation_treatment": "Translated both conditional modal branches, four modal set operators, Box lifting, the Box/Diamond accessibility equivalence and the exercise, applying the four bounded notation and relation corrections.",
+  "no_source_mutation": true
+}

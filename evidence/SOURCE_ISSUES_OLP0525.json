@@ -1,0 +1,10 @@
+{
+  "schema":"jv-frozen-source-issues/1",
+  "unit_id":"OLP-0525",
+  "source_path":"content/counterfactuals/minimal-change-semantics/true-false.tex",
+  "source_sha256":"cd1c4ae0d9b97228174e754a0f786211c56f689360a476ba1ec27858f58922e9",
+  "status":"translation_corrected_pending_reader_build",
+  "issues":[{"id":"OLPL-469","source_line":13,"location":"closest-world truth and two falsity cases, source lines 13–14 and 49–51","finding":"The prose describes truth and falsity through closest antecedent worlds without stating the pictured cases' existence assumption, although the preceding definition explicitly permits no innermost admitting sphere.","proposed_resolution":"Qualify the closest-world descriptions as applying to the pictured cases with closest antecedent worlds; retain the general vacuous clause and every formula and diagram."}],
+  "translation_treatment":"Translated all five diagram explanations and captions, qualified the closest-world descriptions and made the negated-consequent counterpart explicit. The formal formulas, legacy identity and all diagram code remain unchanged.",
+  "no_source_mutation":true
+}

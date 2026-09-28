@@ -1,0 +1,39 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0379",
+  "source_path": "content/lambda-calculus/lambda-definability/fixpoints.tex",
+  "source_sha256": "d826387d4284ef13679ef5b91a22bb7551c193c2e8c8356201ceb1df72a46b93",
+  "status": "translation_corrected_pending_inherited_proofs_reference_audit_and_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-294",
+      "source_line": 22,
+      "location": "illustrative multiplication by repeated addition",
+      "finding": "The term a (Add a) 0 ignores the multiplier b and uses bare 0 rather than the displayed Church numeral convention; the prior multiplication exercise uses a (Add b) num{0}.",
+      "proposed_resolution": "Use a (Add b) num{0} in the target example, consistent with the earlier corrected multiplication exercise."
+    },
+    {
+      "id": "OLPL-295",
+      "source_line": 40,
+      "location": "one-step unfolding of the factorial equation",
+      "finding": "The displayed alignment closes the outer lambda body immediately after the true branch and puts the false branch on a separate row, leaving an ill-formed equation for the intended substitution.",
+      "proposed_resolution": "Place the recursively unfolded call within the false branch of the same lambda body and keep the equation in one aligned row."
+    },
+    {
+      "id": "OLPL-296",
+      "source_line": 163,
+      "location": "Church-versus-Turing fixed-point comparison",
+      "finding": "The prose asserts both beta equivalence and lack of forward beta reduction for Yg, contradicting the immediately proved Turing reduction Yg to g(Yg). The following argument instead compares Y_Cg with g(Y_Cg).",
+      "proposed_resolution": "State the contrast for Y_Cg in both formulas while retaining the established Turing reduction."
+    },
+    {
+      "id": "OLPL-297",
+      "source_line": 165,
+      "location": "scope of V in Church's combinator",
+      "finding": "The abbreviation V contains g free, whereas Y_C binds g; its intended expansion must occur under that binder, as in the displayed closed definition.",
+      "proposed_resolution": "Clarify in translated prose that V is expanded under the parameter binder."
+    }
+  ],
+  "translation_treatment": "The target translates the full fixed-point argument, factorial example, Y-combinator proof and Church comparison while making four bounded formal or explanatory corrections. Frozen source is unchanged and inherited audits remain open.",
+  "no_source_mutation": true
+}

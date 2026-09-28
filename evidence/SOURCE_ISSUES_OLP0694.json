@@ -1,0 +1,25 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0694",
+  "source_path": "content/proof-theory/propositions-as-types/sequent-natural-deduction.tex",
+  "source_sha256": "44525323721b70654bc19c745388c1ea8196fa4a2fe82c355799018bdeb6d705",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-670",
+      "source_line": 20,
+      "location": "conjunction elimination explanatory formula",
+      "finding": "The introductory explanation uses A-and-A while its diagrams and generalized restatement use A-and-B.",
+      "proposed_resolution": "Align both explanatory conjunctions to A-and-B."
+    },
+    {
+      "id": "OLPL-671",
+      "source_line": 119,
+      "location": "final double-negated excluded-middle example",
+      "finding": "The first falsity inference has a dangling implication symbol in its context, and four subsequent B contexts have unmatched opening parentheses. The intended derivation assumes B is the negation of excluded middle and discharges A then B.",
+      "proposed_resolution": "Remove the dangling implication and unmatched context parentheses, giving contexts A,B then B and the conclusion B-implies-falsity. Retain the defined abbreviation and inference structure."
+    }
+  ],
+  "translation_treatment": "Translated the complete companion section; align the conjunction example and repair the malformed final sequent contexts. Frozen English is untouched.",
+  "no_source_mutation": true
+}

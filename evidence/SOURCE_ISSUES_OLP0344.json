@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0344",
+  "source_path": "content/lambda-calculus/introduction/syntax.tex",
+  "source_sha256": "fce80dba497fdd924804265f8a34b90f3eeef16f2f285a7816b6aba7185674ca",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-227",
+      "source_line": 64,
+      "location": "definition of bound and free variable occurrences",
+      "finding": "The frozen prose calls variables in the scope of a lambda bound, but the immediately following example has y in the body of lambda-z and explicitly calls y free. Scope alone does not bind every variable occurrence; the lambda must bind that variable name.",
+      "proposed_resolution": "State that an occurrence is bound only when its variable is bound by an enclosing lambda, and that other occurrences are free. The target applies this prose correction while preserving all formulas and examples."
+    }
+  ],
+  "translation_treatment": "The Javanese prose specifies bound versus free occurrences consistently with the source's own example. No source formula, identifier or macro changes. QA v11 passes all structural checks; reader build and visual readback remain pending.",
+  "no_source_mutation": true
+}

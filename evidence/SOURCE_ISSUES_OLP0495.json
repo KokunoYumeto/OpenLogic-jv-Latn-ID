@@ -1,0 +1,32 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0495",
+  "source_path": "content/intuitionistic-logic/introduction/bhk-interpretation.tex",
+  "source_sha256": "4a23702a2d57e916ab50e764e61b76bb4e91d6287655d2db737ac71023176794",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-429",
+      "source_line": 95,
+      "location": "codomain of the curried input construction",
+      "finding": "The sentence describes g as mapping constructions of A and B to constructions of C, but writes the codomain as $C$ rather than the section's formula metavariable $!C$.",
+      "proposed_resolution": "Use $!C$ for the output formula in the translated construction sentence."
+    },
+    {
+      "id": "OLPL-430",
+      "source_line": 102,
+      "location": "first name of the curried output function",
+      "finding": "The function is first called k_M but immediately defined and used as k_{g,M}; the latter records dependence on both g and M.",
+      "proposed_resolution": "Use k_{g,M} consistently in the translated construction."
+    },
+    {
+      "id": "OLPL-431",
+      "source_line": 136,
+      "location": "left injection h_1 in the double-negated excluded-middle construction",
+      "finding": "The source says h_1 maps an A-construction M_1 to the tagged pair (1,M_2), but M_2 belongs to the opposite disjunct; the left injection must carry M_1.",
+      "proposed_resolution": "Map M_1 to the tagged pair (1,M_1) in the translated proof."
+    }
+  ],
+  "translation_treatment": "Translated BHK construction clauses and all worked proofs while correcting a missing formula metavariable marker, curried-function name, and wrong tagged-pair witness. The frozen source and composition macro remain unchanged.",
+  "no_source_mutation": true
+}

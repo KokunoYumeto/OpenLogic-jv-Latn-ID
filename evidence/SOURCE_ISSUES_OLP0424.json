@@ -1,0 +1,32 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0424",
+  "source_path": "content/normal-modal-logic/frame-definability/first-order-definability.tex",
+  "source_sha256": "9c5c15840f4ad33863a32492fc8e16e7d4ce9b530bce2501a86b3f9466742358",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-346",
+      "source_line": 2,
+      "location": "chapter metadata comment",
+      "finding": "The frozen section labels its chapter frame-correspondence, but its path, nml/frd/fol file ID, and containing chapter driver identify frame-definability.",
+      "proposed_resolution": "Correct the target chapter metadata comment to frame-definability while preserving the frozen source."
+    },
+    {
+      "id": "OLPL-347",
+      "source_line": 61,
+      "location": "compactness chain-family index",
+      "finding": "The displayed A_n conjunction links a_1 through a_n and needs n at least two; the source nevertheless starts Gamma with A_1, which has no defined nonempty chain of the displayed form.",
+      "proposed_resolution": "State that the chain formulas start at index two and use F, A_2, A_3, ... in target Gamma."
+    },
+    {
+      "id": "OLPL-348",
+      "source_line": 63,
+      "location": "finite-subset model construction",
+      "finding": "The source asks for a largest A_k in every finite subset, but a subset may contain no chain formula. The finite k-element model also explicitly assigns only the constants needed through k, leaving all later constants without a stated interpretation.",
+      "proposed_resolution": "In the target, handle subsets with no chain formula separately; when A_k occurs, interpret constants through k by their indices and assign the remaining constants arbitrarily."
+    }
+  ],
+  "translation_treatment": "Translated the first-order/modal definability separation, corrected stale metadata, began the chain family at A_2, and completed the finite-subset construction cases.",
+  "no_source_mutation": true
+}

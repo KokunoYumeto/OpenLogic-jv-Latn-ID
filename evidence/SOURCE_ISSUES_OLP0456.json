@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0456",
+  "source_path": "content/normal-modal-logic/filtrations/S5-fmp.tex",
+  "source_sha256": "73dfbf706b0e5593dd2a012581fac25f80499260b6f0ac17001235860f4e356e",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-381",
+      "source_line": 27,
+      "location": "K finite-model-property proof invoking the filtration truth theorem",
+      "finding": "The source writes satisfaction in the filtered model at w, an original-model world. The cited filtration theorem evaluates the filtered model at the equivalence-class world [w].",
+      "proposed_resolution": "Use [w] as the evaluation world for M-star in the target."
+    }
+  ],
+  "translation_treatment": "Translated the K and S5 finite-model-property arguments and both exercises, applying the bounded quotient-world correction.",
+  "no_source_mutation": true
+}

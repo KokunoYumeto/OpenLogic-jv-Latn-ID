@@ -1,0 +1,32 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0600",
+  "source_path": "content/set-theory/choice/vitali.tex",
+  "source_sha256": "e9ae48138df4af723de80b69d70d43e2a77f3cc9c0ec680eded3a333c0892b32",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-528",
+      "source_line": 36,
+      "location": "definition, inverse proof and half-group partition of the planar rotation group",
+      "finding": "Rotations through rational radian values in [0,2pi) are not closed under composition or inversion modulo 2pi, since 2pi is irrational. The later half-group squaring claim requires rational multiples of a full turn; the zero-angle inverse also needs separate handling under the chosen interval convention.",
+      "proposed_resolution": "Define the group by angles that are rational multiples of a full turn represented in [0,2pi), carry that qualification into both halves and the orbit description, and note that the identity is self-inverse."
+    },
+    {
+      "id": "OLPL-529",
+      "source_line": 159,
+      "location": "partition of D_1 by images of the choice set",
+      "finding": "The proof indexes its D_1 pieces by rho in R_1, a symbol not defined here; the defined first half of the rotation group is rotationsgroup_1.",
+      "proposed_resolution": "Index those pieces by rho in rotationsgroup_1."
+    },
+    {
+      "id": "OLPL-530",
+      "source_line": 240,
+      "location": "definition of measure and final nonmeasurability proof on source lines 240--267",
+      "finding": "The text treats any real-valued countably additive assignment as a measure without stating nonnegativity or closure of the measurable domain under rotations, although both are used in the concluding contradiction. The proof also quantifies rotations rho over the choice set C twice, despite C containing points, not rotations.",
+      "proposed_resolution": "Use a nonnegative measure on a rotation-invariant measurable domain, explain nonmeasurability relative to that domain, and quantify the two rotation variables over rotationsgroup."
+    }
+  ],
+  "translation_treatment": "The target repairs the rotation group definition and zero-angle inverse, the first-half index, and the normalized invariant-measure argument; it localizes the mathematical iff and four citation locators. The frozen source remains unchanged.",
+  "no_source_mutation": true
+}

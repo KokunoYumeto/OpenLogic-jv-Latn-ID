@@ -1,0 +1,25 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0401",
+  "source_path": "content/many-valued-logic/infinite-valued-logics/goedel.tex",
+  "source_sha256": "5d2ee265f4bec099c01297f7e6d605c3c0100e59a96cce2cf9636ec9fb9e186b",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-318",
+      "source_line": 2,
+      "location": "infinite-valued Gödel chapter and section metadata comments",
+      "finding": "The source comments name the preceding three-valued chapter and the Łukasiewicz section, while the file path and mvl/inf/god file ID identify the infinite-valued Gödel section.",
+      "proposed_resolution": "Correct the two target comments to infinite-valued-logics and goedel, preserving the frozen source and TeX file ID."
+    },
+    {
+      "id": "OLPL-319",
+      "source_line": 28,
+      "location": "Gödel negation cases nested dollar delimiters, source lines 28 and 29",
+      "finding": "The negation cases occur inside an align* mathematical environment, but the two numeric results are additionally wrapped as $1$ and $0$. These nested math shifts are malformed in display math and obscure the case formula.",
+      "proposed_resolution": "Remove only the inner dollar delimiters around 1 and 0 in the target, retaining the numeric results and the surrounding cases environment."
+    }
+  ],
+  "translation_treatment": "The target translates the infinite-valued Gödel matrix, finite-grid specialization, three-valued comparison, entailment statements and Gödel–Dummett characterization while correcting stale metadata and nested math delimiters. Frozen source remains unchanged.",
+  "no_source_mutation": true
+}

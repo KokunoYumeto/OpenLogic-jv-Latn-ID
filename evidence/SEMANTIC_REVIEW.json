@@ -2,7 +2,7 @@
   "schema": "jv-semantic-review/1",
   "reviewer": "Codex, same author; no independent or human review claimed",
   "date": "2026-09-26",
-  "scope": "All 6,296 translated paragraph blocks in OLP-0001 through OLP-0671; 3,645 unchanged formal/structural blocks classified separately. OLSIZ-001 through OLSIZ-010, OLPL-001 through OLPL-040, OLPL-044 through OLPL-062, OLPL-133 through OLPL-135 and MGR-JV-0118-FRESHNESS-20260920 are applied in their affected targets; the proposed OLSIZ-011 remains retracted after exact-byte inspection. Paragraph analysis normalizes CRLF/LF; exact full-file hashes remain raw-byte hashes.",
+  "scope": "All 6,503 translated paragraph blocks in OLP-0001 through OLP-0697; 3,780 unchanged formal/structural blocks classified separately. OLSIZ-001 through OLSIZ-010, OLPL-001 through OLPL-040, OLPL-044 through OLPL-062, OLPL-133 through OLPL-135 and MGR-JV-0118-FRESHNESS-20260920 are applied in their affected targets; the proposed OLSIZ-011 remains retracted after exact-byte inspection. Paragraph analysis normalizes CRLF/LF; exact full-file hashes remain raw-byte hashes.",
   "method": "Direct source-to-target reading, quantifier/negation/biconditional checks, mathematical-context checks, and selected reverse paraphrases. Automated structure checks are separate.",
   "unit_reviews": [
     {
@@ -7517,6 +7517,344 @@
         "OLPL-617"
       ],
       "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review with bounded source corrections OLPL-612 through OLPL-615 and sparse canon provenance. Bounded OLP-0671 manager amendment OLPL-616/617 after the initial seal."
+    },
+    {
+      "unit_id": "OLP-0672",
+      "status": "pass",
+      "checks": "Directly compared four changed blocks with nine frozen-English blocks. The conditional A implies B is introduced from a B derivation with open A and then immediately eliminated with an independent A derivation. OLPL-618 assigns delta_1 only to the A branch and delta_2 only to the B-from-A branch. The inefficient detour, normalization claim, classical-versus-intuitionistic difficulty, proof-length comparison, and connection to cut elimination remain. OLPL-619 qualifies the intuitionistic subformula property by undischarged assumptions or conclusion rather than conclusion alone. Focused structural QA passes nine segments with zero failures. Specialist terminology is provisional; independent native review and reader rendering remain pending.",
+      "reverse_sample": "A proof of A implies B may end by introducing implication from a derivation of B under open assumption A. Combining it immediately with a separate proof of A by implication elimination proves B but makes a detour. Normalization removes such introduction-elimination detours. It is harder for classical N1c than intuitionistic N1i, can lengthen proofs, and yields an intuitionistic subformula property relative to undischarged assumptions or the conclusion.",
+      "source_sha256": "0fa27f608c760663b6380ea308e56269a9d6659e37cfad14a5e3ec7ca6940dd5",
+      "translation_sha256": "b45b7c70a7ab6557119b1f4affa907860a600bc51760748a6e70e800ae0505f0",
+      "source_audit_ids": [
+        "OLPL-618",
+        "OLPL-619"
+      ],
+      "revision_reason": "2026-09-28 direct frozen-English translation, same-author semantic review, bounded source corrections OLPL-618/619, and sparse canon provenance."
+    },
+    {
+      "unit_id": "OLP-0673",
+      "status": "pass",
+      "checks": "Directly compared eight changed blocks with thirteen frozen-English blocks. Normal form excludes cut segments; normalization applies permutation and reduction conversions until none remain. The N1i theorem preserves delta and delta-prime, induction on cut rank and total length of maximal cuts, the zero-length base case, topmost-rightmost maximal-cut selection, permutation for segment length greater than one, reduction for length one, and the rank/length decrease. The source's subsequent any-order assertion and direct transfer to N2i are translated as stated, without claiming an independent strong-normalization proof. Focused structural QA passes thirteen segments with zero failures. No bounded source correction was required; specialist terminology remains provisional and reader rendering and native review remain pending.",
+      "reverse_sample": "A proof is normal if it has no cut segments. Every N1i derivation can be converted into a cut-free derivation. Induction on cut rank and maximal-cut length repeatedly chooses a highest, rightmost maximal cut, permutes if its segment has length greater than one, and reduces if it has length one. The source further says conversion order does not matter, and states the corresponding N2i normalization theorem by transfer of the definitions and conversions.",
+      "source_sha256": "ec1fd2839474750e88e272f8e90be4d8001f328b03f666b39e7a36518d2d12e6",
+      "translation_sha256": "00d85a083aa54f55d054df30aa5c70f7a781b1e7256a3b8a13eb33a9c922a9ea",
+      "source_audit_ids": [],
+      "revision_reason": "2026-09-28 direct frozen-English translation, same-author semantic review and sparse canon provenance; no source correction."
+    },
+    {
+      "unit_id": "OLP-0674",
+      "status": "pass",
+      "checks": "Directly compared the one changed title block with seven frozen-English blocks. The pt/nor chapter identity, introduction, segments, permutations, reductions, normalization theorem and translations imports, their order, and the end-chapter hook remain exact. Focused structural QA passes seven blocks with zero failures. Normalisasi remains a reversible controlled borrowing, not direct native proof-theory attestation.",
+      "reverse_sample": "This driver opens the proof-theory normalization chapter, imports six specified section files in order, and closes the chapter; only the displayed title is localized.",
+      "source_sha256": "3adbf315f473121f2b5bbc253c968081c58814a9b0e30d539001fea72d0ba55d",
+      "translation_sha256": "450782567e23910f44a829be01b2d7c0585dd5ac90df65acd25f5be0add759b6",
+      "source_audit_ids": [],
+      "revision_reason": "2026-09-28 direct frozen-English chapter-driver localization and same-author structural review; no source correction."
+    },
+    {
+      "unit_id": "OLP-0675",
+      "status": "pass",
+      "checks": "Directly compared twelve changed blocks with eighteen frozen-English blocks. The first example permutes conjunction elimination over disjunction elimination, shortening each affected cut by one; internal and external cuts retain rank and length. The longtable and commented alternative table remain structurally intact, including their source duplication. The exercises, existential-rule eigenvariable example, regularity condition, duplicated delta_5 branch, and topmost maximal-cut safeguard are retained. OLPL-620 corrects the introductory cut formula from B or C to the B and C displayed throughout the example. OLPL-621 uses the chapter's existential-elimination rule token in two inconsistent references. Focused structural QA passes eighteen blocks with zero failures. Technical vocabulary is provisional; neither independent proof certification nor reader rendering is claimed.",
+      "reverse_sample": "A maximal cut of length greater than one may end after a disjunction elimination. Moving conjunction elimination above that rule applies it within both branches and shortens the two affected cut segments, while other cuts stay unchanged. Permutation conversions can duplicate a subderivation. The existential example appears to threaten the eigenvariable condition when an assumption is discharged later, but regularity excludes the eigenvariable from the affected branches. Choosing a topmost maximal cut prevents duplicated subderivations from carrying another maximal cut.",
+      "source_sha256": "7e7ecafb16908e749788e898e1651da247561dfe79c9a2539bf79e73099348ed",
+      "translation_sha256": "a0753b00e31f6198f8d8ce25d5de32fc8f5ae8e23549b19fe7fe6e3a43cfbd01",
+      "source_audit_ids": [
+        "OLPL-620",
+        "OLPL-621"
+      ],
+      "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review with bounded source corrections OLPL-620/621 and sparse canon provenance."
+    },
+    {
+      "unit_id": "OLP-0676",
+      "status": "pass",
+      "checks": "Directly compared nine changed blocks with fourteen frozen-English blocks. A length-one introduction/elimination cut is replaced by grafting delta_3 into assumptions B^x of delta_2, preserving open assumptions and discharge labels. The argument distinguishes duplication of cuts in delta_3 from new lower-rank cuts at graft points, so it chooses a rightmost maximal cut. The reduction table, negation exercise, FalseInt cases, and the warning that naive false-to-D reduction need not lower formula depth are retained. OLPL-622 removes a copied delta_4 reference absent from the first derivation; OLPL-623 restores the formula marker on B^x; OLPL-624 gives the two disjunction branches distinct discharge labels and displays the matching discharge rule. The ordinary words inside the two final diagrams are localized. Focused structural QA passes fourteen blocks with zero failures; mathematical certification beyond these bounded repairs and native review remain pending.",
+      "reverse_sample": "A length-one cut whose formula was just introduced and then eliminated can be removed by substituting a proof of B at each discharged B assumption in the proof of C. Rightmost maximal-cut selection prevents copied subproofs from multiplying maximal cuts. Grafting may create cuts, but their formula B has lower depth than B implies C. Reduction conversions cover other introduction/elimination pairs and false introduction. For a false-introduced disjunction, choosing a branch before continuing avoids introducing a cut on an unrelated D of possibly greater depth.",
+      "source_sha256": "2785b7f36d7c9deb83028e80f89d1143f05e56ea6ca37ffeda8a66af4f4ce731",
+      "translation_sha256": "f78f8ee2498cca0530b0f40fc47e5f6a47231b5f258fd33859a6601f89cc601c",
+      "source_audit_ids": [
+        "OLPL-622",
+        "OLPL-623",
+        "OLPL-624"
+      ],
+      "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review with bounded source corrections OLPL-622..624 and sparse canon provenance."
+    },
+    {
+      "unit_id": "OLP-0677",
+      "status": "pass",
+      "checks": "Directly compared seven changed blocks with twelve frozen-English blocks. The two derivation trees show how disjunction and existential elimination can intervene between implication introduction and elimination, yielding more than one cut segment. The segment definition keeps the first/last occurrence conditions and the minor-premise-to-conclusion chain; the cut definition distinguishes length one from longer segments and includes FalseInt. Rank remains formula depth, cut rank the maximum rank, and cut length the sum over maximal cuts. OLPL-625 restores a missing formula-metavariable marker on A_(i+1); OLPL-626 makes the FalseInt alternative explicit in the length-one explanatory paragraph. Focused structural QA passes twelve blocks with zero failures. The technical vocabulary remains provisional, and independent native proof review and integrated reader rendering remain pending.",
+      "reverse_sample": "An introduction followed by elimination may have intervening disjunction or existential eliminations. A segment tracks occurrences of one formula from an initial non-elimination conclusion through minor-premise-to-conclusion steps to a final non-minor-premise occurrence. A cut is such a segment ending as an elimination major premise; a length-one cut begins at introduction or FalseInt, while a longer cut needs no such start. Its rank is formula depth, and a proof's cut length sums lengths of maximal-rank cuts.",
+      "source_sha256": "083d9544d8870daa58030ddf36209e1447fa7bcbbb2a1cc08f3d1eaf8c3cc9db",
+      "translation_sha256": "24fe6375e6b4ef25902aa3251927c49526c3f1c5f2082599932f16c1c429d863",
+      "source_audit_ids": [
+        "OLPL-625",
+        "OLPL-626"
+      ],
+      "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review with bounded source corrections OLPL-625/626 and sparse canon provenance."
+    },
+    {
+      "unit_id": "OLP-0678",
+      "status": "pass",
+      "checks": "Directly compared nineteen changed blocks with twenty-four frozen-English blocks. The first corollary is limited to cut-free G2i proofs, concludes a normal N2i proof, and maps an empty succedent to falsity. The converse induction removes labels from antecedents, applies left conjunction, disjunction and implication rules, and keeps the succedent empty for a falsity conclusion. The implication example weakens only its first premise when D is falsity. The final subformula claim includes undischarged assumptions. OLPL-627..633 document these bounded repairs, the missing normality condition, and two inconsistent induction references. Both in-diagram transition words are localized. Focused structural QA passes all twenty-four blocks with zero failures. The classical case and other omitted rule cases remain exercises as in the source; independent mathematical and native-language review and integrated reader rendering remain pending.",
+      "reverse_sample": "Cut-free G2i proofs translate to normal N2i proofs, whereas a source cut may create an introduction-elimination detour. A normal N2i main branch has no introduction step and can be reconstructed without a sequent cut. The conjunction, disjunction and implication cases use their corresponding left rules; false conclusions stay empty on the G2i right side. Every formula in a normal proof is a subformula of the conclusion or an undischarged assumption.",
+      "source_sha256": "070919f142090f49cb60e3e8456cca3b2b34c369c2f22796767795a1bb6bbc67",
+      "translation_sha256": "cf9d4260673c5fad5bbfc325c3bc6db716e9cd519fce3b909c7154e279802e3a",
+      "source_audit_ids": [
+        "OLPL-627",
+        "OLPL-628",
+        "OLPL-629",
+        "OLPL-630",
+        "OLPL-631",
+        "OLPL-632",
+        "OLPL-633"
+      ],
+      "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review with bounded source corrections OLPL-627..633 and sparse canon provenance."
+    },
+    {
+      "unit_id": "OLP-0679",
+      "status": "pass",
+      "checks": "Directly compared twenty-three changed blocks with twenty-eight frozen-English blocks. The opening countermodel makes every antecedent formula true and every succedent formula false. Finite aborted branches and infinite finitely branching runs are distinguished; König's lemma supplies the latter's infinite branch. The term-model clauses preserve constants and terms, with m-place function and predicate arities corrected. The atomic truth case excludes falsity on the left and shared atoms on both sides. The induction treats both conjunction sides and both existential sides, including repeated fair reduction of a right existential; negation, disjunction, implication and universal cases remain exercises as in the source. The preceding search algorithm explicitly seeds a constant when none occurs, making the constructed term domain nonempty. OLPL-634..639 record the six bounded notation, finite-branch scope and copy-edit repairs. Focused structural QA passes twenty-eight blocks with zero failures. Independent native-language and full mathematical certification, along with integrated reader rendering, remain pending. Cross-checked with the corrected OLP-0683 search algorithm: old atomic formulas retain their indices, so the rising minimum and eventual-selection claims apply to non-atomic formulas only. Conjunction and existential premise indices now use fresh values above the prior maximum k (OLPL-643/644).",
+      "reverse_sample": "A failed proof search yields a finite aborted branch or, by König's lemma, an infinite branch. The union of its left and right formulas and available constants defines a term model. The truth lemma shows all left formulas true and right formulas false, using fairness of indexed reductions; thus the starting sequent is invalid. By contraposition, every valid G3c sequent has a proof.",
+      "source_sha256": "4ae649a8588a1ae4f82c22b142fa67690bfd8615cada1499b02d1d62db87a665",
+      "translation_sha256": "363b687a9381974b3732c448e4f14c011b0c442e03773bf07c1cf67ef8593669",
+      "source_audit_ids": [
+        "OLPL-634",
+        "OLPL-635",
+        "OLPL-636",
+        "OLPL-637",
+        "OLPL-638",
+        "OLPL-639",
+        "OLPL-643",
+        "OLPL-644"
+      ],
+      "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review with bounded source corrections OLPL-634..639 and sparse canon provenance. Post-seal bounded fairness amendment OLPL-643/644."
+    },
+    {
+      "unit_id": "OLP-0680",
+      "status": "pass",
+      "checks": "Directly compared nine changed blocks with fourteen frozen-English blocks. The distinction between checking a supplied derivation and finding one is preserved. Brute-force enumeration is characterized as exhaustive but expensive. Backward inference in G1c can repeat contraction indefinitely, while G2c also requires context-splitting guesses and disjunction choices; G3c fixes the rule from the principal operator and sequent side. The final paragraph retains the validity condition, soundness induction, failed-search counterstructure, and completeness consequence. Minor English typos and awkward grammar were rendered as ordinary Javanese prose without altering formal claims. Focused structural QA passes fourteen blocks with zero failures. Native-language review and integrated reader rendering remain pending.",
+      "reverse_sample": "A proof system makes candidate derivations checkable, but searching for one needs a fully specified procedure. Enumerating all symbol strings is exhaustive; backward sequent search is more directed. Structural contraction and context splitting introduce extra choices in G1c and G2c, while G3c rule choice follows the principal connective and side. Failure is certified by a counterstructure, establishing completeness together with soundness.",
+      "source_sha256": "c85fedf2ffa728c646c91417c475aa796de5d2d32b09c487475a721b2290ae7f",
+      "translation_sha256": "1aee969b4c2ef696a2b643f52f3b082c039425aae8db53735da0923a075a8ce8",
+      "source_audit_ids": [],
+      "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review with exact structural QA and sparse canon provenance."
+    },
+    {
+      "unit_id": "OLP-0681",
+      "status": "pass",
+      "checks": "Directly compared the one changed title block with seven frozen-English blocks. The pt/ps chapter identity, introduction, search-algorithm, completeness and tableaux imports, their order, and the end-chapter hook remain exact. Focused structural QA passes seven blocks with zero failures. Panelusuran Bukti follows the adjacent translated section vocabulary; independent native review and integrated reader rendering remain pending.",
+      "reverse_sample": "The driver opens the proof-theory proof-search chapter, imports four specified section files in order, and closes the chapter; only the displayed title is localized.",
+      "source_sha256": "220593da177adca3549b62d14f85753b6f71e9e4555a18a093453275e54420c1",
+      "translation_sha256": "38d2bf31cb411073e245ad633d05fd7d9e162ddfee8015783ec53885b42c2fe0",
+      "source_audit_ids": [],
+      "revision_reason": "2026-09-28 direct frozen-English chapter-driver localization and same-author structural review; no source correction."
+    },
+    {
+      "unit_id": "OLP-0682",
+      "status": "pass",
+      "checks": "Directly compared the one changed table block with five frozen-English blocks. The six pairs of signed propositional and quantified tableau rules, their branches, term/constant metavariables, table label, and structure remain exact. The caption retains the condition that the constant in false-universal and true-existential expansion be new to the branch. Focused structural QA passes five blocks with zero failures. Native-language review and integrated reader rendering remain pending.",
+      "reverse_sample": "The Tc table displays signed tableau rules. The constant used in false-universal and true-existential rules must be fresh on the branch.",
+      "source_sha256": "766ce01962f35ef9833f3be95a35250d13a9fca800100f15885dd9009cc74241",
+      "translation_sha256": "668dea825ee72ee57d6d3264ceb73374d7b0e748e36a1a03bb18b2300e512358",
+      "source_audit_ids": [],
+      "revision_reason": "2026-09-28 direct frozen-English caption localization and same-author semantic review; no source correction."
+    },
+    {
+      "unit_id": "OLP-0683",
+      "status": "pass",
+      "checks": "Directly compared sixteen changed blocks with twenty-one frozen-English blocks. Initial formulas receive distinct indices; each new formula in the translated reductions has an index above the prior maximum k. Conjunction-left, conjunction-right, existential-left and existential-right derivations retain their premises and context. The right-existential diagram keeps the quantified formula with a fresh index, adds the chosen instance with a later index, and uses the right-existential rule label. The stage-zero constant seed, fresh eigenconstant, repeated term scheduling, atomic success and failure cases, erasure of indices, and eigenvariable-condition argument are retained. OLPL-640..642 record bounded corrections to the frozen rule displays. Focused structural QA passes twenty-one blocks with zero failures. Independent mathematical and native-language review and integrated reader rendering remain pending.",
+      "reverse_sample": "The algorithm works through indexed proof trees, selecting the least-indexed nonatomic formula in each unfinished top sequent. Fresh formulas receive indices above the current maximum; a right existential remains available for later terms. A branch closes on an identity or false-left axiom and aborts if only nonaxiomatic atoms remain. If all top branches close, erasing indices yields a G3c proof.",
+      "source_sha256": "2ce7994ec2166ec4f50b3c3698d4767f49ff3fd4a39c942f79ba304ca9c1a8a2",
+      "translation_sha256": "a84937f0d276476ff9b07d63e81f7bb12cce40606afdcfb25746f4c971cab351",
+      "source_audit_ids": [
+        "OLPL-640",
+        "OLPL-641",
+        "OLPL-642"
+      ],
+      "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review with bounded source corrections OLPL-640..642 and sparse canon provenance."
+    },
+    {
+      "unit_id": "OLP-0684",
+      "status": "pass",
+      "checks": "Directly compared eleven changed blocks with seventeen frozen-English blocks. Starting antecedents are signed true and succedents false, with the source D-sign error corrected. The complete displayed propositional tableau, branch labels, checkmarks, closure marks and final G3c derivation remain exact. Branch closure now includes true falsity as required by false-left. Persistent true-universal and false-existential expansions revisit applicable terms, skip exhausted term choices and permit finite saturated open branches without checking those persistent formulas. Both mathematical set-builder prose labels are localized. OLPL-645..648 record the four bounded source corrections. Focused structural QA passes seventeen blocks with zero failures. Canon register passages were reread during this review; specialist terminology remains provisional. Integrated rendering and independent mathematical/native review remain pending opportunities for revision, not production gates.",
+      "reverse_sample": "A signed tableau searches for a structure that satisfies antecedents and falsifies succedents. A branch closes on opposite signs or true falsity. Fair quantifier expansion eventually supplies each applicable instance. An open saturated branch defines a counterstructure; a closed tableau translates into a G3c derivation by assigning sequents to its nodes.",
+      "source_sha256": "593c823ad413a4db7c58f783d612a3fb14cc8fbaa790c50c26d0f7709b6a8d14",
+      "translation_sha256": "1ac836c1fd65233a5f576cfcb220ed526684625789e47d4c81c08b4946856314",
+      "source_audit_ids": [
+        "OLPL-645",
+        "OLPL-646",
+        "OLPL-647",
+        "OLPL-648"
+      ],
+      "revision_reason": "2026-09-29 direct frozen-English translation and same-author semantic review with bounded corrections OLPL-645..648 and sparse canon provenance."
+    },
+    {
+      "unit_id": "OLP-0685",
+      "status": "pass",
+      "checks": "Directly compared two changed blocks with eight frozen-English blocks. The pt part identifier and five chapter imports remain exact. The note retains the source's incomplete/experimental status and exclusion from its main PDF. The mistaken model-theory header comment is preserved as historical metadata rather than used to classify this part. Proof-search is not imported by this driver; full-edition assembly must include its units once through a separate explicit reader integration path. Structural QA passes eight blocks with zero failures. Specialist title vocabulary remains provisional.",
+      "reverse_sample": "The driver opens Proof Theory, warns that the source material is incomplete and experimental and outside the source main PDF, imports five named chapters, and closes the part.",
+      "source_sha256": "6f46b6346fc37b3a75a4f98c56351c46458c2f54f8cdca151da015261c0fd92f",
+      "translation_sha256": "a01470d93b72808487375a55676a012e835886101772dd949b44a331923da2c5",
+      "source_audit_ids": [],
+      "revision_reason": "2026-09-29 direct frozen-English driver localization and same-author structural review; no source correction."
+    },
+    {
+      "unit_id": "OLP-0686",
+      "status": "pass",
+      "checks": "Directly compared eight changed blocks with twelve frozen-English blocks. Application, abstraction, bound and free occurrences, beta contraction and normal-form computation remain exact. Function-domain/range restrictions and application typing are preserved. Both implication-rule diagrams and the contraction diagram remain unchanged; their explanatory words and every table row are localized. OLPL-649 names application rather than composition; OLPL-650 explicitly makes substitution capture-avoiding. The final proof-checking/type-checking connection is retained. Canon explanatory and borrowing pages were reread before these choices; specialist senses remain provisional. Focused structural QA passes twelve blocks with zero failures. The source int/pty identifiers remain unchanged despite this file residing under proof-theory; cross-reference integration awaits the full reader build.",
+      "reverse_sample": "Lambda terms model computation by application and abstraction; capture-avoiding beta substitution reduces an applied abstraction. Types restrict which applications make sense. Implication introduction corresponds to abstraction and implication elimination to application, while proof simplification corresponds to beta contraction. Propositions become types, proofs terms, and discharged or open assumptions bound or free variables.",
+      "source_sha256": "d1e4e979af0f251cc4e7d93d8f32e4e0b9e2e8b71e349b0deecfa78649f460c9",
+      "translation_sha256": "7d252b04e6fa57f54ff805b75a1e4d5b45c052ab384bad2c4a1a2f4522049ebc",
+      "source_audit_ids": [
+        "OLPL-649",
+        "OLPL-650"
+      ],
+      "revision_reason": "2026-09-29 direct frozen-English translation and same-author semantic review with corrections OLPL-649/650 and sparse canon provenance."
+    },
+    {
+      "unit_id": "OLP-0687",
+      "status": "pass",
+      "checks": "Direct same-author comparison of all nineteen changed blocks with the twenty-four frozen source blocks. Audited every displayed substitution, cut rank, typing claim, projection reduct, reduction sequence and quantifier over strategies. The inherited argument cases now use the lemma's proper-subterm hypothesis. The two explicit editorial footnotes distinguish translation completion from unproved contextual/permutation and local-confluence cases; no full proof-certification claim is made. Newman's common reduct is normalized before comparison. Explanatory and borrowing canon pages were actually reread; all specialist meanings remain provisional and English-source-controlled. Exact protected-formula, token and command parity is checked against only the bounded documented source view. OLPL-660 restricts the introductory claim, theorem and induction domain to well-typed proof terms, as required by the adjacent syntactic/correct-term distinction. The two source proof-gap disclosures remain intact.",
+      "reverse_sample": "The rank lemma handles redexes inherited from the body or copied argument and those created by substitution. The source's attempted whole-term normalization induction still omits enclosing-context and permutation effects, explicitly disclosed in a note. Local confluence joins one-step alternatives; under strong normalization a common reduct can be normalized, so a term with two normal forms would force an infinite chain of immediate successors with the same defect, contradicting termination.",
+      "source_sha256": "56c9430670f6e37d7ceb3781c63f2ffd1258f7533dbf4bf9e4c99278b43e67be",
+      "translation_sha256": "0ab05a2eab7e7a9d4bdcbd77dbc1095e7803a65e160c51fe90ab24fa7e9832e2",
+      "source_audit_ids": [
+        "OLPL-651",
+        "OLPL-652",
+        "OLPL-653",
+        "OLPL-654",
+        "OLPL-655",
+        "OLPL-656",
+        "OLPL-657",
+        "OLPL-658",
+        "OLPL-659",
+        "OLPL-660"
+      ],
+      "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review. One bounded adjacent-definition scope amendment OLPL-660."
+    },
+    {
+      "unit_id": "OLP-0688",
+      "status": "pass",
+      "checks": "Compared all eight translated blocks directly with fourteen source blocks. Verified the order of assumptions, discharge variables, context union, constructor arities, all eight term forms and the invalid pair-as-function example. Constructor M follows its second premise; the injection example now retains its N premise; the inductive injection clause now uses the assumed N. Raw syntax is explicitly separated from terms licensed by tN2ip, supporting the immediately applied well-typed normalization restriction. The canon explanation and borrowing pages were reread for provisional term vocabulary, rather than treated as specialist proof witnesses. Same-author review only; integrated build remains pending.",
+      "reverse_sample": "A term records how a sequent was proved. Constructors encode introduction, destructors elimination, and binders record discharged assumptions. Formula annotations supply information otherwise absent from premises. The inductive grammar admits raw terms, but only terms satisfying the typing rules represent correct proofs; a pair cannot serve as an implication function.",
+      "source_sha256": "efeb3a9e0573794a31ef1cc56221cfb9f52c166ed73b4408118d0e9a2357aa66",
+      "translation_sha256": "6d0fff83db97ebe266f05fec8d7f7cd0d77a1c1dcbdf5c782a32617f390f780d",
+      "source_audit_ids": [
+        "OLPL-661",
+        "OLPL-662",
+        "OLPL-663"
+      ],
+      "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review."
+    },
+    {
+      "unit_id": "OLP-0689",
+      "status": "pass",
+      "checks": "Directly compared five changed blocks with ten frozen-English blocks. The conversion inserts a term before each succedent formula; the witness remains indexed by the same context. Checked the axiom case and rule-by-rule height induction. Verified all three diagrams, the ordered second/first projections, pair construction and final abstraction over the discharged conjunction assumption. All source formulas, commands, tokens, labels and imports remain unchanged. No bounded source correction is needed. Canon explanatory and borrowing passages were consulted for provisional conversion and witness wording; no specialist native attestation is claimed. Same-author review only.",
+      "reverse_sample": "Every labelled N2i proof determines an N2i proof with term labels by induction on height. Axiom terms are their context variables; each inference determines its conclusion term. The conjunction-swap example first projects the second and then the first component, pairs them in reverse order, and abstracts over the conjunction assumption.",
+      "source_sha256": "659493297b55668bb3c57b1999a8fac3c45b6db7564a83b6147e12628b5f217d",
+      "translation_sha256": "1620ca23fd48e8d9bd4206f6d1afa3c031209a86fe0508b6be71c1990b52dfbd",
+      "source_audit_ids": [],
+      "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review."
+    },
+    {
+      "unit_id": "OLP-0690",
+      "status": "pass",
+      "checks": "Compared two changed blocks with eight source blocks. The editorial text is translated as the inherited source draft assessment, not treated as a current QA result or a human-dependent hold. Its historical claims about examples and conversions are retained as source editorial content; adjacent files provide the actual material and two current proof-gap disclosures. Every import, comment, identifier and command remains unchanged. Academic explanatory and borrowing canon roles are explicit; no specialist term attestation is claimed.",
+      "reverse_sample": "The source chapter identifies itself as an experimental Curry--Howard draft, says explanation and normalization proof detail are still needed, presupposes typed lambda calculus, and asks readers to use care. The chapter imports introduction, proof terms, both conversion directions, types, reduction, type preservation and normalization in that order.",
+      "source_sha256": "fe9ab2d869edafb1ddd1f3c2c9d29985cfbe1d561d6bfab42d68d1ef68444001",
+      "translation_sha256": "12953925e617653ba8ee69edfc6d50faaf7f32ad74e6a400bb4eecd1100a2bc7",
+      "source_audit_ids": [],
+      "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review."
+    },
+    {
+      "unit_id": "OLP-0691",
+      "status": "pass",
+      "checks": "Directly compared nine changed blocks with fourteen frozen-English blocks. Verified product projection, branch selection and substitution, abstraction/application contraction, permutation of projection into both case branches, contextual closure and the reflexive transitive relation. Checked actual pair/injection macro declarations in the frozen configuration and complementary injection annotations in rules-tN2 and types.tex. The source's generic substitution definition was mathematically ordered correctly; the target only aligns its letters to the displayed contraction and adds capture avoidance. The source diagrams, labels and other formulas remain exact. Sparse canon register and borrowing passages were consulted; specialist meanings are source-controlled and provisional. The earlier full-calculus rank/confluence proof gaps remain disclosed, rather than being certified by this conversion translation.",
+      "reverse_sample": "Introduction followed by the corresponding elimination is a detour. Product contraction selects the chosen component; sum contraction substitutes the injected term into the chosen branch, avoiding capture; function contraction substitutes the argument into the abstraction body. A projection after case elimination can be permuted into both branches. Reduction acts inside subterms, and the multistep relation includes zero steps. Normality excludes every applicable conversion.",
+      "source_sha256": "2235ecd6b10d70a165d30bcf4a2251fed13f8f75e896726caf210cbc97406215",
+      "translation_sha256": "8a7c8d6d499aed3e0518da2ead945291cd426b9245a80e387708d6677f45cf26",
+      "source_audit_ids": [
+        "OLPL-664",
+        "OLPL-665",
+        "OLPL-666",
+        "OLPL-667",
+        "OLPL-668"
+      ],
+      "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review."
+    },
+    {
+      "unit_id": "OLP-0692",
+      "status": "pass",
+      "checks": "Directly compared the single changed table block against five source blocks. Verified the axiom and implication, conjunction, disjunction and falsity inferences, annotations, binders and context behavior. N2i contexts combine across premises; N3i keeps a common context and its axiom permits a context member. Both first/second injections retain the correct complementary annotation and sum order. Canon explanatory and borrowing roles are consulted, with specialist senses provisional; same-author review only.",
+      "reverse_sample": "Term-labelled natural deduction records each proof's term. The common-context variant supplies a type-assignment system: a context member yields the corresponding variable term, implication forms abstraction/application, conjunction pairs/projects, disjunction injects/eliminates by cases, and falsity yields an abort term.",
+      "source_sha256": "028e19b146423187a4a0057fee449ac084cdfc3c987f0a366787784aa64a2ee2",
+      "translation_sha256": "1d052dbbfcf74af62b635fc8a921764c144136a6cb6d0b2710503173c0e207e6",
+      "source_audit_ids": [],
+      "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review."
+    },
+    {
+      "unit_id": "OLP-0693",
+      "status": "pass",
+      "checks": "Directly compared the single changed table block against five source blocks. Verified the axiom and implication, conjunction, disjunction and falsity inferences, annotations, binders and context behavior. N2i contexts combine across premises; N3i keeps a common context and its axiom permits a context member. Both first/second injections retain the correct complementary annotation and sum order. The N3i table has a distinct tN3ip label to avoid collision; its type-definition reference will be corrected when OLP-0697 is translated. Canon explanatory and borrowing roles are consulted, with specialist senses provisional; same-author review only.",
+      "reverse_sample": "Term-labelled natural deduction records each proof's term. The common-context variant supplies a type-assignment system: a context member yields the corresponding variable term, implication forms abstraction/application, conjunction pairs/projects, disjunction injects/eliminates by cases, and falsity yields an abort term.",
+      "source_sha256": "948804549f0622cc616399743fa6fc6680b1b061763d292d7c5e2106fd583656",
+      "translation_sha256": "1f85706c3122439bc46b4d7a8ae7d6d7337597d7dbd285bf4ce2f97c6af2379f",
+      "source_audit_ids": [
+        "OLPL-669"
+      ],
+      "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review."
+    },
+    {
+      "unit_id": "OLP-0694",
+      "status": "pass",
+      "checks": "Compared all nine changed blocks with fifteen source blocks. Verified context union notation, projection, implication discharge and every displayed rule. The final example uses B as negation of excluded middle: assuming A and B yields falsity, discharging A yields not-A under B, hence excluded middle under B and then falsity; discharging B yields not-B. This preserves the source's intended constructive conclusion and does not claim excluded middle itself. Removed only the syntactically dangling implication and unmatched parentheses. The source-commented chapter import remains commented; corpus coverage still includes this companion file. Canon roles are explicit and specialist senses provisional; same-author review only.",
+      "reverse_sample": "A sequent records the formulas still assumed and the conclusion reached. Introduction and elimination rules combine or discharge contexts explicitly. The final example derives double negation of excluded middle by assuming its negation, obtaining not-A, then excluded middle, and contradicting the same assumption.",
+      "source_sha256": "44525323721b70654bc19c745388c1ea8196fa4a2fe82c355799018bdeb6d705",
+      "translation_sha256": "7a43ca32064a9886d27ea707e958a9168bb0393e7c68f7fac44de82806d39c49",
+      "source_audit_ids": [
+        "OLPL-670",
+        "OLPL-671"
+      ],
+      "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review."
+    },
+    {
+      "unit_id": "OLP-0695",
+      "status": "pass",
+      "checks": "Directly compared the heading and both extended explanatory blocks with the frozen section. The outer abstraction forces implication introduction; the pair forces conjunction introduction; second/first projections force the two elimination rules. Variable axioms then determine D=A, C1=B, C2=A and E=B. Checked the final reconstructed type and all four intermediate/final proof diagrams. Contexts, annotations, branch order, discharged x and source identifiers remain unchanged. No source correction is needed. Canon register and borrowing passages were consulted for provisional reconstruction wording; same-author review only.",
+      "reverse_sample": "A proof term is reconstructed relative to the types of its free variables. In this closed example, the outer abstraction, pair and projections determine the inference skeleton. The variable axioms then determine the unknown component types, yielding a function from A-and-B to B-and-A.",
+      "source_sha256": "0f91cc46f6a51b41d17bc3817c450ac73887d6114130365f9449ba7c7b4cc61d",
+      "translation_sha256": "fd4dc469887dd91690d43d51f661e24ad1d3f298b0e0b9882a0fa4d0b0ea1720",
+      "source_audit_ids": [],
+      "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review."
+    },
+    {
+      "unit_id": "OLP-0696",
+      "status": "pass",
+      "checks": "Compared all eight changed blocks with thirteen source blocks. Checked every subterm/subproof context and result type, product projection, beta-substitution orientation and unchanged diagrams. In the substitution construction the discharged variable is fresh for the outer context, internal binders are fresh for the argument, and the argument proof is weakened to the local context without the discharged variable. This permits the height induction to preserve each typing rule. Progress is now for well-typed terms under the same principal/permutation relation used to define normality. Specialist canon attestation remains sparse and provisional; same-author review only. Earlier normalization/local-confluence proof gaps remain explicitly open.",
+      "reverse_sample": "A redex corresponds to a convertible subproof. Replacing it with the converted subproof preserves its local conclusion type and therefore the complete term's type. Beta substitution requires fresh binders and local weakening of the argument proof. A well-typed nonnormal term has an applicable principal or permutation conversion and its reduct has the same type.",
+      "source_sha256": "45707be51e3f9c94199c7d8ac0656d402a50f99b12504c33b217bfe86f040d8f",
+      "translation_sha256": "26939915e461733bc02fa1f3073d10f00aaefa0548523b29b7d721c33c060b91",
+      "source_audit_ids": [
+        "OLPL-672",
+        "OLPL-673",
+        "OLPL-674"
+      ],
+      "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review."
+    },
+    {
+      "unit_id": "OLP-0697",
+      "status": "pass",
+      "checks": "Directly compared eleven changed blocks with seventeen frozen-source blocks. Checked all formula and context positions, binder extension after alpha-renaming, application domain/range, pair/projection types, complementary injection types and matching case branch binders/results. Contexts still permit extra unused variables but assign each variable at most one formula. Raw syntax can have no type, so the proposition now asserts uniqueness conditional on existence; the self-application example exactly explains why a formula cannot equal an arrow with itself as proper subformula. Verified the N3i reference against the corrected OLP-0693 label. Product/function/sum/empty-type explanations and the disjoint-union index conditions remain exact. Canon grammar and borrowing passages were consulted; specialist senses remain provisional and same-author review does not replace independent mathematical certification.",
+      "reverse_sample": "A context assigns each variable one formula and covers a term's free variables, possibly with extras. Typing is partial but unique when it exists. Abstraction, application, product, sum and abort follow their corresponding logical rules. Self-application is untypable because one variable would need both an arrow type and its proper subformula as type. Sum values carry a branch tag; no closed term inhabits the empty type.",
+      "source_sha256": "8e3fa53eb78ebc918ee94e0eead7724d931e5a27b75d714bca1db80f04ba9152",
+      "translation_sha256": "57ab7a33f661054bb0495de1077dbc357a4599af02dfd39d7687e990ddbbe88f",
+      "source_audit_ids": [
+        "OLPL-675",
+        "OLPL-676",
+        "OLPL-677",
+        "OLPL-678",
+        "OLPL-679"
+      ],
+      "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review."
     }
   ],
   "unresolved_language_uncertainties": [

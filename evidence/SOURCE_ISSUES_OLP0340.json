@@ -1,0 +1,39 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0340",
+  "source_path": "content/second-order-logic/sol-and-set-theory/power-of-continuum.tex",
+  "source_sha256": "386d49b1ac96e634b3ea56980e592fdbf8bd6f5aa112e0e9e235c9835734d990",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-223",
+      "source_line": 60,
+      "location": "Pow(Y,R,X) displayed formula",
+      "finding": "The frozen second conjunct is missing a closing parenthesis/bracket in the nested universal formula, leaving the displayed expression unbalanced.",
+      "proposed_resolution": "Close the implication and its two universal quantifiers in the target, preserving the intended condition that each code in Y represents a subset of X. QA v11 normalizes exactly this display for source comparison."
+    },
+    {
+      "id": "OLPL-224",
+      "source_line": 119,
+      "location": "proof of the Cont(Y) proposition",
+      "finding": "The frozen proof says elements of s(Y) are associated with subsets of s(Z), but the preceding Pow(Y,R,X) formula codes subsets of s(X); Z is not the fixed source set in this argument.",
+      "proposed_resolution": "Use s(X) in that one prose math span. QA v11 checks the bounded source context."
+    },
+    {
+      "id": "OLPL-225",
+      "source_line": 124,
+      "location": "characterization of when the entire domain has continuum cardinality",
+      "finding": "The frozen displayed condition only requires a continuum-sized coded set Y inside the domain and an injective self-map whose range contains Y. The identity map witnesses the latter in any larger domain, so it cannot characterize exact equality of the domain with the reals.",
+      "proposed_resolution": "Require a set Y containing every domain element and satisfying Cont(Y). The target uses the already defined Cont predicate in one bounded replacement display."
+    },
+    {
+      "id": "OLPL-226",
+      "source_line": 73,
+      "location": "Cantor theorem coding explanation",
+      "finding": "The frozen prose describes an injection from the domain of a coding relation, but the displayed theorem concerns the set Y of elements serving as codes. The relation's whole domain need not equal Y.",
+      "proposed_resolution": "Name the set of coding elements in the target prose. The theorem display itself remains source-identical."
+    }
+  ],
+  "translation_treatment": "The target balances Pow, replaces the proof's s(Z) by s(X), and states exact domain cardinality using Cont(Y). It corrects the coding-set prose without changing Cantor's theorem display. Three exact source formula/proof views in work/olp0340_source_view.py and QA v11 account for all protected mathematical changes. Frozen English remains immutable; guarded reader build and visual readback remain pending.",
+  "no_source_mutation": true
+}

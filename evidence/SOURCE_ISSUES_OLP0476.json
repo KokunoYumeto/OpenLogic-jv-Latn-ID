@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0476",
+  "source_path": "content/applied-modal-logic/temporal-logic/temporal-logic.tex",
+  "source_sha256": "002d60bc4f9fd0b84f7d062f1cf8a325563ce8f343c5d070e124e4f05c4115e4",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-408",
+      "source_line": 20,
+      "location": "closing hook of the temporal-logic chapter driver",
+      "finding": "The file uses the chapter document class and olchapter, but ends with OLEndPartHook; the other normal modal chapter drivers use OLEndChapterHook. The sibling epistemic chapter driver repeats this pattern and needs its own later audit.",
+      "proposed_resolution": "Use OLEndChapterHook in the translated temporal chapter driver and verify the resulting reader build."
+    }
+  ],
+  "translation_treatment": "Translated the temporal chapter title and draft notice, retaining all five imports and replacing the anomalous part-closing hook with the chapter hook in the target and bounded source-comparison view without changing frozen English.",
+  "no_source_mutation": true
+}

@@ -1,0 +1,32 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0660",
+  "source_path": "content/proof-theory/cut-elimination/intuitionistic.tex",
+  "source_sha256": "4fc53ce7b95d519d63b400945ad34012779aee9d48404b74cfbfee829a0c9b26",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-588",
+      "source_line": 43,
+      "location": "premise of the lower-rank cut on C",
+      "finding": "The antecedent formula is written B! rather than the consistently used !B.",
+      "proposed_resolution": "Use !B in the target proof tree."
+    },
+    {
+      "id": "OLPL-589",
+      "source_line": 53,
+      "location": "result of cutting C from the two displayed premises",
+      "finding": "The prose and subsequent proof tree give the result extra copies of Pi and Lambda, although ordinary Cut applied to the displayed premises yields B,Gamma,Pi sequent Delta,Lambda.",
+      "proposed_resolution": "Use the single-copy Pi and Lambda context in both the prose and later premise of the target."
+    },
+    {
+      "id": "OLPL-590",
+      "source_line": 65,
+      "location": "last displayed Cut and contraction conclusion",
+      "finding": "The last Cut conclusion still contains B and lacks the combined duplicated contexts; the following prose instead gives three copies of Pi and Lambda while omitting the duplicated Delta.",
+      "proposed_resolution": "Use Gamma,Gamma,Pi,Pi sequent Delta,Delta,Lambda,Lambda for the Cut conclusion and the following proof result before contraction."
+    }
+  ],
+  "translation_treatment": "The target makes bounded corrections to the auxiliary implication-cut derivation while preserving the frozen English source and proof-tree order.",
+  "no_source_mutation": true
+}

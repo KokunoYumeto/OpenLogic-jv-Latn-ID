@@ -1,0 +1,10 @@
+{
+  "schema":"jv-frozen-source-issues/1",
+  "unit_id":"OLP-0554",
+  "source_path":"content/set-theory/ordinals/replacement.tex",
+  "source_sha256":"c081b7ac20726b738ce2fb496ad29e836a72883160c847b828582e4de0218523",
+  "status":"translation_corrected_pending_reader_build",
+  "issues":[{"id":"OLPL-484","source_line":64,"location":"set-function image comparison, source lines 62–69","finding":"The contrast with a set-theoretic function writes its image as {f(x): x in A} for arbitrary A, without saying that f is defined on every member of A. A set-coded function may have a restricted domain; the displayed term f(x) requires the domain condition, even though the image of A intersected with the domain can be defined separately.","proposed_resolution":"Qualify the displayed f(x)-image expression by assuming f is defined on every member of the given A. The main Replacement scheme and its term-image corollary remain unchanged."}],
+  "translation_treatment":"The Javanese prose states the domain condition before the displayed set-function image. The source's distinction between a total syntactic term and a set-coded function, all formulas, and the double-union bounding footnote remain intact; frozen source bytes are unchanged.",
+  "no_source_mutation":true
+}

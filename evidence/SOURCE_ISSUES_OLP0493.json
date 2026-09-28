@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0493",
+  "source_path": "content/intuitionistic-logic/introduction/constructive-reasoning.tex",
+  "source_sha256": "0e2e1481d7a5d642bbb24f9a77b1521b56c1aa7d17842dd6b8c9e21cdb6d9ad1",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-428",
+      "source_line": 68,
+      "location": "explicit irrational pair using the base-three logarithm, lines 67–73",
+      "finding": "The source calculates that the proposed power is rational but does not justify that its proposed exponent, log base 3 of 4, is irrational as the theorem requires.",
+      "proposed_resolution": "Add a brief prime-factorization argument in the translated explanation: a rational exponent would equate a positive integer power of 3 with one of 4, which is impossible."
+    }
+  ],
+  "translation_treatment": "Translated the classical and constructive examples, both irrational-power arguments, and the philosophical discussion; added the omitted justification for the explicit exponent without changing frozen mathematics or source text.",
+  "no_source_mutation": true
+}

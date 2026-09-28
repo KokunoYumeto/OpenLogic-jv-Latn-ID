@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0608",
+  "source_path": "content/methods/proofs/example-2.tex",
+  "source_sha256": "cbef120cea559b153f4e6b828d2fe7942050d3534e3bb61e642fd467f897aa80",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-535",
+      "source_line": 55,
+      "location": "second inclusion in the equality-proof setup",
+      "finding": "The source prints '$C \\subseteq (A \\cup (C \\setminus A)$' with an unmatched opening parenthesis before A, while the immediately preceding explanatory quote and later second-direction proof use the well-formed inclusion without it.",
+      "proposed_resolution": "Write '$C \\subseteq A \\cup (C \\setminus A)$', retaining the parentheses around the set difference."
+    }
+  ],
+  "translation_treatment": "The Javanese target uses the well-formed reverse inclusion. A bounded comparison view records the single notation repair; the frozen English bytes remain unchanged.",
+  "no_source_mutation": true
+}

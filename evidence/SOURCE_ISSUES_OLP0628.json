@@ -1,0 +1,22 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0628",
+  "source_path": "content/history/biographies/julia-robinson.tex",
+  "source_sha256": "bdc5d38306c267699a1e3bfa1fc136f93e0b83ebe03de1ac81987ae35f7b599d",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-550",
+      "source_line": 75,
+      "location": "Robinson's National Academy of Sciences distinction",
+      "finding": "The source calls Robinson the first woman elected to the Academy without qualification. The Academy's own biographical memoir identifies her as the first woman elected to its mathematical section; Florence Sabin was its first woman member decades earlier.",
+      "proposed_resolution": "Specify the mathematical section of the National Academy of Sciences.",
+      "evidence_urls": [
+        "https://www.nationalacademies.org/read/4560/chapter/21",
+        "https://www.nationalacademies.org/members"
+      ]
+    }
+  ],
+  "translation_treatment": "The Javanese target specifies the Academy's mathematics section. A bounded comparison view records the narrowed claim; frozen English bytes remain unchanged.",
+  "no_source_mutation": true
+}

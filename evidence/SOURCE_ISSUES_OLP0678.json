@@ -1,0 +1,60 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0678",
+  "source_path": "content/proof-theory/normalization/translations.tex",
+  "source_sha256": "070919f142090f49cb60e3e8456cca3b2b34c369c2f22796767795a1bb6bbc67",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-627",
+      "source_line": 15,
+      "location": "opening cut-free translation claim",
+      "finding": "The system is written Log{2i}, which is not the named sequent calculus in this section; the claim and cross-references concern G2i.",
+      "proposed_resolution": "Name G2i in the opening claim."
+    },
+    {
+      "id": "OLPL-628",
+      "source_line": 25,
+      "location": "first corollary about translating G2i proofs",
+      "finding": "The corollary omits the cut-free premise required for the asserted normality, names N2c instead of N2i, and leaves C undefined when the G2i succedent is empty.",
+      "proposed_resolution": "Restrict the claim to cut-free G2i proofs, name N2i, and define C as the succedent formula or falsity when the succedent is empty."
+    },
+    {
+      "id": "OLPL-629",
+      "source_line": 58,
+      "location": "converse translation paragraph",
+      "finding": "The conditional sentence omits the property of the starting N2i proof that makes cut avoidance possible.",
+      "proposed_resolution": "State that the starting N2i proof is normal."
+    },
+    {
+      "id": "OLPL-630",
+      "source_line": 157,
+      "location": "conjunction induction step",
+      "finding": "The inference count refers to undefined delta-prime rather than delta-one; the stated G2i induction sequent retains a labelled assumption and does not allow the stipulated empty succedent for falsity.",
+      "proposed_resolution": "Use delta-one in the count and the unlabelled G2i antecedent with the appropriate translated succedent."
+    },
+    {
+      "id": "OLPL-631",
+      "source_line": 171,
+      "location": "conjunction and disjunction falsity examples",
+      "finding": "Both examples apply right weakening after an empty-succedent conclusion, producing A on the right although the proposition requires an empty succedent when A is falsity.",
+      "proposed_resolution": "Retain the empty succedent in both examples; use left weakening only when a disjunction branch lacks a discharged assumption."
+    },
+    {
+      "id": "OLPL-632",
+      "source_line": 278,
+      "location": "implication induction step and falsity example",
+      "finding": "The second induction sequent uses Gamma-one instead of Gamma-two, and the falsity example weakens its second premise to A and concludes A even when the required conclusion is empty. The first premise alone may need right weakening when D is falsity.",
+      "proposed_resolution": "Use Gamma-two for the second premise, distinguish the translated D and A succedents, weaken only the first premise when D is falsity, and keep the final succedent empty when A is falsity."
+    },
+    {
+      "id": "OLPL-633",
+      "source_line": 315,
+      "location": "final subformula corollary",
+      "finding": "For a normal N1i proof with undischarged assumptions, formulas in those assumptions need not be subformulas of the end-formula alone.",
+      "proposed_resolution": "Include undischarged assumptions alongside the end-formula in the subformula-property statement."
+    }
+  ],
+  "translation_treatment": "The target translates the whole section, applies these bounded proof-notation and logic corrections through work/olp0678_source_view.py, and preserves every byte of the frozen English source.",
+  "no_source_mutation": true
+}

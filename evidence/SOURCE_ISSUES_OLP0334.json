@@ -1,0 +1,25 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0334",
+  "source_path": "content/second-order-logic/metatheory/compactness.tex",
+  "source_sha256": "6f6e125a26a4b3c0303e675ccae12c1d25ff5aee9b38500e3335a145fb5bb267",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-218",
+      "source_line": 58,
+      "location": "finite satisfiability proof, bound on sentence indices",
+      "finding": "The frozen proof says no A-at-least-n sentence with n greater than k lies in the full Gamma. Gamma contains such sentences for every n, so the claim is false. The finite subset Gamma-zero is the set whose indices are bounded.",
+      "proposed_resolution": "Replace the final membership in Gamma by membership in Gamma-zero. The Javanese target applies exactly this one-span formula correction and states that k bounds the indices in the finite subset."
+    },
+    {
+      "id": "OLPL-219",
+      "source_line": 34,
+      "location": "compactness theorem label",
+      "finding": "The frozen source labels the compactness theorem thm:sol-undecidable, duplicating the label of the immediately preceding undecidability theorem. A content-tree search found no references to this duplicate label.",
+      "proposed_resolution": "Use the unique target label thm:sol-not-compact. QA v9 compares exactly this one protected-command argument without changing the frozen source."
+    }
+  ],
+  "translation_treatment": "The target repairs the finite-subset membership and duplicate theorem label. All other mathematical spans, protected tokens, environment delimiters and commands remain aligned under QA v9. Both changes are entered in SOURCE_CORRECTIONS.jsonl; a guarded reader build and visual readback remain necessary.",
+  "no_source_mutation": true
+}

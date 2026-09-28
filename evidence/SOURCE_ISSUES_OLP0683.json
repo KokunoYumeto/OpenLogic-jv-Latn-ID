@@ -1,0 +1,32 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0683",
+  "source_path": "content/proof-theory/proof-search/search-algorithm.tex",
+  "source_sha256": "2ce7994ec2166ec4f50b3c3698d4767f49ff3fd4a39c942f79ba304ca9c1a8a2",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-640",
+      "source_line": 79,
+      "location": "new-formula indices in the four displayed reductions",
+      "finding": "The text defines k as the maximum existing index, yet new conjunction and existential formulas are assigned k or k+1 rather than strictly fresh indices above k. This undercuts the claimed minimum-index fairness argument.",
+      "proposed_resolution": "Assign each new formula an index above k: k+1 and k+2 where two formulas enter one premise, and k+1 in each separate conjunction-right branch."
+    },
+    {
+      "id": "OLPL-641",
+      "source_line": 110,
+      "location": "right-existential reduction description",
+      "finding": "The sequent in the prose omits the existing quantified formula's index i, although the diagram and reduction-selection condition include it.",
+      "proposed_resolution": "Restore index i on the quantified formula in the prose sequent."
+    },
+    {
+      "id": "OLPL-642",
+      "source_line": 113,
+      "location": "right-existential reduction rule label",
+      "finding": "The rule beneath the right-existential premise is labelled left-existential, even though the principal quantified formula is on the right and the premise retains it for later reductions.",
+      "proposed_resolution": "Label the displayed inference right-existential."
+    }
+  ],
+  "translation_treatment": "The target translates the algorithm and keeps new formula indices strictly greater than the prior maximum, restores the existing right-existential index, and corrects its rule label through work/olp0683_source_view.py. Frozen English bytes remain unchanged.",
+  "no_source_mutation": true
+}

@@ -1,0 +1,19 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0632",
+  "source_path": "content/history/biographies/ernst-zermelo.tex",
+  "source_sha256": "2bf8bef1ebdfcadf3ae701be0416db71d1a24786269cec3b8e41a767f8499a41",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-552",
+      "source_line": 29,
+      "location": "Zermelo's 1897 university move",
+      "finding": "The university name omits the second n in Göttingen.",
+      "proposed_resolution": "Write Göttingen.",
+      "evidence_url": "https://uni-goettingen.de/en/439238.html"
+    }
+  ],
+  "translation_treatment": "The Javanese target spells Göttingen correctly. A bounded comparison view records the repair; frozen English bytes remain unchanged.",
+  "no_source_mutation": true
+}

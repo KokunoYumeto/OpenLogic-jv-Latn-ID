@@ -1,0 +1,91 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0687",
+  "source_path": "content/proof-theory/propositions-as-types/normalization.tex",
+  "source_sha256": "56c9430670f6e37d7ceb3781c63f2ffd1258f7533dbf4bf9e4c99278b43e67be",
+  "status": "translation_corrected_proof_gaps_disclosed_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-651",
+      "source_line": 23,
+      "location": "complexity definitions",
+      "finding": "The length definition omits falsity; disjunction cut rank refers to undefined A/B instead of A1/A2; the displayed maximum omits the stipulated zero for normal terms.",
+      "proposed_resolution": "Define falsity length as zero, use A1/A2 for the sum cut rank, and include zero in the maximum.",
+      "resolution_status": "bounded_correction_applied"
+    },
+    {
+      "id": "OLPL-652",
+      "source_line": 54,
+      "location": "substitution lemma case analysis",
+      "finding": "The disjunction-elimination major term is printed as i rather than the substituted variable x.",
+      "proposed_resolution": "Use x as the major term in the disjunction-elimination case.",
+      "resolution_status": "bounded_correction_applied"
+    },
+    {
+      "id": "OLPL-653",
+      "source_line": 60,
+      "location": "substitution lemma rank and projection case",
+      "finding": "A stray parenthesis occurs in the rank equality; the proof then refers to cutrank(x), which is undefined for a variable.",
+      "proposed_resolution": "Remove the stray parenthesis and identify the rank with the length of the variable's type.",
+      "resolution_status": "bounded_correction_applied"
+    },
+    {
+      "id": "OLPL-654",
+      "source_line": 107,
+      "location": "rank-decrease lemma inherited argument redexes",
+      "finding": "The beta and sum cases omit redexes copied from the substituting argument.",
+      "proposed_resolution": "Add the inherited-argument cases; their smaller rank follows directly from the proper-subterm hypothesis.",
+      "resolution_status": "bounded_correction_applied"
+    },
+    {
+      "id": "OLPL-655",
+      "source_line": 147,
+      "location": "normalization theorem contextual and permutation proof gap",
+      "finding": "The lemma bounds redexes inside the reductum, not newly exposed redexes in enclosing eliminations. A sum elimination can return a product or arrow of greater length. Permutation redexes also have no rank in the definitions. Thus the asserted whole-term rank decrease does not follow.",
+      "proposed_resolution": "Preserve the translated source argument with an adjacent Javanese editorial footnote explicitly identifying the missing contextual and permutation control. Keep proof repair open.",
+      "resolution_status": "disclosed_proof_gap_open"
+    },
+    {
+      "id": "OLPL-656",
+      "source_line": 222,
+      "location": "local confluence projection example",
+      "finding": "The first projection of the pair with updated first component is erroneously said to reduce to O2. The text also says subterm redexes cannot overlap, although nesting is possible.",
+      "proposed_resolution": "Use O1-prime as the common reduct, qualify overlap as partial overlap, and state the discarded-component case.",
+      "resolution_status": "bounded_correction_applied"
+    },
+    {
+      "id": "OLPL-657",
+      "source_line": 207,
+      "location": "weak Church-Rosser proof scope",
+      "finding": "The proof sketches disjoint reductions and one nested projection example but does not establish the remaining nested contractions or permutation interactions used by the full preceding calculus.",
+      "proposed_resolution": "Add an adjacent Javanese editorial footnote identifying the proof as a sketch and leave the remaining cases open.",
+      "resolution_status": "disclosed_proof_gap_open"
+    },
+    {
+      "id": "OLPL-658",
+      "source_line": 236,
+      "location": "Newman proof reduction sequence indices",
+      "finding": "Both sequences define N1 as the original N, while the subsequent argument requires N1 to be the first successor.",
+      "proposed_resolution": "Start both displayed sequences at N0 and show the first step to N1.",
+      "resolution_status": "bounded_correction_applied"
+    },
+    {
+      "id": "OLPL-659",
+      "source_line": 244,
+      "location": "Newman proof common normal form",
+      "finding": "Weak Church-Rosser supplies a common reduct, which need not itself be normal; the proof compares it with the two chosen normal forms as though it were.",
+      "proposed_resolution": "Use strong normalization to normalize the common reduct and designate that common normal form N-triple-prime before comparing normal forms.",
+      "resolution_status": "bounded_correction_applied"
+    },
+    {
+      "id": "OLPL-660",
+      "source_line": 128,
+      "location": "normalization theorem scope and its introductory/proof prose",
+      "finding": "The following proof-terms section explicitly distinguishes arbitrary syntactic proof terms from correct, well-typed proof terms. The unrestricted normalization statement would include nonnormalizing self-application terms.",
+      "proposed_resolution": "Qualify the theorem, introduction and induction domain to well-typed proof terms; retain the disclosed proof gaps.",
+      "resolution_status": "bounded_correction_applied"
+    }
+  ],
+  "translation_treatment": "Complete direct translation with seven bounded correction groups and two explicit Javanese proof-gap notes. No claim that the full normalization or local-confluence source proofs have been repaired. OLPL-660 restricts normalization to well-typed proof terms, using the adjacent proof-term definition; the two disclosed proof gaps remain open.",
+  "no_source_mutation": true
+}

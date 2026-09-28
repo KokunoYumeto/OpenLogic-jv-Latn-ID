@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0579",
+  "source_path": "content/set-theory/ord-arithmetic/exponentiation.tex",
+  "source_sha256": "965be29d6ab8e9aad3e56b319cc8ddfb3cd212e836092f061198fafb561ae6fc",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-503",
+      "source_line": 13,
+      "location": "finite-support function construction and final exercise for ordinal exponentiation",
+      "finding": "The source defines finfun(alpha,beta) using functions alpha to beta with finite support indexed by alpha, then identifies its order type with alpha to the beta. This reverses the base and exponent: finite-support sequences for alpha to the beta are functions beta to alpha. The unrestricted exercise also fails at zero base for positive limit exponents under the displayed recursion convention.",
+      "proposed_resolution": "Use functions beta to alpha, index finite support and the largest difference by beta, and qualify the synthetic construction and its equivalence exercise to nonzero base alpha. Preserve the source's recursion equations as printed."
+    }
+  ],
+  "translation_treatment": "The target corrects the function direction and support index, restricts the synthetic comparison to nonzero base, and localizes Potter's page citation. The frozen source remains unchanged.",
+  "no_source_mutation": true
+}

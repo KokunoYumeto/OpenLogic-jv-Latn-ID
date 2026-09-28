@@ -1,0 +1,32 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0577",
+  "source_path": "content/set-theory/ord-arithmetic/using-addition.tex",
+  "source_sha256": "9641a137f0347689fad7fc04337f8889991e482c6179513c19a0bfbc619eaff1",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-500",
+      "source_line": 61,
+      "location": "exercise comparing possible ranks of Cartesian products",
+      "finding": "The second displayed product-rank expression has no relation sign between setrank(A times B) and max(setrank(A),setrank(B)) plus two, making the exercise mathematically incomplete.",
+      "proposed_resolution": "Insert equality in the second requested example; the first requested example already uses equality and the preceding bound permits the upper-end equality."
+    },
+    {
+      "id": "OLPL-501",
+      "source_line": 44,
+      "location": "proof of the Cartesian-product rank bound",
+      "finding": "After bounding A times B by the double power set of A union B, the proof cites the ordered-pair rank formula. Computing the rank of that double power set instead requires the power-set rank formula twice and the union rank formula.",
+      "proposed_resolution": "Replace the irrelevant ordered-pair citation with references to the power-set rank formula twice and the binary union rank formula."
+    },
+    {
+      "id": "OLPL-502",
+      "source_line": 75,
+      "location": "inactive commented candidate for the third infinity criterion",
+      "finding": "The commented candidate formula has a closing math delimiter but no opening delimiter. Although TeX ignores the comment, the unbalanced notation prevents a meaningful mechanical math-span comparison across the following proof.",
+      "proposed_resolution": "Supply the opening math delimiter inside that inactive comment, keeping its formula and inactive status unchanged."
+    }
+  ],
+  "translation_treatment": "The target supplies the missing equality in the exercise, cites the two rank formulas that justify the double-power-set bound, and balances the delimiters of one inactive commented formula. The frozen source remains unchanged.",
+  "no_source_mutation": true
+}

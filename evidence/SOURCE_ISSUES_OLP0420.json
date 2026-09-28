@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0420",
+  "source_path": "content/normal-modal-logic/frame-definability/introduction.tex",
+  "source_sha256": "a61229335a4a2f9fc6815e7e058fe5c6d7ff75c46f265f1e7cd609e4f83ce6ff",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-339",
+      "source_line": 2,
+      "location": "chapter metadata comment",
+      "finding": "The frozen introduction identifies its chapter as frame-correspondence, but its path, nml/frd/int file ID, and containing chapter driver identify frame-definability.",
+      "proposed_resolution": "Correct the target chapter metadata comment to frame-definability while preserving the frozen source and all functional TeX commands."
+    }
+  ],
+  "translation_treatment": "Translated the frame-definability introduction and corrected its stale chapter metadata comment in the target.",
+  "no_source_mutation": true
+}

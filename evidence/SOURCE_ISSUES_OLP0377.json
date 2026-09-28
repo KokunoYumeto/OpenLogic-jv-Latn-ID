@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0377",
+  "source_path": "content/lambda-calculus/lambda-definability/truth-values.tex",
+  "source_sha256": "c59cf879d08ccb846c28886a957ffee1a5256157e9a160af104606743eb9006c",
+  "status": "translation_corrected_pending_inherited_proofs_reference_audit_and_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-289",
+      "source_line": 25,
+      "location": "arity of lambda-definable relation",
+      "finding": "The definition writes R as a subset of Nat^n, but applies the representing term to k numerals indexed 1 through k and tests R on the corresponding k-tuple.",
+      "proposed_resolution": "Use Nat^k in the target relation domain and bounded source-comparison view."
+    }
+  ],
+  "translation_treatment": "The target translates truth selectors, relation definability, IsZero, negation and conjunction, while correcting the relation's arity to k. Inherited chapter-ID and proof audits remain open; frozen source is unchanged.",
+  "no_source_mutation": true
+}

@@ -1,0 +1,10 @@
+{
+  "schema":"jv-frozen-source-issues/1",
+  "unit_id":"OLP-0560",
+  "source_path":"content/set-theory/spine/recursion.tex",
+  "source_sha256":"e9b5fe7b4ab133bc97d234aabd8dae2412e91bbeeb9c785b4a8112ba1e1a0510",
+  "status":"translation_corrected_pending_reader_build",
+  "issues":[{"id":"OLPL-488","source_line":107,"location":"simple recursion auxiliary term, source lines 101–110","finding":"The auxiliary term xi assigns A when its input is not a function with ordinal domain, and otherwise handles successor and limit ordinal domains. The empty function has ordinal domain zero, which is neither successor nor limit under the preceding definition, so no case assigns xi(empty); the later base-case equation relies on precisely that missing value.","proposed_resolution":"Include the empty function in xi's A branch, alongside inputs that are not functions with ordinal domain. Keep successor and nonempty-limit cases as stated so xi(empty)=A and simple recursion has a defined base case."}],
+  "translation_treatment":"The Javanese displayed case and inactive comment explicitly include the empty function in the A branch. All recursive equations and later uses of xi(empty), successor and limit values remain in the same order; frozen source bytes are unchanged.",
+  "no_source_mutation":true
+}

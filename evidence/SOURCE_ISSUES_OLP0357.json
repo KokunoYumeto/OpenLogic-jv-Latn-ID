@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0357",
+  "source_path": "content/lambda-calculus/syntax/terms.tex",
+  "source_sha256": "145fce509501861988851ee8a42591b3ec7e2acd4f570f34004c5c459b491ecb",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-241",
+      "source_line": 48,
+      "location": "formation exercise for the double self-application term",
+      "finding": "This section formally defines every application as (MN) and says the examples are fully parenthesized, but the exercise omits the enclosing parentheses around the application of its two lambda-x terms inside the lambda-g body.",
+      "proposed_resolution": "Add the one pair of parentheses around the two-term application inside the lambda-g body in the target exercise; preserve all variables and subterms."
+    }
+  ],
+  "translation_treatment": "The Javanese exercise uses the term grammar's required parentheses. QA v18 compares against the one exact source view and passes all structural checks; reader build and visual readback remain pending.",
+  "no_source_mutation": true
+}

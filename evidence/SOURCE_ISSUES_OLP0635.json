@@ -1,0 +1,33 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0635",
+  "source_path": "content/history/set-theory/limits.tex",
+  "source_sha256": "df5d36d65e7abafe7503527229866dfc618527177e567b16ce33ec01c683783d",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-553",
+      "source_line": 18,
+      "location": "motivation for the limit of secant slopes",
+      "finding": "The text twice treats f'(c), a fixed derivative value, as varying with beta. The varying quantities are approximations to it.",
+      "proposed_resolution": "Refer to approximations to f'(c) in both sentences."
+    },
+    {
+      "id": "OLPL-554",
+      "source_line": 37,
+      "location": "formal epsilon-delta definition of a limit",
+      "finding": "The antecedent admits x=c, incorrectly requiring g(c)=ell and excluding ordinary removable discontinuities. A limit quantifies over a punctured neighbourhood.",
+      "proposed_resolution": "Use 0 < |x-c| < delta in the antecedent and the matching prose explanation.",
+      "evidence_url": "https://openstax.org/books/calculus-volume-1/pages/2-5-the-precise-definition-of-a-limit"
+    },
+    {
+      "id": "OLPL-555",
+      "source_line": 47,
+      "location": "absolute-value plot x-axis tick data",
+      "finding": "The -1 tick is written -1,1 rather than the x/label pair -1/-1 used by the surrounding foreach entries.",
+      "proposed_resolution": "Write -1/-1 for that tick pair."
+    }
+  ],
+  "translation_treatment": "The Javanese prose names varying approximations, the formal limit formula and its explanation use a punctured neighbourhood, and the copied plot data supplies the missing -1 tick label. A bounded comparison view records all three corrections; frozen English bytes remain unchanged.",
+  "no_source_mutation": true
+}

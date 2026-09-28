@@ -1,0 +1,32 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0596",
+  "source_path": "content/set-theory/choice/wellorderingproblem.tex",
+  "source_sha256": "9ca7bb6570d323e7caebb910c975827a9411c1bbe2b4dabd6d41f9ebe2f04fa4",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-521",
+      "source_line": 48,
+      "location": "choice-to-well-ordering proof, initial value g(0)=f(A)",
+      "finding": "When A is empty, the choice function for nonempty subsets is undefined at A, so the displayed initial value does not apply.",
+      "proposed_resolution": "Handle the empty set as already well-ordered, then run the recursion only for nonempty A."
+    },
+    {
+      "id": "OLPL-522",
+      "source_line": 61,
+      "location": "stop-marker convention and subsequent injectivity and range claims",
+      "finding": "The source says to set g(delta)=A for all delta<=alpha when stopping at alpha, overwriting previous chosen values. A constant tail is not injective and has a marker outside A, so later injectivity, range and bijection statements need the pre-stop restriction. After the marker is inserted, the displayed equality test A=image(g|alpha) would become false again and incorrectly call f on an empty remainder.",
+      "proposed_resolution": "Set the marker for delta>=alpha, make the stopping test A subseteq image(g|alpha) persistent after the marker, prove injectivity before the first stop, and use the initial-segment restriction for the range and final bijection."
+    },
+    {
+      "id": "OLPL-523",
+      "source_line": 72,
+      "location": "Hartogs contradiction if the recursive choice process never stops",
+      "finding": "The source claims strict cardinal inequality from every ordinal into Pow(A) minus empty, though g takes values in A and supplies only an injection from each ordinal into A. Hartogs' lemma applies directly to A.",
+      "proposed_resolution": "Use cardle(alpha,A) for every ordinal alpha in the no-stop supposition, contradicting Hartogs' lemma for A."
+    }
+  ],
+  "translation_treatment": "The target handles the empty input, makes the stop marker and condition persistent, restricts the bijection to pre-stop values, and applies Hartogs to A. Potter's page citation is localized. The frozen source remains unchanged.",
+  "no_source_mutation": true
+}

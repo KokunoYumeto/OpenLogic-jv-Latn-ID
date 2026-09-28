@@ -1,0 +1,39 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0361",
+  "source_path": "content/lambda-calculus/syntax/substitution.tex",
+  "source_sha256": "8e6a232737d4b0c58a03fd1ab2bedc120e159c21e6d17cd30ed58fd4615ec8bd",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-246",
+      "source_line": 30,
+      "location": "inductive substitution definition, abstraction clause",
+      "finding": "The final clause says substitution is undefined when the bound variable equals the variable being replaced. The immediately following explanation correctly requires substitution of y for x in lambda-x.x to leave lambda-x.x unchanged.",
+      "proposed_resolution": "Add the matching-binder identity branch and reserve undefinedness for the remaining unsafe abstraction cases; keep the frozen source and existing labels unchanged."
+    },
+    {
+      "id": "OLPL-247",
+      "source_line": 76,
+      "location": "no-free-variable theorem, abstraction proof",
+      "finding": "The proof assumes x differs from the binder despite the matching-binder case, infers x not free in an undefined Q instead of the body P, and prints a duplicate equality in the displayed calculation.",
+      "proposed_resolution": "Handle the matching-binder identity separately; in the distinct-binder case derive x not free in P, and remove the duplicate display equality."
+    },
+    {
+      "id": "OLPL-248",
+      "source_line": 96,
+      "location": "free-variable theorem and induction proof",
+      "finding": "The statement has a stray parenthesis. The application step substitutes for y although the theorem substitutes for x. The abstraction premise switches x and y, and its set calculation removes the wrong variables, omits a closing delimiter, and invokes x not free in N where the definition requires y not free in N.",
+      "proposed_resolution": "Repair the statement, use x throughout the application step, derive x free in P from x free in lambda-y.P, and compute ((FV(P) minus x) union FV(N)) minus y using y not free in N."
+    },
+    {
+      "id": "OLPL-249",
+      "source_line": 147,
+      "location": "inverse-substitution theorem and abstraction proof",
+      "finding": "The theorem asserts a reverse substitution equality without requiring that the reverse substitution be defined. For distinct x and y, M=lambda-x.x has the forward matching-binder identity defined, but the reverse substitution is undefined under the x binder. The abstraction proof also omits the matching-variable case and does not establish all binder restrictions.",
+      "proposed_resolution": "Condition the equality on both substitutions being defined, treat x=y as identity, and in the distinct case justify that an abstraction binder differs from x and y and that y is not free in its body."
+    }
+  ],
+  "translation_treatment": "The Javanese target corrects only these local definition, proof and notation errors, with a v20 source view that asserts every exact frozen-source replacement before formal QA. Reader build and visual readback remain pending.",
+  "no_source_mutation": true
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0333",
+  "source_path": "content/second-order-logic/metatheory/undecidability-and-axiomatizability.tex",
+  "source_sha256": "d145a2ab03186358310a7f917ed7aa9eb49e95efbb80c3a2e8356be818d25108",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-216",
+      "source_line": 35,
+      "location": "equivalence between PA-squared entailment and validity of P implies A",
+      "finding": "The frozen source writes the satisfaction expression as '$\\Sat{M}{!P \\lif !A$}', closing math mode before the final argument brace. This leaves an unmatched brace outside math and can break TeX compilation. The intended well-formed expression is '$\\Sat{M}{!P \\lif !A}$'.",
+      "proposed_resolution": "Move the closing brace before the closing dollar. The Javanese target applies exactly this delimiter correction; QA v8 compares against a one-span bounded source view while preserving the frozen source bytes."
+    },
+    {
+      "id": "OLPL-217",
+      "source_line": 35,
+      "location": "same entailment-to-satisfaction paraphrase",
+      "finding": "PA-squared entails A iff the implication P implies A is valid, which means every structure M satisfies it. The source's bare 'i.e., Sat_M(P implies A)' omits that universal structure scope and could be read as satisfaction in one unspecified structure.",
+      "proposed_resolution": "Say explicitly that Sat_M(P implies A) holds for every structure M. The Javanese target supplies this prose qualifier without adding a new mathematical expression."
+    }
+  ],
+  "translation_treatment": "The target fixes the malformed Sat formula by one delimiter move and adds the universal-structure scope in prose. All other formulas, identifiers, references and commands remain source-aligned. OLPL-216 has a versioned QA comparison view and a correction-ledger entry; final reader build and visual readback remain necessary.",
+  "no_source_mutation": true
+}

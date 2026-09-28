@@ -1,0 +1,147 @@
+% Part: proof-theory
+% Chapter: proof-search
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{ps}{int}
+
+\olsection{Pambuka}
+
+Aksioma lan aturan inferènsi ing sistem !!{proof} kayata
+\Log{G3c} utawa \Log{N1i} nemtokaké wit sekuèn utawa
+!!{formula}s kang dianggep !!{proof}s bener. Yèn wis
+diwènèhi wit sekuèn utawa !!{formula}s kaya mangkono
+(bokmanawa kanthi katerangan tambahan ngenani aturan kang
+ditrapaké ing saben langkah, utawa label kanggo asumsi
+lan aturan inferènsi kang mbusak asumsi iku), définisi
+aksioma lan aturan ngidini kita mriksa apa wit iku
+!!{proof} kang bener. Nanging, \emph{nemokaké}
+!!a{proof} tumrap sekuèn tartamtu, utawa tumrap
+!!{formula} tartamtu saka asumsi kang diwènèhaké,
+iku masalah liya kang lumrahé luwih angel. Masalah
+iki diarani \emph{panelusuran bukti}.
+
+Ana tata cara kang prasaja banget kanggo panelusuran bukti.
+!!{formula}s bisa dianggep rerangkéyan lambang saka
+alfabèt winates. Sekuèn lan wit sekuèn utawa !!{formula}s
+uga bisa dianggep rerangkéyan !!{formula}s (bokmanawa
+nganggo kurung mligi kanggo nandhani percabangan wit).
+Aksioma lan aturan ngidini kita mriksa kanthi mekanis
+apa rerangkéyan lambang minangka !!{proof} kang bener.
+Mula kita bisa ngasilaké kanthi mekanis \emph{kabèh
+!!{proof}s kang mungkin lan bener}: ngasilaké kabèh
+rerangkéyan lambang saka alfabèt kang dipigunakaké
+kanggo makili !!{proof}s, banjur mriksa saben
+rerangkéyan calon apa makili !!{proof} kang bener.
+Tata cara prasaja iki ngasilaké kabèh !!{proof}s bener
+nganti nemokaké siji kang dadi !!{proof} tumrap sekuèn
+kang diwènèhaké (utawa tumrap !!{formula} kang asumsi
+mbukaké kalebu ing asumsi kang diwènèhaké).
+
+Cara kang luwih becik yaiku cara lumrah nalika nggoleki
+!!a{proof} kanthi tangan: miwiti saka sekuèn pungkasan,
+milih !!a{formula}, banjur ngetrapaké aturan inferènsi
+``mundur'' kanggo ngasilaké premis siji utawa sawetara.
+Yèn premis-premis iku nduwèni !!{proof}s, premis mau
+bisa digabung karo inferènsi pungkasan dadi
+!!a{proof} tumrap sekuèn kang diwènèhaké. Cara kang
+padha, senajan luwih ruwet, bisa dienggo nggoleki
+!!a{proof} ing sistem deduksi alamiah.
+
+Nanging cara iki ora mesthi kasil: yèn milih aturan kang
+ora trep utawa urutan !!{formula}s kang ora trep, kita
+bisa tekan dalan buntu. Carané uga durung ditemtokaké
+kanthi pepak: ing saben tataran bisa ana luwih saka siji
+!!{formula} kang bisa dipilih, utawa luwih saka siji
+aturan kang bisa ditrapaké mundur. \emph{Algoritma
+panelusuran bukti} yaiku tata cara kang wis ditemtokaké
+kanthi pepak lan bakal nemokaké !!a{proof} yèn pancèn
+ana (yaiku ora bakal klèru amarga pilihan langkah).
+
+Sawetara sistem !!{proof} luwih gampang digarap nganggo
+algoritma panelusuran bukti tinimbang sistem liyané.
+Ing sistem sekuèn, !!{main operator} saka
+!!a{formula}, lan panggonané ing sisih kiwa utawa
+tengen, nemtokaké aturan kang kudu ditrapaké mundur.
+Tuladhané, yèn arep nemokaké !!a{proof} tumrap
+$\Gamma \Sequent \Delta, !A \land !B$ kanthi
+$!A \land !B$ ing sisih tengen, kita ngetrapaké
+\RightR{\land} mundur lan ngasilaké loro premis kang
+cocog: $\Gamma \Sequent \Delta, !A$ lan
+$\Gamma \Sequent \Delta, !B$. Nanging, ing sistem
+\Log{G1c}, anané kontraksi gawé prakara iki luwih
+angel amarga pilihané luwih akèh: bisa uga ngetrapaké
+\RightR{\Contraction} mundur kanggo ngasilaké premis
+$\Gamma \Sequent \Delta, !A \land !B, !A \land !B$.
+Sabanjuré bisa ngasilaké premis
+$\Gamma \Sequent \Delta, !A \land !B, !A \land !B, !A \land !B$,
+lan saterusé. Ing \Log{G2c} luwih angel manèh.
+Ngetrapaké \RightR{\land} mundur uga mbutuhaké tebakan
+$\Gamma_1$, $\Gamma_2$ saéngga
+$\Gamma = \Gamma_1 \cup \Gamma_2$, lan
+$\Delta_1$, $\Delta_2$ saéngga
+$\Delta = \Delta_1 \cup \Delta_2$; banjur nyoba premis
+$\Gamma_1 \Sequent \Delta_1, !A$ lan
+$\Gamma_2 \Sequent \Delta_2, !B$. Tebakan kang salah
+bisa nuwuhaké dalan buntu mengko, mula kudu bali menyang
+wiwitan lan milih $\Gamma_1$, $\Gamma_2$,
+$\Delta_1$, $\Delta_2$ kang béda. Yèn !!{formula}
+iku $!A \lor !B$, kita kudu milih salah siji saka
+loro kemungkinan \RightR{\lor}, kang ngasilaké
+salah siji premis $\Gamma \Sequent \Delta, !A$ utawa
+$\Gamma \Sequent \Delta, !B$. Pilihan kang salah
+uga bakal meksa kita bali menyang langkah sadurungé.
+
+Sistem \Log{G3c} ora nduwèni masalah iki. Sistem iku
+ora nduwèni aturan struktural, lan aturan inferènsi
+ditetepaké déning !!{main operator} lan sisih
+panggonané !!{formula}. Mula \Log{G3c} luwih cocog
+kanggo panelusuran bukti tinimbang \Log{G1c} utawa
+\Log{G2c}. Panelusuran kang kasil bakal ngasilaké
+!!a{proof} ing \Log{G3c}; !!{proof} iku banjur bisa
+diterjemahaké dadi bukti ing \Log{G1c} utawa
+\Log{G2c} (utawa malah \Log{N1c}). Mula, algoritma
+panelusuran bukti kanggo \Log{G3c}, bebarengan karo
+algoritma panerjemah \Log{G3c}-!!{proof}s dadi
+!!{proof}s ing sistem liya, uga ngrampungaké
+panelusuran bukti kanggo sistem-sistem mau.
+
+Kepiyé carané ngerti yèn algoritma panelusuran bukti
+ora bakal gagal nalika bukti pancèn ana? Kita kudu
+nuduhaké yèn nalika algoritma ora nemokaké
+!!a{proof}, ora ana !!{proof} kang bisa ana.
+Algoritma kang ora becik bisa gagal nemokaké bukti
+senajan buktiné ana. Tata cara prasaja mau ora nduwèni
+masalah iki, amarga mriksa kabèh !!{proof}s kang mungkin.
+Nanging algoritma panelusuran bukti diarepaké luwih
+éfisièn lan mung ngentèkaké gawé sakperluné.
+
+Gagasan pokok kanggo nuduhaké kasilé algoritma
+panelusuran bukti yaiku: yèn algoritma gagal, saka
+carané gagal kita bisa nuduhaké yèn sekuèn mau ora
+mungkin nduwèni !!a{proof}. Carané yaiku mbuktèkaké
+yèn sekuèn iku ora valid. Ing logika orde kapisan
+klasik, sekuèn $\Gamma \Sequent \Delta$ valid yèn
+saben !!{structure} ndadèkaké paling ora siji
+!!{formula} ing $\Gamma$ salah utawa paling ora
+siji !!{formula} ing~$\Delta$ bener. \Log{G3c}
+\emph{sahih}, yaiku mung !!{prove}s sekuèn kang valid.
+Iki dibuktèkaké kanthi induksi miturut !!{proof}s:
+aksioma cetha valid, lan yèn premis aturan valid,
+konklusiné uga valid. Kanggo nuduhaké yèn algoritma
+panelusuran bukti mesthi kasil nalika bukti ana,
+kita nuduhaké yèn panelusuran !!a{proof} tumrap
+$\Gamma \Sequent \Delta$ gagal, kita bisa netepaké
+!!a{structure} kang ndadèkaké kabèh !!{formula}s
+ing $\Gamma$ bener lan kabèh !!{formula}s ing~$\Delta$
+salah. Iki uga netepaké yèn \Log{G3c}
+\emph{lengkap}: yèn $\Gamma \Sequent \Delta$ valid,
+ana \Log{G3c}-!!{proof} tumrap sekuèn iku.
+Amarga saben panelusuran gagal nuduhaké yèn
+$\Gamma \Sequent \Delta$ ora valid, saben panelusuran
+tumrap sekuèn valid mesthi kasil.
+
+\end{document}

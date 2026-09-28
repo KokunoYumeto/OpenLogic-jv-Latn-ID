@@ -1,0 +1,39 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0653",
+  "source_path": "content/model-theory/basics/nonstandard-arithmetic.tex",
+  "source_sha256": "12f6c3e97c59d1f37b73695f126c7c03cffc6fcbd659e6a21ab95437bd15ab9d",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-573",
+      "source_line": 48,
+      "location": "interpretation of arithmetic language in the nonstandard model",
+      "finding": "The proof names the language L rather than the previously defined L_N, calls all nonlogical symbols constants, and writes M squared for the domain of the order relation.",
+      "proposed_resolution": "Use L_N, call these nonlogical symbols, and write Domain(M) squared for the order relation in the Javanese target."
+    },
+    {
+      "id": "OLPL-574",
+      "source_line": 120,
+      "location": "successor step between distinct blocks",
+      "finding": "After ruling out x-star equals y, the proof repeats the original x less than y claim rather than concluding x-star less than y.",
+      "proposed_resolution": "Conclude that x-star is less than y."
+    },
+    {
+      "id": "OLPL-575",
+      "source_line": 124,
+      "location": "two-sided integer-chain claim",
+      "finding": "The standard block has a least element and order type omega, so it is not a doubly infinite Z-chain; only nonstandard blocks have the stated two-sided form.",
+      "proposed_resolution": "Restrict the Z-chain statement to nonstandard blocks."
+    },
+    {
+      "id": "OLPL-576",
+      "source_line": 131,
+      "location": "strict ordering induced on equivalence classes",
+      "finding": "x less than y does not imply the block of x is strictly less than the block of y when x and y lie in the same block.",
+      "proposed_resolution": "State the strict block comparison only for elements in distinct blocks."
+    }
+  ],
+  "translation_treatment": "The target makes these bounded corrections while preserving the source's model construction, exercises, and formula order. The frozen English bytes remain unchanged.",
+  "no_source_mutation": true
+}

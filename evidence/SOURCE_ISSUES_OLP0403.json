@@ -1,0 +1,25 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0403",
+  "source_path": "content/many-valued-logic/sequent-calculus/introduction.tex",
+  "source_sha256": "d34708177650e4673f957d0b6ecdc9f210e4d65987e47f0694077c3d21ce63ef",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-321",
+      "source_line": 22,
+      "location": "classical sequent left-list endpoint",
+      "finding": "The displayed sequent lists left formulas A_1 through A_n, but the immediately following implication interprets its left side as a conjunction A_1 through A_m. The right side already ends at B_n, so the left endpoint should be m.",
+      "proposed_resolution": "Use A_m as the final left-side formula in the target display, preserving B_n on the right."
+    },
+    {
+      "id": "OLPL-322",
+      "source_line": 31,
+      "location": "initial-sequent value equation's missing valuation",
+      "finding": "The initial-sequent argument compares pValue_v(A)=True with pValue(A)=False. The latter omits the valuation parameter needed for the two exhaustive classical truth-value cases to concern the same evaluation.",
+      "proposed_resolution": "Write pValue_v(A)=False in the second disjunct of the target sentence."
+    }
+  ],
+  "translation_treatment": "The target translates classical sequent semantics, inference-rule readings and the n-place generalization while correcting the left-side index and the missing valuation argument. The frozen source remains unchanged.",
+  "no_source_mutation": true
+}

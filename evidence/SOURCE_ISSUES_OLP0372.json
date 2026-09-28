@@ -1,0 +1,25 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0372",
+  "source_path": "content/lambda-calculus/church-rosser/beta-eta-reduction.tex",
+  "source_sha256": "2eee11e77e3bb3052a2e139079f26cb22c1126577b4418f88918a3ede85a3cf4",
+  "status": "translation_corrected_pending_inherited_proofs_and_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-281",
+      "source_line": 21,
+      "location": "eta case of one-step beta-eta to parallel-beta-eta lemma",
+      "finding": "The source calls an eta conversion a beta one-step contraction, using bredone where eredone is required by the referenced eta definition.",
+      "proposed_resolution": "Use eredone in the target eta case and bounded source-comparison view."
+    },
+    {
+      "id": "OLPL-282",
+      "source_line": 23,
+      "location": "same lemma's eta-root and context argument",
+      "finding": "The source cites parallel reflexivity alone for the eta case. Reflexivity supplies the unchanged body, but the parallel eta-redex rule and compatibility for contractions in contexts are also needed.",
+      "proposed_resolution": "Name the eta-redex rule and compatible-context lifting after the reflexivity citation in target prose."
+    }
+  ],
+  "translation_treatment": "The target translates the chapter's transfer lemmas, corrects the eta one-step symbol and makes the eta-root/context simulation explicit. The final Church--Rosser theorem remains dependent on the open OLP-0371, OLP-0369 and OLP-0362 proof issues.",
+  "no_source_mutation": true
+}

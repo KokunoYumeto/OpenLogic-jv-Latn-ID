@@ -1,0 +1,25 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0457",
+  "source_path": "content/normal-modal-logic/filtrations/S5-decidable.tex",
+  "source_sha256": "f6f07c518a0df3bdcff427979834a918256085715f1353b5b35cc6dafe75d1b1",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-382",
+      "source_line": 12,
+      "location": "opening claim about finite model property and decidability",
+      "finding": "The prose presents finite model property as enough to decide systems given by schemas. The two-search argument also requires effective proof enumeration and effective enumeration of relevant finite countermodels; the argument as written establishes the result for S5.",
+      "proposed_resolution": "Qualify the target claim to effectively axiomatized systems with effectively enumerable relevant finite countermodels, stating that finite model property can yield decidability."
+    },
+    {
+      "id": "OLPL-383",
+      "source_line": 27,
+      "location": "second parallel search in the S5 decidability proof",
+      "finding": "The source says to enumerate all finite models. A theorem of S5 can fail in an arbitrary finite non-S5 model, so this would produce a false nonderivability answer. The proof's preceding S5 argument supplies finite universal countermodels.",
+      "proposed_resolution": "Enumerate finite universal models in the target's second search."
+    }
+  ],
+  "translation_treatment": "Translated the parallel proof and finite-model searches and the closing comparison with other frame properties, applying both bounded logical corrections.",
+  "no_source_mutation": true
+}

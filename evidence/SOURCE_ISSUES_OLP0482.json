@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0482",
+  "source_path": "content/applied-modal-logic/epistemic-logic/epistemic-logic.tex",
+  "source_sha256": "12674717c3c51628c4a275e5c34b38b66e2ec1eb7bbffea7bf08629d68489834",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-410",
+      "source_line": 24,
+      "location": "closing hook of the epistemic-logic chapter driver",
+      "finding": "The file uses the chapter document class and olchapter but ends with OLEndPartHook, repeating the temporal chapter-driver anomaly OLPL-408; other modal chapter drivers use OLEndChapterHook.",
+      "proposed_resolution": "Use OLEndChapterHook in the translated epistemic chapter driver and verify the reader build."
+    }
+  ],
+  "translation_treatment": "Translated the epistemic chapter title and draft editorial notice, retaining all eight imports and replacing the anomalous part-closing hook with the chapter hook in the target and bounded source-comparison view without changing frozen English.",
+  "no_source_mutation": true
+}

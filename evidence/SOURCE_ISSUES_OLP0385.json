@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0385",
+  "source_path": "content/many-valued-logic/syntax-and-semantics/introduction.tex",
+  "source_sha256": "d53637e3cabd6f0a5973bfe4b7b6ec9adc7d4c8c3ca9aa68a5949b2f936ff14c",
+  "status": "translation_corrected_pending_inherited_proofs_reference_audit_and_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-300",
+      "source_line": 58,
+      "location": "tautology value under a named many-valued logic",
+      "finding": "The preceding satisfaction definition indexes the formula value by the logic L, but the tautology condition immediately drops [L] from pValue while retaining L on entailment. In many-valued semantics the value depends on the logic's chosen truth functions.",
+      "proposed_resolution": "Write pValue_v(A)[L] in the target tautology condition, consistent with the immediately preceding satisfaction condition."
+    }
+  ],
+  "translation_treatment": "The target translates the classical baseline, multiple truth values, logic-specific truth functions and designated values, with the tautology value indexed by the named logic. Frozen source is unchanged.",
+  "no_source_mutation": true
+}

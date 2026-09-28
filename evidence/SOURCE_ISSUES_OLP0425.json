@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0425",
+  "source_path": "content/normal-modal-logic/frame-definability/equivalence-S5.tex",
+  "source_sha256": "057897c91d88ced3eebfd46a08cba8c26a80da294f8870f37e08146e01f39798",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-349",
+      "source_line": 2,
+      "location": "chapter metadata comment",
+      "finding": "The frozen section labels its chapter frame-correspondence, but its path, nml/frd/es5 file ID, and containing chapter driver identify frame-definability.",
+      "proposed_resolution": "Correct the target chapter metadata comment to frame-definability while preserving the frozen source and functional TeX commands."
+    }
+  ],
+  "translation_treatment": "Translated equivalence relations, S5 characterization and equivalence-class restriction proof, and corrected stale chapter metadata.",
+  "no_source_mutation": true
+}

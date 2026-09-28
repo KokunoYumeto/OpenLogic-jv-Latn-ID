@@ -1,0 +1,10 @@
+{
+  "schema":"jv-frozen-source-issues/1",
+  "unit_id":"OLP-0539",
+  "source_path":"content/set-theory/z/separation.tex",
+  "source_sha256":"5e4a9611823aa454b51908d88aa15f3fd4ee41af84f847a98e1c8a003a9b7a0b",
+  "status":"translation_corrected_pending_reader_build",
+  "issues":[{"id":"OLPL-479","source_line":67,"location":"informal no-self-membership argument, source lines 66–71","finding":"The account says a set first appears immediately after all its elements. At a limit stage there need not be one immediate predecessor containing all member formation stages; only strict later-than-each-member formation is required. The repeated immediately after phrase obscures the contradiction for self-membership.","proposed_resolution":"State that every set forms at a stage later than each of its elements; a self-membered set would have to first appear later than its own first-appearance stage, which is impossible."}],
+  "translation_treatment":"Translated separation, its stage justification and consequences; repaired only the imprecise stage-order prose, with formulas unchanged. Two source-language diaereses are normalized in the comparison view.",
+  "no_source_mutation":true
+}

@@ -1,0 +1,17 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0514",
+  "source_path": "content/intuitionistic-logic/tableaux/proofs.tex",
+  "source_sha256": "9745506f871e091339606542e34049c03d2baffd71bd7de389c0d69468846e73",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-455", "source_line": 32,
+      "location": "false-conjunction justifications at source lines 32 and 34",
+      "finding": "Both branches cite tableau line 4, which is the false B-implies-C formula. Their false A-and-B premise is tableau line 7.",
+      "proposed_resolution": "Cite line 7 for both applications of the false-conjunction rule."
+    }
+  ],
+  "translation_treatment": "Translated the worked currying tableau and exercise instructions, correcting two premise-line references while retaining all signed formulas, prefixes, branch structure and closure markers.",
+  "no_source_mutation": true
+}

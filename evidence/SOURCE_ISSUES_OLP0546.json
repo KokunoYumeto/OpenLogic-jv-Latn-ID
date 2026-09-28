@@ -1,0 +1,10 @@
+{
+  "schema":"jv-frozen-source-issues/1",
+  "unit_id":"OLP-0546",
+  "source_path":"content/set-theory/z/arbintersections.tex",
+  "source_sha256":"866857905e11e5f329a248326ba04ba14f293b388bd8e3573caaf05fb2b7d56d",
+  "status":"translation_corrected_pending_reader_build",
+  "issues":[{"id":"OLPL-481","source_line":51,"location":"inactive explanatory proof comment, source lines 46–51","finding":"The final line of the commented verification says x belongs to lowercase c, although the set defined and used throughout this argument is uppercase C. This is a one-symbol source typo in inactive material.","proposed_resolution":"Use uppercase C in the translated inactive proof comment and in the bounded comparison view; leave the frozen source and the displayed proof obligation unchanged."}],
+  "translation_treatment":"Translated the intersection construction and its inactive explanatory comment. The final comment uses C consistently; three English TeX diaereses are normalized only in the source comparison view. The displayed set-builder expressions and biconditional are unchanged except for translated prose inside text commands.",
+  "no_source_mutation":true
+}

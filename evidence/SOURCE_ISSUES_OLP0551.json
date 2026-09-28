@@ -1,0 +1,10 @@
+{
+  "schema":"jv-frozen-source-issues/1",
+  "unit_id":"OLP-0551",
+  "source_path":"content/set-theory/ordinals/iso.tex",
+  "source_sha256":"eb57a72aed6e4ff2398fe8d9c52239c79d2578df37c5e4bb891568381a41cb39",
+  "status":"translation_corrected_pending_reader_build",
+  "issues":[{"id":"OLPL-482","source_line":134,"location":"initial-segment comparison lemma proof, source lines 130–135","finding":"The proof ends by saying f's domain is B_{b_2}, although it earlier defines f from A_{a_2} to B_{b_2}. The inference b_1 < b_2 uses the range/codomain B_{b_2}, not the domain.","proposed_resolution":"Say that the range of the isomorphism f is B_{b_2} in the translated proof and bounded comparison view, preserving its displayed map and every mathematical symbol."}],
+  "translation_treatment":"Translated the entire isomorphism development, including uniqueness, initial segments and comparability, with 'jangkauan' for the misnamed range. The English plural s attached to the glossary token for bijection is removed only in the comparison view to permit Javanese grammar without losing the token. Frozen source bytes are unchanged.",
+  "no_source_mutation":true
+}

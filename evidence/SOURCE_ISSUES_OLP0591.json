@@ -1,0 +1,25 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0591",
+  "source_path": "content/set-theory/card-arithmetic/fix.tex",
+  "source_sha256": "cc111d7d7472b0e7ef940196977faef0f1b2867feaab0a74843e9d39077f5074",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-514",
+      "source_line": 148,
+      "location": "initial value of tau iteration and claimed strict bound on tau(A)",
+      "finding": "With tau_0(A)=card(A), an input whose cardinality is already a beth fixed point yields tau(A)=card(A), contradicting the claimed strict inequality card(A)<tau(A).",
+      "proposed_resolution": "Seed tau_0(A) with the successor cardinal of card(A), so tau(A) is a beth fixed point strictly larger than card(A)."
+    },
+    {
+      "id": "OLPL-515",
+      "source_line": 154,
+      "location": "initial value of W and its asserted range of beth fixed points",
+      "finding": "The source sets W_0=0, which is not a beth fixed point, although it then calls W an injection from all ordinals into beth fixed points. Its limit-stage preservation of fixed points is also left unstated.",
+      "proposed_resolution": "Set W_0=tau(0) and note that the increasing union of beth fixed points at a limit stage is again fixed by continuity of the beth sequence."
+    }
+  ],
+  "translation_treatment": "The target starts tau above the input cardinal, starts W at a beth fixed point, explains limit closure, and localizes the two Boolos page citations. The frozen source remains unchanged.",
+  "no_source_mutation": true
+}

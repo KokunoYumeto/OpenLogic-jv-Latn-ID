@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0436",
+  "source_path": "content/normal-modal-logic/axioms-systems/soundness.tex",
+  "source_sha256": "ff44b1e495e2dca06b0c6e7fed1c5dab9971288a8c3bef061f00f7f025f61d17",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-358",
+      "source_line": 45,
+      "location": "soundness proof, induction step axiom cases",
+      "finding": "The induction base handles tautological, K, optional Dual and added-system axiom instances, but the inductive step repeats only the tautological and added-system cases before assuming MP or Nec. A proof of length greater than one can end with a K or optional Dual axiom instance, so the displayed case split is incomplete.",
+      "proposed_resolution": "Include K and optional Dual axiom instances in the inductive step's cases handled as in the base step."
+    }
+  ],
+  "translation_treatment": "Translated the soundness theorem and proof with the missing K and optional Dual induction cases made explicit.",
+  "no_source_mutation": true
+}

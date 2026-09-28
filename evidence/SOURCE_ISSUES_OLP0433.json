@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0433",
+  "source_path": "content/normal-modal-logic/axioms-systems/more-proofs-in-K.tex",
+  "source_sha256": "75ea00c1a293c5648d59722ef93fb3a0c0b5b4a003e638f656fa4e1c11eddd4e",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-357",
+      "source_line": 85,
+      "location": "last line of the fourth K derivation",
+      "finding": "The proposition concludes that Diamond(A or B) implies (Diamond A or Diamond B), but the source derivation stops at the reversed disjunction (Diamond B or Diamond A). Although equivalent by propositional logic, the displayed proof never states the claimed formula.",
+      "proposed_resolution": "Add a final derivation line deriving the proposition's exact disjunction order from line 7 by propositional logic."
+    }
+  ],
+  "translation_treatment": "Translated the proof section and exercise and supplied the missing final propositional-logic line in the fourth derivation.",
+  "no_source_mutation": true
+}

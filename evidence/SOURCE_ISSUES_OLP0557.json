@@ -1,0 +1,10 @@
+{
+  "schema":"jv-frozen-source-issues/1",
+  "unit_id":"OLP-0557",
+  "source_path":"content/set-theory/ordinals/opps.tex",
+  "source_sha256":"f53aa4197833752c4ecdd3d7755c8e13cdec164fd68d0261dac26290a95cd171",
+  "status":"translation_corrected_pending_reader_build",
+  "issues":[{"id":"OLPL-487","source_line":97,"location":"least strict upper-bound proof, source lines 95–98","finding":"The last paragraph obtains that each member of supstrict(X) is at most some member of X, then immediately concludes minimality. It leaves unstated the comparison with an arbitrary strict upper-bound ordinal of X: that bound contains each such member, hence contains supstrict(X).","proposed_resolution":"State the comparison with any strict upper-bound ordinal in prose before concluding supstrict(X) is least. Preserve the displayed definition and all ordinal formulas."}],
+  "translation_treatment":"Translated successor/limit ordinals, three-way transfinite induction, and strict supremum. The final proof explicitly compares with every strict upper bound without adding formulas; frozen source bytes are unchanged.",
+  "no_source_mutation":true
+}

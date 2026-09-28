@@ -1,0 +1,32 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0416",
+  "source_path": "content/normal-modal-logic/syntax-and-semantics/tautological-instances.tex",
+  "source_sha256": "d951c14acce27168cd66ef02bdecd76610bb803879b399ec08e82183aa8732aa",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-334",
+      "source_line": 63,
+      "location": "induction proof for the negation formation case",
+      "finding": "The negation case is tagged prvFalse rather than prvNot, so the optional primitive-negation proof case is selected under the wrong tag.",
+      "proposed_resolution": "Use prvNot for the target negation proof case; retain the frozen source and the derivation body."
+    },
+    {
+      "id": "OLPL-335",
+      "source_line": 73,
+      "location": "last equivalence justification in the negation case",
+      "finding": "The step from failure of modal satisfaction of B to satisfaction of its negation cites the propositional satisfaction definition instead of modal satisfaction at w.",
+      "proposed_resolution": "Cite the definition of modal satisfaction at w in the target justification, leaving both equivalence formulas unchanged."
+    },
+    {
+      "id": "OLPL-336",
+      "source_line": 124,
+      "location": "first line of the biconditional induction case",
+      "finding": "The biconditional case begins with satisfaction of B→C while the case assumption and final substitution formula are B↔C.",
+      "proposed_resolution": "Use B↔C in that first target satisfaction expression; retain the rest of the biconditional proof."
+    }
+  ],
+  "translation_treatment": "Translated the tautological-instance definition, lemma and contraposition proof, localized visible proof annotations, and applied three bounded formal corrections in the target.",
+  "no_source_mutation": true
+}

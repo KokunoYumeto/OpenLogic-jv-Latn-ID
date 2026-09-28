@@ -1,0 +1,46 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0468",
+  "source_path": "content/normal-modal-logic/tableaux/completeness.tex",
+  "source_sha256": "ee4e86d1549731cdbe7088d4d682c304f04a9c007a93a525c99b25959a2c2d90",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-396",
+      "source_line": 43,
+      "location": "fourth clause of the complete-branch definition",
+      "finding": "The used-prefix modal rule is required for every prefix on a branch, but only used successor prefixes of the premise prefix are relevant.",
+      "proposed_resolution": "Specify every relevant already-used successor prefix in the translated definition."
+    },
+    {
+      "id": "OLPL-397",
+      "source_line": 52,
+      "location": "worked examples of complete branches",
+      "finding": "The true conjunction is missing its prefix; the true disjunction example incorrectly offers false B; and both conditional modal examples omit operands and repeat modal formulas where the rules require signed B at successors.",
+      "proposed_resolution": "Supply the conjunction prefix, true B in the disjunction branch, complete modal premises and signed B conclusions at the appropriate successor prefixes."
+    },
+    {
+      "id": "OLPL-398",
+      "source_line": 65,
+      "location": "finite complete-tableau proposition and proof",
+      "finding": "The proof processes only open branches but the proposition demands completeness of every branch, and the proof ends by claiming every branch is closed, contradicting its goal. It also needs a termination reason for repeated modal rule obligations.",
+      "proposed_resolution": "State that every open branch is complete; explain finite termination by descending modal depth, finitely many subformulas, and one discharge of each fresh-prefix obligation per prefix."
+    },
+    {
+      "id": "OLPL-399",
+      "source_line": 95,
+      "location": "completeness theorem proof scope",
+      "finding": "The theorem is stated for arbitrary Gamma, while the proposition used in its proof covers finite Gamma only; the proof also contains a duplicated-verb typo.",
+      "proposed_resolution": "Run the branch construction for finite Gamma, repair the typo, then apply modal compactness from first-order compactness and the standard translation to arbitrary Gamma."
+    },
+    {
+      "id": "OLPL-400",
+      "source_line": 156,
+      "location": "negative conjunction, disjunction and implication induction cases",
+      "finding": "Three second-conjunct satisfaction conclusions repeat B although their matching signed premises contain C.",
+      "proposed_resolution": "Use C in each second-conjunct satisfaction conclusion."
+    }
+  ],
+  "translation_treatment": "Translated the full K tableau-completeness development, open-branch model construction, all inductive cases and corollaries, applying the five bounded corrections in the target and source-comparison view without changing frozen English.",
+  "no_source_mutation": true
+}

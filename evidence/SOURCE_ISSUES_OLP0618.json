@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0618",
+  "source_path": "content/methods/induction/structural-induction.tex",
+  "source_sha256": "f57f94a62ed4aab37f569b5d56430b3756ee6e3a5281a0488cae5c233f2a62d8",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-545",
+      "source_line": 69,
+      "location": "definition of proper initial segment before the bracket-balance proposition",
+      "finding": "The definition says any shorter initial string, which includes the empty string under the usual string convention. The proposition that every proper initial segment has more opening than closing brackets is false for the empty string, and its proof enumerates only nonempty prefixes.",
+      "proposed_resolution": "Restrict the defined proper initial segments in this argument to nonempty strings, as the proof's cases require."
+    }
+  ],
+  "translation_treatment": "The Javanese definition and proposition explicitly restrict to nonempty proper initial segments; the letter and composite cases follow that scope. The frozen English source remains unchanged.",
+  "no_source_mutation": true
+}

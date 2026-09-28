@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0465",
+  "source_path": "content/normal-modal-logic/tableaux/more-rules.tex",
+  "source_sha256": "1763d19e944f908c2890c6918b0197280a38ce9932867b28f563a7140b6d9c48",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-395",
+      "source_line": 161,
+      "location": "label of the S5 closed-tableau example",
+      "finding": "The example calls its displayed formula Ax5, but Ax5 is Diamond A implies Box Diamond A. The actual formula and tableau prove Box A implies Box Diamond A.",
+      "proposed_resolution": "Name the actual proved formula in the translated introduction and retain the formal tableau unchanged."
+    }
+  ],
+  "translation_treatment": "Corrected the claim introducing the unchanged formal S5 tableau and re-reviewed the complete unit against the frozen source.",
+  "no_source_mutation": true
+}

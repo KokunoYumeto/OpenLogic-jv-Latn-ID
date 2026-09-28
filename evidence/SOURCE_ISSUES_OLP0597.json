@@ -1,0 +1,25 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0597",
+  "source_path": "content/set-theory/choice/countablechoice.tex",
+  "source_sha256": "37ed80e497f07f2c96db1a56b8573d90a6d8421e119f0bc7a2865fa2f534b994",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-524",
+      "source_line": 64,
+      "location": "finite-union inequality in Dedekind's countable-choice proof",
+      "finding": "The left side unions A_n repeatedly over i<n, whereas the right side sums the sizes of A_0 through A_{n-1}. The indexed union must use A_i.",
+      "proposed_resolution": "Use card(union_{i<n} A_i) in the displayed inequality."
+    },
+    {
+      "id": "OLPL-525",
+      "source_line": 119,
+      "location": "Feferman--Levy example without Choice",
+      "finding": "The source calls a countable union of countable sets of cardinality beth_1 in a ZF setting. Here beth_1 was introduced as a well-orderable cardinal under Choice, whereas the pertinent example is that the uncountable real line can be such a union without Countable Choice.",
+      "proposed_resolution": "State the Feferman--Levy example as the uncountable set of reals being a countable union of countable sets, without assigning it a well-orderable beth_1 cardinal in ZF."
+    }
+  ],
+  "translation_treatment": "The target fixes the finite-union index and states the Feferman--Levy example using the real line, while preserving the historical attribution and localizing Cohen and Russell page citations. The frozen source remains unchanged.",
+  "no_source_mutation": true
+}

@@ -1,0 +1,32 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0662",
+  "source_path": "content/proof-theory/natural-deduction/grafting.tex",
+  "source_sha256": "a7157a4cffa4a4a862c3ccca068d1b57b190ac830bbc7ce53a2df999663fe519",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-594",
+      "source_line": 25,
+      "location": "implication-introduction and elimination diagram",
+      "finding": "The diagram introduces B implies C although the upper derivation concludes A and the lower elimination concludes A.",
+      "proposed_resolution": "Use B implies A for the introduced implication in the target diagram."
+    },
+    {
+      "id": "OLPL-595",
+      "source_line": 66,
+      "location": "N2 grafting definition, second premise system",
+      "finding": "The second proof has an N2-style sequent conclusion but is labelled as an N1c or N1i proof inside the N2c/N2i definition.",
+      "proposed_resolution": "Use N2c or N2i for the second proof in the target definition."
+    },
+    {
+      "id": "OLPL-596",
+      "source_line": 81,
+      "location": "grafting proposition proof measure",
+      "finding": "The proof cites the height of an undefined delta rather than the first derivation delta_1 to which the grafting induction applies.",
+      "proposed_resolution": "Induct on the height of delta_1 in the target proof."
+    }
+  ],
+  "translation_treatment": "The target applies the three bounded diagram, system-label, and induction-variable corrections while preserving the frozen English source.",
+  "no_source_mutation": true
+}

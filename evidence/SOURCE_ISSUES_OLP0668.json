@@ -1,0 +1,39 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0668",
+  "source_path": "content/proof-theory/natural-deduction/rules-proofs.tex",
+  "source_sha256": "0bcf0b2ee130188295f81cabb47e058a856ed3e6eeec2e5df8e552e3e4e8df56",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-600",
+      "source_line": 131,
+      "location": "introductory characterization of N1c/N1i proofs",
+      "finding": "The source calls N1 proof trees trees of sequents, though the displayed N1 rules and the formal definition immediately below use formula occurrences as nodes.",
+      "proposed_resolution": "Describe N1 proofs as finite trees of formulas."
+    },
+    {
+      "id": "OLPL-601",
+      "source_line": 178,
+      "location": "three-premise schematic proof construction",
+      "finding": "The third immediate subproof is labelled delta_3 but its displayed conclusion repeats A_2 instead of A_3.",
+      "proposed_resolution": "Display A_3 as the conclusion of delta_3."
+    },
+    {
+      "id": "OLPL-602",
+      "source_line": 202,
+      "location": "sentence introducing the N1 rules table",
+      "finding": "The sentence names N2c and N2i but points to tab:N1 and immediately imports rules-N1; the displayed table contains N1c and N1i.",
+      "proposed_resolution": "Name N1c and N1i while retaining the N1 table reference and import."
+    },
+    {
+      "id": "OLPL-603",
+      "source_line": 247,
+      "location": "conjunction example, heights of delta_1 through delta_3",
+      "finding": "The source assigns height one to delta_1 even though it explicitly assigns height zero to that assumption-only proof; both one-step elimination proofs delta_2 and delta_3 have height one.",
+      "proposed_resolution": "State pheight(delta_2) = pheight(delta_3) = 1."
+    }
+  ],
+  "translation_treatment": "The target corrects these four bounded internal inconsistencies and preserves the frozen English file unchanged.",
+  "no_source_mutation": true
+}

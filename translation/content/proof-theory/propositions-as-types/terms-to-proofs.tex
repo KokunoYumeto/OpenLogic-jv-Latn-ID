@@ -1,0 +1,97 @@
+% part: intuitionistic-logic
+% chapter: propositions-as-types
+% section: terms-to-proofs
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{pty}{tp}
+
+\olsection{Ngrakit Maneh \usetoken{P}{derivation} saka Terma Bukti}
+
+Saiki kita nimbang arah kosokbaline: ngowahi terma bukti~$N$ dadi
+!!a{proof} maneh ing \Log{N2i}. Umume, iki mung bisa ditindakake
+relatif marang konteks sing ngandhut pasangan $x : !A$ kanggo saben
+variabel~$x$ sing kedadeyan bebas ing terma bukti kasebut. Nanging,
+kita wiwiti saka conto tanpa variabel bebas, yaiku terma
+\[
+\lambd[\typeof{x}{!A \land
+  !B}][\pair{\proj{2}{x}}{\proj{1}{x}}]
+\]
+Terma iki awujud $\lambd[\typeof{x}{!A \land !B}][N_1]$. Amarga
+siji-sijine aturan \Log{tN2i} sing ngasilake terma kaya mangkono
+iku~\Intro{\lif}, kita ngerti yen !!{proof} sing dikode dening~$N$
+kudu dipungkasi kanthi~\Intro{\lif}, yaiku dipungkasi kaya mangkene
+  \[
+  \Axiom$x : !A\land !B \fCenter \pair{\proj{2}{x}}{\proj{1}{x}} : 
+    !C$
+  \RightLabel{\Intro\lif}
+  \UnaryInf$\fCenter \lambd[\typeof{x}{!A \land
+  !B}][\pair{\proj{2}{x}}{\proj{1}{x}}] : (!A \land !B) \lif !C$
+  \DisplayProof
+  \]
+Kita durung ngerti $!C$, nanging kita ngerti yen antesedhene iku
+$!A \land !B$, lan konteks premise kudu ngandhut $x:!A \land !B$.
+
+Saiki terma bukti sing digandhengake karo premis wis ditemtokake:
+$\pair{\proj{2}{x}}{\proj{1}{x}}$. !!{proof} sing \emph{dikode dening
+terma iki} kudu dipungkasi kanthi \Intro{\land}. Kita isih durung
+ngerti $!C$, nanging amarga iku konklusi saka~\Intro{\land}, kita
+gerti yen kudu awujud konjungsi, yaiku $!C \ident (!C_1 \land !C_2)$.
+Kita nerusake pangrakitan maneh:
+  \[
+  \Axiom$x : !A\land !B \fCenter \proj{2}{x} : !C_1$
+  \Axiom$x : !A\land !B \fCenter \proj{1}{x} : !C_2$
+  \RightLabel{\Intro\land}
+  \BinaryInf$x : !A\land !B \fCenter \pair{\proj{2}{x}}{\proj{1}{x}} : 
+    !C_1 \land !C_2$
+  \RightLabel{\Intro\lif}
+  \UnaryInf$\fCenter \lambd[\typeof{x}{!A \land
+  !B}][\pair{\proj{2}{x}}{\proj{1}{x}}] : (!A \land !B) \lif (!C_1 \land !C_2)$
+  \DisplayProof
+  \]
+Terma bukti $\pi_2(x)$ nuduhake yen sekuen paling ndhuwur ing kiwa
+dipikolehi kanthi \Elim{\land}[2], yaiku premise awujud
+$!D \land !C_1$. Ing tengen, kita bisa nemtokake yen inferensi sing
+ngasilake $!C_2$ kudu \Elim{\land}[1], lan premise awujud
+$!C_2 \land !E$.
+  \[
+  \Axiom$x : !A\land !B \fCenter x: !D\land !C_1$
+  \RightLabel{\Elim\land[2]}
+  \UnaryInf$x : !A\land !B \fCenter \proj{2}{x} : !C_1$
+  \Axiom$x : !A\land !B \fCenter x: !C_2\land !E$
+  \RightLabel{\Elim\land[1]}
+  \UnaryInf$x : !A\land !B \fCenter \proj{1}{x} : !C_2$
+  \RightLabel{\Intro\land}
+  \BinaryInf$x : !A\land !B \fCenter \pair{\proj{2}{x}}{\proj{1}{x}} : 
+    !C_1 \land !C_2$
+  \RightLabel{\Intro\lif}
+  \UnaryInf$\fCenter \lambd[\typeof{x}{!A \land
+  !B}][\pair{\proj{2}{x}}{\proj{1}{x}}] : (!A \land !B) \lif (!C_1 \land !C_2)$
+  \DisplayProof
+  \]
+Amarga terma bukti saka sekuen paling ndhuwur saiki awujud variabel,
+kita ngerti yen sekuen kasebut kudu aksioma. Iki nemtokake $!C_1$,
+$!C_2$, $!D$, lan $!E$: $!D \ident !A$ lan $!C_1 \ident !B$, amarga
+yen ora, sekuen kiwa dudu aksioma; lan $!C_2 \ident !A$ lan
+$!E \ident !B$, amarga yen ora, sekuen tengen dudu aksioma. Kita wis
+ngrakit maneh bukti kanthi jangkep:
+  \[
+  \Axiom$x : !A\land !B \fCenter x: !A\land !B$
+  \RightLabel{\Elim\land[2]}
+  \UnaryInf$x : !A\land !B \fCenter \proj{2}{x} : !B$
+  \Axiom$x : !A\land !B \fCenter x: !A\land !B$
+  \RightLabel{\Elim\land[1]}
+  \UnaryInf$x : !A\land !B \fCenter \proj{1}{x} : !A$
+  \RightLabel{\Intro\land}
+  \BinaryInf$x : !A\land !B \fCenter \pair{\proj{2}{x}}{\proj{1}{x}} : 
+    !B \land !A$
+  \RightLabel{\Intro\lif}
+  \UnaryInf$\fCenter \lambd[\typeof{x}{!A \land
+  !B}][\pair{\proj{2}{x}}{\proj{1}{x}}] : (!A \land !B) \lif (!B \land !A)$
+  \DisplayProof
+  \]
+
+
+\end{document}

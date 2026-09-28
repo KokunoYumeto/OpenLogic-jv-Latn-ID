@@ -1,0 +1,25 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0374",
+  "source_path": "content/lambda-calculus/lambda-definability/introduction.tex",
+  "source_sha256": "ff7c8dba694a6e61b7d6445949a00ed6e61c5ddc1af1bcabcc7e0587ed1cb2d2",
+  "status": "translation_corrected_pending_chapter_id_audit_inherited_proofs_and_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-283",
+      "source_line": 9,
+      "location": "introduction file ID versus chapter and sibling IDs",
+      "finding": "This file uses lam/ldf/int while the importing chapter driver uses lam/rep, and sibling files mix ldf, rep and dfl identifiers. A search found a direct lam/ldf/prf reference but no lam/rep/int reference. It is not yet established whether the differing namespace codes are intentional or cause reader-label failures.",
+      "proposed_resolution": "Retain the source file ID in the target and audit all chapter-level references and resulting labels in a later guarded reader build before changing any identifier."
+    },
+    {
+      "id": "OLPL-284",
+      "source_line": 75,
+      "location": "constant function example",
+      "finding": "The source introduces the indexed constant function c_k but then writes c(n)=k without the subscript, leaving c undefined in that example.",
+      "proposed_resolution": "Use c_k(n)=k in the target and bounded structural-comparison view."
+    }
+  ],
+  "translation_treatment": "The target translates Church numerals, total and partial lambda definability and examples; it corrects the constant-function subscript. The mixed chapter/file ID is retained pending a guarded reference audit, and inherited proof gaps remain separate release dependencies.",
+  "no_source_mutation": true
+}

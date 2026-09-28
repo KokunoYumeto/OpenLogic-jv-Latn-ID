@@ -1,0 +1,25 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0564",
+  "source_path": "content/set-theory/spine/rank.tex",
+  "source_sha256": "fa9b9faa09478d4d5d6e510c52a2d5752fa72985db8efaff4a432a0e24d81dd0",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-490",
+      "source_line": 10,
+      "location": "rank introduction, intuitive description before the formal definition",
+      "finding": "Calling rank(A) the first moment at which A is formed is one stage too late relative to the stated definition: rank(A) is the least alpha with A contained in V_alpha, while A itself first appears at the successor power-set stage. In particular, rank(empty)=0 although empty is not a member of V_0.",
+      "proposed_resolution": "Describe rank(A) as the earliest stage whose elements suffice to form A, and retain the exact least-ordinal definition."
+    },
+    {
+      "id": "OLPL-491",
+      "source_line": 35,
+      "location": "converse proof of V_alpha as the sets of rank below alpha",
+      "finding": "After assuming x is a member of V_alpha, the source concludes that x is not a member of V_alpha. This contradicts the premise and cannot prove the displayed characterization.",
+      "proposed_resolution": "The induction conclusion is rank(x) in alpha. At a successor stage x is a subset of the preceding stage; at a limit stage x already belongs to an earlier stage. These cases sharpen rank(x) less than or equal to alpha to rank(x) less than alpha."
+    }
+  ],
+  "translation_treatment": "The target clarifies the stage supplying the elements of A and corrects the converse proof to conclude rank(x) in alpha, with a short successor/limit explanation. The names of Regularity and Foundation are localized inside later mathematical text. Exercises remain unfilled, other displayed formulas remain intact, and frozen source bytes are unchanged.",
+  "no_source_mutation": true
+}

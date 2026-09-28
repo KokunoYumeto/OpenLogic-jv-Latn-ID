@@ -1,0 +1,25 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0363",
+  "source_path": "content/lambda-calculus/syntax/de-bruijn.tex",
+  "source_sha256": "7a9ea3ae6329f8dc7620476401d748941516cf27e5ec29a48f57d422dd7d9d35",
+  "status": "translation_clarified_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-258",
+      "source_line": 49,
+      "location": "forward De Bruijn translation context lookup",
+      "finding": "The source calls Gamma(x) the position of x in Gamma, but the context can contain repeated names after prepending a binder. Without first-occurrence lookup, the translation of a shadowed variable is ambiguous.",
+      "proposed_resolution": "Clarify in target prose that Gamma(x) uses the first occurrence of x in the zero-indexed context; retain all formal equations and source bytes."
+    },
+    {
+      "id": "OLPL-259",
+      "source_line": 68,
+      "location": "inverse De Bruijn translation context lookup",
+      "finding": "The inverse equation G_Gamma(n)=Gamma[n] is only defined when the requested index names an existing position in the context, but the prose omits this domain condition.",
+      "proposed_resolution": "State the in-context position condition in target prose; retain the partial equation and source bytes."
+    }
+  ],
+  "translation_treatment": "Both domain clarifications are expressed in Javanese prose without changing mathematical spans or protected commands. The earlier OLP-0362 proof gap remains a separate open reader-release issue.",
+  "no_source_mutation": true
+}

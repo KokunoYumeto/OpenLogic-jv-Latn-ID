@@ -1,0 +1,25 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0619",
+  "source_path": "content/methods/induction/relations.tex",
+  "source_sha256": "66fc09c76443827350bdabf32900631432ebb9f043e51fe33b447fe64f3c0ba4",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-546",
+      "source_line": 34,
+      "location": "subterm relation example for the literal letters a and b",
+      "finding": "One inline subterm expression prints bare italic b while all adjacent occurrences denote the literal letter with \\mathrm{b}. The switch is inconsistent within the same case analysis.",
+      "proposed_resolution": "Write \\mathrm{b} as the second argument in that subterm expression."
+    },
+    {
+      "id": "OLPL-547",
+      "source_line": 154,
+      "location": "second decomposition of the bracketless a-b-c-d string",
+      "finding": "The first factor of the second decomposition prints bare italic b, while the whole string and all other letters in the displayed decomposition use \\mathrm for literal symbols.",
+      "proposed_resolution": "Write \\mathrm{b} in the first factor r_1."
+    }
+  ],
+  "translation_treatment": "The Javanese target uses the literal-letter macro for b in both places. A bounded comparison view records the corrections; the frozen English bytes remain unchanged.",
+  "no_source_mutation": true
+}

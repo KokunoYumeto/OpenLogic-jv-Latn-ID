@@ -1,0 +1,32 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0366",
+  "source_path": "content/lambda-calculus/syntax/eta.tex",
+  "source_sha256": "a6027d321bb141166a89ae598a60f8cc559b5b74922b47f5932fe464a91eb978",
+  "status": "translation_corrected_pending_alpha_proof_and_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-266",
+      "source_line": 42,
+      "location": "eta-conversion generator",
+      "finding": "The source's displayed eta-equivalence generator lacks the freshness condition x not free in f, although eta-contraction above requires it and the following extensionality theorem depends on it.",
+      "proposed_resolution": "Add x not in FV(f) to the target generator and its bounded structural-comparison view; preserve the frozen source."
+    },
+    {
+      "id": "OLPL-267",
+      "source_line": 75,
+      "location": "extensionality-to-eta proof",
+      "finding": "The frozen proof calls M equal N a conclusion of the extensionality rule without the extended-relation marker and treats Mx eta Nx as the raw premise; the latter follows from the induction hypothesis on an extensionality derivation, not directly from that premise.",
+      "proposed_resolution": "Write M equal[ext] N, explicitly apply induction to the extensionality premise, and use freshness of x for both terms in the target proof."
+    },
+    {
+      "id": "OLPL-268",
+      "source_line": 71,
+      "location": "extensionality command typography in proof, also line 82",
+      "finding": "The source prints the literal math variable ext and the literal optional argument [ext] where the project extensionality macro is intended.",
+      "proposed_resolution": "Use the extensionality macro in both target occurrences and the bounded comparison view."
+    }
+  ],
+  "translation_treatment": "The target translates the full section, adds the eta freshness condition, repairs the extensionality proof's induction step and command notation, and retains the separate OLP-0362 proof gap as an inherited reader-release dependency.",
+  "no_source_mutation": true
+}

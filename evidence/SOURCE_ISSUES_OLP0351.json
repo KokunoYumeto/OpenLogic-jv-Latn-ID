@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0351",
+  "source_path": "content/lambda-calculus/introduction/basic-pr-lambda.tex",
+  "source_sha256": "a763e494e2c1d8863885e8a3f68cef4a9b9cfeb1c59d0de0c1f9a198fdaed862",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-234",
+      "source_line": 18,
+      "location": "lambda term offered for the zero initial function",
+      "finding": "The frozen proof identifies the primitive-recursive zero function with the Church numeral zero, a term that takes no initial-function input. The same frozen corpus explicitly defines Zero(x)=0, so the claimed lambda definition must accept and ignore one argument before returning the zero numeral.",
+      "proposed_resolution": "Give the target unary zero-function term one ignored input binder, \\lambd[u][\\lambd[x][\\lambd[y][y]]], retaining the Church zero numeral as its result."
+    }
+  ],
+  "translation_treatment": "The Javanese proof adds one ignored input binder to the zero-function term, with an adjacent source-issue comment. QA v15 uses an exact source view and passes all structural checks; reader build and visual readback remain pending.",
+  "no_source_mutation": true
+}

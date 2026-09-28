@@ -1,0 +1,25 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0584",
+  "source_path": "content/set-theory/cardinals/classing.tex",
+  "source_sha256": "facf3eb5d19661a660d1c6441f09c0acc909f944253f4c7fe129048f8ea35bc6",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-504",
+      "source_line": 42,
+      "location": "first gloss in the cardinal-infinity characterization theorem",
+      "finding": "The formula states that the cardinal of A is not in omega, but the following gloss says A is not a natural number. A can be a non-ordinal finite set, so the gloss is false and does not express the stated infinitude criterion.",
+      "proposed_resolution": "Gloss the formula as A not being a finite set, retaining the formula and the three-way equivalence."
+    },
+    {
+      "id": "OLPL-505",
+      "source_line": 91,
+      "location": "proof that every infinite cardinal is a limit ordinal",
+      "finding": "The source cites the finite-cardinal equinumerosity proposition as a reason that the predecessor beta of an infinite successor ordinal is infinite. That proposition does not establish this inference; the needed fact is that the successor of a finite ordinal is finite.",
+      "proposed_resolution": "Replace that citation with the finite-successor argument and state that the cardinal of the predecessor does not exceed it before concluding the successor is not a cardinal."
+    }
+  ],
+  "translation_treatment": "The target corrects the gloss of cardinal infinitude and replaces the inapposite predecessor citation with the finite-successor argument, preserving the surrounding formulas and result. Frozen source bytes remain unchanged.",
+  "no_source_mutation": true
+}

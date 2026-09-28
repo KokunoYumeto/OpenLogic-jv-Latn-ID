@@ -1,0 +1,113 @@
+% Part: proof-theory
+% Chapter: normalization
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{nor}{seg}
+
+\olsection{Segmen lan Cut}
+
+Aturan !!^a{introduction} kang disusul aturan !!a{elimination}
+iku liku-liku ing !!a{proof}; normalisasi !!a{proof} tegesé
+ngilangi liku-liku kuwi. Nanging, \Elim{\lor} lan
+\Elim{\lexists} ndadèkaké definisi ``liku-liku kang arep
+diilangi'' rada ruwet. Masalahé mangkéné. Amarga aturan iki,
+ing liku-liku ora mesthi aturan !!{elimination} \emph{langsung}
+nyusul aturan !!{introduction}. Ing antarané bisa ana
+\Elim{\lor} utawa \Elim{\lexists}, upamané,
+\[
+\AxiomC{}
+\DeduceC{$\lexists[x][!C(x)]$}
+\AxiomC{$\Discharge{!A}{x}$}
+\DeduceC{$!B$}
+\DischargeRule{\Intro{\lif}}{x}
+\UnaryInfC{$!A \lif !B$}
+\DischargeRule{\Elim{\lexists}}{y}
+\BinaryInfC{$!A \lif !B$}
+\AxiomC{}
+\DeduceC{$!A$}
+\RightLabel{\Elim{\lif}}
+\BinaryInfC{$!B$}
+\DisplayProof
+\]
+Malah, cacah pira waé aturan \Elim{\lor} utawa
+\Elim{\lexists} bisa misahaké \Intro{\lif} saka \Elim{\lif},
+upamané,
+\[
+\AxiomC{}
+\DeduceC{$\lexists[x][!C(x)]$}
+\AxiomC{}
+\DeduceC{$!D \lor !E$}
+\AxiomC{$\Discharge{!A}{x}$}
+\DeduceC{$!B$}
+\DischargeRule{\Intro{\lif}}{x}
+\UnaryInfC{$!A \lif !B$}
+\AxiomC{$\Discharge{!A}{x}$}
+\DeduceC{$!B$}
+\DischargeRule{\Intro{\lif}}{x}
+\UnaryInfC{$!A \lif !B$}
+\RightLabel{\Elim{\lor}}
+\TrinaryInfC{$!A \lif !B$}
+\DischargeRule{\Elim{\lexists}}{y}
+\BinaryInfC{$!A \lif !B$}
+\AxiomC{}
+\DeduceC{$!A$}
+\RightLabel{\Elim{\lif}}
+\BinaryInfC{$!B$}
+\DisplayProof
+\]
+Tuladha iki nuduhaké yèn siji \Elim{\lif} bisa kalebu ing
+pirang-pirang liku-liku, amarga inferènsi mau nyusul luwih saka
+siji~\Intro{\lif}. Kanggo nyakup kabèh kemungkinan iki, kita
+netepaké liku-liku nganggo urutan tartamtu saka kedadéan
+!!{formula} ing bukti~\Log{N1i} kang diarani
+\emph{segmen}. Ing tuladha iki, urutan mau ngemot kedadéan
+~$!A \lif !B$, nalika premis tambahan saka $\Elim{\lor}$ utawa
+$\Elim{\lexists}$ nyusul konklusiné. Ana rong segmen kaya iki,
+saben-saben ngemot telung kedadéan~$!A \lif !B$.
+Definisi resminé mangkéné.
+
+\begin{defn}
+\emph{Segmen} ing \Log{N1i} !!{proof}~$\delta$ iku urutan
+kedadéan $!A_1$, \dots, $!A_n$ saka !!{formula}~$!A$ kang padha
+ing $\delta$, kanthi syarat
+\begin{enumerate}
+  \item $!A_1$ dudu konklusi saka \Elim{\lor} utawa \Elim{\lexists};
+  \item $!A_n$ dudu premis tambahan saka \Elim{\lor} utawa
+  \Elim{\lexists};
+  \item Kanggo $i = 1$, \dots,~$n-1$, $!A_i$ iku premis tambahan
+  saka \Elim{\lor} utawa \Elim{\lexists}, lan $!A_{i+1}$
+  iku konklusi inferènsi mau.
+\end{enumerate}
+\emph{Dawa} segmen mau yaiku~$n$.
+\end{defn}
+
+Ora saben segmen dadi sasaran kanggo diilangi (yaiku liku-liku).
+Segmen kang dadi sasaran diarani \emph{cut}.
+
+\begin{defn}
+\emph{Cut} iku segmen kang $!A_n$ dadi premis utama inferènsi
+!!a{elimination}, lan salah siji saka loro kahanan iki kelakon:
+$n=1$ lan $!A_1 = !A_n$ dadi konklusi inferènsi
+!!a{introduction} utawa~\FalseInt; utawa~$n>1$.
+\end{defn}
+
+Elinga yèn segmen cut ora kudu diwiwiti saka konklusi aturan
+!!a{introduction}. Cukup yèn pungkasané dadi premis utama
+aturan !!a{elimination}. Nanging, supaya segmen dawa~$1$
+kacathet minangka cut, segmen mau kudu dadi konklusi aturan
+!!{introduction} utawa~\FalseInt.
+
+\begin{defn}
+\emph{Pangkat} cut yaiku~$\depth{!A}$. \emph{Pangkat
+cut}~$\cutrank{\delta}$ saka !!a{proof}~$\delta$ iku pangkat
+paling gedhé ing antarané cut-cut ing~$\delta$. Cut diarani
+\emph{maksimal} ing~$\delta$ yèn pangkaté
+padha karo~$\cutrank{\delta}$, yaiku pangkat maksimal.
+\emph{Dawa cut}~$\delta$ iku gunggung dawa kabèh cut maksimalé.
+\end{defn}
+
+\end{document}

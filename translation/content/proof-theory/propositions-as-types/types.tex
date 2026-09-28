@@ -1,0 +1,118 @@
+% part: intuitionistic-logic
+% chapter: propositions-as-types
+% section: types
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{pty}{typ}
+
+\olsection{Tipe}
+
+Terma bukti kaya $(MN)$ dhewe ora nemtokake kanthi tunggal bukti sing
+dikode. Iki amarga variabel bebas, yaiku terma bukti saka aksioma,
+ora nemtokake !!{formula}s ing aksioma sing cocog. Nanging, yen kita
+nemtokake formula kasebut ing konteks~$\Gamma$ lan terma iku tipene
+bener, bukti panetepan tipe sing cocog \emph{mesthi} ditemtokake
+kanthi tunggal.
+
+\begin{defn}
+\emph{Konteks} kanggo terma bukti~$N$ iku himpunan $\Gamma$ sing
+masang paling akeh siji formula marang saben variabel, kanthi kanggo
+saben variabel bebas saka~$N$, $\Gamma$ ngandhut persis siji pasangan
+$x : !A$.
+\end{defn}
+
+Gatekna yen dhefinisi ora mbutuhake $\Gamma$ ngandhut $x:!A$
+\emph{mung} kanggo variabel bebas saka~$N$. Contone,
+$\Gamma = \{x:!A, y:!B, z:!C\}$ iku konteks kanggo $\pair{x}{y}$.
+
+\begin{defn}\ollabel{defn:type}
+  Upamane $\Gamma$ iku konteks kanggo~$N$. \emph{Tipe} saka~$N$
+  (relatif marang~$\Gamma$) ditetepake kanthi induktif kaya mangkene.
+  Jeneng variabel kaiket diganti dhisik supaya anyar tumrap konteks:
+  \begin{enumerate}
+  \item Tipe $x$ iku $!A$ yen lan mung yen $x:!A \in \Gamma$.
+  \item Yen $N$ nduweni tipe~$!B$ relatif marang $x:!A, \Gamma$, tipe $\lambd[\typeof{x}{!A}][N]$ iku $!A \lif !B$.
+  \item Yen $N$ nduweni tipe $!A \lif !B$ lan $M$ nduweni tipe~$!A$,
+    $(NM)$ nduweni tipe~$!B$
+  \item Yen $N$ nduweni tipe $!A$ lan $M$ nduweni tipe~$!B$,
+    $\pair{N}{M}$ nduweni tipe $!A \land !B$.
+  \item Yen $N$ nduweni tipe~$!A_1 \land !A_2$, $\proj{i}{N}$ nduweni tipe~$!A_i$.
+  \item Yen $N$ nduweni tipe $!A$,
+    $\inj[!B]{i}{N}$ nduweni tipe $!A \lor !B$ yen $i=1$ lan tipe
+    $!B \lor !A$ yen $i=2$.
+  \item Yen $M$ nduweni tipe $!A \lor !B$, lan $N_1$ nduweni tipe
+    $!C$ relatif marang $x_1:!A, \Gamma$ lan $N_2$ nduweni tipe~$!C$
+    relatif marang $x_2:!B, \Gamma$, $\dcase{M}{x_1}{N_1}{x_2}{N_2}$
+    nduweni tipe~$!C$.
+  \item Yen $N$ nduweni tipe~$\lfalse$,
+    $\abort{!A}{N}$ nduweni tipe~$!A$.
+  \end{enumerate}
+\end{defn}
+
+\begin{prop}
+Saben terma bukti~$N$ nduweni paling akeh siji tipe relatif marang
+konteks~$\Gamma$ kanggo~$N$. Saben terma sing tipene bener nduweni
+persis siji tipe.
+\end{prop}
+
+\begin{proof}
+  Kanthi induksi marang~$N$.
+\end{proof}
+
+Kita nulis $\Gamma \Sequent N : !A$ yen tipe $N$ relatif marang
+$\Gamma$ iku~$!A$. Klausa ing \olref{defn:type} mesthine wis katon
+lumrah: klausa kasebut persis aturan \Log{tN2i} kanthi siji bedane
+cilik, yaiku konteks~$\Gamma$ padha ing sakabehe. Kita bisa ngrumusake
+dhefinisi kasebut minangka kalkulus \Log{tN3i} kanthi aturan ing
+\olref{tab:tN3ip}.
+
+\subfile{rules-tN3}
+
+Terma bukti iku terma ing sawijining versi kalkulus $\lambd$, yaiku
+\emph{kalkulus $\lambd$ mawa tipe kanthi prodhuk, gunggung, lan tipe kosong}.
+Kalkulus $\lambd$ klasik mung nduweni terma sing digawe saka variabel,
+\emph{abstraksi $\lambd$}~$\lambd[x][N]$ lan aplikasi $(MN)$,
+lan ora nduweni anotasi~$!A$ ing abstraksi $\lambd$ mawa tipe
+$\lambd[\typeof{x}{!A}][N]$. Kalkulus $\lambd$ iku modhel komputasi
+sing lengkap Turing (yaiku saben fungsi komputabel parsial bisa
+diwakili dening terma ing kalkulus kasebut). Versi kalkulus $\lambd$
+sing diwenehake dening terma bukti lan aturan tipe iku modhel
+komputasi sing diwatesi, nanging gagasan dhasare padha. Wates kasebut
+ditetepake dening panetepan tipe: mung terma \emph{sing tipene bener},
+yaiku terma bukti mawa tipe (relatif marang konteks~$\Gamma$), sing
+dadi terma sah. Contone, $\lambd[x][(xx)]$ iku terma sah ing kalkulus
+$\lambd$ klasik tanpa tipe, nanging $\lambd[\typeof{x}{!A}][(xx)]$
+ora bisa nduweni tipe sing bener kanggo $!A$ endi wae. Iki amarga
+aturan tipe mbutuhake, supaya $(xx)$ nduweni tipe, $x$ kapisan kudu
+mawa tipe $!A \lif !B$ lan $x$ kapindho mawa tipe~$!A$, lan iki
+ora mungkin amarga $!A$ iku sub-!!{formula} sejati saka~$!A \lif !B$.
+
+Kanthi intuisi, kita bisa nganggep tipe minangka jinis barang sing
+dijenengi dening terma mawa tipe kasebut. Mula terma mawa tipe
+$!A \land !B$ nemtokake pasangan kanthi komponen kapisan mawa
+tipe~$!A$ lan komponen kapindho mawa tipe~$!B$, yaiku !!a{element}
+saka prodhuk~$!A \times !B$. Terma mawa tipe $!A \lif !B$ iku
+fungsi saka barang mawa tipe $!A$ menyang barang mawa tipe~$!B$.
+Terma mawa tipe $!A \lor !B$ iku barang mawa tipe $!A$ utawa barang
+mawa tipe~$!B$, bebarengan karo informasi endi sing dipilih.
+Iki kaya gabungan pisah saka rong himpunan $!A$ lan $!B$ sing
+ditetepake minangka $\{\tuple{i,x} : i = 1 \text{ utawa } 2,
+x \in !A \text{ yen } i = 1, x \in !B \text{ yen } i=2\}$.
+Tipe $\lfalse$ iku himpunan kosong, yaiku yen sawijining terma mawa
+tipe kasebut, terma iku ora bisa menehi jeneng barang apa wae.
+Amarga dedhuksi alami (kalebu \Log{tN3i}) konsisten, ora ana
+!!{proof} saka~$\lfalse$ kajaba ana asumsi mbukak, mula ora ana
+terma bukti katutup (terma tanpa variabel bebas) mawa tipe~$\lfalse$.
+
+Operator kalkulus $\lambd$ mawa tipe ngasilake terma sing, kanthi
+intuisi, menehi jeneng barang saka jinis sing bener, yen terma sing
+diwenehi operator kasebut menehi jeneng barang tartamtu. Contone,
+``yen $N_1 : !A$ lan $N_2 : !B$, mula $\pair{N_1}{N_2} : !A \land !B$''
+nyatakake yen nalika $N_1$ menehi jeneng barang mawa tipe~$!A$ lan
+$N_2$ menehi jeneng barang mawa tipe~$!B$, $\pair{N_1}{N_2}$ menehi
+jeneng barang mawa tipe $!A \land !B$.
+
+\end{document}

@@ -1,0 +1,23 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0504",
+  "source_path": "content/intuitionistic-logic/soundness-completeness/soundness-axd.tex",
+  "source_sha256": "ad6dd34af76e2848ba49f32f2599bdd96137c93ad50c496f553fddc1755a9125",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-438", "source_line": 41,
+      "location": "satisfaction formula in the premise case",
+      "finding": "The satisfaction macro has both Gamma and A_n as successive formula arguments, leaving an extra argument instead of asserting satisfaction of A_n at w.",
+      "proposed_resolution": "Use mSat{M}{!A_n}[w] in the premise case."
+    },
+    {
+      "id": "OLPL-439", "source_line": 33,
+      "location": "transition from the vacuous base case to strong induction",
+      "finding": "The source states that the claim therefore holds for all shorter derivations; this must be the induction hypothesis, not a consequence of the length-zero base case.",
+      "proposed_resolution": "Explicitly assume the claim for every derivation shorter than n when beginning the induction step."
+    }
+  ],
+  "translation_treatment": "Translated the soundness induction with the assumption macro corrected and the induction hypothesis stated explicitly. Retained the editorial gap concerning a proof of axiom validity.",
+  "no_source_mutation": true
+}

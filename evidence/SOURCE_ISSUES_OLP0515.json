@@ -1,0 +1,19 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0515",
+  "source_path": "content/intuitionistic-logic/tableaux/soundness.tex",
+  "source_sha256": "3852095c3c8edfdf76e294936602d8a0d640622642fcb0c27cf55420ef99e46c",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {"id":"OLPL-456","source_line":22,"location":"introductory contrapositive, source line 22","finding":"The claimed countermodel satisfies the conclusion instead of failing it; its satisfaction macro lacks the non-satisfaction slash.","proposed_resolution":"Use non-satisfaction of A at the counterworld."},
+    {"id":"OLPL-457","source_line":31,"location":"introductory semantic-strategy paragraph, source lines 31–33","finding":"Copied wording refers to a modal case and has the incomplete phrase relational and prefixes.","proposed_resolution":"Refer to the intuitionistic case and explicitly name relational models and prefix interpretations."},
+    {"id":"OLPL-458","source_line":40,"location":"prefix-interpretation definition and ensuing extension claim, source lines 40–54","finding":"The definition preserves only immediate prefix edges, but P is arbitrary and may omit intermediate prefixes; the subsequent assertion for every present extension does not follow.","proposed_resolution":"Require accessibility for every prefix-extension pair present in P. State the initial-segment property of legal tableau branches when extending an interpretation at a fresh child."},
+    {"id":"OLPL-459","source_line":75,"location":"closure proposition proof, source lines 75–82","finding":"The true-falsity occurrence omits its prefix. The next paragraph has broken prose, omits f on the descendant in R, and repeats truth at the original world instead of deriving truth at the descendant.","proposed_resolution":"Restore the prefix, use R between both interpreted worlds, and derive truth at the descendant before contradicting its false sign."},
+    {"id":"OLPL-460","source_line":141,"location":"false-disjunction exercise premise, source line 141","finding":"The signed false-disjunction premise omits the prefix used by the rule.","proposed_resolution":"Restore the sigma prefix on the premise."},
+    {"id":"OLPL-461","source_line":151,"location":"false-conditional branch extension and witness interpretation, source lines 151–164","finding":"Twice the proof claims satisfaction of a false conditional at the fresh child instead of the rule's actual true-antecedent and false-consequent conclusions. The interpretation argument verifies only the immediate new edge and describes f-prime as a replacement rather than an extension.","proposed_resolution":"Use the two actual signed conclusions in both extended-branch sets. Extend f at the new prefix and justify old-ancestor accessibility by transitivity and absence of old descendants by the legal branch's initial-segment property."},
+    {"id":"OLPL-462","source_line":166,"location":"introduction to the branching-rule cases, source line 166","finding":"The text calls these inferences two-premise rules although each has one premise and two branches.","proposed_resolution":"Describe them as branching inference rules."},
+    {"id":"OLPL-463","source_line":205,"location":"final sentence of the entailment-soundness corollary proof, source line 205","finding":"The conclusion repeats derivability although the contradiction establishes semantic entailment.","proposed_resolution":"Conclude Gamma semantically entails A."}
+  ],
+  "translation_treatment": "Translated the soundness definitions, branch-preservation proof, exercises and corollaries; corrected the audited signs, prefixes, rule conclusions and semantic conclusion, with a precise fresh-prefix interpretation explanation.",
+  "no_source_mutation": true
+}

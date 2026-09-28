@@ -1,0 +1,63 @@
+% Part: proof-theory
+% Chapter: normalization
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{nor}{int}
+
+\olsection{Pambuka}
+
+Yèn sampeyan wis !!{prove}d implikasi~$!A \lif !B$, bisa waé
+sampeyan migunakaké ing !!a{proof} kanggo~$!B$ kanthi
+\Elim{\lif}. Mesthiné iki uga mbutuhaké !!a{proof}~$\delta_1$
+kanggo~$!A$. !!{proof} sampeyan kanggo~$!A \lif !B$
+lumrahé pungkasané \Intro{\lif}, kang ngowahi
+!!a{proof}~$\delta_2$ kanggo~$!B$ saka asumsi kang isih
+mbukak~$!A$ dadi bukti kanggo~$!A \lif !B$. Yèn mangkono,
+!!{proof} pungkasané wujudé
+\[
+\AxiomC{$\Discharge{!A}{x}$}
+\RightLabel{$\delta_2$}
+\DeduceC{$!B$}
+\DischargeRule{\Intro{\lif}}{x}
+\UnaryInfC{$!A \lif !B$}
+\AxiomC{}
+\RightLabel{$\delta_1$}
+\DeduceC{$!A$}
+\RightLabel{\Elim{\lif}}
+\BinaryInfC{$!B$}
+\DisplayProof
+\]
+Senajan siasat sampeyan irit amarga migunakaké manèh apa kang wis
+ana (!!a{proof} kanggo~$!A \lif !B$), !!{proof}é dhéwé ora irit.
+Kaya ana liku-liku nalika $!A \lif !B$ dilebokaké mung kanggo
+langsung diilangaké. Kuduné ana cara kang luwih langsung kanggo
+!!{prove}~$!B$.
+
+Pancen, cara kuwi mesthi ana. ``Liku-liku'' kaya ing ndhuwur---aturan
+!!a{introduction} kang langsung disusul aturan
+!!a{elimination}---mesthi bisa diilangi saka !!{proof}s deduksi alami.
+Iki diarani \emph{normalisasi}, lan asilé yaiku !!{proof}
+\emph{normal} (utawa !!a{proof} \emph{ing wujud normal}).
+
+Mbuktèkaké asil iki, kaya teorema penghilangan cut ing kalkulus
+sekuen, rada ruwet lan mbutuhaké pamriksan akèh kasus. Kanggo
+\Log{N1c} klasik, buktiné luwih angel tinimbang kanggo
+\Log{N1i} intuisionistik. Kaya déné penghilangan cut nuduhaké yèn
+aturan \Cut{} ing kalkulus sekuen ora ndadèkaké luwih akèh perkara
+bisa !!{prove}, normalisasi nuduhaké yèn liku-liku ora ndadèkaké
+luwih akèh perkara bisa dibuktèkaké tinimbang nalika liku-liku mau
+diendhani. Ana pepadhan liyané: !!{proof} normal bisa luwih dawa
+tinimbang !!{proof} paling cekak kang mawa liku-liku kanggo asil
+kang padha, kaya déné !!{proof}s ing kalkulus sekuen bisa luwih
+cekak kanthi cut tinimbang !!{proof} tanpa cut kang paling cekak.
+Ing deduksi alami intuisionistik, sipat sub-!!{formula}, yaiku yèn
+sampeyan tansah bisa !!{prove} sawijining asil nganggo mung
+sub-!!{formula}s saka asumsi kang isih mbukak utawa saka asilé ing
+!!{proof} sampeyan, ndhèrèk saka normalisasi, kaya déné sipat iku
+ndhèrèk saka penghilangan cut kanggo kalkulus sekuen.
+
+\end{document}

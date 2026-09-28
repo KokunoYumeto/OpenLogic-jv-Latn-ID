@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0349",
+  "source_path": "content/lambda-calculus/introduction/lambda-computable.tex",
+  "source_sha256": "20e9d844a65445b937ae3cf5547d1a336428f25a1fcc69813dcb186101918a5b",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-233",
+      "source_line": 21,
+      "location": "first Church-numeral application in the search procedure",
+      "finding": "The frozen formula writes \\num m_0 and \\num m_{n-1} without grouped arguments. The macro takes one mandatory argument, so the subscripts fall outside the numeral overline. The same proof later groups both subscripts in \\num{m_0} and \\num{m_{n-1}}.",
+      "proposed_resolution": "Group the full subscripted variables as \\num{m_0} and \\num{m_{n-1}} in the target, matching the later expression; preserve all other symbols."
+    }
+  ],
+  "translation_treatment": "The Javanese proof groups the two numeral arguments in its first search expression. QA v14 compares against an exact source view and passes all structural checks; reader build and visual readback remain pending.",
+  "no_source_mutation": true
+}

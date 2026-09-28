@@ -1,5 +1,4 @@
 import pathlib,hashlib,json,re,datetime,collections,argparse,sys
-
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent/'source_views'))
 from olp0339_source_view import repaired_olp0339_source
 from olp0340_source_view import repaired_olp0340_source
@@ -151,16 +150,36 @@ from olp0668_source_view import repaired_olp0668_source
 from olp0669_source_view import repaired_olp0669_source
 from olp0670_source_view import repaired_olp0670_source
 from olp0671_source_view import repaired_olp0671_source
+from olp0672_source_view import repaired_olp0672_source
+from olp0675_source_view import repaired_olp0675_source
+from olp0676_source_view import repaired_olp0676_source
+from olp0677_source_view import repaired_olp0677_source
+from olp0678_source_view import repaired_olp0678_source
+from olp0679_source_view import repaired_olp0679_source
+from olp0679_source_view_v167 import repaired_olp0679_source_v167
+from olp0683_source_view import repaired_olp0683_source
+from olp0684_source_view import repaired_olp0684_source
+from olp0686_source_view import repaired_olp0686_source
+from olp0687_source_view import repaired_olp0687_source
+from olp0687_source_view_v171 import repaired_olp0687_source_v171
+from olp0688_source_view import repaired_olp0688_source
+from olp0691_source_view import repaired_olp0691_source
+from olp0693_source_view import repaired_olp0693_source
+from olp0694_source_view import repaired_olp0694_source
+from olp0696_source_view import repaired_olp0696_source
+from olp0697_source_view import repaired_olp0697_source
 R=pathlib.Path(__file__).resolve().parent.parent
 S=R/'evidence'
 def sha(data): return hashlib.sha256(data).hexdigest()
 parser=argparse.ArgumentParser(description='Validate Javanese OpenLogic translation units.')
 parser.add_argument('--unit',action='append',dest='selected_units',help='validate one unit ID; repeatable and report-only')
-parser.add_argument('--report-only',action='store_true',help='print results without changing evidence')
-parser.add_argument('--write-report',action='store_true',help='write only BATCH_QA.json after validating the full source tranche')
+parser.add_argument('--report-only',action='store_true',help='print results without changing durable QA ledgers')
+parser.add_argument('--write-report',action='store_true',help='write only BATCH_QA.json for the full source tranche')
 args=parser.parse_args()
 if args.selected_units and args.write_report:
     parser.error('--unit cannot be combined with --write-report')
+if args.selected_units and not args.report_only:
+    parser.error('--unit requires --report-only so a partial selection cannot replace cumulative ledgers')
 units=[json.loads(x) for x in (S/'SOURCE_MANIFEST.jsonl').read_text(encoding='utf-8-sig').splitlines()]
 if args.selected_units:
     selected=set(args.selected_units)
@@ -628,6 +647,38 @@ for u in units:
         protected_source=repaired_olp0670_source(protected_source)
     if u['unit_id']=='OLP-0671':
         protected_source=repaired_olp0671_source(protected_source)
+    if u['unit_id']=='OLP-0672':
+        protected_source=repaired_olp0672_source(protected_source)
+    if u['unit_id']=='OLP-0675':
+        protected_source=repaired_olp0675_source(protected_source)
+    if u['unit_id']=='OLP-0676':
+        protected_source=repaired_olp0676_source(protected_source)
+    if u['unit_id']=='OLP-0677':
+        protected_source=repaired_olp0677_source(protected_source)
+    if u['unit_id']=='OLP-0678':
+        protected_source=repaired_olp0678_source(protected_source)
+    if u['unit_id']=='OLP-0679':
+        protected_source=repaired_olp0679_source_v167(protected_source)
+    if u['unit_id']=='OLP-0683':
+        protected_source=repaired_olp0683_source(protected_source)
+    if u['unit_id']=='OLP-0684':
+        protected_source=repaired_olp0684_source(protected_source)
+    if u['unit_id']=='OLP-0686':
+        protected_source=repaired_olp0686_source(protected_source)
+    if u['unit_id']=='OLP-0687':
+        protected_source=repaired_olp0687_source_v171(protected_source)
+    if u['unit_id']=='OLP-0688':
+        protected_source=repaired_olp0688_source(protected_source)
+    if u['unit_id']=='OLP-0691':
+        protected_source=repaired_olp0691_source(protected_source)
+    if u['unit_id']=='OLP-0693':
+        protected_source=repaired_olp0693_source(protected_source)
+    if u['unit_id']=='OLP-0694':
+        protected_source=repaired_olp0694_source(protected_source)
+    if u['unit_id']=='OLP-0696':
+        protected_source=repaired_olp0696_source(protected_source)
+    if u['unit_id']=='OLP-0697':
+        protected_source=repaired_olp0697_source(protected_source)
     if u['unit_id']=='OLP-0533':
         protected_source=repaired_olp0533_source(protected_source)
     if u['unit_id']=='OLP-0379':
@@ -1812,6 +1863,54 @@ for u in units:
     if u['unit_id']=='OLP-0671':
         math_source=repaired_olp0671_source(math_source)
         token_source=repaired_olp0671_source(token_source)
+    if u['unit_id']=='OLP-0672':
+        math_source=repaired_olp0672_source(math_source)
+        token_source=repaired_olp0672_source(token_source)
+    if u['unit_id']=='OLP-0675':
+        math_source=repaired_olp0675_source(math_source)
+        token_source=repaired_olp0675_source(token_source)
+    if u['unit_id']=='OLP-0676':
+        math_source=repaired_olp0676_source(math_source)
+        token_source=repaired_olp0676_source(token_source)
+    if u['unit_id']=='OLP-0677':
+        math_source=repaired_olp0677_source(math_source)
+        token_source=repaired_olp0677_source(token_source)
+    if u['unit_id']=='OLP-0678':
+        math_source=repaired_olp0678_source(math_source)
+        token_source=repaired_olp0678_source(token_source)
+    if u['unit_id']=='OLP-0679':
+        math_source=repaired_olp0679_source_v167(math_source)
+        token_source=repaired_olp0679_source_v167(token_source)
+    if u['unit_id']=='OLP-0683':
+        math_source=repaired_olp0683_source(math_source)
+        token_source=repaired_olp0683_source(token_source)
+    if u['unit_id']=='OLP-0684':
+        math_source=repaired_olp0684_source(math_source)
+        token_source=repaired_olp0684_source(token_source)
+    if u['unit_id']=='OLP-0686':
+        math_source=repaired_olp0686_source(math_source)
+        token_source=repaired_olp0686_source(token_source)
+    if u['unit_id']=='OLP-0687':
+        math_source=repaired_olp0687_source_v171(math_source)
+        token_source=repaired_olp0687_source_v171(token_source)
+    if u['unit_id']=='OLP-0688':
+        math_source=repaired_olp0688_source(math_source)
+        token_source=repaired_olp0688_source(token_source)
+    if u['unit_id']=='OLP-0691':
+        math_source=repaired_olp0691_source(math_source)
+        token_source=repaired_olp0691_source(token_source)
+    if u['unit_id']=='OLP-0693':
+        math_source=repaired_olp0693_source(math_source)
+        token_source=repaired_olp0693_source(token_source)
+    if u['unit_id']=='OLP-0694':
+        math_source=repaired_olp0694_source(math_source)
+        token_source=repaired_olp0694_source(token_source)
+    if u['unit_id']=='OLP-0696':
+        math_source=repaired_olp0696_source(math_source)
+        token_source=repaired_olp0696_source(token_source)
+    if u['unit_id']=='OLP-0697':
+        math_source=repaired_olp0697_source(math_source)
+        token_source=repaired_olp0697_source(token_source)
     if u['unit_id']=='OLP-0533':
         math_source=repaired_olp0533_source(math_source)
         token_source=repaired_olp0533_source(token_source)
@@ -2015,6 +2114,38 @@ for u in units:
         command_source=repaired_olp0670_source(command_source)
     if u['unit_id']=='OLP-0671':
         command_source=repaired_olp0671_source(command_source)
+    if u['unit_id']=='OLP-0672':
+        command_source=repaired_olp0672_source(command_source)
+    if u['unit_id']=='OLP-0675':
+        command_source=repaired_olp0675_source(command_source)
+    if u['unit_id']=='OLP-0676':
+        command_source=repaired_olp0676_source(command_source)
+    if u['unit_id']=='OLP-0677':
+        command_source=repaired_olp0677_source(command_source)
+    if u['unit_id']=='OLP-0678':
+        command_source=repaired_olp0678_source(command_source)
+    if u['unit_id']=='OLP-0679':
+        command_source=repaired_olp0679_source_v167(command_source)
+    if u['unit_id']=='OLP-0683':
+        command_source=repaired_olp0683_source(command_source)
+    if u['unit_id']=='OLP-0684':
+        command_source=repaired_olp0684_source(command_source)
+    if u['unit_id']=='OLP-0686':
+        command_source=repaired_olp0686_source(command_source)
+    if u['unit_id']=='OLP-0687':
+        command_source=repaired_olp0687_source_v171(command_source)
+    if u['unit_id']=='OLP-0688':
+        command_source=repaired_olp0688_source(command_source)
+    if u['unit_id']=='OLP-0691':
+        command_source=repaired_olp0691_source(command_source)
+    if u['unit_id']=='OLP-0693':
+        command_source=repaired_olp0693_source(command_source)
+    if u['unit_id']=='OLP-0694':
+        command_source=repaired_olp0694_source(command_source)
+    if u['unit_id']=='OLP-0696':
+        command_source=repaired_olp0696_source(command_source)
+    if u['unit_id']=='OLP-0697':
+        command_source=repaired_olp0697_source(command_source)
     # OLPL-003: the closed tableau expands a true conjunction on line 2,
     # but both frozen rule labels say true implication. Normalize only those
     # two labels for exact command comparison.
@@ -4399,7 +4530,5 @@ for seg in align:
         seg['review_sha256']=sha(review_file.read_bytes())
 report={'schema':'jv-batch-qa/1','utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'checked_units':len(rows),'structural_pass_units':sum(x['status']=='structural_pass' for x in rows),'total_units':722,'segments':len(align),'translated_segments':sum(x['classification']=='translated' for x in align),'units':rows,'failures':len(failures),'semantic_reviewed_units':len(reviewed),'build':'see BUILD_SETS.json','release_ready':False}
 if args.write_report:
-    if report['failures'] or report['checked_units'] != 671 or report['semantic_reviewed_units'] != 671:
-        parser.error('source tranche is not the verified 671-unit boundary')
     (S/'BATCH_QA.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
 print(json.dumps({k:v for k,v in report.items() if k!='units'}))

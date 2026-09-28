@@ -1,0 +1,60 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0362",
+  "source_path": "content/lambda-calculus/syntax/alpha.tex",
+  "source_sha256": "f17619c4515bbbc583990680fd46c1d57191327b0f4a3cce347b2a327a6d0dda",
+  "status": "translation_annotated_pending_proof_and_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-251",
+      "source_line": 19,
+      "location": "first one-step bound-variable-change definition",
+      "finding": "The first formulation omits x distinct from y although a bound-variable change and both subsequent equivalent formulations require distinct binder names.",
+      "proposed_resolution": "Add x unequal to y in the target's first formulation; preserve the frozen source and the later formal clauses."
+    },
+    {
+      "id": "OLPL-252",
+      "source_line": 77,
+      "location": "smallest reflexive-transitive relation explanation",
+      "finding": "The explanation of the least alpha-conversion relation mentions transitivity and the one-step relation but omits reflexivity, despite the definition and its inductive rule requiring it.",
+      "proposed_resolution": "Name reflexivity along with transitivity and the one-step relation in the target explanation."
+    },
+    {
+      "id": "OLPL-253",
+      "source_line": 108,
+      "location": "alpha-convertibility exercise, third item",
+      "finding": "The third pair repeats the second pair exactly. The frozen source gives no evidence of the distinct pair originally intended.",
+      "proposed_resolution": "Retain the exact duplicate formal exercise rather than invent an ungrounded replacement; keep the duplication in the issue log for reader-edition review."
+    },
+    {
+      "id": "OLPL-254",
+      "source_line": 125,
+      "location": "one-step alpha conversion preserves free variables, two proof cases",
+      "finding": "The proof writes FV(N) without the project macro, omits the backslash in another FV expression, and in the no-free-x case subtracts x immediately after applying the theorem that preserves FV(N), where the enclosing lambda-y requires subtracting y first.",
+      "proposed_resolution": "Use FV braces consistently and calculate FV(N) minus y, then FV(N) minus x because neither variable is free in N."
+    },
+    {
+      "id": "OLPL-255",
+      "source_line": 161,
+      "location": "one-step reversal lemma proof",
+      "finding": "The proof claims the replacement variable y is absent from the free variables after substituting y for x, citing the clear-variable theorem. That theorem instead shows the old variable x is absent when x differs from y. The other three compatibility cases are omitted.",
+      "proposed_resolution": "State x not free in the substituted body, justify it by x unequal to y, invoke the repaired inverse-substitution theorem, and identify the compatibility cases as induction steps."
+    },
+    {
+      "id": "OLPL-256",
+      "source_line": 245,
+      "location": "alpha-safe substitution theorem, abstraction proof",
+      "finding": "The proof declares the outer substitution defined from binder conditions alone without establishing that substitution in the body is defined. Its displayed comparison then uses literal equalities where the cited replacement lemma and induction hypothesis supply at most alpha-equivalence. The induction argument for the displayed middle comparison is not supplied.",
+      "proposed_resolution": "Correct the displayed comparison symbols to alpha-equivalence and state the missing inner-definedness premise explicitly in the target prose. Retain the theorem statement; do not present this frozen proof sketch as a complete proof pending a separate proof repair."
+    },
+    {
+      "id": "OLPL-257",
+      "source_line": 274,
+      "location": "alpha-safe substitution corollary",
+      "finding": "The comparison premise repeats definedness of the first pair rather than requiring the second pair's substitution to be defined, and it omits alpha-equivalence between the replacement terms.",
+      "proposed_resolution": "Require R-double-prime alpha-equivalent to R-prime and define substitution for the second pair in the target corollary."
+    }
+  ],
+  "translation_treatment": "The Javanese target translates all prose and formal clauses, applies bounded OLPL-251/252/254/255/257 corrections, retains the duplicate exercise without guessing intent, and explicitly notes the remaining OLPL-256 proof gap. QA v22 passes formal structure, but the reader edition remains pending a proof repair and guarded build/readback.",
+  "no_source_mutation": true
+}

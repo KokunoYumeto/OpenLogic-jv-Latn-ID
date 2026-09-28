@@ -1,0 +1,32 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0696",
+  "source_path": "content/proof-theory/propositions-as-types/type-preservation.tex",
+  "source_sha256": "45707be51e3f9c94199c7d8ac0656d402a50f99b12504c33b217bfe86f040d8f",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-672",
+      "source_line": 18,
+      "location": "reduction/permutation scope",
+      "finding": "The introductory and progress prose calls the entire conversion relation beta reduction, although the preceding section includes separate permutation conversions. Beta-only reduction cannot justify progress relative to a normality definition that also excludes permutation redexes.",
+      "proposed_resolution": "Use reduction/permutation conversion wording for the full relation; retain beta wording for the actual product and function contractions."
+    },
+    {
+      "id": "OLPL-673",
+      "source_line": 106,
+      "location": "progress quantifier domain",
+      "finding": "The final progress sentence omits the well-typed restriction used throughout its preceding argument.",
+      "proposed_resolution": "Make well-typed explicit in the progress conclusion."
+    },
+    {
+      "id": "OLPL-674",
+      "source_line": 90,
+      "location": "proof substitution local contexts and binders",
+      "finding": "Replacing a context-Gamma-prime variable axiom directly by the Gamma proof can mismatch its local context; binder capture and shadowing are also not addressed.",
+      "proposed_resolution": "Rename binders fresh, weaken the substituting proof to each remaining local context, and state the height-induction construction preserving rule types."
+    }
+  ],
+  "translation_treatment": "Complete direct translation with explicit full conversion scope, well-typed progress and capture-safe proof substitution with local weakening. Frozen English is untouched.",
+  "no_source_mutation": true
+}

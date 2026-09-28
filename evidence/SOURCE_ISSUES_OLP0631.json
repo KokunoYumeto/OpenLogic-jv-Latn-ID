@@ -1,0 +1,19 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0631",
+  "source_path": "content/history/biographies/alan-turing.tex",
+  "source_sha256": "105de99d822a0dbb375d0d4bd8e3ed3847b7f77d1f1c4760f62cbcd0b7f2671b",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-551",
+      "source_line": 63,
+      "location": "The Imitation Game cast in the reading note",
+      "finding": "Both cast names are misspelled as Bendict Cumberbatch and Kiera Knightley.",
+      "proposed_resolution": "Write Benedict Cumberbatch and Keira Knightley.",
+      "evidence_url": "https://www.oscars.org/oscars/ceremonies/embed/2015"
+    }
+  ],
+  "translation_treatment": "The Javanese reading note uses the Academy-attested cast spellings. A bounded comparison view records both repairs; frozen English bytes remain unchanged.",
+  "no_source_mutation": true
+}

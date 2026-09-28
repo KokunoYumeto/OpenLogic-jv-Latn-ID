@@ -1,0 +1,25 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0348",
+  "source_path": "content/lambda-calculus/introduction/lambda-definability.tex",
+  "source_sha256": "fefc26aa72359b62bcc486490e018cb534d6e24aad01cadde4672b5cd99b244a",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-231",
+      "source_line": 30,
+      "location": "arity and domain description in the lambda-definability definition",
+      "finding": "The source lists parameters x_0 through x_{k-1} but calls the function n-ary and describes a multi-argument partial function merely as from N to N.",
+      "proposed_resolution": "Describe f as a partial function with k natural-number arguments and natural-number output; preserve the two N symbols while correcting the arity."
+    },
+    {
+      "id": "OLPL-232",
+      "source_line": 37,
+      "location": "undefined case of the lambda-definability definition",
+      "finding": "The frozen math places a comma after F in the expression whose normal form is being discussed, turning a function application into a comma-separated expression.",
+      "proposed_resolution": "Use F applied to the Church numeral arguments, with the same thin space used in the immediately preceding defined-case display."
+    }
+  ],
+  "translation_treatment": "The Javanese target corrects the two bounded definition slips. QA v13 uses an exact source view and passes all structural checks; reader build and visual readback remain pending.",
+  "no_source_mutation": true
+}

@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0405",
+  "source_path": "content/many-valued-logic/sequent-calculus/structural-rules.tex",
+  "source_sha256": "4acc6c8de469ff1e6aed5a5c65878c818fe79f9b14f8882b5031c45179375261",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-326",
+      "source_line": 1,
+      "location": "structural-rules source part metadata comment",
+      "finding": "The source comment uses many-valued-logics, whereas the part directory and mvl file ID consistently use the singular many-valued-logic path.",
+      "proposed_resolution": "Correct the target part comment to many-valued-logic without changing the frozen source, TeX rules or file ID."
+    }
+  ],
+  "translation_treatment": "The target translates the structural-rule introduction, double-line convention and indexed cut-rule explanation while preserving both formal rule displays. It corrects the part metadata comment; frozen source is unchanged.",
+  "no_source_mutation": true
+}

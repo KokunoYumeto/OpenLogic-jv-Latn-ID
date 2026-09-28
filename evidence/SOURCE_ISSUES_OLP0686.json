@@ -1,0 +1,25 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0686",
+  "source_path": "content/proof-theory/propositions-as-types/introduction.tex",
+  "source_sha256": "d1e4e979af0f251cc4e7d93d8f32e4e0b9e2e8b71e349b0deecfa78649f460c9",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-649",
+      "source_line": 75,
+      "location": "implication elimination and the term typing rule",
+      "finding": "The paragraph calls the displayed application M1 M2 a composition term, although its typing rule is function application to an argument.",
+      "proposed_resolution": "Call the displayed terms application terms."
+    },
+    {
+      "id": "OLPL-650",
+      "source_line": 20,
+      "location": "introductory beta-contraction substitution description",
+      "finding": "Replacing every free occurrence without qualifying bound-variable renaming can capture free variables of the substituting term and does not describe the intended lambda-calculus substitution.",
+      "proposed_resolution": "Explicitly require bound-variable renaming when necessary to avoid capturing free variables."
+    }
+  ],
+  "translation_treatment": "The target localizes the complete introduction and correspondence table, uses application terminology and makes capture avoidance explicit. work/olp0686_source_view.py supplies the bounded comparison view; frozen English bytes remain unchanged.",
+  "no_source_mutation": true
+}

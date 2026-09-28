@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0428",
+  "source_path": "content/normal-modal-logic/axioms-systems/introduction.tex",
+  "source_sha256": "554f263088c8e6e98b5cd4e9bf341c5497f787d11f9d136b07fceb1671a36068",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-353",
+      "source_line": 9,
+      "location": "modal axiomatic chapter introduction file ID",
+      "finding": "The frozen introduction uses nml/axs/int, but its containing chapter driver uses nml/prf and every other imported section in this chapter uses nml/prf. No source reference to nml/axs/int was found in the content tree.",
+      "proposed_resolution": "Use nml/prf/int in the target so the section ID follows the chapter lineage; retain the frozen source and verify label resolution in the guarded reader build."
+    }
+  ],
+  "translation_treatment": "Translated the modal axiomatic-derivation introduction and corrected its outlying file ID to the chapter's nml/prf lineage.",
+  "no_source_mutation": true
+}

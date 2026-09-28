@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0439",
+  "source_path": "content/normal-modal-logic/axioms-systems/provability-properties.tex",
+  "source_sha256": "2054b1d871723e1845690d3dc42bf9e44a994965341fc3e6505e0c91c1b3a246",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-361",
+      "source_line": 29,
+      "location": "fifth property in the derivability proposition",
+      "finding": "A percent sign immediately after the Rule T label comments out the printed words 'Rule T: If'. The displayed item therefore begins with a premise formula and lacks both its name and the conditional introducing its hypotheses, although the following paragraph refers to that rule.",
+      "proposed_resolution": "Remove the comment marker in the target and translate the live heading as 'Aturan T: Yen', preserving the formulas and label."
+    }
+  ],
+  "translation_treatment": "Translated the five derivability properties, exposition and deductive-closure definition with the Rule T heading restored in the target.",
+  "no_source_mutation": true
+}

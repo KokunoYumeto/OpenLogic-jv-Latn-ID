@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0616",
+  "source_path": "content/methods/induction/strong-induction.tex",
+  "source_sha256": "0cec55c0265daa331a4b473daad197d39ef0aaddaa518ae051d3230c1df2560f",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-544",
+      "source_line": 43,
+      "location": "vacuous-premise explanation at k=0",
+      "finding": "The source says 'for all l<0, P(0)' is vacuously true, but the strong-induction premise stated immediately before and after is 'for all l<k, P(l)'. The constant P(0) slips in where the quantified variable l is required.",
+      "proposed_resolution": "State the vacuous premise at k=0 as 'for all l<0, P(l)'."
+    }
+  ],
+  "translation_treatment": "The Javanese target retains P(l) in the vacuous premise. The frozen English source remains unchanged and the bounded comparison view records the one formula correction.",
+  "no_source_mutation": true
+}

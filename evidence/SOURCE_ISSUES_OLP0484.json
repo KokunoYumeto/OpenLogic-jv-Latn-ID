@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0484",
+  "source_path": "content/applied-modal-logic/epistemic-logic/language-epistemic-logic.tex",
+  "source_sha256": "a3dbe66fb9357878583c30a38b9801609179a229bc1ae39a6fd3e565f243e455",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-412",
+      "source_line": 67,
+      "location": "definition of modal-free epistemic formulas",
+      "finding": "In the multi-agent language, absence of one fixed Knows_a subformula does not make a formula modal-free if it still contains Knows_b for another agent b.",
+      "proposed_resolution": "Require absence of Knows_a for every agent in the translated modal-free definition."
+    }
+  ],
+  "translation_treatment": "Translated the epistemic language, formation clauses, group knowledge and common knowledge while clarifying the every-agent scope of modal-free in the target and bounded comparison view without changing frozen English.",
+  "no_source_mutation": true
+}

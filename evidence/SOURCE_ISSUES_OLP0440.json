@@ -1,0 +1,25 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0440",
+  "source_path": "content/normal-modal-logic/axioms-systems/consistency.tex",
+  "source_sha256": "410cd2532bf8c2ba318f476f6e9192064021f16e0a42aa297015bb41851e889b",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-362",
+      "source_line": 16,
+      "location": "introductory link from inconsistency to model truth",
+      "finding": "The source says an inconsistent set cannot have all its formulas true at a world in any model, without specifying the system relative to which it is inconsistent. For a general modal system Sigma, soundness excludes such a world in a model of Sigma; an arbitrary model can still satisfy the set's formulas.",
+      "proposed_resolution": "Qualify both directions of the model-truth statement by the relevant system and models of that system."
+    },
+    {
+      "id": "OLPL-363",
+      "source_line": 54,
+      "location": "contrapositive proof of the consistency extension property",
+      "finding": "From the two extended sets being inconsistent, the proof says the two derivations of falsity follow by the preceding proposition's part b. They follow immediately from the definition of Sigma-consistency; part b instead characterizes derivability of a formula by inconsistency after adjoining its negation.",
+      "proposed_resolution": "Cite the definition of consistency in the target proof at this step while retaining the two displayed derivability claims."
+    }
+  ],
+  "translation_treatment": "Translated consistency, examples and the contrapositive proof with system-relative model scope and the direct definition cited at the affected step.",
+  "no_source_mutation": true
+}

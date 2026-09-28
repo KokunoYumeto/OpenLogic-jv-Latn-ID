@@ -1,0 +1,23 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0507",
+  "source_path": "content/intuitionistic-logic/soundness-completeness/canonical-model.tex",
+  "source_sha256": "2397d36f77e15b27cf5889ab0e2bdfd34e060416aae5089afbfccb881cde8128",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-447", "source_line": 24,
+      "location": "enumeration supplying formula pairs to every natural-number branch",
+      "finding": "Worlds are finite sequences over Nat, and the recursive clause requires B_n and C_n for each n in Nat. The enumeration begins at one, leaving n=0 unassigned; content/sets-functions-relations/sets/important-sets.tex explicitly includes zero in Nat.",
+      "proposed_resolution": "Enumerate the pairs beginning with (B_0,C_0), then (B_1,C_1), so every natural-number branch is defined."
+    },
+    {
+      "id": "OLPL-448", "source_line": 63,
+      "location": "monotonicity along arbitrary extensions",
+      "finding": "The source says to induct on the fixed prefix sigma when extending one-step inclusion to any accessible extension; the decreasing parameter is the length of the appended suffix.",
+      "proposed_resolution": "Specify induction on the length of the sequence appended to sigma."
+    }
+  ],
+  "translation_treatment": "Translated sequence worlds, recursive prime extensions, accessibility and valuations, with zero-index coverage and the extension-length induction clarified. Localized both case labels and the concatenation explanation.",
+  "no_source_mutation": true
+}

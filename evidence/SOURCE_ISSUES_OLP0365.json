@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0365",
+  "source_path": "content/lambda-calculus/syntax/beta.tex",
+  "source_sha256": "42355f0467bb8d19038e3cadd4b5f0d2ce58720cbed3130cb74f86f7be4fc0dd",
+  "status": "translation_corrected_pending_alpha_proof_and_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-265",
+      "source_line": 2,
+      "location": "chapter comment and line 9 file identifier",
+      "finding": "The frozen source says introduction and uses lam/int/bet, although syntax.tex imports beta.tex under the syntax chapter. No direct upstream references to lam/int/bet were found in the bounded search.",
+      "proposed_resolution": "Use the syntax chapter comment and lam/syn/bet identifier in the target; preserve the frozen source and keep the reader build pending."
+    }
+  ],
+  "translation_treatment": "The target aligns the chapter metadata and file identifier with the importing syntax chapter. The separate OLP-0362 alpha-substitution proof gap remains open.",
+  "no_source_mutation": true
+}

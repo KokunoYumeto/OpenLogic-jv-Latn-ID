@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0651",
+  "source_path": "content/lambda-calculus/syntax/conversion.tex",
+  "source_sha256": "0179bc8cb297b394faaa6955ed852a1f0300ee3a9b254081ccfc3ef68844052e",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-571",
+      "source_line": 18,
+      "location": "end of conversion/reduction section",
+      "finding": "The section announces three conversion or reduction types but ends immediately after saying the alpha-conversion idea will be formalized below; no definition or later types occur in this frozen file.",
+      "proposed_resolution": "Translate the available discussion and state explicitly that this source section does not contain the promised formal definition; do not invent the missing material."
+    }
+  ],
+  "translation_treatment": "The Javanese target replaces the dangling promise with an explicit source-gap notice, while retaining the alpha-conversion explanation. Frozen English bytes remain unchanged.",
+  "no_source_mutation": true
+}

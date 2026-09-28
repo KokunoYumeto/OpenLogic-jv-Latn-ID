@@ -1,0 +1,46 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0697",
+  "source_path": "content/proof-theory/propositions-as-types/types.tex",
+  "source_sha256": "8e3fa53eb78ebc918ee94e0eead7724d931e5a27b75d714bca1db80f04ba9152",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-675",
+      "source_line": 20,
+      "location": "context assignments and fresh binders",
+      "finding": "The context definition only constrains variables free in the whole term. Conflicting unused assignments can reappear below a binder, and extending the context with a binder of the same name can create conflicting types.",
+      "proposed_resolution": "Require at most one formula per variable throughout the context and rename bound variables fresh for the context before recursive typing."
+    },
+    {
+      "id": "OLPL-676",
+      "source_line": 40,
+      "location": "injection typing clause",
+      "finding": "The clause assumes N has type A but types an injection from the undeclared formula-style placeholder !M.",
+      "proposed_resolution": "Use N as the injection's payload term."
+    },
+    {
+      "id": "OLPL-677",
+      "source_line": 33,
+      "location": "case branch binder contexts",
+      "finding": "The branch contexts refer to x and y while the displayed case term binds x1 and x2.",
+      "proposed_resolution": "Use x1 and x2 in the two branch contexts, matching the actual case binders."
+    },
+    {
+      "id": "OLPL-678",
+      "source_line": 51,
+      "location": "partial typing and uniqueness scope",
+      "finding": "The proposition asserts a type exists for every raw proof term, although the same section gives an untypable self-application abstraction. The opening uniqueness sentence also presupposes a corresponding typing proof without a well-typed condition.",
+      "proposed_resolution": "State at-most-one type for arbitrary terms and exactly one for well-typed terms; qualify the opening typing-proof assertion to well-typed terms."
+    },
+    {
+      "id": "OLPL-679",
+      "source_line": 63,
+      "location": "N3i typing-rule table reference",
+      "finding": "The reference following the definition of tN3i points to the N2i table, duplicating the label issue corrected at OLP-0693.",
+      "proposed_resolution": "Point to tab:tN3ip, the distinct label already applied to rules-tN3."
+    }
+  ],
+  "translation_treatment": "Translate the entire type section with globally consistent contexts, fresh binders, corrected injection and branch names, partial type uniqueness and the unique N3i table reference. Frozen English is untouched.",
+  "no_source_mutation": true
+}

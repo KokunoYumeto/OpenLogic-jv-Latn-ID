@@ -1,0 +1,53 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0469",
+  "source_path": "content/normal-modal-logic/tableaux/countermodels.tex",
+  "source_sha256": "c47ac240cc48f6e82093505895045e59de1a1f034b7e377086c5b53944d744bd",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-401",
+      "source_line": 16,
+      "location": "decision-procedure introduction and its conclusion",
+      "finding": "The failed entailment test drops the formula placeholder in its first occurrence, and the conclusion says merely that a complete tableau is found although an open complete branch is needed for a countermodel.",
+      "proposed_resolution": "Restore !A in the failed entailment statement and require an open complete branch in the translated conclusion."
+    },
+    {
+      "id": "OLPL-402",
+      "source_line": 76,
+      "location": "Box and Diamond tableau construction prose",
+      "finding": "Both examples call the ongoing countermodel construction a closed tableau, but their displayed final trees have an open complete branch.",
+      "proposed_resolution": "Describe both procedures as construction of a complete tableau."
+    },
+    {
+      "id": "OLPL-403",
+      "source_line": 205,
+      "location": "Diamond example, line 3 and rule explanation",
+      "finding": "The prose names true Diamond and its true rule; line 3 and both subsequent expansions are false Diamond and use the false rule.",
+      "proposed_resolution": "Use the false signed Diamond formula and the false Diamond rule in the explanatory prose."
+    },
+    {
+      "id": "OLPL-404",
+      "source_line": 209,
+      "location": "root of the middle Diamond tableau",
+      "finding": "The middle tableau reverses the implication, whereas its decomposition, the initial and final tableaux, and the countermodel all concern (Diamond p and Diamond q) implies Diamond(p and q).",
+      "proposed_resolution": "Restore the common implication at the middle tableau root."
+    },
+    {
+      "id": "OLPL-405",
+      "source_line": 245,
+      "location": "line 3 of the final Diamond tableau",
+      "finding": "The final complete tableau leaves false Diamond at line 3 unchecked although the rule has been applied to both used successors and no more prefixes arise.",
+      "proposed_resolution": "Mark that discharged line checked in the final tableau only."
+    },
+    {
+      "id": "OLPL-406",
+      "source_line": 153,
+      "location": "valuation witnesses in the Box and Diamond countermodels",
+      "finding": "The Box example cites lines 11 and 10 for positive p at 1.2 and q at 1.1, but these are lines 12 and 11; the Diamond example cites q at 1.1 although line 7 and the figure put q at 1.2.",
+      "proposed_resolution": "Correct both Box line numbers and the Diamond q prefix in the model explanations."
+    }
+  ],
+  "translation_treatment": "Translated the decision procedure and both conditional countermodel examples, applying the six bounded corrections in the target and source-comparison view without changing frozen English.",
+  "no_source_mutation": true
+}

@@ -1,0 +1,46 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0670",
+  "source_path": "content/proof-theory/natural-deduction/translation-G2i.tex",
+  "source_sha256": "c47d1aa05da27e96ff4459611148ca86943441176ce46a67427c3aa59bf38276",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-607",
+      "source_line": 23,
+      "location": "translation proposition and induction setup",
+      "finding": "The proposition omits the identification C=A when the succedent is the singleton {A}; the proof then names an undefined G2ci system and places the induction-hypothesis proofs in N2c instead of the stated N2i target.",
+      "proposed_resolution": "Identify C with the sole succedent formula, use G2i with Cut as in the proposition, and name N2i in the induction hypothesis."
+    },
+    {
+      "id": "OLPL-608",
+      "source_line": 67,
+      "location": "left-weakening displayed inference",
+      "finding": "The displayed rule label is right weakening even though the premise-to-conclusion step adds A on the left and is introduced as left weakening.",
+      "proposed_resolution": "Use the left-weakening rule label."
+    },
+    {
+      "id": "OLPL-609",
+      "source_line": 88,
+      "location": "left-contraction case after the induction hypothesis",
+      "finding": "The prose renames labelled assumptions and checks discharge in pi_1, a G2i source derivation with no N2 labels, instead of in the translated N2i proof delta_1.",
+      "proposed_resolution": "Apply the label replacement and side-condition check to delta_1 only."
+    },
+    {
+      "id": "OLPL-610",
+      "source_line": 105,
+      "location": "right- and left-implication cases",
+      "finding": "The right rule reverses the construction direction, saying delta_1 is delta plus an inference. The left rule then relabels source pi_1 instead of translated proof delta_1.",
+      "proposed_resolution": "Extend delta_1 by implication introduction to obtain delta, and relabel delta_1 before combining translated proofs."
+    },
+    {
+      "id": "OLPL-611",
+      "source_line": 154,
+      "location": "right- and left-conjunction cases",
+      "finding": "The right rule gives the second translated premise conclusion A instead of B and relabels source pi_2 instead of translated delta_2. The left rule reverses the statement that delta_1 may serve as delta in the unused-assumption case.",
+      "proposed_resolution": "Use B for delta_2's conclusion, relabel delta_2, and take delta to be delta_1 when the extra left assumption is unused."
+    }
+  ],
+  "translation_treatment": "The target makes these bounded proof-system, rule-label, translated-proof and premise corrections while preserving the frozen English source.",
+  "no_source_mutation": true
+}

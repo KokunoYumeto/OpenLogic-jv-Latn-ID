@@ -1,0 +1,32 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0486",
+  "source_path": "content/applied-modal-logic/epistemic-logic/truth-at-w.tex",
+  "source_sha256": "d1a57861965ea7a83ae4e6a37a6fcb19f5fce14c1a16336f551f6a0101060abc",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-413",
+      "source_line": 25,
+      "location": "negation truth clause, lines 25–26",
+      "finding": "The frozen clause says that not B is true exactly when B is true, omitting the required negation of B's satisfaction condition.",
+      "proposed_resolution": "State that not B is true at w exactly when B is not true at w."
+    },
+    {
+      "id": "OLPL-414",
+      "source_line": 31,
+      "location": "conditional truth clause, lines 31–32",
+      "finding": "The frozen clause makes B implies C true when B or C is true; the antecedent must instead be false or the consequent true.",
+      "proposed_resolution": "State that B implies C is true at w exactly when B is not true at w or C is true at w."
+    },
+    {
+      "id": "OLPL-415",
+      "source_line": 26,
+      "location": "satisfaction notation in the negation and conditional clauses, lines 26 and 32",
+      "finding": "Both clauses print the malformed TeX expression \\mSat/{M}{!B}[w] instead of the established satisfaction macro \\mSat{M}{!B}[w].",
+      "proposed_resolution": "Use the established \\mSat{M}{!B}[w] notation in both translated clauses."
+    }
+  ],
+  "translation_treatment": "Translated the truth definition, reflexivity discussion, model figure and exercise, and common-knowledge closure while correcting the two truth conditions and both satisfaction macros in the target and bounded comparison view. English display words were localized without changing frozen source.",
+  "no_source_mutation": true
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0380",
+  "source_path": "content/lambda-calculus/lambda-definability/minimization.tex",
+  "source_sha256": "4da3bef314009bbd93701e19fa66ff1bd7dc718427fa1ddd06d223b2aaf9b7f6",
+  "status": "translation_corrected_pending_inherited_proofs_reference_audit_and_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-298",
+      "source_line": 28,
+      "location": "search proof's defined function",
+      "finding": "The lemma defines the minimized function as g, but the proof introduces a goal to lambda-define h and its final reduction is to numeral h(n_1,...,n_k), leaving h undefined.",
+      "proposed_resolution": "Use g consistently as the minimized function in the proof goal and final numeral."
+    },
+    {
+      "id": "OLPL-299",
+      "source_line": 33,
+      "location": "Search functional's recursive branch",
+      "finding": "The fixed point of Search expects arguments f, vec{x}, y, but the recursive call passes only vec{x} and Succ(y), incorrectly using the first vector component as f. The branch also lacks its closing parenthesis.",
+      "proposed_resolution": "Call the recursive function as g f vec{x} (Succ y) and close the branch before the lambda bodies."
+    }
+  ],
+  "translation_treatment": "The target translates regular minimization and its fixed-point search, correcting the minimized-function name and the recursive call's missing parameter and delimiter in a bounded source-comparison view. Frozen source is unchanged; inherited audits remain open.",
+  "no_source_mutation": true
+}

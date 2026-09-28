@@ -1,0 +1,32 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0609",
+  "source_path": "content/methods/proofs/proof-by-contradiction.tex",
+  "source_sha256": "3eda384520d99069031c01f168564f639980118e7fd145ca105e8092fbe438dd",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-536",
+      "source_line": 130,
+      "location": "negation of A subset A union B in the second proof",
+      "finding": "The example has three membership predicates without their x operand, and its explanatory counterexample to A subset A union B is printed as not-in C instead of not-in A union B. The next paragraph correctly gives x not-in A union B.",
+      "proposed_resolution": "Supply x in the introductory not-in predicate and both unpacked positive clauses; use x not-in A union B for the counterexample."
+    },
+    {
+      "id": "OLPL-537",
+      "source_line": 164,
+      "location": "negation of A subset C in the transitivity proof",
+      "finding": "The explanatory equivalence omits x on the left of both in C and not-in C, although the same witness x is quantified on the same line.",
+      "proposed_resolution": "Write x in C and x not-in C for the two predicates."
+    },
+    {
+      "id": "OLPL-538",
+      "source_line": 201,
+      "location": "first case of the equality-from-union-and-intersection proof",
+      "finding": "The explanatory quote says x belongs to A but prints bare not-in B for the second half of the same witness condition.",
+      "proposed_resolution": "Write x not-in B in the first case."
+    }
+  ],
+  "translation_treatment": "The Javanese target supplies the witness x and restores the correct set A union B in the negated-subset example. Bounded comparison repairs record these changes without modifying the frozen English source.",
+  "no_source_mutation": true
+}

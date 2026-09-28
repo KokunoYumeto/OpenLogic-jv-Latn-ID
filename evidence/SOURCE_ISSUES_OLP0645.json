@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0645",
+  "source_path": "content/first-order-logic/syntax-and-semantics/introduction.tex",
+  "source_sha256": "4b014ef7f3ec0676ec6c57d276e0747b7afd44bfe295b74e4091e12a4726d186",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-569",
+      "source_line": 39,
+      "location": "interpretation of function symbols in a structure",
+      "finding": "Saying that each function symbol is interpreted by a function from the domain to itself describes only unary symbols; the arity may be any natural number.",
+      "proposed_resolution": "Say each function symbol is assigned a function from the Cartesian power of the domain appropriate to its arity into the domain."
+    }
+  ],
+  "translation_treatment": "The Javanese target states the arity-appropriate Cartesian-power interpretation. The bounded comparison view records the clarification; frozen English bytes remain unchanged.",
+  "no_source_mutation": true
+}

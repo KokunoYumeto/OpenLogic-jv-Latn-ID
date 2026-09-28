@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0410",
+  "source_path": "content/normal-modal-logic/syntax-and-semantics/language-modal-logic.tex",
+  "source_sha256": "a75f481c6e175130df3c9145984ca245a8156503d2cb9ff833bd77c39b9529ab",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-328",
+      "source_line": 92,
+      "location": "defIf abbreviation's prvOr branch",
+      "finding": "The disjunctive abbreviation for A→B has a closing parenthesis after B but no matching opening parenthesis: $\\lnot !A \\lor !B)$. The expression is intended to be ¬A∨B.",
+      "proposed_resolution": "Remove only the unmatched closing parenthesis in the target, giving $\\lnot !A \\lor !B$; keep the frozen source unchanged and preserve the alternative abbreviation."
+    }
+  ],
+  "translation_treatment": "Translated definitions and abbreviation prose while preserving term-token and TeX-command order; corrected one unmatched parenthesis in the target conditional abbreviation.",
+  "no_source_mutation": true
+}

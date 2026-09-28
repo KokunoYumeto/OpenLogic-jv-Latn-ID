@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0376",
+  "source_path": "content/lambda-calculus/lambda-definability/pairs.tex",
+  "source_sha256": "4d2fd1df669f4a9a40328ebd0a7fcea1e38576e6b32acc5a5692626b934032cb",
+  "status": "translation_corrected_pending_inherited_proofs_reference_audit_and_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-288",
+      "source_line": 45,
+      "location": "predecessor initial-state and zero-result explanation, also line 46",
+      "finding": "The displayed predecessor term initializes the pair with Church numerals, but the following prose switches twice to a pair of bare 0 symbols without establishing that they denote lambda terms.",
+      "proposed_resolution": "Use the explicit pair of two Church-zero numerals in both target explanation occurrences and the bounded source-comparison view."
+    }
+  ],
+  "translation_treatment": "The target translates pairing, projections, predecessor iteration and subtraction. Both prose references to the predecessor's zero pair now use Church-zero numerals, matching the formal term; frozen source remains unchanged. Inherited proof and chapter-ID audits continue separately.",
+  "no_source_mutation": true
+}

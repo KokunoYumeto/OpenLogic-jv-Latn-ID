@@ -1,0 +1,199 @@
+% part: intuitionistic-logic
+% chapter: propositions-as-types
+% section: reduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{pty}{red}
+
+\olsection{Reduksi}
+
+Ing !!{derivation}s dedhuksi alami, aturan !!a{introduction} sing
+ditututi aturan !!a{elimination} iku dalan mubeng sing bisa ``direduksi''.
+Contone, $\Intro{\land}$ sing ditututi $\Elim{\land}$ ``padha mbatalake'',
+amarga konklusi $\Elim{\land}$ tansah salah siji konjung saka konjungsi
+sing diasilake \Intro{\land}, lan premis $\Intro{\land}$ iku loro konjung
+kasebut. Mula yen mbutuhake !!a{derivation} saka salah siji konjung,
+kita bisa langsung nggunakake !!{derivation} kasebut tanpa ngenalake
+konjungsi banjur ngeliminasi. Kita nduweni
+\begin{gather*}
+  \bottomAlignProof
+  \AxiomC{}
+  \RightLabel{$\delta_1$}
+  \DeduceC{$!A_1$}
+  \AxiomC{}
+  \RightLabel{$\delta_2$}
+  \DeduceC{$!A_2$}
+  \RightLabel{$\Intro{\land}$}
+  \BinaryInfC{$!A_1 \land !A_2$}
+  \RightLabel{$\Elim{\land}_i$}
+  \UnaryInfC{$!A_i$}
+  \DisplayProof\bottomAlignProof
+  \quad
+  \redone
+  \quad
+  \AxiomC{}
+  \RightLabel{$\delta_i$}
+  \DeduceC{$!A_i$}
+  \DisplayProof
+\end{gather*}
+
+Panyederhanaan iki uga menehi gagasan relasi reduksi sing padha tumrap
+terma bukti sing cocog. Yen $N_1$ iku terma bukti kanggo~$\delta_1$ lan
+$N_2$ kanggo~$\delta_2$, kita bisa ngarani yen terma bukti saka bukti
+ing kiwa direduksi (kanthi siji langkah) dadi terma bukti saka bukti
+ing tengen:
+\[
+  \proj{i}{\pair{N_1}{N_2}} \redone N_i
+\]
+Ing kalkulus lambda mawa tipe, iki aturan \emph{reduksi beta} kanggo
+tipe prodhuk.
+
+Ing dedhuksi alami, pasangan inferensi kaya \Intro{\land} sing
+ditututi \Elim{\land}, yaiku pasangan sing bisa direduksi, diarani
+\emph{cut}. Ing kalkulus lambda mawa tipe, terma ing kiwa $\redone$
+diarani \emph{redex}, lan terma ing tengen diarani \emph{asil kontraksi}.
+Ing kalkulus lambda tanpa tipe, mung $(\lambd[x][N])Q$ sing dianggep
+redex. Ing kalkulus lambda mawa tipe, sintakse ditambahi terma sing
+nggunakake $\pair{N}{M}$, $\proj{i}{N}$, $\inj[!A]{i}{N}$,
+$\dcase{N}{x_1}{M_1}{x_2}{M_2}$, lan $\abort{!A}{N}$, kanthi
+redex sing cocog.
+
+Kanthi cara sing padha, kita nduweni reduksi kanggo disjungsi:
+\begin{gather*}
+  \bottomAlignProof
+  \AxiomC{}
+  \RightLabel{$\delta$}
+  \DeduceC{$!A_i$}
+  \RightLabel{$\Intro{\lor}$}
+  \UnaryInfC{$!A_1 \lor !A_2$}
+  \AxiomC{$\Discharge{!A_1}{x_1}$}
+  \RightLabel{$\delta_1$}
+  \DeduceC{$!C$}
+  \AxiomC{$\Discharge{!A_2}{x_2}$}
+  \RightLabel{$\delta_2$}
+  \DeduceC{$!C$}
+  \DischargeRule{$\Elim{\lor}$}{x_1,x_2}
+  \TrinaryInfC{$!C$}
+  \DisplayProof\bottomAlignProof
+  \quad
+  \redone
+  \quad
+  \AxiomC{}
+  \RightLabel{$\delta$}
+  \DeduceC{$!A_i$}
+  \RightLabel{$\delta_i$}
+  \DeduceC{$!C$}
+  \DisplayProof
+\end{gather*}
+Iki cocog karo reduksi tumrap terma bukti:
+\begin{gather*}
+  \dcase{\inj[!A_{3-i}]{i}{M}}{x_1}{N_1}{x_2}{N_2} \redone \Subst{N_i}{M}{x_i}
+\end{gather*}
+kanthi $M$ minangka terma bukti saka~$\delta$, lan $N_i$ minangka
+terma bukti saka~$\delta_i$. Iki aturan reduksi beta kanggo tipe gunggung.
+Ing kene, $\Subst{N_i}{M}{x_i}$ tegese ngganti kabeh kedadeyan bebas
+variabel~$x_i$ ing $N_i$ nganggo~$M$, kanthi ngganti jeneng variabel
+kaiket dhisik yen perlu supaya variabel bebas ora kacekel.
+
+Reduksi tipe fungsi cocog karo ngilangi dalan mubeng saka
+$\Intro\lif$ sing ditututi $\Elim\lif$.
+\begin{gather*}
+  \bottomAlignProof
+  \AxiomC{$\Discharge{!A}{x}$}
+  \RightLabel{$\delta$}
+  \DeduceC{$!B$}
+  \DischargeRule{$\Intro{\lif}$}{x}
+  \UnaryInfC{$!A \lif !B$}
+  \AxiomC{}
+  \RightLabel{$\delta'$}
+  \DeduceC{$!A$}
+  \RightLabel{$\Elim{\lif}$}
+  \BinaryInfC{$!B$}
+  \DisplayProof\bottomAlignProof
+  \quad
+  \redone
+  \quad
+  \AxiomC{}
+  \RightLabel{$\delta'$}
+  \DeduceC{$!A$}
+  \RightLabel{$\delta$}
+  \DeduceC{$!B$}
+  \DisplayProof
+\end{gather*}
+Kanggo terma bukti, iki padha karo reduksi beta lumrah:
+\begin{gather*}
+  (\lambd[\typeof{x}{!A}][N]M)
+  \redone \Subst{N}{M}{x}
+\end{gather*}
+
+Kajaba konversi reduksi tumrap !!{proof}s, kita bisa nimbang konversi
+permutasi. Konversi iki ditrapake marang (sub)!!{proof}s sing dipungkasi
+kanthi \Elim{\lor} banjur ditututi aturan !!{elimination} liyane,
+contone:
+\begin{multline*}
+  \bottomAlignProof
+  \AxiomC{}
+  \RightLabel{$\delta$}
+  \DeduceC{$!A_i$}
+  \RightLabel{$\Intro{\lor}$}
+  \UnaryInfC{$!A_1 \lor !A_2$}
+  \AxiomC{$\Discharge{!A_1}{x_1}$}
+  \RightLabel{$\delta_1$}
+  \DeduceC{$!C_1 \land !C_2$}
+  \AxiomC{$\Discharge{!A_2}{x_2}$}
+  \RightLabel{$\delta_2$}
+  \DeduceC{$!C_1 \land !C_2$}
+  \DischargeRule{$\Elim{\lor}$}{x_1,x_2}
+  \TrinaryInfC{$!C_1 \land !C_2$}
+  \RightLabel{\Elim{\land}[i]}
+  \UnaryInfC{$!C_i$}
+  \DisplayProof\bottomAlignProof
+  \quad
+  \redone
+  \\
+  \AxiomC{}
+  \RightLabel{$\delta$}
+  \DeduceC{$!A_i$}
+  \RightLabel{$\Intro{\lor}$}
+  \UnaryInfC{$!A_1 \lor !A_2$}
+  \AxiomC{$\Discharge{!A_1}{x_1}$}
+  \RightLabel{$\delta_1$}
+  \DeduceC{$!C_1 \land !C_2$}
+  \RightLabel{\Elim{\land}[i]}
+  \UnaryInfC{$!C_i$}
+  \AxiomC{$\Discharge{!A_2}{x_2}$}
+  \RightLabel{$\delta_2$}
+  \DeduceC{$!C_1 \land !C_2$}
+  \RightLabel{\Elim{\land}[i]}
+  \UnaryInfC{$!C_i$}
+  \DischargeRule{$\Elim{\lor}$}{x_1,x_2}
+  \TrinaryInfC{$!C_i$}
+  \DisplayProof
+\end{multline*}
+Yen terma bukti saka $\delta$, $\delta_1$, lan $\delta_2$ yaiku $M$,
+$N_1$, lan $N_2$, aturan reduksi sing cocog kanggo terma bukti, yaiku
+terma $\lambd$, awujud:
+\[
+  \proj{i}{\dcase{M}{x_1}{N_1}{x_2}{N_2}} \redone 
+\dcase{M}{x_1}{\proj{i}{N_1}}{x_2}{\proj{i}{N_2}}
+\]
+
+Kita bisa ngilangi dalan mubeng ora mung ing pungkasan !!{proof}s,
+nanging uga ing sajrone !!{proof}s, kanthi ngetrapake konversi reduksi
+marang sub-!!{proof} sing dipungkasi dalan mubeng. Semono uga, reduksi
+$\beta$ ditrapake marang subterma saka terma $\lambd$. Yen $N$ iku
+subterma saka $M$ lan $N \redone N'$, kita bisa ngganti subterma $N$
+ing~$M$ nganggo $N'$ kanggo ngasilake $M'$. Ing kasus iki kita uga
+nulis $M \redone M'$. Yen ana urutan $M = M_1 \redone M_2 \redone
+\dots \redone M_k = M'$ (kalebu $k=1$, yaiku $M = M'$), kita nulis
+$M \red M'$.
+
+!!{proof} sing ora ngidini konversi ditrapake marang sub-!!{proof}
+endi wae diarani \emph{normal}. Semono uga, terma $\lambd$ sing ora
+ngidini konversi ditrapake (marang subterma endi wae) diarani
+\emph{normal}. Terma $\lambd$ normal uga diarani \emph{wujud normal}.
+
+\end{document}

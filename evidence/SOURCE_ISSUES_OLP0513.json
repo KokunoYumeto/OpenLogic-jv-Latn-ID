@@ -1,0 +1,39 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0513",
+  "source_path": "content/intuitionistic-logic/tableaux/rules.tex",
+  "source_sha256": "ac874fab0a48018f53cbe714eebbee31221cecb86fe6981fda012dfbd17fabcd",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-452", "source_line": 90,
+      "location": "conditional rule labels in prose, lines 90 and 100",
+      "finding": "The two prose rule labels pass lif before the sign, reversing the sign/connective argument order used by the correct rule table.",
+      "proposed_resolution": "Use TRule{True}{lif} and TRule{False}{lif} in the prose descriptions."
+    },
+    {
+      "id": "OLPL-453", "source_line": 92,
+      "location": "two branch descriptions for true implication, including the current-prefix specialization",
+      "finding": "The prose gives a true antecedent or false consequent for a true implication, whereas the correctly printed table branches to a false antecedent or true consequent. The incorrect signs occur both at the used extension and at the current prefix.",
+      "proposed_resolution": "Use False A and True B on separate branches in both prose instances, matching the existing table."
+    },
+    {
+      "id": "OLPL-454", "source_line": 19,
+      "location": "parenthetical statement about the conjunction truth world",
+      "finding": "The phrase and not at any other world incorrectly excludes truth elsewhere; intuitionistic truth persists at accessible worlds. The intended point is that this rule introduces its conclusions at the same prefix.",
+      "proposed_resolution": "Explain that the rule introduces formulas at the current prefix without excluding their truth at other worlds."
+    }
+  ],
+  "inherited_locator_amendment": {
+    "finding_id": "OLPL-451",
+    "unit_id": "OLP-0512",
+    "superseded_issues_file": "SOURCE_ISSUES_OLP0512.json",
+    "superseded_issues_sha256": "37e98e52c2b62d2fc0133c0a1d6b40734e4b6dad7973af94d3c12f97ae9bd915",
+    "recorded_source_line": 43,
+    "corrected_source_line": 40,
+    "source_line_fragment": "!!{formula}s in modal",
+    "treatment": "Correct the source locator only; retain the previous sealed file and its wording unchanged."
+  },
+  "translation_treatment": "Translated all rule prose, both captions, closure criteria, assumption setup and used/new prefix conditions. Corrected only the prose signs and rule labels; the already-correct inference tables remain unchanged. The previous prose finding's source line is amended from 43 to 40 in a new durable record.",
+  "no_source_mutation": true
+}

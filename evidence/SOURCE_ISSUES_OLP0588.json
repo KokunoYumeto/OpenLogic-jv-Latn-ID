@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0588",
+  "source_path": "content/set-theory/card-arithmetic/simp.tex",
+  "source_sha256": "a606bab065a11c689b655ff8053e3e77894decb42b88e70605a981c129148da0",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-506",
+      "source_line": 94,
+      "location": "minimal-counterexample proof of alpha equipotent to alpha times alpha",
+      "finding": "The displayed bound on canonical initial segments is explicitly argued only when the maximum coordinate gamma is infinite, yet the following conclusion quantifies over every pair. The finite-gamma case is omitted.",
+      "proposed_resolution": "Add the finite case: a canonical segment below a pair of finite maximum coordinate is finite, hence has size below the infinite cardinal alpha. Retain the displayed infinite case and subsequent order-type bound."
+    }
+  ],
+  "translation_treatment": "The Javanese proof states the omitted finite-segment case before drawing the global order-type conclusion. Mathematical formulas and frozen source bytes remain unchanged.",
+  "no_source_mutation": true
+}

@@ -1,0 +1,129 @@
+% part: intuitionistic-logic
+% chapter: propositions-as-types
+% section: sequent-natural-deduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{pty}{snd}
+
+\olsection{Dedhuksi Alami Sekuen}
+
+Kita nulis $\Gamma \Sequent !A$ yen ana !!{derivation} dedhuksi alami
+kanthi $\Gamma$ minangka asumsi !!{undischarged} lan $!A$ minangka
+konklusi; utawa $\Sequent !A$ yen $\Gamma$ kosong.
+
+Kita nulis $\Gamma, !A_1, \dots, !A_n$ kanggo $\Gamma \cup \{!A_1,
+\dots, !A_n\}$, lan $\Gamma, \Delta$ kanggo $\Gamma \cup \Delta$.
+
+Gatekna yen kita nduweni $\Gamma \Sequent !A \land !B$, tegese ana
+!!a{derivation} kanthi $\Gamma$ minangka asumsi !!{undischarged} lan
+$!A \land !B$ minangka !!{formula} pungkasan. Kanthi ngetrapake
+$\Elim{\land}$ ing ngisor, kita bisa ngasilake !!a{derivation} kanthi
+asumsi !!{undischarged} sing padha lan $!A$ minangka konklusi.
+Kanthi tembung liya, yen $\Gamma \Sequent !A \land !B$, mula
+$\Gamma \Sequent !A$.
+\begin{prooftree}
+  \Axiom$\Gamma \fCenter !A \land !B$
+  \RightLabel{$\Elim{\land}$}
+  \UnaryInf$\Gamma \fCenter !A$
+  \DisplayProof\qquad\bottomAlignProof
+  \Axiom$\Gamma \fCenter !A \land !B$
+  \RightLabel{$\Elim{\land}$}
+  \UnaryInf$\Gamma \fCenter !B$
+\end{prooftree}
+Label $\Elim{\land}$ nuduhake sesambungane karo aturan kanthi jeneng
+sing padha ing dedhuksi alami.
+
+Semono uga, upamane kita nduweni $\Gamma, !A \Sequent !B$, tegese ana
+!!a{derivation} kanthi asumsi !!{undischarged} $\Gamma, !A$ lan
+!!{formula} pungkasan~$!B$. Yen ngetrapake aturan $\Intro{\lif}$, kita
+nduweni !!a{derivation} kanthi $\Gamma$ minangka asumsi !!{undischarged}
+lan $!A \lif !B$ minangka !!{formula} pungkasan, yaiku
+$\Gamma \Sequent !A \lif !B$. Gatekna yen iki nggawe !!{discharge}
+asumsi luwih cetha.
+\begin{prooftree}
+  \Axiom $\Gamma, !A \fCenter !B$
+  \RightLabel{$\Intro{\lif}$}
+  \UnaryInf $\Gamma \fCenter !A \lif !B$
+\end{prooftree}
+
+Kita bisa narik konklusi saka aturan liyane kanthi cara sing padha,
+sing diandharake kaya mangkene:
+\begin{gather*}
+  \Axiom $\Gamma \fCenter !A$
+  \Axiom $\Delta \fCenter !B$
+  \RightLabel{$\Intro{\land}$}
+  \BinaryInf $\Gamma,\Delta \fCenter !A \land !B$
+  \DisplayProof\\
+  \Axiom $\Gamma \fCenter !A \land !B$
+  \RightLabel{$\Elim{\land}_1$}
+  \UnaryInf $\Gamma \fCenter !A$
+  \DisplayProof
+  \qquad
+  \Axiom $\Gamma \fCenter !A \land !B$
+  \RightLabel{$\Elim{\land}_2$}
+  \UnaryInf $\Gamma \fCenter !B$
+  \DisplayProof
+  \\
+  \Axiom $\Gamma \fCenter !A$
+  \RightLabel{$\Intro{\lor}_1$}
+  \UnaryInf $\Gamma \fCenter !A \lor !B$
+  \DisplayProof\qquad
+  \Axiom $\Gamma \fCenter !B$
+  \RightLabel{$\Intro{\lor}_2$}
+  \UnaryInf $\Gamma \fCenter !A \lor !B$
+  \DisplayProof\\
+  \Axiom $\Gamma \fCenter !A \lor !B$
+  \Axiom $\Delta, !A \fCenter !C$
+  \Axiom $\Delta', !B \fCenter !C$
+  \RightLabel{$\Elim{\lor}$}
+  \TrinaryInf $\Gamma, \Delta, \Delta' \fCenter !C$
+  \DisplayProof
+  \\
+  \Axiom $\Gamma, !A \fCenter !B$
+  \RightLabel{$\Intro{\lif}$}
+  \UnaryInf $\Gamma \fCenter !A \lif !B$
+  \DisplayProof
+  \qquad
+  \Axiom $\Delta \fCenter !A \lif !B$
+  \Axiom $\Gamma \fCenter !A$
+  \RightLabel{$\Elim{\lif}$}
+  \BinaryInf $\Gamma, \Delta \fCenter !B$
+  \DisplayProof
+  \\
+  \Axiom $\Gamma \fCenter \lfalse$
+  \RightLabel{$\FalseInt$}
+  \UnaryInf $\Gamma \fCenter !A$
+  \DisplayProof
+\end{gather*}
+
+Asumsi dhewe iku !!a{derivation} saka $!A$ adhedhasar~$!A$, yaiku
+kita tansah nduweni $!A \Sequent !A$.
+
+\begin{prooftree}
+  \AxiomC{$ $}
+  \UnaryInfC{$!A \fCenter !A$}
+\end{prooftree}
+
+Aturan iki bebarengan bisa dianggep kalkulus ngenani !!{derivation}s
+dedhuksi alami sing ana. Aturan iki uga bisa dianggep varian notasi
+dedhuksi alami, kanthi saben langkah nyathet ora mung !!{formula}
+sing !!{derive}, nanging uga asumsi !!{undischarged} sing dadi
+dhasar !!{derive} kasebut.
+
+\begin{prooftree}
+  \Axiom$!A \fCenter !A$
+  \UnaryInf $!A \fCenter !A \lor (!A \lif \lfalse)$
+  \Axiom $!B \fCenter !B$
+  \BinaryInf$!A, !B \fCenter \lfalse$
+  \UnaryInf$!B \fCenter !A \lif \lfalse$
+  \UnaryInf$!B \fCenter !A \lor (!A \lif \lfalse)$
+  \Axiom$!B \fCenter !B$
+  \BinaryInf$!B \fCenter \lfalse$
+  \UnaryInf$\fCenter !B \lif \lfalse$
+\end{prooftree}
+kanthi $!B$ minangka cekakan saka $(!A \lor (!A \lif \lfalse))\lif \lfalse$.
+
+\end{document}

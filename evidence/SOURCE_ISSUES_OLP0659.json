@@ -1,0 +1,25 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0659",
+  "source_path": "content/proof-theory/cut-elimination/introduction.tex",
+  "source_sha256": "d8400228f30064f5458fd30c09d10772bbc2ff3d7cea23e28c93664a6e3a6a83",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-586",
+      "source_line": 69,
+      "location": "local proof transformation discussion",
+      "finding": "The editorial proof token is split across a newline as !! followed by a{proof}, preventing ordinary token expansion.",
+      "proposed_resolution": "Join the token as !!a{proof} in the target."
+    },
+    {
+      "id": "OLPL-587",
+      "source_line": 98,
+      "location": "context-sharing cut display",
+      "finding": "The displayed inference is introduced and subsequently discussed as context-sharing CutCS, but its rule label says ordinary Cut.",
+      "proposed_resolution": "Label the displayed inference CutCS in the target."
+    }
+  ],
+  "translation_treatment": "The target fixes the broken editorial token and the context-sharing rule label; the frozen English source remains unchanged.",
+  "no_source_mutation": true
+}

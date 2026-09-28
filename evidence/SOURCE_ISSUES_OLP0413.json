@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0413",
+  "source_path": "content/normal-modal-logic/syntax-and-semantics/truth-at-w.tex",
+  "source_sha256": "4c1ea773c2dd5106ceba1ec676dfadbbae432fc9d56b528a4a6b00f2c270fd50",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-333",
+      "source_line": 92,
+      "location": "second half of box-diamond duality proof",
+      "finding": "The expression denying satisfaction of Box not-A omits the world argument [w], although the adjacent equivalence and every other satisfaction statement in the proof is evaluated at w.",
+      "proposed_resolution": "Add [w] to this one target expression; retain the frozen source and the proof's remaining formula sequence."
+    }
+  ],
+  "translation_treatment": "Translated the truth definition, vacuous-truth explanation, problem statements and duality proof prose; supplied one omitted world index in the target proof.",
+  "no_source_mutation": true
+}

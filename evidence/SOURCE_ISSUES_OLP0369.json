@@ -1,0 +1,32 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0369",
+  "source_path": "content/lambda-calculus/church-rosser/parallel-beta-reduction.tex",
+  "source_sha256": "37905b8d25e97bb2554d4df43321bbcefd55816a7d89fe85279c4119a7871f52",
+  "status": "translation_annotated_pending_substitution_composition_and_alpha_proof_and_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-271",
+      "source_line": 20,
+      "location": "abstraction clause of parallel beta reduction",
+      "finding": "The second inductive clause uses N one-step beta-reduces N' instead of N parallel-beta-reduces N'. The later proofs explicitly use the parallel premise; leaving the source clause unchanged breaks their induction.",
+      "proposed_resolution": "Use N parallel-beta-reduces N' in the target rule and bounded comparison view; preserve frozen source bytes."
+    },
+    {
+      "id": "OLPL-272",
+      "source_line": 89,
+      "location": "abstraction case of substitution-compatibility lemma",
+      "finding": "The proof's target abstraction substitutes R into N' although the lemma's right-hand side and induction hypothesis use the reduced replacement R'.",
+      "proposed_resolution": "Use substitution of R' into N' in the target display and bounded comparison view."
+    },
+    {
+      "id": "OLPL-273",
+      "source_line": 97,
+      "location": "redex case of substitution-compatibility lemma and its class-level prerequisites",
+      "finding": "The proof equates nested substitutions with a rearranged composition but gives no freshness conditions for binder x or composition lemma. Raw substitution composition can fail when x occurs free in the replacement: with N=y, Q=z, R=x, the two sides yield x and z. On alpha-classes one can choose a fresh binder, but this relies on the still-open alpha-safe substitution proof and an explicit composition argument.",
+      "proposed_resolution": "State the fresh-representative and composition dependency in target prose, retain the lemma statement, and keep proof certification pending until the class-level composition argument and OLP-0362 alpha proof are supplied."
+    }
+  ],
+  "translation_treatment": "The target translates all prose and formal clauses, corrects the parallel premise and R-prime target, and flags the missing fresh-binder/composition justification. Structural QA is not proof certification. OLP-0362 and OLPL-273 remain open for the reader edition.",
+  "no_source_mutation": true
+}

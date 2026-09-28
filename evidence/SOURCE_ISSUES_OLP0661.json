@@ -1,0 +1,32 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0661",
+  "source_path": "content/proof-theory/cut-elimination/midsequent.tex",
+  "source_sha256": "e070f69fe844339b3b9b3a4e53468aaf331a24b2596eb36a28f909fa3387aa99",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-591",
+      "source_line": 76,
+      "location": "Herbrand proof extraction, displayed upper subproof",
+      "finding": "The prose refers to pi_1-prime although the displayed subproof is labelled pi_1 and no pi_1-prime has been introduced.",
+      "proposed_resolution": "Refer to pi_1 in the Javanese target."
+    },
+    {
+      "id": "OLPL-592",
+      "source_line": 107,
+      "location": "zero-order base case of midsequent theorem",
+      "finding": "The proof assumes a topmost quantifier inference exists, but a proof with no quantifier inference also has order zero.",
+      "proposed_resolution": "State that the end-sequent is the midsequent when there is no quantifier inference."
+    },
+    {
+      "id": "OLPL-593",
+      "source_line": 194,
+      "location": "existential-right permutation proof tree",
+      "finding": "The conclusion antecedent has a stray exclamation mark before Gamma-prime.",
+      "proposed_resolution": "Remove the stray mark in the Javanese proof tree."
+    }
+  ],
+  "translation_treatment": "The target makes these bounded reference, base-case, and sequent repairs while preserving the frozen English source and displayed derivation order.",
+  "no_source_mutation": true
+}

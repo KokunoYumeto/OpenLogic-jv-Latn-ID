@@ -1,0 +1,25 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0638",
+  "source_path": "content/history/set-theory/cantor-plane.tex",
+  "source_sha256": "6abfeede65f95ac668d6e679053e537b0beb2ffcd566c1cdbdc223b0b767c737",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-557",
+      "source_line": 27,
+      "location": "binary interleaving injection and claimed missing output",
+      "finding": "Equality of binary values does not by itself imply equal digit strings. The proof needs a fixed canonical expansion convention. Under the convention using non-eventually-one expansions below one and all ones for one, the stated output 0.101010... has the preimage (1,0), so it does not demonstrate failure of surjectivity.",
+      "proposed_resolution": "State the canonical convention and why interleaving remains canonical; use 0.001010... instead. Its odd digits force the noncanonical expansion 0.01111... of one half, while the chosen expansion is 0.1000..., so the output is missed."
+    },
+    {
+      "id": "OLPL-558",
+      "source_line": 54,
+      "location": "summary of non-surjectivity",
+      "finding": "The expansions used throughout the proof are binary, although the summary calls them decimal.",
+      "proposed_resolution": "Say recurring binary expansions."
+    }
+  ],
+  "translation_treatment": "The Javanese target fixes the binary-representation convention, repairs the injection justification, replaces the non-surjectivity witness, and calls the expansions binary. A bounded comparison view records the corrections; frozen English bytes remain unchanged.",
+  "no_source_mutation": true
+}

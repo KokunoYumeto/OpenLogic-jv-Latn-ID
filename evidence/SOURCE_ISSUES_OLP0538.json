@@ -1,0 +1,13 @@
+{
+  "schema":"jv-frozen-source-issues/1",
+  "unit_id":"OLP-0538",
+  "source_path":"content/set-theory/z/story.tex",
+  "source_sha256":"675bc77160d15d826fc2960c15764275f12e8ef2450e121d6f34981d7af64a99",
+  "status":"translation_corrected_pending_reader_build",
+  "issues":[
+    {"id":"OLPL-477","source_line":8,"location":"attribution to the preceding stage account, source line 8","finding":"The source spells Schoenfield, inconsistent with Shoenfield in the preceding section and its Shoenfield:AST citation.","proposed_resolution":"Use Shoenfield, matching the preceding source attribution and citation."},
+    {"id":"OLPL-478","source_line":31,"location":"warning about informal principle labels, source line 31","finding":"The closing sentence We simply monikers lacks a verb, obscuring that the italicized principles receive editorial labels rather than established literature names.","proposed_resolution":"Say the authors merely supply helpful monikers for these informal principles."}
+  ],
+  "translation_treatment":"Translated the three stage principles and epistemic footnote; corrected the attribution spelling and repaired the final editorial-label sentence. The macro names, citations, references and formal content are unchanged.",
+  "no_source_mutation":true
+}

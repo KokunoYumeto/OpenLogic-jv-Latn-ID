@@ -1,0 +1,32 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0421",
+  "source_path": "content/normal-modal-logic/frame-definability/properties-accessibility.tex",
+  "source_sha256": "eca3a45ea91f4840016751d184f7c2b82c1d1141c2164c1dce4c8775fcf49622",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-340",
+      "source_line": 2,
+      "location": "chapter metadata comment",
+      "finding": "The frozen section labels its chapter frame-correspondence, but its path, nml/frd/acc file ID, and containing chapter driver identify frame-definability.",
+      "proposed_resolution": "Correct the target chapter metadata comment to frame-definability while retaining the frozen source."
+    },
+    {
+      "id": "OLPL-341",
+      "source_line": 95,
+      "location": "singleton failed-T instance",
+      "finding": "The example specifies W and V(p) but does not specify R; nonreflexivity and vacuous truth of Box p do not follow unless R has no self-loop.",
+      "proposed_resolution": "Set R equal to the empty relation in the target singleton example, retaining W and V(p)."
+    },
+    {
+      "id": "OLPL-342",
+      "source_line": 106,
+      "location": "two-world nonreflexive proposition",
+      "finding": "The proposition assumes Ruv and Rvu but does not exclude Ruu or Rvv. Its stated irreflexivity and formula-equivalence conclusion can fail if self-loops are allowed asymmetrically.",
+      "proposed_resolution": "Specify R as exactly the two cross-world ordered pairs in the target proposition; this preserves Ruv and Rvu and excludes both self-loops."
+    }
+  ],
+  "translation_treatment": "Translated the accessibility section, corrected chapter metadata, specified the empty singleton relation, and restricted the two-world relation to exactly the cross edges.",
+  "no_source_mutation": true
+}

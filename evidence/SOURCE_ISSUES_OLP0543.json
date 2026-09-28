@@ -1,0 +1,10 @@
+{
+  "schema":"jv-frozen-source-issues/1",
+  "unit_id":"OLP-0543",
+  "source_path":"content/set-theory/z/infinity-again.tex",
+  "source_sha256":"29267a484b8628ec7cafd50d87dac4a0f6650914c625dec7dd06ac0e79aa3f91",
+  "status":"translation_corrected_pending_reader_build",
+  "issues":[{"id":"OLPL-480","source_line":48,"location":"successor-injection claim, source lines 48–51","finding":"The source treats successor x union {x} as an injection on every arbitrary inductive set I. The stated axioms have not imposed Foundation, so I may include non-well-founded members on which distinct inputs have the same successor. The axiom still supplies a Dedekind-infinite subset: the successor closure of the empty set inside I.","proposed_resolution":"Apply the successor injection and its proper-range argument to the closure of the empty set inside I; use that Dedekind-infinite subset for the subsequent algebra construction. Preserve the frozen source and record this as a bounded prose correction."}],
+  "translation_treatment":"The target scopes the successor injection to the closure inside I while preserving the source's formulas, their order, and the later definition of omega. The distinction between arbitrarily many sets and one infinite set, the finite-number induction proof, and the stage principle remain intact.",
+  "no_source_mutation":true
+}

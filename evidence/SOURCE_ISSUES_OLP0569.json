@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0569",
+  "source_path": "content/set-theory/replacement/limofsize.tex",
+  "source_sha256": "579ce35979a90771bcf225ff54b688aa34c19a88bd46fd5b51256f5ab2e68d49",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-492",
+      "source_line": 18,
+      "location": "first paragraph after the limitation-of-size principle, image-cardinality comparison",
+      "finding": "The source infers cardle(image(tau,A),A) merely because the image is generated from A. Earlier in the corpus, cardle means existence of an injection (content/sets-functions-relations/size-of-sets/comparing-size.tex, lines 27-28). The defining map A onto its image is surjective; in ZF without Choice, an arbitrary surjection need not provide an injection of its range back into its domain. Thus the displayed cardinal comparison does not follow from Replacement alone.",
+      "proposed_resolution": "Keep the displayed comparison as a named, unproved claim and explicitly say it does not follow without Choice. Use the valid surjective-image fact for the informal size argument, conditional on interpreting 'not too many' as closed under surjective images."
+    }
+  ],
+  "translation_treatment": "The target says the image is a surjective image of its source and flags the displayed injection-based cardinal bound as requiring Choice. It states the limitation-of-size inference conditionally on closure under surjective images. The displayed formula is retained for precise reference but is not asserted. Frozen source bytes are unchanged.",
+  "no_source_mutation": true
+}

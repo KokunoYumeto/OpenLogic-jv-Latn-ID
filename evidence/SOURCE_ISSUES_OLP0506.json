@@ -1,0 +1,29 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0506",
+  "source_path": "content/intuitionistic-logic/soundness-completeness/lindenbaum.tex",
+  "source_sha256": "5e3dd8b221efdfdeeba716e58f220b9c623a2ea317d4033365f6d2e1a21d34be",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-444", "source_line": 123,
+      "location": "eventual selection of an eligible disjunction",
+      "finding": "The source claims each stage reduces the number of eligible disjunctions, but adding formulas can make new disjunctions derivable. Eventual selection follows instead from finitely many smaller indices and removal of each selected index from eligibility.",
+      "proposed_resolution": "Use the finite-prefix argument: the chosen disjunction stays eligible, each preceding selection has a smaller index, and each smaller index can be selected at most once."
+    },
+    {
+      "id": "OLPL-445", "source_line": 82,
+      "location": "induction step preserving nonderivability",
+      "finding": "The step is restricted to n greater than zero, omitting the transition from Gamma_0 to Gamma_1.",
+      "proposed_resolution": "State the step for n greater than or equal to zero."
+    },
+    {
+      "id": "OLPL-446", "source_line": 101,
+      "location": "finite-stage containment of the finite premise subset",
+      "finding": "Choosing the largest index of the finitely many premises leaves the empty-premise subset case undefined.",
+      "proposed_resolution": "Choose an index at least as large as all required indices, taking zero when there are none."
+    }
+  ],
+  "translation_treatment": "Translated the prime-extension construction and every proof step, correcting the selection argument, the induction bound and the empty-premise index choice. Localized both ordinary-language case labels in the recursive definition.",
+  "no_source_mutation": true
+}

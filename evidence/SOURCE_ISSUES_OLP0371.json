@@ -1,0 +1,39 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0371",
+  "source_path": "content/lambda-calculus/church-rosser/parallel-beta-eta-reduction.tex",
+  "source_sha256": "88130e362effc83767b2fae97dcab4b6ae13f657a7d7a43da2df13883c9d54f2",
+  "status": "translation_annotated_pending_beta_eta_development_and_composition_and_alpha_proofs_and_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-277",
+      "source_line": 22,
+      "location": "abstraction clause of parallel beta-eta reduction",
+      "finding": "The inductive abstraction clause again uses one-step beta reduction rather than parallel beta-eta reduction, while both induction proofs below rely on the parallel premise.",
+      "proposed_resolution": "Use N parallel-beta-eta-reduces N-prime in the target rule and bounded comparison view."
+    },
+    {
+      "id": "OLPL-278",
+      "source_line": 55,
+      "location": "overlapping complete-development abstraction clauses",
+      "finding": "The general abstraction equation and eta-redex equation both apply to lambda-x.(N x) when x is not free in N, potentially giving different outputs. The frozen definition supplies no precedence, so it is not unambiguously a function.",
+      "proposed_resolution": "Give the eta-redex clause priority in target prose as a provisional disambiguation, and defer mathematical certification of the resulting completion lemma."
+    },
+    {
+      "id": "OLPL-279",
+      "source_line": 69,
+      "location": "eta case of substitution-compatibility lemma",
+      "finding": "The proof applies the eta rule after substituting R for y in N, but the original condition x not free in N need not imply x not free in the substituted body. A fresh alpha-representative avoiding the replacement and substitution parameter is needed, together with the still-open substitution-composition justification.",
+      "proposed_resolution": "State the fresh-binder requirement and unproved class-level dependency explicitly in target prose; retain proof certification pending."
+    },
+    {
+      "id": "OLPL-280",
+      "source_line": 85,
+      "location": "complete-development lemma abstraction case",
+      "finding": "The source says the first four induction cases are like parallel beta, but an abstraction can also be an eta-redex. Under eta-priority complete development, the abstraction case cannot simply use the ordinary abstraction equation; this overlap needs a separate join argument.",
+      "proposed_resolution": "Flag the overlapping abstraction case in the target proof and keep the completion lemma and Church--Rosser corollary pending a full proof repair."
+    }
+  ],
+  "translation_treatment": "The target translates all formal clauses and prose, corrects the parallel premise, provisionally prioritizes eta-redex development, and identifies the fresh-binder and overlap proof gaps. Structural QA does not certify the completion or Church--Rosser theorem. The inherited OLP-0362 and OLP-0369 proof gaps also remain open.",
+  "no_source_mutation": true
+}

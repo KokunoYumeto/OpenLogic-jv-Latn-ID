@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0422",
+  "source_path": "content/normal-modal-logic/frame-definability/frames.tex",
+  "source_sha256": "2dab4bab23543be815492a62159b5e44069c50f55fee06e8a866446634a75b39",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-343",
+      "source_line": 2,
+      "location": "chapter metadata comment",
+      "finding": "The frozen frames section labels its chapter frame-correspondence, but its path, nml/frd/fra file ID, and containing chapter driver identify frame-definability.",
+      "proposed_resolution": "Correct the target chapter metadata comment to frame-definability while preserving the frozen source and functional TeX commands."
+    }
+  ],
+  "translation_treatment": "Translated frame and frame-class validity definitions and corrected the stale chapter metadata comment.",
+  "no_source_mutation": true
+}

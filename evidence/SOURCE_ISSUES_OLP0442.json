@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0442",
+  "source_path": "content/normal-modal-logic/completeness/introduction.tex",
+  "source_sha256": "c9ecf5ad894817a8446043393bd6b5d5e20e9755134d32fe362b503306a51fe7",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-364",
+      "source_line": 44,
+      "location": "recall of the equivalence defining Sigma-consistency",
+      "finding": "The surrounding argument uses theoremhood in Sigma, written Proves/[Sigma] not-A. In the parenthetical recall the source instead prefixes Sigma in the premise-set position, yielding Sigma Proves/[Sigma] not-A. This is redundant at best and obscures the exact equivalence with A Proves/[Sigma] falsity that the paragraph invokes.",
+      "proposed_resolution": "Use Proves/[Sigma] not-A without a premise-set prefix in the target's parenthetical equivalence, matching the preceding sentence."
+    }
+  ],
+  "translation_treatment": "Translated the soundness/completeness contrast and canonical-model strategy with the parenthetical theoremhood notation aligned to the preceding statement.",
+  "no_source_mutation": true
+}

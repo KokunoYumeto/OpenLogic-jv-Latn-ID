@@ -1,0 +1,23 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0510",
+  "source_path": "content/intuitionistic-logic/soundness-completeness/decidability.tex",
+  "source_sha256": "336d8bc46091819f445eb72e7492c262d01511a56e5771d8e1c424de3ef1d3e5",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-449", "source_line": 26,
+      "location": "atomic-truth quotient and asserted truth preservation",
+      "finding": "Grouping worlds only by their true atoms and ordering those groups by inclusion does not preserve intuitionistic implication or negation. For two incomparable reflexive worlds, one with p false and one with p true, not-p holds at the first original world but fails at its empty-atom quotient world, which now accesses the p-world. The claimed induction for every formula over P is false.",
+      "proposed_resolution": "Use the finite set S of subformulas of A after expanding abbreviations. Represent each world by the subset of S true there, order these truth sets by inclusion, and keep atomic membership valuation. Prove preservation for each formula in S, using implication membership for the forward case and an original accessible counterworld for the reverse case. Record the bound |W'| at most 2^|S| and explain the resulting finite search over partial orders and monotone atomic valuations."
+    },
+    {
+      "id": "OLPL-450", "source_line": 40,
+      "location": "completion exercise after the filtration argument",
+      "finding": "The exercise repeats the false preservation claim for all formulas over P and places world names inside model arguments rather than the optional world suffixes of mSat.",
+      "proposed_resolution": "Require preservation for B in the subformula set S, using mSat{M}{!B}[w] and mSat{M'}{!B}[{[w]}]."
+    }
+  ],
+  "translation_treatment": "Translated finite-model decidability while replacing the invalid atomic quotient with a bounded subformula filtration, supplying the preservation mechanism and finite-search bound, and correcting the exercise scope and satisfaction notation. The original theorem is retained; no frozen source mutation occurs.",
+  "no_source_mutation": true
+}

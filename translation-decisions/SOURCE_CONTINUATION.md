@@ -1,7 +1,7 @@
 # Source translation decision continuation
 
 This register lists the provisional terminology and difficult rendering choices
-recorded after the first 118 source units, through OLP-0671. These are
+recorded after the first 118 source units, through OLP-0697. These are
 decision-level records, not verified exact-word occurrence claims. The
 earlier exact occurrence index remains scoped to OLP-0001..OLP-0118.
 The nine-passage automatic bundles on JV-T213..JV-T657 have been
@@ -553,3 +553,29 @@ Independent native specialist review and expanded reader pagination remain pendi
 | JV-T659 | sequent-style natural deduction; labelled context; succedent; optional discharge | deduksi alami gaya sekuèn; kontèks mawa label; konsekuèn; pambusakan asumsi kang ora wajib | provisional |
 | JV-T660 | multiset multiplicity; labelled context correspondence; proof translation | multiplisitas multihimpunan; korespondènsi kontèks mawa label; nerjemahaké bukti | provisional |
 | JV-T661 | label-free multiset context; empty succedent; proof translation | kontèks multihimpunan tanpa label; suksèden kosong; nerjemahaké bukti | provisional |
+| JV-T662 | normalization; normal form; introduction-elimination detour; subformula property | normalisasi; wujud normal; liku-liku introduksi-eliminasi; sipat subformula | provisional |
+| JV-T663 | normalization theorem; cut rank and cut length; permutation and reduction conversion | teorema normalisasi; pangkat cut lan dawa cut; konversi permutasi lan reduksi | provisional |
+| JV-T664 | Normalization (chapter title) | Normalisasi | provisional |
+| JV-T665 | permutation conversion; maximal cut; eigenvariable condition; topmost cut | konversi permutasi; cut maksimal; syarat variabel eigen; cut paling dhuwur | provisional |
+| JV-T666 | reduction conversion; detour conversion; grafted proof substitution; rightmost maximal cut | konversi reduksi; konversi liku-liku; substitusi bukti kang ditempel; cut maksimal paling tengen | provisional |
+| JV-T667 | segment; cut segment; cut rank; maximal cut; cut length | segmen; segmen cut; pangkat cut; cut maksimal; dawa cut | provisional |
+| JV-T668 | main branch; cut-free translation; empty succedent; corresponding labelled context | cabang utama; panerjemahan tanpa cut; suksedèn kosong; kontèks mawa label kang cocog | provisional |
+| JV-T669 | failure branch; term model; truth lemma; proof-search completeness | cabang gagal; modhèl tèrma; léma kabeneran; kelengkapan panelusuran bukti | provisional |
+| JV-T670 | proof search; backward inference; exhaustive enumeration; fool-proof search | panelusuran bukti; inferènsi mundur; enumerasi pepak; panelusuran kang mesthi kasil yèn bukti ana | provisional |
+| JV-T671 | Proof Search (chapter title) | Panelusuran Bukti | provisional |
+| JV-T672 | fresh constant on a tableau branch | konstanta kang anyar kanggo cabang tableau | provisional |
+| JV-T673 | fairness; maximal index; stagewise proof search; eigenvariable condition | kaadilan; indeks maksimal; panelusuran bukti tataran demi tataran; syarat eigenvariabel | provisional |
+| JV-T674 | signed tableau; closed branch; truth tree; branch extension | tableau mawa tandha; cabang ketutup; wit kabeneran; pamranjangan cabang | provisional |
+| JV-T675 | Proof Theory (part title) | Teori Bukti | provisional |
+| JV-T676 | typed lambda calculus; proofs as programs; propositions as types; application term | kalkulus lambda mawa tipe; bukti minangka program; proposisi minangka tipe; terma aplikasi | provisional |
+| JV-T677 | normalization; cut rank; confluence; strong normalization; common reduct | normalisasi; rangking cut; konfluensi; normalisasi kuwat; asil reduksi bebarengan | provisional |
+| JV-T678 | proof term; term-labelled system; constructor; destructor; correct proof term | terma bukti; sistem mawa label terma; konstruktor; destruktor; terma bukti bener | provisional |
+| JV-T679 | converting derivations to proof terms; witnesses in a context | ngowahi derivasi dadi terma bukti; nyekseni ing konteks | provisional |
+| JV-T680 | propositions as types; experimental draft | proposisi minangka tipe; dhraf eksperimental | provisional |
+| JV-T681 | reduction; reductum; permutation conversion; sum type; normal form | reduksi; asil kontraksi; konversi permutasi; tipe gunggung; wujud normal | provisional |
+| JV-T682 | term-labelled natural deduction rules; type assignment system | aturan dedhuksi alami mawa label terma; sistem panetepan tipe | provisional |
+| JV-T683 | term-labelled natural deduction rules; type assignment system | aturan dedhuksi alami mawa label terma; sistem panetepan tipe | provisional |
+| JV-T684 | sequent natural deduction; context union; notational variant | dedhuksi alami sekuen; gabungan konteks; varian notasi | provisional |
+| JV-T685 | recovering a derivation; reconstruction; antecedent | ngrakit maneh derivasi; pangrakitan maneh; antesedhen | provisional |
+| JV-T686 | type preservation; progress; fresh binder; local weakening | panglestaren tipe; kemajuan; pangiket anyar; pelemahan ing konteks lokal | provisional |
+| JV-T687 | context; well-typed term; type assignment; sum type; empty type | konteks; terma sing tipene bener; panetepan tipe; tipe gunggung; tipe kosong | provisional |

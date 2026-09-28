@@ -1,0 +1,46 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0464",
+  "source_path": "content/normal-modal-logic/tableaux/soundness.tex",
+  "source_sha256": "337485e1de3eaba7bdffdc6dddd9e9b4e0fe569bc9eaed470f7af27088492100",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-388",
+      "source_line": 31,
+      "location": "contrapositive setup in the opening explanation",
+      "finding": "The purported countermodel says that both every premise Bi and the conclusion A are true at w. The contrapositive needs A false at w to refute entailment.",
+      "proposed_resolution": "Use the negative modal satisfaction relation for A at w in the translated countermodel assumption."
+    },
+    {
+      "id": "OLPL-389",
+      "source_line": 141,
+      "location": "false-disjunction exercise in the nonbranching rule list",
+      "finding": "The signed formula in Gamma lacks the prefix [sigma] required by the rule and all adjacent cases.",
+      "proposed_resolution": "Add [sigma] to the signed false-disjunction premise."
+    },
+    {
+      "id": "OLPL-390",
+      "source_line": 168,
+      "location": "false Box and true Diamond fresh-prefix proof cases",
+      "finding": "The newly derived signed formulas use A although the premises, semantics, and subsequent satisfiability goals use B in both cases.",
+      "proposed_resolution": "Use B in the new signed formulas for both proof cases."
+    },
+    {
+      "id": "OLPL-391",
+      "source_line": 120,
+      "location": "headings dividing tableau rule cases",
+      "finding": "The proof calls the first group one-premise inferences and the second group two-premise inferences, but all displayed tableau rules have one premise; the distinction is whether a rule branches.",
+      "proposed_resolution": "Describe the groups as nonbranching and branching inferences."
+    },
+    {
+      "id": "OLPL-392",
+      "source_line": 261,
+      "location": "last sentence of the entailment-soundness corollary proof",
+      "finding": "After refuting the assumption that Gamma does not entail A, the source concludes Gamma proves A, repeating the hypothesis instead of proving the corollary's entailment claim.",
+      "proposed_resolution": "Conclude Gamma entails A in the translated proof."
+    }
+  ],
+  "translation_treatment": "Translated the complete explanation, satisfaction definitions, tableau preservation proof and corollaries, applying the five bounded logical corrections in the target and source-comparison view without modifying the frozen English.",
+  "no_source_mutation": true
+}

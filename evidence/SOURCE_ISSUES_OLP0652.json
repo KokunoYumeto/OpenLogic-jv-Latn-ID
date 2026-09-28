@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0652",
+  "source_path": "content/many-valued-logic/sequent-calculus/proof-theoretic-notions.tex",
+  "source_sha256": "3c31cced541d949d031c706ea2042db536f047619dfedb6f06257555ea84c061",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-572",
+      "source_line": 137,
+      "location": "exercise reference to the local inconsistency proposition",
+      "finding": "The exercise targets fol/seq/ptn, although the proposition it asks readers to prove is labeled in this mvl/seq/prf section.",
+      "proposed_resolution": "Point the translated exercise to mvl/seq/prf:prop:incons, matching this file's identifier and local proposition label."
+    }
+  ],
+  "translation_treatment": "The Javanese target corrects the exercise's cross-reference while leaving the proof as an exercise. The frozen English bytes are unchanged.",
+  "no_source_mutation": true
+}

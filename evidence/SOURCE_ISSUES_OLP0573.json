@@ -1,0 +1,25 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0573",
+  "source_path": "content/set-theory/replacement/finiteaxiomatizability.tex",
+  "source_sha256": "31413d0ed7d34d8cd7ee45cbf8f137fb28c954de9ed84ef6bed96f502fad4cf4",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-496",
+      "source_line": 30,
+      "location": "Montague proof, relativized witness display",
+      "finding": "The property that N is transitive is relativized to N rather than to the ambient model M. The internal existential statement supplies the property as evaluated in M; restricting it to N cannot justify the following external claim.",
+      "proposed_resolution": "Relativize the transitivity-and-potency condition on N to M, then use the closure of transitive potent M to pass it to the ambient universe."
+    },
+    {
+      "id": "OLPL-497",
+      "source_line": 47,
+      "location": "Potter proof and first exercise, Separation schema for inner sets",
+      "finding": "Transitivity alone does not make an arbitrary set satisfy relativized Separation; the separated subset of a member need not belong to the set. This also undermines the Montague proof's reused minimal-model predicate for the Potter extension.",
+      "proposed_resolution": "Require the inner model to be transitive and potent (closed under subsets of its members), strengthen the minimal-model predicate and its witness displays accordingly, and state the repaired Separation exercise with that antecedent."
+    }
+  ],
+  "translation_treatment": "The target strengthens the minimal transitive theta-model to a transitive potent one, fixes the ambient relativization superscript, and makes the Potter argument and exercise require potency for Separation. Frozen English source bytes are unchanged.",
+  "no_source_mutation": true
+}

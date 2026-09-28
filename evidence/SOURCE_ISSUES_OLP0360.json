@@ -1,0 +1,25 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0360",
+  "source_path": "content/lambda-calculus/syntax/free-variables.tex",
+  "source_sha256": "5443d1f42424315debd308ca068a3f74dde17a2045bc0b71cb94c6d70d53990c",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-244",
+      "source_line": 2,
+      "location": "section chapter comment",
+      "finding": "The frozen comment calls this an introduction section, while its syntax path and lam/syn/fv file identifier place it in the syntax chapter.",
+      "proposed_resolution": "Set the target's chapter comment to syntax; retain the frozen source and TeX identifier."
+    },
+    {
+      "id": "OLPL-245",
+      "source_line": 24,
+      "location": "scope definition",
+      "finding": "The frozen definition calls the corresponding occurrence of the enclosing term N the scope of lambda-x, but the scope of that abstraction is its body M. The worked example immediately below also identifies the body as the scope.",
+      "proposed_resolution": "Render the corresponding occurrence of M as the scope in the target, retaining every other mathematical expression and the frozen source bytes."
+    }
+  ],
+  "translation_treatment": "The target aligns the chapter comment with the syntax identifier and identifies the abstraction body M as its scope. QA v19 compares against a bounded source view, passes all structural checks, and leaves reader build and visual readback pending.",
+  "no_source_mutation": true
+}

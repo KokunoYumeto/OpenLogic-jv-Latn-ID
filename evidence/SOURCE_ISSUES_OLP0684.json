@@ -1,0 +1,39 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0684",
+  "source_path": "content/proof-theory/proof-search/tableaux.tex",
+  "source_sha256": "593c823ad413a4db7c58f783d612a3fb14cc8fbaa790c50c26d0f7709b6a8d14",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-645",
+      "source_line": 27,
+      "location": "signed starting-sequent example",
+      "finding": "The last succedent formula D is signed true although both succedent formulas must be false for the stated countermodel search.",
+      "proposed_resolution": "Sign D false in the starting tableau."
+    },
+    {
+      "id": "OLPL-646",
+      "source_line": 29,
+      "location": "countermodel sentence and displayed tableau introduction",
+      "finding": "The countermodel sentence repeats shows that would show that, and the fully closed example is called a clause tableau although its starting formulas are not clauses.",
+      "proposed_resolution": "Remove the duplicated predicate and describe the example as a closed tableau."
+    },
+    {
+      "id": "OLPL-647",
+      "source_line": 44,
+      "location": "branch closure definition",
+      "finding": "Closure by opposite signs on one formula omits the immediately unsatisfiable true-falsity branch, corresponding to the G3c false-left axiom.",
+      "proposed_resolution": "Include a true-falsity formula as a branch-closing case."
+    },
+    {
+      "id": "OLPL-648",
+      "source_line": 136,
+      "location": "persistent quantifier expansion and finite open branches",
+      "finding": "The term-selection instruction is undefined when no unused applicable term remains, and the finite-open-branch description requires all non-atomic formulas checked even though true-universal and false-existential formulas are never checked.",
+      "proposed_resolution": "Skip expansion when no unused applicable term exists, reconsider when new terms appear, and characterize finite open branches by checked checkable formulas plus saturation of all persistent quantifier instances."
+    }
+  ],
+  "translation_treatment": "The target translates the full section and uses work/olp0684_source_view.py for four bounded corrections while preserving every frozen English byte.",
+  "no_source_mutation": true
+}

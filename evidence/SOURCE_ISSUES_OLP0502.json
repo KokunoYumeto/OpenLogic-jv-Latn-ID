@@ -1,0 +1,32 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0502",
+  "source_path": "content/intuitionistic-logic/semantics/topological-semantics.tex",
+  "source_sha256": "a279eb8cdd1aa2accf342003edd769868f134f178ef6c29b3807bda16ae95f21",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-435",
+      "source_line": 77,
+      "location": "derivability inclusion at line 77 and implication-residuation inclusion at line 93",
+      "finding": "Both claims use subset rather than subseteq, leaving allowance of equality unclear. Derivability is reflexive, and implication application can yield the entire consequent truth set; both claims require non-strict inclusion.",
+      "proposed_resolution": "Use subseteq in both displayed inclusion conditions."
+    },
+    {
+      "id": "OLPL-436",
+      "source_line": 77,
+      "location": "derivability versus truth-set inclusion",
+      "finding": "The biconditional between derivability and semantic inclusion omits the all-model quantifier. Inclusion in one chosen model does not imply derivability.",
+      "proposed_resolution": "State explicitly that the inclusion must hold in every topological model, matching the previous paragraph's entailment explanation."
+    },
+    {
+      "id": "OLPL-437",
+      "source_line": 53,
+      "location": "explanation of the applied interior notation",
+      "finding": "The notation Interior(V) is called the function, but it denotes the function's value, namely the interior of V.",
+      "proposed_resolution": "Describe Interior(V) as the resulting interior set, preserving the formula and the union-of-open-subsets definition."
+    }
+  ],
+  "translation_treatment": "Translated the topology and model definitions, interior operation and connective motivation. Clarified non-strict inclusion and universal model quantification, and distinguished the interior operator's value from the operator itself. Localized ordinary prose inside the set-builder equation.",
+  "no_source_mutation": true
+}

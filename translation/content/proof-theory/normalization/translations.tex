@@ -1,0 +1,348 @@
+% Part: proof-theory
+% Chapter: normalization
+% Section: translations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{nor}{tr}
+
+\olsection{Nerjemahaké Antarane \Log{N2i}-\usetoken{P}{proof} Normal lan \Log{G2i}}
+
+!!^{proof}s ing \Log{N2i} bisa diterjemahaké dadi !!{proof}s ing
+\Log{G2i}, lan kosok baliné. Wiwitané, panerjemahan !!{proof}s
+\Log{G2i} kang tanpa cut ngasilaké \Log{N2i}-!!{proof}s normal.
+
+Kanggo nyatakaké asil iki, kita perlu istilah kang nggampangaké
+sesambungan antarané antésèden sekuèn ing~\Log{N2i} lan
+ing~\Log{G2i}: himpunan~$\Gamma'$ kang isiné !!{formula}s mawa
+label \emph{cocog karo} multihimpunan~$\Gamma$ kang isiné
+!!{formula}s tanpa label yèn, kanggo saben !!{formula}~$!A$,
+cacahé !!{element}s ing~$\Gamma'$ kang awujud $x : !A$ ora
+ngluwihi multiplisitas~$!A$ ing~$\Gamma$.
+
+\begin{cor}
+Yèn ana bukti \Log{G2i} tanpa cut tumrap
+$\Gamma \Sequent \Delta$, ana bukti \Log{N2i} normal~$\delta$
+tumrap $\Gamma' \Sequent !C$. Ing kéné $!C$ iku rumus ing
+$\Delta$ yèn ora kosong, lan $!C \ident \lfalse$ yèn
+$\Delta$ kosong. Himpunan~$\Gamma'$ kang
+label cocog karo multihimpunan~$\Gamma$: kanggo saben
+!!{formula}~$!A$, cacahé !!{element}s ing~$\Gamma'$ kang awujud
+$x : !A$ ora ngluwihi multiplisitas~$!A$ (cacahé salinan~$!A$)
+ing~$\Gamma$.
+\end{cor}
+
+\begin{proof}
+Iki katon saka bukti \olref[nat][tgi]{prop:G2i-to-N2i}:
+aturan !!{introduction} ditambahaké ing pungkasan !!{proof}s,
+déning aturan !!{elimination} mung ing pérangan ndhuwur
+!!{proof}s. Mula, ora ana aturan !!{introduction} kang
+diselehaké ing sadhuwuré aturan !!a{elimination}.
+\end{proof}
+
+Nanging, panerjemahan aturan~\Cut{} ing
+\olref[nat][tgi]{prop:G2i-to-N2i} bisa ngasilaké cut ing
+\Log{N2i}-!!{proof}~$\delta$. Yèn !!{proof} \Log{G2i} pungkasané
+nganggo~\Cut{}, kanthi sub-!!{proof}s langsung $\pi_1$ lan $\pi_2$
+tumrap $\Gamma_1 \Sequent !A$ lan $!A, \Gamma_2 \Sequent \Delta_2$,
+~$\delta_1$, yaiku panerjemahan~$\pi_1$, ditempelaké ing aksioma
+$x:!A \Sequent !A$ kang ana ing~$\delta_2$, yaiku panerjemahan~$\pi_2$.
+Yèn $\delta_1$ pungkasané nganggo aturan !!a{introduction} kang
+!!{formula} utamané~$!A$, lan aksioma $x:!A \Sequent !A$ ing~$\delta_2$
+dadi premis utama aturan !!a{elimination}, asilé ngandhut cut
+ing~$\delta$.
+
+!!{proof}s ing \Log{N2i} uga bisa diterjemahaké dadi !!{proof}s
+ing~\Log{G2i}. Ing bukti \olref[nat][tni]{prop:N2-to-G2},
+panerjemahan \Elim{\land}, \Elim{\lif}, \Elim{\lnot}, lan
+\Elim{\lforall} ngasilaké inferènsi~\Cut{} ing !!{proof}
+\Log{G2i}. Nanging, yèn \Log{N2i}-!!{proof} asalé normal,
+inferènsi cut iki bisa diindhari.
+
+Dhaptar kedadéan sekuèn $S_1$, \dots,~$S_n$ ing
+\Log{N2i}-!!{proof}~$\delta$ diarani \emph{cabang} yèn $S_1$
+minangka aksioma lan, saben $S_i$ dadi premis utama sawijiné
+inferènsi, $S_{i+1}$ minangka konklusiné. Tegesé, cabang
+nglacak sekuèn saka aksioma mudhun ing~$\delta$, nanging mandheg
+ing premis tambahan aturan !!{elimination}. \emph{Cabang utama}
+ing~$\delta$ yaiku cabang kang $S_n$ dadi sekuèn pungkasan.
+Saben !!{proof}~$\delta$ nduwèni paling ora siji cabang utama,
+amarga saben aturan nduwèni paling ora siji premis utama
+(mung \Intro{\land} kang nduwèni loro).
+
+
+\begin{prop}\ollabel{prop:normal-N2i-to-G2i} Yèn $\delta$
+minangka $\Log{N2c}$- utawa $\Log{N2i}$-!!{proof} normal tumrap
+$\Gamma \Sequent !A$, ana $\Log{G2c}$-!!{proof} (utawa
+$\Log{G2i}$-!!{proof})~$\pi$ tanpa cut tumrap
+$\Gamma' \Sequent \Delta$. Ing kéné $\Gamma'$ iku multihimpunan
+!!{formula}s kang diasilaké saka~$\Gamma$ kanthi mbusak label;
+$\Delta = \{!A\}$ yèn $!A$ dudu~$\lfalse$, lan
+$\Delta = \emptyset$ yèn mangkono.
+\end{prop}
+
+\begin{proof}
+Saiki induksi ditindakaké miturut cacahé inferènsi ing
+!!{proof}~$\delta$ tumrap $\Gamma \Sequent !A$. Yèn ora ana
+inferènsi ing~$\delta$, bukti iku aksioma
+$x:!A \Sequent !A$; $\pi$ yaiku aksioma kang cocog,
+$!A \Sequent !A$, utawa $\lfalse \Sequent \ $ yèn
+$!A \ident \lfalse$.
+
+Yèn $\delta$ pungkasané nganggo aturan inferènsi, kita mbedakaké kasus:
+\begin{enumerate}
+  \item Yèn $R$ aturan !!a{introduction} utawa~\FalseInt,
+  panerjemahané padha karo ing bukti
+  \olref[nat][tni]{prop:N2-to-G2}, lan ora mbutuhaké~\Cut.
+
+  Yèn aturan pungkasan~$R$ ing~$\delta$ iku aturan
+  !!a{elimination}, gatèkna prakara-prakara iki:
+  \begin{enumerate}
+    \item Cabang utama~$\delta$ ora ngliwati aturan
+    !!{introduction}; yèn ngliwati, ana aturan
+    !!a{introduction} utawa~\FalseInt{} kang disusul aturan
+    !!a{elimination} ing cabang utama, mula $\delta$ ora normal.
+    \item Amarga ora ana aturan !!{introduction} ing cabang-cabang
+    utama~$\delta$, cabang utamané mung siji. (Mung
+    \Intro{\land} kang nduwèni loro premis utama; mula cabang
+    utama kang luwih saka siji mesthi ngliwati premis-premis
+    aturan \Intro{\land}.)
+    \item Yèn cabang utama ngemot premis utama \Elim{\lor}
+    utawa \Elim{\lexists}, aturan kaya mangkono mung siji lan
+    dadi aturan pungkasan, yaiku~$R$. (Yèn ora, cabang utama
+    ngemot aturan \Elim{\lor} utawa \Elim{\lexists} kang
+    konklusiné dadi premis utama aturan !!a{elimination};
+    bukti iku ora normal amarga konversi permutasi bisa
+    ditindakaké.)
+  \item Ora ana aturan !!{elimination} saliyané \Elim{\lor}
+  lan \Elim{\lexists} kang mbusak asumsi, yaiku ngowahi
+  kontèks kiwa sekuèn. \Elim{\lor} lan \Elim{\lexists}
+  mung mbusak asumsi ing
+  sadhuwuré premis tambahan, mula mung ngowahi kontèks kiwa
+  premis tambahané. Tegesé, yèn sekuèn $S_i$ ing cabang
+  utama~$\delta$ nduwèni kontèks~$\Gamma_1$, konklusi~$S_{i+1}$
+  saka inferènsi kang premis utamané~$S_i$ nduwèni kontèks
+  $\Gamma_1' \supseteq \Gamma_1$.
+  \item Mula, yèn $x: !C \Sequent !C$ minangka sekuèn
+  paling dhuwur~$S_1$ ing cabang utama, $x:!C \in \Gamma$.
+  \end{enumerate}
+  Saiki kasus-kasus dibédakaké manut wujudé~$!C$. Amarga saben
+  $S_i$ ing cabang utama dadi premis utama aturan
+  !!a{elimination}, iki uga lumaku tumrap $x:!C \Sequent !C$.
+
+  \item $!C \ident !D \land !E$. Mula $\delta$ awujud
+  \[
+  \Axiom$x:!D \land !E \fCenter !D \land !E$
+  \RightLabel{\Elim{\land}[1]}
+  \UnaryInf$x:!D \land !E \fCenter !D$
+  \Deduce$x:!D \land !E, \Gamma_1 \fCenter !A$
+  \DisplayProof
+  \]
+  Cabang utama kang ngemot $x:!D \land !E \Sequent !D$ ora
+  ngliwati premis utama \Intro{\lif} utawa \Intro{\lnot},
+  utawa premis tambahan \Elim{\lor} utawa \Elim{\lexists}.
+  Mula !!{formula}s kontèks $x:!D \land !E$ ora owah
+  sadawané cabang utama. Iki nerangaké sebabé kontèks
+  sekuèn pungkasan kudu ngemot~$x:!D \land !E$. Salajengé,
+  !!{proof}~$\delta$ bisa diowahi dadi !!{proof}~$\delta_1$:
+  sub-!!{proof} kang pungkasané nganggo \Elim{\land}
+  diganti $x:!D \Sequent !D$, lan $x:!D \land !E$ ing
+  kontèks saben sekuèn sadawané cabang utama diganti
+  $x:!D$. Dadi, kita ngowahi
+  \[
+  \bottomAlignProof
+  \Axiom$x:!D \land !E \fCenter !D \land !E$
+  \RightLabel{\Elim{\land}[1]}
+  \UnaryInf$x:!D \land !E \fCenter !D$
+  \Deduce$x:!D \land !E, \Gamma_1 \fCenter !A$
+  \DisplayProof
+  \quad\text{ dadi }\quad
+  \bottomAlignProof
+  \Axiom$x:!D \fCenter !D$
+  \Deduce$x:!D, \Gamma_1 \fCenter !A$
+  \DisplayProof
+  \]
+  Hipotèsis induksi lumaku tumrap~$\delta_1$, amarga
+  cacahé inferènsi ing~$\delta$ padha karo cacahé
+  inferènsi ing~$\delta_1$ ditambah~$1$.
+
+  Miturut hipotèsis induksi, ana \Log{G2i}-!!{proof}~$\pi_1$
+  tumrap $!D, \Gamma_1' \Sequent \Delta$. Kita olèh
+  !!{proof}~$\pi$ kanthi ngetrapaké \LeftR{\land}:
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_1$}
+  \Deduce$!D, \Gamma_1' \fCenter !A$
+  \RightLabel{\LeftR{\land}}
+  \UnaryInf$!D \land !E, \Gamma_1' \fCenter !A$
+  \DisplayProof
+  \]
+  Yèn $!A \ident \lfalse$, suksedèné tetep kosong,
+  tanpa \RightR{\Weakening}; tuladhané,
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_1$}
+  \Deduce$!D, \Gamma_1' \fCenter $
+  \RightLabel{\LeftR{\land}}
+  \UnaryInf$!D \land !E, \Gamma_1' \fCenter $
+  \DisplayProof
+  \]
+  \item Yèn $!C \ident !D \lor !E$, iku
+  mesthi dadi premis utama \Elim{\lor}, lan inferènsi iki
+  mesthi inferènsi pungkasan~$R$ ing cabang utama.
+  Tegesé, $\delta$ awujud:
+  \[
+  \Axiom$x:!D \lor !E \fCenter !D \lor !E$
+  \AxiomC{}
+  \RightLabel{$\delta_1$}
+  \Deduce$y:!D, \Gamma_1 \fCenter!A$
+  \AxiomC{}
+  \RightLabel{$\delta_2$}
+  \Deduce$z:!E, \Gamma_2 \fCenter !A$
+  \RightLabel{\Elim{\lor}}
+  \TrinaryInf$x:!D \lor !E, \Gamma_1, \Gamma_2 \fCenter !A$
+  \DisplayProof
+  \]
+  Hipotèsis induksi lumaku tumrap !!{proof}s $\delta_1$ lan
+  $\delta_2$; kita olèh \Log{G2i}-!!{proof}s $\pi_1$ lan $\pi_2$
+  tumrap $!D, \Gamma_1' \Sequent \Delta$ lan
+  $!E, \Gamma_2' \Sequent \Delta$. Kanthi ngetrapaké
+  $\LeftR{\lor}$, kita olèh~$\pi$:
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_1$}
+  \Deduce$!D, \Gamma_1' \fCenter !A$
+  \AxiomC{}
+  \RightLabel{$\pi_2$}
+  \Deduce$!E, \Gamma_2' \fCenter !A$
+  \RightLabel{\LeftR{\lor}}
+  \BinaryInf$!D \lor !E, \Gamma_1', \Gamma_2' \fCenter !A$
+  \DisplayProof
+  \]
+  Yèn $\Elim{\lor}$ ora mbusak $y: !D$ utawa $z: !E$
+  (yaiku yèn salah sijiné ora ana ing kontèks premis
+  tambahan), \LeftR{\Weakening} ditambahaké miturut
+  kabutuhan. Yèn $!A \ident \lfalse$, suksedèné tetep
+  kosong, tanpa \RightR{\Weakening}. Tuladhané,
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_1$}
+  \Deduce$\Gamma_1' \fCenter $
+  \RightLabel{\LeftR{\Weakening}}
+  \UnaryInf$!D, \Gamma_1' \fCenter $
+  \AxiomC{}
+  \RightLabel{$\pi_2$}
+  \Deduce$\Gamma_2' \fCenter $
+  \RightLabel{\LeftR{\Weakening}}
+  \UnaryInf$!E, \Gamma_2' \fCenter $
+  \RightLabel{\LeftR{\lor}}
+  \BinaryInf$!D \lor !E, \Gamma_1', \Gamma_2' \fCenter $
+  \DisplayProof
+  \]
+  
+  \item $!C \ident !D \lif !E$. Mula $\delta$ awujud
+  \[
+  \Axiom$x:!D \lif !E \fCenter !D \lif !E$
+  \AxiomC{}
+  \RightLabel{$\delta_1$}
+  \Deduce$\Gamma_1 \fCenter!D$
+  \RightLabel{\Elim{\lif}}
+  \BinaryInf$x:!D \lif !E, \Gamma_1 \fCenter !E$
+  \RightLabel{$\delta_2$}
+  \Deduce$x:!D \lif !E, \Gamma_1, \Gamma_2 \fCenter !A$
+  \DisplayProof
+  \]
+  Cabang utama kang ngemot $x:!D \lif !E,
+  \Gamma_1 \Sequent !E$ ora ngliwati premis utama
+  \Intro{\lif} utawa \Intro{\lnot}, utawa premis tambahan
+  \Elim{\lor} utawa \Elim{\lexists}. Mula !!{formula}s
+  kontèks ing $x:!D \lif !E, \Gamma_1$ ora owah
+  sadawané cabang utama. Iki nerangaké sebabé kontèks
+  sekuèn pungkasan kudu ngemot~$x:!D \lif !E, \Gamma_1$.
+  Salajengé, fragmèn !!{proof}~$\delta_2$ bisa diowahi
+  dadi !!{proof}~$\delta_2'$ kang bener: sub-!!{proof}
+  kang pungkasané nganggo \Elim{\lif} diganti
+  $x:!E \Sequent !E$, lan $x:!D \lif !E, \Gamma_1$
+  ing kontèks saben sekuèn sadawané cabang utama diganti
+  $x:!E$. Dadi, kita ngowahi
+  \[
+  \bottomAlignProof
+  \Axiom$x:!D \lif !E, \Gamma_1 \fCenter !E$
+  \RightLabel{$\delta_2$}
+  \Deduce$x:!D \lif !E, \Gamma_1, \Gamma_2 \fCenter !A$
+  \DisplayProof
+  \quad\text{ dadi }\quad
+  \bottomAlignProof
+  \Axiom$x:!E \fCenter !E$
+  \RightLabel{$\delta_2'$}
+  \Deduce$x:!E, \Gamma_2 \fCenter !A$
+  \DisplayProof
+  \]
+  Hipotèsis induksi lumaku tumrap $\delta_1$ lan $\delta_2'$,
+  amarga cacahé inferènsi ing~$\delta$ iku gunggungé
+  cacah inferènsi ing~$\delta_1$ lan~$\delta_2$, ditambah~$1$
+  kanggo inferènsi \Elim{\lif} ing wiwitan cabang utama.
+  (Yèn inferènsi iku uga inferènsi pungkasan~$R$ ing~$\delta$,
+  $\delta_1$ ngemot $0$ inferènsi.)
+
+  Miturut hipotèsis induksi, ana \Log{G2i}-!!{proof}s $\pi_1$
+  tumrap $\Gamma_1' \Sequent \Delta_D$ lan~$\pi_2$
+  tumrap $!E, \Gamma_2' \Sequent \Delta_A$. Ing kéné
+  $\Delta_D$ kosong yèn $!D \ident \lfalse$ lan awujud
+  $\{!D\}$ yèn ora; $\Delta_A$ ditemtokaké kanthi cara
+  kang padha saka~$!A$. Kita olèh !!{proof}~$\pi$
+  kanthi ngetrapaké \LeftR{\lif}:
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_1$}
+  \Deduce$\Gamma_1' \fCenter !D$
+  \AxiomC{}
+  \RightLabel{$\pi_2$}
+  \Deduce$!E, \Gamma_2' \fCenter !A$
+  \RightLabel{\LeftR{\lif}}
+  \BinaryInf$!D \lif !E, \Gamma_1', \Gamma_2' \fCenter !A$
+  \DisplayProof
+  \]
+  Yèn $!D \ident \lfalse$, kita nambah
+  \RightR{\Weakening} mung ing premis kapisan supaya
+  aturan implikasi kiwa bisa ditrapaké. Yèn $!A \ident \lfalse$,
+  suksedèn ing premis kapindho lan konklusi tetep kosong;
+  ora perlu pelemahan tengen ing konklusi. Tuladhané,
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_1$}
+  \Deduce$\Gamma_1' \fCenter $
+  \RightLabel{\RightR{\Weakening}}
+  \UnaryInf$\Gamma_1' \fCenter !D$
+  \AxiomC{}
+  \RightLabel{$\pi_2$}
+  \Deduce$!E, \Gamma_2' \fCenter $
+  \RightLabel{\LeftR{\lif}}
+  \BinaryInf$!D \lif !E, \Gamma_1', \Gamma_2' \fCenter $
+  \DisplayProof
+  \]
+
+\end{enumerate}
+Kasus-kasus liyané ditangani kanthi cara kang padha lan
+dipasrahaké dadi latihan.
+\end{proof}
+
+\begin{cor}
+Saben !!{formula} kang katon ing bukti \Log{N1i} utawa
+\Log{N2i} normal iku sub-!!{formula} saka
+!!{formula} pungkasan utawa saka asumsi-asumsi kang isih
+mbukak ing sekuèn pungkasan.
+\end{cor}
+
+\begin{proof}
+  Miturut \olref{prop:normal-N2i-to-G2i}, saben
+  \Log{N2i}-!!{proof} normal bisa diterjemahaké dadi
+  \Log{G2i}-!!{proof}. Saka pamriksan bukti katon yèn
+  saben !!{formula} ing \Log{N2i}-!!{proof} uga katon
+  ing \Log{G2i}-!!{proof}. \Log{G2i}, kang ora nganggo
+  aturan \Cut{}, nduwèni sipat sub-!!{formula}.
+\end{proof}
+
+\end{document}

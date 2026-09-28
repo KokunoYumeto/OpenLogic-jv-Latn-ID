@@ -1,0 +1,25 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0400",
+  "source_path": "content/many-valued-logic/infinite-valued-logics/lukasiewicz.tex",
+  "source_sha256": "cd08c78b079f961505db9f62af56babd0570bf52682f8375f6ba4d340c2afcc6",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-316",
+      "source_line": 2,
+      "location": "infinite-valued Łukasiewicz section metadata comment",
+      "finding": "The source comment names the three-valued chapter, while the file path, mvl/inf/luk file ID and surrounding chapter identify the infinite-valued chapter.",
+      "proposed_resolution": "Correct the target comment to infinite-valued-logics without changing the frozen source or file ID."
+    },
+    {
+      "id": "OLPL-317",
+      "source_line": 21,
+      "location": "infinite-valued Łukasiewicz matrix falsity constant",
+      "finding": "The matrix names the standard propositional language L_0 but omits its nullary falsity constant and its truth value. The section then claims its 3-valued restriction is the same logic as the earlier Łukasiewicz matrix, whose target has the falsity constant valued False. Without the constant and its value, the matrices do not have the same stated language and the comparison proof does not cover all formulas.",
+      "proposed_resolution": "Include lfalse in the infinite-valued matrix language, assign its truth-function value 0, and state in the comparison proof that the constant values agree under False=0."
+    }
+  ],
+  "translation_treatment": "The target translates the editorial stub, infinite-valued and finite-grid Łukasiewicz definition, matching three-valued table, entailment proposition, fuzzy-logic note and exercise. It corrects the chapter metadata and completes the nullary falsity interpretation needed for the stated matrix comparison.",
+  "no_source_mutation": true
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0576",
+  "source_path": "content/set-theory/ord-arithmetic/addition.tex",
+  "source_sha256": "e812adca016fb2b68daed98ef2bc27f45e48a57ceeeb27d244ad5c92a453a6e6",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-498",
+      "source_line": 78,
+      "location": "proof that addition by one gives the successor ordinal",
+      "finding": "The displayed codomain equates alpha disjoint-sum one with a disjoint sum of already tagged products. By the preceding definition, those tagged products must instead be united.",
+      "proposed_resolution": "Replace the second disjoint-sum operator between the two tagged products with set union; retain the original alpha disjoint-sum one and the explicit isomorphism."
+    },
+    {
+      "id": "OLPL-499",
+      "source_line": 100,
+      "location": "zero case of the ordinal-addition recursion proof",
+      "finding": "The proof simplifies zero times singleton to singleton zero. It is the empty set, so the displayed equality as written is false.",
+      "proposed_resolution": "Replace the spurious singleton zero in that one displayed step with the empty set; keep the rest of the derivation."
+    }
+  ],
+  "translation_treatment": "The Javanese target uses union between the tagged product sets in the successor isomorphism and the empty set in the zero-addition calculation. The frozen source remains unchanged.",
+  "no_source_mutation": true
+}

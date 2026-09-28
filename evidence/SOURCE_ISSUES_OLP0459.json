@@ -1,0 +1,39 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0459",
+  "source_path": "content/normal-modal-logic/filtrations/euclidean-filtrations.tex",
+  "source_sha256": "904eebe3b14b5f58fcac9db524e0546c9cdd6f1a07b00f1ef097fba80b0664db",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-384",
+      "source_line": 35,
+      "location": "both Euclidean-model diagrams at the w1-to-w2 edge",
+      "finding": "The first figure calls the relation Euclidean but omits the w2 self-loop forced by w1Rw2; its quotient diagram also omits the inherited self-loop.",
+      "proposed_resolution": "Draw the w2 reflexive loop in both translated diagrams while preserving all other nodes and arrows."
+    },
+    {
+      "id": "OLPL-385",
+      "source_line": 22,
+      "location": "arrows that would be added to the quotient model",
+      "finding": "The second required pair of arrows is described between w2 and w5, although the argument and figure concern their equivalence classes.",
+      "proposed_resolution": "Use [w2] and [w5] for the second quotient-world pair."
+    },
+    {
+      "id": "OLPL-386",
+      "source_line": 107,
+      "location": "enumerated theorem proof",
+      "finding": "The proof cases occur in transitive, Euclidean, symmetric order, whereas the theorem lists symmetric, transitive, Euclidean; each numbered proof item therefore addresses a different numbered claim.",
+      "proposed_resolution": "Order the translated proof items as symmetric exercise, transitivity argument, Euclidean exercise, matching the theorem."
+    },
+    {
+      "id": "OLPL-387",
+      "source_line": 111,
+      "location": "Box and Diamond branches of the transitivity proof",
+      "finding": "The C1 premises require Box A or Diamond A to belong to Gamma; the proof branches assert modal closure and invoke C1 without stating those membership premises.",
+      "proposed_resolution": "State Box A in Gamma and Diamond A in Gamma in the respective proof-branch assumptions."
+    }
+  ],
+  "translation_treatment": "Translated the counterexample, both corrected diagrams, the modal-closure limitation, the theorem, its reordered proof and completion exercise, with all four bounded corrections applied in the target and source-comparison view.",
+  "no_source_mutation": true
+}

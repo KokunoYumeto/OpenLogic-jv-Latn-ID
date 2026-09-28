@@ -1,0 +1,46 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0490",
+  "source_path": "content/applied-modal-logic/epistemic-logic/public-announcement-logic-semantics.tex",
+  "source_sha256": "b5e8c2ba742dc473a01dbc6f3908250b2afc6deb12f338019ac9482cfea361cd",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-423",
+      "source_line": 24,
+      "location": "negation truth clause, lines 24–25",
+      "finding": "The repeated frozen clause says not B is true exactly when B is true, omitting non-satisfaction of B.",
+      "proposed_resolution": "State that not B is true at w exactly when B is not true at w."
+    },
+    {
+      "id": "OLPL-424",
+      "source_line": 30,
+      "location": "conditional truth clause, lines 30–31",
+      "finding": "The repeated frozen clause makes B implies C true when B or C is true, instead of when B is false or C true.",
+      "proposed_resolution": "State that B implies C is true at w exactly when B is not true at w or C is true at w."
+    },
+    {
+      "id": "OLPL-425",
+      "source_line": 25,
+      "location": "satisfaction notation in negation and conditional clauses, lines 25 and 31",
+      "finding": "Both repeated clauses use malformed \\mSat/{M}{!B}[w] rather than \\mSat{M}{!B}[w].",
+      "proposed_resolution": "Use the established \\mSat{M}{!B}[w] notation in both translated clauses."
+    },
+    {
+      "id": "OLPL-426",
+      "source_line": 66,
+      "location": "vacuous announcement formula",
+      "finding": "The prose writes [!A]B, omitting the formula metavariable marker on B used by the formation rule and satisfaction definition.",
+      "proposed_resolution": "Write [!A] !B in the translated vacuity statement."
+    },
+    {
+      "id": "OLPL-427",
+      "source_line": 119,
+      "location": "comparison of the p update and the p-and-not-K_b-p update",
+      "finding": "The source says the two updated models are identical. In the displayed original model the upper world satisfies p and K_b p, so it survives the p update but is removed by the conjunction update.",
+      "proposed_resolution": "State that the updated models differ, identify the excluded upper world, and explain that agent b nevertheless knows p at the remaining initial world after the conjunction update."
+    }
+  ],
+  "translation_treatment": "Translated the updated-model truth definition, vacuity, figure, knowledge gain and unsuccessful announcement example; corrected the repeated propositional clauses and notation, the announcement formula marker, and the false equality of updated models without altering frozen English.",
+  "no_source_mutation": true
+}

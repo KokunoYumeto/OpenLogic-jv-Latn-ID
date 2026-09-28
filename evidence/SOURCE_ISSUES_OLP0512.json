@@ -1,0 +1,17 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0512",
+  "source_path": "content/intuitionistic-logic/tableaux/introduction.tex",
+  "source_sha256": "d247348c60332898ef0ee789cf200c83633ab364190dd8a68e7c3a767b5fcdb0",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-451", "source_line": 43,
+      "location": "prefixed formula description after the intuitionistic transition",
+      "finding": "The paragraph introduces intuitionistic tableaux but refers to their formulas as being in modal tableaux, a copied system description inconsistent with this chapter's scope.",
+      "proposed_resolution": "Describe the formulas as belonging to intuitionistic tableaux."
+    }
+  ],
+  "translation_treatment": "Translated signed tableaux, closure, finite-premise derivability, nonempty positive-integer prefixes and reflexive-transitive accessibility. Corrected only the copied modal-system word in the intuitionistic paragraph and localized the ordinary display prose.",
+  "no_source_mutation": true
+}

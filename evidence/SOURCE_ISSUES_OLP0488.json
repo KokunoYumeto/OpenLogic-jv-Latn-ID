@@ -1,0 +1,32 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0488",
+  "source_path": "content/applied-modal-logic/epistemic-logic/bisimulations.tex",
+  "source_sha256": "3be0d4f2009365ab48416c0235ba2a8dfa8a5c04a68c0066d377959a0489c60d",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-416",
+      "source_line": 39,
+      "location": "forth and back clauses, lines 39 and 43",
+      "finding": "Both clauses quantify agents as a in A, although the chapter defined the agent-symbol set as G and A is used for a formula.",
+      "proposed_resolution": "Quantify over a in G in both translated clauses."
+    },
+    {
+      "id": "OLPL-417",
+      "source_line": 91,
+      "location": "bisimilar-model figure caption and explanation, lines 91 and 95–101",
+      "finding": "The figure shows relations and proposed paired worlds but omits propositional valuations; its bisimulation claim follows only if all paired worlds agree on every propositional variable.",
+      "proposed_resolution": "Qualify the translated caption and explanation on matching valuations for the paired worlds."
+    },
+    {
+      "id": "OLPL-418",
+      "source_line": 40,
+      "location": "model-specific agent relations in the forth and back clauses, lines 40–45",
+      "finding": "The notation R_{1_a} and R_{2_a} nests the agent subscript under the model index and does not transparently identify the a-relation in model 1 or 2.",
+      "proposed_resolution": "Write R_{1,a} and R_{2,a} for the agent-a accessibility relations in models 1 and 2."
+    }
+  ],
+  "translation_treatment": "Translated the bisimulation definition, invariance theorem and figure explanation; used the established agent set G, explicit model-agent relation indices, and a valuation qualification while preserving the frozen English and the relation diagram.",
+  "no_source_mutation": true
+}

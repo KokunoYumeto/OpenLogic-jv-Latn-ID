@@ -1,0 +1,343 @@
+% Part: proof-theory
+% Chapter: normalization
+% Section: reductions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{nor}{red}
+
+\olsection{Konversi Reduksi}
+
+Yèn cut ing !!a{proof} \Log{N1i} dawané~$1$, cut mau segmen
+kang mung ngemot siji kedadéan !!{formula}; !!{formula} iku
+sekaligus konklusi inferènsi !!a{introduction} lan premis utama
+inferènsi !!a{elimination}. Ing bukti normalisasi, cut kaya iki
+``direduksi'' kanthi ngganti sub-!!{proof} kang pungkasané pasangan
+!!{introduction}/!!{elimination} mau nganggo !!{proof} anyar
+kang ora ngemot pasangan inferènsi iku. Panggantian iki bisa
+ngasilaké cut anyar. Nanging, cut anyar mau nduwèni pangkat
+luwih cilik tinimbang cut kang direduksi. Mula, !!{proof} anyar
+nduwèni dawa cut luwih cilik (amarga cut maksimal dawa~$1$
+wis dibusak), utawa pangkat cut !!{proof} suda (yèn cut maksimal
+kang dimaksud iku siji-sijiné cut maksimal).
+
+Tuladhané, yèn inferènsi kang melu yaiku \Intro{\lif} lan
+\Elim{\lif}, $!A \ident !B \lif !C$, lan ana
+sub-!!{proof}~$\delta_1$ kang pungkasané mangkéné:
+\[
+\AxiomC{$\Discharge{!B}{x}$}
+\RightLabel{$\delta_2$}
+\DeduceC{$!C$}
+\DischargeRule{\Intro{\lif}}{x}
+\UnaryInfC{$!B \lif !C$}
+\AxiomC{}
+\RightLabel{$\delta_3$}
+\DeduceC{$!B$}
+\RightLabel{\Elim{\lif}}
+\BinaryInfC{$!C$}
+\DisplayProof
+\]
+Kanggo mbusak cut iki, subbukti~$\delta_1$ ing~$\delta$
+diganti mangkéné:
+\[
+\AxiomC{}
+\RightLabel{$\delta_3$}
+\DeduceC{$!B$}
+\RightLabel{$\Subst{\delta_2}{\delta_3}{!B^x}$}
+\DeduceC{$!C$}
+\DisplayProof
+\]
+Kanthi $\Subst{\delta_2}{\delta_3}{!B^x}$ kita maksudaké !!{proof}
+asil saka~$\delta_2$ nalika saben asumsi~$!B$ kang
+mawa label~$x$ diganti kabèh !!{proof}~$\delta_3$. !!{proof} iki
+ora nduwèni manèh asumsi mbukak awujud~$!B$ mawa label~$x$.
+Ora ana asumsi liya mawa label~$x$, amarga kaya lumrahé kita
+nganggep ora ana rong !!{formula}s kang dadi asumsi mawa label padha.
+Mula, !!{proof} anyar nduwèni asumsi mbukak kang padha karo~$\delta_1$;
+saben inferènsi ing~$\delta_2$ kang mbusak asumsi isih mbusak
+asumsi kang padha ing~$\Subst{\delta_2}{\delta_3}{!B^x}$;
+lan saben inferènsi ing~$\delta_3$ kang mbusak asumsi bisa
+ngasilaké sawetara salinan kang mbusak asumsi cocog
+ing~$\Subst{\delta_2}{\delta_3}{!B^x}$.
+
+Saben cut kang kabèh ana ing $\delta_2$ utawa $\delta_3$,
+utawa kabèh ana ing sanjabané~$\delta_1$ ing~$\delta$, ora owah:
+cut mau isih nglibataké !!{formula}s kang padha lan ngliwati
+inferènsi kang padha, mula pangkat lan dawané padha karo cut
+kang cocog ing~$\delta$. Kita wis mbusak cut maksimal dawa~$1$,
+mula dawa cut utawa pangkat cut suda (yèn dawa cut~$\delta$
+mauné~$1$ lan iki siji-sijiné cut maksimal).
+
+Nanging, ana rong prakara kang bisa kelakon:
+\begin{enumerate}
+  \item Kanthi ngganti kabèh asumsi $!B^x$ nganggo $\delta_3$,
+  kita uga ndadèkaké kabèh cut ing~$\delta_3$ dadi luwih akèh.
+  Yèn sawatara iku cut maksimal, dawa cut !!{proof} anyar bisa
+  luwih gedhé tinimbang dawa cut !!{proof} lawas. Iki kudu
+  dicegah. Mula konversi reduksi mung kita trapaké marang cut
+  maksimal kang \emph{paling tengen}, yaiku cut kang ora nduwèni
+  cut maksimal liya ing cabang~$\delta$ ing sisih tengené.
+  Yèn ana cut ing~$\delta_3$, cut iku ana ing sisih tengené
+  cut kang lagi direduksi, mula cut kang dipilih dudu kang paling
+  tengen. Kanthi tansah milih cut paling tengen, kita njamin
+  yèn dawa cut !!{proof} suda, utawa malah pangkat cuté suda.
+  \item Yèn asumsi $!B^x$ ing $\delta_2$ dadi premis utama
+  inferènsi !!a{elimination}, lan inferènsi pungkasan~$\delta_3$
+  iku \Elim{\lor}, \Elim{\lexists}, utawa inferènsi
+  !!a{introduction}, nèmpèlaké~$\delta_3$ menyang $\delta_2$
+  ing asumsi mau ngasilaké cut anyar. Kang mauné mung asumsi
+  ing~$\delta_2$ saiki dadi cut dawa~$1$ (konklusi inferènsi
+  !!a{introduction} lan premis utama inferènsi
+  !!a{elimination}), utawa dadi kedadéan !!{formula} pungkasan
+  saka segmen cut (premis utama inferènsi !!a{elimination}
+  lan konklusi saka~\Elim{\lor} utawa \Elim{\lexists}).
+  Yèn $!B^x$ mauné premis tambahan \Elim{\lor} utawa
+  \Elim{\lexists}, formula iku wis dadi kedadéan !!{formula}
+  kapisan saka sawijining segmen, lan bisa uga segmen cut.
+  Ing !!{proof} anyar, segmen iku bisa luwih dawa. Nanging,
+  !!{formula} kang mbentuk cut anyar utawa segmen cut kang wis
+  ana iku~$!B$, lan $\depth{!B} < \depth{!B \lif !C}$.
+  Mula, sanajan cut bisa nambah utawa dawané mundhak,
+  ora ana cut anyar mau kang maksimal. Dadi pangkat cut suda,
+  utawa, yèn isih ana cut kanthi pangkat padha, dawa cut suda.
+\end{enumerate}
+
+Proses nyuda cut dawa~$1$ diarani \emph{konversi reduksi}
+(utawa \emph{konversi liku-liku}). Pola kanggo sawetara pasangan
+aturan kacetha ing~\olref{tab:reduction-conversions}.
+(Pasangan liyané dadi latihan.) 
+
+\begin{table}
+\begin{multline*}
+\bottomAlignProof
+\AxiomC{$\Discharge{!B}{x}$}
+\RightLabel{$\delta_2$}
+\shortDeduce
+\DeduceC{$!C$}
+\DischargeRule{\Intro{\lif}}{x}
+\UnaryInfC{$!B \lif !C$}
+\AxiomC{}
+\RightLabel{$\delta_3$}
+\shortDeduce
+\DeduceC{$!B$}
+\RightLabel{\Elim{\lif}}
+\BinaryInfC{$!C$}
+\DisplayProof
+\quad \longrightarrow\quad
+\shoveright{\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_3$}
+\shortDeduce
+\DeduceC{$!B$}
+\RightLabel{$\Subst{\delta_2}{\delta_3}{!B^x}$}
+\shortDeduce
+\DeduceC{$!C$}
+\DisplayProof}
+\\[4ex]
+\shoveleft{\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\shortDeduce
+\DeduceC{$!B$}
+\AxiomC{}
+\RightLabel{$\delta_3$}
+\shortDeduce
+\DeduceC{$!C$}
+\RightLabel{\Intro{\land}}
+\BinaryInfC{$!B \land !C$}
+\RightLabel{\Elim{\land}[1]}
+\UnaryInfC{$!B$}
+\DisplayProof
+\quad \longrightarrow\quad
+\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\shortDeduce
+\DeduceC{$!B$}
+\DisplayProof}\qquad
+\shoveright{\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\shortDeduce
+\DeduceC{$!B$}
+\AxiomC{}
+\RightLabel{$\delta_3$}
+\shortDeduce
+\DeduceC{$!C$}
+\RightLabel{\Intro{\land}}
+\BinaryInfC{$!B \land !C$}
+\RightLabel{\Elim{\land}[2]}
+\UnaryInfC{$!C$}
+\DisplayProof
+\quad \longrightarrow\quad
+\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_3$}
+\shortDeduce
+\DeduceC{$!C$}
+\DisplayProof}
+\\[4ex]
+\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\shortDeduce
+\DeduceC{$!B$}
+\RightLabel{\Intro{\lor}[1]}
+\UnaryInfC{$!B \lor !C$}
+\AxiomC{$\Discharge{!B}{x}$}
+\RightLabel{$\delta_3$}
+\shortDeduce
+\DeduceC{$!D$}
+\AxiomC{$\Discharge{!C}{y}$}
+\RightLabel{$\delta_4$}
+\shortDeduce
+\DeduceC{$!D$}
+\DischargeRule{\Elim{\lor}}{x\,y}
+\TrinaryInfC{$!D$}
+\DisplayProof
+\quad \longrightarrow\quad
+\shoveright{\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\shortDeduce
+\DeduceC{$!B$}
+\RightLabel{$\Subst{\delta_3}{\delta_2}{!B^x}$}
+\shortDeduce
+\DeduceC{$!D$}
+\DisplayProof}
+\\[2ex]
+\shoveleft{\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\shortDeduce
+\DeduceC{$!B(c)$}
+\RightLabel{\Intro{\lforall}}
+\UnaryInfC{$\lforall[x][!B(x)]$}
+\RightLabel{\Elim{\lforall}}
+\UnaryInfC{$!B(t)$}
+\DisplayProof
+\quad \longrightarrow\quad
+\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\Subst{\delta_2}{t}{c}$}
+\shortDeduce
+\DeduceC{$!B(t)$}
+\DisplayProof}
+\\[4ex]
+\shoveright{\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\shortDeduce
+\DeduceC{$!B(t)$}
+\RightLabel{\Intro{\lexists}}
+\UnaryInfC{$\lexists[x][!B(x)]$}
+\AxiomC{$\Discharge{!B(c)}{x}$}
+\RightLabel{$\delta_3$}
+\shortDeduce
+\DeduceC{$!D$}
+\DischargeRule{\Elim{\lexists}}{x}
+\BinaryInfC{$!D$}
+\DisplayProof
+\quad \longrightarrow\quad
+\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\shortDeduce
+\DeduceC{$!B(t)$}
+\RightLabel{$\Subst{\Subst{\delta_3}{t}{c}}{\delta_2}{!B(t)^x}$}
+\shortDeduce
+\DeduceC{$!D$}
+\DisplayProof}
+\end{multline*}
+\caption{Sawetara konversi reduksi kanggo \Log{N1i}.}
+\ollabel{tab:reduction-conversions}
+\end{table}
+
+\begin{prob}
+Wènèhana konversi reduksi kanggo \Intro{\lnot} kang disusul
+\Elim{\lnot}.
+\end{prob}
+
+Isih ana siji kasus kang kudu dipriksa. Definisi cut uga
+nyakup cut kang dawané~$1$ lan $!A$ dadi konklusi
+saka~\FalseInt{} uga premis utama inferènsi
+!!a{elimination}. Kasus iki ditangani kanthi cara padha
+kaya nalika $!A$ dadi konklusi aturan !!a{introduction}.
+Tuladhané, gantenana
+\[
+\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\DeduceC{$\lfalse$}
+\UnaryInfC{$!B \lif !C$}
+\AxiomC{}
+\RightLabel{$\delta_3$}
+\DeduceC{$!B$}
+\RightLabel{\Elim{\lif}}
+\BinaryInfC{$!C$}
+\DisplayProof
+\quad\text{dadi}\quad
+\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\DeduceC{$\lfalse$}
+\UnaryInfC{$!C$}
+\DisplayProof
+\]
+Kita kudu luwih ngati-ati yèn $!A \ident (!B \lor
+!C)$ utawa $!A \ident \lexists[x][!B(x)]$.
+Tuladhané, yèn kita ngganti
+\[
+\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\DeduceC{$\lfalse$}
+\RightLabel{\FalseInt}
+\UnaryInfC{$!B \lor !C$}
+\AxiomC{$\Discharge{!B}{x}$}
+\RightLabel{$\delta_3$}
+\DeduceC{$!D$}
+\AxiomC{$\Discharge{!C}{y}$}
+\RightLabel{$\delta_4$}
+\DeduceC{$!D$}
+\DischargeRule{\Elim{\lor}}{x\,y}
+\TrinaryInfC{$!D$}
+\DisplayProof
+\quad\text{dadi}\quad
+\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\DeduceC{$\lfalse$}
+\RightLabel{\FalseInt}
+\UnaryInfC{$!D$}
+\DisplayProof
+\]
+kita bisa waé ngasilaké cut anyar kang !!{formula} cuté~$!D$,
+lan ora ana jaminan yèn $\depth{!D} < \depth{!B \lor !C}$!{}
+Mula kita kudu nindakaké cara kang padha karo reduksi
+\Intro{\lor}/\Elim{\lor}, yaiku ngganti nganggo
+\[
+\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\DeduceC{$\lfalse$}
+\RightLabel{\FalseInt}
+\UnaryInfC{$!B$}
+\RightLabel{$\delta_3$}
+\DeduceC{$!D$}
+\DisplayProof
+\quad\text{utawa}\quad
+\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\DeduceC{$\lfalse$}
+\RightLabel{\FalseInt}
+\UnaryInfC{$!C$}
+\RightLabel{$\delta_4$}
+\DeduceC{$!D$}
+\DisplayProof
+\]
+
+\end{document}

@@ -1,0 +1,19 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0627",
+  "source_path": "content/history/biographies/rozsa-peter.tex",
+  "source_sha256": "cd1559c7f682712f7257c16abe9afa075178ba9aa6a587b035d7e466d3bf668f",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-549",
+      "source_line": 15,
+      "location": "Péter's birth-name statement",
+      "finding": "The given name in 'Rósza Politzer' transposes s and z relative to the biography title and the historically attested Politzer Rózsa name.",
+      "proposed_resolution": "Write Rózsa Politzer.",
+      "evidence_url": "https://www.nekb.gov.hu/nemzeti-sirkert/budapest/farkasreti-temeto/peter-rozsa-politzer-rozsa"
+    }
+  ],
+  "translation_treatment": "The Javanese birth-name sentence uses Rózsa Politzer. A bounded comparison view records the spelling repair; frozen English bytes remain unchanged.",
+  "no_source_mutation": true
+}

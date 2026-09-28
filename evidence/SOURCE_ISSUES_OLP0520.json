@@ -1,0 +1,13 @@
+{
+  "schema":"jv-frozen-source-issues/1",
+  "unit_id":"OLP-0520",
+  "source_path":"content/counterfactuals/introduction/strict-conditional.tex",
+  "source_sha256":"f3b34ead41eeafc7b73f9abd9c8936638dc8d7244943f7d649bf3cc01254062f",
+  "status":"translation_corrected_pending_reader_build",
+  "issues":[
+    {"id":"OLPL-464","source_line":33,"location":"non-entailment in the first strict-conditional display, source line 33","finding":"The source claims that negating a material conditional does not entail true antecedent and false consequent, contrary to the material truth table. The section and corresponding exercise concern negating a strict conditional.","proposed_resolution":"Use the strict conditional inside the negated premise, matching the non-entailment and exercise."},
+    {"id":"OLPL-465","source_line":26,"location":"scope of the displayed entailments and necessity claims, source lines 26 and 81–88","finding":"The exercises explicitly use S5, but the surrounding entailment statements do not name that setting. In unrestricted modal frames strict implication need not entail its local material counterpart, and its truth and falsity need not be necessary.","proposed_resolution":"Name S5 as the intended setting of the first entailment display and of the later necessary-truth/necessary-falsity claims, preserving all exercise scopes and remaining formulas."}
+  ],
+  "translation_treatment":"Translated definitions, comparisons, all entailment annotations and three exercises; corrected one connective and stated the S5 setting already used by the source exercises.",
+  "no_source_mutation":true
+}

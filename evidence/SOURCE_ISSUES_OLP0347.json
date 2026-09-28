@@ -1,0 +1,32 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0347",
+  "source_path": "content/lambda-calculus/introduction/currying.tex",
+  "source_sha256": "218fab4af4b5c2a49ffe9e7d4ffdc6bb2dd1f88046b71dad2097b5de62b1f5f9",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-228",
+      "source_line": 9,
+      "location": "section file identifier",
+      "finding": "The frozen section is imported by the lambda-calculus introduction chapter, but its chapter comment and file identifier name representability. Adjacent introduction sections use lam/int identifiers.",
+      "proposed_resolution": "Use the introduction chapter comment and \\olfileid{lam}{int}{cur} in the target; leave the frozen source unchanged."
+    },
+    {
+      "id": "OLPL-229",
+      "source_line": 56,
+      "location": "first line of the final multline reduction",
+      "finding": "A beta-reduction arrow appears at the end of the first line and again at the beginning of the immediately following line for the same reduction step.",
+      "proposed_resolution": "Keep the arrow on the second line and remove the duplicate at the end of the first target line."
+    },
+    {
+      "id": "OLPL-230",
+      "source_line": 63,
+      "location": "final substitution in the multline reduction",
+      "finding": "The source introduces N as the function body, but the final substitution uses an undefined P.",
+      "proposed_resolution": "Substitute into N in the target's final expression, retaining all other variables and substitution syntax."
+    }
+  ],
+  "translation_treatment": "The Javanese target applies only the three bounded corrections. QA v12 compares against an exact source view and passes all structural checks; reader build and visual readback remain pending.",
+  "no_source_mutation": true
+}

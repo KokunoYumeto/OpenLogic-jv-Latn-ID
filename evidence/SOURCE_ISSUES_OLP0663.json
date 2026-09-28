@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0663",
+  "source_path": "content/proof-theory/natural-deduction/introduction.tex",
+  "source_sha256": "782f91d07d6f92f5ae9cea347d3d04f6a84c140008cbe9381d125c63d352ddb9",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-597",
+      "source_line": 76,
+      "location": "informal entailment reading of implication introduction",
+      "finding": "From Gamma plus A entailing B, implication introduction concludes Gamma entails A implies B, but the source repeats Gamma entails B.",
+      "proposed_resolution": "Use Gamma entails A implies B in the Javanese target."
+    }
+  ],
+  "translation_treatment": "The target corrects the implication-introduction conclusion while preserving the frozen English source and both displayed proof trees.",
+  "no_source_mutation": true
+}

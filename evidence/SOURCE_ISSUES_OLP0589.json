@@ -1,0 +1,39 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0589",
+  "source_path": "content/set-theory/card-arithmetic/expotough.tex",
+  "source_sha256": "3c24595966608c406bd3b8f2eec62edc0476017588fee15ec14ba64798b208ec",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-507",
+      "source_line": 30,
+      "location": "first exponent-law proof, map that splits a function on a disjoint sum",
+      "finding": "The displayed image of f uses a Cartesian product of two functions, but the claimed bijection has a Cartesian product of function sets as codomain and sends f to the ordered pair of its restrictions.",
+      "proposed_resolution": "Write the image as the ordered pair of the b and c restrictions."
+    },
+    {
+      "id": "OLPL-508",
+      "source_line": 42,
+      "location": "second exponent-law proof, codomain of the currying bijection",
+      "finding": "The proof defines f* on the actual Cartesian product of b and c, then gives its function-set domain as the cardinal product b cardtimes c. The displayed map needs the set product; cardinalities yield the stated law.",
+      "proposed_resolution": "Use the set product b times c in the displayed function-set codomain."
+    },
+    {
+      "id": "OLPL-509",
+      "source_line": 77,
+      "location": "finite-exponent proposition for an infinite cardinal",
+      "finding": "The proposition includes n=0, although a to the zero is one, not the infinite cardinal a.",
+      "proposed_resolution": "Require 0<n in omega in the proposition; the finite-product proof then applies."
+    },
+    {
+      "id": "OLPL-510",
+      "source_line": 60,
+      "location": "references on source lines 60 and 70 for the strict Cantor bound",
+      "finding": "Both references cite the power-set/exponentiation size lemma for the strict inequality a<2^a. The referenced size lemma identifies the two cardinalities; the strict inequality follows from the Cantor corollary.",
+      "proposed_resolution": "Point both strict-bound citations to cantorcor while preserving their existing reference scopes."
+    }
+  ],
+  "translation_treatment": "The target corrects the two displayed maps, excludes zero from the finite-exponent proposition, and cites the strict-bound corollary. The frozen source remains unchanged.",
+  "no_source_mutation": true
+}

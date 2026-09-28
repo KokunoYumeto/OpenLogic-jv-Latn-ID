@@ -1,0 +1,39 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0378",
+  "source_path": "content/lambda-calculus/lambda-definability/primitive-recursive-functions.tex",
+  "source_sha256": "dbedc0b45f7d2ce9eebd36a219fe22b532ddebb6082fb4bf356afc612f4e294d",
+  "status": "translation_corrected_pending_inherited_proofs_reference_audit_and_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-290",
+      "source_line": 34,
+      "location": "composition lemma representing-term index and conclusion",
+      "finding": "The given functions end at g_{k-1}, while their representing terms end at G_k; the conclusion says H is lambda definable although h is the function and H is its representing term.",
+      "proposed_resolution": "Index the final representing term as G_{k-1} and state that h is lambda definable; retain H as its displayed term."
+    },
+    {
+      "id": "OLPL-291",
+      "source_line": 68,
+      "location": "primitive-recursion step and iterator prose",
+      "finding": "The recurrence uses h, rather than the stipulated (n+2)-ary function g, on its right-hand side and consequently gives h one extra argument. The following prose also names h instead of g as the state-update function.",
+      "proposed_resolution": "Use g(x_1,...,x_n,y,h(x_1,...,x_n,y)) as the recursive step and describe iteration of the update derived from g."
+    },
+    {
+      "id": "OLPL-292",
+      "source_line": 116,
+      "location": "induction display and final lambda abstraction",
+      "finding": "A row break and alignment tab interrupt the tuple argument in the inductive calculation. Two final-display abstractions write the optional-argument macro as \\lambd[p].\\tuple rather than supplying its body in the second optional argument.",
+      "proposed_resolution": "Keep the inductive tuple within one aligned row and write both abstractions as \\lambd[p][\\tuple{...}]."
+    },
+    {
+      "id": "OLPL-293",
+      "source_line": 78,
+      "location": "scope of the D abbreviation in H",
+      "finding": "The displayed update term D contains x free even though H binds x; the abbreviation must be expanded in H's body for that binder to bind the intended occurrence.",
+      "proposed_resolution": "Explain in the translated prose that D is a schematic abbreviation expanded under H's x binder, as the final displayed expansion already shows."
+    }
+  ],
+  "translation_treatment": "The target translates the complete section and corrects the composition labels, recurrence, malformed display and abbreviation explanation in a bounded source-comparison view. Inherited chapter-ID and proof audits remain open; frozen source is unchanged.",
+  "no_source_mutation": true
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0658",
+  "source_path": "content/proof-theory/cut-elimination/interpolation.tex",
+  "source_sha256": "e2b64e1d701f79c2cb40f57cee8ace532bd2fe6f6f9ec597c0ecbc77fda9104e",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-584",
+      "source_line": 532,
+      "location": "Beth proof, interpolant-language claim",
+      "finding": "Maehara's lemma supplies a subset inclusion, not equality. The claimed equality of the shared language with L(Gamma) minus R also overlooks the fresh constants shared by the two partitioned premises.",
+      "proposed_resolution": "Retain only the justified inclusion L(A) subset of the two partition languages; explain that R is absent because it occurs only in the first part."
+    },
+    {
+      "id": "OLPL-585",
+      "source_line": 542,
+      "location": "Beth proof concluding sentence",
+      "finding": "The symbol R is a predicate, while the conclusion typesets it with the formula placeholder exclamation mark.",
+      "proposed_resolution": "Refer to the predicate as R in the Javanese conclusion."
+    }
+  ],
+  "translation_treatment": "The target makes these bounded mathematical-notation corrections while preserving the frozen English source and all proof displays.",
+  "no_source_mutation": true
+}

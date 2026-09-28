@@ -1,0 +1,19 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0636",
+  "source_path": "content/history/set-theory/pathologies.tex",
+  "source_sha256": "e48c454ab4d3058f89b6ce709da28387e9d633459425ffac9cd67b64d3de96e8",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-556",
+      "source_line": 53,
+      "location": "Peano's proposed line-to-plane map",
+      "finding": "The word 'smoothly' suggests differentiability, while the 1890 space-filling construction is a continuous surjection and the same passage later describes its nowhere-differentiable analogue.",
+      "proposed_resolution": "Say 'continuously' for the mapping property.",
+      "evidence_url": "https://arxiv.org/abs/1812.00766"
+    }
+  ],
+  "translation_treatment": "The Javanese prose describes a continuous line-to-plane map, with emphasis preserved. A bounded comparison view records the word correction; frozen English bytes remain unchanged.",
+  "no_source_mutation": true
+}

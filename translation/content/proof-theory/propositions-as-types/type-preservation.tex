@@ -1,0 +1,120 @@
+% part: intuitionistic-logic
+% chapter: propositions-as-types
+% section: type-preservation
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{pty}{tpr}
+
+\olsection{Panglestaren Tipe}
+
+Konversi reduksi lan permutasi sing wis dibahas uga bisa ditetepake
+langsung kanggo sistem \Log{tN2i} lan \Log{tN3i}. Sistem \Log{tN3i}
+netepake tipe terma $\lambd$~$N$ relatif marang konteks~$\Gamma$
+minangka !!{formula}~$!A$ kanthi $\Gamma \Sequent N : !A$ nduweni
+!!a{proof} ing \Log{tN3i}. Amarga aturan reduksi terma $\lambd$
+nggambarake konversi reduksi lan permutasi !!{proof}s kanthi pas,
+ana akibat wigati: tipe terma $\lambd$ relatif marang konteks~$\Gamma$
+tetep padha sawise konversi reduksi utawa permutasi. Sipat iki diarani
+\emph{panglestaren tipe}.
+
+\begin{prop}
+Yen $N$ nduweni tipe~$!A$ relatif marang $\Gamma$ lan $N \redone N'$,
+$N'$ nduweni tipe~$!A$ relatif marang~$\Gamma$.
+\end{prop}
+
+\begin{proof}
+  Kanthi induksi marang~$N$ lan dhuwure !!{proof}s~$\delta$ saka $\Gamma
+  \Sequent N : !A$, kita bisa netepake pratelan iki: yen $M$ iku
+  subterma saka~$N$, $\delta$ ngandhut sub-!!{proof}~$\delta_1$
+  sing dipungkasi ing $\Gamma' \Sequent M : !B$. Yen $M$ iku redex,
+  sawijining konversi bisa ditrapake marang~$\delta_1$. Kanthi
+  ngetrapake reduksi marang $\delta_1$, kita ngasilake
+  !!a{proof}~$\delta_1'$ saka $\Gamma' \Sequent M' : !B$.
+  Kanthi mriksa konversi \Log{tN3i}, $M'$ iku asil kontraksi saka~$M$.
+  Ngganti $\delta_1$ ing~$\delta$ nganggo $\delta_1'$ ngasilake
+  !!a{proof}~$\delta'$ saka $\Gamma \Sequent N' : !A$, kanthi $N'$
+  diasilake saka~$N$ kanthi ngganti subterma~$M$ nganggo~$M'$.
+
+  Contone, gatekna konversi reduksi kanggo~\Intro{\land} sing
+  ditututi \Elim{\land}:
+  \[
+  \bottomAlignProof
+  \AxiomC{}
+  \Deduce$\Gamma \fCenter N_1 : !B_1$
+  \AxiomC{}
+  \Deduce$\Gamma \fCenter N_2 : !B_2$
+  \RightLabel{\Intro{\land}}
+  \BinaryInf$\Gamma \fCenter \pair{N_1}{N_2} : !B_1 \land !B_2$
+  \RightLabel{\Elim{\land}[i]}
+  \UnaryInf$\Gamma \fCenter \proj{i}{\pair{N_1}{N_2}} : !B_i$
+  \DisplayProof
+  \quad\redone\quad
+  \bottomAlignProof
+  \AxiomC{}
+  \Deduce$\Gamma \fCenter N_i : !B_i$
+  \DisplayProof
+  \]
+  Kita ndeleng yen terma bukti saka !!{proof} ing tengen, yaiku
+  $\delta_1'$, iku $N_i$. Iki persis asil ngetrapake konversi
+  $\beta$ marang terma bukti $\proj{i}{\pair{N_1}{N_2}}$ saka
+  !!{proof} ing kiwa~($\delta_1$).
+
+  Utawa gatekna \Intro{\lif} sing ditututi inferensi \Elim{\lif},
+  lan konversi reduksi sing ditrapake marang pasangan iku:
+  \begin{multline*}
+  \bottomAlignProof
+  \AxiomC{$\delta_2$}
+  \Deduce$x: !B_1, \Gamma \fCenter N : !B_2$
+  \RightLabel{\Intro{\lif}}
+  \UnaryInf$\Gamma \fCenter \lambd[\typeof{x}{!B_1}][N] : !B_1 \lif !B_2$
+  \AxiomC{}
+  \RightLabel{$\delta_3$}
+  \Deduce$\Gamma \fCenter M : !B_1$
+  \RightLabel{\Elim{\lif}}
+  \BinaryInf$\Gamma \fCenter (\lambd[\typeof{x}{!B_1}][N] M) : !B_2$
+  \DisplayProof
+  \quad\redone\\
+  \bottomAlignProof
+  \AxiomC{}
+  \RightLabel{$\delta_3$}
+  \Deduce$\Gamma \fCenter M : !B_1$
+  \RightLabel{$\Subst{\delta_2}{\delta_3}{x:!B_1}$}
+  \Deduce$\Gamma \fCenter \Subst{N}{M}{x} : !B_2$
+  \DisplayProof
+  \end{multline*}
+  Terma bukti saka !!{proof} ing tengen maneh persis asil reduksi
+  $\beta$ marang terma bukti saka !!{proof} ing kiwa. Ganti jeneng
+  variabel kaiket dhisik supaya variabel sing diuculake anyar tumrap
+  konteks njaba, lan pangiket njero anyar tumrap terma pangganti.
+  Induksi marang dhuwure~$\delta_2$ nuduhake yen saben aksioma
+  $\Gamma' \Sequent x:!B_1$ ing~$\delta_2$ diganti nganggo
+  !!{proof}~$\delta_3$ saka $\Gamma \Sequent M:!B_1$, sing diwenehi
+  pelemahan supaya cocog karo konteks lokal sing isih ana sawise
+  variabel sing diuculake dibusak. Aksioma variabel liyane tetep,
+  lan saben aturan introduksi utawa eliminasi njaga tipe asile;
+  syarat variabel anyar nyegah pangcekelan ing abstraksi lan cabang
+  kasus. Iki ngasilake !!a{proof} $\Subst{\delta_2}{\delta_3}{x:!B_1}$
+  saka $\Gamma \Sequent \Subst{N}{M}{x} : !B_2$.
+\end{proof}
+
+Korespondhensi raket antarane !!{proof}s lan terma $\lambd$ nduweni
+akibat liyane. Yen $N$ iku terma $\lambd$ mawa tipe $!A$ relatif
+marang konteks~$\Gamma$ lan ngandhut redex~$M$ (yaiku durung awujud
+normal), bukti \Log{tN3i}~$\delta$ sing cocog saka $\Gamma \Sequent N : !A$
+ngandhut sub-!!{proof} (sing dipungkasi ing $\Gamma' \Sequent M: !B$)
+sing bisa diwenehi konversi. Yen $N \redone N'$ kanthi ngganti $M$
+nganggo asil kontraksine, asil sing cocog saka ngetrapake reduksi
+marang~$\delta$ iku !!a{proof} saka $\Gamma \Sequent N' : !A$.
+Mula saben terma $\lambd$ sing tipene bener lan durung awujud normal
+direduksi dadi terma liyane kanthi konversi reduksi utawa permutasi.
+Sipat iki diarani \emph{kemajuan}.
+
+Kemajuan lan panglestaren tipe njamin yen reduksi terma $\lambd$
+ora tau ``mandheg tanpa langkah'': yen sawijining terma tipene bener
+lan durung awujud normal, terma iku direduksi dadi terma liyane sing
+tipene bener (lan nduweni tipe sing padha).
+
+\end{document}

@@ -1,0 +1,53 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0643",
+  "source_path": "content/first-order-logic/axiomatic-deduction/provability.tex",
+  "source_sha256": "150b411bdceac490428e642969889123ecc14db1668fde926adfc1d831e28745",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-563",
+      "source_line": 76,
+      "location": "proof of derivability of a negation",
+      "finding": "The stated proposition starts from inconsistency of Gamma together with A and concludes not A. The frozen proof instead starts from not A, derives A, and thus proves the opposite implication.",
+      "proposed_resolution": "Use Gamma_0 together with A in the proof, derive A implies false by the Deduction Theorem, apply Ax0 to infer not A, and make the final line not A."
+    },
+    {
+      "id": "OLPL-564",
+      "source_line": 85,
+      "location": "first assumption of the two-sided inconsistency proof",
+      "finding": "The prose assumption uses Gamma while the displayed derivation and subsequent subset reasoning use Gamma_0.",
+      "proposed_resolution": "State the first premise with Gamma_0, matching the displayed finite-premise derivation."
+    },
+    {
+      "id": "OLPL-565",
+      "source_line": 124,
+      "location": "conjunction-elimination derivation line 3",
+      "finding": "The preceding axiom derives A from A and B, but the displayed MP line incorrectly concludes A or B.",
+      "proposed_resolution": "Make derivation line 3 conclude A, as required by the axiom and the following prose."
+    },
+    {
+      "id": "OLPL-566",
+      "source_line": 135,
+      "location": "modus ponens proof with two finite premise sets",
+      "finding": "The source uses Gamma_0 for both premises and the conclusion, then invokes Gamma_0 union Gamma_1 without ever introducing Gamma_1.",
+      "proposed_resolution": "Take the implication from Gamma_1 and conclude B from Gamma_0 union Gamma_1, which supports the following subset argument."
+    },
+    {
+      "id": "OLPL-567",
+      "source_line": 197,
+      "location": "axiom case in weak generalization proof",
+      "finding": "The stepwise proof discusses A_i but its first case tests whether A, the final theorem, is an axiom.",
+      "proposed_resolution": "Test whether A_i is an axiom in that induction case."
+    },
+    {
+      "id": "OLPL-568",
+      "source_line": 226,
+      "location": "first formula in free-for lemma proof",
+      "finding": "The proof's negated free-for claim references substitution of x for y, while the lemma and the next line concern substitution of y for c.",
+      "proposed_resolution": "Use the same substituted formula A with y replacing c in the first proof sentence."
+    }
+  ],
+  "translation_treatment": "The Javanese target carries these six bounded proof repairs. The source view permits exact math and command comparison without changing the frozen English bytes. Reader rendering and specialist mathematical review remain pending.",
+  "no_source_mutation": true
+}

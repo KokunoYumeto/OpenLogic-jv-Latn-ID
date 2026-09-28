@@ -1,0 +1,10 @@
+{
+  "schema":"jv-frozen-source-issues/1",
+  "unit_id":"OLP-0527",
+  "source_path":"content/counterfactuals/minimal-change-semantics/transitivity.tex",
+  "source_sha256":"e5b649b07980ba0ec35bc7b18cfa27c1b9bf28553363ab8a10736c3cc182ee0a",
+  "status":"translation_corrected_pending_reader_build",
+  "issues":[{"id":"OLPL-472","source_line":60,"location":"second-premise truth assertion and conclusion falsity, source lines 60–64","finding":"The text says a non-satisfaction assertion for q-implies-r is true at every world of the inner sphere, although the displayed valuation makes q-implies-r true there. The final material failure also needs the outer sphere's uniqueness as a p-admitting sphere to establish the counterfactual conclusion's falsity.","proposed_resolution":"State truth of the material formula q-implies-r at all inner-sphere worlds. Identify the only p-admitting sphere and explicitly conclude that the counterfactual conclusion is false at the center."}],
+  "translation_treatment":"Translated the intuitive example, its expressly assumed political/metaphysical conditions, countermodel and exercises; repaired the second-premise assertion and completed the falsity explanation. All remaining formulas and model data are unchanged.",
+  "no_source_mutation":true
+}

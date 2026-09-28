@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0398",
+  "source_path": "content/many-valued-logic/infinite-valued-logics/infinite-valued-logics.tex",
+  "source_sha256": "023a2c8bb60bba2541628de969f9e9e8c0be8c9df88786f9749b4c2b36c1cd84",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-313",
+      "source_line": 2,
+      "location": "chapter driver source metadata comment",
+      "finding": "The source comment names the previous three-valued-logics chapter although the file path, chapter ID inf and imported sections all identify the infinite-valued-logics chapter.",
+      "proposed_resolution": "Correct only the target comment to infinite-valued-logics, preserving the frozen source and all structural imports and IDs."
+    }
+  ],
+  "translation_treatment": "The target localizes the infinite-valued chapter heading and corrects the stale source metadata comment. Chapter ID and imported section paths are preserved.",
+  "no_source_mutation": true
+}

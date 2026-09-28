@@ -1,0 +1,25 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0355",
+  "source_path": "content/lambda-calculus/introduction/minimization.tex",
+  "source_sha256": "e0fbbc26c033f303410498fec8dd8dda3d610e0ced8df38d1de1189a8d590bf1",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-239",
+      "source_line": 33,
+      "location": "premise used to obtain lambda term F",
+      "finding": "The lemma assumes only that f is lambda definable, but the proof says f is primitive recursive before obtaining F. Primitive recursiveness is not established or required.",
+      "proposed_resolution": "Invoke the lemma's lambda-definability assumption and name its defining term F; leave the rest of the search argument intact."
+    },
+    {
+      "id": "OLPL-240",
+      "source_line": 39,
+      "location": "successor term in H recurrence, U body and reduction explanation",
+      "finding": "The proof invokes an unintroduced bare S to advance the Church numeral. The preceding base-function section defines the successor lambda term as \\fn{Succ}; the same role is needed at all four occurrences.",
+      "proposed_resolution": "Use the previously defined \\fn{Succ} consistently in H's equation, the body of U, the displayed verification and the selector explanation."
+    }
+  ],
+  "translation_treatment": "The target uses the lemma's actual hypothesis and the prior successor term. QA v17 compares against exact source replacements and passes all structural checks; reader build and visual readback remain pending.",
+  "no_source_mutation": true
+}
