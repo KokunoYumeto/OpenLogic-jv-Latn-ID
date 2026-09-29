@@ -1,0 +1,39 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0708",
+  "source_path": "content/proof-theory/sequent-calculus/rules-G3i.tex",
+  "source_sha256": "3b754ac3aadeb92362d6eeb398cfa914e2a757e079d5305f3994f938e0ff6933",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-716",
+      "location": "right-disjunction premise",
+      "finding": "The premise contains two succedent formulas despite the table's explicit single-succedent grammar and copies the classical right-disjunction rule.",
+      "proposed_resolution": "Display the two alternative unary right-disjunction rules with singleton A or singleton B premise, each concluding A disjoined with B.",
+      "source_line": 41
+    },
+    {
+      "id": "OLPL-717",
+      "location": "universal-left premise",
+      "finding": "A comma is missing between the retained universal principal formula and Gamma.",
+      "proposed_resolution": "Restore the multiset separator without changing the retained principal copy.",
+      "source_line": 57
+    },
+    {
+      "id": "OLPL-718",
+      "location": "minimal-calculus caption",
+      "finding": "The G3i caption names G1m/G1i although the contextual falsity initials and absence of explicit structural rules belong to G3i.",
+      "proposed_resolution": "State the corresponding G3m/G3i comparison, retaining the exact displayed contextual falsity axiom family removed.",
+      "source_line": 82
+    },
+    {
+      "id": "OLPL-719",
+      "location": "G3i table identifier",
+      "finding": "The intuitionistic table duplicates the G3c table label.",
+      "proposed_resolution": "Use tab:G3i while preserving the classical table and existing classical references.",
+      "source_line": 84
+    }
+  ],
+  "translation_treatment": "Four explicit corrections are recorded in SOURCE_ISSUES_OLP0708.json and its corrected source view; the frozen English is unchanged.",
+  "no_source_mutation": true
+}

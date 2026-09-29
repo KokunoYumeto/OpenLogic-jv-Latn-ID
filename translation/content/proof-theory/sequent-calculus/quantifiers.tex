@@ -1,0 +1,192 @@
+% Part: proof-theory
+% Chapter: sequent-calculus
+% Section: quantifiers
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{seq}{qua}
+
+\olsection{Bukti Reguler lan Substitusi}
+
+Aturan kuantor ndadekake ana kerumitan amarga ``syarat
+eigenvariabel'' kanggo aturan \LeftR{\lexists} lan~\RightR{\lforall}.
+Umume kerumitan iki bisa ditangani kanthi njamin
+!!{constant}~$a$ ing inferensi kasebut ora digunakake maneh.
+Kita ngenalake dhefinisi iki.
+
+\begin{defn}
+!!^a{proof}~$\pi$ ing \Log{G1c} utawa \Log{G3c} diarani
+\emph{reguler} yen
+\begin{enumerate}
+  \item ora ana eigenvariabel~$a$ sing digunakake minangka
+  eigenvariabel luwih saka siji inferensi
+  \LeftR{\lexists} utawa~\RightR{\lforall}, lan
+  \item yen $a$ minangka eigenvariabel inferensi
+  \LeftR{\lexists} utawa~\RightR{\lforall}, variabel iki
+  mung ana ing ndhuwur inferensi kasebut ing~$\pi$.
+\end{enumerate}
+\end{defn}
+
+\begin{lem}\ollabel{lem:subst-regular}
+Yen $\pi$ reguler, dipungkasi ing $\Gamma \Sequent \Delta$,
+$c$ minangka !!a{constant} sing ora digunakake minangka
+eigenvariabel ing~$\pi$, lan $t$~minangka terma katutup sing ora
+ngemot eigenvariabel saka~$\pi$, mula $\Subst{\pi}{t}{c}$
+sing dijupuk saka~$\pi$ kanthi ngganti saben kedadeyan~$c$
+nganggo~$t$ tanpa panangkepan variabel minangka !!{proof} reguler.
+Sadurunge substitusi, pilih variabel kaiket sing seger
+tumrap terma pangganti. Sekuen pungkasan
+$\Subst{\pi}{t}{c}$ yaiku $\Subst{\Gamma}{t}{c} \Sequent
+\Subst{\Delta}{t}{c}$, kanthi $\Subst{\Gamma}{t}{c} =
+\Setabs{!A(t)}{!A(c) \in \Gamma}$. Notasi pangumpul iki
+diwaca minangka multiset: saben kedadeyan asal menehi
+siji kedadeyan sawise substitusi.
+\end{lem}
+
+\begin{proof}
+  Kanthi induksi tumrap $\pheight{\pi}$.
+  Yen $\pheight{\pi} = 0$, bukti mung kasusun saka aksioma.
+  Mula $\Subst{\pi}{t}{c}$ uga aksioma, amarga saben
+  !!{formula}~$!A(c)$ ing aksioma kasebut dadi $!A(t)$.
+
+Yen $\pheight{\pi} > 0$, kita misahake kasus
+  miturut inferensi pungkasan ing~$\pi$. Kasus aturan
+  struktural (ing \Log{G1c}) lan aturan logis kanggo
+  panyambung proposisional gampang lan ditinggal
+  minangka latihan. Kita ngrembug kasus nalika
+  $\pi$ dipungkasi nganggo inferensi kuantor.
+  \begin{enumerate}
+    \item Yen inferensi pungkasan yaiku $\RightR{\lforall}$,
+    $\pi$ duwe wujud
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi'$}
+    \Deduce$\Gamma(c) \fCenter \Delta'(c), !A(a,c)$
+    \RightLabel{\RightR{\lforall}}
+    \UnaryInf$\Gamma(c) \fCenter \Delta'(c), \lforall[x][!A(x,c)]$
+    \DisplayProof
+    \]
+    Miturut hipotesis induksi, $\Subst{\pi'}{t}{c}$ minangka
+    !!{proof} reguler kanggo $\Gamma(t) \fCenter \Delta'(t), !A(a,t)$.
+    Amarga $a$ minangka eigenvariabel saka~$\pi$,
+    $a$~ora ana ing~$t$. Mula inferensi pungkasan
+    ing $\Subst{\pi}{t}{c}$,
+    \[
+    \AxiomC{}
+    \RightLabel{$\Subst{\pi'}{t}{c}$}
+    \Deduce$\Gamma(t) \fCenter \Delta'(t), !A(a,t)$
+    \RightLabel{\RightR{\lforall}}
+    \UnaryInf$\Gamma(t) \fCenter \Delta'(t), \lforall[x][!A(x,t)]$
+    \DisplayProof
+    \]
+    bener: kesimpulane ora ngemot~$a$.
+    \item Yen inferensi pungkasan yaiku $\LeftR{\lforall}$
+    ing \Log{G3c}, $\pi$ duwe wujud
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi'$}
+    \Deduce$!A(s(c),c), \lforall[x][!A(x,c)], \Gamma(c) \fCenter \Delta'(c)$
+    \RightLabel{\LeftR{\lforall}}
+    \UnaryInf$\lforall[x][!A(x,c)], \Gamma(c) \fCenter \Delta'(c)$
+    \DisplayProof
+    \]
+    Miturut hipotesis induksi, $\Subst{\pi'}{t}{c}$ minangka
+    !!{proof} reguler kanggo $!A(s(t),t), \lforall[x][!A(x,t)],
+    \Gamma(t) \fCenter \Delta'(t)$. Inferensi pungkasan
+    ing $\Subst{\pi}{t}{c}$,
+    \[
+    \AxiomC{}
+    \RightLabel{$\Subst{\pi'}{t}{c}$}
+    \Deduce$!A(s(t),t), \lforall[x][!A(x,t)], \Gamma(t) \fCenter \Delta'(t)$
+    \RightLabel{\LeftR{\lforall}}
+    \UnaryInf$\lforall[x][!A(x,t)], \Gamma(t) \fCenter \Delta'(t)$
+    \DisplayProof
+    \]
+    bener. Kasus \LeftR{\lforall} ing~\Log{G1c} padha,
+    nanging rada luwih prasaja.
+    \item Inferensi pungkasan yaiku \RightR{\lexists}
+    utawa \LeftR{\lexists}: minangka latihan.
+  \end{enumerate}
+  Ing saben kasus, kita nambahake sekuen ing pungkasan
+  !!{proof} reguler (utawa rong !!{proof}s reguler
+  kanggo aturan rong premis). Sekuen anyar beda saka
+  sekuen pungkasan $\pi$ mung amarga $c$ wis diganti
+  nganggo terma~$t$. Kajaba iku, eigenvariabel saka
+  $\pi$ tetep: amarga $t$ ora ngemot eigenvariabel
+  saka~$\pi$, eigenvariabel $\Subst{\pi}{t}{c}$
+  padha karo sadurunge. Sekuen pungkasan anyar ora
+  ngemot eigenvariabel $\Subst{\pi}{t}{c}$.
+  Mula $\Subst{\pi}{t}{c}$ reguler.
+\end{proof}
+
+\begin{prop}
+Yen $\pi$ minangka !!a{proof} ing \Log{G1c} utawa
+\Log{G3c}, mula ana !!{proof} reguler~$\pi'$
+kanthi struktur sing padha (mligine !!{height}
+sing padha), sing beda saka $\pi$ mung amarga
+eigenvariabele diganti.
+\end{prop}
+
+\begin{proof}
+Mung kanggo ancas bukti iki, inferensi eigenvariabel
+ing~$\pi$ diarani \emph{resik} yen eigenvariabele
+ora dadi eigenvariabel inferensi liyane lan ora
+ana ing panggonan liyane ing~$\pi$ kajaba ing
+sub-!!{proof} langsung saka inferensi kasebut;
+yen ora, inferensi diarani \emph{reged}.
+Upamane $n$ minangka cacah inferensi eigenvariabel
+reged ing~$\pi$. Kita nuduhake kanthi induksi
+kuwat tumrap~$n$ yen $\pi$~bisa diowahi dadi
+!!{proof} reguler~$\pi'$ sing dibutuhake.
+Yen $n=0$, kabeh inferensi eigenvariabel ing~$\pi$
+resik, mula $\pi$ reguler lan ora ana sing perlu
+dibuktekake. Yen ora, pilih inferensi eigenvariabel
+reged sing paling ndhuwur, upamane \RightR{\lforall}.
+Sub-!!{proof}~$\pi_1$ saka~$\pi$ sing dipungkasi
+nganggo inferensi iki duwe wujud
+\[
+    \AxiomC{}
+    \RightLabel{$\pi_2$}
+    \Deduce$\Gamma \fCenter \Delta, !A(c)$
+    \RightLabel{\RightR{\lforall}}
+    \UnaryInf$\Gamma \fCenter \Delta, \lforall[x][!A(x)]$
+    \DisplayProof
+    \]
+Gatekna yen amarga $c$ minangka eigenvariabel,
+konstanta iki ora ana ing~$\Gamma$, $\Delta$,
+utawa $\lforall[x][!A(x)]$. Bukti $\pi_2$ reguler,
+amarga kabeh inferensi eigenvariabele resik lan
+ora ana sing nggunakake konstanta sing dipilih
+minangka eigenvariabel. Pilih $a$ minangka
+!!a{constant} sing ora ana ing~$\pi$.
+Miturut \olref{lem:subst-regular},
+$\Subst{\pi_2}{a}{c}$ minangka bukti reguler
+kanggo $\Gamma \fCenter \Delta, !A(a)$,
+lan kita bisa ngetrapake~$\RightR{\lforall}$.
+Yen $\pi_1$ ing~$\pi$ diganti nganggo bukti
+$\pi_1'$,
+\[
+    \AxiomC{}
+    \RightLabel{$\Subst{\pi_2}{a}{c}$}
+    \Deduce$\Gamma \fCenter \Delta, !A(a)$
+    \RightLabel{\RightR{\lforall}}
+    \UnaryInf$\Gamma \fCenter \Delta, \lforall[x][!A(x)]$
+    \DisplayProof
+    \]
+kita wis ngganti inferensi eigenvariabel reged
+dadi inferensi resik, lan prabedane mung
+panggantian eigenvariabel $c$ nganggo~$a$.
+Bukti asile duwe inferensi eigenvariabel reged
+sing cacahe kurang saka $n$, lan asil sing
+dibutuhake ditampa saka hipotesis induksi.
+\end{proof}
+
+Kita ora bakal nyebut proposisi sing lagi
+dibuktekake iki kanthi eksplisit, nanging bakal
+nganggep kabeh !!{proof}s sing dirembug reguler---
+yen durung reguler, eigenvariabele mesthi bisa
+diganti supaya dadi reguler.
+
+\end{document}

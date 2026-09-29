@@ -1,0 +1,88 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0702",
+  "source_path": "content/proof-theory/sequent-calculus/proof-examples.tex",
+  "source_sha256": "c19f22b1b416d0cfbc56182056961ac353bee13b6f662e915c3b2699edc36ce8",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-696",
+      "location": "backward implication matching",
+      "finding": "The proposed Gamma is the succedent goal rather than the antecedent formula appearing in the displayed sequent.",
+      "proposed_resolution": "Use the singleton context containing (C conjunction D) implies E.",
+      "source_line": 26
+    },
+    {
+      "id": "OLPL-697",
+      "location": "combined implication/conjunction proof fragment",
+      "finding": "The binary inference introducing the antecedent implication is labelled right implication.",
+      "proposed_resolution": "Use left implication at that binary inference, retaining the right-implication labels at the unary steps.",
+      "source_line": 57
+    },
+    {
+      "id": "OLPL-698",
+      "location": "short weakening display",
+      "finding": "The short standalone weakening proof is closed without DisplayProof, leaving its proof tree unrendered.",
+      "proposed_resolution": "Emit DisplayProof before closing that display.",
+      "source_line": 82
+    },
+    {
+      "id": "OLPL-699",
+      "location": "complete G1c proof, E identity branch",
+      "finding": "Left weakening incorrectly changes the succedent E to C.",
+      "proposed_resolution": "Keep E as the succedent while adding C to the antecedent.",
+      "source_line": 107
+    },
+    {
+      "id": "OLPL-700",
+      "location": "general identity expansion motivation",
+      "finding": "The text says the G1c result has not been shown, immediately after supplying its complete schematic proof; the remaining issue is G3c.",
+      "proposed_resolution": "Refer to G3c in the displayed unestablished general-schema claim.",
+      "source_line": 132
+    },
+    {
+      "id": "OLPL-701",
+      "location": "depth recursion and quantified identity bodies",
+      "finding": "Quantified depth clauses use A as their own body while measuring B, and later quantified examples inconsistently omit the B placeholder marker.",
+      "proposed_resolution": "Use the proper body B consistently in both quantified depth clauses and all quantified identity examples and exercises.",
+      "source_line": 142
+    },
+    {
+      "id": "OLPL-702",
+      "location": "G1c conjunction identity reconstruction",
+      "finding": "Right conjunction drops a duplicated antecedent conjunction without contraction, and the subsequent contraction changes the succedent to B.",
+      "proposed_resolution": "Retain both antecedent conjunction copies in the binary conclusion, then contract to the full conjunction identity.",
+      "source_line": 217
+    },
+    {
+      "id": "OLPL-703",
+      "location": "G3c identity induction hypothesis",
+      "finding": "The formula placeholder marker is reversed as D!.",
+      "proposed_resolution": "Use !D.",
+      "source_line": 297
+    },
+    {
+      "id": "OLPL-704",
+      "location": "second G3c conjunction induction application",
+      "finding": "The antecedent context is incorrectly formed using the succedent variable Lambda.",
+      "proposed_resolution": "Use B with Gamma for the second antecedent context.",
+      "source_line": 302
+    },
+    {
+      "id": "OLPL-705",
+      "location": "strict formula-depth decrease claim",
+      "finding": "The assertion covers every rule, although contraction preserves formula depth and G3c quantifier rules retain an unchanged principal copy in their premises.",
+      "proposed_resolution": "Restrict strict decrease to proper decomposed components or quantifier instances of logical rules, excluding unchanged retained principals.",
+      "source_line": 150
+    },
+    {
+      "id": "OLPL-706",
+      "location": "G3c initial-sequent and atomic sufficiency explanation",
+      "finding": "The text treats identity as the complete axiom classification and makes all three schematic formulas being atomic necessary, although other shared atoms or antecedent falsity can also close the leaves.",
+      "proposed_resolution": "Qualify identity axioms, make atomic formulas a sufficient guarantee and state that whether leaves are axioms depends on the system.",
+      "source_line": 124
+    }
+  ],
+  "translation_treatment": "OLPL-696..706 are documented in SOURCE_ISSUES_OLP0702.json and work/olp0702_source_view.py. The complete translation incorporates every bounded repair and preserves frozen English.",
+  "no_source_mutation": true
+}

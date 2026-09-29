@@ -1,0 +1,25 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0709",
+  "source_path": "content/proof-theory/sequent-calculus/rules-LK.tex",
+  "source_sha256": "04fc54bec445b78a7c47a7c9db8a8fbb38feb33fc693a90bd530238d118cd485",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-720",
+      "location": "LK table identifier",
+      "finding": "The LK table duplicates the classical G1c table label.",
+      "proposed_resolution": "Give this table the distinct tab:LK identifier.",
+      "source_line": 125
+    },
+    {
+      "id": "OLPL-721",
+      "location": "sequence-context caption",
+      "finding": "The caption lists three sequence contexts but omits Lambda, which occurs in the right exchange rule.",
+      "proposed_resolution": "Include Lambda alongside Gamma, Delta and Pi in the sequence-context description.",
+      "source_line": 123
+    }
+  ],
+  "translation_treatment": "The two caption/identifier repairs are recorded in SOURCE_ISSUES_OLP0709.json and its corrected source view. Every inference diagram and the frozen English are preserved.",
+  "no_source_mutation": true
+}

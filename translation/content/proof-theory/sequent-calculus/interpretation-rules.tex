@@ -1,0 +1,147 @@
+% Part: proof-theory
+% Chapter: sequent-calculus
+% Section: interpretation-rules
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{seq}{irl}
+
+\olsection{Interpretasi Aturan}
+
+Elinga interpretasi sekuen: sekuen $\Gamma \Sequent \Delta$ bener
+ing !!a{structure}~$\Struct{M}$ yen paling ora ana siji $!A \in \Gamma$
+sing salah utawa paling ora ana siji~$!A \in \Delta$ sing bener.
+Aturan logis~\Log{G3c} bisa diwaca minangka rumusan syarat kabeneran
+kanggo !!{formula}s utamane. Gatekna \RightR{\lif}. !!{formula}
+utamane yaiku $!A \lif !B$. Formula iki bener yen $!A$ salah
+utawa~$!B$ bener. Mula sekuen $\ \Sequent !A \lif !B$ bener yen
+lan mung yen $!A \Sequent !B$ bener. Yen !!{formula}s konteks
+$\Gamma$, $\Delta$ ditambahake ing anteseden lan sukseden sekuen
+iki, kita oleh persis kesimpulan lan premis aturan \RightR{\lif}.
+Kahanane padha kanggo~\LeftR{\lif}. $!A \lif !B$ salah yen
+$!A$~bener lan $!B$~salah. Dadi $!A \lif !B \Sequent \ $ bener
+yen lan mung yen $\ \Sequent !A$ lan $!B \Sequent \ $ loro-lorone
+bener. Kesimpulan \LeftR{\lif} ekuivalen karo konjungsi
+premis-premise. Pola iki njamin aturan~\Log{G3c} sahih: yen kabeh
+premis bener, kesimpulane bener. Pola iki uga njamin kelengkapan.
+
+Satemene, syarat kabeneran saben panyambung fungsional-kabeneran
+bisa diterangake kanthi cara iki minangka kumpulan sekuen.
+Iki amarga saben fungsi kabeneran ing logika klasik bisa diterangake
+kanthi !!a{formula} awujud normal konjungtif: konjungsi disjungsi
+saka !!{formula}s atomik lan negasi formula atomik. Upamane
+$!A \oplus !B$ bener yen lan mung yen persis siji saka $!A$ lan
+$!B$ bener, yaiku ``utawa eksklusif.'' Mula $!A \oplus !B$ bener
+yen lan mung yen $(!A \lor !B) \land (\lnot !A \lor \lnot !B)$
+bener, lan salah yen $(\lnot !A \lor !B) \land (!A \lor \lnot !B)$
+bener. Dadi kita bisa ngenalake aturan kalkulus sekuen kanggo
+$\oplus$ kaya iki:
+\begin{align*}
+&
+\Axiom$\Gamma \fCenter \Delta, !A, !B$
+\Axiom$!A, !B, \Gamma \fCenter \Delta$
+\RightLabel{\RightR{\oplus}}
+\BinaryInf$\Gamma \fCenter \Delta, !A \oplus !B$
+\DisplayProof
+\\
+& \Axiom$!A, \Gamma \fCenter \Delta, !B$
+\Axiom$!B, \Gamma \fCenter \Delta, !A$
+\RightLabel{\LeftR{\oplus}}
+\BinaryInf$!A \oplus !B, \Gamma \fCenter \Delta$
+\DisplayProof
+\end{align*}
+Aturan iki uga sahih lan jangkep. Kesimpulane bener yen lan mung yen
+kabeh premise bener.
+
+\begin{prob}
+Upamane $!A \downarrow !B$ bener yen lan mung yen $!A$ lan~$!B$
+loro-lorone ora bener (``NOR''). Kepiye aturan \Log{G3c} kanggo
+panyambung iki? (Golekana rong sekuen sing bener bebarengan yen lan
+mung yen $!A \downarrow !B$ bener. Iki menehi aturan
+\RightR{\downarrow}. Banjur golekana siji sekuen sing bener yen
+lan mung yen $!A \downarrow !B$ salah. Iki menehi aturan
+\LeftR{\downarrow}.)
+\end{prob}
+
+Ing \Log{G3c}, saben panyambung lan kuantor duwe persis rong aturan:
+aturan kiwa lan aturan tengen. Nanging ing \Log{G1c}, ana rong aturan
+\LeftR{\land} lan rong aturan \RightR{\lor}. Sebabe yaiku sistem
+asli Gentzen~\Log{LK}, sing dadi tuladha kanggo \Log{G1c}, duwe
+varian~\Log{LJ} kanggo logika nonklasik sing wigati, yaiku logika
+intuisionistik. Supaya sistem sahih lan jangkep tumrap logika
+intuisionistik, sukseden saben sekuen ing~\Log{LJ} diwatesi supaya
+ngemot paling akeh siji !!{formula}. Mula aturan \RightR{\lor}
+saka~\Log{G3c} ora bisa digunakake, amarga premise ngemot $!A$ lan~$!B$
+ing sukseden. Dadi Gentzen nggunakake sapasang aturan \RightR{\lor}
+kanggo \Log{LJ}, lan pasangan sing padha kanggo~\Log{LK}.
+Semono uga, versi intuisionistik~\Log{G1i} yaiku~\Log{G1c} kanthi
+kabeh sukseden diwatesi supaya ngemot paling akeh siji !!{formula}.
+(\Log{G3c} uga duwe versi intuisionistik, nanging sawetara aturane
+beda saka aturan sing cocog ing~\Log{G3c}. Upamane, versi iku uga
+nggunakake sapasang aturan \RightR{\lor}.)
+
+Gampang dimangerteni yen aturan struktural~\Log{G1c} sahih.
+Upamane, yen $\Gamma \Sequent \Delta$ ngemot !!{formula} sing salah
+ing sisih kiwa utawa !!{formula} sing bener ing sisih tengen, mula
+$\Gamma \Sequent \Delta, !A$ uga ngemot formula sing padha; apa
+$!A$ bener utawa salah ora mengaruhi iki. Dadi yen premis
+aturan~\RightR{\Weakening} bener, kesimpulane uga bener. Gatekna
+yen arah walikane ora bener: kesimpulan bisa bener amarga $!A$
+bener, lan ing kahanan iki premise ora mesthi bener.
+
+Ngapa aturan struktural dibutuhake? Kanggo formula skematis atomik saka predikat
+sing beda-beda, kontraksi (\RightR{\Contraction}, \LeftR{\Contraction})
+dibutuhake, upamane, kanggo !!{prove} $\ \Sequent !A \lor \lnot !A$.
+Yen diwiwiti saka $!A \Sequent !A$, dhisik kita oleh $\Sequent !A,
+\lnot !A$ kanthi~\RightR{\lnot}. Banjur rong versi \RightR{\lor}
+bisa digunakake runtut: sapisan kanggo oleh $!A \lor \lnot !A$ saka
+$\lnot !A$, lan sapisan kanggo oleh $!A \lor \lnot !A$ saka~$!A$.
+Asile yaiku $\ \Sequent !A \lor \lnot !A, !A \lor \lnot !A$.
+Dadi supaya oleh $\Sequent !A \lor \lnot !A$ ing~\Log{G1c}, kita
+kudu bisa ``ngontraksi'' rong kedadeyan !!{formula} sing padha
+ing !!a{proof}:
+\[
+\Axiom$!A \fCenter !A$
+\RightLabel{\RightR{\lnot}}
+\UnaryInf$\fCenter !A, \lnot !A$
+\RightLabel{\RightR{\lor}}
+\UnaryInf$\fCenter !A, !A \lor \lnot !A$
+\RightLabel{\RightR{\lor}}
+\UnaryInf$\fCenter !A \lor \lnot !A, !A \lor \lnot !A$
+\RightLabel{\RightR{\Contraction}}
+\UnaryInf$\fCenter !A \lor \lnot !A$
+\DisplayProof
+\]
+Pancen ana sekuen valid sing ora bisa !!{prove} ing~\Log{G1c} tanpa
+pelemahan utawa kontraksi. Upamane, !!a{proof} kanggo sekuen
+$!A \Sequent !B \lif !A$ ing~\Log{G1c} kudu dipungkasi nganggo
+\RightR{\lif}, amarga mung $!B \lif !A$ sing bisa dadi formula utama,
+lan aturan iki mbutuhake $!B, !A \Sequent !A$ minangka premis.
+Premis iki mbutuhake \LeftR{\Weakening} supaya bisa dijupuk saka
+aksioma $!A \Sequent !A$:
+\[
+\Axiom$!A \fCenter !A$
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$!B, !A \fCenter !A$
+\RightLabel{\RightR{\lif}}
+\UnaryInf$!A \fCenter !B \lif !A$
+\DisplayProof
+\]
+
+Ing \Log{G3c}, aturan kontraksi lan pelemahan ora dibutuhake
+babar pisan. Pelemahan wis kalebu ing aksioma. Kontraksi umume
+bisa disingkiri kanthi nggabungake rong salinan konteks $\Gamma$,
+$\Delta$ ing aturan rong premis dadi siji. \Log{G1c} lan \Log{G3c}
+loro-lorone duwe aturan sing ``nuduhake konteks sing padha'' iki.
+Ing aturan siji premis, kontraksi mung dibutuhake kanggo
+\RightR{\lor}, \LeftR{\land}, \RightR{\lexists}, lan~\LeftR{\lforall}.
+Versi aturan iki ing~\Log{G3c} ndadekake kontraksi ora perlu kabeh.
+Ana sistem \Log{G2c} (delengen \olref{tab:G2c}) sing aturan rong
+premise duwe konteks mandhiri. Ing \Log{G2c}, kontraksi luwih wigati
+tinimbang ing~\Log{G1c}.
+
+\subfile{rules-G2c}
+
+\end{document}

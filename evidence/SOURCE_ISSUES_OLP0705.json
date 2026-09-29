@@ -1,0 +1,25 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0705",
+  "source_path": "content/proof-theory/sequent-calculus/rules-G1i.tex",
+  "source_sha256": "b16548e594dc5a0a414c919e26078d474488c3186487c7cbdce170fb23035b7b",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-713",
+      "location": "G1i table identifier",
+      "finding": "The intuitionistic table reuses the classical G1c label.",
+      "proposed_resolution": "Use tab:G1i and retain the classical G1c label and its existing introduction reference.",
+      "source_line": 114
+    },
+    {
+      "id": "OLPL-714",
+      "location": "minimal-logic axiom comparison",
+      "finding": "The caption says G1m removes arbitrary-context falsity sequents, although the displayed G1i initial axiom is falsity with an empty succedent; a blanket removal could also exclude the retained falsity identity.",
+      "proposed_resolution": "Identify the exact displayed falsity-to-empty-sequent axiom as the one removed, alongside right weakening.",
+      "source_line": 112
+    }
+  ],
+  "translation_treatment": "OLPL-713/714 are documented in SOURCE_ISSUES_OLP0705.json and work/olp0705_source_view.py. The target has a unique G1i table label and the exact minimal-logic axiom comparison; frozen English remains unchanged.",
+  "no_source_mutation": true
+}

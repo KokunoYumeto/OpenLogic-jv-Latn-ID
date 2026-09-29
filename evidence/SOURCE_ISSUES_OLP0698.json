@@ -1,0 +1,39 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0698",
+  "source_path": "content/proof-theory/sequent-calculus/admissible-derivable.tex",
+  "source_sha256": "b23007a09bbf7b4b8390943539aab59ee00277b3af8450b5d07142eaf9d1af10",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-680",
+      "source_line": 62,
+      "location": "conjunction simulation, final contraction",
+      "finding": "The final antecedent lacks a comma between the principal conjunction and Gamma.",
+      "proposed_resolution": "Insert the antecedent separator after A conjunction B."
+    },
+    {
+      "id": "OLPL-681",
+      "source_line": 114,
+      "location": "left biconditional exercise",
+      "finding": "The rule is labelled left biconditional but places its principal formula on the right; its two premises do not entail the displayed right conclusion.",
+      "proposed_resolution": "Place the biconditional in the conclusion's antecedent, leaving the right-biconditional rule intact."
+    },
+    {
+      "id": "OLPL-682",
+      "source_line": 139,
+      "location": "quantified weakening proof transformations",
+      "finding": "Adding an arbitrary formula to every sequent can violate eigenparameter freshness for universal-right or existential-left steps.",
+      "proposed_resolution": "Before adding the formula, rename each eigenparameter within its corresponding proof subtree fresh for that formula, preserving the end-sequent and height; apply the same preliminary step to the induction proof."
+    },
+    {
+      "id": "OLPL-683",
+      "source_line": 212,
+      "location": "height-zero weakening base case",
+      "finding": "The description of G3c initial sequents omits the falsity-left axiom.",
+      "proposed_resolution": "Include falsity in the antecedent as the second possible axiom case, alongside atomic identity."
+    }
+  ],
+  "translation_treatment": "Direct complete translation with the two diagram repairs and explicit freshness and falsity-base-case corrections. Frozen English remains unchanged.",
+  "no_source_mutation": true
+}

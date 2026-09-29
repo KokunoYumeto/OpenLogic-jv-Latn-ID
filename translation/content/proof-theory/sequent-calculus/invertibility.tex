@@ -1,0 +1,432 @@
+% Part: proof-theory
+% Chapter: sequent-calculus
+% Section: invertibility
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{seq}{inv}
+
+\olsection{Kuwalikan Aturan}
+
+\begin{defn}
+Aturan~$R$,
+\[
+\AxiomC{$S_1$}
+\AxiomC{$\dots$}
+\AxiomC{$S_n$}
+\RightLabel{$R$}
+\TrinaryInfC{$S$}
+\DisplayProof
+\]
+diarani \emph{bisa diwalik} ing sistem yen saben $\Proves S$,
+uga $\Proves S_i$ kanggo $i = 1$, \dots,~$n$.
+Aturan iki \emph{bisa diwalik kanthi njaga !!{height}}
+(utawa \emph{bisa diwalik-!!{hp}}) ing sistem yen saben
+$\Proves_h S$, uga $\Proves[h] S_i$ kanggo $i = 1$, \dots,~$n$.
+\end{defn}
+
+\begin{lem}\ollabel{lem:G3c-invert}
+Aturan~\Log{G3c} kanggo $\lnot$, $\land$, $\lor$, lan $\lif$
+bisa diwalik kanthi njaga !!{height}, yaiku:
+\begin{enumerate}
+  \item \RightR{\lnot}: Yen $\Log{G3c} \Proves[n] \Gamma \Sequent
+  \Delta, \lnot !A$, mula $\Log{G3c} \Proves[n] !A, \Gamma \Sequent
+  \Delta$.
+  \item \LeftR{\lnot}: Yen $\Log{G3c} \Proves[n] \Gamma, \lnot !A
+  \Sequent \Delta$, mula $\Log{G3c} \Proves[n] \Gamma \Sequent \Delta,
+  !A$.
+  \item \RightR{\land}: Yen $\Log{G3c} \Proves[n] \Gamma \Sequent
+  \Delta, !A \land !B$, mula $\Log{G3c} \Proves[n] \Gamma \Sequent
+  \Delta, !A$ lan $\Log{G3c} \Proves[n] \Gamma \Sequent
+  \Delta, !B$.
+  \item \LeftR{\land}: Yen $\Log{G3c} \Proves[n] \Gamma, !A \land !B
+  \Sequent \Delta$, mula $\Log{G3c} \Proves[n] !A, !B, \Gamma \Sequent
+  \Delta$.
+  \item \RightR{\lor}: Yen $\Log{G3c} \Proves[n] \Gamma \Sequent
+  \Delta, !A \lor !B$, mula $\Log{G3c} \Proves[n] \Gamma \Sequent
+  \Delta, !A, !B$.
+  \item \LeftR{\lor}: Yen $\Log{G3c} \Proves[n] !A \lor !B, \Gamma \Sequent
+  \Delta$, mula $\Log{G3c} \Proves[n] !A, \Gamma \Sequent
+  \Delta$ lan $\Log{G3c} \Proves[n] !B, \Gamma \Sequent
+  \Delta$.
+  \item \RightR{\lif}: Yen $\Log{G3c} \Proves[n] \Gamma \Sequent
+  \Delta, !A \lif !B$, mula $\Log{G3c} \Proves[n] !A, \Gamma \Sequent
+  \Delta, !B$.
+  \item \LeftR{\lif}: Yen $\Log{G3c} \Proves[n] !A \lif !B, \Gamma
+  \Sequent \Delta$, mula $\Log{G3c} \Proves[n] \Gamma \Sequent \Delta,
+  !A$ lan $\Log{G3c} \Proves[n] !B, \Gamma \Sequent \Delta$.
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+Kita kudu nuduhake yen kanggo saben aturan proposisional~$R$
+saka~\Log{G3c}, yen ana !!a{proof}~$\pi$ kanggo kesimpulan~$S$
+saka~$R$, mula uga ana !!{proof}s~$\pi_i$ kanggo premis $S_i$
+saka~$R$, kanthi $\pheight{\pi_i} \le \pheight{\pi}$.
+Gatekna aturan \LeftR{\land}: upamane ana !!a{proof}~$\pi$
+kanthi sekuen pungkasan awujud $!A \land !B, \Gamma \Sequent \Delta$.
+Kita kudu nuduhake yen ana !!a{proof} $\pi'$ kanggo
+$!A, !B, \Gamma \Sequent \Delta$ kanthi
+$\pheight{\pi'} \le \pheight{\pi}$. Iki ditindakake kanthi
+induksi tumrap $n = \pheight{\pi}$.
+
+Yen $n = 0$, $\pi$ mung kasusun saka aksioma
+$!A \land !B, \Gamma \Sequent \Delta$. Ing \Log{G3c},
+aksioma identitas awujud $!C, \Gamma \Sequent \Delta, !C$
+kanthi $!C$ atomik. Kanthi tembung liya, $!C$ ora bisa
+dadi $!A \land !B$. Yen $!A \land !B, \Gamma \Sequent \Delta$
+minangka aksioma, mula ana formula atomik $!C$ sing dadi
+!!a{element} ing $\Gamma$ lan~$\Delta$, utawa ana falsitas
+ing konteks anteseden. Mula $!A, !B, \Gamma \Sequent \Delta$
+uga aksioma, lan kita wis nemokake !!{proof}~$\pi'$ sing
+uga duwe !!{height}~$0$.
+
+Yen $n>0$, bukti dipungkasi nganggo inferensi. Kita kudu
+mbuktekake pratelan kanggo~$n$, nanging bisa nganggep pratelan
+iki bener kanggo saben !!{proof} sing dhuwure~$<n$, sanajan
+kontekse beda. Kanthi tembung liya, kanggo saben $k<n$ lan
+saben $\Pi$ lan $\Lambda$, yen $!A \land !B, \Pi \Sequent \Lambda$
+duwe !!a{proof} kanthi !!{height}~$k$, mula ana !!a{proof}
+kanthi !!{height}~$\le k$ kanggo $!A, !B, \Pi \Sequent \Lambda$.
+
+Ana rong kasus: $!A \land !B$ ing sisih kiwa dadi formula
+utama, utawa ora. Yen dadi formula utama, inferensi pungkasan
+yaiku \LeftR{\land}, lan sub-!!{proof} langsung~$\pi_1$
+dipungkasi ing $!A, !B, \Gamma \Sequent \Delta$. Ing kasus iki
+asile langsung ditampa amarga $\pheight{\pi_1} < \pheight{\pi}$.
+
+Yen $!A \land !B$ dudu formula utama, mula ana !!{formula}
+liyane sing dadi formula utama, lan $!A \land !B$ kalebu konteks
+inferensi pungkasan. Hipotesis induksi bisa ditrapake marang
+sub-!!{proof}s langsung saka aturan pungkasan~$R$, lan menehi
+!!a{proof}~$\pi_1'$ utawa rong !!{proof}s~$\pi_1'$ lan~$\pi_2'$
+kanthi !!{height} sing ora ngluwihi dhuwur sub-!!{proof}s
+langsung saka~$\pi$. Sekuen pungkasan $\pi_1'$ lan $\pi_2'$
+ngemot $!A, !B$ ing konteks kiwa minangka gantine $!A \land !B$.
+Trapna aturan~$R$ kanggo oleh bukti~$\pi'$. Upamane,
+$\pi$ dipungkasi nganggo~\LeftR{\lif}:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$!A \land !B, \Gamma' \fCenter \Delta, !C$
+\AxiomC{}
+\RightLabel{$\pi_2$}
+\Deduce$!A \land !B, \Gamma', !D \fCenter \Delta$
+\RightLabel{\LeftR{\lif}}
+\BinaryInf$!A \land !B, \Gamma', !C \lif !D \fCenter \Delta$
+\DisplayProof
+\]
+Ing kene $!C \lif !D$ ing kiwa dadi formula utama, lan
+konteks kiwa yaiku $!A \land !B, \Gamma'$ (yaiku
+$\Gamma = \Gamma', !C \lif !D$). Hipotesis induksi menehi
+!!{proof}s $\pi_1'$ lan $\pi_2'$ kanggo
+$!A, !B, \Gamma' \Sequent \Delta, !C$ lan
+$!A, !B, \Gamma', !D \Sequent \Delta$, manut urutane.
+Rong sekuen iki bisa maneh dadi premis aturan \LeftR{\lif}
+kanggo oleh~$\pi'$:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$!A, !B, \Gamma' \fCenter \Delta, !C$
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$!A, !B, \Gamma', !D \fCenter \Delta$
+\RightLabel{\LeftR{\lif}}
+\BinaryInf$!A, !B, \Gamma', !C \lif !D \fCenter \Delta$
+\DisplayProof
+\]
+Kita duwe
+\begin{align*}
+\pheight{\pi} & = \max(\pheight{\pi_1}, \pheight{\pi_2}) + 1\\
+\pheight{\pi'} & = \max(\pheight{\pi_1'}, \pheight{\pi_2'}) + 1
+\intertext{miturut dhefinisi, lan}
+\pheight{\pi_1'} & \le \pheight{\pi_1}\\
+\pheight{\pi_2'} & \le \pheight{\pi_2}
+\intertext{miturut hipotesis induksi. Dadi,}
+\pheight{\pi'} & \le \pheight{\pi}.
+\end{align*}
+\end{proof}
+
+\begin{prob}
+Wenehana bukti \olref{lem:G3c-invert} kanggo \RightR{\lif}.
+\end{prob}
+
+\begin{lem}\ollabel{lem:invert-quant}
+Aturan \RightR{\lforall} lan \LeftR{\lexists} bisa diwalik
+kanthi njaga !!{height} ing pangerten iki:
+\begin{enumerate}
+  \item Yen $\Log{G3c} \Proves[n] \Gamma \Sequent \Delta,
+  \lforall[x][!A(x)]$, mula $\Log{G3c} \Proves[n] \Gamma \Sequent
+  \Delta, !A(c)$, lan
+  \item yen $\Log{G3c} \Proves[n] \lexists[x][!A(x)], \Gamma \Sequent
+  \Delta$, mula $\Log{G3c} \Proves[n] !A(c), \Gamma \Sequent \Delta$,
+\end{enumerate}
+kanggo saben $c$ sing ora ana ing $\Gamma$, $\Delta$, lan
+$\lforall[x][!A(x)]$ utawa $\lexists[x][!A(x)]$, manut urutane.
+\end{lem}
+
+\begin{proof}
+  Kita nuduhake (1) lan ninggalake (2) minangka latihan.
+  Kasus dasar aksioma identitas lan falsitas sing padha uga
+  ditrapake. Dhisik, ganti jeneng eigenparameter ing subwit
+  buktine supaya seger tumrap konstanta sing dipilih.
+  Argumentasine padha karo bukti \olref{lem:G3c-invert}.
+  Ing langkah induksi, ana rong kasus maneh. Kasus nalika
+  $\lforall[x][!A(x)]$ dadi formula utama bisa dirampungake
+  langsung: premis inferensi $\RightR{\lforall}$ pungkasan
+  wis awujud sing dibutuhake, yaiku $\Gamma \Sequent \Delta, !A(a)$,
+  lan sub-!!{proof} langsung~$\pi_1$ sing dipungkasi ing
+  premis kasebut duwe $\pheight{\pi_1} < \pheight{\pi}$.
+  Kajaba iku, syarat eigenvariabel njamin $a$ ora ana ing
+  $\Gamma$, $\Delta$, utawa $\lforall[x][!A(x)]$.
+  Amarga kita bisa nganggep $\pi_1$ reguler,
+  $\Subst{\pi_1}{c}{a}$ minangka !!a{proof} kanthi
+  !!{height} sing padha kanggo $\Gamma \Sequent \Delta, !A(c)$,
+  miturut \olref[qua]{lem:subst-regular}.
+
+  Ing kasus kapindho, $\lforall[x][!A(x)]$ dudu formula utama
+  ing inferensi pungkasan; formula liyane sing dadi formula
+  utama. Kita menehi siji kasus minangka conto maneh.
+  Upamane inferensi pungkasan yaiku~\RightR{\land}.
+  Ana !!{formula} ing $\Delta$ awujud~$!B \land !C$ sing
+  dadi formula utama. !!{proof}~$\pi$ dipungkasi nganggo
+  \[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\Gamma \fCenter \Delta', \lforall[x][!A(x)], !B$
+\AxiomC{}
+\RightLabel{$\pi_2$}
+\Deduce$\Gamma \fCenter \Delta', \lforall[x][!A(x)], !C$
+\RightLabel{\RightR{\land}}
+\BinaryInf$\Gamma \fCenter \Delta', \lforall[x][!A(x)], !B \land !C$
+\DisplayProof
+\]
+kanthi $\Delta = \Delta', !B \land !C$. Pilih $c$ minangka
+!!a{constant} sing nyukupi kabeh syarat kesegaran ing ndhuwur;
+mligine, konstanta iki ora ana ing $\Delta$. Dadi cetha yen
+uga ora ana ing $\Delta', !B$ utawa ing $\Delta', !C$.
+Mula hipotesis induksi bisa ditrapake marang $\pi_1$ lan~$\pi_2$;
+kita duwe !!{proof}s~$\pi_1'$ lan $\pi_2'$ kanthi
+$\pheight{\pi_1'} \le \pheight{\pi_1}$ lan
+$\pheight{\pi_2'} \le \pheight{\pi_2}$. !!{proof}~$\pi'$
+sing dibutuhake kanggo $\Gamma \Sequent \Delta, !A(c)$ yaiku:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$\Gamma \fCenter \Delta', !A(c), !B$
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$\Gamma \fCenter \Delta', !A(c), !C$
+\RightLabel{\RightR{\land}}
+\BinaryInf$\Gamma \fCenter \Delta', !A(c), !B \land !C$
+\DisplayProof
+\]
+kanthi $\pheight{\pi'} = \max(\pheight{\pi_1'}, \pheight{\pi_2'})+1 \le \pheight{\pi}$.
+\end{proof}
+
+\Olref{lem:G3c-invert} duwe peran wigati ing bukti teorema
+eliminasi potongan. Nanging lemma iki uga bisa digunakake
+kanggo nuduhake asil iki:
+
+\begin{prop}\ollabel{prop:G3c-cont-adm}
+Aturan kontraksi \LeftR{\Contraction} lan \RightR{\Contraction}
+saka~\Log{G1c} admisibel kanthi njaga !!{height} ing~\Log{G3c}.
+\end{prop}
+
+\begin{proof}
+Kita menehi argumentasi kanggo \RightR{\Contraction} lan
+\LeftR{\Contraction} bebarengan. Upamane $\pi$ minangka
+!!a{proof} kanggo $\Gamma \Sequent \Delta, !A, !A$ utawa
+$!A, !A, \Gamma \Sequent \Delta$ ing~\Log{G3c}.
+Kita kudu nuduhake yen uga ana \Log{G3c}-!!{proof}~$\pi'$
+kanggo $\Gamma \Sequent \Delta, !A$ utawa
+$!A, \Gamma \Sequent \Delta$, manut urutane, kanthi
+$\pheight{\pi'} \le \pheight{\pi}$. Kita nindakake iki
+kanthi induksi tumrap $n = \pheight{\pi}$.
+
+Yen $n=0$, $\pi$ mung aksioma. Nanging yen
+$\Gamma \Sequent \Delta, !A, !A$ minangka aksioma~\Log{G3c},
+mula $\Gamma \Sequent \Delta, !A$ uga aksioma: ing kasus
+identitas, ana formula atomik~$!C$ sing dadi !!a{element} ing $\Gamma$ lan~$\Delta$,
+utawa $!A$ atomik lan dadi !!a{element} ing~$\Gamma$.
+Panalaran sing padha ditrapake yen sekuen pungkasan yaiku
+$!A, !A, \Gamma \Sequent \Delta$. Falsitas ing anteseden
+uga tetep ana sawise kontraksi, kalebu nalika falsitas
+minangka formula sing dikontraksi ing kiwa.
+
+Yen $n>0$, $\pi$ dipungkasi nganggo aturan~$R$.
+Yen $!A$ dudu formula utama ing inferensi pungkasan,
+kita bisa oleh !!a{proof}~$\pi'$ kaya ing bukti
+\olref{lem:G3c-invert}, kanthi ngetrapake hipotesis
+induksi marang sub-!!{proof}s langsung saka~$\pi$
+lan ngetrapake aturan~$R$ sing padha marang
+!!{proof}(s) asile. Hipotesis induksi nyatakake yen
+ana !!a{proof} kanthi !!{height}~$k<n$ kanggo
+$\Pi \Sequent \Lambda, !D, !D$ utawa
+$!D, !D, \Pi \Sequent \Lambda$, mula ana
+!!a{proof} kanthi !!{height}~$\le k$ kanggo
+$\Pi \Sequent \Lambda, !D$ utawa
+$!D, \Pi \Sequent \Lambda$, manut urutane.
+(Gatekna yen hipotesis induksi bisa ditrapake
+sanajan konteks utawa !!{formula} sing dikontraksi
+beda saka $\Gamma$, $\Delta$, utawa~$!A$!)
+
+Upamane $R$ yaiku $\RightR{\land}$ lan $\pi$~dipungkasi nganggo
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\Gamma \fCenter \Delta', !B, !A, !A$
+\AxiomC{}
+\RightLabel{$\pi_2$}
+\Deduce$\Gamma \fCenter \Delta', !C, !A, !A$
+\RightLabel{\RightR{\land}}
+\BinaryInf$\Gamma \fCenter \Delta', !B \land !C, !A, !A$
+\DisplayProof
+\]
+kanthi $\Delta = \Delta', !B \land !C$. Hipotesis induksi
+menehi !!{proof}s $\pi_1'$ lan $\pi_2'$ kanggo
+$\Gamma \fCenter \Delta', !B, !A$ lan
+$\Gamma \fCenter \Delta', !C, !A$, manut urutane, kanthi
+$\pheight{\pi_1'} \le \pheight{\pi_1}$ lan
+$\pheight{\pi_2'} \le \pheight{\pi_2}$.
+!!{proof}~$\pi'$ yaiku:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$\Gamma \fCenter \Delta', !B, !A$
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$\Gamma \fCenter \Delta', !C, !A$
+\RightLabel{\RightR{\land}}
+\BinaryInf$\Gamma \fCenter \Delta', !B \land !C, !A$
+\DisplayProof
+\]
+
+Yen $!A$ dadi formula utama ing inferensi pungkasan,
+kita ngetrapake lemma kuwalikan (\olref{lem:G3c-invert})
+marang sub-!!{proof}s langsung saka~$\pi$, banjur
+hipotesis induksi, lan banjur aturan~$R$ maneh.
+Upamane $\pi$ mbuktekake $\Gamma \Sequent \Delta, !A, !A$,
+$!A \ident (!B \land !C)$, lan formula iki dadi
+formula utama ing inferensi pungkasan. Mula
+$\pi$ duwe wujud iki:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\Gamma \fCenter \Delta, !B \land !C, !B$
+\AxiomC{}
+\RightLabel{$\pi_2$}
+\Deduce$\Gamma \fCenter \Delta, !B \land !C, !C$
+\RightLabel{\RightR{\land}}
+\BinaryInf$\Gamma \fCenter \Delta, !B \land !C, !B \land !C$
+\DisplayProof
+\]
+Trapna \olref{lem:G3c-invert} marang $\pi_1$ kanggo
+oleh !!a{proof}~$\pi_1'$ kanggo
+$\Gamma \Sequent \Delta, !B, !B$. (Iki uga menehi
+!!a{proof} kanggo $\Gamma \Sequent \Delta, !C, !B$,
+nanging bukti iki ora kita butuhake.) Semono uga,
+kanthi ngetrapake \olref{lem:G3c-invert} marang~$\pi_2$,
+kita oleh !!a{proof}~$\pi_2'$ kanggo
+$\Gamma \Sequent \Delta, !C, !C$.
+Amarga kuwalikan \RightR{\land} njaga !!{height},
+$\pheight{\pi_1'} \le \pheight{\pi_1} < \pheight{\pi}$ lan
+$\pheight{\pi_2'} \le \pheight{\pi_2} < \pheight{\pi}$.
+Mula hipotesis induksi bisa ditrapake marang
+$\pi_1'$ lan $\pi_2'$: ana !!{proof}s~$\pi_1''$
+lan $\pi_2''$ kanggo $\Gamma \Sequent \Delta, !B$
+lan $\Gamma \Sequent \Delta, !C$, manut urutane,
+kanthi $\pheight{\pi_1''} \le \pheight{\pi_1'} \le \pheight{\pi_1}$
+lan $\pheight{\pi_2''} \le \pheight{\pi_2'} \le \pheight{\pi_2}$.
+!!{proof}~$\pi'$ banjur yaiku:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1''$}
+\Deduce$\Gamma \fCenter \Delta, !B$
+\AxiomC{}
+\RightLabel{$\pi_2''$}
+\Deduce$\Gamma \fCenter \Delta, !C$
+\RightLabel{\RightR{\land}}
+\BinaryInf$\Gamma \fCenter \Delta, !B \land !C$
+\DisplayProof
+\]
+kanthi $\pheight{\pi'} \le \pheight{\pi}$.
+
+Kita kudu luwih ngati-ati tumrap aturan kuantor
+ing kasus nalika !!{formula} dadi formula utama.
+
+Upamane $!A \ident \lforall[x][!B(x)]$ dadi formula
+utama ing tengen. Mula $\pi$ dipungkasi nganggo
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\Gamma \fCenter \Delta, \lforall[x][!B(x)], !B(a)$
+\RightLabel{\RightR{\lforall}}
+\UnaryInf$\Gamma \fCenter \Delta, \lforall[x][!B(x)], \lforall[x][!B(x)]$
+\DisplayProof
+\]
+Miturut \olref{lem:invert-quant}, ana !!a{proof}~$\pi_1'$
+kanthi !!{height} $\le \pheight{\pi_1}$ kanggo
+$\Gamma \fCenter \Delta, !B(c), !B(a)$, kanggo
+saben~$c$ sing ora ana ing $\Gamma \fCenter \Delta,
+\lforall[x][!B(x)], !B(a)$. Kita bisa nganggep
+$\pi_1'$ reguler; mula miturut
+\olref[qua]{lem:subst-regular}, !!{proof}
+$\Subst{\pi_1'}{a}{c}$ minangka !!a{proof} kanggo
+$\Gamma \fCenter \Delta, !B(a), !B(a)$, uga kanthi
+!!{height} $\le \pheight{\pi_1}$. Saiki hipotesis
+induksi bisa ditrapake lan menehi !!a{proof}~$\pi_1''$
+kanggo $\Gamma \fCenter \Delta, !B(a)$.
+Trapna aturan \RightR{\lforall} kanggo oleh~$\pi'$:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1''$}
+\Deduce$\Gamma \fCenter \Delta, !B(a)$
+\RightLabel{\RightR{\lforall}}
+\UnaryInf$\Gamma \fCenter \Delta, \lforall[x][!B(x)]$
+\DisplayProof
+\]
+kanthi $\pheight{\pi'} \le \pheight{\pi}$.
+
+Saiki upamane $!A \ident \lexists[x][!B(x)]$ lan
+dadi formula utama ing tengen. Mula $\pi$ duwe wujud iki:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\Gamma \fCenter \Delta, \lexists[x][!B(x)], \lexists[x][!B(x)], !B(t)$
+\RightLabel{\RightR{\lexists}}
+\UnaryInf$\Gamma \fCenter \Delta, \lexists[x][!B(x)], \lexists[x][!B(x)]$
+\DisplayProof
+\]
+Hipotesis induksi bisa ditrapake marang~$\pi_1$,
+lan ana !!a{proof}s~$\pi_1'$ kanggo
+$\Gamma \Sequent \Delta, \lexists[x][!B(x)], !B(t)$.
+(Gatekna yen ing kene ora perlu lemma kuwalikan!)
+!!{proof}~$\pi'$ banjur yaiku:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$\Gamma \fCenter \Delta,  \lexists[x][!B(x)], !B(t)$
+\RightLabel{\RightR{\lexists}}
+\UnaryInf$\Gamma \fCenter \Delta, \lexists[x][!B(x)]$
+\DisplayProof
+\]
+kanthi $\pheight{\pi'} \le \pheight{\pi}$.
+\end{proof}
+
+\begin{prob}
+Wenehana sketsa bukti \olref{prop:G3c-cont-adm} kanggo
+\LeftR{\Contraction}. Terangna kasus nalika
+$!A \ident (!B \land !C)$ lan $!A \ident (!B \lif !C)$.
+\end{prob}
+
+\begin{prob}
+Wenehana sketsa bukti \olref{prop:G3c-cont-adm} kanggo
+\LeftR{\Contraction} ing kasus kuantor sing isih kari,
+yaiku nalika $!A \ident \lforall[x][!B(x)]$ lan
+$!A \ident \lexists[x][!B(x)]$.
+\end{prob}
+
+\end{document}

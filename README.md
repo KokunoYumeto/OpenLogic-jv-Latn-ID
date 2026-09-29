@@ -3,9 +3,9 @@
 Terjemahan OpenLogic nganggo basa Jawa aksara Latin (jv-Latn-ID).
 Ragam utama yaiku ngoko tinulis kanggo andharan akademik.
 
-**Isih digarap: sumber saiki ngemot 697 saka 722 berkas kang wis diterjemahake.**
-Urutan sumber wis tekan pungkasan bab proposisi minangka tipe ing perangan teori bukti,
-kalebu normalisasi lan panelusuran bukti.
+**Isih digarap: sumber saiki ngemot 710 saka 722 berkas kang wis diterjemahake.**
+Urutan sumber wis tekan tabel aturan kalkulus sekuen ing perangan teori bukti,
+kalebu varian klasik, intuisionistik, minimal, lan aturan urutan LK.
 Wacan PDF kang wis diterbitake tetep ngemot 24 unit sumber lan dibangun kanggo rilis
 [v0.2.0](https://github.com/KokunoYumeto/OpenLogic-jv-Latn-ID/releases/tag/v0.2.0),
 kanthi TeX kumulatif langsung, ZIP sumber editable jangkep, lan EPUB3
@@ -15,10 +15,20 @@ Edhisi jangkep tetep dadi ancas, kalebu kabeh isi ing njaba
 alur wacan baku.
 
 Iki terjemahan basa Jawa mandhiri sing ditulis kanthi mesin saka
-[Open Logic Project](https://openlogicproject.org/), frozen at
+[Open Logic Project](https://openlogicproject.org/), kang sumber asale dikunci ing
 revisi 9620cc73f9c8e0ad003c514a5d3748f29611c4c0.
 Terjemahan iki kalebu [katalog terjemahan OpenLogic](https://github.com/KokunoYumeto/OpenLogic-translations).
 Ora ana pratelan yen proyek asal nyengkuyung edhisi iki utawa yen wis ana panlitian mandhiri dening ahli basa Jawa.
+
+Terjemahan, koreksi sumber, panyuntingan, lan pamandingan makna dening
+panulis sing padha ditindakake nganggo OpenAI Codex. Rekaman runtime sesi
+utama nyathet **GPT-5.6 Sol, Ultra effort**, wiwit 4 September 2026,
+banjur **GPT-6 Sol, Ultra effort**, wiwit 25 September 2026.
+Panjelasan iki adhedhasar identitas model lan tingkat effort ing rekaman
+runtime, dudu pangira saka setelan saiki. Iki karya AI; ora ana pratelan
+panlitian utawa panyuntingan dening manungsa. Rekaman sesi utama kasebut
+ora dianggep minangka bukti atribusi saben berkas utawa worker sing
+ora kacathet kanthi mandhiri.
 
 - upstream/ ngreksa bita basa Inggris sing wis diverifikasi lan lisensi saben komponen.
 - translation/ ngemot unit sumber sing pancen wis diterjemahake, kanthi dalan berkas asal tetep.
@@ -35,7 +45,7 @@ Lingkup sumber lan terjemahan dibedakake saka lingkup wacan.
 Alur sumber baku nyakup 642 unit; edhisi jangkep kudu nyakup kabeh 722
 kanthi runtut tanpa mbaleni pangatur alternatif. Wacan jangkep kasebut durung dibangun.
 
-Kabeh 697 berkas terjemahan nduweni cathetan paragraf sing sejajar karo sumber,
+Kabeh 710 berkas terjemahan nduweni cathetan paragraf sing sejajar karo sumber,
 pamriksan formula, token, pranala lan label, sarta pamandingan makna dening
 panulis sing padha kanthi parafrasa balik pilihan. Validasi maneh kanon lan
 koreksine wis tekan OLP-0058; validasi maneh kanon kanggo berkas sabanjure

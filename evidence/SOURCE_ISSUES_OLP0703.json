@@ -1,0 +1,54 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0703",
+  "source_path": "content/proof-theory/sequent-calculus/quantifiers.tex",
+  "source_sha256": "a27d60734d10b75dad7ff081448ddad7036694cdb489b2a0cfa8c97d002bc480",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-707",
+      "location": "substitution convention and binder freshness",
+      "finding": "An arbitrary replacement term may contain a variable bound by a quantifier in the proof; literal replacement would capture it.",
+      "proposed_resolution": "Specify capture-avoiding substitution and choose bound variables fresh for the replacement term before applying the displayed rule transformations.",
+      "source_line": 34
+    },
+    {
+      "id": "OLPL-708",
+      "location": "context substitution comprehension",
+      "finding": "Contexts are multisets, but the ordinary set comprehension could erase repeated formula occurrences.",
+      "proposed_resolution": "Explicitly interpret this comprehension as a multiset comprehension, preserving one substituted occurrence for each original occurrence.",
+      "source_line": 37
+    },
+    {
+      "id": "OLPL-709",
+      "location": "universal-left substitution case",
+      "finding": "Both original and substituted universal-left diagrams are labelled universal-right.",
+      "proposed_resolution": "Use universal-left labels in those two diagrams only.",
+      "source_line": 74
+    },
+    {
+      "id": "OLPL-710",
+      "location": "substitution proof conclusion",
+      "finding": "The concluding eigenparameter argument has interleaved clauses and no grammatical statement of preservation.",
+      "proposed_resolution": "State eigenparameter preservation using the term-disjointness assumption, then explain why the new end-sequent has no eigenparameter and the proof remains regular.",
+      "source_line": 104
+    },
+    {
+      "id": "OLPL-711",
+      "location": "regularization induction",
+      "finding": "A highest inference can already be clean, so choosing it need not reduce the dirty count. A highest dirty inference may have clean eigenparameter rules above it, and renaming can clean other dirty rules as well, so the claimed exact n-1 count is too strong.",
+      "proposed_resolution": "Choose a highest dirty inference, justify regularity of its higher clean subproof, use a globally fresh parameter and strong induction on a strictly decreasing dirty count.",
+      "source_line": 126
+    },
+    {
+      "id": "OLPL-712",
+      "source_line": 32,
+      "location": "replacement term in regular-proof substitution",
+      "finding": "The adjacent rules-proofs section requires closed terms for quantifier instances. Replacing a constant by an open term could turn an allowed closed instance into a forbidden open one.",
+      "proposed_resolution": "Require the replacement term to be closed, as well as free of eigenparameters. Capture avoidance and multiplicity preservation remain stated, and the renaming application already uses closed constants.",
+      "resolution_status": "bounded_correction_applied"
+    }
+  ],
+  "translation_treatment": "OLPL-707..711 are recorded in SOURCE_ISSUES_OLP0703.json and work/olp0703_source_view.py. The complete target applies each bounded correction while frozen English remains unchanged. OLPL-712 follows the exact closed-term rule convention in the adjacent rules-proofs section.",
+  "no_source_mutation": true
+}

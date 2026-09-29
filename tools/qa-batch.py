@@ -168,6 +168,17 @@ from olp0693_source_view import repaired_olp0693_source
 from olp0694_source_view import repaired_olp0694_source
 from olp0696_source_view import repaired_olp0696_source
 from olp0697_source_view import repaired_olp0697_source
+from olp0698_source_view import repaired_olp0698_source
+from olp0699_source_view_v182 import repaired_olp0699_source_v182
+from olp0700_source_view import repaired_olp0700_source
+from olp0701_source_view import repaired_olp0701_source
+from olp0702_source_view import repaired_olp0702_source
+from olp0703_source_view_v185 import repaired_olp0703_source_v185
+from olp0705_source_view import repaired_olp0705_source
+from olp0707_source_view import repaired_olp0707_source
+from olp0708_source_view import repaired_olp0708_source
+from olp0709_source_view import repaired_olp0709_source
+from olp0710_source_view import repaired_olp0710_source
 R=pathlib.Path(__file__).resolve().parent.parent
 S=R/'evidence'
 def sha(data): return hashlib.sha256(data).hexdigest()
@@ -679,6 +690,28 @@ for u in units:
         protected_source=repaired_olp0696_source(protected_source)
     if u['unit_id']=='OLP-0697':
         protected_source=repaired_olp0697_source(protected_source)
+    if u['unit_id']=='OLP-0698':
+        protected_source=repaired_olp0698_source(protected_source)
+    if u['unit_id']=='OLP-0699':
+        protected_source=repaired_olp0699_source_v182(protected_source)
+    if u['unit_id']=='OLP-0700':
+        protected_source=repaired_olp0700_source(protected_source)
+    if u['unit_id']=='OLP-0701':
+        protected_source=repaired_olp0701_source(protected_source)
+    if u['unit_id']=='OLP-0702':
+        protected_source=repaired_olp0702_source(protected_source)
+    if u['unit_id']=='OLP-0703':
+        protected_source=repaired_olp0703_source_v185(protected_source)
+    if u['unit_id']=='OLP-0705':
+        protected_source=repaired_olp0705_source(protected_source)
+    if u['unit_id']=='OLP-0707':
+        protected_source=repaired_olp0707_source(protected_source)
+    if u['unit_id']=='OLP-0708':
+        protected_source=repaired_olp0708_source(protected_source)
+    if u['unit_id']=='OLP-0709':
+        protected_source=repaired_olp0709_source(protected_source)
+    if u['unit_id']=='OLP-0710':
+        protected_source=repaired_olp0710_source(protected_source)
     if u['unit_id']=='OLP-0533':
         protected_source=repaired_olp0533_source(protected_source)
     if u['unit_id']=='OLP-0379':
@@ -1911,10 +1944,43 @@ for u in units:
     if u['unit_id']=='OLP-0697':
         math_source=repaired_olp0697_source(math_source)
         token_source=repaired_olp0697_source(token_source)
+    if u['unit_id']=='OLP-0698':
+        math_source=repaired_olp0698_source(math_source)
+        token_source=repaired_olp0698_source(token_source)
+    if u['unit_id']=='OLP-0699':
+        math_source=repaired_olp0699_source_v182(math_source)
+        token_source=repaired_olp0699_source_v182(token_source)
+    if u['unit_id']=='OLP-0700':
+        math_source=repaired_olp0700_source(math_source)
+        token_source=repaired_olp0700_source(token_source)
+    if u['unit_id']=='OLP-0701':
+        math_source=repaired_olp0701_source(math_source)
+        token_source=repaired_olp0701_source(token_source)
+    if u['unit_id']=='OLP-0702':
+        math_source=repaired_olp0702_source(math_source)
+        token_source=repaired_olp0702_source(token_source)
+    if u['unit_id']=='OLP-0703':
+        math_source=repaired_olp0703_source_v185(math_source)
+        token_source=repaired_olp0703_source_v185(token_source)
+    if u['unit_id']=='OLP-0705':
+        math_source=repaired_olp0705_source(math_source)
+        token_source=repaired_olp0705_source(token_source)
+    if u['unit_id']=='OLP-0707':
+        math_source=repaired_olp0707_source(math_source)
+        token_source=repaired_olp0707_source(token_source)
+    if u['unit_id']=='OLP-0708':
+        math_source=repaired_olp0708_source(math_source)
+        token_source=repaired_olp0708_source(token_source)
+    if u['unit_id']=='OLP-0709':
+        math_source=repaired_olp0709_source(math_source)
+        token_source=repaired_olp0709_source(token_source)
+    if u['unit_id']=='OLP-0710':
+        math_source=repaired_olp0710_source(math_source)
+        token_source=repaired_olp0710_source(token_source)
     if u['unit_id']=='OLP-0533':
         math_source=repaired_olp0533_source(math_source)
         token_source=repaired_olp0533_source(token_source)
-    checks={'paragraph_count':len(ac)==len(tc),'protected_commands':protected(protected_source)==protected(t),'math_sequence':math(math_source)==math(t),'token_sequence':tokens(token_source)==tokens(t),'environment_sequence':re.findall(r'\\(?:begin|end)\{[^}]+\}',a)==re.findall(r'\\(?:begin|end)\{[^}]+\}',t),'unicode_clean':'\ufffd' not in t and not re.search(r'[\uA980-\uA9DF]',t),'no_placeholder':not re.search(r'\b(?:TODO|TBD|TRANSLATE_ME)\b',t)}
+    checks={'paragraph_count':len(ac)==len(tc),'protected_commands':protected(protected_source)==protected(t),'math_sequence':math(math_source)==math(t),'token_sequence':tokens(token_source)==tokens(t),'environment_sequence':re.findall(r'\\(?:begin|end)\{[^}]+\}',repaired_olp0708_source(a) if u['unit_id']=='OLP-0708' else a)==re.findall(r'\\(?:begin|end)\{[^}]+\}',t),'unicode_clean':'\ufffd' not in t and not re.search(r'[\uA980-\uA9DF]',t),'no_placeholder':not re.search(r'\b(?:TODO|TBD|TRANSLATE_ME)\b',t)}
     command_source=a
     if u['unit_id']=='OLP-0339':
         command_source=repaired_olp0339_source(command_source)
@@ -2146,6 +2212,28 @@ for u in units:
         command_source=repaired_olp0696_source(command_source)
     if u['unit_id']=='OLP-0697':
         command_source=repaired_olp0697_source(command_source)
+    if u['unit_id']=='OLP-0698':
+        command_source=repaired_olp0698_source(command_source)
+    if u['unit_id']=='OLP-0699':
+        command_source=repaired_olp0699_source_v182(command_source)
+    if u['unit_id']=='OLP-0700':
+        command_source=repaired_olp0700_source(command_source)
+    if u['unit_id']=='OLP-0701':
+        command_source=repaired_olp0701_source(command_source)
+    if u['unit_id']=='OLP-0702':
+        command_source=repaired_olp0702_source(command_source)
+    if u['unit_id']=='OLP-0703':
+        command_source=repaired_olp0703_source_v185(command_source)
+    if u['unit_id']=='OLP-0705':
+        command_source=repaired_olp0705_source(command_source)
+    if u['unit_id']=='OLP-0707':
+        command_source=repaired_olp0707_source(command_source)
+    if u['unit_id']=='OLP-0708':
+        command_source=repaired_olp0708_source(command_source)
+    if u['unit_id']=='OLP-0709':
+        command_source=repaired_olp0709_source(command_source)
+    if u['unit_id']=='OLP-0710':
+        command_source=repaired_olp0710_source(command_source)
     # OLPL-003: the closed tableau expands a true conjunction on line 2,
     # but both frozen rule labels say true implication. Normalize only those
     # two labels for exact command comparison.

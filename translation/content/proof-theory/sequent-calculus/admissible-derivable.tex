@@ -1,0 +1,264 @@
+% Part: proof-theory
+% Chapter: sequent-calculus
+% Section: admissible-derivable
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{seq}{adm}
+
+\olsection{Aturan Admisibel lan Aturan sing Bisa Diturunake}
+
+Akeh asil teori bukti ngenani---utawa nggunakake---asil bab apa
+kabeh sing bisa !!{prove} nganggo aturan tartamtu uga bisa
+!!{prove} tanpa aturan kasebut. Teorema eliminasi potongan minangka
+conto sing paling kondhang. Teorema iki nuduhake yen saben sekuen sing
+bisa !!{prove} nganggo aturan sistem sekuen kanthi~\Cut{} uga bisa
+!!{prove} tanpa~\Cut. Amarga sipat iki wigati banget, sipat kasebut
+diwenehi jeneng.
+
+\begin{defn}
+Aturan~$R$ diarani \emph{admisibel} ing sistem sekuen yen saben sekuen
+sing bisa dibuktekake ing sistem kasebut kanthi tambahan aturan~$R$
+uga bisa dibuktekake tanpa~$R$.
+\end{defn}
+
+\begin{ex}\ollabel{ex:land-deriv}
+Aturan $\LeftR{\land}$ duwe wujud beda ing \Log{G1c} lan
+\Log{G3c}. Ing \Log{G1c} ana rong versi aturan iki: siji kanthi
+konjung kiwa $!A$ saka !!{formula} utama~$!A \land !B$ ing
+premis, lan sijine kanthi konjung tengen~$!B$:
+\[
+\Axiom$ !A, \Gamma \fCenter \Delta$
+\RightLabel{$\LeftR{\land}_1$}
+\UnaryInf$ !A \land !B, \Gamma \fCenter \Delta$
+\DisplayProof
+\qquad
+\Axiom$!B, \Gamma \fCenter \Delta$
+\RightLabel{$\LeftR{\land}_2$}
+\UnaryInf$!A \land !B, \Gamma \fCenter \Delta$
+\DisplayProof
+\]
+Dene \Log{G3c} mung duwe siji aturan:
+\[
+\Axiom$ !A, !B, \Gamma \fCenter \Delta$
+\RightLabel{$\LeftR{\land}_3$}
+\UnaryInf$ !A \land !B, \Gamma \fCenter \Delta$
+\DisplayProof
+\]
+Saiki kita bisa takon, ``Apa aturan saka \Log{G3c}, yaiku
+$\LeftR{\land}_3$, admisibel ing \Log{G1c}?'' Wangsulane iya: saben inferensi nganggo
+$\LeftR{\land}_3$ bisa disimulasi langsung mung nganggo aturan~\Log{G1c}.
+Saliyane $\LeftR{\land}_1$ lan $\LeftR{\land}_2$, kita uga mbutuhake
+aturan struktural~$\LeftR{\Contraction}$:
+\[
+\Axiom$!A, !B, \Gamma \fCenter \Delta$
+\RightLabel{$\LeftR{\land}_1$}
+\UnaryInf$!A \land !B, !B, \Gamma \fCenter \Delta$
+\RightLabel{$\LeftR{\land}_2$}
+\UnaryInf$!A \land !B, !A \land !B, \Gamma \fCenter \Delta$
+\RightLabel{\LeftR{\Contraction}}
+\UnaryInf$!A \land !B, \Gamma \fCenter \Delta$
+\DisplayProof
+\]
+\end{ex}
+
+Nyimulasi inferensi saka siji aturan nganggo aturan liyane minangka siji
+cara nuduhake yen aturan kasebut admisibel. Nanging ana cara liyane,
+lan sawetara aturan admisibel ora bisa disimulasi kaya mangkono.
+Aturan sing bisa disimulasi diarani aturan sing \emph{bisa diturunake}.
+
+\begin{defn}
+Aturan~$R$,
+\[
+\AxiomC{$S_1$}
+\AxiomC{$\dots$}
+\AxiomC{$S_n$}
+\RightLabel{$R$}
+\TrinaryInfC{$S$}
+\DisplayProof
+\]
+diarani \emph{bisa diturunake} ing sistem yen ana !!{proof} skematis
+kanggo sekuen~$S$ nganggo aturan lan aksioma sistem kasebut bebarengan
+karo sekuen awal tambahan sing wujude~$S_1$, \dots,~$S_n$.
+\end{defn}
+
+!!{proof} ing \olref{ex:land-deriv} nuduhake yen
+$\LeftR{\land}_3$ minangka aturan sing bisa diturunake ing~\Log{G1c},
+amarga !!{proof} kasebut minangka !!{proof} skematis kanggo kesimpulan
+$\LeftR{\land}_3$ saka premis-premis $\LeftR{\land}_3$ minangka sekuen
+awal, mung nganggo aturan \Log{G1c}. (Ora ana aksioma \Log{G1c} sing
+digunakake.)
+
+\begin{prop}\ollabel{prop:lor-G3-adm}
+Aturan $\LeftR{\land}$ lan $\RightR{\lor}$ saka~\Log{G3c} bisa
+diturunake ing~\Log{G1c}.
+\end{prop}
+
+\begin{proof}
+  Bukti kanggo $\LeftR{\land}$ ana ing \olref{ex:land-deriv}.
+  Bukti kanggo $\RightR{\lor}$ ditinggal minangka latihan.
+\end{proof}
+
+\begin{prob}
+Tuduhake yen aturan $\RightR{\lor}$ saka \Log{G3c} bisa diturunake
+ing~\Log{G1c}.
+\end{prob}
+
+\begin{prob}
+Upamane $\liff$ minangka !!{operator} sing didhefinisikake:
+$!A \liff !B$ minangka cekakan kanggo $(!A \lif !B) \land (!B \lif !A)$.
+Tuduhake yen aturan
+\begin{enumerate}
+\item \Axiom$\Gamma, !A, !B \fCenter \Delta$
+\Axiom$\Gamma \fCenter \Delta, !A, !B$
+\RightLabel{\LeftR{\liff}}
+\BinaryInf$!A \liff !B, \Gamma \fCenter \Delta$
+\DisplayProof
+\item
+\Axiom$!A, \Gamma \fCenter \Delta, !B$
+\Axiom$!B, \Gamma \fCenter \Delta, !A$
+\RightLabel{\RightR{\liff}}
+\BinaryInf$\Gamma \fCenter \Delta, !A \liff !B$
+\DisplayProof
+\end{enumerate}
+bisa diturunake ing (a)~\Log{G1c} lan (b)~\Log{G3c}.
+\end{prob}
+
+\begin{ex}\ollabel{ex:weak-adm}
+Aturan $\RightR{\Weakening}$ saka \Log{G1c},
+\[
+\Axiom$ \Gamma \fCenter \Delta$
+\RightLabel{\RightR{\Weakening}}
+\UnaryInf$ \Gamma \fCenter \Delta, !A$
+\DisplayProof
+\]
+admisibel ing~\Log{G3c}. Gagasan buktine prasaja: upamane ana
+!!a{proof}~$\pi$ kanggo premis $\Gamma \Sequent \Delta$ ing~\Log{G3c}.
+Dhisik, ganti jeneng eigenparameter ing saben subwit bukti sing
+gegayutan supaya seger tumrap formula sing bakal ditambahake; cara iki
+njaga sekuen pungkasan lan dhuwure bukti. Tambahake !!{formula}~$!A$
+ing sukseden saben sekuen ing~$\pi$. Aksioma tetep dadi aksioma;
+inferensi sing bener tetep bener. !!{formula} pungkasan saka !!{proof}
+anyar yaiku $\Gamma \Sequent \Delta, !A$.
+
+Nanging aturan $\RightR{\Weakening}$ ora bisa diturunake ing~\Log{G3c}.
+Upamane aturan iki bisa diturunake, yaiku upamane bisa ditemokake
+!!a{proof} kanggo $\Gamma \Sequent \Delta, !A$ mung nganggo aksioma lan
+aturan~\Log{G3c}, bisa uga kanthi sekuen awal tambahan~$\Gamma \Sequent
+\Delta$. Yen !!{proof} iki murni skematis, kaya sing disaratake supaya
+$\RightR{\Weakening}$ bisa diturunake, kita bisa ngowahi dadi !!a{proof}
+kanggo~$\Sequent !A$ kanthi mbusak $\Gamma$ lan~$\Delta$. Iki ngowahi
+sekuen awal tambahan~$\Gamma \Sequent \Delta$ dadi sekuen kosong~$\quad
+\Sequent \quad$. Amarga sekuen kosong ora ngemot !!{formula}s babar
+pisan, dene saben aturan~\Log{G3c} mbutuhake paling ora siji !!{formula}
+aktif ing premis-premise, sekuen kosong ora bisa dadi premis inferensi
+apa wae ing !!{proof} skematis iki. Mula !!{proof} kasebut mung bisa
+skematis yen ora nggunakake sekuen tambahan $\Gamma \Sequent \Delta$
+minangka sekuen awal. Kanthi tembung liya, iki bakal dadi derivasi
+skematis kanggo $\Gamma \Sequent \Delta, !A$ mung nganggo aksioma lan
+aturan~\Log{G3c}, lan kita bakal wis nuduhake yen saben sekuen awujud
+iki duwe !!a{proof} ing~\Log{G3c}. Nanging iki mokal, amarga \Log{G3c}
+sahih lan mung bisa !!{prove} sekuen sing bener ing saben !!{structure}.
+Yen $\Gamma = \Delta = \emptyset$ lan $!A \ident \lfalse$, \Log{G3c}
+kudu bisa !!{prove}, upamane, sekuen $\quad \Sequent \lfalse$, kamangka
+sekuen iki ora bisa dibuktekake ing sistem kasebut.
+\end{ex}
+
+Saiki kita menehi bukti induktif yen pelemahan minangka aturan
+admisibel ing~\Log{G3c}. Malah ana asil sing rada luwih kuwat, kaya
+sing dituduhake argumentasi intuisi mau: kanthi nambahake $!A$ ing
+sisih tengen saben sekuen ing~$\pi$, kita ora ngowahi struktur
+!!{proof}; mligine, dhuwure ora mundhak. Amarga iki wigati, kita
+menehi dhefinisi dhewe.
+
+\begin{defn}
+Aturan~$R$,
+\[
+\AxiomC{$S_1$}
+\AxiomC{$\dots$}
+\AxiomC{$S_n$}
+\RightLabel{$R$}
+\TrinaryInfC{$S$}
+\DisplayProof
+\]
+diarani \emph{admisibel kanthi njaga !!{height}} (utawa
+\emph{admisibel-!!{hp}}) ing sistem yen, saben $\Proves[h_i] S_i$
+kanggo $i = 1$, \dots,~$n$, uga $\Proves_m S$ kanthi
+$m = \max(h_1, \dots, h_n)$.
+\end{defn}
+
+Gathekna yen supaya aturan admisibel kanthi njaga !!{height}, cukup
+yen saben premis~$S_i$ duwe !!{proof}s~$\pi_i$ kanthi
+!!{height}~$h_i = \pheight{\pi_i}$, ana !!a{proof}~$\pi$ kanggo
+kesimpulan kanthi !!{height}~$\pheight{\pi}$ sing ora ngluwihi nilai
+paling gedhe saka~$h_i$. Mligine, yen mung ana siji premis~$S_1$,
+cukup yen $\pheight{\pi} \le \pheight{\pi_1}$. Kanggo
+$\RightR{\Weakening}$ lan $\LeftR{\Weakening}$, malah
+$\pheight{\pi} = \pheight{\pi_1}$, nanging pepadhan iki ora wajib.
+
+\begin{prop}\ollabel{prop:weak-G3c-adm}
+Aturan $\RightR{\Weakening}$ lan $\LeftR{\Weakening}$ saka \Log{G1c}
+admisibel kanthi njaga !!{height} ing~\Log{G3c}.
+\end{prop}
+
+\begin{proof}
+  Kita kudu nuduhake yen $\Log{G3c} \Proves \Gamma \Sequent \Delta$
+  kanthi !!{proof}~$\pi$ sing duwe !!{height}~$\pheight{\pi} = n$,
+  mula ana \Log{G3c}-!!{proof} $\pi'$ kanggo $\Gamma \Sequent \Delta,
+  !A$ kanthi $\pheight{\pi'} = n$. Dhisik, pilih eigenparameter sing
+  seger tumrap formula tambahan kanthi ngganti jeneng ing subwit
+  kaya sing wis dijlentrehake. Kita mbuktekake kanthi induksi
+  tumrap~$n$. Yen $n=0$, $\pi$ mung aksioma $\Gamma \Sequent \Delta$
+  (yaiku ana formula atomik $!C$ ing $\Gamma$ lan~$\Delta$, utawa ana
+  falsitas ing anteseden), lan $\Gamma \Sequent \Delta, !A$ uga
+  aksioma. Yen $n = \pheight{\pi} >0$, !!{proof}~$\pi$ duwe inferensi
+  pungkasan. Kita misahake kasus miturut aturan sing digunakake.
+  Kita mung menehi siji conto: upamane inferensi pungkasan nggunakake
+  $\RightR{\land}$. Mula $\Delta = \Delta', !B \land !C$, lan
+  sub-!!{proof}s langsung $\pi_1$ lan~$\pi_2$ saka inferensi pungkasan
+  duwe sekuen pungkasan $\Gamma \Sequent \Delta', !B$ lan
+  $\Gamma \Sequent \Delta', !C$, manut urutane. Kanthi tembung liya,
+  $\pi$ duwe wujud iki:
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_1$}
+  \Deduce$\Gamma \fCenter \Delta', !B$
+  \AxiomC{}
+  \RightLabel{$\pi_2$}
+  \Deduce$\Gamma \fCenter \Delta', !C$
+  \RightLabel{\RightR{\land}}
+  \BinaryInf$\Gamma \fCenter \Delta', !B \land !C$
+  \DisplayProof
+  \]
+  Kita uga duwe $n = \max(\pheight{\pi_1}, \pheight{\pi_2}) + 1$.
+  Dadi $\pheight{\pi_1} < n$ lan $\pheight{\pi_2} < n$, lan
+  hipotesis induksi bisa ditrapake: ana !!{proof}s $\pi_1'$ lan~$\pi_2'$
+  kanggo $\Gamma \Sequent \Delta', !B, !A$ lan $\Gamma \Sequent
+  \Delta', !C, !A$. Kanthi aturan $\RightR{\land}$, kita oleh
+  !!a{proof}~$\pi'$ kanggo $\Gamma \Sequent \Delta', !B \land !C, !A$:
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_1'$}
+  \Deduce$\Gamma \fCenter \Delta', !B, !A$
+  \AxiomC{}
+  \RightLabel{$\pi_2'$}
+  \Deduce$\Gamma \fCenter \Delta', !C, !A$
+  \RightLabel{\RightR{\land}}
+  \BinaryInf$\Gamma \fCenter \Delta', !B \land !C, !A$
+  \DisplayProof
+  \]
+  Kita duwe $\pheight{\pi'} = \max(\pheight{\pi_1'}, \pheight{\pi_2'})
+  + 1 = \max(\pheight{\pi_1}, \pheight{\pi_2}) + 1 = \pheight{\pi}$.
+\end{proof}
+
+\olref{prop:weak-G3c-adm} migunani banget. Kita ngenalake notasi
+kanggo ngetrapake asil iki bola-bali: yen $\pi$ minangka !!a{proof}
+kanggo~$\Gamma \Sequent \Delta$, mula $\pi[\Pi \Sequent \Lambda]$
+minangka asil ngetrapake admisibilitas pelemahan kiwa kanggo kabeh
+!!{formula}s ing~$\Pi$ lan admisibilitas pelemahan tengen kanggo kabeh
+!!{formula}s ing~$\Lambda$. Iki minangka !!a{proof} kanggo
+$\Gamma, \Pi \Sequent \Delta, \Lambda$.
+
+\end{document}

@@ -1,0 +1,31 @@
+{
+  "schema": "jv-runtime-attribution/1",
+  "utc": "2026-09-29T00:01:46.028942+00:00",
+  "scope": "Primary main-task runtime model/effort metadata only; does not infer undocumented worker attribution or per-file authorship.",
+  "thread_id": "01a06cce-4ce6-7942-911a-6dc573cb59ad",
+  "database_current": {
+    "provider": "openai",
+    "model": "gpt-6-sol",
+    "effort": "ultra"
+  },
+  "source_filename": "rollout-2026-09-04T16-24-14-01a06cce-4ce6-7942-911a-6dc573cb59ad.jsonl",
+  "source_bytes_at_start": 693743214,
+  "bytes_read": 693743214,
+  "turn_context_records": 219,
+  "changes": [
+    {
+      "timestamp": "2026-09-04T14:24:16.479Z",
+      "model": "gpt-5.6-sol",
+      "effort": "ultra",
+      "primary_byte_offset": 112400,
+      "primary_line_sha256": "8a62eec2eaa51af1b513954a8b5a26ea10e274f031633eeefd5833cd51863a48"
+    },
+    {
+      "timestamp": "2026-09-25T01:19:42.517Z",
+      "model": "gpt-6-sol",
+      "effort": "ultra",
+      "primary_byte_offset": 505326283,
+      "primary_line_sha256": "b454f6c5c4ceb986c90549c31177e8f3b24d563030b895c174e07d05a8043435"
+    }
+  ]
+}

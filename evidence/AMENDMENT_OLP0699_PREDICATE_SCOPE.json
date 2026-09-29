@@ -1,0 +1,60 @@
+{
+  "schema": "jv-checkpoint-amendment/1",
+  "status": "SEALED_IN_PROGRESS",
+  "prior_checkpoint": "CHECKPOINT-DRAFT-OLP0701.json",
+  "prior_checkpoint_sha256": "270a48c4ab44d67175eae6e55cf47c52a69134d5b53f245983b8408f491c8b15",
+  "unit_id": "OLP-0699",
+  "frozen_source_sha256": "5563118c0574c226f19802adfbafc206db1df4d36ced8f3c841814a2f42f3d3a",
+  "historical_target_sha256": "720be6d5318b38e54dfa21f3eb68d6c08fa9708522cb5823e10a00615349fb9b",
+  "current_target_sha256": "1b847d71a81598cfe2b8c4dca04a6cbaee5717c3c5bd51d24571a1e3fcc02f8f",
+  "source_issue_ids_added": [
+    "OLPL-695"
+  ],
+  "prior_hash_links_changed": {
+    "QA.json": {
+      "before": "5ac1f3ae8cec0fb538ec3f5f30369b9b43dd8caec46ad5190d4dc9e54dc41226",
+      "after": "5eea56958f68079edab23032438e39a61e643518108e9f2a769b9145ca880236"
+    },
+    "SEGMENT_CANON_USE.jsonl": {
+      "before": "e5e2d40f524cd4ce7a21a1c66e455520df9bb14a59937103793c7a4ed2cc1e3b",
+      "after": "5a9fcc6562dc1377fece3c032014e583a5dec1cdc30aee0dd7b82eeb64499b34"
+    },
+    "SEMANTIC_REVIEW.json": {
+      "before": "36b050234a6dbf024c7c52a4699a771fdbc0e02d6a8838db28002e4650dfb9e5",
+      "after": "b39f6af6b78076eb6a81a75e3ace0c2cdcad8d216c6c9c7c2b297e79e69a9d67"
+    },
+    "SOURCE_CORRECTIONS.jsonl": {
+      "before": "ef46ae869fe2102d69927b60d6ca0ec389f6d1c3a509ac0b9e6ecdb4ae5434ad",
+      "after": "41a35c209207691169a39b9b2a3344d498608f8f333ef46cc2ac30910e0b70b6"
+    },
+    "SOURCE_ISSUES_OLP0699.json": {
+      "before": "acf9c9a0bacf8900bfe997650fdf8241048130c092ae36692577202398834b01",
+      "after": "addf8d639344aac4873a3eb36949db4705fe06a5d34346a0ad03aef24b5bb80b"
+    },
+    "WORKLOG.md": {
+      "before": "1f4349aad59aff2cc69758c6e29964302a5244278db26b50ec840b7b59c329d7",
+      "after": "806f42968b3edbae7b96db0134fce7d2e508359fc17d98d4c2fc1cb0eb67a682"
+    }
+  },
+  "unchanged_prior_hash_links_verified": 1391,
+  "source_view_file": "work/olp0699_source_view_v182.py",
+  "source_view_sha256": "a897f206fc0f325e5b0bf51d72e0ab02c832d97d399271b082c696498cd47452",
+  "changed_unit_qa_file": "CHANGED_UNIT_QA_OLP0699_PREDICATE_SCOPE.json",
+  "changed_unit_qa_sha256": "20e968c0261aa17471890cb72b2ebf42fa9bfd55ac7a22538275acd9d8897350",
+  "focused_qa": {
+    "schema": "jv-batch-qa/1",
+    "utc": "2026-09-29T00:21:03.104816+00:00",
+    "checked_units": 1,
+    "structural_pass_units": 1,
+    "total_units": 722,
+    "segments": 14,
+    "translated_segments": 8,
+    "failures": 0,
+    "semantic_reviewed_units": 1,
+    "build": "see BUILD_SETS.json",
+    "release_ready": false
+  },
+  "pre_amendment_archive": "C:\\interlanguage-task-state\\openlogic-jv-Latn-ID\\work\\olp0699_predicate_scope_pre_amendment",
+  "next_unit": "OLP-0702",
+  "goal_status": "active"
+}

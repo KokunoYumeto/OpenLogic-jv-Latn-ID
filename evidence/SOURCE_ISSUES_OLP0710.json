@@ -1,0 +1,32 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0710",
+  "source_path": "content/proof-theory/sequent-calculus/rules-mG3i.tex",
+  "source_sha256": "47a378e14f141af32aa2dd70a066166b587f0c649d4bfaed5921e96789af73d4",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-722",
+      "location": "universal-left premise",
+      "finding": "The retained universal formula has no separator before Gamma.",
+      "proposed_resolution": "Restore the comma between the principal formula and the remaining context.",
+      "source_line": 57
+    },
+    {
+      "id": "OLPL-723",
+      "location": "minimal-variant caption",
+      "finding": "The mG3i caption compares copied mG1 variants rather than the displayed calculus.",
+      "proposed_resolution": "Name the matching mG3m/mG3i comparison while retaining the exact contextual falsity initial family removed.",
+      "source_line": 81
+    },
+    {
+      "id": "OLPL-724",
+      "location": "mG3i table identifier",
+      "finding": "The table reuses the classical G3c label.",
+      "proposed_resolution": "Give it the distinct tab:mG3i identifier, preserving the other rule tables.",
+      "source_line": 84
+    }
+  ],
+  "translation_treatment": "Three explicit corrections are recorded in SOURCE_ISSUES_OLP0710.json and the corrected source view; the frozen English remains intact.",
+  "no_source_mutation": true
+}

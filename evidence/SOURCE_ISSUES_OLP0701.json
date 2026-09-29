@@ -1,0 +1,60 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0701",
+  "source_path": "content/proof-theory/sequent-calculus/invertibility.tex",
+  "source_sha256": "08233bea6d0d9dedcf1d7ed436524c5d36d87a89ba9ea28226f2caefe8c08023",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-688",
+      "location": "invertibility definition",
+      "finding": "The unbounded definition uses an undeclared hi, and the height-preserving definition uses n simultaneously as premise count and proof-height bound.",
+      "proposed_resolution": "Use unbounded provability for ordinary inversion and a separate height bound h while retaining n as the premise count.",
+      "source_line": 23
+    },
+    {
+      "id": "OLPL-689",
+      "location": "propositional inversion proof scope",
+      "finding": "The opening proof claim says any G3c rule, although the lemma lists only propositional rules and existential-right/universal-left are not invertible in this sense.",
+      "proposed_resolution": "Restrict the proof opening to the propositional rules covered by the lemma.",
+      "source_line": 64
+    },
+    {
+      "id": "OLPL-690",
+      "location": "inversion and contraction axiom base cases",
+      "finding": "The base-case descriptions classify all G3c axioms as atomic identity, omitting falsity-left; contraction can also contract falsity itself on the left.",
+      "proposed_resolution": "Qualify the identity descriptions, include preserved antecedent falsity in inversion and contraction, including contracted falsity, and recall both axiom cases for quantified inversion.",
+      "source_line": 73
+    },
+    {
+      "id": "OLPL-691",
+      "location": "nonprincipal conjunction inversion example",
+      "finding": "The text after applying induction still displays the undecomposed conjunction, while the following diagrams correctly use its two components.",
+      "proposed_resolution": "Use A and B separately in both textual induction-result sequents.",
+      "source_line": 117
+    },
+    {
+      "id": "OLPL-692",
+      "location": "principal universal-right contraction",
+      "finding": "The first universal contraction diagram is labelled existential-right despite introducing a universal formula.",
+      "proposed_resolution": "Use the universal-right label in that diagram.",
+      "source_line": 326
+    },
+    {
+      "id": "OLPL-693",
+      "location": "principal existential-right contraction",
+      "finding": "The witness instance B(t) loses its argument in the induction-result text and subsequent premise diagram.",
+      "proposed_resolution": "Retain B(t) in both places, matching the original existential premise and the reapplied rule.",
+      "source_line": 367
+    },
+    {
+      "id": "OLPL-694",
+      "location": "quantified inversion freshness",
+      "finding": "The example chooses a constant fresh only for Delta, although the lemma also requires freshness for Gamma and the quantified formula; internal eigenparameters may otherwise conflict with the inserted instance.",
+      "proposed_resolution": "Preserve the full lemma freshness condition and rename existing eigenparameters within their corresponding subtrees fresh for the chosen constant before induction.",
+      "source_line": 192
+    }
+  ],
+  "translation_treatment": "OLPL-688..694 are documented in SOURCE_ISSUES_OLP0701.json and work/olp0701_source_view.py; all corrected bounds, cases, instances and rule names are applied in the target while frozen English remains unchanged.",
+  "no_source_mutation": true
+}

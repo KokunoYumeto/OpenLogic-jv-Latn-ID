@@ -1,0 +1,40 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0699",
+  "source_path": "content/proof-theory/sequent-calculus/interpretation-rules.tex",
+  "source_sha256": "5563118c0574c226f19802adfbafc206db1df4d36ced8f3c841814a2f42f3d3a",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-684",
+      "location": "exclusive-or left rule",
+      "finding": "The second XOR rule has its principal formula on the left but is labelled RightR.",
+      "proposed_resolution": "Label the second rule LeftR of XOR; preserve its premises and conclusion.",
+      "source_line": 49
+    },
+    {
+      "id": "OLPL-685",
+      "location": "weakening soundness explanation",
+      "finding": "The paragraph reverses sequent truth conditions by citing a false right formula or true left formula.",
+      "proposed_resolution": "Use a false left formula or true right formula, as required by the section's explicit sequent semantics.",
+      "source_line": 86
+    },
+    {
+      "id": "OLPL-686",
+      "location": "necessity examples for contraction and weakening",
+      "finding": "Unrestricted schematic formulas make the necessity claims false: falsity or compound instances can have proofs without the claimed structural step, and a compound A can itself be principal.",
+      "proposed_resolution": "State at the start of the examples that their schematic formulas are distinct atoms; preserve the displayed general simulations and diagrams.",
+      "source_line": 93
+    },
+    {
+      "id": "OLPL-695",
+      "source_line": 93,
+      "location": "structural-rule necessity example scope",
+      "finding": "The frozen syntax definition explicitly includes falsity among atomic formulas. The earlier atomic qualification still allows falsity as a counterexample to contraction necessity.",
+      "proposed_resolution": "Use distinct predicate atoms for the necessity examples, excluding logical constants; preserve the general proof simulations and diagrams.",
+      "resolution_status": "bounded_correction_applied"
+    }
+  ],
+  "translation_treatment": "OLPL-684..686 are documented in SOURCE_ISSUES_OLP0699.json and work/olp0699_source_view.py. The target repairs the XOR label, truth-side reversal and atomic scope; frozen English is unchanged. OLPL-695 tightens the necessity-example scope to distinct predicate atoms, using the explicit frozen definition of atomic falsity.",
+  "no_source_mutation": true
+}

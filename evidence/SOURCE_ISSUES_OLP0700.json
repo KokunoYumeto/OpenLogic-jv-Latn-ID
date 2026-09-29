@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0700",
+  "source_path": "content/proof-theory/sequent-calculus/introduction.tex",
+  "source_sha256": "e924a772dc7189fa1354d7d0ae3b78120cf8fac7f9ab6d0534a39afb85efa161",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-687",
+      "location": "context union explanation",
+      "finding": "The two contexts have just been defined as multisets, but their union is described as combining two sequences.",
+      "proposed_resolution": "Say two multisets; preserve additive multiplicities and order independence.",
+      "source_line": 60
+    }
+  ],
+  "translation_treatment": "OLPL-687 is recorded in SOURCE_ISSUES_OLP0700.json and work/olp0700_source_view.py: use the two multisets actually being combined, preserving all notation and frozen English.",
+  "no_source_mutation": true
+}

@@ -1,0 +1,144 @@
+% Part: proof-theory
+% Chapter: sequent-calculus
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{seq}{int}
+
+\olsection{Pambuka}
+
+Kalkulus sekuen minangka sistem !!{proof} sing dikenalake dening
+Gerhard Gentzen ing taun 1930-an. Ancas utamane dudu dadi cara
+praktis kanggo !!{proving} samubarang. Gentzen nggunakake sistem
+iki supaya bisa mbuktekake asil tartamtu ngenani struktur sing
+bisa diduweni !!{proof}s lan sipat-sipate. Pitakon kaya mangkono
+yaiku pitakon sing ditliti ing teori bukti.
+
+Kalkulus sekuen tumindak marang \emph{sekuen}, manut jenenge,
+dudu marang !!{formula}s. Sekuen minangka pasangan urutan utawa
+multiset !!{formula}s. Sistem asli Gentzen (\Log{LK} lan \Log{LJ})
+nggunakake urutan; saiki ahli teori bukti luwih milih multiset.
+Multiset padha karo himpunan, nanging multiset bisa ngemot
+!!{element} luwih saka sapisan. Nanging kaya ing himpunan,
+urutan !!{element}s ora wigati. Dadi ekspresi $\{!A, !A, !B\}$
+lan $\{!A, !B, !A\}$ nggambarake multiset sing padha, nanging
+multiset kasebut beda saka $\{!A, !B\}$ lan $\{!A, !A, !B, !B\}$,
+amarga loro sing pungkasan ngemot cacah $!A$ lan $!B$ sing beda
+saka multiset kapisan.
+
+Lumrahe, multiset !!{formula}s ing teori bukti ditulis nganggo
+aksara Yunani gedhe. Dadi nalika kita nulis $\Gamma$, $\Delta$,
+$\Pi$, $\Lambda$, utawa $\Theta$, iki dimaksudake minangka
+multiset !!{formula}s ing logika sing lagi digunakake. Uga
+lumrahe, ahli teori bukti ora nulis $\tuple{\Gamma, \Delta}$,
+nanging misahake rong komponen nganggo tandha sekuen;
+kita nggunakake~$\Sequent$.
+
+\begin{defn}[Sekuen]
+\emph{Sekuen} minangka ekspresi awujud
+\[
+\Gamma \Sequent \Delta
+\]
+kanthi $\Gamma$ lan $\Delta$ minangka multiset !!{formula}s winates
+sing bisa uga kosong. $\Gamma$ diarani \emph{anteseden}, dene
+$\Delta$ diarani \emph{sukseden}.
+\end{defn}
+
+Upamane $!G$~minangka konjungsi !!{formula}s ing~$\Gamma$
+(konjungsi kosong dianggep~$\ltrue$), lan $!D$~minangka
+disjungsi !!{formula}s ing~$\Delta$ (disjungsi kosong
+dianggep~$\lfalse$). Mula sekuen $\Gamma \Sequent \Delta$ bener
+(ing struktur~$\Struct{M}$) yen lan mung yen $!G \lif !D$ bener.
+Ing logika klasik, iki padha karo nyatakake yen ana siji
+!!{formula}s ing~$\Gamma$ sing salah, utawa ana siji
+!!{formula}s ing~$\Delta$ sing bener.
+
+Yen $\Gamma$ minangka multiset !!{formula}s, kita nulis
+$\Gamma, !A$ (utawa $!A, \Gamma$) kanggo asil nambahake
+$!A$ ing~$\Gamma$. Yen $\Delta$ uga multiset !!{formula}s,
+maka $\Gamma, \Delta$ minangka gabungan multiset saka rong
+multiset kasebut---yen $\Gamma$ ngemot $!A$ kanthi
+\emph{multiplikitas}~n (yaiku ngemot $n$ salinan~$!A$), lan
+$\Delta$ ngemot kanthi multiplikitas~$m$, mula
+$\Gamma, \Delta$ ngemot $!A$ kanthi multiplikitas~$n+m$.
+Yen multiset ing salah siji sisih sekuen kosong, lumrahe
+kita mung ninggalake papan kosong. Upamane, $\Sequent !A$
+yaiku sekuen kanthi anteseden kosong lan sukseden sing
+ngemot $!A$ kanthi multiplikitas~$1$.
+
+!!^a{proof} ing kalkulus sekuen minangka wit sekuen: sekuen
+paling ndhuwur (utawa sekuen awal) minangka aksioma ing
+sistem sing digunakake; yen sekuen ana ing sangisore siji
+utawa rong sekuen liyane, sekuen kasebut kudu dijupuk kanthi
+bener saka aturan inferensi sistem. Dhisik kita bakal
+ngrembug rong sistem sekuen kanggo logika klasik,
+$\Log{G1c}$ lan~$\Log{G3c}$. Aksioma lan aturane ana ing
+\cref{pt:seq:int:tab:G1c,pt:seq:int:tab:G3c}.
+\oliflabeldef{fol:seq::chap}{ (Sistem asli Gentzen \Log{LK}
+diterangake ing \olref[fol][seq][]{chap}.)}{}
+
+\subfile{rules-G1c}
+\subfile{rules-G3c}
+
+Ana prabedan alus antarane sistem iki, lan prabedan kasebut
+njalari sipat teori buktine beda. \Log{G1c} duwe aksioma
+$!A \Sequent !A$ tanpa !!{formula}s liyane. \Log{G3c} duwe
+aksioma awujud $!C, \Gamma \Sequent \Delta, !C$, kanthi
+!!{formula}s ``sisih'' sembarang ing $\Gamma$ lan~$\Delta$,
+nanging !!{formula}~$!C$ sing ana ing loro sisih kudu
+\emph{atomik}. \Log{G1c} duwe rong versi saben aturan
+$\LeftR{\land}$ lan $\RightR{\lor}$, dene \Log{G3c} mung
+duwe siji versi saben aturan. \Log{G1c} uga duwe ``aturan
+struktural'' tambahan, yaiku ``kontraksi''
+(\LeftR{\Contraction}, \RightR{\Contraction}) lan
+``pelemahan'' (\LeftR{\Weakening}, \RightR{\Weakening}).
+
+Sistem \Log{G1c} lan \Log{G3c} sahih lan jangkep tumrap
+logika klasik. Kanthi tembung liya, saben sekuen sing
+!!{provable} ing sistem iki bener ing saben !!{structure},
+lan saben sekuen sing bener ing saben !!{structure} duwe
+!!a{proof}. Dadi pitakon \emph{apa} sekuen duwe !!a{proof}
+uga bisa diwales nganggo cara logika liyane, upamane cara
+teori model. Amarga loro sistem !!{prove} persis sekuen
+sing bener ing saben !!{structure}, mligine loro sistem
+mbuktekake sekuen sing padha.
+
+Nanging teori bukti ora mung ngrembug \emph{apa} samubarang
+bisa dibuktekake, nanging uga \emph{kepiye} carane.
+Ahli teori bukti ngrembug pitakon kaya ``Apa aturan
+tartamtu mesthi bisa disingkiri?,'' ``Apa aturan iki
+bisa ditambahake ing sistem tanpa ndadekake sekuen
+anyar bisa dibuktekake?,'' utawa ``Apa !!{proof}s ing
+siji sistem bisa diowahi dadi !!{proof}s ing sistem
+liyane?'' Yen wangsulane ``iya,'' buktine asring
+nggunakake induksi tumrap kerumitan !!{proof}s,
+utawa, kanthi ekuivalen, induksi tumrap struktur
+!!{proof}s. Asile ora mung bukti tumrap pratelan
+kasebut (upamane, yen \Log{G1c} mbuktekake sekuen,
+maka \Log{G3c} mbuktekake sekuen sing padha), nanging
+uga prosedur (upamane, ngowahi !!{proof}s ing~\Log{G1c}
+dadi !!{proof}s ing~\Log{G3c}).
+
+Asil utama ing teori bukti yaiku \emph{teorema eliminasi
+potongan}. Teorema iki nuduhake yen kita bisa nambahake
+aturan potongan
+\[
+\Axiom$\Gamma \fCenter \Delta, !A$
+\Axiom$!A, \Pi \fCenter \Lambda$
+\RightLabel{\Cut}
+\BinaryInf$\Gamma, \Pi \fCenter \Delta, \Lambda$
+\DisplayProof
+\]
+ing sistem sekuen tanpa ngowahi sekuen endi sing
+!!{provable}. Kajaba iku, buktine menehi cara ngowahi
+saben !!{proof} sing nggunakake aturan \Log{G1c}
+(utawa \Log{G3c}) bebarengan karo \Cut{} dadi bukti
+sing mung nggunakake aturan \Log{G1c} (utawa \Log{G3c}).
+Kanthi tembung liya, prosedur iki ``ngilangi'' aturan
+\Cut{} saka !!{proof}s sing nggunakake aturan kasebut;
+mula teorema iki diwenehi jeneng mangkono.
+
+\end{document}

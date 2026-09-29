@@ -2,7 +2,7 @@
   "schema": "jv-semantic-review/1",
   "reviewer": "Codex, same author; no independent or human review claimed",
   "date": "2026-09-26",
-  "scope": "All 6,503 translated paragraph blocks in OLP-0001 through OLP-0697; 3,780 unchanged formal/structural blocks classified separately. OLSIZ-001 through OLSIZ-010, OLPL-001 through OLPL-040, OLPL-044 through OLPL-062, OLPL-133 through OLPL-135 and MGR-JV-0118-FRESHNESS-20260920 are applied in their affected targets; the proposed OLSIZ-011 remains retracted after exact-byte inspection. Paragraph analysis normalizes CRLF/LF; exact full-file hashes remain raw-byte hashes.",
+  "scope": "All 6,603 translated paragraph blocks in OLP-0001 through OLP-0710; 3,840 unchanged formal/structural blocks classified separately. OLSIZ-001 through OLSIZ-010, OLPL-001 through OLPL-040, OLPL-044 through OLPL-062, OLPL-133 through OLPL-135 and MGR-JV-0118-FRESHNESS-20260920 are applied in their affected targets; the proposed OLSIZ-011 remains retracted after exact-byte inspection. Paragraph analysis normalizes CRLF/LF; exact full-file hashes remain raw-byte hashes.",
   "method": "Direct source-to-target reading, quantifier/negation/biconditional checks, mathematical-context checks, and selected reverse paraphrases. Automated structure checks are separate.",
   "unit_reviews": [
     {
@@ -7853,6 +7853,192 @@
         "OLPL-677",
         "OLPL-678",
         "OLPL-679"
+      ],
+      "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review."
+    },
+    {
+      "unit_id": "OLP-0698",
+      "status": "pass",
+      "checks": "Compared all twenty-four frozen source blocks directly with the complete target. Checked the G1c-to-G3c conjunction simulation, both biconditional rules, admissibility versus derivability, the empty-initial-sequent nonderivability argument and soundness instance, proof-height bounds and weakening induction diagrams. Verified G3c has atomic identity and falsity-left axioms and freshness side conditions for quantified rules. Eigenparameter renaming is confined to each relevant proof subtree and leaves its lower sequent unchanged. The macro definition confirms Proves_m and Proves[m] render the same bound, so no spurious correction was made. Ordinary specialist terms are provisional, supported for register/borrowing only; this is same-author review, not independent proof certification.",
+      "reverse_sample": "An admissible rule adds no provable end-sequents; a derivable rule has a schematic derivation from its premise shapes. Right weakening is admissible with unchanged proof height after eigenparameters are made fresh, but is not derivable in G3c. Both atomic identity and falsity-left remain axioms after weakening. The repaired left biconditional rule has its principal formula on the left.",
+      "source_sha256": "b23007a09bbf7b4b8390943539aab59ee00277b3af8450b5d07142eaf9d1af10",
+      "translation_sha256": "20e6fa72bc1e39f5e189faee08b2f3d307e6e3b4889f2dd6e763bb837328245f",
+      "source_audit_ids": [
+        "OLPL-680",
+        "OLPL-681",
+        "OLPL-682",
+        "OLPL-683"
+      ],
+      "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review."
+    },
+    {
+      "unit_id": "OLP-0699",
+      "status": "pass",
+      "checks": "Compared all fourteen source blocks with the target. Checked sequent truth on the false antecedent/true succedent convention, implication in both directions, XOR truth and falsity CNFs and rule premises, the NOR task, intuitionistic single-succedent restrictions and both structural examples. G1c has identity and falsity initial sequents; necessity for the displayed schematic examples requires distinct atomic formulas, since compound or falsity instances admit counterexamples to an unrestricted necessity claim. Kept contexts, duplicated disjunctions and all proof steps exact. Academic register and borrowing passages were consulted for prose only; no specialist canon attestation or independent proof certification is claimed. OLPL-695: checked the exact terms-formulas definition, which counts falsity as atomic; restrict the necessity examples to distinct predicate atoms. No canon specialist attestation is added.",
+      "reverse_sample": "Sequent truth means a false antecedent formula or a true succedent formula. Logical G3c rule conclusions match the conjunction of premise truth conditions; structural weakening is sound but its converse fails. XOR has one right and one left rule. The displayed contraction and weakening necessity examples are scoped to distinct atomic schematic formulas. G3c incorporates the structural behavior in axioms and logical rules.",
+      "source_sha256": "5563118c0574c226f19802adfbafc206db1df4d36ced8f3c841814a2f42f3d3a",
+      "translation_sha256": "1b847d71a81598cfe2b8c4dca04a6cbaee5717c3c5bd51d24571a1e3fcc02f8f",
+      "source_audit_ids": [
+        "OLPL-684",
+        "OLPL-685",
+        "OLPL-686",
+        "OLPL-695"
+      ],
+      "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review. One bounded predicate-atom scope amendment OLPL-695."
+    },
+    {
+      "unit_id": "OLP-0700",
+      "status": "pass",
+      "checks": "Compared eighteen frozen blocks with the target. Checked repeated-element examples, finite empty contexts, antecedent/succedent definitions, empty conjunction truth and empty disjunction falsity, classical sequent semantics, additive multiplicities, axiom/rule proof-tree structure, both table references and imports, the conditional LK reference, atomic G3c identity versus unrestricted G1c identity, structural rule names and the exact cut diagram. The term union here combines multisets, not ordered sequences. Kept the general Gentzen attribution and induction/procedure explanation exact. Actually consulted academic register and borrowing passages support language only; specialist sequent and multiplicity senses remain provisional and this is same-author review.",
+      "reverse_sample": "Sequents pair finite formula multisets. Their truth is implication from the conjunction of antecedents to the disjunction of succedents, with truth/falsity for empty sides. Multiset union adds multiplicities. G1c/G3c prove the same classically valid sequents but differ structurally. Cut elimination preserves provability and supplies a transformation procedure.",
+      "source_sha256": "e924a772dc7189fa1354d7d0ae3b78120cf8fac7f9ab6d0534a39afb85efa161",
+      "translation_sha256": "3cade5abb8d7d9857085beb8f5e88aa73bbdf775a0ab9ae7b28625ea2d985404",
+      "source_audit_ids": [
+        "OLPL-687"
+      ],
+      "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review."
+    },
+    {
+      "unit_id": "OLP-0701",
+      "status": "pass",
+      "checks": "Compared all twenty-nine frozen blocks with the target. Checked all eight invertibility clauses and every proof diagram, distinguishing premise count from height bound, propositional versus noninvertible quantifier rules, and identity versus falsity initial sequents. Inversion replaces the designated conjunction occurrence by both components; the textual induction premises now match their diagrams. Height maxima and inequalities are retained exactly. Quantified inversion is stated only for constants fresh for the complete original end-sequent; preliminary eigenparameter subtree renaming handles reapplication of quantified rules. Regular-proof substitution is used as cited, not as an unrestricted substitution claim. Contraction induction ranges over arbitrary formulas and contexts; both identity and falsity survive, including contracted falsity on the left. Universal contraction uses the universal-right rule, and existential contraction retains B(t) throughout. Remaining left-contraction cases remain exercises as in the source. Actually consulted register and borrowing passages support prose, not specialist invertibility attestation or independent proof certification.",
+      "reverse_sample": "Invertibility turns a proof of a rule conclusion into proofs of all its premises; height-preserving inversion does not exceed the original height. Eight propositional G3c rules satisfy this. Universal-right and existential-left inversion use a fully fresh constant after eigenparameter renaming. Contraction preserves height by induction: invert compound principal formulas, contract their components and reapply the rule; retained existential formulas require no inversion. Identity and falsity axioms both form base cases.",
+      "source_sha256": "08233bea6d0d9dedcf1d7ed436524c5d36d87a89ba9ea28226f2caefe8c08023",
+      "translation_sha256": "7186c78913bcc008365b79ec15627fdb41566de96a2819555750db3f15e9ec53",
+      "source_audit_ids": [
+        "OLPL-688",
+        "OLPL-689",
+        "OLPL-690",
+        "OLPL-691",
+        "OLPL-692",
+        "OLPL-693",
+        "OLPL-694"
+      ],
+      "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review."
+    },
+    {
+      "unit_id": "OLP-0702",
+      "status": "pass",
+      "checks": "Compared all twenty-six frozen blocks and the complete target. Checked backward right-implication matching against the actual antecedent, every intermediate sequent and weakening branch, the complete schematic G1c derivation and its atomic G3c counterpart. Checked all recursive depth clauses and quantifier bodies, both G1c and G3c identity expansion inductions, copied contexts and each conjunction/contraction step, universal eigenparameter freshness, the valid and invalid alternative rule orders, and the intuitionistic single-succedent distinction. G1c conjunction reconstruction now retains the two context copies through right conjunction and contracts them to the full identity conclusion. The frozen terms-formulas definition confirms falsity is atomic, supporting the earlier predicate-atom amendment and the depth-zero convention. Proper decomposed active formulas have smaller depth; retained quantifier principals and structural steps are not falsely included in a strict depth decrease. Identity axiom descriptions are qualified and all-atoms is a sufficient condition, not a necessity claim. Actually consulted academic-register and borrowing passages guide language only. Specialist proof-theoretic vocabulary remains provisional; same-author review is not independent proof certification.",
+      "reverse_sample": "Backward proof construction matches the antecedent context to the displayed goal. G1c needs explicit weakening and allows schematic formula identities; G3c has atomic identity axioms with contexts and derives general identities by depth induction. The conjunction reconstruction retains duplicated conjunction contexts until contraction, whose conclusion is the full conjunction identity. Quantifier bodies and depth measures use the same subformula. Universal introduction order matters because of freshness. Logical decomposition lowers proper-component depth; structural rules and retained principal copies are excluded from that strict-decrease statement.",
+      "source_sha256": "c19f22b1b416d0cfbc56182056961ac353bee13b6f662e915c3b2699edc36ce8",
+      "translation_sha256": "b5c8c2c49f40afac89365ba2affa2e0bf2f8258edea462861a3481c88098b11e",
+      "source_audit_ids": [
+        "OLPL-696",
+        "OLPL-697",
+        "OLPL-698",
+        "OLPL-699",
+        "OLPL-700",
+        "OLPL-701",
+        "OLPL-702",
+        "OLPL-703",
+        "OLPL-704",
+        "OLPL-705",
+        "OLPL-706"
+      ],
+      "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review."
+    },
+    {
+      "unit_id": "OLP-0703",
+      "status": "pass",
+      "checks": "Compared all fourteen source blocks and the target. Checked both regularity clauses, the constant/eigenparameter disjointness and replacement-term assumptions, capture avoidance through fresh bound variables, multiplicity-preserving context substitution and every quantifier inference. Substitution preserves proof structure and does not add eigenparameters. In regularization, selecting a highest dirty inference permits higher clean eigenparameter rules in its subproof; those are regular and cannot use the selected dirty parameter as an eigenparameter. Globally fresh replacement confines the new parameter to its own subtree, keeps all previously clean rules clean, and reduces the dirty count strictly, possibly by more than one. Strong induction therefore closes the argument. The end-sequent is unchanged by this subtree renaming and proof height stays the same. Academic register and borrowing canon were actually consulted for wording only. Technical senses remain provisional; this is same-author source comparison, not independent mathematical certification. OLPL-712: checked the primary rule definition's closed-term instance convention; require a closed replacement term. Regularization and invertibility applications use constants and satisfy it. Existing term katutup choices were consulted for continuity, without new specialist attestation.",
+      "reverse_sample": "A regular proof uses each eigenparameter once and only above its own rule. Capture-avoiding substitution of a noneigenparameter constant by a term containing no eigenparameters preserves regularity and context multiplicities. Any proof becomes regular with the same tree by renaming a highest dirty eigenparameter to a globally fresh constant; higher clean rules may remain in its subproof and the total number of dirty rules strictly decreases.",
+      "source_sha256": "a27d60734d10b75dad7ff081448ddad7036694cdb489b2a0cfa8c97d002bc480",
+      "translation_sha256": "07ec616e6a773b3d5f2e0f89eb61074e3d7fe6c2761311af2a45ed9f6c5f087a",
+      "source_audit_ids": [
+        "OLPL-707",
+        "OLPL-708",
+        "OLPL-709",
+        "OLPL-710",
+        "OLPL-711",
+        "OLPL-712"
+      ],
+      "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review. One bounded closed-term qualification OLPL-712."
+    },
+    {
+      "unit_id": "OLP-0704",
+      "status": "pass",
+      "checks": "Read the full five-block source and checked the translated table. Identity and falsity axioms, four structural rules, paired conjunction/disjunction variants, shared contexts, implication side positions and all quantifier instances remain exact. The caption retains the universal-right/existential-left eigenparameter freshness condition and the multiset nature of both contexts. Table label and hierarchy are unchanged. Canon borrowing/register passages support the localized labels and caption grammar only; no new source correction or independent proof certification is claimed.",
+      "reverse_sample": "G1c has identity and falsity axioms, weakening and contraction on both sides, and the displayed classical logical rules. The eigenparameter for universal-right and existential-left may not occur in the conclusion; both contexts are formula multisets.",
+      "source_sha256": "42798a4af1070b1707e4824968544a1e71608c43c54a4068014872c78e571150",
+      "translation_sha256": "362af2a1d3d377d9a8b417b2429d5efbd3ab45e6067605ae69bebc0791172609",
+      "source_audit_ids": [],
+      "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review."
+    },
+    {
+      "unit_id": "OLP-0705",
+      "status": "pass",
+      "checks": "Read the entire five-block G1i source and compared every rule with its single-succedent restriction. Right weakening starts from an empty succedent; right contraction is absent; left implication, conjunction/disjunction variants and both quantified side conditions remain exact. Minimal G1m removes right weakening and the displayed falsity-to-empty-sequent axiom, while retaining identity including falsity identity. Checked the duplicate table label against the G1c table and the classical introduction reference, which remains correctly G1c. The stale section comment is a preserved source-comment exception. Canon passages support headings/caption wording only; technical senses are provisional and there is no independent proof certification.",
+      "reverse_sample": "G1i has at most one formula in each succedent, no right contraction, and eigenparameter freshness for universal-right/existential-left. G1m removes right weakening and the falsity-left initial axiom, rather than deleting all sequents beginning with falsity. The G1i table has its own identifier.",
+      "source_sha256": "b16548e594dc5a0a414c919e26078d474488c3186487c7cbdce170fb23035b7b",
+      "translation_sha256": "cd29f31c6dc31946cee3c8c1e96b39c31674867534fcc2069d67dcd5fea0b45d",
+      "source_audit_ids": [
+        "OLPL-713",
+        "OLPL-714"
+      ],
+      "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review."
+    },
+    {
+      "unit_id": "OLP-0706",
+      "status": "pass",
+      "checks": "Read the full frozen five-block table. Compared the two independent contexts in right conjunction, left disjunction and left implication: their conclusions concatenate both antecedent and succedent multisets, whereas the unary rules retain their displayed contexts. Both weakening and contraction directions, the alternative conjunction/disjunction rules, and all quantifier instances are exact. Universal-right and existential-left retain constant freshness relative to the whole conclusion. The stale G1c section comment is an unchanged source-comment exception. Actual canon consultation supports native explanatory register and adapted borrowing only, not specialist logic senses or independent mathematical certification.",
+      "reverse_sample": "G2c combines the independently supplied contexts of the two premises in its binary rules. The constant in universal-right and existential-left must not occur in the conclusion sequent; both context letters denote formula multisets.",
+      "source_sha256": "893ca1fbed732661a22f9c3f1bb68c3d39e38174af37fb1a316fc20a62facb75",
+      "translation_sha256": "405c0d7715a49ddfc39ebb2205bd7f4c3966ec1991b487ab59002500ce466276",
+      "source_audit_ids": [],
+      "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review."
+    },
+    {
+      "unit_id": "OLP-0707",
+      "status": "pass",
+      "checks": "Read all five frozen source blocks and every inference. G3c has contextual atomic identity and contextual falsity initials, no displayed structural rules, combined left conjunction and right disjunction components, shared binary contexts, and retained universal-left/existential-right principal copies. The missing comma between the universal principal formula and Gamma is a notation defect, repaired without changing the rule. Universal-right/existential-left retain the fresh constant condition; atomicity qualifies C in identity, rather than all context formulas. Consulted register and borrowing sources support the caption language only. No independent proof certification or full-reader build is asserted.",
+      "reverse_sample": "G3c contexts are formula multisets. Identity uses an atomic C. Universal-left retains both its instance and its principal quantified formula; the latter is separated from Gamma. Fresh constants in the two eigenparameter rules cannot occur in the conclusion.",
+      "source_sha256": "0beb76005abcb4f20109400d18ae1d632e7126bd6dea43c20c9f42d114c9664d",
+      "translation_sha256": "ba85cdce81136dfd4c4ba53d209ba21f987e407a4594262d031b8573259e31b7",
+      "source_audit_ids": [
+        "OLPL-715"
+      ],
+      "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review."
+    },
+    {
+      "unit_id": "OLP-0708",
+      "status": "pass",
+      "checks": "Read the entire frozen G3i table and compare with the already read G1i and G3c tables. G3i explicitly permits at most one succedent formula, yet the printed right-disjunction premise has both A and B. Replace that rule by the two alternative unary rules, from Gamma to A and from Gamma to B, each concluding A or B; these match the intuitionistic G1i alternatives while retaining G3 shared contexts. Retained left negation and implication principal copies, contextual atomic identity, arbitrary empty/singleton Delta, fresh universal-right and existential-left constants, and all remaining diagrams are exact. The universal-left retained principal formula needs its comma. Removing this table's contextual falsity initials defines the matching G3m variant; the source's G1 names incorrectly describe another table. Its identity axiom remains even when C is falsity. Give the table its distinct G3i identifier. Native canon passages support wording and borrowing only; no specialist attestation or independent whole-calculus proof certification is claimed.",
+      "reverse_sample": "G3i has an empty or singleton succedent. Its two alternative right-disjunction introductions start with A alone or B alone. G3m removes the displayed falsity-left initial sequents from G3i; it retains identity. Eigenparameters are fresh relative to the conclusion, and C in identity is atomic.",
+      "source_sha256": "3b754ac3aadeb92362d6eeb398cfa914e2a757e079d5305f3994f938e0ff6933",
+      "translation_sha256": "9e34212fcad1ac295a59384ee285e002eefb1efa64a6825fa80ca49f85513e37",
+      "source_audit_ids": [
+        "OLPL-716",
+        "OLPL-717",
+        "OLPL-718",
+        "OLPL-719"
+      ],
+      "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review."
+    },
+    {
+      "unit_id": "OLP-0709",
+      "status": "pass",
+      "checks": "Read all five source blocks and every LK rule. Unlike the preceding multiset variants, LK uses ordered sequences and has explicit exchange on both sides: left exchange retains Gamma and Pi; right exchange retains Gamma, Delta and Lambda. Weakening, contraction, alternative conjunction/disjunction rules, shared binary contexts and quantifier instances remain exact. Both eigenparameter rules retain the conclusion freshness condition. The caption omits Lambda despite its occurrence in right exchange, so the recorded source view supplies the fourth sequence letter. The LK identifier replaces the duplicated G1c label; classical G1c references remain intact. The three actually consulted canon passages support explanatory prose and borrowing only, not specialist terminology or independent certification.",
+      "reverse_sample": "LK uses formula sequences, including Lambda in right exchange. Exchange swaps two adjacent formulas while retaining the surrounding sequences. The fresh constant in universal-right or existential-left cannot occur in the conclusion.",
+      "source_sha256": "04fc54bec445b78a7c47a7c9db8a8fbb38feb33fc693a90bd530238d118cd485",
+      "translation_sha256": "0fbd19bd38b71b466452be76c00ea0caf27c39257fa328e5cfb8fbb6579b13cf",
+      "source_audit_ids": [
+        "OLPL-720",
+        "OLPL-721"
+      ],
+      "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review."
+    },
+    {
+      "unit_id": "OLP-0710",
+      "status": "pass",
+      "checks": "Read the entire five-block source. Unlike single-succedent G3i, mG3i permits a multiset Delta and its right disjunction may have A and B together. Right negation still requires an empty succedent premise, right implication a singleton B premise, and right universal a singleton instance premise; these restrictions distinguish intuitionistic multiple-conclusion rules from the corresponding classical rules. Left negation and implication retain their principal copies; universal-left and existential-right retain their quantified principal copies. The missing universal-left comma is restored. Atomic identity and fresh constants are preserved. The contextual falsity-axiom removal must compare mG3m with mG3i rather than the copied mG1 names, and the table receives a distinct mG3i label. Actual native canon supports prose and orthography only; mathematical content is checked against these exact diagrams, without independent whole-calculus certification.",
+      "reverse_sample": "The contexts in mG3i are formula multisets and conclusions may contain several formulas. Some introduction premises remain empty or singleton. Its matching minimal variant removes contextual falsity initials, retaining atomic identity; fresh eigenparameters cannot occur in the conclusion.",
+      "source_sha256": "47a378e14f141af32aa2dd70a066166b587f0c649d4bfaed5921e96789af73d4",
+      "translation_sha256": "78a662bbfd7a005a23c6ac1715d1ffc777449ed945e122d395d475627a1b311d",
+      "source_audit_ids": [
+        "OLPL-722",
+        "OLPL-723",
+        "OLPL-724"
       ],
       "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review."
     }

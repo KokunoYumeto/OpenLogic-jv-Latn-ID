@@ -1,0 +1,18 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0707",
+  "source_path": "content/proof-theory/sequent-calculus/rules-G3c.tex",
+  "source_sha256": "0beb76005abcb4f20109400d18ae1d632e7126bd6dea43c20c9f42d114c9664d",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-715",
+      "location": "universal-left premise",
+      "finding": "The retained universal formula runs directly into Gamma without a multiset separator.",
+      "proposed_resolution": "Insert the comma between the quantified principal formula and Gamma, preserving both formulas and the rule.",
+      "source_line": 57
+    }
+  ],
+  "translation_treatment": "OLPL-715 is documented in SOURCE_ISSUES_OLP0707.json and the exact corrected source view; the frozen English is unchanged.",
+  "no_source_mutation": true
+}
