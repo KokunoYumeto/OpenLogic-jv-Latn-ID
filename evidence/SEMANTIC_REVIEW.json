@@ -2,7 +2,7 @@
   "schema": "jv-semantic-review/1",
   "reviewer": "Codex, same author; no independent or human review claimed",
   "date": "2026-09-26",
-  "scope": "All 6,603 translated paragraph blocks in OLP-0001 through OLP-0710; 3,840 unchanged formal/structural blocks classified separately. OLSIZ-001 through OLSIZ-010, OLPL-001 through OLPL-040, OLPL-044 through OLPL-062, OLPL-133 through OLPL-135 and MGR-JV-0118-FRESHNESS-20260920 are applied in their affected targets; the proposed OLSIZ-011 remains retracted after exact-byte inspection. Paragraph analysis normalizes CRLF/LF; exact full-file hashes remain raw-byte hashes.",
+  "scope": "All 6,693 translated paragraph blocks in OLP-0001 through OLP-0722; 3,918 unchanged formal/structural blocks classified separately. OLSIZ-001 through OLSIZ-010, OLPL-001 through OLPL-040, OLPL-044 through OLPL-062, OLPL-133 through OLPL-135 and MGR-JV-0118-FRESHNESS-20260920 are applied in their affected targets; the proposed OLSIZ-011 remains retracted after exact-byte inspection. Paragraph analysis normalizes CRLF/LF; exact full-file hashes remain raw-byte hashes.",
   "method": "Direct source-to-target reading, quantifier/negation/biconditional checks, mathematical-context checks, and selected reverse paraphrases. Automated structure checks are separate.",
   "unit_reviews": [
     {
@@ -8040,6 +8040,140 @@
         "OLPL-723",
         "OLPL-724"
       ],
+      "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review."
+    },
+    {
+      "unit_id": "OLP-0711",
+      "status": "pass",
+      "checks": "Read every frozen block, both rule diagrams, both inductive proof-construction diagrams and both example trees. Premises/conclusion, context/side formulas and principal/active/auxiliary formulas retain their distinct roles. Closed terms have no variables; the universal-right eigenvariable is a constant absent from Gamma, Delta and the quantified body. This is consistent with the earlier closed-term amendment. Inductive proof clauses cover axioms and unary/binary extensions; subproofs include the whole proof as explicitly specified in the example. Height zero at axioms and one plus the child maximum agree with counting inference edges; clarify the ambiguous prose. The purported equal sequents originally changed their succedent, so preserve E while permuting the multiset antecedent. The final bound Proves[4] is true for the displayed height-two proof; it is not falsely corrected to a different formula. All diagrams, formulas, labels and token modifiers are exact under the two recorded views. Reread JV-T098/149 for prior closed-term and eigenvariable choices, alongside actual native register/borrowing passages. Native evidence supports language, not specialist logic attestation or independent proof certification.",
+      "reverse_sample": "Proofs are finite trees generated from initial sequents by unary or binary rules. The eigenvariable is a constant absent from the conclusion; quantified instances use closed terms. Height counts inference steps, so the two leaves have height zero, their conjunction conclusion height one and the final identity height two. Permuting D and E in the antecedent keeps the same succedent E. The asserted height-at-most-four bound remains valid.",
+      "source_sha256": "ef1231f53bdbfff4b0cab8f4a96223632447f783e6cb85ac9e774dceba28b699",
+      "translation_sha256": "7229542bed49d5bfb2a6088b59a91a64c35c2185aeda22a342ee6ca460f60db7",
+      "source_audit_ids": [
+        "OLPL-725",
+        "OLPL-726"
+      ],
+      "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review."
+    },
+    {
+      "unit_id": "OLP-0712",
+      "status": "pass",
+      "checks": "Read the entire seven-block driver. Only the reader-facing chapter title changes. Part/chapter identity, class, introduction/rules/examples/interpretation/quantifiers/admissibility/invertibility/translations imports, end hook and document delimiters remain exact. No duplicate or missing section is introduced. Native register and borrowing guidance support the established chapter title, not specialist attestation.",
+      "reverse_sample": "The chapter is titled Sequent Calculus and imports the same eight sections in the same order.",
+      "source_sha256": "abbbed6decdce5bafa0127eaf755913ecf710c675447e4f129dc869b04c8c0c5",
+      "translation_sha256": "4a7fbd3c4903dc6ca52d3df1fecf869c7f55befef2caaa1ef450c71d560bfdf8",
+      "source_audit_ids": [],
+      "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review."
+    },
+    {
+      "unit_id": "OLP-0713",
+      "status": "pass",
+      "checks": "Read all thirteen blocks and compare both constructions with the complete frozen G1c/G3c tables. Nonatomic identities are provable in G3c but are not its identity axioms; preserve the reference to the prior identity proof. The first transformation uses admissible structural rules and weakens in the retained principal formula before G3 universal-left/existential-right. In the reverse direction these quantified rules are not identical: applying the G1 rule to the retained-principal premise produces two principal copies, followed by contraction. Both explicit simulations preserve t, A, x, Gamma and Delta and need no eigenparameter condition in these weak quantified rules. The conjunction/disjunction simulations and contextual initial derivations remain exact, except a removed duplicate comma. Induction is on the source proof height without asserting target-height preservation. Every original hypothesis, citation, formula and diagram is retained under the documented corrected view; all eight translated blocks have actual canon mappings. Consulted register/borrowing evidence supports prose only, not specialist mathematical attestation or independent whole-calculus certification.",
+      "reverse_sample": "Both calculi prove the same sequents by proof transformations. G3 identity is atomic, although general identity sequents are derivable. For G1-to-G3 weak quantified rules, add the principal formula by admissible weakening. For G3-to-G1, the retained copy becomes a duplicate and is contracted. The induction preserves the end sequent and does not claim to preserve proof height.",
+      "source_sha256": "9ae0e40622effab9a067226754c58eeac00c1e21b1ac899c9e2acdebbd12d92c",
+      "translation_sha256": "6569dd6d7387682ee3310bc120f1c9732a419bd2f262188dfef5386b75f02ba9",
+      "source_audit_ids": [
+        "OLPL-727",
+        "OLPL-728",
+        "OLPL-729"
+      ],
+      "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review."
+    },
+    {
+      "unit_id": "OLP-0714",
+      "status": "pass",
+      "checks": "Read all eighteen frozen blocks and compare each clause. Maximality is among consistent supersets, truth-lemma directions retain membership/negated nonmembership and the disjunctive conditional clause, and deductive closure follows the stated direction. The deliberately assigned truth-lemma exercise remains an exercise. The completion proof preserves increasing Gamma_n, its union, consistency/maximality obligations, the valuation on atomic p_i and induction to complex sentences. The displayed cases retain every formula while localizing both text branches. Both nonprovability/nonentailment slashes, compactness quantifiers and finite-subset entailment consequence are exact. The proof sketch remains a faithful sketch and does not invent a completed exercise or a new completeness proof. Actual native canon supports explanatory register, conditional syntax and controlled borrowing, not specialist mathematical attestation. 2026-09-29 corpus native-prose refinement: Use lan with kalorone ora for the explicit neither/nor clause, retaining both formulas and the same negation scope. Formulas, tokens, scope and block/line counts remain unchanged.",
+      "reverse_sample": "Every consistent set has a satisfying valuation after extending it to a maximal consistent set. At each recursive stage add the enumerated formula if consistency is preserved, otherwise its negation. Compactness relates satisfaction of the whole set to every finite subset; the entailment consequence requires some finite subset.",
+      "source_sha256": "9222c1a4bfe25f71a47e9d2447846c67dd8f162e10b394d3a8f9185f30cc6dfe",
+      "translation_sha256": "e226e2b36236a8d256529e765d8817aa8b203bb0cab4331baf444fad5e1811f2",
+      "source_audit_ids": [],
+      "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review."
+    },
+    {
+      "unit_id": "OLP-0715",
+      "status": "pass",
+      "checks": "Read all nine blocks. The theorem retains provability implying semantic entailment. The proof covers axioms, membership in the premise set and modus ponens, with both inductive antecedents and the third semantic-facts reference. The corollary retains satisfiability implying consistency and the resulting consistency of propositional logic. Modus ponens is the preserved conventional Latin rule name, not residual ordinary English. Actually consulted native register and borrowing evidence support language only; no mathematical correction or independent specialist certification is claimed. 2026-09-29 corpus native-prose refinement: Use the task's native explanatory conjunction mula consistently. Formulas, tokens, scope and block/line counts remain unchanged.",
+      "reverse_sample": "Every formula derivable from Gamma is entailed by Gamma. Valid axioms, premise membership and preservation by modus ponens establish the induction; satisfiable premise sets are consistent.",
+      "source_sha256": "fb8b9efb660ea25cfabb54808815759be9ec6f51b79a2a9a5ad4267bc0b02994",
+      "translation_sha256": "a21fb4a8252ddf6d5aca056c51a0ecb117ed8c739ee34bf1bee31d53fb39d797",
+      "source_audit_ids": [],
+      "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review."
+    },
+    {
+      "unit_id": "OLP-0716",
+      "status": "pass",
+      "checks": "Read all nine blocks. Second-order variables range over relations/functions in addition to objects, with quantification over them. Both denumerable-set tokens, all relation V and function u superscripts/subscripts and the arity n remain exact. Basic variable/constant/predicate/function vocabulary, term/formula formation and punctuation are preserved. The final expressibility comparison remains the source's explanatory claim, without adding a stronger closed-sentence equivalence theorem. Identity and the first-order language symbol are exact. Native register and borrowing sources support language only; no specialist attestation is invented.",
+      "reverse_sample": "Second-order logic adds quantified relation and function variables to the first-order vocabulary. There are denumerable supplies indexed by arity. The available variables allow the source's expressibility comparison even without a dedicated nonlogical vocabulary.",
+      "source_sha256": "49d9beabf33f0727dafafd28fb282489083c4b146bfaf1c66c01ac80dd8f7856",
+      "translation_sha256": "0b24261b2efdcabf4f9fc735894e22b2a60ae3919e1a11de8c65293a64170930",
+      "source_audit_ids": [],
+      "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review."
+    },
+    {
+      "unit_id": "OLP-0717",
+      "status": "pass",
+      "checks": "Read all eight blocks. Isomorphism requires bijection and preservation/reflection of each stated relation, not only the forward implication. Keep both finite sets, successor/less/greater examples, domain and codomain, ordered relational pairs and both coordinates of the quantified relation clause. For f(x)=7-x, values 1/2/3 map to 6/5/4, so less-than on X corresponds exactly to greater-than on Y; do not relabel the target relation. Source identity and all notation remain fixed. Native canon supports explanatory register and controlled borrowing only; specialist isomorphism terminology is provisional.",
+      "reverse_sample": "An isomorphism is a bijection preserving and reflecting the specified relations. The map x to 7 minus x is an isomorphism from the less-than structure on {1,2,3} to the greater-than structure on {4,5,6}.",
+      "source_sha256": "1433a675057150e1518e1c73b70ff918c408fa4425e59365c5f9cefa1a51d138",
+      "translation_sha256": "6d795222c949843a3e26ddb95d3ae8bdc66b280f89d8a0c02066a391aa3b51d9",
+      "source_audit_ids": [],
+      "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review."
+    },
+    {
+      "unit_id": "OLP-0718",
+      "status": "pass",
+      "checks": "Read all thirty-one frozen blocks. Preserve closure and property preservation as separate conditions, successor/predecessor and even/odd examples, zero base and finite generation, and every unary/binary/quantified recipe case. The source's two unary definitions need the finite-arity extension used by conjunction and other binary builders: closure requires all inputs in S, and preservation requires the property for all inputs. Operators take their appropriate arity rather than always two formulas. Replace exactly sixteen malformed !!^a formula placeholders by the conventional !A. The sum theorem explicitly ranges from 1 through n, with the empty sum at zero, matching its displayed 0+...+n proof. Correct the expanded numerator to k squared plus k plus 2k plus 2; its factorization is then exact. Both textual equation tags are translated and included in the comparison view only to keep their nested k+1 formula exact; their localization is not a mathematical source error. The class path must climb three levels from this section, matching the repository-relative convention; stylesheet availability remains a later build concern. The outline ellipses are deliberate source recipe slots and remain so. Native canon supports scholarly exposition, borrowing and conditionals only, without specialist attestation or independent proof certification.",
+      "reverse_sample": "Induction applies to objects finitely generated from basic objects. Closure keeps the outputs in the set; preservation passes a property from every input to the output. The corrected arithmetic expands k(k+1)+2(k+1) to k squared plus 3k plus 2. Formula induction checks atomic formulas, each binary connective and both unary quantifiers, with all original outline slots retained.",
+      "source_sha256": "fdfbf3efe6aa648adad1e98d6567ecd7941dc41aeb1917b41548ad9568bb41a2",
+      "translation_sha256": "9697cbc8b15cc87cd92ba1e3dfdbbd7633172119d4e847d1e51a13b81465f8d0",
+      "source_audit_ids": [
+        "OLPL-730",
+        "OLPL-731",
+        "OLPL-732",
+        "OLPL-733",
+        "OLPL-734",
+        "OLPL-735"
+      ],
+      "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review."
+    },
+    {
+      "unit_id": "OLP-0719",
+      "status": "pass",
+      "checks": "Read all thirteen blocks. Only the title changes. Preserve chapter identity, class, relations-as-sets, special-properties, equivalence-relations, orders, graphs, trees and operations imports, end hook and delimiters. This alternate driver remains distinct from reader integration and introduces no extra body text or duplicate imports. Actual native register and borrowing guidance support the title without specialist attestation.",
+      "reverse_sample": "The Relations chapter imports the same seven sections in the same order.",
+      "source_sha256": "1c11d0ef727a94d20108024eb994e3707e39198c656882a2120457fa29f7f3b8",
+      "translation_sha256": "1e5e1d82232b60523c91bb2e4d174927d333c75c930885f24ae523cecec0c558",
+      "source_audit_ids": [],
+      "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review."
+    },
+    {
+      "unit_id": "OLP-0720",
+      "status": "pass",
+      "checks": "Read all ten blocks. Preserve the first-four-chapters scope, original gradual version, exact complete-driver verbatim name, introductory background and conditional teaching advice. Preserve every sets/relations/functions/size import and the end-part hook. Native naif replaces English accented naive; the comparison view removes only that ordinary word's English accent macro and makes no mathematical source correction. The full-reader workflow must account for this alternate driver without duplicating its imported chapter bodies. Actually consulted native register and borrowing policy support prose only.",
+      "reverse_sample": "This gradual part driver includes its first four chapters; the named complete driver includes the whole part. The note recommends reviewing elementary set notation if students lack that background.",
+      "source_sha256": "8a374d68ba657b45cce83c420e6d6863cdf452d54bbb6d7c10f068f669bbc3cb",
+      "translation_sha256": "4531d18ee35341fc28d0017bbe2a658d62ee65ad725a0028cba7594a0d3f07ba",
+      "source_audit_ids": [],
+      "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review."
+    },
+    {
+      "unit_id": "OLP-0721",
+      "status": "pass",
+      "checks": "Read all sixteen blocks. Preserve the editorial fact that the section is superseded and excluded by default, with its exact verbatim replacement path. Set equality is extensional: prove both inclusions with an arbitrary element, using intersection membership for both conjuncts and union membership for at least one disjunct. The first direction uses conjunction elimination; the second obtains union membership from membership in X. All element tokens, arbitrary-element scopes, formulas and both detailed/short proofs remain exact. The exercise is the dual union identity and its subset direction requires cases/disjunction elimination; keep it assigned rather than fill it. Localize ordinary Elim labels to eliminasi while retaining their mathematical operator symbols. Native canon supports academic explanation and borrowing only; absorption terminology is provisional.",
+      "reverse_sample": "To prove X intersect (X union Y) equals X, prove both inclusions. An element of the intersection belongs to X; an element of X belongs also to the union and hence the intersection. The dual union exercise uses cases in its first inclusion.",
+      "source_sha256": "8f93670032cba429dab9426b50df980a5525413e67bd736f67153da40f7d2475",
+      "translation_sha256": "036ff4bb151946c9a6ec404d32539ff60f295b6a8dfc980b5d11803328d360c4",
+      "source_audit_ids": [],
+      "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review."
+    },
+    {
+      "unit_id": "OLP-0722",
+      "status": "pass",
+      "checks": "Read all seventeen source blocks and the exact complete-driver counterpart to verify the version distinction. Both drivers share the ten elementary/base imports, including the two pairing methods; the complete counterpart additionally imports enumerability-alt, non-enumerability-alt and reduction-alt after its separate editorial note. Thus the source's elementary-only scope is preserved rather than falsely corrected because two pairing methods exist. Keep the exact verbatim complete-driver name, enumeration/countability/uncountability distinction, class, sfr/siz identity, all imports and hook. Only title/note are localized. Corpus coverage is not a complete-edition reader/release or independent canon certification.",
+      "reverse_sample": "The chapter discusses enumeration, countability and uncountability. This driver imports the elementary/base sections; the named complete driver also contains the more abstract alternative enumeration sections.",
+      "source_sha256": "1b755d63c0edd2bf25f5f07187bf39da92895ff846a16a59d579227124ef116b",
+      "translation_sha256": "96a444aad2c1a5d4f07a8f22c7cf384e8aceebd5cbd0b8a24aa0691887355f90",
+      "source_audit_ids": [],
       "revision_reason": "2026-09-28 direct frozen-English translation and same-author semantic review."
     }
   ],

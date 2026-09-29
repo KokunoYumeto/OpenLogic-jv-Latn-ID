@@ -1,0 +1,33 @@
+% Part: propositional-logic
+% Chapter: propositional-logic 
+% Section: soundness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pl}{prp}{snd}
+
+\olsection{Kasahihan Logika Proposisional}
+
+\begin{thm}[Kasahihan]
+\ollabel{thm:soundness}
+Yen $\Gamma\Proves!A$, mula $\Gamma \Entails !A$.
+\end{thm}
+
+\begin{proof}
+Kanthi induksi marang carane teorema dibangun. Yen $!A$ minangka aksioma,
+mula $\Entails !A$, mula mesthi $\Gamma \Entails!A$.
+Semono uga, yen $!A \in \Gamma$, mula $\Gamma \Entails!A$.
+Kanggo langkah induktif, upamane $!A$ diolehake kanthi \emph{modus ponens}
+saka $!C$ lan $!C\lif!A$; uga anggepen minangka hipotesis induktif
+yen teorema iki lumaku kanggo $!C\lif !A$ lan $!C$.
+Butir katelu ing \olref[sem]{prop:semanticalfacts} menehi asil kang dikarepake.
+\end{proof}
+
+\begin{cor}
+Yen $\Gamma$ bisa disembadani, mula $\Gamma$ konsisten.
+Dadi, logika proposisional konsisten.
+\end{cor}
+
+\end{document}

@@ -1,0 +1,53 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0718",
+  "source_path": "content/sets-functions-relations/inductive-defs-proofs/introduction.tex",
+  "source_sha256": "fdfbf3efe6aa648adad1e98d6567ecd7941dc41aeb1917b41548ad9568bb41a2",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-730",
+      "location": "section class path",
+      "finding": "This section is three directory levels below the project root; its two-level relative include path instead addresses content/include.",
+      "proposed_resolution": "Use ../../../include/open-logic-section, matching the section location and project-relative class convention; actual complete-reader dependencies remain a build requirement.",
+      "source_line": 5
+    },
+    {
+      "id": "OLPL-731",
+      "location": "sum statement and zero base case",
+      "finding": "The phrase first n natural numbers is ambiguous with the preceding zero-based natural-number convention, while the displayed proof sums 0 through n.",
+      "proposed_resolution": "State the sum of integers 1 through n, with the empty sum at n equal to zero; adding the displayed initial zero leaves the sum unchanged.",
+      "source_line": 63
+    },
+    {
+      "id": "OLPL-732",
+      "location": "expanded inductive numerator",
+      "finding": "The expansion of k(k+1)+2(k+1) incorrectly begins with 2k instead of k squared.",
+      "proposed_resolution": "Use k^2+k+2k+2, which factors to (k+1)(k+2).",
+      "source_line": 81
+    },
+    {
+      "id": "OLPL-733",
+      "location": "formula-building example and recipe placeholders",
+      "finding": "Sixteen occurrences of !!^a do not form the conventional object-language formula token used by the surrounding source.",
+      "proposed_resolution": "Replace those exact malformed placeholders with !A throughout the example and recipe, preserving the second formula B and every operator.",
+      "source_line": 93
+    },
+    {
+      "id": "OLPL-734",
+      "location": "operator formation-function description",
+      "finding": "The text says every operator joins two formulas, although negation and quantifiers in the following recipe are unary.",
+      "proposed_resolution": "Say each operator takes the appropriate number of formula inputs and applies that operator.",
+      "source_line": 92
+    },
+    {
+      "id": "OLPL-735",
+      "location": "closure and property-preservation definitions",
+      "finding": "Both definitions are only unary, but the claimed closure/preservation principle is immediately applied to binary formula-building functions.",
+      "proposed_resolution": "Retain the unary definitions and add their positive finite-arity forms: all inputs lie in S for closure, and the property holds for all inputs for preservation.",
+      "source_line": 28
+    }
+  ],
+  "translation_treatment": "Six explicit repairs are recorded in SOURCE_ISSUES_OLP0718.json and its source view. Frozen English is preserved. The view also records the two native equation-tag translations for exact comparison without classifying them as mathematical defects.",
+  "no_source_mutation": true
+}

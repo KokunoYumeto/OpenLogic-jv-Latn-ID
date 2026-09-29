@@ -1,0 +1,76 @@
+{
+  "schema": "jv-checkpoint-amendment/1",
+  "status": "SEALED_IN_PROGRESS",
+  "goal_status": "active",
+  "prior_checkpoint": "CHECKPOINT-DRAFT-OLP0722.json",
+  "prior_checkpoint_sha256": "9bcabbb5f93f0f7219c58720efc55b735d09922eb12c384e022ac8d766bc9742",
+  "changes": {
+    "OLP-0714": {
+      "path": "content/propositional-logic/syntax-and-semantics/completeness.tex",
+      "source_sha256": "9222c1a4bfe25f71a47e9d2447846c67dd8f162e10b394d3a8f9185f30cc6dfe",
+      "before_sha256": "577b42e084a45ac0e086ff91475cd02ef3fb89c82ccdefc730adc9e3de707c53",
+      "after_sha256": "e226e2b36236a8d256529e765d8817aa8b203bb0cab4331baf444fad5e1811f2",
+      "segment": 8,
+      "old_block_sha256": "df4936c7dea732be7efdcaa4f6e37d1c3213813b6322874165540970131e1ed7",
+      "new_block_sha256": "cd3751f1e0662d34308a179aa89a8ec9c0c5c8dfb0c1369fb61247b9a958d4dc",
+      "reason": "Use lan with kalorone ora for the explicit neither/nor clause, retaining both formulas and the same negation scope."
+    },
+    "OLP-0715": {
+      "path": "content/propositional-logic/syntax-and-semantics/soundness.tex",
+      "source_sha256": "fb8b9efb660ea25cfabb54808815759be9ec6f51b79a2a9a5ad4267bc0b02994",
+      "before_sha256": "556ea3e67e298f11a28e89942650fb56763e1fdef4444f7dda0ac7fedc7a4ee7",
+      "after_sha256": "a21fb4a8252ddf6d5aca056c51a0ecb117ed8c739ee34bf1bee31d53fb39d797",
+      "segment": 7,
+      "old_block_sha256": "0296d43d32646e45226014fb083016ffc69e9a02ecbb48b83dafca1649b4d17e",
+      "new_block_sha256": "accadbc9e040245a46319e0f809a1249219e64caa1ca9e55d9d5a0b1d693abdd",
+      "reason": "Use the task's native explanatory conjunction mula consistently."
+    }
+  },
+  "prior_hash_links_changed": {
+    "SEGMENT_CANON_USE.jsonl": {
+      "before": "ff5e0765dd7ddeb7e44f18a22367ff321399399f30664e724aff232621874be7",
+      "after": "0d29941dd50e9fb893501b1356a29a6e9b9c351b9ca83e542b12293710221fb1"
+    },
+    "SEMANTIC_REVIEW.json": {
+      "before": "b6eef7372f4b1ca7ec6f4764db615d0257f4e5ec33016f09afbc82841509e2c1",
+      "after": "8c2ec6dd9357e70972ccb3c92450919fdb93ab9906b12def5cc87eba9ef048ce"
+    },
+    "CURSOR.json": {
+      "before": "3781cb3abe0d391155fa1d7eb59c8077acd27eaa695c08922e060e25f315336f",
+      "after": "d994969f3cda379dc2b51389059eeebe4d9f75db93e9de0936407bccab3ff5af"
+    },
+    "QA.json": {
+      "before": "347047bf231102c5a6eb632c5a99139cf80235ec66634a918274b706943cac4e",
+      "after": "b687ffb002d1830fe2ee84ed1651c0fbea77e66b660187958c65fd58d31ff139"
+    },
+    "WORKLOG.md": {
+      "before": "c45206199e7984df57e16694a87b9cb75ac7db325e5f95db9fcd4c1e1ecc9836",
+      "after": "f508d5974a65dcd1aeed105752f25af1ac393daa195c20e4cb6dc605cf3653a1"
+    }
+  },
+  "full_qa": {
+    "schema": "jv-batch-qa/1",
+    "utc": "2026-09-29T01:52:54.020299+00:00",
+    "checked_units": 722,
+    "structural_pass_units": 722,
+    "total_units": 722,
+    "segments": 10611,
+    "translated_segments": 6693,
+    "failures": 0,
+    "semantic_reviewed_units": 722,
+    "build": "see BUILD_SETS.json",
+    "release_ready": false
+  },
+  "pre_amendment_snapshot": "C:\\interlanguage-task-state\\openlogic-jv-Latn-ID\\work\\corpus_native_prose_pre_amendment",
+  "next_executable_action": "Complete bounded actual canon revalidation and corrections; integrate all 722 frozen files in the full reader without duplicated chapters; repair pending reader token/suffix issues and localize all reader-facing metadata/review material; complete guarded build, visual QA and reproducibility replay; publish the full reader PDF, direct cumulative editable TeX and complete source ZIP on the existing authorized lineage and anonymously verify every artifact. Preserve source proof-gap disclosures. Goal remains active.",
+  "hash_links": {
+    "SEGMENT_CANON_USE.jsonl": "0d29941dd50e9fb893501b1356a29a6e9b9c351b9ca83e542b12293710221fb1",
+    "SEMANTIC_REVIEW.json": "8c2ec6dd9357e70972ccb3c92450919fdb93ab9906b12def5cc87eba9ef048ce",
+    "BATCH_QA.json": "41b3dbe5ab1b43ec0445c477182ecef6e9eed5e69b434143880e806f5f94c966",
+    "CURSOR.json": "d994969f3cda379dc2b51389059eeebe4d9f75db93e9de0936407bccab3ff5af",
+    "QA.json": "b687ffb002d1830fe2ee84ed1651c0fbea77e66b660187958c65fd58d31ff139",
+    "WORKLOG.md": "f508d5974a65dcd1aeed105752f25af1ac393daa195c20e4cb6dc605cf3653a1",
+    "PENDING_NATIVE_CORRECTIONS_20260929.json": "827fc66432d4967bcfaa4ec257a88f74046a79155d42bd6b281a718619b0c01f",
+    "work/amend_corpus_native_prose_v1.py": "5ca58037cafc28c2e2a6eff0b82645186e2ff2641138e79202a6301786d2eb71"
+  }
+}

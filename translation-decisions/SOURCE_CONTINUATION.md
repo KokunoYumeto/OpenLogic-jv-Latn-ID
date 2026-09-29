@@ -1,7 +1,7 @@
 # Cathetan pilihan terjemahan sumber sabanjure
 
 Cathetan iki ngemot tetembungan sementara lan pilihan terjemahan kang angel
-sawise 118 unit sumber kapisan, nganti OLP-0710. Iki cathetan
+sawise 118 unit sumber kapisan, nganti OLP-0722. Iki cathetan
 ing tingkat keputusan; ora ngaku lokasi saben tembung wis diverifikasi. Indeks
 kedadeyan tembung kang pas tetep winates ing OLP-0001..OLP-0118.
 Pasangan otomatis sangang petikan ing JV-T213..JV-T657 wis
@@ -592,3 +592,15 @@ Panlitian ahli basa Jawa mandhiri lan kaca wacan kang luwih jembar durung diklai
 | JV-T698 | single-succedent disjunction introduction; minimal G3 variant | introduksi disjungsi kanthi sukseden siji; varian G3 minimal | provisional |
 | JV-T699 | formula sequence; exchange | urutan formula; ijolan | provisional |
 | JV-T700 | multi-conclusion intuitionistic calculus | kalkulus intuisionistik kanthi akeh kesimpulan | provisional |
+| JV-T701 | principal/active/auxiliary formula; eigenvariable; subproof; proof height | formula utama/aktif/pambiyantu; eigenvariabel; bukti bagean; dhuwur bukti | provisional |
+| JV-T702 | sequent calculus | kalkulus sekuen | provisional |
+| JV-T703 | proof transformation; retained principal formula; weakening/contraction simulation | pangowahan bukti; formula utama kang tetep ana; simulasi pelemahan/kontraksi | provisional |
+| JV-T704 | maximally consistent; deductively closed; satisfiable; compactness | konsisten maksimal; katutup tumrap deduksi; bisa disembadani; kekompakan | provisional |
+| JV-T705 | soundness; satisfiability implies consistency | kasahihan; bisa disembadani ateges konsisten | provisional |
+| JV-T706 | second-order relation/function variable; arity; nonlogical symbol | variabel relasi/fungsi orde kapindho; aritas; tandha nonlogis | provisional |
+| JV-T707 | isomorphism; relational structure; preserves iff | isomorfisme; struktur relasional; njaga kanthi yen lan mung yen | provisional |
+| JV-T708 | closed under; preserved under; formula-building function; base case; inductive step | katutup tumrap; dijaga tumrap; fungsi pambangun formula; kasus dhasar; langkah induktif | provisional |
+| JV-T709 | relations | relasi | provisional |
+| JV-T710 | naive set theory; gradual introductory version | teori himpunan naif; versi pambuka kanthi andharan luwih alon lan rinci | provisional |
+| JV-T711 | absorption; arbitrary-element proof; intersection/union membership | panyerepan; bukti nganggo unsur sembarang; kaanggotaan irisan/gabungan | provisional |
+| JV-T712 | size of sets; enumeration; countability/uncountability | ukuran himpunan; enumerasi; katetungan/ora katetungan | provisional |

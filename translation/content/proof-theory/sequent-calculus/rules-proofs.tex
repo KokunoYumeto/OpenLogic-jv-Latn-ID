@@ -1,0 +1,205 @@
+% Part: proof-theory
+% Chapter: sequent-calculus
+% Section: rules-proofs
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{seq}{rp}
+
+\olsection{Aturan lan \usetoken{P}{proof}}
+
+Kita miwiti kanthi menehi sawetara definisi lan netepake tetembungan.
+
+Contone, gatekna loro aturan ing \Log{G3c} kang ngidini !!{proving}
+sekuen kang ngemot $!A \land !B$ saka sekuen kang ngemot $!A$
+lan~$!B$:
+\[
+\Axiom$ !A, !B, \Gamma \fCenter \Delta$
+\RightLabel{\LeftR{\land}}
+\UnaryInf$ !A \land !B, \Gamma \fCenter \Delta$
+\DisplayProof
+\qquad
+\Axiom$\Gamma \fCenter \Delta, !A$
+\Axiom$ \Gamma \fCenter \Delta, !B$
+\RightLabel{\RightR{\land}}
+\BinaryInf$ \Gamma \fCenter \Delta, !A \land !B $
+\DisplayProof
+\]
+Sekuen ing ndhuwur garis diarani \emph{premis}, lan sekuen ing
+ngisor garis diarani \emph{kesimpulan}. !!{formula}s ing
+$\Gamma$ lan $\Delta$ ing saben aturan diarani \emph{konteks} utawa
+\emph{!!{formula}s sisih}. !!{formula} ing kesimpulan kang
+dudu bagean saka konteks diarani !!{formula} \emph{utama},
+lan !!{formula}s ing premis kang dudu bagean saka konteks diarani
+!!{formula}s \emph{aktif} (utawa \emph{pambiyantu}).
+
+Aturan kuantor rada luwih rumit. Contone, aturan ing
+\Log{G1c} kanggo $\lforall$ yaiku:
+\[\Axiom$ !A(t), \Gamma \fCenter \Delta$
+\RightLabel{\LeftR{\lforall}}
+\UnaryInf$ \lforall[x][!A(x)],\Gamma \fCenter \Delta$
+\DisplayProof
+\qquad
+\Axiom$ \Gamma \fCenter \Delta, !A(a) $
+\RightLabel{\RightR{\lforall}}
+\UnaryInf$ \Gamma \fCenter \Delta, \lforall[x][!A(x)]$
+\DisplayProof
+\]
+Ing aturan \LeftR{\lforall}, !!{formula} aktif yaiku~$!A(t)$,
+kanthi $t$~minangka term katutup, yaiku term tanpa variabel.
+Inferensi kaya mangkono bener---tegese cocog karo aturan skematis
+\LeftR{\lforall}---yen ana !!{formula}~$!A$,
+variabel~$x$, lan term katutup~$t$ kang ndadekake
+!!{formula} utama ing kesimpulan minangka $\lforall[x][!A]$ lan
+!!{formula} aktif ing premis minangka~$\Subst{!A}{t}{x}$.
+Aturan \RightR{\lforall} lumaku kanthi cara kang padha, nanging
+!!{formula} aktif ing premis ora nggunakake sembarang term~$t$;
+formula kasebut kudu awujud~$\Subst{!A}{a}{x}$,
+kanthi $a$ minangka !!a{constant}. Konstanta iki
+diarani \emph{eigenvariabel} saka inferensi \RightR{\lforall}.
+Inferensi kasebut mung bener yen sekuen ing ngisor ora ngemot~$a$,
+yaiku yen $a$ ora ana ing $\Gamma$, $\Delta$, utawa~$!A$.
+Iki diarani \emph{syarat eigenvariabel}.
+
+Sistem sekuen kayata \Log{G1c} lan \Log{G3c} dumadi saka kumpulan
+aturan kang ditemtokake kanthi skematis kaya mangkono, bebarengan karo
+sawetara sekuen kang dianggep aksioma lan uga ditemtokake kanthi skematis.
+!!^{proof}s ing sistem kasebut minangka wit sekuen winates kang
+dibangun kanthi induktif saka aksioma nganggo aturan inferensi.
+Saben godhong minangka aksioma, lan saben sekuen liyane asale saka
+sekuen kang ana langsung ing ndhuwure kanthi salah siji aturan inferensi
+ing sistem kasebut.
+
+\begin{defn}\ollabel{defn:proof}
+\emph{!!^{proof}s} ing sistem sekuen minangka wit sekuen winates
+kang dibangun kanthi induktif kaya mangkene:
+\begin{enumerate}
+  \item\ollabel{defn:prf:axiom} Saben aksioma minangka !!a{proof}.
+  \item\ollabel{defn:prf:one-prem} Yen $\pi_1$ minangka !!a{proof}
+  kang dipungkasi dening sekuen~$S_1$, lan $S$ minangka sekuen
+  kang asale saka~$S_1$ nganggo aturan~$R$ kanthi siji premis, mula
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_1$}
+  \DeduceC{$S_1$}
+  \RightLabel{$R$}
+  \UnaryInfC{$S$}
+  \DisplayProof
+  \]
+  minangka !!a{proof}.
+  \item\ollabel{defn:prf:two-prem} Yen $\pi_1$ lan $\pi_2$ minangka
+  !!{proof}s kang dipungkasi dening sekuen~$S_1$ lan~$S_2$, lan
+  $S$ minangka sekuen kang asale saka~$S_1$ lan $S_2$ nganggo
+  aturan~$R$ kanthi loro premis, mula
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_1$}
+  \DeduceC{$S_1$}
+  \AxiomC{}
+  \RightLabel{$\pi_2$}
+  \DeduceC{$S_2$}
+  \RightLabel{$R$}
+  \BinaryInfC{$S$}
+  \DisplayProof
+  \]
+  minangka !!a{proof}.
+\end{enumerate}
+\end{defn}
+
+\Olref{defn:proof} nemtokake !!{proof}s minangka wit sekuen.
+Kita nganggep wit kasebut tuwuh ``munggah.'' Simpul paling ndhuwur
+(godhong) ing wit iki minangka aksioma lan diarani \emph{sekuen wiwitan}.
+Sekuen paling ngisor diarani \emph{sekuen pungkasan}. Yen $\pi$
+minangka !!a{proof} kanthi sekuen pungkasan~$S$, kita uga nulis
+$\pi \Proves S$. Yen ana !!a{proof} kanggo sekuen~$S$, kita nulis
+$\Proves S$. Sistem kang ngemot bukti kasebut bisa dituduhake ing
+sisih kiwa tandha $\Proves$, contone,
+$\Log{G1c} \Proves !A, !B \Sequent !A \land !B$.
+Saben sekuen ing !!a{proof}, kajaba sekuen wiwitan, minangka
+\emph{kesimpulan} saka inferensi nganggo sawijining aturan~$R$.
+Siji utawa loro sekuen kang ana langsung ing ndhuwur sawijining sekuen
+ing !!a{proof} (yaiku simpul wong tuwane) diarani \emph{premis}
+saka inferensi kasebut.
+
+!!{proof}s kang digunakake ing pambangunan induktif sawijining
+!!a{proof} diarani \emph{!!{proof}s bagean} saka bukti kasebut.
+!!{proof}s bagean kang dipungkasi ing premis sawijining inferensi
+diarani \emph{!!{proof}s bagean langsung} saka inferensi kasebut.
+
+Asring perlu ngukur kerumitan !!{proof}s nganggo wilangan asli.
+Kita bisa mung ngetung cacah sekuen ing !!a{proof}, nanging ukuran
+kang luwih migunani asring yaiku !!{height} saka !!a{proof}:
+yaiku cacah langkah inferensi paling gedhe ing sawijining jalur
+saka sekuen pungkasan menyang sekuen wiwitan. Kita uga bisa menehi
+definisi induktif.
+
+\begin{defn}
+\emph{!!{height}}~$\pheight{\pi}$ saka !!a{proof}~$\pi$
+ditemtokake kanthi induktif kaya mangkene.
+\begin{enumerate}
+  \item Yen $\pi$ mung dumadi saka siji aksioma, $\pheight{\pi} = 0$.
+  \item Yen $\pi$ dipungkasi dening inferensi kanthi siji premis lan
+  !!{proof} bagean langsung~$\pi_1$, mula
+  $\pheight{\pi} = \pheight{\pi_1} + 1$.
+  \item Yen $\pi$ dipungkasi dening inferensi kanthi loro premis lan
+  !!{proof}s bagean langsung~$\pi_1$ lan~$\pi_2$, mula
+  $\pheight{\pi} = \max(\pheight{\pi_1}, \pheight{\pi_2}) + 1$.
+\end{enumerate}
+Yen sekuen~$S$ nduweni !!a{proof} kanthi dhuwur $\le n$,
+kita nulis $\Proves[n] S$.
+\end{defn}
+
+\begin{ex}
+Ing \Log{G3c}, saben sekuen awujud $!C, \Gamma \Sequent \Delta, !C$
+minangka aksioma, kanthi $!C$ kudu atomik. Upamane $!D$ lan $!E$
+minangka ukara atomik. Mula $!D, !E \Sequent !D$ lan
+$!D, !E \Sequent !E$ minangka instans saka aksioma
+$!C, \Gamma \Sequent \Delta, !C$. Contone, yen kita milih
+$!C \ident !E$, $\Gamma = \{!D\}$ lan $\Delta = \emptyset$ ing
+$!C, \Gamma \Sequent \Delta, !C$, kita oleh sekuen
+$!D, !E \Sequent !E$ kanthi pas. (Elinga yen kita nggunakake
+multi\emph{set}, mula $!D, !E \Sequent !E$ lan
+$!E, !D \Sequent !E$ minangka sekuen kang padha.)
+
+Amarga $!D, !E \Sequent !D$ minangka instans saka aksioma
+ing~\Log{G3c}, sekuen kasebut dhewe dianggep !!a{proof}
+ing~\Log{G3c}. Semono uga $!D, !E \Sequent !E$, miturut
+\olref{defn:proof}\olref{defn:prf:axiom}. Ayo diarani
+$\pi_1$ lan~$\pi_2$. Miturut \olref{defn:prf:two-prem}, kita bisa
+njupuk loro !!{proof}s kasebut lan mbangun bukti anyar ($\pi_3$)
+nganggo aturan~$\RightR{\land}$ kanthi loro premis:
+\[
+\Axiom$!D, !E \fCenter !D$
+\Axiom$!D, !E \fCenter !E$
+\RightLabel{\RightR{\land}}
+\BinaryInf$!D, !E  \fCenter !D \land !E $
+\DisplayProof
+\]
+Saka $\pi_3$, sabanjure kita oleh !!{proof}~$\pi_4$
+\[
+\Axiom$!D, !E \fCenter !D$
+\Axiom$!D, !E \fCenter !E$
+\RightLabel{\RightR{\land}}
+\insertBetweenHyps{\hspace{5ex}}
+\BinaryInf$!D, !E  \fCenter !D \land !E $
+\LeftSubproofLabel{$\pi_3$}
+\RightLabel{\LeftR{\land}}
+\UnaryInf$!D \land !E  \fCenter !D \land !E$
+\RightSubproofLabel{$\pi_4$}
+\DisplayProof
+\]
+nganggo aturan~$\LeftR{\land}$ kanthi siji premis (nggunakake
+\olref{defn:proof}\olref{defn:prf:one-prem}).
+!!{proof} bagean langsung saka inferensi pungkasan ing~$\pi_4$
+yaiku~$\pi_3$. !!{proof}s bagean langsung saka inferensi
+$\RightR{\land}$ yaiku $\pi_1$ lan~$\pi_2$.
+!!{proof}s bagean saka $\pi_4$ yaiku kabeh $\pi_1$, $\pi_2$,
+$\pi_3$, lan $\pi_4$ dhewe. Kita nduweni $\pheight{\pi_1} =
+\pheight{\pi_2} = 0$, $\pheight{\pi_3} = 1$ lan $\pheight{\pi_4} = 2$.
+Kita wis nuduhake yen $\Log{G3c} \Proves[4] !D \land !E  \fCenter !D
+\land !E$ kanggo sembarang $!D$ lan~$!E$ atomik.
+\end{ex}
+
+\end{document}

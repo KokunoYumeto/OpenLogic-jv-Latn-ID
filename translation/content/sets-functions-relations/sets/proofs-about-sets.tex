@@ -1,0 +1,105 @@
+% Part: sets-functions-relations
+% Chapter: sets
+% Section: proofs-about-sets
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{set}{prf}
+\olsection{Bukti ngenani Himpunan}
+
+\begin{editorial}
+Perangan iki wis diganti dening \verb|content/method/proofs| lan
+ora kalebu ing bab iki kanthi baku.
+\end{editorial}
+
+\begin{explain}
+Himpunan lan notasi kang wis ditepangake menehi cara ringkes kang
+migunani kanggo nemtokake himpunan lan ngandharake sesambungane.
+Asring kita uga perlu mbuktekake pratelan ngenani sesambungan kasebut.
+Yen sampeyan durung kulina karo bukti matematika, iki bisa dadi
+prakara anyar. Mula kita bakal njlentrehake conto prasaja.
+Kita bakal mbuktekake yen kanggo sembarang himpunan $X$ lan $Y$,
+tansah lumaku $X \cap (X \cup Y) = X$. Kepiye mbuktekake
+identitas antarane himpunan kaya mangkono? Elinga yen himpunan mung
+ditemtokake dening !!{element}s, yaiku himpunan padha yen lan mung
+yen nduweni !!{element}s kang padha. Mula kita kudu mbuktekake yen
+(a) saben !!{element} saka $X \cap (X \cup Y)$ uga minangka
+!!{element} saka $X$ lan, kosok baline, (b) saben !!{element}
+saka $X$ uga minangka !!{element} saka $X \cap (X \cup Y)$.
+Tegese, kita nuduhake (a) $X \cap (X \cup Y) \subseteq X$ lan
+(b) $X \subseteq X \cap (X \cup Y)$.
+
+Pratelan umum kayata ``saben !!{element}~$z$ saka $X \cap (X
+\cup Y)$ uga minangka !!{element} saka $X$'' dibuktekake kanthi
+nganggep dhisik yen ana sembarang $z \in X \cap (X \cup Y)$,
+banjur mbuktekake saka anggepan iki yen $z \in X$.
+Sampeyan bisa uga ngerti pola iki minangka ``bukti kondisional umum.''
+Ing bukti iki kita uga kudu nggunakake definisi ing anggepan lan
+kesimpulan, contone definisi ``$\cap$'' lan ``$\cup$.''
+Mula kasus (a) bisa diandharake kaya mangkene:
+
+\begin{quote}
+(a) Dhisik kita arep nuduhake $X \cap (X \cup Y) \subseteq X$,
+yaiku miturut definisi $\subseteq$, yen $z \in X \cap (X \cup Y)$,
+mula $z \in X$, kanggo sembarang~$z$. Dadi anggepen
+$z \in X \cap (X \cup Y)$. Amarga $z$ minangka !!{element} saka
+irisan loro himpunan yen lan mung yen minangka !!{element} saka
+kalorone, kita bisa nyimpulake $z \in X$ lan uga $z \in X \cup Y$.
+Mligine, $z \in X$, yaiku kang arep kita tuduhake.
+\end{quote}
+
+Iki ngrampungake separo kapisan saka bukti. Ing langkah pungkasan,
+kita nggunakake kasunyatan yen sawijining konjungsi ($z \in X$ lan
+$z \in X \cup Y$) asale saka anggepan, mula saben konjung uga
+asale saka anggepan kang padha. Sampeyan bisa uga ngerti aturan iki
+minangka ``eliminasi konjungsi,'' utawa eliminasi $\land$.
+Saiki ayo mbuktekake (b):
+
+\begin{quote}
+(b) Saiki kita mbuktekake $X \subseteq X \cap (X \cup Y)$,
+yaiku miturut definisi $\subseteq$, yen $z \in X$, mula uga
+$z \in X \cap (X \cup Y)$, kanggo sembarang~$z$.
+Anggepen $z \in X$. Kanggo nuduhake $z \in X \cap (X \cup Y)$,
+kita kudu nuduhake (miturut definisi ``$\cap$'') yen (i) $z \in X$
+lan uga (ii) $z \in X \cup Y$. Ing kene (i) mung anggepan kita,
+dadi ora ana maneh kang kudu dibuktekake. Kanggo (ii), elinga yen $z$
+minangka !!{element} saka gabungan himpunan yen lan mung yen
+minangka !!{element} saka paling ora salah siji himpunan kasebut.
+Amarga $z \in X$, lan $X \cup Y$ minangka gabungan $X$ lan $Y$,
+syarat iki lumaku. Dadi $z \in X \cup Y$. Kita wis nuduhake
+(i) $z \in X$ lan (ii) $z \in X \cup Y$, mula miturut definisi
+``$\cap$,'' $z \in X \cap (X \cup Y)$.
+\end{quote}
+
+Andharan iki rada dawa, nanging nuduhake carane kita mikir ngenani
+himpunan lan sesambungane. Biasane kita ora ngrinci kaya mangkene;
+mligine, kita bisa ora mbaleni kabeh definisi. Bukti asil iki ing
+wacan kang luwih lanjut bisa luwih ringkes. Wujude bisa kaya mangkene.
+\end{explain}
+
+\begin{prop}[Panyerepan]
+Kanggo kabeh himpunan $X$, $Y$,
+\[
+X \cap (X \cup Y) = X
+\]
+\end{prop}
+
+\begin{proof}
+(a) Upamane $z \in X \cap (X \cup Y)$. Mula $z \in X$, dadi
+$X \cap (X \cup Y) \subseteq X$.
+
+(b) Saiki upamane $z \in X$. Mula uga $z \in X \cup Y$,
+lan saka iku uga $z \in X \cap (X \cup Y)$.
+Dadi $X \subseteq X \cap (X \cup Y)$.
+\end{proof}
+
+\begin{prob}
+Buktekna kanthi rinci yen $X \cup (X \cap Y) = X$.
+Banjur wenehana bukti kang luwih ringkes. (Pituduh: kanggo arah
+$X \cup (X \cap Y) \subseteq X$, sampeyan perlu bukti kanthi
+kasus, uga diarani eliminasi $\lor$.)
+\end{prob}
+
+\end{document}

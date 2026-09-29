@@ -1,0 +1,124 @@
+% Part: proof-theory
+% Chapter: sequent-calculus
+% Section: translations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{seq}{tr}
+
+\olsection{Ngowahi bukti antarane \Log{G1c} lan \Log{G3c}}
+
+Kita wis nyebutake yen \Log{G1c} lan \Log{G3c} kalorone sahih lan
+jangkep kanggo logika klasik, yaiku saben kalkulus bisa mbuktekake kabeh
+lan mung sekuen kang bener ing saben !!{structure}. Mligine, kalorone
+mbuktekake sekuen kang padha. Saiki kita bisa mbuktekake kasunyatan iki
+kanthi cara teori bukti, tanpa liwat teorema kasahihan lan kajangkepan.
+Bukti kaya mangkono menehi \emph{pangowahan} saka !!{proof}s ing
+\Log{G1c} dadi !!{proof}s ing \Log{G3c}, lan uga kosok baline.
+
+\begin{prop}
+Yen $\Log{G1c} \Proves S$, mula $\Log{G3c} \Proves S$.
+\end{prop}
+
+\begin{proof}
+  Kita nuduhake yen $\pi$ minangka !!a{proof} ing \Log{G1c}, mula ana
+  !!a{proof}~$\pi'$ kanggo~$S$ ing \Log{G3c}.
+  Kita nindakake iki kanthi induksi marang $n = \pheight{\pi}$.
+
+Yen $n = 0$, mula $\pi$ minangka aksioma. Aksioma
+$\lfalse \Sequent \quad$ uga minangka aksioma ing~\Log{G3c}
+(pilih konteks $\Gamma, \Delta$ kosong). Ing \Log{G3c}, aksioma
+$!A \Sequent !A$ ora diidini kanggo sembarang~$!A$;
+formula kasebut kudu atomik. Nanging ing \olref[ex]{prop:G3c-axioms}
+kita wis mbuktekake yen kabeh sekuen kaya mangkono !!{provable}
+ing~\Log{G3c}.
+
+Yen $n>0$, $\pi$ dipungkasi nganggo aturan~$R$.
+Hipotesis induktif njamin ana !!{proof}s kanggo premis aturan kasebut
+ing~\Log{G3c}, yaiku !!{proof}s bagean langsung nduweni pangowahan
+ing~\Log{G3c}. Yen aturan~$R$ uga minangka aturan ing \Log{G3c},
+kita ngetrapake aturan kasebut marang !!{proof}s premis kang wis diowahi.
+Kanggo aturan kang dudu aturan ing~\Log{G3c}, kita wis nuduhake
+yen aturan kasebut paling ora admisibel. Mula, yen aturan~$R$
+yaiku $\LeftR{\land}$ utawa $\RightR{\lor}$,
+gunakna \olref[adm]{prop:lor-G3-adm}. Yen minangka aturan pelemahan,
+gunakna \olref[adm]{prop:weak-G3c-adm}. Yen minangka aturan kontraksi,
+gunakna \olref[inv]{prop:G3c-cont-adm}.
+Kanggo \LeftR{\lforall} lan \RightR{\lexists} ing \Log{G1c},
+gunakna \LeftR{\Weakening} utawa \RightR{\Weakening} kang admisibel
+dhisik kanggo nambah formula utama kanthi kuantor kang kudu tetep ana,
+banjur trapna aturan \Log{G3c} kang cocog.
+\end{proof}
+
+\begin{prop}
+Yen $\Log{G3c} \Proves S$, mula $\Log{G1c} \Proves S$.
+\end{prop}
+
+\begin{proof}
+Kita maneh nggunakake induksi marang !!{height} saka !!a{proof}~$\pi$
+kanggo $S$. Saben aksioma \Log{G3c} bisa !!{prove} ing~\Log{G1c}
+saka sawijining aksioma kanthi ngetrapake aturan \LeftR{\Weakening}
+lan \RightR{\Weakening} kaping pirang-pirang:
+\[
+  \Axiom$!C \fCenter !C$
+  \RightLabel{\LeftR{\Weakening}}
+  \Deduce$!C, \Gamma \fCenter !C$
+  \RightLabel{\RightR{\Weakening}}
+  \Deduce$!C, \Gamma \fCenter \Delta, !C$
+  \DisplayProof
+\qquad
+  \Axiom$\lfalse \fCenter$
+  \RightLabel{\LeftR{\Weakening}}
+  \Deduce$\lfalse, \Gamma \fCenter$
+  \RightLabel{\RightR{\Weakening}}
+  \Deduce$\lfalse, \Gamma \fCenter \Delta$
+  \DisplayProof
+  \]
+Yen $\pi$ dipungkasi nganggo aturan~$R$, hipotesis induktif menehi
+!!{proof}s ing \Log{G1c} kanggo premis kasebut, lan kita bisa ngetrapake
+aturan~$R$ kang padha marang !!{proof}s kasebut.
+Pangecualiane yaiku aturan \LeftR{\land}, \RightR{\lor},
+\LeftR{\lforall}, lan \RightR{\lexists}, kang beda antarane
+\Log{G1c} lan~\Log{G3c}. Varian \Log{G3c} bisa diturunake
+ing \Log{G1c} kaya mangkene:
+\[
+  \Axiom$!A, !B, \Gamma \fCenter \Delta$
+  \RightLabel{\LeftR{\land}}
+  \UnaryInf$!A \land !B, !B, \Gamma \fCenter \Delta$
+  \RightLabel{\LeftR{\land}}
+  \UnaryInf$!A \land !B, !A \land !B, \Gamma \fCenter \Delta$
+  \RightLabel{\LeftR{\Contraction}}
+  \UnaryInf$!A \land !B, \Gamma \fCenter \Delta$
+    \DisplayProof
+\qquad
+  \Axiom$\Gamma \fCenter \Delta, !A, !B$
+  \RightLabel{\RightR{\lor}}
+  \UnaryInf$\Gamma \fCenter \Delta, !A \lor !B, !B$
+  \RightLabel{\RightR{\lor}}
+  \UnaryInf$\Gamma \fCenter \Delta, !A \lor !B, !A \lor !B$
+  \RightLabel{\RightR{\Contraction}}
+  \UnaryInf$\Gamma \fCenter \Delta, !A \lor !B$
+    \DisplayProof
+  \]
+Formula utama kang tetep ana ing \LeftR{\lforall} lan \RightR{\lexists}
+ditangani ing \Log{G1c} kanthi aturan kang cocog banjur kontraksi:
+\[
+  \Axiom$!A(t), \lforall[x][!A(x)], \Gamma \fCenter \Delta$
+  \RightLabel{\LeftR{\lforall}}
+  \UnaryInf$\lforall[x][!A(x)], \lforall[x][!A(x)], \Gamma \fCenter \Delta$
+  \RightLabel{\LeftR{\Contraction}}
+  \UnaryInf$\lforall[x][!A(x)], \Gamma \fCenter \Delta$
+  \DisplayProof
+  \qquad
+  \Axiom$\Gamma \fCenter \Delta, \lexists[x][!A(x)], !A(t)$
+  \RightLabel{\RightR{\lexists}}
+  \UnaryInf$\Gamma \fCenter \Delta, \lexists[x][!A(x)], \lexists[x][!A(x)]$
+  \RightLabel{\RightR{\Contraction}}
+  \UnaryInf$\Gamma \fCenter \Delta, \lexists[x][!A(x)]$
+  \DisplayProof
+  \]
+\end{proof}
+
+\end{document}

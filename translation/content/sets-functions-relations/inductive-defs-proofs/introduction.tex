@@ -1,0 +1,139 @@
+% Part: sets-functions-relations
+% Chapter: induction
+% Section: induction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{ind}{int}
+
+\olsection{Pambuka}
+
+\begin{explain}
+Induksi minangka teknik bukti kang kerep digunakake ing matematika lan
+logika. Mbokmenawa sampeyan wis ngerti saka matematika, nalika
+nggunakake induksi marang wilangan asli. Pranyata akeh jinis
+himpunan objek matematika lan logika kang bisa ditangani nganggo induksi.
+
+Umume, induksi ngidini kita mbuktekake pratelan universal, yaiku
+nuduhake yen saben objek saka sawijining jinis nduweni sipat tartamtu.
+Mligine, induksi asring migunani nalika cara bukti ``introduksi universal''
+kakehan kerumitane. Induksi mung lumaku kanggo objek matematika kang
+dibangun kanthi cara khusus: yen saben unsur ing himpunan minangka unsur
+dhasar utawa dibangun saka unsur dhasar, mula kita bisa nggunakake
+induksi marang himpunan kasebut. Kanthi luwih tliti:
+\end{explain}
+
+\begin{defn}
+Himpunan $S$ \emph{katutup} tumrap fungsi $f$ yen lan mung yen
+saben $x \in S$ ndadekake $f(x) \in S$.
+Kanggo fungsi kanthi $n \ge 1$ masukan, katutup ateges
+$f(x_1,\ldots,x_n) \in S$ saben $x_1,\ldots,x_n \in S$.
+\end{defn}
+
+\begin{explain}
+Contone, wilangan asli ($\mathbb{N}$) katutup tumrap fungsi penerus
+$f(x) = x+1$. Yen $x$ minangka wilangan asli, semono uga $x+1$.
+Nanging wilangan asli ora katutup tumrap fungsi sadurunge
+$f(x) = x-1$, amarga $0$ minangka wilangan asli, dene $-1$ dudu.
+\end{explain}
+
+\begin{defn}
+Sipat $P$ diarani \emph{dijaga tumrap} fungsi $f(x)$ yen kanggo
+saben objek $a$ ing domain $f$, $P(a)$ ndadekake $P(f(a))$
+(yen $a$ nduweni sipat $P$, mula $f(a)$ uga nduweni sipat kasebut).
+Kanggo fungsi kanthi $n \ge 1$ masukan, dijaga ateges
+$P(a_1),\ldots,P(a_n)$ ndadekake $P(f(a_1,\ldots,a_n))$.
+\end{defn}
+
+\begin{explain}
+Sipat ``minangka wilangan genep'' dijaga tumrap fungsi $f(x) = x+2$,
+amarga yen $x$ genep, mula $x+2$ uga genep. Sipat minangka wilangan
+genep ora dijaga tumrap fungsi penerus, amarga yen $x$ genep,
+$x+1$ ganjil.
+
+Induksi lumaku kanggo wilangan asli amarga saben wilangan asli bisa
+digayuh saka 0 kanthi ngetrapake fungsi penerus kaping winates.
+Iki minangka ciri saben himpunan kang bisa ditangani nganggo induksi.
+\end{explain}
+
+\begin{defn}[Induksi marang $\Nat$]
+Yen 0 nduweni sipat $P$, lan yen $P$ dijaga tumrap fungsi penerus,
+mula saben wilangan asli nduweni sipat $P$.
+\end{defn}
+
+\begin{ex} Gunggung wilangan bulat saka 1 nganti $n$ yaiku $\frac{n(n+1)}{2}$. \\
+
+\textbf{Kasus dhasar.} Gunggung kosong nalika n padha karo 0 yaiku
+$0=\frac{0\cdot 1}{2}$.\\
+
+\textbf{Langkah induktif.} Upamane sipat kasebut lumaku kanggo $k$.
+Kita bakal nuduhake yen lumaku kanggo $k+1$. Tegese, upamane $P(k)$
+lumaku, yaiku,
+\[ 0 + 1 + \ldots + k = \frac{k(k+1)}{2} \]
+Kita bakal nuduhake yen $P(k+1)$ lumaku, yaiku
+\[ 0 + 1 + \ldots + k + (k+1) = \frac{(k+1)(k+2)}{2} \]
+kanthi nggunakake anggepan $P(k)$.
+
+\begin{align*}
+0 + 1 + \ldots + k &= \frac{k(k+1)}{2} \tag{Anggepan} \\
+0 + 1 + \ldots + k + (k+1) &= \frac{k(k+1)}{2} + (k+1)
+\tag{Tambah $k+1$ ing loro sisih} \\
+&= \frac{k(k+1) + 2(k+1)}{2} \\
+&= \frac{k^2 + k + 2k +2}{2} \\
+&=\frac{(k+1)(k+2)}{2}
+\end{align*}
+Dadi langkah induktif kasil, lan kita wis mbuktekake pratelan kasebut.
+\end{ex}
+
+\begin{explain}
+Kanggo !!{formula}s, unsur dhasare yaiku !!{formula}s atomik.
+!!{formula}s kang luwih rumit diolehake kanthi nggabungake
+!!{formula}s kang luwih prasaja nganggo operator. Saben operator
+bisa dianggep cocog karo fungsi kanthi cacah !!{formula}s kang
+jumbuh karo aritase, kang ngasilake !!{formula} anyar kanthi
+ngetrapake operator kasebut. Contone, fungsi kang nggabungake
+loro !!{formula}s $!A$ lan $!B$ dadi konjungsi bisa ditulis
+minangka $\mathcal E _\land (!A, !B) = !A \land !B$.
+Kita bisa ngarani fungsi kasebut \emph{fungsi pambangun formula}.
+Himpunan !!{formula}s katutup tumrap fungsi kasebut:
+saben $!A$ lan $!B$ minangka !!{formula}s, mula $\lnot !A$,
+$!A \land !B$, lan sapanunggalane uga minangka formula.
+\end{explain}
+
+\begin{defn}[Induksi marang !!{formula}s]
+Yen saben !!{formula} atomik nduweni sipat $P$ lan $P$ dijaga
+tumrap fungsi pambangun !!{formula}, mula saben !!{formula}
+nduweni sipat $P$.
+\end{defn}
+
+\begin{explain}
+Definisi iki menehi ``cara'' kanggo bukti induktif marang
+!!{formula}s. Yen kita dijaluk nuduhake yen saben !!{formula}
+nduweni sipat $P$, tindakna langkah ing ngisor iki:\\
+
+\textbf{Kasus dhasar.} Upamane $!A$ minangka !!{formula} atomik.
+[\ldots] Mula $!A$ nduweni sipat $P$.
+
+\textbf{Langkah induktif.} Upamane $!A$ lan $!B$ minangka
+!!{formula}s kang kalorone nduweni sipat $P$.
+
+Kasus $\lnot$: [\ldots] Mula $\lnot !A$ nduweni sipat $P$.
+
+Kasus $\land$: [\ldots] Mula $!A \land !B$ nduweni sipat $P$.
+
+Kasus $\lor$: [\ldots] Mula $!A \lor !B$ nduweni sipat $P$.
+
+Kasus $\lif$: [\ldots] Mula $!A \lif !B$ nduweni sipat $P$.
+
+Kasus $\liff$: [\ldots] Mula $!A \liff !B$ nduweni sipat $P$.
+
+Kasus $\lforall[]$: [\ldots] Mula $\lforall[x] !A$ nduweni sipat $P$.
+
+Kasus $\lexists[]$: [\ldots] Mula $\lexists[x] !A$ nduweni sipat $P$. \\
+
+Mula saben !!{formula} nduweni sipat $P$.
+\end{explain}
+
+\end{document}

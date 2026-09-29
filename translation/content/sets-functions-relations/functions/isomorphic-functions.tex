@@ -1,0 +1,44 @@
+% Part: sets-functions-relations
+% Chapter: functions
+% Section: isomorphisms
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sfr}{fun}{iso}
+\olsection{Isomorfisme}
+
+\begin{explain}
+\emph{Isomorfisme} minangka bijeksi kang njaga struktur himpunan kang
+disambungake. Struktur kasebut ditemtokake dening sesambungan kang
+lumaku antarane !!{element}s ing himpunan. Gatekna loro himpunan
+$X=\{1,2,3\}$ lan $Y=\{4,5,6\}$. Kalorone nduweni struktur
+saka relasi penerus, luwih cilik tinimbang, lan luwih gedhe tinimbang.
+Isomorfisme antarane loro himpunan kasebut minangka !!a{bijection}
+kang njaga struktur kasebut. Dadi fungsi !!a{bijective}
+$f \colon X \to Y$ minangka isomorfisme yen $i<j$ yen lan mung yen
+$f(i)<f(j)$, $i>j$ yen lan mung yen $f(i)>f(j)$, lan $j$
+minangka penerus saka $i$ yen lan mung yen $f(j)$ minangka penerus
+saka $f(i)$.
+\end{explain}
+
+\begin{defn}[Isomorfisme]
+Upamane $U$ minangka pasangan $\langle X, R\rangle$ lan $V$
+minangka pasangan $\langle Y, S\rangle$, kanthi $X$ lan $Y$
+minangka himpunan, sarta $R$ lan $S$ minangka relasi ing $X$ lan
+$Y$ kanthi urut. !!{bijection} $f$ saka $X$ menyang $Y$ minangka
+\emph{isomorfisme} saka $U$ menyang $V$ yen lan mung yen njaga
+struktur relasional, yaiku kanggo saben $x_{1}$ lan $x_{2}$ ing $X$,
+$\tuple{x_1,x_2} \in R$ yen lan mung yen
+$\tuple{f(x_1),f(x_2)} \in S$.
+\end{defn}
+
+\begin{ex}
+Gatekna loro himpunan $X=\{1,2,3\}$ lan $Y=\{4,5,6\}$,
+sarta relasi luwih cilik tinimbang lan luwih gedhe tinimbang.
+Fungsi $f\colon X \to Y$ kanthi $f(x) = 7-x$ minangka
+isomorfisme antarane $\tuple{X,<}$ lan $\tuple{Y,>}$.
+\end{ex}
+
+\end{document}

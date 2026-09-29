@@ -1,0 +1,32 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0713",
+  "source_path": "content/proof-theory/sequent-calculus/translations.tex",
+  "source_sha256": "9ae0e40622effab9a067226754c58eeac00c1e21b1ac899c9e2acdebbd12d92c",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-727",
+      "location": "G1-to-G3 identity base case",
+      "finding": "The proof says arbitrary identity formulas are allowed as G3c axioms, contradicting its atomic-only identity rule and the following appeal to derivability.",
+      "proposed_resolution": "State that arbitrary nonatomic identities are not allowed as G3c axioms, retaining the cited proof that they are derivable.",
+      "source_line": 34
+    },
+    {
+      "id": "OLPL-728",
+      "location": "right-disjunction simulation",
+      "finding": "The duplicate principal-formula line has an extra context comma.",
+      "proposed_resolution": "Remove the extra comma, preserving both principal copies and the final contraction.",
+      "source_line": 94
+    },
+    {
+      "id": "OLPL-729",
+      "location": "quantified-rule proof transformations",
+      "finding": "The reverse construction lists only conjunction-left and disjunction-right as exceptions, omitting G3c's retained-principal universal-left and existential-right rules. The forward direction also leaves their admissibility step implicit.",
+      "proposed_resolution": "In G1-to-G3, add the retained principal formula by admissible weakening before the G3 rule. In G3-to-G1, display each corresponding G1 rule followed by contraction of the two quantified principal copies.",
+      "source_line": 77
+    }
+  ],
+  "translation_treatment": "The three bounded repairs are recorded in SOURCE_ISSUES_OLP0713.json and its exact source view, including reproducible quantified proof diagrams. The frozen English remains unchanged.",
+  "no_source_mutation": true
+}

@@ -179,6 +179,10 @@ from olp0707_source_view import repaired_olp0707_source
 from olp0708_source_view import repaired_olp0708_source
 from olp0709_source_view import repaired_olp0709_source
 from olp0710_source_view import repaired_olp0710_source
+from olp0711_source_view import repaired_olp0711_source
+from olp0713_source_view import repaired_olp0713_source
+from olp0718_source_view import repaired_olp0718_source
+from olp0720_source_view import repaired_olp0720_source
 R=pathlib.Path(__file__).resolve().parent.parent
 S=R/'evidence'
 def sha(data): return hashlib.sha256(data).hexdigest()
@@ -712,6 +716,14 @@ for u in units:
         protected_source=repaired_olp0709_source(protected_source)
     if u['unit_id']=='OLP-0710':
         protected_source=repaired_olp0710_source(protected_source)
+    if u['unit_id']=='OLP-0711':
+        protected_source=repaired_olp0711_source(protected_source)
+    if u['unit_id']=='OLP-0713':
+        protected_source=repaired_olp0713_source(protected_source)
+    if u['unit_id']=='OLP-0718':
+        protected_source=repaired_olp0718_source(protected_source)
+    if u['unit_id']=='OLP-0720':
+        protected_source=repaired_olp0720_source(protected_source)
     if u['unit_id']=='OLP-0533':
         protected_source=repaired_olp0533_source(protected_source)
     if u['unit_id']=='OLP-0379':
@@ -1977,6 +1989,18 @@ for u in units:
     if u['unit_id']=='OLP-0710':
         math_source=repaired_olp0710_source(math_source)
         token_source=repaired_olp0710_source(token_source)
+    if u['unit_id']=='OLP-0711':
+        math_source=repaired_olp0711_source(math_source)
+        token_source=repaired_olp0711_source(token_source)
+    if u['unit_id']=='OLP-0713':
+        math_source=repaired_olp0713_source(math_source)
+        token_source=repaired_olp0713_source(token_source)
+    if u['unit_id']=='OLP-0718':
+        math_source=repaired_olp0718_source(math_source)
+        token_source=repaired_olp0718_source(token_source)
+    if u['unit_id']=='OLP-0720':
+        math_source=repaired_olp0720_source(math_source)
+        token_source=repaired_olp0720_source(token_source)
     if u['unit_id']=='OLP-0533':
         math_source=repaired_olp0533_source(math_source)
         token_source=repaired_olp0533_source(token_source)
@@ -2234,6 +2258,14 @@ for u in units:
         command_source=repaired_olp0709_source(command_source)
     if u['unit_id']=='OLP-0710':
         command_source=repaired_olp0710_source(command_source)
+    if u['unit_id']=='OLP-0711':
+        command_source=repaired_olp0711_source(command_source)
+    if u['unit_id']=='OLP-0713':
+        command_source=repaired_olp0713_source(command_source)
+    if u['unit_id']=='OLP-0718':
+        command_source=repaired_olp0718_source(command_source)
+    if u['unit_id']=='OLP-0720':
+        command_source=repaired_olp0720_source(command_source)
     # OLPL-003: the closed tableau expands a true conjunction on line 2,
     # but both frozen rule labels say true implication. Normalize only those
     # two labels for exact command comparison.

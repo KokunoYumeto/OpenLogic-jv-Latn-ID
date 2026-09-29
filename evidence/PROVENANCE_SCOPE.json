@@ -1,17 +1,17 @@
 {
   "schema": "jv-public-source-provenance-scope/1",
-  "source_tranche": "OLP-0001..OLP-0710",
+  "source_tranche": "OLP-0001..OLP-0722",
   "release_reader_units": 24,
-  "sealed_checkpoint": "CHECKPOINT-DRAFT-OLP0710.json",
-  "sealed_checkpoint_sha256": "10f7e94e87fbd760218dff2696670973cd3dbbcf14b5a4c4f9eeb6d587c75f8c",
+  "sealed_checkpoint": "CHECKPOINT-DRAFT-OLP0722.json",
+  "sealed_checkpoint_sha256": "9bcabbb5f93f0f7219c58720efc55b735d09922eb12c384e022ac8d766bc9742",
   "policy": "Public evidence projection withdraws uniform automatic canon assignments; source translation and sealed private checkpoints are not changed.",
-  "term_decisions_total": 700,
+  "term_decisions_total": 712,
   "term_auto_bundles_withdrawn": 444,
   "term_withdrawn_id_range": [
     "JV-T213",
     "JV-T657"
   ],
-  "segment_rows_total": 10443,
+  "segment_rows_total": 10611,
   "segment_auto_bundles_withdrawn": 4143,
   "segment_withdrawn_id_range": [
     "OLP-0205-P004",
@@ -19,12 +19,12 @@
   ],
   "unmodified_other_rows": "Other rows retain their specific recorded evidence; no blanket independent canon or native-specialist certification is claimed.",
   "source_evidence_sha256": {
-    "TERM_DECISIONS.jsonl": "5f291deb940222089c511dd9a3c26c43a9c40077c67bfb7198c987fa984488a2",
-    "SEGMENT_CANON_USE.jsonl": "ba0dee372505229aa16231551ff9bf83d89b17da1fdab1fbf693fa8f3f58a77c"
+    "TERM_DECISIONS.jsonl": "90d41c1cde3a0841a3597a5591ecd2084a8d3046259d20769cc891884648acc1",
+    "SEGMENT_CANON_USE.jsonl": "0d29941dd50e9fb893501b1356a29a6e9b9c351b9ca83e542b12293710221fb1"
   },
   "public_projection_sha256": {
-    "TERM_DECISIONS.jsonl": "fcbca88293a5d4ecfbe620e92d101d13ed99f4f6898a1d06fa23f651f837add3",
-    "SEGMENT_CANON_USE.jsonl": "4ede5820f50328f2c3e4265a89b8d8785c71681ef170ac36c150025167d56fbe"
+    "TERM_DECISIONS.jsonl": "9ba54358e1e249b7fee5c110cc3e39f439246648eda8fcf02a62d424af558811",
+    "SEGMENT_CANON_USE.jsonl": "89dca2fd20e47cc45aa818fdf6c4e06612b66b2848b7868ad1e2dd42f599d959"
   },
   "revalidation_status": "pending; source and structural QA can proceed while this evidence is repaired"
 }

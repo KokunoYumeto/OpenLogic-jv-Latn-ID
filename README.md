@@ -3,9 +3,9 @@
 Terjemahan OpenLogic nganggo basa Jawa aksara Latin (jv-Latn-ID).
 Ragam utama yaiku ngoko tinulis kanggo andharan akademik.
 
-**Isih digarap: sumber saiki ngemot 710 saka 722 berkas kang wis diterjemahake.**
-Urutan sumber wis tekan tabel aturan kalkulus sekuen ing perangan teori bukti,
-kalebu varian klasik, intuisionistik, minimal, lan aturan urutan LK.
+**Isih digarap: sumber saiki ngemot 722 saka 722 berkas kang wis diterjemahake.**
+Kabeh 722 berkas sumber wis diterjemahake, kalebu perangan alternatif lan
+cathetan editor. Validasi maneh bukti kanon lan wacan jangkep isih digarap.
 Wacan PDF kang wis diterbitake tetep ngemot 24 unit sumber lan dibangun kanggo rilis
 [v0.2.0](https://github.com/KokunoYumeto/OpenLogic-jv-Latn-ID/releases/tag/v0.2.0),
 kanthi TeX kumulatif langsung, ZIP sumber editable jangkep, lan EPUB3
@@ -45,7 +45,7 @@ Lingkup sumber lan terjemahan dibedakake saka lingkup wacan.
 Alur sumber baku nyakup 642 unit; edhisi jangkep kudu nyakup kabeh 722
 kanthi runtut tanpa mbaleni pangatur alternatif. Wacan jangkep kasebut durung dibangun.
 
-Kabeh 710 berkas terjemahan nduweni cathetan paragraf sing sejajar karo sumber,
+Kabeh 722 berkas terjemahan nduweni cathetan paragraf sing sejajar karo sumber,
 pamriksan formula, token, pranala lan label, sarta pamandingan makna dening
 panulis sing padha kanthi parafrasa balik pilihan. Validasi maneh kanon lan
 koreksine wis tekan OLP-0058; validasi maneh kanon kanggo berkas sabanjure

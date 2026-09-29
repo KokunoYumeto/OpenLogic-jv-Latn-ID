@@ -1,0 +1,123 @@
+% Part: propositional-logic
+% Chapter: propositional-logic 
+% Section: completeness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pl}{prp}{com}
+
+\olsection{Kajangkepan Logika Proposisional}
+
+\begin{defn}
+\ollabel{def:MaxCon}
+Himpunan $\Gamma$ saka !!{formula}s diarani \emph{konsisten maksimal}
+yen konsisten lan yen $\Delta$ minangka himpunan konsisten kanthi
+$\Gamma \subseteq \Delta$, mula $\Gamma = \Delta$.
+\end{defn}
+
+\begin{lem}[Lema Kabeneran]
+  \ollabel{lem:truth}
+Upamane $\Gamma$ konsisten maksimal; mula:
+\begin{enumerate}
+\item \ollabel{lem:truth-1} $!A \in \Gamma$ yen lan mung yen
+  $\lnot !A \notin \Gamma$;
+\item \ollabel{lem:truth-2} $\Gamma \Proves !A$ yen lan mung yen $!A \in \Gamma$;
+\item \ollabel{lem:truth-3} $!A \lif !B \in \Gamma$ yen lan mung yen
+  $!A \notin \Gamma$ utawa $!B \in \Gamma$.
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+\begin{enumerate}
+\item Upamane $!A \in \Gamma$. Yen uga $\lnot !A \in \Gamma$,
+  mula $\Gamma$ ora konsisten; lan yen $!A$ lan $\lnot!A$
+  kalorone ora ana ing $\Gamma$, mula miturut \olref[axd]{prop:phi},
+  salah siji saka $\Gamma\cup\{!A\}$ lan $\Gamma \cup \{\lnot !A\}$
+  konsisten. Iki ateges $\Gamma$ ora maksimal.
+  Arah kosok baline dibuktekake kanthi cara kang padha.
+\item Yen $!A \in \Gamma$, mesthi $\Gamma \Proves !A$.
+  Kosok baline, upamane $\Gamma \Proves !A$. Yen $!A \notin \Gamma$,
+  mula miturut \olref{lem:truth-1}, $\lnot !A \in \Gamma$.
+  Dadi $\Gamma \Proves !A$ lan $\Gamma \Proves \lnot !A$, sawijining kontradiksi.
+\item Latihan.
+\end{enumerate}
+\end{proof}
+
+Arah saka kiwa menyang tengen ing \olref{lem:truth}\olref{lem:truth-2}
+nuduhake yen $\Gamma$ \emph{katutup tumrap deduksi}, yaiku yen
+$\Gamma \Proves !A$, mula $!A \in \Gamma$ kanggo kabeh~$!A$.
+
+\begin{prob}
+  Jangkepana bukti \olref{lem:truth}.
+\end{prob}
+
+\begin{thm}[Kajangkepan]
+\ollabel{thm:completeness}
+Yen $\Gamma$ konsisten, mula $\Gamma$ bisa disembadani.
+\end{thm}
+
+\begin{proof}
+Upamane $!A_0$, $!A_1$,~\dots minangka dhaptar kang nyakup kabeh
+!!{formula}s ing basa kasebut. Kita nemtokake kanthi rekursif sawijining
+urutan himpunan !!{formula}s $\Gamma_0$, $\Gamma_1$,~\dots kang saya
+gedhe, kanthi netepake:
+\begin{align*}
+\Gamma_0 & = \Gamma\\
+\Gamma_{n+1} & =
+\begin{cases}
+  \Gamma_n \cup \{!A_n\} & \text{yen $\Gamma_n \cup \{!A_n\}$
+    konsisten;}\\
+  \Gamma_n \cup \{\lnot !A_n\} & \text{yen ora}.
+\end{cases}
+\end{align*}
+Banjur tetepna:
+\[
+\Gamma^* = \bigcup_{0\le n}\Gamma_n.
+\]
+Bukti diterusake kanthi netepake kasunyatan ing ngisor iki kanthi urut:
+\begin{enumerate}
+\item Kanggo saben $n$, himpunan $\Gamma_n$ konsisten
+  (kanthi induksi marang $n$, nggunakake \olref[axd]{prop:phi});
+\item $\Gamma^*$ konsisten;
+\item $\Gamma^*$ maksimal.
+\end{enumerate}
+Banjur tetepna valuasi $v$ kanthi menehi $v(p_i) = \True$ yen lan
+mung yen $p_i \in \Gamma^*$. Kanthi induksi marang $!A$, dituduhake
+yen kaanggotaan ing $\Gamma^*$ cocog karo kabeneran miturut $v$
+uga kanggo !!{sentence}s kang luwih rumit:
+$\overline{v}(!A) = \True$ yen lan mung yen $!A \in \Gamma^*$.
+Mligine, $v$ nyembadani $\Gamma^*$. Amarga $\Gamma \subseteq \Gamma^*$,
+$\Gamma$ uga bisa disembadani, kaya kang dikarepake.
+\end{proof}
+
+\begin{cor}
+Yen $\Gamma \Entails !A$, mula $\Gamma \Proves !A$.
+\end{cor}
+
+\begin{proof}
+Yen $\Gamma\Proves/ !A$, mula $\Gamma \cup \{\lnot !A\}$ konsisten,
+miturut \olref[axd]{prop:prov-incons}. Dadi, miturut teorema kajangkepan,
+$\Gamma \cup \{\lnot !A\}$ bisa disembadani, lan $\Gamma \Entails/ !A$.
+\end{proof}
+
+\begin{prop}[Teorema Kekompakan]
+\ollabel{prop:compactness}
+$\Gamma$ bisa disembadani yen lan mung yen saben subhimpunan
+\emph{winates} $\Gamma_0$ saka $\Gamma$ bisa disembadani.
+\end{prop}
+
+\begin{proof}
+$\Gamma$ ora bisa disembadani yen lan mung yen ora konsisten,
+yen lan mung yen ana subhimpunan winates $\Gamma_0$ saka $\Gamma$
+kang ora konsisten, yen lan mung yen ana subhimpunan winates
+$\Gamma_0$ saka $\Gamma$ kang ora bisa disembadani.
+\end{proof}
+
+\begin{cor}
+$\Gamma \Entails !A$ yen lan mung yen ana subhimpunan winates
+$\Gamma_0$ saka $\Gamma$ kanthi $\Gamma_0 \Entails !A$.
+\end{cor}
+
+\end{document}

@@ -1,0 +1,25 @@
+{
+  "schema": "jv-frozen-source-issues/1",
+  "unit_id": "OLP-0711",
+  "source_path": "content/proof-theory/sequent-calculus/rules-proofs.tex",
+  "source_sha256": "ef1231f53bdbfff4b0cab8f4a96223632447f783e6cb85ac9e774dceba28b699",
+  "status": "translation_corrected_pending_reader_build",
+  "issues": [
+    {
+      "id": "OLPL-725",
+      "location": "informal height description",
+      "finding": "Counting sequents between endpoints is ambiguous and can disagree with the recursive definition, which assigns zero to an axiom and adds one per inference edge.",
+      "proposed_resolution": "Describe the maximum number of inference steps on a path from end-sequent to initial sequent, exactly matching the recursive definition.",
+      "source_line": 130
+    },
+    {
+      "id": "OLPL-726",
+      "location": "multiset permutation example",
+      "finding": "The claimed equal sequents permute the antecedent but also change the succedent from E to D.",
+      "proposed_resolution": "Keep succedent E in both sequents while swapping only D and E in the antecedent.",
+      "source_line": 156
+    }
+  ],
+  "translation_treatment": "OLPL-725/726 are recorded in SOURCE_ISSUES_OLP0711.json and the corrected source view. Frozen English and all proof trees remain unchanged.",
+  "no_source_mutation": true
+}
