@@ -1,9 +1,12 @@
-param([int]$Passes = 3, [string]$BuildName = 'tex-sets', [string]$ReferencePdf = '', [int]$AcquireTimeoutMs = 30000)
+param([int]$Passes = 3, [string]$BuildName = 'tex-sets', [string]$ReaderName = 'jv-sets', [string]$ReferencePdf = '', [int]$AcquireTimeoutMs = 30000, [int]$ProcessTimeoutSeconds = 180)
 $ErrorActionPreference = 'Stop'
 if ($AcquireTimeoutMs -lt 1 -or $AcquireTimeoutMs -gt 60000) { throw 'Mutex timeout must be between 1 and 60000 milliseconds' }
+if ($ProcessTimeoutSeconds -lt 30 -or $ProcessTimeoutSeconds -gt 900) { throw 'Process timeout must be between 30 and 900 seconds' }
 $taskRepo = Split-Path -Parent $PSScriptRoot
 $taskState = Join-Path $taskRepo '.build'
-if ($BuildName -notmatch '^tex-sets(?:-[a-z0-9]+)?$') { throw 'Invalid task build directory name' }
+if ($ReaderName -notin @('jv-sets','jv-through-0202')) { throw 'Invalid task reader name' }
+$taskBuildPrefix = if ($ReaderName -eq 'jv-sets') { 'tex-sets' } else { 'tex-through-0202' }
+if ($BuildName -notmatch ('^' + [regex]::Escape($taskBuildPrefix) + '(?:-[a-z0-9]+)?$')) { throw 'Invalid task build directory name for reader' }
 $taskBuild = Join-Path (Join-Path $taskState 'work') $BuildName
 if ($ReferencePdf) {
     $taskReferenceResolved = [IO.Path]::GetFullPath($ReferencePdf)
@@ -12,6 +15,8 @@ if ($ReferencePdf) {
     if ((Test-Path -LiteralPath $taskBuild) -and (Get-ChildItem -LiteralPath $taskBuild -Force | Select-Object -First 1)) { throw 'A reproducibility replay requires an empty build directory' }
 }
 $taskEdition = Join-Path $taskRepo 'edition'
+$taskMaster = $ReaderName + '.tex'
+if (-not (Test-Path -LiteralPath (Join-Path $taskEdition $taskMaster))) { throw 'Reader master is absent' }
 New-Item -ItemType Directory -Force -Path $taskBuild | Out-Null
 $taskProfilePath = [Environment]::GetFolderPath('UserProfile')
 Add-Type -TypeDefinition @'
@@ -75,7 +80,7 @@ public static class JvTexJob {
 $taskMutex = [System.Threading.Mutex]::new($false, 'Global\InterlanguageTeXSlotV1')
 $taskAcquired = $false
 $taskAbandoned = $false
-$taskReceipt = [ordered]@{schema='jv-tex-build/1';utc=[DateTime]::UtcNow.ToString('o');mutex='Global\InterlanguageTeXSlotV1';timeout_ms=$AcquireTimeoutMs;acquired=$false;abandoned_recovery=$false;passes=@();status='not_started';tex_started=$false}
+$taskReceipt = [ordered]@{schema='jv-tex-build/1';utc=[DateTime]::UtcNow.ToString('o');reader=$ReaderName;mutex='Global\InterlanguageTeXSlotV1';timeout_ms=$AcquireTimeoutMs;process_timeout_seconds=$ProcessTimeoutSeconds;acquired=$false;abandoned_recovery=$false;passes=@();status='not_started';tex_started=$false}
 try {
     try { $taskAcquired = $taskMutex.WaitOne($AcquireTimeoutMs) }
     catch [System.Threading.AbandonedMutexException] { $taskAcquired=$true; $taskAbandoned=$true }
@@ -96,11 +101,11 @@ try {
                 if ($taskKind -eq 'tex') {
                     $taskExe=$taskTexExe
                     $taskWorkingDirectory=$taskEdition
-                    $taskArguments='--disable-installer -no-shell-escape -interaction=nonstopmode -halt-on-error -file-line-error -recorder -output-directory="' + $taskBuild + '" jv-sets.tex'
+                    $taskArguments='--disable-installer -no-shell-escape -interaction=nonstopmode -halt-on-error -file-line-error -recorder -output-directory="' + $taskBuild + '" ' + $taskMaster
                 } else {
                     $taskExe=$taskBibExe
                     $taskWorkingDirectory=$taskBuild
-                    $taskArguments='--disable-installer jv-sets'
+                    $taskArguments='--disable-installer ' + $ReaderName
                 }
                 $taskOldBib=$env:BIBINPUTS
                 $taskOldBst=$env:BSTINPUTS
@@ -116,18 +121,18 @@ try {
                 $taskReceipt.tex_started=$true
                 $taskClock=[Diagnostics.Stopwatch]::StartNew()
                 while (-not $taskProcess.HasExited -or [JvTexJob]::Active($taskJob) -gt 0) {
-                    if ($taskClock.Elapsed.TotalSeconds -gt 180) {
+                    if ($taskClock.Elapsed.TotalSeconds -gt $ProcessTimeoutSeconds) {
                         $null=[JvTexJob]::TerminateJobObject($taskJob,124)
                         $taskProcess.WaitForExit()
                         while ([JvTexJob]::Active($taskJob) -gt 0) { Start-Sleep -Milliseconds 100 }
-                        throw 'Captured TeX process tree exceeded 180 seconds'
+                        throw 'Captured TeX process tree exceeded the configured bounded timeout'
                     }
                     Start-Sleep -Milliseconds 100
                 }
                 $taskProcess.WaitForExit()
                 $taskOutput=[IO.File]::ReadAllText($taskOutputPath).Replace($taskProfilePath,'[PROFILE]').Replace($taskProfilePath.Replace('\','/'),'[PROFILE]')
                 [IO.File]::WriteAllText($taskOutputPath,$taskOutput)
-                foreach ($taskLogName in @('jv-sets.log','jv-sets.fls','jv-sets.blg')) {
+                foreach ($taskLogName in @(($ReaderName + '.log'),($ReaderName + '.fls'),($ReaderName + '.blg'))) {
                     $taskLogPath=Join-Path $taskBuild $taskLogName
                     if (Test-Path -LiteralPath $taskLogPath) {
                         $taskLogText=[IO.File]::ReadAllText($taskLogPath).Replace($taskProfilePath,'[PROFILE]').Replace($taskProfilePath.Replace('\','/'),'[PROFILE]')
@@ -155,14 +160,14 @@ try {
                 if ($null -ne $taskProcess) { $taskProcess.Dispose() }
             }
         }
-        $taskLog=Join-Path $taskBuild 'jv-sets.log'
+        $taskLog=Join-Path $taskBuild ($ReaderName + '.log')
         if (Test-Path -LiteralPath $taskLog) {
             $taskLogData=Get-Content -LiteralPath $taskLog -Raw
             $taskReceipt.log_checks=[ordered]@{undefined_references=([regex]::Matches($taskLogData,'(?:Reference .* undefined|There were undefined references)').Count);missing_characters=([regex]::Matches($taskLogData,'Missing character:').Count);overfull_boxes=([regex]::Matches($taskLogData,'Overfull \\[hv]box').Count);errors=([regex]::Matches($taskLogData,'(?m)^!|LaTeX Error:|Undefined control sequence|Fatal error occurred').Count)}
         }
-        $taskPdf=Join-Path $taskBuild 'jv-sets.pdf'
+        $taskPdf=Join-Path $taskBuild ($ReaderName + '.pdf')
         if (Test-Path -LiteralPath $taskPdf) {
-            $taskReceipt.pdf=[ordered]@{filename='jv-sets.pdf';bytes=(Get-Item -LiteralPath $taskPdf).Length;sha256=(Get-FileHash -Algorithm SHA256 -LiteralPath $taskPdf).Hash.ToLowerInvariant()}
+            $taskReceipt.pdf=[ordered]@{filename=($ReaderName + '.pdf');bytes=(Get-Item -LiteralPath $taskPdf).Length;sha256=(Get-FileHash -Algorithm SHA256 -LiteralPath $taskPdf).Hash.ToLowerInvariant()}
             if ($ReferencePdf) {
                 $taskReferenceHash=(Get-FileHash -Algorithm SHA256 -LiteralPath $taskReferenceResolved).Hash.ToLowerInvariant()
                 $taskReceipt.reproducibility=[ordered]@{reference_sha256=$taskReferenceHash;replay_sha256=$taskReceipt.pdf.sha256;identical=($taskReferenceHash -eq $taskReceipt.pdf.sha256);fresh_build_directory=$BuildName;compared_while_mutex_held=$true}

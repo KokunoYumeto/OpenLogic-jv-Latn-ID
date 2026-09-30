@@ -10,8 +10,8 @@
 \olsection{Ngenumerasi Mesin Turing}
 
 \begin{explain}
-Kita bisa nuduhake yen himpunan kabeh mesin Turing iku
-!!{enumerable}. Iki ndherek saka kasunyatan yen saben
+Kita bisa nuduhake yen himpunan wakil mesin Turing standar nganti panggantos jeneng iku
+!!{enumerable}. Cathetan koreksi sumber OLPL-772: iki mung bener kanggo wakil mesin standar nganti panggantos jeneng kahanan lan simbol; mesin mentah kanthi label obyek sembarang bisa ora enumerable. Iki ndherek saka kasunyatan yen saben
 mesin Turing bisa diterangake kanthi winates. Himpunan
 kahanan lan kosakata pita iku himpunan winates. Fungsi
 transisi iku fungsi parsial saka $Q \times \Sigma$
@@ -62,9 +62,9 @@ alfabet pita $\Sigma = \{\TMendtape,\TMblank,\TMstroke\}$
 lan himpunan kahanan $\{q_0,q_1\}$, sarta $M'$ kanthi
 alfabet $\Sigma' = \{\TMendtape,\TMblank,A\}$ lan
 kahanan $\{s,h\}$. Nanging instruksi liyane padha:
-$M$ mandheg nalika maca runtutan $n$~$\TMstroke$
+$M$ mandheg nalika maca rerangken $n$~$\TMstroke$
 yen lan mung yen $n$ genep, lan $M'$ mandheg nalika
-maca runtutan $n$~$A$ yen lan mung yen $n$ genep.
+maca rerangken $n$~$A$ yen lan mung yen $n$ genep.
 Kita mung ngganti jeneng $\TMstroke$ dadi~$A$,
 $q_0$ dadi~$s$, lan $q_1$ dadi~$h$. Tuladha iki
 bisa digeneralisasi: kita bisa nganggep rong mesin
@@ -100,12 +100,12 @@ wilangan wutuh positif bisa kita arani mesin
 nggatekake mesin standar.\footnote{Istilah
 ``mesin standar'' iku dudu istilah baku.}
 
-Kita kepengin nuduhake yen himpunan mesin Turing iku
+Kita kepengin nuduhake yen himpunan wakil mesin Turing iku
 !!{enumerable}; kanthi tetimbangan ing ndhuwur, cukup
 nuduhake yen himpunan mesin Turing standar iku
 !!{enumerable}. Upamane ana mesin Turing standar
 $M = \tuple{Q, \Sigma, q_0, \delta}$. Kepriye carane
-njlentrehake mesin iku nganggo runtutan winates
+njlentrehake mesin iku nganggo rerangken winates
 wilangan wutuh positif? Dhisik kita dhaptar cacahe
 kahanan, kahanan-kahanane, cacahe simbol, simbol-simbole,
 lan kahanan wiwitan. (Elinga, kabeh iki wilangan
@@ -122,9 +122,9 @@ lan $3$ kanggo~$\TMstay$).
 
 Kanthi cara iki, saben mesin Turing standar bisa
 diterangake nganggo dhaptar winates wilangan
-wutuh positif, yaiku minangka runtutan $s_M \in
+wutuh positif, yaiku minangka rerangken $s_M \in
 (\PosInt)^*$. Contone, mesin \emph{Genep} standar
-dikode nganggo runtutan iki:
+dikode nganggo rerangken iki:
 \[
 2, \underbrace{1, 2}_Q, 3, \overbrace{1, 2, 3}^\Sigma, 1, \underbrace{1, 3, 2, 3, 2}_{\delta(1,3) = \tuple{2,3,R}}, 
 \overbrace{2, 2, 2, 2, 2}^{\delta(2,2) = \tuple{2,2,R}},
@@ -138,7 +138,7 @@ ora bisa diitung dening mesin Turing.
 \end{thm}
 
 \begin{proof}
-Kita ngerti yen himpunan runtutan winates wilangan
+Kita ngerti yen himpunan rerangken winates wilangan
 wutuh positif~$(\PosInt)^*$ iku !!{enumerable}
 (\cref{sfr:siz:zigzag:prob:posint-star}). Mula
 himpunan andharan mesin Turing standar, minangka
@@ -154,7 +154,7 @@ bisa diitung dening mesin Turing uga bisa
 diitung dening mesin Turing standar. Tegese,
 himpunan kabeh fungsi saka $\Nat$ menyang~$\Nat$
 kang bisa diitung dening mesin Turing uga bisa
-dienumerasi.
+dienumerasi. Cathetan panyunting: enumerable ing bukti iki teges kardinalitas, ora pratelan ana prosedur efektif kanggo nyaring kabeh mesin kang ngitung fungsi total.
 
 Nanging, himpunan kabeh fungsi saka $\Nat$
 menyang~$\Nat$ ora !!{enumerable}
@@ -173,7 +173,7 @@ mesin Turing.
   alfabet kanthi eksplisit? Kowe oleh netepake
   pangertenmu dhewe bab mesin ``standar'', nanging
   % OLPL-150: Sumber beku nyebut mesin Turing diitung dening mesin standar; maksud soal yaiku tumindake bisa ditiru sawise panggantos representasi.
-  terangna apa sebabe tumindake saben mesin Turing
+  Cathetan koreksi sumber OLPL-150: maksude yaiku niru tumindak mesin, dudu ngitung mesin minangka asil fungsi. Terangna apa sebabe tumindake saben mesin Turing
   bisa ditiru dening mesin ``standar'' miturut
   pangerten anyar iku.
 \end{prob}

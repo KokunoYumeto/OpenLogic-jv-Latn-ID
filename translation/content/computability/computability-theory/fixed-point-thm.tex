@@ -14,7 +14,7 @@ sawetara wektu, ayo nulis $\gn{\cfind{x}(y)}$ kanggo
 $\tuple{x, y}$; anggepen iki minangka ``jeneng'' kanggo
 nilai $\cfind{x}(y)$. Kanthi notasi iki, kita bisa
 ngandharake maneh salah siji bukti yen masalah
-mandheg ora bisa diputusake.
+mandheg ora bisa diputusake. Cathetan panyunting: jeneng sementara iki kode pasangan program lan input, dudu nilai kang wis diitung; kode kasebut tetep ana sanajan komputasine ora mandheg.
 
 Pitakon: apa ana fungsi komputabel $h$ kang nduwé
 sipat ing ngisor iki? Kanggo saben $x$ lan $y$,
@@ -82,7 +82,7 @@ Pratelan-pratelan ing ngisor iki ekuivalen:
 \begin{proof}
 $(1) \Rightarrow (2)$: Yen diwenehi $f$, tetepna
 $g$ kanthi $g(x,y) \simeq \fn{Un}(f(x),y)$.
-Gunakna (1) kanggo ngentukake indeks~$e$
+Gunakna (1) kanggo ngasilake indeks~$e$
 saengga kanggo saben~$y$,
 \begin{align*}
 \cfind{e}(y) & = \fn{Un}(f(e),y) \\
@@ -90,10 +90,10 @@ saengga kanggo saben~$y$,
 \end{align*}
 
 $(2) \Rightarrow (1)$: Yen diwenehi $g$,
-gunakna teorema $s$-$m$-$n$ kanggo ngentukake
+gunakna teorema $s$-$m$-$n$ kanggo ngasilake
 $f$ saengga kanggo saben $x$ lan~$y$,
 $\cfind{f(x)}(y) \simeq g(x,y)$. Gunakna (2)
-kanggo ngentukake indeks~$e$ saengga
+kanggo ngasilake indeks~$e$ saengga
 \begin{align*}
 \cfind{e}(y) & = \cfind{f(e)}(y) \\
 & = g(e,y).
@@ -136,7 +136,7 @@ $f_x(y) \simeq \cfind{x}(x,y)$, yaiku
 Anggepen $\fn{diag}$ minangka fungsi kang ngowahi
 program kanggo fungsi rong argumen dadi program
 kanggo fungsi siji argumen, kanthi netepake
-program asal minangka argumen kapisane.
+program asal minangka argumen kapisane. Cathetan koreksi sumber OLPL-769: program kang diarani ing kene nduweni rong argumen; notasi indeks tanpa tandha aritas kudu diwaca minangka varian aritas loro, sadurunge argumen kapisan ditetepake.
 Fungsi $\fn{diag}$ bisa ditetepake sacara formal
 mangkene: luwih dhisik tetepna $s$ kanthi
 \[
@@ -173,15 +173,15 @@ Apa kang kedadeyan? Upamane kowe diwenehi
 tugas nulis program komputer kang nyithak
 program iku dhewe. Upamane uga kowe
 nganggo basa pamrograman kang nduwé
-pustaka fungsi runtutan aksara kang
+pustaka fungsi rerangken aksara kang
 sugih lan aneh. Mligine, upamane basa
 pamrogramanmu nduwé fungsi $\fn{diag}$
 kang makarya mangkene: yen diwenehi
-runtutan aksara~$s$, $\fn{diag}$ nemokake
+rerangken aksara~$s$, $\fn{diag}$ nemokake
 saben simbol `x' ing~$s$, banjur ngganteni
 simbol iku nganggo versi nganggo tandha
-petik saka runtutan aksara asal. Tuladhane,
-yen diwenehi runtutan aksara
+petik saka rerangken aksara asal. Tuladhane,
+yen diwenehi rerangken aksara
 \begin{quote}
 \begin{verbatim}
 hello x world
@@ -209,9 +209,9 @@ ngetrapake kang luwih ruwet) isih bisa.
 Saiki kita mung kari sawetara langkah
 menyang bukti teorema titik tetep.
 Upamane sawijining varian fungsi print
-$\fn{print}(x,y)$ nampa runtutan aksara $x$
+$\fn{print}(x,y)$ nampa rerangken aksara $x$
 lan argumen angka liyane $y$, banjur
-nyithak runtutan aksara $x$ bola-bali,
+nyithak rerangken aksara $x$ bola-bali,
 cacah $y$ kaping. Mula ``program''
 \begin{quote}
 \begin{verbatim}
@@ -223,7 +223,7 @@ nyithak program iku dhewe $y$ kaping
 nalika nampa input $y$. Yen rangka
 $\fn{getinput}$---$\fn{print}$---$\fn{diag}$
 diganti karo fungsi sembarang $g(x,y)$,
-kita ngentukake
+kita ngasilake
 \begin{quote}
 \begin{verbatim}
 g(diag('g(diag(x), y)'), y)
@@ -233,7 +233,7 @@ yaiku program kang, nalika nampa input $y$,
 nglakokake $g$ marang program iku dhewe
 lan $y$. Yen ``menehi tandha petik''
 dianggep minangka ``nganggo indeks kanggo'',
-kita ngentukake bukti ing ndhuwur.
+kita ngasilake bukti ing ndhuwur.
 
 Saiki ora apa-apa.\ yen kowe nganggep
 bukti iki minangka siasat formal utawa
@@ -249,7 +249,7 @@ cara iki bisa lumaku.
 \begin{tagblock}{lambda}
 \begin{digress}
 Gagasan kang padha bisa digunakake kanggo
-ngentukake kombinator ``titik tetep''.
+ngasilake kombinator ``titik tetep''.
 Upamane kowe nduwé term lambda $g$,
 lan kepengin term liyane $k$ kang
 nduwé sipat yen $k$ ekuivalen-$\beta$

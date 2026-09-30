@@ -14,18 +14,18 @@ Suku iku salah sawijining jinis urutan simbol:
 diwangun kanthi induktif saka konstanta lan
 variabel miturut aturan pambentukan suku.
 Amarga urutan simbol bisa dikodeake minangka
-bilangan---nganggo skema pangodean simbol
-lan cara ngodeake urutan bilangan---menehi
-bilangan G\"odel marang suku ora angel.
+wilangan---nganggo skema pangodean simbol
+lan cara ngodeake urutan wilangan---menehi
+wilangan G\"odel marang suku ora angel.
 Tantangane yaiku nuduhake yen sifat
-``sawijining bilangan dadi bilangan G\"odel
+``sawijining wilangan dadi wilangan G\"odel
 saka suku kang kabentuk kanthi bener''
 iku komputabel, malah rekursif primitif.
 \end{explain}
 
 !!^{variable}s lan !!{constant}s iku suku
 kang paling prasaja, lan gampang mriksa apa
-$x$ iku bilangan G\"odel saka suku kaya mangkono:
+$x$ iku wilangan G\"odel saka suku kaya mangkono:
 $\fn{Var}(x)$ bener yen $x$ iku $\Gn{\Obj v_i}$
 kanggo sawijining~$i$. Tegese, $x$~ngodeake
 urutan dawa~$1$ lan unsur tunggale $(x)_0$
@@ -45,7 +45,7 @@ mesthi $< x$:
 \begin{prop}
 \ollabel{prop:term-primrec}
 Relasi $\fn{Term}(x)$ lan $\fn{ClTerm}(x)$,
-kang bener yen lan mung yen $x$ iku bilangan
+kang bener yen lan mung yen $x$ iku wilangan
 G\"odel saka suku utawa suku katutup,
 miturut urutane, iku rekursif primitif.
 \end{prop}
@@ -68,53 +68,51 @@ salah siji saka kahanan iki bener:
   $\Obj f^n_j$.
 \end{enumerate}
 Kanggo nuduhake yen relasi kang cocog ing
-bilangan G\"odel iku rekursif primitif,
+wilangan G\"odel iku rekursif primitif,
 kita kudu nyatakake syarat iki kanthi
 rekursif primitif, yaiku nganggo fungsi
 lan relasi rekursif primitif uga
 kuantifikasi kang winates.
 
-Upamane $y$ iku bilangan kang ngodeake
+Upamane $y$ iku wilangan kang ngodeake
 urutan $s_0$, \dots, $s_{k-1}$,
 yaiku $y = \tuple{\Gn{s_0}, \dots, \Gn{s_{k-1}}}$.
-Bilangan iku ngodeake urutan pambentukan
-kanggo suku kang bilangan G\"odele~$x$
+Wilangan iku ngodeake urutan pambentukan
+kanggo suku kang wilangan G\"odele~$x$
 yen lan mung yen kanggo kabeh $i < k$:
 \begin{enumerate}
-\item $\fn{Var}((y)_i)$, or
-\item $\fn{Const}((y)_i)$, or
-\item ana $n$ lan bilangan~$z = \tuple{z_1, \dots, z_n}$
+\item $\fn{Var}((y)_i)$, utawa
+\item $\fn{Const}((y)_i)$, utawa
+\item ana $j$, $n$ lan wilangan~$z = \tuple{z_1, \dots, z_n}$
   saengga saben $z_l$ padha karo sawijining
   $(y)_{i'}$ kanggo $i' < i$, lan
 \[
 (y)_i = \Gn{\Obj f^n_j(} \concat \fn{flatten}(z) \concat \Gn{)},
 \]
-\end{enumerate}
+\end{enumerate} Cathetan koreksi sumber OLPL-776: klausa katelu saiki ngenalake indeks j kanggo simbol fungsi minangka salah sawijining saksi eksistensial.
 lan uga $(y)_{k-1} = x$. (Fungsi
 $\fn{flatten}(z)$ ngowahi urutan
 $\tuple{\Gn{t_1}, \dots, \Gn{t_n}}$ dadi
 $\Gn{t_1, \dots, t_n}$ lan rekursif primitif.)
 
-Indeks $j$, $n$, bilangan G\"odel $z_l$
-saka suku $t_l$, lan kode~$z$ saka
-urutan~$\tuple{z_1, \dots, z_n}$ ing (3)
-kabeh luwih cilik tinimbang~$y$.
-Kita bisa ngganti $k$ ing ndhuwur nganggo
-$\len{y}$. Mula pratelan ``$y$ iku kode
-urutan pambentukan suku kanthi bilangan
-G\"odel~$x$'' bisa dinyatakake kanthi
-cara kang nuduhake yen relasi iki
-rekursif primitif.
+Indeks $j$, $n$, lan wilangan G\"odel $z_l$ saka suku $t_l$
+ing (3) kabeh luwih cilik tinimbang~$y$. Kode~$z$ saka
+urutan~$\tuple{z_1, \dots, z_n}$ diwatesi dening
+$p_y^{y(y+1)}$. Kita bisa ngganti $k$ ing ndhuwur nganggo
+$\len{y}$. Mula pratelan ``$y$ iku kode urutan pambentukan suku
+kanthi wilangan G\"odel~$x$'' bisa dites kanthi rekursif primitif.
+Cathetan panjelasan SOL6-F072: tes uga mriksa kode urutan sah kang ora kosong.
+Wates kode argumentasi aman saka dawa lan saben komponene kang kurang y.
 
 Saiki kita mung perlu mesthekake yen ana
 wates rekursif primitif kanggo~$y$.
-Yen $x$ iku bilangan G\"odel saka sawijining
+Yen $x$ iku wilangan G\"odel saka sawijining
 suku, mesthi ana urutan pambentukan kanthi
 paling akeh $\len{x}$ suku (amarga saben
 suku ing urutan pambentukan~$s$ kudu
 wiwit ing sawijining papan ing~$s$,
 lan ora ana rong subsuku kang wiwit ing
-papan kang padha). Bilangan G\"odel saben
+papan kang padha). Wilangan G\"odel saben
 subsuku saka~$s$ mesthi $\le x$.
 Mula tansah ana urutan pambentukan
 kanthi kode $\le p_{k-1}^{k(x+1)}$,

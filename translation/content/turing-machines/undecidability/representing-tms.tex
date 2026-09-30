@@ -11,7 +11,7 @@
 
 \begin{explain}
 Kanggo nggambarake mesin Turing lan tumindake nganggo
-!!a{sentence} saka logika orde kapisan, kita kudu
+!!a{sentence} saka logika tataran kapisan, kita kudu
 netepake basa kang cocog. Basa iki dumadi saka rong
 bagean: !!{predicate}s kanggo njlentrehake konfigurasi
 mesin, lan ekspresi kanggo menehi nomer marang
@@ -116,8 +116,8 @@ luwih cilik tinimbang peneruse:
 \[
 \Obj Q_{q_0}(\num{1}, \num{0})
 \]
-% OLPL-155: Kanggo k=0, runtutan simbol input kosong lan suku sigma_i1 ing tampilan iki butuh pranatan konjungsi kosong.
-\item Kothak-kothak $k+1$ kapisan ngemot simbol
+% Cathetan sumber input kosong dipindhah menyang prosa item supaya katon ing pamaca.
+\item Cathetan koreksi sumber OLPL-155: yen input kosong, dhaptar simbol input ing konjungsi iki kudu diwaca minangka konjungsi kosong, lan kothak ing tengen panandha tetep blank. Kothak-kothak $k+1$ kapisan ngemot simbol
   $\TMendtape$, $\sigma_{i_1}$, \dots, $\sigma_{i_k}$:
 \[
 \Obj S_\TMendtape(\num{0}, \num{0}) \land
@@ -133,9 +133,9 @@ luwih cilik tinimbang peneruse:
 \item Aksioma kang njlentrehake transisi saka
   sawijining konfigurasi menyang konfigurasi sabanjure:
 
-% OLPL-154: Sumber nyebut klausa iki ukara, nanging x lan y tetep variabel bebas ing A(x,y); iki rumus mbukak.
+Cathetan koreksi sumber OLPL-154: klausa kanggo A iki isih rumus mbukak amarga variabel x lan y bebas; sawisé diinstansiasi nganggo numeral, bareng dadi ukara.
 Kanggo bagean sabanjure, $!A(x, y)$ yaiku
-konjungsi kabeh !!{sentence}s kanthi wujud
+konjungsi kabeh rumus kanthi wujud
 \[
 \lforall[z][
   (((z < x \lor x < z) \land \Obj S_\sigma(z, y))
@@ -169,13 +169,13 @@ ngemot simbol kang padha kaya sawisé~$y$ langkah.
 & \lforall[x][\lforall[y][
     ((\Obj Q_{q_i}(x', y) \land \Obj S_{\sigma}(x', y)) \lif {}]]\\
 & \qquad   (\Obj Q_{q_j}(x, y') \land \Obj S_{\sigma'}(x', y') \land
-!A(x, y))) \land {}\\
+!A(x', y))) \land {}\\
 & \lforall[y][((\Obj Q_{q_i}(\num{0}, y) \land \Obj S_{\sigma}(\num{0},
     y)) \lif {}]\\
 & \qquad (\Obj Q_{q_j}(\num{0}, y') \land \Obj S_{\sigma'}(\num{0},
   y') \land !A(\num{0}, y)))
 \end{align*}
-Gatekna sedhela carane iki lumaku: saiki kita
+Cathetan koreksi sumber OLPL-773 lan SOL6-F058: nalika obah kiwa saka kothak penerus menyang kothak sadurunge, kang ditulisi yaiku kothak penerus; rumus saiki dibenerake supaya klausa A ngecualekake kothak asal kang ditulisi, dudu kothak tujuan. Gatekna sedhela carane iki lumaku: saiki kita
 ora miwiti nganggo ``yen maca kothak~$x$ \dots'',
 nanging nganggo ``yen maca kothak $x+1$ \dots''.
 Obah menyang kiwa ateges ing langkah sabanjure
@@ -239,7 +239,7 @@ Yen $m < k$, mula $!T(M, w) \Entails \num{m} < \num{k}$
 \end{prop}
 
 \begin{proof}
-Latihan.
+Gladhen.
 \end{proof}
 
 \begin{prob}

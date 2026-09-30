@@ -11,7 +11,7 @@
 
 \begin{explain}
 Supaya bisa ngaritmetisasi !!{derivation}s, kita kudu makili
-!!{derivation}s minangka bilangan. Amarga !!{derivation}s iku wit
+!!{derivation}s minangka wilangan. Amarga !!{derivation}s iku wit
 saka sekuen lan saben inferensi uga nduweni label, cara kang paling
 cetha yaiku representasi rekursif: kita makili !!{derivation}
 minangka tupla kang komponene yaiku sekuen pungkasan, label,
@@ -24,7 +24,7 @@ Yen $\Gamma$ iku urutan winates saka !!{sentence}s, $\Gamma =
 \tuple{!A_1, \dots, !A_n}$, mula $\Gn{\Gamma} = \tuple{\Gn{!A_1},
   \dots, \Gn{!A_n}}$.
 
-Yen $\Gamma \Sequent \Delta$ iku sekuen, bilangan G\"odel saka
+Yen $\Gamma \Sequent \Delta$ iku sekuen, wilangan G\"odel saka
 $\Gamma \Sequent \Delta$ yaiku
 \[
 \Gn{\Gamma \Sequent \Delta} = \tuple{\Gn{\Gamma}, \Gn{\Delta}}
@@ -77,20 +77,20 @@ ditemtokake kaya mangkene:
     \RightLabel{\RightR{\lif}}
     \UnaryInf$\fCenter (!A \land !B) \lif !A$
   \end{prooftree}
-  Bilangan G\"odel saka sekuen wiwitan yaiku $p_0 = \tuple{0,
-    \Gn{!A \Sequent !A}}$. Bilangan G\"odel saka !!{derivation}
+  Wilangan G\"odel saka sekuen wiwitan yaiku $p_0 = \tuple{0,
+    \Gn{!A \Sequent !A}}$. Wilangan G\"odel saka !!{derivation}
     kang pungkasane konklusi~$\LeftR{\land}$ yaiku $p_1 =
     \tuple{1, p_0, \Gn{!A \land !B \Sequent !A}, 9}$ ($1$ amarga
-    $\LeftR{\land}$ nduweni siji premis, banjur bilangan G\"odel
-    saka konklusi~$!A \land !B \Sequent !A$, lan $9$ iku bilangan
-    kang ngodeake $\LeftR{\land}$). Mula bilangan G\"odel saka
+    $\LeftR{\land}$ nduweni siji premis, banjur wilangan G\"odel
+    saka konklusi~$!A \land !B \Sequent !A$, lan $9$ iku wilangan
+    kang ngodeake $\LeftR{\land}$). Mula wilangan G\"odel saka
     sakabehe !!{derivation} yaiku
     $\tuple{1, p_1, \Gn{\Sequent (!A \land !B) \lif !A}, 14}$, yaiku
   \[
   \tuple{1, \tuple{1, \tuple{0, \Gn{!A \Sequent !A}}, \Gn{!A \land !B \Sequent !A}, 9},
     \Gn{\Sequent (!A \land !B) \lif !A}, 14}.
   \]
-% OLPL-170: Rong tanda kurung tutup keluwihan ing kode sekuen sumber didandani ing kene.
+Cathetan koreksi sumber OLPL-170: ing conto kode sekuen wiwitan, rong tandha kurung tutup ing rumus sumber keluwihan; rumus Jawa kang kacithak ing kene wis nyocogake pasangan kurunge.
 \end{ex}
 
 \begin{explain}
@@ -98,25 +98,28 @@ Sawise nemtokake representasi !!{derivation}s, kita uga kudu
 nuduhake yen !!{derivation}s iki bisa diolah kanthi rekursif
 primitif, lan sifat sarta relasi pokoke bisa dinyatakake kanthi
 cara kang padha. Sawetara operasi prasaja: upamane, yen diwenehi
-bilangan G\"odel~$p$ saka !!a{derivation},
-$\fn{EndSequent}(p) = (p)_{(p)_0+1}$ menehi bilangan G\"odel
+wilangan G\"odel~$p$ saka !!a{derivation},
+$\fn{EndSequent}(p) = (p)_{(p)_0+1}$ menehi wilangan G\"odel
 saka sekuen pungkasane, lan $\fn{LastRule}(p) = (p)_{(p)_0+2}$
 menehi kode aturan pungkasane. Sifat $\fn{Sequent}(s)$ kang
 ditetepake dening
-% OLPL-171: Jeneng EndSeq ing sumber dicocogake karo EndSequent kang digunakake sabanjure.
-\[
-  \len{s} = 2 \land \bforall{i<\len{(s)_0} + \len{(s)_1}}{\fn{Sent}(((s)_0 \concat (s)_1)_i)}
-\]
-bener kanggo $s$ yen lan mung yen $s$ iku bilangan G\"odel saka
+\begin{multline*}
+  \fn{Seq}(s) \land \len{s} = 2 \land
+  \fn{Seq}((s)_0) \land \fn{Seq}((s)_1) \land {}\\
+  \bforall{i<\len{(s)_0} + \len{(s)_1}}{\fn{Sent}(((s)_0 \concat (s)_1)_i)}
+\end{multline*}
+bener kanggo $s$ yen lan mung yen $s$ iku wilangan G\"odel saka
 sekuen kang dumadi saka !!{sentence}s. Sawetara sifat liyane luwih
 angel. Kita bakal menehi sketsa carane. Tujuane yaiku nuduhake
 yen relasi ``$\pi$ iku !!a{derivation} saka~$!A$ adhedhasar~$\Gamma$''
-iku relasi rekursif primitif saka bilangan G\"odel $\pi$ lan~$!A$.
+iku relasi rekursif primitif saka wilangan G\"odel $\pi$ lan~$!A$.
+Cathetan koreksi sumber OLPL-171: sumber nganggo jeneng EndSeq sapisan, nanging rumus-rumus sabanjure nganggo EndSequent kanggo fungsi kang padha; jeneng ing prosa Jawa wis diseragamake.
+Cathetan panjelasan SOL6-F077: Seq mriksa kode urutan sah. Kode kosong yaiku nol utawa siji; kode liyane kudu duwe faktor prima kanthi pangkat positif saka prima kapisan nganti prima pungkasan tanpa bolong. Iki bisa dites kanthi faktor prima lan divisibilitas bounded, mula rekursif primitif.
 \end{explain}
 
 \begin{prop}\ollabel{prop:followsby}
   Sifat $\fn{Correct}(p)$, kang bener yen lan mung yen inferensi
-  pungkasan ing !!{derivation}~$\pi$ kanthi bilangan G\"odel~$p$
+  pungkasan ing !!{derivation}~$\pi$ kanthi wilangan G\"odel~$p$
   iku bener, yaiku rekursif primitif.
 \end{prop}
 
@@ -125,7 +128,7 @@ iku relasi rekursif primitif saka bilangan G\"odel $\pi$ lan~$!A$.
   !!a{sentence}~$!A$ saengga $\Gamma \Sequent \Delta$ padha karo
   $!A \Sequent !A$, utawa ana suku~$t$ saengga $\Gamma \Sequent
   \Delta$ padha karo $\emptyset \Sequent \eq[t][t]$.
-  Ing babagan bilangan G\"odel, $\fn{InitSeq}(s)$ bener yen lan mung yen
+  Ing babagan wilangan G\"odel, $\fn{InitSeq}(s)$ bener yen lan mung yen
   \begin{align*}
   \bexists{x < s}{} (\fn{Sent}(x) & \land
   s = \tuple{\tuple{x},\tuple{x}})
@@ -136,7 +139,7 @@ iku relasi rekursif primitif saka bilangan G\"odel $\pi$ lan~$!A$.
 
   Kita uga kudu nuduhake yen kanggo saben aturan inferensi~$R$,
   relasi $\fn{FollowsBy}_R(p)$ iku rekursif primitif.
-  $\fn{FollowsBy}_R(p)$ bener yen lan mung yen $p$ iku bilangan
+  $\fn{FollowsBy}_R(p)$ bener yen lan mung yen $p$ iku wilangan
   G\"odel saka !!{derivation}~$\pi$, lan sekuen pungkasane~$\pi$
   diduweni kanthi ngetrapake~$R$ kanthi bener marang
   sub-!!{derivation}s langsung saka~$\pi$.
@@ -156,13 +159,13 @@ iku relasi rekursif primitif saka bilangan G\"odel $\pi$ lan~$!A$.
     \BinaryInf$\Gamma \fCenter \Delta, !A \land !B$
   \end{prooftree}
   Mula inferensi pungkasan ing !!{derivation} $\pi$ iku
-  penerapan $\RightR{\land}$ kang bener yen lan mung yen ana
+  pangetrapan $\RightR{\land}$ kang bener yen lan mung yen ana
   urutan !!{sentence}s $\Gamma$ lan $\Delta$, uga loro
   !!{sentence}s $!A$ lan~$!B$, saengga sekuen pungkasane $\pi_1$
   yaiku $\Gamma \Sequent \Delta, !A$, sekuen pungkasane $\pi_2$
   yaiku $\Gamma \Sequent \Delta, !B$, lan sekuen pungkasane $\pi$
   yaiku $\Gamma \Sequent \Delta, !A \land !B$. Iki mung perlu
-  diowahi dadi bilangan G\"odel. Yen $s = \Gn{\Gamma \Sequent \Delta}$,
+  diowahi dadi wilangan G\"odel. Yen $s = \Gn{\Gamma \Sequent \Delta}$,
   mula $(s)_0 = \Gn{\Gamma}$ lan $(s)_1 = \Gn{\Delta}$.
   Mula $\fn{FollowsBy}_{\RightR{\land}}(p)$ bener yen lan mung yen
 \begin{align*}
@@ -172,25 +175,26 @@ iku relasi rekursif primitif saka bilangan G\"odel $\pi$ lan~$!A$.
     \tuple{\Gn{(} \concat a \concat \Gn{\land} \concat b \concat \Gn{)}}} \land {} \\
 & \qquad \fn{EndSequent}((p)_1) = \tuple{g, d \concat \tuple{a}} \land {}\\
 & \qquad \fn{EndSequent}((p)_2) = \tuple{g, d \concat \tuple{b}} \land {}\\
+& \qquad \fn{Seq}(g) \land \fn{Seq}(d) \land \fn{Sent}(a) \land \fn{Sent}(b) \land {}\\
 & \qquad (p)_0 = 2 \land \fn{LastRule}(p) = 10.
 \end{align*}
 Baris-baris kasebut, miturut urutane, nyatakake ``ana
-urutan~($\Gamma$) kanthi bilangan G\"odel~$g$, ana
-urutan~($\Delta$) kanthi bilangan G\"odel~$d$, !!a{formula}~($!A$)
-kanthi bilangan G\"odel~$a$, lan !!a{formula}~($!B$) kanthi
-bilangan G\"odel~$b$,'' saengga ``sekuen pungkasane $\pi$ yaiku
+urutan~($\Gamma$) kanthi wilangan G\"odel~$g$, ana
+urutan~($\Delta$) kanthi wilangan G\"odel~$d$, !!a{formula}~($!A$)
+kanthi wilangan G\"odel~$a$, lan !!a{formula}~($!B$) kanthi
+wilangan G\"odel~$b$,'' saengga ``sekuen pungkasane $\pi$ yaiku
 $\Gamma \Sequent \Delta, !A \land !B$,'' ``sekuen pungkasane $\pi_1$
 yaiku $\Gamma \Sequent \Delta, !A$,'' ``sekuen pungkasane $\pi_2$
 yaiku $\Gamma \Sequent \Delta, !B$,'' lan ``$\pi$ nduweni loro
 subderivasi langsung lan aturan inferensi pungkasane yaiku
 $\RightR\land$ (kanthi nomer~$10$).''
 
-Inferensi pungkasan ing~$\pi$ iku penerapan $\RightR\lexists$
+Inferensi pungkasan ing~$\pi$ iku pangetrapan $\RightR\lexists$
 kang bener yen lan mung yen ana urutan $\Gamma$ lan $\Delta$,
 !!a{formula}~$!A$, variabel~$x$, lan suku~$t$, saengga sekuen
 pungkasane $\pi$ yaiku $\Gamma \Sequent \Delta, \lexists[x][!A]$
 lan sekuen pungkasane $\pi_1$ yaiku $\Gamma \Sequent \Delta,
-\Subst{!A}{t}{x}$. Dadi, ing babagan bilangan G\"odel,
+\Subst{!A}{t}{x}$. Dadi, ing babagan wilangan G\"odel,
 $\fn{FollowsBy}_{\RightR\lexists}(p)$ bener yen lan mung yen
 \begin{align*}
   & \bexists{g<p}{\bexists{d<p}{\bexists{a<p}{\bexists{x<p}{\bexists{t<p}{\quad}}}}}\\
@@ -204,21 +208,27 @@ $\fn{FollowsBy}_{\RightR\lexists}(p)$ bener yen lan mung yen
     g,
     d \concat \tuple{\fn{Subst}(a, t, x)}
   } \land {}\\
+  & \qquad \fn{Seq}(g) \land \fn{Seq}(d) \land \fn{Frm}(a) \land {}\\
+  & \qquad \fn{Var}(x) \land \fn{Term}(t) \land \fn{FreeFor}(a,t,x) \land {}\\
   & \qquad (p)_0 = 1 \land \fn{LastRule}(p) = 18.
 \end{align*}
 Sabanjure kita netepake $\fn{Correct}(p)$ minangka
 \begin{multline*}
+  \fn{Seq}(p) \land {}\\
+  [((p)_0=0 \land \len{p}=2) \lor ((p)_0=1 \land \len{p}=4)
+  \lor ((p)_0=2 \land \len{p}=5)] \land {}\\
   \fn{Sequent}(\fn{EndSequent}(p)) \land {}\\ 
   [(\fn{LastRule}(p) = 1 \land 
   \fn{FollowsBy}_{\LeftR\Weakening}(p)) \lor \dots \lor {}\\
   (\fn{LastRule}(p) = 20 \land \fn{FollowsBy}_{\eq}(p)) \lor {}\\
   (p)_0 = 0 \land \fn{InitSeq}(\fn{EndSequent}(p))]
 \end{multline*}
-% OLPL-172: InitialSeq ing sumber ora padha karo InitSeq kang wis ditetepake.
-Baris kapisan mesthekake yen sekuen pungkasane~$p$ pancen
+Cathetan koreksi sumber OLPL-172: rumus Correct kudu ngrujuk InitSeq kang wis ditetepake sadurunge, dudu InitialSeq kang durung dikenalake; rumus Jawa wis nganggo jeneng kang konsisten.
+Tes sekuen mesthekake yen sekuen pungkasane~$p$ pancen
 sekuen kang dumadi saka !!{sentence}s. Baris pungkasan nyakup
 kasus nalika $p$ mung sekuen wiwitan.
-% OLPL-173: Variabel d ing panjelasan sumber diganti p supaya cocog karo Correct(p).
+Cathetan koreksi sumber OLPL-173: panjelasan ing sumber nyebut d, nanging argumen fungsi Correct ing kene yaiku p; prosa Jawa wis nganggo p.
+Cathetan koreksi sumber SOL6-F076 lan SOL6-F077: eksistensial tengen mbutuhake jinis kode kang bener lan syarat bebas kanggo, supaya substitusi ora njiret variabel. Tes wujud tupla ing Correct mriksa dawa pas miturut cacah anak, supaya kode salah wujud utawa komponen tambahan ora lolos.
 \end{proof}
 
 \begin{prob}
@@ -232,15 +242,15 @@ kasus nalika $p$ mung sekuen wiwitan.
   \end{enumerate}
   Kanggo sifat pungkasan, kowé uga kudu nuduhake yen kanthi
   rekursif primitif bisa dipriksa apa inferensi pungkasan saka
-  !!{derivation} kanthi bilangan G\"odel~$p$ nyukupi syarat
+  !!{derivation} kanthi wilangan G\"odel~$p$ nyukupi syarat
   eigenvariabel, yaiku eigenvariabel~$a$ saka $\RightR{\lforall}$
-  ora muncul ing sekuen pungkasan.
+  ora ana ing sekuen pungkasan.
   \end{prob}
   
 
 \begin{prop}
   \ollabel{prop:deriv}
-  Relasi $\fn{Deriv}(p)$, kang bener yen $p$ iku bilangan G\"odel
+  Relasi $\fn{Deriv}(p)$, kang bener yen $p$ iku wilangan G\"odel
   saka !!{derivation}~$\pi$ kang bener, iku rekursif primitif.
 \end{prop}
 
@@ -252,7 +262,7 @@ kasus nalika $p$ mung sekuen wiwitan.
   \[
   \bforall{i<\len{\fn{SubtreeSeq}(p)}}{\fn{Correct}((\fn{SubtreeSeq}(p))_i)}.
   \]
-% OLPL-174: Deriv(d) ing sumber diganti Deriv(p), lan kurung tutup Correct ditambahake.
+Cathetan koreksi sumber OLPL-174: ing bukti iki argumen Deriv kudune p, lan rumus Correct ing sumber kurang siji kurung tutup; rumus Jawa wis nyocogake loro-lorone.
 \end{proof}
 
 
@@ -261,7 +271,7 @@ Upamane $\Gamma$ iku himpunan rekursif primitif saka
 !!{sentence}s. Relasi $\Prf[\Gamma](x, y)$ kang nyatakake
 ``$x$ iku kode saka !!a{derivation}~$\pi$ kanggo
 $\Gamma_0 \Sequent !A$ kanthi sawijining $\Gamma_0 \subseteq \Gamma$
-kang winates, lan $y$ iku bilangan G\"odel saka~$!A$''
+kang winates, lan $y$ iku wilangan G\"odel saka~$!A$''
 iku rekursif primitif.
 \end{prop}
 
@@ -269,7 +279,7 @@ iku rekursif primitif.
 Upamane ``$y \in \Gamma$'' diwenehake dening predikat
 rekursif primitif~$R_\Gamma(y)$. Kita kudu nuduhake yen
 $\Prf[\Gamma](x, y)$, kang bener yen lan mung yen $y$ iku
-bilangan G\"odel saka ukara~$!A$ lan $x$~iku kode saka
+wilangan G\"odel saka ukara~$!A$ lan $x$~iku kode saka
 $\Log{LK}$-!!{derivation} kanthi sekuen pungkasan
 $\Gamma_0 \Sequent !A$, iku rekursif primitif.
 
@@ -285,7 +295,6 @@ $\len{(\fn{EndSequent}(x))_1} = 1 \land ((\fn{EndSequent}(x))_1)_0 =
 y$. Sisih kiwa sekuen pungkasane $\pi$ mesthi winates;
 kita mung kudu nyatakake yen saben ukara ing kono dadi anggota
 ing~$\Gamma$. Mula $\Prf[\Gamma](x, y)$ bisa ditetepake dening
-% OLPL-175: Kode ukara ing katerangan sumber kudu y, cocog karo Prf(x,y) lan rumus pungkasan.
 \begin{align*}
 \Prf[\Gamma](x, y) \defiff {}&
 \fn{Deriv}(x) \land {} \\
@@ -293,6 +302,7 @@ ing~$\Gamma$. Mula $\Prf[\Gamma](x, y)$ bisa ditetepake dening
   \len{(\fn{EndSequent}(x))_0}}{R_\Gamma(((\fn{EndSequent}(x))_0)_i)} \land {}\\
 & \len{(\fn{EndSequent}(x))_1} = 1 \land ((\fn{EndSequent}(x))_1)_0 = y.
 \end{align*}
+Cathetan koreksi sumber OLPL-175: ing katerangan sadurunge rumus, kode ukara ing sisih tengen kudune y, dudu x kang dadi kode derivasi; prosa Jawa wis nganggo y.
 \end{proof}
 
 \end{document}

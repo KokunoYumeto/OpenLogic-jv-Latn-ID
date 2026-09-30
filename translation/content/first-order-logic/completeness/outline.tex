@@ -21,7 +21,7 @@ nemokake gagasan kanggo miwiti: kanggo nuduhake $\Gamma \Proves !A$,
 kita kudu nemokake !!a{derivation}, dene hipotesis $\Gamma \Entails
 !A$ katon ora maringi pitulungan kanggo nemokake iku. Ing sawetara
 sistem bukti, !!a{derivation} bisa dibangun langsung, nanging kita
-bakal nganggo pendekatan kang rada beda. Owahing sudut pandang kang
+bakal nganggo ancangan kang rada beda. Owahing sudut pandang kang
 dibutuhake yaiku iki: kelengkapan uga bisa dirumusake mangkene: yen
 $\Gamma$ konsisten, mula himpunan iku bisa dicukupi. Mbokmenawa informasi
 ing~$\Gamma$ bebarengan karo hipotesis konsistensine bisa digunakake
@@ -66,7 +66,7 @@ ing~$\Gamma$.
 
 Iki nuwuhake gagasan mangkene: kita nambah !!{formula}s liyane
 menyang~$\Gamma$ supaya (a)~himpunan asile tetep konsisten,
-(b)~kanggo saben !!{sentence} atomik~$!A$ kang mungkin, $!A$ utawa
+(b)~kanggo saben !!{sentence}~$!A$ ing basa kasebut, $!A$ utawa
 $\lnot !A$ ana ing himpunan asil kasebut, lan (c)~yen $!A \land !B$
 ana ing himpunan, $!A$ lan $!B$ kalorone uga ana; yen $!A \lor !B$
 ana ing himpunan, paling ora salah siji saka $!A$ utawa $!B$ uga ana;
@@ -82,7 +82,7 @@ himpunan mau; wujud jamak kang dikarepake dibalekake ing kene. Pranyata
 jaminan (a) lan~(b) wis cukup. Himpunan ukara kang nyukupi (b) diarani
 \emph{jangkep}. Dadi, tugas kita yaiku ngambakake himpunan
 konsisten~$\Gamma$ dadi himpunan~$\Gamma^*$ kang konsisten lan
-jangkep.
+jangkep. Cathetan koreksi sumber OLPL-737: syarat (b) nyakup kabeh ukara, manut definisi himpunan jangkep ing perangan sabanjure; watesan mung marang ukara atomik ing sumber ora cukup kanggo sipat kajangkepan kang diklaim.
 
 \iftag{FOL}{%
 Ana siji alangan ing rancangan iki: yen $\lexists[x][!A(x)] \in
@@ -96,7 +96,7 @@ utawa $\lnot !A(c)$ bener. Kajaba iku, bisa wae $\Gamma$ mung ngemot
 ukara ing basa kang ora duwe simbol konstanta babar pisan (umpamane
 basa teori himpunan).
 
-Pamedharing masalah iki yaiku nambah tanpa winates akeh konstanta ing
+Cara ngrampungake masalah iki yaiku nambah tanpa winates akeh konstanta ing
 wiwitan, bebarengan karo ukara-ukara kang nyambungake konstanta mau
 marang kuantor kanthi cara kang trep. (Mesthi wae, kita kudu
 mbuktekake yen iki ora bisa nuwuhake inkonsistensi.)
@@ -108,9 +108,9 @@ kanggo dipasangake marang !!{function}s kasebut. Mula ana cara liya:
 tinimbang nganggo $i$ kanggo napsirake $\Obj c_i$, gunakna himpunan
 !!{constant}s dhewe minangka domain. Banjur $\Struct M$ bisa
 masangake saben !!{constant} marang awake dhewe:
-$\Assign{\Obj c_i}{M} = \Obj c_i$. Malah, kenapa ora diterusake
-sakabehe: tetepna $\Domain{M}$ minangka kabeh \emph{term} ing basa
-kasebut!{} Kanthi mangkono, ana pamasangan fungsi kang cetha marang
+$\Assign{\Obj c_i}{M} = \Obj c_i$. Malah, yagene ora diterusake
+sakabehe: tetepna $\Domain{M}$ minangka kabeh \emph{term katutup} ing basa
+kasebut!{} Cathetan koreksi sumber OLPL-738: domain nggunakake term katutup, cocog karo definisi model term ing perangan konstruksi model; watesan iki uga njaga supaya fungsi ing domain ngasilake term katutup. Kanthi mangkono, ana pamasangan fungsi kang cetha marang
 !!{function}s: fungsi kasebut njupuk term minangka argumen lan
 ngasilake term minangka nilai. Kita masangake marang
 !!{function}~$\Obj f^n_i$ fungsi kang, yen diwenehi $n$ term
@@ -141,12 +141,12 @@ $\eq[(\Obj 0+ \Obj 0)][\Obj 0]$ bakal bener ing
 
 Dadi, iki rancangan buktine. Kaping pisan, kita nliti sipat-sipat
 himpunan konsisten kang !!{complete}; mligine, kita mbuktekake yen
-!!a{complete} himpunan konsisten ngemot $!A \land !B$ yen lan mung
+himpunan konsisten kang !!a{complete} ngemot $!A \land !B$ yen lan mung
 yen ngemot $!A$ lan~$!B$ kalorone, lan ngemot $!A \lor !B$ yen lan
 mung yen ngemot paling ora salah sijine, lan sateruse
 (\olref[ccs]{prop:ccs}).\iftag{FOL}{ Banjur kita nemtokake lan nliti
   himpunan ukara kang jenuh. Himpunan jenuh ngemot implikasi kang
-  nyambungake saben !!{sentence} kauntifikasi marang conto-conto
+  nyambungake saben !!{sentence} kang nganggo kuantor marang conto-conto
   ukara kasebut (\olref[hen]{defn:henkin-exp}). Kita mbuktekake yen
   saben himpunan konsisten~$\Gamma$ tansah bisa diambakake dadi
   himpunan jenuh~$\Gamma'$ (\olref[hen]{lem:henkin}). Yen sawijining

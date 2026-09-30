@@ -99,17 +99,17 @@ Buktekna (1) saka \olref[pl][com][com]{thm:compactness}.
 \iftag{FOL}{%
 \begin{ex}
 Ing saben model~$\Struct{M}$ saka sawijining teori~$\Gamma$, saben
-term~$t$ mesthi nuduhake !!a{element} saka~$\Domain{M}$. Apa kita bisa
+term katutup~$t$ mesthi nuduhake !!a{element} saka~$\Domain{M}$. Apa kita bisa
 njamin yen saben !!{element} saka~$\Domain{M}$ uga dituduhake dening
-sawijining term? Kanthi tembung liya, apa ana teori~$\Gamma$ kang
-kabeh modele katutup? Teorema kekompakan nuduhake yen jawabane ora yen
+sawijining term katutup? Kanthi tembung liya, apa ana teori~$\Gamma$ kang
+kabeh domaine dicakup dening term katutup? Teorema kekompakan nuduhake yen jawabane ora yen
 $\Gamma$ nduweni model tanpa wates. Katrangane mangkene: Upamana
 $\Struct{M}$ minangka model tanpa wates saka~$\Gamma$, lan upamana
 $c$ minangka !!a{constant} kang ora ana ing basa~$\Gamma$. Upamana
-$\Delta$ minangka himpunan kabeh ukara $\eq/[c][t]$ kanggo saben term
-$t$ ing basa~$\Lang{L}$ saka~$\Gamma$, yaiku,
+$\Delta$ minangka himpunan kabeh ukara $\eq/[c][t]$ kanggo saben term katutup
+$t$ ing basa~$\Lang{L}$ saka~$\Gamma$, yaiku (cathetan koreksi sumber OLPL-743: subskrip nol ing rumus sabanjure nuduhake term katutup supaya unsur Delta tetep ukara),
   \[
-  \Delta = \Setabs{\eq/[c][t]}{t \in \Trm[L]}.
+  \Delta = \Setabs{\eq/[c][t]}{t \in {\Trm[L]}_0}.
   \]
 Sawijining subhimpunan winates saka $\Gamma \cup \Delta$ bisa ditulis
 minangka $\Gamma' \cup \Delta'$, kanthi $\Gamma' \subseteq \Gamma$ lan
@@ -128,9 +128,9 @@ subhimpunan winates saka $\Gamma \cup \Delta$ bisa dicukupi. Miturut
 kekompakan, $\Gamma \cup \Delta$ dhewe bisa dicukupi. Dadi,
 $\Sat{M}{\Gamma \cup \Delta}$ kanggo sawijine model M. Saben
 $\Struct{M}$ kaya mangkono
-minangka model saka~$\Gamma$, nanging ora katutup dening term-term
+minangka model saka~$\Gamma$, nanging domaine ora dicakup dening term katutup
 saka basa asline, amarga $\Value{c}{M} \neq \Value{t}{M}$ kanggo kabeh
-term~$t$ saka~$\Lang{L}$.
+term katutup~$t$ saka~$\Lang{L}$.
 \end{ex}
 
 \begin{ex}
@@ -146,7 +146,7 @@ kanggo kabeh $k \in \PosInt$. Yen ana, wilangan kaya mangkono bakal
 dadi \emph{infinitesimal:} ora nol, nanging cilik tanpa wates.
 Teorema kekompakan bisa digunakake kanggo nuduhake yen ana model
 saka~$\Gamma$ kang ngemot infinitesimal. Ing basa kita ora ana
-!!a{function} kanggo pembagian (pembagian kanthi nol ora katetepake,
+!!a{function} kanggo operasi mbagi (mbagi nganggo nol ora katetepake,
 lan !!{function}s kudu ditafsirake dening fungsi total). Nanging, kita
 isih bisa nyatakake yen $r < 1/k$, amarga iki bener yen lan mung yen
 $r \cdot k < 1$. Saiki upamana $c$ minangka !!{constant} anyar lan
@@ -157,7 +157,7 @@ upamana $\Delta$ yaiku
 \]
 (ing kene $\num{k} = (\Obj{1} + (\Obj{1} + \dots + (\Obj{1} +
 \Obj{1})\dots))$ kanthi $k$~$\Obj{1}$). Kanggo saben subhimpunan
-winates~$\Delta_0$ saka~$\Delta$, ana~$K$ nganti kabeh !!{sentence}s
+winates~$\Delta_0$ saka~$\Delta$, ana~$K$ positif nganti kabeh !!{sentence}s
 $c \times \num{k} < \Obj{1}$ ing~$\Delta_0$ nduweni $k < K$. Yen
 kita nggedhekake $\Struct{Q}$ dadi~$\Struct{Q'}$ kanthi
 $\Assign{c}{Q'} = 1/K$, kita duwe

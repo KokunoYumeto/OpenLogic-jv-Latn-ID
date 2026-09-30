@@ -79,9 +79,9 @@ Mligine, kita nduwé
 \cfind{x}(y) \fdefined.
 \]
 Kanthi tembung liya, $\tuple{x, y} \in K_0$ yen lan mung yen $s(e,x,y) \in
-K_1$. Mula fungsi $g$ kang ditetepake dening
+K_1$. Cathetan koreksi sumber SOL6-F042: supaya reduksi sah kanggo kabeh wilangan asli, pilih b minangka indeks fungsi kang ora ditegesi ing papan endi wae. Kode w kang ora padha karo kode tuple saka rong komponene dipetakake menyang b; b ora kalebu $K_1$. Mula fungsi $g$ kang ditetepake dening
 \[
-g(w) = s(e,(w)_0,(w)_1)
+g(w) = \begin{cases}s(e,(w)_0,(w)_1) & \text{yen }w=\tuple{(w)_0,(w)_1}\\b & \text{yen ora}\end{cases}
 \]
 minangka reduksi $K_0$ menyang~$K_1$.
 \end{proof}

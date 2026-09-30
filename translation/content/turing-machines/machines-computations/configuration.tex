@@ -16,8 +16,8 @@ saka pita, sirah maca-nulis, lan program mesin Turing
 sejatine mung cara intuisi kanggo nggambarake
 komputasi mesin Turing. Sacara formal, kita bisa
 netepake komputasi mesin Turing kanthi input tartamtu
-minangka runtutan \emph{konfigurasi}---lan konfigurasi
-iku dhewe dumadi saka runtutan simbol (kang cocog
+minangka rerangken \emph{konfigurasi}---lan konfigurasi
+iku dhewe dumadi saka rerangken simbol (kang cocog
 karo isi pita ing sawijining wektu komputasi),
 wilangan kang nuduhake panggonan sirah maca-nulis,
 lan sawijining kahanan. Kanthi iki, kita bisa
@@ -29,11 +29,11 @@ nalika diwenehi input tartamtu.
 \emph{Konfigurasi} mesin Turing $M = \tuple{Q, \Sigma, q_0,
 \delta}$ yaiku tripel $\tuple{C, m, q}$ kanthi
 \begin{enumerate}
-\item $C \in \Sigma^*$ runtutan winates simbol saka $\Sigma$,
+\item $C \in \Sigma^*$ rerangken winates simbol saka $\Sigma$,
 \item $m \in \Nat$ wilangan $< \len{C}$, lan
 \item $q \in Q$
 \end{enumerate}
-Miturut intuisi, runtutan~$C$ yaiku isi pita
+Miturut intuisi, rerangken~$C$ yaiku isi pita
 (simbol kabeh kothak saka kothak paling kiwa
 nganti kothak pungkasan kang ora kosong utawa
 wis tau ditekani), $m$~yaiku nomer kothak
@@ -44,7 +44,7 @@ lan $q$ kahanan mesin saiki.
 
 \begin{explain}
 Input kang bisa diwenehake marang mesin Turing
-yaiku runtutan simbol, lumrahe runtutan kang
+yaiku rerangken simbol, lumrahe rerangken kang
 ngode sawijining wilangan kanthi cara tartamtu.
 Konfigurasi wiwitan mesin Turing yaiku konfigurasi
 nalika kita miwiti mesin Turing kanggo ngolah
@@ -61,14 +61,17 @@ kang wis ditemtokake.
 \emph{Konfigurasi wiwitan} $M$ kanggo input
 $I \in \Sigma^*$ yaiku
 \[
-\tuple{\TMendtape \frown I, 1, q_0}.
+\begin{cases}
+\tuple{\TMendtape \frown I, 1, q_0} & \text{yen input ora kosong},\\
+\tuple{\TMendtape \frown \TMblank, 1, q_0} & \text{yen input kosong}.
+\end{cases}
 \]
-\end{defn}
+Cathetan koreksi sumber OLPL-771 lan SOL6-F044: rumus saiki mbagi input kosong lan ora kosong. Ing kasus kosong, kothak blank kapisan ing sisih tengen panandha dilebokake ing rerangken konfigurasi supaya posisi sirah kang nomere siji sah. \end{defn}
 
 \begin{explain}
 % OLPL-146: Sumber beku nyebut input ing sisih kiwa panandha pucuk kiwa, nanging konfigurasi wiwitan lan andharan sadurunge nuduhake input ing sisih tengene.
-Simbol~$\frown$ nuduhake \emph{pangandhengan
-runtutan}---runtutan input diwiwiti langsung
+Cathetan koreksi sumber OLPL-146: input ing sisih tengen panandha, dudu sisih kiwa kaya ukara sumber. Simbol~$\frown$ nuduhake \emph{pangandhengan
+rerangken}---rerangken input diwiwiti langsung
 ing sisih tengen panandha pucuk kiwa.
 \end{explain}
 
@@ -95,29 +98,29 @@ ing siji langkah} (miturut~$M$), yen lan mung yen
 
 \begin{defn}\ollabel{defn:run-output}
 \emph{Lumakune $M$ kanthi input~$I$}
-yaiku runtutan konfigurasi $C_i$ saka $M$,
+yaiku rerangken maksimal konfigurasi $C_i$ saka $M$,
 kanthi $C_0$ konfigurasi wiwitan $M$
-kanggo input~$I$, lan saben $C_i$
-ngasilake $C_{i+1}$ ing siji langkah.
+kanggo input~$I$, lan saben $C_i$ kang duwe konfigurasi sabanjure
+ngasilake $C_{i+1}$ ing siji langkah. Cathetan panyunting SOL6-F047: rerangken iki bisa winates utawa tanpa wates. Yen winates, konfigurasi pungkasan ora duwe instruksi kang ditegesi; ora perlu penerus sawise mandheg.
 
 Kita nyebut $M$ \emph{mandheg nalika nampa input $I$
 sawise $k$ langkah} yen $C_k =
 \tuple{C, m, q}$, simbol kapangka-$m$
 ing~$C$ yaiku~$\sigma$, lan $\delta(q,
-\sigma)$ ora ditegesi. Ing kahanan iku,
+\sigma)$ ora ditegesi. Ing kahanan iku, yen panandha pucuk kiwa isih ana,
 \emph{output}~$M$ kanggo input~$I$ yaiku~$O$,
-ing ngendi $O$ runtutan simbol kang ora dipungkasi
+ing ngendi $O$ rerangken simbol kang ora dipungkasi
 dening~$\TMblank$ lan $C = \TMendtape \concat O \concat \TMblank^j$
 kanggo sawijining~$j \in \Nat$. ($\TMblank^j$
-yaiku runtutan $j$ simbol $\TMblank$.)
-\end{defn}
+yaiku rerangken $j$ simbol $\TMblank$.)
+Cathetan cakupan SOL6-F048: definisi output iki mung menehi asil nalika panandha pucuk kiwa isih ana ing kothak nomer nol. Output bisa kosong; yen ora kosong, simbol pungkasan ora blank. Yen panandha kiwa wis kabusak, output ora ditegesi miturut konvensi iki, senajan mesin mandheg. \end{defn}
 
 \begin{explain}
 Miturut definisi iki, output~$O$ saka~$M$
 mesthi dipungkasi simbol saliyane~$\TMblank$,
 utawa, yen ing wektu~$k$ kabeh pita diisi
 simbol~$\TMblank$ (kajaba simbol~$\TMendtape$
-paling kiwa), $O$~minangka runtutan kosong.
+paling kiwa), $O$~minangka rerangken kosong.
 \end{explain}
 
 \end{document}

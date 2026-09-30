@@ -26,5 +26,7 @@
     "TERM_DECISIONS.jsonl": "9ba54358e1e249b7fee5c110cc3e39f439246648eda8fcf02a62d424af558811",
     "SEGMENT_CANON_USE.jsonl": "89dca2fd20e47cc45aa818fdf6c4e06612b66b2848b7868ad1e2dd42f599d959"
   },
-  "revalidation_status": "pending; source and structural QA can proceed while this evidence is repaired"
+  "revalidation_status": "pending; source and structural QA can proceed while this evidence is repaired",
+  "current_fresh_reaudit_status": "sol6-reaudit/STATUS.json",
+  "historical_seal_only": "Existing sealed_checkpoint and projection hashes describe the earlier withdrawn-bundle projection, not current full-lane acceptance."
 }

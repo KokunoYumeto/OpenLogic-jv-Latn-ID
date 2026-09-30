@@ -41,15 +41,15 @@ mesin kang tumindake padha nanging nduwé kahanan mandheg
 mligi. Carane mung nambah kahanan anyar~$h$, banjur nambah
 instruksi $\delta(q, \sigma) = \tuple{h, \sigma, N}$ kanggo
 saben pasangan $\tuple{q,\sigma}$ kang $\delta$ asale
-ora ditegesi. Pancen saben mesin Turing~$M$ bisa diowahi
+ora ditegesi. Instruksi anyar iki mung kanggo kahanan asli; kahanan mandheg anyar ora diwenehi instruksi metu. Pancen saben mesin Turing~$M$ bisa diowahi
 dadi mesin Turing tertib~$M'$ kang mandheg kanggo input
-kang padha lan ngasilake output kang padha, senajan
+kang padha lan njaga output kang ditegesi, senajan
 buktine rada dawa lan njlimet. Contone, yen mesin Turing
 mandheg nalika sirah ora ana ing kothak~$1$, kita bisa
 nambah sawetara instruksi supaya sirah obah menyang kiwa
 nganti nemokake panandha pucuk pita, banjur obah siji
 kothak menyang tengen, banjur mandheg. Kita masrahake
-marang kowe kanggo mikirake carane netepi syarat liyane.
+marang kowe kanggo mikirake carane netepi syarat liyane. Cathetan cakupan SOL6-F052: cara mulih menyang kiwa iki nganggep panandha pucuk asli isih ana lan dibedakake saka panandha ing njero input. Kanggo mesin umum kang bisa nimpa panandha, luwih dhisik gunakna simulasi kang njaga lan ngenali wates kiwa asli; mlaku kiwa wae durung cukup.
 \end{explain}
 
 \begin{ex}
@@ -67,7 +67,7 @@ marang kowe kanggo mikirake carane netepi syarat liyane.
   \node[state]         (H) [left of=D] {$h$};
 
   \path (A) edge node {\TMtrans{\TMblank}{\TMstroke}{\TMstay}} (B)
-           edge [loop below] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (B)
+           edge [loop below] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (A)
         (B) edge [loop below] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (B)
             edge node {\TMtrans{\TMblank}{\TMblank}{\TMleft}} (C)
         (C) edge node {\TMtrans{\TMstroke}{\TMblank}{\TMleft}} (D)

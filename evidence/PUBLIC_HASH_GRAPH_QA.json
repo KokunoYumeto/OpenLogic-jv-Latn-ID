@@ -1,7 +1,7 @@
 {
   "schema": "jv-public-hash-graph-qa/2",
-  "utc": "2026-09-19T17:57:21.047845+00:00",
-  "prospective_parent_commit": "9ccf38fb29eb4710d3eb48810b30f1e079f25412",
+  "utc": "2026-09-21T00:25:28.482358+00:00",
+  "prospective_parent_commit": "1f4933db2686c835bd9f66a9aea088d055b9f975",
   "representation": {
     "evidence_attribute": "-text at final precedence",
     "qa_script_attribute": "-text at final precedence",

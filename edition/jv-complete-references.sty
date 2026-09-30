@@ -1,0 +1,66 @@
+% Shared proof chapters appear once under fol. Preserve PL reference access.
+\makeatletter
+\newif\ifJvSharedChapter
+\newcommand{\JvReferenceAliases}{}
+\newcommand{\JvAssignReferenceAlias}[2]{%
+  \ifcsname r@#2\endcsname
+    \global\expandafter\let\csname r@#1\expandafter\endcsname\csname r@#2\endcsname
+  \fi
+  \ifcsname r@#2@cref\endcsname
+    \global\expandafter\let\csname r@#1@cref\expandafter\endcsname\csname r@#2@cref\endcsname
+  \fi
+}
+\newcommand{\JvWriteReferenceAlias}[2]{%
+  \immediate\write\@auxout{\string\JvAssignReferenceAlias{#1}{#2}}%
+}
+\newcommand{\JvTestSharedChapter}[1]{%
+  \JvSharedChapterfalse
+  \def\do##1{\ifstrequal{#1}{##1}{\JvSharedChaptertrue}{}}%
+  \docsvlist{prf,seq,ntd,tab,axd,com}%
+}
+\let\JvOriginalOlLabel\ollabel
+\renewcommand{\ollabel}[1]{%
+  \JvOriginalOlLabel{#1}%
+  \ifdefstring{\theolpart}{fol}{%
+    \edef\JvChapterName{\theolchapter}%
+    \expandafter\JvTestSharedChapter\expandafter{\JvChapterName}%
+    \ifJvSharedChapter
+      \edef\JvAliasName{pl:\theolchapter:\theolsection:#1}%
+      \ifcsname JvSeenAlias@\JvAliasName\endcsname\else
+        \global\expandafter\let\csname JvSeenAlias@\JvAliasName\endcsname\@empty
+        \xappto\JvReferenceAliases{\noexpand\JvWriteReferenceAlias{\JvAliasName}{fol:\theolchapter:\theolsection:#1}}%
+      \fi
+    \fi
+  }{}%
+}
+% Copy completed references in the next aux read, not a second amsmath label.
+\AtEndDocument{%
+  \JvReferenceAliases
+  \def\do#1{\JvWriteReferenceAlias{pl:#1::chap}{fol:#1::chap}}%
+  \docsvlist{prf,seq,ntd,tab,axd,com}%
+}
+\makeatother
+
+% Jeneng lawas sumber dipetakake marang pratelan kang wis dibandhingake.
+\makeatletter
+\AtEndDocument{%
+  \JvWriteReferenceAlias{pl:prp:sem:prop:semanticalfacts}{pl:syn:sem:prop:semanticalfacts}%
+  \JvWriteReferenceAlias{pl:prp:axd:prop:phi}{fol:axd:prv:prop:provability-exhaustive}%
+  \JvWriteReferenceAlias{pl:prp:axd:prop:prov-incons}{fol:axd:prv:prop:prov-incons}%
+  \JvWriteReferenceAlias{fol:axd:prv:prop:provability}{fol:axd:prv-alt:prop:provability}%
+  \JvWriteReferenceAlias{fol:ntd:prv:prop:provability-land-left}{fol:ntd:ppr:prop:provability-land-left}%
+  \JvWriteReferenceAlias{fol:ntd:prv:prop:provability-land-right}{fol:ntd:ppr:prop:provability-land-right}%
+  \JvWriteReferenceAlias{fol:ntd:prv:prop:provability-lor-left}{fol:ntd:ppr:prop:provability-lor}%
+  \JvWriteReferenceAlias{fol:ntd:prv:prop:provability-lor-right}{fol:ntd:ppr:prop:provability-lor}%
+  \JvWriteReferenceAlias{fol:ntd:prv:prop:provability-mp}{fol:ntd:ppr:prop:provability-lif-left}%
+  \JvWriteReferenceAlias{fol:ntd:prv:prop:provability-lif}{fol:ntd:ppr:prop:provability-lif-right}%
+  \JvWriteReferenceAlias{fol:seq:prv:prop:provability-land-left}{fol:seq:ppr:prop:provability-land-left}%
+  \JvWriteReferenceAlias{fol:seq:prv:prop:provability-land-right}{fol:seq:ppr:prop:provability-land-right}%
+  \JvWriteReferenceAlias{fol:seq:prv:prop:provability-lor-left}{fol:seq:ppr:prop:provability-lor}%
+  \JvWriteReferenceAlias{fol:seq:prv:prop:provability-lor-right}{fol:seq:ppr:prop:provability-lor}%
+  \JvWriteReferenceAlias{fol:seq:prv:prop:provability-mp}{fol:seq:ppr:prop:provability-lif-left}%
+  \JvWriteReferenceAlias{fol:seq:prv:prop:provability-lif}{fol:seq:ppr:prop:provability-lif-right}%
+}
+% Sumber nggunakake rong koma, kang ndadekake rujukan kosong.
+\def\tagpair#1/#2{\iftoggle{#1}{\edef\taglist@result{\taglist@result\csvcomma #2}\def\csvcomma{,}}{}}
+\makeatother

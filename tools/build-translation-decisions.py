@@ -150,7 +150,7 @@ edition = {
 records = [json.loads(value) for value in LOG.read_text(encoding="utf-8-sig").splitlines() if value.strip()]
 metadata, legacy = records[0], records[1:]
 assert metadata["record_type"] == "metadata"
-assert len(legacy) == 180
+assert len(legacy) == 183
 assert len({row["decision_id"] for row in legacy}) == len(legacy)
 passages = {
     row["passage_id"]: row
@@ -281,6 +281,9 @@ audit_files = {
     "OLPL-024": "evidence/OLPL_AXIOMATIC_FOUNDATIONS_SOURCE_AUDIT.json",
     "OLPL-025": "evidence/OLPL_AXIOMATIC_FOUNDATIONS_SOURCE_AUDIT.json",
     "OLPL-026": "evidence/OLPL_AXIOMATIC_FOUNDATIONS_SOURCE_AUDIT.json",
+    "OLPL-041": "evidence/OLPL_TABLEAUX_EXAMPLES_SOURCE_AUDIT.json",
+    "OLPL-042": "evidence/OLPL_TABLEAUX_METATHEORY_PROSE_SOURCE_AUDIT.json",
+    "OLPL-043": "evidence/OLPL_TABLEAUX_METATHEORY_PROSE_SOURCE_AUDIT.json",
 }
 
 

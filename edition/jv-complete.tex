@@ -1,0 +1,100 @@
+\documentclass[11pt,openany,a4paper]{memoir}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathpazo}
+\usepackage{microtype}
+\newcommand{\olpath}{../upstream}
+\input{\olpath/sty/open-logic.sty}
+\input{jv-complete-localization.sty}
+\input{jv-complete-references.sty}
+\includeenv{editorial}
+\setlrmarginsandblock{28mm}{28mm}{*}
+\setulmarginsandblock{25mm}{28mm}{*}
+\checkandfixthelayout
+\linespread{1.05}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\tolerance=2000
+\emergencystretch=5em
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+\hypersetup{pdftitle={OpenLogic: Wacan Kumulatif Basa Jawa Aksara Latin},pdfauthor={Open Logic Project; terjemahan lan panyuntingan OpenAI Codex},pdflang={jv-Latn-ID}}
+\begin{document}
+\frontmatter
+\begin{titlingpage}
+\raggedright
+{\sffamily\Large OpenLogic\par}
+\vspace{18mm}
+{\sffamily\bfseries\Huge Logika lan Landhesan Matematika\par}
+\vspace{6mm}
+{\Large Basa Jawa, aksara Latin\par}
+\vspace{15mm}
+{\large Wacan kumulatif saka 722 berkas sumber\par}
+\vfill
+Terjemahan, koreksi, panyuntingan, lan pamriksan ditindakake nganggo
+OpenAI Codex --- GPT-5.6 Sol, GPT-6 Sol, lan GPT-6.1 Sol,
+kanthi effort Ultra. Pamriksan maneh karya sadurunge nganggo
+GPT-6.1 Sol isih lumaku; asil draf sadurunge ora dianggep
+panriman anyar. Ora ana pamriksan manungsa kang diklaim.
+\par\medskip
+Sumber Inggris: \href{https://github.com/OpenLogicProject/OpenLogic}{Open Logic Project, OpenLogic}.
+\par\medskip
+Karya asli lan terjemahan iki nganggo
+\href{https://creativecommons.org/licenses/by/4.0/}{Creative Commons Attribution 4.0}.
+Hak lan atribusi komponen asli tetep ditrapake.
+Terjemahan iki ora nuduhake panyengkuyung saka Open Logic Project.
+\end{titlingpage}
+\pagestyle{plain}
+\chapter*{Babagan Edhisi Iki}
+Wacan iki nglumpukake materi saka kabeh 722 berkas isi ing revisi
+sumber kang dicathet ing asal-usul teknis ing pungkasan wacan. Bab kang digunakake dening
+luwih saka siji pangendhali kapacak sapisan. Materi alternatif
+kapacak ing bab kang gegayutan; cathetan pangendhali alternatif
+tetep dibedakake saka pilihan panyuntingan edhisi iki.
+\par\medskip
+Materi teori bukti kang durung kalebu ing pangendhali baku sumber
+uga kalebu ing perangan teori bukti. Cathetan draf lan watesan
+sumber tetep ana. Cakupan berkas kang jangkep ora ateges kabeh
+teorema utawa bukti sumber wis pepak utawa wis dibenerake.
+Utamane, celah bukti normalisasi lan konfluensi ing materi
+proposisi minangka tipe (OLPL-655 lan OLPL-657) isih kudu
+dianggep watesan sumber. Ora ana sertifikat semantik kanggo
+kabeh edhisi kang diklaim. Bukti Lindström ing sumber uga isih duwe celah: dhukungan semantik winates durung njamin representasi ing basa luwih cilik, aksioma pangodean durung pepak, lan indeks serat durung dipisahake saka indeks ambane. Watesan iki dicathet ing perangan kasebut lan ora dianggep wis rampung.
+\par\medskip
+Cathetan pilihan terjemahan mbedakake bukti register lan ejaan
+saka bukti istilah teknis. Ing papan kang durung ana panganggone
+istilah teknis basa Jawa kang cukup bukti panganggone, pilihan kasebut
+sipatane sauntara lan teges matématisé manut sumber Inggris.
+Pemetaan kanon otomatis kang wis ditarik ora dianggep bukti
+konsultasi. Cathetan pamriksan lan watesan cumepak ing sumber
+edhisi iki supaya koreksi bisa ditlusuri.
+\par\medskip
+Sumber modular lan dependensi kanggo ngasilake wacan iki
+disedhiyakake ing arsip sumber. Berkas \texttt{.tex} kumulatif
+nyimpen teks lengkap; gaya, gambar, kapustakan, lan pandhuan
+pambangunan kang dibutuhake ana ing arsip sumber kasebut.
+\clearpage
+\input{jv-complete-about.tex}
+\clearpage
+\addtolength{\cftpartnumwidth}{1em}
+\tableofcontents*
+\mainmatter
+\input{jv-complete-body.tex}
+\backmatter
+\chapter*{Asal-usul Teknis Sumber}
+\addcontentsline{toc}{chapter}{Asal-usul Teknis Sumber}
+Sumber Inggris edhisi iki yaiku \href{https://github.com/OpenLogicProject/OpenLogic}{OpenLogicProject/OpenLogic},
+kanthi revisi beku
+\texttt{9620cc73f9c8e0ad003c514a5d3748f29611c4c0}.
+Identitas 722 berkas sumber lan checksum saben berkas dijaga ing manifest arsip sumber.
+Revisi iki nemtokake teks Inggris kang dadi dhasar terjemahan; cathetan koreksi lan andharan panyunting dibedakake saka sumber beku.
+\par\medskip
+\photocredits
+\par\medskip
+Jeneng, asal, lan lisensi foto ing dhaptar iki manut cathetan
+atribusi asli. Teks lisensi asli tetep dijaga; katrangan iki
+ora ngowahi hak utawa syarat lisensi komponen kasebut.
+\bibliographystyle{natbib-oup}
+\bibliography{open-logic}
+\end{document}

@@ -12,6 +12,7 @@
 
 \begin{thm}[Teorema Interpolasi Craig]
 \ollabel{thm:interpol}
+Ing andharan iki A lan B ukara, miturut cathetan cakupan SOL6-F026.
 Yen $\Entails !A \lif !B$, ana !!a{sentence} $!C$ kang
 $\Entails !A \lif !C$ lan $\Entails !C \lif !B$, lan saben
 !!{constant}, !!{function}, lan !!{predicate} (saliyane $\eq$) ing
@@ -21,15 +22,15 @@ $!C$ uga katon ing $!A$ lan~$!B$. !!{sentence} $!C$ iki diarani
 
 \begin{proof}
 Upamane $\Lang{L}_1$ iku basa saka $!A$ lan $\Lang{L}_2$ iku
-basa saka $!B$. Tetepake $\Lang{L}_0 = \Lang{L}_1 \cap \Lang{L}_2$.
+basa saka $!B$. Tetepna $\Lang{L}_0 = \Lang{L}_1 \cap \Lang{L}_2$.
 Kanggo saben $i \in \{0, 1, 2 \}$, wangun $\Lang{L}'_i$ dipikolehi
 saka $\Lang{L}_i$ kanthi nambah tanpa wates akehe !!{constant}s anyar
 $\Obj c_0, \Obj c_1, \Obj c_2, \dots$.
 
-Yen $!A$ ora bisa dipenuhi, $\lexists[x][\eq/[x][x]]$ iku
-interpolan. Yen $\lnot !B$ ora bisa dipenuhi (mula $!B$ valid),
+Yen $!A$ ora duwe model, $\lexists[x][\eq/[x][x]]$ iku
+interpolan. Yen $\lnot !B$ ora duwe model (mula $!B$ valid),
 $\lexists[x][\eq[x][x]]$ iku interpolan. Mula kita uga bisa
-nganggep $!A$ lan $\lnot !B$ loro-lorone bisa dipenuhi.
+nganggep $!A$ lan $\lnot !B$ loro-lorone duwe model.
 
 Kanggo mbuktekake kontraposisi Teorema Interpolasi,
 upamane ora ana interpolan kanggo $!A$ lan $!B$.
@@ -46,9 +47,9 @@ dhaptar kudu nyakup basa kang wis ditambahi konstanta anyar,
 amarga maksimalitas ing ngisor iki ditegesake ing basa iku.
 Kita tegesi rong barisan mundhak saka himpunan
 !!{sentence}s $(\Gamma_n, \Delta_n)$ kanggo $n \ge 0$ kaya iki.
-Tetepake $\Gamma_0 = \{ !A\}$ lan $\Delta_0 = \{\lnot !B \}$.
+Tetepna $\Gamma_0 = \{ !A\}$ lan $\Delta_0 = \{\lnot !B \}$.
 Yen $(\Gamma_n, \Delta_n)$ wis ditegesi, tegese
-$\Gamma_{n+1}$ lan $\Delta_{n+1}$ mangkene:
+$\Gamma_{n+1}$ lan $\Delta_{n+1}$ mangkene. Saben himpunan ing tahap anyar nggawa kabeh ukara saka tahap sadurunge; yen calon ukara ditolak, sisih iku tetep. Konstanta kanggo saksi dijupuk saka dhaptar konstanta anyar umum kang ditambahake marang rong basa, supaya durung ana ing himpunan winates ing tahap iku:
 \begin{enumerate}
 \item Yen $\Gamma_n \cup \{!A_n \}$ lan $\Delta_n$ ora bisa dipisahake
   ing $\Lang{L}'_0$, lebokake $!A_n$ menyang $\Gamma_{n+1}$.
@@ -110,9 +111,9 @@ kanggo \olref{part-a} kang lagi dibuktekake. Iki ngrampungake
 induksi kanggo \olref{part-a} lan \olref{part-b}.
 
 Mula $\Gamma^*$ lan $\Delta^*$ ora bisa dipisahake; yen bisa,
-miturut kompaktitas ana $n \ge 0$ kang misahake
+miturut kompaktitas ana indeks $n \ge 0$ lan ukara pamisah kang misahake
 $\Gamma_n$ lan $\Delta_n$, nalisir \olref{part-a}.
-Khususe, $\Gamma^*$ lan $\Delta^*$ konsisten:
+Mligine, $\Gamma^*$ lan $\Delta^*$ konsisten:
 yen sing kapisan utawa kapindho ora konsisten,
 loro-lorone bisa dipisahake dening
 $\lexists[x][\eq/[x][x]]$ utawa
@@ -158,7 +159,8 @@ Mula $!S \in \Gamma^* \cap \Delta^*$ utawa
 $\lnot !S \in \Gamma^* \cap \Delta^*$,
 lan $\Gamma^* \cap \Delta^*$ maksimal.
 
-Amarga $\Gamma^*$ konsisten maksimal, himpunan iki nduweni
+Cathetan pangganep bukti SOL6-F028: maksimalitas wae durung njamin model kang kabeh unsure dijenengi konstanta. Konstruksi iki uga menehi saksi kanggo saben ukara eksistensial kang ana ing himpunan lintang. Yen ukara kasebut ditolak nalika giliran enumerasine, separator ing tahap iku bakal tetep misahake himpunan pungkasan, nalisir inseparability. Mula ukara kasebut ditampa lan diwenehi saksi. Kanggo saben term tertutup t, ukara eksistensial x padha karo t nduweni saksi saka konstanta anyar umum, dadi saben unsur model term bisa dijenengi konstanta saka reservoir kang padha ing rong basa.
+Amarga $\Gamma^*$ konsisten maksimal lan nduweni sipat saksi iki, himpunan iki nduweni
 model $\Struct{M}'_1$ kang !!{domain} $\Domain{M'_1}$
 dumadi saka, lan mung saka, unsur-unsur $\Assign{c}{M'_1}$
 kang dadi interpretasi !!{constant}s---kaya ing bukti
@@ -184,7 +186,7 @@ $\Assign{c}{M'_1} \in \Assign{P}{M'_1}$ yen lan
 mung yen $\Atom{P}{c} \in \Gamma^*$, yen lan mung yen
 $\Atom{P}{c} \in \Delta^*$, yen lan mung yen
 $\Assign{c}{M'_2} \in \Assign{P}{M'_2}$.
-Syarat isomorfisme liyane bisa dibuktekake kanthi cara padha.
+Syarat isomorfisme liyane bisa dibuktekake kanthi cara padha. Ing kene c tansah dijupuk saka konstanta anyar umum. Ukara kesamaan antarane rong konstanta umum padha ing rong himpunan lintang; mula pemetaan iki ora gumantung marang pilihan jeneng lan injektif. Saben unsur model kapindho uga duwe jeneng umum, mula pemetaan iki surjektif.
 
 Saiki tegesi model $\Struct{M}$ kanggo !!{language}
 $\Lang{L}'_1 \cup \Lang{L}'_2$ kaya mangkene:
@@ -210,7 +212,7 @@ gabungan rong himpunan lintang bisa ditegesi.
   mula $\Assign{P}{M} = \Assign{P}{M'_2} =
   h(\Assign{P}{M'_1})$.
 \item !!^{function}s saka $\Lang{L}_1 \cup \Lang{L}_2$,
-  kalebu !!{constant}s, ditangani kanthi cara padha.
+  kalebu !!{constant}s, ditangani kanthi cara padha. Konstanta anyar umum diwenehi interpretasi saka model kapindho, kang padha karo transport interpretasi model kapisan liwat h.
 \end{enumerate}
 
 Pungkasan, induksi marang !!{formula}s nuduhake yen
@@ -221,7 +223,7 @@ lan cocog karo $\Struct{M'_2}$ kanggo kabeh
 Cathetan koreksi sumber OLPL-118:
 amarga ranah model kapisan lan model gabungan beda,
 kecocokan tumrap pangaji variabel kudu liwat h.
-Khususe, $\Struct{M} \Entails \Gamma^* \cup \Delta^*$,
+Mligine, $\Struct{M} \Entails \Gamma^* \cup \Delta^*$,
 mula $\Struct{M} \Entails !A$ lan
 $\Struct{M} \Entails \lnot!B$, saengga
 $\not\Entails !A \lif !B$. Iki ngrampungake bukti

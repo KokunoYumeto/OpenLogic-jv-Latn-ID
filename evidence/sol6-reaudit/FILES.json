@@ -1,0 +1,41 @@
+{
+  "schema": "jv-public-evidence-files/1",
+  "scope": "This source checkpoint evidence projection; SHA256 identifies exact UTF8 bytes. FILES.json does not hash itself.",
+  "files": [
+    {
+      "path": "evidence/sol6-reaudit/CHOICES_CURRENT.csv",
+      "bytes": 1003827,
+      "sha256": "531cafdf014757306e1b1c3e2b62b38897f8468738c2bba0a87bfb4b9c67159f"
+    },
+    {
+      "path": "evidence/sol6-reaudit/CHOICES_CURRENT.jsonl",
+      "bytes": 6205561,
+      "sha256": "45dad96cea78966816a46ae22e5b0c1e32ecf9fcc3481472947cc6ca801192fb"
+    },
+    {
+      "path": "evidence/sol6-reaudit/CHOICES_HISTORY.jsonl",
+      "bytes": 7667614,
+      "sha256": "308e0563f0d4ef6e339372690b6130f9908bbe3708ab42aa11224d7eaaaa1ee0"
+    },
+    {
+      "path": "evidence/sol6-reaudit/CHOICES_INDEX.md",
+      "bytes": 353027,
+      "sha256": "daf4527a1b1b5d748609e9c8d00d7b1c6e0225aa96d1835dc395ab4fa0276988"
+    },
+    {
+      "path": "evidence/sol6-reaudit/SOURCE_CORRECTIONS.jsonl",
+      "bytes": 1878885,
+      "sha256": "77854c533a849402f8b92ab9c2c4f4b8fffca74481f3a6e1937460c7f1869623"
+    },
+    {
+      "path": "evidence/sol6-reaudit/SOURCE_MANIFEST.jsonl",
+      "bytes": 356467,
+      "sha256": "5a6fef5c16c15a5b2f90f874c268512cfd6ed2e846bdfa850a67304a4c05a155"
+    },
+    {
+      "path": "evidence/sol6-reaudit/STATUS.json",
+      "bytes": 1911,
+      "sha256": "ee42eca4fe1b2474363a4257063bd15791dda892ff56b563728ca55eae3504f4"
+    }
+  ]
+}

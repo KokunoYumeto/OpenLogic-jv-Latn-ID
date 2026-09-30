@@ -39,7 +39,7 @@ rekursif parsial $f\colon \Nat
 \to \Nat$, ana $e \in \Nat$ kang ndadekake
 $\cfind{e}(x) \simeq f(x)$ kanggo saben~$x \in \Nat$.
 Malah, kanggo saben fungsi~$f$ kaya mangkono,
-indeks~$e$ iku ora mung siji, nanging tanpa wates cacahé.
+indeks~$e$ iku ora mung siji, nanging tanpa wates cacahé. Cathetan panyunting: pratelan cacah iki kanggo pangindeksan program baku kang ngidini instruksi tambahan tanpa ngowahi fungsi, kaya ing cathetan teorema wangun normal.
 \emph{Fungsi mandheg}~$h$ ditegesi minangka
 \[
 h(e, x) =
@@ -48,9 +48,9 @@ h(e, x) =
 0 & \text{yen ora.}
 \end{cases}
 \]
-Gatekna yen $h(e, x) = 0$ yen $\cfind{e}(x) \fundefined$,
-nanging uga yen~$e$ dudu indeks saka fungsi
-rekursif parsial babar pisan.
+Gatekna yen $h(e, x) = 0$ yen $\cfind{e}(x) \fundefined$.
+Cathetan koreksi sumber OLPL-765: miturut definisi universal ing kene,
+saben angka~$e$ iku indeks fungsi rekursif parsial, mula kasus indeks ora sah ora kedadeyan.
 
 \begin{thm}
 \ollabel{thm:halting-problem}
@@ -72,8 +72,7 @@ $d(y) \fundefined$ yen lan mung yen $h(y,y) \neq 0$.
 Saka definisi iki kita entuk
 \begin{enumerate}
 \item $d(y) \fdefined$ yen lan mung yen
-  $\cfind{y}(y) \fundefined$ utawa $y$
-  dudu indeks saka fungsi rekursif parsial.
+  $\cfind{y}(y) \fundefined$.
 \item $d(y) \fundefined$ yen lan mung yen
   $\cfind{y}(y) \fdefined$.
 \end{enumerate}
@@ -88,16 +87,13 @@ lan~$1$.
   $\cfind{e_d} \simeq d$, lan $d(e_d)$
   ditegesi yen lan mung yen $h(e_d, e_d) = 0$.
   Dadi $h(e_d, e_d) \neq 1$.
-\item Yen $h(e_d, e_d) = 0$, mula bisa uga
-  $e_d$ dudu indeks saka fungsi rekursif parsial,
-  utawa pancen indeks kasebut lan
+\item Yen $h(e_d, e_d) = 0$, mula
   $\cfind{e_d}(e_d) \fundefined$. Nanging maneh,
   $\cfind{e_d} \simeq d$, lan $d(e_d)$ ora
   ditegesi yen lan mung yen
   $\cfind{e_d}(e_d) \fdefined$.
 \end{enumerate}
-Asile, $e_d$ jebul ora bisa dadi indeks
-saka fungsi rekursif parsial. Nanging yen $h$
+Cathetan koreksi sumber OLPL-765: cabang indeks ora sah uga dicopot saka bukti iki, manut definisi universal sadurunge. Asile, rong kemungkinan kanggo indeks sah $e_d$ kalorone menehi kontradiksi. Nanging yen $h$
 rekursif parsial, $d$ uga rekursif parsial,
 mula panetepan $e_d$ minangka indekse iku sah.
 Mula kita kudu nyimpulake yen $h$ ora bisa

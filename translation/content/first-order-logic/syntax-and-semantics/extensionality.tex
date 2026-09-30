@@ -15,9 +15,10 @@ Ekstensionalitas, kang kadhang diarani relevansi, sacara
 ora resmi bisa diandharake mangkene: siji-sijine faktor
 kang mengaruhi apa !!{formula}~$!A$ dicukupi ing
 !!a{structure}~$\Struct M$ relatif marang pangaji
-!!a{variable}~$s$ yaiku gedhene !!{domain} lan
+!!a{variable}~$s$ yaiku !!{domain} dhewe lan
 nilai kang diwenehake~$\Struct M$ lan~$s$ marang
 unsur-unsur basa kang pancen katon ing~$!A$.
+Cathetan koreksi sumber SOL6-F006: padha cacah unsur domain wae ora cukup yen interpretasi predikat tetep; proposisi ing ngisor mbutuhake domain kang padha, dudu mung padha gedhene.
 
 Salah siji akibat langsung saka ekstensionalitas yaiku:
 yen rong !!{structure}s~$\Struct M$ lan~$\Struct M'$
@@ -126,10 +127,10 @@ amarga baris sabanjure wis miwiti pepadhan.
 
 \begin{prop}\ollabel{prop:ext-formulas}
 Upamakna $\Struct M$ iku !!a{structure},
-$!A$ iku !!a{formula}, $t'$~term, lan $s$~pangaji
+$!A$ iku !!a{formula}, $t'$~term kang bebas kanggo variabel kang diganti ing formula kasebut, lan $s$~pangaji
 variabel. Mula $\Sat{M}{\Subst{!A}{t'}{x}}[s]$
 yen lan mung yen
-$\Sat{M}{!A}[\Subst{s}{\Value{t'}{M}[s]}{x}]$.
+$\Sat{M}{!A}[\Subst{s}{\Value{t'}{M}[s]}{x}]$. Cathetan koreksi sumber OLPL-750: substitusi formula mung ditetepake yen term panggantos bebas kanggo variabel kang diganti; prasyarat iki ora kasebut ing proposisi sumber.
 \end{prop}
 
 \begin{proof}
@@ -157,7 +158,7 @@ Buktèkna \olref[fol][syn][ext]{prop:ext-formulas}
   nilai~$t$ ing $\Struct{M}$ lan~$\Subst{s}{m}{x}$,
   utawa apa $\Sat{M}{!A}[\Subst{s}{m}{x}]$.
   \Cref{fol:syn:ext:prop:ext-terms,fol:syn:ext:prop:ext-formulas}
-  njamin yen wangsulane padha, cara endi wae kang dipilih.
+  njamin yen wangsulane padha, cara endi wae kang dipilih. Kanggo formula, term panggantos kudu bebas kanggo variabel kang diganti.
 \end{explain}
 
 \end{document}

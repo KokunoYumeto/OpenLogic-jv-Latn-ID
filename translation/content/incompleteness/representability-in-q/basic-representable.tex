@@ -12,17 +12,17 @@
 Luwih dhisik, kita kudu nuduhake yen kabeh fungsi dhasar representabel
 ing~$\Th{Q}$. Pungkasane, kita kudu nuduhake carane masangake saben
 fungsi dhasar $k$-argumen $f(x_0,\dots,x_{k-1})$ karo !!a{formula}
-$!A_f(x_0,\dots,x_{k-1},y)$ kang merepresentasikake fungsi iku.
+$!A_f(x_0,\dots,x_{k-1},y)$ kang makili fungsi iku.
 
-Kita bakal bisa merepresentasikake nol, penerus, panjumlahan,
+Kita bakal bisa makili nol, penerus, panjumlahan,
 perkalian, fungsi karakteristik kanggo kesamaan, lan proyeksi. Ing
-saben kasus, formula kang merepresentasikake fungsi kasebut cukup
-langsung; umpamane, nol direpresentasikake dening formula $y = \Obj 0$,
+saben kasus, formula kang makili fungsi kasebut cukup
+langsung; umpamane, nol diwakili dening formula $y = \Obj 0$,
 penerus dening !!{formula} $x_0' = y$, lan panjumlahan dening
 !!{formula} $(x_0 + x_1) = y$. Gaweyan kang perlu yaiku nuduhake yen
 $\Th{Q}$ bisa mbuktekake !!{sentence}s kang cocog; umpamane, nyatakake
-yen panjumlahan direpresentasikake dening !!{formula} ing ndhuwur
-mbutuhake bukti yen kanggo saben pasangan bilangan asli $m$ lan $n$,
+yen panjumlahan diwakili dening !!{formula} ing ndhuwur
+mbutuhake bukti yen kanggo saben pasangan wilangan natural $m$ lan $n$,
 $\Th{Q}$ mbuktekake
 \begin{align*}
 & \eq[\num n + \num m][\num {n+m}] \text{ lan}\\
@@ -31,25 +31,25 @@ $\Th{Q}$ mbuktekake
 
 \begin{prop}
 \ollabel{prop:rep-zero}
-Fungsi nol $\Zero(x) = 0$ direpresentasikake ing~$\Th{Q}$ dening
+Fungsi nol $\Zero(x) = 0$ diwakili ing~$\Th{Q}$ dening
 $!A_{\Zero}(x,y) \ident \eq[y][\Obj 0]$.
 \end{prop}
 
 \begin{prop}
 \ollabel{prop:rep-succ}
-Fungsi penerus $\Succ(x) = x+1$ direpresentasikake ing~$\Th{Q}$ dening
+Fungsi penerus $\Succ(x) = x+1$ diwakili ing~$\Th{Q}$ dening
 $!A_{\Succ}(x,y) \ident \eq[y][x']$.  
 \end{prop}
 
 \begin{prop}
 \ollabel{prop:rep-proj}
 Fungsi proyeksi $\Proj{n}{i}(x_0, \dots, x_{n-1}) = x_i$
-direpresentasikake ing~$\Th{Q}$ dening \[!A_{\Proj{n}{i}}(x_0, \dots, x_{n-1}, y) \ident \eq[y][x_i].\]
+diwakili ing~$\Th{Q}$ dening \[!A_{\Proj{n}{i}}(x_0, \dots, x_{n-1}, y) \ident \eq[y][x_i].\]
 \end{prop}
 
 \begin{prob}
 Buktekna yen $\eq[y][\Obj 0]$, $\eq[y][x']$, lan $\eq[y][x_i]$
-merepresentasikake $\Zero$, $\Succ$, lan $\Proj{n}{i}$ miturut urutane.
+makili $\Zero$, $\Succ$, lan $\Proj{n}{i}$ miturut urutane.
 \end{prob}
 
 \begin{prop}
@@ -59,10 +59,10 @@ Fungsi karakteristik saka~$=$,
 \Char{=}(x_0, x_1) =
 \begin{cases}
   1 & \text{yen } x_0 =x_1\\
-  0 & yen ora
+  0 & \text{yen ora}
 \end{cases}
 \]
-direpresentasikake ing~$\Th{Q}$ dening
+diwakili ing~$\Th{Q}$ dening
 \[
   !A_{\Char{=}}(x_0, x_1, y) \ident (\eq[x_0][x_1] \land \eq[y][\num{1}]) \lor (\eq/[x_0][x_1] \land
 \eq[y][\num{0}]).
@@ -72,7 +72,7 @@ direpresentasikake ing~$\Th{Q}$ dening
 Buktine mbutuhake lema iki.
 
 \begin{lem}
-\ollabel{lem:q-proves-neq} Kanggo bilangan asli $n$ lan $m$, yen $n
+\ollabel{lem:q-proves-neq} Kanggo wilangan natural $n$ lan $m$, yen $n
 \neq m$, mula $\Th{Q} \Proves \eq/[\num n][\num m]$.
 \end{lem}
 
@@ -81,14 +81,14 @@ Gunakna induksi marang $n$ kanggo nuduhake yen kanggo saben $m$, yen
 $n \neq m$, mula $Q \Proves \eq/[\num n][\num m]$.
 
 Ing kasus dhasar, $n = 0$. Yen $m$ ora padha karo $0$, mula $m = k +
-1$ kanggo sawijining bilangan asli $k$. Kita duwe aksioma kang nyatakake
+1$ kanggo sawijining wilangan natural $k$. Kita duwe aksioma kang nyatakake
 $\lforall[x][\eq/[0][x']]$. Kanthi aksioma kuantor, yen $x$ diganti
   $\num k$, kita bisa nyimpulake $\eq/[0][\num k']$. Nanging $\num k'$
   iku mung $\num m$.
 
 Ing langkah induksi, kita bisa nganggep pratelan iki bener kanggo $n$,
-banjur nimbang $n+1$. Tetepna $m$ minangka bilangan asli sembarang. Ana rong
-kemungkinan: $m = 0$ utawa ana $k$ saengga $m = k+1$. Kasus kapisan
+banjur nimbang $n+1$. Tetepna $m$ minangka wilangan natural sembarang. Ana rong
+prakara kang bisa kelakon: $m = 0$ utawa ana $k$ saengga $m = k+1$. Kasus kapisan
 ditangani kaya ing ndhuwur. Ing kasus kapindho, upamana $n+1 \neq
 k+1$. Mula $n \neq k$. Miturut hipotesis induksi kanggo $n$, kita nduweni
 $\Th{Q} \Proves \eq/[\num n][\num k]$. Kita duwe aksioma kang nyatakake
@@ -104,7 +104,7 @@ amarga $\num k'$ iku $\num m$.
 Gatekna yen lema iki ora nyatakake akeh: pokoke, $\Th{Q}$ bisa
 mbuktekake yen numeral kang beda nuduhake objek kang beda. Umpamane,
 $\Th{Q}$ mbuktekake $0'' \neq 0'''$. Nanging kanggo nuduhake yen iki
-bener sacara umum perlu ngati-ati. Gatekna uga yen sanajan kita
+bener kanthi umum perlu ngati-ati. Gatekna uga yen sanajan kita
 nggunakake induksi, induksi iki ana \emph{ing njaba} $\Th{Q}$.
 \end{explain}
 
@@ -142,7 +142,7 @@ disjungsi sisih tengen njalari $\eq[y][\num{0}]$.
 
 \begin{prop}
 \ollabel{prop:rep-add}
-Fungsi panjumlahan $\Add(x_0, x_1) = x_0+x_1$ direpresentasikake
+Fungsi panjumlahan $\Add(x_0, x_1) = x_0+x_1$ diwakili
 ing~$\Th{Q}$ dening
 \[
   !A_{\Add}(x_0, x_1, y) \ident \eq[y][(x_0 + x_1)].
@@ -167,7 +167,7 @@ Mula $\Th{Q} \Proves \eq[(\num{n} + \num{m}')][\num{n+m}']$.
 \end{proof}
 
 \begin{proof}[Bukti \olref{prop:rep-add}]
-!!{formula}~$!A_\Add(x_0, x_1, y)$ kang merepresentasikake $\Add$ yaiku
+!!{formula}~$!A_\Add(x_0, x_1, y)$ kang makili $\Add$ yaiku
 $\eq[y][(x_0 + x_1)]$. Luwih dhisik, kita nuduhake yen $\Add(n, m) = k$, mula
 $\Th{Q} \Proves !A_\Add(\num{n}, \num{m}, \num{k})$, yaiku $\Th{Q}
 \Proves \eq[\num{k}][(\num{n} + \num{m})]$. Nanging amarga $k = n + m$,
@@ -190,21 +190,21 @@ $\eq[\num{n+m}][y]$, kanggo~$y$ sembarang.
 
 \begin{prop}
 \ollabel{prop:rep-mult}
-Fungsi perkalian $\Mult(x_0, x_1) = x_0 \cdot x_1$ direpresentasikake
+Fungsi perkalian $\Mult(x_0, x_1) = x_0 \cdot x_1$ diwakili
 ing~$\Th{Q}$ dening
 \[
   !A_{\Mult}(x_0, x_1, y) \ident y = (x_0 \times x_1).
 \]
 \end{prop}
 
-\begin{proof} Latihan. \end{proof}
+\begin{proof} Gladhen. \end{proof}
 
 \begin{lem}
 \ollabel{lem:q-proves-mult}
 $\Th{Q} \Proves \eq[(\num{n} \times \num{m})][\num{n \cdot m}]$
 \end{lem}
 
-\begin{proof} Latihan. \end{proof}
+\begin{proof} Gladhen. \end{proof}
 
 \begin{prob}
 Buktekna \olref[inc][req][bre]{lem:q-proves-mult}.
@@ -218,16 +218,16 @@ Gunakna \olref[inc][req][bre]{lem:q-proves-mult} kanggo mbuktekake
 \begin{explain}
   Elinga yen kita nggunakake $\times$ minangka simbol fungsi ing basa
   aritmetika, lan $\cdot$ kanggo operasi perkalian biasa marang
-  bilangan. Dadi $\cdot$ bisa katon ing antarane ekspresi bilangan
+  wilangan. Dadi $\cdot$ bisa katon ing antarane ekspresi wilangan
   (kayata ing $m \cdot n$), dene $\times$ mung katon ing antarane suku
   basa aritmetika (kayata ing $(\num{m} \times
   \num{n})$). Sing luwih mbingungake, $+$ digunakake kanggo
   !!{function} lan uga operasi panjumlahan. Yen katon ing antarane
   suku---umpamane, ing $(\num{n} + \num{m})$---iku !!{function} kanthi
   $2$ argumen ing basa aritmetika, lan yen katon ing antarane
-  bilangan---umpamane, ing $n+m$---iku operasi panjumlahan.
-  Iki kalebu kasus $\num{n+m}$: iki numeral standar
-  kang cocog karo bilangan~$n+m$.
+  wilangan---umpamane, ing $n+m$---iku operasi panjumlahan.
+  Iki kalebu kasus $\num{n+m}$: iki numeral baku
+  kang cocog karo wilangan~$n+m$.
 \end{explain}
 
 \end{document}

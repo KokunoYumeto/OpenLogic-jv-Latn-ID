@@ -11,7 +11,7 @@
 
 \begin{defn}
   Yen diwenehi rong !!{structure}s $\Struct{M}$
-  lan $\Struct{N}$, \emph{isomorfisme parsial}
+  lan $\Struct{N}$ kanggo basa kang padha, \emph{isomorfisme parsial}
   saka $\Struct{M}$ menyang $\Struct{N}$
   iku fungsi parsial winates $p$
   kang nampa argumen saka $\Domain M$
@@ -37,7 +37,7 @@
     $p(\Assign f M (a_1, \dots,a_n))
     = \Assign f N (p(a_1), \dots, p(a_n))$.
   \end{enumerate}
-  $p$ winates tegesé $\dom{p}$ winates.
+  $p$ winates tegesé $\dom{p}$ winates. Cathetan cakupan: miturut klausa fungsi ing definisi iki, ranah p kudu katutup tumrap fungsi kang diterapake marang tuple saka ranahe. Iki syarat kang luwih mbatesi kanggo fungsi kang duwe orbit tanpa wates; definisi alternatif kang nggunakake isomorfisme antarane substruktur kang dibangkitake ora diganti kanthi meneng ing edhisi iki.
 \end{defn}
 
 Gatekna yen fungsi kosong~$\emptyset$
@@ -137,13 +137,14 @@ lan $\Struct{N}$.
   Kanthi induksi tumrap !!{formula}s,
   kita nuduhake yen $a_1$, \dots, $a_n$
   lan $b_1$, \dots, $b_n$
-  nduweni isomorfisme parsial $p$
+  nduweni isomorfisme parsial $p \in I$
   kang ngirim saben $a_i$ menyang $b_i$,
   lan $s_1(x_i) =a_i$ sarta
   $s_2(x_i) =b_i$ (kanggo $i =1$,
-  \dots,~$n$), mula
+  \dots,~$n$), lan kabeh variabel bebas saka formula kang dibandhingake ana ing dhaptar kasebut, mula
   $\Sat{M}{!A}[s_1]$ yen lan
   mung yen $\Sat{N}{!A}[s_2]$.
+  Cathetan cakupan SOL6-F018: p kudu anggota kulawarga maju-mundur kang ana ing hipotesis teorema. Isomorfisme parsial sembarang mung njaga data atomik ing ranahe; kanggo langkah kuantor, p kudu bisa dijembarake ing kulawarga kasebut. Upamane, rong unsur kang padha ora nyukupi predikat bisa dicocogake dening siji p, senajan mung salah siji struktur nduweni unsur liyane kang nyukupi predikat kasebut. Formula eksistensial mula ora mesthi padha kanggo p sembarang.
   Kasus $n=0$ menehi
   $\Struct{M} \elemequiv \Struct{N}$.
 \end{proof}
@@ -152,7 +153,7 @@ lan $\Struct{N}$.
 Yen ana !!{function}s, asil sadurunge
 isih bener, nanging kita kudu
 nggatekake isomorfisme kang diasilake
-dening $p$ antarane
+dening ekstensi $p$ saka kulawarga maju-mundur antarane
 sub!!{structure} saka $\Struct{M}$
 kang dibangkitake dening $a_1$, \dots, $a_n$
 lan sub!!{structure} saka
@@ -193,7 +194,7 @@ isomorfisme parsial kang dibutuhake.
   !!{function}s. Mula kanggo
   saben $n \in \Nat$ mung ana
   winates cacahé !!{sentence}s
-  orde kapisan ing !!{language}
+  tataran kapisan ing !!{language}
   $\Lang{L}$ kang tingkat
   kuantoré ora luwih saka $n$,
   nganti ekuivalensi logis.
@@ -278,7 +279,7 @@ isomorfisme parsial kang dibutuhake.
   Mula $I_n
   (\mathbf{a},\mathbf{b})$
   njalari yen kanggo saben $!A$
-  kanthi $\QuantRank{!A} \le n$,
+  kanthi $\QuantRank{!A} \le n$ lan saben variabel bebasé ana ing urutan kang dicocogake,
   $\Sat{M}{!A}[\mathbf{a}]$
   yen lan mung yen
   $\Sat{N}{!A}[\mathbf{b}]$
@@ -289,7 +290,7 @@ isomorfisme parsial kang dibutuhake.
   kang nyukupi $!A$).
   Sabanjure, yen $\Lang{L}$
   winates, pratelan kosok
-  baline uga bener.
+  baline uga bener. Cathetan koreksi sumber OLPL-754: pratelan iki mung kanggo formula kang variabel bebasé ana ing urutan kasebut; variabel bebas ing njabane ora dikontrol dening relasi kasebut.
 \end{thm}
 
 \begin{proof}
@@ -309,7 +310,7 @@ isomorfisme parsial kang dibutuhake.
   saben $n$ mung ana
   winates cacahé !!{formula}s
   kang ora ekuivalen
-  kanthi tingkat kuantor kasebut.
+  kanthi tingkat kuantor kasebut, kanggo dhaptar variabel bebas kang tetep lan winates. Cathetan cakupan SOL6-F019: watesan iki perlu; kabeh formula kang variabel bebase ora diwatesi ora nduweni winates kelas ekuivalensi, malah ing tingkat nol. Proposisi ngenani ukara bisa ditrapake ing kene kanthi ngganti saben variabel bebas ing dhaptar tetep nganggo konstanta anyar; basane tetep winates lan tanpa fungsi.
 
   Kanggo $n=0$, hipotesis yen
   $\mathbf{a}$ lan $\mathbf{b}$
@@ -356,7 +357,7 @@ isomorfisme parsial kang dibutuhake.
   winates cacahé saka
   himpunan iki lan nganggep
   konjungsine minangka siji
-  !!{formula} orde kapisan.
+  !!{formula} tataran kapisan.
   Cathetan koreksi sumber OLPL-092:
   himpunan formula sintaktis kasebut
   ora winates; kang winates

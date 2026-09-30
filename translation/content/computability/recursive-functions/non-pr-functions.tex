@@ -28,7 +28,7 @@ Kanggo saben fungsi rekursif primitif $f_i$,
 nilai $h$ lan $f_i$ béda ing $i$. Dadi $h$
 komputabel nanging dudu rekursif primitif;
 pratelan kang padha uga bener kanggo $g$.
-Iki wangun 'efektif' saka argumen
+Iki wangun ``efektif'' saka argumen
 diagonalisasi Cantor.
 
 Kita uga bisa menehi tuladha kang luwih cetha
@@ -51,7 +51,7 @@ $x$ angka $2$. Fungsi Ackermann--P\'eter
 pancen meh padha karo fungsi $G(x) = g_x(x)$,
 lan bisa dibuktekake yen fungsi iki tuwuh
 luwih cepet tinimbang fungsi rekursif
-primitif endi wae.
+primitif endi wae. Cathetan panyunting: iterasi kaping nol yaiku identitas; tuwuh luwih cepet ing kene diwaca minangka dominasi kanggo input kang cukup gedhe, dudu kanggo saben input. Gambaran iki ora dadi bukti dominasi kang pepak.
 
 Saiki kita bali menyang prakara enumerasi
 fungsi rekursif primitif. Elinga yen kita wis
@@ -87,25 +87,24 @@ konstan nol, bakal katon luwih saka sepisan
 ing dhaptar. Iki ora mung akibat saka cara
 pangodean, nanging uga amarga fungsi konstan
 nol nduwé luwih saka siji notasi. Mengko kita
-bakal weruh yen ulangan iki ora bisa
-disingkiri kanthi cara komputabel; upamane,
+bakal weruh yen ora ana kanonisasi komputabel kang menehi wakil unik kanggo sembarang notasi manut kesamaan fungsi; upamane,
 ora ana fungsi komputabel kang bisa mutusake
 apa sawiji notasi nglambangake fungsi
-konstan nol utawa ora.)
+konstan nol utawa ora.) Cathetan koreksi sumber SOL6-F039: iki ora ateges kabeh enumerasi komputabel kudu duwe ulangan. Shih-Chao Liu, ing An Enumeration of the Primitive Recursive Functions Without Repetition (1960, kaca 400–402), mbuktekake anane enumerasi komputabel tanpa ulangan kanggo fungsi rekursif primitif unèr. Kang ora bisa diitung yaiku nemokake wakil unik mau saka sembarang notasi fungsi.
 
 Saiki fungsi $g(x,y)$ bisa kita anggep
 ditetepake dening $f_x(y)$, kanthi $f_x$
 nuduhake enumerasi kang lagi wae diandharake.
 Kepiye kita ngerti yen $g(x,y)$ komputabel?
 Sacara intuitif iki cetha: kanggo ngitung
-$g(x,y)$, luwih dhisik 'bongkar' $x$
+$g(x,y)$, luwih dhisik ``bongkar'' $x$
 lan priksa apa iku notasi kanggo fungsi
 unèr. Yen iya, itung nilai fungsi kasebut
-kanggo input~$y$.
+kanggo input~$y$. Cathetan panyunting: yen kode ora nglambangake notasi unèr kang sah, asil evaluator nol, manut definisi enumerasi sadurunge.
 
 \begin{tagblock}{TMs}
 \begin{digress}
-Mbokmenawa panjenengan wis yakin yen (kanthi
+Mbokmenawa sampeyan wis yakin yen (kanthi
 upaya tartamtu!) kita bisa nulis program
 (umpamane ing Java utawa C++) kang nindakake
 iki; lan saiki kita bisa nggunakake tesis

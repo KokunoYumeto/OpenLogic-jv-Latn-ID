@@ -123,7 +123,7 @@ himpunan $Y \subseteq \Nat$, mula
 $\Setabs{m}{n \le m} \subseteq Y$. Kosok baline ora kudu
 bener, amarga himpunan kang ngemot buntut iki durung mesthi
 tutup tumrap panerus ing unsur liyane. Nanging buntut iku
-dhewe ngemot titik wiwitane lan tutup tumrap panerus, mula
+dhewe ngemot titik wiwitane lan tutup tumrap panerus. Cathetan koreksi sumber OLPL-806: ngemot kabeh unsur wiwit n mung akibat saka klausa B, dudu syarat kang ekuivalen; himpunan buntut iku dadi saksi kanggo arah kosok baline ing definisi universal. Mula
 kita bisa njupuk $!A_\le(x, y) \ident
 \lforall[Y][(!B(x, Y) \lif Y(y))]$.
 
@@ -137,7 +137,7 @@ ing ngisor iki:
 !A_+(x,y,z) \ident \lexists[u][(u(\Obj 0)=x \land \lforall[w][u(x')=u
  (x)'] \land u(y)=z)]
 \] 
-Cetha yen $\Sat{N}{!A_+(\num k, \num l, \num m)}$
+Cathetan koreksi sumber OLPL-807: kuantor kanggo w ing rumus kang dicithak ora dienggo ing klausa rekurensi, kang malah migunakake x. Kanggo iterasi panerus, klausa kudu lumaku kanggo saben w lan mbandhingake nilai u ing panerus w karo panerus nilai u ing w. Sawise klausa mau dibenerake, cetha yen $\Sat{N}{!A_+(\num k, \num l, \num m)}$
 yen lan mung yen $k+l=m$.
 \end{proof}
 

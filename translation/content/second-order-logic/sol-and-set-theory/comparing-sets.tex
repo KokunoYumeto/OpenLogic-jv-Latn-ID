@@ -55,11 +55,11 @@ $\cardeq{X}{Y}$, yen lan mung yen ana fungsi
 Rumus
 \begin{multline*}
   \lexists[u][(\lforall[x][(X(x) \lif Y(u(x)))] \land {}\\
-    \lforall[x][\lforall[y][(\eq[u(x)][u(y)] \lif \eq[x][y])]]
+    \lforall[x][\lforall[y][((X(x) \land X(y) \land \eq[u(x)][u(y)]) \lif \eq[x][y])]]
   \land {} \\\lforall[y][(Y(y) \lif \lexists[x][(X(x)
       \land \eq[y][u(x)])])])]
 \end{multline*}
-netepake relasi padha cacahe.
+netepake relasi padha cacahe. Cathetan koreksi sumber OLPL-812: fungsi u mung kudu injektif nalika argumene ana ing X. Mbutuhake injektivitas ing sakabehe domain bisa nggagalake bijeksi X marang Y nalika loro subhimpunan iku padha cacahe nanging komplemene beda ukuran.
 \end{prop}
 
 Kita bakal nyingkat !!{formula}s iki, kanthi urut,

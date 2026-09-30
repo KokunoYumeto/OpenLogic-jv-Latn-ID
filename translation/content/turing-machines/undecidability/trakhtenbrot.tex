@@ -12,14 +12,14 @@
 \begin{explain}
   Ing \olref[rep]{sec} kita netepake !!{sentence}s
   $!T(M,w)$ lan~$!E(M,w)$ kanggo mesin Turing~$M$
-  lan untai input~$w$. Banjur ing
+  lan rerangken input~$w$. Banjur ing
   \olref[ver]{lem:valid-if-halt} lan
   \olref[ver]{lem:halt-if-valid} kita nuduhake yen
   $!T(M,w) \lif !E(M,w)$ sah yen lan mung yen $M$,
-  nalika diwiwiti nganggo input~$w$, pungkasane mandheg.
+  nalika diwiwiti nganggo input~$w$, pungkasane mandheg. Cathetan OLPL-773 lan SOL6-F058: klausa pangreksan lan bukti representasi sadurunge saiki dibenerake supaya kothak asal kang ditulisi ora dikekang nganggo simbol lawas.
   Amarga Masalah Mandheg ora bisa diputusake, iki
   ateges kasahihan lan panyukupan !!{sentence}s
-  logika orde kapisan ora bisa diputusake
+  logika tataran kapisan ora bisa diputusake
   (\cref{tur:und:uns:thm:decision-prob,tur:und:uns:cor:undecidable-sat}).
 
   Nanging kasahihan lan panyukupan ukara ditegesi
@@ -43,7 +43,7 @@
   input~$w$ mandheg sawisé~$k$ langkah. Dadekna
   domain~$\Domain{M'}$ minangka himpunan
   $\{0, \dots, n\}$, ing ngendi $n$ iku nilai
-  kang luwih gedhé ing antarane~$k$ lan dawa~$w$,
+  kang luwih gedhé tinimbang~$k$ kang ditambah siji lan dawa~$w$,
   banjur tetepna
   \[
     \Assign{\prime}{M'}(x) = 
@@ -56,7 +56,7 @@
   mung yen $x < y$ utawa $x = y = n$. Kanggo
   bagean liyane, $\Struct{M'}$ ditegesi kaya~$\Struct{M}$.
   Miturut definisi~$\Struct{M'}$, kaya ing bukti
-  \olref[ver]{lem:halt-if-valid}, $\Sat{M'}{!T(M,w)}$.
+  \olref[ver]{lem:halt-if-valid}, $\Sat{M'}{!T(M,w)}$. Cathetan OLPL-161 lan SOL6-F058: pilih pucuk domain ngluwihi kabeh wektu transisi, kothak kang ditekani lan input. Klausa pangreksan saiki bener; konfigurasi mandheg pungkasan digunakake maneh kanggo wektu sabanjure.
   Lan amarga kita nganggep $M$ mandheg nganggo
   input~$w$, $\Sat{M'}{!E(M,w)}$. Dadi,
   $\Struct{M'}$ iku model winates saka
@@ -79,18 +79,18 @@
   (kahanan, posisi sirah, lan isi pita padha).
   Kita bisa netepake !!{structure} winates~$\Struct{M''}$
   kang nyukupi $!T(M,\emptyseq) \land !E(M,\emptyseq)$
-  (latihan). Nanging, kita bisa ngowahi~$!T(M,w)$
+  (gladhen). Nanging, kita bisa ngowahi~$!T(M,w)$
   kanthi cara kang trep supaya !!{structure}s
   kaya mangkono ora mungkin.
 
   \begin{prob}
     Tetepna $M$ minangka mesin Turing kang mung nduwé
     kahanan $q_0$ lan instruksi tunggal
-    $\delta(q_0,\TMblank) = \tuple{q,\TMblank,\TMstay}$.
-    % OLPL-162: Tuladha sumber iki ngalih saka q_0 menyang q lan nyebut M' ing assignment kang liyane kabeh kanggo M''; simbol beku ditahan.
+    $\delta(q_0,\TMblank) = \tuple{q_0,\TMblank,\TMstay}$.
+    Cathetan koreksi sumber OLPL-162: kahanan tujuan saiki dibenerake dadi q-nol kang siji-sijine, lan assignment penerus ing siji dibenerake supaya kabeh kanggo struktur M-prime-prime.
     Tetepna $\Domain{M''} = \{0, 1, 2\}$,
     $\Assign{\prime}{M''}(0) =
-    \Assign{\prime}{M'}(1) = 1$ lan
+    \Assign{\prime}{M''}(1) = 1$ lan
     $\Assign{\prime}{M''}(2) = 2$, lan
     $\Assign{<}{M''} = \{\tuple{0,1}, \tuple{1,1}, \tuple{2,2}\}$.
     Tetepna $\Assign{\Obj Q_{q_0}}{M''}$,
@@ -143,13 +143,13 @@ sadurunge, lan tetepna
 & \lforall[x][\lforall[y][
     ((\Obj Q_{q_i}(x', y) \land \Obj S_{\sigma}(x', y)) \lif {}]]\\
 & \qquad   (\Obj Q_{q_j}(x, y') \land \Obj S_{\sigma'}(x', y') \land
-!A(x, y))) \land {}\\
+!A(x', y) \land !B(y'))) \land {}\\
 & \lforall[y][((\Obj Q_{q_i}(\num{0}, y) \land \Obj S_{\sigma}(\num{0},
     y)) \lif {}]\\
 & \qquad (\Obj Q_{q_j}(\num{0}, y') \land \Obj S_{\sigma'}(\num{0},
   y') \land !A(\num{0}, y) \land !B(y')))
 \end{align*}
-% OLPL-163: Cabang kapisan aturan ngiwa ora ngemot B(y'), senajan ringkesan sawise iki nyebut B(y') ditambahake ing kabeh transisi.
+Cathetan koreksi sumber OLPL-163 lan SOL6-F058: cabang obah kiwa saka kothak saliyane nol saiki nganggo pangreksan kanggo kothak asal kang ditulisi lan syarat B kanggo wektu sabanjure, kaya transisi liyane.
 \item \ollabel{rep-stay} Kanggo saben instruksi
   $\delta(q_i, \sigma) = \tuple{q_j, \sigma', \TMstay}$,
   !!{sentence} iki:
@@ -211,20 +211,20 @@ lan input~$w$.
     \end{cases} \\
     \tuple{x,y} \in \Assign{<}{M'} &\text{yen lan mung yen $x < y$ utawa $x = y = n$,}
   \end{align*}
-  ing ngendi $n = \max(k,\len{w})$ lan $k$~iku
+  ing ngendi $n = \max(k+2,\len{w}+1)$ lan $k$~iku
   angka paling cilik saengga $M$ kang diwiwiti
   nganggo input~$w$ wis mandheg sawisé~$k$
   langkah. Pamriksan yen
-  % OLPL-161: Ing model winates iki n<n bener; yen k=n, B(k) ora bener sanajan transisi pungkasan ing T' mbutuhake B(k). Wates n perlu ditliti.
-  $\Sat{M'}{!T'(M,w) \land E(M,w)}$
-  kita tinggalake dadi latihan.
+  % Cathetan wates model winates diwenehake ing prosa sawise pratelan model.
+  $\Sat{M'}{!T'(M,w) \land !E(M,w)}$
+  kita tinggalake dadi gladhen. Cathetan koreksi sumber OLPL-161: wates saiki luwih gedhe tinimbang wektu mandheg, kabeh posisi kang ditekani lan dawa input. Kanthi posisi sirah wiwit siji, kothak kang ditekani paling tengen ora ngluwihi k kang ditambah siji. Transisi nganti mandheg ora tekan pucuk domain kang duwe daur. Cathetan OLPL-164: tandha formula E saiki dicocogake.
 \end{proof}
 
 \begin{prob}
   Rampungna bukti \olref[tur][und][tra]{lem:halts-sat}
   kanthi mbuktekake yen
-  % OLPL-164: Klaim sumber ing bukti/latihan iki ora konsisten karo lema: E tanpa ! lan latihan nggunakake T tinimbang T'.
-  $\Sat{M'}{!T(M,w) \land E(M,w)}$.
+  % Cathetan konsistensi simbol lema diwenehake sawise rumus gladhen.
+  $\Sat{M'}{!T'(M,w) \land !E(M,w)}$. Cathetan koreksi sumber OLPL-164: formula ing gladhen saiki T-prime lan E kanthi tandha formula, padha karo lemma kang dibuktekake.
 \end{prob}
 
 \begin{lem}\ollabel{lem:sat-halts}
@@ -237,18 +237,18 @@ lan input~$w$.
   diwiwiti nganggo~$w$ ora mandheg. Yen
   $!T'(M,w) \land !E(M,w)$ ora nduwé model babar pisan,
   bukti wis rampung. Mula upamane $\Struct{M}$
-  % OLPL-165: Asumsi model ing sumber iki nyebut T, dudu T' ing pratelan lema; akibat B(n) mengko mbutuhake T'.
-  model saka~$!T(M,w) \land !E(M, w)$.
+  % Cathetan asumsi model kanggo bukti kontraposisi diwenehake ing prosa.
+  model saka~$!T'(M,w) \land !E(M, w)$. Cathetan koreksi sumber OLPL-165: asumsi model saiki T-prime lan E, mula syarat B bisa didudut saka saben transisi.
   Kita kudu nuduhake yen model iki ora mungkin winates.
   
   Kita bisa mbuktekake, kaya ing
   \olref[ver]{lem:config}, yen~$M$ kang diwiwiti
   nganggo input~$w$ durung mandheg sawisé~$n$
-  langkah, mula $!T'(M,w) \Entails !C(M, w, n)
+  langkah kanthi n positif, mula $!T'(M,w) \Entails !C(M, w, n)
   \land !B(\num{n})$. Amarga $M$ kang diwiwiti
   nganggo input~$w$ ora mandheg, mula
   $!T'(M,w) \Entails !C(M, w, n) \land
-  !B(\num{n})$ kanggo kabeh~$n \in \Nat$.
+  !B(\num{n})$ kanggo kabeh~$n \in \Nat$ kang positif. Cathetan koreksi sumber SOL6-F064: ora ana aksioma B ing wektu nol. B ing siji saka transisi kapisan, banjur induksi menehi B ing saben wektu positif; iki cukup kanggo bukti domaine tanpa wates.
   Gatekna yen miturut \olref[rep]{prop:mlessk},
   $!T'(M,w) \Entails \num{k} < \num{n}$
   kanggo kabeh~$k < n$. Kajaba iku,
@@ -267,13 +267,13 @@ lan input~$w$.
   Rampungna bukti \olref[tur][und][tra]{lem:sat-halts}
   kanthi mbuktekake yen~$M$ kang diwiwiti
   nganggo input~$w$ durung mandheg sawisé~$n$
-  langkah, mula $!T'(M,w) \Entails !B(\num{n})$.
+  langkah kanthi n positif, mula $!T'(M,w) \Entails !B(\num{n})$.
 \end{prob}
 
 \begin{thm}[Teorema Trakhtenbrot]
   \ollabel{thm:trakhtenbrodt}
   Ora bisa diputusake apa sembarang !!{sentence}
-  logika orde kapisan nduwé model winates
+  logika tataran kapisan nduwé model winates
   (yaiku bisa dicukupi sacara winates).
 \end{thm}
 
@@ -287,27 +287,27 @@ lan input~$w$.
   nduwé model winates. Miturut
   \cref{tur:und:tra:lem:halts-sat,tur:und:tra:lem:sat-halts},
   ukara iku nduwé model winates yen lan mung yen
-  $M$ kang diwiwiti nganggo input~$w$ mandheg.
+  $M$ kang diwiwiti nganggo input~$w$ mandheg. Cathetan OLPL-161/163/773: pangreksan kothak asal, syarat B ing kabeh transisi lan wates model winates saiki dibenerake kaya kang dijlentrehake ing ndhuwur.
   Mula kita bisa nggunakake $F$ kanggo ngrampungake
   masalah mandheg, kang wis dimangerteni ora bisa
   dirampungake.
 \end{proof}
 
 \begin{cor}\ollabel{cor:fproof-incomp}%
-  Ora mungkin ana sistem !!{derivation} kang ngemu
+  Ora mungkin ana sistem !!{derivation} efektif kang ngemu
   jaminan semantis lan jangkep tumrap kasahihan
   \emph{winates}, yaiku
   sistem !!a{derivation} kang nduwé $\Proves !B$
   yen lan mung yen $\Sat{M}{!B}$ kanggo saben
-  !!{structure} winates~$\Struct{M}$.
+  !!{structure} winates~$\Struct{M}$. Cathetan koreksi sumber SOL6-F066: efektif ateges bukti winates bisa dipriksa lan dienumerasi kanthi algoritma, kang dibutuhake ing reduksi sabanjure.
 \end{cor}
 
 \begin{proof}
-  Latihan.
+  Gladhen.
 \end{proof}
 
 \begin{prob}
-  Buktèkna \olref[tur][und][tra]{cor:fproof-incomp}.
+  Buktekna \olref[tur][und][tra]{cor:fproof-incomp}.
   Gatekna yen $!B$ dicukupi ing saben
   !!{structure} winates yen lan mung yen
   $\lnot !B$ ora bisa dicukupi sacara winates.
@@ -315,7 +315,7 @@ lan input~$w$.
   iku semi-bisa diputusake miturut teges ing
   \olref[tur][und][uns]{thm:valid-ce}. Gunakna
   iki kanggo nuduhake yen seandhane ana
-  sistem !!a{derivation} tumrap kasahihan winates,
+  sistem !!a{derivation} efektif tumrap kasahihan winates,
   panyukupan sacara winates bakal bisa diputusake.
 \end{prob}
 

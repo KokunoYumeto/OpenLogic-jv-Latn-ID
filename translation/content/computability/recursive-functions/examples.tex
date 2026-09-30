@@ -18,16 +18,16 @@ lan $\Succ$ kanthi komposisi kang ditrapake bola-bali.
 Iki migunani nalika kita arep nganggo konstanta ing definisi
 rekursif primitif. Umpamane, yen kita arep netepake fungsi
 $f(x) = 2 \cdot x$, kita bisa ngasilake kanthi komposisi
-saka $\fn{const}_n(x)$ lan perkalian minangka $f(x) =
+saka $\fn{const}_2(x)$ lan perkalian minangka $f(x) =
 \Mult(\fn{const}_2(x), \Proj{1}{0}(x))$. Wiwit saiki kita
-bakal nggunakake cara iki.
+bakal nggunakake cara iki. Cathetan koreksi sumber SOL6-F035: kanggo tuladha kaping loro x iki, fungsi konstan kang digunakake yaiku const2; sumber nulis constn ing andharan, nanging rumuse wis nggunakake const2.
 
 \begin{prop}
   Fungsi pemangkatan $\fn{exp}(x, y) = x^y$ iku rekursif primitif.
 \end{prop}
 
 \begin{proof}
-  Kita bisa netepake $\fn{exp}$ kanthi rekursi primitif kaya mangkene:
+  Kita bisa netepake $\fn{exp}$ kanthi rekursi primitif kaya mangkene. Ing fungsi iki, nalika pangkat nol asile tansah siji, kalebu nalika basis nol:
   \begin{align*}
     \fn{exp}(x, 0) & = 1\\
     \fn{exp}(x, y+1) & = \Mult(x, \fn{exp}(x,y)).
@@ -45,7 +45,7 @@ bakal nggunakake cara iki.
 \end{proof}
 
 \begin{prop}
-  Fungsi pendahulu $\fn{pred}(y)$ kang ditegesi kanthi
+  Fungsi pradésesor $\fn{pred}(y)$ kang ditegesi kanthi
   \[
   \fn{pred}(y) = \begin{cases}
     0 & \text{yen $y=0$}\\
@@ -101,7 +101,7 @@ $\fn{pred}(x) = \fn{pred}'(\Zero(x), \Proj{1}{0}(x))$.
 \end{proof}
 
 \begin{prop}
-  Pangurangan terpotong, $x \tsub y$, kang ditegesi kanthi
+  Pangurangan kang diwatesi ing nol, $x \tsub y$, kang ditegesi kanthi
   \[
   x \tsub y = \begin{cases}
     0 & \text{yen $x < y$}\\
@@ -161,7 +161,7 @@ $\fn{pred}(x) = \fn{pred}'(\Zero(x), \Proj{1}{0}(x))$.
 Tuduhna yen \[
 f(x, y) =
 2^{(2^{\iddots^{2^{x}}})}\raisebox{1ex}{\bigg\rbrace}
-\raisebox{1ex}{\text {$y$ angka $2$}}\] iku rekursif primitif.
+\raisebox{1ex}{\text {$y$ angka $2$}}\] iku rekursif primitif. Kanggo y nol, menara iki ora ngemot angka loro lan nilaine x; iki nilai wiwitan rekursi. Kanggo saben langkah sabanjure, nilai sadurunge dadi pangkat saka loro.
 \end{prob}
 
 \begin{prob}

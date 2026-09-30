@@ -44,7 +44,7 @@ $\tuple{q_0, \TMblank}$ menyang $\tuple{q_1, \TMstroke,
 \emph{Mesin Genep}: Mesin Turing ing ngisor iki
 mandheg yen lan mung yen cacah $\TMstroke$ ing
 pita genep (kanthi anggepan kabeh $\TMstroke$
-ana sadurunge $\TMblank$ kapisan ing pita).
+ana sadurunge $\TMblank$ kapisan ing pita). Cathetan panyunting: conto iki miwiti sirah ing kothak input kapisan ing sisih tengen panandha, manut definisi formal konfigurasi wiwitan. SOL6-F049 uga mbenerake posisi wiwitan ing pambuka supaya konvensine padha. Kanggo input kosong sirah maca blank kapisan ing kahanan nol.
 \[
 \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
                     semithick]
@@ -75,10 +75,10 @@ mesin iku (miturut teori) terus lumaku
 tanpa wates. Kanggo mesin lan input
 sembarang, kita bisa nelusuri
 \emph{konfigurasi} mesin kanggo nemtokake
-asile. Kita bakal menehi definisi formal
+asile yen mesin mandheg. Cathetan koreksi sumber OLPL-770: panelusuran menehi output yen mesin mandheg, nanging ora mesthi nemtokake output utawa mandhege mesin kanggo input sembarang. Kita bakal menehi definisi formal
 konfigurasi ing bagean sabanjure. Saiki,
 konfigurasi bisa dianggep sacara intuisi
-minangka runtutan diagram kang nuduhake
+minangka rerangken diagram kang nuduhake
 kahanan mesin ing saben wektu nalika lumaku.
 Konfigurasi nuduhake isi pita, kahanan mesin,
 lan panggonan sirah maca-nulis.
@@ -99,7 +99,7 @@ nggambarake kahanan wiwitan mesin kaya mangkene:
 \]
 % OLPL-145: Sumber beku nyebut "state one" ing katrangan konfigurasi wiwitan, nanging rumus lan diagram nuduhake q_0.
 Konfigurasi ing ndhuwur gampang dimangerteni.
-Kaya kang katon, mesin diwiwiti ing kahanan
+Cathetan koreksi sumber OLPL-145: kahanan wiwitan nol, dudu siji kaya ing ukara sumber. Kaya kang katon, mesin diwiwiti ing kahanan
 nol lan maca~$\TMstroke$ paling kiwa.
 Iki digambarake dening subskrip jeneng
 kahanan ing $\TMstroke$ kapisan.
@@ -305,11 +305,11 @@ mesin pangganda ing \olref[tur][mac][rep]{ex:doubler}.
 \begin{prob}
 Rancangna mesin Turing kanthi alfabet
 $\{\TMendtape,\TMblank, A, B\}$ kang nampa,
-yaiku mandheg nalika nampa, runtutan aksara
+yaiku mandheg nalika nampa, rerangken aksara
 $A$ lan $B$ sembarang kanthi cacah $A$
 padha karo cacah $B$ \emph{lan} kabeh $A$
 ana sadurunge kabeh $B$; lan kang nolak,
-yaiku ora mandheg nalika nampa, runtutan
+yaiku ora mandheg nalika nampa, rerangken
 aksara kang cacah $A$ ora padha karo cacah~$B$
 utawa ora kabeh $A$ ana sadurunge kabeh~$B$.
 (Tuladhane, mesin kudu nampa $AABB$ lan
@@ -319,9 +319,9 @@ $AAABBB$, nanging nolak $AAB$ lan $AABBAABB$.)
 \begin{prob}
 Rancangna mesin Turing kanthi alfabet
 $\{\TMendtape,\TMblank, A, B\}$ kang nampa
-runtutan aksara $\alpha$ sembarang saka $A$
+rerangken aksara $\alpha$ sembarang saka $A$
 lan $B$ minangka input lan nggandakake
-runtutan iku supaya ngasilake $\alpha\alpha$.
+rerangken iku supaya ngasilake $\alpha\alpha$.
 (Tuladhane, input $ABBA$ kudu ngasilake
 output $ABBAABBA$.)
 \end{prob}
@@ -330,11 +330,11 @@ output $ABBAABBA$.)
 \emph{Miturut urutan alfabet?:} Rancangna
 mesin Turing kanthi alfabet
 $\{\TMendtape,\TMblank, A, B\}$ kang nalika
-diwenehi input runtutan winates saka $A$
+diwenehi input rerangken winates saka $A$
 lan $B$ mriksa apa kabeh $A$ ana ing
 sisih kiwa kabeh $B$. Mesin kudu ninggalake
-runtutan input ing pita, lan mandheg yen
-runtutane ``miturut urutan alfabet'',
+rerangken input ing pita, lan mandheg yen
+rerangkene ``miturut urutan alfabet'',
 utawa lumaku ing daur tanpa wates yen ora.
 \end{prob}
 
@@ -342,11 +342,11 @@ utawa lumaku ing daur tanpa wates yen ora.
 \emph{Pangurut alfabet:} Rancangna mesin
 Turing kanthi alfabet
 $\{\TMendtape,\TMblank, A, B\}$ kang nampa
-runtutan winates saka $A$ lan $B$ minangka
+rerangken winates saka $A$ lan $B$ minangka
 input banjur nata maneh supaya kabeh $A$
 ana ing sisih kiwa kabeh~$B$. (Tuladhane,
-runtutan $BABAA$ kudu dadi runtutan $AAABB$,
-lan runtutan $ABBABB$ kudu dadi runtutan
+rerangken $BABAA$ kudu dadi rerangken $AAABB$,
+lan rerangken $ABBABB$ kudu dadi rerangken
 $AABBBB$.)
 \end{prob}
 

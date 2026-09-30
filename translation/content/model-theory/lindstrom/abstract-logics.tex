@@ -15,27 +15,27 @@ kanthi $L$ iku fungsi kang masangake marang saben !!{language}~$\Lang{L}$
 sawijining himpunan $L(\Lang{L})$ saka !!{sentence}s, lan $\models_L$
 iku relasi antarane !!{structure}s kanggo !!{language}~$\Lang{L}$
 lan !!{element}s saka $L(\Lang{L})$. Mligine, $\tuple{F, \models}$
-iku logika orde kapisan lumrah, yaiku $F$ fungsi kang masangake marang
-!!{language}~$\Lang{L}$ himpunan !!{sentence}s orde kapisan kang
-kawangun saka konstanta ing $\Lang{L}$, lan $\models$ iku relasi
-nyukupi ing logika orde kapisan.
+iku logika tataran kapisan lumrah, yaiku $F$ fungsi kang masangake marang
+!!{language}~$\Lang{L}$ himpunan !!{sentence}s tataran kapisan kang
+kawangun saka simbol predikat lan konstanta ing $\Lang{L}$, lan $\models$ iku relasi
+nyukupi ing logika tataran kapisan. Cathetan koreksi sumber SOL6-F029: konstanta wae ora cukup kanggo mbangun kabeh ukara; predikat saka basa kasebut uga digunakake.
 \end{defn}
 
 Gatekna yen kita isih nggunakake pangerten !!{structure} kang padha
-kanggo !!{language} tartamtu kaya ing logika orde kapisan, nanging kita
+kanggo !!{language} tartamtu kaya ing logika tataran kapisan, nanging kita
 ora nganggep yen !!{sentence}s kawangun saka simbol-simbol dhasar ing
 $\Lang{L}$ kanthi cara lumrah, utawa yen relasi $\models_L$
-ditetepake kanthi rekursif kaya ing logika orde kapisan. Mula, umpamane,
+ditetepake kanthi rekursif kaya ing logika tataran kapisan. Mula, umpamane,
 definisi kang sipate umum iki uga nyakup !!{sentence}s ing
 $\tuple{L,\models_L}$ kang ngemot konjungsi utawa disjungsi tanpa wates
 dawane, kuantor saliyane $\lexists$ lan $\lforall$ (umpamane,
 “ana tanpa wates akehe~$x$ saengga \dots”), utawa mbokmenawa
 runtutan kuantor tanpa wates dawane. Kanggo negesake yen
 “!!{sentence}s” ing $L(\Lang{L})$ ora kudu awujud !!{sentence}s
-lumrah ing logika orde kapisan, ing bab iki kita nggunakake
+lumrah ing logika tataran kapisan, ing bab iki kita nggunakake
 !!{variable}s $!E$, $!F$,~\dots kanggo nglambangake ukara-ukara iku,
 lan nyisihake $!A$, $!B$,~\dots kanggo !!{formula}s lumrah ing
-logika orde kapisan.
+logika tataran kapisan.
 
 \begin{defn}
 Upamana $\Mod(L){!E}$ nglambangake kelas
@@ -85,14 +85,14 @@ sipat-sipat ing ngisor iki:
   lan konektif liyane.
 \item (\emph{Sipat Kuantor}) Kanggo saben konstanta $c$ ing
   $\Lang{L}$ lan $!E \in L(\Lang{L})$, ana $!F \in
-  L(\Lang{L})$ saengga
+  L(\Lang{L'})$ saengga
   \[
   \Mod[L'](L){!F} = \Setabs{\Struct{M}}{\Expan{M}{a} \in
   \Mod[L](L){!E} \text{ kanggo sawatara } a \in \Domain{M}},
   \]
   kanthi $\Lang{L'} = \Lang{L} \setminus \{c\}$ lan
   $\Expan{M}{a}$ iku ekspansi $\Struct{M}$ menyang $\Lang{L}$
-  kang masangake $a$ marang~$c$.
+  kang masangake $a$ marang~$c$. Cathetan koreksi sumber OLPL-755: ukara asil pambusakan konstanta kudu ana ing basa kang wis tanpa konstanta iku; pratelan mung kalebu himpunan ukara basa asal durung cukup.
 \item (\emph{Sipat Relativisasi}) Yen diwenehi !!a{sentence}
   $!E \in L(\Lang{L})$ lan simbol-simbol $R$, $c_1$, \dots,
   $c_n$ kang ora ana ing $\Lang{L}$, ana !!a{sentence}
@@ -105,12 +105,12 @@ sipat-sipat ing ngisor iki:
     mung yen } \Struct{N} \models_L !E,
   \]
   kanthi $\Struct{N}$ iku substruktur saka $\Struct{M}$ kanthi
-  !!{domain} $\Domain{N} = \Setabs{a\in \Domain{M}}{\Assign{R}{M}(a,
-  b_1, \dots, b_n)}$ (waca
+  !!{domain} $\Domain{N} = \Setabs{a\in \Domain{M}}{(a,
+  b_1, \dots, b_n) \in X}$ (waca
   \olref[bas][sub]{rem:substructure}), lan
   $\Expan{M}{X, b_1, \ldots, b_n}$ iku ekspansi $\Struct{M}$
   kang napsirake $R$, $c_1$, \dots, $c_n$ kanthi $X$, $b_1,$
-  \dots, $b_n$, miturut urutane (kanthi $X \subseteq M^{n+1}$).
+  \dots, $b_n$, miturut urutane (kanthi $X \subseteq M^{n+1}$). Cathetan koreksi sumber OLPL-756: tafsir predikat anyar dijupuk saka ekspansi, dudu struktur asal kang durung nduweni predikat iku. Himpunan unsur kang dipilih kudu ora kosong lan mbentuk substruktur basa asal; yen ana konstanta, tafsire kudu kalebu ing himpunan iki.
 \end{enumerate}
 \end{defn}
 
@@ -131,20 +131,20 @@ $\tuple{L_1, \models_{L_1}} \leq \tuple{L_2,
 \end{defn}
 
 \begin{rem}
-  Logika orde kapisan, yaiku logika abstrak $\tuple{F, \models}$,
+  Logika tataran kapisan, yaiku logika abstrak $\tuple{F, \models}$,
   iku normal. Satemene, sipat-sipat ing ndhuwur umume langsung
-  lumaku kanggo logika orde kapisan. Kita mung ngelingake yen
+  lumaku kanggo logika tataran kapisan. Kita mung ngelingake yen
   sipat ekspansi mujudake ekstensionalitas, lan relativisasi
   !!a{sentence} $!E$ marang $\Atom{R}{x, c_1, \dots, c_n}$
   dipikolehi kanthi ngganti saben !!{subformula}
   $\lforall[x][!F]$ dadi
-  $\lforall[x][(\Atom{R}{x, c_1, \dots, c_n} \lif \ !F)]$.
+  $\lforall[x][(\Atom{R}{x, c_1, \dots, c_n} \lif \ !F)]$. Cathetan pangganep SOL6-F030: aturan kang mung nyebut kuantor universal iki ditrapake sawise kuantor eksistensial ditulis nganggo negasi lan kuantor universal. Yen kuantor eksistensial ditinggal minangka primitif, kuantor kasebut uga kudu diwatesi marang ranah pilihan. Variabel kaiket diganti jenenge yen perlu supaya parameter anyar ora dicekel.
   Kajaba iku, yen $\tuple{L, \models_L}$ normal, mula
   $\tuple{F, \models} \leq \tuple{L, \models_{L}}$,
   kaya kang bisa dibuktekake kanthi induksi miturut
-  !!{formula}s orde kapisan. Mula, tanpa ngilangake kalumrahan,
-  kita bisa nganggep yen saben !!{sentence} orde kapisan
-  kalebu ing saben logika normal.
+  !!{formula}s tataran kapisan. Mula, tanpa ngilangake kalumrahan,
+  kita bisa nganggep yen saben !!{sentence} tataran kapisan
+  bisa diwakili dening ukara kang ekuivalen ing saben logika normal; iki dudu pratelan yen sintaksis ukara asli mesti dadi anggota harfiah. Cathetan watesan: sipat ekspansi kang dicithak mung njamin gumantung semantik marang basa winates. Supaya bukti Lindstrom sabanjure bisa ngurangi basa, isih dibutuhake syarat representasi ukara ing basa winates, kaya kang kasebut ing OLPL-757.
 \end{rem}
 
 \end{document}

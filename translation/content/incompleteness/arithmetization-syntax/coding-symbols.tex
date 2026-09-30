@@ -9,7 +9,7 @@
 \olfileid{inc}{art}{cod}
 \olsection{Pangodean Simbol}
 
-Basa dhasar~$\Lang L$ logika orde kapisan
+Basa dhasar~$\Lang L$ logika tataran kapisan
 nggunakake simbol-simbol
 \[
 \lfalse \quad \lnot \quad \lor \quad \land \quad \lif \quad \lforall
@@ -21,12 +21,12 @@ variabel lan !!{constant}s, sarta himpunan
 !!{predicate}s kanthi aritas sembarang.
 Kita bisa menehi \emph{kode} marang saben
 simbol iki saengga saben simbol nduwé siji
-bilangan khas minangka kodene, lan ora ana
-rong simbol béda kang diwenehi bilangan
+wilangan khas minangka kodene, lan ora ana
+rong simbol béda kang diwenehi wilangan
 kang padha. Iki mungkin amarga himpunan
 kabeh simbol iku !!{enumerable}, mula ana
 !!a{bijection} antarane himpunan iku lan
-himpunan bilangan asli. Nanging kita uga
+himpunan wilangan natural. Nanging kita uga
 kepengin bisa nemokake maneh simbol kasebut
 (bebarengan karo sawatara katrangan, umpamane
 aritas !!a{function}) saka kodene kanthi
@@ -34,7 +34,7 @@ cara komputabel. Mesthi ana akeh cara kanggo
 nindakake iku. Ing ngisor iki salah siji cara
 kang nggunakake fungsi rekursif primitif.
 (Elinga yen $\tuple{n_0, \dots, n_k}$ iku
-bilangan kang ngodeake urutan bilangan
+wilangan kang ngodeake urutan wilangan
 $n_0$, \dots, $n_k$.)
 
 \begin{defn}
@@ -82,18 +82,18 @@ Relasi-relasi ing ngisor iki rekursif primitif:
 
 \begin{defn}
 Yen $s_0, \dots, s_{n-1}$ iku urutan simbol,
-\emph{bilangan G\"odel} saka urutan iku yaiku
+\emph{wilangan G\"odel} saka urutan iku yaiku
 $\tuple{\scode{s_0}, \dots, \scode{s_{n-1}}}$.
 \end{defn}
 
 \begin{explain}
-Gatekna yen \emph{kode} lan \emph{bilangan G\"odel}
+Gatekna yen \emph{kode} lan \emph{wilangan G\"odel}
 iku rong bab kang béda. Tuladhane,
 variabel~$\Obj v_5$ nduwé kode~$\scode{\Obj
   v_5} = \tuple{1, 5} = 2^2\cdot 3^6$.
 Nanging variabel~$\Obj v_5$ yen dianggep
 minangka suku uga dadi urutan simbol
-(dawane~$1$). \emph{Bilangan G\"odel}~$\Gn{\Obj v_5}$
+(dawane~$1$). \emph{Wilangan G\"odel}~$\Gn{\Obj v_5}$
 saka \emph{suku}~$\Obj v_5$ yaiku
 $\tuple{\scode{\Obj v_5}} = 2^{\scode{\Obj
     v_5} + 1} = 2^{2^2\cdot 3^6 + 1}$.
@@ -101,17 +101,17 @@ $\tuple{\scode{\Obj v_5}} = 2^{\scode{\Obj
 
 \begin{ex}
 Elinga yen $k_0$, \dots, $k_{n-1}$ iku
-urutan bilangan. Kode urutan
+urutan wilangan. Kode urutan
 $\tuple{k_0, \dots, k_{n-1}}$ ing
-pangodean pangkat bilangan prima yaiku
+pangodean pangkat wilangan prima yaiku
 \[
 2^{k_0+1}\cdot3^{k_1+1}\cdot \dots \cdot p_{n-1}^{k_{n-1}+1},
 \]
-ing ngendi $p_i$ iku bilangan prima kapangka-$i$
+ing ngendi $p_i$ iku wilangan prima kapangka-$i$
 (diwiwiti saka $p_0 = 2$). Mula, umpamane,
 formula $\eq[\Obj v_0][\Obj 0]$, utawa
 kanthi luwih cetha, ${\eq}(\Obj v_0,\Obj c_0)$,
-nduwé bilangan G\"odel
+nduwé wilangan G\"odel
 \[
 \tuple{\scode{\eq},\scode{(},\scode{\Obj v_0},\scode{,}, \scode{\Obj
     c_0},\scode{)}}.

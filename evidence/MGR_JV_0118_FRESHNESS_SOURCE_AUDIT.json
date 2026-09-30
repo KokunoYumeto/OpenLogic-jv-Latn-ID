@@ -1,0 +1,43 @@
+{
+  "schema": "jv-manager-source-audit/1",
+  "audit_id": "MGR-JV-0118-FRESHNESS-20260920",
+  "status": "confirmed_bounded_axiomatic_freshness_gap",
+  "date": "2026-09-20",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "source": {
+    "unit_id": "OLP-0118",
+    "path": "content/first-order-logic/axiomatic-deduction/proof-theoretic-notions.tex",
+    "bytes": 4266,
+    "sha256": "0afb9df4b5f0f5c1e892cf411d126f45acce94cfbdc9087e4bd37cb851cc370b"
+  },
+  "finding": {
+    "finding_id": "MGR-JV-0118-FRESHNESS-20260920",
+    "locators": [
+      "monotonicity proof, source lines 58-60",
+      "transitivity proof, source lines 69-83"
+    ],
+    "observed": "The monotonicity proof treats the same derivation as valid after enlarging its premise set, and the transitivity proof concatenates derivations into an enlarged premise context without rechecking quantifier-rule freshness.",
+    "defect": "A quantifier-rule eigenvariable absent from the original premise set may occur in added premises. The unchanged sequence can therefore cease to satisfy the rule's side condition; direct concatenation has the same problem.",
+    "controlling_evidence": [
+      "OLP-0115 requires the quantifier-rule parameter to be absent from the entire premise set and the rule's fixed companion formula.",
+      "A two-line empty-context derivation from the falsehood axiom to a universally quantified conditional is valid with eigenvariable a, but the same annotated sequence is invalid from a premise set containing R(a).",
+      "Every derivation is finite, so only finitely many auxiliary constants are needed to freshen its quantifier-rule applications.",
+      "A temporary conservative language extension supplies auxiliary constants outside arbitrary premise sets while leaving all original-language premises and endpoints unchanged."
+    ],
+    "bounded_repair": {
+      "monotonicity": "Prove premise extension by induction on derivation length; in a quantifier-rule case, uniformly rename a clashing eigenvariable in the shorter premise derivation to a fresh auxiliary constant before applying the induction hypothesis and the rule.",
+      "transitivity": "Use repaired monotonicity for the first derivation and uniformly freshen every quantifier-rule eigenvariable of the second derivation that occurs in the added Gamma context before concatenation.",
+      "scope": "Preserve both theorem statements, the frozen English source, OLPL-025, OLPL-026 and all unaffected language choices."
+    }
+  },
+  "manager_replay": {
+    "report_sha256": "15442407a1bf5931ac3848395210d94e13a49582cae808088eb244b8331dbd67",
+    "report_bytes": 7333,
+    "replay_status": "REPLAY_PASS_with_one_bounded_proof_repair",
+    "whole_lane_semantic_certificate": false
+  },
+  "routing": {
+    "upstream": "Retain for one deduplicated end-of-translation report; do not open an individual issue.",
+    "human_review": "Advisory and not a production or publication prerequisite."
+  }
+}

@@ -23,7 +23,8 @@ Ora ana pratelan yen proyek asal nyengkuyung edhisi iki utawa yen wis ana panlit
 Terjemahan, koreksi sumber, panyuntingan, lan pamandingan makna dening
 panulis sing padha ditindakake nganggo OpenAI Codex. Rekaman runtime sesi
 utama nyathet **GPT-5.6 Sol, Ultra effort**, wiwit 4 September 2026,
-banjur **GPT-6 Sol, Ultra effort**, wiwit 25 September 2026.
+banjur **GPT-6 Sol, Ultra effort**, wiwit 25 September 2026,
+lan **GPT-6.1 Sol, Ultra effort**, kanggo pamriksan anyar wiwit 30 September 2026.
 Panjelasan iki adhedhasar identitas model lan tingkat effort ing rekaman
 runtime, dudu pangira saka setelan saiki. Iki karya AI; ora ana pratelan
 panlitian utawa panyuntingan dening manungsa. Rekaman sesi utama kasebut
@@ -43,13 +44,15 @@ ora kacathet kanthi mandhiri.
 
 Lingkup sumber lan terjemahan dibedakake saka lingkup wacan.
 Alur sumber baku nyakup 642 unit; edhisi jangkep kudu nyakup kabeh 722
-kanthi runtut tanpa mbaleni pangatur alternatif. Wacan jangkep kasebut durung dibangun.
+kanthi runtut tanpa mbaleni pangatur alternatif. Sumber wacan kumulatif jangkep
+wis dirakit; rilis PDF jangkep durung diterbitake.
 
 Kabeh 722 berkas terjemahan nduweni cathetan paragraf sing sejajar karo sumber,
 pamriksan formula, token, pranala lan label, sarta pamandingan makna dening
 panulis sing padha kanthi parafrasa balik pilihan. Validasi maneh kanon lan
-koreksine wis tekan OLP-0058; validasi maneh kanon kanggo berkas sabanjure
-isih lumaku. Pasangan petikan seragam sing sadurunge dipasang kanthi otomatis
+koreksine kang lawas dudu panriman pamriksan anyar. Pamriksan seger saiki
+nyakup OLP-0151 nganti OLP-0311, yaiku 161 unit; 561 unit liyane
+isih kudu dipriksa maneh ing alur iki. Pasangan petikan seragam sing sadurunge dipasang kanthi otomatis
 kanggo 444 keputusan lan 4.143 segmen terjemahan wis dicopot saka bukti umum
 nganti validasi khusus ditindakake; delengen
 [`evidence/PROVENANCE_SCOPE.json`](evidence/PROVENANCE_SCOPE.json).
@@ -75,3 +78,22 @@ wacan winates awujud PDF lan EPUB, TeX kumulatif langsung, sumber editable
 jangkep miturut tag, bukti QA sing bisa diwaca mesin, lan checksum.
 Rilis kasebut mbedakake lingkup 118 unit sumber, 26 sumber panyengkuyung,
 lan 24 unit wacan. PDF lan sumber v0.1.2 tetep disegel lan kasedhiya ing rilis asale.
+
+## Potret sumber 30 September 2026
+
+Potret iki ngreksa koreksi, panarikan temuan kang salah, lan cathetan pilihan
+nganti 161 unit pamriksan anyar. Rekaman pilihan kalebu 1.988 cathetan
+lan amendemen; 34 alasan lan alternatif OLP-0299/0300 saiki nganggo basa Jawa.
+Delengen [status bukti saiki](evidence/sol6-reaudit/STATUS.json),
+[indeks pilihan](evidence/sol6-reaudit/CHOICES_INDEX.md), lan
+[koreksi sumber](evidence/sol6-reaudit/SOURCE_CORRECTIONS.jsonl).
+Cathetan QA ing njaba direktori iki bisa nuduhake versi historis.
+
+Ragam, ejaan lan pedoman serapan ora dadi atestasi istilah matematika spesialis.
+Pamriksan makna sakabehe, pambasaan-Jawakake cathetan pilihan liyane,
+pamriksan visual sakabehe lan pangulangan kang identik isih durung rampung.
+Ora ana pamriksan manungsa utawa rilis wacan jangkep kang diklaim.
+PDF lan EPUB umum tetep wacan 24 unit ing rilis lawas. Draft45 pribadi wis
+liwat kompilasi lan pitung sampel visual, nanging sumber saiki ngemot
+koreksi sabanjure kang durung dikompilasi. PDF draft mau ora diterbitake ing
+potret sumber iki; bita masukan editable persise dijaga kanthi kapisah.

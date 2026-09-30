@@ -1,0 +1,51 @@
+{
+  "schema": "jv-local-source-audit/1",
+  "audit_id": "OLPL-TABLEAUX-METATHEORY-PROSE-20260920",
+  "date": "2026-09-20",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "status": "confirmed_two_bounded_tableau_metatheory_prose_defects",
+  "sources": [
+    {
+      "unit_id": "OLP-0106",
+      "path": "content/first-order-logic/tableaux/provability-consistency.tex",
+      "bytes": 6120,
+      "sha256": "1e3cd1b98b0dae48850118a996aa37c04da92108c91d2096e51ac4a19025f348"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "OLPL-042",
+      "unit_id": "OLP-0106",
+      "locator": "line 122",
+      "observed": "The exhaustive-provability proof begins its first branch instruction with the duplicated phrase “On the left left side.”",
+      "finding": "The repeated directional word is a local prose duplication. The Cut construction has exactly one left branch, beginning with True A.",
+      "controlling_evidence": [
+        "Lines 118-120 state that Cut yields two branches, the first beginning with True A and the other with False A.",
+        "Lines 123-126 attach the first closed tableau below the True-A branch.",
+        "The parallel instruction at line 128 begins “On the right side.”"
+      ],
+      "bounded_repair": {
+        "removed": "On the left left side",
+        "added": "On the left side"
+      }
+    },
+    {
+      "finding_id": "OLPL-043",
+      "unit_id": "OLP-0106",
+      "locator": "line 138",
+      "observed": "The proof says “we can applying” before the false-negation rule.",
+      "finding": "The modal auxiliary requires the base verb “apply.” This is a grammatical defect only; the named rule, premise and result are already uniquely fixed.",
+      "controlling_evidence": [
+        "The sentence names False negation applied to False not-A.",
+        "The resulting formula is True A, shown immediately afterward.",
+        "The branch then closes against the False A conclusion of Cut."
+      ],
+      "bounded_repair": {
+        "removed": "we can applying",
+        "added": "we can apply"
+      }
+    }
+  ],
+  "source_policy": "Keep every frozen English byte and manifest hash unchanged. Apply only the two bounded prose corrections in the localized file, identify them in adjacent Javanese notes or the governing correction record, and preserve every formula, rule, branch polarity and proof dependency."
+}
+

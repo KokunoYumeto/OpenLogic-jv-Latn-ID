@@ -13,7 +13,7 @@
 \ollabel{thm:decision-prob}
 Masalah putusan ora bisa dirampungake: Ora ana mesin Turing~$D$
 kang, nalika diwiwiti ing pita kang ngemot
-!!a{sentence}~$!B$ saka logika orde kapisan minangka input,
+!!a{sentence}~$!B$ saka logika tataran kapisan minangka input,
 $D$~pungkasane mandheg lan ngasilake~$1$ yen lan mung yen
 $!B$ sah, dene ngasilake $0$ yen ora.
 \end{thm}
@@ -25,7 +25,7 @@ mandheg kaya mangkene. Kita mbangun mesin Turing~$E$ kang,
 yen diwenehi input angka~$e$ saka mesin Turing~$M_e$
 lan input~$w$, ngitung !!{sentence}~$!T(M_e, w) \lif !E(M_e, w)$
 kang cocog, banjur mandheg karo sirah kang maca kothak
-paling kiwa ing pita. Mula mesin $E \concat D$, yen diwenehi
+input kapisan ing tengen panandha pucuk pita. Cathetan koreksi sumber SOL6-F063: mesin E bali menyang kothak siji supaya posisi wiwitan D cocog karo konvensi input. Mula mesin $E \concat D$, yen diwenehi
 input $e$ lan $w$, mula-mula ngitung~$!T(M_e, w) \lif
 !E(M_e, w)$, banjur nglakokake mesin masalah putusan~$D$
 nganggo asil iku minangka input. $D$ mandheg kanthi output~$1$
@@ -33,7 +33,7 @@ yen lan mung yen $!T(M_e, w) \lif !E(M_e, w)$ sah,
 dene ngasilake~$0$ yen ora. Miturut
 \olref[ver]{lem:halt-if-valid} lan
 \olref[ver]{lem:valid-if-halt}, $!T(M_e, w) \lif !E(M_e, w)$
-sah yen lan mung yen $M_e$ mandheg nganggo input~$w$.
+sah yen lan mung yen $M_e$ mandheg nganggo input~$w$. Cathetan OLPL-773 lan SOL6-F058: klausa obah kiwa lan bukti representasi sadurunge saiki dibenerake supaya pangreksan ngecualekake kothak asal kang ditulisi.
 Dadi, $E\concat D$, yen diwenehi input $e$ lan $w$,
 mandheg kanthi output~$1$ yen lan mung yen $M_e$
 mandheg nganggo input~$w$, dene mandheg kanthi
@@ -45,14 +45,14 @@ kita ngerti yen mesin Turing kaya mangkono ora mungkin ana.
 
 \begin{cor}\ollabel{cor:undecidable-sat}%
 Ora bisa diputusake apa sembarang !!{sentence}
-saka logika orde kapisan bisa dicukupi.
+saka logika tataran kapisan bisa dicukupi.
 \end{cor}
 
 \begin{proof}
   Upamane apa sawijining ukara bisa dicukupi iku bisa diputusake
-  dening mesin Turing~$S$. Banjur kita bisa ngrampungake
+  dening mesin Turing~$S$. Cathetan koreksi sumber SOL6-F065: pilih S kang tertib kaya ing bagean ngenani mesin tertib; output biner ana ing kothak siji lan sirah bali menyang kono. Banjur kita bisa ngrampungake
   masalah putusan kaya mangkene: Yen diwenehi
-  !!a{sentence}~$B$ minangka input, geser $!B$
+  !!a{sentence}~$!B$ minangka input, geser $!B$
   sakothak menyang tengen. Bali menyang kothak~$1$
   banjur tulis simbol~$\lnot$.
 
@@ -60,7 +60,8 @@ saka logika orde kapisan bisa dicukupi.
   kanthi output $1$ (yen $\lnot !B$ bisa dicukupi) utawa~$0$
   (yen $\lnot !B$ ora bisa dicukupi) ing pita. Yen ana
   $\TMstroke$ ing kothak~$1$, busak tandha iku;
-  yen kothak~$1$ kosong, tulis $\TMstroke$, banjur mandheg.
+  yen ora, yaiku kothak~$1$ wiwitane kosong, tulis $\TMstroke$;
+  ing loro kasus banjur mandheg.
 
   Mesin Turing iki mesthi mandheg, lan outpute~$1$ yen lan
   mung yen $\lnot !B$ ora bisa dicukupi, dene $0$~yen ora.
@@ -73,34 +74,34 @@ saka logika orde kapisan bisa dicukupi.
 \begin{explain}
 Dadi ora ana mesin Turing kang tansah menehi wangsulan
 ``ya'' utawa ``ora'' kang bener kanggo pitakon
-``Apa $!B$ iku !!{sentence} logika orde kapisan kang sah?''
+``Apa $!B$ iku !!{sentence} logika tataran kapisan kang sah?''
 Nanging \emph{ana} mesin Turing kang tansah menehi
 wangsulan ``ya'' kang bener---mung wae mesin iku ora
 mandheg yen wangsulane ``ora''. Iki ndherek saka
-teorema kasahihan lan kelengkapan logika orde kapisan,
+teorema kasahihan lan kajangkepan logika tataran kapisan,
 uga saka kasunyatan yen !!{derivation}s bisa
 dienumerasi kanthi efektif.
 \end{explain}
 
 \begin{thm}
   \ollabel{thm:valid-ce}%
-  Kasahihan !!{sentence}s logika orde kapisan semi-bisa
+  Kasahihan !!{sentence}s logika tataran kapisan semi-bisa
   diputusake: Ana mesin Turing~$E$ kang, nalika diwiwiti
   ing pita kang ngemot !!a{sentence}~$!B$ saka logika
-  orde kapisan minangka input, $E$~pungkasane mandheg lan
+  tataran kapisan minangka input, $E$~pungkasane mandheg lan
   ngasilake~$1$ yen lan mung yen $!B$ sah, nanging ora
   mandheg yen ora.
 \end{thm}
 
 \begin{proof}
-  Kabeh !!{derivation}s logika orde kapisan kang mungkin
+  Kabeh !!{derivation}s logika tataran kapisan kang mungkin
   bisa diasilake siji mbaka siji dening algoritma efektif.
   Mesin~$E$ nindakake iki, lan nalika nemokake
   !!a{derivation} kang nuduhake yen $\Proves
   !B$, mesin iku mandheg kanthi output~$1$.
   Miturut teorema kasahihan, yen $E$ mandheg kanthi
   output~$1$, sebabe~$\Entails !B$. Miturut teorema
-  kelengkapan, yen $\Entails !B$, ana !!a{derivation}
+  kajangkepan, yen $\Entails !B$, ana !!a{derivation}
   kang nuduhake yen~$\Proves !B$. Amarga $E$
   ngasilake kabeh !!{derivation}s kang mungkin
   kanthi sistematis, pungkasane mesin iku bakal

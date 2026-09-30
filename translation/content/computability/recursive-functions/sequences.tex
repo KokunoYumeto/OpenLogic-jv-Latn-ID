@@ -25,7 +25,7 @@ rerangken $\langle 2, 7, 3\rangle$ lan
 $\langle 2, 7, 3, 0, 0 \rangle$ nduwé kode numerik
 kang béda. Kita bisa nggunakake $0$ utawa~$1$ kanggo
 ngode rerangken kosong; supaya cetha, $\emptyseq$
-nglambangake~$0$.
+nglambangake~$0$. Cathetan panyunting: kode kanonik kanggo rerangken kosong dipilih nol; siji mung wakil alternatif saka rerangken kosong. Rerangken ora kosong nganggo faktor prima kang runtut wiwit prima loro, kabeh pangkate positif. Ora kabeh wilangan asli dadi kode sah; rumus operasi ing ngisor iki menehi fungsi total, nanging makna minangka operasi rerangken ditrapake marang kode sah.
 
 Pangodean rerangken iki bisa lumaku amarga Teorema
 Dhasar Aritmetika: saben wilangan asli $n \ge 2$ bisa
@@ -147,11 +147,12 @@ rerangken, iku rekursif primitif.
   Fungsi iki bisa ditegesi kanthi rekursi
   primitif kaya mangkene:
   \begin{align*}
-    \fn{hconcat}(s,t,0) & = s\\
+    \fn{hconcat}(s,t,0) & = \begin{cases}0 & \text{yen } s=1\\s & \text{yen ora}\end{cases}\\
     \fn{hconcat}(s,t,n+1) & = \fn{append}(\fn{hconcat}(s,t,n),(t)_n)
     \intertext{Banjur kita bisa netepake $\fn{concat}$ kanthi}
     \fn{concat}(s,t) & = \fn{hconcat}(s,t,\len{t}).
   \end{align*}
+Cathetan koreksi sumber SOL6-F038: nilai wiwitan nganggo kode kosong kanonik. Tanpa normalisasi iki, rekursi kanggo input s siji lan t nol menehi siji, dene minimisasi ing ngisor menehi nol. Rong kode iku nggambarake rerangken kosong kang padha, nanging fungsi numerik kang diarani padha kudu menehi nilai kang padha.
 \end{proof}
 
 Kita bakal nulis $s \concat t$ kanggo
@@ -174,7 +175,7 @@ kode numerik rerangken~$s$ kang kasebut mau
 ora ngluwihi~$\fn{sequenceBound}(x,k)$.
 Yen dawane nol, kita netepake nilai wates iki
 dadi siji supaya uga nyakup kode nol kanggo
-rerangken kosong.
+rerangken kosong. Cathetan koreksi sumber OLPL-128: rumus nganggo prima kanthi indeks k minus siji mung ditrapake kanggo dawa positif.
 % OLPL-128: p_{k-1} ora ditegesi kanggo k=0;
 % nilai wates siji nutupi kode kosong nol.
 
@@ -193,9 +194,11 @@ nyukupi:
     & \qquad \bforall{i < \len{s}}{((v)_i = (s)_i)} \land {} \\
       & \qquad \bforall{j < \len{t}}{((v)_{\len{s}+j} = (t)_j)})
 \end{align*}
-% OLPL-129: Wates sumber nganggo v < B, sanadyan kode bisa padha B.
+% OLPL-129: Varian endpoint kalebu aman kanggo wates umum; bound
+% s+t kang dipasang ing sumber wis ketat kanggo input kode sah ora kosong.
 % OLPL-130: Rong kuantor kudu sejajar supaya unsur t tetep dipriksa
 % nalika s kosong.
+Cathetan koreksi sumber OLPL-130: rong kuantor iku sejajar; yen kuantor kapindho dilebokake ing kuantor kang kapisan, unsur t ora dipriksa nalika s kosong. Cathetan panyunting OLPL-129: varian wates kang kalebu endpoint iki aman. Nanging kanggo input kode sah lan dawa asil positif, wates ketat kanthi parameter s tambah t ing sumber uga cukup, amarga parameter kasebut luwih gedhe tinimbang saben unsur; mula ora ana counterexample marang wates khusus kasebut kang diklaim.
 
 \begin{prob}
 Tuduhna yen ana fungsi rekursif primitif~$\fn{sconcat}(s)$
@@ -218,7 +221,7 @@ kang nyukupi
   \ollabel{prop:subseq}
   Fungsi $\fn{subseq}(s, i, n)$ kang ngasilake
   rerangken bagean saka $s$ kang dawane~$n$ wiwit
-  unsur kaping~$i$, iku rekursif primitif.
+  unsur kaping~$i$, iku rekursif primitif. Cathetan cakupan panyunting: kanggo interval kang ana ing rerangken asli, iki subrerangken biasa. Supaya fungsi total lan dawane tetep n nalika interval ngluwihi pucuk, unsur kang ora ana diisi nol miturut konvensi fungsi element.
 \end{prop}
 
 \begin{proof}

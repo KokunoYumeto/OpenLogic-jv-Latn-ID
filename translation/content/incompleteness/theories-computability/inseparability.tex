@@ -26,24 +26,24 @@ $\Th{Q}$ lan $\Th{\bar Q}$ ora bisa dipisahake kanthi komputabel.
 Upamana $C$ himpunan komputabel saengga $\Th{Q} \subseteq C$ lan
 $\Th{\bar Q} \subseteq \Complement{C}$. Upamana $R(x,y)$ iku relasi
 \begin{quote}
-$x$ ngodeake formula $!D(u)$ lan $!D(\num y)$ kalebu ing $C$.
+$x$ ngodeake formula $!D(u)$ kang variabel bebas mung bisa u lan $!D(\num y)$ kalebu ing $C$.
 \end{quote}
 Kita bakal nuduhake yen $R(x,y)$ iku relasi komputabel universal, kang
 nuwuhake kontradiksi.
 
-Upamana $S(y)$ komputabel, direpresentasikake dening $!D_S(u)$ ing
+Upamana $S(y)$ komputabel, diwakili dening $!D_S(u)$ ing
 $\Th{Q}$. Mula
 \begin{eqnarray*}
-S(\num n) & \lif & \Th{Q} \Proves !D_S(\num n) \\
+S(n) & \lif & \Th{Q} \Proves !D_S(\num n) \\
 & \lif & !D_S(\num n) \in C
 \end{eqnarray*}
 lan
 \begin{eqnarray*}
-\lnot S(\num n) & \lif & \Th{Q} \Proves \lnot !D_S(\num n) \\
+\lnot S(n) & \lif & \Th{Q} \Proves \lnot !D_S(\num n) \\
 & \lif & !D_S(\num n) \in \Th{\bar Q} \\
 & \lif & !D_S(\num n) \not\in C
 \end{eqnarray*}
-Mula $S(y)$ ekuivalen karo $R(\#(!D_S(\num u)),y)$.
+Mula $S(y)$ ekuivalen karo $R(\Gn{!D_S(u)},y)$. Cathetan koreksi sumber OLPL-794: argumen meta S saiki wilangan n, lan parameter R saiki kode formula D-S kanthi variabel u. Numeral n ing formula substitusi tetep dijaga.
 \end{proof}
 
 \end{document}

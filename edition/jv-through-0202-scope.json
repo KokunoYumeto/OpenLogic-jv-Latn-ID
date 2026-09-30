@@ -1,0 +1,24 @@
+{
+  "schema": "openlogic-jv-reader-scope/1",
+  "master": "edition/jv-through-0202.tex",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "max_source_order": 202,
+  "expected_reader_body_units": 199,
+  "excluded_wrapper_units": [
+    {
+      "unit_id": "OLP-0002",
+      "reason": "The raw corpus root imports untranslated later parts and warns that its uncurated PDF is unsuitable for study; this curated master supplies the reader structure."
+    },
+    {
+      "unit_id": "OLP-0055",
+      "reason": "The propositional part imports the same proof-system and completeness chapters as the first-order part; the curated master includes propositional syntax and semantics, then presents the shared proof chapters once under first-order logic."
+    },
+    {
+      "unit_id": "OLP-0182",
+      "reason": "The model-theory part imports the unfinished Lindstrom chapter after OLP-0202; the curated master includes its three completed chapters and omits that next chapter."
+    }
+  ],
+  "source_snapshot_units": 202,
+  "candidate_release_boundary": "OLP-0202",
+  "next_unfinished_chapter_starts": "OLP-0203"
+}

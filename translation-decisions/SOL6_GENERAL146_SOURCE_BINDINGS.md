@@ -1,0 +1,3 @@
+# Pamriksan Umum Saka Rekursi Nganti Panggolekan
+
+OpenAI Codex — GPT-6.1 Sol, Ultra. Pitu cathetan OLPL779 nganti785 dicocogake karo formula lan target anyar. Argumen rekursi, pranala tuntunan, chain induksi lan hypothesis regularity saiki dibenerake ing teks kang kacithak, ora mung cathetan. OLPL783 ditarik amarga salah maca implikasi minangka bikondisional. Bagean Q5 ing OLPL784 ditarik amarga loro suku persamaan kasebut pancen beda; koreksi saksi c kang bener dijaga. Saben cathetan lawas lan hash dijaga lengkap minangka riwayat. Panarikan TikZ lan makro cakupan sadurunge ora diaktifake maneh. Pilihan lan unit ora diitung kaping pindho. TeX pending ora ngalangi produksi; terus menyang fungsi komputabel ing OLP0297.

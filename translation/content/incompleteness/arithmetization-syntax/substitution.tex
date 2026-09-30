@@ -9,10 +9,10 @@
 \olfileid{inc}{art}{sub}
 \olsection{Substitusi}
 
-Elinga yen substitusi iku operasi ngganti kabeh kemunculan bebas
+Elinga yen substitusi iku operasi ngganti kabeh panggonan bebas
 saka !!a{variable}~$u$ ing !!a{formula}~$!A$ nganggo suku~$t$,
 ditulis $\Subst{!A}{t}{u}$. Operasi iki, nalika ditindakake marang
-bilangan G\"odel saka !!{variable}s, !!{formula}s, lan suku,
+wilangan G\"odel saka !!{variable}s, !!{formula}s, lan suku,
 iku rekursif primitif.
 
 \begin{prop}\ollabel{prop:subst-primrec}
@@ -32,10 +32,10 @@ primitif kaya mangkene:
 \fn{hSubst}(x, y, z, i+1) & =
 \end{aligned}\\
 \begin{cases}
-\fn{hSubst}(x, y, z, i) \concat y & \text{if $\fn{FreeOcc}(x, z, i)$} \\
-\fn{append}(\fn{hSubst}(x, y, z, i), (x)_{i}) & \text{otherwise.}
+\fn{hSubst}(x, y, z, i) \concat y & \text{yen $\fn{FreeOcc}(x, z, i)$} \\
+\fn{append}(\fn{hSubst}(x, y, z, i), (x)_{i}) & \text{yen ora.}
 \end{cases}
-\end{multline*}
+\end{multline*} Ing rumus iki, kasus kapisan ditrapake yen variabel ing posisi iku muncul bebas; kasus kapindho ditrapake yen ora.
 Saiki $\fn{Subst}(x, y, z)$ bisa ditemtokake minangka
 $\fn{hSubst}(x, y, z, \len{x})$.
 \end{proof}
@@ -43,15 +43,15 @@ $\fn{hSubst}(x, y, z, \len{x})$.
 \begin{prop}
 \ollabel{prop:free-for}
 Relasi $\fn{FreeFor}(x, y, z)$, kang bener yen lan mung yen suku
-kanthi bilangan G\"odel~$y$ iku !!{free for} variabel kanthi
-bilangan G\"odel~$z$ ing formula kanthi bilangan G\"odel~$x$,
+kanthi wilangan G\"odel~$y$ iku !!{free for} variabel kanthi
+wilangan G\"odel~$z$ ing formula kanthi wilangan G\"odel~$x$,
 iku rekursif primitif.
 \end{prop}
 
-\begin{proof} Latihan. \end{proof}
+\begin{proof} Gladhen. \end{proof}
 
 \begin{prob}
-Buktèkna \olref[inc][art][sub]{prop:free-for}
+Buktekna \olref[inc][art][sub]{prop:free-for}
 \end{prob}
 
 \end{document}

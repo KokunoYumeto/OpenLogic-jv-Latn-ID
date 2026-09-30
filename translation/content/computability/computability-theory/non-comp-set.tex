@@ -27,14 +27,14 @@ Kanggo ndeleng yen $K_0$ bisa dienumerasi
 sacara komputabel, gatekna yen himpunan iku
 domain fungsi~$f$ kang ditegesi minangka
 \[
-f(z) = \umin{y}{(\len{z} = 2 \land T((z)_0, (z)_1, y))}.
+f(z) = \umin{y}{(\len{z} = 2 \land z=\tuple{(z)_0,(z)_1} \land T((z)_0, (z)_1, y))}.
 \]
 Sebab, yen $\cfind{e}(x)$ ditegesi,
-$f(\tuple{e, x})$ nemokake runtutan
+$f(\tuple{e, x})$ nemokake rerangken
 komputasi kang mandheg; yen
 $\cfind{e}(x)$ ora ditegesi, semono uga
 $f(\tuple{e, x})$; lan yen $z$ malah ora
-ngode pasangan, $f(z)$ uga ora ditegesi.
+ngode pasangan, $f(z)$ uga ora ditegesi. Cathetan koreksi sumber SOL6-F041: tes dawa loro wae ora cukup kanggo njamin kode pasangan sah. Yen kode pasangan dikalikan prima pitu, tanpa faktor lima, dawa saka rumus gap prima isih loro lan komponen kapisan lan kapindho ora owah. Tes tambahan z padha karo kode tuple saka rong komponen kasebut nyegah kode ora sah kalebu domain.
 
 Kasunyatan yen $K_0$ ora komputabel yaiku
 ora bisane masalah mandheg diputusake,

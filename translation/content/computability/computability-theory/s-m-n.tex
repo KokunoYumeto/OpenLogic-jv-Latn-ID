@@ -10,7 +10,7 @@
 \olsection{Teorema $s$-$m$-$n$}
 
 \begin{explain}
-Teorema sabanjure diarani 'teorema $s$-$m$-$n$',
+Teorema sabanjure diarani ``teorema $s$-$m$-$n$'',
 kanthi alesan kang sedhela maneh bakal cetha.
 Perkara kang angel yaiku mangerteni persis
 apa kang diandharake teorema iki; yen
@@ -22,13 +22,14 @@ bakal katon cukup cetha.
 \ollabel{thm:s-m-n}
   Kanggo saben pasangan wilangan asli $n$ lan~$m$,
   ana fungsi rekursif primitif~$s^m_n$ kang
-  ndadekake, kanggo saben runtutan
+  ndadekake, kanggo saben rerangken
   $e$, $a_0$, \dots, $a_{m-1}$, $y_0$, \dots,
   $y_{n-1}$, kita nduwé
   \[
   \cfind{s^m_n(e, a_0, \dots, a_{m-1})}[n](y_0, \dots, y_{n-1}) \simeq
   \cfind{e}[m+n](a_0, \dots, a_{m-1}, y_0, \dots, y_{n-1}).
 \]
+Cathetan panyunting: pangindeksan ing teorema iki yaiku pangindeksan program baku kang ngidini konstruksi kode rekursif primitif, ora sembarang enumerasi universal. Yen aritas nol diidinake, tuple input utawa parameter kang cocog kosong; yen ora, pratelan diwaca kanggo aritas kang positif.
 \end{thm}
 
 \begin{explain}
@@ -38,12 +39,12 @@ kanggo fungsi aritas $(m+n)$, uga input tetep
 $a_0$, \dots, $a_{m-1}$; banjur ngasilake program
 % OLPL-133: Sumber beku nulis x ing rong rujukan indeks program ing paragraf iki; teorema lan ukara sadurunge nggunakake e.
 $s^m_n(e, a_0, \dots, a_{m-1})$ kanggo fungsi
-aritas $n$ saka argumen kang isih kari.
+aritas $n$ saka argumen kang isih kari. Cathetan koreksi sumber OLPL-133: rong rujukan program x kang ora ditegesi ing paragraf Inggris dibenerake dadi e, manut teorema lan input program kang disebut ing ukara sadurunge.
 \iftag{TMs}{Yen $e$ dianggep minangka jlentrehan
 mesin Turing, mula $s^m_n(e, a_0, \dots, a_{m-1})$
 iku mesin Turing kang, yen nampa input $y_0$,
 \dots,~$y_{n-1}$, nambahake $a_0$, \dots,~$a_{m-1}$
-ing wiwitan runtutan input, banjur nglakokake~$e$.
+ing wiwitan rerangken input, banjur nglakokake~$e$.
 Saben $s^m_n$ dadi fungsi rekursif primitif
 kanggo nemokake kode mesin Turing kang cocog.}{}
 \end{explain}

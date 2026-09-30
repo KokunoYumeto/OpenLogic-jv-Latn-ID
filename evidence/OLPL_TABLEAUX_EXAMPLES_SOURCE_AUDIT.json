@@ -1,0 +1,34 @@
+{
+  "schema": "jv-local-source-audit/1",
+  "audit_id": "OLPL-TABLEAUX-EXAMPLES-20260920",
+  "date": "2026-09-20",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "status": "confirmed_one_bounded_tableau_example_defect",
+  "sources": [
+    {
+      "unit_id": "OLP-0104",
+      "path": "content/first-order-logic/tableaux/proving-things-quant.tex",
+      "bytes": 13231,
+      "sha256": "253a81c3ef645fee728f66e385a86459773fa5d6a82e73740cb55497c598c234"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "OLPL-041",
+      "unit_id": "OLP-0104",
+      "locator": "lines 280-306",
+      "observed": "The closing paragraph says to use the signed formulas on lines 1 and 3, then names the corresponding rules as true-universal and false-existential.",
+      "finding": "The second line reference names the unexpanded true-negated-existential formula rather than the false-existential formula to which the displayed closing rule is applied.",
+      "controlling_evidence": [
+        "Line 3 is the true signed formula not-exists B and is expanded by the true-negation rule to produce line 4.",
+        "Line 4 is the false signed formula exists B and is the premise required by the false-existential rule named in the paragraph.",
+        "The final displayed tableau labels False B(c) with the false-existential rule applied to line 4, while the other closing instance True A(b) is correctly obtained from line 1."
+      ],
+      "bounded_repair": {
+        "removed": "signed formulas on lines 1 and 3",
+        "added": "signed formulas on lines 1 and 4"
+      }
+    }
+  ],
+  "source_policy": "Keep the frozen English bytes and manifest hash unchanged; repair only the localized second line reference and disclose OLPL-041 adjacent to the affected Javanese paragraph."
+}

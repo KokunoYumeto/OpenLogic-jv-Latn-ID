@@ -45,11 +45,11 @@ primitif:
   $\fn{IsZero}(\left|x -
   y\right|)$
 % OLPL-123: Sumber nyebut "less-than" nanging lambang lan definisi
-% IsZero nganggo pangurangan terpotong netepake x <= y,
+% IsZero nganggo pangurangan kang diwatesi ing nol netepake x <= y,
 % yaiku kurang saka utawa padha karo.
 \item Relasi kurang saka utawa padha karo, $x \leq y$, kang
   ditegesi kanthi $\fn{IsZero}(x
-  \tsub y)$
+  \tsub y)$. Cathetan koreksi sumber OLPL-123: jeneng less-than ing sumber ora cocog karo lambang lan rumuse; relasi iki uga bener nalika rong input padha.
 \end{enumerate}
 
 
@@ -114,7 +114,7 @@ primitif:
   Miturut konvensi, $\bforall{z < 0}{R(\vec x, z)}$
   dianggep bener (amarga ora ana $z$ kang kurang
   saka~$0$) lan $\bexists{z < 0}{R(\vec x, z)}$
-  dianggep salah. Kuantor universal mawa wates tumindak
+  dianggep luput. Kuantor universal mawa wates tumindak
   kaya asil kali winates utawa minimum kang diulang,
   yaiku yen $P(\vec x, y) \defiff \bforall{z <
   y}{R(\vec x, z)}$, mula $\Char{P}(\vec x, y)$
@@ -137,7 +137,7 @@ primitif:
 
 \begin{prob}
   Tuduhna yen relasi telung panggonan $x \equiv y \mod n$
-  (kongruensi modulo~$n$) iku rekursif primitif.
+  (kongruensi modulo~$n$) iku rekursif primitif. Modulus biasane positif; yen modulus nol uga kalebu minangka input, kongruensi modulo nol ing gladhen iki ditegesi minangka kesamaan rong input.
 \end{prob}
 
 Fungsi rekursif primitif liyane kang migunani yaiku

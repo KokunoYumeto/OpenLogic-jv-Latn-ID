@@ -17,17 +17,17 @@ $\fn{Frm}(x)$, kanthi rekursif primitif.
 
 \begin{prop}
 Relasi $\fn{Atom}(x)$, kang bener yen lan
-mung yen $x$ iku bilangan G\"odel saka
+mung yen $x$ iku wilangan G\"odel saka
 !!{formula} atomik, iku rekursif primitif.
 \end{prop}
 
 \begin{proof}
-Bilangan $x$ iku bilangan G\"odel saka
+Wilangan $x$ iku wilangan G\"odel saka
 !!{formula} atomik yen lan mung yen
 salah siji saka kahanan iki bener:
 \begin{enumerate}
-\item Ana $n$, $j < x$, lan $z < x$
-  saengga kanggo saben $i < n$,
+\item Ana $n < x$, $j < x$, lan $z \le p_x^{x(x+1)}$
+  kang dadi kode urutan kanthi $\len{z}=n$, saengga kanggo saben $i < n$,
   $\fn{Term}((z)_i)$ lan $x = $
 \[
 \Gn{\Obj P^n_j(} \concat \fn{flatten}(z) \concat \Gn{)}.
@@ -40,13 +40,13 @@ salah siji saka kahanan iki bener:
 \]
   \tagitem{prvFalse}{$x = \Gn{\lfalse}$.}{}
   \tagitem{prvTrue}{$x = \Gn{\ltrue}$.}{}
-\end{enumerate}
+\end{enumerate} Cathetan koreksi sumber OLPL-778 lan SOL6-F073: kode argumentasi saiki dites minangka urutan sah kanthi pas n suku. Wates kode urutan digedhekake amarga kode urutan kode suku bisa luwih gedhe tinimbang kode formula, senajan saben kode suku luwih cilik tinimbang kode formula.
 \end{proof}
 
 \begin{prop}
 \ollabel{prop:frm-primrec}
 Relasi $\fn{Frm}(x)$, kang bener yen lan
-mung yen $x$ iku bilangan G\"odel saka
+mung yen $x$ iku wilangan G\"odel saka
 !!a{formula}, iku rekursif primitif.
 \end{prop}
 
@@ -56,11 +56,13 @@ mung yen ana urutan pambentukan~$s_0$,
 \dots, $s_{k-1} = s$ saka !!{formula}
 kang nyathet carane~$s$ diwangun saka
 !!{formula}s atomik miturut aturan
-pambentukan. Kode saben $s_i$
-(lan uga kode saka urutan
-$\tuple{s_0, \dots, s_{k-1}}$)
-luwih cilik tinimbang kode~$x$ saka~$s$.
-% OLPL-169: Sumber ngaku kode urutan pambentukan luwih cilik tinimbang x; kanggo formula atomik kanthi urutan siji [s], kodene tuple{x}=2^(x+1)>x. Klaim iki perlu didandani ing sumber.
+pambentukan. Kode saben $s_i$ ora ngluwihi kode~$x$ saka~$s$.
+Urutan $\tuple{\Gn{s_0}, \dots, \Gn{s_{k-1}}}$ duwe kode ora ngluwihi
+$p_{k-1}^{k(x+1)}$, ing ngendi $k=\len{x}$, kanthi milih urutan pambentukan
+kang dawane ora ngluwihi wates iku. Tes rerangken simbol sah kang ora kosong
+ditindakake dhewe. Cathetan koreksi sumber OLPL-169 lan SOL6-F074:
+wates urutan saiki dibenerake; kanggo formula atomik tunggal, kode urutane
+luwih gedhe tinimbang kode formula, mula syarat kurang x ora digunakake.
 \end{proof}
 
 \begin{prob}
@@ -74,37 +76,38 @@ kanthi ngetutake pola bukti kapisan saka
 \ollabel{prop:freeocc-primrec}
 Relasi $\fn{FreeOcc}(x, z, i)$, kang bener
 yen lan mung yen simbol kapangka-$i$
-ing formula kanthi bilangan G\"odel~$x$
-iku kemunculan bebas saka variabel kanthi
-bilangan G\"odel~$z$, iku rekursif primitif.
+ing formula kanthi wilangan G\"odel~$x$
+iku panggonan bebas saka variabel kanthi
+wilangan G\"odel~$z$, iku rekursif primitif.
 \end{prop}
 
 \begin{proof}
-Latihan.
+Gladhen.
 \end{proof}
 
 \begin{prob}
-Buktèkna \olref[inc][art][frm]{prop:freeocc-primrec}.
+Buktekna \olref[inc][art][frm]{prop:freeocc-primrec}.
 Kowé bisa nggunakake fakta yen saben
-subuntai saka !!a{formula} kang uga
+rerangken bagean saka !!a{formula} kang uga
 !!a{formula} iku sub-!!{formula} saka
 formula mau.
 \end{prob}
 
 \begin{prop}
 Sifat $\fn{Sent}(x)$, kang bener yen lan
-mung yen $x$~iku bilangan G\"odel saka
+mung yen $x$~iku wilangan G\"odel saka
 !!a{sentence}, iku rekursif primitif.
 \end{prop}
 
 \begin{proof}
 !!{sentence} iku !!a{formula} tanpa
-kemunculan bebas !!{variable}s.
+panggonan bebas !!{variable}s.
 Mula $\fn{Sent}(x)$ bener yen lan mung yen
 \begin{multline*}
+\fn{Frm}(x) \land {}\\
 \bforall{i<\len{x}}{\bforall{z<x}{}}\\
 (\bexists{j<z}{z=\Gn{\Obj v_j}} \lif \lnot\fn{FreeOcc}(x,z,i)).
-\end{multline*}
+\end{multline*} Cathetan koreksi sumber OLPL-777 lan SOL6-F074: syarat Frm(x) saiki dadi konjungsi ing rumus, mula kode dudu formula ora lolos mung amarga ora ana panggonan bebas kang katetepake.
 \end{proof}
 
 

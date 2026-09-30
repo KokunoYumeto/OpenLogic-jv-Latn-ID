@@ -8,14 +8,14 @@
 
 \olfileid{mod}{lin}{lsp}
 
-\olsection{Sipat Kekompakan lan L\"owenheim--Skolem}
+\olsection{Sipat Kompaktitas lan L\"owenheim--Skolem}
 
-Saiki kita menehi generalisasi kang cetha saka kekompakan lan
+Saiki kita menehi generalisasi kang cetha saka kompaktitas lan
 L\"owenheim--Skolem kanggo logika abstrak.
 
 \begin{defn}
 Sawijining logika abstrak $\tuple{L, \models_L}$ nduweni
-\emph{Sipat Kekompakan} yen saben himpunan $\Gamma$ saka
+\emph{Sipat Kompaktitas} yen saben himpunan $\Gamma$ saka
 !!{sentence}s ing $L(\Lang{L})$ bisa dicukupi nalika saben
 $\Gamma_0 \subseteq \Gamma$ kang winates bisa dicukupi.
 \end{defn}
@@ -30,9 +30,9 @@ kang !!a{enumerable}.
 Pangerten isomorfisme parsial saka
 \olref[bas][pis]{defn:partialisom} sipate murni “aljabar” (yaiku,
 diwenehake tanpa ngrujuk marang !!{sentence}s saka basa, nanging
-mung marang konstanta kang diwenehake dening
+marang simbol predikat lan konstanta kang diwenehake dening
 !!{language}~$\Lang{L}$ saka !!{structure}s), mula pangerten iku
-uga lumaku kanggo logika abstrak. Ing logika orde kapisan, saka
+uga lumaku kanggo logika abstrak. Ing logika tataran kapisan, saka
 \olref[bas][pis]{thm:p-isom2} kita ngerti yen rong !!{structure}s
 kang isomorfis parsial iku ekuivalen elementer. Bukti kasebut ora
 bisa langsung ditrapake marang logika abstrak, amarga induksi
@@ -54,10 +54,10 @@ $!E$ uga $\Struct{M} \models_L !E$ dene $\Struct{N}
 \not\models_L !E$. Miturut Sipat Isomorfisme kita bisa nganggep
 yen $\Domain{M}$ lan $\Domain{N}$ padha pisah, lan miturut Sipat
 Ekspansi kita bisa nganggep yen $!E \in L(\Lang{L})$ kanggo
-!!{language}~$\Lang{L}$ kang winates. Upamana $\mathcal{I}$
+!!{language}~$\Lang{L}$ kang winates. Cathetan koreksi sumber OLPL-757: Sipat Ekspansi mung njamin yen kabeneran ukara gumantung marang redukt basa winates; iki durung njamin ukara asli iku dadi ukara ing basa kang luwih cilik. Upamana $\mathcal{I}$
 himpunan isomorfisme parsial antarane $\Struct{M}$ lan
 $\Struct{N}$; tanpa nyuda umume pratelan, kita uga nganggep yen
-$p \in \mathcal{I}$ lan $q \subseteq p$ mula $q \in \mathcal{I}$.
+$p \in \mathcal{I}$ lan $q \subseteq p$ mula $q \in \mathcal{I}$, kanthi syarat q tetep ngemot lan njaga tafsir kabeh konstanta basa asal. Cathetan cakupan SOL6-F032: yen ana konstanta, ora saben restriksi sembarang isih dadi isomorfisme parsial miturut definisi kang digunakake; ranah restriksi kudu tetep ngemot tafsir konstanta kasebut.
 
 $\Domain{M}^{<\omega}$ iku himpunan runtutan winates saka
 !!{element}s ing~$\Domain{M}$. Upamana $S$ relasi telung panggonan
@@ -75,7 +75,7 @@ lan wangunen !!{structure} $\Struct{M}^*$ kang ranahé
 $\Domain{M} \cup \Domain{M}^{<\omega}$, ngemot
 $\Struct{M}$ minangka substruktur, lan napsirake $P$ lan
 $Q$ kanthi relasi panyambungan $S$ lan $T$ (mula
-$\Struct{M}^*$ ana ing !!{language} $\Lang{L} \cup \{ P, Q\}$).
+$\Struct{M}^*$ ana ing !!{language} $\Lang{L} \cup \{ P, Q\}$). Unsur asli lan kode runtutan dijupuk saka salinan kang ditandhani supaya rong jinis iki ora campur. Pratelan substruktur ing kene tegese substruktur saka redukt menyang basa asal.
 
 Tetepna $\Domain{N}^{<\omega}$, $S'$, $T'$, $P'$, $Q'$
 lan $\Struct{N}^*$ kanthi cara kang padha. Amarga miturut
@@ -83,14 +83,14 @@ hipotesis $\Struct{M} \simeq_p \Struct{N}$, ana relasi $I$
 antarane $\Domain{M}^{<\omega}$ lan $\Domain{N}^{<\omega}$
 saengga $I(\mathbf{a}, \mathbf{b})$ lumaku yen lan mung yen
 $\mathbf{a}$ lan $\mathbf{b}$ isomorfis lan nyukupi syarat
-maju-mundur saka \olref[bas][pis]{defn:partialisom}. Saiki,
+maju-mundur saka \olref[bas][pis]{defn:partialisom}. Tegese, pemetaan kang diasilake dening pasangan tupel kasebut kalebu ing kulawarga isomorfisme parsial kang wis dipilih; syarat maju-mundur iku sipat kulawarga, dudu pasangan tupel siji wae. Saiki,
 upamakna $\Struct{M}$ minangka !!{structure} kang !!{domain}-e
 iku gabungan !!{domain}s saka $\Struct{M}^*$ lan
 $\Struct{N}^*$, ngemot $\Struct{M}^*$ lan $\Struct{N}^*$
 minangka sub!!{structure}s, ing !!{language} kanthi tambahan
 !!{predicate} binèr~$R$ kang ditafsirake dening relasi~$I$,
 lan !!{predicate}s kang nglambangake !!{domain}s
-$\Domain{M}^*$ lan~$\Domain{N}*$.
+$\Domain{M}^*$ lan~$\Domain{N}*$. Cathetan koreksi sumber OLPL-758: yen basa asal ngemot konstanta, rong substruktur kanthi ranah pisah ora bisa sakaligus dadi substruktur saka siji struktur ing basa kang nganggo jeneng konstanta padha. Konstruksi gabungan iki mbutuhake rong salinan simbol basa kang dipisah jenenge.
 
 \begin{figure}[h]
   \centering
@@ -114,11 +114,11 @@ $\Domain{M}^*$ lan~$\Domain{N}*$.
 \end{figure}
 
 Pangamatan kang wigati yaiku ing !!{language} saka
-!!{structure}~$\Struct{M}$ ana !!{sentence} \emph{orde kapisan}
+!!{structure}~$\Struct{M}$ ana !!{sentence} \emph{logika abstrak}
 $!D_1$ kang bener ing $\Struct{M}$ lan nyatakake yen
 $\Struct{M} \models_L !E$ lan $\Struct{N} \not\models_L !E$
-(iki mbutuhake Sipat Relativisasi), uga ana !!{sentence}
-\emph{orde kapisan} $!D_2$ kang bener ing $\Struct{M}$ lan
+(iki mbutuhake Sipat Relativisasi). Cathetan koreksi sumber OLPL-759: relativisasi mung njamin ukara ing logika abstrak, dudu tataran kapisan; ukara kapindho tetep tataran kapisan. Model gabungan kaetung ing ngisor iki uga kudu dibedakake saka substruktur kapisan kang nggunakake jeneng padha. Uga ana !!{sentence}
+\emph{tataran kapisan} $!D_2$ kang bener ing $\Struct{M}$ lan
 nyatakake yen $\Struct{M} \simeq_p \Struct{N}$ lumantar
 isomorfisme parsial~$I$. Miturut Sipat L\"owenheim--Skolem,
 $!D_1$ lan $!D_2$ bebarengan bener ing model~$\Struct{M}_0$
@@ -128,7 +128,7 @@ $\Struct{M}_0 \models_L !E$ lan $\Struct{N}_0
 \not\models_L !E$. Nanging !!{structure}s kang !!{enumerable}
 lan isomorfis parsial sejatine isomorfis miturut
 \olref[bas][pis]{thm:p-isom1}, kang cengkah karo Sipat
-Isomorfisme kanggo logika abstrak normal.
+Isomorfisme kanggo logika abstrak normal. Cathetan watesan bukti: sumber durung menehi kabeh aksioma kode kanggo D2, lan OLPL-757 lan OLPL-758 isih mbutuhake representasi basa winates lan rong salinan basa kang cocog. Iki sketsa bukti kanthi watesan kang kasebut, dudu bukti jangkep saka kabeh rincian kang dicithak.
 \end{proof}
 
 \end{document}

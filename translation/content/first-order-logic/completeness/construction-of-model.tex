@@ -26,7 +26,7 @@
   $\Struct{M(\Gamma^*)}$ yen lan mung yen ana ing~$\Gamma^*$. Iki
   mesthi ndadekake kabeh !!{sentence}s atomik ing~$\Gamma^*$ bener ing
   $\Struct{M(\Gamma^*)}$. Ukara liyane bener yen $\Gamma^*$ wiwitan
-  iku konsisten, jangkep, lan jenuh.}{Saiki kita wis siap nemtokake
+  iku konsisten, jangkep, lan jenuh.}{Saiki kita wis bisa nemtokake
   !!a{valuation} kang ndadekake kabeh $!A \in \Gamma$ bener. Kanggo
   nindakake iki, kita dhisik ngetrapake Lemma Lindenbaum: kita entuk
   $\Gamma^* \supseteq \Gamma$ kang jangkep lan konsisten. Upamana
@@ -37,7 +37,7 @@
 \iftag{FOL}{%
 \begin{defn}[Model term]
 \ollabel{defn:termmodel}
-Upamana $\Gamma^*$ minangka !!a{complete} himpunan konsisten lan jenuh
+Upamana $\Gamma^*$ minangka himpunan konsisten lan jenuh kang !!a{complete}
 saka !!{sentence}s ing basa~$\Lang L$. \emph{Model term}~$\Struct
 M(\Gamma^*)$ saka $\Gamma^*$ yaiku !!{structure} kang ditemtokake
 kaya ing ngisor iki:
@@ -133,7 +133,7 @@ Upamana $\Struct M(\Gamma^*)$ minangka model term ing
 \begin{proof}
 \begin{tagenumerate}{prvEx,prvAll}
 \tagitem{prvEx}{%
-  \iftag{probEx}{Latihan.}{Miturut \olref[syn][ass]{prop:sat-quant},
+  \iftag{probEx}{Gladhen.}{Miturut \olref[syn][ass]{prop:sat-quant},
     $\Sat{M(\Gamma^*)}{\lexists[x][!A(x)]}$ yen lan mung yen kanggo
     paling ora siji pamasangan variabel~$s$,
     $\Sat{M(\Gamma^*)}{!A(x)}[s]$. Amarga
@@ -148,7 +148,7 @@ Upamana $\Struct M(\Gamma^*)$ minangka model term ing
     $\Sat{M(\Gamma^*)}{!A(t)}[s]$ yen lan mung yen
     $\Sat{M(\Gamma^*)}{!A(t)}$, amarga $!A(t)$ iku ukara.}}{}
 \tagitem{prvAll}{%
-  \iftag{probAll}{Latihan.}{Miturut \olref[syn][ass]{prop:sat-quant},
+  \iftag{probAll}{Gladhen.}{Miturut \olref[syn][ass]{prop:sat-quant},
     $\Sat{M(\Gamma^*)}{\lforall[x][!A(x)]}$ yen lan mung yen kanggo
     saben pamasangan variabel $s$, $\Sat{M(\Gamma^*)}{!A(x)}[s]$.
     Elinga yen $\Domain{M(\Gamma^*)}$ kasusun saka term-term katutup
@@ -172,9 +172,9 @@ Rampungna bukti \olref[fol][com][mod]{prop:quant-termmodel}.
 \tagendprob
 
 \begin{lem}[Lemma Bebener]
-\ollabel{lem:truth} \iftag{FOL}{Upamana $!A$ ora ngemot~$\eq$. Banjur}{}
+\ollabel{lem:truth} \iftag{FOL}{Upamana $!A$ minangka ukara kang ora ngemot~$\eq$. Banjur}{}
 $\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{!A}$ yen lan mung
-yen $!A \in \Gamma^*$.
+yen $!A \in \Gamma^*$. Cathetan cakupan sumber OLPL-741: ing cabang FOL, lemma iki tumrap ukara, cocog karo himpunan ukara ing definisi model term lan conto term katutup ing bukti; formula mawa variabel bebas ora kalebu ing cakupan pratelan iki.
 \end{lem}
 
 \begin{proof}

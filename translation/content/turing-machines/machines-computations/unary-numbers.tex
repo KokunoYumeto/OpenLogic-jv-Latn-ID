@@ -10,15 +10,15 @@
 \olsection{Representasi Wilangan kanthi Siji Simbol}
 
 \begin{explain}
-Mesin Turing makarya nganggo runtutan simbol kang ditulis
+Mesin Turing makarya nganggo rerangken simbol kang ditulis
 ing pitane. Gumantung marang alfabet kang digunakake mesin
-Turing, runtutan simbol iki bisa nggambarake maneka input
+Turing, rerangken simbol iki bisa nggambarake maneka input
 lan output. Kang mesthi wigati yaiku mesin Turing kang
 ngitung fungsi \emph{aritmetika}, yaiku fungsi ing wilangan
 asli. Cara prasaja kanggo nggambarake wilangan wutuh positif
-yaiku ngode nganggo runtutan siji jinis simbol~$\TMstroke$.
-Yen $n \in \Nat$, tetepna $\TMstroke^n$ minangka runtutan
-kosong yen $n = 0$, lan yen ora, minangka runtutan kang
+yaiku ngode nganggo rerangken siji jinis simbol~$\TMstroke$.
+Yen $n \in \Nat$, tetepna $\TMstroke^n$ minangka rerangken
+kosong yen $n = 0$, lan yen ora, minangka rerangken kang
 dumadi saka persis $n$ simbol $\TMstroke$.
 \end{explain}
 
@@ -57,7 +57,7 @@ $\TMblank$ lan mbusak~$\TMstroke$ pungkasan.
   \node[state]         (C) [right of=B] {$q_2$};
 
   \path (A) edge node {\TMtrans{\TMblank}{\TMstroke}{\TMstay}} (B)
-           edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (B)
+           edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (A)
         (B) edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (B)
             edge node {\TMtrans{\TMblank}{\TMblank}{\TMleft}} (C)
         (C) edge [loop above] node {\TMtrans{\TMstroke}{\TMblank}{\TMstay}} (C);
@@ -75,8 +75,8 @@ Apa kang kedadeyan yen mesin ngitung $0+0$?
 
 \begin{explain}
 Ing \olref[rep]{ex:doubler}, kita menehi tuladha
-mesin Turing kang nampa runtutan~$\TMstroke$
-minangka input lan mandheg kanthi runtutan
+mesin Turing kang nampa rerangken~$\TMstroke$
+minangka input lan mandheg kanthi rerangken
 $\TMstroke$ kang cacahe tikel loro ing pita
 ---mesin pangganda. Nanging amarga outpute
 ngemot $\TMblank$ ing sisih kiwa blok
@@ -209,19 +209,19 @@ Iki kita tinggalake dadi latihan.)
 \begin{prob}
 Ing \olref[tur][mac][una]{ex:mover}, kita njlentrehake
 mesin kang nyawijikake mesin pangganda saka
-\olref[tur][mac][una]{fig:doubler-disc} lan mesin
+\olref[tur][mac][rep]{ex:doubler} lan mesin
 pamindhah saka \olref[tur][mac][una]{fig:mover}.
 Apa kang kedadeyan yen mesin gabungan iki
 diwiwiti nganggo input~$x=0$, yaiku pita kosong?
 Kepriye carane mbenerake mesin supaya ing kahanan
 iki mesin mandheg kanthi output~$2x=0$?
 (Kowe kudune bisa nindakake iki kanthi nambah
-siji kahanan lan siji transisi.)
+siji kahanan lan siji transisi.) Cathetan koreksi sumber SOL6-F046: rujukan pangganda gabungan dibenerake marang pangganda asal ing bagean Nggambarake Mesin Turing, kaya konstruksi ing conto pamindhah.
 \end{prob}
 
 \begin{prob}
 \emph{Pangurangan:} Rancangna mesin Turing kang
-yen diwenehi input rong runtutan guratan ora kosong
+yen diwenehi input rong rerangken guratan ora kosong
 kanthi dawa $n$ lan~$m$, ing ngendi $n >
 m$, ngitung fungsi $f(n,m) = n - m$.
 \end{prob}
@@ -243,7 +243,7 @@ ing ngendi~$n$ lan~$m \in \PosInt$.
 Rancangna mesin Turing kanggo ngitung fungsi
 $\min(x,y)$ nalika $x$ lan $y$ wilangan wutuh
 positif kang digambarake ing pita minangka
-runtutan $\TMstroke$ kang dipisahake dening
+rerangken $\TMstroke$ kang dipisahake dening
 $\TMblank$. Kowe oleh nganggo simbol tambahan
 ing alfabet mesin.
 
@@ -262,6 +262,7 @@ lan $\min(4,4)=4$, lan sateruse.
     output kang dudu siji blok~$\TMstroke$, yen
     $f(n_1, \dots, n_k)$ ora ditegesi.
   \end{enumerate}
+Cathetan panyunting: mandheg tanpa output kang ditegesi miturut konvensi panandha kiwa uga kalebu ora menehi output sah.
 \end{defn}
 
 \end{document}

@@ -10,57 +10,57 @@
 
 \olsection{\printtoken{P}{variable} Bebas lan \printtoken{P}{sentence}}
 
-\begin{defn}[Kemunculan bebas sawijining !!a{variable}]
+\begin{defn}[Muncule bebas sawijining !!a{variable}]
 \ollabel{defn:free-occ}
-Kemunculan \emph{bebas} sawijining !!a{variable} ing !!a{formula}
+Muncule \emph{bebas} sawijining !!a{variable} ing !!a{formula}
 ditetepake kanthi induktif kaya mangkene:
 \begin{enumerate}
-\item \indcase*{!A}{$!A$ atomik}{kabeh kemunculan !!{variable} ing
+\item \indcase*{!A}{$!A$ atomik}{kabeh muncule !!{variable} ing
   $\indfrm$ iku bebas.}
 
-\tagitem{prvNot}{\indcase{!A}{\lnot !B}{kemunculan !!{variable}
+\tagitem{prvNot}{\indcase{!A}{\lnot !B}{muncule !!{variable}
   kang bebas ing $\indfrm$ persis padha karo kang ana ing $!B$.}}{}
 
-\item \indcase{!A}{(!B \ast !C)}{kemunculan
+\item \indcase{!A}{(!B \ast !C)}{muncule
   !!{variable} kang bebas ing $\indfrm$ yaiku kang ana ing $!B$
   bebarengan karo kang ana ing~$!C$.}
 
-\tagitem{prvAll}{\indcase{!A}{\lforall[x][!B]}{kemunculan !!{variable}
+\tagitem{prvAll}{\indcase{!A}{\lforall[x][!B]}{muncule !!{variable}
   kang bebas ing $\indfrm$ yaiku kabeh kang ana ing~$!B$ kajaba
-  kemunculan~$x$.}}{}
+  muncule~$x$.}}{}
 
-\tagitem{prvEx}{\indcase{!A}{\lexists[x][!B]}{kemunculan !!{variable}
+\tagitem{prvEx}{\indcase{!A}{\lexists[x][!B]}{muncule !!{variable}
   kang bebas ing $\indfrm$ yaiku kabeh kang ana ing~$!B$ kajaba
-  kemunculan~$x$.}}{}
+  muncule~$x$.}}{}
 \end{enumerate}
 \end{defn}
 
 \begin{defn}[Variabel kaiket]
-Sawijining kemunculan !!a{variable} ing formula~$!A$ iku
+Sawijining muncule !!a{variable} ing formula~$!A$ iku
 \emph{kaiket} yen ora bebas.
 \end{defn}
 
 \begin{prob}
-Wenehana definisi induktif kanggo kemunculan variabel kang kaiket
+Wenehana definisi induktif kanggo muncule variabel kang kaiket
 manut pola \olref[fol][syn][fvs]{defn:free-occ}.
 \end{prob}
 
 \begin{defn}[Cakupan]
-\iftag{prvAll}{Yen $\lforall[x][!B]$ iku kemunculan sawijining subformula
-  ing formula~$!A$, mula kemunculan~$!B$ kang cocog ing~$!A$
-  diarani \emph{cakupan} saka kemunculan~$\lforall[x]$ kang cocog.
+\iftag{prvAll}{Yen $\lforall[x][!B]$ iku muncule sawijining subformula
+  ing formula~$!A$, mula muncule~$!B$ kang cocog ing~$!A$
+  diarani \emph{cakupan} saka muncule~$\lforall[x]$ kang cocog.
   \iftag{prvEx}{Semono uga kanggo $\lexists[x]$.}{}}{Yen
-  $\lexists[x][!B]$ iku kemunculan sawijining subformula ing
-  formula~$!A$, mula kemunculan~$!B$ kang cocog ing~$!A$
-  diarani \emph{cakupan} saka kemunculan~$\lexists[x]$ kang cocog.}
+  $\lexists[x][!B]$ iku muncule sawijining subformula ing
+  formula~$!A$, mula muncule~$!B$ kang cocog ing~$!A$
+  diarani \emph{cakupan} saka muncule~$\lexists[x]$ kang cocog.}
 
-Yen $!B$ iku cakupan sawijining kemunculan kuantor
+Yen $!B$ iku cakupan sawijining muncule kuantor
 \iftag{prvAll}{$\lforall[x]$\iftag{prvEx}{ utawa
-    $\lexists[x]$}{}}{$\lexists[x]$} ing~$!A$, mula kemunculan bebas
+    $\lexists[x]$}{}}{$\lexists[x]$} ing~$!A$, mula muncule bebas
 $x$ ing~$!B$ dadi kaiket ing \iftag{prvAll}{$\lforall[x][!B]$\iftag{prvEx}{ lan
 $\lexists[x][!B]$}{}}{$\lexists[x][!B]$}. Kita kandha yen
-kemunculan kasebut \emph{diiket dening}
-kemunculan kuantor kang kasebut mau.
+muncule kasebut \emph{diiket dening}
+muncule kuantor kang kasebut mau.
 \end{defn}
 
 \begin{ex}
@@ -69,8 +69,8 @@ Gatekna formula iki:
 \lexists[\Obj v_0][\underbrace{\Atom{\Obj A^2_0}{\Obj v_0,\Obj v_1}}_{!B}] 
 \]
 $!B$ nuduhake cakupan $\lexists[\Obj v_0]$.
-Kuantor kasebut ngiket kemunculan $\Obj v_0$ ing $!B$, nanging
-ora ngiket kemunculan $\Obj v_1$. Dadi, $\Obj v_1$ iku
+Kuantor kasebut ngiket muncule $\Obj v_0$ ing $!B$, nanging
+ora ngiket muncule $\Obj v_1$. Dadi, $\Obj v_1$ iku
 variabel bebas ing kasus iki.
 
 
@@ -84,17 +84,17 @@ kang luwih rumit:
 $!B$ iku cakupan saka $\lforall[\Obj v_0]$ kang kapisan, $!C$
 iku cakupan saka $\lexists[\Obj v_1]$, lan $!D$ iku cakupan saka
 $\lforall[\Obj v_0]$ kang kapindho. $\lforall[\Obj v_0]$ kang kapisan
-ngiket kemunculan $\Obj v_0$ ing~$!B$, $\lexists[\Obj v_1]$ ngiket
-kemunculan $\Obj v_1$ ing $!C$, lan $\lforall[\Obj v_0]$ kang kapindho
-ngiket kemunculan $\Obj v_0$ ing~$!D$. Kemunculan $\Obj v_1$
-kang kapisan lan kemunculan $\Obj v_0$ kang kaping papat iku bebas
-ing~$!A$. Kemunculan $\Obj v_0$ kang pungkasan iku bebas ing $!D$,
+ngiket muncule $\Obj v_0$ ing~$!B$, $\lexists[\Obj v_1]$ ngiket
+muncule $\Obj v_1$ ing $!C$, lan $\lforall[\Obj v_0]$ kang kapindho
+ngiket muncule $\Obj v_0$ ing~$!D$. Muncule $\Obj v_1$
+kang kapisan lan muncule $\Obj v_0$ kang kaping papat iku bebas
+ing~$!A$. Muncule $\Obj v_0$ kang pungkasan iku bebas ing $!D$,
 nanging kaiket ing $!C$ lan~$!A$.
 \end{ex}
 
 \begin{defn}[Ukara]
 !!^a{formula}~$!A$ iku \article{sentence} \emph{!!{sentence}} yen lan
-mung yen ora ngemot kemunculan bebas saka !!{variable}s.
+mung yen ora ngemot muncule bebas saka !!{variable}s.
 \end{defn}
 
 % tambahna tuladha!

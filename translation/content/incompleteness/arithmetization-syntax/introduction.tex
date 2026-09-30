@@ -23,60 +23,60 @@ lan diwangun saka himpunan simbol kang
 !!a{enumerable}, cara iki bisa digunakake
 kanggo sawetara model komputasi. Nanging
 model komputasi liyane---kayata fungsi
-rekursif---winates mung ing bilangan,
+rekursif---winates mung ing wilangan,
 relasi, lan fungsine. Kajaba iku, pungkasane
 kita uga kepengin ngolah sintaks ing njero
 teori tartamtu, mligine teori kang dirumusake
 ing basa aritmetika. Ing kahanan iki, kita
 kudu \emph{ngaritmetisasi} sintaks: nggambarake
 objek sintaks, operasi marang objek kasebut,
-lan relasine minangka bilangan, fungsi
+lan relasine minangka wilangan, fungsi
 aritmetika, lan relasi aritmetika,
 miturut urutane. Gagasan kang wiwit saka
 Leibniz iki yaiku menehi angka marang
 objek sintaks.
 
-Menehi bilangan minangka ``kode'' kanggo
+Menehi wilangan minangka ``kode'' kanggo
 simbol iku cukup gampang. Sawetara simbol
 rada njlimet, amarga, umpamane, ana tanpa
 wates akeh !!{variable}s, lan malah tanpa
 wates akeh !!{function}s kanggo saben
 aritas~$n$. Nanging mesthi bisa menehi
-bilangan marang simbol kanthi sistematis,
+wilangan marang simbol kanthi sistematis,
 saengga, umpamane, $\Obj v_2$ lan
 $\Obj v_3$ nduwé kode kang béda. Urutan
 simbol (kayata suku lan !!{formula}s)
 luwih njlimet maneh. Nanging yen urutan
-bilangan bisa diolah nganggo aritmetika
+wilangan bisa diolah nganggo aritmetika
 wae (umpamane nganggo pangodean urutan
-liwat pangkat bilangan prima), pangodean
+liwat pangkat wilangan prima), pangodean
 simbol siji-siji bisa diperluas dadi
 pangodean urutan simbol, banjur dadi
 pangodean urutan utawa susunan liyane
 saka !!{formula}s, kayata !!{derivation}s.
 Pangodean kang diperluas iki diarani
-``penomoran G\"odel''. Saben suku,
+``panomeran G\"odel''. Saben suku,
 !!{formula}, lan !!{derivation} diwenehi
-bilangan G\"odel.
+wilangan G\"odel.
 
 Kanthi ngodeake urutan simbol minangka
 urutan kode-kodene, lan milih sistem
 pangodean urutan kang bisa diolah nganggo
 fungsi komputabel, kita banjur bisa ngolah
-bilangan G\"odel nganggo fungsi komputabel.
+wilangan G\"odel nganggo fungsi komputabel.
 Ing praktik, kabeh fungsi kang dibutuhake
 bakal rekursif primitif. Tuladhane,
 ngitung dawa urutan lan ngitung unsur
 kapangka-$i$ saka sawijining urutan adhedhasar
 kode urutane iku rekursif primitif.
-Yen bilangan kang ngodeake urutan iku,
-umpamane, bilangan G\"odel saka
+Yen wilangan kang ngodeake urutan iku,
+umpamane, wilangan G\"odel saka
 !!a{formula}~$!A$, langsung katon yen
 dawa !!a{formula} lan (kode saka) simbol
 kapangka-$i$ ing !!a{formula} uga bisa
-diitung saka bilangan G\"odel~$!A$.
+diitung saka wilangan G\"odel~$!A$.
 Luwih angel sethithik mbuktekake yen,
-umpamane, sifat minangka bilangan G\"odel
+umpamane, sifat minangka wilangan G\"odel
 saka suku kang kabentuk kanthi bener utawa
 saka !!{derivation} kang bener iku rekursif
 primitif. Nanging iki bisa ditindakake,
@@ -87,20 +87,20 @@ ditegesi kanthi induktif.
 Minangka tuladha, gatekna operasi substitusi.
 Yen $!A$ iku formula, $x$ variabel, lan
 $t$ suku, mula $\Subst{!A}{t}{x}$ iku
-asil ngganti saben kemunculan bebas~$x$
+asil ngganti saben panggonan bebas~$x$
 ing~$!A$ nganggo~$t$. Saiki upamane kita
-wis menehi bilangan G\"odel marang $!A$,
+wis menehi wilangan G\"odel marang $!A$,
 $x$, $t$---umpamane $k$, $l$, lan $m$
 miturut urutane. Skema kang padha menehi
-bilangan G\"odel marang
+wilangan G\"odel marang
 $\Subst{!A}{t}{x}$, umpamane~$n$.
-Pemetaan saka $k$, $l$, lan $m$ menyang
+Peta saka $k$, $l$, lan $m$ menyang
 $n$ iki iku analog aritmetika saka operasi
 substitusi. Nalika operasi substitusi
 ngirim $!A$, $x$, $t$ menyang
 $\Subst{!A}{t}{x}$, fungsi substitusi
-kang diaritmetisasi ngirim bilangan G\"odel
-$k$, $l$, $m$ menyang bilangan G\"odel~$n$.
+kang diaritmetisasi ngirim wilangan G\"odel
+$k$, $l$, $m$ menyang wilangan G\"odel~$n$.
 Kita bakal ndeleng yen fungsi iki rekursif
 primitif.
 
@@ -109,7 +109,7 @@ minangka gagasan abstrak. Ing wiwitan, iki
 pancen sawijining panemu kang ora prasaja:
 basa kaya basa aritmetika, kang ora nduwé
 piranti kanggo ``ngrembug'' basa, jebul
-bisa ngformalkan sifat-sifat rumit saka
+bisa ngformalake sifat-sifat rumit saka
 ekspresi. Saka kene, tinggal takon apa
 kang bisa \emph{dibuktekake} dening teori
 ing basa iki, kayata aritmetika Peano,

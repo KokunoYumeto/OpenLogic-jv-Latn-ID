@@ -128,18 +128,75 @@ class Assembler:
 
         source = INPUT.sub(replace_input, source)
         source = self.expand_imports(source, master.parent)
-        if self.body_files != READER_BODY_PATHS:
-            raise ValueError(
-                "Reader import order differs from the declared 24-unit scope:\n"
-                + json.dumps(self.body_files, ensure_ascii=False, indent=2)
-            )
         return source.strip() + "\n"
+
+
+def verify_reader_scope(
+    repo: Path, master: Path, body_files: list[str], scope_file: Path | None
+) -> dict[str, object]:
+    if scope_file is None:
+        if repo_relative(repo, master) != "edition/jv-sets.tex":
+            raise ValueError("A nonlegacy reader requires --scope-file")
+        if body_files != READER_BODY_PATHS:
+            raise ValueError("Reader import order differs from the declared 24-unit scope")
+        return {"reader_body_units": 24, "scope_file": None}
+
+    scope = json.loads(scope_file.read_text(encoding="utf-8"))
+    if scope["schema"] != "openlogic-jv-reader-scope/1":
+        raise ValueError("Unsupported reader scope schema")
+    if scope["master"] != repo_relative(repo, master):
+        raise ValueError("Reader scope names a different master")
+    manifest = [
+        json.loads(line)
+        for line in (repo / "evidence" / "SOURCE_MANIFEST.jsonl")
+        .read_text(encoding="utf-8")
+        .splitlines()
+    ]
+    if any(row["source_commit"] != scope["source_revision"] for row in manifest):
+        raise ValueError("Reader scope source revision differs from the manifest")
+    by_target_path = {
+        "translation/" + row["source_path"]: row["unit_id"] for row in manifest
+    }
+    unknown = [path for path in body_files if path not in by_target_path]
+    if unknown:
+        raise ValueError(f"Reader bodies absent from the source manifest: {unknown[:10]}")
+    actual_ids = [by_target_path[path] for path in body_files]
+    excluded = {row["unit_id"] for row in scope["excluded_wrapper_units"]}
+    expected = {
+        row["unit_id"]
+        for row in manifest
+        if row["order"] <= scope["max_source_order"]
+    } - excluded
+    if len(expected) != scope["expected_reader_body_units"]:
+        raise ValueError("Declared reader body count differs from the manifest")
+    if len(actual_ids) != len(set(actual_ids)) or set(actual_ids) != expected:
+        raise ValueError(
+            "Reader scope mismatch: "
+            + json.dumps(
+                {
+                    "missing": sorted(expected - set(actual_ids)),
+                    "outside": sorted(set(actual_ids) - expected),
+                    "duplicates": sorted(
+                        {unit for unit in actual_ids if actual_ids.count(unit) > 1}
+                    ),
+                }
+            )
+        )
+    return {
+        "reader_body_units": len(body_files),
+        "scope_file": repo_relative(repo, scope_file),
+        "source_revision": scope["source_revision"],
+        "max_source_order": scope["max_source_order"],
+        "excluded_wrapper_units": sorted(excluded),
+        "reader_unit_ids_in_import_order": actual_ids,
+    }
 
 
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--repo", default=".")
     parser.add_argument("--master", default="edition/jv-sets.tex")
+    parser.add_argument("--scope-file")
     parser.add_argument("--output", required=True)
     parser.add_argument("--receipt", required=True)
     parser.add_argument("--commit")
@@ -157,7 +214,18 @@ def main() -> int:
 
     assembler = Assembler(repo)
     assembled = assembler.assemble(repo / args.master)
-    bound_paths = [args.master, "edition/jv-errata.tex", *assembler.body_files]
+    scope_path = normalize(repo / args.scope_file) if args.scope_file else None
+    scope_result = verify_reader_scope(
+        repo, repo / args.master, assembler.body_files, scope_path
+    )
+    bound_paths = [
+        args.master,
+        "edition/jv-localization.sty",
+        "edition/jv-errata.tex",
+        *assembler.body_files,
+    ]
+    if scope_path is not None:
+        bound_paths.append(repo_relative(repo, scope_path))
     clean = subprocess.run(
         ["git", "diff", "--quiet", commit, "--", *bound_paths], cwd=repo
     ).returncode
@@ -185,7 +253,8 @@ def main() -> int:
         "status": "PASS",
         "source_commit": commit,
         "master": args.master,
-        "reader_body_units": 24,
+        "reader_body_units": len(assembler.body_files),
+        "scope": scope_result,
         "reader_body_files": body_records,
         "inlined_editorial_files": ["edition/jv-errata.tex"],
         "retained_dependencies": sorted(set(assembler.dependencies)),

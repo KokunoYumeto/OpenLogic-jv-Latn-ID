@@ -29,7 +29,7 @@ Ukara $!C$ \emph{misahake} himpunan ukara $\Gamma$
 lan $\Delta$ yen lan mung yen $\Gamma \Entails !C$
 lan $\Delta \Entails \lnot !C$. Yen ora ana
 !!{sentence} kaya mangkono, $\Gamma$ lan $\Delta$
-\emph{ora bisa dipisahake}.
+\emph{ora bisa dipisahake}. Yen pamisahan diwatesi ing basa tartamtu, ukara pamisah kudu ana ing basa kasebut. Basa iki bakal kasebut kanthi cetha ing lemma lan bukti sabanjure.
 \end{defn}
 
 Relasi inklusi antarané kelas-kelas
@@ -58,7 +58,7 @@ Upamane $\Lang{L}_0$ iku basa kang ngemot saben
 (saliyane $\doteq$) kang katon ing \emph{loro-lorone}
 $\Gamma$ lan $\Delta$, lan $\Lang{L}'_0$ kawangun
 kanthi nambah tanpa wates akeh !!{constant}s anyar
-$\Obj c_n$ kanggo $n \ge 0$. Banjur yen
+$\Obj c_n$ kanggo $n \ge 0$. Ing kene anyar tegese ora ana ing Gamma utawa Delta, ora mung ora ana ing basa irisan. Banjur yen
 $\Gamma$ lan $\Delta$ ora bisa dipisahake ing
 $\Lang{L}_0$, loro-lorone uga ora bisa dipisahake
 ing $\Lang{L}'_0$.
@@ -74,6 +74,7 @@ ing $\Lang{L}'_0$. Banjur $\Gamma \Entails
 yen ukara pamisah kang digawé saka $!C$
 ngemot luwih saka siji
 !!{constant} anyar kaya mangkono, carane padha).
+Cathetan cakupan SOL6-F027: sadurunge konstanta anyar diganti variabel x kanggo nggawe formula asal, jeneng variabel kaiket ing ukara pamisah diganti yen perlu supaya ora ana kang diarani x. Kanthi iki, penggantian konstanta dening x ora dicekel dening kuantor, lan mung x kang dadi variabel bebas.
 Cathetan koreksi sumber OLPL-112:
 sing bisa ngemot konstanta anyar iku
 ukara pamisah ing basa kang digedhekake,
@@ -84,7 +85,7 @@ $\Delta$ kang njalari $\Gamma_0 \Entails
 \Subst{!C}{c}{x}$ lan $\Delta_0 \Entails
 \lnot \Subst{!C}{c}{x}$. Sebut $!G$ konjungsi
 kabeh !!{formula}s ing $\Gamma_0$ lan $!H$
-konjungsi kabeh !!{formula}s ing $\Delta_0$.
+konjungsi kabeh !!{formula}s ing $\Delta_0$. Konjungsi saka himpunan kosong dianggep bener.
 Banjur
 \begin{align*}
   !G & \Entails \Subst{!C}{c}{x}, & !H  \Entails \lnot \Subst{!C}{c}{x}.
@@ -146,7 +147,7 @@ Kita bedakake rong kasus:
   OLPL-114: sumber nggunakake lambang C
   kanggo ukara pamisah lan formula sadurunge
   substitusi; rong panganggone dibedakake
-  kanthi cetha ing kene. Banjur kita duwe
+  kanthi cetha ing kene. Kaya ing SOL6-F027, variabel kaiket ing ukara pamisah diganti jenenge luwih dhisik yen perlu, supaya penggantian c dening x ora nyebabake capture. Banjur kita duwe
   \[
   \Gamma \cup \{ \lexists[x][!S], \Subst{!S}{c}{x}\} \Entails \Subst{!C}{c}{x},
   \]

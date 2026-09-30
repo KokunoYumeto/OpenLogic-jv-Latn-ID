@@ -8,12 +8,12 @@
 
 \olfileid{inc}{tcp}{qce}
 
-\olsection{$\Th{Q}$ iku \printtoken{S}{c.e.}-lengkap}
+\olsection{$\Th{Q}$ iku \printtoken{S}{c.e.}-jangkep}
 
 
 \begin{thm}
 $\Th{Q}$ iku !!{c.e.} nanging ora bisa diputusake. Malah,
-  iki himpunan !!{c.e.} kang lengkap.
+  iki himpunan !!{c.e.} kang jangkep.
 \end{thm}
 
 \begin{proof}
@@ -26,10 +26,10 @@ Q = \Setabs{y}{\lexists[x][\Prf[\Th{Q}](x,y)]}.
 Nanging kita ngerti yen $\Prf[\Th{Q}](x,y)$ komputabel (malah rekursif
 primitif), lan saben himpunan kang bisa ditulis kaya ing ndhuwur iku c.e.
 
-Nyebut iki himpunan c.e.\ kang lengkap padha karo nyebut $K
+Nyebut iki himpunan c.e.\ kang jangkep padha karo nyebut $K
 \leq_m Q$, ing ngendi $K = \Setabs{x}{!A_x(x) \downarrow}$. Mula ayo
 dituduhake yen $K$ bisa direduksi menyang $\Th{Q}$. Amarga predikat
-Kleene $T(e,x,s)$ rekursif primitif, predikat iki bisa direpresentasikake
+Kleene $T(e,x,s)$ rekursif primitif, predikat iki bisa diwakili
 ing $\Th{Q}$, upamane dening $!A_T$. Mula kanggo saben $x$, kita nduweni
 \begin{align*}
 x \in K & \lif \lexists[s][T(x,x,s)] \\
@@ -38,17 +38,17 @@ x \in K & \lif \lexists[s][T(x,x,s)] \\
 & \lif \Th{Q} \Proves \lexists[s][!A_T(\num x, \num x, s)].
 \end{align*}
 Kosok baline, yen $\Th{Q} \Proves \lexists[s][!A_T(\num x, \num x, s)]$,
-mula sejatine kanggo sawijining bilangan asli $n$, formula $!A_T(\num x,
+mula, amarga kabeh aksioma Q bener ing model baku wilangan natural lan aturan bukti njaga bebener, kanggo sawijining wilangan natural $n$, formula $!A_T(\num x,
 \num x, \num n)$ mesthi bener. Saiki, yen $T(x,x,n)$ salah,
 $\Th{Q}$ bakal mbuktekake $\lnot !A_T(\num x, \num x, \num n)$, amarga
-$!A_T$ merepresentasikake $T$. Nanging banjur $\Th{Q}$ mbuktekake
+$!A_T$ makili $T$. Nanging banjur $\Th{Q}$ mbuktekake
 formula kang salah, lan iki kontradiksi. Mula $T(x,x,n)$ mesthi bener,
 kang ateges $!A_x(x) \downarrow$.
 
 Cekake, kanggo saben $x$, $x$ kalebu ing $K$ yen lan mung yen
-$\Th{Q}$ mbuktekake $\lexists[s][T(\num x,\num x,s)]$. Dadi fungsi $f$
-kang nggawa $x$ menyang (kode kanggo) ukara $\lexists[s][T(\num x,
-  \num x, s)]$ iku reduksi saka $K$ menyang $\Th{Q}$.
+$\Th{Q}$ mbuktekake $\lexists[s][!A_T(\num x,\num x,s)]$. Dadi fungsi $f$
+kang nggawa $x$ menyang (kode kanggo) ukara $\lexists[s][!A_T(\num x,
+  \num x, s)]$ iku reduksi saka $K$ menyang $\Th{Q}$. Cathetan koreksi sumber OLPL-791: simpulan lan ukara kang dikodeake saiki nganggo formula representasi A-T, dudu predikat Kleene T ing tataran meta.
 \end{proof}
 
 \end{document}

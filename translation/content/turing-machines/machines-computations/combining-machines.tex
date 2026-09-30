@@ -41,6 +41,7 @@ kang nindakake iki, tindakna langkah-langkah iki:
     \item Alfabet pitane yaiku $\Sigma \cup \Sigma'$.
     \item Kahanan wiwitane yaiku~$q_0$.
     % OLPL-149: Ing sumber beku, syarat cabang pisanan uga nyakup transisi kang ora ditegesi; syarat iki diwatesi supaya ora tabrakan karo cabang katelu.
+    Cathetan koreksi sumber OLPL-149: cabang kapisan mung kanggo transisi kang ditegesi. Cathetan cakupan SOL6-F055: yen alfabet mesin loro beda, luwih dhisik tambahna instruksi loop kanggo simbol asing ing saben kahanan kang dudu kahanan mandheg, tanpa ngowahi simbol utawa posisi sirah. Kahanan mandheg ora diwenehi instruksi. Fungsi transisi kang digunakake ing rumus iki wis diekstensi menyang alfabet gabungan kasebut.
     \item Fungsi transisine yaiku fungsi $\delta''$ iki:
     \[\delta''(q,\sigma) =
     \begin{cases}
@@ -84,7 +85,7 @@ kanthi nggambar diagram kahanan mesin panambah.
   \node[state]         (C) [right of=B] {$q_2$};
 
   \path (A) edge node {\TMtrans{\TMblank}{\TMstroke}{\TMstay}} (B)
-            edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (B)
+            edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (A)
         (B) edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (B)
             edge node {\TMtrans{\TMblank}{\TMblank}{\TMleft}} (C)
         (C) edge [loop above] node {\TMtrans{\TMstroke}{\TMblank}{\TMstay}} (C);
@@ -108,7 +109,7 @@ maca guratan kapisan saka output mesin panambah.
   \node[state]         (E) [below left of=D] {$q_4$};
 
   \path (A) edge node {\TMtrans{\TMblank}{\TMstroke}{\TMstay}} (B)
-            edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (B)
+            edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (A)
         (B) edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (B)
             edge node {\TMtrans{\TMblank}{\TMblank}{\TMleft}} (C)
         (C) edge node {\TMtrans{\TMstroke}{\TMblank}{\TMleft}} (D)
@@ -139,7 +140,7 @@ Diagram pungkasan kudune kaya ing \olref{fig:combined}.
   \node[state]         (6) [left of=5]  {$q_9$};
 
   \path (A) edge node {\TMtrans{\TMblank}{\TMstroke}{\TMstay}} (B)
-            edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (B)
+            edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (A)
         (B) edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (B)
             edge node {\TMtrans{\TMblank}{\TMblank}{\TMleft}} (C)
         (C) edge node {\TMtrans{\TMstroke}{\TMblank}{\TMleft}} (D)

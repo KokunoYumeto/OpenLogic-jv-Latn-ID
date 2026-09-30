@@ -50,11 +50,11 @@ Mesthi ana pitakon bab program (indeks), yaiku
 obyek sintaktis, kang bisa diwangsuli sacara komputabel:
 apa program iki nduwé luwih saka 150 simbol?
 Apa dawane luwih saka 22 larik? Apa ana pratelan
-``while'' ing jerone? Apa runtutan aksara ``hello world''
-tau dadi argumen kanggo pratelan ``print''?
+``while'' ing jerone? Apa rerangken aksara ``hello world''
+tau dadi argumen kanggo pratelan ``print'' ing teks program?
 Teorema Rice nyebut yen ora ana pitakon ora trivial
 bab \emph{tumindake} program kang bisa diwangsuli
-sacara komputabel. Iki kalebu pitakon kaya mangkene:
+sacara komputabel. Cathetan panyunting: tumindak ing teorema iki sipat fungsi parsial kang diitung, kalebu domain lan asil, dudu wektu mlaku utawa jejak komputasi kang ora ditemtokake dening fungsi kasebut. Iki kalebu pitakon kaya mangkene:
 apa program mandheg nalika nampa input $0$?
 Apa program tau mandheg? Apa program tau
 ngasilake wilangan genap?
@@ -117,7 +117,7 @@ lan yen $A$ komputabel, kita bisa nindakake iku.
 
 Luwih formal, amarga $h$~komputabel parsial,
 fungsi iku padha karo $\cfind{e}$ kanggo sawijining
-indeks~$e$. Miturut teorema $s$-$m$-$n$, ana
+indeks~$e$. Cathetan koreksi sumber OLPL-768: amarga fungsi iki nduweni rong argumen, indeks kasebut kudu diwaca kanggo varian aritas loro utawa liwat kode pasangan. Miturut teorema $s$-$m$-$n$, ana
 fungsi rekursif primitif~$s$ saengga kanggo saben~$x$,
 $\cfind{s(e,x)}(y) = h_x(y)$. Saiki kita nduwé yen
 kanggo saben $x$, yen $\cfind{x}(x) \fdefined$,
@@ -137,7 +137,7 @@ ing ngisor iki nuduhake sawetara tuladha panganggone.
 \begin{cor}
 Himpunan-himpunan ing ngisor iki ora bisa diputusake.
 \begin{enumerate}
-\item $\Setabs{x}{\text{$17$ kalebu jangkauan $\cfind{x}$}}$
+\item $\Setabs{x}{\text{$17$ kalebu citra $\cfind{x}$}}$
 \item $\Setabs{x}{\text{$\cfind{x}$ konstan}}$
 \item $\Setabs{x}{\text{$\cfind{x}$ total}}$
 \item $\Setabs{x}{\text{saben $y < y'$, $\cfind{x}(y) \fdefined$, lan

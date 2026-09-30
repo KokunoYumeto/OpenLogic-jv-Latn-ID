@@ -12,18 +12,18 @@
 
 Kanggo nuduhake yen kita bisa nindakake rekursi primitif nalika
 panjumlahan, perkalian, lan $\Char{=}$ kasedhiya, kita kudu
-ngembangake fungsi kang nggarap urutan. (Yen perpangkatan uga
+ngembangake fungsi kang nggarap urutan. (Yen pangkat uga
 kasedhiya, tugas iki luwih gampang.) Nalika kita nduweni rekursi
 primitif, kita bisa netepake perkara kaya ``prima kaping-$n$,'' lan
 milih pangodean kang cukup langsung. Nanging ing kene kita ora
 nduweni rekursi primitif---malah kita arep nuduhake yen rekursi
-primitif bisa ditindakake nganggo minimalisasi---mula kita kudu
+primitif bisa ditindakake nganggo panggolekan tanpa wates---mula kita kudu
 nganggo cara kang luwih cerdik.
 
 \begin{lem}
 \ollabel{lem:beta}
 Ana fungsi $\beta(d,i)$ saengga kanggo saben urutan $a_0$,
-\dots,~$a_n$ ana bilangan~$d$ kang ndadekake, kanggo saben $i \le n$,
+\dots,~$a_n$ ana wilangan~$d$ kang ndadekake, kanggo saben $i \le n$,
 $\beta(d,i) = a_i$. Kajaba iku, $\beta$ bisa ditegesi saka fungsi
 dhasar mung nganggo komposisi lan panggolekan tanpa wates reguler.
 \end{lem}
@@ -40,28 +40,28 @@ nduweni ``kode.''
 
 Notasi $\beta$ iki saka G\"odel. Maneh, bab kang angel nalika mbuktekake
 lema iki yaiku netepake~$\beta$ kang cocog nganggo sarana kang katone
-winates, yaiku mung komposisi lan minimalisasi---nanging kita oleh
+winates, yaiku mung komposisi lan panggolekan tanpa wates---nanging kita oleh
 nggunakake panjumlahan, perkalian, lan~$\Char{=}$. Ana maneka cara
 mbuktekake lema iki, nanging salah siji kang paling cetha isih cara
-asline G\"odel, kang nggunakake fakta teori bilangan aran Teorema
+asline G\"odel, kang nggunakake fakta teori wilangan aran Teorema
 Sunzi (lumrahe diarani ``Teorema Sisa Cina'').
 
 \begin{defn}
-Rong bilangan asli $a$ lan $b$ \emph{relatif prima} yen lan mung yen
-faktor persekutuan paling gedhene yaiku~$1$; kanthi tembung liya,
-ora ana faktor persekutuan liyane.
+Rong wilangan natural $a$ lan $b$ \emph{relatif prima} yen lan mung yen
+faktor bebarengan kang paling gedhe yaiku~$1$; kanthi tembung liya,
+ora ana faktor bebarengan liyane.
 \end{defn}
 
 \begin{defn}
-Bilangan asli $a$ lan $b$ diarani \emph{kongruen modulo~$c$},
-$a \equiv b \mod c$, yen lan mung yen $c \mid (a-b)$, yaiku $a$ lan $b$
+Wilangan natural $a$ lan $b$ diarani \emph{kongruen modulo~$c$},
+$a \equiv b \mod c$, kanthi $c>0$, yen lan mung yen $c \mid (a-b)$, yaiku $a$ lan $b$
 nduweni sisa kang padha nalika dipara karo~$c$.
 \end{defn}
 
 Iki Teorema Sunzi:
 \begin{thm}
-Upamana $x_0$, \dots,~$x_n$ relatif prima saben pasangan. Tetepna
-$y_0$, \dots,~$y_n$ minangka bilangan sembarang. Mula ana bilangan $z$ saengga
+Upamana $x_0$, \dots,~$x_n$ positif lan relatif prima saben pasangan. Tetepna
+$y_0$, \dots,~$y_n$ minangka wilangan sembarang. Mula ana wilangan $z$ saengga
 \begin{align*}
 z & \equiv y_0 \mod x_0 \\
 z & \equiv y_1 \mod x_1 \\
@@ -96,24 +96,24 @@ Mula rong pratelan iki bener:
 \item\ollabel{rel-prime} $x_0,\dots,x_n$ relatif prima saben pasangan.
 \item\ollabel{less} Kanggo saben $i$, $y_i < x_i$.
 \end{enumerate}
-Kanggo ndeleng yen \olref{rel-prime} bener, gatekna yen $p$ bilangan prima
+Kanggo ndeleng yen \olref{rel-prime} bener, jupuk $i\ne k$ lan gatekna yen $p$ wilangan prima
 lan $p \mid x_i$ sarta $p \mid x_k$, mula $p \mid 1 + (i+1) m$ lan
 $p \mid 1 + (k+1) m$. Nanging banjur $p$ mbagi selisihe,
 \[
 (1 + (i+1)m) - (1+ (k+1)m) = (i-k) m.
 \]
-Amarga $p$ mbagi $1 + (i+1)m$, bilangan iku ora bisa uga mbagi $m$
+Amarga $p$ mbagi $1 + (i+1)m$, wilangan iku ora bisa uga mbagi $m$
 (yen iya, pambagian kang kapisan bakal menehi sisa~$1$). Mula $p$
 mbagi $i-k$, amarga $p$ mbagi $(i-k)m$. Nanging $\left|i-k\right|$ paling
 gedhe~$n$, lan kita milih $j \geq n$, mula iki njalari
-$p \mid m$, kang maneh dadi kontradiksi. Dadi ora ana bilangan prima kang
+$p \mid m$, kang maneh dadi kontradiksi. Dadi ora ana wilangan prima kang
 mbagi loro-lorone $x_i$ lan $x_k$. Klausa~\olref{less} gampang:
 kita nduweni $y_i < j \leq m < x_i$.
 
 Saiki ayo mbuktekake lema fungsi $\beta$. Elinga yen kita bisa nggunakake
 $0$, fungsi penerus, panjumlahan, perkalian, $\Char{=}$, proyeksi, lan
 saben fungsi kang ditegesi saka fungsi mau liwat komposisi lan
-minimalisasi kang ditrapake marang fungsi reguler. Kita uga bisa
+panggolekan tanpa wates kang ditrapake marang fungsi reguler. Kita uga bisa
 nggunakake relasi yen fungsi karakteristike bisa ditegesi kanthi
 cara mangkono. Kaya sadurunge, kita bisa nuduhake yen relasi-relasi
 iki katutup tumrap kombinasi Boolean lan kuantifikasi winates;
@@ -134,7 +134,7 @@ K(z) & = \bmin{x \leq z}{\bexists{y \leq z}{z = J(x,y)}},\\
 L(z) & = \bmin{y \leq z}{\bexists{x \leq z}{z = J(x,y)}};
 \end{align*}
 \item relasi luwih cilik tinimbang $x < y$;
-\item relasi keterbagian $x \mid y$;
+\item relasi bisa dipara $x \mid y$;
 % \item $x \tsub y$
 % \item $\fn{Prime}(x)$
 % \item Assuming $p$ is prime, the relation ``$x$ is a power of $p$'':
@@ -144,12 +144,13 @@ L(z) & = \bmin{y \leq z}{\bexists{x \leq z}{z = J(x,y)}};
 \item fungsi $\fn{rem}(x,y)$ kang mbalekake sisa nalika
   $y$ dipara karo~$x$.
 \end{enumerate}
+Cathetan panjelasan SOL6-F085: nalika divisor nol, rem bisa diwenehi asil nol minangka panjangkepan total; konstruksi beta mung nggunakake divisor positif. Modulus positif ing definisi congruence lan pasangan indeks beda ing bukti relatif prima saiki diterangake kanthi eksplisit.
 Saiki tegesna
 \begin{align*}
-\beta^*(d_0,d_1,i) & = \fn{rem}(1+(i+1) d_1,d_0) \text{ and}\\
+\beta^*(d_0,d_1,i) & = \fn{rem}(1+(i+1) d_1,d_0) \text{ lan}\\
 \beta(d,i) & = \beta^*(K(d),L(d),i).
 \end{align*}
-Iki fungsi kang kita karepake. Yen diwenehi $a_0,\dots,a_n$ kaya ing ndhuwur, tetepna
+Rumus kapisan netepake beta lintang, lan rumus kapindho netepake beta. Iki fungsi kang kita karepake. Yen diwenehi $a_0,\dots,a_n$ kaya ing ndhuwur, tetepna
 \[
 j = \max(n,a_0+1,\dots,a_n+1),
 \]
@@ -177,8 +178,8 @@ fungsi~$\beta$.
 \begin{prob}
   Tuduhna yen relasi $x < y$, $x \mid y$, lan
   fungsi~$\fn{rem}(x,y)$ bisa ditegesi tanpa rekursi primitif.
-  Kowe oleh nggunakake $0$, fungsi penerus, panjumlahan, perkalian,
-  $\Char{=}$, proyeksi, lan minimalisasi sarta kuantifikasi winates.
+  Kowé oleh nggunakake $0$, fungsi penerus, panjumlahan, perkalian,
+  $\Char{=}$, proyeksi, lan panggolekan lan kuantifikasi winates.
 \end{prob}
 
 \end{document}

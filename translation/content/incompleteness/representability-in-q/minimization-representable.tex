@@ -12,9 +12,9 @@
 Ayo nimbang panggolekan tanpa wates. Upamana $g(x, z)$ reguler lan
 representabel ing $\Th{Q}$, upamane dening !!{formula}~$!A_g(x, z, y)$.
 Tetepna $f$ ditegesi dening $f(z) = \umin{x}{[g(x, z) = 0]}$. Kita
-arep nemokake !!a{formula}~$!A_f(z, y)$ kang merepresentasikake~$f$.
-Biji~$f(z)$ iku bilangan~$x$ kang (a) nyukupi $g(x, z) = 0$ lan (b)
-paling cilik ing antarane bilangan kang nyukupi iki, yaiku kanggo
+arep nemokake !!a{formula}~$!A_f(z, y)$ kang makili~$f$.
+Biji~$f(z)$ iku wilangan~$x$ kang (a) nyukupi $g(x, z) = 0$ lan (b)
+paling cilik ing antarane wilangan kang nyukupi iki, yaiku kanggo
 saben $w < x$, $g(w, z) \neq 0$. Mula pilihan kang alamiah yaiku:
 \[
 !A_f(z,y) \ident !A_g(y, z, \Obj 0) \land \lforall[w][(w < y \lif \lnot
@@ -27,8 +27,8 @@ Bukti iki maneh mbutuhake sawetara lema ngenani perkara kang
 bisa dibuktekake dening $\Th{Q}$.
 
 \begin{lem}
-\ollabel{lem:succ} Kanggo saben !!{constant}~$a$ lan saben bilangan
-asli~$n$,
+\ollabel{lem:succ} Kanggo saben !!{constant}~$a$ lan saben wilangan
+natural~$n$,
 \[
 \Th{Q} \Proves \eq[(a' + \num n)][(a + \num n)'].
 \]
@@ -55,11 +55,13 @@ mbuktekake $\eq[(a' + \num{n}')][(a + \num{n}')']$. Kita nduweni:
 \begin{align}
   \Th{Q} & \Proves \eq[(a' + \num n')][(a' + \num n)'] \quad
   \text{miturut aksioma $!Q_5$} \ollabel{step5}\\
+  \Th{Q} & \Proves \eq[(a' + \num n)'][((a + \num n)')'] \quad
+  \text{hipotesis induksi lan kongruensi penerus} \ollabel{step6}\\
+  \Th{Q} & \Proves \eq[((a + \num n)')'][(a + \num n')'] \quad
+  \text{aksioma $!Q_5$ lan kongruensi penerus} \notag\\
   \Th{Q} & \Proves \eq[(a' + \num n')][(a + \num n')'] \quad
-  \text{hipotesis induksi} \ollabel{step6}\\
-  \Th{Q} & \Proves \eq[(a' + \num n)'][(a + \num n')'] \quad
-  \text{miturut \olref{step5} lan \olref{step6}.} \notag
-\end{align}
+  \text{miturut \olref{step5}, \olref{step6} lan transitivitas.} \notag
+\end{align} Cathetan koreksi sumber OLPL-782: chain kang kacithak saiki nggunakake hipotesis induksi kanggo n, kongruensi penerus lan Q5 ing loro suku, banjur transitivitas menehi goal kanggo n tambah siji. Step6 ora maneh njupuk goal minangka hipotesis.
 \end{proof}
 
 Perlu dielingake maneh yen iki luwih ringkih tinimbang nyatakake yen
@@ -97,7 +99,7 @@ $\eq[(b' + c)'][\Obj 0]$, kang maneh mbantah aksioma~$Q_2$.
 
 \begin{lem}
 \ollabel{lem:less-nsucc}
-Kanggo saben bilangan asli~$n$,
+Kanggo saben wilangan natural~$n$,
   \[
   \Th{Q} \Proves
   \lforall[x][(x < \num {n+1} \lif (\eq[x][\Obj 0] \lor \dots \lor
@@ -136,11 +138,11 @@ Miturut hipotesis induksi, $\eq[b][\Obj 0] \lor \dots \lor
 \eq[b][\num{n}]$. Saka kene, kita entuk $\eq[b'][\Obj 0'] \lor
 \dots \lor \eq[b'][\num{n}']$ kanthi logika, mula
 $\eq[a][\num{1}] \lor \dots \lor \eq[a][\num{n+1}]$ amarga
-$\eq[a][b']$.
+$\eq[a][b']$. Cathetan panarikan OLPL-783: pratelan lawas salah maca connective. Lema kang kacithak nyatakake implikasi, lan bukti wis nuduhake arah kang dibutuhake. Ora ana kewajiban arah balik saka lemma iki.
 \end{proof}
 
 \begin{lem}
-  \ollabel{lem:trichotomy} For every natural number~$m$,
+  \ollabel{lem:trichotomy} Kanggo saben wilangan natural~$m$,
   \[
   \Th{Q} \Proves
   \lforall[y][((y < \num{m} \lor \num{m} < y) \lor \eq[y][\num{m}])].
@@ -185,9 +187,9 @@ $\eq[(c' + b)'][\num{m}']$. Miturut $!Q_5$,
 $\eq[(c' + b)'][(c' + b')]$. Mula $\eq[(c' +
 b')][\num{m}']$. Kita entuk
 $\lexists[u][\eq[(u' + b')][\num{m+1}]]$ kanthi ngenalake kuantor
-eksistensial marang~$c'$ lan ngelingi yen $\num{m}' \ident
+eksistensial marang~$c$ lan ngelingi yen $\num{m}' \ident
 \num{m+1}$. Dadi yen $b < \num{m}$, mula $b' < \num{m+1}$ lan
-$a < \num{m+1}$.
+$a < \num{m+1}$. Cathetan koreksi sumber OLPL-784: Q5 ing baris kang kacithak pancen bener; klaim lawas yen iku mung refleksivitas ditarik. Saksi kuantor eksistensial pungkasan saiki c, kang peneruse ana ing jumlah kasebut.
 
 Saiki upamana $\num{m} < b$, yaiku $\lexists[z][\eq[(z' +
 \num{m})][b]]$. Upamana $c$ iku~$z$ kang dimaksud, yaiku
@@ -206,12 +208,12 @@ entuk disjungsi kang cocog kanggo~$m+1$ lan~$a$.
   
 \begin{prop}
 \ollabel{prop:rep-minimization}
-Yen $!A_g(x, z, y)$ merepresentasikake $g(x, z)$ ing~$\Th{Q}$, mula
+Yen fungsi kang diwakili iku reguler lan $!A_g(x, z, y)$ makili $g(x, z)$ ing~$\Th{Q}$, mula
 \[
 !A_f(z,y) \ident !A_g(y, z, \Obj 0) \land \lforall[w][(w < y \lif \lnot
   !A_g(w, z, \Obj 0))]
 \]
-merepresentasikake $f(z) = \umin{x}{[g(x, z) = 0]}$.
+makili $f(z) = \umin{x}{[g(x, z) = 0]}$. Cathetan koreksi sumber OLPL-785: proposisi saiki kanthi eksplisit mbutuhake fungsi kang diwakili reguler. Tanpa jaminan ana nol kanggo saben input, panggolekan paling cilik bisa ora ngasilake biji fungsi.
 \end{prop}
 
 \begin{proof}
@@ -220,7 +222,7 @@ $\Th{Q} \Proves !A_f(\num n, \num m)$, yaiku,
 \begin{align}
   \Th{Q} & \Proves !A_g(\num{m}, \num{n}, \Obj 0) \land \lforall[w][(w <
     \num{m} \lif \lnot !A_g(w, \num{n}, \Obj 0))]. \notag
-  \intertext{Amarga $!A_g(x, z, y)$ merepresentasikake $g(x, z)$ lan
+  \intertext{Amarga $!A_g(x, z, y)$ makili $g(x, z)$ lan
     $g(m, n) = 0$ yen $f(n) = m$, kita nduweni}
 \Th{Q} & \Proves !A_g(\num{m}, \num{n}, \Obj 0). \notag
 \intertext{Yen $f(n) = m$, mula kanggo saben $k < m$, $g(k, n) \neq 0$.
@@ -249,7 +251,7 @@ kontradiksi.
 Yen $\num{m} < b$, mula $\lnot !A_g(\num{m}, \num{n}, \Obj 0)$
 saka~(b). Nanging $m = f(n)$, mula $g(m, n) = 0$, lan
 $\Th{Q} \Proves !A_g(\num{m}, \num{n}, \Obj 0)$ amarga $!A_g$
-merepresentasikake~$g$. Dadi ana kontradiksi.
+makili~$g$. Dadi ana kontradiksi.
 
 Saiki upamana $b < \num{m}$. Amarga
 $\Th{Q} \Proves \lforall[w][(w <

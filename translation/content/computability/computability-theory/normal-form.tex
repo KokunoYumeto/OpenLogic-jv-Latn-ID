@@ -35,24 +35,24 @@ mula kanggo sawenehing~$e$,
 \[
 f(x) \simeq U(\umin{s}{T(e, x, s)})
 \]
-kanggo saben~$x$.
+kanggo saben~$x$. Cathetan panyunting: tampilan iki kanggo fungsi unèr; fungsi mawa luwih saka siji argumen diwaca nganggo kode tuple input, kanthi pangodean kang cocog.
 \end{thm}
 
 \begin{proof}[Sketsa Bukti]
 Kanggo model komputasi sembarang, jlentrehan
-fungsi komputabel~$f$ bisa ditegesi kanthi ketat
+fungsi komputabel~$f$ bisa ditegesi kanthi tliti
 lan dikode nganggo wilangan asli~$e$. Pangerten
-bab 'runtutan komputasi' kang nyathet proses
+bab ``rerangken komputasi'' kang nyathet proses
 ngitung fungsi mawa indeks~$e$ ing input~$x$
-uga bisa ditegesi kanthi ketat. Runtutan
+uga bisa ditegesi kanthi tliti. Rerangken
 komputasi kaya mangkono uga bisa dikode
 minangka wilangan~$s$. Iki bisa ditindakake
 kanthi cara kang ndadekake
 \begin{enumerate}
   \item relasi $T(e, x, s)$, kang lumaku yen lan
-  mung yen wilangan~$s$ ngode runtutan komputasi
+  mung yen wilangan~$s$ ngode rerangken komputasi
   fungsi mawa indeks~$e$ ing input~$x$, lan
-  \item fungsi $U(s)$ kang masangake runtutan
+  \item fungsi $U(s)$ kang masangake rerangken
   komputasi mawa kode~$s$ karo asil pungkasan
   saka komputasi iku
 \end{enumerate}
@@ -61,20 +61,20 @@ fungsi~$U$ iku rekursif primitif.
 \end{proof}
 
 \begin{explain}
-Kanggo menehi bukti ketat tumrap Teorema Wangun
+Kanggo menehi bukti tliti tumrap Teorema Wangun
 Normal, kita kudu netepake model komputasi,
 nggarap pangodean jlentrehan fungsi komputabel
-lan runtutan komputasi kanthi rinci, banjur
+lan rerangken komputasi kanthi rinci, banjur
 mriksa yen relasi~$T$ lan fungsi~$U$ iku
 rekursif primitif. Kanggo akèh panganggone,
 cukup yen $T$ lan~$U$ komputabel lan $U$~total.
 
 Mbokmenawa bukti teorema wangun normal paling
 gampang dielingi minangka ukara ringkes:
-$\umin{s}{T(e, x, s)}$ nggoleki runtutan
+$\umin{s}{T(e, x, s)}$ nggoleki rerangken
 komputasi fungsi mawa indeks~$e$ ing input~$x$,
-lan $U$ ngasilake asil runtutan komputasi iku
-yen runtutan kaya mangkono bisa ditemokake.
+lan $U$ ngasilake asil rerangken komputasi iku
+yen rerangken kaya mangkono bisa ditemokake.
 \end{explain}
 
 Yen model komputasine yaiku fungsi rekursif
@@ -82,9 +82,9 @@ parsial (kang wiwitane digunakake Kleene),
 teorema iki nuduhake yen mung siji panganggone
 panggolekan tanpa wates, yaiku mung siji operator
 $\umin{y}{f(\vec x, y)}$, kang dibutuhake
-kanggo netepake fungsi sembarang. Kanthi arti
+kanggo netepake fungsi sembarang. Ing pangerten
 iki, saben fungsi rekursif parsial nduwé
-wujud normal.
+wangun normal.
 
 $T$ lan $U$ bisa digunakake kanggo netepake
 enumerasi $\cfind{0}$, $\cfind{1}$,
@@ -100,7 +100,7 @@ Iki kasunyatan migunani liyane:
 
 \begin{thm}
 Saben fungsi komputabel parsial nduwé
-indeks tanpa wates cacahé.
+indeks tanpa wates cacahé. Cathetan panyunting: ing kene digunakake pangindeksan program baku kang menehi kode beda kanggo instruksi beda lan ngidini instruksi tambahan tanpa ngowahi fungsi. Anane evaluator universal wae durung njamin sipat cacah indeks iki.
 \end{thm}
 
 Maneh, iki cetha sacara intuitif. Yen diwenehi

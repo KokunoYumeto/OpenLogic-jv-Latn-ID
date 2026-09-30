@@ -1,0 +1,95 @@
+% Basa Jawa, aksara Latin. This layer supplements the historical reader style.
+% Technical choices are provisional and source-defined; see the edition ledger.
+\input{jv-localization.sty}
+\settexttoken{proof}{bukti}{bukti}[Bukti][Bukti]
+\settexttoken{prove}{mbuktekake}{mbuktekake}[Mbuktekake][Mbuktekake]
+\settexttoken{proving}{mbuktekake}{mbuktekake}[Mbuktekake][Mbuktekake]
+\settexttoken{provable}{bisa dibuktekake}{bisa dibuktekake}[Bisa dibuktekake][Bisa dibuktekake]
+\settexttoken{provability}{kahanan bisa dibuktekake}{kahanan bisa dibuktekake}[Kahanan bisa dibuktekake][Kahanan bisa dibuktekake]
+\settexttoken{nonprovability}{kahanan ora bisa dibuktekake}{kahanan ora bisa dibuktekake}[Kahanan ora bisa dibuktekake][Kahanan ora bisa dibuktekake]
+\settexttoken{derivable}{bisa diderivasi}{bisa diderivasi}[Bisa diderivasi][Bisa diderivasi]
+\settexttoken{complete}{jangkep}{jangkep}[Jangkep][Jangkep]
+\settexttoken{axiomatizable}{bisa diaksiomatisasi}{bisa diaksiomatisasi}[Bisa diaksiomatisasi][Bisa diaksiomatisasi]
+\settexttoken{axiomatized}{diaksiomatisasi}{diaksiomatisasi}[Diaksiomatisasi][Diaksiomatisasi]
+\settexttoken{axiomatizability}{kahanan bisa diaksiomatisasi}{kahanan bisa diaksiomatisasi}[Kahanan bisa diaksiomatisasi][Kahanan bisa diaksiomatisasi]
+\settexttoken{decidable}{bisa diputusake}{bisa diputusake}[Bisa diputusake][Bisa diputusake]
+\settexttoken{enumerable}{bisa didhaptar}{bisa didhaptar}[Bisa didhaptar][Bisa didhaptar]
+\settexttoken{nonenumerable}{ora bisa didhaptar}{ora bisa didhaptar}[Ora bisa didhaptar][Ora bisa didhaptar]
+\settexttoken{denumerable}{bisa dietung lan tanpa wates}{bisa dietung lan tanpa wates}[Bisa dietung lan tanpa wates][Bisa dietung lan tanpa wates]
+\settexttoken{computably enumerable}{bisa didhaptar kanthi komputasi}{bisa didhaptar kanthi komputasi}[Bisa didhaptar kanthi komputasi][Bisa didhaptar kanthi komputasi]
+% Source abbreviations are preserved and explained in the native choice ledger.
+\settexttoken{c.e.}{c.e.}{c.e.}[C.e.][C.e.]
+\settexttoken{height}{dhuwur}{dhuwur}[Dhuwur][Dhuwur]
+\settexttoken{depth}{jerone}{jerone}[Jerone][Jerone]
+\settexttoken{hp}{hp}{hp}[Hp][Hp]
+\settexttoken{introduction}{introduksi}{introduksi}[Introduksi][Introduksi]
+\settexttoken{elimination}{eliminasi}{eliminasi}[Eliminasi][Eliminasi]
+\settexttoken{relational model}{model relasional}{model relasional}[Model relasional][Model relasional]
+\settexttoken{represents}{merepresentasikake}{merepresentasikake}[Merepresentasikake][Merepresentasikake]
+\settexttoken{representable}{bisa direpresentasikake}{bisa direpresentasikake}[Bisa direpresentasikake][Bisa direpresentasikake]
+\settexttoken{parameter}{parameter}{parameter}[Parameter][Parameter]
+\settexttoken{lambda define}{netepake nganggo $\lambd$}{netepake nganggo $\lambd$}[Netepake nganggo $\lambd$][Netepake nganggo $\lambd$]
+\settexttoken{lambda defined}{ditetepake nganggo $\lambd$}{ditetepake nganggo $\lambd$}[Ditetepake nganggo $\lambd$][Ditetepake nganggo $\lambd$]
+\settexttoken{lambda definable}{bisa ditetepake nganggo $\lambd$}{bisa ditetepake nganggo $\lambd$}[Bisa ditetepake nganggo $\lambd$][Bisa ditetepake nganggo $\lambd$]
+\settexttoken{colorC}{abang}{abang}[Abang][Abang]
+\settexttoken{colorD}{biru}{biru}[Biru][Biru]
+\settexttoken{colorE}{ijo}{ijo}[Ijo][Ijo]
+% The source's singular token key "sentences" is a typo, retained as an alias.
+\settexttoken{sentences}{ukara}{ukara}[Ukara][Ukara]
+\settexttoken{argument}{argumen}{argumen}[Argumen][Argumen]
+\newcommand{\JvEmptyArticle}[1]{\definetoken{a}{#1}{}\definetoken{A}{#1}{}}
+\forcsvlist{\JvEmptyArticle}{prove,proving,provable,provability,nonprovability,derive,derivable,derivability,nonderivability,discharge,discharged,undischarged,free for,complete,axiomatizable,axiomatized,axiomatizability,decidable,enumerable,nonenumerable,denumerable,computably enumerable,c.e.,lambda define,lambda defined,lambda definable,represents,representable,colorC,colorD,colorE,hp}
+\newcommand{\JvCountArticle}[1]{\definetoken{a}{#1}{salah siji}\definetoken{A}{#1}{Salah siji}}
+\forcsvlist{\JvCountArticle}{proof,height,depth,introduction,elimination,relational model,parameter,sentences,argument,identity,conditional,biconditional,falsity,truth}
+% Native passive forms consume the historical English suffix d in !!{verb}d.
+% Two explicitly active perfect contexts are normalized by reader assembly.
+\definetoken{d}{derive}{diderivasi}
+\definetoken{D}{derive}{Diderivasi}
+\definetoken{d}{prove}{dibuktekake}
+\definetoken{D}{prove}{Dibuktekake}
+\definetoken{d}{lambda define}{ditetepake nganggo $\lambd$}
+\definetoken{D}{lambda define}{Ditetepake nganggo $\lambd$}
+\makeatletter
+\RenewDocumentCommand\@printtoken{t^ ta m !ts !td}{%
+  \IfBooleanTF{#5}{%
+    \IfBooleanTF{#1}{\printtoken{D}{#3}}{\printtoken{d}{#3}}%
+  }{%
+    \IfBooleanTF{#1}{%
+      \IfBooleanTF{#2}{\Article{#3}~\IfBooleanTF{#4}{\printtoken{p}{#3}}{\printtoken{s}{#3}}}{\IfBooleanTF{#4}{\printtoken{P}{#3}}{\printtoken{S}{#3}}}%
+    }{%
+      \IfBooleanTF{#2}{\article{#3}~}{}%
+      \IfBooleanTF{#4}{\printtoken{p}{#3}}{\printtoken{s}{#3}}%
+    }%
+  }%
+}
+\makeatother
+\setlocalecaption{english}{photocredits}{Atribusi Foto}
+\setlocalecaption{english}{history}{Cathetan Sejarah}
+\setlocalecaption{english}{reading}{Wacan Luwih Lanjut}
+\setlocalecaption{english}{appendix}{Lampiran}
+\setlocalecaption{english}{appendices}{Lampiran}
+\setlocalecaption{english}{instigator}{Pangrintis}
+\setlocalecaption{english}{editorialboard}{Dewan Panyunting}
+\setlocalecaption{english}{contributors}{Panyumbang}
+\addto\captionsenglish{%
+  \renewcommand{\appendixname}{Lampiran}%
+  \renewcommand{\indexname}{Indeks}%
+  \renewcommand{\listfigurename}{Dhaptar Gambar}%
+  \renewcommand{\listtablename}{Dhaptar Tabel}%
+  \renewcommand{\abstractname}{Ringkesan}%
+}
+
+% Same any-active-tag semantics as upstream \iftag, with streamed branches.
+\newif\ifJvTag
+\newcommand{\JvTestTags}[1]{%
+  \JvTagfalse
+  \def\do##1{\iftoggle{##1}{\JvTagtrue}{}}%
+  \docsvlist{#1}%
+}
+
+% Katrangan aturan lan jeneng rujukan uga kudu nganggo basa Jawa.
+\RenewDocumentCommand\TAss{}{Asumsi}
+\RenewDocumentCommand\Hyp{}{\textsc{Hip}}
+\AtBeginDocument{\JvReferenceName{part}{Perangan}}
+% Tandha mawa indeks perlu ambane alami supaya ora nabrak formula.
+\RenewDocumentCommand\sFmla{m m o}{\ensuremath{\IfNoValueTF{#3}{}{#3\,}#1\,#2}}

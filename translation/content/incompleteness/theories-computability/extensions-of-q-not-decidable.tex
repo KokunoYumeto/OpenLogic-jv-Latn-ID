@@ -50,32 +50,32 @@ kanggo nemtokake relasi komputabel universal.
 
 Tetepna $R(x,y)$ bener yen lan mung yen
 \begin{quote}
-$x$ ngodeake formula $!D(u)$, lan $\Th{T}$ mbuktekake $!D(\num y)$.
+$x$ ngodeake formula $!D(u)$ kang variabel bebas mung bisa u, lan $\Th{T}$ mbuktekake $!D(\num y)$.
 \end{quote}
 Amarga kita nganggep yen $\Th{T}$ bisa diputusake, $R$ iku komputabel.
 Saiki ayo dituduhake yen $R$ universal. Yen $S(y)$ relasi komputabel
-sembarang, mula relasi iki bisa direpresentasikake ing $\Th{Q}$
+sembarang, mula relasi iki bisa diwakili ing $\Th{Q}$
 (lan mulane $\Th{T}$) dening formula $!D_S(u)$. Mula kanggo saben $n$,
 kita nduweni
 \begin{eqnarray*}
-S(\num n) & \lif & T \vdash !D_S(\num n) \\
+S(n) & \lif & T \vdash !D_S(\num n) \\
 & \lif & R(\Gn{!D_S(u)}, n)
 \end{eqnarray*}
-and
+lan
 \begin{eqnarray*}
-\lnot S(\num n) & \lif & T \vdash \lnot !D_S(\num n) \\
+\lnot S(n) & \lif & T \vdash \lnot !D_S(\num n) \\
 & \lif & T \not\vdash !D_S(\num n) \quad \text{(amarga $\Th{T}$
   konsisten)} \\
 & \lif & \lnot R(\Gn{!D_S(u)}, n).
 \end{eqnarray*}
 Tegese, kanggo saben $y$, $S(y)$ bener yen lan mung yen
 $R(\Gn{!D_S(u)}, y)$ bener. Mula $R$ universal, lan kita nemokake
-kontradiksi kang digoleki.
+kontradiksi kang digoleki. Cathetan koreksi sumber OLPL-792: input relasi meta S saiki wilangan n; numeral n tetep digunakake kanggo substitusi ing formula basa aritmetika.
 \end{proof}
 
 Upamana ``aritmetika bener'' iku teori $\Setabs{!A}{ \Sat{\Nat}{!A}}$,
 yaiku himpunan ukara ing basa aritmetika kang bener ing interpretasi
-standar.
+baku.
 
 \begin{cor}
 Aritmetika bener ora bisa diputusake.

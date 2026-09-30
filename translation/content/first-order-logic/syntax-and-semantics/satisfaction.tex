@@ -30,12 +30,13 @@ konektif utawa kuantor utama lan dicukupi utawa orane
 !!{subformula}s kang langsung.
 
 Kasus kuantor ing kene rada ruwet, amarga !!{subformula} kang
-langsung saka !!{formula} mawa kuantor nduweni !!{variable} bebas,
+langsung saka !!{formula} mawa kuantor bisa nduweni !!{variable} bebas,
 lan !!{structure}s ora nemtokake !!{value}s saka !!{variable}s.
 Kanggo ngrampungi kangelan iki, kita uga ngenalake \emph{pangaji
 variabel} lan nemtokake relasi nyukupi
 dudu mung relatif marang !!a{structure}, nanging marang
 !!a{structure} bebarengan karo pangaji !!a{variable}.
+Cathetan koreksi sumber SOL6-F003: matriks kuantor bisa uga ora nduweni variabel bebas nalika kuantifikasine vakum; mula klaim sumber kang tanpa watesan kuwi dijlentrehake minangka kemungkinan.
 \end{explain}
 
 \begin{defn}[Pangaji Variabel]
@@ -298,7 +299,7 @@ saka awake dhewe).
   kita nduweni $\Sat{M}{R(a,x)}[\Subst{s}{1}{x}]$,
   mula konsekuene bener; kanggo $m = 2$, $3$, lan~$4$,
   kita nduweni $\Sat/{M}{R(x,a)}[\Subst{s}{m}{x}]$,
-  mula antesedene salah. Nanging,
+  mula antesedene luput. Nanging,
   \[
   \Sat/{M}{\lforall[x][(R(a,x) \lif R(x,a))]}[s]
   \]
@@ -411,12 +412,13 @@ huruf kang cocog dibalekake. Ing sisih liya,
 Kita nduweni $\Sat{M}{R(a,x)}[\Subst{s}{m}{x}]$
 mung kanggo $m = 1$ lan $m = 2$. Nanging kanggo
 rong nilai~$m$ iku, ana maneh $n \in \Domain M$,
-yaiku $n = 4$, kang ndadekake
+yaiku $n = 4$ nalika $m = 1$ lan $n = 1$ nalika $m = 2$, kang ndadekake
 $\Sat/{M}{R(x,y)}[\Subst{\Subst{s}{m}{x}}{n}{y}]$,
 mula $\Sat/{M}{\lforall[y][R(x,y)]}[\Subst{s}{m}{x}]$
 kanggo $m = 1$ lan $m = 2$. Dadi ora ana
 $m \in \Domain M$ kang ndadekake
 $\Sat{M}{R(a,x) \land \lforall[y][R(x,y)]}[\Subst{s}{m}{x}]$.
+Cathetan koreksi sumber SOL6-F004: nilai paseksi variabel njero kudu gumantung marang nilai variabel njaba; pasangan loro-papat klebu interpretasi predikat, dene siji-papat lan loro-siji ora.
 \end{ex}
 
 \iftag{defEx}{%

@@ -11,7 +11,7 @@
 \olsection{Kelengkapan kanggo \Log{K}}
 
 \begin{explain}
-  Kanggo nuduhake yen metode !!{tableau}s iku lengkap, kita kudu
+  Kanggo nuduhake yen metode !!{tableau}s iku jangkep, kita kudu
   nuduhake yen nalika ora ana !!{tableau} katutup kang nuduhake
   $\Gamma \Proves !A$, mula $\Gamma \Entails/ !A$, yaiku ana
   kontramodel. Nanging ``ora ana !!{tableau} katutup'' ateges saben
@@ -28,7 +28,7 @@
 \end{explain}
 
 \begin{defn}
-  Cabang ing !!a{tableau} diarani lengkap yen, saben cabang iku ngemot
+  Cabang ing !!a{tableau} diarani jangkep yen, saben cabang iku ngemot
   !!{formula} mawa prefiks $\sFmla{S}{!A}[\sigma]$ kang bisa dikenani
   aturan, cabang iku uga ngemot
   \begin{enumerate}
@@ -46,7 +46,7 @@
 \end{defn}
 
 \begin{explain}
-Upamane, cabang lengkap ngemot $\sFmla{\True}{!B}[\sigma]$ lan
+Upamane, cabang jangkep ngemot $\sFmla{\True}{!B}[\sigma]$ lan
 $\sFmla{\True}{!C}[\sigma]$ saben cabang iku ngemot $\sFmla{\True}{!B
   \land !C}[\sigma]$. Yen ngemot $\sFmla{\True}{!B \lor !C}[\sigma]$,
 cabang iku ngemot paling ora salah siji saka $\sFmla{\True}{!B}[\sigma]$
@@ -62,7 +62,7 @@ $\sigma.n$ wis dienggo ing cabang.
 \end{explain}
 
 \begin{prop}\ollabel{prop:complete-tableau}
-  Saben $\Gamma$ winates nduweni !!a{tableau} kang saben cabang bukake lengkap.
+  Saben $\Gamma$ winates nduweni !!a{tableau} kang saben cabang bukake jangkep.
 \end{prop}
 
 \begin{proof}
@@ -80,7 +80,7 @@ $\sigma.n$ wis dienggo ing cabang.
   cabang mau, banjur baleni. Prefiks penerus anyar nyuda jerone modal;
   subformula mung winates cacahe lan saben kewajiban prefiks anyar
   dituntaskan sapisan ing saben prefiks. Mula proses iki rampung, lan
-  miturut pambangunane saben cabang bukak dadi lengkap.
+  miturut pambangunane saben cabang bukak dadi jangkep.
 \end{proof}
 
 \begin{thm}[Kelengkapan]
@@ -90,9 +90,9 @@ $\sigma.n$ wis dienggo ing cabang.
 
 \begin{proof}
 Kaping pisan, upamane $\Gamma$ winates. Miturut proposisi kasebut,
-$\Gamma$ nduweni !!a{tableau} kang saben cabang bukake lengkap.
+$\Gamma$ nduweni !!a{tableau} kang saben cabang bukake jangkep.
 Amarga ora ana !!{tableau} katutup, ana !!a{tableau}
-kang paling ora siji cabange bukak lan lengkap. Upamane $\Delta$
+kang paling ora siji cabange bukak lan jangkep. Upamane $\Delta$
 himpunan !!{formula}s mawa prefiks ing cabang iku, lan $P(\Delta)$
 himpunan prefiks kang katon ing kono.
 
@@ -125,20 +125,20 @@ $\mSat/{M(\Delta)}{!A}[\sigma]$.
   \item \indcase{!A}{\lnot !B}{\iftag{probNot}{Latihan.}{Yen
       $\sFmla{\True}{\indfrm}[\sigma] \in \Delta$, mula
       $\sFmla{\False}{!B}[\sigma] \in \Delta$ amarga cabange
-      lengkap. Miturut hipotesis induksi,
+      jangkep. Miturut hipotesis induksi,
       $\mSat/{M(\Delta)}{!B}[\sigma]$, saengga
       $\mSat{M(\Delta)}{\indfrm}[\sigma]$.
 
       Yen $\sFmla{\False}{\indfrm}[\sigma] \in \Delta$, mula
       $\sFmla{\True}{!B}[\sigma] \in \Delta$ amarga cabange
-      lengkap. Miturut hipotesis induksi,
+      jangkep. Miturut hipotesis induksi,
       $\mSat{M(\Delta)}{!B}[\sigma]$, saengga
       $\mSat/{M(\Delta)}{\indfrm}[\sigma]$.}}
   \item \indcase{!A}{!B \land !C}{\iftag{probAnd}{Latihan.}{Yen
       $\sFmla{\True}{\indfrm}[\sigma] \in \Delta$, mula
       $\sFmla{\True}{!B}[\sigma] \in \Delta$ lan
       $\sFmla{\True}{!C}[\sigma] \in \Delta$ loro-lorone amarga
-      cabange lengkap. Miturut hipotesis induksi,
+      cabange jangkep. Miturut hipotesis induksi,
       $\mSat{M(\Delta)}{!B}[\sigma]$ lan
       $\mSat{M(\Delta)}{!C}[\sigma]$. Mula
       $\mSat{M(\Delta)}{\indfrm}[\sigma]$.
@@ -146,7 +146,7 @@ $\mSat/{M(\Delta)}{!A}[\sigma]$.
       Yen $\sFmla{\False}{\indfrm}[\sigma] \in \Delta$, mula
       $\sFmla{\False}{!B}[\sigma] \in \Delta$ utawa
       $\sFmla{\False}{!C}[\sigma] \in \Delta$ amarga cabange
-      lengkap. Miturut hipotesis induksi,
+      jangkep. Miturut hipotesis induksi,
       $\mSat/{M(\Delta)}{!B}[\sigma]$ utawa
       $\mSat/{M(\Delta)}{!C}[\sigma]$. Mula
       $\mSat/{M(\Delta)}{\indfrm}[\sigma]$.}}
@@ -154,7 +154,7 @@ $\mSat/{M(\Delta)}{!A}[\sigma]$.
       $\sFmla{\True}{\indfrm}[\sigma] \in \Delta$, mula
       $\sFmla{\True}{!B}[\sigma] \in \Delta$ utawa
       $\sFmla{\True}{!C}[\sigma] \in \Delta$ amarga cabange
-      lengkap. Miturut hipotesis induksi,
+      jangkep. Miturut hipotesis induksi,
       $\mSat{M(\Delta)}{!B}[\sigma]$ utawa
       $\mSat{M(\Delta)}{!C}[\sigma]$. Mula
       $\mSat{M(\Delta)}{\indfrm}[\sigma]$.
@@ -162,7 +162,7 @@ $\mSat/{M(\Delta)}{!A}[\sigma]$.
       Yen $\sFmla{\False}{\indfrm}[\sigma] \in \Delta$, mula
       $\sFmla{\False}{!B}[\sigma] \in \Delta$ lan
       $\sFmla{\False}{!C}[\sigma] \in \Delta$ loro-lorone amarga
-      cabange lengkap. Miturut hipotesis induksi,
+      cabange jangkep. Miturut hipotesis induksi,
       $\mSat/{M(\Delta)}{!B}[\sigma]$ lan
       $\mSat/{M(\Delta)}{!C}[\sigma]$ loro-lorone. Mula
       $\mSat/{M(\Delta)}{\indfrm}[\sigma]$.}}
@@ -170,7 +170,7 @@ $\mSat/{M(\Delta)}{!A}[\sigma]$.
       $\sFmla{\True}{\indfrm}[\sigma] \in \Delta$, mula
       $\sFmla{\False}{!B}[\sigma] \in \Delta$ utawa
       $\sFmla{\True}{!C}[\sigma] \in \Delta$ amarga cabange
-      lengkap. Miturut hipotesis induksi,
+      jangkep. Miturut hipotesis induksi,
       $\mSat/{M(\Delta)}{!B}[\sigma]$ utawa
       $\mSat{M(\Delta)}{!C}[\sigma]$. Mula
       $\mSat{M(\Delta)}{\indfrm}[\sigma]$.
@@ -178,13 +178,13 @@ $\mSat/{M(\Delta)}{!A}[\sigma]$.
       Yen $\sFmla{\False}{\indfrm}[\sigma] \in \Delta$, mula
       $\sFmla{\True}{!B}[\sigma] \in \Delta$ lan
       $\sFmla{\False}{!C}[\sigma] \in \Delta$ loro-lorone amarga
-      cabange lengkap. Miturut hipotesis induksi,
+      cabange jangkep. Miturut hipotesis induksi,
       $\mSat{M(\Delta)}{!B}[\sigma]$ lan
       $\mSat/{M(\Delta)}{!C}[\sigma]$ loro-lorone. Mula
       $\mSat/{M(\Delta)}{\indfrm}[\sigma]$.}}
   \item \indcase{!A}{\Box !B}{\iftag{probBox}{Latihan.}{Yen
       $\sFmla{\True}{\indfrm}[\sigma] \in \Delta$, mula, amarga
-      cabange lengkap, $\sFmla{\True}{!B}[\sigma.n] \in \Delta$ kanggo
+      cabange jangkep, $\sFmla{\True}{!B}[\sigma.n] \in \Delta$ kanggo
       saben $\sigma.n$ kang wis dienggo ing cabang, yaiku kanggo saben
       $\sigma' \in P(\Delta)$ kang nyukupi $R\sigma\sigma'$. Miturut
       hipotesis induksi, $\mSat{M(\Delta)}{!B}[\sigma']$ kanggo saben
@@ -193,7 +193,7 @@ $\mSat/{M(\Delta)}{!A}[\sigma]$.
 
       Yen $\sFmla{\False}{\indfrm}[\sigma] \in \Delta$, mula kanggo
       sawetara $\sigma.n$, $\sFmla{\False}{!B}[\sigma.n] \in \Delta$
-      amarga cabange lengkap. Miturut hipotesis induksi,
+      amarga cabange jangkep. Miturut hipotesis induksi,
       $\mSat/{M(\Delta)}{!B}[\sigma.n]$. Amarga $R\sigma(\sigma.n)$,
       ana~$\sigma'$ kang nyukupi
       $\mSat/{M(\Delta)}{!B}[\sigma']$. Dadi
@@ -201,14 +201,14 @@ $\mSat/{M(\Delta)}{!A}[\sigma]$.
   \item \indcase{!A}{\Diamond !B}{\iftag{probDiamond}{Latihan.}{Yen
       $\sFmla{\True}{\indfrm}[\sigma] \in \Delta$, mula kanggo sawetara
       $\sigma.n$, $\sFmla{\True}{!B}[\sigma.n] \in \Delta$ amarga
-      cabange lengkap. Miturut hipotesis induksi,
+      cabange jangkep. Miturut hipotesis induksi,
       $\mSat{M(\Delta)}{!B}[\sigma.n]$. Amarga $R\sigma(\sigma.n)$,
       ana~$\sigma'$ kang nyukupi
       $\mSat{M(\Delta)}{!B}[\sigma']$. Dadi
       $\mSat{M(\Delta)}{\indfrm}[\sigma]$.
 
       Yen $\sFmla{\False}{\indfrm}[\sigma] \in \Delta$, mula, amarga
-      cabange lengkap, $\sFmla{\False}{!B}[\sigma.n] \in \Delta$
+      cabange jangkep, $\sFmla{\False}{!B}[\sigma.n] \in \Delta$
       kanggo saben $\sigma.n$ kang wis dienggo ing cabang, yaiku kanggo
       saben $\sigma' \in P(\Delta)$ kang nyukupi $R\sigma\sigma'$.
       Miturut hipotesis induksi, $\mSat/{M(\Delta)}{!B}[\sigma']$

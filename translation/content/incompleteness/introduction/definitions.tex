@@ -11,26 +11,26 @@
 \olsection{Definisi}
 
 Kanggo nindakake proyek Hilbert kang arep
-ngformalkan matematika lan nuduhake yen
+ngformalake matematika lan nuduhake yen
 formalisasi iku konsisten lan jangkep,
 langkah kapisan yaiku milih basa, kerangka
 logis, lan sistem aksioma. Kanggo ancas kita,
 upamane matematika bisa diformalkan ing basa
-orde kapisan. Tegese, ana himpunan !!{constant}s,
+tataran kapisan. Tegese, ana himpunan !!{constant}s,
 !!{function}s, lan !!{predicate}s kang, bebarengan
-karo panggandheng lan kuantor logika orde kapisan,
+karo panggandheng lan kuantor logika tataran kapisan,
 ngidini kita nyatakake pratelan matematika.
 Akeh wong sarujuk yen basa kaya mangkono ana:
 basa teori himpunan, kang mung nduwé $\in$
 minangka simbol nonlogis. Sepisanan, pratelan
 yen basa kang prasaja iku bisa nyatakake akèh
-banget bab mesthi katon ora masuk akal; perlu
+banget bab mesthi katon ora lumrah; perlu
 pakaryan kang akèh kanggo netepake yen meh
 kabeh matematika bisa dinyatakake nganggo
 kosakata kang winates iki. Supaya prasaja,
 saiki kita watesi rembugan marang aritmetika,
 yaiku pérangan matematika kang ngurusi
-bilangan asli~$\Nat$. Basa kang lumrah kanggo
+wilangan natural~$\Nat$. Basa kang lumrah kanggo
 nyatakake fakta aritmetika yaiku~$\Lang L_A$.
 $\Lang L_A$ ngemot siji !!{predicate} rong papan~$<$,
 siji !!{constant}~$\Obj 0$, siji !!{function}
@@ -73,14 +73,14 @@ $\times$ dudu operasi perkalian; iku simbol
 fungsi rong papan (sacara resmi, $\Obj f^2_1$).
 Déné $\cdot$~\emph{pancen} fungsi perkalian lumrah.
 Yen ana tulisan kaya $n \cdot m$, tegesé asil
-perkalian bilangan $n$ lan~$m$; yen ana tulisan
+perkalian wilangan $n$ lan~$m$; yen ana tulisan
 kaya $x \times y$, kang dirembug yaiku suku
 ing basa aritmetika. Ing model baku, simbol
 fungsi~$\times$ diinterpretasi minangka fungsi
-$\cdot$ ing bilangan asli. Kanggo panjumlahan,
+$\cdot$ ing wilangan natural. Kanggo panjumlahan,
 kita nggunakake $+$ minangka simbol fungsi
 ing basa aritmetika lan uga minangka fungsi
-panjumlahan ing bilangan asli. Ing kene konteks
+panjumlahan ing wilangan natural. Ing kene konteks
 kang nemtokake tegesé.
 
 \begin{defn}
@@ -106,13 +106,14 @@ $\Gamma_0$ tumrap akibat semantis. Netepake
 teori kanthi cara iki mung migunani yen
 $\Gamma_0$ ditemtokake kanthi cetha, umpamane
 !!{element}s saka~$\Gamma_0$ didhaptar.
-Paling ora, $\Gamma_0$ kudu bisa diputusake,
+Kanggo definisi efektif kang digunakake ing buku iki,
+kita milih $\Gamma_0$ kang bisa diputusake,
 yaiku kudu ana tes komputabel kanggo mutusake
 apa !!a{sentence} kalebu unsur~$\Gamma_0$
 utawa ora. !!{sentence}s ing~$\Gamma_0$
 diarani \emph{aksioma} tumrap~$\Gamma$,
 dene $\Gamma$ diarani \emph{diaksiomatisasi}
-dening~$\Gamma_0$.
+dening~$\Gamma_0$. Cathetan koreksi sumber OLPL-774: himpunan aksioma kang diwenehake bisa uga mung nduweni enumerasi komputabel tanpa tes kaanggotaan kang bisa diputusake; syarat bisa diputusake ing definisi sabanjure saiki dijlentrehake minangka pilihan definisi kanggo istilah bisa diwenehi aksioma efektif ing buku iki, dudu syarat umum supaya himpunan aksioma bisa ditetepake.
 
 \begin{defn}
 Teori~$\Gamma$ \emph{diaksiomatisasi}
@@ -216,7 +217,7 @@ $\Gamma \Entails \lnot !A$.
 \end{defn}
 
 \begin{explain}
-Miturut Teorema Kelengkapan,
+Miturut Teorema Kajangkepan,
 $\Gamma \Entails !A$ yen lan mung yen
 $\Gamma \Proves !A$. Dadi $\Gamma$
 jangkep yen lan mung yen kanggo saben
@@ -335,7 +336,7 @@ Kanthi mangkono, $\Th{Q}$ mbuktekake yen
 nilai~$f$ kanggo argumen $n_1$, $n_2$
 iku~$m$. Malah kita mbutuhake luwih saka iku:
 teori iku uga kudu mbuktekake yen ora ana
-bilangan liya kang dadi nilai~$f$ kanggo
+wilangan liya kang dadi nilai~$f$ kanggo
 argumen $n_1$,~$n_2$. Bab kang padha uga
 kanggo relasi !!{decidable}. Iki bakal
 ditegesi kanthi cetha ing rong definisi
@@ -355,10 +356,10 @@ y) \lif y = \num{m})$.
 \end{defn}
 
 \begin{defn}
-% OLPL-167: Definisi sumber kanggo representasi relasi nggunakake Gamma ing klausa bukti nanging ora ngenalake parameter "ing Gamma" kaya ing definisi fungsi sadurunge.
+% Cathetan parameter teori kanggo representasi relasi dipasang sawise dhaptar.
 !!{formula}~$!A(x_1, \dots, x_k)$
 \emph{!!{represents}} relasi
-$R \subseteq \Nat^k$ yen lan mung yen,
+$R \subseteq \Nat^k$ ing~$\Gamma$ yen lan mung yen,
 \begin{enumerate}
 \item saben $R(n_1, \dots, n_k)$ bener,
   $\Gamma \Proves !A(\num{n_1},
@@ -366,7 +367,7 @@ $R \subseteq \Nat^k$ yen lan mung yen,
 \item saben $R(n_1, \dots, n_k)$ ora bener,
   $\Gamma \Proves \lnot
 !A(\num{n_1}, \dots, \num{n_k})$.
-\end{enumerate}
+\end{enumerate} Cathetan koreksi sumber OLPL-167: Gamma saiki ditepungake minangka parameter teori ing pambuka, cocog karo loro klausa bukti.
 \end{defn}
 
 Teori diarani ``cukup kuwat'' supaya
@@ -396,12 +397,12 @@ Dadi upaya kita kang angel iki bakal ana
 asilé, amarga nuduhake yen teorema-teorema
 ora jangkep ditrapake marang akèh teori.
 Mesthi wae, saben teori kang arep
-ngformalkan ``kabeh matematika'' kudu
+ngformalake ``kabeh matematika'' kudu
 mbuktekake kabeh kang dibuktekake
 dening $\Th{Q}$, amarga paling ora teori
 iku kudu bisa nyakup asil komputasi dhasar.
-Mula saben teori kang bisa dadi calon
-teori kanggo ``kabeh matematika'' uga
+Mula calon teori kanggo ``kabeh matematika'' kang
+konsisten, efektif diaksiomatisasi lan cukup kuwat
 kena teorema-teorema ora jangkep.
 
 

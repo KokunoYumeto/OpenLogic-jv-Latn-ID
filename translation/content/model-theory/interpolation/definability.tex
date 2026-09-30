@@ -13,7 +13,7 @@
 Salah siji panganggone teorema interpolasi kang wigati yaiku
 teorema definabilitas Beth. Kanggo netepake relasi
 $n$-papan~$R$, kita bisa menehi !!a{formula}~$!C$
-kanthi $n$ !!{variable}s bebas kang ora ngemot~$R$.
+kanthi !!{variable}s bebas kang mung saka $n$ posisi relasi lan ora ngemot~$R$. Sawetara posisi kasebut bisa ora katon minangka variabel bebas, kayata kanggo relasi kosong utawa universal.
 Iki dadi definisi \emph{eksplisit} kanggo~$R$ adhedhasar~$!C$.
 Kita uga bisa kandha yen sawijining teori~$\Sigma(P)$
 ing !!{language} kang ngemot !!{predicate}
@@ -92,7 +92,7 @@ loro pratelan iki bener:
 lan kesimpulane banjur langsung tumut.
 Kanggo arah kosok baline, upamane $\Sigma(P)$
 netepake $P$ kanthi implisit. Dhisik kita tambah
-!!{constant}s $c_1$, \dots,~$c_n$ menyang $\Lang{L}$.
+!!{constant}s $c_1$, \dots,~$c_n$ menyang $\Lang{L}$. Konstanta iki kabeh anyar lan beda-beda, ora ana ing basa asli utawa teori.
 Banjur
 \[
 \Sigma(P) \cup \Sigma(P') \Entails
@@ -114,8 +114,7 @@ Banjur $!D(P) \land !D(P') \Entails
 Cathetan koreksi sumber OLPL-119:
 predikat ing sisih tengen ditulis nganggo wangun atomik
 kang padha karo premis lan rumus sabanjure.
-Kita bisa nata maneh supaya saben !!{predicate}
-katon ing sisih dhewe-dhewe saka $\Entails$:
+Kita bisa nata maneh supaya !!{predicate} kang arep dipisahake, yaiku P lan P-prime, katon ing sisih dhewe-dhewe saka $\Entails$. Predikat saka basa dhasar isih bisa ana ing rong sisih:
 \[
 !D(P) \land \Atom{P}{c_1, \dots, c_n} \Entails
 !D(P') \to \Atom{P'}{c_1, \dots, c_n}.
@@ -142,7 +141,7 @@ $!C(c_1,\dots, c_n) \Entails !D(P) \lif
 Yen loro asil iki digandhengake,
 $!D(P) \Entails \Atom{P}{c_1,\dots, c_n}
 \liff !C(c_1, \dots, c_n)$; miturut monotonisitas
-lan generalisasi, kita uga oleh
+lan generalisasi, kita uga oleh. Sadurunge konstanta anyar diganti variabel kanggo generalisasi, variabel kaiket ing interpolan diganti jenenge yen perlu supaya ora nyekel variabel anyar kasebut. Formula definisi kang diasilake mung nduweni variabel bebas saka posisi relasi kang kasebut:
 \[
 \Sigma(P) \Entails
 \lforall[x_1][\dots\lforall[x_n][(\Atom{P}{x_1,\dots, x_n} \liff

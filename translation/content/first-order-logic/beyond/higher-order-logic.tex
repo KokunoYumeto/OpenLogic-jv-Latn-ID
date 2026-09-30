@@ -37,7 +37,7 @@ $\sigma \to \tau$ njlentrehake objek awujud
 fungsi kang nggawa objek tipe~$\sigma$ menyang
 objek tipe~$\tau$. Upamane, kita bisa nduweni
 tipe~$\Omega$ kanggo nilai bebener, "bener" lan
-"kleru", sarta tipe~$\Nat$ kanggo wilangan asli.
+"luput", sarta tipe~$\Nat$ kanggo wilangan asli.
 Ing kene, objek tipe $\Nat \to \Omega$ bisa
 dianggep relasi unari utawa subhimpunan
 saka~$\Nat$; objek tipe $\Nat \to \Nat$ iku
@@ -53,7 +53,7 @@ objek kang arep ditliti. Nanging lumrahe
 luwih cetha yen sintaks logika tipe luwih
 dhuwur ditemtokake saka dhasare. Upamane,
 himpunan tipe winates bisa ditemtokake
-kanthi induksi kaya mangkene:
+kanthi induksi kaya mangkene. Ing kene winates nuduhake pambentukan tipe kanthi langkah sintaktis winates, dudu cacah obyek ing domaine; tipe wilangan asli tetep nduweni obyek tanpa wates:
 \begin{enumerate}
 \item $\Nat$ iku tipe winates.
 \item Yen $\sigma$ lan $\tau$ iku tipe winates,
@@ -97,8 +97,9 @@ nuduhake fungsi kang ditemtokake kanthi
 rekursi dening
 \begin{align*}
 \Obj{R}_{st}(0) & = s \\
-\Obj{R}_{st}(x+1) & = t(x, R_{st}(x)),
+\Obj{R}_{st}(x+1) & = t(x)(R_{st}(x)),
 \end{align*}
+Cathetan koreksi sumber SOL6-F015: term langkah rekursi duwe tipe fungsi kang dicurry, mula aplikasi ditulis kanthi siji argumen banjur argumen sabanjure, manut aturan pembentukan term kang wis diwenehi.
 $\tuple{s, t}$ nuduhake pasangan kang
 komponen kapisane~$s$ lan komponen kapindhone~$t$,
 dene $p_1(s)$ lan~$p_2(s)$ nuduhake unsur
@@ -115,7 +116,7 @@ fungsi nganggo term.
 Cathetan koreksi sumber OLPL-085: ing butir (6)
 variabel x nduweni tipe tau, dudu sigma kaya
 kang katulis ing prosa sumber sakwise rumus iki.
-!!^{formula}s dibangun saka ukara !!{identity}
+!!^{formula}s dibangun saka pratelan !!{identity}
 $\eq[s][t]$ antarane term kanthi tipe padha,
 panyambung proposisional lumrah, lan
 kuantifikasi tumrap tipe luwih dhuwur.

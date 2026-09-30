@@ -44,22 +44,22 @@ bisa mriksa apa $n \in D$ kanthi ngitung
 $!A_n(x)$ dhisik, banjur saka iku
 $\lnot !A_n(\num{n})$. Mesthi wae,
 ngganti nganggo suku $\num{n}$ saben
-kemunculan bebas $x$ ing $!A_n(x)$,
-banjur menehi $!A(\num{n})$ awalan $\lnot$
+panggonan $x$ kang bebas ing $!A_n(x)$,
+banjur menehi $!A_n(\num{n})$ awalan $\lnot$
 bisa ditindakake kanthi mekanis. Miturut
 asumsi, $\Gamma$ iku !!{decidable}, mula
 kita bisa mriksa apa
-% OLPL-168: Sumber ing langkah tes iki nulis A tanpa indeks n, senajan definisi D lan konstruksi sadurunge nggunakake A_n.
-$\lnot !A(\num{n}) \in \Gamma$.
+$\lnot !A_n(\num{n}) \in \Gamma$.
 Yen iya, $n \in D$; yen ora,
 $n \notin D$. Mula $D$ uga !!{decidable}.
+Cathetan koreksi sumber OLPL-168: formula ing langkah prefiks negasi lan tes kaanggotaan D saiki nganggo indeks n, cocog karo formula kang diitung sadurunge.
 
 Amarga $\Gamma$ !!{represents} kabeh sifat
 !!{decidable}, teori iku !!{represents}~$D$.
 Lan kabeh !!{formula}s kang !!{represents}s $D$
 ing~$\Gamma$ ana ing antarane $!A_0(x)$,
 $!A_1(x)$, \dots. Mula tetepna $d$ minangka
-bilangan saengga $!A_d(x)$ !!{represents} $D$
+wilangan saengga $!A_d(x)$ !!{represents} $D$
 ing~$\Gamma$. Yen $d \notin D$, mula amarga
 $!A_d(x)$ !!{represents}~$D$,
 $\Gamma \Proves \lnot !A_d(\num{d})$.
@@ -83,10 +83,13 @@ konsisten kang !!{represents} kabeh relasi
 Kita bakal nuduhake yen $\Th{Q}$ pancen
 !!{represents}s kabeh relasi !!{decidable}.
 Iki ateges saben teori kang ngemot $\Th{Q}$,
-kayata $\Th{PA}$ lan $\Th{TA}$, uga mangkono,
-mula uga ora !!{decidable}. (Amarga kabeh
-teori kasebut bener ing model baku,
-kabeh iku konsisten.)
+kayata $\Th{PA}$ lan $\Th{TA}$, uga makili relasi kasebut.
+Saben perluasan kang konsisten mula ora !!{decidable}.
+(Teori-teori kang dijenengi ing kene bener ing model baku,
+mula teori-teori kasebut konsisten.) Cathetan koreksi sumber SOL6-F075:
+syarat konsistensi perlu kanggo kesimpulan ora bisa diputusake. Perluasan
+kang ora konsisten ngemot kabeh ukara lan gampang diputusake;
+ora saben perluasan nduwe model baku.
 
 Asil iki uga bisa digunakake kanggo entuk
 versi ringkih saka teorema ora jangkep kapisan.
@@ -118,7 +121,7 @@ saka aksioma~$\Gamma$ nganggo fungsi komputabel.
 Saka !!{derivation} kang bener, kita bisa ngitung
 !!{sentence} kang !!{derive}s dening derivasi iku.
 Mula ana fungsi komputabel kang ngenumerasi
-kabeh teorema~$\Gamma$. Sawijining !!{sentence}
+kabeh teorema~$\Gamma$. Sawijining !!{sentence}, yaiku $!A$ kang lagi dipriksa,
 iku teorema saka~$\Gamma$ yen lan mung yen
 $\lnot !A$ dudu teorema, amarga $\Gamma$
 konsisten lan !!{complete}. Mula kita bisa
@@ -181,7 +184,7 @@ aritmetika tanpa~$\times$ kang bener ing
 model baku, jangkep lan uga bisa diputusake.
 Teori iki diarani aritmetika Presburger,
 lan mbuktekake kabeh kabeneran ngenani
-bilangan asli kang bisa dirumusake mung
+wilangan natural kang bisa dirumusake mung
 nganggo $\Obj{0}$, $\prime$, lan~$+$.
 
 \end{document}

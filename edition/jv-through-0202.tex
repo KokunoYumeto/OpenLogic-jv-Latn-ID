@@ -1,0 +1,79 @@
+\documentclass[11pt,openany,a4paper]{memoir}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathpazo}
+\usepackage{microtype}
+\newcommand{\olpath}{../upstream}
+\input{\olpath/sty/open-logic.sty}
+\input{jv-localization.sty}
+\setlrmarginsandblock{28mm}{28mm}{*}
+\setulmarginsandblock{25mm}{28mm}{*}
+\checkandfixthelayout
+\linespread{1.05}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\tolerance=2000
+\emergencystretch=5em
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+\hypersetup{pdftitle={OpenLogic: Dhasar Himpunan, Logika, lan Teori Model - Basa Jawa},pdfauthor={Open Logic Project; Codex translation},pdflang={jv-Latn-ID}}
+\begin{document}
+\begin{titlingpage}
+\raggedright
+{\sffamily\Large OpenLogic\par}
+\vspace{18mm}
+{\sffamily\bfseries\Huge Dhasar Himpunan, Logika, lan Teori Model\par}
+\vspace{6mm}
+{\Large Basa Jawa, aksara Latin\par}
+\vspace{18mm}
+{\large Wacan kumulatif nganti bab interpolasi.\par}
+\vfill
+Terjemahan mesin adhedhasar Open Logic Project.
+Potret sumber kanggo wacan iki: 202 saka 722 berkas sumber wis diterjemahake.
+Edhisi jangkep isih digarap.
+\par\medskip
+Sumber Inggris: OpenLogicProject/OpenLogic, revisi
+\texttt{9620cc73f9c8e0ad003c514a5d3748f29611c4c0}.
+\par\medskip
+Karya asli lan terjemahan iki nganggo
+\href{https://creativecommons.org/licenses/by/4.0/}{Creative Commons Attribution 4.0}.
+Hak lan atribusi komponen asli tetep ditrapake.
+Terjemahan iki ora nuduhake panyengkuyung saka Open Logic Project.
+\end{titlingpage}
+\pagestyle{plain}
+\input{../translation/content/open-logic-about.tex}
+\clearpage
+\tableofcontents*
+
+\olimport[../translation/content/sets-functions-relations]{sets-functions-relations-complete}
+
+% The source's propositional part also imports the first-order proof chapters.
+% This reader presents those chapters once in the first-order part below.
+\olpart{pl}{Logika Proposisional}
+\begin{editorial}
+Perangan iki ngemot bab sintaksis lan semantik logika proposisional.
+Sistem bukti kang digunakake bebarengan karo logika sepisanan
+kapacak sapisan ing perangan logika sepisanan ing ngisor iki.
+\end{editorial}
+\olimport[../translation/content/propositional-logic/syntax-and-semantics]{syntax-and-semantics}
+\OLEndPartHook
+
+\olimport[../translation/content/first-order-logic]{first-order-logic}
+
+% Lindstrom belongs to the next, incomplete chapter and is not in this reader.
+\olpart{mod}{Teori Model}
+\begin{editorial}
+Perangan iki ngemot bab dhasar teori model, model aritmetika,
+lan interpolasi. Bab Lindstr\"om isih digarap lan durung
+dilebokake ing wacan iki.
+\end{editorial}
+\olimport[../translation/content/model-theory/basics]{basics}
+\olimport[../translation/content/model-theory/models-of-arithmetic]{models-of-arithmetic}
+\olimport[../translation/content/model-theory/interpolation]{interpolation}
+\OLEndPartHook
+
+\input{jv-errata.tex}
+\bibliographystyle{natbib-oup}
+\bibliography{open-logic}
+\end{document}

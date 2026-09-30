@@ -32,7 +32,7 @@ ing antarane konstanta anyar kasebut.
 \begin{prop}
 \ollabel{prop:lang-exp}
 Yen $\Gamma$ konsisten ing $\Lang L$ lan $\Lang L'$ dipikolehi saka
-$\Lang L$ kanthi nambah !!a{denumerable} himpunan !!{constant}s anyar
+$\Lang L$ kanthi nambah himpunan kang !!a{denumerable} saka !!{constant}s anyar
 $\Obj d_0$, $\Obj d_1$, \dots, mula $\Gamma$ konsisten ing~$\Lang L'$.
 \end{prop}
 
@@ -76,7 +76,7 @@ konsisten jenuh~$\Gamma'$.
 
 \begin{proof}
 Saka himpunan ukara konsisten~$\Gamma$ ing basa~$\Lang{L}$,
-gedhekna basane kanthi nambah !!a{denumerable} himpunan
+gedhekna basane kanthi nambah himpunan kang !!a{denumerable} saka
 !!{constant}s anyar kanggo mbentuk~$\Lang{L'}$. Miturut
 \olref{prop:lang-exp}, $\Gamma$ isih konsisten ing basa kang luwih
 sugih iki. Sabanjure, upamana $!D_i$ kaya ing
@@ -89,7 +89,7 @@ yaiku, $\Gamma_{n+1} = \Gamma \cup \{ !D_0, \dots, !D_n \}$, lan
 tetepna $\Gamma' = \bigcup_{n} \Gamma_n$. Cetha yen $\Gamma'$ jenuh.
 
 Yen $\Gamma'$ ora konsisten, kanggo sawijine $n$, $\Gamma_n$ mesthi
-ora konsisten (Latihan: terangna sebabe). Mula, kanggo nuduhake yen
+ora konsisten (Gladhen: terangna sebabe). Mula, kanggo nuduhake yen
 $\Gamma'$ konsisten, cukup dituduhake kanthi induksi marang~$n$ yen
 saben himpunan~$\Gamma_n$ konsisten.
 
@@ -153,11 +153,11 @@ Saiki bakal dituduhake yen himpunan konsisten kang \emph{jangkep} lan
 jenuh nduweni sipat yen \iftag{prvAll}{himpunan iku ngemot
   !!{sentence} kang dikuantifikasi universal yen lan mung yen ngemot
   kabeh conto ukarane}{}\iftag{defAll,defEx}{}{ lan
-  }\iftag{prvAll}{himpunan iku ngemot !!{sentence} kang dikuantifikasi
+  }\iftag{prvEx}{himpunan iku ngemot !!{sentence} kang dikuantifikasi
   eksistensial yen lan mung yen ngemot paling ora siji conto ukarane}{}.
 Iki bakal digunakake kanggo nuduhake yen !!{structure} kang bakal
 diasilake saka himpunan kang jangkep, konsisten, lan jenuh ndadekake
-kabeh ukara kang dikuantifikasi ing himpunan kasebut bener.
+kabeh ukara kang dikuantifikasi ing himpunan kasebut bener. Cathetan koreksi sumber OLPL-740: cabang andharan eksistensial nggunakake tag prvEx, cocog karo proposisi lan bukti jejer; sumber salah nulis prvAll ing cabang iki.
 \end{explain}
 
 \begin{prop}\ollabel{prop:saturated-instances}
@@ -173,7 +173,7 @@ Upamana $\Gamma$ iku jangkep, konsisten, lan jenuh.
 \begin{proof}
   \begin{tagenumerate}{prvEx,prvAll}
   \tagitem{prvEx}{%
-    \iftag{probEx}{Latihan.}{Kaping pisan, upamana
+    \iftag{probEx}{Gladhen.}{Kaping pisan, upamana
       $\lexists[x][!A(x)] \in \Gamma$. Amarga $\Gamma$ jenuh,
       $(\lexists[x][!A(x)] \lif !A(c)) \in \Gamma$ kanggo sawijine
       !!{constant}~$c$. Miturut
@@ -181,14 +181,14 @@ Upamana $\Gamma$ iku jangkep, konsisten, lan jenuh.
       lan \olref[ccs]{prop:ccs}\olref[ccs]{prop:ccs-prov-in}, $!A(c)
       \in \Gamma$.
 
-    Kanggo arah liyane, kejenuhan ora dibutuhake: upamana
+    Kanggo arah liyane, sipat jenuh ora dibutuhake: upamana
     $!A(t) \in \Gamma$. Banjur $\Gamma \Proves
     \lexists[x][!A(x)]$ miturut
       \tagrefs{prfAX/{fol:axd:qpr:prop:provability-quantifiers},prfSC/{fol:seq:qpr:prop:provability-quantifiers},prfND/{fol:ntd:qpr:prop:provability-quantifiers},prfTab/{fol:tab:qpr:prop:provability-quantifiers}}, butir~(1). Miturut
     \olref[ccs]{prop:ccs}\olref[ccs]{prop:ccs-prov-in},
     $\lexists[x][!A(x)] \in \Gamma$.}}{}
   \tagitem{prvAll}{%
-    \iftag{probAll}{Latihan.}{Upamana $!A(t) \in \Gamma$ kanggo
+    \iftag{probAll}{Gladhen.}{Upamana $!A(t) \in \Gamma$ kanggo
       kabeh term katutup~$t$. Kanggo nggayuh cengkah, upamana
       $\lforall[x][!A(x)] \notin \Gamma$. Amarga $\Gamma$ jangkep,
       $\lnot\lforall[x][!A(x)] \in \Gamma$. Amarga jenuh,
@@ -196,7 +196,7 @@ Upamana $\Gamma$ iku jangkep, konsisten, lan jenuh.
         \Gamma$}{$(\lnot\lforall[x][!A(x)] \lif \lnot !A(c)) \in
         \Gamma$} kanggo sawijine !!{constant}~$c$. Miturut hipotesis,
       amarga $c$ minangka term katutup, $!A(c) \in \Gamma$. Nanging
-      iki bakal ndadekake $\Gamma$ ora konsisten. (Latihan: wenehana
+      iki bakal ndadekake $\Gamma$ ora konsisten. (Gladhen: wenehana
       !!{derivation} kang nuduhake yen
       \[
       \lnot \lforall[x][!A(x)],
@@ -206,7 +206,7 @@ Upamana $\Gamma$ iku jangkep, konsisten, lan jenuh.
       \]
       ora konsisten.)
 
-      Kanggo arah kosok baline, kita ora mbutuhake kejenuhan: upamana
+      Kanggo arah kosok baline, kita ora mbutuhake sipat jenuh: upamana
       $\lforall[x][!A(x)] \in \Gamma$. Banjur $\Gamma \Proves !A(t)$
       miturut
       \tagrefs{prfAX/{fol:axd:qpr:prop:provability-quantifiers},prfSC/{fol:seq:qpr:prop:provability-quantifiers},prfND/{fol:ntd:qpr:prop:provability-quantifiers},prfTab/{fol:tab:qpr:prop:provability-quantifiers}},

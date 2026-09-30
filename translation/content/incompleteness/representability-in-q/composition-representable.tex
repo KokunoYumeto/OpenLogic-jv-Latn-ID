@@ -15,14 +15,14 @@ h(x_0,\dots,x_{l-1}) = f(g_0(x_0,\dots,x_{l-1}), \dots,
 g_{k-1}(x_0,\dots,x_{l-1})).
 \]
 ing ngendi kita wis nemokake !!{formula}s $!A_f, !A_{g_0}, \dots,
-!A_{g_{k-1}}$ kang merepresentasikake fungsi $f$, lan $g_0$,
+!A_{g_{k-1}}$ kang makili fungsi $f$, lan $g_0$,
 \dots,~$g_{k-1}$ miturut urutane. Kita kudu nemokake !!a{formula}~$!A_h$
-kang merepresentasikake $h$.
+kang makili $h$.
 
 Ayo wiwiti saka kasus prasaja, nalika kabeh fungsi nduweni $1$ argumen,
-yaiku $h(x) = f(g(x))$. Yen $!A_f(y, z)$ merepresentasikake~$f$, lan
-$!A_g(x, y)$ merepresentasikake~$g$, kita mbutuhake !!a{formula}~$!A_h(x, z)$
-kang merepresentasikake~$h$. Gatekna yen $h(x) = z$ yen lan mung yen ana~$y$
+yaiku $h(x) = f(g(x))$. Yen $!A_f(y, z)$ makili~$f$, lan
+$!A_g(x, y)$ makili~$g$, kita mbutuhake !!a{formula}~$!A_h(x, z)$
+kang makili~$h$. Gatekna yen $h(x) = z$ yen lan mung yen ana~$y$
 saengga $z = f(y)$ lan $y = g(x)$. (Yen $h(x) = z$, mula $g(x)$ iku
 $y$ kaya mangkono; yen $y$ kaya mangkono ana, mula amarga $y = g(x)$
 lan $z = f(y)$, kita nduweni $z = f(g(x))$.) Iki nuduhake yen
@@ -39,9 +39,9 @@ Yen $h(n) = m$, mula $\Th{Q} \Proves !A_h(\num{n}, \num{m})$.
 Upamana $h(n) = m$, yaiku $f(g(n)) = m$. Tetepna $k = g(n)$. Mula
 \begin{align*}
   \Th{Q} & \Proves !A_g(\num{n}, \num{k})
-  \intertext{amarga $!A_g$ merepresentasikake~$g$, lan}
+  \intertext{amarga $!A_g$ makili~$g$, lan}
   \Th{Q} & \Proves !A_f(\num{k}, \num{m})
-  \intertext{amarga $!A_f$ merepresentasikake~$f$. Dadi,}
+  \intertext{amarga $!A_f$ makili~$f$. Dadi,}
   \Th{Q} & \Proves !A_g(\num{n}, \num{k}) \land !A_f(\num{k}, \num{m})
   \intertext{lan mula uga}
   \Th{Q} & \Proves \lexists[y][(!A_g(\num{n}, y) \land !A_f(y, \num{m}))],
@@ -59,9 +59,9 @@ Yen $h(n) = m$, mula $\Th{Q} \Proves \lforall[z][(!A_h(\num{n}, z) \lif
 Upamana $h(n) = m$, yaiku $f(g(n)) = m$. Tetepna $k = g(n)$. Mula
 \begin{align*}
   \Th{Q} & \Proves \lforall[y][(!A_g(\num{n}, y) \lif \eq[y][\num{k}])]
-  \intertext{amarga $!A_g$ merepresentasikake~$g$, lan}
+  \intertext{amarga $!A_g$ makili~$g$, lan}
   \Th{Q} & \Proves \lforall[z][(!A_f(\num{k}, z) \lif \eq[z][\num{m}])]
-  \intertext{amarga $!A_f$ merepresentasikake~$f$. Kanthi logika
+  \intertext{amarga $!A_f$ makili~$f$. Kanthi logika
     sithik wae, kita uga bisa nuduhake}
   \Th{Q} & \Proves \lforall[z][(\lexists[y][(!A_g(\num{n}, y) \land
       !A_f(y, z))] \lif \eq[z][\num{m}])].
@@ -74,15 +74,15 @@ nduweni luwih saka~$1$ argumen.
 
 \begin{prop}
 \ollabel{prop:rep-composition}
-Yen $!A_f(y_0, \dots, y_{k-1}, z)$ merepresentasikake $f(y_0, \dots, y_{k-1})$
-ing~$\Th{Q}$, lan $!A_{g_i}(x_0, \dots, x_{l-1}, y)$ merepresentasikake
+Yen $!A_f(y_0, \dots, y_{k-1}, z)$ makili $f(y_0, \dots, y_{k-1})$
+ing~$\Th{Q}$, lan $!A_{g_i}(x_0, \dots, x_{l-1}, y)$ makili
 $g_i(x_0, \dots, x_{l-1})$ ing~$\Th{Q}$, mula
 \begin{multline*}
   \lexists[y_0\dots][\lexists[y_{k-1}][(!A_{g_0}(x_0,\dots,x_{l-1},y_0) \land
       \dots \land {}]]\\
   !A_{g_{k-1}}(x_0,\dots,x_{l-1},y_{k-1}) \land !A_f(y_0,\dots,y_{k-1},z))
 \end{multline*}
-merepresentasikake
+makili
 \[
 h(x_0, \dots, x_{l-1}) = f(g_0(x_0, \dots, x_{l-1}), \dots, g_{k-1}(x_0,
 \dots, x_{l-1})).
@@ -90,13 +90,13 @@ h(x_0, \dots, x_{l-1}) = f(g_0(x_0, \dots, x_{l-1}), \dots, g_{k-1}(x_0,
 \end{prop}
 
 \begin{proof}
-Latihan.
+Gladhen.
 \end{proof}
 
 \begin{prob}
-Kanthi ngetutake bukti \olref[inc][req][cmp]{prop:rep2} lan
+Kanthi ngetutake bukti \olref[inc][req][cmp]{prop:rep1} lan
 \olref[inc][req][cmp]{prop:rep2} minangka tuntunan, buktekna
-\olref[inc][req][cmp]{prop:rep-composition} kanthi rinci.
+\olref[inc][req][cmp]{prop:rep-composition} kanthi rinci. Cathetan koreksi sumber OLPL-781: pranala tuntunan kapisan saiki proposisi nilai fungsi, lan pranala kapindho proposisi ketunggalan output. Pengulangan pranala ing sumber wis dibenerake.
 \end{prob}
 
 \end{document}

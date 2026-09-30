@@ -11,12 +11,11 @@
 
 Saiki kita bisa nuduhake yen definisi liwat rekursi primitif bisa
 ``ditiru'' nganggo panggolekan tanpa wates reguler liwat fungsi beta.
-Upamana kita duwe $f(\vec x)$ lan $g(\vec x, y, z)$. Mula fungsi~$h(x,\vec
-z)$ kang ditegesi saka $f$ lan~$g$ liwat rekursi primitif yaiku
+Upamana kita duwe $f(\vec x)$ lan $g(\vec x, y, z)$. Mula fungsi~$h(\vec x,y)$ kang ditegesi saka $f$ lan~$g$ liwat rekursi primitif yaiku
 \begin{align*}
 h(\vec x, 0) & =  f(\vec x) \\
 h(\vec x, y+1) & =  g(\vec x, y, h(\vec x, y)).
-\end{align*}
+\end{align*} Cathetan koreksi sumber OLPL-779: argumen h ing ukara sadurunge saiki vektor x lan y, padha karo persamaan rekursi lan rumus sabanjure.
 Kita kudu nuduhake yen $h$ bisa ditegesi saka $f$ lan~$g$ mung nganggo
 komposisi lan panggolekan tanpa wates reguler, kanthi nggunakake
 fungsi dhasar lan fungsi kang ditegesi saka fungsi mau nganggo
@@ -32,20 +31,22 @@ panggolekan tanpa wates reguler.
 
 \begin{proof}
 Luwih dhisik, tegesna fungsi bantu $\hat h(\vec x, y)$ kang mbalekake
-bilangan paling cilik~$d$ saengga $d$ ngodeake urutan kang nyukupi
+wilangan paling cilik~$d$ saengga $d$ ngodeake urutan kang nyukupi
 \begin{enumerate}
 \item $(d)_0 = f(\vec x)$, lan
 \item kanggo saben $i < y$, $(d)_{i+1} = g(\vec x, i, (d)_i)$,
 \end{enumerate}
 ing kene $(d)_i$ iku cekakan saka $\beta(d,i)$. Kanthi tembung liya, $\hat h$
-mbalekake urutan $\tuple{h(\vec x, 0), h(\vec x, 1), \dots, h(\vec
+mbalekake kode kanggo urutan $\tuple{h(\vec x, 0), h(\vec x, 1), \dots, h(\vec
 x, y)}$. Kita bisa nulis $\hat h$ dadi
 \[
 \hat h(\vec x, y) = \umin{d}{(\beta(d,0) = f(\vec x) \land \bforall{i <
-  y}{\beta(d,i+1) = g(\vec x, i,\beta(d,i)})}.
+  y}{\beta(d,i+1) = g(\vec x, i,\beta(d,i))})}.
 \]
-Gatekna: ing kene ora perlu rekursi primitif, mung minimalisasi. Fungsi
-kang diminimalisasi iku reguler amarga lema fungsi beta
+Cathetan koreksi sumber OLPL-780: output hat-h iku wilangan kode d kang nggambarake urutan nilai, dudu urutan iku dhewe.
+Cathetan koreksi sumber SOL6-F086: kurung fungsi g lan kurung konjungsi kang diminimalisasi saiki ditutup kanthi pas.
+Gatekna: ing kene ora perlu rekursi primitif, mung panggolekan tanpa wates. Predikat
+kang digoleki iku reguler amarga lema fungsi beta
 \olref[bet]{lem:beta}.
 
 Nanging saiki kita nduweni

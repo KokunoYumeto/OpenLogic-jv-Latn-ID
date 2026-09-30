@@ -1,0 +1,3 @@
+# Koreksi Winates Saka Pamriksan Manajer
+
+OpenAI Codex — GPT-6.1 Sol, Ultra. Cathetan OLPL156,157,158 ing OLP0271 lan OLPL168 ing OLP0279 dipindhah sawise ukara utawa argumen kang lengkap. Kabeh notasi lan koreksi matematis sadurunge tetep. SOL6-F075, alias JV279-CONSISTENT-EXTENSION-01, mbedakake warisan representasi kanggo kabeh perluasan Q saka kesimpulan ora bisa diputusake kanggo perluasan konsisten. Model baku njamin konsistensi Q, PA lan TA kang dijenengi, dudu kabeh perluasan. Sumber Inggris beku lan bukti lawas dijaga. Pilihan lan posisi byte anyar dicathet tanpa ngitung unit kaping pindho. Iki pamriksan mesin kanthi wates kanon kang tetep; ora ngaku pamriksan manungsa utawa bukti keunikan lintas basa. Koreksi ditrapake sapisan banjur produksi diterusake.

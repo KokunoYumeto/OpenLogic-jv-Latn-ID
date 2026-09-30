@@ -9,7 +9,8 @@
 \olfileid{cmp}{rec}{tre}
 \olsection{Wit}
 
-Kadhang migunani yen wit diwakili minangka wilangan asli,
+Kadhang migunani yen wit diwakili minangka wilangan asli. Cathetan cakupan panyunting: wit ing perangan iki wit kanthi oyod kang winates.
+Kaya mangkene,
 kaya rerangken kang bisa diwakili nganggo wilangan, dene
 sipat lan operasi ing rerangken mau diwakili dening relasi
 lan fungsi rekursif primitif ing kode-kodene. Kita bakal
@@ -54,6 +55,7 @@ dikode nganggo $\tuple{2,
   nyambungake rerangken kang wis ngemot subwit
   nganti tataran $n$ karo rerangken kabeh subwit
   langsung saka subwit nganti tataran $n$.
+  Cathetan koreksi sumber OLPL-131: rekursi kang dicithak nglumpukake subwit nganti tataran n, dudu mung subwit persis ing tataran n.
   % OLPL-131: Rekurensi n+1 nambah subwit marang kabeh asil nganti n;
   % asil iki kumulatif, dudu mung subwit persis tataran n.
   Kanggo ndhaptar kabeh subwit langsung iki, gatekna
@@ -72,6 +74,7 @@ dikode nganggo $\tuple{2,
     rerangken kosong: unsur ing njaban dawa
     diwenehi nilai nol, lan subwit langsung saka
     kode kosong uga kosong.
+    Cathetan panyunting OLPL-132: suku tambahan ing kode iki ora nambah subwit amarga ISubtrees saka kode nol menehi rerangken kosong. Iki dudu sipat kanggo sembarang fungsi f.
     % OLPL-132: g(s,k) ngemot indeks 0 nganti k;
     % nalika k=dawa s, suku tambahan f(0) iku kosong.
     Kita bisa nggunakake fungsi iki kanggo netepake
@@ -84,7 +87,8 @@ dikode nganggo $\tuple{2,
     Tataran paling gedhe saka subwit ing wit kang
     dikode nganggo~$t$, yaiku jarak paling gedhe
     antarane oyod lan simpul godhong, diwatesi
-    dening kode~$t$. Mula rerangken kode kabeh
+    dening kode~$t$. Cathetan panyunting: saben kode subwit langsung katon minangka unsur rerangken ing kode induke, mula faktor prima kanthi pangkat kode subwit ditambah siji luwih gedhe tinimbang kode subwit kasebut. Kode mudhun kanthi ketat saben liwat siji rusuk, mula dawa lintasan oyod menyang godhong diwatesi dening kode oyod.
+    Mula rerangken kode kabeh
     subwit saka wit kang dikode nganggo~$t$
     diwenehake dening $\fn{hSubtreeSeq}(t, t)$.
 \end{proof}

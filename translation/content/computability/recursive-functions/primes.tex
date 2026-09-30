@@ -16,7 +16,7 @@ relasi “$x$ mbagi $y$,” kang ditulis $x \mid y$. Relasi
 $x \mid y$ bener yen $y$ dipara~$x$ tanpa
 turah, yaiku yen $y$ iku asil ping-pingan
 sawenehing wilangan wutuh karo~$x$. (Yen relasi
-iki ora bener, mula kanggo pembagi kang positif,
+iki ora bener, mula kanggo wilangan pambagi kang positif,
 turah nalika $y$ dipara $x$
 iku $> 0$; kita nulis $x \nmid y$.)
 % OLPL-125: Sumber mbalikke urutan kang dibagi lan pembagi ing
@@ -32,13 +32,13 @@ eksistensial mawa wates saka $=$ lan perkalian:
 \[
 x \mid y \defiff \bexists{z \leq y}{(x \cdot z) = y}.
 \]
-Mula kita wis nuduhake yen $x \mid y$ rekursif primitif.
+Mula kita wis nuduhake yen $x \mid y$ rekursif primitif. Cathetan koreksi sumber OLPL-125: turah kasebut saka y dipara x, dudu kosok baline. Cathetan koreksi sumber OLPL-126: kang dibutuhake mung ana saksi kang nyukupi wates; kanggo input loro-lorone nol, saksi nol cukup.
 
 Wilangan asli~$x$ diarani \emph{prima} yen dudu $0$
 utawa $1$ lan mung bisa dibagi dening $1$ lan
 awake dhewe. Kanthi tembung liya, kanggo wilangan
 prima, yen $y \mid x$, mesthi $y = 1$ utawa~$y=x$.
-Kanggo mriksa apa $x$~prima, kita mung perlu mriksa
+Sawise mriksa yen input paling ora loro, kanggo mriksa apa $x$~prima, kita mung perlu mriksa
 $y \mid x$ kanggo kabeh $y \le x$, amarga yen
 $y > x$, mesthi~$y \nmid x$. Dadi relasi
 $\fn{Prime}(x)$, kang bener yen lan mung yen $x$
@@ -54,7 +54,7 @@ lan sateruse. Gatekna fungsi $p(x)$ kang ngasilake
 prima kaping $x$ ing rerangken kasebut, yaiku
 $p(0) = 2$, $p(1) = 3$, $p(2) = 5$, lan sateruse.
 (Kanggo nggampangake, kita kerep nulis $p(x)$
-minangka $p_x$ ($p_0=2$, $p_1=3$, lan sateruse.)
+minangka $p_x$, kanthi $p_0=2$, $p_1=3$, lan sateruse.)
 
 Yen kita nduweni fungsi
 $\fn{nextPrime(x)}$, kang ngasilake wilangan prima
@@ -83,7 +83,7 @@ tinimbang siji, upamana $p_n$ prima paling gedhe
 kang $\le x$, lan gatekna asil kali $p =
 p_0\cdot p_1 \cdot \dots \cdot p_n$ saka kabeh
 prima~$\le x$. Yen wilangan asline nol utawa siji,
-prima loro langsung menehi kesimpulan kang padha.
+prima loro langsung menehi kesimpulan kang padha. Cathetan koreksi sumber OLPL-127: prima paling gedhe kang ora ngluwihi input mung ana yen input paling ora loro.
 % OLPL-127: Bukti nganggo "prima paling gedhe <= x" mung ana
 % yen x paling ora loro; kasus nol lan siji dipriksa langsung.
 $p+1$ iku prima utawa ana prima ing antarane

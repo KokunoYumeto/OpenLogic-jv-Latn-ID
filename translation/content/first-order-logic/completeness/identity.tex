@@ -90,11 +90,11 @@ Rampungna bukti~\olref[fol][com][ide]{prop:approx-equiv}.
 \begin{defn}
 Upamana $\Gamma^*$ minangka himpunan konsisten lan !!{complete} ing
 basa~$\Lang L$, $t$ minangka term katutup, lan $\approx$ kaya ing
-definisi sadurunge. Banjur:
+definisi sadurunge. Cathetan koreksi sumber OLPL-742: subskrip nol ing notasi himpunan term ing perangan iki nuduhake kabeh term katutup; sumber nganggo notasi kabeh term, sanadyan relasi lan domain model mung tumrap term katutup. Banjur:
 \[
-\equivrep{t}{\approx} = \Setabs{t'}{t'\in \Trm[L], t \approx t'}
+\equivrep{t}{\approx} = \Setabs{t'}{t'\in {\Trm[L]}_0, t \approx t'}
 \]
-lan $\equivclass{\Trm[L]}{\approx} = \Setabs{\equivrep{t}{\approx}}{t \in \Trm[L]}$.
+lan $\equivclass{{\Trm[L]}_0}{\approx} = \Setabs{\equivrep{t}{\approx}}{t \in {\Trm[L]}_0}$.
 \end{defn}
 
 \begin{defn}
@@ -103,7 +103,7 @@ Upamana $\Struct M = \Struct M(\Gamma^*)$ minangka model term
 kanggo~$\Gamma^*$ saka \olref[mod]{defn:termmodel}. Banjur
 $\Struct{\equivclass{M}{\approx}}$ yaiku !!{structure} ing ngisor iki:
 \begin{enumerate}
-\item $\Domain{\equivclass{M}{\approx}} = \equivclass{\Trm[L]}{\approx}$.
+\item $\Domain{\equivclass{M}{\approx}} = \equivclass{{\Trm[L]}_0}{\approx}$.
 \item $\Assign{c}{\equivclass{M}{\approx}} = \equivrep{c}{\approx}$
 \item $\Assign{f}{\equivclass{M}{\approx}}(\equivrep{t_1}{\approx}, \dots,
   \equivrep{t_n}{\approx}) = \equivrep{\Atom{f}{t_1,\dots, t_n}}{\approx}$
@@ -117,7 +117,7 @@ $\Struct{\equivclass{M}{\approx}}$ yaiku !!{structure} ing ngisor iki:
 \begin{explain}
 Elinga yen kita wis nemtokake $\Assign{f}{\equivclass{M}{\approx}}$
 lan $\Assign{R}{\equivclass{M}{\approx}}$ kanggo unsur-unsur saka
-$\equivclass{\Trm[L]}{\approx}$ kanthi ngrujuk unsur kasebut minangka
+$\equivclass{{\Trm[L]}_0}{\approx}$ kanthi ngrujuk unsur kasebut minangka
 $\equivrep{t}{\approx}$, yaiku lumantar
 \emph{wakil}~$t \in \equivrep{t}{\approx}$. Kita kudu mesthekake yen
 definisi iki ora gumantung marang pilihan wakil kasebut, yaiku yen

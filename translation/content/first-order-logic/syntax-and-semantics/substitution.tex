@@ -12,7 +12,7 @@
 
 \begin{defn}[Substitusi ing term]
 Kita nemtokake $\Subst{s}{t}{x}$, yaiku asil saka \emph{nyubstitusikake}
-$t$ kanggo saben kemunculan~$x$ ing $s$, kanthi rekursif:
+$t$ kanggo saben muncule~$x$ ing $s$, kanthi rekursif:
 \begin{enumerate}
 \item \indcase{s}{c}{$\Subst{\indfrm}{t}{x}$ mung $s$.}
 
@@ -27,7 +27,7 @@ $t$ kanggo saben kemunculan~$x$ ing $s$, kanthi rekursif:
 \end{defn}
 
 \begin{defn}
-Term~$t$ iku \emph{!!{free for}} $x$ ing $!A$ yen ora ana kemunculan
+Term~$t$ iku \emph{!!{free for}} $x$ ing $!A$ yen ora ana muncule
 bebas~$x$ ing $!A$ kang dumunung ing cakupan kuantor kang ngiket
 sawijining variabel ing~$t$.
 \end{defn}
@@ -45,7 +45,7 @@ sawijining variabel ing~$t$.
 \begin{defn}[Substitusi ing !!a{formula}]
 Yen $!A$ iku !!a{formula}, $x$~iku !!a{variable}, lan $t$~iku term
 kang !!{free for}~$x$ ing~$!A$, mula $\Subst{!A}{t}{x}$ yaiku asil saka
-nyubstitusikake $t$ kanggo kabeh kemunculan bebas~$x$ ing~$!A$.
+nyubstitusikake $t$ kanggo kabeh muncule bebas~$x$ ing~$!A$.
 \begin{enumerate}
 \tagitem{prvFalse}{\indcase{!A}{\lfalse}{$\Subst{\indfrm}{t}{x}$
     yaiku $\lfalse$.}}{}
@@ -108,7 +108,7 @@ $\lforall[x][\lexists[y][x < y]]$ (ing kene $!B$ yaiku $\lexists[y][x <
   y]$). Iki ukara kang bener, upamane, tumrap wilangan asli:
 kanggo saben wilangan~$x$ ana wilangan~$y$ kang luwih gedhe tinimbang
 wilangan kasebut. Yen $y$ diidini dadi panggantos kanggo~$x$, kita bakal entuk
-$\Subst{!B}{y}{x} \ident \lexists[y][y < y]$, kang salah. Kita
+$\Subst{!B}{y}{x} \ident \lexists[y][y < y]$, kang luput. Kita
 nyegah iki kanthi syarat supaya ora ana variabel bebas ing~$t$ kang
 bakal dadi kaiket dening kuantor ing~$!A$.
 \end{explain}
