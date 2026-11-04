@@ -1,24 +1,14 @@
-# OpenLogic ing Basa Jawa
-
-Terjemahan OpenLogic nganggo basa Jawa aksara Latin (jv-Latn-ID).
-Ragam utama yaiku ngoko tinulis kanggo andharan akademik.
-
-**Isih digarap: sumber saiki ngemot 722 saka 722 berkas kang wis diterjemahake.**
-Kabeh 722 berkas sumber wis diterjemahake, kalebu perangan alternatif lan
-cathetan editor. Validasi maneh bukti kanon lan wacan jangkep isih digarap.
-Wacan PDF kang wis diterbitake tetep ngemot 24 unit sumber lan dibangun kanggo rilis
-[v0.2.0](https://github.com/KokunoYumeto/OpenLogic-jv-Latn-ID/releases/tag/v0.2.0),
-kanthi TeX kumulatif langsung, ZIP sumber editable jangkep, lan EPUB3
-reflowable minangka pasangan rilis. Potret sumber v0.2.0 ngemot 118 unit;
-potret sumber saiki luwih amba tinimbang wacan PDF lan EPUB mau.
-Edhisi jangkep tetep dadi ancas, kalebu kabeh isi ing njaba
-alur wacan baku.
+# OpenLogic ing Basa Jawa: terjemahan *Open Logic Text*
 
 Iki terjemahan basa Jawa mandhiri sing ditulis kanthi mesin saka
 [Open Logic Project](https://openlogicproject.org/), kang sumber asale dikunci ing
 revisi 9620cc73f9c8e0ad003c514a5d3748f29611c4c0.
+Terjemahan OpenLogic nganggo basa Jawa aksara Latin (jv-Latn-ID).
+Ragam utama yaiku ngoko tinulis kanggo andharan akademik.
+Kabeh 722 berkas sumber wis diterjemahake, kalebu perangan alternatif lan cathetan editor.
 Terjemahan iki kalebu [katalog terjemahan OpenLogic](https://github.com/KokunoYumeto/OpenLogic-translations).
-Ora ana pratelan yen proyek asal nyengkuyung edhisi iki utawa yen wis ana panlitian mandhiri dening ahli basa Jawa.
+
+## Carane digawe
 
 Terjemahan, koreksi sumber, panyuntingan, lan pamandingan makna dening
 panulis sing padha ditindakake nganggo OpenAI Codex. Rekaman runtime sesi
@@ -30,22 +20,6 @@ runtime, dudu pangira saka setelan saiki. Iki karya AI; ora ana pratelan
 panlitian utawa panyuntingan dening manungsa. Rekaman sesi utama kasebut
 ora dianggep minangka bukti atribusi saben berkas utawa worker sing
 ora kacathet kanthi mandhiri.
-
-- upstream/ ngreksa bita basa Inggris sing wis diverifikasi lan lisensi saben komponen.
-- translation/ ngemot unit sumber sing pancen wis diterjemahake, kanthi dalan berkas asal tetep.
-- edition/ ngemot pangatur wacan, caption lan token basa Jawa, sarta errata sing cetha.
-- editorial/ nyathet ragam akademik, panjelasan sumber, lan cathetan tetembungan
-  sarta pilihan angel kanggo ditliti, kanthi indeks jangkep lan dhaptar prioritas.
-- translation-decisions/ ngreksa indeks pilihan kanggo 118 unit kapisan lan tabel
-  kedadeyan sumber-terjemahan sing pas. SOURCE_CONTINUATION.md nyathet pilihan
-  sabanjure ing tingkat keputusan, tanpa ngaku lokasi saben tembung kanthi pas.
-- evidence/ ngemot hash sumber, QA struktural, panlitian dening panulis sing padha,
-  koreksi sumber winates, lan pratelan lingkup asal-usul bukti kanon.
-
-Lingkup sumber lan terjemahan dibedakake saka lingkup wacan.
-Alur sumber baku nyakup 642 unit; edhisi jangkep kudu nyakup kabeh 722
-kanthi runtut tanpa mbaleni pangatur alternatif. Sumber wacan kumulatif jangkep
-wis dirakit; rilis PDF jangkep durung diterbitake.
 
 Kabeh 722 berkas terjemahan nduweni cathetan paragraf sing sejajar karo sumber,
 pamriksan formula, token, pranala lan label, sarta pamandingan makna dening
@@ -72,14 +46,26 @@ Panjelasan kamus basa Indonesia ora dadi poros makna terjemahan.
 PDF kanon lan wangsulan kamus jangkep disimpen minangka sumber panliten
 pribadi lan ora kalebu berkas sing disebarake umum.
 
-Sumber lan adaptasi iki nggunakake CC BY 4.0, kanthi pangecualian komponen asal.
-Reksanen upstream/LICENSE.md lan kabar lisensi liyane. Rilis v0.2.0 ngemot
-wacan winates awujud PDF lan EPUB, TeX kumulatif langsung, sumber editable
-jangkep miturut tag, bukti QA sing bisa diwaca mesin, lan checksum.
-Rilis kasebut mbedakake lingkup 118 unit sumber, 26 sumber panyengkuyung,
-lan 24 unit wacan. PDF lan sumber v0.1.2 tetep disegel lan kasedhiya ing rilis asale.
+## Kahanan saiki
 
-## Potret sumber 30 September 2026
+**Isih digarap: sumber saiki ngemot 722 saka 722 berkas kang wis diterjemahake.**
+Validasi maneh bukti kanon lan wacan jangkep isih digarap.
+Wacan PDF kang wis diterbitake tetep ngemot 24 unit sumber lan dibangun kanggo rilis
+[v0.2.0](https://github.com/KokunoYumeto/OpenLogic-jv-Latn-ID/releases/tag/v0.2.0),
+kanthi TeX kumulatif langsung, ZIP sumber editable jangkep, lan EPUB3
+reflowable minangka pasangan rilis. Potret sumber v0.2.0 ngemot 118 unit;
+potret sumber saiki luwih amba tinimbang wacan PDF lan EPUB mau.
+Edhisi jangkep tetep dadi ancas, kalebu kabeh isi ing njaba
+alur wacan baku.
+
+Lingkup sumber lan terjemahan dibedakake saka lingkup wacan.
+Alur sumber baku nyakup 642 unit; edhisi jangkep kudu nyakup kabeh 722
+kanthi runtut tanpa mbaleni pangatur alternatif. Sumber wacan kumulatif jangkep
+wis dirakit; rilis PDF jangkep durung diterbitake.
+
+Ora ana pratelan yen proyek asal nyengkuyung edhisi iki utawa yen wis ana panlitian mandhiri dening ahli basa Jawa.
+
+### Potret sumber 30 September 2026
 
 Potret iki ngreksa koreksi, panarikan temuan kang salah, lan cathetan pilihan
 nganti 161 unit pamriksan anyar. Rekaman pilihan kalebu 1.988 cathetan
@@ -97,3 +83,27 @@ PDF lan EPUB umum tetep wacan 24 unit ing rilis lawas. Draft45 pribadi wis
 liwat kompilasi lan pitung sampel visual, nanging sumber saiki ngemot
 koreksi sabanjure kang durung dikompilasi. PDF draft mau ora diterbitake ing
 potret sumber iki; bita masukan editable persise dijaga kanthi kapisah.
+
+## Isi
+
+- upstream/ ngreksa bita basa Inggris sing wis diverifikasi lan lisensi saben komponen.
+- translation/ ngemot unit sumber sing pancen wis diterjemahake, kanthi dalan berkas asal tetep.
+- edition/ ngemot pangatur wacan, caption lan token basa Jawa, sarta errata sing cetha.
+- editorial/ nyathet ragam akademik, panjelasan sumber, lan cathetan tetembungan
+  sarta pilihan angel kanggo ditliti, kanthi indeks jangkep lan dhaptar prioritas.
+- translation-decisions/ ngreksa indeks pilihan kanggo 118 unit kapisan lan tabel
+  kedadeyan sumber-terjemahan sing pas. SOURCE_CONTINUATION.md nyathet pilihan
+  sabanjure ing tingkat keputusan, tanpa ngaku lokasi saben tembung kanthi pas.
+- evidence/ ngemot hash sumber, QA struktural, panlitian dening panulis sing padha,
+  koreksi sumber winates, lan pratelan lingkup asal-usul bukti kanon.
+
+Rilis v0.2.0 ngemot
+wacan winates awujud PDF lan EPUB, TeX kumulatif langsung, sumber editable
+jangkep miturut tag, bukti QA sing bisa diwaca mesin, lan checksum.
+Rilis kasebut mbedakake lingkup 118 unit sumber, 26 sumber panyengkuyung,
+lan 24 unit wacan. PDF lan sumber v0.1.2 tetep disegel lan kasedhiya ing rilis asale.
+
+## Sumber lan lisensi
+
+Sumber lan adaptasi iki nggunakake CC BY 4.0, kanthi pangecualian komponen asal.
+Reksanen upstream/LICENSE.md lan kabar lisensi liyane.
