@@ -16,6 +16,7 @@
 asil saka $\Gamma$ sawisé labelé dibusak, lan $\Delta = \{!A\}$
 yèn $!A$ dudu~$\lfalse$, déné $\Delta = \emptyset$ yèn iya.
 \end{prop}
+(Kalkulus tujuan intuisionistik yaiku G2i, pasangan G2c.)
 
 \begin{proof}
 Buktiné nganggo induksi manèh marang dhuwuré
@@ -40,7 +41,7 @@ Yèn $\delta$ pungkasané aturan inferènsi, kasusé dibédakaké:
   Hipotesis induksi ngasilaké !!a{proof}~$\pi_1$ kanggo
   $!B, \Gamma' \Sequent !C$ (utawa kanggo $!B, \Gamma'
   \Sequent \ $ yèn $!C \ident \lfalse$). Saka kéné kita
-  ngolèhké $\pi$ kanthi ngetrapaké~\RightR{\lif}
+  ngolèhaké $\pi$ kanthi ngetrapaké~\RightR{\lif}
   (sawisé ngetrapaké \RightR{\Weakening} yèn
   $!C \ident \lfalse$).
   \item Yèn $R$ iku \Intro{\lif}, nanging $x:!B$ ora ana ing
@@ -56,7 +57,7 @@ Yèn $\delta$ pungkasané aturan inferènsi, kasusé dibédakaké:
   Hipotesis induksi ngasilaké !!a{proof}~$\pi_1$ kanggo
   $\Gamma' \Sequent !C$ yèn konklusiné dudu falsitas;
   yèn falsitas, suksèdené kosong lan kita ngetrapaké
-  \RightR{\Weakening} dhisik. Banjur kita ngolèhké $\pi$
+  \RightR{\Weakening} dhisik. Banjur kita ngolèhaké $\pi$
   kanthi ngetrapaké \LeftR{\Weakening} kanggo~$!B$,
   terus~\RightR{\lif}.
   \item Yèn $R$ iku \Elim{\lif}, $\delta$ pungkasané
@@ -101,12 +102,13 @@ Yèn $\delta$ pungkasané aturan inferènsi, kasusé dibédakaké:
   nanging $(\Gamma_1 \cup \Gamma_2)'$ mung ngemot siji salinan.
   Iki bisa dibeneraké kanthi nambah inferènsi
   \LeftR{\Contraction} kang trep.
+(Hipotesis induksi kanggo dudutan falsitas ngasilaké suksèden kosong. Weakening tengen ditrapaké sadurungé introduksi utawa eliminasi implikasi kang diagramé mbutuhaké formula premis ing tengen.)
 
   Yèn $!A \ident \lfalse$, $\pi_2$ kang wis ditemtokaké
-  ing ndhuwur mbuktèkaké $\Gamma_2' \Sequent !B$.
-  Konstruksi ing ndhuwur mènèhi !!{proof}~$\pi$ kanthi
+  ing ndhuwur mbuktekaké $\Gamma_2' \Sequent !B$.
+  Konstruksi ing ndhuwur menehi !!{proof}~$\pi$ kanthi
   falsitas~$!A$ ing sisih tengen. Kanthi \Cut marang aksioma
-  falsitas ing sisih kiwa kang suksèdené kosong, kita ngolèhké
+  falsitas ing sisih kiwa kang suksèdené kosong, kita ngolèhaké
   suksèden kosong kang dibutuhaké.
 \item Yèn $R$ iku \FalseCl, $\delta$ pungkasané
   \[
@@ -117,6 +119,11 @@ Yèn $\delta$ pungkasané aturan inferènsi, kasusé dibédakaké:
   \UnaryInf$\Gamma \fCenter !A$
   \DisplayProof
   \]
+  Diagram iki kanggo kasus nalika asumsi kang dibusak ana ing
+  premis. Yèn ora ana, kontèks ing premis padha karo kontèks
+  dudutan; hipotesis induksi ngasilaké suksèden kosong, lan
+  weakening kiwa bisa nambah negasi formula dudutan supaya
+  konstruksi G2 ing ngisor iki ditrapaké.
   Miturut hipotesis induksi, ana !!a{proof} $\pi_1$ kanggo
   $\lnot !A, \Gamma' \Sequent \ $. Kita pilih !!{proof}~$\pi$
   kaya mangkéné:
@@ -140,5 +147,6 @@ Yèn $\delta$ pungkasané aturan inferènsi, kasusé dibédakaké:
 tengen. Tegesé, terjemahan !!{proof} ing~\Log{N2i}
 iku !!{proof} ing~\Log{G2i}.
 \end{proof}
+(Dudutan falsitas dadi suksèden kosong nganggo Cut marang aksioma falsitas-kosong; weakening ora bisa mbusak formula ing tengen. Label N2 ora digawa menyang premis G2. Cara Cut kang padha uga dibutuhaké yèn dudutan aturan klasik iku falsitas. Diagram aturan klasik nuduhaké kasus discharge kang ora kosong. Kanggo kasus kosong, weakening kiwa ing bukti G2 nyedhiyakaké premis kanggo konstruksi kang padha.)
 
 \end{document}

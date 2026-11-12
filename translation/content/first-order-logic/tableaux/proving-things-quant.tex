@@ -112,10 +112,9 @@ Kaya lumrahe, kita miwiti nganggo asumsi:
     ]
   ]
 \end{oltableau}
-Kita kudu tansah ngetrapake aturan kang duwe syarat eigenvariabel luwih
-dhisik; ing kasus iki yaiku $\TRule{\True}{\lexists}$ marang
-larik~$2$. Amarga asumsi ngemot !!{constant}~$b$, kita kudu nggunakake
-konstanta liyane; ayo milih~$a$ maneh.
+Ing conto iki, kita miwiti nganggo $\TRule{\True}{\lexists}$ ing larik~$2$.
+Iki maringi konstanta kang bisa dienggo kanggo instansi sabanjuré.
+Amarga $b$ wis ana ing asumsi, pilih konstanta anyar $a$.
 \begin{oltableau}
   [\sFmla{\False}{\lexists[x][\formula{C}(x,b)]}, just=\TAss
     [\sFmla{\True}{\lexists[x][(\formula{A}(x) \land \formula{B}(x))]},
@@ -131,10 +130,10 @@ konstanta liyane; ayo milih~$a$ maneh.
 Yen saiki kita ngetrapake $\TRule{\False}{\lexists}$ marang larik~$1$
 utawa $\TRule{\True}{\lforall}$ marang larik~$3$, kita kudu nemtokake
 term~$t$ kang bakal disubstitusikake kanggo~$x$. Amarga aturan-aturan
-iki ora duwe syarat eigenvariabel, kita bisa milih sembarang term. Ing
+iki ora duwe syarat eigenvariabel, kita bisa milih sembarang term katutup. Ing
 sawetara kasus, aturan kasebut malah kudu ditrapake ping pirang-pirang
 nganggo $t$ kang beda. Nanging minangka pathokan umum, luwih migunani
-milih salah siji term kang wis muncul ing !!{tableau}---ing kasus iki,
+milih salah siji term katutup kang wis muncul ing cabang !!{tableau}---ing kasus iki,
 $a$ lan~$b$---lan ing kasus iki kita bisa ngira yen kamungkinane
 nggunakake $a$ kanggo ngasilake cabang katutup luwih gedhe.
 \begin{oltableau}
@@ -230,11 +229,10 @@ Kaya lumrahe, kita nulis asumsi:
     ]
   ]
 \end{oltableau}
-Kita miwiti kanthi ngetrapake aturan $\TRule{\True}{\lnot}$ marang
-larik~$3$. Konsekuensi saka pathokan ``tansah terapna aturan kang
-duwe syarat eigenvariabel luwih dhisik'' yaiku ``tundhaa panrapan
-aturan kuantor tanpa syarat eigenvariabel nganti dibutuhake.'' Uga
-tundhaa aturan kang ngasilake panyabangan.
+Kita miwiti kanthi ngetrapaké aturan $\TRule{\True}{\lnot}$ marang
+larik~$3$. Ing conto iki, tundhaa panrapan aturan kuantor kanggo
+term katutup nganti dibutuhaké. Kanthi mangkono, konstanta anyar ing larik-larik ngisor bisa dienggo
+minangka term ing instansi kasebut.
 \begin{oltableau}
   [\sFmla{\True}{\lforall[x][\formula{A}(x)]}, just=\TAss
     [\sFmla{\True}{\lforall[x][\formula{A}(x)] \lif
@@ -282,14 +280,9 @@ eigenvariabel, mula aturan-aturan iku kudu ditrapake sabanjure:
     ]
   ]
 \end{oltableau}
-Kanggo nutup cabang-cabang kasebut, kita kudu nggunakake
-!!{signed formula}s ing larik $1$ lan~$4$. Cathetan koreksi sumber
-OLPL-041: larik telu wis diambakake dadi larik papat, lan aturan
-eksistensial mawa tandha salah ing tableau ditrapake marang larik
-papat; mula rujukan kapindho dibalekake dadi larik papat. Aturan kang cocog
-(\TRule{\True}{\lforall} lan \TRule{\False}{\lexists}) ora duwe
-syarat eigenvariabel, mula kita bebas milih term kang trep. Ing kasus
-iki, terme yaiku $b$ lan~$c$, miturut urutane.
+Kanggo nutup cabang kiwa, trapna $\TRule{\True}{\lforall}$ ing
+larik~$1$ nganggo term katutup $b$. Kanggo nutup cabang tengen,
+trapna $\TRule{\False}{\lexists}$ ing larik~$4$ nganggo $c$ minangka term katutup.
 \begin{oltableau}
   [\sFmla{\True}{\lforall[x][\formula{A}(x)]}, just=\TAss
     [\sFmla{\True}{\lforall[x][\formula{A}(x)] \lif

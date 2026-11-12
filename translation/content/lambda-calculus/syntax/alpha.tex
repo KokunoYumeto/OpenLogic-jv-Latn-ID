@@ -116,7 +116,7 @@ Mula kita oleh definisi ekuivalen iki:
 \end{defn}
 
 \begin{ex}
-  $\lambd[x][f x]$ bisa dikonversi-$\alpha$
+  Ing conto iki, jeneng f, x, lan y beda-beda. $\lambd[x][f x]$ bisa dikonversi-$\alpha$
   dadi $\lambd[y][f y]$, lan uga
   kosok baline. Miturut intuisi,
   loro-lorone fungsi kang nampa
@@ -131,7 +131,7 @@ Mula kita oleh definisi ekuivalen iki:
   variabel lingkungan $f$ lan~$g$
   kanthi urut. Mula fungsine beda:
   tumindake beda ing lingkungan
-  kang biji $f$ lan $g$ beda.
+  kang biji $f$ lan $g$ beda. Ing conto kapindho iki, f lan g iku jeneng beda kang kalorone beda saka binder x; syarat kesegaran ing conto kapisan uga njaga f bebas.
 \end{ex}
 
 \begin{prob}
@@ -314,56 +314,19 @@ dituduhake teorema iki:
 \end{thm}
 
 \begin{proof}
-  Kanthi induksi tumrap pambentukan $M$:
+  Kita nggunakake wit pangiket kanggo ngrampungake bukti tanpa nganggep teorema substitusi iki minangka premis. Saka wit pambentukan sawijining suku $A$, gawe $B(A)$: jeneng ing simpul abstraksi dibusak; godhong variabel bebas tetep diwenehi jeneng; godhong variabel kaiket diwenehi tandha kaiket lan cacah abstraksi ing antarane godhong lan binder paling cedhak kang ngiket. Tandha bebas lan kaiket dibedakake, mula jeneng bebas ora bisa diwaca minangka indeks kaiket.
   \begin{enumerate}
-  \item $M$ iku variabel~$z$: latihan.
-  \item Umpamakna $M$ awujud
-    $\lambd[x][N]$. Pilih variabel
-    $z$ kang beda saka $x$ lan $y$,
-    kanthi $z \notin \FV{N}$
-    lan $z \notin \FV{R}$.
-    Miturut hipotesis induksi,
-    ana $N'$ saengga $N' \aeq N$
-    lan $\Subst{N'}{z}{x}$ katetepake.
-    Mula $\lambd[x][N] \aeq
-    \lambd[x][N']$ uga, miturut
-    \olref{defn:aconvone}\olref{defn:aconvone1}.
-    Saiki $\lambd[x][N']
-    \aeq \lambd[z][\Subst{N'}{z}{x}]$
-    miturut
-    \olref{defn:aconvone}\olref{defn:aconvone4}.
-    Iki bisa ditindakake amarga
-    $z \ne x$, $z \notin \FV{N'}$,
-    lan $\Subst{N'}{z}{x}$
-    katetepake. Pungkasan,
-    $\Subst{\lambd[z][\Subst{N'}{z}{x}]}{R}{y}$
-    mbutuhake $z \neq y$
-    lan $z \notin \FV{R}$.
-    Syarat yen substitusi ing awak
-    abstraksi uga katetepake
-    durung dituduhake ing langkah iki.
+  \item Saben generator rename kaiket njaga wit iki: kemunculan kang diowahi tetep ngrujuk menyang binder padha, lan syarat kesegaran njaga kemunculan bebas. Telung aturan konteks uga njaga wit. Mula ekuivalensi alfa menehi wit padha. Kosok baline, yen rong suku nduweni wit padha, pilih jeneng beda-beda kanggo kabeh simpul abstraksi, ing njaba kabeh jeneng kang ana ing loro suku. Ganti jeneng binder saka paling njero menyang paling njaba. Nalika binder njaba diganti, kabeh binder ing awake wis nduweni jeneng seger kang beda saka jeneng lawas lan anyar, mula substitusi kanggo rename katetepake. Kaloro suku banjur dadi wakil literal padha, amarga godhong kaiket ngrujuk simpul padha lan godhong bebas nduweni jeneng padha. Dadi wit padha yen lan mung yen suku ekuivalen alfa.
+  \item Kanggo anane wakil, pilih kabeh jeneng binder $M$ beda-beda lan ing njaba kabeh jeneng kang ana ing $M$, $R$, lan variabel $y$, banjur nindakake rename saka njero metu kaya ing ndhuwur. Wakil anyar $M'$ ekuivalen alfa karo $M$. Ing saben abstraksi, binder beda saka $y$ lan ora ana ing variabel bebas $R$. Kanthi induksi tumrap pambentukan wakil iki, substitusi ing variabel katetepake, ing aplikasi katetepake ing rong subsuku, lan ing abstraksi katetepake ing awak lan nyukupi syarat binder. Mula $\Subst{M'}{R}{y}$ katetepake.
 
-    Saliyane iku, yen ana $N''$
-    lan $R''$ liyane kang nyukupi
-    syarat-syarat padha,
-    \begin{multline*}
-      \Subst{(\lambd[z][\Subst{N''}{z}{x}])}{R''}{y} \\
-    \begin{aligned}
-      &= \lambd[z][\Subst{\Subst{N''}{z}{x}}{R''}{y}] \\
-      &\aeq \lambd[z][\Subst{\Subst{N''}{z}{x}}{R}{y}] && \text{miturut
-        \olref{lem:sub:R}}\\
-      &\aeq\lambd[z][\Subst{\Subst{N'}{z}{x}}{R}{y}]
-      && \text{miturut hipotesis
-        induksi}\\
-      &=\Subst{(\lambd[z][\Subst{N'}{z}{x}])}{R}{y}
-    \end{aligned}
-    \end{multline*}
-    \item $M$ awujud $(PQ)$: latihan.
+      \item Kanggo keunikan, ing wit $B(A)$ ganti saben godhong bebas kanthi jeneng $y$ nganggo wit $B(C)$; godhong kaiket lan pranala menyang binder tetep. Ing wit kang dilebokake, kemunculan kaiket tetep ngrujuk binder ing wit kasebut, lan kemunculan bebas tetep bebas. Dadi asil panggantian wit iki mung gumantung marang $B(A)$, $B(C)$, lan $y$.
+    Yen $\Subst{A}{C}{y}$ katetepake, wit asile persis asil panggantian iki. Iki kabukten kanthi induksi tumrap klausa substitusi, kanthi dhaptar binder njaba dijaga nalika mlebu awak: variabel $y$ diganti, variabel liyane tetep, lan aplikasi nggabungake asil rong induksi. Ing klausa abstraksi rekursif, binder beda saka $y$ lan ora bebas ing $C$, mula ora ana godhong bebas saka suku kang dilebokake kang direbut; hipotesis induksi ing awak banjur ditrapake. Ing klausa binder cocog, kabeh kemunculan jeneng kasebut ing cakupan wis kaiket, mula ora ana godhong bebas kang kudu diganti. Ing klausa kosong, ora ana kemunculan bebas kang diganti uga. Mula rong klausa identitas njaga wit asil. Argumèn iki uga lumaku kanggo substitusi parsial nalika substitusi ditegesi.
+    Saiki $M'$ lan $M''$ nduweni wit padha amarga kalorone ekuivalen alfa karo $M$, lan $R$ lan $R''$ nduweni wit padha. Loro substitusi katetepake ing premis teorema, mula panggantian wit mau menehi wit asil padha. Miturut karakterisasi ing langkah kapisan, loro asil ekuivalen alfa. Iki menehi keunikan kang dibutuhake, tanpa nyimpulake kesamaan literal saka ekuivalensi alfa.
   \end{enumerate}
 \end{proof}
 
 \begin{prob}
-  Rampungna bukti \olref[lam][syn][alp]{thm:sub}.
+  Jlentrehna kabeh kasus induksi ing bukti \olref[lam][syn][alp]{thm:sub}.
 \end{prob}
 
 \begin{cor}\ollabel{cor:sub}
@@ -380,7 +343,7 @@ dituduhake teorema iki:
 \end{cor}
 
 \begin{proof}
-  Langsung saka \olref{thm:sub}.
+  Langsung saka \olref{thm:sub}. Bukti substitusi milih pangiket seger kanggo njamin substitusi ditegesi ing awak. Keunikan nganti alfa ndhèrèk saka wit pangiket. Kanggo rujukan primer babagan substitusi nganti ekuivalensi alfa, delengen \href{https://www.cs.cmu.edu/~rwh/pfpl/supplements/ulc.pdf}{Robert Harper, Church's Lambda Calculus}, perangan 5, gladhèn 5.1, kaca 6.
 \end{proof}
 
 \end{document}

@@ -30,9 +30,10 @@ nggunakake konsep matematika topologi.
   \end{enumerate}
 \end{defn}
 
-Kita bisa nulis $X$ kanggo topologi yen kumpulan himpunan kabukane
+Kita bisa nulis $X$ kanggo ruang topologis yen kumpulan himpunan kabukane
 bisa dingerteni saka konteks. Nanging, mung sawisé $X$ diwenehi
-himpunan kabuka iku, bisa diarani topologi.
+himpunan kabuka iku, bisa diarani ruang topologis.
+Topologi iku kumpulan himpunan kabuka kang dadi struktur ruang topologis.
 
 \begin{defn}
   \emph{Model topologis} kanggo logika proposisional intuisionistik
@@ -61,15 +62,15 @@ himpunan kabuka iku, bisa diarani topologi.
 Interior saka himpunan apa wae tansah kabuka, amarga iku gabungan
 himpunan kabuka. Mula $\Prop{X}{!A}$ tansah himpunan kabuka.
 
-Sanajan semantik topologis banget abstrak, ana cara kanggo
-mikirake kang bisa menehi alasan kanggo semantik iki. Upamane
+Sanajan semantik topologis abstrak banget, ana cara kanggo
+mikirake bab iku kang bisa menehi alasan kanggo semantik iki. Upamane
 !!{element}s, utawa ``titik,'' saka $X$ iku titik kang bisa digunakake
-kanggo ngevaluasi pranyatan. Himpunan kabeh titik kang $!A$ bener
+kanggo ngevaluasi pratelan. Himpunan kabeh titik kang $!A$ bener
 iku proposisi kang diwedharake dening~$!A$. Ora saben himpunan titik
 bisa dadi proposisi; mung !!{element}s saka $\Top{O}$ kang bisa.
 $!A \Entails !B$ yen lan mung yen $!B$ bener ing saben titik kang~$!A$
-bener, yaiku $\Prop{X}{!A} \subseteq \Prop{X}{!B}$, kanggo kabeh~$X$.
-Pranyatan absurd~$\lfalse$ ora tau bener, mula
+bener, yaiku $\Prop{X}{!A} \subseteq \Prop{X}{!B}$, kanggo kabeh model topologis.
+Pratelan absurd~$\lfalse$ ora tau bener, mula
 $\Prop{X}{\lfalse} = \emptyset$.
 
 Kepiye sesambungane proposisi kang diwedharake dening $!B \land !C$,
@@ -87,6 +88,8 @@ Kosokbaline, $!B \Proves !B \lor !C$ lan $!C \Proves !B \lor !C$,
 mula kita mbutuhake $\Prop{X}{!B} \subseteq \Prop{X}{!B \lor !C}$ lan
 $\Prop{X}{!C} \subseteq \Prop{X}{!B \lor !C}$. Himpunan paling cilik~$W$
 kanthi $U \subseteq W$ lan $V \subseteq W$ yaiku $U \cup V$.
+Tandha inklusi ing kéné ngidini himpunan kang padha.
+Padanan deduksi lan inklusi ditrapaké tumrap kabèh model topologis, kalebu kabèh valuasi.
 
 Definisi kanggo $\lif$ rada angel: $!A \lif !B$ ngandharake
 proposisi paling ringkih kang, yen digabungake karo $!A$, ngentail $!B$.

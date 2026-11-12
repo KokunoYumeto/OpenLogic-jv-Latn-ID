@@ -12,7 +12,7 @@
 
 !!^{tableau}s mawa !!{identity} mbutuhake aturan inferensi tambahan.
 Aturan kanggo $\eq$ yaiku ($t$, $t_1$, lan $t_2$ iku term-term
-katutup):
+katutup). Matriks $!A(x)$ mung bisa nduwèni $x$ minangka variabel bébas.
 
 \begin{defish}
 \AxiomC{}
@@ -34,10 +34,10 @@ katutup):
 \UnaryInfC{\sFmla{\False}{!A(t_2)}}
 \DisplayProof
 \end{defish}
-Gatekna yen, beda karo kabeh aturan liyane, $\TRule{\True}{\eq}$ lan
-$\TRule{\False}{\eq}$ mbutuhake supaya \emph{rong} !!{formula}s wis
-muncul ing cabang, yaiku $\sFmla{\True}{\eq[t_1][t_2]}$ lan
-$\sFmla{S}{!A(t_1)}$ kalorone.
+Aturan $\TRule{\True}{\eq}$ lan $\TRule{\False}{\eq}$
+mbutuhake rong formula mawa tandha ing cabang kang padha, yaiku
+$\sFmla{\True}{\eq[t_1][t_2]}$ lan $\sFmla{S}{!A(t_1)}$.
+Aturan refleksivitas $\eq$ bisa ditrapaké tanpa premis.
 
 \begin{ex}
 Yen $s$ lan $t$ iku term-term katutup, mula $\eq[s][t], !A(s)
@@ -70,13 +70,9 @@ $\sFmla{\True}{\eq[s_1][s_2]}$ saka $\TRule{\True}{\eq}$.
 Larik~$3$ iku prasyarat kapindho, awujud
 $\sFmla{\True}{!A(s_1)}$---anggepen $!A(x)$ minangka
 $\eq[x][s_1]$; mula $!A(s_1)$ yaiku $\eq[s_1][s_1]$ lan $!A(s_2)$
-yaiku $\eq[s_2][s_1]$. Cathetan koreksi sumber OLPL-021: sumber
-Inggris pisanan menehi argumen kapindho marang formula prasyarat ing
-larik katelu, nanging substitusi kang langsung diterangake sawise iku
-lan arah aturan netepake argumen kapisan, kaya kang dibalekake ing
-kene.
+yaiku $\eq[s_2][s_1]$.
 
-Tableau uga mbuktekake yen $\eq$ iku transitif, yaiku
+Kanggo term-term katutup $s_1,s_2,s_3$, tableau mbuktekaké yèn $\eq$ iku transitif, yaiku
 $\eq[s_1][s_2], \eq[s_2][s_3] \Proves \eq[s_1][s_3]$:
 \begin{oltableau}
   [\sFmla{\False}{\eq[s_1][s_3]}, just = \TAss
@@ -94,11 +90,7 @@ $s_3$ makili~$t_2$). Prasyarat kapindho, kang awujud
 $\sFmla{\True}{!A(s_2)}$, yaiku larik~$2$. Ing kene, anggepen
 $!A(x)$ minangka $\eq[s_1][x]$; iki nggawe $!A(s_2)$ dadi
 $\eq[s_1][s_2]$ (yaiku larik~$2$) lan $!A(s_3)$ dadi
-!!{formula}~$\eq[s_1][s_3]$ ing kesimpulan. Cathetan koreksi sumber
-OLPL-022: sumber Inggris malih menehi pasangan metavariabel aturan
-kanggo larik kapindho, sanadyan penetapan kang wis kasebut bakal
-menehi larik katelu; formula larik kapindho kang dibalekake ing kene
-ditemtokake dening tableau lan pilihan formula substitusine.
+!!{formula}~$\eq[s_1][s_3]$ ing kesimpulan.
 \end{ex}
 
 \begin{prob}

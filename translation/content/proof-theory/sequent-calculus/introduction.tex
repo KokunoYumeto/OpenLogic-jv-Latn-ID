@@ -26,8 +26,8 @@ Multiset padha karo himpunan, nanging multiset bisa ngemot
 urutan !!{element}s ora wigati. Dadi ekspresi $\{!A, !A, !B\}$
 lan $\{!A, !B, !A\}$ nggambarake multiset sing padha, nanging
 multiset kasebut beda saka $\{!A, !B\}$ lan $\{!A, !A, !B, !B\}$,
-amarga loro sing pungkasan ngemot cacah $!A$ lan $!B$ sing beda
-saka multiset kapisan.
+amarga cacah $!A$ béda ing tuladha kapindho, lan cacah $!B$
+béda ing tuladha katelu.
 
 Lumrahe, multiset !!{formula}s ing teori bukti ditulis nganggo
 aksara Yunani gedhe. Dadi nalika kita nulis $\Gamma$, $\Delta$,
@@ -55,6 +55,10 @@ dianggep~$\lfalse$). Mula sekuen $\Gamma \Sequent \Delta$ bener
 Ing logika klasik, iki padha karo nyatakake yen ana siji
 !!{formula}s ing~$\Gamma$ sing salah, utawa ana siji
 !!{formula}s ing~$\Delta$ sing bener.
+Kanggo formula sing ngandhut variabel bébas, kabeneran iki
+ditetepaké marang penugasan variabel sing padha ing kabèh formula.
+Aturan sing kacantum ing kéné nyakup basa logika orde kapisan
+tanpa simbol kesamaan logis.
 
 Yen $\Gamma$ minangka multiset !!{formula}s, kita nulis
 $\Gamma, !A$ (utawa $!A, \Gamma$) kanggo asil nambahake
@@ -83,13 +87,14 @@ diterangake ing \olref[fol][seq][]{chap}.)}{}
 \subfile{rules-G1c}
 \subfile{rules-G3c}
 
-Ana prabedan alus antarane sistem iki, lan prabedan kasebut
-njalari sipat teori buktine beda. \Log{G1c} duwe aksioma
-$!A \Sequent !A$ tanpa !!{formula}s liyane. \Log{G3c} duwe
+Ana prabedan alus antarane sistem iki, lan prabédan kasebut
+njalari sipat teori buktiné béda. Aksioma \Log{G1c} yaiku $!A \Sequent !A$ lan $\lfalse \Sequent \quad$,
+tanpa !!{formula}s sisih. \Log{G3c} duwe
 aksioma awujud $!C, \Gamma \Sequent \Delta, !C$, kanthi
 !!{formula}s ``sisih'' sembarang ing $\Gamma$ lan~$\Delta$,
 nanging !!{formula}~$!C$ sing ana ing loro sisih kudu
-\emph{atomik}. \Log{G1c} duwe rong versi saben aturan
+\emph{atomik}. Aksioma liyane ngandhut falsitas ing antesedèn.
+\Log{G1c} duwe rong versi saben aturan
 $\LeftR{\land}$ lan $\RightR{\lor}$, dene \Log{G3c} mung
 duwe siji versi saben aturan. \Log{G1c} uga duwe ``aturan
 struktural'' tambahan, yaiku ``kontraksi''
@@ -97,7 +102,7 @@ struktural'' tambahan, yaiku ``kontraksi''
 ``pelemahan'' (\LeftR{\Weakening}, \RightR{\Weakening}).
 
 Sistem \Log{G1c} lan \Log{G3c} sahih lan jangkep tumrap
-logika klasik. Kanthi tembung liya, saben sekuen sing
+logika klasik ing basa sing diliputi aturan mau. Kanthi tembung liya, saben sekuen sing
 !!{provable} ing sistem iki bener ing saben !!{structure},
 lan saben sekuen sing bener ing saben !!{structure} duwe
 !!a{proof}. Dadi pitakon \emph{apa} sekuen duwe !!a{proof}

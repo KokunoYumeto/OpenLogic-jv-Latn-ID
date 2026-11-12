@@ -19,20 +19,20 @@ sawenehing wilangan wutuh karo~$x$. (Yen relasi
 iki ora bener, mula kanggo wilangan pambagi kang positif,
 turah nalika $y$ dipara $x$
 iku $> 0$; kita nulis $x \nmid y$.)
-% OLPL-125: Sumber mbalikke urutan kang dibagi lan pembagi ing
-% katerangan turah; turah sing trep yaiku saka y dipara x.
+%
+%
 Kanthi tembung liya, $x \mid y$ yen lan mung yen ana~$z$
 kanthi $x \cdot z = y$. Kita bisa milih saksi~$z$
 kang $\leq y$ yen saksi ana. Dadi $x \mid y$
 yen lan mung yen ana $z \le y$ kanthi $x \cdot z = y$.
-% OLPL-126: Pratelan sumber "saben saksi z <= y" salah yen
-% x=y=0; saksi z=0 tetep ana lan nyukupi wates.
+%
+%
 Kita bisa netepake relasi $x \mid y$ kanthi kuantifikasi
 eksistensial mawa wates saka $=$ lan perkalian:
 \[
 x \mid y \defiff \bexists{z \leq y}{(x \cdot z) = y}.
 \]
-Mula kita wis nuduhake yen $x \mid y$ rekursif primitif. Cathetan koreksi sumber OLPL-125: turah kasebut saka y dipara x, dudu kosok baline. Cathetan koreksi sumber OLPL-126: kang dibutuhake mung ana saksi kang nyukupi wates; kanggo input loro-lorone nol, saksi nol cukup.
+Mula kita wis nuduhake yen $x \mid y$ rekursif primitif. Nalika loro input padha karo nol, saksi nol nyukupi wates.
 
 Wilangan asli~$x$ diarani \emph{prima} yen dudu $0$
 utawa $1$ lan mung bisa dibagi dening $1$ lan
@@ -83,9 +83,9 @@ tinimbang siji, upamana $p_n$ prima paling gedhe
 kang $\le x$, lan gatekna asil kali $p =
 p_0\cdot p_1 \cdot \dots \cdot p_n$ saka kabeh
 prima~$\le x$. Yen wilangan asline nol utawa siji,
-prima loro langsung menehi kesimpulan kang padha. Cathetan koreksi sumber OLPL-127: prima paling gedhe kang ora ngluwihi input mung ana yen input paling ora loro.
-% OLPL-127: Bukti nganggo "prima paling gedhe <= x" mung ana
-% yen x paling ora loro; kasus nol lan siji dipriksa langsung.
+prima loro langsung menehi kesimpulan kang padha.
+%
+%
 $p+1$ iku prima utawa ana prima ing antarane
 $x$ lan~$p+1$. Ngapa? Upamana $p+1$ dudu prima.
 Banjur ana prima $q \mid p+1$ kang $q < p+1$.

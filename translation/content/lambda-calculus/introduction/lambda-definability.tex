@@ -22,7 +22,7 @@ dikira sadurunge.
 Kanggo saben wilangan asli~$n$, tetepna
 \emph{numeral Church} $\num{n}$ minangka
 suku lambda $\lambd[x][\lambd[y][(x(x(x(\dots
-x(y)))))]]$, kanthi cacah sakabehe ana $n$ aksara $x$.
+x(y)))))]]$, kanthi cacah $n$ aplikasi $x$ ing awak sawise rong binder. Binder x ora kalebu cacah iki; nalika n nol, awak mung y.
 \end{defn}
 
 Suku-suku $\num{n}$ iku ``iterator'': yen
@@ -47,7 +47,7 @@ yen $f(n_0, \dots, n_{k-1})$ nduweni nilai,
 dene $F\, \num{n_0}\, \num{n_1}
 \dots \num{n_{k-1}}$ ora nduweni wujud
 normal yen fungsi iku ora nduweni nilai
-ing input kasebut.
+ing input kasebut. Fungsi nduweni k argumen wilangan lan asil wilangan, lan F ing kasus ora ditetepake tetep diaplikasikake marang kabeh numeral, tanpa koma pemisah.
 \end{defn}
 
 \begin{thm}

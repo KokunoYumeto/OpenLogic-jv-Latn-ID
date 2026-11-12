@@ -20,7 +20,7 @@ $\lambd[x][(fx)]N$ lan $fN$
 loro-lorone direduksi dadi~$fN$.
 Kita nggunakake reduksi-$\eta$
 (lan ekstensi-$\eta$) kanggo
-ngandharake gagasan iki.
+ngandharake gagasan iki. Ing conto iki f lan x iku jeneng variabel beda.
 
 \begin{defn}[Kontraksi-$\eta$, $\eredone$]
   \ollabel{defn:beredone}
@@ -28,7 +28,7 @@ ngandharake gagasan iki.
   yaiku relasi kompatibel paling cilik
   ing suku kang nyukupi syarat iki:
   \[
-    \lambd[x][M x] \eredone M \text{ yen } x \notin FV(M)
+    \lambd[x][M x] \eredone M \text{ yen } x \notin \FV{M}
   \]
 \end{defn}
 
@@ -50,7 +50,7 @@ ngandharake gagasan iki.
   Kita nggedhekake relasi ekuivalensi
   $\equal$ kanthi aturan konversi-$\eta$:
   \[
-  \lambd[x][f x] \equal f \text{ yen } x \notin FV(f)
+  \lambd[x][M x] \equal M \text{ yen } x \notin \FV{M}
   \]
   lan nglambangake relasi kang
   digedhekake iku minangka
@@ -66,7 +66,7 @@ suku lambda:
   $\equal$ kanthi aturan (\ext):
   \begin{center}
   Yen $Mx \equal Nx$, mula $M \equal N$,
-  kanthi syarat $x \notin FV(MN)$.
+  kanthi syarat $x \notin \FV{MN}$.
   \end{center}
   Relasi kang digedhekake iku
   kita lambangake $\equal[\ext]$.
@@ -75,7 +75,7 @@ suku lambda:
 Kurang luwih, aturan iki ngandharake
 yen rong suku minangka fungsi kudu
 dianggep padha yen tumindake padha
-marang argumen kang padha.
+marang argumen kang padha, ing kene variabel seger sembarang kang ora bebas ing rong suku kasebut, dudu siji nilai tartamtu.
 
 Saiki kita buktekake yen aturan
 $\eta$ menehi ekstensionalitas
@@ -109,7 +109,7 @@ pas, tanpa nambah relasi liyane.
   kanggo abstraksi,
   kita oleh $\lambd[x][Mx]
   \equal[\eta] \lambd[x][Nx]$
-  ing $\equal$.
+  ing relasi kang ditambahi.
   Amarga syarat kasegeran iku
   nyakup loro-lorone
   suku, konversi-$\eta$ ing
@@ -120,12 +120,12 @@ pas, tanpa nambah relasi liyane.
   yen aturan $\eta$ wis kakandhut
   ing $\equal[\ext]$.
   Kanggo $\lambd[x][Mx]$ lan
-  $M$ kanthi $x \notin FV(M)$,
+  $M$ kanthi $x \notin \FV{M}$,
   kita nduweni
   $(\lambd[x][Mx])x \equal[\ext] Mx$,
   mula kita oleh
   $\lambd[x][Mx] \equal[\ext] M$
-  miturut aturan \ext{}.
+  miturut aturan \ext{}. Generator eta mbutuhake variabel ora bebas ing suku fungsi, lan M makili suku sembarang. Inklusi iki dibuktèkaké kanthi induksi tumrap derivasi lan aturan kompatibilitas.
 \end{proof}
 
 \end{document}

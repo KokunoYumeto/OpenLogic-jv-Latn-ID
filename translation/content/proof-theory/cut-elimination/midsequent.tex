@@ -22,7 +22,7 @@ inferènsi ing sangisoré~$S$ iku inferènsi kuantor.
 (!!^a{formula}~$!A$ diarani \emph{preneks} (utawa
 nganggo \emph{wujud preneks}) yèn wujudé
 \[\mathsf{Q}_1x_1\dots\mathsf{Q}_nx_n\,!B(x_1,\dots,x_n)\]
-ing ngendi saben $\mathsf{Q}_i$ iku $\lforall$ utawa~$\lexists$.)
+ing ngendi matriksé tanpa kuantor lan saben $\mathsf{Q}_i$ iku $\lforall$ utawa~$\lexists$.)
 Akibat wigati saka teorema sekèn tengah yaiku teorema
 Herbrand. Wujud umumé rada angèl diterangaké, nanging
 kanthi garis gedhé: kanggo saben !!{provable}
@@ -30,6 +30,7 @@ kanthi garis gedhé: kanggo saben !!{provable}
 proposisional~$!A'$ kang bisa digunakaké kanggo
 !!{prove}~$!A$. Iki versi kanggo !!{sentence}s kanthi
 wujud~$\lexists[x][!B(x)]$ nalika $!B$ tanpa kuantor:
+(Matriks preneks kudu tanpa kuantor. Tanpa syarat iki, formula kang kuantoré ana ing sangisoré konektif proposisional uga bakal kalebu definisi, lan argumèn sekèn tengah ora bisa ditrapaké.)
 
 \begin{thm}[Teorema Herbrand]
 Anggepen $!B(x)$ tanpa kuantor lan
@@ -45,12 +46,13 @@ kuantor. Mula yèn disjungsi mau !!{provable}, iku
 !!{provable} nganggo bukti tanpa cut, lan akibaté
 nganggo !!a{proof} kang mung ngemot inferènsi
 proposisional. Dadi, disjungsi iku tautologi.
+(Katrangan iki migunakaké kalkulus kang kasebut ing kéné, kanthi aksioma atomik lan tanpa aturan tambahan kanggo kesamaan. Panganggoné marang logika kanthi kesamaan mbutuhaké versi Herbrand kang njaga aturan utawa aksioma kesamaan.)
 
 Pérangan kang angèl saka Teorema Herbrand yaiku nuduhaké
 yèn saben !!{provable} !!{formula}~$\lexists[x][!B(x)]$
 nduwèni disjungsi Herbrand. Arah kosok balènané gampang:
 yèn $\lexists[x][!B(x)]$ nduwèni disjungsi Herbrand,
-formula iku bisa dibuktèkaké. Pancèn, disjungsi Herbrand
+formula iku bisa dibuktekaké. Pancèn, disjungsi Herbrand
 ngakibataké $\lexists[x][!B(x)]$. Tuladhané, iki
 !!a{proof} ing~$\Log{G3c}$ kanggo $n=2$:
 \[
@@ -90,10 +92,10 @@ ana inferènsi kuantor ing sadhuwuré sekèn tengah,
 saben sekèn ing sadhuwuré ngemot
 $\lexists[x][!B(x)]$ minangka formula kang ora aktif
 lan ora utama. Mula formula mau bisa dibusak saka
-!!{proof}~$\pi_1$, lan kita ngolèhké !!a{proof}
+!!{proof}~$\pi_1$, lan kita ngolèhaké !!a{proof}
 kanggo~$\fCenter !B(t_1), \dots, !B(t_n)$.
 Kanthi $n-1$ panrapan $\RightR{\lor}$, kita banjur
-ngolèhké !!a{proof} kanggo disjungsi Herbrand
+ngolèhaké !!a{proof} kanggo disjungsi Herbrand
 ~$\Sequent !B(t_1) \lor \dots \lor !B(t_n)$.
 
 Masalahé, sanadyan !!{proof} tanpa cut kanggo
@@ -114,7 +116,7 @@ inferènsi ing sadhuwuré iku inferènsi proposisional.
 \end{thm}
 
 \begin{proof}
-  Titepna \emph{urutan} inferènsi kuantor ing~$\pi$
+  Tetepna \emph{urutan} inferènsi kuantor ing~$\pi$
   minangka cacah inferènsi proposisional ing sangisoré,
   lan urutan~$o(\pi)$ saka $\pi$ minangka jumlah
   urutan kabèh inferènsi kuantor ing kono.
@@ -125,6 +127,7 @@ inferènsi ing sadhuwuré iku inferènsi proposisional.
   kuantor, ana siji kang paling dhuwur lan premisé
   dadi sekèn tengah. Yèn ora ana inferènsi kuantor,
   sekèn pungkasané dhéwé dadi sekèn tengah.
+(Yèn ora ana inferènsi kuantor, sekèn pungkasan dadi sekèn tengah.)
 
   Yèn $o(\pi) > 0$, pilihen inferènsi kuantor paling
   ngisor kang urutané $>0$. Amarga urutané $>0$,
@@ -174,7 +177,7 @@ Saiki gatekna bukti~$\pi_1'$:
 \RightLabel{$\pi_2'$}
 \Deduce$\Gamma' \fCenter \Delta', \lforall[x][!A(x)], !A(c), !B$
 \AxiomC{}
-\RightLabel{$\pi_3$}
+\RightLabel{$\pi_3'$}
 \Deduce$!C, \Gamma' \fCenter \Delta', \lforall[x][!A(x)], !A(c)$
 \RightLabel{\LeftR{\lif}}
 \BinaryInf$!B \lif !C, \Gamma' \fCenter \Delta', \lforall[x][!A(x)], !A(c)$
@@ -182,26 +185,29 @@ Saiki gatekna bukti~$\pi_1'$:
 \UnaryInf$!B \lif !C, \Gamma' \fCenter \Delta', \lforall[x][!A(x)], \lforall[x][!A(x)]$
 \DisplayProof
 \]
-Ing kéné $\pi_2'$ diolehké saka~$\pi_2$ kanthi
-pelemahan nambah~$!A(c)$ ing tengen. (Iki ora nambah
+Ing kéné $\pi_2'$ diolèhaké saka~$\pi_2$ kanthi
+pelemahan nambah~$!A(c)$ ing tengen. Premis tengen anyar nganggo $\pi_3'$, kang
+diolèhaké saka~$\pi_3$ kanthi pelemahan
+$\lforall[x][!A(x)]$ ing tengen. (Iki ora nambah
 inferènsi apa waé, mliginé ora nambah inferènsi kuantor
 kang bisa ngowahi urutan. Iki uga ora nerak syarat
 variabel eigen ing~$\pi_2$, amarga ora ana konstanta
 ing~$!A(c)$ kang dadi variabel eigen ing~$\pi_2$.)
 Syarat variabel eigen kanggo \RightR{\lforall} tetep
 kacukupan, amarga $c$ ora ana ing~$!B \lif !C$.
+(Premis tengen diagram anyar uga mbutuhaké pelemahan. Label anyar nuduhaké owah-owahan subbukti iki; regularitas njaga syarat eigen.)
 
 Kita migunakaké admisibilitas kontraksi kanggo
-ngolèhké !!a{proof}~$\pi_1''$ kanggo
+ngolèhaké !!a{proof}~$\pi_1''$ kanggo
 $!B \lif !C, \Gamma' \fCenter \Delta', \lforall[x][!A(x)]$.
 Bukti admisibilitas $\RightR{\Contraction}$ kanggo
 $\lforall[x][!A(x)]$ lan bukti inversibilitas
 $\RightR{\lforall}$ kang digunakaké ing kono ora
-ngowahi urutan inferènsi apa waé: paling-paling
+nambah urutan inferènsi kang isih ana: paling-paling
 mung mbusak inferènsi. Mula cacah inferènsi kuantor
 ing~$\pi_1''$ ora luwih akèh tinimbang ing~$\pi_1$,
 lan saben inferènsi kuantor ing~$\pi_1''$ nduwèni
-cacah inferènsi proposisional ing sangisoré kang padha
+cacah inferènsi proposisional ing sangisoré kang ora luwih akèh
 karo inferènsi kang cocog ing~$\pi_1$---kajaba
 \RightR{\lforall} pungkasan: ana
 \LeftR{\lif} ing sangisoré ing~$\pi$, déné ing~$\pi_1''$
@@ -210,6 +216,7 @@ $\pi$ nganggo $\pi_1''$. Urutan !!{proof} asilé
 luwih cilik, amarga paling ora urutan inferènsi
 $\RightR{\lforall}$ wis suda (paling ora)~$1$.
 Saiki trapna hipotesis induksi.
+(Kang dibutuhaké yaiku urutan inferènsi kang cocog ora mundhak. Pambusakan inferènsi bisa nyuda urutan liyane; ora perlu ngaku kesamaan saben urutan.)
 
 Kahanan nalika inferènsi kuantor iku
 \RightR{\lexists} malah luwih gampang, amarga kontraksi
@@ -244,7 +251,7 @@ Gantenana $\pi_1$ ing~$\pi$ nganggo $\pi_1'$:
 \UnaryInf$\Gamma' \fCenter \Delta', \lexists[x][!A(x)], !B \land !C$
 \DisplayProof
 \]
-Ing kéné $\pi_3'$ diolehké saka $\pi_3$ kanthi
+Ing kéné $\pi_3'$ diolèhaké saka $\pi_3$ kanthi
 pelemahan nambah~$!A(t)$ ing tengen. Pelemahan iki
 mung nambah $!A(t)$ ing sisih tengen saben sekèn
 ing~$\pi_3$, mula ora ngowahi urutan inferènsi kuantor.
@@ -253,6 +260,7 @@ ing~$\pi$, kajaba urutan inferènsi \RightR{\lexists}
 kang diowahi urutané ngliwati~\RightR{\land}
 suda~$1$. Hipotesis induksi bisa ditrapaké.
 \end{proof}
+(Kontèks Yunani ora nganggo tandha placeholder formula. Pelemahan nganggo instansi saka cabang liyané aman amarga kabèh bukti reguler.)
 
 \begin{prob}
 Jlentrehna kahanan ing bukti \olref{thm:midsequent}
@@ -278,7 +286,7 @@ Mula mbusak $\lexists[x][!A(x)]$ saka
 sub-!!{proof} kang pungkasané ana ing~$S$
 ngasilaké !!{proof} kang bener kanggo
 $\Sequent !A(t_1), \dots, !A(t_n)$; saka kéné,
-kita ngolèhké !!a{proof} kanggo
+kita ngolèhaké !!a{proof} kanggo
 $\Sequent !A(t_1) \lor \dots \lor !A(t_n)$
 kanthi $n-1$ inferènsi $\RightR{\lor}$.
 \end{proof}

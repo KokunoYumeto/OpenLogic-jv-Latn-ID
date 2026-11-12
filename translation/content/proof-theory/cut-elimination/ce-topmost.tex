@@ -36,7 +36,8 @@ mung nganggo aturan~$\Log{G3c}$, ana !!a{proof}~$\pi'$ ing
 \end{lem}
 
 \begin{proof}
-Buktiné nganggo induksi rangkep tumrap !!{height} lan pangkat cut.
+Buktiné nganggo induksi rangkep: pangkat cut minangka ukuran
+kapisan, banjur !!{height} cut minangka ukuran kapindho.
 !!{proof}~$\pi$ pungkasané kaya mangkéné:
 \[
 \AxiomC{}
@@ -70,8 +71,9 @@ pungkasané nganggo siji~\CutCS{} lan pangkat cuté
 $= \cutrank{\pi}$ kanthi !!{height} cut $< \cheight{\pi}$,
 utawa pangkat cuté~$< \cutrank{\pi}$. Kahanan
 $\cheight{\pi} = 0$ (kaloro premis aksioma) katangani
-dening kahanan~A lan~B. Kahanan $\cheight{\pi} > 0$
-katangani dening kahanan C--D.
+déning kahanan~A lan~B. Kahanan $\cheight{\pi} > 0$
+katangani déning kahanan C--E.
+(Dhuwur cut positif uga nyakup kahanan E, nalika formula cut dadi formula utama ing kaloro inferènsi pungkasan.)
 
 \paragraph{Kahanan A:}
 Ana $!B$ ing $\Gamma$ lan uga ing~$\Delta$.
@@ -116,8 +118,9 @@ $!A, !A, \Gamma' \Sequent \Delta$ lan miturut admisibilitas
 ana !!a{proof} kanggo $\Gamma \Sequent \Delta$.
 Ing kahanan kapindho, $\pi_1$ iku !!a{proof} kanggo
 $\Gamma \Sequent \Delta', !A, !A$ lan miturut admisibilitas
-\RightR{\Contraction} kita ngolèhké !!a{proof} kanggo
+\RightR{\Contraction} kita ngolèhaké !!a{proof} kanggo
 $\Gamma \Sequent \Delta$.
+(Bukti premis kiwa kang mbutuhaké kontraksi ing suksèden diwènèhi label kapisan; label kapindho kanggo premis tengen.)
 
 \paragraph{Kahanan B:} Salah siji premis iku aksioma kanthi
 wujud~$\lfalse, \Gamma' \Sequent \Delta'$. Yèn premis kiwa
@@ -130,7 +133,7 @@ iku !!a{proof} kanggo
 $\Gamma \Sequent \Delta, \lfalse$. Bukti iku bisa diowahi
 dadi !!a{proof} kanggo~$\Gamma \Sequent \Delta$ kanthi
 mbusak siji salinan~$\lfalse$ saka suksèden saben sekèn
-ing~$\pi_1$. (Latihan: priksanen kanthi induksi tumrap
+ing~$\pi_1$. (Gladhen: priksanen kanthi induksi tumrap
 $\pheight{\pi_1}$.)
 
 Saiki anggepen kahanan~A utawa~B ora lumaku. Ing kahanan
@@ -140,7 +143,7 @@ premis minangka konklusi sawijining inferènsi.
 \paragraph{Kahanan C lan D: Ngowahi urutan cut.}
 Kabèh kahanan ing~C lan~D nduwèni pola kang padha.
 Kita miwiti saka !!a{proof} kang pungkasané nganggo~\CutCS{},
-kanthi salah siji premis diolehké saka aturan~$R$ kang
+kanthi salah siji premis diolèhaké saka aturan~$R$ kang
 !!{formula} cut~$!A$ dudu formula utamané (nanging
 !!{formula} liya~$!D$). Ing !!{proof} iki,
 \CutCS{} ana sawisé aturan~$R$, kanthi skéma mangkéné:
@@ -166,7 +169,7 @@ suksèden premis tengen~\CutCS. Yèn $!D$~ana ing antesèden
 wujudé mesthi béda. !!{formula}s ing $\Pi$ lan~$\Lambda$
 makili !!{formula}s aktif saka aturan~$R$.
 
-Kita balik urutan iki lan gatekna !!a{proof}
+Kita walik urutan iki lan gatekna !!a{proof}
 ing ngendi $R$ ana sawisé~\CutCS{}:
 \[
 \AxiomC{}
@@ -181,8 +184,9 @@ ing ngendi $R$ ana sawisé~\CutCS{}:
 \UnaryInf$\Gamma \fCenter \Delta', !D, !D$
 \DisplayProof
 \]
-Kita migunakaké pelemahan kang njaga !!{height} kanggo ngolèhké
+Kita migunakaké pelemahan kang njaga !!{height} kanggo ngolèhaké
 $\pi_1'$ lan $\pi_3'$ saka $\pi_1$ lan $\pi_3$ miturut urutané.
+(Koma kang kari ing antarane kontèks antesèden lan tandha sekèn dibusak.)
 
 Amarga urutan \CutCS{} lan~$R$ dibalik, iki diarani
 ``ngowahi urutan cut munggah ngliwati~$R$.'' Tumindak iki
@@ -207,7 +211,7 @@ saka sangang aturan siji premis
 Kita mung ngrembug rong tuladha: $!A$~dudu formula utama
 ing inferènsi pungkasan~$\pi_2$ kang nganggo~$\RightR{\lif}$
 utawa~\LeftR{\lexists}. Kahanan liyané padha polané
-lan dipasrahaké dadi latihan.
+lan dipasrahaké dadi gladhen.
 
 Anggepen $\pi$ pungkasané kaya mangkéné:
 \[
@@ -227,12 +231,12 @@ Anggepen $\pi$ pungkasané kaya mangkéné:
 ing ngendi $\Delta = \Delta', !B \lif !C$. Kita ngetrapaké
 pelemahan kang njaga !!{height}
 (\olref[seq][adm]{prop:weak-G3c-adm}) marang $\pi_1$
-kanggo ngolèhké !!a{proof} $\pi_1'$ kanggo
+kanggo ngolèhaké !!a{proof} $\pi_1'$ kanggo
 $!B, \Gamma \fCenter \Delta', !B \lif !C, !C, !A$
 (kanthi nambah $!B$ ing kiwa lan $!C$ ing tengen).
 Semono uga, kita ngetrapaké
 \olref[seq][adm]{prop:weak-G3c-adm} marang~$\pi_3$
-kanggo ngolèhké !!a{proof}~$\pi_3'$ kanggo
+kanggo ngolèhaké !!a{proof}~$\pi_3'$ kanggo
 $!A, !B, \Gamma \fCenter \Delta', !B \lif !C, !C$
 (kanthi nambah $!B \lif !C$ ing tengen).
 Hipotesis induksi ditrapaké marang
@@ -249,10 +253,10 @@ Hipotesis induksi ditrapaké marang
 \]
 kanthi !!{formula} cut~$!A$: !!{proof} iki nduwèni
 pangkat cut kang padha nanging !!{height} cut luwih cilik
-tinimbang~$\pi$. Mula kita ngolèhké !!a{proof}~$\pi_4$
+tinimbang~$\pi$. Mula kita ngolèhaké !!a{proof}~$\pi_4$
 ing \Log{G3c} tanpa \CutCS{} kanggo
 $!B, \Gamma \fCenter \Delta', !B \lif !C, !C$.
-Trapna $\RightR{\lif}$ kanggo ngolèhké !!a{proof} kanggo
+Trapna $\RightR{\lif}$ kanggo ngolèhaké !!a{proof} kanggo
 $\Gamma \fCenter \Delta', !B \lif !C, !B \lif !C$:
 \[
 \AxiomC{}
@@ -262,7 +266,7 @@ $\Gamma \fCenter \Delta', !B \lif !C, !B \lif !C$:
 \UnaryInf$\Gamma \fCenter \Delta', !B \lif !C, !B \lif !C$
 \DisplayProof
 \]
-Kanggo ngolèhké !!a{proof}~$\pi'$ kanggo
+Kanggo ngolèhaké !!a{proof}~$\pi'$ kanggo
 $\Gamma \Sequent \Delta$, yaiku
 $\Gamma \fCenter \Delta', !B \lif !C$, trapna
 \olref[seq][inv]{prop:G3c-cont-adm} (admisibilitas kontraksi).
@@ -279,7 +283,7 @@ Saiki anggepen $\pi$ pungkasané kaya mangkéné:
 \UnaryInf$!A, \lexists[x][!B(x)], \Gamma' \fCenter \Delta$
 \RightSubproofLabel{$\pi_2$}
 \RightLabel{\CutCS}
-\BinaryInf$\Gamma' \fCenter \Delta$
+\BinaryInf$\lexists[x][!B(x)], \Gamma' \fCenter \Delta$
 \DisplayProof
 \]
 Hipotesis induksi kita trapaké manèh marang
@@ -301,6 +305,7 @@ variabel eigen kanggo~\LeftR{\lexists} ing~$\pi_2$
 njamin $c$ ora ana ing $\lexists[x][!B(x)]$, $\Gamma'$,
 utawa~$\Delta$. Pungkasané, trapna
 \olref[seq][inv]{prop:G3c-cont-adm}.
+(Aturan cut kanthi kontèks kang padha njaga formula eksistensial ing antesèden. Formula iki ora bisa dibusak saka dudutan cut.)
 
 
 \paragraph{Kahanan D:}
@@ -340,7 +345,7 @@ Hipotesis induksi ditrapaké marang !!{proof}s
 \BinaryInf$\Gamma \fCenter \Delta', !B \land !C, !B$
 \DisplayProof
 \]
-and
+lan
 \[
 \AxiomC{}
 \RightLabel{$\pi_1''$}
@@ -353,16 +358,17 @@ and
 \DisplayProof
 \]
 Ing kéné, !!{proof}s \Log{G3c} $\pi_1'$ lan $\pi_1''$
-diolehké kanthi pelemahan kang njaga !!{height}
+diolèhaké kanthi pelemahan kang njaga !!{height}
 (\olref[seq][adm]{prop:weak-G3c-adm}) saka~$\pi_1$,
 siji kanthi nambah $!B$ ing tengen, siji manèh kanthi
 nambah $!C$. !!{proof}s $\pi_3'$ lan~$\pi_4'$
-uga diolehké saka $\pi_3$ lan~$\pi_4$ kanthi
+uga diolèhaké saka $\pi_3$ lan~$\pi_4$ kanthi
 pelemahan kang njaga !!{height} saka $\pi_3$ lan~$\pi_4$
 miturut urutané, yaiku nambah
 $!B \land !C$ ing tengen.
+(Kontèks suksèden nganggo prima ing larik iki, sadurungé konjungsi kang ditulis kanthi cetha.)
 
-Hipotesis induksi maringi !!{proof}s~$\pi_5$ lan~$\pi_6$
+Hipotesis induksi menehi !!{proof}s~$\pi_5$ lan~$\pi_6$
 ing \Log{G3c} kanggo
 $\Gamma \fCenter \Delta', !B \land !C, !B$ lan
 $\Gamma \fCenter \Delta', !B \land !C, !C$.
@@ -380,10 +386,11 @@ nganggo aturan~$\RightR{\land}$:
 \BinaryInf$\Gamma \fCenter \Delta', !B \land !C, !B \land !C$
 \DisplayProof
 \]
-Kanggo ngolèhké !!a{proof} kanggo
+Kanggo ngolèhaké !!a{proof} kanggo
 $\Gamma \Sequent \Delta$, yaiku
 $\Gamma \fCenter \Delta', !B \land !C$, trapna
 \olref[seq][inv]{prop:G3c-cont-adm} (admisibilitas kontraksi).
+(Larik dudutan aturan konjungsi uga nganggo kontèks prima, supaya salinan konjungsi ora dicacah kaping telu.)
 
 \paragraph{Kahanan E: Nyuda cut.}
 Kahanan pungkasan iki nalika $\pi_1$ lan $\pi_2$ kaloroné
@@ -463,10 +470,10 @@ Gatekna !!{proof} kang pungkasané nganggo \CutCS{},
 \BinaryInf$\Gamma \fCenter \Delta, !B$
 \DisplayProof
 \]
-ing ngendi $\pi_2'''$ diolehké saka $\pi_2''$ kanthi
+ing ngendi $\pi_2'''$ diolèhaké saka $\pi_2''$ kanthi
 pelemahan kang njaga !!{height}. Pangkat cuté
 $< \cutr{\pi}$ amarga $\depth{!C} < \depth{!B \lor !C}$,
-mula hipotesis induksi maringi !!a{proof} ing \Log{G3c},
+mula hipotesis induksi menehi !!a{proof} ing \Log{G3c},
 yaiku $\pi_1''$, kanggo $\Gamma \fCenter \Delta, !B$.
 !!{proof} kang pungkasané nganggo \CutCS{},
 \[
@@ -484,7 +491,7 @@ nduwèni pangkat cut $= \depth{!B} < \depth{!B \lor !C}$,
 mula hipotesis induksi bisa ditrapaké manèh lan ngasilaké
 !!a{proof} $\pi'$ kanggo $\Gamma \fCenter \Delta$.
 
-\item $!A \ident (!B \land !C)$. Latihan.
+\item $!A \ident (!B \land !C)$. Gladhen.
 
 \item Yèn $!A \ident (!B \lif !C)$, banjur $\pi$ pungkasané kaya mangkéné:
 \[
@@ -513,14 +520,14 @@ mula hipotesis induksi bisa ditrapaké manèh lan ngasilaké
 \RightLabel{$\pi_1'$}
 \Deduce$!B, \Gamma \fCenter \Delta, !C$
 \AxiomC{}
-\RightLabel{$\pi_2''$}
-\Deduce$!C, \Gamma \fCenter \Delta$
+\RightLabel{$\pi_2''[!B \Sequent {}]$}
+\Deduce$!C, !B, \Gamma \fCenter \Delta$
 \RightLabel{\CutCS}
 \BinaryInf$!B, \Gamma \fCenter \Delta$
 \DisplayProof
 \]
 nduwèni pangkat cut luwih cilik tinimbang~$\pi$.
-Hipotesis induksi maringi !!a{proof}~$\pi_1''$ kanggo
+Hipotesis induksi menehi !!a{proof}~$\pi_1''$ kanggo
 $!B, \Gamma \fCenter \Delta$. Saiki gatekna !!{proof}
 kang pungkasané nganggo \CutCS{},
 \[
@@ -535,7 +542,7 @@ kang pungkasané nganggo \CutCS{},
 \DisplayProof
 \]
 Pangkat cuté uga luwih cilik tinimbang pangkat cut~$\pi$,
-mula hipotesis induksi maringi \Log{G3c}-!!{proof}~$\pi'$
+mula hipotesis induksi menehi \Log{G3c}-!!{proof}~$\pi'$
 kanggo $\Gamma \fCenter \Delta$.
 \item Yèn $!A \ident \lforall[x][!B(x)]$, banjur $\pi$
 pungkasané kaya mangkéné:
@@ -568,11 +575,12 @@ Miturut hipotesis induksi, \CutCS{} bisa diilangi saka
 \BinaryInf$!B(t), \Gamma \fCenter \Delta$
 \DisplayProof
 \]
-ing ngendi $\pi_1''$ diolehké saka $\pi_1$ (dudu~$\pi_1'$!)
+ing ngendi $\pi_1''$ diolèhaké saka $\pi_1$ (dudu~$\pi_1'$!)
 kanthi pelemahan kang njaga !!{height}. (!!{proof} iki
 nduwèni pangkat cut kang padha nanging !!{height} cut
-luwih cilik.) Mula kita ngolèhké !!a{proof}~$\pi_2''$
+luwih cilik.) Mula kita ngolèhaké !!a{proof}~$\pi_2''$
 kanggo $!B(t), \Gamma \fCenter \Delta$.
+(Pelemahan antesèden ing premis kapindho mènèhi kontèks kang padha kanggo aturan cut.)
 
 !!{proof}~$\pi_1'$ nduwèni sekèn pungkasan
 $\Gamma \Sequent \Delta, !B(c)$, ing ngendi $c$~variabel
@@ -602,7 +610,7 @@ ditrapaké marang !!{proof}
 yaiku~$!B(t)$, mula !!{proof} iku nduwèni pangkat cut
 luwih cilik tinimbang~$\pi$.)
 \item Kahanan $!A \ident \lexists[x][!B(x)]$ dipasrahaké
-dadi latihan.
+dadi gladhen.
 \end{enumerate}
 \end{proof}
 
@@ -610,16 +618,17 @@ dadi latihan.
 Priksanen subkahanan saka kahanan~D ing bukti
 \olref{lem:cut-adm-G3c} nalika $!A$ dudu formula utama
 ing inferènsi pungkasan~$\pi_1$ kang nganggo~$\LeftR{\lif}$.
-(Cathetan: pérangan saka latihan iki yaiku njlentrehaké
-apa kang kudu dibuktèkaké, yaiku wujudé $\pi$ ing kahanan iki.)
+(Cathetan: pérangan saka gladhen iki yaiku njlentrehaké
+apa kang kudu dibuktekaké, yaiku wujudé $\pi$ ing kahanan iki.)
 \end{prob}
 
 \begin{prob}
-Priksanen subkahanan saka kahanan~D ing bukti
+Priksanen subkahanan saka kahanan~C ing bukti
 \olref{lem:cut-adm-G3c} nalika $!A$ dudu formula utama
 ing inferènsi pungkasan~$\pi_1$ kang nganggo
 ~$\LeftR{\lforall}$.
 \end{prob}
+(Aturan kuantor universal kiwa nduwèni siji premis, mula gladhen iki kalebu kahanan C.)
 
 \begin{prob}
 Priksanen subkahanan saka kahanan~E ing bukti
@@ -649,8 +658,8 @@ $!A \ident (!B \lif !C)$, $\pi$ kita owahi dadi
 \RightLabel{$\pi_1'$}
 \Deduce$!B, \Gamma \fCenter \Delta, !C$
 \AxiomC{}
-\RightLabel{$\pi_2''$}
-\Deduce$!C, \Gamma \fCenter \Delta$
+\RightLabel{$\pi_2''[!B \Sequent {}]$}
+\Deduce$!C, !B, \Gamma \fCenter \Delta$
 \RightLabel{\CutCS}
 \BinaryInf$!B, \Gamma \fCenter \Delta$
 \RightSubproofLabel{$\pi_1''$}
@@ -666,6 +675,8 @@ ngetrapaké hipotesis induksi---saiki ora mesthi nduwèni
 !!{formula} cut saka \CutCS{} sisih ngisor yaiku $!B$,
 \emph{pangkat} cuté tetep luwih cilik tinimbang pangkat
 cut~$\pi$.
+(Pelemahan antesèden ing premis kapindho mènèhi kontèks kang padha kanggo aturan cut.)
+(Cut pungkasan ngilangi formula aktif saka antesèden, mula dudutané mung kontèks sadurungé.)
 
 \olref{lem:cut-adm-G3c} nuduhaké yèn siji inferènsi
 \CutCS{} kang paling dhuwur bisa diilangi saka !!a{proof}.

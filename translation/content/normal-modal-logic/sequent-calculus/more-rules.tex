@@ -291,7 +291,7 @@ kanggo logika kang kacathet ing \olref{tab:logics-rules}.
 \end{ex}
 }
 \begin{ex}
-Kalkulus sekuen kanggo \Log{S5} ora jangkep tanpa aturan \Cut{};
+Kalkulus sekuen \Log{S5} kang diwenehake ing bab iki ora jangkep tanpa aturan \Cut{};
 upamane, \iftag{prvBox}{$\Diamond\Box !A \lif !A$}{$!A \lif
 \Box\Diamond !A$}, kang valid ing~$\Log{S5}$, ora nduweni bukti
 tanpa~\Cut. Ing ngisor iki !!a{derivation} kang nganggo~\Cut:
@@ -336,7 +336,7 @@ tanpa~\Cut. Ing ngisor iki !!a{derivation} kang nganggo~\Cut:
 \UnaryInf$\lnot\Diamond!A , \Diamond!A \fCenter$
 \RightLabel{5$\Diamond$}
 \UnaryInf$\Diamond\lnot\Diamond!A , \Diamond!A\fCenter$
-\RightLabel{\RightR{\Exchange}}
+\RightLabel{\LeftR{\Exchange}}
 \UnaryInf$\Diamond!A, \Diamond\lnot\Diamond!A\fCenter $
 
 \RightLabel{\Cut}
@@ -347,6 +347,7 @@ tanpa~\Cut. Ing ngisor iki !!a{derivation} kang nganggo~\Cut:
 \UnaryInf$\fCenter !A \lif \lnot\Diamond\lnot\Diamond!A$
 }
 \end{prooftree}
+Ijol-ijolan formula ing sisih kiwa nggunakake label aturan sisih kiwa.
 \end{ex}
 
 \begin{prob}

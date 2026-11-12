@@ -31,6 +31,7 @@ $\Gamma$ utawa $!A(x)$, mula syarat eigenvariabel wis dicukupi.
 
 \begin{prop}
 \ollabel{prop:provability-quantifiers}
+Kanggo saben term katutup $t$, pratelan iki lumaku.
 \begin{tagenumerate}{prvEx,prvAll}
 \tagitem{prvEx}{$!A(t) \Proves \lexists[x][!A(x)]$.}{}
 \tagitem{prvAll}{$\lforall[x][!A(x)] \Proves !A(t)$.}{}
@@ -39,15 +40,13 @@ $\Gamma$ utawa $!A(x)$, mula syarat eigenvariabel wis dicukupi.
 
 \begin{proof}
 \begin{tagenumerate}{prvEx,prvAll}
-\tagitem{prvEx}{Sekuen $!A(t) \Sequent \lexists[x][!A(x)]$ bisa
-  !!{derivable}:
+\tagitem{prvEx}{Sekuen $!A(t) \Sequent \lexists[x][!A(x)]$ !!{derivable}:
   \begin{prooftree}
     \Axiom$!A(t) \fCenter !A(t)$
     \RightLabel{\RightR{\lexists}}
     \UnaryInf$!A(t) \fCenter \lexists[x][!A(x)]$
     \end{prooftree}}{}
-\tagitem{prvAll}{Sekuen $\lforall[x][!A(x)] \Sequent !A(t)$ bisa
-  !!{derivable}:
+\tagitem{prvAll}{Sekuen $\lforall[x][!A(x)] \Sequent !A(t)$ !!{derivable}:
   \begin{prooftree}
     \Axiom$!A(t) \fCenter !A(t)$
     \RightLabel{\LeftR{\lforall}}

@@ -6,9 +6,9 @@
 \olsection{Titik Ajeg $\aleph$}
 
 Ing \olref[spine][]{chap}, kita ngandhakake yèn Aksioma Panggantian
-mbutuhaké pambenaran, amarga aksioma iki ndadèkaké hirarki
+mbutuhaké pambenaran, amarga aksioma iki ndadèkaké hierarki
 dadi dhuwur banget. Sawisé nyinaoni aritmetika kardinal, kita bisa
-mènèhi gambaran cilik bab dhuwuré hirarki kasebut.
+mènèhi gambaran cilik bab dhuwuré hierarki kasebut.
 
 Cetha yèn $0 < \aleph_0$, $1 < \aleph_1$, lan $2 < \aleph_2$\ldots;
 malah béda ukurané saya \emph{gedhé} ing saben langkah. Mula ana
@@ -53,7 +53,7 @@ dhèwèké ngandika:
 	[$\kappa$ iku] cacah kang \emph{gedhé banget}, miturut pangertèné
 	wong kang durung naté sinau teori himpunan; nganti, miturutku,
 	kahanan iku ndadèkaké bebeneré sembarang téori kang negesaké
-	anaké paling ora $\kappa$ obyèk dadi pitakonan.
+	anané paling ora $\kappa$ obyèk dadi pitakonan.
 	\citep[kaca~257]{Boolos2000}
 \end{quote}
 Ing pungkasan artikelé dhèwèké takon:
@@ -91,7 +91,7 @@ nalika rong sisih mau padha tekan titik kang padha lan $\kappa
 Kita sisihaké dhisik pitakonan iku. Yèn kita nampa $\ZFC$, ayo
 dipungkasi kanthi konstruksi titik ajeg kang luwih nyenengaké.
 Telung asil sabanjuré nerangaké, miturut pangertèn intuitif, yèn
-ana titik kang ora sepele nalika amba lan dhuwuré hirarki padha:
+ana titik kang ora sepele nalika amba lan dhuwuré hierarki padha:
 
 \begin{prop}\ollabel{bethfixed}
 Ana titik ajeg $\beth$, yaiku $\kappa$ kang nyukupi $\kappa=
@@ -133,19 +133,19 @@ Mula $\card{V_\kappa} = \beth_\kappa= \kappa$ miturut
 \olref{stagesize}.
 \end{proof}
 
-Cacahé tahap ing sangisoré $V_\kappa$ padha karo cacahé !!{element}s
+Cacahé tataran ing sangisoré $V_\kappa$ padha karo cacahé !!{element}s
 ing $V_\kappa$. Mula miturut pangertèn intuitif, $V_\kappa$ padha
 amba lan dhuwuré. Iki ngélingaké marang Tristram Shandy: kita pindhah
-saka siji tahap menyang tahap sabanjuré kanthi njupuk
-\emph{himpunan pangkat}, saéngga hirarki dadi \emph{luwih}
-gedhé ing saben langkah. Nanging ``ing pungkasan'', yaiku ing tahap
-$\kappa$, amba hirarki mau nyusul dhuwuré.
+saka siji tataran menyang tataran sabanjuré kanthi njupuk
+\emph{himpunan pangkat}, saéngga hierarki dadi \emph{luwih}
+gedhé ing saben langkah. Nanging ``ing pungkasan'', yaiku ing tataran
+$\kappa$, amba hierarki mau nyusul dhuwuré.
 
-Wong bisa takon: \emph{Sepira kerepé amba hirarki padha karo
+Wong bisa takon: \emph{Sepira kerepé amba hierarki padha karo
 dhuwuré?} Wangsulané: \emph{Padha kerepé karo anané ordinal.}
 Nanging iki perlu dijlentrehaké sethithik.
 
-Kita dhéfinisikaké suku $\tau$ kaya mangkéné. Kanggo sembarang $A$,
+Kita netepaké term $\tau$ kaya mangkéné. Kanggo sembarang $A$,
 tetepna:
 \begin{align*}
 	\tau_0(A) & \defis \cardsucc{\card{A}}\\
@@ -153,16 +153,17 @@ tetepna:
 	\tau(A) & \defis \bigcup_{n < \omega}\tau_n(A)
 \intertext{Kaya ing \olref{bethfixed}, $\tau(A)$ iku titik ajeg
 $\beth$ kanggo saben $A$, lan mesthi $\card{A} < \tau(A)$.
-Saiki gatekna dhéfinisi rekursif iki:}
+Saiki gatekna definisi rekursif iki:}
 	W_0 &\defis \tau(0)\\
 	W_{\alpha + 1} & \defis \tau(W_\alpha)\\
 	W_\alpha & \defis \bigcup_{\beta < \alpha} W_\beta
 	\text{, nalika $\alpha$ ordinal limit}
 \end{align*}
-Konstruksi iki didhéfinisikaké kanggo saben ordinal. Ing tahap limit,
+Konstruksi iki ditetepaké kanggo saben ordinal. Ing tataran limit,
 gabungan runtutan kang mundhak saka titik ajeg bet tetep titik ajeg bet.
 Mula $W$ iku ``!!a{injection}'' kelas saka ordinal menyang titik ajeg
 $\beth$. Lan kaya sadurungé, $V_{W_\alpha}$ padha amba lan dhuwuré
 kanggo saben $\alpha$.
+Wiji tau kudu ngluwihi kardinalitas input; nilai wiwitan W kudu wis titik ajeg bet. Katrangan gabungan ing limit mung njlentrehake kontinuitas runtutan bet.
 
 \end{document}

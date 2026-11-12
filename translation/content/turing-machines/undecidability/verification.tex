@@ -54,7 +54,6 @@ mandheg; lan amarga ing kahanan iki
 $!C(M, w, n) \Entails !E(M, w)$, kita entuk
 $!T(M, w) \Entails !E(M, w)$, yaiku
 $\Entails !T(M, w) \lif !E(M, w)$.
-Cathetan koreksi sumber OLPL-156: ing inferensi sabanjure lambang T dibenerake nganggo tandha formula, kaya premis sadurunge.
 
 Strategi kanggo kosok baline béda banget.
 Ing kene kita nganggep yen
@@ -76,7 +75,7 @@ yen lan mung yen $M$, sawisé lumaku
 nganggo input~$w$ nganti $n$ langkah,
 ana ing kahanan~$q$ lan lagi maca
 kothak~$m$.
-Cathetan koreksi sumber OLPL-157: lambang mesin ing tuladha sabanjure dibenerake saka T dadi M kang lagi dirembug. Amarga miturut hipotesis
+ Amarga miturut hipotesis
 $!T(M, w) \Entails !E(M, w)$,
 lan amarga $\Sat{M}{!T(M, w)}$
 miturut konstruksi, mula $\Sat{M}{!E(M, w)}$.
@@ -101,7 +100,7 @@ $0 \le i \le k$, lan $k$ yaiku kothak paling
 tengen kang dicakup input awal, kalebu blank pungkasan, ing wektu~$0$,
 utawa kothak paling tengen kang wis ditekani
 sirah maca-nulis sawisé $n$ langkah, endi
-wae kang luwih gedhé. Cathetan koreksi sumber SOL6-F060: kothak input kapisan uga dianggep wis ditekani ing wektu nol, mula wates prefix paling sethithik siji. Wates prefix ora disuda mung amarga input dipungkasi blank.
+wae kang luwih gedhé. Kothak input kapisan wis ditekani ing wektu nol, mula wates prefiks paling sithik siji. Blank ing pucuk input ora nyuda wates iki.
 \end{defn}
 
 \begin{lem}\ollabel{lem:halt-config-implies-halt}
@@ -134,7 +133,6 @@ amarga $\Obj Q_q(\num{m}, \num{n}) \land \Obj S_\sigma(\num{m},
 \num{n}) \Entails \bigvee_{\tuple{q, \sigma} \in X} (\Obj Q_q(\num{m},
 \num{n}) \land \Obj S_{\sigma}(\num{m}, \num{n}))$,
 amarga $\tuple{q,\sigma} \in X$.
-Cathetan koreksi sumber OLPL-158: pasangan kahanan-simbol kang dipilih kudu tetep pasangan tanpa transisi kang padha; predikat simbol ing inferensi pungkasan uga kudu padha wujude karo predikat sadurunge. Rumus saiki dibenerake supaya pasangan lan predikate padha.
 \end{proof}
 
 \begin{explain}
@@ -155,7 +153,7 @@ $!T(M, w) \Entails !C(M, w, n)$.
 \begin{proof}
 Landhesan induksi: Yen $n = 0$, konjungsi-konjungsi
 ing $!C(M, w, 0)$ uga ana ing $!T(M, w)$,
-mula bisa didudut saka iku. Cathetan koreksi sumber SOL6-F060: kanggo input kosong, blank ing kothak siji didudut saka aksioma penerus lan klausa pita kosong. Klausa tail sawise kothak siji didudut nganggo transitivitas. Dadi ing kasus iki dudu kabeh klausa literal konjungsi T. Cathetan SOL6-F062: lemma lan induksi nyakup konfigurasi mandheg kapisan, kanthi syarat durung mandheg sadurunge wektu kang dirembug.
+mula bisa didudut saka iku. Kanggo input kosong, blank ing kothak siji ndhèrèk saka aksioma penerus lan klausa pita kosong. Saka transitivitas dipikolehi klausa tumrap kothak sawisé kothak siji. Induksi uga tekan konfigurasi mandheg kapisan. Saben langkah nggunakake hipotesis manawa mesin durung mandheg ing wektu sadurungé.
 
 Hipotesis induksi: Yen $M$ durung mandheg
 sadurunge langkah kapangka-$n$, mula
@@ -165,7 +163,6 @@ $!C(M, w, n)$ njlentrehake konfigurasi
 mandheg), $!T(M, w) \Entails
 !C(M, w, n+1)$.
 
-Cathetan koreksi sumber OLPL-159: langkah induksi iki uga kudu nyakup pindhahan saka konfigurasi wektu nol menyang wektu siji; syarat n luwih gedhe tinimbang nol ing sumber ngliwati kasus iku.
 Upamane $n \ge 0$ lan sawisé $n$ langkah,
 $M$ kang diwiwiti nganggo $w$ ana ing
 kahanan~$q$ lan maca kothak~$m$.
@@ -223,7 +220,7 @@ kanthi modus ponens. Saben konjungsi ing larik
 tengah---kang ora kalebu $\Obj S_{\sigma_m}(\num{m},\num{n}')$
 ---ndherek saka konjungsi kang cocog ing
 $!C(M, w, n)$ bebarengan karo $!A(\num{m},\num{n})$.
-Cathetan koreksi sumber OLPL-160: larik konjungsi saiki mung ngrekam kothak saliyane kothak kang ditulisi; simbol anyar ing kothak asal diwenehake dening instruksi. SOL6-F059 ngetrapake koreksi iki ing rumus kanggo gerak tengen lan kiwa.
+Kanggo gerak tengen utawa kiwa, konjungsi njaga simbol ing kabèh kothak saliyané kothak asal. Instruksi menehi simbol anyar ing kothak asal mau.
 
 Yen $m < k$, $!T(M,w) \Proves \num{m} < \num {k}$
 (\olref[rep]{prop:mlessk}), lan saka transitivitas~$<$,
@@ -295,7 +292,7 @@ $\lforall[x][(\num{k}' < x \lif \Obj
 & \qquad  \lforall[x][(\num{k} < x
   \lif \Obj S_\TMblank(x, \num{n}'))]
 \end{align*}
-minangka sadurunge. Cathetan OLPL-773 lan SOL6-F058: klausa pangreksan lan instansiasine saiki ngecualekake kothak asal kang ditulisi, lan jeneng kahanan ing cabang nol dicocogake. (Gatekna yen ing kasus
+minangka sadurunge. (Gatekna yen ing kasus
 kapisan $\num{l}' \ident \num{l+1} \ident \num{m}$,
 dene ing kasus kapindho $\num{l} \ident \num{0}$.)
 Nanging iki persis $!C(M, w, n+1)$.
@@ -312,7 +309,7 @@ ing bukti \olref[tur][und][ver]{lem:config}.
 \end{prob}
 
 \begin{prob}
-Cathetan koreksi sumber SOL6-F061: premis A nggunakake numeral kanggo posisi lan wektu, kaya basa obyek ing definisi sadurunge. Wenehana !!a{derivation} kanggo
+ Wenehana !!a{derivation} kanggo
 $\Obj S_{\sigma_i}(\num{i}, \num{n}')$
 saka $\Obj S_{\sigma_i}(\num{i}, \num{n})$
 lan $!A(\num{m}, \num{n})$ (kanthi nganggep $i \neq m$,
@@ -391,8 +388,8 @@ Kanthi tembung liya, kita mbangun
 !!{structure}~$\Struct{M}$ supaya
 njlentrehake tumindake $M$ kang
 diwiwiti nganggo input~$w$ kanthi
-saben langkah. Cathetan panyunting: yen mesin wis mandheg, gunakna konfigurasi pungkasan kang padha kanggo interpretasi wektu sabanjure; ora ana instruksi kang cocog, mula klausa transisi ora njaluk owah anyar. Kanthi klausa kang wis dibenerake,
-$\Sat{M}{!T(M, w)}$. Cathetan OLPL-773 lan SOL6-F058: klausa obah kiwa saiki njaga kothak saliyane asal kang ditulisi, mula model run nyata nyukupi klausa iki. Yen
+saben langkah. Yen mesin wis mandheg, gunakna konfigurasi pungkasan kang padha kanggo interpretasi wektu sabanjure; ora ana instruksi kang cocog, mula klausa transisi ora njaluk owah anyar. Kanthi klausa iki,
+$\Sat{M}{!T(M, w)}$. Yen
 $\Entails !T(M, w) \lif !E(M, w)$,
 mula uga $\Sat{M}{!E(M, w)}$, yaiku
 \[

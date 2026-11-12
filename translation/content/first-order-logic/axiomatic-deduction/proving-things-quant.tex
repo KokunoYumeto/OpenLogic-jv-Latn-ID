@@ -14,7 +14,11 @@
 Kita bakal nyuguhake !!a{derivation} saka $(\lforall[x][!A(x)] \land
 \lforall[y][!B(y)]) \lif \lforall[x][(!A(x) \land !B(x))]$.
 
-Kaping pisan, gatekna yen
+Pilih konstanta $a$ kang absèn saka loro matriks.
+Upamakna substitusi $x$ kanggo $y$ ing $!B(y)$ bebas saka
+panangkepan variabel, lan $x$ ora muncul bébas ing panggonan liya ing
+matriks iku. Jenengna konjungsi ing sisih kiwa minangka $!D$.
+Kaping pisan, gatekna yèn
 \begin{align*}
   (\lforall[x][!A(x)] \land \lforall[y][!B(y)]) & \lif \lforall[x][!A(x)]\\
   \intertext{iku conto saka \olref[prp]{ax:land1}, lan}
@@ -26,9 +30,15 @@ Kaping pisan, gatekna yen
     \lforall[y][!B(y)] & \lif !B(a)\\
     \intertext{iku conto saka \olref[prp]{ax:land2} lan \olref[qua]{ax:q1}, miturut urutane,}
     (\lforall[x][!A(x)] \land \lforall[y][!B(y)]) & \lif !B(a)\\
-    \intertext{bisa diderivasi miturut \olref[pro]{prop:chain}. Kanthi nggunakake conto kang trep saka \olref[prp]{ax:land3} lan rong aplikasi~\MP, kita weruh yen}
-    (\lforall[x][!A(x)] \land \lforall[y][!B(y)]) & \lif (!A(a) \land !B(a))\\
-    \intertext{bisa diderivasi. Saiki kita bisa ngetrapake \QR{} kanggo entuk}
+    \intertext{bisa diderivasi miturut \olref[pro]{prop:chain}.
+    Instansi \olref[prp]{ax:land3} menehi $!A(a)\lif(!B(a)\lif(!A(a)\land !B(a)))$.
+    Kanthi ngrantai iki karo $!D\lif !A(a)$, diduwèni}
+    !D &\lif (!B(a)\lif(!A(a)\land !B(a)))\\
+    \intertext{banjur nganggo instansi saka \olref[prp]{ax:lif2} lan \MP{} kanggo ngasilaké}
+    (!D\lif !B(a)) &\lif (!D\lif(!A(a)\land !B(a)))\\
+    \intertext{Amarga $!D\lif !B(a)$ wis derivabel, \MP{} mènèhi}
+    !D &\lif (!A(a)\land !B(a))\\
+    \intertext{Saiki trapna \QR{} kanggo konstanta anyar $a$ supaya entuk}
 (\lforall[x][!A(x)] \land \lforall[y][!B(y)]) & \lif \lforall[x][(!A(x) \land !B(x))].
 \end{align*}
 \end{ex}

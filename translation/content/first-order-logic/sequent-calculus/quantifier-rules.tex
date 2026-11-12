@@ -55,8 +55,8 @@ inferensi \RightR{\lforall} utawa \LeftR{\lexists} diarani
 \emph{syarat eigenvariabel}.
 
 \begin{explain}
-Elinga konvensi yen nalika $!A$ iku !!a{formula} kanthi
-!!{variable}~$x$ bebas, kita nuduhake iki kanthi nulis~$!A(x)$. Ing
+Elinga konvensiné. Kanggo !!a{formula} $!A$ lan !!{variable}~$x$,
+kita nulis~$!A(x)$ kanggo nuduhaké variabel kang kena disubstitusi. Ing
 konteks kang padha, $!A(t)$ iku cekakan saka~$\Subst{!A}{t}{x}$. Mula
 kita uga bisa nulis aturan \RightR{\lexists} kaya mangkene:
 \begin{prooftree}
@@ -67,9 +67,11 @@ kita uga bisa nulis aturan \RightR{\lexists} kaya mangkene:
 Gatekna yen $t$ bisa wae wis muncul ing~$!A$, upamane $!A$~bisa
 awujud~$\Atom{\Obj P}{t,x}$. Dadi, ngasilake $\Gamma \Sequent \Delta,
 \lexists[x][\Atom{\Obj P}{t,x}]$ saka~$\Gamma \Sequent \Delta,
-\Atom{\Obj P}{t,t}$ iku panrapan \RightR{\lexists} kang bener---kita
-bisa “ngganti” siji utawa luwih, lan ora kudu kabeh, muncule~$t$
-ing premis nganggo !!{variable}~$x$ kang kaiket. Nanging, syarat
+\Atom{\Obj P}{t,t}$ iku panrapan \RightR{\lexists} kang bener.
+Kanggo nggolèki matriks saka premis, pilih panggonan-panggonan kang
+ngemot~$t$ kanggo diganti nganggo !!{variable}~$x$. Saben $x$ anyar
+kudu bebas ing matriks, lan substitusi $t$ kanggo $x$ kudu mbalikaké
+formula premis. Nanging, syarat
 eigenvariabel ing \RightR{\lforall} lan~\LeftR{\lexists} nuntut supaya
 !!{constant}~$a$ ora muncul ing~$!A$. Mula, kita ora bisa kanthi bener
 ngasilake $\Gamma \Sequent \Delta,
@@ -78,12 +80,10 @@ ngasilake $\Gamma \Sequent \Delta,
 \end{explain}
 
 \begin{explain}
-Ing \RightR{\lexists} lan \LeftR{\lforall} ora ana watesan tumrap
-term~$t$. Kosok baline, ing aturan \LeftR{\lexists} lan
-\RightR{\lforall}, syarat eigenvariabel nuntut supaya
-!!{constant}~$a$ ora muncul ing perangan endi wae ing njabane~$!A(a)$
-saka sekuen ndhuwur. Syarat iki perlu kanggo mesthekake yen sistem mung
-!!{derive}s sekuen kang valid. Tanpa syarat iki, inferensi ing ngisor
+Ing \RightR{\lexists} lan \LeftR{\lforall}, $t$ kudu dadi term katutup.
+Ing \LeftR{\lexists} lan \RightR{\lforall}, !!{constant}~$a$ kudu
+absèn saka kesimpulan kabèh, kalebu matriks $!A(x)$ lan konteks.
+Syarat iki perlu supaya sistem mung !!{derive}s sekuen valid. Tanpa syarat iki, inferensi ing ngisor
 iki bakal diidini:
 \begin{prooftree}
   \Axiom$!A(a) \fCenter !A(a)$
@@ -99,7 +99,10 @@ iki bakal diidini:
   \RightLabel{\LeftR{\lexists}}
   \UnaryInf$\lexists[x][!A(x)] \fCenter \lforall[x][!A(x)]$
 \end{prooftree}
-Nanging, $\lexists[x][!A(x)] \Sequent \lforall[x][!A(x)]$ ora valid.
+Sekuen $\lexists[x][!A(x)] \Sequent \lforall[x][!A(x)]$ ora valid.
+Predikat unèr kang bener kanggo mung siji anggota saka domain rong unsur
+mènèhi conto tandhingan, amarga ukara eksistensial bener lan ukara
+universal salah.
 \end{explain}
 
 \end{document}

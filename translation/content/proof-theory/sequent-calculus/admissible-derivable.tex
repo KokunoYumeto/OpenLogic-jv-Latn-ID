@@ -8,7 +8,7 @@
 
 \olfileid{pt}{seq}{adm}
 
-\olsection{Aturan Admisibel lan Aturan sing Bisa Diturunake}
+\olsection{Aturan Admisibèl lan Aturan sing Bisa Diturunaké}
 
 Akeh asil teori bukti ngenani---utawa nggunakake---asil bab apa
 kabeh sing bisa !!{prove} nganggo aturan tartamtu uga bisa
@@ -19,9 +19,9 @@ bisa !!{prove} nganggo aturan sistem sekuen kanthi~\Cut{} uga bisa
 diwenehi jeneng.
 
 \begin{defn}
-Aturan~$R$ diarani \emph{admisibel} ing sistem sekuen yen saben sekuen
-sing bisa dibuktekake ing sistem kasebut kanthi tambahan aturan~$R$
-uga bisa dibuktekake tanpa~$R$.
+Aturan~$R$ diarani \emph{admisibel} ing sistem sekuen yen saben sekèn
+sing bisa dibuktèkaké ing sistem kasebut kanthi tambahan aturan~$R$
+uga bisa dibuktèkaké tanpa~$R$.
 \end{defn}
 
 \begin{ex}\ollabel{ex:land-deriv}
@@ -123,7 +123,11 @@ Tuduhake yen aturan
 \BinaryInf$\Gamma \fCenter \Delta, !A \liff !B$
 \DisplayProof
 \end{enumerate}
-bisa diturunake ing (a)~\Log{G1c} lan (b)~\Log{G3c}.
+bisa diturunaké ing (a)~\Log{G1c} lan (b)~\Log{G3c}.
+Kanggo aturan kiwa ing (b), gunakna presentasi sing ngidinaké
+identitas kanggo formula sembarang minangka aksioma. Saben instans
+identitas kasebut nduwèni bukti ing \Log{G3c}, kaya ing
+\olref[ex]{prop:G3c-axioms}.
 \end{prob}
 
 \begin{ex}\ollabel{ex:weak-adm}
@@ -137,8 +141,8 @@ Aturan $\RightR{\Weakening}$ saka \Log{G1c},
 admisibel ing~\Log{G3c}. Gagasan buktine prasaja: upamane ana
 !!a{proof}~$\pi$ kanggo premis $\Gamma \Sequent \Delta$ ing~\Log{G3c}.
 Dhisik, ganti jeneng eigenparameter ing saben subwit bukti sing
-gegayutan supaya seger tumrap formula sing bakal ditambahake; cara iki
-njaga sekuen pungkasan lan dhuwure bukti. Tambahake !!{formula}~$!A$
+gegayutan supaya seger tumrap formula sing bakal ditambahaké.
+Panggantos iki njaga sekèn pungkasan lan dhuwuré bukti. Tambahake !!{formula}~$!A$
 ing sukseden saben sekuen ing~$\pi$. Aksioma tetep dadi aksioma;
 inferensi sing bener tetep bener. !!{formula} pungkasan saka !!{proof}
 anyar yaiku $\Gamma \Sequent \Delta, !A$.
@@ -185,8 +189,9 @@ Aturan~$R$,
 \]
 diarani \emph{admisibel kanthi njaga !!{height}} (utawa
 \emph{admisibel-!!{hp}}) ing sistem yen, saben $\Proves[h_i] S_i$
-kanggo $i = 1$, \dots,~$n$, uga $\Proves_m S$ kanthi
-$m = \max(h_1, \dots, h_n)$.
+kanggo $i = 1$, \dots,~$n$, uga $\Proves[m] S$ kanthi
+$m = \max(h_1, \dots, h_n)$. Notasi $\Proves[m] S$ mratélakaké
+yèn $S$ nduwèni bukti kanthi dhuwur paling akèh $m$.
 \end{defn}
 
 Gathekna yen supaya aturan admisibel kanthi njaga !!{height}, cukup
@@ -212,10 +217,16 @@ admisibel kanthi njaga !!{height} ing~\Log{G3c}.
   kaya sing wis dijlentrehake. Kita mbuktekake kanthi induksi
   tumrap~$n$. Yen $n=0$, $\pi$ mung aksioma $\Gamma \Sequent \Delta$
   (yaiku ana formula atomik $!C$ ing $\Gamma$ lan~$\Delta$, utawa ana
-  falsitas ing anteseden), lan $\Gamma \Sequent \Delta, !A$ uga
+  falsitas ing antesedèn), lan $\Gamma \Sequent \Delta, !A$ uga
   aksioma. Yen $n = \pheight{\pi} >0$, !!{proof}~$\pi$ duwe inferensi
-  pungkasan. Kita misahake kasus miturut aturan sing digunakake.
-  Kita mung menehi siji conto: upamane inferensi pungkasan nggunakake
+  pungkasan.
+  Kanggo saben aturan ing tabel \Log{G3c}, formula tambahan tetep
+  ana ing konteks sisih ing saben premis lan konklusi. Sawisé
+  eigenparameter diganti jenengé kanthi seger, aturan pungkasan
+  bisa ditrapaké manèh marang premis saka hipotesis induksi.
+  Dhuwur ora owah amarga inferènsi lan cacah premisé padha.
+  Cara iki lumaku kanggo pelemahan ing sisih kiwa uga.
+  Contoné, upamane inferensi pungkasan nggunakake
   $\RightR{\land}$. Mula $\Delta = \Delta', !B \land !C$, lan
   sub-!!{proof}s langsung $\pi_1$ lan~$\pi_2$ saka inferensi pungkasan
   duwe sekuen pungkasan $\Gamma \Sequent \Delta', !B$ lan

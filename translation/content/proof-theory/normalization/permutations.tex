@@ -41,7 +41,8 @@ sub-!!{proof}~$\delta_1$ kang pungkasané mangkéné:
 Kedadéan !!{formula}~$!A_n$ kang pungkasan ing cut iku
 konklusi saka~\Elim{\lor}, yaiku $!B \land !C$ kang ana ing ngisor.
 Kedadéan !!{formula}~$!A_{n-1}$ kang sadurungé pungkasan
-iku salah siji premis tambahan saka~\Elim{\lor}.
+iku salah siji premis cilik saka~\Elim{\lor}.
+(Formula cut ing tuladha iki konjungsi B lan C, padha karo formula ing diagram.)
 
 Kanggo nyuda dawa cut iki, urutan inferènsi \Elim{\lor} lan
 \Elim{\land} bisa diijolaké (``dipermutasi''). Dadi,
@@ -66,7 +67,7 @@ subbukti~$\delta_1$ ing~$\delta$ diganti mangkéné:
 \]
 Cut kang mauné pungkasan ing premis \Elim{\land} ing sangisoré
 \Elim{\lor} saiki pungkasan ing premis salah siji inferènsi
-\Elim{\land} ing sandhuwuré premis tambahan \Elim{\lor};
+\Elim{\land} ing sandhuwuré premis cilik \Elim{\lor};
 tegesé, dawa saben cut mau suda~$1$.
 
 Kajaba iku, saben cut kang kabèh ana ing $\delta_2$, $\delta_3$,
@@ -74,12 +75,14 @@ utawa $\delta_4$, utawa kabèh ana ing sanjabané~$\delta_1$
 ing~$\delta$, ora owah: cut mau isih nglibataké !!{formula}s kang
 padha lan ngliwati inferènsi kang padha, mula pangkat lan dawané
 padha karo cut kang cocog ing~$\delta$. Mula pangkat cut !!{proof}
-anyar ora mundhak, déné dawa cut !!{proof} anyar luwih cilik
-tinimbang dawa cut !!{proof} lawas.
+anyar ora mundhak. Yèn cut kang dipermutasi maksimal, dawa cut
+!!{proof} anyar luwih cilik tinimbang dawa cut !!{proof} lawas.
+(Ukuran dawa cut mung ngitung cut kanthi pangkat maksimal. Permutasi cut kang pangkaté luwih cilik ora mesthi ngurangi ukuran iku.)
 
 \begin{prob}
 Sawisé konversi permutasi, dawa paling ora siji cut suda~$1$.
-Yèn \Elim{\land} dipermutasi ngliwati~\Elim{\lor}, satemené
+Yèn cut kang dipermutasi maksimal lan \Elim{\land} dipermutasi
+ngliwati~\Elim{\lor}, satemené
 ana rong segmen cut kang dawané suda, mula ing kasus iki dawa cut
 !!{proof} suda paling ora~$2$. Apa dawa cut !!a{proof} bisa
 suda luwih saka~$2$ kanthi siji permutasi kaya mangkéné?
@@ -90,7 +93,7 @@ Proses mindhah aturan !!a{elimination} menyang sandhuwuré aturan
 \Elim{\lor} utawa \Elim{\lexists} diarani
 \emph{konversi permutasi}. Pola kanggo sawetara pasangan aturan
 kacetha ing~\olref{tab:permutation-conversions}. (Pasangan liyané
-dadi latihan.) 
+dadi gladhen.) 
 
 % \begin{table}
 % \begin{multline*}
@@ -351,6 +354,7 @@ Wènèhana konversi permutasi kanggo \Elim{\lexists} kang disusul
 \Elim{\lexists}. Terangna kena apa syarat variabel eigen ora
 dilanggar ing kasus kang pungkasan.
 \end{prob}
+(Token aturan eksistensial ing gladhen lan andharan sabanjuré padha karo token ing diagram.)
 
 Kita kudu mastèkaké yèn ngetrapaké konversi permutasi ora
 nglanggar syarat variabel eigen. Coba delengen
@@ -401,26 +405,28 @@ Yèn iki diganti dadi
 Kita bisa kuwatir yèn variabel eigen~$c$ ana, umpamané, ing~$!D$.
 Pancen, asumsi $!D$ dibusak ing sandhuwuré
 $\Elim{\lexists}$ kang asli, mula ing !!{proof} asli formula mau ora ana
-ing asumsi kang isih mbukak ing sandhuwuré premis utama
+ing asumsi kang isih kabuka ing sandhuwuré premis utama
 inferènsi~\Elim{\lexists}; ing kono syarat variabel eigen
 kawujud. Nanging ing !!{proof} anyar, $!D$~durung dibusak nganti
 sawisé inferènsi-inferènsi~\Elim{\lexists}, mula syarat variabel
 eigen mesthiné dilanggar. Nanging, élinga yèn !!{proof}s kita
 dianggep reguler: saben variabel eigen dadi variabel eigen mung
-kanggo siji inferènsi lan mung ana ing sandhuwuré premis tambahan
+kanggo siji inferènsi lan mung ana ing sandhuwuré premis cilik
 \Elim{\lexists} ing !!{proof}. Mligi, $c$~ora bisa ana ing
 $\delta_3$ utawa~$\delta_4$.
+(Label discharge kang dipindhah dipilih seger marang label asumsi kabuka subbukti kang disalin. Konstanta eigen lan label discharge internal saben salinan uga dipilih seger supaya bukti asil reguler maneh; asumsi kabuka tetep njaga dependensi. Syarat eigen saben inferènsi waé ora njamin jeneng eigen unik sawisé duplikasi.)
 
 Tuladha iki nuduhaké bab liya: !!{proof} anyar nduwèni rong
 salinan~$\delta_5$. Tegesé, yèn $\delta_5$ ngemot cut maksimal,
-dawa cut \emph{ora} kasil disuda! Mula kita kudu ngati-ati supaya
+dawa cut \emph{durung mesthi} suda! Mula kita kudu ngati-ati supaya
 konversi permutasi mung ditrapaké nalika kita ngerti yèn ora ana
 cut maksimal ing $\delta_5$. Iki kita jamin kanthi tansah milih
 cut maksimal kang \emph{paling dhuwur}, yaiku cut maksimal kang
 sub-!!{proof}é (ing kasus iki,~$\delta_1$) ora ngemot cut maksimal
 kang pungkasané ana ing sandhuwuré inferènsi pungkasan ing
-sub-!!{proof} mau. Kanthi mangkono, ora mungkin ana cut maksimal
+sub-!!{proof} mau. Kanthi mangkono, ora bisa ana cut maksimal
 liya ing~$\delta_5$ (utawa ing $\delta_2$, $\delta_3$,
 utawa~$\delta_4$).
+(Duplikasi cut maksimal bisa nambah ukuran, nanging ora mesthi ngalangi penurunan. Milih cut paling dhuwur njamin ora ana duplikasi maksimal kang kudu diitung.)
 
 \end{document}

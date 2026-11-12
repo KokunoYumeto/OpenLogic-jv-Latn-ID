@@ -25,11 +25,12 @@ kita ora bisa nyimpulake yen~$\Proves !A$.
 
 Mula nalika mbangun model~$\mModel{M}$, kita kudu njaga supaya
 !!{derivability} kanggo !!{formula}~$!A$ tetep ora kelakon. Dadi kita
-ora bisa nggunakake himpunan lengkap $\Gamma^* \supseteq \Gamma$
-kanggo mbangun model $\mModel{M}$, amarga ing saben himpunan lengkap
+ora bisa ngandelake himpunan jangkep $\Gamma^* \supseteq \Gamma$
+kanggo cara umum mbangun model $\mModel{M}$, amarga ing saben himpunan lengkap
 $\Gamma^*$, kita nduweni $\Gamma^* \Proves !A \lor \lnot !A$.
+Larangan iki ngenani cara umum kanggo kabeh rumus kang ora bisa dideduksi; kanggo sawetara kasus, kontramodel saka teori jangkep isih bisa digunakake.
 
-Minangka gantine himpunan lengkap~$\Gamma^*$, kita bakal nggunakake
+Minangka gantine himpunan jangkep~$\Gamma^*$, kita bakal nggunakake
 pangerten himpunan formula kang prim:
 
 \begin{defn}\ollabel{defn:prime}
@@ -88,6 +89,7 @@ pangerten himpunan formula kang prim:
   mula $\Gamma_{n+1} \Proves/ !A$. Yen $i(n)$ ora ditetepake,
   $\Gamma_{n+1} = \Gamma_n$ lan ora ana kang kudu dibuktekake.
   Mula upamane $i(n)$ ditetepake. Supaya prasaja, tetepa $i = i(n)$.
+Langkah induksi uga kudu nyakup transisi saka tahap wiwitan.
   
   Kita bakal mbuktekake kontrapositif pratelan iki. Upamane
   $\Gamma_{n+1} \Proves !A$. Miturut konstruksi,
@@ -110,6 +112,7 @@ pangerten himpunan formula kang prim:
   Amarga $\Gamma_i \subseteq \Gamma_n$ yen $i \le n$,
   $\Gamma' \subseteq \Gamma_n$. Nanging banjur $\Gamma_n \Proves !A$,
   nalisir bukti ing ndhuwur yen $\Gamma_n \Proves/ !A$.
+Yen himpunan premis winates iku kosong, indeks tahap bisa dipilih nol.
 
   Pungkasan, kita nuduhake yen $\Gamma^*$ prim, yaiku nyukupi syarat
   \olref{defn:prime1}, \olref{defn:prime2}, lan~\olref{defn:prime3}
@@ -138,6 +141,7 @@ pangerten himpunan formula kang prim:
   Nanging banjur salah siji $!B \in \Gamma_{m+1}$ utawa
   $!C \in \Gamma_{m+1}$, nalisir asumsi yen $!B \notin \Gamma^*$
   lan $!C \notin \Gamma^*$.
+Alesan pemilihan nggunakake indeks luwih cilik kang cacahé winates, amarga nambah rumus bisa ndadekake disjungsi liyane bisa dideduksi.
 
   Saiki upamane $\Gamma^* \Proves !B$. Mula $\Gamma^* \Proves !B \lor !B$.
   Nanging kita lagi wae mbuktekake yen $\Gamma^* \Proves !B \lor !B$,

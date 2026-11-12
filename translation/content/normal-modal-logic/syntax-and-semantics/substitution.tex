@@ -69,6 +69,7 @@ saka !!{formula}s, nalika ngrembug validitas lan nalika ngrembug
   !!{formula} $\SSubst{!A}{\subst{!D_1}{p_1}, \dots,
     \subst{!D_n}{p_n}}$ diarani \emph{instansi substitusi}
   saka~$!A$.
+Tag bikondisional lan Box dicocogake karo syarat pembentukan basa.
 \end{defn}
 
 \begin{ex}
@@ -85,7 +86,7 @@ saka !!{formula}s, nalika ngrembug validitas lan nalika ngrembug
       karo substitusi kang ditindakake siji-siji; upamane bandhingna
       $\SSubst{!A}{\subst{!D_1}{p_1}, \subst{!D_2}{p_2}}$ ing ndhuwur karo
       $\Subst{(\Subst{!A}{!D_1}{p_1})}{!D_2}{p_2}$, kang asile:}
-    \Diamond(p_2 \lif p_3) & \lif \Subst{\Box(\Diamond(p_2 \lif p_3) \land p_2)}{\lnot\Box p_1}{p_2}, \text{ yaiku,}\\
+    \Diamond(\lnot\Box p_1 \lif p_3) & \lif \Subst{\Box(\Diamond(p_2 \lif p_3) \land p_2)}{\lnot\Box p_1}{p_2}, \text{ yaiku,}\\
     \Diamond(\lnot\Box p_1 \lif p_3) &
     \lif \Box(\Diamond(\lnot\Box p_1
     \lif p_3) \land \lnot\Box p_1)\\
@@ -95,6 +96,7 @@ saka !!{formula}s, nalika ngrembug validitas lan nalika ngrembug
     \lif \Box(\Diamond(p_2
     \lif p_3) \land \lnot\Box\Diamond(p_2 \lif p_3)).
   \end{align*}
+Ing iterasi kapisan, lebokna D2 kanggo saben kedadéan p2, kalebu kedadéan ing antesèden.
 \end{ex}
 
 \end{document}

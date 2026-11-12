@@ -12,16 +12,14 @@
 
 \olsection{Gagasan Teoretis-Bukti}
 
-\begin{editorial}
-Bagean iki nglumpukake definisi relasi provabilitas lan konsistensi
+Perangan iki nemtokaké teorema, derivabilitas, lan konsistensi
 kanggo deduksi natural.
-\end{editorial}
 
 \begin{explain}
 Kaya nalika kita nemtokake sawetara gagasan semantis wigati
 (validitas, akibat, lan bisa dicukupi), saiki kita nemtokake
 \emph{gagasan teoretis-bukti} kang cocog. Gagasan iki ora ditemtokake
-kanthi nggunakake panyukupan !!{sentence}s ing !!{structure}s, nanging
+kanthi nggunakake panyukupan !!{sentence}s \iftag{FOL}{ing !!{structure}s}{déning !!{valuation}s}, nanging
 kanthi nggunakake !!{derivability} utawa !!{nonderivability}
 !!{sentence}s tartamtu saka ukara-ukara liyane. Panemuan wigati yaiku
 manawa gagasan-gagasan kasebut cocog siji lan sijine. Kacocogan iki
@@ -37,11 +35,10 @@ $\Proves/ !A$ yen dudu teorema.
 \end{defn}
 
 \begin{defn}[!!^{derivability}]
-!!^a{sentence} $!A$ \emph{bisa !!{derivable} saka} himpunan
+!!^a{sentence} $!A$ \emph{!!{derivable} saka} himpunan
 !!{sentence}s~$\Gamma$, ditulis $\Gamma \Proves !A$, yen ana
 !!{derivation} kang kesimpulane~$!A$ lan saben asumsine wis
-!!{discharged} utawa kalebu ing~$\Gamma$. Yen $!A$ ora bisa
-!!{derivable} saka $\Gamma$, kita nulis $\Gamma \Proves/ !A$.
+!!{discharged} utawa kalebu ing~$\Gamma$. Yen $!A$ ora !!{derivable} saka $\Gamma$, kita nulis $\Gamma \Proves/ !A$.
 \end{defn}
 
 \begin{defn}[Konsistensi]
@@ -84,14 +81,19 @@ Yen $\Gamma \Proves !A$, ana !!a{derivation}~$\delta_0$ saka~$!A$
 kanthi kabeh asumsi !!{undischarged} kalebu ing~$\Gamma$. Yen
 $\{!A\} \cup \Delta \Proves !B$, mula ana
 !!a{derivation}~$\delta_1$ saka~$!B$ kanthi kabeh asumsi
-!!{undischarged} kalebu ing~$\{!A\} \cup \Delta$. Saiki gatekna:
+!!{undischarged} kalebu ing~$\{!A\} \cup \Delta$. Amarga wit loro
+winates, pilih $\Gamma_0 \subseteq \Gamma$ lan $\Delta_0 \subseteq \Delta$ kang winates kanggo
+asumsi kang digunakaké. Ing wit kapindho, tandhanana kabèh
+asumsi mbukak kanthi wujud $!A$ nganggo label anyar $1$.
+Yèn ora ana, gunakna introduksi kondisional tanpa pambubaran.
+Wit gabungané kaya mangkéné.
 \begin{prooftree}
-  \AxiomC{$\Delta, \Discharge{!A}{1}$}
+  \AxiomC{$\Delta_0, \Discharge{!A}{1}$}
   \RightLabel{$\delta_1$}
   \DeduceC{$!B$}
   \DischargeRule{\Intro{\lif}}{1}
   \UnaryInfC{$!A \lif !B$}
-  \AxiomC{$\Gamma$}
+  \AxiomC{$\Gamma_0$}
   \RightLabel{$\delta_0$}
   \DeduceC{$!A$}
   \RightLabel{\Elim{\lif}}

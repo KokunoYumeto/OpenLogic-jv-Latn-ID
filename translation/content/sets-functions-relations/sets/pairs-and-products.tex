@@ -94,11 +94,13 @@ mula $A\times B$ duwe $n\cdot m$ anggota.
 \end{prop}
 
 \begin{proof}
-Kanggo saben !!{element}~$x$ ing~$A$, ana $m$ !!{element}s
+Yèn salah siji faktor kosong, prodhuk uga kosong lan cacah
+anggotané nol. Kanggo faktor loro sing ora kosong,
+kanggo saben !!{element}~$x$ ing~$A$, ana $m$ !!{element}s
 awujud $\tuple{x, y} \in A \times B$.
 Tetepna $B_x = \Setabs{\tuple{x, y}}{y\in B}$.
 Amarga yen $x_1 \neq x_2$,
-$\tuple{x_1, y} \neq\tuple{x_2, y}$, mula
+$\tuple{x_1, y_1} \neq\tuple{x_2, y_2}$, mula
 $B_{x_1} \cap B_{x_2} = \emptyset$.
 Nanging yen $A = \{x_1,\dots, x_n\}$, mula
 $A \times B = B_{x_1} \cup \dots \cup B_{x_n}$,
@@ -127,16 +129,18 @@ $n^k$ !!{element}s.
 
 \begin{ex}
 Yen $A$ iku himpunan, \emph{tembung} ing~$A$ yaiku saben
-urutan !!{element}s saka~$A$. Urutan bisa dianggep
+urutan winates !!{element}s saka~$A$. Urutan bisa dianggep
 tupel-$n$ kang ngemot !!{element}s saka~$A$.
 Tuladhane, yen $A = \{a, b, c\}$, urutan "$bac$" bisa
 dianggep minangka tupel telu~$\tuple{b, a, c}$.
 Tembung, yaiku urutan lambang, wigati banget ing ilmu komputer.
-Miturut konvensi, !!{element}s saka~$A$ dianggep urutan
-dawane~$1$, lan $\emptyset$ minangka urutan dawane~$0$.
-Mula himpunan \emph{kabeh} tembung ing~$A$ yaiku
+Tembung dawané~$n$ dikodhe minangka fungsi saka
+$\{1,\ldots,n\}$ menyang~$A$. Nalika $n=0$, domainé kosong
+lan fungsi kosong $\emptyset$ dadi tembung kosong. Kode
+iki mbedakaké tembung kang dawané béda lumantar domainé.
+Himpunan kabèh tembung ing~$A$ yaiku
 \[
-A^* = \{\emptyset\} \cup A \cup A^2 \cup A^3 \cup \dots
+A^* = \bigcup_{n\in\Nat} \Setabs{w}{w:\{1,\ldots,n\}\to A}.
 \]
 \end{ex}
 

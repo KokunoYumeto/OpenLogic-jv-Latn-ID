@@ -11,16 +11,16 @@
 \olsection{Modalitas lan Himpunan Konsisten Jangkep}
 
 \begin{explain}
-Nalika kita mbangun model~$\mModel{M^\Sigma}$ kang himpunan jagade
+Nalika kita mbangun model~$\mModel{M^\Sigma}$ kang himpunan donyane
 kawangun saka himpunan $\Sigma$-konsisten jangkep~$\Delta$ ing
 sawijining logika modal normal~$\Sigma$, kita uga kudu netepake
-relasi aksesibilitas~$R^\Sigma$ ing antarane ``jagad'' kasebut. Kita
-ngarepake relasi aksesibilitas (lan pemetaan $V^\Sigma$) ditepakake
+relasi aksesibilitas~$R^\Sigma$ ing antarane ``donya'' kasebut. Kita
+ngarepake relasi aksesibilitas (lan pemetaan $V^\Sigma$) ditetepake
 saengga $\mSat{M^\Sigma}{!A}[\Delta]$ yen lan mung yen $!A \in
-\Delta$. Kepiye carane?
+\Delta$. Kepiye carane? Kurung pemetaan ditutup ing njaba notasi matematika.
 
-Sawise relasi aksesibilitas ditepakake, definisi bebener ing
-sawijining jagad njamin yen \iftag{prvBox}{$\mSat{M^\Sigma}{\Box!A}[\Delta]$
+Sawise relasi aksesibilitas ditetepake, definisi bebener ing
+sawijining donya njamin yen \iftag{prvBox}{$\mSat{M^\Sigma}{\Box!A}[\Delta]$
   yen lan mung yen $\mSat{M^\Sigma}{!A}[\Delta']$ kanggo kabeh $\Delta'$
   kang $R^\Sigma\Delta\Delta'$}{$\mSat{M^\Sigma}{\Diamond!A}[\Delta]$
   yen lan mung yen $\mSat{M^\Sigma}{!A}[\Delta']$ kanggo paling ora siji
@@ -30,7 +30,7 @@ mbutuhake iki uga bener tumrap !!{formula}s kang diawali operator modal,
 yaiku \iftag{prvBox}{$\mSat{M^\Sigma}{\Box!A}[\Delta]$ yen lan mung yen
   $\Box !A \in \Delta$}{$\mSat{M^\Sigma}{\Diamond!A}[\Delta]$ yen lan mung yen
   $\Diamond !A \in \Delta$}. Yen sarat iki digandhengake karo definisi
-bebener ing sawijining jagad kanggo \iftag{prvBox}{$\Box !A$}{$\Diamond !A$},
+bebener ing sawijining donya kanggo \iftag{prvBox}{$\Box !A$}{$\Diamond !A$},
 kita entuk:
 \[
 \iftag{prvBox}{%
@@ -59,7 +59,7 @@ yen \iftag{prvBox}{$\Box !A \in \Delta$ yen lan mung yen
   $\mSat{M^\Sigma}{\Box !A}[\Delta]$? \iftag{prvDiamond}{Apa uga
     njamin yen }{}}{}\iftag{prvDiamond}{$\Diamond !A \in \Delta$
   yen lan mung yen $\mSat{M^\Sigma}{\Diamond !A}[\Delta]$?}{}
-Asil-asil sabanjure bakal netepake iki.
+Asil-asil sabanjure bakal netepake iki. Kondisi aksesibilitas adhedhasar Diamond ditetepake minangka ekuivalensi, ora mung syarat cukup.
 \end{explain}
 
 \begin{defn}
@@ -98,6 +98,7 @@ yaiku himpunan kabeh !!{formula}s ing~$\Gamma$ kang diawali~$\Box$.
   \Box!A)\cdots)$; lan cetha yen $\Box!B_1$, \dots, $\Box!B_k \in
   \Box\Gamma$. Mula, miturut definisi, $\Box\Gamma \Proves[\Sigma] \Box
   !A$.
+Indeks premis pungkasan dicocogake karo dhaptar premis.
 \end{proof}
 
 \begin{lem}\ollabel{lem:box2}
@@ -110,6 +111,7 @@ yaiku himpunan kabeh !!{formula}s ing~$\Gamma$ kang diawali~$\Box$.
   \olref{lem:box1}, $\Box\Box^{-1}\Gamma \Proves[\Sigma] \Box!A$.
   Nanging amarga $\Box\Box^{-1}\Gamma \subseteq \Gamma$, miturut
   monotonisitas uga $\Gamma \Proves[\Sigma] \Box!A$.
+Indeks sistem ing langkah antarane ditulis cetha.
 \end{proof}
 
 \iftag{prvBox}{%

@@ -52,21 +52,18 @@ sajarah.}
 Maneh, $t$ iku term katutup, lan $a$ iku !!a{constant} kang ora
 muncul ing premis $\lexists[x][!A(x)]$, ing kesimpulan~$!C$, utawa ing
 sembarang asumsi kang !!{undischarged} ing !!{derivation}s kang
-pungkasane premis loro mau (kajaba asumsi $!A(a)$). Kita
-ngarani $a$ \emph{eigenvariabel} saka inferensi \Elim{\lexists}.
+pungkasane premis loro mau. Pangecualiané mung asumsi $!A(a)$
+kang dipilih kanggo dibubaraké ing derivasi premis cilik. Kita ngarani $a$ \emph{eigenvariabel} saka inferensi \Elim{\lexists}.
 
-Syarat yen eigenvariabel ora muncul ing kesimpulan utawa asumsi kang
-!!{undischarged} ing !!{derivation}s premis kanggo inferensi
-\Intro{\lforall}, lan ora muncul ing premis eksistensial, kesimpulan,
-utawa asumsi kaya mangkono kanggo inferensi \Elim{\lexists}, diarani
-\emph{syarat eigenvariabel}. Cathetan koreksi sumber OLPL-009:
-ringkesan Inggris nyebut kabeh premis, sanajan premis universal lan
-asumsi kang dibubarake mesthi ngemot eigenvariabel; rumusan ing kene
-ngetutake syarat rinci kang diwenehake langsung ing ndhuwur.
+Ing \Intro{\lforall}, eigenvariabel kudu absèn saka kesimpulan lan
+asumsi kang !!{undischarged} ing derivasi premis. Ing
+\Elim{\lexists}, eigenvariabel kudu absèn saka premis eksistensial,
+kesimpulan, lan asumsi kang tetep mbukak sawisé inferensi.
+Kaloro watesan mau diarani \emph{syarat eigenvariabel}.
 
 \begin{explain}
-Elinga konvensi iki: yen $!A$ iku !!a{formula} kanthi !!{variable}~$x$
-bebas, kita nuduhake bab iki kanthi nulis~$!A(x)$. Ing konteks kang padha,
+Kanggo !!a{formula} $!A$ lan !!{variable}~$x$, notasi~$!A(x)$
+nuduhaké variabel kang dipilih kanggo substitusi. Ing konteks kang padha,
 $!A(t)$ banjur minangka cekakan saka~$\Subst{!A}{t}{x}$. Dadi, kita
 uga bisa nulis aturan $\Intro\lexists$ minangka:
 \begin{prooftree}
@@ -77,9 +74,9 @@ uga bisa nulis aturan $\Intro\lexists$ minangka:
 Gatekna yen $t$ bisa wae wis muncul ing~$!A$; tuladhane, $!A$~bisa
 awujud~$\Atom{\Obj P}{t,x}$. Mula, nginferensi
 $\lexists[x][\Atom{\Obj P}{t,x}]$ saka~$\Atom{\Obj P}{t,t}$ iku
-panrapan $\Intro\lexists$ kang bener---kita kena ``ngganti'' siji
-utawa luwih, lan ora kudu kabeh, kedadeyane~$t$ ing premis nganggo
-!!{variable}~$x$ kang kaiket. Nanging, syarat eigenvariabel ing
+panrapan $\Intro\lexists$ kang bener. Yen ngganti kedadeyan
+$t$ kang dipilih nganggo !!{variable}~$x$, saben $x$ anyar kudu
+bebas ing matriks. Substitusi $t$ kanggo $x$ kudu mbalèkaké premis kanthi persis. Nanging, syarat eigenvariabel ing
 $\Intro\lforall$ lan~$\Elim\lexists$ mbutuhake supaya !!{constant}~$a$
 ora muncul ing~$!A$. Mula, kita ora bisa kanthi bener nginferensi
 $\lforall[x][\Atom{\Obj P}{a,x}]$ saka $\Atom{\Obj P}{a,a}$
@@ -87,13 +84,10 @@ nganggo~$\Intro\lforall$.
 \end{explain}
 
 \begin{explain}
-Ing \Intro{\lexists} lan \Elim{\lforall} ora ana watesan tambahan,
-lan term katutup~$t$ bisa dipilih sawenang-wenang, mula kita ora
-perlu nguwatirake syarat liyane. Nanging, ing aturan
-\Elim{\lexists} lan \Intro{\lforall}, syarat eigenvariabel mbutuhake
-supaya !!{constant}~$a$ ora muncul ing panggonan kang dilarang ing
-kesimpulan, premis eksistensial, utawa asumsi kang !!{undischarged},
-miturut aturan kang cocog. Syarat iki perlu kanggo njamin yen sistem
+Ing \Intro{\lexists} lan \Elim{\lforall}, $t$ iku term katutup.
+Ing \Elim{\lexists} lan \Intro{\lforall}, !!{constant}~$a$ kudu
+nyukupi syarat eigenvariabel kanggo kesimpulan, premis eksistensial,
+lan asumsi !!{undischarged} kang wis kasebut. Syarat iki perlu kanggo njamin yen sistem
 iku sah, yaiku sistem mung !!{derive}s !!{sentence}s saka asumsi kang
 !!{undischarged} nalika ukara kasebut pancen ndherek saka asumsi mau.
 Tanpa syarat iki, inferensi iki bakal diidinake:
@@ -102,14 +96,18 @@ Tanpa syarat iki, inferensi iki bakal diidinake:
   \AxiomC{$\Discharge{!A(a)}{1}$}
   \RightLabel{*\Intro{\lforall}}
   \UnaryInfC{$\lforall[x][!A(x)]$}
-  \RightLabel{\Elim{\lexists}}
+  \DischargeRule{\Elim{\lexists}}{1}
   \BinaryInfC{$\lforall[x][!A(x)]$}
 \end{prooftree}
-Nanging, $\lexists[x][!A(x)] \Entails/ \lforall[x][!A(x)]$.
+Ing langkah kang ditandhani lintang, $a$ muncul ing asumsi
+$!A(a)$ kang isih mbukak ing kono. Pambubarané ing langkah sabanjuré
+ora ndadèkaké langkah lintang sah. Pancen,
+$\lexists[x][!A(x)] \Entails/ \lforall[x][!A(x)]$.
 
-Amarga aturan eliminasi kanggo kuantor mung ngidini substitusi term
-katutup kanggo !!{variable}s, saben !!{formula} kang bisa diderivasi
-saka sawijining himpunan !!{sentence}s mesthi uga !!a{sentence}.
+Saben simpul derivasi ing kalkulus iki iku ukara katutup.
+Aturan kuantor njaga syarat iki. Ing matriks, !!{variable}s bébas
+mung bisa $x$. Substitusi term katutup utawa ngiket $x$ ing
+!!{formula} kasebut ngasilaké !!a{sentence}.
 \end{explain}
 
 

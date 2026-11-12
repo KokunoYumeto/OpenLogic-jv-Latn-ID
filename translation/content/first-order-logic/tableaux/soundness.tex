@@ -18,7 +18,7 @@ Sistem !!^a{derivation}, kayata tableau, iku \emph{sah} yen ora bisa
 sipat kaslametan kang dijamin kanggo sistem !!{derivation}. Gumantung marang
 sipat teoretis-bukti kang dirembug, kita kepengin ngerti, upamane, yen
 \begin{enumerate}
-\item saben !!{derivable}~$!A$ iku \iftag{FOL}{valid}{tautologi};
+\item saben teorema $!A$ kang derivabel tanpa premis iku \iftag{FOL}{valid}{tautologi};
 \item yen !!a{sentence} iku !!{derivable} saka ukara-ukara liyane,
   ukara iku uga dadi akibat saka ukara-ukara kasebut;
 \item yen sawijining himpunan !!{sentence}s ora konsisten, himpunan
@@ -32,11 +32,10 @@ iku wigati banget.
 Amarga kabeh sipat teoretis-bukti iki ditemtokake liwat !!{tableau}s
 katutup kanthi sawijining wujud, mbuktekake (1)--(3) ing ndhuwur
 mbutuhake bukti ngenani sipat semantis !!{tableau}s katutup. Kaping
-pisan kita bakal netepake apa tegese !!a{signed
-  formula} dicukupi ing sawijining struktur, banjur nuduhake manawa yen
-!!{tableau} katutup,
-ora ana struktur kang nyukupi kabeh asumsine. Sawise iku, (1)--(3)
-dadi korolari saka asil iki.
+pisan kita nemtokaké kapan formula mawa tandha dicukupi déning sawijining
+\iftag{FOL}{struktur}{valuasi}. Banjur kita mbuktekaké yèn
+!!{tableau} katutup ora nduwèni \iftag{FOL}{struktur}{valuasi} kang
+nyukupi kabèh asumsi. Asil (1)--(3) banjur dadi korolari.
 \end{explain}
 
 \begin{defn}
@@ -70,7 +69,7 @@ mung dumadi saka asumsi-asumsi saka~$\Gamma$. Dadi, yen $\Gamma$ bisa
 dicukupi, saben !!{tableau} kanggo himpunan iku uga bisa dicukupi.
 Nanging !!{tableau} katutup cetha ora bisa dicukupi: saben cabang
 ngemot $\sFmla{\True}{!A}$ uga $\sFmla{\False}{!A}$, lan ora ana
-struktur kang bisa nyukupi lan ora nyukupi~$!A$ bebarengan.
+\iftag{FOL}{struktur}{valuasi} kang bisa nyukupi lan ora nyukupi~$!A$ bebarengan.
 
 Upamana kita duwe !!{tableau} kang bisa dicukupi, yaiku !!a{tableau}
 kanthi paling ora siji cabang kang bisa dicukupi. Ngetrapake aturan
@@ -82,9 +81,9 @@ dirembug, cabang kasebut tetep bisa dicukupi ing !!{tableau} kang wis
 kita mung kudu nimbang kasus nalika aturan ditrapake marang cabang
 kang bisa dicukupi.
 
-Tetepna $\Gamma$ minangka himpunan !!{signed formula}s ing cabang kasebut,
-lan tetepna $\sFmla{S}{!A} \in \Gamma$ minangka !!{signed formula} kang
-dikenani aturan. Yen aturan kasebut ora mecah cabang, kita kudu
+Tetepna $\Gamma$ minangka himpunan !!{signed formula}s ing cabang kasebut.
+Saben inferensi ditrapaké nganggo sakabèhing premis kang diwajibaké saka cabang iku.
+Aturan \Cut{} bisa ditrapaké tanpa premis. Yen aturan kasebut ora mecah cabang, kita kudu
 nuduhake yen cabang kang wis diambakake, yaiku $\Gamma$ bebarengan
 karo kesimpulan aturan, isih bisa dicukupi. Yen aturan mecah cabang,
 kita kudu nuduhake yen paling ora salah siji saka rong cabang asil
@@ -133,10 +132,7 @@ Kaping pisan, kita nimbang inferensi-inferensi kang ora mecah cabang.
   cabang. Upamana $\Sat{M}{\Gamma}$, mligine
   $\Sat{M}{\lforall[x][!A(x)]}$. Miturut
   \olref[syn][sem]{prop:quant-terms}, $\Sat{M}{!A(t)}$. Mula,
-  $\Struct{M}$ nyukupi $\sFmla{\True}{!A(t)}$. Cathetan koreksi sumber
-  OLPL-020: premis aturan Inggris nggunakake huruf formula kang beda
-  saka asil lan kabeh argumentasi; wangun aturan umum netepake huruf
-  formula kang dibalekake ing kene.
+  $\Struct{M}$ nyukupi $\sFmla{\True}{!A(t)}$.
 
 \item Cabang diambakake kanthi ngetrapake $\TRule{\False}{\lforall}$
   marang $\sFmla{\False}{\lforall[x][!A(x)]} \in \Gamma$: Iki
@@ -146,10 +142,7 @@ Kaping pisan, kita nimbang inferensi-inferensi kang ora mecah cabang.
   $\Sat{M}{\Gamma}$, mligine
   $\Sat/{M}{\lforall[x][!A(x)]}$. Kita kudu nuduhake yen $\Gamma \cup
   \{\sFmla{\False}{!A(a)}\}$ bisa dicukupi. Kanggo nindakake iki,
-  kita nemtokake $\Struct{M'}$ kang trep kaya mangkene. Cathetan
-  koreksi sumber OLPL-020 uga ditrapake ing kene: papat sebutan huruf
-  formula liyane ing premis lan pratelan semantis dibalekake supaya
-  cocog karo asil aturan lan kabeh langkah sabanjure.
+  kita nemtokaké $\Struct{M'}$ kang trep kaya mangkéné.
 
   Miturut \olref[syn][ass]{prop:sat-quant},
   $\Sat/{M}{\lforall[x][!A(x)]}$ yen lan mung yen kanggo sawijining
@@ -160,8 +153,10 @@ Kaping pisan, kita nimbang inferensi-inferensi kang ora mecah cabang.
   $\sFmla{\False}{!C} \in \Gamma$, $\Sat/{M'}{!C}$, amarga $a$ ora
   muncul ing~$\Gamma$.
 
-  Miturut \olref[syn][ext]{prop:extensionality},
-  $\Sat/{M'}{!A(x)}[s]$. Miturut
+  Amarga $a$ absèn saka matriks $!A(x)$, miturut
+  \olref[syn][ext]{prop:extensionality}, $\Sat/{M'}{!A(x)}[s]$.
+  Ing $\Struct{M'}$, konstanta $a$ aji $s(x)$, mula ngganti pangaji
+  $x$ nganggo nilai kuwi njaga pangaji $s$ tetep padha. Miturut
   \olref[syn][ext]{prop:ext-formulas}, $\Sat/{M'}{!A(a)}[s]$. Amarga
   $!A(a)$ iku !!a{sentence}, miturut
   \olref[syn][ass]{prop:sentence-sat-true}, $\Sat/{M'}{!A(a)}$, yaiku
@@ -243,7 +238,7 @@ Yen $\Gamma$ bisa dicukupi, mula himpunan iku konsisten.
 
 \begin{proof}
 Kita mbuktekake kontraposisine. Upamana $\Gamma$ ora konsisten. Banjur
-ana $!B_1$, \dots, $!B_n \in \Gamma$ lan !!{tableau} katutup kanggo
+ana dhaptar ora kosong $!B_1$, \dots, $!B_n \in \Gamma$ lan !!{tableau} katutup kanggo
 $\{\sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\}$. Miturut
 \olref{thm:tableau-soundness}, ora ana
 $\iftag{FOL}{\Struct{M}}{\pAssign{v}}$ saengga

@@ -24,11 +24,11 @@
   mawa tandha $\sFmla{S}{!A}[\sigma]$. Prefiks anyar mung diasilake
   dening aturan
   \iftag{prvBox}{$\TRule{\False}{\Box}$}{}\iftag{notprvBox,notprvDiamond}{}{
-    and }\iftag{prvDiamond}{$\TRule{\True}{\Diamond}$}{}
+    lan }\iftag{prvDiamond}{$\TRule{\True}{\Diamond}$}{}
   \iftag{notprvBox,notprvDiamond}{iki}{iki}, lan saben aturan mau uga
   cukup ditrapake sapisan (ngasilake siji prefiks anyar).
   \iftag{prvBox}{$\TRule{\True}{\Box}$}{}\iftag{notprvBox,notprvDiamond}{}{
-    and }\iftag{prvDiamond}{$\TRule{\False}{\Diamond}$}{}
+    lan }\iftag{prvDiamond}{$\TRule{\False}{\Diamond}$}{}
   \iftag{notprvBox,notprvDiamond}{kadhang}{kadhang} kudu ditrapake
   kaping pirang-pirang, nanging mung sapisan kanggo saben prefiks;
   prefiks anyar kang diasilake uga winates cacahe. Mula, sawisé
@@ -43,6 +43,7 @@
   !!{tableau} katutup kanthi cara kang trep nanging nemokake cabang
   bukak lan jangkep ing !!{tableau}, kita ora mung ngerti yen $\Gamma \Entails/ !A$,
   nanging uga bisa mbangun kontramodel.
+Formula kang dimaksud ditulis kanthi pepak lan kontramodel dipikolehi saka cabang bukak kang jangkep.
 \end{explain}
 
 \iftag{prvBox}{
@@ -150,11 +151,11 @@
     ]
   \end{oltableau}
   Kari siji cabang bukak, lan cabang iku jangkep. Saka cabang iki
-  kita netepake model kanthi himpunan jagad $W = \{1, 1.1, 1.2\}$
+  kita netepake model kanthi himpunan donya $W = \{1, 1.1, 1.2\}$
   (mung prefiks iki kang katon ing cabang bukak), relasi
   aksesibilitas $R = \{\tuple{1, 1.1}, \tuple{1, 1.2}\}$, lan
-  panetepan $V(p) = \{1.2\}$ (amarga larik~12 ngemot
-  $\sFmla{\True}{p}[1.2]$) sarta $V(q) = \{1.1\}$ (amarga larik~11
+  panetepan $V(p) = \{1.2\}$ (amarga larik~11 ngemot
+  $\sFmla{\True}{p}[1.2]$) sarta $V(q) = \{1.1\}$ (amarga larik~10
   ngemot $\sFmla{\True}{q}[1.1]$). Model iki kagambar ing
   \olref{fig:counter-Box}; bisa dipriksa yen iki kontramodel tumrap
   $\Box(p \lor q) \lif (\Box p \lor \Box q)$.
@@ -281,7 +282,7 @@
     ]
   \end{oltableau}
   Kari siji cabang bukak, lan cabang iku jangkep. Saka cabang iki
-  kita netepake model kanthi himpunan jagad $W = \{1, 1.1, 1.2\}$
+  kita netepake model kanthi himpunan donya $W = \{1, 1.1, 1.2\}$
   (mung prefiks iki kang katon ing cabang bukak), relasi
   aksesibilitas $R = \{\tuple{1, 1.1}, \tuple{1, 1.2}\}$, lan
   panetepan $V(p) = \{1.1\}$ (amarga larik~6 ngemot
@@ -307,5 +308,6 @@
 \end{figure}
 \end{ex}          
 }
+ Larik ing cabang kang padha jeroné bisa nganggo nomer kang padha.
 
 \end{document}

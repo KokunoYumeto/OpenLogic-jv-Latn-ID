@@ -14,7 +14,7 @@
 
 \begin{defish}
 \AxiomC{\sFmla{\True}{\lforall[x][!A(x)]}}
-\RightLabel{\TRule{\True}{\forall}}
+\RightLabel{\TRule{\True}{\lforall}}
 \UnaryInfC{\sFmla{\True}{!A(t)}}
 \DisplayProof
 \hfill
@@ -28,7 +28,7 @@ Ing \TRule{\True}{\lforall}, $t$ yaiku term katutup (yaiku, kang
 ora ngemot variabel). Ing \TRule{\False}{\lforall}, $a$~yaiku
 !!a{constant} kang ora kena muncul ing endi wae ing cabang ing
 sadhuwure aturan \TRule{\False}{\lforall}. Kita ngarani $a$
-\emph{eigenvariabel} saka inferensi \TRule{\False}{\forall}.
+\emph{eigenvariabel} saka inferensi \TRule{\False}{\lforall}.
 \footnote{Kita nggunakake istilah ``eigenvariabel'' sanajan $a$ ing
 aturan ndhuwur iku !!a{constant}. Iki amarga alesan sajarah.}
 
@@ -56,8 +56,8 @@ inferensi \TRule{\False}{\lforall} utawa \TRule{\True}{\lexists}
 diarani \emph{syarat eigenvariabel}.
 
 \begin{explain}
-Elinga konvensi manawa nalika $!A$ iku !!a{formula} kanthi
-!!{variable}~$x$ bebas, kita nuduhake prakara iki kanthi nulis~$!A(x)$.
+Kanggo !!a{formula} $!A$ lan !!{variable}~$x$, notasi~$!A(x)$
+nuduhaké variabel kang dipilih kanggo substitusi. Matriks $!A(x)$ mung bisa nduwèni $x$ minangka variabel bébas.
 Ing konteks kang padha, $!A(t)$ banjur dadi cekakan kanggo
 ~$\Subst{!A}{t}{x}$. Dadi, aturan \TRule{\False}{\lexists} uga bisa
 ditulis kaya mangkene:
@@ -80,15 +80,10 @@ $\sFmla{\False}{\lforall[x][\Atom{\Obj P}{a,x}]}$ nganggo
 \end{explain}
 
 \begin{explain}
-Ing \TRule{\True}{\lforall} lan \TRule{\False}{\lexists}, ora ana
-watesan eigenvariabel tumrap pilihan term katutup~$t$. Ing sisih
-liyane, ing aturan \TRule{\True}{\lexists} lan
-\TRule{\False}{\lforall}, syarat eigenvariabel nuntut supaya
-!!{constant}~$a$ ora muncul ing endi wae ing cabang ing sadhuwure
-inferensi kang gegayutan. Cathetan koreksi sumber OLPL-014: teks
-Inggris ngarani t tanpa watesan, sanajan definisi aturan ing ndhuwur
-mbatesi t dadi term katutup; kang ora ana yaiku watesan
-eigenvariabel. Syarat iki perlu kanggo mesthekake yen sistem iku sah.
+Ing \TRule{\True}{\lforall} lan \TRule{\False}{\lexists},
+kudu nganggo term katutup $t$. Ing \TRule{\True}{\lexists} lan
+\TRule{\False}{\lforall}, !!{constant}~$a$ kudu absèn saka saben
+formula sadurungé ing cabang iku. Syarat iki perlu kanggo mesthekake yen sistem iku sah.
 Tanpa syarat iki, ing ngisor iki bakal dadi !!{tableau} katutup
 kanggo $\lexists[x][\formula{A}(x)] \lif
 \lforall[x][\formula{A}(x)]$:
@@ -109,8 +104,10 @@ kanggo $\lexists[x][\formula{A}(x)] \lif
   ]
 \end{tableau}
 \end{center}
-Nanging, $\lexists[x][\formula{A}(x)] \lif
-\lforall[x][\formula{A}(x)]$ iku ora valid.
+Langkah pungkasan ora sah amarga $a$ wis muncul ing instansi eksistensial
+ing cabang iki. $\lexists[x][\formula{A}(x)] \lif
+\lforall[x][\formula{A}(x)]$ iku ora valid. Predikat unèr kang bener
+kanggo mung siji anggota ing domain rong unsur mènèhi conto tandhingan.
 \end{explain}
 
 \end{document}

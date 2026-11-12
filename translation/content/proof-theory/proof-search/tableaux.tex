@@ -11,11 +11,11 @@
 \olsection{Tableau}
 
 Sistem tableau yaiku sistem !!{proof} kang raket
-sesambungané karo kalkulus sekuèn lan mligi cocog
+sesambungané karo kalkulus sekèn lan mligi cocog
 kanggo panelusuran bukti, kanthi tangan utawa piranti
 lunak. Ing tableau, !!a{proof} awujud wit !!{formula}s,
-dudu wit sekuèn. Nanging, béda karo deduksi alamiah,
-aturan tableau ngibarataké aturan kalkulus sekuèn.
+dudu wit sekèn. Nanging, béda karo deduksi alamiah,
+aturan tableau ngibarataké aturan kalkulus sekèn.
 !!{proof} tableau sejatiné panelusuran modhèl kang
 cetha katon. Mula tableau sok diarani tableau
 \emph{semantis} utawa \emph{wit kabeneran}.
@@ -24,14 +24,15 @@ Tableau \emph{mawa tandha} iku wit !!{formula}s mawa
 tandha, kang bisa awujud $\sFmla{\True}{!A}$ utawa
 $\sFmla{\False}{!A}$. Wit tuwuh mudhun. Ing wiwitané
 ana !!{formula}s kang nemtokaké apa kang arep
-!!{prove}. Tuladhané, kanggo !!{prove} sekuèn
+!!{prove}. Tuladhané, kanggo !!{prove} sekèn
 $!A, !B \Sequent !C, !D$, tableau diwiwiti saka
 $\sFmla{\True}{!A}, \sFmla{\True}{!B},
 \sFmla{\False}{!C}, \sFmla{\False}{!D}$.
 !!^a{structure} kang ndadèkaké $!A$ lan $!B$
-bener, déning $!C$ lan $!D$ salah, yaiku
+bener, déné $!C$ lan $!D$ salah, yaiku
 !!a{structure} kang nuduhaké yèn
 $!A, !B \Sequent !C, !D$ ora valid.
+Cathetan: kanggo nggoleki modhèl lawan sekuèn, kabèh formula ing suksèden diwènèhi tandha salah, kalebu formula D.
 
 Simpul godhong (paling ngisor) ing tableau bisa
 ditambahi nganggo aturan pamranjangan cabang, kang
@@ -49,7 +50,7 @@ Kaya kang katon, aturan-aturan mau padha karo aturan
 \Log{G3c} kang diwalik arahé. Tandha $\True$
 lan $\False$ nuduhaké yèn !!a{formula} dadi
 rumus utama ing sisih kiwa utawa tengen
-sekuèn, kanthi urutan mau.
+sekèn, kanthi urutan mau.
 
 Cabang tableau diarani \emph{ketutup} yèn ngemot
 $\sFmla{\True}{!A}$ lan $\sFmla{\False}{!A}$
@@ -119,6 +120,8 @@ lan $\sFmla{\False}{(!A \lor !B) \land (!A \lor !C)}$:
     ]
   ]
 \end{oltableau}
+Cathetan basa: tuladha iki tableau ketutup, dudu tableau klausa; formula wiwitané ora kudu awujud klausa.
+Cathetan: tandha bener ing falsitas langsung nutup cabang, cocog karo aksioma falsitas kiwa ing kalkulus sekuèn.
 
 Tandha cèntang nuduhaké yèn aturan kang cocog wis
 ditrapaké marang !!a{formula} ing kabèh cabang
@@ -131,25 +134,27 @@ kang dituduhaké).
 Panelusuran bukti gampang ing tableau. Kita ngasilaké
 tableau tataran demi tataran. Ing tataran~$0$,
 tulis !!{formula}s wiwitan ing pérangan paling dhuwur.
-Ing tataran~$n+1$, tumrap saben simpul godhong,
-golekana rumus mawa tandha kang durung dicèntang
-lan paling dhuwur. Trapna aturan pamranjangan cabang
+Ing tataran~$n+1$, tumrap saben simpul godhong ing cabang
+kang durung ketutup, golekana formula nonatomik mawa tandha
+kang paling dhuwur, durung dicèntang, lan dudu kuantor
+kang diproses bola-bali ing langkah mligi sabanjuré. Trapna aturan pamranjangan cabang
 marang rumus iku. Sawisé aturan ditrapaké ing saben
 cabang kang ngemot rumus mawa tandha mau, cèntang
 rumus iku. (Tuladha ing ndhuwur diasilaké nganggo
 algoritma iki.)
+Cathetan: atomik ora nduwèni aturan pamranjangan operator, mula ora dipilih ing langkah iki. Pilih formula nonatomik kang bisa diproses, déné aturan kuantor kang bola-bali ditangani ing giliran mligi. Cabang kang wis ketutup ora perlu dipanjangaké.
 
 !!{formula}s mawa tandha kang awujud
 $\sFmla{\True}{\lforall}$ lan
 $\sFmla{\False}{\lexists}$ ora tau dicèntang, mula
 kudu ditangani kanthi cara mligi. Yèn ana, kita
 kudu njamin yèn aturan $\TRule{\True}{\forall}$
-lan $\TRule{\False}{\lexists}$ pungkasane ditrapaké
+lan $\TRule{\False}{\lexists}$ pungkasané ditrapaké
 kanggo kabèh tèrma kang cocog. Iki bisa dijamin,
 tuladhané, kanthi ngetrapaké aturan mau ing saben
-tataran marang kabèh rumus kaya mangkono ing saben
-cabang (sawisé ngurusi !!{formula} mawa tandha
-paling dhuwur kang dudu wujud iki). Tèrma~$t$
+tataran marang kabèh rumus kaya mangkono kang wis ana ing wiwitan
+tataran ing saben cabang kabuka (sawisé ngurusi !!{formula}
+mawa tandha paling dhuwur kang dudu wujud iki, yèn ana). Tèrma~$t$
 kang dienggo yaiku tèrma kapisan~$t$ kang bisa
 dibangun saka !!{constant}s kang wis katon ing
 cabang (utawa $\Obj c_0$ yèn ora ana !!{constant})
@@ -159,6 +164,7 @@ $\sFmla{\True}{!B(t)}$ utawa~$\sFmla{\False}{!B(t)}$,
 durung katon ing cabang. Yèn ora ana tèrma anyar
 kang cocog, aturan iki ora nambah simpul ing tataran
 iku; aturan dicoba manèh nalika ana tèrma anyar.
+Cathetan: formula kuantor kang kudu diinstansiasi bola-bali ora dicèntang. Cabang kabuka winates diarani jenuh nalika kabèh formula kang bisa dicèntang wis diproses lan kabèh instansi suku kang cocog wis ana. Yèn ora ana instansi anyar, ora ana simpul kang ditambahaké.
 
 Yèn panelusuran iki ora ngasilaké tableau ketutup,
 ana cabang kabuka winates kang kabèh !!{formula}s
@@ -176,11 +182,12 @@ katon, mula $\Sat/{M}{!A}$. (Jupuk $\Theta =
 \Setabs{!A}{\sFmla{\True}{!A} \text{ ing cabang}}$
 lan $\Xi =
 \Setabs{!A}{\sFmla{\False}{!A} \text{ ing cabang}}$.)
+Cathetan: kanggo modhèl cabang kabuka, himpunan konstanta ngemot kabèh konstanta cabang; yèn kosong, lebokna siji konstanta parameter seger supaya domain suku ora kosong. Formula wiwitan kabuka diparameteraké dhisik, kaya konvènsi ing pambangunan modhèl suku sadurungé.
 
-Tableau kang diasilaké déning cara panelusuran iki
+Tableau ketutup winates kang diasilaké déning cara panelusuran iki
 gampang diterjemahaké dadi bukti \Log{G3c} kanthi
-mènèhi label sekuèn marang saben simpul. Yèn
-rumus-rumus wiwitan cocog karo sekuèn
+menehi label sekèn marang saben simpul. Yèn
+rumus-rumus wiwitan cocog karo sekèn
 $\Gamma \Sequent \Delta$, wènèhana label
 $\Gamma \Sequent \Delta$ marang saben rumus wiwitan.
 Yèn cabang dipanjangaké kanthi ngetrapaké aturan
@@ -191,16 +198,16 @@ marang !!{formula} mawa tandha $\sFmla{\False}{!A}$,
 simpul godhongé diwènèhi label
 $\Pi \Sequent \Lambda, !A$. Ing papan kang tableau
 ngetrapaké aturan \TRule{\True}{\star}, trapna
-aturan \LeftR{\star} marang sekuèn (kanthi $!A$
+aturan \LeftR{\star} marang sekèn (kanthi $!A$
 minangka rumus utama); ing papan kang ngetrapaké
 aturan \TRule{\False}{\star}, trapna aturan
-\RightR{\star}. Premis aturan iku sekuèn-sekuèn
+\RightR{\star}. Premis aturan iku sekèn-sekèn
 kang dadi label simpul cocog kang ditambahaké ing
 tableau. Nalika tableau ketutup amarga ngemot
 $\sFmla{\True}{!A}$ lan $\sFmla{\False}{!A}$,
-label simpul godhong pungkasan awujud sekuèn
+label simpul godhong pungkasan awujud sekèn
 $!A, \Pi \Sequent \Lambda, !A$. Sawetara simpul
-urut-urutan ing tableau bisa diwènèhi sekuèn kang
+urut-urutan ing tableau bisa diwènèhi sekèn kang
 padha; busak duplikaté. Tuladhané, tableau ing
 ndhuwur diterjemahaké dadi !!{proof} iki:
 \[\small
@@ -230,5 +237,6 @@ ndhuwur diterjemahaké dadi !!{proof} iki:
 (!A \lor !C)$
 \DisplayProof
 \]
+Cathetan: mung tableau ketutup winates kang menehi bukti sekuèn. Tableau kabuka minangka pérangan panelusuran modhèl lawan, dudu bukti validitas. Cathetan: label sekuèn ngetutaké formula aktif ing panelusuran mundur. Formula kang wis diproses bisa tetep katon ing wit tableau, nanging ora kudu tetep ana ing label sekuèn. Kuantor kang diinstansiasi bola-bali tetep ana kaya aturan G3c. Cabang kang ngemot falsitas mawa tandha bener cocog karo aksioma falsitas kiwa. Kanggo pasangan tandha ngelawan ing formula nonatomik, gunakna derivasi identitas umum tanpa cut; aksioma atomik waé ora cukup minangka siji langkah.
 
 \end{document}

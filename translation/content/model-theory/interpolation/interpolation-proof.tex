@@ -12,7 +12,7 @@
 
 \begin{thm}[Teorema Interpolasi Craig]
 \ollabel{thm:interpol}
-Ing andharan iki A lan B ukara, miturut cathetan cakupan SOL6-F026.
+Ing andharan iki A lan B awujud ukara.
 Yen $\Entails !A \lif !B$, ana !!a{sentence} $!C$ kang
 $\Entails !A \lif !C$ lan $\Entails !C \lif !B$, lan saben
 !!{constant}, !!{function}, lan !!{predicate} (saliyane $\eq$) ing
@@ -42,9 +42,7 @@ dadi pasangan kang ora bisa dipisahake lan maksimal
 $(\Gamma^*, \Delta^*)$. Upamane $!A_0$,
 $!A_1$, $!A_2$, \dots ndhaptar !!{sentence}s saka $\Lang{L}'_1$,
 lan $!B_0$, $!B_1$, $!B_2$, \dots ndhaptar !!{sentence}s
-saka~$\Lang{L}'_2$. Cathetan koreksi sumber OLPL-115:
-dhaptar kudu nyakup basa kang wis ditambahi konstanta anyar,
-amarga maksimalitas ing ngisor iki ditegesake ing basa iku.
+saka~$\Lang{L}'_2$.
 Kita tegesi rong barisan mundhak saka himpunan
 !!{sentence}s $(\Gamma_n, \Delta_n)$ kanggo $n \ge 0$ kaya iki.
 Tetepna $\Gamma_0 = \{ !A\}$ lan $\Delta_0 = \{\lnot !B \}$.
@@ -159,7 +157,7 @@ Mula $!S \in \Gamma^* \cap \Delta^*$ utawa
 $\lnot !S \in \Gamma^* \cap \Delta^*$,
 lan $\Gamma^* \cap \Delta^*$ maksimal.
 
-Cathetan pangganep bukti SOL6-F028: maksimalitas wae durung njamin model kang kabeh unsure dijenengi konstanta. Konstruksi iki uga menehi saksi kanggo saben ukara eksistensial kang ana ing himpunan lintang. Yen ukara kasebut ditolak nalika giliran enumerasine, separator ing tahap iku bakal tetep misahake himpunan pungkasan, nalisir inseparability. Mula ukara kasebut ditampa lan diwenehi saksi. Kanggo saben term tertutup t, ukara eksistensial x padha karo t nduweni saksi saka konstanta anyar umum, dadi saben unsur model term bisa dijenengi konstanta saka reservoir kang padha ing rong basa.
+Saben ukara eksistensial kang ana ing himpunan lintang nduwèni saksi. Yèn ukara iku ditolak ing tahap enumerasiné, pamisah ing tahap mau bakal tetep misahaké rong himpunan pungkasan. Mula ukara kasebut ditampa lan diwènèhi saksi. Kanggo saben term katutup t, eksistensial kanthi matriks x padha karo t éntuk saksi saka konstanta anyar umum. Mula saben unsur model term dijenengi déning konstanta saka himpunan kang padha ing rong basa.
 Amarga $\Gamma^*$ konsisten maksimal lan nduweni sipat saksi iki, himpunan iki nduweni
 model $\Struct{M}'_1$ kang !!{domain} $\Domain{M'_1}$
 dumadi saka, lan mung saka, unsur-unsur $\Assign{c}{M'_1}$
@@ -190,10 +188,6 @@ Syarat isomorfisme liyane bisa dibuktekake kanthi cara padha. Ing kene c tansah 
 
 Saiki tegesi model $\Struct{M}$ kanggo !!{language}
 $\Lang{L}'_1 \cup \Lang{L}'_2$ kaya mangkene:
-Cathetan koreksi sumber OLPL-117:
-basa gabungan iki kudu ngemot konstanta anyar,
-supaya pratelan pungkasan ngenani
-gabungan rong himpunan lintang bisa ditegesi.
 \begin{enumerate}
 \item !!{domain} $\Domain{M}$ yaiku $\Domain{M_2}$,
   tegese himpunan kabeh unsur $\Assign{c}{M'_2}$;
@@ -201,9 +195,7 @@ gabungan rong himpunan lintang bisa ditegesi.
   \Lang{L_1}$, mula $\Assign{P}{M} = \Assign{P}{M'_2}$;
 \item Yen predikat $P$ ana ing $\Lang{L}_1\setminus \Lang{L}_2$,
   mula $\Assign{P}{M} = h(\Assign{P}{M'_1})$.
-  Cathetan koreksi sumber OLPL-116:
-  predikat iki mung ana ing basa kapisan, dadi relasine
-  dijupuk saka model kapisan banjur ditranspor nganggo h.
+  Predikat iki mung ana ing basa kapisan. Relasi saka modèl kapisan diangkut nganggo h.
   Tegese, $\tuple{\Assign{c_1}{M'_2}, \dots,
   \Assign{c_n}{M'_2}} \in \Assign{P}{M}$ yen lan mung yen
   $\tuple{\Assign{c_1}{M'_1}, \dots,
@@ -220,9 +212,7 @@ $\Struct{M}$ cocog karo $\Struct{M'_1}$ kanggo kabeh
 !!{formula}s saka $\Lang{L'_1}$ liwat isomorfisme h,
 lan cocog karo $\Struct{M'_2}$ kanggo kabeh
 !!{formula}s saka $\Lang{L'_2}$.
-Cathetan koreksi sumber OLPL-118:
-amarga ranah model kapisan lan model gabungan beda,
-kecocokan tumrap pangaji variabel kudu liwat h.
+Pangaji variabel diangkut saka domain modèl kapisan menyang domain gabungan nganggo h.
 Mligine, $\Struct{M} \Entails \Gamma^* \cup \Delta^*$,
 mula $\Struct{M} \Entails !A$ lan
 $\Struct{M} \Entails \lnot!B$, saengga

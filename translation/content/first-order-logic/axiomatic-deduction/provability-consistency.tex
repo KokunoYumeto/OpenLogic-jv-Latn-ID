@@ -23,12 +23,9 @@ duwe peran ing bukti teorema kelengkapan.
 
 \begin{proof}
   Yen $\Gamma \cup \{!A\}$ ora konsisten, mula $\Gamma \cup \{!A\}
-  \Proves \lfalse$. Miturut \olref[ptn]{prop:reflexivity}, $\Gamma
-  \Proves !B$ kanggo saben $!B \in \Gamma$. Amarga miturut hipotesis
-  kita uga duwe $\Gamma \Proves !A$, mula $\Gamma \Proves !B$ kanggo
-  saben $!B \in \Gamma \cup \{!A\}$. Miturut
-  \olref[ptn]{prop:transitivity}, $\Gamma \Proves \lfalse$, yaiku
-  $\Gamma$ ora konsisten.
+  \Proves \lfalse$. Amarga $\Gamma \Proves !A$, gunakna transitivitas ing \olref[ptn]{prop:transitivity}
+  kanggo ngganti premis $!A$ nganggo derivasi saka $\Gamma$. Asilé
+  $\Gamma \Proves \lfalse$, mula $\Gamma$ ora konsisten.
 \end{proof}
 
 \begin{prop}
@@ -47,7 +44,7 @@ aplikasi \olref[ded]{prop:mp}, kita duwe $\Gamma \cup \{\lnot !A\}
 \Proves \lfalse$.
 
 Saiki upamana $\Gamma \cup \{\lnot !A\}$ ora konsisten, yaiku $\Gamma
-\cup \{\lnot !A\} \Proves \lfalse$. Miturut Teorema Deduksi, $\Gamma
+\cup \{\lnot !A\} \Proves \lfalse$. Miturut \iftag{FOL}{\olref[fol][axd][ddq]{thm:deduction-thm-q}}{\olref[ded]{thm:deduction-thm}}, $\Gamma
 \Proves \lnot !A \lif \lfalse$. $\Gamma \Proves (\lnot !A \lif
 \lfalse) \lif \lnot\lnot !A$ miturut \olref[prp]{ax:lfalse2}, mula
 $\Gamma \Proves \lnot\lnot !A$ miturut \olref[ded]{prop:mp}. Amarga
@@ -67,12 +64,10 @@ Buktekna yen $\Gamma \Proves \lnot !A$ yen lan mung yen $\Gamma \cup
 \end{prop}
 
 \begin{proof}
-  Miturut refleksivitas, negasi A bisa diderivasi saka Gamma.
+  $\Gamma \Proves \lnot !A$ miturut \olref[ptn]{prop:reflexivity}.
   Uga, $\Gamma \Proves \lnot !A \lif (!A \lif \lfalse)$ miturut
   \olref[prp]{ax:lnot2}. Mula $\Gamma \Proves \lfalse$ kanthi rong
-  aplikasi \olref[ded]{prop:mp}. Cathetan koreksi sumber OLPL-031:
-  langkah refleksivitas kang diwajibake dening premis kaanggotaan
-  ditulis cetha sadurunge rong aplikasi modus ponens.
+  aplikasi \olref[ded]{prop:mp}.
 \end{proof}
 
 

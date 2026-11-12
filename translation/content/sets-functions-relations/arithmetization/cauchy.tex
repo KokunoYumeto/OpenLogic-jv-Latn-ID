@@ -26,7 +26,7 @@ $\sqrt{2}$ duwe ekspansi desimal kang becik, kang diwiwiti:
 	1.41421356237\ldots
 \]
 Gampang banget nggambarake ekspansi desimal ing teori himpunan: cukup
-anggepen minangka fungsi $d \colon \Nat \to \Nat$, kanthi $d(n)$ dadi
+anggepen minangka fungsi $d \colon \Nat \to \{0,\ldots,9\}$, kanthi $d(n)$ dadi
 panggonan desimal kaping $n$ kang digatekake. Banjur perlu owah-owahan
 sethithik kanggo nangani bagean wilangan real sadurunge tandha desimal
 (ing kene mung $1$). Uga perlu owah-owahan liyane, yaiku relasi
@@ -40,7 +40,7 @@ Tinimbang langsung nganggep ekspansi desimal $\sqrt{2}$, kita bisa
 nggatekake \emph{rerangken} panyedhakan rasional marang $\sqrt{2}$ kang
 saya tliti, nganggo ekspansi kang saya tliti:
 \[
-1, 1.4, 1.414, 1.4142, 1.41421,\ldots
+1, 1.4, 1.41, 1.414, 1.4142, 1.41421,\ldots
 \]
 Gagasan yen wilangan real bisa dipikirake liwat ``panyedhakan kang saya
 becik'' dadi dhasar kanggo rerangken wawasan liyane (padha karo pangamatan
@@ -63,10 +63,10 @@ wilangan real. Umpamane, gatekna fungsi iki:
 			0 &\text{yen }n\text{ genep}
 		\end{cases}
 \]
-Inti masalahe yaiku rerangken $0,1,0,1,0,1,0,\ldots$ katon ora
-``nyedhaki'' wilangan real apa wae. Dadi, supaya rerangken kang digatekake
-pancen nyedhaki sawenehing wilangan real, kita mung kudu nggatekake
-rerangken kang duwe \emph{limit}.
+Rerangken $0,1,0,1,0,1,0,\ldots$ terus owah antarané nol lan siji,
+sanajan indeksé wis gedhé. Kanggo ngode wilangan real, kita mbutuhaké
+rerangken kang suku-suku ing buntuté bisa nyedhak sakarepé miturut
+sarat rasional ing ngisor iki.
 
 Kita wis nemoni gagasan limit ing \olref[his][set][limits]{sec}. Nanging
 kita ora bisa nggunakake definisi kang \emph{persis padha} karo definisi
@@ -81,29 +81,19 @@ wilangan real cumawis, kamangka wilangan iku persis kang arep
   \ell \in \Nat)(\forall m, n > \ell)|f(m) - f(n)| < \epsilon$.
 \end{defn}
 
-Gagasan umum limit isih padha: yen kita kepengin tingkat katliten tartamtu
-(kang diukur nganggo~$\epsilon$), ana ``wilayah'' kang kudu dideleng, yaiku
-sembarang masukan luwih gedhe tinimbang~$\ell$. Gampang dingerteni yen
-rerangken $1$, $1.4$, $1.414$, $1.4142$, $1.41421$\ldots{} duwe limit: yen
-kita kepengin nyedhaki $\sqrt{2}$ kanthi kasalahan kurang saka
-$\nicefrac{1}{10^{n}}$, cukup delengen sembarang entri sawise entri kaping
-$n$.
+Ukuran katlitené yaiku $\epsilon$, lan buntut sing ditliti nduwèni
+indeks luwih gedhé tinimbang $\ell$. Kanggo rerangken panyedhakan
+desimal ing ndhuwur, rong suku kang nduwèni paling ora $n$ digit
+sawisé tandha desimal ana ing interval kang dawané $\nicefrac{1}{10^{n}}$.
+Kanggo saben katliten positif, dawa iki bisa dipilih luwih cilik tinimbang
+katliten mau. Rerangken iki nyukupi sarat Cauchy.
 
-Gagasan kang katon cetha yaiku nyebut wilangan real \emph{iku} sembarang
-rerangken Cauchy. Nanging kaya ing pambangunan $\Int$ lan $\Rat$, iki
-naif banget: saben wilangan real bisa dituduhake dening akeh rerangken
-Cauchy kang beda-beda. Cara prasaja kanggo ndeleng iki kaya
-mangkene. Yen diwenehi rerangken Cauchy~$f$, netepna $g$ minangka fungsi
-kang persis padha karo~$f$, kejaba $g(0)\neq f(0)$. Amarga rerangken loro
-iku padha ing kabeh indeks sawise indeks kapisan, pungkasane kita
-kepengin kandha yen rerangken mau duwe limit kang padha miturut teges ing
-\olref{def:CauchySequence}, mula kudu dianggep ``netepake'' wilangan real
-kang padha. Dadi, rerangken Cauchy loro iki kudu dianggep wilangan real
-kang padha. Cathetan koreksi sumber OLP-0048: patang frasa Inggris
-ngandhut tembung ganda utawa tembung panyambung kang ilang, yaiku ``can be
-equally be encoded'', ``a simple way to see this as follows'', ``define we
-a notion'', lan ``hone on in''. Terjemahan iki mung nindakake pambeneran
-gramatikal kang paling sithik tanpa ngowahi pratelan matematise (JV-D031).
+Akeh rerangken Cauchy bisa makili wilangan real sing padha.
+Upamané, kanggo rerangken Cauchy~$f$, wènèhana $g$ kanthi nilai
+kang padha karo~$f$ sawisé indeks kapisan, nanging $g(0)\neq f(0)$.
+Definisi \olref{def:CauchySequence} nuduhaké yèn $g$ uga Cauchy,
+amarga buntuté padha. Prabédané pungkasane nol. Mula kita njupuk
+kelas rerangken miturut ekuivalensi kang ditemtokaké saka prabédan iki.
 
 Mula kita maneh kudu netepake relasi ekuivalensi ing rerangken Cauchy lan
 ngenali wilangan real karo kelas-kelas ekuivalensi. Kaping pisan, kita
@@ -117,12 +107,13 @@ $\Nat \to \Rat$, netepna $(f-g)(n) = f(n) - g(n)$. Saiki netepna:
 \[
 	f \Realequiv g \text{ yen lan mung yen $(f-g)$ nyedhaki $0$}.
 \]
-Kita kudu mriksa yen $\Realequiv$ iku relasi ekuivalensi; lan pancen iya.
-Banjur, yen dikarepake, kita bisa netepake wilangan real minangka
-kelas-kelas ekuivalensi miturut $\Realequiv$ saka kabeh rerangken Cauchy
-saka $\Nat \to \Rat$. Cathetan koreksi sumber OLP-0048: ukara Inggris
-sadurunge definisi salah nyebut ``equivalence relations''; obyek kang
-nggambarake wilangan real yaiku kelas ekuivalensi (JV-D032).
+Relasi $\Realequiv$ iku refleksif amarga prabédan saka awaké
+dhéwé nol, lan simetris amarga ijol urutan ora ngowahi nilai mutlak.
+Transitivitas manut ketimpangan segitiga. Kanggo katliten $\epsilon$, saben
+prabédan ing rong hipotesis bisa diwatesi déning $\epsilon/2$ ing
+buntuté, saéngga jumlahé luwih cilik tinimbang $\epsilon$.
+Wilangan real yaiku kelas-kelas ekuivalensi miturut $\Realequiv$
+saka rerangken Cauchy $\Nat \to \Rat$.
 
 \begin{prob}
 Netepna $f(n) = 0$ kanggo saben $n$. Netepna $g(n) = \frac{1}{(n+1)^2}$.
@@ -143,19 +134,26 @@ relasi lan operasi dhasar ing wilangan real, umpamane:
 \end{align*}
 kanthi $(f + g)(n) = f(n) + g(n)$ lan $(f \times g)(n) = f(n) \times
 g(n)$. Mesthi wae, kita uga kudu mriksa yen $(f + g)$, $(f-g)$, lan
-$(f\times g)$ iku rerangken Cauchy nalika $f$ lan $g$ rerangken Cauchy;
-lan pancen iya, dene buktine dipasrahake marang pamaca.
+$(f\times g)$ iku rerangken Cauchy nalika $f$ lan $g$ rerangken Cauchy. Pambuktèné kalebu gladhen ing ngisor. Kanggo ping-pingan, gunakna
+kasunyatan yèn saben rerangken Cauchy kabatesi. Buntuté béda kurang
+saka siji tumrap salah siji suku ing buntut iku, lan mung ana cacah
+winates suku kang ndhisiki. Priksa uga yèn kelas asil tetep padha
+nalika wakilé diganti déning rerangken ekuivalen.
 
 Pungkasan, kita netepake gagasan tatanan. Kandhanana yen
 $\equivrep{f}{}$ iku \emph{positif} yen lan mung yen
 $\equivrep{f}{}\neq 0_\Real$ lan $(\exists \ell \in \Nat)(\forall n >
 \ell)0 < f(n)$. Banjur kandhanana yen $\equivrep{f}{} < \equivrep{g}{}$
-yen lan mung yen $\equivrep{(g - f)}{}$ positif. Kita kudu mriksa yen iki
-ditetepake kanthi becik, yaiku ora gumantung marang pilihan fungsi
-``wakil'' saka kelas ekuivalensi. Cathetan koreksi sumber OLP-0048:
-syarat positif ing sumber nulis nol rasional, nanging kelas kasebut
-wilangan real; terjemahan nggunakake nol real kaya ukara sabanjure
-(JV-D033).
+yen lan mung yen $\equivrep{(g - f)}{}$ positif. Supaya pilihan wakil ora mengaruhi tatanan, gunakna wates
+positif kang ajeg ing buntut. Amarga kelasé ora nol, ana rasional
+$\eta>0$ saéngga ana indeks gedhé sembarang kanthi $|f(k)|\geq\eta$.
+Ing buntut positif, iki ateges $f(k)\geq\eta$. Pilihen buntut kang
+prabédan antarsukuné kurang saka $\eta/2$. Njupuk indeks $k$ ing
+buntut iku nuduhaké yèn $f(n)>\eta/2$ kanggo saben indeks cukup gedhé.
+Kosok baliné, wates positif kaya mangkono njamin kelas ora nol lan
+buntuté positif. Yèn wakilé diganti kanthi rerangken ekuivalen,
+prabédan saka wakil mau pungkasané kurang saka $\eta/4$, mula
+buntut anyar isih nduwèni wates ngisor positif.
 %\begin{align*}
 %	\equivrep{f}{} \leq \equivrep{g}{} \text{ yen lan mung yen }&\equivrep{f}{} = \equivrep{g}{} \text{ utawa }\\
 %	&(\exists \ell \in \Nat)(\forall n \in \Nat)(\ell < n \lif f(n) \leq g(n))
@@ -163,9 +161,7 @@ wilangan real; terjemahan nggunakake nol real kaya ukara sabanjure
 Sawise pamriksa iki, cukup gampang nuduhake yen definisi kasebut menehi
 sipat aljabar kang bener, yaiku:
 \begin{thm}\ollabel{thm:cauchyorderedfield}
-Rerangken-rerangken Cauchy mbentuk lapangan katata. Ing pratelan iki,
-kang mbentuk lapangan yaiku kelas-kelas ekuivalensine; rerangken dhewe
-digunakake minangka wakil (JV-D034).
+Kelas-kelas ekuivalensi rerangken Cauchy mbentuk lapangan katata.
 \end{thm}
 
 \begin{proof}
@@ -173,79 +169,70 @@ Gladhen.
 \end{proof}
 
 \begin{prob}
-Buktekna yen rerangken-rerangken Cauchy mbentuk lapangan katata, kanthi
-teges kelas ekuivalensi kaya kang diterangake ing ndhuwur.
+Buktekna yèn kelas-kelas ekuivalensi rerangken Cauchy mbentuk lapangan katata.
 \end{prob}
 
 Luwih angel mbuktekake yen wilangan real kang dibangun kanthi cara iki
 nduweni Sipat Kajangkepan, mula kita bakal menehi buktine.
 
 \begin{thm}
-Saben himpunan rerangken Cauchy kang ora kosong lan duwe wates ndhuwur
-mesthi duwe wates ndhuwur paling cilik. Tatanan lan wates ing pratelan
-iki ditrapake liwat kelas ekuivalensi rerangken kasebut (JV-D034).
+Saben himpunan kelas ekuivalensi rerangken Cauchy kang ora kosong lan
+duwé wates ndhuwur mesthi nduwèni wates ndhuwur paling cilik.
 \end{thm}
 
-\begin{proof}[Gambaran bukti] Upamakna $S$ iku sembarang himpunan rerangken
-Cauchy kang ora kosong lan duwe wates ndhuwur. Dadi ana $p \in \Rat$
-saengga $p_{\Real}$ dadi wates ndhuwur kanggo $S$. Jupuken $r \in S$;
-banjur ana $q \in \Rat$ saengga $q_{\Real} < r$. Dadi yen wates ndhuwur
-paling cilik kanggo $S$ ana, wates iku dumunung ing antarane $q_\Real$ lan
-$p_\Real$, kalebu loro-lorone. Cathetan sumber OLP-0048: langkah iki
-nggunakake sipat Archimedean kang durung dibuktekake ing perangan iki:
-saben kelas real ana ing ngisor sawenehing salinan rasional lan ing
-ndhuwur sawenehing salinan rasional (JV-D035).
+\begin{proof}
+Kanthi \olref{thm:cauchyorderedfield}, anggepen $S$ iku himpunan kelas Cauchy kang ora kosong.
+Upamakna $U$ iku wates ndhuwur, lan pilihen $R\in S$. Amarga wakil
+rerangken Cauchy kabatesi déning rasional, pilih rasional $p$ lan $q$
+saéngga $U<p_\Real$ lan $q_\Real<R$. Bisa dipilih wates kang ketat
+amarga saben wates rasional bisa digedhèkaké utawa dicilikaké nganggo
+siji satuan. Prabédan kang tetep paling ora siji iki nyukupi sarat
+positif. Mula $p$ lan $q$ mbatesi interval wiwitan.
 
-Kita bakal saya nyedhaki wates ndhuwur paling cilik bebarengan saka ngisor
-lan ndhuwur. Mligine, kita netepake rong fungsi $f, g \colon
-\Nat \to \Rat$, kanthi ancas $f$ nyedhaki wates kasebut saka ndhuwur lan
-$g$ nyedhaki wates kasebut\ saka ngisor. Kita miwiti kanthi netepake:
+Bangunen kanthi rekursi rong fungsi $f,g\colon\Nat\to\Rat$.
 \begin{align*}
-	f(0) &= p \\
-	g(0) &= q
+ f(0)&=p, & g(0)&=q.
 \end{align*}
-Banjur, kanthi $a_n = \frac{f(n) + g(n)}{2}$, netepna:\footnote{Iki
-definisi rekursif. Nanging kita \emph{durung} menehi alesan kanggo
-nganggep definisi rekursif bisa digunakake.}
+Saben langkah nganggo titik tengah $a_n=\frac{f(n)+g(n)}{2}$.
 \begin{align*}
-	f(n+1) &=
-	\begin{cases}
-		a_n &\text{yen }(\forall h \in S)\equivrep{h}{} \leq (a_n)_\Real\\
-		f(n)&\text{yen ora}
-	\end{cases}\\
-	g(n+1) &=
-	\begin{cases}
-		a_n &\text{yen }(\exists h \in S)\equivrep{h}{} \geq (a_n)_\Real\\
-		g(n) &\text{yen ora}
-	\end{cases}
+ f(n+1)&=
+ \begin{cases}
+  a_n &\text{yèn }(\forall H\in S)H\leq(a_n)_\Real\\
+  f(n)&\text{yèn ora}
+ \end{cases}\\
+ g(n+1)&=
+ \begin{cases}
+  a_n &\text{yèn }(\exists H\in S)H>(a_n)_\Real\\
+  g(n)&\text{yèn ora}.
+ \end{cases}
 \end{align*}
-$f$ lan $g$ kalorone rerangken Cauchy. (Iki bisa dipriksa kanthi cukup
-gampang, nanging dipasrahake minangka gladhen.) Gatekna yen fungsi $(f-g)$
-nyedhaki $0$, amarga bedane $f$ lan $g$ dadi separo ing saben langkah.
-Mula $\equivrep{f}{} = \equivrep{g}{}$.
-
-Kaping pisan kita nuduhake yen $\equivrep{f}{}$ iku wates ndhuwur kanggo
-$S$, yaiku\ $(\forall h \in S)\equivrep{h}{} \leq \equivrep{f}{}$.
-(Kita bakal nggunakake \olref{thm:cauchyorderedfield} nalika dibutuhake.)
-Jupuken $h \in S$ lan upamakna, kanggo bukti kanthi kontradiksi, yen
-$\equivrep{f}{} < \equivrep{h}{}$, mula $0_\Real <
-\equivrep{(h-f)}{}$. Amarga $f$ iku rerangken Cauchy kang mudhun kanthi
-monoton, ana $n \in \Nat$ saengga $\equivrep{(c_{f(n)} - f)}{} <
-\equivrep{(h-f)}{}$. Dadi:
+Ing saben langkah persis siji sarat lumaku. Kanthi indhuksi,
+$(f(n))_\Real$ tansah dadi wates ndhuwur, lan ana anggota $S$ kang
+luwih gedhé tinimbang $(g(n))_\Real$. Kanggo $m\geq n$, kita nduwèni
 \[
-	(f(n))_\Real = \equivrep{c_{f(n)}}{} < \equivrep{f}{} + \equivrep{(h-f)}{} = \equivrep{h}{},
+ g(n)\leq g(m)\leq f(m)\leq f(n),\qquad f(n)-g(n)=\frac{p-q}{2^n}.
 \]
-Iki kontradiksi karo kasunyatan yen miturut pambangunan,
-$\equivrep{h}{} \leq (f(n))_\Real$.
+Dawa interval cenderung nol. Amarga saben suku sabanjuré tetep
+ing interval iki, $f$ lan $g$ iku Cauchy, lan prabédané cenderung
+nol. Mula $\equivrep{f}{}=\equivrep{g}{}$.
 
-Sabanjure kita nuduhake yen $\equivrep{f}{} = \equivrep{g}{}$ iku wates
-ndhuwur \emph{paling cilik} kanggo $S$. Dadi jupuken sembarang rerangken
-Cauchy $j$ lan upamakna $\equivrep{j}{} < \equivrep{g}{}$. Kanthi nalar
-kaya ing ndhuwur lan nggunakake kasunyatan yen $g$ \emph{munggah} kanthi
-monoton, ana $n \in \Nat$ saengga $\equivrep{j}{} < (g(n))_\Real$.
-Nanging miturut pambangunan ana $h \in S$ saengga $(g(n))_\Real \leq
-\equivrep{h}{}$, mula $\equivrep{j}{} < \equivrep{h}{}$ lan mulane
-$\equivrep{j}{}$ dudu wates ndhuwur kanggo $S$.
+Kanggo mbuktèkaké $\equivrep{f}{}$ dadi wates ndhuwur, anggepen
+ana $H\in S$ kanthi $H>\equivrep{f}{}$, lan jupuken wakilé $h$.
+Kanthi sarat positif kang ajeg, ana rasional $\epsilon>0$ saéngga
+$h(m)-f(m)>\epsilon$ kanggo saben $m$ cukup gedhé. Pilihen $n$
+kanthi $f(n)-g(n)<\epsilon/2$. Kanggo saben $m$ cukup gedhé,
+$0\leq f(n)-f(m)<\epsilon/2$, mula $h(m)-f(n)>\epsilon/2$.
+Iki ndadèkaké $H>(f(n))_\Real$, nalisir kasunyatan yèn
+$(f(n))_\Real$ dadi wates ndhuwur kanggo $S$.
+
+Pungkasan, anggepen $J<\equivrep{g}{}$ lan jupuken wakilé $j$.
+Ana rasional $\epsilon>0$ saéngga $g(m)-j(m)>\epsilon$ kanggo saben
+$m$ cukup gedhé. Pilihen $n$ kanthi $f(n)-g(n)<\epsilon/2$.
+Kanggo saben $m$ cukup gedhé, $0\leq g(m)-g(n)<\epsilon/2$,
+mula $g(n)-j(m)>\epsilon/2$. Mula $J<(g(n))_\Real$.
+Miturut pambangunan, ana anggota $S$ kang ngluwihi $(g(n))_\Real$,
+dadi $J$ dudu wates ndhuwur. Amarga $\equivrep{f}{}=\equivrep{g}{}$,
+kelas iki wates ndhuwur paling cilik.
 \end{proof}
 
 \end{document}

@@ -26,6 +26,7 @@ netepake ing matriks, umpamane, $V^+ = \{\True, \Undef\}$.
   \item $\True$ lan $\Undef$ iku nilai pinilih, yaiku $V^+ = \{\True, \Undef\}$.
   \item Fungsi kabenerane padha karo logika Kleene kang kuwat.
 \end{enumerate}
+Basa matriks LP diwatesi marang konektif kang wis diwenehi fungsi, tanpa tetapan.
 \end{defn}
 
 \begin{defn}
@@ -48,6 +49,7 @@ Halld\'en ngenalake \emph{logika tanpa makna}~$\LogHal$ kanthi matriks iki:
     \end{tabular}
   \end{center}
 \end{enumerate}
+Basa matriks Hallden diwatesi marang patang konektif lan plus kang wis diinterpretasi, tanpa tetapan.
 \end{defn}
 
 Beda karo logika-logika Kleene kang nduweni tabel kabeneran
@@ -71,7 +73,7 @@ padha, logika loro iki \emph{nduweni} tautologi.
   !A$, ana !!{valuation}~$\pAssign v$ kang nyukupi $\pValue
   v(!A)[\LogLP] = \pValue v(!A)[\LogKs] = \False$. Miturut klaim
   kang bakal dibuktekake, $\pValue{v'}(!A)[\LogCL] = \False$,
-  yaiku $\Entails/[\LogCL] !A$.
+  yaiku $\Entails/[\LogCL] !A$. Panggonan indeks fungsi nilai dinormalake; loro tulisan kasebut nyithak pratelan matematis kang padha.
 
 Kanggo mbuktekake klaim kasebut, luwih dhisik kita tetepake
   $\pAssign {v'}$ mangkene:
@@ -91,7 +93,7 @@ Kanggo mbuktekake klaim kasebut, luwih dhisik kita tetepake
     bener, miturut \olref[syn][val]{defn:pValue},
     $\pValue v(!A)[\LogKs] = \pAssign v(p) = \pValue {v'}(!A)[\LogCL]$;
     iki negesake (a) lan~(b). Yen nilai variabel p ora katetepake,
-    prasyarat (a) lan (b) loro-lorone ora kawujud.
+    prasyarat (a) lan (b) loro-lorone ora kawujud. Kesamaan ing basis diwatesi marang nilai False lan True; ing nilai Undef, anteseden induksi ora lumaku.
 
 Kanggo langkah induksi, gatekna kasus-kasus iki:
     \item $!A \ident \lnot !B$.
@@ -126,7 +128,7 @@ Kanggo langkah induksi, gatekna kasus-kasus iki:
       $\pValue {v'}(!C)[\LogCL] = \True$; mula
       $\pValue {v'}(!B \land !C)[\LogCL] = \True$.
     \end{enumerate}
-  \end{enumerate}
+  \end{enumerate} Operand kapindho ing loro premis konjungsi yaiku C, dudu B kang rangkep.
 
 Rong kasus liyane padha carane lan dadi latihan. Utawa,
   bukti ing ndhuwur wis mbuktekake asil kanggo kabeh !!{formula}s
@@ -152,7 +154,7 @@ tanpa operator tambahan, sesambungan konsekuensine beda. Umpamane,
 $\LogLP$ iku \emph{parakonsisten}, amarga $\lnot p, p \Entails/ q$;
 mula prinsip eksplosi $\lnot !A, !A \Entails !B$ ora lumaku kanthi
 umum. (Prinsip iki lumaku kanggo sawetara $!A$ lan $!B$, umpamane
-yen $!B$~iku tautologi.)
+yen $!B$~iku tautologi.) Kesamaan tautologi diwaca ing basa bebarengan tanpa operator tambahan; pratelan LP tetep.
 
 \begin{prob}
   Sesambungan endi ing ngisor iki kang lumaku ing (a)~$\LogLP$

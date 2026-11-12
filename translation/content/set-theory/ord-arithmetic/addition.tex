@@ -19,7 +19,7 @@ minangka \emph{gunggung} $\alpha$ lan $\beta$.
 
 Iki gagasan intuitif ing waliking panambahan ordinal. Kanggo
 netepaké kanthi ketat, kita miwiti saka gagasan nggawe
-\emph{salinan} himpunan. Ing kéné kita nganggo tandha sawenang-wenang,
+\emph{salinan} himpunan. Ing kéné kita nganggo tandha sembarang,
 $0$ lan $1$, kanggo nandhani asal saben objek:
 
 \begin{defn}\ollabel{defdissum}
@@ -30,7 +30,7 @@ $0$ lan $1$, kanggo nandhani asal saben objek:
 Sabanjuré kita netepaké sawijining pengurutan tumrap pasangan ordinal:
 
 \begin{defn}
-Kanggo sembarang ordinal $\alpha_1, \alpha_2, \beta_1, \beta_2$, kandhaa yèn:
+Kanggo sembarang ordinal $\alpha_1, \alpha_2, \beta_1, \beta_2$, ditetepaké yèn:
 \begin{align*}
 	\tuple{\alpha_1, \alpha_2} \rlexless \tuple{\beta_1, \beta_2}\text{ yen lan mung yen }&
 	\text{utawa $\alpha_2 \in \beta_2$}\\
@@ -49,8 +49,9 @@ Kanggo sembarang ordinal $\alpha$, $\beta$, gunggungé yaiku $\alpha \ordplus
 \end{defn}
 \noindent
 Wigatèkna yèn ing kéné kita rada nyimpang saka notasi kang ketat;
-sakjané kita kudu nulis “$\Setabs{\tuple{x,y}\in \alpha\disjointsum\beta}{x \rlexless y}$” tinimbang “$\rlexless$”. Nanging, supaya ringkes,
+sakjané kita kudu nulis “$\Setabs{\tuple{x,y}\in (\alpha\disjointsum\beta)\times(\alpha\disjointsum\beta)}{x \rlexless y}$” tinimbang “$\rlexless$”. Nanging, supaya ringkes,
 ing pérangan sabanjuré kita tetep nganggo notasi iki.
+Pasangan ing grafik relasi dijupuk saka ping-pingan Kartesius himpunan dhasar karo dhéwé, dudu saka himpunan dhasar kasebut.
 
 Asil ing ngisor iki, bebarengan karo
 \olref[ordinals][ordtype]{thmOrdinalRepresentation}, nandhesaké
@@ -85,6 +86,7 @@ Gatekna isomorfisme $f$ saka $\ordsucc{\alpha} = \alpha \cup
 \noindent
 Kajaba iku, gampang dituduhaké yèn panambahan manut sawetara
 syarat rekursif:
+Rong himpunan kang wis diwenehi tandha digabungake nganggo gabungan biasa; gunggung pisah bakal menehi tandha maneh.
 
 \begin{lem}\ollabel{ordadditionrecursion}
 Kanggo sembarang ordinal $\alpha, \beta$, kita nduwèni:
@@ -117,20 +119,24 @@ segmen awal sejati saka $\alpha \ordplus \beta$. Mulané $\alpha
 \delta$ kanggo sawatara $\delta < \beta$. Mula $\alpha \ordplus \beta =
 \supstrict_{\delta< \beta}(\alpha\ordplus \delta)$.
 \end{proof}
+Ping-pingan himpunan kosong karo himpunan apa wae tetep himpunan kosong.
 
 Nanging ana kasunyatan kang narik kawigaten. Kanggo netepaké
-panambahan ordinal, kita bisa \emph{kosokbaliné} mung nganggo
-Teorema Rekursi Transfinit, lan nyatakaké persamaan rekursi
+panambahan ordinal, kita bisa \emph{kanthi cara liya} mung nganggo
+Teorema Rekursi Transfinit, lan mratelakaké persamaan rekursi
 persis kaya ing \olref{ordadditionrecursion} (nanging nganggo
 “$\ordsucc{\beta}$” tinimbang “$\beta \ordplus 1$”).
 
 Dadi ana rong cara béda kanggo netepaké operasi ing ordinal.
 Kita bisa netepaké kanthi \emph{sintetis}, yaiku mbangun himpunan
 terurut becik kanthi eksplisit lan njupuk jinis urutané. Utawa
-kita bisa netepaké kanthi \emph{rekursif}, mung kanthi nyatakaké
+kita bisa netepaké kanthi \emph{rekursif}, mung kanthi mratelakaké
 persamaan rekursiné. Yèn ditindakake kanthi bener, asile padha.
-Awit \olref[ordinals][ordtype]{thmOrdinalRepresentation} njamin
-yèn persamaan rekursi iki nemtokaké ordinal kang \emph{tunggal}.
+\olref[ordinals][ordtype]{thmOrdinalRepresentation} njamin
+yèn himpunan kang dibangun nduwèni jinis urutan kang \emph{tunggal};
+ketunggalan nilai kang nyukupi persamaan rekursi ndherek saka
+Rekursi Transfinit.
+Ketunggalan jinis urutan lan ketunggalan nilai rekursi nduwèni dhasar kang béda; asil kaloroné tetep padha.
 
 Ing akèh babagan, aritmetika ordinal tumindaké padha karo
 panambahan wilangan asli. Contoné, kita bisa mbuktèkaké iki:
@@ -151,7 +157,7 @@ Yèn $\alpha, \beta, \gamma$ ordinal, mula:
 \end{lem}
 
 \begin{proof}
-Kita mbuktèkaké \olref{ordaddition3}; sisane dadi latihan. Buktiné
+Dibuktèkaké \olref{ordaddition3}; sisane dadi gladhen. Buktiné
 nganggo Induksi Transfinit Prasaja marang $\gamma$, kanthi
 \olref{ordadditionrecursion}. Nalika $\gamma = 0$:
 \[
@@ -178,7 +184,7 @@ $\delta \in \gamma$ ngakibataké $(\alpha \ordplus  \beta) \ordplus  \delta =
 \end{proof}
 
 \begin{prob}
-Buktèkna pérangan liya saka
+Buktekna pérangan liya saka
 \olref[sth][ord-arithmetic][add]{ordinaladditionisnice}.
 \end{prob}
 

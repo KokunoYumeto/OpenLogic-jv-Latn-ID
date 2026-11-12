@@ -34,6 +34,9 @@ $\Gamma$ lan $\Delta$ ing saben aturan diarani \emph{konteks} utawa
 dudu bagean saka konteks diarani !!{formula} \emph{utama},
 lan !!{formula}s ing premis kang dudu bagean saka konteks diarani
 !!{formula}s \emph{aktif} (utawa \emph{pambiyantu}).
+Ing aturan kuantor kang nahan formula utama ing premis,
+salinan formula kuantor mau dibédakaké saka formula instansiasi
+kang aktif.
 
 Aturan kuantor rada luwih rumit. Contone, aturan ing
 \Log{G1c} kanggo $\lforall$ yaiku:
@@ -48,10 +51,10 @@ Aturan kuantor rada luwih rumit. Contone, aturan ing
 \DisplayProof
 \]
 Ing aturan \LeftR{\lforall}, !!{formula} aktif yaiku~$!A(t)$,
-kanthi $t$~minangka term katutup, yaiku term tanpa variabel.
+kanthi $t$~minangka terma katutup, yaiku terma tanpa variabel.
 Inferensi kaya mangkono bener---tegese cocog karo aturan skematis
 \LeftR{\lforall}---yen ana !!{formula}~$!A$,
-variabel~$x$, lan term katutup~$t$ kang ndadekake
+variabel~$x$, lan terma katutup~$t$ kang ndadèkaké
 !!{formula} utama ing kesimpulan minangka $\lforall[x][!A]$ lan
 !!{formula} aktif ing premis minangka~$\Subst{!A}{t}{x}$.
 Aturan \RightR{\lforall} lumaku kanthi cara kang padha, nanging
@@ -120,7 +123,7 @@ $\Log{G1c} \Proves !A, !B \Sequent !A \land !B$.
 Saben sekuen ing !!a{proof}, kajaba sekuen wiwitan, minangka
 \emph{kesimpulan} saka inferensi nganggo sawijining aturan~$R$.
 Siji utawa loro sekuen kang ana langsung ing ndhuwur sawijining sekuen
-ing !!a{proof} (yaiku simpul wong tuwane) diarani \emph{premis}
+ing !!a{proof} (yaiku simpul ing sadhuwuré langsung) diarani \emph{premis}
 saka inferensi kasebut.
 
 !!{proof}s kang digunakake ing pambangunan induktif sawijining
@@ -198,7 +201,7 @@ $\RightR{\land}$ yaiku $\pi_1$ lan~$\pi_2$.
 !!{proof}s bagean saka $\pi_4$ yaiku kabeh $\pi_1$, $\pi_2$,
 $\pi_3$, lan $\pi_4$ dhewe. Kita nduweni $\pheight{\pi_1} =
 \pheight{\pi_2} = 0$, $\pheight{\pi_3} = 1$ lan $\pheight{\pi_4} = 2$.
-Kita wis nuduhake yen $\Log{G3c} \Proves[4] !D \land !E  \fCenter !D
+Kita wis nuduhake yen $\Log{G3c} \Proves[2] !D \land !E  \fCenter !D
 \land !E$ kanggo sembarang $!D$ lan~$!E$ atomik.
 \end{ex}
 

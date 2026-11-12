@@ -40,7 +40,7 @@ salah siji saka kahanan iki bener:
 \]
   \tagitem{prvFalse}{$x = \Gn{\lfalse}$.}{}
   \tagitem{prvTrue}{$x = \Gn{\ltrue}$.}{}
-\end{enumerate} Cathetan koreksi sumber OLPL-778 lan SOL6-F073: kode argumentasi saiki dites minangka urutan sah kanthi pas n suku. Wates kode urutan digedhekake amarga kode urutan kode suku bisa luwih gedhe tinimbang kode formula, senajan saben kode suku luwih cilik tinimbang kode formula.
+\end{enumerate} Kode argumentasi kudu dadi kode rerangken sah kanthi pas n suku. Kode rerangken suku bisa ngluwihi kode formula, senajan kode saben suku luwih cilik tinimbang kode formula.
 \end{proof}
 
 \begin{prop}
@@ -60,9 +60,7 @@ pambentukan. Kode saben $s_i$ ora ngluwihi kode~$x$ saka~$s$.
 Urutan $\tuple{\Gn{s_0}, \dots, \Gn{s_{k-1}}}$ duwe kode ora ngluwihi
 $p_{k-1}^{k(x+1)}$, ing ngendi $k=\len{x}$, kanthi milih urutan pambentukan
 kang dawane ora ngluwihi wates iku. Tes rerangken simbol sah kang ora kosong
-ditindakake dhewe. Cathetan koreksi sumber OLPL-169 lan SOL6-F074:
-wates urutan saiki dibenerake; kanggo formula atomik tunggal, kode urutane
-luwih gedhe tinimbang kode formula, mula syarat kurang x ora digunakake.
+ditindakake dhewe.
 \end{proof}
 
 \begin{prob}
@@ -107,7 +105,7 @@ Mula $\fn{Sent}(x)$ bener yen lan mung yen
 \fn{Frm}(x) \land {}\\
 \bforall{i<\len{x}}{\bforall{z<x}{}}\\
 (\bexists{j<z}{z=\Gn{\Obj v_j}} \lif \lnot\fn{FreeOcc}(x,z,i)).
-\end{multline*} Cathetan koreksi sumber OLPL-777 lan SOL6-F074: syarat Frm(x) saiki dadi konjungsi ing rumus, mula kode dudu formula ora lolos mung amarga ora ana panggonan bebas kang katetepake.
+\end{multline*} Konjungsi Frm(x) njamin input iku kode formula. Ora anané panggonan bebas waé durung cukup.
 \end{proof}
 
 

@@ -18,38 +18,42 @@ Kanthi nggabungake asil-asil iki, kita oleh teorema kelengkapan.
 
 \begin{thm}[Teorema Kelengkapan]
 \ollabel{thm:completeness}
-Upamana $\Gamma$ minangka himpunan !!{sentence}s. Yen $\Gamma$
+Upamana $\Gamma$ minangka himpunan !!{sentence}s\iftag{FOL}{ ing basa kang bisa dietung}{}. Yen $\Gamma$
 konsisten, himpunan kasebut bisa dicukupi.
 \end{thm}
 
 \begin{proof}
 Upamana $\Gamma$ konsisten.\iftag{FOL}{ Miturut
   \olref[hen]{lem:henkin}, ana himpunan konsisten kang jenuh
-  $\Gamma' \supseteq \Gamma$.}{} Miturut \olref[lin]{lem:lindenbaum},
+  $\Gamma' \supseteq \Gamma$ ing basa Henkin~$\Lang{L'}$ saka
+  basa asli~$\Lang{L}$.}{} Miturut \olref[lin]{lem:lindenbaum},
 ana $\Gamma^* \supseteq \iftag{FOL}{\Gamma'}{\Gamma}$ kang konsisten
 lan !!{complete}.
 \iftag{FOL}{
+  Gawea ekstensi iki ing basa Henkin~$\Lang{L'}$ kang padha.
   Amarga $\Gamma' \subseteq \Gamma^*$, kanggo saben
-  !!{formula}~$!A(x)$, $\Gamma^*$ ngemot !!a{sentence} kanthi wujud
+  !!{formula}~$!A(x)$ kang variabel bebasé mung bisa $x$,
+  $\Gamma^*$ ngemot !!a{sentence} kanthi wujud
   \iftag{prvEx}
         {$\lexists[x][!A(x)] \lif !A(c)$}
         {$\lnot\lforall[x][!A(x)] \lif \lnot !A(c)$}
-  lan mula $\Gamma^*$ jenuh. Yen $\Gamma$ ora ngemot~$\eq$, miturut}{Miturut}
-\olref[mod]{lem:truth},
-$\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{!A}$ yen lan mung
-yen $!A \in \Gamma^*$. Saka kene mligine nderek yen kanggo kabeh
-$!A \in \Gamma$, $\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{!A}$,
-mula $\Gamma$ bisa dicukupi.\iftag{FOL}{
-  Yen $\Gamma$ ngemot~$\eq$, miturut \olref[ide]{lem:truth}, kanggo
-  kabeh !!{sentence}s~$!A$, $\Sat{\equivclass{M}{\approx}}{!A}$ yen lan
-  mung yen $!A \in \Gamma^*$. Mligine,
-  $\Sat{\equivclass{M}{\approx}}{!A}$ kanggo kabeh $!A \in \Gamma$,
-  mula $\Gamma$ bisa dicukupi.}{}
+  lan mula $\Gamma^*$ jenuh. Yèn basané tanpa identitas,
+  model term~$\Struct{M(\Gamma^*)}$ nyukupi persis ukara ing
+  $\Gamma^*$ miturut \olref[mod]{lem:truth}. Yèn basané mawa
+  identitas, model kelas~$\Struct{\equivclass{M}{\approx}}$ nyukupi
+  persis ukara ing $\Gamma^*$ miturut \olref[ide]{lem:truth}.
+  Jupuken reduk saka model kasebut menyang~$\Lang{L}$. Domain lan
+  interpretasi simbol ing~$\Lang{L}$ tetep padha, mula saben
+  ukara ing~$\Gamma$ uga bener ing reduk iki.}{
+  Miturut \olref[mod]{lem:truth}, $\pSat{v(\Gamma^*)}{!A}$ yen lan
+  mung yen $!A \in \Gamma^*$. Amarga $\Gamma \subseteq \Gamma^*$,
+  valuasi iki nyukupi $\Gamma$.}
 \end{proof}
 
 \begin{cor}[Teorema Kelengkapan, Versi Kapindho]
 \ollabel{cor:completeness}
-Kanggo kabeh $\Gamma$ lan !!{sentence}s~$!A$: yen $\Gamma \Entails !A$
+Kanggo saben himpunan ukara~$\Gamma$ lan saben ukara~$!A$
+\iftag{FOL}{ing basa kang padha lan bisa dietung}{}, yèn $\Gamma \Entails !A$
 mula $\Gamma \Proves !A$.
 \end{cor}
 

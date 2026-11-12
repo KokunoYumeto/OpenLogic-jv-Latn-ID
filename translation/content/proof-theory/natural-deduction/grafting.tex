@@ -14,7 +14,7 @@
 kanggo !!{formula}s~$!A$ saka asumsi~$!B$.
 Anggepen $!B$ dhéwé nduwèni !!a{proof}.
 Kepriyé nggabungaké !!{proof} kanggo~$!B$ karo
-!!{proof} kanggo $!A$ saka~$!B$, supaya ngolèhké
+!!{proof} kanggo $!A$ saka~$!B$, supaya ngolèhaké
 !!a{proof} kanggo~$!A$ tanpa nganggo asumsi~$!B$?
 
 Salah siji cara yaiku mbusak asumsi~$!B$ saka
@@ -35,8 +35,9 @@ bisa digandhèng karo !!{proof} kanggo~$!B$ saéngga dadi
 Cara iki gampang, nanging rada ora éndah: kena apa
 nglebokaké $\lif$ mung kanggo langsung ngilangaké?
 Liku-liku liwat $!B \lif !A$ iki kuduné bisa diendhani.
-(Pancen, teorema normalisasi mratélakaké yèn
+(Pancèn, teorema normalisasi mratélakaké yèn
 liku-liku mangkono mesthi bisa diendhani.)
+(Formula implikasi ing diagram nganggo dudutan bukti ing ndhuwur, supaya eliminasi implikasi ing ngisor sah.)
 
 Ing \Log{N1c} lan~\Log{N1i}, liku-liku iki gampang
 diendhani: saben asumsi~$!B^x$ cukup diganti
@@ -54,18 +55,18 @@ ngganti saben kedadéan~$!B^x$ kang durung dibusak
 ing~$\delta_1$ nganggo~$\delta_2$.
 \end{defn}
 
-Yèn $\delta_1$ lan $\delta_2$ ora nduwèni
-!!{formula}s asumsi béda kanthi label kang padha,
+Yèn $\delta_1$ lan $\delta_2$ ora migunakaké label asumsi kang padha,
 lan ora ana asumsi kabuka ing~$\delta_2$ kang ngemot
 variabel eigen saka~$\delta_1$, banjur
 $\Subst{\delta_1}{\delta_2}{!B^x}$ iku !!{proof}
-kang bener, kanthi asumsi kabuka saka $\delta_1$
-lan saka~$\delta_2$. Nalika nyambung !!{proof}s,
-syarat iki lumrahé kacukupan. Syarat kapisan kacukupan
-yèn $\delta_1$ lan $\delta_2$ subbukti saka !!{proof}
-kang luwih gedhé. Yèn syarat kapindho durung kacukupan,
+kang bener, kanthi asumsi kabuka saka $\delta_1$ kajaba asumsi
+kanthi label kang diganti, lan saka~$\delta_2$. Nalika nyambung !!{proof}s,
+syarat iki lumrahé kacukupan. Syarat kapisan bisa kacukupan kanthi ngganti label supaya seger.
+Sanadyan $\delta_1$ lan $\delta_2$ subbukti saka !!{proof}
+kang luwih gedhé, labelé durung mesthi kapisah. Yèn syarat kapindho durung kacukupan,
 variabel eigen ing~$\delta_1$ bisa diganti jenengé
 supaya syarat mau kacukupan.
+(Panyambungan ngilangi asumsi kabuka kang labelé diganti, lan njaga asumsi liyane saka loro bukti. Pilih label seger supaya aturan pambebasan ing bukti asal ora mbebasaké asumsi saka bukti kang disisipaké.)
 
 Definisi kang cocog uga lumaku kanggo \Log{N2c} lan~\Log{N2i}.
 
@@ -76,10 +77,11 @@ lan $\delta_2$ iku \Log{N2c}-!!{proof}
 (\Log{N2i}-!!{proof}) kanggo~$\Gamma_2 \Sequent !B$,
 banjur $\Subst{\delta_1}{\delta_2}{x:!B}$ iku asil
 saka ngganti saben aksioma $x:!B \Sequent !B$
-ing~$\delta_1$ nganggo~$\delta_2$, lan nambah
-$\Gamma_2$ ing kontèks saben sekèn ing sangisoré
+ing~$\delta_1$ nganggo~$\delta_2$, ngilangi $x:!B$ saka kontèks turunan aksioma kang diganti,
+lan nambah $\Gamma_2$ ing kontèks saben sekèn ing sangisoré
 aksioma mau.
 \end{defn}
+(Bukti premis kapindho uga nganggo sistem sekèn. Busak pasangan label asumsi kang wis diganti saka kontèks turunan.)
 
 \begin{prop}
 Yèn $\delta_1 \Proves x:!B, \Gamma_1 \Sequent !A$
@@ -87,12 +89,15 @@ lan $\delta_2 \Proves \Gamma_2 \Sequent !B$,
 banjur $\Subst{\delta_1}{\delta_2}{x:!B}
 \Proves \Gamma_1, \Gamma_2 \Sequent !A$,
 anggèr ora ana variabel eigen saka~$\delta_1$
-ing~$\Gamma_2$.
+ing~$\Gamma_2$, lan label asumsi bukti kang disisipaké wis
+dipilih seger tumrap label ing bukti asal.
 \end{prop}
+(Syarat label seger uga dienggo ing panyambungan gaya sekèn, supaya kontèks anyar ora kena discharge kang ora dimaksudaké.)
 
 
 \begin{proof}
   Kanthi induksi tumrap $\pheight{\delta_1}$.
 \end{proof}
+(Kerangka bukti iki nggunakake induksi tumrap dhuwur bukti kapisan, yaiku bukti kang aksiomané diganti.)
 
 \end{document}

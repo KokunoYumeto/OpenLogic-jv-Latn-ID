@@ -31,7 +31,7 @@ lan olèh $\eq/[0][\num k']$. Nanging $\num k'$ iku
 $\num m$.
 
 Ing langkah induksi, anggepen pratelan iki bener kanggo $n$,
-banjur delengen $n+1$. Anggep $m$ wilangan asli sembarang.
+banjur delengen $n+1$. Anggepen $m$ wilangan asli sembarang.
 Ana rong kemungkinan: $m = 0$ utawa kanggo sawatara $k$
 kita nduwèni $m = k+1$. Kahanan kapisan dirampungaké kaya ing ndhuwur.
 Ing kahanan kapindho, anggepen $n+1 \neq k+1$.
@@ -46,9 +46,9 @@ Kanthi modus ponens, kita olèh $\eq/[\num n'][\num k']$,
 kaya kang dikarepaké, amarga $\num k'$ iku $\num m$.
 \end{proof}
 
-Lema iki pratelané ora akèh: intiné, $\Th{Q}$ bisa mbuktèkaké
+Lema iki pratelané ora akèh: intiné, $\Th{Q}$ bisa mbuktekaké
 yèn numeral kang béda nuduhaké obyek kang béda. Umpamané,
-$\Th{Q}$ mbuktèkaké $0'' \neq 0'''$. Nanging bukti umumé
+$\Th{Q}$ mbuktekaké $0'' \neq 0'''$. Nanging bukti umumé
 butuh pangati-ati. Élinga uga yèn induksi kang kita gunakaké
 ana \emph{ing njaba} $\Th{Q}$.
 
@@ -69,10 +69,10 @@ lan panjumlahan direpresentasikaké déning formula
 x_0 + x_1 = y.
 \]
 Pakaryan kang kudu ditindakake yaiku nuduhaké yèn $\Th{Q}$
-bisa mbuktèkaké pratelan kang gegayutan. Umpamané, yèn
+bisa mbuktekaké pratelan kang gegayutan. Umpamané, yèn
 panjumlahan direpresentasikaké déning formula ing ndhuwur,
 kita kudu nuduhaké yèn kanggo saben pasangan wilangan asli
-$m$ lan $n$, $\Th{Q}$ mbuktèkaké
+$m$ lan $n$, $\Th{Q}$ mbuktekaké
 \[
 \eq[\num n + \num m][\num {n+m}]
 \]
@@ -100,7 +100,7 @@ yaiku kanthi netepaké $!A_h(x_0,\dots,x_{l-1},y)$ dadi
 Pungkasané, delengen telusuran tanpa wates. Anggepen
 $g(x,\vec z)$ reguler lan bisa direpresentasikaké ing $\Th{Q}$,
 umpamané déning formula $!A_g(x,\vec z,y)$.
-Anggep $f$ ditetepaké déning $f(\vec z) = \mu x \; g(x,\vec z)$.
+Anggepen $f$ ditetepaké déning $f(\vec z) = \mu x \; g(x,\vec z)$.
 Kita arep nemu formula $!A_f(\vec z,y)$ kang merepresentasikaké
 $f$. Pilihan kang lumrah yaiku:
 \[
@@ -113,18 +113,18 @@ umpamané:
 
 \begin{lem}
   Kanggo saben variabel $x$ lan wilangan asli $n$,
-  $\Th{Q}$ mbuktèkaké $\eq[(x' + \num n)][(x + \num n)']$.
+  $\Th{Q}$ mbuktekaké $\eq[(x' + \num n)][(x + \num n)']$.
 \end{lem}
 
 Élinga manèh yèn pratelan iki luwih lemah tinimbang
-pratelan yèn $\Th{Q}$ mbuktèkaké
+pratelan yèn $\Th{Q}$ mbuktekaké
 $\lforall[x][\lforall[y][(x' + y) = (x +y)']]$
-(kang pancèn salah).
+(kang ora bisa dibuktekaké ing téori iki).
 
 \begin{proof}
 Buktiné, kaya lumrahé, nganggo induksi tumrap $n$.
 Ing kahanan dhasar, $n = 0$, kita kudu nuduhaké yèn
-$\Th{Q}$ mbuktèkaké $\eq[(x'+0)][(x+0)']$. Nanging kita olèh:
+$\Th{Q}$ mbuktekaké $\eq[(x'+0)][(x+0)']$. Nanging kita olèh:
 \begin{eqnarray*}
 & & \eq[(x' + 0)][x'] \quad \text{saka aksioma 4} \\
 & & \eq[(x + 0)][x] \quad \text{saka aksioma 4} \\
@@ -134,18 +134,18 @@ $\Th{Q}$ mbuktèkaké $\eq[(x'+0)][(x+0)']$. Nanging kita olèh:
 Ing langkah induksi, anggepen kita wis nurunké $\eq[(x' +
   \num n)][(x + \num n)']$ ing $\Th{Q}$.
 Amarga $\num{n+1}$ iku $\num n'$, kita kudu nuduhaké yèn
-$\Th{Q}$ mbuktèkaké $\eq[(x' + \num n')][(x + \num n')']$.
+$\Th{Q}$ mbuktekaké $\eq[(x' + \num n')][(x + \num n')']$.
 Rerangkening kesamaan ing ngisor iki bisa diturunké ing $\Th{Q}$:
 \begin{eqnarray*}
 (x' + \num n') & \eq & (x' + \num n)' \quad \text{aksioma 5} \\
-& \eq & (x + \num n')' \quad \text{saka hipotesis induksi}
+& \eq & (x + \num n')' \quad \text{saka hipotesis induksi lan aksioma 5}
 \end{eqnarray*}
 \end{proof}
 
 \begin{lem}
 \begin{enumerate}
-\item $\Th{Q}$ mbuktèkaké $\lnot (x < \num 0)$.
-\item Kanggo saben wilangan asli $n$, $\Th{Q}$ mbuktèkaké
+\item $\Th{Q}$ mbuktekaké $\lnot (x < \num 0)$.
+\item Kanggo saben wilangan asli $n$, $\Th{Q}$ mbuktekaké
 \[
 x < \num {n+1} \lif (\eq[x][\num 0] \lor \dots \lor \eq[x][\num n]).
 \]
@@ -157,7 +157,7 @@ Kita rampungaké pérangan 1 lan sawatara saka pérangan 2 kanthi
 informal (yaiku mung mènèhi pituduh carané mbangun
 !!{derivation} formal).
 
-Kanggo pérangan 1, miturut definisi $<$, kita kudu mbuktèkaké
+Kanggo pérangan 1, miturut definisi $<$, kita kudu mbuktekaké
 $\lnot \lexists[y][\eq[(y'+x)][0]]$ ing $\Th{Q}$.
 Miturut aksioma lan aturan logika tataran kapisan, iki padha
 karo $\lforall[y][\eq/[(y' + x)][0]]$.
@@ -198,17 +198,19 @@ Saka definisi representabilitas, gampang dideleng yèn
 saben téori kang ngluwihi $\Th{Q}$ (utawa kang bisa
 nginterpretasikaké $\Th{Q}$) bisa merepresentasikaké
 fungsi-fungsi kang bisa diitung. Kosok baliné, ing saben
-sistem !!{derivation} kang konsep buktiné bisa diitung,
+sistem !!{derivation} kanggo téori kang konsisten lan ngluwihi
+$\Th{Q}$, sarta konsep buktiné bisa diitung,
 saben fungsi kang bisa direpresentasikaké uga bisa diitung.
-Mula, umpamané, himpunan fungsi kang bisa diitung bisa
+Kanthi syarat konsistènsi iki, umpamané, himpunan fungsi kang bisa diitung bisa
 ditandhani minangka himpunan fungsi kang direpresentasikaké
 ing aritmetika Peano, utawa malah ing téori himpunan Zermelo
 Fraenkel. Kaya kang dicathet G\"odel, iki rada nggumunaké.
-Bakal kita deleng yèn pitakonan bab apa kang bisa dibuktèkaké
+Bakal kita deleng yèn pitakonan bab apa kang bisa dibuktekaké
 gumantung banget marang téori kang dipilih; kanthi kasar,
-saya kuwat aksiomané, saya akèh kang bisa dibuktèkaké.
+saya kuwat aksiomané, saya akèh kang bisa dibuktekaké.
 Nanging ing akèh téori aksiomatik, fungsi kang bisa
 direpresentasikaké persis fungsi kang bisa diitung.
 \end{explain}
+(Syarat bukti bisa diitung waé durung cukup kanggo arah kosok balèn. Téori kang ora konsisten bisa mbuktekaké kabèh pratelan representasi, kalebu kanggo fungsi kang ora bisa diitung. Konsistènsi lan aritmetika kang mbédakaké numeral dibutuhaké; ing kéné andharan diwatesi marang ekstensi kang konsisten saka aritmetika kasebut.)
 
 \end{document}

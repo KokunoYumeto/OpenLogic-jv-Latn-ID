@@ -21,6 +21,9 @@ padha; kita mung uga ngidini aksioma-aksioma anyar kasebut.
   !B(t_2)),
 \end{align}
 kanggo saben term katutup $t$, $t_1$, $t_2$.
+Notasi $!B(t_i)$ nuduhaké substitusi term katutup $t_i$
+kanggo kedadéan bébas saka $x$ ing matriks $!B(x)$.
+Pangaji kanggo variabel bébas liyané tetep padha.
 \end{defn}
 
 \begin{prop}\ollabel{prop:sound}
@@ -38,15 +41,11 @@ Buktekna \olref[fol][axd][ide]{prop:sound}.
 \begin{prop}\ollabel{prop:iden1}
  $\Gamma \Proves \eq[t][t]$, kanggo saben term katutup $t$ lan
  himpunan~$\Gamma$.
- Cathetan koreksi sumber OLPL-040: watesan term katutup diwarisake
- saka skema aksioma identitas kapisan.
 \end{prop}
 
 \begin{prop}\ollabel{prop:iden2}
   Kanggo term-term katutup, yen $\Gamma \Proves !A(t_1)$ lan $\Gamma
-  \Proves \eq[t_1][t_2]$, mula $\Gamma \Proves !A(t_2)$. Cathetan
-  koreksi sumber OLPL-040: watesan iki dibutuhake amarga bukti
-  nggunakake skema aksioma identitas kapindho.
+  \Proves \eq[t_1][t_2]$, mula $\Gamma \Proves !A(t_2)$.
 \end{prop}
 
 \begin{proof}
@@ -54,8 +53,10 @@ Buktekna \olref[fol][axd][ide]{prop:sound}.
 \[
 (\eq[t_1][t_2] \lif (!A(t_1) \lif !A(t_2)))
 \]
-iku conto saka~\olref{ax:id2}. Kesimpulan kasebut ndherek saka rong
-aplikasi~\MP.
+iku instansi \olref{ax:id2}. Saka hipotesis identitas lan instansi aksioma iki,
+\olref[ded]{prop:mp} mènèhi $\Gamma\Proves !A(t_1)\lif !A(t_2)$.
+Trapna proposisi modus ponens mau manèh nganggo
+$\Gamma\Proves !A(t_1)$ kanggo entuk $\Gamma\Proves !A(t_2)$.
 \end{proof}
 
 \end{document}

@@ -22,10 +22,9 @@ lan transitif diarani \emph{relasi ekuivalensi}.
 \end{defn}
 
 Relasi ekuivalensi nuwuhake gagasan \emph{kelas ekuivalensi}.
-Relasi ekuivalensi "merang" domain dadi bageyan-bageyan
-partisi kang beda. Ing saben bageyan, kabeh objek gegayutan
-siji lan sijine; lan ora ana objek saka bageyan beda kang
-gegayutan siji lan sijine. Kadhangkala migunani yen
+Relasi ekuivalènsi mènèhi siji partisi saka domain.
+Ing saben blok, kabèh objek gegayutan siji lan sijiné.
+Objek saka blok béda ora gegayutan manut relasi kasebut. Kadhangkala migunani yen
 ngrembug bageyan-bageyan iki kanthi \emph{langsung}.
 Kanggo iku, kita ngenalake definisi iki:
 
@@ -71,10 +70,15 @@ $y \in \equivrep{x}{R}$, amarga anggepan yen
 $\equivrep{x}{R} = \equivrep{y}{R}$.
 Mula $Rxy$.
 \end{proof}
+Refleksivitas ndadèkaké saben anggota domain kalebu ing kelasé
+dhéwé. Yèn rong kelas nduwèni anggota sing padha, simetri lan
+transitivitas nggandhèngaké wakilé. Miturut pratelan mau, rong
+kelas kasebut padha. Mula kelas-kelas sing béda padha pisah
+lan bebarengan ngliputi domain.
 
 \begin{ex}
 Tuladha relasi ekuivalensi kang becik asale saka aritmetika modular.
-Kanggo saben $a$, $b$, lan $n \in \PosInt$,
+Kanggo wilangan natural $a$ lan $b$ sarta modulus $n \in \PosInt$,
 kita nyebut $a \equiv_n b$ yen lan mung yen
 $a$ dipara~$n$ menehi turah kang padha
 karo $b$ dipara~$n$.
@@ -85,11 +89,13 @@ Lan ana persis $n$ kelas ekuivalensi beda kang kawangun
 dening~$\equiv_n$; yaiku, $\equivclass{\Nat}{\equiv_n}$
 duwe $n$ !!{element}s.
 Kelas-kelas iki yaiku: himpunan wilangan kang yen dipara $n$
-ora ana turah, yaiku $\equivrep{0}{\equiv_n}$;
+ora ana turah, yaiku $\equivrep{0}{\equiv_n}$.
+Yèn modulusé luwih saka siji, dhaptar iki diterusaké nganggo
 himpunan wilangan kang yen dipara $n$ menehi turah~$1$,
 yaiku $\equivrep{1}{\equiv_n}$; \ldots;
 lan himpunan wilangan kang yen dipara~$n$ menehi turah~$n-1$,
-yaiku~$\equivrep{n-1}{\equiv_n}$.
+yaiku~$\equivrep{n-1}{\equiv_n}$. Yèn modulusé siji, mung ana
+kelas tanpa turah.
 \end{ex}
 
 \begin{prob}

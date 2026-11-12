@@ -70,7 +70,7 @@ minangka formula utama lan aturan $\RightR{\land}$, kita oleh
 \UnaryInf$(!C \land !D) \lif !E \fCenter !C \lif (!D \lif !E)$
 \DisplayProof
 \]
-Nganti kene kabeh bener. Gatekna yen kabeh langkah iki uga bisa
+Kabeh langkah nganti kéné uga bisa
 ditindakake ing \Log{G3c}, amarga aturan sing wis digunakake padha
 ing \Log{G1c} lan~\Log{G3c}. Kita wis oleh pecahan !!a{proof}
 sing saben sekuen paling ndhuwure ngemot !!{formula} sing padha
@@ -131,11 +131,10 @@ sing padha ing loro sisih iki njamin sekuen kasebut
 mesthi dadi bukti jangkep ing \Log{G3c} yen $!C$, $!D$,
 lan $!E$ minangka !!{formula}s atomik.
 
-Sanajan kita durung, kanthi teges sing ketat, nuduhake yen
+Kanggo mbuktèkaké
 \[\Log{G3c} \Proves (!C \land !D) \lif !E \fCenter !C \lif (!D \lif
 !E),\]
-ing praktik iki kabeh sing perlu (lan bisa) kita tindakake.
-Sebabe, saben sekuen awujud $!A, \Gamma \Sequent \Delta, !A$
+kita njangkepi saben godhong amarga sekèn awujud $!A, \Gamma \Sequent \Delta, !A$
 bisa dibuktekake ing \Log{G3c}, sanajan $!A$ ora atomik.
 Iki bisa dituduhake kanthi induksi tumrap jerone~$\depth{!A}$
 saka~$!A$.
@@ -270,11 +269,10 @@ Kanggo ancas kita, kita uga bisa nggunakake !!{proof}
 \]
 ing kasus nalika $!A \ident \lnot !B$. Nanging ana sistem
 sekuen sing ora ngidini cara iki. Kalkulus sekuen intuisionistik
-\Log{G1i} padha karo \Log{G1c}, nanging saben sekuen diwatesi
-supaya ngemot paling akeh siji !!{formula} ing sisih tengen.
-Yen $\Delta = \emptyset$, !!{proof} kapisan uga dadi
-!!a{proof} ing~\Log{G1i}, nanging kapindho ora, amarga
-ana sekuen sing ngemot $!B$ lan~$\lnot !B$ ing tengen.
+Ing \Log{G1i}, suksedèn ngemot paling akèh siji !!{formula}.
+Yèn derivasi identitas ing pucuk uga ana ing~\Log{G1i},
+loro langkah negasi ing !!{proof} kapisan diidinaké. !!a{proof}
+kapindho nganggo $!B$ lan~$\lnot !B$ ing suksedèn sing padha.
 
 Gatekna yen sanajan ing \Log{G1c}, kita ora bisa
 nggunakake urutan aturan walikan ing kasus nalika
@@ -334,7 +332,7 @@ Iki !!{proof} kanggo~$!B \land !C, \Gamma \Sequent \Delta, !B \land !C$:
 \]
 
 Kanggo $!A \ident \lforall[x][!B(x)]$, pilih
-!!a{constant} sing ora ana ing~$\lforall[x][!B(x)]$,
+!!a{constant}~$c$ sing ora ana ing~$\lforall[x][!B(x)]$,
 $\Gamma$, utawa~$\Delta$. Trapna hipotesis induksi
 kanggo $!D = !B(c)$, $\Pi = \lforall[x][!B(x)], \Gamma$,
 lan $\Lambda = \Delta$. Iki menehi !!a{proof}~$\pi_1$

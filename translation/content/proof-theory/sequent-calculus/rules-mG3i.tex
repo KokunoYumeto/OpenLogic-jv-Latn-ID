@@ -1,6 +1,6 @@
 % Part: proof-theory
 % Chapter: sequent-calculus
-% Section: rules-G3c
+% Section: rules-mG3i
 
 \documentclass[../../../include/open-logic-section]{subfiles}
 
@@ -61,7 +61,7 @@ $!C, \Gamma \Sequent \Delta, !C$ & $\lfalse, \Gamma \Sequent \Delta$
 &
 \Axiom$ \Gamma \fCenter !A(a) $
 \RightLabel{\RightR{\lforall}}
-\UnaryInf$ \Gamma \fCenter \lforall[x][!A(x)]$
+\UnaryInf$ \Gamma \fCenter \Delta, \lforall[x][!A(x)]$
 \DisplayProof
 \\[4ex]
 \Axiom$ !A(a), \Gamma \fCenter \Delta $
@@ -74,13 +74,16 @@ $!C, \Gamma \Sequent \Delta, !C$ & $\lfalse, \Gamma \Sequent \Delta$
 \UnaryInf$ \Gamma \fCenter \Delta, \lexists[x][!A(x)]$
 \DisplayProof
 \end{tabular}
-\caption{Aturan \Log{mG3i} kanthi akeh kesimpulan kanggo logika
+\caption{Aturan \Log{mG3i} kanthi akèh formula ing suksedèn kanggo logika
 intuisionistik. Ing $\RightR{\forall}$ lan $\LeftR{\exists}$,
-!!{constant}~$a$ ora kena ana ing sekuen kesimpulan.
+!!{constant}~$a$ ora kena ana ing sekèn konklusi.
 $\Gamma$~lan $\Delta$ minangka multiset !!{formula}s.
-Ing aksioma, !!{formula}~$!C$ kudu atomik. \Log{mG3m} yaiku
-\Log{mG3i} tanpa aksioma $\lfalse,
-\Gamma \Sequent \Delta$.}
+Ing aksioma, !!{formula}~$!C$ kudu atomik. Ing \RightR{\lif} lan \RightR{\lforall}, premisé mung ngemot
+siji formula ing tengen, lan konklusiné kena ngemot formula sisih.
+\Log{mG3m} asalé saka \Log{mG3i}
+kanthi mbusak aksioma $\lfalse, \Gamma \Sequent \Delta$.
+Ing versi minimal, $\lnot !A$ iku cekakan kanggo $!A \lif \lfalse$.
+Gunakna aturan implikasi kanggo negasi ing versi iki.}
 \ollabel{tab:mG3i}
 \end{table}
 

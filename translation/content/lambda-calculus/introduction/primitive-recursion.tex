@@ -13,7 +13,7 @@ Nalika tekan rekursi primitif, pungkasane ana
 pakaryan kang kudu ditindakake. Kita kudu
 lumaku kanthi sawetara tahap. Kaya sadurunge,
 upamana wis ana suku $G'$ lan $H'$ kang
-saben-saben !!{lambda define} fungsi $g$
+saben-saben !!{lambda define} fungsi total $g$
 lan~$h$. Kita arep nemokake suku $F$ kang
 !!{lambda define}s fungsi~$f$ kang ditetepake
 dening
@@ -33,7 +33,7 @@ lan~$h$, yen numeral $\num{\vec m}$
 diselehake kanggo $\vec z$,
 $F(\num{n+1}, \num{\vec m})$ bakal
 direduksi nganti wujud normal kang
-menehi asil kang bener.
+menehi asil kang bener. G-prima lan H-prima iku suku kang diwènèhaké. F iku suku kang digolèki. Fungsi h nampa indeks sadurungé x. Pratelan numerik langsung iki kanggo g lan h total. Yèn g parsial lan h konstan, h bisa mbuwang nilai sadurungé kang ora ditegesi.
 
 Nanging kanggo iki, cukup nemokake
 suku~$F$ kang nyukupi
@@ -47,7 +47,7 @@ H(u,v) & = \lambd[\vec z][H'(u,v(\vec z),\vec z)].
 Tegese, kanthi akal-akalan notasi lambda,
 kita ora perlu maneh mikirake paramèter
 tambahan $\vec z$: paramèter iku dilebokake
-ing notasi abstraksi lambda.
+ing notasi abstraksi lambda. V wis fungsi saka parameter sawise indeks dipasang, mula ora nampa indeks u maneh.
 
 Sadurunge netepake suku $F$, kita perlu
 cara kanggo nangani pasangan terurut.
@@ -88,7 +88,7 @@ tengen, yaiku $(P)_0$ lan $(P)_1$.
 Kita bakal nggunakake notasi pungkasan iki.
 
 \begin{lem}
-Fungsi-fungsi kang !!{lambda definable}
+Fungsi total kang !!{lambda definable}
 katutup tumrap rekursi primitif.
 \end{lem}
 
@@ -156,7 +156,7 @@ F(\num{n+1}) & \red (\num{n+1}(T, \tuple{\num 0, G}))_1 \\
 & \equiv (\tuple{\num{n+1}, H(\num{n}, F(\num{n}))})_1 \\
 & \equiv H(\num{n}, F(\num{n})).
 \end{align*}
-Ing larik sadurunge larik pungkasan,
+Nalika argumen T diganti karo pasangan indeks n lan nilai F-n,
 kita nggunakake hipotesis induksi.
 Kanggo klausa kapisan, kita duwe
 \begin{align*}
@@ -171,7 +171,7 @@ klausa kapindho. Dadi kita wis nuduhake
 $F(\num 0) \equiv G$ lan, kanggo saben
 $n$, $F(\num {n+1}) \equiv H(\num
 n, F(\num{n}))$, persis kaya kang
-dibutuhake.
+dibutuhake. Persamaan suku lumaku kanggo sembarang G lan H. Kanggo fungsi parsial, persamaan iki waé durung njamin manawa nilai kang ora ditegesi bakal tetep ora ditegesi.
 \end{proof}
 
 \end{document}

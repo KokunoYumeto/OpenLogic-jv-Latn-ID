@@ -31,9 +31,9 @@ kang mratélakaké yèn sawijining teori bisa nemtokaké konsèp
 kanthi implisit, teori iku uga bisa nemtokaké kanthi eksplisit.
 
 Kaya akèh asil ing logika matématis, teorema interpolasi
-bisa dibuktèkaké nganggo cara teori modèl utawa teori bukti.
+bisa dibuktekaké nganggo cara teori modèl utawa teori bukti.
 Kaluwihan cara teori bukti yaiku ora mung nuduhaké anané
-interpolan, nanging uga maringi algoritma kanggo ngétung
+interpolan, nanging uga menehi algoritma kanggo ngétung
 interpolan saka !!a{proof} yèn $!A \Entails !B$,
 tuladhané !!a{proof} ing~\Log{G3c} kanggo
 $!A \Sequent !B$.
@@ -54,7 +54,7 @@ $\Log{G3c} \Proves !A \Sequent !C$ lan
 $\Log{G3c} \Proves !C \Sequent !B$.
 \end{thm}
 
-Kita mbuktèkaké generalisasi teorema interpolasi supaya bisa
+Kita mbuktekaké generalisasi teorema interpolasi supaya bisa
 migunakaké struktur !!{proof}s ing~\Log{G3c}. Anggepen
 antesèden lan suksèden saben sekèn dipérang dadi rong
 pérangan. Kita nulis
@@ -72,11 +72,14 @@ banjur ana !!a{formula}~$!C$ ing !!{language}~$\Lang L(!C)
 \Delta_1) \cap \Lang L(\Gamma_2, \Delta_2)$ saéngga
 $\Log{G3c} \Proves \Gamma_1 \Sequent \Delta_1, !C$ lan
 $\Log{G3c} \Proves !C, \Gamma_2 \Sequent \Delta_2$.
+Saben variabel bebas ing interpolan uga dipilih supaya ana ing
+kaloro pérangan sekèn.
 \end{lem}
+(Kontrol variabel bebas iki dijaga ing induksi bebarengan karo kontrol basa. Yen kabèh formula ing sekèn pungkasan iku ukara, interpolané uga ukara. Iki njlentrehaké panganggoné lema ing bukti Beth lan Robinson; ora ngisi solusi kahanan kang dipasrahaké dadi gladhen.)
 
 \begin{proof}
   Anggepen $\pi \Proves \maeh{\Gamma_1}{\Gamma_2} \Sequent
-  \maeh{\Delta_1}{\Delta_2}$. Pratelan iki kita buktèkaké
+  \maeh{\Delta_1}{\Delta_2}$. Pratelan iki kita buktekaké
   kanthi induksi tumrap $n=\pheight{\pi}$.
 
   Yèn $n=0$, banjur $\maeh{\Gamma_1}{\Gamma_2} \Sequent
@@ -94,7 +97,7 @@ $\Log{G3c} \Proves !C, \Gamma_2 \Sequent \Delta_2$.
     Sekèn kapisan wis aksioma tanpa gumantung pilihan~$!C$,
     amarga $!A$ ana ing kiwa lan tengen. Supaya
     $!C, \Gamma_2 \Sequent \Delta_2$ mesthi !!{provable},
-    pilihané yaiku $!C \ident \lfalse$.
+    salah siji pilihan kang tansah bisa dienggo yaiku $!C \ident \lfalse$.
     \item $!A \in \Gamma_1$ lan $!A \in \Delta_2$.
     Banjur $\Gamma_1 \Sequent \Delta_1, !A$ lan
     $!A, \Gamma_2 \Sequent \Delta_2$ kaloroné aksioma,
@@ -108,12 +111,13 @@ $\Log{G3c} \Proves !C, \Gamma_2 \Sequent \Delta_2$.
     $\Gamma_1 \Sequent \Delta_1, \lnot!A$ lan
     $\lnot !A, \Gamma_2 \Sequent \Delta_2$.
     \item $!A \in \Gamma_2$ lan $!A \in \Delta_2$.
-    Latihan.
+    Gladhen.
   \end{enumerate}
   Kahanan nalika $\maeh{\Gamma_1}{\Gamma_2} \Sequent
   \maeh{\Delta_1}{\Delta_2}$ dadi aksioma amarga
   $\lfalse \in \Gamma_1$ utawa $\lfalse \in \Gamma_2$
-dipasrahaké dadi latihan.
+dipasrahaké dadi gladhen.
+(Pilihan interpolan ing kéné minangka pambangunan seragam, ora pratelan yèn pilihané tunggal.)
 
   Yèn $n>0$, $\pi$ pungkasané nganggo inferènsi logis.
   Kahanané dibedakaké manut aturan kang dienggo lan
@@ -154,8 +158,9 @@ dipérang dadi rong pérangan kanthi cara apa waé.
     uga dilebokaké ing pérangan kapisan premis. Iki
     pilihan kang bisa kita gawé. Hipotesis induksi uga
     bisa ditrapaké yèn formula aktif mau dilebokaké
-    ing pérangan liyané, nanging banjur kita ora bisa
-    nemokaké interpolan (latihan: cobanen).
+    ing pérangan liyané, nanging pambangunan langsung iki durung njamin
+    interpolan kanthi watesan basa kang dibutuhaké (gladhen: cobanen).
+(Katrangan iki ngenani cara migunakaké hipotesis induksi. Teorema tetep njamin anané interpolan kanggo partisi konklusi.)
 
     Gatekna dhisik kahanan kapisan nalika $\lnot !A$~ana
     ing pérangan kapisan. Miturut hipotesis induksi,
@@ -164,7 +169,7 @@ dipérang dadi rong pérangan kanthi cara apa waé.
     \begin{align*}
     !A, \Gamma_1 & \Sequent \Delta_1, !C_1 &&\text{lan} &
     !C_1, \Gamma_2 & \Sequent \Delta_2
-    \intertext{bisa dibuktèkaké. Kang dibutuhaké yaiku !!a{formula}~$!C$ saéngga
+    \intertext{bisa dibuktekaké. Kang dibutuhaké yaiku !!a{formula}~$!C$ saéngga
     rong sekèn iki !!{provable}:}
     \Gamma_1 & \Sequent \Delta_1, \lnot !A, !C &&\text{lan} &
     !C, \Gamma_2 & \Sequent \Delta_2
@@ -172,11 +177,11 @@ dipérang dadi rong pérangan kanthi cara apa waé.
     Cetha yèn kita bisa njupuk $!C \ident !C_1$:
     hipotesis induksi wis njamin sekèn tengen !!{provable},
     lan sekèn kiwa ndhèrèk saka sekèn ing hipotesis induksi
-    kanthi~$\RightR{\lnot}$. Hipotesis induksi uga maringi
+    kanthi~$\RightR{\lnot}$. Hipotesis induksi uga menehi
     $\Lang L(!C_1) \subseteq \Lang L(!A, \Gamma_1,
     \Delta_1) \cap \Lang L(\Gamma_2, \Delta_2)$.
     Amarga $\Lang L(\lnot !A) = \Lang L(!A)$ lan
-    $\Lang L(!C) = \Lang L(!C_1)$, kita ngolèhké
+    $\Lang L(!C) = \Lang L(!C_1)$, kita ngolèhaké
     $\Lang L(!C_1) \subseteq \Lang L(\Gamma_1, \Delta_1, \lnot !A) \cap \Lang
     L(\Gamma_2, \Delta_2)$.
 
@@ -187,7 +192,7 @@ dipérang dadi rong pérangan kanthi cara apa waé.
     \begin{align*}
     \Gamma_1 & \Sequent \Delta_1, !C_1 &&\text{lan} &
     !C_1, !A, \Gamma_2 & \Sequent \Delta_2
-    \intertext{kang bisa dibuktèkaké. Yèn aturan \RightR{\lnot} ditrapaké marang sekèn kapindho, kita ngolèhké !!{proof}s kanggo}
+    \intertext{kang bisa dibuktekaké. Yèn aturan \RightR{\lnot} ditrapaké marang sekèn kapindho, kita ngolèhaké !!{proof}s kanggo}
     \Gamma_1 & \Sequent \Delta_1, !C_1 &&\text{lan} &
     !C_1, \Gamma_2 & \Sequent \Delta_2, \lnot !A
     \end{align*}
@@ -224,7 +229,7 @@ dipérang dadi rong pérangan kanthi cara apa waé.
     Manèh, !!{formula}s aktif dilebokaké ing pérangan
     premis kang padha karo pérangan !!{formula} utama
     ing konklusi. Ing kahanan kapisan, hipotesis induksi
-    maringi !!{proof}s kanggo
+    menehi !!{proof}s kanggo
     \begin{align*}
     !A, \Gamma_1 & \Sequent \Delta_1, !B, !C_1 &&\text{lan} & !C_1, \Gamma_2 & \Sequent \Delta_2
     \intertext{Sekèn kiwa dadi premis kang cocog kanggo \RightR{\lif}. Mula sekèn-sekèn iki !!{provable}:}
@@ -250,7 +255,7 @@ dipérang dadi rong pérangan kanthi cara apa waé.
       \maeh{\Delta_1}{\Delta_2}$
     \DisplayProof
     \]
-    Hipotesis induksi saiki maringi patang sekèn
+    Hipotesis induksi saiki menehi patang sekèn
     kang !!{provable}: loro kanggo interpolan $!C_1$
     saka premis kiwa lan loro kanggo interpolan $!C_2$
     saka premis kapindho:
@@ -272,7 +277,7 @@ dipérang dadi rong pérangan kanthi cara apa waé.
     \BinaryInf$!A \lif !B, \Gamma_1 \fCenter \Delta_1, !C_1, !C_2$
     \DisplayProof
     \]
-    Kanthi ngetrapaké $\RightR{\lor}$ kita ngolèhké sekèn
+    Kanthi ngetrapaké $\RightR{\lor}$ kita ngolèhaké sekèn
     \[
     !A \lif !B, \Gamma_1 \fCenter \Delta_1, !C_1 \lor !C_2
     \]
@@ -289,7 +294,7 @@ dipérang dadi rong pérangan kanthi cara apa waé.
     \DisplayProof
     \]
     Isih perlu dipriksa yèn $!C_1 \lor !C_2$ ana ing
-    basa kang trep. Hipotesis induksi maringi
+    basa kang trep. Hipotesis induksi menehi
     \begin{align*}
     \Lang L(!C_1) & \subseteq
     \Lang L(\Gamma_1, \Delta_1, !A) \cap \Lang L(\Gamma_2, \Delta_2) &\text{lan}\\
@@ -298,7 +303,7 @@ dipérang dadi rong pérangan kanthi cara apa waé.
     \intertext{Amarga}
     \Lang L(!A) & \subseteq \Lang L(!A \lif !B) &\text{lan}\\
     \Lang L(!B) & \subseteq \Lang L(!A \lif !B)
-    \intertext{kita ngolèhké kaloroné}
+    \intertext{kita ngolèhaké kaloroné}
     \Lang L(!C_1) & \subseteq
     \Lang L(\Gamma_1, \Delta_1, !A \lif !B) \cap \Lang L(\Gamma_2, \Delta_2) &\text{lan}\\
     \Lang L(!C_2) & \subseteq
@@ -311,7 +316,7 @@ dipérang dadi rong pérangan kanthi cara apa waé.
 
     Yèn $!A \lif !B$ ana ing pérangan kapindho,
     kahanané béda nanging ditangani kanthi cara kang
-    padha. Hipotesis induksi maringi manèh patang sekèn
+    padha. Hipotesis induksi menehi manèh patang sekèn
     kang !!{provable}:
     \begin{align*}
     \Gamma_1 & \Sequent \Delta_1, !C_1 &&\text{(1)} &
@@ -374,13 +379,14 @@ dipérang dadi rong pérangan kanthi cara apa waé.
       \maeh{\Delta_1}{\Delta_2, \lforall[x][!A(x)]}$
     \DisplayProof
     \]
-    Ing kahanan kapisan, hipotesis induksi maringi !!{proof}s
+    Ing kahanan kapisan, hipotesis induksi menehi !!{proof}s
     kanggo $\Gamma_1 \Sequent \Delta_1, !A(c), !C_1$ lan
     $!C_1, \Gamma_2 \Sequent \Delta_2$.
     Kita bisa ngetrapaké $\RightR{\lforall}$ marang kang
-    kapisan kanggo ngolèhké
+    kapisan kanggo ngolèhaké
     $\Gamma_1 \Sequent \Delta_1, \lforall[x][!A(x)], !C_1$.
-    (Syarat variabel eigen kacukupan, amarga wis kacukupan
+    (Syarat variabel eigen kacukupan, amarga konstanta eigen ora ana ing interpolan, kaya
+    kang dipriksa saka watesan basa ing ngisor, lan wis kacukupan
     ing aturan \RightR{\lforall} ing pungkasan~$\pi$.)
     Mula $!C_1$ dadi interpolan yèn
     $\Lang L(!C_1) \subseteq \Lang L(\Gamma_1, \Delta_1, \lforall[x][!A(x)])
@@ -402,7 +408,7 @@ dipérang dadi rong pérangan kanthi cara apa waé.
     kanthi !!{formula} utama~$\lexists[x][!A(x)]$.
     Ana rong kahanan manèh. Kita ngrembug nalika
     $\lexists[x][!A(x)]$ ana ing pérangan kapisan,
-    dene kahanan kapindho dipasrahaké dadi latihan.
+    dene kahanan kapindho dipasrahaké dadi gladhen.
 
     Ing kahanan kapisan, $\pi$ pungkasané kaya mangkéné:
     \[
@@ -415,21 +421,23 @@ dipérang dadi rong pérangan kanthi cara apa waé.
       \maeh{\Delta_1, \lexists[x][!A(x)]}{\Delta_2}$
     \DisplayProof
     \]
-    Hipotesis induksi maringi !!{proof}s kanggo
+    Hipotesis induksi menehi !!{proof}s kanggo
     $\Gamma_1 \Sequent \Delta_1, \lexists[x][!A(x)], !A(t), !C_1$
     lan $!C_1, \Gamma_2 \Sequent \Delta_2$.
     Kita bisa ngetrapaké $\RightR{\lexists}$ marang kang
-    kapisan kanggo ngolèhké
+    kapisan kanggo ngolèhaké
     $\Gamma_1 \Sequent \Delta_1, \lexists[x][!A(x)], !C_1$.
     Mula $!C_1$ dadi interpolan yèn
     $\Lang L(!C_1) \subseteq \Lang L(\Gamma_1, \Delta_1,
     \lexists[x][!A(x)]) \cap \Lang L(\Gamma_2, \Delta_2)$
-    kacukupan. Ing kéné hipotesis induksi mung maringi
+    kacukupan. Ing kéné hipotesis induksi mung menehi
     $\Lang L(!C_1) \subseteq
     \Lang L(\Gamma_1, \Delta_1, \lexists[x][!A(x)], !A(t))
     \cap \Lang L(\Gamma_2, \Delta_2)$. Élinga yèn kita
-    nganggep ora ana !!{function}s. Mula suku~$t$ mung
-    bisa !!a{constant}, yaiku $t \ident b$.
+    nganggep ora ana !!{function}s. Mula suku~$t$ bisa !!a{variable} utawa !!a{constant}.
+    Yen suku mau variabel, ora ana simbol nonlogis anyar kang
+    kudu diilangi, mula kita njupuk~$!C_1$. Yen konstanta,
+    tulisen $t \ident b$.
     Yèn $b \notin \Lang L(!C_1)$ utawa
     $b \in \Lang L(\Gamma_1, \Delta_1, \lexists[x][!A(x)]) \cap
     \Lang L(\Gamma_2, \Delta_2)$, $!C_1$ bisa langsung
@@ -438,7 +446,8 @@ dipérang dadi rong pérangan kanthi cara apa waé.
     $b \notin \Lang L(\Gamma_1, \Delta_1,
     \lexists[x][!A(x)]) \cap \Lang L(\Gamma_2, \Delta_2)$?
     Sepisan, kanthi ngganti saben kedadéan~$b$ ing~$!C_1$
-    nganggo !!a{variable}~$y$, kita bisa nulis
+    nganggo !!a{variable}~$y$ kang seger lan ora ana ing~$!C_1$,
+    kita bisa nulis
     $!C_1 \ident \Subst{!C_1'}{b}{y}$ kanthi $!C_1'$~ora
     ngemot~$b$. Sabanjuré, $b \notin
     \Lang L(\Gamma_1, \Delta_1, \lexists[x][!A(x)])$ utawa
@@ -474,6 +483,7 @@ dipérang dadi rong pérangan kanthi cara apa waé.
     $b \notin \Lang L(\Gamma_1, \Delta_1,
     \lexists[x][!A(x)])$, lan $!C_1'$~wis ditegesaké
     supaya ora ngemot~$b$.
+(Suku variabel tetep ana ing basa tanpa simbol fungsi. Kanggo abstraksi konstanta, pilih variabel seger supaya substitusi ora njalari panangkepan.)
     
     Ing kahanan kapindho, kita nduwèni (saka hipotesis
     induksi lan admisibilitas pelemahan kanthi nambah
@@ -503,7 +513,7 @@ dipérang dadi rong pérangan kanthi cara apa waé.
     $b \notin \Lang L(\Gamma_2, \Delta_2)$, lan $!C_1'$
     wis ditegesaké supaya ora ngemot~$b$.
   \end{enumerate}
-  Kahanan liyané padha polané; dipasrahaké dadi latihan.
+  Kahanan liyané padha polané; dipasrahaké dadi gladhen.
 \end{proof}
 
 \begin{prob}
@@ -525,14 +535,14 @@ kahanan-kahanan ing bukti \olref{lem:maehara} nalika
 $\pi$ pungkasané nganggo salah siji aturan iki.
 \end{prob}
 
-Sawisé Lema Maehara kabuktèkaké, kita bisa migunakaké
-kanggo mbuktèkaké Teorema Interpolasi Craig.
+Sawisé Lema Maehara kabuktekaké, kita bisa migunakaké
+kanggo mbuktekaké Teorema Interpolasi Craig.
 
 \begin{proof}[Bukti \olref{thm:interpolation}]
   Anggepen $!A \Sequent !B$ iku !!{provable}.
   Trapna \olref{lem:maehara} marang
   $\maeh{!A}{\ } \Sequent \maeh{\ }{!B}$ kanggo
-  ngolèhké interpolan~$!C$. Kita nduwèni
+  ngolèhaké interpolan~$!C$. Kita nduwèni
   $\Proves !A \Sequent !C$ lan $\Proves !C \Sequent !B$.
 \end{proof}
 
@@ -581,10 +591,11 @@ Waliké ora langsung cetha, nanging tetep bener:
   \intertext{nduwèni !!{proof}s. Amarga $\Lang L(!A) \subseteq \Lang L_1 \cap
   \Lang L_2$, $!A$~ora ngemot~$R$, kang mung ana ing pérangan kapisan.
   Gantenana $R'$ nganggo~$R$ ing saindhenging !!{proof} sekèn kapindho
-  kanggo ngolèhké !!a{proof} kanggo}
+  kanggo ngolèhaké !!a{proof} kanggo}
     !A(c_1, \dots, c_n), \Gamma & \Sequent R(c_1, \dots, c_n)
   \end{align*}
-  Trapna \RightR{\lif} lan \RightR{\lforall} kanggo ngolèhké
+  Trapna \RightR{\lif} marang kaloro sekèn, gabungna kaloro
+  implikasi nganggo \RightR{\land}, banjur trapna \RightR{\lforall} kanggo ngolèhaké
   !!a{proof} kanggo
   \[
     \Gamma \Sequent \lforall[x_1][\dots\lforall[x_n][(R(x_1,\dots,x_n) \liff !A(x_1, \dots, x_n))]].
@@ -592,33 +603,36 @@ Waliké ora langsung cetha, nanging tetep bener:
   Iki nuduhaké yèn $!A(x_1, \dots, x_n)$ nemtokaké
   $R$ kanthi eksplisit ing~$\Gamma$.
 \end{proof}
+(Basa interpolan mung dijamin minangka pérangan saka basa sesarengan, kang uga ngemot konstanta anyar. Simbol predikat ing dudutan ditulis tanpa tandha placeholder formula. Ekuivalènsi digawé saka konjungsi rong implikasi sadurungé generalisasi universal.)
 
 Asil katelu kang équivalèn karo interpolasi (lan kaya
-interpolasi, bisa dibuktèkaké nganggo Lema Maehara)
+interpolasi, bisa dibuktekaké nganggo Lema Maehara)
 yaiku teorema iki: Yèn rong teori konsistèn~$\Gamma_1$
 lan $\Gamma_2$ ngemot teori komplet $\Gamma$ ing basa
-$\Lang L(\Gamma) \subseteq \Lang L(\Gamma_1)
+$\Lang L(\Gamma) = \Lang L(\Gamma_1)
 \cap \Lang L(\Gamma_2)$, banjur
 $\Gamma_1 \cup \Gamma_2$ konsistèn.
+(Kakompletan dibutuhaké ing kabèh basa sesarengan. Rong ekstènsi konsistèn saka teori komplet ing basa cilik bisa bentrok ing predikat sesarengan kang anyar. Delengen McNulty, cathetan teori modèl, kaca 55.)
 
 Élinga yèn teori komplet iku teori kang kanggo saben
 !!{sentence}~$!A$ ing basané, $\Gamma \Proves !A$ utawa
 $\Gamma \Proves \lnot !A$. Amarga $\Gamma_1$ lan~$\Gamma_2$
 iku ekstènsi konsistèn saka~$\Gamma$, mula $\Gamma$
 uga konsistèn. Dadi, yèn $!A$ iku !!a{sentence} ing basa
-$\Lang L(\Gamma_1) \cap \Lang L(\Gamma_2)$, ora mungkin
+$\Lang L(\Gamma_1) \cap \Lang L(\Gamma_2)$, ora bisa
 $\Gamma_1 \Entails !A$ lan
 $\Gamma_2 \Entails \lnot !A$ bebarengan.
 Anggepen ana~$!A$ mangkono. Yèn
 $\Gamma_1 \Entails !A$, banjur $\Gamma \Entails !A$:
 yèn ora, amarga $\Gamma$ komplet,
 $\Gamma \Entails \lnot !A$, lan amarga
-$\Gamma \subseteq \Gamma_1$, kita ngolèhké
+$\Gamma \subseteq \Gamma_1$, kita ngolèhaké
 $\Gamma_1 \Entails \lnot !A$, kang ndadèkaké
 $\Gamma_1$ ora konsistèn. Dadi $\Gamma \Entails !A$,
 lan amarga $\Gamma \subseteq \Gamma_2$,
-$\Gamma_2 \Entails !A$. Mula $\Gamma \Entails/
+$\Gamma_2 \Entails !A$. Mula $\Gamma_2 \Entails/
 \lnot !A$; yèn ora, $\Gamma_2$ ora konsistèn.
+(Dudutan pungkasan ngenani teori kapindho. Konsistènsiné teori iki ngalangi entailment negasi ukara kang wis dadi akibaté.)
 
 Ora anané !!a{sentence}~$!A$ ing
 !!{language} sesarengan~$\Lang L(\Gamma_1) \cap \Lang L(\Gamma_2)$
@@ -642,11 +656,11 @@ $\Gamma_1 \cup \Gamma_2$ konsistèn.
   $\Gamma_1, \Gamma_2 \Sequent \ $ nduwèni !!a{proof}.
   Trapna Lema Maehara marang
   $\maeh{\Gamma_1}{\Gamma_2} \Sequent \maeh{\ }{\ }$
-  kanggo ngolèhké !!a{sentence}~$!A$ ing
+  kanggo ngolèhaké !!a{sentence}~$!A$ ing
   !!{language}~$\Lang L(\Gamma_1) \cap \Lang L(\Gamma_2)$
   saéngga $\Proves \Gamma_1 \Sequent !A$ lan
   $\Proves !A, \Gamma_2 \Sequent \quad$. Saka sekèn
-  kapindho iki kita ngolèhké
+  kapindho iki kita ngolèhaké
   $\Proves \Gamma_2 \Sequent \lnot !A$.
   Nanging kita wis nganggep ora ana !!{sentence} mangkono.
 \end{proof}

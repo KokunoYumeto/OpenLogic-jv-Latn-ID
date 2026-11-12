@@ -36,7 +36,6 @@ Kanggo ngrampungi kangelan iki, kita uga ngenalake \emph{pangaji
 variabel} lan nemtokake relasi nyukupi
 dudu mung relatif marang !!a{structure}, nanging marang
 !!a{structure} bebarengan karo pangaji !!a{variable}.
-Cathetan koreksi sumber SOL6-F003: matriks kuantor bisa uga ora nduweni variabel bebas nalika kuantifikasine vakum; mula klaim sumber kang tanpa watesan kuwi dijlentrehake minangka kemungkinan.
 \end{explain}
 
 \begin{defn}[Pangaji Variabel]
@@ -186,11 +185,7 @@ $\Sat{M}{!B(m)}$}, kita kandha yen formula kasebut dicukupi
 ing~$\Struct M$ \emph{relatif marang}~$s$ yen lan mung yen
 $!B(x)$ dicukupi relatif marang~$\Subst{s}{m}{x}$
 \iftag{prvEx}{kanggo paling ora siji}{kanggo saben}
-$m \in \Domain M$. Cathetan koreksi sumber OLPL-073:
-cabang prvEx ing ukara bandhingan sumber mung nyebut
-anane unsur domain nanging ora nyebut syarat relasi nyukupi
-tumrap matriks; syarat kasebut dibalekake supaya sejajar
-karo cabang universal lan ukara sadurunge.
+$m \in \Domain M$.
 \end{explain}
 
 \begin{ex}
@@ -232,10 +227,6 @@ amarga $\tuple{\Value{b}{M},
   \Value{f(a,b)}{M}} = \tuple{2, 3} \in \Assign{R}{M}$,
 nanging $\Sat/{M}{R(x, f(a,b))}[s]$ amarga
 $\tuple{1, 3} \notin \Assign{R}{M}$.
-Cathetan koreksi sumber OLPL-072: interpretasi predikat
-iku ditemtokake dening struktur, dudu pangaji variabel;
-indeks pangaji kang
-kelebihan ing pungkasan rumus sumber dicopot.
 
 Kanggo nemtokake apa formula nonatomik~$!A$ dicukupi,
 gunakna klausa ing definisi induktif kang cocog karo
@@ -319,14 +310,10 @@ saka awake dhewe).
   $\Sat/{M}{\lnot(R(b,x) \lor R(x,b))}[\Subst{s}{1}{x}]$,
   mula $\Sat/{M}{\lforall[x][\lnot(R(b,x) \lor R(x,b))]}[s]$,
   lan mula $\Sat{M}{\lnot\lforall[x][\lnot(R(b,x) \lor
-  R(x,b))]}[s]$. Cathetan koreksi sumber OLPL-077:
-  kurung bukak kang keluwihan ing rong rumus kuantor
-  dicopot supaya matriks negasine imbang. Ing sisih liya,
+  R(x,b))]}[s]$. Ing sisih liya,
   \[
   \Sat/{M}{\lexists[x][(R(b,x) \land R(x,b))]}[s].
   \]
-  Cathetan koreksi sumber OLPL-074: koma kang kleru mlebu
-  ing argumen formula ing tampilan sumber wis dicopot.
   Iki amarga $\Sat{M}{\lforall[x][\lnot(R(b,x) \land
   R(x,b))]}[s]$, awit ora ana $m \in \Domain M$ kang
   ndadekake $\Sat{M}{R(b,x) \land R(x,b)}[\Subst{s}{m}{x}]$.
@@ -346,9 +333,7 @@ saka awake dhewe).
   kanggo kabeh $m \in \Domain M$
   ($\Sat{M}{R(a,x)}[\Subst{s}{1}{x}]$ lan
   $\Sat/{M}{R(x,a)}[\Subst{s}{m}{x}]$ kanggo $m = 2$,
-  $3$, utawa~$4$). Cathetan koreksi sumber OLPL-078:
-  predikat ing alesan kanggo telung nilai pungkasan
-  kudu duwe variabel ing argumen kapisan.
+  $3$, utawa~$4$).
   Mula ora ana $m \in \Domain M$
   kang ndadekake $\Sat{M}{\lnot(R(x,a) \lif R(a,x))}[\Subst{s}{m}{x}]$,
   mula $\Sat/{M}{\lexists[x][\lnot(R(x,a) \lif R(a,x))]}[s]$.
@@ -371,9 +356,7 @@ Kanggo kasus kang luwih rumit, gatekna
 Amarga $\Sat/{M}{R(a,x)}[\Subst{s}{3}{x}]$ lan
 $\Sat/{M}{R(a,x)}[\Subst{s}{4}{x}]$, kasus kang kudu
 nggatekake konsekuen kondisional mung $m = 1$
-lan $m = 2$. Cathetan koreksi sumber OLPL-075:
-sumber ngilangake huruf variabel ing nilai kapindho;
-indeks pangaji kang padha dibalekake. Apa
+lan $m = 2$. Apa
 $\Sat{M}{\lexists[y][R(x,y)]}[\Subst{s}{1}{x}]$
 dicukupi? Iki bener yen ana paling ora siji $n \in \Domain M$
 kang ndadekake $\Sat{M}{R(x,y)}[\Subst{\Subst{s}{1}{x}}{n}{y}]$.
@@ -402,10 +385,7 @@ utawa $\Sat{M}{\lexists[y][R(x,y)]}[\Subst{s}{m}{x}]$
 \[
 \Sat{M}{\lforall[x][(R(a,x) \lif \lexists[y][R(x,y)])]}[s].
 \]
-Cathetan koreksi sumber OLPL-076: kuantifikasi panutup
-sumber nggunakake huruf kanggo pangaji variabel njero,
-dene saben kasus ing ukara iki miturut pangaji variabel njaba;
-huruf kang cocog dibalekake. Ing sisih liya,
+ Ing sisih liya,
 \[
 \Sat/{M}{\lexists[x][(R(a,x) \land \lforall[y][R(x,y)])]}[s].
 \]
@@ -418,7 +398,6 @@ mula $\Sat/{M}{\lforall[y][R(x,y)]}[\Subst{s}{m}{x}]$
 kanggo $m = 1$ lan $m = 2$. Dadi ora ana
 $m \in \Domain M$ kang ndadekake
 $\Sat{M}{R(a,x) \land \lforall[y][R(x,y)]}[\Subst{s}{m}{x}]$.
-Cathetan koreksi sumber SOL6-F004: nilai paseksi variabel njero kudu gumantung marang nilai variabel njaba; pasangan loro-papat klebu interpretasi predikat, dene siji-papat lan loro-siji ora.
 \end{ex}
 
 \iftag{defEx}{%

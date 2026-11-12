@@ -22,7 +22,7 @@ Upamané $n, m \in \omega$. Mula $n = m$ yen lan mung yen $\cardeq{n}{m}$.
 \emph{Saka kiwa menyang tengen} cetha. Kanggo mbuktèkaké
 \emph{saka tengen menyang kiwa}, upamané $\cardeq{n}{m}$
 nanging $n \neq m$. Miturut Trikotomi, $n
-\in m$ utawa $m \in n$; tanpa ngurangi keumuman, upamané $n \in m$.
+\in m$ utawa $m \in n$; tanpa nyuda keumuman, upamané $n \in m$.
 Mula $n \subsetneq m$ lan ana !!a{bijection} $f \colon m \to n$,
 saéngga $m$ tanpa wates miturut Dedekind, mbantah
 \olref[z][infinity-again]{naturalnumbersarentinfinite}.
@@ -46,6 +46,7 @@ Mula sawetara pangertèn kang lumrah kanggo nyebut kardinal
 	\item\ollabel{card:infinite} $A$ tanpa wates miturut Dedekind.
 \end{enumerate}
 \end{thm}
+Pratelan kapisan nerangake yèn himpunan ora winates, dudu mung yèn himpunan kasebut ora awujud wilangan asli.
 
 \begin{proof}
 Saka \olref[ord-arithmetic][using-addition]{ordinfinitycharacter},
@@ -53,7 +54,7 @@ Saka \olref[ord-arithmetic][using-addition]{ordinfinitycharacter},
 \olref{naturalsarecardinals}.
 \end{proof}
 
-Iki ngidinaké kita netepaké sacara \emph{resmi} sawetara
+Asil iki maringi dhasar tumrap \emph{definisi} sawetara
 pangertèn kang sadurungé dienggo kanthi informal ing
 \olref[sfr][][]{part}:
 
@@ -92,7 +93,7 @@ Saben kardinal tanpa wates iku ordinal limit.
 \end{cor}
 
 \begin{proof}
-Upamané $\alpha$ ordinal penerus kang tanpa wates, mula
+Upamané $\alpha$ ordinal panerus kang tanpa wates, mula
 $\alpha = \beta
 \ordplus 1$ kanggo sawatara $\beta$. Amarga penerus ordinal
 winates mesthi winates, $\beta$
@@ -100,9 +101,10 @@ uga tanpa wates, mula $\cardeq{\beta}{\beta \ordplus 1}$ miturut
 \olref[ord-arithmetic][using-addition]{ordinfinitycharacter}. Saiki
 $\card{\beta} = \card{\beta\ordplus 1} = \card{\alpha}$ miturut
 \olref[cardinals][cardsasords]{lem:CardinalsBehaveRight}; amarga
-kardinal sawijining ordinal ora ngluwihi ordinal kasebut, mula
+$\card{\beta} \leq \beta < \alpha$, mula
 $\alpha \neq \card{\alpha}$.
 \end{proof}
+Panerus ordinal winates tetep winates, lan minimalé kardinal menehi wates kang dienggo ing kesimpulan. Iki njlentrehake bukti corollary kang tetep sah.
 
 Ing \olref[sfr][siz][enm-alt]{defn:enumerable} kita wis nuduhaké
 yèn himpunan tanpa wates kang !!{enumerable} bisa dibédakaké
@@ -163,7 +165,7 @@ Gampang dipriksa yèn $\bigcup X$ iku ordinal. Upamané $\alpha \in
 sawatara kardinal $\cardfont{b}$. Amarga $\cardfont{b}$ iku kardinal,
 $\cardless{\alpha}{\cardfont{b}}$. Amarga $\cardfont{b} \subseteq
 \bigcup X$, kita nduwèni $\cardle{\cardfont{b}}{\bigcup X}$, lan mula
-$\cardneq{\alpha}{\bigcup X}$. Kanthi nggeneralisasi, $\bigcup X$
+$\cardneq{\alpha}{\bigcup X}$. Kanthi ngetrapaké iki marang saben ordinal kang luwih cilik, $\bigcup X$
 iku kardinal.
 \end{proof}
 

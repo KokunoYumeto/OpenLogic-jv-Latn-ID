@@ -25,16 +25,16 @@ asumsi dhewe, utawa dumadi saka siji, loro, utawa telung
 adhedhasar asumsi~$\Gamma$ yaiku wit winates saka !!{sentence}s kang
 nyukupi syarat-syarat iki:
 \begin{enumerate}
-\item !!{sentence}s paling dhuwur ing wit kalebu ing $\Gamma$ utawa
-  !!{discharged} dening sawijining inferensi ing wit.
-\item !!{sentence} paling ngisor ing wit yaiku~$!A$.
-\item Saben !!{sentence} ing wit kajaba ukara~$!A$ ing sisih ngisor
-  iku premis saka panrapan aturan inferensi kang bener, lan
-  kesimpulan aturan iku mapan langsung ing sangisore !!{sentence}
-  kasebut ing wit.
+\item Saben !!{sentence} ing godhong kang isih mbukak kalebu ing $\Gamma$.
+  Saben asumsi kang !!{discharged} ditandhani manut inferensi kang
+  mbubaraké asumsi iku.
+\item !!{sentence} ing oyod, yaiku simpul paling ngisor, iku~$!A$.
+\item Saben !!{sentence} ing simpul kang dudu godhong iku kesimpulan
+  saka siji panrapan aturan kang bener. Kabèh !!{sentence}s ing
+  simpul langsung ing ndhuwuré iku premis saka panrapan iku.
 \end{enumerate}
-Banjur kita ngarani $!A$ \emph{kesimpulan} saka !!{derivation}
-kasebut lan $\Gamma$ minangka asumsi kang !!{undischarged}.
+Ukara $!A$ iku \emph{kesimpulan} saka !!{derivation}. Asumsi kang
+!!{undischarged} bisa arupa sapérangan saka $\Gamma$.
 
 Yen ana !!a{derivation} saka $!A$ adhedhasar~$\Gamma$, kita kandha yen
 $!A$ \emph{!!{derivable}} saka~$\Gamma$, utawa kanthi simbol:
@@ -102,7 +102,7 @@ asumsi kasebut ora ana ing !!{derivation}. Tuladha iki sah, sanajan
 ora ana asumsi~$!A$ kang arep !!{discharged}:
 \begin{prooftree}
   \AxiomC{$!B$}
-  \DischargeRule{\Intro{\lif}}{1}
+  \RightLabel{\Intro{\lif}}
   \UnaryInfC{$!A \lif !B$}
 \end{prooftree}
 \end{ex}

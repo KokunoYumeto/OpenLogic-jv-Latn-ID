@@ -135,14 +135,19 @@ Tulisen tabel kabeneran kanggo konektif iki.
 $\pAssign{v_2}$ iku !!{valuation}s kang menehi nilai padha marang
 !!{propositional
 variable}s kang muncul ing $!A$, yaiku
-$\pAssign{v_1}(\Obj p_n) = \pAssign{v_2}(\Obj p_n)$ yen $\Obj p_n$
-muncul ing !!{formula}~$!A$. Banjur $\pValue{v_1}$ lan
+$\pAssign{v_1}(\Obj p_n) = \pAssign{v_2}(\Obj p_n)$ kanggo saben $\Obj p_n$
+kang muncul ing !!{formula}~$!A$. Banjur $\pValue{v_1}$ lan
 $\pValue{v_2}$ uga menehi nilai padha marang~$!A$, yaiku
 $\pValue{v_1}(!A) = \pValue{v_2}(!A)$.
 \end{thm}
 
 \begin{proof}
-Kanthi induksi ing $!A$.
+Kanthi induksi ing $!A$. Nilai variabel atomik padha miturut
+hipotesis, lan nilai saben konstanta atomik wis ditemtokaké.
+Kabèh variabel kang muncul ing subformula uga muncul ing formula kabèh.
+Mula hipotesis induksi mènèhi nilai kang padha tumrap saben subformula
+langsung. Amarga loro evaluasi nganggo fungsi kabeneran kang padha
+kanggo konektif paling njaba, nilai formula kabèh uga padha.
 \end{proof}
 
 \begin{defn}[Relasi Nyukupi]
@@ -179,8 +184,8 @@ Kanthi induksi ing $!A$.
 
 \tagitem{prvIff}{%
   \indcase{!A}{(!B \liff !C)}{$\pSat{v}{\indfrm}$ yen lan mung yen
-    $\pSat{v}{!B}$ lan $\pSat{v}{!C}$ kalorone, utawa $\pSat{v}{!B}$
-    lan $\pSat{v}{!C}$ kalorone ora lumaku.}}{}
+    $\pSat{v}{!B}$ lan $\pSat{v}{!C}$ kalorone lumaku, utawa
+    $\pSat/{v}{!B}$ lan $\pSat/{v}{!C}$.}}{}
 \end{enumerate}
 Yen $\Gamma$ iku himpunan !!{formula}s, $\pSat{v}{\Gamma}$ yen lan mung
 yen $\pSat{v}{!A}$ kanggo saben~$!A \in \Gamma$.

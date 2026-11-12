@@ -1,109 +1,31 @@
-# OpenLogic ing Basa Jawa: terjemahan *Open Logic Text*
+# OpenLogic ing Basa Jawa
 
-Iki terjemahan basa Jawa mandhiri sing ditulis kanthi mesin saka
-[Open Logic Project](https://openlogicproject.org/), kang sumber asale dikunci ing
-revisi 9620cc73f9c8e0ad003c514a5d3748f29611c4c0.
-Terjemahan OpenLogic nganggo basa Jawa aksara Latin (jv-Latn-ID).
-Ragam utama yaiku ngoko tinulis kanggo andharan akademik.
-Kabeh 722 berkas sumber wis diterjemahake, kalebu perangan alternatif lan cathetan editor.
-Terjemahan iki kalebu [katalog terjemahan OpenLogic](https://github.com/KokunoYumeto/OpenLogic-translations).
+Wacan OpenLogic iki nyakup 722 berkas isi nganggo basa Jawa aksara Latin
+(jv-Latn-ID). Ragam utama yaiku ngoko tinulis kanggo andharan akademis.
+Isiné kalebu teori himpunan, logika, teori modèl, komputabilitas, teori bukti,
+lan cara mbuktèkaké pratelan matématika.
 
-## Carane digawe
+## Wacan lan sumber
 
-Terjemahan, koreksi sumber, panyuntingan, lan pamandingan makna dening
-panulis sing padha ditindakake nganggo OpenAI Codex. Rekaman runtime sesi
-utama nyathet **GPT-5.6 Sol, Ultra effort**, wiwit 4 September 2026,
-banjur **GPT-6 Sol, Ultra effort**, wiwit 25 September 2026,
-lan **GPT-6.1 Sol, Ultra effort**, kanggo pamriksan anyar wiwit 30 September 2026.
-Panjelasan iki adhedhasar identitas model lan tingkat effort ing rekaman
-runtime, dudu pangira saka setelan saiki. Iki karya AI; ora ana pratelan
-panlitian utawa panyuntingan dening manungsa. Rekaman sesi utama kasebut
-ora dianggep minangka bukti atribusi saben berkas utawa worker sing
-ora kacathet kanthi mandhiri.
+- [Waca PDF](https://github.com/KokunoYumeto/OpenLogic-jv-Latn-ID/releases/download/v0.3.0/OpenLogic-jv-Latn-ID-v0.3.0.pdf)
+- [Undhuh sumber LaTeX, gambar, gaya lan kapustakan](https://github.com/KokunoYumeto/OpenLogic-jv-Latn-ID/releases/download/v0.3.0/OpenLogic-jv-Latn-ID-v0.3.0-source.zip)
+- [Pandhuan ngasilaké PDF saka sumber LaTeX](BUILD.md)
+- [Tetembungan lan pilihan terjemahan](translation-decisions/TRANSLATION_DECISIONS_FULL.md)
+- [Tetembungan kang prelu ditimbang](translation-decisions/PRIORITY_REVIEW.md)
+- [Rilis sadurungé](https://github.com/KokunoYumeto/OpenLogic-jv-Latn-ID/releases)
 
-Kabeh 722 berkas terjemahan nduweni cathetan paragraf sing sejajar karo sumber,
-pamriksan formula, token, pranala lan label, sarta pamandingan makna dening
-panulis sing padha kanthi parafrasa balik pilihan. Validasi maneh kanon lan
-koreksine kang lawas dudu panriman pamriksan anyar. Pamriksan seger saiki
-nyakup OLP-0151 nganti OLP-0311, yaiku 161 unit; 561 unit liyane
-isih kudu dipriksa maneh ing alur iki. Pasangan petikan seragam sing sadurunge dipasang kanthi otomatis
-kanggo 444 keputusan lan 4.143 segmen terjemahan wis dicopot saka bukti umum
-nganti validasi khusus ditindakake; delengen
-[`evidence/PROVENANCE_SCOPE.json`](evidence/PROVENANCE_SCOPE.json).
-Koreksi sumber sing ditrapake lan temuan sing ditarik maneh nduweni cathetan
-bukti dhewe sing bisa diwaca mesin, kalebu hash sumber lan terjemahan sing pas.
-Cathetan koreksi historis bisa ngreksa hash sadurunge amendemen; cathetan
-amendemen nemtokake versi saiki. Loro kekurangan bukti sumber, OLPL-655 lan
-OLPL-657, diterangake kanthi cetha ing cathetan editor basa Jawa. Bukti
-normalisasi lan konfluensi kalkulus sakabehe durung dinyatakake wis jangkep.
-Pamriksan iki ora ngganti panlitian ahli basa Jawa sing mandhiri, sing durung
-diklaim. Tetembungan teknis serapan sing provisional diterangake minangka
-pilihan sementara, tanpa ngaku wis kabukten lumrah ing matematika basa Jawa.
+Sawetara pérangan menehi sketsa bukti. Ing bab proposisi minangka tipe,
+pangrembugan normalisasi lan konfluensi nyakup kasus kontekstual lan permutasi
+kang diandharaké ing bab mau. Sketsa bukti Lindström njlentrehaké syarat
+representasi basa winates lan pérangan konstruksi kode kang dibutuhaké.
 
-Prosa ilmiah basa Jawa, pedoman resmi ejaan Latin Jawa, lan entri kamus resmi
-nduweni peran bukti sing beda. Sumber Inggris nemtokake makna matematika.
-Panjelasan kamus basa Indonesia ora dadi poros makna terjemahan.
-PDF kanon lan wangsulan kamus jangkep disimpen minangka sumber panliten
-pribadi lan ora kalebu berkas sing disebarake umum.
+## Asal-usul lan lisènsi
 
-## Kahanan saiki
+Tèks asli anggitané Open Logic Project. Terjemahan, koreksi, panyuntingan lan
+tata aksara diprodhuksi AI OpenAI Codex, kalebu GPT-5.6 Sol, GPT-6 Sol lan GPT-6.1 Sol.
+Wacan lan sumber asli nyebut panulis sarta komponen kang dienggo.
+[Tèks Inggris OpenLogic, revisi 9620cc73f9c8e0ad003c514a5d3748f29611c4c0](https://github.com/OpenLogicProject/OpenLogic/tree/9620cc73f9c8e0ad003c514a5d3748f29611c4c0).
 
-**Isih digarap: sumber saiki ngemot 722 saka 722 berkas kang wis diterjemahake.**
-Validasi maneh bukti kanon lan wacan jangkep isih digarap.
-Wacan PDF kang wis diterbitake tetep ngemot 24 unit sumber lan dibangun kanggo rilis
-[v0.2.0](https://github.com/KokunoYumeto/OpenLogic-jv-Latn-ID/releases/tag/v0.2.0),
-kanthi TeX kumulatif langsung, ZIP sumber editable jangkep, lan EPUB3
-reflowable minangka pasangan rilis. Potret sumber v0.2.0 ngemot 118 unit;
-potret sumber saiki luwih amba tinimbang wacan PDF lan EPUB mau.
-Edhisi jangkep tetep dadi ancas, kalebu kabeh isi ing njaba
-alur wacan baku.
-
-Lingkup sumber lan terjemahan dibedakake saka lingkup wacan.
-Alur sumber baku nyakup 642 unit; edhisi jangkep kudu nyakup kabeh 722
-kanthi runtut tanpa mbaleni pangatur alternatif. Sumber wacan kumulatif jangkep
-wis dirakit; rilis PDF jangkep durung diterbitake.
-
-Ora ana pratelan yen proyek asal nyengkuyung edhisi iki utawa yen wis ana panlitian mandhiri dening ahli basa Jawa.
-
-### Potret sumber 30 September 2026
-
-Potret iki ngreksa koreksi, panarikan temuan kang salah, lan cathetan pilihan
-nganti 161 unit pamriksan anyar. Rekaman pilihan kalebu 1.988 cathetan
-lan amendemen; 34 alasan lan alternatif OLP-0299/0300 saiki nganggo basa Jawa.
-Delengen [status bukti saiki](evidence/sol6-reaudit/STATUS.json),
-[indeks pilihan](evidence/sol6-reaudit/CHOICES_INDEX.md), lan
-[koreksi sumber](evidence/sol6-reaudit/SOURCE_CORRECTIONS.jsonl).
-Cathetan QA ing njaba direktori iki bisa nuduhake versi historis.
-
-Ragam, ejaan lan pedoman serapan ora dadi atestasi istilah matematika spesialis.
-Pamriksan makna sakabehe, pambasaan-Jawakake cathetan pilihan liyane,
-pamriksan visual sakabehe lan pangulangan kang identik isih durung rampung.
-Ora ana pamriksan manungsa utawa rilis wacan jangkep kang diklaim.
-PDF lan EPUB umum tetep wacan 24 unit ing rilis lawas. Draft45 pribadi wis
-liwat kompilasi lan pitung sampel visual, nanging sumber saiki ngemot
-koreksi sabanjure kang durung dikompilasi. PDF draft mau ora diterbitake ing
-potret sumber iki; bita masukan editable persise dijaga kanthi kapisah.
-
-## Isi
-
-- upstream/ ngreksa bita basa Inggris sing wis diverifikasi lan lisensi saben komponen.
-- translation/ ngemot unit sumber sing pancen wis diterjemahake, kanthi dalan berkas asal tetep.
-- edition/ ngemot pangatur wacan, caption lan token basa Jawa, sarta errata sing cetha.
-- editorial/ nyathet ragam akademik, panjelasan sumber, lan cathetan tetembungan
-  sarta pilihan angel kanggo ditliti, kanthi indeks jangkep lan dhaptar prioritas.
-- translation-decisions/ ngreksa indeks pilihan kanggo 118 unit kapisan lan tabel
-  kedadeyan sumber-terjemahan sing pas. SOURCE_CONTINUATION.md nyathet pilihan
-  sabanjure ing tingkat keputusan, tanpa ngaku lokasi saben tembung kanthi pas.
-- evidence/ ngemot hash sumber, QA struktural, panlitian dening panulis sing padha,
-  koreksi sumber winates, lan pratelan lingkup asal-usul bukti kanon.
-
-Rilis v0.2.0 ngemot
-wacan winates awujud PDF lan EPUB, TeX kumulatif langsung, sumber editable
-jangkep miturut tag, bukti QA sing bisa diwaca mesin, lan checksum.
-Rilis kasebut mbedakake lingkup 118 unit sumber, 26 sumber panyengkuyung,
-lan 24 unit wacan. PDF lan sumber v0.1.2 tetep disegel lan kasedhiya ing rilis asale.
-
-## Sumber lan lisensi
-
-Sumber lan adaptasi iki nggunakake CC BY 4.0, kanthi pangecualian komponen asal.
-Reksanen upstream/LICENSE.md lan kabar lisensi liyane.
+Tèks lan adaptasiné nganggo Creative Commons Attribution 4.0 International.
+Saben komponen kanthi lisènsi kapisah manut kabar lisènsiné dhéwé.
+[Lisènsi teks](upstream/LICENSE.md) lan [katalog terjemahan OpenLogic](https://github.com/KokunoYumeto/OpenLogic-translations).

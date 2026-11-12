@@ -25,43 +25,45 @@ bukti menarik lan beda.
 Kanthi notasi kang padha karo
 \olref[sfr][infinite][dedekind]{Closure}, netepna
 \[
-\Closureofunder{f}{B} = \bigcap \Setabs{X}{B \subseteq X
+\Closureofunder{f}{B} = \bigcap \Setabs{X\subseteq D}{B \subseteq X
 \text{ lan $X$ iku $f$-katutup}}
 \]
-kanggo saben himpunan $B$ lan fungsi~$f$. Kanthi definisi iki,
-$\Closureofunder{f}{B}$ iku himpunan $f$-katutup paling cilik kang
-ngemot~$B$, ing teges iki:
+kanggo saben swafungsi $f\colon D\to D$ lan subhimpunan $B\subseteq D$.
+Tutupan iki subhimpunan $f$-katutup paling cilik ing $D$ kang
+ngemot~$B$, kaya kang dituduhaké déning lema iki.
 
 \begin{lem}\ollabel{Closureprops}
-	Kanggo saben fungsi $f$, lan saben $B$:
+	Kanggo saben $f\colon D\to D$ lan $B\subseteq D$:
 	\begin{enumerate}
 		\item\ollabel{Closurehaselem} $B \subseteq \Closureofunder{f}{B}$; lan
 		\item\ollabel{Closureclosed} $\Closureofunder{f}{B}$ iku $f$-katutup; lan
-		\item\ollabel{Closuresmallest} yen $X$ iku $f$-katutup lan $B
+		\item\ollabel{Closuresmallest} yèn $X\subseteq D$ iku $f$-katutup lan $B
 		\subseteq X$, mula $\Closureofunder{f}{B} \subseteq X$.
 	\end{enumerate}
 \end{lem}
-Cathetan koreksi sumber OLP-0054: definisi lan lema iki mbutuhake f
-dadi swafungsi ing sawijining himpunan lan B dadi subhimpunane.
-Panganggone ing bukti ngisor nyukupi watesan kasebut amarga A dadi
-subhimpunan C, mula bijeksi f saka C menyang A uga bisa dianggep
-swafungsi ing C (JV-D064).
 
 \begin{proof}
-Persis kaya ing \olref[sfr][infinite][dedekind]{closureproperties}.
+Kaya ing \olref[sfr][infinite][dedekind]{closureproperties}, kulawarga
+kang diiris iku isi. $D$ dhéwé $f$-katutup lan ngemot $B$. Saben
+anggota kulawarga ngemot $B$, mula irisané uga ngemot $B$. Yèn
+$x$ kalebu irisan, $f(x)$ kalebu saben anggota kulawarga amarga
+kabèh $f$-katutup. Dadi irisané $f$-katutup. Irisan iku subhimpunan
+saben anggota kulawarga, kaya kang dikarepaké.
 \end{proof}
 
 Kita mbutuhake siji kasunyatan pungkasan kanggo mbuktekake
 Schr\"oder--Bernstein:
 
 \begin{prop}\ollabel{sbhelper}
-Yen $A \subseteq B \subseteq C$ lan $A \approx C$, mula $\cardeq{\cardeq{A}{B}}{C}$.
+Yen $A \subseteq B \subseteq C$ lan $A \approx C$, mula $\cardeq{A}{B}$ lan $\cardeq{B}{C}$.
 \end{prop}
 
 \begin{proof}
-Yen diwenehi !!a{bijection} $f \colon C \to A$, jupuken $F =
-\Closureofunder{f}{C \setminus B}$ lan netepna fungsi $g$ kanthi
-domain $C$ kaya mangkene:
+Jupuken !!a{bijection} $f \colon C \to A$. Amarga $A\subseteq C$,
+kanggo njupuk tutupan kita nganggep $f$ minangka swafungsi ing $C$
+kanthi nilai-nilai kang padha. Jupuken $F =
+\Closureofunder{f}{C \setminus B}$ lan tetepna fungsi $g$ ing
+domain $C$ mangkéné.
 \[
 	g(x) =
 	\begin{cases}
@@ -69,9 +71,11 @@ domain $C$ kaya mangkene:
 			x & \text{yen ora}
 	\end{cases}
 \]
-Kita bakal nuduhake yen $g$ iku !!a{bijection} saka $C \to B$. Saka
-kene bakal ndherek yen $\comp{f^{-1}}{g} \colon A \to B$ iku
-!!a{bijection}, lan bukti rampung.
+Yèn $x\in F$, banjur $g(x)=f(x)\in A\subseteq B$. Yèn $x\notin F$,
+$C\setminus B\subseteq F$, mula $g(x)=x\in B$. Mula $g$ nduwèni kodomain $B$.
+Kita bakal mbuktèkaké yèn $g$ iku !!a{bijection} saka $C$ menyang $B$.
+Sawisé iku $\comp{f^{-1}}{g} \colon A \to B$ uga !!a{bijection}, amarga
+iku kasusun saka rong bijeksi.
 
 Kapisan, kita negesake yen $x \in F$ nanging $y\notin F$, mula $g(x) \neq
 g(y)$. Kanggo bukti kanthi kontradiksi, upamakna ora mangkono, saengga
@@ -91,8 +95,7 @@ $F \setminus \{x\}$ bakal dadi $f$-katutup lan ngemot $C\setminus B$,
 kang mokal miturut \olref{Closureprops}; saiki $g(y) = f(y) = x$.
 \end{proof}
 
-Pungkasane, iki bukti asil utama. Elinga yen kanggo fungsi $h$ lan
-himpunan $D$, kita netepake $\funimage{h}{D} = \Setabs{h(x)}{x
+Pungkasané, iki bukti asil utama. Kanggo fungsi $h$ lan subhimpunan $D\subseteq\dom{h}$, élinga yèn kita netepaké $\funimage{h}{D} = \Setabs{h(x)}{x
 \in D}$.
 
 \begin{proof}[Bukti Schr\"oder--Bernstein] Jupuken $f \colon A \to B$

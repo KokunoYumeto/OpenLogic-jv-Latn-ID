@@ -73,6 +73,11 @@ $\Nat \times \Nat$ iku !!{enumerable}.
 Tetepna $f \colon \Nat \to \Nat\times\Nat$ kanthi cara metakake saben $k \in \Nat$
 menyang tupel $\tuple{n,m} \in \Nat \times \Nat$ kanthi $k$ minangka nilai
 ing baris kaping $n$ lan kolom kaping $m$ ing larikan zig-zag Cantor.
+Saben diagonal isi pasangan kanthi gunggung koordinat kang padha.
+Diagonal didhaptar miturut gunggungé, lan saben pasangan ing sawijining
+diagonal dicathet persis sapisan, miturut koordinat kapisané.
+Dawa saben dhaptar diagonal iku winates, lan jumlahé mundhak tanpa wates. Mula saben indeks
+nuduhaké persis siji pasangan lan saben pasangan kena siji indeks.
 \end{proof}
 
 \begin{explain}
@@ -81,10 +86,10 @@ digunakake kanggo menehi enumerasi tumrap himpunan tupel telu wilangan natural, 
 \[
 \Nat \times \Nat \times \Nat = \Setabs{\tuple{n,m,k}}{n,m,k \in \Nat}
 \]
-Kita nganggep $\Nat \times \Nat \times \Nat$ minangka produk
-Kartesius saka $\Nat \times \Nat$ karo $\Nat$, yaiku
+Kita makili $\Nat \times \Nat \times \Nat$ nganggo prodhuk
+Kartesius saka $\Nat \times \Nat$ karo $\Nat$ lumantar bijeksi kanonik
 \[
-\Nat^3 = (\Nat \times \Nat) \times \Nat =
+\Nat^3 \cong (\Nat \times \Nat) \times \Nat =
 \Setabs{\tuple{\tuple{n,m},k}}{n, m, k
   \in \Nat }
 \]
@@ -108,7 +113,11 @@ $\Nat^2$ ing sumbu liyane:
 \]
 Mula, kanthi nggunakake cara kaya metodhe zig-zag Cantor, kita uga bisa
 ngolehake enumerasi~$\Nat^3$. Kita bisa nerusake cara iki kanggo
-ngolehake enumerasi $\Nat^n$ tumrap saben wilangan natural $n$. Dadi:
+ngolèhaké enumerasi $\Nat^n$ tumrap saben wilangan natural $n$.
+Kanggo pangkat nol, dhaptaré mung isi tupel kosong. Pangkat siji
+dienumerasi miturut urutan wilangan natural. Kanggo langkah indhuksi
+saka pangkat siji, larik kanthi indeks enumerasi tupel sadurungé lan kolom
+kanthi indeks natural bisa diwaca miturut diagonal kaya ing ndhuwur.
 \end{explain}
 
 \begin{prop}

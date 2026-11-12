@@ -44,7 +44,7 @@ $\tuple{q_0, \TMblank}$ menyang $\tuple{q_1, \TMstroke,
 \emph{Mesin Genep}: Mesin Turing ing ngisor iki
 mandheg yen lan mung yen cacah $\TMstroke$ ing
 pita genep (kanthi anggepan kabeh $\TMstroke$
-ana sadurunge $\TMblank$ kapisan ing pita). Cathetan panyunting: conto iki miwiti sirah ing kothak input kapisan ing sisih tengen panandha, manut definisi formal konfigurasi wiwitan. SOL6-F049 uga mbenerake posisi wiwitan ing pambuka supaya konvensine padha. Kanggo input kosong sirah maca blank kapisan ing kahanan nol.
+ana sadurunge $\TMblank$ kapisan ing pita). Sirah diwiwiti ing kothak input kapisan ing sisih tengen panandha. Kanggo input kosong, sirah maca blank kapisan ing kahanan nol.
 \[
 \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
                     semithick]
@@ -75,7 +75,7 @@ mesin iku (miturut teori) terus lumaku
 tanpa wates. Kanggo mesin lan input
 sembarang, kita bisa nelusuri
 \emph{konfigurasi} mesin kanggo nemtokake
-asile yen mesin mandheg. Cathetan koreksi sumber OLPL-770: panelusuran menehi output yen mesin mandheg, nanging ora mesthi nemtokake output utawa mandhege mesin kanggo input sembarang. Kita bakal menehi definisi formal
+asile yen mesin mandheg. Simulasi menehi output yèn mesin mandheg. Kanggo input sembarang, simulasi ora menehi cara kanggo mutusaké apa mesin bakal mandheg. Kita bakal menehi definisi formal
 konfigurasi ing bagean sabanjure. Saiki,
 konfigurasi bisa dianggep sacara intuisi
 minangka rerangken diagram kang nuduhake
@@ -97,9 +97,9 @@ nggambarake kahanan wiwitan mesin kaya mangkene:
 \[
 \TMendtape \TMstroke_0 \TMstroke \TMstroke \TMstroke \TMblank \ldots
 \]
-% OLPL-145: Sumber beku nyebut "state one" ing katrangan konfigurasi wiwitan, nanging rumus lan diagram nuduhake q_0.
+%
 Konfigurasi ing ndhuwur gampang dimangerteni.
-Cathetan koreksi sumber OLPL-145: kahanan wiwitan nol, dudu siji kaya ing ukara sumber. Kaya kang katon, mesin diwiwiti ing kahanan
+ Kaya kang katon, mesin diwiwiti ing kahanan
 nol lan maca~$\TMstroke$ paling kiwa.
 Iki digambarake dening subskrip jeneng
 kahanan ing $\TMstroke$ kapisan.

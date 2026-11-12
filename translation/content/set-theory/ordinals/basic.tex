@@ -48,13 +48,13 @@ yaiku ordinal dhewe diurutake kanthi becik dening
 relasi keanggotaan:
 
 \begin{thm}[Induksi Transfinit]\ollabel{ordinductionschema}
-Kanggo sembarang rumus $\phi(x)$:
+Kanggo sembarang formula $\phi(x)$:
 \[
 	\text{yen }\exists \alpha \phi(\alpha)\text{, mula }\exists \alpha(\phi(\alpha)
 	\land  (\forall \beta \in \alpha) \lnot \phi(\beta))
 \]
 ing kene kuantor-kuantor kang ditampilake kanthi
-ora langsung diwatesi marang ordinal.
+implisit diwatesi marang ordinal.
 \end{thm}
 
 \begin{proof}
@@ -67,9 +67,7 @@ predikat iki mbentuk himpunan bagean ora kosong
 kanthi Pamisahan. Himpunan bagean iki nduweni
 !!{element} paling cilik miturut $\in$ kang nyukupi
 $\phi$, lan unsur iki ordinal miturut
-\olref{ordmemberord}. Amarga ordinal wiwitan transitif,
-saben ordinal sadurunge unsur kapilih iki uga dadi
-anggotane; mula ora ana kang nyukupi predikat kasebut.
+\olref{ordmemberord}.
 %	\olref{ordinductionschema2}. Upamane ana ordinal
 %	$\gamma$ kanthi $\lnot\phi(\gamma)$. Mula miturut
 %	\olref{ordinductionschema1}, ana ordinal minimal miturut $\in$
@@ -87,6 +85,7 @@ dinyatakake minangka skema iki:
 yaiku kanthi njupuk $\lnot\phi(\alpha)$ ing
 \olref{ordinductionschema}, banjur nindakake
 owah-owahan logis kang prasaja.
+Gunakna Pamisahan kanggo njupuk himpunan bagean kang anggotané nyukupi predikat. Unsur paling cilik ing himpunan mau yaiku unsur paling cilik kang nyukupi predikat.
 
 \begin{thm}[Trikotomi]\ollabel{ordtrichotomy}
 $\alpha \in \beta \lor \alpha = \beta \lor \beta \in \alpha$,
@@ -114,15 +113,15 @@ $\alpha = \beta$.
 
 Kanggo nuduhake $\alpha \subseteq \beta$, pilihen
 $\gamma \in \alpha$; iki ordinal miturut
-\olref{ordmemberord}. Miturut pangira-ira induksi
+\olref{ordmemberord}. Miturut hipotesis induksi
 kapisan, $\gamma$ bisa dibandhingake karo $\beta$.
 Nanging yen $\gamma = \beta$ utawa
 $\beta \in \gamma$, mula $\beta \in \alpha$
 (yen perlu, nganggo transitivitas $\alpha$),
-nentang pangira-ira kita; mula $\gamma \in \beta$.
+nentang panganggapan kita; mula $\gamma \in \beta$.
 Kanthi umum, $\alpha \subseteq \beta$.
 
-Penalaran kang padha persis, nganggo pangira-ira
+Penalaran kang padha persis, nganggo hipotesis
 induksi kapindho, nuduhake $\beta \subseteq \alpha$.
 Mula $\alpha = \beta$.
 \end{proof}\noindent Mula kadhang kita nulis
@@ -136,7 +135,7 @@ $\alpha \mathrel{\underline{\in}} \beta$,
 nanging cara iki babar pisan ora lumrah.}
 
 Iki rong akibat langsung saka asil-asil mau;
-sing kapisan nggunakake notasi anyar kita:
+kang kapisan nggunakake notasi anyar kita:
 
 \begin{cor}\ollabel{ordordered}
 Yen $\exists \alpha\phi(\alpha)$, mula
@@ -192,7 +191,7 @@ Akibate $O \in O$, nentang \olref{ordordered}.
 Asil iki dijenengi miturut \citeauthor{Burali-Forti1897}.
 Nanging Cantor ing taun 1899---liwat layang marang
 Dedekind---kang sepisanan ndeleng kanthi cetha
-\emph{kontradiksi} saka pangira-ira yen ana himpunan
+\emph{kontradiksi} saka panganggapan yen ana himpunan
 kabeh ordinal. Kaya kang diterangake van Heijenoort:
 \begin{quote}
   Burali-Forti dhewe nganggep kontradiksi iku mbuktekake,
@@ -250,7 +249,7 @@ saka Trikotomi (\olref[basic]{ordtrichotomy}) lan
 \end{proof}
 
 \begin{prob}\ollabel{probunionordinalsordinal}
-Buktikna yen saben anggota $X$ iku ordinal,
+Buktekna yen saben anggota $X$ iku ordinal,
 mula $\bigcup X$ uga ordinal.
 \end{prob}
 

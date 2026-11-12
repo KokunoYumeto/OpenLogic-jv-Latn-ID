@@ -31,9 +31,7 @@
 \begin{proof}
   \begin{enumerate}
     \item Saka \olref[prp]{ax:land1} lan \olref[prp]{ax:land2}
-      nganggo modus ponens. Cathetan koreksi sumber OLPL-032: rujukan
-      kapindho dibalekake marang aksioma proyeksi tengen, kang menehi
-      kesimpulan B.
+      nganggo modus ponens.
   \item Saka \olref[prp]{ax:land3} nganggo rong aplikasi modus ponens.
   \end{enumerate}
 \end{proof}
@@ -49,15 +47,14 @@
 
 \begin{proof}
   \begin{enumerate}
-  \item Saka \olref[prp]{ax:lnot2}, kita entuk $\Proves \lnot !A
-    \lif (!A \lif \lfalse)$ lan $\Proves \lnot !B \lif (!B \lif
-    \lfalse)$. Cathetan koreksi sumber OLPL-033: wujud-wujud kasebut
-    minangka conto aksioma negasi kapindho, dudu aksioma
-    kontraposisi. Mula, miturut Teorema Deduksi, kita duwe $\{\lnot
-    !A\} \Proves !A \lif \lfalse$ lan $\{\lnot !B\} \Proves !B \lif
-    \lfalse$. Saka \olref[prp]{ax:lor3}, kita entuk $\{\lnot !A,
-    \lnot !B\} \Proves (!A \lor !B) \lif \lfalse$. Miturut teorema
-    Deduksi, $\{!A \lor !B, \lnot !A, \lnot !B\} \Proves \lfalse$.
+  \item Tetepna $\Delta=\{!A\lor !B,\lnot !A,\lnot !B\}$.
+    Miturut \olref[prp]{ax:lnot2}, kita nduwèni $\lnot !A\lif(!A\lif\lfalse)$
+    lan $\lnot !B\lif(!B\lif\lfalse)$ minangka instansi aksioma.
+    Kanthi modus ponens lan rong premis negasi mau, kita entuk
+    $!A\lif\lfalse$ lan $!B\lif\lfalse$ saka $\Delta$.
+    Trapna modus ponens kaping pindho nganggo instansi \olref[prp]{ax:lor3} kanggo entuk
+    $(!A\lor !B)\lif\lfalse$. Gunakna premis $!A\lor !B$
+    lan modus ponens kanggo entuk $\lfalse$.
   \item Saka \olref[prp]{ax:lor1} lan \olref[prp]{ax:lor2} nganggo
     modus ponens.
   \end{enumerate}

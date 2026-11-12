@@ -29,8 +29,8 @@ $\sqrt{2}$ iku dudu wilangan rasional, yaiku $\sqrt{2} \notin \Rat$
 \begin{proof}
 Kanggo bukti kanthi kontradiksi, upamakna yen $\sqrt{2}$ iku rasional.
 Dadi $\sqrt{2} = \nicefrac{m}{n}$ kanggo sawatara wilangan natural $m$
-lan $n$. Kita bisa milih $m$ lan $n$ saengga pecahane ora bisa
-disederhanakake maneh. Kanthi nata maneh, $m^{2} = 2n^{2}$. Saka kene,
+lan $n$ kanthi $n>0$. Pilihen wakil kanthi penyebut $n$ paling cilik.
+Pecahan kanthi penyebut iki wis paling prasaja. Kanthi nata maneh, $m^{2} = 2n^{2}$. Saka kene,
 kita bisa ngrampungake bukti kanthi rong cara:
 
 \emph{Kapisan, kanthi geometris} (manut Tennenbaum).\footnote{Bukti iki
@@ -47,14 +47,16 @@ kacarita dening \cite{Conway2006}.} Gatekna kothak-kothak iki:
 		\node at (5.25, 1.5) (m) {$m$};
 	\end{tikzpicture}
 \end{center}
+Gambar iki nuduhaké susunan kothak. Amarga $n<m<2n$,
+rong kothak cilik tumpang tindhih lan ninggalaké rong pojok kabuka.
 Amarga $m^2 = 2n^2$, wilayah tumpang tindhih saka rong kothak kang
 dawa sisine $n$ nduweni jembar padha karo wilayah kang ora katutupan
 dening kothak loro mau; yaiku jembar kothak oranye padha karo gunggung
 jembar rong kothak kang ora diwernani. Dadi yen kothak oranye dawa
-sisine $p$, lan saben kothak kang ora diwernani dawa sisine $q$, mula
+sisiné $p$, lan saben kothak kang ora diwernani dawa sisiné $q$,
+banjur $p=2n-m$ lan $q=m-n$, loro-loroné positif. Saka jembaré,
 $p^2 = 2q^2$. Nanging saiki $\sqrt{2} = \nicefrac{p}{q}$, kanthi $p < m$
-lan $q < n$ sarta $p, q \in \Nat$. Iki kontradiksi karo kasunyatan yen
-$m$ lan $n$ dipilih sacilik-cilike.
+lan $q < n$ sarta $p, q \in \Nat$. Iki kontradiksi karo pilihan $n$ minangka penyebut paling cilik.
 
 \emph{Kapindho, kanthi formal.} Amarga $m^{2} = 2n^{2}$, mula $m$ iku
 genep. (Gampang dituduhake yen $x$ ganjil, mula $x^2$ ganjil.) Dadi
@@ -86,15 +88,22 @@ tinimbang $\sqrt{2}$, yaiku:
 \[
 	\Setabs{p \in \Rat}{p^2 < 2 \text{ utawa }p < 0}
 \]
-Himpunan iki duwe wates ndhuwur ing wilangan rasional; contone, kabeh
-!!{element}s luwih cilik tinimbang $3$. Nanging apa wates ndhuwur paling
-cilike? Kita kepengin mangsuli ``$\sqrt{2}$''; nanging kita lagi wae weruh
-yen $\sqrt{2}$ \emph{dudu} wilangan rasional. Lan ora ana wilangan rasional
-\emph{paling cilik} kang luwih gedhe tinimbang $\sqrt{2}$. Dadi himpunan iki duwe
-wates ndhuwur nanging ora duwe wates ndhuwur paling cilik. Mula wilangan
-rasional ora nduweni Sipat Kajangkepan. Cathetan koreksi sumber OLP-0044:
-tandha kurang-saka kang kesasar sawise token unsur ing sumber ora digawa
-menyang terjemahan (JV-D025).
+Himpunan iki nduwèni wates ndhuwur ing wilangan rasional.
+Kabèh !!{element}s luwih cilik tinimbang $3$. Calon wates ndhuwur paling
+cilik ing garis real yaiku $\sqrt{2}$, kang irasional.
+Ing wilangan rasional, yèn $u$ dadi wates ndhuwur, mula $u>0$ amarga
+himpunan iku ngemot $1$. Tetepna
+\[
+  v=\frac{2u+2}{u+2}.
+\]
+Banjur
+\[
+ v-u=\frac{2-u^2}{u+2},\qquad v^2-2=\frac{2(u^2-2)}{(u+2)^2}.
+\]
+Yèn $u^2<2$, mula $v>u$ lan $v^2<2$, saéngga $u$ dudu wates ndhuwur.
+Yèn $u^2>2$, mula $0<v<u$ lan $v^2>2$, saéngga $v$ iku wates ndhuwur
+kang luwih cilik. Kasus $u^2=2$ ora bisa amarga irasionalitas oyod loro.
+Mula himpunan iki ora nduwèni wates ndhuwur paling cilik ing wilangan rasional.
 
 Kosok baline, kontinuum ``samesthine'' nduweni Sipat Kajangkepan. Kita ora mung
 kepengin $\sqrt{2}$ dadi wilangan real; kita kepengin ngisi kabeh

@@ -29,18 +29,15 @@ cabang, utawa rong !!{signed formula}s jejer---ing kasus iki, cabang
 pecah dadi loro, lan rong !!{signed
   formula}s kang ditambahake dadi pucuk rong cabang kasebut.
 
-Aturan kang ditrapake marang !!{signed formula} kompleks ngasilake
-tambahan !!{signed formula}s kang dadi sub-!!{formula}s langsung.
-Aturan-aturan kasebut dipasangake, siji aturan kanggo saben tandha.
+Aturan kanggo konektif proposisional nambahaké formula mawa tandha kang asalé saka
+subformula langsung ing !!{signed formula} kompleks.
+Saben konektif nduwèni pasangan aturan, siji kanggo saben tandha.
 Tuladhane, aturan $\TRule{\True}{\land}$ ditrapake marang
 $\sFmla{\True}{!A \land !B}$ lan ngidini loro !!{signed formula}s,
 $\sFmla{\True}{!A}$ lan~$\sFmla{\True}{!B}$, ditambahake ing pucuk
 saben cabang kang ngemot $\sFmla{\True}{!A \land !B}$, dene aturan
 $\TRule{\False}{\land}$ ngidini sawijining cabang dipecah kanthi
 nambahake $\sFmla{\False}{!A}$ lan $\sFmla{\False}{!B}$ kanthi jejer.
-Cathetan koreksi sumber OLPL-002: jeneng aturan ing sumber Inggris
-ngemot formula wutuh; jeneng iki dibalekake dadi aturan konjungsi
-mawa tandha salah.
 !!^a{tableau} katutup yen saben cabange ngemot pasangan
 !!{signed formula}s kang cocog, yaiku $\sFmla{\True}{!A}$ lan
 $\sFmla{\False}{!A}$.
@@ -65,17 +62,13 @@ Tuladhane, iki !!{tableau} katutup kang nuduhake yen $\Proves
     ]
   ]
 \end{oltableau}
-Cathetan koreksi sumber OLPL-003: rong label ekspansi konjungsi ing
-sumber Inggris nyebut implikasi mawa tandha bener; label kasebut
-dibalekake dadi konjungsi mawa tandha bener, cocog karo formula ing
-larik induke.
 
 Himpunan $\Gamma$ ora konsisten ing kalkulus !!{tableau} yen ana
 !!{tableau} katutup kanggo asumsi
 \[
 \{\sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\} 
 \]
-kanggo sawijining $!B_i \in \Gamma$.
+kanthi $!B_i \in \Gamma$ kanggo saben $i=1,\dots,n$.
 
 !!^{tableau}s diciptakake ing taun 1950-an kanthi mandhiri dening Evert
 Beth lan Jaakko Hintikka, banjur disederhanakake lan dipopulerake dening
@@ -84,13 +77,13 @@ Raymond Smullyan. Tableau gampang banget digunakake, amarga mbangun
 sistematis, !!{tableau}s uga gampang ditindakake nganggo komputer.
 Nanging, !!a{tableau} kerep angel diwaca lan gegayutane karo bukti
 kadhangkala ora gampang katon. Pendekatan iki uga cukup umum, lan akeh
-logika duwe sistem !!{tableau}. !!^{tableau}s uga mbiyantu kita nemokake
-!!{structure}s kang nyukupi (himpunan) !!{sentence}s kang diwenehake:
-yen himpunan iku bisa dicukupi dening sawijining struktur,
-himpunan iku ora bakal duwe
-!!{tableau} katutup, yaiku saben !!{tableau} bakal duwe cabang kang
-bukak. !!{structure} kang nyukupi bisa ``diwaca'' saka cabang bukak,
-angger saben aturan kang bisa ditrapake wis ditrapake ing cabang kasebut.
+logika duwe sistem !!{tableau}. !!^{tableau}s uga mbiyantu kita nemokaké \iftag{FOL}{!!{structure}s}{!!{valuation}s}
+kang nyukupi (himpunan) !!{sentence}s. Yèn himpunan iku bisa dicukupi,
+saben !!{tableau} kang diwiwiti saka formula-formula himpunan iku
+kanthi tandha bener nduwèni paling ora siji cabang bukak.
+Yèn kabèh aturan kang bisa ditrapaké ing cabang bukak wis ditindakake,
+cabang iku bisa dadi dhasar kanggo mbangun
+\iftag{FOL}{!!{structure}}{!!{valuation}} kang nyukupi.
 Uga ana gegayutan kang raket banget karo kalkulus sekuen: ing dhasare,
 !!{tableau} katutup iku !!{derivation} kalkulus sekuen kang dipadhetake
 lan ditulis kuwalik saka ndhuwur menyang ngisor.

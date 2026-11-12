@@ -11,17 +11,17 @@
 \olsection{Tuladha Filtrasi}
 
 Kita durung nuduhake yen filtrasi pancen ana. Nanging kanggo saben
-model $\mModel{M}$, ana akeh filtrasi saka $\mModel{M}$ liwat
+model $\mModel{M}$, ana filtrasi saka $\mModel{M}$ liwat
 $\Gamma$. Kita mbedakake mligine rong jinis: filtrasi paling alus lan
 paling kasar. Filtrasi saka model kang padha bisa beda ing relasi
 aksesibilitase (amarga \olref[fil]{defn:filtration} wis nemtokake
 $W^*$ lan~$V^*$ kanthi langsung). Filtrasi paling alus nduweni
-sesambungan antarjagad sithik-dhikite, dene filtrasi paling kasar
-nduweni sesambungan akeh-akehe.
+sesambungan antardonya sithik-dhikite, dene filtrasi paling kasar
+nduweni sesambungan akeh-akehe. Filtrasi paling alus lan paling kasar bisa padha; ora saben model nduweni luwih saka siji filtrasi.
 
 \begin{defn}
   Yen $\Gamma$ katutup tumrap subformula, filtrasi \emph{paling alus}
-  $\mModel{M^*}$ saka model $\mModel{M}$ ditepakake kanthi:
+  $\mModel{M^*}$ saka model $\mModel{M}$ ditetepake kanthi:
   \[
   R^*[u][v] \quad \text{yen lan mung yen} \quad \exists u'\in [u] \;
   \exists v' \in [v] : Ru'v'.
@@ -33,7 +33,7 @@ nduweni sesambungan akeh-akehe.
 \end{prop}
 
 \begin{proof}
-  Kita kudu mriksa yen $R^*$ kang ditepakake mangkono nyukupi
+  Kita kudu mriksa yen $R^*$ kang ditetepake mangkono nyukupi
   \olref[fil]{defn:filtration}\olref[fil]{defn:filtration-R}.
   Kita priksa telung sarat iku siji-siji.
 
@@ -41,7 +41,7 @@ nduweni sesambungan akeh-akehe.
   mula \olref[fil]{defn:filtration-R1} kawujud.
   
   \iftag{prvBox}{\iftag{probBox}{Pamariksan
-      \olref[fil]{defn:filtration-R2} kita tinggalake minangka latihan.}{Kanggo
+      \olref[fil]{defn:filtration-R2} kita tinggalake minangka gladhen.}{Kanggo
         \olref[fil]{defn:filtration-R2}, upamane $\Box!A \in \Gamma$,
         $R^*[u][v]$, lan $\mSat{M}{\Box!A}[u]$. Miturut definisi
         $R^*$, ana $u' \equiv u$ lan $v' \equiv v$ kang
@@ -51,7 +51,7 @@ nduweni sesambungan akeh-akehe.
         tumrap $!A$, mula $\mSat{M}{!A}[v]$, kaya kang dikarepake.}}{}
   
   \iftag{prvDiamond}{\iftag{probDiamond}{Pamariksan
-      \olref[fil]{defn:filtration-R3} kita tinggalake minangka latihan.}{Kanggo mriksa
+      \olref[fil]{defn:filtration-R3} kita tinggalake minangka gladhen.}{Kanggo mriksa
         \olref[fil]{defn:filtration-R3}, upamane $\Diamond!A \in
         \Gamma$, $R^*[u][v]$, lan $\mSat{M}{!A}[v]$. Miturut definisi
         $R^*$, ana $u' \equiv u$ lan $v' \equiv v$ kang
@@ -68,7 +68,7 @@ nduweni sesambungan akeh-akehe.
 
 \begin{defn}
   Yen $\Gamma$ katutup tumrap subformula, filtrasi \emph{paling kasar}
-  $\mModel{M^*}$ saka model~$\mModel{M}$ ditepakake kanthi
+  $\mModel{M^*}$ saka model~$\mModel{M}$ ditetepake kanthi
   $R^*[u][v]$ yen lan mung yen
   \iftag{notprvBox,notprvDiamond}{sarat ing ngisor iki
     kawujud:}{\emph{loro-lorone} sarat ing ngisor iki kawujud:}
@@ -102,9 +102,9 @@ nduweni sesambungan akeh-akehe.
   Jupuken $W = \PosInt$, $Rnm$ yen lan mung yen $m = n + 1$, lan
   $V(p) = \Setabs{2n}{n \in \PosInt}$. Model
   $\mModel{M} = \tuple{W, R, V}$ digambarake ing
-  \olref{fig:ex-filtration}. Jagad-jagade yaiku $1$, $2$, lan
-  sateruse; saben jagad bisa ngakses persis siji jagad liyane---
-  paneruse---lan $p$ bener ing kabeh lan mung wilangan genep.
+  \olref{fig:ex-filtration}. Donya-donyane yaiku $1$, $2$, lan
+  sateruse; saben donya bisa ngakses persis siji donya liyane---
+  paneruse---lan $p$ bener ing kabeh lan mung wilangan genep. Indeks valuasi diwatesi marang wilangan positif supaya kabeh anggota valuasi kalebu donya model.
 
   \begin{figure}
     \centering
@@ -157,7 +157,7 @@ nduweni sesambungan akeh-akehe.
   $R^*[1][1]$, $\mSat{M}{\Box p}[1]$ nanging
   $\mSat/{M}{p}[1]$, kang nalisir karo
   \olref[fil]{defn:filtration-R2}. Ora ana sarat kang meksa utawa
-  nglarang $R^*[2][2]$. Mula, ana rong filtrasi kang mungkin saka
+  nglarang $R^*[2][2]$. Mula, ana rong filtrasi kang bisa ana saka
   $\mModel{M}$, miturut rong relasi aksesibilitas iki:
   \[
   \{\tuple{[1],[2]}, \tuple{[2],[1]}\} \text{ lan }
@@ -176,7 +176,7 @@ nduweni sesambungan akeh-akehe.
   mung yen $\sigma' = \sigma 0$ utawa $\sigma' = \sigma 1$, lan
   $V(p) = \Setabs{\sigma 0}{\sigma \in \Bin^*} \cap W$ lan
   $V(q) = \Setabs{\sigma 1}{\sigma \in \Bin^* \setminus \{1\}} \cap W$.
-  Iki gambare:
+  Valuasi dipotong marang himpunan donya model. Iki gambare:
   \begin{center}
     \begin{tikzpicture}[modal,
         node distance=2cm

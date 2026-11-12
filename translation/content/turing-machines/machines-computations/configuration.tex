@@ -66,11 +66,11 @@ $I \in \Sigma^*$ yaiku
 \tuple{\TMendtape \frown \TMblank, 1, q_0} & \text{yen input kosong}.
 \end{cases}
 \]
-Cathetan koreksi sumber OLPL-771 lan SOL6-F044: rumus saiki mbagi input kosong lan ora kosong. Ing kasus kosong, kothak blank kapisan ing sisih tengen panandha dilebokake ing rerangken konfigurasi supaya posisi sirah kang nomere siji sah. \end{defn}
+Kanggo input kosong, lebokna kothak blank kapisan ing sisih tengen panandha supaya posisi sirah nomer siji sah. \end{defn}
 
 \begin{explain}
-% OLPL-146: Sumber beku nyebut input ing sisih kiwa panandha pucuk kiwa, nanging konfigurasi wiwitan lan andharan sadurunge nuduhake input ing sisih tengene.
-Cathetan koreksi sumber OLPL-146: input ing sisih tengen panandha, dudu sisih kiwa kaya ukara sumber. Simbol~$\frown$ nuduhake \emph{pangandhengan
+%
+ Simbol~$\frown$ nuduhake \emph{pangandhengan
 rerangken}---rerangken input diwiwiti langsung
 ing sisih tengen panandha pucuk kiwa.
 \end{explain}
@@ -101,7 +101,7 @@ ing siji langkah} (miturut~$M$), yen lan mung yen
 yaiku rerangken maksimal konfigurasi $C_i$ saka $M$,
 kanthi $C_0$ konfigurasi wiwitan $M$
 kanggo input~$I$, lan saben $C_i$ kang duwe konfigurasi sabanjure
-ngasilake $C_{i+1}$ ing siji langkah. Cathetan panyunting SOL6-F047: rerangken iki bisa winates utawa tanpa wates. Yen winates, konfigurasi pungkasan ora duwe instruksi kang ditegesi; ora perlu penerus sawise mandheg.
+ngasilake $C_{i+1}$ ing siji langkah. Rerangken konfigurasi bisa winates utawa tanpa wates. Yèn winates, ing konfigurasi pungkasan ora ana instruksi kang ditegesi.
 
 Kita nyebut $M$ \emph{mandheg nalika nampa input $I$
 sawise $k$ langkah} yen $C_k =
@@ -113,7 +113,7 @@ ing ngendi $O$ rerangken simbol kang ora dipungkasi
 dening~$\TMblank$ lan $C = \TMendtape \concat O \concat \TMblank^j$
 kanggo sawijining~$j \in \Nat$. ($\TMblank^j$
 yaiku rerangken $j$ simbol $\TMblank$.)
-Cathetan cakupan SOL6-F048: definisi output iki mung menehi asil nalika panandha pucuk kiwa isih ana ing kothak nomer nol. Output bisa kosong; yen ora kosong, simbol pungkasan ora blank. Yen panandha kiwa wis kabusak, output ora ditegesi miturut konvensi iki, senajan mesin mandheg. \end{defn}
+Output mung ditegesi nalika panandha pucuk kiwa isih ana ing kothak nol. Output bisa kosong. Yèn isi, simbol pungkasan kudu béda karo blank. \end{defn}
 
 \begin{explain}
 Miturut definisi iki, output~$O$ saka~$M$

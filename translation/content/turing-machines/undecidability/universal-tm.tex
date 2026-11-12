@@ -23,7 +23,7 @@ kita bisa ngenumerasi kabeh (andharan) mesin Turing.
 Yen salah siji enumerasi iku wis ditetepake,
 kita bisa nyebut mesin Turing kapangka-$1$,
 kapangka-$2$, \dots, kapangka-$e$. Wilangan
-iki diarani \emph{indeks}. Cathetan panyunting: indeks nol uga sah; enumerasi kanggo domain wilangan asli iki diwiwiti saka nol.
+iki diarani \emph{indeks}. Indeks nol uga sah; enumerasi kanggo domain wilangan asli iki diwiwiti saka nol.
 
 \begin{defn}
 Yen $M$~yaiku mesin Turing kapangka-$e$
@@ -99,7 +99,7 @@ Asil kang narik kawigaten yaiku ing ngisor iki:
   lan $2$ yaiku nomer~$\TMblank$). Ing pucuk kiwa
   rerangken blok-blok iki (kang dipisahake dening
   simbol $\TMblank$ ing pita~$U$), mesin nulis
-  siji~$\TMstroke$, yaiku kode kanggo~$\TMendtape$. Cathetan panyunting: saben cathetan diwatesi panandha mligi supaya komponen kosong ora kecampur. Kothak virtual dinomeri wiwit nol; blank kapisan kanggo input kosong lan blank ing saben kothak anyar diwakili kode loro.
+  siji~$\TMstroke$, yaiku kode kanggo~$\TMendtape$. Saben cathetan diwatesi panandha mligi supaya komponen kosong ora kecampur. Kothak virtual dinomeri wiwit nol; blank kapisan kanggo input kosong lan blank ing saben kothak anyar diwakili kode loro.
 
   Saiki pita~$U$ ngemot: indeks~$e$, wilangan~$n$,
   nomer kode kahanan wiwitan (yaiku ``kahanan saiki''),
@@ -127,12 +127,12 @@ Asil kang narik kawigaten yaiku ing ngisor iki:
     \item Pindhaha sirah menyang papan kang nyathet
     ``kahanan'' saiki lan ganti nomer ing kono
     nganggo nomer kahanan anyar,
-    % OLPL-151: Langkah ngurangi penghitung posisi durung njlentrehake aturan tetep ing kothak 0 yen instruksi mindhah kiwa.
+    %
     \item Pindhaha menyang papan kang nyathet
     ``panggonan ing pita'' lan busak
     siji~$\TMstroke$ utawa tambah siji~$\TMstroke$
     (yen instruksine obah kiwa utawa tengen,
-    miturut urutane). Cathetan koreksi sumber OLPL-151 lan SOL6-F056: guratan penghitung mung dibusak yen nilaine positif; yen posisi nol lan instruksi obah kiwa, tetep nol. Yen ora obah, penghitung tetep. Yen posisi anyar ngluwihi bagean pita virtual kang wis kacathet, tambahna kode blank.
+    miturut urutane). Kanggo obah kiwa, kurangana penghitung yèn positip lan tetepna nol yèn wis nol. Yèn sirah tetep ing panggonan, penghitung tetep. Yèn posisi anyar ngluwihi pérangan pita virtual kang kacathet, tambahna kode blank.
     \item Baleni.\footnote{Ing kene kita ngliwati
     sawetara kangelan kang alus. Contone, $U$~bisa
     mbutuhake papan tambahan nalika nambah penghitung
@@ -146,7 +146,7 @@ Asil kang narik kawigaten yaiku ing ngisor iki:
   Yen ing langkah~\olref{find-inst} katemu yen
   andharan~$M_e$ ora ngemot instruksi kanggo
   pasangan ``kahanan''/``simbol'' saiki,
-  $M_e$ bakal mandheg. Cathetan koreksi sumber OLPL-152 lan SOL6-F057: luwih dhisik priksa yen kothak virtual nomer nol isih ngemot kode panandha. Panandha iku dibuwang saka isi kang bakal diowahi dadi output, banjur kabeh kode blank ing pucuk tengen dibuwang. Isi kosong menehi nol; isi liyane sah mung yen saben simbol guratan. Yen iki kedadeyan lan isi sah,
+  $M_e$ bakal mandheg. Priksa manawa kothak virtual nomer nol ngemot panandha. Buwangen panandha saka calon output lan buwangen kabèh blank ing pucuk tengen. Isi kosong ngasilaké nol. Isi liyane sah yèn saben simbol awujud guratan. Yen iki kedadeyan lan isi sah,
   $U$ mbusak cathetan pakaryan ing sisih kiwa
   ``pita,'' kanthi tetep njaga panandha fisik ing kothak nomer nol. Kanggo saben blok telung~$\TMstroke$
   (kang nggambarake siji~$\TMstroke$ ing pita~$M_e$),
@@ -155,7 +155,7 @@ Asil kang narik kawigaten yaiku ing ngisor iki:
   Yen wis rampung, pita~$U$ ngemot siji blok
   $\TMstroke$ kang dawane~$m$.
   
-  % OLPL-152: Rekonstruksi output ing sumber durung netepake carane ngliwati kode panandha pucuk kiwa lan kothak kosong ing pita simulasi sadurunge ngetrapake uji blok telu.
+  %
   Yen $U$ nemoni bab saliyane blok telung~$\TMstroke$
   ing isi ``pita'' sawise panandha lan blank pungkasan dibuwang, utawa panandha virtual nomer nol wis ilang, mesin mbusak kabeh cathetan pakaryan, nulis simbol mligi kang dudu guratan ing kothak siji, banjur mandheg. Amarga
   ing kahanan iki pita~$U$ ora ngemot siji blok

@@ -74,10 +74,11 @@ Dadi $S$ iku $V_\beta$ kang digoleki.
 Saiki kita bisa mbuktekake
 \olref[sth][replacement][ref]{reflectionschema}
 kanthi cukup langsung:
+Kurung panutup kang keluwihan ing implikasi dibusak. Indeks himpunan ing gabungan padha karo indeks kang dikuantifikasi.
 
 \begin{proof}[Bukti]
-Tetepna $\alpha$. Tanpa ngurangi keumuman,
-kita bisa nganggep yen panyambung ing $\phi$
+Tetepna $\alpha$. Tanpa nyuda keumuman,
+kita bisa nganggep yen operator logis ing $\phi$
 mung $\exists$, $\lnot$, lan $\land$ (amarga
 kabeh iki cukup kanggo nyatakake formula).
 Tetepna $\psi_1, \ldots, \psi_k$ minangka
@@ -110,7 +111,7 @@ mula:
 	&&\text{miturut definisi}\\
 	&\text{ yen lan mung yen }
 	(\exists x \in V_\beta)\psi_i(\overline{a}_i,  x)
-	&&\text{miturut pangira-ira}\\
+	&&\text{miturut hipotesis induksi}\\
 	&\text{ yen lan mung yen }
 	\exists x \psi_i(\overline{a}_i, x)
 	&&\text{miturut \eqref{reflectionnicelybehaved}}
@@ -131,7 +132,7 @@ ora bisa ditulis persis kaya ing ndhuwur.
 Rumusan mau nganggo notasi ``$V_\alpha$'',
 kang ora bisa ditetepake ing $\Z$ (delengen
 \olref[sth][spine][zf]{sec}). Mula kita
-ngusulake rumusan Panggantian kang katon
+ngusulake rumusan Refleksi kang katon
 luwih ringkih mangkene:
 
 \begin{defish}
@@ -145,7 +146,7 @@ $(\forall \overline{x} \in S)(\phi \liff
 
 Kanggo nggunakake iki kanggo mbuktekake
 Panggantian, kita bakal manut
-\citet[bagéan kapisan Teorema 2]{Levy1960}
+\citet[perangan kapisan Teorema 2]{Levy1960}
 lan nuduhake yen rong formula bisa
 ``direfleksikake'' bebarengan:
 
@@ -199,6 +200,7 @@ Kanggo saben formula $\phi(v,w)$ lan saben
 $A$, yen $(\forall x \in A)\lexists![y][\phi(x,y)]$,
 mula $\Setabs{y}{(\exists x \in A)\phi(x,y)}$ ana.
 \end{thm}
+Kurung panutup kanggo syarat eksistensial ing panetepan himpunan dilengkapi.
 
 \begin{proof}
 Tetepna $A$ kang nyukupi

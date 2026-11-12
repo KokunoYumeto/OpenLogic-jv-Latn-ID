@@ -19,7 +19,7 @@ $\Gamma \subseteq \Delta$, mula $\Gamma = \Delta$.
 
 \begin{lem}[Lema Kabeneran]
   \ollabel{lem:truth}
-Upamane $\Gamma$ konsisten maksimal; mula:
+Upamané $\Gamma$ konsisten maksimal.
 \begin{enumerate}
 \item \ollabel{lem:truth-1} $!A \in \Gamma$ yen lan mung yen
   $\lnot !A \notin \Gamma$;
@@ -31,12 +31,12 @@ Upamane $\Gamma$ konsisten maksimal; mula:
 
 \begin{proof}
 \begin{enumerate}
-\item Upamane $!A \in \Gamma$. Yen uga $\lnot !A \in \Gamma$,
-  mula $\Gamma$ ora konsisten; lan yen $!A$ lan $\lnot!A$
-  kalorone ora ana ing $\Gamma$, mula miturut \olref[axd]{prop:phi},
+\item Yèn $!A \in \Gamma$ lan $\lnot !A \in \Gamma$,
+  mula $\Gamma$ ora konsisten. Yèn $!A$ lan $\lnot!A$
+  kalorone ora ana ing $\Gamma$, mula miturut \olref[fol][axd][prv]{prop:provability-exhaustive},
   salah siji saka $\Gamma\cup\{!A\}$ lan $\Gamma \cup \{\lnot !A\}$
   konsisten. Iki ateges $\Gamma$ ora maksimal.
-  Arah kosok baline dibuktekake kanthi cara kang padha.
+  Mula persis siji saka rong formula mau ana ing himpunan.
 \item Yen $!A \in \Gamma$, mesthi $\Gamma \Proves !A$.
   Kosok baline, upamane $\Gamma \Proves !A$. Yen $!A \notin \Gamma$,
   mula miturut \olref{lem:truth-1}, $\lnot !A \in \Gamma$.
@@ -79,13 +79,20 @@ Banjur tetepna:
 Bukti diterusake kanthi netepake kasunyatan ing ngisor iki kanthi urut:
 \begin{enumerate}
 \item Kanggo saben $n$, himpunan $\Gamma_n$ konsisten
-  (kanthi induksi marang $n$, nggunakake \olref[axd]{prop:phi});
-\item $\Gamma^*$ konsisten;
-\item $\Gamma^*$ maksimal.
+  (kanthi induksi marang $n$, nggunakake \olref[fol][axd][prv]{prop:provability-exhaustive});
+\item $\Gamma^*$ konsisten. Yèn ana bukti kontradiksi, bukti
+  iku mung nganggo premis winates saka gabungan kasebut. Kabèh
+  premis mau wis ana bebarengan ing sawijining tahap kang konsisten.
+\item $\Gamma^*$ maksimal. Saben formula kang ora mlebu gabungan
+  wis tau dipriksa lan negasiné dilebokaké. Nambah formula kasebut
+  bakal njalari inkonsistensi.
 \end{enumerate}
-Banjur tetepna valuasi $v$ kanthi menehi $v(p_i) = \True$ yen lan
-mung yen $p_i \in \Gamma^*$. Kanthi induksi marang $!A$, dituduhake
-yen kaanggotaan ing $\Gamma^*$ cocog karo kabeneran miturut $v$
+Kanggo langkah iki, negasi lan implikasi dadi basis panyambung.
+Panyambung kang ditegesi diwaca nganggo definisiné. Falsitas ora
+ana ing himpunan konsisten. Banjur tetepna valuasi $v$ kanthi menehi $v(p_i) = \True$ yen lan
+mung yen $p_i \in \Gamma^*$. Kanthi induksi marang $!A$, kasus atom manut definisi valuasi,
+lan kasus negasi lan implikasi manut lema kabeneran. Mula
+kaanggotaan ing $\Gamma^*$ cocog karo kabeneran miturut $v$
 uga kanggo !!{sentence}s kang luwih rumit:
 $\overline{v}(!A) = \True$ yen lan mung yen $!A \in \Gamma^*$.
 Mligine, $v$ nyembadani $\Gamma^*$. Amarga $\Gamma \subseteq \Gamma^*$,
@@ -98,7 +105,7 @@ Yen $\Gamma \Entails !A$, mula $\Gamma \Proves !A$.
 
 \begin{proof}
 Yen $\Gamma\Proves/ !A$, mula $\Gamma \cup \{\lnot !A\}$ konsisten,
-miturut \olref[axd]{prop:prov-incons}. Dadi, miturut teorema kajangkepan,
+miturut \olref[fol][axd][prv]{prop:prov-incons}. Dadi, miturut teorema kajangkepan,
 $\Gamma \cup \{\lnot !A\}$ bisa disembadani, lan $\Gamma \Entails/ !A$.
 \end{proof}
 

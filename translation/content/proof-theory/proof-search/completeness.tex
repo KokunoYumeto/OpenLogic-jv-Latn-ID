@@ -12,7 +12,7 @@
 
 Saiki kita nuduhaké yèn algoritma panelusuran bukti bisa
 dipercaya: yèn algoritma mandheg tanpa asil utawa ora tau
-mandheg, ora ana !!{proof} tumrap sekuèn wiwitan
+mandheg, ora ana !!{proof} tumrap sekèn wiwitan
 $\Gamma \Sequent \Delta$. Kanggo kuwi, kita netepaké
 !!a{structure}~$\Struct M$ saéngga kanggo saben $!A \in \Gamma$,
 $\Sat{M}{!A}$, lan kanggo saben~$!A \in \Delta$,
@@ -21,15 +21,16 @@ bener lan kabèh !!{formula}s ing~$\Delta$ salah
 ing~$\Struct M$; mula $\Gamma \Sequent \Delta$ ora valid.
 Amarga \Log{G3c} sahih, $\Gamma \Sequent \Delta$ ora nduwèni
 !!{proof}.
+Cathetan notasi: formula ing kuantifikasi marang suksèden iku formula A kang padha karo formula ing kahanan kepuasan.
 
 Kita netepaké $\Struct{M}$ saka pasangan $\Theta, \Xi$
 kang isiné !!{formula}s lan himpunan~$C$ kang isiné
 !!{constant}s. $\Theta, \Xi$, lan~$C$ dijupuk saka
 \emph{cabang gagal} ing panelusuran bukti kang gagal
 (mandheg tanpa asil utawa ora tau mandheg). Cabang gagal
-iku rerangkéyan sekuèn $\Pi_n \Sequent \Lambda_n$ lan
+iku rerangkéyan sekèn $\Pi_n \Sequent \Lambda_n$ lan
 himpunan !!{constant}s~$C_n$, kanthi
-$\Pi_0 \Sequent \Lambda_0$ minangka sekuèn pungkasan
+$\Pi_0 \Sequent \Lambda_0$ minangka sekèn pungkasan
 $\Gamma \Sequent \Delta$, lan
 $\Pi_{n+1} \Sequent \Lambda_{n+1}$ minangka premis saka
 $\Pi_n \Sequent \Lambda_n$ kang diasilaké ing tataran~$n+1$
@@ -39,20 +40,23 @@ kaya mangkono mesthi ana; yèn ora, algoritma wis
 nemokaké !!a{proof}. Kita anggep $C_n$ minangka himpunan
 !!{constant}s kang gegandhèngan karo~$\Pi_n
 \Sequent \Lambda_n$.
+Cathetan: premis gagal salajengé dibutuhaké mung ing simpul kang durung terminal. Cabang gagal winates bisa mandheg ing sekuèn atomik kang dudu aksioma.
+Cathetan notasi: sisih tengen sekuèn cabang gagal diarani Lambda-n kanthi ajeg.
 
-Yèn algoritma mandheg tanpa asil ing sekuèn paling dhuwur
+Yèn algoritma mandheg tanpa asil ing sekèn paling dhuwur
 kang mung ngemot !!{formula}s atomik, cabang kang pungkasané
-ing sekuèn iku dadi cabang gagal. Yèn algoritma ora tau
+ing sekèn iku dadi cabang gagal. Yèn algoritma ora tau
 mandheg, algoritma terus ngasilaké wit-witan kang saya
 gedhé. Wit-witan iku bisa dianggep minangka tahap-tahap
 pambangunan wit tanpa wates (wit kang kawangun sawisé
 algoritma lumaku tanpa wates). Wit iki nduwèni cabang
 winates ing saben simpul: saben simpul mung nduwèni siji
-utawa loro anak, yaiku sekuèn kang langsung ana ing
+utawa loro anak, yaiku sekèn kang langsung ana ing
 sadhuwuré. Miturut Léma K\H{o}nig, saben wit tanpa wates
 kang cabang saben simpulé winates mesthi nduwèni cabang
 tanpa wates. Cabang iki dadi cabang gagal yèn algoritma
 panelusuran lumaku salawasé.
+Cathetan basa: ukara kahanan panelusuran tanpa wates mung nganggo siji tembung panggandhèng kahanan.
 
 Yèn rerangkéyan $\Pi_n \Sequent \Lambda_n$ lan $C_n$
 iku cabang gagal, tetepaké $\Theta = \bigcup_n \Pi_n$
@@ -80,6 +84,8 @@ ditafsiraké saéngga $\Value{t}{M} = t$. !!{formula}s
 atomik ing~$\Theta$ digunakaké kanggo netepaké
 $\Assign{R}{M}$ saéngga $\Sat{M}{R(t_1, \dots, t_n)}$
 yèn lan mung yèn $R(t_1, \dots, t_n) \in \Theta$.
+Cathetan notasi: aritas fungsi lan predikat dijaga kanthi ajeg; fungsi aritas m nganggo m argumen, lan relasi aritas m iku himpunan tuple dawa m.
+Cathetan cakupan: pambangunan modhèl suku iki kanggo ukara tanpa variabel bebas lan aturan G3c kang ditulis, tanpa aturan tambahan kanggo identitas logis. Sekuèn kabuka bisa diproses kanthi ngganti saben variabel bebas nganggo konstanta parameter seger kang béda. Penafsiran parameter kuwi makili penugasan variabel; bukti asil dibalèkaké kanthi substitusi kang ora nangkep variabel.
 
 \begin{lem}\ollabel{lem:truth}
 Kanggo saben $!A \in \Theta \cup \Xi$:
@@ -107,7 +113,7 @@ mula $\Sat{M}{!A}$.
 Yèn $!A$ atomik lan $!A \in \Pi_n$, mula
 $!A \in \Pi_{n+1}$; yèn $!A \in \Lambda_n$, mula
 $!A \in \Lambda_{n+1}$. (Iki manut cara algoritma
-panelusuran bukti ngasilaké sekuèn panerus.) Mula,
+panelusuran bukti ngasilaké sekèn panerus.) Mula,
 yèn $!A \in \Theta \cap \Xi$, ana~$n$ saéngga
 $!A \in \Pi_n \cap \Lambda_n$. Iki ndadèkaké
 $\Pi_n \Sequent \Lambda_n$ aksioma, padahal cabang gagal
@@ -117,10 +123,11 @@ miturut konstruksi. Akibaté,
 yèn $!A \in \Xi$, mula $!A \notin \Theta$.
 Mula, yèn $!A \in \Xi$, iki ateges $\Sat/{M}{!A}$
 miturut définisi~$\Struct{M}$.
+Cathetan: falsitas ing sisih tengen mesthi salah miturut semantike, déné atom predikat manut definisi relasi ing modhèl suku. Pratelan persistensi ing cabang winates ditrapaké mung ing tataran kang nduwèni panerus.
 
 Kanggo langkah induksi, anggep (1) lan (2) lumaku tumrap
 kabèh !!{formula}s kang !!{depth} luwih cilik tinimbang~$!A$.
-Kita mbuktèkaké (1) lan (2) tumrap $!A$ kanthi mbedakaké
+Kita mbuktekaké (1) lan (2) tumrap $!A$ kanthi mbedakaké
 kasus-kasusé.
 
 Gatèkna dhisik: yèn $!A^i$ katon ing
@@ -128,8 +135,8 @@ $\Pi_n \Sequent \Lambda_n$, $!A^i$ uga katon ing
 $\Pi_{n+1} \Sequent \Lambda_{n+1}$ kajaba yèn $i$
 indeks paling cilik ing antarané rumus nonatomik ing
 $\Pi_n \Sequent \Lambda_n$. Amarga indeks paling cilik
-ing antarané rumus nonatomik ing sekuèn paling dhuwur
-kang ditambahaké ing saben tataran saya mundhak, pungkasane
+ing antarané rumus nonatomik ing sekèn paling dhuwur
+kang ditambahaké ing saben tataran saya mundhak, pungkasané
 kita tekan $\Pi_n \Sequent \Lambda_n$ kang ngemot $!A^i$
 lan $i$ dadi indeks rumus nonatomik paling cilik.
 Ing tataran~$n+1$,
@@ -139,6 +146,7 @@ indeks rumus nonatomik paling cilik. Semono uga,
 yèn $!A \in \Xi$,
 ana $n$ saéngga $\Lambda_n = \Lambda_n', !A^i$
 lan $i$ indeks rumus nonatomik paling cilik.
+Cathetan: indeks kang dipilih paling cilik ing antarané formula nonatomik. Formula atomik bisa tetep nduwèni indeks lawas kang luwih cilik, nanging ora dadi sasaran reduksi.
 
 \begin{enumerate}
   \item $!A \in \Theta$ lan $!A \ident !B \land !C$.
@@ -147,10 +155,11 @@ lan $i$ indeks rumus nonatomik paling cilik.
   $\Pi_{n+1} \Sequent \Lambda_{n+1}$ iku premis
   kang cocog saka~\LeftR{\land}, yaiku
   $\Pi_{n+1} = \Pi_n', !B^{k+1}, !C^{k+2}$.
-  Akibaté, $!B, !C \in \Theta$. Miturut hipotèsis
+  Akibaté, $!B, !C \in \Theta$. Miturut hipotesis
   induksi, $\Sat{M}{!B}$ lan $\Sat{M}{!C}$.
   Saka définisi $\Sat{M}{}$, kita olèh
   $\Sat{M}{!B \land !C}$.
+Cathetan: k minangka indeks maksimal sekuèn sadurungé. Formula anyar diwènèhi indeks kang luwih gedhé tinimbang k, supaya ora bentrok karo formula lawas kang isih kari.
 
   \item $!A \in \Xi$ lan $!A \ident !B \land !C$.
   Mula kanggo sawijiné $n$,
@@ -161,7 +170,7 @@ lan $i$ indeks rumus nonatomik paling cilik.
   $\Lambda_{n+1} = \Lambda_n', !B^{k+1}$ utawa
   $\Lambda_{n+1} = \Lambda_n', !C^{k+1}$.
   Akibaté, $!B \in \Xi$ utawa $!C \in \Xi$.
-  Miturut hipotèsis induksi, $\Sat/{M}{!B}$ utawa
+  Miturut hipotesis induksi, $\Sat/{M}{!B}$ utawa
   $\Sat/{M}{!C}$. Saka définisi $\Sat{M}{}$,
   kita olèh $\Sat/{M}{!B \land !C}$.
   
@@ -177,7 +186,7 @@ lan $i$ indeks rumus nonatomik paling cilik.
   kang cocog saka~\LeftR{\lexists}, yaiku
   $\Pi_{n+1} = \Pi_n', !B(c)^{k+1}$ kanggo sawijiné~$c$.
   Akibaté, $!B(c) \in \Theta$ lan~$c \in C$.
-  Miturut hipotèsis induksi, $\Sat{M}{!B(c)}$.
+  Miturut hipotesis induksi, $\Sat{M}{!B(c)}$.
   Saka définisi $\Sat{M}{}$, kita olèh
   $\Sat{M}{\lexists[x][!B(x)]}$.
 
@@ -185,18 +194,18 @@ lan $i$ indeks rumus nonatomik paling cilik.
   $!A \ident \lexists[x][!B(x)]$. Mula kanggo sawijiné
   $n$, $\Lambda_n = \Lambda_n', \lexists[x][!B(x)]^i$.
   Saben $\lexists[x][!B(x)]$ direduksi,
-  $\lexists[x][!B(x)]$ tetep ana ing sisih tengen sekuèn
+  $\lexists[x][!B(x)]$ tetep ana ing sisih tengen sekèn
   premis kanthi indeks anyar. Mula, yèn formula iku ana
   ing sisih tengen cabang gagal,
   $\lexists[x][!B(x)]$ direduksi tanpa wates ing sisih
-  tengen. Saben tèrma $t \in \Domain{M}$ pungkasane dadi
+  tengen. Saben tèrma $t \in \Domain{M}$ pungkasané dadi
   ``tèrma kapisan kang mung ngemot konstanta ing~$C_n$
   lan durung digunakaké ing reduksi tengen
   $\lexists[x][!B(x)]$'' ing cabang gagal. Mula,
   kanggo saben $t \in \Domain{M}$,
   $!B(t) \in \Lambda_n$ kanggo sawijiné~$n$,
   lan akibaté $!B(t) \in \Xi$.
-  Miturut hipotèsis induksi, $\Sat/{M}{!B(t)}$
+  Miturut hipotesis induksi, $\Sat/{M}{!B(t)}$
   kanggo saben $t \in \Domain{M}$. Saka définisi
   $\Sat{M}{}$, kita olèh
   $\Sat/{M}{\lexists[x][!B(x)]}$.
@@ -208,7 +217,7 @@ lan $i$ indeks rumus nonatomik paling cilik.
 
 \begin{cor}\ollabel{cor:complete} Algoritma panelusuran bukti
 kanggo \Log{G3c} lengkap: yèn mandheg tanpa asil utawa
-ora tau mandheg, sekuèn wiwitan
+ora tau mandheg, sekèn wiwitan
 $\Gamma \Sequent \Delta$ ora valid, mula ora nduwèni
 !!{proof}.
 \end{cor}
@@ -233,7 +242,7 @@ $\Log{G3c} \Proves \Gamma \Sequent \Delta$.
 \end{cor}
 
 \begin{proof}
-  Kita mbuktèkaké kontraposisiné. Anggep
+  Kita mbuktekaké kontraposisiné. Anggep
   $\Log{G3c} \Proves/ \Gamma \Sequent \Delta$.
   Mula algoritma panelusuran bukti mesthi mandheg tanpa
   asil utawa ora tau mandheg, amarga ora ana !!{proof}

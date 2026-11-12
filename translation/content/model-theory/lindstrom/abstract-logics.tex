@@ -18,7 +18,7 @@ lan !!{element}s saka $L(\Lang{L})$. Mligine, $\tuple{F, \models}$
 iku logika tataran kapisan lumrah, yaiku $F$ fungsi kang masangake marang
 !!{language}~$\Lang{L}$ himpunan !!{sentence}s tataran kapisan kang
 kawangun saka simbol predikat lan konstanta ing $\Lang{L}$, lan $\models$ iku relasi
-nyukupi ing logika tataran kapisan. Cathetan koreksi sumber SOL6-F029: konstanta wae ora cukup kanggo mbangun kabeh ukara; predikat saka basa kasebut uga digunakake.
+nyukupi ing logika tataran kapisan.
 \end{defn}
 
 Gatekna yen kita isih nggunakake pangerten !!{structure} kang padha
@@ -92,7 +92,7 @@ sipat-sipat ing ngisor iki:
   \]
   kanthi $\Lang{L'} = \Lang{L} \setminus \{c\}$ lan
   $\Expan{M}{a}$ iku ekspansi $\Struct{M}$ menyang $\Lang{L}$
-  kang masangake $a$ marang~$c$. Cathetan koreksi sumber OLPL-755: ukara asil pambusakan konstanta kudu ana ing basa kang wis tanpa konstanta iku; pratelan mung kalebu himpunan ukara basa asal durung cukup.
+  kang masangake $a$ marang~$c$.
 \item (\emph{Sipat Relativisasi}) Yen diwenehi !!a{sentence}
   $!E \in L(\Lang{L})$ lan simbol-simbol $R$, $c_1$, \dots,
   $c_n$ kang ora ana ing $\Lang{L}$, ana !!a{sentence}
@@ -110,7 +110,7 @@ sipat-sipat ing ngisor iki:
   \olref[bas][sub]{rem:substructure}), lan
   $\Expan{M}{X, b_1, \ldots, b_n}$ iku ekspansi $\Struct{M}$
   kang napsirake $R$, $c_1$, \dots, $c_n$ kanthi $X$, $b_1,$
-  \dots, $b_n$, miturut urutane (kanthi $X \subseteq M^{n+1}$). Cathetan koreksi sumber OLPL-756: tafsir predikat anyar dijupuk saka ekspansi, dudu struktur asal kang durung nduweni predikat iku. Himpunan unsur kang dipilih kudu ora kosong lan mbentuk substruktur basa asal; yen ana konstanta, tafsire kudu kalebu ing himpunan iki.
+  \dots, $b_n$, miturut urutane (kanthi $X \subseteq M^{n+1}$). Gunakna tafsir predikat anyar ing ekspansi. Himpunan kang dipilih kudu ora kosong lan mbentuk substruktur saka struktur asli. Yèn ana konstanta, tafsiré kudu kalebu ing himpunan iki.
 \end{enumerate}
 \end{defn}
 
@@ -138,13 +138,13 @@ $\tuple{L_1, \models_{L_1}} \leq \tuple{L_2,
   !!a{sentence} $!E$ marang $\Atom{R}{x, c_1, \dots, c_n}$
   dipikolehi kanthi ngganti saben !!{subformula}
   $\lforall[x][!F]$ dadi
-  $\lforall[x][(\Atom{R}{x, c_1, \dots, c_n} \lif \ !F)]$. Cathetan pangganep SOL6-F030: aturan kang mung nyebut kuantor universal iki ditrapake sawise kuantor eksistensial ditulis nganggo negasi lan kuantor universal. Yen kuantor eksistensial ditinggal minangka primitif, kuantor kasebut uga kudu diwatesi marang ranah pilihan. Variabel kaiket diganti jenenge yen perlu supaya parameter anyar ora dicekel.
+  $\lforall[x][(\Atom{R}{x, c_1, \dots, c_n} \lif \ !F)]$. Yèn eksistensial ditulis nganggo negasi lan universal, cukup nerapaké klausa universal. Yèn eksistensial digunakaké minangka primitif, watesana kuantor mau marang domain pilihan. Gantenana jeneng variabel kaiket yèn perlu supaya parameter anyar ora dicekel.
   Kajaba iku, yen $\tuple{L, \models_L}$ normal, mula
   $\tuple{F, \models} \leq \tuple{L, \models_{L}}$,
   kaya kang bisa dibuktekake kanthi induksi miturut
   !!{formula}s tataran kapisan. Mula, tanpa ngilangake kalumrahan,
   kita bisa nganggep yen saben !!{sentence} tataran kapisan
-  bisa diwakili dening ukara kang ekuivalen ing saben logika normal; iki dudu pratelan yen sintaksis ukara asli mesti dadi anggota harfiah. Cathetan watesan: sipat ekspansi kang dicithak mung njamin gumantung semantik marang basa winates. Supaya bukti Lindstrom sabanjure bisa ngurangi basa, isih dibutuhake syarat representasi ukara ing basa winates, kaya kang kasebut ing OLPL-757.
+  bisa diwakili dening ukara kang ekuivalen ing saben logika normal; iki dudu pratelan yen sintaksis ukara asli mesti dadi anggota harfiah. Sipat ekspansi njamin kabeneran gumantung marang reduk menyang basa winates. Bukti Lindstr\"om ing ngisor uga mbutuhaké representasi ukara ing basa winates mau.
 \end{rem}
 
 \end{document}

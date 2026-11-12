@@ -14,13 +14,13 @@ Cara ing \olref[acc]{sec} ora lumaku kanggo model kang Euklidean
 utawa serial lan Euklidean. Gatekna model ing pérangan ndhuwur
 \olref{fig:ser-eucl}, kang Euklidean lan serial. Upamane
 $\Gamma = \{p, \Box p \}$. Nalika nggawe filtrasi liwat $\Gamma$,
-mula $[w_1] = [w_3]$ amarga $w_1$ lan $w_3$ iku siji-sijine jagad
+mula $[w_1] = [w_3]$ amarga $w_1$ lan $w_3$ iku siji-sijine donya
 kang padha nilaine tumrap~$\Gamma$. Saben filtrasi uga nduweni panah
 warisan saka $\mModel{M}$, kaya ing \olref{fig:ser-eucl2}. Model iku
 ora Euklidean. Kajaba iku, kita ora bisa nambah panah ing model iku
 supaya dadi Euklidean. Kita kudu nambah panah bolak-balik antarane
 $[w_2]$ lan $[w_4]$, banjur uga antarane $[w_2]$ lan~$[w_5]$. Nanging $\Box
-p$ kudune bener ing~$w_2$, dene $p$ salah ing~$w_5$.
+p$ kudune bener ing~$w_2$, dene $p$ salah ing~$w_5$. Panah ing modèl iki nyambungaké kelas ekuivalensi.
 
 \begin{figure}[htpb]
   \centering
@@ -52,7 +52,7 @@ p$ kudune bener ing~$w_2$, dene $p$ salah ing~$w_5$.
     \draw[->, bend left] (w5) to (w4);
     \draw[reflexive above] (w5) to (w5);     
   \end{tikzpicture}
-  \caption{Model serial lan Euklidean.}
+  \caption{Model serial lan Euklidean. Loop ing donya kapindho dibutuhake dening Euklidean lan diwarisake ing filtrasi.}
   \ollabel{fig:ser-eucl}
 \end{figure}
 
@@ -91,8 +91,8 @@ Mligine, kanggo ngasilake filtrasi Euklidean, ora cukup yen mung
 nggatekake filtrasi liwat $\Gamma$ sembarang kang katutup tumrap
 sub-!!{formula}s. Kosok baline, kita kudu nggatekake himpunan $\Gamma$
 kang \emph{katutup modal} (delengen \olref[pre]{defn:modallyclosed}).
-Himpunan ukara mangkono ora winates, mula ora langsung ngasilake
-sipat model winates utawa katerputusan kanggo sistem kang cocog.
+Himpunan ukara mangkono kang ora kosong iku tanpa wates, mula ora langsung ngasilake
+sipat model winates utawa katerputusan kanggo sistem kang cocog. Himpunan kosong uga katutup modal. Asil ngenani tanpa wates ing kéné kanggo himpunan isi.
 
 \begin{thm}\ollabel{thm:modal-closed-filt}
   Upamane $\Gamma$ katutup modal, $\mModel{M}=\tuple{W,R,V}$,
@@ -107,7 +107,7 @@ sipat model winates utawa katerputusan kanggo sistem kang cocog.
 
 \begin{proof}
 \begin{enumerate}
-  \item Latihan. Gunakna kasunyatan yen \Ax{B} lan $\Ax{B_\Diamond}$
+  \item Gladhen. Gunakna kasunyatan yen \Ax{B} lan $\Ax{B_\Diamond}$
     valid ing saben model simetris.
   \item Yen $\mModel{M^*}$ iku filtrasi paling kasar, miturut definisi
     $R^*[u][v]$ kawujud yen lan mung yen $C_1(u,v)$. Kanggo transitivitas,
@@ -123,9 +123,10 @@ sipat model winates utawa katerputusan kanggo sistem kang cocog.
       $\Diamond\Diamond!A \in \Gamma$ miturut katutupan modal. Amarga
       $\Ax{4}_\Diamond$ valid ing saben model transitif,
       $\mSat{M}{\Diamond!A}[u]$.}{}
-  \item Latihan. Gunakna kasunyatan yen \Ax{5} lan $\Ax{5_\Diamond}$
+  \item Gladhen. Gunakna kasunyatan yen \Ax{5} lan $\Ax{5_\Diamond}$
     loro-lorone valid ing saben model Euklidean.
 \end{enumerate}
+Nomer kasus bukti dicocogake karo nomer teorema. Formula modal kang dirembug kalebu himpunan filtrasi.
 \end{proof}
 
 \begin{prob}

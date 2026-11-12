@@ -15,10 +15,10 @@ iku !!{lambda definable}.
 \end{lem}
 
 \begin{proof}
-% OLPL-234: Fungsi nol iku siji argumen; argumen u ditampa nanging ora digunakake.
+%
 $\Zero$ iku suku
 $\lambd[u][\lambd[x][\lambd[y][y]]]$:
-kanggo saben input, asile numeral Church nol.
+kanggo saben input, asile numeral Church nol. Fungsi nol unary kudu nampa lan nglirwakake siji input; numeral nol wae durung makili fungsi unary iki.
 
 Fungsi panerus~$\Succ$ ditetepake kanthi
 $\fn{Succ}(u) = \lambd[x][\lambd[y][x(uxy)]]$.
@@ -30,7 +30,7 @@ yen diwenehi input~$y$, ngetrapake $f$
 ping $n$ diwiwiti saka~$y$, banjur
 ngetrapake maneh sepisan.
 
-Ora perlu andharan dawa bab proyeksi:
+Kanggo aritas paling ora siji lan indeks i wiwit nol nganti kurang saka n, ora perlu andharan dawa bab proyeksi:
 $\fn{Proj}^n_i(x_0, \dots,
 x_{n-1}) = x_i$. Tegese, miturut konvensi kita,
 $\fn{Proj}^n_i$ iku suku lambda

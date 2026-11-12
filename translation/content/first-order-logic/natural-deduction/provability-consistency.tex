@@ -14,7 +14,11 @@
 
 Saiki kita bakal netepake sawetara sipat relasi !!{derivability}.
 Sipat kasebut narik kawigaten dhewe-dhewe, nanging saben sipat bakal
-nduweni peran ing bukti teorema kelengkapan.
+nduweni peran ing bukti teorema kelengkapan. Ing saben wit ing
+ngisor iki, $\Gamma_0$ nyathet subhimpunan winates saka $\Gamma$ kang ngemot
+premis kang digunakaké ing subderivasi. Asumsi tambahan kang diwènèhi
+label dibubaraké ing inferensi kang cocog. Yèn asumsi iku ora digunakaké,
+panrapan aturan mau tanpa pambubaran.
 
 \begin{prop}\ollabel{prop:provability-contr}
   Yen $\Gamma \Proves !A$ lan $\Gamma \cup \{!A\}$ ora konsisten,
@@ -26,19 +30,20 @@ Tetepna !!{derivation} saka~$!A$ adhedhasar~$\Gamma$ minangka~$\delta_1$,
 lan !!{derivation} saka~$\lfalse$ adhedhasar $\Gamma \cup \{!A\}$
 minangka~$\delta_2$. Banjur kita bisa !!{derive}:
 \begin{prooftree}
-\AxiomC{$\Gamma, \Discharge{!A}{1}$}
+\AxiomC{$\Gamma_0, \Discharge{!A}{1}$}
 \RightLabel{$\delta_2$}
 \DeduceC{$\lfalse$}
 \DischargeRule{\Intro{\lnot}}{1}
 \UnaryInfC{$\lnot !A$}
-\AxiomC{$\Gamma$}
+\AxiomC{$\Gamma_0$}
 \RightLabel{$\delta_1$}
 \DeduceC{$!A$}
 \RightLabel{\Elim{\lnot}}
 \BinaryInfC{$\lfalse$}
 \end{prooftree}
-Ing !!{derivation} anyar iki, asumsi~$!A$ wis !!{discharged}, mula iki
-!!a{derivation} adhedhasar~$\Gamma$.
+Ing !!{derivation} anyar iki, kabèh asumsi mbukak tambahan
+kanthi wujud $!A$ wis !!{discharged}, mula iki !!a{derivation}
+adhedhasar~$\Gamma$.
 \end{proof}
 
 \begin{prop}
@@ -54,7 +59,7 @@ Sepisan, upamana $\Gamma \Proves !A$, yaiku ana
 adhedhasar $\Gamma \cup \{\lnot !A\}$ kaya mangkene:
 \begin{prooftree}
   \AxiomC{$\lnot !A$}
-  \AxiomC{$\Gamma$}
+  \AxiomC{$\Gamma_0$}
   \RightLabel{$\delta_0$}
   \DeduceC{$!A$}
   \RightLabel{\Elim{\lnot}}
@@ -67,10 +72,9 @@ asumsi !!{undischarged} ing~$\Gamma \cup \{\lnot !A\}$. Kita entuk
 !!a{derivation} saka~$!A$ adhedhasar $\Gamma$ wae kanthi
 nggunakake~$\FalseCl$:
 \begin{prooftree}
-  \AxiomC{$\Gamma, \Discharge{\lnot !A}{1}$}
+  \AxiomC{$\Gamma_0, \Discharge{\lnot !A}{1}$}
   \RightLabel{$\delta_1$}
   \DeduceC{$\lfalse$}
-  \RightLabel{\FalseCl}
   \DischargeRule{\FalseCl}{1}
   \UnaryInfC{$!A$}
 \end{prooftree}
@@ -92,7 +96,7 @@ Buktekna yen $\Gamma \Proves \lnot !A$ yen lan mung yen $\Gamma \cup
   aplikasi prasaja aturan $\Elim{\lnot}$ iki:
   \begin{prooftree}
     \AxiomC{$\lnot !A$}
-    \AxiomC{$\Gamma$}
+    \AxiomC{$\Gamma_0$}
     \RightLabel{$\delta$}
     \DeduceC{$!A$}
     \RightLabel{\Elim{\lnot}}
@@ -112,12 +116,12 @@ Ana !!{derivation}s $\delta_1$ lan $\delta_2$ saka~$\lfalse$ adhedhasar
   $\Gamma \cup \{ !A \}$ lan saka $\lfalse$ adhedhasar $\Gamma \cup
   \{ \lnot !A \}$, miturut urutane. Banjur kita bisa !!{derive}
 \begin{prooftree}
-\AxiomC{$\Gamma, \Discharge{\lnot !A}{2}$}
+\AxiomC{$\Gamma_0, \Discharge{\lnot !A}{2}$}
 \RightLabel{$\delta_2$}
 \DeduceC{$\lfalse$}
 \DischargeRule{\Intro{\lnot}}{2}
 \UnaryInfC{$\lnot \lnot !A$}
-\AxiomC{$\Gamma, \Discharge{!A}{1}$}
+\AxiomC{$\Gamma_0, \Discharge{!A}{1}$}
 \RightLabel{$\delta_1$}
 \DeduceC{$\lfalse$}
 \DischargeRule{\Intro{\lnot}}{1}

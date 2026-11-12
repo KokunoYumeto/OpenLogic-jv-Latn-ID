@@ -63,18 +63,16 @@ fungsi~$h$.
 \end{explain}
 
 \begin{prop}
-Yen A ora kosong lan $f\colon A \to B$ iku !!{injective}, mula ana \emph{invers
-kiwa}~$g\colon B \to A$ saka~$f$ kanthi $g(f(x)) = x$ kanggo kabeh $x
-\in A$.
-Cathetan koreksi sumber OLFUN-001: sumber Inggris ora nyebut sarat
-domain ora kosong kang digunakake ing bukti. Sarat umum kang pas yaiku
-A ora kosong utawa B kosong; injeksi kosong menyang himpunan ora
-kosong ora duwe invers kiwa.
+Upamakna $f\colon A \to B$ iku !!{injective}. Upamakna uga $A\ne\varnothing$ utawa $B=\varnothing$.
+Banjur ana \emph{invers kiwa}~$g\colon B \to A$ saka~$f$
+kanthi $g(f(x)) = x$ kanggo saben $x \in A$.
 \end{prop}
 
 \begin{proof}
-Upamakna A ora kosong lan $f\colon A \to B$ iku !!{injective}.
-Gatekna sawijining $y \in B$.
+Upamakna $f\colon A \to B$ iku !!{injective}. Yèn $B=\varnothing$,
+anane fungsi f ndadèkaké A uga kosong, mula fungsi kosong saka B
+menyang A dadi invers kiwa. Saiki anggepen
+B ora kosong, mula A uga ora kosong. Gatekna sawijining $y \in B$.
 Yen $y \in \ran{f}$, ana $x \in A$ kanthi $f(x) = y$. Amarga
 $f$ iku !!{injective}, mung ana siji~$x \in A$ kang kaya mangkono. Banjur kita bisa
 netepake $g(y) = x$, yaiku $g(y)$ iku $x \in A$ "tunggal" kang nyukupi $f(x)
@@ -86,9 +84,12 @@ g(y) = \begin{cases}
     a & \text{yen $y \notin \ran{f}$.}
 \end{cases}
 \]
-Fungsi iki ditetepake kanggo kabeh $y \in B$, amarga kanggo saben $y \in \ran{f}$
-ana persis siji $x \in A$ kang nyukupi $f(x) = y$. Miturut definisi, yen
+Fungsi iki katetepaké kanggo saben $y \in B$. Ing jangkauan, saben
+$y \in \ran{f}$ nduwèni persis siji $x \in A$ kanthi $f(x) = y$.
+Ing sanjabané jangkauan, nilai cadangan wis ditemtokaké. Yèn
 $y = f(x)$, mula $g(y) = x$, yaiku $g(f(x)) = x$.
+Kosok baliné, domain kosong lan kodomain isi anggota ora marengaké
+invers kiwa, amarga ora ana fungsi saka himpunan isi menyang himpunan kosong.
 \end{proof}
 
 \begin{prob}
@@ -97,7 +98,7 @@ Tuduhna yen $f\colon A \to B$ duwe invers kiwa~$g$, mula $f$~iku
 \end{prob}
 
 \begin{prop}
-    Yen $f\colon A \to B$ iku !!{surjective}, mula ana
+    Kanthi Aksioma Pilihan, yèn $f\colon A \to B$ iku !!{surjective}, mula ana
     \emph{invers tengen}~$h\colon B \to A$ saka~$f$ kanthi $f(h(y)) =
     y$ kanggo kabeh~$y \in B$.
 \end{prop}
@@ -108,15 +109,18 @@ B$. Amarga $f$~iku !!{surjective}, ana $x_y \in A$ kanthi $f(x_y)
 = y$. Banjur kita bisa netepake $h(y) = x_y$, yaiku kanggo saben $y \in B$
 kita milih $x \in A$ kanthi $f(x) = y$; amarga $f$~iku !!{surjective},
 mesthi ana paling ora siji kang bisa dipilih.\footnote{Amarga $f$ iku
-!!{surjective}, kanggo saben~$y \in B$ himpunan $\Setabs{x}{f(x) = y}$
+!!{surjective}, kanggo saben~$y \in B$ himpunan $\Setabs{x \in A}{f(x) = y}$
 ora kosong. Definisi~$h$ mbutuhake kita milih siji $x$
 saka saben himpunan iki. Yen iki mesthi bisa ditindakake, sejatine ora
 cetha; kamungkinan kanggo nggawe pilihan-pilihan iki dianggep minangka aksioma.
 Kanthi tembung liya, proposisi iki nggunakake kang diarani Aksioma
 Pilihan, prakara kang bakal \oliflabeldef{sth:choice::chap}{dirembug maneh ing \olref[sth][choice][]{chap}}{diliwati tanpa rembug jero}.
 Nanging ing akeh kasus tartamtu, upamane nalika $A = \Nat$ utawa winates, utawa nalika $f$ iku !!{bijective},
-Aksioma Pilihan ora dibutuhake. (Ing kasus mligi nalika $f$ iku !!{bijective}, kanggo saben $y \in B$ himpunan
-$\Setabs{x}{f(x) = y}$ duwe persis siji !!{element}, mula ora perlu milih.)}
+Aksioma Pilihan ora dibutuhaké. Yèn domainé himpunan wilangan natural,
+pilihen anggota paling cilik saka saben himpunan mau. Yèn domainé winates,
+uruten dhisik anggota domain, banjur pilihen anggota kapisan ing saben himpunan.
+(Ing kasus mligi nalika $f$ iku !!{bijective}, kanggo saben $y \in B$ himpunan
+$\Setabs{x \in A}{f(x) = y}$ duwe persis siji !!{element}, mula ora perlu milih.)}
 Miturut definisi, yen $x = h(y)$,
 mula $f(x) = y$, yaiku kanggo saben $y \in B$, $f(h(y)) = y$.
 \end{proof}

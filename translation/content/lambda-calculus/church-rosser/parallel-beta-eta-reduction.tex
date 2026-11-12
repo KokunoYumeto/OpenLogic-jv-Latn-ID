@@ -31,7 +31,7 @@ reduksi-$\beta\eta$.
     \item \ollabel{defn:beredpar4} Yen $N \beredpar N'$ lan $Q \beredpar Q'$, mula
       $(\lambd[x][N])Q \beredpar \Subst{N'}{Q'}{x}$.
     \item \ollabel{defn:beredpar5} Yen $N \beredpar N'$, mula $\lambd[x][Nx]
-      \beredpar N'$, kanthi syarat $x \notin FV(N)$.
+      \beredpar N'$, kanthi syarat $x \notin \FV{N}$.
   \end{enumerate}
 \end{defn}
 
@@ -48,23 +48,15 @@ reduksi-$\beta\eta$.
 \end{prob}
 
 \begin{defn}[pangembangan lengkap-$\beta\eta$]\ollabel{defn:becd}
-  \emph{Pangembangan lengkap-$\beta\eta$}~$\becd{M}$
-  saka~$M$ ditetepake
-  kaya mangkene:
+  \emph{Pangembangan lengkap-$\beta\eta$}~$\becd{M}$ saka~$M$ ditetepake kaya mangkene:
   \begin{align}
     \becd{x} &= x \ollabel{defn:becd1} \\
-    \becd{(\lambd[x][N])} &= \lambd[x][\becd{N}] \ollabel{defn:becd2}\\
-    \becd{(PQ)} &= \becd{P}\becd{Q} && \text{yen $P$ dudu abstraksi-$\lambd$}
-    \ollabel{defn:becd3} \\
-    \becd{((\lambd[x][N])Q)} &= \Subst{\becd{N}}{\becd{Q}}{x}
-                             \ollabel{defn:becd4} \\
-    \becd{(\lambd[x][Nx])} &= \becd{N} \ollabel{defn:becd5} & \text{yen $x
-                                                      \notin FV(N)$}
+    \becd{(\lambd[x][N])} &= \lambd[x][\becd{N}] && \text{yen abstraksi iki dudu redex-$\eta$} \ollabel{defn:becd2}\\
+    \becd{(PQ)} &= \becd{P}\becd{Q} && \text{yen $P$ dudu abstraksi-$\lambd$} \ollabel{defn:becd3} \\
+    \becd{((\lambd[x][N])Q)} &= \Subst{\becd{N}}{\becd{Q}}{x} \ollabel{defn:becd4} \\
+    \becd{(\lambd[x][Nx])} &= \becd{N} && \text{yen $x\notin\FV{N}$} \ollabel{defn:becd5}
   \end{align}
-  Yen pola abstraksi umum lan
-  pola redex eta padha cocog,
-  aturan redex eta pungkasan
-  kang dienggo.
+  Klausa redex eta nduwèni prioritas. Kabèh pangembangan ing sisih tengen nggunakake subsuku kang luwih cilik. Kanggo mbuktèkaké yèn pangembangan netepaké fungsi ing kelas alfa, induksi ukuran nggarap loro sipat, yaiku invariansi alfa lan komutativitas panggantos variabel. Ing ukuran saiki, invariansi renaming pangiket nggunakake komutativitas ing awak kang luwih cilik. Sawisé invariansi ing ukuran saiki, pilih pangiket seger kanggo mbuktèkaké komutativitas. Ing klausa eta, pilihan iki njaga wujud awak kanthi argumen pangiket pungkasan lan njaga syarat pangiket ora bebas ing fungsi. Kanggo fungsi kasebut, gunakna hipotesis induksi.
 \end{defn}
 
 \begin{lem}\ollabel{lem:comp}
@@ -78,34 +70,13 @@ reduksi-$\beta\eta$.
   Gunakake induksi ing !!{derivation}
   saka $M \beredpar M'$.
 
-  Patang kasus kapisan padha
-  polahe karo kasus ing
-  \olref[pb]{lem:comp}.
-  Yen aturan pungkasan
-  \olref{defn:beredpar5},
-  $M$ awujud $\lambd[x][Nx]$
-  lan $M'$ awujud $N'$
-  kanggo sawetara $x$
-  lan~$N'$, kanthi
-  $x \notin FV(N)$
-  lan $N \beredpar N'$.
-  Kita kudu nuduhake
-  $\Subst{(\lambd[x][Nx])}{R}{y}
-  \beredpar \Subst{N'}{R'}{y}$,
-  yaiku
-  $\lambd[x][\Subst{N}{R}{y} x]
-  \beredpar \Subst{N'}{R'}{y}$.
-  Iki nggunakake
-  \olref{defn:beredpar},
-  mligine \olref{defn:beredpar5},
-  lan hipotesis induksi.
-  Binder kudu dipilih seger
-  marang suku pangganti lan
-  variabel substitusi supaya
-  syarat aturan redex eta
-  tetep kacukupan. Justifikasi
-  iki durung diwenehake
-  ing teks sumber.
+  Patang kasus kapisan ngetutake bukti \olref[pb]{lem:comp}, nggunakake hukum komposisi substitusi kang wis diwenehake ing kana lan binder seger ing abstraksi lan kontraksi. Yen aturan pungkasan \olref{defn:beredpar5}, $M=\lambd[x][Nx]$, $M'=N'$, $x\notin\FV{N}$ lan $N\beredpar N'$. Pilih binder x saengga $x\neq y$ lan $x\notin\FV{R}\cup\FV{R'}$ kanthi teorema substitusi nganti alfa. Hipotesis induksi menehi $\Subst{N}{R}{y}\beredpar\Subst{N'}{R'}{y}$. Rumus variabel bebas menehi $\FV{\Subst{N}{R}{y}}\subseteq(\FV{N}\setminus\{y\})\cup\FV{R}$, mula x ora bebas ing suku fungsi sawise substitusi. Aturan eta paralel saiki menehi
+  \[
+    \Subst{(\lambd[x][Nx])}{R}{y}
+    =\lambd[x][\Subst{N}{R}{y}x]
+    \beredpar\Subst{N'}{R'}{y}.
+  \]
+  Kesegaran lan rumus FV iki ngrampungake dependensi syarat eta; ora perlu nganggep substitusi mesthi njaga kesegaran tanpa mriksa suku pangganti.
 \end{proof}
 
 \begin{lem}\ollabel{lem:cont}
@@ -114,33 +85,24 @@ reduksi-$\beta\eta$.
 \end{lem}
 
 \begin{proof}
-  Gunakake induksi ing !!{derivation}
-  saka $M \beredpar M'$.
+  Gunakna induksi kuwat tumrap ukuran wit suku M, kanggo saben asil paralel lan wakil alfa. Panggantos jeneng pangiket ora ngowahi ukuran. Hipotesis induksi lumaku tumrap saben subsuku kang luwih cilik, kalebu premis aturan paralel. Invariansi alfa lan teorema substitusi ngidinaké pilihan pangiket seger.
+  Loro fakta pambiyantu ora gumantung lemma segitiga iki. Kapisan, $A\beredpar A'$ menehi $\FV{A'}\subseteq\FV{A}$, kanthi induksi ing limang aturan. Variabel langsung; abstraksi mbusak binder saka loro himpunan; aplikasi nggunakake gabungan himpunan. Ing kontraksi beta, rumus FV substitusi menehi $\FV{\Subst{N'}{Q'}{x}}\subseteq(\FV{N'}\setminus\{x\})\cup\FV{Q'}\subseteq(\FV{N}\setminus\{x\})\cup\FV{Q}$, yaiku FV sumber. Ing kontraksi eta, FV sumber $\lambd[x][Lx]$ padha karo FV L amarga x ora bebas ing L, lan hipotesis induksi menehi FV asil minangka subhimpunane. Kapindho, $A\beredpar\becd{A}$ kanthi induksi struktural ing klausa pangembangan: variabel refleksif, abstraksi dudu eta nggunakake aturan abstraksi, aplikasi dudu beta nggunakake aturan aplikasi, redex beta nggunakake aturan kontraksi, lan redex eta nggunakake aturan eta. Mula $\FV{\becd{A}}\subseteq\FV{A}$ uga wis kabukten sadurunge lemma segitiga.
 
-  Patang kasus kapisan
-  padha polahe karo kasus ing
-  \olref[pb]{lem:cont}.
-  Yen aturan pungkasan
-  \olref{defn:beredpar5},
-  $M$ awujud $\lambd[x][Nx]$
-  lan $M'$ awujud $N'$
-  kanggo sawetara $x$,
-  $N$, $N'$ kanthi
-  $x \notin FV(N)$
-  lan $N \beredpar N'$.
-  Kita kudu nuduhake
-  $N' \beredpar
-  \becd{(\lambd[x][Nx])}$,
-  yaiku $N' \beredpar
-  \becd{N}$; iki
-  langsung saka hipotesis
-  induksi.
-  Nanging kasus abstraksi
-  kang uga redex eta
-  butuh pamriksa dhewe
-  amarga loro aturan
-  pangembangan lengkap
-  bisa tumpang tindih.
+  Saiki dipriksa kabeh wangun sumber lan aturan pungkasan.
+  \begin{enumerate}
+  \item Yen M variabel, asil mung variabel kang padha lan langkah kang dibutuhake refleksif.
+  \item Yen $M=\lambd[x][N]$ dudu redex eta, mung aturan abstraksi kang bisa dienggo: $M'=\lambd[x][N']$ kanthi $N\beredpar N'$. Hipotesis induksi menehi $N'\beredpar\becd{N}$, banjur abstraksi menehi $M'\beredpar\lambd[x][\becd{N}]=\becd{M}$.
+  \item Yen $M=\lambd[x][Lx]$ kanthi $x\notin\FV{L}$, ana rong kemungkinan. Yen aturan eta pungkasan, $M'=L'$ kanthi $L\beredpar L'$, lan hipotesis induksi langsung menehi $L'\beredpar\becd{L}=\becd{M}$. Yen aturan abstraksi pungkasan, awak $Lx\beredpar S$ lan $M'=\lambd[x][S]$. Yen awak nggunakake aturan aplikasi, $S=L'x$ kanthi $L\beredpar L'$. Fakta FV njamin $x\notin\FV{L'}$, lan hipotesis induksi $L'\beredpar\becd{L}$ menehi $\lambd[x][L'x]\beredpar\becd{L}$ kanthi aturan eta. Yen awak nggunakake kontraksi beta, $L=\lambd[z][A]$ lan $S=\Subst{A'}{x}{z}$ kanthi $A\beredpar A'$. Pilih z beda x lan seger supaya panggantian aman. Amarga $x\notin\FV{L}$ lan $z\neq x$, x ora bebas ing A; fakta FV uga menehi $x\notin\FV{A'}$. Mula $\lambd[x][\Subst{A'}{x}{z}]$ padha nganti alfa karo $\lambd[z][A']$. Ana langkah $L\beredpar\lambd[z][A']$ kanthi aturan abstraksi. Amarga ukuran L luwih cilik tinimbang M, hipotesis induksi menehi $\lambd[z][A']\beredpar\becd{L}=\becd{M}$. Iki nutup kasus awak beta ing abstraksi eta.
+  \item Yen $M=PQ$, aturan pungkasan bisa kontraksi beta utawa aplikasi. Kanggo kontraksi beta, $P=\lambd[x][N]$, $N\beredpar N'$, $Q\beredpar Q'$ lan $M'=\Subst{N'}{Q'}{x}$. Hipotesis induksi kanggo N lan Q, banjur \olref{lem:comp}, menehi $M'\beredpar\Subst{\becd{N}}{\becd{Q}}{x}=\becd{M}$. Kanggo aturan aplikasi, $M'=P'Q'$ kanthi $P\beredpar P'$ lan $Q\beredpar Q'$. Yen P dudu abstraksi, hipotesis induksi lan aturan aplikasi menehi $P'Q'\beredpar\becd{P}\becd{Q}=\becd{M}$, senajan P-prima bisa dadi abstraksi. Yen $P=\lambd[x][N]$ lan langkah P nggunakake abstraksi, $P'=\lambd[x][N']$ kanthi $N\beredpar N'$; hipotesis induksi lan aturan kontraksi beta menehi asil kang padha.
+  Yen langkah P nggunakake eta, $P=\lambd[x][Lx]$, $P'=L'$, $L\beredpar L'$ lan $x\notin\FV{L}$. Pilih x uga seger marang Q. Fakta FV menehi $x\notin\FV{L'}$. Ana langkah $Lx\beredpar L'x$ kanthi aplikasi. Suku sumber Lx luwih cilik tinimbang M, mula induksi kuwat menehi $L'x\beredpar\becd{(Lx)}$. Hipotesis induksi kanggo Q menehi $Q'\beredpar\becd{Q}$. Kompatibilitas substitusi saiki menehi
+  \[
+    L'Q'=\Subst{(L'x)}{Q'}{x}
+    \beredpar\Subst{\becd{(Lx)}}{\becd{Q}}{x}
+    =\becd{((\lambd[x][Lx])Q)}=\becd{M}.
+  \]
+  Iki nutup kasus fungsi eta ing aplikasi; ora nggunakake hipotesis induksi derivasi kanggo langkah anyar tanpa alasan ukuran.
+  \end{enumerate}
+  Kabeh aturan pungkasan wis kacakup, mula lemma segitiga kabukten.
 \end{proof}
 
 \begin{thm}\ollabel{thm:cr}
@@ -149,10 +111,7 @@ reduksi-$\beta\eta$.
 \end{thm}
 
 \begin{proof}
-  Langsung saka \olref{lem:cont},
-  kanthi gumantung marang
-  pamriksa kasus-kasus
-  kang kasebut ing ndhuwur.
+  Yen loro langkah paralel metu saka sumber kang padha, \olref{lem:cont} menehi siji langkah saka saben asil menyang pangembangan lengkap sumber kasebut. Mula iki sipat intan kang dikarepake. Kanggo cara reduksi paralel, delengen Mario Román García, \href{https://www.its.caltech.edu/~matilde/LambdaCalculusCategoryTheory.pdf}{Category Theory and Lambda Calculus} (2018), bagean 1.1.7, Definisi 1.11 lan Lema 1.12, kaca 19--20.
 \end{proof}
 
 \end{document}

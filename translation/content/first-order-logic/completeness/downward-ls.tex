@@ -9,56 +9,56 @@
 \olfileid{fol}{com}{dls}
 \olsection{Teorema L\"owenheim--Skolem}
 
-Teorema L\"owenheim--Skolem nyatakake yen sawijining teori nduweni
-model tanpa wates, mula teori kasebut uga nduweni model kang ukurane ora
-ngluwihi himpunan kang !!{denumerable}. Akibat langsung saka kasunyatan iki yaiku logika
-sepisanan ora bisa nyatakake yen ukuran !!a{structure} iku
-!!{nonenumerable}: saben !!{sentence} utawa himpunan !!{sentence}s
-kang bisa dicukupi ing kabeh !!{nonenumerable} !!{structure}s uga bisa
-dicukupi ing sawijine struktur !!{enumerable}.
+Teorema L\"owenheim--Skolem njamin yèn teori ing basa kang bisa
+dietung nduwèni model, teori kuwi uga nduwèni model kang domainé
+bisa dietung. Dadi himpunan ukara ing basa kaya mangkono kang
+nduwèni model ora bisa mbutuhaké domain kang !!{nonenumerable}.
 
 \begin{thm}
-\ollabel{thm:downward-ls} Yen $\Gamma$ konsisten, himpunan kasebut
+\ollabel{thm:downward-ls} Yèn $\Gamma$ konsisten lan basané bisa dietung, himpunan kasebut
 nduweni model !!a{enumerable}, yaiku, bisa dicukupi ing
 !!a{structure} kang domaine winates utawa !!{denumerable}.
 \end{thm}
 
 \begin{proof}
-Yen $\Gamma$ konsisten, !!{structure}~$\Struct M$ kang diasilake
-dening bukti teorema kelengkapan nduweni domain $\Domain{M}$ kang ora
-luwih gedhe tinimbang himpunan term saka basa~$\Lang L$. Mula
-$\Struct M$ ukurane ora ngluwihi himpunan kang !!{denumerable}.
+Ing model kang dibangun ing bukti teorema kelengkapan,
+saben unsur domain minangka nilai term katutup ing basa Henkin~$\Lang{L'}$.
+Iki uga lumaku ing model kelas, amarga saben kelas diwakili déning
+term katutup. Basa~$\Lang{L'}$ bisa dietung, mula himpunan term
+katutupé bisa dietung. Reduk menyang basa asli nduwèni domain kang padha.
 \end{proof}
 
 \begin{thm}
 \ollabel{noidentity-ls} Yen $\Gamma$ minangka himpunan
-!!{sentence}s konsisten ing basa logika sepisanan tanpa identitas,
+!!{sentence}s konsisten ing basa logika sepisanan kang bisa dietung lan tanpa identitas,
 himpunan kasebut nduweni model kang !!a{denumerable}, yaiku, bisa dicukupi
 ing !!a{structure} kang domaine tanpa wates lan !!{enumerable}.
 \end{thm}
 
 \begin{proof}
-Yen $\Gamma$ konsisten lan ora ngemot ukara kang ngandhut identitas,
-!!{structure}~$\Struct M$ kang diasilake dening bukti teorema
-kelengkapan nduweni domain $\Domain{M}$ kang padha persis karo
-himpunan term katutup saka basa~$\Lang L'$. Mula $\Struct{M}$ iku
-!!{denumerable}, amarga ${\Trm[L']}_0$ uga mangkono. Cathetan koreksi sumber OLPL-744: subskrip nol nuduhake term katutup kang dadi domain model iki; notasi sumber tanpa watesan uga ngemot variabel.
+Ing basa tanpa identitas, model saka bukti kelengkapan nduwèni
+domain ${\Trm[L']}_0$, yaiku himpunan term katutup ing
+basa Henkin. Himpunan iki bisa dietung amarga basané bisa dietung,
+lan tanpa wates amarga ngemot tanpa wates konstanta anyar kang
+béda-béda. Reduké menyang basa asli tetep nduwèni domain iki.
 \end{proof}
 
 \begin{ex}[Paradoks Skolem]
-Teori himpunan Zermelo--Fraenkel~$\Log{ZFC}$ minangka kerangka kang
+Teori himpunan Zermelo--Fraenkel mawa aksioma pilihan~$\Log{ZFC}$ minangka kerangka kang
 kuwat banget lan meh kabeh pratelan matematika bisa dinyatakake ing
 jerone, kalebu kasunyatan ngenani ukuran himpunan. Contone,
 $\Log{ZFC}$ bisa mbuktekake yen himpunan wilangan real~$\Real$ iku
 !!{nonenumerable}, bisa mbuktekake Teorema Cantor yen himpunan pangkat
 saben himpunan luwih gedhe tinimbang himpunan kasebut dhewe, lan
 sapanunggalane. Yen $\Log{ZFC}$ konsisten, kabeh modele tanpa wates,
-lan luwih saka iku, kabeh model kasebut ngemot !!{element}s kang
-miturut teori iku !!{nonenumerable}, kayata elemen kang nggawe bener
-teorema saka~$\Log{ZFC}$ yen himpunan pangkat wilangan asli ana.
-Miturut Teorema L\"owenheim--Skolem, $\Log{ZFC}$ uga nduweni model
-!!{enumerable}---model kang ngemot himpunan “!!{nonenumerable}”
-nanging modele dhewe !!{enumerable}.
+lan saben model ngemot sawijining unsur kang dianggep ora
+bisa dietung, upamané himpunan pangkat saka himpunan wilangan asli
+miturut model kuwi. Miturut Teorema L\"owenheim--Skolem, ana model
+$\Struct{M}$ kang domainé bisa dietung. Kanggo unsur~$a$ kang
+dianggep ora bisa dietung ing model kuwi, koleksi unsur domain
+kang ana ing~$a$ miturut relasi kaanggotaan model uga bisa dietung
+saka njaba, amarga koleksi iki pérangan saka domain. Nanging
+$a$ dianggep ora bisa dietung miturut fungsi-fungsi kang ana ing~$\Struct{M}$. Enumerasi saka njaba ora kudu ana minangka fungsi ing model.
 \end{ex}
 
 \end{document}

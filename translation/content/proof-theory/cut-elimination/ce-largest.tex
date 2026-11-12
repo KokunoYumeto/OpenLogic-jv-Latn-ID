@@ -10,7 +10,7 @@
 
 \olsection{Ngilangi Cut kang Pangkaté Paling Gedhé}
 
-Bukti \olref[seq][inv]{lem:G3c-invert} nuduhaké yèn yèn
+Bukti \olref[seq][inv]{lem:G3c-invert} nuduhaké yèn
 \Log{G3c} !!{prove}s dudutan aturan logis
 (saliyané \RightR{\lexists} lan \LeftR{\lforall}),
 saben premis aturan mau uga bisa !!{prove}s tanpa nambah
@@ -18,7 +18,7 @@ saben premis aturan mau uga bisa !!{prove}s tanpa nambah
 kuwat: iki uga bener kanggo $\Log{G3c} + \CutCS$.
 
 Kaya sadurungé, \emph{pangkat cut} saka inferènsi
-\CutCS{} kita tetepaké minangka ambane !!{formula}
+\CutCS{} kita netepaké minangka ambané !!{formula}
 kang di-cut.
 
 \begin{lem}\ollabel{lem:inv-G3c-cut}
@@ -30,9 +30,11 @@ nganggo !!a{proof}~$\pi$, saben premisé uga bisa
 nduwèni rong premis). Kajaba iku,
 (a)~$\pheight{\pi'}\le\pheight{\pi}$
 (lan $\pheight{\pi''}\le\pheight{\pi}$), sarta
-(b)~cacah inferènsi \CutCS{} lan pangkaté ing
-~$\pi'$ (lan $\pi''$) padha karo kang ana ing~$\pi$.
+(b)~cacah inferènsi \CutCS{} ing
+~$\pi'$ (lan $\pi''$) ora luwih akèh tinimbang ing~$\pi$,
+lan pangkat cut kang isih ana dijaga.
 \end{lem}
+(Yèn inversi milih siji cabang saka aturan rong premis, cut ing cabang liyané bisa ilang. Mula cacah lan pangkat cut ora mundhak. Iki cukup kanggo langkah sabanjuré.)
 
 \begin{proof}
 Delengen bukti
@@ -42,7 +44,8 @@ Ing kahanan dhasar, sawijining aksioma diganti aksioma liya;
 mula syarat (a) lan~(b) langsung kacukupan.
 Yèn aturan pungkasané~$\pi$ yaiku~$R$,
 sub-!!{proof}s langsungé yaiku !!{proof}s~$\pi_i$
-kang dikarepaké, lan (a) sarta~(b) uga kacukupan.
+kang dikarepaké. Cacah cut ing cabang kang dipilih ora luwih akèh,
+lan pangkat cut kang kari ora owah; mula (a) sarta~(b) uga kacukupan.
 Ing kahanan liya, hipotesis induksi ditrapaké marang
 sub-!!{proof}s langsung saka~$\pi$, yaiku kang nuju
 premis-premis inferènsi pungkasan~$R$; banjur aturan
@@ -72,7 +75,7 @@ $\pi_1'$ lan~$\pi_2'$ kanggo
 $!B, !C, \Gamma \fCenter \Delta, !A$ lan
 $!A, !B, !C, \Gamma \fCenter \Delta$ miturut
 urutané. Kaloroné digandhèng nganggo \CutCS{}
-kanggo ngolèhké~$\pi'$:
+kanggo ngolèhaké~$\pi'$:
 \[
 \AxiomC{}
 \RightLabel{$\pi_1'$}
@@ -144,7 +147,7 @@ formula utama, ana $!C$ atomik kang dadi !!a{element} ing~$\Gamma$
 lan $\Delta$, mula $\Gamma \Sequent \Delta$ dhéwé
 iku aksioma. Yèn $!A$ formula utama, banjur
 $\Delta = \Delta', !A$. Ing kahanan iki, $\pi_1$ pungkasané
-$\Gamma \Sequent \Delta', !A, !A$. Kita ngolèhké
+$\Gamma \Sequent \Delta', !A, !A$. Kita ngolèhaké
 bukti tanpa cut kanggo $\Gamma \Sequent \Delta', !A$
 kanthi ngetrapaké \olref[seq][inv]{prop:G3c-cont-adm}
 (admisibilitas kontraksi). Yèn $\pheight{\pi_2} > 0$,
@@ -153,20 +156,23 @@ premis aturan mau: wujudé $!A, \Gamma',
 \Pi \Sequent \Delta', \Lambda$, ing ngendi $\Pi$ lan $\Lambda$
 iku !!{formula}s aktif saka~$R$. Kanthi ngetrapaké
 \olref[seq][adm]{prop:weak-G3c-adm}
-marang~$\pi_1$ lan $\pi_2$, kita ngolèhké !!{proof}s
+marang~$\pi_1$ lan subbukti langsung saka $\pi_2$
+kang mungkasi premis mau, kita ngolèhaké !!{proof}s
 kanggo $\Gamma, \Gamma',
 \Pi \Sequent \Delta, \Delta', \Lambda, !A$ lan $!A, \Gamma, \Gamma',
 \Pi \Sequent \Delta, \Delta', \Lambda$; hipotesis induksi
-ditrapaké marang kaloroné. Mula kita ngolèhké
+ditrapaké marang kaloroné. Mula kita ngolèhaké
 !!a{proof} kanggo $\Gamma, \Gamma', \Pi
 \Sequent \Delta, \Delta', \Lambda$ kanggo saben premis~$R$.
 Ngetrapaké $R$ ngasilaké $\Gamma, \Gamma \Sequent \Delta, \Delta$,
-lan \olref[seq][inv]{prop:G3c-cont-adm} maringi bukti tanpa cut
+lan \olref[seq][inv]{prop:G3c-cont-adm} menehi bukti tanpa cut
 kanggo $\Gamma \Sequent \Delta$.
+(Kontèks suksèden kang ora ngemot kedadéan pungkasan formula atomik diwènèhi jeneng nganggo tandha prima.)
+(Induksi dhuwur kudu ditrapaké marang subbukti langsung kang mungkasi premis kang dipilih, dudu marang bukti kabèh kang dhuwuré padha. Pelemahan kang ora nambah dhuwur njaga penurunan iki.)
 
 Yèn $!A$ ora atomik, kita bedakaké kahanané manut !!{main
 operator} saka~$!A$. Ing saben kahanan, kita ngetrapaké
-\olref{lem:inv-G3c-cut} kanggo ngolèhké !!{proof}s
+\olref{lem:inv-G3c-cut} kanggo ngolèhaké !!{proof}s
 premis-premis aturan kiwa lan tengen kanthi $!A$ minangka
 formula utama. Banjur kita nerusaké kaya ing kahanan~E
 saka bukti \olref[top]{lem:cut-adm-G3c}.
@@ -202,7 +208,7 @@ saka bukti \olref[top]{lem:cut-adm-G3c}.
   !!a{proof} $\pi_2''$ kanggo
   $!C, \Gamma \Sequent \Delta$. Kanthi ngetrapaké
   \olref[seq][adm]{prop:weak-G3c-adm} marang $\pi_2''$,
-  kita uga ngolèhké !!a{proof}~$\pi_2'''$ kanggo
+  kita uga ngolèhaké !!a{proof}~$\pi_2'''$ kanggo
   $!C, \Gamma \Sequent \Delta, !B$. !!{proof}~$\pi'$ iki:
   \[
   \AxiomC{}
@@ -220,7 +226,7 @@ saka bukti \olref[top]{lem:cut-adm-G3c}.
   \BinaryInf$\Gamma \fCenter \Delta$
   \DisplayProof
   \]
-  \item $!A \ident (!B \land !C)$. Latihan.
+  \item $!A \ident (!B \land !C)$. Gladhen.
   \item $!A \ident (!B \lif !C)$. !!{proof}s $\pi_1$ lan $\pi_2$
   pungkasané ana ing $\Gamma \Sequent \Delta, !B \lif !C$ lan
   $!B \lif !C, \Gamma \Sequent \Delta$. Miturut
@@ -234,7 +240,7 @@ saka bukti \olref[top]{lem:cut-adm-G3c}.
   lan !!a{proof} $\pi_2''$ kanggo
   $!C, \Gamma \Sequent \Delta$. Kanthi ngetrapaké
   \olref[seq][adm]{prop:weak-G3c-adm} marang $\pi_2''$,
-  kita uga ngolèhké !!a{proof}~$\pi_2'''$ kanggo
+  kita uga ngolèhaké !!a{proof}~$\pi_2'''$ kanggo
   $!C, !B, \Gamma \Sequent \Delta$. !!{proof}~$\pi'$ iki:
   \[
   \AxiomC{}
@@ -312,7 +318,7 @@ saka bukti \olref[top]{lem:cut-adm-G3c}.
   banjur tambahna $\Gamma$ ing sisih kiwa lan $\Delta$ ing sisih
   tengen saben sekèn ing sangisoré. Balènana nganti kabèh
   ``inferènsi'' \LeftR{\lforall} kang premisé ngandhut
-  $!B(t)$ bertandha diganti inferènsi \CutCS{} tumrap
+  $!B(t)$ kang ditandhani diganti inferènsi \CutCS{} tumrap
   sawijining~$!B(t)$. Sekèn pungkasan saka !!{proof} asilé
   (kang saiki dadi !!{proof} kang bener) wujudé
   $\Gamma, \dots, \Gamma \Sequent \Delta, \dots, \Delta$.
@@ -324,6 +330,8 @@ saka bukti \olref[top]{lem:cut-adm-G3c}.
   $\pi_2$ tetep ana, nanging pangkaté uga kabèh luwih cilik.
 \end{enumerate}
 \end{proof}
+(Sketsa iki durung nyakup cut ing falsitas utawa kuantor eksistensial primitif. Kasus konjungsi dadi gladhèn.)
+(Panggantos bukti mbutuhaké konstanta seger lan panggantos jeneng variabel eigen supaya bebas saka panangkepan. Pérangan nonatomik nggunakake pelemahan, substitusi lan kontraksi kang kudu njaga pangkat cut. Lema kang dirujuk tumrap kalkulus tanpa cut. Ekstensiné marang bukti mawa cut isih dibutuhaké kanggo njangkepi argumentasi.)
 
 \begin{prob}
 Priksanen kahanan $!A \ident (!B \land !C)$ ing bukti
@@ -345,6 +353,7 @@ $<\depth{!B \land !C}$, banjur ana !!a{proof}~$\pi'$ kanggo
 $\Gamma \Sequent \Delta$ kang mung ngemot cut kang pangkaté
 $<\depth{!B \land !C}$.
 \end{prob}
+(Gladhen iki minangka kasus konjungsi saka lema reduksi cut pangkat maksimal, dudu saka lema inversibilitas sadurungé.)
 
 % \begin{prob}
 % Verify the case where $!A \ident \lexists[x][!B(x)]$ in the proof of
@@ -360,6 +369,7 @@ pirang-pirang inferènsi \CutCS{} ing !!a{proof} bisa
 diilangi kanthi ngetrapaké lema mau kanthi urut marang
 sub-!!{proof}s paling dhuwur kang pungkasané ana ing
 \CutCS{} pangkat maksimal.
+(Transisi iki migunakaké lema pangkat maksimal ing pérangan iki; lema cut paling dhuwur sadurungé nduwèni syarat kang béda.)
 
 \begin{thm}\ollabel{thm:cut-elim-G3c-largest}
 Saben !!{proof} $\pi$ ing $\Log{G3c} + \CutCS$
@@ -367,11 +377,11 @@ bisa diowahi dadi bukti ing~\Log{G3c}.
 \end{thm}
 
 \begin{proof}
-  Sepisan, kita buktèkaké yèn kabèh cut kang pangkaté maksimal
+  Sepisan, kita buktekaké yèn kabèh cut kang pangkaté maksimal
   ing~$\pi$ bisa diilangi. Upama $d$ iku pangkat maksimal cut
   kang ana ing~$\pi$, lan $n$ cacah cut pangkat~$d$.
   Buktiné nganggo induksi tumrap~$n$. Yèn $n=0$, ora ana
-  kang perlu dibuktèkaké. Yèn $n>0$, pilihen cut pangkat~$d$
+  kang perlu dibuktekaké. Yèn $n>0$, pilihen cut pangkat~$d$
   kang paling dhuwur, lan upama $\pi_1$ sub-!!{proof} kang
   pungkasané ana ing cut iku. Miturut
   \olref{lem:max-cut-red-G3c}, ana !!a{proof}~$\pi_1'$
@@ -380,9 +390,9 @@ bisa diowahi dadi bukti ing~\Log{G3c}.
   Asilé !!a{proof} kang ngemot $n-1$ cut pangkat~$d$,
   mula hipotesis induksi bisa ditrapaké.
 
-  Saiki asilé ndhèrèk saka induksi tumrap~$d$. Yèn $d=0$,
+  Saiki asilé kabuktekaké kanthi induksi tumrap~$d$. Yèn $d=0$,
   kabèh cut atomik, lan miturut asil sadurungé kabèh bisa
-  diilangi. Yèn $d>0$, asil sadurungé maringi bukti kang
+  diilangi. Yèn $d>0$, asil sadurungé menehi bukti kang
   kabèh cut pangkat $d$ wis diganti cut pangkat~$<d$.
   Amarga $d$ iku pangkat maksimal cut ing~$\pi$, saiki
   kita nduwèni bukti kang pangkat maksimal cuté $<d$,

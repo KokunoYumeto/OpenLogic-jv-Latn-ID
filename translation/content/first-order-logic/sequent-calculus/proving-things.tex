@@ -83,7 +83,7 @@ kudu pecah dadi rong sekuen ndhuwur kaya mangkene:
 \UnaryInf$!B, !A \fCenter !B$
 \RightLabel{\LeftR{\lor}}
 \BinaryInf$ \lnot !A \lor !B, !A \fCenter !B $
-\RightLabel{\RightR{\Exchange}}
+\RightLabel{\LeftR{\Exchange}}
 \UnaryInf$ !A, \lnot !A \lor !B \fCenter !B $
 \RightLabel{\RightR{\lif}}
 \UnaryInf$ \lnot !A \lor !B \fCenter !A \lif !B $
@@ -101,7 +101,7 @@ siji pertukaran saka sekuen wiwitan, banjur cabang iku rampung:
 \UnaryInf$!B, !A \fCenter !B$
 \RightLabel{\LeftR{\lor}}
 \BinaryInf$\lnot !A \lor !B, !A \fCenter !B $
-\RightLabel{\RightR{\Exchange}}
+\RightLabel{\LeftR{\Exchange}}
 \UnaryInf$ !A, \lnot !A \lor !B \fCenter !B $
 \RightLabel{\RightR{\lif}}
 \UnaryInf$ \lnot !A \lor !B \fCenter !A \lif !B $
@@ -122,7 +122,7 @@ kita nggatekake salah siji panrapan aturan \LeftR{\lnot}.
 \UnaryInf$!B, !A \fCenter !B$
 \RightLabel{\LeftR{\lor}}
 \BinaryInf$\lnot !A \lor !B, !A \fCenter !B $
-\RightLabel{\RightR{\Exchange}}
+\RightLabel{\LeftR{\Exchange}}
 \UnaryInf$ !A, \lnot !A \lor !B \fCenter !B $
 \RightLabel{\RightR{\lif}}
 \UnaryInf$ \lnot !A \lor !B \fCenter !A \lif !B $
@@ -144,7 +144,7 @@ pelemahan lan siji pertukaran kanggo ngrampungake cabang kiwa iki.
 \UnaryInf$!B, !A \fCenter !B$
 \RightLabel{\LeftR{\lor}}
 \BinaryInf$\lnot !A \lor !B, !A \fCenter !B $
-\RightLabel{\RightR{\Exchange}}
+\RightLabel{\LeftR{\Exchange}}
 \UnaryInf$ !A, \lnot !A \lor !B \fCenter !B $
 \RightLabel{\RightR{\lif}}
 \UnaryInf$ \lnot !A \lor !B \fCenter !A \lif !B $
@@ -176,9 +176,7 @@ deleng apa kang kelakon yen aturan \LeftR{\land} ditrapake: kita bisa
 miwiti saka sekuen $!A, \lnot !A \lor \lnot !B \Sequent \quad$ utawa
 sekuen $!B, \lnot !A \lor \lnot !B \Sequent \quad$. Amarga
 !!{derivation} iku simetris tumrap $!A$ lan $!B$, ayo milih kang
-kapisan. Cathetan koreksi sumber OLPL-004: negasi ing disjung kapindho
-ilang saka rong formula ing prosa Inggris; negasi kasebut dibalekake
-supaya cocog karo sekuen-pungkasan lan wit kang langsung nututi.
+kapisan.
 \begin{prooftree}
 \AxiomC{}
 \UnaryInf$!A, \lnot !A \lor \lnot !B \fCenter $
@@ -206,10 +204,10 @@ Nalika terus ngisi !!{derivation}, kita weruh yen ana masalah:
 \RightLabel{\RightR{\lnot}}
 \UnaryInf$\lnot !A \lor \lnot !B \fCenter \lnot (!A \land !B)$
 \end{prooftree}
-Pucuk cabang tengen ora bisa dikurangi maneh lan ora bisa digawa
-menyang sekuen wiwitan nganggo inferensi struktural, mula iki dudu
-dalan kang bener. Dadi, panrapan aturan \LeftR{\land} ing ndhuwur
-temenan kleru. Yen kita bali menyang langkah sadurunge lan ngetrapake
+Sekuen $!A \Sequent !B$ ora valid ing saben instansi.
+Yèn $!A$ lan $!B$ iku rong variabel béda, valuasi kang ndadèkaké
+$!A$ bener lan $!B$ salah dadi conto tandhingan. Dadi pilihan
+\LeftR{\land} mau ora mènèhi bukti kanggo sekuen umum iki. Yen kita bali menyang langkah sadurunge lan ngetrapake
 aturan \LeftR{\lor}, asile
 \begin{prooftree}
 \AxiomC{}
@@ -251,9 +249,8 @@ aturan $\lnot$ lan kita tetep ngasilake !!{derivation} kang bener).
 \end{ex}
 
 \begin{ex}
-Nganti saiki kita durung nggunakake aturan kontraksi, nanging aturan
-iki kadhangkala dibutuhake. Tuladha iki nuduhake kasus kang mbutuhake
-aturan kasebut.
+Tuladha iki nggunakake aturan kontraksi kanggo njaga salinan
+formula nalika nggoleki bukti.
 Upamana kita arep mbuktekake $\quad \Sequent !A \lor \lnot !A$.
 Ngetrapake $\RightR{\lor}$ kanthi mbalikke bakal menehi salah siji saka
 rong !!{derivation}s iki:
@@ -270,8 +267,7 @@ rong !!{derivation}s iki:
 \RightLabel{\RightR{\lor}}
 \UnaryInf$ \fCenter !A \lor \lnot !A$
 \end{prooftree}
-Mesthi wae, ora ana saka loro mau kang pungkasane awujud sekuen
-wiwitan. Kuncine yaiku mangerteni yen aturan kontraksi ngidini kita
+Wit loro mau durung tekan sekuen wiwitan ing pucuké. Kuncine yaiku mangerteni yen aturan kontraksi ngidini kita
 nggabungake rong salinan saka !!a{sentence} dadi siji---lan nalika
 nggoleki bukti, yaiku lumaku
 saka ngisor menyang ndhuwur, kita bisa nyimpen salinan $!A \lor \lnot
@@ -341,6 +337,7 @@ Wenehana !!{derivation}s kanggo sekuen-sekuen iki:
 \item $(!A \lif !B) \lif !A \Sequent !A$.
 \item $\Sequent (!A \lif !B) \lor (!B \lif !C)$.
 \end{enumerate}
-(Kabeh iki mbutuhake aturan~$\RightR{\Contraction}$.)
+Nalika nggoleki bukti, aturan~$\RightR{\Contraction}$ bisa mbiyantu kanggo
+njaga salinan formula ing sukseden.
 \end{prob}
 \end{document}

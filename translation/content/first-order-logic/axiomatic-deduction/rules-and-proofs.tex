@@ -16,8 +16,8 @@
   !!{derivation}s aksiomatik mbokmenawa minangka sistem !!{derivation}
   kang paling prasaja kanggo logika. !!^a{derivation} mung sawijining
   rerangken !!{formula}s. Supaya dianggep !!a{derivation}, saben
-  !!{formula} ing rerangken kasebut kudu dadi conto sawijining
-  aksioma, utawa kudu ndherek saka siji utawa luwih !!{formula}s kang
+  !!{formula} ing rerangken kasebut bisa dadi premis saka $\Gamma$, instansi
+  sawijining aksioma, utawa asil inferensi saka !!{formula}s kang
   ndhisiki ing rerangken miturut sawijining aturan inferensi.
   !!^a{derivation} !!{derive}s !!{formula} kang pungkasan.
 \end{explain}
@@ -25,8 +25,8 @@
 \begin{defn}[!!^{derivability}]
 Yen $\Gamma$ iku himpunan !!{formula}s saka $\Lang L$, mula
 \emph{!!{derivation}} saka~$\Gamma$ yaiku rerangken winates
-$!A_1$, \dots,~$!A_n$ saka !!{formula}s, ing ngendi kanggo saben
-$i \le n$ salah siji saka perkara iki lumaku:
+$!A_1$, \dots,~$!A_n$ saka !!{formula}s, kanthi $n\geq 1$.
+Kanggo saben $1\leq i\leq n$, saora-orané siji syarat iki lumaku:
 \begin{enumerate}
 \item $!A_i \in \Gamma$; utawa
 \item $!A_i$ iku aksioma; utawa
@@ -39,10 +39,7 @@ Apa kang dianggep minangka !!{derivation} kang bener gumantung marang
 aturan inferensi kang diidini (lan mesthi wae aksioma kang dipilih).
 Aturan inferensi iku pratelan kondisional kang nyatakake manawa ing
 kahanan tartamtu, sawijining langkah~$!A_i$ ing !!a{derivation} iku
-langkah inferensi kang bener. Cathetan koreksi sumber OLPL-024: sumber
-Inggris ora menehi tandha metavariabel formula ing langkah kang lagi
-dirembug, sanadyan definisi sadurunge lan kabeh sebutan sabanjure
-nggunakake tandha kasebut; tandha kasebut dibalekake ing kene.
+langkah inferensi kang bener.
 
 \begin{defn}[Aturan inferensi]
 \emph{Aturan inferensi} menehi syarat cukup kanggo apa kang dianggep
@@ -70,7 +67,7 @@ diarani \emph{modus ponens:}
 \end{quote}
 Yen iki siji-sijine aturan inferensi, mula definisi !!{derivation} ing
 ndhuwur padha karo iki: $!A_1$, \dots,~$!A_n$ iku !!a{derivation}
-yen lan mung yen kanggo saben $i \le n$ salah siji saka perkara iki
+yen lan mung yen kanggo saben $1\le i\le n$ saora-orané siji syarat iki
 lumaku:
 \begin{enumerate}
 \item $!A_i \in \Gamma$; utawa

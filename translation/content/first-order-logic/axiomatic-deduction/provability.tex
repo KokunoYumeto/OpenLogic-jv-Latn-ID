@@ -24,7 +24,7 @@ kanggo $\Gamma_0 \Proves !A$ uga nuduhaké $\Delta \Proves !A$.
 \end{proof}
 
 \begin{prop}\ollabel{prop:provability} $\Gamma \Proves !A$ yèn lan
-namung yèn $\Gamma\cup \{\lnot!A \}$ ora konsisten. \end{prop}
+mung yèn $\Gamma\cup \{\lnot!A \}$ ora konsisten. \end{prop}
 
 \begin{prop} \begin{enumerate}
 \item \ollabel{prop:provability-contr} Yèn $\Gamma \Proves !A$ lan $\Gamma
@@ -85,6 +85,7 @@ $\Gamma_0 \cup \Gamma_1 \subseteq \Gamma$, mula $\Gamma \Proves \lfalse$.
 
 \item Anggepen $\Gamma_0 \cup \{ !A \} \Proves \lfalse$ lan
 $\Gamma_1 \cup \{\lnot !A \} \Proves \lfalse$.
+(Subskrip nol dicocogaké karo premis winates ing derivasi; pratelan umum tetep.)
 
 \begin{derivation} 
 1. & $\Gamma_0 \cup\{!A\} \Proves \lfalse$ & asumsi \\
@@ -124,6 +125,7 @@ Anggepen $\Gamma_0 \Proves !A \land !B$
 2. & $\Gamma_0 \Proves (!A\land !B) \lif !A $ & Ax0\\ 
 3. & $\Gamma_0 \Proves !A$ & MP 1, 2 \\ 
 \end{derivation}
+(Larik pungkasan MP ngasilaké pérangan konjungsi kapisan, dudu disjungsi.)
 
 Mula $\Gamma \Proves !A$. !!{derivation} kang padha carané
 uga nuduhaké yèn $\Gamma \Proves !B$.}}
@@ -134,6 +136,7 @@ uga nuduhaké yèn $\Gamma \Proves !B$.}}
 % prop:provability-mp 
 \tagitem{defIf}{}{ \iftag{probIf}{Gladhen.}{
 Anggepen $\Gamma_0 \Proves !A$ lan $\Gamma_1 \Proves !A \lif !B $.
+(Rong himpunan premis winates diwènèhi jeneng béda banjur digabung. Nggunakaké siji himpunan premis umum uga sah; iki nyelarasaké notasi karo larik pungkasan.)
 
 \begin{derivation} 
 1. & $\Gamma_0 \Proves !A$ & asumsi \\ 
@@ -194,7 +197,7 @@ ing $!A$ saéngga $\Gamma
 \Proves \lforall[x][\Subst{!A}{x}{c}]$, lan buktiné ora nganggo $c$.
 \end{thm}
 
-\begin{proof} Anggep $!A_1,\ldots,!A_n$ minangka bukti $!A$ saka
+\begin{proof} Anggepen $!A_1,\ldots,!A_n$ minangka bukti $!A$ saka
 $\Gamma$, saéngga $!A=!A_n$. Pilih variabel $x$ kang ora katon
 ing $!A_1,\ldots,!A_n$, banjur delengen runtutan anyar:
 $\Subst{!A_1}{x}{c},\ldots,\Subst{!A_n}{x}{c}.$ Runtutan iki
@@ -208,7 +211,7 @@ $\Subst{!A_i}{x}{c}$ diturunké kanthi MP saka
 $\Subst{!A_j}{x}{c}$ lan $\Subst{(!A_j \lif !A_i)}{x}{c}
 = \Subst{!A_j}{x}{c} \lif \Subst{!A_i}{x}{c}$.
 \end{itemize} Cetha yèn !!{constant} $c$ ora katon manèh
-ing runtutan anyar iki. Saiki anggep $\Gamma'$ ngemot !!{formula}s
+ing runtutan anyar iki. Saiki anggepen $\Gamma'$ ngemot !!{formula}s
 saka $\Gamma$ kang katon ing !!{derivation}
 $\Subst{!A}{x}{c}$; mula $x$ ora bebas ing !!{formula} endi waé
 sajroning $\Gamma'$ lan $\Gamma' \Proves \Subst{!A}{x}{c}$.
@@ -217,13 +220,14 @@ Miturut generalisasi (\olref{thm:Generalization}), $\Gamma'
 monotonisitas $\Gamma \Proves
 \lforall[x][\Subst{!A}{x}{c}]$, kaya kang dikarepaké.
 \end{proof}
+(Kasus aksioma ing pamriksan saben larik nganggo indeks larik iku, dudu mung rumus pungkasan.)
 
 \begin{explain}
 Tujuan kita yaiku ngganti syarat ing \olref{thm:WeakGen} yèn $x$
 ora katon babar pisan ing $!A$ nganggo syarat kang luwih lemah:
 $x$ ora bebas ing $!A$ lan !!{free for} $c$ ing $!A$.
 Iki bisa ditindakake kanthi ngganti !!{variable} kaiket;
-mula iki kang bakal dibuktèkaké luwih dhisik.
+mula iki kang bakal dibuktekaké luwih dhisik.
 \end{explain}
 
 \begin{lem}
@@ -241,6 +245,7 @@ substitusi $\Subst{}{y}{c}$. Dadi ana kemunculan $c$
 ing cakupan $\lforall[x]$, saéngga $x$ ora
 !!{free for} $c$ ing $!A$.
 \end{proof}
+(Formula kang diuji ing ukara kapisan padha karo formula ing lemma, yaiku asil ngganti konstanta kanthi variabel.)
 
 \begin{lem}[Panggantèn Variabel Kaiket]
 \ollabel{lem:ChangeBdVar} 
@@ -254,7 +259,7 @@ $\Proves \lforall[x][\Subst{!A}{x}{c}] \equiv
 Miturut hipotesis, $y$ iku !!{free for} $c$ ing $!A$ lan $x$
 ora bebas ing $!A$. Mula, miturut \olref{lem:free-for}, $y$
 iku !!{free for} $x$ ing $\Subst{!A}{x}{c}$. Saka kéné,
-$\lforall[x][\Subst{!A}{x}{c} \lif \Subst{!A}{x}{c} \Subst{}{y}{x}]$
+$\lforall[x][\Subst{!A}{x}{c}] \lif \Subst{!A}{x}{c} \Subst{}{y}{x}$
 iku aksioma (\textbf{Ax1}). Amarga $x$ ora bebas ing $!A$,
 kita olèh $\Subst{!A}{x}{c} \Subst{}{y}{x} = \Subst{!A}{y}{c}$,
 mula
@@ -271,6 +276,7 @@ Téoréma Deduksi sapisan manèh mènèhi $\Proves
 Bukti kanggo $\Proves \lforall[y][\Subst{!A}{y}{c}] \lif \lforall[x]
 [\Subst{!A}{x}{c}]$ simètris, mula dudutané manut aturan Taut.
 \end{proof}
+(Ing aksioma instansiasi, kuantor universal mung nyakup sisih kiwa implikasi, dudu kabèh implikasi. Larik iki dicocogaké karo formula derivabilitas kang langsung sabanjuré.)
 
 \begin{thm}[Generalisasi Kuwat tumrap Konstanta]
 \ollabel{thm:StrongGen} 

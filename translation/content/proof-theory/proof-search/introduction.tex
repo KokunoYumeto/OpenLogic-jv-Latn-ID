@@ -11,43 +11,44 @@
 \olsection{Pambuka}
 
 Aksioma lan aturan inferènsi ing sistem !!{proof} kayata
-\Log{G3c} utawa \Log{N1i} nemtokaké wit sekuèn utawa
+\Log{G3c} utawa \Log{N1i} nemtokaké wit sekèn utawa
 !!{formula}s kang dianggep !!{proof}s bener. Yèn wis
-diwènèhi wit sekuèn utawa !!{formula}s kaya mangkono
+diwènèhi wit sekèn utawa !!{formula}s kaya mangkono
 (bokmanawa kanthi katerangan tambahan ngenani aturan kang
 ditrapaké ing saben langkah, utawa label kanggo asumsi
 lan aturan inferènsi kang mbusak asumsi iku), définisi
 aksioma lan aturan ngidini kita mriksa apa wit iku
 !!{proof} kang bener. Nanging, \emph{nemokaké}
-!!a{proof} tumrap sekuèn tartamtu, utawa tumrap
+!!a{proof} tumrap sekèn tartamtu, utawa tumrap
 !!{formula} tartamtu saka asumsi kang diwènèhaké,
 iku masalah liya kang lumrahé luwih angel. Masalah
 iki diarani \emph{panelusuran bukti}.
 
 Ana tata cara kang prasaja banget kanggo panelusuran bukti.
 !!{formula}s bisa dianggep rerangkéyan lambang saka
-alfabèt winates. Sekuèn lan wit sekuèn utawa !!{formula}s
+alfabèt winates. Sekèn lan wit sekèn utawa !!{formula}s
 uga bisa dianggep rerangkéyan !!{formula}s (bokmanawa
 nganggo kurung mligi kanggo nandhani percabangan wit).
 Aksioma lan aturan ngidini kita mriksa kanthi mekanis
 apa rerangkéyan lambang minangka !!{proof} kang bener.
 Mula kita bisa ngasilaké kanthi mekanis \emph{kabèh
-!!{proof}s kang mungkin lan bener}: ngasilaké kabèh
+!!{proof}s kang bisa ditindakaké lan bener}: ngasilaké kabèh
 rerangkéyan lambang saka alfabèt kang dipigunakaké
 kanggo makili !!{proof}s, banjur mriksa saben
 rerangkéyan calon apa makili !!{proof} kang bener.
 Tata cara prasaja iki ngasilaké kabèh !!{proof}s bener
-nganti nemokaké siji kang dadi !!{proof} tumrap sekuèn
+nganti nemokaké siji kang dadi !!{proof} tumrap sekèn
 kang diwènèhaké (utawa tumrap !!{formula} kang asumsi
-mbukaké kalebu ing asumsi kang diwènèhaké).
+kabukané kalebu ing asumsi kang diwènèhaké).
+Cathetan: lambang kang cacahé tanpa wates bisa diwakili nganggo kode indeks saka alfabèt winates. Enumerasi iki nganggep basa lan aturan kang efektif diwènèhaké; ora mbutuhaké dhaptar lambang primitif winates kanthi literal.
 
 Cara kang luwih becik yaiku cara lumrah nalika nggoleki
-!!a{proof} kanthi tangan: miwiti saka sekuèn pungkasan,
+!!a{proof} kanthi tangan: miwiti saka sekèn pungkasan,
 milih !!a{formula}, banjur ngetrapaké aturan inferènsi
 ``mundur'' kanggo ngasilaké premis siji utawa sawetara.
 Yèn premis-premis iku nduwèni !!{proof}s, premis mau
 bisa digabung karo inferènsi pungkasan dadi
-!!a{proof} tumrap sekuèn kang diwènèhaké. Cara kang
+!!a{proof} tumrap sekèn kang diwènèhaké. Cara kang
 padha, senajan luwih ruwet, bisa dienggo nggoleki
 !!a{proof} ing sistem deduksi alamiah.
 
@@ -63,7 +64,7 @@ ana (yaiku ora bakal klèru amarga pilihan langkah).
 
 Sawetara sistem !!{proof} luwih gampang digarap nganggo
 algoritma panelusuran bukti tinimbang sistem liyané.
-Ing sistem sekuèn, !!{main operator} saka
+Ing sistem sekèn, !!{main operator} saka
 !!a{formula}, lan panggonané ing sisih kiwa utawa
 tengen, nemtokaké aturan kang kudu ditrapaké mundur.
 Tuladhané, yèn arep nemokaké !!a{proof} tumrap
@@ -90,7 +91,7 @@ bisa nuwuhaké dalan buntu mengko, mula kudu bali menyang
 wiwitan lan milih $\Gamma_1$, $\Gamma_2$,
 $\Delta_1$, $\Delta_2$ kang béda. Yèn !!{formula}
 iku $!A \lor !B$, kita kudu milih salah siji saka
-loro kemungkinan \RightR{\lor}, kang ngasilaké
+loro kamungkinan \RightR{\lor}, kang ngasilaké
 salah siji premis $\Gamma \Sequent \Delta, !A$ utawa
 $\Gamma \Sequent \Delta, !B$. Pilihan kang salah
 uga bakal meksa kita bali menyang langkah sadurungé.
@@ -115,21 +116,21 @@ nuduhaké yèn nalika algoritma ora nemokaké
 !!a{proof}, ora ana !!{proof} kang bisa ana.
 Algoritma kang ora becik bisa gagal nemokaké bukti
 senajan buktiné ana. Tata cara prasaja mau ora nduwèni
-masalah iki, amarga mriksa kabèh !!{proof}s kang mungkin.
+masalah iki, amarga mriksa kabèh !!{proof}s kang bisa ditindakaké.
 Nanging algoritma panelusuran bukti diarepaké luwih
 éfisièn lan mung ngentèkaké gawé sakperluné.
 
 Gagasan pokok kanggo nuduhaké kasilé algoritma
 panelusuran bukti yaiku: yèn algoritma gagal, saka
-carané gagal kita bisa nuduhaké yèn sekuèn mau ora
-mungkin nduwèni !!a{proof}. Carané yaiku mbuktèkaké
-yèn sekuèn iku ora valid. Ing logika orde kapisan
-klasik, sekuèn $\Gamma \Sequent \Delta$ valid yèn
+carané gagal kita bisa nuduhaké yèn sekèn mau ora
+mungkin nduwèni !!a{proof}. Carané yaiku mbuktekaké
+yèn sekèn iku ora valid. Ing logika tataran kapisan
+klasik, sekèn $\Gamma \Sequent \Delta$ valid yèn
 saben !!{structure} ndadèkaké paling ora siji
 !!{formula} ing $\Gamma$ salah utawa paling ora
 siji !!{formula} ing~$\Delta$ bener. \Log{G3c}
-\emph{sahih}, yaiku mung !!{prove}s sekuèn kang valid.
-Iki dibuktèkaké kanthi induksi miturut !!{proof}s:
+\emph{sahih}, yaiku mung !!{prove}s sekèn kang valid.
+Iki dibuktekaké kanthi induksi miturut !!{proof}s:
 aksioma cetha valid, lan yèn premis aturan valid,
 konklusiné uga valid. Kanggo nuduhaké yèn algoritma
 panelusuran bukti mesthi kasil nalika bukti ana,
@@ -139,9 +140,9 @@ $\Gamma \Sequent \Delta$ gagal, kita bisa netepaké
 ing $\Gamma$ bener lan kabèh !!{formula}s ing~$\Delta$
 salah. Iki uga netepaké yèn \Log{G3c}
 \emph{lengkap}: yèn $\Gamma \Sequent \Delta$ valid,
-ana \Log{G3c}-!!{proof} tumrap sekuèn iku.
+ana \Log{G3c}-!!{proof} tumrap sekèn iku.
 Amarga saben panelusuran gagal nuduhaké yèn
 $\Gamma \Sequent \Delta$ ora valid, saben panelusuran
-tumrap sekuèn valid mesthi kasil.
+tumrap sekèn valid mesthi kasil.
 
 \end{document}

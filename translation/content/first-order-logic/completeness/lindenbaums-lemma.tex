@@ -27,7 +27,7 @@ inkonsistensi.
 
 \begin{lem}[Lemma Lindenbaum]
 \ollabel{lem:lindenbaum} Saben himpunan konsisten~$\Gamma$ ing
-basa~$\Lang{L}$ bisa diambakake dadi himpunan kang !!a{complete} lan
+basa~$\Lang{L}$ kang bisa dietung bisa diambakake dadi himpunan kang !!a{complete} lan
 konsisten~$\Gamma^*$.
 \end{lem}
 
@@ -44,6 +44,7 @@ enumerasi kabeh !!{sentence}s saka~$\Lang L$. Tetepna $\Gamma_0 =
 \end{cases}
 \]
 Tetepna $\Gamma^* = \bigcup_{n \geq 0} \Gamma_n$.
+Mula $\Gamma \subseteq \Gamma^*$.
 
 Saben $\Gamma_n$ konsisten: $\Gamma_0$ konsisten miturut definisi.
 Yen $\Gamma_{n+1} = \Gamma_n \cup \{!A_n\}$, iki amarga himpunan
@@ -76,12 +77,10 @@ $\Gamma_n \subseteq \Gamma_n$ (yen $i = n$). Kita entuk $\Gamma_i
 \subseteq \Gamma_{n+1}$ miturut transitivitas saka~$\subseteq$.
 
 Saka iki bisa didudut yen $\Gamma^*$ konsisten. Katrangane mangkene:
-upamana $\Gamma' \subseteq \Gamma^*$ winates. Cathetan koreksi sumber
-OLPL-046: yen subhimpunan winates iki kosong, konsistensine langsung;
-pilihan indeks paling gedhe ing ukara sabanjure mung kanggo perkara
-kang ora kosong. Saben $!B \in \Gamma'$ uga ana ing~$\Gamma_i$ kanggo
-sawijine~$i$. Upamana $n$ minangka sing paling gedhe ing antarane
-indeks-indeks kasebut. Amarga $\Gamma_i \subseteq \Gamma_n$ yen $i
+upamana $\Gamma' \subseteq \Gamma^*$ winates. Kanggo saben
+$!B \in \Gamma'$, pilih indeks $i$ kanthi $!B\in\Gamma_i$. Pilih
+$n$ minangka indeks paling gedhé, utawa pilih $n=0$ yèn subhimpunan iki kosong.
+Amarga $\Gamma_i \subseteq \Gamma_n$ yen $i
 \le n$, saben $!B \in \Gamma'$ uga $\in \Gamma_n$, yaiku, $\Gamma'
 \subseteq \Gamma_n$, lan $\Gamma_n$~konsisten. Dadi, saben subhimpunan
 winates $\Gamma' \subseteq \Gamma^*$ konsisten. Miturut

@@ -37,6 +37,7 @@ normal, lan wujud normal iku asil komputasiné.
 Modhèl prasaja iki jebul lengkap miturut Turing:
 saben fungsi rékursif parsial bisa dikomputasi
 nganggo tèrma ing kalkulus~$\lambd$.
+Cathetan: substitusi kalkulus lambda ora nangkep variabel bébas; jeneng variabel kaiket bisa diganti luwih dhisik.
 
 Haskell Curry lan William Howard kanthi mandhiri
 nemokaké pepadhan kang raket antarané deduksi alamiah
@@ -126,6 +127,7 @@ kang cocog karo kontraksi~$\beta$ ing tèrma lambda:
 (\lambd[\typeof{x}{!A}][N]M) \quad\redone\quad
 \Subst{N}{M}{x}.
 \]
+Cathetan istilah: aplikasi fungsi marang argumèn dibédakaké saka komposisi fungsi.
 
 Pepadhan kang padha uga lumaku antarané aturan
 $\land$ lan tipe ``prodhuk'', sarta antarané
@@ -147,7 +149,7 @@ mangkéné:
     bukti & tèrma \\
     asumsi & variabel \\
     asumsi kang dibusak & variabel kaiket \\
-    asumsi kang isih mbukak & variabel bébas \\
+    asumsi kang isih kabuka & variabel bébas \\
     $!A \lif !B$ & tipe fungsi \\
     $!A \land !B$ & tipe prodhuk \\
     $!A \lor !B$ & tipe gunggung \\

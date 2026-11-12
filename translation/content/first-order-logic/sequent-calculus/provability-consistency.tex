@@ -22,11 +22,11 @@ duwe peran ing bukti teorema kelengkapan.
 \end{prop}
 
 \begin{proof}
-Ana $\Gamma_0$ lan $\Gamma_1 \subseteq \Gamma$ kang winates saengga
-$\Log{LK}$ !!{derive}s $\Gamma_0 \Sequent !A$ lan $!A, \Gamma_1
-\Sequent \quad$. Upamana $\Log{LK}$-!!{derivation} saka $\Gamma_0
-\Sequent !A$ yaiku~$\pi_0$, lan $\Log{LK}$-!!{derivation} saka
-$\Gamma_1, !A \Sequent \quad$ yaiku~$\pi_1$. Banjur kita bisa !!{derive}
+Ana $\Gamma_0$ lan $\Gamma_1$ kang mènèhi !!{derivation}s
+$\pi_0$ kanggo $\Gamma_0 \Sequent !A$ lan $\pi_1$ kanggo
+$!A, \Gamma_1 \Sequent \quad$. Subhimpunan loro mau winates lan kalebu ing $\Gamma$.
+Pelemahan lan pertukaran kiwa bisa digunakaké kanggo mapanaké
+$!A$ ing pucuk kiwa premis kapindho. Banjur cut mènèhi
 \begin{prooftree}
 \AxiomC{}
 \RightLabel{$\pi_0$}
@@ -50,25 +50,27 @@ konsisten.
 \end{prop}
 
 \begin{proof}
-Sepisan, upamana $\Gamma \Proves !A$, yaiku ana
-!!a{derivation}~$\pi_0$ saka $\Gamma \Sequent !A$. Kanthi nambahake
-aturan $\LeftR{\lnot}$, kita entuk !!a{derivation} saka~$\lnot !A,
-\Gamma \Sequent \quad$, yaiku $\Gamma \cup \{\lnot !A\}$ ora
-konsisten.
+Sepisan, upamakna $\Gamma \Proves !A$. Ana !!a{derivation}
+$\pi_0$ kanggo $\Gamma_0 \Sequent !A$, kanthi $\Gamma_0$ subhimpunan
+winates saka $\Gamma$. Kanthi aturan $\LeftR{\lnot}$, kita entuk
+!!a{derivation} saka $\lnot !A, \Gamma_0 \Sequent \quad$.
+Mula $\Gamma \cup \{\lnot !A\}$ ora konsisten.
 
-Yen $\Gamma \cup \{\lnot !A\}$ ora konsisten, ana
-!!a{derivation}~$\pi_1$ saka $\lnot !A, \Gamma \Sequent \quad$.
-Iki !!a{derivation} saka $\Gamma \Sequent !A$:
+Yèn $\Gamma \cup \{\lnot !A\}$ ora konsisten, jupuken subhimpunan
+winates $\Gamma_1$ saka $\Gamma$ lan !!a{derivation} $\pi_1$ saka
+$\lnot !A, \Gamma_1 \Sequent \quad$ banjur sawisé pelemahan lan pertukaran kiwa
+yèn perlu. Wit iki mènèhi $\Gamma_1 \Sequent !A$.
 \begin{prooftree}
   \Axiom$!A \fCenter !A$
   \RightLabel{\RightR{\lnot}}
   \UnaryInf$\fCenter !A, \lnot !A$
   \AxiomC{}
   \RightLabel{$\pi_1$}
-  \Deduce$\lnot !A, \Gamma \fCenter$
+  \Deduce$\lnot !A, \Gamma_1 \fCenter$
   \RightLabel{\Cut}
-  \BinaryInf$\Gamma \fCenter !A$
+  \BinaryInf$\Gamma_1 \fCenter !A$
 \end{prooftree}
+Amarga $\Gamma_1 \subseteq \Gamma$, kita éntuk $\Gamma \Proves !A$.
 \end{proof}
 
 \begin{prob}
@@ -83,8 +85,9 @@ Buktekna yen $\Gamma \Proves \lnot !A$ yen lan mung yen $\Gamma \cup
 
 \begin{proof}
   Upamana $\Gamma \Proves !A$ lan $\lnot !A \in \Gamma$. Banjur ana
-  !!a{derivation}~$\pi$ saka sekuen $\Gamma_0 \Sequent !A$. Sekuen
-  $\lnot !A, \Gamma_0 \Sequent \quad$ uga bisa !!{derivable}:
+  !!a{derivation}~$\pi$ saka sekuen $\Gamma_0 \Sequent !A$, kanthi
+  $\Gamma_0$ subhimpunan winates saka $\Gamma$. Sekuen
+  $\Gamma_0, \lnot !A \Sequent \quad$ uga !!{derivable}:
   \begin{prooftree}
     \AxiomC{}
     \RightLabel{$\pi$}
@@ -110,7 +113,8 @@ Buktekna yen $\Gamma \Proves \lnot !A$ yen lan mung yen $\Gamma \cup
 Ana himpunan winates $\Gamma_0 \subseteq \Gamma$ lan $\Gamma_1
 \subseteq \Gamma$, sarta $\Log{LK}$-!!{derivation}s $\pi_0$ lan
 $\pi_1$ saka $!A, \Gamma_0 \Sequent \quad$ lan $\lnot !A, \Gamma_1
-\Sequent \quad$, kanthi urut. Banjur kita bisa !!{derive}
+\Sequent \quad$, kanthi urut. Pelemahan lan pertukaran kiwa njamin
+panggonané formula kapisan ing saben premis. Banjur kita bisa !!{derive}
 \begin{prooftree}
 \AxiomC{}
 \RightLabel{$\pi_0$}

@@ -23,7 +23,7 @@ $h_1$, $h_2$, $h_3$, \dots\@ Dhisik kita njlèntrèhaké pambanguné.
 Sabanjuré kita tuduhaké yèn fungsi iki ngebaki bidang, banjur
 yèn fungsi iki pancèn sawijining kurva.
 
-Daerah asil $h$ kita tetepaké kothak satuan, $\unitsquare$.
+Himpunan asil $h$ kita tetepaké kothak satuan, $\unitsquare$.
 Iki panyedhakan kapisan marang $h$, yaiku $h_1$:
 \begin{center}
 	\begin{tikzpicture}
@@ -36,10 +36,10 @@ Iki panyedhakan kapisan marang $h$, yaiku $h_1$:
 	\end{scope}
 	\end{tikzpicture}
 \end{center}
-Supaya gampang ngetutaké, kothak iki kita bagi nganggo kisi
+Supaya gampang ngetutaké, kothak iki kita pérang nganggo kisi
 $2 \times 2$. Kurvané bisa kita anggep diwiwiti saka seprapat
 kiwa ngisor, banjur menyang kiwa ndhuwur, tengen ndhuwur, lan
-pungkasané tengen ngisor. Iki tahap pambangunan kapindho, yaiku $h_2$:
+pungkasané tengen ngisor. Iki tataran pambangunan kapindho, yaiku $h_2$:
 \begin{center}
 	\begin{tikzpicture}
 	\draw[gray] (0pt, 0pt) rectangle (80pt, 80pt);
@@ -100,8 +100,8 @@ disambungaké marang wates kothak nganggo garis !!{colorC}.
 	\end{tikzpicture}
 \end{center}
 Saiki katon pola umum kanggo netepaké $h_{n+1}$ saka $h_n$.
-Pungkasané, kurva $h$ \emph{dhewe} kita tetepaké kanthi nimbang
-limit titik demi titik saka fungsi-fungsi $h_1$, $h_2$,
+Pungkasané, kurva $h$ \emph{dhéwé} kita tetepaké kanthi nimbang
+limit saben titik saka fungsi-fungsi $h_1$, $h_2$,
 \dots\@ Tegesé, kanggo saben $x \in \unitline$:
 \begin{align*}
 	h(x) &= \lim_{n \rightarrow \infty} h_n(x)
@@ -117,14 +117,15 @@ lan cetha yèn $h_n$ ngliwati saben petak kisi. Mula, saben titik
 ing $\unitsquare$ jaraké \emph{ora ngluwihi}
 $2^{(\frac{1}{2}-n)}$ saka sawatara titik ing $h_n$. Saiki, $h$ wis
 ditetepaké minangka limit saka fungsi-fungsi $h_1$, $h_2$,
-$h_3$, \dots\@ Sketsa iki banjur nganggep yèn wates paling gedhé
-jarak sawijining titik saka $h$ diwènèhaké déning:
+$h_3$, \dots\@ Gagasan sketsa iki yaiku nyedhaki wates jarak saka $h$ kanthi:
 \[
 \lim_{n \rightarrow \infty} 2^{(\frac{1}{2}-n)} = 0.
 \]
-Tegesé, saben titik ing $\unitsquare$ dianggep nduwèni jarak
+Ing sketsa iki, saben titik ing $\unitsquare$ nduwèni jarak
 $0$ saka~$h$. Kanthi intuisi iki, saben titik ing $\unitsquare$
 ana \emph{ing} kurva. Mula $h$ ngebaki bidang!{}
+(Argumèn fungsi ing limit iki kalebu interval satuan, dudu kothak satuan.)
+(Pambuktèn yèn kurva wates ngebaki bidang mbutuhaké kontrol parameterisasi lan limit. Saya cedhaké gambar marang saben titik waé durung cukup.)
 
 Isih perlu dituduhaké yèn $h$ pancèn sawijining \emph{kurva}.
 Kanggo kuwi, kita kudu netepaké pangertèné. Definisi modhèren
@@ -139,7 +140,7 @@ Kurva yaiku pemetaan kontinu saka $\unitline$ menyang $\Real^2$.
 Definisi iki cukup gampang dibayangaké: sawijining kurva iku
 pemetaan kang ``lancar'' saka garis baku menyang bidang $\Real^2$.
 Fungsi $h$ pancèn pemetaan saka $\unitline$ menyang $\Real^2$.
-Supaya dadi kurva, kita isih kudu mbuktèkaké yèn $h$ kontinu.
+Supaya dadi kurva, kita isih kudu mbuktekaké yèn $h$ kontinu.
 Kontinuitas wis kita tetepaké ing \olref[limits]{sec} nganggo
 notasi $\epsilon$/$\delta$. Katrangan ing ngisor iki mung
 nyedhiyakaké gambaran bab carané kurva nyedhaki saben titik ing
@@ -147,6 +148,7 @@ kothak: \emph{Yèn sawijining titik $p$ ing $\unitsquare$ lan
 tingkat katlitèn $\epsilon$ ditemtokaké, kita bisa nemu pérangan
 mbukak saka $\unitline$ saéngga kanggo saben $x$ ing pérangan
 iku, $h(x)$ ana ing sajroning jarak $\epsilon$ saka $p$.}
+(Glos kurva ateges pemetaan menyang bidang, ora kudu surjektif marang sakabèhing bidang. Iki cocog karo definisi formal ing ndhuwur.)
 
 Dadi, anggepen $p$ lan $\epsilon$ wis ditemtokaké. Iki padha
 karo nggambar bunderan kang puseuré $p$ lan radiusé $\epsilon$
@@ -172,5 +174,6 @@ menyang petak kisi kang padha, mung jaluré saya dawa lan
 mlengkung. Pangrembug iki nerangaké intuisi pambangunané,
 nanging durung dadi bukti kontinuitas fungsi iki kanthi syarat
 épsilon-dèlta ing saben titik domain.
+(Nemokaké sawatara interval kang asilé cedhak marang titik tujuan ora padha karo njamin kontinuitas ing saben titik domain. Sketsa kisi iki durung mbuktèkaké syarat kang kapindho.)
 
 \end{document}

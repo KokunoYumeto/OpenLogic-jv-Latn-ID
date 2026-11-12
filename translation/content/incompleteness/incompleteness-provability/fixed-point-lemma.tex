@@ -16,7 +16,7 @@ Lema titik tetep nyatakake yen kanggo saben !!{formula}~$!B(x)$, ana
 yen $\Th{T}$ ngembangake~$\Th{Q}$. Ing kasus ukara paradoks tukang
 ngapusi, kita kepengin $!A$ ekuivalen (bisa dibuktekake ing~$\Th{T}$)
 karo~``$\gn{!A}$ salah,'' yaiku pratelan yen $\Gn{!A}$ iku
-bilangan G\"odel saka !!{sentence} kang salah. Kanggo mangerteni
+wilangan G\"odel saka !!{sentence} kang salah. Kanggo mangerteni
 gagasan buktine, migunani yen dibandhingake karo andharan informal
 Quine ngenani~$!A$ minangka
 ``{}`ngasilake pratelan salah yen didhisiki petikane' ngasilake
@@ -34,16 +34,16 @@ didiagonalisasi kanggo ngasilake ukara paradoks iku dhewe wis
 ngemot diagonalisasi!{}
 
 Ing basa aritmetika, kita mbentuk petikan saka !!a{formula} kang
-nduweni siji variabel bebas kanthi ngitung bilangan G\"odele banjur
-nglebokake numeral standar kanggo bilangan G\"odel mau ing variabel
+nduweni siji variabel bebas kanthi ngitung wilangan G\"odele banjur
+nglebokake numeral baku kanggo wilangan G\"odel mau ing variabel
 bebas. Diagonalisasi saka~$!E(x)$ iku $!E(\num{n})$, ing ngendi
 $n = \Gn{!E(x)}$. (Wiwit saiki, kita cekak $\num{\Gn{!E(x)}}$ dadi
 $\gn{!E(x)}$.) Dadi yen $!B(x)$ iku ``iku salah,'' mula ``ngasilake
 pratelan salah yen didhisiki petikane'' dadi ``ngasilake pratelan
-salah yen ditrapake marang bilangan G\"odel saka diagonalisasine.''
+salah yen ditrapake marang wilangan G\"odel saka diagonalisasine.''
 Yen kita nduweni simbol~$\Obj{diag}$ kanggo fungsi $\fn{diag}(n)$ kang
-ngitung bilangan G\"odel saka diagonalisasi !!{formula} kang nduweni
-bilangan G\"odel~$n$, kita bisa nulis $!E(x)$ minangka
+ngitung wilangan G\"odel saka diagonalisasi !!{formula} kang nduweni
+wilangan G\"odel~$n$, kita bisa nulis $!E(x)$ minangka
 $!B(\Obj{diag}(x))$. Versi ukara paradoks saka Quine banjur dadi
 diagonalisasine, yaiku $!E(\gn{!E(x)})$ utawa
 $!B(\Obj{diag}(\gn{!B(\Obj{diag}(x))}))$. Mesthi wae, $!B(x)$ saiki
@@ -51,15 +51,15 @@ bisa dadi sipat liyane sembarang, lan konstruksi kang padha tetep
 lumaku. Kanggo teorema ora jangkep, kita pilih $!B(x)$ minangka
 ``$x$~ora !!{derivable} ing~$\Th{T}$.'' Mula $!E(x)$ dadi
 ``ngasilake !!a{sentence} kang ora !!{derivable} ing~$\Th{T}$
-yen ditrapake marang bilangan G\"odel saka diagonalisasine.''
+yen ditrapake marang wilangan G\"odel saka diagonalisasine.''
 
-Kanggo ngformalisasi iki ing~$\Th{T}$, kita kudu nemokake cara
-ngformalisasi $\fn{diag}$. Fungsi $\fn{diag}(n)$ komputabel, malah
-rekursif primitif: yen $n$ iku bilangan G\"odel saka
-formula~$!E(x)$, $\fn{diag}(n)$ ngasilake bilangan G\"odel
-saka~$!E(\gn{!E(x)})$. (Elinga, $\gn{!E(x)}$ iku numeral standar kanggo
-bilangan G\"odel saka~$!E(x)$, yaiku $\num{\Gn{!E(x)}}$). Yen
-$\Obj{diag}$ minangka simbol fungsi ing $\Th{T}$ kang merepresentasikake
+Kanggo ngrumusake kanthi formal iki ing~$\Th{T}$, kita kudu nemokake cara
+ngrumusake kanthi formal $\fn{diag}$. Fungsi $\fn{diag}(n)$ komputabel, malah
+rekursif primitif. Kanggo kode kang dudu formula aritmetika mawa variabel bebas kang dituju, bijine kita tetepake nol. Yen $n$ iku wilangan G\"odel saka
+formula~$!E(x)$, $\fn{diag}(n)$ ngasilake wilangan G\"odel
+saka~$!E(\gn{!E(x)})$. (Elinga, $\gn{!E(x)}$ iku numeral baku kanggo
+wilangan G\"odel saka~$!E(x)$, yaiku $\num{\Gn{!E(x)}}$). Yen
+$\Obj{diag}$ minangka simbol fungsi ing $\Th{T}$ kang makili
 fungsi $\fn{diag}$, kita bisa netepake $!A$ minangka formula
 $!B(\Obj{diag}(\gn{!B(\Obj{diag}(x))}))$. Gatekna yen
 \begin{align*}
@@ -77,7 +77,7 @@ definisi, iku~$!A$.
 
 Mesthi wae, $\Obj{diag}$ lumrahe dudu simbol fungsi saka
 $\Th{T}$, lan mesthi dudu saka~$\Th{Q}$. Nanging, amarga $\fn{diag}$
-komputabel, fungsi iki \emph{bisa direpresentasikake} ing~$\Th{Q}$
+komputabel, fungsi iki \emph{bisa diwakili} ing~$\Th{Q}$
 dening sawijining formula $!D_{\fn{diag}}(x,y)$. Mula tinimbang nulis
 $!B(\Obj{diag}(x))$, kita bisa nulis
 $\lexists[y][(!D_{\fn{diag}}(x,y) \land !B(y))]$. Saliyane panggantos
@@ -93,11 +93,11 @@ $\Th{Q} \Proves !A \liff !B(\gn{!A})$.
 
 
 \begin{proof}
-Kanggo $!B(x)$ kang diwenehake, tetepna $!E(x)$ minangka formula
+Kanggo $!B(x)$ kang diwenehake, pilih y seger kang ora muncul ing B lan ganti jeneng variabel kaiket ing formula representasi yen perlu, supaya kabeh substitusi bebas kanggo variabel kang dituju. Banjur tetepna $!E(x)$ minangka formula
 $\lexists[y][(!D_{\fn{diag}}(x,y) \land !B(y))]$ lan tetepna $!A$
 minangka diagonalisasine, yaiku formula $!E(\gn{!E(x)})$.
 
-Amarga $!D_{\fn{diag}}$ merepresentasikake $\fn{diag}$, lan
+Amarga $!D_{\fn{diag}}$ makili $\fn{diag}$, lan
 $\fn{diag}(\Gn{!E(x)}) = \Gn{!A}$, $\Th{Q}$ bisa !!{derive}
 \begin{align}
   & !D_{\fn{diag}}(\gn{!E(x)}, \gn{!A}) \ollabel{repdiag1} \\

@@ -116,7 +116,7 @@ $n = \Value{t_1}{N}$ lan $m = \Value{t_2}{N}$.
 Upamana $!A \ident t_1 = t_2$. Miturut
 \olref{lem:q-proves-clterm-id},
 $\Th{Q} \Proves \eq[t_1][\num n]$ lan
-$\Th{Q} \Proves \eq[t_2][\num m]$. Cathetan koreksi sumber OLPL-786: suku t-loro saiki disandhingake karo numeral m, yaiku bijine t-loro.
+$\Th{Q} \Proves \eq[t_2][\num m]$.
 Yen $n = m$, mula $\Th{Q} \Proves \eq[\num n][\num m]$ lan
 $\Th{Q} \Proves \eq[t_1][t_2]$ miturut transitivitas identitas.
 Yen $n \neq m$, mula $\Th{Q} \Proves \eq/[\num n][\num m]$,
@@ -136,7 +136,7 @@ Miturut transitivitas identitas, mula
 $\Th{Q} \Proves \eq[{\num k}' + t_1][t_2]$,
 mula $\Th{Q} \Proves \lexists[z][\eq[z' + t_1][t_2]]$.
 Miturut arah saka tengen menyang kiwa saka~$!Q_8$,
-$\Th{Q} \Proves t_1 < t_2$. Cathetan koreksi sumber OLPL-787: jumlah numeral saiki dievaluasi kanthi urutan penerus k ditambah numeral n. Substitusi kesamaan t-siji lan t-loro banjur menehi saksi Q8 tanpa nganggep komutativitas umum ing Q.
+$\Th{Q} \Proves t_1 < t_2$. Évaluasi jumlah numeral kanthi urutan penerus k banjur numeral n. Substitusi pepadhan kanggo loro suku menehi saksi kang dibutuhaké déning Q8.
 
 Kosok baline, upamana $\Sat/{N}{t_1 < t_2}$, yaiku $m \leq n$.
 %
@@ -153,7 +153,7 @@ Yen $m = n$, mula $\eq[z'][\Obj 0]$ miturut~$!Q_4$, kang menehi kontradiksi
 liwat~$!Q_2$. Yen $m < n$, mula
 $\eq[(z' + \num{n - m - 1})'][\Obj 0]$ miturut~$!Q_5$ maneh,
 kang menehi kontradiksi liwat~$!Q_2$.
-Dadi $\Th{Q} \Proves \lnot(t_1 < t_2)$. Cathetan koreksi sumber OLPL-788: kesamaan lan rujukan aksioma ing bukti saiki dibenerake. Q1 mbatalake penerus, Q4 nangani jumlah karo nol, lan Q2 menehi kontradiksi kanggo penerus kang padha nol.
+Dadi $\Th{Q} \Proves \lnot(t_1 < t_2)$. Q1 mbatalaké penerus. Q4 menehi jumlah karo nol, lan Q2 nyegah penerus padha karo nol.
 \end{proof}
 
 \begin{lem}
@@ -174,7 +174,7 @@ $k=\Value{t}{N}$. Mula
     ekivalensi bisa dibuktekake ing~$\Th{Q}$, amarga ora ana
     $x<\num 0$ miturut \olref[inc][req][min]{lem:less-zero}.
     Semono uga, kita bisa nganggep konjungsi kosong mung minangka
-    $\ltrue$, kang uga bisa dibuktekake ing~$\Th{Q}$. Cathetan koreksi sumber OLPL-789: tembung disjungsi ing kasus universal sumber saiki diganti konjungsi. Konjungsi kosong iku bener; disjungsi kosong kanggo kasus eksistensial iku salah.
+    $\ltrue$, kang uga bisa dibuktekake ing~$\Th{Q}$. Konjungsi kosong ing kasus universal bener. Disjungsi kosong ing kasus eksistensial salah.
     %
     Mula upamana $\Value{t}{N} = k+1$ kanggo sawijining
     wilangan natural~$k$. Miturut \olref{lem:q-proves-clterm-id}, kita
@@ -270,7 +270,7 @@ argumentasi kanggo kuantor eksistensial winates.
 bener ing $\Struct{N}$, ing ngendi $t$ iku suku katutup.
 !!{sentence} iki ekivalen ing $\Th{Q}$ karo
 $\bforall{x<t}{\lnot!A(x)}$, mula kita bisa nggunakake
-argumentasi kanggo kuantor universal winates. Cathetan panarikan OLPL-790: klaim lawas salah maca argumen makro minangka wates logis. Makro kuantor winates nyithak kuantor awujud prefiks; sanajan argumen kapindho mung tandha wiwitan, formula kang diterusake tetep ana ing cangkupan kuantor. Ora ana koreksi logis kang dibutuhake ing baris iki.
+argumentasi kanggo kuantor universal winates.
 %
 \item Pungkasan, upamana $\lnot !A$ bener ing $\Struct{N}$.
 Kasus kang isih ana mung nalika $!A$ atomik lan nalika

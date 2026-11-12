@@ -1,11 +1,13 @@
-# Translation decisions: start here
+# Tetembungan OpenLogic ing Basa Jawa
 
-This directory exposes the canonical OpenLogic translation-decision contract for the partial Javanese Latin edition.
+Indeks iki nyawisaké padanan basa Jawa aksara Latin kanggo tetembungan
+OpenLogic. Katrangané nyebut teges matematis, pilihan tembung lan bukti basa
+kang cocog.
 
-- `TRANSLATION_DECISIONS_FULL.md` is the complete readable index.
-- `PRIORITY_REVIEW.md` is the focused expert-review queue.
-- `DECISION_OCCURRENCES.csv` has one row per exact source-target locus.
-- `DECISIONS.json` is the normative edition data validated against `translation-decision.schema.json`.
-- `TRANSLATION_DECISION_QA.json` records deterministic validation and projection agreement.
+- [Indeks tetembungan](TRANSLATION_DECISIONS_FULL.md)
+- [Tetembungan kang prelu ditimbang](PRIORITY_REVIEW.md)
+- [Panggonan tetembungan ing sumber Inggris lan Jawa](DECISION_OCCURRENCES.csv)
+- [Data JSON kanggo tetembungan mawa panggonan ing sumber](DECISIONS.json)
 
-The edition is a formal written ngoko semantic translation in Latin script for Javanese readers in Indonesia. International mathematical notation remains unchanged. A deterministic Javanese-script projection may be useful as a separately tested companion, but the present evidence does not justify claiming a second independently translated semantic edition or splitting regional/register variants. Reader pages stay explicitly pending until a future accepted pagination contains the corresponding occurrence. The published v0.1.2 reader remains sealed.
+Saben larik ing CSV nuduhaké sawijining panggonan ing sumber LaTeX.
+Nomer kaca PDF kalebu yèn panggonané bisa ditemtokaké kanthi cetha.

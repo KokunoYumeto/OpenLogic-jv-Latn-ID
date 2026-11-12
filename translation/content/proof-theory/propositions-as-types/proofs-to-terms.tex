@@ -11,31 +11,33 @@
 \olsection{Ngowahi \usetoken{P}{derivation} dadi Terma Bukti}
 
 Proses ngowahi !!{proof}s dedhuksi alami dadi terma bukti, yaiku
-nerjemahake !!{proof}s ing~\Log{N2i} dadi !!{proof}s ing~\Log{tN2i},
+nerjemahaké !!{proof}s ing~\Log{N2i} dadi !!{proof}s ing~\Log{tN2i},
 prasaja banget. Kita mung nulis terma bukti ing sisih kiwa saben
-!!{formula} ing sisih tengen sekuen ing !!{derivation}, supaya
-ngasilake sekuen awujud $\Gamma \Sequent M : !A$. Kita banjur
-ngarani $M$ \emph{nyekseni}~$!A$ ing konteks~$\Gamma$. Terma bukti
-sing kudu ditulis ditemtokake sakabehe dening aturan \Log{tN2i}.
+!!{formula} ing sisih tengen sekèn ing !!{derivation}, supaya
+ngasilaké sekèn awujud $\Gamma \Sequent M : !A$. Kita banjur
+ngarani $M$ \emph{nyekseni}~$!A$ ing kontèks~$\Gamma$. Terma bukti
+sing kudu ditulis ditemtokake sakabèhé dening aturan \Log{tN2i}.
 
 \begin{prop}
-Saben !!{proof}~$\delta$ saka $\Gamma \Sequent !A$ ing \Log{N2i}
+Saben !!{proof}~$\delta$ proposisional saka $\Gamma \Sequent !A$ ing \Log{N2i}
 cocog karo !!a{proof}~$\delta'$ saka $\Gamma \Sequent N : !A$ ing
-\Log{tN2i}. Terma bukti $N$ ditemtokake kanthi tunggal dening~$\delta$.
+\Log{tN2i}. Terma bukti $N$ ditemtokaké kanthi tunggal dening~$\delta$
+nganti panggantos jeneng variabel kaiket.
 \end{prop}
+Cathetan cakupan: korespondhensi ing bab iki kanggo fragmen proposisional saka deduksi intuisionistik, nganggo konjungsi, disjungsi, implikasi lan falsitas. Aturan kuantor ora kalebu ing konstruktor lan aturan tipe kang ditetepaké ing kéné. Cathetan: keunikan terma ing kéné nganti panggantos jeneng variabel kaiket. Ing discharge kosong, binder seger bisa dipilih kanthi jeneng béda tanpa ngowahi terma nganti ekuivalènsi alfa. Konvènsi discharge kosong saka sistem N2 uga dienggo ing sistem mawa label terma.
 
 \begin{proof}
-Kita nggunakake induksi marang dhuwure~$\delta$. Yen $\delta$ iku
+Kita nggunakake induksi marang dhuwuré~$\delta$. Yèn $\delta$ iku
 aksioma $x:!A \Sequent !A$, $\delta'$ iku aksioma~$x:!A \Sequent
-x:!A$. Yen $\delta$ dipungkasi kanthi aturan inferensi, hipotesis
+x:!A$. Yèn $\delta$ pungkasané kanthi aturan inferènsi, hipotesis
 induksi menehi terma bukti kanggo saben premis, lan !!{proof}s
-\Log{tN2i} saka sekuen sing ngandhut terma bukti kasebut lan cocog
-karo saben premis. Kita ngetrapake aturan \Log{tN2i} sing cocog;
-terma buktine ditemtokake dening aturan inferensi \Log{tN2i} kasebut.
+\Log{tN2i} saka sekèn sing ngandhut terma bukti kasebut lan cocog
+karo saben premis. Kita ngetrapaké aturan \Log{tN2i} sing cocog;
+terma buktine ditemtokake dening aturan inferènsi \Log{tN2i} kasebut.
 \end{proof}
 
 \begin{ex}
-  Gatekna !!{proof} prasaja banget ing \Log{N1i} saka $(!A \land !B)
+  Gatèkna !!{proof} prasaja banget ing \Log{N1i} saka $(!A \land !B)
   \lif (!B \land !A)$:
   \[
   \AxiomC{$\Discharge{!A\land !B}{x}$}
@@ -50,7 +52,7 @@ terma buktine ditemtokake dening aturan inferensi \Log{tN2i} kasebut.
   \UnaryInfC{$(!A \land !B) \lif (!B \land !A)$}
   \DisplayProof
   \]
-  Ing \Log{N2i}, wujude kaya mangkene:
+  Ing \Log{N2i}, wujude kaya mangkéné:
   \[
   \Axiom$x : !A\land !B \fCenter !A\land !B$
   \RightLabel{\Elim\land[2]}
@@ -65,13 +67,13 @@ terma buktine ditemtokake dening aturan inferensi \Log{tN2i} kasebut.
   \DisplayProof
   \]
   Kita masang terma bukti saka ndhuwur menyang ngisor. Terma bukti
-  kanggo aksioma padha karo variabel ing konteks, yaiku~$x$.
+  kanggo aksioma padha karo variabel ing kontèks, yaiku~$x$.
   Terma bukti sing digandhengake karo $\Elim\land[i]$ banjur
   ditemtokake minangka $\proj{2}{x}$ lan~$\proj{1}{x}$.
-  Nalika ngetrapake \Intro{\land}, kita nggabungake rong terma
+  Nalika ngetrapaké \Intro{\land}, kita nggabungake rong terma
   bukti kasebut: $\pair{\proj{2}{x}}{\proj{1}{x}}$.
-  Pungkasan, aturan \Intro{\lif} ngetrapake abstraksi $\lambd$,
-  ngiket~$x$ lan nyathet yen $x$ menehi label asumsi~$!A \land
+  Pungkasan, aturan \Intro{\lif} ngetrapaké abstraksi $\lambd$,
+  ngiket~$x$ lan nyathet yèn $x$ menehi label asumsi~$!A \land
   !B$: $\lambd[\typeof{x}{!A \land
   !B}][\pair{\proj{2}{x}}{\proj{1}{x}}]$.
   Mula !!{proof} ing \Log{tN2i} iku:

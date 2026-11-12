@@ -22,11 +22,8 @@ Kita miwiti kanthi nulis asumsi kang cocog ing pucuk
     just = \TAss]
 \end{oltableau}
 
-Mung ana siji asumsi, mula mung ana siji !!{signed formula} kang bisa
-dikenani aturan. (Kanggo saben !!{signed formula}, mesthi ana paling
-akeh siji aturan kang bisa ditrapake: yaiku aturan kanggo tandha lan
-!!{main operator} saka !!{sentence} kang cocog.) Ing kasus iki, kita
-kudu ngetrapake $\TRule{\False}{\lif}$.
+Mung ana siji asumsi. Aturan logis kang cocog karo tandha $\False$ lan !!{main operator}~$\lif$
+yaiku $\TRule{\False}{\lif}$. Kita trapaké marang asumsi iku.
 \begin{oltableau}
   [\sFmla{\False}{(\formula{A} \land \formula{B}) \lif \formula{A}},
     checked, just = \TAss
@@ -36,15 +33,12 @@ kudu ngetrapake $\TRule{\False}{\lif}$.
     ]
   ]
 \end{oltableau}
-Kanggo nglacak !!{signed formula}s kang wis dikenani aturan kang
-cocog, kita nulis tandha centhang ing jejere ukara. Nanging,
-\emph{mung} tulisen tandha centhang yen aturan wis ditrapake ing kabeh
-cabang bukak. Sawise aturan kang cocog wis ditrapake marang
-!!a{signed formula} ing saben cabang bukak, kita ora perlu bali lan ngetrapake
-aturan iku maneh. Ing kasus iki, mung ana siji cabang, mula aturan
-mung kudu ditrapake sapisan. (Tandha centhang mung piranti kanggo
-nggampangake pambangunan tableau lan dudu bagean resmi saka sintaksis
-tableau.)
+Kanggo nglacak panrapan aturan proposisional, wènèhana tandha
+centhang ing jejere !!a{signed formula} yèn aturan kang cocog wis
+ditrapaké ing saben cabang bukak kang ngemot formula iku. Panrapan
+aturan proposisional marang formula iku ora perlu dibalèni ing
+cabang kang padha. Ing conto iki mung ana siji cabang, mula cukup
+sapisan. Tandha iki mung kanggo nggampangaké pambangunan tableau.
 
 Ana siji !!{signed formula} anyar kang bisa dikenani aturan, yaiku
 $\sFmla{\True}{!A \land !B}$ ing larik~$2$. Panrapan aturan
@@ -93,9 +87,8 @@ kanggo ngasilake:
   ]
 \end{oltableau}
 Saiki kita bisa milih ngetrapake~$\TRule{\True}{\lor}$ marang
-larik~$2$ utawa $\TRule{\False}{\lif}$ marang larik~$3$. Urutan kang
-dipilih sejatine ora wigati, angger aturan kang cocog kanggo saben
-!!{signed formula} ditrapake ing saben cabang. Ayo milih kang kapisan.
+larik~$2$ utawa $\TRule{\False}{\lif}$ marang larik~$3$.
+Ing conto iki, kita bisa miwiti saka salah siji saka rong aturan iku. Kita pilih kang kapisan.
 Aturan $\TRule{\True}{\lor}$ ngidini !!{tableau} nyabang, lan rong
 kesimpulan aturan dadi !!{signed formula}s anyar kang ditambahake ing
 rong cabang anyar. Asile yaiku:
@@ -172,10 +165,9 @@ ngasilake~$\sFmla{\False}{!A}$ lan nutup cabang kiwa:
 \end{ex}
 
 \begin{ex}
-Kita bisa menehi !!{tableau}s kanggo sembarang cacah !!{signed formula}s
-minangka asumsi. Kerep uga perlu ngetrapake luwih saka siji aturan
-kang ngidini panyabangan; lan umume !!a{tableau} bisa nduweni sembarang
-cacah cabang. Tuladhane, gatekna !!a{tableau} kanggo
+Kita bisa miwiti tableau nganggo dhaptar winates kang isiné saora-orané siji
+asumsi. Yèn aturan pamisah cabang ditrapaké bola-bali, tableau bisa
+nduwèni luwih saka rong cabang. Tuladhane, gatekna !!a{tableau} kanggo
 $\{\sFmla{\True}{!A \lor (!B \land !C)}, \sFmla{\False}{(!A \lor !B) \land (!A
   \lor !C)}\}$. Kita miwiti kanthi ngetrapake $\TRule{\True}{\lor}$
 marang asumsi kapisan:
@@ -215,7 +207,7 @@ menehi tandha centhang marang larik~$2$:
   ]
 \end{oltableau}
 Saiki kita bisa ngetrapake $\TRule{\False}{\lor}$ marang kabeh cabang
-kang ngemot $!A \lor !B$:
+kang ngemot $\sFmla{\False}{!A \lor !B}$:
 \begin{oltableau}
   [\sFmla{\True}{\formula{A} \lor (\formula{B} \land \formula{C})},
     just=\TAss, checked
@@ -248,7 +240,7 @@ kang ngemot $!A \lor !B$:
   ]
 \end{oltableau}
 Cabang paling kiwa saiki katutup. Saiki ayo ngetrapake
-$\TRule{\False}{\lor}$ marang $!A \lor !C$:
+$\TRule{\False}{\lor}$ marang $\sFmla{\False}{!A \lor !C}$:
 \begin{oltableau}
   [\sFmla{\True}{\formula{A} \lor (\formula{B} \land \formula{C})},
     just=\TAss, checked
@@ -429,11 +421,7 @@ Wenehana !!{tableau}s katutup kanggo perkara-perkara iki:
 \end{prob}
 
 \begin{prob}
-Wenehana !!{tableau}s katutup kanggo perkara-perkara iki. Cathetan
-koreksi sumber OLPL-015: butir kaping sanga ngemot rong ukara mawa
-tandha bener, nanging sumber Inggris nyelehake koma lan ukara kapindho
-ing argumen siji; argumen kasebut dipisah supaya cocog karo definisi
-formula mawa tandha lan ancas panutupan.
+Wenehana !!{tableau}s katutup kanggo perkara-perkara iki:
 \begin{enumerate}
 \item $\sFmla{\True}{(!A \lor !B) \lif !C}, \sFmla{\False}{!A \lif !C}$.
 \item $\sFmla{\True}{(!A \lif !C) \land (!B \lif !C)}, \sFmla{\False}{(!A \lor !B) \lif !C}$.

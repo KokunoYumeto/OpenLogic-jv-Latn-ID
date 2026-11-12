@@ -10,8 +10,8 @@
 
 \olsection{Nerjemahaké saka \Log{G2i} menyang \Log{N2i}}
 
-Antesèden sekuèn ing \Log{G2i} iku multihimpunan~$\Gamma$
-saka !!{formula}s, déné antesèden sekuèn ing \Log{N2i} iku
+Antesèden sekèn ing \Log{G2i} iku multihimpunan~$\Gamma$
+saka !!{formula}s, déné antesèden sekèn ing \Log{N2i} iku
 himpunan~$\Gamma'$ saka formula mawa label, kanthi saben label
 katon mung sapisan. Himpunan~$\Gamma'$ saka !!{formula}s mawa label
 diarani \emph{cocog karo} multihimpunan~$\Gamma$ yèn, kanggo
@@ -22,17 +22,18 @@ ing~$\Gamma$.
 \begin{prop}\ollabel{prop:G2i-to-N2i}
 Yèn $\Log{G2i} + \Cut \Proves \Gamma \Sequent \Delta$,
 banjur $\Log{N2i} \Proves \Gamma' \Sequent !C$,
-kanthi $!C \ident \lfalse$ yèn $\Delta$ kosong, déné yèn
-$\Delta = \{!A\}$, konklusiné formula tunggal mau, lan
+kanthi $!C \ident \lfalse$ yèn $\Delta$ kosong, déné $!C \ident !A$ yèn
+$\Delta = \{!A\}$, lan
 $\Gamma'$ cocog karo~$\Gamma$.
 \end{prop}
+(C padha karo formula A yèn suksèden isi. Yèn suksèden kosong, C iku falsitas.)
 
 \begin{proof}
   Kita tuduhaké yèn $\pi$ iku !!a{proof} kanggo
   $\Gamma \Sequent \Delta$ ing \Log{G2i} ditambah aturan~\Cut,
   banjur ana~$\Gamma'$ kang cocog karo~$\Gamma$ lan
   !!a{proof}~$\delta$ kanggo~$\Gamma' \Sequent !C$ ing~\Log{N2i}.
-  Iki dibuktèkaké kanthi induksi marang $n = \pheight{\pi}$.
+  Iki dibuktekaké kanthi induksi marang $n = \pheight{\pi}$.
 
   Yèn $n = 0$, banjur $\pi$ iku aksioma. Yèn iku aksioma
   $\lfalse \Sequent \quad$, $\delta$ iku aksioma
@@ -42,7 +43,7 @@ $\Gamma'$ cocog karo~$\Gamma$.
   banjur $\delta$ iku $x: !A \Sequent !A$.
   
   Yèn $n>0$, $\pi$ pungkasané aturan~$R$. Hipotesis induksi
-  njamin anané !!{proof}s sekuèn kang cocog karo premis-premis
+  njamin anané !!{proof}s sekèn kang cocog karo premis-premis
   aturan mau ing~\Log{N2i}. Kita bisa nganggep kabèh label
   pambusakan ing bukti-bukti mau béda-béda, lan label $x$
   mung katon ing sadhuwuré inferènsi kang mbusak label iku,
@@ -93,10 +94,10 @@ $\Gamma'$ cocog karo~$\Gamma$.
     kanggo~$\Pi, \Gamma' \Sequent !C$, kanthi $\Pi \subseteq \{x : !A,
     y:!A\}$. Yèn $\Pi = \{x : !A, y:!A\}$, ganti kabèh
     !!{formula}s mawa label $y:!A$ ing~$\delta_1$ dadi $x:!A$.
-    Amarga $x$~katon ing kontèks sekuèn pungkasan saka~$\delta_1$,
+    Amarga $x$~katon ing kontèks sekèn pungkasan saka~$\delta_1$,
     kita bisa nganggep ora ana inferènsi ing~$\delta_1$ kang
     mbusak !!a{formula} kang wujudé~$x:!B$; tegesé, ora ana
-    $x:!B$ ing sisih kiwa sekuèn ing~$\delta_1$ kang aktif.
+    $x:!B$ ing sisih kiwa sekèn ing~$\delta_1$ kang aktif.
     Mula asilé isih !!a{proof} ing~\Log{N2i}.
     \item Yèn $R$ iku $\RightR{\lif}$, $\pi$ pungkasané
     \[
@@ -132,7 +133,7 @@ $\Gamma'$ cocog karo~$\Gamma$.
     label formula lan label pambusakan ing~$\delta_1$ supaya
     ora ana label kang katon ing $\delta_1$ lan~$\delta_2$
     bebarengan. Banjur $\Gamma_1' \cup \Gamma_2'$ cocog karo
-    $\Gamma_1 \cup \Gamma_2$. Amarga $x:!B$ katon ing sekuèn
+    $\Gamma_1 \cup \Gamma_2$. Amarga $x:!B$ katon ing sekèn
     pungkasan saka~$\delta_2$, $x:!B$ ora bisa aktif ing inferènsi
     mawa label pambusakan~$x$ ing~$\delta_2$. Ganti saben aksioma
     $x:!B \Sequent !B$ ing~$\delta_2$ nganggo !!{proof}~$\delta_3$
@@ -142,11 +143,12 @@ $\Gamma'$ cocog karo~$\Gamma$.
     \RightLabel{$\delta_1$}
     \Deduce$\Gamma_1' \fCenter !A$
     \RightLabel{\Elim{\lif}}
-    \BinaryInf$x: !A \lif !B \fCenter !B$
+    \BinaryInf$x: !A \lif !B, \Gamma_1' \fCenter !B$
     \DisplayProof
     \]
-    sarta saben kemunculan $x:!B$ ing~$\delta_2$ nganggo
-    $x:!A \lif !B$. Asilé $\Subst{\delta_2}{\delta_3}{x:!B}$
+    sarta saben kedadéan $x:!B$ ing~$\delta_2$ nganggo
+    $x:!A \lif !B$, lan tambahaké kontèks saka bukti kang disisipaké
+    marang saben sekèn turunan saka aksioma kang diganti. Asilé $\Subst{\delta_2}{\delta_3}{x:!B}$
     iku !!a{proof} kanggo
     $x:!A \lif !B, \Gamma_1', \Gamma_2' \Sequent !C$.
     \item Yèn $R$ iku \RightR{\land}, $\pi$ pungkasané
@@ -168,7 +170,7 @@ $\Gamma'$ cocog karo~$\Gamma$.
     label kang katon ing $\delta_1$ lan $\delta_2$ bebarengan.
     Banjur $\Gamma_1' \cup \Gamma_2'$ cocog karo
     $\Gamma_1 \cup \Gamma_2$. Kita olèh !!a{proof}~$\delta$
-    kanthi ngetrapaké $\Intro{\land}$ marang sekuèn pungkasan
+    kanthi ngetrapaké $\Intro{\land}$ marang sekèn pungkasan
     saka $\delta_1$ lan~$\delta_2$.
     \item Yèn $R$ iku $\LeftR{\land}$, $\pi$ pungkasané,
     tuladhané,
@@ -184,7 +186,7 @@ $\Gamma'$ cocog karo~$\Gamma$.
     $x: !A, \Gamma' \Sequent !C$ utawa $\Gamma' \Sequent !C$,
     kanthi $\Gamma'$ cocog karo~$\Gamma$. Ing kasus kapindho,
     bukti~$\delta_1$ bisa langsung dadi~$\delta$. Ing kasus kapisan,
-    amarga $x:!A$ katon ing sekuèn pungkasan, $x:!A$ ora aktif
+    amarga $x:!A$ katon ing sekèn pungkasan, $x:!A$ ora aktif
     ing inferènsi mawa label pambusakan~$x$ ing~$\delta_1$.
     Ganti saben aksioma $x:!A \Sequent !A$ nganggo
     !!{proof}~$\delta_2$
@@ -194,7 +196,7 @@ $\Gamma'$ cocog karo~$\Gamma$.
     \UnaryInf$x: !A \land !B \fCenter !A$
     \DisplayProof
     \]
-    lan ganti saben kemunculan $x:!A$ dadi $x:!A \land !B$,
+    lan ganti saben kedadéan $x:!A$ dadi $x:!A \land !B$,
     yaiku mbentuk $\Subst{\delta_1}{\delta_2}{x:!A}$.
     Iki !!a{proof} kanggo $x:!A \land !B, \Gamma' \Sequent !C$.
     \item Yèn $R$ iku \Cut, $\pi$ pungkasané
@@ -215,9 +217,10 @@ $\Gamma'$ cocog karo~$\Gamma$.
     $\Gamma_2' \Sequent !C$. Ing kasus kapindho,
     pilih $\delta$ dadi~$\delta_2$. Yèn ora, ganti saben aksioma
     $x:!A \Sequent !A$ ing $\delta_2$ nganggo $\delta_1$
-    supaya ngolèhké~$\delta$ minangka !!{proof}~$\Subst{\delta_2}{\delta_1}{x:!A}$
+    supaya ngolèhaké~$\delta$ minangka !!{proof}~$\Subst{\delta_2}{\delta_1}{x:!A}$
     kanggo $\Gamma_1', \Gamma_2' \Sequent !C$.
   \end{enumerate}
 \end{proof}
+(Label aturan kang nambah formula ing kiwa yaiku weakening kiwa. Gantenana label ing bukti N2 kang wis diterjemahaké. Bukti premis banjur ditambahi kanggo mbentuk bukti anyar. Premis kapindho introduksi konjungsi pungkasané B. Pangowahan label ditrapaké ing bukti N2. Eliminasi implikasi njaga kontèks bukti delta1. Tambahna kontèks mau marang sekèn turunan saka aksioma kang diganti.)
 
 \end{document}

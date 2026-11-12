@@ -19,8 +19,8 @@ kasahihan iku jinis sipat kaslametan kang dijamin kanggo sistem
 !!{derivation}. Gumantung marang sipat teoretis-bukti kang dirembug,
 kita arep ngerti, contone, yen
 \begin{enumerate}
-\item saben $!A$ kang !!{derivable} iku \iftag{FOL}{valid}{tautologi};
-\item yen !!a{sentence} bisa !!{derivable} saka sawetara liyane, ukara
+\item saben $!A$ kang !!{derivable} tanpa premis iku \iftag{FOL}{valid}{tautologi};
+\item yen !!a{sentence} !!{derivable} saka sawetara liyane, ukara
   kasebut uga dadi akibat saka ukara-ukara mau;
 \item yen sawijining himpunan !!{sentence}s ora konsisten, himpunan iku
   ora bisa dicukupi.
@@ -36,7 +36,8 @@ mbuktekake (1)--(3) ing ndhuwur mbutuhake bukti ngenani sipat semantis
 saka sekuen kang !!{derivable}. Kaping pisan kita bakal netepake apa
 tegese sekuen kang \emph{valid}, banjur nuduhake yen saben sekuen kang
 !!{derivable} iku valid. Sawise iku, (1)--(3) dadi korolari saka asil
-iki.
+iki. \iftag{FOL}{Aturan tambahan kanggo identitas dirembug ing
+\olref[fol][seq][sid]{sec}.}{}
 \end{explain}
 
 \begin{defn}
@@ -66,6 +67,9 @@ wiwitan. Saben sekuen wiwitan $!A \Sequent !A$ mesthi valid, amarga
 kanggo saben \iftag{FOL}{$\Struct M$}{$\pAssign{v}$}, salah siji
 $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!A}$ utawa
 $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$.
+\iftag{prvTrue}{Sekuen $\quad\Sequent \ltrue$ uga valid amarga $\ltrue$ tansah bener.}{}
+\iftag{prvFalse}{Sekuen $\lfalse\Sequent \quad$ uga valid amarga
+$\lfalse$ tansah salah.}{}
 
 Yen cacah inferensine luwih saka~0, kita mbedakake kasus miturut jinis
 inferensi kang paling ngisor. Miturut hipotesis induksi, kita bisa
@@ -98,14 +102,13 @@ premis.
   $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$ utawa ana $!C \in \Delta$
   saengga $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$.
   
-  Yen $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$ kanggo sawetara $!C \in
-  \Gamma$, mula $!C \in \Theta$ uga amarga $\Theta = !A, \Gamma$, dadi
-  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$ kanggo sawetara $!C \in
-  \Theta$. Semono uga, yen
-  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$ kanggo sawetara $!C \in
-  \Delta$, amarga $!C \in \Xi$, mula
-  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$ kanggo sawetara $!C \in \Xi$.
-  Akibate, $\Theta \Sequent \Xi$ iku valid.
+  Kanggo rong wujud pelemahan, saben anggota $\Gamma$ tetep ana ing
+  $\Theta$, lan saben anggota $\Delta$ tetep ana ing $\Xi$.
+  Mula ukara salah ing anteseden utawa ukara bener ing sukseden
+  kang nyukupi premis uga nyukupi kesimpulan.
+\item Inferensi pungkasan iku kontraksi utawa pertukaran.
+  Kontraksi lan pertukaran njaga ukara kang muncul ing saben sisih.
+  Mula saben interpretasi kang nyukupi premis uga nyukupi kesimpulan.
 \item Inferensi pungkasan iku \LeftR{\lnot}: Banjur premis inferensi
   pungkasan iku $\Gamma \Sequent \Delta, !A$ lan kesimpulane
   $\lnot !A, \Gamma \Sequent \Delta$, yaiku !!{derivation} kasebut
@@ -163,10 +166,7 @@ premis.
   \iftag{FOL}{$\Struct M$}{$\pAssign{v}$} nyukupi $!A \land !B,
   \Gamma \Sequent \Delta$. Amarga
   \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} dipilih sawenang-wenang,
-  $!A \land !B, \Gamma \Sequent \Delta$ iku valid. Cathetan koreksi
-  sumber OLPL-006: ukara Inggris nyebut sekuen premis dhewe minangka
-  kesimpulan pungkasan, nanging struktur lan kabeh langkah ing paragraf
-  iki netepake kesimpulan konjungsi kang dibalekake ing kene. Kasus nalika
+  $!A \land !B, \Gamma \Sequent \Delta$ iku valid. Kasus nalika
   $!A \land !B$ diinferensi saka $!B$ ditangani kanthi cara padha,
   kanthi ngganti $!A$ dadi $!B$.
 \item Inferensi pungkasan iku \RightR{\lor}: Ana rong varian: $!A
@@ -212,7 +212,7 @@ premis.
   $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!B}$, (c)
   $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$ kanggo sawetara~$~!C \in
   \Gamma$, utawa (d) $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$ kanggo
-  sawetara $!C \in \Delta$. Ing kasus (a) lan (b),
+  sawetara $!C \in \Delta$. Ing kasus (a) utawa (b),
   $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A \lif !B}$, mula ana $!C \in
   \Delta, !A \lif !B$ saengga
   $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$. Ing kasus (c), kanggo sawetara
@@ -279,11 +279,9 @@ premis.
   kanggo saben $!C \in \Delta$, $\Sat/{M'}{!C}$. Nanging premis
   kasebut valid, mula $\Sat{M'}{!A(a)}$. Miturut
   \olref[syn][ass]{prop:sentence-sat-true},
-  $\Sat{M'}{!A(a)}[s]$, amarga $!A(a)$ iku ukara. Saiki
-  $\varAssign{s}{s}{x}$ lan $s(x) = \Value{a}{M'}[s]$, amarga kita
-  wis netepake $\Struct{M'}$ kanthi cara iki. Mula
-  \olref[syn][ext]{prop:ext-formulas} bisa ditrapake, lan kita entuk
-  $\Sat{M'}{!A(x)}[s]$. Amarga $a$ ora muncul ing~$!A(x)$, miturut
+  $\Sat{M'}{!A(a)}[s]$, amarga $!A(a)$ iku ukara. Amarga $s(x)=\Value{a}{M'}[s]$,
+  ngganti nilai $x$ nganggo $\Value{a}{M'}[s]$ ora ngowahi penetapan $s$.
+  Mula \olref[syn][ext]{prop:ext-formulas} mènèhi $\Sat{M'}{!A(x)}[s]$. Amarga $a$ ora muncul ing~$!A(x)$, miturut
   \olref[syn][ext]{prop:extensionality}, $\Sat{M}{!A(x)}[s]$. Amarga
   $s$ dipilih sawenang-wenang, kita wis ngrampungake bukti yen
   $\Sat{M}{!A(x)}[s]$ kanggo kabeh penetapan variabel.
@@ -311,10 +309,7 @@ Saiki kita nimbang inferensi-inferensi kang bisa duwe rong premis.
   nyukupi $\Gamma \Sequent \Delta$. Nanging banjur uga nyukupi
   kesimpulane. Ing kasus (b), supaya
   \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} nyukupi premis tengen, kudu
-  nyukupi $\Pi \Sequent \Lambda$. Cathetan koreksi sumber OLPL-007:
-  formula Inggris nggunakake prabédan himpunan ing kene, nanging
-  premis tengen ing wit lan argumentasi validitas mbutuhake sekuen iki.
-  Maneh, \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} nyukupi kesimpulane.
+  nyukupi $\Pi \Sequent \Lambda$. Mula kesimpulan uga dicukupi.
 \item Inferensi pungkasan iku \RightR{\land}. Banjur $\pi$ mungkasi
   nganggo
   \begin{prooftree}
@@ -329,7 +324,7 @@ Saiki kita nimbang inferensi-inferensi kang bisa duwe rong premis.
     M$}{!!a{valuation}~$\pAssign{v}$}. Yen
   \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} nyukupi $\Gamma \Sequent
   \Delta$, bukti kita rampung. Mula upamana ora nyukupi sekuen
-  kasebut. Amarga $\Gamma \fCenter \Delta, !A$ valid miturut
+  kasebut. Amarga $\Gamma \Sequent \Delta, !A$ valid miturut
   hipotesis induksi, $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$. Semono uga,
   amarga $\Gamma \Sequent \Delta, !B$ iku valid,
   $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!B}$. Nanging banjur
@@ -379,6 +374,11 @@ Jangkepana bukti \olref[pl][seq][sou]{thm:sequent-soundness}.
 \ollabel{cor:weak-soundness}
 Yen $\Proves !A$, mula $!A$ iku \iftag{FOL}{valid}{tautologi}.
 \end{cor}
+\begin{proof}
+Sekuen $\quad\Sequent !A$ !!{derivable}, mula valid miturut
+\olref{thm:sequent-soundness}. Amarga anteseden kosong, saben
+\iftag{FOL}{struktur}{valuasi} nyukupi $!A$.
+\end{proof}
 
 \begin{cor}
 \ollabel{cor:entailment-soundness}

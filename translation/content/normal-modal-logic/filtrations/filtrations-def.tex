@@ -12,7 +12,7 @@
 
 Tinimbang netepake ``filtrasi tunggal'' saka $\mModel{M}$ liwat
 $\Gamma$, kita netepake kapan model~$\mModel{M^*}$ dianggep filtrasi
-saka~$\mModel{M}$. Kabeh filtrasi nduweni himpunan jagad~$W^*$ kang
+saka~$\mModel{M}$. Kabeh filtrasi nduweni himpunan donya~$W^*$ kang
 padha lan valuasi~$V^*$ kang padha. Nanging filtrasi kang beda bisa
 nduweni relasi aksesibilitas~$R^*$ kang beda. Supaya dianggep filtrasi,
 $R^*$ kudu nyukupi sawetara sarat. Sarat-sarat iku persis kang
@@ -43,11 +43,11 @@ anggere $!A \in \Gamma$.
   \end{enumerate}
 \end{defn}
 
-Penting kanggo nggatekake teges $V^*(p)$: himpunan kelas
-ekuivalensi~$[w]$ saka kabeh jagad~$w$ kang ndadekake $p$ bener
+Wigati kanggo nggatekake teges $V^*(p)$: himpunan kelas
+ekuivalensi~$[w]$ saka kabeh donya~$w$ kang ndadekake $p$ bener
 ing~$\mModel{M}$. Ing siji sisih, yen $w \in V(p)$, mula $[w] \in
 V^*(p)$ miturut definisi kasebut. Nanging, saka $[w] \in V^*(p)$
-ora mesthi nderek yen $w \in V(p)$. Yen $[w] \in V^*(p)$, kita mung
+ora mesthi bisa disimpulake yen $w \in V(p)$. Yen $[w] \in V^*(p)$, kita mung
 dijamin yen $[w] = [u]$ kanggo \emph{sawijining}~$u \in V(p)$.
 Mesthi, $[w] = [u]$ ateges $w \equiv u$. Dadi, yen $[w] \in
 V^*(p)$, kita (mung) bisa nyimpulake yen $w \equiv u$ kanggo sawijining
@@ -82,7 +82,7 @@ $u \in V(p)$.
       asumsi $p \in \Gamma$ lan $\mSat{M}{p}[v]$, kita entuk
       $\mSat{M}{\indfrm}[w]$.}
 
-    \tagitem{prvNot}{\iftag{probNot}{Latihan.}{\indcase{!A}{\lnot
+    \tagitem{prvNot}{\iftag{probNot}{Gladhen.}{\indcase{!A}{\lnot
           !B}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
           $\mSat/{M}{!B}[w]$. Miturut hipotesis induksi,
           $\mSat/{M}{!B}[w]$ yen lan mung yen
@@ -90,7 +90,7 @@ $u \in V(p)$.
           $\mSat/{M^*}{!B}[{[w]}]$ yen lan mung yen
           $\mSat{M^*}{\indfrm}[{[w]}]$.}}}{}
         
-    \tagitem{prvAnd}{\iftag{probAnd}{Latihan.}{\indcase{!A}{(!B \land
+    \tagitem{prvAnd}{\iftag{probAnd}{Gladhen.}{\indcase{!A}{(!B \land
           !C)}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
           $\mSat{M}{!B}[w]$ lan $\mSat{M}{!C}[w]$. Miturut hipotesis
           induksi, $\mSat{M}{!B}[w]$ yen lan mung yen
@@ -99,7 +99,7 @@ $u \in V(p)$.
           $\mSat{M^*}{\indfrm}[{[w]}]$ yen lan mung yen
           $\mSat{M^*}{!B}[{[w]}]$ lan $\mSat{M^*}{!C}[{[w]}]$.}}}{}
 
-    \tagitem{prvOr}{\iftag{probOr}{Latihan.}{\indcase{!A}{(!B \lor
+    \tagitem{prvOr}{\iftag{probOr}{Gladhen.}{\indcase{!A}{(!B \lor
           !C)}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
           $\mSat{M}{!B}[w]$ utawa $\mSat{M}{!C}[w]$. Miturut hipotesis
           induksi, $\mSat{M}{!B}[w]$ yen lan mung yen
@@ -108,7 +108,7 @@ $u \in V(p)$.
           $\mSat{M^*}{\indfrm}[{[w]}]$ yen lan mung yen
           $\mSat{M^*}{!B}[{[w]}]$ utawa $\mSat{M^*}{!C}[{[w]}]$.}}}{}
 
-    \tagitem{prvIf}{\iftag{probIf}{Latihan.}{\indcase{!A}{(!B \lif
+    \tagitem{prvIf}{\iftag{probIf}{Gladhen.}{\indcase{!A}{(!B \lif
           !C)}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
           $\mSat/{M}{!B}[w]$ utawa $\mSat{M}{!C}[w]$. Miturut
           hipotesis induksi, $\mSat{M}{!B}[w]$ yen lan mung yen
@@ -117,7 +117,7 @@ $u \in V(p)$.
           $\mSat{M^*}{\indfrm}[{[w]}]$ yen lan mung yen
           $\mSat/{M^*}{!B}[{[w]}]$ utawa $\mSat{M^*}{!C}[{[w]}]$.}}}{}
 
-    \tagitem{prvIff}{\iftag{probIff}{Latihan.}{\indcase{!A}{(!B \liff
+    \tagitem{prvIff}{\iftag{probIff}{Gladhen.}{\indcase{!A}{(!B \liff
           !C)}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
           $\mSat{M}{!B}[w]$ lan $\mSat{M}{!C}[w]$, utawa
           $\mSat/{M}{!B}[w]$ lan $\mSat/{M}{!C}[w]$. Miturut
@@ -128,14 +128,14 @@ $u \in V(p)$.
           $\mSat{M^*}{!B}[{[w]}]$ lan $\mSat{M^*}{!C}[{[w]}]$, utawa
           $\mSat/{M^*}{!B}[{[w]}]$ lan $\mSat/{M^*}{!C}[{[w]}]$.}}}{}
 
-    \tagitem{prvBox}{\iftag{probBox}{Latihan.}{\indcase{!A}{\Box
+    \tagitem{prvBox}{\iftag{probBox}{Gladhen.}{\indcase{!A}{\Box
           !B}{Upamane $\mSat{M}{\indfrm}[w]$; kanggo nuduhake
           $\mSat{M^*}{\indfrm}[{[w]}]$, jupuken $v$ kang
           $R^*[w][v]$. Miturut
           \olref{defn:filtration}\olref{defn:filtration-R2}, kita duwe
           $\mSat{M}{!B}[v]$, lan miturut hipotesis induksi
           $\mSat{M^*}{!B}[{[v]}]$. Amarga $v$ sembarang,
-          $\mSat{M^*}{\indfrm}[{[w]}]$ nderek.
+          $\mSat{M^*}{\indfrm}[{[w]}]$ bener.
 
           Kosok baline, upamane $\mSat{M^*}{\indfrm}[{[w]}]$ lan jupuken
           $v$ sembarang kang $Rwv$. Miturut
@@ -144,7 +144,7 @@ $u \in V(p)$.
           hipotesis induksi $\mSat{M}{!B}[v]$, lan amarga $v$
           sembarang, $\mSat{M}{\indfrm}[w]$.}}}{}
     
-    \tagitem{prvDiamond}{\iftag{probDiamond}{Latihan.}{\indcase{!A}{\Diamond
+    \tagitem{prvDiamond}{\iftag{probDiamond}{Gladhen.}{\indcase{!A}{\Diamond
           !B}{Upamane $\mSat{M}{\indfrm}[w]$. Banjur ana $v \in W$
           kang $Rwv$ lan $\mSat{M}{!B}[v]$. Miturut hipotesis induksi,
           $\mSat{M^*}{!B}[{[v]}]$, lan miturut
@@ -164,7 +164,7 @@ $u \in V(p)$.
   Jangkepna bukti \olref[nml][fil][fil]{thm:filtrations}
 \end{prob}
 
-Apa kang bener tumrap bebener ing jagad-jagad sawijining model uga
+Apa kang bener tumrap bebener ing donya-donya sawijining model uga
 bener tumrap bebener ing model lan validitas ing sawijining kelas model.
 
 \begin{cor}

@@ -8,26 +8,26 @@
 
 \olfileid{sol}{met}{com}
 
-\olsection{Logika Orde Kapindho Ora Kompak}
+\olsection{Logika Tataran Kapindho Ora Kompak}
 
 \begin{explain}
 Himpunan ukara-ukara~$\Gamma$ diarani \emph{bisa dicukupi
 kanthi winates} yen saben subhimpunan winatese bisa dicukupi.
-Logika orde kapisan nduweni sipat iki: yen himpunan
+Logika tataran kapisan nduweni sipat iki: yen himpunan
 !!{sentence}s~$\Gamma$ bisa dicukupi kanthi winates, mula
 himpunan iku bisa dicukupi. Sipat iki diarani \emph{kekompakan}.
 Ana wujud kang ekuivalen nganggo relasi konsekuensi:
 yen $\Gamma \Entails !A$, mula wis
 $\Gamma_0 \Entails !A$ kanggo sawijining subhimpunan
 winates~$\Gamma_0 \subseteq \Gamma$. Ing wujud iki, kekompakan
-langsung dadi akibat saka teorema kelengkapan: yen
-$\Gamma \Entails !A$, mula miturut kelengkapan
+langsung dadi akibat saka teorema kejangkepan: yen
+$\Gamma \Entails !A$, mula miturut kejangkepan
 $\Gamma \Proves !A$. Nanging sawijining !!{derivation}
-amung bisa migunakake !!{sentence}s saka~$\Gamma$
+mung bisa migunakake !!{sentence}s saka~$\Gamma$
 kang cacahe winates.
 
-Kekompakan ora bener kanggo logika orde kapindho. Ana
-himpunan !!{sentence}s orde kapindho kang bisa dicukupi
+Kekompakan ora bener kanggo logika tataran kapindho. Ana
+himpunan !!{sentence}s tataran kapindho kang bisa dicukupi
 kanthi winates nanging sakabehe ora bisa dicukupi. Ana
 uga himpunan kaya mangkono kang nyebabake~$!A$,
 dene ora ana subhimpunan winatese kang nyebabake~$!A$.
@@ -36,7 +36,7 @@ dene ora ana subhimpunan winatese kang nyebabake~$!A$.
 
 \begin{thm}
 \ollabel{thm:sol-not-compact}
-Logika orde kapindho ora kompak. Cathetan koreksi sumber OLPL-809: label teorema ing naskah sumber padha karo label teorema ora bisa diputusake; label ing terjemahan iki dibedakake.
+Logika tataran kapindho ora kompak.
 \end{thm}
 
 \begin{proof}
@@ -48,10 +48,9 @@ Elinga yen
 dicukupi ing sawijining !!a{structure} yen lan mung yen
 domaine tanpa wates. Upamana $!A^{\ge n}$ iku
 ukara kang nyatakake yen domain ngemot
-paling ora $n$ !!{element}s, umpamane kanthi rumus skematis. Cathetan koreksi sumber OLPL-810: titik-titik ing rumus ing ngisor kudu nyakup saben pasangan indeks kang beda, lan kasus siji unsur kudu diwaca dhewe; sawetara pertidaksamaan kang katon wae durung njamin ana n unsur beda.
+paling ora $n$ !!{element}s, kanggo n paling ora siji. Konjungsi nyakup saben pasangan i kurang j. Nalika n siji, konjungsiné kosong lan bener.
 \[
-!A^{\ge n} \ident \lexists[x_1][\dots\lexists[x_n][(\eq/[x_1][x_2]
-    \land \eq/[x_1][x_3] \land \dots \land \eq/[x_{n-1}][x_n])]].
+!A^{\ge n} \ident \lexists[x_1][\dots\lexists[x_n][(\bigwedge_{1 \le i < j \le n} \eq/[x_i][x_j])]].
 \]
 Timbang himpunan !!{sentence}s
 \[
@@ -59,9 +58,9 @@ Timbang himpunan !!{sentence}s
 \]
 Himpunan iki bisa dicukupi kanthi winates. Kanggo saben
 subhimpunan winates~$\Gamma_0 \subseteq \Gamma$,
-kita bisa milih~$k$ saengga $!A^{\ge k} \in \Gamma$,
+kita bisa milih~$k$ paling ora siji lan cukup gedhe saengga $!A^{\ge k} \in \Gamma$,
 nanging ora ana $!A^{\ge n}
-\in \Gamma_0$ kanggo $n>k$. Cathetan koreksi sumber OLPL-811: sumber salah nyebut Gamma gedhe ing syarat iki; kang ora ngemot ukara kanthi indeks luwih gedhe iku subhimpunan winates Gamma-nol. Yen $\Domain{M}$
+\in \Gamma_0$ kanggo $n>k$. Yen $\Domain{M}$
 ngemot $k$ !!{element}s, mula $\Sat{M}{\Gamma_0}$.
 Nanging $\Gamma$ ora bisa dicukupi: yen
 $\Sat{M}{\lnot \fn{Inf}}$, $\Domain{M}$ mesthi

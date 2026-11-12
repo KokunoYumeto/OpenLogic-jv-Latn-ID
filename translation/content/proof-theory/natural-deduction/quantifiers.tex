@@ -13,7 +13,7 @@
 Aturan kuantor njalari sawatara keruwetan amarga
 ``syarat variabel eigen'' kang lumaku kanggo aturan
 \Elim{\lexists} lan~\Intro{\lforall}.
-Akèh-akèhé keruwetan iki bisa diatasi kanthi njamin
+Akèh-akèhé keruwetan iki bisa dirampungaké kanthi njamin
 yèn !!{constant}~$c$ ing inferènsi mau ora tau dienggo
 manèh. Kita tetepaké definisi iki.
 
@@ -37,7 +37,7 @@ Yèn $\delta$ reguler lan pungkasané ana ing~$!C$,
 $c$ iku !!a{constant} kang ora dadi variabel eigen
 ing~$\delta$, sarta $t$~suku kang ora ngemot variabel
 eigen saka~$\delta$, banjur
-$\Subst{\delta}{t}{c}$, kang diolehké saka~$\delta$
+$\Subst{\delta}{t}{c}$, kang diolèhaké saka~$\delta$
 kanthi ngganti saben kedadéan~$c$ nganggo~$t$,
 iku !!{proof} reguler. !!{formula} pungkasan saka
 $\Subst{\delta}{t}{c}$ yaiku $\Subst{!C}{t}{c}$.
@@ -55,7 +55,7 @@ $\Subst{!A}{t}{c}^x$ asumsi kabuka ing
   Yèn $\pheight{\delta} > 0$, kita bedakaké manut
   inferènsi pungkasan ing~$\delta$. Kahanan aturan
   konektif proposisional gampang lan dipasrahaké
-  dadi latihan. Kita ngrembug nalika $\delta$
+  dadi gladhen. Kita ngrembug nalika $\delta$
   pungkasané nganggo inferènsi kuantor.
   \begin{enumerate}
     \item Yèn inferènsi pungkasan yaiku $\Intro{\lforall}$,
@@ -146,6 +146,7 @@ $\Subst{!A}{t}{c}^x$ asumsi kabuka ing
     ora ngemot~$a$.
   \end{enumerate}
 \end{proof}
+(Eliminasi eksistensial nggunakake kaloro subbukti, asumsi kang dibebasaké lan dudutané, sawisé substitusi ditrapaké marang kabèh pérangan mau.)
 
 \begin{prop}\ollabel{prop:regular}
 Yèn $\delta$ iku !!a{proof} ing \Log{N1c} utawa
@@ -160,13 +161,14 @@ Kanggo bukti iki waé, sebut inferènsi variabel eigen
 ing~$\delta$ \emph{resik} yèn variabel eigené ora dadi
 variabel eigen inferènsi liya lan ora ana ing pérangan
 liya saka~$\delta$ saliyané sub-!!{proof} langsung
-saka inferènsi iku; yèn ora, sebut \emph{reged}.
+kang nuju premis cilik kanggo eliminasi eksistensial, utawa
+premis tunggal kanggo introduksi universal; yèn ora, sebut \emph{reged}.
 Upama $n$ cacah inferènsi variabel eigen reged
 ing~$\delta$. Kita tuduhaké kanthi induksi tumrap~$n$
 yèn $\delta$~bisa diowahi dadi !!{proof} reguler~$\delta'$
 kang dikarepaké. Yèn $n=0$, kabèh inferènsi variabel
 eigen ing~$\delta$ resik, mula $\delta$ wis reguler
-lan ora ana kang perlu dibuktèkaké. Yèn ora, pilihen
+lan ora ana kang perlu dibuktekaké. Yèn ora, pilihen
 inferènsi variabel eigen reged kang paling dhuwur,
 upamané \Intro{\lforall}. Sub-!!{proof}~$\delta_1$
 ing~$\delta$ kang pungkasané ana ing inferènsi iku
@@ -206,6 +208,7 @@ nganggo~$a$. Bukti asilé nduwèni paling akèh $n-1$
 inferènsi variabel eigen reged, mula asilé ndhèrèk saka
 hipotesis induksi.
 \end{proof}
+(Inferènsi reged paling dhuwur dipilih; inferènsi eigen ing subbukti ndhuwuré bisa ana, nanging kabèh resik. Panggantos bisa ngresiki luwih saka siji inferènsi, mula cacah reged anyar paling akèh kurang siji. Cabang kang diidini ing definisi resik padha karo definisi reguler, mliginé cabang premis cilik kanggo eliminasi eksistensial.)
 
 \begin{prob}
 Jlentrehna kahanan ing bukti \olref{prop:regular}
@@ -214,12 +217,12 @@ dhuwur yaiku~\Elim{\lexists}.
 \end{prob}
 
 Kita ora bakal kanthi eksplisit ngrujuk proposisi kang
-lagi dibuktèkaké, nanging bakal nganggep kabèh
+lagi dibuktekaké, nanging bakal nganggep kabèh
 !!{proof}s kang dirembug reguler---yèn durung,
 variabel eigen mesthi bisa diganti supaya reguler.
 
 \Olref{lem:subst-regular} lan \olref{prop:regular}
 uga bener kanggo \Log{N2c} lan~\Log{N2i}.
-Buktiné dipasrahaké dadi latihan.
+Buktiné dipasrahaké dadi gladhen.
 
 \end{document}

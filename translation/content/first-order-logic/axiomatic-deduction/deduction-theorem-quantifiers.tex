@@ -19,17 +19,26 @@ mula $\Gamma \Proves !A \lif !B$.
 Kita lumaku maneh kanthi induksi miturut dawane !!{derivation} kang
 formula pungkasane $!B$ saka $\Gamma \cup \{!A\}$.
 
-Bukti kanggo kasus dhasar induksi padha karo bukti ing
-\olref[ded]{thm:deduction-thm}.
+Bukti kanggo larik kang dadi aksioma utawa premis padha karo bukti
+ing \olref[ded]{thm:deduction-thm}. Kanggo kasus kuantor, kita
+mbutuhaké rong cara ngowahi kondisional. Tetepna
+$!D = !A\lif(!C\lif !E)$ lan $!F = (!A\land !C)\lif !E$.
+Saka premis $!D$ lan $!A\land !C$, rong proyeksi
+konjungsi lan modus ponens mènèhi $!A$ lan $!C$, banjur modus ponens
+kaping pindho mènèhi $!E$. Teorema Deduksi kanggo modus ponens
+mbubaraké premis $!A\land !C$ banjur $!D$, dadi $\Proves !D\lif !F$.
+Kosok baliné, saka $!F$, $!A$ lan $!C$, wangunen $!A\land !C$ nganggo
+aksioma konjungsi lan gunakna modus ponens kanggo entuk $!E$.
+Bubarna premis $!C$, $!A$, banjur $!F$, dadi $\Proves !F\lif !D$.
 
 Kanggo langkah induktif, upamana maneh yen !!{derivation} kang formula
 pungkasane $!B$ saka $\Gamma \cup \{!A\}$ nduweni langkah
 pungkasan~$!B$ kang dhasare aturan inferensi. Yen aturan inferensi
 kang dadi dhasar iku modus ponens, kita lumaku kaya ing bukti
 \olref[ded]{thm:deduction-thm}. Yen aturan kasebut \QR, kita
-ngerti yen $!B \ident !C \lif \lforall[x][!D(x)]$ lan !!a{formula}
+nimbang dhisik kasus universal, nalika $!B \ident !C \lif \lforall[x][!D(x)]$ lan !!a{formula}
 awujud $!C \lif !D(a)$ muncul luwih dhisik ing !!{derivation}, kanthi
-$a$ ora muncul ing~$!C$, $!A$, utawa $\Gamma$. Dadi, kita duwe
+$a$ absèn saka $!C$, $!A$, $\Gamma$, lan matriks $!D(x)$. Dadi, kita duwe
 \begin{align*}
   \Gamma \cup \{!A\} & \Proves !C \lif !D(a),\\
   \intertext{lan hipotesis induksi lumaku, mula kita duwe}
@@ -45,11 +54,7 @@ $a$ ora muncul ing~$!C$, $!A$, utawa $\Gamma$. Dadi, kita duwe
     \intertext{mula miturut modus ponens,}
     \Gamma & \Proves !A \lif (!C \lif \lforall[x][!D(x)]),
 \end{align*}
-yaiku $\Gamma \Proves !A \lif !B$. Cathetan koreksi sumber OLPL-029
-lan OLPL-030: siji kurung panutup kang ilang ing formula implikasi
-sadurunge dibalekake supaya formula kasebut imbang; kesimpulan pungkasan
-uga dibalekake dadi implikasi saka A menyang B, kaya asil ing baris
-sadurunge.
+yaiku $\Gamma \Proves !A \lif !B$.
 
 Kasus nalika $!B$ nduweni dhasar aturan \QR, nanging awujud
 $\lexists[x][!D(x)] \lif !C$, ditinggalake minangka gladhen.

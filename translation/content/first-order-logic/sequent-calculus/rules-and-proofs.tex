@@ -21,27 +21,27 @@ makili urutan winates saka !!{sentence}s.
 \Gamma \Sequent \Delta
 \]
 dene $\Gamma$ lan $\Delta$ iku urutan winates (bisa uga kosong)
-saka !!{sentence}s ing basa $\Lang L$. $\Gamma$ diarani
+saka !!{sentence}s ing basa \iftag{FOL}{$\Lang L$}{$\Lang L_0$}. $\Gamma$ diarani
 \emph{anteseden}, dene $\Delta$ diarani \emph{sukseden}.
 \end{defn}
 
 \begin{explain}
-Gagasan intuitif kang ndhasari sekuen yaiku: yen kabeh !!{sentence}s ing
-anteseden bener, saora-orane salah siji saka !!{sentence}s ing sukseden
-bener. Yaiku, yen $\Gamma = \tuple{!A_1, \dots, !A_m}$ lan
-$\Delta = \tuple{!B_1, \dots, !B_n}$, mula $\Gamma \Sequent \Delta$
-bener yen lan mung yen
+Tumrap sawijining \iftag{FOL}{struktur}{valuasi}, sekuen bener yèn lan mung yèn
+kabèh !!{sentence}s ing anteseden bener mung nalika paling ora siji
+saka !!{sentence}s ing sukseden uga bener. Dadi, yèn
+$\Gamma = \tuple{!A_1, \dots, !A_m}$ lan
+$\Delta = \tuple{!B_1, \dots, !B_n}$, sarat kabeneran
+$\Gamma \Sequent \Delta$ padha karo sarat kabeneran
 \[
-(!A_1 \land \cdots \land !A_m) \lif (!B_1 \lor \cdots \lor
-!B_n)
+(!A_1 \land \cdots \land !A_m) \lif (!B_1 \lor \cdots \lor !B_n).
 \]
-bener. Ana rong kasus mligi: nalika $\Gamma$ kosong lan nalika
-$\Delta$~kosong. Nalika $\Gamma$ kosong, yaiku $m = 0$, $\quad
-\Sequent \Delta$ bener yen lan mung yen $!B_1 \lor \dots \lor !B_n$
-bener. Nalika $\Delta$ kosong, yaiku $n = 0$, $\Gamma \Sequent \quad$
-bener yen lan mung yen $\lnot(!A_1 \land \dots \land !A_m)$ bener.
-Kita ngarani sekuen valid yen lan mung yen !!{sentence} kang cocog
-iku valid.
+Konjungsi kosong dianggep bener lan disjungsi kosong dianggep salah.
+Yèn $m=0$, $\quad\Sequent \Delta$ bener yèn lan mung yèn
+$!B_1 \lor \dots \lor !B_n$ bener. Yèn $n=0$,
+$\Gamma \Sequent \quad$ bener yèn lan mung yèn
+$\lnot(!A_1 \land \dots \land !A_m)$ bener. Mula sekuen kang
+loro-loroné kosong tansah salah. Sekuen valid yèn bener tumrap
+saben \iftag{FOL}{struktur}{valuasi}.
 \end{explain}
 
 Yen $\Gamma$ iku urutan !!{sentence}s, kita nulis $\Gamma, !A$ kanggo
@@ -51,14 +51,10 @@ urutan !!{sentence}s, mula $\Gamma, \Delta$ iku asil nyambungake rong
 urutan kasebut.
 
 \begin{defn}[Sekuen Wiwitan]
-\emph{Sekuen wiwitan} yaiku sekuen
-\iftag{prvFalse,prvTrue}{kanthi salah siji wujud iki:
-  \begin{enumerate}
-    \item $!A \Sequent !A$
-    \tagitem{prvTrue}{$\quad \Sequent \ltrue$}{}
-    \tagitem{prvFalse}{$\lfalse \Sequent \quad$}{}
-  \end{enumerate}}
-{kanthi wujud $!A \Sequent !A$} kanggo saben !!{sentence} $!A$ ing basa kasebut.
+\emph{Sekuen wiwitan} nduwèni wujud $!A \Sequent !A$ kanggo
+saben !!{sentence} $!A$ ing basa kasebut.
+\iftag{prvTrue}{Sekuen $\quad \Sequent \ltrue$ uga dadi sekuen wiwitan.}{}
+\iftag{prvFalse}{Sekuen $\lfalse \Sequent \quad$ uga dadi sekuen wiwitan.}{}
 \end{defn}
 
 !!^{derivation}s ing kalkulus sekuen iku wit-wit sekuen tartamtu.
@@ -68,9 +64,8 @@ kudu diasilake kanthi bener saka sekuen-sekuen mau miturut aturan
 inferensi. Aturan kanggo
 $\Log{LK}$ dipérang dadi rong jinis utama: aturan \emph{logis} lan
 aturan \emph{struktural}. Aturan logis dijenengi miturut !!{main
-  operator} saka !!{sentence} kang ngemot $!A$ lan/utawa $!B$ ing
-sekuen ngisor. Saben aturan duwe rong versi, siji kanggo ngasilake
-sekuen kanthi !!{sentence} kang ngemot !!{operator} ing sisih kiwa,
-lan siji maneh kanthi !!{sentence} kasebut ing sisih tengen.
+  operator} saka !!{sentence} kang ditepungaké ing kesimpulan.
+Kanggo saben !!{operator} kang dicakup, ana aturan kang nepungaké
+!!{sentence} kasebut ing sisih kiwa lan aturan kanggo sisih tengen.
 
 \end{document}

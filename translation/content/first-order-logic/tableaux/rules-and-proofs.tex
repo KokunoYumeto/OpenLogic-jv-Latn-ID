@@ -13,7 +13,7 @@
 \olsection{Aturan lan \usetoken{P}{tableau}}
 
 !!^a{tableau} yaiku pamriksa sistematis tumrap kabeh cara kang bisa
-ndadekake !!a{sentence} bener utawa salah ing !!a{structure}. Unsur
+ndadekake !!a{sentence} bener utawa salah ing \iftag{FOL}{!!a{structure}}{!!a{valuation}}. Unsur
 pambangun tableau yaiku !!{signed formula}s: !!{sentence}s bebarengan
 karo ``tandha'' nilai kabeneran, yaiku salah siji saka $\True$
 utawa~$\False$. !!{formula}s iki disusun dadi wit (kang tuwuh
@@ -29,14 +29,14 @@ mudhun).
 
 Miturut intuisi, $\sFmla{\True}{!A}$ bisa diwaca minangka ``$!A$
 bisa wae bener'' lan $\sFmla{\False}{!A}$ minangka ``$!A$ bisa wae
-salah'' (ing sawijining !!{structure}).
+salah'' (ing sawijining \iftag{FOL}{!!{structure}}{!!{valuation}}).
 
 Saben !!{signed formula} ing wit iku \emph{asumsi}
-(asumsi-asumsi kasebut didhaptar ing pucuk wit), utawa diasilake saka
-!!a{signed formula} ing ndhuwure kanthi salah siji saka sawetara aturan inferensi.
-Ana rong aturan kanggo saben !!{main operator} kang bisa diduweni
-!!{formula} sadurunge, siji kanggo tandha~$\True$ lan siji kanggo
-tandha~$\False$. Sawetara aturan ngidini wit nyabang, dene liyane mung
+(asumsi-asumsi kasebut didhaptar ing pucuk wit), utawa ditambahaké miturut salah siji aturan inferensi.
+Aturan logis ditrapaké marang !!a{signed formula} ing cabang kang
+padha. Kanggo saben !!{main operator} kang dicakup, ana pasangan
+aturan kanggo !!{formula} mau, siji kanggo tandha~$\True$ lan
+siji kanggo tandha~$\False$. Sawetara aturan ngidini wit nyabang, dene liyane mung
 nambahake !!{signed formula}s menyang sawijining cabang. Sawijining
 aturan bisa (lan kerep kudu) ditrapake dudu marang !!{signed formula}
 kang langsung ana sadurunge, nanging marang sembarang
@@ -55,8 +55,8 @@ awujud $\sFmla{\True}{!A}$ bener lan saben asumsi awujud
 $\sFmla{\False}{!A}$ salah.
 
 !!{tableau} katutup \emph{kanggo $!A$} yaiku !!{tableau} katutup
-kanthi oyod~$\sFmla{\False}{!A}$. Yen ana !!{tableau} katutup kaya
+kang asumsi wiwitané mung $\sFmla{\False}{!A}$. Yen ana !!{tableau} katutup kaya
 mangkono, kabeh kamungkinan yen~$!A$ salah wis disingkirake; yaiku, $!A$
-kudu bener ing saben !!{structure}.
+kudu bener ing saben \iftag{FOL}{!!{structure}}{!!{valuation}}.
 
 \end{document}

@@ -11,9 +11,9 @@
 \olsection{Njlentrehake Domain Tanpa Wates lan \usetoken{S}{enumerable}
   \usetoken{P}{domain}}
 
-Himpunan~$M$ tanpa wates (miturut Dedekind) yen lan mung yen
+Ing andharan iki, tanpa wates ateges tanpa wates Dedekind; ing latar ZFC, iki padha karo tanpa wates biasa.  Himpunan~$M$ tanpa wates (miturut Dedekind) yen lan mung yen
 ana fungsi !!a{injective}~$f\colon M \to M$ kang ora
-!!{surjective}, yaiku $\ran{f} \neq M$. Ing logika orde
+!!{surjective}, yaiku $\ran{f} \neq M$. Ing logika tataran
 kapisan, kita bisa nimbang !!{function} siji-papan~$f$
 lan nyatakake yen fungsi~$\Assign{f}{M}$ kang diwenehake
 marang simbol iku ing !!a{structure}~$\Struct{M}$ iku
@@ -29,9 +29,9 @@ $\Domain{M}$ tanpa wates, mula fungsi kaya mangkono ana,
 lan kita bisa netepake $\Assign{f}{M}$ minangka fungsi
 iku supaya $\Struct{M}$ nyukupi !!{sentence} kasebut.
 Nanging iki mbutuhake basa kita ngemot simbol nonlogis~$f$
-kanggo tujuan iku. Ing logika orde kapindho, kita cukup
+kanggo tujuan iku. Ing logika tataran kapindho, kita cukup
 nyatakake yen fungsi kaya mangkono \emph{ana}. Kita ora
-perlu~$f$ maneh, lan oleh !!{sentence} logika orde
+perlu~$f$ maneh, lan oleh !!{sentence} logika tataran
 kapindho murni
 \[
 \fn{Inf} \ident \lexists[u][(\lforall[x][\lforall[y][(\eq[u(x)][u(y)]
@@ -41,10 +41,10 @@ $\Sat{M}{\fn{Inf}}$ yen lan mung yen $\Domain{M}$ tanpa
 wates. Sabanjure kita bisa netepake
 $\fn{Fin} \ident \lnot \fn{Inf}$;
 $\Sat{M}{\fn{Fin}}$ yen lan mung yen $\Domain{M}$ winates.
-Ora ana siji !!{sentence} logika orde kapisan murni kang bisa
+Ora ana siji !!{sentence} logika tataran kapisan murni kang bisa
 nyatakake yen !!{domain} iku tanpa wates, sanadyan himpunan
 tanpa wates saka ukara-ukara kaya mangkono bisa. Ora ana
-himpunan !!{sentence}s logika orde kapisan murni kang dicukupi
+himpunan !!{sentence}s logika tataran kapisan murni kang dicukupi
 ing !!a{structure} yen lan mung yen domaine winates.
 
 \begin{prop}
@@ -63,7 +63,7 @@ $\Sat{M}{\fn{Inf}}$ yen lan mung yen
   minangka pangaji variabel kang dibutuhake.
 \end{proof}
 
-Himpunan $M$ kang ora kosong iku !!{enumerable} yen ana enumerasi
+Himpunan $M$ iku !!{enumerable} yen ana enumerasi
 \[
 m_0, m_1, m_2, \dots
 \]
@@ -76,11 +76,11 @@ $z = m_0$ lan $f(m_k) = m_{k+1}$ (utawa $f(m_k) = m_k$
 yen $m_k$ iku !!{element} pungkasan enumerasi) iku
 !!{element} lan fungsi kang dibutuhake. Kosok baline, yen
 $z$ lan $f$ kaya mangkono ana, mula $z$, $f(z)$,
-$f(f(z))$, \dots, iku enumerasi saka~$M$, lan $M$
+$f(f(z))$, \dots, nyakup kabeh anggota~$M$; sawise mbusak pangulangan, kita entuk enumerasi tanpa pangulangan, lan $M$
 !!{enumerable}. Miturut definisi sadurunge, himpunan kosong
 bisa dienumerasi nganggo dhaptar kosong; domain sawijining
-struktur tansah ora kosong. Cathetan koreksi sumber OLPL-804: definisi enumerasi bisa nyakup himpunan kosong, nanging gambaran nganggo unsur wiwitan z mung lumaku kanggo himpunan ora kosong; domain struktur ing kene pancen ora kosong. Anane $z$ lan~$f$ bisa
-dinyatakake ing logika orde kapindho kanggo ngasilake
+struktur tansah ora kosong. Gambaran orbit nganggo unsur wiwitan z mung kanggo himpunan ora kosong. Definisi enumerasi isih nyakup dhaptar kosong; domain struktur ing kene ora kosong. Anane $z$ lan~$f$ bisa
+dinyatakake ing logika tataran kapindho kanggo ngasilake
 !!{sentence} kang bener ing !!a{structure} yen lan mung
 yen !!{structure} kasebut !!{enumerable}:
 \[
@@ -98,10 +98,10 @@ $\Sat{M}{\fn{Count}}$ yen lan mung yen $\Domain{M}$
 Upamana $\Domain{M}$ iku !!{enumerable}, lan upamana
 $m_0$, $m_1$, \dots, sawijining enumerasi. Kanthi
 mbusak pangulangan, kita bisa njamin yen ora ana $m_k$
-kang katon kaping pindho. Tetepna $f(m_k) = m_{k+1}$
+kang katon kaping pindho. Yen ana unsur sabanjure, tetepna $f(m_k) = m_{k+1}$
 lan $s(z) = m_0$ sarta $s(u) = f$. Yen enumerasine
 winates, fungsi kasebut ngirim unsur pungkasan menyang
-awake dhewe, kaya kang diterangake ing ndhuwur. Cathetan koreksi sumber OLPL-805: kanggo enumerasi winates, aturan f ing unsur pungkasan perlu ditetepake, umpamane ngirim unsur iku menyang awake dhewe, supaya f tetep fungsi total. Kita bakal
+awake dhewe, kaya kang diterangake ing ndhuwur. Kita bakal
 nuduhake yen
 \[
 \Sat{M}{\lforall[X][((X(z) \land \lforall[x][(X(x) \lif X(u(x)))])

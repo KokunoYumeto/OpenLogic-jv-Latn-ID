@@ -35,7 +35,7 @@
 \begin{proof}
   \begin{enumerate}
   \item Sekuen $!A \land !B \Sequent !A$ lan $!A \land !B \Sequent
-    !B$ kalorone bisa !!{derivable}:
+    !B$ kalorone !!{derivable}:
     \begin{prooftree}
       \Axiom$!A \fCenter !A$
       \RightLabel{\LeftR{\land}}
@@ -45,10 +45,17 @@
       \RightLabel{\LeftR{\land}}
       \UnaryInf$!A \land !B \fCenter !B$
     \end{prooftree}
-    \item Iki !!a{derivation} saka sekuen $!A, !B \Sequent !A \land !B$:
+    \item Iki !!a{derivation} saka sekuen $!A, !B \Sequent !A \land !B$.
+      Pelemahan lan pertukaran mènèhi anteseden kang padha kanggo premis loro.
     \begin{prooftree}
       \Axiom$!A \fCenter !A$
+      \RightLabel{\LeftR{\Weakening}}
+      \UnaryInf$!B, !A \fCenter !A$
+      \RightLabel{\LeftR{\Exchange}}
+      \UnaryInf$!A, !B \fCenter !A$
       \Axiom$!B \fCenter !B$
+      \RightLabel{\LeftR{\Weakening}}
+      \UnaryInf$!A, !B \fCenter !B$
       \RightLabel{\RightR{\land}}
       \BinaryInf$!A, !B \fCenter !A \land !B$
     \end{prooftree}
@@ -108,7 +115,7 @@
 
 \begin{proof}
   \begin{enumerate}
-    \item Sekuen $!A \lif !B, !A \Sequent !B$ bisa !!{derivable}:
+    \item Sekuen $!A \lif !B, !A \Sequent !B$ !!{derivable}:
       \begin{prooftree}
         \Axiom$!A \fCenter !A$
         \Axiom$!B \fCenter !B$
@@ -116,7 +123,7 @@
         \BinaryInf$!A \lif !B, !A  \fCenter !B$
       \end{prooftree}
     \item Sekuen $\lnot !A \Sequent !A \lif !B$ lan $!B
-      \Sequent !A \lif !B$ kalorone bisa !!{derivable}:
+      \Sequent !A \lif !B$ kalorone !!{derivable}:
       \begin{prooftree}
         \Axiom$!A \fCenter !A$
         \RightLabel{\LeftR{\lnot}}

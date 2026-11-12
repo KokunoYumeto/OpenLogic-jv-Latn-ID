@@ -34,8 +34,10 @@
 \end{defish}
 
 Ing aturan-aturan ing ndhuwur, $t$, $t_1$, lan $t_2$ iku term-term
-katutup. Aturan \Intro{\eq} ngidini kita !!{derive} sembarang
-pratelan identitas awujud $\eq[t][t]$ langsung, tanpa asumsi.
+katutup. Matriks $!A(x)$ bisa ngemot $x$ minangka variabel bébas
+lan ora ana variabel bébas liya. Aturan \Intro{\eq} ngidini kita
+!!{derive} pratelan identitas $\eq[t][t]$ tanpa asumsi.
+Wit bisa diwiwiti saka inferensi identitas tanpa premis.
 
 \begin{ex}
 Yen $s$ lan $t$ iku term-term katutup, mula $!A(s), \eq[s][t]
@@ -64,7 +66,10 @@ Kita !!{derive} !!{sentence}
 \intertext{saka !!{sentence}}
 & \lexists[x][\lforall[y][(!A(y) \lif \eq[y][x])]]
 \end{align*}
-Kita ngembangake !!{derivation} iki saka mburi:
+Kita ngembangaké !!{derivation} iki saka kesimpulan.
+Pilih $a$, $b$, lan $c$ béda-béda lan absèn saka formula ing ndhuwur.
+Konstanta $a$ lan $b$ kanggo introduksi universal, lan $c$ kanggo
+eliminasi eksistensial.
 \begin{prooftree}
 \AxiomC{$\lexists[x][\lforall[y][(!A(y) \lif \eq[y][x])]]
 \quad \Discharge{!A(a) \land !A(b)}{1}$}
@@ -81,7 +86,7 @@ eksistensial, kita nggunakake \Elim{\lexists} kanggo !!{derive}
 kesimpulan penengah $\eq[a][b]$.
 \begin{prooftree}
 \AxiomC{$\lexists[x][\lforall[y][(!A(y) \lif \eq[y][x])]]$}
-\AxiomC{$\Discharge{\lforall[y][(!A(y) \lif \eq[y][c]])}{2}$}
+\AxiomC{$\Discharge{\lforall[y][(!A(y) \lif \eq[y][c])]}{2}$}
 \noLine
 \UnaryInfC{$\Discharge{!A(a) \land !A(b)}{1}$}
 \DeduceC{$\eq[a][b]$}
@@ -99,7 +104,7 @@ nggunakake asumsi-asumsine kanggo nuduhake $\eq[a][c]$ lan
 $\eq[b][c]$. Iki mbutuhake loro !!{derivation}s kang kapisah.
 !!{derivation} kanggo $\eq[a][c]$ yaiku:
 \begin{prooftree}
-\AxiomC{$\Discharge{\lforall[y][(!A(y) \lif \eq[y][c]])}{2}$}
+\AxiomC{$\Discharge{\lforall[y][(!A(y) \lif \eq[y][c])]}{2}$}
 \RightLabel{\Elim{\lforall}}
 \UnaryInfC{$!A(a) \lif \eq[a][c]$}
 \AxiomC{$\Discharge{!A(a) \land !A(b)}{1}$}
@@ -108,8 +113,12 @@ $\eq[b][c]$. Iki mbutuhake loro !!{derivation}s kang kapisah.
 \RightLabel{\Elim{\lif}}
 \BinaryInfC{$\eq[a][c]$}
 \end{prooftree}
-Saka $\eq[a][c]$ lan $\eq[b][c]$, kita !!{derive} $\eq[a][b]$
-kanthi \Elim{\eq}.
+Kanggo $\eq[b][c]$, gunakna eliminasi universal ing $b$ kanggo
+éntuk $!A(b)\lif\eq[b][c]$. Eliminasi konjungsi mènèhi $!A(b)$,
+mula eliminasi kondisional mènèhi $\eq[b][c]$. Saka $\eq[b][c]$ lan $\eq[a][c]$, kita !!{derive} $\eq[a][b]$
+kanthi \Elim{\eq}, nganggo matriks $\eq[a][x]$. Aturan iki ngganti
+instansi ing $c$ dadi instansi ing $b$. Pambubaran lan introduksi
+universal sabanjuré manut wit ing ndhuwur.
 \end{ex}
 
 \begin{prob}

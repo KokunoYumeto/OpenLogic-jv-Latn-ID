@@ -107,7 +107,6 @@ G\"odel saka !!{formula}s lan wilangan G\"odel saka
       (d)_k = \Gn{(} \concat (d)_j
       \concat \Gn{\lif} \concat (d)_i \concat \Gn{)}}}
   \end{multline*}
-Cathetan panarikan OLPL-182 lan OLPL-183: klaim cakupan lawas ditarik. Nutup argumen TeX ora nutup cakupan logis; rumus sumber wis ngiket saksi kang digunakake. Tata brace nested kang padha maknane dijaga.
   Amarga kuantifikasi winates, panyambungan, lan $=$ iku
   rekursif primitif, iki netepake relasi rekursif primitif.
 \item Sawijining baris ing $\delta$ dibenerake dening \QR{} yen
@@ -141,8 +140,6 @@ Cathetan panarikan OLPL-182 lan OLPL-183: klaim cakupan lawas ditarik. Nutup arg
         \fn{Sent}(b) \land \fn{Sent}(\fn{Subst}(a,c,x)) \land {}
         \bforall{k < \len{b}}{(b)_k \neq (c)_0}}}}}}
   \end{multline*}
-Cathetan koreksi sumber OLPL-184: saksi baris sadurunge j kudu dikuantifikasi, lan rumus Jawa wis ngenalake j kurang i. Bagean klaim lawas ngenani nutup argumen TeX ditarik.
-Cathetan koreksi sumber OLPL-185: wates saka baris j ing tes QR ditrapake marang kode konstanta c, dene c lan x iku kode suku konstanta lan variabel miturut urutane; target wis nyocogake panganggone.
   Ing kene kita nganggep $c$ lan $x$ minangka wilangan G\"odel
   saka konstanta lan variabel kang dianggep suku (dudu kode
   simbule). Kita mriksa yen $x$ iku siji-sijine variabel bebas
@@ -159,7 +156,7 @@ Cathetan koreksi sumber OLPL-185: wates saka baris j ing tes QR ditrapake marang
   \bforall{i < \len{d}}{(\fn{Sent}((d)_i) \land
     [\fn{IsAx}((d)_i) \lor \fn{MP}(d,i) \lor \fn{QR}(d, i)])}
   \end{multline*}
-Cathetan koreksi sumber SOL6-F081: Seq nguji kode urutan sah, yaiku nol utawa siji kanggo kode kosong, utawa produk pangkat positif prima saka kapisan tanpa bolong. Iki rekursif primitif. Saben baris dicek ukara supaya modus ponens ora nampa gabungan kang sintakse salah.
+Seq nguji kode rerangken sah, yaiku nol utawa siji kanggo rerangken kosong, utawa produk pangkat positif prima wiwit kapisan tanpa bolong. Tes iki rekursif primitif. Saben baris kudu awujud ukara sadurungé aturan modus ponens ditrapaké.
 \end{enumerate}
 \end{proof}
 
@@ -227,14 +224,13 @@ konsekuen:
   &\qquad\bforall{i<\len{s}}{(s)_i \in \Gamma} \land {} \\
   &\qquad\fn{Deriv}(x)).
 \end{align*}
-Cathetan koreksi sumber OLPL-186: langkah rekursi hCond ing sumber salah nyebut Cond kanthi telung argumen; rumus Jawa wis nganggo hCond kang cocog karo definisi rekursi.
 Wates kanggo~$s$ diduweni kanthi nggatekake yen saben $(s)_i$
 iku wilangan G\"odel saka sub-!!{formula} ing baris pungkasan
 saka !!{derivation}, yaiku luwih cilik tinimbang
 $(x)_{\len{x}-1}$. Cacah anteseden $!B \in \Gamma$, yaiku
 dawane~$s$, luwih cilik tinimbang dawa baris pungkasan
 ing~$x$.
-Cathetan koreksi sumber OLPL-187 lan SOL6-F082: pratelan relasi lan panjelasan input saiki diowahi dadi sertifikat kondisional tanpa asumsi. Teorema deduksi menehi korespondensi anane bukti, dudu identitas kode bukti asli. SOL6-F080 ngolah urutan anteseden saka pungkasan supaya kondisional njaga urutan dhaptar. SOL6-F081 nguji kode urutan anteseden sah, ukara target lan derivasi ora kosong.
+Sertifikat iki awujud derivasi kondisional tanpa asumsi mbukak. Teorema deduksi njamin anané derivasi mau saka anané bukti kanthi premis. Kanggo njaga urutan anteseden, pambentukan kondisional diwiwiti saka anteseden pungkasan. Tesé mriksa kode rerangken anteseden sah, ukara target lan derivasi kang isi.
 \end{proof}
 
 \end{document}

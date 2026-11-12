@@ -11,11 +11,11 @@
 \olsection{Kardinalitas Kontinuum}
 
 \begin{explain}
-Ing logika orde kapindho kita bisa nguwantifikasi
+Ing logika tataran kapindho kita bisa nguwantifikasi
 subhimpunan !!{domain}, nanging ora bisa nguwantifikasi
 himpunan kang anggotane subhimpunan-subhimpunan !!{domain}.
 Kanggo nindakake iki kanthi langsung, kita mbutuhake
-logika \emph{orde katelu}. Umpamane, yen arep nyatakake
+logika \emph{tataran katelu}. Umpamane, yen arep nyatakake
 Teorema Cantor yen ora ana fungsi !!{injective} saka
 himpunan pangkat sawijining himpunan menyang himpunan iku
 dhewe, kita bisa nyoba ngrumusake mangkene:
@@ -27,7 +27,7 @@ yen !!{element}s saka $P$ iku persis kabeh subhimpunan
 saka~$X$, dadi kurang luwih
 $\lforall[Y][(P(Y) \liff Y \subseteq X)]$.
 Masalahe ana ing $P(Y)$: iki dudu !!a{formula}
-logika orde kapindho, amarga mung suku kang bisa dadi
+logika tataran kapindho, amarga mung suku kang bisa dadi
 argumen variabel relasi siji-papan kaya~$P$.
 
 Nanging kita bisa \emph{nyimulasi} kuantifikasi
@@ -85,7 +85,7 @@ himpunan~$s(Z)$. !!{formula}
 nyatakake yen $s(Y)$ ngodhe miturut~$s(R)$
 himpunan pangkat saka~$s(X)$, yaiku
 unsur-unsur saka $s(Y)$ ngodhe miturut~$s(R)$ persis
-kabeh subhimpunan saka $s(X)$. Cathetan koreksi sumber OLPL-223: penutup klausa universal kapindho ing rumus sumber ora imbang; penutup ing kene wis dibenerake.
+kabeh subhimpunan saka $s(X)$.
 \end{prop}
 
 \begin{explain}
@@ -95,7 +95,7 @@ subhimpunan, dudu subhimpunane dhewe. Umpamane,
 Teorema Cantor saiki bisa dinyatakake kanthi nyebut
 yen ora ana fungsi !!{injective} saka himpunan
 unsur kang dadi kode kanggo himpunan pangkat
-saka~$X$ menyang~$X$ dhewe. Cathetan koreksi sumber OLPL-226: sing dibandhingake iku unsur kode ing Y, dudu sakabehe domain relasi R.
+saka~$X$ menyang~$X$ dhewe. Sing dibandhingake iku unsur kode ing Y, dudu sakabehe domain relasi R.
 \end{explain}
 
 \begin{prop}
@@ -123,7 +123,7 @@ nyatakake yen sawijining himpunan ukurane
 kontinuum kanthi nyebut yen himpunan iku
 padha cacahe karo sawijining himpunan~$Y$
 kang ngodhe himpunan pangkat saka himpunan~$X$
-kang ukurane~$\aleph_0$, kanthi saben unsur Y ngodhe subhimpunan kang beda. Cathetan koreksi sumber OLPL-813: mung nyebut Y ngodhe kabeh subhimpunan durung cukup kanggo mesthekake Y ukurane kontinuum yen ana kode kang padha bola-bali; syarat unik ana ing rumus Cont. (Yen domaine ora
+kang ukurane~$\aleph_0$, kanthi saben unsur Y ngodhe subhimpunan kang beda. Mung nyebut Y ngodhe kabeh subhimpunan durung cukup kanggo mesthekake Y ukurane kontinuum yen ana kode kang padha bola-bali; syarat unik ana ing rumus Cont. (Yen domaine ora
 cukup gedhe, yaiku ora ngemot subhimpunan
 kang padha cacahe karo~$\Real$, mula uga
 ora ana relasi kang ngodhe~$\Pow{X}$.)
@@ -153,15 +153,16 @@ nyatakake yen $\cardeq{s(Y)}{\Real}$.
   Kahanan iki dicegah dening konjungsi pungkasan,
   kang mbutuhake sesambungan antarane unsur
   $s(Y)$ lan subhimpunan saka $s(X)$ lumantar
-  $s(R)$ iku !!{injective}. Cathetan koreksi sumber OLPL-224: ing bukti sumber, subhimpunan salah disebut saka Z; himpunan dhasar kang bener iku X.
+  $s(R)$ iku !!{injective}.
 \end{proof}
 
 \begin{prop}
-Cathetan koreksi sumber OLPL-225: rumus sumber mung nuduhake domain paling ora gedhene kontinuum; syarat yen Y ngemot kabeh unsur domain perlu kanggo kesamaan ukuran sing persis. $\cardeq{\Domain{M}}{\Real}$ yen lan mung yen
+ $\cardeq{\Domain{M}}{\Real}$ yen lan mung yen
 \begin{multline*}
   \Sat{M}{\lexists[Y][(\lforall[x][Y(x)] \land \fn{Cont}(Y))]}.
 \end{multline*}
 \end{prop}
+Kardinalitas persis dipikolehi kanthi njupuk Y minangka kabèh domain lan mbutuhaké kode unik tumrap saben unsur.
 
 \begin{explain}
 Hipotesis Kontinuum iku pratelan yen ukuran

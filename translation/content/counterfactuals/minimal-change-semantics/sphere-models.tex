@@ -1,4 +1,4 @@
-% Part: conditional-logics
+% Part: counterfactuals
 % Chapter: minimal-change-semantics
 % Section: sphere-models
 
@@ -11,7 +11,7 @@
 \olsection{Model Bola}
 
 Salah siji cara menehi semantik formal kanggo kontrafaktual
-yaiku ngowahi panjelasan informal Lewis dadi struktur matematika.
+yaiku ngowahi andharan informal Lewis dadi struktur matematika.
 Bola-bola ing saubenge donya~$w$ banjur minangka himpunan donya.
 Amarga bola-bola iku mapan ing njero siji lan sijine, himpunan
 donya ing saubenge~$w$ kudu diurutake kanthi linear dening
@@ -45,6 +45,7 @@ ing~$S$: $S' \setminus S$ iku ``lapisan'' antarane $S$ lan
 donya-donya ing njaba~$S'$. Mligine, bola kudu dimangerteni
 minangka ngemot kabeh donya ing njero lumahing njabane,
 dudu mung lapisan dhewe-dhewe.
+Bola pusat iku bola ora kosong kang paling njero; perbandingan cedhak mung ngenani donya liyane.
 
 \begin{figure}
 \begin{center}
@@ -68,7 +69,7 @@ dudu mung lapisan dhewe-dhewe.
 
 Diagram ing \olref{fig:sphere-model} cocog karo model bola kanthi
 $W = \{w, w_1, \dots, w_7\}$, $V(p) = \{w_5, w_6, w_7\}$.
-Bola paling njero yaiku $S_1 = \{w\}$. Donya-donya kang paling
+Bola paling njero yaiku $S_1 = \{w\}$. Donya-donya liyane kang paling
 cedhak karo $w$ yaiku $w_1, w_2, w_3$, mula bola kang sabanjure
 luwih gedhe yaiku $S_2 = \{w, w_1, w_2, w_3\}$. Donya-donya
 kang luwih adoh yaiku $w_4$, $w_5$, $w_6$, mula bola paling
@@ -78,7 +79,7 @@ ora ana ing bola apa wae ing saubenge~$w$. Donya-donya kang
 paling cedhak lan ing kono $p$~bener yaiku $w_5$ lan~$w_6$,
 mula bola paling cilik kang ngakoni $p$ yaiku~$S_3$.
 
-Kanggo nemtokake pemenuhan formula~$!A$ ing donya~$w$ ing
+Kanggo nemtokake relasi nyukupi formula~$!A$ ing donya~$w$ ing
 model bola~$\mModel M$, $\mSat{M}{!A}[w]$, kita ngluwihi
 definisi kanggo !!{formula}s modal kanthi nambah klausa
 kanggo $!B \cif !C$:
@@ -103,12 +104,13 @@ utawa ana bola~$S$ kang ing kono $!B$ bener lan kondisional
 material $!B \lif !C$ bener ing kabeh donya ing bola kang
 ``ngakoni $!B$'' iku. Gatekna yen definisi ora mbutuhake
 $S$ minangka bola kang ngakoni $!B$ lan \emph{paling njero},
-sanajan saka panjelasan intuitif kita bisa uga ngarepake
+sanajan saka andharan intuitif kita bisa uga ngarepake
 mangkono. Nanging yen syarat ing~\olref{sphere-nonvac}
-dipenuhi dening sawenehing bola~$S$, syarat iku uga dipenuhi
+dicukupi dening sawenehing bola~$S$, syarat iku uga dicukupi
 dening kabeh bola ing njero~$S$ kang isih ngakoni anteseden.
-Mula, mligine, syarat iku dipenuhi ing bola kang ngakoni
+Mula, mligine, syarat iku dicukupi ing bola kang ngakoni
 anteseden lan paling njero, yen bola kaya mangkono ana.
+Syarat kanthi ana donya anteseden diwarisake mung dening bola njero kang isih ngemot donya anteseden; bola paling njero kang kaya mangkono ora mesthi ana.
 
 Gatekna uga yen definisi model bola ora mbutuhake yen
 \emph{ana} bola kang ngakoni $!B$ lan paling njero: kita bisa
@@ -120,5 +122,6 @@ bola kang ngakoni $!B$ lan paling njero. Banjur
 $\mSat{M}{!B \cif !C}[w]$ yen lan mung yen $!B \lif !C$
 lumaku ing kabeh donya ing bola-bola $S_i$, $S_{i+1}$,
 \dots, kanggo sawenehing~$i$.
+Runtutan mudhun tanpa wates ora cukup kanggo nyingkirake bola anteseden paling cilik; irisan kang mung pusat lan anteseden luput ing pusat menehi alesan kang dibutuhake.
 
 \end{document}

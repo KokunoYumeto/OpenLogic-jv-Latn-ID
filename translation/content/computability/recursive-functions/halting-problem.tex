@@ -39,7 +39,7 @@ rekursif parsial $f\colon \Nat
 \to \Nat$, ana $e \in \Nat$ kang ndadekake
 $\cfind{e}(x) \simeq f(x)$ kanggo saben~$x \in \Nat$.
 Malah, kanggo saben fungsi~$f$ kaya mangkono,
-indeks~$e$ iku ora mung siji, nanging tanpa wates cacahé. Cathetan panyunting: pratelan cacah iki kanggo pangindeksan program baku kang ngidini instruksi tambahan tanpa ngowahi fungsi, kaya ing cathetan teorema wangun normal.
+indeks~$e$ iku ora mung siji, nanging tanpa wates cacahé. Pratelan cacah iki kanggo pangindeksan program baku kang ngidini instruksi tambahan tanpa ngowahi fungsi, kaya ing cathetan teorema wangun normal.
 \emph{Fungsi mandheg}~$h$ ditegesi minangka
 \[
 h(e, x) =
@@ -49,8 +49,7 @@ h(e, x) =
 \end{cases}
 \]
 Gatekna yen $h(e, x) = 0$ yen $\cfind{e}(x) \fundefined$.
-Cathetan koreksi sumber OLPL-765: miturut definisi universal ing kene,
-saben angka~$e$ iku indeks fungsi rekursif parsial, mula kasus indeks ora sah ora kedadeyan.
+Saben angka~$e$ minangka indeks sawijining fungsi rekursif parsial miturut definisi universal.
 
 \begin{thm}
 \ollabel{thm:halting-problem}
@@ -93,7 +92,7 @@ lan~$1$.
   ditegesi yen lan mung yen
   $\cfind{e_d}(e_d) \fdefined$.
 \end{enumerate}
-Cathetan koreksi sumber OLPL-765: cabang indeks ora sah uga dicopot saka bukti iki, manut definisi universal sadurunge. Asile, rong kemungkinan kanggo indeks sah $e_d$ kalorone menehi kontradiksi. Nanging yen $h$
+ Asile, rong kemungkinan kanggo indeks sah $e_d$ kalorone menehi kontradiksi. Nanging yen $h$
 rekursif parsial, $d$ uga rekursif parsial,
 mula panetepan $e_d$ minangka indekse iku sah.
 Mula kita kudu nyimpulake yen $h$ ora bisa

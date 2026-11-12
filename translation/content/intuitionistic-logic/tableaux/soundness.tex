@@ -21,18 +21,20 @@
   $\mModel{M}$ lan donya~$w$, $\mSat{M}{!B_i}[w]$ kanggo kabeh
   $i=1$, \dots,~$n$ nanging $\mSat/{M}{!A}[w]$, mula ora ana
   !!{tableau} kang bisa katutup. Model panyanggah kaya mangkono
-  nuduhake yen asumsi wiwitan !!{tableau} bisa dipenuhi. Strategi
+  nuduhake yen asumsi wiwitan !!{tableau} bisa dicukupi. Strategi
   buktine yaiku nuduhake yen kabeh !!{formula}s mawa prefiks ing
-  sawijining cabang !!a{tableau} bisa dipenuhi, saben penerapan
+  sawijining cabang !!a{tableau} bisa dicukupi, saben penerapan
   aturan ngasilake paling ora siji cabang ekstensi kang uga bisa
-  dipenuhi. Amarga cabang katutup ora bisa dipenuhi, saben !!{tableau}
-  kanggo himpunan !!{formula}s mawa prefiks kang bisa dipenuhi kudu
+  dicukupi. Amarga cabang katutup ora bisa dicukupi, saben !!{tableau}
+  kanggo himpunan !!{formula}s mawa prefiks kang bisa dicukupi kudu
   nduweni paling ora siji cabang kabuka.
+Model panyanggah kudu ora nyukupi rumus tujuan ing donya kang nyukupi premis.
 
   Kanggo ngetrapake strategi iki ing kasus intuisionistik, definisi
-  ``bisa dipenuhi'' kudu ditambahi supaya nyakup model relasional
+  ``bisa dicukupi'' kudu ditambahi supaya nyakup model relasional
   lan interpretasi prefiks. Kanthi definisi iku, buktine langsung.
 \end{explain}
+Strategi lan interpretasi prefiks dicocogake karo kasus intuisionistik.
 
 \begin{defn}
   Upamane $P$ iku himpunan prefiks, yaiku
@@ -41,6 +43,7 @@
   \emph{interpretasi saka}~$P$ ing~$\mModel{M}$ yen saben $\sigma$
   lan sawijining ekstensine $\sigma.{*}$ loro-lorone ana ing~$P$,
   mula $Rf(\sigma)f(\sigma.{*})$.
+Definisi kanggo himpunan prefiks sembarang njaga hubungan akses antarane saben leluhur lan turunan kang ana ing domain.
 
   Tumrap interpretasi prefiks~$P$, kita bisa nemtokake:
   \begin{enumerate}
@@ -61,7 +64,7 @@ iki kita uga nduweni $Rf(\sigma)f(\sigma.{*})$.
   interpretasi saka~$P(\Gamma)$ ing $\mModel{M}$, kita nyebut
   $\mModel{M}$ nyukupi $\Gamma$ tumrap~$f$, $\mSat{M}{\Gamma}[f]$,
   yen $\mModel{M}$ nyukupi saben !!{formula} mawa prefiks ing~$\Gamma$
-  tumrap~$f$. $\Gamma$ iku \emph{bisa dipenuhi} yen lan mung yen ana
+  tumrap~$f$. $\Gamma$ iku \emph{bisa dicukupi} yen lan mung yen ana
   model~$\mModel{M}$ lan interpretasi~$f$ saka $P(\Gamma)$ kanthi
   $\mSat{M}{\Gamma}[f]$.
 \end{defn}
@@ -70,12 +73,12 @@ iki kita uga nduweni $Rf(\sigma)f(\sigma.{*})$.
   Yen $\Gamma$ ngemot $\sFmla{\True}{!A}[\sigma]$ lan
   $\sFmla{\False}{!A}[\sigma.{*}]$ bebarengan kanggo sawenehing
   !!{formula}~$!A$ lan prefiks~$\sigma$, utawa ngemot
-  $\sFmla{\True}{\lfalse}[\sigma]$, mula $\Gamma$ ora bisa dipenuhi.
+  $\sFmla{\True}{\lfalse}[\sigma]$, mula $\Gamma$ ora bisa dicukupi.
 \end{prop}
 
 \begin{proof}
   Amarga tansah $\mSat/{M}{\lfalse}[f(\sigma)]$, $\Gamma$ kang
-  ngemot $\sFmla{\True}{\lfalse}[\sigma]$ ora bisa dipenuhi.
+  ngemot $\sFmla{\True}{\lfalse}[\sigma]$ ora bisa dicukupi.
 
   Upamane ana model~$\mModel{M}$ lan interpretasi~$f$ saka
   $P(\Gamma)$. Yen $\mSat{M}{!A}[f(\sigma)]$, miturut
@@ -85,47 +88,49 @@ iki kita uga nduweni $Rf(\sigma)f(\sigma.{*})$.
   $\mSat{M}{!A}[f(\sigma)]$ lan
   $\mSat/{M}{!A}[f(\sigma.{*})]$ bebarengan.
 \end{proof}
+Monotonisitas menehi kabeneran ing citra prefiks turunan.
 
 \begin{thm}[Jaminan Semantis]
   \ollabel{thm:tableau-soundness}
-  Yen $\Gamma$ nduweni !!{tableau} katutup, $\Gamma$ ora bisa dipenuhi.
+  Yen kabeh !!{formula}s ing $\Gamma$ nganggo prefiks~$1$ lan $\Gamma$ nduweni !!{tableau} katutup, $\Gamma$ ora bisa dicukupi.
 \end{thm}
+Asumsi wiwitan nganggo prefiks oyod kang padha miturut aturan penyiapan; iki njamin invarian cabang kang digunakake ing bukti.
 
 \begin{proof}
-Kita nyebut sawijining cabang !!a{tableau} bisa dipenuhi yen lan
-mung yen himpunan !!{signed formula}s ing cabang iku bisa dipenuhi.
-!!a{tableau} diarani bisa dipenuhi yen ngemot paling ora siji cabang
-kang bisa dipenuhi.
+Kita nyebut sawijining cabang !!a{tableau} bisa dicukupi yen lan
+mung yen himpunan !!{signed formula}s ing cabang iku bisa dicukupi.
+!!a{tableau} diarani bisa dicukupi yen ngemot paling ora siji cabang
+kang bisa dicukupi.
 
-Kita bakal nuduhake yen ngluwihi !!{tableau} kang bisa dipenuhi
+Kita bakal nuduhake yen ngluwihi !!{tableau} kang bisa dicukupi
 kanthi salah siji aturan inferensi tansah ngasilake !!{tableau}
-kang bisa dipenuhi. Iki bakal mbuktekake teoremane: saben !!{tableau}
+kang bisa dicukupi. Iki bakal mbuktekake teoremane: saben !!{tableau}
 katutup kawangun kanthi ngetrapake aturan inferensi marang
 !!{tableau} kang mung ngemot asumsi saka~$\Gamma$. Mula, yen
-$\Gamma$ bisa dipenuhi, saben !!{tableau} kanggo himpunan iku uga
-bisa dipenuhi. Nanging !!{tableau} katutup cetha ora bisa dipenuhi,
-amarga kabeh cabange katutup lan cabang katutup ora bisa dipenuhi.
+$\Gamma$ bisa dicukupi, saben !!{tableau} kanggo himpunan iku uga
+bisa dicukupi. Nanging !!{tableau} katutup cetha ora bisa dicukupi,
+amarga kabeh cabange katutup lan cabang katutup ora bisa dicukupi.
 Ing tableau kang kawangun miturut aturan, kabeh asumsi wiwit ing
 prefiks oyod lan prefiks anyar tansah anak langsung saka prefiks
 kang wis digunakake. Mula saben cabang ngemot kabeh bagean wiwitan
 ora kosong saka saben prefikse.
 
-Upamane kita nduweni !!{tableau} kang bisa dipenuhi, yaiku
-!!a{tableau} kanthi paling ora siji cabang kang bisa dipenuhi.
+Upamane kita nduweni !!{tableau} kang bisa dicukupi, yaiku
+!!a{tableau} kanthi paling ora siji cabang kang bisa dicukupi.
 Penerapan aturan inferensi nambah !!{signed formula}s ing sawijining
 cabang utawa mecah cabang dadi loro. Yen !!{tableau} nduweni cabang
-kang bisa dipenuhi lan ora ditambahi dening penerapan aturan iku,
-cabang kasebut tetep bisa dipenuhi ing !!{tableau} kang wis
-ditambahi, mula tableau iku bisa dipenuhi. Dadi kita mung kudu
-nimbang kasus nalika aturan ditrapake ing cabang kang bisa dipenuhi.
+kang bisa dicukupi lan ora ditambahi dening penerapan aturan iku,
+cabang kasebut tetep bisa dicukupi ing !!{tableau} kang wis
+ditambahi, mula tableau iku bisa dicukupi. Dadi kita mung kudu
+nimbang kasus nalika aturan ditrapake ing cabang kang bisa dicukupi.
 
 Upamane $\Gamma$ iku himpunan !!{signed formula}s ing cabang kasebut,
 lan $\sFmla{S}{!A}[\sigma] \in \Gamma$ iku !!{signed formula} kang
 dadi sasaran penerapan aturan. Yen aturan ora mecah cabang, kita
 kudu nuduhake yen cabang kang ditambahi, yaiku $\Gamma$ bebarengan
-karo konklusi aturan, isih bisa dipenuhi. Yen aturan mecah cabang,
+karo konklusi aturan, isih bisa dicukupi. Yen aturan mecah cabang,
 kita kudu nuduhake yen paling ora siji saka rong cabang kang
-kawangun bisa dipenuhi.
+kawangun bisa dicukupi.
 \begin{enumerate}
 \item Cabang ditambahi kanthi ngetrapake $\TRule{\True}{\lnot}$ marang
   $\sFmla{\True}{\lnot !B}[\sigma] \in \Gamma$. Cabang kang ditambahi
@@ -153,12 +158,13 @@ kawangun bisa dipenuhi.
   !!{signed formula}s anyar ing cabang: $\sFmla{\True}{!B}[\sigma.n]$ lan
   $\sFmla{\False}{!C}[\sigma.n]$, kanthi $\sigma.n$ minangka prefiks
   anyar ing cabang, yaiku $\sigma.n \notin P(\Gamma)$.
+Premis disjungsi salah uga kudu nyebutake prefikse.
   
-  Amarga $\Gamma$ bisa dipenuhi, ana $\mModel{M}$ lan interpretasi~$f$
+  Amarga $\Gamma$ bisa dicukupi, ana $\mModel{M}$ lan interpretasi~$f$
   saka $P(\Gamma)$ kanthi $\mSat{M}{\Gamma}[f]$, mligine
   $\mSat/{M}{!B \lif !C}[f(\sigma)]$. Kita kudu nuduhake yen
   $\Gamma \cup \{\sFmla{\True}{!B}[\sigma.n], \sFmla{\False}{!C}[\sigma.n]\}$
-  bisa dipenuhi. Kanggo iku, kita nemtokake interpretasi saka
+  bisa dicukupi. Kanggo iku, kita nemtokake interpretasi saka
   $P(\Gamma) \cup \{\sigma.n\}$ kaya ing ngisor iki:
   
   Amarga $\mSat/{M}{!B \lif !C}[f(\sigma)]$, ana $w \in W$ kanthi
@@ -187,15 +193,16 @@ Saiki ayo nimbang aturan inferensi kang mecah cabang dadi loro.
   mligine $\mSat/{M}{!B \land !C}[f(\sigma)]$. Mula
   $\mSat/{M}{!B}[f(\sigma)]$ utawa $\mSat/{M}{!C}[f(\sigma)]$.
   Ing kasus kapisan, $\mModel{M}, f$ nyukupi
-  $\sFmla{\False}{!B}[\sigma]$, yaiku cabang kiwa bisa dipenuhi.
+  $\sFmla{\False}{!B}[\sigma]$, yaiku cabang kiwa bisa dicukupi.
   Ing kasus kapindho, $\mModel{M}, f$ nyukupi
-  $\sFmla{\False}{!C}[\sigma]$, yaiku cabang tengen bisa dipenuhi.
+  $\sFmla{\False}{!C}[\sigma]$, yaiku cabang tengen bisa dicukupi.
 \item Cabang ditambahi kanthi ngetrapake $\TRule{\True}{\lor}$ marang
     $\sFmla{\True}{!B \lor !C}[\sigma] \in \Gamma$: Latihan.
 \item Cabang ditambahi kanthi ngetrapake $\TRule{\True}{\lif}$ marang
     $\sFmla{\True}{!B \lif !C}[\sigma] \in \Gamma$: Latihan.
 \end{enumerate}
 \end{proof}
+Ekstensi interpretasi nyukupi loro kesimpulan aturan implikasi salah. Aturan kang ngasilaké rong cabang diarani aturan kang mecah cabang.
 
 \begin{prob}
 Jangkepana bukti \olref[int][tab][sou]{thm:tableau-soundness}.
@@ -216,10 +223,11 @@ Yen $\Gamma \Proves !A$, mula $\Gamma \Entails !A$.
   $\mSat/{M}{!A}[w]$. Upamane $f(1) = w$; banjur $f$ iku
   interpretasi saka~$P(\Delta)$ ing~$\mModel{M}$, lan $\mModel{M}$
   nyukupi~$\Delta$ tumrap~$f$. Nanging miturut
-  \olref{thm:tableau-soundness}, $\Delta$ ora bisa dipenuhi amarga
+  \olref{thm:tableau-soundness}, $\Delta$ ora bisa dicukupi amarga
   nduweni !!{tableau} katutup, sawijining kontradiksi. Mula kita
   mesthi nduweni $\Gamma \Entails !A$.
 \end{proof}
+Kontradiksi menehi akibat semantis kang dadi tujuan korolari.
 
 \begin{cor}
 \ollabel{cor:weak-soundness}

@@ -20,12 +20,12 @@ diandharake kanthi luwih trep, Frege nyoba ngrumusake gagasan
 kang luwih umum: ``rentang nilai'' sawijining fungsi. Ekstensi
 konsep iku kasus khusus saka gagasan kang luwih umum kasebut.
 Kanggo rinci, delengen \citet[pp.\ 8--9]{Heck2012}.}
-Kanthi notasi kang kailhami Frege, kita nulis
+Kanthi notasi kang njupuk ilham saka Frege, kita nulis
 $\fregeext{x}{F(x)}$ kanggo \emph{ekstensi konsep~$F$}.
 Iki piranti kang njupuk \emph{predikat}, ``$F$'', lan
 ngowahi dadi \emph{term} (tataran kapisan), yaiku
 ``$\fregeext{x}{F(x)}$''. Kanthi piranti iki, Frege menehi
-\emph{definisi} keanggotaan kaya mangkene:
+\emph{definisi} relasi dadi anggota kaya mangkene:
 \[
 	a \in b =_\text{df} \exists G(b = \fregeext{x}{G(x)} \land Ga)
 \]
@@ -37,7 +37,7 @@ $$\fregeext{x}{F(x)} = \fregeext{x}{G(x)} \liff \forall x (Fx \liff Gx)$$
 kurang luwih: konsep-konsep nduweni ekstensi kang identik yen
 lan mung yen konsep-konsep iku koekstensif. (Maneh,
 ``$F$'' lan ``$G$'' loro-lorone ana ing posisi predikat.)
-Saiki prinsip prasaja nyambungake keanggotaan karo pemenuhan sipat:
+Saiki prinsip prasaja nyambungake relasi dadi anggota karo nyukupi sipat:
 
 \begin{lem}[ing \emph{Grundgesetze}]\ollabel{lem:Fregeextensions}
 $\forall F \forall a(a \in \fregeext{x}{F(x)} \liff Fa)$
@@ -46,7 +46,7 @@ $\forall F \forall a(a \in \fregeext{x}{F(x)} \liff Fa)$
 \begin{proof} 
 Tetepna $F$ lan $a$. Saiki $a \in \fregeext{x}{F(x)}$ yen lan
 mung yen $\exists G(\fregeext{x}{F(x)}
-= \fregeext{x}{G(x)} \land Ga)$ (miturut definisi keanggotaan),
+= \fregeext{x}{G(x)} \land Ga)$ (miturut definisi relasi dadi anggota),
 yen lan mung yen $\exists G(\forall x(Fx \liff Gx) \land Ga)$
 (miturut Hukum Dhasar V), yen lan mung yen $Fa$ (miturut
 logika tataran kapindho kang dhasar).

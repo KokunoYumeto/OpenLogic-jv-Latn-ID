@@ -25,7 +25,7 @@ mandheg kaya mangkene. Kita mbangun mesin Turing~$E$ kang,
 yen diwenehi input angka~$e$ saka mesin Turing~$M_e$
 lan input~$w$, ngitung !!{sentence}~$!T(M_e, w) \lif !E(M_e, w)$
 kang cocog, banjur mandheg karo sirah kang maca kothak
-input kapisan ing tengen panandha pucuk pita. Cathetan koreksi sumber SOL6-F063: mesin E bali menyang kothak siji supaya posisi wiwitan D cocog karo konvensi input. Mula mesin $E \concat D$, yen diwenehi
+input kapisan ing tengen panandha pucuk pita. Mula mesin $E \concat D$, yen diwenehi
 input $e$ lan $w$, mula-mula ngitung~$!T(M_e, w) \lif
 !E(M_e, w)$, banjur nglakokake mesin masalah putusan~$D$
 nganggo asil iku minangka input. $D$ mandheg kanthi output~$1$
@@ -33,7 +33,7 @@ yen lan mung yen $!T(M_e, w) \lif !E(M_e, w)$ sah,
 dene ngasilake~$0$ yen ora. Miturut
 \olref[ver]{lem:halt-if-valid} lan
 \olref[ver]{lem:valid-if-halt}, $!T(M_e, w) \lif !E(M_e, w)$
-sah yen lan mung yen $M_e$ mandheg nganggo input~$w$. Cathetan OLPL-773 lan SOL6-F058: klausa obah kiwa lan bukti representasi sadurunge saiki dibenerake supaya pangreksan ngecualekake kothak asal kang ditulisi.
+sah yen lan mung yen $M_e$ mandheg nganggo input~$w$.
 Dadi, $E\concat D$, yen diwenehi input $e$ lan $w$,
 mandheg kanthi output~$1$ yen lan mung yen $M_e$
 mandheg nganggo input~$w$, dene mandheg kanthi
@@ -50,7 +50,7 @@ saka logika tataran kapisan bisa dicukupi.
 
 \begin{proof}
   Upamane apa sawijining ukara bisa dicukupi iku bisa diputusake
-  dening mesin Turing~$S$. Cathetan koreksi sumber SOL6-F065: pilih S kang tertib kaya ing bagean ngenani mesin tertib; output biner ana ing kothak siji lan sirah bali menyang kono. Banjur kita bisa ngrampungake
+  dening mesin Turing~$S$. Pilih S kang tertib, supaya output biner ana ing kothak siji lan sirah bali menyang kono. Banjur kita bisa ngrampungake
   masalah putusan kaya mangkene: Yen diwenehi
   !!a{sentence}~$!B$ minangka input, geser $!B$
   sakothak menyang tengen. Bali menyang kothak~$1$

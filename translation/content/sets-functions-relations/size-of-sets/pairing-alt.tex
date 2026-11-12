@@ -11,7 +11,7 @@
 \olsection{Fungsi Pasangan Alternatif}
 
 \begin{explain}
-Ana enumerasi $\Nat^2$ liyane kang inverse luwih gampang ditemokake.
+Ana enumerasi $\Nat^2$ liyané kang inversé luwih gampang ditemokaké.
 Iki salah sijine. Tinimbang nggambarake enumerasi ing larikan,
 wiwitana saka dhaptar wilangan wutuh positif kang digandhengake karo
 papan-papan kang wiwitane kosong. Bayangna papan-papan iki diisi
@@ -19,7 +19,7 @@ pasangan $\tuple{n,m}$ kanthi runtut kaya mangkene.
 Wiwit saka pasangan kang anggota kapisane~$0$, yaiku pasangan
 $\tuple{0,m}$, lebokna pasangan kapisan, yaiku $\tuple{0,0}$, ing papan
 kosong kapisan, banjur langkahana siji papan kosong, lebokna pasangan kapindho,
-yaiku $\tuple{0,1}$, ing papan kosong sabanjure, langkahana siji maneh,
+yaiku $\tuple{0,1}$, ing papan kosong sabanjuré, langkahana siji maneh,
 lan sateruse. Wiwitan enumerasi kang durung jangkep saiki katon mangkene:
 \[\small
 \begin{array}{@{}c c c c c c c c c c c@{}}
@@ -27,10 +27,9 @@ lan sateruse. Wiwitan enumerasi kang durung jangkep saiki katon mangkene:
 \tuple{0,0} &  & \tuple{0,1} &  & \tuple{0,2} &  & \tuple{0,3} & & \tuple{0,4} &  & \dots \\
 \end{array}
 \]
-Indeks pasangan kapindho iki dibenerake manut larikan ing ndhuwur; sumber
-Inggris nggunakake indeks pasangan katelu (JV-D014).
 Baleni cara iki nganggo pasangan $\tuple{1,m}$ ing papan kang isih
-kosong, kanthi nglangkahi siji papan kosong saben arep ngisi:
+kosong. Wiwitana ing papan kosong kapisan lan langkahana saben papan
+kosong kapindho, padha kaya ing langkah kapisan.
 \[\small
 \begin{array}{@{}c c c c c c c c c c c@{}}
 \mathbf 1 & \mathbf 2 & \mathbf 3 & \mathbf 4 & \mathbf 5 & \mathbf 6 & \mathbf 7 & \mathbf 8 & \mathbf 9 & \mathbf{10} & \dots \\ \\
@@ -39,8 +38,6 @@ kosong, kanthi nglangkahi siji papan kosong saben arep ngisi:
 \end{array}
 \]
 Lebokna pasangan $\tuple{2,m}$, $\tuple{3,m}$, lan sateruse kanthi cara kang padha.
-Kulawarga kapindho ing ukara iki dibenerake manut larikan sabanjure amarga
-sumber Inggris mbaleni kulawarga kapisan (OLSIZ-003).
 Mula wiwitan enumerasi kang wis jangkep kaya mangkene:
 \[\small
 \begin{array}{@{}cc c c c c c c c c c@{}}
@@ -77,7 +74,7 @@ kaping pindho wilangan ganjil, yaiku $2 \cdot (2m+1)$.
 Pasangan ing baris katelu, $\tuple{2,m}$, ana ing posisi kang nomere
 kaping papat wilangan ganjil, $4 \cdot (2m+1)$, lan sateruse.
 Faktor saka $(2m+1)$ kanggo saben baris, $1$, $2$, $4$, $8$, \dots,
-iku persis rambang-rambang saka~$2$:
+iku persis pangkat-pangkat saka~$2$:
 $1= 2^0$, $2 = 2^1$, $4 = 2^2$, $8 = 2^3$, \dots\@ Malah,
 eksponen kang cocog tansah anggota kapisan pasangan kang dirembug.
 Mula kanggo pasangan $\tuple{n,m}$ faktore yaiku $2^n$.
@@ -93,6 +90,11 @@ Fungsi $h\colon \Nat^2 \to \Nat$ kang diwenehake dening
 h(n,m) = 2^n (2m+1) - 1
 \]
 iku fungsi pasangan kanggo himpunan pasangan wilangan natural~$\Nat^2$.
+Saben wilangan wutuh positif bisa ditulis kanthi tunggal minangka pangkat loro
+dikalèkaké wilangan wutuh positif ganjil. Kanggo nemokaké pasangan saka
+kode, tambahna siji, wacanen eksponen pangkat loro minangka koordinat
+kapisan, banjur kurangana faktor ganjil mau kanthi siji lan baginen asile dadi loro.
+Mula saben kode natural asale saka persis siji pasangan.
 \end{ex}
 
 \begin{explain}
@@ -112,7 +114,9 @@ Fungsi $j\colon \Nat^2 \to \Nat^+$ kang diwenehake dening
 \[
 j(n,m) = 2^n3^m
 \]
-iku fungsi !!a{injective} $\Nat^2 \to \Nat$.
+iku fungsi !!a{injective} $\Nat^2 \to \Nat^+$.
+Keunikan faktorisasi prima njamin yèn kode nemtokaké loro eksponené.
+Nanging $5$ ora ana ing jangkauané.
 \end{ex}
 
 \end{document}

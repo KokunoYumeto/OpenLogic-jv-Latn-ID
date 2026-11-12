@@ -96,12 +96,7 @@ yaiku $(\lambd[y][y])x$,
 dudu suku asal iku dhewe.
 
 \begin{editorial}
-  Definisi iki isih nduweni
-  masalah: kita durung nerangake
-  carane netepake fungsi ing
-  suku-$\lambd$ kanthi rekursif.
-  Bab iki bakal didandani
-  ing tembe.
+  Kanggo netepaké pangembangan jangkep ing kelas alfa, asil rekursi bisa ditetepake dhisik ing suku mentah kanthi asil kelas alfa. Klausa mung nggunakake subsuku kang ukurane luwih cilik. Invariansi marang alfa dibuktekake bebarengan karo fakta yen pangembangan lengkap komutatif karo panggantian variabel dening variabel kang ora ngrebut. Ing ukuran saiki, invariansi rename binder nggunakake fakta panggantian kanggo awak kang luwih cilik; kasus konteks nggunakake invariansi subsuku. Sawise invariansi ukuran saiki kabukten, pilih binder seger lan buktekake fakta panggantian ukuran saiki kanthi induksi ing awak utawa rong komponen. Panggantian variabel dening variabel ora ngowahi apa kepala aplikasi iku abstraksi. Ing kasus redex, hukum komposisi substitusi kang diwenehake ing bukti sabanjure njaga urutan rong panggantian. Ing kasus abstraksi, syarat seger ndadekake panggantian mlebu awak kanthi aman. Variabel lan aplikasi langsung ngetutake klausa. Mula ora ana panggunaan invariansi ukuran saiki kanggo mbuktekake invariansi ukuran saiki: invariansi nganggo fakta awak luwih cilik, banjur fakta panggantian ukuran saiki nggunakake invariansi kang wis kabukten. Jeneng bebas lan pilihan binder ora ngowahi kelas asil, saengga fungsi mudhun menyang kelas alfa kanthi rekursi ukuran.
 \end{editorial}
 
 \begin{lem}\ollabel{lem:comp}
@@ -112,7 +107,7 @@ dudu suku asal iku dhewe.
 
 \begin{proof}
   Gunakake induksi ing !!{derivation}
-  saka $M \bredpar M'$.
+  saka $M \bredpar M'$. Pilih wakil binder ing kasus abstraksi lan kontraksi saengga $x\neq y$ lan $x\notin\FV{R}\cup\FV{R'}$; ing kasus kontraksi, pilih uga $x\notin\FV{Q}\cup\FV{Q'}$. Kabeh himpunan iki winates lan pilihan wakil aman diwenehake dening teorema substitusi nganti alfa; ora ana kemunculan bebas kang diowahi.
   \begin{enumerate}
     \item Yen langkah pungkasan
       \olref{defn:bredpar1}: latihan.
@@ -147,11 +142,14 @@ dudu suku asal iku dhewe.
       Langkah iki nggunakake
       \olref{defn:bredpar4},
       hipotesis induksi, lan
-      hukum komposisi substitusi
-      kanthi binder kang dipilih
-      seger. Justifikasi pungkasan
-      iki durung diwenehake ing
-      teks sumber.
+      hukum komposisi substitusi kanthi binder kang dipilih seger. Kanggo kelas alfa lan variabel béda, gunakna hukum komposisi iki
+      \[
+       \Subst{\Subst{A}{B}{x}}{C}{y}
+       =\Subst{\Subst{A}{C}{y}}{\Subst{B}{C}{y}}{x}
+       \quad\text{yen }x\neq y,\ x\notin\FV{C}.
+      \]
+      Bukti kanthi induksi ing ukuran wit suku, kanggo kabeh wakil lan pengganti. Yen A variabel x, kalorone menehi B kang wis disubstitusi C kanggo y; yen A variabel y, kalorone menehi C amarga x ora bebas ing C; variabel liyane tetep. Aplikasi ngetutake rong hipotesis induksi. Ing abstraksi, pilih binder z beda saka x lan y lan ora bebas ing B utawa C nganggo teorema substitusi nganti alfa kang wis kabukten. Substitusi ing awak banjur nggunakake hipotesis induksi kanggo ukuran luwih cilik, lan loro asil diabstraksi z maneh. Syarat z ora bebas ing B kang wis disubstitusi C kanggo y ngetutake rumus FV sadurunge. Ukuran ora owah nalika rename, mula induksi iki sah kanggo kabeh wakil seger, lan ora gumantung teorema paralel iki. Delengen rujukan primer \href{https://isabelle.in.tum.de/nominal/example.html}{Nominal Methods Group, Barendregt's Substitution Lemma}, pratelan 2.1.16 lan kasus variabel, abstraksi, sarta aplikasi.
+      Kanggo langkah kontraksi ing ndhuwur, aplikasi hukum iki nganggo A minangka N-prima, B minangka Q-prima, lan C minangka R-prima. Binder kang dipilih seger nyukupi syarate. Hipotesis induksi ing N lan Q banjur menehi rong premis paralel, lan aturan kontraksi paralel menehi asil kang dikarepake.
   \end{enumerate}
 \end{proof}
 
@@ -248,7 +246,7 @@ dudu suku asal iku dhewe.
 \end{thm}
 
 \begin{proof}
-  Langsung saka \olref{lem:cont}.
+  Langsung saka \olref{lem:cont}. Ing klausa abstraksi, premisé awujud reduksi paralel. Kasus kontraksi nggunakake hukum komposisi substitusi.
 \end{proof}
 
 \end{document}

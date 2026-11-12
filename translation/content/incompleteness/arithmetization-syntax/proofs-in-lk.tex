@@ -90,7 +90,6 @@ ditemtokake kaya mangkene:
   \tuple{1, \tuple{1, \tuple{0, \Gn{!A \Sequent !A}}, \Gn{!A \land !B \Sequent !A}, 9},
     \Gn{\Sequent (!A \land !B) \lif !A}, 14}.
   \]
-Cathetan koreksi sumber OLPL-170: ing conto kode sekuen wiwitan, rong tandha kurung tutup ing rumus sumber keluwihan; rumus Jawa kang kacithak ing kene wis nyocogake pasangan kurunge.
 \end{ex}
 
 \begin{explain}
@@ -113,8 +112,7 @@ sekuen kang dumadi saka !!{sentence}s. Sawetara sifat liyane luwih
 angel. Kita bakal menehi sketsa carane. Tujuane yaiku nuduhake
 yen relasi ``$\pi$ iku !!a{derivation} saka~$!A$ adhedhasar~$\Gamma$''
 iku relasi rekursif primitif saka wilangan G\"odel $\pi$ lan~$!A$.
-Cathetan koreksi sumber OLPL-171: sumber nganggo jeneng EndSeq sapisan, nanging rumus-rumus sabanjure nganggo EndSequent kanggo fungsi kang padha; jeneng ing prosa Jawa wis diseragamake.
-Cathetan panjelasan SOL6-F077: Seq mriksa kode urutan sah. Kode kosong yaiku nol utawa siji; kode liyane kudu duwe faktor prima kanthi pangkat positif saka prima kapisan nganti prima pungkasan tanpa bolong. Iki bisa dites kanthi faktor prima lan divisibilitas bounded, mula rekursif primitif.
+Seq nampa kode kosong nol utawa siji. Kode liya kudu nduwèni faktor prima kanthi pangkat positif saka prima kapisan nganti pungkasan tanpa bolong. Iki bisa dites kanthi faktor prima lan divisibilitas winates, mula tesé rekursif primitif.
 \end{explain}
 
 \begin{prop}\ollabel{prop:followsby}
@@ -223,12 +221,10 @@ Sabanjure kita netepake $\fn{Correct}(p)$ minangka
   (\fn{LastRule}(p) = 20 \land \fn{FollowsBy}_{\eq}(p)) \lor {}\\
   (p)_0 = 0 \land \fn{InitSeq}(\fn{EndSequent}(p))]
 \end{multline*}
-Cathetan koreksi sumber OLPL-172: rumus Correct kudu ngrujuk InitSeq kang wis ditetepake sadurunge, dudu InitialSeq kang durung dikenalake; rumus Jawa wis nganggo jeneng kang konsisten.
 Tes sekuen mesthekake yen sekuen pungkasane~$p$ pancen
 sekuen kang dumadi saka !!{sentence}s. Baris pungkasan nyakup
 kasus nalika $p$ mung sekuen wiwitan.
-Cathetan koreksi sumber OLPL-173: panjelasan ing sumber nyebut d, nanging argumen fungsi Correct ing kene yaiku p; prosa Jawa wis nganggo p.
-Cathetan koreksi sumber SOL6-F076 lan SOL6-F077: eksistensial tengen mbutuhake jinis kode kang bener lan syarat bebas kanggo, supaya substitusi ora njiret variabel. Tes wujud tupla ing Correct mriksa dawa pas miturut cacah anak, supaya kode salah wujud utawa komponen tambahan ora lolos.
+Klausa eksistensial tengen mriksa jinis kode lan syarat substitusi bebas. Tes wujud tupel ing Correct mriksa dawa pas miturut cacah anak.
 \end{proof}
 
 \begin{prob}
@@ -262,7 +258,6 @@ Cathetan koreksi sumber SOL6-F076 lan SOL6-F077: eksistensial tengen mbutuhake j
   \[
   \bforall{i<\len{\fn{SubtreeSeq}(p)}}{\fn{Correct}((\fn{SubtreeSeq}(p))_i)}.
   \]
-Cathetan koreksi sumber OLPL-174: ing bukti iki argumen Deriv kudune p, lan rumus Correct ing sumber kurang siji kurung tutup; rumus Jawa wis nyocogake loro-lorone.
 \end{proof}
 
 
@@ -302,7 +297,6 @@ ing~$\Gamma$. Mula $\Prf[\Gamma](x, y)$ bisa ditetepake dening
   \len{(\fn{EndSequent}(x))_0}}{R_\Gamma(((\fn{EndSequent}(x))_0)_i)} \land {}\\
 & \len{(\fn{EndSequent}(x))_1} = 1 \land ((\fn{EndSequent}(x))_1)_0 = y.
 \end{align*}
-Cathetan koreksi sumber OLPL-175: ing katerangan sadurunge rumus, kode ukara ing sisih tengen kudune y, dudu x kang dadi kode derivasi; prosa Jawa wis nganggo y.
 \end{proof}
 
 \end{document}

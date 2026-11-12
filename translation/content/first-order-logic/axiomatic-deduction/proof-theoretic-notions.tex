@@ -16,8 +16,7 @@
 Kaya nalika kita nemtokake sawetara gagasan semantis wigati
 (\iftag{FOL}{validitas}{tautologi}, akibat, lan bisa dicukupi), saiki
 kita nemtokake \emph{gagasan teoretis-bukti} kang cocog. Gagasan iki
-ora ditemtokake kanthi nggunakake panyukupan !!{sentence}s ing
-!!{structure}s, nanging kanthi nggunakake !!{derivability} utawa
+ora ditemtokake kanthi nggunakake panyukupan !!{formula}s \iftag{FOL}{ing struktur kanthi pangaji variabel}{ing valuasi}, nanging kanthi nggunakake !!{derivability} utawa
 !!{nonderivability} formula-formula tartamtu. Panemuan wigati yaiku
 manawa gagasan kasebut cocog siji lan sijine. Kecocogan kasebut dadi isi
 \emph{teorema kasahihan} lan \emph{teorema kelengkapan}.
@@ -57,23 +56,25 @@ Yen $\Gamma \subseteq \Delta$ lan $\Gamma \Proves !A$, mula $\Delta
 \end{prop}
 
 \begin{proof}
-Saben !!{derivation} kang formula pungkasane $!A$ saka $\Gamma$ bisa
-diowahi dadi !!a{derivation} kang formula pungkasane $!A$ saka~$\Delta$.
-Iki dibuktekake kanthi induksi miturut dawane derivasi. Langkah aksioma
-lan modus ponens tetep bener, lan saben premis saka Gamma uga premis
-saka Delta. Ing kasus aturan kuantor, yen eigenvariabel aturan kasebut
-katon ing himpunan premis anyar, ganti kanthi seragam eigenvariabel iku
-ing derivasi premis kang luwih cekak nganggo simbol konstanta pambantu
-kang seger; banjur trapna hipotesis induksi lan aturan kuantor.
-Konvensi simbol seger ing kene ngidini basa ditambahi sauntara nganggo
-cacah winates simbol konstanta pambantu. Simbol iku dipilih supaya ora
-katon ing himpunan premis anyar, formula pungkasan, utawa perangan aturan
-liyane, lan ora ngowahi premis utawa kesimpulan ing basa wiwitan.
-Cathetan koreksi sumber MGR-JV-0118-FRESHNESS-20260920: sumber Inggris
-nganggep rerangken lawas tetep bener sawise himpunan premis digedhekake,
-nanging syarat aturan kuantor bisa gagal yen eigenvariabel katon ing
-premis tambahan. Induksi lan konvensi simbol seger ing ndhuwur ndandani
-celah kasebut.
+Induksi miturut cacah larik ing derivasi saka konteks wiwitan.
+Saben premis saka $\Gamma$ uga premis saka $\Delta$.
+Yèn larik pungkasan iku instansi aksioma, tetepna larik iku.
+Kanggo modus ponens, gunakna hipotesis induksi marang loro prefiks
+kang pungkasané formula premis inferensi, banjur gabungna derivasi
+saka $\Delta$ lan trapna \MP{}.
+\iftag{FOL}{%
+Kanggo aturan kuantor, jenengna eigenkonstanta ing inferensi
+pungkasan $a$. Yèn $a$ ana ing $\Delta$, gantenana $a$ kanthi seragam ing prefiks premisé nganggo $b$ kang anyar.
+Pilih $b$ kang ora ana ing $\Delta$, prefiks lawas lan kesimpulan.
+Panggantos iki njaga aksioma lan kabeh aturan ing prefiks, amarga
+$a$ absèn saka $\Gamma$ lan $b$ durung tau dienggo ing kono.
+Miturut hipotesis induksi, premis kang wis diganti nduwèni derivasi
+saka $\Delta$. Trapna aturan kuantor nganggo $b$. Kesimpulan tetep
+padha amarga $a$ absèn saka kesimpulan aturan iku. Yèn $a$ wis absèn
+saka $\Delta$, hipotesis induksi ngidini kita tetep nganggo $a$.
+Derivasi bisa nganggo tambahan winates konstanta pambantu kang
+dipilih saka jeneng anyar ing njaba basa wiwitan, kanthi premis lan
+kesimpulan pungkasan tetep ing basa wiwitan.}{}%
 \end{proof}
 
 \begin{prop}[Transitivitas]
@@ -83,38 +84,25 @@ Yen $\Gamma \Proves !A$ lan $\{!A\} \cup \Delta \Proves
 \end{prop}
 
 \begin{proof}
-  Upamana $\{!A\} \cup \Delta \Proves !B$. Banjur ana
-  !!a{derivation} $!B_1$, \dots, $!B_l = !B$ saka~$\{!A\} \cup
-  \Delta$. Sawetara langkah ing !!{derivation} kasebut nduweni dhasar
-  saka aturan kang ngrujuk marang larik sadurunge~$!B_i = !A$. Miturut
-  hipotesis, ana !!a{derivation} kang formula pungkasane~$!A$
-  saka~$\Gamma$, yaiku
-  !!a{derivation}~$!A_1$, \dots, $!A_k = !A$ kang saben $!A_i$ iku
-  aksioma, !!a{element} saka~$\Gamma$, utawa nduweni dhasar saka aturan
-  inferensi. Miturut Monotonisitas kang wis dibuktekake ing ndhuwur,
-  pilih wujud derivasi pisanan kang bener saka konteks gabungan. Ing
-  derivasi kapindho, ganti kanthi seragam saben eigenvariabel aturan
-  kuantor kang katon ing Gamma nganggo simbol pambantu seger. Syarat
-  aturan kasebut wis mesthekake simbol lawas ora katon ing A utawa
-  Delta; sawise diganti, simbol anyar ora katon ing Gamma utawa Delta.
-  Konvensi simbol seger ing bukti Monotonisitas mesthekake panggantos
-  iki bisa ditindakake. Saiki gatekna rerangken
-  \[
-  !A_1, \dots, !A_k = !A, !B_1, \dots, !B_l = !B.
-  \]
-  Iki !!{derivation} kang bener kanthi formula pungkasane~$!B$ saka
-  $\Gamma \cup \Delta$: saben langkah saka derivasi kapindho njaga
-  dhasare lan syarat aturan kuantore, dene saben $!B_i = !A$ saiki
-  nduweni dhasar inferensial kang padha karo~$!A_k = !A$.
-  Cathetan koreksi sumber MGR-JV-0118-FRESHNESS-20260920 uga lumaku ing
-  kene: panggabungan langsung bisa ngrusak syarat aturan kuantor;
-  panyegaran sadurunge panggabungan njaga kabeh syarat kasebut.
-  Cathetan koreksi
-  sumber OLPL-025: sumber Inggris ora menehi tandha metavariabel
-  formula ing sebutan kapindho lan nyebut dhasar inferensial kasebut
-  minangka aturan, sanadyan ukara sadurunge mbedakake aksioma, unsur
-  premis, lan aturan. Wujud formula lan dhasar umum kasebut dibalekake
-  ing kene.
+  Upamana $\{!A\}\cup\Delta\Proves !B$. Kita nganggo induksi miturut
+  cacah larik ing derivasi kang pungkasané $!B$ saka konteks iki.
+  Yèn larik $!B_i = !A$ dadi premis, anggo derivasi saka $\Gamma$ lan
+  Monotonisitas kanggo ngasilaké $!A$ saka $\Gamma\cup\Delta$.
+  Premis saka $\Delta$ tetep premis, lan instansi aksioma tetep sah.
+  Kanggo langkah \MP{}, trapna induksi marang loro derivasi kang
+  pungkasané premis inferensi. Gabungna asilé lan trapna \MP{}.
+  \iftag{FOL}{%
+  Kanggo aturan kuantor, yèn eigenkonstanta $a$ ora absèn saka
+  $\Gamma\cup\Delta$, pilih konstanta anyar kaya ing bukti
+  Monotonisitas, lan pesthèkna uga konstanta iku absèn saka $!A$.
+  Ing prefiks kang pungkasané premis aturan kuantor, ganti $a$ nganggo
+  konstanta anyar iku. Hipotesis aturan njamin
+  $a$ absèn saka $\{!A\}\cup\Delta$ lan saka kesimpulan inferensi.
+  Ing kasus iki, trapna induksi marang derivasi premis kang wis diowahi.
+  Trapna aturan kuantor marang premis kang wis diasilaké saka konteks
+  gabungan. Yèn $a$ wis absèn saka konteks gabungan, trapna induksi
+  langsung marang derivasi premis lawas lan nganggo aturan kang padha.}{}%
+  Mula $\Gamma\cup\Delta\Proves !B$.
 \end{proof}
 
 Gatekna yen iki mligine ateges: yen $\Gamma \Proves !A$ lan $!A
@@ -164,10 +152,8 @@ Buktekna \olref[pl][axd][ptn]{prop:incons}.
       himpunan kabeh $!A_i$ kang kalebu ing~$\Gamma$. Banjur
       !!{derivation} kasebut uga dadi !!a{derivation} saka~$\Gamma_0$,
       mula $\Gamma_0
-      \Proves !A$. Cathetan koreksi sumber OLPL-026: bukti Inggris
-      mung nyebut modus ponens ing alternatif pungkasan, sanadyan nalika
-      tag FOL aktif bab iki uga ngidini aturan kuantor; sebutan umum
-      marang aturan inferensi kang diidini njaga bukti kanggo loro tag.
+      \Proves !A$. Syarat konstanta anyar tetep lumaku nalika konteks disuda saka
+      $\Gamma$ dadi $\Gamma_0$, mula langkah-langkah aturan kuantor uga sah.
     \item Iki kontraposisi saka~(1) kanggo kasus mligi $!A
       \ident \lfalse$.
 \end{enumerate}

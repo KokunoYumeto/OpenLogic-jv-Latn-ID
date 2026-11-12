@@ -13,9 +13,9 @@ Abstraksi-$\lambd$~$\lambd[x][M]$ makili fungsi
 siji argumen. Iki dadi watesan nalika kita arep
 netepake fungsi kang nampa luwih saka siji argumen.
 Salah siji cara yaiku nggedhekake kalkulus-$\lambd$
-supaya bisa mbentuk pasangan, triplèt, lan sateruse;
+supaya bisa mbentuk pasangan, tripel, lan sateruse;
 yen mangkono, umpamane, fungsi telung argumen
-$\lambd[x][M]$ bakal nampa sawijining triplèt
+$\lambd[x][M]$ bakal nampa sawijining tripel
 minangka argumene. Nanging luwih praktis yen
 kita nggunakake \emph{Currying}.
 
@@ -56,7 +56,7 @@ lan ngasilake fungsi~$\lambd[y][x]$.
 Fungsi $\lambd[y][x]$ nampa argumen
 liyane~$y$, nanging ora migunakake argumen
 iku lan tansah ngasilake~$x$.
-Gatekna apa kang kedadeyan nalika
+Sadurunge aplikasi iki, ganti jeneng binder supaya ora ana jeneng variabel kaiket kang muncul bebas ing argumen. Iki konvensi panggantian kang ora ngrebut variabel, dudu substitusi literal tanpa kesegaran. Gatekna apa kang kedadeyan nalika
 $\lambd[x][\lambd[y][x]]$
 diaplikasikake marang rong argumen:
 \begin{align*}
@@ -69,7 +69,7 @@ Umume, kanggo nulis fungsi kanthi parameter
 $x_1$, \dots,~$x_n$ kang ditetepake
 dening sawijining suku~$N$, kita bisa nulis
 $\lambd[x_1][\lambd[x_2][\ldots\lambd[x_n][N]]]$.
-Yen kita ngaplikasikake $n$ argumen
+Sadurunge aplikasi kabeh argumen, pilih jeneng binder kang beda-beda lan seger kanggo kabeh argumen. Sawise pangowahan jeneng iki, yen kita ngaplikasikake $n$ argumen
 marang fungsi iki, kita oleh:
 \begin{multline*}
   (\lambd[x_1][\lambd[x_2][\ldots\lambd[x_n][N]]]) M_1 \dots M_n \\
@@ -86,5 +86,5 @@ Larik pungkasan teges harfiahe nyelehake
 $M_i$ minangka pangganti $x_i$ ing awak
 definisi fungsi, persis kaya kang dikarepake
 nalika fungsi diaplikasikake marang luwih saka
-siji argumen.
+siji argumen. Pilih kabèh pangiket seger tumrap kabèh argumen supaya ora ana variabel bebas kang kacekel.
 \end{document}

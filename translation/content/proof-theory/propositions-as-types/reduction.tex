@@ -15,9 +15,9 @@ ditututi aturan !!a{elimination} iku dalan mubeng sing bisa ``direduksi''.
 Contone, $\Intro{\land}$ sing ditututi $\Elim{\land}$ ``padha mbatalake'',
 amarga konklusi $\Elim{\land}$ tansah salah siji konjung saka konjungsi
 sing diasilake \Intro{\land}, lan premis $\Intro{\land}$ iku loro konjung
-kasebut. Mula yen mbutuhake !!a{derivation} saka salah siji konjung,
+kasebut. Mula yèn mbutuhaké !!a{derivation} saka salah siji konjung,
 kita bisa langsung nggunakake !!{derivation} kasebut tanpa ngenalake
-konjungsi banjur ngeliminasi. Kita nduweni
+konjungsi banjur ngeliminasi. Kita nduwèni
 \begin{gather*}
   \bottomAlignProof
   \AxiomC{}
@@ -41,8 +41,8 @@ konjungsi banjur ngeliminasi. Kita nduweni
 \end{gather*}
 
 Panyederhanaan iki uga menehi gagasan relasi reduksi sing padha tumrap
-terma bukti sing cocog. Yen $N_1$ iku terma bukti kanggo~$\delta_1$ lan
-$N_2$ kanggo~$\delta_2$, kita bisa ngarani yen terma bukti saka bukti
+terma bukti sing cocog. Yèn $N_1$ iku terma bukti kanggo~$\delta_1$ lan
+$N_2$ kanggo~$\delta_2$, kita bisa ngarani yèn terma bukti saka bukti
 ing kiwa direduksi (kanthi siji langkah) dadi terma bukti saka bukti
 ing tengen:
 \[
@@ -50,8 +50,9 @@ ing tengen:
 \]
 Ing kalkulus lambda mawa tipe, iki aturan \emph{reduksi beta} kanggo
 tipe prodhuk.
+Cathetan notasi: makro pasangan nampa rong argumèn kapisah, supaya proyeksi ditrapaké marang pasangan kang bener.
 
-Ing dedhuksi alami, pasangan inferensi kaya \Intro{\land} sing
+Ing dedhuksi alami, pasangan inferènsi kaya \Intro{\land} sing
 ditututi \Elim{\land}, yaiku pasangan sing bisa direduksi, diarani
 \emph{cut}. Ing kalkulus lambda mawa tipe, terma ing kiwa $\redone$
 diarani \emph{redex}, lan terma ing tengen diarani \emph{asil kontraksi}.
@@ -60,8 +61,9 @@ redex. Ing kalkulus lambda mawa tipe, sintakse ditambahi terma sing
 nggunakake $\pair{N}{M}$, $\proj{i}{N}$, $\inj[!A]{i}{N}$,
 $\dcase{N}{x_1}{M_1}{x_2}{M_2}$, lan $\abort{!A}{N}$, kanthi
 redex sing cocog.
+Cathetan notasi: injeksi nganggo anotasi tipe opsional, banjur indeks lan terma minangka rong argumèn.
 
-Kanthi cara sing padha, kita nduweni reduksi kanggo disjungsi:
+Kanthi cara sing padha, kita nduwèni reduksi kanggo disjungsi:
 \begin{gather*}
   \bottomAlignProof
   \AxiomC{}
@@ -94,9 +96,11 @@ Iki cocog karo reduksi tumrap terma bukti:
 \end{gather*}
 kanthi $M$ minangka terma bukti saka~$\delta$, lan $N_i$ minangka
 terma bukti saka~$\delta_i$. Iki aturan reduksi beta kanggo tipe gunggung.
-Ing kene, $\Subst{N_i}{M}{x_i}$ tegese ngganti kabeh kedadeyan bebas
-variabel~$x_i$ ing $N_i$ nganggo~$M$, kanthi ngganti jeneng variabel
-kaiket dhisik yen perlu supaya variabel bebas ora kacekel.
+Ing kéné, $\Subst{M}{N_i}{x}$ tegesé ngganti kabèh kedadéan bébas
+variabel~$x$ ing $M$ nganggo~$N_i$, kanthi ngganti jeneng variabel
+kaiket dhisik yèn perlu supaya variabel bébas ora kacekel.
+Cathetan tipe: anotasi injeksi ing aturan iki yaiku tipe summand liyane, déné terma muatan nduwèni tipe summand kang dipilih.
+Cathetan: panjelasan substitusi umum iki bener kanthi urutan argumèn kang ditulis. Iki dudu pembalikan operator substitusi; substitusi ditrapaké tanpa nangkep variabel bébas.
 
 Reduksi tipe fungsi cocog karo ngilangi dalan mubeng saka
 $\Intro\lif$ sing ditututi $\Elim\lif$.
@@ -130,7 +134,7 @@ Kanggo terma bukti, iki padha karo reduksi beta lumrah:
 \end{gather*}
 
 Kajaba konversi reduksi tumrap !!{proof}s, kita bisa nimbang konversi
-permutasi. Konversi iki ditrapake marang (sub)!!{proof}s sing dipungkasi
+permutasi. Konversi iki ditrapaké marang (sub)!!{proof}s sing pungkasané
 kanthi \Elim{\lor} banjur ditututi aturan !!{elimination} liyane,
 contone:
 \begin{multline*}
@@ -173,7 +177,7 @@ contone:
   \TrinaryInfC{$!C_i$}
   \DisplayProof
 \end{multline*}
-Yen terma bukti saka $\delta$, $\delta_1$, lan $\delta_2$ yaiku $M$,
+Yèn terma bukti saka $\delta$, $\delta_1$, lan $\delta_2$ yaiku $M$,
 $N_1$, lan $N_2$, aturan reduksi sing cocog kanggo terma bukti, yaiku
 terma $\lambd$, awujud:
 \[
@@ -182,18 +186,19 @@ terma $\lambd$, awujud:
 \]
 
 Kita bisa ngilangi dalan mubeng ora mung ing pungkasan !!{proof}s,
-nanging uga ing sajrone !!{proof}s, kanthi ngetrapake konversi reduksi
-marang sub-!!{proof} sing dipungkasi dalan mubeng. Semono uga, reduksi
-$\beta$ ditrapake marang subterma saka terma $\lambd$. Yen $N$ iku
+nanging uga ing sajrone !!{proof}s, kanthi ngetrapaké konversi reduksi
+marang sub-!!{proof} sing pungkasané dalan mubeng. Semono uga, reduksi
+$\beta$ ditrapaké marang subterma saka terma $\lambd$. Yèn $N$ iku
 subterma saka $M$ lan $N \redone N'$, kita bisa ngganti subterma $N$
-ing~$M$ nganggo $N'$ kanggo ngasilake $M'$. Ing kasus iki kita uga
-nulis $M \redone M'$. Yen ana urutan $M = M_1 \redone M_2 \redone
+ing~$M$ nganggo $N'$ kanggo ngasilaké $M'$. Ing kasus iki kita uga
+nulis $M \redone M'$. Yèn ana urutan $M = M_1 \redone M_2 \redone
 \dots \redone M_k = M'$ (kalebu $k=1$, yaiku $M = M'$), kita nulis
 $M \red M'$.
+Cathetan notasi: dhaptar reduksi umum nganggo jeneng panerus kang runtut. Kasus nol langkah tetep diidinaké kanthi katerangan kang kasebut.
 
-!!{proof} sing ora ngidini konversi ditrapake marang sub-!!{proof}
-endi wae diarani \emph{normal}. Semono uga, terma $\lambd$ sing ora
-ngidini konversi ditrapake (marang subterma endi wae) diarani
+!!{proof} sing ora ngidini konversi ditrapaké marang sub-!!{proof}
+endi waé diarani \emph{normal}. Semono uga, terma $\lambd$ sing ora
+ngidini konversi ditrapaké (marang subterma endi waé) diarani
 \emph{normal}. Terma $\lambd$ normal uga diarani \emph{wujud normal}.
 
 \end{document}

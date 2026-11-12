@@ -16,16 +16,22 @@
 \ollabel{ax:q1} & \lforall[x][!B] \lif !B(t), \\
 \ollabel{ax:q2} & !B(t) \lif \lexists[x][!B].
 \end{align}
-kanggo saben term katutup~$t$.
+Kanggo saben term katutup~$t$, $!B(t)$ tegesé asil ngganti saben kedadéan bébas saka $x$
+ing matriks $!B$ nganggo $t$.
 \end{defn}
 
 \begin{defn}[Aturan kanggo kuantor]
-\item Yen $!B \lif !A(a)$ wis muncul ing !!{derivation} lan $a$ ora
-  muncul ing~$\Gamma$ utawa~$!B$, mula $!B \lif
-  \lforall[x][!A(x)]$ dadi langkah inferensi kang bener.
-\item Yen $!A(a) \lif !B$ wis muncul ing !!{derivation} lan $a$ ora
-  muncul ing~$\Gamma$ utawa~$!B$, mula $\lexists[x][!A(x)] \lif
-  !B$ dadi langkah inferensi kang bener.
+Pilih konstanta $a$ kang absèn saka $\Gamma$, $!B$, lan matriks $!A(x)$.
+Ing kéné $!A(a)$ yaiku asil substitusi $a$ kanggo kedadéan bébas $x$
+ing matriks iku.
+\begin{enumerate}
+\item Yèn $!B \lif !A(a)$ ana ing larik sadurungé ing !!{derivation}
+  saka $\Gamma$, mula $!B \lif \lforall[x][!A(x)]$ dadi langkah
+  inferensi kang bener.
+\item Yèn $!A(a) \lif !B$ ana ing larik sadurungé ing !!{derivation}
+  saka $\Gamma$, mula $\lexists[x][!A(x)] \lif !B$ dadi langkah
+  inferensi kang bener.
+\end{enumerate}
 \end{defn}
 
 Kita bakal nyingkat saben aturan kasebut dadi ``\QR.''

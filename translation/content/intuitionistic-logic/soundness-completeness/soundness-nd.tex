@@ -42,6 +42,7 @@ saka himpunan asumsi, mula himpunan asumsi iku ngentail
       $\mSat{M}{\Gamma \cup \Delta}[w]$. Uga $\mSat{M}{\Gamma}[w]$.
       Amarga $\Gamma \Entails !B$, $\mSat{M}{!B}[w]$. Kanthi cara
       kang padha, $\mSat{M}{!C}[w]$. Mula $\mSat{M}{!B \land !C}[w]$.}
+Rumus kang dadi tujuan dicocogake karo rong premis konjungsi.
 
   \item !!{derivation} pungkasan ing $\Elim{\land}$:
     \iftag{probAnd}{Latihan.}{!!{derivation} kanggo premis $!B \land !C$
@@ -62,6 +63,7 @@ saka himpunan asumsi, mula himpunan asumsi iku ngentail
       Amarga $\Gamma \Entails !B$, $\mSat{M}{!B}[w]$. Nanging uga
       $\mSat{M}{!B \lor !C}[w]$. Kanthi cara kang padha, yen premise~$!C$,
       kita nduweni $\Gamma \Entails !B \lor !C$.}
+Ukara panutup kanggo premis kapindho nyebutake disjungsi kang dadi tujuan.
     
   \item !!{derivation} pungkasan ing~$\Elim{\lor}$:
     \iftag{probOr}{Latihan.}{!!{derivation}s kang pungkasan ing
@@ -84,6 +86,7 @@ saka himpunan asumsi, mula himpunan asumsi iku ngentail
     (b)~$\mSat{M}{!C}[w]$. Mula $\mSat{M}{\Delta_2 \cup \{!C\}}[w]$.
     Amarga $\Delta_2 \cup \{!C\} \Entails !D$, kita entuk $\mSat{M}{!D}[w]$.
     Dadi ing loro kasus, $\mSat{M}{!D}[w]$, kaya kang arep dituduhake.}
+Donya ing argumen kabeneran lan himpunan siji unsur ing konteks dicocogake karo hipotesis induksi.
 
   \item !!{derivation} pungkasan nganggo $\Intro{\lif}$ kanthi
     kesimpulan~$!B\lif !C$. Premise yaiku~$!C$, lan !!{derivation}
@@ -126,7 +129,7 @@ saka himpunan asumsi, mula himpunan asumsi iku ngentail
     Kita nganggo bukti ora langsung. Yen $\Gamma \Entails/ !A$, ana
     model~$\mModel{M}$ lan donya~$w$ kanthi $\mSat{M}{\Gamma}[w]$
     lan $\mSat/{M}{!A}[w]$. Amarga $\Gamma \Entails \lfalse$,
-    $\mSat{M}{\lfalse}[w]$. Nanging iki ora mungkin, amarga miturut
+    $\mSat{M}{\lfalse}[w]$. Nanging iki mokal, amarga miturut
     definisi, $\mSat/{M}{\lfalse}[w]$. Mula $\Gamma \Entails !A$.
   \item !!{derivation} pungkasan ing $\Intro\lnot$: Latihan.
   \item !!{derivation} pungkasan ing $\Elim\lnot$: Latihan.

@@ -18,7 +18,7 @@
   bagean mau.
 \end{editorial}
 
-Himpunan winates bisa ditemtokake mung kanthi menehi enumerasi tumrap
+Himpunan winates kang isi bisa ditemtokaké kanthi menehi enumerasi tumrap
 !!{element}sne. Iki kang ditindakake nalika netepake himpunan kaya mangkene:
 \[
   A = \{a_1, a_2, \ldots, a_n\}.
@@ -27,10 +27,11 @@ Yen !!{element}s $a_1$, \dots, $a_n$ kabeh beda,
 iki menehi !!a{bijection} antarane $A$ lan $n$ wilangan natural
 kapisan, yaiku $0$, \dots, $n-1$. Kosok baline, amarga saben
 himpunan winates mung duwe !!{element}s kang cacahe winates,
-saben himpunan winates bisa digawe korespondensi kaya mangkono.
-Kanthi tembung liya, yen $A$ winates, ana
+saben himpunan winates kang isi bisa digawé korespondensi kaya mangkono.
+Kanthi tembung liya, yèn $A$ winates lan isi, ana
 !!a{bijection} antarane $A$ lan $\{0, \dots, n-1\}$,
 kanthi $n$ minangka cacah !!{element}s saka~$A$.
+Kanggo himpunan kosong, kasusé kacathet dhéwé ing definisi himpunan kang bisa didhaptar.
 
 Yen kita ngidini jinis himpunan tanpa wates tartamtu, kita uga
 ngidini sawetara himpunan tanpa wates diwenehi enumerasi.
@@ -51,7 +52,7 @@ himpunan $A$ siji-siji. Anggota kaping $0$ yaiku $f(0)$,
 anggota kapisan $f(1)$, \ldots anggota kaping $n$ yaiku $f(n)$\ldots.
 \footnote{Pancen, kita ngetung wiwit $0$. Mesthi wae kita uga
 bisa miwiti saka~$1$. Ora bakal ana bedane kang wigati.
-Kita mung kudu ngganti~$\Nat$ nganggo~$\PosInt$.}
+Kita nganggo~$\PosInt$ minangka ganti~$\Nat$ kanggo dhaptar tanpa wates, lan nggèsèr segmèn wiwitan kanthi cara kang padha.}
 Dhasar gagasan iki bisa luwih cetha kanthi tambahan:
 \end{explain}
 
@@ -88,10 +89,10 @@ kang diwenehake dening
   f(n) & = 2n \text{ lan}\\
   g(n) & = 2n+1
 \end{align*}
-menehi enumerasi tumrap wilangan natural genep lan wilangan natural
-ganjil, miturut urutane.
-Nanging loro-lorone ora !!{surjective}, mula loro-lorone dudu
-enumerasi tumrap $\Nat$.
+Kanthi kodomain diwatesi dadi jangkauané, fungsi kapisan ngenumerasi wilangan natural genep
+lan fungsi kapindho ngenumerasi wilangan natural ganjil.
+Kanthi kodomain kang ditulis ing ndhuwur, loro-loroné ora !!{surjective},
+mula ora ngenumerasi $\Nat$.
 \end{ex}
 
 \begin{prob}
@@ -100,7 +101,7 @@ Tetepna enumerasi wilangan kuadrat $1$, $4$, $9$, $16$, \dots
 
 \begin{ex}
 Upamakna $\lceil x \rceil$ iku \emph{fungsi pambunderan munggah},
-kang mbunderake $x$ munggah menyang wilangan wutuh kang paling cedhak.
+kang ngasilaké wilangan wutuh paling cilik kang luwih gedhé utawa padha karo $x$.
 Mula fungsi $f \colon \Nat \to \Int$ kang diwenehake dening:
 \[
   f(n) = (-1)^{n} \left\lceil\tfrac{n}{2}\right\rceil
@@ -123,6 +124,9 @@ f(n) = \begin{cases}
   -\frac{n+1}{2} & \text{yen $n$ ganjil}
   \end{cases}
 \]
+Indeks genep ngasilaké saben wilangan wutuh ora negatif persis sapisan.
+Indeks ganjil ngasilaké saben wilangan wutuh negatif persis sapisan.
+Mula iki bijeksi.
 \end{ex}
 
 \begin{prob}

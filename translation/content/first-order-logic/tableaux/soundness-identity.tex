@@ -11,41 +11,42 @@
 \olsection{Kasahihan mawa \usetoken{S}{identity}}
 
 \begin{prop}
-!!^{tableau}s mawa aturan kanggo identitas iku sah: ora ana
-!!{tableau} katutup kang bisa dicukupi.
+Yèn $\Gamma$ nduwèni !!{tableau} katutup nganggo aturan identitas,
+ora ana struktur kang nyukupi kabèh formula mawa tandha ing $\Gamma$.
 \end{prop}
 
 \begin{proof}
-Kaya sadurunge, kita mung kudu nuduhake manawa yen !!a{tableau} nduweni
-cabang kang bisa dicukupi, cabang asil aplikasi salah siji aturan
-kanggo~$\eq$ uga bisa dicukupi. Tetepna $\Gamma$ minangka himpunan
-!!{formula}s mawa tandha ing cabang kasebut, lan tetepna $\Struct{M}$ minangka
-!!a{structure} kang nyukupi~$\Gamma$.
+Kita nganggo induksi ing cacah aplikasi aturan, kaya ing bukti
+\olref[fol][tab][sou]{thm:tableau-soundness}. Kanggo aturan dhasar, anggo kasus-kasus ing
+teorema iku. Kanggo saben aturan identitas, kita nuduhaké yèn aturan
+iku njaga kahanan bisa dicukupi ing cabang kang ditambahi.
+Tetepna $\Gamma$ minangka himpunan !!{formula}s mawa tandha ing
+cabang lan $\Struct{M}$ minangka !!a{structure} kang nyukupi~$\Gamma$.
 
 Upamana cabang diambakake nganggo~$\eq$, yaiku kanthi nambahake
 !!{formula} mawa tandha~$\sFmla{\True}{\eq[t][t]}$. Mesthi wae,
 $\Sat{M}{\eq[t][t]}$, mula $\Struct{M}$ uga nyukupi $\Gamma \cup
 \{\sFmla{\True}{\eq[t][t]}\}$.
 
-Yen cabang diambakake nganggo $\TRule{\True}{\eq}$, kita nambahake
-!!{formula} mawa tandha~$\sFmla{\True}{!A(t_2)}$, nanging $\Gamma$ ngemot
-$\sFmla{\True}{\eq[t_1][t_2]}$ lan $\sFmla{\True}{!A(t_1)}$
-kalorone. Mula kita duwe $\Sat{M}{\eq[t_1][t_2]}$ lan
-$\Sat{M}{!A(t_1)}$. Tetepna $s$ minangka penetapan variabel kanthi
-$s(x) = \Value{t_1}{M}$. Miturut
-\olref[syn][ass]{prop:sentence-sat-true}, $\Sat{M}{!A(t_1)}[s]$.
-Amarga $\varAssign{s}{s}{x}$, miturut
-\olref[syn][ext]{prop:ext-formulas}, $\Sat{M}{!A(x)}[s]$. Amarga
-$\Sat{M}{\eq[t_1][t_2]}$, kita duwe
-$\Value{t_1}{M} = \Value{t_2}{M}$, mula $s(x) = \Value{t_2}{M}$.
-Kanthi ngetrapake \olref[syn][ext]{prop:ext-formulas} maneh, kita uga
-duwe $\Sat{M}{!A(t_2)}[s]$. Miturut
-\olref[syn][ass]{prop:sentence-sat-true}, $\Sat{M}{!A(t_2)}$. Kasus
-$\TRule{\False}{\eq}$ ditangani kanthi cara kang padha. Cathetan
-koreksi sumber OLPL-023: kasus aturan identitas mawa tandha bener
-ing sumber nggunakake tandha skematis kanggo formula asil, nanging jeneng aturan,
-loro premis lan kabeh argumentasi netepake tandha bener kang
-dibalekake ing kene; kasus tandha salah dirembug dhewe sawise iku.
+Yèn cabang diambakaké nganggo $\TRule{\True}{\eq}$, aturan nambahaké
+!!{formula} mawa tandha~$\sFmla{\True}{!A(t_2)}$. Kanggo
+$\TRule{\False}{\eq}$, tandha premis formula lan tandha kesimpulan
+padha-padha $\False$. Ing loro kasus, $\Gamma$ ngemot
+$\sFmla{\True}{\eq[t_1][t_2]}$ lan $\sFmla{S}{!A(t_1)}$.
+Term $t_1$ lan $t_2$ katutup, lan amarga padha nilainé ing
+$\Struct{M}$, tetepa $d=\Value{t_1}{M}=\Value{t_2}{M}$.
+Tetepna pangaji $s$ kanthi $s(x)=d$. Miturut
+\olref[syn][ext]{prop:ext-formulas}, amarga ngganti pangaji $x$ nganggo
+$d$ tetep mènèhi $s$, diduwèni
+\[
+  \Sat{M}{!A(t_1)}[s] \quad\text{yèn lan mung yèn}\quad
+  \Sat{M}{!A(x)}[s] \quad\text{yèn lan mung yèn}\quad \Sat{M}{!A(t_2)}[s].
+\]
+Miturut \olref[syn][ass]{prop:sentence-sat-true}, loro instansi iku
+ukara lan ora gumantung marang pangaji, mula
+$\Sat{M}{!A(t_1)}$ yen lan mung yen $\Sat{M}{!A(t_2)}$.
+Mula $\Struct{M}$ nyukupi $\sFmla{S}{!A(t_2)}$ kanggo tandha $S$
+kang padha karo tandha premis formula.
 \end{proof}
 
 \end{document}

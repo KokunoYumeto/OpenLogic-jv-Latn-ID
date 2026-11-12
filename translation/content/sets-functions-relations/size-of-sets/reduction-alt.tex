@@ -34,9 +34,12 @@ kanggo masalah kapisan, yaiku enumerasi tumrap $\Bin^\omega$.
 Kanggo ngreduksi masalah menehi enumerasi tumrap himpunan~$B$ menyang masalah
 menehi enumerasi tumrap himpunan~$A$, kita menehi cara ngowahi enumerasi
 tumrap~$A$ dadi enumerasi tumrap~$B$. Cara kang paling gampang yaiku netepake
-!!a{surjection} $f\colon A \to B$. Yen $x_1$, $x_2$, \dots{}
-dadi enumerasi tumrap~$A$, mula $f(x_1)$, $f(x_2)$, \dots{} dadi enumerasi
-tumrap~$B$.
+!!a{surjection} $f\colon A \to B$. Yen $x_0$, $x_1$, \dots{}
+dadi enumerasi tumrap~$A$, mula $f(x_0)$, $f(x_1)$, \dots{} dadi
+dhaptar kang nyakup kabèh anggota~$B$.
+Kanggo ngolèhaké bijeksi, simpen saben asil nalika katon kapisan.
+Kanggo dhaptar kang isi, indeks wiwit nol mènèhi bijeksi saka segmèn
+wiwitan utawa saka wilangan natural. Dhaptar kosong cocog karo himpunan kosong.
 Ing kasus iki, kita nggoleki !!a{surjection} $f\colon \Pow{\Nat}
 \to \Bin^\omega$.
 
@@ -48,12 +51,13 @@ nggunakake~$g$ kanggo ngowahi enumerasi tumrap~$A$ dadi enumerasi tumrap~$B$.
 
 \begin{proof}[Bukti {\olref[nen-alt]{thm:nonenum-pownat}} kanthi reduksi]
 Kanggo reduksi, upamakna $\Pow{\Nat}$ iku !!{enumerable}, mula
-ana enumerasi tumrap himpunan kasebut: $N_{1}$, $N_{2}$, $N_{3}$, \dots
+ana enumerasi tumrap himpunan kasebut, yaiku $N_{0}$, $N_{1}$, $N_{2}$, \dots.
+Enumerasi iki tanpa wates, amarga saben wilangan natural mènèhi
+siji subhimpunan isi siji anggota kang béda.
 
 Tetepna fungsi $f \colon \Pow{\Nat} \to \Bin^\omega$ kanthi netepake
-$f(N)$ dadi rerangken $s$ saengga $s(n) = 1$ yen lan mung yen $n \in N$,
-lan $s(n) = 0$ yen ora mangkono. Jeneng asile diseragamake amarga
-indeks k ing sumber Inggris ora kaiket (OLSIZ-010).
+$f(N)$ dadi rerangken $s$ saéngga $s(n) = 1$ yen lan mung yen $n \in N$,
+lan $s(n) = 0$ yèn ora mangkono.
 
 Iki cetha netepake sawijining fungsi, amarga yen $N \subseteq \Nat$,
 saben $n \in \Nat$ mesthi !!a{element} saka $N$ utawa dudu anggotane.
@@ -74,12 +78,12 @@ Dadi $f(N) = s$, kaya kang bisa dipriksa saka definisi~$f$.
 
 Saiki gatekna dhaptar
 \[
-f(N_1), f(N_2), f(N_3), \dots
+f(N_0), f(N_1), f(N_2), \dots
 \]
 Amarga $f$ iku !!{surjective}, saben anggota $\Bin^\omega$ mesthi
 katon minangka nilai~$f$ kanggo sawijining argumen, mula mesthi
-katon ing dhaptar. Dadi dhaptar iki minangka enumerasi tumrap
-kabeh~$\Bin^\omega$.
+katon ing dhaptar. Njupuk kedadéan kapisan kaya ing ndhuwur
+mènèhi enumerasi tumrap kabèh~$\Bin^\omega$.
 
 Mula yen $\Pow{\Nat}$ iku !!{enumerable}, $\Bin^\omega$ mesthi
 !!{enumerable}. Nanging $\Bin^\omega$ iku !!{nonenumerable}
@@ -105,7 +109,7 @@ Mula yen $\Pow{\Nat}$ iku !!{enumerable}, $\Bin^\omega$ mesthi
 %iku fungsi, nanging $\Nat$ iku !!{enumerable}.
 %\end{explain}
 
-\begin{prob}\label{sfr:siz:red:prob:nat-nat}
+\begin{prob}\label{sfr:siz:red:prob:nat-nat-alt}
   Tuduhna yen himpunan~$X$ saka kabeh fungsi $f\colon \Nat \to \Nat$
   iku !!{nonenumerable} nganggo argumen reduksi. (Pituduh: wenehana fungsi
   surjektif saka $X$ menyang~$\Bin^\omega$.)

@@ -13,15 +13,14 @@
 \olsection{Gagasan Teoretis-Bukti}
 
 \begin{editorial}
-Bagean iki nglumpukake definisi relasi provabilitas lan konsistensi
-kanggo tableau.
+Tableau katutup nemtokaké teorema, derivabilitas lan konsistensi.
 \end{editorial}
 
 \begin{explain}
 Kaya nalika kita nemtokake sawetara gagasan semantis wigati
 (validitas, akibat, lan bisa dicukupi), saiki kita nemtokake
 \emph{gagasan teoretis-bukti} kang cocog. Gagasan iki ora ditemtokake
-kanthi nggunakake panyukupan !!{sentence}s ing !!{structure}s, nanging
+kanthi nggunakake panyukupan !!{sentence}s ing \iftag{FOL}{!!{structure}s}{!!{valuation}s}, nanging
 kanthi nggunakake anane !!{tableau} katutup tartamtu. Panemuan wigati
 yaiku manawa gagasan-gagasan kasebut cocog siji lan sijine. Kacocogan
 iki dadi isi \emph{teorema kasahihan} lan
@@ -36,7 +35,7 @@ iku teorema, lan $\Proves/ !A$ yen dudu teorema.
 \end{defn}
 
 \begin{defn}[!!^{derivability}]
-!!^a{sentence} $!A$ \emph{bisa !!{derivable} saka} himpunan
+!!^a{sentence} $!A$ \emph{!!{derivable} saka} himpunan
 !!{sentence}s~$\Gamma$, ditulis $\Gamma \Proves !A$, yen lan mung yen
 ana himpunan winates $\{!B_1, \dots, !B_n\} \subseteq \Gamma$
 lan !!{tableau} katutup kanggo himpunan
@@ -47,14 +46,15 @@ lan !!{tableau} katutup kanggo himpunan
   \sFmla{\True}{!B_n}
   \}.
 \]
-Yen $!A$ ora bisa !!{derivable} saka $\Gamma$, kita nulis $\Gamma
+Kanggo derivabilitas, $n$ bisa nol, dadi asumsi tableau mung $\sFmla{\False}{!A}$.
+Yen $!A$ ora !!{derivable} saka $\Gamma$, kita nulis $\Gamma
 \Proves/ !A$.
 \end{defn}
 
 \begin{defn}[Konsistensi]
 Himpunan !!{sentence}s~$\Gamma$ iku \emph{ora konsisten} yen lan mung
-yen ana himpunan winates $\{!B_1, \dots, !B_n\} \subseteq \Gamma$
-lan !!{tableau} katutup kanggo himpunan
+yen ana himpunan winates kang ora kosong $\{!B_1, \dots, !B_n\}
+\subseteq \Gamma$ lan !!{tableau} katutup kanggo himpunan
 \[
 \{
   \sFmla{\True}{!B_1}, \dots,
@@ -101,7 +101,9 @@ Yen $\Gamma \Proves !A$ lan $\{!A\} \cup
 
 \begin{proof}
 Yen $\{!A\} \cup \Delta \Proves !B$, mula ana subhimpunan winates
-$\Delta_0 = \{!C_1, \dots, !C_n\} \subseteq \Delta$ saengga
+$\Delta_0 = \{!C_1, \dots, !C_n\} \subseteq \Delta$.
+Yèn $\sFmla{\True}{!A}$ durung kalebu ing asumsi tableau kang dadi
+saksi, tambahna kanthi cara kang diandharaké ing ngisor iki. Mula himpunan
 \begin{align*}
 \{\sFmla{\False}{!B}, & \sFmla{\True}{!A}, \sFmla{\True}{!C_1},
 \dots, \sFmla{\True}{!C_n}\}
@@ -110,10 +112,15 @@ $\Delta_0 = \{!C_1, \dots, !C_n\} \subseteq \Delta$ saengga
 \{\sFmla{\False}{!A}, & \sFmla{\True}{!D_1},
 \dots, \sFmla{\True}{!D_m}\}
 \end{align*}
-nduweni !!{tableau} katutup. Cathetan koreksi sumber OLPL-016: sumber
-Inggris menehi tandha subhimpunan marang dhaptar ukara tanpa kurung
-kurawal; definisi sadurunge mbutuhake saben ukara kasebut kalebu ing
-himpunan premis, kaya kang ditulis ing kene.
+nduweni !!{tableau} katutup.
+\par
+Supaya aturan kuantor tetep sah sawisé tableau disambungaké,
+gantenana saben konstanta kang ditepungaké nganggo syarat
+eigenvariabel ing subtree ing ngisor inferensiné nganggo jeneng anyar.
+Pilih jeneng béda kanggo saben inferensi, absèn saka loro tableau lan
+asumsi tambahan. Kanthi mangkono, aturan bisa ditrapaké manèh ing
+cabang kang wis ngemot asumsi-asumsi awal tableau mau. Anggo paugeran
+iki uga nalika nambah asumsi ing sawijining tableau.
 
 Saiki gatekna !!{tableau} kanthi asumsi
 \[
@@ -129,7 +136,7 @@ $\sFmla{\False}{!A}$. Mula, ing cabang kapisan, kabeh
 \sFmla{\True}{!C_1}, \dots, \sFmla{\True}{!C_n}\}
 \]
 wis cumawis. Amarga ana !!{tableau} katutup kanggo asumsi-asumsi iki,
-kita bisa nyambungake tableau iku menyang cabang kasebut; saben cabang
+kita bisa balèni langkah-langkah tableau katutup kanggo asumsi iki ing cabang mau; saben cabang
 kang ngliwati $\sFmla{\True}{!A}$ bakal katutup. Ing cabang liyane,
 kabeh
 \[
@@ -180,7 +187,7 @@ Buktekna \olref[pl][tab][ptn]{prop:incons}
 \begin{proof}
   \begin{enumerate}
     \item Yen $\Gamma \Proves !A$, mula ana subhimpunan winates
-      $\Gamma_0 = \{!B_1, \dots, !B_n\}$ lan !!{tableau} katutup
+      $\Gamma_0 = \{!B_1, \dots, !B_n\} \subseteq \Gamma$ lan !!{tableau} katutup
       kanggo
       \[
       \{\sFmla{\False}{!A}, \sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\}

@@ -16,8 +16,8 @@ kang dibangun saka himpunan konsisten jangkep~$\Gamma$ kudu ndadekake
 kabeh !!{formula}s kang dikuantifikasi ing~$\Gamma$ bener. Kanggo
 njamin iki, kita nggunakake siasat saka Leon Henkin. Intine, siasat
 iki nggedhekake basa nganggo tanpa winates akeh !!{constant}s lan
-nambah, kanggo saben !!{formula} kanthi siji !!{variable} bebas
-$!A(x)$, formula awujud
+nambah, kanggo saben !!{formula} $!A(x)$ kang mung bisa nduwèni
+$x$ minangka !!{variable} bébas, formula awujud
 \iftag{prvEx}
       {$\lexists[x][!A(x)] \lif !A(c)$}
       {$\lnot\lforall[x][!A(x)] \lif \lnot !A(c)$},
@@ -35,11 +35,22 @@ Yen $\Gamma$ konsisten ing $\Lang L$ lan $\Lang L'$ dipikolehi saka
 $\Lang L$ kanthi nambah himpunan kang !!a{denumerable} saka !!{constant}s anyar
 $\Obj d_0$, $\Obj d_1$, \dots, mula $\Gamma$ konsisten ing~$\Lang L'$.
 \end{prop}
+\begin{proof}
+Kanggo derivabilitas ing basa $\Lang L$, saben derivasi bisa nganggo cacah winates konstanta pambantu anyar,
+kanthi asumsi lan asil pungkasan tetep ana ing $\Lang L$.
+Yèn ana derivasi kang nuduhaké inkonsistensi ing $\Lang L'$, derivasi
+iku mung nganggo sawatara saka konstanta tambahan. Gantinen
+konstanta-konstanta mau kanthi seragam nganggo paramèter pambantu
+kang béda-béda lan anyar. Asumsi lan asil inkonsistensi ora malih.
+Saben aplikasi aturan tetep sah, kalebu syarat konstanta anyar.
+Iki mènèhi saksi inkonsistensi kanggo $\Lang L$, kang nalisir hipotesis.
+\end{proof}
 
 \begin{defn}[Himpunan jenuh]
 Himpunan $\Gamma$ saka !!{formula}s ing basa $\Lang {L}$ diarani
 \emph{jenuh} yen lan mung yen kanggo saben !!{formula}~$!A(x) \in
-\Frm[L]$ kanthi siji !!{variable} bebas~$x$, ana !!a{constant}~$c \in
+\Frm[L]$ kang mung bisa nduwèni $x$ minangka !!{variable} bébas,
+ana !!a{constant}~$c \in
 \Lang{L}$ saengga
 \iftag{prvEx}
       {$\lexists[x][!A(x)] \lif !A(c) \in \Gamma$}
@@ -50,9 +61,10 @@ Definisi ing ngisor iki bakal digunakake ing bukti teorema sabanjure.
 
 \begin{defn}
 \ollabel{defn:henkin-exp}
-Upamana $\Lang L'$ kaya ing \olref{prop:lang-exp}. Tetepna enumerasi
-$!A_0(x_0)$, $!A_1(x_1)$, \dots saka kabeh !!{formula}s~$!A_i(x_i)$
-ing~$\Lang L'$ kang ngemot siji variabel ($x_i$) kanthi bebas. Kita
+Upamana $\Lang L'$ kaya ing \olref{prop:lang-exp} lan kosakatané
+bisa dietung. Tetepna enumerasi pasangan matriks lan variabel kang dipilih,
+$!A_0(x_0)$, $!A_1(x_1)$, \dots, kanggo saben !!{formula}~$!A_i(x_i)$
+ing~$\Lang L'$ kang mung bisa nduwèni $x_i$ minangka variabel bébas. Kita
 nemtokake !!{sentence}s~$!D_n$ kanthi induksi marang~$n$.
 
 Upamana $c_0$ minangka !!{constant} kapisan ing antarane $\Obj d_i$
@@ -60,7 +72,8 @@ kang ditambahake marang~$\Lang{L}$ lan ora muncul ing~$!A_0(x_0)$.
 Kanthi nganggep $!D_0$, \dots,~$!D_{n-1}$ wis ditemtokake, upamana
 $c_n$ minangka sing kapisan ing antarane !!{constant}s anyar~$\Obj
 d_i$ kang ora muncul ing $!D_0$, \dots,~$!D_{n-1}$ lan uga ora muncul
-ing~$!A_n(x_n)$.
+ing~$!A_n(x_n)$. Ing saben tahap mung ana cacah winates simbol ing ukara-ukara sadurungé
+lan matriks saiki, mula tansah ana konstanta anyar kang bisa dipilih.
 
 Saiki upamana $!D_{n}$ minangka !!{formula} \iftag{prvEx}
 {$\lexists[x_{n}][!A_{n}(x_{n})] \lif
@@ -70,7 +83,8 @@ Saiki upamana $!D_{n}$ minangka !!{formula} \iftag{prvEx}
 
 \begin{lem}
 \ollabel{lem:henkin}
-Saben himpunan konsisten~$\Gamma$ bisa diambakake dadi himpunan
+Saben himpunan ukara konsisten~$\Gamma$ ing basa kang bisa dietung
+bisa diambakake dadi himpunan
 konsisten jenuh~$\Gamma'$.
 \end{lem}
 
@@ -88,8 +102,9 @@ sugih iki. Sabanjure, upamana $!D_i$ kaya ing
 yaiku, $\Gamma_{n+1} = \Gamma \cup \{ !D_0, \dots, !D_n \}$, lan
 tetepna $\Gamma' = \bigcup_{n} \Gamma_n$. Cetha yen $\Gamma'$ jenuh.
 
-Yen $\Gamma'$ ora konsisten, kanggo sawijine $n$, $\Gamma_n$ mesthi
-ora konsisten (Gladhen: terangna sebabe). Mula, kanggo nuduhake yen
+Kanthi kekompakan bukti, inkonsistensi nduwèni saksi winates.
+Yèn $\Gamma'$ ora konsisten, saksi winates kasebut ana ing
+salah siji $\Gamma_n$ (Gladhen: terangna cara milih $n$). Mula, kanggo nuduhake yen
 $\Gamma'$ konsisten, cukup dituduhake kanthi induksi marang~$n$ yen
 saben himpunan~$\Gamma_n$ konsisten.
 
@@ -101,12 +116,21 @@ $\Gamma_{n}$ konsisten nanging $\Gamma_{n+1} = \Gamma_n \cup
 {$\lexists[x_{n}][!A_{n}(x_n)] \lif !A_{n}(c_{n})$}
 {$\lnot\lforall[x_{n}][!A_{n}(x_n)] \lif \lnot !A_{n}(c_{n})$},
 kanthi $!A_n(x_n)$ minangka !!a{formula} saka $\Lang{L'}$ kang mung
-nduweni variabel~$x_n$ kanthi bebas. Miturut cara kita milih~$c_n$
+bisa nduwèni $x_n$ minangka variabel bébas. Miturut cara kita milih~$c_n$
 (delengen \olref{defn:henkin-exp}), $c_n$ ora muncul ing~$!A_n(x_n)$
 utawa ing~$\Gamma_n$.
 
-Yen $\Gamma_n \cup \{!D_n\}$ ora konsisten, mula $\Gamma_n
-\Proves \lnot !D_n$, lan mulane rong pratelan ing ngisor iki bener:
+Saka inkonsistensi $\Gamma_n\cup\{!D_n\}$, kita entuk loro akibat iki.
+Tulisen $!D_n=!P\lif !Q$. Saka $\lnot !P$ utawa saka $!Q$,
+kita bisa nderivasi kondisional $!P\lif !Q$. Mula saben konteks
+$\Gamma_n\cup\{\lnot !P\}$ lan $\Gamma_n\cup\{!Q\}$ ora konsisten,
+kanthi ngganti premis $!D_n$ nganggo derivasi iku.
+Ekuivalensi derivabilitas lan inkonsistensi mènèhi
+$\Gamma_n\Proves !P$ lan $\Gamma_n\Proves\lnot !Q$.
+Kanggo asil kapindho, gunakna eliminasi negasi rangkep kanggo
+ngalih inkonsistensi saka $\Gamma_n\cup\{!Q\}$ menyang
+$\Gamma_n\cup\{\lnot\lnot !Q\}$.
+Mula:
 \iftag{prvEx}{
 \[
 \Gamma_n \Proves \lexists[x_n][!A_n(x_n)]
@@ -139,8 +163,15 @@ dadi $\Gamma_n$ dhewe ora konsisten.
 {(Cathetan:
 \iftag{prvAll}
 {$\lforall[x_n][\lnot !A_n(x_n)] \Proves
-  \lnot\lexists[x_n][!A_n(x_n)]$}
-{$\lforall[x_n][\lnot !A_n]$ ditetepake minangka
+  \lnot\lexists[x_n][!A_n(x_n)]$. Kanggo mriksa iki,
+  instansèkna universal nganggo konstanta saksi kang anyar saka
+  eksistensial. Instansi lan negasiné nuwuhaké kontradiksi.
+  \iftag{prfAX}{Ing deduksi aksiomatik, instansi universal
+  mènèhi negasi matriks ing konstanta anyar. Aksioma negasi
+  mènèhi kondisional saka matriks mau menyang kasalahan.
+  Aturan kuantor eksistensial mindhah anteseden dadi ukara
+  eksistensial, banjur modus ponens mènèhi kasalahan.}{}}
+{$\lforall[x_n][\lnot !A_n(x_n)]$ ditetepake minangka
   $\lnot\lexists[x_n][\lnot\lnot !A_n(x_n)]$ lan
   $\lnot\lexists[x_n][\lnot\lnot !A_n(x_n)] \Proves
   \lnot\lexists[x_n][!A_n(x_n)]$}.)}{}
@@ -157,7 +188,7 @@ jenuh nduweni sipat yen \iftag{prvAll}{himpunan iku ngemot
   eksistensial yen lan mung yen ngemot paling ora siji conto ukarane}{}.
 Iki bakal digunakake kanggo nuduhake yen !!{structure} kang bakal
 diasilake saka himpunan kang jangkep, konsisten, lan jenuh ndadekake
-kabeh ukara kang dikuantifikasi ing himpunan kasebut bener. Cathetan koreksi sumber OLPL-740: cabang andharan eksistensial nggunakake tag prvEx, cocog karo proposisi lan bukti jejer; sumber salah nulis prvAll ing cabang iki.
+kabeh ukara kang dikuantifikasi ing himpunan kasebut bener.
 \end{explain}
 
 \begin{prop}\ollabel{prop:saturated-instances}
@@ -178,20 +209,30 @@ Upamana $\Gamma$ iku jangkep, konsisten, lan jenuh.
       $(\lexists[x][!A(x)] \lif !A(c)) \in \Gamma$ kanggo sawijine
       !!{constant}~$c$. Miturut
       \tagrefs{prfAX/{fol:axd:ppr:prop:provability-lif},prfSC/{fol:seq:ppr:prop:provability-lif},prfND/{fol:ntd:ppr:prop:provability-lif},prfTab/{fol:tab:ppr:prop:provability-lif}}, butir~(1),
-      lan \olref[ccs]{prop:ccs}\olref[ccs]{prop:ccs-prov-in}, $!A(c)
+      lan \olref[ccs]{prop:ccs-prov-in}, $!A(c)
       \in \Gamma$.
 
     Kanggo arah liyane, sipat jenuh ora dibutuhake: upamana
     $!A(t) \in \Gamma$. Banjur $\Gamma \Proves
     \lexists[x][!A(x)]$ miturut
       \tagrefs{prfAX/{fol:axd:qpr:prop:provability-quantifiers},prfSC/{fol:seq:qpr:prop:provability-quantifiers},prfND/{fol:ntd:qpr:prop:provability-quantifiers},prfTab/{fol:tab:qpr:prop:provability-quantifiers}}, butir~(1). Miturut
-    \olref[ccs]{prop:ccs}\olref[ccs]{prop:ccs-prov-in},
+    \olref[ccs]{prop:ccs-prov-in},
     $\lexists[x][!A(x)] \in \Gamma$.}}{}
   \tagitem{prvAll}{%
     \iftag{probAll}{Gladhen.}{Upamana $!A(t) \in \Gamma$ kanggo
       kabeh term katutup~$t$. Kanggo nggayuh cengkah, upamana
       $\lforall[x][!A(x)] \notin \Gamma$. Amarga $\Gamma$ jangkep,
-      $\lnot\lforall[x][!A(x)] \in \Gamma$. Amarga jenuh,
+      $\lnot\lforall[x][!A(x)] \in \Gamma$.
+      \iftag{prvEx}{Kanggo entuk $\lexists[x][\lnot !A(x)]$,
+      anggepen bebarengan negasi universal lan negasi eksistensial iki.
+      Pilih konstanta anyar $b$. Premis $\lnot !A(b)$ bakal
+      mènèhi eksistensial, mula ora konsisten karo loro negasi.
+      Ekuivalensi derivabilitas lan inkonsistensi mènèhi $!A(b)$
+      saka loro negasi mau. Banjur generalisasi kuwat mènèhi ukara universal iku,
+      kang cengkah karo negasi universal. Mula negasi universal
+      nderivasi eksistensial mau, lan panutupan derivabilitas
+      nempatake eksistensial iku ing $\Gamma$.}{}
+      Amarga jenuh,
       \iftag{prvEx}{$(\lexists[x][\lnot !A(x)] \lif \lnot !A(c)) \in
         \Gamma$}{$(\lnot\lforall[x][!A(x)] \lif \lnot !A(c)) \in
         \Gamma$} kanggo sawijine !!{constant}~$c$. Miturut hipotesis,
@@ -211,7 +252,7 @@ Upamana $\Gamma$ iku jangkep, konsisten, lan jenuh.
       miturut
       \tagrefs{prfAX/{fol:axd:qpr:prop:provability-quantifiers},prfSC/{fol:seq:qpr:prop:provability-quantifiers},prfND/{fol:ntd:qpr:prop:provability-quantifiers},prfTab/{fol:tab:qpr:prop:provability-quantifiers}},
       butir~(2). Kita entuk $!A(t) \in \Gamma$ miturut
-      \olref[ccs]{prop:ccs}.}}{}
+      \olref[ccs]{prop:ccs-prov-in}.}}{}
   \end{tagenumerate}
 \end{proof}
 

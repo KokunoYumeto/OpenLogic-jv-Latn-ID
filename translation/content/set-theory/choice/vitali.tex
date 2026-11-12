@@ -36,6 +36,7 @@ iku himpunan rotasi titik-titik ngubengi titik asal kanthi arah
 jarum jam, kanthi sudut kang kelipatan \emph{rasional} saka puteran wutuh
 lan diwakili ing $[0,2\pi)$. Ing ngisor iki ana sawatara kasunyatan
 aljabar babagan $\rotationsgroup$; bukti bakal njlentrehaké tegesé:
+Rasional iku pengali puteran wutuh, dudu nilai radian. Pilihan iki njaga komposisi, invers lan pemetaan sudut kaping pindho.
 
 \begin{lem}\ollabel{rotationsgroupabelian}
 $\rotationsgroup$ mbentuk {grup} abelian miturut komposisi fungsi.
@@ -51,6 +52,7 @@ Saben unsur nduwèni invers. Rotasi identitas dadi inversé dhéwé.
 Yèn $\rho \in \rotationsgroup$ muter kanthi sudut $r$ radian kang
 ora nol, mula $\rho^{-1} \in \rotationsgroup$ muter kanthi sudut
 $2\pi - r$ radian, saéngga $\rho \circ \rho^{-1} = 0_\rotationsgroup$.
+Identitas diurus dhewe amarga sudut puteran wutuh ora kalebu interval setengah mbukak.
 
 Komposisi asosiatif: $\comp{\rho}{(\comp{\sigma}{\tau})} =
 \comp{(\comp{\rho}{\sigma})}{\tau}$ kanggo sembarang
@@ -81,7 +83,7 @@ $\rotationsgroup_2$.
 \end{proof}
 
 Kasunyatan grup iki bakal kita gunakaké kanggo mbuktekaké
-\olref{vitaliparadox}. Anggepen $\onesphere$ bunder satuan,
+\olref{vitaliparadox}. Anggepen $\onesphere$ bunder unit,
 yaiku himpunan titik kang jaraké pas~$1$ saka titik asal bidang:
 $\Setabs{\tuple{r,s} \in \Real^2}{\sqrt{r^2+s^2}=1}$.
 Kita bakal mbagi $\onesphere$ kanthi relasi iki ing $\onesphere$:
@@ -177,6 +179,7 @@ $\onesphere$ saka $\onesphere$ kanthi mbagi dadi pérangan kaétung
 cacahé (yaiku $\funimage{\rho}{C}$ kang warna-warna) banjur
 mindhah kanthi gerak kaku: saben pérangan $D_1$ cukup diputer,
 déné saben pérangan $D_2$ dhisik ditranslasèkaké banjur diputer.
+Indeks potongan D kanthi indeks 1 yaiku anggota grup rotasi kang wis ditetepake, dudu simbol R kanthi indeks 1 kang ora ditetepake.
 
 Ayo kita ringkes siasat buktiné. Kita miwiti saka kasunyatan aljabar
 grup rotasi ing bidang. Grup iki digunakaké kanggo mbagi
@@ -187,11 +190,11 @@ saben kelas.
 Siasat kang padha uga digunakaké kanggo mbuktekaké Banach--Tarski.
 Béda utamané yaiku kasunyatan aljabar kang dibutuhaké kanggo
 Banach--Tarski luwih rumit tinimbang kanggo Paradoks Vitali.
-Nanging kasunyatan aljaba mau ora gumantung marang Pilihan.
+Nanging kasunyatan aljabar mau ora gumantung marang Pilihan.
 Kita bakal ngringkes kanthi cekak.
 
 Kanggo Banach--Tarski, kita miwiti kanthi mbuktekaké analog saka
-\olref{disjointgroup}: sembarang \emph{grup bebas} bisa dipérang
+\olref{disjointgroup}: \emph{grup bebas kanthi rong generator} bisa dipérang
 dadi patang pérangan kang, miturut pangertèn intuitif, bisa
 ``dipindhah'' kanggo mbalèkaké rong salinan grup wutuh.\footnote{
 Kasunyatan yèn cukup \emph{patang} pérangan asalé saka
@@ -202,14 +205,19 @@ Kasunyatan yèn cukup \emph{patang} pérangan asalé saka
 rong rotasi tartamtu ngubengi titik asal ing $\Real^3$ ngasilaké
 grup rotasi bebas $F$.\footnote{Delengen
 \citet[Téoréma 2.1]{Wagon2016}.} (Nganti kéné durung ana Pilihan.)
-Saiki rong titik ing lumahing bal diarani ``padha jinisé'' yèn
+Ing wiwitan, kita nyingkirake titik-titik kang ajeg tumrap rotasi
+nonidentitas ing grup iki; cacahé titik iku kaétung. Ing lumahing
+kang isih kari, ora ana rotasi nonidentitas kang ndadèkaké titik ajeg.
+Saiki rong titik ing lumahing iki diarani ``padha jinisé'' yèn
 siji bisa dipindhah menyang sijiné kanthi rotasi ing~$F$.
 Banjur kita \emph{migunakaké Pilihan} kanggo milih pas siji titik
 saka saben kelas ekuivalensi titik kang ``padha jinisé''.
 Kanthi nrapaké pambagian $F$ marang lumahing bal kaya ing
-\olref{pseudobanachtarski}, kita mbagi lumahing mau dadi patang
-pérangan kang bisa ``dipindhah'' kanggo ngasilaké rong salinan
-lumahing bal. Iki mbuktekaké asil \citep{Hausdorff1914}:
+\olref{pseudobanachtarski}, kita mbagi lumahing kang isih kari dadi patang
+pérangan kang bisa ``dipindhah'' kanggo ngasilaké rong salinané.
+Trik aljabar panyerepan himpunan titik ajeg kang kaétung banjur
+mènèhi dekomposisi winates kanggo kabèh lumahing bal. Iki mènèhi asil \citep{Hausdorff1914}:
+Grup bebas ing kene nduweni rong generator; ora kabeh grup bebas bisa dipisah kanthi paradoksal. Transfer potongan grup mbutuhake aksi bebas, mula titik ajeg kaetung diurus nganggo langkah panyerepan. Iki njlentrehake lingkup sketsa, dudu ngganti teorema lumahing utawa nambah bukti lengkap.
 
 \begin{thm}[Paradoks Hausdorff (ing $\ZFC$)]
 Lumahing sembarang bal bisa dipérang dadi sawatara pérangan winates
@@ -241,13 +249,13 @@ Banach--Tarski''. Supaya guyonané bener, tulisana ing telung
 dimensi. Iki kita tinggalaké minangka gladhen kanggo pamaos.
 
 Cathetan pungkasan. Ing \olref[banach]{sec}, kita nyebut yèn
-``pérangan'' bal kang dikasilaké ora bisa \emph{diukur}, nanging
+``pérangan'' bal kang dikasilaké ora kabèh bisa \emph{diukur}, nanging
 kaya ``sebaran tanpa wates'' kang ora bisa digambar. Prakara kang
 padha uga ana ing panganggoné Pilihan kanggo ngasilaké
 \olref{pseudobanachtarski}. Iki perlu dijlentrehaké.
 
 Kita kudu nggambaraké sethithik dhasar teori ukuran (nanging iki
-\emph{mung} gambaran; panjenengan bisa maca buku bab
+\emph{mung} gambaran; bisa maca buku bab
 \emph{ukuran}). Ukuran ing himpunan $X$ mènèhi nilai
 $\mu(E) \in \Real$ marang saben $E$ ing sawijining
 ``aljabar-$\sigma$'' ing $X$. Ing kéné kita nganggo ukuran
@@ -259,6 +267,7 @@ $\mu(\bigcup_{n < \omega} X_n) = \sum_{n < \omega}\mu(X_n)$
 yèn $X_n$ pisah sepasang-sepasang. Himpunan diarani ``ora bisa
 diukur'' yèn ora kalebu domain ukuran kang lagi dirembug.
 Saiki kita gunakaké $\rotationsgroup$ mau:
+Nonnegativitas, domain kang ditutup rotasi, lan makna ora bisa diukur relatif marang domain njlentrehake konvensi ukuran kang digunakake.
 
 \begin{cor}[Vitali]
 Anggepen $\mu$ ukuran kang nyukupi $\mu(\onesphere) = 1$,
@@ -287,5 +296,6 @@ Nanging yèn $r = 0$, mula $\sum_{\rho \in \rotationsgroup}r = 0$;
 yèn $r > 0$, mula $\sum_{\rho \in \rotationsgroup}r = \infty$.
 Kaloroné nalisir angka siji ing sisih kiwa.
 \end{proof}
+Variabel rho lumaku ing grup rotasi, dudu himpunan wakil C kang anggotane titik-titik bunder.
 
 \end{document}

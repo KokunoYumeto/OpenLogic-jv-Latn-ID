@@ -12,12 +12,12 @@
 
 \begin{explain}
 Kanggo netepake relasi nyukupi $\Sat{M}{!A}[s]$ kanggo
-!!{formula}s orde kapindho, kita kudu njembarake definisi supaya
-ngemot !!{variable}s orde kapindho. Pangerten !!a{structure}
-ing logika orde kapindho padha kaya ing logika orde kapisan.
+!!{formula}s tataran kapindho, kita kudu njembarake definisi supaya
+ngemot !!{variable}s tataran kapindho. Pangerten !!a{structure}
+ing logika tataran kapindho padha kaya ing logika tataran kapisan.
 Bedane mung ing pangaji variabel~$s$: saiki pangaji iku kudu
-menehi nilai ora mung marang !!{variable}s orde kapisan,
-nanging uga marang !!{variable}s orde kapindho.
+menehi nilai ora mung marang !!{variable}s tataran kapisan,
+nanging uga marang !!{variable}s tataran kapindho. Domain ing kene ora kosong, manut konvensi struktur ing bab tataran kapisan.
 \end{explain}
 
 \begin{defn}[Pangaji Variabel]
@@ -37,7 +37,7 @@ iku fungsi kang nggandhengake saben
 
 \begin{explain}
 !!^a{structure} menehi !!a{value} marang saben !!{constant}
-lan !!{function}, dene pangaji variabel orde kapindho menehi objek
+lan !!{function}, dene pangaji variabel tataran kapindho menehi objek
 lan fungsi marang saben variabel objek lan fungsi. Bareng-bareng,
 loro-lorone ngidini kita menehi nilai marang saben term.
 \end{explain}
@@ -46,7 +46,7 @@ loro-lorone ngidini kita menehi nilai marang saben term.
 Yen $t$ iku term saka basa~$\Lang L$, $\Struct M$ iku
 !!a{structure} kanggo~$\Lang L$, lan $s$ iku pangaji
 !!a{variable} kanggo~$\Struct M$, mula \emph{!!{value}}~$\Value{t}{M}[s]$
-ditetepake kaya kanggo term orde kapisan, ditambah klausa iki:
+ditetepake kaya kanggo term tataran kapisan, ditambah klausa iki:
 \begin{quote}
 \indcase{t}{\Atom{u}{t_1, \ldots, t_n}}{
 \[
@@ -62,7 +62,7 @@ mula saben pangaji !!{variable} $s'$ kanggo $\Struct M$ kang
 bedane karo $s$ paling akeh mung ing nilai kang diwenehake marang
 $x$ diarani \emph{varian-$x$} saka~$s$. Yen $s'$ iku varian-$x$
 saka $s$, kita nulis $\varAssign{s'}{s}{x}$. (Semono uga kanggo
-variabel orde kapindho $X$ utawa $u$.)
+variabel tataran kapindho $X$ utawa $u$.)
 \end{defn}
 
 \begin{defn}
@@ -70,14 +70,14 @@ variabel orde kapindho $X$ utawa $u$.)
   !!a{structure}~$\Struct M$ lan $m \in \Domain{M}$, mula
   pangaji~$\Subst{s}{m}{x}$ iku pangaji !!{variable} kang
   ditetepake dening
-  \[\Subst{s}{m}{y} = \begin{cases}
+  \[\Subst{s}{m}{x}(y) = \begin{cases}
     m & \text{yen } y \ident x\\
     s(y) & \text{yen ora},
   \end{cases}\]
   Yen $X$ iku !!{variable} relasi $n$-papan lan $M \subseteq
   \Domain{M}^n$, mula $\Subst{s}{M}{X}$ iku pangaji
   !!{variable} kang ditetepake dening
-  \[\Subst{s}{M}{y} = \begin{cases}
+  \[\Subst{s}{M}{X}(y) = \begin{cases}
     M & \text{yen } y \ident X\\
     s(y) & \text{yen ora}.
   \end{cases}\]
@@ -85,16 +85,17 @@ variabel orde kapindho $X$ utawa $u$.)
   $f\colon \Domain{M}^n \to \Domain{M}$, mula
   $\Subst{s}{f}{u}$ iku pangaji !!{variable} kang ditetepake
   dening
-  \[\Subst{s}{f}{y} = \begin{cases}
+  \[\Subst{s}{f}{u}(y) = \begin{cases}
     f & \text{yen } y \ident u\\
     s(y) & \text{yen ora}.
   \end{cases}\]
-  Ing saben kasus, $y$ bisa dadi !!{variable} orde kapisan utawa
-  orde kapindho apa wae.
+  Ing saben kasus, $y$ bisa dadi !!{variable} tataran kapisan utawa
+  tataran kapindho apa wae.
 \end{defn}
+Saben pérangan kiwa ngevaluasi y nganggo pangaji kang diowahi ing x, X, utawa u. Yèn variabel kang diowahi béda karo y, nilai y tetep s(y).
 
 \begin{defn}[Relasi Nyukupi]
-Kanggo !!{formula}s orde kapindho~$!A$, definisi relasi nyukupi
+Kanggo !!{formula}s tataran kapindho~$!A$, definisi relasi nyukupi
 kaya ing \olref[fol][syn][sat]{defn:satisfaction}, ditambah:
 \begin{enumerate}
 \item \indcase{!A}{\Atom{X^n}{t_1, \dots, t_n}}{$\Sat{M}{\indfrm}[s]$
@@ -124,18 +125,17 @@ kaya ing \olref[fol][syn][sat]{defn:satisfaction}, ditambah:
 \begin{ex}
   Gatekna !!{formula}
   $\lforall[z][(\Atom{X}{z} \liff \lnot \Atom{Y}{z})]$.
-  Formula iki ora ngemot kuantor orde kapindho, nanging ngemot
-  !!{variable}s orde kapindho $X$ lan~$Y$ (ing kene dianggep
-  siji-papan). !!{sentence} orde kapisan kang cocog,
+  Formula iki ora ngemot kuantor tataran kapindho, nanging ngemot
+  !!{variable}s tataran kapindho $X$ lan~$Y$ (ing kene dianggep
+  siji-papan). !!{sentence} tataran kapisan kang cocog,
   $\lforall[z][(\Atom{P}{z} \liff \lnot \Atom{R}{z})]$,
-  nyatakake yen apa wae kang kalebu interpretasi~$P$ ora
-  kalebu interpretasi~$R$, lan kosok balene. Ing
+  nyatakake yen saben objek domain kalebu interpretasi~$P$ yen lan mung yen ora kalebu interpretasi~$R$. Ing
   !!a{structure}, interpretasi !!a{predicate}~$P$
   diwenehake dening interpretasi~$\Assign{P}{M}$. Nanging
-  kanggo !!{variable}s orde kapindho kaya $X$ lan~$Y$,
+  kanggo !!{variable}s tataran kapindho kaya $X$ lan~$Y$,
   interpretasi diwenehake dudu dening !!{structure} kasebut
   dhewe, nanging dening pangaji !!a{variable}. Amarga
-  !!{formula} orde kapindho iki dudu !!a{sentence} (formula iki
+  !!{formula} tataran kapindho iki dudu !!a{sentence} (formula iki
   ngemot !!{variable}s bebas $X$ lan~$Y$), relasi nyukupine
   mung bisa ditemtokake relatif marang
   !!a{structure}~$\Struct{M}$ bebarengan karo pangaji
@@ -144,7 +144,7 @@ kaya ing \olref[fol][syn][sat]{defn:satisfaction}, ditambah:
   $\Sat{M}{\lforall[z][(\Atom{X}{z} \liff \lnot \Atom{Y}{z})]}[s]$
   bener yen saben !!{element}s ing domain kalebu ing~$s(X)$ persis yen
   !!{element}s iku ora kalebu ing~$s(Y)$, yaiku yen lan mung yen
-  $s(Y) = \Domain{M} \setminus s(X)$. Cathetan koreksi sumber OLPL-803: mung ora irisan durung cukup; bikondisional iki mbutuhake Y persis komplemen X ing domain. Tuladhane, upamana
+  $s(Y) = \Domain{M} \setminus s(X)$. Bikondisional mbutuhaké Y persis komplèmen X ing domain. Tuladhane, upamana
   $\Domain{M} = \{1, 2, 3\}$. Amarga ora ana !!{predicate}s,
   !!{function}s, utawa !!{constant}s kang melu, mung domain
   saka~$\Struct{M}$ kang wigati. Saiki, kanggo
@@ -199,28 +199,28 @@ kaya ing \olref[fol][syn][sat]{defn:satisfaction}, ditambah:
 \end{ex}
 
 \begin{ex}
-  !!{sentence} orde kapindho~$\lforall[X][\lforall[y][X(y)]]$
+  !!{sentence} tataran kapindho~$\lforall[X][\lforall[y][X(y)]]$
   nyatakake yen saben relasi $1$-papan, yaiku saben sipat,
   nyakup saben objek. Pratelan iki cetha ora tau bener,
   amarga ing saben~$\Struct{M}$, kanggo pangaji variabel~$s$
   kanthi $s(X) = \emptyset$ lan $s(y) = a \in \Domain{M}$,
   kita nduweni $\Sat/{M}{X(y)}[s]$. Tegese,
   $!A \lif \lforall[X][\lforall[y][X(y)]]$ iku ekuivalen
-  ing logika orde kapindho karo $\lnot !A$, yaiku:
+  ing logika tataran kapindho karo $\lnot !A$, yaiku:
   $\Sat{M}{!A \lif \lforall[X][\lforall[y][X(y)]]}$
   yen lan mung yen $\Sat{M}{\lnot !A}$. Kanthi tembung
-  liya, ing logika orde kapindho kita bisa netepake $\lnot$
+  liya, ing logika tataran kapindho kita bisa netepake $\lnot$
   nganggo $\lforall$ lan~$\lif$.
 \end{ex}
 
 \begin{prob}
-  Tuduhna yen ing logika orde kapindho $\lforall$ lan~$\lif$
-  bisa netepake konektif liyane:
+  Tuduhna yen ing logika tataran kapindho $\lforall$ lan~$\lif$
+  bisa netepake pangubung liyane. Kanggo gladhen iki, pilih variabel predikat X seger tumrap formula A lan B, supaya kuantor ing tampilan ora ngiket variabel bebas kang wis ana:
   \begin{enumerate}
-    \item Buktèkna yen ing logika orde kapindho $!A \land !B$
+    \item Buktekna yen ing logika tataran kapindho $!A \land !B$
     ekuivalen karo $\lforall[X][(!A \lif (!B \lif \lforall[x][X(x)])\lif
     \lforall[x][X(x)])]$.
-    \item Temokna formula orde kapindho kang mung nggunakake
+    \item Temokna formula tataran kapindho kang mung nggunakake
     $\lforall$ lan $\lif$ lan ekuivalen karo $!A \lor !B$.
   \end{enumerate}
 \end{prob}

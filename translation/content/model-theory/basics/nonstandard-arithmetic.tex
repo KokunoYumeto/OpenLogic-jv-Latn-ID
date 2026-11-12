@@ -10,7 +10,7 @@
 \section{Modèl Aritmetika Nonstandar}
 
 \begin{defn}
-Anggep $\Lang{L_N}$ minangka !!{language} aritmetika,
+Anggepen $\Lang{L_N}$ minangka !!{language} aritmetika,
 kang ngemot !!{constant} $\Obj{0}$, !!{predicate} rong panggonan
 $<$, !!{function} siji panggonan $\prime$, lan
 !!{function}s rong panggonan $+$ lan $\times$.
@@ -48,7 +48,7 @@ banjur delengen téori
 Téori iki bisa dicukupi kanthi winates, mula miturut
 kompaknes nduwèni modèl $\Struct{M}$.
 Miturut téoréma L\"owenheim--Skolem mudhun, modèl iki bisa
-dipilih kang !!{enumerable}. Anggep $\Domain{M}$ domainé
+dipilih kang !!{enumerable}. Anggepen $\Domain{M}$ domainé
 $\Struct{M}$. Ing $\Struct{M}$, lambang nonlogis saka
 $\Lang{L_N}$ ditafsiraké dadi
 $\mathbf{z} = \Assign{\Obj{0}}{M} \in \Domain{M}$,
@@ -59,23 +59,24 @@ lan $\oplus = \Assign{+}{M}, \otimes =
 Kanggo saben $x \in \Domain{M}$, tulis $x^*$ kanggo
 unsur $\Domain{M}$ kang diasilaké saka $x$ kanthi
 ngetrapaké~$*$.
+(Jeneng basa, istilah lambang nonlogis, lan notasi domain relasi dipasaké karo definisi sadurungé.)
 
 Saiki, yèn $h$ isomorfisme antarané $\Struct{N}$ lan
 $\Struct{M}$, mesthi ana $n \in \Nat$ saéngga
-$h(n) = \Assign{c}{M}$. Anggep $s$ sawijining pangaji
+$h(n) = \Assign{c}{M}$. Anggepen $s$ sawijining pangaji
 ing $\Struct{N}$ kang nyukupi $s(x) = n$. Mula
 $\Sat{N}{\eq[\num{n}][x]}[s]$; miturut bukti
 \olref[iso]{thm:isom}, uga
 $\Sat{M}{\eq[\num{n}][x]}[h \circ s]$, saéngga
 $\Assign{c}{M} = \mathbf{z}^{*\cdots *}$
-(kanthi $*$ diulang $n$ kaping). Nanging iki ora mungkin,
+(kanthi $*$ diulang $n$ kaping). Nanging iki ora bisa,
 amarga miturut anggepan $\Sat{M}{\num{n} < c}$
 lan $\prec$ iku irrefleksif. Mula $\Struct{M}$ nonstandar.
 \end{proof}
 
 \begin{prob}
 Relasi $R$ ing himpunan $X$ diarani \emph{berasas apik} yèn lan
-namung yèn ora ana ranté mudhun tanpa wates ing~$R$,
+mung yèn ora ana ranté mudhun tanpa wates ing~$R$,
 yaiku ora ana $x_0$, $x_1$, $x_2$,~\dots ing $X$ saéngga
 $\dots x_2Rx_1Rx_0$. Kanthi anggepan téori himpunan
 Zermelo--Fraenkel~$ZF$ konsisten, tuduhna yèn ana
@@ -85,7 +86,7 @@ $\dots x_2 \in x_1 \in x_0$.
 \end{prob}
 
 Amarga modèl nonstandar $\Struct{M}$ saka \olref{thm:non-std}
-ekuivalen sacara elementer karo modèl standar,
+ekuivalen kanthi elementer karo modèl standar,
 sawetara sipat $\Struct{M}$ bisa diturunké.
 Pérangan sabanjuré ngrembug sipat-sipat iki kanggo
 ngolèhaké gambaran kang cetha bab modèl nonstandar
@@ -142,14 +143,14 @@ $\Theory{N}$ kang !!{enumerable}.
 \item Anggepen $x \prec y$ lan $x \not\approx y$.
   Amarga $\Sat{N}{\lforall[x][\lforall[y][(x < y \lif (x' < y \lor x' =
       y))]]}$, mula $x^* \prec y$ utawa $x^* = y$.
-  Pilihan kapindho ora mungkin amarga ndadèkaké
+  Pilihan kapindho ora bisa amarga ndadèkaké
   $x \approx y$, mula $x^* \prec y$.
   Kanthi alesan kang padha, yèn $x \prec y$ lan
   $x \not\approx y$, mula $x \prec {^*y}$.
   Dadi yèn $x \prec y$ lan $x \not\approx y$,
   saben $w \approx x$ luwih cilik miturut $\prec$
   tinimbang saben $v \approx y$. Mula saben blok
-  nonstandar $[x]$ mbentuk ranté tanpa wates ing
+  nonstandar $[x]$ awujud ranté tanpa wates ing
   loro arahé:
   \[
   \cdots \prec  {^{**}x} \prec {^*}x \prec x \prec x^* \prec x^{**}
@@ -168,8 +169,8 @@ $\Theory{N}$ kang !!{enumerable}.
   lan $x \not\approx y$. Buktiné: ing modèl standar
   $\Struct{N}$, saben wilangan bisa dipérang loro,
   bisa uga kanthi sisa siji, yaiku
-  $\Sat{N}{\lforall[y][\lforall[x][(y = x + x \lor y = x + x +
-        \Obj{0}')]]}$. By elementary equivalence, for every $y \in
+  $\Sat{N}{\lforall[y][\lexists[x][(y = x + x \lor y = x + x +
+        \Obj{0}')]]}$. Miturut ekuivalènsi elementer, kanggo saben $y \in
   \Domain{M}$ ana $x \in \Domain{M}$ saéngga
   $x \oplus x = y$ utawa
   $x \oplus x \oplus \mathbf{z}^*= y$.
@@ -233,6 +234,10 @@ $\Domain{M_1}$ lan $\Domain{M_2}$ bisa ditetepaké
 kanthi cara kang ora isomorfik. (Iki uga manut téoréma
 misuwur saka Vaught: cacah modèl terhitung saka
 téori jangkep ora bisa persis~2.)
+(Larik sawisé nyingkiraké kemungkinan padha nyebut penerus unsur kapisan, supaya cocog karo langkah sadurungé.)
+(Blok standar nduwèni unsur paling cilik, mula dudu ranté tanpa wates ing loro arah. Pratelan ranté wilangan bulat diwatesi marang blok nonstandar.)
+(Urutan ketat blok mbutuhaké rong blok kang béda. Rong unsur ing blok kang padha bisa nduwèni urutan ketat tanpa ndadèkaké bloké béda.)
+(Pambagian loro nyebut kanggo saben wilangan ana sawijining quotient, dudu kanggo saben quotient. Kuantor kapindho ing formula iki eksistensial.)
 
 \begin{prob}
 Tuduhna yèn ing modèl aritmetika nonstandar ora ana
@@ -240,15 +245,15 @@ blok paling gedhé.
 \end{prob}
 
 \begin{prob} 
-Anggep $\Lang{L}$ sawijining !!{language} tataran kapisan
+Anggepen $\Lang{L}$ sawijining !!{language} tataran kapisan
 kang mung ngemot $<$ minangka !!{predicate}
-(saliyané $\eq$), lan anggep $\Struct{N} = (\Nat, <)$.
+(saliyané $\eq$), lan anggepen $\Struct{N} = (\Nat, <)$.
 Kabèh himpunan pérangan winates utawa kang komplemèné
 winates ing $\Struct{N}$ bisa ditetepaké.
 Tuduhna yèn \emph{mung} himpunan mau kang bisa ditetepaké
 ing $\Struct{N}$.
  
-(Pituduh: Dhisik, anggep $\Obj{prc}(x,y)$ minangka
+(Pituduh: Dhisik, anggepen $\Obj{prc}(x,y)$ minangka
 cekakan formula $\Lang{L}$ kang ateges ``$x$ iku
 pendahulu langsung saka $y$:''
 \[
@@ -265,15 +270,15 @@ Tuduhna yèn $\Sat{N}{!D}$ yèn lan mung yèn
 himpunan pérangan $\Struct{N}$ kang ditetepaké déning
 $!A$ iku winates utawa komplemèné winates.
 
-Saiki, anggep $\Struct{M}$ modèl nonstandar kang
-ekuivalen sacara elementer karo $\Struct{N}$.
+Saiki, anggepen $\Struct{M}$ modèl nonstandar kang
+ekuivalen kanthi elementer karo $\Struct{N}$.
 Yèn $a \in \Domain{M}$ nonstandar, pilih
 $b, c \in \Domain{M}$ kang luwih gedhé tinimbang $a$,
-lan anggep $b$ pendahulu langsung saka~$c$.
+lan anggepen $b$ pendahulu langsung saka~$c$.
 Mula ana automorfisme $h$ saka $\Domain{M}$
-saéngga $h(b)=c$ (kenapa?).
+saéngga $h(b)=c$ (yagéné?).
 Dadi, yèn $b$ nyukupi $!A$, $c$ uga mangkono
-(kenapa?). Akibaté, $!D$ bener ing
+(yagéné?). Akibaté, $!D$ bener ing
 $\Struct{M}$ lan mula uga ing $\Struct{N}$.
 Iki nuduhaké yèn himpunan pérangan $\Struct{N}$
 kang ditetepaké déning $!A$ iku winates utawa

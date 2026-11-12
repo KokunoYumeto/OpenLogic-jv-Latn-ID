@@ -10,7 +10,7 @@
 
 \olsection{Lemma Bebener}
 
-Model kanonik~$\mModel{M^\Sigma}$ ditepakake saengga
+Model kanonik~$\mModel{M^\Sigma}$ ditetepake saengga
 $\mSat{M^\Sigma}{!A}[\Delta]$ yen lan mung yen $!A \in \Delta$.
 Kanggo !!{propositional
 variable}s, iki langsung diturunake saka
@@ -45,7 +45,7 @@ asil ing \olref[mod]{sec}).
       $p \in \Delta$ miturut definisi~$V^\Sigma$.}
 
     \tagitem{prvNot}{\indcase{!A}{\lnot !B}{%
-        \iftag{probNot}{Latihan.}{$\mSat{M^\Sigma}{\lnot !B}[\Delta]$
+        \iftag{probNot}{Gladhen.}{$\mSat{M^\Sigma}{\lnot !B}[\Delta]$
           yen lan mung yen $\mSat/{M^\Sigma}{!B}[\Delta]$
           (\olref[syn][trw]{defn:mmodels}); yen lan mung yen $!B \notin \Delta$
           (miturut hipotesis induksi); yen lan mung yen $\lnot !B \in \Delta$
@@ -53,7 +53,7 @@ asil ing \olref[mod]{sec}).
           \olref[ccs]{prop:ccs-properties}\olref[ccs]{prop:ccs-lnot}).}}}{}
 
     \tagitem{prvAnd}{\indcase{!A}{!B \land !C}{%
-        \iftag{probAnd}{Latihan.}{$\mSat{M^\Sigma}{!B \land
+        \iftag{probAnd}{Gladhen.}{$\mSat{M^\Sigma}{!B \land
             !C}[\Delta]$ yen lan mung yen $\mSat{M^\Sigma}{!B}[\Delta]$ lan
           $\mSat{M^\Sigma}{!C}[\Delta]$ (miturut
           \olref[syn][trw]{defn:mmodels}); yen lan mung yen $!B \in \Delta$
@@ -62,7 +62,7 @@ asil ing \olref[mod]{sec}).
           \olref[ccs]{prop:ccs-properties}\olref[ccs]{prop:ccs-land}).}}}{}
 
     \tagitem{prvOr}{\indcase{!A}{!B \lor !C}{%
-        \iftag{probOr}{Latihan.}{$\mSat{M^\Sigma}{!B \lor
+        \iftag{probOr}{Gladhen.}{$\mSat{M^\Sigma}{!B \lor
             !C}[\Delta]$ yen lan mung yen $\mSat{M^\Sigma}{!B}[\Delta]$
           utawa $\mSat{M^\Sigma}{!C}[\Delta]$ (miturut
           \olref[syn][trw]{defn:mmodels}); yen lan mung yen $!B \in \Delta$
@@ -71,7 +71,7 @@ asil ing \olref[mod]{sec}).
           \olref[ccs]{prop:ccs-properties}\olref[ccs]{prop:ccs-lor}).}}}{}
 
     \tagitem{prvIf}{\indcase{!A}{!B \lif !C}{%
-        \iftag{probIf}{Latihan.}{$\mSat{M^\Sigma}{!B \lif
+        \iftag{probIf}{Gladhen.}{$\mSat{M^\Sigma}{!B \lif
             !C}[\Delta]$ yen lan mung yen $\mSat/{M^\Sigma}{!B}[\Delta]$
           utawa $\mSat{M^\Sigma}{!C}[\Delta]$ (miturut
           \olref[syn][trw]{defn:mmodels}); yen lan mung yen $!B \notin \Delta$
@@ -80,7 +80,7 @@ asil ing \olref[mod]{sec}).
           \olref[ccs]{prop:ccs-properties}\olref[ccs]{prop:ccs-lif}).}}}{}
 
     \tagitem{prvIff}{\indcase{!A}{!B \liff !C}{%
-        \iftag{probIff}{Latihan.}{$\mSat{M^\Sigma}{!B \liff
+        \iftag{probIff}{Gladhen.}{$\mSat{M^\Sigma}{!B \liff
             !C}[\Delta]$ yen lan mung yen $\mSat{M^\Sigma}{!B}[\Delta]$
           lan $\mSat{M^\Sigma}{!C}[\Delta]$, utawa
           $\mSat/{M^\Sigma}{!B}[\Delta]$ lan
@@ -92,7 +92,7 @@ asil ing \olref[mod]{sec}).
           \olref[ccs]{prop:ccs-properties}\olref[ccs]{prop:ccs-liff}).}}}{}
 
     \tagitem{prvBox}{\indcase{!A}{\Box !B}{%
-        \iftag{probBox}{Latihan.}{Sepisan, upamane
+        \iftag{probBox}{Gladhen.}{Sepisan, upamane
           $\mSat{M^\Sigma}{\Box !B}[\Delta]$. Miturut
           \olref[syn][trw]{defn:mmodels}, kanggo saben $\Delta'$ kang
           $R^\Sigma \Delta\Delta'$, dadi
@@ -115,7 +115,7 @@ asil ing \olref[mod]{sec}).
             !B}[\Delta]$.}}}{}
 
     \tagitem{prvDiamond}{\indcase{!A}{\Diamond !B}{%
-        \iftag{probDiamond}{Latihan.}{Sepisan, upamane
+        \iftag{probDiamond}{Gladhen.}{Sepisan, upamane
           $\mSat{M^\Sigma}{\Diamond !B}[\Delta]$. Miturut
           \olref[syn][trw]{defn:mmodels}, ana $\Delta'$ kang
           $R^\Sigma \Delta\Delta'$ lan
@@ -127,7 +127,7 @@ asil ing \olref[mod]{sec}).
             Miturut \olref[mod]{lem:box-iff-diamond},}{} ana $\Delta'$ kang
           $\Diamond \Delta' \subseteq \Delta$ lan $!B \in \Delta'$.
           Amarga $!B \in \Delta'$, $\Diamond !B \in \Diamond
-          \Delta'$, mula $\Diamond !B \in \Delta$.
+          \Delta'$, mula $\Diamond !B \in \Delta$. Lemma ekuivalensi aksesibilitas menehi langkah iki langsung.
 
           Saiki upamane $\Diamond !B \in \Delta$. Miturut
           \olref[mod]{prop:diamond}, ana himpunan $\Sigma$-konsisten
@@ -138,14 +138,14 @@ asil ing \olref[mod]{sec}).
             \Delta \subseteq \Delta'$ lan $!B \in \Delta'$.}{} Miturut
           definisi $R^\Sigma$, $R^\Sigma \Delta\Delta'$, mula ana
           $\Delta' \in W^\Sigma$ kang $R^\Sigma \Delta\Delta'$ lan
-          $!B \in \Delta'$. Miturut
+          $!B \in \Delta'$. Miturut hipotesis induksi lan
           \olref[syn][trw]{defn:mmodels}, $\mSat{M^\Sigma}{\Diamond
             !B}[\Delta]$.}}}{}
   \end{enumerate}
 \end{proof}
 
 \begin{probtag}{probFalse,probTrue,probNot,probAnd,probOr,probIf,probIff,probBox,probDiamond}
-  Jangkepna bukti \olref[nml][com][tru]{prop:truthlemma}.
+  Jeneng tag konjungsi dicocogake karo cabang bukti. Jangkepna bukti \olref[nml][com][tru]{prop:truthlemma}.
 \end{probtag}
 
 \end{document}

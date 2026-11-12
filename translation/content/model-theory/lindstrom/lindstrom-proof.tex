@@ -31,7 +31,7 @@ Saiki, kanggo
 saben !!{structure}~$\Struct{M}$ kang tetep, upamana
 $!D_{\Struct{M}}$ minangka konjungsi siji wakil saka saben kelas ekuivalensi logis !!{sentence}s
 tataran kapisan~$!E$ kang bener ing~$\Struct{M}$ lan
-$\QuantRank{!E} \le n$ (konjungsi wakil iki winates). Cathetan koreksi sumber SOL6-F031: ukara mentah kang pangkat kuantore diwatesi isih bisa tanpa wates akehe; kang winates yaiku kelas ekuivalensi logise. Lambang E ing konjungsi iki mung panggonan kanggo ukara tataran kapisan, beda saka ukara logika abstrak E kang lagi dibuktekake. Konjungsi kosong dianggep bener, saengga
+$\QuantRank{!E} \le n$ (konjungsi wakil iki winates). Saben kelas ekuivalensi logis nduwèni siji wakil ing konjungsi iki, mula konjungsiné winates. Lambang E ing konjungsi iki mung panggonan kanggo ukara tataran kapisan, beda saka ukara logika abstrak E kang lagi dibuktekake. Konjungsi kosong dianggep bener, saengga
 $\Struct{N} \models !D_{\Struct{M}}$ yen lan mung yen
 $\Struct{N} \equiv_n \Struct{M}$. Banjur tetepna
 $!D = \textstyle\bigvee
@@ -53,7 +53,7 @@ $\Struct{N} \models_L !D$.
   \ollabel{thm:lindstrom} Upamana $\tuple{L, \models_L}$ iku normal lan nduweni
   Sipat Kompaktitas lan Sipat L\"owenheim--Skolem. Banjur
   $\tuple{L, \models_L} \le \tuple{F, \models}$ (mula
-  $\tuple{L, \models_L}$ ekuivalen karo logika tataran kapisan). Cathetan koreksi sumber OLPL-760: normalitas dibutuhake dening lema lan bukti teorema iki, uga supaya logika tataran kapisan paling ora kalebu nganti ekuivalensi.
+  $\tuple{L, \models_L}$ ekuivalen karo logika tataran kapisan).
 \end{thm}
 
 \begin{proof}
@@ -81,7 +81,7 @@ kita uga bisa nganggep yen kabeh mau nyukupi !!{sentence}s
 atomik kang padha (yen ora, kita bisa njupuk subsekuens saka
 $\Struct{M}$). Upamana $\Struct{M}$ minangka gabungan kabeh
 $\Struct{M}_n$, yaiku !!{structure} minimal tunggal kang
-nduweni saben $\Struct{M}_n$ minangka substruktur. Cathetan koreksi sumber OLPL-761: pasangan struktur kanggo indeks beda ora kanthi otomatis kompatibel minangka substruktur siji; perlu konstruksi kode mawa salinan kang dipisah lan tafsir simbol kang cocog. Pratelan gabungan harfiah iki durung kabuktekake dening hipotesis. Kaya ing
+nduweni saben $\Struct{M}_n$ minangka substruktur. Pasangan struktur kanggo indeks béda mbutuhaké konstruksi kode nganggo salinan kapisah lan tafsir simbol kang cocog. Hipotesis durung njamin kabèh struktur iki bisa dadi substruktur saka gabungan harfiah. Kaya ing
 bukti \olref[lsp]{thm:abstract-p-isom}, upamana
 $\Struct{M}^*$ minangka perluasan saka $\Struct{M}$ kanthi
 !!{domain} $\Domain{M} \cup
@@ -118,7 +118,7 @@ $I_n(\mathbf{a}, \mathbf{b})$.
 
 Nganggo Sipat Kompaktitas, kita bisa nemokake model
 $\Struct{M}^*$ saka $!D$ kang urutane ngemot unsur
-nonstandar~$n^*$. Cathetan koreksi sumber OLPL-762: kanggo entuk unsur iki kanthi Kompaktitas, tambah konstanta anyar kang diwajibake ngluwihi saben indeks standar saka unsur kapisan; saben subhimpunan winates syarat iki bisa diwujudake. Mula, mligine, $\Struct{M^*}$ ngemot
+nonstandar~$n^*$. Kanggo nerapaké kekompakan, tambahna konstanta anyar lan syarat supaya nilainé ngluwihi saben indeks standar. Saben himpunan syarat winates bisa diwujudaké. Mula, mligine, $\Struct{M^*}$ ngemot
 sub!!{structure}s $\Struct{M_{n^*}}$ lan
 $\Struct{N_{n^*}}$ saengga $\Struct{M_{n^*}}
 \models_L !E$ lan $\Struct{N_{n^*}} \not\models_L !E$.
@@ -133,7 +133,7 @@ $n^* - k >0$, lan himpunan $\mathcal{I}$ iki dadi seksi
 yen $\Struct{M_{n^*}} \simeq_p
 \Struct{N_{n^*}}$. Nanging miturut
 \olref[lsp]{thm:abstract-p-isom}, $\Struct{M_{n^*}}$
-iku ekuivalen-$L$ karo $\Struct{N_{n^*}}$, lan iki cengkah. Cathetan watesan sumber SOL6-F033: kode J kang dicithak nggunakake indeks siji kanggo milih pasangan struktur lan kanggo ambane syarat maju-mundur. Nalika indeks kasebut diganti saka n-star dadi n-star minus k, pasangan struktur uga bisa ganti. Mula formula iki durung mbuktekake yen pasangan tupel ing kulawarga I tetep asal saka rong struktur kanthi indeks n-star kang padha. Konstruksi kode kang jangkep kudu misahake indeks pasangan struktur saka indeks ambane, kayata nganggo J kanthi rong indeks sadurunge rong kode tupel. Bebarengan karo OLPL-757 lan OLPL-761, iki watesan sketsa bukti sumber kang durung diklaim rampung.
+iku ekuivalen-$L$ karo $\Struct{N_{n^*}}$, lan iki cengkah. Sketsa iki mbutuhaké kode kang misahaké indeks pasangan struktur saka indeks ambane maju-mundur. Kanthi siji indeks, ngganti ambane saka n-star dadi n-star minus k uga bisa ngganti pasangan struktur. Rincian iki isih kudu dijangkepi supaya saben pasangan tupel tetep asal saka struktur kanthi indeks n-star. Argumentasi uga mbutuhaké representasi ukara ing basa winates lan konstruksi pasangan substruktur kang cocog.
 \end{proof}
 
 \end{document}

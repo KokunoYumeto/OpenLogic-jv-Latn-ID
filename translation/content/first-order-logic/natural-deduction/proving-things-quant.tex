@@ -32,16 +32,11 @@ nduweni dhasar miturut aturan \Intro{\lif}.
 \DischargeRule{\Intro{\lif}}{1}
 \UnaryInfC{$\lexists[x][\lnot !A(x)]\lif \lnot \lforall[x][!A(x)]$}
 \end{prooftree}
-Amarga ora ana aturan cetha kang bisa ditrapake marang $\lnot
-\lforall[x][!A(x)]$, kita bakal nata !!{derivation} supaya bisa
-nggunakake aturan \Elim{\lexists}. Ing kene kita kudu nggatekake
-syarat eigenvariabel lan milih konstanta kang ora muncul ing
-$\lexists[x][\lnot !A(x)]$ utawa ing asumsi apa wae kang dadi
-gantungane. Cathetan koreksi sumber OLPL-012: formula Inggris ing
-ukara iki ngilangake negasi kang ana ing asumsi eksistensial lan saben
-wit ing tuladha; wujud kang dibalekake nduweni himpunan konstanta kang
-padha, mula syarat kesegaran ora owah. (Nanging, amarga ora ana
-!!{constant}s kang muncul, pilihan apa wae bisa digunakake.)
+Kita nggunakake \Elim{\lexists} luwih dhisik kanggo netepaké
+panggonané pambubaran asumsi. Konstanta $a$ kudu anyar tumrap premis utama,
+yaiku $\lexists[x][\lnot !A(x)]$, kesimpulan $\lnot \lforall[x][!A(x)]$,
+lan kabeh asumsi kang tetep mbukak. Sanadyan matriks $!A(x)$ ngemot
+!!{constant}s, kita bisa milih konstanta kang ora muncul ing kono.
 \begin{prooftree}
 \AxiomC{$\Discharge{\lexists[x][\lnot !A(x)]}{1}$}
 \AxiomC{$\Discharge{\lnot !A(a)}{2}$}
@@ -70,9 +65,9 @@ $\lnot !A(a)$ kang bakal dibubarake dening inferensi
 \end{prooftree}
 Katone kita wis meh ngasilake kontradiksi. Aturan kang paling gampang
 ditrapake yaiku \Elim{\lforall}, kang ora nduweni syarat
-eigenvariabel. Amarga kita bisa nggunakake sembarang term kanggo
-ngganti $x$ kang dikuantifikasi universal, paling trep yen kita terus
-nggunakake~$a$ supaya bisa nggayuh kontradiksi.
+eigenvariabel. Amarga $a$ iku term katutup, kita bisa
+nggunakaké $a$ kanggo ngganti $x$ kang dikuantifikasi universal
+lan nggayuh kontradiksi.
 \begin{prooftree}
 \AxiomC{$\Discharge{\lexists[x][\lnot !A(x)]}{1}$}
 \AxiomC{$\Discharge{\lnot !A(a)}{2}$}
@@ -92,8 +87,9 @@ nggunakake~$a$ supaya bisa nggayuh kontradiksi.
 Ing tahap iki, mligine nalika nangani kuantor, kita kudu mriksa maneh
 manawa syarat eigenvariabel ora dilanggar. Amarga siji-sijine aturan
 kang kita trapake lan kena syarat eigenvariabel yaiku
-\Elim{\exists}, lan eigenvariabel~$a$ ora muncul ing asumsi apa wae
-kang dadi gantungane, iki !!{derivation} kang bener.
+\Elim{\lexists}, priksa yèn $a$ mung ana ing instansi sauntara.
+Premis eksistensial, kesimpulan lan kabèh asumsi kang isih mbukak
+ora ngemot $a$. Mula iki !!{derivation} kang bener.
 \end{ex}
 
 \begin{ex}
@@ -114,8 +110,8 @@ Kita duwe rong premis kang bisa digunakake. Kanggo nggunakake premis
 kapisan, yaiku nyoba nemokake !!a{derivation} saka
 $\lexists[x][!C(x, b)]$ adhedhasar $\lexists[x][(!A(x)
   \land !B(x))]$, kita bakal nggunakake aturan \Elim{\lexists}.
-Amarga aturan kasebut nduweni syarat eigenvariabel, kita bakal
-ngetrapake aturan iku luwih dhisik. Asile mangkene:
+Pilih $a$ béda saka $b$ lan absèn saka asumsi loro lan kesimpulan.
+Kanthi mangkono, kita bisa ngetrapaké aturan iku nganggo pola iki.
 \begin{prooftree}
 \AxiomC{$\lexists[x][(!A(x) \land !B(x))]$}
 \AxiomC{$\Discharge{!A(a) \land !B(a)}{1}$}
@@ -126,7 +122,7 @@ ngetrapake aturan iku luwih dhisik. Asile mangkene:
 Rong asumsi kang kita gunakake padha-padha ngemot~$!B$. Ing tahap iki
 bisa migunani yen \Elim{\land} ditrapake kanggo misahake~$!B(a)$.
 \begin{prooftree}
-\AxiomC{$\lexists[x][(!A(x) \land !B(x)])$}
+\AxiomC{$\lexists[x][(!A(x) \land !B(x))]$}
 \AxiomC{$\Discharge{!A(a)
 \land !B(a)}{1}$}
 \RightLabel{\Elim{\land}}
@@ -252,7 +248,7 @@ Wènèhana !!{derivation}s kang nuduhake prakara-prakara iki:
 \item $(\lforall[x][!A(x)] \lif !B) \Proves \lexists[y][(!A(y) \lif !B)]$.
 \item $\Proves \lexists[x][(!A(x) \lif \lforall[y][!A(y)])]$.
 \end{enumerate}
-(Kabeh iki mbutuhake aturan~$\FalseCl$.)
+Minangka skema, telung pratelan iki mbutuhaké aturan klasik~$\FalseCl$.
 \end{prob}
 
 \end{document}

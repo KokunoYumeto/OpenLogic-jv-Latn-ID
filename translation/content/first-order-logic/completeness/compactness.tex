@@ -29,7 +29,7 @@ pratelan, sawijining subhimpunan winates wae wis ngakibatake pratelan
 kasebut.
 
 \begin{defn}
-  Himpunan $\Gamma$ saka !!{formula}s diarani \emph{bisa dicukupi
+  Himpunan $\Gamma$ saka !!{sentence}s diarani \emph{bisa dicukupi
   kanthi winates} yen lan mung yen saben $\Gamma_0 \subseteq \Gamma$
   kang winates bisa dicukupi.
 \end{defn}
@@ -37,10 +37,7 @@ kasebut.
 \begin{thm}[Teorema Kekompakan]
 \ollabel{thm:compactness}
 Pratelan-pratelan sabanjure bener kanggo saben himpunan ukara
-$\Gamma$ lan ukara~$!A$. Cathetan koreksi sumber OLPL-053:
-sumber Inggris kanthi kliru nyebut loro-lorone minangka ukara; ing
-kene Gamma dibalekake minangka himpunan ukara, kaya kang dibutuhake
-dening rong pratelan sabanjure.
+$\Gamma$ lan saben ukara~$!A$\iftag{FOL}{ ing basa kang padha lan bisa dietung}{}.
 \begin{enumerate}
   \item $\Gamma \Entails !A$ yen lan mung yen ana $\Gamma_0
     \subseteq \Gamma$ kang winates nganti $\Gamma_0 \Entails !A$.
@@ -98,7 +95,8 @@ Buktekna (1) saka \olref[pl][com][com]{thm:compactness}.
 
 \iftag{FOL}{%
 \begin{ex}
-Ing saben model~$\Struct{M}$ saka sawijining teori~$\Gamma$, saben
+Upamana $\Gamma$ sawijining teori ing basa kang bisa dietung mawa
+identitas. Ing saben model~$\Struct{M}$ saka~$\Gamma$, saben
 term katutup~$t$ mesthi nuduhake !!a{element} saka~$\Domain{M}$. Apa kita bisa
 njamin yen saben !!{element} saka~$\Domain{M}$ uga dituduhake dening
 sawijining term katutup? Kanthi tembung liya, apa ana teori~$\Gamma$ kang
@@ -107,7 +105,7 @@ $\Gamma$ nduweni model tanpa wates. Katrangane mangkene: Upamana
 $\Struct{M}$ minangka model tanpa wates saka~$\Gamma$, lan upamana
 $c$ minangka !!a{constant} kang ora ana ing basa~$\Gamma$. Upamana
 $\Delta$ minangka himpunan kabeh ukara $\eq/[c][t]$ kanggo saben term katutup
-$t$ ing basa~$\Lang{L}$ saka~$\Gamma$, yaiku (cathetan koreksi sumber OLPL-743: subskrip nol ing rumus sabanjure nuduhake term katutup supaya unsur Delta tetep ukara),
+$t$ ing basa~$\Lang{L}$ saka~$\Gamma$.
   \[
   \Delta = \Setabs{\eq/[c][t]}{t \in {\Trm[L]}_0}.
   \]
@@ -126,11 +124,11 @@ $\Sat{M'}{\Gamma' \cup \Delta'}$ kanggo saben subhimpunan winates
 $\Gamma' \cup \Delta'$ saka $\Gamma \cup \Delta$. Mula saben
 subhimpunan winates saka $\Gamma \cup \Delta$ bisa dicukupi. Miturut
 kekompakan, $\Gamma \cup \Delta$ dhewe bisa dicukupi. Dadi,
-$\Sat{M}{\Gamma \cup \Delta}$ kanggo sawijine model M. Saben
-$\Struct{M}$ kaya mangkono
-minangka model saka~$\Gamma$, nanging domaine ora dicakup dening term katutup
-saka basa asline, amarga $\Value{c}{M} \neq \Value{t}{M}$ kanggo kabeh
-term katutup~$t$ saka~$\Lang{L}$.
+ana sawijining modèl~$\Struct{M}$ kanthi $\Sat{M}{\Gamma \cup \Delta}$.
+Saben reduk saka model kuwi menyang~$\Lang{L}$ minangka model
+saka~$\Gamma$. Unsur $\Value{c}{M}$ ana ing domain reduk, nanging
+ora ana term katutup~$t$ saka~$\Lang{L}$ kang njenengi unsur kuwi,
+amarga $\Value{c}{M} \neq \Value{t}{M}$ kanggo saben term mau.
 \end{ex}
 
 \begin{ex}
@@ -155,10 +153,10 @@ upamana $\Delta$ yaiku
 \{\Obj{0} < c\}
 \cup \Setabs{ c \times \num k < \Obj{1} }{k \in \PosInt}
 \]
-(ing kene $\num{k} = (\Obj{1} + (\Obj{1} + \dots + (\Obj{1} +
-\Obj{1})\dots))$ kanthi $k$~$\Obj{1}$). Kanggo saben subhimpunan
-winates~$\Delta_0$ saka~$\Delta$, ana~$K$ positif nganti kabeh !!{sentence}s
-$c \times \num{k} < \Obj{1}$ ing~$\Delta_0$ nduweni $k < K$. Yen
+Ing kéné $\num{1}=\Obj{1}$ lan $\num{k+1}=\num{k}+\Obj{1}$.
+Kanggo saben subhimpunan winates~$\Delta_0$ saka~$\Delta$,
+pilihen wilangan wutuh positif~$K$ supaya $k<K$ kanggo saben ukara
+$c \times \num{k} < \Obj{1}$ ing~$\Delta_0$. Yèn
 kita nggedhekake $\Struct{Q}$ dadi~$\Struct{Q'}$ kanthi
 $\Assign{c}{Q'} = 1/K$, kita duwe
 $\Sat{Q'}{\Gamma_0 \cup \Delta_0}$ kanggo saben $\Gamma_0 \subseteq
@@ -197,18 +195,15 @@ njamin yen sawijining teori mung nduweni model tanpa wates kanthi
 nambahake~$\Delta$ marang teori kasebut: model saka $\Gamma \cup
 \Delta$ yaiku kabeh lan mung model tanpa wates saka~$\Gamma$.
 
-Dadi logika sepisanan bisa nyatakake sifat tanpa wates. Nanging,
-teorema kekompakan nuduhake yen logika sepisanan ora bisa nyatakake
-sifat winates. Upamana ana sawijine himpunan ukara $\Lambda$ kang bisa
-dicukupi ing kabeh lan mung !!{structure}s winates. Banjur $\Delta
+Kanthi mangkono, himpunan ukara~$\Delta$ nemtokaké kelas model
+tanpa wates. Teorema kekompakan nuduhaké yèn ora ana himpunan ukara kang modèné persis kabèh struktur winates
+ing basa kang padha. Upamana ana himpunan ukara~$\Lambda$
+kang modèné persis kabèh !!{structure}s winates. Banjur $\Delta
 \cup \Lambda$ bisa dicukupi kanthi winates. Apa sebabe? Upamana
 $\Delta' \cup \Lambda' \subseteq \Delta \cup \Lambda$ winates kanthi
-$\Delta' \subseteq \Delta$ lan $\Lambda' \subseteq \Lambda$. Cathetan
-koreksi sumber OLPL-054: yen subhimpunan Delta-prime kasebut kosong,
-jupuken n minangka siji; yen ora kosong, gunakna angka paling gedhe
-kaya ing ukara sabanjure. Ing perkara kang ora kosong, upamana $n$
-minangka wilangan paling gedhe nganti $!A_{\ge n} \in \Delta'$; ing
-perkara kosong, n wis dipilih minangka siji. Amarga $\Lambda$ bisa
+$\Delta' \subseteq \Delta$ lan $\Lambda' \subseteq \Lambda$. Jupuken
+$n$ minangka indeks paling gedhé kanggo $!A_{\ge n} \in \Delta'$,
+utawa $n=1$ yèn $\Delta'$ kosong. Amarga $\Lambda$ bisa
 dicukupi ing kabeh struktur winates, himpunan kasebut nduweni
 model~$\Struct{M}$
 kanthi !!{element}s kang cacahe winates nanging $\ge n$. Nanging banjur

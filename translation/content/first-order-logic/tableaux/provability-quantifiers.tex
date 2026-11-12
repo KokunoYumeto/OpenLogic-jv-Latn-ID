@@ -12,6 +12,7 @@
 \begin{explain}
   Teorema kelengkapan uga mbutuhake supaya aturan tableau ngasilake
   kasunyatan ngenani~$\Proves$ kang dibuktekake ing bagean iki.
+Ing proposisi instansi kuantor ing ngisor, $t$ iku term katutup.
 \end{explain}
 
 \begin{thm}
@@ -32,7 +33,8 @@ Upamana $\Gamma \Proves !A(c)$, yaiku ana $!B_1$, \dots, $!B_n
 \end{align*}
 Jupuken !!{tableau} katutup mau lan gantinen asumsi kapisan nganggo
 $\sFmla{\False}{\lforall[x][!A(x)]}$, banjur lebokna
-$\sFmla{\False}{!A(c)}$ sawise asumsi-asumsi.
+$\sFmla{\False}{!A(c)}$ sawise asumsi-asumsi nganggo
+$\TRule{\False}{\lforall}$. Ing ngisoré larik anyar, balèni langkah-langkah tableau lawas.
 \begin{center}
 \begin{tableau}{not line numbering}
   [\sFmla{\False}{\formula{A}(c)}
@@ -56,6 +58,10 @@ sadurunge cumawis minangka asumsi isih cumawis ing pucuk
 $\TRule{\False}{\lforall}$ kang bener, amarga !!{constant}~$c$ ora muncul ing
 $!B_1$, \dots, $!B_n$ utawa $\lforall[x][!A(x)]$, yaiku ora muncul
 ing ndhuwur larik kang dilebokake ing !!{tableau} anyar.
+Sadèrèngé mbalèni aturan, gantenana saben eigenkonstanta
+ing tableau lawas nganggo konstanta kang absèn saka asumsi anyar
+lan béda saka $c$, kaya ing \olref[fol][tab][ptn]{prop:transitivity}.
+Iki njaga syarat eigenvariabel sanadyan $x$ ora muncul bébas ing matriks.
 \end{proof}
 
 \begin{prop}
@@ -76,7 +82,7 @@ ing ndhuwur larik kang dilebokake ing !!{tableau} anyar.
         [\sFmla{\False}{\formula{A}(t)}, just = {\TRule{\False}{\lexists}[1]}, close]]]
     \end{oltableau}}{}
 \tagitem{prvAll}{Iki !!{tableau} katutup kanggo
-  $\sFmla{\False}{\formula{A}(t)}, \sFmla{\True}{\lforall[x][!A(x)]}, $:
+  $\sFmla{\False}{\formula{A}(t)}, \sFmla{\True}{\lforall[x][!A(x)]}$:
   \begin{oltableau}
     [\sFmla{\False}{\formula{A}(t)}, just = \TAss
       [\sFmla{\True}{\lforall[x][\formula{A}(x)]}, just = \TAss

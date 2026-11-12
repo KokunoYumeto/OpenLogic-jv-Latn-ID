@@ -19,7 +19,7 @@ sawijining sipat kaslametan kang dijamin kanggo sistem
 !!{derivation}. Gumantung marang sipat ing teori bukti kang dirembug,
 kita kepengin ngerti, upamane, yen
 \begin{enumerate}
-\item saben $!A$ kang !!{derivable} iku valid;
+\item saben teorema $!A$ kang derivabel tanpa premis iku \iftag{FOL}{valid}{tautologi};
 \item yen $!A$ iku !!{derivable} saka sawetara formula liyane~$\Gamma$,
   formula iku uga dadi akibate;
 \item yen sawijining himpunan !!{formula}s~$\Gamma$ ora konsisten,
@@ -39,88 +39,68 @@ ora lumaku, sistem !!{derivation} kasebut cacad---sistem iku bakal
 \end{prop}
 
 \begin{proof}
-\iftag{FOL}{Kita kudu mriksa yen kabeh aksioma iku valid. Tuladhane,
-  iki kasus kanggo \olref[qua]{ax:q1}: upamana $t$ iku !!{free for}
-  $x$ ing $!A$, lan upamana
-  $\Sat{M}{\lforall[x][!A]}[s]$. Banjur miturut definisi panyukupan,
-  kanggo saben $\varAssign{s'}{s}{x}$, uga $\Sat{M}{!A}[s']$, lan
-  mligine iki lumaku nalika $s'(x) = \Value{t}{M}[s]$. Miturut
-  \olref[syn][ext]{prop:ext-formulas},
-  $\Sat{M}{\Subst{!A}{t}{x}}[s]$. Iki nuduhake yen
-  $\Sat{M}{(\lforall[x][!A] \lif \Subst{!A}{t}{x})}[s]$.}{Gawea tabel
-  kabeneran kanggo saben aksioma supaya bisa dipriksa yen kabeh iku
-  tautologi.}
+\iftag{FOL}{Saben skema proposisional nduwèni nilai bener kanggo
+  saben kombinasi nilai kabeneran metavariabelé, kaya kang bisa
+  dipriksa nganggo tabel kabeneran.
+  Kanggo \olref[qua]{ax:q1}, upamakna $t$ term katutup lan
+  $\Sat{M}{\lforall[x][!A]}[s]$. Pilih $s'$ kang cocog karo $s$
+  ing njaba $x$, kanthi $s'(x)=\Value{t}{M}[s]$. Definisi panyukupan
+  mènèhi $\Sat{M}{!A}[s']$, lan
+  \olref[syn][ext]{prop:ext-formulas} mènèhi
+  $\Sat{M}{\Subst{!A}{t}{x}}[s]$.
+  Kanggo \olref[qua]{ax:q2}, upamakna $\Sat{M}{\Subst{!A}{t}{x}}[s]$.
+  Lema substitusi mènèhi $\Sat{M}{!A}[s']$ kanggo pangaji kang padha
+  mau. Pangaji iki dadi saksi kanggo $\Sat{M}{\lexists[x][!A]}[s]$.
+  Mula loro skema kuantor mau valid.
+}{Gawea tabel kabeneran kanggo saben aksioma supaya bisa dipriksa
+  yèn kabèh iku tautologi.}
 \end{proof}
 
 \begin{thm}[Kasahihan]
 \ollabel{thm:soundness}
-Kanggo himpunan premis lan kesimpulan kang kabeh awujud ukara, yen
-$\Gamma \Proves !A$, mula $\Gamma \Entails !A$. Cathetan koreksi
-sumber OLPL-037: watesan ukara iki digawe cetha amarga semantik
-tataran kapisan lan kasus aturan kuantor ing bukti nggunakake watesan
-kasebut.
+\iftag{FOL}{Kanggo formula tataran kapisan, $\Gamma \Entails !A$ tegesé kanggo
+saben struktur $\Struct{M}$ lan pangaji $s$, yèn
+$\Sat{M}{!B}[s]$ kanggo saben $!B\in\Gamma$, mula $\Sat{M}{!A}[s]$.
+Kanggo ukara, iki padha karo akibat semantis kang wis ditetepaké.
+}{}
+Yèn $\Gamma \Proves !A$, mula $\Gamma \Entails !A$.
 \end{thm}
 
 \begin{proof}
-Kanthi induksi miturut cacah aplikasi aturan inferensi ing
-!!{derivation} kang formula pungkasane $!A$ saka $\Gamma$. Cathetan koreksi sumber
-OLPL-038: ukuran induksi iki cocog karo basis lan langkah induktif ing
-sumber. Yen ora ana langkah kang dhasare aturan inferensi, mula
-kabeh !!{formula}s ing !!{derivation} kasebut minangka conto aksioma
-utawa ana ing~$\Gamma$. Miturut proposisi sadurunge, kabeh aksioma iku
-\iftag{FOL}{valid}{tautologi}, mula yen $!A$ iku aksioma, banjur
-$\Gamma \Entails !A$. Yen $!A \in \Gamma$, mula kanthi langsung
-$\Gamma \Entails !A$.
+Kanthi induksi miturut cacah larik ing !!{derivation} kang formula
+pungkasané $!A$ saka $\Gamma$. Yèn larik pungkasan iku instansi
+aksioma, larik iku \iftag{FOL}{valid}{tautologi}, mula
+$\Gamma \Entails !A$. Yèn $!A\in\Gamma$, saben
+\iftag{FOL}{struktur lan pangaji}{valuasi} kang nyukupi premis uga
+nyukupi $!A$, mula $\Gamma \Entails !A$.
+\iftag{FOL}{Yèn derivasi nganggo konstanta pambantu, jembarna
+struktur nganggo interpretasi sembarang kanggo konstanta mau.
+Panyukupan formula ing basa wiwitan tetep padha.}{}
 
-Yen langkah pungkasan !!{derivation} kang formula pungkasane~$!A$
-nduweni dhasar modus ponens, mula ana !!{formula}s $!B$ lan $!B \lif !A$ ing
-!!{derivation}, lan hipotesis induksi lumaku kanggo perangan
-!!{derivation} kang mungkasi ing !!{formula}s kasebut (amarga
-perangan kasebut ngemot paling ora siji langkah kang dhasare aturan
-inferensi luwih sithik). Dadi, miturut hipotesis induksi, $\Gamma
-\Entails !B$ lan $\Gamma \Entails !B \lif !A$. Banjur $\Gamma
-\Entails !A$ amarga saben struktur utawa valuasi kang nyukupi Gamma uga
-nyukupi rong formula kasebut; iki uga ndherek saka Teorema Deduksi Semantis lan
-transitivitas akibat, yaiku
-\iftag{FOL}
-      {\olref[syn][sem]{thm:sem-deduction}}
-      {\olref[pl][syn][sem]{thm:sem-deduction}}.
+Yèn larik pungkasan saka !!{derivation} yaiku asil modus ponens,
+ana larik sadurungé awujud $!B$ lan $!B\lif !A$. Miturut hipotesis
+induksi, $\Gamma\Entails !B$ lan $\Gamma\Entails !B\lif !A$.
+Mula $\Gamma\Entails !A$, amarga kabeneran $!B$ lan $!B\lif !A$
+mènèhi kabeneran $!A$ \iftag{FOL}{ing struktur lan pangaji kang padha}{ing valuasi kang padha}.
 
-\iftag{FOL}{Saiki upamana langkah pungkasan nduweni dhasar
-\QR. Banjur langkah kasebut awujud $!C \lif
-\lforall[x][!B(x)]$, lan ana langkah sadurunge $!C \lif !B(c)$ kanthi
-$c$ ora muncul ing $\Gamma$, $!C$, utawa $\lforall[x][!B(x)]$. Miturut
-hipotesis induksi, $\Gamma \Entails !C \lif !B(c)$. Miturut
-\olref[syn][sem]{thm:sem-deduction}, $\Gamma \cup \{!C\} \Entails
-!B(c)$. Cathetan koreksi sumber OLPL-039: tandha metavariabel formula
-ing rong formula kuantor kasebut dibalekake supaya cocog karo kabeh
-panggonan sabanjure ing bukti iki.
+\iftag{FOL}{Yèn larik pungkasan nganggo \QR{} universal, wujudé
+$!C\lif\lforall[x][!B(x)]$, lan ing larik sadurungé
+ana $!C\lif !B(c)$. Konstanta $c$ absèn saka $\Gamma$, $!C$, lan
+matriks $!B(x)$. Miturut induksi, $\Gamma\Entails !C\lif !B(c)$.
+Pilih $\Struct{M}$ lan pangaji $s$ kang nyukupi $\Gamma$, lan
+upamakna $\Sat{M}{!C}[s]$. Kanggo saben unsur $d$ ing domain,
+tetepna $s'$ padha karo $s$ kajaba $s'(x)=d$.
 
-Gatekna sawijining struktur~$\Struct{M}$ kanthi
-$\Sat{M}{\Gamma \cup \{!C\}}$. Kita kudu nuduhake yen
-$\Sat{M}{\lforall[x][!B(x)]}$. Amarga
-$\lforall[x][!B(x)]$ iku !!a{sentence}, iki ateges kita kudu nuduhake
-yen kanggo saben penetapan variabel~$s$, $\Sat{M}{!B(x)}[s]$
-(\olref[syn][ass]{prop:sat-quant}). Amarga $\Gamma \cup \{!C\}$ mung
-dumadi saka ukara, $\Sat{M}{!D}[s]$ kanggo kabeh $!D \in \Gamma$
-miturut \olref[syn][sat]{defn:satisfaction}. Tetepna $\Struct{M'}$ padha
-karo $\Struct{M}$ kajaba $\Assign{c}{M'} = s(x)$. Amarga $c$ ora
-muncul ing~$\Gamma$ utawa~$!C$, $\Sat{M'}{\Gamma \cup \{!C\}}$
-miturut \olref[syn][ext]{cor:extensionality-sent}. Amarga $\Gamma
-\cup \{!C\} \Entails !B(c)$, $\Sat{M'}{!B(c)}$. Amarga $!B(c)$ iku
-!!a{sentence}, $\Sat{M'}{!B(c)}[s]$ miturut
-\olref[syn][ass]{prop:sentence-sat-true}. $\Sat{M'}{!B(x)}[s]$ yen lan
-mung yen $\Sat{M'}{!B(c)}[s]$ miturut
-\olref[syn][ext]{prop:ext-formulas} (elinga yen $!B(c)$ mung
-$\Subst{!B(x)}{c}{x}$). Dadi, $\Sat{M'}{!B(x)}[s]$. Amarga $c$ ora
-muncul ing~$!B(x)$, miturut
-\olref[syn][ext]{prop:extensionality}, $\Sat{M}{!B(x)}[s]$. Nanging
-$s$ iku penetapan variabel sawenang-wenang, mula
-$\Sat{M}{\lforall[x][!B(x)]}$. Dadi, $\Gamma \cup \{!C\} \Entails
-\lforall[x][!B(x)]$. Miturut \olref[syn][sem]{thm:sem-deduction},
-$\Gamma \Entails !C \lif \lforall[x][!B(x)]$. Cathetan koreksi sumber
-OLPL-039 uga lumaku kanggo argumen formula ing pratelan panyukupan kang
-wis dibalekake ing paragraf iki.
+Tetepna $\Struct{M'}$ padha karo $\Struct{M}$ kajaba $\Assign{c}{M'}=d$.
+Amarga $c$ ora muncul ing $\Gamma$ lan $!C$,
+\olref[syn][ext]{prop:extensionality} njamin formula mau tetep
+dicukupi ing $\Struct{M'}$ kanthi pangaji $s$. Hipotesis induksi
+mènèhi $\Sat{M'}{!B(c)}[s]$. Miturut \olref[syn][ext]{prop:ext-formulas},
+iki padha karo $\Sat{M'}{!B(x)}[s']$. Amarga matriks uga ora ngemot
+$c$, kita nduwèni $\Sat{M}{!B(x)}[s']$. Iki lumaku kanggo saben $d$,
+mula $\Sat{M}{\lforall[x][!B(x)]}[s]$ miturut
+\olref[syn][ass]{prop:sat-quant}. Dadi
+$\Gamma\Entails !C\lif\lforall[x][!B(x)]$.
 
 Kasus nalika $!A$ nduweni dhasar \QR{} nanging awujud
 $\lexists[x][!B(x)] \lif !C$ ditinggalake minangka gladhen.}{}
@@ -143,16 +123,11 @@ Yen $\Gamma$ bisa dicukupi, mula himpunan kasebut konsisten.
 \end{cor}
 
 \begin{proof}
-Kita mbuktekake kontraposisine. Upamana $\Gamma$ ora konsisten. Banjur
-$\Gamma \Proves \lfalse$, yaiku ana !!a{derivation} kang formula
-pungkasane $\lfalse$ saka~$\Gamma$. Miturut \olref{thm:soundness}, saben
-\iftag{FOL}{!!{structure}~$\Struct{M}$}{!!{valuation}~$\pAssign{v}$}
-kang nyukupi $\Gamma$ mesthi nyukupi~$\lfalse$. Amarga
-\iftag{FOL}{$\Sat/{M}{\lfalse}$ kanggo saben
-  !!{structure}~$\Struct{M}$}{$\pSat/{v}{\lfalse}$ kanggo saben
-  !!{valuation}~$\pAssign{v}$}, ora ana
-\iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} kang bisa nyukupi $\Gamma$,
-yaiku $\Gamma$ ora bisa dicukupi.
+Kita mbuktekaké kontraposisi. Yèn $\Gamma$ ora konsisten, mula
+$\Gamma\Proves\lfalse$. Miturut \olref{thm:soundness},
+$\Gamma\Entails\lfalse$. Amarga $\lfalse$ tansah salah,
+\iftag{FOL}{ora ana pasangan struktur lan pangaji kang nyukupi $\Gamma$}{ora ana valuasi kang nyukupi $\Gamma$}.
+Dadi $\Gamma$ ora bisa dicukupi.
 \end{proof}
 
 

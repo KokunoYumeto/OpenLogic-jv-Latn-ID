@@ -19,7 +19,7 @@ Mula $g$ uga !!{lambda definable}.
 \end{lem}
 
 \begin{proof}
-Gagasane kira-kira kaya mangkene. Yen
+Kanggo mbangun wakil kang ketat tanpa bukti bunder, luwih dhisik kita nindakake kasus f rekursif primitif total. Bukti kasus parsial umum dijupuk sawise kesepadanan komputabilitas rampung ing pungkasan perangan iki. Gagasane kira-kira kaya mangkene. Yen
 diwenehi $x$, kita bakal nggunakake
 suku lambda titik tetep $Y$ kanggo
 netepake fungsi $h_x(n)$ kang nggoleki~$y$
@@ -34,7 +34,7 @@ h_x(n+1) & \text{yen ora.}
 \end{cases}
 \]
 
-Mangkene rinciane. Miturut anggepan, $f$ iku
+Mangkene rinciane. Ing subkasus tes rekursif primitif total iki, $f$ iku
 !!{lambda defined} dening sawijining
 suku $F$.
 Elinga yen kita uga duwe suku
@@ -55,7 +55,7 @@ $U$ minangka suku
 \[
 \lambd[h][\lambd[z][D(z,(h(\fn{Succ}(z))),F(x,z))]],
 \]
-banjur tetepna $H$ minangka suku~$YU$.
+banjur tetepna $H$ minangka suku~$YU$, kanthi Y kombinator Turing saka perangan sadurunge lan kabeh binder seger kanggo x. Bukti langsung iki kanggo tes total. Kasus parsial umum dirembug ing pungkasan.
 Gatekna yen siji-sijine variabel bebas
 ing~$H$ yaiku~$x$. Kita bakal nuduhake
 yen $H$ nyukupi persamaan ing ndhuwur.
@@ -88,7 +88,13 @@ tegese, kanggo saben~$m$,
 $G(\num m)$ direduksi dadi
 $\overline {g(m)}$ yen $g(m)$
 nduweni nilai, lan ora nduweni
-wujud normal yen ora.
+wujud normal yen ora. Tes ing konstruksi langsung iki rekursif primitif total. Tanpa totalitas iki, sawijining awak sèlèktor kang ngemot Omega bisa ilang nalika diwènèhi numeral nol. Yèn tes total ora tau nemokaké nol, reduksi normal saka kiwa-njaba terus ngembangaké cabang panelusuran lan ora tekan wujud normal. Iki nggunakake \href{https://www.csc.kth.se/utbildning/kth/kurser/DD2471/moddb10/lankar/barendregt.94.pdf}{Teorema Normalisasi 4.22 saka Barendregt lan Barendsen, Introduction to Lambda Calculus, kaca 30}.
+\par Kanggo ngrampungake arah komputabel marang definabilitas tanpa komposisi parsial kang ora ketat, gunakna Teorema Wujud Normal Kleene. Tetepna indeks program. Q makili tes rekursif primitif total kang mbalekake numeral nol persis nalika calon kode menehi komputasi sah kanggo input x, lan numeral siji yen ora. E makili pambaca asil kode rekursif primitif total kang ngasilake asil saka kode komputasi. Rekursi primitif lan komposisi fungsi total ing perangan sadurunge wis menehi rong suku iki. Kanthi binder seger, tetepna
+\begin{align*}
+V & = \lambd[h][\lambd[z][D(E(z),h(\fn{Succ}(z)),Q(x,z))]], \\
+J & = YV, \qquad L = \lambd[x][J(\num{0})].
+\end{align*}
+Y ing kene kombinator Turing. Yen ana kode komputasi sah, panelusuran tekan kode sah kapisan lan mbalekake numeral kang diwenehake E. Yen ora ana, reduksi normal terus ing cabang panelusuran lan ora nduweni wujud normal. Pambaca asil kode ana ing cabang sukses, mula ora bisa mbuwang panelusuran kang ora nduweni asil. L makili fungsi komputabel parsial kang dikarepake, tanpa wujud normal ing input kang ora ditetepake. Parameter liyane bisa dicurry utawa dienkode kaya teorema wujud normal. Iki ngrampungake arah konversi tanpa nganggep sipat katutup komposisi parsial minangka premis. Sawise digabung karo arah definabilitas marang komputabilitas, sipat katutup kelas parsial tumrap komposisi, rekursi primitif lan minimisasi umum dijupuk saka sipat katutup fungsi komputabel kang wis dibuktekake. Klaim parsial ing lemma tetep bener; rumus ora ketat sadurunge ora dhewe menehi wakil kang ketat.
 \end{proof}
 
 \end{document}

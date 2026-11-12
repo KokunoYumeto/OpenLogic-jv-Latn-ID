@@ -10,7 +10,8 @@
 
 \olsection{Konversi Reduksi}
 
-Yèn cut ing !!a{proof} \Log{N1i} dawané~$1$, cut mau segmen
+Ing kasus introduksi biasa, yèn cut ing !!a{proof} \Log{N1i}
+dawané~$1$, cut mau segmen
 kang mung ngemot siji kedadéan !!{formula}; !!{formula} iku
 sekaligus konklusi inferènsi !!a{introduction} lan premis utama
 inferènsi !!a{elimination}. Ing bukti normalisasi, cut kaya iki
@@ -18,7 +19,7 @@ inferènsi !!a{elimination}. Ing bukti normalisasi, cut kaya iki
 !!{introduction}/!!{elimination} mau nganggo !!{proof} anyar
 kang ora ngemot pasangan inferènsi iku. Panggantian iki bisa
 ngasilaké cut anyar. Nanging, cut anyar mau nduwèni pangkat
-luwih cilik tinimbang cut kang direduksi. Mula, !!{proof} anyar
+luwih cilik tinimbang cut kang direduksi. Kanthi milih cut maksimal miturut strategi ing ngisor, !!{proof} anyar
 nduwèni dawa cut luwih cilik (amarga cut maksimal dawa~$1$
 wis dibusak), utawa pangkat cut !!{proof} suda (yèn cut maksimal
 kang dimaksud iku siji-sijiné cut maksimal).
@@ -52,23 +53,29 @@ diganti mangkéné:
 Kanthi $\Subst{\delta_2}{\delta_3}{!B^x}$ kita maksudaké !!{proof}
 asil saka~$\delta_2$ nalika saben asumsi~$!B$ kang
 mawa label~$x$ diganti kabèh !!{proof}~$\delta_3$. !!{proof} iki
-ora nduwèni manèh asumsi mbukak awujud~$!B$ mawa label~$x$.
+ora nduwèni manèh asumsi kabuka awujud~$!B$ mawa label~$x$.
 Ora ana asumsi liya mawa label~$x$, amarga kaya lumrahé kita
-nganggep ora ana rong !!{formula}s kang dadi asumsi mawa label padha.
-Mula, !!{proof} anyar nduwèni asumsi mbukak kang padha karo~$\delta_1$;
+nganggep ora ana rong !!{formula}s kang béda dadi asumsi mawa label padha.
+Mula, !!{proof} anyar mung nduwèni asumsi kabuka saka~$\delta_1$;
+yèn label kang diganti ora digunakaké, asumsi saka bukti kang ora
+disisipaké bisa ilang;
 saben inferènsi ing~$\delta_2$ kang mbusak asumsi isih mbusak
 asumsi kang padha ing~$\Subst{\delta_2}{\delta_3}{!B^x}$;
 lan saben inferènsi ing~$\delta_3$ kang mbusak asumsi bisa
 ngasilaké sawetara salinan kang mbusak asumsi cocog
 ing~$\Subst{\delta_2}{\delta_3}{!B^x}$.
+(Reduksi njaga dudutan lan ora nambah asumsi anyar, nanging asumsi kang ora dienggo bisa ilang, mula ora mesthi padha persis. Label kaiket ing subbukti kang nampa sisipan dipilih seger saka label asumsi kabuka bukti kang disisipaké. Variabel kaiket lan konstanta eigen uga dipilih seger sadurungé substitusi, lan konstanta eigen ing salinan dipilih béda.)
 
 Saben cut kang kabèh ana ing $\delta_2$ utawa $\delta_3$,
-utawa kabèh ana ing sanjabané~$\delta_1$ ing~$\delta$, ora owah:
+kang ora nyakup wates panggantos, utawa kabèh ana ing sanjabané
+~$\delta_1$ ing~$\delta$, njaga pangkat lan dawa ing saben salinan kang kari:
 cut mau isih nglibataké !!{formula}s kang padha lan ngliwati
 inferènsi kang padha, mula pangkat lan dawané padha karo cut
 kang cocog ing~$\delta$. Kita wis mbusak cut maksimal dawa~$1$,
-mula dawa cut utawa pangkat cut suda (yèn dawa cut~$\delta$
+mula, kanthi strategi cut maksimal kang diterangaké ing ngisor,
+dawa cut utawa pangkat cut suda (yèn dawa cut~$\delta$
 mauné~$1$ lan iki siji-sijiné cut maksimal).
+(Delta4 ora ana ing tuladha iki. Pangkat lan dawa cut kang ora kena wates panggantos dijaga ing saben salinan; cacah salinan bisa owah. Kasus FalseInt ditangani ing ngisor, lan penurunan ukuran nganggo strategi cut maksimal kang ngindhari duplikasi maksimal.)
 
 Nanging, ana rong prakara kang bisa kelakon:
 \begin{enumerate}
@@ -85,15 +92,15 @@ Nanging, ana rong prakara kang bisa kelakon:
   yèn dawa cut !!{proof} suda, utawa malah pangkat cuté suda.
   \item Yèn asumsi $!B^x$ ing $\delta_2$ dadi premis utama
   inferènsi !!a{elimination}, lan inferènsi pungkasan~$\delta_3$
-  iku \Elim{\lor}, \Elim{\lexists}, utawa inferènsi
+  iku \Elim{\lor}, \Elim{\lexists}, \FalseInt, utawa inferènsi
   !!a{introduction}, nèmpèlaké~$\delta_3$ menyang $\delta_2$
   ing asumsi mau ngasilaké cut anyar. Kang mauné mung asumsi
   ing~$\delta_2$ saiki dadi cut dawa~$1$ (konklusi inferènsi
-  !!a{introduction} lan premis utama inferènsi
+  !!a{introduction} utawa \FalseInt lan premis utama inferènsi
   !!a{elimination}), utawa dadi kedadéan !!{formula} pungkasan
   saka segmen cut (premis utama inferènsi !!a{elimination}
   lan konklusi saka~\Elim{\lor} utawa \Elim{\lexists}).
-  Yèn $!B^x$ mauné premis tambahan \Elim{\lor} utawa
+  Yèn $!B^x$ mauné premis cilik \Elim{\lor} utawa
   \Elim{\lexists}, formula iku wis dadi kedadéan !!{formula}
   kapisan saka sawijining segmen, lan bisa uga segmen cut.
   Ing !!{proof} anyar, segmen iku bisa luwih dawa. Nanging,
@@ -103,11 +110,12 @@ Nanging, ana rong prakara kang bisa kelakon:
   ora ana cut anyar mau kang maksimal. Dadi pangkat cut suda,
   utawa, yèn isih ana cut kanthi pangkat padha, dawa cut suda.
 \end{enumerate}
+(Tandha token ing asumsi B dijaga. Subbukti kang pungkasané FalseInt uga bisa nggawe cut dawa siji ing wates panyambungan. Formula cut anyar tetep B, kanthi pangkat luwih cilik tinimbang implikasi kang direduksi.)
 
 Proses nyuda cut dawa~$1$ diarani \emph{konversi reduksi}
 (utawa \emph{konversi liku-liku}). Pola kanggo sawetara pasangan
 aturan kacetha ing~\olref{tab:reduction-conversions}.
-(Pasangan liyané dadi latihan.) 
+(Pasangan liyané dadi gladhen.) 
 
 \begin{table}
 \begin{multline*}
@@ -339,5 +347,6 @@ Mula kita kudu nindakaké cara kang padha karo reduksi
 \DeduceC{$!D$}
 \DisplayProof
 \]
+(Gunakna label x lan y kang béda kanggo asumsi B lan C kang dibebasaké déning eliminasi disjungsi.)
 
 \end{document}

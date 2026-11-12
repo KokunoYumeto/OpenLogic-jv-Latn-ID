@@ -33,7 +33,7 @@ Saiki kita kudu nuduhake yen iki relasi ekuivalensi.
 
 	\emph{Simetris:} Upamakna $\tuple{a, b} \Intequiv \tuple{c, d}$, mula $a + d = c + b$. Banjur $c + b = a + d$, saengga $\tuple{c, d} \Intequiv \tuple{a, b}$.
 
-	\emph{Transitif:} Upamakna $\tuple{a, b} \Intequiv \tuple{c, d}\Intequiv \tuple{m, n}$. Mula $a + d = c + b$ lan $c + n = m + d$. Dadi $a + d + c + n = c + b + m + d$, mula $a + n = m + b$. Dadi $\tuple{a, b } \Intequiv \tuple{m, n}$.
+	\emph{Transitif:} Upamakna $\tuple{a, b} \Intequiv \tuple{c, d}\Intequiv \tuple{m, n}$. Mula $a + d = c + b$ lan $c + n = m + d$. Dadi $a + d + c + n = c + b + m + d$, banjur ilangana suku $c$ lan $d$ kang padha saka loro sisih supaya olèh $a + n = m + b$. Dadi $\tuple{a, b } \Intequiv \tuple{m, n}$.
 \end{proof}
 
 Saiki relasi ekuivalensi iki bisa digunakake kanggo mbentuk kelas-kelas ekuivalensi:
@@ -52,16 +52,19 @@ Saiki kita menehi sawetara definisi:
 		\equivrep{a, b}{\Intequiv} \times \equivrep{c, d}{\Intequiv} &= \equivrep{a c + b  d, a  d + b c}{\Intequiv}\\
 		\equivrep{a, b}{\Intequiv} \leq \equivrep{c, d}{\Intequiv} &\text{ yen lan mung yen }a + d \leq b + c
 	\end{align*}
-(Kaya kang lumrah, ``$ab$'' digunakake kanggo ngganti ``$(a \times b)$'', supaya aksioma luwih gampang diwaca.) Saiki kita kudu mesthekake yen definisi kasebut tumindak kaya kang \emph{kudune}. Njlentrehake tegese iki lan mriksa kabeh kanthi rinci rada ngrepotake; rinciane dipindhah menyang \olref[check]{sec}. Nanging asil ringkese: kabeh lumaku kanthi becik!
+(Kaya kang lumrah, ``$ab$'' digunakake kanggo ngganti ``$(a \times b)$'', supaya rumus luwih gampang diwaca.) Saben operasi lan relasi kudu
+ditetepaké kanthi \emph{ajeg} tumrap pilihan wakil kelas. Bab iki
+dirembug ing \olref[check]{sec}.
 
 Isih ana siji prakara pungkasan. Kita wis mbangun wilangan wutuh nganggo
-wilangan natural. Nanging iki ateges wilangan natural \emph{dudu
-wilangan wutuh kasebut dhewe}. Kita bakal mbahas teges filosofise
+wilangan natural. Ing konstruksi iki, wilangan natural diwakili déning \emph{kelas
+ekuivalensi} tartamtu. Kita bakal mbahas teges filosofise
 ing \olref[ref]{sec}. Nanging saka sisih teknis, kita mbutuhake cara
 kanggo nganggep wilangan natural \emph{minangka} wilangan wutuh.
 Gagasane gampang: kanggo saben $n \in \Nat$, kita netepake
-$n_\Int = \equivrep{n, 0}{\Intequiv}$. Kita kudu mesthekake yen
-definisi iki tumindak kanthi becik, yaiku kanggo saben $m, n
+$n_\Int = \equivrep{n, 0}{\Intequiv}$. Gambar rong wilangan natural mung bisa padha yèn wilangan asliné padha.
+Iki amarga ekuivalensi rong wakil mau kanthi koordinat kapindho nol
+padha tegesé karo kesamaan koordinat kapisané. Kanggo saben $m, n
 \in \Nat$
 \begin{align*}
 	(m + n)_\Int &= m_\Int + n_\Int\\

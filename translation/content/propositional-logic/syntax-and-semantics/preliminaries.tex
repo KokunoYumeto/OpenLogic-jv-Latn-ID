@@ -80,12 +80,16 @@ Kajaba iku, cara nguraikake iki \emph{mung siji}.
 \end{prop}
 
 \begin{proof}
-Kanthi induksi ing $!A$. Tuladhane, upamakna $!A$ bisa diuraikake kanthi
-rong cara kang beda, yaiku dadi $(!B \lif !C)$ lan $(!B' \lif !C')$.
-Banjur $!B$ lan $!B'$ kudu padha (yen ora, salah sijine bakal dadi
-perangan wiwitan sejati saka sijine); mula yen rong uraian kanggo $!A$
-iku beda, mesthi $!C$ lan $!C'$ dadi rong uraian kang beda tumrap
-rerangken simbol kang padha. Iki mokal miturut hipotesis induktif.
+Wujud atomik lan wujud negasi bisa dibédakaké saka wujud kanthi
+konektif binèr saka simbol kang kapisan. Atom mung nduwèni siji uraian,
+lan ing negasi subformula iku rerangken sawisé tandha negasi.
+Yèn loro uraian nganggo konektif binèr, bandhingna subformula kiwané.
+Yèn dawané béda, salah sijiné dadi pérangan wiwitan sejati saka
+sijiné manèh. Iki mokal miturut \olref{prop:noinit}. Dadi subformula
+kiwané padha, lan konektif sabanjuré sarta subformula tengené uga
+padha amarga rerangken kabèh padha. Iki mènèhi uraian paling njaba
+kang unik. Uraian subformula nganti tekan atom uga unik kanthi induksi
+miturut dawané formula.
 \end{proof}
 
 
@@ -96,6 +100,9 @@ saben muncule $\Obj p_i$ nganggo sawijining muncule $!B$ sajrone $!A$;
 semono uga, substitusi bebarengan kanggo $\Obj p_1$, \dots,~$\Obj p_n$ nganggo
 !!{formula}s $!B_1$, \dots,~$!B_n$ dilambangake kanthi
 $\SSubst{!A}{\subst{!B_1}{\Obj p_1},\dots,\subst{!B_n}{\Obj p_n}}$.
+Mung panggonan variabel ing $!A$ wiwitan kang diganti.
+Formula pangganti dipasang bebarengan, dadi variabel ing formula
+pangganti ora kena substitusi sing padha manèh.
 \end{defn}
 
 \begin{prob} Kanggo saben limang !!{formula}s ing ngisor iki, temtokna apa
@@ -114,7 +121,7 @@ $\SSubst{!A}{\subst{!B_1}{\Obj p_1},\dots,\subst{!B_n}{\Obj p_n}}$.
 
 \begin{prob}
 Kanthi induksi, wenehana definisi matematis kang tliti kanggo
-$\Subst{!A}{!B}{p}$.
+$\Subst{!A}{!B}{\Obj p_i}$.
 \end{prob}
 
 \end{document}

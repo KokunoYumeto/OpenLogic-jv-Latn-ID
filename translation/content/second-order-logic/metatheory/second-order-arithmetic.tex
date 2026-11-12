@@ -8,7 +8,7 @@
 
 \olfileid{sol}{met}{spa}
 
-\olsection{Aritmetika Orde Kapindho}
+\olsection{Aritmetika Tataran Kapindho}
 
 Elinga yen teori $\Th{PA}$ saka aritmetika Peano ngemot
 wolung aksioma saka~$\Th{Q}$,
@@ -26,12 +26,12 @@ wolung aksioma saka~$\Th{Q}$,
 \end{align*}
 Kang pungkasan iku ``skema,'' yaiku pola kang ngasilake
 !!{sentence}s basa aritmetika kang cacahe tanpa wates,
-siji kanggo saben !!{formula}~$!A(x)$. Skema iki diarani
-\emph{skema aksioma induksi} (orde kapisan).
-Ing aritmetika Peano \emph{orde kapindho}~$\Th{PA^2}$,
+siji kanggo saben !!{formula}~$!A(x)$, kanthi penutupan universal tumrap parameter bebas liyane yen ana. Ing bab iki semantik tataran kapindho baku: kuantor predikat ngliputi kabeh himpunan bagean domain. Skema iki diarani
+\emph{skema aksioma induksi} (tataran kapisan).
+Ing aritmetika Peano \emph{tataran kapindho}~$\Th{PA^2}$,
 induksi bisa dinyatakake nganggo siji ukara.
 $\Th{PA^2}$ ngemot wolung aksioma kapisan ing ndhuwur
-ditambah \emph{aksioma induksi} (orde kapindho):
+ditambah \emph{aksioma induksi} (tataran kapindho):
 \[
 \lforall[X][((X(\Obj 0) \land \lforall[x][(X(x) \lif X(x'))]) \lif \lforall[x][X(x)])].
 \]
@@ -46,7 +46,7 @@ Aksioma induksi njamin yen saben !!{structure} kang nyukupi
 aksioma iku mung ngemot !!{element}s saka~$\Domain{M}$
 kang pancen diwajibake dening aksioma, yaiku nilai
 saka~$\num{n}$ kanggo $n \in \Nat$. Model
-$\Th{PA^2}$ ora ngemot wilangan nonstandar.
+$\Th{PA^2}$ ora ngemot wilangan nonbaku.
 
 \begin{thm}
 \ollabel{thm:sol-pa-standard}
@@ -94,19 +94,19 @@ Miturut \olref{thm:sol-pa-standard}, domain saben model saka
 $\Th{PA^2}$ kapenuhan dening $\Value{\num{n}}{M}$.
 Saben model kaya mangkono uga model saka~$\Th{Q}$.
 Miturut \olref[mod][mar][stm]{prop:thq-standard}, saben
-model kasebut standar, yaiku isomorfik karo~$\Struct{N}$.
+model kasebut baku, yaiku isomorfik karo~$\Struct{N}$.
 \end{proof}
 
 Ing ndhuwur kita netepake $\Th{PA^2}$ minangka teori kang ngemot
-wolung aksioma aritmetika kapisan ditambah aksioma induksi orde
-kapindho. Sejatine, amarga daya ungkap logika orde kapindho,
-aritmetika Peano orde kapindho mung mbutuhake \emph{rong aksioma
+wolung aksioma aritmetika kapisan ditambah aksioma induksi tataran
+kapindho. Sejatine, amarga daya ungkap logika tataran kapindho,
+aritmetika Peano tataran kapindho mung mbutuhake \emph{rong aksioma
 kapisan} saka aksioma aritmetika mau, ditambah induksi.
 
 \begin{prop}\ollabel{prop:sol-pa-definable}
-Upamana $\Th{PA^{2\dagger}}$ iku teori orde kapindho kang ngemot
+Upamana $\Th{PA^{2\dagger}}$ iku teori tataran kapindho kang ngemot
 rong aksioma aritmetika kapisan (aksioma panerus) lan aksioma
-induksi orde kapindho. Mula $\le$, $+$, lan $\times$ bisa
+induksi tataran kapindho. Mula $\le$, $+$, lan $\times$ bisa
 didefinisikake ing $\Th{PA^{2\dagger}}$.
 \end{prop}
 
@@ -123,7 +123,7 @@ himpunan $Y \subseteq \Nat$, mula
 $\Setabs{m}{n \le m} \subseteq Y$. Kosok baline ora kudu
 bener, amarga himpunan kang ngemot buntut iki durung mesthi
 tutup tumrap panerus ing unsur liyane. Nanging buntut iku
-dhewe ngemot titik wiwitane lan tutup tumrap panerus. Cathetan koreksi sumber OLPL-806: ngemot kabeh unsur wiwit n mung akibat saka klausa B, dudu syarat kang ekuivalen; himpunan buntut iku dadi saksi kanggo arah kosok baline ing definisi universal. Mula
+dhewe ngemot titik wiwitane lan tutup tumrap panerus. Ngemot kabeh unsur wiwit n mung akibat saka klausa B, dudu syarat kang ekuivalen; himpunan buntut iku dadi saksi kanggo arah kosok baline ing definisi universal. Mula
 kita bisa njupuk $!A_\le(x, y) \ident
 \lforall[Y][(!B(x, Y) \lif Y(y))]$.
 
@@ -134,10 +134,10 @@ $m = u(l)$. Kita bisa nggunakake ekuivalensi iki kanggo
 netepake tambah ing $\Th{PA^{2\dagger}}$ nganggo formula
 ing ngisor iki:
 \[
-!A_+(x,y,z) \ident \lexists[u][(u(\Obj 0)=x \land \lforall[w][u(x')=u
- (x)'] \land u(y)=z)]
+!A_+(x,y,z) \ident \lexists[u][(u(\Obj 0)=x \land \lforall[w][u(w')=u
+ (w)'] \land u(y)=z)]
 \] 
-Cathetan koreksi sumber OLPL-807: kuantor kanggo w ing rumus kang dicithak ora dienggo ing klausa rekurensi, kang malah migunakake x. Kanggo iterasi panerus, klausa kudu lumaku kanggo saben w lan mbandhingake nilai u ing panerus w karo panerus nilai u ing w. Sawise klausa mau dibenerake, cetha yen $\Sat{N}{!A_+(\num k, \num l, \num m)}$
+Klausa rekursi nerapaké penerus kanggo saben argumen kang diwatesi déning w. Mula cetha yen $\Sat{N}{!A_+(\num k, \num l, \num m)}$
 yen lan mung yen $k+l=m$.
 \end{proof}
 

@@ -18,7 +18,7 @@ fungsi kang !!a{lambda
   definable} uga !!{lambda definable}.
 
 \begin{lem}
-  \ollabel{lem:min} Yen $f(x_1, \dots, x_k, y)$ reguler lan
+  \ollabel{lem:min} Yen $f(x_1, \dots, x_k, y)$ total, reguler lan
   !!{lambda definable}, mula $g$~kang ditetepake dening
   \[
   g(x_1, \dots, x_k) = \umin{y}{f(x_1,\dots,x_k, y) = 0}
@@ -35,13 +35,13 @@ fungsi kang !!a{lambda
         \fn{IsZero} (f\, \vec{x}\, y)\, y\, (g\, f\, \vec{x} (\fn{Succ}\, y))]]\\
     H & \ident \lambd[\vec x][(Y \, \fn{Search}) F\, \vec{x}\, \num{0}],
   \end{align*}
-  kanthi $Y$ minangka kombinator titik tetep apa wae. Kanthi
+  kanthi $Y$ minangka kombinator Turing ing \olref[fp]{defn:Turing-Y}, kang nduweni unfolding maju. Binder parameter lan panelusuran dipilih beda lan seger marang F. Kanthi
   informal, $\fn{Search}$ iku fungsi kang ngrujuk marang awake dhewe:
   wiwit saka~$y$, dipriksa apa $f\, \vec x\, y$ iku nol. Yen iya,
   balekake~$y$; yen ora, fungsi iki nyeluk awake dhewe kanthi
   $\fn{Succ}\, y$. Mula $(Y \, \fn{Search}) F
   \num{n_1}\dots\num{n_k}\,\num{0}$ ngasilake $m$~paling cilik
-  kang nyukupi $f(n_1, \dots, n_k, m) = 0$.
+  kang nyukupi $f(n_1, \dots, n_k, m) = 0$. Kombinator titik tetep Turing menehi langkah reduksi maju ing pangetungan iki. Kombinator titik tetep liyane bisa menehi numeral asil kanthi ekuivalensi beta lan konfluensi, nanging reduksi maju langsung gumantung marang kombinator kang dipilih.
   
   Kanthi luwih cetha, gatekna yen
   \begin{align*}
@@ -55,7 +55,7 @@ fungsi kang !!a{lambda
     (Y \, \fn{Search}) F \num{n_1} \dots\num{n_k}\,\num{0}
     & \red \num{g(n_1, \dots, n_k)}.
     \end{align*}
-\end{proof}
+Totalitas f menehi numeral kanggo saben tes. Yen m minangka nol paling cilik, kabeh tes saka nol nganti sadurunge m menehi numeral positif, saengga ana runtutan winates saka cabang rekursif nganti m, banjur cabang bener menehi numeral m. Reguler menehi anane m kanggo saben input; ora perlu jaminan kabeh strategi evaluasi mandheg.\end{proof}
 
 
 \begin{prop}
@@ -65,9 +65,9 @@ fungsi kang !!a{lambda
 \begin{proof}
  Miturut \olref[prf]{lem:basic}, kabeh fungsi dhasar iku
  !!{lambda definable}, lan miturut \olref[prf]{lem:comp},
- \olref[prf]{lem:prim}, sarta \olref{lem:min}, kelas fungsi kang
+ \olref[prf]{lem:prim}, sarta \olref{lem:min}, kelas fungsi total kang
  !!{lambda definable} katutup marang komposisi, rekursi primitif,
  lan minimisasi reguler.
-\end{proof}
+Cakupan total cukup kanggo induksi definisi kelas rekursif umum iki.\end{proof}
 
 \end{document}

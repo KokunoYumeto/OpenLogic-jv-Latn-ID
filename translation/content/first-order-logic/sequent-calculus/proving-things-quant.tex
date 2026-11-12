@@ -20,19 +20,19 @@ panrapan inferensi tartamtu. Lumrahe luwih gampang yen aturan kang
 kaiket syarat eigenvariabel ditangani luwih dhisik (aturan iku bakal
 mapan luwih ngisor ing bukti kang wis rampung). Becike kita uga nyawang
 sawetara langkah ing ngarep lan ngira-ira wujude sekuen wiwitan. Ing
-kasus iki, wujude kudu kaya $!A(a) \Sequent !A(a)$. Iki ateges nalika
-“mbalikke” aturan kuantor, kita kudu milih term kang padha---kang bakal
-dijenengi $a$---kanggo aturan $\lforall$ lan $\lexists$. Yen kita
-milih term kang beda kanggo saben aturan, pungkasane kita bakal entuk
-wujud kaya $!A(a) \Sequent !A(b)$, kang mesthi ora bisa diderivasi.
+kasus iki, wujude kudu kaya $!A(a) \Sequent !A(a)$. Pilih konstanta $a$ kang ora muncul ing sekuen-pungkasan.
+Konstanta iku dadi eigenvariabel kanggo aturan $\lexists$ lan term
+katutup kanggo aturan $\lforall$. Kanthi milih term kang padha, kita
+entuk sekuen wiwitan mau. Kanthi rong term béda, kita bisa entuk
+$!A(a) \Sequent !A(b)$, kang ora mesthi valid.
 
 Kaya lumrahe, kita miwiti kanthi nulis
 \begin{prooftree}
 \AxiomC{}
 \UnaryInf$\lexists[x][\lnot !A(x)] \fCenter \lnot \lforall[x][!A(x)]$
 \end{prooftree}
-Kita bisa ngetrapake aturan \LeftR{\exists} utawa aturan
-\RightR{\lnot}. Amarga aturan \LeftR{\exists} kaiket syarat
+Kita bisa ngetrapake aturan \LeftR{\lexists} utawa aturan
+\RightR{\lnot}. Amarga aturan \LeftR{\lexists} kaiket syarat
 eigenvariabel, becike aturan iki ditangani luwih dhisik, mula kita
 bakal ngetrapake aturan iki.
 \begin{prooftree}
@@ -51,12 +51,12 @@ mbalikke, kita entuk
 \RightLabel{\LeftR{\Exchange}}
 \UnaryInf$\lforall[x][!A(x)], \lnot !A(a) \fCenter $
 \RightLabel{\RightR{\lnot}}
-\UnaryInf$ \lnot !A(a) \fCenter \lnot \lforall[x] !A(x)$
+\UnaryInf$ \lnot !A(a) \fCenter \lnot \lforall[x][!A(x)]$
 \RightLabel{\LeftR{\lexists}}
-\UnaryInf$ \lexists[x] \lnot !A(x) \fCenter \lnot \lforall[x] !A(x)$
+\UnaryInf$ \lexists[x][\lnot !A(x)] \fCenter \lnot \lforall[x][!A(x)]$
 \end{prooftree}
-Ing tahap iki, pilihan siji-sijine yaiku ngetrapake aturan
-\LeftR{\forall}. Amarga aturan iki ora kaiket watesan eigenvariabel,
+Saiki kita ngetrapaké aturan
+\LeftR{\lforall}. Amarga aturan iki ora kaiket watesan eigenvariabel,
 kita aman. Elinga, kita ngupaya ngasilake sekuen wiwitan (kanthi wujud
 $!A(a) \Sequent !A(a)$), mula nalika aturan ditrapake, kita kudu milih
 $a$ minangka argumen kanggo $!A$.
@@ -76,7 +76,7 @@ $a$ minangka argumen kanggo $!A$.
 Ing tahap iki, mligine nalika nggarap kuantor, kita kudu mriksa maneh
 manawa syarat eigenvariabel ora diterak. Amarga aturan siji-sijine
 kang ditrapake lan kaiket syarat eigenvariabel yaiku
-\LeftR{\exists}, lan eigenvariabel~$a$ ora muncul ing sekuen ngisore
+\LeftR{\lexists}, lan eigenvariabel~$a$ ora muncul ing sekuen ngisore
 (sekuen-pungkasan), mula iki !!{derivation} kang bener.
 \end{ex}
 
@@ -102,7 +102,8 @@ Wenehana !!{derivation}s kanggo sekuen-sekuen iki:
 \item $(\lforall[x][!A(x)] \lif !B) \Sequent \lexists[y][(!A(y) \lif !B)]$.
 \item $\Sequent \lexists[x][(!A(x) \lif \lforall[y][!A(y)])]$.
 \end{enumerate}
-(Kabeh iki mbutuhake aturan~$\RightR{\Contraction}$.)
+Nalika nggoleki bukti kanggo sekuen-sekuen iki, coba gunakna
+$\RightR{\Contraction}$ kanggo njaga salinan formula ing sukseden.
 \end{prob}
 
 \end{document}

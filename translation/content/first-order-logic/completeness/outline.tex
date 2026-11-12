@@ -38,10 +38,12 @@ Kita mung perlu nemtokake
 \iftag{FOL}{%
   !!a{domain}~$\Domain{M}$ lan pamasangan kanggo~$P$ saengga
   $\Sat{M}{\Atom{P}{a_1,\ldots,a_n}}$. Iki ora angel: tetepna
-  $\Domain{M} = \Nat$, $\Assign{\Obj c_i}{M} = i$, lan kanggo saben
+  $\Domain{M} = \Nat$ lan $\Assign{\Obj c_i}{M} = i$.
+  Kanggo saben predikat $P$, interpretasine ngemot persis tuple saka
+  anggota himpunan. Kanggo saben
   $\Atom{P}{a_1,\ldots,a_n} \in \Gamma$, lebokna tuple $\tuple{k_1,
     \dots, k_n}$ menyang $\Assign{P}{M}$, kanthi $k_i$ minangka indeks
-  simbol konstanta~$a_i$ (yaiku, $a_i \ident \Obj c_{k_i}$).}{%
+  simbol konstanta~$a_i$ (yaiku, $a_i \ident \Obj c_{k_i}$). Fungsi kang ora dienggo bisa ditafsiraké sembarang.}{%
   !!a{valuation}~$\pAssign{v}$ saengga $\pSat{v}{p}$ kanggo saben
   $p \in \Gamma$. Tetepna wae $\pAssign{v}(p) = \True$ yen lan mung
   yen $p \in \Gamma$.}
@@ -70,19 +72,15 @@ menyang~$\Gamma$ supaya (a)~himpunan asile tetep konsisten,
 $\lnot !A$ ana ing himpunan asil kasebut, lan (c)~yen $!A \land !B$
 ana ing himpunan, $!A$ lan $!B$ kalorone uga ana; yen $!A \lor !B$
 ana ing himpunan, paling ora salah siji saka $!A$ utawa $!B$ uga ana;
-lan sateruse. Proses iki diterusake, bisa uga tanpa entek. Sebuten
-himpunan kabeh !!{formula}s kang ditambahake mau~$\Gamma^*$. Banjur
-konstruksi ing ndhuwur menehi
+lan sateruse. Proses iki bisa diterusaké tanpa wates.
+$\Gamma^*$ yaiku gabungan $\Gamma$ lan kabèh formula kang ditambahaké.
+Himpunan formula kang nyukupi (b) diarani \emph{jangkep}.
+Konsistensi lan kajangkepan njamin sipat (c) kanggo konektif
+proposisional. \iftag{FOL}{Kanggo kuantor, kita uga butuh syarat jenuh kang diterangaké
+ing ngisor iki.}{} Kanthi sipat kasebut, konstruksi mènèhi
 \iftag{FOL}{!!a{structure}~$\Struct{M}$}{!!a{valuation}~$\pAssign{v}$}
-kang kanthi induksi bisa dibuktekake nyukupi kabeh ukara
-ing~$\Gamma^*$, lan mula uga kabeh ukara ing~$\Gamma$ amarga
-$\Gamma \subseteq \Gamma^*$. Cathetan koreksi sumber OLPL-045: sumber
-Inggris nganggo wujud tunggal sentence nalika ngrujuk kabeh ukara ing
-himpunan mau; wujud jamak kang dikarepake dibalekake ing kene. Pranyata
-jaminan (a) lan~(b) wis cukup. Himpunan ukara kang nyukupi (b) diarani
-\emph{jangkep}. Dadi, tugas kita yaiku ngambakake himpunan
-konsisten~$\Gamma$ dadi himpunan~$\Gamma^*$ kang konsisten lan
-jangkep. Cathetan koreksi sumber OLPL-737: syarat (b) nyakup kabeh ukara, manut definisi himpunan jangkep ing perangan sabanjure; watesan mung marang ukara atomik ing sumber ora cukup kanggo sipat kajangkepan kang diklaim.
+kang nyukupi kabèh formula ing~$\Gamma^*$, lan mula uga kabeh ukara ing~$\Gamma$,
+amarga $\Gamma \subseteq \Gamma^*$.
 
 \iftag{FOL}{%
 Ana siji alangan ing rancangan iki: yen $\lexists[x][!A(x)] \in
@@ -110,7 +108,7 @@ tinimbang nganggo $i$ kanggo napsirake $\Obj c_i$, gunakna himpunan
 masangake saben !!{constant} marang awake dhewe:
 $\Assign{\Obj c_i}{M} = \Obj c_i$. Malah, yagene ora diterusake
 sakabehe: tetepna $\Domain{M}$ minangka kabeh \emph{term katutup} ing basa
-kasebut!{} Cathetan koreksi sumber OLPL-738: domain nggunakake term katutup, cocog karo definisi model term ing perangan konstruksi model; watesan iki uga njaga supaya fungsi ing domain ngasilake term katutup. Kanthi mangkono, ana pamasangan fungsi kang cetha marang
+kasebut. Kanthi mangkono, ana pamasangan fungsi kang cetha marang
 !!{function}s: fungsi kasebut njupuk term minangka argumen lan
 ngasilake term minangka nilai. Kita masangake marang
 !!{function}~$\Obj f^n_i$ fungsi kang, yen diwenehi $n$ term
@@ -129,8 +127,8 @@ $\eq[t][t']$ nalika $t$ lan $t'$ dudu term kang padha (umpamane ing
 teori aritmetika: $\eq[(\Obj 0+ \Obj 0)][\Obj 0]$). Kanggo
 ngrampungake masalah iki, domain~$\Struct M$ diowahi: tinimbang
 nganggo term minangka objek ing~$\Domain{M}$, kita nganggo
-himpunan-himpunan term, lan saben himpunan ngemot kabeh term kang
-diwajibake padha dening ukara-ukara ing~$\Gamma$. Umpamane, yen
+kelas ekuivalensi term katutup miturut pepadhan kang ditetepaké déning $\Gamma^*$.
+Saben kelas ngemot term kang padha miturut pepadhan mau. Umpamane, yen
 $\Gamma$ iku teori aritmetika, salah siji himpunan iki bakal ngemot
 $\Obj 0$, $(\Obj 0 + \Obj 0)$, $(\Obj 0 \times \Obj 0)$, lan
 sateruse. Himpunan iki bakal dipasangake marang $\Obj 0$, lan
@@ -166,8 +164,7 @@ kanggo nemtokake \iftag{FOL}{model term~$\Struct
   M(\Gamma^*)$}{!!{valuation}~$\pAssign v(\Gamma^*)$}.
 \iftag{FOL}{Model term nduweni himpunan term katutup minangka domain,
   lan interpretasi !!{predicate}s ditemtokake dening !!{sentence}s
-  atomik}{Valuasi ditemtokake dening !!{propositional
-    variable}s}
+  atomik}{Valuasi ditemtokake dening !!{propositional variable}s}
 ing~$\Gamma^*$ (\olref[mod]{defn:termmodel}). Kita nggunakake
 sipat-sipat himpunan konsisten kang\iftag{FOL}{ jenuh,}{}
 jangkep kanggo mbuktekake yen
@@ -175,7 +172,7 @@ $\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{!A}$ yen lan mung
 yen $!A \in \Gamma^*$ (\olref[mod]{lem:truth}), lan mligine,
 $\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{\Gamma}$.
 \iftag{FOL}{Pungkasan, kita bakal nliti carane nemtokake model term
-  yen $\Gamma$ uga ngemot~$\eq$
+  yen basa uga ngemot~$\eq$
   (\olref[ide]{defn:term-model-factor}) lan mbuktekake yen model iku
   nyukupi~$\Gamma^*$ (\olref[ide]{lem:truth}).}{}
 

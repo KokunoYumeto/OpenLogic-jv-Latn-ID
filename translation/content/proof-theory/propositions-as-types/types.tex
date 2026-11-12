@@ -30,7 +30,7 @@ $\Gamma = \{x:!A, y:!B, z:!C\}$ iku konteks kanggo $\pair{x}{y}$.
 
 \begin{defn}\ollabel{defn:type}
   Upamane $\Gamma$ iku konteks kanggo~$N$. \emph{Tipe} saka~$N$
-  (relatif marang~$\Gamma$) ditetepake kanthi induktif kaya mangkene.
+  (relatif marang~$\Gamma$) ditetepaké kanthi induktif kaya mangkéné.
   Jeneng variabel kaiket diganti dhisik supaya anyar tumrap konteks:
   \begin{enumerate}
   \item Tipe $x$ iku $!A$ yen lan mung yen $x:!A \in \Gamma$.
@@ -42,11 +42,11 @@ $\Gamma = \{x:!A, y:!B, z:!C\}$ iku konteks kanggo $\pair{x}{y}$.
   \item Yen $N$ nduweni tipe~$!A_1 \land !A_2$, $\proj{i}{N}$ nduweni tipe~$!A_i$.
   \item Yen $N$ nduweni tipe $!A$,
     $\inj[!B]{i}{N}$ nduweni tipe $!A \lor !B$ yen $i=1$ lan tipe
-    $!B \lor !A$ yen $i=2$.
+    $!B \lor !A$ yèn $i=2$.
   \item Yen $M$ nduweni tipe $!A \lor !B$, lan $N_1$ nduweni tipe
     $!C$ relatif marang $x_1:!A, \Gamma$ lan $N_2$ nduweni tipe~$!C$
     relatif marang $x_2:!B, \Gamma$, $\dcase{M}{x_1}{N_1}{x_2}{N_2}$
-    nduweni tipe~$!C$.
+    nduwèni tipe~$!C$.
   \item Yen $N$ nduweni tipe~$\lfalse$,
     $\abort{!A}{N}$ nduweni tipe~$!A$.
   \end{enumerate}
@@ -54,20 +54,31 @@ $\Gamma = \{x:!A, y:!B, z:!C\}$ iku konteks kanggo $\pair{x}{y}$.
 
 \begin{prop}
 Saben terma bukti~$N$ nduweni paling akeh siji tipe relatif marang
-konteks~$\Gamma$ kanggo~$N$. Saben terma sing tipene bener nduweni
+konteks~$\Gamma$ kanggo~$N$. Saben terma sing tipené bener nduwèni
 persis siji tipe.
 \end{prop}
 
 \begin{proof}
-  Kanthi induksi marang~$N$.
+  Kanthi induksi marang~$N$. Variabel olèh paling akèh siji tipe
+  saka konteks. Ing abstraksi, anotasi netepaké tipe domain lan
+  hipotesis induksi netepaké paling akèh siji tipe asil ing konteks
+  sing ditambahi pangiket. Ing aplikasi, tipe fungsi netepaké
+  domain lan kodomain; tipe argumèn kudu cocog karo domain.
+  Tipe komponèn netepaké tipe pasangan, lan tipe terma prodhuk
+  lan indeks netepaké tipe proyeksi. Ing injeksi, tipe muatan,
+  anotasi, lan indeks netepaké gunggung. Ing eliminasi kasus,
+  tipe terma utama netepaké rong tambahan konteks, lan rong
+  cabang kudu nduwèni tipe asil sing padha. Ing eliminasi
+  falsitas, anotasi netepaké tipe asil. Yèn syarat aturan
+  ora kacukupan, aturan kasebut ora menehi tipe.
 \end{proof}
 
 Kita nulis $\Gamma \Sequent N : !A$ yen tipe $N$ relatif marang
 $\Gamma$ iku~$!A$. Klausa ing \olref{defn:type} mesthine wis katon
 lumrah: klausa kasebut persis aturan \Log{tN2i} kanthi siji bedane
-cilik, yaiku konteks~$\Gamma$ padha ing sakabehe. Kita bisa ngrumusake
-dhefinisi kasebut minangka kalkulus \Log{tN3i} kanthi aturan ing
-\olref{tab:tN3ip}.
+cilik, yaiku konteks njaba~$\Gamma$ padha ing kabèh premis lan konklusi,
+kanthi tambahan lokal kanggo variabel kaiket. Kita bisa ngrumusaké
+dhefinisi kasebut minangka kalkulus \Log{tN3i}. Tabel \olref{tab:tN3ip} ngringkes aturan panetepan tipe iki.
 
 \subfile{rules-tN3}
 

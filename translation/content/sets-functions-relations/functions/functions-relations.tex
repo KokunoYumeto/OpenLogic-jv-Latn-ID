@@ -16,8 +16,8 @@ Fungsi kang metakake !!{element}s saka~$A$ menyang !!{element}s saka~$B$
 cetha nemtokake relasi antarane $A$ lan~$B$, yaiku relasi
 kang dumadi antarane $x$ lan $y$ yen lan mung yen $f(x) = y$. Malah,
 yen kita kepengin nyuda cacah jinis bahan dhasar matematika, upamane,
-kita bisa \emph{nganggep padha} fungsi~$f$ lan relasi iki,
-yaiku himpunan pasangan. Iki banjur nuwuhake pitakon:
+nalika domain lan kodomainé tetep, kita bisa \emph{nganggep padha}
+fungsi~$f$ lan relasi iki, yaiku himpunan pasangan. Iki banjur nuwuhake pitakon:
 relasi endi wae kang nemtokake fungsi kanthi cara iki?
 \end{explain}
 
@@ -25,19 +25,23 @@ relasi endi wae kang nemtokake fungsi kanthi cara iki?
 \emph{Graf} saka~$f$ yaiku relasi $R_f \subseteq A \times B$
 kang ditetepake kanthi
 \[
-R_f = \Setabs{\tuple{x,y}}{f(x) = y}.
+R_f = \Setabs{\tuple{x,y} \in A \times B}{f(x) = y}.
 \]
 \end{defn}
 
 \begin{explain}
-Adhedhasar ekstensionalitas, graf sawijining fungsi ditemtokake kanthi tunggal.
+Adhedhasar ekstensionalitas himpunan, saben fungsi nduwèni graf tunggal.
 Kajaba iku, ekstensionalitas tumrap himpunan langsung nuduhake yen
 prinsip ekstensionalitas fungsi kang sadurunge dianggep lumaku iku trep:
 yen $f$ lan~$g$ duwe domain lan kodomain kang padha,
 fungsi loro iku padha yen loro-lorone menehi
 nilai kang padha kanggo saben argumen.
 
-Semono uga, yen sawijining relasi iku "fungsional", relasi iku graf sawijining fungsi.
+Yèn domain lan kodomain wis tetep, graf nemtokaké fungsi kanthi tunggal. Grafé dhéwé bisa cocog karo kodomain kang béda.
+Tuladhané, fungsi kang njupuk siji anggota lan ngasilaké anggota iku
+nduwèni graf kang padha, apa kodomainé himpunan isi siji anggota mau
+utawa himpunan luwih gedhé kang ngemot anggota mau.
+Relasi nemtokaké fungsi yèn saben anggota domain nduwèni persis siji pasangan nilai.
 \end{explain}
 
 \begin{prop}\ollabel{prop:graph-function}
@@ -52,23 +56,21 @@ $f(x) = y$ yen lan mung yen $Rxy$.
 \end{prop}
 
 \begin{proof}
-Upamakna ana $y$ kanthi $Rxy$. Yen ana $z \neq
-y$ liyane kanthi $Rxz$, sarat tumrap~$R$ bakal dilanggar. Mula, yen
-ana $y$ kanthi $Rxy$, $y$ iki siji-sijine, mula $f$
-ditetepake kanthi becik. Cetha yen $R_f = R$.
+Tetepna sembarang $x \in A$. Miturut syarat kapindho, ana $y \in B$ kanthi
+$Rxy$. Miturut syarat kapisan, $y$ iku tunggal. Mula $f$ katetepaké
+kanggo saben anggota domain kanthi nilai tunggal. Pasangan
+$\tuple{x,y}$ ana ing $R_f$ yèn lan mung yèn $f(x)=y$, yaiku yèn lan
+mung yèn pasangan mau ana ing $R$. Mula $R_f=R$.
 \end{proof}
 
 \begin{explain}
-Saben fungsi $f\colon A \to B$ duwe graf, yaiku relasi kang kaemot ing $A
-\times B$ lan ditetepake dening $f(x) = y$. Cathetan koreksi sumber
-OLFUN-004: iki relasi antarane A lan B, dudu relasi ing himpunan
-produk A lan B miturut definisi relasi biner ing buku iki. Kosok baline, saben relasi~$R
+Saben fungsi $f\colon A \to B$ duwé graf, yaiku relasi saka A menyang B kanthi pasangan ing $A
+\times B$ kang nyukupi $f(x) = y$. Kosok baliné, saben relasi~$R
 \subseteq A \times B$ kang nduweni sipat ing
 \olref{prop:graph-function} iku graf sawijining fungsi~$f \colon A \to
 B$. Amarga sesambungan kang raket antarane fungsi lan grafe iki,
-kita bisa nganggep sawijining fungsi minangka grafe. Kanthi tembung
-liya, fungsi bisa dianggep padha karo relasi tartamtu, yaiku
-himpunan tupel tartamtu. \oliflabeldef{sfr:rel:ref:sec}{Nanging, gatekna
+kita bisa makili fungsi nganggo grafé nalika domain lan kodomainé tetep.
+Kanthi mangkono, himpunan tupel kasebut ngode nilai kanggo saben argumen. \oliflabeldef{sfr:rel:ref:sec}{Nanging, gatekna
 yen maksud "nganggep padha" iki kaya ing
 \olref[sfr][rel][ref]{sec}: iki dudu pratelan ngenani metafisika
 fungsi, nanging pangamatan yen \emph{nganggep}
@@ -84,7 +86,7 @@ Upamakna $f \colon A \to B$ sawijining fungsi kanthi $C\subseteq A$.
 \emph{Watesan} saka~$f$ ing~$C$ yaiku
 fungsi~$\funrestrictionto{f}{C}\colon C \to B$ kang ditetepake kanthi
 $(\funrestrictionto{f}{C})(x) = f(x)$ kanggo kabeh $x \in C$. Kanthi tembung
-liya, $\funrestrictionto{f}{C} = \Setabs{\tuple{x, y} \in R_f}{x \in
+liya, grafé yaiku $\Setabs{\tuple{x, y} \in R_f}{x \in
 C}$.
 
 \emph{Aplikasi} saka~$f$ tumrap~$C$ yaiku $\funimage{f}{C} =
@@ -99,8 +101,7 @@ Saka definisi iki bisa didudut yen $\ran{f} =
 definisi ing \olref[sfr][rel][ops]{sec} lan anggone kita
 nganggep fungsi padha karo relasi, nanging ora persis padha:
 watesan fungsi ing kene mung nyaring koordinat masukan, dene
-watesan relasi ing kana nyaring loro koordinat. Iki koreksi
-andharan sumber OLFUN-005. Rong operasi liyane,
+watesan relasi ing kana nyaring loro koordinat. Rong operasi liyané,
 yaiku invers lan produk relatif, mbutuhake katrangan luwih jangkep.
 Katrangan iku bakal diwenehake ing \olref[inv]{sec} lan
 \olref[cmp]{sec}.}{}

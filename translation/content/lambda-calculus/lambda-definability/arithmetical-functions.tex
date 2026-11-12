@@ -34,12 +34,12 @@ fungsi penerus yaiku
    \lambd[fx][f ({\num{n}} f x)].
    \intertext{Suku sisipan $\num{n}fx$ iku redex,
      amarga $\num{n}$ yaiku $\lambd[fx][f^nx]$.
-     Mula $\num{n}fx \redone f^nx$,
+     Mula $\num{n}fx \red f^nx$,
      saéngga kanggo suku sakabèhé kita oleh}
    \fn{Succ}\, \num n & \red \lambd[fx][f(f^n(x))],
 \end{align*}
 yaiku $\num{n+1}$.
-\end{proof}
+Aplikasi numeral marang f lan x nggunakake rong kontraksi beta. Aplikasi marang argumen a ing tampilan sadurungé nggunakake siji kontraksi.\end{proof}
 
 \begin{ex}
   Gatekna apa kang kelakon yen
@@ -88,16 +88,16 @@ dening suku-suku iki:
   $\num{m}$, asil iki direduksi dadi
   $f^{n+m}(x)$, kang padha karo
   $f^{n}(f^{m}(x))$. Rinciane:}
-  (\lambd[{a}{b}][\lambd[fx][{a} f ({b} f x)]])\num n\,\num m & \redone
+  (\lambd[{a}{b}][\lambd[fx][{a} f ({b} f x)]])\num n\,\num m & \red
   \lambd[fx][\num{n}\, f (\num {m}\, f x)] \\
-  & \redone \lambd[fx][\num{n}\, f (f^m x)] \\
-  & \redone \lambd[fx][f^n (f^m x)] \ident \num {n+m}.
+  & \red \lambd[fx][\num{n}\, f (f^m x)] \\
+  & \red \lambd[fx][f^n (f^m x)] \ident \num {n+m}.
 \intertext{Perwakilan panjumlahan kapindho,
   $\fn{Add'}$, lumaku kanthi cara liya:
   yen ditrapake marang rong numeral Church,
   $\num{n}$ lan $\num{m}$,}
 \fn{Add}' \num n \,\num m
-& \redone \num{n}\, \fn{Succ}\, \num{m}.
+& \red \num{n}\, \fn{Succ}\, \num{m}.
 \intertext{Nanging $\num{n} f x$ mesthi
   direduksi dadi $f^n(x)$. Mula,}
   \num{n}\,  \fn{Succ}\, \num{m} & \red \fn{Succ}^n(\num{m}).
@@ -109,7 +109,7 @@ kang ditrapake ping $n$
 marang~$m$ ngasilake
 $n+m$, asil iki banjur
 direduksi dadi~$\num{n+m}$.
-\end{proof}
+Aplikasi rong binder lan aplikasi numeral marang rong argumen mbutuhake luwih saka siji kontraksi; panah sawetara langkah njaga trace panjumlahan kang bener.\end{proof}
 
 \begin{prop}
   \ollabel{prop:mult-ld}
@@ -167,14 +167,14 @@ dening suku
 \]
 Terangna kepriye
 suku iki makarya.
-\end{prob}
+Ing saben iterasi, tambahna b.\end{prob}
 
 Definisi pemangkatan
 minangka suku-$\lambd$
 prasaja kanthi cara
 kang nggumunake:
 \[
-  \fn{Exp} \ident \lambd[be][e b].
+  \fn{Exp} \ident \lambd[be][\lambd[fx][e b f x]].
 \]
 Argumen kapisan $b$
 yaiku basis, dene
@@ -190,7 +190,7 @@ ditetepake liwat
 perkalian kang dibaleni:
 \[
   \fn{Exp}' \ident \lambd[be][e (\fn{Mult}\, b) \num{1}].
-\]
+\] Kanggo eksponen nol, iterasi menehi f. Sawisé ditrapaké marang x lan diabstraksi marang f lan x, asilé numeral Church siji. Kanggo eksponen positif, induksi nuduhaké yèn saben iterasi ngalikaké cacah aplikasi f karo basis. Miwiti saka siji mula ngasilaké pangkat kang dikarepaké. Iki uga nyakup basis nol. Suku Exp-prima ngiterasi perkalian saka numeral siji lan menehi asil kang padha.
 
 Fungsi sadurunge lan
 pengurangan ing numeral

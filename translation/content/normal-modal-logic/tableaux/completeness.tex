@@ -22,7 +22,7 @@
   Tableau siji iki, liwat cabang-cabang bukake, ngemot kabeh informasi
   kang dibutuhake kanggo netepake kontramodel. Kontramodel saka
   sawijining cabang bukak nggunakake kabeh prefiks ing cabang iku
-  minangka jagad-jagade, lan !!a{propositional
+  minangka donya-donyane, lan !!a{propositional
     variable}~$p$ bener ing $\sigma$ yen lan mung yen
   $\sFmla{\True}{p}[\sigma]$ katon ing cabang kasebut.
 \end{explain}
@@ -37,12 +37,13 @@
       cabang;
     \item salah siji !!{formula}s kesimpulan kang cocog kanggo aturan
       proposisional kang mecah cabang;
-    \item paling ora siji kesimpulan kang mungkin kanggo aturan modal
+    \item paling ora siji kesimpulan kang bisa ana kanggo aturan modal
       kang mbutuhake prefiks anyar;
     \item kesimpulan kang cocog kanggo saben prefiks penerus relevan
       kang wis dienggo ing cabang, kanggo aturan modal kang mbutuhake
       prefiks kang wis dienggo.
   \end{enumerate}
+Prefiks kang cocog ditemtokake dening aturan modal kang ditrapake.
 \end{defn}
 
 \begin{explain}
@@ -59,6 +60,7 @@ saben ngemot \iftag{prvBox} {$\sFmla{\True}{\Box !B}[\sigma]$}
 {$\sFmla{\True}{!B}[\sigma.n]$}
 {$\sFmla{\False}{!B}[\sigma.n]$} kanggo saben~$n$ kang ndadekake
 $\sigma.n$ wis dienggo ing cabang.
+Prefiks, tandha lan operand ing conto iki dicocogake karo aturan tableau.
 \end{explain}
 
 \begin{prop}\ollabel{prop:complete-tableau}
@@ -77,10 +79,11 @@ $\sigma.n$ wis dienggo ing cabang.
   !!{formula}s mawa prefiks lan prefiks kang wis dienggo ing cabang
   winates, prosedur iki pungkasane ngasilake cabang-cabang (bisa uga
   akeh) kang ngambakake cabang wiwitan. Trapna prosedur marang saben
-  cabang mau, banjur baleni. Prefiks penerus anyar nyuda jerone modal;
+  cabang mau, banjur baleni. Ing saben prefiks penerus anyar, jerone modal maksimum luwih cendhek tinimbang ing prefiks sadurunge;
   subformula mung winates cacahe lan saben kewajiban prefiks anyar
   dituntaskan sapisan ing saben prefiks. Mula proses iki rampung, lan
   miturut pambangunane saben cabang bukak dadi jangkep.
+Pambangunan iki njangkepake cabang bukak, ora mesthi nutup kabeh cabang.
 \end{proof}
 
 \begin{thm}[Kelengkapan]
@@ -97,8 +100,8 @@ himpunan !!{formula}s mawa prefiks ing cabang iku, lan $P(\Delta)$
 himpunan prefiks kang katon ing kono.
 
 Kita netepake model~$\mModel{M(\Delta)} = \tuple{P(\Delta), R, V}$,
-kanthi jagad-jagade yaiku prefiks kang katon ing~$\Delta$, lan relasi
-aksesibilitase ditepakake mangkene:
+kanthi donya-donyane yaiku prefiks kang katon ing~$\Delta$, lan relasi
+aksesibilitase ditetepake mangkene:
 \[
 R\sigma\sigma' \quad \text{yen lan mung yen} \quad
 \sigma'=\sigma.n \quad \text{kanggo sawijining~$n$}
@@ -122,7 +125,7 @@ $\mSat/{M(\Delta)}{!A}[\sigma]$.
     $\sFmla{\True}{\indfrm}[\sigma] \notin \Delta$, amarga yen ora,
     cabange bakal katutup. Dadi $\sigma \notin V(p)$, mula
     $\mSat/{M(\Delta)}{\indfrm}[\sigma]$.}
-  \item \indcase{!A}{\lnot !B}{\iftag{probNot}{Latihan.}{Yen
+  \item \indcase{!A}{\lnot !B}{\iftag{probNot}{Gladhen.}{Yen
       $\sFmla{\True}{\indfrm}[\sigma] \in \Delta$, mula
       $\sFmla{\False}{!B}[\sigma] \in \Delta$ amarga cabange
       jangkep. Miturut hipotesis induksi,
@@ -134,7 +137,7 @@ $\mSat/{M(\Delta)}{!A}[\sigma]$.
       jangkep. Miturut hipotesis induksi,
       $\mSat{M(\Delta)}{!B}[\sigma]$, saengga
       $\mSat/{M(\Delta)}{\indfrm}[\sigma]$.}}
-  \item \indcase{!A}{!B \land !C}{\iftag{probAnd}{Latihan.}{Yen
+  \item \indcase{!A}{!B \land !C}{\iftag{probAnd}{Gladhen.}{Yen
       $\sFmla{\True}{\indfrm}[\sigma] \in \Delta$, mula
       $\sFmla{\True}{!B}[\sigma] \in \Delta$ lan
       $\sFmla{\True}{!C}[\sigma] \in \Delta$ loro-lorone amarga
@@ -150,7 +153,7 @@ $\mSat/{M(\Delta)}{!A}[\sigma]$.
       $\mSat/{M(\Delta)}{!B}[\sigma]$ utawa
       $\mSat/{M(\Delta)}{!C}[\sigma]$. Mula
       $\mSat/{M(\Delta)}{\indfrm}[\sigma]$.}}
-  \item \indcase{!A}{!B \lor !C}{\iftag{probOr}{Latihan.}{Yen
+  \item \indcase{!A}{!B \lor !C}{\iftag{probOr}{Gladhen.}{Yen
       $\sFmla{\True}{\indfrm}[\sigma] \in \Delta$, mula
       $\sFmla{\True}{!B}[\sigma] \in \Delta$ utawa
       $\sFmla{\True}{!C}[\sigma] \in \Delta$ amarga cabange
@@ -166,7 +169,7 @@ $\mSat/{M(\Delta)}{!A}[\sigma]$.
       $\mSat/{M(\Delta)}{!B}[\sigma]$ lan
       $\mSat/{M(\Delta)}{!C}[\sigma]$ loro-lorone. Mula
       $\mSat/{M(\Delta)}{\indfrm}[\sigma]$.}}
-  \item \indcase{!A}{!B \lif !C}{\iftag{probIf}{Latihan.}{Yen
+  \item \indcase{!A}{!B \lif !C}{\iftag{probIf}{Gladhen.}{Yen
       $\sFmla{\True}{\indfrm}[\sigma] \in \Delta$, mula
       $\sFmla{\False}{!B}[\sigma] \in \Delta$ utawa
       $\sFmla{\True}{!C}[\sigma] \in \Delta$ amarga cabange
@@ -182,7 +185,7 @@ $\mSat/{M(\Delta)}{!A}[\sigma]$.
       $\mSat{M(\Delta)}{!B}[\sigma]$ lan
       $\mSat/{M(\Delta)}{!C}[\sigma]$ loro-lorone. Mula
       $\mSat/{M(\Delta)}{\indfrm}[\sigma]$.}}
-  \item \indcase{!A}{\Box !B}{\iftag{probBox}{Latihan.}{Yen
+  \item \indcase{!A}{\Box !B}{\iftag{probBox}{Gladhen.}{Yen
       $\sFmla{\True}{\indfrm}[\sigma] \in \Delta$, mula, amarga
       cabange jangkep, $\sFmla{\True}{!B}[\sigma.n] \in \Delta$ kanggo
       saben $\sigma.n$ kang wis dienggo ing cabang, yaiku kanggo saben
@@ -198,7 +201,7 @@ $\mSat/{M(\Delta)}{!A}[\sigma]$.
       ana~$\sigma'$ kang nyukupi
       $\mSat/{M(\Delta)}{!B}[\sigma']$. Dadi
       $\mSat/{M(\Delta)}{\indfrm}[\sigma]$.}}
-  \item \indcase{!A}{\Diamond !B}{\iftag{probDiamond}{Latihan.}{Yen
+  \item \indcase{!A}{\Diamond !B}{\iftag{probDiamond}{Gladhen.}{Yen
       $\sFmla{\True}{\indfrm}[\sigma] \in \Delta$, mula kanggo sawetara
       $\sigma.n$, $\sFmla{\True}{!B}[\sigma.n] \in \Delta$ amarga
       cabange jangkep. Miturut hipotesis induksi,
@@ -220,6 +223,7 @@ Kanggo $\Gamma$ sembarang, saben subhimpunan winatese ora nduweni
 !!{tableau} katutup lan bisa dicukupi miturut kasus winates. Miturut
 kekompakan modal, kang diturunake saka kekompakan orde-siji liwat
 terjemahan standar, $\Gamma$ uga bisa dicukupi.
+Kasus winates disambungake marang kasus umum kanthi kekompakan. Hipotesis induksi ditrapake marang konjung utawa konsekuen kang cocog.
 \end{proof}
 
 \begin{prob}

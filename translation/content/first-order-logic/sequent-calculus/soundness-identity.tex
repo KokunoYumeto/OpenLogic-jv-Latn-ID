@@ -15,6 +15,9 @@ $\Log{LK}$ mawa sekuen wiwitan lan aturan kanggo identitas iku sah.
 \end{prop}
 
 \begin{proof}
+Kita nganggo induksi miturut cacah inferensi. Kasus kanggo aturan dhasar
+manut \olref[fol][seq][sou]{thm:sequent-soundness}. Ing kéné kita
+mriksa sekuen wiwitan lan rong aturan tambahan.
 Sekuen wiwitan kang awujud ${} \Sequent \eq[t][t]$ iku valid, amarga
 kanggo saben !!{structure}~$\Struct M$, $\Sat{M}{\eq[t][t]}$. (Cathet
 yen kita nganggep term $t$ iku tertutup, yaiku ora ngemot variabel,
@@ -35,14 +38,17 @@ $\Sat{M}{!A(t_1)}$. Ing kasus (a) bukti kita rampung. Nimbang kasus
 (b). Upamana $s$ iku penetapan variabel kanthi $s(x) =
 \Value{t_1}{M}$. Miturut
 \olref[syn][ass]{prop:sentence-sat-true},
-$\Sat{M}{!A(t_1)}[s]$. Amarga $\varAssign{s}{s}{x}$, miturut
+$\Sat{M}{!A(t_1)}[s]$. Amarga $s(x)$ wis padha karo nilai term
+kang disubstitusèkaké, penetapan $s$ tetep padha. Miturut
 \olref[syn][ext]{prop:ext-formulas}, $\Sat{M}{!A(x)}[s]$. Amarga
 $\Sat{M}{\eq[t_1][t_2]}$, kita duwe $\Value{t_1}{M} =
 \Value{t_2}{M}$, mula $s(x) = \Value{t_2}{M}$. Kanthi ngetrapake
 \olref[syn][ext]{prop:ext-formulas} maneh, kita uga duwe
 $\Sat{M}{!A(t_2)}[s]$. Miturut
 \olref[syn][ass]{prop:sentence-sat-true},
-$\Sat{M}{!A(t_2)}$.
+$\Sat{M}{!A(t_2)}$. Loro instansi padha karo matriks kang padha ing penetapan iki.
+Mula alesan iki uga lumaku kanggo aturan kang ngganti $!A(t_2)$
+nganggo $!A(t_1)$.
 \end{proof}
 
 \end{document}

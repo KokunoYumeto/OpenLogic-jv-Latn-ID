@@ -35,7 +35,7 @@
 
 Basa logika proposisional iki dilambangake kanthi $\Lang L_0$.
 
-\iftag{defNot,defOr,defAnd,defIf,defIff,defTrue,defFalse,defEx,defAll}{%
+\iftag{defNot,defOr,defAnd,defIf,defIff,defTrue,defFalse}{%
 Saliyane konektif primitif kang ditepungake ing ndhuwur, kita uga
 nggunakake simbol-simbol kang \emph{ditetepake} iki:
 \startycommalist
@@ -45,9 +45,9 @@ nggunakake simbol-simbol kang \emph{ditetepake} iki:
   \iftag{defIf}{\ycomma $\lif$ (!!{conditional})}{}%
   \iftag{defIff}{\ycomma $\liff$ (!!{biconditional})}{}%
   \iftag{defFalse}{\ycomma $\lfalse$ (!!{falsity})}{}%
-  \iftag{defTrue}{\ycomma $\ltrue$ (!!{truth})}}{}.
+  \iftag{defTrue}{\ycomma $\ltrue$ (!!{truth})}.}{}
 
-\begin{tagblock}{defNot,defOr,defAnd,defIf,defIff,defTrue,defFalse,defEx,defAll}
+\begin{tagblock}{defNot,defOr,defAnd,defIf,defIff,defTrue,defFalse}
 \begin{explain}
 Simbol kang ditetepake dudu perangan resmi saka basa, nanging
 ditepungake minangka cekakan ora resmi: simbol kasebut ndadekake kita bisa
@@ -134,12 +134,12 @@ Nalika nulis formula $(!B \ast !C)$ kang kawangun saka $!B$, $!C$
 nganggo konektif rong-papan~$\ast$, kita kerep ngilangake pasangan
 tandha kurung paling njaba lan mung nulis~$!B \ast !C$.
 
-\begin{tagblock}{defNot,defOr,defAnd,defIf,defIff,defTrue,defFalse,defEx,defAll}
+\begin{tagblock}{defNot,defOr,defAnd,defIf,defIff,defTrue,defFalse}
 \begin{defn}
 Formula kang kawangun nganggo operator kang ditetepake kudu dimangerteni
 kaya mangkene:
 
-\begin{tagenumerate}{defTrue,defFalse,defNot,defOr,defAnd,defIf,defIff,defEx,defAll}
+\begin{tagenumerate}{defTrue,defFalse,defNot,defOr,defAnd,defIf,defIff}
 
 \tagitem{defTrue}{$\ltrue$ nyekakake
   \iftag{prvFalse}{$\lnot\lfalse$}{$(!A \lor \lnot !A)$ kanggo sawijining
@@ -160,9 +160,7 @@ kaya mangkene:
     \lnot !B)$}.}{}
 
 \tagitem{defIf}{$!A \lif !B$ nyekakake
-  \iftag{prvOr}{$(\lnot !A \lor !B)$}{$\lnot (!A \land \lnot !B)$}.
-  Cathetan koreksi sumber OLPL-001: cabang kapisan ing sumber Inggris
-  ora duwe tandha kurung buka; pasangan kurunge dibalekake.}{}
+  \iftag{prvOr}{$(\lnot !A \lor !B)$}{$\lnot (!A \land \lnot !B)$}.}{}
 
 \tagitem{defIff}{$!A \liff !B$ nyekakake $(!A \lif !B) \land (!B
   \lif !A)$.}{}

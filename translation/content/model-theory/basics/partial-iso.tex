@@ -37,7 +37,7 @@
     $p(\Assign f M (a_1, \dots,a_n))
     = \Assign f N (p(a_1), \dots, p(a_n))$.
   \end{enumerate}
-  $p$ winates tegesé $\dom{p}$ winates. Cathetan cakupan: miturut klausa fungsi ing definisi iki, ranah p kudu katutup tumrap fungsi kang diterapake marang tuple saka ranahe. Iki syarat kang luwih mbatesi kanggo fungsi kang duwe orbit tanpa wates; definisi alternatif kang nggunakake isomorfisme antarane substruktur kang dibangkitake ora diganti kanthi meneng ing edhisi iki.
+  $p$ winates tegesé $\dom{p}$ winates. Miturut klausa fungsi, domain p katutup tumrap fungsi kang ditrapaké marang tupel saka domainé. Kanggo fungsi mawa orbit tanpa wates, ora ana domain winates kang ngemot unsur ing orbit mau.
 \end{defn}
 
 Gatekna yen fungsi kosong~$\emptyset$
@@ -100,11 +100,6 @@ antarane sembarang rong !!{structure}s.
     lan $b_{r-1}$ ana ing jajaran
     asil $p_{n+1}$.
   \end{enumerate}
-  Cathetan koreksi sumber OLPL-089:
-  nalika langkah genep kapisan,
-  unsur kapisan saka jajaran asil
-  kudu dilebokake; indeks ing
-  sumber diwiwiti saka unsur kapindho.
 Yen saiki ditetepake:
 \[
 p = \bigcup_{n\ge 0} p_n,
@@ -144,7 +139,7 @@ lan $\Struct{N}$.
   \dots,~$n$), lan kabeh variabel bebas saka formula kang dibandhingake ana ing dhaptar kasebut, mula
   $\Sat{M}{!A}[s_1]$ yen lan
   mung yen $\Sat{N}{!A}[s_2]$.
-  Cathetan cakupan SOL6-F018: p kudu anggota kulawarga maju-mundur kang ana ing hipotesis teorema. Isomorfisme parsial sembarang mung njaga data atomik ing ranahe; kanggo langkah kuantor, p kudu bisa dijembarake ing kulawarga kasebut. Upamane, rong unsur kang padha ora nyukupi predikat bisa dicocogake dening siji p, senajan mung salah siji struktur nduweni unsur liyane kang nyukupi predikat kasebut. Formula eksistensial mula ora mesthi padha kanggo p sembarang.
+  Panggantos nalika langkah kuantor mbutuhaké isomorfisme parsial kang dadi anggota kulawarga maju-mundur. Isomorfisme parsial sembarang mung njaga data atomik ing domainé. Rong unsur kang padha-padha ora nyukupi sawijining predikat bisa dicocogaké, sanajan mung salah siji struktur ngemot unsur liya kang nyukupi predikat kasebut. Formula eksistensial banjur bisa nduwèni nilai kabeneran kang béda.
   Kasus $n=0$ menehi
   $\Struct{M} \elemequiv \Struct{N}$.
 \end{proof}
@@ -198,11 +193,7 @@ isomorfisme parsial kang dibutuhake.
   $\Lang{L}$ kang tingkat
   kuantoré ora luwih saka $n$,
   nganti ekuivalensi logis.
-  Cathetan koreksi sumber OLPL-090:
-  ing proposisi iki konstanta diidinake,
-  dadi teges basane luwih jembar
-  tinimbang teges relasional murni
-  ing teorema sadurunge.
+  Basa ing proposisi iki ngidinaké simbol konstanta.
 \end{prop}
 
 \begin{proof}
@@ -250,9 +241,6 @@ isomorfisme parsial kang dibutuhake.
      mula $\Sat{M}{!A}[s_1]$
      yen lan mung yen~
      $\Sat{N}{!A}[s_2]$.
-     Cathetan koreksi sumber OLPL-091:
-     k ing indeks pungkasan iku
-     dawa urutan, dudu tingkat rekursi.
    \item $I_{n+1} (\mathbf{a},\mathbf{b})$
      yen lan mung yen kanggo
      saben $a\in \Domain M$
@@ -290,7 +278,7 @@ isomorfisme parsial kang dibutuhake.
   kang nyukupi $!A$).
   Sabanjure, yen $\Lang{L}$
   winates, pratelan kosok
-  baline uga bener. Cathetan koreksi sumber OLPL-754: pratelan iki mung kanggo formula kang variabel bebasé ana ing urutan kasebut; variabel bebas ing njabane ora dikontrol dening relasi kasebut.
+  baline uga bener.
 \end{thm}
 
 \begin{proof}
@@ -310,7 +298,7 @@ isomorfisme parsial kang dibutuhake.
   saben $n$ mung ana
   winates cacahé !!{formula}s
   kang ora ekuivalen
-  kanthi tingkat kuantor kasebut, kanggo dhaptar variabel bebas kang tetep lan winates. Cathetan cakupan SOL6-F019: watesan iki perlu; kabeh formula kang variabel bebase ora diwatesi ora nduweni winates kelas ekuivalensi, malah ing tingkat nol. Proposisi ngenani ukara bisa ditrapake ing kene kanthi ngganti saben variabel bebas ing dhaptar tetep nganggo konstanta anyar; basane tetep winates lan tanpa fungsi.
+  kanthi tingkat kuantor kasebut, kanggo dhaptar variabel bebas kang tetep lan winates. Dhaptar tetep iki perlu kanggo njamin cacahe kelas ekuivalensi winates, malah kanggo tingkat nol. Kanggo nerapaké asil tumrap ukara, gantinen variabel bebas ing dhaptar iki nganggo konstanta anyar. Basané tetep winates lan tanpa fungsi.
 
   Kanggo $n=0$, hipotesis yen
   $\mathbf{a}$ lan $\mathbf{b}$
@@ -358,10 +346,7 @@ isomorfisme parsial kang dibutuhake.
   himpunan iki lan nganggep
   konjungsine minangka siji
   !!{formula} tataran kapisan.
-  Cathetan koreksi sumber OLPL-092:
-  himpunan formula sintaktis kasebut
-  ora winates; kang winates
-  yaiku kelas-kelas ekuivalensine.
+  Konjungsi iki ngemot siji wakil saben kelas ekuivalensi kang cocog. Mula konjungsiné winates.
   Mula $\mathbf{a}$ nyukupi
   $\lexists[x][!T^a_n(x,\mathbf{y})]$,
   kang tingkat kuantoré

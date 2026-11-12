@@ -19,9 +19,9 @@ sawijining sipat kaslametan kang dijamin kanggo sistem
 !!{derivation}. Gumantung marang sipat teoretis-bukti kang dirembug,
 kita kepengin ngerti, upamane, yen
 \begin{enumerate}
-\item saben !!{derivable} !!{sentence} iku
+\item saben !!{derivable} !!{sentence} tanpa asumsi mbukak iku
   \iftag{FOL}{valid}{tautologi};
-\item yen !!a{sentence} bisa !!{derivable} saka ukara-ukara liyane,
+\item yen !!a{sentence} !!{derivable} saka ukara-ukara liyane,
   ukara iku uga dadi akibate;
 \item yen sawijining himpunan !!{sentence}s ora konsisten, himpunan
   iku ora bisa dicukupi.
@@ -29,12 +29,13 @@ kita kepengin ngerti, upamane, yen
 Iki sipat-sipat wigati saka sistem !!a{derivation}. Yen salah sijine
 ora lumaku, sistem !!{derivation} kasebut cacad---sistem iku bakal
 !!{derive} kakehan. Mula, netepake kasahihan sistem !!{derivation}
-iku wigati banget.
+iku wigati banget. \iftag{FOL}{Aturan tambahan kanggo identitas
+dirembug ing \olref[fol][ntd][sid]{sec}.}{}
 \end{explain}
 
 \begin{thm}[Kasahihan]
 \ollabel{thm:soundness}
-Yen $!A$ bisa !!{derivable} saka asumsi-asumsi !!{undischarged} $\Gamma$,
+Yen $!A$ !!{derivable} saka asumsi-asumsi !!{undischarged} $\Gamma$,
 mula $\Gamma \Entails !A$.
 \end{thm}
 
@@ -58,7 +59,9 @@ saka~$n$. Kita nganggep hipotesis induksi: premis-premis saka
 inferensi paling ngisor ndherek saka asumsi-asumsi !!{undischarged} ing
 sub-!!{derivation}s kang mungkasi ing premis kasebut. Kita kudu
 nuduhake yen kesimpulan~$!A$ ndherek saka asumsi-asumsi !!{undischarged} ing
-kabeh bukti.
+kabeh bukti. Ing saben kasus, himpunan kang ditulis ing wit mung ngemot asumsi winates
+kang isih mbukak. Asumsi kanthi label bisa ora ana yèn aturan
+ditrapaké tanpa pambubaran.
 
 Kita mbedakake kasus adhedhasar jinis inferensi paling ngisor. Sepisan,
 kita nimbang inferensi-inferensi kang mung duwe siji premis.
@@ -73,8 +76,9 @@ kita nimbang inferensi-inferensi kang mung duwe siji premis.
     \DischargeRule{\Intro{\lnot}}{n}
     \UnaryInfC{$\lnot !A$}
   \end{prooftree}
-  Miturut hipotesis induksi, $\lfalse$ ndherek saka asumsi-asumsi
-  !!{undischarged} $\Gamma \cup \{!A\}$ ing~$\delta_1$. Nimbang
+  Miturut hipotesis induksi, $\lfalse$ ndhèrèk saka asumsi-asumsi
+  !!{undischarged} ing~$\delta_1$, kang kabèh kalebu ing
+  $\Gamma \cup \{!A\}$. Nimbang
   \iftag{FOL}{!!a{structure}~$\Struct{M}$}{!!a{valuation}~$\pAssign{v}$}.
   Kita kudu nuduhake yen, yen
   $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$, mula
@@ -98,7 +102,7 @@ kita nimbang inferensi-inferensi kang mung duwe siji premis.
   \end{prooftree}
   Miturut hipotesis induksi, $!A \land !B$ ndherek saka asumsi-asumsi
   !!{undischarged}~$\Gamma$ ing~$\delta_1$. Nimbang
-  !!a{structure}~\iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$}. Kita kudu
+  \iftag{FOL}{!!a{structure}~$\Struct{M}$}{!!a{valuation}~$\pAssign{v}$}. Kita kudu
   nuduhake yen, yen $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$, mula
   $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$. Upamana
   $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$. Miturut hipotesis induksi
@@ -132,8 +136,8 @@ kita nimbang inferensi-inferensi kang mung duwe siji premis.
   \lor !B$ diturunake saka~$!B$ ditangani kanthi cara kang padha.)
 
 \item Inferensi pungkasan iku \Intro{\lif}: $!A \lif !B$
-  diturunake saka subbukti kang nduweni asumsi~$!A$ lan kesimpulan~$!B$,
-  yaiku
+  diturunaké saka subbukti kanthi asumsi~$!A$ kang kena dibubaraké
+  lan kesimpulan~$!B$, kaya mangkéné.
   \begin{prooftree}
     \AxiomC{$\Gamma, \Discharge{!A}{n}$}
     \RightLabel{$\delta_1$}
@@ -145,8 +149,8 @@ kita nimbang inferensi-inferensi kang mung duwe siji premis.
   !!{undischarged} ing~$\delta_1$, yaiku $\Gamma \cup \{!A\}
   \Entails !B$. Nimbang
   \iftag{FOL}{!!a{structure}~$\Struct{M}$}{!!a{valuation}~$\pAssign{v}$}.
-  Asumsi-asumsi !!{undischarged} ing~$\delta$ mung $\Gamma$, amarga $!A$ wis
-  dibubarake ing inferensi pungkasan. Dadi kita kudu nuduhake yen
+  Asumsi-asumsi !!{undischarged} ing~$\delta$ kalebu $\Gamma$.
+  Asumsi $!A$ kang ditandhani dibubaraké ing inferensi pungkasan. Dadi kita kudu nuduhake yen
   $\Gamma \Entails !A \lif !B$. Kanggo reductio, upamana kanggo
   sawijining
   \iftag{FOL}{!!{structure}~$\Struct{M}$}{!!{valuation}~$\pAssign{v}$},
@@ -202,10 +206,10 @@ kita nimbang inferensi-inferensi kang mung duwe siji premis.
   \olref[syn][ext]{cor:extensionality-sent}. Amarga $\Gamma \Entails
   !A(a)$, $\Sat{M'}{!A(a)}$. Amarga $!A(a)$ iku !!a{sentence},
   $\Sat{M'}{!A(a)}[s]$ miturut
-  \olref[syn][ass]{prop:sentence-sat-true}. $\Sat{M'}{!A(x)}[s]$ yen
-  lan mung yen $\Sat{M'}{!A(a)}$ miturut
-  \olref[syn][ext]{prop:ext-formulas} (elinga yen $!A(a)$ mung
-  $\Subst{!A(x)}{a}{x}$). Dadi, $\Sat{M'}{!A(x)}[s]$. Amarga $a$ ora
+  \olref[syn][ass]{prop:sentence-sat-true}. Amarga nilai $a$ ing $\Struct{M'}$ padha karo $s(x)$,
+  substitusi nilai iku kanggo $x$ ora ngowahi penetapan $s$.
+  Amarga $!A(a)$ iku $\Subst{!A(x)}{a}{x}$, miturut
+  \olref[syn][ext]{prop:ext-formulas} kita éntuk $\Sat{M'}{!A(x)}[s]$. Amarga $a$ ora
   muncul ing~$!A(x)$, miturut
   \olref[syn][ext]{prop:extensionality}, $\Sat{M}{!A(x)}[s]$. Nanging
   $s$ iku penetapan variabel sawenang-wenang, mula
@@ -213,12 +217,12 @@ kita nimbang inferensi-inferensi kang mung duwe siji premis.
 
 \item Inferensi pungkasan iku \Intro{\lexists}: Gladhen.
 
-\item Inferensi pungkasan iku \Elim{\forall}: Gladhen.
+\item Inferensi pungkasan iku \Elim{\lforall}: Gladhen.
 }{}
 \end{enumerate}
 
 Saiki kita nimbang inferensi-inferensi kang bisa duwe sawetara premis:
-\Elim{\lor}, \Intro{\land},
+\Elim{\lor}, \Intro{\land}, \Elim{\lnot},
 \iftag{FOL}{\Elim{\lif}, lan \Elim{\lexists}}{lan \Elim{\lif}}.
 \begin{enumerate}
 

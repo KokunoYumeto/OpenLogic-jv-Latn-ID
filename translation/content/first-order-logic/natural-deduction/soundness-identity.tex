@@ -15,7 +15,9 @@ Deduksi natural mawa aturan kanggo $\eq$ iku sah.
 \end{prop}
 
 \begin{proof}
-Saben !!{formula} awujud $\eq[t][t]$ iku valid, amarga kanggo saben
+Kita nganggo induksi miturut cacah inferensi. Kasus aturan dhasar manut
+\olref[fol][ntd][sou]{thm:soundness}. Kanggo aturan tambahan, saben
+!!{formula} awujud $\eq[t][t]$ iku valid, amarga kanggo saben
 !!{structure}~$\Struct M$, $\Sat{M}{\eq[t][t]}$. (Cathet yen kita
 nganggep term $t$ iku katutup, yaiku ora ngemot variabel, mula
 penetapan variabel ora relevan).
@@ -43,7 +45,7 @@ Tetepna $s$ minangka sembarang penetapan variabel, lan $m = \Value{t_1}{M} =
 \olref[fol][syn][ext]{prop:ext-formulas}, $\Sat{M}{!A(t_1)}[s]$ yen
 lan mung yen $\Sat{M}{!A(x)}[\Subst{s}{m}{x}]$ yen lan mung yen
 $\Sat{M}{!A(t_2)}[s]$. Amarga $\Sat{M}{!A(t_1)}$, kita duwe
-$\Sat{M}{!A(t_2)}$.
+$\Sat{M}{!A(t_2)}$. Ekuivalensi iki uga mènèhi kasahihan kanggo arah walikan.
 \end{proof}
 
 \end{document}

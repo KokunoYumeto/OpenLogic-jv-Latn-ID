@@ -35,15 +35,15 @@ mung diarani fungsi, uga diarani fungsi \emph{total}.
 
 \begin{ex}
 Fungsi parsial $f \colon \Real \pto \Real$ kang diwenehake dening $f(x) = 1/x$
-ora ditetepake kanggo $x = 0$, lan ditetepake kanggo saben masukan
-real saliyane nol.
+ora ditetepaké kanggo $x = 0$, lan katetepaké kanggo saben masukan
+real saliyané nol. Mula domainé yaiku $\Real\setminus\{0\}$.
 \end{ex}
 
 \begin{prob}
 Yen diwenehi $f\colon A \pto B$, tetepna fungsi parsial $g\colon B \pto
 A$ kanthi: kanggo saben $y \in B$, yen ana siji-sijine $x \in A$ kanthi
 $f(x) = y$, mula $g(y) = x$; yen ora, $g(y) \fundefined$. Tuduhna yen
-$f$ injektif, mula $g(f(x)) = x$ kanggo kabeh $x \in \dom{f}$, lan
+$f$ injektif ing domainé, mula $g(f(x)) = x$ kanggo kabeh $x \in \dom{f}$, lan
 $f(g(y)) = y$ kanggo kabeh $y \in \ran{f}$.
 \end{prob}
 
@@ -51,7 +51,7 @@ $f(g(y)) = y$ kanggo kabeh $y \in \ran{f}$.
 Upamakna $f\colon A \pto B$ sawijining fungsi parsial. \emph{Graf} saka~$f$
 yaiku relasi $R_f \subseteq A \times B$ kang ditetepake kanthi
 \[
-R_f = \Setabs{\tuple{x,y}}{f(x) = y}.
+R_f = \Setabs{\tuple{x,y} \in A \times B}{f(x) \fdefined \text{ lan } f(x) = y}.
 \]
 \end{defn}
 
@@ -65,11 +65,11 @@ $Rxy$, mula $f$ iku total.
 \end{prop}
 
 \begin{proof}
-Upamakna ana $y$ kanthi $Rxy$. Yen ana $y'
-\neq y$ liyane kanthi $Rxy'$, sarat tumrap $R$ bakal
-dilanggar. Mula, yen ana $y$ kanthi $Rxy$, $y$ iku
-siji-sijine, mula $f$ ditetepake kanthi becik. Cetha yen $R_f = R$ lan $f$
-total yen~$R$ serial.
+Kanggo saben $x \in A$, yèn ana $y$ kanthi $Rxy$, syarat ing ndhuwur
+mesthèkaké yèn $y$ tunggal. Yèn ora ana, fungsi ora katetepaké ing masukan iku.
+Mula $f$ katetepaké minangka fungsi parsial. Pasangan $\tuple{x,y}$ ana ing $R_f$ yèn lan mung yèn $f(x) \fdefined$ lan $f(x)=y$,
+yaiku yèn lan mung yèn $Rxy$. Mula $R_f = R$.
+Yèn $R$ serial, saben $x \in A$ nduwèni pasangan, mula $f$ total.
 \end{proof}
 
 \end{document}

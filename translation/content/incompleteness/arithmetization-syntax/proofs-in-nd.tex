@@ -132,7 +132,7 @@ saka wilangan G\"odel $\delta$ lan~$!A$.
     \fn{Assum}(x, d, n) \defiff \bexists{i<\len{\fn{SubtreeSeq}(d)}}{(\fn{SubtreeSeq}(d))_i =
       \tuple{0, x, n}}.
     \]
-Cathetan koreksi sumber SOL6-F083: SubtreeSeq ing sumber bisa ngemot pangulangan. Kanggo wit siji anak kang dadi godhong, dawa dhaptar sawise d langkah yaiku d tambah siji, mula klaim kabeh dawane paling akeh d ora bener. Assum saiki nggoleki nganti dawa dhaptar kang nyata, yaiku wates rekursif primitif.
+Dhaptar saka SubtreeSeq bisa ngemu ulangan. Kanggo wit kang oyodé nduwèni siji anak godhong, sawisé d langkah dawa dhaptaré d tambah siji. Wates ing Assum yaiku dawa dhaptar kang nyata, sawijining wates rekursif primitif.
   \item Kita arep nuduhake yen $\fn{Discharge}(x, d, n)$, kang
     bener yen kabeh asumsi kanthi label~$n$ ing !!{derivation}
     kanthi wilangan G\"odel~$d$ iku !!{formula} kanthi wilangan
@@ -211,7 +211,7 @@ Cathetan koreksi sumber SOL6-F083: SubtreeSeq ing sumber bisa ngemot pangulangan
       \fn{EndFmla}(d) = (\Gn{(} \concat a \concat \Gn{\lif}
       \concat \fn{EndFmla}((d)_1) \concat \Gn{)})}
   \end{multline*}
-Cathetan koreksi sumber OLPL-179: label pambebasan nol kudu ngidinake introduksi implikasi tanpa asumsi kang dibebasake; rumus Jawa wis nglebokake kasus iki. Klaim lawas ngenani ikatan a ditarik: nutup argumen TeX ora nutup cakupan kuantor kang kacithak.
+Label nol ngidinaké introduksi implikasi tanpa asumsi kang dibebasaké.
   (Anggepen $a$ minangka wilangan G\"odel saka~$!A$).
 
   Kanggo tuladha liyane, gatekna \Intro{\lexists}. Ing kene
@@ -240,10 +240,9 @@ Cathetan koreksi sumber OLPL-179: label pambebasan nol kudu ngidinake introduksi
     (\fn{LastRule}(d) = 16 \land \fn{FollowsBy}_{\Elim\eq}(d)) \lor {}\\
     \bexists{n<d}{\bexists{x<d}{(d = \tuple{0, x, n})}}].
   \end{multline*}
-Cathetan koreksi sumber OLPL-176: syarat Sent kudu nyakup kabeh alternatif ing Correct, kalebu kasus asumsi; kurung siku ing rumus Jawa wis njlentrehake cakupan iku.
   Tes Sent mesthekake yen !!{formula} pungkasane~$d$ iku
   ukara. Baris pungkasan nyakup kasus nalika $d$ mung asumsi.
-Cathetan koreksi sumber SOL6-F079: Seq nguji kode urutan sah: kode kosong nol utawa siji, utawa produk pangkat positif prima wiwit kapisan tanpa bolong. Tes iki rekursif primitif. Dawa tupla pas mbedakake asumsi lan aturan kanthi cacah premis nol nganti telu.
+Seq mriksa kode rerangken sah kanthi faktorisasi prima winates, kalebu kode kosong nol lan siji. Dawa tupel nemtokaké kasus asumsi lan aturan mawa nol nganti telung premis.
 \end{proof}
 
 \begin{prob}
@@ -312,7 +311,7 @@ Cathetan koreksi sumber SOL6-F079: Seq nguji kode urutan sah: kode kosong nol ut
   Syarat saben unsur iki rekursif primitif: relasi kang ing kene
   dijenengi $\fn{Subseq}(s, s')$ bener yen lan mung yen
   $\bforall{i<\len{s}}{\lexists[j<\len{s'}][(s)_i = (s')_j]}$.
-Cathetan koreksi sumber OLPL-180: predikat kang dijenengi Subseq ing rumus iki mung mriksa yen saben unsur urutan kapisan ana ing urutan kapindho; rumus iki ora mriksa urutan posisi kang dibutuhake subsekuen sejati. Bukti jalur sabanjure nganggo syarat anak langsung kanthi kapisah.
+Subseq ing rumus iki mriksa manawa saben unsur rerangken kapisan uga ana ing rerangken kapindho. Rumus jalur sabanjuré mriksa hubungan anak langsung kanthi kapisah.
   Dadi sub-!!{derivation} langsung uga relasi kaya mangkono:
   $\fn{Subderiv}(d, d')$ bener yen lan mung yen
   $\bexists{j<(d')_0}{d = (d')_{j+1}}$. Mula
@@ -327,10 +326,8 @@ Cathetan koreksi sumber OLPL-180: predikat kang dijenengi Subseq ing rumus iki m
           \fn{Subderiv}((s)_{i+1}, (s)_i) \land
           (n=0 \lor \fn{DischargeLabel}((s)_i) \neq n)}}}.
   \end{multline*}
-Cathetan koreksi sumber OLPL-177: anak langsung ing tupla kode derivasi diwiwiti saka indeks siji, amarga indeks nol nyimpen cacah premis; rumus Jawa wis nganggo indeks j tambah siji.
-Cathetan panarikan OLPL-178: pratelan lawas yen argumen TeX kang ditutup nyopot cakupan kuantor ora bener. Makro mung nyithak kuantor lan isine; kurung logis sumber wis nyakup kabeh tes jalur. Tata brace nested kang ora ngowahi makna dijaga.
-Cathetan koreksi sumber SOL6-F078: label nol ora mbebasake asumsi. Mula jalur label nol ora kena ditolak nalika ngliwati aturan label nol; rumus kang kacithak saiki nampa kasus iki. SOL6-F079 uga mriksa kode jalur sah kang ora kosong.
-Cathetan koreksi sumber OLPL-181: wates kanggo kode jalur s kudu ngidinake padha karo kode SubtreeSeq nalika kabeh dhaptar iku dhewe dadi jalur; rumus Jawa wis nganggo wates kang ngidinake kesamaan.
+Label nol ora mbebasaké asumsi. Jalur kang labelé nol bisa ngliwati aturan kanthi label nol. Tes kasebut uga mriksa manawa kode jalur sah lan jaluré isi.
+Kode jalur bisa padha karo kode SubtreeSeq yèn kabèh dhaptar iku sawijining jalur.
 \end{proof}
 
 \begin{prop}

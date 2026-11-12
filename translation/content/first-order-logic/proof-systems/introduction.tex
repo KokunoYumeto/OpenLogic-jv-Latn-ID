@@ -40,8 +40,8 @@ mbangun !!{derivation}s utawa luwih gampang mangerteni !!{derivation}s
 sawise rampung. Tuladhane yaiku deduksi natural, wit kabeneran kang uga
 diarani bukti tableau, lan kalkulus sekuen. Sawetara sistem
 !!{derivation} dirancang mligi kanthi nggatekake mekanisasi; upamane,
-metodhe resolusi gampang ditindakake ing piranti alus (nanging
-!!{derivation}s-e pokoke mokal dimangerteni). Umume sistem
+metodhe resolusi gampang diimplementasèkaké ing piranti lunak,
+senajan !!{derivation}s kang diasilaké kerep angèl ditututi. Umume sistem
 !!{derivation} liyane iki nggambarake !!{derivation}s minangka wit
 !!{formula}s lan dudu urutan. Kanthi mangkono, luwih gampang katon
 perangan !!a{derivation} endi gumantung marang perangan liyane kang endi.
@@ -49,12 +49,12 @@ perangan !!a{derivation} endi gumantung marang perangan liyane kang endi.
 Mula, kanggo sawijining logika, kayata logika tataran kapisan, sistem
 !!{derivation} kang beda-beda bakal menehi jlentrehan kang beda ngenani
 apa tegese !!a{sentence} dadi \emph{teorema} lan apa tegese
-!!a{sentence} bisa !!{derivable} saka sawetara ukara liyane. Apa wae
+!!a{sentence} !!{derivable} saka sawetara ukara liyane. Apa wae
 carane (liwat !!{derivation}s aksiomatik, deduksi natural,
 !!{derivation}s sekuen, wit kabeneran, utawa refutasi resolusi), kita
 ngarepake relasi kasebut cocog karo gagasan semantis validitas lan
 akibat semantis. Kita nulis $\Proves !A$ kanggo ``$!A$~iku teorema''
-lan ``$\Gamma \Proves !A$'' kanggo ``$!A$~bisa !!{derivable}
+lan ``$\Gamma \Proves !A$'' kanggo ``$!A$~!!{derivable}
 saka~$\Gamma$.'' Kepriye wae $\Proves$~ditemtokake, kita ngarepake
 simbol iku cocog karo $\Entails$, yaiku:
 \begin{enumerate}
@@ -73,17 +73,18 @@ kanggo sistem !!{derivation} kang disajekake.
 Arah walikan, yaiku ``yen'', uga wigati: arah iki diarani
 \emph{kelengkapan}. Sistem !!{derivation} kang jangkep cukup kuwat
 kanggo nuduhake yen $!A$~iku teorema saben $!A$~valid, lan yen
-$\Gamma \Proves !A$ saben $\Gamma \Entails !A$. Kelengkapan luwih angel
-ditetepake, lan sawetara logika ora duwe sistem !!{derivation} kang
-jangkep. Logika tataran kapisan duwe. Kurt G\"odel dadi wong kapisan
+$\Gamma \Proves !A$ saben $\Gamma \Entails !A$. Kelengkapan luwih angèl dibuktèkaké. Sawetara logika ora nduwèni sistem !!{derivation}
+kang jangkep, sah sacara semantis, lan bisa dipriksa kanthi mekanis.
+Logika tataran kapisan nduwèni sistem kaya mangkono.
+Kurt G\"odel dadi wong kapisan
 kang mbuktekake kelengkapan kanggo !!a{derivation} sistem logika
 tataran kapisan ing disertasine taun 1929.
 
 Konsep liyane kang gegayutan karo sistem !!{derivation} yaiku
 \emph{konsistensi}. Himpunan !!{sentence}s diarani ora konsisten yen
 apa wae bisa !!{derive}d saka himpunan iku, lan diarani konsisten yen
-ora mangkono. Sipat ora konsisten iku padanan sintaktis saka sipat ora
-bisa dicukupi dening valuasi: kaya himpunan kang ora bisa dicukupi,
+ora mangkono. Sipat ora konsisten iku padanan sintaktis saka sipat
+ora bisa dicukupi. Kaya himpunan kang ora bisa dicukupi,
 himpunan !!{sentence}s
 kang ora konsisten ora dadi teori kang becik, amarga cacat kanthi
 dhasar. Himpunan !!{sentence}s kang konsisten durung mesthi bener utawa
@@ -91,8 +92,8 @@ migunani, nanging saora-orane wis ngliwati ambang paling cilik kanggo
 piguna logis. Kanggo sistem !!{derivation} kang beda, definisi mligi
 ngenani konsistensi himpunan !!{sentence}s bisa beda, nanging kaya
 $\Proves$, kita ngarepake konsistensi cocog karo padanan semantise,
-yaiku sipat bisa dicukupi dening valuasi. Kita ngarepake tansah lumaku
-yen $\Gamma$ konsisten yen lan mung yen bisa dicukupi dening valuasi.
+yaiku sipat bisa dicukupi. Kita ngarepaké yèn $\Gamma$ konsisten
+yèn lan mung yèn bisa dicukupi \iftag{FOL}{ing sawijining struktur}{déning sawijining valuasi}.
 Ing kene, arah ``mung yen'' padha karo kelengkapan (konsistensi njamin
 sipat bisa dicukupi), lan arah ``yen'' padha karo soundness utawa
 jaminan semantis (sipat bisa dicukupi njamin konsistensi). Nyatane,

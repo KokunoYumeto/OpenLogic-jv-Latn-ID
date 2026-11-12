@@ -24,7 +24,7 @@ diarani \emph{bisa diwalik} ing sistem yen saben $\Proves S$,
 uga $\Proves S_i$ kanggo $i = 1$, \dots,~$n$.
 Aturan iki \emph{bisa diwalik kanthi njaga !!{height}}
 (utawa \emph{bisa diwalik-!!{hp}}) ing sistem yen saben
-$\Proves_h S$, uga $\Proves[h] S_i$ kanggo $i = 1$, \dots,~$n$.
+$\Proves[h] S$, uga $\Proves[h] S_i$ kanggo $i = 1$, \dots,~$n$.
 \end{defn}
 
 \begin{lem}\ollabel{lem:G3c-invert}
@@ -147,6 +147,13 @@ Kita duwe
 \intertext{miturut hipotesis induksi. Dadi,}
 \pheight{\pi'} & \le \pheight{\pi}.
 \end{align*}
+Pola bukti iki uga lumaku kanggo aturan proposisional liyané.
+Ing kasus aksioma, formula majemuk sing diurai ora dadi saksi
+identitas atomik utawa falsitas kiwa. Ing kasus utama, jupuk
+premis sing dikarepaké saka aturan pungkasan. Ing kasus sisih,
+pilih wangun premis inversi sing padha ing saben subbukti lan
+trapna manèh aturan pungkasan. Saben kedadéan formula dilacak
+kapisah yèn ana formula sing padha ing multiset.
 \end{proof}
 
 \begin{prob}
@@ -170,8 +177,13 @@ $\lforall[x][!A(x)]$ utawa $\lexists[x][!A(x)]$, manut urutane.
 \begin{proof}
   Kita nuduhake (1) lan ninggalake (2) minangka latihan.
   Kasus dasar aksioma identitas lan falsitas sing padha uga
-  ditrapake. Dhisik, ganti jeneng eigenparameter ing subwit
-  buktine supaya seger tumrap konstanta sing dipilih.
+  ditrapaké.
+  Pilih konstanta liya sing durung ana ing wit bukti, banjur ijolna
+  jenengé karo konstanta~$c$ ing saindhenging wit. Sekèn pungkasan
+  tetep amarga $c$ ora ana ing kono. Dhuwur lan syarat eigenparameter
+  tetep, lan saiki $c$ ora ana ing bukti, kalebu ing terma instansiasi
+  kang mung katon ing premis. Ing saben panggantos sabanjuré,
+  eigenparameter dipilih seger kanggo konstanta pangganti.
   Argumentasine padha karo bukti \olref{lem:G3c-invert}.
   Ing langkah induksi, ana rong kasus maneh. Kasus nalika
   $\lforall[x][!A(x)]$ dadi formula utama bisa dirampungake
@@ -181,7 +193,8 @@ $\lforall[x][!A(x)]$ utawa $\lexists[x][!A(x)]$, manut urutane.
   premis kasebut duwe $\pheight{\pi_1} < \pheight{\pi}$.
   Kajaba iku, syarat eigenvariabel njamin $a$ ora ana ing
   $\Gamma$, $\Delta$, utawa $\lforall[x][!A(x)]$.
-  Amarga kita bisa nganggep $\pi_1$ reguler,
+  Kanthi $\pi_1$ reguler, eigenparameter inferènsi pungkasan ora
+  dienggo minangka eigenparameter ing subbukti mau. Mula
   $\Subst{\pi_1}{c}{a}$ minangka !!a{proof} kanthi
   !!{height} sing padha kanggo $\Gamma \Sequent \Delta, !A(c)$,
   miturut \olref[qua]{lem:subst-regular}.
@@ -204,7 +217,7 @@ $\lforall[x][!A(x)]$ utawa $\lexists[x][!A(x)]$, manut urutane.
 \DisplayProof
 \]
 kanthi $\Delta = \Delta', !B \land !C$. Pilih $c$ minangka
-!!a{constant} sing nyukupi kabeh syarat kesegaran ing ndhuwur;
+!!a{constant} sing nyukupi kabèh syarat kesegaran ing ndhuwur;
 mligine, konstanta iki ora ana ing $\Delta$. Dadi cetha yen
 uga ora ana ing $\Delta', !B$ utawa ing $\Delta', !C$.
 Mula hipotesis induksi bisa ditrapake marang $\pi_1$ lan~$\pi_2$;
@@ -307,8 +320,15 @@ $\pheight{\pi_2'} \le \pheight{\pi_2}$.
 Yen $!A$ dadi formula utama ing inferensi pungkasan,
 kita ngetrapake lemma kuwalikan (\olref{lem:G3c-invert})
 marang sub-!!{proof}s langsung saka~$\pi$, banjur
-hipotesis induksi, lan banjur aturan~$R$ maneh.
-Upamane $\pi$ mbuktekake $\Gamma \Sequent \Delta, !A, !A$,
+hipotesis induksi, lan banjur aturan~$R$ manèh.
+Kanggo aturan proposisional, delengen saben premis aturan pungkasan.
+Inversi salinan formula utama sing isih ana minangka formula sisih,
+kanthi milih cabang inversi sing cocog karo premis iku. Asilé nduwèni
+rong salinan saben kedadéan formula aktif ing premis. Kontraksèkaké
+salinan kasebut siji mbaka siji nganggo hipotesis induksi, banjur
+trapna manèh aturan pungkasan. Dhuwur premis asil tetep luwih cendhèk
+tinimbang dhuwur bukti wiwitan.
+Upamané $\pi$ mbuktekake $\Gamma \Sequent \Delta, !A, !A$,
 $!A \ident (!B \land !C)$, lan formula iki dadi
 formula utama ing inferensi pungkasan. Mula
 $\pi$ duwe wujud iki:
@@ -372,7 +392,8 @@ kanthi !!{height} $\le \pheight{\pi_1}$ kanggo
 $\Gamma \fCenter \Delta, !B(c), !B(a)$, kanggo
 saben~$c$ sing ora ana ing $\Gamma \fCenter \Delta,
 \lforall[x][!B(x)], !B(a)$. Kita bisa nganggep
-$\pi_1'$ reguler; mula miturut
+$\pi_1'$ reguler kanthi eigenparameter béda saka
+konstanta kang arep diganti lan panggantiné. Mula miturut
 \olref[qua]{lem:subst-regular}, !!{proof}
 $\Subst{\pi_1'}{a}{c}$ minangka !!a{proof} kanggo
 $\Gamma \fCenter \Delta, !B(a), !B(a)$, uga kanthi

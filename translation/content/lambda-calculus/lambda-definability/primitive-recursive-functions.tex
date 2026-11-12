@@ -26,11 +26,11 @@ Fungsi-fungsi mau !!{lambda define}d dening suku-suku iki:
   \fn{Succ} & \ident \lambd[a][\lambd[fx][f (a f x)]] \\
   \fn{Proj}^n_i & \ident \lambd[x_0\dots x_{n-1}][x_i]
 \end{align*}
-\end{proof}
+Suku Zero makili fungsi unary, dudu numeral nol wae. Proyeksi nggunakake aritas positif lan indeks wiwit nol kang luwih cilik tinimbang aritas; kabeh binder dhaptar beda.\end{proof}
 
 \begin{lem}
-  \ollabel{lem:comp} Upamakna fungsi kanthi aritas $k$, yaiku $f$,
-  lan fungsi-fungsi kanthi aritas $n$, yaiku $g_0, \dots, g_{k-1}$,
+  \ollabel{lem:comp} Upamakna fungsi total kanthi aritas $k$, yaiku $f$,
+  lan fungsi-fungsi total kanthi aritas $n$, yaiku $g_0, \dots, g_{k-1}$,
   !!{lambda definable} dening suku $F$, $G_0$, \dots, $G_{k-1}$,
   lan $h$ ditetepake saka fungsi-fungsi mau kanthi komposisi.
   Mula $h$ uga !!{lambda definable}.
@@ -42,7 +42,7 @@ Fungsi-fungsi mau !!{lambda define}d dening suku-suku iki:
   H \ident \lambd[x_0 \dots x_{n-1}][F\, (G_0 x_0 \dots
     x_{n-1}) \dots (G_{k-1} x_0 \dots x_{n-1})]
   \]
-  Verifikasi pratelan iki kita tinggalake minangka latihan.
+  Binder input dipilih beda-beda lan seger marang F lan kabeh G, supaya ora ngrebut kemunculan bebas ing suku wakil. Kanggo input numeral, reduksi saben aplikasi G dhisik nganti numeral asil, banjur reduksi aplikasi F menyang numeral h; totalitas njamin kabeh asil kang dibutuhake ana. Verifikasi rincian kita tinggalake minangka latihan.
 \end{proof}
 
 \begin{prob}
@@ -56,7 +56,7 @@ Gatekna yen \olref{lem:comp} ora mbutuhake $f$ lan $g_0$,
 mung fungsi-fungsi iku total lan !!{lambda definable}.
 
 \begin{lem}\ollabel{lem:prim}
-  Upamakna $f$ fungsi kanthi aritas $n$ lan~$g$ fungsi kanthi
+  Upamakna $f$ fungsi total kanthi aritas $n$ lan~$g$ fungsi total kanthi
   aritas $n+2$. Loro-lorone !!{lambda definable} dening suku $F$
   lan~$G$, dene fungsi~$h$ ditetepake saka $f$ lan $g$ kanthi
   rekursi primitif. Mula $h$ uga !!{lambda definable}.
@@ -71,7 +71,7 @@ mung fungsi-fungsi iku total lan !!{lambda definable}.
   Kanthi informal, definisi rekursif primitif ngetrapake fungsi
   pambaru kahanan saka $g$ ping $y$, kawiwitan saka $f(x_1,
   \dots, x_n)$. Iki padha polahe karo definisi numeral Church, kang uga
-  nggunakake iterasi.
+  nggunakake iterasi. Fungsi pambaru ing langkah rekursi yaiku g kang duwe rong argumen tambahan; dudu h kang mung duwe siji.
 
   Supaya luwih prasaja, kita menehi definisi lan bukti kanggo siji
   argumen tambahan~$x$. Fungsi $h$ !!{lambda define}d dening:
@@ -89,7 +89,7 @@ mung fungsi-fungsi iku total lan !!{lambda definable}.
   kapindho dibalekake minangka nilai pungkasan $h$. Suku pambaru
   dimaksudake minangka cithakan kang peubah paramètere bebas lan
   kaiket nalika cithakan iki dilebokake ing suku utama. Saiki kita
-  buktekake yen suku iki pancen makili rekursi primitif.
+  buktekake yen suku iki pancen makili rekursi primitif. Cithakan D dikembangaké ing awak H sadurungé abstraksi ing x. Pilih pangiket x, y lan p béda-béda lan seger tumrap F lan G. Pangiket pasangan uga seger. Kanthi mangkono, mung parameter cithakan kang disengaja dadi kaiket.
 
   Kita arep mbuktekake yen kanggo saben $n$ lan $m$, $H\,\num{n}\,\num{m} \red
   \num{h(n,m)}$. Dhisik kita tuduhake: yen $D_n \ident
@@ -137,7 +137,7 @@ mung fungsi-fungsi iku total lan !!{lambda definable}.
     & \red \fn{Snd} \,\tuple{\num{m}, \num{h(n, m)}} \\
     & \red \num{h(n,m)}. 
   \end{align*}  
-\end{proof}
+Tuple ing langkah induksi tetep ana ing siji larik, lan loro abstraksi tampilan pungkasan menehi awak ing argumen optional macro. Iki normalisasi tampilan kang njaga bukti. Kanggo aritas umum, ngganti siji parameter x nganggo dhaptar parameter kang ora owah sajrone iterasi lan nggawa kabeh parameter mau menyang F lan G menehi bukti kang padha; yen dhaptar kosong, ora ana binder parameter tambahan lan pasangan awal nggunakake F minangka suku asil fungsi aritas nol.\end{proof}
 
 
 \begin{prop}
@@ -146,8 +146,8 @@ mung fungsi-fungsi iku total lan !!{lambda definable}.
 
 \begin{proof}
   Miturut \olref{lem:basic}, kabeh fungsi dhasar iku !!{lambda definable},
-  lan miturut \olref{lem:comp} lan \olref{lem:prim}, kelas fungsi kang
+  lan miturut \olref{lem:comp} lan \olref{lem:prim}, kelas fungsi total kang
   !!{lambda definable} katutup marang komposisi lan rekursi primitif.
-\end{proof}
+Fungsi rekursif primitif dhewe total, mula induksi ing definisine mung nggunakake cakupan total iki.\end{proof}
 
 \end{document}

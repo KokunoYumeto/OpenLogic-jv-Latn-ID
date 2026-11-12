@@ -8,19 +8,19 @@
 
 \olfileid{inc}{inp}{tar}
 
-\olsection{Ora Bisane Ngedefinisikake Bebeneran}
+\olsection{Ora Bisane Netepake Definisi Bebener}
 
 Pangerten \emph{definabilitas} gumantung marang anane semantik formal
 kanggo basa aritmetika. Kita wis njlentrehake sawijining himpunan
 formula lan ukara ing basa aritmetika. ``Interpretasi kang
 dikarepake'' yaiku maca ukara-ukara kasebut minangka pratelan
-babagan wilangan asli, lan pratelan mau bisa bener utawa salah.
+babagan wilangan natural, lan pratelan mau bisa bener utawa salah.
 Upamana $\Struct{N}$ iku !!{structure} kanthi domain $\Nat$ lan
-interpretasi standar kanggo simbol-simbol ing basa aritmetika.
-Mula $\Sat{N}{!A}$ tegese ``$!A$ bener ing interpretasi standar.''
+interpretasi baku kanggo simbol-simbol ing basa aritmetika.
+Mula $\Sat{N}{!A}$ tegese ``$!A$ bener ing interpretasi baku.''
 
 \begin{defn}
-Relasi $R(x_1,\dots,x_k)$ antarane wilangan asli \emph{bisa
+Relasi $R(x_1,\dots,x_k)$ antarane wilangan natural \emph{bisa
 didefinisikake} ing $\Struct{N}$ yen lan mung yen ana formula
 $!A(x_1,\dots,x_k)$ ing basa aritmetika saengga kanggo saben
 $n_1,\dots,n_k$, $R(n_1,\dots,n_k)$ yen lan mung yen
@@ -28,18 +28,18 @@ $\Sat{N}{!A(\num n_1,\dots,\num n_k)}$.
 \end{defn}
 
 Kanthi tembung liya, sawijining relasi bisa didefinisikake ing
-$\Struct{N}$ yen lan mung yen bisa direpresentasikake ing teori
+$\Struct{N}$ yen lan mung yen bisa diwakili ing teori
 $\Th{TA}$, ing ngendi $\Th{TA} = \Setabs{!A}{\Sat{N}{!A}}$
 minangka himpunan ukara aritmetika kang bener. (Yen perkara iki durung
 cetha, balenana maca definisi-definisie lan priksa dhewe
-kenapa mangkono.)
+kok mangkono.)
 
 \begin{lem}
 Saben relasi komputabel bisa didefinisikake ing~$\Struct{N}$.
 \end{lem}
 
 \begin{proof}
-Gampang dipriksa yen formula kang merepresentasikake sawijining
+Gampang dipriksa yen formula kang makili sawijining
 relasi ing $\Th{Q}$ netepake relasi kang padha ing $\Struct{N}$.
 \end{proof}
 
@@ -56,7 +56,7 @@ Elinga yen teorema wujud normal Kleene nyatakake: saben fungsi
 komputabel parsial~$f$ nduweni indeks~$e$ saengga $f(x) =
 U(\umin{s}{T(e,x,s)})$ kanggo saben $x \in \Nat$, lan $U$ uga
 $T$ iku rekursif primitif, mula kalorone total. Dadi, $f(x)$
-nduweni nilai (yaiku komputasine mandheg) yen lan mung yen ana~$s$
+wis katemtokake (yaiku komputasine mandheg) yen lan mung yen ana~$s$
 saengga $T(e,x,s)$ bener.
 
 Saiki upamana $H$ iku relasi mandheg, yaiku
@@ -90,7 +90,7 @@ didefinisikake ing aritmetika.
 \begin{proof} 
 Upamana $!D(x)$ netepake himpunan kasebut, yaiku
 $\Sat{N}{!A}$ yen lan mung yen $\Sat{N}{!D(\gn{!A})}$.
-Miturut lema titik tetep, ana formula $!A$ saengga
+Miturut lema titik tetep, ana ukara $!A$ saengga
 $\Th{Q} \Proves !A \liff \lnot !D(\gn{!A})$, lan mula
 $\Sat{N}{!A \liff \lnot !D(\gn{!A})}$. Nanging banjur
 $\Sat{N}{!A}$ yen lan mung yen
@@ -99,8 +99,8 @@ yen $!D(y)$ netepake himpunan pratelan aritmetika kang bener.
 \end{proof}
 
 Tarski ngetrapake analisis iki marang pangerten filsafati ngenani
-bebeneran kang luwih umum. Kanggo basa $L$ sembarang, miturut
-Tarski, pangerten bebeneran kang nyukupi kanggo $L$ kudu netepi,
+bebener kang luwih umum. Kanggo basa $L$ sembarang, miturut
+Tarski, pangerten bebener kang nyukupi kanggo $L$ kudu netepi,
 kanggo saben ukara $X$,
 \begin{quote}
 `$X$' bener yen lan mung yen $X$.
@@ -111,14 +111,13 @@ diterjemahake, yaiku ukara
 `Salju iku putih' bener yen lan mung yen salju iku putih.
 \end{quote}
 Nanging, kanggo saben basa kang cukup kuwat kanggo
-merepresentasikake fungsi diagonal, lan kanggo saben predikat
+makili fungsi diagonal, lan kanggo saben predikat
 linguistik $T(x)$, kita bisa mbangun ukara $X$ kang nyukupi
 ``$X$ yen lan mung yen ora $T(\text{`$X$'})$.''
-Amarga kita ora kepengin predikat bebeneran nyatakake manawa ana
+Amarga kita ora kepengin predikat bebener nyatakake manawa ana
 ukara kang bener lan salah bebarengan, Tarski ndudut yen predikat
-bebeneran kanggo kabeh ukara ing sawijining basa ora bisa
+bebener kanggo kabeh ukara ing sawijining basa ora bisa
 ditetepake tanpa metu, kanthi cara tartamtu, saka watesing basa
-kasebut. Kanthi tembung liya, predikat bebeneran kanggo sawijining
-basa ora bisa didefinisikake ing basa iku dhewe.
+kasebut. Kanthi tembung liya, kanggo basa kang cukup kuwat kaya kang dibahas iki, predikat bebener kanggo kabeh ukarane ora bisa didefinisikake ing basa iku dhewe.
 
 \end{document}

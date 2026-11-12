@@ -1,6 +1,6 @@
 % Part: first-order-logic
 % Chapter: proof-systems
-% Section: seqeunt-calculus
+% Section: sequent-calculus
 
 \documentclass[../../../include/open-logic-section]{subfiles}
 
@@ -16,7 +16,7 @@ Nalika akeh sistem !!{derivation} nggarap susunan !!{sentence}s,
 kalkulus sekuen nggarap \emph{sekuen}. Sekuen yaiku ekspresi kanthi
 wujud
 \[
-!A_1, \dots, !A_m \Sequent !B_1, \dots, !B_m,
+!A_1, \dots, !A_m \Sequent !B_1, \dots, !B_n,
 \]
 yaiku pasangan urutan !!{sentence}s kang dipisahake dening simbol
 sekuen~$\Sequent$. Saben urutan bisa kosong. !!^a{derivation} ing
@@ -34,8 +34,8 @@ $\Gamma$, $\Delta$, $!A$, lan~$!B$. (Mligine, $\Gamma$ lan~$\Delta$
 bisa kosong.)
 
 Relasi $\Proves$ adhedhasar kalkulus sekuen ditemtokake kaya mangkene:
-$\Gamma \Proves !A$ yen lan mung yen ana sawijining urutan $\Gamma_0$
-saengga saben $!A$ ing $\Gamma_0$ kalebu ing~$\Gamma$ lan ana
+$\Gamma \Proves !A$ yen lan mung yen ana urutan winates $\Gamma_0$
+kang kabèh anggotané kalebu ing~$\Gamma$ lan ana
 !!{derivation} kang oyode ngemot sekuen~$\Gamma_0 \Sequent !A$.
 $!A$ iku teorema ing kalkulus sekuen yen sekuen~$\Sequent !A$ duwe
 !!a{derivation}. Tuladhane, iki !!a{derivation} kang nuduhake yen
@@ -49,8 +49,8 @@ $\Proves (!A \land !B) \lif !A$:
 \end{prooftree}
 
 Himpunan $\Gamma$ ora konsisten ing kalkulus sekuen yen ana
-!!a{derivation} saka $\Gamma_0 \Sequent$ (saben $!A \in \Gamma_0$
-kalebu ing~$\Gamma$ lan sisih tengen sekuen kosong). Kanthi nggunakake
+!!a{derivation} saka $\Gamma_0 \Sequent$ (kabèh anggota $\Gamma_0$ kalebu ing~$\Gamma$ lan sisih
+tengen sekuen kosong). Kanthi nggunakake
 aturan \RightR{\Weakening}, saben !!{sentence} bisa !!{derive}d saka
 himpunan kang ora konsisten.
 

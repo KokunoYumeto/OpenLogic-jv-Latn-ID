@@ -11,12 +11,7 @@
 \olsection{Kesahihan kanggo \Log{K}}
 
 \begin{editorial}
-  Bukti kesahihan iki nggunakake maneh bukti kesahihan kanggo logika
-  proposisional klasik, yaiku mbuktekake kabeh saka wiwitan. Iki ora
-  dadi masalah yen dikarepake bukti kesahihan kang mandiri. Yen
-  kesahihan tableau lumrah wis disinaoni, pérangan iki bakal krasa
-  mbaleni. Ana rancangan supaya pamaca bisa milih antarane versi
-  mandiri lan versi kang adhedhasar kasus nonmodal.
+Bukti kasahihan iki mriksa aturan proposisional lan aturan modal. Interpretasi prefiks ing modèl Kripke ngreksa kapenuhan ing langkah-langkah tableau.
 \end{editorial}
 
 \begin{explain}
@@ -27,7 +22,7 @@
   \]
   nduweni !!{tableau} katutup, mula $!B_1, \dots, !B_n \Entails !A$.
   Luwih gampang mbuktekake kontraposisine: yen ana $\mModel{M}$ lan
-  jagad~$w$ kang nyukupi $\mSat{M}{!B_i}[w]$ kanggo kabeh $i=1$,
+  donya~$w$ kang nyukupi $\mSat{M}{!B_i}[w]$ kanggo kabeh $i=1$,
   \dots,~$n$, nanging $\mSat/{M}{!A}[w]$, mula ora ana !!{tableau}
   kang bisa katutup. Kontramodel mangkono nuduhake yen asumsi wiwitan
   !!{tableau} bisa dicukupi. Strategi buktine yaiku nuduhake yen saben
@@ -36,7 +31,7 @@
   cabang kang wis dikembangake lan isih bisa dicukupi. Amarga cabang
   katutup ora bisa dicukupi, saben !!{tableau} kanggo himpunan
   !!{formula}s mawa prefiks kang bisa dicukupi mesthi nduweni paling
-  ora siji cabang bukak.
+  ora siji cabang bukak. Kontramodel njamin kesimpulan salah ing donya kang nyukupi kabeh premis.
 
   Kanggo ngetrapake strategi iki ing kasus modal, definisi ``bisa
   dicukupi'' kudu diambakake menyang model modal lan prefiks. Sawise
@@ -78,7 +73,7 @@
 \end{prop}
 
 \begin{proof}
-  Ora mungkin ana model~$\mModel{M}$ lan interpretasi~$f$ saka
+  Ora bisa ana model~$\mModel{M}$ lan interpretasi~$f$ saka
   $P(\Gamma)$ kang nyukupi $\mSat{M}{!A}[f(\sigma)]$ lan
   $\mSat/{M}{!A}[f(\sigma)]$.
 \end{proof}
@@ -111,7 +106,7 @@ cabang kang bisa dicukupi lan ora diambakake dening aturan kasebut,
 cabang iku tetep bisa dicukupi ing !!{tableau} kang wis dikembangake,
 mula tableau kang wis dikembangake uga bisa dicukupi. Dadi kita mung
 kudu nggatekake kasus nalika aturan ditrapake marang cabang kang bisa
-dicukupi.
+dicukupi. Ing cabang sah kang diwiwiti kanthi kabeh asumsi ing prefiks1, saben prefiks uga nduweni prefiks wiwitan kang ora kosong ing cabang kasebut. Mula prefiks anyar ora nduweni anak kang wis ana.
 
 Upamane $\Gamma$ himpunan !!{signed formula}s ing cabang kasebut,
 lan $\sFmla{S}{!A}[\sigma] \in \Gamma$ iku !!{signed formula} kang
@@ -121,7 +116,7 @@ kesimpulan aturan iku, isih bisa dicukupi. Yen aturan iku mecah cabang,
 kita kudu nuduhake yen paling ora siji saka rong cabang asile bisa
 dicukupi.
 \tagfalse{prvDiamond}
-Kaping pisan, kita nggatekake inferensi kang ora mecah cabang.
+Kaping pisan, kita nggatekake inferensi kang ora mecah cabang. Pambedane yaiku cabang kang diasilake, dudu cacah premis.
 \begin{enumerate}
 \item Cabang diambakake kanthi ngetrapake $\TRule{\True}{\lnot}$ marang
   $\sFmla{\True}{\lnot !B}[\sigma] \in \Gamma$. Banjur cabang kang
@@ -131,7 +126,7 @@ Kaping pisan, kita nggatekake inferensi kang ora mecah cabang.
   $\mSat/{M}{!B}[f(\sigma)]$, yaiku $\mModel{M}$ nyukupi
   $\sFmla{\False}{!B}[\sigma]$ relatif marang~$f$.
 \item Cabang diambakake kanthi ngetrapake $\TRule{\False}{\lnot}$ marang
-  $\sFmla{\False}{\lnot !B}[\sigma] \in \Gamma$: Latihan.
+  $\sFmla{\False}{\lnot !B}[\sigma] \in \Gamma$: Gladhen.
 \item Cabang diambakake kanthi ngetrapake $\TRule{\True}{\land}$ marang
   $\sFmla{\True}{!B \land !C}[\sigma] \in \Gamma$, kang ngasilake
   rong !!{signed formula}s anyar ing cabang:
@@ -142,7 +137,7 @@ Kaping pisan, kita nggatekake inferensi kang ora mecah cabang.
   $\sFmla{\True}{!B}[\sigma]$ lan $\sFmla{\True}{!C}[\sigma]$
   loro-lorone relatif marang~$f$.
 \item Cabang diambakake kanthi ngetrapake $\TRule{\False}{\lor}$ marang
-  $\sFmla{\False}{!B \lor !C}[\sigma] \in \Gamma$: Latihan.
+  $\sFmla{\False}{!B \lor !C}[\sigma] \in \Gamma$: Gladhen. Prefiks ing premis iki ditulis cetha.
 \item Cabang diambakake kanthi ngetrapake $\TRule{\False}{\lif}$ marang
   $\sFmla{\False}{!B \lif !C}[\sigma] \in \Gamma$: Iki ngasilake rong
   !!{signed formula}s anyar ing cabang: $\sFmla{\True}{!B}[\sigma]$ lan
@@ -157,7 +152,7 @@ Kaping pisan, kita nggatekake inferensi kang ora mecah cabang.
 \iftag{prvBox}{%
 \item Cabang diambakake kanthi ngetrapake $\TRule{\True}{\Box}$ marang
   $\sFmla{\True}{\Box !B}[\sigma] \in \Gamma$:
-  \iftag{probBox}{Latihan.}{Iki nambah !!{signed
+  \iftag{probBox}{Gladhen.}{Iki nambah !!{signed
       formula}~$\sFmla{\True}{!B}[\sigma.n]$ anyar ing cabang, kanggo
     sawijining $\sigma.n \in P(\Gamma)$ (amarga $\sigma.n$ kudu wis
     dienggo). Upamane $\mSat{M}{\Gamma}[f]$, mligine $\mSat{M}{\Box
@@ -168,15 +163,15 @@ Kaping pisan, kita nggatekake inferensi kang ora mecah cabang.
 
 \item Cabang diambakake kanthi ngetrapake $\TRule{\False}{\Box}$ marang
   $\sFmla{\False}{\Box !B}[\sigma] \in \Gamma$:
-  \iftag{probBox}{Latihan.}{Iki ngasilake !!{signed
+  \iftag{probBox}{Gladhen.}{Iki ngasilake !!{signed
       formula}~$\sFmla{\False}{!B}[\sigma.n]$ anyar, kanthi $\sigma.n$
     minangka prefiks anyar ing cabang, yaiku $\sigma.n \notin P(\Gamma)$.
-    Amarga $\Gamma$ bisa dicukupi, ana $\Struct{M}$ lan
-    interpretasi~$f$ saka $P(\Gamma)$ kang nyukupi $\Sat{M}{\Gamma}[f]$,
+    Amarga $\Gamma$ bisa dicukupi, ana $\mModel{M}$ lan
+    interpretasi~$f$ saka $P(\Gamma)$ kang nyukupi $\mSat{M}{\Gamma}[f]$,
     mligine $\mSat/{M}{\Box !B}[f(\sigma)]$. Kita kudu nuduhake
     yen $\Gamma \cup \{\sFmla{\False}{!B}[\sigma.n]\}$ bisa
     dicukupi. Kanggo iku, kita netepake interpretasi saka $P(\Gamma)
-    \cup \{\sigma.n\}$ kaya mangkene:
+    \cup \{\sigma.n\}$ kaya mangkene. Kanggo modèl mawa prefiks, relasi nyukupi ditulis mangkéné.
 
   Amarga $\mSat/{M}{\Box !B}[f(\sigma)]$, ana $w \in W$ kang nyukupi
   $Rf(\sigma)w$ lan $\mSat/{M}{!B}[w]$. Upamane $f'$ padha karo $f$,
@@ -192,15 +187,15 @@ Kaping pisan, kita nggatekake inferensi kang ora mecah cabang.
 \iftag{prvDiamond}{%
 \item Cabang diambakake kanthi ngetrapake $\TRule{\True}{\Diamond}$ marang
   $\sFmla{\True}{\Diamond !B}[\sigma] \in \Gamma$:
-  \iftag{probDiamond}{Latihan.}{Iki ngasilake !!{signed
+  \iftag{probDiamond}{Gladhen.}{Iki ngasilake !!{signed
       formula}~$\sFmla{\True}{!B}[\sigma.n]$ anyar, kanthi $\sigma.n$
     minangka prefiks anyar ing cabang, yaiku $\sigma.n \notin P(\Gamma)$.
-    Amarga $\Gamma$ bisa dicukupi, ana $\Struct{M}$ lan
-    interpretasi~$f$ saka $P(\Gamma)$ kang nyukupi $\Sat{M}{\Gamma}[f]$,
+    Amarga $\Gamma$ bisa dicukupi, ana $\mModel{M}$ lan
+    interpretasi~$f$ saka $P(\Gamma)$ kang nyukupi $\mSat{M}{\Gamma}[f]$,
     mligine $\mSat{M}{\Diamond !B}[f(\sigma)]$. Kita kudu nuduhake
     yen $\Gamma \cup \{\sFmla{\True}{!B}[\sigma.n]\}$ bisa
     dicukupi. Kanggo iku, kita netepake interpretasi saka $P(\Gamma)
-    \cup \{\sigma.n\}$ kaya mangkene:
+    \cup \{\sigma.n\}$ kaya mangkene. Kanggo modèl mawa prefiks, relasi nyukupi ditulis mangkéné.
 
   Amarga $\mSat{M}{\Diamond !B}[f(\sigma)]$, ana $w \in W$ kang nyukupi
   $Rf(\sigma)w$ lan $\mSat{M}{!B}[w]$. Upamane $f'$ padha karo $f$,
@@ -213,7 +208,7 @@ Kaping pisan, kita nggatekake inferensi kang ora mecah cabang.
   \{\sFmla{\True}{!B}[\sigma.n]\}$.}
 \item Cabang diambakake kanthi ngetrapake $\TRule{\False}{\Diamond}$ marang
   $\sFmla{\False}{\Diamond !B}[\sigma] \in \Gamma$:
-  \iftag{probDiamond}{Latihan.}{Iki nambah !!{signed
+  \iftag{probDiamond}{Gladhen.}{Iki nambah !!{signed
       formula}~$\sFmla{\False}{!B}[\sigma.n]$ anyar ing cabang,
     kanggo sawijining $\sigma.n \in P(\Gamma)$ (amarga $\sigma.n$
     kudu wis dienggo). Upamane $\mSat{M}{\Gamma}[f]$, mligine
@@ -238,9 +233,9 @@ Saiki kita nggatekake inferensi kang mecah cabang.
   Ing kasus kapindho, $\mModel{M}, f$ nyukupi
   $\sFmla{\False}{!C}[\sigma]$, yaiku cabang tengen bisa dicukupi.
 \item Cabang diambakake kanthi ngetrapake $\TRule{\True}{\lor}$ marang
-    $\sFmla{\True}{!B \lor !C}[\sigma] \in \Gamma$: Latihan.
+    $\sFmla{\True}{!B \lor !C}[\sigma] \in \Gamma$: Gladhen.
 \item Cabang diambakake kanthi ngetrapake $\TRule{\True}{\lif}$ marang
-    $\sFmla{\True}{!B \lif !C}[\sigma] \in \Gamma$: Latihan.
+    $\sFmla{\True}{!B \lif !C}[\sigma] \in \Gamma$: Gladhen.
 \end{enumerate}
 \end{proof}
 

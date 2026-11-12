@@ -11,17 +11,17 @@
 \olsection{Induksi Struktural}
 
 Nganti saiki induksi digunakaké kanggo
-mbuktekaké pratelan tumrap kabèh bilangan
+mbuktekaké pratelan tumrap kabèh wilangan
 asli. Nanging prinsip kang padha bisa
 langsung digunakaké kanggo mbuktekaké
 pratelan tumrap kabèh !!{element}s
-saka himpunan kang didhéfinisikaké
+saka himpunan kang ditetepaké
 kanthi induktif. Iki kerep diarani
 induksi \emph{struktural}, amarga
 gumantung marang struktur obyèk
-kang didhéfinisikaké kanthi induktif.
+kang ditetepaké kanthi induktif.
 
-Lumrahé dhéfinisi induktif mènèhi
+Lumrahé definisi induktif mènèhi
 (a)~dhaptar !!{element}s ``wiwitan''
 saka himpunan, lan (b)~dhaptar
 operasi kang nggawe !!{element}s
@@ -31,8 +31,8 @@ yaiku aksara. Operasiné mung siji:
 \begin{align*}
   o(s_1, s_2) = & [s_1 \circ s_2]
 \end{align*}
-Bilangan asli~$\Nat$ dhéwé uga
-bisa dianggep didhéfinisikaké
+Wilangan asli~$\Nat$ dhéwé uga
+bisa dianggep ditetepaké
 kanthi induktif: obyèk wiwitan
 yaiku~$0$, lan operasiné
 fungsi panerus~$x + 1$.
@@ -68,7 +68,7 @@ $s_2$ siji-siji.
 \begin{proof}
 Kita migunakaké induksi
 struktural. Term trep
-didhéfinisikaké kanthi
+ditetepaké kanthi
 induktif: aksara minangka
 obyèk wiwitan lan operasi
 $o$ kanggo mbangun term
@@ -111,8 +111,7 @@ trep anyar saka kang wis ana.
 Ayo deleng bukti induksi
 struktural liyané: bagéan
 wiwitan sejati saka rerangken
-simbol~$t$ yaiku rerangken
-ora kosong~$s$ kang saben
+simbol~$t$ yaiku rerangken~$s$ kang saben
 simbolé padha karo simbol
 wiwitan~$t$ yèn diwaca
 saka kiwa, nanging $t$
@@ -125,6 +124,7 @@ $[b \circ {}$ dudu
 lan $[a
 \circ b]$ uga dudu
 (dawané padha).
+(Definisi umum pérangan wiwitan sejati kalebu rerangken kosong. Teorema sabanjuré lan kasus-kasus buktiné diwatesi marang pérangan kang ora kosong, amarga rerangken kosong nduwèni cacah loro jinis kurung padha karo nol.)
 
 \begin{prop}\ollabel{prop:initial}
   Saben bagéan wiwitan sejati
@@ -151,7 +151,7 @@ lan $[a
       luwih siji tinimbang~$]$.
     \item Yèn $r$ awujud
       $[r_1$ kanthi $r_1$
-      bagéan wiwitan sejati
+      bagéan wiwitan sejati kang ora kosong
       saka~$s_1$, amarga
       $s_1$ term trep,
       miturut hipotesis
@@ -174,7 +174,7 @@ lan $[a
     \item Yèn $r$ awujud
       $[s_1 \circ r_2$
       kanthi $r_2$ bagéan
-      wiwitan sejati
+      wiwitan sejati kang ora kosong
       saka~$s_2$, miturut
       hipotesis induksi
       $r_2$ ngemot $[$
@@ -200,5 +200,6 @@ lan $[a
     \end{enumerate}
   \end{enumerate}
 \end{proof}
+(Rong kasus kanthi r1 lan r2 nganggo prefix ora-kosong. Prefix kosong ing posisi kasebut wis katutup dening kasus sadurungé; hipotesis balance ketat ora ditrapaké marang prefix kosong.)
 
 \end{document}

@@ -10,25 +10,25 @@
 \olsection{Daya Ungkap}
 
 \begin{explain}
-Kuantifikasi tumrap variabel orde kapindho ndadekake daya ungkap
-basa mundhak gedhe banget yen dibandhingake karo logika orde
-kapisan. Kuantifikasi eksistensial orde kapindho ngidini kita
+Kuantifikasi tumrap variabel tataran kapindho ndadekake daya ungkap
+basa mundhak gedhe banget yen dibandhingake karo logika tataran
+kapisan. Kuantifikasi eksistensial tataran kapindho ngidini kita
 nyatakake anane fungsi utawa relasi kang nduweni sipat tartamtu.
-Ing logika orde kapisan, siji-sijine cara kanggo iku yaiku
+Ing logika tataran kapisan, siji-sijine cara kanggo iku yaiku
 netepake simbol nonlogis (yaiku !!a{function} utawa
 !!{predicate}) kanggo maksud kasebut. Kuantifikasi universal
-orde kapindho ngidini kita nyatakake yen kabeh subhimpunan saka
+tataran kapindho ngidini kita nyatakake yen kabeh subhimpunan saka
 domain, relasi ing domain, utawa fungsi saka !!{domain}
-menyang !!{domain} nduweni sawijining sipat. Ing logika orde kapisan,
+menyang !!{domain} nduweni sawijining sipat. Ing logika tataran kapisan,
 kita mung bisa nyatakake yen subhimpunan, relasi, utawa fungsi
 kang diwenehake marang salah siji simbol nonlogis ing basa
 nduweni sipat tartamtu. Nalika nyatakake anane subhimpunan,
 relasi, utawa fungsi kang nduweni sawijining sipat, utawa yen
 kabeh mau nduweni sipat iku, kita uga bisa nggunakake
-kuantifikasi orde kapindho kanggo nemtokake sipat kasebut.
+kuantifikasi tataran kapindho kanggo nemtokake sipat kasebut.
 Iki ngidini kita netepake relasi kang ora bisa ditetepake ing
-logika orde kapisan, lan nyatakake sipat domain kang ora bisa
-dinyatakake ing logika orde kapisan.
+logika tataran kapisan, lan nyatakake sipat domain kang ora bisa
+dinyatakake ing logika tataran kapisan.
 \end{explain}
 
 \begin{defn}
@@ -41,10 +41,10 @@ $\Sat{M}{!A_R(x, y)}[s]$ kanggo $s(x) = a$ lan $s(y) = b$.
 \end{defn}
 
 \begin{ex}
-Ing logika orde kapisan kita bisa netepake relasi
+Ing logika tataran kapisan kita bisa netepake relasi
 identitas~$\Id{\Domain{M}}$ (yaiku
 $\Setabs{\tuple{a,a}}{a \in \Domain{M}}$) nganggo formula
-$\eq[x][y]$. Ing logika orde kapindho, relasi iki bisa
+$\eq[x][y]$. Ing logika tataran kapindho, relasi iki bisa
 ditetepake \emph{tanpa~$\eq$}. Amarga yen $a$ lan $b$ iku
 !!{element} kang padha saka~$\Domain{M}$, loro-lorone
 kalebu !!{element}s saka subhimpunan-subhimpunan kang padha
@@ -55,7 +55,7 @@ kang padha: upamane, $a \in \{a\}$ nanging $b \notin \{a\}$
 yen $a \neq b$. Mula ``kalebu !!{element}s saka
 subhimpunan-subhimpunan kang padha saka~$\Domain{M}$''
 iku relasi kang bener kanggo $a$ lan $b$ yen lan mung yen
-$a = b$. Relasi iki bisa dinyatakake ing logika orde kapindho,
+$a = b$. Relasi iki bisa dinyatakake ing logika tataran kapindho,
 amarga kita bisa nguantifikasi tumrap kabeh subhimpunan
 saka~$\Domain{M}$. Mula !!{formula} ing ngisor iki
 netepake $\Id{\Domain{M}}$:
@@ -80,7 +80,7 @@ $c_k$, pratelan $R(a,c_1)$, $R(c_1, c_2)$, \dots,
 $R(c_k,b)$ bener. Iki kalebu kasus $k = 0$, yaiku yen
 $R(a,b)$ bener, mula $R^*(a,b)$ uga bener. Mula
 $R \subseteq R^*$. Sejatine, $R^*$ iku relasi paling cilik
-kang ngemot~$R$ lan transitif. Ing logika orde kapindho kita
+kang ngemot~$R$ lan transitif. Ing logika tataran kapindho kita
 bisa nyatakake yen $X$ iku relasi transitif kang ngemot~$R$:
 \begin{multline*}
   !B_R(X) \ident \lforall[x][\lforall[y][(R(x,y) \lif X(x, y))]] \land {}\\
@@ -99,8 +99,7 @@ R^*(X) \ident !B_R(X) \land \lforall[Y][(!B_R(Y) \lif
   \lforall[x][\lforall[y][(X(x, y) \lif Y(x,y))]])].
 \]
 Kita nduweni $\Sat{M}{R^*(X)}[s]$ yen lan mung yen
-$s(X) = R^*$. Tutupan transitif saka~$R$ ora bisa
-dinyatakake ing logika orde kapisan.
+$s(X) = R^*$. Ora ana siji formula logika tataran kapisan kang padha ing kabeh struktur kanggo netepake tutupan transitif saka~$R$.
 \end{ex}
 
 \end{document}

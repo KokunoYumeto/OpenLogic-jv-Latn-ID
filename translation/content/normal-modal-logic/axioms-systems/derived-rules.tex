@@ -68,7 +68,7 @@ Ayo dideleng kepiye asil iki nggampangake netepake
 \begin{proof}
   \begin{derivation}
     1. & $\Log{K} \Proves !A \lif (!B \lif (!A \land !B))$ & \Taut \\
-    2. & $\Log{K} \Proves \Box!A \lif (\Box !B \lif \Box(!A \land !B)))$ & \RK, 1\\
+    2. & $\Log{K} \Proves \Box!A \lif (\Box !B \lif \Box(!A \land !B))$ & \RK, 1\\
     3. & $\Log{K} \Proves (\Box!A \land \Box!B) \lif \Box(!A \land !B)$ & \PL, 2
   \end{derivation}
 \end{proof}
@@ -76,6 +76,7 @@ Ayo dideleng kepiye asil iki nggampangake netepake
 \begin{prop}\ollabel{prop:rewriting}
   Yen $\Log{K} \Proves !A \liff !B$ lan $\Log{K} \Proves
   \Subst{!C}{!A}{q}$, mula $\Log{K} \Proves \Subst{!C}{!B}{q}$.
+Marker formula pangganti ing kesimpulan padha karo premis lan latihan.
 \end{prop}
 
 \begin{proof}
@@ -99,7 +100,7 @@ dobel ing njero !!a{formula}. Ing ngisor iki, kita nandhani panganggone
     & $\Proves !A \liff !B$\\
     & $\Proves !C(!B)$ & miturut \olref{prop:rewriting}
   \end{derivation}
-Upamane:
+Annotation panggantos nganggo formula anyar kanggo formula lawas, kaya conto sabanjure. Upamane:
 
 \begin{prop}
   $\Log{K} \Proves \lnot\Box p \lif \Diamond \lnot p$

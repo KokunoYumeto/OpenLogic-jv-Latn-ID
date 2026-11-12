@@ -8,21 +8,26 @@
 
 \olfileid{int}{pty}{snd}
 
-\olsection{Dedhuksi Alami Sekuen}
+\olsection{Dedhuksi Alami kanthi Sekèn}
 
 Kita nulis $\Gamma \Sequent !A$ yen ana !!{derivation} dedhuksi alami
-kanthi $\Gamma$ minangka asumsi !!{undischarged} lan $!A$ minangka
+kanthi $\Gamma$ minangka konteks sing ngemot asumsi !!{undischarged}, lan $!A$ minangka
 konklusi; utawa $\Sequent !A$ yen $\Gamma$ kosong.
 
 Kita nulis $\Gamma, !A_1, \dots, !A_n$ kanggo $\Gamma \cup \{!A_1,
 \dots, !A_n\}$, lan $\Gamma, \Delta$ kanggo $\Gamma \cup \Delta$.
+Konteks nyathet asumsi kang kena dienggo. Kanggo nambah asumsi $!B$
+marang derivasi $\Gamma \Sequent !A$, gabungaké derivasi mau karo
+aksioma $!B \Sequent !B$ nganggo introduksi konjungsi, banjur
+proyeksèkaké komponèn kapisan. Mula $\Gamma, !B \Sequent !A$.
+Asumsi kang diuculaké bisa ora dienggo.
 
 Gatekna yen kita nduweni $\Gamma \Sequent !A \land !B$, tegese ana
 !!a{derivation} kanthi $\Gamma$ minangka asumsi !!{undischarged} lan
 $!A \land !B$ minangka !!{formula} pungkasan. Kanthi ngetrapake
 $\Elim{\land}$ ing ngisor, kita bisa ngasilake !!a{derivation} kanthi
 asumsi !!{undischarged} sing padha lan $!A$ minangka konklusi.
-Kanthi tembung liya, yen $\Gamma \Sequent !A \land !B$, mula
+Kanthi tembung liya, yèn $\Gamma \Sequent !A \land !B$, mula
 $\Gamma \Sequent !A$.
 \begin{prooftree}
   \Axiom$\Gamma \fCenter !A \land !B$
@@ -110,8 +115,8 @@ kita tansah nduweni $!A \Sequent !A$.
 Aturan iki bebarengan bisa dianggep kalkulus ngenani !!{derivation}s
 dedhuksi alami sing ana. Aturan iki uga bisa dianggep varian notasi
 dedhuksi alami, kanthi saben langkah nyathet ora mung !!{formula}
-sing !!{derive}, nanging uga asumsi !!{undischarged} sing dadi
-dhasar !!{derive} kasebut.
+sing !!{derive}, nanging uga konteks asumsi !!{undischarged} kanggo
+!!{derive} kasebut.
 
 \begin{prooftree}
   \Axiom$!A \fCenter !A$
@@ -125,5 +130,6 @@ dhasar !!{derive} kasebut.
   \UnaryInf$\fCenter !B \lif \lfalse$
 \end{prooftree}
 kanthi $!B$ minangka cekakan saka $(!A \lor (!A \lif \lfalse))\lif \lfalse$.
+Ing wit bukti iki, A diuculaké dhisik lan B diuculaké ing langkah pungkasan.
 
 \end{document}

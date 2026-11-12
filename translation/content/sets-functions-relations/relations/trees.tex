@@ -40,7 +40,7 @@ Simpul paling ngisor~$r$ iku oyod.
 Saben simpul saliyane $r$ duwe persis siji simpul induk
 langsung ing sangisore. Kita bisa nganggep relasi
 antarane simpul~$x$ lan simpul~$y$---yen
-$y$ bisa digayuh saka~$x$ kanthi ngetutake rusuk
+$y$ bisa digayuh saka~$x$ kanthi ngetutaké siji utawa luwih rusuk
 munggah---minangka pratelan yen $x$ iku \emph{leluhur} saka~$y$.
 
 Relasi leluhur ing wit iku tatanan parsial ketat.
@@ -96,6 +96,9 @@ saliyane oyod duwe paling akeh siji pandhisik.
   Mula $y_1$ lan $y_2$ ora bisa loro-lorone
   dadi pandhisik saka~$x$.
 \end{proof}
+Wit winates nduwèni pandhisik kanggo saben simpul saliyané oyod.
+Ing wit tanpa wates, sawijining segmèn ngisor bisa tanpa
+anggota paling gedhé, mula simpulé bisa tanpa pandhisik.
 
 \begin{defn}
 Wit $T = \tuple{A, \le}$ diarani \emph{tanpa wates}
@@ -111,7 +114,7 @@ Kanggo wit $T = \tuple{A, \le}$, \emph{pang} saka~$T$
 yaiku rantai maksimal ing~$T$, yaiku himpunan
 $B \subseteq A$ kanthi sipat yen kanggo saben
 $x, y \in B$, $x \le y$ utawa $y \le x$,
-lan kanggo saben $z \in X \setminus B$
+lan kanggo saben $z \in A \setminus B$
 ana $u \in B$ kanthi $z \le u$ lan $u \le z$
 loro-lorone ora lumaku.
 %
@@ -142,13 +145,14 @@ Cetha yen wit iki ora nyabang winates:
 saben $s \in \Nat^*$ duwe panerus~$sn$
 kang cacahe tanpa wates, siji kanggo saben
 $n \in \Nat$.
-Saben $A\subseteq \Nat^*$ kang katutup
+Saben $A\subseteq \Nat^*$ kang ora kosong lan katutup
 tumrap~$\sqsubseteq$ iku \emph{subwit}
 saka~$\Nat^*$.
 (Yaiku, $A$ nduweni sipat yen $s \in A$
 lan $s' \sqsubseteq s$, mula uga $s' \in A$.)
-Kabeh wit winates bisa diwakili minangka
-subwit winates saka~$\Nat^*$.
+Kabèh wit winates bisa diwakili minangka subwit winates saka~$\Nat^*$.
+Wènèhana nomer béda marang anak saka saben simpul, banjur catheten
+urutan nomer ing dalan saka oyod menyang simpul kasebut.
 \end{ex}
 
 \begin{prop}[Lema K\H{o}nig]

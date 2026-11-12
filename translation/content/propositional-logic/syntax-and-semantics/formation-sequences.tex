@@ -1,4 +1,4 @@
-% Part: first-order-logic
+% Part: propositional-logic
 % Chapter: syntax-and-semantics
 % Section: formation-sequences
 
@@ -21,9 +21,9 @@ lakoni kanthi gagasan \emph{urutan pambentukan}.
 \ollabel{defn:fseq-frm}
 Urutan winates $\tuple{!A_0,\dotsc,!A_n}$ saka rerangken simbol ing
 basa~$\Lang L_0$ diarani \emph{urutan pambentukan} kanggo $!A$ yen
-$!A \ident !A_n$ lan kanggo kabeh $i \leq n$, $!A_i$ iku formula
-atomik utawa ana $j,k < i$ kanthi salah siji kahanan ing ngisor iki
-lumaku:
+$!A \ident !A_n$ lan kanggo saben $i \leq n$, $!A_i$ iku formula
+atomik utawa kawangun saka anggota sadurungé miturut salah siji
+klausa ing ngisor iki. Kanggo negasi, $j<i$; kanggo konektif binèr, $j,k<i$.
 \begin{enumerate}
     \tagitem{prvNot}{$!A_i \ident \lnot !A_j$.}{}%
     \tagitem{prvAnd}{$!A_i \ident (!A_j \land !A_k)$.}{}%
@@ -124,10 +124,11 @@ walikane.
 
 Upamakna $!A$ nduweni urutan pambentukan $\tuple{!A_0,\dotsc,!A_n}$.
 Kita mbuktekake yen $!A \in \Frm[L_0]$ kanthi induksi kuwat ing~$n$.
-Hipotesis induksi kita yaiku saben rerangken simbol kang nduweni urutan
-pambentukan kang dawane $m < n$ kalebu ing~$\Frm[L_0]$. Miturut definisi
-urutan pambentukan, $!A_n$ iku atomik utawa mesthi ana $j,k < n$ kanthi
-salah siji kahanan ing ngisor iki lumaku:
+Hipotesis induksi nyatakaké yèn saben rerangken kanthi
+urutan pambentukan kanthi indeks pungkasan $m<n$ kalebu ing~$\Frm[L_0]$.
+Miturut definisi, $!A_n$ iku atomik utawa nduwèni salah siji wujud
+ing ngisor iki, kanthi $j<n$ kanggo negasi lan $j,k<n$ kanggo
+konektif binèr.
 \begin{enumerate}
     \tagitem{prvNot}{$!A_n \ident \lnot !A_j$.}{}%
     \tagitem{prvAnd}{$!A_n \ident (!A_j \land !A_k)$.}{}%
@@ -135,16 +136,15 @@ salah siji kahanan ing ngisor iki lumaku:
     \tagitem{prvIf}{$!A_n \ident (!A_j \lif !A_k)$.}{}%
     \tagitem{prvIff}{$!A_n \ident (!A_j \liff !A_k)$.}{}%
 \end{enumerate}
-Saiki kita nalar miturut kasus. Yen $!A_n$ atomik, mula
-$!A_n \in \Frm[L_0]$. Dene upamakna $!A \equiv
-(!A_j \land !A_k)$. Miturut \olref[pl][syn][fseq]{lem:fseq-init},
-$\tuple{!A_0,\dotsc,!A_j}$ lan $\tuple{!A_0,\dotsc,!A_k}$ iku
-urutan pambentukan kanggo $!A_j$ lan~$!A_k$ miturut urutane. Amarga
-kalorone iku suburutan wiwitan sejati saka urutan pambentukan
-kanggo~$!A$, dawane kalorone kurang saka~$n$. Mula miturut hipotesis
-induksi, $!A_j$ lan~$!A_k$ kalebu ing~$\Frm[L_0]$, dadi miturut
-definisi !!a{formula}, $(!A_j \land !A_k)$ uga kalebu. Kasus liyane
-bisa dibuktekake kanthi cara nalar kang padha.
+Yèn $!A_n$ atomik, mula $!A_n\in\Frm[L_0]$. Ing kasus
+negasi, \olref[pl][syn][fseq]{lem:fseq-init} mènèhi urutan
+$\tuple{!A_0,\dotsc,!A_j}$ kanggo $!A_j$. Indeks pungkasané $j<n$,
+mula $!A_j\in\Frm[L_0]$ miturut hipotesis induksi. Klausa negasi
+mènèhi $\lnot !A_j\in\Frm[L_0]$. Ing kasus binèr, urutan wiwitan
+kanggo $!A_j$ lan $!A_k$ padha nduwèni indeks pungkasan kurang saka
+$n$. Mula kalorone formula, lan klausa kanggo konektif binèr
+kang digunakaké mènèhi $!A_n\in\Frm[L_0]$. Amarga $!A\ident !A_n$,
+iki ngrampungaké bukti.
 \end{proof}
 
 \end{document}

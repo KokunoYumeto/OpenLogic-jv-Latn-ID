@@ -115,10 +115,7 @@ Ing saben cabang saka rong cabang ing sisih tengen, kita arep !!{derive} $!A
 
 Kanggo rong bagean !!{derivation} kang isih kosong, kita mbutuhake
 !!{derivation}s saka $!B$ adhedhasar $\lnot !A$ lan $!A$ ing cabang
-tengah, lan adhedhasar $!A$ lan $!B$ ing cabang tengen. Cathetan
-koreksi sumber OLPL-011: teks Inggris nyebut cabang kapindho iki
-minangka cabang kiwa, nanging wit lan paragraf sabanjure kanthi cetha
-ndunungake ing sisih tengen. Ayo luwih dhisik njupuk cabang tengah.
+tengah, lan adhedhasar $!A$ lan $!B$ ing cabang tengen. Ayo luwih dhisik njupuk cabang tengah.
 $\lnot !A$ lan $!A$ iku rong premis saka \Elim{\lnot}:
 \begin{prooftree}
 \AxiomC{$\Discharge{\lnot !A}{2}$}
@@ -148,10 +145,7 @@ kesimpulan lan ngrampungake cabang iki.
 \DischargeRule{\Intro{\lif}}{1}
 \UnaryInfC{$(\lnot !A \lor !B) \lif (!A \lif !B)$}
 \end{prooftree}
-Cathetan koreksi sumber OLPL-010: label ing wit Inggris ngarani
-langkah saka negasi lan ukara menyang kontradiksi minangka introduksi
-falsum, nanging wit parsial sadurunge lan aturan kang ditetepake
-ngenali langkah iki minangka eliminasi negasi.
+
 
 Saiki ayo ndeleng cabang paling tengen. Ing kene kudu dielingi yen
 definisi !!{derivation} \emph{ngidini asumsi dibubarake}, nanging
@@ -187,15 +181,16 @@ Gatekna yen ing !!{derivation} kang wis rampung, inferensi
 Nganti saiki kita durung mbutuhake aturan \FalseCl{}. Aturan iki
 mligi amarga ngidini kita mbubarake asumsi kang dudu
 sub-!!{formula} saka kesimpulan aturan kasebut. Aturan iki raket
-sesambungane karo aturan \FalseInt{}. Malah, aturan \FalseInt{} iku
-kasus mligi saka aturan \FalseCl{}---ana logika kang diarani
-``logika intuisionistik'' kang mung ngidini \FalseInt{}. Aturan
+sesambungane karo aturan \FalseInt{}. Ing logika klasik, Panganggoné \FalseCl{} tanpa mbubaraké asumsi
+mènèhi \FalseInt{}. Ing logika intuisionistik, aturan falsum kang
+digunakaké yaiku \FalseInt{}. Aturan
 \FalseCl{} iku upaya pungkasan nalika ora ana cara liyane kang bisa
 ditindakake. Tuladhane, upamana kita arep !!{derive} $!A \lor \lnot
 !A$. Strategi lumrahe yaiku nyoba !!{derive} $!A \lor \lnot !A$
 nganggo $\Intro{\lor}$. Nanging iki mbutuhake supaya kita !!{derive}
-$!A$ utawa $\lnot !A$ tanpa asumsi, lan prakara iki ora bisa
-ditindakake. \FalseCl{} bisa nulungi!
+$!A$ utawa $\lnot !A$ tanpa asumsi. Yèn $!A$ iku variabel proposisional,
+salah siji saka rong nilai kabeneran ndadèkaké saben pilihan iku
+gagal minangka teorema. Kanggo skema umum iki gunakna \FalseCl{}.
 \begin{prooftree}
   \AxiomC{$\Discharge{\lnot(!A \lor \lnot !A)}{1}$}
   \DeduceC{$\lfalse$}
@@ -315,7 +310,7 @@ Wènèhana !!{derivation}s kang nuduhake prakara-prakara iki:
 \item $(!A \lif !B) \lif !A \Proves !A$.
 \item $\Proves (!A \lif !B) \lor (!B \lif !C)$.
 \end{enumerate}
-(Kabeh iki mbutuhake aturan~$\FalseCl$.)
+Minangka skema, wolung pratelan iki mbutuhaké aturan klasik~$\FalseCl$.
 \end{prob}
 
 \end{document}

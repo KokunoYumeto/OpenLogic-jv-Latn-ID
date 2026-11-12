@@ -27,8 +27,8 @@ Iki bakal ngidini kita ngetung kanthi pas ing ngendi $\tuple{n, m}$ katon
 ing enumerasi.
 
 Sejatine, $g$ bisa langsung ditetepake kanthi rong pangamatan. Kapisan:
-yen baris kaping $n$ lan kolom kaping $m$ ngemot nilai~$v$, mula
-baris kaping $(n+1)$ lan kolom kaping $(m-1)$ ngemot nilai $v + 1$.
+yèn baris kaping $n$ lan kolom kaping $m$ ngemot nilai~$v$ lan $m>0$,
+mula baris kaping $(n+1)$ lan kolom kaping $(m-1)$ ngemot nilai $v + 1$.
 Kapindho: baris kapisan enumerasi ngemot wilangan segitiga,
 wiwit $0$, $1$, $3$, $6$, lan sateruse. Wilangan segitiga kaping $k$
 yaiku gunggung wilangan natural kang $\leq k$, kang bisa dietung kanthi
@@ -39,12 +39,10 @@ fungsi:
 \]
 Kita kerep mung nulis $g(n, m)$ tinimbang $g(\tuple{n, m})$ supaya
 luwih gampang diwaca. Rumus iki njaluk kita nemtokake wilangan segitiga
-kaping $(n+m)^\text{}$ dhisik, banjur nambah $n$.
+kaping $(n+m)$ dhisik, banjur nambah $n$.
 Rumus iki ngisi larikan persis kaya kang dikarepake. Mligine,
 pasangan $\tuple{1, 2}$ dipetakake menyang $\frac{4 \times 3}{2} +
 1 = 7$.
-Wates ora-luwih-saka iki dibenerake supaya cocog karo urutan lan rumuse;
-sumber Inggris nggunakake wates ketat (JV-D010).
 
 Fungsi $g$ iki \emph{invers} enumerasi sawijining himpunan pasangan.
 Fungsi kaya mangkono diarani \emph{fungsi pasangan}.
@@ -60,9 +58,9 @@ Fungsi kaya mangkono diarani \emph{fungsi pasangan}.
 \begin{explain}
 Fungsi pasangan bisa digunakake kanggo ngodeake, upamane, pasangan wilangan
 natural. Kanthi tembung liya, saben \emph{pasangan} anggota bisa diwakili
-nganggo \emph{siji} wilangan. Kanthi invers fungsi pasangan,
-kita bisa \emph{ngudhari kode} wilangan iku, yaiku nemtokake
-pasangan kang diwakili.
+nganggo \emph{siji} wilangan. Kanthi invers fungsi pasangan ing
+jangkauané, kita bisa \emph{ngudhari kode} wilangan iku, yaiku
+nemtokaké pasangan kang diwakili.
 \end{explain}
 
 \begin{prob}
@@ -81,7 +79,7 @@ Tetepna enumerasi $\Bin^*$.
 \begin{prob}
 Elinga saka kuliah pambuka logika yen saben tabel kabeneran
 ngandharake fungsi kabeneran. Kanthi tembung liya, fungsi kabeneran
-yaiku kabeh fungsi saka $\Bin^k \to \Bin$ kanggo sawijining~$k$.
+yaiku kabèh fungsi $\Bin^k \to \Bin$ kanggo sawijining~$k$.
 Buktekna yen himpunan kabeh fungsi kabeneran bisa didhaptar.
 \end{prob}
 
@@ -95,27 +93,25 @@ Subhimpunan $\Nat$ diarani \emph{kowinates} yen lan mung yen dadi
 komplemen ing $\Nat$ saka sawijining subhimpunan winates ing kono; yaiku $A \subseteq \Nat$
 kowinates yen lan mung yen $\Nat\setminus A$ winates. Upamakna $I$ himpunan kang
 !!{element}sne persis kabeh subhimpunan winates lan kowinates saka $\Nat$.
-Tuduhna yen $I$ iku !!{enumerable}. Ukara iki njlentrehake sesambungan
-subhimpunan kang ilang saka sumber Inggris (OLSIZ-002).
+Tuduhna yèn $I$ iku !!{enumerable}.
 \end{prob}
 
 \begin{prob}
-Kanthi nganggep Asas Pilihan kanggo kulawarga kang indeksine bisa didhaptar,
+Kanthi Aksioma Pilihan kanggo kulawarga kaétung,
 tuduhna yen gabungan kang !!{enumerable} saka himpunan-himpunan kang !!{enumerable}
 iku !!{enumerable}. Tegese, yen $A_1$, $A_2$, \dots{} iku himpunan,
 lan saben $A_i$ iku !!{enumerable}, mula gabungan $\bigcup_{i=1}^\infty
-A_i$ saka kabeh himpunan mau uga !!{enumerable}. [Cathetan: iki angel!]
-Pangangkep iki dibutuhake kanggo kulawarga sembarang; pratelan umum iki
-ora dadi teorema ZF tanpa wangun pilihan kasebut (JV-D013).
+A_i$ saka kabèh himpunan mau uga !!{enumerable}. [Cathetan: iki angel!]
+Kanggo kulawarga kang saben anggota wis diwènèhi enumerasi, gunakna
+enumerasi kang wis ana iku. Kanggo kulawarga sembarang, aksioma iki
+marengaké milih siji enumerasi kanggo saben himpunan kang isi.
 \end{prob}
 
 \begin{prob}
 Upamakna $f \colon A \times B \to \Nat$ sembarang fungsi pasangan.
-Tuduhna yen kanthi ngetrapake invers saka $f$ marang saben nilai ing enumerasi
-citrane, kita oleh enumerasi $A \times B$; yen prodhuk iki kosong, gunakna
-kasus himpunan kosong. Pangowahan iki dibutuhake amarga invers fungsi pasangan
-kang mung injektif ditetepake ing citrane, dudu kudu ing kabeh wilangan natural
-(JV-D012).
+Yèn prodhuké isi, enumerasèkna jangkauan, banjur tuduhna yèn
+ngetrapaké invers saka $f$ ing $\ran{f}$ marang saben nilai
+mènèhi enumerasi $A \times B$. Yèn prodhuké kosong, gunakna dhaptar kosong.
 \end{prob}
 
 \begin{prob}

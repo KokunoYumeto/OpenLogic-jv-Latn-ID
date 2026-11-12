@@ -38,7 +38,8 @@
 \begin{defn}[Model term]
 \ollabel{defn:termmodel}
 Upamana $\Gamma^*$ minangka himpunan konsisten lan jenuh kang !!a{complete}
-saka !!{sentence}s ing basa~$\Lang L$. \emph{Model term}~$\Struct
+saka !!{sentence}s ing basa~$\Lang L$. Basa iki ngemot saora-orané siji term katutup,
+kaya ing ekspansi Henkin. \emph{Model term}~$\Struct
 M(\Gamma^*)$ saka $\Gamma^*$ yaiku !!{structure} kang ditemtokake
 kaya ing ngisor iki:
 \begin{enumerate}
@@ -52,7 +53,7 @@ kaya ing ngisor iki:
 \[
 \Assign{f}{M(\Gamma^*)}(t_1, \dots, t_n) = f(t_1,\dots, t_n)
 \]
-\item Yen $R$ minangka !!{predicate} kanthi $n$ panggonan, mula
+\item Yen $R$ minangka !!{predicate} saliyané identitas kanthi $n$ panggonan, mula
   \[
   \tuple{t_1, \dots,
   t_n} \in \Assign{R}{M(\Gamma^*)} \text{ yen lan mung yen } \Atom{R}{t_1, \dots,
@@ -80,8 +81,7 @@ Saiki kita bakal mriksa yen pancen $\Value{t}{M(\Gamma^*)} = t$.
 \begin{lem}
 \ollabel{lem:val-in-termmodel} Upamana $\Struct M(\Gamma^*)$ minangka
 model term ing \olref{defn:termmodel}, banjur kanggo saben term katutup
-$\Value{t}{M(\Gamma^*)} = t$. Cathetan koreksi sumber OLPL-047: bukti
-lan domain model mbutuhake watesan term katutup iki.
+$\Value{t}{M(\Gamma^*)} = t$.
 \end{lem}
 \begin{proof}
  Buktine kanthi induksi marang $t$, kanthi perkara basis nalika $t$
@@ -113,8 +113,9 @@ lan mula kanthi induksi iki bener kanggo saben term katutup~$t$.
   !!{element} saka~$\Domain{M}$ minangka nilai term katutup
   ($\Struct{M}$ bisa uga ora katutup dening term). Iki alesan relasi
   nyukupi ditemtokake lumantar pamasangan variabel. Nanging kanggo
-  model term~$\Struct{M(\Gamma^*)}$ kita, iki ora perlu amarga model
-  kasebut katutup dening term. Iki isi asil sabanjure.
+  model term~$\Struct{M(\Gamma^*)}$, saben unsur dijenengi déning
+  term katutup. Mula instansi term katutup cukup kanggo mriksa
+  ukara mawa kuantor, kaya ing proposisi ngisor iki.
 \end{explain}
 
 \begin{prop}
@@ -152,9 +153,9 @@ Upamana $\Struct M(\Gamma^*)$ minangka model term ing
     $\Sat{M(\Gamma^*)}{\lforall[x][!A(x)]}$ yen lan mung yen kanggo
     saben pamasangan variabel $s$, $\Sat{M(\Gamma^*)}{!A(x)}[s]$.
     Elinga yen $\Domain{M(\Gamma^*)}$ kasusun saka term-term katutup
-    ing~$\Lang{L}$, mula kanggo saben term katutup~$t$, $s(x) = t$
-    minangka pamasangan variabel kaya mangkono, lan kanggo sembarang
-    pamasangan variabel, $s(x)$ minangka sawijine term katutup~$t$.
+    ing~$\Lang{L}$, mula kanggo saben term katutup~$t$ ana pangaji variabel $s$ kanthi $s(x)=t$,
+    lan saben pangaji menehi sawijiné term katutup~$t$ minangka
+    nilai $s(x)$.
     Miturut \olref[fol][syn][ext]{prop:ext-formulas},
     $\Sat{M(\Gamma^*)}{!A(x)}[s]$ yen lan mung yen
     $\Sat{M(\Gamma^*)}{!A(t)}[s]$, kanthi $s(x) = t$. Miturut
@@ -174,11 +175,14 @@ Rampungna bukti \olref[fol][com][mod]{prop:quant-termmodel}.
 \begin{lem}[Lemma Bebener]
 \ollabel{lem:truth} \iftag{FOL}{Upamana $!A$ minangka ukara kang ora ngemot~$\eq$. Banjur}{}
 $\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{!A}$ yen lan mung
-yen $!A \in \Gamma^*$. Cathetan cakupan sumber OLPL-741: ing cabang FOL, lemma iki tumrap ukara, cocog karo himpunan ukara ing definisi model term lan conto term katutup ing bukti; formula mawa variabel bebas ora kalebu ing cakupan pratelan iki.
+yen $!A \in \Gamma^*$.
 \end{lem}
 
 \begin{proof}
-Kita mbuktekake rong arah bebarengan kanthi induksi marang $!A$.
+Kita mbuktekaké rong arah bebarengan kanthi induksi miturut cacah konektif lan kuantor ing $!A$,
+sawisé cekakan dijembaraké. Ing kasus kuantor, ngganti variabel
+nganggo term katutup ora nambah cacah simbol logis ing matriks,
+mula saben instansi bisa nganggo hipotesis induksi.
 \begin{enumerate}
 \tagitem{prvFalse}{\indcase{!A}{\lfalse}
   {$\iftag{FOL}{\Sat/{M(\Gamma^*)}{\lfalse}}{\pSat/{v(\Gamma^*)}{\lfalse}}$
@@ -194,7 +198,8 @@ Kita mbuktekake rong arah bebarengan kanthi induksi marang $!A$.
 \tagitem{FOL}{\indcase{!A}{R(t_1, \dots, t_n)}
   {$\Sat{M(\Gamma^*)}{\Atom{R}{t_1, \dots, t_n}}$ yen lan mung yen
     $\tuple{t_1, \dots, t_n} \in \Assign{R}{M(\Gamma^*)}$ (miturut
-    definisi relasi nyukupi), yen lan mung yen $R(t_1, \dots, t_n)
+    definisi relasi nyukupi lan \olref{lem:val-in-termmodel}),
+    yen lan mung yen $R(t_1, \dots, t_n)
     \in \Gamma^*$ (miturut konstruksi $\Struct
     M(\Gamma^*)$).}}{\indcase{!A}{p}{$\pSat{v(\Gamma^*)}{p}$ yen lan
     mung yen $\pAssign v(\Gamma^*)(p) = \True$ (miturut definisi relasi
@@ -223,7 +228,7 @@ Kita mbuktekake rong arah bebarengan kanthi induksi marang $!A$.
     bener (miturut definisi relasi nyukupi), yen lan mung yen
     $!B \in \Gamma^*$ lan $!C \in \Gamma^*$ kalorone (miturut
     hipotesis induksi). Miturut
-    \olref[ccs]{prop:ccs}\olref[ccs]{prop:ccs-and}, iki bener yen lan
+    \olref[ccs]{prop:ccs-and}, iki bener yen lan
     mung yen $(!B \land !C) \in \Gamma^*$.}}}{}
 
 \tagitem{prvOr}{%
@@ -237,7 +242,7 @@ Kita mbuktekake rong arah bebarengan kanthi induksi marang $!A$.
     definisi relasi nyukupi), yen lan mung yen $!B \in \Gamma^*$ utawa
     $!C \in \Gamma^*$ (miturut hipotesis induksi). Iki bener yen lan
     mung yen $(!B \lor !C) \in \Gamma^*$ (miturut
-    \olref[ccs]{prop:ccs}\olref[ccs]{prop:ccs-or}).}}}{}
+    \olref[ccs]{prop:ccs-or}).}}}{}
 
 \tagitem{prvIf}{%
 \iftag{probIf}{%
@@ -250,7 +255,7 @@ Kita mbuktekake rong arah bebarengan kanthi induksi marang $!A$.
     definisi relasi nyukupi), yen lan mung yen $!B \notin \Gamma^*$
     utawa $!C \in \Gamma^*$ (miturut hipotesis induksi). Iki bener yen
     lan mung yen $(!B \lif !C) \in \Gamma^*$ (miturut
-    \olref[ccs]{prop:ccs}\olref[ccs]{prop:ccs-if}).}}}{}
+    \olref[ccs]{prop:ccs-if}).}}}{}
 
 \iftag{FOL}{%
 \tagitem{prvAll}{%
@@ -262,10 +267,7 @@ Kita mbuktekake rong arah bebarengan kanthi induksi marang $!A$.
       induksi, iki bener yen lan mung yen $!B(t) \in \Gamma^*$ kanggo
       kabeh term katutup~$t$; miturut
       \olref[hen]{prop:saturated-instances}, iki sabanjure bener yen lan
-      mung yen $\lforall[x][!B(x)] \in \Gamma^*$. Cathetan koreksi
-      sumber OLPL-048: rong kuantifikasi term iki diwatesi marang term
-      katutup, kaya pratelan kang dirujuk. OLPL-049: formula pungkasan
-      nggunakake subformula B, dudu formula induksi njaba.}}}{}
+      mung yen $\lforall[x][!B(x)] \in \Gamma^*$.}}}{}
 
 \tagitem{prvEx}{%
   \iftag{probEx}{%
@@ -276,8 +278,7 @@ Kita mbuktekake rong arah bebarengan kanthi induksi marang $!A$.
       induksi, iki bener yen lan mung yen $!B(t) \in \Gamma^*$ kanggo
       paling ora siji term katutup~$t$. Miturut
       \olref[hen]{prop:saturated-instances}, iki sabanjure bener yen lan
-      mung yen $\lexists[x][!B(x)] \in \Gamma^*$. Cathetan koreksi
-      sumber OLPL-048: loro-lorone nggunakake term katutup.}}}{}
+      mung yen $\lexists[x][!B(x)] \in \Gamma^*$.}}}{}
 }{}
 \end{enumerate}
 \end{proof}

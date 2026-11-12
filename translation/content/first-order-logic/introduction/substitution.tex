@@ -15,11 +15,7 @@ prekara iki gegandhengan, lan kepriye pangrembakan sintaksis lan
 semantik nyawisake landhesan kanggo panliten kita kang luwih maju
 mengko. Sistem !!{derivation} kita kudune marengake kita !!{derive}
 $\Atom{\Obj P}{\Obj a}$ saka $\lforall[\Obj
-v_0][\Atom{\Obj P}{\Obj v_0}]$. Cathetan koreksi sumber OLPL-061:
-sumber Inggris nutup argumen pilihan kuantor sadurunge argumen
-formula atom rampung, mula formula kasebut ora nduweni argumen
-predikat ing cakupan kuantor; braket dibalekake supaya variabel kasebut
-dadi argumen predikat. Mbokmenawa kita malah
+v_0][\Atom{\Obj P}{\Obj v_0}]$. Mbokmenawa kita malah
 pengin nyatakake iki minangka aturan inferensi. Nanging, kanggo
 nindakake mangkono, kita kudu bisa nyatakake iki kanthi wujud paling
 umum: ora mung kanggo $\Obj P$, $\Obj a$, lan $\Obj v_0$, nanging
@@ -33,9 +29,9 @@ teges persise ``ngganti $x$ nganggo~$t$''? Apa relasi antarane $!A(x)$
 lan~$!A(t)$? Apa iki mesthi bisa?
 
 Supaya iki trep, kita nemtokake operasi \emph{substitution}.
-Substitusi iku nyatane ruwet, amarga kita ora bisa mung ngganti
-kabeh~$x$ ing~$!A$ nganggo~$t$, lan ora saben~$t$ bisa disubstitusikake
-kanggo sembarang~$x$. Kita bakal ngrampungi iki, maneh, nganggo definisi
+Substitusi ngganti munculan kang bebas saka~$x$ ing~$!A$
+nganggo~$t$, kanthi syarat substitusi ora njalari variabel bebas ing term dadi kaiket.
+Kita bakal ngrampungi iki, maneh, nganggo definisi
 induktif. Nanging yen wis rampung, nemtokake aturan inferensi minangka
 ``simpulake $!A(t)$ saka $\lforall[x][!A(x)]$'' dadi definisi kang
 trep. Kajaba iku, kita bakal bisa mbuktekake yen iki aturan inferensi
@@ -43,12 +39,11 @@ kang apik, ing pangertene yen $\lforall[x][!A(x)]$ ngakibatake~$!A(t)$.
 Nanging kanggo mbuktekake iki, kita maneh kudu mbuktekake sawijining
 prekara kang sakpisanan bisa njalari sampeyan takon, ``yagene kita
 nindakake iki?'' Kasunyatan yen $\lforall[x][!A(x)]$ ngakibatake~$!A(t)$
-gumantung marang kasunyatan manawa dicukupi utawa orane
-$\Sat{M}{!A(t)}$ mung gumantung marang nilai term~$t$ miturut pangaji kang lagi digunakake. Yaiku, yen $m$
-iku !!{element} saka~$\Domain{M}$ kang dadi nilai~$t$ miturut pangaji mau, banjur
-$\Sat{M}{!A(t)}[s]$ yen lan mung yen
-$\Sat{M}{!A(x)}[\Subst{s}{m}{x}]$. Iki lumaku sanajan $t$ ngemot
-!!{variable}s, nanging kita kudu ngati-ati bab carane persis nyatakake
-asil kasebut. Cathetan cakupan sumber OLPL-745: yen term ngemot variabel bebas, nilaine gumantung marang pangaji lan substitusi kudu bebas kanggo variabel kang diganti.
+nduwèni landhesan ing lemma substitusi. Kanggo sembarang pangaji,
+wacanen formula asil substitusi nganggo nilai term~$t$ miturut pangaji~$s$. Yèn $m$
+iku !!{element} saka~$\Domain{M}$ kang dadi nilai~$t$ miturut pangaji
+mau, banjur $\Sat{M}{!A(t)}[s]$ yen lan mung yen
+$\Sat{M}{!A(x)}[\Subst{s}{m}{x}]$. Iki uga lumaku yèn $t$ ngemot
+!!{variable}s, kanthi syarat substitusi bebas kaya ing ndhuwur.
 
 \end{document}

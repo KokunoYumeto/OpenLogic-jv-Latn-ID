@@ -92,9 +92,7 @@ arah maju saka !!{biconditional}, amarga bukti arah walike simetris.
     \Value{t_i}{M}[s_2]$ miturut \olref{prop:valindep}. Mula uga
     $\langle \Value{t_1}{M}[s_2], \ldots, \Value{t_k}{M}[s_2] \rangle
     \in \Assign{R}{M}$, saengga $\Sat{M}{\indfrm}[s_2]$.
-    Cathetan koreksi sumber OLPL-079: entri kapisan ing
-    tupel panutup sumber migunakake indeks umum, dudu indeks
-    kapisan; indeks wiwitan kang cocog dibalekake.}
+}
 \item
   \indcase{!A}{\eq[t_1][t_2]}{upamakna $\Sat{M}{\indfrm}[s_1]$.
     Mula $\Value{t_1}{M}[s_1] = \Value{t_2}{M}[s_1]$. Dadi,
@@ -194,10 +192,7 @@ ing~$!B$, saengga hipotesis induksi bisa ditrapake marang~$!B$.
       $\Sat{M}{!B}[\Subst{s_2}{m}{x}]$. Dadi pilih
       $m \in \Domain{M}$ sembarang, lan gatekna
       $s_1' = \Subst{s_1}{m}{x}$ lan $s_2' =
-      \Subst{s_2}{m}{x}$. Cathetan koreksi sumber OLPL-080:
-      rong pangaji turunan ing sumber nganggo pangaji dhasar
-      kang ora ditetepake; saben turunan saiki nganggo pangaji
-      dhasare dhewe. Kita nduweni $\Sat{M}{!B}[s_1']$.
+      \Subst{s_2}{m}{x}$. Kita nduweni $\Sat{M}{!B}[s_1']$.
       Variabel bebas ing~$!B$ kalebu $x_1$, \dots, $x_n$, lan $x$.
       $s_1'(x_i) = s_2'(x_i)$, amarga $s_1'$ lan $s_2'$ iku
       varian-$x$ saka $s_1$ lan~$s_2$ miturut urutane, lan miturut
@@ -266,7 +261,7 @@ marang himpunan !!{sentence}s.
 Yen $\Gamma$ iku himpunan !!{sentence}s, kita
 kandha yen !!a{structure}~$\Struct M$ \emph{nyukupi}~$\Gamma$,
 $\Sat{M}{\Gamma}$, yen lan mung yen $\Sat{M}{!A}$
-kanggo kabeh $!A \in \Gamma$. Cathetan koreksi sumber OLPL-749: sumber mbaleni lambang himpunan ing frasa pambuka; sebutan kapindho dibusak tanpa ngowahi definisi.
+kanggo kabeh $!A \in \Gamma$.
 \end{defn}
 
 \begin{prop}\ollabel{prop:sentence-sat-true}
@@ -304,7 +299,7 @@ Buktèkna \olref[fol][syn][ass]{prop:sat-quant}.
 
 \begin{prob}
 \DeclareRobustCommand{\VDash}{\mathrel{||}\joinrel\Relbar}
-Upamakna $\Lang L$ iku basa tanpa !!{function}s. Yen basa iki durung nduweni cukup simbol konstanta kang ora katon ing formula, gunakna perluasan basa kanthi konstanta anyar cacah tanpa wates. Cathetan koreksi sumber SOL6-F005: klausa kuantor lan panggantos ing latihan iki mbutuhake konstanta anyar, dene basa tanpa fungsi ora mesthi nduweni konstanta kang cukup. Kanggo
+Upamakna $\Lang L$ iku basa tanpa !!{function}s. Yen basa iki durung nduweni cukup simbol konstanta kang ora katon ing formula, gunakna perluasan basa kanthi konstanta anyar cacah tanpa wates. Kanggo
 !!{structure}~$\Struct M$, $c$ !!a{constant}, lan
 $a \in \Domain M$, tetapna $\Struct M[a/c]$ minangka
 !!{structure} kang padha karo~$\Struct M$ kajaba

@@ -1,6 +1,7 @@
-% Part: applied-modal-logics
+% Part: applied-modal-logic
 % Chapter: epistemic-logic
 % Section: truth-at-w
+%
 
 \documentclass[../../../include/open-logic-section]{subfiles}
 
@@ -8,12 +9,12 @@
 
 \olfileid{aml}{el}{trw}
 
-\olsection{Kabeneran ing Sawijining Jagad}
+\olsection{Kabeneran ing Sawijining Donya}
 
 Kaya ing logika modal lumrah, saben model epistemik nemtokake !!{formula}s
-endi kang bener ing saben jagad ing model iku. Kita nggunakake notasi kang
+endi kang bener ing saben donya ing model iku. Kita nggunakake notasi kang
 padha, ``model $\mModel{M}$ ndadekake !!{formula}~$!A$ bener ing
-jagad~$w$,'' kanggo gagasan dhasar semantik relasional. Relasi kabeneran
+donya~$w$,'' kanggo gagasan dhasar semantik relasional. Relasi kabeneran
 iki ditetepake kanthi induksi lan padha karo ing logika modal lumrah
 kanggo kabeh operator nonmodal.
 
@@ -26,13 +27,13 @@ kanggo kabeh operator nonmodal.
   \tagitem{prvTrue}{\indcase{!A}{\ltrue}{$\mSat{M}{\ltrue}[w]$ tansah kelakon}.}{}
   \item $\mSat{M}{p}[w]$ yen lan mung yen $w \in V(p)$
   \tagitem{prvNot}{\indcase{!A}{\lnot !B}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
-    $\mSat{M}{!B}[w]$ ora kelakon}.}{}
+    $\mSat/{M}{!B}[w]$}.}{}
   \tagitem{prvAnd}{\indcase{!A}{(!B \land !C)}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
     $\mSat{M}{!B}[w]$ lan $\mSat{M}{!C}[w]$}.}{}
   \tagitem{prvOr}{\indcase{!A}{(!B \lor !C)}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
     $\mSat{M}{!B}[w]$ utawa $\mSat{M}{!C}[w]$} (utawa loro-lorone).}{}
   \tagitem{prvIf}{\indcase{!A}{(!B \lif !C)}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
-    $\mSat{M}{!B}[w]$ ora kelakon utawa $\mSat{M}{!C}[w]$}.}{}
+    $\mSat/{M}{!B}[w]$ utawa $\mSat{M}{!C}[w]$}.}{}
   \tagitem{prvIff}{\indcase{!A}{(!B \liff !C)}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
     $\mSat{M}{!B}[w]$ lan $\mSat{M}{!C}[w]$ loro-lorone kelakon,
     utawa $\mSat{M}{!B}[w]$ lan $\mSat{M}{!C}[w]$ loro-lorone ora kelakon}.}{}
@@ -41,20 +42,21 @@ kanggo kabeh operator nonmodal.
     $\mSat{M}{!B}[w']$ kanggo saben $w' \in W$ kang nyukupi $R_a ww'$}
   \end{enumerate} 
 \end{defn}
+Notasi $\mSat/{M}{!B}[w]$ tegesé rumus ora dicukupi ing donya w.
 
 Nanging, ing kene kita kudu mikirake watesan tumrap relasi
 aksesibilitas. Miturut klausa~\olref{defn:sub:mmodels-box},
 !!a{formula}~$\Knows_a !B$ bener ing~$w$ yen ora ana~$w'$ kang
 nyukupi $R_a ww'$. Iki padha karo klausa ing logika modal lumrah:
-yen sawijining jagad ora duwe penerus, kabeh rumus mawa
-$\Box$ bener kanthi kosong ing jagad iku. Tafsiran iki angel
+yen sawijining donya ora duwe penerus, kabeh rumus mawa
+$\Box$ bener kanthi kosong ing donya iku. Tafsiran iki angel
 ditampa yen $\Knows$ dianggep nglambangake \emph{kawruh}.
 Kita lumrahe nganggep \emph{ora ana} kahanan kang ndadekake sawijining agen
 ngerti $!A$ lan $\lnot !A$ bebarengan.
 
 Salah siji cara kanggo ngatasi prakara iki yaiku mesthekake yen
 relasi aksesibilitas ing logika epistemik tansah \emph{refleksif}.
-Iki kurang luwih cocog karo gagasan yen jagad nyata selaras karo
+Iki kurang luwih cocog karo gagasan yen donya nyata selaras karo
 informasi kang diduweni sawijining agen. Logika epistemik biasane
 nggunakake S5, nanging ana uga kang nggunakake sistem luwih ringkih,
 gumantung marang apa kang dikarepake supaya diwakili dening relasi
@@ -92,7 +94,7 @@ $\Knows_a$.
     \end{enumerate}
 \end{prob}
 
-Sawise menehi definisi dhasar kabeneran ing sawijining jagad, kita
+Sawise menehi definisi dhasar kabeneran ing sawijining donya, kita
 bisa ngetrapake pangertèn semantik liyane saka logika modal lumrah,
 kayata validitas modal lan konsekuensi logis, marang cara anyar iki
 kanggo napsirake operator modal.

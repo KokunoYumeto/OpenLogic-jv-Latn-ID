@@ -22,9 +22,12 @@ himpunan $X$:
 \end{thm}
 
 \begin{proof}
-Miturut definisi aljabar Dedekind, $N = \closureofunder{s}{o}$.
-Saiki yen ${o} \in X$ lan $(\forall {n} \in N)(n \in X \lif
-{s}({n}) \in X)$, mula $N = \closureofunder{s}{o} \subseteq X$.
+Tetepna $Y=N\cap X$. Amarga $o\in N$ lan $o\in X$, kita
+duwé $o\in Y$. Yèn $n\in Y$, mula $s(n)\in N$ amarga $s$
+iku swafungsi ing $N$, lan $s(n)\in X$ miturut hipotesis. Mula
+$s(n)\in Y$. Dadi $Y$ iku subhimpunan $s$-katutup ing $N$ kang
+ngemot $o$. Miturut definisi aljabar Dedekind lan sipat tutupan,
+$N=\closureofunder{s}{o}\subseteq Y\subseteq X$.
 \end{proof}
 
 Amarga induksi iku ciri mligi wilangan natural, intine kaya mangkene. Saka
@@ -46,8 +49,10 @@ $\phi(x)$, kang bisa duwe paramèter:
 \end{cor}
 
 \begin{proof}
-Jupuken $X = \Setabs{n \in N}{\phi(n)}$, banjur gunakna
-\olref{thm:dedinfiniteinduction}
+Miturut Asas Pamisahan, $X = \Setabs{n \in N}{\phi(n)}$ iku
+himpunan. Hipotesis skema mènèhi $o\in X$ lan nutup $X$ tumrap
+$s$. Mula \olref{thm:dedinfiniteinduction} mènèhi $N\subseteq X$,
+yaiku $(\forall n\in N)\phi(n)$.
 \end{proof}
 
 Ing asil iki, kita nyebut formula kang ``duwe paramèter''. Tegese,

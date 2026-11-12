@@ -8,25 +8,26 @@
 
 \olfileid{sol}{met}{nax}
 
-\olsection{Logika Orde Kapindho Ora Bisa Diaksiomatisasi}
+\olsection{Logika Tataran Kapindho Ora Bisa Diaksiomatisasi kanthi Efektif}
 
 
 \begin{thm}
 \ollabel{thm:sol-undecidable}
-Logika orde kapindho ora bisa diputusake.
+Logika tataran kapindho ora bisa diputusake.
 \end{thm}
 
 \begin{proof}
-!!{sentence} orde kapisan valid ing logika orde kapisan yen lan
-mung yen valid ing logika orde kapindho, dene logika orde
+!!{sentence} tataran kapisan valid ing logika tataran kapisan yen lan
+mung yen valid ing logika tataran kapindho, dene logika tataran
 kapisan ora bisa diputusake.
 \end{proof}
 
 \begin{thm}
 \ollabel{cor:sol-not-axiomatizable}
-Ora ana sistem !!{derivation} kang sahih lan jangkep kanggo
-logika orde kapindho.
+Ora ana sistem efektif !!{derivation} kang sahih lan jangkep kanggo
+logika tataran kapindho.
 \end{thm}
+Ora ana sistem efektif kang sahih lan jangkep. Yen ora mbutuhake efektivitas, kabeh validitas bisa dijupuk minangka aksioma, nanging ora menehi enumerasi komputabel kang dibutuhake bukti iki.
 
 \begin{proof}
 Upamana $!A$ iku !!a{sentence} ing basa aritmetika.
@@ -34,25 +35,25 @@ $\Sat{N}{!A}$ yen lan mung yen $\Th{PA^2} \Entails !A$.
 Upamana $!P$ iku konjungsi sangang aksioma saka~$\Th{PA^2}$.
 $\Th{PA^2} \Entails !A$ yen lan mung yen
 $\Entails !P \lif !A$, yaiku, kanggo saben struktur,
-$\Sat{M}{!P \lif !A}$. Cathetan koreksi sumber OLPL-808: kurung kurawal kanggo pratelan kepuasan ing naskah sumber salah papan; wujud ing kene njaga maksud validitas implikasi. Saiki gatekna !!{sentence}
+$\Sat{M}{!P \lif !A}$. Sadurunge panggantian ing ngisor, pilih kabeh variabel anyar seger lan ganti jeneng variabel kaiket ing P lan A yen perlu supaya ora ana variabel kang kacekel kuantor liyane. Saiki gatekna !!{sentence}
 $\lforall[z][\lforall[u][\lforall[u'][\lforall[u''][\lforall[L][(!P' \lif !A')]]]]]$
 kang diasilake kanthi ngganti $\Obj{0}$ dadi $z$,
 $\prime$ dadi variabel fungsi siji-papan $u$,
 $+$ lan $\times$ dadi variabel fungsi rong-papan
 $u'$ lan $u''$, kanthi urut, sarta $<$ dadi
 variabel relasi rong-papan~$L$, banjur kabeh dikuwantifikasi
-universal. Ukara iki valid ing logika orde kapindho murni
+universal. Ukara iki valid ing logika tataran kapindho murni
 yen lan mung yen ukara asal valid, yen lan mung yen
 $\Th{PA^2} \Entails !A$, yen lan mung yen
-$\Sat{N}{!A}$. Mula yen ana sistem bukti kang sahih
-lan jangkep kanggo logika orde kapindho, kita bisa
+$\Sat{N}{!A}$. Mula yen ana sistem bukti efektif kang sahih
+lan jangkep kanggo logika tataran kapindho, kita bisa
 nggunakake kanggo netepake enumerasi komputabel
-$f\colon \Nat \to \Sent[L_A]$ saka !!{sentence}s kang
-bener ing~$\Struct{N}$. Fungsi iki bakal bisa
-direpresentasikake ing~$\Th{Q}$ dening sawijining
-formula orde kapisan~$!B_f(x, y)$. Banjur
+$f\colon \Nat \to \Nat$ kang asil-asile persis kode Gödel saka !!{sentence}s kang
+bener ing~$\Struct{N}$. Fungsi kang diwakili ing aritmetika ngasilake wilangan kode, dudu obyek sintaksis langsung. Enumerasi digawé kanthi nggoleki bukti ukara kang wis ditransformasi lan mbalekake kode ukara aritmetika asale. Fungsi iki bakal bisa
+diwakili ing~$\Th{Q}$ dening sawijining
+formula tataran kapisan~$!B_f(x, y)$. Banjur
 !!{formula}~$\lexists[x][!B_f(x, y)]$ bakal netepake
-himpunan !!{sentence}s orde kapisan kang bener
+himpunan !!{sentence}s tataran kapisan kang bener
 ing~$\Struct{N}$, kosok balen karo Teorema Tarski.
 \end{proof}
 

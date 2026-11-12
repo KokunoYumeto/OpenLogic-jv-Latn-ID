@@ -27,8 +27,8 @@ dicukupi. Konsistensi iku gagasan ing teori bukti: tegese sistem
 !!{derivation} kita ora bisa ngasilake !!{derivation}s tartamtu.
 Nanging, apa mung amarga ora ana !!{derivation}s jinis tartamtu
 saka~$\Gamma$ banjur mesthi ana
-\iftag{FOL}{!!a{structure}~$\Struct{M}$}{!!{valuation}{~$\pAssign{v}$}}
-kanthi $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$? Cathetan koreksi sumber OLPL-739: syarat nyukupi himpunan premis ditrapake marang cabang struktur lan valuasi; ing sumber, kurung kurawal nempatake syarat iki mung ing cabang valuasi. Sadurunge
+\iftag{FOL}{!!a{structure}~$\Struct{M}$}{!!a{valuation}~$\pAssign{v}$}
+kanthi $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$? Sadurunge
 teorema kelengkapan pisanan dibuktekake---malah sadurunge ana sistem
 !!{derivation} kang saiki digunakake---matematikawan Jerman gedhe,
 David Hilbert, duwe panemu yen konsistensi teori matematika njamin
@@ -40,6 +40,9 @@ dheweke nyatakake mangkene:
   kang ditegesi dening aksioma kasebut ana. Kanggo aku, iki paugeran
   kabeneran lan anane.
 \end{quote}
+Layang Hilbert marang Frege, 29 Desember 1899. Pethikan Jawa manut teks
+ing \emph{The Open Logic Text}, kang cocog karo terjemahan Hans Kaal,
+\emph{Philosophical and Mathematical Correspondence} (1980), kaca 39--40.
 Frege mbantah kanthi tegas. Formulasi kapindho teorema kelengkapan
 nuduhake yen Hilbert bener paling ora miturut teges iki: yen
 aksioma-aksioma konsisten, mula ana \emph{sawijining}
@@ -53,25 +56,23 @@ kang nuduhake $\Gamma \Proves !A$ iku winates lan mula mung bisa
 nggunakake !!{sentence}s kanthi cacah winates saka~$\Gamma$, saka
 teorema kelengkapan nderek manawa yen $!A$ dadi akibat saka~$\Gamma$,
 ukara iku wis dadi akibat saka sawijining subhimpunan winates
-saka~$\Gamma$. Iki diarani \emph{kekompakan}. Kanthi ekuivalen, yen
-saben subhimpunan winates saka~$\Gamma$ konsisten, mula $\Gamma$
-dhewe mesthi konsisten.
+saka~$\Gamma$. Iki diarani \emph{kekompakan}. Yèn saben subhimpunan winates bisa dicukupi,
+$\Gamma$ uga bisa dicukupi. Kanthi kasahihan lan kelengkapan, wujud
+iki padha karo pratelan yèn $\Gamma$ konsisten yèn saben subhimpunan
+winatesé konsisten.
 
 Sanadyan teorema kekompakan nderek saka teorema kelengkapan kanthi
 dalan ora langsung lumantar !!{derivation}s, \emph{bukti} teorema
 kelengkapan uga bisa digunakake kanggo mbuktekake kekompakan kanthi
-langsung. Cathetan koreksi sumber OLPL-044: sumber Inggris ngulang
-artikel the ing frasa the proof of; terjemahan iki mulihake frasa
-tunggal kang dikarepake. Bukti kasebut njupuk himpunan !!{sentence}s
-kanthi sipat tartamtu---konsistensi---lan mbangun !!a{structure} saka
-himpunan iki kang nduweni sipat tartamtu (ing perkara iki, struktur
-kasebut nyukupi himpunan mau). Konstruksi kang meh padha bisa
+langsung. Bukti kasebut njupuk himpunan !!{sentence}s
+kanthi sipat tartamtu---konsistensi---lan mbangun \iftag{FOL}{!!a{structure}}{!!a{valuation}} saka
+himpunan iki kang nduweni sipat tartamtu (yaiku nyukupi himpunan mau). Konstruksi kang meh padha bisa
 digunakake kanggo mbuktekake kekompakan kanthi langsung, kanthi miwiti
 saka himpunan !!{sentence}s kang saben subhimpunan winatese bisa
 dicukupi tinimbang saka himpunan kang konsisten.
 \iftag{FOL}{Konstruksi kasebut uga ngasilake akibat liyane, umpamane
-  saben himpunan !!{sentence}s kang bisa dicukupi duwe model winates
-  utawa !!{denumerable}s. (Asil iki diarani teorema
+  kanggo basa tataran kapisan kang kosakatané bisa dietung, saben himpunan
+  !!{sentence}s kang bisa dicukupi nduwèni model winates utawa !!{denumerable}. (Asil iki diarani teorema
   L\"owenheim--Skolem.) Umume, konstruksi !!{structure}s saka
   himpunan !!{sentence}s asring digunakake ing logika, lan sok-sok uga
   ing filsafat.}{}

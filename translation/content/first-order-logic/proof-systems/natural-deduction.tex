@@ -21,9 +21,8 @@ kesimpulan ndherek saka saben disjung. Bukti ora langsung ngidini kita
 netepake kesimpulan kanthi nuduhake yen negasine nuwuhake kontradiksi.
 Bukti kondisional netepake pratelan kondisional ``yen \dots mula
 \dots'' kanthi nuduhake yen konsekuen ndherek anteseden. Deduksi
-natural iku formalisasi sawetara inferensi natural iki. Saben konektif
-logis lan kuantor duwe rong aturan, yaiku aturan introduksi lan
-eliminasi, lan saben aturan cocog karo sawijining pola inferensi
+natural iku formalisasi sawetara inferensi natural iki. Kanggo saben konektif logis kang nduwèni argumèn\iftag{FOL}{ lan saben kuantor}{},
+ana aturan introduksi lan eliminasi kang cocog karo pola inferensi
 natural. Tuladhane, $\Intro{\lif}$ cocog karo bukti kondisional, lan
 $\Elim{\lor}$ karo bukti miturut kasus. Salah siji aturan kang mligi
 prasaja yaiku $\Elim{\land}$, kang ngidini inferensi saka $!A \land !B$
@@ -37,16 +36,16 @@ derivasi kesimpulan. Ing deduksi natural, sawetara !!{formula}s godhong
 duwe peran ing njero !!{derivation}, nanging wis ``entek digunakake''
 nalika !!{derivation} tekan kesimpulan. Iki cocog karo laku ing
 penalaran nyata, yaiku ngenalake hipotesis kang mung lumaku sedhela.
-Tuladhane, ing bukti miturut kasus, kita nganggep saben disjung bener;
+Tuladhane, ing bukti miturut kasus, kita nganggep saben disjung bener ing kasus kang kapisah;
 ing bukti kondisional, kita nganggep anteseden bener; ing bukti ora
 langsung, kita nganggep negasi saka kesimpulan bener. Cara ngenalake
 asumsi hipotetis banjur nyingkirake asumsi iku kanggo netepake tahap
 antara dadi ciri khas deduksi natural. Formula ing godhong
 !!{derivation} deduksi natural diarani asumsi, lan sawetara aturan
 inferensi bisa ``!!{discharge}'' asumsi kasebut. Tuladhane, yen kita
-duwe !!a{derivation} saka~$!B$ adhedhasar sawetara asumsi kang
-ngemot~$!A$, aturan $\Intro{\lif}$ ngidini kita nyimpulake~$!A \lif !B$
-lan mbubarake saben asumsi kanthi wujud~$!A$. (Kanggo nyathet asumsi
+duwé !!a{derivation} saka~$!B$ kanthi sawetara asumsi, aturan
+$\Intro{\lif}$ ngidini kita nyimpulaké~$!A \lif !B$ lan mbubaraké
+sawetara asumsi kanthi wujud~$!A$ kang dipilih, kalebu yèn ora ana kang dibubaraké. (Kanggo nyathet asumsi
 endi kang dibubarake ing inferensi endi, kita menehi angka minangka
 label kanggo inferensi lan asumsi kang dibubarake.) Asumsi kang isih
 !!{undischarged} ing pungkasan !!{derivation} bebarengan cukup kanggo

@@ -9,10 +9,11 @@
 \olfileid{sfr}{arith}{cuts}
 \olsection{Saka $\Rat$ menyang $\Real$}
 
-Intine, Sipat Kajangkepan nuduhake yen saben titik $\alpha$ ing garis
-real mbage garis iku dadi rong paro kanthi sampurna: paro kang duwe
-$\alpha$ minangka wates ndhuwur paling cilik, lan paro kang duwe
-$\alpha$ minangka wates ngisor paling gedhe. Kanggo \emph{mbangun}
+Saben titik ing garis real misahaké wilangan ing sangisoré saka wilangan kang paling ora padha karo titik iku.
+Titik $\alpha$ iku wates ndhuwur paling cilik kanggo pérangan ngisor
+lan wates ngisor paling gedhé kanggo pérangan dhuwur. Kanggo $\alpha$
+kang rasional, potongan ngisor nglumpukaké wilangan rasional kang
+luwih cilik kanthi ketat. Kanggo \emph{mbangun}
 wilangan real saka wilangan rasional, Dedekind ngusulake supaya kita
 nganggep wilangan real minangka \emph{potongan} kang misahake wilangan
 rasional. Tegese, kita ngenali $\sqrt{2}$ karo \emph{potongan} kang
@@ -67,11 +68,10 @@ Kita luwih dhisik ngaku yen $\lambda$ iku potongan:
 \begin{enumerate}
 \item Amarga $S$ ora kosong, paling ora ana siji potongan ing $S$, mula
 $\emptyset \neq \lambda$. Amarga $S$ iku himpunan potongan, $\lambda
-\subseteq \Rat$. Amarga $S$ duwe wates ndhuwur, ana $p \in \Rat$ kang
-ora dadi anggota potongan $\alpha \in S$ endi wae. Dadi $p\notin \lambda$, mula
-$\lambda \subsetneq \Rat$. Cathetan koreksi sumber OLP-0045: anane
-potongan ing himpunan kasebut dumadi amarga himpunane ora kosong, dudu
-amarga duwe wates ndhuwur kaya kang kasebut ing sumber Inggris (JV-D027).
+\subseteq \Rat$. Anggepen $U$ iku potongan kang dadi wates ndhuwur kanggo $S$.
+Amarga potongan iku sejati, ana $p \in \Rat$ kanthi $p\notin U$.
+Mula $p$ ora dadi anggota potongan $\alpha \in S$ endi waé.
+Dadi $p\notin \lambda$, mula $\lambda \subsetneq \Rat$.
 \item Upamakna $p < q \in \lambda$. Dadi ana $\alpha \in S$ saengga
 $q \in \alpha$. Amarga $\alpha$ iku potongan, $p \in \alpha$. Dadi
 $p \in \lambda$.
@@ -103,24 +103,26 @@ Banjur kita netepake:
 	\alpha + \beta &= \Setabs{p + q}{p \in \alpha \land q \in \beta}\\
 %	\alpha - \beta &\defis \Setabs{p - q}{p \in \alpha \land q \in \Rat \setminus \beta}\\
 	\alpha \times \beta &=
-	\Setabs{p \times q}{0 \leq p \in \alpha \land 0 \leq q \in \beta} \cup 0^\mathbb{R} & \text{yen }\alpha, \beta \geq 0_\Real
+	\Setabs{p \times q}{0 \leq p \in \alpha \land 0 \leq q \in \beta} \cup 0_\Real & \text{yen }\alpha, \beta \geq 0_\Real
 %	\alpha \div \beta &\defis
 %\Setabs{\nicefrac{p}{q}}{p \in \alpha \land q \in \Rat \setminus \beta}  & \text{yen }\alpha \geq 0_\Real, \beta > 0_\Real
 \end{align*}
 Kanggo nangani kasus ping-pingan liyane, luwih dhisik netepna: %yen $0_\Real \times \alpha = 0_\Real = \alpha \times 0_\Real$, lan tambahna:
 \begin{align*}
-	-\alpha &= \Setabs{p - q}{p < 0 \land q \notin \alpha}
+	-\alpha &= \Setabs{p - q}{p,q \in \Rat \land p < 0 \land q \notin \alpha}
 \end{align*}
 banjur netepna:
 \begin{align*}
 	\alpha \times \beta &\defis
 	\begin{cases}
+		0_\Real &\text{yèn }\alpha=0_\Real \text{ utawa }\beta=0_\Real\\
 		\mathord{-}\alpha \times \mathord{-}\beta &\text{yen }\alpha < 0_\Real\text{ lan }\beta < 0_\Real\\
 		\mathord{-}(\mathord{-}\alpha \times \beta) &\text{yen }\alpha < 0_\Real \text{ lan }\beta > 0_\Real\\
 		\mathord{-}(\alpha \times \mathord{-}\beta) &\text{yen }\alpha > 0_\Real \text{ lan }\beta < 0_\Real
 	\end{cases}
 \end{align*}
-Banjur kita kudu mriksa yen saben definisi kasebut tansah ngasilake potongan.
+Asil nol iki uga cocog karo rumus kanggo faktor loro kang ora negatif.
+Saben operasi kudu ngasilaké potongan.
 Pungkasan, kita kudu nuduhake kanthi cara kang gampang (nanging dawa) yen
 potongan-potongan kang ditetepake kasebut tumindak persis kaya kang kudune.
 Nanging kabeh rincian kasebut dirembug ing \olref[check]{sec}.

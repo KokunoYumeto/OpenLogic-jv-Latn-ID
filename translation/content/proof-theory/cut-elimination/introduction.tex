@@ -39,28 +39,28 @@ paling wigati lan misuwur. Sepisan, teorema iki nuduhaké
 yèn \Log{G1c} lan \Log{G3c} ora mbutuhaké aturan kang
 sakawit katon mesthi perlu. Nalika mbakuaké bukti nyata,
 kita perlu cara kanggo migunakaké lema. Matématikawan
-biasané mbuktèkaké asil, banjur migunakaké asil mau
-kanggo mbuktèkaké asil liyané. Upamané, bukti asil $L$
+biasané mbuktekaké asil, banjur migunakaké asil mau
+kanggo mbuktekaké asil liyané. Upamané, bukti asil $L$
 (lema) dibakuaké minangka !!{proof} sekèn
 $\Sequent L$. Banjur bukti asil kapindho~$R$ kang
 nganggo~$L$ dibakuaké minangka !!{proof} sekèn
 $L \Sequent R$. Kepriyé kita ngerti ana bukti kanggo~$R$,
 yaiku !!a{proof} sekèn $\Sequent R$ waé?
 Kita kudu bisa nggabungaké rong !!{proof}s iku,
-lan aturan \Cut{} maringi cara kanggo nindakaké.
+lan aturan \Cut{} menehi cara kanggo nindakaké.
 
 Kita wis nyebut yèn \Log{G1c} lan \Log{G3c} iku komplet,
-mula bisa mbuktèkaké saben sekèn kang mesthiné bisa
-dibuktèkaké, yaiku kabèh sekèn valid. Iki bisa
-dibuktèkaké kanthi langsung. Nanging ing jaman Gentzen,
+mula bisa mbuktekaké saben sekèn kang mesthiné bisa
+dibuktekaké, yaiku kabèh sekèn valid. Iki bisa
+dibuktekaké kanthi langsung. Nanging ing jaman Gentzen,
 mung sistem derivasi aksiomatik kang dimangertèni komplet.
-Kanggo nuduhaké yèn \Log{LK} komplet, Gentzen maringi
+Kanggo nuduhaké yèn \Log{LK} komplet, Gentzen menehi
 terjemahan !!{derivation}s saka sistem aksiomatik dadi
 \Log{LK}-!!{proof}s. Terjemahan iki gumantung banget
 marang \Cut{}. Eliminasi cut ora mung wigati kanggo
 logika klasik: akèh logika liya nduwèni kalkulus sekèn.
 Kanggo sawatara logika, bukti langsung kakompletan
-kalkulus sekèné angel utawa ora mungkin, mula mung
+kalkulus sekèné angel utawa ora bisa, mula mung
 terjemahan saka sistem liya (nganggo \Cut) kang bisa
 nuduhaké kakompletan. Ing kahanan mangkono, bukti
 eliminasi cut kanthi cara teori bukti dibutuhaké
@@ -68,31 +68,32 @@ kanggo nuduhaké yèn \Cut{} ora perlu lan sistem tanpa
 \Cut{} iku komplet.
 
 Eliminasi cut uga wigati amarga bisa digunakaké kanggo
-ngolèhké asil liya kang menarik dhéwé. Rong tuladha kang
+ngolèhaké asil liya kang menarik dhéwé. Rong tuladha kang
 bakal kita rembug yaiku lema interpolasi Craig lan
 teorema Herbrand.
 
-Gagasan kanggo mbuktèkaké eliminasi cut lumrahé nuduhaké
+Gagasan kanggo mbuktekaké eliminasi cut lumrahé nuduhaké
 carané !!a{proof} kang nganggo \Cut{} bisa diowahi dadi
 bukti tanpa cut. Owah-owahan iki biasané ``lokal'':
 kita njupuk pérangan saka !!a{proof} (lumrahé
 sub-!!{proof} kang pungkasané nganggo inferènsi \Cut{})
 lan nggantèni nganggo sub-!!{proof} liya kanggo sekèn
 kang padha nanging inferènsi \Cut{}-é wis diilangi
-utawa diganti inferènsi liya. Argumèn mangkono maringi
+utawa diganti inferènsi liya. Argumèn mangkono menehi
 algoritma langkah demi langkah kanggo ngowahi !!{proof}s
 nganggo \Cut{} dadi bukti tanpa cut. Nalika prosedur
-eliminasi cut digunakaké, iki maringi informasi luwih akèh.
+eliminasi cut digunakaké, iki menehi informasi luwih akèh.
 Tuladhané, bukti teori modèl kanggo lema interpolasi
 bisa nuduhaké yèn ``yèn $!A \lif !B$'' valid, banjur
 ana interpolan (kanggo saiki ora perlu dijlentrehaké
 apa interpolan iku). Argumèn teori bukti kang nganggo
-eliminasi cut maringi algoritma kang nampa !!a{proof}
+eliminasi cut menehi algoritma kang nampa !!a{proof}
 kanggo $!A \lif !B$ lan ngasilaké interpolan.
 Béda karo argumèn teori modèl, argumèn teori bukti
 iki \emph{konstruktif}.
 
-Ana rong cara lumrah kanggo mbuktèkaké teorema eliminasi
+
+Ana rong cara lumrah kanggo mbuktekaké teorema eliminasi
 cut. Cara kapisan (wiwit Gentzen) nuduhaké yèn cut paling
 dhuwur ing bukti bisa dibusak, banjur dibusak siji-siji
 nganti entèk. Cara kapindho (wiwitané saka Sch\"utte lan Tait)
@@ -102,7 +103,7 @@ kang !!{formula} cuté luwih jero. Saben cara nduwèni
 kaluwihan lan kakurangan. Ing sawatara sistem, cara siji
 bisa lumaku nanging cara liyané angel utawa malah ora
 mungkin. Mula kita njlentrehaké kaloro cara.
-Kita bakal mbuktèkaké eliminasi cut kanggo~\Log{G3c}.
+Kita bakal mbuktekaké eliminasi cut kanggo~\Log{G3c}.
 Satemah kang bakal kita tuduhaké bisa diilangi dudu
 \Cut{} langsung, nanging \emph{cut kanthi kontèks padha}~\CutCS:
 \[
@@ -118,6 +119,8 @@ minangka aturan admisibel kaya ing \Log{G3c}),
 \Cut{} bisa nyimulasi \CutCS, lan kosok balènané.
 Kita milih \CutCS{} tinimbang \Cut amarga strategi
 eliminasi cut kapisan luwih gampang dijlentrehaké kanggo
-\CutCS, déné strategi kapindho mung lumaku kanggo~\CutCS.
+\CutCS, déné strategi kapindho ing wujud kang dijlentrehaké ing kéné
+migunakaké~\CutCS.
+(Label diagram nganggo cut kanthi kontèks padha. Katrangan strategi kapindho ngenani pambangunan ing kéné, ora ngalangi adaptasi strategi pangkat maksimal kanggo cut biasa.)
 
 \end{document}

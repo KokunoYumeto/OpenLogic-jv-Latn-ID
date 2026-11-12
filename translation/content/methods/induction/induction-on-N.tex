@@ -11,17 +11,17 @@
 \olsection{Induksi ing~$\Nat$}
 
 Ing wujud kang paling prasaja, induksi iku tèknik
-kanggo mbuktekaké asil tumrap kabèh bilangan asli.
+kanggo mbuktekaké asil tumrap kabèh wilangan asli.
 Tèknik iki migunakaké kasunyatan yèn saka $0$,
 kanthi nambah~$1$ bola-bali, kita bakal tekan
-saben bilangan asli. Mula kanggo mbuktekaké
-sawijining bab bener kanggo kabèh bilangan,
+saben wilangan asli. Mula kanggo mbuktekaké
+sawijining bab bener kanggo kabèh wilangan,
 kita bisa (1)~nuduhaké yèn bab iku bener kanggo $0$,
 lan (2)~nuduhaké yèn saben bener kanggo
-bilangan~$n$, bab iku uga bener kanggo bilangan
-sabanjuré~$n+1$. Yèn ukara ``bilangan~$n$
+wilangan~$n$, bab iku uga bener kanggo wilangan
+sabanjuré~$n+1$. Yèn ukara ``wilangan~$n$
 nduwèni sipat $P$'' dicekak dadi $P(n)$
-(lan ``bilangan~$k$ nduwèni sipat $P$''
+(lan ``wilangan~$k$ nduwèni sipat $P$''
 dadi $P(k)$, lan sapanunggalané), bukti
 induksi yèn $P(n)$ kanggo kabèh $n \in \Nat$
 kudu ngemot:
@@ -40,9 +40,9 @@ $P(k+1)$'' kanthi masang~$0$ ing panggonan~$k$.
 Dadi, miturut modus ponens, kita olèh~$P(1)$.
 Saka (2) maneh, kanthi masang~$1$ ing panggonan~$k$,
 kita olèh: yèn $P(1)$ mula~$P(2)$.
-Amarga~$P(1)$ wis kabuktèkaké, modus
+Amarga~$P(1)$ wis kabuktekaké, modus
 ponens mènèhi~$P(2)$, lan saterusé.
-Kanggo sembarang bilangan~$n$, sawisé
+Kanggo sembarang wilangan~$n$, sawisé
 langkah iki diulang $n$~kaping, kita tekan~$P(n)$.
 Dadi (1) lan~(2) bebarengan mbuktekaké~$P(n)$
 kanggo saben $n
@@ -60,13 +60,13 @@ ana enem nilai, saka $1$ nganti~$6$.
 Kanthi rong dadu, kita bisa éntuk
 saben jumlah saka $2$ nganti $12$,
 yaiku $11$ kamungkinan. Kanthi telung
-dadu, saben bilangan saka $3$ nganti
+dadu, saben wilangan saka $3$ nganti
 $18$ bisa metu, yaiku $16$ kamungkinan.
 $1$, $6$, $11$, $16$: katon ana pola.
 Mbokmenawa wangsulané $5n+1$?
 Mesthi $5n+1$ iku cacah paling akèh
 kamungkinan, amarga mung ana $5n+1$
-bilangan saka $n$, nilai paling cilik
+wilangan saka $n$, nilai paling cilik
 kang bisa metu saka $n$ dadu
 (kabèh nuduhaké $1$), nganti $6n$,
 nilai paling gedhé (kabèh nuduhaké $6$).
@@ -79,23 +79,23 @@ nilai paling gedhé (kabèh nuduhaké $6$).
 
 \begin{proof}
 Tetepna $P(n)$ minangka pratelan:
-``Saben bilangan saka $n$ nganti~$6n$
+``Saben wilangan saka $n$ nganti~$6n$
 bisa diéntukaké nganggo $n$~dadu.''
 Kanggo migunakaké induksi, kita buktèkaké:
 \begin{enumerate}
 \item \emph{dhasar induksi} $P(1)$,
-  yaiku kanthi siji dadu, saben bilangan
+  yaiku kanthi siji dadu, saben wilangan
   saka $1$ nganti $6$ bisa metu.
 \item \emph{langkah induksi}: kanggo
   saben $k$, yèn $P(k)$ mula~$P(k+1)$.
 \end{enumerate}
 
-Kasus tanpa dadu wis dibuktèkaké ing ndhuwur.
+Kasus tanpa dadu wis dibuktekaké ing ndhuwur.
 (1) Kabuktèkaké kanthi ndeleng dadu mawa
 $6$ sisih. Dadu iku nduwèni enem sisih,
-lan saben bilangan saka $1$ nganti~$6$
+lan saben wilangan saka $1$ nganti~$6$
 muncul ing salah sijiné. Mula kanthi siji
-dadu saben bilangan saka $1$ nganti~$6$
+dadu saben wilangan saka $1$ nganti~$6$
 bisa diéntukaké.
 
 Kanggo mbuktekaké (2), kita nganggep
@@ -110,7 +110,7 @@ Nanging iki kudu ditindakaké supaya
 hipotesis induksi bisa digunakaké.
 
 Hipotesis induksi nyatakaké yèn kita
-bisa éntuk saben bilangan saka $k$
+bisa éntuk saben wilangan saka $k$
 nganti~$6k$ nganggo $k$~dadu.
 Yèn kita éntuk~$1$ saka dadu urutan
 $(k+1)$, jumlahé nambah $1$.
@@ -120,11 +120,11 @@ $k$~dadu banjur éntuk~$1$ saka
 dadu urutan $(k+1)$. Nilai endi kang isih
 durung? Nilai saka $6k+2$ nganti
 $6k+6$. Iki bisa diéntukaké kanthi
-$k$ dadu nuduhaké $6$s, banjur
-salah siji bilangan saka $2$ nganti
+$k$ dadu nuduhaké $6$, banjur
+salah siji wilangan saka $2$ nganti
 $6$ metu saka dadu urutan $(k+1)$.
 Mula kanthi $k+1$ dadu kita
-bisa éntuk saben bilangan saka $k+1$
+bisa éntuk saben wilangan saka $k+1$
 nganti $6(k+1)$, yaiku
 wis mbuktekaké~$P(k+1)$ saka
 anggepan~$P(k)$, hipotesis induksi.
@@ -132,18 +132,18 @@ anggepan~$P(k)$, hipotesis induksi.
 
 Kita asring migunakaké induksi kanggo
 mbuktekaké bab sawijining rerangkening
-obyèk, kaya bilangan utawa himpunan,
-kang dhéwé didhéfinisikaké
+obyèk, kaya wilangan utawa himpunan,
+kang dhéwé ditetepaké
 ``kanthi induktif'': obyèk urutan
-$(n+1)$ didhéfinisikaké saka obyèk
+$(n+1)$ ditetepaké saka obyèk
 urutan $n$. Upamané, jumlah~$s_n$
-saka bilangan asli nganti~$n$ bisa
-didhéfinisikaké kanthi
+saka wilangan asli nganti~$n$ bisa
+ditetepaké kanthi
 \begin{align*}
   s_0 & = 0\\
   s_{n+1} & = s_n + (n+1)
 \end{align*}
-Dhéfinisi iki mènèhi:
+Definisi iki mènèhi:
 \begin{align*}
   s_0 & = 0,\\
   s_1 & = s_0 + 1 && = 1,\\
@@ -170,7 +170,7 @@ mbuktekaké yèn $s_n = n(n+1)/2$.
   kita kudu nuduhaké
   $s_{k+1} = (k+1)(k+2)/2$.
 
-  Pira $s_{k+1}$? Miturut dhéfinisi,
+  Pira $s_{k+1}$? Miturut definisi,
   $s_{k+1} = s_k + (k+1)$.
   Miturut hipotesis induksi,
   $s_k = k(k+1)/2$. Iki bisa
@@ -186,9 +186,9 @@ mbuktekaké yèn $s_n = n(n+1)/2$.
 
 Piwulang wigatiné: yèn arep mbuktekaké
 pratelan babagan barisan $a_n$ kang
-didhéfinisikaké kanthi induktif,
+ditetepaké kanthi induktif,
 induksi dadi cara kang lumrah.
-Senajan barisané ora didhéfinisikaké
+Senajan barisané ora ditetepaké
 mangkono, kaya kamungkinan asil
 uncalan dadu, induksi tetep bisa
 digunakaké yèn kasus~$k+1$

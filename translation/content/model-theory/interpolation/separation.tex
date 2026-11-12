@@ -74,11 +74,8 @@ ing $\Lang{L}'_0$. Banjur $\Gamma \Entails
 yen ukara pamisah kang digawé saka $!C$
 ngemot luwih saka siji
 !!{constant} anyar kaya mangkono, carane padha).
-Cathetan cakupan SOL6-F027: sadurunge konstanta anyar diganti variabel x kanggo nggawe formula asal, jeneng variabel kaiket ing ukara pamisah diganti yen perlu supaya ora ana kang diarani x. Kanthi iki, penggantian konstanta dening x ora dicekel dening kuantor, lan mung x kang dadi variabel bebas.
-Cathetan koreksi sumber OLPL-112:
-sing bisa ngemot konstanta anyar iku
-ukara pamisah ing basa kang digedhekake,
-dudu formula asal ing basa lawas.
+Sadurungé ngganti konstanta anyar nganggo variabel x, gantenana jeneng variabel kaiket yèn perlu. Kanthi mangkono, panggantos x ora dicekel kuantor lan mung x kang dadi variabel bebas.
+Ukara pamisah bisa ngemot konstanta anyar saka basa kang dijembarake.
 Miturut kompaktitas, ana subhimpunan \emph{winates}
 $\Gamma_0$ saka $\Gamma$ lan $\Delta_0$ saka
 $\Delta$ kang njalari $\Gamma_0 \Entails
@@ -94,10 +91,7 @@ Saka kang kapisan, kanthi Generalisasi, kita oleh
 $!G \Entails \lforall[x][!C]$; saka kang kapindho,
 kanthi kontraposisi, $\Subst{!C}{c}{x} \Entails
 \lnot !H$, mula uga $\lforall[x][!C]
-\Entails \lnot !H$. Cathetan koreksi sumber
-OLPL-111: simbol delta ing sumber ora ditegesi;
-ing langkah iki sing dimaksud yaiku konjungsi
-kang diwenehi jeneng H. Kanthi kontraposisi maneh,
+\Entails \lnot !H$. Kanthi kontraposisi maneh,
 iki menehi $!H \Entails \lnot \lforall[x][!C]$.
 Miturut monotonisitas,
 \begin{align*}
@@ -124,11 +118,6 @@ $\Gamma \cup \{ \lexists[x][!S],
 \Subst{!S}{c}{x}\}$ lan $\Delta$, dene
 $\Gamma \cup \{\lexists[x][!S] \}$ lan
 $\Delta$ ora bisa dipisahake.
-Cathetan koreksi sumber OLPL-113:
-argumen eksistensial ing sumber nate
-ditulis nganggo kurung kurawal;
-ing kene nganggo wangun opsional
-kang padha karo panganggone liyane.
 Kita bedakake rong kasus:
 \begin{enumerate}
 \item $c$ ora katon ing $!C$: ing kasus iki,
@@ -143,11 +132,7 @@ Kita bedakake rong kasus:
 \item $c$ katon ing ukara pamisah $!C$;
   saiki gunakake $!C$ kanggo formula asal
   kang, sawise substitusi, menehi ukara
-  $\Subst{!C}{c}{x}$. Cathetan koreksi sumber
-  OLPL-114: sumber nggunakake lambang C
-  kanggo ukara pamisah lan formula sadurunge
-  substitusi; rong panganggone dibedakake
-  kanthi cetha ing kene. Kaya ing SOL6-F027, variabel kaiket ing ukara pamisah diganti jenenge luwih dhisik yen perlu, supaya penggantian c dening x ora nyebabake capture. Banjur kita duwe
+  $\Subst{!C}{c}{x}$. Gantenana jeneng variabel kaiket ing ukara pamisah yèn perlu supaya substitusi ora njalari panangkepan variabel. Banjur kita duwe
   \[
   \Gamma \cup \{ \lexists[x][!S], \Subst{!S}{c}{x}\} \Entails \Subst{!C}{c}{x},
   \]

@@ -15,7 +15,8 @@
 Kita bisa mbuktekake Teorema Kekompakan kanthi langsung, tanpa
 nggunakake Teorema Kelengkapan, kanthi gagasan kang padha karo bukti
 teorema kelengkapan. Ing bukti Teorema Kelengkapan, kita miwiti saka
-himpunan~$\Gamma$ kang konsisten saka !!{sentence}s, nggedhekake dadi
+himpunan~$\Gamma$ kang konsisten saka !!{sentence}s\iftag{FOL}{ ing
+basa kang bisa dietung}{}, nggedhekake dadi
 himpunan kang konsisten\iftag{FOL}{, jenuh,}{} lan !!{complete}, yaiku
 himpunan~$\Gamma^*$ saka !!{sentence}s, banjur nuduhake yen ing
 \iftag{FOL}{model term~$\Struct{M(\Gamma^*)}$}{!!{valuation}~
@@ -23,15 +24,15 @@ himpunan~$\Gamma^*$ saka !!{sentence}s, banjur nuduhake yen ing
 kang dibangun saka $\Gamma^*$, kabeh !!{sentence}s saka~$\Gamma$ iku
 bener, mula $\Gamma$ bisa dicukupi.
 
-Kita bisa nggunakake metodhe kang padha kanggo nuduhake yen himpunan
-ukara kang bisa dicukupi kanthi winates uga bisa dicukupi. Kita mung
+Kita bisa nggunakake metodhe kang padha kanggo nuduhaké yèn himpunan
+ukara\iftag{FOL}{ ing basa kang bisa dietung}{} kang bisa dicukupi kanthi winates uga bisa dicukupi. Kita mung
 kudu mbuktekake versi asil-asil kang cocog lan tumuju marang lemma
 bebener, kanthi ngganti “konsisten” dadi “bisa dicukupi kanthi
 winates.”
 
 \begin{prop}
 \ollabel{prop:fsat-ccs}
-Upamana $\Gamma$ iku !!{complete} lan bisa dicukupi kanthi winates.
+Upamana $\Gamma$ himpunan ukara kang !!{complete} lan bisa dicukupi kanthi winates.
 Banjur:
 \begin{enumerate}
 \tagitem{prvAnd}{$(!A \land !B) \in \Gamma$
@@ -59,9 +60,10 @@ Buktekna \olref[pl][com][cpd]{prop:fsat-ccs}. Aja nggunakake $\Proves$.
 
 \iftag{FOL}{%
 \begin{lem}
-\ollabel{lem:fsat-henkin} Saben himpunan~$\Gamma$ kang bisa dicukupi
-kanthi winates bisa digedhekake dadi himpunan jenuh~$\Gamma'$ kang
-bisa dicukupi kanthi winates.
+\ollabel{lem:fsat-henkin} Saben himpunan ukara~$\Gamma$ ing basa
+$\Lang{L}$ kang bisa dietung lan bisa dicukupi kanthi winates bisa
+digedhèkaké dadi himpunan jenuh~$\Gamma'$ ing ekspansi Henkin
+$\Lang{L'}$ kang bisa dicukupi kanthi winates.
 \end{lem}
 }{}
 
@@ -76,7 +78,7 @@ nggunakake !!{derivation}s utawa konsistensi.)
 
 \iftag{FOL}{
 \begin{prop}\ollabel{prop:fsat-instances}
-Upamana $\Gamma$ jangkep, bisa dicukupi kanthi winates, lan jenuh.
+Upamana $\Gamma$ himpunan ukara jangkep, bisa dicukupi kanthi winates, lan jenuh.
 \begin{tagenumerate}{prvEx,prvAll}
 \tagitem{prvEx}{$\lexists[x][!A(x)] \in \Gamma$ yen lan mung yen
   $!A(t) \in \Gamma$ kanggo paling ora siji term katutup~$t$.}{}
@@ -93,8 +95,9 @@ Buktekna \olref[fol][com][cpd]{prop:fsat-instances}.
 \tagendprob
 
 \begin{lem}
-\ollabel{lem:fsat-lindenbaum} Saben himpunan~$\Gamma$ kang bisa
-dicukupi kanthi winates bisa digedhekake dadi himpunan~$\Gamma^*$
+\ollabel{lem:fsat-lindenbaum} Saben himpunan ukara~$\Gamma$
+\iftag{FOL}{ing basa kang bisa dietung }{}kang bisa dicukupi kanthi winates
+bisa digedhèkaké ing basa kang padha dadi himpunan~$\Gamma^*$
 kang !!a{complete} lan bisa dicukupi kanthi winates.
 \end{lem}
 
@@ -117,8 +120,9 @@ bisa dicukupi kanthi winates.)
 \tagendprob
 
 \begin{thm}[Kekompakan]
-\ollabel{thm:compactness-direct} $\Gamma$ bisa dicukupi yen lan mung
-yen bisa dicukupi kanthi winates.
+\ollabel{thm:compactness-direct} Upamana $\Gamma$ himpunan ukara
+\iftag{FOL}{ing basa kang bisa dietung}{}. $\Gamma$ bisa dicukupi
+yèn lan mung yèn bisa dicukupi kanthi winates.
 \end{thm}
 
 \begin{proof}
@@ -131,24 +135,31 @@ dicukupi kanthi winates.
 
 Saiki upamana $\Gamma$ bisa dicukupi kanthi winates.\iftag{FOL}{
 Miturut \olref{lem:fsat-henkin}, ana himpunan $\Gamma' \supseteq
-\Gamma$ kang bisa dicukupi kanthi winates lan jenuh.}{} Miturut
+\Gamma$ kang bisa dicukupi kanthi winates lan jenuh ing basa
+Henkin~$\Lang{L'}$.}{} Miturut
 \olref{lem:fsat-lindenbaum}, $\iftag{FOL}{\Gamma'}{\Gamma}$ bisa
 digedhekake dadi himpunan~$\Gamma^*$ kang !!a{complete} lan bisa
 dicukupi kanthi winates\iftag{FOL}{, lan $\Gamma^*$ isih jenuh}{}.
 Bangunen \iftag{FOL}{model term~$\Struct{M(\Gamma^*)}$}{!!{valuation}~
-$\pAssign{v(\Gamma^*)}$} kaya ing
-\olref[mod]{defn:termmodel}.\iftag{FOL}{ Catheten yen
-\olref[mod]{prop:quant-termmodel} ora gumantung marang kasunyatan yen
-$\Gamma^*$ konsisten (utawa !!{complete} utawa jenuh), nanging mung
-marang kasunyatan yen $\Struct{M(\Gamma^*)}$ katutup.}{}
-Bukti Lemma Bebener (\olref[mod]{lem:truth}) tetep lumaku yen kita
-ngganti rujukan menyang \olref[ccs]{prop:ccs}\iftag{FOL}{ lan
-\olref[hen]{prop:saturated-instances} nganggo rujukan menyang
-\olref{prop:fsat-ccs} lan \olref{prop:fsat-instances}}{ nganggo
-pratelan babagan himpunan jangkep kang bisa dicukupi kanthi winates
-ing ndhuwur}. Cathetan koreksi sumber OLPL-055: cabang logika
-proposisional ing sumber mungkasi ukara sawise rujukan lawas; teks
-iki mulihake pangganti prop:fsat-ccs kang dibutuhake cabang kasebut.
+$\pAssign{v(\Gamma^*)}$} kaya ing \olref[mod]{defn:termmodel}.
+\iftag{FOL}{Yèn ing~$\Lang{L'}$ ana identitas, gunakna model kelas
+$\Struct{\equivclass{M}{\approx}}$ kaya ing \olref[ide]{defn:term-model-factor}.
+Relasi $\approx$ iku ekuivalensi, kompatibel karo fungsi lan
+predikat, amarga watesan iki kudu dituruti déning sembarang model
+saka pérangan winates kang cocog ing~$\Gamma^*$. Saben pelanggaran sipat mau bakal ndadèkaké
+sawijining subhimpunan winates ora bisa dicukupi. Upamané, yèn
+$\eq[t][t']$ lan $\Atom{R}{t}$ ana ing~$\Gamma^*$, mula
+$\Atom{R}{t'}$ uga ana ing kono, amarga yèn ora, sipat jangkep
+mènèhi $\lnot\Atom{R}{t'}$ kang ora bisa dicukupi bebarengan
+karo rong ukara kapisan. Ing loro model mau, saben unsur minangka
+nilai sawijining term katutup, mula instansi term katutup cukup
+kanggo mriksa kuantor.}{}
+Ing induksi Lemma Bebener (\olref[mod]{lem:truth}), gunakna
+\olref{prop:fsat-ccs} kanggo konektif kang cocog lan sipat jangkep kanggo negasi.
+\iftag{FOL}{Gunakna \olref{prop:fsat-instances} kanggo kuantor.
+Ing model kelas, identitas bener persis nalika term loro mau sakelas.
+Mula model iki nyukupi $\Gamma^*$ lan reduké menyang basa asli
+nyukupi~$\Gamma$.}{Mula valuasi iki nyukupi $\Gamma^*$ lan~$\Gamma$.}
 \end{proof}
 
 \tagprob{FOL}
