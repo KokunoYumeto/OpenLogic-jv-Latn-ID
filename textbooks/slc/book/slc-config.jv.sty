@@ -1,0 +1,16 @@
+\ollatinformulas
+\DeclareMathAlphabet{\mathbi}{OT1}{pplx}{b}{it}
+\DeclareDocumentCommand\Struct{m}{\applytofirst{\mathbi}{#1}}
+\DeclareDocumentMacro\TMblank{\sqcup}
+\DeclareDocumentMacro\TMstroke{I}
+
+\settexttoken{enumerable}{bisa dietung}{bisa dietung}[Bisa dietung][Bisa dietung]
+\settexttoken{nonenumerable}{ora bisa dietung}{ora bisa dietung}[Ora bisa dietung][Ora bisa dietung]
+\settexttoken{denumerable}{tanpa wates kang bisa dietung}{tanpa wates kang bisa dietung}[Tanpa wates kang bisa dietung][Tanpa wates kang bisa dietung]
+\forcsvlist{\JvEmptyArticle}{enumerable,nonenumerable,denumerable}
+
+\tagtrue{defIff,defTrue}
+\tagfalse{prvIff,prvTrue}
+\tagtrue{probAnd,probIf,probAll}
+\tagtrue{prfND,prfSC}
+\tagfalse{prfAX,prfTab}

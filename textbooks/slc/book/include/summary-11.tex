@@ -1,0 +1,30 @@
+\emph{Sistem bukti} mènèhi cara sintaktis kanggo mènèhi ciri
+konsèkuènsi lan kompatibilitas antarané ukara. \emph{Dedhuksi
+alami} iku salah sijiné. Ing sistem iki, \emph{derivasi} awujud
+wit formula. Formula paling ndhuwur ing !!a{derivation} iku
+\emph{asumsi}. Supaya !!{derivation} bener, formula liyané
+kudu didhasaraké marang salah siji \emph{paugeran
+inferensi}. Saben panggandhèng lan kuantor nduwèni paugeran
+introduksi lan eliminasi. Upamané, yèn $!A$ diturunaké nganggo
+paugeran $\Elim{\lif}$, formula sadurungé, yaiku \emph{prèmisé},
+kudu $!B\lif !A$ lan~$!B$, kanggo sawijining~$!B$.
+Sawetara paugeran bisa \emph{mbubaraké} asumsi. Upamané, yèn
+$!A\lif !B$ dijupuk saka~$!B$ nganggo $\Intro{\lif}$,
+kedadéan~$!A$ minangka asumsi ing !!{derivation} prèmis~$!B$
+kena dibubaraké. Asumsi mau diwènèhi tandha kang uga dicathet
+ing inferensi iku.
+
+Yèn ana !!a{derivation} kanthi formula pungkasan~$!A$ lan
+kabèh asumsi wis dibubaraké, $!A$ iku \emph{teorema},
+ditulis $\Proves !A$. Yèn kabèh asumsi kang durung dibubaraké
+ana ing himpunan~$\Gamma$, kita ngarani $!A$ \emph{bisa diderivasi
+saka}~$\Gamma$ lan nulis $\Gamma\Proves !A$. Yèn
+$\Gamma\Proves\lfalse$, $\Gamma$ \emph{ora konsistèn}.
+Yèn ora, $\Gamma$ \emph{konsistèn}. Upamané, $\Gamma\Proves !A$
+yèn lan mung yèn $\Gamma\cup\{\lnot !A\}$ ora konsistèn.
+Sipat iki gegayutan karo semantik. Yèn $\Gamma\Proves !A$,
+mula $\Gamma\Entails !A$. Iki diarani \emph{kesahihan}.
+\emph{Teorema kesahihan} dibuktèkaké kanthi induksi tumrap
+dawané !!{derivation}s. Saben inferensi njaga yèn kesimpulan
+dadi konsèkuènsi saka asumsi kang isih kabukak, yèn prèmis-prèmisé
+dadi konsèkuènsi saka asumsi-asumsi kang durung dibubaraké.

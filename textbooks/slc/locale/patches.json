@@ -1,0 +1,112 @@
+[
+  {
+    "path": "content/methods/proofs/using-definitions.tex",
+    "from": "lan mung yèn syarat mau kelakon; iki sok disingket dadi ``iff''.",
+    "to": "lan mung yèn syarat mau kelakon. Ukara iki minangka bikondisional."
+  },
+  {
+    "path": "content/methods/proofs/inference-patterns.tex",
+    "from": "yèn lan mung yèn (iff) $q$",
+    "to": "yèn lan mung yèn $q$"
+  },
+  {
+    "path": "content/methods/proofs/inference-patterns.tex",
+    "from": "kadhangkala pratelan ``iff'' bisa dibuktekaké kanthi ngrangkè\nsawatara pratelan ``iff'',",
+    "to": "kadhangkala pratelan bikondisional bisa dibuktekaké kanthi ngrangkè\nsawatara bikondisional,"
+  },
+  {
+    "path": "content/first-order-logic/syntax-and-semantics/free-vars-sentences.tex",
+    "from": "\\begin{defn}[Muncule bebas sawijining !!a{variable}]",
+    "to": "\\begin{defn}[Kedadéan !!{variable} Bebas]"
+  },
+  {
+    "path": "content/first-order-logic/syntax-and-semantics/free-vars-sentences.tex",
+    "from": "Muncule \\emph{bebas} sawijining !!a{variable} ing !!a{formula}",
+    "to": "Kedadéan \\emph{bebas} sawijining !!{variable} ing sawijining !!{formula}"
+  },
+  {
+    "path": "content/first-order-logic/completeness/completeness-thm.tex",
+    "from": "\\begin{cor}[Teorema Kelengkapan, Versi Kapindho]",
+    "to": "\\begin{cor}[Kejangkeping, Wujud Kapindho]"
+  },
+  {
+    "path": "content/turing-machines/undecidability/halting-problem.tex",
+    "from": "\\begin{thm}[Masalah Mandheg Ora Bisa Dirampungake]",
+    "to": "\\begin{thm}[Masalah Mandheg Ora Kaputus]"
+  },
+  {
+    "path": "content/turing-machines/machines-computations/unary-numbers.tex",
+    "from": "\\fn{equality}(n,m) =",
+    "to": "\\fn{padha}(n,m) ="
+  },
+  {
+    "path": "content/first-order-logic/natural-deduction/proving-things.tex",
+    "from": "Ing sisih tengen kita nggunakake strategi kang padha, kajaba $!A$\ndiasilake liwat~\\FalseCl:\n\\begin{prooftree}",
+    "to": "Ing sisih tengen kita nggunakake strategi kang padha, kajaba $!A$\ndiasilake liwat~\\FalseCl:\n\\begingroup\\footnotesize\n\\begin{prooftree}"
+  },
+  {
+    "path": "content/first-order-logic/natural-deduction/proving-things.tex",
+    "from": "\\end{prooftree}\n\\end{ex}\n\n\\begin{prob}\nWènèhana !!{derivation}s kang nuduhake prakara-prakara iki:",
+    "to": "\\end{prooftree}\n\\endgroup\n\\end{ex}\n\n\\begin{prob}\nWènèhana !!{derivation}s kang nuduhake prakara-prakara iki:"
+  },
+  {
+    "path": "content/first-order-logic/syntax-and-semantics/first-order-languages.tex",
+    "from": "\\iftag{prvFalse,defFalse}{Ing pustaka logika basa Inggris, simbol\n  $\\lfalse$ duwe maneka jeneng: ``falsity'' (nilai bebener luput), ``falsum''\n  (istilah Latin), ``absurdity'' (absurditas), utawa ``bottom'' (ngisor).}{}\n\\iftag{prvTrue,defTrue}{Ing pustaka logika basa Inggris, simbol\n  $\\ltrue$ duwe maneka jeneng: ``truth'' (nilai bebener bener), ``verum'' (istilah\n  Latin), utawa ``top'' (ndhuwur).}{}",
+    "to": "\\iftag{prvFalse,defFalse}{Ing pustaka logika, simbol\n  $\\lfalse$ diarani nilai bebener luput, \\emph{falsum} (istilah Latin),\n  absurditas, utawa unsur ngisor.}{}\n\\iftag{prvTrue,defTrue}{Ing pustaka logika, simbol\n  $\\ltrue$ diarani nilai bebener bener, \\emph{verum} (istilah Latin),\n  utawa unsur ndhuwur.}{}"
+  },
+  {
+    "path": "content/first-order-logic/introduction/substitution.tex",
+    "from": "\\emph{substitution}",
+    "to": "\\emph{substitusi}"
+  },
+  {
+    "path": "content/turing-machines/undecidability/halting-problem.tex",
+    "from": "Masalah Mandheg Telu (3-Halt)",
+    "to": "Masalah Mandheg Telu"
+  },
+  {
+    "path": "content/turing-machines/undecidability/halting-problem.tex",
+    "from": "yen masalah 3-Halt",
+    "to": "yen Masalah Mandheg Telu"
+  },
+  {
+    "path": "content/turing-machines/undecidability/enumerating-tms.tex",
+    "from": "uga bisa\ndienumerasi. Saben fungsi",
+    "to": "uga bisa\ndietung. Saben fungsi"
+  },
+  {
+    "path": "content/turing-machines/undecidability/enumerating-tms.tex",
+    "from": "uga bisa\ndienumerasi. Enumerable ing bukti iki teges kardinalitas, ora pratelan ana prosedur efektif kanggo nyaring kabeh mesin kang ngitung fungsi total.",
+    "to": "uga bisa\ndietung. Ing bukti iki, \\emph{bisa dietung} nuduhaké kardinalitas.\nPratelan iki ora mbutuhaké prosedur èfèktif kanggo nyaring kabèh\nmesin kang ngitung fungsi total."
+  },
+  {
+    "path": "content/sets-functions-relations/relations/graphs.tex",
+    "from": "\"simpul\" utawa \"verteks\" (bentuk jamak ing basa Inggris\nyaiku \"vertices\")",
+    "to": "\"simpul\" utawa \"verteks\""
+  },
+  {
+    "path": "content/methods/induction/structural-induction.tex",
+    "from": "(Rong kasus kanthi r1 lan r2 nganggo prefix ora-kosong. Prefix kosong ing posisi kasebut wis katutup dening kasus sadurungé; hipotesis balance ketat ora ditrapaké marang prefix kosong.)",
+    "to": "(Rong kasus kang nganggo $r_1$ lan $r_2$ mau ngrembug pérangan\nwiwitan kang ora kosong. Pérangan wiwitan kang kosong wis dirembug\ning kasus sadurungé. Hipotesis yèn kurung bukak luwih akèh tinimbang\nkurung tutup ora ditrapaké marang pérangan wiwitan kang kosong.)"
+  },
+  {
+    "path": "content/first-order-logic/syntax-and-semantics/extensionality.tex",
+    "from": "subterm-subterm",
+    "to": "subterma-subterma"
+  },
+  {
+    "path": "content/turing-machines/undecidability/trakhtenbrot.tex",
+    "from": "kalebu T-prime lan E.",
+    "to": "kalebu $!T'(M,w)$ lan $!E(M,w)$."
+  },
+  {
+    "path": "content/first-order-logic/syntax-and-semantics/first-order-languages.tex",
+    "from": "ekuivalensi (material)",
+    "to": "ekuivalènsi matèriil"
+  },
+  {
+    "path": "content/first-order-logic/beyond/modal-logics.tex",
+    "from": "bener sacara material",
+    "to": "bener sacara matèriil"
+  }
+]

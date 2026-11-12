@@ -1,0 +1,366 @@
+\slcterm{dtheorem}{teorema dedhuksi}{teorema dedhuksi}{
+  Nggandhèngaké konsèkuènsi lan derivabilitas saka sawijining asumsi
+  karo kondisional kang cocog. Ing wujud semantis
+  (\olref[fol][syn][sem]{thm:sem-deduction}),
+  $\Gamma\cup\{!A\}\Entails !B$ yèn lan mung yèn $\Gamma\Entails !A\lif !B$.
+  Ing wujud teori bukti, $\Gamma\cup\{!A\}\Proves !B$ yèn lan mung yèn
+  $\Gamma\Proves !A\lif !B$.}
+
+\slcterm{set-extensionality}{ekstensionalitas himpunan}{ekstensionalitas (himpunan)}{
+  Himpunan $A$ lan~$B$ padha, $A=B$, yèn lan mung yèn saben anggota~$A$
+  dadi anggota~$B$ lan kosok baliné (delengen \olref[sfr][set][bas]{sec}).}
+
+\slcterm{sat-extensionality}{ekstensionalitas panyukupan}{ekstensionalitas (panyukupan)}{
+  Apa formula~$!A$ disukupi mung gumantung marang panugasan tumrap simbol
+  nonlogis lan variabèl bebas kang pancèn muncul ing~$!A$.}
+
+\slcterm{set}{himpunan}{himpunan}{
+  Kumpulan objèk kang ditemtokaké déning anggotané, tanpa gumantung
+  marang cara nemtokaké, urutan, utawa cacah balèn anggota
+  (delengen \olref[sfr][set][bas]{sec}).}
+
+\slcterm{symmetric}{simetris}{simètris}{
+  $R$ simètris yèn lan mung yèn saben $Rxy$ njalari $Ryx$
+  (delengen \olref[sfr][rel][prp]{sec}).}
+
+\slcterm[\ensuremath{A\times B}]{cp}{prodhuk kartesius}{prodhuk Kartesius}{
+  Himpunan kabèh pasangan saka anggota~$A$ lan anggota~$B$.
+  $A\times B=\Setabs{\tuple{x,y}}{x\in A\text{ lan }y\in B}$
+  (delengen \olref[sfr][set][pai]{sec}).}
+
+\slcterm[\ensuremath{A\subseteq B}]{subset}{subhimpunan}{subhimpunan}{
+  Himpunan kang saben anggotané uga dadi anggota himpunan~$B$
+  (delengen \olref[sfr][set][sub]{sec}).}
+
+\slcterm[\ensuremath{A^*}]{finsequence}{urutan winates}{urutan winates}{
+  Rerangken winates saka anggota~$A$, yaiku anggota $A^n$
+  kanggo sawijining $n$ (delengen \olref[sfr][set][imp]{sec}).}
+
+\slcterm[\ensuremath{A^\omega}]{infsequence}{urutan tanpa wates}{urutan tanpa wates}{
+  Urutan anggota~$A$ tanpa sela lan tanpa pungkasan. Sacara formal,
+  fungsi $s\colon\PosInt\to A$ (delengen \olref[sfr][set][imp]{sec}).}
+
+\slcterm[\ensuremath{\Pow{A}}]{ps}{himpunan pangkat}{himpunan pangkat}{
+  Himpunan kang ngemot kabèh \glspl{subset} saka~$A$.
+  $\Pow{A}=\Setabs{x}{x\subseteq A}$ (delengen \olref[sfr][set][sub]{sec}).}
+
+\slcterm[\ensuremath{A\cup B}]{union}{gabungan}{gabungan}{
+  Himpunan kabèh anggota~$A$ utawa~$B$.
+  $A\cup B=\Setabs{x}{x\in A\lor x\in B}$
+  (delengen \olref[sfr][set][uni]{sec}).}
+
+\slcterm[\ensuremath{A\cap B}]{intersection}{irisan}{irisan}{
+  Himpunan kabèh objèk kang dadi anggota~$A$ lan uga anggota~$B$.
+  $A\cap B=\Setabs{x}{x\in A\land x\in B}$
+  (delengen \olref[sfr][set][uni]{sec}).}
+
+\slcterm[\ensuremath{A\setminus B}]{difference}{selisih}{selisih}{
+  Himpunan kabèh anggota~$A$ kang ora dadi anggota~$B$.
+  $A\setminus B=\Setabs{x}{x\in A\text{ lan }x\notin B}$
+  (delengen \olref[sfr][set][uni]{sec}).}
+
+\slcterm{disjoint}{ora sesirisan}{ora sesirisan}{
+  Rong himpunan kang ora nduwèni anggota bebarengan
+  (delengen \olref[sfr][set][uni]{sec}).}
+
+\slcterm[\ensuremath{g\circ f}]{composition}{komposisi}{komposisi}{
+  Fungsi kang diasilaké kanthi ngranté $f$ banjur~$g$.
+  $(g\circ f)(x)=g(f(x))$ (delengen \olref[sfr][fun][cmp]{sec}).}
+
+\slcterm[\ensuremath{f\colon A\to B}]{function}{fungsi}{fungsi}{
+  Pemetaan saben anggota \gls{fdomain}~$A$ marang siji anggota
+  kodomain~$B$ (delengen \olref[sfr][fun][bas]{sec}).}
+
+\slcterm[\ensuremath{\dom{f}}]{fdomain}{ranah fungsi}{ranah (fungsi)}{
+  Himpunan objèk kang fungsi, kalebu fungsi parsial, nduwèni nilai ing kono
+  (delengen \olref[sfr][fun][bas]{sec}).}
+
+\slcterm[\ensuremath{\ran{f}}]{range}{jangkauan}{jangkauan}{
+  Subhimpunan kodomain kang ngemot kabèh nilai~$f$.
+  $\ran{f}=\Setabs{y\in B}{f(x)=y\text{ kanggo sawijining }x\in A}$
+  (delengen \olref[sfr][fun][bas]{sec}).}
+
+\slcterm{graph}{graf fungsi}{graf (fungsi)}{
+  Yèn $f\colon A\pto B$, grafé yaiku relasi $R_f\subseteq A\times B$
+  kang ditetepaké déning $R_f=\Setabs{\tuple{x,y}}{f(x)=y}$
+  (delengen \olref[sfr][fun][rel]{sec}).}
+
+\slcterm{inverse}{fungsi invers}{fungsi invers}{
+  Yèn $f\colon A\to B$ minangka \gls{bijection}, $f^{-1}\colon B\to A$
+  yaiku fungsi kanthi $f^{-1}(y)$ minangka siji-sijiné $x\in A$
+  kang nyukupi $f(x)=y$ (delengen \olref[sfr][fun][inv]{sec}).}
+
+\slcterm[\ensuremath{f\colon A\pto B}]{pf}{fungsi parsial}{fungsi parsial}{
+  Pemetaan kang masangaké saben anggota~$A$ karo paling akèh siji
+  anggota~$B$. Yèn $f$ masangaké anggota~$B$ marang $x\in A$,
+  $f(x)$ katetepaké. Yèn ora, $f(x)$ ora katetepaké
+  (delengen \olref[sfr][fun][par]{sec}).}
+
+\slcterm[\ensuremath{R^+}]{tc}{panutupan transitif}{panutupan transitif}{
+  Relasi \gls{transitive} paling cilik kang ngemot~$R$
+  (delengen \olref[sfr][rel][ops]{sec}).}
+
+\slcterm[\ensuremath{R^{-1}}]{ir}{relasi invers}{relasi invers}{
+  Relasi $R$ kanthi pasangan diwalik.
+  $R^{-1}=\Setabs{\tuple{y,x}}{\tuple{x,y}\in R}$
+  (delengen \olref[sfr][rel][ops]{sec}).}
+
+\slcterm{preorder}{praurutan}{praurutan}{
+  Relasi \gls{reflexive} lan \gls{transitive}
+  (delengen \olref[sfr][rel][ord]{sec}).}
+
+\slcterm{po}{urutan parsial}{urutan parsial}{
+  Relasi \gls{reflexive}, \gls{anti-symmetric}, lan \gls{transitive}
+  (delengen \olref[sfr][rel][ord]{sec}).}
+
+\slcterm{to}{urutan total}{urutan total}{Delengen \gls{lo}.}
+
+\slcterm{irreflexive}{irrefleksif}{irrefleksif}{
+  $R$ irrefleksif yèn ora ana $x\in A$ kang nyukupi $Rxx$
+  (delengen \olref[sfr][rel][ord]{sec}).}
+
+\slcterm{asymmetric}{asimetris}{asimètris}{
+  $R$ asimètris yèn ora ana pasangan $x,y\in A$ kang nyukupi
+  $Rxy$ lan $Ryx$ bebarengan (delengen \olref[sfr][rel][ord]{sec}).}
+
+\slcterm{so}{urutan ketat}{urutan ketat}{
+  Relasi \gls{irreflexive}, \gls{asymmetric}, lan \gls{transitive}
+  (delengen \olref[sfr][rel][ord]{sec}).}
+
+\slcterm{slo}{urutan linier ketat}{urutan linier ketat}{
+  \Gls{so} kang \gls{connected} (delengen \olref[sfr][rel][ord]{sec}).}
+
+\slcterm{lo}{urutan linier}{urutan linier}{
+  \Gls{po} kang \gls{connected} (delengen \olref[sfr][rel][ord]{sec}).}
+
+\slcterm{br}{relasi biner}{relasi biner}{
+  Subhimpunan saka~$A^2$. Kita nulis $Rxy$ utawa $xRy$ kanggo
+  $\tuple{x,y}\in R$ (delengen \olref[sfr][rel][set]{sec}).}
+
+\slcterm{reflexive}{refleksif}{refleksif}{
+  $R$ refleksif yèn lan mung yèn $Rxx$ kanggo saben $x\in A$
+  (delengen \olref[sfr][rel][prp]{sec}).}
+
+\slcterm{transitive}{transitif}{transitif}{
+  $R$ transitif yèn lan mung yèn $Rxy$ lan $Ryz$ njalari $Rxz$
+  (delengen \olref[sfr][rel][prp]{sec}).}
+
+\slcterm{anti-symmetric}{antisimetris}{antisimètris}{
+  $R$ antisimètris yèn lan mung yèn $Rxy$ lan $Ryx$ njalari $x=y$.
+  Kanthi tembung liya, yèn $x\neq y$, $Rxy$ ora dumadi utawa $Ryx$
+  ora dumadi (delengen \olref[sfr][rel][prp]{sec}).}
+
+\slcterm{connected}{gegayutan}{gegayutan}{
+  $R$ gegayutan yèn kanggo kabèh $x,y\in A$ kanthi $x\neq y$,
+  $Rxy$ utawa $Ryx$ dumadi (delengen \olref[sfr][rel][prp]{sec}).}
+
+\slcterm{er}{relasi ekuivalensi}{relasi ekuivalènsi}{
+  Relasi refleksif, simètris, lan transitif
+  (delengen \olref[sfr][rel][prp]{sec}).}
+
+\slcterm{sf}{surjektif}{surjèktif}{
+  $f\colon A\to B$ surjèktif yèn lan mung yèn jangkauan~$f$ yaiku
+  kabèh~$B$. Saben $y\in B$ nduwèni paling ora siji $x\in A$
+  kanthi $f(x)=y$ (delengen \olref[sfr][fun][kin]{sec}).}
+
+\slcterm{if}{injektif}{injèktif}{
+  $f\colon A\to B$ injèktif yèn lan mung yèn saben $y\in B$
+  nduwèni paling akèh siji $x\in A$ kanthi $f(x)=y$.
+  Kanthi ekuivalèn, $x\neq x'$ njalari $f(x)\neq f(x')$
+  (delengen \olref[sfr][fun][kin]{sec}).}
+
+\slcterm{bijection}{bijeksi}{bijèksi}{
+  Fungsi kang surjèktif lan injèktif (delengen \olref[sfr][fun][kin]{sec}).}
+
+\slcterm{enumeration}{enumerasi}{enumerasi}{
+  Dhaptar kabèh anggota himpunan~$A$, kang bisa waé tanpa wates.
+  Sacara formal, fungsi surjèktif $f\colon\Nat\to A$
+  (delengen \olref[sfr][siz][enm]{sec}).}
+
+\slcterm{equinumerous}{padha cacahe}{padha cacahé}{
+  $A$ lan $B$ padha cacahé yèn lan mung yèn ana bijèksi total
+  saka $A$ menyang $B$ (delengen \olref[sfr][siz][equ]{sec}).}
+
+\slcterm{finitely satisfiable}{bisa disukupi kanthi winates}{bisa disukupi kanthi winates}{
+  $\Gamma$ bisa disukupi kanthi winates yèn lan mung yèn saben
+  $\Gamma_0\subseteq\Gamma$ kang winates bisa disukupi
+  (delengen \olref[fol][com][com]{sec}).}
+
+\slcterm{mcs}{himpunan jangkep lan konsisten}{himpunan jangkep lan konsistèn}{
+  Himpunan ukara iku jangkep lan konsistèn yèn lan mung yèn
+  himpunané konsistèn lan kanggo saben ukara~$!A$, $!A$ utawa
+  $\lnot !A$ ana ing himpunan iku (delengen \olref[fol][com][ccs]{sec}).}
+
+\slcterm{mos}{model}{modèl}{
+  Struktur kang ndadèkaké saben ukara ing~$\Gamma$ bener iku modèl
+  saka~$\Gamma$ (delengen \olref[fol][mat][exs]{sec}).}
+
+\slcterm{closed}{katutup}{katutup}{
+  Himpunan ukara~$\Gamma$ katutup yèn lan mung yèn
+  $\Gamma\Entails !A$ njalari $!A\in\Gamma$.
+  Himpunan $\Setabs{!A}{\Gamma\Entails !A}$ yaiku panutupan~$\Gamma$
+  (delengen \olref[fol][mat][int]{sec}).}
+
+\slcterm[\ensuremath{\Gamma\Proves !A}]{derivability}{derivabilitas}{derivabilitas}{
+  Ing kalkulus sekèn, $!A$ bisa diderivasi saka~$\Gamma$ yèn ana
+  \gls{derivation} kanggo \gls{sequent} $\Gamma_0\Sequent !A$,
+  kanthi $\Gamma_0$ urutan winates kang kabèh ukarané ana ing~$\Gamma$
+  (delengen \olref[fol][seq][ptn]{sec}). Ing dedhuksi alami, $!A$
+  bisa diderivasi saka~$\Gamma$ yèn ana derivasi kanthi formula pungkasan~$!A$
+  lan saben asumsi wis dibubaraké utawa ana ing~$\Gamma$
+  (delengen \olref[fol][ntd][ptn]{sec}).}
+
+\slcterm[\ensuremath{\Proves !A}]{theorem}{teorema}{teorema}{
+  Ing kalkulus sekèn, formula~$!A$ iku teorema logika yèn ana derivasi
+  sekèn $\Sequent !A$ (delengen \olref[fol][seq][ptn]{sec}).
+  Ing dedhuksi alami, formula~$!A$ iku teorema yèn ana derivasi $!A$
+  kanthi kabèh asumsi \gls{discharged} (delengen \olref[fol][ntd][ptn]{sec}).
+  $!A$ uga diarani teorema saka teori~$\Gamma$ yèn $\Gamma\Proves !A$.}
+
+\slcterm{consistent}{konsisten}{konsistèn}{
+  Ing kalkulus sekèn, himpunan ukara~$\Gamma$ konsistèn yèn lan
+  mung yèn ora ana \gls{derivation} \gls{sequent} $\Gamma_0\Sequent\quad$
+  kanthi kabèh ukara ing $\Gamma_0$ uga ana ing $\Gamma$
+  (delengen \olref[fol][seq][ptn]{sec}). Ing dedhuksi alami,
+  $\Gamma$ konsistèn yèn lan mung yèn $\Gamma\Proves/\lfalse$
+  (delengen \olref[fol][ntd][ptn]{sec}). Yèn ora konsistèn,
+  $\Gamma$ diarani ora konsistèn.}
+
+\slcterm{inconsistent}{ora konsisten}{ora konsistèn}{Delengen \gls{consistent}.}
+
+\slcterm{derivation}{derivasi}{derivasi}{
+  Ing kalkulus sekèn, wit sekèn kang saben sekèné minangka
+  sekèn wiwitan utawa diturunaké nganggo paugeran inferensi saka
+  sekèn kang persis ana ing sandhuwuré (delengen \olref[fol][seq][rul]{sec}).
+  Ing dedhuksi alami, wit formula kang saben formulane minangka asumsi
+  utawa diturunaké nganggo paugeran inferensi saka formula kang persis ana
+  ing sandhuwuré (delengen \olref[fol][ntd][rul]{sec}).}
+
+\slcterm{eigenvariable}{variabel eigen}{variabèl eigen}{
+  Ing kalkulus sekèn, simbol konstanta mligi ing prèmis inferensi
+  $\LeftR{\lexists}$ utawa $\RightR{\lforall}$ kang ora kena muncul
+  ing kesimpulan (delengen \olref[fol][seq][rul]{sec}). Ing dedhuksi
+  alami, simbol konstanta mligi ing prèmis inferensi $\Elim{\lexists}$
+  utawa $\Intro{\lforall}$ kang ora kena muncul ing kesimpulan utawa
+  asumsi kang \gls{undischarged} (delengen \olref[fol][ntd][rul]{sec}).}
+
+\slcterm{discharged}{dibubarake}{dibubaraké}{
+  \Gls{assumption} ing !!a{derivation} bisa dibubaraké déning
+  paugeran inferensi ing sangisoré. Paugeran lan asumsi iku
+  diwènèhi tandha kang padha, upamané $[!A]^2$. Yèn durung
+  dibubaraké, asumsi iku diarani \gls{undischarged}
+  (delengen \olref[fol][ntd][rul]{sec}).}
+
+\slcterm{undischarged}{durung dibubarake}{durung dibubaraké}{Delengen \gls{discharged}.}
+
+\slcterm{assumption}{asumsi}{asumsi}{
+  Formula ing pucuk !!a{derivation}, uga diarani formula wiwitan.
+  Asumsi bisa \gls{discharged} utawa \gls{undischarged}
+  (delengen \olref[fol][ntd][rul]{sec}).}
+
+\slcterm{soundness}{kesahihan}{kesahihan}{
+  Sipat sistem !!{derivation}. Sistem iku sahih yèn
+  $\Gamma\Proves !A$ tansah njalari $\Gamma\Entails !A$
+  (delengen \olref[fol][seq][sou]{sec} lan \olref[fol][ntd][sou]{sec}).}
+
+\slcterm{sequent}{seken}{sekèn}{
+  Ungkapan awujud $\Gamma\Sequent\Delta$, kanthi $\Gamma$
+  lan $\Delta$ minangka urutan winates saka ukara
+  (delengen \olref[fol][seq][rul]{sec}).}
+
+\slcterm{sentence}{ukara}{ukara}{
+  Formula tanpa variabèl \gls{free} (delengen \olref[fol][syn][fvs]{sec}).}
+
+\slcterm{variable assignment}{panugasan variabel}{panugasan variabèl}{
+  \Gls{function} kang masangaké saben variabèl marang anggota~$\Domain M$
+  (delengen \olref[fol][syn][sat]{sec}).}
+
+\slcterm{$x$-variant}{x varian}{$x$-varian}{
+  Rong \glspl{variable assignment} minangka $x$-varian, $s\sim_x s'$,
+  yèn bédané mung bisa ana ing nilai kang dipasangaké marang~$x$
+  (delengen \olref[fol][syn][sat]{sec}).}
+
+\slcterm[\ensuremath{\Entails !A}]{valid}{sah}{sah}{
+  Ukara~$!A$ sah yèn lan mung yèn $\Sat{M}{!A}$ kanggo saben
+  \gls{structure}~$\Struct M$ (delengen \olref[fol][syn][sem]{sec}).}
+
+\slcterm[\ensuremath{\Gamma\Entails !A}]{entailment}{konsekuensi logis}{konsèkuènsi logis}{
+  Ukara~$!A$ dadi konsèkuènsi himpunan ukara~$\Gamma$ yèn lan mung yèn
+  $\Sat{M}{!A}$ kanggo saben \gls{structure}~$\Struct M$ kang nyukupi
+  $\Sat{M}{\Gamma}$ (delengen \olref[fol][syn][sem]{sec}).}
+
+\slcterm{satisfiable}{bisa disukupi}{bisa disukupi}{
+  Himpunan ukara~$\Gamma$ bisa disukupi yèn $\Sat{M}{\Gamma}$ kanggo
+  sawijining \gls{structure}~$\Struct M$. Yèn ora, $\Gamma$ ora bisa
+  disukupi (delengen \olref[fol][syn][sem]{sec}).}
+
+\slcterm{cs}{kacakup}{kacakup}{
+  \Gls{structure} kang saben anggota ranahé dadi nilai sawijining
+  terma katutup (delengen \olref[fol][syn][str]{sec}).}
+
+\slcterm{subformula}{subformula}{subformula}{
+  Pérangan formula kang uga minangka formula
+  (delengen \olref[fol][syn][sbf]{sec}).}
+
+\slcterm{free for}{bebas kanggo}{bebas kanggo}{
+  Terma~$t$ bebas kanggo $x$ ing $!A$ yèn ora ana kedadéan~$x$
+  kang \gls{free} ing $!A$ lan dumunung ing lingkup kuantor kang
+  ngiket sawijining variabèl ing~$t$ (delengen \olref[fol][syn][sub]{sec}).}
+
+\slcterm{church-turing thesis}{tesis church turing}{tèsis Church--Turing}{
+  Pratelan yèn apa waé kang bisa dikomputasi nganggo prosedur èfèktif
+  uga bisa dikomputasi déning mesin Turing
+  (delengen \olref[tur][mac][ctt]{sec}).}
+
+\slcterm{completeness}{kejangkeping}{kejangkeping}{
+  Sipat sistem !!{derivation}. Sistem iku jangkep yèn nalika $!A$ dadi
+  konsèkuènsi saka~$\Gamma$, ana derivasi kang netepaké $\Gamma\Proves !A$.
+  Kanthi ekuivalèn, saben himpunan ukara \gls{consistent}
+  \gls{satisfiable} (delengen \olref[fol][com][int]{sec}).}
+
+\slcterm{formula}{formula}{formula}{
+  Ungkapan ing basa tataran kapisan~$\Lang L$ kang ngandharaké relasi
+  utawa sipat, utawa kang bener utawa luput
+  (delengen \olref[fol][syn][frm]{sec}).}
+
+\slcterm[\ensuremath{\Struct{M}}]{structure}{struktur}{struktur}{
+  Interpretasi sawijining basa tataran kapisan, kang dumadi saka
+  \gls{sdomain} lan panugasan kanggo simbol konstanta, predikat,
+  lan fungsi ing basa kasebut (delengen \olref[fol][syn][str]{sec}).}
+
+\slcterm[\ensuremath{\Domain{M}}]{sdomain}{ranah struktur}{ranah (struktur)}{
+  Himpunan tanpa kosong saka ngendi \gls{structure} njupuk panugasan
+  lan nilai variabèl (delengen \olref[fol][syn][str]{sec}).}
+
+\slcterm{halting problem}{masalah mandheg}{masalah mandheg}{
+  Masalah nemtokaké, kanggo sembarang $e$ lan $n$, apa mesin
+  Turing~$M_e$ mandheg nalika diwènèhi masukan $n$ garis
+  (delengen \olref[tur][und][hal]{sec}).}
+
+\slcterm{bound}{kaiket}{kaiket}{
+  Kedadéan variabèl ing lingkup kuantor kang migunakaké variabèl
+  kang padha (delengen \olref[fol][syn][fvs]{sec}).}
+
+\slcterm{free}{bebas}{bebas}{
+  Kedadéan variabèl kang ora \gls{bound}
+  (delengen \olref[fol][syn][fvs]{sec}).}
+
+\slcterm{compactness theorem}{teorema kompaktitas}{teorema kompaktitas}{
+  Saben himpunan ukara kang \gls{finitely satisfiable} bisa disukupi
+  (delengen \olref[fol][com][com]{sec}).}
+
+\slcterm{ls}{teorema lowenheim skolem}{teorema L\"owenheim--Skolem}{
+  Saben himpunan ukara kang bisa disukupi nduwèni modèl kang bisa dietung
+  (delengen \olref[fol][com][dls]{sec}).}
+
+\slcterm{Church-Turing Theorem}{teorema church turing}{teorema Church--Turing}{
+  Ora ana mesin Turing kang bisa mutusaké apa sembarang ukara logika
+  tataran kapisan \gls{valid} (delengen \olref[tur][und][uns]{sec}).}
+
+\slcterm{decision problem}{masalah kaputusan}{masalah kaputusan}{
+  Masalah mutusaké apa sembarang ukara logika tataran kapisan \gls{valid}
+  (delengen \gls{Church-Turing Theorem}).}
+
+\slcterm{completeness-theorem}{teorema kejangkeping}{teorema kejangkeping}{
+  Logika tataran kapisan jangkep. Saben himpunan ukara kang
+  \gls{consistent} uga \gls{satisfiable}.}

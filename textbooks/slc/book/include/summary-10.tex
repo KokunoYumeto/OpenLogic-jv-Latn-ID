@@ -1,0 +1,33 @@
+\emph{Sistem bukti} mènèhi cara sintaktis kanggo mènèhi ciri
+konsèkuènsi lan kompatibilitas antarané ukara. \emph{Kalkulus
+sekèn} iku salah sijiné. \emph{Derivasi} ing kalkulus iki
+awujud wit sekèn. Sekèn $\Gamma\Sequent\Delta$ dumadi saka
+rong urutan formula kang dipisah~$\Sequent$. Sekèn paling
+ndhuwur ing !!a{derivation} iku \emph{sekèn wiwitan} kang
+awujud $!A\Sequent !A$. Supaya !!{derivation} bener, sekèn
+liyané kudu didhasaraké marang salah siji \emph{paugeran
+inferensi}. Paugeran iku pepasangan: siji kanggo sisih kiwa lan
+siji kanggo sisih tengen sekèn, kanggo saben panggandhèng lan
+kuantor. Upamané, yèn $\Gamma\Sequent\Delta,!A\lif !B$ dijupuk
+nganggo paugeran $\RightR{\lif}$, sekèn sadurungé, yaiku
+\emph{prèmisé}, kudu $!A,\Gamma\Sequent\Delta,!B$.
+Sawetara paugeran uga bisa ngowahi urutan utawa cacah formula
+ing sekèn. Paugeran \RightR{\Exchange} ngidinaké rong formula
+ing sisih tengen sekèn diijolaké.
+
+Yèn ana !!a{derivation} kanggo sekèn $\quad\Sequent !A$,
+$!A$ diarani \emph{teorema}, lan kita nulis $\Proves !A$.
+Yèn ana !!a{derivation} saka $\Gamma_0\Sequent !A$ kanthi
+saben $!B$ ing $\Gamma_0$ uga ana ing~$\Gamma$, $!A$
+\emph{bisa diderivasi saka}~$\Gamma$, ditulis $\Gamma\Proves !A$.
+Yèn ana !!a{derivation} saka $\Gamma_0\Sequent\quad$ kanthi
+saben $!B$ ing $\Gamma_0$ uga ana ing~$\Gamma$, $\Gamma$
+\emph{ora konsistèn}. Yèn ora, $\Gamma$ \emph{konsistèn}.
+Konsèp-konsèp iki gegayutan. Upamané, $\Gamma\Proves !A$
+yèn lan mung yèn $\Gamma\cup\{\lnot !A\}$ ora konsistèn.
+Uga ana gegayutan karo semantik. Yèn $\Gamma\Proves !A$,
+mula $\Gamma\Entails !A$. Sipat yèn apa kang bisa diderivasi
+saka~$\Gamma$ mesthi dadi konsèkuènsi saka~$\Gamma$ diarani
+\emph{kesahihan}. \emph{Teorema kesahihan} dibuktèkaké kanthi
+induksi tumrap dawané !!{derivation}s. Saben inferensi njaga
+kesahan sekèn kesimpulan yèn sekèn prèmis sah.
