@@ -85,7 +85,14 @@
     "output": {
       "path": "slc-screen-jv.pdf",
       "pages": 475,
-      "sha256": "0327d9a80723737bd6fde7d6c9609d2fdf8a13a9f68f7c62a44dded81c35c110"
+      "sha256": "be51dd9666671614721b7d8d24311dbc8d8495202bf2031856d6f1f8818114c9"
     }
+  },
+  "citation_localization": {
+    "authorship": "AI-produced by OpenAI Codex",
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "ultra",
+    "session_metadata_observed_at_utc": "2026-11-12T22:42:25.134Z",
+    "author_conjunction": "lan"
   }
 }

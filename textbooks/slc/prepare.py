@@ -132,6 +132,16 @@ def main():
         config_text = replace_once(config_text, english, javanese, token_config.name)
     token_config.write_text(config_text, encoding="utf-8", newline="\n")
 
+    bibliography_style = olp / "bib" / "natbib-oup.bst"
+    bibliography = bibliography_style.read_text(encoding="utf-8")
+    bibliography = replace_once(
+        bibliography,
+        'FUNCTION {bbl.and}\n{ "and"}',
+        'FUNCTION {bbl.and}\n{ "lan"}',
+        bibliography_style.name,
+    )
+    bibliography_style.write_text(bibliography, encoding="utf-8", newline="\n")
+
     for asset_group in ("photos", "portraits"):
         copytree(PROJECT / "assets" / asset_group, olp / "assets" / asset_group)
     book = locale / "courses" / "sets-logic-computation"
