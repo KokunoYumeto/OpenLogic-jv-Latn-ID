@@ -823,8 +823,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/proof-systems/proof-systems.tex",
-        "bytes": 605,
-        "sha256": "28b8571d3401b7af4403eb257f8ed2b1750c5d407a47867373f683aabe500b8d"
+        "bytes": 860,
+        "sha256": "f609ada743664c0f3803b84ee2b0fe74c93d964c0b8c799730b1170e2aeb2eca"
       }
     },
     {
@@ -901,8 +901,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/sequent-calculus/sequent-calculus.tex",
-        "bytes": 1099,
-        "sha256": "1b875627000999f57d86604146d86530008d63fdd843eac76bd2d18bba4327a5"
+        "bytes": 1391,
+        "sha256": "2d468fc34f69414220a4e13180b25ab3802e8585c29adfc5e34b9cc7d9d52d1f"
       }
     },
     {
@@ -1096,8 +1096,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/natural-deduction/natural-deduction.tex",
-        "bytes": 975,
-        "sha256": "aa2a6550475fe7388eb6f2295fc6d1d0db5e700248b06ba524f7c02d05e49a8e"
+        "bytes": 1195,
+        "sha256": "a01f7360c12a923f6ce59b4f7c6fcc50c89c81f79f8cbdcda2f792aa83d45ecc"
       }
     },
     {
@@ -1785,8 +1785,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/completeness/downward-ls.tex",
-        "bytes": 2859,
-        "sha256": "8ea03ef3ce8d5b341a2c77bb4bec8b9a6999520085c3d5419d1fd50c57beca34"
+        "bytes": 2868,
+        "sha256": "d6f65d40f2056ec585c37e61519f3f3cc185ad010e5cad3211599d086d7d5ddc"
       }
     },
     {
@@ -9413,8 +9413,8 @@
       "sha256": "650eb1cb43595515d0900b3343fb5f27f4e21601d7b3dd3e85bd3d49fb9fc1ba"
     },
     "edition/jv-complete-body.tex": {
-      "bytes": 3189888,
-      "sha256": "dc506c11b8286e71af947b26d8fdb28088313b48bc2bb33bc51af46f777abb08"
+      "bytes": 3190664,
+      "sha256": "ad4c277ae8cf0b986d9b37dce041af32e00b73edeb9593c2dc00909c5ce4fb57"
     },
     "edition/jv-complete-localization.sty": {
       "bytes": 6422,
@@ -9873,8 +9873,8 @@
       "sha256": "5062a98df18bd1e1611e199e86d403f1fd54d7de8f6cd5f411a5bb4772511d14"
     },
     "translation/content/first-order-logic/completeness/downward-ls.tex": {
-      "bytes": 2859,
-      "sha256": "8ea03ef3ce8d5b341a2c77bb4bec8b9a6999520085c3d5419d1fd50c57beca34"
+      "bytes": 2868,
+      "sha256": "d6f65d40f2056ec585c37e61519f3f3cc185ad010e5cad3211599d086d7d5ddc"
     },
     "translation/content/first-order-logic/completeness/henkin-expansions.tex": {
       "bytes": 11551,
@@ -9981,8 +9981,8 @@
       "sha256": "d7c0dfc9188a98209d720c36a8397bfde904939d7adb28721dce272137e53617"
     },
     "translation/content/first-order-logic/natural-deduction/natural-deduction.tex": {
-      "bytes": 975,
-      "sha256": "aa2a6550475fe7388eb6f2295fc6d1d0db5e700248b06ba524f7c02d05e49a8e"
+      "bytes": 1195,
+      "sha256": "a01f7360c12a923f6ce59b4f7c6fcc50c89c81f79f8cbdcda2f792aa83d45ecc"
     },
     "translation/content/first-order-logic/natural-deduction/proof-theoretic-notions.tex": {
       "bytes": 5480,
@@ -10041,8 +10041,8 @@
       "sha256": "a65fed8864a0b39124f46e1d3190449c6ad08a2c66776a74e7b33f6163c446ba"
     },
     "translation/content/first-order-logic/proof-systems/proof-systems.tex": {
-      "bytes": 605,
-      "sha256": "28b8571d3401b7af4403eb257f8ed2b1750c5d407a47867373f683aabe500b8d"
+      "bytes": 860,
+      "sha256": "f609ada743664c0f3803b84ee2b0fe74c93d964c0b8c799730b1170e2aeb2eca"
     },
     "translation/content/first-order-logic/proof-systems/sequent-calculus.tex": {
       "bytes": 2795,
@@ -10097,8 +10097,8 @@
       "sha256": "89b638d99ee69181f061e364448c7d547bcc46a172141da19853790b458cc355"
     },
     "translation/content/first-order-logic/sequent-calculus/sequent-calculus.tex": {
-      "bytes": 1099,
-      "sha256": "1b875627000999f57d86604146d86530008d63fdd843eac76bd2d18bba4327a5"
+      "bytes": 1391,
+      "sha256": "2d468fc34f69414220a4e13180b25ab3802e8585c29adfc5e34b9cc7d9d52d1f"
     },
     "translation/content/first-order-logic/sequent-calculus/soundness-identity.tex": {
       "bytes": 2213,
