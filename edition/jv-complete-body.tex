@@ -6226,9 +6226,9 @@ domain $C$ mangkéné.
 \]
 Yèn $x\in F$, banjur $g(x)=f(x)\in A\subseteq B$. Yèn $x\notin F$,
 $C\setminus B\subseteq F$, mula $g(x)=x\in B$. Mula $g$ nduwèni kodomain $B$.
-Kita bakal mbuktèkaké yèn $g$ iku !!a{bijection} saka $C$ menyang $B$.
-Sawisé iku $\comp{f^{-1}}{g} \colon A \to B$ uga !!a{bijection}, amarga
-iku kasusun saka rong bijeksi.
+Kita bakal mbuktèkaké yèn $g$ iku !!a{bijection} saka $C$ menyang $B$,
+mula $\cardeq{B}{C}$. Sawisé iku $\comp{f^{-1}}{g} \colon A \to B$ uga
+!!a{bijection}, amarga iku kasusun saka rong bijeksi. Mula $\cardeq{A}{B}$.
 
 Kapisan, kita negesake yen $x \in F$ nanging $y\notin F$, mula $g(x) \neq
 g(y)$. Kanggo bukti kanthi kontradiksi, upamakna ora mangkono, saengga
@@ -25264,16 +25264,17 @@ bener. Dadi kita bisa ngenalake aturan kalkulus sekuen kanggo
 $\oplus$ kaya iki:
 \begin{align*}
 &
+\Axiom$!A, \Gamma \fCenter \Delta, !B$
+\Axiom$!B, \Gamma \fCenter \Delta, !A$
+\RightLabel{\LeftR{\oplus}}
+\BinaryInf$!A \oplus !B, \Gamma \fCenter \Delta$
+\DisplayProof
+\\
+&
 \Axiom$\Gamma \fCenter \Delta, !A, !B$
 \Axiom$!A, !B, \Gamma \fCenter \Delta$
 \RightLabel{\RightR{\oplus}}
 \BinaryInf$\Gamma \fCenter \Delta, !A \oplus !B$
-\DisplayProof
-\\
-& \Axiom$!A, \Gamma \fCenter \Delta, !B$
-\Axiom$!B, \Gamma \fCenter \Delta, !A$
-\RightLabel{\LeftR{\oplus}}
-\BinaryInf$!A \oplus !B, \Gamma \fCenter \Delta$
 \DisplayProof
 \end{align*}
 Aturan loro iki uga njaga kabeneran ing loro arah. Konklusiné bener
@@ -34081,7 +34082,8 @@ ketutup kanggo $!A \lor (!B \land !C) \Sequent
 (!A \lor !B) \land (!A \lor !C)$, kang diwiwiti
 saka $\sFmla{\True}{!A \lor (!B \land !C)}$
 lan $\sFmla{\False}{(!A \lor !B) \land (!A \lor !C)}$:
-\begin{oltableau}
+\begin{maxwidth}
+\begin{tableau}{}
   [\sFmla{\True}{\formula{A} \lor (\formula{B} \land \formula{C})},
     just=\TAss, checked
     [\sFmla{\False}{(\formula{A} \lor \formula{B}) \land
@@ -34139,7 +34141,8 @@ lan $\sFmla{\False}{(!A \lor !B) \land (!A \lor !C)}$:
       ]
     ]
   ]
-\end{oltableau}
+\end{tableau}
+\end{maxwidth}
 Cathetan basa: tuladha iki tableau ketutup, dudu tableau klausa; formula wiwitané ora kudu awujud klausa.
 Cathetan: tandha bener ing falsitas langsung nutup cabang, cocog karo aksioma falsitas kiwa ing kalkulus sekuèn.
 
@@ -34230,7 +34233,8 @@ $!A, \Pi \Sequent \Lambda, !A$. Sawetara simpul
 urut-urutan ing tableau bisa diwènèhi sekèn kang
 padha; busak duplikaté. Tuladhané, tableau ing
 ndhuwur diterjemahaké dadi !!{proof} iki:
-\[\small
+\begin{maxwidth}
+$
 \Axiom$!A \fCenter !A, !B$
 \RightLabel{\RightR{\lor}}
 \UnaryInf$!A \fCenter !A \lor !B$
@@ -34255,8 +34259,8 @@ ndhuwur diterjemahaké dadi !!{proof} iki:
 \RightLabel{\LeftR{\lor}}
 \BinaryInf$!A \lor (!B \land !C) \fCenter (!A \lor !B) \land
 (!A \lor !C)$
-\DisplayProof
-\]
+\DisplayProof$
+\end{maxwidth}
 Cathetan: mung tableau ketutup winates kang menehi bukti sekuèn. Tableau kabuka minangka pérangan panelusuran modhèl lawan, dudu bukti validitas. Cathetan: label sekuèn ngetutaké formula aktif ing panelusuran mundur. Formula kang wis diproses bisa tetep katon ing wit tableau, nanging ora kudu tetep ana ing label sekuèn. Kuantor kang diinstansiasi bola-bali tetep ana kaya aturan G3c. Cabang kang ngemot falsitas mawa tandha bener cocog karo aksioma falsitas kiwa. Kanggo pasangan tandha ngelawan ing formula nonatomik, gunakna derivasi identitas umum tanpa cut; aksioma atomik waé ora cukup minangka siji langkah.
 
 \endgroup
