@@ -1,0 +1,22 @@
+\emph{Semantik} kanggo basa tataran kapisan diwènèhaké déning
+\emph{struktur} kanggo basa iku. Struktur ngemot \emph{ranah}
+lan nemtokaké anggota ranah kanggo saben simbol konstanta.
+Simbol fungsi diinterpretasi nganggo fungsi, lan simbol predikat
+nganggo relasi ing ranah. Fungsi saka himpunan variabèl menyang
+ranah diarani \emph{panugasan variabèl}. Relasi \emph{panyukupan}
+nggandhèngaké struktur, panugasan variabèl, lan formula.
+$\Sat{M}{!A}[s]$ ditetepaké kanthi induksi tumrap struktur~$!A$.
+Asil iki mung gumantung marang interpretasi simbol kang pancèn
+muncul ing~$!A$. Yèn $!A$ ora ngemot variabèl bebas, asilé ora
+gumantung marang~$s$. Mula, yèn $!A$ minangka ukara,
+$\Sat{M}{!A}$ yèn $\Sat{M}{!A}[s]$ kanggo sembarang~$s$.
+
+Relasi panyukupan dadi dhasar kabèh konsèp semantis. Ukara~$!A$
+\emph{sah}, $\Sat{{}}{!A}$, yèn disukupi ing saben struktur.
+$!A$ minangka \emph{konsèkuènsi} saka himpunan ukara~$\Gamma$,
+$\Gamma\Entails !A$, yèn lan mung yèn $\Sat{M}{!A}$ kanggo
+saben $\Struct{M}$ kang nyukupi kabèh ukara ing~$\Gamma$.
+$\Gamma$ \emph{bisa disukupi} yèn ana struktur kang nyukupi
+saben ukara ing~$\Gamma$. Yèn ora, $\Gamma$ \emph{ora bisa disukupi}.
+Konsèp-konsèp iki gegayutan. Upamané, $\Gamma\Entails !A$
+yèn lan mung yèn $\Gamma\cup\{\lnot !A\}$ ora bisa disukupi.
