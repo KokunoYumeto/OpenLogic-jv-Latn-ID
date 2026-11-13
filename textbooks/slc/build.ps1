@@ -1,14 +1,30 @@
 [CmdletBinding()]
-param([ValidateRange(1, 180000)][int]$AcquireTimeoutMs = 1000)
+param(
+    [ValidateRange(1, 180000)][int]$AcquireTimeoutMs = 1000,
+    [string]$PreparedTree,
+    [switch]$Cumulative
+)
 
 $ErrorActionPreference = 'Stop'
-$source = & python (Join-Path $PSScriptRoot 'prepare.py')
-if ($LASTEXITCODE -ne 0) { throw 'Source staging failed.' }
-$inputTree = $source | ConvertFrom-Json
+if ($PreparedTree) {
+    $stage = (Resolve-Path -LiteralPath $PreparedTree).Path
+    $inputTree = [pscustomobject]@{
+        olp = Join-Path $stage 'olp'
+        book = Join-Path $stage 'olp/locale/jv/courses/sets-logic-computation'
+        source_units = 722
+    }
+} else {
+    if ($Cumulative) { throw 'Cumulative mode requires the extracted source tree.' }
+    $source = & python (Join-Path $PSScriptRoot 'prepare.py')
+    if ($LASTEXITCODE -ne 0) { throw 'Source staging failed.' }
+    $inputTree = $source | ConvertFrom-Json
+    $stage = $inputTree.stage
+}
 $book = $inputTree.book
-$stage = $inputTree.stage
-$pdf = Join-Path $book 'slc-screen.pdf'
-$out = Join-Path $PSScriptRoot 'slc-screen-jv.pdf'
+$jobName = if ($Cumulative) { 'slc-screen-jv' } else { 'slc-screen' }
+$pdf = Join-Path $book "$jobName.pdf"
+$outName = if ($Cumulative) { 'slc-screen-jv-cumulative.pdf' } else { 'slc-screen-jv.pdf' }
+$out = Join-Path $PSScriptRoot $outName
 $receiptFile = Join-Path $stage 'build.json'
 $receipt = [ordered]@{
     status = 'not_started'
@@ -26,24 +42,25 @@ function Invoke-SlcTool([string]$Name, [string[]]$Arguments) {
     $log = Join-Path $stage ('{0:D2}-{1}.txt' -f $sequence, $Name)
     $code = $null
     if ($IsWindows) {
-        $job = [SlcProcessJob]::CreateJobObject([IntPtr]::Zero, $null)
+        $job = [JvWindowsTexJob]::CreateJobObject([IntPtr]::Zero, $null)
         if ($job -eq [IntPtr]::Zero) { throw 'Could not create a Windows process job.' }
         $proc = $null
         try {
-            $proc = [SlcProcessJob]::Launch($exe, ($Arguments -join ' '), $book, $job, $log)
+            [JvWindowsTexJob]::LimitMemory($job)
+            $proc = [JvWindowsTexJob]::Launch($exe, ($Arguments -join ' '), $book, $job, $log)
             $clock = [Diagnostics.Stopwatch]::StartNew()
-            while (-not $proc.HasExited -or [SlcProcessJob]::Active($job) -gt 0) {
+            while (-not $proc.HasExited -or [JvWindowsTexJob]::Active($job) -gt 0) {
                 if ($clock.Elapsed.TotalSeconds -gt 240) { throw "$Name exceeded four minutes." }
                 Start-Sleep -Milliseconds 100
             }
             $proc.WaitForExit()
             $code = $proc.ExitCode
         } finally {
-            if ([SlcProcessJob]::Active($job) -gt 0) {
-                $null = [SlcProcessJob]::TerminateJobObject($job, 125)
-                while ([SlcProcessJob]::Active($job) -gt 0) { Start-Sleep -Milliseconds 100 }
+            if ([JvWindowsTexJob]::Active($job) -gt 0) {
+                $null = [JvWindowsTexJob]::TerminateJobObject($job, 125)
+                while ([JvWindowsTexJob]::Active($job) -gt 0) { Start-Sleep -Milliseconds 100 }
             }
-            $null = [SlcProcessJob]::CloseHandle($job)
+            $null = [JvWindowsTexJob]::CloseHandle($job)
             if ($proc) { $proc.Dispose() }
         }
     } else {
@@ -65,7 +82,11 @@ $previousEpoch = $env:SOURCE_DATE_EPOCH
 $previousForceDate = $env:FORCE_SOURCE_DATE
 try {
     if ($IsWindows) {
-        Add-Type -Path (Join-Path $PSScriptRoot 'WindowsProcessJob.cs')
+        $jobSource = Join-Path $PSScriptRoot 'WindowsTexJob.cs'
+        if (-not (Test-Path -LiteralPath $jobSource)) {
+            $jobSource = Join-Path $PSScriptRoot '../../tools/WindowsTexJob.cs'
+        }
+        Add-Type -Path $jobSource
         $mutex = [Threading.Mutex]::new($false, 'Global\InterlanguageTeXSlotV1')
         try { $receipt.mutex_acquired = $mutex.WaitOne($AcquireTimeoutMs) }
         catch [Threading.AbandonedMutexException] { $receipt.mutex_acquired = $true }
@@ -81,11 +102,11 @@ try {
     $version = & pdflatex --version | Select-Object -First 1
     $platformOptions = if ($version -match 'MiKTeX') { @('--disable-installer') } else { @() }
     $texArgs = @($platformOptions) + @('-no-shell-escape','-interaction=nonstopmode',
-        '-halt-on-error','-file-line-error','-recorder','slc-screen.tex')
-    $bibArgs = @($platformOptions) + @('slc-screen')
-    $indexArgs = @('-s','slc-screen.ist','-t','slc-screen.glg','-o','slc-screen.gls','slc-screen.glo')
+        '-halt-on-error','-file-line-error','-recorder',"$jobName.tex")
+    $bibArgs = @($platformOptions) + @($jobName)
+    $indexArgs = @('-s',"$jobName.ist",'-t',"$jobName.glg",'-o',"$jobName.gls","$jobName.glo")
     Invoke-SlcTool pdflatex $texArgs
-    $firstLog = Get-Content -LiteralPath (Join-Path $book 'slc-screen.log') -Raw
+    $firstLog = Get-Content -LiteralPath (Join-Path $book "$jobName.log") -Raw
     if (($firstLog -replace '\s+', ' ') -match 'requested but not marked jv') {
         throw "A localized import was skipped. See $book/slc-screen.log."
     }
@@ -103,21 +124,30 @@ try {
         'multiply defined',
         'Token [^\r\n]{0,200} undefined',
         'requested but not marked jv',
-        'Missing character:'
+        'Missing character:',
+        'destination with the same identifier'
     )
     $warnings = @()
     for ($pass = 3; $pass -le 7; $pass++) {
         Invoke-SlcTool pdflatex $texArgs
-        $texLog = Get-Content -LiteralPath (Join-Path $book 'slc-screen.log') -Raw
+        $texLog = Get-Content -LiteralPath (Join-Path $book "$jobName.log") -Raw
         $warnings = @($checks | Where-Object { $texLog -match $_ })
         if ($warnings.Count -eq 0) { break }
     }
     $receipt.remaining_log_checks = $warnings
     if ($warnings.Count -gt 0) { throw "Unsettled build. See $book/slc-screen.log." }
     if (-not (Test-Path -LiteralPath $pdf -PathType Leaf)) { throw 'The screen PDF is absent.' }
-    $inventory = & python (Join-Path $PSScriptRoot 'check-build.py') $book
+    $mode = @()
+    if ($Cumulative) { $mode += '--cumulative' }
+    $inventory = & python (Join-Path $PSScriptRoot 'check-build.py') $book @mode
     if ($LASTEXITCODE -ne 0) { throw 'Textbook content inventory did not pass.' }
     $receipt.inventory = $inventory | ConvertFrom-Json
+    $boxes = @([regex]::Matches($texLog,'Overfull \\[hv]box \(([\d.]+)pt') |
+        ForEach-Object { [double]$_.Groups[1].Value })
+    $receipt.overfull_count = $boxes.Count
+    $receipt.overfull_over_2pt = @($boxes | Where-Object { $_ -gt 2 }).Count
+    $receipt.overfull_max_pt = ($boxes | Measure-Object -Maximum).Maximum
+    if ($receipt.overfull_over_2pt) { throw "Boxes exceed 2 pt in $book/$jobName.log." }
     Copy-Item -LiteralPath $pdf -Destination $out
     $receipt.pdf_sha256 = (Get-FileHash -LiteralPath $out -Algorithm SHA256).Hash.ToLowerInvariant()
     $receipt.status = 'complete'

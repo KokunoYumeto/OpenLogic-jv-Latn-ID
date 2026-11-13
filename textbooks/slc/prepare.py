@@ -121,6 +121,18 @@ def main():
     book_class = olp / "sty" / "open-logic-book.cls"
     class_text = book_class.read_text(encoding="utf-8")
     class_text = replace_once(class_text, "      pdfdisplaydoctitle,\n", "", book_class.name)
+    class_text = replace_once(
+        class_text,
+        r"\OLPbookformat{8in}{5in}{.6in}{1}",
+        r"\OLPbookformat{9.4in}{6.25in}{.6in}{1}",
+        book_class.name,
+    )
+    class_text = replace_once(
+        class_text,
+        r"\settypeblocksize{*}{300pt}{1.62}",
+        r"\settypeblocksize{*}{386pt}{1.5}",
+        book_class.name,
+    )
     book_class.write_text(class_text, encoding="utf-8", newline="\n")
 
     token_config = olp / "open-logic-config.sty"

@@ -11,7 +11,7 @@ Tèks Richard Zach lan Open Logic Project sarta terjemahan iki nganggo
 Terjemahan lan panyuntingan diprodhuksi AI OpenAI Codex, GPT-6.1 Sol
 kanthi upaya nalar Ultra. Revisi sumber lan atribusi ana ing
 [manifest](MANIFEST.json). [Buku sumber](https://github.com/rzach/sets-logic-computation/tree/6178f32f61645f3b62ef621b4c5a88f8e67778ad) ·
-[Revisi Open Logic Text](https://github.com/OpenLogicProject/OpenLogic/tree/9620cc73f9c8e0ad003c514a5d3748f29611c4c0).
+[Revisi Open Logic Text](https://github.com/OpenLogicProject/OpenLogic/tree/1e960beff9ed7835bf3e3f1335e21af3439cd107).
 
 Ilustrasi anggitané Matthew Leadbeater nganggo
 [CC BY-NC 4.0](assets/portraits/LICENSE.md). Foto dienggo miturut
@@ -29,7 +29,14 @@ Saka oyod repositori, lakokna préntah ing ngisor iki.
 pwsh -NoProfile -File textbooks/slc/build.ps1
 ~~~
 
-Asilé [slc-screen-jv.pdf](slc-screen-jv.pdf). Préntah iku nata
+Asilé [slc-screen-jv.pdf](slc-screen-jv.pdf).
+
+- [Arsip sumber lengkap lan pandhuan nyusun PDF](slc-source-jv.zip)
+- [Sumber LaTeX kumulatif](slc-screen-jv.tex)
+- [Checksum telung undhuhan](SHA256SUMS.txt)
+- [Pandhuan ngasilaké PDF saka arsip sumber](BUILD.md)
+
+Préntah iku nata
 sumber ing .build, mriksa hash sumber OLP lan terjemahan, nyusun
 locale/jv, lan nglakokaké pdfLaTeX, BibTeX lan MakeIndex.
 Entri glosarium diurutaké nganggo kunci abjad Latin basa Jawa.

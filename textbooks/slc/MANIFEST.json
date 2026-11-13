@@ -6,7 +6,7 @@
   "sources": {
     "open_logic": {
       "repository": "https://github.com/OpenLogicProject/OpenLogic",
-      "commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+      "commit": "1e960beff9ed7835bf3e3f1335e21af3439cd107",
       "license": "CC BY 4.0"
     },
     "slc": {
@@ -42,8 +42,8 @@
     },
     "javanese_open_logic": {
       "repository": "https://github.com/KokunoYumeto/OpenLogic-jv-Latn-ID",
-      "commit": "6130c9168e24426d0c1ea26b2c815fa2ee0ec34b",
-      "edition": "v0.3.0",
+      "commit": "cc70af9214db927c6d1607dea70dbfbf89bd9caf",
+      "edition": "v0.3.1",
       "locale_input_units": 722
     },
     "portraits": {
@@ -84,8 +84,8 @@
     "imported_localized_modules": 176,
     "output": {
       "path": "slc-screen-jv.pdf",
-      "pages": 475,
-      "sha256": "be51dd9666671614721b7d8d24311dbc8d8495202bf2031856d6f1f8818114c9"
+      "pages": 345,
+      "sha256": "f05abaf3d2b1c56acb5292e32647f10974bb59059c461f8575ee7abcbe0f1be2"
     }
   },
   "citation_localization": {
@@ -94,5 +94,9 @@
     "reasoning_effort": "ultra",
     "session_metadata_observed_at_utc": "2026-11-12T22:42:25.134Z",
     "author_conjunction": "lan"
+  },
+  "source_sync_authorship": {
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "ultra"
   }
 }
