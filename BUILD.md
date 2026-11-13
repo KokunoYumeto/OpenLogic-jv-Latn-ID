@@ -28,7 +28,20 @@ done
 )
 ```
 
-## Windows PowerShell
+## Windows PowerShell 7
+
+From the source tree root, one command builds the reader with a 5 GiB
+process-tree cap. A fresh output folder is required.
+
+~~~powershell
+pwsh -NoProfile -File tools/build-complete-reader.ps1 -Edition edition -Output .build/reader
+~~~
+
+The PDF is in .build/reader. To reproduce the direct cumulative TeX
+download, put it in edition/ and pass its basename as -JobName to
+the same command, using a fresh output folder.
+
+### Manual commands
 
 ```powershell
 Set-Location edition

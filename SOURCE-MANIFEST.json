@@ -1,7 +1,7 @@
 {
   "schema": "openlogic-jv-source-manifest/1",
-  "upstream_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
-  "release": "v0.3.0",
+  "upstream_revision": "1e960beff9ed7835bf3e3f1335e21af3439cd107",
+  "release": "v0.3.1",
   "language": "jv-Latn-ID",
   "title": "OpenLogic ing Basa Jawa",
   "original_author": "Open Logic Project",
@@ -234,7 +234,7 @@
       "english": {
         "path": "upstream/content/sets-functions-relations/relations/trees.tex",
         "bytes": 5102,
-        "sha256": "a158f1ce5b84c8c3f681dd6347b22491d1b67a91e110138b9cb6833e3d9dc23c"
+        "sha256": "d3a42160b2bb4cefe7569899a434c03e371db9e3c3939acf3308706575a6c4f9"
       },
       "javanese": {
         "path": "translation/content/sets-functions-relations/relations/trees.tex",
@@ -311,8 +311,8 @@
       "id": "OLP-0024",
       "english": {
         "path": "upstream/content/sets-functions-relations/functions/inverses.tex",
-        "bytes": 6747,
-        "sha256": "96e36d8cd8dc4ec0e73e9507147ecfe33d7e4f368ecf46de92efb423a7d409c1"
+        "bytes": 6793,
+        "sha256": "9d406f3004039898ffc8e85e39c8af14f723839c2a77abb44af871d3d7bfa54d"
       },
       "javanese": {
         "path": "translation/content/sets-functions-relations/functions/inverses.tex",
@@ -416,7 +416,7 @@
       "english": {
         "path": "upstream/content/sets-functions-relations/size-of-sets/pairing-alt.tex",
         "bytes": 4592,
-        "sha256": "c26b4e0da9e2e0b0ec839470ddd1d0d5eb1b3d3922d3b6986c9a795f34328797"
+        "sha256": "53bb95d72d3cc2c10f361b1e32c08c340e21a2529670909dd256ec97ecd2aa92"
       },
       "javanese": {
         "path": "translation/content/sets-functions-relations/size-of-sets/pairing-alt.tex",
@@ -559,7 +559,7 @@
       "english": {
         "path": "upstream/content/sets-functions-relations/arithmetization/rationals.tex",
         "bytes": 3255,
-        "sha256": "7140495368042fcbc55907e6ee568c5bc8b7066e44a01a50cbf4202acebe71d2"
+        "sha256": "6964f33459c41253e08c0b6bb976e142c8724c688f6ba3132ad45f57993344f6"
       },
       "javanese": {
         "path": "translation/content/sets-functions-relations/arithmetization/rationals.tex",
@@ -701,13 +701,13 @@
       "id": "OLP-0054",
       "english": {
         "path": "upstream/content/sets-functions-relations/infinite/card-sb.tex",
-        "bytes": 4143,
-        "sha256": "88534a3f2be736a704ab31343e45933edb9712fa5b4411eb102c0f4a12d656e9"
+        "bytes": 4193,
+        "sha256": "a641eb99032aa5f7edb5e49889e03718470853179ab21e936b09bb1787d0773e"
       },
       "javanese": {
         "path": "translation/content/sets-functions-relations/infinite/card-sb.tex",
-        "bytes": 4962,
-        "sha256": "5e9215635cb5d24ae821aed98c4963b716c68f6adfd2306b0d72538eb56d4d25"
+        "bytes": 5006,
+        "sha256": "cba383dfd8112c0992452109862d3656275e76c279b814b537995a647af65d85"
       }
     },
     {
@@ -1559,8 +1559,8 @@
       "id": "OLP-0120",
       "english": {
         "path": "upstream/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex",
-        "bytes": 2176,
-        "sha256": "79f2ddf58916652493c2892078b01dd53ae1691a97e28cfed043cbe285d11888"
+        "bytes": 2184,
+        "sha256": "a0b0dbe318bdf6b5cd9ee759c87752a5b8c2280a9331c97a1077b48257016be6"
       },
       "javanese": {
         "path": "translation/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex",
@@ -2248,8 +2248,8 @@
       "id": "OLP-0173",
       "english": {
         "path": "upstream/content/first-order-logic/models-theories/size-of-structures.tex",
-        "bytes": 2376,
-        "sha256": "8b7238c293db0a3717f1fcf3ad2420e093cd65593237c26faaaf36d7b131e934"
+        "bytes": 2375,
+        "sha256": "d0e2f55e56620cf99b1f2f79eb2fb5e43cdb5da9c37febadffef2c51ce648846"
       },
       "javanese": {
         "path": "translation/content/first-order-logic/models-theories/size-of-structures.tex",
@@ -2430,8 +2430,8 @@
       "id": "OLP-0187",
       "english": {
         "path": "upstream/content/model-theory/basics/isomorphism.tex",
-        "bytes": 5185,
-        "sha256": "bc20c7ae117da49ae395fe60f41be8baa408de9f1e0ccb78bb4356b40626861f"
+        "bytes": 5186,
+        "sha256": "ff467e98c994243d77b2ffe8d8dfdf81a4c1012ae370f5e82cae21e75a5270ea"
       },
       "javanese": {
         "path": "translation/content/model-theory/basics/isomorphism.tex",
@@ -3068,7 +3068,7 @@
       "english": {
         "path": "upstream/content/computability/computability-theory/russells-paradox.tex",
         "bytes": 2712,
-        "sha256": "eb1fc81105316b076e39d9a9737473da60dcbec63583615813773d5c0649b98b"
+        "sha256": "28946ca0c7581b20c1f0492c475540f81bae9dd7942a6ababaf7d57685dcba34"
       },
       "javanese": {
         "path": "translation/content/computability/computability-theory/russells-paradox.tex",
@@ -5966,8 +5966,8 @@
       "id": "OLP-0459",
       "english": {
         "path": "upstream/content/normal-modal-logic/filtrations/euclidean-filtrations.tex",
-        "bytes": 5222,
-        "sha256": "904eebe3b14b5f58fcac9db524e0546c9cdd6f1a07b00f1ef097fba80b0664db"
+        "bytes": 5265,
+        "sha256": "f1daa99cd7f5b423e8cf1e0259b979d89bc329fa7f921e701a5a931cfa81d5ce"
       },
       "javanese": {
         "path": "translation/content/normal-modal-logic/filtrations/euclidean-filtrations.tex",
@@ -6435,7 +6435,7 @@
       "english": {
         "path": "upstream/content/intuitionistic-logic/introduction/bhk-interpretation.tex",
         "bytes": 7723,
-        "sha256": "4a23702a2d57e916ab50e764e61b76bb4e91d6287655d2db737ac71023176794"
+        "sha256": "6f8701c34618a8d310aa25f298ee2f9df549364ad6d9c75516964e8d82ae2540"
       },
       "javanese": {
         "path": "translation/content/intuitionistic-logic/introduction/bhk-interpretation.tex",
@@ -8891,13 +8891,13 @@
       "id": "OLP-0684",
       "english": {
         "path": "upstream/content/proof-theory/proof-search/tableaux.tex",
-        "bytes": 8583,
-        "sha256": "593c823ad413a4db7c58f783d612a3fb14cc8fbaa790c50c26d0f7709b6a8d14"
+        "bytes": 8640,
+        "sha256": "609bf2fdfd8b9474f8dd77a9b066028b9ec2889d991889e7b59bd1b43511dfa5"
       },
       "javanese": {
         "path": "translation/content/proof-theory/proof-search/tableaux.tex",
-        "bytes": 10959,
-        "sha256": "1e1a094cee6de5d9e1a7bf96feaa5182609260b5c1ad9fa9dd42349e27419a97"
+        "bytes": 11012,
+        "sha256": "78f3563a0146e8307f769bc0dab134695045a6f557e856356200daa9b3dd51c7"
       }
     },
     {
@@ -9009,7 +9009,7 @@
       "english": {
         "path": "upstream/content/proof-theory/propositions-as-types/rules-tN3.tex",
         "bytes": 2055,
-        "sha256": "948804549f0622cc616399743fa6fc6680b1b061763d292d7c5e2106fd583656"
+        "sha256": "eb80bf3d8a410691a1c86bd6cced090427f8c42c547a74f24ac07a3618fa2379"
       },
       "javanese": {
         "path": "translation/content/proof-theory/propositions-as-types/rules-tN3.tex",
@@ -9060,8 +9060,8 @@
       "id": "OLP-0697",
       "english": {
         "path": "upstream/content/proof-theory/propositions-as-types/types.tex",
-        "bytes": 5023,
-        "sha256": "8e3fa53eb78ebc918ee94e0eead7724d931e5a27b75d714bca1db80f04ba9152"
+        "bytes": 5081,
+        "sha256": "961c82ed1c3787d7bbcf0727439fc92c0a97cbe4c2fddec60bafba6b80ec821b"
       },
       "javanese": {
         "path": "translation/content/proof-theory/propositions-as-types/types.tex",
@@ -9086,13 +9086,13 @@
       "id": "OLP-0699",
       "english": {
         "path": "upstream/content/proof-theory/sequent-calculus/interpretation-rules.tex",
-        "bytes": 6617,
-        "sha256": "5563118c0574c226f19802adfbafc206db1df4d36ced8f3c841814a2f42f3d3a"
+        "bytes": 6616,
+        "sha256": "06351df029abf713514f6712c8fc445960660379d4bfde1008c68a40610ec033"
       },
       "javanese": {
         "path": "translation/content/proof-theory/sequent-calculus/interpretation-rules.tex",
         "bytes": 7576,
-        "sha256": "27184af565b325e2b5582487863585bd0ba41e01f3b88923eab1df3f3e265e9f"
+        "sha256": "09d66c0022c069b3cbb627ee4f5da9ba8e745620deec4b464104b250bd3f3178"
       }
     },
     {
@@ -9165,7 +9165,7 @@
       "english": {
         "path": "upstream/content/proof-theory/sequent-calculus/rules-G1i.tex",
         "bytes": 3151,
-        "sha256": "b16548e594dc5a0a414c919e26078d474488c3186487c7cbdce170fb23035b7b"
+        "sha256": "e7238a933e674ec837be17e12c1b52c21bdd2ee86b787425b051ffb5cc31565c"
       },
       "javanese": {
         "path": "translation/content/proof-theory/sequent-calculus/rules-G1i.tex",
@@ -9203,8 +9203,8 @@
       "id": "OLP-0708",
       "english": {
         "path": "upstream/content/proof-theory/sequent-calculus/rules-G3i.tex",
-        "bytes": 2427,
-        "sha256": "3b754ac3aadeb92362d6eeb398cfa914e2a757e079d5305f3994f938e0ff6933"
+        "bytes": 2620,
+        "sha256": "5f0e90b89f32fc32abbaec69c7107cee02e2ddc297d4c1837b40beb121b9c790"
       },
       "javanese": {
         "path": "translation/content/proof-theory/sequent-calculus/rules-G3i.tex",
@@ -9397,24 +9397,24 @@
   ],
   "files": {
     "BUILD.md": {
-      "bytes": 2204,
-      "sha256": "25b220c489357c46207994db5b77f59a6b3e3dee732f7ce8df8166c5431cf871"
+      "bytes": 2645,
+      "sha256": "11f821ff18c244cc70c1e892519f34682e8144041343b11018d2e88abb46281f"
     },
     "LICENSE.md": {
       "bytes": 17068,
       "sha256": "bb5e0179a1e9bdb55634a4303784cf73c297a1dcee27b92cd546bf398075531c"
     },
     "README.md": {
-      "bytes": 1939,
-      "sha256": "e7cedb647a340611dd28c8b943524e626640f9ba67045dd66e694bbe379cc574"
+      "bytes": 2300,
+      "sha256": "3d91545e8d1bb1ef6635fe91e352195be6964389bf700787ad0c6b95c3b76fb3"
     },
     "edition/jv-complete-about.tex": {
       "bytes": 1381,
       "sha256": "650eb1cb43595515d0900b3343fb5f27f4e21601d7b3dd3e85bd3d49fb9fc1ba"
     },
     "edition/jv-complete-body.tex": {
-      "bytes": 3189537,
-      "sha256": "78631fdb3a82cfb59fc8902c81698e1dce28b23479ff5f99d376d88f637a1a2c"
+      "bytes": 3189634,
+      "sha256": "904974a50f67df50b786f0f8f8e84cdb62d1d56eb883a0430989b7aa044ab2e1"
     },
     "edition/jv-complete-localization.sty": {
       "bytes": 6317,
@@ -9425,8 +9425,8 @@
       "sha256": "d49ee760e509e55602aee9cad4cdd9b474c2edb407689839a847961c3644666a"
     },
     "edition/jv-complete.tex": {
-      "bytes": 3297,
-      "sha256": "e495fecbd70bb60211c5d6776de196690a22457fd8ad8538f07f425a5663ebef"
+      "bytes": 3383,
+      "sha256": "0977e873a94fe8e4240fc8c63d4f14aacf46649af01cf917e5f43b618060359e"
     },
     "edition/jv-localization.sty": {
       "bytes": 7404,
@@ -11489,8 +11489,8 @@
       "sha256": "f1f965f0ffaf5e736dce70153db6b9b68077c3570d4e2903243b7314ac7c28fe"
     },
     "translation/content/proof-theory/proof-search/tableaux.tex": {
-      "bytes": 10959,
-      "sha256": "1e1a094cee6de5d9e1a7bf96feaa5182609260b5c1ad9fa9dd42349e27419a97"
+      "bytes": 11012,
+      "sha256": "78f3563a0146e8307f769bc0dab134695045a6f557e856356200daa9b3dd51c7"
     },
     "translation/content/proof-theory/proof-theory.tex": {
       "bytes": 596,
@@ -11550,7 +11550,7 @@
     },
     "translation/content/proof-theory/sequent-calculus/interpretation-rules.tex": {
       "bytes": 7576,
-      "sha256": "27184af565b325e2b5582487863585bd0ba41e01f3b88923eab1df3f3e265e9f"
+      "sha256": "09d66c0022c069b3cbb627ee4f5da9ba8e745620deec4b464104b250bd3f3178"
     },
     "translation/content/proof-theory/sequent-calculus/introduction.tex": {
       "bytes": 6532,
@@ -12097,8 +12097,8 @@
       "sha256": "eedfc886661c73a7ce026ea331d73759bd2bd8b7530b30e5b93460300496db2a"
     },
     "translation/content/sets-functions-relations/infinite/card-sb.tex": {
-      "bytes": 4962,
-      "sha256": "5e9215635cb5d24ae821aed98c4963b716c68f6adfd2306b0d72538eb56d4d25"
+      "bytes": 5006,
+      "sha256": "cba383dfd8112c0992452109862d3656275e76c279b814b537995a647af65d85"
     },
     "translation/content/sets-functions-relations/infinite/dedekind-algebra.tex": {
       "bytes": 5515,
@@ -12618,7 +12618,7 @@
     },
     "upstream/content/computability/computability-theory/russells-paradox.tex": {
       "bytes": 2712,
-      "sha256": "eb1fc81105316b076e39d9a9737473da60dcbec63583615813773d5c0649b98b"
+      "sha256": "28946ca0c7581b20c1f0492c475540f81bae9dd7942a6ababaf7d57685dcba34"
     },
     "upstream/content/computability/computability-theory/s-m-n.tex": {
       "bytes": 1535,
@@ -12781,8 +12781,8 @@
       "sha256": "fa0af48f98b58f2c7b5df8aa80cf2e4981936e237594ddce342e826bbca2ddc8"
     },
     "upstream/content/first-order-logic/axiomatic-deduction/deduction-theorem-quantifiers.tex": {
-      "bytes": 2176,
-      "sha256": "79f2ddf58916652493c2892078b01dd53ae1691a97e28cfed043cbe285d11888"
+      "bytes": 2184,
+      "sha256": "a0b0dbe318bdf6b5cd9ee759c87752a5b8c2280a9331c97a1077b48257016be6"
     },
     "upstream/content/first-order-logic/axiomatic-deduction/deduction-theorem.tex": {
       "bytes": 4727,
@@ -12977,8 +12977,8 @@
       "sha256": "e85d5beac63c3e6a5c44bec12aabbfe05e0b2af8f2604d6d79bb5220587eaeaf"
     },
     "upstream/content/first-order-logic/models-theories/size-of-structures.tex": {
-      "bytes": 2376,
-      "sha256": "8b7238c293db0a3717f1fcf3ad2420e093cd65593237c26faaaf36d7b131e934"
+      "bytes": 2375,
+      "sha256": "d0e2f55e56620cf99b1f2f79eb2fb5e43cdb5da9c37febadffef2c51ce648846"
     },
     "upstream/content/first-order-logic/models-theories/theories.tex": {
       "bytes": 6110,
@@ -13546,7 +13546,7 @@
     },
     "upstream/content/intuitionistic-logic/introduction/bhk-interpretation.tex": {
       "bytes": 7723,
-      "sha256": "4a23702a2d57e916ab50e764e61b76bb4e91d6287655d2db737ac71023176794"
+      "sha256": "6f8701c34618a8d310aa25f298ee2f9df549364ad6d9c75516964e8d82ae2540"
     },
     "upstream/content/intuitionistic-logic/introduction/constructive-reasoning.tex": {
       "bytes": 4189,
@@ -14009,8 +14009,8 @@
       "sha256": "9c7bd2cbee65556d3edc1316632fa5714527901ee0aed70ee76e2c4db7c03531"
     },
     "upstream/content/model-theory/basics/isomorphism.tex": {
-      "bytes": 5185,
-      "sha256": "bc20c7ae117da49ae395fe60f41be8baa408de9f1e0ccb78bb4356b40626861f"
+      "bytes": 5186,
+      "sha256": "ff467e98c994243d77b2ffe8d8dfdf81a4c1012ae370f5e82cae21e75a5270ea"
     },
     "upstream/content/model-theory/basics/nonstandard-arithmetic.tex": {
       "bytes": 11091,
@@ -14209,8 +14209,8 @@
       "sha256": "73dfbf706b0e5593dd2a012581fac25f80499260b6f0ac17001235860f4e356e"
     },
     "upstream/content/normal-modal-logic/filtrations/euclidean-filtrations.tex": {
-      "bytes": 5222,
-      "sha256": "904eebe3b14b5f58fcac9db524e0546c9cdd6f1a07b00f1ef097fba80b0664db"
+      "bytes": 5265,
+      "sha256": "f1daa99cd7f5b423e8cf1e0259b979d89bc329fa7f921e701a5a931cfa81d5ce"
     },
     "upstream/content/normal-modal-logic/filtrations/examples-of-filtrations.tex": {
       "bytes": 9611,
@@ -14505,8 +14505,8 @@
       "sha256": "2ce7994ec2166ec4f50b3c3698d4767f49ff3fd4a39c942f79ba304ca9c1a8a2"
     },
     "upstream/content/proof-theory/proof-search/tableaux.tex": {
-      "bytes": 8583,
-      "sha256": "593c823ad413a4db7c58f783d612a3fb14cc8fbaa790c50c26d0f7709b6a8d14"
+      "bytes": 8640,
+      "sha256": "609bf2fdfd8b9474f8dd77a9b066028b9ec2889d991889e7b59bd1b43511dfa5"
     },
     "upstream/content/proof-theory/proof-theory.tex": {
       "bytes": 530,
@@ -14542,7 +14542,7 @@
     },
     "upstream/content/proof-theory/propositions-as-types/rules-tN3.tex": {
       "bytes": 2055,
-      "sha256": "948804549f0622cc616399743fa6fc6680b1b061763d292d7c5e2106fd583656"
+      "sha256": "eb80bf3d8a410691a1c86bd6cced090427f8c42c547a74f24ac07a3618fa2379"
     },
     "upstream/content/proof-theory/propositions-as-types/sequent-natural-deduction.tex": {
       "bytes": 4223,
@@ -14557,16 +14557,16 @@
       "sha256": "45707be51e3f9c94199c7d8ac0656d402a50f99b12504c33b217bfe86f040d8f"
     },
     "upstream/content/proof-theory/propositions-as-types/types.tex": {
-      "bytes": 5023,
-      "sha256": "8e3fa53eb78ebc918ee94e0eead7724d931e5a27b75d714bca1db80f04ba9152"
+      "bytes": 5081,
+      "sha256": "961c82ed1c3787d7bbcf0727439fc92c0a97cbe4c2fddec60bafba6b80ec821b"
     },
     "upstream/content/proof-theory/sequent-calculus/admissible-derivable.tex": {
       "bytes": 9990,
       "sha256": "b23007a09bbf7b4b8390943539aab59ee00277b3af8450b5d07142eaf9d1af10"
     },
     "upstream/content/proof-theory/sequent-calculus/interpretation-rules.tex": {
-      "bytes": 6617,
-      "sha256": "5563118c0574c226f19802adfbafc206db1df4d36ced8f3c841814a2f42f3d3a"
+      "bytes": 6616,
+      "sha256": "06351df029abf713514f6712c8fc445960660379d4bfde1008c68a40610ec033"
     },
     "upstream/content/proof-theory/sequent-calculus/introduction.tex": {
       "bytes": 6274,
@@ -14590,7 +14590,7 @@
     },
     "upstream/content/proof-theory/sequent-calculus/rules-G1i.tex": {
       "bytes": 3151,
-      "sha256": "b16548e594dc5a0a414c919e26078d474488c3186487c7cbdce170fb23035b7b"
+      "sha256": "e7238a933e674ec837be17e12c1b52c21bdd2ee86b787425b051ffb5cc31565c"
     },
     "upstream/content/proof-theory/sequent-calculus/rules-G2c.tex": {
       "bytes": 3322,
@@ -14601,8 +14601,8 @@
       "sha256": "0beb76005abcb4f20109400d18ae1d632e7126bd6dea43c20c9f42d114c9664d"
     },
     "upstream/content/proof-theory/sequent-calculus/rules-G3i.tex": {
-      "bytes": 2427,
-      "sha256": "3b754ac3aadeb92362d6eeb398cfa914e2a757e079d5305f3994f938e0ff6933"
+      "bytes": 2620,
+      "sha256": "5f0e90b89f32fc32abbaec69c7107cee02e2ddc297d4c1837b40beb121b9c790"
     },
     "upstream/content/proof-theory/sequent-calculus/rules-LK.tex": {
       "bytes": 3517,
@@ -15066,7 +15066,7 @@
     },
     "upstream/content/sets-functions-relations/arithmetization/rationals.tex": {
       "bytes": 3255,
-      "sha256": "7140495368042fcbc55907e6ee568c5bc8b7066e44a01a50cbf4202acebe71d2"
+      "sha256": "6964f33459c41253e08c0b6bb976e142c8724c688f6ba3132ad45f57993344f6"
     },
     "upstream/content/sets-functions-relations/arithmetization/reals.tex": {
       "bytes": 4654,
@@ -15097,8 +15097,8 @@
       "sha256": "d68bba27e593df2c17e2dc93b34256d829361b04134b4a962b997d5f4a230a59"
     },
     "upstream/content/sets-functions-relations/functions/inverses.tex": {
-      "bytes": 6747,
-      "sha256": "96e36d8cd8dc4ec0e73e9507147ecfe33d7e4f368ecf46de92efb423a7d409c1"
+      "bytes": 6793,
+      "sha256": "9d406f3004039898ffc8e85e39c8af14f723839c2a77abb44af871d3d7bfa54d"
     },
     "upstream/content/sets-functions-relations/functions/isomorphic-functions.tex": {
       "bytes": 1548,
@@ -15113,8 +15113,8 @@
       "sha256": "fdfbf3efe6aa648adad1e98d6567ecd7941dc41aeb1917b41548ad9568bb41a2"
     },
     "upstream/content/sets-functions-relations/infinite/card-sb.tex": {
-      "bytes": 4143,
-      "sha256": "88534a3f2be736a704ab31343e45933edb9712fa5b4411eb102c0f4a12d656e9"
+      "bytes": 4193,
+      "sha256": "a641eb99032aa5f7edb5e49889e03718470853179ab21e936b09bb1787d0773e"
     },
     "upstream/content/sets-functions-relations/infinite/dedekind-algebra.tex": {
       "bytes": 5072,
@@ -15174,7 +15174,7 @@
     },
     "upstream/content/sets-functions-relations/relations/trees.tex": {
       "bytes": 5102,
-      "sha256": "a158f1ce5b84c8c3f681dd6347b22491d1b67a91e110138b9cb6833e3d9dc23c"
+      "sha256": "d3a42160b2bb4cefe7569899a434c03e371db9e3c3939acf3308706575a6c4f9"
     },
     "upstream/content/sets-functions-relations/sets-functions-relations-complete.tex": {
       "bytes": 709,
@@ -15246,7 +15246,7 @@
     },
     "upstream/content/sets-functions-relations/size-of-sets/pairing-alt.tex": {
       "bytes": 4592,
-      "sha256": "c26b4e0da9e2e0b0ec839470ddd1d0d5eb1b3d3922d3b6986c9a795f34328797"
+      "sha256": "53bb95d72d3cc2c10f361b1e32c08c340e21a2529670909dd256ec97ecd2aa92"
     },
     "upstream/content/sets-functions-relations/size-of-sets/pairing.tex": {
       "bytes": 4056,
@@ -15441,12 +15441,24 @@
       "sha256": "e6b0287892308cff1effa7475894dbaef3a10dd0ed0769b7d2c768f9079387c2"
     },
     "upstream/sty/open-logic.sty": {
-      "bytes": 10730,
-      "sha256": "ee7daec60886ba3813d10ac64686646e81f50d149affb4b35596fd6366aae9ad"
+      "bytes": 10874,
+      "sha256": "93498cdeedd784d55236178b46061263b642d5016fbd9e6f95bc57c26dd4c16f"
     },
     "upstream/sty/ptolemaicastronomy.sty": {
       "bytes": 2919,
       "sha256": "450f79a006fbf105046f366f31d4243d6b8a4903783d8ae05717c4106c9aad85"
+    },
+    "tools/build-complete-reader.ps1": {
+      "bytes": 5151,
+      "sha256": "692b76b436774a548fd453a4106d55f0f3f905a9eaf1adb8381ec606ddf0c592"
+    },
+    "tools/WindowsTexJob.cs": {
+      "bytes": 5038,
+      "sha256": "2969881f842a8456167b998c37090b6b6cf349c3561801f16e78d7a07bdb3434"
     }
+  },
+  "source_sync_authorship": {
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "ultra"
   }
 }

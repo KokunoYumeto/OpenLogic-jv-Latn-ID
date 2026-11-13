@@ -7,8 +7,10 @@ lan cara mbuktèkaké pratelan matématika.
 
 ## Wacan lan sumber
 
-- [Waca PDF](https://github.com/KokunoYumeto/OpenLogic-jv-Latn-ID/releases/download/v0.3.0/OpenLogic-jv-Latn-ID-v0.3.0.pdf)
-- [Undhuh sumber LaTeX, gambar, gaya lan kapustakan](https://github.com/KokunoYumeto/OpenLogic-jv-Latn-ID/releases/download/v0.3.0/OpenLogic-jv-Latn-ID-v0.3.0-source.zip)
+- [Waca PDF](https://github.com/KokunoYumeto/OpenLogic-jv-Latn-ID/releases/download/v0.3.1/OpenLogic-jv-Latn-ID-v0.3.1.pdf)
+- [Waca EPUB](https://github.com/KokunoYumeto/OpenLogic-jv-Latn-ID/releases/download/v0.3.1/OpenLogic-jv-Latn-ID-v0.3.1.epub)
+- [Undhuh LaTeX kumulatif](https://github.com/KokunoYumeto/OpenLogic-jv-Latn-ID/releases/download/v0.3.1/OpenLogic-jv-Latn-ID-v0.3.1.tex)
+- [Undhuh sumber LaTeX, gambar, gaya lan kapustakan](https://github.com/KokunoYumeto/OpenLogic-jv-Latn-ID/releases/download/v0.3.1/OpenLogic-jv-Latn-ID-v0.3.1-source.zip)
 - [Pandhuan ngasilaké PDF saka sumber LaTeX](BUILD.md)
 - [Tetembungan lan pilihan terjemahan](translation-decisions/TRANSLATION_DECISIONS_FULL.md)
 - [Tetembungan kang prelu ditimbang](translation-decisions/PRIORITY_REVIEW.md)
@@ -23,8 +25,9 @@ representasi basa winates lan pérangan konstruksi kode kang dibutuhaké.
 
 Tèks asli anggitané Open Logic Project. Terjemahan, koreksi, panyuntingan lan
 tata aksara diprodhuksi AI OpenAI Codex, kalebu GPT-5.6 Sol, GPT-6 Sol lan GPT-6.1 Sol.
-Wacan lan sumber asli nyebut panulis sarta komponen kang dienggo.
-[Tèks Inggris OpenLogic, revisi 9620cc73f9c8e0ad003c514a5d3748f29611c4c0](https://github.com/OpenLogicProject/OpenLogic/tree/9620cc73f9c8e0ad003c514a5d3748f29611c4c0).
+Panyelarasan karo revisi sumber ing ngisor iki diprodhuksi GPT-6.1 Sol
+kanthi upaya nalar Ultra. Wacan lan sumber asli nyebut panulis sarta komponen kang dienggo.
+[Tèks Inggris OpenLogic, revisi 1e960beff9ed7835bf3e3f1335e21af3439cd107](https://github.com/OpenLogicProject/OpenLogic/tree/1e960beff9ed7835bf3e3f1335e21af3439cd107).
 
 Tèks lan adaptasiné nganggo Creative Commons Attribution 4.0 International.
 Saben komponen kanthi lisènsi kapisah manut kabar lisènsiné dhéwé.
