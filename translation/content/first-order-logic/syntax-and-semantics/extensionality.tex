@@ -6,7 +6,7 @@
 
 \begin{document}
 
-\olfileid{fol}{syn}{ext}
+\olfileid[jv]{fol}{syn}{ext}
 
 \olsection{Ekstensionalitas}
 
@@ -22,7 +22,7 @@ unsur-unsur basa kang pancen katon ing~$!A$.
 Salah siji akibat langsung saka ekstensionalitas yaiku:
 yen rong !!{structure}s~$\Struct M$ lan~$\Struct M'$
 padha ing kabeh unsur basa kang katon ing ukara~$!A$
-lan nduweni domain kang padha,~$\Struct M$ lan~$\Struct M'$
+lan nduweni ranah kang padha,~$\Struct M$ lan~$\Struct M'$
 uga mesthi padha bab apa $!A$ iku bener.
 \end{explain}
 
@@ -42,7 +42,7 @@ uga mesthi padha bab apa $!A$ iku bener.
 
 \begin{proof}
   Kaping pisan, buktèkna (kanthi induksi miturut~$t$)
-  yen kanggo saben term kang kawangun saka simbol-simbol
+  yen kanggo saben terma kang kawangun saka simbol-simbol
   kang katon ing formula kasebut,
   $\Value{t}{M_1}[s] = \Value{t}{M_2}[s]$.
  Banjur buktèkna proposisi kanthi induksi
@@ -67,13 +67,13 @@ Iki miturut \olref{prop:extensionality} lan
 \olref[ass]{cor:sat-sentence}.
 \end{proof}
 
-Salajengipun, nilai term lan apa !!a{structure}
+Salajengipun, nilai terma lan apa !!a{structure}
 nyukupi !!a{formula} mung gumantung marang
-nilai subterm-subterm kasebut.
+nilai subterma-subterma kasebut.
 
 \begin{prop}\ollabel{prop:ext-terms}
 Upamakna $\Struct M$ iku !!a{structure}, $t$ lan
-$t'$ term, lan $s$ pangaji variabel. Mula
+$t'$ terma, lan $s$ pangaji variabel. Mula
 $\Value{\Subst{t}{t'}{x}}{M}[s] =
 \Value{t}{M}[\Subst{s}{\Value{t'}{M}[s]}{x}]$.
 \end{prop}
@@ -120,7 +120,7 @@ mula kita nduweni:
 
 \begin{prop}\ollabel{prop:ext-formulas}
 Upamakna $\Struct M$ iku !!a{structure},
-$!A$ iku !!a{formula}, $t'$~term kang bebas kanggo variabel kang diganti ing formula kasebut, lan $s$~pangaji
+$!A$ iku !!a{formula}, $t'$~terma kang bebas kanggo variabel kang diganti ing formula kasebut, lan $s$~pangaji
 variabel. Mula $\Sat{M}{\Subst{!A}{t'}{x}}[s]$
 yen lan mung yen
 $\Sat{M}{!A}[\Subst{s}{\Value{t'}{M}[s]}{x}]$.
@@ -137,8 +137,8 @@ Buktèkna \olref[fol][syn][ext]{prop:ext-formulas}
 \begin{explain}
   Maksud saka
   \cref{fol:syn:ext:prop:ext-terms,fol:syn:ext:prop:ext-formulas}
-  yaiku mangkene. Upamakna kita nduweni term $t$ utawa
-  !!a{formula}~$!A$ lan sawijining term~$t'$, lan arep
+  yaiku mangkene. Upamakna kita nduweni terma $t$ utawa
+  !!a{formula}~$!A$ lan sawijining terma~$t'$, lan arep
   ngerti nilai saka $\Subst{t}{t'}{x}$ utawa apa
   $\Subst{!A}{t'}{x}$ dicukupi ing
   !!a{structure}~$\Struct M$ relatif marang pangaji
@@ -151,7 +151,7 @@ Buktèkna \olref[fol][syn][ext]{prop:ext-formulas}
   nilai~$t$ ing $\Struct{M}$ lan~$\Subst{s}{m}{x}$,
   utawa apa $\Sat{M}{!A}[\Subst{s}{m}{x}]$.
   \Cref{fol:syn:ext:prop:ext-terms,fol:syn:ext:prop:ext-formulas}
-  njamin yen wangsulane padha, cara endi wae kang dipilih. Kanggo formula, term panggantos kudu bebas kanggo variabel kang diganti.
+  njamin yen wangsulane padha, cara endi wae kang dipilih. Kanggo formula, terma panggantos kudu bebas kanggo variabel kang diganti.
 \end{explain}
 
 \end{document}

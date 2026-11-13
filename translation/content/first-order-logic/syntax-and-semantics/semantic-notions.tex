@@ -6,25 +6,25 @@
 
 \begin{document}
 
-\olfileid{fol}{syn}{sem}
+\olfileid[jv]{fol}{syn}{sem}
 \olsection{Gagasan Semantis}
 
 \begin{explain}
 Sawise nduweni definisi !!{structure}s kanggo basa logika tataran
 kapisan, kita bisa nemtokake sawetara sipat semantis dhasar
 sarta relasi antarane ukara-ukara. Kang paling prasaja yaiku
-gagasan \emph{validitas} ukara. Ukara valid yen dicukupi
-ing saben !!{structure}. Ukara valid tetep dicukupi apa wae
+gagasan \emph{kesahan} ukara. Ukara sah yen dicukupi
+ing saben !!{structure}. Ukara sah tetep dicukupi apa wae
 carane simbol nonlogis ing ukara kasebut diinterpretasi.
-Mula ukara valid uga diarani \emph{bebener logis}---ukara iku
+Mula ukara sah uga diarani \emph{bebener logis}---ukara iku
 bener, yaiku dicukupi, ing sembarang !!{structure}, saengga
 bebener kasebut mung gumantung marang simbol logis kang
 katon ing ukara lan !!{structure} sintaksise, dudu marang
 simbol nonlogis utawa interpretasine.
 \end{explain}
 
-\begin{defn}[Validitas]
-Ukara $!A$ iku \emph{valid}, $\Entails !A$, yen lan mung yen
+\begin{defn}[Kesahan]
+Ukara $!A$ iku \emph{sah}, $\Entails !A$, yen lan mung yen
 $\Sat{M}{!A}$ kanggo saben !!{structure}~$\Struct M$.
 \end{defn}
 
@@ -44,21 +44,21 @@ Yen $\Gamma$ ora bisa dicukupi, himpunan iku diarani
 \end{defn}
 
 \begin{prop}
-Ukara $!A$ valid yen lan mung yen $\Gamma \Entails !A$
+Ukara $!A$ sah yen lan mung yen $\Gamma \Entails !A$
 kanggo saben himpunan ukara~$\Gamma$.
 \end{prop}
 
 \begin{proof}
-Kanggo arah maju, upamakna $!A$ valid, lan
+Kanggo arah maju, upamakna $!A$ sah, lan
 $\Gamma$ himpunan ukara. Upamakna $\Struct M$ iku
 !!a{structure} kang ndadekake $\Sat{M}{\Gamma}$.
-Amarga $!A$ valid, $\Sat{M}{!A}$, mula
+Amarga $!A$ sah, $\Sat{M}{!A}$, mula
 $\Gamma \Entails !A$.
 
-Kanggo kontrapositif arah walik, upamakna $!A$ ora valid,
+Kanggo kontrapositif arah walik, upamakna $!A$ ora sah,
 mula ana !!a{structure}~$\Struct M$ kang ndadekake
 $\Sat/{M}{!A}$. Nalika $\Gamma = \{ \ltrue \}$,
-amarga $\ltrue$ valid, $\Sat{M}{\Gamma}$.
+amarga $\ltrue$ sah, $\Sat{M}{\Gamma}$.
 Dadi ana !!a{structure}~$\Struct M$ kang ndadekake
 $\Sat{M}{\Gamma}$ nanging $\Sat/{M}{!A}$,
 mula $\Gamma$ ora ngakibatake $!A$.
@@ -155,7 +155,7 @@ mula $\Gamma \cup \{ !A \} \Entails !B$.
 \begin{prop}\ollabel{prop:quant-terms}
   Upamakna $\Struct{M}$ iku !!a{structure},
   lan $!A(x)$ iku !!a{formula} kanthi siji
-  variabel bebas~$x$, sarta $t$~term katutup. Mula:
+  variabel bebas~$x$, sarta $t$~terma katutup. Mula:
   \begin{tagenumerate}{prvEx,prvAll}
     \tagitem{prvEx}{$!A(t) \Entails \lexists[x][!A(x)]$}{}
     \tagitem{prvAll}{$\lforall[x][!A(x)] \Entails !A(t)$}{}

@@ -16,7 +16,7 @@ def main():
     locale = book.parent.parent
     job = "slc-screen-jv" if args.cumulative else "slc-screen"
     manifest = json.loads((project / "MANIFEST.json").read_bytes())["screen"]
-    scope = (project / "locale/scope.txt").read_text(encoding="utf-8").splitlines()
+    scope = (project / "imports.lock").read_text(encoding="utf-8").splitlines()
     content = locale / "content"
     paths = [
         (book / line[6:]).resolve()

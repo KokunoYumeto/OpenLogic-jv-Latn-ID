@@ -6,17 +6,17 @@
 
 \begin{document}
 
-\olfileid{tur}{und}{ver} 
+\olfileid[jv]{tur}{und}{ver} 
 \olsection{Mriksa Representasi}
 
 \begin{explain}
 Kanggo mriksa yen representasi kita bisa digunakake,
 kita kudu mbuktekake rong bab. Kapisan, kita kudu
-nuduhake yen $M$ mandheg nganggo input~$w$, mula
+nuduhake yen $M$ mandheg nganggo masukan~$w$, mula
 $!T(M, w) \lif !E(M, w)$ sah. Banjur kita kudu
 nuduhake kosok baline: yen $!T(M, w) \lif !E(M, w)$
 sah, mula $M$ pancen pungkasane mandheg nalika
-dilakokake nganggo input~$w$.
+dilakokake nganggo masukan~$w$.
 
 Strategi kanggo mbuktekake rong bab iki béda banget.
 Kanggo asil kapisan, kita kudu nuduhake yen
@@ -29,24 +29,24 @@ mula dudu mung siji !!{sentence} kang mbutuhake
 Mula kang bisa kita tindakake yaiku mbuktekake
 kanthi induksi yen, apa wae wujud $M$ lan~$w$
 lan pira wae langkah kang dibutuhake $M$
-kanggo mandheg nganggo input~$w$, mesthi ana
+kanggo mandheg nganggo masukan~$w$, mesthi ana
 !!a{derivation} saka $!T(M, w) \lif !E(M, w)$.
 
 Mesthi wae, induksi kita bakal adhedhasar cacahe
 langkah kang ditindakake $M$ sadurunge tekan
 konfigurasi mandheg. Ing bukti induktif iki,
 kita bakal netepake yen kanggo saben langkah~$n$
-nalika $M$ lumaku nganggo input~$w$,
+nalika $M$ lumaku nganggo masukan~$w$,
 $!T(M, w) \Entails !C(M, w, n)$, ing ngendi
 $!C(M, w, n)$ njlentrehake konfigurasi $M$
-sawisé lumaku nganggo input~$w$ nganti~$n$
-langkah. Yen $M$ mandheg nganggo input~$w$
+sawisé lumaku nganggo masukan~$w$ nganti~$n$
+langkah. Yen $M$ mandheg nganggo masukan~$w$
 sawisé, upamane, $n$ langkah, $!C(M, w, n)$
 bakal njlentrehake konfigurasi mandheg.
 Kita uga bakal nuduhake yen $!C(M, w, n)
 \Entails !E(M, w)$ saben $!C(M, w, n)$
 njlentrehake konfigurasi mandheg. Mula yen
-$M$ mandheg nganggo input~$w$, ana sawijining~$n$
+$M$ mandheg nganggo masukan~$w$, ana sawijining~$n$
 saengga $M$ ana ing konfigurasi mandheg sawisé
 $n$~langkah. Dadi $!T(M, w) \Entails !C(M, w, n)$,
 ing ngendi $!C(M, w, n)$ njlentrehake konfigurasi
@@ -59,20 +59,20 @@ Strategi kanggo kosok baline béda banget.
 Ing kene kita nganggep yen
 $\Entails !T(M, w) \lif !E(M, w)$
 lan kudu mbuktekake yen $M$ mandheg
-nganggo input~$w$. Saka hipotesis iki
+nganggo masukan~$w$. Saka hipotesis iki
 kita entuk $!T(M, w) \Entails !E(M, w)$,
 yaiku $!E(M, w)$ bener ing saben
 !!{structure} kang ndadekake $!T(M, w)$
 bener. Mula kita bakal njlentrehake
 !!a{structure}~$\Struct{M}$ kang ndadekake
-$!T(M, w)$ bener: domaine yaiku $\Nat$,
+$!T(M, w)$ bener: ranahé yaiku $\Nat$,
 dene interpretasi kabeh $\Obj Q_q$ lan
 $\Obj S_\sigma$ diwenehake dening
 konfigurasi~$M$ sajrone lumaku nganggo
-input~$w$. Contone,
+masukan~$w$. Contone,
 $\Sat{M}{\Obj Q_q(\num{m}, \num{n})}$
 yen lan mung yen $M$, sawisé lumaku
-nganggo input~$w$ nganti $n$ langkah,
+nganggo masukan~$w$ nganti $n$ langkah,
 ana ing kahanan~$q$ lan lagi maca
 kothak~$m$.
  Amarga miturut hipotesis
@@ -82,7 +82,7 @@ miturut konstruksi, mula $\Sat{M}{!E(M, w)}$.
 Nanging $\Sat{M}{!E(M, w)}$
 yen lan mung yen ana $n \in \Domain{M} = \Nat$
 saengga $M$, nalika lumaku nganggo
-input~$w$, ana ing konfigurasi mandheg
+masukan~$w$, ana ing konfigurasi mandheg
 sawisé~$n$ langkah.
 \end{explain}
 
@@ -97,20 +97,20 @@ ing ngendi $q$ yaiku kahanan $M$ ing wektu~$n$,
 $M$ maca kothak~$m$ ing wektu~$n$, kothak~$i$
 ngemot simbol~$\sigma_i$ ing wektu~$n$ kanggo
 $0 \le i \le k$, lan $k$ yaiku kothak paling
-tengen kang dicakup input awal, kalebu blank pungkasan, ing wektu~$0$,
+tengen kang dicakup masukan awal, kalebu simbol kosong pungkasan, ing wektu~$0$,
 utawa kothak paling tengen kang wis ditekani
 sirah maca-nulis sawisé $n$ langkah, endi
-wae kang luwih gedhé. Kothak input kapisan wis ditekani ing wektu nol, mula wates prefiks paling sithik siji. Blank ing pucuk input ora nyuda wates iki.
+wae kang luwih gedhé. Kothak masukan kapisan wis ditekani ing wektu nol, mula wates prefiks paling sithik siji. Simbol kosong ing pucuk masukan ora nyuda wates iki.
 \end{defn}
 
 \begin{lem}\ollabel{lem:halt-config-implies-halt}
-Yen $M$ kang lumaku nganggo input~$w$
+Yen $M$ kang lumaku nganggo masukan~$w$
 ana ing konfigurasi mandheg sawisé $n$
 langkah, mula $!C(M, w, n) \Entails !E(M, w)$.
 \end{lem}
 
 \begin{proof}
-Upamane $M$ mandheg kanggo input~$w$
+Upamane $M$ mandheg kanggo masukan~$w$
 sawisé $n$ langkah. Ana kahanan~$q$,
 kothak~$m$, lan simbol~$\sigma$ saengga:
 \begin{enumerate} 
@@ -136,7 +136,7 @@ amarga $\tuple{q,\sigma} \in X$.
 \end{proof}
 
 \begin{explain}
-Mula yen $M$ mandheg kanggo input $w$,
+Mula yen $M$ mandheg kanggo masukan $w$,
 ana sawijining~$n$ saengga $!C(M, w, n)
 \Entails !E(M,w)$. Saiki kita bakal
 nuduhake yen kanggo saben wektu~$n$,
@@ -153,7 +153,7 @@ $!T(M, w) \Entails !C(M, w, n)$.
 \begin{proof}
 Landhesan induksi: Yen $n = 0$, konjungsi-konjungsi
 ing $!C(M, w, 0)$ uga ana ing $!T(M, w)$,
-mula bisa didudut saka iku. Kanggo input kosong, blank ing kothak siji ndhèrèk saka aksioma penerus lan klausa pita kosong. Saka transitivitas dipikolehi klausa tumrap kothak sawisé kothak siji. Induksi uga tekan konfigurasi mandheg kapisan. Saben langkah nggunakake hipotesis manawa mesin durung mandheg ing wektu sadurungé.
+mula bisa didudut saka iku. Kanggo masukan kosong, simbol kosong ing kothak siji ndhèrèk saka aksioma penerus lan klausa pita kosong. Saka transitivitas dipikolehi klausa tumrap kothak sawisé kothak siji. Induksi uga tekan konfigurasi mandheg kapisan. Saben langkah nggunakake hipotesis manawa mesin durung mandheg ing wektu sadurungé.
 
 Hipotesis induksi: Yen $M$ durung mandheg
 sadurunge langkah kapangka-$n$, mula
@@ -330,7 +330,7 @@ $\lforall[x][\lforall[y][\lforall[z][ ((x < y \land y < z) \lif x <
 
 \begin{lem}
 \ollabel{lem:valid-if-halt}
-Yen $M$ mandheg nganggo input~$w$,
+Yen $M$ mandheg nganggo masukan~$w$,
 mula $!T(M, w) \lif !E(M, w)$ sah.
 \end{lem}
 
@@ -360,18 +360,18 @@ Kanggo ngrampungake pamriksan pratelan kita,
 kita uga kudu netepake arah kosok baline:
 yen $!T(M, w) \lif !E(M, w)$ sah,
 mula $M$ pancen mandheg nalika diwiwiti
-nganggo input~$w$.
+nganggo masukan~$w$.
 \end{explain}
 
 \begin{lem}
 \ollabel{lem:halt-if-valid}
 Yen $\Entails !T(M, w) \lif !E(M, w)$,
-mula $M$ mandheg nganggo input~$w$.
+mula $M$ mandheg nganggo masukan~$w$.
 \end{lem}
 
 \begin{proof}
 Gatekna $\Lang L_M$-!!{structure}~$\Struct M$
-kanthi domain~$\Nat$ kang nginterpretasi
+kanthi ranah~$\Nat$ kang nginterpretasi
 $\Obj 0$ minangka~$0$, $\prime$~minangka
 fungsi penerus, $<$~minangka relasi luwih
 cilik, lan predikat $\Obj Q_q$
@@ -387,7 +387,7 @@ lan~$\Obj S_\sigma$ kaya mangkene:
 Kanthi tembung liya, kita mbangun
 !!{structure}~$\Struct{M}$ supaya
 njlentrehake tumindake $M$ kang
-diwiwiti nganggo input~$w$ kanthi
+diwiwiti nganggo masukan~$w$ kanthi
 saben langkah. Yen mesin wis mandheg, gunakna konfigurasi pungkasan kang padha kanggo interpretasi wektu sabanjure; ora ana instruksi kang cocog, mula klausa transisi ora njaluk owah anyar. Kanthi klausa iki,
 $\Sat{M}{!T(M, w)}$. Yen
 $\Entails !T(M, w) \lif !E(M, w)$,
@@ -403,7 +403,7 @@ $\Sat{M}{\Obj Q_q(\num{m}, \num{n}) \land \Obj S_\sigma(\num{m},
 lan~$\sigma$ kang $\delta(q, \sigma)$
 ora ditegesi. Miturut definisi~$\Struct M$,
 iki ateges $M$ kang diwiwiti nganggo
-input~$w$ sawisé~$n$ langkah ana ing
+masukan~$w$ sawisé~$n$ langkah ana ing
 kahanan~$q$ lan maca simbol~$\sigma$,
 dene fungsi transisine ora ditegesi,
 yaiku $M$~wis mandheg.

@@ -6,7 +6,7 @@
 
 \begin{document}
 
-\olfileid{tur}{und}{uni}
+\olfileid[jv]{tur}{und}{uni}
 \olsection{Mesin Turing Universal}
 
 Ing \olref[enu]{sec} kita wis ngrembug carane
@@ -23,7 +23,7 @@ kita bisa ngenumerasi kabeh (andharan) mesin Turing.
 Yen salah siji enumerasi iku wis ditetepake,
 kita bisa nyebut mesin Turing kapangka-$1$,
 kapangka-$2$, \dots, kapangka-$e$. Wilangan
-iki diarani \emph{indeks}. Indeks nol uga sah; enumerasi kanggo domain wilangan asli iki diwiwiti saka nol.
+iki diarani \emph{indeks}. Indeks nol uga sah; enumerasi kanggo ranah wilangan asli iki diwiwiti saka nol.
 
 \begin{defn}
 Yen $M$~yaiku mesin Turing kapangka-$e$
@@ -44,7 +44,7 @@ mesin~$M$ bisa diitung kanthi efektif saka
 andharane. Miturut tézis Church--Turing, banjur
 ana mesin Turing kang bisa nemokake andharan
 mesin Turing kanthi indeks~$e$ lan nulis andharan
-iku ing pitane minangka output. Andharan iku
+iku ing pitane minangka asil. Andharan iku
 awujud rerangken blok-blok~$\TMstroke$ (kang
 nggambarake wilangan wutuh positif ing rerangken
 andharan~$M_e$).
@@ -67,14 +67,14 @@ kejaba blok $\TMstroke$ kapisan, banjur mandheg.
 Asil kang narik kawigaten yaiku ing ngisor iki:
 
 \begin{thm}\ollabel{thm:universal-tm} Ana \emph{mesin Turing
-  universal}~$U$ kang, yen diwiwiti nganggo input $\tuple{e,n}$ 
+  universal}~$U$ kang, yen diwiwiti nganggo masukan $\tuple{e,n}$ 
   \begin{enumerate}
-    \item mandheg yen lan mung yen $M_e$ mandheg nganggo input~$n$, lan
-    \item yen $M_e$ mandheg kanthi output $m$, $U$ uga mangkono.
+    \item mandheg yen lan mung yen $M_e$ mandheg nganggo masukan~$n$, lan
+    \item yen $M_e$ mandheg kanthi asil $m$, $U$ uga mangkono.
   \end{enumerate}
   Mula $U$ ngitung fungsi $f\colon \Nat \times \Nat \pto \Nat$
   kang $f(e,n) = m$ yen $M_e$, nalika diwiwiti
-  nganggo input~$n$, mandheg kanthi output~$m$,
+  nganggo masukan~$n$, mandheg kanthi asil~$m$,
   lan ora ditegesi yen ora mangkono.
 \end{thm}
 
@@ -84,7 +84,7 @@ Asil kang narik kawigaten yaiku ing ngisor iki:
   nggunakake tézis Church--Turing. Nalika diwiwiti,
   pita~$U$ ngemot blok $e$~$\TMstroke$ banjur blok
   $n$~$\TMstroke$. Dhisik mesin ``mbukak kode''
-  indeks~$e$ ing sisih tengen input~$n$. Iki
+  indeks~$e$ ing sisih tengen masukan~$n$. Iki
   ngasilake dhaptar wilangan (yaiku blok-blok
   $\TMstroke$ kang dipisahake dening~$\TMblank$)
   kang njlentrehake instruksi mesin~$M_e$. Banjur
@@ -92,14 +92,14 @@ Asil kang narik kawigaten yaiku ing ngisor iki:
   wilangan~$1$ ing pita sisih tengen andharan~$M_e$.
   (Iki uga digambarake kanthi siji simbol bola-bali,
   minangka blok-blok $\TMstroke$.) Sabanjure,
-  mesin nyalin input (blok $n$~$\TMstroke$) menyang
+  mesin nyalin masukan (blok $n$~$\TMstroke$) menyang
   sisih tengen---nanging saben $\TMstroke$ diganti
   blok telung $\TMstroke$ (elinga, nomer simbol
   $\TMstroke$ yaiku~$3$, $1$ yaiku nomer~$\TMendtape$,
   lan $2$ yaiku nomer~$\TMblank$). Ing pucuk kiwa
   rerangken blok-blok iki (kang dipisahake dening
   simbol $\TMblank$ ing pita~$U$), mesin nulis
-  siji~$\TMstroke$, yaiku kode kanggo~$\TMendtape$. Saben cathetan diwatesi panandha mligi supaya komponen kosong ora kecampur. Kothak virtual dinomeri wiwit nol; blank kapisan kanggo input kosong lan blank ing saben kothak anyar diwakili kode loro.
+  siji~$\TMstroke$, yaiku kode kanggo~$\TMendtape$. Saben cathetan diwatesi panandha mligi supaya komponen kosong ora kecampur. Kothak virtual dinomeri wiwit nol; simbol kosong kapisan kanggo masukan kosong lan simbol kosong ing saben kothak anyar diwakili kode loro.
 
   Saiki pita~$U$ ngemot: indeks~$e$, wilangan~$n$,
   nomer kode kahanan wiwitan (yaiku ``kahanan saiki''),
@@ -111,7 +111,7 @@ Asil kang narik kawigaten yaiku ing ngisor iki:
   dening~$\TMblank$).
 
   Banjur mesin iku niru apa kang bakal ditindakake
-  $M_e$ yen diwiwiti nganggo input~$n$, kanthi
+  $M_e$ yen diwiwiti nganggo masukan~$n$, kanthi
   langkah-langkah iki:
   \begin{enumerate}
     \item Temokake wilangan~$k$ kanggo ``panggonan
@@ -132,21 +132,21 @@ Asil kang narik kawigaten yaiku ing ngisor iki:
     ``panggonan ing pita'' lan busak
     siji~$\TMstroke$ utawa tambah siji~$\TMstroke$
     (yen instruksine obah kiwa utawa tengen,
-    miturut urutane). Kanggo obah kiwa, kurangana penghitung yèn positip lan tetepna nol yèn wis nol. Yèn sirah tetep ing panggonan, penghitung tetep. Yèn posisi anyar ngluwihi pérangan pita virtual kang kacathet, tambahna kode blank.
+    miturut urutane). Kanggo obah kiwa, kurangana penghitung yèn positip lan tetepna nol yèn wis nol. Yèn sirah tetep ing panggonan, penghitung tetep. Yèn posisi anyar ngluwihi pérangan pita virtual kang kacathet, tambahna kode simbol kosong.
     \item Baleni.\footnote{Ing kene kita ngliwati
     sawetara kangelan kang alus. Contone, $U$~bisa
     mbutuhake papan tambahan nalika nambah penghitung
     ``panggonan sirah saiki''---ing kahanan iki,
     kabeh isi ``pita'' kudu dipindhah menyang tengen.}
   \end{enumerate}
-  Yen $M_e$ kang diwiwiti nganggo input~$n$
+  Yen $M_e$ kang diwiwiti nganggo masukan~$n$
   ora tau mandheg, $U$ uga ora tau mandheg,
-  mula outpute ora ditegesi.
+  mula asilé ora ditegesi.
 
   Yen ing langkah~\olref{find-inst} katemu yen
   andharan~$M_e$ ora ngemot instruksi kanggo
   pasangan ``kahanan''/``simbol'' saiki,
-  $M_e$ bakal mandheg. Priksa manawa kothak virtual nomer nol ngemot panandha. Buwangen panandha saka calon output lan buwangen kabèh blank ing pucuk tengen. Isi kosong ngasilaké nol. Isi liyane sah yèn saben simbol awujud guratan. Yen iki kedadeyan lan isi sah,
+  $M_e$ bakal mandheg. Priksa manawa kothak virtual nomer nol ngemot panandha. Buwangen panandha saka calon asil lan buwangen kabèh simbol kosong ing pucuk tengen. Isi kosong ngasilaké nol. Isi liyane sah yèn saben simbol awujud guratan. Yen iki kedadeyan lan isi sah,
   $U$ mbusak cathetan pakaryan ing sisih kiwa
   ``pita,'' kanthi tetep njaga panandha fisik ing kothak nomer nol. Kanggo saben blok telung~$\TMstroke$
   (kang nggambarake siji~$\TMstroke$ ing pita~$M_e$),
@@ -157,9 +157,9 @@ Asil kang narik kawigaten yaiku ing ngisor iki:
   
   %
   Yen $U$ nemoni bab saliyane blok telung~$\TMstroke$
-  ing isi ``pita'' sawise panandha lan blank pungkasan dibuwang, utawa panandha virtual nomer nol wis ilang, mesin mbusak kabeh cathetan pakaryan, nulis simbol mligi kang dudu guratan ing kothak siji, banjur mandheg. Amarga
+  ing isi ``pita'' sawise panandha lan simbol kosong pungkasan dibuwang, utawa panandha virtual nomer nol wis ilang, mesin mbusak kabeh cathetan pakaryan, nulis simbol mligi kang dudu guratan ing kothak siji, banjur mandheg. Amarga
   ing kahanan iki pita~$U$ ora ngemot siji blok
-  $\TMstroke$, outpute dudu wilangan asli,
+  $\TMstroke$, asilé dudu wilangan asli,
   yaiku $f(e,n)$ ora ditegesi ing kahanan iki.
 \end{proof}
 

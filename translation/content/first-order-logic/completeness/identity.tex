@@ -6,18 +6,18 @@
 
 \begin{document}
 
-\olfileid{fol}{com}{ide}
+\olfileid[jv]{fol}{com}{ide}
 \olsection{Identitas}
 
 \begin{explain}
-Konstruksi model term ing bagean sadurunge cukup kanggo netepake
+Konstruksi model terma ing bagean sadurunge cukup kanggo netepake
 kelengkapan logika orde kapisan tumrap himpunan~$\Gamma$ kang ora
-ngemot~$\eq$. Model term kasebut nyukupi saben $!A \in \Gamma^*$ kang
+ngemot~$\eq$. Model terma kasebut nyukupi saben $!A \in \Gamma^*$ kang
 ora ngemot~$\eq$ (lan mula kabeh $!A \in \Gamma$). Nanging konstruksi
 iki ora lumaku yen $\eq$ ana. Sebabe, $\Gamma^*$ banjur bisa ngemot
-!!a{sentence}~$\eq[t][t']$, nanging ing model term, nilai saben term
-yaiku term kasebut dhewe. Mula, yen $t$ lan $t'$ iku term kang beda,
-nilai kalorone ing model term---yaiku $t$ lan $t'$---uga beda, saengga
+!!a{sentence}~$\eq[t][t']$, nanging ing model terma, nilai saben terma
+yaiku terma kasebut dhewe. Mula, yen $t$ lan $t'$ iku terma kang beda,
+nilai kalorone ing model terma---yaiku $t$ lan $t'$---uga beda, saengga
 $\eq[t][t']$ luput. Nanging iki bisa didandani nganggo konstruksi kang
 dikenal minangka ``pemfaktoran.''
 \end{explain}
@@ -25,7 +25,7 @@ dikenal minangka ``pemfaktoran.''
 \begin{defn}
   Upamana $\Gamma^*$ minangka himpunan ukara kang konsisten lan
   !!{complete} ing~$\Lang L$. Kita nemtokake relasi $\approx$ ing
-  himpunan term katutup saka~$\Lang L$ kanthi
+  himpunan terma katutup saka~$\Lang L$ kanthi
   \[
   t \approx t' \text{\quad yen lan mung yen \quad} \eq[t][t'] \in \Gamma^*
   \]
@@ -39,14 +39,14 @@ Relasi $\approx$ nduweni sipat-sipat ing ngisor iki:
 \item $\approx$ iku simetris.
 \item $\approx$ iku transitif.
 \item Yen $t \approx t'$, $f$ minangka !!a{function}, lan $t_1$,
-  \dots, $t_{i-1}$, $t_{i+1}$, \dots, $t_n$ minangka term katutup,
+  \dots, $t_{i-1}$, $t_{i+1}$, \dots, $t_n$ minangka terma katutup,
   mula
 \[
 \Atom{f}{t_1,\dots, t_{i-1}, t, t_{i+1}, \dots, t_n} \approx
 \Atom{f}{t_1,\dots, t_{i-1}, t', t_{i+1}, \dots, t_n}.
 \]
 \item Yen $t \approx t'$, $R$ minangka !!a{predicate}, lan $t_1$,
-  \dots, $t_{i-1}$, $t_{i+1}$, \dots, $t_n$ minangka term katutup,
+  \dots, $t_{i-1}$, $t_{i+1}$, \dots, $t_n$ minangka terma katutup,
   mula
 \begin{multline*}
 \Atom{R}{t_1,\dots, t_{i-1}, t, t_{i+1}, \dots, t_n} \in \Gamma^* \text{ yen lan mung yen } \\
@@ -60,7 +60,7 @@ Amarga $\Gamma^*$ konsisten lan !!{complete}, $\eq[t][t'] \in
 \Gamma^*$ yen lan mung yen $\Gamma^* \Proves \eq[t][t']$. Mula cukup
 nuduhake pratelan-pratelan ing ngisor iki:
 \begin{enumerate}
-\item $\Gamma^* \Proves \eq[t][t]$ kanggo kabeh term katutup~$t$.
+\item $\Gamma^* \Proves \eq[t][t]$ kanggo kabeh terma katutup~$t$.
 \item Yen $\Gamma^* \Proves \eq[t][t']$, mula $\Gamma^* \Proves
   \eq[t'][t]$.
 \item Yen $\Gamma^* \Proves \eq[t][t']$ lan $\Gamma^* \Proves
@@ -70,13 +70,13 @@ nuduhake pratelan-pratelan ing ngisor iki:
 \Gamma^* \Proves
 \eq[\Atom{f}{t_1,\dots,t_{i-1},t,t_{i+1},\dots,t_n}][\Atom{f}{t_1,\dots,t_{i-1},t',t_{i+1},\dots,t_n}]
 \]
-kanggo saben !!{function} $n$-panggonan~$f$ lan term katutup
+kanggo saben !!{function} $n$-panggonan~$f$ lan terma katutup
 $t_1$, \dots, $t_{i-1}$, $t_{i+1}$, \dots,~$t_n$.
 \item Yen $\Gamma^* \Proves \eq[t][t']$ lan
 $\Gamma^* \Proves
 \Atom{R}{t_1,\dots,t_{i-1},t,t_{i+1},\dots,t_n}$, mula
 $\Gamma^* \Proves \Atom{R}{t_1,\dots,t_{i-1},t',t_{i+1},\dots,t_n}$
-kanggo saben !!{predicate} $n$-panggonan~$R$ lan term katutup
+kanggo saben !!{predicate} $n$-panggonan~$R$ lan terma katutup
 $t_1$, \dots, $t_{i-1}$, $t_{i+1}$, \dots,~$t_n$.
 \end{enumerate}
 \end{proof}
@@ -87,8 +87,8 @@ Rampungna bukti~\olref[fol][com][ide]{prop:approx-equiv}.
 
 \begin{defn}
 Upamana $\Gamma^*$ minangka himpunan konsisten lan !!{complete} ing
-basa~$\Lang L$, $t$ minangka term katutup, lan $\approx$ kaya ing
-definisi sadurunge. Tulisen ${\Trm[L]}_0$ kanggo himpunan term katutup.
+basa~$\Lang L$, $t$ minangka terma katutup, lan $\approx$ kaya ing
+definisi sadurunge. Tulisen ${\Trm[L]}_0$ kanggo himpunan terma katutup.
 \[
 \equivrep{t}{\approx} = \Setabs{t'}{t'\in {\Trm[L]}_0, t \approx t'}
 \]
@@ -97,7 +97,7 @@ lan $\equivclass{{\Trm[L]}_0}{\approx} = \Setabs{\equivrep{t}{\approx}}{t \in {\
 
 \begin{defn}
 \ollabel{defn:term-model-factor}
-Upamana $\Struct M = \Struct M(\Gamma^*)$ minangka model term
+Upamana $\Struct M = \Struct M(\Gamma^*)$ minangka model terma
 kanggo~$\Gamma^*$ saka \olref[mod]{defn:termmodel}. Banjur
 $\Struct{\equivclass{M}{\approx}}$ yaiku !!{structure} ing ngisor iki:
 \begin{enumerate}
@@ -124,7 +124,7 @@ pilihan liyane~$t'$ nemtokake kelas ekuivalensi kang padha
 asil kang padha. Umpamane, yen $R$ minangka !!{predicate} kanthi siji
 panggonan, klausa pungkasan ing definisi nyatakake yen
 $\equivrep{t}{\approx} \in \Assign{R}{\equivclass{M}{\approx}}$ yen lan
-mung yen $\Sat{M}{\Atom{R}{t}}$. Yen kanggo term liyane~$t'$ kanthi
+mung yen $\Sat{M}{\Atom{R}{t}}$. Yen kanggo terma liyane~$t'$ kanthi
 $t \approx t'$ nanging $\Sat/{M}{\Atom{R}{t'}}$, definisi kasebut
 bakal mbutuhake $\equivrep{t'}{\approx} \notin
 \Assign{R}{\equivclass{M}{\approx}}$. Yen $t \approx t'$, mula
@@ -137,7 +137,7 @@ $\equivrep{t}{\approx} \notin
 
 \begin{prop}
 $\Struct{\equivclass{M}{\approx}}$ ditemtokake kanthi becik, yaiku yen
-$t_1$, \dots, $t_n$, $t_1'$, \dots, $t_n'$ minangka term katutup, lan
+$t_1$, \dots, $t_n$, $t_1'$, \dots, $t_n'$ minangka terma katutup, lan
 $t_i \approx t_i'$, mula
 \begin{enumerate}
 \item $\equivrep{\Atom{f}{t_1,\dots, t_n}}{\approx} =
@@ -162,12 +162,12 @@ tetep ing kelas kang padha lan kaanggotaan ing ekstensi predikat
 tetep padha. Mula loro definisi iku bebas saka pilihan wakil.
 \end{proof}
 
-Kaya ing perkara model term, sadurunge mbuktekake lemma bebener kita
-mbutuhake lemma ing ngisor iki.
+Kaya ing perkara model terma, sadurunge mbuktekake lema bebener kita
+mbutuhake lema ing ngisor iki.
 
 \begin{lem}
 \ollabel{lem:val-in-termmodel-factored} Upamana $\Struct M = \Struct M
- (\Gamma^*)$, banjur kanggo saben term katutup
+ (\Gamma^*)$, banjur kanggo saben terma katutup
 $\Value{t}{\equivclass{M}{\approx}} = \equivrep{t}
  {\approx}$.
 \end{lem}
@@ -187,10 +187,10 @@ $\Sat{\equivclass{M}{\approx}}{!A}$ yen lan mung yen $!A \in
 
 \begin{proof}
 Induksi lumaku miturut cacah simbol logis ing~$!A$, kaya ing
-\olref[mod]{lem:truth}. Nilai saben term katutup wis diwènèhaké déning
+\olref[mod]{lem:truth}. Nilai saben terma katutup wis diwènèhaké déning
 \olref{lem:val-in-termmodel-factored}; iki lan definisi ekstensi
-njaga kasus predikat atomik. Saben kelas ing domain minangka nilai salah siji term katutup,
-mula kasus kuantor uga bisa nganggo instansi term katutup.
+njaga kasus predikat atomik. Saben kelas ing ranah minangka nilai salah siji terma katutup,
+mula kasus kuantor uga bisa nganggo instansi terma katutup.
 Kasus identitas yaiku $!A \ident \eq[t][t']$.
 \begin{align*}
 \Sat{\equivclass{M}{\approx}}{\eq[t][t']} & \text{ yen lan mung yen } \equivrep{t}{\approx} = \equivrep{t'}{\approx}

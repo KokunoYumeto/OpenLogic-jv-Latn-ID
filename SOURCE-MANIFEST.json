@@ -69,8 +69,8 @@
       },
       "javanese": {
         "path": "translation/content/sets-functions-relations/sets/basics.tex",
-        "bytes": 4114,
-        "sha256": "c7cb528b55d99233e4fb3417b87cb78b3fb2b042e5bc0f775b12f3f6e85154d8"
+        "bytes": 4117,
+        "sha256": "fb3de038a7b419079e872b5901f1b6bfcf66ba5baf4a303c9bc632a601007b5c"
       }
     },
     {
@@ -82,8 +82,8 @@
       },
       "javanese": {
         "path": "translation/content/sets-functions-relations/sets/subsets.tex",
-        "bytes": 3801,
-        "sha256": "96d258af845f299da2e893454811f8602ed0baf41c9812d66596325b7517c2e4"
+        "bytes": 3799,
+        "sha256": "bc195b527979be605d2c3a47ecc82f219ac1766ae7cb4c046bb31a69971a8ffc"
       }
     },
     {
@@ -95,8 +95,8 @@
       },
       "javanese": {
         "path": "translation/content/sets-functions-relations/sets/important-sets.tex",
-        "bytes": 2824,
-        "sha256": "97f29bda3830efab5d00b53174250755ef9dc10b53ae9c1a88d005173c402fe7"
+        "bytes": 2816,
+        "sha256": "4a5b2d8530440c724f569f2f4dd48a8e83534dba0f3ad1cf24d2edf6e012a446"
       }
     },
     {
@@ -108,8 +108,8 @@
       },
       "javanese": {
         "path": "translation/content/sets-functions-relations/sets/unions-and-intersections.tex",
-        "bytes": 6429,
-        "sha256": "dae7e60ee63beaf9a8ef76b3fc944996d5a2563b764a9f18ead3822e623fab31"
+        "bytes": 6433,
+        "sha256": "9356c9ca2b0233a4a23b41b917cb104d55080edb12b5294cf289120548f6657b"
       }
     },
     {
@@ -121,8 +121,8 @@
       },
       "javanese": {
         "path": "translation/content/sets-functions-relations/sets/pairs-and-products.tex",
-        "bytes": 4828,
-        "sha256": "c0ed21bf5c511a9c16a778562cb761f798363de0e8c201aa10f2dcd073d3c471"
+        "bytes": 4830,
+        "sha256": "82ec5a521fcf4666c7e8fbee0af3992e32a3f8715b30935ec52ba5eba1d2ab8f"
       }
     },
     {
@@ -134,8 +134,8 @@
       },
       "javanese": {
         "path": "translation/content/sets-functions-relations/sets/russells-paradox.tex",
-        "bytes": 4029,
-        "sha256": "bfc2202876601934bafac487d6853d775748c411d1f54e71279dd6a0749aa092"
+        "bytes": 4033,
+        "sha256": "f53fa493706d0bf9d6236a988d7e307d0fbe2683fe9eeec00afdcb9d07638da3"
       }
     },
     {
@@ -160,8 +160,8 @@
       },
       "javanese": {
         "path": "translation/content/sets-functions-relations/relations/relations-as-sets.tex",
-        "bytes": 5405,
-        "sha256": "5dbe3e57c1482fd2f5ac07a9e4d5be3318ad788c2ad13a7b76a47d9b7f6ad73f"
+        "bytes": 5403,
+        "sha256": "c7656adb1105f458c5b5b509eff02b7de21cc858494a1dfe605dcea016186c6b"
       }
     },
     {
@@ -186,8 +186,8 @@
       },
       "javanese": {
         "path": "translation/content/sets-functions-relations/relations/special-properties.tex",
-        "bytes": 3216,
-        "sha256": "c77a05b705f0c0722d205ab60b511ef8f8451b4f4e547e9b5d0e767d1d81fd6c"
+        "bytes": 3214,
+        "sha256": "8f0105b3c9f2b8f69093d520a49f1567b76bbee47269942b7b18b4bb53320113"
       }
     },
     {
@@ -199,8 +199,8 @@
       },
       "javanese": {
         "path": "translation/content/sets-functions-relations/relations/equivalence-relations.tex",
-        "bytes": 3845,
-        "sha256": "ce7781e6b214bf1ebccb8ee1c2ce7cb0e19278702d0f60d6c0d005c4c0b838ea"
+        "bytes": 3843,
+        "sha256": "1f7a46b8a446061189a6a13d64a171640daae6edc3ed827957f5f1e8bff586e4"
       }
     },
     {
@@ -212,8 +212,8 @@
       },
       "javanese": {
         "path": "translation/content/sets-functions-relations/relations/orders.tex",
-        "bytes": 6618,
-        "sha256": "dd654d43b177887ae38506c771573d4f3395b95217351138776a5b0dc0d12e8b"
+        "bytes": 6622,
+        "sha256": "76f83c5670e40e36c762d5fc6fc3f84f7f722936d50e5b9a7467092ae840a9c8"
       }
     },
     {
@@ -225,8 +225,8 @@
       },
       "javanese": {
         "path": "translation/content/sets-functions-relations/relations/graphs.tex",
-        "bytes": 2916,
-        "sha256": "8609a44fcbd9bc7620cc3b32238e1df5c11c05243de333bc93bb6643c18c0964"
+        "bytes": 2871,
+        "sha256": "1f51e098f352bc0f2f14aacb0da9fba8d236c482fd13937e19f40d1fe5a08d62"
       }
     },
     {
@@ -238,8 +238,8 @@
       },
       "javanese": {
         "path": "translation/content/sets-functions-relations/relations/trees.tex",
-        "bytes": 5556,
-        "sha256": "baeae1d74d1bb734121c7291438be30fdc3598c4d073242b94331749c94f0686"
+        "bytes": 5557,
+        "sha256": "2826e73bc37bb7981e68ba34c416f1e8d166dc8e37329c01a3090efdc754df73"
       }
     },
     {
@@ -251,8 +251,8 @@
       },
       "javanese": {
         "path": "translation/content/sets-functions-relations/relations/operations.tex",
-        "bytes": 2383,
-        "sha256": "07a8e5112c63064fb4b3f87a1b9b03212f8ba4598894e881efbd9fb2591023ee"
+        "bytes": 2387,
+        "sha256": "1fa2f5c0a2eb2373f6e21b6035eeca79e8b9e8af50bb0b72a3f09fb0ed9c9af9"
       }
     },
     {
@@ -277,8 +277,8 @@
       },
       "javanese": {
         "path": "translation/content/sets-functions-relations/functions/function-basics.tex",
-        "bytes": 5620,
-        "sha256": "9c90dad1c68e93fee716f6d1b9acb1d0170ad36da7ccdb44c58abae6212685bb"
+        "bytes": 5572,
+        "sha256": "4a3ce29f067ff39506b75d4db43df69f22d9479cae9c29458dc95f719512b1e7"
       }
     },
     {
@@ -290,8 +290,8 @@
       },
       "javanese": {
         "path": "translation/content/sets-functions-relations/functions/function-kinds.tex",
-        "bytes": 4039,
-        "sha256": "ba6f08d48f4cece9c6113b79710fe8090f7649fffe664341bc9038b0cf76aa5e"
+        "bytes": 4040,
+        "sha256": "850659da6e2f8fb3fc654ef5276867dc822384075852a911318b692bf541d5f6"
       }
     },
     {
@@ -303,8 +303,8 @@
       },
       "javanese": {
         "path": "translation/content/sets-functions-relations/functions/functions-relations.tex",
-        "bytes": 4490,
-        "sha256": "86e3dd337ce674adab2b838a16fe9d6c821893a36587f67bfa7337aecfd274eb"
+        "bytes": 4488,
+        "sha256": "d00ebabd429bac3dedebe079a910d363a961d67742144d19949080c4866b8a46"
       }
     },
     {
@@ -316,8 +316,8 @@
       },
       "javanese": {
         "path": "translation/content/sets-functions-relations/functions/inverses.tex",
-        "bytes": 7605,
-        "sha256": "2c98765c0711987059430af37751cb21b294081e177d407b13e5fe58d06e0153"
+        "bytes": 7607,
+        "sha256": "e9ec1fa1bb89c49134ab5eb9c08bb61e078df65f5eb42b98a3fce927ea10d4bf"
       }
     },
     {
@@ -329,8 +329,8 @@
       },
       "javanese": {
         "path": "translation/content/sets-functions-relations/functions/composition.tex",
-        "bytes": 2605,
-        "sha256": "b3bec15b34ca29255f6488bbf1bc6473ab94664fc7a2125ed40ea339b34d8fb0"
+        "bytes": 2608,
+        "sha256": "5fe5922f363d9a5477dccc6aee84b0b1708a93d230d28876cb7b1e035acd3caf"
       }
     },
     {
@@ -342,8 +342,8 @@
       },
       "javanese": {
         "path": "translation/content/sets-functions-relations/functions/partial-functions.tex",
-        "bytes": 2890,
-        "sha256": "fbb6da3efe6acce8358766645903a1636fc898a7c1394622baff88c14fcd1b50"
+        "bytes": 2891,
+        "sha256": "8f0a69e471cc1f98c06b4a5ce62747fda486e4f957712c632e80a1f8a43e2e57"
       }
     },
     {
@@ -368,8 +368,8 @@
       },
       "javanese": {
         "path": "translation/content/sets-functions-relations/size-of-sets/introduction.tex",
-        "bytes": 1178,
-        "sha256": "992889080962cfdab64a8dd20c332f706976ac0196b014b655dc984b602f6aff"
+        "bytes": 1182,
+        "sha256": "54c2877e8bfd1d4d31394e0d0855522f8e17268e6d612400ed8f269280f70d50"
       }
     },
     {
@@ -381,8 +381,8 @@
       },
       "javanese": {
         "path": "translation/content/sets-functions-relations/size-of-sets/enumerability.tex",
-        "bytes": 12927,
-        "sha256": "24ccede7155be644872eab4fbfe40ec6ab3963775cabf4d73e39d60360a0b941"
+        "bytes": 12918,
+        "sha256": "7e60545c6cec5e2409e14b3813384b157c0f2358ce75585be09c60385326b293"
       }
     },
     {
@@ -394,8 +394,8 @@
       },
       "javanese": {
         "path": "translation/content/sets-functions-relations/size-of-sets/zig-zag.tex",
-        "bytes": 5117,
-        "sha256": "71b42b962284b63b12fac28483bab4906781874440f2204c8c4095136db30cc9"
+        "bytes": 5106,
+        "sha256": "754dc87df6167d09e590bf2bb2487cfc6715b28b027e49cde08926ce420f88ce"
       }
     },
     {
@@ -407,8 +407,8 @@
       },
       "javanese": {
         "path": "translation/content/sets-functions-relations/size-of-sets/pairing.tex",
-        "bytes": 4502,
-        "sha256": "23ffeedfaa7abf9c2765946436621931ceff670707e7f80fd509f22086b6b117"
+        "bytes": 4500,
+        "sha256": "ed951a1e53b0e61db7e9669b4e8b7dac0dbb8ac4f9d36c314f2eb9b164ddb208"
       }
     },
     {
@@ -420,8 +420,8 @@
       },
       "javanese": {
         "path": "translation/content/sets-functions-relations/size-of-sets/pairing-alt.tex",
-        "bytes": 5140,
-        "sha256": "7bc6240d030f3298ae023ff5e334119cbada07b8095a479dc24c61b72ba42f64"
+        "bytes": 5135,
+        "sha256": "1abc03fa39f0e5580a463d732a2327664640ce4101e61c7627bbe8f5d913e59b"
       }
     },
     {
@@ -433,8 +433,8 @@
       },
       "javanese": {
         "path": "translation/content/sets-functions-relations/size-of-sets/non-enumerability.tex",
-        "bytes": 9565,
-        "sha256": "d1abeb0c496e5330de57f93c476e504cee5933b0db7772f959ce0a70ac92a972"
+        "bytes": 9569,
+        "sha256": "d5175cbcf0df2c3f5aee62c6cc2cf04bfb013b31ea4afbdade920bc9bb370e00"
       }
     },
     {
@@ -446,8 +446,8 @@
       },
       "javanese": {
         "path": "translation/content/sets-functions-relations/size-of-sets/reduction.tex",
-        "bytes": 5873,
-        "sha256": "d6a5ab1c57ddd34acff0b6ab6115427bcaa248e965711157fa6bdc46fce03658"
+        "bytes": 5874,
+        "sha256": "c6c87d520691cea057af9574b59602ea401df2f3856424b78cfa691d2ab96828"
       }
     },
     {
@@ -460,7 +460,7 @@
       "javanese": {
         "path": "translation/content/sets-functions-relations/size-of-sets/equinumerous-sets.tex",
         "bytes": 4136,
-        "sha256": "fae4f1acc2e832504048563c526a61e31a5ff324717855aed837e992b41d3ecf"
+        "sha256": "b27c2fbec0ea24ec13163f0f283912b99923d380363730f3ea6711104831cfcf"
       }
     },
     {
@@ -472,8 +472,8 @@
       },
       "javanese": {
         "path": "translation/content/sets-functions-relations/size-of-sets/comparing-size.tex",
-        "bytes": 7395,
-        "sha256": "91706f5c43ae59e9fd450b9a569d793ba116271174a71db6895200fe9ac1527c"
+        "bytes": 7390,
+        "sha256": "a612fcf00adf5a878c61857cae21269ad4e78394cf7c974d26552713e164ec40"
       }
     },
     {
@@ -485,8 +485,8 @@
       },
       "javanese": {
         "path": "translation/content/sets-functions-relations/size-of-sets/schroder-bernstein.tex",
-        "bytes": 1875,
-        "sha256": "75be4d9d9956c888af1f4b51645370b5a0ecdf1f1fd3d382f246b188fa1bc24b"
+        "bytes": 1879,
+        "sha256": "5125b307c5fbe4541c93fd92fb5119e63f3b1e67c5bbd54f4a04e610c3cb1a0b"
       }
     },
     {
@@ -823,8 +823,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/proof-systems/proof-systems.tex",
-        "bytes": 607,
-        "sha256": "476cfd0e5fa1316950e46372026fc776c067087db852b175b8bc716e5998dbcf"
+        "bytes": 605,
+        "sha256": "28b8571d3401b7af4403eb257f8ed2b1750c5d407a47867373f683aabe500b8d"
       }
     },
     {
@@ -836,8 +836,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/proof-systems/introduction.tex",
-        "bytes": 5540,
-        "sha256": "31c7e7f7389b4520cb85fe8b7240bdf05d396fd9e815b832a315117fee2f1e05"
+        "bytes": 5532,
+        "sha256": "3cd37964c4cfc324e6883f39d90f8dc494ab6be4bce22b5f8a84f481732369e5"
       }
     },
     {
@@ -849,8 +849,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/proof-systems/sequent-calculus.tex",
-        "bytes": 2787,
-        "sha256": "061893a16634dd3a76a5c509a136fc9bdc1bffe62886dec87c9b67fdcf6b274e"
+        "bytes": 2795,
+        "sha256": "d1c68b297c3fbeccac90f87de372ea1b1974ac4ea1857107b3c7f41465f01400"
       }
     },
     {
@@ -862,8 +862,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/proof-systems/natural-deduction.tex",
-        "bytes": 4365,
-        "sha256": "40b16e1d74036db4e89c068deba7ed4ca199fe955175d275b41ec4f419cefa89"
+        "bytes": 4339,
+        "sha256": "a65fed8864a0b39124f46e1d3190449c6ad08a2c66776a74e7b33f6163c446ba"
       }
     },
     {
@@ -875,8 +875,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/proof-systems/tableaux.tex",
-        "bytes": 4078,
-        "sha256": "eda46802dc82f871a9e5ca6c63cb47fe1344f5b895d1685dfaf75cc6f7099b4a"
+        "bytes": 4086,
+        "sha256": "d2d8952a069b8e20b95005ed0f3b7d4e9329ed491d069f44288effd81077e4f3"
       }
     },
     {
@@ -888,8 +888,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/proof-systems/axiomatic-deduction.tex",
-        "bytes": 4199,
-        "sha256": "3989f8760ed46f4f25a9306173c7be054c5f9752b5e7d509a8cf8cebfc9d100f"
+        "bytes": 4207,
+        "sha256": "cca9af5b9f997c02dd1597d1955b157f3e6cff92cad0f93dede69dcf401dd98a"
       }
     },
     {
@@ -914,8 +914,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/sequent-calculus/rules-and-proofs.tex",
-        "bytes": 2782,
-        "sha256": "a2873e224cc3b5f99c0f693072b9fbc843559cd361136ebd87266cfb936c3fb7"
+        "bytes": 2788,
+        "sha256": "89b638d99ee69181f061e364448c7d547bcc46a172141da19853790b458cc355"
       }
     },
     {
@@ -927,8 +927,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/sequent-calculus/propositional-rules.tex",
-        "bytes": 2186,
-        "sha256": "5efbbc24b8878c611a2b16a6657a28461eafc2f73bd061d0e50362a9db042dd1"
+        "bytes": 2194,
+        "sha256": "ff8d69be4ac88071d7bb7587636349c0c800d2d43b9fc2860ee156042921eb5b"
       }
     },
     {
@@ -940,8 +940,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/sequent-calculus/quantifier-rules.tex",
-        "bytes": 4007,
-        "sha256": "3296134986572d8ff902998c9bd4709d6c8b859cbd6f66a5056ec7736bf34e61"
+        "bytes": 4010,
+        "sha256": "a4e0ddc04eb6a2febc11460de57477ea7676304526a3320e6c89fdb1b206d4b8"
       }
     },
     {
@@ -953,8 +953,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/sequent-calculus/structural-rules.tex",
-        "bytes": 2371,
-        "sha256": "6d8f1568e6c2ecf3f27bb03d2124298e88702e055ff61fe341ba0f913b3a4b65"
+        "bytes": 2379,
+        "sha256": "89f1e0c8acc6337fac9a580a81925b67b53ff17df9365bcfb4798dd257f983fd"
       }
     },
     {
@@ -966,8 +966,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/sequent-calculus/derivations.tex",
-        "bytes": 4339,
-        "sha256": "62e7e10422fbc57dac3ebc05d11444c28f3eb1c48de34b02d0eb256ea5c7a2b3"
+        "bytes": 4347,
+        "sha256": "add10c2ae2b7ebef86594ef12af9ec92d738484eff4cfb49113950c5cfdcb850"
       }
     },
     {
@@ -979,8 +979,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/sequent-calculus/proving-things.tex",
-        "bytes": 12331,
-        "sha256": "2e20c72ff30716707453bd4a30131ddab91f3490b79fadc581be503e9517c69a"
+        "bytes": 12337,
+        "sha256": "2a7d2153138f54649c1d561363fa064b5046a72f928176a0676f8998d0e28279"
       }
     },
     {
@@ -992,8 +992,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/sequent-calculus/proving-things-quant.tex",
-        "bytes": 4436,
-        "sha256": "e74f50cf2809fd9c17ef0034087090b669f9c4c92c8fff33ee75de583560d055"
+        "bytes": 4441,
+        "sha256": "29a0fd96f42edc271a488e230edc211a7e2c1c5692a3b7bd60c467bfce5bbdd3"
       }
     },
     {
@@ -1005,8 +1005,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/sequent-calculus/proof-theoretic-notions.tex",
-        "bytes": 6245,
-        "sha256": "57e38378af3f3cf954f9e4ea7d2c05638149277e642f858365c88e3c0bf8edef"
+        "bytes": 6251,
+        "sha256": "1c45dbaf5aea93cbbf13ac829cd5517eb4a94f03e31c45e8cadef0a5a125c07a"
       }
     },
     {
@@ -1018,8 +1018,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/sequent-calculus/provability-consistency.tex",
-        "bytes": 4356,
-        "sha256": "3092b484d88a7a2b7c1a6c2fca3c19fff85ea6f1896bd5bc2077c885c07b2a35"
+        "bytes": 4364,
+        "sha256": "df437fb6f0b9a5183f629113013edb947c2ec61ea4a3f819ac39486cd2e3b269"
       }
     },
     {
@@ -1031,8 +1031,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/sequent-calculus/provability-propositional.tex",
-        "bytes": 4812,
-        "sha256": "67c00c2aa6d0d7829c5e209ccbb260759f761b17f631edeb71f0d510b257f7a2"
+        "bytes": 4820,
+        "sha256": "a6adf07016914ef4edbe6b4ce19a970b2580500b02b7e8c7e316a3f31a641ee0"
       }
     },
     {
@@ -1044,8 +1044,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/sequent-calculus/provability-quantifiers.tex",
-        "bytes": 1833,
-        "sha256": "1de5a74f1d2c92cef849c6091383a1f93a27d892fee8c3c626264581b56537dc"
+        "bytes": 1838,
+        "sha256": "61d3d9c893f23773a66159dbb490acf06b186f17075177c4d7e137347341f873"
       }
     },
     {
@@ -1057,8 +1057,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/sequent-calculus/soundness.tex",
-        "bytes": 18629,
-        "sha256": "c952fcb4e8ef4ed2529836909aec7edb4b238362f940ebd1dfcb78a285e4d0aa"
+        "bytes": 18568,
+        "sha256": "58ac1b6f20ac5a5052331879f60b02f24cfb55dd2d53d0b43db01c8cd81ef224"
       }
     },
     {
@@ -1070,8 +1070,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/sequent-calculus/identity.tex",
-        "bytes": 2492,
-        "sha256": "a00763ff6820fcea179d887ddd736f7144200512e53f3c382223b7f8e6c83703"
+        "bytes": 2501,
+        "sha256": "a2c3d986d6131167e35857018e2cd295cbee62acd37ed37cdfb5fedaf95e974d"
       }
     },
     {
@@ -1084,7 +1084,7 @@
       "javanese": {
         "path": "translation/content/first-order-logic/sequent-calculus/soundness-identity.tex",
         "bytes": 2213,
-        "sha256": "8d077a036f9b60f4bcd67b5ffc338859ea955e73bc31fa5e844232fd7558886b"
+        "sha256": "7f0a6cd2c5480e8cb8ce5c4c97c6545501009c41c24566afca63c64d503ccdad"
       }
     },
     {
@@ -1096,8 +1096,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/natural-deduction/natural-deduction.tex",
-        "bytes": 981,
-        "sha256": "35deb00c6a8678fb6f257ea56f1317cdfb206aa09f50588a090e5f97ad0296b8"
+        "bytes": 975,
+        "sha256": "aa2a6550475fe7388eb6f2295fc6d1d0db5e700248b06ba524f7c02d05e49a8e"
       }
     },
     {
@@ -1110,7 +1110,7 @@
       "javanese": {
         "path": "translation/content/first-order-logic/natural-deduction/rules-and-proofs.tex",
         "bytes": 1927,
-        "sha256": "2b8ed35b5fc9c4b5e8494663d99ab296cc749db7ebf3aa62a3f292c054895dea"
+        "sha256": "b1f25608028b6ba34c740b29ecc47c43421ac6ec1f66bda3392d0946535fb883"
       }
     },
     {
@@ -1122,8 +1122,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/natural-deduction/propositional-rules.tex",
-        "bytes": 2609,
-        "sha256": "d3706b74429eb5f882824630813fe39a0670b988f14a4bc34a36a69382f6ecab"
+        "bytes": 2617,
+        "sha256": "e1648eb072babd7d21c3578c4f5a0f3a20bacb768eb951aa4e02e1383d2bde76"
       }
     },
     {
@@ -1135,8 +1135,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/natural-deduction/quantifier-rules.tex",
-        "bytes": 4257,
-        "sha256": "d8d0fe5a82fb0f7c662f12cb7d27acc486930c96f453028b87fbd736998dcc07"
+        "bytes": 4266,
+        "sha256": "8b4242e6fd61c1aeed241011556f261530eeaf2a02327d32f3a6de8eec17c33e"
       }
     },
     {
@@ -1148,8 +1148,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/natural-deduction/derivations.tex",
-        "bytes": 3747,
-        "sha256": "b410538254aa194bda27b4b35f2284e38871b3b5fcac5b772eb7ae9e6d3db307"
+        "bytes": 3753,
+        "sha256": "3c81590422a304b5319a9d915576872e062eee6e035a3869b36a1b5ebf823a09"
       }
     },
     {
@@ -1161,8 +1161,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/natural-deduction/proving-things.tex",
-        "bytes": 11397,
-        "sha256": "2508df7547b085300dcc790783a8ff3282e53ea3fadc6f448cf97773bb6da03e"
+        "bytes": 11443,
+        "sha256": "20588f8ff0e8c4315ad7ab05a8c4771482ae8f6ba532567e921f0a0271c890dc"
       }
     },
     {
@@ -1174,8 +1174,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/natural-deduction/proving-things-quant.tex",
-        "bytes": 9697,
-        "sha256": "2943843c36c0bd78f942f77f717ff1ba0a16ea000422f0e5f43cb24f4ff6dd11"
+        "bytes": 9702,
+        "sha256": "9f935881c57387c8e6554c20298880e0665b077c7b8ccf235de3999fd36c5f7d"
       }
     },
     {
@@ -1187,8 +1187,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/natural-deduction/proof-theoretic-notions.tex",
-        "bytes": 5478,
-        "sha256": "1ba50db7d1ebd020fd37e85fd987c2914bd212b5946e844c03f1d2c8fe0f298e"
+        "bytes": 5480,
+        "sha256": "4520c7b430a68b0d17770c9afcd270d23e697b11dba74006c8afd235b42db119"
       }
     },
     {
@@ -1200,8 +1200,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/natural-deduction/provability-consistency.tex",
-        "bytes": 4318,
-        "sha256": "2f454744a2fcb941f4121894893b2517bd1ebb6db794029cb3f7eeeb846e6b8b"
+        "bytes": 4326,
+        "sha256": "63063e93bb7058b8a4bf476ce50f5d078ebad88aef4372c683b0c906f408efcd"
       }
     },
     {
@@ -1213,8 +1213,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/natural-deduction/provability-propositional.tex",
-        "bytes": 3850,
-        "sha256": "68d1974394073496fa47ac939ac69f6edb1b308791d2dd86fc25dccf5fdbd6c7"
+        "bytes": 3856,
+        "sha256": "eae4efa1b90e696faf139be43fa4545532240c5e2a4aa2bbdacfd5dfec3ab9f5"
       }
     },
     {
@@ -1226,8 +1226,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/natural-deduction/provability-quantifiers.tex",
-        "bytes": 1796,
-        "sha256": "2f6520db4fd57c9cd4445e2b58caa1d8a300e754fdcee6b552686ba9bf5f7226"
+        "bytes": 1799,
+        "sha256": "61acc47ca7a37bfb7430e982620dcb19e5aadeaaa50739580aec50137f10bcc2"
       }
     },
     {
@@ -1239,8 +1239,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/natural-deduction/soundness.tex",
-        "bytes": 13544,
-        "sha256": "a4fcff9893731e539689508a62197cdab0b9392a0f272e7ce0851203b33f1fb0"
+        "bytes": 13546,
+        "sha256": "0fc5546b654769888f1db151b6db7909ba2f9f5561868fd1447874a309595583"
       }
     },
     {
@@ -1252,8 +1252,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/natural-deduction/identity.tex",
-        "bytes": 4509,
-        "sha256": "1d065c52f28ab41bca8d7d8db61a2ec743659cdb9650a636393810d929f7cdad"
+        "bytes": 4517,
+        "sha256": "d7c0dfc9188a98209d720c36a8397bfde904939d7adb28721dce272137e53617"
       }
     },
     {
@@ -1265,8 +1265,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/natural-deduction/soundness-identity.tex",
-        "bytes": 1829,
-        "sha256": "bf73d4a42142cf62959465fd4d8b90f86f9a9d640dde387531f30602e403fbea"
+        "bytes": 1830,
+        "sha256": "057f49d6bb72cbbb2a2bd7daa31939991a7c668b77a67d79d85f1f7928b8eafc"
       }
     },
     {
@@ -1655,8 +1655,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/completeness/introduction.tex",
-        "bytes": 4080,
-        "sha256": "d94915aef8fe6816b7921f76bfd11a0561fa687a5f26df888807166a194ca958"
+        "bytes": 4088,
+        "sha256": "6c681d15602c5a79cdeecadc76e4acf698fc12506c6b4e381f89eb14c8c270c2"
       }
     },
     {
@@ -1668,8 +1668,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/completeness/outline.tex",
-        "bytes": 9618,
-        "sha256": "56c7e40db322424a6ce562173c4fecf7a9222fbb5fe4d8750074da01b5ce7493"
+        "bytes": 9643,
+        "sha256": "6fcd143683e8d6e3ee0834999bc8e36f6df5b6075b21fbab5746d6e524f177ad"
       }
     },
     {
@@ -1681,8 +1681,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/completeness/complete-consistent-sets.tex",
-        "bytes": 9464,
-        "sha256": "a11b5e7e246579eb08c500d7e7204bcb6b30d728ae94062a65e1bc778484a964"
+        "bytes": 9472,
+        "sha256": "f1faad0801ddcf57b719725f5daef2157097d30536f4f4a1e8217b4a59119c38"
       }
     },
     {
@@ -1694,8 +1694,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/completeness/henkin-expansions.tex",
-        "bytes": 11543,
-        "sha256": "d5f28f0c4ebe002ba9d70c541ad6c6f1d6b034955ae0ed9cd39464e642fe1786"
+        "bytes": 11551,
+        "sha256": "77997f202ce1b56e8ebb020fbb444b256eb9c5bcf292feb6e196ccfe94a51fec"
       }
     },
     {
@@ -1707,8 +1707,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/completeness/lindenbaums-lemma.tex",
-        "bytes": 4444,
-        "sha256": "a4bc5bfe56c69fe1882b989c52fa69b72aede3146f57ae01c40aa1eac376e0f3"
+        "bytes": 4449,
+        "sha256": "9328843f7c76bf0c8181e5e0c86eb178339cbffb30ff09fa20ea435ed91ddcb7"
       }
     },
     {
@@ -1720,8 +1720,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/completeness/construction-of-model.tex",
-        "bytes": 12128,
-        "sha256": "892cb93b099d5d54116ca0cadc6042bd32e8422d9d52056e0ffd9820c142b56d"
+        "bytes": 12168,
+        "sha256": "5062a98df18bd1e1611e199e86d403f1fd54d7de8f6cd5f411a5bb4772511d14"
       }
     },
     {
@@ -1733,8 +1733,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/completeness/identity.tex",
-        "bytes": 8638,
-        "sha256": "4b1dcf14f99a17977914927777223a3ecfea6d09ff4865cd862282420f637287"
+        "bytes": 8662,
+        "sha256": "64e100fe4088497cc7f2db6e4263d640e0124cafdf1ea2d11a0bbe48d40b33e9"
       }
     },
     {
@@ -1746,8 +1746,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/completeness/completeness-thm.tex",
-        "bytes": 5156,
-        "sha256": "db9c296e26f7fb12ed46928a45092329322ccc98b9d9c9eb038f324bdf926970"
+        "bytes": 5157,
+        "sha256": "9433cc8528ae6fe1ad7879cba5c25c6f5f010dacd2a3020849edf1a3152ff383"
       }
     },
     {
@@ -1759,8 +1759,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/completeness/compactness.tex",
-        "bytes": 9808,
-        "sha256": "7f1bd3b1af17ec7011a060c06993aacf256aeab15fd11a92c2825ccdb5ea157a"
+        "bytes": 9823,
+        "sha256": "365fd140456ef8013d223cfe1fafef9cf8513a0ef16fef01174b0c48e7a61509"
       }
     },
     {
@@ -1772,8 +1772,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/completeness/compactness-direct.tex",
-        "bytes": 6769,
-        "sha256": "977a6283188c50be5addc798a1c1de43f78af0874829e3099b061d879cddc22b"
+        "bytes": 6780,
+        "sha256": "bd8ca374ed5d54f7552c4c8ac19be41e9b1f40ced621d1f82892a2a937da2314"
       }
     },
     {
@@ -1785,8 +1785,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/completeness/downward-ls.tex",
-        "bytes": 2860,
-        "sha256": "badc194a51cba4420cbb4d862a53fb087d451b909011137b62b1ff41c011170a"
+        "bytes": 2859,
+        "sha256": "8ea03ef3ce8d5b341a2c77bb4bec8b9a6999520085c3d5419d1fd50c57beca34"
       }
     },
     {
@@ -1798,8 +1798,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/first-order-logic.tex",
-        "bytes": 1290,
-        "sha256": "8de9db7ed91d929860a9642c50a2fcb098ec89d7d76a7acdb9f28ff927d3a0bb"
+        "bytes": 1289,
+        "sha256": "3f677647975aae5ca9a2774e7ce1850164efb769d2d8e021a73963914e559843"
       }
     },
     {
@@ -1824,8 +1824,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/introduction/first-order-logic.tex",
-        "bytes": 4824,
-        "sha256": "4d05e748c2a6793efbb35cc3b465598a0d0c2eb116979a0cdd8783fe2d6d81bb"
+        "bytes": 4823,
+        "sha256": "845d25b1ddb3f4936b843b3b0aed2159a7c93accfbe381e2032e3aebd95667a6"
       }
     },
     {
@@ -1837,8 +1837,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/introduction/syntax.tex",
-        "bytes": 3121,
-        "sha256": "af0f9a66142184e77ac20beac042c78c98095e9556f91ae116af6ade3bc06748"
+        "bytes": 3125,
+        "sha256": "598354fe33ed7152336943d723c5b4cca43dbacd4c7802e66bd2dbb52d71b3e8"
       }
     },
     {
@@ -1850,8 +1850,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/introduction/formulas.tex",
-        "bytes": 4659,
-        "sha256": "02230c2b15e1214af9a21dbc54bd0668dfb12b7422bb3fc8b5eb934c78c286cd"
+        "bytes": 4665,
+        "sha256": "543afbfcd7a5cd384b3fb82e9c9fa0b8e4d8f79c6b6d37504fd4ee28ba125bad"
       }
     },
     {
@@ -1863,8 +1863,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/introduction/satisfaction.tex",
-        "bytes": 6328,
-        "sha256": "7814f46084f5b321f31552f2a5a1ca1e88d3013ef05e9cee074a09aa05d4006c"
+        "bytes": 6332,
+        "sha256": "0be0ab9e4e860272dc10ca737e23399141188e24b303061c7510056c7aa0bf9e"
       }
     },
     {
@@ -1876,8 +1876,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/introduction/sentences.tex",
-        "bytes": 2896,
-        "sha256": "a1683ee478fc7990e5c5eb68277b3c2f8a2d09fa5296cbbd751ddf9d3c2183bd"
+        "bytes": 2900,
+        "sha256": "75d62e06694bcd1bfd9e471f059c5c3fc4e433d772c163d2175b3fe05edb729c"
       }
     },
     {
@@ -1890,7 +1890,7 @@
       "javanese": {
         "path": "translation/content/first-order-logic/introduction/semantic-notions.tex",
         "bytes": 2546,
-        "sha256": "3be4cc3c2ae2b718a7f5182e584df0d162af471f758a88d1fa8f0027ad245644"
+        "sha256": "a150309c01f205c9932eec643dc98a33099284ec63433eb8d9cb5d4236cbeb2f"
       }
     },
     {
@@ -1902,8 +1902,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/introduction/substitution.tex",
-        "bytes": 2459,
-        "sha256": "adb795d52a43f1558fc054f3dc60250dbcf0a268925c21c762bceae353ade74d"
+        "bytes": 2465,
+        "sha256": "af68bc6dad0857b18347fd2a4432e88f6321dc374d44d7a9ec9b96dded8475f1"
       }
     },
     {
@@ -1915,8 +1915,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/introduction/models-theories.tex",
-        "bytes": 4223,
-        "sha256": "dc4a9743f1a29b1c4beac579e6e11a982fb80d033496e11851b21c5f06b2121c"
+        "bytes": 4226,
+        "sha256": "c84eb116f35e24ba34c7cf9471a882c60420174bda870fa6bcafc7fa6a6bfe1b"
       }
     },
     {
@@ -1928,8 +1928,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/introduction/soundness-completeness.tex",
-        "bytes": 3744,
-        "sha256": "a87c76895ae3ae89bd9da69617197bea59f7cae97c2e6a144e37558746586638"
+        "bytes": 3747,
+        "sha256": "9849e63cbd1d4989e714e32fecb38fece678e677fa31ba100008c63d760c1911"
       }
     },
     {
@@ -1954,8 +1954,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/syntax-and-semantics/intro-syntax.tex",
-        "bytes": 1533,
-        "sha256": "be2b8bbfa658a68c4b9bc8aba3c1c94be48069b3de781d7e4740b780dad174aa"
+        "bytes": 1541,
+        "sha256": "28b7d7053fe4f8595d102e1662029da1077a1f64ba7f4c7bad5af464a92dfda9"
       }
     },
     {
@@ -1967,8 +1967,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/syntax-and-semantics/first-order-languages.tex",
-        "bytes": 7045,
-        "sha256": "e15c54461726001c6431d311fda5b07b403f6206dc29602ce4489bc7aafee9f6"
+        "bytes": 6953,
+        "sha256": "8b44e50376d25801d2edc59d7f9917c1b6c50528c82293a57c5461ea8be4abd5"
       }
     },
     {
@@ -1980,8 +1980,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/syntax-and-semantics/terms-formulas.tex",
-        "bytes": 9196,
-        "sha256": "5df6cfcd5b30b755c927ee4ea5bf865eb5dce382bae12f62f0b8a49b0bc8224f"
+        "bytes": 9222,
+        "sha256": "dbbc5d5fc574f6450a9f12f32ce24f3f8926a5cdfe918dbc75c73a741d778883"
       }
     },
     {
@@ -1993,8 +1993,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/syntax-and-semantics/unique-readability.tex",
-        "bytes": 7829,
-        "sha256": "9601c6c4ea2fa95c06707b4cb9eb035f49c5e50a834f492a5587cbc63f32345f"
+        "bytes": 7839,
+        "sha256": "f5fc3dfac31dab1697805d2a87bae139825187e3b4632d39e4a50b70754ac3b3"
       }
     },
     {
@@ -2006,8 +2006,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/syntax-and-semantics/main-operator.tex",
-        "bytes": 3674,
-        "sha256": "009ff9b869f66f7612cb26dfda07b4515beaad1c6a41927f705a1ab08a0e7386"
+        "bytes": 3678,
+        "sha256": "c07cd4626a5507db33a016f0c833043ab30c3151d16a56c24f598951f256bff6"
       }
     },
     {
@@ -2019,8 +2019,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/syntax-and-semantics/subformulas.tex",
-        "bytes": 4071,
-        "sha256": "c4bbdbf843dbbc6f855743abc7f70982a113a0708b3e123bb3ade28652f50649"
+        "bytes": 4075,
+        "sha256": "b7f23e3f7ac65e9be9b165d3b6e626539e5cb99196b60daed1128fe2a3460a7c"
       }
     },
     {
@@ -2032,8 +2032,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/syntax-and-semantics/formation-sequences.tex",
-        "bytes": 10329,
-        "sha256": "bc38d875550d4b6cef4e5dc77c3d3be5c9125ac21931635fd1c17c683e581bad"
+        "bytes": 10344,
+        "sha256": "71e0b674689fb79d48c6606962618ddfcd6ef19ae2b6f1455e55f1c61be6284e"
       }
     },
     {
@@ -2045,8 +2045,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/syntax-and-semantics/free-vars-sentences.tex",
-        "bytes": 3672,
-        "sha256": "0b9275fb1b318b26ea7ed60fb7aacdfb00083be0235d2aaf0674f09d81208d23"
+        "bytes": 3677,
+        "sha256": "3e7c8cd25b2558390101b7a48cbcc6ede17a066ba26f4820ae8f86bdd103ca15"
       }
     },
     {
@@ -2058,8 +2058,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/syntax-and-semantics/substitution.tex",
-        "bytes": 4720,
-        "sha256": "91b0436ff63345306bd18e57d738ccb1873b5e2900f85d9dec17b38fc6458c98"
+        "bytes": 4729,
+        "sha256": "4431c2ace7322c906ae6d17ed890db7279196c07d2501392470c3735d204258f"
       }
     },
     {
@@ -2084,8 +2084,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/syntax-and-semantics/intro-semantics.tex",
-        "bytes": 2462,
-        "sha256": "98877a6efee0ec0fafee6cd5d56886cbb810ecad62878833ed05579e93387246"
+        "bytes": 2459,
+        "sha256": "39255b15775d01f0c207778ce5f528b05e4ee7e64a794272b2b68391e13e10d9"
       }
     },
     {
@@ -2097,8 +2097,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/syntax-and-semantics/structures.tex",
-        "bytes": 5179,
-        "sha256": "2b627229d5235e8be954c0abea90083b67d0ecfa665cf5fa3393d9e52a360662"
+        "bytes": 5173,
+        "sha256": "b5aa8c2d42af53841265f8d0b7fe83e722f02ecd60589af7d29a0f3a53776aa7"
       }
     },
     {
@@ -2110,8 +2110,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/syntax-and-semantics/covered-structures.tex",
-        "bytes": 2770,
-        "sha256": "a8fb0d6ba5bf5ab1849f80e6a9295c1967e22df37ee8d861c913951c994a321e"
+        "bytes": 2781,
+        "sha256": "35f5bcb5c2aa0366cf397d265366f39d4eb2c2d508a30475217f832a36b2a2cc"
       }
     },
     {
@@ -2123,8 +2123,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/syntax-and-semantics/satisfaction.tex",
-        "bytes": 17436,
-        "sha256": "d06377aaf8d81f3e36ce1987e1014b79f020fe4ffb96eabf7e46c89c9d649b9a"
+        "bytes": 17449,
+        "sha256": "1a1de41bf10df4856d5de4f66f950fe23f147959ee657fcc342418bedd6c6e68"
       }
     },
     {
@@ -2136,8 +2136,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/syntax-and-semantics/assignments.tex",
-        "bytes": 14838,
-        "sha256": "8b369f3d369f396dd0359a2554adaefdc35374a82b895d3a0ea8b7da0d6e5e8c"
+        "bytes": 14846,
+        "sha256": "6684e189bb1cd6d6431ab27ea652c3f50ea34662256ce2c374c1460b1e67cf7b"
       }
     },
     {
@@ -2149,8 +2149,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/syntax-and-semantics/extensionality.tex",
-        "bytes": 5471,
-        "sha256": "95fb5baba910419e5d1ecb7c13e678d270d796f01c4ee105c03b7fca0359d2ec"
+        "bytes": 5483,
+        "sha256": "4d04d4244816b4656cf2182c7212c7eedfb89aae50fd8d03d6d4c0aed55dbe12"
       }
     },
     {
@@ -2162,8 +2162,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/syntax-and-semantics/semantic-notions.tex",
-        "bytes": 6421,
-        "sha256": "4fbc3973442d0190c08b205098f53d7fb1aa1fc48c8e7722987626e2410f1db1"
+        "bytes": 6404,
+        "sha256": "251d72b555c11c7ea84d01366b4960b27fff53dde7fe4208e90e5a9acc32e431"
       }
     },
     {
@@ -2188,8 +2188,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/models-theories/introduction.tex",
-        "bytes": 5148,
-        "sha256": "bd86bc62c72ab2818dbf6bd8f8848552fa1d74df8e927ee4ae12981c033b6b79"
+        "bytes": 5152,
+        "sha256": "9a4be01568112538b8a8482a049a74ba8b310f89de904c79b0cffd1fbf14e58f"
       }
     },
     {
@@ -2201,8 +2201,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/models-theories/expressing-props-of-structures.tex",
-        "bytes": 3094,
-        "sha256": "bfc62eb94153bbda05012b85e098665855f9df7adcc95db0d645ba5fd2502bef"
+        "bytes": 3097,
+        "sha256": "da71374774c09a9bdef847b211452c96a3c23cf2ff2a3cf5eb59e25a872cede1"
       }
     },
     {
@@ -2214,8 +2214,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/models-theories/theories.tex",
-        "bytes": 6373,
-        "sha256": "b68c32704c5aa93601981855be8856fa70d1dd6f8c85778a19056dad0f627a99"
+        "bytes": 6377,
+        "sha256": "60b150af7e22fde62b90f21ad2fe52c934a15a46038a6d4802f7a98edb3bbe4c"
       }
     },
     {
@@ -2227,8 +2227,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/models-theories/expressing-relations.tex",
-        "bytes": 5239,
-        "sha256": "9cece5db784894f79664b205279a302fb6ebfce082e38d64a0bbf4e78fa1a3cd"
+        "bytes": 5243,
+        "sha256": "e930d27612aeee936e434a55be0db0c551bc90de913f283e1fb3827b06726099"
       }
     },
     {
@@ -2240,8 +2240,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/models-theories/set-theory.tex",
-        "bytes": 8792,
-        "sha256": "15c1deb3c7d946f118b5fe95e09981dcce0c79a60a32bc96b1a5202b1312b46b"
+        "bytes": 8797,
+        "sha256": "2b70028e7e1b0a3945cab0707a218fc5af50d66d9cac421651418bd5cad84e1a"
       }
     },
     {
@@ -2253,8 +2253,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/models-theories/size-of-structures.tex",
-        "bytes": 2891,
-        "sha256": "08c068664b9ab6be18955fff6540640035f89e0076d2ed40e5f9946db1caa350"
+        "bytes": 2894,
+        "sha256": "d783c49c8b0eab1f1259e5fbd056782950bf269a55d91fc9eef1073ea436dc42"
       }
     },
     {
@@ -2279,8 +2279,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/beyond/introduction.tex",
-        "bytes": 2551,
-        "sha256": "13021a150aee78ce6d8803832d8e2a6e77a6082bc6a5f6a83a615afc785971a6"
+        "bytes": 2556,
+        "sha256": "2cb9b6361b1f2b7e9562cf249b079afd1b9cc9b2aef17c17e1ad6fe880ff9e0d"
       }
     },
     {
@@ -2292,8 +2292,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/beyond/many-sorted-logic.tex",
-        "bytes": 3556,
-        "sha256": "2a832d1db8c436fa2e79ddda4baa62a8974f66cc914c05b7753045a85e1f13cc"
+        "bytes": 3559,
+        "sha256": "4887188568bcb19ae88aa4c6480139edd57a7f0f6ae461bd0efc5e9bdb4c9058"
       }
     },
     {
@@ -2305,8 +2305,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/beyond/second-order-logic.tex",
-        "bytes": 12594,
-        "sha256": "c61ef473e3f12e7711ed534bb45793e970ff9c493149c28e31fd75051f0b7424"
+        "bytes": 12601,
+        "sha256": "f8167d924841f12de4e5c2b86a22a8e538d357bfdccc7f78a4337bb8b7be200e"
       }
     },
     {
@@ -2318,8 +2318,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/beyond/higher-order-logic.tex",
-        "bytes": 6393,
-        "sha256": "970aa9bff3da862d1fb3f8b8b43f27dabff8779f7ddd15d4ff8d2f1cde1b347d"
+        "bytes": 6420,
+        "sha256": "610ed4327fc16fdae78b02be672e4815610ad04926b6b8351b221e8e204390b3"
       }
     },
     {
@@ -2331,8 +2331,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/beyond/intuitionistic-logic.tex",
-        "bytes": 10693,
-        "sha256": "d525fe4c68734c3aef626a9256d2edd09291e824f0096d5712241f51d772bc3e"
+        "bytes": 10697,
+        "sha256": "c7ae554b7ecd207101065dcb6805065dfa923b371352829043a064f3768db6db"
       }
     },
     {
@@ -2344,8 +2344,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/beyond/modal-logics.tex",
-        "bytes": 4277,
-        "sha256": "10488604265bfd0a84ba0428e8239a481e763125402b774b73cc840d2f53be7a"
+        "bytes": 4282,
+        "sha256": "144ad0f44391811230c383787d97f7332aae655bb3f756a2a119b581d31a7868"
       }
     },
     {
@@ -2357,8 +2357,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/beyond/other-logics.tex",
-        "bytes": 1865,
-        "sha256": "0ba942f25ee87aeaaa6d29080915fcd2f7b6f5df3fc7426ffbaee7a61d5aea00"
+        "bytes": 1869,
+        "sha256": "95bbda83eadc4b7f5f76dd356d174a15eb1f1d9c3413935179de5bdf4a74eb94"
       }
     },
     {
@@ -3306,8 +3306,8 @@
       },
       "javanese": {
         "path": "translation/content/turing-machines/machines-computations/introduction.tex",
-        "bytes": 6965,
-        "sha256": "de07e621e2e610311471e59f4b68642a8044176e2d53f5599b6887d3507caf03"
+        "bytes": 6981,
+        "sha256": "3a5bc3297301c726e4ac2555f540abd2d3be40a0227cc29fcbcaaf9f7b889c9e"
       }
     },
     {
@@ -3319,8 +3319,8 @@
       },
       "javanese": {
         "path": "translation/content/turing-machines/machines-computations/representing-tms.tex",
-        "bytes": 12647,
-        "sha256": "7100b056412d1080e15ff33b19ac8e65d19838802af6c325dda9a74082dddb30"
+        "bytes": 12704,
+        "sha256": "7bd9ddc245315b94ef165cbe5cdd60fef32e8cee3827acdd14ac56f30679b1b8"
       }
     },
     {
@@ -3332,8 +3332,8 @@
       },
       "javanese": {
         "path": "translation/content/turing-machines/machines-computations/turing-machines.tex",
-        "bytes": 2264,
-        "sha256": "660e70282cf23beeb7bdc73974da5a1ed83c96addfadfa5d06fd17e3ab70028a"
+        "bytes": 2268,
+        "sha256": "0f8081dfaf34e63b6678dce075fe353d2e217f04594117e3e08287a61199a557"
       }
     },
     {
@@ -3345,8 +3345,8 @@
       },
       "javanese": {
         "path": "translation/content/turing-machines/machines-computations/configuration.tex",
-        "bytes": 4690,
-        "sha256": "48fc5f677887cfd622fd954d9354f54148ba518a4d5320e43a2e91e3c4c57fe6"
+        "bytes": 4725,
+        "sha256": "54a7b35693bfa9434fd8eaba0be03d654a1d640fa4b393cd8f8c8686cee0ff85"
       }
     },
     {
@@ -3358,8 +3358,8 @@
       },
       "javanese": {
         "path": "translation/content/turing-machines/machines-computations/unary-numbers.tex",
-        "bytes": 10588,
-        "sha256": "1afeaac0d4e56e022e7f83dd825ce95c2bf38581db338ba3f298821c431bab6a"
+        "bytes": 10606,
+        "sha256": "6272dd339dbb4f598b9425abd8f9594cb2a2a5a4b49695609ff922c24bb1479f"
       }
     },
     {
@@ -3371,8 +3371,8 @@
       },
       "javanese": {
         "path": "translation/content/turing-machines/machines-computations/halting-states.tex",
-        "bytes": 3045,
-        "sha256": "b83d2029a64eeb5ca49a68b0b826a08e5cc0e58f56c7f127aaff7809aa1c40be"
+        "bytes": 3059,
+        "sha256": "552b6f24e3729142583e747da7c0780d02272f6e792e40e5caccaf340ebfb7fe"
       }
     },
     {
@@ -3384,8 +3384,8 @@
       },
       "javanese": {
         "path": "translation/content/turing-machines/machines-computations/disciplined-machines.tex",
-        "bytes": 4373,
-        "sha256": "0c95808d206d0fa8ef427ecc73a663f72622e9b40335637c08af5cf6b473eb37"
+        "bytes": 4375,
+        "sha256": "402283a24e288379d164cf16f7cc5d5b9acc134a553e9acaabe59f1c141d93d1"
       }
     },
     {
@@ -3397,8 +3397,8 @@
       },
       "javanese": {
         "path": "translation/content/turing-machines/machines-computations/combining-machines.tex",
-        "bytes": 8534,
-        "sha256": "45230fd1e12c927ba38ec3d4554e20d61928d44a93d710c1ade893ac71042413"
+        "bytes": 8536,
+        "sha256": "5a10b1104fdc42e06b99d0330e1039b782c6e7408e82d83213a83872c05f7af9"
       }
     },
     {
@@ -3410,8 +3410,8 @@
       },
       "javanese": {
         "path": "translation/content/turing-machines/machines-computations/variants.tex",
-        "bytes": 4972,
-        "sha256": "66c90c75871862ccb49b98eede8799c22d0e9d65d425f6d732c28fe5b1189a33"
+        "bytes": 4989,
+        "sha256": "4f31451f5867fa76a07f63120279ab5f66ca28c5ce9f94a0699077e7dd1efb4c"
       }
     },
     {
@@ -3423,8 +3423,8 @@
       },
       "javanese": {
         "path": "translation/content/turing-machines/machines-computations/church-turing-thesis.tex",
-        "bytes": 2166,
-        "sha256": "016ff371f8e206acaa561fd9b657424eea0ca6f068bda79c4cf622a8c16d88ab"
+        "bytes": 2170,
+        "sha256": "8bfb21c6bd8ce57c70159eb40938a0521975ce5da780b11510e97347b92b6dfd"
       }
     },
     {
@@ -3449,8 +3449,8 @@
       },
       "javanese": {
         "path": "translation/content/turing-machines/undecidability/introduction.tex",
-        "bytes": 5070,
-        "sha256": "2bcd9c57064fb1b6c1ec9bbce93723ad2da34001e8c03f626e783ebc9b546587"
+        "bytes": 5081,
+        "sha256": "13ad10840ed19359d1c344f81f8483861dd38528ce17ac338362f87567626018"
       }
     },
     {
@@ -3462,8 +3462,8 @@
       },
       "javanese": {
         "path": "translation/content/turing-machines/undecidability/enumerating-tms.tex",
-        "bytes": 7312,
-        "sha256": "55526fa84b494be17a626461dab0b14851bd97f97a3fc6cb7809c88f66932718"
+        "bytes": 7342,
+        "sha256": "abf4c384ea887391b054fca245c5693167aeafb1202e53f26a65a97872dccf7b"
       }
     },
     {
@@ -3475,8 +3475,8 @@
       },
       "javanese": {
         "path": "translation/content/turing-machines/undecidability/universal-tm.tex",
-        "bytes": 7526,
-        "sha256": "96d45077654fc042899d5565f583a05ebe041b785463f3a9989b360d644042f1"
+        "bytes": 7575,
+        "sha256": "0465e6e9e0c41d1f1e47907456e4dd268d83931554c7bfe0642673377e2c7059"
       }
     },
     {
@@ -3488,8 +3488,8 @@
       },
       "javanese": {
         "path": "translation/content/turing-machines/undecidability/halting-problem.tex",
-        "bytes": 5993,
-        "sha256": "f9f4e2449f4df0f05effb416b69e34223eba62d8541c05607a5d4b750317f019"
+        "bytes": 6027,
+        "sha256": "7dcc2188d832947a69180568fe413f4f6dac4360753394a77fe0b8bfe43f57b3"
       }
     },
     {
@@ -3501,8 +3501,8 @@
       },
       "javanese": {
         "path": "translation/content/turing-machines/undecidability/decision-problem.tex",
-        "bytes": 2297,
-        "sha256": "53e5bbfb9f137aadec815b766f3bdc9cb6c5e6aab43b619b682cd9b34d40323b"
+        "bytes": 2307,
+        "sha256": "6863a8ccb465f257c66a53d09644b6e6d0516b3b5b31510f5a5112f7f8d84d37"
       }
     },
     {
@@ -3514,8 +3514,8 @@
       },
       "javanese": {
         "path": "translation/content/turing-machines/undecidability/representing-tms.tex",
-        "bytes": 8523,
-        "sha256": "4b7b277f10240743878efdaab615c08ba06ef1429afa15f9f741976abfd81945"
+        "bytes": 8549,
+        "sha256": "a63086ffb460b89db3bcf21654b0d301166099e21c7988ee81bdb5a781be1503"
       }
     },
     {
@@ -3527,8 +3527,8 @@
       },
       "javanese": {
         "path": "translation/content/turing-machines/undecidability/verification.tex",
-        "bytes": 15254,
-        "sha256": "cdf4d3ba99bad8dc0ac19b77d2cfc8224994f9e62bc286cb2409b68616ee7f11"
+        "bytes": 15327,
+        "sha256": "a78b9d0d1276dedf5d4b0a91a91c81f3372cb47f550aa7d1968f1261710218c2"
       }
     },
     {
@@ -3540,8 +3540,8 @@
       },
       "javanese": {
         "path": "translation/content/turing-machines/undecidability/unsolvability-decision-problem.tex",
-        "bytes": 4483,
-        "sha256": "b1a8e146af3113ad1953aaacbcc1e6e782edba150d92ec6d178e7e8cf628a770"
+        "bytes": 4492,
+        "sha256": "a3b3b12e650e51ec112794bb7ccd028687b43d90a4c36857ac59e83bc3285ce4"
       }
     },
     {
@@ -3553,8 +3553,8 @@
       },
       "javanese": {
         "path": "translation/content/turing-machines/undecidability/trakhtenbrot.tex",
-        "bytes": 12720,
-        "sha256": "7e5e9cf1c0c5b7521b61d04658b7e77e50968928b8722714d00fd5f355c32ded"
+        "bytes": 12775,
+        "sha256": "309bfefd3578c2a740ee033ec108292ee855011014b0d27b4c920c131cc90f70"
       }
     },
     {
@@ -7843,8 +7843,8 @@
       },
       "javanese": {
         "path": "translation/content/methods/proofs/introduction.tex",
-        "bytes": 3441,
-        "sha256": "7cf35aacdaa4e9c18f1afd81547c11a81dc010deab808e98315a18260de086c7"
+        "bytes": 3443,
+        "sha256": "b6bae165efc3fe19e25287e32beb5fcb1d477112fcff5ffd3f0c2f07b9334ca2"
       }
     },
     {
@@ -7856,8 +7856,8 @@
       },
       "javanese": {
         "path": "translation/content/methods/proofs/starting-proofs.tex",
-        "bytes": 1351,
-        "sha256": "acfcc9fcd0aae326e8398534b9729bbbdfaf78ff7f99642b882cb1bb8b6cb050"
+        "bytes": 1355,
+        "sha256": "ef5fd6b76034b6153cc2b18616e489d3942192bb186f1715dc6b84fb29c00399"
       }
     },
     {
@@ -7869,8 +7869,8 @@
       },
       "javanese": {
         "path": "translation/content/methods/proofs/using-definitions.tex",
-        "bytes": 4776,
-        "sha256": "b4481473f16650f4602c111b4f5884488abd4eb1018311c66d1904fd941e64db"
+        "bytes": 4783,
+        "sha256": "f73d71cadd9afe8f169d261fbadb6d4fb1e0d121cc0c8530530c8b208ef8e8f9"
       }
     },
     {
@@ -7882,8 +7882,8 @@
       },
       "javanese": {
         "path": "translation/content/methods/proofs/inference-patterns.tex",
-        "bytes": 16412,
-        "sha256": "ce93038a06f15a905c75b8e202402a1e10b4c15ec296311ea60c7a03a2ed6444"
+        "bytes": 16413,
+        "sha256": "0d8d1a83793d6af07da71bfb576d77eefe4fb1bb9a3b4a90880ba74d9fac48d4"
       }
     },
     {
@@ -7895,8 +7895,8 @@
       },
       "javanese": {
         "path": "translation/content/methods/proofs/example-1.tex",
-        "bytes": 7677,
-        "sha256": "a60102972b3bd34ab90bd1fc96462e5a35b7fd3592c4c7daeba7ec203cfb72c1"
+        "bytes": 7681,
+        "sha256": "c8e679a1c47711d53219f1d34212fbc20d757b3c05a19fb974c2485c3e7eef6d"
       }
     },
     {
@@ -7908,8 +7908,8 @@
       },
       "javanese": {
         "path": "translation/content/methods/proofs/example-2.tex",
-        "bytes": 4747,
-        "sha256": "064348bc980c277f502c6cd04f6b4607e53393f8a310fc4cbde1d88d117aae92"
+        "bytes": 4751,
+        "sha256": "b6b7b41a53bea6305a7c26946801c799f906f082a9ecb015b00125ad4419c25a"
       }
     },
     {
@@ -7921,8 +7921,8 @@
       },
       "javanese": {
         "path": "translation/content/methods/proofs/proof-by-contradiction.tex",
-        "bytes": 9455,
-        "sha256": "9b75b5d07f457a5f024a1eeb8bfb898342a83985149c02e2f521392d62a4b2d8"
+        "bytes": 9459,
+        "sha256": "8ce536ff55455cbe862361a4d7038abb1134763b28ea1d80c939322dac81e7df"
       }
     },
     {
@@ -7934,8 +7934,8 @@
       },
       "javanese": {
         "path": "translation/content/methods/proofs/reading-proofs.tex",
-        "bytes": 4763,
-        "sha256": "f49c95dc3eb49fcb1f0bd820581df4b86ec90fa3e6bc439d5de4c801ba67bed0"
+        "bytes": 4767,
+        "sha256": "572d3ca4821fdb63d606fa7a29426ae809fb1d8a6f6470125670902b11f9185f"
       }
     },
     {
@@ -7947,8 +7947,8 @@
       },
       "javanese": {
         "path": "translation/content/methods/proofs/cant-do-it.tex",
-        "bytes": 3043,
-        "sha256": "22464c7ddc16d4204a129696f6f34e3675d39f523e42674921a5a6aa41958c17"
+        "bytes": 3047,
+        "sha256": "537377e7ff6c23c92b98691b6af21e729df8cb353e18ca382170703cda7dce9c"
       }
     },
     {
@@ -7960,8 +7960,8 @@
       },
       "javanese": {
         "path": "translation/content/methods/proofs/resources.tex",
-        "bytes": 1591,
-        "sha256": "d1da148b26606605fac84890c554c6beb68b95761dca384b085ab2faf13eccaf"
+        "bytes": 1595,
+        "sha256": "cca707aa6b2626680519f1a4aa880cdbf0c85a429b74eec21fc5c1d49594edb3"
       }
     },
     {
@@ -7986,8 +7986,8 @@
       },
       "javanese": {
         "path": "translation/content/methods/induction/introduction.tex",
-        "bytes": 2170,
-        "sha256": "1c9e32dd7f558403e9ee57ac0b5a7a31240830893276e6626f227643104520d3"
+        "bytes": 2174,
+        "sha256": "750c3e2e4d62303a4843cda45225988a5b7641a98ef4f1a6d11f723cc4a88cd2"
       }
     },
     {
@@ -7999,8 +7999,8 @@
       },
       "javanese": {
         "path": "translation/content/methods/induction/induction-on-N.tex",
-        "bytes": 6015,
-        "sha256": "d179095b8913659914ad91da2150ec21cc78062a3cdc5a512f93c09f8e89ba19"
+        "bytes": 6019,
+        "sha256": "0df43d6c9109f7983e74d9637399d4d23c6c2b1f8982feddd5f515497a0bf2c1"
       }
     },
     {
@@ -8012,8 +8012,8 @@
       },
       "javanese": {
         "path": "translation/content/methods/induction/strong-induction.tex",
-        "bytes": 2503,
-        "sha256": "319150263a458d74849498f60a25b981e55a1b8f58f2f7d7fcd76a9c42d0ae63"
+        "bytes": 2506,
+        "sha256": "9de0dd0cb00ad2b57ff38c10cc46fd089a8ca141dc2e085187f754b9969bf262"
       }
     },
     {
@@ -8025,8 +8025,8 @@
       },
       "javanese": {
         "path": "translation/content/methods/induction/inductive-definitions.tex",
-        "bytes": 6839,
-        "sha256": "56991832e7e2e24119357e5bbc5932cd2b7f32475fe6f298fa25b9b817122d02"
+        "bytes": 6881,
+        "sha256": "8258d158da4fe6d8151297172a8f8cc29649da7c51e752e9d3f3046b95d01a7e"
       }
     },
     {
@@ -8038,8 +8038,8 @@
       },
       "javanese": {
         "path": "translation/content/methods/induction/structural-induction.tex",
-        "bytes": 5166,
-        "sha256": "e31f97a815e69552b68f8be0162e487b2c3958255608dcfabaf032fbf699e132"
+        "bytes": 5262,
+        "sha256": "8bd3436807c3b5436baa43abdea308ec907130125f490162e15feacb01b61f85"
       }
     },
     {
@@ -8051,8 +8051,8 @@
       },
       "javanese": {
         "path": "translation/content/methods/induction/relations.tex",
-        "bytes": 7393,
-        "sha256": "d0fcef65129b45978f72fccdae3b7bfa57c29ebd4044f0415db8bee2110046dc"
+        "bytes": 7433,
+        "sha256": "94e6b5b1bb8cb8fa1590761edf0a065be28c1167b2d06eb839db152bd023d9a1"
       }
     },
     {
@@ -8090,8 +8090,8 @@
       },
       "javanese": {
         "path": "translation/content/history/biographies/georg-cantor.tex",
-        "bytes": 2542,
-        "sha256": "5d7f7f5b3d7610e0a53e096b6f5ec8999738b8c5f2e703b64de8c7e801231673"
+        "bytes": 2546,
+        "sha256": "9d5dc8dfb215079dff6a9602c098fcdaadd2ca823fcc66da22628ade6d45b6fb"
       }
     },
     {
@@ -8103,8 +8103,8 @@
       },
       "javanese": {
         "path": "translation/content/history/biographies/alonzo-church.tex",
-        "bytes": 2710,
-        "sha256": "25ffc6baab3a83689bffa72ae904a2e11c86d085eeb2799aadaaf05459d3e9bd"
+        "bytes": 2714,
+        "sha256": "7f324bd5dc6ddff3e4a19f1b36418c6b4e93e7ab05475b2e651f997eaff8c529"
       }
     },
     {
@@ -8116,8 +8116,8 @@
       },
       "javanese": {
         "path": "translation/content/history/biographies/gerhard-gentzen.tex",
-        "bytes": 3264,
-        "sha256": "bd94d9203b88373065d343aa991d73472a4f75b60de31687fb006d152b2bde1b"
+        "bytes": 3268,
+        "sha256": "67bb2fd35609b52cb5148706c53149bd272bce712d95c206454054dfff759f71"
       }
     },
     {
@@ -8129,8 +8129,8 @@
       },
       "javanese": {
         "path": "translation/content/history/biographies/kurt-goedel.tex",
-        "bytes": 3934,
-        "sha256": "c10a304bf4b8e1fbfbbc67d5730ab82c7044474fb702f49689d843c79469518c"
+        "bytes": 3938,
+        "sha256": "0714b0058b7f9d31f630a1be8ccfd23336b4c06d0a9e46f9577aeed79e42b8e8"
       }
     },
     {
@@ -8142,8 +8142,8 @@
       },
       "javanese": {
         "path": "translation/content/history/biographies/emmy-noether.tex",
-        "bytes": 4288,
-        "sha256": "b29e3ab3da031239bac07ac9d74f42c13f11475cb7ccf62556506719b0cc750f"
+        "bytes": 4292,
+        "sha256": "73d40a014befb631c0a68f97d743cdb0ac92779dc301374dcbf89297f4f41af5"
       }
     },
     {
@@ -8181,8 +8181,8 @@
       },
       "javanese": {
         "path": "translation/content/history/biographies/bertrand-russell.tex",
-        "bytes": 3853,
-        "sha256": "4ab57091ca9351a6a803ed5457fdd1f065be3e32e1dbd26983240510dd9a1a9a"
+        "bytes": 3857,
+        "sha256": "7436d410b33092157ad064541cc7d6d68dc521139000db732c6fff75e3ccc6ee"
       }
     },
     {
@@ -8194,8 +8194,8 @@
       },
       "javanese": {
         "path": "translation/content/history/biographies/alfred-tarski.tex",
-        "bytes": 2584,
-        "sha256": "fa3871a1fa08ec133d8d4c5566676fa29048eadae6d48e988abcde5a91102ad3"
+        "bytes": 2588,
+        "sha256": "0663efabd80a92ab7c5d8f90aa698052e5fdffb117d0200be323f77320c8baa4"
       }
     },
     {
@@ -8207,8 +8207,8 @@
       },
       "javanese": {
         "path": "translation/content/history/biographies/alan-turing.tex",
-        "bytes": 4413,
-        "sha256": "cfa95a91e08f5f860cb00362a89642cbe45e51a4c16f4a025f2aa9caedc54f98"
+        "bytes": 4417,
+        "sha256": "52bac1409c08e74e8818b8b407dfbe544f5804b1b4c03eb7da0fa7c4bfb9ebda"
       }
     },
     {
@@ -8220,8 +8220,8 @@
       },
       "javanese": {
         "path": "translation/content/history/biographies/ernst-zermelo.tex",
-        "bytes": 3131,
-        "sha256": "87e1d783a7033c9791a74097b51e1ac48cd891ff75553e68b18d4985a53e96f0"
+        "bytes": 3135,
+        "sha256": "6a3374a5e9fda1204a644e081bf2d6dabd978e7740f13197003ddb5f30de1b28"
       }
     },
     {
@@ -9413,12 +9413,12 @@
       "sha256": "650eb1cb43595515d0900b3343fb5f27f4e21601d7b3dd3e85bd3d49fb9fc1ba"
     },
     "edition/jv-complete-body.tex": {
-      "bytes": 3189634,
-      "sha256": "904974a50f67df50b786f0f8f8e84cdb62d1d56eb883a0430989b7aa044ab2e1"
+      "bytes": 3189888,
+      "sha256": "dc506c11b8286e71af947b26d8fdb28088313b48bc2bb33bc51af46f777abb08"
     },
     "edition/jv-complete-localization.sty": {
-      "bytes": 6317,
-      "sha256": "b13aeab717f5b684d208a3624902ea72d1f7a999393323dc86e0c83da40f903d"
+      "bytes": 6422,
+      "sha256": "2878406dbaa670556833112d64db4ca6c1f73614a525ca9213af0c85febadadc"
     },
     "edition/jv-complete-references.sty": {
       "bytes": 3407,
@@ -9821,280 +9821,280 @@
       "sha256": "aa87dc9d58ca4557537c1b9404f0f5c489325d6e42e6e802b97c4724286c31ee"
     },
     "translation/content/first-order-logic/beyond/higher-order-logic.tex": {
-      "bytes": 6393,
-      "sha256": "970aa9bff3da862d1fb3f8b8b43f27dabff8779f7ddd15d4ff8d2f1cde1b347d"
+      "bytes": 6420,
+      "sha256": "610ed4327fc16fdae78b02be672e4815610ad04926b6b8351b221e8e204390b3"
     },
     "translation/content/first-order-logic/beyond/introduction.tex": {
-      "bytes": 2551,
-      "sha256": "13021a150aee78ce6d8803832d8e2a6e77a6082bc6a5f6a83a615afc785971a6"
+      "bytes": 2556,
+      "sha256": "2cb9b6361b1f2b7e9562cf249b079afd1b9cc9b2aef17c17e1ad6fe880ff9e0d"
     },
     "translation/content/first-order-logic/beyond/intuitionistic-logic.tex": {
-      "bytes": 10693,
-      "sha256": "d525fe4c68734c3aef626a9256d2edd09291e824f0096d5712241f51d772bc3e"
+      "bytes": 10697,
+      "sha256": "c7ae554b7ecd207101065dcb6805065dfa923b371352829043a064f3768db6db"
     },
     "translation/content/first-order-logic/beyond/many-sorted-logic.tex": {
-      "bytes": 3556,
-      "sha256": "2a832d1db8c436fa2e79ddda4baa62a8974f66cc914c05b7753045a85e1f13cc"
+      "bytes": 3559,
+      "sha256": "4887188568bcb19ae88aa4c6480139edd57a7f0f6ae461bd0efc5e9bdb4c9058"
     },
     "translation/content/first-order-logic/beyond/modal-logics.tex": {
-      "bytes": 4277,
-      "sha256": "10488604265bfd0a84ba0428e8239a481e763125402b774b73cc840d2f53be7a"
+      "bytes": 4282,
+      "sha256": "144ad0f44391811230c383787d97f7332aae655bb3f756a2a119b581d31a7868"
     },
     "translation/content/first-order-logic/beyond/other-logics.tex": {
-      "bytes": 1865,
-      "sha256": "0ba942f25ee87aeaaa6d29080915fcd2f7b6f5df3fc7426ffbaee7a61d5aea00"
+      "bytes": 1869,
+      "sha256": "95bbda83eadc4b7f5f76dd356d174a15eb1f1d9c3413935179de5bdf4a74eb94"
     },
     "translation/content/first-order-logic/beyond/second-order-logic.tex": {
-      "bytes": 12594,
-      "sha256": "c61ef473e3f12e7711ed534bb45793e970ff9c493149c28e31fd75051f0b7424"
+      "bytes": 12601,
+      "sha256": "f8167d924841f12de4e5c2b86a22a8e538d357bfdccc7f78a4337bb8b7be200e"
     },
     "translation/content/first-order-logic/completeness/compactness-direct.tex": {
-      "bytes": 6769,
-      "sha256": "977a6283188c50be5addc798a1c1de43f78af0874829e3099b061d879cddc22b"
+      "bytes": 6780,
+      "sha256": "bd8ca374ed5d54f7552c4c8ac19be41e9b1f40ced621d1f82892a2a937da2314"
     },
     "translation/content/first-order-logic/completeness/compactness.tex": {
-      "bytes": 9808,
-      "sha256": "7f1bd3b1af17ec7011a060c06993aacf256aeab15fd11a92c2825ccdb5ea157a"
+      "bytes": 9823,
+      "sha256": "365fd140456ef8013d223cfe1fafef9cf8513a0ef16fef01174b0c48e7a61509"
     },
     "translation/content/first-order-logic/completeness/complete-consistent-sets.tex": {
-      "bytes": 9464,
-      "sha256": "a11b5e7e246579eb08c500d7e7204bcb6b30d728ae94062a65e1bc778484a964"
+      "bytes": 9472,
+      "sha256": "f1faad0801ddcf57b719725f5daef2157097d30536f4f4a1e8217b4a59119c38"
     },
     "translation/content/first-order-logic/completeness/completeness-thm.tex": {
-      "bytes": 5156,
-      "sha256": "db9c296e26f7fb12ed46928a45092329322ccc98b9d9c9eb038f324bdf926970"
+      "bytes": 5157,
+      "sha256": "9433cc8528ae6fe1ad7879cba5c25c6f5f010dacd2a3020849edf1a3152ff383"
     },
     "translation/content/first-order-logic/completeness/completeness.tex": {
       "bytes": 643,
       "sha256": "1615a856b58019524dcbb9138f6944080c9ff0ec738a7be390f6bcb4bb43ba20"
     },
     "translation/content/first-order-logic/completeness/construction-of-model.tex": {
-      "bytes": 12128,
-      "sha256": "892cb93b099d5d54116ca0cadc6042bd32e8422d9d52056e0ffd9820c142b56d"
+      "bytes": 12168,
+      "sha256": "5062a98df18bd1e1611e199e86d403f1fd54d7de8f6cd5f411a5bb4772511d14"
     },
     "translation/content/first-order-logic/completeness/downward-ls.tex": {
-      "bytes": 2860,
-      "sha256": "badc194a51cba4420cbb4d862a53fb087d451b909011137b62b1ff41c011170a"
+      "bytes": 2859,
+      "sha256": "8ea03ef3ce8d5b341a2c77bb4bec8b9a6999520085c3d5419d1fd50c57beca34"
     },
     "translation/content/first-order-logic/completeness/henkin-expansions.tex": {
-      "bytes": 11543,
-      "sha256": "d5f28f0c4ebe002ba9d70c541ad6c6f1d6b034955ae0ed9cd39464e642fe1786"
+      "bytes": 11551,
+      "sha256": "77997f202ce1b56e8ebb020fbb444b256eb9c5bcf292feb6e196ccfe94a51fec"
     },
     "translation/content/first-order-logic/completeness/identity.tex": {
-      "bytes": 8638,
-      "sha256": "4b1dcf14f99a17977914927777223a3ecfea6d09ff4865cd862282420f637287"
+      "bytes": 8662,
+      "sha256": "64e100fe4088497cc7f2db6e4263d640e0124cafdf1ea2d11a0bbe48d40b33e9"
     },
     "translation/content/first-order-logic/completeness/introduction.tex": {
-      "bytes": 4080,
-      "sha256": "d94915aef8fe6816b7921f76bfd11a0561fa687a5f26df888807166a194ca958"
+      "bytes": 4088,
+      "sha256": "6c681d15602c5a79cdeecadc76e4acf698fc12506c6b4e381f89eb14c8c270c2"
     },
     "translation/content/first-order-logic/completeness/lindenbaums-lemma.tex": {
-      "bytes": 4444,
-      "sha256": "a4bc5bfe56c69fe1882b989c52fa69b72aede3146f57ae01c40aa1eac376e0f3"
+      "bytes": 4449,
+      "sha256": "9328843f7c76bf0c8181e5e0c86eb178339cbffb30ff09fa20ea435ed91ddcb7"
     },
     "translation/content/first-order-logic/completeness/maximally-consistent-sets.tex": {
       "bytes": 7145,
       "sha256": "9927bdcab4d77f3ec919501ca41487253e849f6942984dad538d088a9d0c1699"
     },
     "translation/content/first-order-logic/completeness/outline.tex": {
-      "bytes": 9618,
-      "sha256": "56c7e40db322424a6ce562173c4fecf7a9222fbb5fe4d8750074da01b5ce7493"
+      "bytes": 9643,
+      "sha256": "6fcd143683e8d6e3ee0834999bc8e36f6df5b6075b21fbab5746d6e524f177ad"
     },
     "translation/content/first-order-logic/first-order-logic.tex": {
-      "bytes": 1290,
-      "sha256": "8de9db7ed91d929860a9642c50a2fcb098ec89d7d76a7acdb9f28ff927d3a0bb"
+      "bytes": 1289,
+      "sha256": "3f677647975aae5ca9a2774e7ce1850164efb769d2d8e021a73963914e559843"
     },
     "translation/content/first-order-logic/introduction/first-order-logic.tex": {
-      "bytes": 4824,
-      "sha256": "4d05e748c2a6793efbb35cc3b465598a0d0c2eb116979a0cdd8783fe2d6d81bb"
+      "bytes": 4823,
+      "sha256": "845d25b1ddb3f4936b843b3b0aed2159a7c93accfbe381e2032e3aebd95667a6"
     },
     "translation/content/first-order-logic/introduction/formulas.tex": {
-      "bytes": 4659,
-      "sha256": "02230c2b15e1214af9a21dbc54bd0668dfb12b7422bb3fc8b5eb934c78c286cd"
+      "bytes": 4665,
+      "sha256": "543afbfcd7a5cd384b3fb82e9c9fa0b8e4d8f79c6b6d37504fd4ee28ba125bad"
     },
     "translation/content/first-order-logic/introduction/introduction.tex": {
       "bytes": 449,
       "sha256": "bb7fea29b7fb719b7833f9554eff3510002c397abc94620f136e192d21563b67"
     },
     "translation/content/first-order-logic/introduction/models-theories.tex": {
-      "bytes": 4223,
-      "sha256": "dc4a9743f1a29b1c4beac579e6e11a982fb80d033496e11851b21c5f06b2121c"
+      "bytes": 4226,
+      "sha256": "c84eb116f35e24ba34c7cf9471a882c60420174bda870fa6bcafc7fa6a6bfe1b"
     },
     "translation/content/first-order-logic/introduction/satisfaction.tex": {
-      "bytes": 6328,
-      "sha256": "7814f46084f5b321f31552f2a5a1ca1e88d3013ef05e9cee074a09aa05d4006c"
+      "bytes": 6332,
+      "sha256": "0be0ab9e4e860272dc10ca737e23399141188e24b303061c7510056c7aa0bf9e"
     },
     "translation/content/first-order-logic/introduction/semantic-notions.tex": {
       "bytes": 2546,
-      "sha256": "3be4cc3c2ae2b718a7f5182e584df0d162af471f758a88d1fa8f0027ad245644"
+      "sha256": "a150309c01f205c9932eec643dc98a33099284ec63433eb8d9cb5d4236cbeb2f"
     },
     "translation/content/first-order-logic/introduction/sentences.tex": {
-      "bytes": 2896,
-      "sha256": "a1683ee478fc7990e5c5eb68277b3c2f8a2d09fa5296cbbd751ddf9d3c2183bd"
+      "bytes": 2900,
+      "sha256": "75d62e06694bcd1bfd9e471f059c5c3fc4e433d772c163d2175b3fe05edb729c"
     },
     "translation/content/first-order-logic/introduction/soundness-completeness.tex": {
-      "bytes": 3744,
-      "sha256": "a87c76895ae3ae89bd9da69617197bea59f7cae97c2e6a144e37558746586638"
+      "bytes": 3747,
+      "sha256": "9849e63cbd1d4989e714e32fecb38fece678e677fa31ba100008c63d760c1911"
     },
     "translation/content/first-order-logic/introduction/substitution.tex": {
-      "bytes": 2459,
-      "sha256": "adb795d52a43f1558fc054f3dc60250dbcf0a268925c21c762bceae353ade74d"
+      "bytes": 2465,
+      "sha256": "af68bc6dad0857b18347fd2a4432e88f6321dc374d44d7a9ec9b96dded8475f1"
     },
     "translation/content/first-order-logic/introduction/syntax.tex": {
-      "bytes": 3121,
-      "sha256": "af0f9a66142184e77ac20beac042c78c98095e9556f91ae116af6ade3bc06748"
+      "bytes": 3125,
+      "sha256": "598354fe33ed7152336943d723c5b4cca43dbacd4c7802e66bd2dbb52d71b3e8"
     },
     "translation/content/first-order-logic/models-theories/expressing-props-of-structures.tex": {
-      "bytes": 3094,
-      "sha256": "bfc62eb94153bbda05012b85e098665855f9df7adcc95db0d645ba5fd2502bef"
+      "bytes": 3097,
+      "sha256": "da71374774c09a9bdef847b211452c96a3c23cf2ff2a3cf5eb59e25a872cede1"
     },
     "translation/content/first-order-logic/models-theories/expressing-relations.tex": {
-      "bytes": 5239,
-      "sha256": "9cece5db784894f79664b205279a302fb6ebfce082e38d64a0bbf4e78fa1a3cd"
+      "bytes": 5243,
+      "sha256": "e930d27612aeee936e434a55be0db0c551bc90de913f283e1fb3827b06726099"
     },
     "translation/content/first-order-logic/models-theories/introduction.tex": {
-      "bytes": 5148,
-      "sha256": "bd86bc62c72ab2818dbf6bd8f8848552fa1d74df8e927ee4ae12981c033b6b79"
+      "bytes": 5152,
+      "sha256": "9a4be01568112538b8a8482a049a74ba8b310f89de904c79b0cffd1fbf14e58f"
     },
     "translation/content/first-order-logic/models-theories/models-theories.tex": {
       "bytes": 398,
       "sha256": "7f82c0b0d6290346e3ed60c05d03f36c51ea09bf0529560afc54baf383d8ccbd"
     },
     "translation/content/first-order-logic/models-theories/set-theory.tex": {
-      "bytes": 8792,
-      "sha256": "15c1deb3c7d946f118b5fe95e09981dcce0c79a60a32bc96b1a5202b1312b46b"
+      "bytes": 8797,
+      "sha256": "2b70028e7e1b0a3945cab0707a218fc5af50d66d9cac421651418bd5cad84e1a"
     },
     "translation/content/first-order-logic/models-theories/size-of-structures.tex": {
-      "bytes": 2891,
-      "sha256": "08c068664b9ab6be18955fff6540640035f89e0076d2ed40e5f9946db1caa350"
+      "bytes": 2894,
+      "sha256": "d783c49c8b0eab1f1259e5fbd056782950bf269a55d91fc9eef1073ea436dc42"
     },
     "translation/content/first-order-logic/models-theories/theories.tex": {
-      "bytes": 6373,
-      "sha256": "b68c32704c5aa93601981855be8856fa70d1dd6f8c85778a19056dad0f627a99"
+      "bytes": 6377,
+      "sha256": "60b150af7e22fde62b90f21ad2fe52c934a15a46038a6d4802f7a98edb3bbe4c"
     },
     "translation/content/first-order-logic/natural-deduction/derivations.tex": {
-      "bytes": 3747,
-      "sha256": "b410538254aa194bda27b4b35f2284e38871b3b5fcac5b772eb7ae9e6d3db307"
+      "bytes": 3753,
+      "sha256": "3c81590422a304b5319a9d915576872e062eee6e035a3869b36a1b5ebf823a09"
     },
     "translation/content/first-order-logic/natural-deduction/identity.tex": {
-      "bytes": 4509,
-      "sha256": "1d065c52f28ab41bca8d7d8db61a2ec743659cdb9650a636393810d929f7cdad"
+      "bytes": 4517,
+      "sha256": "d7c0dfc9188a98209d720c36a8397bfde904939d7adb28721dce272137e53617"
     },
     "translation/content/first-order-logic/natural-deduction/natural-deduction.tex": {
-      "bytes": 981,
-      "sha256": "35deb00c6a8678fb6f257ea56f1317cdfb206aa09f50588a090e5f97ad0296b8"
+      "bytes": 975,
+      "sha256": "aa2a6550475fe7388eb6f2295fc6d1d0db5e700248b06ba524f7c02d05e49a8e"
     },
     "translation/content/first-order-logic/natural-deduction/proof-theoretic-notions.tex": {
-      "bytes": 5478,
-      "sha256": "1ba50db7d1ebd020fd37e85fd987c2914bd212b5946e844c03f1d2c8fe0f298e"
+      "bytes": 5480,
+      "sha256": "4520c7b430a68b0d17770c9afcd270d23e697b11dba74006c8afd235b42db119"
     },
     "translation/content/first-order-logic/natural-deduction/propositional-rules.tex": {
-      "bytes": 2609,
-      "sha256": "d3706b74429eb5f882824630813fe39a0670b988f14a4bc34a36a69382f6ecab"
+      "bytes": 2617,
+      "sha256": "e1648eb072babd7d21c3578c4f5a0f3a20bacb768eb951aa4e02e1383d2bde76"
     },
     "translation/content/first-order-logic/natural-deduction/provability-consistency.tex": {
-      "bytes": 4318,
-      "sha256": "2f454744a2fcb941f4121894893b2517bd1ebb6db794029cb3f7eeeb846e6b8b"
+      "bytes": 4326,
+      "sha256": "63063e93bb7058b8a4bf476ce50f5d078ebad88aef4372c683b0c906f408efcd"
     },
     "translation/content/first-order-logic/natural-deduction/provability-propositional.tex": {
-      "bytes": 3850,
-      "sha256": "68d1974394073496fa47ac939ac69f6edb1b308791d2dd86fc25dccf5fdbd6c7"
+      "bytes": 3856,
+      "sha256": "eae4efa1b90e696faf139be43fa4545532240c5e2a4aa2bbdacfd5dfec3ab9f5"
     },
     "translation/content/first-order-logic/natural-deduction/provability-quantifiers.tex": {
-      "bytes": 1796,
-      "sha256": "2f6520db4fd57c9cd4445e2b58caa1d8a300e754fdcee6b552686ba9bf5f7226"
+      "bytes": 1799,
+      "sha256": "61acc47ca7a37bfb7430e982620dcb19e5aadeaaa50739580aec50137f10bcc2"
     },
     "translation/content/first-order-logic/natural-deduction/proving-things-quant.tex": {
-      "bytes": 9697,
-      "sha256": "2943843c36c0bd78f942f77f717ff1ba0a16ea000422f0e5f43cb24f4ff6dd11"
+      "bytes": 9702,
+      "sha256": "9f935881c57387c8e6554c20298880e0665b077c7b8ccf235de3999fd36c5f7d"
     },
     "translation/content/first-order-logic/natural-deduction/proving-things.tex": {
-      "bytes": 11397,
-      "sha256": "2508df7547b085300dcc790783a8ff3282e53ea3fadc6f448cf97773bb6da03e"
+      "bytes": 11443,
+      "sha256": "20588f8ff0e8c4315ad7ab05a8c4771482ae8f6ba532567e921f0a0271c890dc"
     },
     "translation/content/first-order-logic/natural-deduction/quantifier-rules.tex": {
-      "bytes": 4257,
-      "sha256": "d8d0fe5a82fb0f7c662f12cb7d27acc486930c96f453028b87fbd736998dcc07"
+      "bytes": 4266,
+      "sha256": "8b4242e6fd61c1aeed241011556f261530eeaf2a02327d32f3a6de8eec17c33e"
     },
     "translation/content/first-order-logic/natural-deduction/rules-and-proofs.tex": {
       "bytes": 1927,
-      "sha256": "2b8ed35b5fc9c4b5e8494663d99ab296cc749db7ebf3aa62a3f292c054895dea"
+      "sha256": "b1f25608028b6ba34c740b29ecc47c43421ac6ec1f66bda3392d0946535fb883"
     },
     "translation/content/first-order-logic/natural-deduction/soundness-identity.tex": {
-      "bytes": 1829,
-      "sha256": "bf73d4a42142cf62959465fd4d8b90f86f9a9d640dde387531f30602e403fbea"
+      "bytes": 1830,
+      "sha256": "057f49d6bb72cbbb2a2bd7daa31939991a7c668b77a67d79d85f1f7928b8eafc"
     },
     "translation/content/first-order-logic/natural-deduction/soundness.tex": {
-      "bytes": 13544,
-      "sha256": "a4fcff9893731e539689508a62197cdab0b9392a0f272e7ce0851203b33f1fb0"
+      "bytes": 13546,
+      "sha256": "0fc5546b654769888f1db151b6db7909ba2f9f5561868fd1447874a309595583"
     },
     "translation/content/first-order-logic/proof-systems/axiomatic-deduction.tex": {
-      "bytes": 4199,
-      "sha256": "3989f8760ed46f4f25a9306173c7be054c5f9752b5e7d509a8cf8cebfc9d100f"
+      "bytes": 4207,
+      "sha256": "cca9af5b9f997c02dd1597d1955b157f3e6cff92cad0f93dede69dcf401dd98a"
     },
     "translation/content/first-order-logic/proof-systems/introduction.tex": {
-      "bytes": 5540,
-      "sha256": "31c7e7f7389b4520cb85fe8b7240bdf05d396fd9e815b832a315117fee2f1e05"
+      "bytes": 5532,
+      "sha256": "3cd37964c4cfc324e6883f39d90f8dc494ab6be4bce22b5f8a84f481732369e5"
     },
     "translation/content/first-order-logic/proof-systems/natural-deduction.tex": {
-      "bytes": 4365,
-      "sha256": "40b16e1d74036db4e89c068deba7ed4ca199fe955175d275b41ec4f419cefa89"
+      "bytes": 4339,
+      "sha256": "a65fed8864a0b39124f46e1d3190449c6ad08a2c66776a74e7b33f6163c446ba"
     },
     "translation/content/first-order-logic/proof-systems/proof-systems.tex": {
-      "bytes": 607,
-      "sha256": "476cfd0e5fa1316950e46372026fc776c067087db852b175b8bc716e5998dbcf"
+      "bytes": 605,
+      "sha256": "28b8571d3401b7af4403eb257f8ed2b1750c5d407a47867373f683aabe500b8d"
     },
     "translation/content/first-order-logic/proof-systems/sequent-calculus.tex": {
-      "bytes": 2787,
-      "sha256": "061893a16634dd3a76a5c509a136fc9bdc1bffe62886dec87c9b67fdcf6b274e"
+      "bytes": 2795,
+      "sha256": "d1c68b297c3fbeccac90f87de372ea1b1974ac4ea1857107b3c7f41465f01400"
     },
     "translation/content/first-order-logic/proof-systems/tableaux.tex": {
-      "bytes": 4078,
-      "sha256": "eda46802dc82f871a9e5ca6c63cb47fe1344f5b895d1685dfaf75cc6f7099b4a"
+      "bytes": 4086,
+      "sha256": "d2d8952a069b8e20b95005ed0f3b7d4e9329ed491d069f44288effd81077e4f3"
     },
     "translation/content/first-order-logic/sequent-calculus/derivations.tex": {
-      "bytes": 4339,
-      "sha256": "62e7e10422fbc57dac3ebc05d11444c28f3eb1c48de34b02d0eb256ea5c7a2b3"
+      "bytes": 4347,
+      "sha256": "add10c2ae2b7ebef86594ef12af9ec92d738484eff4cfb49113950c5cfdcb850"
     },
     "translation/content/first-order-logic/sequent-calculus/identity.tex": {
-      "bytes": 2492,
-      "sha256": "a00763ff6820fcea179d887ddd736f7144200512e53f3c382223b7f8e6c83703"
+      "bytes": 2501,
+      "sha256": "a2c3d986d6131167e35857018e2cd295cbee62acd37ed37cdfb5fedaf95e974d"
     },
     "translation/content/first-order-logic/sequent-calculus/proof-theoretic-notions.tex": {
-      "bytes": 6245,
-      "sha256": "57e38378af3f3cf954f9e4ea7d2c05638149277e642f858365c88e3c0bf8edef"
+      "bytes": 6251,
+      "sha256": "1c45dbaf5aea93cbbf13ac829cd5517eb4a94f03e31c45e8cadef0a5a125c07a"
     },
     "translation/content/first-order-logic/sequent-calculus/propositional-rules.tex": {
-      "bytes": 2186,
-      "sha256": "5efbbc24b8878c611a2b16a6657a28461eafc2f73bd061d0e50362a9db042dd1"
+      "bytes": 2194,
+      "sha256": "ff8d69be4ac88071d7bb7587636349c0c800d2d43b9fc2860ee156042921eb5b"
     },
     "translation/content/first-order-logic/sequent-calculus/provability-consistency.tex": {
-      "bytes": 4356,
-      "sha256": "3092b484d88a7a2b7c1a6c2fca3c19fff85ea6f1896bd5bc2077c885c07b2a35"
+      "bytes": 4364,
+      "sha256": "df437fb6f0b9a5183f629113013edb947c2ec61ea4a3f819ac39486cd2e3b269"
     },
     "translation/content/first-order-logic/sequent-calculus/provability-propositional.tex": {
-      "bytes": 4812,
-      "sha256": "67c00c2aa6d0d7829c5e209ccbb260759f761b17f631edeb71f0d510b257f7a2"
+      "bytes": 4820,
+      "sha256": "a6adf07016914ef4edbe6b4ce19a970b2580500b02b7e8c7e316a3f31a641ee0"
     },
     "translation/content/first-order-logic/sequent-calculus/provability-quantifiers.tex": {
-      "bytes": 1833,
-      "sha256": "1de5a74f1d2c92cef849c6091383a1f93a27d892fee8c3c626264581b56537dc"
+      "bytes": 1838,
+      "sha256": "61d3d9c893f23773a66159dbb490acf06b186f17075177c4d7e137347341f873"
     },
     "translation/content/first-order-logic/sequent-calculus/proving-things-quant.tex": {
-      "bytes": 4436,
-      "sha256": "e74f50cf2809fd9c17ef0034087090b669f9c4c92c8fff33ee75de583560d055"
+      "bytes": 4441,
+      "sha256": "29a0fd96f42edc271a488e230edc211a7e2c1c5692a3b7bd60c467bfce5bbdd3"
     },
     "translation/content/first-order-logic/sequent-calculus/proving-things.tex": {
-      "bytes": 12331,
-      "sha256": "2e20c72ff30716707453bd4a30131ddab91f3490b79fadc581be503e9517c69a"
+      "bytes": 12337,
+      "sha256": "2a7d2153138f54649c1d561363fa064b5046a72f928176a0676f8998d0e28279"
     },
     "translation/content/first-order-logic/sequent-calculus/quantifier-rules.tex": {
-      "bytes": 4007,
-      "sha256": "3296134986572d8ff902998c9bd4709d6c8b859cbd6f66a5056ec7736bf34e61"
+      "bytes": 4010,
+      "sha256": "a4e0ddc04eb6a2febc11460de57477ea7676304526a3320e6c89fdb1b206d4b8"
     },
     "translation/content/first-order-logic/sequent-calculus/rules-and-proofs.tex": {
-      "bytes": 2782,
-      "sha256": "a2873e224cc3b5f99c0f693072b9fbc843559cd361136ebd87266cfb936c3fb7"
+      "bytes": 2788,
+      "sha256": "89b638d99ee69181f061e364448c7d547bcc46a172141da19853790b458cc355"
     },
     "translation/content/first-order-logic/sequent-calculus/sequent-calculus.tex": {
       "bytes": 1099,
@@ -10102,79 +10102,79 @@
     },
     "translation/content/first-order-logic/sequent-calculus/soundness-identity.tex": {
       "bytes": 2213,
-      "sha256": "8d077a036f9b60f4bcd67b5ffc338859ea955e73bc31fa5e844232fd7558886b"
+      "sha256": "7f0a6cd2c5480e8cb8ce5c4c97c6545501009c41c24566afca63c64d503ccdad"
     },
     "translation/content/first-order-logic/sequent-calculus/soundness.tex": {
-      "bytes": 18629,
-      "sha256": "c952fcb4e8ef4ed2529836909aec7edb4b238362f940ebd1dfcb78a285e4d0aa"
+      "bytes": 18568,
+      "sha256": "58ac1b6f20ac5a5052331879f60b02f24cfb55dd2d53d0b43db01c8cd81ef224"
     },
     "translation/content/first-order-logic/sequent-calculus/structural-rules.tex": {
-      "bytes": 2371,
-      "sha256": "6d8f1568e6c2ecf3f27bb03d2124298e88702e055ff61fe341ba0f913b3a4b65"
+      "bytes": 2379,
+      "sha256": "89f1e0c8acc6337fac9a580a81925b67b53ff17df9365bcfb4798dd257f983fd"
     },
     "translation/content/first-order-logic/syntax-and-semantics/assignments.tex": {
-      "bytes": 14838,
-      "sha256": "8b369f3d369f396dd0359a2554adaefdc35374a82b895d3a0ea8b7da0d6e5e8c"
+      "bytes": 14846,
+      "sha256": "6684e189bb1cd6d6431ab27ea652c3f50ea34662256ce2c374c1460b1e67cf7b"
     },
     "translation/content/first-order-logic/syntax-and-semantics/covered-structures.tex": {
-      "bytes": 2770,
-      "sha256": "a8fb0d6ba5bf5ab1849f80e6a9295c1967e22df37ee8d861c913951c994a321e"
+      "bytes": 2781,
+      "sha256": "35f5bcb5c2aa0366cf397d265366f39d4eb2c2d508a30475217f832a36b2a2cc"
     },
     "translation/content/first-order-logic/syntax-and-semantics/extensionality.tex": {
-      "bytes": 5471,
-      "sha256": "95fb5baba910419e5d1ecb7c13e678d270d796f01c4ee105c03b7fca0359d2ec"
+      "bytes": 5483,
+      "sha256": "4d04d4244816b4656cf2182c7212c7eedfb89aae50fd8d03d6d4c0aed55dbe12"
     },
     "translation/content/first-order-logic/syntax-and-semantics/first-order-languages.tex": {
-      "bytes": 7045,
-      "sha256": "e15c54461726001c6431d311fda5b07b403f6206dc29602ce4489bc7aafee9f6"
+      "bytes": 6953,
+      "sha256": "8b44e50376d25801d2edc59d7f9917c1b6c50528c82293a57c5461ea8be4abd5"
     },
     "translation/content/first-order-logic/syntax-and-semantics/formation-sequences.tex": {
-      "bytes": 10329,
-      "sha256": "bc38d875550d4b6cef4e5dc77c3d3be5c9125ac21931635fd1c17c683e581bad"
+      "bytes": 10344,
+      "sha256": "71e0b674689fb79d48c6606962618ddfcd6ef19ae2b6f1455e55f1c61be6284e"
     },
     "translation/content/first-order-logic/syntax-and-semantics/free-vars-sentences.tex": {
-      "bytes": 3672,
-      "sha256": "0b9275fb1b318b26ea7ed60fb7aacdfb00083be0235d2aaf0674f09d81208d23"
+      "bytes": 3677,
+      "sha256": "3e7c8cd25b2558390101b7a48cbcc6ede17a066ba26f4820ae8f86bdd103ca15"
     },
     "translation/content/first-order-logic/syntax-and-semantics/intro-semantics.tex": {
-      "bytes": 2462,
-      "sha256": "98877a6efee0ec0fafee6cd5d56886cbb810ecad62878833ed05579e93387246"
+      "bytes": 2459,
+      "sha256": "39255b15775d01f0c207778ce5f528b05e4ee7e64a794272b2b68391e13e10d9"
     },
     "translation/content/first-order-logic/syntax-and-semantics/intro-syntax.tex": {
-      "bytes": 1533,
-      "sha256": "be2b8bbfa658a68c4b9bc8aba3c1c94be48069b3de781d7e4740b780dad174aa"
+      "bytes": 1541,
+      "sha256": "28b7d7053fe4f8595d102e1662029da1077a1f64ba7f4c7bad5af464a92dfda9"
     },
     "translation/content/first-order-logic/syntax-and-semantics/introduction.tex": {
       "bytes": 3579,
       "sha256": "82c1963424a1844d825af60b5096205beca3b12f48bf0ab82534714fc62dd1b5"
     },
     "translation/content/first-order-logic/syntax-and-semantics/main-operator.tex": {
-      "bytes": 3674,
-      "sha256": "009ff9b869f66f7612cb26dfda07b4515beaad1c6a41927f705a1ab08a0e7386"
+      "bytes": 3678,
+      "sha256": "c07cd4626a5507db33a016f0c833043ab30c3151d16a56c24f598951f256bff6"
     },
     "translation/content/first-order-logic/syntax-and-semantics/satisfaction.tex": {
-      "bytes": 17436,
-      "sha256": "d06377aaf8d81f3e36ce1987e1014b79f020fe4ffb96eabf7e46c89c9d649b9a"
+      "bytes": 17449,
+      "sha256": "1a1de41bf10df4856d5de4f66f950fe23f147959ee657fcc342418bedd6c6e68"
     },
     "translation/content/first-order-logic/syntax-and-semantics/semantic-notions.tex": {
-      "bytes": 6421,
-      "sha256": "4fbc3973442d0190c08b205098f53d7fb1aa1fc48c8e7722987626e2410f1db1"
+      "bytes": 6404,
+      "sha256": "251d72b555c11c7ea84d01366b4960b27fff53dde7fe4208e90e5a9acc32e431"
     },
     "translation/content/first-order-logic/syntax-and-semantics/semantics.tex": {
       "bytes": 405,
       "sha256": "de5acfbc2e81a672d04c1314794792f175e681c522b48e839079ff4434f8a4ef"
     },
     "translation/content/first-order-logic/syntax-and-semantics/structures.tex": {
-      "bytes": 5179,
-      "sha256": "2b627229d5235e8be954c0abea90083b67d0ecfa665cf5fa3393d9e52a360662"
+      "bytes": 5173,
+      "sha256": "b5aa8c2d42af53841265f8d0b7fe83e722f02ecd60589af7d29a0f3a53776aa7"
     },
     "translation/content/first-order-logic/syntax-and-semantics/subformulas.tex": {
-      "bytes": 4071,
-      "sha256": "c4bbdbf843dbbc6f855743abc7f70982a113a0708b3e123bb3ade28652f50649"
+      "bytes": 4075,
+      "sha256": "b7f23e3f7ac65e9be9b165d3b6e626539e5cb99196b60daed1128fe2a3460a7c"
     },
     "translation/content/first-order-logic/syntax-and-semantics/substitution.tex": {
-      "bytes": 4720,
-      "sha256": "91b0436ff63345306bd18e57d738ccb1873b5e2900f85d9dec17b38fc6458c98"
+      "bytes": 4729,
+      "sha256": "4431c2ace7322c906ae6d17ed890db7279196c07d2501392470c3735d204258f"
     },
     "translation/content/first-order-logic/syntax-and-semantics/syntax-and-semantics.tex": {
       "bytes": 635,
@@ -10185,12 +10185,12 @@
       "sha256": "3fe2bc307367d95a732deb271dae31b4902f756d6c848dcec8e8a0fdf3b550fd"
     },
     "translation/content/first-order-logic/syntax-and-semantics/terms-formulas.tex": {
-      "bytes": 9196,
-      "sha256": "5df6cfcd5b30b755c927ee4ea5bf865eb5dce382bae12f62f0b8a49b0bc8224f"
+      "bytes": 9222,
+      "sha256": "dbbc5d5fc574f6450a9f12f32ce24f3f8926a5cdfe918dbc75c73a741d778883"
     },
     "translation/content/first-order-logic/syntax-and-semantics/unique-readability.tex": {
-      "bytes": 7829,
-      "sha256": "9601c6c4ea2fa95c06707b4cb9eb035f49c5e50a834f492a5587cbc63f32345f"
+      "bytes": 7839,
+      "sha256": "f5fc3dfac31dab1697805d2a87bae139825187e3b4632d39e4a50b70754ac3b3"
     },
     "translation/content/first-order-logic/tableaux/derivations.tex": {
       "bytes": 3880,
@@ -10249,48 +10249,48 @@
       "sha256": "de622f7f6ad23563666c8aafcc46cacb5a5468edd195b14b468b8240f3108e5d"
     },
     "translation/content/history/biographies/alan-turing.tex": {
-      "bytes": 4413,
-      "sha256": "cfa95a91e08f5f860cb00362a89642cbe45e51a4c16f4a025f2aa9caedc54f98"
+      "bytes": 4417,
+      "sha256": "52bac1409c08e74e8818b8b407dfbe544f5804b1b4c03eb7da0fa7c4bfb9ebda"
     },
     "translation/content/history/biographies/alfred-tarski.tex": {
-      "bytes": 2584,
-      "sha256": "fa3871a1fa08ec133d8d4c5566676fa29048eadae6d48e988abcde5a91102ad3"
+      "bytes": 2588,
+      "sha256": "0663efabd80a92ab7c5d8f90aa698052e5fdffb117d0200be323f77320c8baa4"
     },
     "translation/content/history/biographies/alonzo-church.tex": {
-      "bytes": 2710,
-      "sha256": "25ffc6baab3a83689bffa72ae904a2e11c86d085eeb2799aadaaf05459d3e9bd"
+      "bytes": 2714,
+      "sha256": "7f324bd5dc6ddff3e4a19f1b36418c6b4e93e7ab05475b2e651f997eaff8c529"
     },
     "translation/content/history/biographies/bertrand-russell.tex": {
-      "bytes": 3853,
-      "sha256": "4ab57091ca9351a6a803ed5457fdd1f065be3e32e1dbd26983240510dd9a1a9a"
+      "bytes": 3857,
+      "sha256": "7436d410b33092157ad064541cc7d6d68dc521139000db732c6fff75e3ccc6ee"
     },
     "translation/content/history/biographies/biographies.tex": {
       "bytes": 466,
       "sha256": "9dbba88431b67489f570f3c69dce145a87898a40be2feec44c37cd9eb976c2ee"
     },
     "translation/content/history/biographies/emmy-noether.tex": {
-      "bytes": 4288,
-      "sha256": "b29e3ab3da031239bac07ac9d74f42c13f11475cb7ccf62556506719b0cc750f"
+      "bytes": 4292,
+      "sha256": "73d40a014befb631c0a68f97d743cdb0ac92779dc301374dcbf89297f4f41af5"
     },
     "translation/content/history/biographies/ernst-zermelo.tex": {
-      "bytes": 3131,
-      "sha256": "87e1d783a7033c9791a74097b51e1ac48cd891ff75553e68b18d4985a53e96f0"
+      "bytes": 3135,
+      "sha256": "6a3374a5e9fda1204a644e081bf2d6dabd978e7740f13197003ddb5f30de1b28"
     },
     "translation/content/history/biographies/georg-cantor.tex": {
-      "bytes": 2542,
-      "sha256": "5d7f7f5b3d7610e0a53e096b6f5ec8999738b8c5f2e703b64de8c7e801231673"
+      "bytes": 2546,
+      "sha256": "9d5dc8dfb215079dff6a9602c098fcdaadd2ca823fcc66da22628ade6d45b6fb"
     },
     "translation/content/history/biographies/gerhard-gentzen.tex": {
-      "bytes": 3264,
-      "sha256": "bd94d9203b88373065d343aa991d73472a4f75b60de31687fb006d152b2bde1b"
+      "bytes": 3268,
+      "sha256": "67bb2fd35609b52cb5148706c53149bd272bce712d95c206454054dfff759f71"
     },
     "translation/content/history/biographies/julia-robinson.tex": {
       "bytes": 5124,
       "sha256": "41ab9369c546dc10890b6d72a4d830d56e744ca91cfa7c49f0baebe815079da9"
     },
     "translation/content/history/biographies/kurt-goedel.tex": {
-      "bytes": 3934,
-      "sha256": "c10a304bf4b8e1fbfbbc67d5730ab82c7044474fb702f49689d843c79469518c"
+      "bytes": 3938,
+      "sha256": "0714b0058b7f9d31f630a1be8ccfd23336b4c06d0a9e46f9577aeed79e42b8e8"
     },
     "translation/content/history/biographies/rozsa-peter.tex": {
       "bytes": 4098,
@@ -10909,80 +10909,80 @@
       "sha256": "5110d1a5ec66e5b4205a4a52051e81f6606caa1dc94a69737b70ef1d94db1665"
     },
     "translation/content/methods/induction/induction-on-N.tex": {
-      "bytes": 6015,
-      "sha256": "d179095b8913659914ad91da2150ec21cc78062a3cdc5a512f93c09f8e89ba19"
+      "bytes": 6019,
+      "sha256": "0df43d6c9109f7983e74d9637399d4d23c6c2b1f8982feddd5f515497a0bf2c1"
     },
     "translation/content/methods/induction/induction.tex": {
       "bytes": 350,
       "sha256": "57aa705ed0a0ba006db6ec49c45523591cce0783046057fdf9d158c7856eec54"
     },
     "translation/content/methods/induction/inductive-definitions.tex": {
-      "bytes": 6839,
-      "sha256": "56991832e7e2e24119357e5bbc5932cd2b7f32475fe6f298fa25b9b817122d02"
+      "bytes": 6881,
+      "sha256": "8258d158da4fe6d8151297172a8f8cc29649da7c51e752e9d3f3046b95d01a7e"
     },
     "translation/content/methods/induction/introduction.tex": {
-      "bytes": 2170,
-      "sha256": "1c9e32dd7f558403e9ee57ac0b5a7a31240830893276e6626f227643104520d3"
+      "bytes": 2174,
+      "sha256": "750c3e2e4d62303a4843cda45225988a5b7641a98ef4f1a6d11f723cc4a88cd2"
     },
     "translation/content/methods/induction/relations.tex": {
-      "bytes": 7393,
-      "sha256": "d0fcef65129b45978f72fccdae3b7bfa57c29ebd4044f0415db8bee2110046dc"
+      "bytes": 7433,
+      "sha256": "94e6b5b1bb8cb8fa1590761edf0a065be28c1167b2d06eb839db152bd023d9a1"
     },
     "translation/content/methods/induction/strong-induction.tex": {
-      "bytes": 2503,
-      "sha256": "319150263a458d74849498f60a25b981e55a1b8f58f2f7d7fcd76a9c42d0ae63"
+      "bytes": 2506,
+      "sha256": "9de0dd0cb00ad2b57ff38c10cc46fd089a8ca141dc2e085187f754b9969bf262"
     },
     "translation/content/methods/induction/structural-induction.tex": {
-      "bytes": 5166,
-      "sha256": "e31f97a815e69552b68f8be0162e487b2c3958255608dcfabaf032fbf699e132"
+      "bytes": 5262,
+      "sha256": "8bd3436807c3b5436baa43abdea308ec907130125f490162e15feacb01b61f85"
     },
     "translation/content/methods/methods.tex": {
       "bytes": 403,
       "sha256": "b43d8e8d007d5b7939d65e213018b436bcb1bfc6211c84aebf2b97886a4a0b15"
     },
     "translation/content/methods/proofs/cant-do-it.tex": {
-      "bytes": 3043,
-      "sha256": "22464c7ddc16d4204a129696f6f34e3675d39f523e42674921a5a6aa41958c17"
+      "bytes": 3047,
+      "sha256": "537377e7ff6c23c92b98691b6af21e729df8cb353e18ca382170703cda7dce9c"
     },
     "translation/content/methods/proofs/example-1.tex": {
-      "bytes": 7677,
-      "sha256": "a60102972b3bd34ab90bd1fc96462e5a35b7fd3592c4c7daeba7ec203cfb72c1"
+      "bytes": 7681,
+      "sha256": "c8e679a1c47711d53219f1d34212fbc20d757b3c05a19fb974c2485c3e7eef6d"
     },
     "translation/content/methods/proofs/example-2.tex": {
-      "bytes": 4747,
-      "sha256": "064348bc980c277f502c6cd04f6b4607e53393f8a310fc4cbde1d88d117aae92"
+      "bytes": 4751,
+      "sha256": "b6b7b41a53bea6305a7c26946801c799f906f082a9ecb015b00125ad4419c25a"
     },
     "translation/content/methods/proofs/inference-patterns.tex": {
-      "bytes": 16412,
-      "sha256": "ce93038a06f15a905c75b8e202402a1e10b4c15ec296311ea60c7a03a2ed6444"
+      "bytes": 16413,
+      "sha256": "0d8d1a83793d6af07da71bfb576d77eefe4fb1bb9a3b4a90880ba74d9fac48d4"
     },
     "translation/content/methods/proofs/introduction.tex": {
-      "bytes": 3441,
-      "sha256": "7cf35aacdaa4e9c18f1afd81547c11a81dc010deab808e98315a18260de086c7"
+      "bytes": 3443,
+      "sha256": "b6bae165efc3fe19e25287e32beb5fcb1d477112fcff5ffd3f0c2f07b9334ca2"
     },
     "translation/content/methods/proofs/proof-by-contradiction.tex": {
-      "bytes": 9455,
-      "sha256": "9b75b5d07f457a5f024a1eeb8bfb898342a83985149c02e2f521392d62a4b2d8"
+      "bytes": 9459,
+      "sha256": "8ce536ff55455cbe862361a4d7038abb1134763b28ea1d80c939322dac81e7df"
     },
     "translation/content/methods/proofs/proofs.tex": {
       "bytes": 441,
       "sha256": "f97a7ae5857b7dc0334f455f59ad4f94c661781671479360ebc4538b28563ab7"
     },
     "translation/content/methods/proofs/reading-proofs.tex": {
-      "bytes": 4763,
-      "sha256": "f49c95dc3eb49fcb1f0bd820581df4b86ec90fa3e6bc439d5de4c801ba67bed0"
+      "bytes": 4767,
+      "sha256": "572d3ca4821fdb63d606fa7a29426ae809fb1d8a6f6470125670902b11f9185f"
     },
     "translation/content/methods/proofs/resources.tex": {
-      "bytes": 1591,
-      "sha256": "d1da148b26606605fac84890c554c6beb68b95761dca384b085ab2faf13eccaf"
+      "bytes": 1595,
+      "sha256": "cca707aa6b2626680519f1a4aa880cdbf0c85a429b74eec21fc5c1d49594edb3"
     },
     "translation/content/methods/proofs/starting-proofs.tex": {
-      "bytes": 1351,
-      "sha256": "acfcc9fcd0aae326e8398534b9729bbbdfaf78ff7f99642b882cb1bb8b6cb050"
+      "bytes": 1355,
+      "sha256": "ef5fd6b76034b6153cc2b18616e489d3942192bb186f1715dc6b84fb29c00399"
     },
     "translation/content/methods/proofs/using-definitions.tex": {
-      "bytes": 4776,
-      "sha256": "b4481473f16650f4602c111b4f5884488abd4eb1018311c66d1904fd941e64db"
+      "bytes": 4783,
+      "sha256": "f73d71cadd9afe8f169d261fbadb6d4fb1e0d121cc0c8530530c8b208ef8e8f9"
     },
     "translation/content/model-theory/basics/basics.tex": {
       "bytes": 411,
@@ -12061,36 +12061,36 @@
       "sha256": "7465c49763be40641697298b0135dc3058c5b7d21ea53e9e49206af1a305ee82"
     },
     "translation/content/sets-functions-relations/functions/composition.tex": {
-      "bytes": 2605,
-      "sha256": "b3bec15b34ca29255f6488bbf1bc6473ab94664fc7a2125ed40ea339b34d8fb0"
+      "bytes": 2608,
+      "sha256": "5fe5922f363d9a5477dccc6aee84b0b1708a93d230d28876cb7b1e035acd3caf"
     },
     "translation/content/sets-functions-relations/functions/function-basics.tex": {
-      "bytes": 5620,
-      "sha256": "9c90dad1c68e93fee716f6d1b9acb1d0170ad36da7ccdb44c58abae6212685bb"
+      "bytes": 5572,
+      "sha256": "4a3ce29f067ff39506b75d4db43df69f22d9479cae9c29458dc95f719512b1e7"
     },
     "translation/content/sets-functions-relations/functions/function-kinds.tex": {
-      "bytes": 4039,
-      "sha256": "ba6f08d48f4cece9c6113b79710fe8090f7649fffe664341bc9038b0cf76aa5e"
+      "bytes": 4040,
+      "sha256": "850659da6e2f8fb3fc654ef5276867dc822384075852a911318b692bf541d5f6"
     },
     "translation/content/sets-functions-relations/functions/functions-relations.tex": {
-      "bytes": 4490,
-      "sha256": "86e3dd337ce674adab2b838a16fe9d6c821893a36587f67bfa7337aecfd274eb"
+      "bytes": 4488,
+      "sha256": "d00ebabd429bac3dedebe079a910d363a961d67742144d19949080c4866b8a46"
     },
     "translation/content/sets-functions-relations/functions/functions.tex": {
       "bytes": 396,
       "sha256": "60904b3ed60abbf3d8c0973ff17b05c30b022c88d93fa351a1b59118101ffac1"
     },
     "translation/content/sets-functions-relations/functions/inverses.tex": {
-      "bytes": 7605,
-      "sha256": "2c98765c0711987059430af37751cb21b294081e177d407b13e5fe58d06e0153"
+      "bytes": 7607,
+      "sha256": "e9ec1fa1bb89c49134ab5eb9c08bb61e078df65f5eb42b98a3fce927ea10d4bf"
     },
     "translation/content/sets-functions-relations/functions/isomorphic-functions.tex": {
       "bytes": 1768,
       "sha256": "49298fb48cb6be49fe2cf89fbb6ec358525f2b5a782382322ffa7b8e9e6fbbc4"
     },
     "translation/content/sets-functions-relations/functions/partial-functions.tex": {
-      "bytes": 2890,
-      "sha256": "fbb6da3efe6acce8358766645903a1636fc898a7c1394622baff88c14fcd1b50"
+      "bytes": 2891,
+      "sha256": "8f0a69e471cc1f98c06b4a5ce62747fda486e4f957712c632e80a1f8a43e2e57"
     },
     "translation/content/sets-functions-relations/inductive-defs-proofs/introduction.tex": {
       "bytes": 5541,
@@ -12121,28 +12121,28 @@
       "sha256": "590cc7cc70015e6d4e4af4872c81d0a5f74665eae7020dcc29ec23a8bb3ac627"
     },
     "translation/content/sets-functions-relations/relations/equivalence-relations.tex": {
-      "bytes": 3845,
-      "sha256": "ce7781e6b214bf1ebccb8ee1c2ce7cb0e19278702d0f60d6c0d005c4c0b838ea"
+      "bytes": 3843,
+      "sha256": "1f7a46b8a446061189a6a13d64a171640daae6edc3ed827957f5f1e8bff586e4"
     },
     "translation/content/sets-functions-relations/relations/graphs.tex": {
-      "bytes": 2916,
-      "sha256": "8609a44fcbd9bc7620cc3b32238e1df5c11c05243de333bc93bb6643c18c0964"
+      "bytes": 2871,
+      "sha256": "1f51e098f352bc0f2f14aacb0da9fba8d236c482fd13937e19f40d1fe5a08d62"
     },
     "translation/content/sets-functions-relations/relations/operations.tex": {
-      "bytes": 2383,
-      "sha256": "07a8e5112c63064fb4b3f87a1b9b03212f8ba4598894e881efbd9fb2591023ee"
+      "bytes": 2387,
+      "sha256": "1fa2f5c0a2eb2373f6e21b6035eeca79e8b9e8af50bb0b72a3f09fb0ed9c9af9"
     },
     "translation/content/sets-functions-relations/relations/orders.tex": {
-      "bytes": 6618,
-      "sha256": "dd654d43b177887ae38506c771573d4f3395b95217351138776a5b0dc0d12e8b"
+      "bytes": 6622,
+      "sha256": "76f83c5670e40e36c762d5fc6fc3f84f7f722936d50e5b9a7467092ae840a9c8"
     },
     "translation/content/sets-functions-relations/relations/reflections.tex": {
       "bytes": 4219,
       "sha256": "65cefe069312f4fcf5ca776aef1104622f9a1d43f5f5de56c36471fe7c84149f"
     },
     "translation/content/sets-functions-relations/relations/relations-as-sets.tex": {
-      "bytes": 5405,
-      "sha256": "5dbe3e57c1482fd2f5ac07a9e4d5be3318ad788c2ad13a7b76a47d9b7f6ad73f"
+      "bytes": 5403,
+      "sha256": "c7656adb1105f458c5b5b509eff02b7de21cc858494a1dfe605dcea016186c6b"
     },
     "translation/content/sets-functions-relations/relations/relations-complete.tex": {
       "bytes": 407,
@@ -12153,12 +12153,12 @@
       "sha256": "1e5e1d82232b60523c91bb2e4d174927d333c75c930885f24ae523cecec0c558"
     },
     "translation/content/sets-functions-relations/relations/special-properties.tex": {
-      "bytes": 3216,
-      "sha256": "c77a05b705f0c0722d205ab60b511ef8f8451b4f4e547e9b5d0e767d1d81fd6c"
+      "bytes": 3214,
+      "sha256": "8f0105b3c9f2b8f69093d520a49f1567b76bbee47269942b7b18b4bb53320113"
     },
     "translation/content/sets-functions-relations/relations/trees.tex": {
-      "bytes": 5556,
-      "sha256": "baeae1d74d1bb734121c7291438be30fdc3598c4d073242b94331749c94f0686"
+      "bytes": 5557,
+      "sha256": "2826e73bc37bb7981e68ba34c416f1e8d166dc8e37329c01a3090efdc754df73"
     },
     "translation/content/sets-functions-relations/sets-functions-relations-complete.tex": {
       "bytes": 720,
@@ -12169,84 +12169,84 @@
       "sha256": "524357a934142adda7421f3ce131a0414ab0b4fd51dc0a3f7535b59a29c5ba18"
     },
     "translation/content/sets-functions-relations/sets/basics.tex": {
-      "bytes": 4114,
-      "sha256": "c7cb528b55d99233e4fb3417b87cb78b3fb2b042e5bc0f775b12f3f6e85154d8"
+      "bytes": 4117,
+      "sha256": "fb3de038a7b419079e872b5901f1b6bfcf66ba5baf4a303c9bc632a601007b5c"
     },
     "translation/content/sets-functions-relations/sets/important-sets.tex": {
-      "bytes": 2824,
-      "sha256": "97f29bda3830efab5d00b53174250755ef9dc10b53ae9c1a88d005173c402fe7"
+      "bytes": 2816,
+      "sha256": "4a5b2d8530440c724f569f2f4dd48a8e83534dba0f3ad1cf24d2edf6e012a446"
     },
     "translation/content/sets-functions-relations/sets/pairs-and-products.tex": {
-      "bytes": 4828,
-      "sha256": "c0ed21bf5c511a9c16a778562cb761f798363de0e8c201aa10f2dcd073d3c471"
+      "bytes": 4830,
+      "sha256": "82ec5a521fcf4666c7e8fbee0af3992e32a3f8715b30935ec52ba5eba1d2ab8f"
     },
     "translation/content/sets-functions-relations/sets/proofs-about-sets.tex": {
       "bytes": 4327,
       "sha256": "e6021a8d9d45d62262c66f4d7f39e14a86bc63f9c3ce5e9da23bbfe2ad86af85"
     },
     "translation/content/sets-functions-relations/sets/russells-paradox.tex": {
-      "bytes": 4029,
-      "sha256": "bfc2202876601934bafac487d6853d775748c411d1f54e71279dd6a0749aa092"
+      "bytes": 4033,
+      "sha256": "f53fa493706d0bf9d6236a988d7e307d0fbe2683fe9eeec00afdcb9d07638da3"
     },
     "translation/content/sets-functions-relations/sets/sets.tex": {
       "bytes": 360,
       "sha256": "a363c40c13928b49e4b3937c047cdb024897849d501a395ea0bd6509167fc1f8"
     },
     "translation/content/sets-functions-relations/sets/subsets.tex": {
-      "bytes": 3801,
-      "sha256": "96d258af845f299da2e893454811f8602ed0baf41c9812d66596325b7517c2e4"
+      "bytes": 3799,
+      "sha256": "bc195b527979be605d2c3a47ecc82f219ac1766ae7cb4c046bb31a69971a8ffc"
     },
     "translation/content/sets-functions-relations/sets/unions-and-intersections.tex": {
-      "bytes": 6429,
-      "sha256": "dae7e60ee63beaf9a8ef76b3fc944996d5a2563b764a9f18ead3822e623fab31"
+      "bytes": 6433,
+      "sha256": "9356c9ca2b0233a4a23b41b917cb104d55080edb12b5294cf289120548f6657b"
     },
     "translation/content/sets-functions-relations/size-of-sets/comparing-size.tex": {
-      "bytes": 7395,
-      "sha256": "91706f5c43ae59e9fd450b9a569d793ba116271174a71db6895200fe9ac1527c"
+      "bytes": 7390,
+      "sha256": "a612fcf00adf5a878c61857cae21269ad4e78394cf7c974d26552713e164ec40"
     },
     "translation/content/sets-functions-relations/size-of-sets/enumerability-alt.tex": {
       "bytes": 5477,
       "sha256": "6ef1dfcdb6862fbf14041d80b73e5523bed06050ad2f400663cce8bb9ef8380a"
     },
     "translation/content/sets-functions-relations/size-of-sets/enumerability.tex": {
-      "bytes": 12927,
-      "sha256": "24ccede7155be644872eab4fbfe40ec6ab3963775cabf4d73e39d60360a0b941"
+      "bytes": 12918,
+      "sha256": "7e60545c6cec5e2409e14b3813384b157c0f2358ce75585be09c60385326b293"
     },
     "translation/content/sets-functions-relations/size-of-sets/equinumerous-sets.tex": {
       "bytes": 4136,
-      "sha256": "fae4f1acc2e832504048563c526a61e31a5ff324717855aed837e992b41d3ecf"
+      "sha256": "b27c2fbec0ea24ec13163f0f283912b99923d380363730f3ea6711104831cfcf"
     },
     "translation/content/sets-functions-relations/size-of-sets/introduction.tex": {
-      "bytes": 1178,
-      "sha256": "992889080962cfdab64a8dd20c332f706976ac0196b014b655dc984b602f6aff"
+      "bytes": 1182,
+      "sha256": "54c2877e8bfd1d4d31394e0d0855522f8e17268e6d612400ed8f269280f70d50"
     },
     "translation/content/sets-functions-relations/size-of-sets/non-enumerability-alt.tex": {
       "bytes": 6878,
       "sha256": "2ad60eeccd4a333368c7b29bd3e1493f2fd52444609be70e309f058599af1b86"
     },
     "translation/content/sets-functions-relations/size-of-sets/non-enumerability.tex": {
-      "bytes": 9565,
-      "sha256": "d1abeb0c496e5330de57f93c476e504cee5933b0db7772f959ce0a70ac92a972"
+      "bytes": 9569,
+      "sha256": "d5175cbcf0df2c3f5aee62c6cc2cf04bfb013b31ea4afbdade920bc9bb370e00"
     },
     "translation/content/sets-functions-relations/size-of-sets/pairing-alt.tex": {
-      "bytes": 5140,
-      "sha256": "7bc6240d030f3298ae023ff5e334119cbada07b8095a479dc24c61b72ba42f64"
+      "bytes": 5135,
+      "sha256": "1abc03fa39f0e5580a463d732a2327664640ce4101e61c7627bbe8f5d913e59b"
     },
     "translation/content/sets-functions-relations/size-of-sets/pairing.tex": {
-      "bytes": 4502,
-      "sha256": "23ffeedfaa7abf9c2765946436621931ceff670707e7f80fd509f22086b6b117"
+      "bytes": 4500,
+      "sha256": "ed951a1e53b0e61db7e9669b4e8b7dac0dbb8ac4f9d36c314f2eb9b164ddb208"
     },
     "translation/content/sets-functions-relations/size-of-sets/reduction-alt.tex": {
       "bytes": 6056,
       "sha256": "686de327842c32048d8572bcc0a74837dfc24cb70d85833cf640046e869c09f9"
     },
     "translation/content/sets-functions-relations/size-of-sets/reduction.tex": {
-      "bytes": 5873,
-      "sha256": "d6a5ab1c57ddd34acff0b6ab6115427bcaa248e965711157fa6bdc46fce03658"
+      "bytes": 5874,
+      "sha256": "c6c87d520691cea057af9574b59602ea401df2f3856424b78cfa691d2ab96828"
     },
     "translation/content/sets-functions-relations/size-of-sets/schroder-bernstein.tex": {
-      "bytes": 1875,
-      "sha256": "75be4d9d9956c888af1f4b51645370b5a0ecdf1f1fd3d382f246b188fa1bc24b"
+      "bytes": 1879,
+      "sha256": "5125b307c5fbe4541c93fd92fb5119e63f3b1e67c5bbd54f4a04e610c3cb1a0b"
     },
     "translation/content/sets-functions-relations/size-of-sets/size-of-sets-complete.tex": {
       "bytes": 1554,
@@ -12257,96 +12257,96 @@
       "sha256": "43e31f96c31e74a48a4f597af30a9d506f3f1292c8b75c9ce9f7970e86d96996"
     },
     "translation/content/sets-functions-relations/size-of-sets/zig-zag.tex": {
-      "bytes": 5117,
-      "sha256": "71b42b962284b63b12fac28483bab4906781874440f2204c8c4095136db30cc9"
+      "bytes": 5106,
+      "sha256": "754dc87df6167d09e590bf2bb2487cfc6715b28b027e49cde08926ce420f88ce"
     },
     "translation/content/turing-machines/machines-computations/church-turing-thesis.tex": {
-      "bytes": 2166,
-      "sha256": "016ff371f8e206acaa561fd9b657424eea0ca6f068bda79c4cf622a8c16d88ab"
+      "bytes": 2170,
+      "sha256": "8bfb21c6bd8ce57c70159eb40938a0521975ce5da780b11510e97347b92b6dfd"
     },
     "translation/content/turing-machines/machines-computations/combining-machines.tex": {
-      "bytes": 8534,
-      "sha256": "45230fd1e12c927ba38ec3d4554e20d61928d44a93d710c1ade893ac71042413"
+      "bytes": 8536,
+      "sha256": "5a10b1104fdc42e06b99d0330e1039b782c6e7408e82d83213a83872c05f7af9"
     },
     "translation/content/turing-machines/machines-computations/configuration.tex": {
-      "bytes": 4690,
-      "sha256": "48fc5f677887cfd622fd954d9354f54148ba518a4d5320e43a2e91e3c4c57fe6"
+      "bytes": 4725,
+      "sha256": "54a7b35693bfa9434fd8eaba0be03d654a1d640fa4b393cd8f8c8686cee0ff85"
     },
     "translation/content/turing-machines/machines-computations/disciplined-machines.tex": {
-      "bytes": 4373,
-      "sha256": "0c95808d206d0fa8ef427ecc73a663f72622e9b40335637c08af5cf6b473eb37"
+      "bytes": 4375,
+      "sha256": "402283a24e288379d164cf16f7cc5d5b9acc134a553e9acaabe59f1c141d93d1"
     },
     "translation/content/turing-machines/machines-computations/halting-states.tex": {
-      "bytes": 3045,
-      "sha256": "b83d2029a64eeb5ca49a68b0b826a08e5cc0e58f56c7f127aaff7809aa1c40be"
+      "bytes": 3059,
+      "sha256": "552b6f24e3729142583e747da7c0780d02272f6e792e40e5caccaf340ebfb7fe"
     },
     "translation/content/turing-machines/machines-computations/introduction.tex": {
-      "bytes": 6965,
-      "sha256": "de07e621e2e610311471e59f4b68642a8044176e2d53f5599b6887d3507caf03"
+      "bytes": 6981,
+      "sha256": "3a5bc3297301c726e4ac2555f540abd2d3be40a0227cc29fcbcaaf9f7b889c9e"
     },
     "translation/content/turing-machines/machines-computations/machines-computations.tex": {
       "bytes": 498,
       "sha256": "ab2ebfa3b5e3320ad4531d36c204456f55e79f27db5735accb0b42965701be08"
     },
     "translation/content/turing-machines/machines-computations/representing-tms.tex": {
-      "bytes": 12647,
-      "sha256": "7100b056412d1080e15ff33b19ac8e65d19838802af6c325dda9a74082dddb30"
+      "bytes": 12704,
+      "sha256": "7bd9ddc245315b94ef165cbe5cdd60fef32e8cee3827acdd14ac56f30679b1b8"
     },
     "translation/content/turing-machines/machines-computations/turing-machines.tex": {
-      "bytes": 2264,
-      "sha256": "660e70282cf23beeb7bdc73974da5a1ed83c96addfadfa5d06fd17e3ab70028a"
+      "bytes": 2268,
+      "sha256": "0f8081dfaf34e63b6678dce075fe353d2e217f04594117e3e08287a61199a557"
     },
     "translation/content/turing-machines/machines-computations/unary-numbers.tex": {
-      "bytes": 10588,
-      "sha256": "1afeaac0d4e56e022e7f83dd825ce95c2bf38581db338ba3f298821c431bab6a"
+      "bytes": 10606,
+      "sha256": "6272dd339dbb4f598b9425abd8f9594cb2a2a5a4b49695609ff922c24bb1479f"
     },
     "translation/content/turing-machines/machines-computations/variants.tex": {
-      "bytes": 4972,
-      "sha256": "66c90c75871862ccb49b98eede8799c22d0e9d65d425f6d732c28fe5b1189a33"
+      "bytes": 4989,
+      "sha256": "4f31451f5867fa76a07f63120279ab5f66ca28c5ce9f94a0699077e7dd1efb4c"
     },
     "translation/content/turing-machines/turing-machines.tex": {
       "bytes": 259,
       "sha256": "8d1bd70ba496d23ff0f0688a971efaa80facb88d5dee6e78bf8b55545d2aca42"
     },
     "translation/content/turing-machines/undecidability/decision-problem.tex": {
-      "bytes": 2297,
-      "sha256": "53e5bbfb9f137aadec815b766f3bdc9cb6c5e6aab43b619b682cd9b34d40323b"
+      "bytes": 2307,
+      "sha256": "6863a8ccb465f257c66a53d09644b6e6d0516b3b5b31510f5a5112f7f8d84d37"
     },
     "translation/content/turing-machines/undecidability/enumerating-tms.tex": {
-      "bytes": 7312,
-      "sha256": "55526fa84b494be17a626461dab0b14851bd97f97a3fc6cb7809c88f66932718"
+      "bytes": 7342,
+      "sha256": "abf4c384ea887391b054fca245c5693167aeafb1202e53f26a65a97872dccf7b"
     },
     "translation/content/turing-machines/undecidability/halting-problem.tex": {
-      "bytes": 5993,
-      "sha256": "f9f4e2449f4df0f05effb416b69e34223eba62d8541c05607a5d4b750317f019"
+      "bytes": 6027,
+      "sha256": "7dcc2188d832947a69180568fe413f4f6dac4360753394a77fe0b8bfe43f57b3"
     },
     "translation/content/turing-machines/undecidability/introduction.tex": {
-      "bytes": 5070,
-      "sha256": "2bcd9c57064fb1b6c1ec9bbce93723ad2da34001e8c03f626e783ebc9b546587"
+      "bytes": 5081,
+      "sha256": "13ad10840ed19359d1c344f81f8483861dd38528ce17ac338362f87567626018"
     },
     "translation/content/turing-machines/undecidability/representing-tms.tex": {
-      "bytes": 8523,
-      "sha256": "4b7b277f10240743878efdaab615c08ba06ef1429afa15f9f741976abfd81945"
+      "bytes": 8549,
+      "sha256": "a63086ffb460b89db3bcf21654b0d301166099e21c7988ee81bdb5a781be1503"
     },
     "translation/content/turing-machines/undecidability/trakhtenbrot.tex": {
-      "bytes": 12720,
-      "sha256": "7e5e9cf1c0c5b7521b61d04658b7e77e50968928b8722714d00fd5f355c32ded"
+      "bytes": 12775,
+      "sha256": "309bfefd3578c2a740ee033ec108292ee855011014b0d27b4c920c131cc90f70"
     },
     "translation/content/turing-machines/undecidability/undecidability.tex": {
       "bytes": 466,
       "sha256": "daf8afc03f2c464ce598bb1c6d37f610dc4838743cb61b9658acc2a6ad0c884d"
     },
     "translation/content/turing-machines/undecidability/universal-tm.tex": {
-      "bytes": 7526,
-      "sha256": "96d45077654fc042899d5565f583a05ebe041b785463f3a9989b360d644042f1"
+      "bytes": 7575,
+      "sha256": "0465e6e9e0c41d1f1e47907456e4dd268d83931554c7bfe0642673377e2c7059"
     },
     "translation/content/turing-machines/undecidability/unsolvability-decision-problem.tex": {
-      "bytes": 4483,
-      "sha256": "b1a8e146af3113ad1953aaacbcc1e6e782edba150d92ec6d178e7e8cf628a770"
+      "bytes": 4492,
+      "sha256": "a3b3b12e650e51ec112794bb7ccd028687b43d90a4c36857ac59e83bc3285ce4"
     },
     "translation/content/turing-machines/undecidability/verification.tex": {
-      "bytes": 15254,
-      "sha256": "cdf4d3ba99bad8dc0ac19b77d2cfc8224994f9e62bc286cb2409b68616ee7f11"
+      "bytes": 15327,
+      "sha256": "a78b9d0d1276dedf5d4b0a91a91c81f3372cb47f550aa7d1968f1261710218c2"
     },
     "upstream/LICENSE.md": {
       "bytes": 17068,

@@ -49,7 +49,7 @@ def main():
     parser.add_argument("output", type=Path)
     args = parser.parse_args()
     project = Path(__file__).resolve().parent
-    scope = (project / "locale/scope.txt").read_text(encoding="utf-8").splitlines()
+    scope = (project / "imports.lock").read_text(encoding="utf-8").splitlines()
     modules = {path: MODULE_NAME.format(index) for index, path in enumerate(scope, 1)}
     book = args.tree / BOOK
     locale = book.parent.parent

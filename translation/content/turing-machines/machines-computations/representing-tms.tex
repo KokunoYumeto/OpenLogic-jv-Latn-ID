@@ -6,7 +6,7 @@
 
 \begin{document}
 
-\olfileid{tur}{mac}{rep}
+\olfileid[jv]{tur}{mac}{rep}
 \olsection{Nggambarake Mesin Turing}
 
 \begin{explain}
@@ -31,7 +31,7 @@ $q_0$ lan $q_1$, lan siji instruksi:
 \end{tikzpicture}
 \]
 Elinga yen mesin Turing nduwé sirah maca-nulis lan
-pita kang wis ditulisi input. Instruksi iku bisa
+pita kang wis ditulisi masukan. Instruksi iku bisa
 diwaca minangka \emph{yen maca~$\TMblank$ ing
 kahanan $q_0$, tulisen~$\TMstroke$, obaha menyang
 tengen, lan alihana menyang kahanan $q_1$}.
@@ -44,7 +44,7 @@ $\tuple{q_0, \TMblank}$ menyang $\tuple{q_1, \TMstroke,
 \emph{Mesin Genep}: Mesin Turing ing ngisor iki
 mandheg yen lan mung yen cacah $\TMstroke$ ing
 pita genep (kanthi anggepan kabeh $\TMstroke$
-ana sadurunge $\TMblank$ kapisan ing pita). Sirah diwiwiti ing kothak input kapisan ing sisih tengen panandha. Kanggo input kosong, sirah maca blank kapisan ing kahanan nol.
+ana sadurunge $\TMblank$ kapisan ing pita). Sirah diwiwiti ing kothak masukan kapisan ing sisih tengen panandha. Kanggo masukan kosong, sirah maca simbol kosong kapisan ing kahanan nol.
 \[
 \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
                     semithick]
@@ -69,13 +69,13 @@ ing ngisor iki:
 \end{ex}
 
 \begin{explain}
-Mesin ing ndhuwur mung mandheg yen inpute
+Mesin ing ndhuwur mung mandheg yen masukané
 cacah guratan kang genep. Yen ora,
 mesin iku (miturut teori) terus lumaku
-tanpa wates. Kanggo mesin lan input
+tanpa wates. Kanggo mesin lan masukan
 sembarang, kita bisa nelusuri
 \emph{konfigurasi} mesin kanggo nemtokake
-asile yen mesin mandheg. Simulasi menehi output yèn mesin mandheg. Kanggo input sembarang, simulasi ora menehi cara kanggo mutusaké apa mesin bakal mandheg. Kita bakal menehi definisi formal
+asile yen mesin mandheg. Simulasi menehi asil yèn mesin mandheg. Kanggo masukan sembarang, simulasi ora menehi cara kanggo mutusaké apa mesin bakal mandheg. Kita bakal menehi definisi formal
 konfigurasi ing bagean sabanjure. Saiki,
 konfigurasi bisa dianggep sacara intuisi
 minangka rerangken diagram kang nuduhake
@@ -84,10 +84,10 @@ Konfigurasi nuduhake isi pita, kahanan mesin,
 lan panggonan sirah maca-nulis.
 
 Ayo kita telusuri konfigurasi mesin genep
-yen diwiwiti nganggo input patang
+yen diwiwiti nganggo masukan patang
 $\TMstroke$. Ing kahanan iki, kita ngarepake
 mesin bakal mandheg. Banjur kita bakal
-nglakokake mesin nganggo input telung
+nglakokake mesin nganggo masukan telung
 $\TMstroke$, kang bakal njalari mesin
 lumaku tanpa entek.
 
@@ -130,13 +130,13 @@ Mesin saiki ana ing kahanan~$q_0$ lan maca
 $\TMblank$. Adhedhasar diagram transisi,
 gampang dideleng yen ora ana instruksi
 kang bisa ditindakake, mula mesin mandheg.
-Iki tegese input ditampa.
+Iki tegese masukan ditampa.
 
-Saiki upamane mesin diwiwiti nganggo input
+Saiki upamane mesin diwiwiti nganggo masukan
 telung $\TMstroke$. Sawetara konfigurasi
 wiwitan padha karo sadurunge, amarga
 instruksi kang padha ditindakake, mung
-input ing pita kang rada beda:
+masukan ing pita kang rada beda:
 \[
 \TMendtape \TMstroke_0 \TMstroke \TMstroke \TMblank \ldots
 \]
@@ -158,7 +158,7 @@ $\TMblank$ tanpa wates menyang tengen,
 mesin bakal terus nglakokake instruksi iki
 \emph{salawase}, tetep ana ing kahanan~$q_1$
 lan obah saya adoh menyang tengen. Mesin
-ora bakal mandheg lan ora nampa input iku.
+ora bakal mandheg lan ora nampa masukan iku.
 \end{explain}
 
 \begin{explain}
@@ -232,7 +232,7 @@ maca~$\TMblank$ ing kahanan~$q_0$.
 
 \begin{explain}
 Nganti saiki kita mung nggatekake mesin kang
-maca lan nampa input. Nanging mesin Turing
+maca lan nampa masukan. Nanging mesin Turing
 bisa maca lan nulis. Salah siji tuladhane
 (sanajan ana akeh banget) yaiku
 \emph{mesin pangganda}. Mesin pangganda
@@ -249,20 +249,20 @@ $\TMstroke$.
   bisa ngelingi cacah $\TMstroke$ kang wis
   diwaca, kita butuh cara kanggo ngetutake
   kabeh $\TMstroke$ ing pita. Salah siji
-  carane yaiku misahake output saka input
+  carane yaiku misahake asil saka masukan
   nganggo~$\TMblank$. Mesin banjur bisa
-  mbusak $\TMstroke$ kapisan saka input,
-  ngliwati input sisane, ninggalake
+  mbusak $\TMstroke$ kapisan saka masukan,
+  ngliwati masukan sisane, ninggalake
   $\TMblank$, banjur nulis rong $\TMstroke$
   anyar. Sabanjure mesin bali lan nemokake
-  $\TMstroke$ kapindho ing input, banjur
+  $\TMstroke$ kapindho ing masukan, banjur
   nggandakake guratan iku uga. Kanggo saben
-  siji $\TMstroke$ ing input, mesin nulis
-  rong $\TMstroke$ ing output. Kanthi
-  mbusak input nalika mesin lumaku, kita
+  siji $\TMstroke$ ing masukan, mesin nulis
+  rong $\TMstroke$ ing asil. Kanthi
+  mbusak masukan nalika mesin lumaku, kita
   bisa mesthekake ora ana $\TMstroke$
   kang kliwatan utawa digandakake kaping
-  pindho. Nalika kabeh input wis kabusak,
+  pindho. Nalika kabeh masukan wis kabusak,
   ing pita kari $2n$ $\TMstroke$.
   Diagram kahanan mesin Turing kang diasilake
   digambarake ing \olref{fig:doubler}.
@@ -298,7 +298,7 @@ $\TMstroke$.
 \end{ex}
 
 \begin{prob}
-Pilihen input sembarang lan telusurana konfigurasi
+Pilihen masukan sembarang lan telusurana konfigurasi
 mesin pangganda ing \olref[tur][mac][rep]{ex:doubler}.
 \end{prob}
 
@@ -320,20 +320,20 @@ $AAABBB$, nanging nolak $AAB$ lan $AABBAABB$.)
 Rancangna mesin Turing kanthi alfabet
 $\{\TMendtape,\TMblank, A, B\}$ kang nampa
 rerangken aksara $\alpha$ sembarang saka $A$
-lan $B$ minangka input lan nggandakake
+lan $B$ minangka masukan lan nggandakake
 rerangken iku supaya ngasilake $\alpha\alpha$.
-(Tuladhane, input $ABBA$ kudu ngasilake
-output $ABBAABBA$.)
+(Tuladhane, masukan $ABBA$ kudu ngasilake
+asil $ABBAABBA$.)
 \end{prob}
 
 \begin{prob}
 \emph{Miturut urutan alfabet?:} Rancangna
 mesin Turing kanthi alfabet
 $\{\TMendtape,\TMblank, A, B\}$ kang nalika
-diwenehi input rerangken winates saka $A$
+diwenehi masukan rerangken winates saka $A$
 lan $B$ mriksa apa kabeh $A$ ana ing
 sisih kiwa kabeh $B$. Mesin kudu ninggalake
-rerangken input ing pita, lan mandheg yen
+rerangken masukan ing pita, lan mandheg yen
 rerangkene ``miturut urutan alfabet'',
 utawa lumaku ing daur tanpa wates yen ora.
 \end{prob}
@@ -343,7 +343,7 @@ utawa lumaku ing daur tanpa wates yen ora.
 Turing kanthi alfabet
 $\{\TMendtape,\TMblank, A, B\}$ kang nampa
 rerangken winates saka $A$ lan $B$ minangka
-input banjur nata maneh supaya kabeh $A$
+masukan banjur nata maneh supaya kabeh $A$
 ana ing sisih kiwa kabeh~$B$. (Tuladhane,
 rerangken $BABAA$ kudu dadi rerangken $AAABB$,
 lan rerangken $ABBABB$ kudu dadi rerangken

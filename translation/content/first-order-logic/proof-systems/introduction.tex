@@ -7,15 +7,15 @@
 \begin{document}
 
 \iftag{FOL}
-      {\olfileid{fol}{prf}{int}}
-      {\olfileid{pl}{prf}{int}}
+      {\olfileid[jv]{fol}{prf}{int}}
+      {\olfileid[jv]{pl}{prf}{int}}
 
 \olsection{Pambuka}
 
 Logika lumrahe duwe semantik lan sistem !!a{derivation}. Semantik
-ngrembug konsep kayata kabeneran, bisa dicukupi, validitas, lan akibat
+ngrembug konsep kayata kabeneran, bisa dicukupi, kesahan, lan akibat
 semantis. Tujuwane sistem !!{derivation} yaiku menehi metodhe kang
-murni sintaktis kanggo netepake akibat semantis lan validitas. Sistem
+murni sintaktis kanggo netepake akibat semantis lan kesahan. Sistem
 kasebut murni sintaktis ing teges yen !!{derivation} ing sistem kaya
 mangkono iku obyek sintaktis winates, lumrahe urutan (utawa susunan
 winates liyane) saka !!{sentence}s utawa !!{formula}s. Sistem
@@ -37,7 +37,7 @@ ing jerone angel diwaca lan dimangerteni, uga angel digawe.
 
 Sistem !!{derivation} liyane wis dikembangake supaya luwih gampang
 mbangun !!{derivation}s utawa luwih gampang mangerteni !!{derivation}s
-sawise rampung. Tuladhane yaiku deduksi natural, wit kabeneran kang uga
+sawise rampung. Tuladhane yaiku deduksi alami, wit kabeneran kang uga
 diarani bukti tableau, lan kalkulus sekuen. Sawetara sistem
 !!{derivation} dirancang mligi kanthi nggatekake mekanisasi; upamane,
 metodhe resolusi gampang diimplementasèkaké ing piranti lunak,
@@ -50,9 +50,9 @@ Mula, kanggo sawijining logika, kayata logika tataran kapisan, sistem
 !!{derivation} kang beda-beda bakal menehi jlentrehan kang beda ngenani
 apa tegese !!a{sentence} dadi \emph{teorema} lan apa tegese
 !!a{sentence} !!{derivable} saka sawetara ukara liyane. Apa wae
-carane (liwat !!{derivation}s aksiomatik, deduksi natural,
+carane (liwat !!{derivation}s aksiomatik, deduksi alami,
 !!{derivation}s sekuen, wit kabeneran, utawa refutasi resolusi), kita
-ngarepake relasi kasebut cocog karo gagasan semantis validitas lan
+ngarepake relasi kasebut cocog karo gagasan semantis kesahan lan
 akibat semantis. Kita nulis $\Proves !A$ kanggo ``$!A$~iku teorema''
 lan ``$\Gamma \Proves !A$'' kanggo ``$!A$~!!{derivable}
 saka~$\Gamma$.'' Kepriye wae $\Proves$~ditemtokake, kita ngarepake
@@ -61,18 +61,18 @@ simbol iku cocog karo $\Entails$, yaiku:
 \item $\Proves !A$ yen lan mung yen $\Entails !A$
 \item $\Gamma \Proves !A$ yen lan mung yen $\Gamma \Entails !A$
 \end{enumerate}
-Arah ``mung yen'' ing ndhuwur diarani \emph{soundness}, yaiku jaminan
+Arah ``mung yen'' ing ndhuwur diarani \emph{kesahihan}, yaiku jaminan
 semantis. !!^a{derivation} sistem nduweni jaminan semantis yen
-!!{derivability} njamin akibat semantis (utawa validitas). Saben sistem
+!!{derivability} njamin akibat semantis (utawa kesahan). Saben sistem
 !!{derivation} kang patut kudu nduweni jaminan iki; sistem
 !!{derivation} tanpa jaminan iki ora migunani babar pisan.
 Awit kabeh tujuwane !!a{derivation} yaiku menehi jaminan sintaktis
-tumrap validitas utawa akibat semantis. Kita bakal mbuktekake soundness
+tumrap kesahan utawa akibat semantis. Kita bakal mbuktekake kesahihan
 kanggo sistem !!{derivation} kang disajekake.
 
 Arah walikan, yaiku ``yen'', uga wigati: arah iki diarani
 \emph{kelengkapan}. Sistem !!{derivation} kang jangkep cukup kuwat
-kanggo nuduhake yen $!A$~iku teorema saben $!A$~valid, lan yen
+kanggo nuduhake yen $!A$~iku teorema saben $!A$~sah, lan yen
 $\Gamma \Proves !A$ saben $\Gamma \Entails !A$. Kelengkapan luwih angèl dibuktèkaké. Sawetara logika ora nduwèni sistem !!{derivation}
 kang jangkep, sah sacara semantis, lan bisa dipriksa kanthi mekanis.
 Logika tataran kapisan nduwèni sistem kaya mangkono.
@@ -95,9 +95,9 @@ $\Proves$, kita ngarepake konsistensi cocog karo padanan semantise,
 yaiku sipat bisa dicukupi. Kita ngarepaké yèn $\Gamma$ konsisten
 yèn lan mung yèn bisa dicukupi \iftag{FOL}{ing sawijining struktur}{déning sawijining valuasi}.
 Ing kene, arah ``mung yen'' padha karo kelengkapan (konsistensi njamin
-sipat bisa dicukupi), lan arah ``yen'' padha karo soundness utawa
+sipat bisa dicukupi), lan arah ``yen'' padha karo kesahihan utawa
 jaminan semantis (sipat bisa dicukupi njamin konsistensi). Nyatane,
-kanggo logika klasik tataran kapisan, rong versi soundness lan
+kanggo logika klasik tataran kapisan, rong versi kesahihan lan
 kelengkapan iki padha ekuivalen.
 
 \end{document}

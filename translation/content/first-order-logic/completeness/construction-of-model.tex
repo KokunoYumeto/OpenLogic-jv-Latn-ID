@@ -7,8 +7,8 @@
 \begin{document}
 
 \iftag{FOL}
-      {\olfileid{fol}{com}{mod}}
-      {\olfileid{pl}{com}{mod}}
+      {\olfileid[jv]{fol}{com}{mod}}
+      {\olfileid[jv]{pl}{com}{mod}}
 
 \olsection{Konstruksi Model}
 
@@ -18,9 +18,9 @@
   ngemot~$\eq$ bisa dicukupi. Kaping pisan, kita ngambakake~$\Gamma$
   dadi himpunan~$\Gamma^*$ kang konsisten, !!{complete}, lan jenuh.
   Ing perkara iki, definisi model~$\Struct{M(\Gamma^*)}$ prasaja: kita
-  nggunakake himpunan term katutup saka~$\Lang{L'}$ minangka domain.
+  nggunakake himpunan terma katutup saka~$\Lang{L'}$ minangka ranah.
   Saben !!{constant} dipasangake marang awake dhewe, lan kanthi luwih
-  umum kita mesthekake yen kanggo saben term katutup~$t$,
+  umum kita mesthekake yen kanggo saben terma katutup~$t$,
   $\Value{t}{M(\Gamma^*)} = t$. !!{predicate}s dipasangake marang
   ekstensi saengga !!{sentence} atomik bener ing
   $\Struct{M(\Gamma^*)}$ yen lan mung yen ana ing~$\Gamma^*$. Iki
@@ -28,27 +28,27 @@
   $\Struct{M(\Gamma^*)}$. Ukara liyane bener yen $\Gamma^*$ wiwitan
   iku konsisten, jangkep, lan jenuh.}{Saiki kita wis bisa nemtokake
   !!a{valuation} kang ndadekake kabeh $!A \in \Gamma$ bener. Kanggo
-  nindakake iki, kita dhisik ngetrapake Lemma Lindenbaum: kita entuk
+  nindakake iki, kita dhisik ngetrapake Lema Lindenbaum: kita entuk
   $\Gamma^* \supseteq \Gamma$ kang jangkep lan konsisten. Upamana
   !!{propositional variable}s ing~$\Gamma^*$ nemtokake~$\pAssign
   v(\Gamma^*)$.}
 \end{explain}
 
 \iftag{FOL}{%
-\begin{defn}[Model term]
+\begin{defn}[Model terma]
 \ollabel{defn:termmodel}
 Upamana $\Gamma^*$ minangka himpunan konsisten lan jenuh kang !!a{complete}
-saka !!{sentence}s ing basa~$\Lang L$. Basa iki ngemot saora-orané siji term katutup,
-kaya ing ekspansi Henkin. \emph{Model term}~$\Struct
+saka !!{sentence}s ing basa~$\Lang L$. Basa iki ngemot saora-orané siji terma katutup,
+kaya ing ekspansi Henkin. \emph{Model terma}~$\Struct
 M(\Gamma^*)$ saka $\Gamma^*$ yaiku !!{structure} kang ditemtokake
 kaya ing ngisor iki:
 \begin{enumerate}
-\item !!{domain}~$\Domain{M(\Gamma^*)}$ yaiku himpunan kabeh term
+\item !!{domain}~$\Domain{M(\Gamma^*)}$ yaiku himpunan kabeh terma
   katutup saka~$\Lang L$.
 \item Interpretasi !!a{constant} $c$ yaiku $c$ dhewe:
   $\Assign{c}{M(\Gamma^*)} = c$.
 \item !!{function}~$f$ dipasangake marang fungsi kang, nalika diwenehi
-  term-term katutup $t_1$, \dots, $t_n$ minangka argumen, nduweni term
+  terma-terma katutup $t_1$, \dots, $t_n$ minangka argumen, nduweni terma
   katutup $f(t_1, \dots, t_n)$ minangka nilai:
 \[
 \Assign{f}{M(\Gamma^*)}(t_1, \dots, t_n) = f(t_1,\dots, t_n)
@@ -80,13 +80,13 @@ Saiki kita bakal mriksa yen pancen $\Value{t}{M(\Gamma^*)} = t$.
 
 \begin{lem}
 \ollabel{lem:val-in-termmodel} Upamana $\Struct M(\Gamma^*)$ minangka
-model term ing \olref{defn:termmodel}, banjur kanggo saben term katutup
+model terma ing \olref{defn:termmodel}, banjur kanggo saben terma katutup
 $\Value{t}{M(\Gamma^*)} = t$.
 \end{lem}
 \begin{proof}
  Buktine kanthi induksi marang $t$, kanthi perkara basis nalika $t$
- minangka !!a{constant} langsung ndherek saka definisi model term.
- Kanggo langkah induksi, upamana $t_1, \ldots, t_n$ minangka term-term
+ minangka !!a{constant} langsung ndherek saka definisi model terma.
+ Kanggo langkah induksi, upamana $t_1, \ldots, t_n$ minangka terma-terma
  katutup saengga $\Value{t_i}{M(\Gamma^*)} = t_i$ lan $f$ minangka
  !!{function} kanthi $n$ argumen. Banjur
 \begin{align*}
@@ -96,7 +96,7 @@ $\Value{t}{M(\Gamma^*)} = t$.
 &= \Assign{f}{M(\Gamma^*)}(t_1, \dots, t_n) \\
 &= f(t_1,\dots, t_n),
 \end{align*}
-lan mula kanthi induksi iki bener kanggo saben term katutup~$t$.
+lan mula kanthi induksi iki bener kanggo saben terma katutup~$t$.
 \end{proof}
 }
 
@@ -110,24 +110,24 @@ lan mula kanthi induksi iki bener kanggo saben term katutup~$t$.
     conto~$!A(t)$ saka !!{sentence}~$\lforall[x][!A(x)]$ kang
     dikuantifikasi universal bener tanpa ndadekake
     $\lforall[x][!A(x)]$ bener.}{} Iki amarga ing umum ora saben
-  !!{element} saka~$\Domain{M}$ minangka nilai term katutup
-  ($\Struct{M}$ bisa uga ora katutup dening term). Iki alesan relasi
+  !!{element} saka~$\Domain{M}$ minangka nilai terma katutup
+  ($\Struct{M}$ bisa uga ora katutup dening terma). Iki alesan relasi
   nyukupi ditemtokake lumantar pamasangan variabel. Nanging kanggo
-  model term~$\Struct{M(\Gamma^*)}$, saben unsur dijenengi déning
-  term katutup. Mula instansi term katutup cukup kanggo mriksa
+  model terma~$\Struct{M(\Gamma^*)}$, saben unsur dijenengi déning
+  terma katutup. Mula instansi terma katutup cukup kanggo mriksa
   ukara mawa kuantor, kaya ing proposisi ngisor iki.
 \end{explain}
 
 \begin{prop}
 \ollabel{prop:quant-termmodel}
-Upamana $\Struct M(\Gamma^*)$ minangka model term ing
+Upamana $\Struct M(\Gamma^*)$ minangka model terma ing
 \olref{defn:termmodel}.
 \begin{tagenumerate}{prvEx,prvAll}
 \tagitem{prvEx}{$\Sat{M(\Gamma^*)}{\lexists[x][!A(x)]}$ yen lan mung
-  yen $\Sat{M(\Gamma^*)}{!A(t)}$ kanggo paling ora siji term
+  yen $\Sat{M(\Gamma^*)}{!A(t)}$ kanggo paling ora siji terma
   katutup~$t$.}{}
 \tagitem{prvAll}{$\Sat{M(\Gamma^*)}{\lforall[x][!A(x)]}$ yen lan mung
-  yen $\Sat{M(\Gamma^*)}{!A(t)}$ kanggo kabeh term katutup~$t$.}{}
+  yen $\Sat{M(\Gamma^*)}{!A(t)}$ kanggo kabeh terma katutup~$t$.}{}
 \end{tagenumerate}
 \end{prop}
 
@@ -138,9 +138,9 @@ Upamana $\Struct M(\Gamma^*)$ minangka model term ing
     $\Sat{M(\Gamma^*)}{\lexists[x][!A(x)]}$ yen lan mung yen kanggo
     paling ora siji pamasangan variabel~$s$,
     $\Sat{M(\Gamma^*)}{!A(x)}[s]$. Amarga
-    $\Domain{M(\Gamma^*)}$ kasusun saka term-term katutup
+    $\Domain{M(\Gamma^*)}$ kasusun saka terma-terma katutup
     ing~$\Lang{L}$, iki bener yen lan mung yen ana paling ora siji
-    term katutup~$t$ saengga $s(x) = t$ lan
+    terma katutup~$t$ saengga $s(x) = t$ lan
     $\Sat{M(\Gamma^*)}{!A(x)}[s]$. Miturut
     \olref[fol][syn][ext]{prop:ext-formulas},
     $\Sat{M(\Gamma^*)}{!A(x)}[s]$ yen lan mung yen
@@ -152,9 +152,9 @@ Upamana $\Struct M(\Gamma^*)$ minangka model term ing
   \iftag{probAll}{Gladhen.}{Miturut \olref[syn][ass]{prop:sat-quant},
     $\Sat{M(\Gamma^*)}{\lforall[x][!A(x)]}$ yen lan mung yen kanggo
     saben pamasangan variabel $s$, $\Sat{M(\Gamma^*)}{!A(x)}[s]$.
-    Elinga yen $\Domain{M(\Gamma^*)}$ kasusun saka term-term katutup
-    ing~$\Lang{L}$, mula kanggo saben term katutup~$t$ ana pangaji variabel $s$ kanthi $s(x)=t$,
-    lan saben pangaji menehi sawijiné term katutup~$t$ minangka
+    Elinga yen $\Domain{M(\Gamma^*)}$ kasusun saka terma-terma katutup
+    ing~$\Lang{L}$, mula kanggo saben terma katutup~$t$ ana pangaji variabel $s$ kanthi $s(x)=t$,
+    lan saben pangaji menehi sawijiné terma katutup~$t$ minangka
     nilai $s(x)$.
     Miturut \olref[fol][syn][ext]{prop:ext-formulas},
     $\Sat{M(\Gamma^*)}{!A(x)}[s]$ yen lan mung yen
@@ -172,7 +172,7 @@ Rampungna bukti \olref[fol][com][mod]{prop:quant-termmodel}.
 \end{prob}
 \tagendprob
 
-\begin{lem}[Lemma Bebener]
+\begin{lem}[Lema Bebener]
 \ollabel{lem:truth} \iftag{FOL}{Upamana $!A$ minangka ukara kang ora ngemot~$\eq$. Banjur}{}
 $\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{!A}$ yen lan mung
 yen $!A \in \Gamma^*$.
@@ -181,7 +181,7 @@ yen $!A \in \Gamma^*$.
 \begin{proof}
 Kita mbuktekaké rong arah bebarengan kanthi induksi miturut cacah konektif lan kuantor ing $!A$,
 sawisé cekakan dijembaraké. Ing kasus kuantor, ngganti variabel
-nganggo term katutup ora nambah cacah simbol logis ing matriks,
+nganggo terma katutup ora nambah cacah simbol logis ing matriks,
 mula saben instansi bisa nganggo hipotesis induksi.
 \begin{enumerate}
 \tagitem{prvFalse}{\indcase{!A}{\lfalse}
@@ -262,10 +262,10 @@ mula saben instansi bisa nganggo hipotesis induksi.
   \iftag{probAll}{%
     \indcase!{!A}{\lforall[x][!B(x)]}{}}{%
     \indcase{!A}{\lforall[x][!B(x)]}{$\Sat{M(\Gamma^*)}{\indfrm}$ yen
-      lan mung yen $\Sat{M(\Gamma^*)}{!B(t)}$ kanggo kabeh term
+      lan mung yen $\Sat{M(\Gamma^*)}{!B(t)}$ kanggo kabeh terma
       katutup~$t$ (\olref{prop:quant-termmodel}). Miturut hipotesis
       induksi, iki bener yen lan mung yen $!B(t) \in \Gamma^*$ kanggo
-      kabeh term katutup~$t$; miturut
+      kabeh terma katutup~$t$; miturut
       \olref[hen]{prop:saturated-instances}, iki sabanjure bener yen lan
       mung yen $\lforall[x][!B(x)] \in \Gamma^*$.}}}{}
 
@@ -274,9 +274,9 @@ mula saben instansi bisa nganggo hipotesis induksi.
     \indcase!{!A}{\lexists[x][!B(x)]}{}}{%
     \indcase{!A}{\lexists[x][!B(x)]}{$\Sat{M(\Gamma^*)}{\indfrm}$ yen
       lan mung yen $\Sat{M(\Gamma^*)}{!B(t)}$ kanggo paling ora siji
-      term katutup~$t$ (\olref{prop:quant-termmodel}). Miturut hipotesis
+      terma katutup~$t$ (\olref{prop:quant-termmodel}). Miturut hipotesis
       induksi, iki bener yen lan mung yen $!B(t) \in \Gamma^*$ kanggo
-      paling ora siji term katutup~$t$. Miturut
+      paling ora siji terma katutup~$t$. Miturut
       \olref[hen]{prop:saturated-instances}, iki sabanjure bener yen lan
       mung yen $\lexists[x][!B(x)] \in \Gamma^*$.}}}{}
 }{}

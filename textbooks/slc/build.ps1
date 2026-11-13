@@ -2,6 +2,7 @@
 param(
     [ValidateRange(1, 180000)][int]$AcquireTimeoutMs = 1000,
     [string]$PreparedTree,
+    [string]$OutputDirectory = $PSScriptRoot,
     [switch]$Cumulative
 )
 
@@ -24,13 +25,12 @@ $book = $inputTree.book
 $jobName = if ($Cumulative) { 'slc-screen-jv' } else { 'slc-screen' }
 $pdf = Join-Path $book "$jobName.pdf"
 $outName = if ($Cumulative) { 'slc-screen-jv-cumulative.pdf' } else { 'slc-screen-jv.pdf' }
-$out = Join-Path $PSScriptRoot $outName
+[IO.Directory]::CreateDirectory([IO.Path]::GetFullPath($OutputDirectory)) | Out-Null
+$out = Join-Path $OutputDirectory $outName
 $receiptFile = Join-Path $stage 'build.json'
 $receipt = [ordered]@{
     status = 'not_started'
     locale_input_units = $inputTree.source_units
-    localized_identifiers = $inputTree.localized_ids
-    terminology_replacements = $inputTree.terminology_replacements
     commands = @()
     mutex_acquired = $false
     mutex_released = $false

@@ -53,7 +53,7 @@ def main():
     def add_project(path, name=None):
         add(project / path, path if name is None else name)
 
-    for name in ("LICENSE-SLC.md", "MANIFEST.json", "BUILD.md", "build.ps1", "check-build.py", "locale/scope.txt", "slc-screen-jv.tex"):
+    for name in ("LICENSE-SLC.md", "MANIFEST.json", "BUILD.md", "build.ps1", "check-build.py", "imports.lock", "slc-screen-jv.tex"):
         add_project(name)
     add(project.parents[1] / "tools/WindowsTexJob.cs", "WindowsTexJob.cs")
     add(stage / "olp/LICENSE.md", "olp/LICENSE.md")

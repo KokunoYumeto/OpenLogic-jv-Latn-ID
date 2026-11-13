@@ -6,7 +6,7 @@
 
 \begin{document}
 
-\olfileid{fol}{syn}{str}
+\olfileid[jv]{fol}{syn}{str}
 
 \olsection{\printtoken{P}{structure} kanggo Basa Logika Tataran Kapisan}
 
@@ -15,13 +15,13 @@ Basa logika tataran kapisan, yen mung basa iku dhewe, \emph{durung diwenehi
 interpretasi:} !!{constant}s, !!{function}s, lan !!{predicate}s durung
 nduweni teges tartamtu. Teges diwenehake kanthi nemtokake
 \article{structure} \emph{!!{structure}}. Struktur iki nemtokake
-\emph{domain}, yaiku obyek-obyek kang dituduhake dening !!{constant}s,
+\emph{ranah}, yaiku obyek-obyek kang dituduhake dening !!{constant}s,
 dadi papan tumindake !!{function}s, lan dadi wilayah kang dilewati
 dening kuantor. Kajaba iku, struktur nemtokake !!{constant}s endi
 kang nuduhake obyek endi, carane !!a{function} masangake obyek
 marang obyek, lan obyek endi kang dicakup dening !!{predicate}s.
 !!^{structure}s dadi dhasar kanggo gagasan \emph{semantis} ing logika,
-umpamane gagasan akibat, validitas, lan bisa dicukupi. Ing pustaka,
+umpamane gagasan akibat, kesahan, lan bisa dicukupi. Ing pustaka,
 struktur uga diarani ``struktur,'' ``interpretasi,'' utawa ``model.''
 \end{explain}
 
@@ -29,7 +29,7 @@ struktur uga diarani ``struktur,'' ``interpretasi,'' utawa ``model.''
 \Article{structure} \emph{!!{structure}}~$\Struct M$ kanggo basa
 $\Lang{L}$ saka logika tataran kapisan dumadi saka unsur-unsur iki:
 \begin{enumerate}
-\item \emph{Domain:} himpunan kang ora kosong, $\Domain M$
+\item \emph{Ranah:} himpunan kang ora kosong, $\Domain M$
 \item \emph{Interpretasi !!{constant}s:} kanggo saben !!{constant}~$c$
   ing $\Lang{L}$, !!a{element} $\Assign{c}{M} \in \Domain M$
 \item \emph{Interpretasi !!{predicate}s:} kanggo saben $n$-panggonan
@@ -67,7 +67,7 @@ kang lumrahe dikarepake.
 
 Nanging, isih ana akeh !!{structure}s liyane kang bisa digawe
 kanggo~$\Lang L_A$. Upamane, kita bisa njupuk himpunan~$\Int$
-saka wilangan bulat minangka domain, dudu~$\Nat$, banjur nemtokake
+saka wilangan bulat minangka ranah, dudu~$\Nat$, banjur nemtokake
 interpretasi $\Obj 0$, $\Obj \prime$, $\Obj +$, $\Obj \times$, lan
 $\Obj <$ kanthi cocog. Kita uga bisa nemtokake struktur kanggo~$\Lang L_A$
 kang babar pisan ora ana gegayutane karo wilangan.
@@ -82,7 +82,7 @@ karo relasi ``$x$ luwih tuwa tinimbang $y$'' bisa digunakake minangka
 karo $n \ge m$ kanggo $n, m \in \Nat$.
 
 Salah siji !!{structure} kang mligi narik kawigaten kanggo $\Lang L_Z$,
-kanthi !!{element}s ing domaine pancen awujud himpunan lan interpretasi
+kanthi !!{element}s ing ranahé pancen awujud himpunan lan interpretasi
 $\Obj \in$ pancen relasi ``$x$ iku !!a{element} saka~$y$'', yaiku
 !!{structure}~$\Struct{{HF}}$ saka \emph{himpunan winates turun-temurun}:
 \begin{enumerate}
@@ -96,14 +96,14 @@ $\Obj \in$ pancen relasi ``$x$ iku !!a{element} saka~$y$'', yaiku
 \begin{digress}
 Syarat-syarat kang kita tetepake kanggo nemtokake apa kang dianggep
 !!a{structure} nduweni pangaribawa marang logika kita. Upamane,
-pilihan supaya domain ora kosong njamin, miturut definisi lumrah
+pilihan supaya ranah ora kosong njamin, miturut definisi lumrah
 relasi nyukupi (utawa bebener) kanggo ukara mawa kuantor, yen
-$\lexists[x][(!A(x) \lor \lnot !A(x))]$ iku valid---yaiku bebener
+$\lexists[x][(!A(x) \lor \lnot !A(x))]$ iku sah---yaiku bebener
 logis. Lan syarat manawa kabeh !!{constant}s kudu nuduhake obyek
-ing domain njamin yen generalisasi eksistensial iku pola inferensi
+ing ranah njamin yen generalisasi eksistensial iku pola inferensi
 kang ngemu jaminan semantis: $!A(a)$, mula
 $\lexists[x][!A(x)]$. Yen kita ngidini jeneng nuduhake obyek
-ing njaba domain, utawa ora nuduhake obyek babar pisan, kita bakal
+ing njaba ranah, utawa ora nuduhake obyek babar pisan, kita bakal
 nyedhaki \emph{logika bebas}, kang mbutuhake premis tambahan kanggo
 generalisasi eksistensial: $!A(a)$ lan
 $\lexists[x][\eq[x][a]]$, mula $\lexists[x][!A(x)]$.

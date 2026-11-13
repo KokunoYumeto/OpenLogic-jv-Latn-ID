@@ -3,11 +3,8 @@
 import hashlib
 import json
 from pathlib import Path
-import re
 from shutil import copy2, copytree
 from tempfile import mkdtemp
-
-from terminology import localize
 
 
 PROJECT = Path(__file__).resolve().parent
@@ -57,35 +54,10 @@ def main():
         if relative.startswith("upstream/"):
             write(olp / relative.removeprefix("upstream/"), verified_source(relative))
 
-    source_patches = {}
-    for patch in load(PROJECT / "locale" / "patches.json"):
-        source_patches.setdefault(patch["path"], []).append(patch)
-    scope = set((PROJECT / "locale" / "scope.txt").read_text(encoding="utf-8").splitlines())
-    marked = 0
-    vocabulary = {}
     for unit in published["units"]:
         relative = unit["javanese"]["path"]
-        data = verified_source(relative)
-        text = data.decode("utf-8")
         path = relative.removeprefix("translation/")
-        for patch in source_patches.pop(path, []):
-            text = replace_once(text, patch["from"], patch["to"], path)
-        if path in scope:
-            text, replacements = localize(text, path)
-            vocabulary[path] = replacements
-        lines = []
-        for line in text.splitlines(keepends=True):
-            code, comment, note = line.partition("%")
-            code, count = re.subn(r"(\\ol(?:file|chapter|part)id)(?=[ \t]*\{)",
-                                  rf"\1[{slc['locale']}]", code)
-            marked += count
-            lines.append(code + comment + note)
-        text = "".join(lines)
-        write(locale / path, text.encode("utf-8"))
-    if source_patches:
-        raise ValueError(f"Missing localized overlay paths: {sorted(source_patches)}")
-    if scope != set(vocabulary):
-        raise ValueError(f"Textbook scope absent from the locale: {sorted(scope - set(vocabulary))}")
+        write(locale / path, verified_source(relative))
 
     babel = slc["babel"]
     for source_name, target_name in (
@@ -161,8 +133,7 @@ def main():
     copy2(book / "slc-config.jv.sty", book / "slc-config.sty")
     copy2(PROJECT / "assets" / "tex" / "nowidow.sty", book)
     result = {"book": str(book), "olp": str(olp), "stage": str(stage),
-              "source_units": len(published["units"]), "localized_ids": marked,
-              "terminology_replacements": sum(vocabulary.values())}
+              "source_units": len(published["units"])}
     (stage / "staging.json").write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(result))
 

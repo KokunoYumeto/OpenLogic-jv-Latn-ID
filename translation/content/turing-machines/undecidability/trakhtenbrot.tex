@@ -6,17 +6,17 @@
 
 \begin{document}
 
-\olfileid{tur}{und}{tra}
+\olfileid[jv]{tur}{und}{tra}
 \olsection{Teorema Trakhtenbrot}
 
 \begin{explain}
   Ing \olref[rep]{sec} kita netepake !!{sentence}s
   $!T(M,w)$ lan~$!E(M,w)$ kanggo mesin Turing~$M$
-  lan rerangken input~$w$. Banjur ing
+  lan rerangken masukan~$w$. Banjur ing
   \olref[ver]{lem:valid-if-halt} lan
   \olref[ver]{lem:halt-if-valid} kita nuduhake yen
   $!T(M,w) \lif !E(M,w)$ sah yen lan mung yen $M$,
-  nalika diwiwiti nganggo input~$w$, pungkasane mandheg.
+  nalika diwiwiti nganggo masukan~$w$, pungkasane mandheg.
   Amarga Masalah Mandheg ora bisa diputusake, iki
   ateges kasahihan lan panyukupan !!{sentence}s
   logika tataran kapisan ora bisa diputusake
@@ -35,13 +35,13 @@
   \olref[ver]{lem:halt-if-valid}, bakal katon yen ing kana
   kita mbangun model~$\Struct M$ saka~$!T(M,w)$ kang
   njlentrehake persis tumindake mesin~$M$ nalika
-  diwiwiti nganggo input~$w$. Domaine model iku
+  diwiwiti nganggo masukan~$w$. Ranahé model iku
   yaiku~$\Nat$, dadi tanpa wates. Nanging yen $M$
-  pancen mandheg nganggo input~$w$, kita bisa
+  pancen mandheg nganggo masukan~$w$, kita bisa
   mbangun model winates~$\Struct M'$ kanthi cara
   kang padha. Upamane $M$ kang diwiwiti nganggo
-  input~$w$ mandheg sawisé~$k$ langkah. Dadekna
-  domain~$\Domain{M'}$ minangka himpunan
+  masukan~$w$ mandheg sawisé~$k$ langkah. Dadekna
+  ranah~$\Domain{M'}$ minangka himpunan
   $\{0, \dots, n\}$, ing ngendi $n$ iku nilai
   kang luwih gedhé tinimbang~$k$ kang ditambah siji lan dawa~$w$,
   banjur tetepna
@@ -56,23 +56,23 @@
   mung yen $x < y$ utawa $x = y = n$. Kanggo
   bagean liyane, $\Struct{M'}$ ditegesi kaya~$\Struct{M}$.
   Miturut definisi~$\Struct{M'}$, kaya ing bukti
-  \olref[ver]{lem:halt-if-valid}, $\Sat{M'}{!T(M,w)}$. Pilih pucuk domain kang ngluwihi kabèh wektu transisi, posisi kothak kang ditekani lan dawa input. Kanggo wektu sabanjuré, gunakna manèh konfigurasi mandheg.
+  \olref[ver]{lem:halt-if-valid}, $\Sat{M'}{!T(M,w)}$. Pilih pucuk ranah kang ngluwihi kabèh wektu transisi, posisi kothak kang ditekani lan dawa masukan. Kanggo wektu sabanjuré, gunakna manèh konfigurasi mandheg.
   Lan amarga kita nganggep $M$ mandheg nganggo
-  input~$w$, $\Sat{M'}{!E(M,w)}$. Dadi,
+  masukan~$w$, $\Sat{M'}{!E(M,w)}$. Dadi,
   $\Struct{M'}$ iku model winates saka
   $!T(M,w) \land !E(M,w)$ (gatekna yen $\lif$
   wis diganti dadi~$\land$).
   
   Iki wis separo dalan menyang bukti: kita wis
-  nuduhake yen $M$ mandheg nganggo input~$w$,
+  nuduhake yen $M$ mandheg nganggo masukan~$w$,
   mula $!T(M,w) \land !E(M,w)$ nduwé model winates.
   Sayange, kosok baline ora bener: ana mesin Turing
-  kang ora mandheg kanggo input~$w$ tartamtu,
+  kang ora mandheg kanggo masukan~$w$ tartamtu,
   nanging $!T(M,w) \land !E(M,w)$ tetep nduwé
   model winates. Tuladhane, gatekna mesin~$M$
   kang mung nduwé kahanan $q_0$ lan instruksi
   $\delta(q_0,\TMblank) = \tuple{q_0,\TMblank,\TMstay}$.
-  Yen diwiwiti nganggo input kosong~$w = \emptyseq$,
+  Yen diwiwiti nganggo masukan kosong~$w = \emptyseq$,
   mesin iki ora bakal mandheg: mesin iki lumaku
   ing daur tanpa wates, nanging ora ngowahi pita
   utawa mindhah sirah. Kabeh konfigurasine padha
@@ -110,12 +110,12 @@
 \end{explain}
 
 Gatekna !!{sentence}s kang njlentrehake tumindake
-mesin Turing~$M$ nganggo input
+mesin Turing~$M$ nganggo masukan
 $w = \sigma_{i_1}\dots\sigma_{i_k}$:
 \begin{enumerate}
 \item Aksioma kang njlentrehake angka lan~$<$
   (kaya ing definisi~$!T(M,w)$ ing \olref[rep]{sec}).
-\item Aksioma kang njlentrehake konfigurasi input:
+\item Aksioma kang njlentrehake konfigurasi masukan:
   kaya ing definisi~$!T(M,w)$.
 \item Aksioma kang njlentrehake transisi saka
   sawijining konfigurasi menyang konfigurasi sabanjure:
@@ -190,10 +190,10 @@ angka sadurunge $\Obj 0$, $\Obj 0'$, \dots.
 \end{enumerate}
 Tetepna $!T'(M, w)$ minangka konjungsi kabeh
 !!{sentence}s ing ndhuwur kanggo mesin Turing~$M$
-lan input~$w$.
+lan masukan~$w$.
 
 \begin{lem}\ollabel{lem:halts-sat}
-  Yen $M$ kang diwiwiti nganggo input~$w$ mandheg,
+  Yen $M$ kang diwiwiti nganggo masukan~$w$ mandheg,
   mula $!T'(M,w) \land !E(M,w)$ nduwé model winates.
 \end{lem}
 
@@ -211,11 +211,11 @@ lan input~$w$.
   \end{align*}
   ing ngendi $n = \max(k+2,\len{w}+1)$ lan $k$~iku
   angka paling cilik saengga $M$ kang diwiwiti
-  nganggo input~$w$ wis mandheg sawisé~$k$
+  nganggo masukan~$w$ wis mandheg sawisé~$k$
   langkah. Pamriksan yen
   % Cathetan wates model winates diwenehake ing prosa sawise pratelan model.
   $\Sat{M'}{!T'(M,w) \land !E(M,w)}$
-  kita tinggalake dadi gladhen. Pucuk domain ngluwihi wektu mandheg, kabèh posisi kang ditekani lan dawa input. Sirah wiwit ing posisi siji, mula posisi paling tengen sawisé k langkah ora ngluwihi k tambah siji. Sadurungé mandheg, sirah ora tekan pucuk kang nduwèni daur.
+  kita tinggalake dadi gladhen. Pucuk ranah ngluwihi wektu mandheg, kabèh posisi kang ditekani lan dawa masukan. Sirah wiwit ing posisi siji, mula posisi paling tengen sawisé k langkah ora ngluwihi k tambah siji. Sadurungé mandheg, sirah ora tekan pucuk kang nduwèni daur.
 \end{proof}
 
 \begin{prob}
@@ -227,7 +227,7 @@ lan input~$w$.
 
 \begin{lem}\ollabel{lem:sat-halts}
   Yen $!T'(M,w) \land !E(M,w)$ nduwé model winates,
-  mula $M$ kang diwiwiti nganggo input~$w$ mandheg.
+  mula $M$ kang diwiwiti nganggo masukan~$w$ mandheg.
 \end{lem}
 
 \begin{proof}
@@ -236,17 +236,17 @@ lan input~$w$.
   $!T'(M,w) \land !E(M,w)$ ora nduwé model babar pisan,
   bukti wis rampung. Mula upamane $\Struct{M}$
   % Cathetan asumsi model kanggo bukti kontraposisi diwenehake ing prosa.
-  model saka~$!T'(M,w) \land !E(M, w)$. Asumsi modèl iki kalebu T-prime lan E. Saben transisi banjur menehi syarat B.
+  model saka~$!T'(M,w) \land !E(M, w)$. Asumsi modèl iki kalebu $!T'(M,w)$ lan $!E(M,w)$. Saben transisi banjur menehi syarat B.
   Kita kudu nuduhake yen model iki ora mungkin winates.
   
   Kita bisa mbuktekake, kaya ing
   \olref[ver]{lem:config}, yen~$M$ kang diwiwiti
-  nganggo input~$w$ durung mandheg sawisé~$n$
+  nganggo masukan~$w$ durung mandheg sawisé~$n$
   langkah kanthi n positif, mula $!T'(M,w) \Entails !C(M, w, n)
   \land !B(\num{n})$. Amarga $M$ kang diwiwiti
-  nganggo input~$w$ ora mandheg, mula
+  nganggo masukan~$w$ ora mandheg, mula
   $!T'(M,w) \Entails !C(M, w, n) \land
-  !B(\num{n})$ kanggo kabeh~$n \in \Nat$ kang positif. Transisi kapisan menehi B ing wektu siji. Kanthi induksi dipikolehi B kanggo saben wektu positif, cukup kanggo mbuktèkaké yèn domainé tanpa wates.
+  !B(\num{n})$ kanggo kabeh~$n \in \Nat$ kang positif. Transisi kapisan menehi B ing wektu siji. Kanthi induksi dipikolehi B kanggo saben wektu positif, cukup kanggo mbuktèkaké yèn ranahé tanpa wates.
   Gatekna yen miturut \olref[rep]{prop:mlessk},
   $!T'(M,w) \Entails \num{k} < \num{n}$
   kanggo kabeh~$k < n$. Kajaba iku,
@@ -264,7 +264,7 @@ lan input~$w$.
 \begin{prob}
   Rampungna bukti \olref[tur][und][tra]{lem:sat-halts}
   kanthi mbuktekake yen~$M$ kang diwiwiti
-  nganggo input~$w$ durung mandheg sawisé~$n$
+  nganggo masukan~$w$ durung mandheg sawisé~$n$
   langkah kanthi n positif, mula $!T'(M,w) \Entails !B(\num{n})$.
 \end{prob}
 
@@ -279,13 +279,13 @@ lan input~$w$.
   Upamane ana mesin Turing~$F$ kang bisa mutusake
   masalah panyukupan sacara winates. Banjur yen
   diwenehi sembarang mesin Turing~$M$ lan
-  input~$w$, kita bisa ngitung
+  masukan~$w$, kita bisa ngitung
   ukara~$!T'(M,w) \land !E(M,w)$, banjur
   nggunakake~$F$ kanggo mutusake apa ukara iku
   nduwé model winates. Miturut
   \cref{tur:und:tra:lem:halts-sat,tur:und:tra:lem:sat-halts},
   ukara iku nduwé model winates yen lan mung yen
-  $M$ kang diwiwiti nganggo input~$w$ mandheg.
+  $M$ kang diwiwiti nganggo masukan~$w$ mandheg.
   Mula kita bisa nggunakake $F$ kanggo ngrampungake
   masalah mandheg, kang wis dimangerteni ora bisa
   dirampungake.

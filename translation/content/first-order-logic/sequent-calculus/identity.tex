@@ -6,7 +6,7 @@
 
 \begin{document}
 
-\olfileid{fol}{seq}{ide}
+\olfileid[jv]{fol}{seq}{ide}
 
 \olsection{\usetoken{P}{derivation} mawa \usetoken{S}{identity}}
 
@@ -14,11 +14,11 @@
 inferensi tambahan.
 
 \begin{defn}[Sekuen wiwitan kanggo $\eq$]
-Yen $t$ iku term tertutup, mula ${} \Sequent \eq[t][t]$ iku sekuen
+Yen $t$ iku terma tertutup, mula ${} \Sequent \eq[t][t]$ iku sekuen
 wiwitan.
 \end{defn}
 
-Aturan iki kanggo term katutup $t_1$ lan $t_2$. Variabel bébas ing $!A(x)$ mung bisa $x$.
+Aturan iki kanggo terma katutup $t_1$ lan $t_2$. Variabel bébas ing $!A(x)$ mung bisa $x$.
 
 \begin{defish}
 \Axiom$ \eq[t_1][t_2], \Gamma \fCenter \Delta, !A(t_1) $
@@ -33,7 +33,7 @@ Aturan iki kanggo term katutup $t_1$ lan $t_2$. Variabel bébas ing $!A(x)$ mung
 \end{defish}
 
 \begin{ex}
-Yen $s$ lan $t$ iku term-term tertutup, mula $\eq[s][t], !A(s)
+Yen $s$ lan $t$ iku terma-terma tertutup, mula $\eq[s][t], !A(s)
 \Proves !A(t)$:
 \begin{prooftree}
 \Axiom$ !A(s) \fCenter !A(s)$
@@ -45,7 +45,7 @@ Yen $s$ lan $t$ iku term-term tertutup, mula $\eq[s][t], !A(s)
 Iki bisa wae wis dikenal minangka prinsip substitutabilitas barang
 kang identik, utawa Hukum Leibniz.
 
-$\Log{LK}$ mbuktèkaké simetri lan transitivitas $\eq$ kanggo term katutup $t_1$, $t_2$, lan $t_3$.
+$\Log{LK}$ mbuktèkaké simetri lan transitivitas $\eq$ kanggo terma katutup $t_1$, $t_2$, lan $t_3$.
 \begin{prooftree}
 \Axiom$ \fCenter \eq[t_1][t_1] $
 \RightLabel{\LeftR{\Weakening}}

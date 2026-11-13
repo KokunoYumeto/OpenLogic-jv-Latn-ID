@@ -6,7 +6,7 @@
 
 \begin{document}
 
-\olfileid{sfr}{fun}{bas}
+\olfileid[jv]{sfr}{fun}{bas}
 \olsection{Dhasar}
 
 \begin{explain}
@@ -34,7 +34,7 @@ metodhe kanggo ngetung asile.
 \emph{Fungsi} $f \colon A \to B$ yaiku pemetaan
 saben !!{element} saka~$A$ menyang persis siji !!{element} saka~$B$.
 
-Kita nyebut $A$ minangka \emph{domain} saka~$f$
+Kita nyebut $A$ minangka \emph{ranah} saka~$f$
 lan $B$ minangka \emph{kodomain} saka~$f$.
 !!{element}s saka~$A$ diarani masukan utawa
 \emph{argumen} saka~$f$, lan !!{element}
@@ -44,15 +44,15 @@ kanggo argumen~$x$, ditulis~$f(x)$.
 
 \emph{Jangkauan} $\ran{f}$ saka~$f$ yaiku
 subhimpunan kodomain kang kasusun saka persis nilai-nilai~$f$
-kang ditampa kanggo argumen ing domainé, yaiku
+kang ditampa kanggo argumen ing ranahé, yaiku
 $\ran{f} =\Setabs{f(x)}{x \in A}$.
 \end{defn}
 
 Diagram ing \olref{fig:function} bisa mbiyantu
 ngerteni fungsi. Elips ing sisih kiwa makili
-\emph{domain} fungsi; elips ing sisih tengen
+\emph{ranah} fungsi; elips ing sisih tengen
 makili \emph{kodomain} fungsi; lan panah
-ngarah saka \emph{argumen} ing domain
+ngarah saka \emph{argumen} ing ranah
 menyang \emph{nilai} kang cocog ing kodomain.
 
 \begin{figure}
@@ -60,25 +60,25 @@ menyang \emph{nilai} kang cocog ing kodomain.
   \caption{Fungsi yaiku pemetaan saben !!{element}
     saka siji himpunan menyang !!a{element}
     saka himpunan liyane. Panah ngarah
-    saka argumen ing domain menyang nilai
+    saka argumen ing ranah menyang nilai
     kang cocog ing kodomain.}
   \ollabel{fig:function}
 \end{figure}
 
 \begin{ex}
-Ping-pingan nampa pasangan wilangan natural
+Ping-pingan nampa pasangan wilangan asli
 minangka masukan lan metakake menyang wilangan
-natural minangka asil, mula saka
-$\Nat \times \Nat$ (domain) menyang $\Nat$ (kodomain).
+asli minangka asil, mula saka
+$\Nat \times \Nat$ (ranah) menyang $\Nat$ (kodomain).
 Pranyata jangkauane uga $\Nat$,
 amarga saben $n \in \Nat$ iku $n \times 1$.
 \end{ex}
 
 \begin{ex}
 Ping-pingan iku fungsi amarga masangake saben
-masukan---saben pasangan wilangan natural---
+masukan---saben pasangan wilangan asli---
 karo siji asil: $\times \colon \Nat^2 \to\Nat$.
-Dene metakake wilangan natural~$n$
+Dene metakake wilangan asli~$n$
 menyang wilangan real~$x$ kanthi sipat yen
 $x^2 = n$ dudu fungsi, amarga saben
 wilangan wutuh positif~$n$ duwe rong
@@ -116,13 +116,13 @@ argumen kita nemtokake siji, lan mung siji, nilai.
 Umpamakna $f \colon \Nat \to \Nat$
 ditetepake kanthi rumus $f(x) = x+1$.
 Definisi iki netepake $f$ minangka fungsi
-kang nampa wilangan natural lan menehi
-wilangan natural minangka asil.
+kang nampa wilangan asli lan menehi
+wilangan asli minangka asil.
 Definisi iki nerangake yen kanggo wilangan
-natural~$x$, $f$ menehi paneruse~$x+1$.
+asli~$x$, $f$ menehi paneruse~$x+1$.
 Ing kasus iki, kodomain $\Nat$ dudu
-jangkauan~$f$, amarga wilangan natural~$0$
-dudu panerus saka wilangan natural apa wae.
+jangkauan~$f$, amarga wilangan asli~$0$
+dudu panerus saka wilangan asli apa wae.
 Jangkauan~$f$ yaiku himpunan kabeh
 wilangan wutuh positif, $\Int^{+}$.
 \end{ex}
@@ -131,9 +131,9 @@ wilangan wutuh positif, $\Int^{+}$.
 Umpamakna $g \colon \Nat \to \Nat$
 ditetepake kanthi rumus $g(x) = x+2-1$.
 Iki nerangake yen $g$ iku fungsi kang
-nampa wilangan natural lan menehi
-wilangan natural minangka asil.
-Kanggo wilangan natural~$x$, $g$ bakal
+nampa wilangan asli lan menehi
+wilangan asli minangka asil.
+Kanggo wilangan asli~$x$, $g$ bakal
 menehi pandhisik saka panerus saka
 paneruse~$x$, yaiku $x+1$.
 \end{ex}
@@ -143,7 +143,7 @@ Kita lagi wae ngrembug rong fungsi,
 $f$ lan $g$, kanthi \emph{definisi}
 kang beda. Nanging kalorone iku
 \emph{fungsi kang padha}.
-Amarga kanggo saben wilangan natural~$n$,
+Amarga kanggo saben wilangan asli~$n$,
 kita duwe $f(n) = n+1 = n+2-1 =g(n)$.
 Kanthi tembung liya: definisi kanggo $f$
 lan~$g$ netepake pemetaan kang padha
@@ -153,7 +153,7 @@ prinsip ekstensionalitas kanggo fungsi,
 \[
   \text{yen }\forall x\, f(x) = g(x)\text{, mula }f = g
 \]
-kanthi syarat yen $f$ lan~$g$ duwe domain lan
+kanthi syarat yen $f$ lan~$g$ duwe ranah lan
 kodomain kang padha.
 \end{explain}
 
@@ -168,9 +168,9 @@ h(x) =
   \frac{x+1}{2} & \text{yen $x$ ganjil.}
 \end{cases}
 \]
-Saben wilangan natural kalebu ing persis siji saka rong kasus iki.
+Saben wilangan asli kalebu ing persis siji saka rong kasus iki.
 Kanggo masukan genep, pambilangé wis genep. Kanggo masukan ganjil,
-panerusé genep. Mula saben asil iku wilangan natural.
+panerusé genep. Mula saben asil iku wilangan asli.
 Kanggo netepaké fungsi miturut kasus, kasus-kasusé kudu nyakup
 saben masukan. Yèn rong kasus tumpang tindhih, loro-loroné kudu menehi asil kang padha.
 \end{ex}

@@ -6,7 +6,7 @@
 
 \begin{document}
 
-\olfileid{tur}{mac}{int}
+\olfileid[jv]{tur}{mac}{int}
 \olsection{Pambuka}
 
 Apa tegese fungsi, upamane saka $\Nat$ menyang $\Nat$,
@@ -43,17 +43,17 @@ $\TMendtape$, $\TMblank$, lan $\TMstroke$. Nalika
 mekanisme diwiwiti, pita kosong (yaiku, saben
 kothak ngemot simbol $\TMblank$) kajaba kothak
 paling kiwa, kang ngemot $\TMendtape$, lan
-sawetara kothak winates kang ngemot \emph{input}.
+sawetara kothak winates kang ngemot \emph{masukan}.
 Ing saben wektu, mekanisme ana ing salah siji
 saka \emph{kahanan} kang cacahe winates. Ing wiwitan,
-sirah maca kothak input kapisan ing sisih tengen panandha pucuk pita lan mekanisme ana
+sirah maca kothak masukan kapisan ing sisih tengen panandha pucuk pita lan mekanisme ana
 ing \emph{kahanan wiwitan} kang wis ditemtokake.
 Ing saben langkah lumakune mekanisme, isi kothak
 kang lagi diwaca, kahanan mekanisme, lan program
 mesin Turing nemtokake apa kang kedadeyan sabanjure.
 Program mesin Turing diwenehake dening fungsi
 parsial kang nampa kahanan~$q$ lan simbol~$\sigma$
-minangka input lan ngasilake tripel~$\tuple{q', \sigma',
+minangka masukan lan ngasilake tripel~$\tuple{q', \sigma',
   D}$. Nalika mekanisme ana ing kahanan $q$ lan
 maca simbol $\sigma$, mekanisme ngganti simbol
 ing kothak saiki dadi $\sigma'$, sirah obah
@@ -76,13 +76,13 @@ kothak katelu saka kiwa, kang ngemot
 simbol~$1$, lan ana ing kahanan~$q_1$---kita
 ngarani ``mesin lagi maca $1$ ing
 kahanan~$q_1$.'' Yen program mesin Turing
-kanggo input $\tuple{q_1, 1}$ mbalekake
+kanggo masukan $\tuple{q_1, 1}$ mbalekake
 tripel $\tuple{q_2,
 0, \TMstay}$, mesin banjur ngganti~$1$ ing
 kothak katelu dadi~$0$, ora ngowahi panggonan
 sirah maca-nulis, lan ngalih menyang kahanan~$q_2$.
 Yen banjur program mbalekake $\tuple{q_3, 0, \TMright}$
-kanggo input $\tuple{q_2, 0}$, mesin banjur
+kanggo masukan $\tuple{q_2, 0}$, mesin banjur
 nimpa~$0$ nganggo~$0$ maneh (mula isi pita ing
 sangisore sirah maca-nulis ora owah), obah
 siji kothak menyang tengen, lan mlebu
@@ -92,7 +92,7 @@ Kita ngarani mesin \emph{mandheg} nalika
 nemoni kahanan, $q_n$, lan simbol, $\sigma$
 kang ora nduwé instruksi kanggo
 $\tuple{q_n, \sigma}$, yaiku fungsi transisi
-ora ditegesi kanggo input $\tuple{q_n,\sigma}$.
+ora ditegesi kanggo masukan $\tuple{q_n,\sigma}$.
 Kanthi tembung liya, mesin ora nduwé instruksi
 kang bisa ditindakake lan banjur mandheg
 makarya. Kadhang kala mandheg iku diwakili

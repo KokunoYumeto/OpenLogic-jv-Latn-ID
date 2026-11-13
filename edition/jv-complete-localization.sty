@@ -93,3 +93,6 @@
 \AtBeginDocument{\JvReferenceName{part}{Perangan}}
 % Tandha mawa indeks perlu ambane alami supaya ora nabrak formula.
 \RenewDocumentCommand\sFmla{m m o}{\ensuremath{\IfNoValueTF{#3}{}{#3\,}#1\,#2}}
+
+% Optional font adjustment for a wide natural-deduction derivation.
+\providecommand{\JvWideProofSize}{}
