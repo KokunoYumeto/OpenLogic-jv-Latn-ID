@@ -39,7 +39,6 @@ description = "Wacan OpenLogic iki nyakup 722 berkas isi nganggo basa Jawa aksar
 limitations = [
   "Sawetara pérangan menehi sketsa bukti. Watesan kasebut diterangaké ing wacan.",
   "Istilah teknis isih sauntara yen durung ana bukti panganggone ing pustaka Jawa sing cocog. Pamriksa conto ora mbuktekake yen kabeh ukara wis bener.",
-  "Miturut cathetan panyusun, ekstraksi tèks PDF kelangan padanan Unicode kanggo 21 kedadeyan lambang matématika lawas, sanajan lambangé katon cetha ing kaca.",
   "Cathetan pilihan lan pandhuan ngasilaké PDF saka sumber isih ngemot pérangan basa Inggris.",
 ]
 attribution = "Tèks asli anggitané Open Logic Project. Terjemahan, koreksi, panyuntingan lan tata aksara diprodhuksi AI OpenAI Codex, kalebu GPT-5.6 Sol, GPT-6 Sol lan GPT-6.1 Sol. Panyelarasan karo revisi sumber iki diprodhuksi GPT-6.1 Sol kanthi upaya nalar Ultra."
@@ -47,4 +46,4 @@ license = "Tèks lan adaptasiné nganggo Creative Commons Attribution 4.0 Intern
 
 [public.catalogue]
 path = "publication/catalogue.json"
-sha256 = "90b3fde58837d6ae607c002d7bbbfd3b7ba4e65682f23cc4f3595b75d44c4370"
+sha256 = "50ea20e5b5abdf4bcb60c57c92811865b145417b40fd55dc6bde06cb2d6c6df6"
