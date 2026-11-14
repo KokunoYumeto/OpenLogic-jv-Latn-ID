@@ -32,3 +32,19 @@ commit = "1a92d54a0bf964d35b5300f45f1830749c462544"
 [pins.photos]
 repository = "https://github.com/OpenLogicProject/photos"
 commit = "81c1990df896568410b452fea68b81cbb6ce46fa"
+
+[public]
+title = "OpenLogic ing Basa Jawa"
+description = "Wacan OpenLogic iki nyakup 722 berkas isi nganggo basa Jawa aksara Latin. Ragam utama yaiku ngoko tinulis kanggo andharan akademis. Isiné kalebu teori himpunan, logika, teori modèl, komputabilitas, teori bukti, lan cara mbuktèkaké pratelan matématika."
+limitations = [
+  "Sawetara pérangan menehi sketsa bukti. Watesan kasebut diterangaké ing wacan.",
+  "Istilah teknis isih sauntara yen durung ana bukti panganggone ing pustaka Jawa sing cocog. Pamriksa conto ora mbuktekake yen kabeh ukara wis bener.",
+  "Miturut cathetan panyusun, ekstraksi tèks PDF kelangan padanan Unicode kanggo 21 kedadeyan lambang matématika lawas, sanajan lambangé katon cetha ing kaca.",
+  "Cathetan pilihan lan pandhuan ngasilaké PDF saka sumber isih ngemot pérangan basa Inggris.",
+]
+attribution = "Tèks asli anggitané Open Logic Project. Terjemahan, koreksi, panyuntingan lan tata aksara diprodhuksi AI OpenAI Codex, kalebu GPT-5.6 Sol, GPT-6 Sol lan GPT-6.1 Sol. Panyelarasan karo revisi sumber iki diprodhuksi GPT-6.1 Sol kanthi upaya nalar Ultra."
+license = "Tèks lan adaptasiné nganggo Creative Commons Attribution 4.0 International (CC BY 4.0). Saben komponen kanthi lisènsi kapisah manut kabar lisènsiné dhéwé."
+
+[public.catalogue]
+path = "publication/catalogue.json"
+sha256 = "f4c66487ffb87a50b00ac2a60163df95c67c7ff66e7cb746c75d8f19a37456d3"
