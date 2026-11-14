@@ -8,6 +8,60 @@
 \input{jv-complete-localization.sty}
 \input{jv-complete-references.sty}
 \includeenv{editorial}
+
+% ToUnicode for the legacy math glyphs used by this reader.
+% Sized delimiters share a code point. Extensible pieces use Unicode
+% construction symbols so extraction keeps their distinct shapes.
+% The tfm: prefix limits each mapping to its font without changing layout.
+\ifdefined\pdfglyphtounicode
+  \ifnum\pdfoutput>0
+    \pdfgentounicode=1
+    \pdfglyphtounicode{tfm:cmex10/parenleftbig}{0028}
+    \pdfglyphtounicode{tfm:cmex10/parenrightbig}{0029}
+    \pdfglyphtounicode{tfm:cmex10/ceilingleftbig}{2308}
+    \pdfglyphtounicode{tfm:cmex10/ceilingrightbig}{2309}
+    \pdfglyphtounicode{tfm:cmex10/vextendsingle}{23D0}
+    \pdfglyphtounicode{tfm:cmex10/parenleftbigg}{0028}
+    \pdfglyphtounicode{tfm:cmex10/parenrightbigg}{0029}
+    \pdfglyphtounicode{tfm:cmex10/braceleftbigg}{007B}
+    \pdfglyphtounicode{tfm:cmex10/bracerightbigg}{007D}
+    \pdfglyphtounicode{tfm:cmex10/braceleftBigg}{007B}
+    \pdfglyphtounicode{tfm:cmex10/bracerightBigg}{007D}
+    \pdfglyphtounicode{tfm:cmex10/bracelefttp}{23A7}
+    \pdfglyphtounicode{tfm:cmex10/bracerighttp}{23AB}
+    \pdfglyphtounicode{tfm:cmex10/braceleftbt}{23A9}
+    \pdfglyphtounicode{tfm:cmex10/bracerightbt}{23AD}
+    \pdfglyphtounicode{tfm:cmex10/braceleftmid}{23A8}
+    \pdfglyphtounicode{tfm:cmex10/bracerightmid}{23AC}
+    \pdfglyphtounicode{tfm:cmex10/braceex}{23AA}
+    \pdfglyphtounicode{tfm:cmex10/uniontext}{22C3}
+    \pdfglyphtounicode{tfm:cmex10/intersectiontext}{22C2}
+    \pdfglyphtounicode{tfm:cmex10/logicalandtext}{22C0}
+    \pdfglyphtounicode{tfm:cmex10/logicalortext}{22C1}
+    \pdfglyphtounicode{tfm:cmex10/uniondisplay}{22C3}
+    \pdfglyphtounicode{tfm:cmex10/intersectiondisplay}{22C2}
+    \pdfglyphtounicode{tfm:cmex10/logicalanddisplay}{22C0}
+    \pdfglyphtounicode{tfm:cmex10/logicalordisplay}{22C1}
+    \pdfglyphtounicode{tfm:cmex10/tildewide}{02DC}
+    \pdfglyphtounicode{tfm:cmex10/tildewider}{02DC}
+    \pdfglyphtounicode{tfm:cmex10/braceleftBig}{007B}
+    \pdfglyphtounicode{tfm:cmex10/bracerightBig}{007D}
+    \pdfglyphtounicode{tfm:cmex10/radicalBig}{221A}
+    \pdfglyphtounicode{tfm:cmex10/bracehtipdownleft}{23DF}
+    \pdfglyphtounicode{tfm:cmex10/bracehtipdownright}{23DF}
+    \pdfglyphtounicode{tfm:cmex10/bracehtipupleft}{23DE}
+    \pdfglyphtounicode{tfm:cmex10/bracehtipupright}{23DE}
+
+    % Computer Modern builds \longmapsto from a bar and a separate arrow.
+    \pdfglyphtounicode{tfm:cmsy10/mapsto}{007C}
+    % The St Mary arrow has a lower line. The TX box-arrow is a sequence.
+    \pdfglyphtounicode{tfm:stmary10/leftrightarroweq}{2194 0332}
+    \pdfglyphtounicode{tfm:stmary10/varolessthan}{29C0}
+    \pdfglyphtounicode{tfm:txsyc/strict}{297D}
+    \pdfglyphtounicode{tfm:txsyc/squareright}{25A1 2192}
+  \fi
+\fi
+
 \setlrmarginsandblock{28mm}{28mm}{*}
 \setulmarginsandblock{25mm}{28mm}{*}
 \checkandfixthelayout

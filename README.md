@@ -7,10 +7,10 @@ lan cara mbuktèkaké pratelan matématika.
 
 ## Wacan lan sumber
 
-- [Waca PDF](https://github.com/KokunoYumeto/OpenLogic-jv-Latn-ID/releases/download/v0.3.1/OpenLogic-jv-Latn-ID-v0.3.1.pdf)
+- [Waca PDF](https://github.com/KokunoYumeto/OpenLogic-jv-Latn-ID/releases/download/v0.3.2/OpenLogic-jv-Latn-ID-v0.3.2.pdf)
 - [Waca EPUB](https://github.com/KokunoYumeto/OpenLogic-jv-Latn-ID/releases/download/v0.3.1/OpenLogic-jv-Latn-ID-v0.3.1.epub)
-- [Undhuh LaTeX kumulatif](https://github.com/KokunoYumeto/OpenLogic-jv-Latn-ID/releases/download/v0.3.1/OpenLogic-jv-Latn-ID-v0.3.1.tex)
-- [Undhuh sumber LaTeX, gambar, gaya lan kapustakan](https://github.com/KokunoYumeto/OpenLogic-jv-Latn-ID/releases/download/v0.3.1/OpenLogic-jv-Latn-ID-v0.3.1-source.zip)
+- [Undhuh LaTeX kumulatif](https://github.com/KokunoYumeto/OpenLogic-jv-Latn-ID/releases/download/v0.3.2/OpenLogic-jv-Latn-ID-v0.3.2.tex)
+- [Undhuh sumber LaTeX, gambar, gaya lan kapustakan](https://github.com/KokunoYumeto/OpenLogic-jv-Latn-ID/releases/download/v0.3.2/OpenLogic-jv-Latn-ID-v0.3.2-source.zip)
 - [Pandhuan ngasilaké PDF saka sumber LaTeX](BUILD.md)
 - [Tetembungan lan pilihan terjemahan](translation-decisions/TRANSLATION_DECISIONS_FULL.md)
 - [Tetembungan kang prelu ditimbang](translation-decisions/PRIORITY_REVIEW.md)

@@ -1,7 +1,7 @@
 {
   "schema": "openlogic-jv-source-manifest/1",
   "upstream_revision": "1e960beff9ed7835bf3e3f1335e21af3439cd107",
-  "release": "v0.3.1",
+  "release": "v0.3.2",
   "language": "jv-Latn-ID",
   "title": "OpenLogic ing Basa Jawa",
   "original_author": "Open Logic Project",
@@ -9406,7 +9406,7 @@
     },
     "README.md": {
       "bytes": 2300,
-      "sha256": "3d91545e8d1bb1ef6635fe91e352195be6964389bf700787ad0c6b95c3b76fb3"
+      "sha256": "f29e3136fe388ac02ff1672d48ac0ed805ff715f4f913346e858756484f04857"
     },
     "edition/jv-complete-about.tex": {
       "bytes": 1381,
@@ -9425,8 +9425,8 @@
       "sha256": "d49ee760e509e55602aee9cad4cdd9b474c2edb407689839a847961c3644666a"
     },
     "edition/jv-complete.tex": {
-      "bytes": 3383,
-      "sha256": "0977e873a94fe8e4240fc8c63d4f14aacf46649af01cf917e5f43b618060359e"
+      "bytes": 6092,
+      "sha256": "b7a5edde6fd9ea0320482cdeafe636a8ac8e9834496f3f55c5ee7370aaed6e02"
     },
     "edition/jv-localization.sty": {
       "bytes": 7404,
@@ -15458,6 +15458,10 @@
     }
   },
   "source_sync_authorship": {
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "ultra"
+  },
+  "pdf_encoding_authorship": {
     "model": "gpt-6.1-sol",
     "reasoning_effort": "ultra"
   }

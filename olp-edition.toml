@@ -14,7 +14,7 @@ source_content = "upstream/content"
 
 [conversion]
 source_manifest = "SOURCE-MANIFEST.json"
-source_manifest_sha256 = "6768fda1ba1c2107d6dd8f5196576f64b2187be267a25ed53ef2419f7631ad26"
+source_manifest_sha256 = "bfe300ca26e98e06dc71b0488a185ada50c34af74690b6d4390363ca5d8df6a1"
 attribution_policy = "preserve-recorded-else-unresolved"
 
 [pins.olp]
