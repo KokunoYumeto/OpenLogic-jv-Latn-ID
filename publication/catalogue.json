@@ -465,7 +465,11 @@
     "name": "Basa Jawa",
     "language_tag": "jv-Latn-ID",
     "order": 2,
-    "selection": null
+    "selection": {
+      "ref": "5103182704eb23b6cbffcd769a16d2879c31732a",
+      "path": "courses/sets-logic-computation",
+      "release_tag": "slc-2026-11-16"
+    }
   },
   "link_base": "https://kokunoyumeto.github.io/OpenLogic-translations/"
 }

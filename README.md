@@ -1,5 +1,9 @@
 # OpenLogic ing Basa Jawa
 
+**Himpunan, Logika, Komputasi**. Buku metalogika anggitané Richard Zach iki ngemot 176 pérangan sumber ing 345 kaca. [Waca PDF](https://github.com/KokunoYumeto/OpenLogic-jv-Latn-ID/releases/download/slc-2026-11-16/slc-screen-jv.pdf) · [Tèks LaTeX](https://github.com/KokunoYumeto/OpenLogic-jv-Latn-ID/releases/download/slc-2026-11-16/slc-screen-jv.tex) · [Undhuh EPUB](https://github.com/KokunoYumeto/OpenLogic-jv-Latn-ID/releases/download/slc-2026-11-16/slc-screen-jv.epub) · [Waca HTML luring](https://github.com/KokunoYumeto/OpenLogic-jv-Latn-ID/releases/download/slc-2026-11-16/slc-screen-jv-html.zip) · [Sumber lan pandhuan mbangun](https://github.com/KokunoYumeto/OpenLogic-jv-Latn-ID/releases/download/slc-2026-11-16/slc-screen-jv-source.zip)
+
+Buku anggitané Richard Zach lan para panulis Open Logic Project. Andharan logika tataran kapisan uga nganggo karya Jeremy Avigad. Ilustrasi potret déning Matthew Leadbeater. Terjemahan basa Jawa diprodhuksi AI OpenAI Codex. Pérangan Open Logic Project diterjemahaké nganggo GPT-5.6 Sol, GPT-6 Sol lan GPT-6.1 Sol. GPT-6.1 Sol nerjemahaké lan nyunting bahan kang mligi kanggo buku iki. Tata letak edhisi iki, koreksi notasi, katrangan diagram lan wacan rumus diprodhuksi nganggo GPT-6 Astra. Kabèh modhèl nganggo upaya nalar Ultra.
+
 Wacan OpenLogic iki nyakup 722 berkas isi nganggo basa Jawa aksara Latin
 (jv-Latn-ID). Ragam utama yaiku ngoko tinulis kanggo andharan akademis.
 Isiné kalebu teori himpunan, logika, teori modèl, komputabilitas, teori bukti,
