@@ -2292,8 +2292,8 @@
       },
       "javanese": {
         "path": "translation/content/first-order-logic/beyond/many-sorted-logic.tex",
-        "bytes": 3559,
-        "sha256": "4887188568bcb19ae88aa4c6480139edd57a7f0f6ae461bd0efc5e9bdb4c9058"
+        "bytes": 3655,
+        "sha256": "5795d7817e23be84fadc537d4ec45b35936dd16bdccee6d56bc36f5b4181c3ea"
       }
     },
     {
@@ -9413,8 +9413,8 @@
       "sha256": "650eb1cb43595515d0900b3343fb5f27f4e21601d7b3dd3e85bd3d49fb9fc1ba"
     },
     "edition/jv-complete-body.tex": {
-      "bytes": 3190664,
-      "sha256": "ad4c277ae8cf0b986d9b37dce041af32e00b73edeb9593c2dc00909c5ce4fb57"
+      "bytes": 3190665,
+      "sha256": "00b901713eaf97b896117230390f07090dac02ba810c0b4b839f9718cc347cce"
     },
     "edition/jv-complete-localization.sty": {
       "bytes": 6422,
@@ -9833,8 +9833,8 @@
       "sha256": "c7ae554b7ecd207101065dcb6805065dfa923b371352829043a064f3768db6db"
     },
     "translation/content/first-order-logic/beyond/many-sorted-logic.tex": {
-      "bytes": 3559,
-      "sha256": "4887188568bcb19ae88aa4c6480139edd57a7f0f6ae461bd0efc5e9bdb4c9058"
+      "bytes": 3655,
+      "sha256": "5795d7817e23be84fadc537d4ec45b35936dd16bdccee6d56bc36f5b4181c3ea"
     },
     "translation/content/first-order-logic/beyond/modal-logics.tex": {
       "bytes": 4282,
