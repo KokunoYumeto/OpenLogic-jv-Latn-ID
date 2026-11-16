@@ -9,6 +9,7 @@ products = ["olp-complete", "slc-screen-pdf"]
 engine_reason = "Retain the published pilot engine until a different engine passes the same content and layout gates."
 
 [paths]
+courses = "courses"
 content = "translation/content"
 source_content = "upstream/content"
 

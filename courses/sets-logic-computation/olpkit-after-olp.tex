@@ -1,0 +1,39 @@
+\newcommand*{\olpBookSummary}{Ringkesan}
+\newcommand*{\olpBookFigure}{Gambar}
+\newcommand*{\olpBookBiographies}{Babad Para Ahli Logika}
+\newcommand*{\olpBookGlossary}{Glosarium}
+\newcommand*{\olpCoverPortraitWidth}{0.245}
+\newcommand*{\olpCoverPortraitSpacing}{0.245}
+\renewcommand{\printglossaries}{%
+  \printglossary[title=\olpBookGlossary,toctitle=\olpBookGlossary]}
+\tikzset{initial text=wiwit}
+\errorcontextlines=20
+\AtBeginDocument{%
+  \emergencystretch=3em
+  \setlength{\tabcolsep}{4pt}}
+
+% Preserve the space allocated to Cantor's first array while lifting its
+% painted bottom row clear of the type block.
+\RequirePackage{trimclip}
+\newsavebox{\olpCantorArray}
+\newif\ifolpFirstCantorArray
+\AddToHook{file/zig-zag.tex/before}{\global\olpFirstCantorArraytrue}
+\AddToHook{file/zig-zag.tex/after}{\global\olpFirstCantorArrayfalse}
+\AddToHook{env/array/before}{%
+  \ifolpFirstCantorArray
+    \global\olpFirstCantorArrayfalse
+    \AddToHookNext{env/array/after}{%
+      \)\end{lrbox}%
+      \raisebox{2.5pt}[\ht\olpCantorArray][\dp\olpCantorArray]{%
+        \clipbox{0pt 3.25pt 0pt 0pt}{\usebox{\olpCantorArray}}}}%
+    \begin{lrbox}{\olpCantorArray}\(\displaystyle
+  \fi}
+\definecolor{olpkitlink}{HTML}{0B3C6F}
+% The OLP class assigns allcolors in its begin-document hook. Apply the
+% declared reader colour after that hook without changing heading colours.
+\AddToHook{begindocument/end}{\hypersetup{colorlinks=true,allcolors=olpkitlink}}
+\makeatletter
+% Keep natbib's separator inside the existing citation link. Each key
+% retains its own destination, including citations with several keys.
+\renewcommand*\hyper@natlinkbreak[2]{#1}
+\makeatother

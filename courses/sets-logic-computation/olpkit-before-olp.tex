@@ -1,0 +1,8 @@
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\newcommand*{\ollangid}{jv}
+\newcommand*{\ollanguage}{javanese}
+\PassOptionsToPackage{provide=*}{babel}
+\NewDocumentCommand\slcterm{O{} m m m m}{%
+  \newglossaryentry{#2}{sort={#3},name={#4},plural={#4},
+    symbol={#1},description={#5}}}
