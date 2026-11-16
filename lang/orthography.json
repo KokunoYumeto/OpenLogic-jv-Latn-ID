@@ -1,0 +1,17 @@
+{
+  "locale": "jv",
+  "rules": [
+    {
+      "id": "nfc",
+      "kind": "nfc",
+      "reason": "Encode Latin letters and their diacritics consistently in UTF-8 NFC. Canonical composition preserves distinctions such as é and è used in the spelling guide.",
+      "evidence": [
+        {
+          "source": "https://bejaji.kemendikdasmen.go.id/assets/app/berkas/pedoman_umum_ejaan_bahasa_jawa_huruf_latin_yang_disempurnakan_2011.pdf",
+          "sha256": "6e33ca747d9f8704d029f5eb7baed44f00ccdb3d33e066cfe1f2da03216f4930",
+          "locator": "Balai Bahasa Yogyakarta, Pedoman Umum Ejaan Bahasa Jawa Huruf Latin yang Disempurnakan (2011), PDF page 9, printed p. 2, subsection B Huruf Vokal, paragraph below the vowel table (énak and èsem)."
+        }
+      ]
+    }
+  ]
+}

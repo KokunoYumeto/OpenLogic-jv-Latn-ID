@@ -6,34 +6,34 @@
 
 \begin{document}
 
-\olfileid{fol}{syn}{frm}
+\olfileid[jv]{fol}{syn}{frm}
 
-\olsection{Term lan \printtoken{P}{formula}}
+\olsection{Terma lan \printtoken{P}{formula}}
 
 Sawise sawijining basa logika tataran kapisan~$\Lang L$ diwenehi, kita bisa
 nemtokake ungkapan kang kawangun saka kosakata dhasar~$\Lang L$.
-Ungkapan kasebut mligine kalebu \emph{term} lan \emph{!!{formula}s}.
+Ungkapan kasebut mligine kalebu \emph{terma} lan \emph{!!{formula}s}.
 
-\begin{defn}[Term]
+\begin{defn}[Terma]
 \ollabel{defn:terms}
-Himpunan \emph{term}~$\Trm[L]$ saka~$\Lang L$
+Himpunan \emph{terma}~$\Trm[L]$ saka~$\Lang L$
 ditemtokake kanthi induktif kaya mangkene:
 \begin{enumerate}
-\item Saben !!{variable} iku term.
-\item Saben !!{constant} saka~$\Lang L$ iku term.
+\item Saben !!{variable} iku terma.
+\item Saben !!{constant} saka~$\Lang L$ iku terma.
 \item Yen $f$ iku !!{function} $n$-panggonan lan $t_1$, \dots, $t_n$
-  iku term, mula $\Atom{f}{t_1, \ldots, t_n}$ iku term.
+  iku terma, mula $\Atom{f}{t_1, \ldots, t_n}$ iku terma.
 \tagitem{limitClause}{
-  Ora ana liyane kang kalebu term.}{}
+  Ora ana liyane kang kalebu terma.}{}
 \end{enumerate}
-Term kang ora ngemot !!{variable}s diarani \emph{term katutup}.
+Terma kang ora ngemot !!{variable}s diarani \emph{terma katutup}.
 \end{defn}
 
 \begin{explain}
 !!{constant}s katon minangka golongan simbol dhewe ing spesifikasi
-basa lan term kita, nanging bisa uga dilebokake minangka !!{function}s
+basa lan terma kita, nanging bisa uga dilebokake minangka !!{function}s
 nol panggonan. Yen mangkono, kita ora mbutuhake klausa kapindho ing
-definisi term. Kita mung kudu mangerteni $\Atom{f}{t_1, \ldots, t_n}$
+definisi terma. Kita mung kudu mangerteni $\Atom{f}{t_1, \ldots, t_n}$
 minangka $f$ dhewe yen $n =
 0$.
 \end{explain}
@@ -48,10 +48,10 @@ ditemtokake kanthi induktif kaya mangkene:
 \tagitem{prvTrue}{$\ltrue$ iku !!{formula} atomik.}{}
 
 \item Yen $R$ iku !!{predicate} $n$-panggonan saka~$\Lang L$ lan $t_1$, \dots,
-  $t_n$ iku term saka~$\Lang L$, mula $\Atom{R}{t_1,\ldots, t_n}$ iku
+  $t_n$ iku terma saka~$\Lang L$, mula $\Atom{R}{t_1,\ldots, t_n}$ iku
   !!{formula} atomik.
 
-\item Yen $t_1$ lan $t_2$ iku term saka~$\Lang L$, mula $\Atom{\eq}{t_1, t_2}$
+\item Yen $t_1$ lan $t_2$ iku terma saka~$\Lang L$, mula $\Atom{\eq}{t_1, t_2}$
   iku !!{formula} atomik.
 
 \tagitem{prvNot}{Yen $!A$ iku !!a{formula}, mula $\lnot !A$ iku
@@ -80,7 +80,7 @@ ditemtokake kanthi induktif kaya mangkene:
 \end{defn}
 
 \begin{explain}
-Definisi himpunan term lan himpunan !!{formula}s iku
+Definisi himpunan terma lan himpunan !!{formula}s iku
 \emph{definisi induktif}. Ing dhasare, kita mbangun himpunan
 !!{formula}s lumantar tahap-tahap kang cacahe tanpa wates. Ing tahap
 wiwitan, kita netepake yen kabeh formula atomik iku formula; iki
@@ -160,7 +160,7 @@ kaya mangkene:
 
 Yen kita makarya ing basa kanggo panganggone tartamtu, kita kerep
 nulis !!{predicate}s lan !!{function}s rong panggonan ing antarane
-term-term argumene, umpamane $t_1 < t_2$ lan $(t_1 + t_2)$ ing basa
+terma-terma argumene, umpamane $t_1 < t_2$ lan $(t_1 + t_2)$ ing basa
 aritmetika sarta $t_1 \in t_2$ ing basa teori himpunan. Fungsi
 panerus ing basa aritmetika malah miturut konvensi ditulis \emph{sawise}
 argumene:~$t'$. Nanging, sacara resmi, iki mung cekakan konvensional
@@ -185,11 +185,11 @@ $!A$ iku tandha kurung buka, $!A$ ngemot $!B$ minangka subrerangken
 (wiwit saka simbol kapindho), sawise subrerangken kasebut ana $\lor$,
 lan sateruse.
 
-Amarga term lan !!{formula}s kawangun saka unsur dhasar liwat definisi
+Amarga terma lan !!{formula}s kawangun saka unsur dhasar liwat definisi
 induktif, kita bisa nggunakake prinsip-prinsip induksi iki kanggo
 mbuktekake sipat-sipate.
 
-\begin{lem}[\emph{Prinsip induksi tumrap term}]
+\begin{lem}[\emph{Prinsip induksi tumrap terma}]
     \ollabel{lem:trmind}
     Upamana $\Lang L$ iku basa logika tataran kapisan.
     Yen sawijining sipat~$P$ nyukupi syarat iki:
@@ -203,8 +203,8 @@ mbuktekake sipat-sipate.
         lumaku kanggo $t_1$,~\dots, $t_n$ lan $f$~iku !!{function}
             $n$-panggonan saka~$\Lang L$
     \end{enumerate}
-    (kanthi anggepan $t_1$,~\dots, $t_n$ iku term saka~$\Lang{L}$),
-    mula $P$ lumaku kanggo saben term ing~$\Trm[L]$.
+    (kanthi anggepan $t_1$,~\dots, $t_n$ iku terma saka~$\Lang{L}$),
+    mula $P$ lumaku kanggo saben terma ing~$\Trm[L]$.
 \end{lem}
 
 \begin{prob}

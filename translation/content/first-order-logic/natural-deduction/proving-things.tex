@@ -7,8 +7,8 @@
 \begin{document}
 
 \iftag{FOL}
-      {\olfileid{fol}{ntd}{pro}}
-      {\olfileid{pl}{ntd}{pro}}
+      {\olfileid[jv]{fol}{ntd}{pro}}
+      {\olfileid[jv]{pl}{ntd}{pro}}
 
 \olsection{Tuladha \usetoken{P}{derivation}}
 
@@ -246,6 +246,7 @@ liwat~$\Intro{\lor}$:
 \end{prooftree}
 Ing sisih tengen kita nggunakake strategi kang padha, kajaba $!A$
 diasilake liwat~\FalseCl:
+\begingroup\JvWideProofSize
 \begin{prooftree}
   \AxiomC{$\Discharge{\lnot(!A \lor \lnot !A)}{1}$}
   \AxiomC{$\Discharge{!A}{2}$}
@@ -268,6 +269,7 @@ diasilake liwat~\FalseCl:
   \DischargeRule{\FalseCl}{1}
   \UnaryInfC{$!A \lor \lnot !A$}
 \end{prooftree}
+\endgroup
 \end{ex}
 
 \begin{prob}

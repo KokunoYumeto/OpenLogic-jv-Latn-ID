@@ -6,7 +6,7 @@
 
 \begin{document}
 
-\olfileid{fol}{syn}{fseq}
+\olfileid[jv]{fol}{syn}{fseq}
 
 \olsection{Urutan Pambentukan}
 
@@ -16,7 +16,7 @@ endah lan efisien. Nanging, bisa uga migunani kanggo ndeleng
 pambentukan !!{formula}s saka unsur paling dhasar, saka tahap siji menyang tahap sabanjure.
 Ing kene kita nindakake iki nganggo konsep \emph{urutan pambentukan}.
 %
-Kanggo nuduhake carane term lan !!{formula}s bisa dikenalake kanthi
+Kanggo nuduhake carane terma lan !!{formula}s bisa dikenalake kanthi
 cara iki tanpa nyandhak definisi induktife, dhisik kita ngenalake
 konsep rerangken simbol sembarang kang dijupuk saka sawijining
 basa~$\Lang L$.
@@ -36,16 +36,16 @@ ora mesthi bener. Umpamane, \[)(\Obj v_0\lif\lexists\] iku
 rerangken~$\Lang L$ nanging dudu !!{formula} ing~$\Lang L$.
 \end{ex}
 
-\begin{defn}[Urutan pambentukan kanggo term]
+\begin{defn}[Urutan pambentukan kanggo terma]
 \ollabel{defn:fseq-trm}
 Urutan winates rerangken~$\Lang L$, yaiku $\tuple{t_0,\dotsc,t_n}$,
-iku \emph{urutan pambentukan} kanggo term $t$ yen $t \ident t_n$
+iku \emph{urutan pambentukan} kanggo terma $t$ yen $t \ident t_n$
 lan kanggo saben $i \leq n$, $t_i$ iku !!a{variable} utawa
 !!a{constant}, utawa $\Lang L$ ngemot $k$-panggonan !!{function}~$f$
 lan ana $m_1,\dotsc,m_k < i$ saengga
 $t_i \ident f(t_{m_1},\dotsc,t_{m_k})$. Yen perlu mbedakake,
-kita nyebut urutan pambentukan kanggo term minangka
-\emph{urutan pambentukan term}.
+kita nyebut urutan pambentukan kanggo terma minangka
+\emph{urutan pambentukan terma}.
 \end{defn}
 
 \begin{ex}
@@ -53,7 +53,7 @@ Urutan
 \[
     \tuple{\Obj c_0, \Obj v_0, \Atom{\Obj f^2_0}{\Obj c_0, \Obj v_0}, \Atom{\Obj f^1_0}{\Atom{\Obj f^2_0}{\Obj c_0, \Obj v_0}}}
 \]
-iku urutan pambentukan kanggo term $\Atom{\Obj f^1_0}{\Atom{\Obj
+iku urutan pambentukan kanggo terma $\Atom{\Obj f^1_0}{\Atom{\Obj
 f^2_0}{\Obj c_0, \Obj v_0}}$, semono uga
 \[
     \tuple{\Obj v_0, \Obj c_0, \Atom{\Obj f^2_0}{\Obj c_0, \Obj v_0}, \Atom{\Obj f^1_0}{\Atom{\Obj f^2_0}{\Obj c_0, \Obj v_0}}}.
@@ -211,13 +211,13 @@ $(!A_j \land !A_k)$. Kasus liyane lumaku kanthi nalar kang padha.
 Induksi iki nganggo indeks pungkasan saka urutan pambentukan.
 \end{proof}
 
-Urutan pambentukan kanggo term nduweni sipat kang padha karo urutan
+Urutan pambentukan kanggo terma nduweni sipat kang padha karo urutan
 pambentukan kanggo !!{formula}s.
 
 \begin{prop}
 \ollabel{prop:fseq-trm-equiv}
 $\Trm[L]$ iku himpunan kabeh rerangken~$\Lang L$ awujud $t$
-saengga ana urutan pambentukan term kanggo~$t$.
+saengga ana urutan pambentukan terma kanggo~$t$.
 \end{prop}
 
 \begin{proof}
@@ -232,7 +232,7 @@ Pituduh: gunakna cara kang padha karo kang digunakake ing bukti
 
 Ana rong jinis unsur kang ora perlu ing urutan pambentukan:
 unsur kang diulang lan unsur kang ora magepokan karo pambentukan
-formula utawa term. Loro-lorone bisa disingkirake kanthi ndeleng
+formula utawa terma. Loro-lorone bisa disingkirake kanthi ndeleng
 urutan pambentukan minimal.
 
 \begin{defn}[Urutan pambentukan minimal]
@@ -243,12 +243,12 @@ yen kanggo saben urutan pambentukan liyane~$s$ kanggo~$!A$,
 dawa~$s$ luwih gedhe utawa padha karo~$n+1$.
 
 Semono uga, urutan pambentukan $\tuple{t_0, \ldots, t_n}$
-kanggo term~$t$ iku \emph{urutan pambentukan minimal}
+kanggo terma~$t$ iku \emph{urutan pambentukan minimal}
 kanggo~$t$ yen kanggo saben urutan pambentukan liyane~$s$ kanggo~$t$,
 dawa~$s$ luwih gedhe utawa padha karo~$n+1$.
 \end{defn}
 
-Elinga yen sawijining formula utawa term bisa duwe luwih saka
+Elinga yen sawijining formula utawa terma bisa duwe luwih saka
 siji urutan pambentukan minimal, nanging kabeh urutan kasebut
 ngemot rerangken kang persis padha.
 

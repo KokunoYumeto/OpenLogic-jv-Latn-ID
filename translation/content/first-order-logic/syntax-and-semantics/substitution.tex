@@ -6,11 +6,11 @@
 
 \begin{document}
 
-\olfileid{fol}{syn}{sub}
+\olfileid[jv]{fol}{syn}{sub}
 
 \olsection{Substitusi}
 
-\begin{defn}[Substitusi ing term]
+\begin{defn}[Substitusi ing terma]
 Kita nemtokake $\Subst{s}{t}{x}$, yaiku asil saka \emph{nyubstitusikake}
 $t$ kanggo saben muncule~$x$ ing $s$, kanthi rekursif:
 \begin{enumerate}
@@ -27,7 +27,7 @@ $t$ kanggo saben muncule~$x$ ing $s$, kanthi rekursif:
 \end{defn}
 
 \begin{defn}
-Term~$t$ iku \emph{!!{free for}} $x$ ing $!A$ yen ora ana muncule
+Terma~$t$ iku \emph{!!{free for}} $x$ ing $!A$ yen ora ana muncule
 bebas~$x$ ing $!A$ kang dumunung ing cakupan kuantor kang ngiket
 sawijining variabel ing~$t$.
 \end{defn}
@@ -43,7 +43,7 @@ sawijining variabel ing~$t$.
 \end{ex}
 
 \begin{defn}[Substitusi ing !!a{formula}]
-Yen $!A$ iku !!a{formula}, $x$~iku !!a{variable}, lan $t$~iku term
+Yen $!A$ iku !!a{formula}, $x$~iku !!a{variable}, lan $t$~iku terma
 kang !!{free for}~$x$ ing~$!A$, mula $\Subst{!A}{t}{x}$ yaiku asil saka
 nyubstitusikake $t$ kanggo kabeh muncule bebas~$x$ ing~$!A$.
 \begin{enumerate}
@@ -116,12 +116,12 @@ bakal dadi kaiket dening kuantor ing~$!A$.
 Kita kerep nggunakake pranatan ing ngisor iki supaya notasi ora
 ruwet: yen $!A$ iku !!a{formula} kang bisa ngemot !!{variable}~$x$
 kanthi bebas, kita uga nulis~$!A(x)$ kanggo nuduhake iki. Yen wis
-cetha $!A$ lan~$x$ kang dimaksud, lan $t$ iku term (dianggep bebas
+cetha $!A$ lan~$x$ kang dimaksud, lan $t$ iku terma (dianggep bebas
 kanggo $x$ ing $!A(x)$), mula kita nulis $!A(t)$ minangka cekakan
 kanggo $\Subst{!A}{t}{x}$. Dadi, upamane, kita bisa ngarani
 $!A(t)$ sawijining instansi saka~$\lforall[x][!A(x)]$.
 Tegese, yen $!A$~iku sembarang !!{formula}, $x$~!!a{variable},
-lan $t$~term kang bebas kanggo~$x$ ing~$!A$, mula
+lan $t$~terma kang bebas kanggo~$x$ ing~$!A$, mula
 $\Subst{!A}{t}{x}$ iku instansi saka~$\lforall[x][!A]$.
 
 \end{document}

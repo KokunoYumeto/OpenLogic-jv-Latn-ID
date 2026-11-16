@@ -7,8 +7,8 @@
 \begin{document}
 
 \iftag{FOL}
-      {\olfileid{fol}{com}{cpd}}
-      {\olfileid{pl}{com}{cpd}}
+      {\olfileid[jv]{fol}{com}{cpd}}
+      {\olfileid[jv]{pl}{com}{cpd}}
 
 \olsection{Bukti Langsung Teorema Kekompakan}
 
@@ -19,14 +19,14 @@ himpunan~$\Gamma$ kang konsisten saka !!{sentence}s\iftag{FOL}{ ing
 basa kang bisa dietung}{}, nggedhekake dadi
 himpunan kang konsisten\iftag{FOL}{, jenuh,}{} lan !!{complete}, yaiku
 himpunan~$\Gamma^*$ saka !!{sentence}s, banjur nuduhake yen ing
-\iftag{FOL}{model term~$\Struct{M(\Gamma^*)}$}{!!{valuation}~
+\iftag{FOL}{model terma~$\Struct{M(\Gamma^*)}$}{!!{valuation}~
   $\pAssign{v(\Gamma^*)}$}
 kang dibangun saka $\Gamma^*$, kabeh !!{sentence}s saka~$\Gamma$ iku
 bener, mula $\Gamma$ bisa dicukupi.
 
 Kita bisa nggunakake metodhe kang padha kanggo nuduhaké yèn himpunan
 ukara\iftag{FOL}{ ing basa kang bisa dietung}{} kang bisa dicukupi kanthi winates uga bisa dicukupi. Kita mung
-kudu mbuktekake versi asil-asil kang cocog lan tumuju marang lemma
+kudu mbuktekake versi asil-asil kang cocog lan tumuju marang lema
 bebener, kanthi ngganti “konsisten” dadi “bisa dicukupi kanthi
 winates.”
 
@@ -81,9 +81,9 @@ nggunakake !!{derivation}s utawa konsistensi.)
 Upamana $\Gamma$ himpunan ukara jangkep, bisa dicukupi kanthi winates, lan jenuh.
 \begin{tagenumerate}{prvEx,prvAll}
 \tagitem{prvEx}{$\lexists[x][!A(x)] \in \Gamma$ yen lan mung yen
-  $!A(t) \in \Gamma$ kanggo paling ora siji term katutup~$t$.}{}
+  $!A(t) \in \Gamma$ kanggo paling ora siji terma katutup~$t$.}{}
 \tagitem{prvAll}{$\lforall[x][!A(x)] \in \Gamma$ yen lan mung yen
-  $!A(t) \in \Gamma$ kanggo kabeh term katutup~$t$.}{}
+  $!A(t) \in \Gamma$ kanggo kabeh terma katutup~$t$.}{}
 \end{tagenumerate}
 \end{prop}
 }{}
@@ -140,7 +140,7 @@ Henkin~$\Lang{L'}$.}{} Miturut
 \olref{lem:fsat-lindenbaum}, $\iftag{FOL}{\Gamma'}{\Gamma}$ bisa
 digedhekake dadi himpunan~$\Gamma^*$ kang !!a{complete} lan bisa
 dicukupi kanthi winates\iftag{FOL}{, lan $\Gamma^*$ isih jenuh}{}.
-Bangunen \iftag{FOL}{model term~$\Struct{M(\Gamma^*)}$}{!!{valuation}~
+Bangunen \iftag{FOL}{model terma~$\Struct{M(\Gamma^*)}$}{!!{valuation}~
 $\pAssign{v(\Gamma^*)}$} kaya ing \olref[mod]{defn:termmodel}.
 \iftag{FOL}{Yèn ing~$\Lang{L'}$ ana identitas, gunakna model kelas
 $\Struct{\equivclass{M}{\approx}}$ kaya ing \olref[ide]{defn:term-model-factor}.
@@ -152,19 +152,19 @@ $\eq[t][t']$ lan $\Atom{R}{t}$ ana ing~$\Gamma^*$, mula
 $\Atom{R}{t'}$ uga ana ing kono, amarga yèn ora, sipat jangkep
 mènèhi $\lnot\Atom{R}{t'}$ kang ora bisa dicukupi bebarengan
 karo rong ukara kapisan. Ing loro model mau, saben unsur minangka
-nilai sawijining term katutup, mula instansi term katutup cukup
+nilai sawijining terma katutup, mula instansi terma katutup cukup
 kanggo mriksa kuantor.}{}
-Ing induksi Lemma Bebener (\olref[mod]{lem:truth}), gunakna
+Ing induksi Lema Bebener (\olref[mod]{lem:truth}), gunakna
 \olref{prop:fsat-ccs} kanggo konektif kang cocog lan sipat jangkep kanggo negasi.
 \iftag{FOL}{Gunakna \olref{prop:fsat-instances} kanggo kuantor.
-Ing model kelas, identitas bener persis nalika term loro mau sakelas.
+Ing model kelas, identitas bener persis nalika terma loro mau sakelas.
 Mula model iki nyukupi $\Gamma^*$ lan reduké menyang basa asli
 nyukupi~$\Gamma$.}{Mula valuasi iki nyukupi $\Gamma^*$ lan~$\Gamma$.}
 \end{proof}
 
 \tagprob{FOL}
 \begin{prob}
-Tulisen bukti jangkep Lemma Bebener
+Tulisen bukti jangkep Lema Bebener
 (\olref[fol][com][mod]{lem:truth}) ing versi kang dibutuhake kanggo
 bukti \olref[fol][com][cpd]{thm:compactness-direct}.
 \end{prob}
@@ -172,7 +172,7 @@ bukti \olref[fol][com][cpd]{thm:compactness-direct}.
 
 \tagprob{notFOL}
 \begin{prob}
-Tulisen bukti jangkep Lemma Bebener
+Tulisen bukti jangkep Lema Bebener
 (\olref[pl][com][mod]{lem:truth}) ing versi kang dibutuhake kanggo
 bukti \olref[pl][com][cpd]{thm:compactness-direct}.
 \end{prob}

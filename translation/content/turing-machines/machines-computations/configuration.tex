@@ -6,7 +6,7 @@
 
 \begin{document}
 
-\olfileid{cmp}{tur}{con}
+\olfileid[jv]{cmp}{tur}{con}
 \olsection{Konfigurasi lan Komputasi}
 
 \begin{explain}
@@ -15,14 +15,14 @@ ing bagean sadurunge. Mekanisme khayalan kang dumadi
 saka pita, sirah maca-nulis, lan program mesin Turing
 sejatine mung cara intuisi kanggo nggambarake
 komputasi mesin Turing. Sacara formal, kita bisa
-netepake komputasi mesin Turing kanthi input tartamtu
+netepake komputasi mesin Turing kanthi masukan tartamtu
 minangka rerangken \emph{konfigurasi}---lan konfigurasi
 iku dhewe dumadi saka rerangken simbol (kang cocog
 karo isi pita ing sawijining wektu komputasi),
 wilangan kang nuduhake panggonan sirah maca-nulis,
 lan sawijining kahanan. Kanthi iki, kita bisa
 netepake apa kang diitung mesin Turing~$M$
-nalika diwenehi input tartamtu.
+nalika diwenehi masukan tartamtu.
 \end{explain}
 
 \begin{defn}[Konfigurasi]
@@ -43,35 +43,35 @@ lan $q$ kahanan mesin saiki.
 \end{defn}
 
 \begin{explain}
-Input kang bisa diwenehake marang mesin Turing
+Masukan kang bisa diwenehake marang mesin Turing
 yaiku rerangken simbol, lumrahe rerangken kang
 ngode sawijining wilangan kanthi cara tartamtu.
 Konfigurasi wiwitan mesin Turing yaiku konfigurasi
 nalika kita miwiti mesin Turing kanggo ngolah
-input iku: pita ngemot panandha pucuk pita
-kang langsung disusul input ing kothak-kothak
+masukan iku: pita ngemot panandha pucuk pita
+kang langsung disusul masukan ing kothak-kothak
 sisih tengene, sirah maca-nulis lagi maca
-kothak paling kiwa saka input (yaiku kothak
+kothak paling kiwa saka masukan (yaiku kothak
 ing sisih tengen panandha pucuk kiwa), lan
 mekanisme ana ing kahanan wiwitan~$q_0$
 kang wis ditemtokake.
 \end{explain}
 
 \begin{defn}[Konfigurasi wiwitan]
-\emph{Konfigurasi wiwitan} $M$ kanggo input
+\emph{Konfigurasi wiwitan} $M$ kanggo masukan
 $I \in \Sigma^*$ yaiku
 \[
 \begin{cases}
-\tuple{\TMendtape \frown I, 1, q_0} & \text{yen input ora kosong},\\
-\tuple{\TMendtape \frown \TMblank, 1, q_0} & \text{yen input kosong}.
+\tuple{\TMendtape \frown I, 1, q_0} & \text{yen masukan ora kosong},\\
+\tuple{\TMendtape \frown \TMblank, 1, q_0} & \text{yen masukan kosong}.
 \end{cases}
 \]
-Kanggo input kosong, lebokna kothak blank kapisan ing sisih tengen panandha supaya posisi sirah nomer siji sah. \end{defn}
+Kanggo masukan kosong, lebokna kothak kosong kapisan ing sisih tengen panandha supaya posisi sirah nomer siji sah. \end{defn}
 
 \begin{explain}
 %
  Simbol~$\frown$ nuduhake \emph{pangandhengan
-rerangken}---rerangken input diwiwiti langsung
+rerangken}---rerangken masukan diwiwiti langsung
 ing sisih tengen panandha pucuk kiwa.
 \end{explain}
 
@@ -97,26 +97,26 @@ ing siji langkah} (miturut~$M$), yen lan mung yen
 \end{defn}
 
 \begin{defn}\ollabel{defn:run-output}
-\emph{Lumakune $M$ kanthi input~$I$}
+\emph{Lumakune $M$ kanthi masukan~$I$}
 yaiku rerangken maksimal konfigurasi $C_i$ saka $M$,
 kanthi $C_0$ konfigurasi wiwitan $M$
-kanggo input~$I$, lan saben $C_i$ kang duwe konfigurasi sabanjure
+kanggo masukan~$I$, lan saben $C_i$ kang duwe konfigurasi sabanjure
 ngasilake $C_{i+1}$ ing siji langkah. Rerangken konfigurasi bisa winates utawa tanpa wates. Yèn winates, ing konfigurasi pungkasan ora ana instruksi kang ditegesi.
 
-Kita nyebut $M$ \emph{mandheg nalika nampa input $I$
+Kita nyebut $M$ \emph{mandheg nalika nampa masukan $I$
 sawise $k$ langkah} yen $C_k =
 \tuple{C, m, q}$, simbol kapangka-$m$
 ing~$C$ yaiku~$\sigma$, lan $\delta(q,
 \sigma)$ ora ditegesi. Ing kahanan iku, yen panandha pucuk kiwa isih ana,
-\emph{output}~$M$ kanggo input~$I$ yaiku~$O$,
+\emph{asil}~$M$ kanggo masukan~$I$ yaiku~$O$,
 ing ngendi $O$ rerangken simbol kang ora dipungkasi
 dening~$\TMblank$ lan $C = \TMendtape \concat O \concat \TMblank^j$
 kanggo sawijining~$j \in \Nat$. ($\TMblank^j$
 yaiku rerangken $j$ simbol $\TMblank$.)
-Output mung ditegesi nalika panandha pucuk kiwa isih ana ing kothak nol. Output bisa kosong. Yèn isi, simbol pungkasan kudu béda karo blank. \end{defn}
+Asil mung ditegesi nalika panandha pucuk kiwa isih ana ing kothak nol. Asil bisa kosong. Yèn isi, simbol pungkasan kudu béda karo simbol kosong. \end{defn}
 
 \begin{explain}
-Miturut definisi iki, output~$O$ saka~$M$
+Miturut definisi iki, asil~$O$ saka~$M$
 mesthi dipungkasi simbol saliyane~$\TMblank$,
 utawa, yen ing wektu~$k$ kabeh pita diisi
 simbol~$\TMblank$ (kajaba simbol~$\TMendtape$

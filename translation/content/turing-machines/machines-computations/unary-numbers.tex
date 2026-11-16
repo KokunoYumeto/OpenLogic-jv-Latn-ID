@@ -6,14 +6,14 @@
 
 \begin{document}
 
-\olfileid{tur}{mac}{una}
+\olfileid[jv]{tur}{mac}{una}
 \olsection{Representasi Wilangan kanthi Siji Simbol}
 
 \begin{explain}
 Mesin Turing makarya nganggo rerangken simbol kang ditulis
 ing pitane. Gumantung marang alfabet kang digunakake mesin
-Turing, rerangken simbol iki bisa nggambarake maneka input
-lan output. Kang mesthi wigati yaiku mesin Turing kang
+Turing, rerangken simbol iki bisa nggambarake maneka masukan
+lan asil. Kang mesthi wigati yaiku mesin Turing kang
 ngitung fungsi \emph{aritmetika}, yaiku fungsi ing wilangan
 asli. Cara prasaja kanggo nggambarake wilangan wutuh positif
 yaiku ngode nganggo rerangken siji jinis simbol~$\TMstroke$.
@@ -25,11 +25,11 @@ dumadi saka persis $n$ simbol $\TMstroke$.
 \begin{defn}[Komputasi]
 Mesin Turing~$M$ \emph{ngitung} fungsi
 $f\colon \Nat^k \to \Nat$ yen lan mung yen
-$M$~mandheg nalika nampa input
+$M$~mandheg nalika nampa masukan
 \[
 \TMstroke^{n_1} \TMblank \TMstroke^{n_2} \TMblank \dots \TMblank \TMstroke^{n_k}
 \]
-kanthi output $\TMstroke^{f(n_1, \dots, n_k)}$.
+kanthi asil $\TMstroke^{f(n_1, \dots, n_k)}$.
 \end{defn}
 
 \begin{prob}
@@ -43,7 +43,7 @@ Ayo kita gawe mesin kang ngitung fungsi $f(n,m) = n + m$.
 Iki mbutuhake mesin kang diwiwiti nganggo rong blok
 $\TMstroke$ dawa $n$ lan~$m$ ing pita, banjur mandheg
 kanthi siji blok kang dumadi saka
-$n+m$~$\TMstroke$. Rong blok input~$\TMstroke$
+$n+m$~$\TMstroke$. Rong blok masukan~$\TMstroke$
 dipisahake dening~$\TMblank$, mula salah siji
 carane yaiku nulis guratan ing kothak kang ngemot
 $\TMblank$ lan mbusak~$\TMstroke$ pungkasan.
@@ -69,16 +69,16 @@ $\TMblank$ lan mbusak~$\TMstroke$ pungkasan.
 
 \begin{prob}
 Telusurana konfigurasi mesin ing
-\olref[tur][mac][una]{ex:adder} kanggo input~$\tuple{3,2}$.
+\olref[tur][mac][una]{ex:adder} kanggo masukan~$\tuple{3,2}$.
 Apa kang kedadeyan yen mesin ngitung $0+0$?
 \end{prob}
 
 \begin{explain}
 Ing \olref[rep]{ex:doubler}, kita menehi tuladha
 mesin Turing kang nampa rerangken~$\TMstroke$
-minangka input lan mandheg kanthi rerangken
+minangka masukan lan mandheg kanthi rerangken
 $\TMstroke$ kang cacahe tikel loro ing pita
----mesin pangganda. Nanging amarga outpute
+---mesin pangganda. Nanging amarga asilé
 ngemot $\TMblank$ ing sisih kiwa blok
 $\TMstroke$ kang wis digandakake, mesin iku
 sejatine ora ngitung fungsi $f(x) = 2x$,
@@ -89,19 +89,19 @@ mbenerake iki.
 
 \begin{ex}
 Mesin ing \olref{fig:doubler-disc} ngitung fungsi
-$f(x) = 2x$. Beda karo tumindake mbusak input
+$f(x) = 2x$. Beda karo tumindake mbusak masukan
 lan nulis rong $\TMstroke$ ing sisih tengen
-adoh kanggo saben $\TMstroke$ ing input
+adoh kanggo saben $\TMstroke$ ing masukan
 kaya mesin saka \olref[rep]{ex:doubler},
 mesin iki nambah siji~$\TMstroke$ ing sisih
-tengen kanggo saben~$\TMstroke$ ing input.
-Mesin kudu ngerti papan pungkasane input,
+tengen kanggo saben~$\TMstroke$ ing masukan.
+Mesin kudu ngerti papan pungkasane masukan,
 mula ditinggalake~$\TMblank$ ing antarane
-input lan guratan tambahan, kang ing pungkasan
+masukan lan guratan tambahan, kang ing pungkasan
 diisi~$\TMstroke$. Kita uga kudu
-``ngelingi'' papan saiki ing input,
+``ngelingi'' papan saiki ing masukan,
 mula sawatara wektu siji~$\TMstroke$ ing
-blok input diganti dadi~$\TMblank$.
+blok masukan diganti dadi~$\TMblank$.
   \begin{figure}
 \[
 \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
@@ -165,7 +165,7 @@ mung instruksi tambahan $\delta(q_0,
 yaiku panah saka~$q_0$ menyang~$q_6$
 kanthi tandha~$\TMtrans{\TMblank}{\TMblank}{\TMstay}$.
 (Ana sawijining masalah cilik: mesin kang
-diasilake ora lumaku kanggo input~$x=0$.
+diasilake ora lumaku kanggo masukan~$x=0$.
 Iki kita tinggalake dadi latihan.)
 \begin{figure}
   \[
@@ -212,16 +212,16 @@ mesin kang nyawijikake mesin pangganda saka
 \olref[tur][mac][rep]{ex:doubler} lan mesin
 pamindhah saka \olref[tur][mac][una]{fig:mover}.
 Apa kang kedadeyan yen mesin gabungan iki
-diwiwiti nganggo input~$x=0$, yaiku pita kosong?
+diwiwiti nganggo masukan~$x=0$, yaiku pita kosong?
 Kepriye carane mbenerake mesin supaya ing kahanan
-iki mesin mandheg kanthi output~$2x=0$?
+iki mesin mandheg kanthi asil~$2x=0$?
 (Kowe kudune bisa nindakake iki kanthi nambah
 siji kahanan lan siji transisi.)
 \end{prob}
 
 \begin{prob}
 \emph{Pangurangan:} Rancangna mesin Turing kang
-yen diwenehi input rong rerangken guratan ora kosong
+yen diwenehi masukan rong rerangken guratan ora kosong
 kanthi dawa $n$ lan~$m$, ing ngendi $n >
 m$, ngitung fungsi $f(n,m) = n - m$.
 \end{prob}
@@ -230,7 +230,7 @@ m$, ngitung fungsi $f(n,m) = n - m$.
 \emph{Pepadhan:} Rancangna mesin Turing kanggo
 ngitung fungsi ing ngisor iki:
 \[
-\fn{equality}(n,m) = 
+\fn{padha}(n,m) = 
 \begin{cases}
   \text{1} & \text{yen~$n = m$} \\
   \text{0} & \text{yen~$n \neq m$}
@@ -256,13 +256,13 @@ lan $\min(4,4)=4$, lan sateruse.
   Mesin Turing~$M$ ngitung fungsi parsial $f\colon \Nat^k
   \pto \Nat$ yen lan mung yen
   \begin{enumerate}
-    \item $M$ mandheg nalika nampa input $\TMstroke^{n_1}\concat\TMblank\concat
-    \dots \concat\TMblank\concat\TMstroke^{n_k}$ kanthi output $\TMstroke^{m}$ yen $f(n_1, \dots, n_k) = m$.
+    \item $M$ mandheg nalika nampa masukan $\TMstroke^{n_1}\concat\TMblank\concat
+    \dots \concat\TMblank\concat\TMstroke^{n_k}$ kanthi asil $\TMstroke^{m}$ yen $f(n_1, \dots, n_k) = m$.
     \item $M$ ora mandheg babar pisan, utawa mandheg kanthi
-    output kang dudu siji blok~$\TMstroke$, yen
+    asil kang dudu siji blok~$\TMstroke$, yen
     $f(n_1, \dots, n_k)$ ora ditegesi.
   \end{enumerate}
-Mandheg tanpa output kang ditegesi miturut konvensi panandha kiwa uga kalebu ora menehi output sah.
+Mandheg tanpa asil kang ditegesi miturut konvensi panandha kiwa uga kalebu ora menehi asil sah.
 \end{defn}
 
 \end{document}

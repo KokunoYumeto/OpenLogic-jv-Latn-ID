@@ -1,0 +1,6 @@
+* text=auto eol=lf
+assets/** -text
+book/illustrations/** -text
+LICENSE-SLC.md -text
+*.pdf binary
+*.zip binary

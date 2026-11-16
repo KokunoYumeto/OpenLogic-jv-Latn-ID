@@ -6,23 +6,23 @@
 
 \begin{document}
 
-\olfileid{fol}{syn}{sat}
+\olfileid[jv]{fol}{syn}{sat}
 
 \olsection{Relasi Nyukupi \article{formula} \printtoken{S}{formula}
   ing \article{structure} \printtoken{S}{structure}}
 
 \begin{explain}
-Gagasan dhasar kang ngubungake ungkapan kayata term lan
+Gagasan dhasar kang ngubungake ungkapan kayata terma lan
 !!{formula}s ing siji pihak karo !!{structure}s ing pihak liyane
-yaiku \emph{!!{value}} saka term lan \emph{relasi nyukupi}
-!!a{formula}. Sacara ora resmi, !!{value} saka term iku !!{element}
-saka !!a{structure}---yen term iku mung konstanta, !!{value}-ne
+yaiku \emph{!!{value}} saka terma lan \emph{relasi nyukupi}
+!!a{formula}. Sacara ora resmi, !!{value} saka terma iku !!{element}
+saka !!a{structure}---yen terma iku mung konstanta, !!{value}-ne
 yaiku obyek kang diwenehake marang konstanta dening !!{structure};
-yen term kawangun nganggo !!{function}s, !!{value}-ne dietung saka
+yen terma kawangun nganggo !!{function}s, !!{value}-ne dietung saka
 !!{value}s konstanta lan fungsi kang diwenehake marang simbol fungsi
-ing term kasebut. !!^a{formula} \emph{dicukupi} ing !!a{structure}
+ing terma kasebut. !!^a{formula} \emph{dicukupi} ing !!a{structure}
 yen interpretasi kang diwenehake marang predikat ndadekake
-!!{formula} iku bener ing domain !!{structure} kasebut. Gagasan
+!!{formula} iku bener ing ranah !!{structure} kasebut. Gagasan
 relasi nyukupi iki ditemtokake kanthi induktif: spesifikasi
 !!{structure} langsung nemtokake kapan !!{formula}s atom dicukupi,
 dene kapan !!{formula} kompleks dicukupi kita tetepake miturut
@@ -48,18 +48,18 @@ $s\colon \Var \to \Domain M$.
 \begin{explain}
 !!^a{structure} menehi !!a{value} marang saben !!{constant},
 lan pangaji variabel menehi nilai marang saben variabel.
-Nanging, kita uga pengin nggunakake term kang kawangun saka
+Nanging, kita uga pengin nggunakake terma kang kawangun saka
 simbol-simbol kasebut kanggo menehi jeneng marang !!{element}s
-saka !!{domain}. Mulane, kita nemtokake !!{value} saka term
+saka !!{domain}. Mulane, kita nemtokake !!{value} saka terma
 kanthi induktif. Kanggo !!{constant}s lan variabel, nilai kasebut
 persis kaya kang ditemtokake dening !!{structure} utawa pangaji
-variabel; kanggo term kang luwih rumit, nilaine dietung kanthi
+variabel; kanggo terma kang luwih rumit, nilaine dietung kanthi
 rekursif nggunakake fungsi kang diwenehake dening !!{structure}
 marang !!{function}s.
 \end{explain}
 
-\begin{defn}[!!^{value} saka Term]
-Yen $t$ iku term saka basa~$\Lang L$, $\Struct M$ iku
+\begin{defn}[!!^{value} saka Terma]
+Yen $t$ iku terma saka basa~$\Lang L$, $\Struct M$ iku
 !!{structure} kanggo~$\Lang L$, lan $s$ iku pangaji !!a{variable}
 kanggo~$\Struct M$, \emph{!!{value}}~$\Value{t}{M}[s]$
 ditetepake kaya mangkene:
@@ -99,7 +99,7 @@ iku varian-$x$ saka awake dhewe.
 \end{defn}
 
 Kanthi tembung liya, $\Subst{s}{m}{x}$ iku varian-$x$
-tartamtu saka~$s$ kang menehi !!{element} domain~$m$ marang~$x$,
+tartamtu saka~$s$ kang menehi !!{element} ranah~$m$ marang~$x$,
 lan menehi nilai marang !!{variable}s saliyane~$x$
 padha karo kang diwenehake~$s$.
 
@@ -167,7 +167,7 @@ kandha "kanggo paling ora siji $m \in \Domain{M}$,
 $\Sat{M}{!B(m)}$".}{} Sebabe, yen $m \in \Domain M$,
 unsur kasebut dudu simbol basa, mula $!B(m)$~dudu !!a{formula}
 (yaiku, $\Subst{!B}{m}{x}$ ora ditetepake). Kita uga ora bisa
-nganggep yen kita nduweni !!{constant}s utawa term kang bisa menehi
+nganggep yen kita nduweni !!{constant}s utawa terma kang bisa menehi
 jeneng marang saben !!{element} saka~$\Struct{M}$, amarga definisi
 !!{structure}s ora mbutuhake kuwi. Ing basa standar, himpunan
 !!{constant}s iku !!{denumerable}, mula yen $\Domain{M}$
@@ -176,7 +176,7 @@ menehi jeneng marang saben obyek.
 
 Kita ngrampungi masalah iki kanthi ngenalake pangaji !!{variable},
 kang ngidini kita ngubungake variabel langsung karo !!{element}s
-domain. Dadi, tinimbang kandha, upamane,
+ranah. Dadi, tinimbang kandha, upamane,
 \iftag{prvEx}{$\lexists[x][!B(x)]$}{$\lforall[x][!B(x)]$}
 dicukupi ing~$\Struct M$ yen lan mung yen
 \iftag{prvEx}{kanggo paling ora siji $m \in \Domain{M}$,

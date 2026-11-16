@@ -6,7 +6,7 @@
 
 \begin{document}
 
-\olfileid{fol}{byd}{hol}
+\olfileid[jv]{fol}{byd}{hol}
 
 \olsection{Logika Orde Luwih Dhuwur}
 
@@ -53,7 +53,7 @@ objek kang arep ditliti. Nanging lumrahe
 luwih cetha yen sintaks logika tipe luwih
 dhuwur ditemtokake saka dhasare. Upamane,
 himpunan tipe winates bisa ditemtokake
-kanthi induksi kaya mangkene. Ing kene winates nuduhake pambentukan tipe kanthi langkah sintaktis winates, dudu cacah obyek ing domaine; tipe wilangan asli tetep nduweni obyek tanpa wates:
+kanthi induksi kaya mangkene. Ing kene winates nuduhake pambentukan tipe kanthi langkah sintaktis winates, dudu cacah obyek ing ranahé; tipe wilangan asli tetep nduweni obyek tanpa wates:
 \begin{enumerate}
 \item $\Nat$ iku tipe winates.
 \item Yen $\sigma$ lan $\tau$ iku tipe winates,
@@ -66,31 +66,31 @@ tipe wilangan asli, $\sigma \to \tau$ nuduhake
 tipe fungsi saka $\sigma$ menyang $\tau$,
 lan $\sigma \times \tau$ nuduhake tipe pasangan
 objek, siji saka $\sigma$ lan siji saka $\tau$.
-Sabanjure, himpunan term bisa ditemtokake
+Sabanjure, himpunan terma bisa ditemtokake
 kanthi induksi kaya mangkene:
 \begin{enumerate}
 \item Kanggo saben tipe $\sigma$, ana variabel
   $x$, $y$, $z$, \dots kanthi tipe $\sigma$
-\item $\Obj 0$ iku term tipe $\Nat$
-\item $\Obj S$ (penerus) iku term tipe
+\item $\Obj 0$ iku terma tipe $\Nat$
+\item $\Obj S$ (penerus) iku terma tipe
   $\Nat \to \Nat$
-\item Yen $s$ iku term tipe $\sigma$, lan
-  $t$ iku term tipe $\Nat \to (\sigma \to \sigma)$,
-  mula $\Obj{R}_{st}$ iku term tipe
+\item Yen $s$ iku terma tipe $\sigma$, lan
+  $t$ iku terma tipe $\Nat \to (\sigma \to \sigma)$,
+  mula $\Obj{R}_{st}$ iku terma tipe
   $\Nat \to \sigma$
-\item Yen $s$ iku term tipe $\tau \to \sigma$
-  lan $t$ iku term tipe~$\tau$, mula $s(t)$
-  iku term tipe $\sigma$
-\item Yen $s$ iku term tipe~$\sigma$ lan $x$
+\item Yen $s$ iku terma tipe $\tau \to \sigma$
+  lan $t$ iku terma tipe~$\tau$, mula $s(t)$
+  iku terma tipe $\sigma$
+\item Yen $s$ iku terma tipe~$\sigma$ lan $x$
   iku variabel tipe~$\tau$, mula
-  $\lambd[x][s]$ iku term tipe
+  $\lambd[x][s]$ iku terma tipe
   $\tau \to \sigma$.
-\item Yen $s$ iku term tipe~$\sigma$ lan $t$
-  iku term tipe~$\tau$, mula $\tuple{s, t}$
-  iku term tipe $\sigma \times \tau$.
-\item Yen $s$ iku term tipe~$\sigma \times \tau$,
-  mula $p_1(s)$ iku term tipe~$\sigma$ lan
-  $p_2(s)$ iku term tipe~$\tau$.
+\item Yen $s$ iku terma tipe~$\sigma$ lan $t$
+  iku terma tipe~$\tau$, mula $\tuple{s, t}$
+  iku terma tipe $\sigma \times \tau$.
+\item Yen $s$ iku terma tipe~$\sigma \times \tau$,
+  mula $p_1(s)$ iku terma tipe~$\sigma$ lan
+  $p_2(s)$ iku terma tipe~$\tau$.
 \end{enumerate}
 Miturut pangertèn lumrah, $\Obj{R}_{st}$
 nuduhake fungsi kang ditemtokake kanthi
@@ -99,7 +99,7 @@ rekursi dening
 \Obj{R}_{st}(0) & = s \\
 \Obj{R}_{st}(x+1) & = t(x)(R_{st}(x)),
 \end{align*}
-Term langkah rekursi nduwèni tipe fungsi mawa rong aplikasi runtut. Wènèhana argumen kapisan, banjur argumen kapindho.
+Terma langkah rekursi nduwèni tipe fungsi mawa rong aplikasi runtut. Wènèhana argumen kapisan, banjur argumen kapindho.
 $\tuple{s, t}$ nuduhake pasangan kang
 komponen kapisane~$s$ lan komponen kapindhone~$t$,
 dene $p_1(s)$ lan~$p_2(s)$ nuduhake unsur
@@ -112,13 +112,13 @@ f(x) = s
 kanggo saben~$x$ kanthi tipe~$\tau$;
 mula butir (6) menehi salah siji wujud
 komprehensi, saéngga kita bisa nemtokake
-fungsi nganggo term.
+fungsi nganggo terma.
 !!^{formula}s dibangun saka pratelan !!{identity}
-$\eq[s][t]$ antarane term kanthi tipe padha,
+$\eq[s][t]$ antarane terma kanthi tipe padha,
 panyambung proposisional lumrah, lan
 kuantifikasi tumrap tipe luwih dhuwur.
 Aksioma sistem banjur bisa dijupuk minangka
-persamaan dhasar kang ngatur term-term ing
+persamaan dhasar kang ngatur terma-terma ing
 ndhuwur, bebarengan karo aturan logika
 lumrah kanggo kuantor lan !!{identity}.
 
@@ -126,7 +126,7 @@ Yen sistem tipe winates ditambahi tipe~$\Omega$
 kanggo nilai bebener, kita uga kudu nambah
 aksioma kang ngatur panganggone. Malah yen
 kita cukup trampil, !!{formula}s kang rumit
-bisa dibusak kabeh lan diganti term tipe~$\Omega$!{}
+bisa dibusak kabeh lan diganti terma tipe~$\Omega$!{}
 Sistem bukti banjur bisa diowahi
 manut kahanan iku. Asile yaiku, ing pokoke,
 \emph{teori tipe prasaja} kang diajokake

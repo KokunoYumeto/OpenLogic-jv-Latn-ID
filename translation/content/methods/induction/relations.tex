@@ -6,25 +6,25 @@
 
 \begin{document}
 
-\olfileid{mth}{ind}{rel}
+\olfileid[jv]{mth}{ind}{rel}
 
 \olsection{Relasi lan Fungsi}
 
 Yèn sawijining himpunan obyèk, kaya wilangan asli
-utawa term trep, wis ditetepaké kanthi induktif,
+utawa terma trep, wis ditetepaké kanthi induktif,
 kita uga bisa netepaké \emph{relasi ing}
 obyèk mau kanthi induksi. Upamané, delengen
-gagasan iki: term trep~$t_1$ iku subterm
-saka term trep~$t_2$ yèn muncul minangka
+gagasan iki: terma trep~$t_1$ iku subterma
+saka terma trep~$t_2$ yèn muncul minangka
 pérangané. Gunakna simbol:
-$t_1 \sqsubseteq t_2$. Mesthi saben term
-trep dadi subtermé dhéwé:
+$t_1 \sqsubseteq t_2$. Mesthi saben terma
+trep dadi subtermané dhéwé:
 $t \sqsubseteq t$. Relasi iki bisa
 ditetepaké kanthi induktif:
 
 \begin{defn}
-  Relasi yèn term trep~$t_1$
-  dadi subterm saka~$t_2$,
+  Relasi yèn terma trep~$t_1$
+  dadi subterma saka~$t_2$,
   $t_1
   \sqsubseteq t_2$,
   ditetepaké kanthi induksi
@@ -68,8 +68,8 @@ kang bener.
 Wigati dielingi yèn kasil oraé
 definisi iki gumantung marang
 kasunyatan kang durung dibuktekaké:
-saben term trep~$t$ iku aksara
-tunggal, utawa ana term trep
+saben terma trep~$t$ iku aksara
+tunggal, utawa ana terma trep
 $s_1$ lan $s_2$ kang
 \emph{ditemtokaké kanthi siji cara}
 saéngga $t = [s_1 \circ s_2]$.
@@ -94,26 +94,26 @@ kang nuduhaké yèn bab iki
 \emph{bisa} kelakon.
 
 \begin{defn}
-  Tetepna \emph{term tanpa kurung}
+  Tetepna \emph{terma tanpa kurung}
   kanthi induktif:
   \begin{enumerate}
   \item Saben aksara iku
-    term tanpa kurung.
+    terma tanpa kurung.
   \item Yèn $s_1$ lan $s_2$
-    term tanpa kurung,
+    terma tanpa kurung,
     $s_1 \circ s_2$ uga
-    term tanpa kurung.
+    terma tanpa kurung.
   \item Ora ana liya kang
-    kalebu term tanpa kurung.
+    kalebu terma tanpa kurung.
   \end{enumerate}
 \end{defn}
 
-Conto term tanpa kurung yaiku
+Conto terma tanpa kurung yaiku
 $\mathrm{a}$,
 $\mathrm{b} \circ
 \mathrm{d}$, lan
 $\mathrm{b} \circ \mathrm{a} \circ \mathrm{b}$.
-Yèn ``subterm'' kanggo term
+Yèn ``subterma'' kanggo terma
 tanpa kurung ditetepaké
 kaya ing ndhuwur, klausa
 kapindho dadi
@@ -135,7 +135,7 @@ awujud $s_1
   r_1 & = \mathrm{b} \circ \mathrm{a} \text{ lan} & r_2 &= \mathrm{b}.
 \end{align*}
 Apa $\mathrm{a} \circ \mathrm{b}$
-iku subterm saka
+iku subterma saka
 $\mathrm{b} \circ
 \mathrm{a} \circ \mathrm{b}$?
 Miturut pamacaan kapisan,
@@ -144,7 +144,7 @@ miturut pamacaan kapindho
 ora.
 
 Sipat yèn cara mbangun
-term trep saka term trep liya
+terma trep saka terma trep liya
 iku tunggal diarani
 \emph{mung bisa diwaca kanthi siji cara}.
 Amarga definisi induktif
@@ -153,9 +153,9 @@ kaya iki wigati, kita kudu
 mbuktekaké sipat mau.
 
 \begin{prop}
-  Anggepen $t$ term trep.
+  Anggepen $t$ terma trep.
   Mula $t$ aksara tunggal,
-  utawa ana term trep
+  utawa ana terma trep
   $s_1$, $s_2$ kang
   ditemtokaké kanthi siji
   cara saéngga~$t =
@@ -170,7 +170,7 @@ mbuktekaké sipat mau.
   Miturut definisi induktif,
   $t$ kudu awujud
   $[s_1 \circ s_2]$
-  kanggo term trep
+  kanggo terma trep
   $s_1$ lan~$s_2$.
   Kari mbuktekaké yèn
   loro-loroné ditemtokaké
@@ -181,7 +181,7 @@ mbuktekaké sipat mau.
 
   Anggepen $t = [s_1 \circ s_2]$
   lan uga $t = [r_1 \circ r_2]$
-  kanggo term trep
+  kanggo terma trep
   $s_1$, $s_2$, $r_1$, $r_2$.
   Kita kudu nuduhaké
   $s_1 = r_1$ lan
@@ -194,7 +194,7 @@ mbuktekaké sipat mau.
   miturut \olref[sti]{prop:initial},
   iki ora mungkin yèn
   $s_1$ lan~$r_1$ padha-padha
-  term trep. Yèn
+  terma trep. Yèn
   $s_1 = r_1$, cetha
   $s_2 = r_2$ uga.
 \end{proof}
@@ -202,14 +202,14 @@ mbuktekaké sipat mau.
 Fungsi uga bisa ditetepaké
 kanthi induktif. Upamané,
 fungsi~$f$ kang ngirim saben
-term trep menyang tataran
+terma trep menyang tataran
 jeroné susunan $[\dots]$
 kang paling gedhé bisa
 ditetepaké mangkéné:
 
 \begin{defn}
   \ollabel{defn:depth}
-  \emph{Jeroné} term trep,
+  \emph{Jeroné} terma trep,
   $f(t)$, ditetepaké
   kanthi induktif:
   \[
@@ -232,15 +232,15 @@ Upamané,
 
 Ing kéné kita nganggep
 $s_1$ lan $s_2$
-term trep, lan migunakaké
+terma trep, lan migunakaké
 kasunyatan yèn saben
-term trep iku aksara
+terma trep iku aksara
 utawa awujud
 $[s_1 \circ s_2]$.
 Wigati maneh yèn wujud
 iki mung ana siji cara.
 Kanggo ngerti sebabé,
-delengen maneh term tanpa
+delengen maneh terma tanpa
 kurung. ``Definisi'' kang
 cocog bakal awujud:
 \[
@@ -250,10 +250,10 @@ cocog bakal awujud:
    \max(g(s_1), g(s_2)) + 1 & \text{ yèn $t = s_1 \circ s_2$.}
   \end{cases}
 \]
-Saiki delengen term tanpa
+Saiki delengen terma tanpa
 kurung $\mathrm{a} \circ \mathrm{b} \circ
 \mathrm{c} \circ \mathrm{d}$.
-Term iki bisa diwaca
+Terma iki bisa diwaca
 luwih saka siji cara,
 upamané $s_1 \circ s_2$
 kanthi
@@ -285,12 +285,12 @@ fungsi babar pisan.
   Wènèhana definisi
   induktif kanggo fungsi $l$,
   kanthi $l(t)$ cacah
-  simbol ing term trep~$t$.
+  simbol ing terma trep~$t$.
 \end{prob}
 
 \begin{prob}
   Buktèkna kanthi induksi
-  struktural ing term trep
+  struktural ing terma trep
   $t$ yèn $f(t) < l(t)$,
   kanthi $l(t)$ cacah simbol
   ing~$t$ lan $f(t)$

@@ -6,7 +6,7 @@
 
 \begin{document}
 
-\olfileid{fol}{seq}{qrl}
+\olfileid[jv]{fol}{seq}{qrl}
 
 \olsection{Aturan Kuantor}
 
@@ -24,7 +24,7 @@
 \DisplayProof
 \end{defish}
 
-Ing \LeftR{\lforall}, $t$ iku term katutup (yaiku term tanpa
+Ing \LeftR{\lforall}, $t$ iku terma katutup (yaiku terma tanpa
 variabel). Ing \RightR{\lforall}, $a$~iku !!a{constant} kang ora kena
 muncul ing perangan endi wae saka sekuen ngisor ing aturan
 \RightR{\lforall}. $a$ diarani \emph{eigenvariabel} ing inferensi
@@ -46,7 +46,7 @@ historis.}
 \DisplayProof
 \end{defish}
 
-Maneh, $t$~iku term katutup, lan $a$~iku !!a{constant} kang ora
+Maneh, $t$~iku terma katutup, lan $a$~iku !!a{constant} kang ora
 muncul ing sekuen ngisor ing aturan \LeftR{\lexists}. $a$ diarani
 \emph{eigenvariabel} ing inferensi \LeftR{\lexists}.
 
@@ -80,10 +80,10 @@ ngasilake $\Gamma \Sequent \Delta,
 \end{explain}
 
 \begin{explain}
-Ing \RightR{\lexists} lan \LeftR{\lforall}, $t$ kudu dadi term katutup.
+Ing \RightR{\lexists} lan \LeftR{\lforall}, $t$ kudu dadi terma katutup.
 Ing \LeftR{\lexists} lan \RightR{\lforall}, !!{constant}~$a$ kudu
 absèn saka kesimpulan kabèh, kalebu matriks $!A(x)$ lan konteks.
-Syarat iki perlu supaya sistem mung !!{derive}s sekuen valid. Tanpa syarat iki, inferensi ing ngisor
+Syarat iki perlu supaya sistem mung !!{derive}s sekuen sah. Tanpa syarat iki, inferensi ing ngisor
 iki bakal diidini:
 \begin{prooftree}
   \Axiom$!A(a) \fCenter !A(a)$
@@ -99,8 +99,8 @@ iki bakal diidini:
   \RightLabel{\LeftR{\lexists}}
   \UnaryInf$\lexists[x][!A(x)] \fCenter \lforall[x][!A(x)]$
 \end{prooftree}
-Sekuen $\lexists[x][!A(x)] \Sequent \lforall[x][!A(x)]$ ora valid.
-Predikat unèr kang bener kanggo mung siji anggota saka domain rong unsur
+Sekuen $\lexists[x][!A(x)] \Sequent \lforall[x][!A(x)]$ ora sah.
+Predikat unèr kang bener kanggo mung siji anggota saka ranah rong unsur
 mènèhi conto tandhingan, amarga ukara eksistensial bener lan ukara
 universal salah.
 \end{explain}

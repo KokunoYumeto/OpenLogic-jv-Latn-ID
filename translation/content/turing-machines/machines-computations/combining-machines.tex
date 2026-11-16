@@ -6,7 +6,7 @@
 
 \begin{document}
 
-\olfileid{tur}{mac}{cmb}
+\olfileid[jv]{tur}{mac}{cmb}
 \olsection{Nggabungake Mesin Turing}
 
 \begin{explain}
@@ -30,7 +30,7 @@ Kepriye carane nggabungake mesin Turing
 $M = \tuple{Q, \Sigma, q_0, \delta}$ lan~$M' =
 \tuple{Q', \Sigma', q_0', \delta'}$? Konfigurasi pita
 sawise $M$~mandheg saiki kita gunakake minangka
-konfigurasi input kanggo lumakune mesin~$M'$.
+konfigurasi masukan kanggo lumakune mesin~$M'$.
 Kanggo ngasilake siji mesin Turing $M \frown M'$
 kang nindakake iki, tindakna langkah-langkah iki:
 \begin{enumerate}
@@ -69,7 +69,7 @@ nalika nggabungake mesin.
 
 \begin{ex}
 \emph{Nggabungake Mesin:} Kita bakal ngrancang mesin kang,
-yen diwiwiti nganggo input rong blok~$\TMstroke$ kang
+yen diwiwiti nganggo masukan rong blok~$\TMstroke$ kang
 dawane $n$ lan~$m$, mandheg kanthi siji blok
 $2(m+n)$~$\TMstroke$ ing pita. Kanggo mbangun mesin
 iki, kita bisa nggabungake rong mesin kang wis kita
@@ -92,11 +92,11 @@ kanthi nggambar diagram kahanan mesin panambah.
 \end{tikzpicture}
 \]
 Tinimbang mandheg ing kahanan~$q_2$, kita kepengin
-mesin nerusake pakaryane kanggo nggandakake output.
+mesin nerusake pakaryane kanggo nggandakake asil.
 Elinga, mesin pangganda mbusak guratan kapisan ing
-input lan nulis rong guratan ing output kang kapisah.
+masukan lan nulis rong guratan ing asil kang kapisah.
 Ayo nambah instruksi supaya sirah maca-nulis mesthi
-maca guratan kapisan saka output mesin panambah.
+maca guratan kapisan saka asil mesin panambah.
 \[
 \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
                     semithick]
@@ -117,7 +117,7 @@ maca guratan kapisan saka output mesin panambah.
             edge node[left, xshift=-2mm] {\TMtrans{\TMendtape}{\TMendtape}{\TMright}} (E);
 \end{tikzpicture}
 \]
-Saiki gampang kanggo nggandakake input---kita mung
+Saiki gampang kanggo nggandakake masukan---kita mung
 perlu nyambungake mesin pangganda marang kahanan~$q_4$.
 Kanggo iki, kahanan-kahanan mesin pangganda kudu diwenehi
 jeneng anyar supaya diwiwiti saka~$q_4$, dudu saka~$q_0$
@@ -172,9 +172,9 @@ Diagram pungkasan kudune kaya ing \olref{fig:combined}.
 
 \begin{proof}
     Amarga $M$ tertib, nalika mandheg kanthi
-    output~$f(n_1,\dots,n_k) = m$, sirah maca-nulis
+    asil~$f(n_1,\dots,n_k) = m$, sirah maca-nulis
     lagi maca kothak~$1$. Yen banjur mlebu kahanan
-    wiwitan~$M'$, mesin bakal mandheg kanthi output
+    wiwitan~$M'$, mesin bakal mandheg kanthi asil
     $f'(m)$ lan sirah maca-nulis bali maca kothak~$1$.
     Syarat liyane saka \olref[dis]{defn:disciplined}
     uga katepung.

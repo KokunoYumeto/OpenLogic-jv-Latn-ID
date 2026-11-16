@@ -6,7 +6,7 @@
 
 \begin{document}
 
-\olfileid{tur}{und}{rep}
+\olfileid[jv]{tur}{und}{rep}
 \olsection{Nggambarake Mesin Turing}
 
 \begin{explain}
@@ -61,11 +61,11 @@ lumaku (kanthi teges ``sadurunge'').
 Sawisé basane ditetepake, kita dhaptar
 ``aksioma'' saka $!T(M, w)$, yaiku
 !!{sentence}s kang bebarengan njlentrehake
-tumindake~$M$ nalika diwenehi input~$w$.
+tumindake~$M$ nalika diwenehi masukan~$w$.
 Ana !!{sentence}s kang netepake syarat
 kanggo $\Obj 0$, $\prime$, lan $<$,
 !!{sentence}s kang njlentrehake konfigurasi
-input, lan !!{sentence}s kang njlentrehake
+masukan, lan !!{sentence}s kang njlentrehake
 konfigurasi $M$ sawisé nindakake instruksi
 tartamtu.
 \end{explain}
@@ -92,7 +92,7 @@ basa~$\Lang L_M$ dumadi saka:
 \end{defn}
 
 !!{sentence}s kang njlentrehake lumakune mesin Turing~$M$
-kanthi input $w = \sigma_{i_1}\dots\sigma_{i_k}$
+kanthi masukan $w = \sigma_{i_1}\dots\sigma_{i_k}$
 yaiku ing ngisor iki:
 \begin{enumerate}
 \item Aksioma kang njlentrehake wilangan lan~$<$:
@@ -108,7 +108,7 @@ luwih cilik tinimbang peneruse:
       ((x < y \land y < z) \lif x < z)]]]
 \]
 \end{enumerate}
-\item Aksioma kang njlentrehake konfigurasi input:
+\item Aksioma kang njlentrehake konfigurasi masukan:
 \begin{enumerate}
 \item Sawisé $0$~langkah---sadurunge mesin miwiti
   pakaryane---$M$ ana ing kahanan wiwitan~$q_0$
@@ -117,7 +117,7 @@ luwih cilik tinimbang peneruse:
 \Obj Q_{q_0}(\num{1}, \num{0})
 \]
 % Cathetan sumber input kosong dipindhah menyang prosa item supaya katon ing pamaca.
-\item Kanggo input kosong, konjungsi simbol input kosong lan kothak ing tengen panandha ngemot blank. Kothak-kothak $k+1$ kapisan ngemot simbol
+\item Kanggo masukan kosong, konjungsi simbol masukan kosong lan kothak ing tengen panandha ngemot simbol kosong. Kothak-kothak $k+1$ kapisan ngemot simbol
   $\TMendtape$, $\sigma_{i_1}$, \dots, $\sigma_{i_k}$:
 \[
 \Obj S_\TMendtape(\num{0}, \num{0}) \land
@@ -211,7 +211,7 @@ $y$~langkah.
 \end{enumerate}
 Tetepna $!T(M, w)$ minangka konjungsi kabeh
 !!{sentence}s ing ndhuwur kanggo mesin Turing~$M$
-lan input~$w$.
+lan masukan~$w$.
 
 Kanggo nyatakake yen~$M$ pungkasane mandheg,
 kita kudu nemokake !!{sentence} kang nyatakake
