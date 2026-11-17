@@ -33592,7 +33592,7 @@ sekèn mawa indeks lan himpunan !!{constant}s kang
 gegandhèngan. Ing tataran~$n+1$, tumrap saben
 sekèn paling dhuwur kita tindakaké langkah iki.
 
-Yèn ana !!a{formula}~$!A$ kang katon ing sisih kiwa
+Yèn ana !!{formula} atomik~$!A$ kang katon ing sisih kiwa
 lan tengen sekèn, utawa sisih kiwa ngemot~$\lfalse$,
 kita ora nindakaké apa-apa: sekèn kaya mangkono
 nduwèni !!{proof}s ing~\Log{G3c}, mula sekèn paling
@@ -33685,7 +33685,7 @@ endi waé, algoritma mandheg kanthi kasil. Ing kéné
 kita wis nemokaké !!a{proof} tumrap
 $\Gamma \Sequent \Delta$ saka wit ing tataran~$n+1$
 kanthi mbusak kabèh indeks. Kabèh sekèn paling
-dhuwur awujud $!A, \Pi \Sequent \Lambda, !A$ utawa
+dhuwur awujud $!A, \Pi \Sequent \Lambda, !A$ kanthi $!A$ atomik, utawa
 $\lfalse, \Pi \Sequent \Lambda$. Kabèh inferènsi
 iku inferènsi \Log{G3c} kang bener. Tumrap
 inferènsi proposisional iki cetha. Gatèkna yèn ing
@@ -38615,7 +38615,7 @@ basa kasebut nganggo objek kang padha; saliyane iku, amarga
 ing basa kasebut mung ana cacah winates !!{sentence}s atomik,
 kita uga bisa nganggep yen kabeh mau nyukupi !!{sentence}s
 atomik kang padha (yen ora, kita bisa njupuk subsekuens saka
-$\Struct{M}$). Upamana $\Struct{M}$ minangka gabungan kabeh
+$\Struct{M}_n$). Upamana $\Struct{M}$ minangka gabungan kabeh
 $\Struct{M}_n$, yaiku !!{structure} minimal tunggal kang
 nduweni saben $\Struct{M}_n$ minangka substruktur. Pasangan struktur kanggo indeks béda mbutuhaké konstruksi kode nganggo salinan kapisah lan tafsir simbol kang cocog. Hipotesis durung njamin kabèh struktur iki bisa dadi substruktur saka gabungan harfiah. Kaya ing
 bukti \olref[lsp]{thm:abstract-p-isom}, upamana
@@ -39201,7 +39201,7 @@ rekursi primitif, mula $h$~iku rekursif primitif.
 % BEGIN OLP-0214 content/computability/recursive-functions/notation-pr-functions.tex
 \begingroup
 \olfileid{cmp}{rec}{not}
-\olsection{Notasi Rekursi Primitif}
+\olsection{Notasi Rekursif Primitif}
 
 Salah siji paedahe gambaran induktif kang cetha ngenani fungsi
 rekursif primitif yaiku kita bisa nggambarake fungsi kasebut
@@ -51386,7 +51386,7 @@ Ora ana ekstensi $\Th{Q}$ kang jangkep, konsisten, lan
 
 \begin{proof}
 Kita wis ngerti yen ora ana ekstensi $\Th{Q}$ kang konsisten lan
-bisa diputusake. Nanging yen $\Th{T}$ jangkep lan !!{axiomatized},
+bisa diputusake. Nanging yen $\Th{T}$ jangkep lan !!{axiomatizable},
 mula teori iki bisa diputusake.
 \end{proof}
 
@@ -53561,7 +53561,7 @@ ngemot~$\Assign{\Obj{0}}{M}$ lan, kanggo saben~$x \in \Domain{M}$
 kang kalebu ing subhimpunan kasebut, uga
 ngemot~$\Assign{\prime}{M}(x)$ (yaiku ``tutup tumrap
 panerus''), mula subhimpunan iku ngemot sakabehe unsur
-ing !!{domain} (yaiku $X = \Domain{M})$.
+ing !!{domain} (yaiku $X = \Domain{M}$).
 
 Aksioma induksi njamin yen saben !!{structure} kang nyukupi
 aksioma iku mung ngemot !!{element}s saka~$\Domain{M}$
@@ -53950,18 +53950,19 @@ $s(X) \neq \emptyset$.
 Himpunan~$X$ ora luwih gedhe tinimbang himpunan~$Y$,
 $\cardle{X}{Y}$, yen lan mung yen ana fungsi
 !!a{injective} $f\colon X \to Y$. Amarga kita bisa
-nyatakake yen fungsi iku injektif, lan uga yen nilai-nilaine
-kanggo argumen ing~$X$ kalebu ing~$Y$, kita uga bisa
+nyatakake yen, kanggo argumen ing~$X$, fungsi iku injektif
+lan nilai-nilaine kalebu ing~$Y$, kita uga bisa
 netepake relasi ora luwih gedhe tinimbang ing antarane
 subhimpunan domain.
 
 \begin{prop}
 Rumus
-\[
-\lexists[u][(\lforall[x][(X(x) \lif Y(u(x)))] \land \lforall[x][\lforall[y][(\eq[u(x)][u(y)] \lif
+\begin{multline*}
+\lexists[u][(\lforall[x][(X(x) \lif Y(u(x)))] \land {}\\
+\lforall[x][\lforall[y][((X(x) \land X(y) \land \eq[u(x)][u(y)]) \lif
       \eq[x][y])]])]
-\]
-netepake relasi ora luwih gedhe tinimbang. Ing latar ZFC, injektivitas ing sakabehe domain ing rumus iki isih menehi pangerten ukuran kang padha: gambar ing Y bisa dipilih supaya fungsi injektif bisa dijangkepi menyang domain kabeh. Ora ana syarat gambar X kudu persis Y.
+\end{multline*}
+netepake relasi ora luwih gedhe tinimbang. Fungsi $u$ mung kudu injektif nalika loro argumené ana ing~$X$. Ora ana syarat gambar $X$ kudu persis~$Y$.
 \end{prop}
 
 Rong himpunan padha ukurane, utawa ``padha cacahe,''
@@ -58740,16 +58741,16 @@ fungsi kang !!a{lambda
 
 \begin{lem}
   \ollabel{lem:min} Yen $f(x_1, \dots, x_k, y)$ total, reguler lan
-  !!{lambda definable}, mula $g$~kang ditetepake dening
+  !!{lambda definable}, mula $h$~kang ditetepake dening
   \[
-  g(x_1, \dots, x_k) = \umin{y}{f(x_1,\dots,x_k, y) = 0}
+  h(x_1, \dots, x_k) = \umin{y}{f(x_1,\dots,x_k, y) = 0}
   \]
   uga !!{lambda definable}.
 \end{lem}
 
 \begin{proof}
   Upamakna suku~$F$ ing kalkulus $\lambda$ kang netepake
-  fungsi reguler $f(\vec x, y)$. Kanggo !!{lambda define}~$g$,
+  fungsi reguler $f(\vec x, y)$. Kanggo !!{lambda define}~$h$,
   kita nggunakake fungsi panelusuran lan kombinator titik tetep:
   \begin{align*}
     \fn{Search} & \ident \lambd[g][\lambd[f\,\vec{x}\,y][
@@ -58774,7 +58775,7 @@ fungsi kang !!a{lambda
     \intertext{yen ora. Amarga $f$ reguler, $f(n_1, \dots, n_k, y)
       = 0$ kanggo sawijining $y$, mula}
     (Y \, \fn{Search}) F \num{n_1} \dots\num{n_k}\,\num{0}
-    & \red \num{g(n_1, \dots, n_k)}.
+    & \red \num{h(n_1, \dots, n_k)}.
     \end{align*}
 Totalitas f menehi numeral kanggo saben tes. Yen m minangka nol paling cilik, kabeh tes saka nol nganti sadurunge m menehi numeral positif, saengga ana runtutan winates saka cabang rekursif nganti m, banjur cabang bener menehi numeral m. Reguler menehi anane m kanggo saben input; ora perlu jaminan kabeh strategi evaluasi mandheg.\end{proof}
 
@@ -65752,7 +65753,7 @@ prilakune padha tumrap perkara kang relevan. Yen ana tanpa wates
 donya ing~$\mModel{M}$ kang prilakune padha tumrap perkara kang
 relevan, bisa uga kita nglumpukake \emph{kabeh} donya iku dadi
 sawetara ``kelas'' kang cacahé winates (senajan saben kelas bisa tanpa
-wates). Kanthi tembung liya, kita kudu mbagi himpunan donya kanthi
+wates). Kanthi tembung liya, kita bisa nyoba mbagi himpunan donya kanthi
 cara kang trep, yaiku kelas iku bisa winates utawa tanpa wates,
 nanging cacah kelase winates. Kang winates iku cacah kelas, dudu sarat yen saben kelas tanpa wates. Banjur kita netepake
 model anyar~$\mModel{M^*}$ kang donyane yaiku kelas-kelas kasebut.
@@ -65973,16 +65974,16 @@ $u \in V(p)$.
       asumsi $p \in \Gamma$ lan $\mSat{M}{p}[v]$, kita entuk
       $\mSat{M}{\indfrm}[w]$.}
 
-    \tagitem{prvNot}{\iftag{probNot}{Gladhen.}{\indcase{!A}{\lnot
-          !B}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
+    \tagitem{prvNot}{\indcase{!A}{\lnot
+          !B}{\iftag{probNot}{Gladhen.}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
           $\mSat/{M}{!B}[w]$. Miturut hipotesis induksi,
           $\mSat/{M}{!B}[w]$ yen lan mung yen
           $\mSat/{M^*}{!B}[{[w]}]$. Pungkasane,
           $\mSat/{M^*}{!B}[{[w]}]$ yen lan mung yen
           $\mSat{M^*}{\indfrm}[{[w]}]$.}}}{}
         
-    \tagitem{prvAnd}{\iftag{probAnd}{Gladhen.}{\indcase{!A}{(!B \land
-          !C)}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
+    \tagitem{prvAnd}{\indcase{!A}{(!B \land
+          !C)}{\iftag{probAnd}{Gladhen.}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
           $\mSat{M}{!B}[w]$ lan $\mSat{M}{!C}[w]$. Miturut hipotesis
           induksi, $\mSat{M}{!B}[w]$ yen lan mung yen
           $\mSat{M^*}{!B}[{[w]}]$, lan $\mSat{M}{!C}[w]$ yen lan mung
@@ -65990,8 +65991,8 @@ $u \in V(p)$.
           $\mSat{M^*}{\indfrm}[{[w]}]$ yen lan mung yen
           $\mSat{M^*}{!B}[{[w]}]$ lan $\mSat{M^*}{!C}[{[w]}]$.}}}{}
 
-    \tagitem{prvOr}{\iftag{probOr}{Gladhen.}{\indcase{!A}{(!B \lor
-          !C)}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
+    \tagitem{prvOr}{\indcase{!A}{(!B \lor
+          !C)}{\iftag{probOr}{Gladhen.}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
           $\mSat{M}{!B}[w]$ utawa $\mSat{M}{!C}[w]$. Miturut hipotesis
           induksi, $\mSat{M}{!B}[w]$ yen lan mung yen
           $\mSat{M^*}{!B}[{[w]}]$, lan $\mSat{M}{!C}[w]$ yen lan mung
@@ -65999,8 +66000,8 @@ $u \in V(p)$.
           $\mSat{M^*}{\indfrm}[{[w]}]$ yen lan mung yen
           $\mSat{M^*}{!B}[{[w]}]$ utawa $\mSat{M^*}{!C}[{[w]}]$.}}}{}
 
-    \tagitem{prvIf}{\iftag{probIf}{Gladhen.}{\indcase{!A}{(!B \lif
-          !C)}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
+    \tagitem{prvIf}{\indcase{!A}{(!B \lif
+          !C)}{\iftag{probIf}{Gladhen.}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
           $\mSat/{M}{!B}[w]$ utawa $\mSat{M}{!C}[w]$. Miturut
           hipotesis induksi, $\mSat{M}{!B}[w]$ yen lan mung yen
           $\mSat{M^*}{!B}[{[w]}]$, lan $\mSat{M}{!C}[w]$ yen lan mung
@@ -66008,8 +66009,8 @@ $u \in V(p)$.
           $\mSat{M^*}{\indfrm}[{[w]}]$ yen lan mung yen
           $\mSat/{M^*}{!B}[{[w]}]$ utawa $\mSat{M^*}{!C}[{[w]}]$.}}}{}
 
-    \tagitem{prvIff}{\iftag{probIff}{Gladhen.}{\indcase{!A}{(!B \liff
-          !C)}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
+    \tagitem{prvIff}{\indcase{!A}{(!B \liff
+          !C)}{\iftag{probIff}{Gladhen.}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
           $\mSat{M}{!B}[w]$ lan $\mSat{M}{!C}[w]$, utawa
           $\mSat/{M}{!B}[w]$ lan $\mSat/{M}{!C}[w]$. Miturut
           hipotesis induksi, $\mSat{M}{!B}[w]$ yen lan mung yen
@@ -66019,8 +66020,8 @@ $u \in V(p)$.
           $\mSat{M^*}{!B}[{[w]}]$ lan $\mSat{M^*}{!C}[{[w]}]$, utawa
           $\mSat/{M^*}{!B}[{[w]}]$ lan $\mSat/{M^*}{!C}[{[w]}]$.}}}{}
 
-    \tagitem{prvBox}{\iftag{probBox}{Gladhen.}{\indcase{!A}{\Box
-          !B}{Upamane $\mSat{M}{\indfrm}[w]$; kanggo nuduhake
+    \tagitem{prvBox}{\indcase{!A}{\Box
+          !B}{\iftag{probBox}{Gladhen.}{Upamane $\mSat{M}{\indfrm}[w]$; kanggo nuduhake
           $\mSat{M^*}{\indfrm}[{[w]}]$, jupuken $v$ kang
           $R^*[w][v]$. Miturut
           \olref{defn:filtration}\olref{defn:filtration-R2}, kita duwe
@@ -66035,8 +66036,8 @@ $u \in V(p)$.
           hipotesis induksi $\mSat{M}{!B}[v]$, lan amarga $v$
           sembarang, $\mSat{M}{\indfrm}[w]$.}}}{}
     
-    \tagitem{prvDiamond}{\iftag{probDiamond}{Gladhen.}{\indcase{!A}{\Diamond
-          !B}{Upamane $\mSat{M}{\indfrm}[w]$. Banjur ana $v \in W$
+    \tagitem{prvDiamond}{\indcase{!A}{\Diamond
+          !B}{\iftag{probDiamond}{Gladhen.}{Upamane $\mSat{M}{\indfrm}[w]$. Banjur ana $v \in W$
           kang $Rwv$ lan $\mSat{M}{!B}[v]$. Miturut hipotesis induksi,
           $\mSat{M^*}{!B}[{[v]}]$, lan miturut
           \olref{defn:filtration}\olref{defn:filtration-R1}, kita duwe

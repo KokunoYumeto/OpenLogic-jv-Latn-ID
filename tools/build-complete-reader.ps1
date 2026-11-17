@@ -14,7 +14,7 @@ if (Get-ChildItem -LiteralPath $Output -Force | Select-Object -First 1) { throw 
 if (-not (Test-Path -LiteralPath (Join-Path $Edition "$JobName.tex") -PathType Leaf)) { throw 'Missing reader source.' }
 Add-Type -Path (Join-Path $PSScriptRoot 'WindowsTexJob.cs')
 $mutex = [Threading.Mutex]::new($false, 'Global\InterlanguageTeXSlotV1')
-$receipt = [ordered]@{status='pending'; acquired=$false; released=$false; memory_limit_bytes=5GB; commands=@()}
+$receipt = [ordered]@{status='pending'; acquired=$false; released=$false; memory_limit_bytes=5000000000; commands=@()}
 $oldBib, $oldBst, $oldEpoch, $oldDate = $env:BIBINPUTS, $env:BSTINPUTS, $env:SOURCE_DATE_EPOCH, $env:FORCE_SOURCE_DATE
 
 function Run-TeXTool([string]$Name, [string]$Arguments, [string]$Directory) {

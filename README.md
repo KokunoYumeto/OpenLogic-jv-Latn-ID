@@ -31,7 +31,7 @@ Tèks asli anggitané Open Logic Project. Terjemahan, koreksi, panyuntingan lan
 tata aksara diprodhuksi AI OpenAI Codex, kalebu GPT-5.6 Sol, GPT-6 Sol lan GPT-6.1 Sol.
 Panyelarasan karo revisi sumber ing ngisor iki diprodhuksi GPT-6.1 Sol
 kanthi upaya nalar Ultra. Wacan lan sumber asli nyebut panulis sarta komponen kang dienggo.
-[Tèks Inggris OpenLogic, revisi 1e960beff9ed7835bf3e3f1335e21af3439cd107](https://github.com/OpenLogicProject/OpenLogic/tree/1e960beff9ed7835bf3e3f1335e21af3439cd107).
+[Tèks Inggris OpenLogic, revisi 3aacf4afad2ed3827c7cdb46b1b49942574247a6](https://github.com/OpenLogicProject/OpenLogic/tree/3aacf4afad2ed3827c7cdb46b1b49942574247a6).
 
 Tèks lan adaptasiné nganggo Creative Commons Attribution 4.0 International.
 Saben komponen kanthi lisènsi kapisah manut kabar lisènsiné dhéwé.

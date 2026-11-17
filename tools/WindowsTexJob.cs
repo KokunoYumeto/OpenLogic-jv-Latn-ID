@@ -23,9 +23,9 @@ public static class JvWindowsTexJob {
  public static void LimitMemory(IntPtr job) {
    var limits = new ExtendedLimits();
    limits.Basic.Flags = 0x00000200 | 0x00002000;
-   limits.JobMemory = new UIntPtr(5UL * 1024 * 1024 * 1024);
+   limits.JobMemory = new UIntPtr(5000000000UL);
    if (!SetInformationJobObject(job,9,ref limits,(uint)Marshal.SizeOf(typeof(ExtendedLimits))))
-     throw new Win32Exception(Marshal.GetLastWin32Error(),"Could not set the 5 GiB process-tree limit.");
+     throw new Win32Exception(Marshal.GetLastWin32Error(),"Could not set the 5,000,000,000-byte process-tree limit.");
  }
 
  [DllImport("kernel32.dll",CharSet=CharSet.Unicode)] public static extern IntPtr CreateJobObject(IntPtr attrs,string name);

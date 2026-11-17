@@ -82,16 +82,16 @@ $u \in V(p)$.
       asumsi $p \in \Gamma$ lan $\mSat{M}{p}[v]$, kita entuk
       $\mSat{M}{\indfrm}[w]$.}
 
-    \tagitem{prvNot}{\iftag{probNot}{Gladhen.}{\indcase{!A}{\lnot
-          !B}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
+    \tagitem{prvNot}{\indcase{!A}{\lnot
+          !B}{\iftag{probNot}{Gladhen.}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
           $\mSat/{M}{!B}[w]$. Miturut hipotesis induksi,
           $\mSat/{M}{!B}[w]$ yen lan mung yen
           $\mSat/{M^*}{!B}[{[w]}]$. Pungkasane,
           $\mSat/{M^*}{!B}[{[w]}]$ yen lan mung yen
           $\mSat{M^*}{\indfrm}[{[w]}]$.}}}{}
         
-    \tagitem{prvAnd}{\iftag{probAnd}{Gladhen.}{\indcase{!A}{(!B \land
-          !C)}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
+    \tagitem{prvAnd}{\indcase{!A}{(!B \land
+          !C)}{\iftag{probAnd}{Gladhen.}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
           $\mSat{M}{!B}[w]$ lan $\mSat{M}{!C}[w]$. Miturut hipotesis
           induksi, $\mSat{M}{!B}[w]$ yen lan mung yen
           $\mSat{M^*}{!B}[{[w]}]$, lan $\mSat{M}{!C}[w]$ yen lan mung
@@ -99,8 +99,8 @@ $u \in V(p)$.
           $\mSat{M^*}{\indfrm}[{[w]}]$ yen lan mung yen
           $\mSat{M^*}{!B}[{[w]}]$ lan $\mSat{M^*}{!C}[{[w]}]$.}}}{}
 
-    \tagitem{prvOr}{\iftag{probOr}{Gladhen.}{\indcase{!A}{(!B \lor
-          !C)}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
+    \tagitem{prvOr}{\indcase{!A}{(!B \lor
+          !C)}{\iftag{probOr}{Gladhen.}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
           $\mSat{M}{!B}[w]$ utawa $\mSat{M}{!C}[w]$. Miturut hipotesis
           induksi, $\mSat{M}{!B}[w]$ yen lan mung yen
           $\mSat{M^*}{!B}[{[w]}]$, lan $\mSat{M}{!C}[w]$ yen lan mung
@@ -108,8 +108,8 @@ $u \in V(p)$.
           $\mSat{M^*}{\indfrm}[{[w]}]$ yen lan mung yen
           $\mSat{M^*}{!B}[{[w]}]$ utawa $\mSat{M^*}{!C}[{[w]}]$.}}}{}
 
-    \tagitem{prvIf}{\iftag{probIf}{Gladhen.}{\indcase{!A}{(!B \lif
-          !C)}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
+    \tagitem{prvIf}{\indcase{!A}{(!B \lif
+          !C)}{\iftag{probIf}{Gladhen.}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
           $\mSat/{M}{!B}[w]$ utawa $\mSat{M}{!C}[w]$. Miturut
           hipotesis induksi, $\mSat{M}{!B}[w]$ yen lan mung yen
           $\mSat{M^*}{!B}[{[w]}]$, lan $\mSat{M}{!C}[w]$ yen lan mung
@@ -117,8 +117,8 @@ $u \in V(p)$.
           $\mSat{M^*}{\indfrm}[{[w]}]$ yen lan mung yen
           $\mSat/{M^*}{!B}[{[w]}]$ utawa $\mSat{M^*}{!C}[{[w]}]$.}}}{}
 
-    \tagitem{prvIff}{\iftag{probIff}{Gladhen.}{\indcase{!A}{(!B \liff
-          !C)}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
+    \tagitem{prvIff}{\indcase{!A}{(!B \liff
+          !C)}{\iftag{probIff}{Gladhen.}{$\mSat{M}{\indfrm}[w]$ yen lan mung yen
           $\mSat{M}{!B}[w]$ lan $\mSat{M}{!C}[w]$, utawa
           $\mSat/{M}{!B}[w]$ lan $\mSat/{M}{!C}[w]$. Miturut
           hipotesis induksi, $\mSat{M}{!B}[w]$ yen lan mung yen
@@ -128,8 +128,8 @@ $u \in V(p)$.
           $\mSat{M^*}{!B}[{[w]}]$ lan $\mSat{M^*}{!C}[{[w]}]$, utawa
           $\mSat/{M^*}{!B}[{[w]}]$ lan $\mSat/{M^*}{!C}[{[w]}]$.}}}{}
 
-    \tagitem{prvBox}{\iftag{probBox}{Gladhen.}{\indcase{!A}{\Box
-          !B}{Upamane $\mSat{M}{\indfrm}[w]$; kanggo nuduhake
+    \tagitem{prvBox}{\indcase{!A}{\Box
+          !B}{\iftag{probBox}{Gladhen.}{Upamane $\mSat{M}{\indfrm}[w]$; kanggo nuduhake
           $\mSat{M^*}{\indfrm}[{[w]}]$, jupuken $v$ kang
           $R^*[w][v]$. Miturut
           \olref{defn:filtration}\olref{defn:filtration-R2}, kita duwe
@@ -144,8 +144,8 @@ $u \in V(p)$.
           hipotesis induksi $\mSat{M}{!B}[v]$, lan amarga $v$
           sembarang, $\mSat{M}{\indfrm}[w]$.}}}{}
     
-    \tagitem{prvDiamond}{\iftag{probDiamond}{Gladhen.}{\indcase{!A}{\Diamond
-          !B}{Upamane $\mSat{M}{\indfrm}[w]$. Banjur ana $v \in W$
+    \tagitem{prvDiamond}{\indcase{!A}{\Diamond
+          !B}{\iftag{probDiamond}{Gladhen.}{Upamane $\mSat{M}{\indfrm}[w]$. Banjur ana $v \in W$
           kang $Rwv$ lan $\mSat{M}{!B}[v]$. Miturut hipotesis induksi,
           $\mSat{M^*}{!B}[{[v]}]$, lan miturut
           \olref{defn:filtration}\olref{defn:filtration-R1}, kita duwe

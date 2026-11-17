@@ -33,18 +33,19 @@ $s(X) \neq \emptyset$.
 Himpunan~$X$ ora luwih gedhe tinimbang himpunan~$Y$,
 $\cardle{X}{Y}$, yen lan mung yen ana fungsi
 !!a{injective} $f\colon X \to Y$. Amarga kita bisa
-nyatakake yen fungsi iku injektif, lan uga yen nilai-nilaine
-kanggo argumen ing~$X$ kalebu ing~$Y$, kita uga bisa
+nyatakake yen, kanggo argumen ing~$X$, fungsi iku injektif
+lan nilai-nilaine kalebu ing~$Y$, kita uga bisa
 netepake relasi ora luwih gedhe tinimbang ing antarane
 subhimpunan domain.
 
 \begin{prop}
 Rumus
-\[
-\lexists[u][(\lforall[x][(X(x) \lif Y(u(x)))] \land \lforall[x][\lforall[y][(\eq[u(x)][u(y)] \lif
+\begin{multline*}
+\lexists[u][(\lforall[x][(X(x) \lif Y(u(x)))] \land {}\\
+\lforall[x][\lforall[y][((X(x) \land X(y) \land \eq[u(x)][u(y)]) \lif
       \eq[x][y])]])]
-\]
-netepake relasi ora luwih gedhe tinimbang. Ing latar ZFC, injektivitas ing sakabehe domain ing rumus iki isih menehi pangerten ukuran kang padha: gambar ing Y bisa dipilih supaya fungsi injektif bisa dijangkepi menyang domain kabeh. Ora ana syarat gambar X kudu persis Y.
+\end{multline*}
+netepake relasi ora luwih gedhe tinimbang. Fungsi $u$ mung kudu injektif nalika loro argumené ana ing~$X$. Ora ana syarat gambar $X$ kudu persis~$Y$.
 \end{prop}
 
 Rong himpunan padha ukurane, utawa ``padha cacahe,''

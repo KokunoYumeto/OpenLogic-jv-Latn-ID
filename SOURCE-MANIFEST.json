@@ -1,7 +1,7 @@
 {
   "schema": "openlogic-jv-source-manifest/1",
-  "upstream_revision": "1e960beff9ed7835bf3e3f1335e21af3439cd107",
-  "release": "v0.3.2",
+  "upstream_revision": "3aacf4afad2ed3827c7cdb46b1b49942574247a6",
+  "release": "v0.3.3",
   "language": "jv-Latn-ID",
   "title": "OpenLogic ing Basa Jawa",
   "original_author": "Open Logic Project",
@@ -506,8 +506,8 @@
       "id": "OLP-0039",
       "english": {
         "path": "upstream/content/sets-functions-relations/size-of-sets/non-enumerability-alt.tex",
-        "bytes": 6574,
-        "sha256": "a075f6c63879101314fb20fa493acfb38d78ff24095bb55914f2af4527e1ad3e"
+        "bytes": 6571,
+        "sha256": "da318273e4c07945c8274b71bc911d2181317553283b679b543d416805b64522"
       },
       "javanese": {
         "path": "translation/content/sets-functions-relations/size-of-sets/non-enumerability-alt.tex",
@@ -1052,8 +1052,8 @@
       "id": "OLP-0081",
       "english": {
         "path": "upstream/content/first-order-logic/sequent-calculus/soundness.tex",
-        "bytes": 17663,
-        "sha256": "4de487cafc9d685844abb2c0b29c7b51debeb30a9b1129c7a2fa8c13ae48b151"
+        "bytes": 17732,
+        "sha256": "3e99a9b02f67a8b631aa0b661b5c47683ac48b5520f20a412c297a3e547261cb"
       },
       "javanese": {
         "path": "translation/content/first-order-logic/sequent-calculus/soundness.tex",
@@ -1156,8 +1156,8 @@
       "id": "OLP-0089",
       "english": {
         "path": "upstream/content/first-order-logic/natural-deduction/proving-things.tex",
-        "bytes": 11062,
-        "sha256": "d39069643439c576cb5813ef635725ac09ef83257571e380b92dfa223a801ecc"
+        "bytes": 11059,
+        "sha256": "8b187b4e1e4cf8a9422abec80f97dc65c128c20d9a9973febf4f9b6bdf259095"
       },
       "javanese": {
         "path": "translation/content/first-order-logic/natural-deduction/proving-things.tex",
@@ -1377,8 +1377,8 @@
       "id": "OLP-0106",
       "english": {
         "path": "upstream/content/first-order-logic/tableaux/provability-consistency.tex",
-        "bytes": 6120,
-        "sha256": "1e3cd1b98b0dae48850118a996aa37c04da92108c91d2096e51ac4a19025f348"
+        "bytes": 6115,
+        "sha256": "5a1bf855b71c7350e6463191dcb112cc42d4b2846ce501290766edc96d1b6499"
       },
       "javanese": {
         "path": "translation/content/first-order-logic/tableaux/provability-consistency.tex",
@@ -1728,8 +1728,8 @@
       "id": "OLP-0133",
       "english": {
         "path": "upstream/content/first-order-logic/completeness/identity.tex",
-        "bytes": 7831,
-        "sha256": "bc3391e4db38b0552ee8429b14f32124cdb7ee71e766ce17a5eaa2422126aa71"
+        "bytes": 7832,
+        "sha256": "45c7756976366c46fdea6b3debe94559fbf23362dceabbdb6da0a2a88c4ae6ff"
       },
       "javanese": {
         "path": "translation/content/first-order-logic/completeness/identity.tex",
@@ -2118,8 +2118,8 @@
       "id": "OLP-0163",
       "english": {
         "path": "upstream/content/first-order-logic/syntax-and-semantics/satisfaction.tex",
-        "bytes": 16899,
-        "sha256": "1345318ddf4f4df715f3cb3403b5a457eaf5d2941b0c745593d4a0001ade7ace"
+        "bytes": 16935,
+        "sha256": "287d3a512bfc99c7b743ca1f5a66e372d0fb7ff54f8e584ebe351c7701dc5072"
       },
       "javanese": {
         "path": "translation/content/first-order-logic/syntax-and-semantics/satisfaction.tex",
@@ -2469,8 +2469,8 @@
       "id": "OLP-0190",
       "english": {
         "path": "upstream/content/model-theory/basics/dlo.tex",
-        "bytes": 3509,
-        "sha256": "9c7bd2cbee65556d3edc1316632fa5714527901ee0aed70ee76e2c4db7c03531"
+        "bytes": 3636,
+        "sha256": "78925883763f738866507a8f3f0303ac20413f8810f6301d1a4de08f6f39015c"
       },
       "javanese": {
         "path": "translation/content/model-theory/basics/dlo.tex",
@@ -2690,13 +2690,13 @@
       "id": "OLP-0207",
       "english": {
         "path": "upstream/content/model-theory/lindstrom/lindstrom-proof.tex",
-        "bytes": 6045,
-        "sha256": "a9de6ae6e6dd2ec2db64e9c7d3afad37a695896af57d50a64f003f958db499d9"
+        "bytes": 6047,
+        "sha256": "182290a6c2dee00b4d09af01bda9c6a83cedf14e6a2e1d4834c8aa9187fb83f7"
       },
       "javanese": {
         "path": "translation/content/model-theory/lindstrom/lindstrom-proof.tex",
-        "bytes": 7358,
-        "sha256": "4d6f4031eb128d9c83e54644a69b7a32e02dbff66c11631a58b2ebedaef53e6d"
+        "bytes": 7360,
+        "sha256": "487919a2d2af37f4900d12bc1b4ff722f65a7a0a76b88c3f9f5afda1739f8734"
       }
     },
     {
@@ -2769,7 +2769,7 @@
       "english": {
         "path": "upstream/content/computability/recursive-functions/pr-functions.tex",
         "bytes": 5918,
-        "sha256": "893f3c79391b6a02b0af25282b921b2a06db27f5b94b4a6e0fed0c807e1e0ee1"
+        "sha256": "6a6788f660acef19c6ca2579d820f8c8b0bd7509130c85c150da012e3b03416c"
       },
       "javanese": {
         "path": "translation/content/computability/recursive-functions/pr-functions.tex",
@@ -2782,12 +2782,12 @@
       "english": {
         "path": "upstream/content/computability/recursive-functions/notation-pr-functions.tex",
         "bytes": 2083,
-        "sha256": "8e10b20204065445cbf26871cb999e37664b46af04a7bb7233f880c9404f4a5f"
+        "sha256": "28632413fbaf670bdb63555173df81053921d914d138dd98706ae639e16602e7"
       },
       "javanese": {
         "path": "translation/content/computability/recursive-functions/notation-pr-functions.tex",
-        "bytes": 2068,
-        "sha256": "7fcc65c15079dcd791fa41649e13e9b7e3a90182b6a059aab908b09ac04fb810"
+        "bytes": 2069,
+        "sha256": "e31a7efe778f1331676f56763b9b52d9acd4fc12860c18d542f38499beecc120"
       }
     },
     {
@@ -3900,7 +3900,7 @@
       "english": {
         "path": "upstream/content/incompleteness/representability-in-q/sigma1-completeness.tex",
         "bytes": 11579,
-        "sha256": "9509cb0c6c1a6d93245a581021a177b4a658d0b098eb467d96a1fd0ba2e14d3d"
+        "sha256": "1ea31e10076afcbbd053c9ff69332f486766b1fb7dd1d477379303d0ccc0f4b3"
       },
       "javanese": {
         "path": "translation/content/incompleteness/representability-in-q/sigma1-completeness.tex",
@@ -4003,13 +4003,13 @@
       "id": "OLP-0308",
       "english": {
         "path": "upstream/content/incompleteness/theories-computability/first-incompleteness.tex",
-        "bytes": 1681,
-        "sha256": "6d136f51b1d58f3d8831a237dd21b65a146381874e9549c7e504080264df82bd"
+        "bytes": 1683,
+        "sha256": "36aeeed707ff4825110f032b607a4d8dac82eecebda3453c726d79bfd88ec521"
       },
       "javanese": {
         "path": "translation/content/incompleteness/theories-computability/first-incompleteness.tex",
-        "bytes": 1722,
-        "sha256": "17472e23000e80e9cd8b7db5570c151238c6bea844824ed2d214c7f22f7d2d4a"
+        "bytes": 1724,
+        "sha256": "43dcc462d15a274f8053b28455b8039871b87fbac19aa623217fa9e1542f09af"
       }
     },
     {
@@ -4316,12 +4316,12 @@
       "english": {
         "path": "upstream/content/second-order-logic/metatheory/second-order-arithmetic.tex",
         "bytes": 5174,
-        "sha256": "a09f150a63d364e758adf2547e5237108b76d6ea7f08d23fe9373792b71bea0d"
+        "sha256": "c73dad2d7b4501c6baa33b7e494fdff4fcd25eb76492491521a07e193c5f2d5e"
       },
       "javanese": {
         "path": "translation/content/second-order-logic/metatheory/second-order-arithmetic.tex",
         "bytes": 5919,
-        "sha256": "f401dff7fe3a23b88aea14040b8c7d4dce6c6a177f0429ef6d2827ddd819634d"
+        "sha256": "c583f1cabf9eba04b13cefc01cce8217e0a7ef02a22abfbd3334dcd8537e5887"
       }
     },
     {
@@ -4329,7 +4329,7 @@
       "english": {
         "path": "upstream/content/second-order-logic/metatheory/undecidability-and-axiomatizability.tex",
         "bytes": 1875,
-        "sha256": "d145a2ab03186358310a7f917ed7aa9eb49e95efbb80c3a2e8356be818d25108"
+        "sha256": "b497aae12d3be8316509937a9919e4b17780d81020c7547561777eb2d9e846ed"
       },
       "javanese": {
         "path": "translation/content/second-order-logic/metatheory/undecidability-and-axiomatizability.tex",
@@ -4393,13 +4393,13 @@
       "id": "OLP-0338",
       "english": {
         "path": "upstream/content/second-order-logic/sol-and-set-theory/comparing-sets.tex",
-        "bytes": 2564,
-        "sha256": "d64defa142c5d31762b286b3e9c94fbe278e6462d8f417388b2405383e73b330"
+        "bytes": 2632,
+        "sha256": "2cd0688b17ec73cf03290d37676420b4cd0a7a37e5838e3873add0cac41585bd"
       },
       "javanese": {
         "path": "translation/content/second-order-logic/sol-and-set-theory/comparing-sets.tex",
-        "bytes": 3288,
-        "sha256": "40f11fd290fbf1847dbd523782a0a3062f5c7b57adc448729b8f1465a19afdcd"
+        "bytes": 3217,
+        "sha256": "765197296531b5dbc8eb93ca072cdc509f34eb6140dd544c9018ca4c01332fe6"
       }
     },
     {
@@ -4875,7 +4875,7 @@
       "english": {
         "path": "upstream/content/lambda-calculus/lambda-definability/arithmetical-functions.tex",
         "bytes": 4990,
-        "sha256": "1c5db87c79c1edc7766be8031d7c6e35498be393367e2651c9b37950d5db7d24"
+        "sha256": "f0364b6753655c14d14d4b0950c2a41edf695ea2593a3f0768b94438defdc6a9"
       },
       "javanese": {
         "path": "translation/content/lambda-calculus/lambda-definability/arithmetical-functions.tex",
@@ -4901,7 +4901,7 @@
       "english": {
         "path": "upstream/content/lambda-calculus/lambda-definability/truth-values.tex",
         "bytes": 3170,
-        "sha256": "c59cf879d08ccb846c28886a957ffee1a5256157e9a160af104606743eb9006c"
+        "sha256": "a60494fccced101d9a9dabba0265496e724f296782e5154c5803a37e93aeb15a"
       },
       "javanese": {
         "path": "translation/content/lambda-calculus/lambda-definability/truth-values.tex",
@@ -4913,8 +4913,8 @@
       "id": "OLP-0378",
       "english": {
         "path": "upstream/content/lambda-calculus/lambda-definability/primitive-recursive-functions.tex",
-        "bytes": 5835,
-        "sha256": "dbedc0b45f7d2ce9eebd36a219fe22b532ddebb6082fb4bf356afc612f4e294d"
+        "bytes": 5839,
+        "sha256": "70719932ac70e3f47f37b6a3dede92793ef4a4f0ebdc18c2478a23d8264879bb"
       },
       "javanese": {
         "path": "translation/content/lambda-calculus/lambda-definability/primitive-recursive-functions.tex",
@@ -4926,8 +4926,8 @@
       "id": "OLP-0379",
       "english": {
         "path": "upstream/content/lambda-calculus/lambda-definability/fixpoints.tex",
-        "bytes": 6921,
-        "sha256": "d826387d4284ef13679ef5b91a22bb7551c193c2e8c8356201ceb1df72a46b93"
+        "bytes": 6938,
+        "sha256": "a65ae50d890220d124611e9ec41d38d2c9f2095917fc7f3a5f611f617fbb9634"
       },
       "javanese": {
         "path": "translation/content/lambda-calculus/lambda-definability/fixpoints.tex",
@@ -4939,13 +4939,13 @@
       "id": "OLP-0380",
       "english": {
         "path": "upstream/content/lambda-calculus/lambda-definability/minimization.tex",
-        "bytes": 2488,
-        "sha256": "4da3bef314009bbd93701e19fa66ff1bd7dc718427fa1ddd06d223b2aaf9b7f6"
+        "bytes": 2493,
+        "sha256": "c65e9cbd14ffc99101d8abdcf7737fb92e34894062968f6b07d6dcd89e3c4c40"
       },
       "javanese": {
         "path": "translation/content/lambda-calculus/lambda-definability/minimization.tex",
         "bytes": 3353,
-        "sha256": "75bcd7846d827eb8af498bcd2c31bcf6c8c571b2621840168cd1c3881235567e"
+        "sha256": "dd89aedad61d6252b3c3b22ecda2fa3def1c1e7459186c4dd5b2202cb2cb33b1"
       }
     },
     {
@@ -5758,8 +5758,8 @@
       "id": "OLP-0443",
       "english": {
         "path": "upstream/content/normal-modal-logic/completeness/complete-consistent-sets.tex",
-        "bytes": 6135,
-        "sha256": "b5bab763b10f3972e8a8c53ae3036677c0b462f86df13137ccb6181d9ce632e1"
+        "bytes": 6141,
+        "sha256": "6c24c6ba491212fde0feb8364e266434d8585c767747f1e6f031d876d0e99d78"
       },
       "javanese": {
         "path": "translation/content/normal-modal-logic/completeness/complete-consistent-sets.tex",
@@ -5862,13 +5862,13 @@
       "id": "OLP-0451",
       "english": {
         "path": "upstream/content/normal-modal-logic/filtrations/introduction.tex",
-        "bytes": 7256,
-        "sha256": "faffee0613cc37515af229a202fed584e49ea182600e77c96d722654492eb01a"
+        "bytes": 7262,
+        "sha256": "820ad3aa62f77568e5c98e874d7b951fc8048754b4a7de08eb4e97f168d87896"
       },
       "javanese": {
         "path": "translation/content/normal-modal-logic/filtrations/introduction.tex",
-        "bytes": 7792,
-        "sha256": "ca1c9834c7b2a5d0ed3498ead8fc4d8da1389c68b0a330ea2d24c4d779c7e2c0"
+        "bytes": 7798,
+        "sha256": "5bc68f8b1fa3950e8279396ee63a72150c083a6a3bc791fd4c8148e2c704d423"
       }
     },
     {
@@ -5888,21 +5888,21 @@
       "id": "OLP-0453",
       "english": {
         "path": "upstream/content/normal-modal-logic/filtrations/filtrations-def.tex",
-        "bytes": 7954,
-        "sha256": "e7f0f36522a5549a046c4c7999dec2c80751ed486edb72efaa3c3962bb4d02d1"
+        "bytes": 8036,
+        "sha256": "288027623e7e36375921e4481e457eb7b419bd48cd2acc2fecbdbf9b7ecf2851"
       },
       "javanese": {
         "path": "translation/content/normal-modal-logic/filtrations/filtrations-def.tex",
         "bytes": 8441,
-        "sha256": "4aebc224674cec8ddc99726b62e1ea7ab455fd55b79d00385f988eba44c8fc09"
+        "sha256": "735380155d64892dcf5bc5eea816f9a4f1ccc829aec66040c22872476e71e41d"
       }
     },
     {
       "id": "OLP-0454",
       "english": {
         "path": "upstream/content/normal-modal-logic/filtrations/examples-of-filtrations.tex",
-        "bytes": 9611,
-        "sha256": "8a20bbfcc005772b9166800bca81278de3b28c4b47f51d01dc07f69777c8a484"
+        "bytes": 9610,
+        "sha256": "dd1ef75f7d093eac0dea76bc43a05591fdcec6dca8cdceb21ffa1ffdbe9310aa"
       },
       "javanese": {
         "path": "translation/content/normal-modal-logic/filtrations/examples-of-filtrations.tex",
@@ -6031,8 +6031,8 @@
       "id": "OLP-0464",
       "english": {
         "path": "upstream/content/normal-modal-logic/tableaux/soundness.tex",
-        "bytes": 12701,
-        "sha256": "337485e1de3eaba7bdffdc6dddd9e9b4e0fe569bc9eaed470f7af27088492100"
+        "bytes": 12702,
+        "sha256": "6c2e2e998d75d7533fe70537f715af61061086284a657956520b64d974e3af1f"
       },
       "javanese": {
         "path": "translation/content/normal-modal-logic/tableaux/soundness.tex",
@@ -6278,8 +6278,8 @@
       "id": "OLP-0483",
       "english": {
         "path": "upstream/content/applied-modal-logic/epistemic-logic/introduction.tex",
-        "bytes": 2025,
-        "sha256": "b2c3d1cfca757032d8e89e4f17207aa4f37248926fa4f1a3057ef724407c09d9"
+        "bytes": 2026,
+        "sha256": "71bf564e601b3c58991a67a6081363b661bdaf0daa925d023158797a3e189186"
       },
       "javanese": {
         "path": "translation/content/applied-modal-logic/epistemic-logic/introduction.tex",
@@ -6694,8 +6694,8 @@
       "id": "OLP-0515",
       "english": {
         "path": "upstream/content/intuitionistic-logic/tableaux/soundness.tex",
-        "bytes": 9818,
-        "sha256": "3852095c3c8edfdf76e294936602d8a0d640622642fcb0c27cf55420ef99e46c"
+        "bytes": 9819,
+        "sha256": "1142fbf2a886a87a2a38f45263e17fb54dc2eeda94664a8663e6dd634ed3d012"
       },
       "javanese": {
         "path": "translation/content/intuitionistic-logic/tableaux/soundness.tex",
@@ -7500,8 +7500,8 @@
       "id": "OLP-0577",
       "english": {
         "path": "upstream/content/set-theory/ord-arithmetic/using-addition.tex",
-        "bytes": 4730,
-        "sha256": "9641a137f0347689fad7fc04337f8889991e482c6179513c19a0bfbc619eaff1"
+        "bytes": 4733,
+        "sha256": "df075118aa83c2a15b36a8a07bb50e385c5c60d3914fce5d895c96b68bb2d774"
       },
       "javanese": {
         "path": "translation/content/set-theory/ord-arithmetic/using-addition.tex",
@@ -7877,8 +7877,8 @@
       "id": "OLP-0606",
       "english": {
         "path": "upstream/content/methods/proofs/inference-patterns.tex",
-        "bytes": 17286,
-        "sha256": "dec51f23018334023107ecfaa7a2f31fdf964b2b0cb7aebaeeb4e1688ed6dd31"
+        "bytes": 17280,
+        "sha256": "63bd616d75f232f7789ef8f9c8508327ca86e07fd2a03f80909f8d1ebf95020e"
       },
       "javanese": {
         "path": "translation/content/methods/proofs/inference-patterns.tex",
@@ -8359,7 +8359,7 @@
       "english": {
         "path": "upstream/content/first-order-logic/axiomatic-deduction/provability.tex",
         "bytes": 11796,
-        "sha256": "150b411bdceac490428e642969889123ecc14db1668fde926adfc1d831e28745"
+        "sha256": "7f7165400dad6c1c62cd90d46e86d5f485ca851e83d3f73ef205ed634b84ea79"
       },
       "javanese": {
         "path": "translation/content/first-order-logic/axiomatic-deduction/provability.tex",
@@ -8618,8 +8618,8 @@
       "id": "OLP-0663",
       "english": {
         "path": "upstream/content/proof-theory/natural-deduction/introduction.tex",
-        "bytes": 5294,
-        "sha256": "782f91d07d6f92f5ae9cea347d3d04f6a84c140008cbe9381d125c63d352ddb9"
+        "bytes": 5302,
+        "sha256": "5d5499e613ba7082328172c50125c1306daac46bedb3ee39874824ab37dd80a4"
       },
       "javanese": {
         "path": "translation/content/proof-theory/natural-deduction/introduction.tex",
@@ -8644,8 +8644,8 @@
       "id": "OLP-0665",
       "english": {
         "path": "upstream/content/proof-theory/natural-deduction/quantifiers.tex",
-        "bytes": 7246,
-        "sha256": "1729af6de07c7d3d94f148e87ebf8ac54c84f784036cb0dd47dc3326882d3cdc"
+        "bytes": 7255,
+        "sha256": "74ed2f5f4d196ef50218dedbe90f165de108033a322f3e92dbc969d87f3bd957"
       },
       "javanese": {
         "path": "translation/content/proof-theory/natural-deduction/quantifiers.tex",
@@ -8878,21 +8878,21 @@
       "id": "OLP-0683",
       "english": {
         "path": "upstream/content/proof-theory/proof-search/search-algorithm.tex",
-        "bytes": 6609,
-        "sha256": "2ce7994ec2166ec4f50b3c3698d4767f49ff3fd4a39c942f79ba304ca9c1a8a2"
+        "bytes": 6676,
+        "sha256": "681c94baba43fdb7b9f212487ee932b2df65020b792a739f6531d94defd87060"
       },
       "javanese": {
         "path": "translation/content/proof-theory/proof-search/search-algorithm.tex",
-        "bytes": 8074,
-        "sha256": "f1f965f0ffaf5e736dce70153db6b9b68077c3570d4e2903243b7314ac7c28fe"
+        "bytes": 8100,
+        "sha256": "8104e1c381a60a0cd02e9db87d20505137acf7266efd5efe8d42b9aadac89b70"
       }
     },
     {
       "id": "OLP-0684",
       "english": {
         "path": "upstream/content/proof-theory/proof-search/tableaux.tex",
-        "bytes": 8640,
-        "sha256": "609bf2fdfd8b9474f8dd77a9b066028b9ec2889d991889e7b59bd1b43511dfa5"
+        "bytes": 8884,
+        "sha256": "ef89ed960280ad83e330b6d86aeeb4812c03857eabd505723184f835c91ef10b"
       },
       "javanese": {
         "path": "translation/content/proof-theory/proof-search/tableaux.tex",
@@ -9112,8 +9112,8 @@
       "id": "OLP-0701",
       "english": {
         "path": "upstream/content/proof-theory/sequent-calculus/invertibility.tex",
-        "bytes": 15397,
-        "sha256": "08233bea6d0d9dedcf1d7ed436524c5d36d87a89ba9ea28226f2caefe8c08023"
+        "bytes": 15403,
+        "sha256": "f571c2da829ff6fe99d463db679388e735d76718208ba57094ad2550fed382fc"
       },
       "javanese": {
         "path": "translation/content/proof-theory/sequent-calculus/invertibility.tex",
@@ -9397,24 +9397,24 @@
   ],
   "files": {
     "BUILD.md": {
-      "bytes": 2645,
-      "sha256": "11f821ff18c244cc70c1e892519f34682e8144041343b11018d2e88abb46281f"
+      "bytes": 2658,
+      "sha256": "6b53a41fc8076e8aff3da1b679332d20bbb88af40447f38566f71ac265ece5c9"
     },
     "LICENSE.md": {
       "bytes": 17068,
       "sha256": "bb5e0179a1e9bdb55634a4303784cf73c297a1dcee27b92cd546bf398075531c"
     },
     "README.md": {
-      "bytes": 2300,
-      "sha256": "f29e3136fe388ac02ff1672d48ac0ed805ff715f4f913346e858756484f04857"
+      "bytes": 3597,
+      "sha256": "73e387873802cf848089c2839c0cd99ee1e760d2bed5ea9a37e2909a6a6ce69b"
     },
     "edition/jv-complete-about.tex": {
       "bytes": 1381,
       "sha256": "650eb1cb43595515d0900b3343fb5f27f4e21601d7b3dd3e85bd3d49fb9fc1ba"
     },
     "edition/jv-complete-body.tex": {
-      "bytes": 3190665,
-      "sha256": "00b901713eaf97b896117230390f07090dac02ba810c0b4b839f9718cc347cce"
+      "bytes": 3190631,
+      "sha256": "eca111fb2e47e144079a5a97aa84313d1b01646048b07553aad0cab4a751e0b2"
     },
     "edition/jv-complete-localization.sty": {
       "bytes": 6422,
@@ -9425,8 +9425,8 @@
       "sha256": "d49ee760e509e55602aee9cad4cdd9b474c2edb407689839a847961c3644666a"
     },
     "edition/jv-complete.tex": {
-      "bytes": 6092,
-      "sha256": "b7a5edde6fd9ea0320482cdeafe636a8ac8e9834496f3f55c5ee7370aaed6e02"
+      "bytes": 6218,
+      "sha256": "a019a533aee5fcd35b94eef509f927a4797d52c847fe361239267fee2bdad71d"
     },
     "edition/jv-localization.sty": {
       "bytes": 7404,
@@ -9657,8 +9657,8 @@
       "sha256": "7f65d94904d991c5b24193f37ced04d24fb0ee7ab21ab60ae46333a4515e0270"
     },
     "translation/content/computability/recursive-functions/notation-pr-functions.tex": {
-      "bytes": 2068,
-      "sha256": "7fcc65c15079dcd791fa41649e13e9b7e3a90182b6a059aab908b09ac04fb810"
+      "bytes": 2069,
+      "sha256": "e31a7efe778f1331676f56763b9b52d9acd4fc12860c18d542f38499beecc120"
     },
     "translation/content/computability/recursive-functions/other-recursions.tex": {
       "bytes": 2805,
@@ -10501,8 +10501,8 @@
       "sha256": "de2a1d4970a49ff83f6be169683c2447e413677c3bd5854f2d96538be33b3094"
     },
     "translation/content/incompleteness/theories-computability/first-incompleteness.tex": {
-      "bytes": 1722,
-      "sha256": "17472e23000e80e9cd8b7db5570c151238c6bea844824ed2d214c7f22f7d2d4a"
+      "bytes": 1724,
+      "sha256": "43dcc462d15a274f8053b28455b8039871b87fbac19aa623217fa9e1542f09af"
     },
     "translation/content/incompleteness/theories-computability/inseparability.tex": {
       "bytes": 1515,
@@ -10742,7 +10742,7 @@
     },
     "translation/content/lambda-calculus/lambda-definability/minimization.tex": {
       "bytes": 3353,
-      "sha256": "75bcd7846d827eb8af498bcd2c31bcf6c8c571b2621840168cd1c3881235567e"
+      "sha256": "dd89aedad61d6252b3c3b22ecda2fa3def1c1e7459186c4dd5b2202cb2cb33b1"
     },
     "translation/content/lambda-calculus/lambda-definability/pairs.tex": {
       "bytes": 2178,
@@ -11049,8 +11049,8 @@
       "sha256": "a248374458c2515efc6a421997f8bc697b89987239228f5fd6ef7c43f2d20fad"
     },
     "translation/content/model-theory/lindstrom/lindstrom-proof.tex": {
-      "bytes": 7358,
-      "sha256": "4d6f4031eb128d9c83e54644a69b7a32e02dbff66c11631a58b2ebedaef53e6d"
+      "bytes": 7360,
+      "sha256": "487919a2d2af37f4900d12bc1b4ff722f65a7a0a76b88c3f9f5afda1739f8734"
     },
     "translation/content/model-theory/lindstrom/lindstrom.tex": {
       "bytes": 306,
@@ -11202,7 +11202,7 @@
     },
     "translation/content/normal-modal-logic/filtrations/filtrations-def.tex": {
       "bytes": 8441,
-      "sha256": "4aebc224674cec8ddc99726b62e1ea7ab455fd55b79d00385f988eba44c8fc09"
+      "sha256": "735380155d64892dcf5bc5eea816f9a4f1ccc829aec66040c22872476e71e41d"
     },
     "translation/content/normal-modal-logic/filtrations/filtrations.tex": {
       "bytes": 449,
@@ -11213,8 +11213,8 @@
       "sha256": "a41bece60493cb79b9fe04d733b4d25a90766c336da5ef154668ac182bfa3c9e"
     },
     "translation/content/normal-modal-logic/filtrations/introduction.tex": {
-      "bytes": 7792,
-      "sha256": "ca1c9834c7b2a5d0ed3498ead8fc4d8da1389c68b0a330ea2d24c4d779c7e2c0"
+      "bytes": 7798,
+      "sha256": "5bc68f8b1fa3950e8279396ee63a72150c083a6a3bc791fd4c8148e2c704d423"
     },
     "translation/content/normal-modal-logic/filtrations/more-filtrations.tex": {
       "bytes": 5771,
@@ -11485,8 +11485,8 @@
       "sha256": "668dea825ee72ee57d6d3264ceb73374d7b0e748e36a1a03bb18b2300e512358"
     },
     "translation/content/proof-theory/proof-search/search-algorithm.tex": {
-      "bytes": 8074,
-      "sha256": "f1f965f0ffaf5e736dce70153db6b9b68077c3570d4e2903243b7314ac7c28fe"
+      "bytes": 8100,
+      "sha256": "8104e1c381a60a0cd02e9db87d20505137acf7266efd5efe8d42b9aadac89b70"
     },
     "translation/content/proof-theory/proof-search/tableaux.tex": {
       "bytes": 11012,
@@ -11678,7 +11678,7 @@
     },
     "translation/content/second-order-logic/metatheory/second-order-arithmetic.tex": {
       "bytes": 5919,
-      "sha256": "f401dff7fe3a23b88aea14040b8c7d4dce6c6a177f0429ef6d2827ddd819634d"
+      "sha256": "c583f1cabf9eba04b13cefc01cce8217e0a7ef02a22abfbd3334dcd8537e5887"
     },
     "translation/content/second-order-logic/metatheory/undecidability-and-axiomatizability.tex": {
       "bytes": 2671,
@@ -11693,8 +11693,8 @@
       "sha256": "7dd020e97ab06e2a0fe3d3510c093a081bb12d3a6d14939a096d5db75188cd07"
     },
     "translation/content/second-order-logic/sol-and-set-theory/comparing-sets.tex": {
-      "bytes": 3288,
-      "sha256": "40f11fd290fbf1847dbd523782a0a3062f5c7b57adc448729b8f1465a19afdcd"
+      "bytes": 3217,
+      "sha256": "765197296531b5dbc8eb93ca072cdc509f34eb6140dd544c9018ca4c01332fe6"
     },
     "translation/content/second-order-logic/sol-and-set-theory/introduction.tex": {
       "bytes": 802,
@@ -12485,8 +12485,8 @@
       "sha256": "12674717c3c51628c4a275e5c34b38b66e2ec1eb7bbffea7bf08629d68489834"
     },
     "upstream/content/applied-modal-logic/epistemic-logic/introduction.tex": {
-      "bytes": 2025,
-      "sha256": "b2c3d1cfca757032d8e89e4f17207aa4f37248926fa4f1a3057ef724407c09d9"
+      "bytes": 2026,
+      "sha256": "71bf564e601b3c58991a67a6081363b661bdaf0daa925d023158797a3e189186"
     },
     "upstream/content/applied-modal-logic/epistemic-logic/language-epistemic-logic.tex": {
       "bytes": 3144,
@@ -12670,7 +12670,7 @@
     },
     "upstream/content/computability/recursive-functions/notation-pr-functions.tex": {
       "bytes": 2083,
-      "sha256": "8e10b20204065445cbf26871cb999e37664b46af04a7bb7233f880c9404f4a5f"
+      "sha256": "28632413fbaf670bdb63555173df81053921d914d138dd98706ae639e16602e7"
     },
     "upstream/content/computability/recursive-functions/other-recursions.tex": {
       "bytes": 2657,
@@ -12686,7 +12686,7 @@
     },
     "upstream/content/computability/recursive-functions/pr-functions.tex": {
       "bytes": 5918,
-      "sha256": "893f3c79391b6a02b0af25282b921b2a06db27f5b94b4a6e0fed0c807e1e0ee1"
+      "sha256": "6a6788f660acef19c6ca2579d820f8c8b0bd7509130c85c150da012e3b03416c"
     },
     "upstream/content/computability/recursive-functions/pr-relations.tex": {
       "bytes": 5533,
@@ -12810,7 +12810,7 @@
     },
     "upstream/content/first-order-logic/axiomatic-deduction/provability.tex": {
       "bytes": 11796,
-      "sha256": "150b411bdceac490428e642969889123ecc14db1668fde926adfc1d831e28745"
+      "sha256": "7f7165400dad6c1c62cd90d46e86d5f485ca851e83d3f73ef205ed634b84ea79"
     },
     "upstream/content/first-order-logic/axiomatic-deduction/proving-things-quant.tex": {
       "bytes": 1491,
@@ -12893,8 +12893,8 @@
       "sha256": "353b1ea300b6d916be92a5100dfa2e2f4cf9ad9f44e9506c96f028acea3b1ec8"
     },
     "upstream/content/first-order-logic/completeness/identity.tex": {
-      "bytes": 7831,
-      "sha256": "bc3391e4db38b0552ee8429b14f32124cdb7ee71e766ce17a5eaa2422126aa71"
+      "bytes": 7832,
+      "sha256": "45c7756976366c46fdea6b3debe94559fbf23362dceabbdb6da0a2a88c4ae6ff"
     },
     "upstream/content/first-order-logic/completeness/introduction.tex": {
       "bytes": 3699,
@@ -13021,8 +13021,8 @@
       "sha256": "962c30713b222744c165ce87f7cb8ab11d18d0e805d8d386900bfe8e8104f63f"
     },
     "upstream/content/first-order-logic/natural-deduction/proving-things.tex": {
-      "bytes": 11062,
-      "sha256": "d39069643439c576cb5813ef635725ac09ef83257571e380b92dfa223a801ecc"
+      "bytes": 11059,
+      "sha256": "8b187b4e1e4cf8a9422abec80f97dc65c128c20d9a9973febf4f9b6bdf259095"
     },
     "upstream/content/first-order-logic/natural-deduction/quantifier-rules.tex": {
       "bytes": 4001,
@@ -13117,8 +13117,8 @@
       "sha256": "0cc6d3e92d57d3070076ce2daa13aa85c6da6ac3cfb2b5d56df87bb7fef4fac3"
     },
     "upstream/content/first-order-logic/sequent-calculus/soundness.tex": {
-      "bytes": 17663,
-      "sha256": "4de487cafc9d685844abb2c0b29c7b51debeb30a9b1129c7a2fa8c13ae48b151"
+      "bytes": 17732,
+      "sha256": "3e99a9b02f67a8b631aa0b661b5c47683ac48b5520f20a412c297a3e547261cb"
     },
     "upstream/content/first-order-logic/sequent-calculus/structural-rules.tex": {
       "bytes": 2157,
@@ -13165,8 +13165,8 @@
       "sha256": "788d271215826c823cfcc63c0b54ab7ef65a42a50cde27b27542f2072de2d786"
     },
     "upstream/content/first-order-logic/syntax-and-semantics/satisfaction.tex": {
-      "bytes": 16899,
-      "sha256": "1345318ddf4f4df715f3cb3403b5a457eaf5d2941b0c745593d4a0001ade7ace"
+      "bytes": 16935,
+      "sha256": "287d3a512bfc99c7b743ca1f5a66e372d0fb7ff54f8e584ebe351c7701dc5072"
     },
     "upstream/content/first-order-logic/syntax-and-semantics/semantic-notions.tex": {
       "bytes": 6022,
@@ -13221,8 +13221,8 @@
       "sha256": "dcf0dc5fbdbfd79a7cf8c4b07a3d3d51aedc9ac424416d205ee5a8fd0877a8f4"
     },
     "upstream/content/first-order-logic/tableaux/provability-consistency.tex": {
-      "bytes": 6120,
-      "sha256": "1e3cd1b98b0dae48850118a996aa37c04da92108c91d2096e51ac4a19025f348"
+      "bytes": 6115,
+      "sha256": "5a1bf855b71c7350e6463191dcb112cc42d4b2846ce501290766edc96d1b6499"
     },
     "upstream/content/first-order-logic/tableaux/provability-propositional.tex": {
       "bytes": 6298,
@@ -13490,7 +13490,7 @@
     },
     "upstream/content/incompleteness/representability-in-q/sigma1-completeness.tex": {
       "bytes": 11579,
-      "sha256": "9509cb0c6c1a6d93245a581021a177b4a658d0b098eb467d96a1fd0ba2e14d3d"
+      "sha256": "1ea31e10076afcbbd053c9ff69332f486766b1fb7dd1d477379303d0ccc0f4b3"
     },
     "upstream/content/incompleteness/representability-in-q/undecidability.tex": {
       "bytes": 2841,
@@ -13513,8 +13513,8 @@
       "sha256": "d81d5befab583c377a6a51acfffda6e2c4db3ba39aef1852fda6a88443c8547b"
     },
     "upstream/content/incompleteness/theories-computability/first-incompleteness.tex": {
-      "bytes": 1681,
-      "sha256": "6d136f51b1d58f3d8831a237dd21b65a146381874e9549c7e504080264df82bd"
+      "bytes": 1683,
+      "sha256": "36aeeed707ff4825110f032b607a4d8dac82eecebda3453c726d79bfd88ec521"
     },
     "upstream/content/incompleteness/theories-computability/inseparability.tex": {
       "bytes": 1445,
@@ -13637,8 +13637,8 @@
       "sha256": "ac874fab0a48018f53cbe714eebbee31221cecb86fe6981fda012dfbd17fabcd"
     },
     "upstream/content/intuitionistic-logic/tableaux/soundness.tex": {
-      "bytes": 9818,
-      "sha256": "3852095c3c8edfdf76e294936602d8a0d640622642fcb0c27cf55420ef99e46c"
+      "bytes": 9819,
+      "sha256": "1142fbf2a886a87a2a38f45263e17fb54dc2eeda94664a8663e6dd634ed3d012"
     },
     "upstream/content/intuitionistic-logic/tableaux/tableaux.tex": {
       "bytes": 599,
@@ -13730,11 +13730,11 @@
     },
     "upstream/content/lambda-calculus/lambda-definability/arithmetical-functions.tex": {
       "bytes": 4990,
-      "sha256": "1c5db87c79c1edc7766be8031d7c6e35498be393367e2651c9b37950d5db7d24"
+      "sha256": "f0364b6753655c14d14d4b0950c2a41edf695ea2593a3f0768b94438defdc6a9"
     },
     "upstream/content/lambda-calculus/lambda-definability/fixpoints.tex": {
-      "bytes": 6921,
-      "sha256": "d826387d4284ef13679ef5b91a22bb7551c193c2e8c8356201ceb1df72a46b93"
+      "bytes": 6938,
+      "sha256": "a65ae50d890220d124611e9ec41d38d2c9f2095917fc7f3a5f611f617fbb9634"
     },
     "upstream/content/lambda-calculus/lambda-definability/introduction.tex": {
       "bytes": 3596,
@@ -13753,8 +13753,8 @@
       "sha256": "65011d98e9f7484a6da8310227096fe1d72bad74d24db096dda5f0873c1f4c97"
     },
     "upstream/content/lambda-calculus/lambda-definability/minimization.tex": {
-      "bytes": 2488,
-      "sha256": "4da3bef314009bbd93701e19fa66ff1bd7dc718427fa1ddd06d223b2aaf9b7f6"
+      "bytes": 2493,
+      "sha256": "c65e9cbd14ffc99101d8abdcf7737fb92e34894062968f6b07d6dcd89e3c4c40"
     },
     "upstream/content/lambda-calculus/lambda-definability/pairs.tex": {
       "bytes": 1745,
@@ -13765,12 +13765,12 @@
       "sha256": "a74678e3cced4a3650d799dae58d106964e63ddd9fd71b739a51531ef73325f0"
     },
     "upstream/content/lambda-calculus/lambda-definability/primitive-recursive-functions.tex": {
-      "bytes": 5835,
-      "sha256": "dbedc0b45f7d2ce9eebd36a219fe22b532ddebb6082fb4bf356afc612f4e294d"
+      "bytes": 5839,
+      "sha256": "70719932ac70e3f47f37b6a3dede92793ef4a4f0ebdc18c2478a23d8264879bb"
     },
     "upstream/content/lambda-calculus/lambda-definability/truth-values.tex": {
       "bytes": 3170,
-      "sha256": "c59cf879d08ccb846c28886a957ffee1a5256157e9a160af104606743eb9006c"
+      "sha256": "a60494fccced101d9a9dabba0265496e724f296782e5154c5803a37e93aeb15a"
     },
     "upstream/content/lambda-calculus/syntax/abbreviated-syntax.tex": {
       "bytes": 1290,
@@ -13969,8 +13969,8 @@
       "sha256": "cbef120cea559b153f4e6b828d2fe7942050d3534e3bb61e642fd467f897aa80"
     },
     "upstream/content/methods/proofs/inference-patterns.tex": {
-      "bytes": 17286,
-      "sha256": "dec51f23018334023107ecfaa7a2f31fdf964b2b0cb7aebaeeb4e1688ed6dd31"
+      "bytes": 17280,
+      "sha256": "63bd616d75f232f7789ef8f9c8508327ca86e07fd2a03f80909f8d1ebf95020e"
     },
     "upstream/content/methods/proofs/introduction.tex": {
       "bytes": 3735,
@@ -14005,8 +14005,8 @@
       "sha256": "cc084be5f263daff1704017021244d4927bdd9fa4d1d808ed186265ff4e75495"
     },
     "upstream/content/model-theory/basics/dlo.tex": {
-      "bytes": 3509,
-      "sha256": "9c7bd2cbee65556d3edc1316632fa5714527901ee0aed70ee76e2c4db7c03531"
+      "bytes": 3636,
+      "sha256": "78925883763f738866507a8f3f0303ac20413f8810f6301d1a4de08f6f39015c"
     },
     "upstream/content/model-theory/basics/isomorphism.tex": {
       "bytes": 5186,
@@ -14065,8 +14065,8 @@
       "sha256": "1e014424519199e2ca2760dfe343dbc6756c6972c56e17174587e9aacf913ed0"
     },
     "upstream/content/model-theory/lindstrom/lindstrom-proof.tex": {
-      "bytes": 6045,
-      "sha256": "a9de6ae6e6dd2ec2db64e9c7d3afad37a695896af57d50a64f003f958db499d9"
+      "bytes": 6047,
+      "sha256": "182290a6c2dee00b4d09af01bda9c6a83cedf14e6a2e1d4834c8aa9187fb83f7"
     },
     "upstream/content/model-theory/lindstrom/lindstrom.tex": {
       "bytes": 308,
@@ -14169,8 +14169,8 @@
       "sha256": "7d21c989f62f34ed387f7cbaef899f8b6d2c37467306110765c7395f70b1e4c3"
     },
     "upstream/content/normal-modal-logic/completeness/complete-consistent-sets.tex": {
-      "bytes": 6135,
-      "sha256": "b5bab763b10f3972e8a8c53ae3036677c0b462f86df13137ccb6181d9ce632e1"
+      "bytes": 6141,
+      "sha256": "6c24c6ba491212fde0feb8364e266434d8585c767747f1e6f031d876d0e99d78"
     },
     "upstream/content/normal-modal-logic/completeness/completeness-K.tex": {
       "bytes": 2375,
@@ -14213,12 +14213,12 @@
       "sha256": "f1daa99cd7f5b423e8cf1e0259b979d89bc329fa7f921e701a5a931cfa81d5ce"
     },
     "upstream/content/normal-modal-logic/filtrations/examples-of-filtrations.tex": {
-      "bytes": 9611,
-      "sha256": "8a20bbfcc005772b9166800bca81278de3b28c4b47f51d01dc07f69777c8a484"
+      "bytes": 9610,
+      "sha256": "dd1ef75f7d093eac0dea76bc43a05591fdcec6dca8cdceb21ffa1ffdbe9310aa"
     },
     "upstream/content/normal-modal-logic/filtrations/filtrations-def.tex": {
-      "bytes": 7954,
-      "sha256": "e7f0f36522a5549a046c4c7999dec2c80751ed486edb72efaa3c3962bb4d02d1"
+      "bytes": 8036,
+      "sha256": "288027623e7e36375921e4481e457eb7b419bd48cd2acc2fecbdbf9b7ecf2851"
     },
     "upstream/content/normal-modal-logic/filtrations/filtrations.tex": {
       "bytes": 445,
@@ -14229,8 +14229,8 @@
       "sha256": "aea5dd77f54889d35f027a23600c24a206ad42e7a6d736d51c16862ddd0997f5"
     },
     "upstream/content/normal-modal-logic/filtrations/introduction.tex": {
-      "bytes": 7256,
-      "sha256": "faffee0613cc37515af229a202fed584e49ea182600e77c96d722654492eb01a"
+      "bytes": 7262,
+      "sha256": "820ad3aa62f77568e5c98e874d7b951fc8048754b4a7de08eb4e97f168d87896"
     },
     "upstream/content/normal-modal-logic/filtrations/more-filtrations.tex": {
       "bytes": 5661,
@@ -14377,8 +14377,8 @@
       "sha256": "424a248ae136b994af3f140ae1e3cc4d68dbbbedd4ba0ca88f24d6148615fa65"
     },
     "upstream/content/normal-modal-logic/tableaux/soundness.tex": {
-      "bytes": 12701,
-      "sha256": "337485e1de3eaba7bdffdc6dddd9e9b4e0fe569bc9eaed470f7af27088492100"
+      "bytes": 12702,
+      "sha256": "6c2e2e998d75d7533fe70537f715af61061086284a657956520b64d974e3af1f"
     },
     "upstream/content/normal-modal-logic/tableaux/tableaux.tex": {
       "bytes": 663,
@@ -14421,16 +14421,16 @@
       "sha256": "a7157a4cffa4a4a862c3ccca068d1b57b190ac830bbc7ce53a2df999663fe519"
     },
     "upstream/content/proof-theory/natural-deduction/introduction.tex": {
-      "bytes": 5294,
-      "sha256": "782f91d07d6f92f5ae9cea347d3d04f6a84c140008cbe9381d125c63d352ddb9"
+      "bytes": 5302,
+      "sha256": "5d5499e613ba7082328172c50125c1306daac46bedb3ee39874824ab37dd80a4"
     },
     "upstream/content/proof-theory/natural-deduction/natural-deduction.tex": {
       "bytes": 372,
       "sha256": "3c6250945e1d1d505bd87f7db2829f7cd8920de029d44cbc10533ac827688217"
     },
     "upstream/content/proof-theory/natural-deduction/quantifiers.tex": {
-      "bytes": 7246,
-      "sha256": "1729af6de07c7d3d94f148e87ebf8ac54c84f784036cb0dd47dc3326882d3cdc"
+      "bytes": 7255,
+      "sha256": "74ed2f5f4d196ef50218dedbe90f165de108033a322f3e92dbc969d87f3bd957"
     },
     "upstream/content/proof-theory/natural-deduction/rules-N1.tex": {
       "bytes": 2650,
@@ -14501,12 +14501,12 @@
       "sha256": "766ce01962f35ef9833f3be95a35250d13a9fca800100f15885dd9009cc74241"
     },
     "upstream/content/proof-theory/proof-search/search-algorithm.tex": {
-      "bytes": 6609,
-      "sha256": "2ce7994ec2166ec4f50b3c3698d4767f49ff3fd4a39c942f79ba304ca9c1a8a2"
+      "bytes": 6676,
+      "sha256": "681c94baba43fdb7b9f212487ee932b2df65020b792a739f6531d94defd87060"
     },
     "upstream/content/proof-theory/proof-search/tableaux.tex": {
-      "bytes": 8640,
-      "sha256": "609bf2fdfd8b9474f8dd77a9b066028b9ec2889d991889e7b59bd1b43511dfa5"
+      "bytes": 8884,
+      "sha256": "ef89ed960280ad83e330b6d86aeeb4812c03857eabd505723184f835c91ef10b"
     },
     "upstream/content/proof-theory/proof-theory.tex": {
       "bytes": 530,
@@ -14573,8 +14573,8 @@
       "sha256": "e924a772dc7189fa1354d7d0ae3b78120cf8fac7f9ab6d0534a39afb85efa161"
     },
     "upstream/content/proof-theory/sequent-calculus/invertibility.tex": {
-      "bytes": 15397,
-      "sha256": "08233bea6d0d9dedcf1d7ed436524c5d36d87a89ba9ea28226f2caefe8c08023"
+      "bytes": 15403,
+      "sha256": "f571c2da829ff6fe99d463db679388e735d76718208ba57094ad2550fed382fc"
     },
     "upstream/content/proof-theory/sequent-calculus/proof-examples.tex": {
       "bytes": 13015,
@@ -14694,11 +14694,11 @@
     },
     "upstream/content/second-order-logic/metatheory/second-order-arithmetic.tex": {
       "bytes": 5174,
-      "sha256": "a09f150a63d364e758adf2547e5237108b76d6ea7f08d23fe9373792b71bea0d"
+      "sha256": "c73dad2d7b4501c6baa33b7e494fdff4fcd25eb76492491521a07e193c5f2d5e"
     },
     "upstream/content/second-order-logic/metatheory/undecidability-and-axiomatizability.tex": {
       "bytes": 1875,
-      "sha256": "d145a2ab03186358310a7f917ed7aa9eb49e95efbb80c3a2e8356be818d25108"
+      "sha256": "b497aae12d3be8316509937a9919e4b17780d81020c7547561777eb2d9e846ed"
     },
     "upstream/content/second-order-logic/second-order-logic.tex": {
       "bytes": 400,
@@ -14709,8 +14709,8 @@
       "sha256": "2383760cd26cb2fa42f968483e74a90dfd4a1e5de3361d21322508282bf588b6"
     },
     "upstream/content/second-order-logic/sol-and-set-theory/comparing-sets.tex": {
-      "bytes": 2564,
-      "sha256": "d64defa142c5d31762b286b3e9c94fbe278e6462d8f417388b2405383e73b330"
+      "bytes": 2632,
+      "sha256": "2cd0688b17ec73cf03290d37676420b4cd0a7a37e5838e3873add0cac41585bd"
     },
     "upstream/content/second-order-logic/sol-and-set-theory/introduction.tex": {
       "bytes": 829,
@@ -14861,8 +14861,8 @@
       "sha256": "aeccfd957a75eb3ddbfc0ed123fc50201eb60973fad8ac05dcc8f65cb2c91b64"
     },
     "upstream/content/set-theory/ord-arithmetic/using-addition.tex": {
-      "bytes": 4730,
-      "sha256": "9641a137f0347689fad7fc04337f8889991e482c6179513c19a0bfbc619eaff1"
+      "bytes": 4733,
+      "sha256": "df075118aa83c2a15b36a8a07bb50e385c5c60d3914fce5d895c96b68bb2d774"
     },
     "upstream/content/set-theory/ordinals/basic.tex": {
       "bytes": 8434,
@@ -15237,8 +15237,8 @@
       "sha256": "bb5010906c4b4b95ef652f372efc49c44ca9feebbca1e50fecbb29b3ff6ce8aa"
     },
     "upstream/content/sets-functions-relations/size-of-sets/non-enumerability-alt.tex": {
-      "bytes": 6574,
-      "sha256": "a075f6c63879101314fb20fa493acfb38d78ff24095bb55914f2af4527e1ad3e"
+      "bytes": 6571,
+      "sha256": "da318273e4c07945c8274b71bc911d2181317553283b679b543d416805b64522"
     },
     "upstream/content/sets-functions-relations/size-of-sets/non-enumerability.tex": {
       "bytes": 9198,
@@ -15413,8 +15413,8 @@
       "sha256": "b3ae7d0525abebea87a05bc3501d730b6d1eadd0f4d790135c73d27458f21391"
     },
     "upstream/sty/open-logic-book.cls": {
-      "bytes": 16141,
-      "sha256": "d193f6cc5c4671680e7d2d0e7d47302500a589ef401e343020b1d7c684e86dd2"
+      "bytes": 16638,
+      "sha256": "9b74749e890929ba027385db1a6022ac9affc235cd46cf3d53837b9fe17d89b3"
     },
     "upstream/sty/open-logic-debug.sty": {
       "bytes": 1587,
@@ -15441,25 +15441,33 @@
       "sha256": "e6b0287892308cff1effa7475894dbaef3a10dd0ed0769b7d2c768f9079387c2"
     },
     "upstream/sty/open-logic.sty": {
-      "bytes": 10874,
-      "sha256": "93498cdeedd784d55236178b46061263b642d5016fbd9e6f95bc57c26dd4c16f"
+      "bytes": 11121,
+      "sha256": "b95737087a1335ea81cb737ee74926f9e0ae451ffc8a0578886208e609d34eef"
     },
     "upstream/sty/ptolemaicastronomy.sty": {
       "bytes": 2919,
       "sha256": "450f79a006fbf105046f366f31d4243d6b8a4903783d8ae05717c4106c9aad85"
     },
     "tools/build-complete-reader.ps1": {
-      "bytes": 5151,
-      "sha256": "692b76b436774a548fd453a4106d55f0f3f905a9eaf1adb8381ec606ddf0c592"
+      "bytes": 5158,
+      "sha256": "e2c23996207f7554d00a96c553db3281a4fe3da1842a9872ac24daf71c9346fb"
     },
     "tools/WindowsTexJob.cs": {
-      "bytes": 5038,
-      "sha256": "2969881f842a8456167b998c37090b6b6cf349c3561801f16e78d7a07bdb3434"
+      "bytes": 5039,
+      "sha256": "a0d3397b1d3cc7d6abdad7baafebafe81de81471fcf29113c9fd53d058ae243a"
+    },
+    "translation-decisions/FORMULA-ATOMIK.md": {
+      "bytes": 1869,
+      "sha256": "39635a223b8dae8fff488879c36a07f9eb5982c5ed8afe2bb9299bf2502ca83c"
     }
   },
   "source_sync_authorship": {
     "model": "gpt-6.1-sol",
-    "reasoning_effort": "ultra"
+    "reasoning_effort": "ultra",
+    "session_metadata_observed_at_utc": "2026-11-17T02:22:08.878Z",
+    "source_units": 35,
+    "target_units_edited": 9,
+    "scope": "Source comparison, targeted AI-produced corrections, and typesetting. Inherited translation attribution retained."
   },
   "pdf_encoding_authorship": {
     "model": "gpt-6.1-sol",

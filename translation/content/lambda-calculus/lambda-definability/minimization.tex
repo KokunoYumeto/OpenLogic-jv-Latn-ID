@@ -19,16 +19,16 @@ fungsi kang !!a{lambda
 
 \begin{lem}
   \ollabel{lem:min} Yen $f(x_1, \dots, x_k, y)$ total, reguler lan
-  !!{lambda definable}, mula $g$~kang ditetepake dening
+  !!{lambda definable}, mula $h$~kang ditetepake dening
   \[
-  g(x_1, \dots, x_k) = \umin{y}{f(x_1,\dots,x_k, y) = 0}
+  h(x_1, \dots, x_k) = \umin{y}{f(x_1,\dots,x_k, y) = 0}
   \]
   uga !!{lambda definable}.
 \end{lem}
 
 \begin{proof}
   Upamakna suku~$F$ ing kalkulus $\lambda$ kang netepake
-  fungsi reguler $f(\vec x, y)$. Kanggo !!{lambda define}~$g$,
+  fungsi reguler $f(\vec x, y)$. Kanggo !!{lambda define}~$h$,
   kita nggunakake fungsi panelusuran lan kombinator titik tetep:
   \begin{align*}
     \fn{Search} & \ident \lambd[g][\lambd[f\,\vec{x}\,y][
@@ -53,7 +53,7 @@ fungsi kang !!a{lambda
     \intertext{yen ora. Amarga $f$ reguler, $f(n_1, \dots, n_k, y)
       = 0$ kanggo sawijining $y$, mula}
     (Y \, \fn{Search}) F \num{n_1} \dots\num{n_k}\,\num{0}
-    & \red \num{g(n_1, \dots, n_k)}.
+    & \red \num{h(n_1, \dots, n_k)}.
     \end{align*}
 Totalitas f menehi numeral kanggo saben tes. Yen m minangka nol paling cilik, kabeh tes saka nol nganti sadurunge m menehi numeral positif, saengga ana runtutan winates saka cabang rekursif nganti m, banjur cabang bener menehi numeral m. Reguler menehi anane m kanggo saben input; ora perlu jaminan kabeh strategi evaluasi mandheg.\end{proof}
 

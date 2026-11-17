@@ -30,7 +30,7 @@ done
 
 ## Windows PowerShell 7
 
-From the source tree root, one command builds the reader with a 5 GiB
+From the source tree root, one command builds the reader with a 5,000,000,000-byte
 process-tree cap. A fresh output folder is required.
 
 ~~~powershell
